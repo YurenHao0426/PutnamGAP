@@ -1,30 +1,3 @@
----
-license: cc-by-4.0
-language:
-- en
-pretty_name: PutnamGAP
-size_categories:
-- 1K<n<10K
-task_categories:
-- text-generation
-- question-answering
-tags:
-- mathematics
-- benchmark
-- robustness
-- evaluation
-- putnam
-- competition-mathematics
-- llm-evaluation
-- gap-framework
-- equivalence-preserving
-- stress-test
-configs:
-- config_name: default
-  data_files:
-  - split: test
-    path: dataset/*.json
----
 
 # PutnamGAP
 
@@ -39,7 +12,6 @@ configs:
 >
 > **Code & pipeline**: <https://github.com/YurenHao0426/PutnamGAP>
 
----
 
 ## What is in the dataset
 
@@ -77,7 +49,6 @@ All text fields in this release have been processed through a Unicode → bare-L
 - produce **0 non-ASCII characters** across all 1,051 files;
 - introduce **0 new brace/parenthesis/bracket imbalances** beyond those already present in the source.
 
----
 
 ## Loading
 
@@ -98,7 +69,6 @@ problems = [json.load(open(p)) for p in Path("dataset").glob("*.json")]
 print(f"{len(problems)} problems loaded")
 ```
 
----
 
 ## Suggested Use
 
@@ -106,7 +76,6 @@ print(f"{len(problems)} problems loaded")
 - **Paired evaluation.** The framework's value comes from comparing accuracy on `(original, variant)` pairs, not absolute accuracy on the variants in isolation. Report McNemar tests on flip cases.
 - **Mechanistic analyses.** The surface vs kernel decomposition supports mechanism-sensitive analyses such as the paired structural-overlap dichotomy and the repairability rescue protocol described in the paper. Per-cell trajectory tables and rescue results live in the GitHub companion repository.
 
----
 
 ## Important: Source Attribution
 
@@ -118,11 +87,8 @@ print(f"{len(problems)} problems loaded")
 
 Problems and solutions from 2017 onward are included with the explicit permission of MAA.
 
-If you are an author, publisher, or rights-holder and you believe any portion of this release infringes your rights, please open an issue at <https://github.com/YurenHao0426/PutnamGAP/issues> or email the maintainer; the affected items will be removed promptly.
+**Takedown notice.** If you are an author, publisher, or rights-holder and you believe any portion of this release infringes your rights, please open an issue at <https://github.com/YurenHao0426/PutnamGAP/issues> or email the maintainer. The affected items will be removed promptly.
 
-> **侵删**: 本数据集包含的所有 Putnam 原题和官方解答均为美国数学协会 (MAA) 出版的四本权威 problem-book 的复制品，按 MAA fair-use 条款用于学术研究。原题与解答的版权归 MAA 所有。任何使用本数据集的下游工作必须同时引用四本 MAA 原始书目（见下方 BibTeX）以及本论文。若有版权方认为本发布涉及侵权，请通过 GitHub Issue 或邮件联系维护者，相关条目将立即移除。
-
----
 
 ## Citation
 
@@ -198,7 +164,6 @@ Full BibTeX (copy the entire block — all five entries are mandatory):
 
 > **Reminder.** The four `putnamI`–`putnamIV` entries are not optional or supplementary; the original problem statements and canonical solutions in this dataset are reproduced from those four MAA monographs under the MAA fair-use clause, and the IP belongs to the Mathematical Association of America. Any downstream use of PutnamGAP that omits the four MAA citations misrepresents the dataset's provenance.
 
----
 
 ## License
 
@@ -206,7 +171,6 @@ Full BibTeX (copy the entire block — all five entries are mandatory):
 - The **original Putnam Competition problem statements and canonical solutions** remain copyrighted by the Mathematical Association of America (MAA). They are redistributed here under MAA's stated fair-use clause and only for educational and research use. **Downstream users must cite the four MAA source books listed above.**
 - The cleaned LaTeX version of the original solutions is a derivative work whose changes (Unicode → LaTeX normalisation) are released under CC BY 4.0; the underlying text remains MAA-copyrighted.
 
----
 
 ## Links
 
