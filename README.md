@@ -10,7 +10,9 @@
 
 > **Paper**: *An Investigation of Robustness of LLMs in Mathematical Reasoning: Benchmarking with Mathematically-Equivalent Transformation of Advanced Mathematical Problems* — Hao, Wan & Zhai, [arXiv:2508.08833](https://arxiv.org/abs/2508.08833)
 >
-> **Code & pipeline**: <https://github.com/YurenHao0426/PutnamGAP>
+> **GAP framework code & evaluation pipeline**: <https://github.com/YurenHao0426/GAP> — this repository hosts only the dataset; the variant generation pipeline, evaluation harness, structural-overlap analysis, repairability rescue runner, and Unicode → LaTeX cleaner all live in the GAP framework repo.
+>
+> **PutnamGAP dataset GitHub mirror** (this dataset, mirrored from Hugging Face): <https://github.com/YurenHao0426/PutnamGAP>
 
 
 ## What is in the dataset
@@ -45,9 +47,11 @@ Each surface variant additionally exposes a deterministic **rename map** (`varia
 
 ### Cleaning
 
-All text fields in this release have been processed through a Unicode → bare-LaTeX cleaner so that the contents are pure ASCII LaTeX. Greek letters, math operators, sub/superscripts, radical commands and ligatures have been converted to their LaTeX equivalents (e.g.\ `α` → `\alpha`, `≤` → `\leq`, `√{x+1}` → `\sqrt{x+1}`, `x₁₀` → `x_{10}`). The cleaner script is available under `tools/unicode_clean.py` and is reproducible from the included `tools/unicode_audit.py`. The cleaner has been verified to:
+All text fields in this release have been processed through a Unicode → bare-LaTeX cleaner so that the contents are pure ASCII LaTeX. Greek letters, math operators, sub/superscripts, radical commands and ligatures have been converted to their LaTeX equivalents (e.g.\ `α` → `\alpha`, `≤` → `\leq`, `√{x+1}` → `\sqrt{x+1}`, `x₁₀` → `x_{10}`). The cleaner has been verified to:
 - produce **0 non-ASCII characters** across all 1,051 files;
 - introduce **0 new brace/parenthesis/bracket imbalances** beyond those already present in the source.
+
+The cleaning, audit, brace-balance, and spot-check scripts (`unicode_clean.py`, `unicode_audit.py`, `balance_diff.py`, `spotcheck_clean.py`) live in the [GAP framework repository](https://github.com/YurenHao0426/GAP) under `analysis/`, alongside the rest of the GAP pipeline.
 
 
 ## Loading
@@ -175,6 +179,7 @@ Full BibTeX (copy the entire block — all five entries are mandatory):
 ## Links
 
 - **Paper (arXiv)**: <https://arxiv.org/abs/2508.08833>
-- **Code & pipeline (GitHub)**: <https://github.com/YurenHao0426/PutnamGAP>
-- **Hugging Face dataset**: <https://huggingface.co/datasets/blackhao0426/PutnamGAP>
-- **Issues & contact**: <https://github.com/YurenHao0426/PutnamGAP/issues>
+- **GAP framework code & evaluation pipeline (GitHub)**: <https://github.com/YurenHao0426/GAP>
+- **Hugging Face dataset (this release)**: <https://huggingface.co/datasets/blackhao0426/PutnamGAP>
+- **PutnamGAP dataset GitHub mirror**: <https://github.com/YurenHao0426/PutnamGAP>
+- **Issues & contact**: <https://github.com/YurenHao0426/GAP/issues>
