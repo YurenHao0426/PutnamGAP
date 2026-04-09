@@ -2,9 +2,10 @@
 # PutnamGAP
 
 [![arXiv](https://img.shields.io/badge/arXiv-2508.08833-b31b1b.svg)](https://arxiv.org/abs/2508.08833)
-[![GitHub](https://img.shields.io/badge/GitHub-YurenHao0426%2FPutnamGAP-blue?logo=github)](https://github.com/YurenHao0426/PutnamGAP)
+[![GAP Code](https://img.shields.io/badge/GitHub-GAP_framework-181717?logo=github)](https://github.com/YurenHao0426/GAP)
+[![Dataset Mirror](https://img.shields.io/badge/GitHub-PutnamGAP_mirror-blue?logo=github)](https://github.com/YurenHao0426/PutnamGAP)
+[![Hugging Face](https://img.shields.io/badge/🤗_Dataset-PutnamGAP-yellow.svg)](https://huggingface.co/datasets/blackhao0426/PutnamGAP)
 [![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
-[![Hugging Face](https://img.shields.io/badge/🤗-Hugging%20Face-yellow.svg)](https://huggingface.co/datasets/blackhao0426/PutnamGAP)
 
 **PutnamGAP** is a 6,306-item competition-mathematics benchmark covering every William Lowell Putnam Mathematical Competition problem from **1938 to 2024**, expanded into five mathematically equivalent variants per problem via the **GAP** (Generalization-and-Perturbation) framework. PutnamGAP is intended for stress-testing the **robustness** of large language models on advanced mathematical reasoning under semantically equivalent reformulations of the same problem.
 
