@@ -1,0 +1,146 @@
+{
+  "index": "1956-A-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "4. Suppose the \\( n \\) times differentiable real function \\( f(x) \\) has at least \\( n+1 \\) distinct zeros in the closed interval \\( [a, b] \\) and that the polynomial \\( P(z) \\equiv z^{\\prime \\prime} \\) \\( +C_{n-1} z^{n-1}+\\cdots+C_{0} \\) has only real zeros. Show that ( \\( D^{n}+C_{n-1} D^{n-1} \\) \\( \\left.+\\cdots+C_{0}\\right) f(x) \\) has at least one zero in the interval \\( [a, b] \\) where \\( D^{n} \\) denotes, as usual, \\( d^{n} / d x^{n} \\).",
+  "solution": "Solution. We first prove a lemma.\nLemma. Suppose \\( f \\) is differentiable on \\( [a, b] \\) and has \\( m+1 \\) distinct zeros there. Then for any real number \\( \\lambda,(D-\\lambda) f \\) has at least \\( m \\) distinct zeros on \\( [a, b] \\).\n\nProof. Consider the identity\n\\[\n(D-\\lambda) f(x)=e^{\\lambda^{x}} \\boldsymbol{D}\\left(e^{-\\lambda_{f}} f(x)\\right) .\n\\]\n\nApplying Rolle's theorem to the right member of this identity we see that there is a zero of \\( (\\boldsymbol{D}-\\lambda) f \\) between any two consecutive zeros of \\( f \\). Therefore there are at least \\( m \\) distinct zeros on \\( [a, b] \\).\n\nWe can now prove the result stated in the problem by induction on \\( n \\). If \\( n=1 \\), this is just the lemma with \\( m=1 \\).\nAssume the result is true for \\( n=k \\). Suppose \\( P \\) has degree \\( k+1 \\) and that \\( f \\) is \\( k+1 \\) times differentiable and has \\( k+2 \\) distinct zeros on \\( [a, b] \\). Since \\( P \\) has all real roots, we can write \\( P(z)=Q(z)(z-\\lambda) \\), where \\( \\lambda \\) is real and \\( Q \\) is a polynomial of degree \\( k \\) with all real roots. Then \\( g= \\) \\( (D-\\lambda) f \\) is \\( k \\) times differentiable on \\( [a, b] \\) and has at least \\( k+1 \\) distinct zeros on \\( [a, b] \\), by the lemma with \\( m=k+1 \\). Hence by the inductive hypothesis \\( Q(D) g \\) has at least one zero on \\( [a, b] \\). But\n\\[\nQ(D) g=Q(D)(D-\\lambda) f=P(D) f .\n\\]\n\nThus the result is true for \\( n=k+1 \\). This completes the induction.",
+  "vars": [
+    "x",
+    "z",
+    "n",
+    "m",
+    "k",
+    "f",
+    "g",
+    "Q"
+  ],
+  "params": [
+    "a",
+    "b",
+    "P",
+    "C_n-1",
+    "C_0",
+    "D",
+    "\\\\lambda",
+    "\\\\lambda_f"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "inputvar",
+        "z": "complexz",
+        "n": "derivorder",
+        "m": "zerocount",
+        "k": "stepindex",
+        "f": "mainfunc",
+        "g": "auxifunc",
+        "Q": "polyauxq",
+        "a": "leftend",
+        "b": "rightend",
+        "P": "polyprincipal",
+        "C_n-1": "coeffnminusone",
+        "C_0": "coeffzero",
+        "D": "diffop",
+        "\\lambda": "lambdapar",
+        "\\lambda_f": "lambdafparam"
+      },
+      "question": "4. Suppose the \\( derivorder \\) times differentiable real function \\( mainfunc(inputvar) \\) has at least \\( derivorder+1 \\) distinct zeros in the closed interval \\[leftend, rightend\\] and that the polynomial \\( polyprincipal(complexz) \\equiv complexz^{\\prime \\prime}+coeffnminusone\\,complexz^{derivorder-1}+\\cdots+coeffzero \\) has only real zeros. Show that \\( diffop^{derivorder}+coeffnminusone\\,diffop^{derivorder-1}+\\cdots+coeffzero \\) applied to \\( mainfunc(inputvar) \\) has at least one zero in the interval \\[leftend, rightend\\], where \\( diffop^{derivorder} \\) denotes, as usual, \\( d^{derivorder}/d inputvar^{derivorder} \\).",
+      "solution": "Solution. We first prove a lemma.\nLemma. Suppose \\( mainfunc \\) is differentiable on \\[leftend, rightend\\] and has \\( zerocount+1 \\) distinct zeros there. Then for any real number \\( lambdapar,(diffop-lambdapar)\\,mainfunc \\) has at least \\( zerocount \\) distinct zeros on \\[leftend, rightend\\].\n\nProof. Consider the identity\n\\[\n(diffop-lambdapar)\\,mainfunc(inputvar)=e^{lambdapar^{inputvar}}\\,\\boldsymbol{diffop}\\bigl(e^{-lambdafparam}\\,mainfunc(inputvar)\\bigr).\n\\]\nApplying Rolle's theorem to the right member of this identity, we see that there is a zero of \\( (\\boldsymbol{diffop}-lambdapar)\\,mainfunc \\) between any two consecutive zeros of \\( mainfunc \\). Therefore there are at least \\( zerocount \\) distinct zeros on \\[leftend, rightend\\].\n\nWe can now prove the result stated in the problem by induction on \\( derivorder \\). If \\( derivorder=1 \\), this is just the lemma with \\( zerocount=1 \\).\nAssume the result is true for \\( derivorder=stepindex \\). Suppose \\( polyprincipal \\) has degree \\( stepindex+1 \\) and that \\( mainfunc \\) is \\( stepindex+1 \\) times differentiable and has \\( stepindex+2 \\) distinct zeros on \\[leftend, rightend\\]. Since \\( polyprincipal \\) has all real roots, we can write \\( polyprincipal(complexz)=polyauxq(complexz)(complexz-lambdapar) \\), where \\( lambdapar \\) is real and \\( polyauxq \\) is a polynomial of degree \\( stepindex \\) with all real roots. Then \\( auxifunc=(diffop-lambdapar)\\,mainfunc \\) is \\( stepindex \\) times differentiable on \\[leftend, rightend\\] and has at least \\( stepindex+1 \\) distinct zeros on \\[leftend, rightend\\], by the lemma with \\( zerocount=stepindex+1 \\). Hence by the inductive hypothesis \\( polyauxq(diffop)\\,auxifunc \\) has at least one zero on \\[leftend, rightend\\]. But\n\\[\npolyauxq(diffop)\\,auxifunc=polyauxq(diffop)(diffop-lambdapar)\\,mainfunc=polyprincipal(diffop)\\,mainfunc.\n\\]\nThus the result is true for \\( derivorder=stepindex+1 \\). This completes the induction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "parchment",
+        "z": "tapestry",
+        "n": "windchime",
+        "m": "blueberry",
+        "k": "stonewall",
+        "f": "paintbrush",
+        "g": "lighthouse",
+        "Q": "horseshoe",
+        "a": "sunshine",
+        "b": "raincloud",
+        "P": "dreamcatch",
+        "C_n-1": "starflower",
+        "C_0": "moonbeams",
+        "D": "chameleon",
+        "\\\\lambda": "riverstone",
+        "\\\\lambda_f": "sunrisebird"
+      },
+      "question": "4. Suppose the \\( windchime \\) times differentiable real function \\( paintbrush(parchment) \\) has at least \\( windchime+1 \\) distinct zeros in the closed interval \\([sunshine, raincloud]\\) and that the polynomial \\( dreamcatch(tapestry) \\equiv tapestry^{\\prime \\prime}+ starflower\\, tapestry^{windchime-1}+\\cdots+ moonbeams \\) has only real zeros. Show that \\(\\left( chameleon^{windchime}+ starflower\\, chameleon^{windchime-1}+\\cdots+ moonbeams \\right) paintbrush(parchment)\\) has at least one zero in the interval \\([sunshine, raincloud]\\) where \\( chameleon^{windchime} \\) denotes, as usual, \\( d^{windchime}/d parchment^{windchime} \\).",
+      "solution": "Solution. We first prove a lemma.\n\nLemma. Suppose \\( paintbrush \\) is differentiable on \\([sunshine, raincloud]\\) and has \\( blueberry+1 \\) distinct zeros there. Then for any real number \\( riverstone \\), \\((chameleon- riverstone)\\, paintbrush\\) has at least \\( blueberry \\) distinct zeros on \\([sunshine, raincloud]\\).\n\nProof. Consider the identity\n\\[\n(chameleon- riverstone)\\, paintbrush(parchment)=e^{riverstone^{parchment}}\\, \\boldsymbol{chameleon}\\left(e^{-\\sunrisebird}\\, paintbrush(parchment)\\right).\n\\]\nApplying Rolle's theorem to the right member of this identity we see that there is a zero of \\((\\boldsymbol{chameleon}- riverstone)\\, paintbrush\\) between any two consecutive zeros of \\( paintbrush \\). Therefore there are at least \\( blueberry \\) distinct zeros on \\([sunshine, raincloud]\\).\n\nWe can now prove the result stated in the problem by induction on \\( windchime \\). If \\( windchime=1 \\), this is just the lemma with \\( blueberry=1 \\).\n\nAssume the result is true for \\( windchime= stonewall \\). Suppose \\( dreamcatch \\) has degree \\( stonewall+1 \\) and that \\( paintbrush \\) is \\( stonewall+1 \\) times differentiable and has \\( stonewall+2 \\) distinct zeros on \\([sunshine, raincloud]\\). Since \\( dreamcatch \\) has all real roots, we can write \\( dreamcatch(tapestry)= horseshoe(tapestry)(tapestry- riverstone) \\), where \\( riverstone \\) is real and \\( horseshoe \\) is a polynomial of degree \\( stonewall \\) with all real roots. Then \\( lighthouse=(chameleon- riverstone)\\, paintbrush \\) is \\( stonewall \\) times differentiable on \\([sunshine, raincloud]\\) and has at least \\( stonewall+1 \\) distinct zeros on \\([sunshine, raincloud]\\), by the lemma with \\( blueberry= stonewall+1 \\). Hence by the inductive hypothesis \\( horseshoe(chameleon)\\, lighthouse \\) has at least one zero on \\([sunshine, raincloud]\\). But\n\\[\nhorseshoe(chameleon)\\, lighthouse = horseshoe(chameleon)(chameleon- riverstone)\\, paintbrush = dreamcatch(chameleon)\\, paintbrush.\n\\]\nThus the result is true for \\( windchime= stonewall+1 \\). This completes the induction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "z": "anchoredpoint",
+        "n": "continuum",
+        "m": "fractional",
+        "k": "constant",
+        "f": "scalarvalue",
+        "g": "singlevalue",
+        "Q": "transcend",
+        "a": "rightbound",
+        "b": "leftbound",
+        "P": "exponential",
+        "C_{n-1}": "fluctuate",
+        "C_{0}": "altering",
+        "D": "integralop",
+        "\\lambda": "leafvalue",
+        "\\lambda_{f}": "leafscalar"
+      },
+      "question": "4. Suppose the \\( continuum \\) times differentiable real function \\( scalarvalue(fixedvalue) \\) has at least \\( continuum+1 \\) distinct zeros in the closed interval \\( [rightbound, leftbound] \\) and that the polynomial \\( exponential(anchoredpoint) \\equiv anchoredpoint^{\\prime \\prime} +fluctuate anchoredpoint^{continuum-1}+\\cdots+altering \\) has only real zeros. Show that ( \\( integralop^{continuum}+fluctuate integralop^{continuum-1} \\) \\( \\left.+\\cdots+altering\\right) scalarvalue(fixedvalue) \\) has at least one zero in the interval \\( [rightbound, leftbound] \\) where \\( integralop^{continuum} \\) denotes, as usual, \\( d^{continuum} / d fixedvalue^{continuum} \\).",
+      "solution": "Solution. We first prove a lemma.\nLemma. Suppose \\( scalarvalue \\) is differentiable on \\( [rightbound, leftbound] \\) and has \\( fractional+1 \\) distinct zeros there. Then for any real number \\( leafvalue,(integralop-leafvalue) scalarvalue \\) has at least \\( fractional \\) distinct zeros on \\( [rightbound, leftbound] \\).\n\nProof. Consider the identity\n\\[\n(integralop-leafvalue) scalarvalue(fixedvalue)=e^{leafvalue^{fixedvalue}} \\boldsymbol{integralop}\\left(e^{-leafscalar} scalarvalue(fixedvalue)\\right) .\n\\]\n\nApplying Rolle's theorem to the right member of this identity we see that there is a zero of \\( (\\boldsymbol{integralop}-leafvalue) scalarvalue \\) between any two consecutive zeros of \\( scalarvalue \\). Therefore there are at least \\( fractional \\) distinct zeros on \\( [rightbound, leftbound] \\).\n\nWe can now prove the result stated in the problem by induction on \\( continuum \\). If \\( continuum=1 \\), this is just the lemma with \\( fractional=1 \\).\nAssume the result is true for \\( continuum=constant \\). Suppose \\( exponential \\) has degree \\( constant+1 \\) and that \\( scalarvalue \\) is \\( constant+1 \\) times differentiable and has \\( constant+2 \\) distinct zeros on \\( [rightbound, leftbound] \\). Since \\( exponential \\) has all real roots, we can write \\( exponential(anchoredpoint)=transcend(anchoredpoint)(anchoredpoint-leafvalue) \\), where \\( leafvalue \\) is real and \\( transcend \\) is a polynomial of degree \\( constant \\) with all real roots. Then \\( singlevalue= \\) \\( (integralop-leafvalue) scalarvalue \\) is \\( constant \\) times differentiable on \\( [rightbound, leftbound] \\) and has at least \\( constant+1 \\) distinct zeros on \\( [rightbound, leftbound] \\), by the lemma with \\( fractional=constant+1 \\). Hence by the inductive hypothesis \\( transcend(integralop) singlevalue \\) has at least one zero on \\( [rightbound, leftbound] \\). But\n\\[\ntranscend(integralop) singlevalue=transcend(integralop)(integralop-leafvalue) scalarvalue=exponential(integralop) scalarvalue .\n\\]\n\nThus the result is true for \\( continuum=constant+1 \\). This completes the induction."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "z": "hjgrksla",
+        "n": "pldmcvqe",
+        "m": "sknqhruf",
+        "k": "bwxgytvo",
+        "f": "drclsmke",
+        "g": "zoutnkhr",
+        "Q": "nylasqpe",
+        "a": "ybpzkamn",
+        "b": "wgfrdqls",
+        "P": "mxkvtsea",
+        "C_n-1": "fcqhrlma",
+        "C_0": "zjmxdtkw",
+        "D": "vxgprlne",
+        "\\lambda": "sorbhwqe",
+        "\\lambda_f": "powltrsa"
+      },
+      "question": "4. Suppose the \\( pldmcvqe \\) times differentiable real function \\( drclsmke(qzxwvtnp) \\) has at least \\( pldmcvqe+1 \\) distinct zeros in the closed interval \\( [ybpzkamn, wgfrdqls] \\) and that the polynomial \\( mxkvtsea(hjgrksla) \\equiv hjgrksla^{\\prime \\prime} \\) \\( +fcqhrlma hjgrksla^{pldmcvqe-1}+\\cdots+zjmxdtkw \\) has only real zeros. Show that ( \\( vxgprlne^{pldmcvqe}+fcqhrlma vxgprlne^{pldmcvqe-1} \\) \\( \\left.+\\cdots+zjmxdtkw\\right) drclsmke(qzxwvtnp) \\) has at least one zero in the interval \\( [ybpzkamn, wgfrdqls] \\) where \\( vxgprlne^{pldmcvqe} \\) denotes, as usual, \\( d^{pldmcvqe} / d qzxwvtnp^{pldmcvqe} \\).",
+      "solution": "Solution. We first prove a lemma.\nLemma. Suppose \\( drclsmke \\) is differentiable on \\( [ybpzkamn, wgfrdqls] \\) and has \\( sknqhruf+1 \\) distinct zeros there. Then for any real number \\( sorbhwqe,(vxgprlne-sorbhwqe) drclsmke \\) has at least \\( sknqhruf \\) distinct zeros on \\( [ybpzkamn, wgfrdqls] \\).\n\nProof. Consider the identity\n\\[\n(vxgprlne-sorbhwqe) drclsmke(qzxwvtnp)=e^{sorbhwqe^{qzxwvtnp}} \\boldsymbol{vxgprlne}\\left(e^{-powltrsa} drclsmke(qzxwvtnp)\\right) .\n\\]\n\nApplying Rolle's theorem to the right member of this identity we see that there is a zero of \\( (\\boldsymbol{vxgprlne}-sorbhwqe) drclsmke \\) between any two consecutive zeros of \\( drclsmke \\). Therefore there are at least \\( sknqhruf \\) distinct zeros on \\( [ybpzkamn, wgfrdqls] \\).\n\nWe can now prove the result stated in the problem by induction on \\( pldmcvqe \\). If \\( pldmcvqe=1 \\), this is just the lemma with \\( sknqhruf=1 \\).\nAssume the result is true for \\( pldmcvqe=bwxgytvo \\). Suppose \\( mxkvtsea \\) has degree \\( bwxgytvo+1 \\) and that \\( drclsmke \\) is \\( bwxgytvo+1 \\) times differentiable and has \\( bwxgytvo+2 \\) distinct zeros on \\( [ybpzkamn, wgfrdqls] \\). Since \\( mxkvtsea \\) has all real roots, we can write \\( mxkvtsea(hjgrksla)=nylasqpe(hjgrksla)(hjgrksla-sorbhwqe) \\), where \\( sorbhwqe \\) is real and \\( nylasqpe \\) is a polynomial of degree \\( bwxgytvo \\) with all real roots. Then \\( zoutnkhr= (vxgprlne-sorbhwqe) drclsmke \\) is \\( bwxgytvo \\) times differentiable on \\( [ybpzkamn, wgfrdqls] \\) and has at least \\( bwxgytvo+1 \\) distinct zeros on \\( [ybpzkamn, wgfrdqls] \\), by the lemma with \\( sknqhruf=bwxgytvo+1 \\). Hence by the inductive hypothesis \\( nylasqpe(vxgprlne) zoutnkhr \\) has at least one zero on \\( [ybpzkamn, wgfrdqls] \\). But\n\\[\nnylasqpe(vxgprlne) zoutnkhr=nylasqpe(vxgprlne)(vxgprlne-sorbhwqe) drclsmke=mxkvtsea(vxgprlne) drclsmke .\n\\]\n\nThus the result is true for \\( pldmcvqe=bwxgytvo+1 \\). This completes the induction."
+    },
+    "kernel_variant": {
+      "question": "Let n be a positive integer and let  \n f:[-2,5]\\to \\mathbb{R} be n-times continuously differentiable.  \nAssume that f possesses at least n+1 distinct zeros in the interval [-2,5].\n\nFor every j=0,1,\\ldots ,n-1 let  \n\n w_j:[-2,5]\\to (0,\\infty ) be a C^1-function (so each w_j is positive and continuously differentiable) and let \\lambda _j\\in \\mathbb{R}.  \n\nDefine the variable-coefficient linear differential operator  \n\n T:= (w_{n-1}(x)D-\\lambda _{n-1}) (w_{n-2}(x)D-\\lambda _{n-2})\\cdots (w_1(x)D-\\lambda _1)(w_0(x)D-\\lambda _0),  \n\nwhere D denotes d/dx and the factors are applied from right to left.  \n\nProve that the function  \n\n (Tf)(x)= (w_{n-1}(x)D-\\lambda _{n-1})(w_{n-2}(x)D-\\lambda _{n-2})\\cdots (w_0(x)D-\\lambda _0)f(x)  \n\nvanishes at some point of the interval [-2,5].\n\n",
+      "solution": "We begin by extending the classical ``Rolle-type'' lemma used in the original problem to first-order operators with variable coefficients.\n\nLemma 1 (variable-coefficient Rolle lemma).  \nLet h:[a,b]\\to (0,\\infty ) be C^1 and let \\lambda \\in \\mathbb{R}.  \nSuppose g\\in C^1([a,b]) has at least k+1 distinct zeros in [a,b] (k\\geq 1).  \nThen the function  \n\n L_g(x):=(h(x)D-\\lambda )g(x)=h(x)g'(x)-\\lambda g(x)  \n\nhas at least k distinct zeros in [a,b].\n\nProof.  \nPut  \n F(x):=e^{-\\lambda \\int _{x_0}^{x}\\frac{dt}{h(t)}}g(x),  \n\nwhere x_0 is any point in [a,b].  Because h>0 and h is C^1, the indefinite integral in the exponent is C^1 and the exponential factor is positive and C^1.  A direct calculation gives\n\n (hD-\\lambda )g = h(x)e^{\\lambda \\int  \\frac{dt}{h}} \\cdot  D( e^{-\\lambda \\int \\frac{dt}{h}} g ).     (\\star )\n\nThus L_g(x)=h(x)\\cdot e^{\\lambda \\int }\\,F'(x).  The prefactor h(x)e^{\\lambda \\int }>0, so the zeros of L_g are exactly the zeros of F'.  \nBecause multiplication by the positive factor e^{-\\lambda \\int }\\! does not create or destroy zeros, F itself has at least k+1 distinct zeros, hence by Rolle's theorem F' has at least k distinct zeros.  Therefore L_g possesses at least k distinct zeros in [a,b]. \\blacksquare \n\nWe now tackle the main theorem by iterating Lemma 1.\n\nStep 1 (initial data).  \nThe hypothesis furnishes n+1 distinct points  \n -2\\leq x_0<x_1<\\cdots <x_n\\leq 5  \nwith f(x_j)=0.\n\nStep 2 (first factor).  \nApply Lemma 1 with h=w_0 and \\lambda =\\lambda _0 to g=f.  \nBecause f has n+1 zeros, the function  \n\n g_1(x):=(w_0(x)D-\\lambda _0)f(x)  \n\nhas at least n distinct zeros in [-2,5].\n\nStep 3 (iterated factors).  \nAssume inductively that after \\ell  factors (0\\leq \\ell \\leq n-1) we have constructed  \n\n g_\\ell (x):=(w_{\\ell -1}(x)D-\\lambda _{\\ell -1})\\cdots (w_0(x)D-\\lambda _0)f(x),\n\nand that g_\\ell  possesses at least n-\\ell +1 distinct zeros.  \nApply Lemma 1 with h=w_\\ell  and \\lambda =\\lambda _\\ell  to g=g_\\ell .  We obtain a function  \n\n g_{\\ell +1}(x):=(w_\\ell (x)D-\\lambda _\\ell )g_\\ell (x)\n\nthat has at least n-\\ell  distinct zeros.\n\nStep 4 (completion).  \nAfter \\ell =n iterations we arrive at  \n\n g_n(x)=T f(x)\n\nand, by the inductive count, g_n has at least n-n=1 distinct zero in [-2,5].  Hence (Tf)(x)=0 for at least one x\\in [-2,5], establishing the claim. \\blacksquare \n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.479196",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Variable Coefficients.  \n   The original problem deals with constant–coefficient operators P(D); here each first–order factor h(x)D−λ contains an arbitrary positive C¹ function h(x), so the final operator no longer commutes with D and cannot be treated as a mere polynomial in D.\n\n2. Non-commuting Factors.  \n   The composition of variable-coefficient factors depends on their order; one cannot diagonalize or factor the whole operator globally.  Each step requires its own integrating factor and fresh analysis.\n\n3. New Integrating Factors.  \n   To generalize the key Rolle lemma, one must invent and manipulate the variable integrating factor  \n exp(−λ∫dx/h(x)),  \n   which introduces non-trivial calculus (line integrals, positivity) absent from the constant-coefficient setting.\n\n4. Iterated Application of the Lemma.  \n   The proof now involves an n-step induction, each step using a different weight h_j(x); keeping track of the number of remaining zeros through these iterations is more delicate than in the constant-coefficient case.\n\n5. Broader Theoretical Context.  \n   The problem touches on hyperbolic first-order operators, integrating factors, and qualitative zero-distribution arguments for non-self-adjoint operators—concepts that go beyond the classical PDE/ODE material usually tested in contests.\n\nTogether these enhancements raise the technical barrier well above that of the original problem while preserving its core idea: many zeros of the original function force a zero of a higher-order differential expression."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let n be a positive integer and let  \n f:[-2,5]\\to \\mathbb{R} be n-times continuously differentiable.  \nAssume that f possesses at least n+1 distinct zeros in the interval [-2,5].\n\nFor every j=0,1,\\ldots ,n-1 let  \n\n w_j:[-2,5]\\to (0,\\infty ) be a C^1-function (so each w_j is positive and continuously differentiable) and let \\lambda _j\\in \\mathbb{R}.  \n\nDefine the variable-coefficient linear differential operator  \n\n T:= (w_{n-1}(x)D-\\lambda _{n-1}) (w_{n-2}(x)D-\\lambda _{n-2})\\cdots (w_1(x)D-\\lambda _1)(w_0(x)D-\\lambda _0),  \n\nwhere D denotes d/dx and the factors are applied from right to left.  \n\nProve that the function  \n\n (Tf)(x)= (w_{n-1}(x)D-\\lambda _{n-1})(w_{n-2}(x)D-\\lambda _{n-2})\\cdots (w_0(x)D-\\lambda _0)f(x)  \n\nvanishes at some point of the interval [-2,5].\n\n",
+      "solution": "We begin by extending the classical ``Rolle-type'' lemma used in the original problem to first-order operators with variable coefficients.\n\nLemma 1 (variable-coefficient Rolle lemma).  \nLet h:[a,b]\\to (0,\\infty ) be C^1 and let \\lambda \\in \\mathbb{R}.  \nSuppose g\\in C^1([a,b]) has at least k+1 distinct zeros in [a,b] (k\\geq 1).  \nThen the function  \n\n L_g(x):=(h(x)D-\\lambda )g(x)=h(x)g'(x)-\\lambda g(x)  \n\nhas at least k distinct zeros in [a,b].\n\nProof.  \nPut  \n F(x):=e^{-\\lambda \\int _{x_0}^{x}\\frac{dt}{h(t)}}g(x),  \n\nwhere x_0 is any point in [a,b].  Because h>0 and h is C^1, the indefinite integral in the exponent is C^1 and the exponential factor is positive and C^1.  A direct calculation gives\n\n (hD-\\lambda )g = h(x)e^{\\lambda \\int  \\frac{dt}{h}} \\cdot  D( e^{-\\lambda \\int \\frac{dt}{h}} g ).     (\\star )\n\nThus L_g(x)=h(x)\\cdot e^{\\lambda \\int }\\,F'(x).  The prefactor h(x)e^{\\lambda \\int }>0, so the zeros of L_g are exactly the zeros of F'.  \nBecause multiplication by the positive factor e^{-\\lambda \\int }\\! does not create or destroy zeros, F itself has at least k+1 distinct zeros, hence by Rolle's theorem F' has at least k distinct zeros.  Therefore L_g possesses at least k distinct zeros in [a,b]. \\blacksquare \n\nWe now tackle the main theorem by iterating Lemma 1.\n\nStep 1 (initial data).  \nThe hypothesis furnishes n+1 distinct points  \n -2\\leq x_0<x_1<\\cdots <x_n\\leq 5  \nwith f(x_j)=0.\n\nStep 2 (first factor).  \nApply Lemma 1 with h=w_0 and \\lambda =\\lambda _0 to g=f.  \nBecause f has n+1 zeros, the function  \n\n g_1(x):=(w_0(x)D-\\lambda _0)f(x)  \n\nhas at least n distinct zeros in [-2,5].\n\nStep 3 (iterated factors).  \nAssume inductively that after \\ell  factors (0\\leq \\ell \\leq n-1) we have constructed  \n\n g_\\ell (x):=(w_{\\ell -1}(x)D-\\lambda _{\\ell -1})\\cdots (w_0(x)D-\\lambda _0)f(x),\n\nand that g_\\ell  possesses at least n-\\ell +1 distinct zeros.  \nApply Lemma 1 with h=w_\\ell  and \\lambda =\\lambda _\\ell  to g=g_\\ell .  We obtain a function  \n\n g_{\\ell +1}(x):=(w_\\ell (x)D-\\lambda _\\ell )g_\\ell (x)\n\nthat has at least n-\\ell  distinct zeros.\n\nStep 4 (completion).  \nAfter \\ell =n iterations we arrive at  \n\n g_n(x)=T f(x)\n\nand, by the inductive count, g_n has at least n-n=1 distinct zero in [-2,5].  Hence (Tf)(x)=0 for at least one x\\in [-2,5], establishing the claim. \\blacksquare \n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.402161",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Variable Coefficients.  \n   The original problem deals with constant–coefficient operators P(D); here each first–order factor h(x)D−λ contains an arbitrary positive C¹ function h(x), so the final operator no longer commutes with D and cannot be treated as a mere polynomial in D.\n\n2. Non-commuting Factors.  \n   The composition of variable-coefficient factors depends on their order; one cannot diagonalize or factor the whole operator globally.  Each step requires its own integrating factor and fresh analysis.\n\n3. New Integrating Factors.  \n   To generalize the key Rolle lemma, one must invent and manipulate the variable integrating factor  \n exp(−λ∫dx/h(x)),  \n   which introduces non-trivial calculus (line integrals, positivity) absent from the constant-coefficient setting.\n\n4. Iterated Application of the Lemma.  \n   The proof now involves an n-step induction, each step using a different weight h_j(x); keeping track of the number of remaining zeros through these iterations is more delicate than in the constant-coefficient case.\n\n5. Broader Theoretical Context.  \n   The problem touches on hyperbolic first-order operators, integrating factors, and qualitative zero-distribution arguments for non-self-adjoint operators—concepts that go beyond the classical PDE/ODE material usually tested in contests.\n\nTogether these enhancements raise the technical barrier well above that of the original problem while preserving its core idea: many zeros of the original function force a zero of a higher-order differential expression."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

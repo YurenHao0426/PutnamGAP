@@ -1,0 +1,132 @@
+{
+  "index": "1997-B-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "For each positive integer $n$, write the sum $\\sum_{m=1}^n\n1/m$ in the form $p_n/q_n$, where $p_n$ and $q_n$ are relatively prime\npositive integers.  Determine all $n$ such that 5 does not divide $q_n$.",
+  "solution": "The only such $n$ are the numbers 1--4, 20--24, 100--104, and\n120--124.  For the proof let\n\\[H_n=\\sum_{m=1}^n \\frac{1}{m}\\]\nand introduce the auxiliary function\n\\[I_n=\\sum_{1\\leq m\\leq n, (m,5)=1} \\frac{1}{m}.\\]\nIt is immediate (e.g., by induction) that\n$I_n\\equiv 1,-1,1,0,0$ (mod $5$) for $n\\equiv  1,2,3,4,5$ (mod 5)\nrespectively, and moreover, we have the equality\n\\[\\label{(*)}\nH_n= \\sum_{m=0}^k \\frac{1}{5^m} I_{\\lfloor n/5^m \\rfloor},\\]\nwhere $k=k(n)$ denotes the largest integer such that $5^k\\leq n$.\nWe wish to determine those $n$ such that the above sum has nonnegative\n5--valuation.  (By the 5--valuation of a number $a$ we mean\nthe largest integer $v$ such that $a/5^v$ is an integer.)\n\nIf $\\lfloor n/5^k \\rfloor\\leq 3$, then the last term in the above sum\nhas 5--valuation $-k$, since $I_1$, $I_2$, $I_3$ each have valuation\n0; on the other hand, all other terms must have 5--valuation strictly\nlarger than $-k$.  It follows that $H_n$ has 5--valuation exactly\n$-k$; in particular, $H_n$ has nonnegative 5--valuation in this case\nif and only if $k=0$, i.e., $n=1$, 2, or 3.\n\nSuppose now that $\\lfloor n/5^k \\rfloor=4$.  Then we must also have\n$20\\leq \\lfloor n/5^{k-1}\\rfloor \\leq 24$.  The former condition\nimplies that the last term of the above sum is $I_4/5^k=1/(12\\cdot\n5^{k-2})$, which has 5--valuation $-(k-2)$.\n\nIt is clear that $I_{20}\\equiv I_{24}\\equiv 0$ (mod 25); hence if $\\lfloor\nn/5^{k-1}\\rfloor$ equals 20 or 24, then the second--to--last term of the\nabove sum (if it exists) has valuation at least $-(k-3)$.  The\nthird--to--last term (if it exists) is of the form $I_r/5^{k-2}$, so that\nthe sum of the last term and the third to last term takes the form\n$(I_r+1/12)/5^{k-2}$.  Since $I_r$ can be congruent only to 0,1, or -1\n(mod 5), and $1/12\\equiv 3$ (mod 5), we conclude that the sum of the\nlast term and third--to--last term has valuation $-(k-2)$, while all other\nterms have valuation strictly higher.  Hence $H_n$ has nonnegative\n5--valuation in this case only when $k\\leq 2$, leading to the values\n$n=4$ (arising from $k=0$), 20,24 (arising from $k=1$ and $\\lfloor\nn/5^{k-1}\\rfloor = 20$ and 24 resp.), 101, 102, 103, and 104 (arising\nfrom $k=2$, $\\lfloor n/5^{k-1}\\rfloor = 20$) and 120, 121, 122, 123,\nand 124 (arising from $k=2$, $\\lfloor n/5^{k-1}\\rfloor=24$).\n\nFinally, suppose $\\lfloor n/5^k \\rfloor=4$ and $\\lfloor n/5^{k-1}\n\\rfloor=21$, 22, or 23.  Then as before, the first condition\nimplies that the last term of the sum in (*) has valuation $-(k-2)$,\nwhile the second condition implies that the second--to--last term in the\nsame sum has valuation $-(k-1)$.  Hence all terms in the sum (*) have\n5--valuation strictly higher than $-(k-1)$, except for the\nsecond--to--last term, and therefore $H_n$ has 5--valuation $-(k-1)$ in\nthis case.  In particular, $H_n$ is integral (mod 5) in this case if and\nonly if  $k\\leq 1$, which gives the additional values $n=21$, 22, and 23.",
+  "vars": [
+    "n",
+    "m",
+    "p_n",
+    "q_n",
+    "H_n",
+    "I_n",
+    "k",
+    "v",
+    "a",
+    "r"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexpositive",
+        "m": "summationindex",
+        "p_n": "numeratorfraction",
+        "q_n": "denominatorfraction",
+        "H_n": "harmonicpartial",
+        "I_n": "coprimeharmonic",
+        "k": "powerindex",
+        "v": "valuationpower",
+        "a": "generalnumber",
+        "r": "residualindex"
+      },
+      "question": "For each positive integer $indexpositive$, write the sum $\\sum_{summationindex=1}^{indexpositive} 1/summationindex$ in the form $numeratorfraction/denominatorfraction$, where $numeratorfraction$ and $denominatorfraction$ are relatively prime positive integers.  Determine all $indexpositive$ such that 5 does not divide $denominatorfraction$.",
+      "solution": "The only such $indexpositive$ are the numbers 1--4, 20--24, 100--104, and\n120--124.  For the proof let\n\\[harmonicpartial=\\sum_{summationindex=1}^{indexpositive} \\frac{1}{summationindex}\\]\nand introduce the auxiliary function\n\\[coprimeharmonic=\\sum_{1\\leq summationindex\\leq indexpositive, (summationindex,5)=1} \\frac{1}{summationindex}.\\]\nIt is immediate (e.g., by induction) that\n$coprimeharmonic\\equiv 1,-1,1,0,0$ (mod $5$) for $indexpositive\\equiv  1,2,3,4,5$ (mod 5)\nrespectively, and moreover, we have the equality\n\\[\\label{(*)}\nharmonicpartial= \\sum_{summationindex=0}^{powerindex} \\frac{1}{5^{summationindex}} I_{\\lfloor indexpositive/5^{summationindex} \\rfloor},\\]\nwhere $powerindex=powerindex(indexpositive)$ denotes the largest integer such that $5^{powerindex}\\leq indexpositive$.\nWe wish to determine those $indexpositive$ such that the above sum has nonnegative\n5--valuation.  (By the 5--valuation of a number $generalnumber$ we mean\nthe largest integer $valuationpower$ such that $generalnumber/5^{valuationpower}$ is an integer.)\n\nIf $\\lfloor indexpositive/5^{powerindex} \\rfloor\\leq 3$, then the last term in the above sum\nhas 5--valuation $-powerindex$, since $I_1$, $I_2$, $I_3$ each have valuation\n0; on the other hand, all other terms must have 5--valuation strictly\nlarger than $-powerindex$.  It follows that $harmonicpartial$ has 5--valuation exactly\n$-powerindex$; in particular, $harmonicpartial$ has nonnegative 5--valuation in this case\nif and only if $powerindex=0$, i.e., $indexpositive=1$, 2, or 3.\n\nSuppose now that $\\lfloor indexpositive/5^{powerindex} \\rfloor=4$.  Then we must also have\n$20\\leq \\lfloor indexpositive/5^{powerindex-1}\\rfloor \\leq 24$.  The former condition\nimplies that the last term of the above sum is $I_4/5^{powerindex}=1/(12\\cdot\n5^{powerindex-2})$, which has 5--valuation $-(powerindex-2)$.\n\nIt is clear that $I_{20}\\equiv I_{24}\\equiv 0$ (mod 25); hence if $\\lfloor\nindexpositive/5^{powerindex-1}\\rfloor$ equals 20 or 24, then the second--to--last term of the\nabove sum (if it exists) has valuation at least $-(powerindex-3)$.  The\nthird--to--last term (if it exists) is of the form $I_{residualindex}/5^{powerindex-2}$, so that\nthe sum of the last term and the third to last term takes the form\n$(I_{residualindex}+1/12)/5^{powerindex-2}$.  Since $I_{residualindex}$ can be congruent only to 0,1, or -1\n(mod 5), and $1/12\\equiv 3$ (mod 5), we conclude that the sum of the\nlast term and third--to--last term has valuation $-(powerindex-2)$, while all other\nterms have valuation strictly higher.  Hence $harmonicpartial$ has nonnegative\n5--valuation in this case only when $powerindex\\leq 2$, leading to the values\n$indexpositive=4$ (arising from $powerindex=0$), 20,24 (arising from $powerindex=1$ and $\\lfloor\nindexpositive/5^{powerindex-1}\\rfloor = 20$ and 24 resp.), 101, 102, 103, and 104 (arising\nfrom $powerindex=2$, $\\lfloor indexpositive/5^{powerindex-1}\\rfloor = 20$) and 120, 121, 122, 123,\nand 124 (arising from $powerindex=2$, $\\lfloor indexpositive/5^{powerindex-1}\\rfloor=24$).\n\nFinally, suppose $\\lfloor indexpositive/5^{powerindex} \\rfloor=4$ and $\\lfloor indexpositive/5^{powerindex-1}\n\\rfloor=21$, 22, or 23.  Then as before, the first condition\nimplies that the last term of the sum in (*) has valuation $-(powerindex-2)$,\nwhile the second condition implies that the second--to--last term in the\nsame sum has valuation $-(powerindex-1)$.  Hence all terms in the sum (*) have\n5--valuation strictly higher than $-(powerindex-1)$, except for the\nsecond--to--last term, and therefore $harmonicpartial$ has 5--valuation $-(powerindex-1)$ in\nthis case.  In particular, $harmonicpartial$ is integral (mod 5) in this case if and\nonly if  $powerindex\\leq 1$, which gives the additional values $indexpositive=21$, 22, and 23."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "m": "sailboat",
+        "p_n": "caterpillar",
+        "q_n": "dragonfly",
+        "H_n": "cloudberry",
+        "I_n": "rattlesnake",
+        "k": "marshmallow",
+        "v": "chocolate",
+        "a": "watermelon",
+        "r": "cheesecake"
+      },
+      "question": "For each positive integer $sunflower$, write the sum $\\sum_{sailboat=1}^{sunflower}\n1/sailboat$ in the form $caterpillar/dragonfly$, where $caterpillar$ and $dragonfly$ are relatively prime\npositive integers.  Determine all $sunflower$ such that 5 does not divide $dragonfly$.",
+      "solution": "The only such $sunflower$ are the numbers 1--4, 20--24, 100--104, and\n120--124.  For the proof let\n\\[cloudberry=\\sum_{sailboat=1}^{sunflower} \\frac{1}{sailboat}\\]\nand introduce the auxiliary function\n\\[rattlesnake=\\sum_{1\\leq sailboat\\leq sunflower, (sailboat,5)=1} \\frac{1}{sailboat}.\\]\nIt is immediate (e.g., by induction) that\n$rattlesnake\\equiv 1,-1,1,0,0$ (mod $5$) for $sunflower\\equiv  1,2,3,4,5$ (mod 5)\nrespectively, and moreover, we have the equality\n\\[\\label{(*)}\ncloudberry= \\sum_{sailboat=0}^{marshmallow} \\frac{1}{5^{sailboat}} rattlesnake_{\\lfloor sunflower/5^{sailboat} \\rfloor},\\]\nwhere $marshmallow=marshmallow(sunflower)$ denotes the largest integer such that $5^{marshmallow}\\leq sunflower$.\nWe wish to determine those $sunflower$ such that the above sum has nonnegative\n5--valuation.  (By the 5--valuation of a number $watermelon$ we mean\nthe largest integer $chocolate$ such that $watermelon/5^{chocolate}$ is an integer.)\n\nIf $\\lfloor sunflower/5^{marshmallow} \\rfloor\\leq 3$, then the last term in the above sum\nhas 5--valuation $-marshmallow$, since $rattlesnake_1$, $rattlesnake_2$, $rattlesnake_3$ each have valuation\n0; on the other hand, all other terms must have 5--valuation strictly\nlarger than $-marshmallow$.  It follows that $cloudberry$ has 5--valuation exactly\n$-marshmallow$; in particular, $cloudberry$ has nonnegative 5--valuation in this case\nif and only if $marshmallow=0$, i.e., $sunflower=1$, 2, or 3.\n\nSuppose now that $\\lfloor sunflower/5^{marshmallow} \\rfloor=4$.  Then we must also have\n$20\\leq \\lfloor sunflower/5^{marshmallow-1}\\rfloor \\leq 24$.  The former condition\nimplies that the last term of the above sum is $rattlesnake_4/5^{marshmallow}=1/(12\\cdot\n5^{marshmallow-2})$, which has 5--valuation $-(marshmallow-2)$.\n\nIt is clear that $rattlesnake_{20}\\equiv rattlesnake_{24}\\equiv 0$ (mod 25); hence if $\\lfloor\nsunflower/5^{marshmallow-1}\\rfloor$ equals 20 or 24, then the second--to--last term of the\nabove sum (if it exists) has valuation at least $-(marshmallow-3)$.  The\nthird--to--last term (if it exists) is of the form $rattlesnake_{cheesecake}/5^{marshmallow-2}$, so that\nthe sum of the last term and the third to last term takes the form\n$(rattlesnake_{cheesecake}+1/12)/5^{marshmallow-2}$.  Since $rattlesnake_{cheesecake}$ can be congruent only to 0,1, or -1\n(mod 5), and $1/12\\equiv 3$ (mod 5), we conclude that the sum of the\nlast term and third--to--last term has valuation $-(marshmallow-2)$, while all other\nterms have valuation strictly higher.  Hence $cloudberry$ has nonnegative\n5--valuation in this case only when $marshmallow\\leq 2$, leading to the values\n$sunflower=4$ (arising from $marshmallow=0$), 20,24 (arising from $marshmallow=1$ and $\\lfloor\nsunflower/5^{marshmallow-1}\\rfloor = 20$ and 24 resp.), 101, 102, 103, and 104 (arising\nfrom $marshmallow=2$, $\\lfloor sunflower/5^{marshmallow-1}\\rfloor = 20$) and 120, 121, 122, 123,\nand 124 (arising from $marshmallow=2$, $\\lfloor sunflower/5^{marshmallow-1}\\rfloor=24$).\n\nFinally, suppose $\\lfloor sunflower/5^{marshmallow} \\rfloor=4$ and $\\lfloor sunflower/5^{marshmallow-1}\n\\rfloor=21$, 22, or 23.  Then as before, the first condition\nimplies that the last term of the sum in (*) has valuation $-(marshmallow-2)$,\nwhile the second condition implies that the second--to--last term in the\nsame sum has valuation $-(marshmallow-1)$.  Hence all terms in the sum (*) have\n5--valuation strictly higher than $-(marshmallow-1)$, except for the\nsecond--to--last term, and therefore $cloudberry$ has 5--valuation $-(marshmallow-1)$ in\nthis case.  In particular, $cloudberry$ is integral (mod 5) in this case if and\nonly if  $marshmallow\\leq 1$, which gives the additional values $sunflower=21$, 22, and 23."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "boundless",
+        "m": "aggregate",
+        "p_n": "denominatorvalue",
+        "q_n": "numeratorvalue",
+        "H_n": "disharmonicsum",
+        "I_n": "principalfunc",
+        "k": "minimalorder",
+        "v": "devaluation",
+        "a": "voidentity",
+        "r": "irrelevant"
+      },
+      "question": "For each positive integer $boundless$, write the sum $\\sum_{aggregate=1}^{boundless}\n1/aggregate$ in the form $denominatorvalue/numeratorvalue$, where $denominatorvalue$ and $numeratorvalue$ are relatively prime\npositive integers.  Determine all $boundless$ such that 5 does not divide $numeratorvalue$.",
+      "solution": "The only such $boundless$ are the numbers 1--4, 20--24, 100--104, and\n120--124.  For the proof let\n\\[disharmonicsum_{boundless}=\\sum_{aggregate=1}^{boundless} \\frac{1}{aggregate}\\]\nand introduce the auxiliary function\n\\[principalfunc_{boundless}=\\sum_{1\\leq aggregate\\leq boundless, (aggregate,5)=1} \\frac{1}{aggregate}.\\]\nIt is immediate (e.g., by induction) that\n$principalfunc_{boundless}\\equiv 1,-1,1,0,0$ (mod $5$) for $boundless\\equiv  1,2,3,4,5$ (mod 5)\nrespectively, and moreover, we have the equality\n\\[\\label{(*)}\ndisharmonicsum_{boundless}= \\sum_{aggregate=0}^{minimalorder} \\frac{1}{5^{aggregate}} principalfunc_{\\lfloor boundless/5^{aggregate} \\rfloor},\\]\nwhere $minimalorder=minimalorder(boundless)$ denotes the largest integer such that $5^{minimalorder}\\leq boundless$.\nWe wish to determine those $boundless$ such that the above sum has nonnegative\n5--valuation.  (By the 5--valuation of a number $voidentity$ we mean\nthe largest integer $devaluation$ such that $voidentity/5^{devaluation}$ is an integer.)\n\nIf $\\lfloor boundless/5^{minimalorder} \\rfloor\\leq 3$, then the last term in the above sum\nhas 5--valuation $-minimalorder$, since $principalfunc_1$, $principalfunc_2$, $principalfunc_3$ each have valuation\n0; on the other hand, all other terms must have 5--valuation strictly\nlarger than $-minimalorder$.  It follows that $disharmonicsum_{boundless}$ has 5--valuation exactly\n$-minimalorder$; in particular, $disharmonicsum_{boundless}$ has nonnegative 5--valuation in this case\nif and only if $minimalorder=0$, i.e., $boundless=1$, 2, or 3.\n\nSuppose now that $\\lfloor boundless/5^{minimalorder} \\rfloor=4$.  Then we must also have\n$20\\leq \\lfloor boundless/5^{minimalorder-1}\\rfloor \\leq 24$.  The former condition\nimplies that the last term of the above sum is $principalfunc_4/5^{minimalorder}=1/(12\\cdot\n5^{minimalorder-2})$, which has 5--valuation $-(minimalorder-2)$.\n\nIt is clear that $principalfunc_{20}\\equiv principalfunc_{24}\\equiv 0$ (mod 25); hence if $\\lfloor\nboundless/5^{minimalorder-1}\\rfloor$ equals 20 or 24, then the second--to--last term of the\nabove sum (if it exists) has valuation at least $-(minimalorder-3)$.  The\nthird--to--last term (if it exists) is of the form $principalfunc_{irrelevant}/5^{minimalorder-2}$, so that\nthe sum of the last term and the third to last term takes the form\n$(principalfunc_{irrelevant}+1/12)/5^{minimalorder-2}$.  Since $principalfunc_{irrelevant}$ can be congruent only to 0,1, or -1\n(mod 5), and $1/12\\equiv 3$ (mod 5), we conclude that the sum of the\nlast term and third--to--last term has valuation $-(minimalorder-2)$, while all other\nterms have valuation strictly higher.  Hence $disharmonicsum_{boundless}$ has nonnegative\n5--valuation in this case only when $minimalorder\\leq 2$, leading to the values\n$boundless=4$ (arising from $minimalorder=0$), 20,24 (arising from $minimalorder=1$ and $\\lfloor\nboundless/5^{minimalorder-1}\\rfloor = 20$ and 24 resp.), 101, 102, 103, and 104 (arising\nfrom $minimalorder=2$, $\\lfloor boundless/5^{minimalorder-1}\\rfloor = 20$) and 120, 121, 122, 123,\nand 124 (arising from $minimalorder=2$, $\\lfloor boundless/5^{minimalorder-1}\\rfloor=24$).\n\nFinally, suppose $\\lfloor boundless/5^{minimalorder} \\rfloor=4$ and $\\lfloor boundless/5^{minimalorder-1}\n\\rfloor=21$, 22, or 23.  Then as before, the first condition\nimplies that the last term of the sum in (*) has valuation $-(minimalorder-2)$,\nwhile the second condition implies that the second--to--last term in the\nsame sum has valuation $-(minimalorder-1)$.  Hence all terms in the sum (*) have\n5--valuation strictly higher than $-(minimalorder-1)$, except for the\nsecond--to--last term, and therefore $disharmonicsum_{boundless}$ has 5--valuation $-(minimalorder-1)$ in\nthis case.  In particular, $disharmonicsum_{boundless}$ is integral (mod 5) in this case if and\nonly if  $minimalorder\\leq 1$, which gives the additional values $boundless=21$, 22, and 23."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qwplrznf",
+        "m": "xidfuhas",
+        "p_n": "gydmtrce",
+        "q_n": "hrfosplk",
+        "H_n": "xbrnegal",
+        "I_n": "jvcoqmet",
+        "k": "lztnedqw",
+        "v": "ypqmsrli",
+        "a": "zkruhcpe",
+        "r": "sfnlgxod"
+      },
+      "question": "For each positive integer $qwplrznf$, write the sum $\\sum_{xidfuhas=1}^{qwplrznf}\n1/xidfuhas$ in the form $gydmtrce/hrfosplk$, where $gydmtrce$ and $hrfosplk$ are relatively prime\npositive integers.  Determine all $qwplrznf$ such that 5 does not divide $hrfosplk$.",
+      "solution": "The only such $qwplrznf$ are the numbers 1--4, 20--24, 100--104, and\n120--124.  For the proof let\n\\[xbrnegal=\\sum_{xidfuhas=1}^{qwplrznf} \\frac{1}{xidfuhas}\\]\nand introduce the auxiliary function\n\\[jvcoqmet=\\sum_{1\\leq xidfuhas\\leq qwplrznf, (xidfuhas,5)=1} \\frac{1}{xidfuhas}.\\]\nIt is immediate (e.g., by induction) that\n$jvcoqmet\\equiv 1,-1,1,0,0$ (mod $5$) for $qwplrznf\\equiv  1,2,3,4,5$ (mod 5)\nrespectively, and moreover, we have the equality\n\\[\\label{(*)}\nxbrnegal= \\sum_{xidfuhas=0}^{lztnedqw} \\frac{1}{5^{xidfuhas}} jvcoqmet_{\\lfloor qwplrznf/5^{xidfuhas} \\rfloor},\\]\nwhere $lztnedqw=lztnedqw(qwplrznf)$ denotes the largest integer such that $5^{lztnedqw}\\leq qwplrznf$.\nWe wish to determine those $qwplrznf$ such that the above sum has nonnegative\n5--valuation.  (By the 5--valuation of a number $zkruhcpe$ we mean\nthe largest integer $ypqmsrli$ such that $zkruhcpe/5^{ypqmsrli}$ is an integer.)\n\nIf $\\lfloor qwplrznf/5^{lztnedqw} \\rfloor\\leq 3$, then the last term in the above sum\nhas 5--valuation $-lztnedqw$, since $jvcoqmet_1$, $jvcoqmet_2$, $jvcoqmet_3$ each have valuation\n0; on the other hand, all other terms must have 5--valuation strictly\nlarger than $-lztnedqw$.  It follows that $xbrnegal$ has 5--valuation exactly\n$-lztnedqw$; in particular, $xbrnegal$ has nonnegative 5--valuation in this case\nif and only if $lztnedqw=0$, i.e., $qwplrznf=1$, 2, or 3.\n\nSuppose now that $\\lfloor qwplrznf/5^{lztnedqw} \\rfloor=4$.  Then we must also have\n$20\\leq \\lfloor qwplrznf/5^{lztnedqw-1}\\rfloor \\leq 24$.  The former condition\nimplies that the last term of the above sum is $jvcoqmet_4/5^{lztnedqw}=1/(12\\cdot\n5^{lztnedqw-2})$, which has 5--valuation $-(lztnedqw-2)$.\n\nIt is clear that $jvcoqmet_{20}\\equiv jvcoqmet_{24}\\equiv 0$ (mod 25); hence if $\\lfloor\nqwplrznf/5^{lztnedqw-1}\\rfloor$ equals 20 or 24, then the second--to--last term of the\nabove sum (if it exists) has valuation at least $-(lztnedqw-3)$.  The\nthird--to--last term (if it exists) is of the form $jvcoqmet_{sfnlgxod}/5^{lztnedqw-2}$, so that\nthe sum of the last term and the third to last term takes the form\n$(jvcoqmet_{sfnlgxod}+1/12)/5^{lztnedqw-2}$.  Since $jvcoqmet_{sfnlgxod}$ can be congruent only to 0,1, or -1\n(mod 5), and $1/12\\equiv 3$ (mod 5), we conclude that the sum of the\nlast term and third--to--last term has valuation $-(lztnedqw-2)$, while all other\nterms have valuation strictly higher.  Hence $xbrnegal$ has nonnegative\n5--valuation in this case only when $lztnedqw\\leq 2$, leading to the values\n$qwplrznf=4$ (arising from $lztnedqw=0$), 20,24 (arising from $lztnedqw=1$ and $\\lfloor\nqwplrznf/5^{lztnedqw-1}\\rfloor = 20$ and 24 resp.), 101, 102, 103, and 104 (arising\nfrom $lztnedqw=2$, $\\lfloor qwplrznf/5^{lztnedqw-1}\\rfloor = 20$) and 120, 121, 122, 123,\nand 124 (arising from $lztnedqw=2$, $\\lfloor qwplrznf/5^{lztnedqw-1}\\rfloor=24$).\n\nFinally, suppose $\\lfloor qwplrznf/5^{lztnedqw} \\rfloor=4$ and $\\lfloor qwplrznf/5^{lztnedqw-1}\n\\rfloor=21$, 22, or 23.  Then as before, the first condition\nimplies that the last term of the sum in (*) has valuation $-(lztnedqw-2)$,\nwhile the second condition implies that the second--to--last term in the\nsame sum has valuation $-(lztnedqw-1)$.  Hence all terms in the sum (*) have\n5--valuation strictly higher than $-(lztnedqw-1)$, except for the\nsecond--to--last term, and therefore $xbrnegal$ has 5--valuation $-(lztnedqw-1)$ in\nthis case.  In particular, $xbrnegal$ is integral (mod 5) in this case if and\nonly if  $lztnedqw\\leq 1$, which gives the additional values $qwplrznf=21$, 22, and 23."
+    },
+    "kernel_variant": {
+      "question": "For every positive integer $n$ write the harmonic sum\n\\[H_n=\\sum_{m=1}^{n}\\frac1m\\]\nin lowest terms as $H_n=\\dfrac{p_n}{q_n}$ with $\\gcd(p_n,q_n)=1$.  Determine all $n$ for which $7\\nmid q_n$ (i.e. for which the reduced denominator is not divisible by $7$).",
+      "solution": "Let H_n=\\sum _{m=1}^n1/m=p_n/q_n in lowest terms and define\n  I_m=\\sum _{1\\leq k\\leq m,(k,7)=1}1/k.\nA standard block-sum argument shows\n  H_n=\\sum _{j=0}^k I_{\\lfloor n/7^j\\rfloor }/7^j,\nwhere k is the largest integer with 7^k\\leq n.  Hence\n  v_7(H_n)=min_{0\\leq j\\leq k}(v_7(I_{\\lfloor n/7^j\\rfloor })-j).\n\nStep 1.  Compute I_r for 0\\leq r\\leq 6.  The inverses of 1,\\ldots ,6 mod 7 are 1,4,5,2,3,6, so\n  I_0=0 (v_7=\\infty ),\n  I_r\\equiv 0 mod 7 \\Leftrightarrow  r=6,\n  I_r\\equiv nonzero mod 7 for r=1,\\ldots ,5.\nMoreover H_6=49/20 so v_7(I_6)=2 and v_7(I_r)=0 for r=1,\\ldots ,5.\n\nStep 2.  Write n in base 7 as (a_k\\ldots a_0)_7 with a_k\\neq 0.  Then the j=k term has value I_{a_k}/7^k whose valuation is\n  =0-k if 1\\leq a_k\\leq 5;\n  =2-k if a_k=6.\n\n- If a_k\\in {1,\\ldots ,5}, then for k>0 we get v_7(H_n)=-k<0, so the only solutions are k=0, a_0=1,\\ldots ,6, i.e. n=1,\\ldots ,6.\n\n- If a_k=6 then 2-k must be \\geq 0 \\Rightarrow  k\\leq 2.\n\nCase k=1: n=(6a_0)_7=42+a_0, 0\\leq a_0\\leq 6 \\Rightarrow  n=42,\\ldots ,48.  Here v_7(H_n)=min(2-1, v_7(I_n)-0)\\geq 0, so all n=42\\ldots 48 work.\n\nCase k=2: n=(6a_1a_0)_7=6\\cdot 49 +7a_1 + a_0 =294+7a_1+a_0.  The j=2 term gives 2-2=0.  The j=1 term is I_{\\lfloor n/7\\rfloor }=I_{42+a_1} over 7, so its valuation is v_7(I_{42+a_1})-1.  We need v_7(I_{42+a_1})\\geq 1.  Mod 7 one checks I_{42+a_1}\\equiv I_{a_1}, and I_{a_1}\\equiv 0 mod 7 iff a_1\\in {0,6}.  Hence a_1=0 or 6.  Thus\n  a_1=0 \\Rightarrow  n=294,295,\\ldots ,300;\n  a_1=6 \\Rightarrow  n=336,337,\\ldots ,342.\n\nNo higher k is possible.  Therefore the full list of n with 7\\nmid q_n is\n\n  1,2,3,4,5,6;\n  42,43,44,45,46,47,48;\n  294,295,296,297,298,299,300;\n  336,337,338,339,340,341,342.",
+      "_meta": {
+        "core_steps": [
+          "Introduce I_n (sum of reciprocals of numbers ≤ n that are coprime to 5) and record its residues mod 5.",
+          "Write H_n as the base-5 expansion  H_n = Σ_{m=0}^k I_{⌊n/5^m⌋}/5^m.",
+          "Use 5-adic valuation to locate the smallest (i.e. most negative) power of 5 occurring among those summands.",
+          "Split into cases according to the least significant non-multiple-of-5 digit of n in base 5 (⌊n/5^k⌋ = 1,2,3 or =4 with sub-cases for the next digit).",
+          "Identify all n for which the minimal valuation is ≥0, giving the final list."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Chosen prime that the denominator is tested against; whole argument works verbatim for any fixed prime p.",
+            "original": 5
+          },
+          "slot2": {
+            "description": "Residue pattern of I_n modulo the chosen prime (one value for each class mod p).",
+            "original": "[1, −1, 1, 0, 0]  for n ≡ 1,2,3,4,0 (mod 5)"
+          },
+          "slot3": {
+            "description": "Set of base-p digits whose appearance as the last non-zero digit guarantees valuation exactly −k (here {1,2,3}).",
+            "original": "{1, 2, 3}"
+          },
+          "slot4": {
+            "description": "Single critical digit that forces a second-level look-ahead (here digit 4 in base 5).",
+            "original": 4
+          },
+          "slot5": {
+            "description": "Range of two-digit base-p numbers for which the second-level term vanishes mod p², causing the valuation test to pass.",
+            "original": "20–24 (base 5) i.e. numbers whose two least-significant base-5 digits are 4 0,…,4 4"
+          },
+          "slot6": {
+            "description": "Final set of n that survive the valuation test; numerically changes with p but obtained via exactly the same case analysis.",
+            "original": "[1–4, 20–24, 100–104, 120–124]"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

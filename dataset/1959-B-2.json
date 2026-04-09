@@ -1,0 +1,140 @@
+{
+  "index": "1959-B-2",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "2. Let \\( c \\) be a positive real number. Prove that \\( c \\) can be expressed in infinitely many ways as a sum of infinitely many distinct terms selected from the sequence\n\\[\n1 / 10,1 / 20, \\ldots, 1 / 10 n, \\ldots\n\\]",
+  "solution": "Solution. We shall prove a more general result: Suppose \\( c \\) is a positive number and \\( a(1), a(2), \\ldots \\) is any sequence of positive numbers such that \\( a(n) \\rightarrow 0 \\) as \\( n \\rightarrow 0 \\) and\n\\[\n\\sum_{n=1}^{\\infty} a(n)\n\\]\ndiverges. Then there exist infinitely many strictly increasing sequences of positive integers, \\( n_{1}, n_{2}, \\ldots \\) such that\n\\[\n\\sum_{i=1}^{\\infty} a\\left(n_{i}\\right)=c .\n\\]\n\nLet \\( k \\) be any integer such that \\( a(k)<c \\). Define the sequence \\( n_{1}, n_{2}, \\ldots \\) recursively by \\( n_{1}=k, n_{2} \\) is the least integer exceeding \\( n_{1} \\) such that \\( a\\left(n_{1}\\right) \\) \\( +a\\left(n_{2}\\right)<c, \\ldots \\), in general \\( n_{t} \\) is the least integer exceeding \\( n_{t-1} \\) such that\n\\[\na\\left(n_{1}\\right)+a\\left(n_{2}\\right)+\\cdots+a\\left(n_{1-1}\\right)+a\\left(n_{t}\\right)<c .\n\\]\n\nSince \\( a(n) \\rightarrow 0 \\) as \\( n \\rightarrow \\infty \\) there will always be such an integer. Now\n\\[\n\\sum_{i=1}^{\\infty} a\\left(n_{i}\\right)\n\\]\nconverges to a number not greater than \\( c \\) because the terms are positive and \\( c \\) is an upper bound for the partial sums. We shall prove, in fact, that (2) does converge to \\( c \\).\n\nLet \\( \\epsilon>0 \\) be given. Choose \\( p>k \\) so that \\( a(n)<\\epsilon \\) for all \\( n>p \\). Since (1) diverges, there must be infinitely many terms of (1) which do not appear in (2). Suppose that \\( q \\) is an omitted index exceeding \\( p \\); i.e., \\( n_{i} \\neq q \\) for any \\( i \\) and \\( q>p \\). Since \\( n_{1}<q \\) and \\( n_{i} \\rightarrow \\infty \\), we can choose \\( r \\) so that \\( n_{r-1}<q<n_{r} \\). In choosing \\( n_{r} \\) we rejected the choice of \\( q \\), hence\n\\[\na\\left(n_{1}\\right)+a\\left(n_{2}\\right)+\\cdots+a\\left(n_{r-1}\\right)+a(q) \\geq c .\n\\]\n\nTherefore,\n\\[\nc-\\sum_{i=1}^{r-1} a\\left(n_{i}\\right) \\leq a(q)<\\epsilon .\n\\]\n\nIt follows that (2) converges to \\( c \\).\nSince we have constructed a sequence starting with \\( k \\) for any choice of \\( k \\) such that \\( a(k)<c \\), and since there are infinitely many such choices, it follows that there are infinitely many sequences of the required type.\n\nIn the given problem \\( a(n)=1 / 10 n \\), and the above result is applicable since \\( \\Sigma 1 / 10 n \\) diverges.\n\nRemark. We can always represent \\( c \\) in infinitely many ways so that the different representations use disjoint subsets of the original terms. For suppose we have found \\( m \\) representations using all different terms. Removing all terms already used from the \\( a \\) sequence leaves a new sequence tending to zero with divergent sum, and from this sequence we can construct an \\( (m+1) \\) st representation.",
+  "vars": [
+    "n",
+    "i",
+    "t",
+    "r",
+    "n_1",
+    "n_t",
+    "n_t-1"
+  ],
+  "params": [
+    "c",
+    "a",
+    "k",
+    "p",
+    "q",
+    "m",
+    "\\\\epsilon"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "c": "targetval",
+        "a": "sequenceval",
+        "k": "startindex",
+        "p": "smallbound",
+        "q": "omittedindex",
+        "m": "repnumber",
+        "\\epsilon": "epsilonsym",
+        "n": "indexvar",
+        "i": "iterindex",
+        "t": "stepindex",
+        "r": "limitindex",
+        "n_1": "indexone",
+        "n_t": "indextsymbol",
+        "n_t-1": "indextminusone"
+      },
+      "question": "2. Let \\( targetval \\) be a positive real number. Prove that \\( targetval \\) can be expressed in infinitely many ways as a sum of infinitely many distinct terms selected from the sequence\n\\[\n1 / 10,1 / 20, \\ldots, 1 / 10 indexvar, \\ldots\n\\]\n",
+      "solution": "Solution. We shall prove a more general result: Suppose \\( targetval \\) is a positive number and \\( sequenceval(1), sequenceval(2), \\ldots \\) is any sequence of positive numbers such that \\( sequenceval(indexvar) \\rightarrow 0 \\) as \\( indexvar \\rightarrow 0 \\) and\n\\[\n\\sum_{indexvar=1}^{\\infty} sequenceval(indexvar)\n\\]\ndiverges. Then there exist infinitely many strictly increasing sequences of positive integers, \\( indexone, indexvar_{2}, \\ldots \\) such that\n\\[\n\\sum_{iterindex=1}^{\\infty} sequenceval\\left(indexvar_{iterindex}\\right)=targetval .\n\\]\n\nLet \\( startindex \\) be any integer such that \\( sequenceval(startindex)<targetval \\). Define the sequence \\( indexone, indexvar_{2}, \\ldots \\) recursively by \\( indexone=startindex, indexvar_{2} \\) is the least integer exceeding \\( indexone \\) such that \\( sequenceval\\left(indexone\\right)+sequenceval\\left(indexvar_{2}\\right)<targetval, \\ldots \\), in general \\( indexvar_{stepindex} \\) is the least integer exceeding \\( indexvar_{stepindex-1} \\) such that\n\\[\nsequenceval\\left(indexone\\right)+sequenceval\\left(indexvar_{2}\\right)+\\cdots+sequenceval\\left(indexvar_{stepindex-1}\\right)+sequenceval\\left(indexvar_{stepindex}\\right)<targetval .\n\\]\n\nSince \\( sequenceval(indexvar) \\rightarrow 0 \\) as \\( indexvar \\rightarrow \\infty \\) there will always be such an integer. Now\n\\[\n\\sum_{iterindex=1}^{\\infty} sequenceval\\left(indexvar_{iterindex}\\right)\n\\]\nconverges to a number not greater than \\( targetval \\) because the terms are positive and \\( targetval \\) is an upper bound for the partial sums. We shall prove, in fact, that (2) does converge to \\( targetval \\).\n\nLet \\( epsilonsym>0 \\) be given. Choose \\( smallbound>startindex \\) so that \\( sequenceval(indexvar)<epsilonsym \\) for all \\( indexvar>smallbound \\). Since (1) diverges, there must be infinitely many terms of (1) which do not appear in (2). Suppose that \\( omittedindex \\) is an omitted index exceeding \\( smallbound \\); i.e., \\( indexvar_{iterindex} \\neq omittedindex \\) for any \\( iterindex \\) and \\( omittedindex>smallbound \\). Since \\( indexone<omittedindex \\) and \\( indexvar_{iterindex} \\rightarrow \\infty \\), we can choose \\( limitindex \\) so that \\( indexvar_{limitindex-1}<omittedindex<indexvar_{limitindex} \\). In choosing \\( indexvar_{limitindex} \\) we rejected the choice of \\( omittedindex \\), hence\n\\[\nsequenceval\\left(indexone\\right)+sequenceval\\left(indexvar_{2}\\right)+\\cdots+sequenceval\\left(indexvar_{limitindex-1}\\right)+sequenceval(omittedindex) \\geq targetval .\n\\]\n\nTherefore,\n\\[\n targetval-\\sum_{iterindex=1}^{limitindex-1} sequenceval\\left(indexvar_{iterindex}\\right) \\leq sequenceval(omittedindex)<epsilonsym .\n\\]\n\nIt follows that (2) converges to \\( targetval \\).\nSince we have constructed a sequence starting with \\( startindex \\) for any choice of \\( startindex \\) such that \\( sequenceval(startindex)<targetval \\), and since there are infinitely many such choices, it follows that there are infinitely many sequences of the required type.\n\nIn the given problem \\( sequenceval(indexvar)=1 / 10 indexvar \\), and the above result is applicable since \\( \\Sigma 1 / 10 indexvar \\) diverges.\n\nRemark. We can always represent \\( targetval \\) in infinitely many ways so that the different representations use disjoint subsets of the original terms. For suppose we have found \\( repnumber \\) representations using all different terms. Removing all terms already used from the \\( sequenceval \\) sequence leaves a new sequence tending to zero with divergent sum, and from this sequence we can construct an \\( (repnumber+1) \\) st representation."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "willowwind",
+        "i": "silverswan",
+        "t": "hazelgrove",
+        "r": "winterbloom",
+        "n_1": "riverstone",
+        "n_t": "moonshadow",
+        "n_t-1": "dawnchorus",
+        "c": "starlitlane",
+        "a": "ambercastle",
+        "k": "briarpatch",
+        "p": "snowwillow",
+        "q": "crystalpond",
+        "m": "shadowglade",
+        "\\\\epsilon": "lamplighter"
+      },
+      "question": "2. Let \\( starlitlane \\) be a positive real number. Prove that \\( starlitlane \\) can be expressed in infinitely many ways as a sum of infinitely many distinct terms selected from the sequence\n\\[\n1 / 10,1 / 20, \\ldots, 1 / 10 willowwind, \\ldots\n\\]",
+      "solution": "Solution. We shall prove a more general result: Suppose \\( starlitlane \\) is a positive number and \\( ambercastle(1), ambercastle(2), \\ldots \\) is any sequence of positive numbers such that \\( ambercastle(willowwind) \\rightarrow 0 \\) as \\( willowwind \\rightarrow 0 \\) and\n\\[\n\\sum_{willowwind=1}^{\\infty} ambercastle(willowwind)\n\\]\ndiverges. Then there exist infinitely many strictly increasing sequences of positive integers, \\( riverstone, willowwind_{2}, \\ldots \\) such that\n\\[\n\\sum_{silverswan=1}^{\\infty} ambercastle\\left(willowwind_{silverswan}\\right)=starlitlane .\n\\]\n\nLet \\( briarpatch \\) be any integer such that \\( ambercastle(briarpatch)<starlitlane \\). Define the sequence \\( riverstone, willowwind_{2}, \\ldots \\) recursively by \\( riverstone=briarpatch, willowwind_{2} \\) is the least integer exceeding \\( riverstone \\) such that \\( ambercastle\\left(riverstone\\right) \\) \\( +ambercastle\\left(willowwind_{2}\\right)<starlitlane, \\ldots \\), in general \\( moonshadow \\) is the least integer exceeding \\( dawnchorus \\) such that\n\\[\nambercastle\\left(riverstone\\right)+ambercastle\\left(willowwind_{2}\\right)+\\cdots+ambercastle\\left(dawnchorus\\right)+ambercastle\\left(moonshadow\\right)<starlitlane .\n\\]\n\nSince \\( ambercastle(willowwind) \\rightarrow 0 \\) as \\( willowwind \\rightarrow \\infty \\) there will always be such an integer. Now\n\\[\n\\sum_{silverswan=1}^{\\infty} ambercastle\\left(willowwind_{silverswan}\\right)\n\\]\nconverges to a number not greater than \\( starlitlane \\) because the terms are positive and \\( starlitlane \\) is an upper bound for the partial sums. We shall prove, in fact, that (2) does converge to \\( starlitlane \\).\n\nLet \\( lamplighter>0 \\) be given. Choose \\( snowwillow>briarpatch \\) so that \\( ambercastle(willowwind)<lamplighter \\) for all \\( willowwind>snowwillow \\). Since (1) diverges, there must be infinitely many terms of (1) which do not appear in (2). Suppose that \\( crystalpond \\) is an omitted index exceeding \\( snowwillow \\); i.e., \\( willowwind_{silverswan} \\neq crystalpond \\) for any \\( silverswan \\) and \\( crystalpond>snowwillow \\). Since \\( riverstone<crystalpond \\) and \\( willowwind_{silverswan} \\rightarrow \\infty \\), we can choose \\( winterbloom \\) so that \\( willowwind_{winterbloom-1}<crystalpond<willowwind_{winterbloom} \\). In choosing \\( willowwind_{winterbloom} \\) we rejected the choice of \\( crystalpond \\), hence\n\\[\nambercastle\\left(riverstone\\right)+ambercastle\\left(willowwind_{2}\\right)+\\cdots+ambercastle\\left(willowwind_{winterbloom-1}\\right)+ambercastle(crystalpond) \\geq starlitlane .\n\\]\n\nTherefore,\n\\[\nstarlitlane-\\sum_{silverswan=1}^{winterbloom-1} ambercastle\\left(willowwind_{silverswan}\\right) \\leq ambercastle(crystalpond)<lamplighter .\n\\]\n\nIt follows that (2) converges to \\( starlitlane \\).\nSince we have constructed a sequence starting with \\( briarpatch \\) for any choice of \\( briarpatch \\) such that \\( ambercastle(briarpatch)<starlitlane \\), and since there are infinitely many such choices, it follows that there are infinitely many sequences of the required type.\n\nIn the given problem \\( ambercastle(willowwind)=1 / 10 willowwind \\), and the above result is applicable since \\( \\Sigma 1 / 10 willowwind \\) diverges.\n\nRemark. We can always represent \\( starlitlane \\) in infinitely many ways so that the different representations use disjoint subsets of the original terms. For suppose we have found \\( shadowglade \\) representations using all different terms. Removing all terms already used from the \\( ambercastle \\) sequence leaves a new sequence tending to zero with divergent sum, and from this sequence we can construct an \\( (shadowglade+1) \\) st representation."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "constant",
+        "i": "totality",
+        "t": "spacebar",
+        "r": "leafnode",
+        "n_1": "lastpart",
+        "n_t": "endspace",
+        "n_t-1": "forwarded",
+        "c": "variable",
+        "a": "staticval",
+        "k": "endingpt",
+        "p": "negindex",
+        "q": "included",
+        "m": "nothingg",
+        "\\epsilon": "certainty"
+      },
+      "question": "2. Let \\( variable \\) be a positive real number. Prove that \\( variable \\) can be expressed in infinitely many ways as a sum of infinitely many distinct terms selected from the sequence\n\\[\n1 / 10,1 / 20, \\ldots, 1 / 10 constant, \\ldots\n\\]",
+      "solution": "Solution. We shall prove a more general result: Suppose \\( variable \\) is a positive number and \\( staticval(1), staticval(2), \\ldots \\) is any sequence of positive numbers such that \\( staticval(constant) \\rightarrow 0 \\) as \\( constant \\rightarrow 0 \\) and\n\\[\n\\sum_{constant=1}^{\\infty} staticval(constant)\n\\]\ndiverges. Then there exist infinitely many strictly increasing sequences of positive integers, \\( lastpart, constant_{2}, \\ldots \\) such that\n\\[\n\\sum_{totality=1}^{\\infty} staticval\\left(constant_{totality}\\right)=variable .\n\\]\n\nLet \\( endingpt \\) be any integer such that \\( staticval(endingpt)<variable \\). Define the sequence \\( lastpart, constant_{2}, \\ldots \\) recursively by \\( lastpart=endingpt, constant_{2} \\) is the least integer exceeding \\( lastpart \\) such that \\( staticval\\left(lastpart\\right)+staticval\\left(constant_{2}\\right)<variable, \\ldots \\), in general \\( endspace \\) is the least integer exceeding \\( forwarded \\) such that\n\\[\nstaticval\\left(lastpart\\right)+staticval\\left(constant_{2}\\right)+\\cdots+staticval\\left(forwarded\\right)+staticval\\left(endspace\\right)<variable .\n\\]\n\nSince \\( staticval(constant) \\rightarrow 0 \\) as \\( constant \\rightarrow \\infty \\) there will always be such an integer. Now\n\\[\n\\sum_{totality=1}^{\\infty} staticval\\left(constant_{totality}\\right)\n\\]\nconverges to a number not greater than \\( variable \\) because the terms are positive and \\( variable \\) is an upper bound for the partial sums. We shall prove, in fact, that (2) does converge to \\( variable \\).\n\nLet \\( certainty>0 \\) be given. Choose \\( negindex>endingpt \\) so that \\( staticval(constant)<certainty \\) for all \\( constant>negindex \\). Since (1) diverges, there must be infinitely many terms of (1) which do not appear in (2). Suppose that \\( included \\) is an omitted index exceeding \\( negindex \\); i.e., \\( constant_{totality} \\neq included \\) for any \\( totality \\) and \\( included>negindex \\). Since \\( lastpart<included \\) and \\( constant_{totality} \\rightarrow \\infty \\), we can choose \\( leafnode \\) so that \\( constant_{leafnode-1}<included<constant_{leafnode} \\). In choosing \\( constant_{leafnode} \\) we rejected the choice of \\( included \\), hence\n\\[\nstaticval\\left(lastpart\\right)+staticval\\left(constant_{2}\\right)+\\cdots+staticval\\left(constant_{leafnode-1}\\right)+staticval(included) \\geq variable .\n\\]\n\nTherefore,\n\\[\nvariable-\\sum_{totality=1}^{leafnode-1} staticval\\left(constant_{totality}\\right) \\leq staticval(included)<certainty .\n\\]\n\nIt follows that (2) converges to \\( variable \\).\nSince we have constructed a sequence starting with \\( endingpt \\) for any choice of \\( endingpt \\) such that \\( staticval(endingpt)<variable \\), and since there are infinitely many such choices, it follows that there are infinitely many sequences of the required type.\n\nIn the given problem \\( staticval(constant)=1 / 10 constant \\), and the above result is applicable since \\( \\Sigma 1 / 10 constant \\) diverges.\n\nRemark. We can always represent \\( variable \\) in infinitely many ways so that the different representations use disjoint subsets of the original terms. For suppose we have found \\( nothingg \\) representations using all different terms. Removing all terms already used from the \\( staticval \\) sequence leaves a new sequence tending to zero with divergent sum, and from this sequence we can construct an \\( (nothingg+1) \\) st representation."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "xqpldbrs",
+        "i": "mwzeanru",
+        "t": "unagkfdy",
+        "r": "ozyvltcw",
+        "n_1": "btysneal",
+        "n_t": "cvbqjmor",
+        "n_t-1": "dkeplfsa",
+        "c": "jwpxrtda",
+        "a": "odmketzi",
+        "k": "wnyrjpsa",
+        "p": "yolasqmb",
+        "q": "hzvkncui",
+        "m": "jeithrug",
+        "\\epsilon": "lxomyatq"
+      },
+      "question": "2. Let \\( jwpxrtda \\) be a positive real number. Prove that \\( jwpxrtda \\) can be expressed in infinitely many ways as a sum of infinitely many distinct terms selected from the sequence\n\\[\n1 / 10,1 / 20, \\ldots, 1 / 10 xqpldbrs, \\ldots\n\\]",
+      "solution": "Solution. We shall prove a more general result: Suppose \\( jwpxrtda \\) is a positive number and \\( odmketzi(1), odmketzi(2), \\ldots \\) is any sequence of positive numbers such that \\( odmketzi(xqpldbrs) \\rightarrow 0 \\) as \\( xqpldbrs \\rightarrow 0 \\) and\n\\[\n\\sum_{xqpldbrs=1}^{\\infty} odmketzi(xqpldbrs)\n\\]\ndiverges. Then there exist infinitely many strictly increasing sequences of positive integers, \\( btysneal, xqpldbrs_{2}, \\ldots \\) such that\n\\[\n\\sum_{mwzeanru=1}^{\\infty} odmketzi\\left(xqpldbrs_{mwzeanru}\\right)=jwpxrtda .\n\\]\n\nLet \\( wnyrjpsa \\) be any integer such that \\( odmketzi(wnyrjpsa)<jwpxrtda \\). Define the sequence \\( btysneal, xqpldbrs_{2}, \\ldots \\) recursively by \\( btysneal=wnyrjpsa, xqpldbrs_{2} \\) is the least integer exceeding \\( btysneal \\) such that \\( odmketzi\\left(btysneal\\right)+odmketzi\\left(xqpldbrs_{2}\\right)<jwpxrtda, \\ldots \\); in general \\( cvbqjmor \\) is the least integer exceeding \\( dkeplfsa \\) such that\n\\[\nodmketzi\\left(btysneal\\right)+odmketzi\\left(xqpldbrs_{2}\\right)+\\cdots+odmketzi\\left(dkeplfsa\\right)+odmketzi\\left(cvbqjmor\\right)<jwpxrtda .\n\\]\n\nSince \\( odmketzi(xqpldbrs) \\rightarrow 0 \\) as \\( xqpldbrs \\rightarrow \\infty \\) there will always be such an integer. Now\n\\[\n\\sum_{mwzeanru=1}^{\\infty} odmketzi\\left(xqpldbrs_{mwzeanru}\\right)\n\\]\nconverges to a number not greater than \\( jwpxrtda \\) because the terms are positive and \\( jwpxrtda \\) is an upper bound for the partial sums. We shall prove, in fact, that (2) does converge to \\( jwpxrtda \\).\n\nLet \\( lxomyatq>0 \\) be given. Choose \\( yolasqmb>wnyrjpsa \\) so that \\( odmketzi(xqpldbrs)<lxomyatq \\) for all \\( xqpldbrs>yolasqmb \\). Since (1) diverges, there must be infinitely many terms of (1) which do not appear in (2). Suppose that \\( hzvkncui \\) is an omitted index exceeding \\( yolasqmb \\); i.e., \\( xqpldbrs_{mwzeanru} \\neq hzvkncui \\) for any \\( mwzeanru \\) and \\( hzvkncui>yolasqmb \\). Since \\( btysneal<hzvkncui \\) and \\( xqpldbrs_{mwzeanru} \\rightarrow \\infty \\), we can choose \\( ozyvltcw \\) so that \\( xqpldbrs_{ozyvltcw-1}<hzvkncui<xqpldbrs_{ozyvltcw} \\). In choosing \\( xqpldbrs_{ozyvltcw} \\) we rejected the choice of \\( hzvkncui \\), hence\n\\[\nodmketzi\\left(btysneal\\right)+odmketzi\\left(xqpldbrs_{2}\\right)+\\cdots+odmketzi\\left(xqpldbrs_{ozyvltcw-1}\\right)+odmketzi(hzvkncui) \\geq jwpxrtda .\n\\]\n\nTherefore,\n\\[\njwpxrtda-\\sum_{mwzeanru=1}^{ozyvltcw-1} odmketzi\\left(xqpldbrs_{mwzeanru}\\right) \\leq odmketzi(hzvkncui)<lxomyatq .\n\\]\n\nIt follows that (2) converges to \\( jwpxrtda \\).\nSince we have constructed a sequence starting with \\( wnyrjpsa \\) for any choice of \\( wnyrjpsa \\) such that \\( odmketzi(wnyrjpsa)<jwpxrtda \\), and since there are infinitely many such choices, it follows that there are infinitely many sequences of the required type.\n\nIn the given problem \\( odmketzi(xqpldbrs)=1 / 10 xqpldbrs \\), and the above result is applicable since \\( \\Sigma 1 / 10 xqpldbrs \\) diverges.\n\nRemark. We can always represent \\( jwpxrtda \\) in infinitely many ways so that the different representations use disjoint subsets of the original terms. For suppose we have found \\( jeithrug \\) representations using all different terms. Removing all terms already used from the \\( odmketzi \\) sequence leaves a new sequence tending to zero with divergent sum, and from this sequence we can construct an \\( (jeithrug+1) \\) st representation."
+    },
+    "kernel_variant": {
+      "question": "Let $t>0$ be a real number and let $p_1=2<p_2=3<p_3=5<\\dots$ be the increasing sequence of prime numbers.  Prove that $t$ can be written in infinitely many different ways as an infinite series whose terms are pairwise distinct members of the sequence\n\\[\n\\frac1{17p_1},\\;\\frac1{17p_2},\\;\\frac1{17p_3},\\;\\dots\n\\]\nIn other words, show that there exist infinitely many strictly increasing sequences of indices $n_1<n_2<\\dots$ such that\n\\[\n\\sum_{i=1}^{\\infty}\\frac1{17p_{n_i}}=t.\n\\]",
+      "solution": "Define a(n)=1/(17\\cdot p_n), where p_n is the n-th prime.  Then a(n)\\to 0 as n\\to \\infty , and \\sum _{n=1}^\\infty a(n)=(1/17)\\sum 1/p_n diverges by Euler's theorem.\n\nFix t>0.  Because a(n)\\to 0 there are infinitely many n with a(n)<t.  Choose any such k and set\n  n_1=k,\n  and for m\\geq 2 define\n    n_m = the least j>n_{m-1} such that S_{m-1}+a(j)<t,\n  where S_{m-1}=\\sum _{i=1}^{m-1}a(n_i).\nSince a(j)\\to 0, for each partial sum S_{m-1}<t there is some j large enough with a(j)<t-S_{m-1}, so the construction never stops.  By definition S_m<S_{m+1}<t, so the infinite sum S=\\sum _{i=1}^\\infty a(n_i) converges and S\\leq t.\n\nTo show S=t, let \\varepsilon >0.  Choose P so that for all n>P, a(n)<\\varepsilon .  Because \\sum a(n) diverges but \\sum _{i=1}^\\infty a(n_i)=S<\\infty , the set of indices omitted by the greedy list is infinite.  Pick one such q>P.  Since n_i\\to \\infty  there is r with n_{r-1}<q<n_r.  When choosing n_r we rejected q, so  S_{r-1}+a(q) \\geq  t, hence\n    t-S_{r-1} \\leq  a(q)<\\varepsilon .\nThus t-S \\leq \\varepsilon .  Let \\varepsilon \\to 0 to conclude S=t.\n\nSince we can start the greedy process with any k satisfying a(k)<t, and there are infinitely many such k, we obtain infinitely many distinct sequences {n_i} with \\sum a(n_i)=t.  Equivalently, t admits infinitely many representations as \\sum 1/(17\\cdot p_{n_i}).  \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Greedy construction: pick the least new index so running sum stays below c.",
+          "Existence of next term guaranteed because a(n)→0 (arbitrarily small leftover terms).",
+          "Limit argument: any omitted term beyond a large index forces difference < ε, hence sum = c.",
+          "Vary starting index (with a(k) < c) to obtain infinitely many disjoint subsequences."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "scale in the term 1/(10n); any positive constant works",
+            "original": "10"
+          },
+          "slot2": {
+            "description": "particular form 1/(10n); can be any positive sequence with a(n)→0 and Σa(n)=∞",
+            "original": "a(n)=1/(10n)"
+          },
+          "slot3": {
+            "description": "target sum; any positive real number qualifies",
+            "original": "c"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

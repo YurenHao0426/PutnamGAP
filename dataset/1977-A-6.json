@@ -1,0 +1,156 @@
+{
+  "index": "1977-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem A-6\nLet \\( f(x, y) \\) be a continuous function on the square\n\\[\nS=\\{(x, y): 0<x<1,0<y<1\\} .\n\\]\n\nFor each point \\( (a, b) \\) in the interior of \\( S \\), let \\( S_{(a, b)} \\) be the largest square that is contained in \\( S \\), is centered at \\( (a, b) \\), and has sides parallel to those of \\( S \\). If the double integral \\( \\iint f(x, y) d x d y \\) is zero when taken over each square \\( S_{(a, b)} \\) must \\( f(x, y) \\) be identically zero on \\( S \\) ?",
+  "solution": "A-6.\nFor \\( (a, b) \\) in \\( S \\), let \\( I(a, b) \\) be \\( \\iint f(x, y) d x d y \\) over the rectangle \\( 0 \\leqslant x \\leqslant a, 0 \\leqslant y \\leqslant b \\). Also let \\( (a, b) \\) define inductively a sequence \\( \\left(a_{n}, b_{n}\\right) \\) using \\( a_{1}=a, b_{1}=b, a_{n+1}=a_{n}-b_{n} \\) and \\( b_{n+1}=b_{n} \\) when \\( 0 \\leqslant b_{n} \\leqslant a_{n} \\), and \\( a_{n+1}=a_{n} \\) and \\( b_{n+1}=b_{n}-a_{n} \\) when \\( 0 \\leqslant a_{n}<b_{n} \\). Then the hypothesis implies that \\( I(a, b)=I\\left(a_{n}, b_{n}\\right) \\) for all \\( n \\). Since \\( f \\) is bounded on \\( S \\) and \\( \\lim _{n \\rightarrow \\infty} a_{n}=0=\\lim _{n \\rightarrow \\infty} b_{n} \\), it follows that \\( I(a, b)=0 \\) for all \\( (a, b) \\) in \\( S \\).\n\nIf \\( f(x, y) \\) is not zero for all \\( (x, y) \\) in \\( S \\), then \\( f \\) must be positive (or negative) in some rectangle \\( R=\\{(x, y): c \\leqslant x \\leqslant d, h \\leqslant y \\leqslant k\\} \\) and hence \\( I=\\int_{R} \\int f(x, y) d x d y \\) must be positive (or negative). But this contradicts\n\\[\nI=I(h, k)-I(h, d)-I(c, k)+I(c, d)=0\n\\]\n\nThus \\( f \\) is identically zero on \\( S \\).",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "f",
+    "a",
+    "b",
+    "S",
+    "S_(a,b)",
+    "I",
+    "R",
+    "a_n",
+    "b_n",
+    "a_n+1",
+    "b_n+1",
+    "n",
+    "h",
+    "k",
+    "c",
+    "d"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "f": "contfunc",
+        "a": "centerx",
+        "b": "centery",
+        "S": "unitsquare",
+        "S_(a,b)": "centersquare",
+        "I": "intvalue",
+        "R": "positrect",
+        "a_n": "seqax",
+        "b_n": "seqay",
+        "a_n+1": "nextax",
+        "b_n+1": "nextay",
+        "n": "stepidx",
+        "h": "yminrect",
+        "k": "ymaxrect",
+        "c": "xminrect",
+        "d": "xmaxrect"
+      },
+      "question": "Problem A-6\nLet \\( contfunc(abscissa, ordinate) \\) be a continuous function on the square\n\\[\nunitsquare=\\{(abscissa, ordinate): 0<abscissa<1,0<ordinate<1\\} .\n\\]\n\nFor each point \\( (centerx, centery) \\) in the interior of \\( unitsquare \\), let \\( centersquare \\) be the largest square that is contained in \\( unitsquare \\), is centered at \\( (centerx, centery) \\), and has sides parallel to those of \\( unitsquare \\). If the double integral \\( \\iint contfunc(abscissa, ordinate) d abscissa d ordinate \\) is zero when taken over each square \\( centersquare \\) must \\( contfunc(abscissa, ordinate) \\) be identically zero on \\( unitsquare \\) ?",
+      "solution": "A-6.\nFor \\( (centerx, centery) \\) in \\( unitsquare \\), let \\( intvalue(centerx, centery) \\) be \\( \\iint contfunc(abscissa, ordinate) d abscissa d ordinate \\) over the rectangle \\( 0 \\leqslant abscissa \\leqslant centerx, 0 \\leqslant ordinate \\leqslant centery \\). Also let \\( (centerx, centery) \\) define inductively a sequence \\( \\left(seqax, seqay\\right) \\) using \\( seqax_{1}=centerx, seqay_{1}=centery, nextax=seqax-seqay \\) and \\( nextay=seqay \\) when \\( 0 \\leqslant seqay \\leqslant seqax \\), and \\( nextax=seqax \\) and \\( nextay=seqay-seqax \\) when \\( 0 \\leqslant seqax<seqay \\). Then the hypothesis implies that \\( intvalue(centerx, centery)=intvalue\\left(seqax, seqay\\right) \\) for all \\( stepidx \\). Since \\( contfunc \\) is bounded on \\( unitsquare \\) and \\( \\lim _{stepidx \\rightarrow \\infty} seqax=0=\\lim _{stepidx \\rightarrow \\infty} seqay \\), it follows that \\( intvalue(centerx, centery)=0 \\) for all \\( (centerx, centery) \\) in \\( unitsquare \\).\n\nIf \\( contfunc(abscissa, ordinate) \\) is not zero for all \\( (abscissa, ordinate) \\) in \\( unitsquare \\), then \\( contfunc \\) must be positive (or negative) in some rectangle \\( positrect=\\{(abscissa, ordinate): xminrect \\leqslant abscissa \\leqslant xmaxrect, yminrect \\leqslant ordinate \\leqslant ymaxrect\\} \\) and hence \\( intvalue=\\int_{positrect} \\int contfunc(abscissa, ordinate) d abscissa d ordinate \\) must be positive (or negative). But this contradicts\n\\[\nintvalue=intvalue(yminrect, ymaxrect)-intvalue(yminrect, xmaxrect)-intvalue(xminrect, ymaxrect)+intvalue(xminrect, xmaxrect)=0\n\\]\n\nThus \\( contfunc \\) is identically zero on \\( unitsquare \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "lavender",
+        "y": "cranberry",
+        "f": "willowsap",
+        "a": "grapefruit",
+        "b": "nightshade",
+        "S": "cottontail",
+        "S_(a,b)": "arrowroot",
+        "I": "butternut",
+        "R": "elderberry",
+        "a_n": "pumpernickel",
+        "b_n": "marjoram",
+        "a_n+1": "persimmon",
+        "b_n+1": "raspberries",
+        "n": "gooseberry",
+        "h": "lemonwood",
+        "k": "coffeeleaf",
+        "c": "hucklebee",
+        "d": "peppercorn"
+      },
+      "question": "Problem A-6\nLet \\( willowsap(lavender, cranberry) \\) be a continuous function on the square\n\\[\ncottontail=\\{(lavender, cranberry): 0<lavender<1,0<cranberry<1\\} .\n\\]\n\nFor each point \\( (grapefruit, nightshade) \\) in the interior of \\( cottontail \\), let \\( arrowroot \\) be the largest square that is contained in \\( cottontail \\), is centered at \\( (grapefruit, nightshade) \\), and has sides parallel to those of \\( cottontail \\). If the double integral \\( \\iint willowsap(lavender, cranberry) d lavender d cranberry \\) is zero when taken over each square \\( arrowroot \\) must \\( willowsap(lavender, cranberry) \\) be identically zero on \\( cottontail \\) ?",
+      "solution": "A-6.\nFor \\( (grapefruit, nightshade) \\) in \\( cottontail \\), let \\( butternut(grapefruit, nightshade) \\) be \\( \\iint willowsap(lavender, cranberry) d lavender d cranberry \\) over the rectangle \\( 0 \\leqslant lavender \\leqslant grapefruit, 0 \\leqslant cranberry \\leqslant nightshade \\). Also let \\( (grapefruit, nightshade) \\) define inductively a sequence \\( \\left(pumpernickel, marjoram\\right) \\) using \\( a_{1}=grapefruit, b_{1}=nightshade, persimmon=pumpernickel-marjoram \\) and \\( raspberries=marjoram \\) when \\( 0 \\leqslant marjoram \\leqslant pumpernickel \\), and \\( persimmon=pumpernickel \\) and \\( raspberries=marjoram-pumpernickel \\) when \\( 0 \\leqslant pumpernickel<marjoram \\). Then the hypothesis implies that \\( butternut(grapefruit, nightshade)=butternut\\left(pumpernickel, marjoram\\right) \\) for all \\( gooseberry \\). Since \\( willowsap \\) is bounded on \\( cottontail \\) and \\( \\lim _{gooseberry \\rightarrow \\infty} pumpernickel=0=\\lim _{gooseberry \\rightarrow \\infty} marjoram \\), it follows that \\( butternut(grapefruit, nightshade)=0 \\) for all \\( (grapefruit, nightshade) \\) in \\( cottontail \\).\n\nIf \\( willowsap(lavender, cranberry) \\) is not zero for all \\( (lavender, cranberry) \\) in \\( cottontail \\), then \\( willowsap \\) must be positive (or negative) in some rectangle \\( elderberry=\\{(lavender, cranberry): hucklebee \\leqslant lavender \\leqslant peppercorn, lemonwood \\leqslant cranberry \\leqslant coffeeleaf\\} \\) and hence \\( butternut=\\int_{elderberry} \\int willowsap(lavender, cranberry) d lavender d cranberry \\) must be positive (or negative). But this contradicts\n\\[\nbutternut=butternut(lemonwood, coffeeleaf)-butternut(lemonwood, peppercorn)-butternut(hucklebee, coffeeleaf)+butternut(hucklebee, peppercorn)=0\n\\]\n\nThus \\( willowsap \\) is identically zero on \\( cottontail \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constant",
+        "y": "fixedaxis",
+        "f": "nonfunction",
+        "a": "periphery",
+        "b": "exterior",
+        "S": "nonsquare",
+        "S_(a,b)": "nonsquarecenter",
+        "I": "difference",
+        "R": "antiregion",
+        "a_n": "maxvalues",
+        "b_n": "outervalues",
+        "a_n+1": "maxvaluesnext",
+        "b_n+1": "outervaluesnext",
+        "n": "terminus",
+        "h": "mountaintop",
+        "k": "lowlands",
+        "c": "rightmost",
+        "d": "leftmost"
+      },
+      "question": "Problem A-6\nLet \\( nonfunction(constant, fixedaxis) \\) be a continuous function on the square\n\\[\nnonsquare=\\{(constant, fixedaxis): 0<constant<1,0<fixedaxis<1\\} .\n\\]\n\nFor each point \\( (periphery, exterior) \\) in the interior of \\( nonsquare \\), let \\( nonsquare_{(periphery, exterior)} \\) be the largest square that is contained in \\( nonsquare \\), is centered at \\( (periphery, exterior) \\), and has sides parallel to those of \\( nonsquare \\). If the double integral \\( \\iint nonfunction(constant, fixedaxis) d constant d fixedaxis \\) is zero when taken over each square \\( nonsquare_{(periphery, exterior)} \\) must \\( nonfunction(constant, fixedaxis) \\) be identically zero on \\( nonsquare \\) ?",
+      "solution": "A-6.\nFor \\( (periphery, exterior) \\) in \\( nonsquare \\), let \\( difference(periphery, exterior) \\) be \\( \\iint nonfunction(constant, fixedaxis) d constant d fixedaxis \\) over the rectangle \\( 0 \\leqslant constant \\leqslant periphery, 0 \\leqslant fixedaxis \\leqslant exterior \\). Also let \\( (periphery, exterior) \\) define inductively a sequence \\( \\left(maxvalues, outervalues\\right) \\) using \\( maxvalues_{1}=periphery, outervalues_{1}=exterior, maxvaluesnext=maxvalues-outervalues \\) and \\( outervaluesnext=outervalues \\) when \\( 0 \\leqslant outervalues \\leqslant maxvalues \\), and \\( maxvaluesnext=maxvalues \\) and \\( outervaluesnext=outervalues-maxvalues \\) when \\( 0 \\leqslant maxvalues<outervalues \\). Then the hypothesis implies that \\( difference(periphery, exterior)=difference\\left(maxvalues, outervalues\\right) \\) for all \\( terminus \\). Since \\( nonfunction \\) is bounded on \\( nonsquare \\) and \\( \\lim _{terminus \\rightarrow \\infty} maxvalues=0=\\lim _{terminus \\rightarrow \\infty} outervalues \\), it follows that \\( difference(periphery, exterior)=0 \\) for all \\( (periphery, exterior) \\) in \\( nonsquare \\).\n\nIf \\( nonfunction(constant, fixedaxis) \\) is not zero for all \\( (constant, fixedaxis) \\) in \\( nonsquare \\), then \\( nonfunction \\) must be positive (or negative) in some rectangle \\( antiregion=\\{(constant, fixedaxis): rightmost \\leqslant constant \\leqslant leftmost, mountaintop \\leqslant fixedaxis \\leqslant lowlands\\} \\) and hence \\( difference=\\int_{antiregion} \\int nonfunction(constant, fixedaxis) d constant d fixedaxis \\) must be positive (or negative). But this contradicts\n\\[\ndifference=difference(mountaintop, lowlands)-difference(mountaintop, leftmost)-difference(rightmost, lowlands)+difference(rightmost, leftmost)=0\n\\]\n\nThus \\( nonfunction \\) is identically zero on \\( nonsquare \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "f": "bcsodfgh",
+        "a": "xmprlvey",
+        "b": "tlqnavsr",
+        "S": "nobqkdci",
+        "S_(a,b)": "kxwuazpr",
+        "I": "rwcfpkjt",
+        "R": "vgzmlseo",
+        "a_n": "flrwykjt",
+        "b_n": "znmkyhqt",
+        "a_n+1": "drxsgvpa",
+        "b_n+1": "pjhtvzqa",
+        "n": "skjdfpwe",
+        "h": "nqsybtwa",
+        "k": "udpzheir",
+        "c": "wijxomza",
+        "d": "hfrlgqms"
+      },
+      "question": "Problem A-6\nLet \\( bcsodfgh(qzxwvtnp, hjgrksla) \\) be a continuous function on the square\n\\[\nnobqkdci=\\{(qzxwvtnp, hjgrksla): 0<qzxwvtnp<1,0<hjgrksla<1\\} .\n\\]\n\nFor each point \\( (xmprlvey, tlqnavsr) \\) in the interior of \\( nobqkdci \\), let \\( kxwuazpr_{(xmprlvey, tlqnavsr)} \\) be the largest square that is contained in \\( nobqkdci \\), is centered at \\( (xmprlvey, tlqnavsr) \\), and has sides parallel to those of \\( nobqkdci \\). If the double integral \\( \\iint bcsodfgh(qzxwvtnp, hjgrksla) d qzxwvtnp d hjgrksla \\) is zero when taken over each square \\( kxwuazpr_{(xmprlvey, tlqnavsr)} \\) must \\( bcsodfgh(qzxwvtnp, hjgrksla) \\) be identically zero on \\( nobqkdci \\) ?",
+      "solution": "A-6.\nFor \\( (xmprlvey, tlqnavsr) \\) in \\( nobqkdci \\), let \\( rwcfpkjt(xmprlvey, tlqnavsr) \\) be \\( \\iint bcsodfgh(qzxwvtnp, hjgrksla) d qzxwvtnp d hjgrksla \\) over the rectangle \\( 0 \\leqslant qzxwvtnp \\leqslant xmprlvey, 0 \\leqslant hjgrksla \\leqslant tlqnavsr \\). Also let \\( (xmprlvey, tlqnavsr) \\) define inductively a sequence \\( \\left(flrwykjt, znmkyhqt\\right) \\) using \\( xmprlvey_{1}=xmprlvey, tlqnavsr_{1}=tlqnavsr, drxsgvpa=flrwykjt-znmkyhqt \\) and \\( pjhtvzqa=znmkyhqt \\) when \\( 0 \\leqslant znmkyhqt \\leqslant flrwykjt \\), and \\( drxsgvpa=flrwykjt \\) and \\( pjhtvzqa=znmkyhqt-flrwykjt \\) when \\( 0 \\leqslant flrwykjt<znmkyhqt \\). Then the hypothesis implies that \\( rwcfpkjt(xmprlvey, tlqnavsr)=rwcfpkjt\\left(flrwykjt, znmkyhqt\\right) \\) for all \\( skjdfpwe \\). Since \\( bcsodfgh \\) is bounded on \\( nobqkdci \\) and \\( \\lim _{skjdfpwe \\rightarrow \\infty} flrwykjt=0=\\lim _{skjdfpwe \\rightarrow \\infty} znmkyhqt \\), it follows that \\( rwcfpkjt(xmprlvey, tlqnavsr)=0 \\) for all \\( (xmprlvey, tlqnavsr) \\) in \\( nobqkdci \\).\n\nIf \\( bcsodfgh(qzxwvtnp, hjgrksla) \\) is not zero for all \\( (qzxwvtnp, hjgrksla) \\) in \\( nobqkdci \\), then \\( bcsodfgh \\) must be positive (or negative) in some rectangle \\( vgzmlseo=\\{(qzxwvtnp, hjgrksla): wijxomza \\leqslant qzxwvtnp \\leqslant hfrlgqms, nqsybtwa \\leqslant hjgrksla \\leqslant udpzheir\\} \\) and hence \\( rwcfpkjt=\\int_{vgzmlseo} \\int bcsodfgh(qzxwvtnp, hjgrksla) d qzxwvtnp d hjgrksla \\) must be positive (or negative). But this contradicts\n\\[\nrwcfpkjt=rwcfpkjt(nqsybtwa, udpzheir)-rwcfpkjt(nqsybtwa, hfrlgqms)-rwcfpkjt(wijxomza, udpzheir)+rwcfpkjt(wijxomza, hfrlgqms)=0\n\\]\n\nThus \\( bcsodfgh \\) is identically zero on \\( nobqkdci \\)."
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\nS=\\{(x,y): -2 < x < 2,\\; -2 < y < 2\\}\n\\]\nbe the open square of side-length $4$ whose lower-left corner is $(-2,-2)$.  For each interior point $(a,b)\\in S$ let $Q_{(a,b)}$ be the largest axis-parallel square that\n(i) is contained in $S$ and (ii) is centred at $(a,b)$.  Assume that\n\\[\n\\iint_{Q_{(a,b)}} f(x,y)\\,dx\\,dy =0\\qquad\\text{for every }(a,b)\\in S,\n\\]\nwhere $f\\colon\\overline S\\to\\mathbb R$ is continuous.  Must $f$ be identically zero on $S$?\n",
+      "solution": "We show directly that f\\equiv 0 on S by an affine change of variables to the unit square and then invoking the known solution of the A-6 problem.  \n\n1.  Define a bijection \\varphi :[0,1]^2\\to S by\n   \\varphi (u,v) = (x,y) = (-2+4u, -2+4v).\n   Since f is continuous on  S, the function g(u,v):=f(\\varphi (u,v)) is continuous on [0,1]^2.  \n\n2.  Let (a,b) be any interior point of S, and set\n   (\\alpha ,\\beta )=((a+2)/4,(b+2)/4),\n   so (\\alpha ,\\beta )\\in (0,1)^2.  The largest axis-parallel square centred at (a,b) inside S is exactly the image under \\varphi  of the largest axis-parallel square centred at (\\alpha ,\\beta ) inside (0,1)^2.  A change-of-variables in the double integral shows\n      \\iint _{Q_{(a,b)}} f(x,y)\n      dx dy = 16 \\iint _{S_{(\\alpha ,\\beta )}} g(u,v)\n      du dv,\n   where S_{(\\alpha ,\\beta )} is the usual largest square in the unit square.  By hypothesis the left side is 0 for every (a,b) in S, so the right side is 0 for every (\\alpha ,\\beta ) in (0,1)^2.  \n\n3.  But the problem A-6 on (0,1)^2 asserts exactly that if a continuous g on [0,1]^2 integrates to 0 over each largest centred square, then g\\equiv 0.  Hence g(u,v)=0 for all (u,v)\\in [0,1]^2.  \n\n4.  Therefore f(x,y)=g((x+2)/4,(y+2)/4)=0 for all (x,y)\\in S.  \n\nConclusion: f is identically zero on S.",
+      "_meta": {
+        "core_steps": [
+          "Introduce the cumulative integral I(a,b)=∬_{0≤x≤a, 0≤y≤b} f(x,y) dx dy.",
+          "Show, via the zero–square hypothesis, that I is unchanged by the Euclidean moves (a,b)→(a−b,b) or (a,b−a); hence I is constant along the generated sequence.",
+          "Because (a_n,b_n)→(0,0) and f is bounded (continuity), that constant must be 0, giving I(a,b)=0 for every interior (a,b).",
+          "If f were not identically 0, continuity would give a sub-rectangle where f keeps one sign; the rectangle’s integral, expressed with four I-values, would contradict I≡0.",
+          "Therefore f vanishes everywhere on S."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Length of the sides of the ambient axis-parallel square S (only the fact that it is a positive constant matters).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Choice of reference corner for defining I(a,b); any fixed vertex of S would work equally well.",
+            "original": "(0,0)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,88 @@
+{
+  "index": "1953-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Prove that, for every positive integer \\( n \\),\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{n}\n\\]\nis more than \\( \\frac{2}{3} n \\sqrt{n} \\) and less than\n\\[\n\\frac{4 n+3}{6} \\sqrt{n} .\n\\]",
+  "solution": "Solution. For \\( k \\) a positive integer and \\( k-1 \\leq x<k \\), we have \\( \\sqrt{k}>\\sqrt{x} \\). Therefore \\( \\sqrt{k}>\\int_{k-1}^{k} \\sqrt{x} d x \\). Adding, we get\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{n}>\\int_{0}^{n} \\sqrt{x} d x=\\frac{2}{3} n^{3 / 2}\n\\]\n\nSince the graph of \\( \\sqrt{x} \\) is concave downward, it is clear from the diagram that\n\\[\n\\frac{1}{2}(\\sqrt{k-1}+\\sqrt{k})<\\int_{k-1}^{k} \\sqrt{x} d x\n\\]\n(i.e., the trapezoidal approximation to the integral is too small). Hence\n\\[\n\\begin{aligned}\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{n}= & \\frac{1}{2}(\\sqrt{0}+\\sqrt{1})+\\frac{1}{2}(\\sqrt{1}+\\sqrt{2}) \\\\\n& +\\cdots+\\frac{1}{2}(\\sqrt{n}-1+\\sqrt{n})+\\frac{1}{2} \\sqrt{n} \\\\\n< & \\int_{0}^{n} \\sqrt{x} d x+\\frac{1}{2} \\sqrt{n}=\\frac{4 n+3}{6} \\sqrt{n} .\n\\end{aligned}\n\\]\n\nThe inequality (1) can be proved analytically, of course. We need the standard theorem for estimating the error in the trapezoidal rule for approximating an integral. It is:\n\nLet \\( f \\) be continuous on the closed interval \\( [a, b] \\) and assume \\( f^{\\prime \\prime} \\) exists on the open interval \\( (a, b) \\). Then there exists a point \\( \\eta \\) in \\( (a, b) \\) such that\n\\[\n\\int_{a}^{b} f(x) d x=\\frac{1}{2}(b-a)[f(a)+f(b)]-\\frac{1}{12} f^{\\prime \\prime}(\\eta)(b-a)^{3} .\n\\]\n\nFor the case at hand, take \\( f(x)=\\sqrt{x}, a=k-1, b=k \\). Since \\( f^{\\prime \\prime} \\) is negative on ( \\( 0, \\infty \\) ), inequality (1) follows.",
+  "vars": [
+    "k",
+    "x",
+    "f"
+  ],
+  "params": [
+    "n",
+    "a",
+    "b",
+    "\\\\eta"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "iterindex",
+        "x": "varvalue",
+        "f": "function",
+        "n": "countsize",
+        "a": "lowerlimit",
+        "b": "upperlimit",
+        "\\eta": "etapoint"
+      },
+      "question": "1. Prove that, for every positive integer \\( countsize \\),\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{countsize}\n\\]\nis more than \\( \\frac{2}{3} countsize \\sqrt{countsize} \\) and less than\n\\[\n\\frac{4 countsize+3}{6} \\sqrt{countsize} .\n\\]",
+      "solution": "Solution. For \\( iterindex \\) a positive integer and \\( iterindex-1 \\leq varvalue<iterindex \\), we have \\( \\sqrt{iterindex}>\\sqrt{varvalue} \\). Therefore \\( \\sqrt{iterindex}>\\int_{iterindex-1}^{iterindex} \\sqrt{varvalue} d varvalue \\). Adding, we get\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{countsize}>\\int_{0}^{countsize} \\sqrt{varvalue} d varvalue=\\frac{2}{3} countsize^{3 / 2}\n\\]\n\nSince the graph of \\( \\sqrt{varvalue} \\) is concave downward, it is clear from the diagram that\n\\[\n\\frac{1}{2}(\\sqrt{iterindex-1}+\\sqrt{iterindex})<\\int_{iterindex-1}^{iterindex} \\sqrt{varvalue} d varvalue\n\\]\n(i.e., the trapezoidal approximation to the integral is too small). Hence\n\\[\n\\begin{aligned}\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{countsize}= & \\frac{1}{2}(\\sqrt{0}+\\sqrt{1})+\\frac{1}{2}(\\sqrt{1}+\\sqrt{2}) \\\\\n& +\\cdots+\\frac{1}{2}(\\sqrt{countsize-1}+\\sqrt{countsize})+\\frac{1}{2} \\sqrt{countsize} \\\\\n< & \\int_{0}^{countsize} \\sqrt{varvalue} d varvalue+\\frac{1}{2} \\sqrt{countsize}=\\frac{4 countsize+3}{6} \\sqrt{countsize} .\n\\end{aligned}\n\\]\n\nThe inequality (1) can be proved analytically, of course. We need the standard theorem for estimating the error in the trapezoidal rule for approximating an integral. It is:\n\nLet \\( function \\) be continuous on the closed interval \\( [lowerlimit, upperlimit] \\) and assume \\( function^{\\prime \\prime} \\) exists on the open interval \\( (lowerlimit, upperlimit) \\). Then there exists a point \\( etapoint \\) in \\( (lowerlimit, upperlimit) \\) such that\n\\[\n\\int_{lowerlimit}^{upperlimit} function(varvalue) d varvalue=\\frac{1}{2}(upperlimit-lowerlimit)[function(lowerlimit)+function(upperlimit)]-\\frac{1}{12} function^{\\prime \\prime}(etapoint)(upperlimit-lowerlimit)^{3} .\n\\]\n\nFor the case at hand, take \\( function(varvalue)=\\sqrt{varvalue}, lowerlimit=iterindex-1, upperlimit=iterindex \\). Since \\( function^{\\prime \\prime} \\) is negative on ( \\( 0, \\infty \\) ), inequality (1) follows."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "pineapple",
+        "x": "constellation",
+        "f": "marigold",
+        "n": "hurricane",
+        "a": "blueberry",
+        "b": "evergreen",
+        "\\\\eta": "compassrose"
+      },
+      "question": "1. Prove that, for every positive integer \\( hurricane \\),\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{hurricane}\n\\]\nis more than \\( \\frac{2}{3} hurricane \\sqrt{hurricane} \\) and less than\n\\[\n\\frac{4 hurricane+3}{6} \\sqrt{hurricane} .\n\\]",
+      "solution": "Solution. For \\( pineapple \\) a positive integer and \\( pineapple-1 \\leq constellation<pineapple \\), we have \\( \\sqrt{pineapple}>\\sqrt{constellation} \\). Therefore \\( \\sqrt{pineapple}>\\int_{pineapple-1}^{pineapple} \\sqrt{constellation} d\\,constellation \\). Adding, we get\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{hurricane}>\\int_{0}^{hurricane} \\sqrt{constellation} d\\,constellation=\\frac{2}{3} hurricane^{3 / 2}\n\\]\n\nSince the graph of \\( \\sqrt{constellation} \\) is concave downward, it is clear from the diagram that\n\\[\n\\frac{1}{2}(\\sqrt{pineapple-1}+\\sqrt{pineapple})<\\int_{pineapple-1}^{pineapple} \\sqrt{constellation} d\\,constellation\n\\]\n(i.e., the trapezoidal approximation to the integral is too small). Hence\n\\[\n\\begin{aligned}\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{hurricane}= & \\frac{1}{2}(\\sqrt{0}+\\sqrt{1})+\\frac{1}{2}(\\sqrt{1}+\\sqrt{2}) \\\\\n& +\\cdots+\\frac{1}{2}(\\sqrt{hurricane}-1+\\sqrt{hurricane})+\\frac{1}{2} \\sqrt{hurricane} \\\\\n< & \\int_{0}^{hurricane} \\sqrt{constellation} d\\,constellation+\\frac{1}{2} \\sqrt{hurricane}=\\frac{4 hurricane+3}{6} \\sqrt{hurricane} .\n\\end{aligned}\n\\]\n\nThe inequality (1) can be proved analytically, of course. We need the standard theorem for estimating the error in the trapezoidal rule for approximating an integral. It is:\n\nLet \\( marigold \\) be continuous on the closed interval \\( [blueberry, evergreen] \\) and assume \\( marigold^{\\prime \\prime} \\) exists on the open interval \\( (blueberry, evergreen) \\). Then there exists a point \\( compassrose \\) in \\( (blueberry, evergreen) \\) such that\n\\[\n\\int_{blueberry}^{evergreen} marigold(constellation) d\\,constellation=\\frac{1}{2}(evergreen-blueberry)[marigold(blueberry)+marigold(evergreen)]-\\frac{1}{12} marigold^{\\prime \\prime}(compassrose)(evergreen-blueberry)^{3} .\n\\]\n\nFor the case at hand, take \\( marigold(constellation)=\\sqrt{constellation}, blueberry=pineapple-1, evergreen=pineapple \\). Since \\( marigold^{\\prime \\prime} \\) is negative on ( \\( 0, \\infty \\) ), inequality (1) follows."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "tinycount",
+        "k": "continuousvalue",
+        "x": "discretesequence",
+        "f": "constantvalue",
+        "a": "upperbound",
+        "b": "lowerbound",
+        "\\eta": "boundarypoint"
+      },
+      "question": "Problem:\n<<<\n1. Prove that, for every positive integer \\( tinycount \\),\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{tinycount}\n\\]\nis more than \\( \\frac{2}{3} tinycount \\sqrt{tinycount} \\) and less than\n\\[\n\\frac{4 tinycount+3}{6} \\sqrt{tinycount} .\n\\]\n>>>\n",
+      "solution": "Solution:\n<<<\nSolution. For \\( continuousvalue \\) a positive integer and \\( continuousvalue-1 \\leq discretesequence<continuousvalue \\), we have \\( \\sqrt{continuousvalue}>\\sqrt{discretesequence} \\). Therefore \\( \\sqrt{continuousvalue}>\\int_{continuousvalue-1}^{continuousvalue} \\sqrt{discretesequence} d discretesequence \\). Adding, we get\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{tinycount}>\\int_{0}^{tinycount} \\sqrt{discretesequence} d discretesequence=\\frac{2}{3} tinycount^{3 / 2}\n\\]\n\nSince the graph of \\( \\sqrt{discretesequence} \\) is concave downward, it is clear from the diagram that\n\\[\n\\frac{1}{2}(\\sqrt{continuousvalue-1}+\\sqrt{continuousvalue})<\\int_{continuousvalue-1}^{continuousvalue} \\sqrt{discretesequence} d discretesequence\n\\]\n(i.e., the trapezoidal approximation to the integral is too small). Hence\n\\[\n\\begin{aligned}\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{tinycount}= & \\frac{1}{2}(\\sqrt{0}+\\sqrt{1})+\\frac{1}{2}(\\sqrt{1}+\\sqrt{2}) \\\\\n& +\\cdots+\\frac{1}{2}(\\sqrt{tinycount}-1+\\sqrt{tinycount})+\\frac{1}{2} \\sqrt{tinycount} \\\\\n< & \\int_{0}^{tinycount} \\sqrt{discretesequence} d discretesequence+\\frac{1}{2} \\sqrt{tinycount}=\\frac{4 tinycount+3}{6} \\sqrt{tinycount} .\n\\end{aligned}\n\\]\n\nThe inequality (1) can be proved analytically, of course. We need the standard theorem for estimating the error in the trapezoidal rule for approximating an integral. It is:\n\nLet \\( constantvalue \\) be continuous on the closed interval \\( [upperbound, lowerbound] \\) and assume \\( constantvalue^{\\prime \\prime} \\) exists on the open interval \\( (upperbound, lowerbound) \\). Then there exists a point \\( boundarypoint \\) in \\( (upperbound, lowerbound) \\) such that\n\\[\n\\int_{upperbound}^{lowerbound} constantvalue(discretesequence) d discretesequence=\\frac{1}{2}(lowerbound-upperbound)[constantvalue(upperbound)+constantvalue(lowerbound)]-\\frac{1}{12} constantvalue^{\\prime \\prime}(boundarypoint)(lowerbound-upperbound)^{3} .\n\\]\n\nFor the case at hand, take \\( constantvalue(discretesequence)=\\sqrt{discretesequence}, upperbound=continuousvalue-1, lowerbound=continuousvalue \\). Since \\( constantvalue^{\\prime \\prime} \\) is negative on ( \\( 0, \\infty \\) ), inequality (1) follows.\n>>>\n"
+    },
+    "garbled_string": {
+      "map": {
+        "k": "cibshdfe",
+        "x": "qbnvtyio",
+        "f": "zlkmvrea",
+        "n": "ghsodnpe",
+        "a": "wypoqmdk",
+        "b": "ltraxcve",
+        "\\eta": "snvkrpqa"
+      },
+      "question": "Prove that, for every positive integer \\( ghsodnpe \\),\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{ghsodnpe}\n\\]\nis more than \\( \\frac{2}{3} ghsodnpe \\sqrt{ghsodnpe} \\) and less than\n\\[\n\\frac{4 ghsodnpe+3}{6} \\sqrt{ghsodnpe} .\n\\]",
+      "solution": "Solution. For \\( cibshdfe \\) a positive integer and \\( cibshdfe-1 \\leq qbnvtyio<cibshdfe \\), we have \\( \\sqrt{cibshdfe}>\\sqrt{qbnvtyio} \\). Therefore \\( \\sqrt{cibshdfe}>\\int_{cibshdfe-1}^{cibshdfe} \\sqrt{qbnvtyio} d qbnvtyio \\). Adding, we get\n\\[\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{ghsodnpe}>\\int_{0}^{ghsodnpe} \\sqrt{qbnvtyio} d qbnvtyio=\\frac{2}{3} ghsodnpe^{3 / 2}\n\\]\n\nSince the graph of \\( \\sqrt{qbnvtyio} \\) is concave downward, it is clear from the diagram that\n\\[\n\\frac{1}{2}(\\sqrt{cibshdfe-1}+\\sqrt{cibshdfe})<\\int_{cibshdfe-1}^{cibshdfe} \\sqrt{qbnvtyio} d qbnvtyio\n\\]\n(i.e., the trapezoidal approximation to the integral is too small). Hence\n\\[\n\\begin{aligned}\n\\sqrt{1}+\\sqrt{2}+\\cdots+\\sqrt{ghsodnpe}= & \\frac{1}{2}(\\sqrt{0}+\\sqrt{1})+\\frac{1}{2}(\\sqrt{1}+\\sqrt{2}) \\\\\n& +\\cdots+\\frac{1}{2}(\\sqrt{ghsodnpe}-1+\\sqrt{ghsodnpe})+\\frac{1}{2} \\sqrt{ghsodnpe} \\\\\n< & \\int_{0}^{ghsodnpe} \\sqrt{qbnvtyio} d qbnvtyio+\\frac{1}{2} \\sqrt{ghsodnpe}=\\frac{4 ghsodnpe+3}{6} \\sqrt{ghsodnpe} .\n\\end{aligned}\n\\]\n\nThe inequality (1) can be proved analytically, of course. We need the standard theorem for estimating the error in the trapezoidal rule for approximating an integral. It is:\n\nLet \\( zlkmvrea \\) be continuous on the closed interval \\( [wypoqmdk, ltraxcve] \\) and assume \\( zlkmvrea^{\\prime\\prime} \\) exists on the open interval \\( (wypoqmdk, ltraxcve) \\). Then there exists a point \\( snvkrpqa \\) in \\( (wypoqmdk, ltraxcve) \\) such that\n\\[\n\\int_{wypoqmdk}^{ltraxcve} zlkmvrea(qbnvtyio) d qbnvtyio=\\frac{1}{2}(ltraxcve-wypoqmdk)[zlkmvrea(wypoqmdk)+zlkmvrea(ltraxcve)]-\\frac{1}{12} zlkmvrea^{\\prime\\prime}(snvkrpqa)(ltraxcve-wypoqmdk)^{3} .\n\\]\n\nFor the case at hand, take \\( zlkmvrea(qbnvtyio)=\\sqrt{qbnvtyio}, wypoqmdk=cibshdfe-1, ltraxcve=cibshdfe \\). Since \\( zlkmvrea^{\\prime\\prime} \\) is negative on ( \\( 0, \\infty \\) ), inequality (1) follows."
+    },
+    "kernel_variant": {
+      "question": "For the partial sums  \n  S_n := 1^{1/3}+2^{1/3}+\\cdots +n^{1/3}, n \\in  \\mathbb{N},  \n\n(a) prove the refined two-sided estimate  \n  (3/4)n^{4/3}+\\frac{1}{2} n^{1/3} < S_n < (3/4)(n+1)^{4/3} - \\frac{3}{4} + \\frac{1}{2} (n+1)^{1/3}.  \n\n(b) show that the coefficient 3/4 is best possible, i.e.  \n  lim _{n\\to \\infty } S_n / n^{4/3} = 3/4,  \nso an inequality of the form S_n \\geq  c n^{4/3} eventually fails when c > 3/4, and  \nS_n \\leq  c (n+1)^{4/3} fails for c < 3/4.",
+      "solution": "(\\approx  185 words)  \n\nStep 1 Preparations.  \nLet f(x)=x^{1/3}.  Then f'(x)=\\frac{1}{3}x^{-2/3}>0, f''(x)=-2/9 x^{-5/3}<0, so f is increasing and concave on [0,\\infty ).\n\nStep 2 Lower bound (trapezoidal rule from the left).  \nBecause f is concave, for k \\geq  1  \n  \\int _{k-1}^{k}f(x)dx < \\frac{1}{2}[f(k-1)+f(k)].  \nSumming k=1\\ldots n and rearranging,  \n  S_n > \\int _{0}^{n}f(x)dx + \\frac{1}{2} f(n)  \n   = (3/4)n^{4/3}+\\frac{1}{2} n^{1/3}.  \n\nStep 3 Upper bound (trapezoidal rule from the right).  \nAgain by concavity,  \n  \\frac{1}{2}[f(k)+f(k+1)] < \\int _{k}^{k+1}f(x)dx.  \nAdding k=1\\ldots n and discarding the positive term \\frac{1}{2} f(n+1),  \n  S_n < \\int _{1}^{n+1}f(x)dx - \\frac{1}{2} f(1)  \n   = (3/4)(n+1)^{4/3} - \\frac{3}{4} + \\frac{1}{2} (n+1)^{1/3}.  \n\nStep 4 Optimality of 3/4.  \nDivide the definition of S_n by n^{4/3}.  By monotonicity,  \n  \\int _{0}^{n}f(x)dx < S_n < \\int _{1}^{n+1}f(x)dx,  \nwhence  \n  3/4 < S_n / n^{4/3} < 3/4\\cdot [(n+1)/n]^{4/3}.  \nLet n\\to \\infty ; the squeeze theorem yields lim S_n/n^{4/3}=3/4.  \nTherefore any c > 3/4 eventually violates S_n \\geq  c n^{4/3}, and any c < 3/4 eventually violates S_n \\leq  c (n+1)^{4/3}.\n\nThus parts (a) and (b) are proved.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.034322",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

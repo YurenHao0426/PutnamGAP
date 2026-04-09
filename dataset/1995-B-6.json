@@ -1,0 +1,114 @@
+{
+  "index": "1995-B-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "\\[\nS(\\alpha) = \\{ \\lfloor n\\alpha \\rfloor : n = 1,2,3,\\dots \\}.\n\\]\nProve that $\\{1,2,3,\\dots\\}$ cannot be expressed as the disjoint\nunion of three sets $S(\\alpha), S(\\beta)$ and $S(\\gamma)$. [As\nusual, $\\lfloor x \\rfloor$ is the greatest integer $\\leq x$.]\n\n\\end{itemize}\n\\end{document}",
+  "solution": "Obviously $\\alpha, \\beta, \\gamma$ have to be greater than 1, and no\ntwo can both be rational, so without loss of generality assume that\n$\\alpha$ and $\\beta$ are irrational.\nLet $\\{x\\} = x - \\lfloor x \\rfloor$ denote the fractional part of $x$.\nThen $m \\in S(\\alpha)$ if and only if $f(m/\\alpha) \\in (1-1/\\alpha,1)\n\\cup \\{0\\}$. In particular, this means that $S(\\alpha) \\cap \\{1,\n\\dots, n\\}$ contains $\\lceil (n+1)/\\alpha \\rceil -1$ elements, and\nsimilarly. Hence for every integer $n$,\n\\[\nn = \\left\\lceil \\frac{n+1}\\alpha \\right\\rceil +\n \\left\\lceil \\frac{n+1}\\beta \\right\\rceil +\n \\left\\lceil \\frac{n+1}\\gamma \\right\\rceil -3.\n\\]\nDividing through by $n$ and taking the limit as $n \\to \\infty$ shows\nthat $1/\\alpha + 1/\\beta + 1/\\gamma = 1$. That in turn implies that\nfor all $n$,\n\\[\n\\left\\{ - \\frac{n+1}{\\alpha} \\right\\} +\n\\left\\{ - \\frac{n+1}{\\beta} \\right\\} +\n\\left\\{ - \\frac{n+1}{\\gamma} \\right\\} = 2.\n\\]\nOur desired contradiction is equivalent to showing that the left side actually\ntakes the value 1 for some $n$. Since the left side is\nan integer, it suffices to show that $\\{ -(n+1)/\\alpha\\} +\n\\{-(n+1)/\\beta\\} < 1$ for some $n$.\n\nA result in ergodic theory (the two-dimensional version of the Weil\nequidistribution theorem) states that if $1,r,s$ are linearly\nindependent over the rationals, then the set of points $(\\{nr\\},\n\\{ns\\}$ is dense (and in fact equidistributed) in the unit square. In\nparticular, our claim definitely holds unless $a/\\alpha + b/\\beta =\nc$ for some integers $a,b,c$.\n\nOn the other hand, suppose that such a relation does hold. Since\n$\\alpha$ and $\\beta$ are irrational, by the one-dimensional Weil\ntheorem, the set of points $(\\{-n/\\alpha\\}, \\{-n/\\beta\\}$ is dense in\nthe set of $(x,y)$ in the unit square such that $ax + by$ is an integer.\nIt is simple enough to show that this set meets the region $\\{(x,y)\n\\in [0,1]^{2}: x+y<1\\}$ unless $a+b$ is an integer, and that would\nimply that $1/\\alpha + 1/\\beta$, a quantity between 0 and 1, is an\ninteger. We have our desired contradiction.\n\n\\end{itemize}\n\\end{document}",
+  "vars": [
+    "n",
+    "m",
+    "x",
+    "r",
+    "s",
+    "a",
+    "b",
+    "c"
+  ],
+  "params": [
+    "S",
+    "\\\\alpha",
+    "\\\\beta",
+    "\\\\gamma"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexer",
+        "m": "member",
+        "x": "placeholder",
+        "r": "density",
+        "s": "sequence",
+        "a": "coeffone",
+        "b": "coefftwo",
+        "c": "coeffthr",
+        "S": "setfunc",
+        "\\alpha": "alphavar",
+        "\\beta": "betavar",
+        "\\gamma": "gammavar"
+      },
+      "question": "\\[\nsetfunc(alphavar) = \\{ \\lfloor indexer\\,alphavar \\rfloor : indexer = 1,2,3,\\dots \\}.\n\\]\nProve that $\\{1,2,3,\\dots\\}$ cannot be expressed as the disjoint\nunion of three sets $setfunc(alphavar), setfunc(betavar)$ and $setfunc(gammavar)$. [As\nusual, $\\lfloor placeholder \\rfloor$ is the greatest integer $\\leq placeholder$.]",
+      "solution": "Obviously $alphavar, betavar, gammavar$ have to be greater than 1, and no\ntwo can both be rational, so without loss of generality assume that\n$alphavar$ and $betavar$ are irrational.\nLet $\\{placeholder\\} = placeholder - \\lfloor placeholder \\rfloor$ denote the fractional part of $placeholder$.\nThen $member \\in setfunc(alphavar)$ if and only if $f(member/alphavar) \\in (1-1/alphavar,1)\n\\cup \\{0\\}$. In particular, this means that $setfunc(alphavar) \\cap \\{1,\n\\dots, indexer\\}$ contains $\\lceil (indexer+1)/alphavar \\rceil -1$ elements, and\nsimilarly. Hence for every integer $indexer$,\n\\[\nindexer = \\left\\lceil \\frac{indexer+1}{alphavar} \\right\\rceil +\n \\left\\lceil \\frac{indexer+1}{betavar} \\right\\rceil +\n \\left\\lceil \\frac{indexer+1}{gammavar} \\right\\rceil -3.\n\\]\nDividing through by $indexer$ and taking the limit as $indexer \\to \\infty$ shows\nthat $1/alphavar + 1/betavar + 1/gammavar = 1$. That in turn implies that\nfor all $indexer$,\n\\[\n\\left\\{ - \\frac{indexer+1}{alphavar} \\right\\} +\n\\left\\{ - \\frac{indexer+1}{betavar} \\right\\} +\n\\left\\{ - \\frac{indexer+1}{gammavar} \\right\\} = 2.\n\\]\nOur desired contradiction is equivalent to showing that the left side actually\ntakes the value 1 for some $indexer$. Since the left side is\nan integer, it suffices to show that $\\{ -(indexer+1)/alphavar\\} +\n\\{-(indexer+1)/betavar\\} < 1$ for some $indexer$.\n\nA result in ergodic theory (the two-dimensional version of the Weil\nequidistribution theorem) states that if $1,density,sequence$ are linearly\nindependent over the rationals, then the set of points $(\\{indexer\\,density\\},\n\\{indexer\\,sequence\\})$ is dense (and in fact equidistributed) in the unit square. In\nparticular, our claim definitely holds unless $coeffone/alphavar + coefftwo/betavar =\ncoeffthr$ for some integers $coeffone,coefftwo,coeffthr$.\n\nOn the other hand, suppose that such a relation does hold. Since\n$alphavar$ and $betavar$ are irrational, by the one-dimensional Weil\ntheorem, the set of points $(\\{-indexer/alphavar\\}, \\{-indexer/betavar\\})$ is dense in\nthe set of $(placeholder,y)$ in the unit square such that $coeffone\\,placeholder + coefftwo\\,y$ is an integer.\nIt is simple enough to show that this set meets the region $\\{(placeholder,y)\n\\in [0,1]^{2}: placeholder+y<1\\}$ unless $coeffone+coefftwo$ is an integer, and that would\nimply that $1/alphavar + 1/betavar$, a quantity between 0 and 1, is an\ninteger. We have our desired contradiction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "hummingbird",
+        "m": "pinecones",
+        "x": "sandstorm",
+        "r": "watershed",
+        "s": "driftwood",
+        "a": "moonlight",
+        "b": "starlight",
+        "c": "afterglow",
+        "S": "windswept",
+        "\\\\alpha": "evergreen",
+        "\\\\beta": "lighthouse",
+        "\\\\gamma": "raincloud"
+      },
+      "question": "\\[\nwindswept(evergreen) = \\{ \\lfloor hummingbird evergreen \\rfloor : hummingbird = 1,2,3,\\dots \\}.\n\\]\nProve that $\\{1,2,3,\\dots\\}$ cannot be expressed as the disjoint\nunion of three sets $windswept(evergreen), windswept(lighthouse)$ and $windswept(raincloud)$. [As\nusual, $\\lfloor sandstorm \\rfloor$ is the greatest integer $\\leq sandstorm$.]",
+      "solution": "Obviously evergreen, lighthouse, raincloud have to be greater than 1, and no\ntwo can both be rational, so without loss of generality assume that\nevergreen and lighthouse are irrational.\nLet $\\{sandstorm\\} = sandstorm - \\lfloor sandstorm \\rfloor$ denote the fractional part of sandstorm.\nThen $pinecones \\in windswept(evergreen)$ if and only if $f(pinecones/evergreen) \\in (1-1/evergreen,1)\n\\cup \\{0\\}$. In particular, this means that $windswept(evergreen) \\cap \\{1,\n\\dots, hummingbird\\}$ contains $\\lceil (hummingbird+1)/evergreen \\rceil -1$ elements, and\nsimilarly. Hence for every integer $hummingbird$,\n\\[\nhummingbird = \\left\\lceil \\frac{hummingbird+1}{evergreen} \\right\\rceil +\n \\left\\lceil \\frac{hummingbird+1}{lighthouse} \\right\\rceil +\n \\left\\lceil \\frac{hummingbird+1}{raincloud} \\right\\rceil -3.\n\\]\nDividing through by $hummingbird$ and taking the limit as $hummingbird \\to \\infty$ shows\nthat $1/evergreen + 1/lighthouse + 1/raincloud = 1$. That in turn implies that\nfor all $hummingbird$,\n\\[\n\\left\\{ - \\frac{hummingbird+1}{evergreen} \\right\\} +\n\\left\\{ - \\frac{hummingbird+1}{lighthouse} \\right\\} +\n\\left\\{ - \\frac{hummingbird+1}{raincloud} \\right\\} = 2.\n\\]\nOur desired contradiction is equivalent to showing that the left side actually\ntakes the value 1 for some $hummingbird$. Since the left side is\nan integer, it suffices to show that $\\{ -(hummingbird+1)/evergreen\\} +\n\\{-(hummingbird+1)/lighthouse\\} < 1$ for some $hummingbird$.\n\nA result in ergodic theory (the two-dimensional version of the Weil\nequidistribution theorem) states that if $1,watershed,driftwood$ are linearly\nindependent over the rationals, then the set of points $(\\{hummingbird watershed\\},\n\\{hummingbird driftwood\\}$ is dense (and in fact equidistributed) in the unit square. In\nparticular, our claim definitely holds unless $moonlight/evergreen + starlight/lighthouse =\nafterglow$ for some integers $moonlight,starlight,afterglow$.\n\nOn the other hand, suppose that such a relation does hold. Since\nevergreen and lighthouse are irrational, by the one-dimensional Weil\ntheorem, the set of points $(\\{-hummingbird/evergreen\\}, \\{-hummingbird/lighthouse\\}$ is dense in\nthe set of $(sandstorm,y)$ in the unit square such that $moonlight sandstorm + starlight y$ is an integer.\nIt is simple enough to show that this set meets the region $\\{(sandstorm,y)\n\\in [0,1]^{2}: sandstorm+y<1\\}$ unless $moonlight+starlight$ is an integer, and that would\nimply that $1/evergreen + 1/lighthouse$, a quantity between 0 and 1, is an\ninteger. We have our desired contradiction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "fractional",
+        "m": "irrational",
+        "x": "constant",
+        "r": "imaginary",
+        "s": "disorderly",
+        "a": "variable",
+        "b": "stableone",
+        "c": "changing",
+        "S": "sequence",
+        "\\alpha": "smallvalue",
+        "\\beta": "tinyvalue",
+        "\\gamma": "minuscule"
+      },
+      "question": "\\[\nsequence(smallvalue) = \\{ \\lfloor fractional smallvalue \\rfloor : fractional = 1,2,3,\\dots \\}.\n\\]\nProve that $\\{1,2,3,\\dots\\}$ cannot be expressed as the disjoint\nunion of three sets $sequence(smallvalue), sequence(tinyvalue)$ and $sequence(minuscule)$. [As\nusual, $\\lfloor constant \\rfloor$ is the greatest integer $\\leq constant$.]\n\n\\end{itemize}\n\\end{document}",
+      "solution": "\\<<<\nObviously $smallvalue, tinyvalue, minuscule$ have to be greater than 1, and no\ntwo can both be rational, so without loss of generality assume that\n$smallvalue$ and $tinyvalue$ are irrational.\nLet $\\{constant\\} = constant - \\lfloor constant \\rfloor$ denote the fractional part of $constant$.\nThen $irrational \\in sequence(smallvalue)$ if and only if $f(irrational/smallvalue) \\in (1-1/smallvalue,1)\n\\cup \\{0\\}$. In particular, this means that $sequence(smallvalue) \\cap \\{1,\n\\dots, fractional\\}$ contains $\\lceil (fractional+1)/smallvalue \\rceil -1$ elements, and\nsimilarly. Hence for every integer $fractional$,\n\\[\nfractional = \\left\\lceil \\frac{fractional+1}{smallvalue} \\right\\rceil +\n \\left\\lceil \\frac{fractional+1}{tinyvalue} \\right\\rceil +\n \\left\\lceil \\frac{fractional+1}{minuscule} \\right\\rceil -3.\n\\]\nDividing through by $fractional$ and taking the limit as $fractional \\to \\infty$ shows\nthat $1/smallvalue + 1/tinyvalue + 1/minuscule = 1$. That in turn implies that\nfor all $fractional$,\n\\[\n\\left\\{ - \\frac{fractional+1}{smallvalue} \\right\\} +\n\\left\\{ - \\frac{fractional+1}{tinyvalue} \\right\\} +\n\\left\\{ - \\frac{fractional+1}{minuscule} \\right\\} = 2.\n\\]\nOur desired contradiction is equivalent to showing that the left side actually\ntakes the value 1 for some $fractional$. Since the left side is\nan integer, it suffices to show that $\\{ -(fractional+1)/smallvalue\\} +\n\\{-(fractional+1)/tinyvalue\\} < 1$ for some $fractional$.\n\nA result in ergodic theory (the two-dimensional version of the Weil\nequidistribution theorem) states that if $1,imaginary,disorderly$ are linearly\nindependent over the rationals, then the set of points $(\\{fractionalimaginary\\},\n\\{fractionaldisorderly\\}$ is dense (and in fact equidistributed) in the unit square. In\nparticular, our claim definitely holds unless $variable/smallvalue + stableone/tinyvalue =\nchanging$ for some integers $variable,stableone,changing$.\n\nOn the other hand, suppose that such a relation does hold. Since\n$smallvalue$ and $tinyvalue$ are irrational, by the one-dimensional Weil\ntheorem, the set of points $(\\{-fractional/smallvalue\\}, \\{-fractional/tinyvalue\\}$ is dense in\nthe set of $(constant,y)$ in the unit square such that $variable constant + stableone y$ is an integer.\nIt is simple enough to show that this set meets the region $\\{(constant,y)\n\\in [0,1]^{2}: constant+y<1\\}$ unless $variable+stableone$ is an integer, and that would\nimply that $1/smallvalue + 1/tinyvalue$, a quantity between 0 and 1, is an\ninteger. We have our desired contradiction.\n\n\\end{itemize}\n\\end{document}\n>>>\n"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "m": "hjgrksla",
+        "x": "vkjzmqer",
+        "r": "opdynmcl",
+        "s": "wbrtqfsa",
+        "a": "tlmcxoph",
+        "b": "zqwrvekl",
+        "c": "yplhndgt",
+        "S": "pnsjdwkt",
+        "\\alpha": "azldkqwe",
+        "\\beta": "kmdzpryw",
+        "\\gamma": "cxvtrhgu"
+      },
+      "question": "\\[\npnsjdwkt(azldkqwe) = \\{ \\lfloor qzxwvtnp azldkqwe \\rfloor : qzxwvtnp = 1,2,3,\\dots \\}.\n\\]\nProve that $\\{1,2,3,\\dots\\}$ cannot be expressed as the disjoint\nunion of three sets $pnsjdwkt(azldkqwe), pnsjdwkt(kmdzpryw)$ and $pnsjdwkt(cxvtrhgu)$. [As\nusual, $\\lfloor vkjzmqer \\rfloor$ is the greatest integer $\\leq vkjzmqer$.]",
+      "solution": "Obviously $azldkqwe, kmdzpryw, cxvtrhgu$ have to be greater than 1, and no\ntwo can both be rational, so without loss of generality assume that\n$azldkqwe$ and $kmdzpryw$ are irrational.\nLet $\\{vkjzmqer\\} = vkjzmqer - \\lfloor vkjzmqer \\rfloor$ denote the fractional part of $vkjzmqer$.\nThen $hjgrksla \\in pnsjdwkt(azldkqwe)$ if and only if $f(hjgrksla/azldkqwe) \\in (1-1/azldkqwe,1)\n\\cup \\{0\\}$. In particular, this means that $pnsjdwkt(azldkqwe) \\cap \\{1,\n\\dots, qzxwvtnp\\}$ contains $\\lceil (qzxwvtnp+1)/azldkqwe \\rceil -1$ elements, and\nsimilarly. Hence for every integer $qzxwvtnp$,\n\\[\nqzxwvtnp = \\left\\lceil \\frac{qzxwvtnp+1}{azldkqwe} \\right\\rceil +\n \\left\\lceil \\frac{qzxwvtnp+1}{kmdzpryw} \\right\\rceil +\n \\left\\lceil \\frac{qzxwvtnp+1}{cxvtrhgu} \\right\\rceil -3.\n\\]\nDividing through by $qzxwvtnp$ and taking the limit as $qzxwvtnp \\to \\infty$ shows\nthat $1/azldkqwe + 1/kmdzpryw + 1/cxvtrhgu = 1$. That in turn implies that\nfor all $qzxwvtnp$,\n\\[\n\\left\\{ - \\frac{qzxwvtnp+1}{azldkqwe} \\right\\} +\n\\left\\{ - \\frac{qzxwvtnp+1}{kmdzpryw} \\right\\} +\n\\left\\{ - \\frac{qzxwvtnp+1}{cxvtrhgu} \\right\\} = 2.\n\\]\nOur desired contradiction is equivalent to showing that the left side actually\ntakes the value 1 for some $qzxwvtnp$. Since the left side is\nan integer, it suffices to show that $\\{ -(qzxwvtnp+1)/azldkqwe\\} +\n\\{-(qzxwvtnp+1)/kmdzpryw\\} < 1$ for some $qzxwvtnp$.\n\nA result in ergodic theory (the two-dimensional version of the Weil\nequidistribution theorem) states that if $1,opdynmcl,wbrtqfsa$ are linearly\nindependent over the rationals, then the set of points $(\\{qzxwvtnp opdynmcl\\},\n\\{qzxwvtnp wbrtqfsa\\}$ is dense (and in fact equidistributed) in the unit square. In\nparticular, our claim definitely holds unless $tlmcxoph/azldkqwe + zqwrvekl/kmdzpryw =\nyplhndgt$ for some integers $tlmcxoph,zqwrvekl,yplhndgt$.\n\nOn the other hand, suppose that such a relation does hold. Since\n$azldkqwe$ and $kmdzpryw$ are irrational, by the one-dimensional Weil\ntheorem, the set of points $(\\{-qzxwvtnp/azldkqwe\\}, \\{-qzxwvtnp/kmdzpryw\\}$ is dense in\nthe set of $(vkjzmqer,y)$ in the unit square such that $tlmcxoph vkjzmqer + zqwrvekl y$ is an integer.\nIt is simple enough to show that this set meets the region $\\{(vkjzmqer,y)\n\\in [0,1]^{2}: vkjzmqer+y<1\\}$ unless $tlmcxoph+zqwrvekl$ is an integer, and that would\nimply that $1/azldkqwe + 1/kmdzpryw$, a quantity between 0 and 1, is an\ninteger. We have our desired contradiction.\n"
+    },
+    "kernel_variant": {
+      "question": "For each index \\kappa  \\in  {\\alpha ,\\beta ,\\gamma ,\\delta } choose a real pair  \n\n  \\theta \\kappa  > 1 and 0 < \\varphi \\kappa  < 1.\n\nDefine  \n  T\\kappa  := {\\lfloor n \\theta \\kappa  + \\varphi \\kappa \\rfloor  : n = 1,2,3,\\ldots }.                ()\n\nCan the positive integers be written as a disjoint union of the four shifted Beatty sets,\n\n  \\mathbb{N} = T\\alpha  \\sqcup  T\\beta  \\sqcup  T\\gamma  \\sqcup  T\\delta  ?\n\nProve that such a decomposition is impossible, even if the four shifts \\varphi \\kappa  are chosen arbitrarily (they need not sum to an integer, coincide, etc.).",
+      "solution": "(\\approx  320 words)  \nAssume, toward a contradiction, that\n\n (0) \\mathbb{N} = T\\alpha  \\sqcup  T\\beta  \\sqcup  T\\gamma  \\sqcup  T\\delta ,  \\theta \\kappa  > 1, 0<\\varphi \\kappa <1.\n\nStep 1 - How many terms of T\\kappa  do not exceed N.  \nPut  \n\n A\\kappa (N) := |T\\kappa  \\cap  {1,\\ldots ,N}|,  N \\geq  1.\n\nMembership m \\in  T\\kappa  means m = \\lfloor n \\theta \\kappa +\\varphi \\kappa \\rfloor  for some n, hence  \n\n n \\theta \\kappa +\\varphi \\kappa  < m+1 \\leq  N+1 \\Leftrightarrow  n < (N+1-\\varphi \\kappa )/\\theta \\kappa .\n\nThus  \n\n A\\kappa (N)=\\lceil (N+1-\\varphi \\kappa )/\\theta \\kappa \\rceil -1\n    =\\lfloor (N+1-\\varphi \\kappa )/\\theta \\kappa \\rfloor -\\varepsilon \\kappa (N),\n\nwhere \\varepsilon \\kappa (N)=1 precisely when (N+1-\\varphi \\kappa )/\\theta \\kappa  is an integer, and 0 otherwise.  \nBecause of (0),\n\n \\sum \\kappa  A\\kappa (N)=N.                                                        (1)\n\nInserting the formula for A\\kappa (N) gives  \n\n \\sum \\kappa  \\lfloor (N+1-\\varphi \\kappa )/\\theta \\kappa \\rfloor =N+Z(N),                                        (2)\n\nwith Z(N):=\\sum \\kappa  \\varepsilon \\kappa (N) \\in  {0,1,2,3,4}.\n\nStep 2 - The reciprocal identity.  \nDivide (2) by N and let N\\to \\infty : lim \\lfloor x\\rfloor /N=x/N, hence  \n\n (3) 1/\\alpha +1/\\beta +1/\\gamma +1/\\delta  = 1.\n\nStep 3 - A rigid fractional-part sum.  \nWrite { x }=x-\\lfloor x\\rfloor .  From (2) and the trivial equality  \n\n \\sum \\kappa  (N+1-\\varphi \\kappa )/\\theta \\kappa  = N+1-\\sum \\kappa  \\varphi \\kappa ,\n\nsubtracting yields  \n\n \\sum \\kappa  {(N+1-\\varphi \\kappa )/\\theta \\kappa } = 1-\\sum \\kappa  \\varphi \\kappa  - Z(N).                        (4)\n\nThe left side always lies in [0,4), so the right side must as well; consequently\n\n Z(N)=0 for every N.                                            (5)\n\nTherefore (N+1-\\varphi \\kappa )/\\theta \\kappa  is never an integer; in particular, any \\theta \\kappa  with an even reduced denominator is excluded.\n\nStep 4 - An unavoidable visit to the triangle x+y<1.  \nDefine\n\n xN:={-(N+1-\\varphi \\alpha )/\\alpha }, yN:={-(N+1-\\varphi \\beta )/\\beta }.\n\nBecause xN+1\\equiv xN-1/\\alpha  (mod 1) and the analogous relation for yN, the sequence (xN,yN) is the orbit of v0:= (-(1-\\varphi \\alpha )/\\alpha , -(1-\\varphi \\beta )/\\beta ) under the toral translation \\tau (x,y)=(x-1/\\alpha , y-1/\\beta ).\n\nLet \\Delta := {(x,y)\\in [0,1)^2 : x+y<1}.  If some index N satisfies (xN,yN)\\in \\Delta , then\n\n {-(N+1-\\varphi \\alpha )/\\alpha }+{-(N+1-\\varphi \\beta )/\\beta }<1,                              (6)\n\nand combining (4),(5) yields\n\n sum of all four fractional parts = 1-\\sum \\kappa  \\varphi \\kappa  < 3,\n\ncontradicting (4).  Hence no orbit point may enter \\Delta .\n\nYet \\tau  is an ergodic translation unless 1,1/\\alpha ,1/\\beta  are rationally dependent.  In the ergodic case the orbit is dense and certainly meets \\Delta , contradiction.\n\nIf a linear relation a/\\alpha +b/\\beta =c (integers, coprime) exists, then, by (5), neither 1/\\alpha  nor 1/\\beta  is integral; at least one is irrational, so \\tau  restricted to the closed subgroup L={ax+by\\equiv \\lambda  (mod 1)} (\\lambda  determined by v0) is again ergodic, forcing an intersection with \\Delta .  \n\nFinally, when both 1/\\alpha =q/p and 1/\\beta =s/r are rational with odd denominators p,r\\geq 3, the orbit is strictly periodic of length lcm(p,r).  Averaging xN+yN over one period gives 1; therefore some term is <1, placing the orbit in \\Delta  - the same contradiction.\n\nEvery possible arithmetic configuration leads to a violation of (4), so assumption (0) is impossible. \\blacksquare ",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.111323",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

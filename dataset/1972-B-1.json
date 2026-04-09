@@ -1,0 +1,116 @@
+{
+  "index": "1972-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "B-1. Show that the power series representation for the series \\( \\sum_{n=0}^{\\infty}\\left(x^{n}(x-1)^{2 n}\\right) / n \\) ! cannot have three consecutive zero coefficients.",
+  "solution": "B-1 For the proposed solution the problem could have been stated in the more general form: The series expansion about any point for \\( \\exp (P(x)) \\), if \\( P(x) \\) is a cubic polynomial, will not have three consecutive zero coefficients.\n\nIf \\( f(x)=\\exp (P(x)) \\), where \\( P(x) \\) is a cubic polynomial, then \\( f^{\\prime}=f \\cdot P^{\\prime} \\) and \\( f^{\\prime \\prime}=f^{\\prime} \\cdot P^{\\prime}+f \\cdot P^{\\prime \\prime} \\). In general for \\( k \\geqq 2 \\),\n\\[\nf^{(k+1)}=f^{(k)} \\cdot P^{\\prime}+\\binom{k}{1} f^{(k-1)} \\cdot P^{\\prime \\prime}+\\binom{k}{2} f^{(k-2)} \\cdot P^{\\prime \\prime \\prime}\n\\]\n\nIt follows from (1): if, at some (real or complex) point \\( x_{0}, f^{(k-2)}\\left(x_{0}\\right)=f^{(k-1)}\\left(x_{0}\\right) \\) \\( =f^{(k)}\\left(x_{0}\\right)=0 \\), then also \\( f^{(k+1)}\\left(x_{0}\\right)=0 \\). By the same argument, \\( f^{(\\mu)}\\left(x_{0}\\right)=0 \\) for \\( \\mu=k+2, k+3, \\cdots \\); so that \\( f(x) \\) would reduce to a polynomial. This is evidently impossible.\n\nAlternate Solution: In the given form of the problem it can be shown that no coefficient of \\( x^{k} \\) is zero. The product \\( x^{n}(1-x)^{2 n} \\) has a non-zero coefficient for \\( x^{k} \\) if \\( 0 \\leqq k-n \\leqq 2 n \\) or, equivalently, \\( k / 3 \\leqq n \\leqq k \\). This coefficient is the integer\n\\[\n(-1)^{k-n}\\binom{2 n}{n-k}\n\\]\nwhich we denote by \\( a(n, k) \\). The coefficient of \\( x^{k} \\) in the given series is\n\\[\nC_{k}=\\sum_{n=[k / 3]+1}^{k} \\frac{a(n, k)}{n!} .\n\\]\n\nMultiplying through this summation by \\( (k-1) \\) ! will convert each term, except the last term, to an integer. The last term becomes \\( 1 / k \\). Since \\( (k-1) \\) ! times \\( C_{k} \\) is not an integer for \\( k>1 \\) and \\( C_{1}=C_{0}=1 \\), there are no zero coefficients in the expansion of the given series in powers of \\( x \\).",
+  "vars": [
+    "x",
+    "n",
+    "k",
+    "x_0",
+    "\\\\mu"
+  ],
+  "params": [
+    "P",
+    "f",
+    "a",
+    "C_k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "indepvar",
+        "n": "sumindex",
+        "k": "coefindex",
+        "x_0": "zeropoint",
+        "\\\\mu": "greekmu",
+        "P": "cubpoly",
+        "f": "expfunc",
+        "a": "coeffpar",
+        "C_k": "sericoef"
+      },
+      "question": "B-1. Show that the power series representation for the series \\( \\sum_{sumindex=0}^{\\infty}\\frac{indepvar^{sumindex}(indepvar-1)^{2 sumindex}}{sumindex!} \\) cannot have three consecutive zero coefficients.",
+      "solution": "B-1 For the proposed solution the problem could have been stated in the more general form: The series expansion about any point for \\( \\exp (cubpoly(indepvar)) \\), if \\( cubpoly(indepvar) \\) is a cubic polynomial, will not have three consecutive zero coefficients.\n\nIf \\( expfunc(indepvar)=\\exp (cubpoly(indepvar)) \\), where \\( cubpoly(indepvar) \\) is a cubic polynomial, then \\( expfunc^{\\prime}=expfunc \\cdot cubpoly^{\\prime} \\) and \\( expfunc^{\\prime \\prime}=expfunc^{\\prime} \\cdot cubpoly^{\\prime}+expfunc \\cdot cubpoly^{\\prime \\prime} \\). In general for \\( coefindex \\geqq 2 \\),\n\\[\nexpfunc^{(coefindex+1)}=expfunc^{(coefindex)} \\cdot cubpoly^{\\prime}+\\binom{coefindex}{1} expfunc^{(coefindex-1)} \\cdot cubpoly^{\\prime \\prime}+\\binom{coefindex}{2} expfunc^{(coefindex-2)} \\cdot cubpoly^{\\prime \\prime \\prime}\n\\]\n\nIt follows from (1): if, at some (real or complex) point \\( zeropoint, expfunc^{(coefindex-2)}\\left(zeropoint\\right)=expfunc^{(coefindex-1)}\\left(zeropoint\\right)=expfunc^{(coefindex)}\\left(zeropoint\\right)=0 \\), then also \\( expfunc^{(coefindex+1)}\\left(zeropoint\\right)=0 \\). By the same argument, \\( expfunc^{(greekmu)}\\left(zeropoint\\right)=0 \\) for \\( greekmu=coefindex+2, coefindex+3, \\cdots \\); so that \\( expfunc(indepvar) \\) would reduce to a polynomial. This is evidently impossible.\n\nAlternate Solution: In the given form of the problem it can be shown that no coefficient of \\( indepvar^{coefindex} \\) is zero. The product \\( indepvar^{sumindex}(1-indepvar)^{2 sumindex} \\) has a non-zero coefficient for \\( indepvar^{coefindex} \\) if \\( 0 \\leqq coefindex-sumindex \\leqq 2 sumindex \\) or, equivalently, \\( coefindex / 3 \\leqq sumindex \\leqq coefindex \\). This coefficient is the integer\n\\[\n(-1)^{coefindex-sumindex}\\binom{2 sumindex}{sumindex-coefindex}\n\\]\nwhich we denote by \\( coeffpar(sumindex, coefindex) \\). The coefficient of \\( indepvar^{coefindex} \\) in the given series is\n\\[\nsericoef=\\sum_{sumindex=[coefindex / 3]+1}^{coefindex} \\frac{coeffpar(sumindex, coefindex)}{sumindex!} .\n\\]\n\nMultiplying through this summation by \\( (coefindex-1)! \\) will convert each term, except the last term, to an integer. The last term becomes \\( 1 / coefindex \\). Since \\( (coefindex-1)! \\) times \\( sericoef \\) is not an integer for \\( coefindex>1 \\) and \\( sericoef=1 \\) when \\( coefindex=1 \\) or \\( 0 \\), there are no zero coefficients in the expansion of the given series in powers of \\( indepvar \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "n": "jellyfish",
+        "k": "woodpecker",
+        "x_0": "sandalwood",
+        "\\mu": "tortoise",
+        "P": "compassrose",
+        "f": "driftwood",
+        "a": "peppermint",
+        "C_k": "birchbark"
+      },
+      "question": "B-1. Show that the power series representation for the series \\( \\sum_{jellyfish=0}^{\\infty}\\left(marigold^{jellyfish}(marigold-1)^{2 jellyfish}\\right) / jellyfish \\) ! cannot have three consecutive zero coefficients.",
+      "solution": "B-1 For the proposed solution the problem could have been stated in the more general form: The series expansion about any point for \\( \\exp (compassrose(marigold)) \\), if \\( compassrose(marigold) \\) is a cubic polynomial, will not have three consecutive zero coefficients.\n\nIf \\( driftwood(marigold)=\\exp (compassrose(marigold)) \\), where \\( compassrose(marigold) \\) is a cubic polynomial, then \\( driftwood^{\\prime}=driftwood \\cdot compassrose^{\\prime} \\) and \\( driftwood^{\\prime \\prime}=driftwood^{\\prime} \\cdot compassrose^{\\prime}+driftwood \\cdot compassrose^{\\prime \\prime} \\). In general for \\( woodpecker \\geqq 2 \\),\n\\[\ndriftwood^{(woodpecker+1)}=driftwood^{(woodpecker)} \\cdot compassrose^{\\prime}+\\binom{woodpecker}{1} driftwood^{(woodpecker-1)} \\cdot compassrose^{\\prime \\prime}+\\binom{woodpecker}{2} driftwood^{(woodpecker-2)} \\cdot compassrose^{\\prime \\prime \\prime}\n\\]\n\nIt follows from (1): if, at some (real or complex) point \\( sandalwood, driftwood^{(woodpecker-2)}\\left(sandalwood\\right)=driftwood^{(woodpecker-1)}\\left(sandalwood\\right)=driftwood^{(woodpecker)}\\left(sandalwood\\right)=0 \\), then also \\( driftwood^{(woodpecker+1)}\\left(sandalwood\\right)=0 \\). By the same argument, \\( driftwood^{(tortoise)}\\left(sandalwood\\right)=0 \\) for \\( tortoise=woodpecker+2, woodpecker+3, \\cdots \\); so that \\( driftwood(marigold) \\) would reduce to a polynomial. This is evidently impossible.\n\nAlternate Solution: In the given form of the problem it can be shown that no coefficient of \\( marigold^{woodpecker} \\) is zero. The product \\( marigold^{jellyfish}(1-marigold)^{2 jellyfish} \\) has a non-zero coefficient for \\( marigold^{woodpecker} \\) if \\( 0 \\leqq woodpecker-jellyfish \\leqq 2 jellyfish \\) or, equivalently, \\( woodpecker / 3 \\leqq jellyfish \\leqq woodpecker \\). This coefficient is the integer\n\\[\n(-1)^{woodpecker-jellyfish}\\binom{2 jellyfish}{jellyfish-woodpecker}\n\\]\nwhich we denote by \\( peppermint(jellyfish, woodpecker) \\). The coefficient of \\( marigold^{woodpecker} \\) in the given series is\n\\[\nbirchbark_{woodpecker}=\\sum_{jellyfish=[woodpecker / 3]+1}^{woodpecker} \\frac{peppermint(jellyfish, woodpecker)}{jellyfish!} .\n\\]\n\nMultiplying through this summation by \\( (woodpecker-1) \\) ! will convert each term, except the last term, to an integer. The last term becomes \\( 1 / woodpecker \\). Since \\( (woodpecker-1) \\) ! times \\( birchbark_{woodpecker} \\) is not an integer for \\( woodpecker>1 \\) and \\( birchbark_{1}=birchbark_{0}=1 \\), there are no zero coefficients in the expansion of the given series in powers of \\( marigold \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "n": "limitlessindex",
+        "k": "aggregate",
+        "x_0": "everywherepoint",
+        "\\\\mu": "changeless",
+        "P": "transcendent",
+        "f": "staticvalue",
+        "a": "unknownness",
+        "C_k": "zerovoid"
+      },
+      "question": "B-1. Show that the power series representation for the series \\( \\sum_{limitlessindex=0}^{\\infty}\\left(constantvalue^{limitlessindex}(constantvalue-1)^{2 limitessindex}\\right) / limitlessindex \\)! cannot have three consecutive zero coefficients.",
+      "solution": "B-1 For the proposed solution the problem could have been stated in the more general form: The series expansion about any point for \\( \\exp (transcendent(constantvalue)) \\), if \\( transcendent(constantvalue) \\) is a cubic polynomial, will not have three consecutive zero coefficients.\n\nIf \\( staticvalue(constantvalue)=\\exp (transcendent(constantvalue)) \\), where \\( transcendent(constantvalue) \\) is a cubic polynomial, then \\( staticvalue^{\\prime}=staticvalue \\cdot transcendent^{\\prime} \\) and \\( staticvalue^{\\prime \\prime}=staticvalue^{\\prime} \\cdot transcendent^{\\prime}+staticvalue \\cdot transcendent^{\\prime \\prime} \\). In general for \\( aggregate \\geqq 2 \\),\n\\[\nstaticvalue^{(aggregate+1)}=staticvalue^{(aggregate)} \\cdot transcendent^{\\prime}+\\binom{aggregate}{1} staticvalue^{(aggregate-1)} \\cdot transcendent^{\\prime \\prime}+\\binom{aggregate}{2} staticvalue^{(aggregate-2)} \\cdot transcendent^{\\prime \\prime \\prime}\n\\]\n\nIt follows from (1): if, at some (real or complex) point \\( everywherepoint, staticvalue^{(aggregate-2)}\\left(everywherepoint\\right)=staticvalue^{(aggregate-1)}\\left(everywherepoint\\right) =staticvalue^{(aggregate)}\\left(everywherepoint\\right)=0 \\), then also \\( staticvalue^{(aggregate+1)}\\left(everywherepoint\\right)=0 \\). By the same argument, \\( staticvalue^{(changeless)}\\left(everywherepoint\\right)=0 \\) for \\( changeless=aggregate+2, aggregate+3, \\cdots \\); so that \\( staticvalue(constantvalue) \\) would reduce to a polynomial. This is evidently impossible.\n\nAlternate Solution: In the given form of the problem it can be shown that no coefficient of \\( constantvalue^{aggregate} \\) is zero. The product \\( constantvalue^{limitlessindex}(1-constantvalue)^{2 limitessindex} \\) has a non-zero coefficient for \\( constantvalue^{aggregate} \\) if \\( 0 \\leqq aggregate-limitlessindex \\leqq 2 limitessindex \\) or, equivalently, \\( aggregate / 3 \\leqq limitessindex \\leqq aggregate \\). This coefficient is the integer\n\\[\n(-1)^{aggregate-limitlessindex}\\binom{2 limitessindex}{limitessindex-aggregate}\n\\]\nwhich we denote by \\( unknownness(limitessindex, aggregate) \\). The coefficient of \\( constantvalue^{aggregate} \\) in the given series is\n\\[\nzerovoid_{aggregate}=\\sum_{limitessindex=[aggregate / 3]+1}^{aggregate} \\frac{unknownness(limitessindex, aggregate)}{limitessindex!} .\n\\]\n\nMultiplying through this summation by \\( (aggregate-1) ! \\) will convert each term, except the last term, to an integer. The last term becomes \\( 1 / aggregate \\). Since \\( (aggregate-1) ! \\) times \\( zerovoid_{aggregate} \\) is not an integer for \\( aggregate>1 \\) and \\( zerovoid_{1}=zerovoid_{0}=1 \\), there are no zero coefficients in the expansion of the given series in powers of \\( constantvalue \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "n": "hjgrksla",
+        "k": "vmbtqzre",
+        "x_0": "lbvczmnp",
+        "\\mu": "sglbrfpt",
+        "P": "qrptxslm",
+        "f": "nbvcxwer",
+        "a": "zufgldpq",
+        "C_k": "jxkldmrt"
+      },
+      "question": "B-1. Show that the power series representation for the series \\( \\sum_{hjgrksla=0}^{\\infty}\\left(qzxwvtnp^{hjgrksla}(qzxwvtnp-1)^{2 hjgrksla}\\right) / hjgrksla \\) ! cannot have three consecutive zero coefficients.",
+      "solution": "B-1 For the proposed solution the problem could have been stated in the more general form: The series expansion about any point for \\( \\exp (qrptxslm(qzxwvtnp)) \\), if \\( qrptxslm(qzxwvtnp) \\) is a cubic polynomial, will not have three consecutive zero coefficients.\n\nIf \\( nbvcxwer(qzxwvtnp)=\\exp (qrptxslm(qzxwvtnp)) \\), where \\( qrptxslm(qzxwvtnp) \\) is a cubic polynomial, then \\( nbvcxwer^{\\prime}=nbvcxwer \\cdot qrptxslm^{\\prime} \\) and \\( nbvcxwer^{\\prime \\prime}=nbvcxwer^{\\prime} \\cdot qrptxslm^{\\prime}+nbvcxwer \\cdot qrptxslm^{\\prime \\prime} \\). In general for \\( vmbtqzre \\geqq 2 \\),\n\\[\nnbvcxwer^{(vmbtqzre+1)}=nbvcxwer^{(vmbtqzre)} \\cdot qrptxslm^{\\prime}+\\binom{vmbtqzre}{1} nbvcxwer^{(vmbtqzre-1)} \\cdot qrptxslm^{\\prime \\prime}+\\binom{vmbtqzre}{2} nbvcxwer^{(vmbtqzre-2)} \\cdot qrptxslm^{\\prime \\prime \\prime}\n\\]\nIt follows from (1): if, at some (real or complex) point \\( lbvczmnp_{0}, nbvcxwer^{(vmbtqzre-2)}\\left(lbvczmnp_{0}\\right)=nbvcxwer^{(vmbtqzre-1)}\\left(lbvczmnp_{0}\\right)=nbvcxwer^{(vmbtqzre)}\\left(lbvczmnp_{0}\\right)=0 \\), then also \\( nbvcxwer^{(vmbtqzre+1)}\\left(lbvczmnp_{0}\\right)=0 \\). By the same argument, \\( nbvcxwer^{(sglbrfpt)}\\left(lbvczmnp_{0}\\right)=0 \\) for \\( sglbrfpt=vmbtqzre+2, vmbtqzre+3, \\cdots \\); so that \\( nbvcxwer(qzxwvtnp) \\) would reduce to a polynomial. This is evidently impossible.\n\nAlternate Solution: In the given form of the problem it can be shown that no coefficient of \\( qzxwvtnp^{vmbtqzre} \\) is zero. The product \\( qzxwvtnp^{hjgrksla}(1-qzxwvtnp)^{2 hjgrksla} \\) has a non-zero coefficient for \\( qzxwvtnp^{vmbtqzre} \\) if \\( 0 \\leqq vmbtqzre-hjgrksla \\leqq 2 hjgrksla \\) or, equivalently, \\( vmbtqzre / 3 \\leqq hjgrksla \\leqq vmbtqzre \\). This coefficient is the integer\n\\[\n(-1)^{vmbtqzre-hjgrksla}\\binom{2 hjgrksla}{hjgrksla-vmbtqzre}\n\\]\nwhich we denote by \\( zufgldpq(hjgrksla, vmbtqzre) \\). The coefficient of \\( qzxwvtnp^{vmbtqzre} \\) in the given series is\n\\[\njxkldmrt_{vmbtqzre}=\\sum_{hjgrksla=[vmbtqzre / 3]+1}^{vmbtqzre} \\frac{zufgldpq(hjgrksla, vmbtqzre)}{hjgrksla!} .\\]\nMultiplying through this summation by \\( (vmbtqzre-1)! \\) will convert each term, except the last term, to an integer. The last term becomes \\( 1 / vmbtqzre \\). Since \\( (vmbtqzre-1)! \\) times \\( jxkldmrt_{vmbtqzre} \\) is not an integer for \\( vmbtqzre>1 \\) and \\( jxkldmrt_{1}=jxkldmrt_{0}=1 \\), there are no zero coefficients in the expansion of the given series in powers of \\( qzxwvtnp \\)."
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\nS(x)=\\sum_{n=0}^{\\infty}\\frac{(x+1)^{n}(x-1)^{2n}}{n!}\n\\]\nbe expanded in a Taylor series about the point $x=1$:\n\\[\nS(x)=\\sum_{k=0}^{\\infty} c_k\bigl(x-1\\bigr)^k.\n\\]\nProve that the sequence $(c_k)_{k\\ge 0}$ contains no block of four consecutive zeros; i.e. there is no non-negative integer $m$ with\n\\[\nc_m=c_{m+1}=c_{m+2}=c_{m+3}=0.\n\\]",
+      "solution": "1.  Rewriting the series.\nBecause (x+1)^n(x-1)^{2n}=((x+1)(x-1)^2)^n, we have\n\\[\nS(x)=\\sum_{n=0}^{\\infty}\\frac{((x+1)(x-1)^2)^{n}}{n!}=\\exp\\bigl((x+1)(x-1)^2\\bigr).\n\\]\nSet\n\\[\nP(x)=(x+1)(x-1)^2=x^3-x^2-x+1\\quad(\\text{a cubic}),\\qquad f(x)=e^{P(x)}=S(x).\n\\]\nNote that P(1)=0, so the desired Taylor expansion of S about x=1 is exactly the expansion of f about that point.\n\n2.  A derivative recurrence.\nSince f' = P' f, repeated differentiation and the product rule give, for every k\\geq 2,\n\\[\nf^{(k+1)} = P' f^{(k)} + k\\,P'' f^{(k-1)} + \\binom{k}{2} P''' f^{(k-2)}.\n\\]\nBecause P is cubic, P^{(4)}\\equiv 0, so no higher derivatives of P appear.\n\n3.  What three consecutive zeros do.\nIf at some point x_0 one has\n\\[f^{(k)}(x_0)=f^{(k-1)}(x_0)=f^{(k-2)}(x_0)=0,\\]\nthen the recurrence forces f^{(k+1)}(x_0)=0.  Repeating, all higher derivatives also vanish at x_0, so the Taylor series of f about x_0 terminates---i.e. f becomes a polynomial.\n\n4.  Applying this at x_0=1.\nSuppose, for contradiction, that four consecutive Taylor coefficients at x=1 are zero: c_m=c_{m+1}=c_{m+2}=c_{m+3}=0.  Then the derivatives f^{(m)}(1),f^{(m+1)}(1),f^{(m+2)}(1),f^{(m+3)}(1) vanish; in particular, the last three do.  With k=m+3 in Step 3, these three consecutive zeros force all higher derivatives at 1 to be zero, so the Taylor series of f about 1 is finite and f is a polynomial.\n\n5.  Contradiction.\nBut f(x)=e^{P(x)} with P cubic is not a polynomial: the exponential series never terminates.  Hence our assumption was impossible, and no group of four consecutive coefficients c_k can vanish.\n\nConsequently, the Taylor expansion of S(x) about x=1 possesses no block of four successive zero coefficients.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite the given series as f(x)=exp(P(x)) with P(x) cubic (deg 3).",
+          "From the product rule obtain the derivative recurrence  f^{(k+1)} = P' f^{(k)} + k·P'' f^{(k-1)} + (k choose 2) P''' f^{(k-2)}.",
+          "Because the cubic supplies no higher derivatives, vanishing of f^{(k-2)}, f^{(k-1)}, f^{(k)} at a point forces f^{(k+1)}=0 (and hence all higher derivatives).",
+          "Thus three consecutive zero Maclaurin coefficients would make every later coefficient zero, turning f into a polynomial.",
+          "Since exp(P(x)) is not a polynomial, three consecutive zero coefficients cannot occur."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Specific cubic used; any coefficients / shift work as long as deg(P)=3.",
+            "original": "P(x)=x(x-1)^2 = x^3-2x^2+x"
+          },
+          "slot2": {
+            "description": "Point about which the power series is taken.",
+            "original": "0 (Maclaurin series)"
+          },
+          "slot3": {
+            "description": "Number of consecutive zero coefficients forbidden; equals deg(P)+1.",
+            "original": "3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

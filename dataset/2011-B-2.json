@@ -1,0 +1,115 @@
+{
+  "index": "2011-B-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "numbers for which at least one rational number $x$ satisfies $px^2 + qx +\nr =0$. Which primes appear in seven or more elements of $S$?",
+  "solution": "Only the primes 2 and 5 appear seven or more times.\nThe fact that these primes appear is demonstrated by the examples\n\\[\n(2,5,2), (2, 5, 3),  (2, 7, 5), (2, 11, 5)\n\\]\nand their reversals.\n\nIt remains to show that if either $\\ell=3$ or $\\ell$ is a prime greater than 5, then $\\ell$ occurs at most six times\nas an element of a triple in $S$.\nNote that $(p,q,r) \\in S$ if and only if\n$q^2 - 4pr = a^2$ for some integer $a$; in particular, since $4pr \\geq 16$, this forces $q \\geq 5$.\nIn particular, $q$ is odd, as then is $a$, and so $q^2 \\equiv a^2 \\equiv 1 \\pmod{8}$;\nconsequently, one of $p,r$ must equal 2. If $r=2$, then $8p = q^2-a^2 = (q+a)(q-a)$; since both factors\nare of the same sign and their sum is the positive number $2q$, both factors are positive.\nSince they are also both even, we have $q+a \\in \\{2, 4, 2p, 4p\\}$ and so\n$q \\in \\{2p+1, p+2\\}$. Similarly, if $p=2$, then $q \\in \\{2r+1, r+2\\}$.\nConsequently, $\\ell$ occurs at most twice as many times as there are prime numbers in the list\n\\[\n2\\ell+1, \\ell+2, \\frac{\\ell-1}{2}, \\ell-2.\n\\]\nFor $\\ell = 3$,$\\ell-2= 1$ is not prime.\nFor $\\ell \\geq 7$, the numbers $\\ell-2, \\ell, \\ell+2$ cannot all be prime,\nsince one of them is always a nontrivial multiple of 3.\n\n\\textbf{Remark.}\nThe above argument shows that the cases listed for 5 are the only ones that can occur. By contrast,\nthere are infinitely many cases where 2 occurs if either the twin prime conjecture holds or there are\ninfinitely many Sophie Germain primes (both of which are expected to be true).",
+  "vars": [
+    "x"
+  ],
+  "params": [
+    "p",
+    "q",
+    "r",
+    "S",
+    "\\\\ell",
+    "a"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "unknownx",
+        "p": "coeffp",
+        "q": "coeffq",
+        "r": "coeffr",
+        "S": "settriples",
+        "\\ell": "primeell",
+        "a": "integera"
+      },
+      "question": "numbers for which at least one rational number $unknownx$ satisfies $coeffp\\,unknownx^2 + coeffq\\,unknownx + coeffr =0$. Which primes appear in seven or more elements of $settriples$?",
+      "solution": "Only the primes 2 and 5 appear seven or more times.\nThe fact that these primes appear is demonstrated by the examples\n\\[\n(2,5,2),\\;(2,5,3),\\;(2,7,5),\\;(2,11,5)\n\\]\nand their reversals.\n\nIt remains to show that if either $primeell=3$ or $primeell$ is a prime greater than 5, then $primeell$ occurs at most six times as an element of a triple in $settriples$.\nNote that $(coeffp,coeffq,coeffr) \\in settriples$ if and only if\n$coeffq^2-4\\,coeffp\\,coeffr = integera^2$ for some integer $integera$; in particular, since $4\\,coeffp\\,coeffr \\geq 16$, this forces $coeffq \\geq 5$.\nIn particular, $coeffq$ is odd, as then is $integera$, and so $coeffq^2 \\equiv integera^2 \\equiv 1 \\pmod{8}$; consequently, one of $coeffp,coeffr$ must equal 2.\nIf $coeffr=2$, then $8coeffp = coeffq^2-integera^2 = (coeffq+integera)(coeffq-integera)$; since both factors are of the same sign and their sum is the positive number $2coeffq$, both factors are positive.\nSince they are also both even, we have $coeffq+integera \\in \\{2,4,2coeffp,4coeffp\\}$ and so $coeffq \\in \\{2coeffp+1,\\;coeffp+2\\}$.\nSimilarly, if $coeffp=2$, then $coeffq \\in \\{2coeffr+1,\\;coeffr+2\\}$.\nConsequently, $primeell$ occurs at most twice as many times as there are prime numbers in the list\n\\[\n2primeell+1,\\;primeell+2,\\;\\frac{primeell-1}{2},\\;primeell-2.\n\\]\nFor $primeell = 3$, $primeell-2 = 1$ is not prime.\nFor $primeell \\geq 7$, the numbers $primeell-2,\\;primeell,\\;primeell+2$ cannot all be prime, since one of them is always a non-trivial multiple of 3.\n\n\\textbf{Remark.} The above argument shows that the cases listed for 5 are the only ones that can occur. By contrast, there are infinitely many cases where 2 occurs if either the twin prime conjecture holds or there are infinitely many Sophie Germain primes (both of which are expected to be true)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigolds",
+        "p": "lighthouse",
+        "q": "buttercup",
+        "r": "thunderbolt",
+        "S": "watermelon",
+        "\\ell": "dragonfly",
+        "a": "sapphire"
+      },
+      "question": "numbers for which at least one rational number $marigolds$ satisfies $lighthouse marigolds^2 + buttercup marigolds +\nthunderbolt =0$. Which primes appear in seven or more elements of $watermelon$?",
+      "solution": "Only the primes 2 and 5 appear seven or more times.\nThe fact that these primes appear is demonstrated by the examples\n\\[\n(2,5,2), (2, 5, 3),  (2, 7, 5), (2, 11, 5)\n\\]\nand their reversals.\n\nIt remains to show that if either $dragonfly=3$ or $dragonfly$ is a prime greater than 5, then $dragonfly$ occurs at most six times\nas an element of a triple in $watermelon$.\nNote that $(lighthouse,buttercup,thunderbolt) \\in watermelon$ if and only if\n$buttercup^2 - 4 lighthouse thunderbolt = sapphire^2$ for some integer $sapphire$; in particular, since $4 lighthouse thunderbolt \\geq 16$, this forces $buttercup \\geq 5$.\nIn particular, $buttercup$ is odd, as then is $sapphire$, and so $buttercup^2 \\equiv sapphire^2 \\equiv 1 \\pmod{8}$;\nconsequently, one of $lighthouse,thunderbolt$ must equal 2. If $thunderbolt=2$, then $8 lighthouse = buttercup^2-sapphire^2 = (buttercup+sapphire)(buttercup-sapphire)$; since both factors\nare of the same sign and their sum is the positive number $2 buttercup$, both factors are positive.\nSince they are also both even, we have $buttercup+sapphire \\in \\{2, 4, 2 lighthouse, 4 lighthouse\\}$ and so\n$buttercup \\in \\{2 lighthouse+1, lighthouse+2\\}$. Similarly, if $lighthouse=2$, then $buttercup \\in \\{2 thunderbolt+1, thunderbolt+2\\}$.\nConsequently, $dragonfly$ occurs at most twice as many times as there are prime numbers in the list\n\\[\n2 dragonfly+1, dragonfly+2, \\frac{dragonfly-1}{2}, dragonfly-2.\n\\]\nFor $dragonfly = 3$, $dragonfly-2= 1$ is not prime.\nFor $dragonfly \\geq 7$, the numbers $dragonfly-2, dragonfly, dragonfly+2$ cannot all be prime,\nsince one of them is always a nontrivial multiple of 3.\n\n\\textbf{Remark.}\nThe above argument shows that the cases listed for 5 are the only ones that can occur. By contrast,\nthere are infinitely many cases where 2 occurs if either the twin prime conjecture holds or there are\ninfinitely many Sophie Germain primes (both of which are expected to be true)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownvalue",
+        "p": "composite",
+        "q": "nonfactor",
+        "r": "irrational",
+        "S": "sequence",
+        "\\ell": "compositeindex",
+        "a": "fractional"
+      },
+      "question": "numbers for which at least one rational number $knownvalue$ satisfies $composite knownvalue^2 + nonfactor knownvalue + irrational =0$. Which primes appear in seven or more elements of $sequence$?",
+      "solution": "Only the primes 2 and 5 appear seven or more times.\nThe fact that these primes appear is demonstrated by the examples\n\\[\n(2,5,2), (2, 5, 3),  (2, 7, 5), (2, 11, 5)\n\\]\nand their reversals.\n\nIt remains to show that if either $compositeindex=3$ or $compositeindex$ is a prime greater than 5, then $compositeindex$ occurs at most six times\nas an element of a triple in $sequence$.\nNote that $(composite,nonfactor,irrational) \\in sequence$ if and only if\n$nonfactor^2 - 4 composite irrational = fractional^2$ for some integer $fractional$; in particular, since $4 composite irrational \\geq 16$, this forces $nonfactor \\geq 5$.\nIn particular, $nonfactor$ is odd, as then is $fractional$, and so $nonfactor^2 \\equiv fractional^2 \\equiv 1 \\pmod{8}$;\nconsequently, one of $composite,irrational$ must equal 2. If $irrational=2$, then $8 composite = nonfactor^2-fractional^2 = (nonfactor+fractional)(nonfactor-fractional)$; since both factors\nare of the same sign and their sum is the positive number $2 nonfactor$, both factors are positive.\nSince they are also both even, we have $nonfactor+fractional \\in \\{2, 4, 2 composite, 4 composite\\}$ and so\n$nonfactor \\in \\{2 composite+1, composite+2\\}$. Similarly, if $composite=2$, then $nonfactor \\in \\{2 irrational+1, irrational+2\\}$.\nConsequently, $compositeindex$ occurs at most twice as many times as there are prime numbers in the list\n\\[\n2 compositeindex +1, compositeindex +2, \\frac{ compositeindex -1}{2}, compositeindex -2.\n\\]\nFor $compositeindex = 3$, $compositeindex -2= 1$ is not prime.\nFor $compositeindex \\geq 7$, the numbers $compositeindex -2, compositeindex, compositeindex +2$ cannot all be prime,\nsince one of them is always a nontrivial multiple of 3.\n\n\\textbf{Remark.}\nThe above argument shows that the cases listed for 5 are the only ones that can occur. By contrast,\nthere are infinitely many cases where 2 occurs if either the twin prime conjecture holds or there are\ninfinitely many Sophie Germain primes (both of which are expected to be true)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zqnmlsej",
+        "p": "hvydkqwt",
+        "q": "ombfrsuj",
+        "r": "txpcwlag",
+        "S": "kuvyedbn",
+        "\\ell": "wqjrstmn",
+        "a": "gipvzola"
+      },
+      "question": "numbers for which at least one rational number $zqnmlsej$ satisfies $hvydkqwt zqnmlsej^2 + ombfrsuj zqnmlsej +\ntxpcwlag =0$. Which primes appear in seven or more elements of $kuvyedbn$?",
+      "solution": "Only the primes 2 and 5 appear seven or more times.\nThe fact that these primes appear is demonstrated by the examples\n\\[\n(2,5,2), (2, 5, 3),  (2, 7, 5), (2, 11, 5)\n\\]\nand their reversals.\n\nIt remains to show that if either $wqjrstmn=3$ or $wqjrstmn$ is a prime greater than 5, then $wqjrstmn$ occurs at most six times\nas an element of a triple in $kuvyedbn$.\nNote that $(hvydkqwt, ombfrsuj, txpcwlag) \\in kuvyedbn$ if and only if\n$ombfrsuj^2 - 4 hvydkqwt txpcwlag = gipvzola^2$ for some integer $gipvzola$; in particular, since $4 hvydkqwt txpcwlag \\geq 16$, this forces $ombfrsuj \\geq 5$.\nIn particular, $ombfrsuj$ is odd, as then is $gipvzola$, and so $ombfrsuj^2 \\equiv gipvzola^2 \\equiv 1 \\pmod{8}$;\nconsequently, one of $hvydkqwt, txpcwlag$ must equal 2. If $txpcwlag=2$, then $8 hvydkqwt = ombfrsuj^2-gipvzola^2 = (ombfrsuj+gipvzola)(ombfrsuj-gipvzola)$; since both factors\nare of the same sign and their sum is the positive number $2 ombfrsuj$, both factors are positive.\nSince they are also both even, we have $ombfrsuj+gipvzola \\in \\{2, 4, 2 hvydkqwt, 4 hvydkqwt\\}$ and so\n$ombfrsuj \\in \\{2 hvydkqwt+1, hvydkqwt+2\\}$. Similarly, if $hvydkqwt=2$, then $ombfrsuj \\in \\{2 txpcwlag+1, txpcwlag+2\\}$.\nConsequently, $wqjrstmn$ occurs at most twice as many times as there are prime numbers in the list\n\\[\n2 wqjrstmn+1, wqjrstmn+2, \\frac{wqjrstmn-1}{2}, wqjrstmn-2.\n\\]\nFor $wqjrstmn = 3$, $wqjrstmn-2= 1$ is not prime.\nFor $wqjrstmn \\geq 7$, the numbers $wqjrstmn-2, wqjrstmn, wqjrstmn+2$ cannot all be prime,\nsince one of them is always a nontrivial multiple of 3.\n\n\\textbf{Remark.}\nThe above argument shows that the cases listed for 5 are the only ones that can occur. By contrast,\nthere are infinitely many cases where 2 occurs if either the twin prime conjecture holds or there are\ninfinitely many Sophie Germain primes (both of which are expected to be true)."
+    },
+    "kernel_variant": {
+      "question": "Let S be the set of all ordered triples of primes (p,q,r) for which the quadratic\n                p x^{2}+q x+r=0\nhas a rational root (equivalently, whose discriminant q^{2}-4pr is a perfect square).\n\nFor a prime number \\ell  put\n                N(\\ell )=|{(p,q,r)\\in S : \\ell  occurs in at least one of the three positions}| .\n\n(a)  Describe all elements of S.\n\n(b)  Determine exactly for which primes \\ell  one has N(\\ell )\\geq 6 .\n\nRemark.  In the description `at least one of the three positions' the same prime may occur twice (for instance, (2,5,2)\\in S).  Ordered triples are regarded as different when their components occupy different positions, so (2,7,5) and (5,7,2) are different elements of S although they consist of the same three primes.",
+      "solution": "Part (a)  A structural description of S\n--------------------------------------\nPut (p,q,r)\\in S.  Then q^{2}-4pr=a^{2} for some integer a.  Because p,r\\geq 2, we have q\\geq 5, hence q and a are odd. Consequently q^{2}\\equiv a^{2}\\equiv 1 (mod 8), so 4pr\\equiv 0 (mod 8); therefore at least one of p,r equals 2.  There are three possibilities.\n\nI.  r=2, p\\neq 2.  Then q^{2}-a^{2}=8p=(q+a)(q-a).  The two factors on the right are even, positive and differ by 2a>0, hence\n                       (q+a,q-a)=(4p,2)   or   (2p,4),\nwhich give\n                       q=2p+1   or   q=p+2.                       (1)\n\nII. p=2, r\\neq 2.  Interchanging p and r we obtain\n                       q=2r+1   or   q=r+2.                       (2)\n\nIII. p=r=2.  Now q^{2}-16=a^{2}, so (q-a)(q+a)=16.  The only odd q solving this is q=5 (with a=3).\n\nConversely, every triple yielded by (1), (2) or by (2,5,2) is easily checked to satisfy q^{2}-4pr being a square.  Summarising,\n\nS consists exactly of the ordered triples\n          (p,2p+1,2),  (p,p+2,2),  (2,2r+1,r),  (2,r+2,r)   (p,r odd primes)\n          together with the single triple (2,5,2).\n\nPart (b)  Counting how often a given prime occurs\n-----------------------------------------------\nFix a prime \\ell .  (The case \\ell =2 will be treated separately at the end.)  For an odd prime \\ell  set\n        A_1=2\\ell +1,   A_2=\\ell +2,   B_1=(\\ell -1)/2,   B_2=\\ell -2,           (3)\nwrite [t]=1 if t is prime, [t]=0 otherwise, and put \\tau (\\ell )=|{i\\in {1,2}:B_i=2}| (so \\tau (5)=1 and \\tau (\\ell )=0 otherwise).\n\n1.  \\ell  appears in position p (with r=2).\n    This happens iff A_1 or A_2 is prime, giving [A_1]+[A_2] triples.\n\n2.  \\ell  appears in position r (with p=2).\n    Exactly the same contribution, namely [A_1]+[A_2].\n\n3.  \\ell  appears in position q.\n    This is possible iff B_1 or B_2 is prime.  For a prime value B_i we obtain two distinct triples - except when B_i=2, because then the two constructions coincide.  Hence the contribution of B_i is 2\\cdot [B_i] if B_i\\neq 2 and 1 if B_i=2.  In total\n\n          N(\\ell )=2([A_1]+[A_2]+[B_1]+[B_2]) - \\tau (\\ell ).                (4)\nDenoting \\sigma (\\ell )=[A_1]+[A_2]+[B_1]+[B_2] we have\n          N(\\ell )=2\\sigma (\\ell )  (\\ell \\neq 5),      N(5)=2\\sigma (5)-1.              (5)\n\nA useful observation.\nFor \\ell \\geq 7 the three consecutive odd integers \\ell -2, \\ell , \\ell +2 cannot all be prime: among three consecutive integers one is divisible by 3, and for \\ell \\geq 7 neither \\ell  nor the number equal to 3 can be 3 itself.  Hence at most one of A_2,B_2 contributes to \\sigma (\\ell ) when \\ell \\neq 5 (for \\ell =5 both happen to be prime, but that will be dealt with automatically by (5)).  Consequently \\sigma (\\ell )\\geq 3 forces A_1 and B_1 to be prime.\n\nTherefore for any odd prime \\ell \n          N(\\ell )\\geq 6   \\Leftrightarrow    \\sigma (\\ell )\\geq 3                                  (6)\n                    \\Leftrightarrow    A_1, B_1 are prime and at least one of A_2, B_2 is prime.\n\nTranslated back, we obtain the promised description:\n\nBesides the prime 2, an odd prime \\ell  satisfies N(\\ell )\\geq 6 precisely when\n        (i)   2\\ell +1  is prime,             (Sophie-Germain condition)\n        (ii)  (\\ell -1)/2 is prime,          (safe-prime condition)\n        (iii) at least one of  \\ell -2, \\ell +2 is prime. (twin-prime condition)\n\nIf, in addition, \\ell =5 one gets N(5)=7 (because \\tau (5)=1 in (4)), while for every other odd prime fulfilling (i)-(iii) we have N(\\ell )=6.\n\nSmall primes.  Conditions (i)-(iii) hold for \\ell =5 and \\ell =11; direct calculation from (4) gives N(5)=7 and N(11)=6.  The next example is \\ell =179, again yielding N(179)=6; none of the odd primes below 200 apart from 5 and 11 satisfies the three conditions.\n\nThe prime \\ell =2.\nFrom the explicit description in part (a) we can list at least eight distinct triples containing 2, for instance\n   (2,5,2), (2,7,3), (2,11,5), (2,13,11) and their reversals.\nHence N(2)\\geq 8, so certainly N(2)\\geq 6.  (Whether N(2) is finite or infinite is presently unknown; it would be infinite under either the twin-prime or the Sophie-Germain conjecture, but no proof is known.)\n\nConclusion.\nThe set of primes \\ell  with N(\\ell )\\geq 6 is\n          {2} \\cup  { odd primes \\ell  : 2\\ell +1, (\\ell -1)/2 and at least one of \\ell \\pm 2 are prime }.\nAt the time of writing the odd members of this set begin with 5, 11, 179; further membership is tied to open problems in prime number theory.\n\nExamples.\nFor \\ell  = 11 the six distinct triples are\n   (11,23,2), (11,13,2), (2,23,11), (2,13,11), (5,11,2), (2,11,5).\nFor \\ell  = 179 the six distinct triples are\n   (179,359,2), (179,181,2), (2,359,179), (2,181,179), (89,179,2), (2,179,89).\nThis completes the argument.",
+      "_meta": {
+        "core_steps": [
+          "Translate “quadratic has a rational root” into the discriminant condition q² − 4pr = a².",
+          "Work mod 8: because q and a are odd, 4pr ≡ 0 (mod 8) ⇒ one of p,r must be 2.",
+          "Assume r=2 (or p=2), write 8p = (q+a)(q−a); parity/size arguments give q ∈ {2p+1, p+2}.",
+          "For a fixed non-2 prime ℓ the two positions (as p or r) and the two formulas for q yield at most four candidate primes {2ℓ+1, ℓ+2, (ℓ−1)/2, ℓ−2} ⇒ ℓ can appear in ≤6 triples.",
+          "Compare this bound with the required multiplicity: only primes whose count can exceed the threshold survive, namely 2 (unbounded) and 5 (exactly 7)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Required multiplicity in the question (≥ k appearances)",
+            "original": "7"
+          },
+          "slot2": {
+            "description": "Concrete witness triples used to show that the surviving primes do reach the threshold",
+            "original": "(2,5,2), (2,5,3), (2,7,5), (2,11,5) and their reversals"
+          },
+          "slot3": {
+            "description": "Modulus chosen for the parity argument distinguishing odd squares",
+            "original": "8"
+          },
+          "slot4": {
+            "description": "Prime that happens to make all four candidate numbers in {2ℓ+1, ℓ+2, (ℓ–1)/2, ℓ–2} prime and thus barely meets the threshold",
+            "original": "5"
+          },
+          "slot5": {
+            "description": "Upper bound on appearances of any prime other than 2 derived in the argument",
+            "original": "6"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

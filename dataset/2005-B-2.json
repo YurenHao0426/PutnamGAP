@@ -1,0 +1,81 @@
+{
+  "index": "2005-B-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find all positive integers $n, k_1, \\dots, k_n$ such that\n$k_1 + \\cdots + k_n = 5n-4$ and\n\\[\n\\frac{1}{k_1} + \\cdots + \\frac{1}{k_n} = 1.\n\\]",
+  "solution": "By the arithmetic-harmonic mean inequality or the Cauchy-Schwarz inequality,\n\\[\n(k_1 + \\cdots + k_n)\\left(\\frac{1}{k_1} + \\cdots + \\frac{1}{k_n} \\right)\n\\geq n^2.\n\\]\nWe must thus have $5n-4 \\geq n^2$, so $n \\leq 4$. Without loss of generality,\nwe may suppose that $k_1 \\leq \\cdots \\leq k_n$.\n\nIf $n=1$, we must have $k_1 = 1$, which works. Note that hereafter we cannot\nhave $k_1 =1$.\n\nIf $n = 2$, we have $(k_1,k_2) \\in \\{(2,4), (3,3)\\}$, neither of which work.\n\nIf $n=3$, we have $k_1 +k_2 +k_3 =11$, so $2 \\leq k_1 \\leq 3$.\nHence\n\\[\n(k_1,k_2,k_3) \\in \\{(2,2,7),(2,3,6),(2,4,5),(3,3,5),(3,4,4)\\},\n\\]\nand only $(2,3,6)$ works.\n\nIf $n = 4$, we must have equality in the AM-HM inequality, which only\nhappens when $k_1 = k_2 = k_3 = k_4 = 4$.\n\nHence the solutions are $n = 1$ and $k_1 = 1$,\n$n=3$ and $(k_1,k_2,k_3)$ is a permutation of $(2,3,6)$,\nand $n=4$ and $(k_1,k_2,k_3,k_4) = (4,4,4,4)$.\n\n\\textbf{Remark:}\nIn the cases $n=2,3$, Greg Kuperberg suggests the alternate\napproach of\nenumerating the\nsolutions of $1/k_1 + \\cdots + 1/k_n = 1$ with $k_1 \\leq \\cdots \\leq k_n$.\nThis is easily done by\nproceeding in lexicographic order: one obtains $(2,2)$ for $n=2$, and\n$(2,3,6), (2,4,4), (3,3,3)$ for $n=3$, and only $(2,3,6)$ contributes\nto the final answer.",
+  "vars": [
+    "n",
+    "k_1",
+    "k_2",
+    "k_3",
+    "k_4",
+    "k_n"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "countvar",
+        "k_1": "firstval",
+        "k_2": "secondval",
+        "k_3": "thirdval",
+        "k_4": "fourthval",
+        "k_n": "genericval"
+      },
+      "question": "Find all positive integers $countvar, firstval, \\dots, genericval$ such that\n$firstval + \\cdots + genericval = 5countvar-4$ and\n\\[\n\\frac{1}{firstval} + \\cdots + \\frac{1}{genericval} = 1.\n\\]",
+      "solution": "By the arithmetic-harmonic mean inequality or the Cauchy-Schwarz inequality,\n\\[\n(firstval + \\cdots + genericval)\\left(\\frac{1}{firstval} + \\cdots + \\frac{1}{genericval} \\right)\n\\geq countvar^2.\n\\]\nWe must thus have $5countvar-4 \\geq countvar^2$, so $countvar \\leq 4$. Without loss of generality,\nwe may suppose that $firstval \\leq \\cdots \\leq genericval$.\n\nIf $countvar = 1$, we must have $firstval = 1$, which works. Note that hereafter we cannot\nhave $firstval = 1$.\n\nIf $countvar = 2$, we have $(firstval,secondval) \\in \\{(2,4), (3,3)\\}$, neither of which work.\n\nIf $countvar = 3$, we have $firstval + secondval + thirdval = 11$, so $2 \\leq firstval \\leq 3$.\nHence\n\\[\n(firstval,secondval,thirdval) \\in \\{(2,2,7),(2,3,6),(2,4,5),(3,3,5),(3,4,4)\\},\n\\]\nand only $(2,3,6)$ works.\n\nIf $countvar = 4$, we must have equality in the AM-HM inequality, which only\nhappens when $firstval = secondval = thirdval = fourthval = 4$.\n\nHence the solutions are $countvar = 1$ and $firstval = 1$,\n$countvar = 3$ and $(firstval,secondval,thirdval)$ is a permutation of $(2,3,6)$,\nand $countvar = 4$ and $(firstval,secondval,thirdval,fourthval) = (4,4,4,4)$.\n\n\\textbf{Remark:}\nIn the cases $countvar = 2,3$, Greg Kuperberg suggests the alternate\napproach of enumerating the solutions of $1/firstval + \\cdots + 1/genericval = 1$\nwith $firstval \\leq \\cdots \\leq genericval$. This is easily done by\nproceeding in lexicographic order: one obtains $(2,2)$ for $countvar = 2$, and\n$(2,3,6), (2,4,4), (3,3,3)$ for $countvar = 3$, and only $(2,3,6)$ contributes\nto the final answer."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "marshmallow",
+        "k_1": "watermelon",
+        "k_2": "butterfly",
+        "k_3": "chandelier",
+        "k_4": "lighthouse",
+        "k_n": "strawberry"
+      },
+      "question": "Find all positive integers $marshmallow, watermelon, \\dots, strawberry$ such that\n$watermelon + \\cdots + strawberry = 5marshmallow-4$ and\n\\[\n\\frac{1}{watermelon} + \\cdots + \\frac{1}{strawberry} = 1.\n\\]",
+      "solution": "By the arithmetic-harmonic mean inequality or the Cauchy-Schwarz inequality,\n\\[\n(watermelon + \\cdots + strawberry)\\left(\\frac{1}{watermelon} + \\cdots + \\frac{1}{strawberry} \\right)\n\\geq marshmallow^2.\n\\]\nWe must thus have $5marshmallow-4 \\geq marshmallow^2$, so $marshmallow \\leq 4$. Without loss of generality,\nwe may suppose that $watermelon \\leq \\cdots \\leq strawberry$.\n\nIf $marshmallow=1$, we must have $watermelon = 1$, which works. Note that hereafter we cannot\nhave $watermelon =1$.\n\nIf $marshmallow = 2$, we have $(watermelon,butterfly) \\in \\{(2,4), (3,3)\\}$, neither of which work.\n\nIf $marshmallow=3$, we have $watermelon +butterfly +chandelier =11$, so $2 \\leq watermelon \\leq 3$.\nHence\n\\[\n(watermelon,butterfly,chandelier) \\in \\{(2,2,7),(2,3,6),(2,4,5),(3,3,5),(3,4,4)\\},\n\\]\nand only $(2,3,6)$ works.\n\nIf $marshmallow = 4$, we must have equality in the AM-HM inequality, which only\nhappens when $watermelon = butterfly = chandelier = lighthouse = 4$.\n\nHence the solutions are $marshmallow = 1$ and $watermelon = 1$,\n$marshmallow=3$ and $(watermelon,butterfly,chandelier)$ is a permutation of $(2,3,6)$,\nand $marshmallow=4$ and $(watermelon,butterfly,chandelier,lighthouse) = (4,4,4,4)$.\n\n\\textbf{Remark:}\nIn the cases $marshmallow=2,3$, Greg Kuperberg suggests the alternate\napproach of\nenumerating the\nsolutions of $1/watermelon + \\cdots + 1/strawberry = 1$ with $watermelon \\leq \\cdots \\leq strawberry$.\nThis is easily done by\nproceeding in lexicographic order: one obtains $(2,2)$ for $marshmallow=2$, and\n$(2,3,6), (2,4,4), (3,3,3)$ for $marshmallow=3$, and only $(2,3,6)$ contributes\nto the final answer."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "unbounded",
+        "k_1": "nothingone",
+        "k_2": "nothingtwo",
+        "k_3": "nothingthree",
+        "k_4": "nothingfour",
+        "k_n": "nothingmany"
+      },
+      "question": "Find all positive integers $unbounded, nothingone, \\dots, nothingmany$ such that\n$nothingone + \\cdots + nothingmany = 5unbounded-4$ and\n\\[\n\\frac{1}{nothingone} + \\cdots + \\frac{1}{nothingmany} = 1.\n\\]",
+      "solution": "By the arithmetic-harmonic mean inequality or the Cauchy-Schwarz inequality,\n\\[\n(nothingone + \\cdots + nothingmany)\\left(\\frac{1}{nothingone} + \\cdots + \\frac{1}{nothingmany} \\right)\n\\geq unbounded^2.\n\\]\nWe must thus have $5unbounded-4 \\geq unbounded^2$, so $unbounded \\leq 4$. Without loss of generality,\nwe may suppose that $nothingone \\leq \\cdots \\leq nothingmany$.\n\nIf $unbounded=1$, we must have $nothingone = 1$, which works. Note that hereafter we cannot\nhave $nothingone =1$.\n\nIf $unbounded = 2$, we have $(nothingone,nothingtwo) \\in \\{(2,4), (3,3)\\}$, neither of which work.\n\nIf $unbounded=3$, we have $nothingone +nothingtwo +nothingthree =11$, so $2 \\leq nothingone \\leq 3$.\nHence\n\\[\n(nothingone,nothingtwo,nothingthree) \\in \\{(2,2,7),(2,3,6),(2,4,5),(3,3,5),(3,4,4)\\},\n\\]\nand only $(2,3,6)$ works.\n\nIf $unbounded = 4$, we must have equality in the AM-HM inequality, which only\nhappens when $nothingone = nothingtwo = nothingthree = nothingfour = 4$.\n\nHence the solutions are $unbounded = 1$ and $nothingone = 1$,\n$unbounded=3$ and $(nothingone,nothingtwo,nothingthree)$ is a permutation of $(2,3,6)$,\nand $unbounded=4$ and $(nothingone,nothingtwo,nothingthree,nothingfour) = (4,4,4,4)$.\n\n\\textbf{Remark:}\nIn the cases $unbounded=2,3$, Greg Kuperberg suggests the alternate\napproach of\nenumerating the\nsolutions of $1/nothingone + \\cdots + 1/nothingmany = 1$ with $nothingone \\leq \\cdots \\leq nothingmany$.\nThis is easily done by\nproceeding in lexicographic order: one obtains $(2,2)$ for $unbounded=2$, and\n$(2,3,6), (2,4,4), (3,3,3)$ for $unbounded=3$, and only $(2,3,6)$ contributes\nto the final answer."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k_1": "hjgrksla",
+        "k_2": "klsdjqwe",
+        "k_3": "opwlgzmn",
+        "k_4": "vrtxqbcn",
+        "k_n": "zxfvyeop"
+      },
+      "question": "Find all positive integers $qzxwvtnp, hjgrksla, \\dots, zxfvyeop$ such that\n$hjgrksla + \\cdots + zxfvyeop = 5qzxwvtnp-4$ and\n\\[\n\\frac{1}{hjgrksla} + \\cdots + \\frac{1}{zxfvyeop} = 1.\n\\]",
+      "solution": "By the arithmetic-harmonic mean inequality or the Cauchy-Schwarz inequality,\n\\[\n(hjgrksla + \\cdots + zxfvyeop)\\left(\\frac{1}{hjgrksla} + \\cdots + \\frac{1}{zxfvyeop} \\right)\n\\geq qzxwvtnp^2.\n\\]\nWe must thus have $5qzxwvtnp-4 \\geq qzxwvtnp^2$, so $qzxwvtnp \\leq 4$. Without loss of generality,\nwe may suppose that $hjgrksla \\leq \\cdots \\leq zxfvyeop$.\n\nIf $qzxwvtnp=1$, we must have $hjgrksla = 1$, which works. Note that hereafter we cannot\nhave $hjgrksla =1$.\n\nIf $qzxwvtnp = 2$, we have $(hjgrksla,klsdjqwe) \\in \\{(2,4), (3,3)\\}$, neither of which work.\n\nIf $qzxwvtnp=3$, we have $hjgrksla +klsdjqwe +opwlgzmn =11$, so $2 \\leq hjgrksla \\leq 3$.\nHence\n\\[\n(hjgrksla,klsdjqwe,opwlgzmn) \\in \\{(2,2,7),(2,3,6),(2,4,5),(3,3,5),(3,4,4)\\},\n\\]\nand only $(2,3,6)$ works.\n\nIf $qzxwvtnp = 4$, we must have equality in the AM-HM inequality, which only\nhappens when $hjgrksla = klsdjqwe = opwlgzmn = vrtxqbcn = 4$.\n\nHence the solutions are $qzxwvtnp = 1$ and $hjgrksla = 1$,\n$qzxwvtnp=3$ and $(hjgrksla,klsdjqwe,opwlgzmn)$ is a permutation of $(2,3,6)$,\nand $qzxwvtnp=4$ and $(hjgrksla,klsdjqwe,opwlgzmn,vrtxqbcn) = (4,4,4,4)$.\n\n\\textbf{Remark:}\nIn the cases $qzxwvtnp=2,3$, Greg Kuperberg suggests the alternate\napproach of\nenumerating the\nsolutions of $1/hjgrksla + \\cdots + 1/zxfvyeop = 1$ with $hjgrksla \\leq \\cdots \\leq zxfvyeop$.\nThis is easily done by\nproceeding in lexicographic order: one obtains $(2,2)$ for $qzxwvtnp=2$, and\n$(2,3,6), (2,4,4), (3,3,3)$ for $qzxwvtnp=3$, and only $(2,3,6)$ contributes\nto the final answer."
+    },
+    "kernel_variant": {
+      "question": "Find all positive integers n and integers k_1,\\ldots ,k_n \\geq  2 that satisfy  \n (1) k_1+\\cdots +k_n = 6n - 8,    (2) 1/(k_1-1)+\\cdots +1/(k_n-1) = 2.\n\n",
+      "solution": "Introduce x_i := k_i - 1 (so x_i \\geq  1).  Then the system becomes  \n\n  \\Sigma x_i = 5n - 8,    \\Sigma 1/x_i = 2.   (\\star )  \n\nNote that by the arithmetic-harmonic mean (or Cauchy-Schwarz) inequality,  \n\n (\\Sigma x_i)(\\Sigma 1/x_i) \\geq  n^2.  \n\nSubstituting (\\star ) gives  \n (5n - 8)\\cdot 2 \\geq  n^2 \\Rightarrow  n^2 - 10n + 16 \\leq  0 \\Rightarrow  (n - 2)(n - 8) \\leq  0,  \nhence 2 \\leq  n \\leq  8.  \n\nSince equality in AM-HM occurs precisely when all x_i are equal, we first\nexamine that case.  Equality forces  \n\n n^2 = 2(5n - 8) \\Rightarrow  (n - 2)(n - 8)=0,  \n\nso n = 2 or n = 8.  \nFor n = 2 one has x_1=x_2=(5\\cdot 2-8)/2=1, i.e. k_1=k_2=2.  \nFor n = 8 one obtains x_i=(5\\cdot 8-8)/8=4, i.e. k_i=5 for all i.  \nBoth sets indeed satisfy (\\star ), so they are valid solutions.  \n\nIt remains to rule out 3 \\leq  n \\leq  7, where the AM-HM inequality is **strict**.\nIn this range we have  \n\n (\\Sigma x_i)(\\Sigma 1/x_i) > n^2 \\Rightarrow  2(5n-8) > n^2 \\Rightarrow  (n-2)(n-8) < 0,  \n\nwhich is automatic, so further argument is needed.  \nObserve that \\Sigma 1/x_i = 2.  \n* If at least two x_i equal 1, the reciprocal sum already reaches 2, forcing all\nother reciprocals to vanish---impossible.  \n* Hence at most one x_i equals 1.  If exactly one does, the remaining n-1\nterms must contribute 1.  Since each of them is \\leq \\frac{1}{2}, we need exactly two 2's\nand no further terms; this forces n = 3 and the multiset {x_i} = {1,2,2}.  But\nthen \\Sigma x_i = 5 < 5\\cdot 3-8=7, a contradiction.  \n* If no x_i equals 1, then each reciprocal is at most \\frac{1}{2}, so \\Sigma 1/x_i \\leq  n/2 < 2 for\nn \\leq  7, again impossible.  \n\nThus no solutions exist for 3 \\leq  n \\leq  7.  Consequently the complete list is\n\n (n;k_1,\\ldots ,k_n) \\in  {(2;2,2), (8;5,5,5,5,5,5,5,5)}.\n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.135481",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

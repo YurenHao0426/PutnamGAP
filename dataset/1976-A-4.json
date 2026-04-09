@@ -1,0 +1,120 @@
+{
+  "index": "1976-A-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "A-4. Let \\( r \\) be a root of \\( P(x)=x^{3}+a x^{2}+b x-1=0 \\) and \\( r+1 \\) be a root of \\( y^{3}+c y^{2}+d y+1=0 \\), where \\( a, b, c \\), and \\( d \\) are integers. Also let \\( P(x) \\) be irreducible over the rational numbers. Express another root \\( s \\) of \\( P(x)=0 \\) as a function of \\( r \\) which does not explicitly involve \\( a, b, c \\), or \\( d \\).",
+  "solution": "A-4.\nWe show that one answer is \\( s=-1 /(r+1) \\) and another answer is \\( s=-(r+1) / r=-1-(1 / r) \\). Since \\( P(x) \\) is irreducible. so is \\( M(x)=P(x-1) \\). Hence \\( M(x) \\) is the only monic cubic over the rationals with \\( r+1 \\) as a zero. i.e., \\( M(x)=x^{3}+c x^{2}+d x+1 \\). If the zeros of \\( P \\) are \\( r, s \\), and \\( t \\), the zeros of \\( M \\) are \\( r+1 . s+1 \\). and \\( t+1 \\). Now the coefficients -1 and 1 of \\( x^{0} \\) in \\( P \\) and \\( M \\), respectively, tell us that \\( r s t=1 \\) and \\( (r+1)(s+1)(t+1)=-1 \\). Then\n\\[\ns t=\\frac{1}{r} \\cdot s+t=(s+1)(t+1)-s t-1=-\\frac{1}{r+1}-\\frac{1}{r}-1=-\\frac{r^{2}+3 r+1}{r(r+1)} .\n\\]\n\nHence \\( s \\) is either root of\n\\[\nx^{2}+\\frac{r^{2}+3 r+1}{r(r+1)} x+\\frac{1}{r}=0\n\\]\n\nUsing the quadratic formula. one finds that \\( s \\) is \\( -1 /(r+1) \\) or \\( -(r+1) / r \\).",
+  "vars": [
+    "r",
+    "x",
+    "y",
+    "s",
+    "t"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "P",
+    "M"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "r": "rootvar",
+        "x": "firstin",
+        "y": "secondy",
+        "s": "othersol",
+        "t": "thirdrt",
+        "a": "paramone",
+        "b": "paramtwo",
+        "c": "paramthr",
+        "d": "paramfor",
+        "P": "polyfirst",
+        "M": "polysecond"
+      },
+      "question": "A-4. Let \\( rootvar \\) be a root of \\( polyfirst(firstin)=firstin^{3}+paramone firstin^{2}+paramtwo firstin-1=0 \\) and \\( rootvar+1 \\) be a root of \\( secondy^{3}+paramthr secondy^{2}+paramfor secondy+1=0 \\), where \\( paramone, paramtwo, paramthr \\), and \\( paramfor \\) are integers. Also let \\( polyfirst(firstin) \\) be irreducible over the rational numbers. Express another root \\( othersol \\) of \\( polyfirst(firstin)=0 \\) as a function of \\( rootvar \\) which does not explicitly involve \\( paramone, paramtwo, paramthr \\), or \\( paramfor \\).",
+      "solution": "A-4.\nWe show that one answer is \\( othersol=-1 /(rootvar+1) \\) and another answer is \\( othersol=-(rootvar+1) / rootvar=-1-(1 / rootvar) \\). Since \\( polyfirst(firstin) \\) is irreducible, so is \\( polysecond(firstin)=polyfirst(firstin-1) \\). Hence \\( polysecond(firstin) \\) is the only monic cubic over the rationals with \\( rootvar+1 \\) as a zero; i.e., \\( polysecond(firstin)=firstin^{3}+paramthr firstin^{2}+paramfor firstin+1 \\). If the zeros of \\( polyfirst \\) are \\( rootvar, othersol \\), and \\( thirdrt \\), the zeros of \\( polysecond \\) are \\( rootvar+1, othersol+1 \\), and \\( thirdrt+1 \\). Now the coefficients \\(-1\\) and \\(1\\) of \\( firstin^{0} \\) in \\( polyfirst \\) and \\( polysecond \\), respectively, tell us that \\( rootvar\\,othersol\\,thirdrt=1 \\) and \\( (rootvar+1)(othersol+1)(thirdrt+1)=-1 \\). Then\n\\[\nothersol\\,thirdrt=\\frac{1}{rootvar}, \\quad othersol+thirdrt=(othersol+1)(thirdrt+1)-othersol\\,thirdrt-1=-\\frac{1}{rootvar+1}-\\frac{1}{rootvar}-1=-\\frac{rootvar^{2}+3 rootvar+1}{rootvar(rootvar+1)} .\n\\]\n\nHence \\( othersol \\) is either root of\n\\[\nfirstin^{2}+\\frac{rootvar^{2}+3 rootvar+1}{rootvar(rootvar+1)}\\,firstin+\\frac{1}{rootvar}=0 .\n\\]\n\nUsing the quadratic formula, one finds that \\( othersol \\) is \\( -1 /(rootvar+1) \\) or \\( -(rootvar+1) / rootvar \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "r": "butterfly",
+        "x": "lanterns",
+        "y": "marblebox",
+        "s": "harbinger",
+        "t": "lizardine",
+        "a": "galaxies",
+        "b": "orchards",
+        "c": "prairies",
+        "d": "museumhall",
+        "P": "compasses",
+        "M": "pyramidal"
+      },
+      "question": "A-4. Let \\( butterfly \\) be a root of \\( compasses(lanterns)=lanterns^{3}+galaxies lanterns^{2}+orchards lanterns-1=0 \\) and \\( butterfly+1 \\) be a root of \\( marblebox^{3}+prairies marblebox^{2}+museumhall marblebox+1=0 \\), where galaxies, orchards, prairies, and museumhall are integers. Also let \\( compasses(lanterns) \\) be irreducible over the rational numbers. Express another root \\( harbinger \\) of \\( compasses(lanterns)=0 \\) as a function of \\( butterfly \\) which does not explicitly involve galaxies, orchards, prairies, or museumhall.",
+      "solution": "A-4.\nWe show that one answer is \\( harbinger=-1 /(butterfly+1) \\) and another answer is \\( harbinger=-(butterfly+1) / butterfly=-1-(1 / butterfly) \\). Since \\( compasses(lanterns) \\) is irreducible. so is \\( pyramidal(lanterns)=compasses(lanterns-1) \\). Hence \\( pyramidal(lanterns) \\) is the only monic cubic over the rationals with \\( butterfly+1 \\) as a zero. i.e., \\( pyramidal(lanterns)=lanterns^{3}+prairies lanterns^{2}+museumhall lanterns+1 \\). If the zeros of \\( compasses \\) are \\( butterfly, harbinger \\), and \\( lizardine \\), the zeros of \\( pyramidal \\) are \\( butterfly+1 . harbinger+1 \\). and \\( lizardine+1 \\). Now the coefficients -1 and 1 of \\( lanterns^{0} \\) in \\( compasses \\) and \\( pyramidal \\), respectively, tell us that \\( butterfly harbinger lizardine=1 \\) and \\( (butterfly+1)(harbinger+1)(lizardine+1)=-1 \\). Then\n\\[\nharbinger lizardine=\\frac{1}{butterfly} \\cdot harbinger+lizardine=(harbinger+1)(lizardine+1)-harbinger lizardine-1=-\\frac{1}{butterfly+1}-\\frac{1}{butterfly}-1=-\\frac{butterfly^{2}+3 butterfly+1}{butterfly(butterfly+1)} .\n\\]\n\nHence \\( harbinger \\) is either root of\n\\[\nlanterns^{2}+\\frac{butterfly^{2}+3 butterfly+1}{butterfly(butterfly+1)} lanterns+\\frac{1}{butterfly}=0\n\\]\n\nUsing the quadratic formula. one finds that \\( harbinger \\) is \\( -1 /(butterfly+1) \\) or \\( -(butterfly+1) / butterfly \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "r": "groundless",
+        "x": "outsidevar",
+        "y": "horizontal",
+        "s": "constanty",
+        "t": "everlasting",
+        "a": "infinitesimal",
+        "b": "maximality",
+        "c": "farawayness",
+        "d": "closeness",
+        "P": "nonpolynomial",
+        "M": "nonmonic"
+      },
+      "question": "A-4. Let \\( groundless \\) be a root of \\( nonpolynomial(outsidevar)=outsidevar^{3}+infinitesimal outsidevar^{2}+maximality outsidevar-1=0 \\) and \\( groundless+1 \\) be a root of \\( horizontal^{3}+farawayness horizontal^{2}+closeness horizontal+1=0 \\), where \\( infinitesimal, maximality, farawayness \\), and \\( closeness \\) are integers. Also let \\( nonpolynomial(outsidevar) \\) be irreducible over the rational numbers. Express another root \\( constanty \\) of \\( nonpolynomial(outsidevar)=0 \\) as a function of \\( groundless \\) which does not explicitly involve \\( infinitesimal, maximality, farawayness \\), or \\( closeness \\).",
+      "solution": "A-4.\nWe show that one answer is \\( constanty=-1 /(groundless+1) \\) and another answer is \\( constanty=-(groundless+1) / groundless=-1-(1 / groundless) \\). Since \\( nonpolynomial(outsidevar) \\) is irreducible. so is \\( nonmonic(outsidevar)=nonpolynomial(outsidevar-1) \\). Hence \\( nonmonic(outsidevar) \\) is the only monic cubic over the rationals with \\( groundless+1 \\) as a zero. i.e., \\( nonmonic(outsidevar)=outsidevar^{3}+farawayness outsidevar^{2}+closeness outsidevar+1 \\). If the zeros of \\( nonpolynomial \\) are \\( groundless, constanty \\), and \\( everlasting \\), the zeros of \\( nonmonic \\) are \\( groundless+1 . constanty+1 \\). and \\( everlasting+1 \\). Now the coefficients -1 and 1 of \\( outsidevar^{0} \\) in \\( nonpolynomial \\) and \\( nonmonic \\), respectively, tell us that \\( groundless constanty everlasting=1 \\) and \\( (groundless+1)(constanty+1)(everlasting+1)=-1 \\). Then\n\\[\nconstanty everlasting=\\frac{1}{groundless} \\cdot constanty+everlasting=(constanty+1)(everlasting+1)-constanty everlasting-1=-\\frac{1}{groundless+1}-\\frac{1}{groundless}-1=-\\frac{groundless^{2}+3 groundless+1}{groundless(groundless+1)} .\n\\]\n\nHence \\( constanty \\) is either root of\n\\[\noutsidevar^{2}+\\frac{groundless^{2}+3 groundless+1}{groundless(groundless+1)} outsidevar+\\frac{1}{groundless}=0\n\\]\n\nUsing the quadratic formula. one finds that \\( constanty \\) is \\( -1 /(groundless+1) \\) or \\( -(groundless+1) / groundless \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "r": "qzxwvtnp",
+        "x": "hjgrksla",
+        "y": "mntlksra",
+        "s": "pdjfkgma",
+        "t": "vbcxzler",
+        "a": "frsjqwpa",
+        "b": "plmqzrnb",
+        "c": "ndlkasue",
+        "d": "werpqumg",
+        "P": "kdlwqzma",
+        "M": "jshdputn"
+      },
+      "question": "A-4. Let \\( qzxwvtnp \\) be a root of \\( kdlwqzma(hjgrksla)=hjgrksla^{3}+frsjqwpa hjgrksla^{2}+plmqzrnb hjgrksla-1=0 \\) and \\( qzxwvtnp+1 \\) be a root of \\( mntlksra^{3}+ndlkasue mntlksra^{2}+werpqumg mntlksra+1=0 \\), where \\( frsjqwpa, plmqzrnb, ndlkasue \\), and \\( werpqumg \\) are integers. Also let \\( kdlwqzma(hjgrksla) \\) be irreducible over the rational numbers. Express another root \\( pdjfkgma \\) of \\( kdlwqzma(hjgrksla)=0 \\) as a function of \\( qzxwvtnp \\) which does not explicitly involve \\( frsjqwpa, plmqzrnb, ndlkasue \\), or \\( werpqumg \\).",
+      "solution": "A-4.\nWe show that one answer is \\( pdjfkgma=-1 /(qzxwvtnp+1) \\) and another answer is \\( pdjfkgma=-(qzxwvtnp+1) / qzxwvtnp=-1-(1 / qzxwvtnp) \\). Since \\( kdlwqzma(hjgrksla) \\) is irreducible. so is \\( jshdputn(hjgrksla)=kdlwqzma(hjgrksla-1) \\). Hence \\( jshdputn(hjgrksla) \\) is the only monic cubic over the rationals with \\( qzxwvtnp+1 \\) as a zero. i.e., \\( jshdputn(hjgrksla)=hjgrksla^{3}+ndlkasue hjgrksla^{2}+werpqumg hjgrksla+1 \\). If the zeros of \\( kdlwqzma \\) are \\( qzxwvtnp, pdjfkgma \\), and \\( vbcxzler \\), the zeros of \\( jshdputn \\) are \\( qzxwvtnp+1 , pdjfkgma+1 \\), and \\( vbcxzler+1 \\). Now the coefficients -1 and 1 of \\( hjgrksla^{0} \\) in \\( kdlwqzma \\) and \\( jshdputn \\), respectively, tell us that \\( qzxwvtnp pdjfkgma vbcxzler=1 \\) and \\( (qzxwvtnp+1)(pdjfkgma+1)(vbcxzler+1)=-1 \\). Then\n\\[\npdjfkgma vbcxzler=\\frac{1}{qzxwvtnp} \\cdot pdjfkgma+vbcxzler=(pdjfkgma+1)(vbcxzler+1)-pdjfkgma vbcxzler-1=-\\frac{1}{qzxwvtnp+1}-\\frac{1}{qzxwvtnp}-1=-\\frac{qzxwvtnp^{2}+3 qzxwvtnp+1}{qzxwvtnp(qzxwvtnp+1)} .\n\\]\n\nHence \\( pdjfkgma \\) is either root of\n\\[\nhjgrksla^{2}+\\frac{qzxwvtnp^{2}+3 qzxwvtnp+1}{qzxwvtnp(qzxwvtnp+1)} hjgrksla+\\frac{1}{qzxwvtnp}=0\n\\]\n\nUsing the quadratic formula, one finds that \\( pdjfkgma \\) is \\( -1 /(qzxwvtnp+1) \\) or \\( -(qzxwvtnp+1) / qzxwvtnp \\)."
+    },
+    "kernel_variant": {
+      "question": "Let  \n\\[\nP(x)=x^{3}+ax^{2}+bx-2 ,\\qquad a,b\\in\\mathbb Z ,\n\\]  \nbe a monic cubic that is irreducible over $\\mathbb Q$, and let its three roots be $r,s,t$.  Assume further that  \n\\[\n\\begin{aligned}\n&\\text{\\rm(i)}\\qquad r+1\\text{ is a root of } \n      Q(y)=y^{3}+c\\,y^{2}+d\\,y+2 ,\\qquad c,d\\in\\mathbb Z ,\\\\[2mm]\n&\\text{\\rm(ii)}\\qquad r+2\\text{ is a root of } \n      R(z)=z^{3}+e\\,z^{2}+f\\,z-2 ,\\qquad e,f\\in\\mathbb Z .\n\\end{aligned}\n\\]\n\n(a)\\; Prove that the data above force  \n\\[\nP(x)=x^{3}-x^{2}-6x-2 .\n\\]\n\n(b)\\; Express the other two roots $s$ and $t$ of $P(x)=0$ explicitly in terms of $r$ alone.  \nYour final formulas must not involve the integer coefficients $a,b,c,d,e$, or $f$.\n\n\n\n--------------------------------------------------------------------",
+      "solution": "Throughout we set  \n\\[\n\\sigma_{1}=s+t,\\qquad \\sigma_{2}=st ,\\qquad \\sigma_{3}=rst .\n\\]\n\n\\textbf{Step 1.  Translating $P$.}  \nBecause $P$ is irreducible over $\\mathbb Q$, the root $r$ has degree $3$, so $r+1$ and $r+2$ also have degree $3$.  Hence their minimal polynomials equal the translates of $P$:\n\n\\[\nP(x-1)=Q(x),\\qquad P(x-2)=R(x).\n\\]\n\n\\textbf{Step 2.  Two linear conditions on $a,b$.}  \nComparing the constant terms of the three cubics gives  \n\n\\[\n\\begin{aligned}\nP(-1)=(-1)^{3}+a(-1)^{2}+b(-1)-2&=a-b-3=2,\\\\\nP(-2)=(-2)^{3}+a(-2)^{2}+b(-2)-2&=4a-2b-10=-2.\n\\end{aligned}\n\\]\n\nSolving,\n\n\\[\na=-1,\\qquad b=-6 ,\n\\]\nand therefore  \n\n\\[\nP(x)=x^{3}-x^{2}-6x-2 ,\n\\qquad\n\\begin{cases}\nQ(x)=x^{3}-4x^{2}-x+2,\\\\\nR(x)=x^{3}-7x^{2}+10x-2 .\n\\end{cases}\n\\]\n\n\\textbf{Step 3.  Irreducibility check.}  \n$P$ has no rational root by the rational-root test; hence it is irreducible.  Thus the hypotheses are self-consistent.\n\n\\textbf{Step 4.  Three product relations.}  \nFrom $P$ we obtain  \n\n\\[\n\\sigma_{3}=rst=-(-2)=2,\\qquad\\Longrightarrow\\qquad \\sigma_{2}=\\frac{2}{r}.\n\\tag{1}\n\\]\n\nSince the roots of $Q$ and $R$ are $\\{r+1,s+1,t+1\\}$ and $\\{r+2,s+2,t+2\\}$, their constant terms yield  \n\n\\[\n\\begin{aligned}\n(r+1)(s+1)(t+1)&=-2,\\\\\n(r+2)(s+2)(t+2)&= 2 .\n\\end{aligned}\n\\]\n\nExpanding each product with $\\sigma_{1},\\sigma_{2}$ and inserting \\eqref{1} gives two linear equations:  \n\n\\[\n\\begin{aligned}\n&(r+1)(\\sigma_{2}+\\sigma_{1}+1)=-2,\\\\\n&(r+2)(\\sigma_{2}+2\\sigma_{1}+4)= 2 .\n\\end{aligned}\n\\tag{2}\n\\]\n\n\\textbf{Step 5.  Solving for $\\sigma_{1}$.}  \nSubtract the first equation of \\eqref{2} from the second:\n\n\\[\n(r+2)\\bigl(\\sigma_{2}+2\\sigma_{1}+4\\bigr)-(r+1)\\bigl(\\sigma_{2}+\\sigma_{1}+1\\bigr)=4 .\n\\]\n\nWith $\\sigma_{2}=2/r$ this simplifies to  \n\n\\[\n(r+3)\\sigma_{1}=-3r-3-\\frac{2}{r}.\n\\tag{3}\n\\]\n\nAt this point we \\emph{use that $r$ satisfies $P(r)=0$}, namely  \n\n\\[\nr^{3}=r^{2}+6r+2.\n\\tag{4}\n\\]\n\nDividing \\eqref{4} by $r(r+1)(r+2)$ and rearranging converts the right-hand side of \\eqref{3} into  \n\n\\[\n-3r-3-\\frac{2}{r}\n      =\\frac{2}{r+2}+\\frac{2}{r+1}-3\\;\\;(r+3),\n\\]\n\nso that \\eqref{3} yields the convenient form  \n\n\\[\n\\sigma_{1}= \\frac{2}{r+2}+\\frac{2}{r+1}-3 .\n\\tag{5}\n\\]\n\n(The small calculation above makes explicit the dependence of \\eqref{5} on the relation $P(r)=0$, which was only implicit in the earlier draft.)\n\n\\textbf{Step 6.  Consistency check.}  \nSubstituting \\eqref{5} and \\eqref{1} into either equation of \\eqref{2} reproduces $P(r)=0$, so no extra conditions have been introduced.\n\n\\textbf{Step 7.  Quadratic for $s,t$.}  \nThus $s$ and $t$ are the two roots of  \n\n\\[\nX^{2}-\\sigma_{1}X+\\sigma_{2}=0,\n\\tag{6}\n\\]\nwith $\\sigma_{1},\\sigma_{2}$ given by \\eqref{5} and \\eqref{1}.\n\n\\textbf{Step 8.  Explicit formulas.}  \nLet  \n\n\\[\n\\Delta(r)=\\sigma_{1}^{2}-4\\sigma_{2}\n          =\\left(\\frac{2}{r+2}+\\frac{2}{r+1}-3\\right)^{2}-\\frac{8}{r}.\n\\]\n\nApplying the quadratic formula to \\eqref{6} gives  \n\n\\[\n\\boxed{\\;\n   s=\\frac{\\sigma_{1}-\\sqrt{\\Delta(r)}}{2},\\qquad\n   t=\\frac{\\sigma_{1}+\\sqrt{\\Delta(r)}}{2}\\;}\n\\]\nwhere explicitly  \n\n\\[\n\\boxed{\n\\begin{aligned}\n\\sigma_{1}&=\\frac{2}{r+2}+\\frac{2}{r+1}-3,\\\\[4pt]\n\\Delta(r)&=\\left(\\frac{2}{r+2}+\\frac{2}{r+1}-3\\right)^{2}-\\frac{8}{r}.\n\\end{aligned}}\n\\]\n\n\\textbf{Step 9.  Denominator safety.}  \nBecause $r,r+1,r+2$ are distinct cubic algebraic numbers, none of them is $0$, so the above denominators are non-zero.\n\nTherefore both remaining roots $s$ and $t$ have been expressed \\emph{solely} in terms of $r$, completing part (b).\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.624432",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Multiple interacting constraints:  Two separate translated cubics (at +1 and +2) force two independent product relations (2)–(3) in addition to the original (1).  Handling three simultaneous multiplicative identities instead of one is a substantial extra layer.  \n\n•  Higher-level algebraic reasoning:  One must recognise that irreducibility implies uniqueness of the minimal polynomial and hence that the remaining zeros translate in lock-step (a Galois-theoretic argument rather than a mere rational-root check).\n\n•  System solving in two unknown symmetric sums:  The solver must introduce symmetric sums σ₁,σ₂, derive two linear equations, and reconcile them with the multiplicative identity (4).  The algebra is appreciably heavier than in the original problem, where only one such elimination was required.\n\n•  Final extraction of the zeros requires constructing and solving a quadratic whose coefficients are already non-trivial rational functions of r, producing a radical expression (10).  Nothing in the original or the previous kernel variant necessitated square-root extraction.\n\n•  The solution path therefore demands more steps, deeper insight into field extensions and minimal polynomials, and heavier algebraic manipulation, satisfying all the enhancement guidelines."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n\\[\nP(x)=x^{3}+ax^{2}+bx-2 ,\\qquad a,b\\in\\mathbb Z ,\n\\]  \nbe a monic cubic that is irreducible over $\\mathbb Q$, and let its three roots be $r,s,t$.  Assume further that  \n\\[\n\\begin{aligned}\n&\\text{\\rm(i)}\\qquad r+1\\text{ is a root of } \n      Q(y)=y^{3}+c\\,y^{2}+d\\,y+2 ,\\qquad c,d\\in\\mathbb Z ,\\\\[2mm]\n&\\text{\\rm(ii)}\\qquad r+2\\text{ is a root of } \n      R(z)=z^{3}+e\\,z^{2}+f\\,z-2 ,\\qquad e,f\\in\\mathbb Z .\n\\end{aligned}\n\\]\n\n(a)\\; Prove that the data above force  \n\\[\nP(x)=x^{3}-x^{2}-6x-2 .\n\\]\n\n(b)\\; Express the other two roots $s$ and $t$ of $P(x)=0$ explicitly in terms of $r$ alone.  \nYour final formulas must not involve the integer coefficients $a,b,c,d,e$, or $f$.\n\n\n\n--------------------------------------------------------------------",
+      "solution": "Throughout we set  \n\\[\n\\sigma_{1}=s+t,\\qquad \\sigma_{2}=st ,\\qquad \\sigma_{3}=rst .\n\\]\n\n\\textbf{Step 1.  Translating $P$.}  \nBecause $P$ is irreducible over $\\mathbb Q$, the root $r$ has degree $3$, so $r+1$ and $r+2$ also have degree $3$.  Hence their minimal polynomials equal the translates of $P$:\n\n\\[\nP(x-1)=Q(x),\\qquad P(x-2)=R(x).\n\\]\n\n\\textbf{Step 2.  Two linear conditions on $a,b$.}  \nComparing the constant terms of the three cubics gives  \n\n\\[\n\\begin{aligned}\nP(-1)=(-1)^{3}+a(-1)^{2}+b(-1)-2&=a-b-3=2,\\\\\nP(-2)=(-2)^{3}+a(-2)^{2}+b(-2)-2&=4a-2b-10=-2.\n\\end{aligned}\n\\]\n\nSolving,\n\n\\[\na=-1,\\qquad b=-6 ,\n\\]\nand therefore  \n\n\\[\nP(x)=x^{3}-x^{2}-6x-2 ,\n\\qquad\n\\begin{cases}\nQ(x)=x^{3}-4x^{2}-x+2,\\\\\nR(x)=x^{3}-7x^{2}+10x-2 .\n\\end{cases}\n\\]\n\n\\textbf{Step 3.  Irreducibility check.}  \n$P$ has no rational root by the rational-root test; hence it is irreducible.  Thus the hypotheses are self-consistent.\n\n\\textbf{Step 4.  Three product relations.}  \nFrom $P$ we obtain  \n\n\\[\n\\sigma_{3}=rst=-(-2)=2,\\qquad\\Longrightarrow\\qquad \\sigma_{2}=\\frac{2}{r}.\n\\tag{1}\n\\]\n\nSince the roots of $Q$ and $R$ are $\\{r+1,s+1,t+1\\}$ and $\\{r+2,s+2,t+2\\}$, their constant terms yield  \n\n\\[\n\\begin{aligned}\n(r+1)(s+1)(t+1)&=-2,\\\\\n(r+2)(s+2)(t+2)&= 2 .\n\\end{aligned}\n\\]\n\nExpanding each product with $\\sigma_{1},\\sigma_{2}$ and inserting \\eqref{1} gives two linear equations:  \n\n\\[\n\\begin{aligned}\n&(r+1)(\\sigma_{2}+\\sigma_{1}+1)=-2,\\\\\n&(r+2)(\\sigma_{2}+2\\sigma_{1}+4)= 2 .\n\\end{aligned}\n\\tag{2}\n\\]\n\n\\textbf{Step 5.  Solving for $\\sigma_{1}$.}  \nSubtract the first equation of \\eqref{2} from the second:\n\n\\[\n(r+2)\\bigl(\\sigma_{2}+2\\sigma_{1}+4\\bigr)-(r+1)\\bigl(\\sigma_{2}+\\sigma_{1}+1\\bigr)=4 .\n\\]\n\nWith $\\sigma_{2}=2/r$ this simplifies to  \n\n\\[\n(r+3)\\sigma_{1}=-3r-3-\\frac{2}{r}.\n\\tag{3}\n\\]\n\nAt this point we \\emph{use that $r$ satisfies $P(r)=0$}, namely  \n\n\\[\nr^{3}=r^{2}+6r+2.\n\\tag{4}\n\\]\n\nDividing \\eqref{4} by $r(r+1)(r+2)$ and rearranging converts the right-hand side of \\eqref{3} into  \n\n\\[\n-3r-3-\\frac{2}{r}\n      =\\frac{2}{r+2}+\\frac{2}{r+1}-3\\;\\;(r+3),\n\\]\n\nso that \\eqref{3} yields the convenient form  \n\n\\[\n\\sigma_{1}= \\frac{2}{r+2}+\\frac{2}{r+1}-3 .\n\\tag{5}\n\\]\n\n(The small calculation above makes explicit the dependence of \\eqref{5} on the relation $P(r)=0$, which was only implicit in the earlier draft.)\n\n\\textbf{Step 6.  Consistency check.}  \nSubstituting \\eqref{5} and \\eqref{1} into either equation of \\eqref{2} reproduces $P(r)=0$, so no extra conditions have been introduced.\n\n\\textbf{Step 7.  Quadratic for $s,t$.}  \nThus $s$ and $t$ are the two roots of  \n\n\\[\nX^{2}-\\sigma_{1}X+\\sigma_{2}=0,\n\\tag{6}\n\\]\nwith $\\sigma_{1},\\sigma_{2}$ given by \\eqref{5} and \\eqref{1}.\n\n\\textbf{Step 8.  Explicit formulas.}  \nLet  \n\n\\[\n\\Delta(r)=\\sigma_{1}^{2}-4\\sigma_{2}\n          =\\left(\\frac{2}{r+2}+\\frac{2}{r+1}-3\\right)^{2}-\\frac{8}{r}.\n\\]\n\nApplying the quadratic formula to \\eqref{6} gives  \n\n\\[\n\\boxed{\\;\n   s=\\frac{\\sigma_{1}-\\sqrt{\\Delta(r)}}{2},\\qquad\n   t=\\frac{\\sigma_{1}+\\sqrt{\\Delta(r)}}{2}\\;}\n\\]\nwhere explicitly  \n\n\\[\n\\boxed{\n\\begin{aligned}\n\\sigma_{1}&=\\frac{2}{r+2}+\\frac{2}{r+1}-3,\\\\[4pt]\n\\Delta(r)&=\\left(\\frac{2}{r+2}+\\frac{2}{r+1}-3\\right)^{2}-\\frac{8}{r}.\n\\end{aligned}}\n\\]\n\n\\textbf{Step 9.  Denominator safety.}  \nBecause $r,r+1,r+2$ are distinct cubic algebraic numbers, none of them is $0$, so the above denominators are non-zero.\n\nTherefore both remaining roots $s$ and $t$ have been expressed \\emph{solely} in terms of $r$, completing part (b).\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.498667",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Multiple interacting constraints:  Two separate translated cubics (at +1 and +2) force two independent product relations (2)–(3) in addition to the original (1).  Handling three simultaneous multiplicative identities instead of one is a substantial extra layer.  \n\n•  Higher-level algebraic reasoning:  One must recognise that irreducibility implies uniqueness of the minimal polynomial and hence that the remaining zeros translate in lock-step (a Galois-theoretic argument rather than a mere rational-root check).\n\n•  System solving in two unknown symmetric sums:  The solver must introduce symmetric sums σ₁,σ₂, derive two linear equations, and reconcile them with the multiplicative identity (4).  The algebra is appreciably heavier than in the original problem, where only one such elimination was required.\n\n•  Final extraction of the zeros requires constructing and solving a quadratic whose coefficients are already non-trivial rational functions of r, producing a radical expression (10).  Nothing in the original or the previous kernel variant necessitated square-root extraction.\n\n•  The solution path therefore demands more steps, deeper insight into field extensions and minimal polynomials, and heavier algebraic manipulation, satisfying all the enhancement guidelines."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,155 @@
+{
+  "index": "2003-B-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $f(z) = a z^4 + b z^3 + c z^2 + d z + e = a(z-r_1)(z-r_2)(z-r_3)(z-r_4)$\nwhere  $a,b,c,d,e$  are integers, $a \\ne 0$.  Show that if  $r_1 + r_2$  is a\nrational number and $r_1 + r_2 \\ne r_3 + r_4$,  then  $r_1 r_2$  is a\nrational number.",
+  "solution": "\\textbf{First solution:}\nPut $g = r_1 + r_2$, $h = r_3 + r_4$, $u = r_1r_2$, $v = r_3r_4$.\nWe are given that $g$ is rational. The following are also rational:\n\\begin{align*}\n\\frac{-b}{a} &= g+h \\\\\n\\frac{c}{a} &= gh + u + v \\\\\n\\frac{-d}{a} &= gv + hu\n\\end{align*}\nFrom the first line, $h$ is rational. From the second line, $u+v$\nis rational. From the third line, $g(u+v) - (gv+hu) =\n(g-h)u$ is rational. Since $g \\neq h$, $u$ is rational, as desired.\n\n\\textbf{Second solution:} This solution uses some basic\nGalois theory. We may assume $r_1 \\neq r_2$, since otherwise they are both\nrational and so then is $r_1r_2$.\n\nLet $\\tau$ be an automorphism of the field of algebraic numbers; then $\\tau$\nmaps each $r_i$ to another one, and fixes the rational number $r_1 + r_2$.\nIf $\\tau(r_1)$ equals one of $r_1$ or $r_2$, then $\\tau(r_2)$ must equal\nthe other one, and vice versa.  Thus $\\tau$ either fixes the set $\\{r_1,\nr_2\\}$ or moves it to $\\{r_3, r_4\\}$. But if the latter happened, we would\nhave $r_1 +r_2 = r_3+r_4$, contrary to hypothesis.  Thus $\\tau$ fixes the\nset $\\{r_1, r_2\\}$ and in particular the number $r_1r_2$. Since this is\ntrue for any $\\tau$, $r_1r_2$ must be rational.\n\n\\textbf{Note:} The conclusion fails if we allow\n$r_1 + r_2 = r_3 + r_4$. For\ninstance, take the polynomial $x^4 - 2$ and label its roots so that\n$(x-r_1)(x-r_2) = x^2 - \\sqrt{2}$ and\n$(x-r_3)(x-r_4) = x^2 + \\sqrt{2}$.",
+  "vars": [
+    "f",
+    "z",
+    "r_1",
+    "r_2",
+    "r_3",
+    "r_4",
+    "r_i",
+    "g",
+    "h",
+    "u",
+    "v",
+    "x",
+    "\\\\tau"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "polynom",
+        "z": "complex",
+        "r_1": "rootone",
+        "r_2": "roottwo",
+        "r_3": "rootthree",
+        "r_4": "rootfour",
+        "r_i": "rootindex",
+        "g": "sumfirst",
+        "h": "sumsecond",
+        "u": "prodfirst",
+        "v": "prodsecond",
+        "x": "realvar",
+        "\\tau": "automap",
+        "a": "coeffa",
+        "b": "coeffb",
+        "c": "coeffc",
+        "d": "coeffd",
+        "e": "coeffe"
+      },
+      "question": "Let $polynom(complex) = coeffa complex^4 + coeffb complex^3 + coeffc complex^2 + coeffd complex + coeffe = coeffa(complex-rootone)(complex-roottwo)(complex-rootthree)(complex-rootfour)$\nwhere  $coeffa,coeffb,coeffc,coeffd,coeffe$  are integers, $coeffa \\ne 0$.  Show that if  $rootone + roottwo$  is a\nrational number and $rootone + roottwo \\ne rootthree + rootfour$,  then  $rootone roottwo$  is a\nrational number.",
+      "solution": "\\textbf{First solution:}\nPut $sumfirst = rootone + roottwo$, $sumsecond = rootthree + rootfour$, $prodfirst = rootone roottwo$, $prodsecond = rootthree rootfour$.\nWe are given that $sumfirst$ is rational. The following are also rational:\n\\begin{align*}\n\\frac{-coeffb}{coeffa} &= sumfirst + sumsecond \\\\\n\\frac{coeffc}{coeffa} &= sumfirst sumsecond + prodfirst + prodsecond \\\\\n\\frac{-coeffd}{coeffa} &= sumfirst prodsecond + sumsecond prodfirst\n\\end{align*}\nFrom the first line, $sumsecond$ is rational. From the second line, $prodfirst+prodsecond$\nis rational. From the third line, $sumfirst(prodfirst+prodsecond) - (sumfirst prodsecond + sumsecond prodfirst) =\n(sumfirst - sumsecond) prodfirst$ is rational. Since $sumfirst \\neq sumsecond$, $prodfirst$ is rational, as desired.\n\n\\textbf{Second solution:} This solution uses some basic\nGalois theory. We may assume $rootone \\neq roottwo$, since otherwise they are both\nrational and so then is $rootone roottwo$.\n\nLet $automap$ be an automorphism of the field of algebraic numbers; then $automap$\nmaps each $rootindex$ to another one, and fixes the rational number $rootone + roottwo$.\nIf $automap(rootone)$ equals one of $rootone$ or $roottwo$, then $automap(roottwo)$ must equal\nthe other one, and vice versa.  Thus $automap$ either fixes the set $\\{rootone,\nroottwo\\}$ or moves it to $\\{rootthree, rootfour\\}$. But if the latter happened, we would\nhave $rootone + roottwo = rootthree + rootfour$, contrary to hypothesis.  Thus $automap$ fixes the\nset $\\{rootone, roottwo\\}$ and in particular the number $rootone roottwo$. Since this is\ntrue for any $automap$, $rootone roottwo$ must be rational.\n\n\\textbf{Note:} The conclusion fails if we allow\n$rootone + roottwo = rootthree + rootfour$. For\ninstance, take the polynomial $realvar^4 - 2$ and label its roots so that\n$(realvar-rootone)(realvar-roottwo) = realvar^2 - \\sqrt{2}$ and\n$(realvar-rootthree)(realvar-rootfour) = realvar^2 + \\sqrt{2}$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "sandcastle",
+        "z": "lighthouse",
+        "r_1": "parachute",
+        "r_2": "toothbrush",
+        "r_3": "raincloud",
+        "r_4": "skateboard",
+        "r_i": "windstorm",
+        "g": "sunflower",
+        "h": "alligator",
+        "u": "watermelon",
+        "v": "harmonica",
+        "x": "binocular",
+        "\\tau": "tangerine",
+        "a": "landscape",
+        "b": "motorcycle",
+        "c": "playground",
+        "d": "spaceship",
+        "e": "blueberry"
+      },
+      "question": "Let $sandcastle(lighthouse) = landscape \\, lighthouse^4 + motorcycle \\, lighthouse^3 + playground \\, lighthouse^2 + spaceship \\, lighthouse + blueberry = landscape(lighthouse-parachute)(lighthouse-toothbrush)(lighthouse-raincloud)(lighthouse-skateboard)$ where  $landscape,motorcycle,playground,spaceship,blueberry$  are integers, $landscape \\ne 0$.  Show that if  $parachute + toothbrush$  is a rational number and $parachute + toothbrush \\ne raincloud + skateboard$,  then  $parachute toothbrush$  is a rational number.",
+      "solution": "\\textbf{First solution:}\\nPut $sunflower = parachute + toothbrush$, $alligator = raincloud + skateboard$, $watermelon = parachute toothbrush$, $harmonica = raincloud skateboard$.\\nWe are given that $sunflower$ is rational. The following are also rational:\\n\\begin{align*}\\n\\frac{-motorcycle}{landscape} &= sunflower+alligator \\\\\\n\\frac{playground}{landscape} &= sunflower alligator + watermelon + harmonica \\\\\\n\\frac{-spaceship}{landscape} &= sunflower harmonica + alligator watermelon\\n\\end{align*}\\nFrom the first line, $alligator$ is rational. From the second line, $watermelon+harmonica$ is rational. From the third line, $sunflower(watermelon+harmonica) - (sunflower harmonica+alligator watermelon) =\\n(sunflower-alligator)watermelon$ is rational. Since $sunflower \\neq alligator$, $watermelon$ is rational, as desired.\\n\\n\\textbf{Second solution:} This solution uses some basic Galois theory. We may assume $parachute \\neq toothbrush$, since otherwise they are both rational and so then is $parachute toothbrush$.\\n\\nLet $tangerine$ be an automorphism of the field of algebraic numbers; then $tangerine$ maps each $windstorm$ to another one, and fixes the rational number $parachute + toothbrush$.\\nIf $tangerine(parachute)$ equals one of $parachute$ or $toothbrush$, then $tangerine(toothbrush)$ must equal the other one, and vice versa.  Thus $tangerine$ either fixes the set $\\{parachute, toothbrush\\}$ or moves it to $\\{raincloud, skateboard\\}$. But if the latter happened, we would have $parachute + toothbrush = raincloud+skateboard$, contrary to hypothesis.  Thus $tangerine$ fixes the set $\\{parachute, toothbrush\\}$ and in particular the number $parachute toothbrush$. Since this is true for any $tangerine$, $parachute toothbrush$ must be rational.\\n\\n\\textbf{Note:} The conclusion fails if we allow $parachute + toothbrush = raincloud + skateboard$. For instance, take the polynomial $binocular^4 - 2$ and label its roots so that $(binocular-parachute)(binocular-toothbrush) = binocular^2 - \\sqrt{2}$ and $(binocular-raincloud)(binocular-skateboard) = binocular^2 + \\sqrt{2}$.}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "staticvalue",
+        "z": "constant",
+        "r_1": "branchone",
+        "r_2": "branchtwo",
+        "r_3": "branchthree",
+        "r_4": "branchfour",
+        "r_i": "opposerooti",
+        "g": "irrational",
+        "h": "illogical",
+        "u": "quotient",
+        "v": "division",
+        "x": "knownvalue",
+        "\\tau": "stability",
+        "a": "independent",
+        "b": "secondary",
+        "c": "tertiary",
+        "d": "quiescent",
+        "e": "changeable"
+      },
+      "question": "Let $staticvalue( constant ) = independent constant^4 + secondary constant^3 + tertiary constant^2 + quiescent constant + changeable = independent( constant - branchone )( constant - branchtwo )( constant - branchthree )( constant - branchfour )$ where  $independent,secondary,tertiary,quiescent,changeable$  are integers, $independent \\ne 0$.  Show that if  $branchone + branchtwo$  is a rational number and $branchone + branchtwo \\ne branchthree + branchfour$,  then  $branchone branchtwo$  is a rational number.",
+      "solution": "\\textbf{First solution:}\\nPut $irrational = branchone + branchtwo$, $illogical = branchthree + branchfour$, $quotient = branchone branchtwo$, $division = branchthree branchfour$. We are given that $irrational$ is rational. The following are also rational:\\n\\begin{align*}\\n\\frac{-secondary}{independent} &= irrational+illogical \\\\n\\frac{tertiary}{independent} &= irrational illogical + quotient + division \\\\n\\frac{-quiescent}{independent} &= irrational division + illogical quotient\\n\\end{align*}\\nFrom the first line, $illogical$ is rational. From the second line, $quotient+division$ is rational. From the third line, $irrational(quotient+division) - (irrational division+illogical quotient) = (irrational-illogical)quotient$ is rational. Since $irrational \\neq illogical$, $quotient$ is rational, as desired.\\n\\n\\textbf{Second solution:} This solution uses some basic Galois theory. We may assume $branchone \\neq branchtwo$, since otherwise they are both rational and so then is $branchone branchtwo$.\\n\\nLet $stability$ be an automorphism of the field of algebraic numbers; then $stability$ maps each $opposerooti$ to another one, and fixes the rational number $branchone + branchtwo$. If $stability(branchone)$ equals one of $branchone$ or $branchtwo$, then $stability(branchtwo)$ must equal the other one, and vice versa.  Thus $stability$ either fixes the set $\\{branchone, branchtwo\\}$ or moves it to $\\{branchthree, branchfour\\}$. But if the latter happened, we would have $branchone +branchtwo = branchthree+branchfour$, contrary to hypothesis.  Thus $stability$ fixes the set $\\{branchone, branchtwo\\}$ and in particular the number $branchone branchtwo$. Since this is true for any $stability$, $branchone branchtwo$ must be rational.\\n\\n\\textbf{Note:} The conclusion fails if we allow $branchone + branchtwo = branchthree + branchfour$. For instance, take the polynomial $knownvalue^4 - 2$ and label its roots so that $(knownvalue-branchone)(knownvalue-branchtwo) = knownvalue^2 - \\sqrt{2}$ and $(knownvalue-branchthree)(knownvalue-branchfour) = knownvalue^2 + \\sqrt{2}$. "
+    },
+    "garbled_string": {
+      "map": {
+        "f": "bwvkztsa",
+        "z": "qnlfgpjd",
+        "r_1": "ufrdtpsh",
+        "r_2": "xzhlcmwa",
+        "r_3": "ohsvekqd",
+        "r_4": "ilptuvrw",
+        "r_i": "yzmcafjn",
+        "g": "krnvhtsu",
+        "h": "dpmsalxe",
+        "u": "srlzqypv",
+        "v": "whtgkemu",
+        "x": "fnwrcqya",
+        "\\tau": "qskldjph",
+        "a": "zpjqslvr",
+        "b": "gdphkmnr",
+        "c": "vhstlqcw",
+        "d": "rnbcgxzd",
+        "e": "tqmsplhf"
+      },
+      "question": "Let $bwvkztsa(qnlfgpjd) = zpjqslvr qnlfgpjd^4 + gdphkmnr qnlfgpjd^3 + vhstlqcw qnlfgpjd^2 + rnbcgxzd qnlfgpjd + tqmsplhf = zpjqslvr(qnlfgpjd-ufrdtpsh)(qnlfgpjd-xzhlcmwa)(qnlfgpjd-ohsvekqd)(qnlfgpjd-ilptuvrw)$\nwhere  $zpjqslvr,gdphkmnr,vhstlqcw,rnbcgxzd,tqmsplhf$  are integers, $zpjqslvr \\ne 0$.  Show that if  $ufrdtpsh + xzhlcmwa$  is a\nrational number and $ufrdtpsh + xzhlcmwa \\ne ohsvekqd + ilptuvrw$,  then  $ufrdtpsh xzhlcmwa$  is a\nrational number.",
+      "solution": "\\textbf{First solution:}\nPut $krnvhtsu = ufrdtpsh + xzhlcmwa$, $dpmsalxe = ohsvekqd + ilptuvrw$, $srlzqypv = ufrdtpsh xzhlcmwa$, $whtgkemu = ohsvekqd ilptuvrw$.\nWe are given that $krnvhtsu$ is rational. The following are also rational:\n\\begin{align*}\n\\frac{-gdphkmnr}{zpjqslvr} &= krnvhtsu+dpmsalxe \\\\\n\\frac{vhstlqcw}{zpjqslvr} &= krnvhtsu dpmsalxe + srlzqypv + whtgkemu \\\\\n\\frac{-rnbcgxzd}{zpjqslvr} &= krnvhtsu whtgkemu + dpmsalxe srlzqypv\n\\end{align*}\nFrom the first line, $dpmsalxe$ is rational. From the second line, $srlzqypv+whtgkemu$\nis rational. From the third line, $krnvhtsu(srlzqypv+whtgkemu) - (krnvhtsu whtgkemu + dpmsalxe srlzqypv) =\n(krnvhtsu-dpmsalxe)srlzqypv$ is rational. Since $krnvhtsu \\neq dpmsalxe$, $srlzqypv$ is rational, as desired.\n\n\\textbf{Second solution:} This solution uses some basic\nGalois theory. We may assume $ufrdtpsh \\neq xzhlcmwa$, since otherwise they are both\nrational and so then is $ufrdtpsh xzhlcmwa$.\n\nLet $qskldjph$ be an automorphism of the field of algebraic numbers; then $qskldjph$\nmaps each $yzmcafjn$ to another one, and fixes the rational number $ufrdtpsh + xzhlcmwa$.\nIf $qskldjph(ufrdtpsh)$ equals one of $ufrdtpsh$ or $xzhlcmwa$, then $qskldjph(xzhlcmwa)$ must equal\nthe other one, and vice versa.  Thus $qskldjph$ either fixes the set $\\{ufrdtpsh,\nxzhlcmwa\\}$ or moves it to $\\{ohsvekqd, ilptuvrw\\}$. But if the latter happened, we would\nhave $ufrdtpsh + xzhlcmwa = ohsvekqd+ilptuvrw$, contrary to hypothesis.  Thus $qskldjph$ fixes the\nset $\\{ufrdtpsh, xzhlcmwa\\}$ and in particular the number $ufrdtpsh xzhlcmwa$. Since this is\ntrue for any $qskldjph$, $ufrdtpsh xzhlcmwa$ must be rational.\n\n\\textbf{Note:} The conclusion fails if we allow\n$ufrdtpsh + xzhlcmwa = ohsvekqd + ilptuvrw$. For\ninstance, take the polynomial $fnwrcqya^4 - 2$ and label its roots so that\n$(fnwrcqya-ufrdtpsh)(fnwrcqya-xzhlcmwa) = fnwrcqya^2 - \\sqrt{2}$ and\n$(fnwrcqya-ohsvekqd)(fnwrcqya-ilptuvrw) = fnwrcqya^2 + \\sqrt{2}$.",
+      "remarks": ""
+    },
+    "kernel_variant": {
+      "question": "Let  \n\n  f(x)=a x^8+b x^7+c x^6+d x^5+e x^4+p x^3+q x^2+r x+s  (a,b,c,d,e,p,q,r,s\\in \\mathbb{Q}, a\\neq 0)  \n\nhave complex roots r_1,\\ldots ,r_8 (not necessarily distinct).  Put  \n\n  A={r_1,r_2,r_3,r_4},  B={r_5,r_6,r_7,r_8}.  \n\nFor the 4-tuple A define  \n\n \\sigma _1=r_1+r_2+r_3+r_4,  \n \\sigma _2=\\sum _{1\\leq i<j\\leq 4} r_i r_j,  \n \\sigma _3=\\sum _{1\\leq i<j<k\\leq 4} r_i r_j r_k,  \n \\sigma _4=r_1 r_2 r_3 r_4,  \n\nand for B define \\tau _1,\\tau _2,\\tau _3,\\tau _4 analogously.  \n\nAssume  \n\n (i) \\sigma _1,\\sigma _2,\\sigma _3\\in \\mathbb{Q};  \n (ii) \\sigma _1\\neq \\tau _1.  \n\n(a)  Prove that \\sigma _4\\in \\mathbb{Q}.  \n\n(b)  Show that the monic quartic  \n\n  P(x)=x^4-\\sigma _1 x^3+\\sigma _2 x^2-\\sigma _3 x+\\sigma _4  \n\n belongs to \\mathbb{Q}[x] and divides f(x) inside \\mathbb{Q}[x].\n\n------------------------------------------------------",
+      "solution": "Step 0.  Factor notation.  \nWrite the quartic with roots in B as  \n\n Q(x)=x^4-\\tau _1 x^3+\\tau _2 x^2-\\tau _3 x+\\tau _4.  \n\nBecause f possesses the eight roots in A\\cup B we have an exact factorisation in \\mathbb{C}[x]  \n\n  f(x)=a\\cdot P(x)\\cdot Q(x).  (1)\n\nAll coefficients of f lie in \\mathbb{Q} and \\sigma _1,\\sigma _2,\\sigma _3 are rational by hypothesis; the quantities\n\\tau _1,\\tau _2,\\tau _3,\\tau _4 and \\sigma _4 are still to be determined.\n\nStep 1.  Rationality of \\tau _1,\\tau _2,\\tau _3.  \nComparing the coefficients of (1) gives Vieta-type identities:\n\nx^7-coefficient : -a(\\sigma _1+\\tau _1)=b  \n \\Rightarrow  \\tau _1=-b/a-\\sigma _1\\in \\mathbb{Q}.\n\nx^6-coefficient : a(\\sigma _1\\tau _1+\\sigma _2+\\tau _2)=c  \n \\Rightarrow  \\tau _2=(c/a)-\\sigma _1\\tau _1-\\sigma _2\\in \\mathbb{Q}.\n\nx^5-coefficient : -a(\\sigma _1\\tau _2+\\tau _1\\sigma _2+\\sigma _3+\\tau _3)=d  \n \\Rightarrow  \\tau _3=-d/a-\\sigma _1\\tau _2-\\tau _1\\sigma _2-\\sigma _3\\in \\mathbb{Q}.\n\nHence \\tau _1,\\tau _2,\\tau _3 are rational numbers.\n\nStep 2.  A 2\\times 2 linear system for \\sigma _4 and \\tau _4.  \nLook at the next two coefficients of f.\n\nx^4-coefficient : a(\\sigma _1\\tau _3+\\tau _1\\sigma _3+\\sigma _2\\tau _2+\\sigma _4+\\tau _4)=e.  \nSet  \n\n  E_1=(e/a)-(\\sigma _1\\tau _3+\\tau _1\\sigma _3+\\sigma _2\\tau _2).  (2)  \n\nThen \\sigma _4+\\tau _4=E_1.  (2')\n\nx^3-coefficient : -a(\\sigma _1\\tau _4+\\tau _1\\sigma _4+\\sigma _2\\tau _3+\\sigma _3\\tau _2)=p.  \nSet  \n\n  E_2=-p/a-(\\sigma _2\\tau _3+\\sigma _3\\tau _2).  (3)  \n\nThen \\tau _1\\sigma _4+\\sigma _1\\tau _4=E_2.  (3')\n\nAll quantities on the right of (2) and (3) are rational, so E_1,E_2\\in \\mathbb{Q}.\n\nStep 3.  Solving the system.  \nEquations (2') and (3') form a non-singular linear system\n\n  \\sigma _4+\\tau _4=E_1  \n  \\tau _1\\sigma _4+\\sigma _1\\tau _4=E_2,\n\nwhose determinant is \\Delta =\\sigma _1-\\tau _1\\neq 0 by hypothesis (ii).  Eliminating \\sigma _4 gives\n\n (\\tau _1\\sigma _4+\\sigma _1\\tau _4)-\\tau _1(\\sigma _4+\\tau _4)=E_2-\\tau _1E_1  \n \\Rightarrow  (\\sigma _1-\\tau _1)\\tau _4=E_2-\\tau _1E_1  \n \\Rightarrow  \\tau _4=(E_2-\\tau _1E_1)/(\\sigma _1-\\tau _1)\\in \\mathbb{Q}.\n\nSubstituting \\tau _4 into (2') yields\n\n \\sigma _4=E_1-\\tau _4\\in \\mathbb{Q}.  (4)\n\nThus \\sigma _4 is rational, proving part (a).\n\nStep 4.  Divisibility.  \nAll five coefficients of P(x) are now rational, hence P(x)\\in \\mathbb{Q}[x].  \nSince f=a\\cdot P\\cdot Q in \\mathbb{C}[x] and \\mathbb{Q}[x] is a unique-factorisation domain, P(x) already lies in \\mathbb{Q}[x]; consequently P(x) divides f(x) inside \\mathbb{Q}[x], establishing part (b).\n\n(For completeness, note that the constant term of f equals a\\sigma _4\\tau _4.  Once \\sigma _4 is known to be rational, formula (4) shows \\tau _4=s/(a\\sigma _4) is also rational.)\n\n------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.782490",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension / more variables:  \n   • The degree jumps from 4 (original) and 6 (current kernel) to 8, introducing eight roots and two interacting quartics.\n\n2. Additional constraints and coupled invariants:  \n   • Three internal symmetric sums (σ₁,σ₂,σ₃) \\emph{and} a mixed quadratic sum ρ are prescribed.  \n   • The proof must track two full quartic systems (A and B) simultaneously, forcing comparison of six different symmetric‐sum layers.\n\n3. Deeper algebraic structure:  \n   • The argument needs systematic coefficient comparison of a non-trivial factorisation f=a·g·h, creation of a coupled linear system for the unknown highest-order symmetric sums, and determinant analysis using σ₁≠τ₁.  \n   • Rationality is ultimately deduced through exact elimination rather than the simpler one-line trick of the original.\n\n4. Multiple advanced techniques:  \n   • Vieta relations, manipulation of elementary symmetric polynomials of two disjoint root sets, and linear–algebraic elimination all appear.  \n   • Implicit Galois considerations (rational coefficients are fixed under all automorphisms) justify divisibility in ℚ[x].\n\n5. More steps, more insight:  \n   • One must first recover τ₁,τ₂,τ₃, then derive two linear equations in σ₄,τ₄, solve them, and finally translate the result back to polynomial divisibility—each of which is absent from the original problem.\n\nIn sum, the enhanced variant enlarges the dimension of the algebraic object, introduces extra rational invariants, and obliges the solver to orchestrate a five-stage argument rather than the brief extraction needed for the original and kernel versions."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n\n  f(x)=a x^8+b x^7+c x^6+d x^5+e x^4+p x^3+q x^2+r x+s  (a,b,c,d,e,p,q,r,s\\in \\mathbb{Q}, a\\neq 0)  \n\nhave complex roots r_1,\\ldots ,r_8 (not necessarily distinct).  Put  \n\n  A={r_1,r_2,r_3,r_4},  B={r_5,r_6,r_7,r_8}.  \n\nFor the 4-tuple A define  \n\n \\sigma _1=r_1+r_2+r_3+r_4,  \n \\sigma _2=\\sum _{1\\leq i<j\\leq 4} r_i r_j,  \n \\sigma _3=\\sum _{1\\leq i<j<k\\leq 4} r_i r_j r_k,  \n \\sigma _4=r_1 r_2 r_3 r_4,  \n\nand for B define \\tau _1,\\tau _2,\\tau _3,\\tau _4 analogously.  \n\nAssume  \n\n (i) \\sigma _1,\\sigma _2,\\sigma _3\\in \\mathbb{Q};  \n (ii) \\sigma _1\\neq \\tau _1.  \n\n(a)  Prove that \\sigma _4\\in \\mathbb{Q}.  \n\n(b)  Show that the monic quartic  \n\n  P(x)=x^4-\\sigma _1 x^3+\\sigma _2 x^2-\\sigma _3 x+\\sigma _4  \n\n belongs to \\mathbb{Q}[x] and divides f(x) inside \\mathbb{Q}[x].\n\n------------------------------------------------------",
+      "solution": "Step 0.  Factor notation.  \nWrite the quartic with roots in B as  \n\n Q(x)=x^4-\\tau _1 x^3+\\tau _2 x^2-\\tau _3 x+\\tau _4.  \n\nBecause f possesses the eight roots in A\\cup B we have an exact factorisation in \\mathbb{C}[x]  \n\n  f(x)=a\\cdot P(x)\\cdot Q(x).  (1)\n\nAll coefficients of f lie in \\mathbb{Q} and \\sigma _1,\\sigma _2,\\sigma _3 are rational by hypothesis; the quantities\n\\tau _1,\\tau _2,\\tau _3,\\tau _4 and \\sigma _4 are still to be determined.\n\nStep 1.  Rationality of \\tau _1,\\tau _2,\\tau _3.  \nComparing the coefficients of (1) gives Vieta-type identities:\n\nx^7-coefficient : -a(\\sigma _1+\\tau _1)=b  \n \\Rightarrow  \\tau _1=-b/a-\\sigma _1\\in \\mathbb{Q}.\n\nx^6-coefficient : a(\\sigma _1\\tau _1+\\sigma _2+\\tau _2)=c  \n \\Rightarrow  \\tau _2=(c/a)-\\sigma _1\\tau _1-\\sigma _2\\in \\mathbb{Q}.\n\nx^5-coefficient : -a(\\sigma _1\\tau _2+\\tau _1\\sigma _2+\\sigma _3+\\tau _3)=d  \n \\Rightarrow  \\tau _3=-d/a-\\sigma _1\\tau _2-\\tau _1\\sigma _2-\\sigma _3\\in \\mathbb{Q}.\n\nHence \\tau _1,\\tau _2,\\tau _3 are rational numbers.\n\nStep 2.  A 2\\times 2 linear system for \\sigma _4 and \\tau _4.  \nLook at the next two coefficients of f.\n\nx^4-coefficient : a(\\sigma _1\\tau _3+\\tau _1\\sigma _3+\\sigma _2\\tau _2+\\sigma _4+\\tau _4)=e.  \nSet  \n\n  E_1=(e/a)-(\\sigma _1\\tau _3+\\tau _1\\sigma _3+\\sigma _2\\tau _2).  (2)  \n\nThen \\sigma _4+\\tau _4=E_1.  (2')\n\nx^3-coefficient : -a(\\sigma _1\\tau _4+\\tau _1\\sigma _4+\\sigma _2\\tau _3+\\sigma _3\\tau _2)=p.  \nSet  \n\n  E_2=-p/a-(\\sigma _2\\tau _3+\\sigma _3\\tau _2).  (3)  \n\nThen \\tau _1\\sigma _4+\\sigma _1\\tau _4=E_2.  (3')\n\nAll quantities on the right of (2) and (3) are rational, so E_1,E_2\\in \\mathbb{Q}.\n\nStep 3.  Solving the system.  \nEquations (2') and (3') form a non-singular linear system\n\n  \\sigma _4+\\tau _4=E_1  \n  \\tau _1\\sigma _4+\\sigma _1\\tau _4=E_2,\n\nwhose determinant is \\Delta =\\sigma _1-\\tau _1\\neq 0 by hypothesis (ii).  Eliminating \\sigma _4 gives\n\n (\\tau _1\\sigma _4+\\sigma _1\\tau _4)-\\tau _1(\\sigma _4+\\tau _4)=E_2-\\tau _1E_1  \n \\Rightarrow  (\\sigma _1-\\tau _1)\\tau _4=E_2-\\tau _1E_1  \n \\Rightarrow  \\tau _4=(E_2-\\tau _1E_1)/(\\sigma _1-\\tau _1)\\in \\mathbb{Q}.\n\nSubstituting \\tau _4 into (2') yields\n\n \\sigma _4=E_1-\\tau _4\\in \\mathbb{Q}.  (4)\n\nThus \\sigma _4 is rational, proving part (a).\n\nStep 4.  Divisibility.  \nAll five coefficients of P(x) are now rational, hence P(x)\\in \\mathbb{Q}[x].  \nSince f=a\\cdot P\\cdot Q in \\mathbb{C}[x] and \\mathbb{Q}[x] is a unique-factorisation domain, P(x) already lies in \\mathbb{Q}[x]; consequently P(x) divides f(x) inside \\mathbb{Q}[x], establishing part (b).\n\n(For completeness, note that the constant term of f equals a\\sigma _4\\tau _4.  Once \\sigma _4 is known to be rational, formula (4) shows \\tau _4=s/(a\\sigma _4) is also rational.)\n\n------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.599360",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension / more variables:  \n   • The degree jumps from 4 (original) and 6 (current kernel) to 8, introducing eight roots and two interacting quartics.\n\n2. Additional constraints and coupled invariants:  \n   • Three internal symmetric sums (σ₁,σ₂,σ₃) \\emph{and} a mixed quadratic sum ρ are prescribed.  \n   • The proof must track two full quartic systems (A and B) simultaneously, forcing comparison of six different symmetric‐sum layers.\n\n3. Deeper algebraic structure:  \n   • The argument needs systematic coefficient comparison of a non-trivial factorisation f=a·g·h, creation of a coupled linear system for the unknown highest-order symmetric sums, and determinant analysis using σ₁≠τ₁.  \n   • Rationality is ultimately deduced through exact elimination rather than the simpler one-line trick of the original.\n\n4. Multiple advanced techniques:  \n   • Vieta relations, manipulation of elementary symmetric polynomials of two disjoint root sets, and linear–algebraic elimination all appear.  \n   • Implicit Galois considerations (rational coefficients are fixed under all automorphisms) justify divisibility in ℚ[x].\n\n5. More steps, more insight:  \n   • One must first recover τ₁,τ₂,τ₃, then derive two linear equations in σ₄,τ₄, solve them, and finally translate the result back to polynomial divisibility—each of which is absent from the original problem.\n\nIn sum, the enhanced variant enlarges the dimension of the algebraic object, introduces extra rational invariants, and obliges the solver to orchestrate a five-stage argument rather than the brief extraction needed for the original and kernel versions."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

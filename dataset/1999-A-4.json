@@ -1,0 +1,101 @@
+{
+  "index": "1999-A-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Sum the series\n\\[\\sum_{m=1}^\\infty \\sum_{n=1}^\\infty \\frac{m^2 n}{3^m(n3^m+m3^n)}.\\]",
+  "solution": "Denote the series by $S$, and let $a_n = 3^n/n$.  Note that\n\\begin{align*}\nS &= \\sum_{m=1}^\\infty \\sum_{n=1}^\\infty \\frac{1}\n{a_m(a_m+a_n)} \\\\\n&= \\sum_{m=1}^\\infty \\sum_{n=1}^\\infty \\frac{1}{a_n(a_m+a_n)},\n\\end{align*}\nwhere the second equality follows by interchanging $m$ and $n$.\nThus\n\\begin{align*}\n2S &= \\sum_m \\sum_n \\left( \\frac{1}{a_m(a_m+a_n)} +\n\\frac{1}{a_n(a_m+a_n)}\\right) \\\\\n&= \\sum_m \\sum_n \\frac{1}{a_m a_n} \\\\\n&= \\left( \\sum_{n=1}^\\infty \\frac{n}{3^n} \\right)^2.\n\\end{align*}\nBut\n\\[\n\\sum_{n=1}^\\infty \\frac{n}{3^n} = \\frac34\n\\]\nsince, e.g., it's $f'(1)$,\nwhere\n\\[\nf(x) = \\sum_{n=0}^\\infty \\frac{x^n}{3^n} = \\frac{3}{3-x},\n\\]\nand we conclude that $S = 9/32$.",
+  "vars": [
+    "m",
+    "n",
+    "x"
+  ],
+  "params": [
+    "S",
+    "a_n",
+    "a_m",
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "m": "rowidx",
+        "n": "colidx",
+        "x": "inputvar",
+        "S": "totalsum",
+        "a_n": "coeffn",
+        "a_m": "coeffm",
+        "f": "genfun"
+      },
+      "question": "Sum the series\n\\[\\sum_{rowidx=1}^{\\infty} \\sum_{colidx=1}^{\\infty} \\frac{rowidx^{2} \\, colidx}{3^{rowidx}\\bigl(colidx\\,3^{rowidx}+rowidx\\,3^{colidx}\\bigr)}.\\]",
+      "solution": "Denote the series by $totalsum$, and let $coeffn = 3^{colidx}/colidx$.  Similarly, set $coeffm = 3^{rowidx}/rowidx$.  Note that\n\\begin{align*}\n totalsum &= \\sum_{rowidx=1}^{\\infty} \\sum_{colidx=1}^{\\infty} \\frac{1}{coeffm\\bigl(coeffm+coeffn\\bigr)} \\\\[-4pt]\n &= \\sum_{rowidx=1}^{\\infty} \\sum_{colidx=1}^{\\infty} \\frac{1}{coeffn\\bigl(coeffm+coeffn\\bigr)},\n\\end{align*}\nwhere the second equality follows by interchanging $rowidx$ and $colidx$.  Thus\n\\begin{align*}\n 2\\,totalsum &= \\sum_{rowidx} \\sum_{colidx} \\left( \\frac{1}{coeffm\\bigl(coeffm+coeffn\\bigr)} + \\frac{1}{coeffn\\bigl(coeffm+coeffn\\bigr)} \\right) \\\\[-4pt]\n &= \\sum_{rowidx} \\sum_{colidx} \\frac{1}{coeffm\\,coeffn} \\\\[-4pt]\n &= \\left( \\sum_{colidx=1}^{\\infty} \\frac{colidx}{3^{colidx}} \\right)^{2}.\n\\end{align*}\nBut\n\\[\n \\sum_{colidx=1}^{\\infty} \\frac{colidx}{3^{colidx}} \\,=\\, \\frac{3}{4}\n\\]\nsince, for example, it is $genfun'(1)$, where\n\\[\n genfun(inputvar)=\\sum_{colidx=0}^{\\infty} \\frac{inputvar^{colidx}}{3^{colidx}}=\\frac{3}{3-inputvar}.\n\\]\nConsequently, $totalsum = 9/32$.}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "m": "granitetile",
+        "n": "lanternpost",
+        "x": "hazelbrush",
+        "S": "orchardfield",
+        "a_n": "riverstone",
+        "a_m": "meadowlark",
+        "f": "thunderclap"
+      },
+      "question": "Sum the series\n\\[\\sum_{granitetile=1}^\\infty \\sum_{lanternpost=1}^\\infty \\frac{granitetile^2 lanternpost}{3^{granitetile}(lanternpost3^{granitetile}+granitetile3^{lanternpost})}.\\]",
+      "solution": ""
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "m": "stationary",
+        "n": "unchanged",
+        "x": "immutable",
+        "S": "difference",
+        "a_n": "enormous",
+        "a_m": "colossal",
+        "f": "antifunc"
+      },
+      "question": "Sum the series\n\\[\\sum_{stationary=1}^\\infty \\sum_{unchanged=1}^\\infty \\frac{stationary^2 \\, unchanged}{3^{stationary}(unchanged 3^{stationary}+stationary 3^{unchanged})}.\\]",
+      "solution": "Denote the series by $difference$, and let $enormous = 3^{unchanged}/unchanged$.  Note that\n\\begin{align*}\ndifference &= \\sum_{stationary=1}^\\infty \\sum_{unchanged=1}^\\infty \\frac{1}\n{colossal(colossal+enormous)} \\\\\n&= \\sum_{stationary=1}^\\infty \\sum_{unchanged=1}^\\infty \\frac{1}{enormous(colossal+enormous)},\n\\end{align*}\nwhere the second equality follows by interchanging $stationary$ and $unchanged$.\nThus\n\\begin{align*}\n2difference &= \\sum_{stationary} \\sum_{unchanged} \\left( \\frac{1}{colossal(colossal+enormous)} +\n\\frac{1}{enormous(colossal+enormous)}\\right) \\\\\n&= \\sum_{stationary} \\sum_{unchanged} \\frac{1}{colossal\\, enormous} \\\\\n&= \\left( \\sum_{unchanged=1}^\\infty \\frac{unchanged}{3^{unchanged}} \\right)^2.\n\\end{align*}\nBut\n\\[\n\\sum_{unchanged=1}^\\infty \\frac{unchanged}{3^{unchanged}} = \\frac34\n\\]\nsince, e.g., it's $antifunc'(1)$,\nwhere\n\\[\nantifunc(immutable) = \\sum_{unchanged=0}^\\infty \\frac{immutable^{unchanged}}{3^{unchanged}} = \\frac{3}{3-immutable},\n\\]\nand we conclude that $difference = 9/32$.}",
+      "confidence": "0.10"
+    },
+    "garbled_string": {
+      "map": {
+        "m": "qzxwvtnp",
+        "n": "hjgrksla",
+        "x": "vkcmlrje",
+        "S": "wndfoqke",
+        "a_n": "ymvutcia",
+        "a_m": "jzcoypbn",
+        "f": "xilgqasu"
+      },
+      "question": "Sum the series\n\\[\\sum_{qzxwvtnp=1}^\\infty \\sum_{hjgrksla=1}^\\infty \\frac{qzxwvtnp^2 hjgrksla}{3^{qzxwvtnp}(hjgrksla 3^{qzxwvtnp}+qzxwvtnp 3^{hjgrksla})}.\\]",
+      "solution": "Denote the series by $wndfoqke$, and let $ymvutcia = 3^{hjgrksla}/hjgrksla$.  Note that\n\\begin{align*}\nwndfoqke &= \\sum_{qzxwvtnp=1}^\\infty \\sum_{hjgrksla=1}^\\infty \\frac{1}\n{jzcoypbn(jzcoypbn+ymvutcia)} \\\\\n&= \\sum_{qzxwvtnp=1}^\\infty \\sum_{hjgrksla=1}^\\infty \\frac{1}{ymvutcia(jzcoypbn+ymvutcia)},\n\\end{align*}\nwhere the second equality follows by interchanging $qzxwvtnp$ and $hjgrksla$.\nThus\n\\begin{align*}\n2wndfoqke &= \\sum_{qzxwvtnp} \\sum_{hjgrksla} \\left( \\frac{1}{jzcoypbn(jzcoypbn+ymvutcia)} +\n\\frac{1}{ymvutcia(jzcoypbn+ymvutcia)}\\right) \\\\\n&= \\sum_{qzxwvtnp} \\sum_{hjgrksla} \\frac{1}{jzcoypbn ymvutcia} \\\\\n&= \\left( \\sum_{hjgrksla=1}^\\infty \\frac{hjgrksla}{3^{hjgrksla}} \\right)^2.\n\\end{align*}\nBut\n\\[\n\\sum_{hjgrksla=1}^\\infty \\frac{hjgrksla}{3^{hjgrksla}} = \\frac34\n\\]\nsince, e.g., it's $xilgqasu'(1)$,\nwhere\n\\[\nxilgqasu(vkcmlrje) = \\sum_{hjgrksla=0}^\\infty \\frac{vkcmlrje^{hjgrksla}}{3^{hjgrksla}} = \\frac{3}{3-vkcmlrje},\n\\]\nand we conclude that $wndfoqke = 9/32$.}",
+      "\n}": []
+    },
+    "kernel_variant": {
+      "question": "Evaluate the alternating double series  \n\\[\nS \\;=\\;\\sum_{m=1}^{\\infty}\\;\\sum_{n=1}^{\\infty}\\;\n(-1)^{m+n}\\,\n\\frac{m^{6}\\,n^{3}}{11^{\\,m}\\bigl(n^{3}\\,11^{\\,m}+m^{3}\\,11^{\\,n}\\bigr)}.\n\\]",
+      "solution": "Step 1 - Rewrite the summand in a symmetric form.  \nPut  \n\\[\na_{k}\\;=\\;\\frac{11^{\\,k}}{k^{3}}, \\qquad\n\\varepsilon_{k}=(-1)^{k}\\quad(k\\ge 1).\n\\]\nThen\n\\[\n\\frac{m^{6}\\,n^{3}}{11^{\\,m}\\bigl(n^{3}\\,11^{\\,m}+m^{3}\\,11^{\\,n}\\bigr)}\n=\\frac{1}{a_{m}\\bigl(a_{m}+a_{n}\\bigr)},\n\\]\nso the required series can be written as  \n\\[\nS=\\sum_{m=1}^{\\infty}\\;\\sum_{n=1}^{\\infty}\n\\varepsilon_{m}\\varepsilon_{n}\\;\n\\frac{1}{a_{m}\\bigl(a_{m}+a_{n}\\bigr)}.\n\\tag{1}\n\\]\n\nStep 2 - Use the classical two-term identity  \n\\[\n\\frac{1}{x(x+y)}+\\frac{1}{y(x+y)}=\\frac{1}{xy}\\qquad(x,y>0).\n\\]\nWriting (1) and the same expression with the roles of \\(m,n\\) interchanged and adding, we obtain\n\\[\n2S\n=\\sum_{m=1}^{\\infty}\\sum_{n=1}^{\\infty}\n\\varepsilon_{m}\\varepsilon_{n}\\;\n\\frac{1}{a_{m}a_{n}}\n=\\Bigl(\\,\\sum_{k=1}^{\\infty}\\varepsilon_{k}\\frac{1}{a_{k}}\\Bigr)^{2}.\n\\tag{2}\n\\]\n\nStep 3 - The single alternating series.  \nBecause \\(a_{k}=11^{\\,k}/k^{3}\\),\n\\[\n\\sum_{k=1}^{\\infty}\\varepsilon_{k}\\frac{1}{a_{k}}\n=\\sum_{k=1}^{\\infty}(-1)^{k}\\frac{k^{3}}{11^{\\,k}}\n=:T.\n\\]\n\nTo evaluate \\(T\\) set \\(z:=-\\tfrac1{11}\\) and recall the identity\n\\[\n\\sum_{n=1}^{\\infty}n^{3}z^{n}\n=\\frac{z\\,(1+4z+z^{2})}{(1-z)^{4}}\\qquad(|z|<1).\n\\]\nSubstituting \\(z=-\\tfrac1{11}\\) gives\n\\[\n\\begin{aligned}\nT\n&= \\frac{-\\tfrac1{11}\\,\\bigl(1+4(-\\tfrac1{11})+(-\\tfrac1{11})^{2}\\bigr)}\n{\\bigl(1-(-\\tfrac1{11})\\bigr)^{4}}\n= \\frac{-\\tfrac1{11}\\left(1-\\tfrac4{11}+\\tfrac1{121}\\right)}\n{\\left(\\tfrac{12}{11}\\right)^{4}}  \\\\[4pt]\n&=\\frac{-\\tfrac1{11}\\cdot\\frac{78}{121}}{\\frac{20736}{14641}}\n=\\frac{-78}{1331}\\cdot\\frac{14641}{20736}\n=-\\,\\frac{78\\cdot 11}{20736}\n=-\\,\\frac{858}{20736}\n=-\\,\\frac{143}{3456}.\n\\end{aligned}\n\\]\n\nStep 4 - Finish the computation.  \nBy (2) we have\n\\[\n2S=T^{2}=\\Bigl(-\\tfrac{143}{3456}\\Bigr)^{2}\n=\\frac{20449}{11\\,943\\,936},\n\\qquad\\Longrightarrow\\qquad\nS=\\frac{20449}{23\\,887\\,872}.\n\\]\n\nThe fraction is already in lowest terms, so the required value is  \n\n\\[\n\\boxed{\\displaystyle S=\\frac{20449}{23\\,887\\,872}}.\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.765974",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Alternating signs – The series carries the factor \\((-1)^{m+n}\\); one must recognise that this can be decoupled by introducing a weight \\(\\varepsilon_{k}=(-1)^{k}\\) and that the key telescoping identity still works after inserting these weights.  \n2.  Higher powers – The exponents \\(m^{6}\\) and \\(n^{3}\\) push the algebraic simplification well beyond the quadratic case in the kernel problem.  \n3.  Larger base – Working with base \\(11\\) produces cumbersome rational arithmetic and longer expressions once generating-function techniques are applied.  \n4.  Generating-function manipulation – To evaluate \\(T\\) one needs a third derivative of the geometric series (or the explicit cubic-power formula) and careful substitution of a negative argument.  \n5.  Error-prone rational simplification – Obtaining the final exact fraction involves juggling large numerators and denominators (e.g. \\(20736,\\,14641\\)), a step that is absent from the original problem.\n\nAll of these enhancements add layers of technicality and conceptual load, making the present variant substantially harder than both the original and the intermediate kernel problem."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Evaluate the alternating double series  \n\\[\nS \\;=\\;\\sum_{m=1}^{\\infty}\\;\\sum_{n=1}^{\\infty}\\;\n(-1)^{m+n}\\,\n\\frac{m^{6}\\,n^{3}}{11^{\\,m}\\bigl(n^{3}\\,11^{\\,m}+m^{3}\\,11^{\\,n}\\bigr)}.\n\\]",
+      "solution": "Step 1 - Rewrite the summand in a symmetric form.  \nPut  \n\\[\na_{k}\\;=\\;\\frac{11^{\\,k}}{k^{3}}, \\qquad\n\\varepsilon_{k}=(-1)^{k}\\quad(k\\ge 1).\n\\]\nThen\n\\[\n\\frac{m^{6}\\,n^{3}}{11^{\\,m}\\bigl(n^{3}\\,11^{\\,m}+m^{3}\\,11^{\\,n}\\bigr)}\n=\\frac{1}{a_{m}\\bigl(a_{m}+a_{n}\\bigr)},\n\\]\nso the required series can be written as  \n\\[\nS=\\sum_{m=1}^{\\infty}\\;\\sum_{n=1}^{\\infty}\n\\varepsilon_{m}\\varepsilon_{n}\\;\n\\frac{1}{a_{m}\\bigl(a_{m}+a_{n}\\bigr)}.\n\\tag{1}\n\\]\n\nStep 2 - Use the classical two-term identity  \n\\[\n\\frac{1}{x(x+y)}+\\frac{1}{y(x+y)}=\\frac{1}{xy}\\qquad(x,y>0).\n\\]\nWriting (1) and the same expression with the roles of \\(m,n\\) interchanged and adding, we obtain\n\\[\n2S\n=\\sum_{m=1}^{\\infty}\\sum_{n=1}^{\\infty}\n\\varepsilon_{m}\\varepsilon_{n}\\;\n\\frac{1}{a_{m}a_{n}}\n=\\Bigl(\\,\\sum_{k=1}^{\\infty}\\varepsilon_{k}\\frac{1}{a_{k}}\\Bigr)^{2}.\n\\tag{2}\n\\]\n\nStep 3 - The single alternating series.  \nBecause \\(a_{k}=11^{\\,k}/k^{3}\\),\n\\[\n\\sum_{k=1}^{\\infty}\\varepsilon_{k}\\frac{1}{a_{k}}\n=\\sum_{k=1}^{\\infty}(-1)^{k}\\frac{k^{3}}{11^{\\,k}}\n=:T.\n\\]\n\nTo evaluate \\(T\\) set \\(z:=-\\tfrac1{11}\\) and recall the identity\n\\[\n\\sum_{n=1}^{\\infty}n^{3}z^{n}\n=\\frac{z\\,(1+4z+z^{2})}{(1-z)^{4}}\\qquad(|z|<1).\n\\]\nSubstituting \\(z=-\\tfrac1{11}\\) gives\n\\[\n\\begin{aligned}\nT\n&= \\frac{-\\tfrac1{11}\\,\\bigl(1+4(-\\tfrac1{11})+(-\\tfrac1{11})^{2}\\bigr)}\n{\\bigl(1-(-\\tfrac1{11})\\bigr)^{4}}\n= \\frac{-\\tfrac1{11}\\left(1-\\tfrac4{11}+\\tfrac1{121}\\right)}\n{\\left(\\tfrac{12}{11}\\right)^{4}}  \\\\[4pt]\n&=\\frac{-\\tfrac1{11}\\cdot\\frac{78}{121}}{\\frac{20736}{14641}}\n=\\frac{-78}{1331}\\cdot\\frac{14641}{20736}\n=-\\,\\frac{78\\cdot 11}{20736}\n=-\\,\\frac{858}{20736}\n=-\\,\\frac{143}{3456}.\n\\end{aligned}\n\\]\n\nStep 4 - Finish the computation.  \nBy (2) we have\n\\[\n2S=T^{2}=\\Bigl(-\\tfrac{143}{3456}\\Bigr)^{2}\n=\\frac{20449}{11\\,943\\,936},\n\\qquad\\Longrightarrow\\qquad\nS=\\frac{20449}{23\\,887\\,872}.\n\\]\n\nThe fraction is already in lowest terms, so the required value is  \n\n\\[\n\\boxed{\\displaystyle S=\\frac{20449}{23\\,887\\,872}}.\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.587128",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Alternating signs – The series carries the factor \\((-1)^{m+n}\\); one must recognise that this can be decoupled by introducing a weight \\(\\varepsilon_{k}=(-1)^{k}\\) and that the key telescoping identity still works after inserting these weights.  \n2.  Higher powers – The exponents \\(m^{6}\\) and \\(n^{3}\\) push the algebraic simplification well beyond the quadratic case in the kernel problem.  \n3.  Larger base – Working with base \\(11\\) produces cumbersome rational arithmetic and longer expressions once generating-function techniques are applied.  \n4.  Generating-function manipulation – To evaluate \\(T\\) one needs a third derivative of the geometric series (or the explicit cubic-power formula) and careful substitution of a negative argument.  \n5.  Error-prone rational simplification – Obtaining the final exact fraction involves juggling large numerators and denominators (e.g. \\(20736,\\,14641\\)), a step that is absent from the original problem.\n\nAll of these enhancements add layers of technicality and conceptual load, making the present variant substantially harder than both the original and the intermediate kernel problem."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

@@ -1,0 +1,162 @@
+{
+  "index": "1979-B-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-6\nFor \\( k=1,2, \\ldots, n \\) let \\( z_{k}=x_{k}+i y_{k} \\), where the \\( x_{k} \\) and \\( y_{k} \\) are real and \\( i=\\sqrt{-1} \\). Let \\( r \\) be the absolute value of the real part of\n\\[\n\\pm \\sqrt{z_{1}^{2}+z_{2}^{2}+\\cdots+z_{n}^{2}}\n\\]\n\nProve that \\( r<\\left|x_{1}\\right|+\\left|x_{2}\\right|+\\cdots+\\left|x_{n}\\right| \\).",
+  "solution": "B-6.\nLet \\( X=\\left(x_{1}, \\ldots, x_{n}\\right) \\) and \\( Y=\\left(y_{1}, \\ldots, y_{n}\\right) \\). Also let \\( a+b i \\) be either square root of \\( z_{1}^{2}+\\cdots+z_{n}^{2} \\). Then \\( a b=X \\cdot Y=x_{1} y_{1}+\\cdots+x_{n} y_{n} \\) and\n\\[\na^{2}-b^{2}=\\|X\\|^{2}-\\|Y\\|^{2}=\\left(x_{1}^{2}+\\cdots+x_{n}^{2}\\right)-\\left(y_{1}^{2}+\\cdots+y_{n}^{2}\\right) .\n\\]\n\nThe Cauchy-Schwarz inequality tells us that \\( |X \\cdot Y| \\leq\\|X\\| \\cdot\\|Y\\| \\) and hence \\( |a| \\cdot|b|< \\) \\( \\|X\\| \\cdot\\|Y\\| \\). Therefore, the assumption that \\( |a|>\\|X\\| \\) would imply that \\( |b|<\\|Y\\| \\). This and \\( a^{2}=\\|X\\|^{2}-\\|Y\\|^{2}+b^{2} \\) would yield \\( a^{2}<\\|X\\| \\) and thus the contradiction \\( |a|<\\|X\\| \\). Hence the assumption is false and \\( r=|a|<\\|X\\| \\). Since \\( \\|X\\|^{2}<\\left(\\left|x_{1}\\right|+\\cdots+\\left|x_{n}\\right|\\right)^{2} \\), this implies the desired \\( r \\leqslant\\left|x_{1}\\right|+\\cdots+\\left|x_{n}\\right| \\).",
+  "vars": [
+    "k",
+    "z_k",
+    "x_k",
+    "y_k",
+    "x_1",
+    "x_2",
+    "x_n",
+    "y_1",
+    "y_2",
+    "y_n",
+    "z_1",
+    "z_2",
+    "z_n",
+    "X",
+    "Y",
+    "a",
+    "b",
+    "r"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "indexvar",
+        "z_k": "genericcomplex",
+        "x_k": "genericreal",
+        "y_k": "genericimag",
+        "x_1": "firstreal",
+        "x_2": "secondreal",
+        "x_n": "lastreal",
+        "y_1": "firstimag",
+        "y_2": "secondimag",
+        "y_n": "lastimag",
+        "z_1": "firstcomplex",
+        "z_2": "secondcomplex",
+        "z_n": "lastcomplex",
+        "X": "vectorreal",
+        "Y": "vectorimag",
+        "a": "rootreal",
+        "b": "rootimag",
+        "r": "rootabsval",
+        "n": "sizecount"
+      },
+      "question": "Problem B-6\nFor \\( indexvar=1,2, \\ldots, sizecount \\) let \\( genericcomplex=genericreal+i\\,genericimag \\), where the \\( genericreal \\) and \\( genericimag \\) are real and \\( i=\\sqrt{-1} \\). Let \\( rootabsval \\) be the absolute value of the real part of\n\\[\n\\pm \\sqrt{ firstcomplex^{2}+ secondcomplex^{2}+\\cdots+ lastcomplex^{2}}\n\\]\n\nProve that \\( rootabsval<\\left|firstreal\\right|+\\left|secondreal\\right|+\\cdots+\\left|lastreal\\right| \\).",
+      "solution": "B-6.\nLet \\( vectorreal=\\left(firstreal, \\ldots, lastreal\\right) \\) and \\( vectorimag=\\left(firstimag, \\ldots, lastimag\\right) \\). Also let \\( rootreal+rootimag\\,i \\) be either square root of \\( firstcomplex^{2}+\\cdots+lastcomplex^{2} \\). Then \\( rootreal\\,rootimag=vectorreal\\cdot vectorimag=firstreal\\,firstimag+\\cdots+lastreal\\,lastimag \\) and\n\\[\nrootreal^{2}-rootimag^{2}=\\|vectorreal\\|^{2}-\\|vectorimag\\|^{2}=\\left(firstreal^{2}+\\cdots+lastreal^{2}\\right)-\\left(firstimag^{2}+\\cdots+lastimag^{2}\\right).\n\\]\n\nThe Cauchy-Schwarz inequality tells us that \\( |vectorreal\\cdot vectorimag|\\leq\\|vectorreal\\|\\,\\|vectorimag\\| \\) and hence \\( |rootreal|\\,|rootimag|<\\|vectorreal\\|\\,\\|vectorimag\\| \\). Therefore, the assumption that \\( |rootreal|>\\|vectorreal\\| \\) would imply that \\( |rootimag|<\\|vectorimag\\| \\). This and \\( rootreal^{2}=\\|vectorreal\\|^{2}-\\|vectorimag\\|^{2}+rootimag^{2} \\) would yield \\( rootreal^{2}<\\|vectorreal\\| \\) and thus the contradiction \\( |rootreal|<\\|vectorreal\\| \\). Hence the assumption is false and \\( rootabsval=|rootreal|<\\|vectorreal\\| \\). Since \\( \\|vectorreal\\|^{2}<\\left(|firstreal|+\\cdots+|lastreal|\\right)^{2} \\), this implies the desired \\( rootabsval\\leqslant|firstreal|+\\cdots+|lastreal| \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "lanternfly",
+        "z_k": "teacupholder",
+        "x_k": "marshmallow",
+        "y_k": "windvessel",
+        "x_1": "driftwood",
+        "x_2": "snowglider",
+        "x_n": "paintbucket",
+        "y_1": "moonquartz",
+        "y_2": "riverpebble",
+        "y_n": "glasspigeon",
+        "z_1": "cloudanchor",
+        "z_2": "vinelantern",
+        "z_n": "stonebonnet",
+        "X": "thunderhorn",
+        "Y": "ambercrown",
+        "a": "foxglacier",
+        "b": "duneorchid",
+        "r": "stormledger",
+        "n": "hazelbranch"
+      },
+      "question": "Problem B-6\nFor \\( lanternfly=1,2, \\ldots, hazelbranch \\) let \\( teacupholder=marshmallow+i windvessel \\), where the \\( marshmallow \\) and \\( windvessel \\) are real and \\( i=\\sqrt{-1} \\). Let \\( stormledger \\) be the absolute value of the real part of\n\\[\n\\pm \\sqrt{cloudanchor^{2}+vinelantern^{2}+\\cdots+stonebonnet^{2}}\n\\]\n\nProve that \\( stormledger<\\left|driftwood\\right|+\\left|snowglider\\right|+\\cdots+\\left|paintbucket\\right| \\).",
+      "solution": "B-6.\nLet \\( thunderhorn=\\left(driftwood, \\ldots, paintbucket\\right) \\) and \\( ambercrown=\\left(moonquartz, \\ldots, glasspigeon\\right) \\). Also let \\( foxglacier+duneorchid i \\) be either square root of \\( cloudanchor^{2}+\\cdots+stonebonnet^{2} \\). Then \\( foxglacier duneorchid=thunderhorn \\cdot ambercrown=driftwood moonquartz+\\cdots+paintbucket glasspigeon \\) and\n\\[\nfoxglacier^{2}-duneorchid^{2}=\\|thunderhorn\\|^{2}-\\|ambercrown\\|^{2}=\\left(driftwood^{2}+\\cdots+paintbucket^{2}\\right)-\\left(moonquartz^{2}+\\cdots+glasspigeon^{2}\\right) .\n\\]\n\nThe Cauchy-Schwarz inequality tells us that \\( |thunderhorn \\cdot ambercrown| \\leq\\|thunderhorn\\| \\cdot\\|ambercrown\\| \\) and hence \\( |foxglacier| \\cdot|duneorchid|< \\) \\( \\|thunderhorn\\| \\cdot\\|ambercrown\\| \\). Therefore, the assumption that \\( |foxglacier|>\\|thunderhorn\\| \\) would imply that \\( |duneorchid|<\\|ambercrown\\| \\). This and \\( foxglacier^{2}=\\|thunderhorn\\|^{2}-\\|ambercrown\\|^{2}+duneorchid^{2} \\) would yield \\( foxglacier^{2}<\\|thunderhorn\\| \\) and thus the contradiction \\( |foxglacier|<\\|thunderhorn\\| \\). Hence the assumption is false and \\( stormledger=|foxglacier|<\\|thunderhorn\\| \\). Since \\( \\|thunderhorn\\|^{2}<\\left(\\left|driftwood\\right|+\\cdots+\\left|paintbucket\\right|\\right)^{2} \\), this implies the desired \\( stormledger \\leqslant\\left|driftwood\\right|+\\cdots+\\left|paintbucket\\right| \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "fixedpoint",
+        "z_k": "realconstant",
+        "x_k": "imaginarycomponent",
+        "y_k": "realcomponent",
+        "x_1": "imaginaryalpha",
+        "x_2": "imaginarybeta",
+        "x_n": "imaginaryomega",
+        "y_1": "realalpha",
+        "y_2": "realbeta",
+        "y_n": "realomega",
+        "z_1": "realelement",
+        "z_2": "realsecond",
+        "z_n": "realterminal",
+        "X": "imaginarycollection",
+        "Y": "realcollection",
+        "a": "imaginaryscalar",
+        "b": "realscalar",
+        "r": "complexmeasure",
+        "n": "emptiness"
+      },
+      "question": "Problem B-6\nFor \\( fixedpoint=1,2, \\ldots, emptiness \\) let \\( realconstant=imaginarycomponent+i realcomponent \\), where the \\( imaginarycomponent \\) and \\( realcomponent \\) are real and \\( i=\\sqrt{-1} \\). Let \\( complexmeasure \\) be the absolute value of the real part of\n\\[\n\\pm \\sqrt{realelement^{2}+realsecond^{2}+\\cdots+realterminal^{2}}\n\\]\n\nProve that \\( complexmeasure<\\left|imaginaryalpha\\right|+\\left|imaginarybeta\\right|+\\cdots+\\left|imaginaryomega\\right| \\).",
+      "solution": "B-6.\nLet \\( imaginarycollection=\\left(imaginaryalpha, \\ldots, imaginaryomega\\right) \\) and \\( realcollection=\\left(realalpha, \\ldots, realomega\\right) \\). Also let \\( imaginaryscalar+realscalar i \\) be either square root of \\( realelement^{2}+\\cdots+realterminal^{2} \\). Then \\( imaginaryscalar realscalar=imaginarycollection \\cdot realcollection=imaginaryalpha realalpha+\\cdots+imaginaryomega realomega \\) and\n\\[\nimaginaryscalar^{2}-realscalar^{2}=\\|imaginarycollection\\|^{2}-\\|realcollection\\|^{2}=\\left(imaginaryalpha^{2}+\\cdots+imaginaryomega^{2}\\right)-\\left(realalpha^{2}+\\cdots+realomega^{2}\\right) .\n\\]\n\nThe Cauchy-Schwarz inequality tells us that \\( |imaginarycollection \\cdot realcollection| \\leq\\|imaginarycollection\\| \\cdot\\|realcollection\\| \\) and hence \\( |imaginaryscalar| \\cdot|realscalar|< \\|imaginarycollection\\| \\cdot\\|realcollection\\| \\). Therefore, the assumption that \\( |imaginaryscalar|>\\|imaginarycollection\\| \\) would imply that \\( |realscalar|<\\|realcollection\\| \\). This and \\( imaginaryscalar^{2}=\\|imaginarycollection\\|^{2}-\\|realcollection\\|^{2}+realscalar^{2} \\) would yield \\( imaginaryscalar^{2}<\\|imaginarycollection\\| \\) and thus the contradiction \\( |imaginaryscalar|<\\|imaginarycollection\\| \\). Hence the assumption is false and \\( complexmeasure=|imaginaryscalar|<\\|imaginarycollection\\| \\). Since \\( \\|imaginarycollection\\|^{2}<\\left(\\left|imaginaryalpha\\right|+\\cdots+\\left|imaginaryomega\\right|\\right)^{2} \\), this implies the desired \\( complexmeasure \\leqslant\\left|imaginaryalpha\\right|+\\cdots+\\left|imaginaryomega\\right| \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "qzxwvtnp",
+        "z_k": "hjgrksla",
+        "x_k": "pdsoicmr",
+        "y_k": "rmlgxtza",
+        "x_1": "vhjitsew",
+        "x_2": "kgfybnoq",
+        "x_n": "tuvwylza",
+        "y_1": "qanduprx",
+        "y_2": "lciyqmhe",
+        "y_n": "pigvxqsr",
+        "z_1": "musoyldk",
+        "z_2": "jzwifcaq",
+        "z_n": "zbknrtda",
+        "X": "abcgoruq",
+        "Y": "vbmnlkwe",
+        "a": "szevtdpi",
+        "b": "xqalwenc",
+        "r": "onwtrbsa",
+        "n": "gryphozn"
+      },
+      "question": "Problem:\n<<<\nProblem B-6\nFor \\( qzxwvtnp=1,2, \\ldots, gryphozn \\) let \\( hjgrksla=pdsoicmr+i rmlgxtza \\), where the \\( pdsoicmr \\) and \\( rmlgxtza \\) are real and \\( i=\\sqrt{-1} \\). Let \\( onwtrbsa \\) be the absolute value of the real part of\n\\[\n\\pm \\sqrt{musoyldk^{2}+jzwifcaq^{2}+\\cdots+zbknrtda^{2}}\n\\]\n\nProve that \\( onwtrbsa<\\left|vhjitsew\\right|+\\left|kgfybnoq\\right|+\\cdots+\\left|tuvwylza\\right| \\).\n>>>\n",
+      "solution": "Solution:\n<<<\nB-6.\nLet \\( abcgoruq=\\left(vhjitsew, \\ldots, tuvwylza\\right) \\) and \\( vbmnlkwe=\\left(qanduprx, \\ldots, pigvxqsr\\right) \\). Also let \\( szevtdpi+xqalwenc i \\) be either square root of \\( musoyldk^{2}+\\cdots+zbknrtda^{2} \\). Then \\( szevtdpi xqalwenc=abcgoruq \\cdot vbmnlkwe=vhjitsew qanduprx+\\cdots+tuvwylza pigvxqsr \\) and\n\\[\nszevtdpi^{2}-xqalwenc^{2}=\\|abcgoruq\\|^{2}-\\|vbmnlkwe\\|^{2}=\\left(vhjitsew^{2}+\\cdots+tuvwylza^{2}\\right)-\\left(qanduprx^{2}+\\cdots+pigvxqsr^{2}\\right) .\n\\]\n\nThe Cauchy-Schwarz inequality tells us that \\( |abcgoruq \\cdot vbmnlkwe| \\leq\\|abcgoruq\\| \\cdot\\|vbmnlkwe\\| \\) and hence \\( |szevtdpi| \\cdot|xqalwenc|< \\) \\( \\|abcgoruq\\| \\cdot\\|vbmnlkwe\\| \\). Therefore, the assumption that \\( |szevtdpi|>\\|abcgoruq\\| \\) would imply that \\( |xqalwenc|<\\|vbmnlkwe\\| \\). This and \\( szevtdpi^{2}=\\|abcgoruq\\|^{2}-\\|vbmnlkwe\\|^{2}+xqalwenc^{2} \\) would yield \\( szevtdpi^{2}<\\|abcgoruq\\| \\) and thus the contradiction \\( |szevtdpi|<\\|abcgoruq\\| \\). Hence the assumption is false and \\( onwtrbsa=|szevtdpi|<\\|abcgoruq\\| \\). Since \\( \\|abcgoruq\\|^{2}<\\left(\\left|vhjitsew\\right|+\\cdots+\\left|tuvwylza\\right|\\right)^{2} \\), this implies the desired \\( onwtrbsa \\leqslant\\left|vhjitsew\\right|+\\cdots+\\left|tuvwylza\\right| \\).\n>>>\n"
+    },
+    "kernel_variant": {
+      "question": "Let $M\\ge 2$ be an integer and let $A=(a_{kl})_{1\\le k,l\\le M}$ be a real symmetric positive-definite matrix.  \nFor $k=1,2,\\dots ,M$ write  \n\\[\nz_k=u_k+i\\,v_k ,\\qquad u_k,v_k\\in\\mathbb R ,\n\\]\nand form the quadratic form  \n\\[\n\\Phi(z_1,\\dots ,z_M)=\\sum_{k,l=1}^{M}a_{kl}z_kz_l\\in\\mathbb C .\n\\]\nChoose an arbitrary complex number $\\omega$ that satisfies the quadratic equation  \n\\[\n\\omega^{2}=\\Phi(z_1,\\dots ,z_M).\n\\]\n\nPut  \n\\[\n\\rho=\\lvert\\operatorname{Re}\\omega\\rvert,\\qquad \n\\sigma=\\lvert\\operatorname{Im}\\omega\\rvert ,\n\\]\nand introduce the real vectors  \n\\[\nU=(u_1,\\dots ,u_M)^{\\mathsf T},\\qquad V=(v_1,\\dots ,v_M)^{\\mathsf T}.\n\\]\n\n(a)  Prove the double estimate\n\\[\n\\rho\\le\\sqrt{U^{\\mathsf T}AU},\\qquad \n\\sigma\\le\\sqrt{V^{\\mathsf T}AV}. \\tag{$\\star$}\n\\]\n\n(b)  Show that equality holds in at least one of the two inequalities in $(\\star)$ if and only if the vectors $U$ and $V$ are linearly dependent (that is, either $V=0$ or $V\\neq 0$ and $U\\parallel V$).  \nMoreover, whenever $U$ and $V$ are linearly dependent it is always possible to choose a square root $\\omega$ for which \\emph{both} equalities in $(\\star)$ hold simultaneously.\n\n(c)  Conclude that if $U$ and $V$ are not scalar multiples, then every square root $\\omega$ of $\\Phi$ satisfies the strict inequalities  \n\\[\n\\rho<\\sqrt{U^{\\mathsf T}AU},\\qquad \n\\sigma<\\sqrt{V^{\\mathsf T}AV}.\n\\]",
+      "solution": "Throughout we write  \n\\[\n\\langle x,y\\rangle_A :=x^{\\mathsf T}Ay,\\qquad \n\\lVert x\\rVert_A:=\\sqrt{\\langle x,x\\rangle_A}\n\\]\nfor the inner product and norm generated by the positive-definite matrix $A$.\n\n\\bigskip\n\\textbf{Step 1.  An algebraic decomposition of $\\Phi$.}  \nWith $Z:=U+i\\,V$ we have\n\\[\n\\Phi\n=(U+iV)^{\\mathsf T}A(U+iV)\n=U^{\\mathsf T}AU-V^{\\mathsf T}AV+2\\,i\\,U^{\\mathsf T}AV. \\tag{1}\n\\]\nWriting $\\omega=a+ib$ with $a,b\\in\\mathbb R$, the identity $\\omega^{2}=\\Phi$ yields\n\\begin{align}\na^{2}-b^{2}&=U^{\\mathsf T}AU-V^{\\mathsf T}AV, \\tag{2}\\\\\n2ab&=2\\,U^{\\mathsf T}AV. \\tag{3}\n\\end{align}\nHence\n\\[\n\\rho=\\lvert a\\rvert,\\qquad \\sigma=\\lvert b\\rvert. \\tag{4}\n\\]\n\n\\bigskip\n\\textbf{(a)  Proof of the two estimates.}  \nEquation (3) and the Cauchy-Schwarz inequality for the $A$-inner product give\n\\[\n\\lvert ab\\rvert=\\lvert U^{\\mathsf T}AV\\rvert\n\\le\\lVert U\\rVert_A\\,\\lVert V\\rVert_A\n=\\sqrt{U^{\\mathsf T}AU}\\,\\sqrt{V^{\\mathsf T}AV}. \\tag{5}\n\\]\n\nAssume, for a contradiction, that $\\lvert a\\rvert>\\sqrt{U^{\\mathsf T}AU}$.  \nDividing (5) by $\\lvert a\\rvert$ we obtain\n\\[\n\\lvert b\\rvert<\\sqrt{V^{\\mathsf T}AV}. \\tag{6}\n\\]\nSubstituting (6) into (2) gives\n\\[\na^{2}=U^{\\mathsf T}AU-V^{\\mathsf T}AV+b^{2}\n< U^{\\mathsf T}AU,\n\\]\ncontradicting $\\lvert a\\rvert>\\sqrt{U^{\\mathsf T}AU}$.  \nThus $\\lvert a\\rvert\\le\\sqrt{U^{\\mathsf T}AU}$.  \nExchanging the roles of $(a,U)$ and $(b,V)$ yields $\\lvert b\\rvert\\le\\sqrt{V^{\\mathsf T}AV}$.  \nBy (4) this is exactly the desired double estimate $(\\star)$.\n\n\\bigskip\n\\textbf{(b)  Characterisation of equality.}\n\n\\emph{Necessity.}  \nAssume that equality holds in at least one of the inequalities in $(\\star)$.  \nWe distinguish two cases.\n\n\\emph{Case 1: $V=0$.}  \nThen $Z=U$, so $\\Phi=U^{\\mathsf T}AU>0$ is real.  \nBoth roots of $\\omega^{2}=\\Phi$ are real, say $\\omega=\\pm\\sqrt{U^{\\mathsf T}AU}$.  \nConsequently\n\\[\n\\rho=\\sqrt{U^{\\mathsf T}AU},\\qquad \\sigma=0=\\sqrt{V^{\\mathsf T}AV},\n\\]\nand equality holds in \\emph{both} inequalities.  \nBecause $V=0$, the vectors $U$ and $V$ are clearly linearly dependent.\n\n\\emph{Case 2: $V\\neq 0$.}  \nSuppose, for definiteness, that $\\sigma=\\sqrt{V^{\\mathsf T}AV}$ (the other possibility is analogous).  \nThen $\\lvert b\\rvert=\\sqrt{V^{\\mathsf T}AV}$, so (5) gives\n\\[\n\\lvert a\\rvert\\,\\sqrt{V^{\\mathsf T}AV}= \n\\lvert U^{\\mathsf T}AV\\rvert\n\\le\\sqrt{U^{\\mathsf T}AU}\\,\\sqrt{V^{\\mathsf T}AV},\n\\quad\\text{hence}\\quad\n\\lvert a\\rvert\\le\\sqrt{U^{\\mathsf T}AU}.\n\\]\nTo decide whether this inequality is strict we square $\\lvert b\\rvert$ and use (2):\n\\[\na^{2}=U^{\\mathsf T}AU-V^{\\mathsf T}AV+b^{2}\n=U^{\\mathsf T}AU.\n\\]\nThus $\\lvert a\\rvert=\\sqrt{U^{\\mathsf T}AU}$, so equality in $(\\star)$ holds for \\emph{both} bounds.  \nReturning to (5) we see that\n\\[\n\\lvert U^{\\mathsf T}AV\\rvert=\\lVert U\\rVert_A\\,\\lVert V\\rVert_A,\n\\]\nwhich means that Cauchy-Schwarz is an equality, and therefore $U$ and $V$ are linearly dependent; i.e.\\ there exists $\\lambda\\in\\mathbb R$ with $U=\\lambda V$.\n\n\\medskip\n\\emph{Sufficiency.}  \nConversely, suppose $U$ and $V$ are linearly dependent.\n\n\\emph{Sub-case 1: $V=0$ (no condition on $U$).}  \nThen $\\Phi=U^{\\mathsf T}AU\\ge 0$ is real, so choose\n\\[\n\\omega=\\pm\\sqrt{U^{\\mathsf T}AU}.\n\\]\nWe get $\\rho=\\sqrt{U^{\\mathsf T}AU}$ and $\\sigma=0=\\sqrt{V^{\\mathsf T}AV}$, hence both equalities in $(\\star)$ hold.\n\n\\emph{Sub-case 2: $V\\neq 0$ and $U=\\lambda V$ for some $\\lambda\\in\\mathbb R$.}  \nSet $S:=V^{\\mathsf T}AV>0$.  \nWith (1) we find\n\\[\n\\Phi=(\\lambda+i)^{2}S .\n\\]\nPick the square root\n\\[\n\\omega=(\\lambda+i)\\sqrt{S}\\quad\\Longrightarrow\\quad\\omega^{2}=\\Phi .\n\\]\nThen\n\\[\n\\rho=\\lvert\\lambda\\rvert\\sqrt{S}=\\sqrt{U^{\\mathsf T}AU},\n\\qquad\n\\sigma=\\sqrt{S}=\\sqrt{V^{\\mathsf T}AV},\n\\]\nso again both equalities in $(\\star)$ are attained.  \n\nWe have proved that equality in at least one (indeed in both) of the bounds occurs precisely when $U$ and $V$ are linearly dependent.\n\n\\bigskip\n\\textbf{(c)  Strictness in the non-degenerate case.}  \nIf $U$ and $V$ are not scalar multiples, the Cauchy-Schwarz inequality in (5) is strict:\n\\[\n\\lvert U^{\\mathsf T}AV\\rvert<\\lVert U\\rVert_A\\,\\lVert V\\rVert_A .\n\\]\nRepeating the argument of part (a) with strict inequality yields\n\\[\n\\lvert a\\rvert<\\sqrt{U^{\\mathsf T}AU},\\qquad\n\\lvert b\\rvert<\\sqrt{V^{\\mathsf T}AV},\n\\]\nthat is,\n\\[\n\\rho<\\sqrt{U^{\\mathsf T}AU},\\qquad\n\\sigma<\\sqrt{V^{\\mathsf T}AV}.\n\\]\nThis holds for \\emph{every} square root $\\omega$ of $\\Phi$, completing the proof. \\hfill$\\square$\n\n\\bigskip",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.643929",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher-order structure.  \n   • The original problem deals only with the simple scalar sum Σ z_k²; the variant replaces it by the quadratic form ZᵀA Z with an arbitrary positive–definite matrix A.  \n   • Handling this requires familiarity with inner products generated by matrices, quadratic forms, and their spectral properties.\n\n2.  Additional variables and parameters.  \n   • Besides the 2M real variables u_k, v_k, the problem now involves M² further real parameters (the entries of A) that interact non-trivially with the z_k.\n\n3.  Deeper theoretical tools.  \n   • One must recast the problem in terms of an A–inner product, then invoke Cauchy–Schwarz in that metric.  \n   • The argument demands mastery of quadratic‐form algebra, the Rayleigh quotient, and the behaviour of complex square roots of real–quadratic expressions.\n\n4.  More intricate equality analysis.  \n   • Identifying the precise circumstances under which equality may occur now hinges on recognising when Cauchy–Schwarz becomes an equality in the A–metric, i.e. on detecting linear dependence of U and V.  \n   • Establishing that an appropriate square root ω exists and produces simultaneous equalities adds an extra constructive layer absent from the original task.\n\n5.  Strict-inequality clause.  \n   • Proving that both bounds are strict whenever U and V are not parallel forces the solver to revisit every inequality used and verify that none can be tight—an exercise in meticulous logical bookkeeping.\n\nAll these layers combine to make the enhanced variant markedly more sophisticated and technically demanding than both the original problem and the current kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $M\\ge 2$ be an integer and let $A=(a_{kl})_{1\\le k,l\\le M}$ be a real symmetric positive-definite matrix.  \nFor $k=1,2,\\dots ,M$ write  \n\\[\nz_k=u_k+i\\,v_k ,\\qquad u_k,v_k\\in\\mathbb R ,\n\\]\nand form the quadratic form  \n\\[\n\\Phi(z_1,\\dots ,z_M)=\\sum_{k,l=1}^{M}a_{kl}z_kz_l\\in\\mathbb C .\n\\]\nChoose an arbitrary complex number $\\omega$ that satisfies the quadratic equation  \n\\[\n\\omega^{2}=\\Phi(z_1,\\dots ,z_M).\n\\]\n\nPut  \n\\[\n\\rho=\\lvert\\operatorname{Re}\\omega\\rvert,\\qquad \n\\sigma=\\lvert\\operatorname{Im}\\omega\\rvert ,\n\\]\nand introduce the real vectors  \n\\[\nU=(u_1,\\dots ,u_M)^{\\mathsf T},\\qquad V=(v_1,\\dots ,v_M)^{\\mathsf T}.\n\\]\n\n(a)  Prove the double estimate\n\\[\n\\rho\\le\\sqrt{U^{\\mathsf T}AU},\\qquad \n\\sigma\\le\\sqrt{V^{\\mathsf T}AV}. \\tag{$\\star$}\n\\]\n\n(b)  Show that equality holds in at least one of the two inequalities in $(\\star)$ if and only if the vectors $U$ and $V$ are linearly dependent (that is, either $V=0$ or $V\\neq 0$ and $U\\parallel V$).  \nMoreover, whenever $U$ and $V$ are linearly dependent it is always possible to choose a square root $\\omega$ for which \\emph{both} equalities in $(\\star)$ hold simultaneously.\n\n(c)  Conclude that if $U$ and $V$ are not scalar multiples, then every square root $\\omega$ of $\\Phi$ satisfies the strict inequalities  \n\\[\n\\rho<\\sqrt{U^{\\mathsf T}AU},\\qquad \n\\sigma<\\sqrt{V^{\\mathsf T}AV}.\n\\]",
+      "solution": "Throughout we write  \n\\[\n\\langle x,y\\rangle_A :=x^{\\mathsf T}Ay,\\qquad \n\\lVert x\\rVert_A:=\\sqrt{\\langle x,x\\rangle_A}\n\\]\nfor the inner product and norm generated by the positive-definite matrix $A$.\n\n\\bigskip\n\\textbf{Step 1.  An algebraic decomposition of $\\Phi$.}  \nWith $Z:=U+i\\,V$ we have\n\\[\n\\Phi\n=(U+iV)^{\\mathsf T}A(U+iV)\n=U^{\\mathsf T}AU-V^{\\mathsf T}AV+2\\,i\\,U^{\\mathsf T}AV. \\tag{1}\n\\]\nWriting $\\omega=a+ib$ with $a,b\\in\\mathbb R$, the identity $\\omega^{2}=\\Phi$ yields\n\\begin{align}\na^{2}-b^{2}&=U^{\\mathsf T}AU-V^{\\mathsf T}AV, \\tag{2}\\\\\n2ab&=2\\,U^{\\mathsf T}AV. \\tag{3}\n\\end{align}\nHence\n\\[\n\\rho=\\lvert a\\rvert,\\qquad \\sigma=\\lvert b\\rvert. \\tag{4}\n\\]\n\n\\bigskip\n\\textbf{(a)  Proof of the two estimates.}  \nEquation (3) and the Cauchy-Schwarz inequality for the $A$-inner product give\n\\[\n\\lvert ab\\rvert=\\lvert U^{\\mathsf T}AV\\rvert\n\\le\\lVert U\\rVert_A\\,\\lVert V\\rVert_A\n=\\sqrt{U^{\\mathsf T}AU}\\,\\sqrt{V^{\\mathsf T}AV}. \\tag{5}\n\\]\n\nAssume, for a contradiction, that $\\lvert a\\rvert>\\sqrt{U^{\\mathsf T}AU}$.  \nDividing (5) by $\\lvert a\\rvert$ we obtain\n\\[\n\\lvert b\\rvert<\\sqrt{V^{\\mathsf T}AV}. \\tag{6}\n\\]\nSubstituting (6) into (2) gives\n\\[\na^{2}=U^{\\mathsf T}AU-V^{\\mathsf T}AV+b^{2}\n< U^{\\mathsf T}AU,\n\\]\ncontradicting $\\lvert a\\rvert>\\sqrt{U^{\\mathsf T}AU}$.  \nThus $\\lvert a\\rvert\\le\\sqrt{U^{\\mathsf T}AU}$.  \nExchanging the roles of $(a,U)$ and $(b,V)$ yields $\\lvert b\\rvert\\le\\sqrt{V^{\\mathsf T}AV}$.  \nBy (4) this is exactly the desired double estimate $(\\star)$.\n\n\\bigskip\n\\textbf{(b)  Characterisation of equality.}\n\n\\emph{Necessity.}  \nAssume that equality holds in at least one of the inequalities in $(\\star)$.  \nWe distinguish two cases.\n\n\\emph{Case 1: $V=0$.}  \nThen $Z=U$, so $\\Phi=U^{\\mathsf T}AU>0$ is real.  \nBoth roots of $\\omega^{2}=\\Phi$ are real, say $\\omega=\\pm\\sqrt{U^{\\mathsf T}AU}$.  \nConsequently\n\\[\n\\rho=\\sqrt{U^{\\mathsf T}AU},\\qquad \\sigma=0=\\sqrt{V^{\\mathsf T}AV},\n\\]\nand equality holds in \\emph{both} inequalities.  \nBecause $V=0$, the vectors $U$ and $V$ are clearly linearly dependent.\n\n\\emph{Case 2: $V\\neq 0$.}  \nSuppose, for definiteness, that $\\sigma=\\sqrt{V^{\\mathsf T}AV}$ (the other possibility is analogous).  \nThen $\\lvert b\\rvert=\\sqrt{V^{\\mathsf T}AV}$, so (5) gives\n\\[\n\\lvert a\\rvert\\,\\sqrt{V^{\\mathsf T}AV}= \n\\lvert U^{\\mathsf T}AV\\rvert\n\\le\\sqrt{U^{\\mathsf T}AU}\\,\\sqrt{V^{\\mathsf T}AV},\n\\quad\\text{hence}\\quad\n\\lvert a\\rvert\\le\\sqrt{U^{\\mathsf T}AU}.\n\\]\nTo decide whether this inequality is strict we square $\\lvert b\\rvert$ and use (2):\n\\[\na^{2}=U^{\\mathsf T}AU-V^{\\mathsf T}AV+b^{2}\n=U^{\\mathsf T}AU.\n\\]\nThus $\\lvert a\\rvert=\\sqrt{U^{\\mathsf T}AU}$, so equality in $(\\star)$ holds for \\emph{both} bounds.  \nReturning to (5) we see that\n\\[\n\\lvert U^{\\mathsf T}AV\\rvert=\\lVert U\\rVert_A\\,\\lVert V\\rVert_A,\n\\]\nwhich means that Cauchy-Schwarz is an equality, and therefore $U$ and $V$ are linearly dependent; i.e.\\ there exists $\\lambda\\in\\mathbb R$ with $U=\\lambda V$.\n\n\\medskip\n\\emph{Sufficiency.}  \nConversely, suppose $U$ and $V$ are linearly dependent.\n\n\\emph{Sub-case 1: $V=0$ (no condition on $U$).}  \nThen $\\Phi=U^{\\mathsf T}AU\\ge 0$ is real, so choose\n\\[\n\\omega=\\pm\\sqrt{U^{\\mathsf T}AU}.\n\\]\nWe get $\\rho=\\sqrt{U^{\\mathsf T}AU}$ and $\\sigma=0=\\sqrt{V^{\\mathsf T}AV}$, hence both equalities in $(\\star)$ hold.\n\n\\emph{Sub-case 2: $V\\neq 0$ and $U=\\lambda V$ for some $\\lambda\\in\\mathbb R$.}  \nSet $S:=V^{\\mathsf T}AV>0$.  \nWith (1) we find\n\\[\n\\Phi=(\\lambda+i)^{2}S .\n\\]\nPick the square root\n\\[\n\\omega=(\\lambda+i)\\sqrt{S}\\quad\\Longrightarrow\\quad\\omega^{2}=\\Phi .\n\\]\nThen\n\\[\n\\rho=\\lvert\\lambda\\rvert\\sqrt{S}=\\sqrt{U^{\\mathsf T}AU},\n\\qquad\n\\sigma=\\sqrt{S}=\\sqrt{V^{\\mathsf T}AV},\n\\]\nso again both equalities in $(\\star)$ are attained.  \n\nWe have proved that equality in at least one (indeed in both) of the bounds occurs precisely when $U$ and $V$ are linearly dependent.\n\n\\bigskip\n\\textbf{(c)  Strictness in the non-degenerate case.}  \nIf $U$ and $V$ are not scalar multiples, the Cauchy-Schwarz inequality in (5) is strict:\n\\[\n\\lvert U^{\\mathsf T}AV\\rvert<\\lVert U\\rVert_A\\,\\lVert V\\rVert_A .\n\\]\nRepeating the argument of part (a) with strict inequality yields\n\\[\n\\lvert a\\rvert<\\sqrt{U^{\\mathsf T}AU},\\qquad\n\\lvert b\\rvert<\\sqrt{V^{\\mathsf T}AV},\n\\]\nthat is,\n\\[\n\\rho<\\sqrt{U^{\\mathsf T}AU},\\qquad\n\\sigma<\\sqrt{V^{\\mathsf T}AV}.\n\\]\nThis holds for \\emph{every} square root $\\omega$ of $\\Phi$, completing the proof. \\hfill$\\square$\n\n\\bigskip",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.511653",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher-order structure.  \n   • The original problem deals only with the simple scalar sum Σ z_k²; the variant replaces it by the quadratic form ZᵀA Z with an arbitrary positive–definite matrix A.  \n   • Handling this requires familiarity with inner products generated by matrices, quadratic forms, and their spectral properties.\n\n2.  Additional variables and parameters.  \n   • Besides the 2M real variables u_k, v_k, the problem now involves M² further real parameters (the entries of A) that interact non-trivially with the z_k.\n\n3.  Deeper theoretical tools.  \n   • One must recast the problem in terms of an A–inner product, then invoke Cauchy–Schwarz in that metric.  \n   • The argument demands mastery of quadratic‐form algebra, the Rayleigh quotient, and the behaviour of complex square roots of real–quadratic expressions.\n\n4.  More intricate equality analysis.  \n   • Identifying the precise circumstances under which equality may occur now hinges on recognising when Cauchy–Schwarz becomes an equality in the A–metric, i.e. on detecting linear dependence of U and V.  \n   • Establishing that an appropriate square root ω exists and produces simultaneous equalities adds an extra constructive layer absent from the original task.\n\n5.  Strict-inequality clause.  \n   • Proving that both bounds are strict whenever U and V are not parallel forces the solver to revisit every inequality used and verify that none can be tight—an exercise in meticulous logical bookkeeping.\n\nAll these layers combine to make the enhanced variant markedly more sophisticated and technically demanding than both the original problem and the current kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

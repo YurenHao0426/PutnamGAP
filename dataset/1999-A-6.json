@@ -1,0 +1,157 @@
+{
+  "index": "1999-A-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "The sequence $(a_n)_{n\\geq 1}$ is defined by $a_1=1, a_2=2, a_3=24,$ and, for $n\\geq 4$,\n\\[a_n = \\frac{6a_{n-1}^2a_{n-3} -\n8a_{n-1}a_{n-2}^2}{a_{n-2}a_{n-3}}.\\]\nShow that, for all n, $a_n$ is an integer multiple of $n$.",
+  "solution": "Rearranging the given equation yields the much more tractable equation\n\\[\n\\frac{a_n}{a_{n-1}} = 6 \\, \\frac{a_{n-1}}{a_{n-2}}\n- 8 \\, \\frac{a_{n-2}}{a_{n-3}}.\n\\]\nLet $b_n = a_n/a_{n-1}$; with the initial conditions $b_2 = 2, b_3 = 12$,\none easily obtains $b_n = 2^{n-1} (2^{n-2} - 1)$, and so\n\\[\na_n = 2^{n(n-1)/2} \\prod_{i=1}^{n-1} (2^i - 1).\n\\]\n\nTo see that $n$ divides $a_n$, factor $n$ as $2^k m$, with $m$\nodd. Then note that $k \\leq n \\leq n(n-1)/2$, and that there\nexists $i \\leq m-1$ such that $m$ divides $2^i-1$, namely $i =\n\\phi(m)$ (Euler's totient function: the number of integers in\n$\\{1, \\dots, m\\}$ relatively prime to $m$).",
+  "vars": [
+    "a_n",
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_n-1",
+    "a_n-2",
+    "a_n-3",
+    "b_n",
+    "b_2",
+    "b_3",
+    "n",
+    "i",
+    "k",
+    "m"
+  ],
+  "params": [
+    "\\\\phi"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_n": "seqterm",
+        "a_1": "seqone",
+        "a_2": "seqtwo",
+        "a_3": "seqthree",
+        "a_n-1": "seqprev",
+        "a_n-2": "seqprevtwo",
+        "a_n-3": "seqprevthree",
+        "b_n": "ratioseq",
+        "b_2": "ratiotwo",
+        "b_3": "ratiothree",
+        "n": "indexvar",
+        "i": "loopvar",
+        "k": "twopower",
+        "m": "oddfactor",
+        "\\phi": "eulertot"
+      },
+      "question": "The sequence $(seqterm)_{indexvar\\geq 1}$ is defined by $seqone=1, seqtwo=2, seqthree=24,$ and, for $indexvar\\geq 4$,\n\\[seqterm = \\frac{6seqprev^2seqprevthree -\n8seqprevseqprevtwo^2}{seqprevtwo seqprevthree}.\\]\nShow that, for all indexvar, $seqterm$ is an integer multiple of $indexvar$.",
+      "solution": "Rearranging the given equation yields the much more tractable equation\n\\[\n\\frac{seqterm}{seqprev} = 6 \\, \\frac{seqprev}{seqprevtwo}\n- 8 \\, \\frac{seqprevtwo}{seqprevthree}.\n\\]\nLet $ratioseq = seqterm/seqprev$; with the initial conditions $ratiotwo = 2, ratiothree = 12$,\none easily obtains $ratioseq = 2^{indexvar-1} (2^{indexvar-2} - 1)$, and so\n\\[\nseqterm = 2^{indexvar(indexvar-1)/2} \\prod_{loopvar=1}^{indexvar-1} (2^{loopvar} - 1).\n\\]\n\nTo see that $indexvar$ divides $seqterm$, factor $indexvar$ as $2^{twopower} \\, oddfactor$, with $oddfactor$\nodd. Then note that $twopower \\leq indexvar \\leq indexvar(indexvar-1)/2$, and that there\nexists $loopvar \\leq oddfactor-1$ such that $oddfactor$ divides $2^{loopvar}-1$, namely $loopvar =\n\\eulertot(oddfactor)$ (Euler's totient function: the number of integers in\n$\\{1, \\dots, oddfactor\\}$ relatively prime to $oddfactor$)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_n": "shoreline",
+        "a_1": "raindance",
+        "a_2": "buttercup",
+        "a_3": "daybreaker",
+        "a_n-1": "tumbleweed",
+        "a_n-2": "dragonfire",
+        "a_n-3": "stonecrown",
+        "b_n": "riverstone",
+        "b_2": "frostbite",
+        "b_3": "moonflower",
+        "n": "lighthouse",
+        "i": "watercraft",
+        "k": "honeycomb",
+        "m": "windthrush",
+        "\\\\phi": "caterpillar"
+      },
+      "question": "The sequence $(shoreline)_{lighthouse\\geq 1}$ is defined by $raindance=1, buttercup=2, daybreaker=24,$ and, for $lighthouse\\geq 4$,\n\\[shoreline = \\frac{6tumbleweed^2stonecrown - 8tumbleweed dragonfire^2}{dragonfire stonecrown}.\\]\nShow that, for all lighthouse, $shoreline$ is an integer multiple of $lighthouse$.",
+      "solution": "Rearranging the given equation yields the much more tractable equation\n\\[\\frac{shoreline}{tumbleweed} = 6 \\, \\frac{tumbleweed}{dragonfire} - 8 \\, \\frac{dragonfire}{stonecrown}.\\]\nLet $riverstone = shoreline/tumbleweed$; with the initial conditions $frostbite = 2, moonflower = 12$, one easily obtains $riverstone = 2^{lighthouse-1} (2^{lighthouse-2} - 1)$, and so\n\\[shoreline = 2^{lighthouse(lighthouse-1)/2} \\prod_{watercraft=1}^{lighthouse-1} (2^{watercraft} - 1).\\]\n\nTo see that $lighthouse$ divides $shoreline$, factor $lighthouse$ as $2^{honeycomb} windthrush$, with $windthrush$ odd. Then note that $honeycomb \\leq lighthouse \\leq lighthouse(lighthouse-1)/2$, and that there exists $watercraft \\leq windthrush-1$ such that $windthrush$ divides $2^{watercraft}-1$, namely $watercraft = caterpillar(windthrush)$ (Euler's totient function: the number of integers in \\{1, \\dots, windthrush\\} relatively prime to $windthrush$)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_n": "fixedsequence",
+        "a_1": "finalvalue",
+        "a_2": "penultimate",
+        "a_3": "antepenult",
+        "a_n-1": "nextvalue",
+        "a_n-2": "latervalue",
+        "a_n-3": "aftervalue",
+        "b_n": "staticratio",
+        "b_2": "staticpair",
+        "b_3": "statictrio",
+        "n": "steadynum",
+        "i": "fixedchar",
+        "k": "immobile",
+        "m": "frozenval",
+        "\\phi": "nonrelprime"
+      },
+      "question": "The sequence $(fixedsequence)_{steadynum\\geq 1}$ is defined by $finalvalue=1,\\ penultimate=2,\\ antepenult=24,$ and, for $steadynum\\geq 4$,\\[fixedsequence = \\frac{6\\, nextvalue^{2}\\, aftervalue - 8\\, nextvalue\\, latervalue^{2}}{latervalue\\, aftervalue}.\\]Show that, for all steadynum, $fixedsequence$ is an integer multiple of $steadynum$.",
+      "solution": "Rearranging the given equation yields the much more tractable equation\\[\\frac{fixedsequence}{nextvalue} = 6\\, \\frac{nextvalue}{latervalue} - 8\\, \\frac{latervalue}{aftervalue}.\\]Let $staticratio = fixedsequence/nextvalue$; with the initial conditions $staticpair = 2,\\ statictrio = 12$, one easily obtains $staticratio = 2^{steadynum-1} (2^{steadynum-2} - 1)$, and so\\[fixedsequence = 2^{steadynum(steadynum-1)/2} \\prod_{fixedchar=1}^{steadynum-1} (2^{fixedchar} - 1).\\]To see that $steadynum$ divides $fixedsequence$, factor $steadynum$ as $2^{immobile}\\, frozenval$, with $frozenval$ odd. Then note that $immobile \\leq steadynum \\leq steadynum(steadynum-1)/2$, and that there exists $fixedchar \\leq frozenval-1$ such that $frozenval$ divides $2^{fixedchar}-1$, namely $fixedchar = nonrelprime(frozenval)$ (Euler's totient function: the number of integers in $\\{1, \\dots, frozenval\\}$ relatively prime to $frozenval$)."
+    },
+    "garbled_string": {
+      "map": {
+        "a_n": "pyrxleqv",
+        "a_1": "jkmzodph",
+        "a_2": "lgnwtrsa",
+        "a_3": "zctlfveu",
+        "a_{n-1}": "qhsabkye",
+        "a_n-1": "qhsabkye",
+        "a_{n-2}": "vdejxurm",
+        "a_n-2": "vdejxurm",
+        "a_{n-3}": "oxramnlq",
+        "a_n-3": "oxramnlq",
+        "b_n": "wpcuskjf",
+        "b_2": "nyetkqsb",
+        "b_3": "udqfalor",
+        "n": "hsgtfrma",
+        "i": "cjqvnedp",
+        "k": "trwplxus",
+        "m": "srykadob",
+        "\\phi": "feaznqui"
+      },
+      "question": "The sequence $(pyrxleqv)_{hsgtfrma\\geq 1}$ is defined by $jkmzodph=1, lgnwtrsa=2, zctlfveu=24,$ and, for $hsgtfrma\\geq 4$,\n\\[\npyrxleqv = \\frac{6 qhsabkye^2 oxramnlq -\n8 qhsabkye vdejxurm^2}{vdejxurm oxramnlq}.\n\\]\nShow that, for all $hsgtfrma$, $pyrxleqv$ is an integer multiple of $hsgtfrma$.",
+      "solution": "Rearranging the given equation yields the much more tractable equation\n\\[\n\\frac{pyrxleqv}{qhsabkye} = 6 \\, \\frac{qhsabkye}{vdejxurm}\n- 8 \\, \\frac{vdejxurm}{oxramnlq}.\n\\]\nLet $wpcuskjf = pyrxleqv/qhsabkye$; with the initial conditions $nyetkqsb = 2, udqfalor = 12$, one easily obtains $wpcuskjf = 2^{hsgtfrma-1} (2^{hsgtfrma-2} - 1)$, and so\n\\[\npyrxleqv = 2^{hsgtfrma(hsgtfrma-1)/2} \\prod_{cjqvnedp=1}^{hsgtfrma-1} (2^{cjqvnedp} - 1).\n\\]\n\nTo see that $hsgtfrma$ divides $pyrxleqv$, factor $hsgtfrma$ as $2^{trwplxus} srykadob$, with $srykadob$ odd. Then note that $trwplxus \\leq hsgtfrma \\leq hsgtfrma(hsgtfrma-1)/2$, and that there exists $cjqvnedp \\leq srykadob-1$ such that $srykadob$ divides $2^{cjqvnedp}-1$, namely $cjqvnedp = feaznqui(srykadob)$ (Euler's totient function: the number of integers in $\\{1, \\dots, srykadob\\}$ relatively prime to $srykadob$)."
+    },
+    "kernel_variant": {
+      "question": "Let $(a_n)_{n\\ge 1}$ be the sequence defined by\n\\[\n a_1 = 3,\\qquad a_2 = 18,\\qquad a_3 = 1296,\\quad\\text{and for }n\\ge 4,\n \\qquad a_n \\,=\\, \\frac{\\,12\\,a_{n-1}^{\\,2}a_{n-3}\\; -\\; 27\\,a_{n-1}a_{n-2}^{\\,2}\\,}{a_{n-2}a_{n-3}}\\; .\n\\]\nShow that $\\;n\\mid a_n\\;$ for every positive integer $n$. ",
+      "solution": "1.  Rewriting the recurrence for the quotients.\n   Divide the defining relation by a_{n-1} to obtain\n   \n      \\frac{a_n}{a_{n-1}} = 12\\,\\frac{a_{n-1}}{a_{n-2}} - 27\\,\\frac{a_{n-2}}{a_{n-3}}.\n   \n   Set b_n := a_n/a_{n-1}.  Then for n\\ge4\n   \n        b_n = 12\\,b_{n-1} - 27\\,b_{n-2}.\n   \n   With the given initial values one has\n   \n        b_2 = a_2/a_1 = 18/3 = 6,\n        b_3 = a_3/a_2 = 1296/18 = 72.\n\n2.  Solving the linear recurrence for b_n.\n   The characteristic polynomial of (1) is t^2 - 12t + 27 = (t-3)(t-9) = 0, whose roots are 3 and 9.\n   Hence\n   \n      b_n = \\alpha\\,3^n + \\beta\\,9^n \\quad(n\\ge2).\n   \n   Solving for \\alpha,\\beta from b_2=6, b_3=72 gives\n   \n      9\\alpha + 81\\beta = 6,  \\quad 27\\alpha + 729\\beta = 72\n      \\Longrightarrow \\alpha = -\\tfrac13, \\, \\beta = \\tfrac19.\n   \n   Therefore\n   \n      b_n = -3^{n-1} + \\tfrac{1}{9}\\,9^n = 3^{2n-2} - 3^{n-1} = 3^{n-1}(3^{n-1}-1).\n\n3.  Closed form for a_n.\n   Since a_n = a_1 \\prod_{i=2}^n b_i and a_1 = 3, insert (2):\n   \n      a_n = 3 \\prod_{i=2}^n 3^{i-1} \\prod_{i=2}^n (3^{i-1}-1)\n           = 3^{1 + \\sum_{i=1}^{n-1}i} \\prod_{j=1}^{n-1}(3^j-1)\n           = 3^{1 + \\frac{n(n-1)}{2}} \\prod_{j=1}^{n-1}(3^j-1).\n\n4.  The 3-adic part of a_n.\n   Write n = 3^k m with m not divisible by 3.  The exponent of 3 in (3) is\n   1 + n(n-1)/2 \\ge n \\ge k, so 3^k \\mid a_n.\n\n5.  The part of n coprime to 3.\n   Since (3, m) = 1, Euler's theorem gives 3^{\\varphi (m)} \\equiv  1 (mod m), so m divides 3^{\\varphi (m)} - 1.\n   As \\varphi (m) \\leq  m-1 \\leq  n-1, the factor 3^{\\varphi (m)} - 1 occurs in the product in (3), hence m \\mid a_n.\n\n6.  Conclusion.\n   Both the power of 3 and the coprime part of n divide a_n; therefore n divides a_n for all n.  \\qed",
+      "_meta": {
+        "core_steps": [
+          "Rewrite the 3-term nonlinear recurrence as a 2-term linear recurrence for the quotients  b_n = a_n/a_{n-1}.",
+          "Solve the linear recurrence (constant coefficients) to obtain a closed-form b_n.",
+          "Express a_n as the product a_n = ∏_{i=2}^{n} b_i and simplify to powers of a single base times ∏(base^i – 1).",
+          "Show the 2-adic valuation of a_n is at least the exponent of 2 in n.",
+          "Use Euler’s theorem (i = φ(m) ≤ m–1) to guarantee the odd part m of n divides some factor (base^i – 1), hence m | a_n and therefore n | a_n."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Coefficient of b_{n-1} in the linear recurrence for b_n (originally 6). Changing it alters the characteristic polynomial but the same quotient trick and linear-recurrence solution still work.",
+            "original": 6
+          },
+          "slot2": {
+            "description": "Coefficient of b_{n-2} in the linear recurrence for b_n (originally –8, magnitude 8). Any non-zero value keeps the problem in the same framework.",
+            "original": -8
+          },
+          "slot3": {
+            "description": "Initial term a_1; only affects the final closed form but not the method.",
+            "original": 1
+          },
+          "slot4": {
+            "description": "Initial term a_2; only affects b_2 and hence the constants when solving the linear recurrence.",
+            "original": 2
+          },
+          "slot5": {
+            "description": "Initial term a_3; fixes b_3 and the constants in the linear solution, without changing the sequence of logical steps.",
+            "original": 24
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

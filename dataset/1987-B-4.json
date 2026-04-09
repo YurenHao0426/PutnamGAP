@@ -1,0 +1,142 @@
+{
+  "index": "1987-B-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $(x_1,y_1) = (0.8, 0.6)$ and let $x_{n+1} = x_n \\cos y_n - y_n\n\\sin y_n$ and $y_{n+1}= x_n \\sin y_n + y_n \\cos y_n$ for\n$n=1,2,3,\\dots$. For each of $\\lim_{n\\to \\infty} x_n$ and $\\lim_{n \\to\n\\infty} y_n$, prove that the limit exists and find it or prove that\nthe limit does not exist.",
+  "solution": "Solution. Since \\( (0.8)^{2}+(0.6)^{2}=1 \\), we have \\( \\left(x_{1}, y_{1}\\right)=\\left(\\cos \\theta_{1}, \\sin \\theta_{1}\\right) \\) where \\( \\theta_{1}=\\cos ^{-1}(0.8) \\). If \\( \\left(x_{n}, y_{n}\\right)=\\left(\\cos \\theta_{n}, \\sin \\theta_{n}\\right) \\) for some \\( n \\geq 1 \\) and number \\( \\theta_{n} \\), then by the trigonometric addition formulas, \\( \\left(x_{n+1}, y_{n+1}\\right)=\\left(\\cos \\left(\\theta_{n}+y_{n}\\right), \\sin \\left(\\theta_{n}+y_{n}\\right)\\right) \\). Hence by induction, \\( \\left(x_{n}, y_{n}\\right)=\\left(\\cos \\theta_{n}, \\sin \\theta_{n}\\right) \\) for all \\( n \\geq 1 \\), where \\( \\theta_{2}, \\theta_{3}, \\ldots \\) are defined recursively by \\( \\theta_{n+1}=\\theta_{n}+y_{n} \\) for \\( n \\geq 1 \\). Thus \\( \\theta_{n+1}=\\theta_{n}+\\sin \\theta_{n} \\).\n\nFor \\( 0<\\theta<\\pi \\), \\( \\sin \\theta>0 \\) and \\( \\sin \\theta=\\sin (\\pi-\\theta)<\\pi-\\theta \\) (see remark below for explanation), so \\( 0<\\theta+\\sin \\theta<\\pi \\). By induction, \\( 0<\\theta_{n}<\\pi \\) for all \\( n \\geq 1 \\). Also \\( \\theta_{n+1}=\\theta_{n}+\\sin \\theta_{n}>\\theta_{n} \\), so the bounded sequence \\( \\theta_{1}, \\theta_{2}, \\ldots \\) is also increasing, and hence has a limit \\( L \\in[0, \\pi] \\). Since \\( \\sin t \\) is a continuous function, taking the limit as \\( n \\rightarrow \\infty \\) in \\( \\theta_{n+1}=\\theta_{n}+\\sin \\theta_{n} \\) shows that \\( L=L+\\sin L \\), so \\( \\sin L=0 \\). But \\( L \\in[0, \\pi] \\) and \\( L \\geq \\theta_{1}>0 \\), so \\( L=\\pi \\). By continuity of \\( \\cos t \\) and \\( \\sin t \\), \\( \\lim _{n \\rightarrow \\infty} x_{n}=\\cos L=\\cos \\pi=-1 \\) and \\( \\lim _{n \\rightarrow \\infty} y_{n}=\\sin L=\\sin \\pi=0 \\).\n\nRemark. To show that \\( \\sin x<x \\) for \\( x>0 \\), integrate \\( \\cos t \\leq 1 \\) from \\( t=0 \\) to \\( t=x \\), and note that \\( \\cos t<1 \\) for \\( t \\in(0,2 \\pi) \\).\n\nReinterpretation. This problem is about the limiting behavior of a dynamical system. For more examples of dynamical systems, see 1992B3, 1995B4, and 1996A6.",
+  "vars": [
+    "x",
+    "x_1",
+    "x_n+1",
+    "x_n",
+    "y",
+    "y_1",
+    "y_n+1",
+    "y_n",
+    "\\\\theta",
+    "\\\\theta_1",
+    "\\\\theta_n",
+    "\\\\theta_n+1",
+    "L",
+    "t"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "generalx",
+        "x_1": "initialx",
+        "x_n+1": "succxvalue",
+        "x_n": "nthxvalue",
+        "y": "generaly",
+        "y_1": "initialy",
+        "y_n+1": "succyvalue",
+        "y_n": "nthyvalue",
+        "\\theta": "anglevar",
+        "\\theta_1": "angleinit",
+        "\\theta_n": "anglenval",
+        "\\theta_n+1": "anglesucc",
+        "L": "limitval",
+        "t": "integrvar",
+        "n": "indexval"
+      },
+      "question": "Let $(initialx, initialy) = (0.8, 0.6)$ and let $succxvalue = nthxvalue \\cos nthyvalue - nthyvalue \\sin nthyvalue$ and $succyvalue= nthxvalue \\sin nthyvalue + nthyvalue \\cos nthyvalue$ for\n$indexval=1,2,3,\\dots$. For each of $\\lim_{indexval\\to \\infty} nthxvalue$ and $\\lim_{indexval \\to\n\\infty} nthyvalue$, prove that the limit exists and find it or prove that\nthe limit does not exist.",
+      "solution": "Solution. Since \\( (0.8)^{2}+(0.6)^{2}=1 \\), we have \\( \\left(initialx, initialy\\right)=\\left(\\cos angleinit, \\sin angleinit\\right) \\) where \\( angleinit=\\cos ^{-1}(0.8) \\). If \\( \\left(nthxvalue, nthyvalue\\right)=\\left(\\cos anglenval, \\sin anglenval\\right) \\) for some \\( indexval \\geq 1 \\) and number \\( anglenval \\), then by the trigonometric addition formulas, \\( \\left(succxvalue, succyvalue\\right)=\\left(\\cos \\left(anglenval+nthyvalue\\right), \\sin \\left(anglenval+nthyvalue\\right)\\right) \\). Hence by induction, \\( \\left(nthxvalue, nthyvalue\\right)=\\left(\\cos anglenval, \\sin anglenval\\right) \\) for all \\( indexval \\geq 1 \\), where \\( anglevar_{2}, anglevar_{3}, \\ldots \\) are defined recursively by \\( anglesucc=anglenval+nthyvalue \\) for \\( indexval \\geq 1 \\). Thus \\( anglesucc=anglenval+\\sin anglenval \\).\n\nFor \\( 0<anglevar<\\pi \\), \\( \\sin anglevar>0 \\) and \\( \\sin anglevar=\\sin (\\pi-anglevar)<\\pi-anglevar \\) (see remark below for explanation), so \\( 0<anglevar+\\sin anglevar<\\pi \\). By induction, \\( 0<anglenval<\\pi \\) for all \\( indexval \\geq 1 \\). Also \\( anglesucc=anglenval+\\sin anglenval>anglenval \\), so the bounded sequence \\( angleinit, anglevar_{2}, \\ldots \\) is also increasing, and hence has a limit \\( limitval \\in[0, \\pi] \\). Since \\( \\sin integrvar \\) is a continuous function, taking the limit as \\( indexval \\rightarrow \\infty \\) in \\( anglesucc=anglenval+\\sin anglenval \\) shows that \\( limitval=limitval+\\sin limitval \\), so \\( \\sin limitval=0 \\). But \\( limitval \\in[0, \\pi] \\) and \\( limitval \\geq angleinit>0 \\), so \\( limitval=\\pi \\). By continuity of \\( \\cos integrvar \\) and \\( \\sin integrvar \\), \\( \\lim _{indexval \\rightarrow \\infty} nthxvalue=\\cos limitval=\\cos \\pi=-1 \\) and \\( \\lim _{indexval \\rightarrow \\infty} nthyvalue=\\sin limitval=\\sin \\pi=0 \\).\n\nRemark. To show that \\( \\sin generalx<generalx \\) for \\( generalx>0 \\), integrate \\( \\cos integrvar \\leq 1 \\) from \\( integrvar=0 \\) to \\( integrvar=generalx \\), and note that \\( \\cos integrvar<1 \\) for \\( integrvar \\in(0,2 \\pi) \\).\n\nReinterpretation. This problem is about the limiting behavior of a dynamical system. For more examples of dynamical systems, see 1992B3, 1995B4, and 1996A6."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pineapple",
+        "x_1": "mangojuice",
+        "x_n+1": "coconutmilk",
+        "x_n": "dragonfruit",
+        "y": "strawberry",
+        "y_1": "passiontea",
+        "y_n+1": "watercress",
+        "y_n": "bluecheese",
+        "\\\\theta": "salamander",
+        "\\\\theta_1": "orangetail",
+        "\\\\theta_n": "moringsun",
+        "\\\\theta_n+1": "eveningdew",
+        "L": "butterleaf",
+        "t": "honeycomb",
+        "n": "porcupine"
+      },
+      "question": "Let $(mangojuice,passiontea) = (0.8, 0.6)$ and let $coconutmilk = dragonfruit \\cos bluecheese - bluecheese\n\\sin bluecheese$ and $watercress= dragonfruit \\sin bluecheese + bluecheese \\cos bluecheese$ for\nporcupine=1,2,3,\\dots$. For each of $\\lim_{porcupine\\to \\infty} dragonfruit$ and $\\lim_{porcupine \\to\n\\infty} bluecheese$, prove that the limit exists and find it or prove that\nthe limit does not exist.",
+      "solution": "Solution. Since \\( (0.8)^{2}+(0.6)^{2}=1 \\), we have \\( \\left(mangojuice, passiontea\\right)=\\left(\\cos orangetail, \\sin orangetail\\right) \\) where \\( orangetail=\\cos ^{-1}(0.8) \\). If \\( \\left(dragonfruit, bluecheese\\right)=\\left(\\cos moringsun, \\sin moringsun\\right) \\) for some \\( porcupine \\geq 1 \\) and number \\( moringsun \\), then by the trigonometric addition formulas, \\( \\left(coconutmilk, watercress\\right)=\\left(\\cos \\left(moringsun+bluecheese\\right), \\sin \\left(moringsun+bluecheese\\right)\\right) \\). Hence by induction, \\( \\left(dragonfruit, bluecheese\\right)=\\left(\\cos moringsun, \\sin moringsun\\right) \\) for all \\( porcupine \\geq 1 \\), where \\( \\theta_{2}, \\theta_{3}, \\ldots \\) are defined recursively by \\( eveningdew=moringsun+bluecheese \\) for \\( porcupine \\geq 1 \\). Thus \\( eveningdew=moringsun+\\sin moringsun \\).\n\nFor \\( 0<salamander<\\pi \\), \\( \\sin salamander>0 \\) and \\( \\sin salamander=\\sin (\\pi-salamander)<\\pi-salamander \\) (see remark below for explanation), so \\( 0<salamander+\\sin salamander<\\pi \\). By induction, \\( 0<moringsun<\\pi \\) for all \\( porcupine \\geq 1 \\). Also \\( eveningdew=moringsun+\\sin moringsun>moringsun \\), so the bounded sequence \\( orangetail, \\theta_{2}, \\ldots \\) is also increasing, and hence has a limit \\( butterleaf \\in[0, \\pi] \\). Since \\( \\sin honeycomb \\) is a continuous function, taking the limit as \\( porcupine \\rightarrow \\infty \\) in \\( eveningdew=moringsun+\\sin moringsun \\) shows that \\( butterleaf=butterleaf+\\sin butterleaf \\), so \\( \\sin butterleaf=0 \\). But \\( butterleaf \\in[0, \\pi] \\) and \\( butterleaf \\geq orangetail>0 \\), so \\( butterleaf=\\pi \\). By continuity of \\( \\cos honeycomb \\) and \\( \\sin honeycomb \\), \\( \\lim _{porcupine \\rightarrow \\infty} dragonfruit=\\cos butterleaf=\\cos \\pi=-1 \\) and \\( \\lim _{porcupine \\rightarrow \\infty} bluecheese=\\sin butterleaf=\\sin \\pi=0 \\).\n\nRemark. To show that \\( \\sin pineapple<pineapple \\) for \\( pineapple>0 \\), integrate \\( \\cos honeycomb \\leq 1 \\) from \\( honeycomb=0 \\) to \\( honeycomb=pineapple \\), and note that \\( \\cos honeycomb<1 \\) for \\( honeycomb \\in(0,2 \\pi) \\).\n\nReinterpretation. This problem is about the limiting behavior of a dynamical system. For more examples of dynamical systems, see 1992B3, 1995B4, and 1996A6."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalcoordinate",
+        "x_1": "finalcoordinate",
+        "x_n+1": "precedingcoordinate",
+        "x_n": "previouscoordinate",
+        "y": "horizontalcoordinate",
+        "y_1": "ultimatecoordinate",
+        "y_n+1": "antecedentcoordinate",
+        "y_n": "latercoordinate",
+        "\\theta": "straightmeasure",
+        "\\theta_1": "straightmeasureone",
+        "\\theta_n": "straightmeasuren",
+        "\\theta_n+1": "straightmeasureplus",
+        "L": "startvalue",
+        "t": "staticpoint",
+        "n": "constantindex"
+      },
+      "question": "Let $(finalcoordinate,ultimatecoordinate) = (0.8, 0.6)$ and let $precedingcoordinate = previouscoordinate \\cos latercoordinate - latercoordinate\n\\sin latercoordinate$ and $antecedentcoordinate= previouscoordinate \\sin latercoordinate + latercoordinate \\cos latercoordinate$ for\n$constantindex=1,2,3,\\dots$. For each of $\\lim_{constantindex\\to \\infty} previouscoordinate$ and $\\lim_{constantindex \\to\n\\infty} latercoordinate$, prove that the limit exists and find it or prove that\nthe limit does not exist.",
+      "solution": "Solution. Since \\( (0.8)^{2}+(0.6)^{2}=1 \\), we have \\( \\left(finalcoordinate, ultimatecoordinate\\right)=\\left(\\cos straightmeasureone, \\sin straightmeasureone\\right) \\) where \\( straightmeasureone=\\cos ^{-1}(0.8) \\). If \\( \\left(previouscoordinate, latercoordinate\\right)=\\left(\\cos straightmeasuren, \\sin straightmeasuren\\right) \\) for some \\( constantindex \\geq 1 \\) and number \\( straightmeasuren \\), then by the trigonometric addition formulas, \\( \\left(precedingcoordinate, antecedentcoordinate\\right)=\\left(\\cos \\left(straightmeasuren+latercoordinate\\right), \\sin \\left(straightmeasuren+latercoordinate\\right)\\right) \\). Hence by induction, \\( \\left(previouscoordinate, latercoordinate\\right)=\\left(\\cos straightmeasuren, \\sin straightmeasuren\\right) \\) for all \\( constantindex \\geq 1 \\), where \\( straightmeasure_{2}, straightmeasure_{3}, \\ldots \\) are defined recursively by \\( straightmeasureplus=straightmeasuren+latercoordinate \\) for \\( constantindex \\geq 1 \\). Thus \\( straightmeasureplus=straightmeasuren+\\sin straightmeasuren \\).\n\nFor \\( 0<straightmeasure<\\pi \\), \\( \\sin straightmeasure>0 \\) and \\( \\sin straightmeasure=\\sin (\\pi-straightmeasure)<\\pi-straightmeasure \\) (see remark below for explanation), so \\( 0<straightmeasure+\\sin straightmeasure<\\pi \\). By induction, \\( 0<straightmeasuren<\\pi \\) for all \\( constantindex \\geq 1 \\). Also \\( straightmeasureplus=straightmeasuren+\\sin straightmeasuren>straightmeasuren \\), so the bounded sequence \\( straightmeasureone, straightmeasure_{2}, \\ldots \\) is also increasing, and hence has a limit \\( startvalue \\in[0, \\pi] \\). Since \\( \\sin staticpoint \\) is a continuous function, taking the limit as \\( constantindex \\rightarrow \\infty \\) in \\( straightmeasureplus=straightmeasuren+\\sin straightmeasuren \\) shows that \\( startvalue=startvalue+\\sin startvalue \\), so \\( \\sin startvalue=0 \\). But \\( startvalue \\in[0, \\pi] \\) and \\( startvalue \\geq straightmeasureone>0 \\), so \\( startvalue=\\pi \\). By continuity of \\( \\cos staticpoint \\) and \\( \\sin staticpoint \\), \\( \\lim _{constantindex \\rightarrow \\infty} previouscoordinate=\\cos startvalue=\\cos \\pi=-1 \\) and \\( \\lim _{constantindex \\rightarrow \\infty} latercoordinate=\\sin startvalue=\\sin \\pi=0 \\).\n\nRemark. To show that \\( \\sin verticalcoordinate<verticalcoordinate \\) for \\( verticalcoordinate>0 \\), integrate \\( \\cos staticpoint \\leq 1 \\) from \\( staticpoint=0 \\) to \\( staticpoint=verticalcoordinate \\), and note that \\( \\cos staticpoint<1 \\) for \\( staticpoint \\in(0,2 \\pi) \\).\n\nReinterpretation. This problem is about the limiting behavior of a dynamical system. For more examples of dynamical systems, see 1992B3, 1995B4, and 1996A6."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_1": "hjgrksla",
+        "x_n+1": "kslpehtr",
+        "x_n": "vbnmiqua",
+        "y": "lvcftydg",
+        "y_1": "mqazplxs",
+        "y_n+1": "xowkzhdu",
+        "y_n": "cjurlemb",
+        "\\\\theta": "pabqyivo",
+        "\\\\theta_1": "nskrdhju",
+        "\\\\theta_n": "glxtfrem",
+        "\\\\theta_n+1": "feiakpso",
+        "L": "wpqndcaz",
+        "t": "rgnsylvo",
+        "n": "duvoknra"
+      },
+      "question": "Let $(hjgrksla,mqazplxs) = (0.8, 0.6)$ and let $kslpehtr = vbnmiqua \\cos cjurlemb - cjurlemb\n\\sin cjurlemb$ and $xowkzhdu= vbnmiqua \\sin cjurlemb + cjurlemb \\cos cjurlemb$ for\n$duvoknra=1,2,3,\\dots$. For each of $\\lim_{duvoknra\\to \\infty} vbnmiqua$ and $\\lim_{duvoknra \\to\n\\infty} cjurlemb$, prove that the limit exists and find it or prove that\nthe limit does not exist.",
+      "solution": "Solution. Since \\( (0.8)^{2}+(0.6)^{2}=1 \\), we have \\( \\left(hjgrksla, mqazplxs\\right)=\\left(\\cos nskrdhju, \\sin nskrdhju\\right) \\) where \\( nskrdhju=\\cos ^{-1}(0.8) \\). If \\( \\left(vbnmiqua, cjurlemb\\right)=\\left(\\cos glxtfrem, \\sin glxtfrem\\right) \\) for some \\( duvoknra \\geq 1 \\) and number \\( glxtfrem \\), then by the trigonometric addition formulas, \\( \\left(kslpehtr, xowkzhdu\\right)=\\left(\\cos \\left(glxtfrem+cjurlemb\\right), \\sin \\left(glxtfrem+cjurlemb\\right)\\right) \\). Hence by induction, \\( \\left(vbnmiqua, cjurlemb\\right)=\\left(\\cos glxtfrem, \\sin glxtfrem\\right) \\) for all \\( duvoknra \\geq 1 \\), where \\( \\theta_{2}, \\theta_{3}, \\ldots \\) are defined recursively by \\( feiakpso=glxtfrem+cjurlemb \\) for \\( duvoknra \\geq 1 \\). Thus \\( feiakpso=glxtfrem+\\sin glxtfrem \\).\n\nFor \\( 0<pabqyivo<\\pi \\), \\( \\sin pabqyivo>0 \\) and \\( \\sin pabqyivo=\\sin (\\pi-pabqyivo)<\\pi-pabqyivo \\) (see remark below for explanation), so \\( 0<pabqyivo+\\sin pabqyivo<\\pi \\). By induction, \\( 0<glxtfrem<\\pi \\) for all \\( duvoknra \\geq 1 \\). Also \\( feiakpso=glxtfrem+\\sin glxtfrem>glxtfrem \\), so the bounded sequence \\( nskrdhju, \\theta_{2}, \\ldots \\) is also increasing, and hence has a limit \\( wpqndcaz \\in[0, \\pi] \\). Since \\( \\sin rgnsylvo \\) is a continuous function, taking the limit as \\( duvoknra \\rightarrow \\infty \\) in \\( feiakpso=glxtfrem+\\sin glxtfrem \\) shows that \\( wpqndcaz=wpqndcaz+\\sin wpqndcaz \\), so \\( \\sin wpqndcaz=0 \\). But \\( wpqndcaz \\in[0, \\pi] \\) and \\( wpqndcaz \\geq nskrdhju>0 \\), so \\( wpqndcaz=\\pi \\). By continuity of \\( \\cos rgnsylvo \\) and \\( \\sin rgnsylvo \\), \\( \\lim _{duvoknra \\rightarrow \\infty} vbnmiqua=\\cos wpqndcaz=\\cos \\pi=-1 \\) and \\( \\lim _{duvoknra \\rightarrow \\infty} cjurlemb=\\sin wpqndcaz=\\sin \\pi=0 \\).\n\nRemark. To show that \\( \\sin qzxwvtnp<qzxwvtnp \\) for \\( qzxwvtnp>0 \\), integrate \\( \\cos rgnsylvo \\leq 1 \\) from \\( rgnsylvo=0 \\) to \\( rgnsylvo=qzxwvtnp \\), and note that \\( \\cos rgnsylvo<1 \\) for \\( rgnsylvo \\in(0,2 \\pi) \\).\n\nReinterpretation. This problem is about the limiting behavior of a dynamical system. For more examples of dynamical systems, see 1992B3, 1995B4, and 1996A6."
+    },
+    "kernel_variant": {
+      "question": "Let $(x_1,y_1)=(-0.6,0.8)$, and for $n\\ge 1$ define\n\\[\n\\begin{aligned}\n x_{n+1}&=x_n\\cos y_n-y_n\\sin y_n,\\\\[2pt]\n y_{n+1}&=x_n\\sin y_n+y_n\\cos y_n.\n\\end{aligned}\n\\]\n(The pair $(x_{n+1},y_{n+1})$ is obtained from $(x_n,y_n)$ by a rotation through the angle $y_n$.)  Prove that each of the limits $\\displaystyle\\lim_{n\\to\\infty}x_n$ and $\\displaystyle\\lim_{n\\to\\infty}y_n$ exists and find its value.",
+      "solution": "1.  Express the initial point through an angle.  Because $(-0.6)^2+(0.8)^2=1$, there is an angle $\\theta_1\\in(0,\\pi)$ such that\n\\[\n(x_1,y_1)=(-0.6,0.8)=(\\cos\\theta_1,\\sin\\theta_1),\\qquad \\theta_1=\\arccos(-0.6)\\approx 2.2143\\text{ rad}.\n\\]\nAssume inductively that $(x_n,y_n)=(\\cos\\theta_n,\\sin\\theta_n)$ for some $n\\ge1$.  \n\n2.  Use the addition formulas.  Substituting $x_n=\\cos\\theta_n,\\;y_n=\\sin\\theta_n$ in the recursion and applying the angle-addition identities,\n\\[\n\\begin{aligned}\n x_{n+1}&=\\cos\\theta_n\\cos(\\sin\\theta_n)-\\sin\\theta_n\\sin(\\sin\\theta_n)\n           =\\cos(\\theta_n+\\sin\\theta_n),\\\\[2pt]\n y_{n+1}&=\\cos\\theta_n\\sin(\\sin\\theta_n)+\\sin\\theta_n\\cos(\\sin\\theta_n)\n           =\\sin(\\theta_n+\\sin\\theta_n).\n\\end{aligned}\n\\]\nHence $(x_{n+1},y_{n+1})=(\\cos\\theta_{n+1},\\sin\\theta_{n+1})$ with\n\\[\n\\boxed{\\;\\theta_{n+1}=\\theta_n+\\sin\\theta_n\\;}\\qquad n\\ge1.\n\\]\nBy induction the representation $(x_n,y_n)=(\\cos\\theta_n,\\sin\\theta_n)$ holds for every $n$.  \n\n3.  Monotonicity and boundedness of $(\\theta_n)$.  For $0<\\theta<\\pi$ we have $\\sin\\theta>0$.  Moreover, $\\sin\\theta<\\pi-\\theta$ on $(0,\\pi)$ because $\\sin\\theta=\\sin(\\pi-\\theta)$ and the straight line $y=\\pi-\\theta$ lies above the sine curve on that interval.  Consequently\n\\[\n0<\\theta_n+\\sin\\theta_n<\\pi\\quad(0<\\theta_n<\\pi),\n\\]\nso $0<\\theta_{n+1}<\\pi$ whenever $0<\\theta_n<\\pi$.  Starting from $\\theta_1\\in(0,\\pi)$, induction gives $0<\\theta_n<\\pi$ for all $n$.  Because $\\sin\\theta_n>0$, the sequence is strictly increasing: $\\theta_{n+1}>\\theta_n$.  Being monotone increasing and bounded above by $\\pi$, $(\\theta_n)$ converges; write $\\displaystyle\\lim_{n\\to\\infty}\\theta_n=L\\le\\pi$.  \n\n4.  Identify the limit.  Passing to the limit in $\\theta_{n+1}=\\theta_n+\\sin\\theta_n$ and using the continuity of $\\sin$ gives $L=L+\\sin L$, hence $\\sin L=0$.  With $0<L\\le\\pi$ this forces $L=\\pi$.  \n\n5.  Return to $(x_n,y_n)$.  Continuity of $\\cos$ and $\\sin$ yields\n\\[\n\\lim_{n\\to\\infty}x_n=\\cos L=\\cos\\pi=-1,\\qquad\n\\lim_{n\\to\\infty}y_n=\\sin L=\\sin\\pi=0.\n\\]\nTherefore both limits exist, with\n\\[\n\\boxed{\\displaystyle\\lim_{n\\to\\infty}x_n=-1,\\quad\\lim_{n\\to\\infty}y_n=0.}\n\\]\nThis completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Express (x_n, y_n) as (cos θ_n, sin θ_n) using ‖(x_1,y_1)‖ = 1.",
+          "Apply the addition formulas to get θ_{n+1} = θ_n + sin θ_n.",
+          "Observe 0 < sin θ < π−θ for θ in (0,π) to prove θ_n is increasing and ≤ π, hence convergent.",
+          "Pass to the limit: L = L + sin L ⇒ sin L = 0; with L∈(0,π] this forces L = π.",
+          "Conclude lim x_n = cos π = −1 and lim y_n = sin π = 0 by continuity."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Numerical coordinates of the starting point, provided it is any unit-length vector with y_1>0.",
+            "original": "(0.8, 0.6)"
+          },
+          "slot2": {
+            "description": "Equivalent initial angle θ_1 = arccos(x_1) = arccos 0.8 lying in (0, π).",
+            "original": "θ_1 ≈ 0.6435 rad"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

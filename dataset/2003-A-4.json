@@ -1,0 +1,118 @@
+{
+  "index": "2003-A-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Suppose that $a,b,c,A,B,C$  are real numbers, $a\\ne 0$ and $A \\ne 0$, such that\n\\[\n          | a x^2 + b x + c | \\leq | A x^2 + B x + C |\n\\]\nfor all real numbers  $x$. Show that\n\\[\n              | b^2 - 4 a c | \\leq | B^2 - 4 A C |.\n\\]",
+  "solution": "We split into three cases.\nNote first that $|A| \\geq |a|$, by applying the condition for large $x$.\n\n\\textbf{Case 1: $B^2 - 4AC > 0$.}\nIn this case $Ax^2 + Bx + C$ has two distinct real roots $r_1$ and $r_2$.\nThe condition implies that $ax^2 + bx + c$ also vanishes at $r_1$ and $r_2$,\nso $b^2 - 4ac > 0$.\nNow\n\\begin{align*}\nB^2 - 4AC &= A^2(r_1-r_2)^2 \\\\\n&\\geq a^2(r_1 - r_2)^2 \\\\\n&= b^2 - 4ac.\n\\end{align*}\n\n\\textbf{Case 2: $B^2 - 4AC \\leq 0$ and $b^2 - 4ac \\leq 0$.}\nAssume without loss of generality that $A \\geq a > 0$, and that $B=0$\n(by shifting $x$). Then $Ax^2 + Bx + C \\geq ax^2 + bx + c \\geq 0$ for all $x$;\nin particular, $C \\geq c \\geq 0$. Thus\n\\begin{align*}\n4AC - B^2 &= 4AC \\\\\n&\\geq 4ac \\\\\n&\\geq 4ac - b^2.\n\\end{align*}\nAlternate derivation (due to Robin Chapman): the ellipse\n$Ax^2 + Bxy + Cy^2 = 1$ is contained within\nthe ellipse $ax^2 + bxy + cy^2 = 1$,\nand their respective enclosed areas are $\\pi/(4AC-B^2)$ and\n$\\pi/(4ac-b^2)$.\n\n\\textbf{Case 3: $B^2 - 4AC \\leq 0$ and $b^2 - 4ac > 0$.}\nSince $Ax^2 + Bx + C$ has a graph not crossing the $x$-axis,\nso do $(Ax^2 + Bx + C) \\pm (ax^2 + bx + c)$. Thus\n\\begin{gather*}\n(B-b)^2 - 4(A-a)(C-c) \\leq 0, \\\\\n(B+b)^2 - 4(A+a)(C+c) \\leq 0\n\\end{gather*}\nand adding these together yields\n\\[\n2(B^2 - 4AC) + 2(b^2 - 4ac) \\leq 0.\n\\]\nHence $b^2 - 4ac \\leq 4AC - B^2$, as desired.",
+  "vars": [
+    "x",
+    "y",
+    "r_1",
+    "r_2"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "A",
+    "B",
+    "C"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "y": "ordinate",
+        "r_1": "firstroot",
+        "r_2": "secondroot",
+        "a": "smallcoeffa",
+        "b": "smallcoeffb",
+        "c": "smallcoeffc",
+        "A": "bigcoeffa",
+        "B": "bigcoeffb",
+        "C": "bigcoeffc"
+      },
+      "question": "Suppose that $smallcoeffa,smallcoeffb,smallcoeffc,bigcoeffa,bigcoeffb,bigcoeffc$  are real numbers, $smallcoeffa\\ne 0$ and $bigcoeffa \\ne 0$, such that\n\\[\n          | smallcoeffa\\, variable^2 + smallcoeffb\\, variable + smallcoeffc | \\leq | bigcoeffa\\, variable^2 + bigcoeffb\\, variable + bigcoeffc |\n\\]\nfor all real numbers  $variable$. Show that\n\\[\n              | smallcoeffb^2 - 4\\, smallcoeffa\\, smallcoeffc | \\leq | bigcoeffb^2 - 4\\, bigcoeffa\\, bigcoeffc |.\n\\]",
+      "solution": "We split into three cases.\nNote first that $|bigcoeffa| \\geq |smallcoeffa|$, by applying the condition for large $variable$.\n\n\\textbf{Case 1: $bigcoeffb^2 - 4 bigcoeffa bigcoeffc > 0$.}\nIn this case $bigcoeffa variable^2 + bigcoeffb variable + bigcoeffc$ has two distinct real roots $firstroot$ and $secondroot$.\nThe condition implies that $smallcoeffa variable^2 + smallcoeffb variable + smallcoeffc$ also vanishes at $firstroot$ and $secondroot$, so $smallcoeffb^2 - 4 smallcoeffa smallcoeffc > 0$.\nNow\n\\begin{align*}\n bigcoeffb^2 - 4 bigcoeffa bigcoeffc &= bigcoeffa^2(firstroot-secondroot)^2 \\\\\n &\\geq smallcoeffa^2(firstroot - secondroot)^2 \\\\\n &= smallcoeffb^2 - 4 smallcoeffa smallcoeffc.\n\\end{align*}\n\n\\textbf{Case 2: $bigcoeffb^2 - 4 bigcoeffa bigcoeffc \\leq 0$ and $smallcoeffb^2 - 4 smallcoeffa smallcoeffc \\leq 0$.}\nAssume without loss of generality that $bigcoeffa \\geq smallcoeffa > 0$, and that $bigcoeffb=0$ (by shifting $variable$). Then $bigcoeffa variable^2 + bigcoeffb variable + bigcoeffc \\geq smallcoeffa variable^2 + smallcoeffb variable + smallcoeffc \\geq 0$ for all $variable$; in particular, $bigcoeffc \\geq smallcoeffc \\geq 0$. Thus\n\\begin{align*}\n 4\\,bigcoeffa\\,bigcoeffc - bigcoeffb^2 &= 4\\,bigcoeffa\\,bigcoeffc \\\\\n &\\geq 4\\,smallcoeffa\\,smallcoeffc \\\\\n &\\geq 4\\,smallcoeffa\\,smallcoeffc - smallcoeffb^2.\n\\end{align*}\nAlternate derivation (due to Robin Chapman): the ellipse $bigcoeffa variable^2 + bigcoeffb variable \\, \\ordinate + bigcoeffc \\ordinate^2 = 1$ is contained within the ellipse $smallcoeffa variable^2 + smallcoeffb variable \\, \\ordinate + smallcoeffc \\ordinate^2 = 1$, and their respective enclosed areas are $\\pi/(4\\,bigcoeffa\\,bigcoeffc-bigcoeffb^2)$ and $\\pi/(4\\,smallcoeffa\\,smallcoeffc-smallcoeffb^2)$.\n\n\\textbf{Case 3: $bigcoeffb^2 - 4 bigcoeffa bigcoeffc \\leq 0$ and $smallcoeffb^2 - 4 smallcoeffa smallcoeffc > 0$.}\nSince $bigcoeffa variable^2 + bigcoeffb variable + bigcoeffc$ has a graph not crossing the $variable$-axis, so do $(bigcoeffa variable^2 + bigcoeffb variable + bigcoeffc) \\pm (smallcoeffa variable^2 + smallcoeffb variable + smallcoeffc)$. Thus\n\\begin{gather*}\n (bigcoeffb - smallcoeffb)^2 - 4\\,(bigcoeffa - smallcoeffa)\\,(bigcoeffc - smallcoeffc) \\leq 0, \\\\\n (bigcoeffb + smallcoeffb)^2 - 4\\,(bigcoeffa + smallcoeffa)\\,(bigcoeffc + smallcoeffc) \\leq 0\n\\end{gather*}\nand adding these together yields\n\\[\n 2\\,(bigcoeffb^2 - 4\\,bigcoeffa\\,bigcoeffc) + 2\\,(smallcoeffb^2 - 4\\,smallcoeffa\\,smallcoeffc) \\leq 0.\n\\]\nHence $smallcoeffb^2 - 4\\,smallcoeffa\\,smallcoeffc \\leq 4\\,bigcoeffa\\,bigcoeffc - bigcoeffb^2$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "hummingbird",
+        "y": "candlewick",
+        "r_1": "raincloudone",
+        "r_2": "raincloudtwo",
+        "a": "sunflower",
+        "b": "riverbank",
+        "c": "tophatbox",
+        "A": "mapleleaf",
+        "B": "starlitpath",
+        "C": "bedroomlamp"
+      },
+      "question": "Suppose that $sunflower,riverbank,tophatbox,mapleleaf,starlitpath,bedroomlamp$  are real numbers, $sunflower\\ne 0$ and $mapleleaf \\ne 0$, such that\n\\[\n          | sunflower hummingbird^2 + riverbank hummingbird + tophatbox | \\leq | mapleleaf hummingbird^2 + starlitpath hummingbird + bedroomlamp |\n\\]\nfor all real numbers  $hummingbird$. Show that\n\\[\n              | riverbank^2 - 4 sunflower tophatbox | \\leq | starlitpath^2 - 4 mapleleaf bedroomlamp |.\n\\]",
+      "solution": "We split into three cases.\nNote first that $|mapleleaf| \\geq |sunflower|$, by applying the condition for large $hummingbird$.\n\n\\textbf{Case 1: $starlitpath^2 - 4 mapleleaf bedroomlamp > 0$.}\nIn this case $mapleleaf hummingbird^2 + starlitpath hummingbird + bedroomlamp$ has two distinct real roots $raincloudone$ and $raincloudtwo$.\nThe condition implies that $sunflower hummingbird^2 + riverbank hummingbird + tophatbox$ also vanishes at $raincloudone$ and $raincloudtwo$,\nso $riverbank^2 - 4 sunflower tophatbox > 0$.\nNow\n\\begin{align*}\nstarlitpath^2 - 4 mapleleaf bedroomlamp &= mapleleaf^2(raincloudone-raincloudtwo)^2 \\\\\n&\\geq sunflower^2(raincloudone - raincloudtwo)^2 \\\\\n&= riverbank^2 - 4 sunflower tophatbox.\n\\end{align*}\n\n\\textbf{Case 2: $starlitpath^2 - 4 mapleleaf bedroomlamp \\leq 0$ and $riverbank^2 - 4 sunflower tophatbox \\leq 0$.}\nAssume without loss of generality that $mapleleaf \\geq sunflower > 0$, and that $starlitpath=0$ (by shifting $hummingbird$). Then $mapleleaf hummingbird^2 + starlitpath hummingbird + bedroomlamp \\geq sunflower hummingbird^2 + riverbank hummingbird + tophatbox \\geq 0$ for all $hummingbird$; in particular, $bedroomlamp \\geq tophatbox \\geq 0$. Thus\n\\begin{align*}\n4 mapleleaf bedroomlamp - starlitpath^2 &= 4 mapleleaf bedroomlamp \\\\\n&\\geq 4 sunflower tophatbox \\\\\n&\\geq 4 sunflower tophatbox - riverbank^2.\n\\end{align*}\nAlternate derivation (due to Robin Chapman): the ellipse\n$mapleleaf hummingbird^2 + starlitpath hummingbird candlewick + bedroomlamp candlewick^2 = 1$ is contained within\nthe ellipse $sunflower hummingbird^2 + riverbank hummingbird candlewick + tophatbox candlewick^2 = 1$, and their respective enclosed areas are $\\pi/(4 mapleleaf bedroomlamp - starlitpath^2)$ and $\\pi/(4 sunflower tophatbox - riverbank^2)$.\n\n\\textbf{Case 3: $starlitpath^2 - 4 mapleleaf bedroomlamp \\leq 0$ and $riverbank^2 - 4 sunflower tophatbox > 0$.}\nSince $mapleleaf hummingbird^2 + starlitpath hummingbird + bedroomlamp$ has a graph not crossing the $hummingbird$-axis, so do $(mapleleaf hummingbird^2 + starlitpath hummingbird + bedroomlamp) \\pm (sunflower hummingbird^2 + riverbank hummingbird + tophatbox)$. Thus\n\\begin{gather*}\n(starlitpath-riverbank)^2 - 4(mapleleaf-sunflower)(bedroomlamp-tophatbox) \\leq 0, \\\\\n(starlitpath+riverbank)^2 - 4(mapleleaf+sunflower)(bedroomlamp+tophatbox) \\leq 0\n\\end{gather*}\nand adding these together yields\n\\[\n2(starlitpath^2 - 4 mapleleaf bedroomlamp) + 2(riverbank^2 - 4 sunflower tophatbox) \\leq 0.\n\\]\nHence $riverbank^2 - 4 sunflower tophatbox \\leq 4 mapleleaf bedroomlamp - starlitpath^2$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "y": "fixedpoint",
+        "r_1": "peakfirst",
+        "r_2": "peaksecond",
+        "a": "zerocoeff",
+        "b": "quadraticcoef",
+        "c": "variableterm",
+        "A": "zerocapital",
+        "B": "quadcapital",
+        "C": "variablecap"
+      },
+      "question": "Suppose that $zerocoeff,quadraticcoef,variableterm,zerocapital,quadcapital,variablecap$  are real numbers, $zerocoeff\\ne 0$ and $zerocapital \\ne 0$, such that\n\\[\n          |\\, zerocoeff\\, constantval^{2} + quadraticcoef\\, constantval + variableterm \\,| \\leq |\\, zerocapital\\, constantval^{2} + quadcapital\\, constantval + variablecap \\,|\n\\]\nfor all real numbers  $constantval$. Show that\n\\[\n              |\\, quadraticcoef^{2} - 4\\, zerocoeff\\, variableterm \\,| \\leq |\\, quadcapital^{2} - 4\\, zerocapital\\, variablecap \\,|.\n\\]",
+      "solution": "We split into three cases.\nNote first that $|\\zerocapital| \\geq |\\zerocoeff|$, by applying the condition for large $\\constantval$.\n\n\\textbf{Case 1: $\\quadcapital^{2} - 4\\zerocapital\\variablecap > 0$.}\nIn this case $\\zerocapital\\, constantval^{2} + \\quadcapital\\, constantval + \\variablecap$ has two distinct real roots $\\peakfirst$ and $\\peaksecond$.\nThe condition implies that $\\zerocoeff\\, constantval^{2} + \\quadraticcoef\\, constantval + \\variableterm$ also vanishes at $\\peakfirst$ and $\\peaksecond$, so $\\quadraticcoef^{2} - 4\\zerocoeff\\variableterm > 0$.\nNow\n\\begin{align*}\n\\quadcapital^{2} - 4\\zerocapital\\variablecap &= \\zerocapital^{2}(\\peakfirst-\\peaksecond)^{2} \\\\\n&\\geq \\zerocoeff^{2}(\\peakfirst-\\peaksecond)^{2} \\\\\n&= \\quadraticcoef^{2} - 4\\zerocoeff\\variableterm.\n\\end{align*}\n\n\\textbf{Case 2: $\\quadcapital^{2} - 4\\zerocapital\\variablecap \\leq 0$ and $\\quadraticcoef^{2} - 4\\zerocoeff\\variableterm \\leq 0$.}\nAssume without loss of generality that $\\zerocapital \\geq \\zerocoeff > 0$, and that $\\quadcapital = 0$ (by shifting $\\constantval$).\nThen $\\zerocapital\\, constantval^{2} + \\variablecap \\geq \\zerocoeff\\, constantval^{2} + \\variableterm \\geq 0$ for all $\\constantval$; in particular, $\\variablecap \\geq \\variableterm \\geq 0$. Thus\n\\begin{align*}\n4\\zerocapital\\variablecap - \\quadcapital^{2} &= 4\\zerocapital\\variablecap \\\\\n&\\geq 4\\zerocoeff\\variableterm \\\\\n&\\geq 4\\zerocoeff\\variableterm - \\quadraticcoef^{2}.\n\\end{align*}\nAlternate derivation (due to Robin Chapman): the ellipse $\\zerocapital\\, constantval^{2} + \\quadcapital\\, constantval\\, fixedpoint + \\variablecap\\, fixedpoint^{2} = 1$ is contained within the ellipse $\\zerocoeff\\, constantval^{2} + \\quadraticcoef\\, constantval\\, fixedpoint + \\variableterm\\, fixedpoint^{2} = 1$, and their respective enclosed areas are $\\pi/(4\\zerocapital\\variablecap-\\quadcapital^{2})$ and $\\pi/(4\\zerocoeff\\variableterm-\\quadraticcoef^{2})$.\n\n\\textbf{Case 3: $\\quadcapital^{2} - 4\\zerocapital\\variablecap \\leq 0$ and $\\quadraticcoef^{2} - 4\\zerocoeff\\variableterm > 0$.}\nSince $\\zerocapital\\, constantval^{2} + \\quadcapital\\, constantval + \\variablecap$ has a graph not crossing the $\\constantval$-axis, so do $(\\zerocapital\\, constantval^{2} + \\quadcapital\\, constantval + \\variablecap) \\pm (\\zerocoeff\\, constantval^{2} + \\quadraticcoef\\, constantval + \\variableterm)$. Thus\n\\begin{gather*}\n(\\quadcapital-\\quadraticcoef)^{2} - 4(\\zerocapital-\\zerocoeff)(\\variablecap-\\variableterm) \\leq 0, \\\\\n(\\quadcapital+\\quadraticcoef)^{2} - 4(\\zerocapital+\\zerocoeff)(\\variablecap+\\variableterm) \\leq 0\n\\end{gather*}\nand adding these together yields\n\\[\n2(\\quadcapital^{2} - 4\\zerocapital\\variablecap) + 2(\\quadraticcoef^{2} - 4\\zerocoeff\\variableterm) \\leq 0.\n\\]\nHence $\\quadraticcoef^{2} - 4\\zerocoeff\\variableterm \\leq 4\\zerocapital\\variablecap - \\quadcapital^{2}$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "r_1": "mvltcsap",
+        "r_2": "fdrqneio",
+        "a": "zqmsnpcg",
+        "b": "vxrldkwe",
+        "c": "jpsqhxot",
+        "A": "kmgnwrzb",
+        "B": "cvfyladu",
+        "C": "nbxqterh"
+      },
+      "question": "Suppose that $zqmsnpcg,vxrldkwe,jpsqhxot,kmgnwrzb,cvfyladu,nbxqterh$  are real numbers, $zqmsnpcg\\ne 0$ and $kmgnwrzb \\ne 0$, such that\n\\[\n          | zqmsnpcg qzxwvtnp^2 + vxrldkwe qzxwvtnp + jpsqhxot | \\leq | kmgnwrzb qzxwvtnp^2 + cvfyladu qzxwvtnp + nbxqterh |\n\\]\nfor all real numbers  $qzxwvtnp$. Show that\n\\[\n              | vxrldkwe^2 - 4 zqmsnpcg jpsqhxot | \\leq | cvfyladu^2 - 4 kmgnwrzb nbxqterh |.\n\\]",
+      "solution": "We split into three cases.\nNote first that $|kmgnwrzb| \\geq |zqmsnpcg|$, by applying the condition for large $qzxwvtnp$.\n\n\\textbf{Case 1: $cvfyladu^2 - 4kmgnwrzb nbxqterh > 0$.}\nIn this case $kmgnwrzb qzxwvtnp^2 + cvfyladu qzxwvtnp + nbxqterh$ has two distinct real roots $mvltcsap$ and $fdrqneio$.\nThe condition implies that $zqmsnpcg qzxwvtnp^2 + vxrldkwe qzxwvtnp + jpsqhxot$ also vanishes at $mvltcsap$ and $fdrqneio$, so $vxrldkwe^2 - 4zqmsnpcg jpsqhxot > 0$.\nNow\n\\begin{align*}\ncvfyladu^2 - 4kmgnwrzb nbxqterh &= kmgnwrzb^2(mvltcsap-fdrqneio)^2 \\\\\n&\\geq zqmsnpcg^2(mvltcsap - fdrqneio)^2 \\\\\n&= vxrldkwe^2 - 4zqmsnpcg jpsqhxot.\n\\end{align*}\n\n\\textbf{Case 2: $cvfyladu^2 - 4kmgnwrzb nbxqterh \\leq 0$ and $vxrldkwe^2 - 4zqmsnpcg jpsqhxot \\leq 0$.}\nAssume without loss of generality that $kmgnwrzb \\geq zqmsnpcg > 0$, and that $cvfyladu=0$ (by shifting $qzxwvtnp$). Then $kmgnwrzb qzxwvtnp^2 + cvfyladu qzxwvtnp + nbxqterh \\geq zqmsnpcg qzxwvtnp^2 + vxrldkwe qzxwvtnp + jpsqhxot \\geq 0$ for all $qzxwvtnp$; in particular, $nbxqterh \\geq jpsqhxot \\geq 0$. Thus\n\\begin{align*}\n4kmgnwrzb nbxqterh - cvfyladu^2 &= 4kmgnwrzb nbxqterh \\\\\n&\\geq 4zqmsnpcg jpsqhxot \\\\\n&\\geq 4zqmsnpcg jpsqhxot - vxrldkwe^2.\n\\end{align*}\nAlternate derivation (due to Robin Chapman): the ellipse $kmgnwrzb qzxwvtnp^2 + cvfyladu qzxwvtnp hjgrksla + nbxqterh hjgrksla^2 = 1$ is contained within the ellipse $zqmsnpcg qzxwvtnp^2 + vxrldkwe qzxwvtnp hjgrksla + jpsqhxot hjgrksla^2 = 1$, and their respective enclosed areas are $\\pi/(4kmgnwrzb nbxqterh-cvfyladu^2)$ and $\\pi/(4zqmsnpcg jpsqhxot-vxrldkwe^2)$.\n\n\\textbf{Case 3: $cvfyladu^2 - 4kmgnwrzb nbxqterh \\leq 0$ and $vxrldkwe^2 - 4zqmsnpcg jpsqhxot > 0$.}\nSince $kmgnwrzb qzxwvtnp^2 + cvfyladu qzxwvtnp + nbxqterh$ has a graph not crossing the $qzxwvtnp$-axis, so do $(kmgnwrzb qzxwvtnp^2 + cvfyladu qzxwvtnp + nbxqterh) \\pm (zqmsnpcg qzxwvtnp^2 + vxrldkwe qzxwvtnp + jpsqhxot)$. Thus\n\\begin{gather*}\n(cvfyladu-vxrldkwe)^2 - 4(kmgnwrzb-zqmsnpcg)(nbxqterh-jpsqhxot) \\leq 0, \\\\\n(cvfyladu+vxrldkwe)^2 - 4(kmgnwrzb+zqmsnpcg)(nbxqterh+jpsqhxot) \\leq 0\n\\end{gather*}\nand adding these together yields\n\\[\n2(cvfyladu^2 - 4kmgnwrzb nbxqterh) + 2(vxrldkwe^2 - 4zqmsnpcg jpsqhxot) \\leq 0.\n\\]\nHence $vxrldkwe^2 - 4zqmsnpcg jpsqhxot \\leq 4kmgnwrzb nbxqterh - cvfyladu^2$, as desired."
+    },
+    "kernel_variant": {
+      "question": "Let u, v, w, U, V, W be real numbers with u \\neq  0 and U \\neq  0.  Assume that\n          |u t^{2}+v t+w| \\leq  |U t^{2}+V t+W|   holds for every real t.\nProve that\n            |v^{2}-4u w| \\leq  |V^{2}-4U W|.",
+      "solution": "Put\n    p(t)=u t^{2}+v t+w ,   q(t)=U t^{2}+V t+W  \\;(t\\in \\mathbb{R}),\nand denote their discriminants by\n    \\Delta _p = v^{2}-4u w,   \\Delta _q = V^{2}-4U W.\nThe hypothesis is\n                     |p(t)| \\leq  |q(t)|  for every t.              (H)\n\nA preliminary observation\n-------------------------\nFor |t|\\to \\infty  the quadratic terms dominate, so from (H)\n        |u| |t|^{2} - |q(t)| \\leq  |p(t)| \\leq  |q(t)|\nwe obtain |u| \\leq  |U|.                                            (1)\n\nWe distinguish three cases according to the sign of \\Delta _q.\n\nCase 1 :  \\Delta _q > 0\n-----------------\nThen q has two distinct real zeros r_1 \\neq  r_2.  At those points |p(r_i)| \\leq  |q(r_i)| = 0,\nso p(r_i) = 0 and therefore \\Delta _p > 0.  Hence p and q possess the same roots; writing\n      q(t) = U (t-r_1)(t-r_2),   p(t) = u (t-r_1)(t-r_2),\nwe get \\Delta _q = U^2(r_1-r_2)^2 and \\Delta _p = u^2(r_1-r_2)^2.  By (1), |u| \\leq  |U|, thus\n            |\\Delta _p| = u^2(r_1-r_2)^2 \\leq  U^2(r_1-r_2)^2 = |\\Delta _q|.\n\nCase 2 :  \\Delta _q \\leq  0  and  \\Delta _p \\leq  0\n-------------------------------\nMultiply p and q by -1 if necessary so that U>0; then q(t) > 0 for all t.\n\nStep 1 - eliminate the linear term of q.\nChoose h = V/(2U) and set t = y - h.  Define\n      p*(y)=p(y-h)=u y^{2}+v' y+w',\n      q*(y)=q(y-h)=U y^{2}+C,\nwith C = (4U W - V^{2})/(4U) \\geq  0 (because \\Delta _q \\leq  0).  Inequality (H) becomes\n                          |p*(y)| \\leq  q*(y)  (y\\in \\mathbb{R})               (H*)\nand \\Delta _{p*} = \\Delta _p.\n\nStep 2 - two immediate bounds.\nEvaluating (H*) at y = 0 gives |w'| \\leq  C, while (1) still yields |u| \\leq  U.\n\nStep 3 - a sign restriction on u w'.\nSince \\Delta _p = v'^{2} - 4u w' \\leq  0, we have 4u w' \\geq  v'^{2} \\geq  0, hence\n                       u w' \\geq  0.                              (2)\nConsequently |u w'| = u w'.\n\nStep 4 - the desired inequality.\nBecause v'^{2} \\geq  0 and \\Delta _p \\leq  0,\n      |\\Delta _p| = -\\Delta _p = 4u w' - v'^{2} \\leq  4u w' = 4|u w'| \\leq  4|u| |w'|\n              \\leq  4|u| C \\leq  4U C = -\\Delta _q = |\\Delta _q|.\nTherefore |\\Delta _p| \\leq  |\\Delta _q|.\n\nCase 3 :  \\Delta _q \\leq  0  and  \\Delta _p > 0\n--------------------------------\nAgain choose the overall sign so that U>0; hence q(t) > 0 for every t.  For any real t,\n                q(t) \\pm  p(t) \\geq  |q(t)| - |p(t)| \\geq  0,\nso the quadratics r_\\pm (t)=q(t)\\pm p(t) have no real roots and their discriminants satisfy\n        (V\\pm v)^{2} - 4(U\\pm u)(W\\pm w) \\leq  0.                          (3)\nAdding the two inequalities in (3) gives\n        2(V^{2}+v^{2}) \\leq  4[(U+u)(W+w)+(U-u)(W-w)]\n                       = 8 U W + 8 u w,                      (4)\nwhence\n        V^{2}+v^{2} \\leq  4 U W + 4 u w.                          (5)\n\nNow compute\n |\\Delta _q| - |\\Delta _p| = (4U W - V^{2}) - (v^{2} - 4u w)\n                = 4(U W + u w) - (V^{2}+v^{2}).\nThe right-hand side is non-negative by (5), therefore |\\Delta _p| \\leq  |\\Delta _q|.\n\nConclusion\n----------\nIn all three cases we have proved\n                |v^{2} - 4u w| \\leq  |V^{2} - 4U W|.\nThus the statement is established for every choice of real numbers u,v,w,U,V,W with u\\neq 0, U\\neq 0 that satisfy (H).",
+      "_meta": {
+        "core_steps": [
+          "Compare leading coefficients via the |p(x)|≤|q(x)| condition for large |x|, yielding |A|≥|a|.",
+          "Split into cases according to the sign of the larger discriminant B²−4AC.",
+          "If B²−4AC>0, shared real roots force b²−4ac>0 and |A|≥|a| gives a²(r₁−r₂)²≤A²(r₁−r₂)².",
+          "If both discriminants≤0, translate x to kill the linear term and compare constant terms (or enclosed‐area of nested ellipses).",
+          "If signs differ, use non-negativity of (q±p)(x) to bound the sums of discriminants, then isolate |b²−4ac|."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Names chosen for the six coefficients and the variable; any renaming leaves the argument intact.",
+            "original": "a,b,c,A,B,C,x"
+          },
+          "slot2": {
+            "description": "Numbering / order of the three case analyses; they can be treated in any sequence.",
+            "original": "Case 1, Case 2, Case 3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

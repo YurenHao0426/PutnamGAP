@@ -1,0 +1,118 @@
+{
+  "index": "2005-B-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find all differentiable functions $f: (0, \\infty) \\to (0, \\infty)$ for which\nthere is a positive real number $a$ such that\n\\[\nf' \\left( \\frac{a}{x} \\right) = \\frac{x}{f(x)}\n\\]\nfor all $x > 0$.",
+  "solution": "\\textbf{First solution:}\nThe functions are precisely $f(x) = cx^d$ for $c,d > 0$ arbitrary\nexcept that we must take $c=1$ in case $d=1$. To see that these work,\nnote that $f'(a/x) = d c (a/x)^{d-1}$ and $x/f(x) = 1/(c x^{d-1})$,\nso the given equation holds if and only if $d c^2 a^{d-1} = 1$. If\n$d \\neq 1$, we may solve for $a$ no matter what $c$ is; if\n$d=1$, we must have $c=1$. (Thanks to Brad Rodgers for pointing out\nthe $d=1$ restriction.)\n\nTo check that these are all solutions,\nput $b = \\log(a)$ and $y = \\log(a/x)$; rewrite the given equation as\n\\[\nf(e^{b-y}) f'(e^y) = e^{b-y}.\n\\]\nPut\n\\[\ng(y) = \\log f(e^y);\n\\]\nthen the given equation rewrites as\n\\[\ng(b-y) + \\log g'(y) + g(y) - y = b-y,\n\\]\nor\n\\[\n\\log g'(y) = b -g(y) - g(b-y).\n\\]\nBy the symmetry of the right side,\nwe have $g'(b-y) = g'(y)$. Hence the function\n$g(y) + g(b-y)$ has zero derivative and so is constant,\nas then is $g'(y)$.\nFrom this we deduce that $f(x) = cx^d$ for some $c,d$, both\nnecessarily positive since $f'(x) > 0$ for all $x$.\n\n\\textbf{Second solution:}\n(suggested by several people)\nSubstitute $a/x$ for $x$ in the given equation:\n\\[\nf'(x) = \\frac{a}{xf(a/x)}.\n\\]\nDifferentiate:\n\\[\nf''(x) = - \\frac{a}{x^2 f(a/x)}\n+ \\frac{a^2 f'(a/x)}{x^3 f(a/x)^2}.\n\\]\nNow substitute to eliminate evaluations at $a/x$:\n\\[\nf''(x) = - \\frac{f'(x)}{x}\n+ \\frac{f'(x)^2}{f(x)}.\n\\]\nClear denominators:\n\\[\nx f(x) f''(x) + f(x) f'(x) = x f'(x)^2.\n\\]\nDivide through by $f(x)^2$ and rearrange:\n\\[\n0 = \\frac{f'(x)}{f(x)} + \\frac{x f''(x)}{f(x)} - \\frac{x f'(x)^2}{f(x)^2}.\n\\]\nThe right side is the derivative of $x f'(x)/f(x)$, so that quantity\nis constant. That is, for some $d$,\n\\[\n\\frac{f'(x)}{f(x)} = \\frac{d}{x}.\n\\]\nIntegrating yields $f(x) = cx^d$, as desired.",
+  "vars": [
+    "f",
+    "x",
+    "g",
+    "y"
+  ],
+  "params": [
+    "a",
+    "c",
+    "d",
+    "b"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "function",
+        "x": "variable",
+        "g": "auxiliary",
+        "y": "logvar",
+        "a": "constantone",
+        "c": "constanttwo",
+        "d": "exponent",
+        "b": "logconst"
+      },
+      "question": "Find all differentiable functions $function: (0, \\infty) \\to (0, \\infty)$ for which\nthere is a positive real number $constantone$ such that\n\\[\nfunction' \\left( \\frac{constantone}{variable} \\right) = \\frac{variable}{function(variable)}\n\\]\nfor all $variable > 0$.",
+      "solution": "\\textbf{First solution:}\nThe functions are precisely $function(variable) = constanttwo\\,variable^{exponent}$ for $constanttwo,exponent > 0$ arbitrary\nexcept that we must take $constanttwo=1$ in case $exponent=1$. To see that these work,\nnote that $function'(constantone/variable) = exponent\\,constanttwo\\,(constantone/variable)^{exponent-1}$ and $variable/function(variable) = 1/(constanttwo\\,variable^{\\exponent-1})$,\nso the given equation holds if and only if $exponent\\,constanttwo^{2}\\,constantone^{\\exponent-1}=1$. If\n$exponent \\neq 1$, we may solve for $constantone$ no matter what $constanttwo$ is; if\n$exponent=1$, we must have $constanttwo=1$. (Thanks to Brad Rodgers for pointing out\nthe $exponent=1$ restriction.)\n\nTo check that these are all solutions,\nput $logconst=\\log(constantone)$ and $logvar=\\log(constantone/variable)$; rewrite the given equation as\n\\[\nfunction(e^{logconst-logvar})\\,function'(e^{logvar}) = e^{logconst-logvar}.\n\\]\nPut\n\\[\nauxiliary(logvar)=\\log function(e^{logvar});\n\\]\nthen the given equation rewrites as\n\\[\nauxiliary(logconst-logvar)+\\log auxiliary'(logvar)+auxiliary(logvar)-logvar = logconst-logvar,\n\\]\nor\n\\[\n\\log auxiliary'(logvar)=logconst-auxiliary(logvar)-auxiliary(logconst-logvar).\n\\]\nBy the symmetry of the right side,\nwe have $auxiliary'(logconst-logvar)=auxiliary'(logvar)$. Hence the function\n$auxiliary(logvar)+auxiliary(logconst-logvar)$ has zero derivative and so is constant,\nas then is $auxiliary'(logvar)$.\nFrom this we deduce that $function(variable)=constanttwo\\,variable^{exponent}$ for some $constanttwo,exponent$, both\nnecessarily positive since $function'(variable)>0$ for all $variable$.\n\n\\textbf{Second solution:}\n(suggested by several people)\nSubstitute $constantone/variable$ for $variable$ in the given equation:\n\\[\nfunction'(variable)=\\frac{constantone}{variable\\,function(constantone/variable)}.\n\\]\nDifferentiate:\n\\[\nfunction''(variable)=-\\frac{constantone}{variable^{2}\\,function(constantone/variable)}\n+\\frac{constantone^{2}\\,function'(constantone/variable)}{variable^{3}\\,function(constantone/variable)^{2}}.\n\\]\nNow substitute to eliminate evaluations at $constantone/variable$:\n\\[\nfunction''(variable)=-\\frac{function'(variable)}{variable}\n+\\frac{function'(variable)^{2}}{function(variable)}.\n\\]\nClear denominators:\n\\[\nvariable\\,function(variable)\\,function''(variable)+function(variable)\\,function'(variable)=variable\\,function'(variable)^{2}.\n\\]\nDivide through by $function(variable)^{2}$ and rearrange:\n\\[\n0=\\frac{function'(variable)}{function(variable)}+\\frac{variable\\,function''(variable)}{function(variable)}-\\frac{variable\\,function'(variable)^{2}}{function(variable)^{2}}.\n\\]\nThe right side is the derivative of $\\,variable\\,function'(variable)/function(variable)$, so that quantity\nis constant. That is, for some $exponent$,\n\\[\n\\frac{function'(variable)}{function(variable)}=\\frac{exponent}{variable}.\n\\]\nIntegrating yields $function(variable)=constanttwo\\,variable^{exponent}$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "eucalyptus",
+        "x": "lanternfish",
+        "g": "snowplow",
+        "y": "toothpick",
+        "a": "marshmallow",
+        "c": "quagmire",
+        "d": "gingerbread",
+        "b": "blueberry"
+      },
+      "question": "Find all differentiable functions $eucalyptus: (0, \\infty) \\to (0, \\infty)$ for which\nthere is a positive real number $marshmallow$ such that\n\\[\neucalyptus' \\left( \\frac{marshmallow}{lanternfish} \\right) = \\frac{lanternfish}{eucalyptus(lanternfish)}\n\\]\nfor all $lanternfish > 0$.",
+      "solution": "\\textbf{First solution:}\nThe functions are precisely $eucalyptus(lanternfish) = quagmire lanternfish^{gingerbread}$ for $quagmire, gingerbread > 0$ arbitrary\nexcept that we must take $quagmire=1$ in case $gingerbread=1$. To see that these work,\nnote that $eucalyptus'(marshmallow/lanternfish) = gingerbread quagmire (marshmallow/lanternfish)^{gingerbread-1}$ and $lanternfish/eucalyptus(lanternfish) = 1/(quagmire lanternfish^{gingerbread-1})$,\nso the given equation holds if and only if $gingerbread quagmire^2 marshmallow^{gingerbread-1} = 1$. If\n$gingerbread \\neq 1$, we may solve for $marshmallow$ no matter what $quagmire$ is; if\n$gingerbread=1$, we must have $quagmire=1$. (Thanks to Brad Rodgers for pointing out\nthe $gingerbread=1$ restriction.)\n\nTo check that these are all solutions,\nput $blueberry = \\log(marshmallow)$ and $toothpick = \\log(marshmallow/lanternfish)$; rewrite the given equation as\n\\[\neucalyptus(e^{blueberry-toothpick}) eucalyptus'(e^{toothpick}) = e^{blueberry-toothpick}.\n\\]\nPut\n\\[\nsnowplow(toothpick) = \\log eucalyptus(e^{toothpick});\n\\]\nthen the given equation rewrites as\n\\[\nsnowplow(blueberry-toothpick) + \\log snowplow'(toothpick) + snowplow(toothpick) - toothpick = blueberry-toothpick,\n\\]\nor\n\\[\n\\log snowplow'(toothpick) = blueberry - snowplow(toothpick) - snowplow(blueberry-toothpick).\n\\]\nBy the symmetry of the right side,\nwe have $snowplow'(blueberry-toothpick) = snowplow'(toothpick)$. Hence the function\n$snowplow(toothpick) + snowplow(blueberry-toothpick)$ has zero derivative and so is constant,\nas then is $snowplow'(toothpick)$.\nFrom this we deduce that $eucalyptus(lanternfish) = quagmire lanternfish^{gingerbread}$ for some $quagmire, gingerbread$, both\nnecessarily positive since $eucalyptus'(lanternfish) > 0$ for all $lanternfish$.\n\n\\textbf{Second solution:}\n(suggested by several people)\nSubstitute $marshmallow/lanternfish$ for $lanternfish$ in the given equation:\n\\[\neucalyptus'(lanternfish) = \\frac{marshmallow}{lanternfish eucalyptus(marshmallow/lanternfish)}.\n\\]\nDifferentiate:\n\\[\neucalyptus''(lanternfish) = - \\frac{marshmallow}{lanternfish^2 eucalyptus(marshmallow/lanternfish)}\n+ \\frac{marshmallow^2 eucalyptus'(marshmallow/lanternfish)}{lanternfish^3 eucalyptus(marshmallow/lanternfish)^2}.\n\\]\nNow substitute to eliminate evaluations at $marshmallow/lanternfish$:\n\\[\neucalyptus''(lanternfish) = - \\frac{eucalyptus'(lanternfish)}{lanternfish}\n+ \\frac{eucalyptus'(lanternfish)^2}{eucalyptus(lanternfish)}.\n\\]\nClear denominators:\n\\[\nlanternfish eucalyptus(lanternfish) eucalyptus''(lanternfish) + eucalyptus(lanternfish) eucalyptus'(lanternfish) = lanternfish eucalyptus'(lanternfish)^2.\n\\]\nDivide through by $eucalyptus(lanternfish)^2$ and rearrange:\n\\[\n0 = \\frac{eucalyptus'(lanternfish)}{eucalyptus(lanternfish)} + \\frac{lanternfish eucalyptus''(lanternfish)}{eucalyptus(lanternfish)} - \\frac{lanternfish eucalyptus'(lanternfish)^2}{eucalyptus(lanternfish)^2}.\n\\]\nThe right side is the derivative of $lanternfish eucalyptus'(lanternfish)/eucalyptus(lanternfish)$, so that quantity\nis constant. That is, for some $gingerbread$,\n\\[\n\\frac{eucalyptus'(lanternfish)}{eucalyptus(lanternfish)} = \\frac{gingerbread}{lanternfish}.\n\\]\nIntegrating yields $eucalyptus(lanternfish) = quagmire lanternfish^{gingerbread}$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "constant",
+        "x": "immutable",
+        "g": "dwindling",
+        "y": "stationary",
+        "a": "negative",
+        "c": "variable",
+        "d": "rootlike",
+        "b": "exponent"
+      },
+      "question": "Find all differentiable functions $constant: (0, \\infty) \\to (0, \\infty)$ for which\nthere is a positive real number $negative$ such that\n\\[\nconstant' \\left( \\frac{negative}{immutable} \\right) = \\frac{immutable}{constant(immutable)}\n\\]\nfor all $immutable > 0$.",
+      "solution": "\\textbf{First solution:}\nThe functions are precisely $constant(immutable) = variable immutable^{rootlike}$ for $variable,rootlike > 0$ arbitrary\nexcept that we must take $variable=1$ in case $rootlike=1$. To see that these work,\nnote that $constant'(negative/immutable) = rootlike variable (negative/immutable)^{rootlike-1}$ and $immutable/constant(immutable) = 1/(variable immutable^{rootlike-1})$,\nso the given equation holds if and only if $rootlike variable^2 negative^{rootlike-1} = 1$. If\n$rootlike \\neq 1$, we may solve for $negative$ no matter what $variable$ is; if\n$rootlike=1$, we must have $variable=1$. (Thanks to Brad Rodgers for pointing out\nthe $rootlike=1$ restriction.)\n\nTo check that these are all solutions,\nput $exponent = \\log(negative)$ and $stationary = \\log(negative/immutable)$; rewrite the given equation as\n\\[\nconstant(e^{exponent-stationary}) constant'(e^{stationary}) = e^{exponent-stationary}.\n\\]\nPut\n\\[\ndwindling(stationary) = \\log constant(e^{stationary});\n\\]\nthen the given equation rewrites as\n\\[\ndwindling(exponent-stationary) + \\log dwindling'(stationary) + dwindling(stationary) - stationary = exponent-stationary,\n\\]\nor\n\\[\n\\log dwindling'(stationary) = exponent -dwindling(stationary) - dwindling(exponent-stationary).\n\\]\nBy the symmetry of the right side,\nwe have $dwindling'(exponent-stationary) = dwindling'(stationary)$. Hence the function\n$dwindling(stationary) + dwindling(exponent-stationary)$ has zero derivative and so is constant,\nas then is $dwindling'(stationary)$.\nFrom this we deduce that $constant(immutable) = variable immutable^{rootlike}$ for some $variable,rootlike$, both\nnecessarily positive since $constant'(immutable) > 0$ for all $immutable$.\n\n\\textbf{Second solution:}\n(suggested by several people)\nSubstitute $negative/immutable$ for $immutable$ in the given equation:\n\\[\nconstant'(immutable) = \\frac{negative}{immutable constant(negative/immutable)}.\n\\]\nDifferentiate:\n\\[\nconstant''(immutable) = - \\frac{negative}{immutable^2 constant(negative/immutable)}\n+ \\frac{negative^2 constant'(negative/immutable)}{immutable^3 constant(negative/immutable)^2}.\n\\]\nNow substitute to eliminate evaluations at $negative/immutable$:\n\\[\nconstant''(immutable) = - \\frac{constant'(immutable)}{immutable}\n+ \\frac{constant'(immutable)^2}{constant(immutable)}.\n\\]\nClear denominators:\n\\[\nimmutable constant(immutable) constant''(immutable) + constant(immutable) constant'(immutable) = immutable constant'(immutable)^2.\n\\]\nDivide through by $constant(immutable)^2$ and rearrange:\n\\[\n0 = \\frac{constant'(immutable)}{constant(immutable)} + \\frac{immutable constant''(immutable)}{constant(immutable)} - \\frac{immutable constant'(immutable)^2}{constant(immutable)^2}.\n\\]\nThe right side is the derivative of $immutable constant'(immutable)/constant(immutable)$, so that quantity\nis constant. That is, for some $rootlike$,\n\\[\n\\frac{constant'(immutable)}{constant(immutable)} = \\frac{rootlike}{immutable}.\n\\]\nIntegrating yields $constant(immutable) = variable immutable^{rootlike}$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "f": "ozkqjvyd",
+        "x": "pmhtnrsw",
+        "g": "xbmleqzo",
+        "y": "vncrstuh",
+        "a": "kdjwqzpr",
+        "c": "nlsvfxre",
+        "d": "tqbyrkjm",
+        "b": "whgsopae"
+      },
+      "question": "Find all differentiable functions $ozkqjvyd: (0, \\infty) \\to (0, \\infty)$ for which\nthere is a positive real number $kdjwqzpr$ such that\n\\[\nozkqjvyd' \\left( \\frac{kdjwqzpr}{pmhtnrsw} \\right) = \\frac{pmhtnrsw}{ozkqjvyd(pmhtnrsw)}\n\\]\nfor all $pmhtnrsw > 0$.",
+      "solution": "\\textbf{First solution:}\nThe functions are precisely $ozkqjvyd(pmhtnrsw) = nlsvfxre pmhtnrsw^{tqbyrkjm}$ for $nlsvfxre,tqbyrkjm > 0$ arbitrary\nexcept that we must take $nlsvfxre=1$ in case $tqbyrkjm=1$. To see that these work,\nnote that $ozkqjvyd'(kdjwqzpr/pmhtnrsw) = tqbyrkjm nlsvfxre (kdjwqzpr/pmhtnrsw)^{tqbyrkjm-1}$ and $pmhtnrsw/ozkqjvyd(pmhtnrsw) = 1/(nlsvfxre pmhtnrsw^{tqbyrkjm-1})$,\nso the given equation holds if and only if $tqbyrkjm nlsvfxre^2 kdjwqzpr^{tqbyrkjm-1} = 1$. If\ntqbyrkjm \\neq 1$, we may solve for $kdjwqzpr$ no matter what $nlsvfxre$ is; if\ntqbyrkjm=1$, we must have $nlsvfxre=1$. (Thanks to Brad Rodgers for pointing out\nthe $tqbyrkjm=1$ restriction.)\n\nTo check that these are all solutions,\nput $whgsopae = \\log(kdjwqzpr)$ and $vncrstuh = \\log(kdjwqzpr/pmhtnrsw)$; rewrite the given equation as\n\\[\nozkqjvyd(e^{whgsopae-vncrstuh}) ozkqjvyd'(e^{vncrstuh}) = e^{whgsopae-vncrstuh}.\n\\]\nPut\n\\[\nxbmleqzo(vncrstuh) = \\log ozkqjvyd(e^{vncrstuh});\n\\]\nthen the given equation rewrites as\n\\[\nxbmleqzo(whgsopae-vncrstuh) + \\log xbmleqzo'(vncrstuh) + xbmleqzo(vncrstuh) - vncrstuh = whgsopae-vncrstuh,\n\\]\nor\n\\[\n\\log xbmleqzo'(vncrstuh) = whgsopae -xbmleqzo(vncrstuh) - xbmleqzo(whgsopae-vncrstuh).\n\\]\nBy the symmetry of the right side,\nwe have $xbmleqzo'(whgsopae-vncrstuh) = xbmleqzo'(vncrstuh)$. Hence the function\n$xbmleqzo(vncrstuh) + xbmleqzo(whgsopae-vncrstuh)$ has zero derivative and so is constant,\nas then is $xbmleqzo'(vncrstuh)$.\nFrom this we deduce that $ozkqjvyd(pmhtnrsw) = nlsvfxre pmhtnrsw^{tqbyrkjm}$ for some $nlsvfxre,tqbyrkjm$, both\nnecessarily positive since $ozkqjvyd'(pmhtnrsw) > 0$ for all $pmhtnrsw$.\n\n\\textbf{Second solution:}\n(suggested by several people)\nSubstitute $kdjwqzpr/pmhtnrsw$ for $pmhtnrsw$ in the given equation:\n\\[\nozkqjvyd'(pmhtnrsw) = \\frac{kdjwqzpr}{pmhtnrsw ozkqjvyd(kdjwqzpr/pmhtnrsw)}.\n\\]\nDifferentiate:\n\\[\nozkqjvyd''(pmhtnrsw) = - \\frac{kdjwqzpr}{pmhtnrsw^2 ozkqjvyd(kdjwqzpr/pmhtnrsw)}\n+ \\frac{kdjwqzpr^2 ozkqjvyd'(kdjwqzpr/pmhtnrsw)}{pmhtnrsw^3 ozkqjvyd(kdjwqzpr/pmhtnrsw)^2}.\n\\]\nNow substitute to eliminate evaluations at $kdjwqzpr/pmhtnrsw$:\n\\[\nozkqjvyd''(pmhtnrsw) = - \\frac{ozkqjvyd'(pmhtnrsw)}{pmhtnrsw}\n+ \\frac{ozkqjvyd'(pmhtnrsw)^2}{ozkqjvyd(pmhtnrsw)}.\n\\]\nClear denominators:\n\\[\npmhtnrsw ozkqjvyd(pmhtnrsw) ozkqjvyd''(pmhtnrsw) + ozkqjvyd(pmhtnrsw) ozkqjvyd'(pmhtnrsw) = pmhtnrsw ozkqjvyd'(pmhtnrsw)^2.\n\\]\nDivide through by $ozkqjvyd(pmhtnrsw)^2$ and rearrange:\n\\[\n0 = \\frac{ozkqjvyd'(pmhtnrsw)}{ozkqjvyd(pmhtnrsw)} + \\frac{pmhtnrsw ozkqjvyd''(pmhtnrsw)}{ozkqjvyd(pmhtnrsw)} - \\frac{pmhtnrsw ozkqjvyd'(pmhtnrsw)^2}{ozkqjvyd(pmhtnrsw)^2}.\n\\]\nThe right side is the derivative of $pmhtnrsw \\, ozkqjvyd'(pmhtnrsw)/ozkqjvyd(pmhtnrsw)$, so that quantity\nis constant. That is, for some $tqbyrkjm$,\n\\[\n\\frac{ozkqjvyd'(pmhtnrsw)}{ozkqjvyd(pmhtnrsw)} = \\frac{tqbyrkjm}{pmhtnrsw}.\n\\]\nIntegrating yields $ozkqjvyd(pmhtnrsw) = nlsvfxre pmhtnrsw^{tqbyrkjm}$, as desired."
+    },
+    "kernel_variant": {
+      "question": "Let a and k be two fixed non-zero real numbers.  Determine all twice-differentiable functions\n        f : \\mathbb{R} \\{0} \\to  \\mathbb{R} \\{0}\nthat satisfy\n        f'(a/x) = k\\cdot x / f(x)     for every x \\neq  0.",
+      "solution": "Step 1.  A first equivalent identity.\nReplacing x by a/x in the given relation we also have\n        f'(x)= k\\cdot a / (x\\cdot f(a/x)).                           (1)\n\nStep 2.  A second-order differential equation.\nDifferentiate (1) with respect to x.  Writing M = k a, one obtains\n        f''(x)= -M /[x^2 f(a/x)] + M a f'(a/x) /[x^3 f(a/x)^2].\nNow eliminate the occurrences of a/x by means of the original equation and of (1):\n        f'(a/x)= k x / f(x),     f(a/x)= k a /[x f'(x)].\nSubstituting these gives\n        f''(x)= -f'(x)/x + (f'(x))^2 / f(x).              (2)\n\nStep 3.  A first-order separable equation.\nMultiply (2) by x f(x):\n        x f(x) f''(x)+f(x) f'(x)= x (f'(x))^2.\nDividing by f(x)^2 (allowed because f never vanishes) one recognises the left-hand side as d/dx[x f'(x)/f(x)], so\n        (x f'(x)/f(x))' = 0  \\Rightarrow   x f'(x)/f(x)=d,          (3)\nwhere d is a constant on every connected component of \\mathbb{R}\\{0}.\n\nEquation (3) rewrites to the separable first-order ODE\n        f'(x)/f(x)=d/x.\nIntegrating yields the local solutions\n        f(x)=C x^d,                                        (4)\nwith an arbitrary non-zero constant C and with d \\neq  0 (d = 0 gives a constant function, which does not satisfy the original relation).\n\nHence on each component (0,\\infty ) and (-\\infty ,0) the solution is of the power type (4) with (possibly) different constants.  Write\n        f(x) = { C_+ x^{d_+},  x>0,\n                { C_- x^{d_-},  x<0,                       (5)\nwith C_\\pm  \\neq  0 and d_\\pm  \\neq  0 still to be determined.\n\nStep 4.  Substituting (5) in the functional equation.\nThere are two essentially different cases according to the sign of a.\n\n**  Case a>0  (components are not coupled).\nFor x>0 the argument a/x is again positive, so only the \"+\" data appear:\n        C_+ d_+ (a/x)^{d_+-1} = k/(C_+ x^{d_+-1}).\nCancelling x^{d_+-1} gives the condition\n        C_+^2 d_+ a^{d_+-1} = k.                          (6+)\nFor x<0 the argument a/x is negative, so only the \"-\" data appear and one obtains the independent relation\n        C_-^2 d_- a^{d_--1} = k.                          (6-)\nThus in the case a>0 the two halves may be chosen independently: any non-zero constants C_\\pm , any non-zero exponents d_\\pm  obeying (6\\pm ) give a C^2-function on \\mathbb{R}\\{0} that satisfies f'(a/x)=k x/f(x).\n\n**  Case a<0  (components are coupled).\nNow a/x has opposite sign to x, so each evaluation mixes the two halves.  Take x>0 in the original equation:\n        C_- d_- (a/x)^{d_--1} = k/(C_+ x^{d_+-1}).\nTaking x<0 gives\n        C_+ d_+ (a/x)^{d_+-1} = k/(C_- x^{d_--1}).\nSince these equalities must hold for all x, the powers of x must match, whence\n        d_+ = d_- =: d.                                    (7)\nWith (7) the two numerical conditions collapse into the single coupling\n        C_- C_+ d a^{d-1} = k.                            (8)\nTherefore, when a<0 the exponent d is the same on both components but the leading constants C_+ and C_- may differ provided they satisfy (8).\n\nStep 5.  Real-valuedness on (-\\infty ,0).\nIf the domain (-\\infty ,0) is required, the real power x^d is defined for all x<0 only when d is an integer; more generally one may allow rational d=p/q in lowest terms with odd denominator q so that (-1)^d is real.  Any such choice is admissible.\n\nFinal answer.\nLet a,k be fixed non-zero real numbers.\n\nA twice-differentiable map f:\\mathbb{R}\\{0}\\to \\mathbb{R}\\{0} satisfies f'(a/x)=k x/f(x) if and only if it has the form\n        f(x) = { C_+ x^{d_+}   (x>0),\n                { C_- x^{d_-}   (x<0),\nwith non-zero constants C_\\pm  and non-zero exponents d_\\pm  determined as follows.\n\n(a)  If a>0:  the two pairs (C_+,d_+) and (C_-,d_-) are arbitrary subject to\n        C_+^2 d_+ a^{d_+-1} = k   and   C_-^2 d_- a^{d_--1} = k.\n(b)  If a<0:  the exponents must coincide, d_+ = d_- = d, and the leading constants must satisfy\n        C_- C_+ d a^{d-1} = k.\n\nConversely, every choice described in (a) or (b) (with the added \"odd-denominator\" restriction when one wants a real function on (-\\infty ,0) and d is non-integer) indeed yields a C^2-solution of the required equation.",
+      "_meta": {
+        "core_steps": [
+          "Substitute x ↦ a/x in the given equation to relate f'(x) and f(a/x).",
+          "Differentiate that relation to introduce f''(x) together with f(a/x) and f'(a/x).",
+          "Use the two original relations to eliminate every a/x–term, yielding the ODE  x f f'' + f f' = x (f')².",
+          "Recognize the left side as (x f'/f)' and conclude x f'/f ≡ constant = d.",
+          "Integrate f'/f = d/x to obtain all solutions  f(x) = c x^d  (with the usual c,d>0 and the d=1⇒c=1 caveat)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The coefficient of x in the right–hand side can be any non-zero constant k (i.e. f'(a/x)=k x / f(x)).  The k cancels out in the elimination step.",
+            "original": "implicit coefficient k=1 in  x/f(x)"
+          },
+          "slot2": {
+            "description": "The positivity of the codomain can be relaxed to mere non-vanishing values (f:(0,∞)→ℝ\\{0}); the derivation only needs f(x)≠0 so it can appear in denominators.",
+            "original": "(0,∞) codomain"
+          },
+          "slot3": {
+            "description": "The domain (0,∞) may be replaced by any open subset I⊂ℝ\u0000 that is closed under x↦a/x (e.g. (0,R), (c,∞), or ℝ\\{0}); the substitutions still make sense.",
+            "original": "(0,∞) domain"
+          },
+          "slot4": {
+            "description": "The regularity hypothesis can be strengthened (C¹→C²) without affecting the argument; differentiability once is stated, twice is tacitly used.",
+            "original": "\"differentiable\""
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

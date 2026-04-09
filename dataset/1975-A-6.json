@@ -1,0 +1,193 @@
+{
+  "index": "1975-A-6",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-6. Let \\( P_{1}, P_{2}, P_{3} \\) be the vertices of an acute-angled triangle situated in three-dimensional space. Show that it is always possible to locate two additional points \\( P_{4} \\) and \\( P_{5} \\) in such a way that no three of the points are collinear and so that the line through any two of the five points is perpendicular to the plane determined by the other three.\n\nIn writing your answer, state clearly the locations at which you place the points \\( P_{4} \\) and \\( P_{5} \\).",
+  "solution": "A-6.\nLet \\( \\lambda \\) denote the line through the desired points \\( P_{4} \\) and \\( P_{5} \\). Let \\( \\pi \\) be the plane of \\( P_{1}, P_{2} \\), and \\( P_{3} \\) and let \\( H \\) be the intersection of \\( \\lambda \\) with \\( \\pi \\).\n\nLet \\( v_{u} \\) be the vector \\( \\mathbf{H P}_{u} \\) and \\( \\left|v_{u}\\right| \\) be its magnitude. We wish to have the dot product\n\\[\nd=\\mathbf{P}_{h} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\boldsymbol{P}_{j}=\\left(v_{k}-v_{h}\\right) \\cdot\\left(v_{i}-v_{\\mathrm{t}}\\right)=v_{k} \\cdot v_{l}-v_{k} \\cdot v_{\\mathrm{t}}-v_{h} \\cdot v_{l}+v_{h} \\cdot v_{l}\n\\]\nzero for all choices of \\( h, k, i, j \\) as distinct indices in \\( \\{1,2,3,4,5\\} \\).\nSince \\( \\lambda \\) is to be perpendicular to \\( \\pi \\), we must have\n\\[\nv_{h} \\cdot v_{i}=0 \\text { for } h \\in\\{4,5\\} \\text { and } i \\in\\{1,2,3\\} .\n\\]\n\nIf \\( h, k \\in\\{4,5\\} \\) and \\( i, j \\in\\{1,2,3\\} \\), (2) implies that the dot product \\( d \\) of (1) is zero. If \\( h \\in\\{4,5\\} \\) and \\( k, i, j \\in\\{1,2,3\\} \\), (2) implies that the \\( d \\) of (1) becomes\n\\[\nd=v_{k} \\cdot v_{j}-v_{k} \\cdot v_{i}=v_{k} \\cdot\\left(v_{i}-v_{i}\\right)=\\mathbf{H} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\mathbf{P}_{j} .\n\\]\n\nClearly the \\( d \\) of (3) are zero simultaneously if and only if \\( H \\) is the orthocenter (i.e., intersection of altitudes) of \\( \\Delta P_{1} P_{2} P_{3} \\). With this choice of \\( H \\), the vanishing of the \\( d \\) of (3) implies\n\\[\nv_{2} \\cdot v_{3}=v_{1} \\cdot v_{3}=v_{1} \\cdot v_{2} .\n\\]\n\nNow let \\( h, i \\in\\{4,5\\} \\) and \\( k, j \\in\\{1,2,3\\} \\). Then (2) implies\n\\[\nd=v_{k} \\cdot v_{j}+v_{4} \\cdot v_{s} .\n\\]\n\nAssuming (4), one sees that all the \\( d \\) 's of (5) will be zero if \\( v_{4} \\cdot v_{5}=-v_{1} \\cdot v_{2} \\). The hypothesis that \\( \\Delta P_{1} P_{2} P_{3} \\) is acute-angled tells us that \\( H \\) is inside the triangle. Then at least one (actually, all) of the angles \\( \\Varangle P_{1} H P_{2}, \\Varangle P_{2} H P_{3}, \\Varangle P_{3} H P_{1} \\) must be obtuse and so the equal dot products of (4) must be negative. Hence \\( v_{4} \\cdot v_{5} \\) must be positive; this means that \\( P_{4} \\) and \\( P_{5} \\) must be on the same half-line of \\( \\lambda \\) determined by \\( H \\).\n\nNow the location of \\( P_{4} \\) and \\( P_{5} \\) can be given. Let \\( H \\) be the orthocenter of \\( \\Delta P_{1} P_{2} P_{3} \\) and \\( \\mu \\) be either half-line perpendicular to plane \\( P_{1} P_{2} P_{3} \\) at \\( H \\). Then \\( P_{4} \\) may be any point on \\( \\mu \\) such that \\( \\left|v_{4}\\right| \\) is neither zero nor \\( \\left(-v_{1} \\cdot v_{2}\\right)^{1 / 2} \\) and \\( P_{5} \\) must be the unique point on \\( \\mu \\) with \\( \\left|v_{5}\\right|=-v_{1} \\cdot v_{2}| | v_{4} \\mid \\). Then each \\( d \\) of (1) is zero and no three of the \\( P_{i} \\) are collinear.",
+  "vars": [
+    "P_1",
+    "P_2",
+    "P_3",
+    "P_4",
+    "P_5",
+    "H",
+    "v_u",
+    "v_h",
+    "v_k",
+    "v_i",
+    "v_j",
+    "v_l",
+    "v_s",
+    "v_t",
+    "v_1",
+    "v_2",
+    "v_3",
+    "v_4",
+    "v_5",
+    "d"
+  ],
+  "params": [
+    "\\\\lambda",
+    "\\\\pi",
+    "\\\\mu",
+    "\\\\Delta"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P_1": "vertexone",
+        "P_2": "vertextwo",
+        "P_3": "vertexthree",
+        "P_4": "vertexfour",
+        "P_5": "vertexfive",
+        "H": "intersectionpoint",
+        "v_u": "vectoru",
+        "v_h": "vectorh",
+        "v_k": "vectork",
+        "v_i": "vectori",
+        "v_j": "vectorj",
+        "v_l": "vectorl",
+        "v_s": "vectors",
+        "v_t": "vectort",
+        "v_1": "vectorone",
+        "v_2": "vectortwo",
+        "v_3": "vectorthree",
+        "v_4": "vectorfour",
+        "v_5": "vectorfive",
+        "d": "dotvalue",
+        "\\lambda": "connectorline",
+        "\\pi": "baseplane",
+        "\\mu": "perpendray",
+        "\\Delta": "triangle"
+      },
+      "question": "A-6. Let \\( vertexone, vertextwo, vertexthree \\) be the vertices of an acute-angled triangle situated in three-dimensional space. Show that it is always possible to locate two additional points \\( vertexfour \\) and \\( vertexfive \\) in such a way that no three of the points are collinear and so that the line through any two of the five points is perpendicular to the plane determined by the other three.\n\nIn writing your answer, state clearly the locations at which you place the points \\( vertexfour \\) and \\( vertexfive \\).",
+      "solution": "A-6.\nLet connectorline denote the line through the desired points vertexfour and vertexfive. Let baseplane be the plane of vertexone, vertextwo, and vertexthree and let intersectionpoint be the intersection of connectorline with baseplane.\n\nLet vectoru be the vector \\( \\mathbf{intersectionpoint P}_{u} \\) and \\( \\left|vectoru\\right| \\) be its magnitude. We wish to have the dot product\n\\[\ndotvalue=\\mathbf{P}_{h} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\boldsymbol{P}_{j}=\\left(vectork-vectorh\\right) \\cdot\\left(vectori-vectort\\right)=vectork \\cdot vectorl-vectork \\cdot vectort-vectorh \\cdot vectorl+vectorh \\cdot vectorl\n\\]\nzero for all choices of \\( h, k, i, j \\) as distinct indices in \\( \\{1,2,3,4,5\\} \\).\nSince connectorline is to be perpendicular to baseplane, we must have\n\\[\nvectorh \\cdot vectori=0 \\text { for } h \\in\\{4,5\\} \\text { and } i \\in\\{1,2,3\\} .\n\\]\n\nIf \\( h, k \\in\\{4,5\\} \\) and \\( i, j \\in\\{1,2,3\\} \\), (2) implies that the dot product dotvalue of (1) is zero. If \\( h \\in\\{4,5\\} \\) and \\( k, i, j \\in\\{1,2,3\\} \\), (2) implies that the dotvalue of (1) becomes\n\\[\ndotvalue=vectork \\cdot vectorj-vectork \\cdot vectori=vectork \\cdot\\left(vectori-vectori\\right)=\\mathbf{intersectionpoint} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\mathbf{P}_{j} .\n\\]\n\nClearly the dotvalue of (3) are zero simultaneously if and only if intersectionpoint is the orthocenter (i.e., intersection of altitudes) of triangle vertexone vertextwo vertexthree. With this choice of intersectionpoint, the vanishing of the dotvalue of (3) implies\n\\[\nvectortwo \\cdot vectorthree=vectorone \\cdot vectorthree=vectorone \\cdot vectortwo .\n\\]\n\nNow let \\( h, i \\in\\{4,5\\} \\) and \\( k, j \\in\\{1,2,3\\} \\). Then (2) implies\n\\[\ndotvalue=vectork \\cdot vectorj+vectorfour \\cdot vectors .\n\\]\n\nAssuming (4), one sees that all the dotvalue's of (5) will be zero if vectorfour \\cdot vectorfive=-vectorone \\cdot vectortwo. The hypothesis that triangle vertexone vertextwo vertexthree is acute-angled tells us that intersectionpoint is inside the triangle. Then at least one (actually, all) of the angles \\( \\Varangle vertexone intersectionpoint vertextwo, \\Varangle vertextwo intersectionpoint vertexthree, \\Varangle vertexthree intersectionpoint vertexone \\) must be obtuse and so the equal dot products of (4) must be negative. Hence vectorfour \\cdot vectorfive must be positive; this means that vertexfour and vertexfive must be on the same half-line of connectorline determined by intersectionpoint.\n\nNow the location of vertexfour and vertexfive can be given. Let intersectionpoint be the orthocenter of triangle vertexone vertextwo vertexthree and perpendray be either half-line perpendicular to plane vertexone vertextwo vertexthree at intersectionpoint. Then vertexfour may be any point on perpendray such that \\( \\left|vectorfour\\right| \\) is neither zero nor \\( \\left(-vectorone \\cdot vectortwo\\right)^{1 / 2} \\) and vertexfive must be the unique point on perpendray with \\( \\left|vectorfive\\right|=-vectorone \\cdot vectortwo| | vectorfour \\mid \\). Then each dotvalue of (1) is zero and no three of the \\( P_{i} \\) are collinear."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P_1": "watermelon",
+        "P_2": "pineapple",
+        "P_3": "strawberry",
+        "P_4": "blueberry",
+        "P_5": "raspberry",
+        "H": "honeymelon",
+        "v_u": "mangosteen",
+        "v_h": "boysenberry",
+        "v_k": "elderberry",
+        "v_i": "gooseberry",
+        "v_j": "cloudberry",
+        "v_l": "dewberry",
+        "v_s": "lingonberry",
+        "v_t": "cranberry",
+        "v_1": "persimmon",
+        "v_2": "pomegranate",
+        "v_3": "tamarillo",
+        "v_4": "jackfruit",
+        "v_5": "nectarine",
+        "d": "dragonfruit",
+        "\\lambda": "watercress",
+        "\\pi": "willowtree",
+        "\\mu": "chickadee",
+        "\\Delta": "copperhead"
+      },
+      "question": "A-6. Let \\( watermelon, pineapple, strawberry \\) be the vertices of an acute-angled triangle situated in three-dimensional space. Show that it is always possible to locate two additional points \\( blueberry \\) and \\( raspberry \\) in such a way that no three of the points are collinear and so that the line through any two of the five points is perpendicular to the plane determined by the other three.\n\nIn writing your answer, state clearly the locations at which you place the points \\( blueberry \\) and \\( raspberry \\).",
+      "solution": "A-6.\nLet \\( watercress \\) denote the line through the desired points \\( blueberry \\) and \\( raspberry \\). Let \\( willowtree \\) be the plane of \\( watermelon, pineapple \\), and \\( strawberry \\) and let \\( honeymelon \\) be the intersection of \\( watercress \\) with \\( willowtree \\).\n\nLet \\( mangosteen \\) be the vector \\( \\mathbf{honeymelon P}_{u} \\) and \\( \\left|mangosteen\\right| \\) be its magnitude. We wish to have the dot product\n\\[\ndragonfruit=\\mathbf{P}_{h} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\boldsymbol{P}_{j}=\\left(elderberry-boysenberry\\right) \\cdot\\left(gooseberry-cranberry\\right)=elderberry \\cdot dewberry-elderberry \\cdot cranberry-boysenberry \\cdot dewberry+boysenberry \\cdot dewberry\n\\]\nzero for all choices of \\( h, k, i, j \\) as distinct indices in \\( \\{1,2,3,4,5\\} \\).\nSince \\( watercress \\) is to be perpendicular to \\( willowtree \\), we must have\n\\[\nboysenberry \\cdot gooseberry=0 \\text { for } h \\in\\{4,5\\} \\text { and } i \\in\\{1,2,3\\} .\n\\]\n\nIf \\( h, k \\in\\{4,5\\} \\) and \\( i, j \\in\\{1,2,3\\} \\), (2) implies that the dot product \\( dragonfruit \\) of (1) is zero. If \\( h \\in\\{4,5\\} \\) and \\( k, i, j \\in\\{1,2,3\\} \\), (2) implies that the \\( dragonfruit \\) of (1) becomes\n\\[\ndragonfruit=elderberry \\cdot cloudberry-elderberry \\cdot gooseberry=elderberry \\cdot\\left(gooseberry-gooseberry\\right)=\\mathbf{honeymelon P}_{k} \\cdot \\mathbf{P}_{i} \\mathbf{P}_{j} .\n\\]\n\nClearly the \\( dragonfruit \\) of (3) are zero simultaneously if and only if \\( honeymelon \\) is the orthocenter (i.e., intersection of altitudes) of \\( copperhead watermelon pineapple strawberry \\). With this choice of \\( honeymelon \\), the vanishing of the \\( dragonfruit \\) of (3) implies\n\\[\npomegranate \\cdot tamarillo=persimmon \\cdot tamarillo=persimmon \\cdot pomegranate .\n\\]\n\nNow let \\( h, i \\in\\{4,5\\} \\) and \\( k, j \\in\\{1,2,3\\} \\). Then (2) implies\n\\[\ndragonfruit=elderberry \\cdot cloudberry+jackfruit \\cdot lingonberry .\n\\]\n\nAssuming (4), one sees that all the \\( dragonfruit \\) 's of (5) will be zero if \\( jackfruit \\cdot nectarine=-persimmon \\cdot pomegranate \\). The hypothesis that \\( copperhead watermelon pineapple strawberry \\) is acute-angled tells us that \\( honeymelon \\) is inside the triangle. Then at least one (actually, all) of the angles \\( \\Varangle watermelon honeymelon pineapple, \\Varangle pineapple honeymelon strawberry, \\Varangle strawberry honeymelon watermelon \\) must be obtuse and so the equal dot products of (4) must be negative. Hence \\( jackfruit \\cdot nectarine \\) must be positive; this means that \\( blueberry \\) and \\( raspberry \\) must be on the same half-line of \\( watercress \\) determined by \\( honeymelon \\).\n\nNow the location of \\( blueberry \\) and \\( raspberry \\) can be given. Let \\( honeymelon \\) be the orthocenter of \\( copperhead watermelon pineapple strawberry \\) and \\( chickadee \\) be either half-line perpendicular to plane \\( watermelon pineapple strawberry \\) at \\( honeymelon \\). Then \\( blueberry \\) may be any point on \\( chickadee \\) such that \\( \\left|jackfruit\\right| \\) is neither zero nor \\( \\left(-persimmon \\cdot pomegranate\\right)^{1 / 2} \\) and \\( raspberry \\) must be the unique point on \\( chickadee \\) with \\( \\left|nectarine\\right|=-persimmon \\cdot pomegranate| | jackfruit \\mid \\). Then each \\( dragonfruit \\) of (1) is zero and no three of the \\( P_{i} \\) are collinear."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P_{1}": "vastplane",
+        "P_{2}": "widefield",
+        "P_{3}": "broadarea",
+        "P_{4}": "emptyshell",
+        "P_{5}": "voidregion",
+        "H": "outerrim",
+        "v_{u}": "staticnum",
+        "v_{h}": "stilldigit",
+        "v_{k}": "plaincount",
+        "v_{i}": "silentchar",
+        "v_{j}": "calmtime",
+        "v_{l}": "steadydata",
+        "v_{s}": "dullscore",
+        "v_{t}": "stablemark",
+        "v_{\\mathrm{t}}": "stablemark",
+        "v_{1}": "scalarnum",
+        "v_{2}": "numbvalue",
+        "v_{3}": "nonvector",
+        "v_{4}": "singlenum",
+        "v_{5}": "barefigure",
+        "d": "crossval",
+        "\\\\lambda": "curvedpath",
+        "\\\\pi": "singlepoint",
+        "\\\\mu": "fullcircle",
+        "\\\\Delta": "singledot"
+      },
+      "question": "A-6. Let \\( vastplane, widefield, broadarea \\) be the vertices of an acute-angled triangle situated in three-dimensional space. Show that it is always possible to locate two additional points \\( emptyshell \\) and \\( voidregion \\) in such a way that no three of the points are collinear and so that the line through any two of the five points is perpendicular to the plane determined by the other three.\n\nIn writing your answer, state clearly the locations at which you place the points \\( emptyshell \\) and \\( voidregion \\).",
+      "solution": "A-6.\nLet \\( curvedpath \\) denote the line through the desired points \\( emptyshell \\) and \\( voidregion \\). Let \\( singlepoint \\) be the plane of \\( vastplane, widefield \\), and \\( broadarea \\) and let \\( outerrim \\) be the intersection of \\( curvedpath \\) with \\( singlepoint \\).\n\nLet \\( staticnum \\) be the vector \\( \\mathbf{outerrim P}_{u} \\) and \\( \\left|staticnum\\right| \\) be its magnitude. We wish to have the dot product\n\\[\ncrossval=\\mathbf{P}_{h} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\boldsymbol{P}_{j}=\\left(plaincount-stilldigit\\right) \\cdot\\left(silentchar-stablemark\\right)=plaincount \\cdot steadydata-plaincount \\cdot stablemark-stilldigit \\cdot steadydata+stilldigit \\cdot steadydata\n\\]\nzero for all choices of \\( h, k, i, j \\) as distinct indices in \\( \\{1,2,3,4,5\\} \\).\nSince \\( curvedpath \\) is to be perpendicular to \\( singlepoint \\), we must have\n\\[\nstilldigit \\cdot silentchar=0 \\text { for } h \\in\\{4,5\\} \\text { and } i \\in\\{1,2,3\\} .\n\\]\n\nIf \\( h, k \\in\\{4,5\\} \\) and \\( i, j \\in\\{1,2,3\\} \\), (2) implies that the dot product \\( crossval \\) of (1) is zero. If \\( h \\in\\{4,5\\} \\) and \\( k, i, j \\in\\{1,2,3\\} \\), (2) implies that the \\( crossval \\) of (1) becomes\n\\[\ncrossval=plaincount \\cdot calmtime-plaincount \\cdot silentchar=plaincount \\cdot\\left(silentchar-silentchar\\right)=\\mathbf{outerrim} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\mathbf{P}_{j} .\n\\]\n\nClearly the \\( crossval \\) of (3) are zero simultaneously if and only if \\( outerrim \\) is the orthocenter (i.e., intersection of altitudes) of \\( singledot vastplane widefield broadarea \\). With this choice of \\( outerrim \\), the vanishing of the \\( crossval \\) of (3) implies\n\\[\nnumbvalue \\cdot nonvector=scalarnum \\cdot nonvector=scalarnum \\cdot numbvalue .\n\\]\n\nNow let \\( h, i \\in\\{4,5\\} \\) and \\( k, j \\in\\{1,2,3\\} \\). Then (2) implies\n\\[\ncrossval=plaincount \\cdot calmtime+singlenum \\cdot dullscore .\n\\]\n\nAssuming (4), one sees that all the \\( crossval \\) 's of (5) will be zero if \\( singlenum \\cdot barefigure=-scalarnum \\cdot numbvalue \\). The hypothesis that \\( singledot vastplane widefield broadarea \\) is acute-angled tells us that \\( outerrim \\) is inside the triangle. Then at least one (actually, all) of the angles \\( \\Varangle vastplane outerrim widefield, \\Varangle widefield outerrim broadarea, \\Varangle broadarea outerrim vastplane \\) must be obtuse and so the equal dot products of (4) must be negative. Hence \\( singlenum \\cdot barefigure \\) must be positive; this means that \\( emptyshell \\) and \\( voidregion \\) must be on the same half-line of \\( curvedpath \\) determined by \\( outerrim \\).\n\nNow the location of \\( emptyshell \\) and \\( voidregion \\) can be given. Let \\( outerrim \\) be the orthocenter of \\( singledot vastplane widefield broadarea \\) and \\( fullcircle \\) be either half-line perpendicular to plane \\( vastplane widefield broadarea \\) at \\( outerrim \\). Then \\( emptyshell \\) may be any point on \\( fullcircle \\) such that \\( \\left|singlenum\\right| \\) is neither zero nor \\( \\left(-scalarnum \\cdot numbvalue\\right)^{1 / 2} \\) and \\( voidregion \\) must be the unique point on \\( fullcircle \\) with \\( \\left|barefigure\\right|=-scalarnum \\cdot numbvalue| | singlenum \\mid \\). Then each \\( crossval \\) of (1) is zero and no three of the \\( P_{i} \\) are collinear."
+    },
+    "garbled_string": {
+      "map": {
+        "P_1": "zfdxqprim",
+        "P_2": "rnvtoegla",
+        "P_3": "wmslyubac",
+        "P_4": "vqspjdzoh",
+        "P_5": "kmetruadn",
+        "H": "pxvdmlket",
+        "v_u": "ragbnyqsv",
+        "v_h": "xoqvkzsbe",
+        "v_k": "qhtzsprac",
+        "v_i": "lfgdrycvm",
+        "v_j": "pmcwohezr",
+        "v_l": "ykshbqnei",
+        "v_s": "ugqdzralo",
+        "v_t": "snefkvwji",
+        "v_1": "zhnqtwyop",
+        "v_2": "gimrksabe",
+        "v_3": "cbnytwlod",
+        "v_4": "dlsakgnpm",
+        "v_5": "jfprwizug",
+        "d": "khojlavtr",
+        "\\lambda": "feoqjznas",
+        "\\pi": "hvlqtsrdi",
+        "\\mu": "vaymetonq",
+        "\\Delta": "xulcrbspi"
+      },
+      "question": "A-6. Let \\( zfdxqprim, rnvtoegla, wmslyubac \\) be the vertices of an acute-angled triangle situated in three-dimensional space. Show that it is always possible to locate two additional points \\( vqspjdzoh \\) and \\( kmetruadn \\) in such a way that no three of the points are collinear and so that the line through any two of the five points is perpendicular to the plane determined by the other three.\n\nIn writing your answer, state clearly the locations at which you place the points \\( vqspjdzoh \\) and \\( kmetruadn \\).",
+      "solution": "A-6.\nLet \\( feoqjznas \\) denote the line through the desired points \\( vqspjdzoh \\) and \\( kmetruadn \\). Let \\( hvlqtsrdi \\) be the plane of \\( zfdxqprim, rnvtoegla, \\) and \\( wmslyubac \\) and let \\( pxvdmlket \\) be the intersection of \\( feoqjznas \\) with \\( hvlqtsrdi \\).\n\nLet \\( ragbnyqsv \\) be the vector \\( \\mathbf{pxvdmlket P}_{u} \\) and \\( \\left|ragbnyqsv\\right| \\) be its magnitude. We wish to have the dot product\n\\[\nkhojlavtr=\\mathbf{P}_{h} \\mathbf{P}_{k} \\cdot \\mathbf{P}_{i} \\boldsymbol{P}_{j}=\\left(qhtzsprac-xoqvkzsbe\\right) \\cdot\\left(lfgdrycvm-snefkvwji\\right)=qhtzsprac \\cdot ykshbqnei-qhtzsprac \\cdot snefkvwji-xoqvkzsbe \\cdot ykshbqnei+xoqvkzsbe \\cdot ykshbqnei\n\\]\nzero for all choices of \\( h, k, i, j \\) as distinct indices in \\( \\{1,2,3,4,5\\} \\).\nSince \\( feoqjznas \\) is to be perpendicular to \\( hvlqtsrdi \\), we must have\n\\[\nxoqvkzsbe \\cdot lfgdrycvm=0 \\text { for } h \\in\\{4,5\\} \\text { and } i \\in\\{1,2,3\\} .\n\\]\n\nIf \\( h, k \\in\\{4,5\\} \\) and \\( i, j \\in\\{1,2,3\\} \\), (2) implies that the dot product \\( khojlavtr \\) of (1) is zero. If \\( h \\in\\{4,5\\} \\) and \\( k, i, j \\in\\{1,2,3\\} \\), (2) implies that the \\( khojlavtr \\) of (1) becomes\n\\[\nkhojlavtr=qhtzsprac \\cdot pmcwohezr-qhtzsprac \\cdot lfgdrycvm=qhtzsprac \\cdot\\left(lfgdrycvm-lfgdrycvm\\right)=\\mathbf{pxvdmlket P}_{k} \\cdot \\mathbf{P}_{i} \\mathbf{P}_{j} .\n\\]\n\nClearly the \\( khojlavtr \\) of (3) are zero simultaneously if and only if \\( pxvdmlket \\) is the orthocenter (i.e., intersection of altitudes) of \\( xulcrbspi zfdxqprim rnvtoegla wmslyubac \\). With this choice of \\( pxvdmlket \\), the vanishing of the \\( khojlavtr \\) of (3) implies\n\\[\ngimrksabe \\cdot cbnytwlod = zhnqtwyop \\cdot cbnytwlod = zhnqtwyop \\cdot gimrksabe .\n\\]\n\nNow let \\( h, i \\in\\{4,5\\} \\) and \\( k, j \\in\\{1,2,3\\} \\). Then (2) implies\n\\[\nkhojlavtr=qhtzsprac \\cdot pmcwohezr+dlsakgnpm \\cdot ugqdzralo .\n\\]\n\nAssuming (4), one sees that all the \\( khojlavtr \\)'s of (5) will be zero if \\( dlsakgnpm \\cdot jfprwizug=-zhnqtwyop \\cdot gimrksabe \\). The hypothesis that \\( xulcrbspi zfdxqprim rnvtoegla wmslyubac \\) is acute-angled tells us that \\( pxvdmlket \\) is inside the triangle. Then at least one (actually, all) of the angles \\( \\Varangle zfdxqprim\\, pxvdmlket\\, rnvtoegla, \\Varangle rnvtoegla\\, pxvdmlket\\, wmslyubac, \\Varangle wmslyubac\\, pxvdmlket\\, zfdxqprim \\) must be obtuse and so the equal dot products of (4) must be negative. Hence \\( dlsakgnpm \\cdot jfprwizug \\) must be positive; this means that \\( vqspjdzoh \\) and \\( kmetruadn \\) must be on the same half-line of \\( feoqjznas \\) determined by \\( pxvdmlket \\).\n\nNow the location of \\( vqspjdzoh \\) and \\( kmetruadn \\) can be given. Let \\( pxvdmlket \\) be the orthocenter of \\( xulcrbspi zfdxqprim rnvtoegla wmslyubac \\) and \\( vaymetonq \\) be either half-line perpendicular to plane \\( zfdxqprim rnvtoegla wmslyubac \\) at \\( pxvdmlket \\). Then \\( vqspjdzoh \\) may be any point on \\( vaymetonq \\) such that \\( \\left|dlsakgnpm\\right| \\) is neither zero nor \\( \\left(-zhnqtwyop \\cdot gimrksabe\\right)^{1 / 2} \\) and \\( kmetruadn \\) must be the unique point on \\( vaymetonq \\) with \\( \\left|jfprwizug\\right|=-zhnqtwyop \\cdot gimrksabe | | dlsakgnpm \\mid. \\) Then each \\( khojlavtr \\) of (1) is zero and no three of the \\( P_{i} \\) are collinear."
+    },
+    "kernel_variant": {
+      "question": "Let \\mathbb{R}^4 be endowed with its standard Euclidean inner product and the usual coordinates (x_1,x_2,x_3,x_4).  An acute-angled triangle with vertices P_1 ,P_2 ,P_3 is situated in the coordinate hyperplane\n  \\Pi  := { x_4 = 0 } .\n\nProve that one can choose two further points P_4 ,P_5 with strictly positive fourth coordinate (x_4>0) such that\n\n(i) no three of the five points are collinear, and\n\n(ii) for every pair of distinct indices i \\neq  j in {1,2,3,4,5} the line P_iP_j is perpendicular to the affine plane determined by the remaining three points.\n\nYour answer has to state explicitly where the points P_4 and P_5 are placed.",
+      "solution": "Step 1.  Notation.\nWork in \\mathbb{R}^4 with the dot-product \\langle \\cdot ,\\cdot \\rangle  and coordinates (x_1,x_2,x_3,x_4).  Denote by e_4=(0,0,0,1) the unit vector in the fourth direction and by \\Pi  the hyperplane x_4=0.  All given points P_1 ,P_2 ,P_3 lie in \\Pi .\n\nFor a point X write v_X := \\to HX, where H will shortly be fixed inside \\Pi .  For brevity put v_u := v_{P_u} (u = 1,\\ldots ,5).\n\nStep 2.  Choosing H (the orthocentre of P_1P_2P_3).\nBecause the triangle is acute, its three altitudes meet at an interior point H that lies in \\Pi .  The defining property\n  v_1\\cdot (v_3-v_2)=v_2\\cdot (v_1-v_3)=v_3\\cdot (v_2-v_1)=0                               (1)\nexpresses that \\to HP_1 is perpendicular to P_2P_3, etc.  From (1) we immediately obtain the equality of the three pairwise inner products\n  \\langle v_1,v_2\\rangle  = \\langle v_2,v_3\\rangle  = \\langle v_3,v_1\\rangle  =: c.                                (2)\n\nWhy c<0.  Since H lies strictly inside the acute triangle, each angle \\angle P_2HP_3, \\angle P_3HP_1, \\angle P_1HP_2 exceeds 90^\\circ.  Hence the angle between each pair of vectors v_i ,v_j is obtuse and the common inner product c is negative.  (For an equilateral triangle one finds c= -|HP_1|^2/2<0, for instance.)\n\nStep 3.  Putting P_4 and P_5 on the perpendicular through H.\nChoose any real number r with\n  0 < r < \\sqrt{-c}.                                                      (3)\nDefine\n  P_4 := H + r e_4,            P_5 := H + s e_4 with s := -c/r > r.     (4)\nBecause r,s>0 the new points lie strictly above \\Pi , and because r\\neq s they are distinct.  Moreover\n  \\langle v_4,v_5\\rangle  = \\langle r e_4, s e_4\\rangle  = rs = -c.                                    (5)\n(The last equality uses the definition of s.)\n\nStep 4.  A useful global orthogonality statement.\nFor four distinct indices h,k,i,j put\n  D(h,k; i,j) := \\langle P_hP_k , P_iP_j\\rangle  = \\langle v_k-v_h , v_j-v_i\\rangle .         (6)\nWe shall prove\n  D(h,k; i,j) = 0 whenever the two pairs {h,k} and {i,j} are disjoint. (7)\n\nLemma.  If (7) holds, then condition (ii) of the problem is satisfied.\nProof.  Fix a line L = P_hP_k.  The remaining three points R={a,b,c} form a (non-degenerate) triangle; two of its side-vectors, say P_aP_b and P_aP_c, are independent and span the plane \\Sigma  determined by R.  Since {h,k} is disjoint from each of {a,b},{a,c}, property (7) yields \\langle L,P_aP_b\\rangle =\\langle L,P_aP_c\\rangle =0.  Hence the direction vector of L is orthogonal to two independent directions in \\Sigma , so L \\perp  \\Sigma .  \\blacksquare \n\nConsequently it suffices to verify (7).  Because all calculations are performed with the vectors v_u, we distinguish three exhaustive situations.\n\nCase A.  The pair {h,k} equals {4,5} and {i,j} \\subset  {1,2,3}.\nThen v_h,v_k are vertical (multiples of e_4) whereas v_i,v_j lie in \\Pi , so the scalar product in (6) vanishes.\n\nCase B.  Exactly one of the four indices is 4 or 5.\nWithout loss of generality take h\\in {4,5} and k,i,j\\in {1,2,3}.  Because v_h \\perp  \\Pi  we get\n  \\langle v_k-v_h , v_j-v_i\\rangle  = \\langle v_k , v_j-v_i\\rangle .                          (8)\nUsing (2) we have \\langle v_k,v_j\\rangle  = \\langle v_k,v_i\\rangle  = c, so the right-hand side of (8) equals c-c = 0.\n\nCase C.  Each pair mixes one old and one new index.\nAssume, say, {h,k} = {4,a} and {i,j} = {5,b} with a,b \\in  {1,2,3}, a\\neq b.  Evaluating (6):\n  \\langle v_a - v_4 , v_b - v_5\\rangle \n   = \\langle v_a , v_b\\rangle  - \\langle v_a , v_5\\rangle  - \\langle v_4 , v_b\\rangle  + \\langle v_4 , v_5\\rangle \n   = c + (-c) = 0,                                                  (9)\nwhere we used v_4,v_5 \\perp  \\Pi  together with (2) and (5).\n\nSince the three cases cover all disjoint pairs of pairs, property (7) is established.  By the lemma, requirement (ii) follows.\n\nStep 5.  No three collinear points.\nThe triangle P_1P_2P_3 is non-degenerate, so its vertices are pairwise distinct.  The new points lie off \\Pi , hence cannot belong to any line lying entirely in \\Pi .  A line connecting one of P_4,P_5 with a point of the original triangle has a non-vanishing e_4-component, so it meets \\Pi  in a single point---therefore it cannot contain a second vertex of the original triangle.  Finally, P_4,P_5 are distinct points on the perpendicular through H, so no third point among the five lies on the line P_4P_5.  Thus no three of the five points are collinear, fulfilling (i).\n\nStep 6.  Summary of the construction.\n*  Let H be the orthocentre of the acute triangle P_1P_2P_3 (H \\in  \\Pi ).\n*  Put c = \\langle \\to HP_1 , \\to HP_2\\rangle  (<0).\n*  Pick any real r with 0 < r < \\sqrt{-c} and set\n  P_4 = H + r e_4,  P_5 = H + (-c/r) e_4 (so P_5 lies farther above \\Pi ).\n\nWith this explicit choice the five points meet both requirements (i) and (ii).",
+      "_meta": {
+        "core_steps": [
+          "Translate the perpendicular-line requirement into dot–product equalities for vectors issued from the foot H of the unknown line λ.",
+          "Force P4 and P5 to lie on a line λ ⟂ plane π(P1P2P3); the mixed-index dot-product conditions then compel H to be the orthocenter of ΔP1P2P3.",
+          "Orthocenter property gives a common negative value c = v1·v2 = v1·v3 = v2·v3.",
+          "Choose collinear vectors v4 , v5 on the same half-line from H so that v4·v5 = −c (pick |v4| freely, then set |v5| = −c / |v4|).",
+          "Verify all dot-products vanish and no three points are collinear, completing the construction."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Ambient Euclidean dimension; only a perpendicular to the original plane is needed, so any n ≥ 3 works.",
+            "original": "3"
+          },
+          "slot2": {
+            "description": "Choice of the half-line of λ (above or below the plane) on which P4 and P5 are placed.",
+            "original": "Either of the two possible half-lines through the orthocenter"
+          },
+          "slot3": {
+            "description": "Distance |HP4| from the orthocenter to P4 along λ, subject only to |HP4| ≠ 0 and |HP4| ≠ √(−c).",
+            "original": "An arbitrary admissible positive real selected by the solver"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

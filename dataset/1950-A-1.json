@@ -1,0 +1,126 @@
+{
+  "index": "1950-A-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "1. For what values of the ratio \\( a / b \\) is the limacon \\( r=a-b \\cos \\theta \\) a convex curve? \\( (a>b>0) \\)",
+  "solution": "Solution. The graph of \\( r=f(\\theta) \\) in polar coordinates is a simple closed curve surrounding the origin if \\( f \\) is periodic with period \\( 2 \\pi \\) and everywhere positive. This is the case in the present problem, since by hypothesis \\( a>b \\) \\( >0 \\). Such a curve is nonsingularly parametrized by \\( \\theta \\) if \\( r^{2}+\\left(r^{\\prime}\\right)^{2}>0 \\), again true in the present problem. The curvature is given by\n\\[\n\\frac{r^{2}+2\\left(r^{\\prime}\\right)^{2}-r r^{\\prime \\prime}}{\\left[r^{2}+\\left(r^{\\prime}\\right)^{2}\\right]^{3 / 2}}=\\kappa\n\\]\n(whenever \\( f \\) is of class \\( C^{2} \\) ).\nThe curve is convex if and only if the curvature is everywhere nonnegative, i.e., if and only if\n\\[\nr^{2}+2\\left(r^{\\prime}\\right)^{2}-r r^{\\prime \\prime} \\geq 0\n\\]\n\nFor \\( r=a-b \\cos \\theta \\), we have \\( r^{\\prime}=b \\sin \\theta, r^{\\prime \\prime}=b \\cos \\theta \\) and\n\\[\nr^{2}+2\\left(r^{\\prime}\\right)^{2}-r r^{\\prime \\prime}=a^{2}+2 b^{2}-3 a b \\cos \\theta\n\\]\n\nThis last expression is always non-negative if and only if\n\\[\na^{2}+2 b^{2}-3 a b \\geq 0\n\\]\n(Since \\( a \\) and \\( b \\) are positive, the least value occurs for \\( \\theta=0 \\).) This is equivalent to\n\\[\n(a-2 b)(a-b) \\geq 0\n\\]\nand since \\( a-b>0 \\) by hypothesis, to\n\\[\na \\geq 2 b\n\\]\n\nThus the limacon is convex if and only if \\( a \\geq 2 b \\).\n\nThe formula for the curvature used above is easily derived. If \\( \\phi \\) is the direction angle of the tangent vector, then \\( \\phi=\\theta+\\psi \\), where \\( \\psi \\) is given by \\( \\tan \\psi=r /(d r / d \\theta) \\). Then by definition the curvature is\n\\[\n\\begin{aligned}\n\\left.\\frac{d \\phi}{d s}=\\frac{d \\phi}{d \\theta} \\right\\rvert\\, \\frac{d s}{d \\theta} & =\\left(r^{2}+\\left(r^{\\prime}\\right)^{2}\\right)^{-1 / 2} \\frac{d}{d \\theta}\\left(\\theta+\\arctan \\frac{r}{r^{\\prime}}\\right) \\\\\n& =\\frac{r^{2}+2\\left(r^{\\prime}\\right)^{2}-r^{\\prime \\prime}}{\\left(r^{2}+\\left(r^{\\prime}\\right)^{2}\\right)^{3 / 2}}\n\\end{aligned}\n\\]\n\nAlternatively, the curvature can be computed from the formula\n\\[\n\\kappa=\\frac{x^{\\prime} y^{\\prime \\prime}-x^{\\prime \\prime} y^{\\prime}}{\\left(x^{\\prime 2}+y^{\\prime 2}\\right)^{3 / 2}}\n\\]\nwhere in the present case\n\\[\n\\begin{array}{l}\nx=r \\cos \\theta=a \\cos \\theta-b \\cos ^{2} \\theta \\\\\ny=r \\sin \\theta=a \\sin \\theta-b \\cos \\theta \\sin \\theta\n\\end{array}\n\\]",
+  "vars": [
+    "f",
+    "r",
+    "s",
+    "x",
+    "y",
+    "\\\\theta",
+    "\\\\phi",
+    "\\\\psi",
+    "\\\\kappa"
+  ],
+  "params": [
+    "a",
+    "b"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "radialfunc",
+        "r": "radiusvar",
+        "s": "arclength",
+        "x": "xcoord",
+        "y": "ycoord",
+        "\\theta": "angletheta",
+        "\\phi": "anglephi",
+        "\\psi": "anglepsi",
+        "\\kappa": "curvature",
+        "a": "paramalpha",
+        "b": "parambeta"
+      },
+      "question": "1. For what values of the ratio \\( paramalpha / parambeta \\) is the limacon \\( radiusvar=paramalpha-parambeta \\cos angletheta \\) a convex curve? \\( (paramalpha>parambeta>0) \\)",
+      "solution": "Solution. The graph of \\( radiusvar=radialfunc(angletheta) \\) in polar coordinates is a simple closed curve surrounding the origin if \\( radialfunc \\) is periodic with period \\( 2 \\pi \\) and everywhere positive. This is the case in the present problem, since by hypothesis \\( paramalpha>parambeta>0 \\). Such a curve is nonsingularly parametrized by \\( angletheta \\) if \\( radiusvar^{2}+\\left(radiusvar^{\\prime}\\right)^{2}>0 \\), again true in the present problem. The curvature is given by\n\\[\n\\frac{radiusvar^{2}+2\\left(radiusvar^{\\prime}\\right)^{2}-radiusvar \\; radiusvar^{\\prime \\prime}}{\\left[radiusvar^{2}+\\left(radiusvar^{\\prime}\\right)^{2}\\right]^{3 / 2}}=curvature\n\\]\n(whenever \\( radialfunc \\) is of class \\( C^{2} \\) ).\nThe curve is convex if and only if the curvature is everywhere nonnegative, i.e., if and only if\n\\[\nradiusvar^{2}+2\\left(radiusvar^{\\prime}\\right)^{2}-radiusvar \\; radiusvar^{\\prime \\prime} \\geq 0\n\\]\n\nFor \\( radiusvar=paramalpha-parambeta \\cos angletheta \\), we have \\( radiusvar^{\\prime}=parambeta \\sin angletheta, \\; radiusvar^{\\prime \\prime}=parambeta \\cos angletheta \\) and\n\\[\nradiusvar^{2}+2\\left(radiusvar^{\\prime}\\right)^{2}-radiusvar \\; radiusvar^{\\prime \\prime}=paramalpha^{2}+2 parambeta^{2}-3 paramalpha \\; parambeta \\cos angletheta\n\\]\n\nThis last expression is always non-negative if and only if\n\\[\nparamalpha^{2}+2 parambeta^{2}-3 paramalpha \\; parambeta \\geq 0\n\\]\n(Since \\( paramalpha \\) and \\( parambeta \\) are positive, the least value occurs for \\( angletheta=0 \\).) This is equivalent to\n\\[\n(paramalpha-2 \\; parambeta)(paramalpha-parambeta) \\geq 0\n\\]\nand since \\( paramalpha-parambeta>0 \\) by hypothesis, to\n\\[\nparamalpha \\geq 2 \\; parambeta\n\\]\n\nThus the limacon is convex if and only if \\( paramalpha \\geq 2 \\; parambeta \\).\n\nThe formula for the curvature used above is easily derived. If \\( anglephi \\) is the direction angle of the tangent vector, then \\( anglephi=angletheta+anglepsi \\), where \\( anglepsi \\) is given by \\( \\tan anglepsi = radiusvar /(d radiusvar / d angletheta) \\). Then by definition the curvature is\n\\[\n\\begin{aligned}\n\\left.\\frac{d \\; anglephi}{d \\; arclength}=\\frac{d \\; anglephi}{d \\; angletheta} \\right\\rvert\\, \\frac{d \\; arclength}{d \\; angletheta} & =\\left(radiusvar^{2}+\\left(radiusvar^{\\prime}\\right)^{2}\\right)^{-1 / 2} \\frac{d}{d \\; angletheta}\\left(angletheta+\\arctan \\frac{radiusvar}{radiusvar^{\\prime}}\\right) \\\\\n& =\\frac{radiusvar^{2}+2\\left(radiusvar^{\\prime}\\right)^{2}-radiusvar^{\\prime \\prime}}{\\left(radiusvar^{2}+\\left(radiusvar^{\\prime}\\right)^{2}\\right)^{3 / 2}}\n\\end{aligned}\n\\]\n\nAlternatively, the curvature can be computed from the formula\n\\[\ncurvature=\\frac{xcoord^{\\prime} \\; ycoord^{\\prime \\prime}-xcoord^{\\prime \\prime} \\; ycoord^{\\prime}}{\\left(xcoord^{\\prime 2}+ycoord^{\\prime 2}\\right)^{3 / 2}}\n\\]\nwhere in the present case\n\\[\n\\begin{array}{l}\nxcoord=radiusvar \\cos angletheta = paramalpha \\cos angletheta - parambeta \\cos^{2} angletheta \\\\\nycoord=radiusvar \\sin angletheta = paramalpha \\sin angletheta - parambeta \\cos angletheta \\sin angletheta\n\\end{array}\n\\]\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "boulevard",
+        "r": "marshmallow",
+        "s": "catapult",
+        "x": "chandelier",
+        "y": "driftwood",
+        "\\\\theta": "evergreen",
+        "\\\\phi": "paperback",
+        "\\\\psi": "tambourine",
+        "\\\\kappa": "tortoise",
+        "a": "nebula",
+        "b": "sapphire"
+      },
+      "question": "1. For what values of the ratio \\( nebula / sapphire \\) is the limacon \\( marshmallow=nebula-sapphire \\cos evergreen \\) a convex curve? \\( (nebula>sapphire>0) \\)",
+      "solution": "Solution. The graph of \\( marshmallow=\\boulevard(evergreen) \\) in polar coordinates is a simple closed curve surrounding the origin if \\( boulevard \\) is periodic with period \\( 2 \\pi \\) and everywhere positive. This is the case in the present problem, since by hypothesis \\( nebula>sapphire \\) \\( >0 \\). Such a curve is nonsingularly parametrized by \\( evergreen \\) if \\( marshmallow^{2}+\\left(marshmallow^{\\prime}\\right)^{2}>0 \\), again true in the present problem. The curvature is given by\n\\[\n\\frac{marshmallow^{2}+2\\left(marshmallow^{\\prime}\\right)^{2}-marshmallow\\,marshmallow^{\\prime \\prime}}{\\left[marshmallow^{2}+\\left(marshmallow^{\\prime}\\right)^{2}\\right]^{3 / 2}}=tortoise\n\\]\n(whenever \\( boulevard \\) is of class \\( C^{2} \\) ).\nThe curve is convex if and only if the curvature is everywhere nonnegative, i.e., if and only if\n\\[\nmarshmallow^{2}+2\\left(marshmallow^{\\prime}\\right)^{2}-marshmallow\\,marshmallow^{\\prime \\prime} \\geq 0\n\\]\n\nFor \\( marshmallow=nebula-sapphire \\cos evergreen \\), we have \\( marshmallow^{\\prime}=sapphire \\sin evergreen,\\; marshmallow^{\\prime \\prime}=sapphire \\cos evergreen \\) and\n\\[\nmarshmallow^{2}+2\\left(marshmallow^{\\prime}\\right)^{2}-marshmallow\\,marshmallow^{\\prime \\prime}=nebula^{2}+2 sapphire^{2}-3 nebula sapphire \\cos evergreen\n\\]\n\nThis last expression is always non-negative if and only if\n\\[\nnebula^{2}+2 sapphire^{2}-3 nebula sapphire \\geq 0\n\\]\n(Since \\( nebula \\) and \\( sapphire \\) are positive, the least value occurs for \\( evergreen=0 \\).) This is equivalent to\n\\[\n(nebula-2 sapphire)(nebula-sapphire) \\geq 0\n\\]\nand since \\( nebula-sapphire>0 \\) by hypothesis, to\n\\[\nnebula \\geq 2 sapphire\n\\]\n\nThus the limacon is convex if and only if \\( nebula \\geq 2 sapphire \\).\n\nThe formula for the curvature used above is easily derived. If \\( paperback \\) is the direction angle of the tangent vector, then \\( paperback=evergreen+tambourine \\), where \\( tambourine \\) is given by \\( \\tan tambourine=marshmallow /(d marshmallow / d evergreen) \\). Then by definition the curvature is\n\\[\n\\begin{aligned}\n\\left.\\frac{d paperback}{d catapult}=\\frac{d paperback}{d evergreen} \\right\\rvert\\, \\frac{d catapult}{d evergreen} & =\\left(marshmallow^{2}+\\left(marshmallow^{\\prime}\\right)^{2}\\right)^{-1 / 2} \\frac{d}{d evergreen}\\left(evergreen+\\arctan \\frac{marshmallow}{marshmallow^{\\prime}}\\right) \\\\ & =\\frac{marshmallow^{2}+2\\left(marshmallow^{\\prime}\\right)^{2}-marshmallow^{\\prime \\prime}}{\\left(marshmallow^{2}+\\left(marshmallow^{\\prime}\\right)^{2}\\right)^{3 / 2}}\n\\end{aligned}\n\\]\n\nAlternatively, the curvature can be computed from the formula\n\\[\ntortoise=\\frac{chandelier^{\\prime} \\,driftwood^{\\prime \\prime}-chandelier^{\\prime \\prime} \\,driftwood^{\\prime}}{\\left(chandelier^{\\prime 2}+driftwood^{\\prime 2}\\right)^{3 / 2}}\n\\]\nwhere in the present case\n\\[\n\\begin{array}{l}\nchandelier=marshmallow \\cos evergreen=nebula \\cos evergreen-sapphire \\cos ^{2} evergreen \\\\\ndriftwood=marshmallow \\sin evergreen=nebula \\sin evergreen-sapphire \\cos evergreen \\sin evergreen\n\\end{array}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "constantvalue",
+        "r": "centerpoint",
+        "s": "straightline",
+        "x": "verticalcoord",
+        "y": "horizontalcoord",
+        "\\theta": "lengthunit",
+        "\\phi": "directionless",
+        "\\psi": "scalarvalue",
+        "\\kappa": "flatness",
+        "a": "minuscule",
+        "b": "gigantic"
+      },
+      "question": "1. For what values of the ratio \\( minuscule / gigantic \\) is the limacon \\( centerpoint=minuscule-gigantic \\cos lengthunit \\) a convex curve? \\( (minuscule>gigantic>0) \\)",
+      "solution": "Solution. The graph of \\( centerpoint=constantvalue(lengthunit) \\) in polar coordinates is a simple closed curve surrounding the origin if \\( constantvalue \\) is periodic with period \\( 2 \\pi \\) and everywhere positive. This is the case in the present problem, since by hypothesis \\( minuscule>gigantic \\) \\( >0 \\). Such a curve is nonsingularly parametrized by \\( lengthunit \\) if \\( centerpoint^{2}+\\left(centerpoint^{\\prime}\\right)^{2}>0 \\), again true in the present problem. The curvature is given by\n\\[\n\\frac{centerpoint^{2}+2\\left(centerpoint^{\\prime}\\right)^{2}-centerpoint centerpoint^{\\prime \\prime}}{\\left[centerpoint^{2}+\\left(centerpoint^{\\prime}\\right)^{2}\\right]^{3 / 2}}=flatness\n\\]\n(whenever \\( constantvalue \\) is of class \\( C^{2} \\) ).\nThe curve is convex if and only if the curvature is everywhere nonnegative, i.e., if and only if\n\\[\ncenterpoint^{2}+2\\left(centerpoint^{\\prime}\\right)^{2}-centerpoint centerpoint^{\\prime \\prime} \\geq 0\n\\]\n\nFor \\( centerpoint=minuscule-gigantic \\cos lengthunit \\), we have \\( centerpoint^{\\prime}=gigantic \\sin lengthunit, centerpoint^{\\prime \\prime}=gigantic \\cos lengthunit \\) and\n\\[\ncenterpoint^{2}+2\\left(centerpoint^{\\prime}\\right)^{2}-centerpoint centerpoint^{\\prime \\prime}=minuscule^{2}+2 gigantic^{2}-3 minuscule gigantic \\cos lengthunit\n\\]\n\nThis last expression is always non-negative if and only if\n\\[\nminuscule^{2}+2 gigantic^{2}-3 minuscule gigantic \\geq 0\n\\]\n(Since \\( minuscule \\) and \\( gigantic \\) are positive, the least value occurs for \\( lengthunit=0 \\).) This is equivalent to\n\\[\n(minuscule-2 gigantic)(minuscule-gigantic) \\geq 0\n\\]\nand since \\( minuscule-gigantic>0 \\) by hypothesis, to\n\\[\nminuscule \\geq 2 gigantic\n\\]\n\nThus the limacon is convex if and only if \\( minuscule \\geq 2 gigantic \\).\n\nThe formula for the curvature used above is easily derived. If \\( directionless \\) is the direction angle of the tangent vector, then \\( directionless=lengthunit+scalarvalue \\), where \\( scalarvalue \\) is given by \\( \\tan scalarvalue=centerpoint /(d centerpoint / d lengthunit) \\). Then by definition the curvature is\n\\[\n\\begin{aligned}\n\\left.\\frac{d directionless}{d straightline}=\\frac{d directionless}{d lengthunit} \\right\\rvert\\, \\frac{d straightline}{d lengthunit} & =\\left(centerpoint^{2}+\\left(centerpoint^{\\prime}\\right)^{2}\\right)^{-1 / 2} \\frac{d}{d lengthunit}\\left(lengthunit+\\arctan \\frac{centerpoint}{centerpoint^{\\prime}}\\right) \\\\\n& =\\frac{centerpoint^{2}+2\\left(centerpoint^{\\prime}\\right)^{2}-centerpoint^{\\prime \\prime}}{\\left(centerpoint^{2}+\\left(centerpoint^{\\prime}\\right)^{2}\\right)^{3 / 2}}\n\\end{aligned}\n\\]\n\nAlternatively, the curvature can be computed from the formula\n\\[\nflatness=\\frac{verticalcoord^{\\prime} horizontalcoord^{\\prime \\prime}-verticalcoord^{\\prime \\prime} horizontalcoord^{\\prime}}{\\left(verticalcoord^{\\prime 2}+horizontalcoord^{\\prime 2}\\right)^{3 / 2}}\n\\]\nwhere in the present case\n\\[\n\\begin{array}{l}\nverticalcoord=centerpoint \\cos lengthunit=minuscule \\cos lengthunit-gigantic \\cos ^{2} lengthunit \\\\\nhorizontalcoord=centerpoint \\sin lengthunit=minuscule \\sin lengthunit-gigantic \\cos lengthunit \\sin lengthunit\n\\end{array}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "f": "zypqmodn",
+        "r": "gshvdial",
+        "s": "vbtrocen",
+        "x": "lkapwjrm",
+        "y": "qtonyheb",
+        "\\theta": "mdwaerfg",
+        "\\phi": "nsjclvak",
+        "\\psi": "khogtuer",
+        "\\kappa": "jfihplow",
+        "a": "hqztrnse",
+        "b": "peflgkdu"
+      },
+      "question": "1. For what values of the ratio \\( hqztrnse / peflgkdu \\) is the limacon \\( gshvdial=hqztrnse-peflgkdu \\cos mdwaerfg \\) a convex curve? \\( (hqztrnse>peflgkdu>0) \\)",
+      "solution": "Solution. The graph of \\( gshvdial=zypqmodn(mdwaerfg) \\) in polar coordinates is a simple closed curve surrounding the origin if \\( zypqmodn \\) is periodic with period \\( 2 \\pi \\) and everywhere positive. This is the case in the present problem, since by hypothesis \\( hqztrnse>peflgkdu \\) \\( >0 \\). Such a curve is nonsingularly parametrized by \\( mdwaerfg \\) if \\( gshvdial^{2}+\\left(gshvdial^{\\prime}\\right)^{2}>0 \\), again true in the present problem. The curvature is given by\n\\[\n\\frac{gshvdial^{2}+2\\left(gshvdial^{\\prime}\\right)^{2}-gshvdial\\, gshvdial^{\\prime \\prime}}{\\left[gshvdial^{2}+\\left(gshvdial^{\\prime}\\right)^{2}\\right]^{3 / 2}}=jfihplow\n\\]\n(whenever \\( zypqmodn \\) is of class \\( C^{2} \\) ).\n\nThe curve is convex if and only if the curvature is everywhere nonnegative, i.e., if and only if\n\\[\n gshvdial^{2}+2\\left(gshvdial^{\\prime}\\right)^{2}-gshvdial\\, gshvdial^{\\prime \\prime} \\ge 0\n\\]\n\nFor \\( gshvdial=hqztrnse-peflgkdu \\cos mdwaerfg \\), we have \\( gshvdial^{\\prime}=peflgkdu \\sin mdwaerfg,\\ gshvdial^{\\prime \\prime}=peflgkdu \\cos mdwaerfg \\) and\n\\[\n gshvdial^{2}+2\\left(gshvdial^{\\prime}\\right)^{2}-gshvdial\\, gshvdial^{\\prime \\prime}=hqztrnse^{2}+2 peflgkdu^{2}-3 hqztrnse peflgkdu \\cos mdwaerfg\n\\]\n\nThis last expression is always non-negative if and only if\n\\[\n hqztrnse^{2}+2 peflgkdu^{2}-3 hqztrnse peflgkdu \\ge 0\n\\]\n(Since \\( hqztrnse \\) and \\( peflgkdu \\) are positive, the least value occurs for \\( mdwaerfg=0 \\).) This is equivalent to\n\\[\n (hqztrnse-2 peflgkdu)(hqztrnse-peflgkdu) \\ge 0\n\\]\nand since \\( hqztrnse-peflgkdu>0 \\) by hypothesis, to\n\\[\n hqztrnse \\ge 2 peflgkdu\n\\]\n\nThus the limacon is convex if and only if \\( hqztrnse \\ge 2 peflgkdu \\).\n\nThe formula for the curvature used above is easily derived. If \\( nsjclvak \\) is the direction angle of the tangent vector, then \\( nsjclvak=mdwaerfg+khogtuer \\), where \\( khogtuer \\) is given by \\( \\tan khogtuer=gshvdial /(d gshvdial / d mdwaerfg) \\). Then by definition the curvature is\n\\[\n\\begin{aligned}\n\\left.\\frac{d nsjclvak}{d vbtrocen}=\\frac{d nsjclvak}{d mdwaerfg} \\right\\rvert\\, \\frac{d vbtrocen}{d mdwaerfg} & =\\left(gshvdial^{2}+\\left(gshvdial^{\\prime}\\right)^{2}\\right)^{-1 / 2} \\frac{d}{d mdwaerfg}\\left(mdwaerfg+\\arctan \\frac{gshvdial}{gshvdial^{\\prime}}\\right) \\\\\n& =\\frac{gshvdial^{2}+2\\left(gshvdial^{\\prime}\\right)^{2}-gshvdial\\, gshvdial^{\\prime \\prime}}{\\left(gshvdial^{2}+\\left(gshvdial^{\\prime}\\right)^{2}\\right)^{3 / 2}}\n\\end{aligned}\n\\]\n\nAlternatively, the curvature can be computed from the formula\n\\[\n jfihplow=\\frac{lkapwjrm^{\\prime} qtonyheb^{\\prime \\prime}-lkapwjrm^{\\prime \\prime} qtonyheb^{\\prime}}{\\left(lkapwjrm^{\\prime 2}+qtonyheb^{\\prime 2}\\right)^{3 / 2}}\n\\]\nwhere in the present case\n\\[\n\\begin{array}{l}\n lkapwjrm=gshvdial \\cos mdwaerfg=hqztrnse \\cos mdwaerfg-peflgkdu \\cos ^{2} mdwaerfg \\\\\n qtonyheb=gshvdial \\sin mdwaerfg=hqztrnse \\sin mdwaerfg-peflgkdu \\cos mdwaerfg \\sin mdwaerfg\n\\end{array}\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let a and b be real numbers with a>2b>0 and consider the polar curve\n\\[\n      r(\\theta)=a-2b\\sin\\theta,\\qquad 0\\le \\theta\\le 2\\pi .\n\\]\n(The hypothesis a>2b guarantees r(\\theta)>0, so the curve is simple and surrounds the origin.)  For what values of the ratio a/b is this curve convex?",
+      "solution": "The curvature criterion gives\n      N(\\theta )=r^2+2(r')^2-r r''=(a-2b sin\\theta )^2+2(-2b cos\\theta )^2-(a-2b sin\\theta )(2b sin\\theta )\n           =a^2-6ab sin\\theta +8b^2.\nThe minimum value of this linear function of sin\\theta  occurs at sin\\theta =1 and equals\n      N_min=a^2-6ab+8b^2=(a-2b)(a-4b).\nBecause a>2b>0, the factor (a-2b) is already positive, so N_min\\geq 0 \\Leftrightarrow  a-4b\\geq 0.\nThus the curve is convex iff\n      a\\geq 4b   \\Leftrightarrow    a/b\\geq 4.\n\nHence, under the standing condition a>2b>0, the polar curve r(\\theta )=a-2b sin\\theta  is convex precisely for ratios a/b not less than 4.",
+      "_meta": {
+        "core_steps": [
+          "Invoke polar-curvature test: N(θ)=r²+2(r′)²−r r″; convex ⇔ N(θ)≥0.",
+          "Insert r(θ)=a−b·cosθ; compute r′, r″ and hence N(θ)=a²+2b²−3ab·cosθ.",
+          "Note N is minimized where cosθ=1, so require a²+2b²−3ab≥0.",
+          "Factor to (a−2b)(a−b)≥0.",
+          "With a>b>0, conclude a≥2b."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Phase of the cosine term can be shifted (cosθ → cos(θ+φ) or sinθ); only the location of the minimum changes, not the argument.",
+            "original": "cosθ"
+          },
+          "slot2": {
+            "description": "Positivity assumption can be relaxed to any condition guaranteeing r(θ)>0 (e.g., a>|b| instead of a>b>0); curvature reasoning is unchanged.",
+            "original": "a>b>0"
+          },
+          "slot3": {
+            "description": "A constant multiplier on the cosine term, r=a−c·b·cosθ with fixed c>0, leaves the algebraic chain identical; only replaces 2b by 2c b in the final inequality.",
+            "original": "implicit multiplier c=1 in a−b·cosθ"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

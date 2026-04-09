@@ -1,0 +1,160 @@
+{
+  "index": "1938-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "1. A solid is bounded by two bases in the horizontal planes \\( z=h / 2 \\) and \\( z \\) \\( =-h / 2 \\), and by such a surface that the area of every section in a horizontal plane is given by a formula of the sort\n\\[\n\\text { Area }=a_{0} z^{3}+a_{1} z^{2}+a_{2} z+a_{3}\n\\]\n(where as special cases some of the coefficients may be 0 ). Show that the volume is given by the formula\n\\[\nV=\\frac{1}{6} h\\left[B_{1}+B_{2}+4 M\\right]\n\\]\nwhere \\( B_{1} \\) and \\( B_{2} \\) are the areas of the bases, and \\( M \\) is the area of the middle horizontal section. Show that the formulas for the volume of a cone and of a sphere can be included in this formula when \\( a_{0}=0 \\).",
+  "solution": "Solution. The volume in question is given by\n\\[\n\\begin{aligned}\nV & =\\int_{-h / 2}^{h / 2}\\left(a_{0} z^{3}+a_{1} z^{2}+a_{2} z+a_{3}\\right) d z \\\\\n& =\\frac{a_{1} h^{3}}{12}+a_{3} h .\n\\end{aligned}\n\\]\n\nOn the other hand, the base areas and \\( M \\) are given by\n\\[\n\\begin{array}{l}\nB_{1}=\\frac{a_{0} h^{3}}{8}+\\frac{a_{1} h^{2}}{4}+\\frac{a_{2} h}{2}+a_{3} \\\\\nB_{2}=-\\frac{a_{0} h^{3}}{8}+\\frac{a_{1} h^{2}}{4}-\\frac{a_{2} h}{2}+a_{3} \\\\\nM=a_{3},\n\\end{array}\n\\]\nso that the suggested expression (1/6)h[B1+ \\( \\left.B_{2}+4 M\\right] \\) works out to be\n\\[\n\\frac{1}{6} h\\left(\\frac{a_{1} h^{2}}{2}+6 a_{3}\\right)=\\frac{a_{1} h^{3}}{12}+a_{3} h=V\n\\]\nas required.\nThe formula \\( V=(1 / 6) h\\left(B_{1}+B_{2}+4 M\\right) \\) is known in solid geometry as the prismoidal formula. It is closely related to Simpson's rule in numerical integration.\n\nIndeed, for functions of class \\( C^{4} \\) it can be proved that\n\\[\n\\int_{-h 2}^{h 2} f(z) d z=(1 / 6) h[f(-h / 2)+4 f(0)+f(h / 2)]+E\n\\]\nwhere \\( E=-(1 / 2880) h^{5} f^{(4)}(\\xi) \\) for some \\( \\xi \\) lying in \\( (-h / 2, h / 2) \\). See Kunz, Numerical Analysis, McGraw-Hill, 1957, p. 146, or any other book on numerical integration.\n\nIn many cases the error term \\( E \\) is very small and therefore we may use the approximate relation\n\\[\n\\int_{-h 2}^{h 2} f(z) d z=(h / 6)[f(-h / 2)+4 f(0)+f(h / 2)] .\n\\]\n\nThis approximation is known as Simpson's rule. In particular, when \\( f \\) is a polynomial of degree at most three, \\( E=0 \\) and the result is exact.\n\nFor the special cases of the cone and the sphere, we can proceed as follows. For the cone, let the vertex be in the plane \\( z=h / 2 \\) and the base in the plane \\( z=-h / 2 \\). Then the area of a cross-section at level \\( z \\) is given by \\( A=\\left(B / h^{2}\\right)(z-(h / 2))^{2} \\) where \\( B \\) is the area of the base. Since the expression for \\( A \\) is a polynomial of degree two,\n\\[\nV=(h / 6)(B+4(B / 4)+0)=(1 / 3) B h,\n\\]\na well-known result.\nFor the sphere of radius \\( r=h / 2 \\), included between the two planes \\( z=-h / 2 \\) and \\( z=h / 2 \\), the cross-sectional area at level \\( z \\) is given by \\( A \\) \\( =\\pi\\left(r^{2}-z^{2}\\right) \\). This expression for \\( A \\) is also a polynomial of degree 2 , and we get\n\\[\nV=(h / 6)\\left(4 \\pi r^{2}\\right)=\\frac{4}{3} \\pi r^{3} .\n\\]\n\nFor both the sphere and the cone, the coefficient \\( a_{0} \\) of \\( z^{3} \\) in the crosssection area formula is zero.",
+  "vars": [
+    "z",
+    "V",
+    "A",
+    "f"
+  ],
+  "params": [
+    "h",
+    "a_0",
+    "a_1",
+    "a_2",
+    "a_3",
+    "B_1",
+    "B_2",
+    "M",
+    "E",
+    "\\\\xi",
+    "r",
+    "B",
+    "C"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "z": "heightaxis",
+        "V": "solvolume",
+        "A": "crossarea",
+        "f": "genericfun",
+        "h": "totalheight",
+        "a_0": "coeffcubic",
+        "a_1": "coeffquad",
+        "a_2": "coefflin",
+        "a_3": "coeffconst",
+        "B_1": "baseonearea",
+        "B_2": "basetwoarea",
+        "M": "midarea",
+        "E": "simpsonerr",
+        "\\xi": "errlocation",
+        "r": "sphererad",
+        "B": "conebasear",
+        "C": "constantc"
+      },
+      "question": "1. A solid is bounded by two bases in the horizontal planes \\( heightaxis=totalheight / 2 \\) and \\( heightaxis \\) \\( =-totalheight / 2 \\), and by such a surface that the area of every section in a horizontal plane is given by a formula of the sort\n\\[\n\\text { Area }=coeffcubic heightaxis^{3}+coeffquad heightaxis^{2}+coefflin heightaxis+coeffconst\n\\]\n(where as special cases some of the coefficients may be 0 ). Show that the volume is given by the formula\n\\[\nsolvolume=\\frac{1}{6} totalheight\\left[baseonearea+basetwoarea+4 midarea\\right]\n\\]\nwhere \\( baseonearea \\) and \\( basetwoarea \\) are the areas of the bases, and \\( midarea \\) is the area of the middle horizontal section. Show that the formulas for the volume of a cone and of a sphere can be included in this formula when \\( coeffcubic=0 \\).",
+      "solution": "Solution. The volume in question is given by\n\\[\n\\begin{aligned}\nsolvolume & =\\int_{-totalheight / 2}^{totalheight / 2}\\left(coeffcubic heightaxis^{3}+coeffquad heightaxis^{2}+coefflin heightaxis+coeffconst\\right) d heightaxis \\\n& =\\frac{coeffquad totalheight^{3}}{12}+coeffconst totalheight .\n\\end{aligned}\n\\]\n\nOn the other hand, the base areas and \\( midarea \\) are given by\n\\[\n\\begin{array}{l}\nbaseonearea=\\frac{coeffcubic totalheight^{3}}{8}+\\frac{coeffquad totalheight^{2}}{4}+\\frac{coefflin totalheight}{2}+coeffconst \\\\\nbasetwoarea=-\\frac{coeffcubic totalheight^{3}}{8}+\\frac{coeffquad totalheight^{2}}{4}-\\frac{coefflin totalheight}{2}+coeffconst \\\\\nmidarea=coeffconst,\n\\end{array}\n\\]\nso that the suggested expression (1/6)totalheight\\([baseonearea+basetwoarea+4 midarea]\\) works out to be\n\\[\n\\frac{1}{6} totalheight\\left(\\frac{coeffquad totalheight^{2}}{2}+6\\ coeffconst\\right)=\\frac{coeffquad totalheight^{3}}{12}+coeffconst totalheight=solvolume\n\\]\nas required.\n\nThe formula \\( solvolume=(1 / 6)\\ totalheight\\left(baseonearea+basetwoarea+4 midarea\\right) \\) is known in solid geometry as the prismoidal formula. It is closely related to Simpson's rule in numerical integration.\n\nIndeed, for functions of class \\( constantc^{4} \\) it can be proved that\n\\[\n\\int_{-totalheight 2}^{totalheight 2} genericfun(heightaxis)\\, d heightaxis=(1 / 6)\\ totalheight\\,[genericfun(-totalheight / 2)+4\\ genericfun(0)+genericfun(totalheight / 2)]+simpsonerr\n\\]\nwhere \\( simpsonerr=-(1 / 2880)\\ totalheight^{5}\\ genericfun^{(4)}(errlocation) \\) for some \\( errlocation \\) lying in \\( (-totalheight / 2, totalheight / 2) \\). See Kunz, Numerical Analysis, McGraw-Hill, 1957, p. 146, or any other book on numerical integration.\n\nIn many cases the error term \\( simpsonerr \\) is very small and therefore we may use the approximate relation\n\\[\n\\int_{-totalheight 2}^{totalheight 2} genericfun(heightaxis)\\, d heightaxis=(totalheight / 6)[genericfun(-totalheight / 2)+4\\ genericfun(0)+genericfun(totalheight / 2)] .\n\\]\n\nThis approximation is known as Simpson's rule. In particular, when \\( genericfun \\) is a polynomial of degree at most three, \\( simpsonerr=0 \\) and the result is exact.\n\nFor the special cases of the cone and the sphere, we can proceed as follows. For the cone, let the vertex be in the plane \\( heightaxis=totalheight / 2 \\) and the base in the plane \\( heightaxis=-totalheight / 2 \\). Then the area of a cross-section at level \\( heightaxis \\) is given by \\( crossarea=\\left(conebasear / totalheight^{2}\\right)(heightaxis-(totalheight / 2))^{2} \\) where \\( conebasear \\) is the area of the base. Since the expression for \\( crossarea \\) is a polynomial of degree two,\n\\[\nsolvolume=(totalheight / 6)(conebasear+4(conebasear / 4)+0)=(1 / 3)\\ conebasear\\ totalheight,\n\\]\na well-known result.\n\nFor the sphere of radius \\( sphererad=totalheight / 2 \\), included between the two planes \\( heightaxis=-totalheight / 2 \\) and \\( heightaxis=totalheight / 2 \\), the cross-sectional area at level \\( heightaxis \\) is given by \\( crossarea =\\pi\\left(sphererad^{2}-heightaxis^{2}\\right) \\). This expression for \\( crossarea \\) is also a polynomial of degree 2, and we get\n\\[\nsolvolume=(totalheight / 6)\\left(4\\pi sphererad^{2}\\right)=\\frac{4}{3}\\ \\pi\\ sphererad^{3} .\n\\]\n\nFor both the sphere and the cone, the coefficient \\( coeffcubic \\) of \\( heightaxis^{3} \\) in the cross-section area formula is zero."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "z": "watermelon",
+        "V": "photograph",
+        "A": "submarine",
+        "f": "blueberry",
+        "h": "telescope",
+        "a_0": "crocodile",
+        "a_1": "toothbrush",
+        "a_2": "newspaper",
+        "a_3": "chocolate",
+        "B_1": "avalanche",
+        "B_2": "hairbrush",
+        "M": "kangaroo",
+        "E": "bookshelf",
+        "\\\\xi": "telephone",
+        "r": "breadcrumb",
+        "B": "daffodil",
+        "C": "lemonade"
+      },
+      "question": "1. A solid is bounded by two bases in the horizontal planes \\( watermelon=telescope / 2 \\) and \\( watermelon \\) \\( =-telescope / 2 \\), and by such a surface that the area of every section in a horizontal plane is given by a formula of the sort\n\\[\n\\text { Area }=crocodile watermelon^{3}+toothbrush watermelon^{2}+newspaper watermelon+chocolate\n\\]\n(where as special cases some of the coefficients may be 0 ). Show that the volume is given by the formula\n\\[\nphotograph=\\frac{1}{6} telescope\\left[avalanche+hairbrush+4 kangaroo\\right]\n\\]\nwhere \\( avalanche \\) and \\( hairbrush \\) are the areas of the bases, and \\( kangaroo \\) is the area of the middle horizontal section. Show that the formulas for the volume of a cone and of a sphere can be included in this formula when \\( crocodile=0 \\).",
+      "solution": "Solution. The volume in question is given by\n\\[\n\\begin{aligned}\nphotograph & =\\int_{-telescope / 2}^{telescope / 2}\\left(crocodile watermelon^{3}+toothbrush watermelon^{2}+newspaper watermelon+chocolate\\right) d watermelon \\\\\n& =\\frac{toothbrush telescope^{3}}{12}+chocolate telescope .\n\\end{aligned}\n\\]\n\nOn the other hand, the base areas and \\( kangaroo \\) are given by\n\\[\n\\begin{array}{l}\navalanche=\\frac{crocodile telescope^{3}}{8}+\\frac{toothbrush telescope^{2}}{4}+\\frac{newspaper telescope}{2}+chocolate \\\\\nhairbrush=-\\frac{crocodile telescope^{3}}{8}+\\frac{toothbrush telescope^{2}}{4}-\\frac{newspaper telescope}{2}+chocolate \\\\\nkangaroo=chocolate,\n\\end{array}\n\\]\nso that the suggested expression (1/6)telescope[\\( \\left.avalanche+hairbrush+4 kangaroo\\right] \\) works out to be\n\\[\n\\frac{1}{6} telescope\\left(\\frac{toothbrush telescope^{2}}{2}+6 chocolate\\right)=\\frac{toothbrush telescope^{3}}{12}+chocolate telescope=photograph\n\\]\nas required.\nThe formula \\( photograph=(1 / 6) telescope\\left(avalanche+hairbrush+4 kangaroo\\right) \\) is known in solid geometry as the prismoidal formula. It is closely related to Simpson's rule in numerical integration.\n\nIndeed, for functions of class \\( lemonade^{4} \\) it can be proved that\n\\[\n\\int_{-telescope 2}^{telescope 2} blueberry(watermelon) d watermelon=(1 / 6) telescope[blueberry(-telescope / 2)+4 blueberry(0)+blueberry(telescope / 2)]+bookshelf\n\\]\nwhere \\( bookshelf=-(1 / 2880) telescope^{5} blueberry^{(4)}(telephone) \\) for some \\( telephone \\) lying in \\( (-telescope / 2, telescope / 2) \\). See Kunz, Numerical Analysis, McGraw-Hill, 1957, p. 146, or any other book on numerical integration.\n\nIn many cases the error term \\( bookshelf \\) is very small and therefore we may use the approximate relation\n\\[\n\\int_{-telescope 2}^{telescope 2} blueberry(watermelon) d watermelon=(telescope / 6)[blueberry(-telescope / 2)+4 blueberry(0)+blueberry(telescope / 2)] .\n\\]\n\nThis approximation is known as Simpson's rule. In particular, when \\( blueberry \\) is a polynomial of degree at most three, \\( bookshelf=0 \\) and the result is exact.\n\nFor the special cases of the cone and the sphere, we can proceed as follows. For the cone, let the vertex be in the plane \\( watermelon=telescope / 2 \\) and the base in the plane \\( watermelon=-telescope / 2 \\). Then the area of a cross-section at level \\( watermelon \\) is given by \\( submarine=\\left(daffodil / telescope^{2}\\right)(watermelon-(telescope / 2))^{2} \\) where \\( daffodil \\) is the area of the base. Since the expression for \\( submarine \\) is a polynomial of degree two,\n\\[\nphotograph=(telescope / 6)(daffodil+4(daffodil / 4)+0)=(1 / 3) daffodil telescope,\n\\]\na well-known result.\nFor the sphere of radius \\( breadcrumb=telescope / 2 \\), included between the two planes \\( watermelon=-telescope / 2 \\) and \\( watermelon=telescope / 2 \\), the cross-sectional area at level \\( watermelon \\) is given by \\( submarine =\\pi\\left(breadcrumb^{2}-watermelon^{2}\\right) \\). This expression for \\( submarine \\) is also a polynomial of degree 2 , and we get\n\\[\nphotograph=(telescope / 6)\\left(4 \\pi breadcrumb^{2}\\right)=\\frac{4}{3} \\pi breadcrumb^{3} .\n\\]\n\nFor both the sphere and the cone, the coefficient \\( crocodile \\) of \\( watermelon^{3} \\) in the crosssection area formula is zero."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "z": "horizontalaxis",
+        "V": "surfacearea",
+        "A": "perimeter",
+        "f": "constant",
+        "h": "shortness",
+        "a_0": "unknownzero",
+        "a_1": "unknownone",
+        "a_2": "unknowntwo",
+        "a_3": "unknownthree",
+        "B_1": "topfirst",
+        "B_2": "topsecond",
+        "M": "boundary",
+        "E": "accuracy",
+        "\\xi": "endpoint",
+        "r": "diameter",
+        "B": "upperceiling",
+        "C": "variable"
+      },
+      "question": "1. A solid is bounded by two bases in the horizontal planes \\( horizontalaxis=shortness / 2 \\) and \\( horizontalaxis \\) \\( =-shortness / 2 \\), and by such a surface that the area of every section in a horizontal plane is given by a formula of the sort\n\\[\n\\text { Area }=unknownzero horizontalaxis^{3}+unknownone horizontalaxis^{2}+unknowntwo horizontalaxis+unknownthree\n\\]\n(where as special cases some of the coefficients may be 0 ). Show that the volume is given by the formula\n\\[\nsurfacearea=\\frac{1}{6} shortness\\left[topfirst+topsecond+4 boundary\\right]\n\\]\nwhere \\( topfirst \\) and \\( topsecond \\) are the areas of the bases, and \\( boundary \\) is the area of the middle horizontal section. Show that the formulas for the volume of a cone and of a sphere can be included in this formula when \\( unknownzero=0 \\).",
+      "solution": "Solution. The volume in question is given by\n\\[\n\\begin{aligned}\nsurfacearea & =\\int_{-shortness / 2}^{shortness / 2}\\left(unknownzero horizontalaxis^{3}+unknownone horizontalaxis^{2}+unknowntwo horizontalaxis+unknownthree\\right) d horizontalaxis \\\\\n& =\\frac{unknownone shortness^{3}}{12}+unknownthree shortness .\n\\end{aligned}\n\\]\n\nOn the other hand, the base areas and \\( boundary \\) are given by\n\\[\n\\begin{array}{l}\ntopfirst=\\frac{unknownzero shortness^{3}}{8}+\\frac{unknownone shortness^{2}}{4}+\\frac{unknowntwo shortness}{2}+unknownthree \\\\\ntopsecond=-\\frac{unknownzero shortness^{3}}{8}+\\frac{unknownone shortness^{2}}{4}-\\frac{unknowntwo shortness}{2}+unknownthree \\\\\nboundary=unknownthree,\n\\end{array}\n\\]\nso that the suggested expression (1/6)shortness[topfirst+ \\( \\left.topsecond+4 boundary\\right] \\) works out to be\n\\[\n\\frac{1}{6} shortness\\left(\\frac{unknownone shortness^{2}}{2}+6 unknownthree\\right)=\\frac{unknownone shortness^{3}}{12}+unknownthree shortness=surfacearea\n\\]\nas required.\nThe formula \\( surfacearea=(1 / 6) shortness\\left(topfirst+topsecond+4 boundary\\right) \\) is known in solid geometry as the prismoidal formula. It is closely related to Simpson's rule in numerical integration.\n\nIndeed, for functions of class \\( variable^{4} \\) it can be proved that\n\\[\n\\int_{-shortness 2}^{shortness 2} constant(horizontalaxis) d horizontalaxis=(1 / 6) shortness[constant(-shortness / 2)+4 constant(0)+constant(shortness / 2)]+accuracy\n\\]\nwhere \\( accuracy=-(1 / 2880) shortness^{5} constant^{(4)}(endpoint) \\) for some \\( endpoint \\) lying in \\( (-shortness / 2, shortness / 2) \\). See Kunz, Numerical Analysis, McGraw-Hill, 1957, p. 146, or any other book on numerical integration.\n\nIn many cases the error term \\( accuracy \\) is very small and therefore we may use the approximate relation\n\\[\n\\int_{-shortness 2}^{shortness 2} constant(horizontalaxis) d horizontalaxis=(shortness / 6)[constant(-shortness / 2)+4 constant(0)+constant(shortness / 2)] .\n\\]\n\nThis approximation is known as Simpson's rule. In particular, when \\( constant \\) is a polynomial of degree at most three, \\( accuracy=0 \\) and the result is exact.\n\nFor the special cases of the cone and the sphere, we can proceed as follows. For the cone, let the vertex be in the plane \\( horizontalaxis=shortness / 2 \\) and the base in the plane \\( horizontalaxis=-shortness / 2 \\). Then the area of a cross-section at level \\( horizontalaxis \\) is given by \\( perimeter=\\left(upperceiling / shortness^{2}\\right)(horizontalaxis-(shortness / 2))^{2} \\) where \\( upperceiling \\) is the area of the base. Since the expression for \\( perimeter \\) is a polynomial of degree two,\n\\[\nsurfacearea=(shortness / 6)(upperceiling+4(upperceiling / 4)+0)=(1 / 3) upperceiling shortness,\n\\]\na well-known result.\nFor the sphere of radius \\( diameter=shortness / 2 \\), included between the two planes \\( horizontalaxis=-shortness / 2 \\) and \\( horizontalaxis=shortness / 2 \\), the cross-sectional area at level \\( horizontalaxis \\) is given by \\( perimeter \\) \\( =\\pi\\left(diameter^{2}-horizontalaxis^{2}\\right) \\). This expression for \\( perimeter \\) is also a polynomial of degree 2 , and we get\n\\[\nsurfacearea=(shortness / 6)\\left(4 \\pi diameter^{2}\\right)=\\frac{4}{3} \\pi diameter^{3} .\n\\]\n\nFor both the sphere and the cone, the coefficient \\( unknownzero \\) of \\( horizontalaxis^{3} \\) in the crosssection area formula is zero."
+    },
+    "garbled_string": {
+      "map": {
+        "z": "qzxwvtnp",
+        "V": "hjgrksla",
+        "A": "mflqzptx",
+        "f": "skvhrlxd",
+        "h": "cpryjsmb",
+        "a_0": "vdumtkha",
+        "a_1": "yqzpelrb",
+        "a_2": "lfxsknqo",
+        "a_3": "wznvdarc",
+        "B_1": "jfstuxgo",
+        "B_2": "zvnclqre",
+        "M": "nrypohas",
+        "E": "gokbxmtr",
+        "\\xi": "blehqzwn",
+        "r": "xlvbmtau",
+        "B": "pzlhyvse",
+        "C": "rteqjwnm"
+      },
+      "question": "1. A solid is bounded by two bases in the horizontal planes \\( qzxwvtnp=cpryjsmb / 2 \\) and \\( qzxwvtnp \\) \\( =-cpryjsmb / 2 \\), and by such a surface that the area of every section in a horizontal plane is given by a formula of the sort\n\\[\n\\text { Area }=vdumtkha qzxwvtnp^{3}+yqzpelrb qzxwvtnp^{2}+lfxsknqo qzxwvtnp+wznvdarc\n\\]\n(where as special cases some of the coefficients may be 0 ). Show that the volume is given by the formula\n\\[\nhjgrksla=\\frac{1}{6} cpryjsmb\\left[jfstuxgo+zvnclqre+4 nrypohas\\right]\n\\]\nwhere \\( jfstuxgo \\) and \\( zvnclqre \\) are the areas of the bases, and \\( nrypohas \\) is the area of the middle horizontal section. Show that the formulas for the volume of a cone and of a sphere can be included in this formula when \\( vdumtkha=0 \\).",
+      "solution": "Solution. The volume in question is given by\n\\[\n\\begin{aligned}\nhjgrksla & =\\int_{-cpryjsmb / 2}^{cpryjsmb / 2}\\left(vdumtkha qzxwvtnp^{3}+yqzpelrb qzxwvtnp^{2}+lfxsknqo qzxwvtnp+wznvdarc\\right) d qzxwvtnp \\\\\n& =\\frac{yqzpelrb cpryjsmb^{3}}{12}+wznvdarc cpryjsmb .\n\\end{aligned}\n\\]\n\nOn the other hand, the base areas and \\( nrypohas \\) are given by\n\\[\n\\begin{array}{l}\njfstuxgo=\\frac{vdumtkha cpryjsmb^{3}}{8}+\\frac{yqzpelrb cpryjsmb^{2}}{4}+\\frac{lfxsknqo cpryjsmb}{2}+wznvdarc \\\\\nzvnclqre=-\\frac{vdumtkha cpryjsmb^{3}}{8}+\\frac{yqzpelrb cpryjsmb^{2}}{4}-\\frac{lfxsknqo cpryjsmb}{2}+wznvdarc \\\\\nnrypohas=wznvdarc,\n\\end{array}\n\\]\nso that the suggested expression (1/6)cpryjsmb[\\( jfstuxgo+ \\) \\( zvnclqre+4 nrypohas\\)] works out to be\n\\[\n\\frac{1}{6} cpryjsmb\\left(\\frac{yqzpelrb cpryjsmb^{2}}{2}+6 wznvdarc\\right)=\\frac{yqzpelrb cpryjsmb^{3}}{12}+wznvdarc cpryjsmb=hjgrksla\n\\]\nas required.\nThe formula \\( hjgrksla=(1 / 6) cpryjsmb\\left(jfstuxgo+zvnclqre+4 nrypohas\\right) \\) is known in solid geometry as the prismoidal formula. It is closely related to Simpson's rule in numerical integration.\n\nIndeed, for functions of class \\( rteqjwnm^{4} \\) it can be proved that\n\\[\n\\int_{-cpryjsmb 2}^{cpryjsmb 2} skvhrlxd(qzxwvtnp) d qzxwvtnp=(1 / 6) cpryjsmb[skvhrlxd(-cpryjsmb / 2)+4 skvhrlxd(0)+skvhrlxd(cpryjsmb / 2)]+gokbxmtr\n\\]\nwhere \\( gokbxmtr=-(1 / 2880) cpryjsmb^{5} skvhrlxd^{(4)}(blehqzwn) \\) for some \\( blehqzwn \\) lying in \\( (-cpryjsmb / 2, cpryjsmb / 2) \\). See Kunz, Numerical Analysis, McGraw-Hill, 1957, p. 146, or any other book on numerical integration.\n\nIn many cases the error term \\( gokbxmtr \\) is very small and therefore we may use the approximate relation\n\\[\n\\int_{-cpryjsmb 2}^{cpryjsmb 2} skvhrlxd(qzxwvtnp) d qzxwvtnp=(cpryjsmb / 6)[skvhrlxd(-cpryjsmb / 2)+4 skvhrlxd(0)+skvhrlxd(cpryjsmb / 2)] .\n\\]\n\nThis approximation is known as Simpson's rule. In particular, when \\( skvhrlxd \\) is a polynomial of degree at most three, \\( gokbxmtr=0 \\) and the result is exact.\n\nFor the special cases of the cone and the sphere, we can proceed as follows. For the cone, let the vertex be in the plane \\( qzxwvtnp=cpryjsmb / 2 \\) and the base in the plane \\( qzxwvtnp=-cpryjsmb / 2 \\). Then the area of a cross-section at level \\( qzxwvtnp \\) is given by \\( mflqzptx=\\left(pzlhyvse / cpryjsmb^{2}\\right)(qzxwvtnp-(cpryjsmb / 2))^{2} \\) where \\( pzlhyvse \\) is the area of the base. Since the expression for \\( mflqzptx \\) is a polynomial of degree two,\n\\[\nhjgrksla=(cpryjsmb / 6)(pzlhyvse+4(pzlhyvse / 4)+0)=(1 / 3) pzlhyvse cpryjsmb,\n\\]\na well-known result.\nFor the sphere of radius \\( xlvbmtau=cpryjsmb / 2 \\), included between the two planes \\( qzxwvtnp=-cpryjsmb / 2 \\) and \\( qzxwvtnp=cpryjsmb / 2 \\), the cross-sectional area at level \\( qzxwvtnp \\) is given by \\( mflqzptx \\) \\( =\\pi\\left(xlvbmtau^{2}-qzxwvtnp^{2}\\right) \\). This expression for \\( mflqzptx \\) is also a polynomial of degree 2 , and we get\n\\[\nhjgrksla=(cpryjsmb / 6)\\left(4 \\pi xlvbmtau^{2}\\right)=\\frac{4}{3} \\pi xlvbmtau^{3} .\n\\]\n\nFor both the sphere and the cone, the coefficient \\( vdumtkha \\) of \\( qzxwvtnp^{3} \\) in the crosssection area formula is zero."
+    },
+    "kernel_variant": {
+      "question": "Let a solid be situated between the two parallel horizontal planes \\(t=0\\) and \\(t=H\\).  For every number \\(t\\) with \\(0\\le t\\le H\\) the area of the horizontal cross-section of the solid is\n\\[\nA(t)=b_{0}t^{3}+b_{1}t^{2}+b_{2}t+b_{3},\\qquad(b_{0},b_{1},b_{2},b_{3}\\in\\mathbb R).\n\\]\n(Any of the four coefficients may be zero.)\n\n1.  Prove that the volume \\(V\\) of the solid is given exactly by the \"prismoidal\" formula\n\\[\nV\\;=\\;\\frac{H}{6}\\bigl(B_{0}+4M+B_{H}\\bigr),\n\\]\nwhere\n\\[\nB_{0}=A(0),\\qquad M=A\\!\\left(\\frac{H}{2}\\right),\\qquad B_{H}=A(H).\n\\]\n\n2.  Verify that when the cubic term is absent (\\(b_{0}=0\\)) the same identity yields the usual volume formulas for\n   (i) the paraboloid of revolution of base radius \\(R\\) and height \\(H\\), and\n   (ii) the prolate spheroid (ellipsoid) with semi-axes \\(R,\\,R,\\,\\dfrac{H}{2}\\).",
+      "solution": "1. Exactness of the prismoidal formula\n\nWe are given A(t)=b_0t^3+b_1t^2+b_2t+b_3 for 0\\leq t\\leq H, and seek V=\\int _0^HA(t)dt.  Compute:\n\n  V = \\int _0^H(b_0t^3+b_1t^2+b_2t+b_3)\n    = b_0\\cdot (H^4/4)+b_1\\cdot (H^3/3)+b_2\\cdot (H^2/2)+b_3\\cdot H.                      (1)\n\nNext evaluate\n  B_0=A(0)=b_3,\n  M =A(H/2)=b_0(H/2)^3 + b_1(H/2)^2 + b_2(H/2) + b_3\n        = (b_0H^3/8)+(b_1H^2/4)+(b_2H/2)+b_3,\n  B_H=A(H)=b_0H^3 + b_1H^2 + b_2H + b_3.\n\nForm the combination:\n  B_0 + 4M + B_H\n    = b_3 + 4[(b_0H^3/8)+(b_1H^2/4)+(b_2H/2)+b_3] + (b_0H^3+b_1H^2+b_2H+b_3)\n    = (3/2)b_0H^3 + 2b_1H^2 + 3b_2H + 6b_3.\n\nHence\n  (H/6)(B_0+4M+B_H)\n    = (H/6)[(3/2)b_0H^3 + 2b_1H^2 + 3b_2H + 6b_3]\n    = b_0H^4/4 + b_1H^3/3 + b_2H^2/2 + b_3H\n    = V, by (1).\n\nThus\n  V = (H/6)(B_0 + 4M + B_H).\n\n2. Special cases when b_0=0\n\nThen A(t)=b_1t^2+b_2t+b_3 is quadratic, so the same prismoidal formula remains exact.\n\n(i) Paraboloid of revolution (height H, base radius R)\nLet the paraboloid have its vertex at t=0 and its circular base of radius R at t=H.  Then\n  r^2/R^2 = t/H  \\Rightarrow   r^2 = (R^2/H)\\cdot t,\nso\n  A(t)=\\pi r^2 = \\pi R^2\\cdot (t/H).\nHence\n  B_0 = A(0)=0,\n  M  = A(H/2)=\\pi R^2\\cdot ((H/2)/H)=\\pi R^2/2,\n  B_H= A(H)=\\pi R^2.\nBy the prismoidal formula,\n  V = (H/6)[0 + 4(\\pi R^2/2) + \\pi R^2]\n    = (H/6)(2\\pi R^2 + \\pi R^2) = (H/6)\\cdot 3\\pi R^2 = \\frac{1}{2}\\pi R^2H,\nwhich is the well-known volume of a paraboloid of revolution.\n\n(ii) Prolate spheroid with semi-axes R, R, H/2\nThe ellipsoid x^2/R^2 + y^2/R^2 + ((t-H/2)/(H/2))^2 = 1 has horizontal section radius\n  r^2 = R^2[1 - 4(t-H/2)^2/H^2],\nso\n  A(t)=\\pi r^2 = \\pi R^2[1 - 4(t-H/2)^2/H^2].\nThus\n  B_0 = A(0)=\\pi R^2[1-4(H/2)^2/H^2]=0,\n  M  = A(H/2)=\\pi R^2[1-0]=\\pi R^2,\n  B_H= A(H)=0.\nThen\n  V = (H/6)[0 + 4\\pi R^2 + 0] = (2/3)\\pi R^2H\n    = (4/3)\\pi R^2\\cdot (H/2),\nthe standard volume of a spheroid of semi-axes R,R,H/2.\n\nHence in both cases the prismoidal formula recovers the classical volumes.",
+      "_meta": {
+        "core_steps": [
+          "Express volume as the integral of the cross-sectional area A(z) over the height interval.",
+          "Observe A(z) is a cubic polynomial, so Simpson’s rule is exact for ∫A(z)dz.",
+          "Identify A at the two endpoints (base areas B1, B2) and at the midpoint (middle area M).",
+          "Apply Simpson’s rule: V = (h/6)(B1 + 4M + B2), matching the direct integral.",
+          "With a0 = 0 (quadratic A), the same formula reproduces the usual cone and sphere volumes."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Exact z-coordinates of the two horizontal planes need only be h apart, not necessarily ±h/2 or symmetric.",
+            "original": "Planes at z = +h/2 and z = −h/2"
+          },
+          "slot2": {
+            "description": "Choice of vertical coordinate/axis label; any single variable works.",
+            "original": "Using the letter z for height"
+          },
+          "slot3": {
+            "description": "Notation for total height; any positive symbol can replace h.",
+            "original": "Height denoted by h"
+          },
+          "slot4": {
+            "description": "Illustrative quadratic examples; cone and sphere could be swapped for any solid with cubic term a0 = 0.",
+            "original": "Special cases: cone and sphere"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

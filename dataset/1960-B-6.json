@@ -1,0 +1,103 @@
+{
+  "index": "1960-B-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "6. Any positive integer may be written in the form \\( n=2^{k}(2 l+1) \\). Let \\( a_{n} \\) \\( =e^{-k} \\) and \\( b_{n}=a_{1} a_{2} a_{3} \\cdots a_{n} \\). Prove that \\( \\Sigma b_{n} \\) converges.",
+  "solution": "Solution. It is clear that \\( a_{n}=e^{0}=1 \\) if \\( n \\) is odd and \\( a_{n} \\leq e^{-1} \\) if \\( n \\) is even. Therefore\n\\[\nb_{2 k}=a_{1} a_{2} \\cdots a_{2 k} \\leq e^{-k},\n\\]\nand\n\\[\nb_{2 k+1} \\leq e^{-k}\n\\]\n\nTherefore,\n\\[\n\\begin{aligned}\nb_{1}+b_{2}+\\cdots b_{2 k} & <b_{1}+b_{2}+\\cdots+b_{2 k+1} \\\\\n& \\leq 1+2 e^{-1}+2 e^{-2}+\\cdots+2 e^{-2 k}<1+\\frac{2 e^{-1}}{1-e^{-1}}\n\\end{aligned}\n\\]\n\nThus the partial sums of \\( \\Sigma b_{n} \\) are bounded. Since the series has positive terms, it converges.",
+  "vars": [
+    "n",
+    "k",
+    "l",
+    "a_n",
+    "b_n",
+    "a_1",
+    "a_2",
+    "a_3",
+    "b_2k",
+    "b_2k+1"
+  ],
+  "params": [],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "posintnum",
+        "k": "twopowerexp",
+        "l": "oddpartpar",
+        "a_n": "aseqelem",
+        "b_n": "bseqelem",
+        "a_1": "aseqfirst",
+        "a_2": "aseqsecond",
+        "a_3": "aseqthird",
+        "b_2k": "bseqeven",
+        "b_2k+1": "bseqoddnext"
+      },
+      "question": "6. Any positive integer may be written in the form \\( posintnum=2^{twopowerexp}(2 oddpartpar+1) \\). Let \\( aseqelem \\) \\( =e^{-twopowerexp} \\) and \\( bseqelem=aseqfirst aseqsecond aseqthird \\cdots aseqelem \\). Prove that \\( \\Sigma bseqelem \\) converges.",
+      "solution": "Solution. It is clear that \\( aseqelem=e^{0}=1 \\) if \\( posintnum \\) is odd and \\( aseqelem \\leq e^{-1} \\) if \\( posintnum \\) is even. Therefore\n\\[\nbseqeven=a_{1} a_{2} \\cdots a_{2\\,twopowerexp} \\leq e^{-twopowerexp},\n\\]\nand\n\\[\nbseqoddnext \\leq e^{-twopowerexp}\n\\]\nTherefore,\n\\[\n\\begin{aligned}\nb_{1}+b_{2}+\\cdots bseqeven & <b_{1}+b_{2}+\\cdots+bseqoddnext \\\\\n& \\leq 1+2 e^{-1}+2 e^{-2}+\\cdots+2 e^{-2\\,twopowerexp}<1+\\frac{2 e^{-1}}{1-e^{-1}}\n\\end{aligned}\n\\]\nThus the partial sums of \\( \\Sigma bseqelem \\) are bounded. Since the series has positive terms, it converges."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "timberwolf",
+        "k": "marigolds",
+        "l": "sandpiper",
+        "a_n": "cranberries",
+        "b_n": "cornstarch",
+        "a_1": "blacksmith",
+        "a_2": "toothbrush",
+        "a_3": "peppercorn",
+        "b_2k": "raincloud",
+        "b_2k+1": "dragonfly"
+      },
+      "question": "Any positive integer may be written in the form \\( timberwolf=2^{marigolds}(2 sandpiper+1) \\). Let \\( cranberries=e^{-marigolds} \\) and \\( cornstarch=blacksmith toothbrush peppercorn \\cdots cranberries \\). Prove that \\( \\Sigma cornstarch \\) converges.",
+      "solution": "Solution. It is clear that \\( cranberries=e^{0}=1 \\) if \\( timberwolf \\) is odd and \\( cranberries \\leq e^{-1} \\) if \\( timberwolf \\) is even. Therefore\n\\[\nraincloud=blacksmith toothbrush \\cdots a_{2 marigolds} \\leq e^{-marigolds},\n\\]\nand\n\\[\ndragonfly \\leq e^{-marigolds}\n\\]\n\nTherefore,\n\\[\n\\begin{aligned}\n b_{1}+b_{2}+\\cdots raincloud & <b_{1}+b_{2}+\\cdots+dragonfly \\\\\n & \\leq 1+2 e^{-1}+2 e^{-2}+\\cdots+2 e^{-2 marigolds}<1+\\frac{2 e^{-1}}{1-e^{-1}}\n\\end{aligned}\n\\]\n\nThus the partial sums of \\( \\Sigma cornstarch \\) are bounded. Since the series has positive terms, it converges."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "fractionvalue",
+        "k": "logarithm",
+        "l": "negative",
+        "a_n": "largeseries",
+        "b_n": "quotientseq",
+        "a_1": "giganticone",
+        "a_2": "gigantictwo",
+        "a_3": "giganticthree",
+        "b_2k": "quotienteven",
+        "b_2k+1": "quotientodd"
+      },
+      "question": "<<<\n6. Any positive integer may be written in the form \\( fractionvalue=2^{logarithm}(2 negative+1) \\). Let \\( largeseries =e^{-logarithm} \\) and \\( quotientseq=giganticone gigantictwo giganticthree \\cdots largeseries \\). Prove that \\( \\Sigma quotientseq \\) converges.\n>>>",
+      "solution": "<<<\nSolution. It is clear that \\( largeseries=e^{0}=1 \\) if \\( fractionvalue \\) is odd and \\( largeseries \\leq e^{-1} \\) if \\( fractionvalue \\) is even. Therefore\n\\[\nquotienteven=giganticone gigantictwo \\cdots largeseries \\leq e^{-logarithm},\n\\]\nand\n\\[\nquotientodd \\leq e^{-logarithm}\n\\]\nTherefore,\n\\[\n\\begin{aligned}\nb_{1}+b_{2}+\\cdots+quotienteven & <b_{1}+b_{2}+\\cdots+quotientodd \\\\\n& \\leq 1+2 e^{-1}+2 e^{-2}+\\cdots+2 e^{-2 logarithm}<1+\\frac{2 e^{-1}}{1-e^{-1}}\n\\end{aligned}\n\\]\nThus the partial sums of \\( \\Sigma quotientseq \\) are bounded. Since the series has positive terms, it converges.\n>>>"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "l": "mdfqplzo",
+        "a_n": "rcptebha",
+        "b_n": "kvusymni",
+        "a_1": "sblqtrwo",
+        "a_2": "pfkxajcm",
+        "a_3": "yvnhqzig",
+        "b_2k": "wdrxoful",
+        "b_2k+1": "tnmqzsky"
+      },
+      "question": "6. Any positive integer may be written in the form \\( qzxwvtnp=2^{hjgrksla}(2 mdfqplzo+1) \\). Let \\( rcptebha =e^{-hjgrksla} \\) and \\( kvusymni=sblqtrwo pfkxajcm yvnhqzig \\cdots rcptebha \\). Prove that \\( \\Sigma kvusymni \\) converges.",
+      "solution": "Solution. It is clear that \\( rcptebha=e^{0}=1 \\) if \\( qzxwvtnp \\) is odd and \\( rcptebha \\leq e^{-1} \\) if \\( qzxwvtnp \\) is even. Therefore\n\\[\nwdrxoful=sblqtrwo pfkxajcm \\cdots a_{2 hjgrksla} \\leq e^{-hjgrksla},\n\\]\nand\n\\[\ntnmqzsky \\leq e^{-hjgrksla}\n\\]\nTherefore,\n\\[\n\\begin{aligned}\nb_{1}+b_{2}+\\cdots wdrxoful & <b_{1}+b_{2}+\\cdots+tnmqzsky \\\\\n& \\leq 1+2 e^{-1}+2 e^{-2}+\\cdots+2 e^{-2 hjgrksla}<1+\\frac{2 e^{-1}}{1-e^{-1}}\n\\end{aligned}\n\\]\nThus the partial sums of \\( \\Sigma kvusymni \\) are bounded. Since the series has positive terms, it converges."
+    },
+    "kernel_variant": {
+      "question": "Every positive integer admits a unique factorisation  \n n = 2^{\\alpha (n)} 3^{\\beta (n)} m with gcd(m, 6)=1.  \nDefine a_n = 7^{-\\alpha (n)} 5^{-\\beta (n)} and b_n = \\prod _{j=1}^{n} a_j.  \nProve that the series \\sum _{n=1}^{\\infty } b_n converges and give an explicit numerical upper bound for its sum.\n\n",
+      "solution": "(\\approx  60 words, original style)  \nWrite n as above and set a_n, b_n accordingly.  \nNote that a_n=1 if 6\\nmid n; a_n\\leq 7^{-1} when 2|n, 3\\nmid n; a_n\\leq 5^{-1} when 3|n, 2\\nmid n; a_n\\leq 35^{-1} when 6|n.  \nAmong 1,\\ldots ,n there are \\lfloor n/2\\rfloor  even numbers and \\lfloor n/3\\rfloor  multiples of 3, whence  \n\n b_n \\leq  7^{-\\lfloor n/2\\rfloor } 5^{-\\lfloor n/3\\rfloor } \\leq  35\\cdot (35)^{-n/6}.  \n\nThus \\sum  b_n \\leq  35 \\sum _{n\\geq 1}(35)^{-n/6}=35\\cdot (35^{-1/6})/(1-35^{-1/6})<\\infty , so the series converges.\n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.019664",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

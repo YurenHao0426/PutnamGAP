@@ -1,0 +1,186 @@
+{
+  "index": "2018-B-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Given a real number $a$, we define a sequence by $x_0 = 1$, $x_1 = x_2 = a$, and $x_{n+1} = 2x_n x_{n-1} - x_{n-2}$ for $n \\geq 2$. Prove that if $x_n = 0$ for some $n$, then the sequence is periodic.",
+  "solution": "We first rule out the case $|a|>1$. In this case, we prove that $|x_{n+1}| \\geq |x_n|$ for all $n$, meaning that we cannot have $x_n = 0$. We proceed by induction; the claim is true for $n=0,1$ by hypothesis. To prove the claim for  $n \\geq 2$, write\n\\begin{align*}\n|x_{n+1}| &= |2x_nx_{n-1}-x_{n-2}| \\\\\n&\\geq 2|x_n||x_{n-1}|-|x_{n-2}| \\\\\n&\\geq |x_n|(2|x_{n-1}|-1) \\geq |x_n|,\n\\end{align*} \nwhere the last step follows from $|x_{n-1}| \\geq |x_{n-2}| \\geq \\cdots \\geq |x_0| = 1$.\n\nWe may thus assume hereafter that $|a|\\leq 1$. We can then write $a = \\cos b$ for some $b \\in [0,\\pi]$. \nLet $\\{F_n\\}$ be the Fibonacci sequence, defined as usual by $F_1=F_2=1$ and $F_{n+1}=F_n+F_{n-1}$. We show by induction that\n\\[\nx_n = \\cos(F_n b) \\qquad (n \\geq 0).\n\\]\nIndeed, this is true for $n=0,1,2$; given that it is true for $n \\leq m$, then\n\\begin{align*}\n2x_mx_{m-1}&=2\\cos(F_mb)\\cos(F_{m-1}b) \\\\\n&= \\cos((F_m-F_{m-1})b)+\\cos((F_m+F_{m-1})b) \\\\\n&= \\cos(F_{m-2}b)+\\cos(F_{m+1}b)\n\\end{align*}\nand so \n$x_{m+1} = 2x_mx_{m-1}-x_{m-2} = \\cos(F_{m+1}b)$. This completes the induction.\n\n\nSince $x_n = \\cos(F_n b)$, if $x_n=0$ for some $n$ then $F_n b = \\frac{k}{2} \\pi$ for some odd integer $k$. In particular, we can write $b = \\frac{c}{d}(2\\pi)$ where $c = k$ and $d = 4F_n$ are integers.\n\n\nLet $x_n$ denote the pair $(F_n,F_{n+1})$, where each entry in this pair is viewed as an element of $\\mathbb{Z}/d\\mathbb{Z}$. Since there are only finitely many possibilities for $x_n$, there must be some $n_2>n_1$ such that $x_{n_1}=x_{n_2}$. Now $x_n$ uniquely determines both $x_{n+1}$ and $x_{n-1}$, and it follows that the sequence $\\{x_n\\}$ is periodic: for $\\ell = n_2-n_1$, $x_{n+\\ell} = x_n$ for all $n \\geq 0$. In particular, $F_{n+\\ell} \\equiv F_n \\pmod{d}$ for all $n$. But then $\\frac{F_{n+\\ell}c}{d}-\\frac{F_n c}{d}$ is an integer, and so\n\\begin{align*}\nx_{n+\\ell} &= \\cos\\left(\\frac{F_{n+\\ell}c}{d}(2\\pi)\\right)\\\\\n& = \\cos\\left(\\frac{F_n c}{d}(2\\pi)\\right) = x_n\n\\end{align*}\nfor all $n$. Thus the sequence $\\{x_n\\}$ is periodic, as desired.\n\n\\noindent\n\\textbf{Remark.}\nKarl Mahlburg points out that one can motivate the previous solution by computing the terms\n\\[\nx_2 = 2a^2 - 1, x_3 = 4a^3 - 3a, x_4 = 16a^5 - 20a^3 + 5a\n\\]\nand recognizing these as the Chebyshev polynomials $T_2, T_3, T_5$. (Note that $T_3$ was used in the solution of\nproblem A3.)\n\n\\noindent\n\\textbf{Remark.}\nIt is not necessary to handle the case $\\left| a \\right| > 1$ separately; the cosine function extends\nto a surjective analytic function on $\\mathbb{C}$ and continues to satisfy the addition formula,\nso one can write $a = \\cos b$ for some $b \\in \\mathbb{C}$\nand then proceed as above.",
+  "vars": [
+    "x",
+    "x_0",
+    "x_1",
+    "x_2",
+    "x_n",
+    "x_n+1",
+    "x_n-1",
+    "x_n-2",
+    "n",
+    "F_n",
+    "F_n-1",
+    "F_n-2",
+    "F_n+1",
+    "F_n+\\\\ell",
+    "\\\\ell",
+    "n_1",
+    "n_2"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "sequence",
+        "x_0": "startzero",
+        "x_1": "firstterm",
+        "x_2": "secondterm",
+        "x_n": "generalterm",
+        "x_n+1": "nextterm",
+        "x_n-1": "prevterm",
+        "x_n-2": "preprev",
+        "n": "indexvar",
+        "F_n": "fiboterm",
+        "F_n-1": "fiboprev",
+        "F_n-2": "fibopreprev",
+        "F_n+1": "fibonext",
+        "F_n+\\ell": "fiboshift",
+        "\\ell": "periodlen",
+        "n_1": "idxfirst",
+        "n_2": "idxsecond",
+        "a": "initialreal",
+        "b": "angleparam",
+        "c": "numeratorc",
+        "d": "denominatord",
+        "k": "oddinteger"
+      },
+      "question": "Given a real number $initialreal$, we define a sequence by $startzero = 1$, $firstterm = secondterm = initialreal$, and $sequence_{indexvar+1} = 2\\,generalterm\\,sequence_{indexvar-1} - sequence_{indexvar-2}$ for $indexvar \\geq 2$. Prove that if $generalterm = 0$ for some $indexvar$, then the sequence is periodic.",
+      "solution": "We first rule out the case $|initialreal|>1$. In this case, we prove that $|\\sequence_{indexvar+1}| \\geq |generalterm|$ for all $indexvar$, meaning that we cannot have $generalterm = 0$. We proceed by induction; the claim is true for $indexvar=0,1$ by hypothesis. To prove the claim for  $indexvar \\geq 2$, write\n\\begin{align*}\n|\\sequence_{indexvar+1}| &= |2\\,generalterm\\,\\sequence_{indexvar-1}-\\sequence_{indexvar-2}| \\\\\n&\\geq 2|generalterm||\\sequence_{indexvar-1}|-|\\sequence_{indexvar-2}| \\\\\n&\\geq |generalterm|\\bigl(2|\\sequence_{indexvar-1}|-1\\bigr) \\geq |generalterm|,\n\\end{align*} \nwhere the last step follows from $|\\sequence_{indexvar-1}| \\geq |\\sequence_{indexvar-2}| \\geq \\cdots \\geq |startzero| = 1$.\n\nWe may thus assume hereafter that $|initialreal|\\leq 1$. We can then write $initialreal = \\cos angleparam$ for some $angleparam \\in [0,\\pi]$. \nLet $\\{fiboterm\\}$ be the Fibonacci sequence, defined as usual by $fiboterm_1=fiboterm_2=1$ and $fiboterm_{indexvar+1}=fiboterm_{indexvar}+fiboterm_{indexvar-1}$. We show by induction that\n\\[\ngeneralterm = \\cos(fiboterm\\,angleparam) \\qquad (indexvar \\geq 0).\n\\]\nIndeed, this is true for $indexvar=0,1,2$; given that it is true for $indexvar \\leq m$, then\n\\begin{align*}\n2\\sequence_m\\sequence_{m-1}&=2\\cos(fiboterm_m\\,angleparam)\\cos(fiboterm_{m-1}\\,angleparam) \\\\\n&= \\cos\\bigl((fiboterm_m-fiboterm_{m-1})\\,angleparam\\bigr)+\\cos\\bigl((fiboterm_m+fiboterm_{m-1})\\,angleparam\\bigr) \\\\\n&= \\cos(fiboterm_{m-2}\\,angleparam)+\\cos(fiboterm_{m+1}\\,angleparam)\n\\end{align*}\nand so \n\\[\n\\sequence_{m+1} = 2\\sequence_m\\sequence_{m-1}-\\sequence_{m-2} = \\cos(fiboterm_{m+1}\\,angleparam).\n\\]\nThis completes the induction.\n\nSince $generalterm = \\cos(fiboterm\\,angleparam)$, if $generalterm=0$ for some $indexvar$ then $fiboterm\\,angleparam = \\tfrac{oddinteger}{2}\\pi$ for some odd integer $oddinteger$. In particular, we can write $angleparam = \\tfrac{numeratorc}{denominatord}(2\\pi)$ where $numeratorc = oddinteger$ and $denominatord = 4fiboterm$ are integers.\n\nLet $generalterm$ denote the pair $(fiboterm,fiboterm_{indexvar+1})$, where each entry in this pair is viewed as an element of $\\mathbb{Z}/denominatord\\mathbb{Z}$. Since there are only finitely many possibilities for $generalterm$, there must be some $idxsecond>idxfirst$ such that $\\sequence_{idxfirst}=\\sequence_{idxsecond}$. Now $generalterm$ uniquely determines both $\\sequence_{indexvar+1}$ and $\\sequence_{indexvar-1}$, and it follows that the sequence $\\{\\sequence_{indexvar}\\}$ is periodic: for $periodlen = idxsecond-idxfirst$, $\\sequence_{indexvar+periodlen} = \\sequence_{indexvar}$ for all $indexvar \\geq 0$. In particular, $fiboterm_{indexvar+periodlen} \\equiv fiboterm_{indexvar} \\pmod{denominatord}$ for all $indexvar$. But then $\\dfrac{fiboterm_{indexvar+periodlen}\\,numeratorc}{denominatord}-\\dfrac{fiboterm_{indexvar}\\,numeratorc}{denominatord}$ is an integer, and so\n\\begin{align*}\n\\sequence_{indexvar+periodlen} &= \\cos\\left(\\frac{fiboterm_{indexvar+periodlen}\\,numeratorc}{denominatord}(2\\pi)\\right)\\\\\n& = \\cos\\left(\\frac{fiboterm_{indexvar}\\,numeratorc}{denominatord}(2\\pi)\\right) = \\sequence_{indexvar}\n\\end{align*}\nfor all $indexvar$. Thus the sequence $\\{\\sequence_{indexvar}\\}$ is periodic, as desired.\n\nRemark.\nKarl Mahlburg points out that one can motivate the previous solution by computing the terms\n\\[\nsecondterm = 2\\,initialreal^{2} - 1,\\quad \\sequence_{3} = 4\\,initialreal^{3} - 3\\,initialreal,\\quad \\sequence_{4} = 16\\,initialreal^{5} - 20\\,initialreal^{3} + 5\\,initialreal\n\\]\nand recognizing these as the Chebyshev polynomials $T_2, T_3, T_5$. (Note that $T_3$ was used in the solution of\nproblem A3.)\n\nRemark.\nIt is not necessary to handle the case $\\left| initialreal \\right| > 1$ separately; the cosine function extends\nto a surjective analytic function on $\\mathbb{C}$ and continues to satisfy the addition formula,\nso one can write $initialreal = \\cos angleparam$ for some $angleparam \\in \\mathbb{C}$\nand then proceed as above."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandcastle",
+        "x_0": "brooklynbridge",
+        "x_1": "sunflowerbed",
+        "x_2": "thunderdance",
+        "x_n": "paperlantern",
+        "x_n+1": "crimsonhorizon",
+        "x_n-1": "velvetmorning",
+        "x_n-2": "glacierwhisper",
+        "n": "quillstroke",
+        "F_n": "cypressshade",
+        "F_n-1": "ambercascade",
+        "F_n-2": "graniteanthem",
+        "F_n+1": "willowcaravan",
+        "F_n+\\\\ell": "twilightmeadow",
+        "\\\\ell": "porcelainveil",
+        "n_1": "silversparrow",
+        "n_2": "copperlantern",
+        "a": "marblestone",
+        "b": "lanternglow",
+        "c": "butteredcorn",
+        "d": "palmtreefrond",
+        "k": "chandelier"
+      },
+      "question": "Given a real number $marblestone$, we define a sequence by $brooklynbridge = 1$, $sunflowerbed = thunderdance = marblestone$, and $crimsonhorizon = 2paperlantern velvetmorning - glacierwhisper$ for $quillstroke \\geq 2$. Prove that if $paperlantern = 0$ for some $quillstroke$, then the sequence is periodic.",
+      "solution": "We first rule out the case $|marblestone|>1$. In this case, we prove that $|crimsonhorizon| \\geq |paperlantern|$ for all $quillstroke$, meaning that we cannot have $paperlantern = 0$. We proceed by induction; the claim is true for $quillstroke=0,1$ by hypothesis. To prove the claim for  $quillstroke \\geq 2$, write\\n\\begin{align*}\\n|crimsonhorizon| &= |2paperlantern velvetmorning-glacierwhisper| \\\\&\\geq 2|paperlantern||velvetmorning|-|glacierwhisper| \\\\&\\geq |paperlantern|(2|velvetmorning|-1) \\geq |paperlantern|,\\n\\end{align*} \\nwhere the last step follows from $|velvetmorning| \\geq |glacierwhisper| \\geq \\cdots \\geq |brooklynbridge| = 1$.\\n\\nWe may thus assume hereafter that $|marblestone|\\leq 1$. We can then write $marblestone = \\cos lanternglow$ for some $lanternglow \\in [0,\\pi]$. \\nLet $\\{cypressshade\\}$ be the Fibonacci sequence, defined as usual by $F_1=F_2=1$ and $willowcaravan=cypressshade+ambercascade$. We show by induction that\\n\\[\\npaperlantern = \\cos(cypressshade\\, lanternglow) \\qquad (quillstroke \\geq 0).\\n\\]Indeed, this is true for $quillstroke=0,1,2$; given that it is true for $quillstroke \\leq m$, then\\n\\begin{align*}\\n2x_mx_{m-1}&=2\\cos(F_m\\, lanternglow)\\cos(F_{m-1}\\, lanternglow) \\\\&= \\cos((F_m-F_{m-1})\\, lanternglow)+\\cos((F_m+F_{m-1})\\, lanternglow) \\\\&= \\cos(F_{m-2}\\, lanternglow)+\\cos(F_{m+1}\\, lanternglow)\\n\\end{align*}\\nand so \\n$x_{m+1} = 2x_mx_{m-1}-x_{m-2} = \\cos(F_{m+1}\\, lanternglow)$. This completes the induction.\\n\\nSince $paperlantern = \\cos(cypressshade\\, lanternglow)$, if $paperlantern=0$ for some $quillstroke$ then $cypressshade\\, lanternglow = \\frac{chandelier}{2} \\pi$ for some odd integer $chandelier$. In particular, we can write $lanternglow = \\frac{butteredcorn}{palmtreefrond}(2\\pi)$ where $butteredcorn = chandelier$ and $palmtreefrond = 4cypressshade$ are integers.\\n\\nLet $paperlantern$ denote the pair $(cypressshade,willowcaravan)$, where each entry in this pair is viewed as an element of $\\mathbb{Z}/palmtreefrond\\mathbb{Z}$. Since there are only finitely many possibilities for $paperlantern$, there must be some $copperlantern>silversparrow$ such that $x_{silversparrow}=x_{copperlantern}$. Now $paperlantern$ uniquely determines both $crimsonhorizon$ and $velvetmorning$, and it follows that the sequence $\\{paperlantern\\}$ is periodic: for $porcelainveil = copperlantern-silversparrow$, $x_{quillstroke+porcelainveil} = paperlantern$ for all $quillstroke \\geq 0$. In particular, $twilightmeadow \\equiv cypressshade \\pmod{palmtreefrond}$ for all $quillstroke$. But then $\\frac{twilightmeadow\\, butteredcorn}{palmtreefrond}-\\frac{cypressshade\\, butteredcorn}{palmtreefrond}$ is an integer, and so\\n\\begin{align*}\\nx_{quillstroke+porcelainveil} &= \\cos\\left(\\frac{twilightmeadow\\, butteredcorn}{palmtreefrond}(2\\pi)\\right)\\\\& = \\cos\\left(\\frac{cypressshade\\, butteredcorn}{palmtreefrond}(2\\pi)\\right) = paperlantern\\n\\end{align*}\\nfor all $quillstroke$. Thus the sequence $\\{paperlantern\\}$ is periodic, as desired.\\n\\n\\noindent\\n\\textbf{Remark.}\\nKarl Mahlburg points out that one can motivate the previous solution by computing the terms\\n\\[\\nthunderdance = 2marblestone^2 - 1,\\; x_3 = 4marblestone^3 - 3marblestone,\\; x_4 = 16marblestone^5 - 20marblestone^3 + 5marblestone\\n\\]and recognizing these as the Chebyshev polynomials $T_2, T_3, T_5$. (Note that $T_3$ was used in the solution of\\nproblem A3.)\\n\\n\\noindent\\n\\textbf{Remark.}\\nIt is not necessary to handle the case $\\left| marblestone \\right| > 1$ separately; the cosine function extends\\nto a surjective analytic function on $\\mathbb{C}$ and continues to satisfy the addition formula,\\nso one can write $marblestone = \\cos lanternglow$ for some $lanternglow \\in \\mathbb{C}$\\nand then proceed as above."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "staticvalue",
+        "x_0": "terminalzero",
+        "x_1": "terminalone",
+        "x_2": "terminaltwo",
+        "x_n": "terminaln",
+        "x_n+1": "terminalnplusone",
+        "x_n-1": "terminalnminusone",
+        "x_n-2": "terminalnminustwo",
+        "n": "staticfixed",
+        "F_n": "antifibo",
+        "F_n-1": "antifibominusone",
+        "F_n-2": "antifibominustwo",
+        "F_n+1": "antifiboplusone",
+        "F_n+\\ell": "antifiboplusell",
+        "\\ell": "stagnation",
+        "n_1": "staticone",
+        "n_2": "statictwo",
+        "a": "complexunit",
+        "b": "linearvalue",
+        "c": "irrational",
+        "d": "continuous",
+        "k": "eveninteger"
+      },
+      "question": "Given a real number $complexunit$, we define a sequence by $terminalzero = 1$, $terminalone = terminaltwo = complexunit$, and $terminalnplusone = 2 terminaln terminalnminusone - terminalnminustwo$ for $staticfixed \\geq 2$. Prove that if $terminaln = 0$ for some $staticfixed$, then the sequence is periodic.",
+      "solution": "We first rule out the case $|complexunit|>1$. In this case, we prove that $|terminalnplusone| \\geq |terminaln|$ for all $staticfixed$, meaning that we cannot have $terminaln = 0$. We proceed by induction; the claim is true for $staticfixed=0,1$ by hypothesis. To prove the claim for  $staticfixed \\geq 2$, write\n\\begin{align*}\n|terminalnplusone| &= |2 terminaln terminalnminusone - terminalnminustwo| \\\\\n&\\geq 2|terminaln||terminalnminusone| - |terminalnminustwo| \\\\\n&\\geq |terminaln|(2|terminalnminusone| - 1) \\geq |terminaln|,\n\\end{align*} \nwhere the last step follows from $|terminalnminusone| \\geq |terminalnminustwo| \\geq \\cdots \\geq |terminalzero| = 1$.\n\nWe may thus assume hereafter that $|complexunit|\\leq 1$. We can then write $complexunit = \\cos linearvalue$ for some $linearvalue \\in [0,\\pi]$. \nLet $\\{antifibo\\}$ be the Fibonacci sequence, defined as usual by $F_1=F_2=1$ and $F_{n+1}=F_n+F_{n-1}$. We show by induction that\n\\[\nterminaln = \\cos(antifibo\\, linearvalue) \\qquad (staticfixed \\geq 0).\n\\]\nIndeed, this is true for $staticfixed=0,1,2$; given that it is true for $staticfixed \\leq m$, then\n\\begin{align*}\n2x_mx_{m-1}&=2\\cos(F_m linearvalue)\\cos(F_{m-1} linearvalue) \\\\\n&= \\cos((F_m-F_{m-1})linearvalue)+\\cos((F_m+F_{m-1})linearvalue) \\\\\n&= \\cos(F_{m-2}linearvalue)+\\cos(F_{m+1}linearvalue)\n\\end{align*}\nand so \n$x_{m+1} = 2x_mx_{m-1}-x_{m-2} = \\cos(F_{m+1}linearvalue)$. This completes the induction.\n\nSince $terminaln = \\cos(antifibo\\, linearvalue)$, if $terminaln=0$ for some $staticfixed$ then $antifibo\\, linearvalue = \\frac{eveninteger}{2} \\pi$ for some odd integer $eveninteger$. In particular, we can write $linearvalue = \\frac{irrational}{continuous}(2\\pi)$ where $irrational = eveninteger$ and $continuous = 4 antifibo$ are integers.\n\nLet $terminaln$ denote the pair $(F_n,F_{n+1})$, where each entry in this pair is viewed as an element of $\\mathbb{Z}/continuous\\mathbb{Z}$. Since there are only finitely many possibilities for $terminaln$, there must be some $statictwo>staticone$ such that $terminaln|_{staticone}=terminaln|_{statictwo}$. Now $terminaln$ uniquely determines both $terminalnplusone$ and $terminalnminusone$, and it follows that the sequence $\\{terminaln\\}$ is periodic: for $stagnation = statictwo-staticone$, $terminaln_{+stagnation} = terminaln$ for all $staticfixed \\geq 0$. In particular, $F_{n+stagnation} \\equiv F_n \\pmod{continuous}$ for all $staticfixed$. But then $\\frac{F_{n+stagnation}irrational}{continuous}-\\frac{F_n irrational}{continuous}$ is an integer, and so\n\\begin{align*}\nterminaln_{+stagnation} &= \\cos\\left(\\frac{F_{n+stagnation}irrational}{continuous}(2\\pi)\\right)\\\\\n& = \\cos\\left(\\frac{F_n irrational}{continuous}(2\\pi)\\right) = terminaln\n\\end{align*}\nfor all $staticfixed$. Thus the sequence $\\{terminaln\\}$ is periodic, as desired.\n\n\\noindent\n\\textbf{Remark.}\nKarl Mahlburg points out that one can motivate the previous solution by computing the terms\n\\[\nterminaltwo = 2 complexunit^2 - 1,\\quad x_3 = 4 complexunit^3 - 3 complexunit,\\quad x_4 = 16 complexunit^5 - 20 complexunit^3 + 5 complexunit\n\\]\nand recognizing these as the Chebyshev polynomials $T_2, T_3, T_5$. (Note that $T_3$ was used in the solution of\nproblem A3.)\n\n\\noindent\n\\textbf{Remark.}\nIt is not necessary to handle the case $\\left| complexunit \\right| > 1$ separately; the cosine function extends\nto a surjective analytic function on $\\mathbb{C}$ and continues to satisfy the addition formula,\nso one can write $complexunit = \\cos linearvalue$ for some $linearvalue \\in \\mathbb{C}$\nand then proceed as above."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "vhrjzkql",
+        "x_0": "mjdpskan",
+        "x_1": "qeivhzot",
+        "x_2": "lkwycert",
+        "x_n": "asdhfgeo",
+        "x_n+1": "fjkdlsow",
+        "x_n-1": "zylqkpet",
+        "x_n-2": "hobwulcd",
+        "n": "rptavmse",
+        "F_n": "nqgxlwze",
+        "F_n-1": "qfujzdko",
+        "F_n-2": "wvoeqrla",
+        "F_n+1": "cyparmsu",
+        "F_n+\\\\ell": "pjdqstuv",
+        "\\\\ell": "kzxorhnb",
+        "n_1": "oanbxjru",
+        "n_2": "btzqwekl",
+        "a": "prcixmua",
+        "b": "tczevnla",
+        "c": "ykglsmaf",
+        "d": "smuvacrh",
+        "k": "vltqorwp"
+      },
+      "question": "Given a real number $prcixmua$, we define a sequence by $mjdpskan = 1$, $qeivhzot = lkwycert = prcixmua$, and $fjkdlsow = 2 asdhfgeo zylqkpet - hobwulcd$ for $rptavmse \\geq 2$. Prove that if $asdhfgeo = 0$ for some $rptavmse$, then the sequence is periodic.",
+      "solution": "We first rule out the case $|prcixmua|>1$. In this case, we prove that $|fjkdlsow|\\geq|asdhfgeo|$ for all $rptavmse$, meaning that we cannot have $asdhfgeo = 0$. We proceed by induction; the claim is true for $rptavmse=0,1$ by hypothesis. To prove the claim for $rptavmse \\geq 2$, write\n\\begin{align*}\n|fjkdlsow| &= |2 asdhfgeo zylqkpet - hobwulcd| \\\\\n&\\geq 2|asdhfgeo||zylqkpet| - |hobwulcd| \\\\\n&\\geq |asdhfgeo|\\,(2|zylqkpet|-1) \\geq |asdhfgeo|,\n\\end{align*}\nwhere the last step follows from $|zylqkpet| \\geq |hobwulcd| \\geq \\cdots \\geq |mjdpskan| = 1$.\n\nWe may thus assume hereafter that $|prcixmua|\\leq 1$. We can then write $prcixmua = \\cos tczevnla$ for some $tczevnla \\in [0,\\pi]$. Let $\\{nqgxlwze\\}$ be the Fibonacci sequence, defined as usual by $F_1=F_2=1$ and $cyparmsu = nqgxlwze + qfujzdko$. We show by induction that\n\\[\nasdhfgeo = \\cos(nqgxlwze\\, tczevnla)\\qquad (rptavmse \\geq 0).\n\\]\nIndeed, this is true for $rptavmse = 0,1,2$; given that it is true for $rptavmse \\leq m$, then\n\\begin{align*}\n2 vhrjzkql_m vhrjzkql_{m-1} &= 2\\cos(F_m tczevnla)\\cos(F_{m-1} tczevnla) \\\\\n&= \\cos((F_m-F_{m-1}) tczevnla)+\\cos((F_m+F_{m-1}) tczevnla) \\\\\n&= \\cos(F_{m-2} tczevnla)+\\cos(F_{m+1} tczevnla)\n\\end{align*}\nand so\n\\[\nvhrjzkql_{m+1}=2 vhrjzkql_m vhrjzkql_{m-1}-vhrjzkql_{m-2}=\\cos(F_{m+1} tczevnla).\n\\]\nThis completes the induction.\n\nSince $asdhfgeo = \\cos(nqgxlwze\\, tczevnla)$, if $asdhfgeo = 0$ for some $rptavmse$ then $nqgxlwze\\, tczevnla = \\frac{vltqorwp}{2}\\pi$ for some odd integer $vltqorwp$. In particular, we can write\n\\[\ntczevnla = \\frac{ykglsmaf}{smuvacrh}(2\\pi)\n\\]\nwhere $ykglsmaf = vltqorwp$ and $smuvacrh = 4nqgxlwze$ are integers.\n\nLet $asdhfgeo$ denote the pair $(nqgxlwze,\\, cyparmsu)$, where each entry in this pair is viewed as an element of $\\mathbb{Z}/smuvacrh\\mathbb{Z}$. Since there are only finitely many possibilities for $asdhfgeo$, there must be some $btzqwekl > oanbxjru$ such that $vhrjzkql_{oanbxjru} = vhrjzkql_{btzqwekl}$. Now $asdhfgeo$ uniquely determines both $fjkdlsow$ and $zylqkpet$, and it follows that the sequence $\\{asdhfgeo\\}$ is periodic: for $kzxorhnb = btzqwekl - oanbxjru$, we have\n\\[\nvhrjzkql_{rptavmse+kzxorhnb}=vhrjzkql_{rptavmse}\\qquad\\text{for all }rptavmse\\ge 0.\n\\]\nIn particular, $pjdqstuv \\equiv nqgxlwze \\pmod{smuvacrh}$ for all $rptavmse$. But then\n\\[\n\\frac{pjdqstuv\\, ykglsmaf}{smuvacrh}-\\frac{nqgxlwze\\, ykglsmaf}{smuvacrh}\\in\\mathbb{Z},\n\\]\nand so\n\\begin{align*}\nvhrjzkql_{rptavmse+kzxorhnb} &= \\cos\\left(\\frac{pjdqstuv\\, ykglsmaf}{smuvacrh}(2\\pi)\\right)\\\\\n&= \\cos\\left(\\frac{nqgxlwze\\, ykglsmaf}{smuvacrh}(2\\pi)\\right)=asdhfgeo\n\\end{align*}\nfor all $rptavmse$. Thus the sequence $\\{asdhfgeo\\}$ is periodic, as desired.\n\n\\noindent\n\\textbf{Remark.} Karl Mahlburg points out that one can motivate the previous solution by computing the terms\n\\[\nlkwycert = 2prcixmua^{2} - 1,\\quad vhrjzkql_{3}=4prcixmua^{3}-3prcixmua,\\quad vhrjzkql_{4}=16prcixmua^{5}-20prcixmua^{3}+5prcixmua,\n\\]\nand recognizing these as the Chebyshev polynomials $T_2, T_3, T_5$. (Note that $T_3$ was used in the solution of problem A3.)\n\n\\noindent\n\\textbf{Remark.} It is not necessary to handle the case $\\left| prcixmua \\right| > 1$ separately; the cosine function extends to a surjective analytic function on $\\mathbb{C}$ and continues to satisfy the addition formula, so one can write $prcixmua = \\cos tczevnla$ for some $tczevnla \\in \\mathbb{C}$ and then proceed as above."
+    },
+    "kernel_variant": {
+      "question": "Let $t\\in\\mathbb R$ and define a sequence $(y_n)$ by\n\\[y_0=1,\\qquad y_1=y_2=t,\\qquad y_{n+1}=2y_ny_{n-1}-y_{n-2}\\;\\;\\; (n\\ge 2).\\]\nShow that if $y_m=0$ for some integer $m\\ge 0$, then the whole sequence $(y_n)$ is periodic.",
+      "solution": "1. Rule out |t|>1.  If |t|>1 then |y_0|=1, |y_1|=|y_2|>1 and for n\\geq 2\n   |y_{n+1}|=|2y_n y_{n-1}-y_{n-2}|\\geq 2|y_n||y_{n-1}|-|y_{n-2}| \\geq |y_n|(2|y_{n-1}|-1)\\geq |y_n|.\n   Hence |y_n| is nondecreasing starting from 1, so no term can be zero.\n\n2. Write t=cos \\theta  for some real \\theta  (since |t|\\leq 1).  For instance choose \\theta \\in [0,\\pi ] so that cos \\theta =t.\n\n3. Show by induction that\n   y_n=cos(G_n \\theta ),\n   where (G_n) is the Fibonacci sequence G_0=0, G_1=1, G_{n+1}=G_n+G_{n-1}.  The base cases n=0,1,2 are immediate: y_0=1=cos0, y_1=y_2=t=cos \\theta .  If y_k=cos(G_k\\theta ) holds for k\\leq m, then\n     2y_m y_{m-1}=2cos(G_m\\theta )cos(G_{m-1}\\theta )\n       =cos((G_m-G_{m-1})\\theta )+cos((G_m+G_{m-1})\\theta )\n       =cos(G_{m-2}\\theta )+cos(G_{m+1}\\theta ),\n   so y_{m+1}=2y_m y_{m-1}-y_{m-2}=cos(G_{m+1}\\theta ).\n\n4. If y_m=0 for some m, then cos(G_m\\theta )=0 \\Rightarrow  G_m\\theta =(2r+1)\\pi /2 for some r\\in \\mathbb{Z}.  Hence \\theta =(2r+1)\\pi /(2G_m)=(2r+1)/(4G_m)\\cdot 2\\pi .  Set c=2r+1, d=4G_m.  Then \\theta =(c/d)\\cdot 2\\pi .\n\n5. Consider the pairs z_n=(G_n mod d, G_{n+1} mod d) in (\\mathbb{Z}/d\\mathbb{Z})^2.  There are only d^2 possibilities, so z_{n_1}=z_{n_2} for some n_2>n_1.  Let \\ell =n_2-n_1.  The Fibonacci recursion shows z_{n+\\ell }=z_n for all n, hence\n   G_{n+\\ell }\\equiv G_n (mod d) for all n.\n\n6. Finally,\n   y_{n+\\ell }=cos(G_{n+\\ell }\\theta )=cos(G_n\\theta  + (G_{n+\\ell }-G_n)\\cdot (c/d)\\cdot 2\\pi )\n           =cos(G_n\\theta  + k\\cdot c\\cdot 2\\pi )\n           =cos(G_n\\theta )=y_n.\n\nThus whenever some y_m=0, the sequence is purely periodic of period \\ell .  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Show |a|>1 ⇒ |x_n| is non-decreasing, so zeros impossible; hence assume |a|≤1.",
+          "Set a = cos b and prove inductively that x_n = cos(F_n b) using the Fibonacci/cosine addition identity.",
+          "If some x_n = 0 then F_n b = (2m+1)π/2, so b is a rational multiple of 2π with denominator d (coming from F_n).",
+          "Consider the pair (F_n, F_{n+1}) mod d; finiteness ⇒ a repeat ⇒ F_{n+ℓ} ≡ F_n (mod d).",
+          "This congruence gives x_{n+ℓ}=cos(F_{n+ℓ} b)=cos(F_n b)=x_n, proving periodicity."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Extra factor chosen so that b is written as a multiple of 2π; any even factor suffices.",
+            "original": "the ‘4’ in d = 4 F_n"
+          },
+          "slot2": {
+            "description": "Chosen interval for arccos; any interval giving a single-valued inverse would work.",
+            "original": "b ∈ [0, π]"
+          },
+          "slot3": {
+            "description": "Parity statement guaranteeing cosine zeros; any expression of the form 2m+1 could replace ‘odd’.",
+            "original": "“odd integer k” in F_n b = kπ/2"
+          },
+          "slot4": {
+            "description": "Indexing convention for the Fibonacci sequence; starting with (F_0,F_1)=(0,1) would also work.",
+            "original": "definition F_1=F_2=1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

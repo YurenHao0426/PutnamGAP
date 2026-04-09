@@ -1,0 +1,149 @@
+{
+  "index": "2002-B-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "An integer $n$, unknown to you, has been randomly chosen in the\ninterval $[1, 2002]$ with uniform probability. Your objective is\nto select $n$ in an \\textbf{odd} number of guesses. After\neach incorrect guess, you are informed whether $n$ is higher\nor lower, and you \\textbf{must} guess an integer on your next turn\namong the numbers that are still feasibly correct. Show that you\nhave a strategy so that the chance of winning is greater than $2/3$.",
+  "solution": "Use the following strategy: guess $1, 3, 4, 6, 7, 9, \\dots$\nuntil the target number $n$ is revealed to be equal to or lower than one\nof these guesses. If $n \\equiv 1 \\pmod{3}$, it will be guessed on an\nodd turn. If $n \\equiv 0 \\pmod{3}$, it will be guessed on an even turn.\nIf $n \\equiv 2 \\pmod{3}$, then $n+1$ will be guessed on an even turn,\nforcing a guess of $n$ on the next turn. Thus the probability\nof success with this strategy is $1335/2002 > 2/3$.\n\nNote: for any positive integer $m$, this strategy wins when the\nnumber is being guessed from $[1,m]$ with probability\n$\\frac{1}{m} \\lfloor \\frac{2m+1}{3} \\rfloor$. We can prove that\nthis is best possible as follows.\nLet $a_m$ denote $m$ times\nthe probability of winning when playing optimally.  Also, let $b_m$\ndenote $m$ times the corresponding probability of winning if the\nobjective is to select the number in an even number of guesses\ninstead.  (For definiteness, extend the definitions to incorporate\n$a_0 = 0$ and $b_0=0$.)\n\nWe first claim that $a_m = 1 + \\max_{1\\leq k\\leq m} \\{b_{k-1} +\nb_{m-k}\\}$ and $b_m = \\max_{1\\leq k\\leq m} \\{a_{k-1} + a_{m-k}\\}$ for $m\n\\geq 1$.  To establish the first recursive identity, suppose that our\nfirst guess is some integer $k$. We automatically win if $n=k$, with\nprobability $1/m$. If $n<k$, with probability $(k-1)/m$, then we wish\nto guess an integer in $[1,k-1]$ in an even number of guesses; the\nprobability of success when playing optimally is $b_{k-1}/(k-1)$, by\nassumption.  Similarly, if $n<k$, with probability $(m-k)/m$, then the\nsubsequent probability of winning is $b_{m-k}/(m-k)$.  In sum, the\noverall probability of winning if $k$ is our first guess is\n$(1+b_{k-1}+b_{m-k})/m$. For optimal strategy, we choose $k$ such that\nthis quantity is maximized. (Note that this argument still holds if\n$k=1$ or $k=m$, by our definitions of $a_0$ and $b_0$.)  The first\nrecursion follows, and the second recursion is established similarly.\n\nWe now prove by induction that $a_m = \\lfloor (2m+1)/3 \\rfloor$ and\n$b_m = \\lfloor 2m/3 \\rfloor$ for $m \\geq 0$. The inductive step relies\non the inequality $\\lfloor x \\rfloor + \\lfloor y \\rfloor \\leq \\lfloor\nx+y \\rfloor$, with equality when one of $x,y$ is an integer. Now\nsuppose that $a_i = \\lfloor (2i+1)/3 \\rfloor$ and\n$b_i = \\lfloor 2i/3 \\rfloor$ for $i < m$. Then\n\\begin{align*}\n1+b_{k-1}+b_{m-k} &= 1+\\left\\lfloor \\frac{2(k-1)}{3} \\right\\rfloor +\n\\left\\lfloor\n\\frac{2(m-k)}{3} \\right\\rfloor \\\\\n&\\leq \\left\\lfloor \\frac{2m}{3} \\right\\rfloor\n\\end{align*}\nand similarly $a_{k-1}+a_{m-k} \\leq \\lfloor (2m+1)/3 \\rfloor$, with\nequality in both cases attained, e.g., when $k=1$.\nThe inductive formula for $a_m$ and $b_m$ follows.",
+  "vars": [
+    "n",
+    "k",
+    "m",
+    "i",
+    "x",
+    "y"
+  ],
+  "params": [
+    "a_m",
+    "b_m",
+    "a_0",
+    "b_0",
+    "b_k-1",
+    "a_k-1",
+    "b_m-k",
+    "a_m-k",
+    "a_i",
+    "b_i"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "choseninteger",
+        "k": "firstguess",
+        "m": "upperlimit",
+        "i": "indexvar",
+        "x": "realvalue",
+        "y": "anothervar",
+        "a_m": "oddprobm",
+        "b_m": "evenprobm",
+        "a_0": "oddprobzero",
+        "b_0": "evenprobzero",
+        "b_k-1": "evenprobkminusone",
+        "a_k-1": "oddprobkminusone",
+        "b_m-k": "evenprobmminusk",
+        "a_m-k": "oddprobmminusk",
+        "a_i": "oddprobind",
+        "b_i": "evenprobind"
+      },
+      "question": "An integer $choseninteger$, unknown to you, has been randomly chosen in the interval $[1, 2002]$ with uniform probability. Your objective is to select $choseninteger$ in an \\textbf{odd} number of guesses. After each incorrect guess, you are informed whether $choseninteger$ is higher or lower, and you \\textbf{must} guess an integer on your next turn among the numbers that are still feasibly correct. Show that you have a strategy so that the chance of winning is greater than $2/3$.",
+      "solution": "Use the following strategy: guess $1, 3, 4, 6, 7, 9, \\dots$ until the target number $choseninteger$ is revealed to be equal to or lower than one of these guesses. If $choseninteger \\equiv 1 \\pmod{3}$, it will be guessed on an odd turn. If $choseninteger \\equiv 0 \\pmod{3}$, it will be guessed on an even turn. If $choseninteger \\equiv 2 \\pmod{3}$, then $choseninteger+1$ will be guessed on an even turn, forcing a guess of $choseninteger$ on the next turn. Thus the probability of success with this strategy is $1335/2002 > 2/3$.\n\nNote: for any positive integer $upperlimit$, this strategy wins when the number is being guessed from $[1,upperlimit]$ with probability $\\frac{1}{upperlimit} \\left\\lfloor \\frac{2\\,upperlimit+1}{3} \\right\\rfloor$. We can prove that this is best possible as follows.\nLet $oddprobm$ denote $upperlimit$ times the probability of winning when playing optimally.  Also, let $evenprobm$ denote $upperlimit$ times the corresponding probability of winning if the objective is to select the number in an even number of guesses instead.  (For definiteness, extend the definitions to incorporate $oddprobzero = 0$ and $evenprobzero=0$.)\n\nWe first claim that $oddprobm = 1 + \\max_{1\\leq firstguess\\leq upperlimit} \\{\\,evenprobkminusone + evenprobmminusk\\}$ and $evenprobm = \\max_{1\\leq firstguess\\leq upperlimit} \\{\\,oddprobkminusone + oddprobmminusk\\}$ for $upperlimit \\geq 1$.  To establish the first recursive identity, suppose that our first guess is some integer $firstguess$. We automatically win if $choseninteger=firstguess$, with probability $1/upperlimit$. If $choseninteger<firstguess$, with probability $(firstguess-1)/upperlimit$, then we wish to guess an integer in $[1,firstguess-1]$ in an even number of guesses; the probability of success when playing optimally is $evenprobkminusone/(firstguess-1)$, by assumption.  Similarly, if $choseninteger>firstguess$, with probability $(upperlimit-firstguess)/upperlimit$, then the subsequent probability of winning is $evenprobmminusk/(upperlimit-firstguess)$.  In sum, the overall probability of winning if $firstguess$ is our first guess is $(1+evenprobkminusone+evenprobmminusk)/upperlimit$. For an optimal strategy, we choose $firstguess$ such that this quantity is maximized. (Note that this argument still holds if $firstguess=1$ or $firstguess=upperlimit$, by our definitions of $oddprobzero$ and $evenprobzero$.)  The first recursion follows, and the second recursion is established similarly.\n\nWe now prove by induction that $oddprobm = \\left\\lfloor (2\\,upperlimit+1)/3 \\right\\rfloor$ and $evenprobm = \\left\\lfloor 2\\,upperlimit/3 \\right\\rfloor$ for $upperlimit \\geq 0$. The inductive step relies on the inequality $\\lfloor realvalue \\rfloor + \\lfloor anothervar \\rfloor \\leq \\lfloor realvalue+anothervar \\rfloor$, with equality when one of $realvalue,anothervar$ is an integer. Now suppose that $oddprobind = \\left\\lfloor (2\\,indexvar+1)/3 \\right\\rfloor$ and $evenprobind = \\left\\lfloor 2\\,indexvar/3 \\right\\rfloor$ for $indexvar < upperlimit$. Then\n\\begin{align*}\n1+evenprobkminusone+evenprobmminusk &= 1+\\left\\lfloor \\frac{2\\,(firstguess-1)}{3} \\right\\rfloor + \\left\\lfloor \\frac{2\\,(upperlimit-firstguess)}{3} \\right\\rfloor \\\\ &\\leq \\left\\lfloor \\frac{2\\,upperlimit}{3} \\right\\rfloor\n\\end{align*}\nand similarly $oddprobkminusone+oddprobmminusk \\leq \\left\\lfloor (2\\,upperlimit+1)/3 \\right\\rfloor$, with equality in both cases attained, e.g., when $firstguess=1$.\nThe inductive formula for $oddprobm$ and $evenprobm$ follows."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "blueberry",
+        "k": "crocodile",
+        "m": "raspberry",
+        "i": "woodpecker",
+        "x": "toothpaste",
+        "y": "skateboard",
+        "a_m": "lollipop",
+        "b_m": "marshmallow",
+        "a_0": "basketball",
+        "b_0": "cheeseburger",
+        "b_k-1": "sunflower",
+        "a_k-1": "watermelon",
+        "b_m-k": "hummingbird",
+        "a_m-k": "screwdriver",
+        "a_i": "flashlight",
+        "b_i": "microphone"
+      },
+      "question": "An integer $blueberry$, unknown to you, has been randomly chosen in the\ninterval $[1, 2002]$ with uniform probability. Your objective is\nto select $blueberry$ in an \\textbf{odd} number of guesses. After\neach incorrect guess, you are informed whether $blueberry$ is higher\nor lower, and you \\textbf{must} guess an integer on your next turn\namong the numbers that are still feasibly correct. Show that you\nhave a strategy so that the chance of winning is greater than $2/3$.",
+      "solution": "Use the following strategy: guess $1, 3, 4, 6, 7, 9, \\dots$\nuntil the target number $blueberry$ is revealed to be equal to or lower than one\nof these guesses. If $blueberry \\equiv 1 \\pmod{3}$, it will be guessed on an\nodd turn. If $blueberry \\equiv 0 \\pmod{3}$, it will be guessed on an even turn.\nIf $blueberry \\equiv 2 \\pmod{3}$, then $blueberry+1$ will be guessed on an even turn,\nforcing a guess of $blueberry$ on the next turn. Thus the probability\nof success with this strategy is $1335/2002 > 2/3$.\n\nNote: for any positive integer $raspberry$, this strategy wins when the\nnumber is being guessed from $[1,raspberry]$ with probability\n$\\frac{1}{raspberry} \\lfloor \\frac{2raspberry+1}{3} \\rfloor$. We can prove that\nthis is best possible as follows.\nLet $lollipop$ denote $raspberry$ times\nthe probability of winning when playing optimally.  Also, let $marshmallow$\ndenote $raspberry$ times the corresponding probability of winning if the\nobjective is to select the number in an even number of guesses\ninstead.  (For definiteness, extend the definitions to incorporate\n$basketball = 0$ and $cheeseburger=0$.)\n\nWe first claim that $lollipop = 1 + \\max_{1\\leq crocodile\\leq raspberry} \\{sunflower +\nhummingbird\\}$ and $marshmallow = \\max_{1\\leq crocodile\\leq raspberry} \\{watermelon + screwdriver\\}$ for $raspberry\n\\geq 1$.  To establish the first recursive identity, suppose that our\nfirst guess is some integer $crocodile$. We automatically win if $blueberry=crocodile$, with\nprobability $1/raspberry$. If $blueberry<crocodile$, with probability $(crocodile-1)/raspberry$, then we wish\nto guess an integer in $[1,crocodile-1]$ in an even number of guesses; the\nprobability of success when playing optimally is $sunflower/(crocodile-1)$, by\nassumption.  Similarly, if $blueberry<crocodile$, with probability $(raspberry-crocodile)/raspberry$, then the\nsubsequent probability of winning is $hummingbird/(raspberry-crocodile)$.  In sum, the\noverall probability of winning if $crocodile$ is our first guess is\n$(1+sunflower+hummingbird)/raspberry$. For optimal strategy, we choose $crocodile$ such that\nthis quantity is maximized. (Note that this argument still holds if\n$crocodile=1$ or $crocodile=raspberry$, by our definitions of $basketball$ and $cheeseburger$.)  The first\nrecursion follows, and the second recursion is established similarly.\n\nWe now prove by induction that $lollipop = \\lfloor (2raspberry+1)/3 \\rfloor$ and\n$marshmallow = \\lfloor 2raspberry/3 \\rfloor$ for $raspberry \\geq 0$. The inductive step relies\non the inequality $\\lfloor toothpaste \\rfloor + \\lfloor skateboard \\rfloor \\leq \\lfloor\ntoothpaste+skateboard \\rfloor$, with equality when one of $toothpaste,skateboard$ is an integer. Now\nsuppose that $flashlight = \\lfloor (2woodpecker+1)/3 \\rfloor$ and\n$microphone = \\lfloor 2woodpecker/3 \\rfloor$ for $woodpecker < raspberry$. Then\n\\begin{align*}\n1+sunflower+hummingbird &= 1+\\left\\lfloor \\frac{2(crocodile-1)}{3} \\right\\rfloor +\n\\left\\lfloor\n\\frac{2(raspberry-crocodile)}{3} \\right\\rfloor \\\\\n&\\leq \\left\\lfloor \\frac{2raspberry}{3} \\right\\rfloor\n\\end{align*}\nand similarly $watermelon+screwdriver \\leq \\lfloor (2raspberry+1)/3 \\rfloor$, with\nequality in both cases attained, e.g., when $crocodile=1$.\nThe inductive formula for $lollipop$ and $marshmallow$ follows."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "deterministicconstant",
+        "k": "finalanswer",
+        "m": "lowerbound",
+        "i": "wholequantity",
+        "x": "definitevalue",
+        "y": "certainvalue",
+        "a_m": "failuremeasure",
+        "b_m": "suffermeasure",
+        "a_0": "failurezero",
+        "b_0": "sufferzero",
+        "b_k-1": "sufferprecede",
+        "a_k-1": "failureprecede",
+        "b_m-k": "sufferremaining",
+        "a_m-k": "failureremaining",
+        "a_i": "failureindex",
+        "b_i": "sufferindex"
+      },
+      "question": "An integer $deterministicconstant$, unknown to you, has been randomly chosen in the\ninterval $[1, 2002]$ with uniform probability. Your objective is\nto select $deterministicconstant$ in an \\textbf{odd} number of guesses. After\neach incorrect guess, you are informed whether $deterministicconstant$ is higher\nor lower, and you \\textbf{must} guess an integer on your next turn\namong the numbers that are still feasibly correct. Show that you\nhave a strategy so that the chance of winning is greater than $2/3$.",
+      "solution": "Use the following strategy: guess $1, 3, 4, 6, 7, 9, \\dots$\nuntil the target number $deterministicconstant$ is revealed to be equal to or lower than one\nof these guesses. If $deterministicconstant \\equiv 1 \\pmod{3}$, it will be guessed on an\nodd turn. If $deterministicconstant \\equiv 0 \\pmod{3}$, it will be guessed on an even turn.\nIf $deterministicconstant \\equiv 2 \\pmod{3}$, then $deterministicconstant+1$ will be guessed on an even turn,\nforcing a guess of $deterministicconstant$ on the next turn. Thus the probability\nof success with this strategy is $1335/2002 > 2/3$.\n\nNote: for any positive integer $lowerbound$, this strategy wins when the\nnumber is being guessed from $[1,lowerbound]$ with probability\n$\\frac{1}{lowerbound} \\lfloor \\frac{2lowerbound+1}{3} \\rfloor$. We can prove that\nthis is best possible as follows.\nLet $failuremeasure$ denote $lowerbound$ times\nthe probability of winning when playing optimally.  Also, let $suffermeasure$\ndenote $lowerbound$ times the corresponding probability of winning if the\nobjective is to select the number in an even number of guesses\ninstead.  (For definiteness, extend the definitions to incorporate\n$failurezero = 0$ and $sufferzero=0$.)\n\nWe first claim that $failuremeasure = 1 + \\max_{1\\leq finalanswer\\leq lowerbound} \\{sufferprecede +\nsufferremaining\\}$ and $suffermeasure = \\max_{1\\leq finalanswer\\leq lowerbound} \\{failureprecede + failureremaining\\}$ for $lowerbound\n\\geq 1$.  To establish the first recursive identity, suppose that our\nfirst guess is some integer $finalanswer$. We automatically win if $deterministicconstant=finalanswer$, with\nprobability $1/lowerbound$. If $deterministicconstant<finalanswer$, with probability $(finalanswer-1)/lowerbound$, then we wish\nto guess an integer in $[1,finalanswer-1]$ in an even number of guesses; the\nprobability of success when playing optimally is $sufferprecede/(finalanswer-1)$, by\nassumption.  Similarly, if $deterministicconstant<finalanswer$, with probability $(lowerbound-finalanswer)/lowerbound$, then the\nsubsequent probability of winning is $sufferremaining/(lowerbound-finalanswer)$.  In sum, the\noverall probability of winning if $finalanswer$ is our first guess is\n$(1+sufferprecede+sufferremaining)/lowerbound$. For optimal strategy, we choose $finalanswer$ such that\nthis quantity is maximized. (Note that this argument still holds if\n$finalanswer=1$ or $finalanswer=lowerbound$, by our definitions of $failurezero$ and $sufferzero$.)  The first\nrecursion follows, and the second recursion is established similarly.\n\nWe now prove by induction that $failuremeasure = \\lfloor (2lowerbound+1)/3 \\rfloor$ and\n$suffermeasure = \\lfloor 2lowerbound/3 \\rfloor$ for $lowerbound \\geq 0$. The inductive step relies\non the inequality $\\lfloor definitevalue \\rfloor + \\lfloor certainvalue \\rfloor \\leq \\lfloor\ndefinitevalue+certainvalue \\rfloor$, with equality when one of $definitevalue,certainvalue$ is an integer. Now\nsuppose that $failureindex = \\lfloor (2wholequantity+1)/3 \\rfloor$ and\n$sufferindex = \\lfloor 2wholequantity/3 \\rfloor$ for $wholequantity < lowerbound$. Then\n\\begin{align*}\n1+sufferprecede+sufferremaining &= 1+\\left\\lfloor \\frac{2(finalanswer-1)}{3} \\right\\rfloor +\n\\left\\lfloor\n\\frac{2(lowerbound-finalanswer)}{3} \\right\\rfloor \\\\\n&\\leq \\left\\lfloor \\frac{2lowerbound}{3} \\right\\rfloor\n\\end{align*}\nand similarly $failureprecede+failureremaining \\leq \\lfloor (2lowerbound+1)/3 \\rfloor$, with\nequality in both cases attained, e.g., when $finalanswer=1$.\nThe inductive formula for $failuremeasure$ and $suffermeasure$ follows."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "rquxmdve",
+        "k": "vebhlany",
+        "m": "ijztscqo",
+        "i": "smgefhuc",
+        "x": "qzfuntay",
+        "y": "mlbrovki",
+        "a_m": "rpjvsket",
+        "b_m": "udnhpoix",
+        "a_0": "cvgzawlr",
+        "b_0": "lpnxtrqe",
+        "b_k-1": "kxwqzvda",
+        "a_k-1": "fmyoabnj",
+        "b_m-k": "wsvilcpe",
+        "a_m-k": "hqzefkyn",
+        "a_i": "adplsiwm",
+        "b_i": "jrwodgku"
+      },
+      "question": "An integer $rquxmdve$, unknown to you, has been randomly chosen in the\ninterval $[1, 2002]$ with uniform probability. Your objective is\nto select $rquxmdve$ in an \\textbf{odd} number of guesses. After\neach incorrect guess, you are informed whether $rquxmdve$ is higher\nor lower, and you \\textbf{must} guess an integer on your next turn\namong the numbers that are still feasibly correct. Show that you\nhave a strategy so that the chance of winning is greater than $2/3$.",
+      "solution": "Use the following strategy: guess $1, 3, 4, 6, 7, 9, \\dots$\nuntil the target number $rquxmdve$ is revealed to be equal to or lower than one\nof these guesses. If $rquxmdve \\equiv 1 \\pmod{3}$, it will be guessed on an\nodd turn. If $rquxmdve \\equiv 0 \\pmod{3}$, it will be guessed on an even turn.\nIf $rquxmdve \\equiv 2 \\pmod{3}$, then $rquxmdve+1$ will be guessed on an even turn,\nforcing a guess of $rquxmdve$ on the next turn. Thus the probability\nof success with this strategy is $1335/2002 > 2/3$.\n\nNote: for any positive integer $ijztscqo$, this strategy wins when the\nnumber is being guessed from $[1,ijztscqo]$ with probability\n$\\frac{1}{ijztscqo} \\lfloor \\frac{2ijztscqo+1}{3} \\rfloor$. We can prove that\nthis is best possible as follows.\nLet $rpjvsket$ denote $ijztscqo$ times\nthe probability of winning when playing optimally.  Also, let $udnhpoix$\ndenote $ijztscqo$ times the corresponding probability of winning if the\nobjective is to select the number in an even number of guesses\ninstead.  (For definiteness, extend the definitions to incorporate\n$cvgzawlr = 0$ and $lpnxtrqe=0$.)\n\nWe first claim that $rpjvsket = 1 + \\max_{1\\leq vebhlany\\leq ijztscqo} \\{kxwqzvda +\nwsvilcpe\\}$ and $udnhpoix = \\max_{1\\leq vebhlany\\leq ijztscqo} \\{fmyoabnj + hqzefkyn\\}$ for $ijztscqo\n\\geq 1$.  To establish the first recursive identity, suppose that our\nfirst guess is some integer $vebhlany$. We automatically win if $rquxmdve=vebhlany$, with\nprobability $1/ijztscqo$. If $rquxmdve<vebhlany$, with probability $(vebhlany-1)/ijztscqo$, then we wish\nto guess an integer in $[1,vebhlany-1]$ in an even number of guesses; the\nprobability of success when playing optimally is $kxwqzvda/(vebhlany-1)$, by\nassumption.  Similarly, if $rquxmdve<vebhlany$, with probability $(ijztscqo-vebhlany)/ijztscqo$, then the\nsubsequent probability of winning is $wsvilcpe/(ijztscqo-vebhlany)$.  In sum, the\noverall probability of winning if $vebhlany$ is our first guess is\n$(1+kxwqzvda+wsvilcpe)/ijztscqo$. For optimal strategy, we choose $vebhlany$ such that\nthis quantity is maximized. (Note that this argument still holds if\n$vebhlany=1$ or $vebhlany=ijztscqo$, by our definitions of $cvgzawlr$ and $lpnxtrqe$.)  The first\nrecursion follows, and the second recursion is established similarly.\n\nWe now prove by induction that $rpjvsket = \\lfloor (2ijztscqo+1)/3 \\rfloor$ and\n$udnhpoix = \\lfloor 2ijztscqo/3 \\rfloor$ for $ijztscqo \\geq 0$. The inductive step relies\non the inequality $\\lfloor qzfuntay \\rfloor + \\lfloor mlbrovki \\rfloor \\leq \\lfloor\nqzfuntay+mlbrovki \\rfloor$, with equality when one of $qzfuntay,mlbrovki$ is an integer. Now\nsuppose that $adplsiwm = \\lfloor (2smgefhuc+1)/3 \\rfloor$ and\n$jrwodgku = \\lfloor 2smgefhuc/3 \\rfloor$ for $smgefhuc < ijztscqo$. Then\n\\begin{align*}\n1+kxwqzvda+wsvilcpe &= 1+\\left\\lfloor \\frac{2(vebhlany-1)}{3} \\right\\rfloor +\n\\left\\lfloor\n\\frac{2(ijztscqo-vebhlany)}{3} \\right\\rfloor \\\\\n&\\leq \\left\\lfloor \\frac{2ijztscqo}{3} \\right\\rfloor\n\\end{align*}\nand similarly $fmyoabnj+hqzefkyn \\leq \\lfloor (2ijztscqo+1)/3 \\rfloor$, with\nequality in both cases attained, e.g., when $vebhlany=1$.\nThe inductive formula for $rpjvsket$ and $udnhpoix$ follows."
+    },
+    "kernel_variant": {
+      "question": "A positive integer n is chosen uniformly at random from the set {1,2,\\ldots ,1500}. After every wrong guess you are told whether n is higher or lower, and on the next move you must guess an integer that is still compatible with all the information you already have.  You want to discover n in an even number of guesses.  \n\n(a) Show that there exists a strategy that succeeds with probability at least 2/3.\n\n(b) Prove that no strategy can succeed with probability larger than 2/3.",
+      "solution": "Throughout \"probability of success\" always means the probability - with respect to the uniform choice of the hidden number - that the first correct guess is made on an even move.\n\n---------------------------------------------------------------------\n1.  A 3-spaced monotone strategy that always ends on an even turn\n---------------------------------------------------------------------\nLet (g_i)_{i\\ge 1} be the sequence\n      g_{2r-1}=3r-1,   g_{2r}=3r     (r=1,2,\\dots) :\n      2,3,5,6,8,9, \\ldots \n\nKeep guessing g_1,g_2,\\ldots  until one of them is not smaller than n.\n* If some g_i equals n we are done.\n* If some g_i exceeds n then n lies between g_{i-1} and g_i.  By the\ndefinition of the sequence this interval contains a single integer, so\nthe very next guess must be that integer and is therefore correct.\nThe overshoot can occur only for odd i, hence the winning guess is\nalways number i+1, which is even.  Consequently the procedure always\nterminates on an even turn.\n\n---------------------------------------------------------------------\n2.  When does the strategy win?\n---------------------------------------------------------------------\nWrite n=3r, 3r-1 or 3r-2.\n* n=3r  (n\\equiv 0 mod 3).  Up to step 2r-1 every guess is too small; on step\n 2r we guess g_{2r}=3r=n and win on an even turn.\n* n=3r-2  (n\\equiv 1 mod 3).  Step 2r-1 is g_{2r-1}=3r-1>n, so we overshoot;\n the only remaining admissible value is 3r-2, which we guess on step\n 2r and win.\n* n=3r-1  (n\\equiv 2 mod 3).  Step 2r-1 hits n, but this happens on an odd\n turn, so here the strategy fails.\nHence the algorithm succeeds exactly for the 1000 numbers that are 0 or\n1 (mod 3) among the 1500 possible targets, giving success probability\n1000/1500 = 2/3.\n\n---------------------------------------------------------------------\n3.  An upper bound of 2/3 for every even-turn strategy\n---------------------------------------------------------------------\nFor an interval of length m define\n  a_m = maximum number of inputs for which a player can force a win on\n        an *odd* move;\n  b_m = maximum number of inputs for which a player can force a win on\n        an *even* move.\nSet a_0=b_0=0.\n\nSuppose the current interval has length m and the first guess is k\n(1\\leq k\\leq m).\n* We win immediately if n=k (1 input).\n* If n<k (k-1 inputs) we are left with the *even-turn* problem on an\n  interval of length k-1, so at most b_{k-1} of those inputs can still\n  be winning.\n* If n>k (m-k inputs) we again face an even-turn problem, now of length\n  m-k, giving at most b_{m-k} further winners.\nThus\n     a_m = 1 + max_{1\\leq k\\leq m}( b_{k-1}+b_{m-k} ).        (1)\n\nIf the very first move of an even-turn strategy is k, then after the\nanswer we always have an *odd-turn* sub-problem, whence\n     b_m =     max_{1\\leq k\\leq m}( a_{k-1}+a_{m-k} ).        (2)\n\n---------------------------------------------------------------------\nClaim.  For every m\\geq 0\n        a_m = \\lfloor (2m+1)/3\\rfloor   and  b_m = \\lfloor 2m/3\\rfloor .          (3)\n---------------------------------------------------------------------\nThe proof is by induction on m.\n\nBase cases m=0,1,2 are easily checked directly.\n\nInduction step.  Assume (3) holds for all indices < m.\n\nUpper bounds\n------------\nTake any k (1\\leq k\\leq m).  Using the induction hypothesis and \\lfloor x\\rfloor \\leq x,\n 1 + b_{k-1}+b_{m-k} \\leq  1 + 2(k-1)/3 + 2(m-k)/3 = (2m+1)/3,\nso by (1)   a_m \\leq  \\lfloor (2m+1)/3\\rfloor .\nSimilarly\n a_{k-1}+a_{m-k} \\leq  (2(k-1)+1)/3 + (2(m-k)+1)/3 = 2m/3,\nso (2) yields   b_m \\leq  \\lfloor 2m/3\\rfloor .\n\nAchieving equality - a case analysis of m (mod 3)\n-------------------------------------------------\nWe now show that the above upper bounds can always be attained; the\nchoices of k depend only on the residue of m modulo 3.\n\nWrite m=3q,r with r\\in {0,1,2}.\n\n*  r=0  (m=3q).\n   - Equation (1).  Choose k=3.\n     Then k-1=2 and m-k = 3q-3=3(q-1).\n     Using the induction hypothesis,\n       1+b_{k-1}+b_{m-k}=1+b_{2}+b_{3(q-1)}\n       =1+1+2(q-1)=2q = \\lfloor (2m+1)/3\\rfloor .\n   - Equation (2).  Choose k=m-1=3q-1 (which is \\equiv 2 mod 3).\n     Then k-1=3q-2 and m-k=1.  Hence\n       a_{k-1}+a_{m-k}=a_{3q-2}+a_1\n       =(2q-1)+1 = 2q = \\lfloor 2m/3\\rfloor .\n\n*  r=1  (m=3q+1).\n   - For (1) take k=1.  Then m-k=3q and\n       1+b_{k-1}+b_{m-k}=1+b_0+b_{3q}=1+0+2q=2q+1\n       = \\lfloor (2m+1)/3\\rfloor .\n   - For (2) choose k=3.  Now k-1=2 and m-k=3q-2; hence\n       a_{k-1}+a_{m-k}=a_2+a_{3q-2}=1+(2q-1)=2q\n       = \\lfloor 2m/3\\rfloor .\n\n*  r=2  (m=3q+2).\n   - For (1) choose k=3.  We obtain k-1=2,\n     m-k = 3q-1 and\n       1+b_{k-1}+b_{m-k}=1+b_2+b_{3q-1}=1+1+(2q-1)=2q+1\n       = \\lfloor (2m+1)/3\\rfloor .\n   - For (2) pick k=m.  Then k-1=3q+1, m-k=0, so\n       a_{k-1}+a_{m-k}=a_{3q+1}+a_0=(2q+1)+0=2q+1=\n       \\lfloor 2m/3\\rfloor .\n\nIn every residue class there exists a k that attains the upper bound,\nforcing equality in (3).  The induction is complete.\n\n---------------------------------------------------------------------\nConsequences for m = 1500\n---------------------------------------------------------------------\nFor m=1500 we have b_{1500}=\\lfloor 2\\cdot 1500/3\\rfloor =1000, i.e. *no* strategy that is\nrequired to finish on an even turn can succeed for more than 1000 of\nthe 1500 possible hidden numbers.  Hence the maximal success\nprobability is at most 1000/1500 = 2/3.\n\n---------------------------------------------------------------------\n4.  Final result\n---------------------------------------------------------------------\nThe 3-spaced guessing strategy of Section 1 wins exactly for the 1000\nnumbers that are 0 or 1 (mod 3) and always does so on an even turn,\nthereby reaching success probability 2/3.  Section 3 shows that no\nstrategy can do better.  Therefore 2/3 is the optimal success\nprobability, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Use a monotone guessing pattern that repeats every 3 numbers: 1,3,4,6,7,9,… (so guesses land on residues 1,0,1 mod 3 in turns 1,2,3, …).",
+          "Show residue-wise:  n≡1 (mod 3) is hit on an odd turn; n≡0 (mod 3) on an even turn; n≡2 (mod 3) is preceded by n+1 on an even turn and then guessed on the next (odd) turn.",
+          "Hence two of every three possible n are won on an odd turn; total wins = ⌊(2m+1)/3⌋ for an interval of size m.",
+          "Compute probability for m=2002:  ⌊(2·2002+1)/3⌋ / 2002 = 1335/2002 > 2/3.",
+          "(Optional optimality)  Set up recursions for a_m (odd goal) and b_m (even goal), solve by induction to prove the bound is best possible."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Upper end of the interval; any positive integer m (preferably m≢0 (mod 3) if one wants the strict “> 2⁄3” conclusion).",
+            "original": "2002"
+          },
+          "slot2": {
+            "description": "Parity requirement for the successful guess (odd ↔ even); the same recursive/inductive framework works with roles of a_m and b_m swapped.",
+            "original": "odd"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

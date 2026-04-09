@@ -1,0 +1,78 @@
+{
+  "index": "1986-A-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "What is the units (i.e., rightmost) digit of\n\\[\n\\left\\lfloor \\frac{10^{20000}}{10^{100}+3}\\right\\rfloor ?\n\\]\n%Here $\\lfloor x \\rfloor$ is the greatest integer less than or equal to\n%$x$.",
+  "solution": "Solution. Taking \\( x=10^{100} \\) and \\( y=-3 \\) in the factorization\n\\[\nx^{200}-y^{200}=(x-y)\\left(x^{199}+x^{198} y+\\cdots+x y^{198}+y^{199}\\right)\n\\]\nshows that the number\n\\[\nI=\\frac{10^{20000}-3^{200}}{10^{100}+3}=\\left(10^{100}\\right)^{199}-\\left(10^{100}\\right)^{198} 3+\\cdots+10^{100} 3^{198}-3^{199}\n\\]\nis an integer. Moreover, \\( I=\\left\\lfloor\\frac{10^{20000}}{10^{100}+3}\\right\\rfloor \\), since\n\\[\n\\frac{3^{200}}{10^{100}+3}=\\frac{9^{100}}{10^{100}+3}<1\n\\]\n\nBy (1),\n\\[\nI \\equiv-3^{199} \\equiv-3^{3}(81)^{49} \\equiv-27 \\equiv 3 \\quad(\\bmod 10)\n\\]\nso the units digit of \\( I \\) is 3 .",
+  "vars": [
+    "x",
+    "y",
+    "I"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "basepower",
+        "y": "subtrahend",
+        "I": "quotient"
+      },
+      "question": "What is the units (i.e., rightmost) digit of\n\\[\n\\left\\lfloor \\frac{10^{20000}}{10^{100}+3}\\right\\rfloor ?\n\\]\n%Here $\\lfloor x \\rfloor$ is the greatest integer less than or equal to\n%x$.",
+      "solution": "Solution. Taking \\( basepower=10^{100} \\) and \\( subtrahend=-3 \\) in the factorization\n\\[\nbasepower^{200}-subtrahend^{200}=(basepower-subtrahend)\\left(basepower^{199}+basepower^{198} subtrahend+\\cdots+basepower subtrahend^{198}+subtrahend^{199}\\right)\n\\]\nshows that the number\n\\[\nquotient=\\frac{10^{20000}-3^{200}}{10^{100}+3}=\\left(10^{100}\\right)^{199}-\\left(10^{100}\\right)^{198} 3+\\cdots+10^{100} 3^{198}-3^{199}\n\\]\nis an integer. Moreover, \\( quotient=\\left\\lfloor\\frac{10^{20000}}{10^{100}+3}\\right\\rfloor \\), since\n\\[\n\\frac{3^{200}}{10^{100}+3}=\\frac{9^{100}}{10^{100}+3}<1\n\\]\n\nBy (1),\n\\[\nquotient \\equiv-3^{199} \\equiv-3^{3}(81)^{49} \\equiv-27 \\equiv 3 \\quad(\\bmod 10)\n\\]\nso the units digit of \\( quotient \\) is 3 ."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "lighthouse",
+        "y": "seashells",
+        "I": "telescope"
+      },
+      "question": "What is the units (i.e., rightmost) digit of\n\\[\n\\left\\lfloor \\frac{10^{20000}}{10^{100}+3}\\right\\rfloor ?\n\\]",
+      "solution": "Solution. Taking \\( lighthouse=10^{100} \\) and \\( seashells=-3 \\) in the factorization\n\\[\nlighthouse^{200}-seashells^{200}=(lighthouse-seashells)\\left(lighthouse^{199}+lighthouse^{198} seashells+\\cdots+lighthouse seashells^{198}+seashells^{199}\\right)\n\\]\nshows that the number\n\\[\ntelescope=\\frac{10^{20000}-3^{200}}{10^{100}+3}=\\left(10^{100}\\right)^{199}-\\left(10^{100}\\right)^{198} 3+\\cdots+10^{100} 3^{198}-3^{199}\n\\]\nis an integer. Moreover, \\( telescope=\\left\\lfloor\\frac{10^{20000}}{10^{100}+3}\\right\\rfloor \\), since\n\\[\n\\frac{3^{200}}{10^{100}+3}=\\frac{9^{100}}{10^{100}+3}<1\n\\]\n\nBy (1),\n\\[\ntelescope \\equiv-3^{199} \\equiv-3^{3}(81)^{49} \\equiv-27 \\equiv 3 \\quad(\\bmod 10)\n\\]\nso the units digit of \\( telescope \\) is 3 ."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "smallvalue",
+        "y": "largepositive",
+        "I": "noninteger"
+      },
+      "question": "Problem:\n<<<\nWhat is the units (i.e., rightmost) digit of\n\\[\n\\left\\lfloor \\frac{10^{20000}}{10^{100}+3}\\right\\rfloor ?\n\\]\n%Here $\\lfloor x \\rfloor$ is the greatest integer less than or equal to\n%x.\n>>>",
+      "solution": "Solution:\n<<<\nSolution. Taking \\( smallvalue=10^{100} \\) and \\( largepositive=-3 \\) in the factorization\n\\[\nsmallvalue^{200}-largepositive^{200}=(smallvalue-largepositive)\\left(smallvalue^{199}+smallvalue^{198} largepositive+\\cdots+smallvalue largepositive^{198}+largepositive^{199}\\right)\n\\]\nshows that the number\n\\[\nnoninteger=\\frac{10^{20000}-3^{200}}{10^{100}+3}=\\left(10^{100}\\right)^{199}-\\left(10^{100}\\right)^{198} 3+\\cdots+10^{100} 3^{198}-3^{199}\n\\]\nis an integer. Moreover, \\( noninteger=\\left\\lfloor\\frac{10^{20000}}{10^{100}+3}\\right\\rfloor \\), since\n\\[\n\\frac{3^{200}}{10^{100}+3}=\\frac{9^{100}}{10^{100}+3}<1\n\\]\n\nBy (1),\n\\[\nnoninteger \\equiv-3^{199} \\equiv-3^{3}(81)^{49} \\equiv-27 \\equiv 3 \\quad(\\bmod 10)\n\\]\nso the units digit of \\( noninteger \\) is 3 .\n>>>"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "hvjksqle",
+        "y": "rmpzcloa",
+        "I": "ndbvwjqe"
+      },
+      "question": "What is the units (i.e., rightmost) digit of\n\\[\n\\left\\lfloor \\frac{10^{20000}}{10^{100}+3}\\right\\rfloor ?\n\\]",
+      "solution": "Solution. Taking \\( hvjksqle=10^{100} \\) and \\( rmpzcloa=-3 \\) in the factorization\n\\[\nhvjksqle^{200}-rmpzcloa^{200}=(hvjksqle-rmpzcloa)\\left(hvjksqle^{199}+hvjksqle^{198} rmpzcloa+\\cdots+hvjksqle rmpzcloa^{198}+rmpzcloa^{199}\\right)\n\\]\nshows that the number\n\\[\nndbvwjqe=\\frac{10^{20000}-3^{200}}{10^{100}+3}=\\left(10^{100}\\right)^{199}-\\left(10^{100}\\right)^{198} 3+\\cdots+10^{100} 3^{198}-3^{199}\n\\]\nis an integer. Moreover, \\( ndbvwjqe=\\left\\lfloor\\frac{10^{20000}}{10^{100}+3}\\right\\rfloor \\), since\n\\[\n\\frac{3^{200}}{10^{100}+3}=\\frac{9^{100}}{10^{100}+3}<1\n\\]\n\nBy (1),\n\\[\nndbvwjqe \\equiv-3^{199} \\equiv-3^{3}(81)^{49} \\equiv-27 \\equiv 3 \\quad(\\bmod 10)\n\\]\nso the units digit of \\( ndbvwjqe \\) is 3 ."
+    },
+    "kernel_variant": {
+      "question": "Determine the last five (base-10) digits of the integer  \n\n\\[\nN=\\frac{10^{15000}-7^{300}}{\\,10^{100}+7\\!\\cdot10^{50}+49 } .\n\\]\n\n(The numerator is chosen so that the quotient is an integer.)\n\n------------------------------------------------------------",
+      "solution": "Step 0.  Convenient notation  \nPut  \n\\[\nx:=10^{50}, \\qquad D:=x^{2}+7x+49, \\qquad M:=10^{5}=2^{5}\\,5^{5}.\n\\]\n\nHence  \n\\(N=\\dfrac{x^{300}-7^{300}}{D}.\\)\n\n------------------------------------------------------------\nStep 1.  Why the quotient is integral  \nBecause\n\\[\nx^{3}-7^{3}=(x-7)(x^{2}+7x+49)=(x-7)D,\n\\]\nwe have  \n\\[\nx^{300}-7^{300}=(x^{3})^{100}-7^{300}\n             =(x^{3}-7^{3})\\bigl(x^{297}+x^{294}7^{3}+\\cdots+7^{297}\\bigr)\n             =(x-7)\\,D\\,P(x)\n\\]\nfor an integer polynomial \\(P\\).  \nConsequently \\(D\\mid x^{300}-7^{300}\\) and \\(N=(x-7)P(x)\\in\\mathbb Z\\).\n\n------------------------------------------------------------\nStep 2.  Replace the gigantic division by polynomial division  \nLet \\(Q(t)=\\dfrac{t^{300}-7^{300}}{D}\\).  \nThen  \n\\[\nt^{300}=D\\,Q(t)+7^{300},\n\\qquad\\deg Q=298.\n\\tag{1}\n\\]\n\n------------------------------------------------------------\nStep 3.  Reduction modulo \\(10^{5}\\)  \nWhen \\(t=x=10^{50}\\) one gets \\(N=Q(x)\\).\nWrite \\(Q(t)=\\sum_{k=0}^{298}c_{k}t^{k}\\).  \nBecause \\(x=10^{50}\\) is a multiple of \\(M=10^{5}\\), each monomial\n\\(x^{k}\\;(k\\ge 1)\\) is a multiple of \\(M\\).  Hence  \n\n\\[\nQ(x)\\equiv c_{0}=Q(0)\\pmod{M}.\n\\tag{2}\n\\]\n\n------------------------------------------------------------\nStep 4.  The constant term \\(Q(0)\\)  \nInsert \\(t=0\\) in (1):\n\n\\[\n0^{300}=D\\!\\bigl|_{t=0}\\,Q(0)+7^{300}\\quad\\Longrightarrow\\quad\n49\\,Q(0)+7^{300}=0.\n\\]\n\nThus  \n\\[\nQ(0)=-\\frac{7^{300}}{49}.\n\\tag{3}\n\\]\n\n------------------------------------------------------------\nStep 5.  Assemble  \nBy (2) and (3)\n\\[\nN\\equiv -\\frac{7^{300}}{49}\\pmod{M}.\n\\]\n\n------------------------------------------------------------\nStep 6.  The arithmetic modulo \\(10^{5}\\)\n\n6(a)  The inverse of \\(49\\pmod{M}\\).  \nWork separately modulo \\(32\\) and \\(3125\\):\n\n*  \\(49\\equiv17\\pmod{32}\\) and \\(17^{-1}\\equiv17\\pmod{32}\\);  \n*  \\(49\\equiv49\\pmod{3125}\\) and \\(49^{-1}\\equiv22449\\pmod{3125}\\).\n\nChinese Remainder Theorem gives  \n\\[\n49^{-1}\\equiv22\\,449\\pmod{100\\,000}.\n\\]\n\n6(b)  The residue of \\(7^{300}\\pmod{M}\\).\n\n*  Mod \\(32\\): \\(7^{4}\\equiv1\\), so \\(7^{300}\\equiv1\\).  \n*  Mod \\(3125\\): a square-and-multiply chain yields \\(7^{300}\\equiv1876\\).  \n\nAgain by the CRT,  \n\n\\[\n7^{300}\\equiv80\\,001\\pmod{100\\,000}.\n\\]\n\n6(c)  Final multiplication  \n\n\\[\n-\\;7^{300}\\cdot49^{-1}\\equiv\n-\\,80\\,001\\cdot22\\,449\\equiv-42\\,449\\equiv57\\,551\\pmod{100\\,000}.\n\\]\n\n------------------------------------------------------------\nAnswer  \nThe last five digits of \\(N\\) are  \n\n\\[\n\\boxed{57\\,551}.\n\\]\n\n------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.688824",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher-degree divisor: the denominator is quadratic in \\(10^{50}\\), not linear in a power of 10.  One must recognize the factor \\(x^{2}+7x+49\\) inside \\(x^{3}-7^{3}\\) to prove integrality of the quotient.\n\n•  Much larger exponents: exponents reach \\(15\\,000\\) (vs. \\(1150\\) in the kernel variant), forcing careful modular-exponent computations.\n\n•  Five-digit residue: obtaining the last \\(5\\) digits (as opposed to the last \\(1\\)) requires working modulo \\(10^{5}=2^{5}5^{5}\\).  This necessitates systematic use of the Chinese Remainder Theorem, lifting inverses simultaneously modulo \\(32\\) and \\(3125\\), and managing non-trivial carries.\n\n•  Nontrivial modular power: \\(7^{300}\\) modulo \\(3125\\) (order \\(2500\\)) does not collapse under a tiny cycle; one must compute it deliberately (or use group-theoretic insights), unlike the simple \\(\\bmod 10\\) case in the original.\n\n•  Multiple interacting ideas: algebraic factorization, size estimates for the floor, modular inverses, high-precision modular exponentiation, and CRT all interact, demanding several layers of reasoning rather than a single trick.\n\nThese additions make the enhanced variant significantly more sophisticated and labor-intensive than both the original and the current kernel problems."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Determine the last five (base-10) digits of the integer  \n\n\\[\nN=\\frac{10^{15000}-7^{300}}{\\,10^{100}+7\\!\\cdot10^{50}+49 } .\n\\]\n\n(The numerator is chosen so that the quotient is an integer.)\n\n------------------------------------------------------------",
+      "solution": "Step 0.  Convenient notation  \nPut  \n\\[\nx:=10^{50}, \\qquad D:=x^{2}+7x+49, \\qquad M:=10^{5}=2^{5}\\,5^{5}.\n\\]\n\nHence  \n\\(N=\\dfrac{x^{300}-7^{300}}{D}.\\)\n\n------------------------------------------------------------\nStep 1.  Why the quotient is integral  \nBecause\n\\[\nx^{3}-7^{3}=(x-7)(x^{2}+7x+49)=(x-7)D,\n\\]\nwe have  \n\\[\nx^{300}-7^{300}=(x^{3})^{100}-7^{300}\n             =(x^{3}-7^{3})\\bigl(x^{297}+x^{294}7^{3}+\\cdots+7^{297}\\bigr)\n             =(x-7)\\,D\\,P(x)\n\\]\nfor an integer polynomial \\(P\\).  \nConsequently \\(D\\mid x^{300}-7^{300}\\) and \\(N=(x-7)P(x)\\in\\mathbb Z\\).\n\n------------------------------------------------------------\nStep 2.  Replace the gigantic division by polynomial division  \nLet \\(Q(t)=\\dfrac{t^{300}-7^{300}}{D}\\).  \nThen  \n\\[\nt^{300}=D\\,Q(t)+7^{300},\n\\qquad\\deg Q=298.\n\\tag{1}\n\\]\n\n------------------------------------------------------------\nStep 3.  Reduction modulo \\(10^{5}\\)  \nWhen \\(t=x=10^{50}\\) one gets \\(N=Q(x)\\).\nWrite \\(Q(t)=\\sum_{k=0}^{298}c_{k}t^{k}\\).  \nBecause \\(x=10^{50}\\) is a multiple of \\(M=10^{5}\\), each monomial\n\\(x^{k}\\;(k\\ge 1)\\) is a multiple of \\(M\\).  Hence  \n\n\\[\nQ(x)\\equiv c_{0}=Q(0)\\pmod{M}.\n\\tag{2}\n\\]\n\n------------------------------------------------------------\nStep 4.  The constant term \\(Q(0)\\)  \nInsert \\(t=0\\) in (1):\n\n\\[\n0^{300}=D\\!\\bigl|_{t=0}\\,Q(0)+7^{300}\\quad\\Longrightarrow\\quad\n49\\,Q(0)+7^{300}=0.\n\\]\n\nThus  \n\\[\nQ(0)=-\\frac{7^{300}}{49}.\n\\tag{3}\n\\]\n\n------------------------------------------------------------\nStep 5.  Assemble  \nBy (2) and (3)\n\\[\nN\\equiv -\\frac{7^{300}}{49}\\pmod{M}.\n\\]\n\n------------------------------------------------------------\nStep 6.  The arithmetic modulo \\(10^{5}\\)\n\n6(a)  The inverse of \\(49\\pmod{M}\\).  \nWork separately modulo \\(32\\) and \\(3125\\):\n\n*  \\(49\\equiv17\\pmod{32}\\) and \\(17^{-1}\\equiv17\\pmod{32}\\);  \n*  \\(49\\equiv49\\pmod{3125}\\) and \\(49^{-1}\\equiv22449\\pmod{3125}\\).\n\nChinese Remainder Theorem gives  \n\\[\n49^{-1}\\equiv22\\,449\\pmod{100\\,000}.\n\\]\n\n6(b)  The residue of \\(7^{300}\\pmod{M}\\).\n\n*  Mod \\(32\\): \\(7^{4}\\equiv1\\), so \\(7^{300}\\equiv1\\).  \n*  Mod \\(3125\\): a square-and-multiply chain yields \\(7^{300}\\equiv1876\\).  \n\nAgain by the CRT,  \n\n\\[\n7^{300}\\equiv80\\,001\\pmod{100\\,000}.\n\\]\n\n6(c)  Final multiplication  \n\n\\[\n-\\;7^{300}\\cdot49^{-1}\\equiv\n-\\,80\\,001\\cdot22\\,449\\equiv-42\\,449\\equiv57\\,551\\pmod{100\\,000}.\n\\]\n\n------------------------------------------------------------\nAnswer  \nThe last five digits of \\(N\\) are  \n\n\\[\n\\boxed{57\\,551}.\n\\]\n\n------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.539659",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher-degree divisor: the denominator is quadratic in \\(10^{50}\\), not linear in a power of 10.  One must recognize the factor \\(x^{2}+7x+49\\) inside \\(x^{3}-7^{3}\\) to prove integrality of the quotient.\n\n•  Much larger exponents: exponents reach \\(15\\,000\\) (vs. \\(1150\\) in the kernel variant), forcing careful modular-exponent computations.\n\n•  Five-digit residue: obtaining the last \\(5\\) digits (as opposed to the last \\(1\\)) requires working modulo \\(10^{5}=2^{5}5^{5}\\).  This necessitates systematic use of the Chinese Remainder Theorem, lifting inverses simultaneously modulo \\(32\\) and \\(3125\\), and managing non-trivial carries.\n\n•  Nontrivial modular power: \\(7^{300}\\) modulo \\(3125\\) (order \\(2500\\)) does not collapse under a tiny cycle; one must compute it deliberately (or use group-theoretic insights), unlike the simple \\(\\bmod 10\\) case in the original.\n\n•  Multiple interacting ideas: algebraic factorization, size estimates for the floor, modular inverses, high-precision modular exponentiation, and CRT all interact, demanding several layers of reasoning rather than a single trick.\n\nThese additions make the enhanced variant significantly more sophisticated and labor-intensive than both the original and the current kernel problems."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

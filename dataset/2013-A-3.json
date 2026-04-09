@@ -1,0 +1,100 @@
+{
+  "index": "2013-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Suppose that the real numbers $a_0, a_1, \\dots, a_n$ and\n$x$, with $0 < x < 1$, satisfy\n\\[\n\\frac{a_0}{1-x} + \\frac{a_1}{1-x^2} + \\cdots + \\frac{a_n}{1 - x^{n+1}} = 0.\n\\]\nProve that there exists a real number $y$ with $0 < y < 1$ such that\n\\[\na_0 + a_1 y + \\cdots + a_n y^n = 0.\n\\]",
+  "solution": "Suppose on the contrary that $a_0 + a_1 y + \\cdots + a_n y^n$ is nonzero for $0 < y < 1$. By the intermediate value theorem, this is only possible if $a_0 + a_1 y + \\cdots + a_n y^n$ has the same sign for $0 < y < 1$; without loss of generality, we may assume that $a_0 + a_1 y + \\cdots + a_n y^n > 0$ for $0 < y < 1$. For the given value of $x$, we then have\n\\[\na_0 x^m + a_1 x^{2m} + \\cdots + a_n x^{(n+1)m} \\geq 0\n\\]\nfor $m=0,1,\\dots$, with strict inequality for $m>0$.\nTaking the sum over all $m$ is absolutely convergent and hence valid; this yields\n\\[\n\\frac{a_0}{1-x} + \\frac{a_1}{1-x^2} + \\cdots + \\frac{a_n}{1-x^{n+1}} > 0,\n\\]\na contradiction.",
+  "vars": [
+    "x",
+    "y",
+    "m"
+  ],
+  "params": [
+    "a_0",
+    "a_1",
+    "a_n",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "numfrac",
+        "y": "numroot",
+        "m": "seriesidx",
+        "a_0": "coeffzero",
+        "a_1": "coeffone",
+        "a_n": "coefflast",
+        "n": "indexmax"
+      },
+      "question": "Suppose that the real numbers $coeffzero, coeffone, \\dots, coefflast$ and\n$numfrac$, with $0 < numfrac < 1$, satisfy\n\\[\n\\frac{coeffzero}{1-numfrac} + \\frac{coeffone}{1-numfrac^2} + \\cdots + \\frac{coefflast}{1 - numfrac^{indexmax+1}} = 0.\n\\]\nProve that there exists a real number $numroot$ with $0 < numroot < 1$ such that\n\\[\ncoeffzero + coeffone \\, numroot + \\cdots + coefflast \\, numroot^{indexmax} = 0.\n\\]",
+      "solution": "Suppose on the contrary that $coeffzero + coeffone \\, numroot + \\cdots + coefflast \\, numroot^{indexmax}$ is nonzero for $0 < numroot < 1$. By the intermediate value theorem, this is only possible if $coeffzero + coeffone \\, numroot + \\cdots + coefflast \\, numroot^{indexmax}$ has the same sign for $0 < numroot < 1$; without loss of generality, we may assume that $coeffzero + coeffone \\, numroot + \\cdots + coefflast \\, numroot^{indexmax} > 0$ for $0 < numroot < 1$. For the given value of $numfrac$, we then have\n\\[\ncoeffzero \\, numfrac^{seriesidx} + coeffone \\, numfrac^{2\\,seriesidx} + \\cdots + coefflast \\, numfrac^{(indexmax+1)seriesidx} \\geq 0\n\\]\nfor $seriesidx=0,1,\\dots$, with strict inequality for $seriesidx>0$.\nTaking the sum over all $seriesidx$ is absolutely convergent and hence valid; this yields\n\\[\n\\frac{coeffzero}{1-numfrac} + \\frac{coeffone}{1-numfrac^2} + \\cdots + \\frac{coefflast}{1-numfrac^{indexmax+1}} > 0,\n\\]\na contradiction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "grassroot",
+        "y": "pineapple",
+        "m": "chocolate",
+        "a_0": "galaxyone",
+        "a_1": "galaxytwo",
+        "a_n": "galaxyzen",
+        "n": "spoondish"
+      },
+      "question": "Suppose that the real numbers $galaxyone, galaxytwo, \\dots, galaxyzen$ and\n$grassroot$, with $0 < grassroot < 1$, satisfy\n\\[\n\\frac{galaxyone}{1-grassroot} + \\frac{galaxytwo}{1-grassroot^2} + \\cdots + \\frac{galaxyzen}{1 - grassroot^{spoondish+1}} = 0.\n\\]\nProve that there exists a real number $pineapple$ with $0 < pineapple < 1$ such that\n\\[\ngalaxyone + galaxytwo pineapple + \\cdots + galaxyzen pineapple^{spoondish} = 0.\n\\]",
+      "solution": "Suppose on the contrary that $galaxyone + galaxytwo pineapple + \\cdots + galaxyzen pineapple^{spoondish}$ is nonzero for $0 < pineapple < 1$. By the intermediate value theorem, this is only possible if $galaxyone + galaxytwo pineapple + \\cdots + galaxyzen pineapple^{spoondish}$ has the same sign for $0 < pineapple < 1$; without loss of generality, we may assume that $galaxyone + galaxytwo pineapple + \\cdots + galaxyzen pineapple^{spoondish} > 0$ for $0 < pineapple < 1$. For the given value of $grassroot$, we then have\n\\[\ngalaxyone grassroot^{chocolate} + galaxytwo grassroot^{2chocolate} + \\cdots + galaxyzen grassroot^{(spoondish+1)chocolate} \\geq 0\n\\]\nfor $chocolate=0,1,\\dots$, with strict inequality for $chocolate>0$.\nTaking the sum over all $chocolate$ is absolutely convergent and hence valid; this yields\n\\[\n\\frac{galaxyone}{1-grassroot} + \\frac{galaxytwo}{1-grassroot^2} + \\cdots + \\frac{galaxyzen}{1-grassroot^{spoondish+1}} > 0,\n\\]\na contradiction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "gigantic",
+        "y": "colossal",
+        "m": "fractional",
+        "a_0": "endpointc",
+        "a_1": "terminalc",
+        "a_n": "initialc",
+        "n": "starting"
+      },
+      "question": "Suppose that the real numbers $endpointc, terminalc, \\dots, initialc$ and\ngigantic, with $0 < gigantic < 1$, satisfy\n\\[\n\\frac{endpointc}{1-gigantic} + \\frac{terminalc}{1-gigantic^2} + \\cdots + \\frac{initialc}{1 - gigantic^{starting+1}} = 0.\n\\]\nProve that there exists a real number colossal with $0 < colossal < 1$ such that\n\\[\nendpointc + terminalc\\, colossal + \\cdots + initialc\\, colossal^{starting} = 0.\n\\]",
+      "solution": "Suppose on the contrary that $endpointc + terminalc\\, colossal + \\cdots + initialc\\, colossal^{starting}$ is nonzero for $0 < colossal < 1$. By the intermediate value theorem, this is only possible if $endpointc + terminalc\\, colossal + \\cdots + initialc\\, colossal^{starting}$ has the same sign for $0 < colossal < 1$; without loss of generality, we may assume that $endpointc + terminalc\\, colossal + \\cdots + initialc\\, colossal^{starting} > 0$ for $0 < colossal < 1$. For the given value of gigantic, we then have\n\\[\nendpointc\\, gigantic^{fractional} + terminalc\\, gigantic^{2fractional} + \\cdots + initialc\\, gigantic^{(starting+1)fractional} \\geq 0\n\\]\nfor $fractional=0,1,\\dots$, with strict inequality for $fractional>0$.\nTaking the sum over all $fractional$ is absolutely convergent and hence valid; this yields\n\\[\n\\frac{endpointc}{1-gigantic} + \\frac{terminalc}{1-gigantic^2} + \\cdots + \\frac{initialc}{1-gigantic^{starting+1}} > 0,\n\\]\na contradiction."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "m": "plktdsru",
+        "a_0": "fjahslwe",
+        "a_1": "bvnmsqkr",
+        "a_n": "vczmrtua",
+        "n": "skdjfghq"
+      },
+      "question": "Suppose that the real numbers $fjahslwe, bvnmsqkr, \\dots, vczmrtua$ and $qzxwvtnp$, with $0 < qzxwvtnp < 1$, satisfy\n\\[\n\\frac{fjahslwe}{1-qzxwvtnp} + \\frac{bvnmsqkr}{1-qzxwvtnp^2} + \\cdots + \\frac{vczmrtua}{1 - qzxwvtnp^{skdjfghq+1}} = 0.\n\\]\nProve that there exists a real number $hjgrksla$ with $0 < hjgrksla < 1$ such that\n\\[\nfjahslwe + bvnmsqkr hjgrksla + \\cdots + vczmrtua hjgrksla^{skdjfghq} = 0.\n\\]",
+      "solution": "Suppose on the contrary that $fjahslwe + bvnmsqkr hjgrksla + \\cdots + vczmrtua hjgrksla^{skdjfghq}$ is nonzero for $0 < hjgrksla < 1$. By the intermediate value theorem, this is only possible if $fjahslwe + bvnmsqkr hjgrksla + \\cdots + vczmrtua hjgrksla^{skdjfghq}$ has the same sign for $0 < hjgrksla < 1$; without loss of generality, we may assume that $fjahslwe + bvnmsqkr hjgrksla + \\cdots + vczmrtua hjgrksla^{skdjfghq} > 0$ for $0 < hjgrksla < 1$. For the given value of $qzxwvtnp$, we then have\n\\[\nfjahslwe qzxwvtnp^{plktdsru} + bvnmsqkr qzxwvtnp^{2plktdsru} + \\cdots + vczmrtua qzxwvtnp^{(skdjfghq+1)plktdsru} \\geq 0\n\\]\nfor $plktdsru=0,1,\\dots$, with strict inequality for $plktdsru>0$.\nTaking the sum over all $plktdsru$ is absolutely convergent and hence valid; this yields\n\\[\n\\frac{fjahslwe}{1-qzxwvtnp} + \\frac{bvnmsqkr}{1-qzxwvtnp^2} + \\cdots + \\frac{vczmrtua}{1-qzxwvtnp^{skdjfghq+1}} > 0,\n\\]\na contradiction."
+    },
+    "kernel_variant": {
+      "question": "Let s,t be non-negative integers and let\n  c_{i,j}\\in \\mathbb{R} (0 \\leq  i \\leq  s, 0 \\leq  j \\leq  t),  \nnot all zero.  \nAssume that there exist real numbers\n\n  0 < x < 1 and 0 < z < 1\n\nsuch that\n\n  \\star   \\sum _{i=0}^{s}\\sum _{j=0}^{t}  \n        c_{i,j}  \n   ------------------------------------------ = 0.\n    1-x^{2i+1}z^{2j+1}\n\nProve that there are real numbers  \n\n  0 < y < 1 and 0 < w < 1  \n\nfor which  \n\n    \\sum _{i=0}^{s}\\sum _{j=0}^{t}c_{i,j}y^{2i}w^{2j}=0.",
+      "solution": "Step 1 - Introduce the bivariate polynomial.  \nDefine  \n\n  P(u,v)=\\sum _{i=0}^{s}\\sum _{j=0}^{t}c_{i,j}u^{2i}v^{2j},  (u,v\\in \\mathbb{R}^2).   (1)\n\nOur goal is to show that P vanishes somewhere in the open unit square  \n\n  \\Omega  := (0,1)\\times (0,1).\n\nStep 2 - Assume constant sign and normalise.  \nAssume, for a contradiction, that\n\n  P(u,v)\\neq 0 for every (u,v)\\in \\Omega .                        (2)\n\nBecause \\Omega  is connected and P is continuous, P keeps a constant sign on \\Omega .\nMultiplying all coefficients by -1 if necessary we may suppose\n\n  P(u,v)>0 for all (u,v)\\in \\Omega .                          (3)\n\nStep 3 - Rewrite the hypothesis \\star  as a weighted sum of P.  \nPut  \n\n  r:=xz   (0<r<1).                                 (4)\n\nFor every non-negative integer m set  \n\n  u_m:=x^{m}, v_m:=z^{m}.                            (5)\n\nBecause 0<x,z<1, all (u_m,v_m) with m\\geq 1 lie in \\Omega , hence by (3)\n\n  P(u_m,v_m)=P(x^{m},z^{m})>0 for m\\geq 1.               (6)\n\nNow observe that for each i,j and m\\geq 0\n\n  r^{m}P(x^{m},z^{m})\n   = (xz)^{m}\\sum _{i,j}c_{i,j}x^{2im}z^{2jm}\n   = \\sum _{i,j}c_{i,j}x^{(2i+1)m}z^{(2j+1)m}.            (7)\n\nHence, interchanging the finite and infinite sums and using (7),\n\n  \\sum _{m=0}^{\\infty }r^{m}P(x^{m},z^{m})\n   =\\sum _{i,j}c_{i,j}\\sum _{m=0}^{\\infty }(x^{2i+1}z^{2j+1})^{m}\n   =\\sum _{i,j}\\frac{c_{i,j}}{1-x^{2i+1}z^{2j+1}}.        (8)\n\nThe inner geometric series converges because 0<x^{2i+1}z^{2j+1}<1, and the\ndouble series is absolutely convergent; therefore the manipulations are\nlegitimate.  By hypothesis \\star  the right-hand side of (8) equals 0, so\n\n  \\sum _{m=0}^{\\infty }r^{m}P(x^{m},z^{m}) = 0.                 (9)\n\nStep 4 - Show that the series in (9) is strictly positive.  \nAbsolute convergence: for each m,\n\n  |r^{m}P(x^{m},z^{m})|\n   \\leq (\\sum _{i,j}|c_{i,j}|)r^{m},                         (10)\n\nso the series in (9) converges absolutely.\n\nNon-negativity of the terms:  \n* For m\\geq 1 we have (6), hence r^{m}P(x^{m},z^{m})>0.  \n* For m=0 we have r^{0}P(x^{0},z^{0})=P(1,1).  \n  Because P is continuous on the closed square [0,1]^2 and strictly\n  positive on the open square \\Omega , the limit of P along any path\n  approaching (1,1) from inside \\Omega  is non-negative; hence\n\n  P(1,1) \\geq  0.                                         (11)\n\nCombining, every term of the series in (9) is non-negative, and at least\none term (those with m\\geq 1) is strictly positive.  Therefore\n\n  \\sum _{m=0}^{\\infty }r^{m}P(x^{m},z^{m})>0,                   (12)\n\ncontradicting (9).\n\nStep 5 - Conclude the existence of a zero of P in \\Omega .  \nThe contradiction shows that assumption (2) is impossible; hence P changes\nsign inside \\Omega .  Continuity of P then supplies, by the Intermediate Value\nTheorem, a point (y,w)\\in \\Omega  with\n\n  P(y,w)=0,\n  i.e. \\sum _{i=0}^{s}\\sum _{j=0}^{t}c_{i,j}y^{2i}w^{2j}=0,\n\nwhich is precisely statement .  Thus such real numbers 0<y,w<1 exist,\nand the proof is complete.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.826466",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension:  The problem now involves a two–variable polynomial and a double–indexed family of coefficients, forcing the solver to work on the open square (0,1)² rather than the interval (0,1).\n\n2. Additional constraints:  The denominators (1−x^{2i+1} z^{2j+1}) mix the two parameters x and z in a genuinely bivariate fashion; naïve separation of variables is impossible.\n\n3. Deeper theory:  \n   • One must handle absolute convergence of a doubly-indexed infinite series and justify exchanging summations (Tonelli/Fubini).  \n   • Extending the “constant-sign” argument to higher dimension requires awareness that connectivity, not mere ordering, gives the contradiction.  \n   • The argument emulates a rudimentary form of the Poincaré–Miranda theorem/Brouwer fixed-point ideas in two variables.\n\n4. More steps:  Compared with the original single-variable problem, the solver must  \n   – analyze a bivariate polynomial,  \n   – construct a suitable sequence of points in (0,1)²,  \n   – evaluate a double series, and  \n   – connect its value to the given bivariate rational expression.\n\nAll these layers raise the technical and conceptual load well above that of both the original problem and the current kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let s,t be non-negative integers and let\n  c_{i,j}\\in \\mathbb{R} (0 \\leq  i \\leq  s, 0 \\leq  j \\leq  t),  \nnot all zero.  \nAssume that there exist real numbers\n\n  0 < x < 1 and 0 < z < 1\n\nsuch that\n\n  \\star   \\sum _{i=0}^{s}\\sum _{j=0}^{t}  \n        c_{i,j}  \n   ------------------------------------------ = 0.\n    1-x^{2i+1}z^{2j+1}\n\nProve that there are real numbers  \n\n  0 < y < 1 and 0 < w < 1  \n\nfor which  \n\n    \\sum _{i=0}^{s}\\sum _{j=0}^{t}c_{i,j}y^{2i}w^{2j}=0.",
+      "solution": "Step 1 - Introduce the bivariate polynomial.  \nDefine  \n\n  P(u,v)=\\sum _{i=0}^{s}\\sum _{j=0}^{t}c_{i,j}u^{2i}v^{2j},  (u,v\\in \\mathbb{R}^2).   (1)\n\nOur goal is to show that P vanishes somewhere in the open unit square  \n\n  \\Omega  := (0,1)\\times (0,1).\n\nStep 2 - Assume constant sign and normalise.  \nAssume, for a contradiction, that\n\n  P(u,v)\\neq 0 for every (u,v)\\in \\Omega .                        (2)\n\nBecause \\Omega  is connected and P is continuous, P keeps a constant sign on \\Omega .\nMultiplying all coefficients by -1 if necessary we may suppose\n\n  P(u,v)>0 for all (u,v)\\in \\Omega .                          (3)\n\nStep 3 - Rewrite the hypothesis \\star  as a weighted sum of P.  \nPut  \n\n  r:=xz   (0<r<1).                                 (4)\n\nFor every non-negative integer m set  \n\n  u_m:=x^{m}, v_m:=z^{m}.                            (5)\n\nBecause 0<x,z<1, all (u_m,v_m) with m\\geq 1 lie in \\Omega , hence by (3)\n\n  P(u_m,v_m)=P(x^{m},z^{m})>0 for m\\geq 1.               (6)\n\nNow observe that for each i,j and m\\geq 0\n\n  r^{m}P(x^{m},z^{m})\n   = (xz)^{m}\\sum _{i,j}c_{i,j}x^{2im}z^{2jm}\n   = \\sum _{i,j}c_{i,j}x^{(2i+1)m}z^{(2j+1)m}.            (7)\n\nHence, interchanging the finite and infinite sums and using (7),\n\n  \\sum _{m=0}^{\\infty }r^{m}P(x^{m},z^{m})\n   =\\sum _{i,j}c_{i,j}\\sum _{m=0}^{\\infty }(x^{2i+1}z^{2j+1})^{m}\n   =\\sum _{i,j}\\frac{c_{i,j}}{1-x^{2i+1}z^{2j+1}}.        (8)\n\nThe inner geometric series converges because 0<x^{2i+1}z^{2j+1}<1, and the\ndouble series is absolutely convergent; therefore the manipulations are\nlegitimate.  By hypothesis \\star  the right-hand side of (8) equals 0, so\n\n  \\sum _{m=0}^{\\infty }r^{m}P(x^{m},z^{m}) = 0.                 (9)\n\nStep 4 - Show that the series in (9) is strictly positive.  \nAbsolute convergence: for each m,\n\n  |r^{m}P(x^{m},z^{m})|\n   \\leq (\\sum _{i,j}|c_{i,j}|)r^{m},                         (10)\n\nso the series in (9) converges absolutely.\n\nNon-negativity of the terms:  \n* For m\\geq 1 we have (6), hence r^{m}P(x^{m},z^{m})>0.  \n* For m=0 we have r^{0}P(x^{0},z^{0})=P(1,1).  \n  Because P is continuous on the closed square [0,1]^2 and strictly\n  positive on the open square \\Omega , the limit of P along any path\n  approaching (1,1) from inside \\Omega  is non-negative; hence\n\n  P(1,1) \\geq  0.                                         (11)\n\nCombining, every term of the series in (9) is non-negative, and at least\none term (those with m\\geq 1) is strictly positive.  Therefore\n\n  \\sum _{m=0}^{\\infty }r^{m}P(x^{m},z^{m})>0,                   (12)\n\ncontradicting (9).\n\nStep 5 - Conclude the existence of a zero of P in \\Omega .  \nThe contradiction shows that assumption (2) is impossible; hence P changes\nsign inside \\Omega .  Continuity of P then supplies, by the Intermediate Value\nTheorem, a point (y,w)\\in \\Omega  with\n\n  P(y,w)=0,\n  i.e. \\sum _{i=0}^{s}\\sum _{j=0}^{t}c_{i,j}y^{2i}w^{2j}=0,\n\nwhich is precisely statement .  Thus such real numbers 0<y,w<1 exist,\nand the proof is complete.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.631899",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension:  The problem now involves a two–variable polynomial and a double–indexed family of coefficients, forcing the solver to work on the open square (0,1)² rather than the interval (0,1).\n\n2. Additional constraints:  The denominators (1−x^{2i+1} z^{2j+1}) mix the two parameters x and z in a genuinely bivariate fashion; naïve separation of variables is impossible.\n\n3. Deeper theory:  \n   • One must handle absolute convergence of a doubly-indexed infinite series and justify exchanging summations (Tonelli/Fubini).  \n   • Extending the “constant-sign” argument to higher dimension requires awareness that connectivity, not mere ordering, gives the contradiction.  \n   • The argument emulates a rudimentary form of the Poincaré–Miranda theorem/Brouwer fixed-point ideas in two variables.\n\n4. More steps:  Compared with the original single-variable problem, the solver must  \n   – analyze a bivariate polynomial,  \n   – construct a suitable sequence of points in (0,1)²,  \n   – evaluate a double series, and  \n   – connect its value to the given bivariate rational expression.\n\nAll these layers raise the technical and conceptual load well above that of both the original problem and the current kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

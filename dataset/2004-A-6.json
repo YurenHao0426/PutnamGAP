@@ -1,0 +1,162 @@
+{
+  "index": "2004-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Suppose that $f(x,y)$ is a continuous real-valued function on the unit\nsquare $0 \\le x \\le 1, 0 \\le y \\le 1$.  Show that\n\\begin{align*}\n& \\int_0^1 \\left( \\int_0^1  f(x,y) dx \\right)^2 dy +\n \\int_0^1 \\left( \\int_0^1  f(x,y) dy \\right)^2 dx \\\\\n&\\leq\n\\left( \\int_0^1 \\int_0^1  f(x,y) dx\\, dy \\right)^2 +\n\\int_0^1 \\int_0^1 \\left[ f(x,y) \\right]^2 dx\\,dy.\n\\end{align*}",
+  "solution": "By approximating each integral with a Riemann sum, we may reduce to\nproving the discrete analogue: for $x_{ij} \\in \\RR$ for\n$i,j=1, \\dots, n$,\n\\begin{multline*}\nn \\sum_{i=1}^n \\left( \\sum_{j=1}^n x_{ij} \\right)^2\n+ n \\sum_{j=1}^n \\left( \\sum_{i=1}^n x_{ij} \\right)^2 \\\\\n\\leq \\left( \\sum_{i=1}^n \\sum_{j=1}^n x_{ij} \\right)^2\n+ n^2 \\sum_{i=1}^n \\sum_{j=1}^n x_{ij}^2.\n\\end{multline*}\nThe difference between the right side and the left side is\n\\[\n\\frac{1}{4} \\sum_{i,j,k,l=1}^n (x_{ij} + x_{kl} - x_{il} - x_{kj})^2,\n\\]\nwhich is evidently nonnegative. If you prefer not to discretize,\nyou may rewrite the original inequality as\n\\[\n\\int_0^1 \\int_0^1 \\int_0^1 \\int_0^1 F(x,y,z,w)^2\n\\,dx\\,dy\\,dz\\,dw \\geq 0\n\\]\nfor\n\\[\nF(x,y,z,w) = f(x,y) + f(z,w) - f(x,w) - f(z,y).\n\\]\n\n\\textbf{Remark:} (by Po-Ning Chen)\nThe discrete inequality can be arrived at more systematically\nby repeatedly applying the following identity: for\nany real $a_1, \\dots, a_n$,\n\\[\n\\sum_{1 \\leq i < j \\leq n} (x_i - x_j)^2\n= n \\sum_{i=1}^n x_i^2 - \\left( \\sum_{i=1}^n x_i \\right)^2.\n\\]\n\n\\textbf{Remark:} (by David Savitt)\nThe discrete inequality can also be interpreted as follows.\nFor $c,d \\in \\{1, \\dots, n-1\\}$ and $\\zeta_n = e^{2\\pi i/n}$, put\n\\[\nz_{c,d} = \\sum_{i,j} \\zeta_n^{c i + d j} x_{ij}.\n\\]\nThen the given inequality is equivalent to\n\\[\n\\sum_{c,d=1}^{n-1} |z_{c,d}|^2 \\geq 0.\n\\]",
+  "vars": [
+    "f",
+    "x",
+    "y",
+    "z",
+    "w",
+    "x_ij",
+    "x_kl",
+    "x_il",
+    "x_kj",
+    "x_i",
+    "x_j",
+    "a_1",
+    "a_n",
+    "a_i",
+    "z_c,d",
+    "c",
+    "d"
+  ],
+  "params": [
+    "n",
+    "\\\\zeta_n"
+  ],
+  "sci_consts": [
+    "e",
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "squaremap",
+        "x": "horizaxis",
+        "y": "vertaxis",
+        "z": "thirdaxis",
+        "w": "fourthax",
+        "x_ij": "gridvalij",
+        "x_kl": "gridvalkl",
+        "x_il": "gridvalil",
+        "x_kj": "gridvalkj",
+        "x_i": "vectorxi",
+        "x_j": "vectorxj",
+        "a_1": "seriesone",
+        "a_n": "seriesend",
+        "a_i": "seriesany",
+        "z_c,d": "spectralcd",
+        "c": "indexcee",
+        "d": "indexdee",
+        "n": "gridsize",
+        "\\zeta_n": "rootunity"
+      },
+      "question": "Suppose that $squaremap(horizaxis,vertaxis)$ is a continuous real-valued function on the unit\nsquare $0 \\le horizaxis \\le 1, 0 \\le vertaxis \\le 1$.  Show that\n\\begin{align*}\n& \\int_0^1 \\left( \\int_0^1  squaremap(horizaxis,vertaxis) dhorizaxis \\right)^2 dvertaxis +\n \\int_0^1 \\left( \\int_0^1  squaremap(horizaxis,vertaxis) dvertaxis \\right)^2 dhorizaxis \\\\\n&\\leq\n\\left( \\int_0^1 \\int_0^1  squaremap(horizaxis,vertaxis) dhorizaxis\\, dvertaxis \\right)^2 +\n\\int_0^1 \\int_0^1 \\left[ squaremap(horizaxis,vertaxis) \\right]^2 dhorizaxis\\,dvertaxis.\n\\end{align*}",
+      "solution": "By approximating each integral with a Riemann sum, we may reduce to\nproving the discrete analogue: for $gridvalij \\in \\RR$ for\n$i,j=1, \\dots, gridsize$,\n\\begin{multline*}\ngridsize \\sum_{i=1}^{gridsize} \\left( \\sum_{j=1}^{gridsize} gridvalij \\right)^2\n+ gridsize \\sum_{j=1}^{gridsize} \\left( \\sum_{i=1}^{gridsize} gridvalij \\right)^2 \\\\\n\\leq \\left( \\sum_{i=1}^{gridsize} \\sum_{j=1}^{gridsize} gridvalij \\right)^2\n+ gridsize^2 \\sum_{i=1}^{gridsize} \\sum_{j=1}^{gridsize} gridvalij^2.\n\\end{multline*}\nThe difference between the right side and the left side is\n\\[\n\\frac{1}{4} \\sum_{i,j,k,l=1}^{gridsize} (gridvalij + gridvalkl - gridvalil - gridvalkj)^2,\n\\]\nwhich is evidently nonnegative. If you prefer not to discretize,\nyou may rewrite the original inequality as\n\\[\n\\int_0^1 \\int_0^1 \\int_0^1 \\int_0^1 F(horizaxis,vertaxis,thirdaxis,fourthax)^2\n\\,dhorizaxis\\,dvertaxis\\,dthirdaxis\\,dfourthax \\geq 0\n\\]\nfor\n\\[\nF(horizaxis,vertaxis,thirdaxis,fourthax) = squaremap(horizaxis,vertaxis) + squaremap(thirdaxis,fourthax) - squaremap(horizaxis,fourthax) - squaremap(thirdaxis,vertaxis).\n\\]\n\n\\textbf{Remark:} (by Po-Ning Chen)\nThe discrete inequality can be arrived at more systematically\nby repeatedly applying the following identity: for\nany real seriesone, \\dots, seriesend,\n\\[\n\\sum_{1 \\leq i < j \\leq gridsize} (vectorxi - vectorxj)^2\n= gridsize \\sum_{i=1}^{gridsize} vectorxi^2 - \\left( \\sum_{i=1}^{gridsize} vectorxi \\right)^2.\n\\]\n\n\\textbf{Remark:} (by David Savitt)\nThe discrete inequality can also be interpreted as follows.\nFor indexcee,indexdee \\in \\{1, \\dots, gridsize-1\\} and rootunity = e^{2\\pi i/gridsize}, put\n\\[\nspectralcd = \\sum_{i,j} rootunity^{indexcee i + indexdee j} gridvalij.\n\\]\nThen the given inequality is equivalent to\n\\[\n\\sum_{indexcee,indexdee=1}^{gridsize-1} |spectralcd|^2 \\geq 0.\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "midnightlamp",
+        "x": "tangerine",
+        "y": "glacierbay",
+        "z": "meadowlark",
+        "w": "honeycomb",
+        "x_ij": "tangerinecell",
+        "x_kl": "tangerinecraft",
+        "x_il": "tangerinestorm",
+        "x_kj": "tangerineflute",
+        "x_i": "tangerineember",
+        "x_j": "tangerinecable",
+        "a_1": "wildfiremap",
+        "a_n": "wildfireecho",
+        "a_i": "wildfiredrum",
+        "z_c,d": "peppermintfog",
+        "c": "willowbranch",
+        "d": "orchidpetal",
+        "n": "sapphiremoon",
+        "\\\\zeta_n": "pomegranateseed"
+      },
+      "question": "Suppose that $midnightlamp(tangerine,glacierbay)$ is a continuous real-valued function on the unit\nsquare $0 \\le tangerine \\le 1, 0 \\le glacierbay \\le 1$.  Show that\n\\begin{align*}\n& \\int_0^1 \\left( \\int_0^1  midnightlamp(tangerine,glacierbay) dtangerine \\right)^2 dglacierbay +\n \\int_0^1 \\left( \\int_0^1  midnightlamp(tangerine,glacierbay) dglacierbay \\right)^2 dtangerine \\\\\n&\\leq\n\\left( \\int_0^1 \\int_0^1  midnightlamp(tangerine,glacierbay) dtangerine\\, dglacierbay \\right)^2 +\n\\int_0^1 \\int_0^1 \\left[ midnightlamp(tangerine,glacierbay) \\right]^2 dtangerine\\,dglacierbay.\n\\end{align*}",
+      "solution": "By approximating each integral with a Riemann sum, we may reduce to\nproving the discrete analogue: for $tangerinecell \\in \\RR$ for\n$i,j=1, \\dots, sapphiremoon$,\n\\begin{multline*}\nsapphiremoon \\sum_{i=1}^{sapphiremoon} \\left( \\sum_{j=1}^{sapphiremoon} tangerinecell \\right)^2\n+ sapphiremoon \\sum_{j=1}^{sapphiremoon} \\left( \\sum_{i=1}^{sapphiremoon} tangerinecell \\right)^2 \\\\\n\\leq \\left( \\sum_{i=1}^{sapphiremoon} \\sum_{j=1}^{sapphiremoon} tangerinecell \\right)^2\n+ sapphiremoon^2 \\sum_{i=1}^{sapphiremoon} \\sum_{j=1}^{sapphiremoon} tangerinecell^2.\n\\end{multline*}\nThe difference between the right side and the left side is\n\\[\n\\frac{1}{4} \\sum_{i,j,k,l=1}^{sapphiremoon} (tangerinecell + tangerinecraft - tangerinestorm - tangerineflute)^2,\n\\]\nwhich is evidently nonnegative. If you prefer not to discretize,\nyou may rewrite the original inequality as\n\\[\n\\int_0^1 \\int_0^1 \\int_0^1 \\int_0^1 F(tangerine,glacierbay,meadowlark,honeycomb)^2\n\\,dtangerine\\,dglacierbay\\,dmeadowlark\\,dhoneycomb \\geq 0\n\\]\nfor\n\\[\nF(tangerine,glacierbay,meadowlark,honeycomb) = midnightlamp(tangerine,glacierbay) + midnightlamp(meadowlark,honeycomb) - midnightlamp(tangerine,honeycomb) - midnightlamp(meadowlark,glacierbay).\n\\]\n\n\\textbf{Remark:} (by Po-Ning Chen)\nThe discrete inequality can be arrived at more systematically\nby repeatedly applying the following identity: for\nany real $wildfiremap, \\dots, wildfireecho$,\n\\[\n\\sum_{1 \\leq i < j \\leq sapphiremoon} (tangerineember - tangerinecable)^2\n= sapphiremoon \\sum_{i=1}^{sapphiremoon} tangerineember^2 - \\left( \\sum_{i=1}^{sapphiremoon} tangerineember \\right)^2.\n\\]\n\n\\textbf{Remark:} (by David Savitt)\nThe discrete inequality can also be interpreted as follows.\nFor $willowbranch,orchidpetal \\in \\{1, \\dots, sapphiremoon-1\\}$ and $pomegranateseed = e^{2\\pi i/sapphiremoon}$, put\n\\[\npeppermintfog = \\sum_{i,j} pomegranateseed^{willowbranch i + orchidpetal j} tangerinecell.\n\\]\nThen the given inequality is equivalent to\n\\[\n\\sum_{willowbranch,orchidpetal=1}^{sapphiremoon-1} |peppermintfog|^2 \\geq 0.\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "discontinuous",
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "z": "depthvalue",
+        "w": "fixedscalar",
+        "x_ij": "uniformentry",
+        "x_kl": "steadycell",
+        "x_il": "evenentry",
+        "x_kj": "flatcell",
+        "x_i": "scalarvalue",
+        "x_j": "vectorvalue",
+        "a_1": "complexstart",
+        "a_n": "complexend",
+        "a_i": "complexterm",
+        "z_c,d": "nullvector",
+        "c": "rowindex",
+        "d": "colindex",
+        "n": "infinitesize",
+        "\\\\zeta_n": "alphazero"
+      },
+      "question": "Suppose that $discontinuous(verticalaxis,horizontalaxis)$ is a continuous real-valued function on the unit\nsquare $0 \\le verticalaxis \\le 1, 0 \\le horizontalaxis \\le 1$.  Show that\n\\begin{align*}\n& \\int_0^1 \\left( \\int_0^1  discontinuous(verticalaxis,horizontalaxis) \\, dverticalaxis \\right)^2 dhorizontalaxis +\n \\int_0^1 \\left( \\int_0^1  discontinuous(verticalaxis,horizontalaxis) \\, dhorizontalaxis \\right)^2 dverticalaxis \\\\\n&\\leq\n\\left( \\int_0^1 \\int_0^1  discontinuous(verticalaxis,horizontalaxis) \\, dverticalaxis\\, dhorizontalaxis \\right)^2 +\n\\int_0^1 \\int_0^1 \\left[ discontinuous(verticalaxis,horizontalaxis) \\right]^2 dverticalaxis\\,dhorizontalaxis.\n\\end{align*}",
+      "solution": "By approximating each integral with a Riemann sum, we may reduce to\nproving the discrete analogue: for $uniformentry \\in \\RR$ for\n$i,j=1, \\dots, infinitesize$,\n\\begin{multline*}\ninfinitesize \\sum_{i=1}^{infinitesize} \\left( \\sum_{j=1}^{infinitesize} uniformentry \\right)^2\n+ infinitesize \\sum_{j=1}^{infinitesize} \\left( \\sum_{i=1}^{infinitesize} uniformentry \\right)^2 \\\\\n\\leq \\left( \\sum_{i=1}^{infinitesize} \\sum_{j=1}^{infinitesize} uniformentry \\right)^2\n+ infinitesize^2 \\sum_{i=1}^{infinitesize} \\sum_{j=1}^{infinitesize} uniformentry^2.\n\\end{multline*}\nThe difference between the right side and the left side is\n\\[\n\\frac{1}{4} \\sum_{i,j,k,l=1}^{infinitesize} (uniformentry + steadycell - evenentry - flatcell)^2,\n\\]\nwhich is evidently nonnegative. If you prefer not to discretize,\nyou may rewrite the original inequality as\n\\[\n\\int_0^1 \\int_0^1 \\int_0^1 \\int_0^1 F(verticalaxis,horizontalaxis,depthvalue,fixedscalar)^2\n\\,dverticalaxis\\,dhorizontalaxis\\,ddepthvalue\\,dfixedscalar \\geq 0\n\\]\nfor\n\\[\nF(verticalaxis,horizontalaxis,depthvalue,fixedscalar) = discontinuous(verticalaxis,horizontalaxis) + discontinuous(depthvalue,fixedscalar) - discontinuous(verticalaxis,fixedscalar) - discontinuous(depthvalue,horizontalaxis).\n\\]\n\n\\textbf{Remark:} (by Po-Ning Chen)\nThe discrete inequality can be arrived at more systematically\nby repeatedly applying the following identity: for\nany real $complexstart, \\dots, complexend$,\n\\[\n\\sum_{1 \\leq i < j \\leq infinitesize} (scalarvalue - vectorvalue)^2\n= infinitesize \\sum_{i=1}^{infinitesize} scalarvalue^2 - \\left( \\sum_{i=1}^{infinitesize} scalarvalue \\right)^2.\n\\]\n\n\\textbf{Remark:} (by David Savitt)\nThe discrete inequality can also be interpreted as follows.\nFor $rowindex,colindex \\in \\{1, \\dots, infinitesize-1\\}$ and alphazero = e^{2\\pi i/infinitesize}, put\n\\[\nnullvector = \\sum_{i,j} alphazero^{rowindex i + colindex j} uniformentry.\n\\]\nThen the given inequality is equivalent to\n\\[\n\\sum_{rowindex,colindex=1}^{infinitesize-1} |nullvector|^2 \\geq 0.\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "f": "uigpwoxn",
+        "x": "qlzkmrta",
+        "y": "vdysplqe",
+        "z": "anjrfqwe",
+        "w": "bctzysro",
+        "x_ij": "plhxwgvo",
+        "x_kl": "yudskjfh",
+        "x_il": "vsrptcnu",
+        "x_kj": "rmplgszw",
+        "x_i": "ncfqyuds",
+        "x_j": "tmkdjwsh",
+        "a_1": "hcvdplsx",
+        "a_n": "glsetwhp",
+        "a_i": "rdqvoxnm",
+        "z_c,d": "oqjyrmav",
+        "c": "xvhtplsm",
+        "d": "wesgnlka",
+        "n": "khqpznta",
+        "\\\\zeta_n": "qzxwvtnp"
+      },
+      "question": "Suppose that $uigpwoxn(qlzkmrta,vdysplqe)$ is a continuous real-valued function on the unit\nsquare $0 \\le qlzkmrta \\le 1, 0 \\le vdysplqe \\le 1$.  Show that\n\\begin{align*}\n& \\int_0^1 \\left( \\int_0^1  uigpwoxn(qlzkmrta,vdysplqe) dqlzkmrta \\right)^2 dvdysplqe +\n \\int_0^1 \\left( \\int_0^1  uigpwoxn(qlzkmrta,vdysplqe) dvdysplqe \\right)^2 dqlzkmrta \\\\\n&\\leq\n\\left( \\int_0^1 \\int_0^1  uigpwoxn(qlzkmrta,vdysplqe) dqlzkmrta\\, dvdysplqe \\right)^2 +\n\\int_0^1 \\int_0^1 \\left[ uigpwoxn(qlzkmrta,vdysplqe) \\right]^2 dqlzkmrta\\,dvdysplqe.\n\\end{align*}",
+      "solution": "By approximating each integral with a Riemann sum, we may reduce to\nproving the discrete analogue: for $plhxwgvo \\in \\RR$ for\n$i,j=1, \\dots, khqpznta$,\n\\begin{multline*}\nkhqpznta \\sum_{i=1}^{khqpznta} \\left( \\sum_{j=1}^{khqpznta} plhxwgvo \\right)^2\n+ khqpznta \\sum_{j=1}^{khqpznta} \\left( \\sum_{i=1}^{khqpznta} plhxwgvo \\right)^2 \\\\\n\\leq \\left( \\sum_{i=1}^{khqpznta} \\sum_{j=1}^{khqpznta} plhxwgvo \\right)^2\n+ khqpznta^2 \\sum_{i=1}^{khqpznta} \\sum_{j=1}^{khqpznta} plhxwgvo^2.\n\\end{multline*}\nThe difference between the right side and the left side is\n\\[\n\\frac{1}{4} \\sum_{i,j,k,l=1}^{khqpznta} (plhxwgvo + yudskjfh - vsrptcnu - rmplgszw)^2,\n\\]\nwhich is evidently nonnegative. If you prefer not to discretize,\nyou may rewrite the original inequality as\n\\[\n\\int_0^1 \\int_0^1 \\int_0^1 \\int_0^1 F(qlzkmrta,vdysplqe,anjrfqwe,bctzysro)^2\n\\,dqlzkmrta\\,dvdysplqe\\,danjrfqwe\\,dbctzysro \\geq 0\n\\]\nfor\n\\[\nF(qlzkmrta,vdysplqe,anjrfqwe,bctzysro) = uigpwoxn(qlzkmrta,vdysplqe) + uigpwoxn(anjrfqwe,bctzysro) - uigpwoxn(qlzkmrta,bctzysro) - uigpwoxn(anjrfqwe,vdysplqe).\n\\]\n\n\\textbf{Remark:} (by Po-Ning Chen)\nThe discrete inequality can be arrived at more systematically\nby repeatedly applying the following identity: for\nany real $hcvdplsx, \\dots, glsetwhp$,\n\\[\n\\sum_{1 \\leq i < j \\leq khqpznta} (ncfqyuds - tmkdjwsh)^2\n= khqpznta \\sum_{i=1}^{khqpznta} ncfqyuds^2 - \\left( \\sum_{i=1}^{khqpznta} ncfqyuds \\right)^2.\n\\]\n\n\\textbf{Remark:} (by David Savitt)\nThe discrete inequality can also be interpreted as follows.\nFor $xvhtplsm,wesgnlka \\in \\{1, \\dots, khqpznta-1\\}$ and $qzxwvtnp = e^{2\\pi i/khqpznta}$, put\n\\[\noqjyrmav = \\sum_{i,j} qzxwvtnp^{xvhtplsm i + wesgnlka j} plhxwgvo.\n\\]\nThen the given inequality is equivalent to\n\\[\n\\sum_{xvhtplsm,wesgnlka=1}^{khqpznta-1} |oqjyrmav|^2 \\geq 0.\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $d\\ge 2$ be an integer and let  \n\\[\n\\Omega=[0,1]^{d},\\qquad \\lambda=\\text{Lebesgue measure on }\\Omega .\n\\]\n\nFor $f\\in L^{2}(\\Omega;\\,\\mathbb{C})$ define the one-dimensional marginals  \n\n\\[\nM_{i}(x_{1},\\dots ,x_{i-1},x_{i+1},\\dots ,x_{d})\n      \\;=\\;\\int_{0}^{1} f(x_{1},\\dots ,x_{d})\\,dx_{i},\n      \\qquad 1\\le i\\le d .\n\\]\n\n1.  Prove that  \n\\[\n\\boxed{\\;\n  \\sum_{i=1}^{d}\\int_{[0,1]^{\\,d-1}}\n      \\bigl|M_{i}(x_{1},\\dots ,x_{i-1},x_{i+1},\\dots ,x_{d})\\bigr|^{2}\n      \\,d\\lambda\n \\;\\le\\;\n \\Bigl| \\!\\int_{\\Omega} f\\,d\\lambda \\Bigr|^{2}\n      +(d-1)\\int_{\\Omega} |f|^{2}\\,d\\lambda\n  \\;}\n\\tag{$\\star$}\n\\]\n\n2.  Show that the constant $d-1$ in $(\\star)$ is optimal, that is, it cannot be replaced by any smaller real number while keeping the inequality valid for every $f\\in L^{2}(\\Omega)$.\n\n3.  Determine all (not necessarily real-valued) functions $f\\in L^{2}(\\Omega)$ for which equality holds in $(\\star)$.\n\nThus the classical bidimensional result is the particular case $d=2$ with sharp constant $1$, while for $d=3$ the sharp constant is $2$; the pattern continues with the optimal constant $d-1$ for every $d\\ge 2$.",
+      "solution": "Throughout, write $\\mathbb{T}:=\\mathbb{R}/\\mathbb{Z}$ and identify $\\Omega$ with $\\mathbb{T}^{d}$.  \nLebesgue measure is denoted by $\\mu$.  For $k=(k_{1},\\dots ,k_{d})\\in\\mathbb{Z}^{d}$ put  \n\\[\ne_{k}(x):=e^{2\\pi i\\,k\\cdot x},\\qquad k\\cdot x=\\sum_{j=1}^{d}k_{j}x_{j}.\n\\]\nThe family $\\{e_{k}\\}_{k\\in\\mathbb{Z}^{d}}$ is an orthonormal basis of $L^{2}(\\Omega)$.\n\n------------------------------------------------------------------\nStep 1.  Fourier expansion of the marginals.  \nGiven $f\\in L^{2}(\\Omega)$ write its Fourier series  \n\\[\nf(x)=\\sum_{k\\in\\mathbb{Z}^{d}} c_{k}\\,e_{k}(x),\n\\qquad \nc_{k}=\\int_{\\Omega} f(x)\\,e_{-k}(x)\\,d\\mu(x).\n\\]\nBecause $\\displaystyle\\int_{0}^{1}e^{2\\pi i k_{i}x_{i}}dx_{i}=1$ if $k_{i}=0$ and $0$ otherwise, termwise integration yields  \n\\[\nM_{i}(x)=\\sum_{\\;k:\\,k_{i}=0} c_{k}\\,e_{k}(x)\n\\quad (x\\text{ with the $i$-th coordinate removed}),\n\\]\nand therefore  \n\\[\n\\|M_{i}\\|_{L^{2}}^{2}=\\sum_{k:\\,k_{i}=0}|c_{k}|^{2}.\n\\tag{1}\n\\]\n\n------------------------------------------------------------------\nStep 2.  The left-hand side of $(\\star)$.  \nIntroduce the counting function  \n\\[\nz(k):=\\#\\bigl\\{\\,i: k_{i}=0\\,\\bigr\\}\\quad(0\\le z(k)\\le d).\n\\]\nUsing (1) we compute\n\\[\n\\text{LHS}(\\star)=\\sum_{i=1}^{d}\\sum_{k:\\,k_{i}=0}|c_{k}|^{2}\n                =d\\,|c_{0}|^{2}\\;+\\!\\!\\!\\sum_{k\\ne 0} z(k)\\,|c_{k}|^{2}.\n\\tag{2}\n\\]\n\n------------------------------------------------------------------\nStep 3.  The right-hand side of $(\\star)$.  \nWe have $\\displaystyle\\int_{\\Omega}f\\,d\\mu=c_{0}$ and  \n$\\|f\\|_{L^{2}}^{2}=\\sum_{k}|c_{k}|^{2}$, hence\n\\[\n\\text{RHS}(\\star)\n =|c_{0}|^{2}+(d-1)\\sum_{k}|c_{k}|^{2}\n =d\\,|c_{0}|^{2}+(d-1)\\!\\sum_{k\\ne 0}|c_{k}|^{2}.\n\\tag{3}\n\\]\n\n------------------------------------------------------------------\nStep 4.  Comparison.  \nSubtract (2) from (3):\n\\[\n\\text{RHS}-\\text{LHS}\n   =\\sum_{k\\ne 0}\\bigl[(d-1)-z(k)\\bigr]\\,|c_{k}|^{2}.\n\\tag{4}\n\\]\nFor $k\\ne 0$ at least one coordinate is non-zero, so $0\\le z(k)\\le d-1$, and every bracket in (4) is non-negative.  Consequently $\\text{RHS}\\ge\\text{LHS}$, proving $(\\star)$.\n\n------------------------------------------------------------------\nStep 5.  Optimality of the constant $d-1$.  \nFix $j\\in\\{1,\\dots ,d\\}$ and $m\\in\\mathbb{Z}\\setminus\\{0\\}$ and set  \n\\[\nf(x)=e^{2\\pi i m x_{j}} .\n\\]\nThen the only non-zero Fourier coefficient is $c_{m e_{j}}=1$, and $z(m e_{j})=d-1$.  Formula (4) gives $\\text{RHS}-\\text{LHS}=0$, that is, equality in $(\\star)$ holds.  \nIf the constant $d-1$ were replaced by some $C<d-1$, the same test function would make the bracket $C-z(m e_{j})$ in (4) negative, contradicting the inequality.  Therefore $d-1$ is minimal.\n\n------------------------------------------------------------------\nStep 6.  Characterisation of the equality case.  \nEquality in $(\\star)$ occurs exactly when every summand in (4) vanishes, that is,\n\\[\n\\forall\\,k\\ne 0,\\;c_{k}\\ne 0 \\;\\Longrightarrow\\; z(k)=d-1 .\n\\]\nEquivalently, each non-zero frequency vector has precisely one non-zero coordinate.  Hence the Fourier support of $f$ is contained in  \n\\[\n\\{0\\}\\;\\cup\\;\\bigl\\{\\pm m\\,e_{i}:\\;m\\in\\mathbb{Z},\\,1\\le i\\le d\\bigr\\},\n\\]\nand $f$ has the form  \n\\[\nf(x_{1},\\dots ,x_{d})\n   =C+\\sum_{i=1}^{d} g_{i}(x_{i}),\n   \\qquad\n   C\\in\\mathbb{C},\\;\n   g_{i}\\in L^{2}([0,1];\\mathbb{C}),\\;\n   \\int_{0}^{1} g_{i}(t)\\,dt=0 .\n\\]\nConversely, such functions clearly achieve equality (verification as in Step 5).  This completes the description of all extremisers.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.788193",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension: The problem is posed in arbitrary dimension d ≥ 4 rather than in 2 or 3 dimensions.  \n2. Optimal constant & extremisers: Besides proving an inequality, the solver must identify the sharp constant and the full equality class; neither appears in the original problem.  \n3. Advanced tools: A multi–dimensional Fourier‐analytic (or ANOVA / conditional–expectation) argument is indispensable; elementary Cauchy–Schwarz estimates are insufficient.  \n4. Intricate counting: The key step hinges on analysing how often a Fourier mode is counted by the various marginals via the function z(k), which leads to a delicate combinatorial bound.  \n5. Non-trivial sharpness proof: To prove optimality one must construct specific L² functions that saturate the inequality and show that any smaller constant fails, a task absent from the original kernel variant.\n\nAll these features demand several layers of insight well beyond the techniques required for the original two–dimensional inequality, thereby making this enhanced kernel variant significantly harder."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $d\\ge 2$ be an integer and let  \n\\[\n\\Omega=[0,1]^{d},\\qquad \\lambda=\\text{Lebesgue measure on }\\Omega .\n\\]\n\nFor $f\\in L^{2}(\\Omega;\\,\\mathbb{C})$ define the one-dimensional marginals  \n\n\\[\nM_{i}(x_{1},\\dots ,x_{i-1},x_{i+1},\\dots ,x_{d})\n      \\;=\\;\\int_{0}^{1} f(x_{1},\\dots ,x_{d})\\,dx_{i},\n      \\qquad 1\\le i\\le d .\n\\]\n\n1.  Prove that  \n\\[\n\\boxed{\\;\n  \\sum_{i=1}^{d}\\int_{[0,1]^{\\,d-1}}\n      \\bigl|M_{i}(x_{1},\\dots ,x_{i-1},x_{i+1},\\dots ,x_{d})\\bigr|^{2}\n      \\,d\\lambda\n \\;\\le\\;\n \\Bigl| \\!\\int_{\\Omega} f\\,d\\lambda \\Bigr|^{2}\n      +(d-1)\\int_{\\Omega} |f|^{2}\\,d\\lambda\n  \\;}\n\\tag{$\\star$}\n\\]\n\n2.  Show that the constant $d-1$ in $(\\star)$ is optimal, that is, it cannot be replaced by any smaller real number while keeping the inequality valid for every $f\\in L^{2}(\\Omega)$.\n\n3.  Determine all (not necessarily real-valued) functions $f\\in L^{2}(\\Omega)$ for which equality holds in $(\\star)$.\n\nThus the classical bidimensional result is the particular case $d=2$ with sharp constant $1$, while for $d=3$ the sharp constant is $2$; the pattern continues with the optimal constant $d-1$ for every $d\\ge 2$.",
+      "solution": "Throughout, write $\\mathbb{T}:=\\mathbb{R}/\\mathbb{Z}$ and identify $\\Omega$ with $\\mathbb{T}^{d}$.  \nLebesgue measure is denoted by $\\mu$.  For $k=(k_{1},\\dots ,k_{d})\\in\\mathbb{Z}^{d}$ put  \n\\[\ne_{k}(x):=e^{2\\pi i\\,k\\cdot x},\\qquad k\\cdot x=\\sum_{j=1}^{d}k_{j}x_{j}.\n\\]\nThe family $\\{e_{k}\\}_{k\\in\\mathbb{Z}^{d}}$ is an orthonormal basis of $L^{2}(\\Omega)$.\n\n------------------------------------------------------------------\nStep 1.  Fourier expansion of the marginals.  \nGiven $f\\in L^{2}(\\Omega)$ write its Fourier series  \n\\[\nf(x)=\\sum_{k\\in\\mathbb{Z}^{d}} c_{k}\\,e_{k}(x),\n\\qquad \nc_{k}=\\int_{\\Omega} f(x)\\,e_{-k}(x)\\,d\\mu(x).\n\\]\nBecause $\\displaystyle\\int_{0}^{1}e^{2\\pi i k_{i}x_{i}}dx_{i}=1$ if $k_{i}=0$ and $0$ otherwise, termwise integration yields  \n\\[\nM_{i}(x)=\\sum_{\\;k:\\,k_{i}=0} c_{k}\\,e_{k}(x)\n\\quad (x\\text{ with the $i$-th coordinate removed}),\n\\]\nand therefore  \n\\[\n\\|M_{i}\\|_{L^{2}}^{2}=\\sum_{k:\\,k_{i}=0}|c_{k}|^{2}.\n\\tag{1}\n\\]\n\n------------------------------------------------------------------\nStep 2.  The left-hand side of $(\\star)$.  \nIntroduce the counting function  \n\\[\nz(k):=\\#\\bigl\\{\\,i: k_{i}=0\\,\\bigr\\}\\quad(0\\le z(k)\\le d).\n\\]\nUsing (1) we compute\n\\[\n\\text{LHS}(\\star)=\\sum_{i=1}^{d}\\sum_{k:\\,k_{i}=0}|c_{k}|^{2}\n                =d\\,|c_{0}|^{2}\\;+\\!\\!\\!\\sum_{k\\ne 0} z(k)\\,|c_{k}|^{2}.\n\\tag{2}\n\\]\n\n------------------------------------------------------------------\nStep 3.  The right-hand side of $(\\star)$.  \nWe have $\\displaystyle\\int_{\\Omega}f\\,d\\mu=c_{0}$ and  \n$\\|f\\|_{L^{2}}^{2}=\\sum_{k}|c_{k}|^{2}$, hence\n\\[\n\\text{RHS}(\\star)\n =|c_{0}|^{2}+(d-1)\\sum_{k}|c_{k}|^{2}\n =d\\,|c_{0}|^{2}+(d-1)\\!\\sum_{k\\ne 0}|c_{k}|^{2}.\n\\tag{3}\n\\]\n\n------------------------------------------------------------------\nStep 4.  Comparison.  \nSubtract (2) from (3):\n\\[\n\\text{RHS}-\\text{LHS}\n   =\\sum_{k\\ne 0}\\bigl[(d-1)-z(k)\\bigr]\\,|c_{k}|^{2}.\n\\tag{4}\n\\]\nFor $k\\ne 0$ at least one coordinate is non-zero, so $0\\le z(k)\\le d-1$, and every bracket in (4) is non-negative.  Consequently $\\text{RHS}\\ge\\text{LHS}$, proving $(\\star)$.\n\n------------------------------------------------------------------\nStep 5.  Optimality of the constant $d-1$.  \nFix $j\\in\\{1,\\dots ,d\\}$ and $m\\in\\mathbb{Z}\\setminus\\{0\\}$ and set  \n\\[\nf(x)=e^{2\\pi i m x_{j}} .\n\\]\nThen the only non-zero Fourier coefficient is $c_{m e_{j}}=1$, and $z(m e_{j})=d-1$.  Formula (4) gives $\\text{RHS}-\\text{LHS}=0$, that is, equality in $(\\star)$ holds.  \nIf the constant $d-1$ were replaced by some $C<d-1$, the same test function would make the bracket $C-z(m e_{j})$ in (4) negative, contradicting the inequality.  Therefore $d-1$ is minimal.\n\n------------------------------------------------------------------\nStep 6.  Characterisation of the equality case.  \nEquality in $(\\star)$ occurs exactly when every summand in (4) vanishes, that is,\n\\[\n\\forall\\,k\\ne 0,\\;c_{k}\\ne 0 \\;\\Longrightarrow\\; z(k)=d-1 .\n\\]\nEquivalently, each non-zero frequency vector has precisely one non-zero coordinate.  Hence the Fourier support of $f$ is contained in  \n\\[\n\\{0\\}\\;\\cup\\;\\bigl\\{\\pm m\\,e_{i}:\\;m\\in\\mathbb{Z},\\,1\\le i\\le d\\bigr\\},\n\\]\nand $f$ has the form  \n\\[\nf(x_{1},\\dots ,x_{d})\n   =C+\\sum_{i=1}^{d} g_{i}(x_{i}),\n   \\qquad\n   C\\in\\mathbb{C},\\;\n   g_{i}\\in L^{2}([0,1];\\mathbb{C}),\\;\n   \\int_{0}^{1} g_{i}(t)\\,dt=0 .\n\\]\nConversely, such functions clearly achieve equality (verification as in Step 5).  This completes the description of all extremisers.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.602534",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension: The problem is posed in arbitrary dimension d ≥ 4 rather than in 2 or 3 dimensions.  \n2. Optimal constant & extremisers: Besides proving an inequality, the solver must identify the sharp constant and the full equality class; neither appears in the original problem.  \n3. Advanced tools: A multi–dimensional Fourier‐analytic (or ANOVA / conditional–expectation) argument is indispensable; elementary Cauchy–Schwarz estimates are insufficient.  \n4. Intricate counting: The key step hinges on analysing how often a Fourier mode is counted by the various marginals via the function z(k), which leads to a delicate combinatorial bound.  \n5. Non-trivial sharpness proof: To prove optimality one must construct specific L² functions that saturate the inequality and show that any smaller constant fails, a task absent from the original kernel variant.\n\nAll these features demand several layers of insight well beyond the techniques required for the original two–dimensional inequality, thereby making this enhanced kernel variant significantly harder."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

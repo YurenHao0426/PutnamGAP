@@ -1,0 +1,175 @@
+{
+  "index": "1997-B-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $a_{m,n}$ denote the coefficient of $x^n$ in the expansion of\n$(1+x+x^2)^m$.  Prove that for all [integers] $k\\geq 0$,\n\\[0\\leq \\sum_{i=0}^{\\lfloor \\frac{2k}{3}\\rfloor} (-1)^i a_{k-i,i}\\leq\n1.\\]",
+  "solution": "Let $s_k = \\sum_i (-1)^{i} a_{k-1,i}$ be the given sum (note that\n$a_{k-1,i}$ is nonzero precisely for $i = 0, \\dots, \\lfloor\n\\frac{2k}{3} \\rfloor)$. Since\n\\[\na_{m+1,n} = a_{m,n} + a_{m,n-1} + a_{m,n-2},\n\\]\nwe have\n\\begin{align*}\ns_k - s_{k-1} + s_{k+2}\n&= \\sum_i (-1)^i (a_{n-i,i} + a_{n-i,i+1} + a_{n-i,i+2}) \\\\\n&= \\sum_i (-1)^i a_{n-i+1,i+2} = s_{k+3}.\n\\end{align*}\nBy computing $s_0 = 1, s_1 = 1, s_2 = 0$, we may easily verify by\ninduction that $s_{4j} = s_{4j+1} = 1$ and $s_{4j+2} = s_{4j+3} = 0$\nfor all $j \\geq 0$. (Alternate solution suggested by John Rickert:\nwrite $S(x,y) = \\sum_{i=0}^\\infty (y+xy^2+x^2y^3)^i$, and note\nnote that $s_k$ is the coefficient of $y^k$ in $S(-1,y) = (1+y)/(1-y^4)$.)",
+  "vars": [
+    "k",
+    "i",
+    "j",
+    "m",
+    "n",
+    "x",
+    "y"
+  ],
+  "params": [
+    "a_m,n",
+    "a_k-i,i",
+    "a_k-1,i",
+    "a_n-i,i",
+    "a_n-i,i+1",
+    "a_n-i,i+2",
+    "a_n-i+1,i+2",
+    "s_k",
+    "s_k-1",
+    "s_k+2",
+    "s_k+3",
+    "s_4j",
+    "s_4j+1",
+    "s_4j+2",
+    "s_4j+3"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "indexvar",
+        "i": "loopindex",
+        "j": "offsetindex",
+        "m": "exponentidx",
+        "n": "poweridx",
+        "x": "polyvar",
+        "y": "genvar",
+        "a_m,n": "coeffgeneral",
+        "a_k-i,i": "coeffkiminus",
+        "a_k-1,i": "coeffkminusone",
+        "a_n-i,i": "coeffniminus",
+        "a_n-i,i+1": "coeffniplusone",
+        "a_n-i,i+2": "coeffniplustwo",
+        "a_n-i+1,i+2": "coeffniplusoneshift",
+        "s_k": "sumkseq",
+        "s_k-1": "sumkminusone",
+        "s_k+2": "sumkplustwo",
+        "s_k+3": "sumkplusthree",
+        "s_4j": "sumfourj",
+        "s_4j+1": "sumfourjplusone",
+        "s_4j+2": "sumfourjplustwo",
+        "s_4j+3": "sumfourjplusthree"
+      },
+      "question": "Let $coeffgeneral$ denote the coefficient of $\\polyvar^{poweridx}$ in the expansion of $(1+\\polyvar+\\polyvar^{2})^{exponentidx}$.  Prove that for all [integers] $indexvar\\geq 0$,\\[0\\leq \\sum_{loopindex=0}^{\\lfloor \\frac{2\\,indexvar}{3}\\rfloor} (-1)^{loopindex}\\, coeffkiminus\\leq 1.\\]",
+      "solution": "Let $sumkseq = \\sum_{loopindex} (-1)^{loopindex}\\, coeffkminusone$ be the given sum (note that $coeffkminusone$ is nonzero precisely for $loopindex = 0, \\dots, \\lfloor \\frac{2\\, indexvar}{3} \\rfloor)$. Since\\[a_{exponentidx+1,poweridx} = a_{exponentidx,poweridx} + a_{exponentidx,poweridx-1} + a_{exponentidx,poweridx-2},\\]we have\\begin{align*}sumkseq - sumkminusone + sumkplustwo&= \\sum_{loopindex} (-1)^{loopindex} (coeffniminus + coeffniplusone + coeffniplustwo) \\\\&= \\sum_{loopindex} (-1)^{loopindex} coeffniplusoneshift = sumkplusthree.\\end{align*}By computing $s_0 = 1, s_1 = 1, s_2 = 0$, we may easily verify by induction that $sumfourj = sumfourjplusone = 1$ and $sumfourjplustwo = sumfourjplusthree = 0$ for all $offsetindex \\geq 0$. (Alternate solution suggested by John Rickert: write $S(\\polyvar,\\genvar) = \\sum_{loopindex=0}^\\infty (\\genvar+\\polyvar \\genvar^{2}+\\polyvar^{2}\\genvar^{3})^{loopindex}$, and note that $sumkseq$ is the coefficient of $\\genvar^{indexvar}$ in $S(-1,\\genvar) = (1+\\genvar)/(1-\\genvar^{4})$.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "shoreline",
+        "i": "gemstone",
+        "j": "horsewhip",
+        "m": "firestone",
+        "n": "birdcage",
+        "x": "lanterns",
+        "y": "sailcloth",
+        "a_m,n": "ledgerentry",
+        "a_k-i,i": "buttercream",
+        "a_k-1,i": "riverstream",
+        "a_n-i,i": "dragonfruit",
+        "a_n-i,i+1": "thunderclap",
+        "a_n-i,i+2": "moonshadow",
+        "a_n-i+1,i+2": "gingerbread",
+        "s_k": "wheelbarrow",
+        "s_k-1": "steamboiler",
+        "s_k+2": "cornstalks",
+        "s_k+3": "paperlantern",
+        "s_4j": "marshmallow",
+        "s_4j+1": "paintbucket",
+        "s_4j+2": "aftershave",
+        "s_4j+3": "toothpicker"
+      },
+      "question": "Let $ledgerentry$ denote the coefficient of $lanterns^{birdcage}$ in the expansion of $(1+lanterns+lanterns^{2})^{firestone}$.  Prove that for all [integers] $\\shoreline\\geq 0$,\\[0\\leq \\sum_{gemstone=0}^{\\lfloor \\frac{2\\shoreline}{3}\\rfloor} (-1)^{gemstone} buttercream\\leq 1.\\]",
+      "solution": "Let $wheelbarrow = \\sum_{gemstone} (-1)^{gemstone} riverstream$ be the given sum (note that $riverstream$ is nonzero precisely for $gemstone = 0, \\dots, \\lfloor \\frac{2\\shoreline}{3} \\rfloor)$. Since\\[a_{firestone+1,birdcage} = a_{firestone,birdcage} + a_{firestone,birdcage-1} + a_{firestone,birdcage-2},\\]we have\\begin{align*}wheelbarrow - steamboiler + cornstalks &= \\sum_{gemstone} (-1)^{gemstone} (dragonfruit + thunderclap + moonshadow) \\\\ &= \\sum_{gemstone} (-1)^{gemstone} gingerbread = paperlantern.\\end{align*}By computing $s_0 = 1, s_1 = 1, s_2 = 0$, we may easily verify by induction that marshmallow = paintbucket = 1 and aftershave = toothpicker = 0 for all $horsewhip \\geq 0$. (Alternate solution suggested by John Rickert: write $S(lanterns,sailcloth) = \\sum_{gemstone=0}^{\\infty} (sailcloth+lanterns sailcloth^{2}+lanterns^{2} sailcloth^{3})^{gemstone}$, and note that $wheelbarrow$ is the coefficient of $sailcloth^{shoreline}$ in $S(-1,sailcloth) = (1+sailcloth)/(1-sailcloth^{4})$.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "steadynum",
+        "i": "outermost",
+        "j": "fixedpoint",
+        "m": "coefficient",
+        "n": "basecase",
+        "x": "immutable",
+        "y": "permanent",
+        "a_m,n": "zonalvalue",
+        "a_k-i,i": "globalvalue",
+        "a_k-1,i": "generalvalue",
+        "a_n-i,i": "externalvalue",
+        "a_n-i,i+1": "outervalue",
+        "a_n-i,i+2": "remotevalue",
+        "a_n-i+1,i+2": "distantvalue",
+        "s_k": "barebones",
+        "s_k-1": "overflowed",
+        "s_k+2": "underflow",
+        "s_k+3": "neutrality",
+        "s_4j": "macrostate",
+        "s_4j+1": "substatea",
+        "s_4j+2": "substateb",
+        "s_4j+3": "substatec"
+      },
+      "question": "Let $zonalvalue$ denote the coefficient of $immutable^{basecase}$ in the expansion of\n$(1+immutable+immutable^2)^{coefficient}$.  Prove that for all [integers] $steadynum\\geq 0$,\n\\[0\\leq \\sum_{outermost=0}^{\\lfloor \\frac{2steadynum}{3}\\rfloor} (-1)^{outermost} \\, globalvalue\\leq\n1.\\]",
+      "solution": "Let $barebones = \\sum_{outermost} (-1)^{outermost}\\, generalvalue$ be the given sum (note that\ngeneralvalue is nonzero precisely for $outermost = 0, \\dots, \\lfloor\n\\frac{2steadynum}{3} \\rfloor$). Since\n\\[\na_{coefficient+1,basecase} = a_{coefficient,basecase} + a_{coefficient,basecase-1} + a_{coefficient,basecase-2},\n\\]\nwe have\n\\begin{align*}\nbarebones - overflowed + underflow\n&= \\sum_{outermost} (-1)^{outermost} (externalvalue + outervalue + remotevalue) \\\\\n&= \\sum_{outermost} (-1)^{outermost} distantvalue = neutrality.\n\\end{align*}\nBy computing $s_0 = 1, s_1 = 1, s_2 = 0$, we may easily verify by\ninduction that $macrostate = substatea = 1$ and $substateb = substatec = 0$\nfor all $fixedpoint \\geq 0$. (Alternate solution suggested by John Rickert:\nwrite $S(immutable,permanent) = \\sum_{outermost=0}^\\infty (permanent+immutable\\,permanent^2+immutable^2permanent^3)^{outermost}$, and note\nthat $barebones$ is the coefficient of $permanent^{steadynum}$ in $S(-1,permanent) = (1+permanent)/(1-permanent^4)$.}",
+      "errors": []
+    },
+    "garbled_string": {
+      "map": {
+        "k": "zqpmbody",
+        "i": "hfralnec",
+        "j": "ubqtgihx",
+        "m": "vgytnlso",
+        "n": "dkrhapqe",
+        "x": "wmsjeoru",
+        "y": "kvfuazyn",
+        "a_m,n": "cenqplrz",
+        "a_k-i,i": "fwyazrjg",
+        "a_k-1,i": "vxqomdpl",
+        "a_n-i,i": "lfgwzuei",
+        "a_n-i,i+1": "sgahmeci",
+        "a_n-i,i+2": "bjkurnpq",
+        "a_n-i+1,i+2": "tsumdayr",
+        "s_k": "zdqyhkxm",
+        "s_k-1": "icpsjehf",
+        "s_k+2": "asyvmuke",
+        "s_k+3": "rqbyzofu",
+        "s_4j": "glonzebt",
+        "s_4j+1": "mchdvklp",
+        "s_4j+2": "xqspyuhf",
+        "s_4j+3": "prtayeul"
+      },
+      "question": "Let $cenqplrz$ denote the coefficient of $wmsjeoru^{dkrhapqe}$ in the expansion of\n$(1+wmsjeoru+wmsjeoru^2)^{vgytnlso}$.  Prove that for all [integers] $zqpmbody\\geq 0$,\n\\[0\\leq \\sum_{hfralnec=0}^{\\lfloor \\frac{2zqpmbody}{3}\\rfloor} (-1)^{hfralnec} fwyazrjg\\leq\n1.\\]",
+      "solution": "Let $zdqyhkxm = \\sum_{hfralnec} (-1)^{hfralnec} vxqomdpl$ be the given sum (note that\n$vxqomdpl$ is nonzero precisely for $hfralnec = 0, \\dots, \\lfloor\n\\frac{2zqpmbody}{3} \\rfloor)$. Since\n\\[\na_{vgytnlso+1,dkrhapqe} = a_{vgytnlso,dkrhapqe} + a_{vgytnlso,dkrhapqe-1} + a_{vgytnlso,dkrhapqe-2},\n\\]\nwe have\n\\begin{align*}\nzdqyhkxm - icpsjehf + asyvmuke\n&= \\sum_{hfralnec} (-1)^{hfralnec} (lfgwzuei + sgahmeci + bjkurnpq) \\\\\n&= \\sum_{hfralnec} (-1)^{hfralnec} tsumdayr = rqbyzofu.\n\\end{align*}\nBy computing $s_0 = 1, s_1 = 1, s_2 = 0$, we may easily verify by\ninduction that $glonzebt = mchdvklp = 1$ and $xqspyuhf = prtayeul = 0$\nfor all $ubqtgihx \\geq 0$. (Alternate solution suggested by John Rickert:\nwrite $S(wmsjeoru,kvfuazyn) = \\sum_{hfralnec=0}^\\infty (kvfuazyn+wmsjeoru kvfuazyn^2+wmsjeoru^2 kvfuazyn^3)^{hfralnec}$, and note\nnote that $zdqyhkxm$ is the coefficient of $kvfuazyn^{zqpmbody}$ in $S(-1,kvfuazyn) = (1+kvfuazyn)/(1-kvfuazyn^4)$. )"
+    },
+    "kernel_variant": {
+      "question": "Fix an integer $r\\ge 2$ and put  \n\\[\na^{(r)}_{m,n}\\;=\\;\\bigl[x^{\\,n}\\bigr]\\bigl(1+x+\\dots +x^{r}\\bigr)^{m},\n\\qquad m,n\\ge 0 ,\n\\]\nextended by the convention $a^{(r)}_{m,n}=0$ for $n<0$.  \nFor $k\\ge 0$ define  \n\\[\nT_{r}(k)\\;=\\;\\sum_{i=0}^{k}(-1)^{i}\\sum_{j=0}^{\\,r-1} a^{(r)}_{\\,k-i,\\;i-j}.\n\\tag{$\\star$}\n\\]\n\n1.  Prove the uniform bound  \n\\[\n-1\\;\\le\\;T_{r}(k)\\;\\le\\;1\\qquad\\bigl(k\\ge 0\\bigr).\n\\]\n\n2.  Show that the ordinary generating series  \n\\[\nG_{r}(y)\\;=\\;\\sum_{k\\ge 0}T_{r}(k)\\,y^{k}\n\\]\nis the rational function  \n\\[\nG_{r}(y)\\;=\\;\n\\frac{1-(-y)^{\\,r}}{1+(-1)^{\\,r+1}y^{\\,r+2}}.\n\\tag{$\\dagger$}\n\\]\n\n3.  Deduce from $(\\dagger)$ that $\\bigl(T_{r}(k)\\bigr)_{k\\ge 0}$ is purely periodic and that one complete period is given by  \n\\[\nT_{r}(k)=\n\\begin{cases}\n(-1)^{m}, &\\text{if }k=m(r+2)\\text{ or }k=r+m(r+2),\\\\[4pt]\n0, &\\text{otherwise},\n\\end{cases}\\qquad m\\ge 0.\n\\]\n\nIn particular, the period length equals $r+2$ when $r$ is even and $2(r+2)$ when $r$ is odd, and every term satisfies $T_{r}(k)\\in\\{-1,0,1\\}$.",
+      "solution": "Throughout we write  \n\\[\nF_{r}(x,y)\\;=\\;\\sum_{m\\ge 0}\\bigl(1+x+\\dots +x^{r}\\bigr)^{m}y^{m}\n \\;=\\;\\frac{1}{1-y\\bigl(1+x+\\dots +x^{r}\\bigr)}\n\\tag{1}\n\\]\nfor the two-variable generating function that records the numbers\n$a^{(r)}_{m,n}$.\n\n--------------------------------------------------------------------\nStep 1.  A convenient auxiliary series.  \nDefine\n\\[\nB(x,y)\\;=\\;\\bigl(1+x+\\dots +x^{\\,r-1}\\bigr)\\,F_{r}(x,y).\n\\tag{2}\n\\]\nBecause multiplication by the polynomial  \n$\\sum_{j=0}^{r-1}x^{j}$ merely shifts the $x$-index,\n\\[\n\\sum_{m\\ge 0}b_{m,i}\\,y^{m}\n=\\bigl[x^{\\,i}\\bigr]B(x,y),\\qquad\nb_{m,i}:=\\sum_{j=0}^{r-1}a^{(r)}_{m,i-j}.\n\\tag{3}\n\\]\nConsequently, with $T_{r}(k)$ as in $(\\star)$,\n\\[\nG_{r}(y)\n=\\sum_{k\\ge 0}\\sum_{i=0}^{k}(-1)^{i}b_{k-i,i}\\,y^{k}\n=\\sum_{i\\ge 0}(-y)^{i}\\bigl[x^{\\,i}\\bigr]B(x,y)\n=B(-y,y).\n\\tag{4}\n\\]\n(The shift in $(3)$ is now correct; no negative powers of $x$ are taken.)\n\n--------------------------------------------------------------------\nStep 2.  Closed form of $B(-y,y)$.  \nInsert $x=-y$ into $(2)$ and use the geometric-series identity\n\\[\n1+(-y)+\\dots +(-y)^{\\,r-1}\n=\\frac{1-(-y)^{\\,r}}{1+y}.\n\\tag{5}\n\\]\nSimilarly\n\\[\n1+(-y)+\\dots +(-y)^{\\,r}\n=\\frac{1-(-y)^{\\,r+1}}{1+y}.\n\\tag{6}\n\\]\nWith (5) and (6) in hand we obtain\n\\[\n\\begin{aligned}\nB(-y,y)\n&=\\frac{\\displaystyle\\frac{1-(-y)^{\\,r}}{1+y}}\n       {\\displaystyle 1-y\\Bigl(\\frac{1-(-y)^{\\,r+1}}{1+y}\\Bigr)}\n      \\\\\n&=\\frac{1-(-y)^{\\,r}}{1+(-1)^{\\,r+1}y^{\\,r+2}},\n\\end{aligned}\n\\tag{7}\n\\]\nwhich is precisely the claimed expression $(\\dagger)$ for $G_{r}(y)$.\n\n--------------------------------------------------------------------\nStep 3.  Periodicity and size of the coefficients.  \nWrite $q:=r+2$.  From $(\\dagger)$ we distinguish two cases.\n\n*  $r$ even.  Then  \n$G_{r}(y)=(1-y^{r})/(1-y^{q})\n        =(1-y^{r})\\sum_{m\\ge 0}y^{mq}$\nand hence\n\\[\nT_{r}(k)=\n\\begin{cases}\n 1, & k\\equiv 0\\pmod q,\\\\\n-1, & k\\equiv r\\pmod q,\\\\\n 0, & \\text{otherwise}.\n\\end{cases}\n\\tag{8}\n\\]\n\n*  $r$ odd.  Here  \n$G_{r}(y)=(1+y^{r})/(1+y^{q})\n         =(1+y^{r})\\sum_{m\\ge 0}(-1)^{m}y^{mq}$,\nso\n\\[\nT_{r}(k)=\n\\begin{cases}\n (-1)^{m}, & k=m q \\text{ or } k=r+m q,\\\\\n 0, & \\text{otherwise}.\n\\end{cases}\n\\tag{9}\n\\]\nIn both instances $|T_{r}(k)|\\le 1$ and the period asserted in the\nproblem statement follows immediately from the denominators\n$1\\pm y^{\\,q}$.\n\n--------------------------------------------------------------------\nStep 4.  Verification of the bound.  \nFormulas (8) and (9) show\n$T_{r}(k)\\in\\{-1,0,1\\}$ for all $k$, completing the proof of Part 1.\nParts 2 and 3 were settled in Steps 2 and 3, respectively, so the\nsolution is complete.  \\hfill$\\square$",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.756627",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher dimension & variables: the problem now involves an arbitrary parameter r (instead of the fixed r=2) and r consecutive coefficients, greatly enlarging the combinatorial state space.  \n•  Additional constraints: one must establish not only an upper bound but also complete periodicity and an explicit closed form.  \n•  Sophisticated structures: the solution hinges on a bivariate rational generating function, a non-trivial specialisation (x=−y), and the algebraic identity (7), none of which appear in the original problem.  \n•  Deeper theory: recognising and manipulating formal‐series substitutions, extracting coefficients, and proving periodicity from a cyclotomic denominator require advanced combinatorial–generating-function techniques.  \n•  Multiple interacting concepts: sign-alternating double sums, coefficient extraction, polynomial identities, and periodicity arguments interact throughout the proof.  \n\nHence the variant is markedly more technical and demanding than both the original question and its first kernel modification."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix an integer $r\\ge 2$ and put  \n\\[\na^{(r)}_{m,n}\\;=\\;\\bigl[x^{\\,n}\\bigr]\\bigl(1+x+\\dots +x^{r}\\bigr)^{m},\n\\qquad m,n\\ge 0 ,\n\\]\nextended by the convention $a^{(r)}_{m,n}=0$ for $n<0$.  \nFor $k\\ge 0$ define  \n\\[\nT_{r}(k)\\;=\\;\\sum_{i=0}^{k}(-1)^{i}\\sum_{j=0}^{\\,r-1} a^{(r)}_{\\,k-i,\\;i-j}.\n\\tag{$\\star$}\n\\]\n\n1.  Prove the uniform bound  \n\\[\n-1\\;\\le\\;T_{r}(k)\\;\\le\\;1\\qquad\\bigl(k\\ge 0\\bigr).\n\\]\n\n2.  Show that the ordinary generating series  \n\\[\nG_{r}(y)\\;=\\;\\sum_{k\\ge 0}T_{r}(k)\\,y^{k}\n\\]\nis the rational function  \n\\[\nG_{r}(y)\\;=\\;\n\\frac{1-(-y)^{\\,r}}{1+(-1)^{\\,r+1}y^{\\,r+2}}.\n\\tag{$\\dagger$}\n\\]\n\n3.  Deduce from $(\\dagger)$ that $\\bigl(T_{r}(k)\\bigr)_{k\\ge 0}$ is purely periodic and that one complete period is given by  \n\\[\nT_{r}(k)=\n\\begin{cases}\n(-1)^{m}, &\\text{if }k=m(r+2)\\text{ or }k=r+m(r+2),\\\\[4pt]\n0, &\\text{otherwise},\n\\end{cases}\\qquad m\\ge 0.\n\\]\n\nIn particular, the period length equals $r+2$ when $r$ is even and $2(r+2)$ when $r$ is odd, and every term satisfies $T_{r}(k)\\in\\{-1,0,1\\}$.",
+      "solution": "Throughout we write  \n\\[\nF_{r}(x,y)\\;=\\;\\sum_{m\\ge 0}\\bigl(1+x+\\dots +x^{r}\\bigr)^{m}y^{m}\n \\;=\\;\\frac{1}{1-y\\bigl(1+x+\\dots +x^{r}\\bigr)}\n\\tag{1}\n\\]\nfor the two-variable generating function that records the numbers\n$a^{(r)}_{m,n}$.\n\n--------------------------------------------------------------------\nStep 1.  A convenient auxiliary series.  \nDefine\n\\[\nB(x,y)\\;=\\;\\bigl(1+x+\\dots +x^{\\,r-1}\\bigr)\\,F_{r}(x,y).\n\\tag{2}\n\\]\nBecause multiplication by the polynomial  \n$\\sum_{j=0}^{r-1}x^{j}$ merely shifts the $x$-index,\n\\[\n\\sum_{m\\ge 0}b_{m,i}\\,y^{m}\n=\\bigl[x^{\\,i}\\bigr]B(x,y),\\qquad\nb_{m,i}:=\\sum_{j=0}^{r-1}a^{(r)}_{m,i-j}.\n\\tag{3}\n\\]\nConsequently, with $T_{r}(k)$ as in $(\\star)$,\n\\[\nG_{r}(y)\n=\\sum_{k\\ge 0}\\sum_{i=0}^{k}(-1)^{i}b_{k-i,i}\\,y^{k}\n=\\sum_{i\\ge 0}(-y)^{i}\\bigl[x^{\\,i}\\bigr]B(x,y)\n=B(-y,y).\n\\tag{4}\n\\]\n(The shift in $(3)$ is now correct; no negative powers of $x$ are taken.)\n\n--------------------------------------------------------------------\nStep 2.  Closed form of $B(-y,y)$.  \nInsert $x=-y$ into $(2)$ and use the geometric-series identity\n\\[\n1+(-y)+\\dots +(-y)^{\\,r-1}\n=\\frac{1-(-y)^{\\,r}}{1+y}.\n\\tag{5}\n\\]\nSimilarly\n\\[\n1+(-y)+\\dots +(-y)^{\\,r}\n=\\frac{1-(-y)^{\\,r+1}}{1+y}.\n\\tag{6}\n\\]\nWith (5) and (6) in hand we obtain\n\\[\n\\begin{aligned}\nB(-y,y)\n&=\\frac{\\displaystyle\\frac{1-(-y)^{\\,r}}{1+y}}\n       {\\displaystyle 1-y\\Bigl(\\frac{1-(-y)^{\\,r+1}}{1+y}\\Bigr)}\n      \\\\\n&=\\frac{1-(-y)^{\\,r}}{1+(-1)^{\\,r+1}y^{\\,r+2}},\n\\end{aligned}\n\\tag{7}\n\\]\nwhich is precisely the claimed expression $(\\dagger)$ for $G_{r}(y)$.\n\n--------------------------------------------------------------------\nStep 3.  Periodicity and size of the coefficients.  \nWrite $q:=r+2$.  From $(\\dagger)$ we distinguish two cases.\n\n*  $r$ even.  Then  \n$G_{r}(y)=(1-y^{r})/(1-y^{q})\n        =(1-y^{r})\\sum_{m\\ge 0}y^{mq}$\nand hence\n\\[\nT_{r}(k)=\n\\begin{cases}\n 1, & k\\equiv 0\\pmod q,\\\\\n-1, & k\\equiv r\\pmod q,\\\\\n 0, & \\text{otherwise}.\n\\end{cases}\n\\tag{8}\n\\]\n\n*  $r$ odd.  Here  \n$G_{r}(y)=(1+y^{r})/(1+y^{q})\n         =(1+y^{r})\\sum_{m\\ge 0}(-1)^{m}y^{mq}$,\nso\n\\[\nT_{r}(k)=\n\\begin{cases}\n (-1)^{m}, & k=m q \\text{ or } k=r+m q,\\\\\n 0, & \\text{otherwise}.\n\\end{cases}\n\\tag{9}\n\\]\nIn both instances $|T_{r}(k)|\\le 1$ and the period asserted in the\nproblem statement follows immediately from the denominators\n$1\\pm y^{\\,q}$.\n\n--------------------------------------------------------------------\nStep 4.  Verification of the bound.  \nFormulas (8) and (9) show\n$T_{r}(k)\\in\\{-1,0,1\\}$ for all $k$, completing the proof of Part 1.\nParts 2 and 3 were settled in Steps 2 and 3, respectively, so the\nsolution is complete.  \\hfill$\\square$",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.581893",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher dimension & variables: the problem now involves an arbitrary parameter r (instead of the fixed r=2) and r consecutive coefficients, greatly enlarging the combinatorial state space.  \n•  Additional constraints: one must establish not only an upper bound but also complete periodicity and an explicit closed form.  \n•  Sophisticated structures: the solution hinges on a bivariate rational generating function, a non-trivial specialisation (x=−y), and the algebraic identity (7), none of which appear in the original problem.  \n•  Deeper theory: recognising and manipulating formal‐series substitutions, extracting coefficients, and proving periodicity from a cyclotomic denominator require advanced combinatorial–generating-function techniques.  \n•  Multiple interacting concepts: sign-alternating double sums, coefficient extraction, polynomial identities, and periodicity arguments interact throughout the proof.  \n\nHence the variant is markedly more technical and demanding than both the original question and its first kernel modification."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

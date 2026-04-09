@@ -1,0 +1,88 @@
+{
+  "index": "1968-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "\\begin{array}{l}\n\\text { A-1. Prove }\\\\\n\\frac{22}{7}-\\pi=\\int_{0}^{1} \\frac{x^{4}(1-x)^{4}}{1+x^{2}} d x\n\\end{array}",
+  "solution": "A-1 The standard approach, from elementary calculus, applies. By division, rewrite the integrand as a polynomial plus a rational function with numerator of degree less than 2 . The solution follows easily.",
+  "vars": [
+    "x"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable"
+      },
+      "question": "\\begin{array}{l}\n\\text { A-1. Prove }\\\\\n\\frac{22}{7}-\\pi=\\int_{0}^{1} \\frac{variable^{4}(1-variable)^{4}}{1+variable^{2}} d variable\n\\end{array}",
+      "solution": "A-1 The standard approach, from elementary calculus, applies. By division, rewrite the integrand as a polynomial plus a rational function with numerator of degree less than 2 . The solution follows easily."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "landscape"
+      },
+      "question": "\\begin{array}{l}\n\\text { A-1. Prove }\\\\\n\\frac{22}{7}-\\pi=\\int_{0}^{1} \\frac{landscape^{4}(1-landscape)^{4}}{1+landscape^{2}} d landscape\n\\end{array}",
+      "solution": "A-1 The standard approach, from elementary calculus, applies. By division, rewrite the integrand as a polynomial plus a rational function with numerator of degree less than 2 . The solution follows easily."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval"
+      },
+      "question": "\\begin{array}{l}\n\\text { A-1. Prove }\\\\\n\\frac{22}{7}-\\pi=\\int_{0}^{1} \\frac{constantval^{4}(1-constantval)^{4}}{1+constantval^{2}} d constantval\n\\end{array}",
+      "solution": "A-1 The standard approach, from elementary calculus, applies. By division, rewrite the integrand as a polynomial plus a rational function with numerator of degree less than 2 . The solution follows easily."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp"
+      },
+      "question": "\\begin{array}{l}\n\\text { A-1. Prove }\\\\\n\\frac{22}{7}-\\pi=\\int_{0}^{1} \\frac{qzxwvtnp^{4}(1-qzxwvtnp)^{4}}{1+qzxwvtnp^{2}} d qzxwvtnp\n\\end{array}",
+      "solution": "A-1 The standard approach, from elementary calculus, applies. By division, rewrite the integrand as a polynomial plus a rational function with numerator of degree less than 2 . The solution follows easily."
+    },
+    "kernel_variant": {
+      "question": "Let\n\na) P(x)=x^{6}(1-x)^{6}=x^{6}-6x^{7}+15x^{8}-20x^{9}+15x^{10}-6x^{11}+x^{12},\n\nb) I=\\displaystyle\\int_{0}^{1/2}\\frac{P(x)}{1+4x^{2}}\\,dx.\n\n(i) Evaluate the integral I in closed form.\n(ii) Several sources claim the identity\n  \\[\\frac{333}{106}-\\pi=\\int_{0}^{1/2}\\frac{x^{6}(1-x)^{6}}{1+4x^{2}}\\,dx .\\]\n   Use the value found in part (i) to show that this formula cannot be correct.",
+      "solution": "We treat the integral exactly as in the classical proof that 22/7 exceeds \\pi .\n\nStep 1.  Divide P(x) by 1+4x^2.\n\nPerforming the Euclidean division one finds\n\n  P(x)=(1+4x^{2})Q(x)+R(x),\n\nwith\n Q(x)=\\tfrac14x^{10}-\\tfrac32x^{9}+\\tfrac{59}{16}x^{8}-\\tfrac{37}{8}x^{7}+\\tfrac{181}{64}x^{6}-\\tfrac{11}{32}x^{5}-\\tfrac{117}{256}x^{4}+\\tfrac{11}{128}x^{3}+\\tfrac{117}{1024}x^{2}-\\tfrac{11}{512}x-\\tfrac{117}{4096},\n R(x)=\\tfrac{11}{512}x+\\tfrac{117}{4096}.\n\nStep 2.  Split the integral.\n\nI=\\displaystyle\\int_{0}^{1/2}Q(x)\\,dx+\\frac{11}{512}\\int_{0}^{1/2}\\frac{x}{1+4x^{2}}\\,dx+\\frac{117}{4096}\\int_{0}^{1/2}\\frac{dx}{1+4x^{2}}.\n\nThe two elementary integrals are\n\n\\[\\int_{0}^{1/2}\\frac{x}{1+4x^{2}}dx=\\frac18\\ln (1+4x^{2})\\Big|_{0}^{1/2}=\\frac18\\ln 2,\\]\n\\[\\int_{0}^{1/2}\\frac{dx}{1+4x^{2}}dx=\\frac12\\arctan(2x)\\Big|_{0}^{1/2}=\\frac{\\pi}{8}.\\]\n\nHence\n\n\\[I=A+\\frac{11}{4096}\\,\\ln 2+\\frac{117}{32768}\\,\\pi,\\tag{1}\\]\nwhere A=\\int_{0}^{1/2}Q(x)\\,dx is purely rational.\n\nStep 3.  The rational part.\n\nIntegrating Q(x) term-by-term and collecting over the common denominator 56 770 560 gives\n\n\\[A=-\\frac{741\\,023}{56\\,770\\,560}.\\]\n\nStep 4.  Closed form of the integral.\n\nInsert A into (1):\n\n\\[\\boxed{\\displaystyle I=\\frac{117}{32\\,768}\\,\\pi+\\frac{11}{4096}\\,\\ln 2-\\frac{741\\,023}{56\\,770\\,560}.}\\]\n\nStep 5.  A numerical check and the spurious identity.\n\nUsing \\pi \\approx 3.141 592 653 59 and ln2\\approx 0.693 147 180 56 one obtains\n\n 117\\pi /32 768\\approx 0.011 217 234 51,\n 11 ln2/4096\\approx 0.001 861 479 24,\n 741 023/56 770 560\\approx 0.013 052 949 0.\n\nTherefore\n\n I\\approx 0.011 217 234 51+0.001 861 479 24-0.013 052 949 0\\approx 2.58\\times 10^{-5}.\n\nOn the other hand\n\n \\(\\dfrac{333}{106}-\\pi\\approx 3.141 509 434-3.141 592 654\\approx -8.32\\times 10^{-5}.\\)\n\nThe signs are opposite and the magnitudes differ by more than a factor of three, so equality is impossible.  (Because the exact value of I contains an ln2 term while the right-hand side of the quoted formula does not, a symbolic equality could hold only through an improbable transcendental cancellation; the simple numerical comparison already rules it out.)\n\nConsequently the published identity\n\\[\\frac{333}{106}-\\pi=\\int_{0}^{1/2}\\frac{x^{6}(1-x)^{6}}{1+4x^{2}}\\,dx\\]\n is false.",
+      "_meta": {
+        "core_steps": [
+          "Use polynomial long-division to write  x^4(1−x)^4/(1+x^2)=Q(x)+ (ax+b)/(1+x^2).",
+          "Split the integral into  ∫_0^1 Q(x)dx  and  ∫_0^1 (ax+b)/(1+x^2) dx.",
+          "Evaluate ∫_0^1 Q(x)dx by term-by-term antiderivatives (gives a rational number).",
+          "Evaluate ∫_0^1 (ax+b)/(1+x^2) dx using arctan (and the ln term, which vanishes here).",
+          "Combine the two results; the arctan(1)=π/4 contribution supplies the −π term, giving 22/7−π."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Exponent of x in the numerator  x^k",
+            "original": 4
+          },
+          "slot2": {
+            "description": "Exponent of (1−x) in the numerator  (1−x)^k (taken equal to slot1 for symmetry)",
+            "original": 4
+          },
+          "slot3": {
+            "description": "Quadratic factor in the denominator that produces an arctangent upon integration",
+            "original": "1 + x^2"
+          },
+          "slot4": {
+            "description": "Upper limit of integration (chosen so that arctan evaluates to a simple multiple of π)",
+            "original": 1
+          },
+          "slot5": {
+            "description": "Rational number that equals the polynomial part of the integral (22/7 here)",
+            "original": "22/7"
+          },
+          "slot6": {
+            "description": "Lower limit of integration",
+            "original": 0
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

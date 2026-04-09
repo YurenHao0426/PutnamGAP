@@ -1,0 +1,122 @@
+{
+  "index": "1983-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-4\n\nLet \\( k \\) be a positive integer and let \\( m=6 k-1 \\). Let\n\\[\nS(m)=\\sum_{j=1}^{2 k-1}(-1)^{j+1}\\binom{m}{3 j-1}\n\\]\n\nFor example with \\( k=3 \\),\n\\[\nS(17)=\\binom{17}{2}-\\binom{17}{5}+\\binom{17}{8}-\\binom{17}{11}+\\binom{17}{14} .\n\\]\n\nProve that \\( S(m) \\) is never zero. \\( \\left[\\right. \\) As usual, \\( \\binom{m}{r}=\\frac{m!}{r!(m-r)!} \\).]",
+  "solution": "A-4.\nLet \\( \\binom{m}{r}=0 \\) for \\( r>m \\) and for \\( r<0 \\). For \\( i=0,1,2 \\) let\n\\[\nT_{i}(m)=\\binom{m}{i}-\\binom{m}{i+3}+\\binom{m}{i+6}-\\binom{m}{i+9}+\\cdots .\n\\]\n\nWe note that \\( S(m)=T_{2}(m)+1 \\). Since \\( \\binom{n}{r}=\\binom{n-1}{r}+\\binom{n-1}{r-1} \\),\n\\[\n\\begin{array}{l}\nT_{2}(m)=T_{2}(m-1)+T_{1}(m-1), T_{1}(m)=T_{1}(m-1)+T_{0}(m-1) \\\\\nT_{0}(m)=T_{0}(m-1)-T_{2}(m-1)\n\\end{array}\n\\]\n\nLet the backwards difference operator \\( \\nabla \\) be given by \\( \\nabla f(n)=f(n)-f(n-1) \\). Then\n\\[\n\\nabla T_{2}(m)=T_{1}(m-1), \\nabla T_{1}(m)=T_{0}(m-1), \\nabla T_{0}(m)=-T_{2}(m-1)\n\\]\n\nThese imply that\n\\[\n\\nabla^{3} T_{2}(m)=\\nabla^{2} T_{1}(m-1)=\\nabla T_{0}(m-2)=-T_{2}(m-3) \\text { for } m \\geqslant 3 .\n\\]\n\nExpanding \\( \\nabla^{3} T_{2}(m) \\), this gives us\n\\[\nT_{2}(m)=3\\left[T_{2}(m-1)-T_{2}(m-2)\\right] \\text { for } m \\geqslant 3 .\n\\]\n\nWhen \\( m=6 k-1 \\) with \\( k \\geqslant 1 \\), we have \\( m \\geqslant 5 \\). It then follows from \\( (\\mathrm{R}) \\) that \\( T_{2}(m) \\equiv 0(\\bmod 3) \\) and hence \\( S(m) \\equiv 1(\\bmod 3) \\). Thus \\( S(m) \\neq 0 \\).",
+  "vars": [
+    "k",
+    "m",
+    "j",
+    "i",
+    "n",
+    "r"
+  ],
+  "params": [
+    "S",
+    "T_i",
+    "T_0",
+    "T_1",
+    "T_2"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "multiplindex",
+        "m": "derivedint",
+        "j": "loopingidx",
+        "i": "trinaryidx",
+        "n": "generalnum",
+        "r": "chooserank",
+        "S": "seriesfunc",
+        "T_i": "altseries",
+        "T_0": "altserieszero",
+        "T_1": "altseriesone",
+        "T_2": "altseriestwo"
+      },
+      "question": "Problem A-4\n\nLet multiplindex be a positive integer and let derivedint=6 multiplindex-1. Let\n\\[\nseriesfunc(derivedint)=\\sum_{loopingidx=1}^{2 multiplindex-1}(-1)^{loopingidx+1}\\binom{derivedint}{3 loopingidx-1}\n\\]\n\nFor example with multiplindex=3,\n\\[\nseriesfunc(17)=\\binom{17}{2}-\\binom{17}{5}+\\binom{17}{8}-\\binom{17}{11}+\\binom{17}{14} .\n\\]\n\nProve that seriesfunc(derivedint) is never zero. [As usual, \\(\\binom{derivedint}{chooserank}=\\frac{derivedint!}{chooserank!(derivedint-chooserank)!}\\).]",
+      "solution": "A-4.\nLet \\( \\binom{derivedint}{chooserank}=0 \\) for chooserank>derivedint and for chooserank<0. For trinaryidx=0,1,2 let\n\\[\naltseries_{trinaryidx}(derivedint)=\\binom{derivedint}{trinaryidx}-\\binom{derivedint}{trinaryidx+3}+\\binom{derivedint}{trinaryidx+6}-\\binom{derivedint}{trinaryidx+9}+\\cdots .\n\\]\n\nWe note that \\( seriesfunc(derivedint)=altseriestwo(derivedint)+1 \\). Since \\( \\binom{generalnum}{chooserank}=\\binom{generalnum-1}{chooserank}+\\binom{generalnum-1}{chooserank-1} \\),\n\\[\n\\begin{array}{l}\naltseriestwo(derivedint)=altseriestwo(derivedint-1)+altseriesone(derivedint-1),\\quad altseriesone(derivedint)=altseriesone(derivedint-1)+altserieszero(derivedint-1) \\\\\naltserieszero(derivedint)=altserieszero(derivedint-1)-altseriestwo(derivedint-1)\n\\end{array}\n\\]\n\nLet the backwards difference operator \\( \\nabla \\) be given by \\( \\nabla f(generalnum)=f(generalnum)-f(generalnum-1) \\). Then\n\\[\n\\nabla altseriestwo(derivedint)=altseriesone(derivedint-1),\\quad \\nabla altseriesone(derivedint)=altserieszero(derivedint-1),\\quad \\nabla altserieszero(derivedint)=-altseriestwo(derivedint-1)\n\\]\n\nThese imply that\n\\[\n\\nabla^{3} altseriestwo(derivedint)=\\nabla^{2} altseriesone(derivedint-1)=\\nabla altserieszero(derivedint-2)=-altseriestwo(derivedint-3) \\text { for } derivedint \\geqslant 3 .\n\\]\n\nExpanding \\( \\nabla^{3} altseriestwo(derivedint) \\), this gives us\n\\[\naltseriestwo(derivedint)=3\\left[altseriestwo(derivedint-1)-altseriestwo(derivedint-2)\\right] \\text { for } derivedint \\geqslant 3 . \\tag{R}\n\\]\n\nWhen derivedint=6 multiplindex-1 with multiplindex \\geqslant 1, we have derivedint \\geqslant 5. It then follows from (R) that altseriestwo(derivedint) \\equiv 0 (\\bmod 3) and hence seriesfunc(derivedint) \\equiv 1 (\\bmod 3). Thus seriesfunc(derivedint) \\neq 0."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "hazelnut",
+        "m": "giraffes",
+        "j": "opossums",
+        "i": "pinecone",
+        "n": "marigold",
+        "r": "butterfly",
+        "S": "waterfall",
+        "T_i": "strawhats",
+        "T_0": "lighthouse",
+        "T_1": "paintings",
+        "T_2": "drumstick"
+      },
+      "question": "Problem A-4\n\nLet \\( hazelnut \\) be a positive integer and let \\( giraffes=6 hazelnut-1 \\). Let\n\\[\nwaterfall(giraffes)=\\sum_{opossums=1}^{2 hazelnut-1}(-1)^{opossums+1}\\binom{giraffes}{3 opossums-1}\n\\]\n\nFor example with \\( hazelnut=3 \\),\n\\[\nwaterfall(17)=\\binom{17}{2}-\\binom{17}{5}+\\binom{17}{8}-\\binom{17}{11}+\\binom{17}{14} .\n\\]\n\nProve that \\( waterfall(giraffes) \\) is never zero. \\( \\left[\\right. \\) As usual, \\( \\binom{giraffes}{butterfly}=\\frac{giraffes!}{butterfly!(giraffes-butterfly)!} \\).]",
+      "solution": "A-4.\nLet \\( \\binom{giraffes}{butterfly}=0 \\) for \\( butterfly>giraffes \\) and for \\( butterfly<0 \\). For \\( pinecone=0,1,2 \\) let\n\\[\nstrawhats(giraffes)=\\binom{giraffes}{pinecone}-\\binom{giraffes}{pinecone+3}+\\binom{giraffes}{pinecone+6}-\\binom{giraffes}{pinecone+9}+\\cdots .\n\\]\n\nWe note that \\( waterfall(giraffes)=drumstick(giraffes)+1 \\). Since \\( \\binom{marigold}{butterfly}=\\binom{marigold-1}{butterfly}+\\binom{marigold-1}{butterfly-1} \\),\n\\[\n\\begin{array}{l}\ndrumstick(giraffes)=drumstick(giraffes-1)+paintings(giraffes-1), paintings(giraffes)=paintings(giraffes-1)+lighthouse(giraffes-1) \\\\\nlighthouse(giraffes)=lighthouse(giraffes-1)-drumstick(giraffes-1)\n\\end{array}\n\\]\n\nLet the backwards difference operator \\( \\nabla \\) be given by \\( \\nabla f(marigold)=f(marigold)-f(marigold-1) \\). Then\n\\[\n\\nabla drumstick(giraffes)=paintings(giraffes-1), \\nabla paintings(giraffes)=lighthouse(giraffes-1), \\nabla lighthouse(giraffes)=-drumstick(giraffes-1)\n\\]\n\nThese imply that\n\\[\n\\nabla^{3} drumstick(giraffes)=\\nabla^{2} paintings(giraffes-1)=\\nabla lighthouse(giraffes-2)=-drumstick(giraffes-3) \\text { for } giraffes \\geqslant 3 .\n\\]\n\nExpanding \\( \\nabla^{3} drumstick(giraffes) \\), this gives us\n\\[\ndrumstick(giraffes)=3\\left[drumstick(giraffes-1)-drumstick(giraffes-2)\\right] \\text { for } giraffes \\geqslant 3 .\n\\]\n\nWhen \\( giraffes=6 hazelnut-1 \\) with \\( hazelnut \\geqslant 1 \\), we have \\( giraffes \\geqslant 5 \\). It then follows from \\( (\\mathrm{R}) \\) that \\( drumstick(giraffes) \\equiv 0(\\bmod 3) \\) and hence \\( waterfall(giraffes) \\equiv 1(\\bmod 3) \\). Thus \\( waterfall(giraffes) \\neq 0 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "infiniteidx",
+        "m": "fractionalval",
+        "j": "stillpoint",
+        "i": "constantval",
+        "n": "fixedbound",
+        "r": "wholeamt",
+        "S": "voidprod",
+        "T_i": "steadfasti",
+        "T_0": "steadfastzero",
+        "T_1": "steadfastone",
+        "T_2": "steadfasttwo"
+      },
+      "question": "Problem A-4\n\nLet \\( infiniteidx \\) be a positive integer and let \\( fractionalval = 6\\, infiniteidx - 1 \\). Let\n\\[\nvoidprod(fractionalval)=\\sum_{stillpoint=1}^{2\\, infiniteidx -1}(-1)^{\\, stillpoint +1}\\binom{fractionalval}{3\\, stillpoint -1}\n\\]\n\nFor example with \\( infiniteidx = 3 \\),\n\\[\nvoidprod(17)=\\binom{17}{2}-\\binom{17}{5}+\\binom{17}{8}-\\binom{17}{11}+\\binom{17}{14} .\n\\]\n\nProve that \\( voidprod(fractionalval) \\) is never zero. \\( \\left[\\right. \\) As usual, \\( \\binom{fractionalval}{wholeamt}=\\frac{fractionalval!}{wholeamt!(fractionalval-wholeamt)!} \\).]",
+      "solution": "A-4.\nLet \\( \\binom{fractionalval}{wholeamt}=0 \\) for \\( wholeamt>fractionalval \\) and for \\( wholeamt<0 \\). For \\( constantval=0,1,2 \\) let\n\\[\nsteadfasti(fractionalval)=\\binom{fractionalval}{constantval}-\\binom{fractionalval}{constantval+3}+\\binom{fractionalval}{constantval+6}-\\binom{fractionalval}{constantval+9}+\\cdots .\n\\]\n\nWe note that \\( voidprod(fractionalval)=steadfasttwo(fractionalval)+1 \\). Since \\( \\binom{fixedbound}{wholeamt}=\\binom{fixedbound-1}{wholeamt}+\\binom{fixedbound-1}{wholeamt-1} \\),\n\\[\n\\begin{array}{l}\nsteadfasttwo(fractionalval)=steadfasttwo(fractionalval-1)+steadfastone(fractionalval-1),\\quad steadfastone(fractionalval)=steadfastone(fractionalval-1)+steadfastzero(fractionalval-1) \\\\\nsteadfastzero(fractionalval)=steadfastzero(fractionalval-1)-steadfasttwo(fractionalval-1)\n\\end{array}\n\\]\n\nLet the backwards difference operator \\( \\nabla \\) be given by \\( \\nabla f(fixedbound)=f(fixedbound)-f(fixedbound-1) \\). Then\n\\[\n\\nabla steadfasttwo(fractionalval)=steadfastone(fractionalval-1),\\quad \\nabla steadfastone(fractionalval)=steadfastzero(fractionalval-1),\\quad \\nabla steadfastzero(fractionalval)=-steadfasttwo(fractionalval-1)\n\\]\n\nThese imply that\n\\[\n\\nabla^{3} steadfasttwo(fractionalval)=\\nabla^{2} steadfastone(fractionalval-1)=\\nabla steadfastzero(fractionalval-2)=-steadfasttwo(fractionalval-3) \\text { for } fractionalval \\geqslant 3 .\n\\]\n\nExpanding \\( \\nabla^{3} steadfasttwo(fractionalval) \\), this gives us\n\\[\nsteadfasttwo(fractionalval)=3\\left[ steadfasttwo(fractionalval-1)-steadfasttwo(fractionalval-2) \\right] \\text { for } fractionalval \\geqslant 3 .\n\\]\n\nWhen \\( fractionalval = 6\\, infiniteidx - 1 \\) with \\( infiniteidx \\geqslant 1 \\), we have \\( fractionalval \\geqslant 5 \\). It then follows from \\( (\\mathrm{R}) \\) that \\( steadfasttwo(fractionalval) \\equiv 0(\\bmod 3) \\) and hence \\( voidprod(fractionalval) \\equiv 1(\\bmod 3) \\). Thus \\( voidprod(fractionalval) \\neq 0 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "ouveplix",
+        "m": "viburtoz",
+        "j": "caxendot",
+        "i": "glomertx",
+        "n": "pewdarin",
+        "r": "qimazulo",
+        "S": "tobjarnik",
+        "T_i": "lavumpek",
+        "T_0": "ysmaltex",
+        "T_1": "qerdoniv",
+        "T_2": "vivnargel"
+      },
+      "question": "Problem A-4\n\nLet \\( ouveplix \\) be a positive integer and let \\( viburtoz=6 ouveplix-1 \\). Let\n\\[\ntobjarnik(viburtoz)=\\sum_{caxendot=1}^{2 ouveplix-1}(-1)^{caxendot+1}\\binom{viburtoz}{3 caxendot-1}\n\\]\n\nFor example with \\( ouveplix=3 \\),\n\\[\ntobjarnik(17)=\\binom{17}{2}-\\binom{17}{5}+\\binom{17}{8}-\\binom{17}{11}+\\binom{17}{14} .\n\\]\n\nProve that \\( tobjarnik(viburtoz) \\) is never zero. \\( \\left[\\right. \\) As usual, \\( \\binom{viburtoz}{qimazulo}=\\frac{viburtoz!}{qimazulo!(viburtoz-qimazulo)!} \\).]",
+      "solution": "A-4.\nLet \\( \\binom{viburtoz}{qimazulo}=0 \\) for \\( qimazulo>viburtoz \\) and for \\( qimazulo<0 \\). For \\( glomertx=0,1,2 \\) let\n\\[\nlavumpek(viburtoz)=\\binom{viburtoz}{glomertx}-\\binom{viburtoz}{glomertx+3}+\\binom{viburtoz}{glomertx+6}-\\binom{viburtoz}{glomertx+9}+\\cdots .\n\\]\n\nWe note that \\( tobjarnik(viburtoz)=vivnargel(viburtoz)+1 \\). Since \\( \\binom{pewdarin}{qimazulo}=\\binom{pewdarin-1}{qimazulo}+\\binom{pewdarin-1}{qimazulo-1} \\),\n\\[\n\\begin{array}{l}\nvivnargel(viburtoz)=vivnargel(viburtoz-1)+qerdoniv(viburtoz-1), qerdoniv(viburtoz)=qerdoniv(viburtoz-1)+ysmaltex(viburtoz-1) \\\\\nysmaltex(viburtoz)=ysmaltex(viburtoz-1)-vivnargel(viburtoz-1)\n\\end{array}\n\\]\n\nLet the backwards difference operator \\( \\nabla \\) be given by \\( \\nabla f(pewdarin)=f(pewdarin)-f(pewdarin-1) \\). Then\n\\[\n\\nabla vivnargel(viburtoz)=qerdoniv(viburtoz-1), \\nabla qerdoniv(viburtoz)=ysmaltex(viburtoz-1), \\nabla ysmaltex(viburtoz)=-vivnargel(viburtoz-1)\n\\]\n\nThese imply that\n\\[\n\\nabla^{3} vivnargel(viburtoz)=\\nabla^{2} qerdoniv(viburtoz-1)=\\nabla ysmaltex(viburtoz-2)=-vivnargel(viburtoz-3) \\text { for } viburtoz \\geqslant 3 .\n\\]\n\nExpanding \\( \\nabla^{3} vivnargel(viburtoz) \\), this gives us\n\\[\nvivnargel(viburtoz)=3\\left[vivnargel(viburtoz-1)-vivnargel(viburtoz-2)\\right] \\text { for } viburtoz \\geqslant 3 .\n\\]\n\nWhen \\( viburtoz=6 ouveplix-1 \\) with \\( ouveplix \\geqslant 1 \\), we have \\( viburtoz \\geqslant 5 \\). It then follows from \\( (\\mathrm{R}) \\) that \\( vivnargel(viburtoz) \\equiv 0(\\bmod 3) \\) and hence \\( tobjarnik(viburtoz) \\equiv 1(\\bmod 3) \\). Thus \\( tobjarnik(viburtoz) \\neq 0 ."
+    },
+    "kernel_variant": {
+      "question": "Let k be a positive integer and put n = 6k-1.  Define\n\\[\nP(n)=\\sum_{j=0}^{2k-2}(-1)^{j}\\binom{n}{3j+2}.\n\\]\nFor example, for k=4 one has n=23 and\n\\[\nP(23)=\\binom{23}{2}-\\binom{23}{5}+\\binom{23}{8}-\\binom{23}{11}+\\binom{23}{14}-\\binom{23}{17}+\\binom{23}{20}.\n\\]\n(Prove that P(n) is never zero.  Throughout we agree that \\(\\binom{p}{q}=0\\) whenever \\(q\\notin\\{0,1,\\dots ,p\\}\\).)",
+      "solution": "Introduce, for i = 0,1,2,\n\nT_i(m)=\\binom{m}{i}-\\binom{m}{i+3}+\\binom{m}{i+6}-\\binom{m}{i+9}+\\cdots \\quad(m\\in\\mathbb N).\n\nBecause 2\\equiv i\\pmod3 when i=2, all summands occurring in P(n) lie in T_2(n).  More precisely, the largest index appearing in P(n) is 3(2k-2)+2=n-3, so\n\nT_2(n)=P(n)-\\binom{n}{n}=P(n)-1,\\qquad\\text{i.e.}\\qquad P(n)=T_2(n)+1.  (1)\n\nPascal's identity \\(\\binom{m}{r}=\\binom{m-1}{r}+\\binom{m-1}{r-1}\\) yields\n\nT_2(m)=T_2(m-1)+T_1(m-1),\\quad T_1(m)=T_1(m-1)+T_0(m-1),\\quad T_0(m)=T_0(m-1)-T_2(m-1).\n\nWrite the backward-difference operator \\(\\nabla f(m)=f(m)-f(m-1)\\).  Then\n\n\\nabla T_2(m)=T_1(m-1),\\quad \\nabla T_1(m)=T_0(m-1),\\quad \\nabla T_0(m)=-T_2(m-1).\n\nRepeated application gives, for m\\ge3,\n\n\\nabla^{3}T_2(m)=\\nabla^{2}T_1(m-1)=\\nabla T_0(m-2)=-T_2(m-3).\n\nExpanding \\(\\nabla^{3}T_2(m)\\) one obtains the linear recurrence\n\nT_2(m)=3\\bigl[T_2(m-1)-T_2(m-2)\\bigr]\\quad(m\\ge3).  (2)\n\nBecause n=6k-1\\ge5, repeated use of (2) shows that\n\nT_2(n)\\equiv0\\pmod3.  (3)\n\nFinally, combining (1) and (3) gives\n\nP(n)=T_2(n)+1\\equiv1\\pmod3\\neq0.\n\nHence P(n) is nonzero for every positive integer k, as required.",
+      "_meta": {
+        "core_steps": [
+          "Partition the alternating sum by residues mod 3, defining the auxiliary sequences T₀, T₁, T₂ with S(m)=T₂(m)+1.",
+          "Apply Pascal’s identity to relate T₀, T₁, T₂ and rewrite those relations with the backward-difference operator ∇.",
+          "Take a third backward difference to obtain the linear recurrence  T₂(m)=3[T₂(m−1)−T₂(m−2)].",
+          "Use the recurrence modulo 3 and the fact m≡2 (mod 3) (because m=6k−1) to deduce 3|T₂(m), hence S(m)=T₂(m)+1≡1 (mod 3)≠0."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The illustrative choice of k in the sample computation (only pedagogical, not used in the proof).",
+            "original": "k = 3 (yielding m = 17)"
+          },
+          "slot2": {
+            "description": "Stated convention that \\(\\binom{m}{r}=0\\) for r<0 or r>m; any equivalent convention giving the same zero values would work.",
+            "original": "‘Let \\(\\binom{m}{r}=0\\) for r>m and for r<0\\)’"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

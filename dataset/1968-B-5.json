@@ -1,0 +1,94 @@
+{
+  "index": "1968-B-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "B-5. Let \\( p \\) be a prime number. Let \\( J \\) be the set of all \\( 2 \\times 2 \\) matrices \\( \\binom{a b}{c d} \\) whose entries are chosen from \\( \\{0,1,2, \\cdots, p-1\\} \\) and satisfy the conditions \\( a+d \\equiv 1(\\bmod p), a d-b c \\equiv 0(\\bmod p) \\).\n\nDetermine how many members \\( J \\) has.",
+  "solution": "B-5 If \\( a=0 \\) then \\( d=1 \\), and if \\( a=1 \\) then \\( d=0 \\). In either case \\( b c=0 \\) and \\( b \\) or \\( c \\) is 0 , while the other is arbitrary. There are \\( 2 p-1 \\) distinct solutions to \\( b c=0 \\) and thus the case \\( a=0 \\) or \\( a=1 \\) accounts for a total of \\( 4 p-2 \\) solutions. If \\( a \\neq 0 \\) or 1 , then \\( d \\) is uniquely determined and \\( b c \\equiv a d \\neq 0(\\bmod p) \\) implies that for each \\( b \\neq 0 \\), there is a unique \\( c \\), since the integers \\( \\bmod p \\) form a field. Hence for each \\( a \\) in this case, there are \\( p-1 \\) solutions. The total number of solutions is \\( 4 p-2+(p-2)(p-1)=p^{2}+p \\).",
+  "vars": [
+    "J",
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "params": [
+    "p"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "J": "matriceset",
+        "a": "entryone",
+        "b": "entrytwo",
+        "c": "entrythree",
+        "d": "entryfour",
+        "p": "primeval"
+      },
+      "question": "B-5. Let \\( primeval \\) be a prime number. Let \\( matriceset \\) be the set of all \\( 2 \\times 2 \\) matrices \\( \\binom{entryone entrytwo}{entrythree entryfour} \\) whose entries are chosen from \\( \\{0,1,2, \\cdots, primeval-1\\} \\) and satisfy the conditions \\( entryone+entryfour \\equiv 1(\\bmod primeval), entryone entryfour-entrytwo entrythree \\equiv 0(\\bmod primeval) \\).\n\nDetermine how many members \\( matriceset \\) has.",
+      "solution": "B-5 If \\( entryone=0 \\) then \\( entryfour=1 \\), and if \\( entryone=1 \\) then \\( entryfour=0 \\). In either case \\( entrytwo entrythree=0 \\) and \\( entrytwo \\) or \\( entrythree \\) is 0 , while the other is arbitrary. There are \\( 2 primeval-1 \\) distinct solutions to \\( entrytwo entrythree=0 \\) and thus the case \\( entryone=0 \\) or \\( entryone=1 \\) accounts for a total of \\( 4 primeval-2 \\) solutions. If \\( entryone \\neq 0 \\) or 1 , then \\( entryfour \\) is uniquely determined and \\( entrytwo entrythree \\equiv entryone entryfour \\neq 0(\\bmod primeval) \\) implies that for each \\( entrytwo \\neq 0 \\), there is a unique \\( entrythree \\), since the integers \\( \\bmod primeval \\) form a field. Hence for each \\( entryone \\) in this case, there are \\( primeval-1 \\) solutions. The total number of solutions is \\( 4 primeval-2+(primeval-2)(primeval-1)=primeval^{2}+primeval \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "J": "hillside",
+        "a": "marigold",
+        "b": "quagmire",
+        "c": "afterglow",
+        "d": "stonework",
+        "p": "raincloud"
+      },
+      "question": "B-5. Let \\( raincloud \\) be a prime number. Let \\( hillside \\) be the set of all \\( 2 \\times 2 \\) matrices \\( \\binom{marigold quagmire}{afterglow stonework} \\) whose entries are chosen from \\{0,1,2, \\cdots, raincloud-1\\} and satisfy the conditions \\( marigold+stonework \\equiv 1(\\bmod raincloud), marigold stonework-quagmire afterglow \\equiv 0(\\bmod raincloud) \\).\n\nDetermine how many members \\( hillside \\) has.",
+      "solution": "B-5 If \\( marigold=0 \\) then \\( stonework=1 \\), and if \\( marigold=1 \\) then \\( stonework=0 \\). In either case \\( quagmire afterglow=0 \\) and \\( quagmire \\) or \\( afterglow \\) is 0 , while the other is arbitrary. There are \\( 2 raincloud-1 \\) distinct solutions to \\( quagmire afterglow=0 \\) and thus the case \\( marigold=0 \\) or \\( marigold=1 \\) accounts for a total of \\( 4 raincloud-2 \\) solutions. If \\( marigold \\neq 0 \\) or 1 , then \\( stonework \\) is uniquely determined and \\( quagmire afterglow \\equiv marigold stonework \\neq 0(\\bmod raincloud) \\) implies that for each \\( quagmire \\neq 0 \\), there is a unique \\( afterglow \\), since the integers \\( \\bmod raincloud \\) form a field. Hence for each \\( marigold \\) in this case, there are \\( raincloud-1 \\) solutions. The total number of solutions is \\( 4 raincloud-2+(raincloud-2)(raincloud-1)=raincloud^{2}+raincloud \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "J": "voidensemble",
+        "a": "antialpha",
+        "b": "antibeta",
+        "c": "antichar",
+        "d": "antidelta",
+        "p": "composite"
+      },
+      "question": "B-5. Let \\( composite \\) be a prime number. Let \\( voidensemble \\) be the set of all \\( 2 \\times 2 \\) matrices \\( \\binom{antialpha antibeta}{antichar antidelta} \\) whose entries are chosen from \\( \\{0,1,2, \\cdots, composite-1\\} \\) and satisfy the conditions \\( antialpha+antidelta \\equiv 1(\\bmod composite), antialpha antidelta-antibeta antichar \\equiv 0(\\bmod composite) \\).\n\nDetermine how many members \\( voidensemble \\) has.",
+      "solution": "B-5 If \\( antialpha=0 \\) then \\( antidelta=1 \\), and if \\( antialpha=1 \\) then \\( antidelta=0 \\). In either case \\( antibeta antichar=0 \\) and \\( antibeta \\) or \\( antichar \\) is 0 , while the other is arbitrary. There are \\( 2 composite-1 \\) distinct solutions to \\( antibeta antichar=0 \\) and thus the case \\( antialpha=0 \\) or \\( antialpha=1 \\) accounts for a total of \\( 4 composite-2 \\) solutions. If \\( antialpha \\neq 0 \\) or 1 , then \\( antidelta \\) is uniquely determined and \\( antibeta antichar \\equiv antialpha antidelta \\neq 0(\\bmod composite) \\) implies that for each \\( antibeta \\neq 0 \\), there is a unique \\( antichar \\), since the integers \\( \\bmod composite \\) form a field. Hence for each \\( antialpha \\) in this case, there are \\( composite-1 \\) solutions. The total number of solutions is \\( 4 composite-2+(composite-2)(composite-1)=composite^{2}+composite \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "J": "kjdhsuep",
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "povlxeqm",
+        "d": "rntysadf",
+        "p": "ulqmzcea"
+      },
+      "question": "B-5. Let \\( ulqmzcea \\) be a prime number. Let \\( kjdhsuep \\) be the set of all \\( 2 \\times 2 \\) matrices \\( \\binom{qzxwvtnp\\ hjgrksla}{povlxeqm\\ rntysadf} \\) whose entries are chosen from \\( \\{0,1,2, \\cdots, ulqmzcea-1\\} \\) and satisfy the conditions \\( qzxwvtnp+rntysadf \\equiv 1(\\bmod ulqmzcea),\\ qzxwvtnp rntysadf-hjgrksla povlxeqm \\equiv 0(\\bmod ulqmzcea) \\).\n\nDetermine how many members \\( kjdhsuep \\) has.",
+      "solution": "B-5 If \\( qzxwvtnp=0 \\) then \\( rntysadf=1 \\), and if \\( qzxwvtnp=1 \\) then \\( rntysadf=0 \\). In either case \\( hjgrksla povlxeqm=0 \\) and \\( hjgrksla \\) or \\( povlxeqm \\) is 0, while the other is arbitrary. There are \\( 2 ulqmzcea-1 \\) distinct solutions to \\( hjgrksla povlxeqm=0 \\) and thus the case \\( qzxwvtnp=0 \\) or \\( qzxwvtnp=1 \\) accounts for a total of \\( 4 ulqmzcea-2 \\) solutions. If \\( qzxwvtnp \\neq 0 \\) or 1, then \\( rntysadf \\) is uniquely determined and \\( hjgrksla povlxeqm \\equiv qzxwvtnp rntysadf \\neq 0(\\bmod ulqmzcea) \\) implies that for each \\( hjgrksla \\neq 0 \\), there is a unique \\( povlxeqm \\), since the integers \\( \\bmod ulqmzcea \\) form a field. Hence for each \\( qzxwvtnp \\) in this case, there are \\( ulqmzcea-1 \\) solutions. The total number of solutions is \\( 4 ulqmzcea-2+(ulqmzcea-2)(ulqmzcea-1)=ulqmzcea^{2}+ulqmzcea \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $q$ be a prime power and let $\\mathbb F_q$ be the finite field with $q$ elements.  \nChoose $\\tau,\\sigma\\in\\mathbb F_q$ so that  \n\n1. $\\sigma\\neq 0$,  \n2. the quadratic polynomial $x^{2}-\\tau x+\\sigma$ is irreducible over $\\mathbb F_q$.\n\nDefine  \n\\[\n\\chi(x)=x^{3}-\\tau x^{2}+\\sigma x\n      =x\\bigl(x^{2}-\\tau x+\\sigma\\bigr).\n\\]\n\nDetermine the exact number of matrices\n\\[\nA\\in M_{3}(\\mathbb F_q)\n\\]\nwhose characteristic polynomial is $\\chi(x)$ (equivalently, whose trace is $\\tau$, whose determinant is $0$, whose $x$-coefficient is $\\sigma$, and whose rank is $2$).",
+      "solution": "Throughout set $V=\\mathbb F_q^{3}$ and  \n\\[\n\\mathcal A \\;=\\;\\left\\{A\\in M_{3}(\\mathbb F_q)\\mid \\chi_{A}(x)=\\chi(x)\\right\\}.\n\\]\n\nStep 1.  Eigen- and cyclic-structure of the members of $\\mathcal A$.  \n\nBecause $x^{2}-\\tau x+\\sigma$ is irreducible over $\\mathbb F_q$, the polynomial $\\chi$ has three distinct roots:\n\\[\n0\\in\\mathbb F_q,\\qquad \n\\alpha,\\beta\\in\\mathbb F_{q^{2}}\\setminus\\mathbb F_q,\n\\]\nthus $\\chi$ is square-free.  \nFor every $A\\in\\mathcal A$ the primary decomposition of $V$ is\n\\[\nV=\\ker A\\;\\oplus\\;W,\n\\qquad \n\\dim_{\\mathbb F_q}\\ker A=1,\\;\n\\dim_{\\mathbb F_q}W=2,\n\\]\nbecause $0$ is a simple root of $\\chi_{A}$.  \nMoreover $A\\lvert_{W}$ has characteristic polynomial $x^{2}-\\tau x+\\sigma$, hence $A\\lvert_{W}$ is semisimple with no eigenvalue in $\\mathbb F_q$.  \nConsequently both monic factors $x$ and $x^{2}-\\tau x+\\sigma$ divide the minimal polynomial $\\mu_{A}(x)$ of $A$, so\n\\[\n\\mu_{A}(x)=\\chi(x).\n\\]\nSince $\\deg\\mu_{A}=3=\\dim V$, each $A\\in\\mathcal A$ is cyclic: there exists $v\\in V$ such that $\\{v,Av,A^{2}v\\}$ is a basis of $V$.\n\nStep 2.  A canonical representative.  \n\nLet $C$ be the companion matrix of $\\chi$:\n\\[\nC=\\begin{pmatrix}\n0 & 0 & 0\\\\\n1 & 0 & -\\sigma\\\\\n0 & 1 & \\tau\n\\end{pmatrix}\\in M_{3}(\\mathbb F_q).\n\\]\nBy construction $\\chi_{C}(x)=\\chi(x)$, so $C\\in\\mathcal A$.\n\nStep 3.  All members of $\\mathcal A$ are similar to $C$.  \n\nFix $A\\in\\mathcal A$ and choose a cyclic vector $v$ as above.  \nRelative to the basis $\\{v,Av,A^{2}v\\}$ the matrix of $A$ is exactly the companion matrix $C$; hence $A=P\\,C\\,P^{-1}$ for some $P\\in\\operatorname{GL}_{3}(\\mathbb F_q)$.  \nTherefore\n\\[\n\\mathcal A=\\operatorname{Orb}_{\\operatorname{GL}_{3}}(C)\n=\\{\\,P\\,C\\,P^{-1}\\mid P\\in\\operatorname{GL}_{3}(\\mathbb F_q)\\}.\n\\]\n\nStep 4.  The stabiliser $\\mathrm C_{\\operatorname{GL}_{3}}(C)$ of $C$.  \n\nBecause $C$ is cyclic, the full $\\mathbb F_q$-algebra generated by $C$ is\n\\[\n\\mathbb F_q[C]\\cong\\mathbb F_q[x]/\\bigl(\\chi(x)\\bigr).\n\\]\nUsing the Chinese Remainder Theorem,\n\\[\n\\mathbb F_q[x]/\\bigl(x(x^{2}-\\tau x+\\sigma)\\bigr)\n\\;\\cong\\;\n\\mathbb F_q[x]/(x)\\;\\times\\;\n\\mathbb F_q[x]/(x^{2}-\\tau x+\\sigma)\n\\;\\cong\\;\n\\mathbb F_q\\times\\mathbb F_{q^{2}}.\n\\]\nAn element centralises $C$ and is invertible in $\\operatorname{GL}_{3}(\\mathbb F_q)$ exactly when its two components are both non-zero.  \nThus\n\\[\n\\bigl|\\mathrm C_{\\operatorname{GL}_{3}}(C)\\bigr|\n=(q-1)\\times(q^{2}-1).\n\\]\n\nStep 5.  Cardinality of the orbit.  \n\nWith the Orbit-Stabiliser Theorem,\n\\[\n\\lvert\\mathcal A\\rvert\n=\n\\frac{\\lvert\\operatorname{GL}_{3}(\\mathbb F_q)\\rvert}\n     {\\lvert\\mathrm C_{\\operatorname{GL}_{3}}(C)\\rvert}.\n\\]\nBecause\n\\[\n\\lvert\\operatorname{GL}_{3}(\\mathbb F_q)\\rvert\n=(q^{3}-1)(q^{3}-q)(q^{3}-q^{2})\n=(q^{3}-1)\\,q\\, (q^{2}-1)\\,q^{2}(q-1)\n=q^{3}(q^{3}-1)(q^{2}-1)(q-1),\n\\]\nwe obtain\n\\[\n\\lvert\\mathcal A\\rvert\n=\n\\frac{q^{3}(q^{3}-1)(q^{2}-1)(q-1)}\n     {(q^{2}-1)(q-1)}\n=\nq^{3}\\,(q^{3}-1).\n\\]\n\nStep 6.  Rank confirmation.  \n\nEvery $A\\in\\mathcal A$ has $0$ as a simple eigenvalue, hence $\\dim\\ker A=1$ and $\\operatorname{rank}A=2$, in agreement with the stated equivalence.\n\nFinal result  \n\\[\n\\boxed{\\;\n\\bigl|\\{A\\in M_{3}(\\mathbb F_q)\\mid \\chi_{A}(x)=x^{3}-\\tau x^{2}+\\sigma x\\bigr|\\;\n=\\;\nq^{3}\\,(q^{3}-1)\n\\;}.\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.581391",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher dimension: we moved from $2\\times2$ to $3\\times3$ matrices.  \n\n•  Added algebraic constraints: trace fixed, determinant fixed at $0$, rank forced to be $2$, and—through the irreducibility requirement—a prescribed {\\it square-free} characteristic polynomial.  \n\n•  Deeper theory required: solution hinges on rational (or Jordan) canonical forms, cyclic matrices, centraliser computations, and orbit–stabiliser counts in $\\mathrm{GL}_3(\\Bbb F_q)$—well beyond the linear divisibility arguments sufficient for the original $2\\times2$ problem.  \n\n•  More intricate case-analysis avoided by an irreducibility hypothesis, but the solver must recognise why this collapses all admissible matrices to one conjugacy class, a non-obvious group-theoretic insight.  \n\n•  Final enumeration involves the full order of $\\mathrm{GL}_3(\\Bbb F_q)$ and careful centraliser size calculations, yielding a formula of significantly higher algebraic complexity than $p^{2}+p$ from the original."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $q$ be a prime power and let $\\mathbb F_q$ be the finite field with $q$ elements.  \nChoose $\\tau,\\sigma\\in\\mathbb F_q$ so that  \n\n1. $\\sigma\\neq 0$,  \n2. the quadratic polynomial $x^{2}-\\tau x+\\sigma$ is irreducible over $\\mathbb F_q$.\n\nDefine  \n\\[\n\\chi(x)=x^{3}-\\tau x^{2}+\\sigma x\n      =x\\bigl(x^{2}-\\tau x+\\sigma\\bigr).\n\\]\n\nDetermine the exact number of matrices\n\\[\nA\\in M_{3}(\\mathbb F_q)\n\\]\nwhose characteristic polynomial is $\\chi(x)$ (equivalently, whose trace is $\\tau$, whose determinant is $0$, whose $x$-coefficient is $\\sigma$, and whose rank is $2$).",
+      "solution": "Throughout set $V=\\mathbb F_q^{3}$ and  \n\\[\n\\mathcal A \\;=\\;\\left\\{A\\in M_{3}(\\mathbb F_q)\\mid \\chi_{A}(x)=\\chi(x)\\right\\}.\n\\]\n\nStep 1.  Eigen- and cyclic-structure of the members of $\\mathcal A$.  \n\nBecause $x^{2}-\\tau x+\\sigma$ is irreducible over $\\mathbb F_q$, the polynomial $\\chi$ has three distinct roots:\n\\[\n0\\in\\mathbb F_q,\\qquad \n\\alpha,\\beta\\in\\mathbb F_{q^{2}}\\setminus\\mathbb F_q,\n\\]\nthus $\\chi$ is square-free.  \nFor every $A\\in\\mathcal A$ the primary decomposition of $V$ is\n\\[\nV=\\ker A\\;\\oplus\\;W,\n\\qquad \n\\dim_{\\mathbb F_q}\\ker A=1,\\;\n\\dim_{\\mathbb F_q}W=2,\n\\]\nbecause $0$ is a simple root of $\\chi_{A}$.  \nMoreover $A\\lvert_{W}$ has characteristic polynomial $x^{2}-\\tau x+\\sigma$, hence $A\\lvert_{W}$ is semisimple with no eigenvalue in $\\mathbb F_q$.  \nConsequently both monic factors $x$ and $x^{2}-\\tau x+\\sigma$ divide the minimal polynomial $\\mu_{A}(x)$ of $A$, so\n\\[\n\\mu_{A}(x)=\\chi(x).\n\\]\nSince $\\deg\\mu_{A}=3=\\dim V$, each $A\\in\\mathcal A$ is cyclic: there exists $v\\in V$ such that $\\{v,Av,A^{2}v\\}$ is a basis of $V$.\n\nStep 2.  A canonical representative.  \n\nLet $C$ be the companion matrix of $\\chi$:\n\\[\nC=\\begin{pmatrix}\n0 & 0 & 0\\\\\n1 & 0 & -\\sigma\\\\\n0 & 1 & \\tau\n\\end{pmatrix}\\in M_{3}(\\mathbb F_q).\n\\]\nBy construction $\\chi_{C}(x)=\\chi(x)$, so $C\\in\\mathcal A$.\n\nStep 3.  All members of $\\mathcal A$ are similar to $C$.  \n\nFix $A\\in\\mathcal A$ and choose a cyclic vector $v$ as above.  \nRelative to the basis $\\{v,Av,A^{2}v\\}$ the matrix of $A$ is exactly the companion matrix $C$; hence $A=P\\,C\\,P^{-1}$ for some $P\\in\\operatorname{GL}_{3}(\\mathbb F_q)$.  \nTherefore\n\\[\n\\mathcal A=\\operatorname{Orb}_{\\operatorname{GL}_{3}}(C)\n=\\{\\,P\\,C\\,P^{-1}\\mid P\\in\\operatorname{GL}_{3}(\\mathbb F_q)\\}.\n\\]\n\nStep 4.  The stabiliser $\\mathrm C_{\\operatorname{GL}_{3}}(C)$ of $C$.  \n\nBecause $C$ is cyclic, the full $\\mathbb F_q$-algebra generated by $C$ is\n\\[\n\\mathbb F_q[C]\\cong\\mathbb F_q[x]/\\bigl(\\chi(x)\\bigr).\n\\]\nUsing the Chinese Remainder Theorem,\n\\[\n\\mathbb F_q[x]/\\bigl(x(x^{2}-\\tau x+\\sigma)\\bigr)\n\\;\\cong\\;\n\\mathbb F_q[x]/(x)\\;\\times\\;\n\\mathbb F_q[x]/(x^{2}-\\tau x+\\sigma)\n\\;\\cong\\;\n\\mathbb F_q\\times\\mathbb F_{q^{2}}.\n\\]\nAn element centralises $C$ and is invertible in $\\operatorname{GL}_{3}(\\mathbb F_q)$ exactly when its two components are both non-zero.  \nThus\n\\[\n\\bigl|\\mathrm C_{\\operatorname{GL}_{3}}(C)\\bigr|\n=(q-1)\\times(q^{2}-1).\n\\]\n\nStep 5.  Cardinality of the orbit.  \n\nWith the Orbit-Stabiliser Theorem,\n\\[\n\\lvert\\mathcal A\\rvert\n=\n\\frac{\\lvert\\operatorname{GL}_{3}(\\mathbb F_q)\\rvert}\n     {\\lvert\\mathrm C_{\\operatorname{GL}_{3}}(C)\\rvert}.\n\\]\nBecause\n\\[\n\\lvert\\operatorname{GL}_{3}(\\mathbb F_q)\\rvert\n=(q^{3}-1)(q^{3}-q)(q^{3}-q^{2})\n=(q^{3}-1)\\,q\\, (q^{2}-1)\\,q^{2}(q-1)\n=q^{3}(q^{3}-1)(q^{2}-1)(q-1),\n\\]\nwe obtain\n\\[\n\\lvert\\mathcal A\\rvert\n=\n\\frac{q^{3}(q^{3}-1)(q^{2}-1)(q-1)}\n     {(q^{2}-1)(q-1)}\n=\nq^{3}\\,(q^{3}-1).\n\\]\n\nStep 6.  Rank confirmation.  \n\nEvery $A\\in\\mathcal A$ has $0$ as a simple eigenvalue, hence $\\dim\\ker A=1$ and $\\operatorname{rank}A=2$, in agreement with the stated equivalence.\n\nFinal result  \n\\[\n\\boxed{\\;\n\\bigl|\\{A\\in M_{3}(\\mathbb F_q)\\mid \\chi_{A}(x)=x^{3}-\\tau x^{2}+\\sigma x\\bigr|\\;\n=\\;\nq^{3}\\,(q^{3}-1)\n\\;}.\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.468798",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher dimension: we moved from $2\\times2$ to $3\\times3$ matrices.  \n\n•  Added algebraic constraints: trace fixed, determinant fixed at $0$, rank forced to be $2$, and—through the irreducibility requirement—a prescribed {\\it square-free} characteristic polynomial.  \n\n•  Deeper theory required: solution hinges on rational (or Jordan) canonical forms, cyclic matrices, centraliser computations, and orbit–stabiliser counts in $\\mathrm{GL}_3(\\Bbb F_q)$—well beyond the linear divisibility arguments sufficient for the original $2\\times2$ problem.  \n\n•  More intricate case-analysis avoided by an irreducibility hypothesis, but the solver must recognise why this collapses all admissible matrices to one conjugacy class, a non-obvious group-theoretic insight.  \n\n•  Final enumeration involves the full order of $\\mathrm{GL}_3(\\Bbb F_q)$ and careful centraliser size calculations, yielding a formula of significantly higher algebraic complexity than $p^{2}+p$ from the original."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

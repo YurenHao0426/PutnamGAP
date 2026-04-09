@@ -1,0 +1,181 @@
+{
+  "index": "1964-A-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "6. Let \\( S \\) be a finite subset of a straight line. Say that \\( S \\) has the repeated distance property when every value of the distance between pairs of points of \\( S \\) (except for the longest) occurs at least twice. Show that if \\( S \\) has the repeated distance property then the ratio of any two distances between two points of \\( S \\) is a rational number.",
+  "solution": "Solution. All proofs seem to depend on considering the line as a vector space over \\( \\mathbf{Q} \\), the rational field. Once this idea is introduced, it is no harder to prove a more general result.\n\nSuppose \\( S=\\left\\{s_{1}, s_{2}, \\ldots, s_{n}\\right\\} \\) is a finite set in a vector space \\( V \\) over \\( \\mathbf{Q} \\). We consider the \\( n(n-1) \\) differences\n\\[\ns_{1}-s_{2}, s_{1}-s_{3}, \\ldots, s_{2}-s_{1}, s_{2}-s_{3}, \\ldots, s_{n}-s_{n-1} .\n\\]\n\nSome vectors may appear in this list more than once and we refer to them as repeated differences.\n\nTheorem. The linear span of the non-repeated differences is the linear span of all the differences.\n\nProof. Suppose this theorem is false. Then there is a linear functional \\( f \\) : \\( V \\rightarrow \\mathbf{Q} \\) that annihitates all non-repeated differences but not all differences, (since we can replace \\( V \\) by the linear span of \\( S \\), we may assume that \\( V \\) is\nfinite-dimensional; then the existence of \\( f \\) follows from basic linear theory.) Let \\( M=f\\left(s_{i}\\right) \\) and \\( m=f\\left(s_{j}\\right) \\) be, respectively, the largest and smallest numbers in \\( f(S) \\); then \\( M \\neq m \\). The linear functionals that map the finite set \\( S \\) injectively to \\( \\mathbf{Q} \\) (i.e., those that annihilate no differences) are dense, so there is such a linear functional \\( g \\) that satisfies\n\\[\n|f(s)-g(s)| \\leq \\frac{1}{5}(M-m)\n\\]\nfor all \\( s \\in S \\). If \\( g\\left(s_{p}\\right) \\) and \\( g\\left(s_{q}\\right) \\) are the largest and smallest numbers in \\( g(S) \\), then \\( s_{p}-s_{q} \\) is certainly not a repeated difference, so \\( f\\left(s_{p}-s_{q}\\right)=0 \\). Therefore\n\\[\ng\\left(s_{i}\\right)-g\\left(s_{i}\\right) \\leq g\\left(s_{p}\\right)-g\\left(s_{q}\\right) \\leq f\\left(s_{p}\\right)-f\\left(s_{q}\\right)+\\frac{2}{5}(M-m)=\\frac{2}{5}(M-m) .\n\\]\n\nBut also\n\\[\ng\\left(s_{i}\\right)-g\\left(s_{j}\\right) \\geq f\\left(s_{i}\\right)-\\frac{1}{5}(M-m)-f\\left(s_{j}\\right)-\\frac{1}{5}(M-m)=\\frac{3}{5}(M-m) .\n\\]\n\nThis contradiction proves the theorem.\nReturning to the problem, let \\( S \\) be a set on a line with the repeated distance property. We identify the line with \\( \\mathbf{R} \\) (i.e., introduce a coordinate) so that 0 and 1 are the extreme members of \\( S \\). We regard \\( \\mathbf{R} \\) as a vector space over \\( \\mathbf{Q} \\). The repeated distance property shows that 1 and -1 are the only non-repeated differences of \\( S \\), so by the theorem all differences are in the linear span of 1 (over \\( \\mathbf{Q} \\) ). Hence all differences in \\( S \\) are rational numbers and all distances in \\( S \\) are rational multiples of the largest distance and hence have rational ratios to one another.\n\nRemarks. The result was first published by Mikusinski and Schinzel (Acta Arithmetica, vol. 9 (1964), pp 91-95) in connection with a problem in polynomial factorization. The more general result proved above was discovered by a group of UCLA undergraduates and published by E. G. Straus (\"Rational Dependence in Finite Sets of Numbers,\" Acta Arithmetica, vol. 11 (1965), pp. 203-204.) Compare the date of the first paper with the date of this contest.",
+  "vars": [
+    "s",
+    "s_1",
+    "s_2",
+    "s_3",
+    "s_n",
+    "s_i",
+    "s_j",
+    "s_p",
+    "s_q",
+    "f",
+    "g",
+    "M",
+    "m",
+    "i",
+    "j",
+    "p",
+    "q"
+  ],
+  "params": [
+    "S",
+    "V",
+    "Q",
+    "R",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "s": "element",
+        "s_1": "elementone",
+        "s_2": "elementtwo",
+        "s_3": "elementthree",
+        "s_n": "elementn",
+        "s_i": "elementi",
+        "s_j": "elementj",
+        "s_p": "elementp",
+        "s_q": "elementq",
+        "f": "linfuncf",
+        "g": "linfuncg",
+        "M": "maxvalue",
+        "m": "minvalue",
+        "i": "indexi",
+        "j": "indexj",
+        "p": "indexp",
+        "q": "indexq",
+        "S": "finset",
+        "V": "vectorspace",
+        "Q": "rationalfield",
+        "R": "realfield",
+        "n": "setsize"
+      },
+      "question": "6. Let \\( finset \\) be a finite subset of a straight line. Say that \\( finset \\) has the repeated distance property when every value of the distance between pairs of points of \\( finset \\) (except for the longest) occurs at least twice. Show that if \\( finset \\) has the repeated distance property then the ratio of any two distances between two points of \\( finset \\) is a rational number.",
+      "solution": "Solution. All proofs seem to depend on considering the line as a vector space over \\( \\mathbf{rationalfield} \\), the rational field. Once this idea is introduced, it is no harder to prove a more general result.\n\nSuppose \\( finset=\\left\\{elementone, elementtwo, \\ldots, elementn\\right\\} \\) is a finite set in a vector space \\( vectorspace \\) over \\( \\mathbf{rationalfield} \\). We consider the \\( setsize(setsize-1) \\) differences\n\\[\nelementone-elementtwo, elementone-elementthree, \\ldots, elementtwo-elementone, elementtwo-elementthree, \\ldots, elementn-s_{setsize-1} .\n\\]\n\nSome vectors may appear in this list more than once and we refer to them as repeated differences.\n\nTheorem. The linear span of the non-repeated differences is the linear span of all the differences.\n\nProof. Suppose this theorem is false. Then there is a linear functional \\( linfuncf \\) : \\( vectorspace \\rightarrow \\mathbf{rationalfield} \\) that annihilates all non-repeated differences but not all differences, (since we can replace \\( vectorspace \\) by the linear span of \\( finset \\), we may assume that \\( vectorspace \\) is\nfinite-dimensional; then the existence of \\( linfuncf \\) follows from basic linear theory.) Let \\( maxvalue = linfuncf\\left(elementi\\right) \\) and \\( minvalue = linfuncf\\left(elementj\\right) \\) be, respectively, the largest and smallest numbers in \\( linfuncf(finset) \\); then \\( maxvalue \\neq minvalue \\). The linear functionals that map the finite set \\( finset \\) injectively to \\( \\mathbf{rationalfield} \\) (i.e., those that annihilate no differences) are dense, so there is such a linear functional \\( linfuncg \\) that satisfies\n\\[\n|linfuncf(element)-linfuncg(element)| \\leq \\frac{1}{5}(maxvalue-minvalue)\n\\]\nfor all \\( element \\in finset \\). If \\( linfuncg\\left(elementp\\right) \\) and \\( linfuncg\\left(elementq\\right) \\) are the largest and smallest numbers in \\( linfuncg(finset) \\), then \\( elementp-elementq \\) is certainly not a repeated difference, so \\( linfuncf\\left(elementp-elementq\\right)=0 \\). Therefore\n\\[\nlinfuncg\\left(elementi\\right)-linfuncg\\left(elementi\\right) \\leq linfuncg\\left(elementp\\right)-linfuncg\\left(elementq\\right) \\leq linfuncf\\left(elementp\\right)-linfuncf\\left(elementq\\right)+\\frac{2}{5}(maxvalue-minvalue)=\\frac{2}{5}(maxvalue-minvalue) .\n\\]\n\nBut also\n\\[\nlinfuncg\\left(elementi\\right)-linfuncg\\left(elementj\\right) \\geq linfuncf\\left(elementi\\right)-\\frac{1}{5}(maxvalue-minvalue)-linfuncf\\left(elementj\\right)-\\frac{1}{5}(maxvalue-minvalue)=\\frac{3}{5}(maxvalue-minvalue) .\n\\]\n\nThis contradiction proves the theorem.\n\nReturning to the problem, let \\( finset \\) be a set on a line with the repeated distance property. We identify the line with \\( \\mathbf{realfield} \\) (i.e., introduce a coordinate) so that 0 and 1 are the extreme members of \\( finset \\). We regard \\( \\mathbf{realfield} \\) as a vector space over \\( \\mathbf{rationalfield} \\). The repeated distance property shows that 1 and -1 are the only non-repeated differences of \\( finset \\), so by the theorem all differences are in the linear span of 1 (over \\( \\mathbf{rationalfield} \\) ). Hence all differences in \\( finset \\) are rational numbers and all distances in \\( finset \\) are rational multiples of the largest distance and hence have rational ratios to one another.\n\nRemarks. The result was first published by Mikusinski and Schinzel (Acta Arithmetica, vol. 9 (1964), pp 91-95) in connection with a problem in polynomial factorization. The more general result proved above was discovered by a group of UCLA undergraduates and published by E. G. Straus (\"Rational Dependence in Finite Sets of Numbers,\" Acta Arithmetica, vol. 11 (1965), pp. 203-204.) Compare the date of the first paper with the date of this contest."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "s": "pavilion",
+        "s_1": "lighthouse",
+        "s_2": "watermelon",
+        "s_3": "caterpillar",
+        "s_n": "mushroom",
+        "s_i": "pineapple",
+        "s_j": "hippopotamus",
+        "s_p": "skyscraper",
+        "s_q": "aftershock",
+        "f": "telescope",
+        "g": "harmonica",
+        "M": "dragonfly",
+        "m": "windchime",
+        "i": "companion",
+        "j": "voyaging",
+        "p": "marigold",
+        "q": "cellulose",
+        "S": "monolith",
+        "V": "quarantine",
+        "Q": "localsun",
+        "R": "starlight",
+        "n": "cinnamon"
+      },
+      "question": "6. Let \\( monolith \\) be a finite subset of a straight line. Say that \\( monolith \\) has the repeated distance property when every value of the distance between pairs of points of \\( monolith \\) (except for the longest) occurs at least twice. Show that if \\( monolith \\) has the repeated distance property then the ratio of any two distances between two points of \\( monolith \\) is a rational number.",
+      "solution": "Solution. All proofs seem to depend on considering the line as a vector space over \\( \\mathbf{localsun} \\), the rational field. Once this idea is introduced, it is no harder to prove a more general result.\n\nSuppose \\( monolith=\\left\\{lighthouse, watermelon, \\ldots, mushroom\\right\\} \\) is a finite set in a vector space \\( quarantine \\) over \\( \\mathbf{localsun} \\). We consider the \\( cinnamon(cinnamon-1) \\) differences\n\\[\nlighthouse-watermelon, lighthouse-caterpillar, \\ldots, watermelon-lighthouse, watermelon-caterpillar, \\ldots, mushroom-s_{n-1} .\n\\]\n\nSome vectors may appear in this list more than once and we refer to them as repeated differences.\n\nTheorem. The linear span of the non-repeated differences is the linear span of all the differences.\n\nProof. Suppose this theorem is false. Then there is a linear functional \\( telescope \\) : \\( quarantine \\rightarrow \\mathbf{localsun} \\) that annihilates all non-repeated differences but not all differences, (since we can replace \\( quarantine \\) by the linear span of \\( monolith \\), we may assume that \\( quarantine \\) is\nfinite-dimensional; then the existence of \\( telescope \\) follows from basic linear theory.) Let \\( dragonfly=telescope\\left(pineapple\\right) \\) and \\( windchime=telescope\\left(hippopotamus\\right) \\) be, respectively, the largest and smallest numbers in \\( telescope(monolith) \\); then \\( dragonfly \\neq windchime \\). The linear functionals that map the finite set \\( monolith \\) injectively to \\( \\mathbf{localsun} \\) (i.e., those that annihilate no differences) are dense, so there is such a linear functional \\( harmonica \\) that satisfies\n\\[\n|telescope(pavilion)-harmonica(pavilion)| \\leq \\frac{1}{5}(dragonfly-windchime)\n\\]\nfor all \\( pavilion \\in monolith \\). If \\( harmonica\\left(skyscraper\\right) \\) and \\( harmonica\\left(aftershock\\right) \\) are the largest and smallest numbers in \\( harmonica(monolith) \\), then \\( skyscraper-aftershock \\) is certainly not a repeated difference, so \\( telescope\\left(skyscraper-aftershock\\right)=0 \\). Therefore\n\\[\nharmonica\\left(pineapple\\right)-harmonica\\left(pineapple\\right) \\leq harmonica\\left(skyscraper\\right)-harmonica\\left(aftershock\\right) \\leq telescope\\left(skyscraper\\right)-telescope\\left(aftershock\\right)+\\frac{2}{5}(dragonfly-windchime)=\\frac{2}{5}(dragonfly-windchime) .\n\\]\n\nBut also\n\\[\nharmonica\\left(pineapple\\right)-harmonica\\left(hippopotamus\\right) \\geq telescope\\left(pineapple\\right)-\\frac{1}{5}(dragonfly-windchime)-telescope\\left(hippopotamus\\right)-\\frac{1}{5}(dragonfly-windchime)=\\frac{3}{5}(dragonfly-windchime) .\n\\]\n\nThis contradiction proves the theorem.\nReturning to the problem, let \\( monolith \\) be a set on a line with the repeated distance property. We identify the line with \\( \\mathbf{starlight} \\) (i.e., introduce a coordinate) so that 0 and 1 are the extreme members of \\( monolith \\). We regard \\( \\mathbf{starlight} \\) as a vector space over \\( \\mathbf{localsun} \\). The repeated distance property shows that 1 and -1 are the only non-repeated differences of \\( monolith \\), so by the theorem all differences are in the linear span of 1 (over \\( \\mathbf{localsun} \\) ). Hence all differences in \\( monolith \\) are rational numbers and all distances in \\( monolith \\) are rational multiples of the largest distance and hence have rational ratios to one another.\n\nRemarks. The result was first published by Mikusinski and Schinzel (Acta Arithmetica, vol. 9 (1964), pp 91-95) in connection with a problem in polynomial factorization. The more general result proved above was discovered by a group of UCLA undergraduates and published by E. G. Straus (\"Rational Dependence in Finite Sets of Numbers,\" Acta Arithmetica, vol. 11 (1965), pp. 203-204.) Compare the date of the first paper with the date of this contest."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "s": "voidpoint",
+        "s_1": "voidpointone",
+        "s_2": "voidpointtwo",
+        "s_3": "voidpointthree",
+        "s_n": "voidpointmany",
+        "s_i": "voidpointi",
+        "s_j": "voidpointj",
+        "s_p": "voidpointp",
+        "s_q": "voidpointq",
+        "f": "curvedtransform",
+        "g": "randomtransform",
+        "M": "tinyvalue",
+        "m": "hugevalue",
+        "i": "constantindexi",
+        "j": "constantindexj",
+        "p": "constantindexp",
+        "q": "constantindexq",
+        "S": "unboundedset",
+        "V": "scalarfield",
+        "Q": "irrationalset",
+        "R": "imaginaryset",
+        "n": "continuumsize"
+      },
+      "question": "6. Let \\( unboundedset \\) be a finite subset of a straight line. Say that \\( unboundedset \\) has the repeated distance property when every value of the distance between pairs of points of \\( unboundedset \\) (except for the longest) occurs at least twice. Show that if \\( unboundedset \\) has the repeated distance property then the ratio of any two distances between two points of \\( unboundedset \\) is a rational number.",
+      "solution": "Solution. All proofs seem to depend on considering the line as a vector space over \\( \\mathbf{irrationalset} \\), the rational field. Once this idea is introduced, it is no harder to prove a more general result.\n\nSuppose \\( unboundedset=\\left\\{voidpointone, voidpointtwo, \\ldots, voidpointmany\\right\\} \\) is a finite set in a vector space \\( scalarfield \\) over \\( \\mathbf{irrationalset} \\). We consider the \\( continuumsize(continuumsize-1) \\) differences\n\\[\nvoidpointone-voidpointtwo, voidpointone-voidpointthree, \\ldots, voidpointtwo-voidpointone, voidpointtwo-voidpointthree, \\ldots, voidpointmany-s_{continuumsize-1} .\n\\]\n\nSome vectors may appear in this list more than once and we refer to them as repeated differences.\n\nTheorem. The linear span of the non-repeated differences is the linear span of all the differences.\n\nProof. Suppose this theorem is false. Then there is a linear functional \\( curvedtransform \\): \\( scalarfield \\rightarrow \\mathbf{irrationalset} \\) that annihilates all non-repeated differences but not all differences, (since we can replace \\( scalarfield \\) by the linear span of \\( unboundedset \\), we may assume that \\( scalarfield \\) is finite-dimensional; then the existence of \\( curvedtransform \\) follows from basic linear theory.) Let \\( tinyvalue=curvedtransform\\left(voidpointi\\right) \\) and \\( hugevalue=curvedtransform\\left(voidpointj\\right) \\) be, respectively, the largest and smallest numbers in \\( curvedtransform(unboundedset) \\); then \\( tinyvalue \\neq hugevalue \\). The linear functionals that map the finite set \\( unboundedset \\) injectively to \\( \\mathbf{irrationalset} \\) (i.e., those that annihilate no differences) are dense, so there is such a linear functional \\( randomtransform \\) that satisfies\n\\[\n|curvedtransform(voidpoint)-randomtransform(voidpoint)| \\leq \\frac{1}{5}(tinyvalue-hugevalue)\n\\]\nfor all \\( voidpoint \\in unboundedset \\). If \\( randomtransform\\left(voidpointp\\right) \\) and \\( randomtransform\\left(voidpointq\\right) \\) are the largest and smallest numbers in \\( randomtransform(unboundedset) \\), then \\( voidpointp-voidpointq \\) is certainly not a repeated difference, so \\( curvedtransform\\left(voidpointp-voidpointq\\right)=0 \\). Therefore\n\\[\nrandomtransform\\left(voidpointi\\right)-randomtransform\\left(voidpointi\\right) \\leq randomtransform\\left(voidpointp\\right)-randomtransform\\left(voidpointq\\right) \\leq curvedtransform\\left(voidpointp\\right)-curvedtransform\\left(voidpointq\\right)+\\frac{2}{5}(tinyvalue-hugevalue)=\\frac{2}{5}(tinyvalue-hugevalue) .\n\\]\n\nBut also\n\\[\nrandomtransform\\left(voidpointi\\right)-randomtransform\\left(voidpointj\\right) \\geq curvedtransform\\left(voidpointi\\right)-\\frac{1}{5}(tinyvalue-hugevalue)-curvedtransform\\left(voidpointj\\right)-\\frac{1}{5}(tinyvalue-hugevalue)=\\frac{3}{5}(tinyvalue-hugevalue) .\n\\]\n\nThis contradiction proves the theorem.\nReturning to the problem, let \\( unboundedset \\) be a set on a line with the repeated distance property. We identify the line with \\( \\mathbf{imaginaryset} \\) (i.e., introduce a coordinate) so that 0 and 1 are the extreme members of \\( unboundedset \\). We regard \\( \\mathbf{imaginaryset} \\) as a vector space over \\( \\mathbf{irrationalset} \\). The repeated distance property shows that 1 and -1 are the only non-repeated differences of \\( unboundedset \\), so by the theorem all differences are in the linear span of 1 (over \\( \\mathbf{irrationalset} \\) ). Hence all differences in \\( unboundedset \\) are rational numbers and all distances in \\( unboundedset \\) are rational multiples of the largest distance and hence have rational ratios to one another.\n\nRemarks. The result was first published by Mikusinski and Schinzel (Acta Arithmetica, vol. 9 (1964), pp 91-95) in connection with a problem in polynomial factorization. The more general result proved above was discovered by a group of UCLA undergraduates and published by E. G. Straus (\"Rational Dependence in Finite Sets of Numbers,\" Acta Arithmetica, vol. 11 (1965), pp. 203-204.) Compare the date of the first paper with the date of this contest."
+    },
+    "garbled_string": {
+      "map": {
+        "s": "xjquvneb",
+        "s_1": "ythpsola",
+        "s_2": "ghpzxren",
+        "s_3": "owkcidms",
+        "s_n": "zilptram",
+        "s_i": "reonqvsl",
+        "s_j": "klmsdexa",
+        "s_p": "ujcxzorf",
+        "s_q": "vibplenu",
+        "f": "lqeghyam",
+        "g": "trumoksa",
+        "M": "uxlpifeg",
+        "m": "crasbudy",
+        "i": "daolinpe",
+        "j": "fuykzram",
+        "p": "wenvastl",
+        "q": "zkhiopur",
+        "S": "isufvake",
+        "V": "kinotwre",
+        "Q": "uweqslop",
+        "R": "mretavlo",
+        "n": "dlgnafis"
+      },
+      "question": "6. Let \\( isufvake \\) be a finite subset of a straight line. Say that \\( isufvake \\) has the repeated distance property when every value of the distance between pairs of points of \\( isufvake \\) (except for the longest) occurs at least twice. Show that if \\( isufvake \\) has the repeated distance property then the ratio of any two distances between two points of \\( isufvake \\) is a rational number.",
+      "solution": "Solution. All proofs seem to depend on considering the line as a vector space over \\( \\mathbf{uweqslop} \\), the rational field. Once this idea is introduced, it is no harder to prove a more general result.\n\nSuppose \\( isufvake=\\left\\{ythpsola, ghpzxren, \\ldots, zilptram\\right\\} \\) is a finite set in a vector space \\( kinotwre \\) over \\( \\mathbf{uweqslop} \\). We consider the \\( dlgnafis(dlgnafis-1) \\) differences\n\\[\nythpsola-ghpzxren, ythpsola-owkcidms, \\ldots, ghpzxren-ythpsola, ghpzxren-owkcidms, \\ldots, zilptram-xjquvneb_{dlgnafis-1} .\n\\]\n\nSome vectors may appear in this list more than once and we refer to them as repeated differences.\n\nTheorem. The linear span of the non-repeated differences is the linear span of all the differences.\n\nProof. Suppose this theorem is false. Then there is a linear functional \\( lqeghyam \\) : \\( kinotwre \\rightarrow \\mathbf{uweqslop} \\) that annihilates all non-repeated differences but not all differences, (since we can replace \\( kinotwre \\) by the linear span of \\( isufvake \\), we may assume that \\( kinotwre \\) is\nfinite-dimensional; then the existence of \\( lqeghyam \\) follows from basic linear theory.) Let \\( uxlpifeg=lqeghyam\\left(reonqvsl\\right) \\) and \\( crasbudy=lqeghyam\\left(klmsdexa\\right) \\) be, respectively, the largest and smallest numbers in \\( lqeghyam(isufvake) \\); then \\( uxlpifeg \\neq crasbudy \\). The linear functionals that map the finite set \\( isufvake \\) injectively to \\( \\mathbf{uweqslop} \\) (i.e., those that annihilate no differences) are dense, so there is such a linear functional \\( trumoksa \\) that satisfies\n\\[\n|lqeghyam(xjquvneb)-trumoksa(xjquvneb)| \\leq \\frac{1}{5}(uxlpifeg-crasbudy)\n\\]\nfor all \\( xjquvneb \\in isufvake \\). If \\( trumoksa\\left(ujcxzorf\\right) \\) and \\( trumoksa\\left(vibplenu\\right) \\) are the largest and smallest numbers in \\( trumoksa(isufvake) \\), then \\( ujcxzorf-vibplenu \\) is certainly not a repeated difference, so \\( lqeghyam\\left(ujcxzorf-vibplenu\\right)=0 \\). Therefore\n\\[\ntrumoksa\\left(reonqvsl\\right)-trumoksa\\left(reonqvsl\\right) \\leq trumoksa\\left(ujcxzorf\\right)-trumoksa\\left(vibplenu\\right) \\leq lqeghyam\\left(reonqvsl\\right)-lqeghyam\\left(vibplenu\\right)+\\frac{2}{5}(uxlpifeg-crasbudy)=\\frac{2}{5}(uxlpifeg-crasbudy) .\n\\]\n\nBut also\n\\[\ntrumoksa\\left(reonqvsl\\right)-trumoksa\\left(klmsdexa\\right) \\geq lqeghyam\\left(reonqvsl\\right)-\\frac{1}{5}(uxlpifeg-crasbudy)-lqeghyam\\left(klmsdexa\\right)-\\frac{1}{5}(uxlpifeg-crasbudy)=\\frac{3}{5}(uxlpifeg-crasbudy) .\n\\]\n\nThis contradiction proves the theorem.\nReturning to the problem, let \\( isufvake \\) be a set on a line with the repeated distance property. We identify the line with \\( \\mathbf{mretavlo} \\) (i.e., introduce a coordinate) so that 0 and 1 are the extreme members of \\( isufvake \\). We regard \\( \\mathbf{mretavlo} \\) as a vector space over \\( \\mathbf{uweqslop} \\). The repeated distance property shows that 1 and -1 are the only non-repeated differences of \\( isufvake \\), so by the theorem all differences are in the linear span of 1 (over \\( \\mathbf{uweqslop} \\) ). Hence all differences in \\( isufvake \\) are rational numbers and all distances in \\( isufvake \\) are rational multiples of the largest distance and hence have rational ratios to one another.\n\nRemarks. The result was first published by Mikusinski and Schinzel (Acta Arithmetica, vol. 9 (1964), pp 91-95) in connection with a problem in polynomial factorization. The more general result proved above was discovered by a group of UCLA undergraduates and published by E. G. Straus (\"Rational Dependence in Finite Sets of Numbers,\" Acta Arithmetica, vol. 11 (1965), pp. 203-204.) Compare the date of the first paper with the date of this contest."
+    },
+    "kernel_variant": {
+      "question": "Let $S$ be a finite set of real numbers.  Denote by $L$ the largest distance between two points of $S$ (so $L=\\max\\{|x-y|:x,y\\in S\\}$).  Assume that\n\n(Unique-diameter property)  The distance $L$ occurs exactly once (namely for the ordered pair consisting of the right-most and left-most points of $S$), whereas every smaller positive distance determined by $S$ occurs at least twice.\n\nProve that for any two positive distances $d_1,d_2$ occurring among points of $S$ the ratio $d_1/d_2$ is a rational number.",
+      "solution": "We follow the standard ``linear-functional'' argument.  First renormalize so that the leftmost point of S is at 0 and the rightmost at 1; then the unique largest distance in S is 1, and every other nonzero difference x-y lies strictly between -1 and +1 and occurs at least twice, whereas +1 and -1 each occur exactly once.  We regard R as a vector space over Q and call a nonzero vector \\delta =x-y (with x,y\\in S) a ``nonrepeated difference'' when it appears only once among all ordered differences s-t, s\\neq t in S.  By hypothesis the only nonrepeated differences are +1 and -1.  Denote by D the Q-linear span of all differences x-y, and let E be the Q-span of {+1,-1}.  We will show E=D, which implies every x-y\\in S-S lies in E and hence is a rational multiple of 1, so all distances |x-y| are rational and their ratios are rational.  \n\nSuppose to the contrary that E\\neq D.  Then there is a nonzero Q-linear functional f:R\\to Q which annihilates every vector in E (so in particular f(1)=0) but does not annihilate every difference, so the finite set f(S)\\subset Q has a strictly positive spread M-m, where M=max f(S) and m=min f(S).  Choose a positive rational \\delta  with 4\\delta <M-m.  The family of Q-linear functionals is large enough that we can find another Q-linear functional g:R\\to Q which is injective on the finite set S and approximates f pointwise to within \\delta , i.e.  |g(s)-f(s)|<\\delta  for all s\\in S.  \n\nLet s_p be the unique point of S where g attains its maximum, and s_q the unique point where g attains its minimum.  Then g(s_p)-g(s_q) is the largest of all differences g(s)-g(t), s,t\\in S.  If there were any other ordered pair (s_r,s_t) with s_r-s_t=s_p-s_q, then by Q-linearity g(s_r)-g(s_t)=g(s_p)-g(s_q), contradicting the uniqueness of the maximal g-difference.  Hence s_p-s_q is a nonrepeated difference in S-S, and so f(s_p-s_q)=0.  In particular f(s_p)=f(s_q).  \n\nNow we get two conflicting bounds on g(s_p)-g(s_q):\n\n(A) Since f(s_p)=f(s_q),\n    g(s_p)-g(s_q)\n      = [f(s_p)-f(s_q)]\n        + [g(s_p)-f(s_p)]\n        - [g(s_q)-f(s_q)]\n      \\leq  0 + \\delta  + \\delta  = 2\\delta .\n\n(B) Let s_i,s_j be points of S with f(s_i)=M and f(s_j)=m.  Then\n    g(s_p)\\geq g(s_i)>f(s_i)-\\delta =M-\\delta ,\n    g(s_q)\\leq g(s_j)<f(s_j)+\\delta =m+\\delta ,\n  so\n    g(s_p)-g(s_q)> (M-\\delta )-(m+\\delta )=M-m-2\\delta .\n\nCombining (A) and (B) gives\n    M-m-2\\delta  < 2\\delta   \\Rightarrow   M-m < 4\\delta ,\ncontradicting our choice 4\\delta <M-m.  This contradiction shows E=D, so every difference x-y\\in S-S lies in the Q-span of 1 and hence is a rational number.  Consequently every distance |x-y| is rational, and the ratio of any two such distances is rational.  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Regard the line as a 1-dimensional vector space over Q (choose any affine coordinate).",
+          "Classify all point-differences of S into repeated and non-repeated ones.",
+          "Prove (via a separating linear functional argument) that the non-repeated differences span the same Q-subspace as all differences.",
+          "Because only the ±(largest distance) are non-repeated, every difference is a Q-multiple of that largest distance.",
+          "Hence every pair of distances has a rational ratio."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Scaling that sets the largest distance to a convenient unit so the extreme points are 0 and that unit.",
+            "original": "largest distance mapped to 1, extremes taken as 0 and 1"
+          },
+          "slot2": {
+            "description": "Tolerance chosen when approximating f by an injective rational linear functional g.",
+            "original": "1/5 of (M − m)"
+          },
+          "slot3": {
+            "description": "Numerical fractions that appear in the contradiction (twice and three times the tolerance).",
+            "original": "2/5 and 3/5 of (M − m)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

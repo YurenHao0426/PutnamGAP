@@ -1,0 +1,115 @@
+{
+  "index": "1978-A-6",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "Problem A-6\nLet \\( n \\) distinct points in the plane be given. Prove that fewer than \\( 2 n^{3 / 2} \\) pairs of them are unit distance apart.",
+  "solution": "A-6.\nFor a set \\( \\left\\{p_{1}, \\ldots, p_{n}\\right\\} \\) of points in the plane, let \\( e_{i} \\) be the number of \\( p_{j} \\) one unit from \\( p_{i} \\). Then \\( E=\\left(e_{1}+\\cdots+e_{n}\\right) / 2 \\) is the number of pairs with unit distance. Let \\( C_{i} \\) be the circle with center at \\( p_{i} \\) and radius 1 . Each pair of circles has at most 2 intersections, so the \\( C_{i} \\) intersect in at most \\( 2\\binom{n}{2}=n(n-1) \\) points. It suffices to treat the case in which each \\( e_{i} \\geqslant 1 \\).\n\nThe point \\( p_{i} \\) occurs \\( \\binom{e_{i}}{2} \\) times as an intersection of \\( C_{j} \\). Hence\n\\[\nn(n-1) \\geqslant \\sum\\binom{e_{i}}{2}=\\sum e_{i}\\left(e_{i}-1\\right) / 2 \\geqslant(1 / 2) \\sum\\left(e_{i}-1\\right)^{2}\n\\]\n\nIn (A) and what follows, all sums are over \\( i=1,2, \\ldots, n \\). Using the Cauchy-Schwarz Inequality and \\( (A) \\) one has\n\\[\n\\left[\\sum\\left(e_{i}-1\\right)\\right]^{2} \\leqslant\\left[\\sum 1\\right]\\left[\\sum\\left(e_{i}-1\\right)^{2}\\right] \\leqslant n \\cdot 2 n(n-1)<2 n^{3}\n\\]\n\nHence \\( \\sum\\left(e_{i}-1\\right) \\leqslant \\sqrt{2} n^{3 / 2} \\) and so\n\\[\nE=\\left(\\sum e_{i}\\right) / 2<\\left(n+\\sqrt{2} n^{3 / 2}\\right) / 2<2 n^{3 / 2}\n\\]",
+  "vars": [
+    "n",
+    "p_i",
+    "p_j",
+    "E",
+    "e_i",
+    "C_i",
+    "C_j",
+    "i",
+    "j"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "totalpoints",
+        "p_i": "pointi",
+        "p_j": "pointj",
+        "E": "paircount",
+        "e_i": "adjcounti",
+        "C_i": "circlei",
+        "C_j": "circlej",
+        "i": "indexi",
+        "j": "indexj"
+      },
+      "question": "Problem A-6\nLet \\( totalpoints \\) distinct points in the plane be given. Prove that fewer than \\( 2 totalpoints^{3 / 2} \\) pairs of them are unit distance apart.",
+      "solution": "A-6.\nFor a set \\( \\left\\{p_{1}, \\ldots, p_{totalpoints}\\right\\} \\) of points in the plane, let \\( adjcounti \\) be the number of \\( pointj \\) one unit from \\( pointi \\). Then \\( paircount=\\left(e_{1}+\\cdots+e_{totalpoints}\\right) / 2 \\) is the number of pairs with unit distance. Let \\( circlei \\) be the circle with center at \\( pointi \\) and radius 1. Each pair of circles has at most 2 intersections, so the \\( circlei \\) intersect in at most \\( 2\\binom{totalpoints}{2}=totalpoints(totalpoints-1) \\) points. It suffices to treat the case in which each \\( adjcounti \\geqslant 1 \\).\n\nThe point \\( pointi \\) occurs \\( \\binom{adjcounti}{2} \\) times as an intersection of \\( circlej \\). Hence\n\\[\ntotalpoints(totalpoints-1) \\geqslant \\sum\\binom{adjcounti}{2}=\\sum adjcounti\\left(adjcounti-1\\right) / 2 \\geqslant(1 / 2) \\sum\\left(adjcounti-1\\right)^{2}\n\\]\n\nIn (A) and what follows, all sums are over \\( indexi=1,2, \\ldots, totalpoints \\). Using the Cauchy-Schwarz Inequality and \\( (A) \\) one has\n\\[\n\\left[\\sum\\left(adjcounti-1\\right)\\right]^{2} \\leqslant\\left[\\sum 1\\right]\\left[\\sum\\left(adjcounti-1\\right)^{2}\\right] \\leqslant totalpoints \\cdot 2 totalpoints(totalpoints-1)<2 totalpoints^{3}\n\\]\n\nHence \\( \\sum\\left(adjcounti-1\\right) \\leqslant \\sqrt{2} totalpoints^{3 / 2} \\) and so\n\\[\npaircount=\\left(\\sum adjcounti\\right) / 2<\\left(totalpoints+\\sqrt{2} totalpoints^{3 / 2}\\right) / 2<2 totalpoints^{3 / 2}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "galaxycar",
+        "p_i": "sapphirebox",
+        "p_j": "emeraldship",
+        "E": "harvestsun",
+        "e_i": "zephyrwind",
+        "C_i": "asteroidpit",
+        "C_j": "nebularmood",
+        "i": "quartzmap",
+        "j": "opaltrail"
+      },
+      "question": "Problem A-6\nLet \\( galaxycar \\) distinct points in the plane be given. Prove that fewer than \\( 2 galaxycar^{3 / 2} \\) pairs of them are unit distance apart.",
+      "solution": "A-6.\nFor a set \\( \\left\\{sapphirebox_{1}, \\ldots, sapphirebox_{galaxycar}\\right\\} \\) of points in the plane, let \\( zephyrwind_{quartzmap} \\) be the number of \\( emeraldship_{opaltrail} \\) one unit from \\( sapphirebox_{quartzmap} \\). Then \\( harvestsun=\\left(zephyrwind_{1}+\\cdots+zephyrwind_{galaxycar}\\right) / 2 \\) is the number of pairs with unit distance. Let \\( asteroidpit_{quartzmap} \\) be the circle with center at \\( sapphirebox_{quartzmap} \\) and radius 1 . Each pair of circles has at most 2 intersections, so the \\( asteroidpit_{quartzmap} \\) intersect in at most \\( 2\\binom{galaxycar}{2}=galaxycar(galaxycar-1) \\) points. It suffices to treat the case in which each \\( zephyrwind_{quartzmap} \\geqslant 1 \\).\n\nThe point \\( sapphirebox_{quartzmap} \\) occurs \\( \\binom{zephyrwind_{quartzmap}}{2} \\) times as an intersection of \\( nebularmood_{opaltrail} \\). Hence\n\\[\ngalaxycar(galaxycar-1) \\geqslant \\sum\\binom{zephyrwind_{quartzmap}}{2}=\\sum zephyrwind_{quartzmap}\\left(zephyrwind_{quartzmap}-1\\right) / 2 \\geqslant(1 / 2) \\sum\\left(zephyrwind_{quartzmap}-1\\right)^{2}\n\\]\n\nIn (A) and what follows, all sums are over \\( quartzmap=1,2, \\ldots, galaxycar \\). Using the Cauchy-Schwarz Inequality and \\( (A) \\) one has\n\\[\n\\left[\\sum\\left(zephyrwind_{quartzmap}-1\\right)\\right]^{2} \\leqslant\\left[\\sum 1\\right]\\left[\\sum\\left(zephyrwind_{quartzmap}-1\\right)^{2}\\right] \\leqslant galaxycar \\cdot 2 galaxycar(galaxycar-1)<2 galaxycar^{3}\n\\]\n\nHence \\( \\sum\\left(zephyrwind_{quartzmap}-1\\right) \\leqslant \\sqrt{2} galaxycar^{3 / 2} \\) and so\n\\[\nharvestsun=\\left(\\sum zephyrwind_{quartzmap}\\right) / 2<\\left(galaxycar+\\sqrt{2} galaxycar^{3 / 2}\\right) / 2<2 galaxycar^{3 / 2}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "emptiness",
+        "p_i": "voidentity",
+        "p_j": "nonpoint",
+        "E": "nulltotal",
+        "e_i": "farcount",
+        "C_i": "straightline",
+        "C_j": "tangentline",
+        "i": "antiloop",
+        "j": "counterloop"
+      },
+      "question": "Problem A-6\nLet \\( emptiness \\) distinct points in the plane be given. Prove that fewer than \\( 2\\,emptiness^{3 / 2} \\) pairs of them are unit distance apart.",
+      "solution": "A-6.\nFor a set \\( \\left\\{p_{1}, \\ldots, p_{emptiness}\\right\\} \\) of points in the plane, let \\( farcount_{antiloop} \\) be the number of \\( nonpoint_{counterloop} \\) one unit from \\( voidentity_{antiloop} \\). Then \\( nulltotal=\\left(farcount_{1}+\\cdots+farcount_{emptiness}\\right) / 2 \\) is the number of pairs with unit distance. Let \\( straightline_{antiloop} \\) be the circle with center at \\( voidentity_{antiloop} \\) and radius 1. Each pair of circles has at most 2 intersections, so the \\( straightline_{antiloop} \\) intersect in at most \\( 2\\binom{emptiness}{2}=emptiness(emptiness-1) \\) points. It suffices to treat the case in which each \\( farcount_{antiloop} \\geqslant 1 \\).\n\nThe point \\( voidentity_{antiloop} \\) occurs \\( \\binom{farcount_{antiloop}}{2} \\) times as an intersection of \\( tangentline_{counterloop} \\). Hence\n\\[\nemptiness(emptiness-1) \\geqslant \\sum\\binom{farcount_{antiloop}}{2}=\\sum farcount_{antiloop}\\left(farcount_{antiloop}-1\\right) / 2 \\geqslant(1 / 2) \\sum\\left(farcount_{antiloop}-1\\right)^{2}\n\\]\n\nIn (A) and what follows, all sums are over \\( antiloop=1,2, \\ldots, emptiness \\). Using the Cauchy-Schwarz Inequality and \\( (A) \\) one has\n\\[\n\\left[\\sum\\left(farcount_{antiloop}-1\\right)\\right]^{2} \\leqslant\\left[\\sum 1\\right]\\left[\\sum\\left(farcount_{antiloop}-1\\right)^{2}\\right] \\leqslant emptiness \\cdot 2\\,emptiness(emptiness-1)<2\\,emptiness^{3}\n\\]\n\nHence \\( \\sum\\left(farcount_{antiloop}-1\\right) \\leqslant \\sqrt{2}\\,emptiness^{3 / 2} \\) and so\n\\[\nnulltotal=\\left(\\sum farcount_{antiloop}\\right) / 2<\\left(emptiness+\\sqrt{2}\\,emptiness^{3 / 2}\\right) / 2<2\\,emptiness^{3 / 2}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "p_i": "hjgrksla",
+        "p_j": "vbcxnsqe",
+        "E": "twymkplo",
+        "e_i": "rbsampqi",
+        "C_i": "lqhmfzso",
+        "C_j": "hndkvazo",
+        "i": "wljrpzse",
+        "j": "zgkrdvaf"
+      },
+      "question": "Problem A-6\nLet \\( qzxwvtnp \\) distinct points in the plane be given. Prove that fewer than \\( 2 qzxwvtnp^{3 / 2} \\) pairs of them are unit distance apart.",
+      "solution": "A-6.\nFor a set \\( \\left\\{p_{1}, \\ldots, p_{qzxwvtnp}\\right\\} \\) of points in the plane, let \\( rbsampqi \\) be the number of \\( vbcxnsqe \\) one unit from \\( hjgrksla \\). Then \\( twymkplo=\\left(e_{1}+\\cdots+e_{qzxwvtnp}\\right) / 2 \\) is the number of pairs with unit distance. Let \\( lqhmfzso \\) be the circle with center at \\( hjgrksla \\) and radius 1. Each pair of circles has at most 2 intersections, so the \\( lqhmfzso \\) intersect in at most \\( 2\\binom{qzxwvtnp}{2}=qzxwvtnp(qzxwvtnp-1) \\) points. It suffices to treat the case in which each \\( rbsampqi \\geqslant 1 \\).\n\nThe point \\( hjgrksla \\) occurs \\( \\binom{rbsampqi}{2} \\) times as an intersection of \\( hndkvazo \\). Hence\n\\[\nqzxwvtnp(qzxwvtnp-1) \\geqslant \\sum\\binom{rbsampqi}{2}=\\sum rbsampqi\\left(rbsampqi-1\\right) / 2 \\geqslant(1 / 2) \\sum\\left(rbsampqi-1\\right)^{2}\n\\]\n\nIn (A) and what follows, all sums are over \\( wljrpzse=1,2, \\ldots, qzxwvtnp \\). Using the Cauchy-Schwarz Inequality and \\( (A) \\) one has\n\\[\n\\left[\\sum\\left(rbsampqi-1\\right)\\right]^{2} \\leqslant\\left[\\sum 1\\right]\\left[\\sum\\left(rbsampqi-1\\right)^{2}\\right] \\leqslant qzxwvtnp \\cdot 2 qzxwvtnp(qzxwvtnp-1)<2 qzxwvtnp^{3}\n\\]\n\nHence \\( \\sum\\left(rbsampqi-1\\right) \\leqslant \\sqrt{2} qzxwvtnp^{3 / 2} \\) and so\n\\[\ntwymkplo=\\left(\\sum e_{i}\\right) / 2<\\left(qzxwvtnp+\\sqrt{2} qzxwvtnp^{3 / 2}\\right) / 2<2 qzxwvtnp^{3 / 2}\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $n$ distinct points $p_{1},p_{2},\\dots ,p_{n}$ lie in the Euclidean plane.  Prove that at most $5\\,n^{3/2}$ unordered pairs of these points are separated by the distance $42$.",
+      "solution": "Write e_i for the number of points that are exactly 42 units away from p_i, and put\nE = (e_1 + e_2 + \\ldots  + e_n)/2.\nThus E is the total number of unordered pairs of points at distance 42.\n\nStep 1. Draw the circle C_i with centre p_i and radius 42. Any two distinct circles meet in at most two points, so the total number of intersection points of all the circles, counted with multiplicity (one for each pair of circles), is at most\n    2\\cdot binom(n,2) = n(n-1).\nWe may assume w.l.o.g. that each e_i \\geq  1, since deleting any point with e_i = 0 leaves both E and the right-hand bound 5n^{3/2} unchanged or smaller.\n\nStep 2. The point p_i lies on exactly e_i of the circles C_j, so it occurs as an intersection of two of those circles in exactly binom(e_i,2) ways. Hence\n    n(n-1) \\geq  \\sum _{i=1}^n binom(e_i,2) = \\frac{1}{2}\\sum _{i=1}^n e_i(e_i-1) \\geq  \\frac{1}{2}\\sum _{i=1}^n (e_i-1)^2\n(The last inequality holds because e_i \\geq  1 implies e_i \\geq  e_i-1.)\n\nStep 3. By Cauchy-Schwarz,\n    (\\sum _{i=1}^n (e_i-1))^2 \\leq  (\\sum _{i=1}^n 1)\\cdot (\\sum _{i=1}^n (e_i-1)^2) \\leq  n\\cdot 2n(n-1) < 2n^3.\nTherefore\n    \\sum _{i=1}^n (e_i-1) \\leq  \\sqrt{2} \\cdot  n^{3/2}.\n\nStep 4. Finally,\n    E = \\frac{1}{2}\\sum _{i=1}^n e_i = \\frac{1}{2}(n + \\sum _{i=1}^n (e_i-1)) < \\frac{1}{2}(n + \\sqrt{2}\\cdot n^{3/2}) < 2n^{3/2}.\nSince 2n^{3/2} < 5n^{3/2} for all n \\geq  1, we conclude that there are at most 5n^{3/2} unordered pairs of points at distance 42, as required.",
+      "_meta": {
+        "core_steps": [
+          "Let e_i be the number of unit neighbours of p_i and set E = (Σ e_i)/2.",
+          "Draw the radius-1 circle C_i about each p_i; any two circles meet in ≤2 points, so total circle intersections ≤ n(n−1).",
+          "Each point p_i is counted in exactly C(e_i,2) circle intersections ⇒ Σ C(e_i,2) ≤ n(n−1).",
+          "Rewrite to get Σ(e_i−1)^2 ≤ 2 n(n−1) and apply Cauchy–Schwarz to bound Σ(e_i−1) ≤ √2 n^{3/2}.",
+          "Translate this into E < (n + √2 n^{3/2})/2 < 2 n^{3/2}."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Chosen length that is forced to be realised (‘unit’ distance). Any fixed positive radius works because two equal circles still intersect in at most two points.",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Numerical coefficient in the final bound. The same proof shows E < c n^{3/2} for every c ≥ 1.207…, so the problem’s ‘2’ can be replaced by any such larger constant without changing the argument.",
+            "original": "2"
+          },
+          "slot3": {
+            "description": "Use of the word ‘fewer than’ (strict inequality). One could ask for ‘at most’ with no change to the reasoning.",
+            "original": "fewer than"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

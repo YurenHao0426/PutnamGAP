@@ -1,0 +1,96 @@
+{
+  "index": "2010-A-2",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find all differentiable functions $f:\\mathbb{R} \\to \\mathbb{R}$ such that\n\\[\nf'(x) = \\frac{f(x+n)-f(x)}{n}\n\\]\nfor all real numbers $x$ and all positive integers $n$.",
+  "solution": "The only such functions are those of the form $f(x) = cx+d$ for some real numbers $c,d$ (for which the\nproperty is obviously satisfied). To see this, suppose that $f$ has the desired property. Then for any $x \\in \\RR$,\n\\begin{align*}\n2f'(x) &= f(x+2)-f(x) \\\\\n&= (f(x+2) - f(x+1)) + (f(x+1) - f(x)) \\\\\n&= f'(x+1) + f'(x).\n\\end{align*}\nConsequently, $f'(x+1) = f'(x)$.\n\nDefine the function $g: \\RR \\to \\RR$ by $g(x) = f(x+1) - f(x)$, and put $c = g(0)$, $d = f(0)$. For all $x \\in \\RR$,\n$g'(x) = f'(x+1) -f'(x) = 0$, so $g(x) = c$ identically,\nand $f'(x) = f(x+1)-f(x) = g(x) = c$, so $f(x) = cx+d$ identically as desired.",
+  "vars": [
+    "f",
+    "g",
+    "x",
+    "n"
+  ],
+  "params": [
+    "c",
+    "d"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "funcmain",
+        "g": "funcauxi",
+        "x": "varreal",
+        "n": "posinteg",
+        "c": "slopconst",
+        "d": "shiftconst"
+      },
+      "question": "Find all differentiable functions $funcmain:\\mathbb{R} \\to \\mathbb{R}$ such that\\n\\[\\nfuncmain'(varreal) = \\frac{funcmain(varreal+posinteg)-funcmain(varreal)}{posinteg}\\n\\]\\nfor all real numbers $varreal$ and all positive integers $posinteg$.",
+      "solution": "The only such functions are those of the form $funcmain(varreal) = slopconst varreal + shiftconst$ for some real numbers $slopconst, shiftconst$ (for which the property is obviously satisfied). To see this, suppose that $funcmain$ has the desired property. Then for any $varreal \\in \\mathbb{R}$,\\n\\begin{align*}\\n2\\,funcmain'(varreal) &= funcmain(varreal+2)-funcmain(varreal) \\\\n&= \\bigl(funcmain(varreal+2) - funcmain(varreal+1)\\bigr) + \\bigl(funcmain(varreal+1) - funcmain(varreal)\\bigr) \\\\n&= funcmain'(varreal+1) + funcmain'(varreal).\\n\\end{align*}\\nConsequently, $funcmain'(varreal+1) = funcmain'(varreal)$.\\n\\nDefine the function $funcauxi: \\mathbb{R} \\to \\mathbb{R}$ by $funcauxi(varreal) = funcmain(varreal+1) - funcmain(varreal)$, and put $slopconst = funcauxi(0)$, $shiftconst = funcmain(0)$. For all $varreal \\in \\mathbb{R}$,\\n$funcauxi'(varreal) = funcmain'(varreal+1) - funcmain'(varreal) = 0$, so $funcauxi(varreal) = slopconst$ identically,\\nand $funcmain'(varreal) = funcmain(varreal+1)-funcmain(varreal) = funcauxi(varreal) = slopconst$, so $funcmain(varreal) = slopconst varreal + shiftconst$ identically as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "sunflower",
+        "g": "lanterns",
+        "x": "quartzite",
+        "n": "backpacks",
+        "c": "rainstorm",
+        "d": "buttercup"
+      },
+      "question": "Find all differentiable functions $sunflower:\\mathbb{R} \\to \\mathbb{R}$ such that\n\\[\nsunflower'(quartzite) = \\frac{sunflower(quartzite+backpacks)-sunflower(quartzite)}{backpacks}\n\\]\nfor all real numbers $quartzite$ and all positive integers $backpacks$.",
+      "solution": "The only such functions are those of the form $sunflower(quartzite) = rainstorm quartzite + buttercup$ for some real numbers $rainstorm, buttercup$ (for which the\nproperty is obviously satisfied). To see this, suppose that $sunflower$ has the desired property. Then for any $quartzite \\in \\RR$,\n\\begin{align*}\n2sunflower'(quartzite) &= sunflower(quartzite+2)-sunflower(quartzite) \\\n&= (sunflower(quartzite+2) - sunflower(quartzite+1)) + (sunflower(quartzite+1) - sunflower(quartzite)) \\\\\n&= sunflower'(quartzite+1) + sunflower'(quartzite).\n\\end{align*}\nConsequently, $sunflower'(quartzite+1) = sunflower'(quartzite)$.\n\nDefine the function $lanterns: \\RR \\to \\RR$ by $lanterns(quartzite) = sunflower(quartzite+1) - sunflower(quartzite)$, and put $rainstorm = lanterns(0)$, $buttercup = sunflower(0)$. For all $quartzite \\in \\RR$,\n$lanterns'(quartzite) = sunflower'(quartzite+1) - sunflower'(quartzite) = 0$, so $lanterns(quartzite) = rainstorm$ identically,\nand $sunflower'(quartzite) = sunflower(quartzite+1)-sunflower(quartzite) = lanterns(quartzite) = rainstorm$, so $sunflower(quartzite) = rainstorm quartzite + buttercup$ identically as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "dysfunction",
+        "g": "equilibrium",
+        "x": "immutable",
+        "n": "continuum",
+        "c": "variable",
+        "d": "movement"
+      },
+      "question": "Find all differentiable functions $dysfunction:\\mathbb{R} \\to \\mathbb{R}$ such that\n\\[\ndysfunction'(immutable) = \\frac{dysfunction(immutable+continuum)-dysfunction(immutable)}{continuum}\n\\]\nfor all real numbers $immutable$ and all positive integers $continuum$.",
+      "solution": "The only such functions are those of the form $dysfunction(immutable)=variable\\,immutable+movement$ for some real numbers $variable,movement$ (for which the property is obviously satisfied). To see this, suppose that $dysfunction$ has the desired property. Then for any $immutable \\in \\RR$,\n\\begin{align*}\n2dysfunction'(immutable) &= dysfunction(immutable+2)-dysfunction(immutable) \\\\\n&= (dysfunction(immutable+2) - dysfunction(immutable+1)) + (dysfunction(immutable+1) - dysfunction(immutable)) \\\\\n&= dysfunction'(immutable+1) + dysfunction'(immutable).\n\\end{align*}\nConsequently, $dysfunction'(immutable+1) = dysfunction'(immutable)$.\n\nDefine the function $equilibrium: \\RR \\to \\RR$ by $equilibrium(immutable) = dysfunction(immutable+1) - dysfunction(immutable)$, and put $variable = equilibrium(0)$, $movement = dysfunction(0)$. For all $immutable \\in \\RR$, $equilibrium'(immutable) = dysfunction'(immutable+1) -dysfunction'(immutable) = 0$, so $equilibrium(immutable) = variable$ identically, and $dysfunction'(immutable) = dysfunction(immutable+1)-dysfunction(immutable) = equilibrium(immutable) = variable$, so $dysfunction(immutable) = variable\\,immutable+movement$ identically as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "g": "hjgrksla",
+        "x": "mnbvcxza",
+        "n": "lkjhgfds",
+        "c": "poiuytre",
+        "d": "zxcvbnml"
+      },
+      "question": "Find all differentiable functions $qzxwvtnp:\\mathbb{R} \\to \\mathbb{R}$ such that\n\\[\nqzxwvtnp'(mnbvcxza) = \\frac{qzxwvtnp(mnbvcxza+lkjhgfds)-qzxwvtnp(mnbvcxza)}{lkjhgfds}\n\\]\nfor all real numbers $mnbvcxza$ and all positive integers $lkjhgfds$.",
+      "solution": "The only such functions are those of the form $qzxwvtnp(mnbvcxza) = poiuytre mnbvcxza+zxcvbnml$ for some real numbers $poiuytre,zxcvbnml$ (for which the\nproperty is obviously satisfied). To see this, suppose that $qzxwvtnp$ has the desired property. Then for any $mnbvcxza \\in \\RR$,\n\\begin{align*}\n2qzxwvtnp'(mnbvcxza) &= qzxwvtnp(mnbvcxza+2)-qzxwvtnp(mnbvcxza) \\\\\n&= (qzxwvtnp(mnbvcxza+2) - qzxwvtnp(mnbvcxza+1)) + (qzxwvtnp(mnbvcxza+1) - qzxwvtnp(mnbvcxza)) \\\\\n&= qzxwvtnp'(mnbvcxza+1) + qzxwvtnp'(mnbvcxza).\n\\end{align*}\nConsequently, $qzxwvtnp'(mnbvcxza+1) = qzxwvtnp'(mnbvcxza)$.\n\nDefine the function $hjgrksla: \\RR \\to \\RR$ by $hjgrksla(mnbvcxza) = qzxwvtnp(mnbvcxza+1) - qzxwvtnp(mnbvcxza)$, and put $poiuytre = hjgrksla(0)$, $zxcvbnml = qzxwvtnp(0)$. For all $mnbvcxza \\in \\RR$,\n$hjgrksla'(mnbvcxza) = qzxwvtnp'(mnbvcxza+1) -qzxwvtnp'(mnbvcxza) = 0$, so $hjgrksla(mnbvcxza) = poiuytre$ identically,\nand $qzxwvtnp'(mnbvcxza) = qzxwvtnp(mnbvcxza+1)-qzxwvtnp(mnbvcxza) = hjgrksla(mnbvcxza) = poiuytre$, so $qzxwvtnp(mnbvcxza) = poiuytre mnbvcxza+zxcvbnml$ identically as desired."
+    },
+    "kernel_variant": {
+      "question": "Let $f:\n\\mathbb{R}\\to\\mathbb{R}$ be a differentiable function such that for every real number $x$,\n\\[\n f'(x)=\\frac{f(x+5)-f(x)}{5}, \\qquad\\text{and}\\qquad f'(x)=\\frac{f(x+10)-f(x)}{10}.\n\\]\nDetermine all possible functions $f$.",
+      "solution": "Multiply the first relation by 5 and the second by 10:\n\\[\n5f'(x)=f(x+5)-f(x), \\qquad 10f'(x)=f(x+10)-f(x).\n\\]\nRewrite the second right-hand side as a telescoping sum:\n\\[\n10f'(x)=\\bigl[f(x+10)-f(x+5)\\bigr]+\\bigl[f(x+5)-f(x)\\bigr]=5f'(x+5)+5f'(x).\n\\]\nDividing by 5 gives\n\\[\n2f'(x)=f'(x+5)+f'(x) \\;\\Longrightarrow\\; f'(x+5)=f'(x),\\quad\\forall x\\in\\mathbb{R}.\n\\]\nThus f' is 5-periodic.\n\nDefine g(x)=f(x+5)-f(x).  Then\n\\[\ng'(x)=f'(x+5)-f'(x)=0,\n\\]\nso g is constant: g(x)\\equiv c for some c\\in \\mathbb{R}.  Substituting back into the first given identity,\n\\[\nf'(x)=\\frac{f(x+5)-f(x)}{5}=\\frac{c}{5},\n\\]\nwhich shows that f' is the constant a=c/5.  Hence\n\\[\nf(x)=ax+b\\qquad\\text{for some }a,b\\in\\mathbb{R}.\n\\]\nConversely, every linear function satisfies both displayed identities, so the complete set of solutions is\n\\[\nf(x)=ax+b\\quad(a,b\\in\\mathbb{R}).\\]",
+      "_meta": {
+        "core_steps": [
+          "Apply the identity with n = 2 and with n = 1 to get 2 f'(x) = f'(x) + f'(x+1)",
+          "Conclude f'(x+1) = f'(x) (derivative is 1-periodic)",
+          "Define g(x) = f(x+1) − f(x); compute g'(x) = f'(x+1) − f'(x) = 0",
+          "Hence g is constant (say c) and f'(x) = c, so f(x) = c x + d"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Breadth of n in the hypothesis—only n = 1 and n = 2 are actually used",
+            "original": "“for all positive integers n”"
+          },
+          "slot2": {
+            "description": "The translation length 1; any fixed positive integer m would also work (using n = m and n = 2m)",
+            "original": "the number 1 appearing in f(x+1)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

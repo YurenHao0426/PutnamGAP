@@ -1,0 +1,93 @@
+{
+  "index": "2020-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "How many positive integers $N$ satisfy all of the following three conditions?\n\\begin{enumerate}\n\\item[(i)] $N$ is divisible by 2020.\n\\item[(ii)] $N$ has at most 2020 decimal digits.\n\\item[(iii)] The decimal digits of $N$ are a string of consecutive ones followed by a string of consecutive zeros.\n\\end{enumerate}",
+  "solution": "The values of $N$ that satisfy (ii) and (iii) are precisely the numbers of the form $N = (10^a-10^b)/9$ for $0\\leq b<a\\leq 2020$; this expression represents the integer with $a$ digits beginning with a string of $1$'s and ending with $b$ $0$'s. A value $N$ of this form is divisible by $2020 = 2^2 \\cdot 5 \\cdot 101$ if and only if $10^b(10^{a-b}-1)$ is divisible by each of $3^2$, $2^2\\cdot 5$, and $101$. Divisibility by $3^2$ is a trivial condition since $10 \\equiv 1 \\pmod{9}$. Since $10^{a-b}-1$ is odd, divisibility by $2^2\\cdot 5$ occurs if and only if $b \\geq 2$. Finally, since $10^2 \\equiv -1 \\pmod{101}$, we see that $10^{a-b}$ is congruent to $10$, $-1$, $-10$, or $1 \\pmod{101}$ depending on whether $a-b$ is congruent to $1$, $2$, $3$, or $0 \\pmod{4}$; thus $10^{a-b}-1$ is divisible by $101$ if and only if $a-b$ is divisible by $4$.\n\nIt follows that we need to count the number of $(a,b)$ with $2\\leq b<a\\leq 2020$ with $4\\,|\\,a-b$. For given $b$, there are $\\lfloor \\frac{2020-b}{4} \\rfloor$ possible values of $a$. Thus the answer is\n\\begin{align*}\n& 504+504+504+503+503+503+503+\\cdots+1+1+1+1  \\\\\n&\\quad = 4(504+503+\\cdots+1)-504 = 504\\cdot 1009 = 508536.\n\\end{align*}",
+  "vars": [
+    "N",
+    "a",
+    "b"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "N": "numbervalue",
+        "a": "totaldigits",
+        "b": "trailingzeros"
+      },
+      "question": "How many positive integers $numbervalue$ satisfy all of the following three conditions?\n\\begin{enumerate}\n\\item[(i)] $numbervalue$ is divisible by 2020.\n\\item[(ii)] $numbervalue$ has at most 2020 decimal digits.\n\\item[(iii)] The decimal digits of $numbervalue$ are a string of consecutive ones followed by a string of consecutive zeros.\n\\end{enumerate}",
+      "solution": "The values of $numbervalue$ that satisfy (ii) and (iii) are precisely the numbers of the form\n\\[\nnumbervalue = \\frac{10^{totaldigits}-10^{trailingzeros}}{9}\n\\qquad\\text{for }0\\le trailingzeros < totaldigits \\le 2020,\n\\]\nfor this expression represents the integer with $totaldigits$ digits beginning with a string of $1$'s and ending with $trailingzeros$ $0$'s. A value $numbervalue$ of this form is divisible by $2020 = 2^2 \\cdot 5 \\cdot 101$ if and only if $10^{trailingzeros}\\bigl(10^{totaldigits-trailingzeros}-1\\bigr)$ is divisible by each of $3^2$, $2^2\\cdot 5$, and $101$. Divisibility by $3^2$ is automatic because $10 \\equiv 1 \\pmod{9}$. Since $10^{totaldigits-trailingzeros}-1$ is odd, divisibility by $2^2\\cdot 5$ occurs exactly when $trailingzeros \\ge 2$. Finally, because $10^{2} \\equiv -1 \\pmod{101}$, the value of $10^{totaldigits-trailingzeros}$ is congruent to $10$, $-1$, $-10$, or $1 \\pmod{101}$ according as $totaldigits-trailingzeros \\equiv 1,2,3,0 \\pmod{4}$; therefore $10^{totaldigits-trailingzeros}-1$ is divisible by $101$ precisely when $4\\,|\\,(totaldigits-trailingzeros)$.\n\nHence we must count ordered pairs $(totaldigits,\\,trailingzeros)$ with $2 \\le trailingzeros < totaldigits \\le 2020$ and $4\\,|\\,(totaldigits-trailingzeros)$. For a fixed $trailingzeros$, the number of admissible $totaldigits$ is $\\left\\lfloor\\dfrac{2020-\\,trailingzeros}{4}\\right\\rfloor$. Consequently the desired total is\n\\[\n504+504+504+503+503+503+503+\\cdots+1+1+1+1\n=4\\bigl(504+503+\\cdots+1\\bigr)-504\n=504\\cdot1009\n=508536.\n\\]\nTherefore the number of positive integers satisfying all three conditions is $508536$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "N": "lighthouse",
+        "a": "rainfall",
+        "b": "sunflower"
+      },
+      "question": "How many positive integers $lighthouse$ satisfy all of the following three conditions?\n\\begin{enumerate}\n\\item[(i)] $lighthouse$ is divisible by 2020.\n\\item[(ii)] $lighthouse$ has at most 2020 decimal digits.\n\\item[(iii)] The decimal digits of $lighthouse$ are a string of consecutive ones followed by a string of consecutive zeros.\n\\end{enumerate}",
+      "solution": "The values of $lighthouse$ that satisfy (ii) and (iii) are precisely the numbers of the form $lighthouse = (10^{rainfall}-10^{sunflower})/9$ for $0\\leq sunflower<rainfall\\leq 2020$; this expression represents the integer with $rainfall$ digits beginning with a string of $1$'s and ending with $sunflower$ $0$'s. A value $lighthouse$ of this form is divisible by $2020 = 2^2 \\cdot 5 \\cdot 101$ if and only if $10^{sunflower}(10^{rainfall-sunflower}-1)$ is divisible by each of $3^2$, $2^2\\cdot 5$, and $101$. Divisibility by $3^2$ is a trivial condition since $10 \\equiv 1 \\pmod{9}$. Since $10^{rainfall-sunflower}-1$ is odd, divisibility by $2^2\\cdot 5$ occurs if and only if $sunflower \\geq 2$. Finally, since $10^2 \\equiv -1 \\pmod{101}$, we see that $10^{rainfall-sunflower}$ is congruent to $10$, $-1$, $-10$, or $1 \\pmod{101}$ depending on whether $rainfall-sunflower$ is congruent to $1$, $2$, $3$, or $0 \\pmod{4}$; thus $10^{rainfall-sunflower}-1$ is divisible by $101$ if and only if $rainfall-sunflower$ is divisible by $4$.\n\nIt follows that we need to count the number of $(rainfall,sunflower)$ with $2\\leq sunflower<rainfall\\leq 2020$ with $4\\,|\\,rainfall-sunflower$. For given $sunflower$, there are $\\lfloor \\frac{2020-sunflower}{4} \\rfloor$ possible values of $rainfall$. Thus the answer is\n\\begin{align*}\n& 504+504+504+503+503+503+503+\\cdots+1+1+1+1  \\\\\n&\\quad = 4(504+503+\\cdots+1)-504 = 504\\cdot 1009 = 508536.\n\\end{align*}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "N": "negativereal",
+        "a": "emptiness",
+        "b": "nonzeros"
+      },
+      "question": "Problem:\n<<<\nHow many positive integers $negativereal$ satisfy all of the following three conditions?\n\\begin{enumerate}\n\\item[(i)] $negativereal$ is divisible by 2020.\n\\item[(ii)] $negativereal$ has at most 2020 decimal digits.\n\\item[(iii)] The decimal digits of $negativereal$ are a string of consecutive ones followed by a string of consecutive zeros.\n\\end{enumerate}\n>>>",
+      "solution": "Solution:\n<<<\nThe values of $negativereal$ that satisfy (ii) and (iii) are precisely the numbers of the form $negativereal = (10^{emptiness}-10^{nonzeros})/9$ for $0\\leq nonzeros<emptiness\\leq 2020$; this expression represents the integer with $emptiness$ digits beginning with a string of $1$'s and ending with $nonzeros$ $0$'s. A value $negativereal$ of this form is divisible by $2020 = 2^2 \\cdot 5 \\cdot 101$ if and only if $10^{nonzeros}(10^{emptiness-nonzeros}-1)$ is divisible by each of $3^2$, $2^2\\cdot 5$, and $101$. Divisibility by $3^2$ is a trivial condition since $10 \\equiv 1 \\pmod{9}$. Since $10^{emptiness-nonzeros}-1$ is odd, divisibility by $2^2\\cdot 5$ occurs if and only if $nonzeros \\geq 2$. Finally, since $10^2 \\equiv -1 \\pmod{101}$, we see that $10^{emptiness-nonzeros}$ is congruent to $10$, $-1$, $-10$, or $1 \\pmod{101}$ depending on whether $emptiness-nonzeros$ is congruent to $1$, $2$, $3$, or $0 \\pmod{4}$; thus $10^{emptiness-nonzeros}-1$ is divisible by $101$ if and only if $emptiness-nonzeros$ is divisible by $4$.\n\nIt follows that we need to count the number of $(emptiness,nonzeros)$ with $2\\leq nonzeros<emptiness\\leq 2020$ with $4\\,|\\,emptiness-nonzeros$. For given $nonzeros$, there are $\\lfloor \\frac{2020-nonzeros}{4} \\rfloor$ possible values of $emptiness$. Thus the answer is\n\\begin{align*}\n& 504+504+504+503+503+503+503+\\cdots+1+1+1+1  \\\\\n&\\quad = 4(504+503+\\cdots+1)-504 = 504\\cdot 1009 = 508536.\n\\end{align*}\n>>>"
+    },
+    "garbled_string": {
+      "map": {
+        "N": "qzxwvtnp",
+        "a": "hjgrksla",
+        "b": "ptdkqsmn"
+      },
+      "question": "How many positive integers $qzxwvtnp$ satisfy all of the following three conditions?\n\\begin{enumerate}\n\\item[(i)] $qzxwvtnp$ is divisible by 2020.\n\\item[(ii)] $qzxwvtnp$ has at most 2020 decimal digits.\n\\item[(iii)] The decimal digits of $qzxwvtnp$ are a string of consecutive ones followed by a string of consecutive zeros.\n\\end{enumerate}",
+      "solution": "The values of $qzxwvtnp$ that satisfy (ii) and (iii) are precisely the numbers of the form $qzxwvtnp = (10^{hjgrksla}-10^{ptdkqsmn})/9$ for $0\\leq ptdkqsmn<hjgrksla\\leq 2020$; this expression represents the integer with $hjgrksla$ digits beginning with a string of $1$'s and ending with $ptdkqsmn$ $0$'s. A value $qzxwvtnp$ of this form is divisible by $2020 = 2^2 \\cdot 5 \\cdot 101$ if and only if $10^{ptdkqsmn}(10^{hjgrksla-ptdkqsmn}-1)$ is divisible by each of $3^2$, $2^2\\cdot 5$, and $101$. Divisibility by $3^2$ is a trivial condition since $10 \\equiv 1 \\pmod{9}$. Since $10^{hjgrksla-ptdkqsmn}-1$ is odd, divisibility by $2^2\\cdot 5$ occurs if and only if $ptdkqsmn \\geq 2$. Finally, since $10^2 \\equiv -1 \\pmod{101}$, we see that $10^{hjgrksla-ptdkqsmn}$ is congruent to $10$, $-1$, $-10$, or $1 \\pmod{101}$ depending on whether $hjgrksla-ptdkqsmn$ is congruent to $1$, $2$, $3$, or $0 \\pmod{4}$; thus $10^{hjgrksla-ptdkqsmn}-1$ is divisible by $101$ if and only if $hjgrksla-ptdkqsmn$ is divisible by $4$.\n\nIt follows that we need to count the number of $(hjgrksla,ptdkqsmn)$ with $2\\leq ptdkqsmn<hjgrksla\\leq 2020$ with $4\\,|\\,hjgrksla-ptdkqsmn$. For given $ptdkqsmn$, there are $\\lfloor \\frac{2020-ptdkqsmn}{4} \\rfloor$ possible values of $hjgrksla$. Thus the answer is\n\\begin{align*}\n& 504+504+504+503+503+503+503+\\cdots+1+1+1+1  \\\\\n&\\quad = 4(504+503+\\cdots+1)-504 = 504\\cdot 1009 = 508536.\n\\end{align*}"
+    },
+    "kernel_variant": {
+      "question": "How many positive integers $N$ satisfy the following three conditions?\n\\begin{enumerate}\n\\item[(i)] $N$ is divisible by $\\mathbf{9250}$. \n\\item[(ii)] $N$ has at most $\\mathbf{1500}$ decimal digits.\n\\item[(iii)] The decimal representation of $N$ is a string of one or more consecutive $1$'s followed by a string of one or more consecutive $0$'s.\n\\end{enumerate}",
+      "solution": "Write every number whose digits are a block of 1's followed by a block of 0's in the standard form\n\\[\nN=\\frac{10^{a}-10^{b}}9, \\qquad 0\\le b<a\\le 1500.\n\\]\n(Here a is the total number of digits and b is the number of trailing zeros.)  We must determine exactly when this integer is divisible by\n\\[\nD=9250=2\\,\\cdot5^{3}\\,\\cdot37.\n\\]\n\n1.  Factor out the trailing-zero part:\n   \\[N=10^{b}\\,\\frac{10^{a-b}-1}{9}.\\]\n   Thus N is divisible by D iff both of the following hold:\n   (a) $10^b$ supplies the needed factors of 2 and 5;\n   (b) $(10^{a-b}-1)/9$ supplies the needed factor of 37.\n\n2.  Powers of 2 and 5.  Since $(10^{a-b}-1)/9$ is odd, all the 2's and 5's in N come from $10^b=2^b5^b$.  We need at least one factor $2^1$ and three factors $5^3$, so we must have\n   \\[b\\ge 3.\\]\n\n3.  The prime 37.  Because $10^3=1000\\equiv1\\pmod{37}$ while $10\\not\\equiv1\\pmod{37}$ and $10^2\\not\\equiv1\\pmod{37}$, the multiplicative order of 10 modulo 37 is\n   \\[k=\\operatorname{ord}_{37}(10)=3.\\]\n   Consequently, $10^{a-b}-1$ is divisible by 37 exactly when\n   \\[a-b\\equiv0 \\pmod{3}.\\]\n\n4.  Counting admissible pairs $(a,b)$.  We need\n   \\[\n   3\\le b<a\\le1500,\\qquad a\\equiv b\\pmod{3}.\n   \\]\n   Fix $b$ with $3\\le b\\le1499$.  Write $a=b+3t$ with $t\\ge1$ and $a\\le1500$.  The number of such $a$ is\n   \\[\\bigl\\lfloor\\frac{1500-b}{3}\\bigr\\rfloor.\\]\n   Hence the total number of pairs is\n   \\[\\sum_{b=3}^{1499}\\Bigl\\lfloor\\frac{1500-b}{3}\\Bigr\\rfloor.\\]\n   Let $c=b-3$ (so $c=0,1,\\dots,1496$).  Then $1500-b=1497-c$, and the sum becomes\n   \\[\n   \\sum_{c=0}^{1496}\\Bigl\\lfloor\\frac{1497-c}{3}\\Bigr\\rfloor=\\sum_{k=1}^{1497}\\Bigl\\lfloor\\frac{k}{3}\\Bigr\\rfloor.\n   \\]\n   Because the numbers $1,2,3,\\dots,1497$ come in 499 complete blocks of length 3, we have\n   \\[\n   \\sum_{k=1}^{1497}\\Bigl\\lfloor\\frac{k}{3}\\Bigr\\rfloor\n     =\\sum_{q=0}^{498}\\bigl(q+q+(q+1)\\bigr)\n     =\\sum_{q=0}^{498}(3q+1).\n   \\]\n   Evaluating,\n   \\[\n   \\sum_{q=0}^{498}(3q+1)=3\\sum_{q=0}^{498}q+\\sum_{q=0}^{498}1=3\\cdot\\frac{498\\cdot499}{2}+499=372{,}753+499=373{,}252.\n   \\]\n\n5.  Answer.  Each admissible pair $(a,b)$ yields a distinct $N$, so the required count is\n   \\[\n   \\boxed{373\\,252}.\n   \\]",
+      "_meta": {
+        "core_steps": [
+          "Encode the 1…0 pattern as N = (10^a − 10^b)/9 with 0 ≤ b < a ≤ limit",
+          "Write N = 10^b(10^{a−b} − 1)/9 and factor the required divisor D",
+          "Translate divisibility by each prime power of D into (i) a lower bound on b via 10^b and (ii) a congruence on a−b via the order of 10 mod the remaining prime(s)",
+          "Count integer pairs (a,b) satisfying the inequality, the lower-bound, and the congruence",
+          "Evaluate the resulting arithmetic sum to obtain the answer"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Required divisor D; only its prime-factor structure matters",
+            "original": "2020 = 2^2 · 5 · 101"
+          },
+          "slot2": {
+            "description": "Upper bound on the number of decimal digits (max value of a)",
+            "original": "2020"
+          },
+          "slot3": {
+            "description": "Prime factor p of D for which 10 has finite multiplicative order, producing the congruence on a−b",
+            "original": "101"
+          },
+          "slot4": {
+            "description": "Order k = ord_p(10); a−b must be a multiple of k",
+            "original": "4"
+          },
+          "slot5": {
+            "description": "Minimum number of trailing zeros required (smallest b) determined by the highest power of 2 or 5 dividing D",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

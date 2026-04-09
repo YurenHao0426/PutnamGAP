@@ -1,0 +1,114 @@
+{
+  "index": "2020-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "For a positive integer $n$, define $d(n)$ to be the sum of the digits of $n$ when written in binary (for example, $d(13) = 1+1+0+1=3)$. Let\n\\[\nS = \\sum_{k=1}^{2020} (-1)^{d(k)} k^3.\n\\]\nDetermine $S$ modulo 2020.",
+  "solution": "Note that\n$$\n(1-x)(1-x^2)(1-x^4)\\cdots(1-x^{1024})=\\sum_{k=0}^{2047}(-1)^{d(k)}x^k\n$$\nand\n$$\nx^{2016}(1-x)(1-x^2)\\cdots(1-x^{16})=\\sum_{k=2016}^{2047}(-1)^{d(k)}x^k.\n$$\nApplying $x\\frac{d}{dx}$ to both sides of each of these two equations three times, and then setting $x=1$, shows that\n$$\n\\sum_{k=0}^{2047}(-1)^{d(k)}k^3 = \\sum_{k=2016}^{2047}(-1)^{d(k)}k^3 = 0,\n$$\nand therefore\n$$\n\\sum_{k=1}^{2015}(-1)^{d(k)}k^3 = 0.\n$$\nHence we may write\n\\begin{align*}\nS &=\\sum_{k=2016}^{2020}(-1)^{d(k)}k^3 \\\\\n &= \\sum_{k=0}^4 (-1)^{d(k)} (k+2016)^3 \\\\\n&\\equiv (-4)^3 + (-1)(-3)^3+(-1)(-2)^3+(1)(-1)^3 \\\\\n&= -64+27+8-1 \\\\\n&\\equiv -30\\equiv 1990\\pmod{2020}.\n\\end{align*}\n\n\\noindent\n\\textbf{Remark.} The function $d(n)$ appears in the OEIS as sequence A000120.",
+  "vars": [
+    "n",
+    "k",
+    "x"
+  ],
+  "params": [
+    "d",
+    "S"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "integer",
+        "k": "indexer",
+        "x": "variable",
+        "d": "digisum",
+        "S": "summation"
+      },
+      "question": "For a positive integer integer, define digisum(integer) to be the sum of the digits of integer when written in binary (for example, digisum(13) = 1+1+0+1=3). Let\n\\[\nsummation = \\sum_{indexer=1}^{2020} (-1)^{digisum(indexer)} indexer^3.\n\\]\nDetermine summation modulo 2020.",
+      "solution": "Note that\n$$\n(1-variable)(1-variable^2)(1-variable^4)\\cdots(1-variable^{1024})=\\sum_{indexer=0}^{2047}(-1)^{digisum(indexer)}variable^{indexer}\n$$\nand\n$$\nvariable^{2016}(1-variable)(1-variable^2)\\cdots(1-variable^{16})=\\sum_{indexer=2016}^{2047}(-1)^{digisum(indexer)}variable^{indexer}.\n$$\nApplying $variable\\frac{digisum}{digisum variable}$ to both sides of each of these two equations three times, and then setting $variable=1$, shows that\n$$\n\\sum_{indexer=0}^{2047}(-1)^{digisum(indexer)}indexer^3 = \\sum_{indexer=2016}^{2047}(-1)^{digisum(indexer)}indexer^3 = 0,\n$$\nand therefore\n$$\n\\sum_{indexer=1}^{2015}(-1)^{digisum(indexer)}indexer^3 = 0.\n$$\nHence we may write\n\\begin{align*}\nsummation &=\\sum_{indexer=2016}^{2020}(-1)^{digisum(indexer)}indexer^3 \\\n &= \\sum_{indexer=0}^4 (-1)^{digisum(indexer)} (indexer+2016)^3 \\\\\n&\\equiv (-4)^3 + (-1)(-3)^3+(-1)(-2)^3+(1)(-1)^3 \\\\\n&= -64+27+8-1 \\\\\n&\\equiv -30\\equiv 1990\\pmod{2020}.\n\\end{align*}\n\n\\noindent\n\\textbf{Remark.} The function digisum(integer) appears in the OEIS as sequence A000120."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "pebblestone",
+        "k": "rivertrail",
+        "x": "lanternfly",
+        "d": "meadowlark",
+        "S": "rainshadow"
+      },
+      "question": "For a positive integer $pebblestone$, define $\\meadowlark(pebblestone)$ to be the sum of the digits of $pebblestone$ when written in binary (for example, $\\meadowlark(13) = 1+1+0+1=3)$. Let\n\\[\nrainshadow = \\sum_{rivertrail=1}^{2020} (-1)^{\\meadowlark(rivertrail)} rivertrail^3.\n\\]\nDetermine $rainshadow$ modulo 2020.",
+      "solution": "Note that\n$$\n(1-\\lanternfly)(1-\\lanternfly^2)(1-\\lanternfly^4)\\cdots(1-\\lanternfly^{1024})=\\sum_{rivertrail=0}^{2047}(-1)^{\\meadowlark(rivertrail)}\\lanternfly^{rivertrail}\n$$\nand\n$$\n\\lanternfly^{2016}(1-\\lanternfly)(1-\\lanternfly^2)\\cdots(1-\\lanternfly^{16})=\\sum_{rivertrail=2016}^{2047}(-1)^{\\meadowlark(rivertrail)}\\lanternfly^{rivertrail}.\n$$\nApplying $\\lanternfly\\frac{d}{d\\lanternfly}$ to both sides of each of these two equations three times, and then setting $\\lanternfly=1$, shows that\n$$\n\\sum_{rivertrail=0}^{2047}(-1)^{\\meadowlark(rivertrail)}rivertrail^3 = \\sum_{rivertrail=2016}^{2047}(-1)^{\\meadowlark(rivertrail)}rivertrail^3 = 0,\n$$\nand therefore\n$$\n\\sum_{rivertrail=1}^{2015}(-1)^{\\meadowlark(rivertrail)}rivertrail^3 = 0.\n$$\nHence we may write\n\\begin{align*}\nrainshadow &= \\sum_{rivertrail=2016}^{2020} (-1)^{\\meadowlark(rivertrail)} rivertrail^3 \\\\ & = \\sum_{rivertrail=0}^4 (-1)^{\\meadowlark(rivertrail)} (rivertrail+2016)^3 \\\\ &\\equiv (-4)^3 + (-1)(-3)^3 + (-1)(-2)^3 + (1)(-1)^3 \\\\ &= -64 + 27 + 8 - 1 \\\\ &\\equiv -30 \\equiv 1990 \\pmod{2020}.\n\\end{align*}\n\n\\noindent\n\\textbf{Remark.} The function $\\meadowlark(pebblestone)$ appears in the OEIS as sequence A000120."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "fractional",
+        "k": "continuum",
+        "x": "constantc",
+        "d": "productdigits",
+        "S": "differencevalue"
+      },
+      "question": "For a positive integer $fractional$, define $productdigits(fractional)$ to be the sum of the digits of $fractional$ when written in binary (for example, $productdigits(13) = 1+1+0+1=3)$. Let\n\\[\ndifferencevalue = \\sum_{continuum=1}^{2020} (-1)^{productdigits(continuum)} continuum^3.\n\\]\nDetermine $differencevalue$ modulo 2020.",
+      "solution": "Note that\n$$\n(1-constantc)(1-constantc^2)(1-constantc^4)\\cdots(1-constantc^{1024})=\\sum_{continuum=0}^{2047}(-1)^{productdigits(continuum)}constantc^{continuum}\n$$\nand\n$$\nconstantc^{2016}(1-constantc)(1-constantc^2)\\cdots(1-constantc^{16})=\\sum_{continuum=2016}^{2047}(-1)^{productdigits(continuum)}constantc^{continuum}.\n$$\nApplying $constantc\\frac{productdigits}{productdigits\\,constantc}$ to both sides of each of these two equations three times, and then setting $constantc=1$, shows that\n$$\n\\sum_{continuum=0}^{2047}(-1)^{productdigits(continuum)}continuum^3 = \\sum_{continuum=2016}^{2047}(-1)^{productdigits(continuum)}continuum^3 = 0,\n$$\nand therefore\n$$\n\\sum_{continuum=1}^{2015}(-1)^{productdigits(continuum)}continuum^3 = 0.\n$$\nHence we may write\n\\begin{align*}\ndifferencevalue &=\\sum_{continuum=2016}^{2020}(-1)^{productdigits(continuum)}continuum^3 \\\n &= \\sum_{continuum=0}^4 (-1)^{productdigits(continuum)} (continuum+2016)^3 \\\\\n&\\equiv (-4)^3 + (-1)(-3)^3+(-1)(-2)^3+(1)(-1)^3 \\\\\n&= -64+27+8-1 \\\\\n&\\equiv -30\\equiv 1990\\pmod{2020}.\n\\end{align*}\n\n\\noindent\n\\textbf{Remark.} The function $productdigits(fractional)$ appears in the OEIS as sequence A000120."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "x": "bmnclrtu",
+        "d": "zplskqnv",
+        "S": "fwhztdrm"
+      },
+      "question": "For a positive integer $qzxwvtnp$, define $zplskqnv(qzxwvtnp)$ to be the sum of the digits of $qzxwvtnp$ when written in binary (for example, $zplskqnv(13) = 1+1+0+1=3)$. Let\n\\[\nfwhztdrm = \\sum_{hjgrksla=1}^{2020} (-1)^{zplskqnv(hjgrksla)} hjgrksla^3.\n\\]\nDetermine $fwhztdrm$ modulo 2020.",
+      "solution": "Note that\n$$\n(1-bmnclrtu)(1-bmnclrtu^2)(1-bmnclrtu^4)\\cdots(1-bmnclrtu^{1024})=\\sum_{hjgrksla=0}^{2047}(-1)^{zplskqnv(hjgrksla)}bmnclrtu^{hjgrksla}\n$$\nand\n$$\nbmnclrtu^{2016}(1-bmnclrtu)(1-bmnclrtu^2)\\cdots(1-bmnclrtu^{16})=\\sum_{hjgrksla=2016}^{2047}(-1)^{zplskqnv(hjgrksla)}bmnclrtu^{hjgrksla}.\n$$\nApplying $bmnclrtu\\frac{d}{d bmnclrtu}$ to both sides of each of these two equations three times, and then setting $bmnclrtu=1$, shows that\n$$\n\\sum_{hjgrksla=0}^{2047}(-1)^{zplskqnv(hjgrksla)}hjgrksla^3 = \\sum_{hjgrksla=2016}^{2047}(-1)^{zplskqnv(hjgrksla)}hjgrksla^3 = 0,\n$$\nand therefore\n$$\n\\sum_{hjgrksla=1}^{2015}(-1)^{zplskqnv(hjgrksla)}hjgrksla^3 = 0.\n$$\nHence we may write\n\\begin{align*}\nfwhztdrm &=\\sum_{hjgrksla=2016}^{2020}(-1)^{zplskqnv(hjgrksla)}hjgrksla^3 \\\\\n &= \\sum_{hjgrksla=0}^4 (-1)^{zplskqnv(hjgrksla)} (hjgrksla+2016)^3 \\\\\n&\\equiv (-4)^3 + (-1)(-3)^3+(-1)(-2)^3+(1)(-1)^3 \\\\\n&= -64+27+8-1 \\\\\n&\\equiv -30\\equiv 1990\\pmod{2020}.\n\\end{align*}\n\n\\noindent\n\\textbf{Remark.} The function $zplskqnv(qzxwvtnp)$ appears in the OEIS as sequence A000120."
+    },
+    "kernel_variant": {
+      "question": "For a positive integer n let d_2(n) denote the number of 1-digits in the binary expansion of n (so, for instance, d_2(13)=3 because 13=1101_2).  Evaluate\n\nS \\,=\\,\\sum_{k=1}^{3977} (-1)^{d_2(k)} k^{6}\n\nmodulo 3977.",
+      "solution": "We repeatedly use the well-known binary-digit identity\n\n(*)  \\displaystyle F_{m}(x):=\\prod_{i=0}^{m}(1-x^{2^{i}})=\\sum_{k=0}^{2^{m+1}-1} (-1)^{d_2(k)}x^{k},\n\nwhich follows because every integer 0\\le k<2^{m+1} has a unique (m+1)-digit binary expansion.\n\n------------------------------------------------------------------\n1.  A vanishing 6-th moment for F_{11}.\n------------------------------------------------------------------\nWith m=11 the product contains 12 distinct factors, so F_{11}(1)=0 and the first 11 derivatives also vanish at x=1.  In particular\n\n\\[\\bigl(x\\,\\tfrac{d}{dx}\\bigr)^6F_{11}(x)\\Big|_{x=1}=0.\\]\n\nApplying (x d/dx)^6 to the series (*) with m=11 and then setting x=1 gives\n\n(1)  \\displaystyle \\sum_{k=0}^{4095} (-1)^{d_2(k)} k^{6}=0.\n\n------------------------------------------------------------------\n2.  A shorter product and a crucial sign.\n------------------------------------------------------------------\nKeep only the first seven factors of F_{11}:\n\n\\[F_{6}(x)=\\prod_{i=0}^{6}(1-x^{2^{i}})=(1-x)(1-x^{2})\\cdots(1-x^{64}).\\]\n\nAgain F_{6}(1)=0 and F_{6} has 7>6 factors, so\n\n\\[\\bigl(x\\,\\tfrac{d}{dx}\\bigr)^{6}F_{6}(x)\\Big|_{x=1}=0.\\]\n\nNow shift the polynomial by 3968 = 111110000000_2 and set\n\n\\[G(x)=x^{3968} F_{6}(x).\\]\n\nBecause 3968 has exactly five 1-bits, writing a general term of F_{6}(x) as (-1)^{d_2(r)}x^{r} (0\\le r\\le 127) gives\n\n\\[\nG(x)=x^{3968}\\sum_{r=0}^{127}(-1)^{d_2(r)}x^{r}\n     =\\sum_{r=0}^{127} (-1)^{d_2(r)} x^{r+3968}\n     =-\\sum_{k=3968}^{4095} (-1)^{d_2(k)} x^{k}.\n\\]\n\n(The extra minus sign comes from (-1)^{d_2(3968)} = (-1)^5 = -1.)  Applying (x d/dx)^6 to G and evaluating at x=1 therefore yields\n\n\\[-\\sum_{k=3968}^{4095} (-1)^{d_2(k)} k^{6}=0\\qquad\\Longrightarrow\\qquad\n(2)  \\sum_{k=3968}^{4095} (-1)^{d_2(k)} k^{6}=0.\n\\]\n\n------------------------------------------------------------------\n3.  Isolating the desired range.\n------------------------------------------------------------------\nAdding (1) and (2) gives\n\n\\[\\sum_{k=0}^{3967} (-1)^{d_2(k)} k^{6}=0.\\]\n\nHence\n\n\\[S=\\sum_{k=1}^{3977} (-1)^{d_2(k)} k^{6}=\\sum_{k=3968}^{3977} (-1)^{d_2(k)} k^{6}.\\]\n\n------------------------------------------------------------------\n4.  Reducing the remaining ten terms.\n------------------------------------------------------------------\nWorking modulo 3977 we may replace k by k-3977, whose absolute value is \\le9.  The pertinent data are\n\n\\[\n\\begin{array}{c|cccccccccc}\n k &3968&3969&3970&3971&3972&3973&3974&3975&3976&3977\\\\\\hline\n k-3977 &-9&-8&-7&-6&-5&-4&-3&-2&-1&0\\\\\n (-1)^{d_2(k)} &-1&+1&+1&-1&+1&-1&-1&+1&+1&-1\\end{array}\n\\]\n(The signs are read directly from the binary representations of the ten consecutive numbers.)\n\nCompute a^{6}\\! \\pmod{3977} for a = -9, -8, \\ldots , 0:\n\n\\[\n\\begin{array}{c|cccccccccc}\na &-9&-8&-7&-6&-5&-4&-3&-2&-1&0\\\\\\hline\n a^{6}\\!\\pmod{3977} &2500&3639&2316&2909&3694&119&729&64&1&0\\end{array}\n\\]\n\nApplying the appropriate signs and adding gives\n\n\\[\nS\\equiv -2500+3639+2316-2909+3694-119-729+64+1\\equiv 3457\\pmod{3977}.\n\\]\n\n------------------------------------------------------------------\nAnswer.\n------------------------------------------------------------------\n\\[\\boxed{S\\equiv 3457\\pmod{3977}}.\\]",
+      "_meta": {
+        "core_steps": [
+          "Encode (−1)^{d(k)} as coefficients of the generating function ∏_{i≥0}(1−x^{2^{i}}).",
+          "Pick a power-of-two length 2^t exceeding the summation limit and show, via taking ‘power’ many derivatives at x=1, that the k^power-weighted sum over the full block [0,2^t−1] is 0.",
+          "Use a suitably shifted and truncated version of the product to prove a second 0-sum over the block that starts a little before the limit, so that only a short tail remains.",
+          "Express the desired S as the sum over that small tail and evaluate it term-by-term.",
+          "Reduce the numerical tail to obtain the answer modulo the given modulus."
+        ],
+        "mutable_slots": {
+          "N": {
+            "description": "Upper limit of the original sum (and modulus used at the end).  Must be smaller than 2^t but otherwise arbitrary.",
+            "original": 2020
+          },
+          "power": {
+            "description": "Exponent on k in the summand; determines how many derivatives are taken.",
+            "original": 3
+          },
+          "big_power_of_two": {
+            "description": "Largest power of two used in the full generating-function product; 2^t with 2^t > N.",
+            "original": 1024
+          },
+          "max_index": {
+            "description": "Greatest index in the full block, equal to 2·big_power_of_two − 1.",
+            "original": 2047
+          },
+          "small_power_of_two": {
+            "description": "Largest power of two kept in the truncated product used for the shifted block; choose so that (#factors) > power.",
+            "original": 16
+          },
+          "shift_start": {
+            "description": "First index of the residual tail; chosen so that [shift_start, max_index] is the zero-sum block coming from the shifted product.",
+            "original": 2016
+          },
+          "tail_count": {
+            "description": "Number of terms actually computed by hand, N − shift_start + 1.",
+            "original": 5
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

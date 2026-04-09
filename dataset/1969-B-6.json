@@ -1,0 +1,84 @@
+{
+  "index": "1969-B-6",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "B-6. Let \\( A \\) and \\( B \\) be matrices of size \\( 3 \\times 2 \\) and \\( 2 \\times 3 \\) respectively. Suppose that their product in the order \\( A B \\) is given by\n\\[\nA B=\\left[\\begin{array}{rrr}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{array}\\right]\n\\]\n\nShow that the product \\( B A \\) is given by\n\\[\nB A=\\left[\\begin{array}{ll}\n9 & 0 \\\\\n0 & 9\n\\end{array}\\right]\n\\]",
+  "solution": "B-6 Observe that \\( A B A B=9 A B . A B \\) is of rank two so \\( A \\) is onto and \\( B \\) is one-to-one. Hence there exist matrices \\( A^{\\prime} \\) and \\( B^{\\prime} \\) such that \\( A^{\\prime} A=I=B B^{\\prime} \\), where \\( I \\) is the \\( 2 \\times 2 \\) identity matrix. Then \\( A^{\\prime}(A B A B) B^{\\prime}=B A=9 I \\).\n\nAlternate Solution: \\( (A B)^{2}=9 A B \\). The rank of \\( B A \\) is greater than or equal to the rank of \\( A(B A) B \\), which is 2. Thus \\( B A \\) is nonsingular. But \\( (B A)^{8} \\) \\( =B(A B)^{2} A=B(9 A B) A=9(B A)^{2} \\) and the result follows since \\( B A \\) has an inverse.",
+  "vars": [
+    "A",
+    "B"
+  ],
+  "params": [
+    "I"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "matrixa",
+        "B": "matrixb",
+        "I": "identity"
+      },
+      "question": "B-6. Let \\( matrixa \\) and \\( matrixb \\) be matrices of size \\( 3 \\times 2 \\) and \\( 2 \\times 3 \\) respectively. Suppose that their product in the order \\( matrixa matrixb \\) is given by\n\\[\nmatrixa matrixb=\\left[\\begin{array}{rrr}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{array}\\right]\n\\]\n\nShow that the product \\( matrixb matrixa \\) is given by\n\\[\nmatrixb matrixa=\\left[\\begin{array}{ll}\n9 & 0 \\\\\n0 & 9\n\\end{array}\\right]\n\\]\n",
+      "solution": "B-6 Observe that \\( matrixa matrixb matrixa matrixb=9 matrixa matrixb . matrixa matrixb \\) is of rank two so \\( matrixa \\) is onto and \\( matrixb \\) is one-to-one. Hence there exist matrices \\( matrixa^{\\prime} \\) and \\( matrixb^{\\prime} \\) such that \\( matrixa^{\\prime} matrixa=identity=matrixb matrixb^{\\prime} \\), where \\( identity \\) is the \\( 2 \\times 2 \\) identity matrix. Then \\( matrixa^{\\prime}(matrixa matrixb matrixa matrixb) matrixb^{\\prime}=matrixb matrixa=9 identity \\).\n\nAlternate Solution: \\( (matrixa matrixb)^{2}=9 matrixa matrixb \\). The rank of \\( matrixb matrixa \\) is greater than or equal to the rank of \\( matrixa(matrixb matrixa) matrixb \\), which is 2. Thus \\( matrixb matrixa \\) is nonsingular. But \\( (matrixb matrixa)^{8} \\) \\( =matrixb(matrixa matrixb)^{2} matrixa=matrixb(9 matrixa matrixb) matrixa=9(matrixb matrixa)^{2} \\) and the result follows since \\( matrixb matrixa \\) has an inverse."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "butterfly",
+        "B": "giraffes",
+        "I": "chocolate"
+      },
+      "question": "B-6. Let \\( butterfly \\) and \\( giraffes \\) be matrices of size \\( 3 \\times 2 \\) and \\( 2 \\times 3 \\) respectively. Suppose that their product in the order \\( butterfly giraffes \\) is given by\n\\[\nbutterfly giraffes=\\left[\\begin{array}{rrr}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{array}\\right]\n\\]\n\nShow that the product \\( giraffes butterfly \\) is given by\n\\[\ngiraffes butterfly=\\left[\\begin{array}{ll}\n9 & 0 \\\\\n0 & 9\n\\end{array}\\right]\n\\]",
+      "solution": "B-6 Observe that \\( butterfly giraffes butterfly giraffes=9 butterfly giraffes . butterfly giraffes \\) is of rank two so \\( butterfly \\) is onto and \\( giraffes \\) is one-to-one. Hence there exist matrices \\( butterfly^{\\prime} \\) and \\( giraffes^{\\prime} \\) such that \\( butterfly^{\\prime} butterfly=chocolate=giraffes giraffes^{\\prime} \\), where \\( chocolate \\) is the \\( 2 \\times 2 \\) identity matrix. Then \\( butterfly^{\\prime}(butterfly giraffes butterfly giraffes) giraffes^{\\prime}=giraffes butterfly=9 chocolate \\).\n\nAlternate Solution: \\( (butterfly giraffes)^{2}=9 butterfly giraffes \\). The rank of \\( giraffes butterfly \\) is greater than or equal to the rank of \\( butterfly(giraffes butterfly) giraffes \\), which is 2. Thus \\( giraffes butterfly \\) is nonsingular. But \\( (giraffes butterfly)^{8} \\) \\( =giraffes(butterfly giraffes)^{2} butterfly=giraffes(9 butterfly giraffes) butterfly=9(giraffes butterfly)^{2} \\) and the result follows since \\( giraffes butterfly \\) has an inverse."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "terminal",
+        "B": "voidness",
+        "I": "nullmatrix"
+      },
+      "question": "B-6. Let \\( terminal \\) and \\( voidness \\) be matrices of size \\( 3 \\times 2 \\) and \\( 2 \\times 3 \\) respectively. Suppose that their product in the order \\( terminal\\ voidness \\) is given by\n\\[\nterminal\\ voidness=\\left[\\begin{array}{rrr}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{array}\\right]\n\\]\n\nShow that the product \\( voidness\\ terminal \\) is given by\n\\[\nvoidness\\ terminal=\\left[\\begin{array}{ll}\n9 & 0 \\\\\n0 & 9\n\\end{array}\\right]\n\\]",
+      "solution": "B-6 Observe that \\( terminal\\ voidness\\ terminal\\ voidness=9\\ terminal\\ voidness .\\ terminal\\ voidness \\) is of rank two so \\( terminal \\) is onto and \\( voidness \\) is one-to-one. Hence there exist matrices \\( terminal^{\\prime} \\) and \\( voidness^{\\prime} \\) such that \\( terminal^{\\prime} terminal=nullmatrix=voidness\\ voidness^{\\prime} \\), where \\( nullmatrix \\) is the \\( 2 \\times 2 \\) identity matrix. Then \\( terminal^{\\prime}(terminal\\ voidness\\ terminal\\ voidness) voidness^{\\prime}=voidness\\ terminal=9\\ nullmatrix \\).\n\nAlternate Solution: \\( (terminal\\ voidness)^{2}=9\\ terminal\\ voidness \\). The rank of \\( voidness\\ terminal \\) is greater than or equal to the rank of \\( terminal(voidness\\ terminal) voidness \\), which is 2. Thus \\( voidness\\ terminal \\) is nonsingular. But \\( (voidness\\ terminal)^{8} \\) \\( =voidness(terminal\\ voidness)^{2} terminal=voidness(9\\ terminal\\ voidness) terminal=9(voidness\\ terminal)^{2} \\) and the result follows since \\( voidness\\ terminal \\) has an inverse."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "I": "mnbvcxza"
+      },
+      "question": "B-6. Let \\( qzxwvtnp \\) and \\( hjgrksla \\) be matrices of size \\( 3 \\times 2 \\) and \\( 2 \\times 3 \\) respectively. Suppose that their product in the order \\( qzxwvtnp hjgrksla \\) is given by\n\\[\nqzxwvtnp hjgrksla=\\left[\\begin{array}{rrr}\n8 & 2 & -2 \\\\\n2 & 5 & 4 \\\\\n-2 & 4 & 5\n\\end{array}\\right]\n\\]\n\nShow that the product \\( hjgrksla qzxwvtnp \\) is given by\n\\[\nhjgrksla qzxwvtnp=\\left[\\begin{array}{ll}\n9 & 0 \\\\\n0 & 9\n\\end{array}\\right]\n\\]",
+      "solution": "B-6 Observe that \\( qzxwvtnp hjgrksla qzxwvtnp hjgrksla=9 qzxwvtnp hjgrksla . qzxwvtnp hjgrksla \\) is of rank two so \\( qzxwvtnp \\) is onto and \\( hjgrksla \\) is one-to-one. Hence there exist matrices \\( qzxwvtnp^{\\prime} \\) and \\( hjgrksla^{\\prime} \\) such that \\( qzxwvtnp^{\\prime} qzxwvtnp=mnbvcxza=hjgrksla hjgrksla^{\\prime} \\), where \\( mnbvcxza \\) is the \\( 2 \\times 2 \\) identity matrix. Then \\( qzxwvtnp^{\\prime}(qzxwvtnp hjgrksla qzxwvtnp hjgrksla) hjgrksla^{\\prime}=hjgrksla qzxwvtnp=9 mnbvcxza \\).\n\nAlternate Solution: \\( (qzxwvtnp hjgrksla)^{2}=9 qzxwvtnp hjgrksla \\). The rank of \\( hjgrksla qzxwvtnp \\) is greater than or equal to the rank of \\( qzxwvtnp(hjgrksla qzxwvtnp) hjgrksla \\), which is 2. Thus \\( hjgrksla qzxwvtnp \\) is nonsingular. But \\( (hjgrksla qzxwvtnp)^{8} \\) \\( =hjgrksla(qzxwvtnp hjgrksla)^{2} qzxwvtnp=hjgrksla(9 qzxwvtnp hjgrksla) qzxwvtnp=9(hjgrksla qzxwvtnp)^{2} \\) and the result follows since \\( hjgrksla qzxwvtnp \\) has an inverse."
+    },
+    "kernel_variant": {
+      "question": "Let  A  be a  4\\times 3  matrix and  B  a  3\\times 4  matrix.  Suppose that their product in the order  AB  is\n\\[\nAB = \\begin{bmatrix}\n0 & 0 & 0 & 0\\\\[2pt]\n0 & 5 & 0 & 0\\\\[2pt]\n0 & 0 & 5 & 0\\\\[2pt]\n0 & 0 & 0 & 5\n\\end{bmatrix} .\n\\]\nShow that the reverse-order product is\n\\[\nBA = \\begin{bmatrix}\n5 & 0 & 0\\\\[2pt]\n0 & 5 & 0\\\\[2pt]\n0 & 0 & 5\n\\end{bmatrix} (= 5 I_{3}).",
+      "solution": "Set\n\\[\nM := AB = 5\\,\\operatorname{diag}(0,1,1,1).\n\\]\n--------------------------------------------------------------------\n1.  A quadratic relation for  AB.\nBecause \\(\\operatorname{diag}(0,1,1,1)\\) is idempotent we have\n\\[\nM^2 = \\bigl(5\\,\\operatorname{diag}(0,1,1,1)\\bigr)^2 = 25\\,\\operatorname{diag}(0,1,1,1)=5M.\n\\]\nHence\n\\[\n(AB)^2 = 5\\,AB. \\tag{1}\n\\]\n--------------------------------------------------------------------\n2.  Ranks of  A  and  B.\nThe matrix  \\(AB\\) is diagonal with three non-zero diagonal entries, so\n\\[\\operatorname{rank}(AB)=3.\\]\nFor any two matrices one has\n\\[\\operatorname{rank}(AB)\\le \\min\\{\\operatorname{rank}(A),\\operatorname{rank}(B)\\}.\\]\nBecause  \\(A\\) has only three columns and  \\(B\\) has only three rows,\n\\[\\operatorname{rank}(A)\\le3,\\qquad\\operatorname{rank}(B)\\le3.\\]\nConsequently\n\\[\\operatorname{rank}(A)=\\operatorname{rank}(B)=3.\\]\nThus\n* A has full column rank, so there exists a left inverse  \\(A'\\,(3\\times4)\\) with  \\(A'A=I_3.\\)\n* B has full row rank, so there exists a right inverse  \\(B'\\,(4\\times3)\\) with  \\(BB'=I_3.\\)\n--------------------------------------------------------------------\n3.  Extracting \\(BA\\) from the identity (1).\nMultiply (1) on the left by  \\(A'\\)  and on the right by  \\(B'\\):\n\\[\nA'(ABAB)B' = A'(5AB)B'.\n\\]\nInsert the parentheses so that the factors  \\(A\\)  and  \\(B\\)  touch their inverses:\n\\[\nA'\\bigl(A\\,BA\\,B\\bigr)B' = 5\\,A'AB B'.\n\\]\nSince  \\(A'A = I_3\\)  and  \\(BB' = I_3\\), this simplifies to\n\\[\n(I_3)\\,BA\\,(I_3) = 5\\,(I_3) = 5I_3,\n\\]\nthat is,\n\\[\nBA = 5I_3.\n\\]\n--------------------------------------------------------------------\n4.  Explicit form of  BA.\nTherefore\n\\[\nBA = \\begin{bmatrix}5&0&0\\\\0&5&0\\\\0&0&5\\end{bmatrix}.\n\\]\nThis is exactly what had to be shown.",
+      "_meta": {
+        "core_steps": [
+          "Compute (AB)^2 and verify it equals k·AB for some non-zero scalar k (here k = 9).",
+          "Since rank(AB)=rank((AB)^2)=m, deduce that A has full column rank and B has full row rank, so matrices A′ (left inverse of A) and B′ (right inverse of B) exist with A′A = I_m and BB′ = I_m.",
+          "Sandwich the relation ABAB = k·AB between A′ and B′ to isolate BA, yielding BA = k·I_m (here BA = 9·I_2)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Sizes of A and B; currently A is n×m and B is m×n with n>m (in the problem n=3, m=2).",
+            "original": "3×2 and 2×3"
+          },
+          "slot2": {
+            "description": "Concrete numerical entries of the given square matrix AB, provided they make (AB)^2 a non-zero scalar multiple of AB and keep rank = m.",
+            "original": "[[8,2,-2],[2,5,4],[-2,4,5]]"
+          },
+          "slot3": {
+            "description": "The scalar k for which (AB)^2 = k·AB and ultimately BA = k·I_m.",
+            "original": "9"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

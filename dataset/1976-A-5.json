@@ -1,0 +1,166 @@
+{
+  "index": "1976-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "A-5. In the \\( (x, y) \\)-plane, if \\( R \\) is the set of points inside and on a convex polygon, let \\( D(x, y) \\) be the distance from \\( (x, y) \\) to the nearest point of \\( R \\). (a) Show that there exist constants \\( a, b \\), and \\( c \\), independent of \\( R \\), such that\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} e^{-D(x, y)} d x d y=a+b L+c A\n\\]\nwhere \\( L \\) is the perimeter of \\( R \\) and \\( A \\) is the area of \\( R \\). (b) Find the values of \\( a, b \\), and \\( c \\).",
+  "solution": "A-5.\nIt is shown below that \\( a=2 \\pi, b=1 \\), and \\( c=1 \\). We use \\( I[S] \\) to denote the integral of \\( e^{-D(x, y)} \\) over a region \\( S \\). Since \\( D(x, y)=0 \\) on \\( R, I[R]=A \\). Now let \\( \\sigma \\) be a side of \\( R \\). \\( s \\) be the length of \\( \\sigma \\), and \\( S(\\sigma) \\) be the half strip consisting of the points of the plane having a point on \\( \\sigma \\) as the nearest point of \\( R \\). Changing to ( \\( u, v \\) )-coordinates with \\( u \\) measured parallel to \\( \\sigma \\) and \\( v \\) measured perpendicular to \\( \\sigma \\), one finds that \\( I[S(\\sigma)]=\\int_{0}^{3} \\int_{0}^{x} e^{-v} d v d u=s \\). The sum \\( \\Sigma_{1} \\) of these integrals for all the sides of \\( R \\) is \\( L \\).\n\nIf \\( v \\) is a vertex of \\( R \\), the points with \\( v \\) as the nearest point of \\( R \\) lie in the inside \\( T(v) \\) of an angle bounded by the rays from \\( v \\) perpendicular to the edges meeting at \\( v \\); let \\( \\alpha=\\alpha(v) \\) be the measure of this angle. Using polar coordinates. one has\n\\[\nI[T(v)]=\\int_{0}^{\\alpha} \\int_{0}^{\\infty} r e^{-r} d r d \\theta=\\alpha\n\\]\n\nThe sum \\( \\Sigma_{2} \\) of the \\( I[T(v)] \\) for all vertices \\( v \\) of \\( R \\) is \\( 2 \\pi \\). Now the original double integral equals \\( \\Sigma_{2}+\\Sigma_{1}+A=2 \\pi+L+A \\). Hence \\( a=2 \\pi \\) and \\( b=1=c \\).",
+  "vars": [
+    "x",
+    "y",
+    "R",
+    "D",
+    "u",
+    "v",
+    "r",
+    "s",
+    "S",
+    "T",
+    "\\\\sigma",
+    "\\\\alpha",
+    "\\\\theta",
+    "\\\\Sigma_1",
+    "\\\\Sigma_2"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "L",
+    "A"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xcoord",
+        "y": "ycoord",
+        "R": "region",
+        "D": "distfn",
+        "u": "ucoord",
+        "v": "vcoord",
+        "r": "radial",
+        "s": "sidelng",
+        "S": "subreg",
+        "T": "anglereg",
+        "\\sigma": "edgeseg",
+        "\\alpha": "angleval",
+        "\\theta": "thetavar",
+        "\\Sigma_1": "sumone",
+        "\\Sigma_2": "sumtwo",
+        "a": "consta",
+        "b": "constb",
+        "c": "constc",
+        "L": "perimtr",
+        "A": "areaamt"
+      },
+      "question": "A-5. In the \\( (xcoord, ycoord) \\)-plane, if \\( region \\) is the set of points inside and on a convex polygon, let \\( distfn(xcoord, ycoord) \\) be the distance from \\( (xcoord, ycoord) \\) to the nearest point of \\( region \\). (a) Show that there exist constants \\( consta, constb \\), and \\( constc \\), independent of \\( region \\), such that\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} e^{-distfn(xcoord, ycoord)} d xcoord d ycoord=consta+constb \\, perimtr+constc \\, areaamt\n\\]\nwhere \\( perimtr \\) is the perimeter of \\( region \\) and \\( areaamt \\) is the area of \\( region \\). (b) Find the values of \\( consta, constb \\), and \\( constc \\).",
+      "solution": "A-5.\nIt is shown below that \\( consta=2 \\pi, \\, constb=1 \\), and \\( constc=1 \\). We use \\( I[subreg] \\) to denote the integral of \\( e^{-distfn(xcoord, ycoord)} \\) over a region \\( subreg \\). Since \\( distfn(xcoord, ycoord)=0 \\) on \\( region,\\, I[region]=areaamt \\). Now let \\( edgeseg \\) be a side of \\( region \\), \\( sidelng \\) be the length of \\( edgeseg \\), and \\( subreg(edgeseg) \\) be the half strip consisting of the points of the plane having a point on \\( edgeseg \\) as the nearest point of \\( region \\). Changing to \\( (ucoord, vcoord) \\)-coordinates with \\( ucoord \\) measured parallel to \\( edgeseg \\) and \\( vcoord \\) measured perpendicular to \\( edgeseg \\), one finds that\n\\[\nI[subreg(edgeseg)]=\\int_{0}^{3} \\int_{0}^{xcoord} e^{-vcoord} d vcoord \\, d ucoord=sidelng .\n\\]\nThe sum \\( sumone \\) of these integrals for all the sides of \\( region \\) is \\( perimtr \\).\n\nIf \\( vcoord \\) is a vertex of \\( region \\), the points with \\( vcoord \\) as the nearest point of \\( region \\) lie in the inside \\( anglereg(vcoord) \\) of an angle bounded by the rays from \\( vcoord \\) perpendicular to the edges meeting at \\( vcoord \\); let \\( angleval=angleval(vcoord) \\) be the measure of this angle. Using polar coordinates, one has\n\\[\nI[anglereg(vcoord)]=\\int_{0}^{angleval} \\int_{0}^{\\infty} radial e^{-radial} d radial \\, d thetavar=angleval .\n\\]\n\nThe sum \\( sumtwo \\) of the \\( I[anglereg(vcoord)] \\) for all vertices \\( vcoord \\) of \\( region \\) is \\( 2 \\pi \\). Now the original double integral equals \\( sumtwo+sumone+areaamt=2 \\pi+perimtr+areaamt \\). Hence \\( consta=2 \\pi \\) and \\( constb=1=constc \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "strawberry",
+        "y": "pineapple",
+        "R": "rainforest",
+        "D": "chandelier",
+        "u": "waterslide",
+        "v": "marshmallow",
+        "r": "blackboard",
+        "s": "teacupset",
+        "S": "bookshelf",
+        "T": "toothpaste",
+        "\\sigma": "hummingbird",
+        "\\alpha": "cheeseball",
+        "\\theta": "vagabondage",
+        "\\Sigma_1": "grandmother",
+        "\\Sigma_2": "spaceship",
+        "a": "turnipseed",
+        "b": "skylighter",
+        "c": "snowblower",
+        "L": "cloudburst",
+        "A": "driftwood"
+      },
+      "question": "A-5. In the \\( (strawberry, pineapple) \\)-plane, if \\( rainforest \\) is the set of points inside and on a convex polygon, let \\( chandelier(strawberry, pineapple) \\) be the distance from \\( (strawberry, pineapple) \\) to the nearest point of \\( rainforest \\). (a) Show that there exist constants \\( turnipseed, skylighter \\), and \\( snowblower \\), independent of \\( rainforest \\), such that\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} e^{-chandelier(strawberry, pineapple)} d strawberry d pineapple=turnipseed+skylighter cloudburst+snowblower driftwood\n\\]\nwhere \\( cloudburst \\) is the perimeter of \\( rainforest \\) and \\( driftwood \\) is the area of \\( rainforest \\). (b) Find the values of \\( turnipseed, skylighter \\), and \\( snowblower \\).",
+      "solution": "A-5.\nIt is shown below that \\( turnipseed=2 \\pi, skylighter=1 \\), and \\( snowblower=1 \\). We use \\( I[bookshelf] \\) to denote the integral of \\( e^{-chandelier(strawberry, pineapple)} \\) over a region \\( bookshelf \\). Since \\( chandelier(strawberry, pineapple)=0 \\) on \\( rainforest, I[rainforest]=driftwood \\). Now let \\( hummingbird \\) be a side of \\( rainforest \\). \\( teacupset \\) be the length of \\( hummingbird \\), and \\( bookshelf(hummingbird) \\) be the half strip consisting of the points of the plane having a point on \\( hummingbird \\) as the nearest point of \\( rainforest \\). Changing to ( \\( waterslide, marshmallow \\) )-coordinates with \\( waterslide \\) measured parallel to \\( hummingbird \\) and \\( marshmallow \\) measured perpendicular to \\( hummingbird \\), one finds that \\( I[bookshelf(hummingbird)]=\\int_{0}^{3} \\int_{0}^{strawberry} e^{-marshmallow} d marshmallow d waterslide=teacupset \\). The sum \\( grandmother \\) of these integrals for all the sides of \\( rainforest \\) is \\( cloudburst \\).\n\nIf \\( marshmallow \\) is a vertex of \\( rainforest \\), the points with \\( marshmallow \\) as the nearest point of \\( rainforest \\) lie in the inside \\( toothpaste(marshmallow) \\) of an angle bounded by the rays from \\( marshmallow \\) perpendicular to the edges meeting at \\( marshmallow \\); let \\( cheeseball=cheeseball(marshmallow) \\) be the measure of this angle. Using polar coordinates. one has\n\\[\nI[toothpaste(marshmallow)]=\\int_{0}^{cheeseball} \\int_{0}^{\\infty} blackboard e^{-blackboard} d blackboard d vagabondage=cheeseball\n\\]\n\nThe sum \\( spaceship \\) of the \\( I[toothpaste(marshmallow)] \\) for all vertices \\( marshmallow \\) of \\( rainforest \\) is \\( 2 \\pi \\). Now the original double integral equals \\( spaceship+grandmother+driftwood=2 \\pi+cloudburst+driftwood \\). Hence \\( turnipseed=2 \\pi \\) and \\( skylighter=1=snowblower \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "nonvariable",
+        "y": "stationval",
+        "R": "emptyregion",
+        "D": "closeness",
+        "u": "skewline",
+        "v": "parallel",
+        "r": "anglemeas",
+        "s": "breadthh",
+        "S": "fullplane",
+        "T": "straightln",
+        "\\sigma": "centroidl",
+        "\\alpha": "linearity",
+        "\\theta": "radiusval",
+        "\\Sigma_1": "productss",
+        "\\Sigma_2": "producttt",
+        "a": "variableaa",
+        "b": "variablebb",
+        "c": "variablecc",
+        "L": "diameterzz",
+        "A": "perimeter"
+      },
+      "question": "A-5. In the \\( (nonvariable, stationval) \\)-plane, if \\( emptyregion \\) is the set of points inside and on a convex polygon, let \\( closeness(nonvariable, stationval) \\) be the distance from \\( (nonvariable, stationval) \\) to the nearest point of \\( emptyregion \\). (a) Show that there exist constants \\( variableaa, variablebb \\), and \\( variablecc \\), independent of \\( emptyregion \\), such that\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} e^{-closeness(nonvariable, stationval)} d nonvariable d stationval = variableaa + variablebb\\, diameterzz + variablecc\\, perimeter\n\\]\nwhere \\( diameterzz \\) is the perimeter of \\( emptyregion \\) and \\( perimeter \\) is the area of \\( emptyregion \\). (b) Find the values of \\( variableaa, variablebb \\), and \\( variablecc \\).",
+      "solution": "A-5.\nIt is shown below that \\( variableaa = 2 \\pi,\\; variablebb = 1, \\) and \\( variablecc = 1 \\). We use \\( I[fullplane] \\) to denote the integral of \\( e^{-closeness(nonvariable, stationval)} \\) over a region \\( fullplane \\). Since \\( closeness(nonvariable, stationval)=0 \\) on \\( emptyregion,\\; I[emptyregion]=perimeter \\).\n\nNow let \\( centroidl \\) be a side of \\( emptyregion \\), \\( breadthh \\) be the length of \\( centroidl \\), and \\( fullplane(centroidl) \\) be the half strip consisting of the points of the plane having a point on \\( centroidl \\) as the nearest point of \\( emptyregion \\). Changing to ( \\( skewline, parallel \\) )-coordinates with \\( skewline \\) measured parallel to \\( centroidl \\) and \\( parallel \\) measured perpendicular to \\( centroidl \\), one finds that\n\\[\nI[fullplane(centroidl)] = \\int_{0}^{3} \\int_{0}^{nonvariable} e^{-parallel}\\, d parallel\\, d skewline = breadthh .\n\\]\nThe sum \\( productss \\) of these integrals for all the sides of \\( emptyregion \\) is \\( diameterzz \\).\n\nIf \\( parallel \\) is a vertex of \\( emptyregion \\), the points with \\( parallel \\) as the nearest point of \\( emptyregion \\) lie in the inside \\( straightln(parallel) \\) of an angle bounded by the rays from \\( parallel \\) perpendicular to the edges meeting at \\( parallel \\); let \\( linearity = linearity(parallel) \\) be the measure of this angle. Using polar coordinates, one has\n\\[\nI[straightln(parallel)] = \\int_{0}^{linearity} \\int_{0}^{\\infty} anglemeas e^{-anglemeas}\\, d anglemeas\\, d radiusval = linearity .\n\\]\nThe sum \\( producttt \\) of the \\( I[straightln(parallel)] \\) for all vertices \\( parallel \\) of \\( emptyregion \\) is \\( 2 \\pi \\). Now the original double integral equals\n\\[\nproducttt + productss + perimeter = 2 \\pi + diameterzz + perimeter .\n\\]\nHence \\( variableaa = 2 \\pi \\) and \\( variablebb = 1 = variablecc \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zoltkbni",
+        "y": "gwarmpld",
+        "R": "jadewqsp",
+        "D": "rufpankc",
+        "u": "vistrone",
+        "v": "klemzdaq",
+        "r": "hoskivun",
+        "s": "brawtely",
+        "S": "qernopad",
+        "T": "mielderuq",
+        "\\sigma": "ozaplynx",
+        "\\alpha": "qevirsho",
+        "\\theta": "nammorgu",
+        "\\Sigma_1": "pavztion",
+        "\\Sigma_2": "lugripek",
+        "a": "zamptylo",
+        "b": "gryvenal",
+        "c": "honsicku",
+        "L": "flurnsco",
+        "A": "dromlkiv"
+      },
+      "question": "A-5. In the \\( (zoltkbni, gwarmpld) \\)-plane, if \\( jadewqsp \\) is the set of points inside and on a convex polygon, let \\( rufpankc(zoltkbni, gwarmpld) \\) be the distance from \\( (zoltkbni, gwarmpld) \\) to the nearest point of \\( jadewqsp \\). (a) Show that there exist constants \\( zamptylo, gryvenal \\), and \\( honsicku \\), independent of \\( jadewqsp \\), such that\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} e^{-rufpankc(zoltkbni, gwarmpld)} d zoltkbni d gwarmpld = zamptylo + gryvenal flurnsco + honsicku dromlkiv\n\\]\nwhere \\( flurnsco \\) is the perimeter of \\( jadewqsp \\) and \\( dromlkiv \\) is the area of \\( jadewqsp \\). (b) Find the values of \\( zamptylo, gryvenal \\), and \\( honsicku \\).",
+      "solution": "A-5.\nIt is shown below that \\( zamptylo = 2 \\pi, gryvenal = 1 \\), and \\( honsicku = 1 \\). We use \\( I[qernopad] \\) to denote the integral of \\( e^{-rufpankc(zoltkbni, gwarmpld)} \\) over a region \\( qernopad \\). Since \\( rufpankc(zoltkbni, gwarmpld) = 0 \\) on \\( jadewqsp, I[jadewqsp] = dromlkiv \\). Now let \\( ozaplynx \\) be a side of \\( jadewqsp \\). \\( brawtely \\) be the length of \\( ozaplynx \\), and \\( qernopad(ozaplynx) \\) be the half strip consisting of the points of the plane having a point on \\( ozaplynx \\) as the nearest point of \\( jadewqsp \\). Changing to ( \\( vistrone, klemzdaq \\) )-coordinates with \\( vistrone \\) measured parallel to \\( ozaplynx \\) and \\( klemzdaq \\) measured perpendicular to \\( ozaplynx \\), one finds that \\( I[qernopad(ozaplynx)] = \\int_{0}^{3} \\int_{0}^{zoltkbni} e^{-klemzdaq} d klemzdaq d vistrone = brawtely \\). The sum \\( pavztion \\) of these integrals for all the sides of \\( jadewqsp \\) is \\( flurnsco \\).\n\nIf \\( klemzdaq \\) is a vertex of \\( jadewqsp \\), the points with \\( klemzdaq \\) as the nearest point of \\( jadewqsp \\) lie in the inside \\( mielderuq(klemzdaq) \\) of an angle bounded by the rays from \\( klemzdaq \\) perpendicular to the edges meeting at \\( klemzdaq \\); let \\( qevirsho = qevirsho(klemzdaq) \\) be the measure of this angle. Using polar coordinates, one has\n\\[\nI[mielderuq(klemzdaq)] = \\int_{0}^{qevirsho} \\int_{0}^{\\infty} hoskivun e^{-hoskivun} d hoskivun d nammorgu = qevirsho\n\\]\n\nThe sum \\( lugripek \\) of the \\( I[mielderuq(klemzdaq)] \\) for all vertices \\( klemzdaq \\) of \\( jadewqsp \\) is \\( 2 \\pi \\). Now the original double integral equals \\( lugripek + pavztion + dromlkiv = 2 \\pi + flurnsco + dromlkiv \\). Hence \\( zamptylo = 2 \\pi \\) and \\( gryvenal = 1 = honsicku \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $P$ be a bounded convex polyhedron (taken together with its interior) in $\\mathbb R^{3}$ and, for $X\\in\\mathbb R^{3}$, put  \n\\[\n   D(X)=\\operatorname{dist}\\bigl(X,P\\bigr).\n\\]\n\nDefine the geometric functionals  \n\\[\n   V=\\operatorname{vol} P,\\qquad \n   S=\\operatorname{area}\\,\\partial P,\\qquad \n   H=\\sum_{e}\\alpha_{e}\\lvert e\\rvert ,\n\\]\nwhere the sum ranges over all edges $e$ of $P$, $\\lvert e\\rvert$ denotes the length of $e$, and  \n\\[\n   \\alpha_{e}= \\pi-\\varphi_{e}\\in(0,\\pi)\n\\]\nis the exterior dihedral angle between the two faces meeting at $e$.  (Thus $H$ is the classical ``total mean curvature'' in the sense of Steiner/Weyl.)\n\nConsider the integral  \n\\[\n   I(P)=\\iiint_{\\mathbb R^{3}}\\bigl(1+D(X)+\\tfrac12D(X)^{2}\\bigr)\\,e^{-D(X)}\\,dX.\\tag{$\\star$}\n\\]\n\na)  Show that there exist universal constants $a,b,c,d$ (independent of the particular polyhedron $P$) such that  \n\\[\n   I(P)=a+bS+cH+dV.\\tag{1}\n\\]\n\nb)  Determine the exact values of $a,b,c,d$.",
+      "solution": "Step 0.  Stratification of the distance map  \nFor every $X\\in\\mathbb R^{3}\\setminus P$ the nearest point on $P$ is unique and lies either  \n\n$\\bullet$ in the relative interior of a face,  \n$\\bullet$ in the relative interior of an edge, or  \n$\\bullet$ at a vertex.\n\nHence  \n\\[\n   \\mathbb R^{3}=P\\;\\dot\\cup\\!\\!\\!\\bigcup_{\\text{faces }F}\\!\\!\\!\\! \\Omega_{F}\\;\\dot\\cup\\!\\!\\!\\bigcup_{\\text{edges }e}\\!\\!\\!\\! \\Omega_{e}\\;\\dot\\cup\\!\\!\\!\\bigcup_{\\text{vertices }v}\\!\\!\\!\\! \\Omega_{v},\\tag{2}\n\\]\nwhere each $\\Omega_{\\bullet}$ denotes the corresponding Voronoi region; boundaries have measure zero, so the integral $(\\star)$ decomposes over these sets.\n\n--------------------------------------------------------------------\nStep 1.  Interior contribution  \nInside $P$ one has $D\\equiv 0$, whence  \n\\[\n   I_{\\text{int}}:=\\iiint_{P}(1+0+0)e^{0}\\,dX=\\operatorname{vol}P=V.\\tag{3}\n\\]\n\n--------------------------------------------------------------------\nStep 2.  Face contributions  \nFix a face $F$ of area $A_{F}$ and outward unit normal $\\nu$.  Every $X\\in\\Omega_{F}$ can be written uniquely as $X=Y+r\\nu$ with $Y\\in F$ and $r\\ge 0$; here $D(X)=r$ and the Jacobian equals $1$.  Therefore  \n\\[\n\\begin{aligned}\n   I_{F}\n      &=\\iint_{Y\\in F}\\!\\!\\int_{0}^{\\infty}\\!\\!(1+r+\\tfrac12r^{2})e^{-r}\\,dr\\,dA_{Y}\n        =A_{F}\\,J,\\\\\n   J  &=\\int_{0}^{\\infty}(1+r+\\tfrac12r^{2})e^{-r}\\,dr\n        =(1!)(1)+(1!)(1)+(2!)(\\tfrac12)=1+1+1=3.\n\\end{aligned}\n\\]\nHence $I_{F}=3A_{F}$ and summing over all faces gives  \n\\[\n   I_{\\text{faces}}=3S.\\tag{4}\n\\]\n\n--------------------------------------------------------------------\nStep 3.  Edge contributions  \nLet $e$ be an edge of length $\\lvert e\\rvert$ whose adjacent faces meet at interior dihedral angle $\\varphi_{e}$, so that the exterior angle is $\\alpha_{e}=\\pi-\\varphi_{e}\\in(0,\\pi)$.  Work in coordinates adapted to the line $L$ containing $e$:\n\n$\\bullet$ $u\\in[0,\\lvert e\\rvert]$ measures position along $e$,  \n$\\bullet$ $r\\ge 0$ is the distance to $L$,  \n$\\bullet$ $\\theta$ is the polar angle in the plane perpendicular to $L$.\n\nDescription of $\\Omega_{e}$.  \nIn the perpendicular plane the points having their nearest point on the {\\em interior} of $e$ lie inside a single infinite wedge bounded by the two half-lines perpendicular to the adjacent faces; the opening angle of this wedge equals $\\alpha_{e}$ (not $2\\alpha_{e}$).  Consequently the ranges are  \n\\[\n   0\\le u\\le\\lvert e\\rvert,\\qquad 0\\le r<\\infty,\\qquad 0\\le\\theta\\le\\alpha_{e},\n\\]\nand the Jacobian is $dX=r\\,du\\,dr\\,d\\theta$.  Because $D(X)=r$ we obtain  \n\\[\n\\begin{aligned}\n   I_{e}\n      &=\\int_{u=0}^{\\lvert e\\rvert}\\int_{\\theta=0}^{\\alpha_{e}}\\int_{r=0}^{\\infty}\n           r\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr\\,d\\theta\\,du\\\\\n      &=\\lvert e\\rvert\\;\\alpha_{e}\\;K,\\qquad\n        K:=\\int_{0}^{\\infty} r\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr.\n\\end{aligned}\n\\]\nA short computation gives  \n\\[\n   K=(1!)(1)+(2!)(1)+(3!)(\\tfrac12)=1+2+3=6 .\n\\]\nThus  \n\\[\n   I_{e}=6\\,\\alpha_{e}\\,\\lvert e\\rvert .\n\\]\nSumming over all edges yields  \n\\[\n   I_{\\text{edges}}=\\sum_{e}6\\,\\alpha_{e}\\,\\lvert e\\rvert =6\\,H.\\tag{5}\n\\]\n\n--------------------------------------------------------------------\nStep 4.  Vertex contributions  \nFor a vertex $v$ let $\\beta_{v}$ be the solid angle of $P$ at $v$, that is, the area on the unit sphere of the set of directions from $v$ that enter $P$.  The cones $\\Omega_{v}$ partition $\\mathbb S^{2}$ up to measure-zero great-circle arcs, so  \n\\[\n   \\sum_{v}\\beta_{v}=4\\pi.\\tag{6}\n\\]\nUsing spherical coordinates $(r,\\omega)$ centred at $v$, $dX=r^{2}\\,dr\\,d\\omega$ and $D(X)=r$ give  \n\\[\n\\begin{aligned}\n   I_{v}\n      &=\\int_{\\omega\\in\\Omega_{v}\\cap\\mathbb S^{2}}\\int_{0}^{\\infty}\n           r^{2}\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr\\,d\\omega\n        =\\beta_{v}\\,L,\\\\\n   L  &=\\int_{0}^{\\infty} r^{2}\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr\n        =(2!)(1)+(3!)(1)+(4!)(\\tfrac12)=2+6+12=20.\n\\end{aligned}\n\\]\nHence $I_{v}=20\\beta_{v}$ and summing over all vertices gives  \n\\[\n   I_{\\text{vertices}}=20\\sum_{v}\\beta_{v}=20\\cdot4\\pi=80\\pi.\\tag{7}\n\\]\n\n--------------------------------------------------------------------\nStep 5.  Assembly  \nCombining \\eqref{3}, \\eqref{4}, \\eqref{5} and \\eqref{7} we find  \n\\[\n   I(P)=80\\pi+3S+6H+V.\n\\]\nTherefore relation (1) holds with the universal constants  \n\\[\n   a=80\\pi,\\qquad b=3,\\qquad c=6,\\qquad d=1.\n\\]\n\n--------------------------------------------------------------------\nRemarks on conventions  \n\n1.  The choice $H=\\sum_{e}(\\pi-\\varphi_{e})\\lvert e\\rvert$ equals twice the Steiner-Weyl intrinsic volume $V_{2}$; any other normalisation merely rescales the coefficient $c$.\n\n2.  The fact that the edge domain is a {\\em single} wedge of opening $\\alpha_{e}$ (and not $2\\alpha_{e}$) is crucial.  Only one side of the line $L$ contributes: points on the opposite side see as nearest points either of the adjacent faces or of the vertices.\n\n3.  All integrals reduce to elementary $\\Gamma$-function values, which explains why only polynomial-exponential factors appear in the constants.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.625188",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher dimension and more geometric strata  \n • The original 2-D problem involves only three strata (interior, sides, vertices); the 3-D extension forces four strata (interior, faces, edges, vertices), each requiring a distinct coordinate system and Jacobian.  \n\n2.  Additional geometric invariant  \n • Besides area and perimeter, the answer now contains the total mean curvature H, demanding familiarity with dihedral angles and curvature concentration along edges.  \n\n3.  Non-trivial global identity  \n • Showing ∑_v β_v = 4π is a 3-D analogue of the 2-π exterior-angle sum and relies on a spherical partition argument (or Gauss–Bonnet), not needed in the planar case.  \n\n4.  Higher-order integrand  \n • The integrand (1+D+½D²)e^{-D} includes a quadratic term; its appearance obliges the evaluation of three different Γ-integrals in each stratum.\n\n5.  Cumulative complexity  \n • Coordinatizing wedges and cones, computing Jacobians, evaluating Γ-type integrals of differing powers, and keeping consistent geometric constants draw on multivariable calculus, convex geometry, and differential-geometry ideas—all absent from the original short proof.\n\nThese layers together make the enhanced variant substantially more intricate and conceptually demanding than both the original problem and the simpler kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $P$ be a bounded convex polyhedron (taken together with its interior) in $\\mathbb R^{3}$ and, for $X\\in\\mathbb R^{3}$, put  \n\\[\n   D(X)=\\operatorname{dist}\\bigl(X,P\\bigr).\n\\]\n\nDefine the geometric functionals  \n\\[\n   V=\\operatorname{vol} P,\\qquad \n   S=\\operatorname{area}\\,\\partial P,\\qquad \n   H=\\sum_{e}\\alpha_{e}\\lvert e\\rvert ,\n\\]\nwhere the sum ranges over all edges $e$ of $P$, $\\lvert e\\rvert$ denotes the length of $e$, and  \n\\[\n   \\alpha_{e}= \\pi-\\varphi_{e}\\in(0,\\pi)\n\\]\nis the exterior dihedral angle between the two faces meeting at $e$.  (Thus $H$ is the classical ``total mean curvature'' in the sense of Steiner/Weyl.)\n\nConsider the integral  \n\\[\n   I(P)=\\iiint_{\\mathbb R^{3}}\\bigl(1+D(X)+\\tfrac12D(X)^{2}\\bigr)\\,e^{-D(X)}\\,dX.\\tag{$\\star$}\n\\]\n\na)  Show that there exist universal constants $a,b,c,d$ (independent of the particular polyhedron $P$) such that  \n\\[\n   I(P)=a+bS+cH+dV.\\tag{1}\n\\]\n\nb)  Determine the exact values of $a,b,c,d$.",
+      "solution": "Step 0.  Stratification of the distance map  \nFor every $X\\in\\mathbb R^{3}\\setminus P$ the nearest point on $P$ is unique and lies either  \n\n$\\bullet$ in the relative interior of a face,  \n$\\bullet$ in the relative interior of an edge, or  \n$\\bullet$ at a vertex.\n\nHence  \n\\[\n   \\mathbb R^{3}=P\\;\\dot\\cup\\!\\!\\!\\bigcup_{\\text{faces }F}\\!\\!\\!\\! \\Omega_{F}\\;\\dot\\cup\\!\\!\\!\\bigcup_{\\text{edges }e}\\!\\!\\!\\! \\Omega_{e}\\;\\dot\\cup\\!\\!\\!\\bigcup_{\\text{vertices }v}\\!\\!\\!\\! \\Omega_{v},\\tag{2}\n\\]\nwhere each $\\Omega_{\\bullet}$ denotes the corresponding Voronoi region; boundaries have measure zero, so the integral $(\\star)$ decomposes over these sets.\n\n--------------------------------------------------------------------\nStep 1.  Interior contribution  \nInside $P$ one has $D\\equiv 0$, whence  \n\\[\n   I_{\\text{int}}:=\\iiint_{P}(1+0+0)e^{0}\\,dX=\\operatorname{vol}P=V.\\tag{3}\n\\]\n\n--------------------------------------------------------------------\nStep 2.  Face contributions  \nFix a face $F$ of area $A_{F}$ and outward unit normal $\\nu$.  Every $X\\in\\Omega_{F}$ can be written uniquely as $X=Y+r\\nu$ with $Y\\in F$ and $r\\ge 0$; here $D(X)=r$ and the Jacobian equals $1$.  Therefore  \n\\[\n\\begin{aligned}\n   I_{F}\n      &=\\iint_{Y\\in F}\\!\\!\\int_{0}^{\\infty}\\!\\!(1+r+\\tfrac12r^{2})e^{-r}\\,dr\\,dA_{Y}\n        =A_{F}\\,J,\\\\\n   J  &=\\int_{0}^{\\infty}(1+r+\\tfrac12r^{2})e^{-r}\\,dr\n        =(1!)(1)+(1!)(1)+(2!)(\\tfrac12)=1+1+1=3.\n\\end{aligned}\n\\]\nHence $I_{F}=3A_{F}$ and summing over all faces gives  \n\\[\n   I_{\\text{faces}}=3S.\\tag{4}\n\\]\n\n--------------------------------------------------------------------\nStep 3.  Edge contributions  \nLet $e$ be an edge of length $\\lvert e\\rvert$ whose adjacent faces meet at interior dihedral angle $\\varphi_{e}$, so that the exterior angle is $\\alpha_{e}=\\pi-\\varphi_{e}\\in(0,\\pi)$.  Work in coordinates adapted to the line $L$ containing $e$:\n\n$\\bullet$ $u\\in[0,\\lvert e\\rvert]$ measures position along $e$,  \n$\\bullet$ $r\\ge 0$ is the distance to $L$,  \n$\\bullet$ $\\theta$ is the polar angle in the plane perpendicular to $L$.\n\nDescription of $\\Omega_{e}$.  \nIn the perpendicular plane the points having their nearest point on the {\\em interior} of $e$ lie inside a single infinite wedge bounded by the two half-lines perpendicular to the adjacent faces; the opening angle of this wedge equals $\\alpha_{e}$ (not $2\\alpha_{e}$).  Consequently the ranges are  \n\\[\n   0\\le u\\le\\lvert e\\rvert,\\qquad 0\\le r<\\infty,\\qquad 0\\le\\theta\\le\\alpha_{e},\n\\]\nand the Jacobian is $dX=r\\,du\\,dr\\,d\\theta$.  Because $D(X)=r$ we obtain  \n\\[\n\\begin{aligned}\n   I_{e}\n      &=\\int_{u=0}^{\\lvert e\\rvert}\\int_{\\theta=0}^{\\alpha_{e}}\\int_{r=0}^{\\infty}\n           r\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr\\,d\\theta\\,du\\\\\n      &=\\lvert e\\rvert\\;\\alpha_{e}\\;K,\\qquad\n        K:=\\int_{0}^{\\infty} r\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr.\n\\end{aligned}\n\\]\nA short computation gives  \n\\[\n   K=(1!)(1)+(2!)(1)+(3!)(\\tfrac12)=1+2+3=6 .\n\\]\nThus  \n\\[\n   I_{e}=6\\,\\alpha_{e}\\,\\lvert e\\rvert .\n\\]\nSumming over all edges yields  \n\\[\n   I_{\\text{edges}}=\\sum_{e}6\\,\\alpha_{e}\\,\\lvert e\\rvert =6\\,H.\\tag{5}\n\\]\n\n--------------------------------------------------------------------\nStep 4.  Vertex contributions  \nFor a vertex $v$ let $\\beta_{v}$ be the solid angle of $P$ at $v$, that is, the area on the unit sphere of the set of directions from $v$ that enter $P$.  The cones $\\Omega_{v}$ partition $\\mathbb S^{2}$ up to measure-zero great-circle arcs, so  \n\\[\n   \\sum_{v}\\beta_{v}=4\\pi.\\tag{6}\n\\]\nUsing spherical coordinates $(r,\\omega)$ centred at $v$, $dX=r^{2}\\,dr\\,d\\omega$ and $D(X)=r$ give  \n\\[\n\\begin{aligned}\n   I_{v}\n      &=\\int_{\\omega\\in\\Omega_{v}\\cap\\mathbb S^{2}}\\int_{0}^{\\infty}\n           r^{2}\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr\\,d\\omega\n        =\\beta_{v}\\,L,\\\\\n   L  &=\\int_{0}^{\\infty} r^{2}\\bigl(1+r+\\tfrac12r^{2}\\bigr)e^{-r}\\,dr\n        =(2!)(1)+(3!)(1)+(4!)(\\tfrac12)=2+6+12=20.\n\\end{aligned}\n\\]\nHence $I_{v}=20\\beta_{v}$ and summing over all vertices gives  \n\\[\n   I_{\\text{vertices}}=20\\sum_{v}\\beta_{v}=20\\cdot4\\pi=80\\pi.\\tag{7}\n\\]\n\n--------------------------------------------------------------------\nStep 5.  Assembly  \nCombining \\eqref{3}, \\eqref{4}, \\eqref{5} and \\eqref{7} we find  \n\\[\n   I(P)=80\\pi+3S+6H+V.\n\\]\nTherefore relation (1) holds with the universal constants  \n\\[\n   a=80\\pi,\\qquad b=3,\\qquad c=6,\\qquad d=1.\n\\]\n\n--------------------------------------------------------------------\nRemarks on conventions  \n\n1.  The choice $H=\\sum_{e}(\\pi-\\varphi_{e})\\lvert e\\rvert$ equals twice the Steiner-Weyl intrinsic volume $V_{2}$; any other normalisation merely rescales the coefficient $c$.\n\n2.  The fact that the edge domain is a {\\em single} wedge of opening $\\alpha_{e}$ (and not $2\\alpha_{e}$) is crucial.  Only one side of the line $L$ contributes: points on the opposite side see as nearest points either of the adjacent faces or of the vertices.\n\n3.  All integrals reduce to elementary $\\Gamma$-function values, which explains why only polynomial-exponential factors appear in the constants.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.499243",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher dimension and more geometric strata  \n • The original 2-D problem involves only three strata (interior, sides, vertices); the 3-D extension forces four strata (interior, faces, edges, vertices), each requiring a distinct coordinate system and Jacobian.  \n\n2.  Additional geometric invariant  \n • Besides area and perimeter, the answer now contains the total mean curvature H, demanding familiarity with dihedral angles and curvature concentration along edges.  \n\n3.  Non-trivial global identity  \n • Showing ∑_v β_v = 4π is a 3-D analogue of the 2-π exterior-angle sum and relies on a spherical partition argument (or Gauss–Bonnet), not needed in the planar case.  \n\n4.  Higher-order integrand  \n • The integrand (1+D+½D²)e^{-D} includes a quadratic term; its appearance obliges the evaluation of three different Γ-integrals in each stratum.\n\n5.  Cumulative complexity  \n • Coordinatizing wedges and cones, computing Jacobians, evaluating Γ-type integrals of differing powers, and keeping consistent geometric constants draw on multivariable calculus, convex geometry, and differential-geometry ideas—all absent from the original short proof.\n\nThese layers together make the enhanced variant substantially more intricate and conceptually demanding than both the original problem and the simpler kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

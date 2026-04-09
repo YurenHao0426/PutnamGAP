@@ -1,0 +1,178 @@
+{
+  "index": "2004-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $P(x) = c_n x^n + c_{n-1} x^{n-1} + \\cdots + c_0$ be a polynomial with\ninteger coefficients. Suppose that $r$ is a rational number such that\n$P(r) = 0$.  Show that the $n$ numbers\n\\begin{gather*}\nc_n r, \\, c_n r^2 + c_{n-1} r, \\, c_n r^3 + c_{n-1} r^2 + c_{n-2} r, \\\\\n\\dots, \\, c_n r^n + c_{n-1} r^{n-1} + \\cdots + c_1 r\n\\end{gather*}\nare integers.",
+  "solution": "Let $k$ be an integer, $0\\leq k\\leq n-1$. Since $P(r)/r^k = 0$, we\nhave\n\\begin{multline*}\nc_n r^{n-k} + c_{n-1} r^{n-k+1} + \\dots + c_{k+1} r \\\\\n= - (c_k + c_{k-1} r^{-1} + \\dots + c_0 r^{-k}).\n\\end{multline*}\nWrite $r = p/q$ where $p$ and $q$ are relatively prime. Then the\nleft hand side of the above equation can be written as a fraction\nwith denominator $q^{n-k}$, while the right hand side is a fraction\nwith denominator $p^k$. Since $p$ and $q$ are relatively prime, both\nsides of the equation must be an integer, and the result follows.\n\n\\textbf{Remark:}\nIf we write $r = a/b$ in lowest terms, then $P(x)$ factors as $(bx-a)Q(x)$,\nwhere the polynomial $Q$ has integer coefficients because you can\neither do the long division from the left and get denominators divisible only\nby primes dividing $b$, or do it from the right and get denominators\ndivisible only by primes dividing $a$. The numbers given in the problem\nare none other than $a$ times the coefficients of $Q$.\nMore generally, if $P(x)$ is divisible,\nas a polynomial over the rationals, by a polynomial $R(x)$ with integer\ncoefficients, then $P/R$ also has integer coefficients; this is known\nas ``Gauss's lemma'' and holds in any unique factorization domain.",
+  "vars": [
+    "x",
+    "k",
+    "r",
+    "p",
+    "q",
+    "a",
+    "b"
+  ],
+  "params": [
+    "P",
+    "c_n",
+    "c_n-1",
+    "c_0",
+    "c_n-2",
+    "c_1",
+    "c_k+1",
+    "c_k",
+    "c_k-1",
+    "n",
+    "Q",
+    "R"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "algebraic",
+        "k": "indexer",
+        "r": "rational",
+        "p": "numeratr",
+        "q": "denominr",
+        "a": "coeffic",
+        "b": "baseterm",
+        "P": "polynomm",
+        "c_n": "leadcoef",
+        "c_n-1": "nextcoef",
+        "c_0": "zerocoef",
+        "c_n-2": "secondcf",
+        "c_1": "firstcoef",
+        "c_k+1": "aheadcoef",
+        "c_k": "kcoeff",
+        "c_k-1": "priorcoef",
+        "n": "degree",
+        "Q": "auxpoly",
+        "R": "divisor"
+      },
+      "question": "Let $polynomm(algebraic) = leadcoef\\, algebraic^{degree} + c_{degree-1} \\, algebraic^{degree-1} + \\cdots + zerocoef$ be a polynomial with\ninteger coefficients. Suppose that $rational$ is a rational number such that\n$polynomm(rational) = 0$.  Show that the $degree$ numbers\n\\begin{gather*}\nleadcoef\\, rational, \\, leadcoef\\, rational^2 + c_{degree-1} \\, rational, \\, leadcoef\\, rational^3 + c_{degree-1} \\, rational^2 + c_{degree-2} \\, rational, \\\\\n\\dots, \\, leadcoef\\, rational^{degree} + c_{degree-1} \\, rational^{degree-1} + \\cdots + firstcoef\\, rational\n\\end{gather*}\nare integers.",
+      "solution": "Let $indexer$ be an integer, $0\\leq indexer\\leq degree-1$. Since $polynomm(rational)/rational^{indexer} = 0$, we\nhave\n\\begin{multline*}\nleadcoef\\, rational^{degree-indexer} + c_{degree-1} \\, rational^{degree-indexer+1} + \\dots + c_{indexer+1} \\, rational \\\\\n= - (kcoeff + c_{indexer-1} \\, rational^{-1} + \\dots + zerocoef\\, rational^{-indexer}).\n\\end{multline*}\nWrite $rational = numeratr/denominr$ where $numeratr$ and $denominr$ are relatively prime. Then the\nleft hand side of the above equation can be written as a fraction\nwith denominator $denominr^{degree-indexer}$, while the right hand side is a fraction\nwith denominator $numeratr^{indexer}$. Since $numeratr$ and $denominr$ are relatively prime, both\nsides of the equation must be an integer, and the result follows.\n\n\\textbf{Remark:}\nIf we write $rational = coeffic/baseterm$ in lowest terms, then $polynomm(algebraic)$ factors as $(baseterm algebraic-coeffic)auxpoly(algebraic)$,\nwhere the polynomial $auxpoly$ has integer coefficients because you can\neither do the long division from the left and get denominators divisible only\nby primes dividing $baseterm$, or do it from the right and get denominators\ndivisible only by primes dividing $coeffic$. The numbers given in the problem\nare none other than $coeffic$ times the coefficients of $auxpoly$.\nMore generally, if $polynomm(algebraic)$ is divisible,\nas a polynomial over the rationals, by a polynomial $divisor(algebraic)$ with integer\ncoefficients, then $polynomm/divisor$ also has integer coefficients; this is known\nas ``Gauss's lemma'' and holds in any unique factorization domain."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "chocolate",
+        "k": "telescope",
+        "r": "sapphire",
+        "p": "gardenia",
+        "q": "marigold",
+        "a": "elephant",
+        "b": "harmonic",
+        "P": "umbrella",
+        "c_n": "porcelain",
+        "c_{n-1}": "kaleidoscope",
+        "c_n-1": "tarantula",
+        "c_0": "strawberry",
+        "c_{n-2}": "thunderbolt",
+        "c_n-2": "orangutan",
+        "c_1": "butterfly",
+        "c_{k+1}": "rainforest",
+        "c_k+1": "nightingale",
+        "c_k": "silhouette",
+        "c_k-1": "caterpillar",
+        "c_{k-1}": "skyscraper",
+        "n": "labyrinth",
+        "Q": "necklace",
+        "R": "planetarium"
+      },
+      "question": "Let $umbrella(chocolate) = porcelain chocolate^{labyrinth} + kaleidoscope chocolate^{labyrinth-1} + \\cdots + strawberry$ be a polynomial with\ninteger coefficients. Suppose that $sapphire$ is a rational number such that\n$umbrella(sapphire) = 0$.  Show that the $labyrinth$ numbers\n\\begin{gather*}\nporcelain sapphire, \\, porcelain sapphire^2 + kaleidoscope sapphire, \\, porcelain sapphire^3 + kaleidoscope sapphire^2 + thunderbolt sapphire, \\\\\n\\dots, \\, porcelain sapphire^{labyrinth} + kaleidoscope sapphire^{labyrinth-1} + \\cdots + butterfly sapphire\n\\end{gather*}\nare integers.",
+      "solution": "Let $telescope$ be an integer, $0\\leq telescope\\leq labyrinth-1$. Since $umbrella(sapphire)/sapphire^{telescope} = 0$, we\nhave\n\\begin{multline*}\nporcelain sapphire^{labyrinth-telescope} + kaleidoscope sapphire^{labyrinth-telescope+1} + \\dots + rainforest sapphire \\\\\n= - (silhouette + skyscraper sapphire^{-1} + \\dots + strawberry sapphire^{-telescope}).\n\\end{multline*}\nWrite $sapphire = gardenia/marigold$ where $gardenia$ and $marigold$ are relatively prime. Then the\nleft hand side of the above equation can be written as a fraction\nwith denominator $marigold^{labyrinth-telescope}$, while the right hand side is a fraction\nwith denominator $gardenia^{telescope}$. Since $gardenia$ and $marigold$ are relatively prime, both\nsides of the equation must be an integer, and the result follows.\n\n\\textbf{Remark:}\nIf we write $sapphire = elephant/harmonic$ in lowest terms, then $umbrella(chocolate)$ factors as $(harmonic chocolate-elephant)necklace(chocolate)$,\nwhere the polynomial $necklace$ has integer coefficients because you can\neither do the long division from the left and get denominators divisible only\nby primes dividing $harmonic$, or do it from the right and get denominators\ndivisible only by primes dividing $elephant$. The numbers given in the problem\nare none other than $elephant$ times the coefficients of $necklace$.\nMore generally, if $umbrella(chocolate)$ is divisible,\nas a polynomial over the rationals, by a polynomial $planetarium(chocolate)$ with integer\ncoefficients, then $umbrella/planetarium$ also has integer coefficients; this is known\nas ``Gauss's lemma'' and holds in any unique factorization domain."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvar",
+        "k": "unboundedindex",
+        "r": "irrationalnum",
+        "p": "compositepart",
+        "q": "numeratorval",
+        "a": "divisornum",
+        "b": "numeratorcoeff",
+        "P": "quotientpoly",
+        "c_n": "trailingcoeff",
+        "c_n-1": "reversecoeff",
+        "c_0": "leadingcoeff",
+        "c_n-2": "backwardcoeff",
+        "c_1": "frontcoeff",
+        "c_k+1": "fixedcoeff",
+        "c_k": "variablecoeff",
+        "c_k-1": "stablecoeff",
+        "n": "baselength",
+        "Q": "multiplepoly",
+        "R": "dividendpoly"
+      },
+      "question": "Let $quotientpoly(constantvar) = trailingcoeff constantvar^{baselength} + reversecoeff constantvar^{baselength-1} + \\cdots + leadingcoeff$ be a polynomial with\ninteger coefficients. Suppose that $irrationalnum$ is a rational number such that\n$quotientpoly(irrationalnum) = 0$.  Show that the $baselength$ numbers\n\\begin{gather*}\ntrailingcoeff irrationalnum, \\, trailingcoeff irrationalnum^2 + reversecoeff irrationalnum, \\, trailingcoeff irrationalnum^3 + reversecoeff irrationalnum^2 + backwardcoeff irrationalnum, \\\\\n\\dots, \\, trailingcoeff irrationalnum^{baselength} + reversecoeff irrationalnum^{baselength-1} + \\cdots + frontcoeff irrationalnum\n\\end{gather*}\nare integers.",
+      "solution": "Let $unboundedindex$ be an integer, $0\\leq unboundedindex\\leq baselength-1$. Since $quotientpoly(irrationalnum)/irrationalnum^{unboundedindex} = 0$, we\nhave\n\\begin{multline*}\ntrailingcoeff irrationalnum^{baselength-unboundedindex} + reversecoeff irrationalnum^{baselength-unboundedindex+1} + \\dots + fixedcoeff irrationalnum \\\\\n= - (variablecoeff + stablecoeff irrationalnum^{-1} + \\dots + leadingcoeff irrationalnum^{-unboundedindex}).\n\\end{multline*}\nWrite $irrationalnum = compositepart/numeratorval$ where $compositepart$ and $numeratorval$ are relatively prime. Then the\nleft hand side of the above equation can be written as a fraction\nwith denominator $numeratorval^{baselength-unboundedindex}$, while the right hand side is a fraction\nwith denominator $compositepart^{unboundedindex}$. Since $compositepart$ and $numeratorval$ are relatively prime, both\nsides of the equation must be an integer, and the result follows.\n\n\\textbf{Remark:}\nIf we write $irrationalnum = divisornum/numeratorcoeff$ in lowest terms, then $quotientpoly(x)$ factors as $(numeratorcoeff x-divisornum)multiplepoly(x)$,\nwhere the polynomial $multiplepoly$ has integer coefficients because you can\neither do the long division from the left and get denominators divisible only\nby primes dividing $numeratorcoeff$, or do it from the right and get denominators\ndivisible only by primes dividing $divisornum$. The numbers given in the problem\nare none other than $divisornum$ times the coefficients of $multiplepoly$.\nMore generally, if $quotientpoly(x)$ is divisible,\nas a polynomial over the rationals, by a polynomial $dividendpoly(x)$ with integer\ncoefficients, then $quotientpoly/dividendpoly$ also has integer coefficients; this is known\nas ``Gauss's lemma'' and holds in any unique factorization domain."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "gfhqrnle",
+        "k": "zbcptewu",
+        "r": "dfjnsqmn",
+        "p": "jqlgadzr",
+        "q": "xnrymbvo",
+        "a": "vhrscmea",
+        "b": "wduplitk",
+        "P": "kzjfeoaw",
+        "c_n": "prhslmca",
+        "c_n-1": "mtcvarzo",
+        "c_0": "akwmnofs",
+        "c_n-2": "fydgeqhi",
+        "c_1": "znpevktu",
+        "c_k+1": "ojsylrax",
+        "c_k": "qmebvufi",
+        "c_k-1": "shzinwdo",
+        "n": "ecxjodpv",
+        "Q": "uecrsbij",
+        "R": "difplazm"
+      },
+      "question": "Let $kzjfeoaw(gfhqrnle) = prhslmca gfhqrnle^{ecxjodpv} + mtcvarzo gfhqrnle^{ecxjodpv-1} + \\cdots + akwmnofs$ be a polynomial with\ninteger coefficients. Suppose that $dfjnsqmn$ is a rational number such that\n$kzjfeoaw(dfjnsqmn) = 0$.  Show that the $ecxjodpv$ numbers\n\\begin{gather*}\nprhslmca dfjnsqmn, \\, prhslmca dfjnsqmn^2 + mtcvarzo dfjnsqmn, \\, prhslmca dfjnsqmn^3 + mtcvarzo dfjnsqmn^2 + fydgeqhi dfjnsqmn, \\\\\n\\dots, \\, prhslmca dfjnsqmn^{ecxjodpv} + mtcvarzo dfjnsqmn^{ecxjodpv-1} + \\cdots + znpevktu dfjnsqmn\n\\end{gather*}\nare integers.",
+      "solution": "Let $zbcptewu$ be an integer, $0\\leq zbcptewu\\leq ecxjodpv-1$. Since $kzjfeoaw(dfjnsqmn)/dfjnsqmn^{zbcptewu} = 0$, we\nhave\n\\begin{multline*}\nprhslmca dfjnsqmn^{ecxjodpv-zbcptewu} + mtcvarzo dfjnsqmn^{ecxjodpv-zbcptewu+1} + \\dots + ojsylrax dfjnsqmn \\\\\n= - (qmebvufi + shzinwdo dfjnsqmn^{-1} + \\dots + akwmnofs dfjnsqmn^{-zbcptewu}).\n\\end{multline*}\nWrite $dfjnsqmn = jqlgadzr/xnrymbvo$ where $jqlgadzr$ and $xnrymbvo$ are relatively prime. Then the\nleft hand side of the above equation can be written as a fraction\nwith denominator $xnrymbvo^{ecxjodpv-zbcptewu}$, while the right hand side is a fraction\nwith denominator $jqlgadzr^{zbcptewu}$. Since $jqlgadzr$ and $xnrymbvo$ are relatively prime, both\nsides of the equation must be an integer, and the result follows.\n\n\\textbf{Remark:}\nIf we write $dfjnsqmn = vhrscmea/wduplitk$ in lowest terms, then $kzjfeoaw(gfhqrnle)$ factors as $(wduplitk gfhqrnle-vhrscmea)uecrsbij(gfhqrnle)$,\nwhere the polynomial $uecrsbij$ has integer coefficients because you can\neither do the long division from the left and get denominators divisible only\nby primes dividing $wduplitk$, or do it from the right and get denominators\ndivisible only by primes dividing $vhrscmea$. The numbers given in the problem\nare none other than $vhrscmea$ times the coefficients of $uecrsbij$.\nMore generally, if $kzjfeoaw(gfhqrnle)$ is divisible,\nas a polynomial over the rationals, by a polynomial $difplazm(gfhqrnle)$ with integer\ncoefficients, then $kzjfeoaw/difplazm$ also has integer coefficients; this is known\nas ``Gauss's lemma'' and holds in any unique factorization domain."
+    },
+    "kernel_variant": {
+      "question": "Let $d\\ge 1$ be an integer and\n\\[\nP(x)=a_0+a_1x+\\dots +a_{d}x^{d}\\qquad(a_0,a_1,\\dots ,a_d\\in\\mathbb Z)\n\\]\nbe a polynomial with integer coefficients.  Suppose the rational number $r$ satisfies $P(r)=0$.  Prove that each of the following $d$ numbers\n\\[\n\\begin{gathered}\n a_{d},\\\\\n a_{d}r+a_{d-1},\\\\\n a_{d}r^{2}+a_{d-1}r+a_{d-2},\\\\\n \\vdots\\\\\n a_{d}r^{d-1}+a_{d-1}r^{d-2}+\\cdots +a_{1}\n\\end{gathered}\n\\]\nis an integer.",
+      "solution": "First handle the trivial case r=0.  If P(0)=0 then a_0=0, and the d numbers\n  a_d,\n  a_d\\cdot 0 + a_{d-1} = a_{d-1},\n  a_d\\cdot 0^2 + a_{d-1}\\cdot 0 + a_{d-2} = a_{d-2}, \\ldots , a_1\nare all integers.  Hence the conclusion holds when r=0.\n\nNow assume r\\neq 0.  Write\n  r = b/a  in lowest terms (so a and b are nonzero integers, gcd(a,b)=1).  Since P(r)=0 we have\n  a_0 + a_1(b/a) + \\cdot \\cdot \\cdot  + a_d(b/a)^d = 0.\n\nFix t\\in {1,2,\\ldots ,d} and divide this equation by r^{d+1-t}:\n\n  a_d r^{t-1} + a_{d-1} r^{t-2} + \\cdot \\cdot \\cdot  + a_{d-t+1}\n    = -(a_{d-t} r^{-1} + a_{d-t-1} r^{-2} + \\cdot \\cdot \\cdot  + a_0 r^{-(d+1-t)}).\n\nOn the left, each term a_{d-j+1}r^{t-j} = a_{d-j+1}(b/a)^{t-j} has denominator dividing a^{t-j} \\leq  a^{t-1}.  Hence the entire left side is a rational number whose denominator divides a^{t-1}.\nOn the right, each term a_{d-j}r^{-(j+1)} = a_{d-j}(b/a)^{-(j+1)} = a_{d-j}\\cdot a^{j+1}/b^{j+1} has denominator dividing b^{j+1} \\leq  b^{d+1-t}.  Hence the right side is a rational number whose denominator divides b^{d+1-t}.\n\nSince gcd(a^{t-1},b^{d+1-t})=1, a rational number whose denominator divides a^{t-1} and at the same time divides b^{d+1-t} must in fact be an integer.  Therefore\n\n  a_d r^{t-1} + a_{d-1} r^{t-2} + \\cdot \\cdot \\cdot  + a_{d-t+1} \\in  \\mathbb{Z}.\n\nAs t runs from 1 to d, these are exactly the d numbers\n  a_d,\n  a_d r + a_{d-1},\n  a_d r^2 + a_{d-1} r + a_{d-2},\n  \\ldots ,\n  a_d r^{d-1} + a_{d-1} r^{d-2} + \\cdot \\cdot \\cdot  + a_1,\n\neach of which is therefore an integer, as desired. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Start from P(r)=0 and divide by r^k to isolate two complementary coefficient–power blocks.",
+          "Express r in lowest terms r = p/q with (p,q)=1.",
+          "Observe denominators: left side has q^{n-k}, right side has p^{k}.",
+          "Coprimality forces each side—and hence every isolated partial sum—to be an integer.",
+          "Choose k=1,2,…,n to obtain the n stated expressions."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Symbol that denotes the degree of the polynomial (currently ‘n’). Any positive integer symbol could be used without affecting the argument.",
+            "original": "n"
+          },
+          "slot2": {
+            "description": "Index range for k that sweeps the complementary blocks (currently 0 ≤ k ≤ n−1). Any equivalent range that covers all non-trivial splits, e.g. 1 ≤ k ≤ n, would work.",
+            "original": "0 ≤ k ≤ n−1"
+          },
+          "slot3": {
+            "description": "Notation for the reduced form of the root (currently r = p/q with p,q coprime). Different letters or the order p/q vs. q/p could be used so long as coprimality is kept.",
+            "original": "r = p/q"
+          },
+          "slot4": {
+            "description": "Choice of dividing by r^k (thus creating exponents n−k on one side and −k on the other). Any systematic split—e.g. dividing by r^{n−k}—would yield equivalent complementary sums.",
+            "original": "division by r^k"
+          },
+          "slot5": {
+            "description": "Presentation order of the integer expressions (currently first power 1 up to n). Any permutation or reverse order would not impact the logical chain.",
+            "original": "c_n r, c_n r^2 + c_{n-1} r, … , c_n r^n + … + c_1 r"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

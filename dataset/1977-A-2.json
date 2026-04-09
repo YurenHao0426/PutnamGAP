@@ -1,0 +1,98 @@
+{
+  "index": "1977-A-2",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-2\nDetermine all solutions in real numbers \\( x, y, z, w \\) of the system\n\\[\n\\begin{aligned}\nx+y+z & =w \\\\\n\\frac{1}{x}+\\frac{1}{y}+\\frac{1}{z} & =\\frac{1}{w}\n\\end{aligned}\n\\]",
+  "solution": "A-2.\nWe show that \\( w \\) must equal one of \\( x, y, z \\) and that the remaining two unknowns must be negatives of each other. Let \\( s=x+y \\) and \\( p=x y \\). Then the given equations imply that \\( w-z=s \\) and that\n\\[\n\\frac{s}{p}=\\frac{x+y}{x y}=\\frac{1}{y}+\\frac{1}{x}=\\frac{1}{w}-\\frac{1}{z}=\\frac{z-w}{z w}=-\\frac{s}{z w} .\n\\]\n\nThen \\( s / p=s /(-z w) \\) implies that either \\( s=0 \\) or \\( -z w=p \\). If \\( s=0 \\), then \\( y=-x \\) and \\( w=z \\). If \\( -z w=p=x y \\), then \\( -z \\) and \\( w \\) are the roots of the quadratic equation \\( T^{2}-s T+p=0 \\), which has \\( x \\) and \\( y \\) as its roots; this case thus leads to either \\( w=x \\) and \\( -z=y \\) or \\( w=y \\) and \\( -z=x \\).",
+  "vars": [
+    "x",
+    "y",
+    "z",
+    "w"
+  ],
+  "params": [
+    "s",
+    "p",
+    "T"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "valueone",
+        "y": "valuetwo",
+        "z": "valuethree",
+        "w": "valuefour",
+        "s": "pairsum",
+        "p": "product",
+        "T": "tempvar"
+      },
+      "question": "Problem A-2\nDetermine all solutions in real numbers \\( valueone, valuetwo, valuethree, valuefour \\) of the system\n\\[\n\\begin{aligned}\nvalueone+valuetwo+valuethree & =valuefour \\\\\n\\frac{1}{valueone}+\\frac{1}{valuetwo}+\\frac{1}{valuethree} & =\\frac{1}{valuefour}\n\\end{aligned}\n\\]",
+      "solution": "A-2.\nWe show that \\( valuefour \\) must equal one of \\( valueone, valuetwo, valuethree \\) and that the remaining two unknowns must be negatives of each other. Let \\( pairsum=valueone+valuetwo \\) and \\( product=valueone valuetwo \\). Then the given equations imply that \\( valuefour-valuethree=pairsum \\) and that\n\\[\n\\frac{pairsum}{product}=\\frac{valueone+valuetwo}{valueone valuetwo}=\\frac{1}{valuetwo}+\\frac{1}{valueone}=\\frac{1}{valuefour}-\\frac{1}{valuethree}=\\frac{valuethree-valuefour}{valuethree valuefour}=-\\frac{pairsum}{valuethree valuefour} .\n\\]\n\nThen \\( pairsum / product=pairsum /(-valuethree valuefour) \\) implies that either \\( pairsum=0 \\) or \\( -valuethree valuefour=product \\). If \\( pairsum=0 \\), then \\( valuetwo=-valueone \\) and \\( valuefour=valuethree \\). If \\( -valuethree valuefour=product=valueone valuetwo \\), then \\( -valuethree \\) and \\( valuefour \\) are the roots of the quadratic equation \\( tempvar^{2}-pairsum tempvar+product=0 \\), which has \\( valueone \\) and \\( valuetwo \\) as its roots; this case thus leads to either \\( valuefour=valueone \\) and \\( -valuethree=valuetwo \\) or \\( valuefour=valuetwo \\) and \\( -valuethree=valueone \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pineapple",
+        "y": "chameleon",
+        "z": "lemonade",
+        "w": "shoelace",
+        "s": "telescope",
+        "p": "microwave",
+        "T": "helicopter"
+      },
+      "question": "Problem A-2\nDetermine all solutions in real numbers \\( pineapple, chameleon, lemonade, shoelace \\) of the system\n\\[\n\\begin{aligned}\npineapple+chameleon+lemonade & = shoelace \\\\\n\\frac{1}{pineapple}+\\frac{1}{chameleon}+\\frac{1}{lemonade} & = \\frac{1}{shoelace}\n\\end{aligned}\n\\]",
+      "solution": "A-2.\nWe show that \\( shoelace \\) must equal one of \\( pineapple, chameleon, lemonade \\) and that the remaining two unknowns must be negatives of each other. Let \\( telescope = pineapple + chameleon \\) and \\( microwave = pineapple chameleon \\). Then the given equations imply that \\( shoelace - lemonade = telescope \\) and that\n\\[\n\\frac{telescope}{microwave}=\\frac{pineapple+chameleon}{pineapple chameleon}=\\frac{1}{chameleon}+\\frac{1}{pineapple}=\\frac{1}{shoelace}-\\frac{1}{lemonade}=\\frac{lemonade-shoelace}{lemonade\\,shoelace}=-\\frac{telescope}{lemonade\\,shoelace} .\n\\]\n\nThen \\( telescope / microwave = telescope /(-lemonade\\,shoelace) \\) implies that either \\( telescope = 0 \\) or \\( -lemonade\\,shoelace = microwave \\). If \\( telescope = 0 \\), then \\( chameleon = -pineapple \\) and \\( shoelace = lemonade \\). If \\( -lemonade\\,shoelace = microwave = pineapple chameleon \\), then \\( -lemonade \\) and \\( shoelace \\) are the roots of the quadratic equation \\( helicopter^{2}-telescope\\,helicopter+microwave=0 \\), which has \\( pineapple \\) and \\( chameleon \\) as its roots; this case thus leads to either \\( shoelace = pineapple \\) and \\( -lemonade = chameleon \\) or \\( shoelace = chameleon \\) and \\( -lemonade = pineapple \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownvalue",
+        "y": "certainval",
+        "z": "outwardaxis",
+        "w": "unequalvar",
+        "s": "nonsumvalue",
+        "p": "nonproduct",
+        "T": "nonrootvar"
+      },
+      "question": "Problem A-2\nDetermine all solutions in real numbers \\( knownvalue, certainval, outwardaxis, unequalvar \\) of the system\n\\[\n\\begin{aligned}\nknownvalue+certainval+outwardaxis & =unequalvar \\\\\n\\frac{1}{knownvalue}+\\frac{1}{certainval}+\\frac{1}{outwardaxis} & =\\frac{1}{unequalvar}\n\\end{aligned}\n\\]",
+      "solution": "A-2.\nWe show that \\( unequalvar \\) must equal one of \\( knownvalue, certainval, outwardaxis \\) and that the remaining two unknowns must be negatives of each other. Let \\( nonsumvalue=knownvalue+certainval \\) and \\( nonproduct=knownvalue\\, certainval \\). Then the given equations imply that \\( unequalvar-outwardaxis=nonsumvalue \\) and that\n\\[\n\\frac{nonsumvalue}{nonproduct}=\\frac{knownvalue+certainval}{knownvalue\\, certainval}=\\frac{1}{certainval}+\\frac{1}{knownvalue}=\\frac{1}{unequalvar}-\\frac{1}{outwardaxis}=\\frac{outwardaxis-unequalvar}{outwardaxis\\, unequalvar}=-\\frac{nonsumvalue}{outwardaxis\\, unequalvar} .\n\\]\n\nThen \\( nonsumvalue / nonproduct=nonsumvalue /(-outwardaxis\\, unequalvar) \\) implies that either \\( nonsumvalue=0 \\) or \\( -outwardaxis\\, unequalvar=nonproduct \\). If \\( nonsumvalue=0 \\), then \\( certainval=-knownvalue \\) and \\( unequalvar=outwardaxis \\). If \\( -outwardaxis\\, unequalvar=nonproduct=knownvalue\\, certainval \\), then \\( -outwardaxis \\) and \\( unequalvar \\) are the roots of the quadratic equation \\( nonrootvar^{2}-nonsumvalue\\, nonrootvar+nonproduct=0 \\), which has \\( knownvalue \\) and \\( certainval \\) as its roots; this case thus leads to either \\( unequalvar=knownvalue \\) and \\( -outwardaxis=certainval \\) or \\( unequalvar=certainval \\) and \\( -outwardaxis=knownvalue \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "z": "mfldprue",
+        "w": "vexnjcob",
+        "s": "klmtrdsi",
+        "p": "wyqszneo",
+        "T": "bvhgjqpa"
+      },
+      "question": "Determine all solutions in real numbers \\( qzxwvtnp, hjgrksla, mfldprue, vexnjcob \\) of the system\n\\[\n\\begin{aligned}\nqzxwvtnp+hjgrksla+mfldprue & =vexnjcob \\\\\n\\frac{1}{qzxwvtnp}+\\frac{1}{hjgrksla}+\\frac{1}{mfldprue} & =\\frac{1}{vexnjcob}\n\\end{aligned}\n\\]",
+      "solution": "We show that \\( vexnjcob \\) must equal one of \\( qzxwvtnp, hjgrksla, mfldprue \\) and that the remaining two unknowns must be negatives of each other. Let \\( klmtrdsi=qzxwvtnp+hjgrksla \\) and \\( wyqszneo=qzxwvtnp hjgrksla \\). Then the given equations imply that \\( vexnjcob-mfldprue=klmtrdsi \\) and that\n\\[\n\\frac{klmtrdsi}{wyqszneo}=\\frac{qzxwvtnp+hjgrksla}{qzxwvtnp hjgrksla}=\\frac{1}{hjgrksla}+\\frac{1}{qzxwvtnp}=\\frac{1}{vexnjcob}-\\frac{1}{mfldprue}=\\frac{mfldprue-vexnjcob}{mfldprue vexnjcob}=-\\frac{klmtrdsi}{mfldprue vexnjcob} .\n\\]\n\nThen \\( klmtrdsi / wyqszneo=klmtrdsi /(-mfldprue vexnjcob) \\) implies that either \\( klmtrdsi=0 \\) or \\( -mfldprue vexnjcob=wyqszneo \\). If \\( klmtrdsi=0 \\), then \\( hjgrksla=-qzxwvtnp \\) and \\( vexnjcob=mfldprue \\). If \\( -mfldprue vexnjcob=wyqszneo=qzxwvtnp hjgrksla \\), then \\( -mfldprue \\) and \\( vexnjcob \\) are the roots of the quadratic equation \\( bvhgjqpa^{2}-klmtrdsi bvhgjqpa+wyqszneo=0 \\), which has \\( qzxwvtnp \\) and \\( hjgrksla \\) as its roots; this case thus leads to either \\( vexnjcob=qzxwvtnp \\) and \\( -mfldprue=hjgrksla \\) or \\( vexnjcob=hjgrksla \\) and \\( -mfldprue=qzxwvtnp \\)."
+    },
+    "kernel_variant": {
+      "question": "Let \\(a,b,c,d,e\\) be non-zero complex numbers that satisfy the four simultaneous conditions  \n\\[\n\\begin{aligned}\n\\text{\\rm(i)}\\quad &b+c+d+e=a,\\\\[2pt]\n\\text{\\rm(ii)}\\quad &\\frac1b+\\frac1c+\\frac1d+\\frac1e=\\frac1a,\\\\[4pt]\n\\text{\\rm(iii)}\\quad &bc+bd+be+cd+ce+de=a^{2},\\\\[4pt]\n\\text{\\rm(iv)}\\quad &bcde=a^{4}.\n\\end{aligned}\n\\]\nDetermine, up to permutation of \\((b,c,d,e)\\), all quintuples \\((a,b,c,d,e)\\) that satisfy the system.\n\n--------------------------------------------------------------------",
+      "solution": "Step 1.  Express the data with elementary symmetric sums.  \nPut  \n\\[\n\\begin{aligned}\n\\sigma_1 &= b+c+d+e,\\\\\n\\sigma_2 &= bc+bd+be+cd+ce+de,\\\\\n\\sigma_3 &= bcd+bce+bde+cde,\\\\\n\\sigma_4 &= bcde .\n\\end{aligned}\n\\]\nConditions (i), (iii) and (iv) yield  \n\\[\n\\sigma_1=a,\\qquad \n\\sigma_2=a^{2},\\qquad \n\\sigma_4=a^{4}.\n\\]\nBecause  \n\\[\n\\frac1b+\\frac1c+\\frac1d+\\frac1e=\\frac{\\sigma_3}{\\sigma_4},\n\\]\ncondition (ii) forces  \n\\[\n\\frac{\\sigma_3}{a^{4}}=\\frac1a \\quad\\Longrightarrow\\quad \\sigma_3=a^{3}.\n\\]\n\nStep 2.  Build the monic quartic with roots \\(b,c,d,e\\):\n\\[\nP(t)=t^{4}-\\sigma_1 t^{3}+\\sigma_2 t^{2}-\\sigma_3 t+\\sigma_4\n     =t^{4}-a t^{3}+a^{2} t^{2}-a^{3} t+a^{4}.\n\\]\nHence every one of \\(b,c,d,e\\) is a zero of \\(P\\).\n\nStep 3.  Normalise by \\(a\\).  \nPut \\(t=ax\\;(x=t/a)\\).  Then\n\\[\n0=P(ax)=a^{4}\\!\\left(x^{4}-x^{3}+x^{2}-x+1\\right),\n\\]\nso each ratio \\(x=b/a,\\;c/a,\\;d/a,\\;e/a\\) is a root of\n\\[\nQ(x)=x^{4}-x^{3}+x^{2}-x+1.\n\\]\n\nStep 4.  Determine the roots of \\(Q\\).  \nObserve that\n\\[\nx^{5}+1=(x+1)Q(x).\n\\]\nThus \\(Q(x)=0\\) precisely for those solutions of \\(x^{5}=-1\\) other than \\(x=-1\\).  \nLet \\(\\zeta=e^{\\pi i/5}\\) be a primitive \\(10\\)-th root of unity.  \nThe five solutions of \\(x^{5}=-1\\) are \\(\\zeta^{\\,k}\\) with \\(k\\equiv1,3,5,7,9\\pmod{10}\\); the value \\(k=5\\) gives \\(x=-1\\).  Hence\n\\[\n\\boxed{\\;Q(x)=0 \\Longleftrightarrow x\\in\\{\\zeta,\\zeta^{3},\\zeta^{7},\\zeta^{9}\\}\\;}\n\\]\nand these four numbers are pairwise distinct.\n\nStep 5.  Show that all four roots must appear (no multiplicities).  \nWrite \\(x_{1},x_{2},x_{3},x_{4}\\) for \\(b/a,c/a,d/a,e/a\\).  \nBecause \\(P(ax)=a^{4}Q(x)\\) and \\(Q\\) splits into four distinct linear factors, the multiset \\(\\{x_{1},x_{2},x_{3},x_{4}\\}\\) is contained in \\(\\{\\zeta,\\zeta^{3},\\zeta^{7},\\zeta^{9}\\}\\).\n\nWe now prove that every one of the four primitive \\(10\\)-th roots must occur exactly once.\n\n*  The scaled symmetric sums satisfy  \n\\[\n\\sum_{i=1}^{4}x_{i}=1,\\qquad \n\\sum_{1\\le i<j\\le4}x_{i}x_{j}=1,\\qquad\n\\sum_{1\\le i<j<k\\le4}x_{i}x_{j}x_{k}=1,\\qquad\n\\prod_{i=1}^{4}x_{i}=1,\n\\]\neach equal to the corresponding coefficient of \\(Q\\).\n\n*  The polynomial whose roots are the four numbers \\(x_{i}\\) is therefore\n\\[\nR(x)=(x-x_{1})(x-x_{2})(x-x_{3})(x-x_{4})\n     =x^{4}-x^{3}+x^{2}-x+1=Q(x).\n\\]\nBecause \\(Q\\) is irreducible over \\(\\mathbb{Q}\\) and its four roots are distinct, the only way for \\(R\\) to coincide with \\(Q\\) is for \\(R\\) to contain *every* root of \\(Q\\) exactly once.  Consequently  \n\\[\n\\{x_{1},x_{2},x_{3},x_{4}\\}=\\{\\zeta,\\zeta^{3},\\zeta^{7},\\zeta^{9}\\}.\n\\]\n\nStep 6.  Assemble the solutions.  \nLet \\(a\\) be any non-zero complex number and let  \n\\[\n(b,c,d,e)=\\bigl(a\\zeta,\\;a\\zeta^{3},\\;a\\zeta^{7},\\;a\\zeta^{9}\\bigr)\n\\]\nin any order.  The verification in Steps 1-4 shows that these quintuples satisfy conditions (i)-(iv).  Conversely, Step 5 proves that every solution arises in this fashion.  Hence\n\nAll solutions of the system are obtained by choosing an arbitrary non-zero complex number \\(a\\) and setting \\((b,c,d,e)\\) to be any permutation of  \n\\[\n\\bigl(a e^{\\pi i/5},\\; a e^{3\\pi i/5},\\; a e^{7\\pi i/5},\\; a e^{9\\pi i/5}\\bigr).\n\\]\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.629405",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Four equations instead of two: a sum, a reciprocal sum, a pairwise-product sum, and a product constraint, adding substantial algebraic heft.  \n•  Requires mastery of elementary symmetric sums and their relations to reciprocal sums—Newton’s identities appear implicitly.  \n•  The problem forces construction of a quartic whose coefficients are prescribed, followed by a non-trivial scaling argument.  \n•  Solution hinges on factoring \\(x^{5}+1\\) and recognizing its connection to primitive 10-th roots of unity, bringing in cyclotomic polynomials and root-of-unity theory.  \n•  Unlike the original (where the answer falls out after a clever substitution), here one must combine symmetric-polynomial theory, factorization tricks, and complex-root classification.  \n•  The answer set is discrete (up to permutation) and expressed in terms of transcendental constants \\(e^{\\pi i/5}\\), making pattern-matching or ad-hoc guessing impossible."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let \\(a,b,c,d,e\\) be non-zero complex numbers that satisfy the four simultaneous conditions  \n\\[\n\\begin{aligned}\n\\text{\\rm(i)}\\quad &b+c+d+e=a,\\\\[2pt]\n\\text{\\rm(ii)}\\quad &\\frac1b+\\frac1c+\\frac1d+\\frac1e=\\frac1a,\\\\[4pt]\n\\text{\\rm(iii)}\\quad &bc+bd+be+cd+ce+de=a^{2},\\\\[4pt]\n\\text{\\rm(iv)}\\quad &bcde=a^{4}.\n\\end{aligned}\n\\]\nDetermine, up to permutation of \\((b,c,d,e)\\), all quintuples \\((a,b,c,d,e)\\) that satisfy the system.\n\n--------------------------------------------------------------------",
+      "solution": "Step 1.  Express the data with elementary symmetric sums.  \nPut  \n\\[\n\\begin{aligned}\n\\sigma_1 &= b+c+d+e,\\\\\n\\sigma_2 &= bc+bd+be+cd+ce+de,\\\\\n\\sigma_3 &= bcd+bce+bde+cde,\\\\\n\\sigma_4 &= bcde .\n\\end{aligned}\n\\]\nConditions (i), (iii) and (iv) yield  \n\\[\n\\sigma_1=a,\\qquad \n\\sigma_2=a^{2},\\qquad \n\\sigma_4=a^{4}.\n\\]\nBecause  \n\\[\n\\frac1b+\\frac1c+\\frac1d+\\frac1e=\\frac{\\sigma_3}{\\sigma_4},\n\\]\ncondition (ii) forces  \n\\[\n\\frac{\\sigma_3}{a^{4}}=\\frac1a \\quad\\Longrightarrow\\quad \\sigma_3=a^{3}.\n\\]\n\nStep 2.  Build the monic quartic with roots \\(b,c,d,e\\):\n\\[\nP(t)=t^{4}-\\sigma_1 t^{3}+\\sigma_2 t^{2}-\\sigma_3 t+\\sigma_4\n     =t^{4}-a t^{3}+a^{2} t^{2}-a^{3} t+a^{4}.\n\\]\nHence every one of \\(b,c,d,e\\) is a zero of \\(P\\).\n\nStep 3.  Normalise by \\(a\\).  \nPut \\(t=ax\\;(x=t/a)\\).  Then\n\\[\n0=P(ax)=a^{4}\\!\\left(x^{4}-x^{3}+x^{2}-x+1\\right),\n\\]\nso each ratio \\(x=b/a,\\;c/a,\\;d/a,\\;e/a\\) is a root of\n\\[\nQ(x)=x^{4}-x^{3}+x^{2}-x+1.\n\\]\n\nStep 4.  Determine the roots of \\(Q\\).  \nObserve that\n\\[\nx^{5}+1=(x+1)Q(x).\n\\]\nThus \\(Q(x)=0\\) precisely for those solutions of \\(x^{5}=-1\\) other than \\(x=-1\\).  \nLet \\(\\zeta=e^{\\pi i/5}\\) be a primitive \\(10\\)-th root of unity.  \nThe five solutions of \\(x^{5}=-1\\) are \\(\\zeta^{\\,k}\\) with \\(k\\equiv1,3,5,7,9\\pmod{10}\\); the value \\(k=5\\) gives \\(x=-1\\).  Hence\n\\[\n\\boxed{\\;Q(x)=0 \\Longleftrightarrow x\\in\\{\\zeta,\\zeta^{3},\\zeta^{7},\\zeta^{9}\\}\\;}\n\\]\nand these four numbers are pairwise distinct.\n\nStep 5.  Show that all four roots must appear (no multiplicities).  \nWrite \\(x_{1},x_{2},x_{3},x_{4}\\) for \\(b/a,c/a,d/a,e/a\\).  \nBecause \\(P(ax)=a^{4}Q(x)\\) and \\(Q\\) splits into four distinct linear factors, the multiset \\(\\{x_{1},x_{2},x_{3},x_{4}\\}\\) is contained in \\(\\{\\zeta,\\zeta^{3},\\zeta^{7},\\zeta^{9}\\}\\).\n\nWe now prove that every one of the four primitive \\(10\\)-th roots must occur exactly once.\n\n*  The scaled symmetric sums satisfy  \n\\[\n\\sum_{i=1}^{4}x_{i}=1,\\qquad \n\\sum_{1\\le i<j\\le4}x_{i}x_{j}=1,\\qquad\n\\sum_{1\\le i<j<k\\le4}x_{i}x_{j}x_{k}=1,\\qquad\n\\prod_{i=1}^{4}x_{i}=1,\n\\]\neach equal to the corresponding coefficient of \\(Q\\).\n\n*  The polynomial whose roots are the four numbers \\(x_{i}\\) is therefore\n\\[\nR(x)=(x-x_{1})(x-x_{2})(x-x_{3})(x-x_{4})\n     =x^{4}-x^{3}+x^{2}-x+1=Q(x).\n\\]\nBecause \\(Q\\) is irreducible over \\(\\mathbb{Q}\\) and its four roots are distinct, the only way for \\(R\\) to coincide with \\(Q\\) is for \\(R\\) to contain *every* root of \\(Q\\) exactly once.  Consequently  \n\\[\n\\{x_{1},x_{2},x_{3},x_{4}\\}=\\{\\zeta,\\zeta^{3},\\zeta^{7},\\zeta^{9}\\}.\n\\]\n\nStep 6.  Assemble the solutions.  \nLet \\(a\\) be any non-zero complex number and let  \n\\[\n(b,c,d,e)=\\bigl(a\\zeta,\\;a\\zeta^{3},\\;a\\zeta^{7},\\;a\\zeta^{9}\\bigr)\n\\]\nin any order.  The verification in Steps 1-4 shows that these quintuples satisfy conditions (i)-(iv).  Conversely, Step 5 proves that every solution arises in this fashion.  Hence\n\nAll solutions of the system are obtained by choosing an arbitrary non-zero complex number \\(a\\) and setting \\((b,c,d,e)\\) to be any permutation of  \n\\[\n\\bigl(a e^{\\pi i/5},\\; a e^{3\\pi i/5},\\; a e^{7\\pi i/5},\\; a e^{9\\pi i/5}\\bigr).\n\\]\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.502196",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Four equations instead of two: a sum, a reciprocal sum, a pairwise-product sum, and a product constraint, adding substantial algebraic heft.  \n•  Requires mastery of elementary symmetric sums and their relations to reciprocal sums—Newton’s identities appear implicitly.  \n•  The problem forces construction of a quartic whose coefficients are prescribed, followed by a non-trivial scaling argument.  \n•  Solution hinges on factoring \\(x^{5}+1\\) and recognizing its connection to primitive 10-th roots of unity, bringing in cyclotomic polynomials and root-of-unity theory.  \n•  Unlike the original (where the answer falls out after a clever substitution), here one must combine symmetric-polynomial theory, factorization tricks, and complex-root classification.  \n•  The answer set is discrete (up to permutation) and expressed in terms of transcendental constants \\(e^{\\pi i/5}\\), making pattern-matching or ad-hoc guessing impossible."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

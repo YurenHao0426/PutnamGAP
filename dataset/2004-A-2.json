@@ -1,0 +1,212 @@
+{
+  "index": "2004-A-2",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "For $i = 1,2$ let $T_i$ be a triangle with side lengths $a_i, b_i, c_i$,\nand area $A_i$.  Suppose that $a_1 \\le a_2,  b_1 \\le b_2,  c_1 \\le\nc_2$,\nand that $T_2$ is an acute triangle. Does it follow that $A_1\n\\le A_2$?",
+  "solution": "\\textbf{First solution:} (partly due to Ravi Vakil)\nYes, it does follow.\nFor $i=1,2$,\nlet $P_i, Q_i, R_i$ be the vertices of $T_i$ opposide the sides of length\n$a_i, b_i, c_i$, respectively.\n\nWe first check the case where $a_1 = a_2$ (or $b_1 = b_2$ or $c_1 = c_2$,\nby the same argument after relabeling).\nImagine $T_2$ as being drawn with the base $Q_2R_2$\nhorizontal and the point $P_2$ above the line $Q_2R_2$. We may then\nposition $T_1$ so that $Q_1 = Q_2$, $R_1 = R_2$, and $P_1$ lies above the line\n$Q_1R_1 = Q_2R_2$. Then $P_1$ also lies inside the region bounded by the\ncircles through $P_2$ centered at $Q_2$ and $R_2$. Since $\\angle Q_2$\nand $\\angle R_2$ are acute, the part of this region above the line\n$Q_2R_2$ lies within $T_2$. In particular, the\ndistance from $P_1$ to the line $Q_2R_2$ is less than or equal to the\ndistance from $P_2$ to the line $Q_2R_2$; hence $A_1 \\leq A_2$.\n\nTo deduce the general case, put\n\\[\nr = \\max\\{a_1/a_2, b_1/b_2, c_1/c_2\\}.\n\\]\nLet $T_3$ be the triangle with sides $ra_2, rb_2, rc_2$, which\nhas area $r^2 A_2$. Applying the special case to $T_1$ and $T_3$,\nwe deduce that $A_1 \\leq r^2 A_2$; since $r \\leq 1$ by hypothesis,\nwe have $A_1 \\leq A_2$ as desired.\n\n\\textbf{Remark:}\nAnother geometric argument in the case $a_1 = a_2$\nis that since angles $\\angle Q_2$ and $\\angle R_2$\nare acute, the perpendicular to $Q_2R_2$ through $P_2$ separates $Q_2$ from\n$R_2$. If $A_1 > A_2$, then $P_1$ lies above the parallel to $Q_2R_2$\nthrough $P_2$; if then it lies on or to the left of the vertical line\nthrough $P_2$, we have $c_1 > c_2$ because the inequality holds\nfor both horizontal and vertical components (possibly with equality for one,\nbut not both). Similarly, if $P_1$ lies to the right of the vertical,\nthen $b_1 > b_2$.\n\n\\textbf{Second solution:} (attribution unknown)\nRetain notation as in the first paragraph of the first solution.\nSince the angle measures in any triangle add up to $\\pi$, some angle\nof $T_1$ must have measure less than or equal to its counterpart in\n$T_2$. Without loss of generality assume that $\\angle P_1 \\leq \\angle\nP_2$. Since the latter is acute (because $T_2$ is acute), we have\n$\\sin \\angle P_1 \\leq \\sin \\angle P_2$. By the Law of Sines,\n\\[\nA_1 = \\frac{1}{2} b_1 c_1 \\sin \\angle P_1 \\leq \\frac{1}{2}\nb_2 c_2 \\sin \\angle P_2 = A_2.\n\\]\n\n\\textbf{Remark:} Many other solutions are possible; for instance,\none uses Heron's formula for the area of a triangle in terms of\nits side lengths.",
+  "vars": [
+    "i",
+    "r",
+    "a_1",
+    "a_2",
+    "a_i",
+    "b_1",
+    "b_2",
+    "b_i",
+    "c_1",
+    "c_2",
+    "c_i",
+    "A_1",
+    "A_2",
+    "A_i",
+    "P_1",
+    "P_2",
+    "P_i",
+    "Q_1",
+    "Q_2",
+    "Q_i",
+    "R_1",
+    "R_2",
+    "R_i",
+    "T_1",
+    "T_2",
+    "T_3",
+    "T_i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexvar",
+        "r": "scalerat",
+        "a_1": "sideaone",
+        "a_2": "sideatwo",
+        "a_i": "sideagen",
+        "b_1": "sidebone",
+        "b_2": "sidebtwo",
+        "b_i": "sidebgen",
+        "c_1": "sidecone",
+        "c_2": "sidectwo",
+        "c_i": "sidecgen",
+        "A_1": "areaone",
+        "A_2": "areatwo",
+        "A_i": "areagen",
+        "P_1": "vertexpone",
+        "P_2": "vertexptwo",
+        "P_i": "vertexpgen",
+        "Q_1": "vertexqone",
+        "Q_2": "vertexqtwo",
+        "Q_i": "vertexqgen",
+        "R_1": "vertexrone",
+        "R_2": "vertexrtwo",
+        "R_i": "vertexrgen",
+        "T_1": "triangone",
+        "T_2": "triangtwo",
+        "T_3": "triangthr",
+        "T_i": "trianggen"
+      },
+      "question": "For $indexvar = 1,2$ let $trianggen$ be a triangle with side lengths $sideagen, sidebgen, sidecgen$,\nand area $areagen$.  Suppose that $sideaone \\le sideatwo,  sidebone \\le sidebtwo,  sidecone \\le\nsidectwo$,\nand that $triangtwo$ is an acute triangle. Does it follow that $areaone\n\\le areatwo$?",
+      "solution": "\\textbf{First solution:} (partly due to Ravi Vakil)\nYes, it does follow.\nFor $indexvar=1,2$,\nlet $vertexpgen, vertexqgen, vertexrgen$ be the vertices of $trianggen$ opposide the sides of length\n$sideagen, sidebgen, sidecgen$, respectively.\n\nWe first check the case where $sideaone = sideatwo$ (or $sidebone = sidebtwo$ or $sidecone = sidectwo$,\nby the same argument after relabeling).\nImagine $triangtwo$ as being drawn with the base $vertexqtwo vertexrtwo$\nhorizontal and the point $vertexptwo$ above the line $vertexqtwo vertexrtwo$. We may then\nposition $triangone$ so that $vertexqone = vertexqtwo$, $vertexrone = vertexrtwo$, and $vertexpone$ lies above the line\n$vertexqone vertexrone = vertexqtwo vertexrtwo$. Then $vertexpone$ also lies inside the region bounded by the\ncircles through $vertexptwo$ centered at $vertexqtwo$ and $vertexrtwo$. Since $\\angle vertexqtwo$\nand $\\angle vertexrtwo$ are acute, the part of this region above the line\n$vertexqtwo vertexrtwo$ lies within $triangtwo$. In particular, the\ndistance from $vertexpone$ to the line $vertexqtwo vertexrtwo$ is less than or equal to the\ndistance from $vertexptwo$ to the line $vertexqtwo vertexrtwo$; hence $areaone \\leq areatwo$.\n\nTo deduce the general case, put\n\\[\nscalerat = \\max\\{sideaone/sideatwo, sidebone/sidebtwo, sidecone/sidectwo\\}.\n\\]\nLet $triangthr$ be the triangle with sides $scalerat sideatwo, scalerat sidebtwo, scalerat sidectwo$, which\nhas area $scalerat^2 areatwo$. Applying the special case to $triangone$ and $triangthr$,\nwe deduce that $areaone \\leq scalerat^2 areatwo$; since $scalerat \\leq 1$ by hypothesis,\nwe have $areaone \\leq areatwo$ as desired.\n\n\\textbf{Remark:}\nAnother geometric argument in the case $sideaone = sideatwo$\nis that since angles $\\angle vertexqtwo$ and $\\angle vertexrtwo$\nare acute, the perpendicular to $vertexqtwo vertexrtwo$ through $vertexptwo$ separates $vertexqtwo$ from\n$vertexrtwo$. If $areaone > areatwo$, then $vertexpone$ lies above the parallel to $vertexqtwo vertexrtwo$\nthrough $vertexptwo$; if then it lies on or to the left of the vertical line\nthrough $vertexptwo$, we have $sidecone > sidectwo$ because the inequality holds\nfor both horizontal and vertical components (possibly with equality for one,\nbut not both). Similarly, if $vertexpone$ lies to the right of the vertical,\nthen $sidebone > sidebtwo$.\n\n\\textbf{Second solution:} (attribution unknown)\nRetain notation as in the first paragraph of the first solution.\nSince the angle measures in any triangle add up to $\\pi$, some angle\nof $triangone$ must have measure less than or equal to its counterpart in\n$triangtwo$. Without loss of generality assume that $\\angle vertexpone \\leq \\angle\nvertexptwo$. Since the latter is acute (because $triangtwo$ is acute), we have\n$\\sin \\angle vertexpone \\leq \\sin \\angle vertexptwo$. By the Law of Sines,\n\\[\nareaone = \\frac{1}{2} sidebone sidecone \\sin \\angle vertexpone \\leq \\frac{1}{2}\nsidebtwo sidectwo \\sin \\angle vertexptwo = areatwo.\n\\]\n\n\\textbf{Remark:} Many other solutions are possible; for instance,\none uses Heron's formula for the area of a triangle in terms of\nits side lengths."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "marigold",
+        "r": "canarywood",
+        "a_1": "blueberry",
+        "a_2": "lemonade",
+        "a_i": "chandelier",
+        "b_1": "sandstone",
+        "b_2": "willowtree",
+        "b_i": "honeycomb",
+        "c_1": "foxglove",
+        "c_2": "riverbank",
+        "c_i": "raincloud",
+        "A_1": "paperclip",
+        "A_2": "horseshoe",
+        "A_i": "driftwood",
+        "P_1": "starlight",
+        "P_2": "gemstone",
+        "P_i": "moonshine",
+        "Q_1": "blackberry",
+        "Q_2": "buttercup",
+        "Q_i": "falconry",
+        "R_1": "arrowhead",
+        "R_2": "sunflower",
+        "R_i": "zeppelin",
+        "T_1": "spicebush",
+        "T_2": "afterglow",
+        "T_3": "snowflake",
+        "T_i": "shipwreck"
+      },
+      "question": "For $marigold = 1,2$ let $shipwreck$ be a triangle with side lengths $chandelier, honeycomb, raincloud$,\nand area $driftwood$.  Suppose that $blueberry \\le lemonade,  sandstone \\le willowtree,  foxglove \\le\nriverbank$, and that $afterglow$ is an acute triangle. Does it follow that $paperclip\n\\le horseshoe$?",
+      "solution": "\\textbf{First solution:} (partly due to Ravi Vakil)\nYes, it does follow.\nFor $marigold=1,2$,\nlet $moonshine, falconry, zeppelin$ be the vertices of $shipwreck$ opposide the sides of length\n$chandelier, honeycomb, raincloud$, respectively.\n\nWe first check the case where $blueberry = lemonade$ (or $sandstone = willowtree$ or $foxglove = riverbank$,\nby the same argument after relabeling).\nImagine $afterglow$ as being drawn with the base $buttercupsunflower$\nhorizontal and the point $gemstone$ above the line $buttercupsunflower$. We may then\nposition $spicebush$ so that $blackberry = buttercup$, $arrowhead = sunflower$, and $starlight$ lies above the line\n$blackberryarrowhead = buttercupsunflower$. Then $starlight$ also lies inside the region bounded by the\ncircles through $gemstone$ centered at $buttercup$ and $sunflower$. Since $\\angle buttercup$\nand $\\angle sunflower$ are acute, the part of this region above the line\n$buttercupsunflower$ lies within $afterglow$. In particular, the\ndistance from $starlight$ to the line $buttercupsunflower$ is less than or equal to the\ndistance from $gemstone$ to the line $buttercupsunflower$; hence $paperclip \\leq horseshoe$.\n\nTo deduce the general case, put\n\\[\ncanarywood = \\max\\{blueberry/lemonade, sandstone/willowtree, foxglove/riverbank\\}.\n\\]\nLet $snowflake$ be the triangle with sides $canarywoodlemonade, canarywoodwillowtree, canarywoodriverbank$, which\nhas area $canarywood^2 horseshoe$. Applying the special case to $spicebush$ and $snowflake$,\nwe deduce that $paperclip \\leq canarywood^2 horseshoe$; since $canarywood \\leq 1$ by hypothesis,\nwe have $paperclip \\leq horseshoe$ as desired.\n\n\\textbf{Remark:}\nAnother geometric argument in the case $blueberry = lemonade$\nis that since angles $\\angle buttercup$ and $\\angle sunflower$\nare acute, the perpendicular to $buttercupsunflower$ through $gemstone$ separates $buttercup$ from\n$sunflower$. If $paperclip > horseshoe$, then $starlight$ lies above the parallel to $buttercupsunflower$\nthrough $gemstone$; if then it lies on or to the left of the vertical line\nthrough $gemstone$, we have $foxglove > riverbank$ because the inequality holds\nfor both horizontal and vertical components (possibly with equality for one,\nbut not both). Similarly, if $starlight$ lies to the right of the vertical,\nthen $sandstone > willowtree$.\n\n\\textbf{Second solution:} (attribution unknown)\nRetain notation as in the first paragraph of the first solution.\nSince the angle measures in any triangle add up to $\\pi$, some angle\nof $spicebush$ must have measure less than or equal to its counterpart in\n$afterglow$. Without loss of generality assume that $\\angle starlight \\leq \\angle\ngemstone$. Since the latter is acute (because $afterglow$ is acute), we have\n$\\sin \\angle starlight \\leq \\sin \\angle gemstone$. By the Law of Sines,\n\\[\npaperclip = \\frac{1}{2} sandstone foxglove \\sin \\angle starlight \\leq \\frac{1}{2}\nwillowtree riverbank \\sin \\angle gemstone = horseshoe.\n\\]\n\n\\textbf{Remark:} Many other solutions are possible; for instance,\none uses Heron's formula for the area of a triangle in terms of\nits side lengths."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "collective",
+        "r": "expansion",
+        "a_1": "shortedgeone",
+        "a_2": "shortedgetwo",
+        "a_i": "shortedgevar",
+        "b_1": "narrowedgeone",
+        "b_2": "narrowedgetwo",
+        "b_i": "narrowedgevar",
+        "c_1": "tinyedgeone",
+        "c_2": "tinyedgetwo",
+        "c_i": "tinyedgevar",
+        "A_1": "smallareaone",
+        "A_2": "smallareatwo",
+        "A_i": "smallareavar",
+        "P_1": "farvertexone",
+        "P_2": "farvertextwo",
+        "P_i": "farvertexvar",
+        "Q_1": "innervertexone",
+        "Q_2": "innervertextwo",
+        "Q_i": "innervertexvar",
+        "R_1": "outervertexone",
+        "R_2": "outervertextwo",
+        "R_i": "outervertexvar",
+        "T_1": "smalltriangleone",
+        "T_2": "smalltriangletwo",
+        "T_3": "smalltriangletri",
+        "T_i": "smalltrianglevar"
+      },
+      "question": "For $collective = 1,2$ let $smalltrianglevar$ be a triangle with side lengths $shortedgevar, narrowedgevar, tinyedgevar$,\nand area $smallareavar$.  Suppose that $shortedgeone \\le shortedgetwo,  narrowedgeone \\le narrowedgetwo,  tinyedgeone \\le\ntinyedgetwo$, and that $smalltriangletwo$ is an acute triangle. Does it follow that $smallareaone\n\\le smallareatwo$?",
+      "solution": "\\textbf{First solution:} (partly due to Ravi Vakil)\nYes, it does follow.\nFor $collective=1,2$,\nlet $farvertexvar, innervertexvar, outervertexvar$ be the vertices of $smalltrianglevar$ opposide the sides of length\n$shortedgevar, narrowedgevar, tinyedgevar$, respectively.\n\nWe first check the case where $shortedgeone = shortedgetwo$ (or $narrowedgeone = narrowedgetwo$ or $tinyedgeone = tinyedgetwo$,\nby the same argument after relabeling).\nImagine $smalltriangletwo$ as being drawn with the base $innervertextwo outervertextwo$\nhorizontal and the point $farvertextwo$ above the line $innervertextwo outervertextwo$. We may then\nposition $smalltriangleone$ so that $innervertexone = innervertextwo$, $outervertexone = outervertextwo$, and $farvertexone$ lies above the line\n$innervertexone outervertexone = innervertextwo outervertextwo$. Then $farvertexone$ also lies inside the region bounded by the\ncircles through $farvertextwo$ centered at $innervertextwo$ and $outervertextwo$. Since $\\angle innervertextwo$\nand $\\angle outervertextwo$ are acute, the part of this region above the line\n$innervertextwo outervertextwo$ lies within $smalltriangletwo$. In particular, the\ndistance from $farvertexone$ to the line $innervertextwo outervertextwo$ is less than or equal to the\ndistance from $farvertextwo$ to the line $innervertextwo outervertextwo$; hence $smallareaone \\leq smallareatwo$.\n\nTo deduce the general case, put\n\\[\nexpansion = \\max\\{shortedgeone/shortedgetwo, narrowedgeone/narrowedgetwo, tinyedgeone/tinyedgetwo\\}.\n\\]\nLet $smalltriangletri$ be the triangle with sides $expansionshortedgetwo, expansionnarrowedgetwo, expansiontinyedgetwo$, which\nhas area $expansion^2 smallareatwo$. Applying the special case to $smalltriangleone$ and $smalltriangletri$,\nwe deduce that $smallareaone \\leq expansion^2 smallareatwo$; since $expansion \\leq 1$ by hypothesis,\nwe have $smallareaone \\leq smallareatwo$ as desired.\n\n\\textbf{Remark:}\nAnother geometric argument in the case $shortedgeone = shortedgetwo$\nis that since angles $\\angle innervertextwo$ and $\\angle outervertextwo$\nare acute, the perpendicular to $innervertextwo outervertextwo$ through $farvertextwo$ separates $innervertextwo$ from\noutervertextwo. If $smallareaone > smallareatwo$, then $farvertexone$ lies above the parallel to $innervertextwo outervertextwo$\nthrough $farvertextwo$; if then it lies on or to the left of the vertical line\nthrough $farvertextwo$, we have $tinyedgeone > tinyedgetwo$ because the inequality holds\nfor both horizontal and vertical components (possibly with equality for one,\nbut not both). Similarly, if $farvertexone$ lies to the right of the vertical,\nthen $narrowedgeone > narrowedgetwo$.\n\n\\textbf{Second solution:} (attribution unknown)\nRetain notation as in the first paragraph of the first solution.\nSince the angle measures in any triangle add up to $\\pi$, some angle\nof $smalltriangleone$ must have measure less than or equal to its counterpart in\n$smalltriangletwo$. Without loss of generality assume that $\\angle farvertexone \\leq \\angle\nfarvertextwo$. Since the latter is acute (because $smalltriangletwo$ is acute), we have\n$\\sin \\angle farvertexone \\leq \\sin \\angle farvertextwo$. By the Law of Sines,\n\\[\nsmallareaone = \\frac{1}{2} narrowedgeone tinyedgeone \\sin \\angle farvertexone \\leq \\frac{1}{2}\nnarrowedgetwo tinyedgetwo \\sin \\angle farvertextwo = smallareatwo.\n\\]\n\n\\textbf{Remark:} Many other solutions are possible; for instance,\none uses Heron's formula for the area of a triangle in terms of\nits side lengths."
+    },
+    "garbled_string": {
+      "map": {
+        "r": "kxvpzndq",
+        "a_1": "ygrldpma",
+        "a_2": "czmhvexo",
+        "a_i": "wqbrtusk",
+        "b_1": "uvnkysop",
+        "b_2": "jdfkreli",
+        "b_i": "lzhxsqaf",
+        "c_1": "qpelavrn",
+        "c_2": "tmgoswzb",
+        "c_i": "sbheculp",
+        "A_1": "gpntzyor",
+        "A_2": "xdqsmbev",
+        "A_i": "hwcfkuei",
+        "P_1": "abjvcsor",
+        "P_2": "bldmxnqe",
+        "P_i": "dwtpghyu",
+        "Q_1": "zkelhpmf",
+        "Q_2": "nrcbvasj",
+        "Q_i": "fyumdoqe",
+        "R_1": "xoygkrpl",
+        "R_2": "kjdfercu",
+        "R_i": "vtslqahn",
+        "T_1": "imldvrcg",
+        "T_2": "oquzjwen",
+        "T_3": "gprkdwha",
+        "T_i": "efsatznb"
+      },
+      "question": "For $i = 1,2$ let $efsatznb$ be a triangle with side lengths $wqbrtusk, lzhxsqaf, sbheculp$, and area $hwcfkuei$.  Suppose that $ygrldpma \\le czmhvexo,  uvnkysop \\le jdfkreli,  qpelavrn \\le tmgoswzb$, and that $oquzjwen$ is an acute triangle. Does it follow that $gpntzyor \\le xdqsmbev$?",
+      "solution": "\\textbf{First solution:} (partly due to Ravi Vakil)\nYes, it does follow.\nFor $i=1,2$,\nlet $dwtpghyu, fyumdoqe, vtslqahn$ be the vertices of $efsatznb$ opposide the sides of length\n$wqbrtusk, lzhxsqaf, sbheculp$, respectively.\n\nWe first check the case where $ygrldpma = czmhvexo$ (or $uvnkysop = jdfkreli$ or $qpelavrn = tmgoswzb$,\nby the same argument after relabeling).\nImagine $oquzjwen$ as being drawn with the base $nrcbvasjkjdfercu$\nhorizontal and the point $bldmxnqe$ above the line $nrcbvasjkjdfercu$. We may then\nposition $imldvrcg$ so that $zkelhpmf = nrcbvasj$, $xoygkrpl = kjdfercu$, and $abjvcsor$ lies above the line\n$zkelhpmfxoygkrpl = nrcbvasjkjdfercu$. Then $abjvcsor$ also lies inside the region bounded by the\ncircles through $bldmxnqe$ centered at $nrcbvasj$ and $kjdfercu$. Since $\\angle nrcbvasj$\nand $\\angle kjdfercu$ are acute, the part of this region above the line\n$nrcbvasjkjdfercu$ lies within $oquzjwen$. In particular, the\ndistance from $abjvcsor$ to the line $nrcbvasjkjdfercu$ is less than or equal to the\ndistance from $bldmxnqe$ to the line $nrcbvasjkjdfercu$; hence $gpntzyor \\leq xdqsmbev$.\n\nTo deduce the general case, put\n\\[\nkxvpzndq = \\max\\{ygrldpma/czmhvexo, uvnkysop/jdfkreli, qpelavrn/tmgoswzb\\}.\n\\]\nLet $gprkdwha$ be the triangle with sides $kxvpzndq czmhvexo, kxvpzndq jdfkreli, kxvpzndq tmgoswzb$, which\nhas area $kxvpzndq^2 xdqsmbev$. Applying the special case to $imldvrcg$ and $gprkdwha$,\nwe deduce that $gpntzyor \\leq kxvpzndq^2 xdqsmbev$; since $kxvpzndq \\leq 1$ by hypothesis,\nwe have $gpntzyor \\leq xdqsmbev$ as desired.\n\n\\textbf{Remark:}\nAnother geometric argument in the case $ygrldpma = czmhvexo$\nis that since angles $\\angle nrcbvasj$ and $\\angle kjdfercu$\nare acute, the perpendicular to $nrcbvasjkjdfercu$ through $bldmxnqe$ separates $nrcbvasj$ from\n$kjdfercu$. If $gpntzyor > xdqsmbev$, then $abjvcsor$ lies above the parallel to $nrcbvasjkjdfercu$\nthrough $bldmxnqe$; if then it lies on or to the left of the vertical line\nthrough $bldmxnqe$, we have $qpelavrn > tmgoswzb$ because the inequality holds\nfor both horizontal and vertical components (possibly with equality for one,\nbut not both). Similarly, if $abjvcsor$ lies to the right of the vertical,\nthen $uvnkysop > jdfkreli$.\n\n\\textbf{Second solution:} (attribution unknown)\nRetain notation as in the first paragraph of the first solution.\nSince the angle measures in any triangle add up to $\\pi$, some angle\nof $imldvrcg$ must have measure less than or equal to its counterpart in\n$oquzjwen$. Without loss of generality assume that $\\angle abjvcsor \\leq \\angle\nbldmxnqe$. Since the latter is acute (because $oquzjwen$ is acute), we have\n$\\sin \\angle abjvcsor \\leq \\sin \\angle bldmxnqe$. By the Law of Sines,\n\\[\ngpntzyor = \\frac{1}{2} uvnkysop qpelavrn \\sin \\angle abjvcsor \\leq \\frac{1}{2}\njdfkreli tmgoswzb \\sin \\angle bldmxnqe = xdqsmbev.\n\\]\n\n\\textbf{Remark:} Many other solutions are possible; for instance,\none uses Heron's formula for the area of a triangle in terms of\nits side lengths."
+    },
+    "kernel_variant": {
+      "question": "Let \\Delta X and \\Delta Y be two triangles.  In \\Delta X label the vertices L_X , M_X , N_X and let the side lengths opposite them be \\ell _X , m_X , n_X , respectively.  Label \\Delta Y analogously, so its sides opposite L_Y , M_Y , N_Y are \\ell _Y , m_Y , n_Y.  Assume\n\n1.  \\ell _X \\leq  \\ell _Y , m_X \\leq  m_Y , n_X \\leq  n_Y  (each side of \\Delta X is not longer than the corresponding side of \\Delta Y);\n2.  every angle of \\Delta Y is at most 90^\\circ (i.e. \\Delta Y is non-obtuse).\n\nLet K_X and K_Y denote the areas of \\Delta X and \\Delta Y, respectively.  Prove that one always has\n\n            K_X \\leq  K_Y.",
+      "solution": "Because the three angles in any triangle add up to \\pi , at least one angle of \\Delta X cannot exceed the corresponding angle of \\Delta Y.  Choose such a vertex and call it V (so V is one of L, M, N and\n\n            \\angle V_X  \\leq   \\angle V_Y.      (1)\n\nSince \\Delta Y is non-obtuse, \\angle V_Y \\leq  \\pi /2, and therefore \\angle V_X \\leq  \\angle V_Y \\leq  \\pi /2.  Consequently both angles lie in the interval [0, \\pi /2], on which the sine function is increasing; hence\n\n            sin\\angle V_X  \\leq   sin\\angle V_Y.      (2)\n\nLet the two sides of a triangle that meet at vertex V be denoted by p_\\sigma  and q_\\sigma  (\\sigma  = X, Y).  Because every corresponding pair of sides satisfies the component-wise inequalities in the hypothesis, we have\n\n            p_X \\leq  p_Y   and   q_X \\leq  q_Y.      (3)\n\nFor each triangle, the area can be expressed using the two sides adjacent to V and the included angle at V:\n\n            K_X = \\frac{1}{2} \\cdot  p_X \\cdot  q_X \\cdot  sin\\angle V_X,\n            K_Y = \\frac{1}{2} \\cdot  p_Y \\cdot  q_Y \\cdot  sin\\angle V_Y.      (4)\n\nCombining (2), (3) and (4) gives\n\n            K_X = \\frac{1}{2} \\cdot  p_X \\cdot  q_X \\cdot  sin\\angle V_X\n                 \\leq  \\frac{1}{2} \\cdot  p_Y \\cdot  q_Y \\cdot  sin\\angle V_Y = K_Y,\n\nwhich is the desired inequality.\n\nTherefore, if each side of \\Delta X is no longer than the corresponding side of a non-obtuse triangle \\Delta Y, then the area of \\Delta X does not exceed the area of \\Delta Y.",
+      "_meta": {
+        "core_steps": [
+          "By angle-sum, at least one angle of T₁ is ≤ its counterpart in T₂.",
+          "Since T₂ is (at least) non-obtuse, both chosen angles lie in [0,π/2], so sine is monotone and sin θ₁ ≤ sin θ₂.",
+          "Write the areas as A = (1/2)(product of the two sides adjacent to the chosen angle)·sin θ.",
+          "Combine side inequalities (those two sides) with sin θ₁ ≤ sin θ₂ to get A₁ ≤ A₂."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Names of vertices and opposite sides may be relabeled arbitrarily.",
+            "original": "P,Q,R and a,b,c"
+          },
+          "slot2": {
+            "description": "Which specific angle (and its two adjacent sides) is selected for the comparison.",
+            "original": "Angle at vertex P with adjacent sides b and c"
+          },
+          "slot3": {
+            "description": "Full set of side inequalities can be weakened to just the two sides adjacent to the selected angle.",
+            "original": "a₁ ≤ a₂, b₁ ≤ b₂, c₁ ≤ c₂"
+          },
+          "slot4": {
+            "description": "‘Acute’ can be broadened to ‘non-obtuse’; monotonicity of sine still holds.",
+            "original": "T₂ is described as acute"
+          },
+          "slot5": {
+            "description": "Indices 1 and 2 that distinguish the triangles may be replaced by any two distinct labels.",
+            "original": "Subscripts 1 and 2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

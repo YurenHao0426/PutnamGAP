@@ -1,0 +1,214 @@
+{
+  "index": "2003-A-5",
+  "type": "COMB",
+  "tag": [
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "A Dyck $n$-path is a lattice path of  $n$  upsteps $(1,1)$ and  $n$\n  downsteps $(1,-1)$\nthat starts at the origin  $O$  and never dips below the  $x$-axis.\nA return is a maximal sequence of contiguous downsteps that terminates\non the  $x$-axis. For example, the Dyck 5-path illustrated has two returns,\nof length  3  and  1  respectively.\n\\begin{center}\n\\begin{tikzpicture}[scale=.5]\n\\fill (0,0) circle (.2); \\fill (1,1) circle (.2); \\fill (2,2) circle (.2);\n\\fill (3,1) circle (.2); \\fill (4,2) circle (.2); \\fill (5,3) circle (.2);\n\\fill (6,2) circle (.2); \\fill (7,1) circle (.2); \\fill (8,0) circle (.2);\n\\fill (9,1) circle (.2); \\fill (10,0) circle (.2);\n\\draw (0,0) -- (2,2) -- (3,1) -- (5,3) -- (8,0) -- (9,1) -- (10,0) -- cycle;\n\\draw (-.3,-.1) node[anchor=north] {$O$};\n\\end{tikzpicture}\n\\end{center}\nShow that there is a one-to-one correspondence between the Dyck  $n$-paths\nwith no return of even length and the Dyck $(n-1)$-paths.",
+  "solution": "\\textbf{First solution:}\nWe represent a Dyck $n$-path by a sequence $a_1\\cdots a_{2n}$, where\neach $a_i$ is either $(1,1)$ or $(1,-1)$.\n\nGiven an $(n-1)$-path $P=a_1\\cdots a_{2n-2}$, we distinguish two cases.\nIf $P$ has no returns of even-length, then let $f(P)$ denote the $n$-path\n$(1,1)(1,-1)P$.  Otherwise, let $a_ia_{i+1}\\cdots a_{j}$ denote the\nrightmost even-length return in $P$, and let $f(P)=(1,1)a_1a_2\\cdots\na_j(1,-1)a_{j+1}\\cdots a_{2n-2}$.  Then $f$ clearly maps the set of Dyck\n$(n-1)$-paths to the set of Dyck $n$-paths having no even return.\n\nWe claim that $f$ is bijective; to see this, we simply construct the\ninverse mapping.  Given an $n$-path $P$, let $R=a_ia_{i+1}...a_j$\ndenote the leftmost return in $P$, and let $g(P)$ denote the\npath obtained by removing $a_1$ and $a_j$ from $P$.  Then evidently\n$f \\circ g$ and $g \\circ f$ are identity maps, proving the claim.\n\n\\textbf{Second solution:} (by Dan Bernstein)\nLet $C_n$ be the number of Dyck paths of length $n$, let $O_n$ be the number\nof Dyck paths whose final return has odd length, and let $X_n$ be the number\nof Dyck paths with no return of even length.\n\nWe first exhibit a recursion for $O_n$; note that $O_0 = 0$.\nGiven a Dyck $n$-path\nwhose final return has odd length, split it just after its next-to-last return.\nFor some $k$ (possibly zero), this yields\na Dyck $k$-path, an upstep, a Dyck $(n-k-1)$-path whose odd return\nhas even length, and a downstep. Thus for $n \\geq 1$,\n\\[\nO_n = \\sum_{k=0}^{n-1} C_k (C_{n-k-1} - O_{n-k-1}).\n\\]\n\nWe next exhibit a similar recursion for $X_n$; note that $X_0 = 1$.\nGiven a Dyck $n$-path with no even return,\nsplitting as above yields for some $k$\na Dyck $k$-path with no even return,\nan upstep, a Dyck $(n-k-1)$-path whose final return has even length,\nthen a downstep. Thus for $n \\geq 1$,\n\\[\nX_n = \\sum_{k=0}^{n-1} X_k (C_{n-k-1} - O_{n-k-1}).\n\\]\n\nTo conclude, we verify that $X_n = C_{n-1}$ for $n \\geq 1$,\nby induction on $n$. This is\nclear for $n=1$ since $X_1 = C_0 = 1$. Given $X_k = C_{k-1}$ for $k<n$, we have\n\\begin{align*}\nX_n  &=\n\\sum_{k=0}^{n-1} X_k (C_{n-k-1} - O_{n-k-1}) \\\\\n&= C_{n-1} - O_{n-1} + \\sum_{k=1}^{n-1} C_{k-1} (C_{n-k-1} - O_{n-k-1}) \\\\\n&= C_{n-1} - O_{n-1} + O_{n-1} \\\\\n&= C_{n-1},\n\\end{align*}\nas desired.\n\n\\textbf{Note:}\nSince the problem only asked about the \\emph{existence} of a\none-to-one correspondence, we believe that any proof, bijective or not,\nthat the two sets\nhave the same cardinality is an acceptable solution. (Indeed, it would be\nhighly unusual to insist on using or not using a specific proof technique!)\nThe second solution\nabove can also be phrased in terms of generating functions.\nAlso, the $C_n$ are well-known to equal the Catalan numbers\n$\\frac{1}{n+1} \\binom{2n}{n}$; the problem at hand is part of a famous\nexercise in Richard Stanley's \\textit{Enumerative Combinatorics, Volume 1}\ngiving 66 combinatorial interpretations of the Catalan numbers.",
+  "vars": [
+    "n",
+    "k",
+    "i",
+    "j",
+    "x",
+    "P",
+    "a",
+    "R",
+    "g"
+  ],
+  "params": [
+    "O",
+    "f",
+    "C_n",
+    "O_n",
+    "X_n",
+    "C_k",
+    "O_n-k-1",
+    "X_k",
+    "C_n-k-1",
+    "C_k-1",
+    "C_0",
+    "X_0",
+    "O_0",
+    "X_1",
+    "a_1",
+    "a_2n",
+    "a_i",
+    "a_i+1",
+    "a_j"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "steppairs",
+        "k": "splitindex",
+        "i": "leftindex",
+        "j": "rightindex",
+        "P": "givenpath",
+        "a": "step",
+        "R": "leftreturn",
+        "g": "invmap",
+        "O": "originpoint",
+        "f": "forwardmap",
+        "C_n": "catalann",
+        "O_n": "oddreturn",
+        "X_n": "noevenret",
+        "C_k": "catalank",
+        "O_n-k-1": "oddremseg",
+        "X_k": "noevenindex",
+        "C_n-k-1": "catalanrem",
+        "C_k-1": "catalanprev",
+        "C_0": "catalanzero",
+        "X_0": "noevenzero",
+        "O_0": "oddreturnzero",
+        "X_1": "noevenone",
+        "a_1": "stepone",
+        "a_2n": "steptwopairs",
+        "a_i": "stepi",
+        "a_i+1": "stepisuccessor",
+        "a_j": "stepj"
+      },
+      "question": "A Dyck $steppairs$-path is a lattice path of  $steppairs$  upsteps $(1,1)$ and  $steppairs$\n  downsteps $(1,-1)$\nthat starts at the origin  originpoint  and never dips below the  $x$-axis.\nA return is a maximal sequence of contiguous downsteps that terminates\non the  $x$-axis. For example, the Dyck 5-path illustrated has two returns,\nof length  3  and  1  respectively.\n\\begin{center}\n\\begin{tikzpicture}[scale=.5]\n\\fill (0,0) circle (.2); \\fill (1,1) circle (.2); \\fill (2,2) circle (.2);\n\\fill (3,1) circle (.2); \\fill (4,2) circle (.2); \\fill (5,3) circle (.2);\n\\fill (6,2) circle (.2); \\fill (7,1) circle (.2); \\fill (8,0) circle (.2);\n\\fill (9,1) circle (.2); \\fill (10,0) circle (.2);\n\\draw (0,0) -- (2,2) -- (3,1) -- (5,3) -- (8,0) -- (9,1) -- (10,0) -- cycle;\n\\draw (-.3,-.1) node[anchor=north] {$originpoint$};\n\\end{tikzpicture}\n\\end{center}\nShow that there is a one-to-one correspondence between the Dyck  $steppairs$-paths\nwith no return of even length and the Dyck $(steppairs-1)$-paths.",
+      "solution": "\\textbf{First solution:}\nWe represent a Dyck $steppairs$-path by a sequence stepone\\cdots steptwopairs, where\neach stepi is either $(1,1)$ or $(1,-1)$.\n\nGiven an $(steppairs-1)$-path givenpath=stepone\\cdots step_{2steppairs-2}, we distinguish two cases.\nIf givenpath has no returns of even-length, then let forwardmap(givenpath) denote the $steppairs$-path\n$(1,1)(1,-1)$givenpath.  Otherwise, let stepi stepisuccessor\\cdots stepj denote the\nrightmost even-length return in givenpath, and let forwardmap(givenpath)=(1,1)stepone step_2\\cdots\nstepj(1,-1)step_{rightindex+1}\\cdots step_{2steppairs-2}.  Then forwardmap clearly maps the set of Dyck\n$(steppairs-1)$-paths to the set of Dyck $steppairs$-paths having no even return.\n\nWe claim that forwardmap is bijective; to see this, we simply construct the\ninverse mapping.  Given a $steppairs$-path givenpath, let leftreturn=stepi stepisuccessor...stepj\ndenote the leftmost return in givenpath, and let invmap(givenpath) denote the\npath obtained by removing stepone and stepj from givenpath.  Then evidently\nforwardmap \\circ invmap and invmap \\circ forwardmap are identity maps, proving the claim.\n\n\\textbf{Second solution:} (by Dan Bernstein)\nLet catalann be the number of Dyck paths of length steppairs, let oddreturn be the number\nof Dyck paths whose final return has odd length, and let noevenret be the number\nof Dyck paths with no return of even length.\n\nWe first exhibit a recursion for oddreturn; note that oddreturnzero = 0.\nGiven a Dyck steppairs-path\nwhose final return has odd length, split it just after its next-to-last return.\nFor some splitindex (possibly zero), this yields\na Dyck splitindex-path, an upstep, a Dyck $(steppairs-splitindex-1)$-path whose odd return\nhas even length, and a downstep. Thus for steppairs $\\geq 1$,\n\\[\noddreturn = \\sum_{splitindex=0}^{steppairs-1} catalank (catalanrem - oddremseg).\n\\]\n\nWe next exhibit a similar recursion for noevenret; note that noevenzero = 1.\nGiven a Dyck steppairs-path with no even return,\nsplitting as above yields for some splitindex\na Dyck splitindex-path with no even return,\nan upstep, a Dyck $(steppairs-splitindex-1)$-path whose final return has even length,\nthen a downstep. Thus for steppairs $\\geq 1$,\n\\[\nnoevenret = \\sum_{splitindex=0}^{steppairs-1} noevenindex (catalanrem - oddremseg).\n\\]\n\nTo conclude, we verify that noevenret = $C_{steppairs-1}$ for steppairs $\\geq 1$,\nby induction on steppairs. This is\nclear for steppairs=1 since noevenone = catalanzero = 1. Given noevenindex = $C_{splitindex-1}$ for splitindex<steppairs, we have\n\\begin{align*}\nnoevenret  &=\n\\sum_{splitindex=0}^{steppairs-1} noevenindex (C_{steppairs-splitindex-1} - oddremseg) \\\\\n&= C_{steppairs-1} - oddreturn + \\sum_{splitindex=1}^{steppairs-1} C_{splitindex-1} (C_{steppairs-splitindex-1} - oddremseg) \\\\\n&= C_{steppairs-1} - oddreturn + oddreturn \\\\\n&= C_{steppairs-1},\n\\end{align*}\nas desired.\n\n\\textbf{Note:}\nSince the problem only asked about the \\emph{existence} of a\none-to-one correspondence, we believe that any proof, bijective or not,\nthat the two sets\nhave the same cardinality is an acceptable solution. (Indeed, it would be\nhighly unusual to insist on using or not using a specific proof technique!)\nThe second solution\nabove can also be phrased in terms of generating functions.\nAlso, the $C_{steppairs}$ are well-known to equal the Catalan numbers\n$\\frac{1}{steppairs+1} \\binom{2steppairs}{steppairs}$; the problem at hand is part of a famous\nexercise in Richard Stanley's \\textit{Enumerative Combinatorics, Volume 1}\ngiving 66 combinatorial interpretations of the Catalan numbers."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "k": "crocodile",
+        "i": "armadillo",
+        "j": "blueberry",
+        "x": "chandelier",
+        "P": "encyclopedia",
+        "a": "thermometer",
+        "R": "marshmallow",
+        "g": "hippodrome",
+        "O": "watermelon",
+        "f": "heliumgas",
+        "C_n": "raincoat",
+        "O_n": "snowshoes",
+        "X_n": "alligator",
+        "C_k": "tortoise",
+        "O_n-k-1": "blackboard",
+        "X_k": "kangaroo",
+        "C_n-k-1": "toothbrush",
+        "C_k-1": "hairbrush",
+        "C_0": "pinecone",
+        "X_0": "boomerang",
+        "O_0": "goldfish",
+        "X_1": "jellyfish",
+        "a_1": "firetruck",
+        "a_2n": "typewriter",
+        "a_i": "screwdriver",
+        "a_i+1": "paintbrush",
+        "a_j": "paperclip"
+      },
+      "question": "A Dyck $sunflower$-path is a lattice path of  $sunflower$  upsteps $(1,1)$ and  $sunflower$\n  downsteps $(1,-1)$\nthat starts at the origin  $watermelon$  and never dips below the  $chandelier$-axis.\nA return is a maximal sequence of contiguous downsteps that terminates\non the  $chandelier$-axis. For example, the Dyck 5-path illustrated has two returns,\nof length  3  and  1  respectively.\n\\begin{center}\n\\begin{tikzpicture}[scale=.5]\n\\fill (0,0) circle (.2); \\fill (1,1) circle (.2); \\fill (2,2) circle (.2);\n\\fill (3,1) circle (.2); \\fill (4,2) circle (.2); \\fill (5,3) circle (.2);\n\\fill (6,2) circle (.2); \\fill (7,1) circle (.2); \\fill (8,0) circle (.2);\n\\fill (9,1) circle (.2); \\fill (10,0) circle (.2);\n\\draw (0,0) -- (2,2) -- (3,1) -- (5,3) -- (8,0) -- (9,1) -- (10,0) -- cycle;\n\\draw (-.3,-.1) node[anchor=north] {$watermelon$};\n\\end{tikzpicture}\n\\end{center}\nShow that there is a one-to-one correspondence between the Dyck  $sunflower$-paths\nwith no return of even length and the Dyck $(sunflower-1)$-paths.",
+      "solution": "\\textbf{First solution:}\nWe represent a Dyck $sunflower$-path by a sequence $firetruck\\cdots typewriter$, where\neach $screwdriver$ is either $(1,1)$ or $(1,-1)$.\n\nGiven an $(sunflower-1)$-path $encyclopedia=firetruck\\cdots thermometer_{2sunflower-2}$, we distinguish two cases.\nIf $encyclopedia$ has no returns of even-length, then let $\\heliumgas(encyclopedia)$ denote the $sunflower$-path\n$(1,1)(1,-1)\\,encyclopedia$.  Otherwise, let $screwdriver_{armadillo}screwdriver_{armadillo+1}\\cdots paperclip$ denote the\nrightmost even-length return in $encyclopedia$, and let\n\\[\n\\heliumgas(encyclopedia)=(1,1)firetruck\\,thermometer_2\\cdots\npaperclip(1,-1)thermometer_{blueberry+1}\\cdots thermometer_{2sunflower-2}.\n\\]\nThen $\\heliumgas$ clearly maps the set of Dyck $(sunflower-1)$-paths to the set of Dyck $sunflower$-paths having no even return.\n\nWe claim that $\\heliumgas$ is bijective; to see this, we simply construct the\ninverse mapping.  Given a $sunflower$-path $encyclopedia$, let $marshmallow=screwdriver_{armadillo}screwdriver_{armadillo+1}\\ldots paperclip$\ndenote the leftmost return in $encyclopedia$, and let $\\hippodrome(encyclopedia)$ denote the\npath obtained by removing $firetruck$ and $paperclip$ from $encyclopedia$.  Then evidently\n$\\heliumgas \\circ \\hippodrome$ and $\\hippodrome \\circ \\heliumgas$ are identity maps, proving the claim.\n\n\\textbf{Second solution:} (by Dan Bernstein)\nLet $raincoat$ be the number of Dyck paths of length $sunflower$, let $snowshoes$ be the number\nof Dyck paths whose final return has odd length, and let $alligator$ be the number\nof Dyck paths with no return of even length.\n\nWe first exhibit a recursion for $snowshoes$; note that $goldfish = 0$.\nGiven a Dyck $sunflower$-path whose final return has odd length, split it just after its next-to-last return.\nFor some $crocodile$ (possibly zero), this yields a Dyck $crocodile$-path, an upstep, a Dyck $(sunflower-crocodile-1)$-path whose odd return\nhas even length, and a downstep. Thus for $sunflower \\ge 1$,\n\\[\nsnowshoes = \\sum_{crocodile=0}^{sunflower-1} tortoise\\,(toothbrush - blackboard).\n\\]\n\nWe next exhibit a similar recursion for $alligator$; note that $boomerang = 1$.\nGiven a Dyck $sunflower$-path with no even return,\nsplitting as above yields for some $crocodile$ a Dyck $crocodile$-path with no even return, an upstep, a Dyck $(sunflower-crocodile-1)$-path whose final return has even length, then a downstep. Thus for $sunflower \\ge 1$,\n\\[\nalligator = \\sum_{crocodile=0}^{sunflower-1} kangaroo\\,(toothbrush - blackboard).\n\\]\n\nTo conclude, we verify that $alligator = C_{sunflower-1}$ for $sunflower \\ge 1$, by induction on $sunflower$. This is clear for $sunflower=1$ since $jellyfish = pinecone = 1$. Given $kangaroo = hairbrush$ for $crocodile<sunflower$, we have\n\\begin{align*}\nalligator &= \\sum_{crocodile=0}^{sunflower-1} kangaroo\\,(toothbrush - blackboard) \\\n&= C_{sunflower-1} - snowshoes_{sunflower-1} + \\sum_{crocodile=1}^{sunflower-1} hairbrush\\,(toothbrush - blackboard) \\\\\n&= C_{sunflower-1} - snowshoes_{sunflower-1} + snowshoes_{sunflower-1} \\\\\n&= C_{sunflower-1},\n\\end{align*}\nas desired.\n\n\\textbf{Note:}\nSince the problem only asked about the \\emph{existence} of a one-to-one correspondence, we believe that any proof, bijective or not, that the two sets have the same cardinality is an acceptable solution. The second solution above can also be phrased in terms of generating functions. Also, the $C_n$ are well-known to equal the Catalan numbers $\\frac{1}{sunflower+1} \\binom{2sunflower}{sunflower}$; the problem at hand is part of a famous exercise in Richard Stanley's \\textit{Enumerative Combinatorics, Volume 1} giving 66 combinatorial interpretations of the Catalan numbers."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "microsize",
+        "k": "gigantindex",
+        "i": "outerspot",
+        "j": "innerplace",
+        "x": "verticalaxis",
+        "P": "emptypath",
+        "a": "massivestep",
+        "R": "departure",
+        "g": "obstacle",
+        "O": "terminus",
+        "f": "obliterate",
+        "C_n": "chaosnumber",
+        "O_n": "evencounter",
+        "X_n": "evenabound",
+        "C_k": "chaoscount",
+        "O_n-k-1": "evendeficit",
+        "X_k": "evenaboundk",
+        "C_n-k-1": "chaosdeficit",
+        "C_k-1": "chaosprevious",
+        "C_0": "chaoszero",
+        "X_0": "evenaboundzero",
+        "O_0": "evencounterzero",
+        "X_1": "evenaboundone",
+        "a_1": "lastleap",
+        "a_2n": "firstleap",
+        "a_i": "finalstride",
+        "a_i+1": "middlestride",
+        "a_j": "startingstride"
+      },
+      "question": "A Dyck $microsize$-path is a lattice path of  $microsize$  upsteps $(1,1)$ and  $microsize$\n  downsteps $(1,-1)$\nthat starts at the origin  $terminus$  and never dips below the  $verticalaxis$-axis.\nA return is a maximal sequence of contiguous downsteps that terminates\non the  $verticalaxis$-axis. For example, the Dyck 5-path illustrated has two returns,\nof length  3  and  1  respectively.\n\\begin{center}\n\\begin{tikzpicture}[scale=.5]\n\\fill (0,0) circle (.2); \\fill (1,1) circle (.2); \\fill (2,2) circle (.2);\n\\fill (3,1) circle (.2); \\fill (4,2) circle (.2); \\fill (5,3) circle (.2);\n\\fill (6,2) circle (.2); \\fill (7,1) circle (.2); \\fill (8,0) circle (.2);\n\\fill (9,1) circle (.2); \\fill (10,0) circle (.2);\n\\draw (0,0) -- (2,2) -- (3,1) -- (5,3) -- (8,0) -- (9,1) -- (10,0) -- cycle;\n\\draw (-.3,-.1) node[anchor=north] {$terminus$};\n\\end{tikzpicture}\n\\end{center}\nShow that there is a one-to-one correspondence between the Dyck  $microsize$-paths\nwith no return of even length and the Dyck $(microsize-1)$-paths.",
+      "solution": "\\textbf{First solution:}\nWe represent a Dyck $microsize$-path by a sequence $lastleap\\cdots firstleap$, where\neach $finalstride$ is either $(1,1)$ or $(1,-1)$.\n\nGiven an $(microsize-1)$-path $emptypath=lastleap\\cdots a_{2microsize-2}$, we distinguish two cases.\nIf $emptypath$ has no returns of even-length, then let $obliterate(emptypath)$ denote the $microsize$-path\n$(1,1)(1,-1)emptypath$.  Otherwise, let $finalstridemiddlestride\\cdots startingstride$ denote the\nrightmost even-length return in $emptypath$, and let $obliterate(emptypath)=(1,1)lastleap a_2\\cdots\nstartingstride(1,-1)a_{j+1}\\cdots a_{2microsize-2}$.  Then $obliterate$ clearly maps the set of Dyck\n$(microsize-1)$-paths to the set of Dyck $microsize$-paths having no even return.\n\nWe claim that $obliterate$ is bijective; to see this, we simply construct the\ninverse mapping.  Given an $microsize$-path $emptypath$, let $departure=finalstridemiddlestride...startingstride$\ndenote the leftmost return in $emptypath$, and let $obstacle(emptypath)$ denote the\npath obtained by removing $lastleap$ and $startingstride$ from $emptypath$.  Then evidently\n$obliterate \\circ obstacle$ and $obstacle \\circ obliterate$ are identity maps, proving the claim.\n\n\\textbf{Second solution:} (by Dan Bernstein)\nLet $chaosnumber$ be the number of Dyck paths of length $microsize$, let $evencounter$ be the number\nof Dyck paths whose final return has odd length, and let $evenabound$ be the number\nof Dyck paths with no return of even length.\n\nWe first exhibit a recursion for $evencounter$; note that $evencounterzero = 0$.\nGiven a Dyck $microsize$-path\nwhose final return has odd length, split it just after its next-to-last return.\nFor some $gigantindex$ (possibly zero), this yields\na Dyck $gigantindex$-path, an upstep, a Dyck $(microsize-gigantindex-1)$-path whose odd return\nhas even length, and a downstep. Thus for $microsize \\geq 1$,\n\\[\nevencounter = \\sum_{gigantindex=0}^{microsize-1} chaoscount (chaosdeficit - evendeficit).\n\\]\n\nWe next exhibit a similar recursion for $evenabound$; note that $evenaboundzero = 1$.\nGiven a Dyck $microsize$-path with no even return,\nsplitting as above yields for some $gigantindex$\na Dyck $gigantindex$-path with no even return,\nan upstep, a Dyck $(microsize-gigantindex-1)$-path whose final return has even length,\nthen a downstep. Thus for $microsize \\geq 1$,\n\\[\nevenabound = \\sum_{gigantindex=0}^{microsize-1} evenaboundk (chaosdeficit - evendeficit).\n\\]\n\nTo conclude, we verify that $evenabound = chaosnumber$ for $microsize \\geq 1$,\nby induction on $microsize$. This is\nclear for $microsize=1$ since $evenaboundone = chaoszero = 1$. Given $evenaboundk = chaosprevious$ for $k<microsize$, we have\n\\begin{align*}\nevenabound  &=\n\\sum_{gigantindex=0}^{microsize-1} evenaboundk (chaosdeficit - evendeficit) \\\\\n&= chaosnumber - evencounter + \\sum_{gigantindex=1}^{microsize-1} chaosprevious (chaosdeficit - evendeficit) \\\\\n&= chaosnumber - evencounter + evencounter \\\\\n&= chaosnumber,\n\\end{align*}\nas desired.\n\n\\textbf{Note:}\nSince the problem only asked about the \\emph{existence} of a\none-to-one correspondence, we believe that any proof, bijective or not,\nthat the two sets\nhave the same cardinality is an acceptable solution. (Indeed, it would be\nhighly unusual to insist on using or not using a specific proof technique!)\nThe second solution\nabove can also be phrased in terms of generating functions.\nAlso, the $chaosnumber$ are well-known to equal the Catalan numbers\n$\\frac{1}{microsize+1} \\binom{2microsize}{microsize}$; the problem at hand is part of a famous\nexercise in Richard Stanley's \\textit{Enumerative Combinatorics, Volume 1}\ngiving 66 combinatorial interpretations of the Catalan numbers."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "zqxrtypl",
+        "k": "hsjduqwe",
+        "i": "mbflorct",
+        "j": "dagnvxye",
+        "x": "wmqseadz",
+        "P": "rnjkcvoa",
+        "a": "ypshdmcf",
+        "R": "kufwneib",
+        "g": "vuvwxylr",
+        "O": "pqxstnmr",
+        "f": "lznafydc",
+        "C_n": "kytxspao",
+        "O_n": "jypmhzvu",
+        "X_n": "cvdtlnra",
+        "C_k": "xmrzabgf",
+        "O_n-k-1": "obtluqfe",
+        "X_k": "jlftbero",
+        "C_n-k-1": "bqkrsiyw",
+        "C_k-1": "gwsdvlaq",
+        "C_0": "qpfyengh",
+        "X_0": "lfznhgtr",
+        "O_0": "khgpwjfs",
+        "X_1": "sdkvqxop",
+        "a_1": "ndocyepa",
+        "a_2n": "vfkynhuw",
+        "a_i": "zlhucdpe",
+        "a_i+1": "evqrtpmy",
+        "a_j": "uhsqzibw"
+      },
+      "question": "A Dyck $zqxrtypl$-path is a lattice path of  $zqxrtypl$  upsteps $(1,1)$ and  $zqxrtypl$\n  downsteps $(1,-1)$\nthat starts at the origin  $pqxstnmr$  and never dips below the  $wmqseadz$-axis.\nA return is a maximal sequence of contiguous downsteps that terminates\non the  $wmqseadz$-axis. For example, the Dyck 5-path illustrated has two returns,\nof length  3  and  1  respectively.\n\\begin{center}\n\\begin{tikzpicture}[scale=.5]\n\\fill (0,0) circle (.2); \\fill (1,1) circle (.2); \\fill (2,2) circle (.2);\n\\fill (3,1) circle (.2); \\fill (4,2) circle (.2); \\fill (5,3) circle (.2);\n\\fill (6,2) circle (.2); \\fill (7,1) circle (.2); \\fill (8,0) circle (.2);\n\\fill (9,1) circle (.2); \\fill (10,0) circle (.2);\n\\draw (0,0) -- (2,2) -- (3,1) -- (5,3) -- (8,0) -- (9,1) -- (10,0) -- cycle;\n\\draw (-.3,-.1) node[anchor=north] {$pqxstnmr$};\n\\end{tikzpicture}\n\\end{center}\nShow that there is a one-to-one correspondence between the Dyck  $zqxrtypl$-paths\nwith no return of even length and the Dyck $(zqxrtypl-1)$-paths.",
+      "solution": "\\textbf{First solution:}\nWe represent a Dyck $zqxrtypl$-path by a sequence $ndocyepa\\cdots vfkynhuw$, where\neach $zlhucdpe$ is either $(1,1)$ or $(1,-1)$.\n\nGiven an $(zqxrtypl-1)$-path $rnjkcvoa=ndocyepa\\cdots ypshdmcf_{2zqxrtypl-2}$, we distinguish two cases.\nIf $rnjkcvoa$ has no returns of even-length, then let $lznafydc(rnjkcvoa)$ denote the $zqxrtypl$-path\n$(1,1)(1,-1)rnjkcvoa$.  Otherwise, let $zlhucdpe evqrtpmy\\cdots uhsqzibw$ denote the\nrightmost even-length return in $rnjkcvoa$, and let $lznafydc(rnjkcvoa)=(1,1)ndocyepa ypshdmcf_2\\cdots\nuhsqzibw(1,-1)ypshdmcf_{dagnvxye+1}\\cdots ypshdmcf_{2zqxrtypl-2}$.  Then $lznafydc$ clearly maps the set of Dyck\n$(zqxrtypl-1)$-paths to the set of Dyck $zqxrtypl$-paths having no even return.\n\nWe claim that $lznafydc$ is bijective; to see this, we simply construct the\ninverse mapping.  Given an $zqxrtypl$-path $rnjkcvoa$, let $kufwneib=zlhucdpe evqrtpmy...uhsqzibw$\ndenote the leftmost return in $rnjkcvoa$, and let $vuvwxylr(rnjkcvoa)$ denote the\npath obtained by removing $ndocyepa$ and $uhsqzibw$ from $rnjkcvoa$.  Then evidently\n$lznafydc \\circ vuvwxylr$ and $vuvwxylr \\circ lznafydc$ are identity maps, proving the claim.\n\n\\textbf{Second solution:} (by Dan Bernstein)\nLet $kytxspao$ be the number of Dyck paths of length $zqxrtypl$, let $jypmhzvu$ be the number\nof Dyck paths whose final return has odd length, and let $cvdtlnra$ be the number\nof Dyck paths with no return of even length.\n\nWe first exhibit a recursion for $jypmhzvu$; note that $khgpwjfs = 0$.\nGiven a Dyck $zqxrtypl$-path\nwhose final return has odd length, split it just after its next-to-last return.\nFor some $hsjduqwe$ (possibly zero), this yields\na Dyck $hsjduqwe$-path, an upstep, a Dyck $(zqxrtypl-hsjduqwe-1)$-path whose odd return\nhas even length, and a downstep. Thus for $zqxrtypl \\geq 1$,\n\\[\njypmhzvu = \\sum_{hsjduqwe=0}^{zqxrtypl-1} xmrzabgf (bqkrsiyw - obtluqfe).\n\\]\n\nWe next exhibit a similar recursion for $cvdtlnra$; note that $lfznhgtr = 1$.\nGiven a Dyck $zqxrtypl$-path with no even return,\nsplitting as above yields for some $hsjduqwe$\na Dyck $hsjduqwe$-path with no even return,\nan upstep, a Dyck $(zqxrtypl-hsjduqwe-1)$-path whose final return has even length,\nthen a downstep. Thus for $zqxrtypl \\geq 1$,\n\\[\ncvdtlnra = \\sum_{hsjduqwe=0}^{zqxrtypl-1} jlftbero (bqkrsiyw - obtluqfe).\n\\]\n\nTo conclude, we verify that $cvdtlnra = C_{zqxrtypl-1}$ for $zqxrtypl \\geq 1$,\nby induction on $zqxrtypl$. This is\nclear for $zqxrtypl=1$ since $sdkvqxop = C_0 = 1$. Given $cvdtlnra = C_{hsjduqwe-1}$ for $hsjduqwe<zqxrtypl$, we have\n\\begin{align*}\ncvdtlnra  &=\n\\sum_{hsjduqwe=0}^{zqxrtypl-1} jlftbero (bqkrsiyw - obtluqfe) \\\\\n&= C_{zqxrtypl-1} - pqxstnmr_{zqxrtypl-1} + \\sum_{hsjduqwe=1}^{zqxrtypl-1} gwsdvlaq (bqkrsiyw - obtluqfe) \\\\\n&= C_{zqxrtypl-1} - pqxstnmr_{zqxrtypl-1} + pqxstnmr_{zqxrtypl-1} \\\\\n&= C_{zqxrtypl-1},\n\\end{align*}\nas desired.\n\n\\textbf{Note:}\nSince the problem only asked about the \\emph{existence} of a\none-to-one correspondence, we believe that any proof, bijective or not,\nthat the two sets\nhave the same cardinality is an acceptable solution. (Indeed, it would be\nhighly unusual to insist on using or not using a specific proof technique!)\nThe second solution\nabove can also be phrased in terms of generating functions.\nAlso, the $kytxspao$ are well-known to equal the Catalan numbers\n$\\frac{1}{zqxrtypl+1} \\binom{2zqxrtypl}{zqxrtypl}$; the problem at hand is part of a famous\nexercise in Richard Stanley's \\textit{Enumerative Combinatorics, Volume 1}\ngiving 66 combinatorial interpretations of the Catalan numbers."
+    },
+    "kernel_variant": {
+      "question": "A Dyck $n$-path is a lattice path that\nstarts at the origin, consists of $n$ up-steps $U=(1,1)$ and $n$ down-steps $D=(1,-1)$, never goes below the $x$-axis and ends on the\n$x$-axis.\n\nA return of a Dyck path is a maximal consecutive block of down-steps whose\nlast point lies on the $x$-axis.  (Equivalently, the path touches the\n$x$-axis only at the beginning and at the end of each return.)\n\nWe call a return even if its length is an even integer.  Thus a Dyck path\n\"has no even return\" when every one of its returns is of odd length.\n\nProve that for every integer $n\\ge 1$ there is a one-to-one correspondence\nbetween\n\na)  Dyck $n$-paths that contain no even return, and\n\nb)  Dyck $(n-1)$-paths.",
+      "solution": "Throughout we write $C_n=\\dfrac{1}{n+1}\\binom{2n}{n}$ for the $n$-th\nCatalan number and denote by $\\mathcal D_n$ the set of Dyck $n$-paths.\nWe let\n\n  X_n = |\\{P\\in\\mathcal D_n : P\\text{ has no even return}\\}|.\n\nIt will be shown that $X_n=C_{n-1}$ for every $n\\ge 1$; since $C_{n-1}$\ncounts Dyck $(n-1)$-paths, this will provide the desired bijection.\nWe give two independent proofs.\n\n-----------------------------------------------------\n1.  A direct (explicit) bijection\n-----------------------------------------------------\n\nWrite a Dyck path as a word over $\\{U,D\\}$.\nGiven a Dyck $(n-1)$-path $P=a_1\\dots a_{2n-2}$ we construct a Dyck\n$n$-path $f(P)$ with no even return as follows.\n\nCase 1.  If $P$ itself has no even return, prepend one up-step and one\ndown-step:\n                f(P)= U D\\,P .\n\nCase 2.  Otherwise, let $a_i\\dots a_j$ be the right-most even return of\n$P$ (so $j<2n-2$).  Define\n        f(P)= U a_1\\dots a_j D a_{j+1}\\dots a_{2n-2}.\n\nThe new path has length $2n$, begins with $U$, ends with $D$, and its only\neven return---namely $a_i\\dots a_j$---is now sandwiched between the two added\nsteps; consequently the returns of $f(P)$ all have odd length.\nHence $f$ maps $\\mathcal D_{n-1}$ into the set $\\mathcal X_n$ of Dyck\n$n$-paths with no even return.\n\nTo show that $f$ is a bijection we construct its inverse.  Take\n$Q\\in\\mathcal X_n$ and let $U a_2\\dots a_j$ be its left-most return.\n(Remember that this return must have odd length.)  Remove the first step\nand the last step of this return:\n          g(Q)= a_2\\dots a_{j-1} a_{j+1}\\dots a_{2n}.\n\nIt is immediate that $g(Q)$ is a Dyck $(n-1)$-path and that $g$ is indeed\nthe inverse of $f$.  Thus $|\\mathcal X_n|=|\\mathcal D_{n-1}|=C_{n-1}$, i.e.\n$X_n=C_{n-1}$.\n\n-----------------------------------------------------\n2.  An enumerative proof via recurrences\n-----------------------------------------------------\n\nLet\n  O_n = \\#\\{\\text{Dyck $n$-paths whose \\\\em final return\\\\ has odd length}\\}.\nClearly $O_0=0$ and $X_0=1$ (the empty path).\n\nRecurrence for $O_n$.  Split a Dyck $n$-path whose final return is odd\nimmediately after its next-to-last return.  One obtains\n\n  a Dyck $k$-path (semilength $k$),\n  a single up-step $U$, and\n  a Dyck $(n-k-1)$-path whose final return is even,\n  followed by a closing down-step $D$.\n\nFor every $k$ with $0\\le k\\le n-1$ there are $C_k$ choices for the first\nblock and $C_{n-k-1}-O_{n-k-1}$ choices for the second.  Hence\n\n           O_n = \\sum_{k=0}^{n-1} C_k\\,\\bigl(C_{n-k-1}-O_{n-k-1}\\bigr).\n\nRecurrence for $X_n$.  Perform the same splitting on a Dyck $n$-path with\nno even return.  The left block must avoid even returns ( $X_k$ choices ),\nwhile the middle block must end with an even return (else the whole path\nwould end with an even return).  Therefore\n\n           X_n = \\sum_{k=0}^{n-1} X_k\\,\\bigl(C_{n-k-1}-O_{n-k-1}\\bigr).\n\nInduction.  We prove $X_n=C_{n-1}$ for $n\\ge1$.  The statement holds for\n$n=1$ because $X_1=1=C_0$.  Assume it true for all smaller indices.\nUsing the two recurrences and the Catalan convolution\n$\\sum_{k\\ge0} C_kC_{m-k}=C_{m+1}$ we compute\n\n\\[\n\\begin{aligned}\nX_n &= \\sum_{k=0}^{n-1} X_k\\,\\bigl(C_{n-k-1}-O_{n-k-1}\\bigr) \\\\\n    &= \\bigl(C_{n-1}-O_{n-1}\\bigr)\n       + \\sum_{k=1}^{n-1} C_{k-1}\\bigl(C_{n-k-1}-O_{n-k-1}\\bigr) \\\\\n    &= C_{n-1}-O_{n-1}+O_{n-1}=C_{n-1},\n\\end{aligned}\n\\]\ncompleting the induction.\n\n--------------------------------------------------\nConsequently the sets in (a) and (b) are equinumerous, and the map $f$\nconstructed in the first proof furnishes the required bijection.",
+      "_meta": {
+        "core_steps": [
+          "Encode every Dyck path as a word in the alphabet {U,D}.",
+          "From a (n−1)-path form an n-path by adding one U and one D, inserting them so that the new path has no return of the chosen forbidden type.",
+          "Use a deterministic rule (e.g. U-prefixing and inserting the D after the rightmost forbidden return) to make the map well-defined.",
+          "Construct the inverse map by deleting the two special steps that surround the first return of the new path.",
+          "Verify that the two maps are mutual inverses, giving a bijection."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which class of returns is forbidden; the proof only needs a clearly identifiable subclass that is preserved under insertion/deletion.",
+            "original": "even-length returns"
+          },
+          "slot2": {
+            "description": "Which occurrence of the forbidden return is used to place the extra D step; any deterministic choice works.",
+            "original": "rightmost forbidden return"
+          },
+          "slot3": {
+            "description": "How many complementary steps are adjoined/removed; any fixed k≥1 works, changing the relation to Dyck (n−k)-paths vs n-paths.",
+            "original": "one upstep and one downstep (k=1)"
+          },
+          "slot4": {
+            "description": "Concrete coordinate representation of steps; any two-symbol coding of up and down suffices.",
+            "original": "(1,1) for U and (1,−1) for D"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

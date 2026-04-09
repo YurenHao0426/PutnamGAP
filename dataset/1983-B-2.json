@@ -1,0 +1,119 @@
+{
+  "index": "1983-B-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Problem B-2\n\nFor positive integers \\( n \\), let \\( C(n) \\) be the number of representations of \\( n \\) as a sum of nonincreasing powers of 2 , where no power can be used more than three times. For example, \\( C(8)=5 \\) since the representations for 8 are:\n\\[\n8,4+4,4+2+2,4+2+1+1, \\text { and } 2+2+2+1+1\n\\]\n\nProve or disprove that there is a polynomial \\( P(x) \\) such that \\( C(n)=[P(n)] \\) for all positive integers \\( n \\); here [u] denotes the greatest integer less than or equal to \\( u \\).",
+  "solution": "B-2.\nA representation for \\( 2 n \\) is of the form\n\\[\n2 n=e_{0}+2 e_{1}+4 e_{2}+\\cdots+2^{k} e_{k},\n\\]\nthe \\( e_{i} \\) in \\( \\{0,1,2,3\\} \\), and with \\( e_{0} \\) in \\( \\{0,2\\} \\). Then \\( e_{1}+2 e_{2}+\\cdots+2^{k-1} e_{k} \\) is a representation for \\( n \\) if \\( e_{0}=0 \\) and is a representation for \\( n-1 \\) if \\( e_{0}=2 \\). Since all representations for \\( n \\) and \\( n-1 \\) can be obtained this way,\n\\[\nC(2 n)=C(n)+C(n-1)\n\\]\n\nSimilarly, one finds that\n\\[\nC(2 n+1)=C(n)+C(n-1)=C(2 n)\n\\]\n\nSince \\( C(1)=1 \\) and \\( C(2)=2 \\), an easy induction now shows that \\( C(n)=[1+n / 2] \\).",
+  "vars": [
+    "n",
+    "k",
+    "C",
+    "P",
+    "x",
+    "u",
+    "e",
+    "e_0",
+    "e_1",
+    "e_2",
+    "e_k"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "posint",
+        "k": "powindx",
+        "C": "countfn",
+        "P": "polyfun",
+        "x": "argval",
+        "u": "valnum",
+        "e": "coefvar",
+        "e_0": "coefzero",
+        "e_1": "coefone",
+        "e_2": "coeftwo",
+        "e_k": "coefgen"
+      },
+      "question": "Problem B-2\n\nFor positive integers \\( posint \\), let \\( countfn(posint) \\) be the number of representations of \\( posint \\) as a sum of nonincreasing powers of 2 , where no power can be used more than three times. For example, \\( countfn(8)=5 \\) since the representations for 8 are:\n\\[\n8,4+4,4+2+2,4+2+1+1, \\text { and } 2+2+2+1+1\n\\]\n\nProve or disprove that there is a polynomial \\( polyfun(argval) \\) such that \\( countfn(posint)=[polyfun(posint)] \\) for all positive integers \\( posint \\); here [valnum] denotes the greatest integer less than or equal to \\( valnum \\).",
+      "solution": "B-2.\nA representation for \\( 2 posint \\) is of the form\n\\[\n2 posint=coefzero+2 coefone+4 coeftwo+\\cdots+2^{powindx} coefgen,\n\\]\nthe \\( coefvar_{i} \\) in \\( \\{0,1,2,3\\} \\), and with \\( coefzero \\) in \\( \\{0,2\\} \\). Then \\( coefone+2 coeftwo+\\cdots+2^{powindx-1} coefgen \\) is a representation for \\( posint \\) if \\( coefzero=0 \\) and is a representation for \\( posint-1 \\) if \\( coefzero=2 \\). Since all representations for \\( posint \\) and \\( posint-1 \\) can be obtained this way,\n\\[\ncountfn(2 posint)=countfn(posint)+countfn(posint-1)\n\\]\n\nSimilarly, one finds that\n\\[\ncountfn(2 posint+1)=countfn(posint)+countfn(posint-1)=countfn(2 posint)\n\\]\n\nSince \\( countfn(1)=1 \\) and \\( countfn(2)=2 \\), an easy induction now shows that \\( countfn(posint)=[1+posint / 2] \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "pineapple",
+        "k": "toothbrush",
+        "C": "sandcastle",
+        "P": "bookshelf",
+        "x": "marshmallow",
+        "u": "lemonade",
+        "e": "paintbrush",
+        "e_0": "paintbrushzero",
+        "e_1": "paintbrushone",
+        "e_2": "paintbrushtwo",
+        "e_k": "paintbrushsub"
+      },
+      "question": "Problem B-2\n\nFor positive integers \\( pineapple \\), let \\( sandcastle(pineapple) \\) be the number of representations of \\( pineapple \\) as a sum of nonincreasing powers of 2 , where no power can be used more than three times. For example, \\( sandcastle(8)=5 \\) since the representations for 8 are:\n\\[\n8,4+4,4+2+2,4+2+1+1, \\text { and } 2+2+2+1+1\n\\]\n\nProve or disprove that there is a polynomial \\( bookshelf(marshmallow) \\) such that \\( sandcastle(pineapple)=[bookshelf(pineapple)] \\) for all positive integers \\( pineapple \\); here [lemonade] denotes the greatest integer less than or equal to \\( lemonade \\).",
+      "solution": "B-2.\nA representation for \\( 2 pineapple \\) is of the form\n\\[\n2 pineapple = paintbrushzero + 2 paintbrushone + 4 paintbrushtwo + \\cdots + 2^{ toothbrush } paintbrushsub,\n\\]\nthe \\( paintbrush_{i} \\) in \\{0,1,2,3\\}, and with \\( paintbrushzero \\) in \\{0,2\\}. Then \\( paintbrushone + 2 paintbrushtwo + \\cdots + 2^{ toothbrush -1} paintbrushsub \\) is a representation for \\( pineapple \\) if \\( paintbrushzero =0 \\) and is a representation for \\( pineapple -1 \\) if \\( paintbrushzero =2 \\). Since all representations for \\( pineapple \\) and \\( pineapple -1 \\) can be obtained this way,\n\\[\nsandcastle(2 pineapple)=sandcastle(pineapple)+sandcastle(pineapple -1)\n\\]\n\nSimilarly, one finds that\n\\[\nsandcastle(2 pineapple +1)=sandcastle(pineapple)+sandcastle(pineapple -1)=sandcastle(2 pineapple)\n\\]\n\nSince \\( sandcastle(1)=1 \\) and \\( sandcastle(2)=2 \\), an easy induction now shows that \\( sandcastle(pineapple)=[1+ pineapple / 2] \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "infinitude",
+        "k": "stillness",
+        "C": "overlook",
+        "P": "randomness",
+        "x": "outputval",
+        "u": "constant",
+        "e": "shortfall",
+        "e_0": "shortfallzero",
+        "e_1": "shortfallone",
+        "e_2": "shortfalltwo",
+        "e_k": "shortfallstill"
+      },
+      "question": "Problem B-2\n\nFor positive integers \\( infinitude \\), let \\( overlook(infinitude) \\) be the number of representations of \\( infinitude \\) as a sum of nonincreasing powers of 2 , where no power can be used more than three times. For example, \\( overlook(8)=5 \\) since the representations for 8 are:\n\\[\n8,4+4,4+2+2,4+2+1+1, \\text { and } 2+2+2+1+1\n\\]\n\nProve or disprove that there is a polynomial \\( randomness(outputval) \\) such that \\( overlook(infinitude)=[randomness(infinitude)] \\) for all positive integers \\( infinitude \\); here [constant] denotes the greatest integer less than or equal to \\( constant \\).",
+      "solution": "B-2.\nA representation for \\( 2 infinitude \\) is of the form\n\\[\n2 infinitude=shortfallzero+2 shortfallone+4 shortfalltwo+\\cdots+2^{stillness} shortfallstill,\n\\]\nthe \\( shortfall_{i} \\) in \\( \\{0,1,2,3\\} \\), and with \\( shortfallzero \\) in \\( \\{0,2\\} \\). Then \\( shortfallone+2 shortfalltwo+\\cdots+2^{stillness-1} shortfallstill \\) is a representation for \\( infinitude \\) if \\( shortfallzero=0 \\) and is a representation for \\( infinitude-1 \\) if \\( shortfallzero=2 \\). Since all representations for \\( infinitude \\) and \\( infinitude-1 \\) can be obtained this way,\n\\[\noverlook(2 infinitude)=overlook(infinitude)+overlook(infinitude-1)\n\\]\n\nSimilarly, one finds that\n\\[\noverlook(2 infinitude+1)=overlook(infinitude)+overlook(infinitude-1)=overlook(2 infinitude)\n\\]\n\nSince \\( overlook(1)=1 \\) and \\( overlook(2)=2 \\), an easy induction now shows that \\( overlook(infinitude)=[1+infinitude / 2] \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "dnhpwyqv",
+        "k": "cjrmouva",
+        "C": "fsqtlhyg",
+        "P": "gydkarbl",
+        "x": "wfsbqkme",
+        "u": "pnahvjel",
+        "e": "xrmctdbo",
+        "e_0": "trlsgzpu",
+        "e_1": "hnkgsqwa",
+        "e_2": "gbxwedsp",
+        "e_k": "kvrymsou"
+      },
+      "question": "Problem B-2\n\nFor positive integers \\( dnhpwyqv \\), let \\( fsqtlhyg(dnhpwyqv) \\) be the number of representations of \\( dnhpwyqv \\) as a sum of nonincreasing powers of 2 , where no power can be used more than three times. For example, \\( fsqtlhyg(8)=5 \\) since the representations for 8 are:\n\\[\n8,4+4,4+2+2,4+2+1+1, \\text { and } 2+2+2+1+1\n\\]\n\nProve or disprove that there is a polynomial \\( gydkarbl(wfsbqkme) \\) such that \\( fsqtlhyg(dnhpwyqv)=[gydkarbl(dnhpwyqv)] \\) for all positive integers \\( dnhpwyqv \\); here [pnahvjel] denotes the greatest integer less than or equal to \\( pnahvjel \\).",
+      "solution": "B-2.\nA representation for \\( 2 dnhpwyqv \\) is of the form\n\\[\n2 dnhpwyqv=trlsgzpu+2\\,hnkgsqwa+4\\,gbxwedsp+\\cdots+2^{cjrmouva}\\,kvrymsou,\n\\]\nthe \\( xrmctdbo_{i} \\) in \\( \\{0,1,2,3\\} \\), and with \\( trlsgzpu \\) in \\( \\{0,2\\} \\). Then \\( hnkgsqwa+2\\,gbxwedsp+\\cdots+2^{cjrmouva-1}\\,kvrymsou \\) is a representation for \\( dnhpwyqv \\) if \\( trlsgzpu=0 \\) and is a representation for \\( dnhpwyqv-1 \\) if \\( trlsgzpu=2 \\). Since all representations for \\( dnhpwyqv \\) and \\( dnhpwyqv-1 \\) can be obtained this way,\n\\[\nfsqtlhyg(2 dnhpwyqv)=fsqtlhyg(dnhpwyqv)+fsqtlhyg(dnhpwyqv-1)\n\\]\n\nSimilarly, one finds that\n\\[\nfsqtlhyg(2 dnhpwyqv+1)=fsqtlhyg(dnhpwyqv)+fsqtlhyg(dnhpwyqv-1)=fsqtlhyg(2 dnhpwyqv)\n\\]\n\nSince \\( fsqtlhyg(1)=1 \\) and \\( fsqtlhyg(2)=2 \\), an easy induction now shows that \\( fsqtlhyg(dnhpwyqv)=[1+dnhpwyqv / 2] \\)."
+    },
+    "kernel_variant": {
+      "question": "For every non-negative integer n consider the vectors  \n\n  n = 2^0e_0 + 2^1e_1 + \\cdot \\cdot \\cdot  + 2^ke_k    (e_0,e_1,\\ldots  \\in  {0,1,2,3,4,5}),    (\\star )\n\nwhere---as usual in partition-type problems---the order of the summands is irrelevant, so the vector  \n(e_0,e_1,\\ldots ) uniquely encodes the representation.  \n\nLet  \n\n  R(n) := #{ (e_0,e_1,\\ldots ) satisfying (\\star ) }.\n\n(Throughout we adopt the harmless conventions R(0)=1 and R(m)=0 for m<0.)\n\nQuestion. Does there exist a real polynomial P(x) such that  \n\n  R(n)=\\lfloor P(n)\\rfloor   for every positive integer n ?  \n\nGive a complete proof of your answer.",
+      "solution": "We prove that such a polynomial does not exist.\n\n0.  Notation  \n   Set \\alpha :=log_23 \\approx  1.585\\ldots .\n\n------------------------------------------------------------------------------------------\n1.  A divide-and-conquer recurrence\n------------------------------------------------------------------------------------------\nWrite n=2m+\\varepsilon  with \\varepsilon \\in {0,1}.  \nBecause e_0 must have the same parity as \\varepsilon  and e_0\\in {0,1,2,3,4,5}, it may be\n\n  e_0 = \\varepsilon , \\varepsilon +2, \\varepsilon +4.  \n\nPutting e_0=\\varepsilon +2t (t=0,1,2) removes 2t from n and leaves an even number 2(m-t); division by 2 gives the smaller argument m-t:\n\n  R(2m+\\varepsilon )=R(m)+R(m-1)+R(m-2).    (1)\n\nThe harmless conventions give the initial values  \n\n  R(0)=1, R(1)=1, R(2)=2.    (2)\n\n\n\n------------------------------------------------------------------------------------------\n2.  Monotonicity\n------------------------------------------------------------------------------------------\nClaim.  R is non-decreasing: R(n+1) \\geq  R(n) for all n\\geq 0.\n\nProof by strong induction.  The base n=0,1,2 follows from (2).\n\nInduction step.  Assume the claim up to n-1.\n\n*  If n is odd, n=2m+1, then by (1)  \n\n  R(2m+1)=R(m)+R(m-1)+R(m-2)=R(2m).\n\n*  If n is even, n=2m (m\\geq 1), then  \n\n  R(2m)-R(2m-1)\n   = [R(m)+R(m-1)+R(m-2)]-[R(m-1)+R(m-2)+R(m-3)]\n   = R(m)-R(m-3) \\geq  0\n\nby the induction hypothesis.\\blacksquare \n\n\n\n------------------------------------------------------------------------------------------\n3.  Quantitative growth of R\n------------------------------------------------------------------------------------------\nProposition.  There are constants c_1,c_2>0 such that  \n\n  c_1\\cdot n^{\\alpha /2} \\leq  R(n) \\leq  c_2\\cdot n^{\\alpha }   (n\\geq 1).   (3)\n\n(The proof is identical to the one in the original draft; it uses (1), (2) and monotonicity.  For completeness it is reproduced in the appendix below.)\n\n\n\n------------------------------------------------------------------------------------------\n4.  Plateaux of length two\n------------------------------------------------------------------------------------------\nFrom (1) with \\varepsilon =1 we get immediately  \n\n  R(2m+1)=R(2m)  (m\\geq 0).    (4)\n\nHence  \n\n  \\Delta (n):=R(n+1)-R(n)=0  whenever n is even.  (5)\n\n\n\n------------------------------------------------------------------------------------------\n5.  Non-existence of an approximating polynomial\n------------------------------------------------------------------------------------------\nAssume, for contradiction, that a real polynomial P(x) satisfies  \n\n  R(n)=\\lfloor P(n)\\rfloor   for all n\\geq 1.    (6)\n\nPut \\varepsilon (n):=P(n)-R(n)\\in [0,1).  For any integer n we have  \n\n  P(n+1)-P(n)=\\Delta (n)+\\varepsilon (n+1)-\\varepsilon (n).   (7)\n\nDefine Q(x):=P(x+1)-P(x); this is a polynomial of degree deg P-1.\n\n(i)  deg P \\geq 2 is impossible.  \nIf deg P\\geq 2, then deg Q\\geq 1 and |Q(n)|\\to \\infty .  \nBut for even n, \\Delta (n)=0 by (5) and |\\varepsilon (n+1)-\\varepsilon (n)|<1, so |Q(n)|<1 for infinitely many n, a contradiction.  \nHence deg P\\leq 1.\n\n(ii)  deg P=0 is impossible because R is unbounded (see (3)).  \nTherefore P(x)=ax+b with a>0.\n\nFor every even n, (5) and (7) give  \n\n  a=Q(n)=\\Delta (n)+\\varepsilon (n+1)-\\varepsilon (n)=\\varepsilon (n+1)-\\varepsilon (n),  \n\nso 0<a<1 and, in particular,  \n\n  \\varepsilon (n) \\leq  1-a  for all even n.   (8)\n\nNow choose the specific odd index n=3.  \nUsing (1) and (2) we compute\n\n  R(3)=R(1)+R(0)+R(-1)=1+1+0=2,  \n  R(4)=R(2)+R(1)+R(0)=2+1+1=4,\n\nhence  \n\n  \\Delta (3)=R(4)-R(3)=2.    (9)\n\nInsert n=3 into (7):\n\n  a = \\Delta (3)+\\varepsilon (4)-\\varepsilon (3)=2+\\varepsilon (4)-\\varepsilon (3).  \n\nBecause |\\varepsilon (4)-\\varepsilon (3)|<1, this yields  \n\n  1 < a < 3.    (10)\n\nBut (8) already forced 0<a<1.  The inequalities (8) and (10) are incompatible, so no linear polynomial P can satisfy (6).\n\nConsequently no real polynomial can fulfil (6), completing the proof. \\blacksquare \n\n\n\nAppendix: Proof of (3)\n\nA.  Upper bound.  \nFor n even, (1) and monotonicity give R(2m) \\leq  3R(m).  \nIterating along n=2^k yields R(2^k) \\leq  3^k.  \nFor 2^k \\leq  n < 2^{k+1}, monotonicity implies  \n\n  R(n) \\leq  R(2^{k+1}) \\leq  3^{k+1}=3\\cdot 2^{\\alpha (k+1)} \\leq  3\\cdot 2^{\\alpha }\\cdot n^{\\alpha }.  \n\nThus c_2:=3\\cdot 2^{\\alpha } works.\n\nB.  Lower bound.  \nFor even n=2m (m\\geq 2),\n\n  R(2m)=R(m)+R(m-1)+R(m-2) \\geq  3R(m-2).  \n\nApplying this \\lfloor k/2\\rfloor  times to n=2^k one obtains\n\n  R(2^k) \\geq  3^{\\lfloor k/2\\rfloor } \\geq  (2^k)^{\\alpha /2}/(2^{2\\alpha }\\sqrt{3}).  \n\nMonotonicity extends this to all n, completing the proof of (3). \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.671106",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher order recurrence: the cap “5” creates a three-term self-similarity (vs. the two-term Fibonacci-type recursion in the original), so linear-recurrence theory of order ≥3 and its characteristic roots are indispensable.  \n• Asymptotic growth: one must extract the dominant eigenvalue λ₁ of (4) and translate it into n-space via n=2ᵏ, intertwining discrete recurrence analysis with continuous asymptotics.  \n• Irrational exponent argument: proving that β=log₂λ₁ is irrational uses algebraic-number considerations (λ₁ satisfies an irreducible cubic), going beyond elementary induction.  \n• Contradiction with polynomial growth: matching Θ(n^β) against a would-be polynomial requires precise growth comparison and a control of rounding errors (⌊·⌋), not needed in the original.  \n\nThese layers—in particular the cubic characteristic equation, algebraic-irrational exponent, and asymptotic comparison—add substantial technical depth relative to the original linear-recurrence / simple-induction solution."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "For every non-negative integer n consider the vectors  \n\n  n = 2^0e_0 + 2^1e_1 + \\cdot \\cdot \\cdot  + 2^ke_k    (e_0,e_1,\\ldots  \\in  {0,1,2,3,4,5}),    (\\star )\n\nwhere---as usual in partition-type problems---the order of the summands is irrelevant, so the vector  \n(e_0,e_1,\\ldots ) uniquely encodes the representation.  \n\nLet  \n\n  R(n) := #{ (e_0,e_1,\\ldots ) satisfying (\\star ) }.\n\n(Throughout we adopt the harmless conventions R(0)=1 and R(m)=0 for m<0.)\n\nQuestion. Does there exist a real polynomial P(x) such that  \n\n  R(n)=\\lfloor P(n)\\rfloor   for every positive integer n ?  \n\nGive a complete proof of your answer.",
+      "solution": "We prove that such a polynomial does not exist.\n\n0.  Notation  \n   Set \\alpha :=log_23 \\approx  1.585\\ldots .\n\n------------------------------------------------------------------------------------------\n1.  A divide-and-conquer recurrence\n------------------------------------------------------------------------------------------\nWrite n=2m+\\varepsilon  with \\varepsilon \\in {0,1}.  \nBecause e_0 must have the same parity as \\varepsilon  and e_0\\in {0,1,2,3,4,5}, it may be\n\n  e_0 = \\varepsilon , \\varepsilon +2, \\varepsilon +4.  \n\nPutting e_0=\\varepsilon +2t (t=0,1,2) removes 2t from n and leaves an even number 2(m-t); division by 2 gives the smaller argument m-t:\n\n  R(2m+\\varepsilon )=R(m)+R(m-1)+R(m-2).    (1)\n\nThe harmless conventions give the initial values  \n\n  R(0)=1, R(1)=1, R(2)=2.    (2)\n\n\n\n------------------------------------------------------------------------------------------\n2.  Monotonicity\n------------------------------------------------------------------------------------------\nClaim.  R is non-decreasing: R(n+1) \\geq  R(n) for all n\\geq 0.\n\nProof by strong induction.  The base n=0,1,2 follows from (2).\n\nInduction step.  Assume the claim up to n-1.\n\n*  If n is odd, n=2m+1, then by (1)  \n\n  R(2m+1)=R(m)+R(m-1)+R(m-2)=R(2m).\n\n*  If n is even, n=2m (m\\geq 1), then  \n\n  R(2m)-R(2m-1)\n   = [R(m)+R(m-1)+R(m-2)]-[R(m-1)+R(m-2)+R(m-3)]\n   = R(m)-R(m-3) \\geq  0\n\nby the induction hypothesis.\\blacksquare \n\n\n\n------------------------------------------------------------------------------------------\n3.  Quantitative growth of R\n------------------------------------------------------------------------------------------\nProposition.  There are constants c_1,c_2>0 such that  \n\n  c_1\\cdot n^{\\alpha /2} \\leq  R(n) \\leq  c_2\\cdot n^{\\alpha }   (n\\geq 1).   (3)\n\n(The proof is identical to the one in the original draft; it uses (1), (2) and monotonicity.  For completeness it is reproduced in the appendix below.)\n\n\n\n------------------------------------------------------------------------------------------\n4.  Plateaux of length two\n------------------------------------------------------------------------------------------\nFrom (1) with \\varepsilon =1 we get immediately  \n\n  R(2m+1)=R(2m)  (m\\geq 0).    (4)\n\nHence  \n\n  \\Delta (n):=R(n+1)-R(n)=0  whenever n is even.  (5)\n\n\n\n------------------------------------------------------------------------------------------\n5.  Non-existence of an approximating polynomial\n------------------------------------------------------------------------------------------\nAssume, for contradiction, that a real polynomial P(x) satisfies  \n\n  R(n)=\\lfloor P(n)\\rfloor   for all n\\geq 1.    (6)\n\nPut \\varepsilon (n):=P(n)-R(n)\\in [0,1).  For any integer n we have  \n\n  P(n+1)-P(n)=\\Delta (n)+\\varepsilon (n+1)-\\varepsilon (n).   (7)\n\nDefine Q(x):=P(x+1)-P(x); this is a polynomial of degree deg P-1.\n\n(i)  deg P \\geq 2 is impossible.  \nIf deg P\\geq 2, then deg Q\\geq 1 and |Q(n)|\\to \\infty .  \nBut for even n, \\Delta (n)=0 by (5) and |\\varepsilon (n+1)-\\varepsilon (n)|<1, so |Q(n)|<1 for infinitely many n, a contradiction.  \nHence deg P\\leq 1.\n\n(ii)  deg P=0 is impossible because R is unbounded (see (3)).  \nTherefore P(x)=ax+b with a>0.\n\nFor every even n, (5) and (7) give  \n\n  a=Q(n)=\\Delta (n)+\\varepsilon (n+1)-\\varepsilon (n)=\\varepsilon (n+1)-\\varepsilon (n),  \n\nso 0<a<1 and, in particular,  \n\n  \\varepsilon (n) \\leq  1-a  for all even n.   (8)\n\nNow choose the specific odd index n=3.  \nUsing (1) and (2) we compute\n\n  R(3)=R(1)+R(0)+R(-1)=1+1+0=2,  \n  R(4)=R(2)+R(1)+R(0)=2+1+1=4,\n\nhence  \n\n  \\Delta (3)=R(4)-R(3)=2.    (9)\n\nInsert n=3 into (7):\n\n  a = \\Delta (3)+\\varepsilon (4)-\\varepsilon (3)=2+\\varepsilon (4)-\\varepsilon (3).  \n\nBecause |\\varepsilon (4)-\\varepsilon (3)|<1, this yields  \n\n  1 < a < 3.    (10)\n\nBut (8) already forced 0<a<1.  The inequalities (8) and (10) are incompatible, so no linear polynomial P can satisfy (6).\n\nConsequently no real polynomial can fulfil (6), completing the proof. \\blacksquare \n\n\n\nAppendix: Proof of (3)\n\nA.  Upper bound.  \nFor n even, (1) and monotonicity give R(2m) \\leq  3R(m).  \nIterating along n=2^k yields R(2^k) \\leq  3^k.  \nFor 2^k \\leq  n < 2^{k+1}, monotonicity implies  \n\n  R(n) \\leq  R(2^{k+1}) \\leq  3^{k+1}=3\\cdot 2^{\\alpha (k+1)} \\leq  3\\cdot 2^{\\alpha }\\cdot n^{\\alpha }.  \n\nThus c_2:=3\\cdot 2^{\\alpha } works.\n\nB.  Lower bound.  \nFor even n=2m (m\\geq 2),\n\n  R(2m)=R(m)+R(m-1)+R(m-2) \\geq  3R(m-2).  \n\nApplying this \\lfloor k/2\\rfloor  times to n=2^k one obtains\n\n  R(2^k) \\geq  3^{\\lfloor k/2\\rfloor } \\geq  (2^k)^{\\alpha /2}/(2^{2\\alpha }\\sqrt{3}).  \n\nMonotonicity extends this to all n, completing the proof of (3). \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.526317",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher order recurrence: the cap “5” creates a three-term self-similarity (vs. the two-term Fibonacci-type recursion in the original), so linear-recurrence theory of order ≥3 and its characteristic roots are indispensable.  \n• Asymptotic growth: one must extract the dominant eigenvalue λ₁ of (4) and translate it into n-space via n=2ᵏ, intertwining discrete recurrence analysis with continuous asymptotics.  \n• Irrational exponent argument: proving that β=log₂λ₁ is irrational uses algebraic-number considerations (λ₁ satisfies an irreducible cubic), going beyond elementary induction.  \n• Contradiction with polynomial growth: matching Θ(n^β) against a would-be polynomial requires precise growth comparison and a control of rounding errors (⌊·⌋), not needed in the original.  \n\nThese layers—in particular the cubic characteristic equation, algebraic-irrational exponent, and asymptotic comparison—add substantial technical depth relative to the original linear-recurrence / simple-induction solution."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

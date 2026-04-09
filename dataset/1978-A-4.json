@@ -1,0 +1,173 @@
+{
+  "index": "1978-A-4",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-4\nA \"bypass\" operation on a set \\( S \\) is a mapping from \\( S \\times S \\) to \\( S \\) with the property\n\\[\nB(B(w, x), B(y, z))=B(w, z) \\quad \\text { for all } \\quad w, x, y, z \\text { in } S .\n\\]\n(a) Prove that \\( B(a, b)=c \\) implies \\( B(c, c)=c \\) when \\( B \\) is a bypass.\n(b) Prove that \\( B(a, b)=c \\) implies \\( B(a, x)=B(c, x) \\) for all \\( x \\) in \\( S \\) when \\( B \\) is a bypass.\n(c) Construct a table for a bypass operation \\( B \\) on a finite set \\( S \\) with the following three properties:\n(i) \\( B(x, x)=x \\) for all \\( x \\) in \\( S \\).\n(ii) There exist \\( d \\) and \\( e \\) in \\( S \\) with \\( B(d, e)=d \\neq e \\).\n(iii) There exist \\( f \\) and \\( g \\) in \\( S \\) with \\( B(f, g) \\neq f \\).",
+  "solution": "A-4.\n(a) The defining property with \\( [w, x, y, z]=[a, b, a, b] \\) and the hypothesis \\( B(a, b)=c \\) give us\n\\[\nB(c, c)=B(B(a, b), B(a, b))=B(a, b)=c\n\\]\n(b) The defining property with \\( [w, x, y, z]=[a, b, x, x] \\) and \\( B(a, b)=c \\) give\n\\[\nB(c, B(x, x))=B(B(a, b), B(x, x))=B(a, x)\n\\]\n\nThen using the result in (a) and \\( [w, x, y, z]=[c, c, x, x] \\), one has\n\\[\nB(c, B(x, x))=B(B(c, c), B(x, x))=B(c, x)\n\\]\n\nTogether, these show that \\( B(a, b)=c \\) implies \\( B(a, x)=B(c, x) \\) for all \\( x \\) in \\( S \\).\n(c) An easy way to obtain a bypass with property (i) is to let \\( S \\) be a cartesian product \\( I \\times J \\) and to define the operation \\( B \\) by\n\\[\nB((i, j),(h, k))=(i, k)\n\\]\n\nProperties (ii) and (iii) will hold if \\( I \\) and \\( J \\), respectively, have more than one element. Except for notation, every bypass is obtained this way.\n\nTables with \\( S=\\{a, b, c, d\\} \\) and with \\( S=\\{u, v, w, x, y, z\\} \\) follow:\n\\begin{tabular}{c|cc} \n& \\( a \\) or \\( c \\) & \\( b \\) or \\( d \\) \\\\\n\\hline\\( a \\) or \\( b \\) & \\( a \\) & \\( b \\) \\\\\n\\( c \\) or \\( d \\) & \\( c \\) & \\( d \\)\n\\end{tabular}\n\\begin{tabular}{c|ccc} \n& \\( u \\) or \\( x \\) & \\( v \\) or \\( y \\) & \\( w \\) or \\( z \\) \\\\\n\\hline\\( u \\) or \\( v \\) or \\( w \\) & \\( u \\) & \\( v \\) & \\( w \\) \\\\\n\\( x \\) or \\( y \\) or \\( z \\) & \\( x \\) & \\( y \\) & \\( z \\)\n\\end{tabular}",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+  ],
+  "params": [
+    "B",
+    "I",
+    "J",
+    "S"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "alphaon",
+        "b": "betatwo",
+        "c": "charlie",
+        "d": "deltaone",
+        "e": "epsilon",
+        "f": "foxtrot",
+        "g": "golfvar",
+        "h": "hotello",
+        "i": "indigoid",
+        "j": "juliett",
+        "k": "kilovar",
+        "u": "uniform",
+        "v": "victory",
+        "w": "whiskey",
+        "x": "xenonic",
+        "y": "yankees",
+        "z": "zephyrs",
+        "B": "bypassop",
+        "I": "firstset",
+        "J": "secondset",
+        "S": "superset"
+      },
+      "question": "Problem A-4\nA \"bypass\" operation on a set \\( superset \\) is a mapping from \\( superset \\times superset \\) to \\( superset \\) with the property\n\\[\nbypassop(bypassop(whiskey, xenonic), bypassop(yankees, zephyrs))=bypassop(whiskey, zephyrs) \\quad \\text { for all } \\quad whiskey, xenonic, yankees, zephyrs \\text { in } superset .\n\\]\n(a) Prove that \\( bypassop(alphaon, betatwo)=charlie \\) implies \\( bypassop(charlie, charlie)=charlie \\) when \\( bypassop \\) is a bypass.\n(b) Prove that \\( bypassop(alphaon, betatwo)=charlie \\) implies \\( bypassop(alphaon, xenonic)=bypassop(charlie, xenonic) \\) for all \\( xenonic \\) in \\( superset \\) when \\( bypassop \\) is a bypass.\n(c) Construct a table for a bypass operation \\( bypassop \\) on a finite set \\( superset \\) with the following three properties:\n(i) \\( bypassop(xenonic, xenonic)=xenonic \\) for all \\( xenonic \\) in \\( superset \\).\n(ii) There exist \\( deltaone \\) and \\( epsilon \\) in \\( superset \\) with \\( bypassop(deltaone, epsilon)=deltaone \\neq epsilon \\).\n(iii) There exist \\( foxtrot \\) and \\( golfvar \\) in \\( superset \\) with \\( bypassop(foxtrot, golfvar) \\neq foxtrot \\).",
+      "solution": "A-4.\n(a) The defining property with \\( [whiskey, xenonic, yankees, zephyrs]=[alphaon, betatwo, alphaon, betatwo] \\) and the hypothesis \\( bypassop(alphaon, betatwo)=charlie \\) give us\n\\[\nbypassop(charlie, charlie)=bypassop(bypassop(alphaon, betatwo), bypassop(alphaon, betatwo))=bypassop(alphaon, betatwo)=charlie\n\\]\n(b) The defining property with \\( [whiskey, xenonic, yankees, zephyrs]=[alphaon, betatwo, xenonic, xenonic] \\) and \\( bypassop(alphaon, betatwo)=charlie \\) give\n\\[\nbypassop(charlie, bypassop(xenonic, xenonic))=bypassop(bypassop(alphaon, betatwo), bypassop(xenonic, xenonic))=bypassop(alphaon, xenonic)\n\\]\nThen using the result in (a) and \\( [whiskey, xenonic, yankees, zephyrs]=[charlie, charlie, xenonic, xenonic] \\), one has\n\\[\nbypassop(charlie, bypassop(xenonic, xenonic))=bypassop(bypassop(charlie, charlie), bypassop(xenonic, xenonic))=bypassop(charlie, xenonic)\n\\]\nTogether, these show that \\( bypassop(alphaon, betatwo)=charlie \\) implies \\( bypassop(alphaon, xenonic)=bypassop(charlie, xenonic) \\) for all \\( xenonic \\) in \\( superset \\).\n(c) An easy way to obtain a bypass with property (i) is to let \\( superset \\) be a cartesian product \\( firstset \\times secondset \\) and to define the operation \\( bypassop \\) by\n\\[\nbypassop((indigoid, juliett),(hotello, kilovar))=(indigoid, kilovar)\n\\]\nProperties (ii) and (iii) will hold if \\( firstset \\) and \\( secondset \\), respectively, have more than one element. Except for notation, every bypass is obtained this way.\n\nTables with \\( superset=\\{alphaon, betatwo, charlie, deltaone\\} \\) and with \\( superset=\\{uniform, victory, whiskey, xenonic, yankees, zephyrs\\} \\) follow:\n\\begin{tabular}{c|cc} \n& \\( alphaon \\) or \\( charlie \\) & \\( betatwo \\) or \\( deltaone \\) \\\\\n\\hline\\( alphaon \\) or \\( betatwo \\) & \\( alphaon \\) & \\( betatwo \\) \\\\\n\\( charlie \\) or \\( deltaone \\) & \\( charlie \\) & \\( deltaone \\)\n\\end{tabular}\n\\begin{tabular}{c|ccc} \n& \\( uniform \\) or \\( xenonic \\) & \\( victory \\) or \\( yankees \\) & \\( whiskey \\) or \\( zephyrs \\) \\\\\n\\hline\\( uniform \\) or \\( victory \\) or \\( whiskey \\) & \\( uniform \\) & \\( victory \\) & \\( whiskey \\) \\\\\n\\( xenonic \\) or \\( yankees \\) or \\( zephyrs \\) & \\( xenonic \\) & \\( yankees \\) & \\( zephyrs \\)\n\\end{tabular}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "pineapple",
+        "b": "chocolate",
+        "c": "cinnamon",
+        "d": "blueberry",
+        "e": "watermelon",
+        "f": "strawberry",
+        "g": "cucumber",
+        "h": "butternut",
+        "i": "peppermint",
+        "j": "marigold",
+        "k": "hazelnut",
+        "u": "raspberry",
+        "v": "blackberry",
+        "w": "elderberry",
+        "x": "gooseberry",
+        "y": "huckleberry",
+        "z": "cloudberry",
+        "B": "lighthouse",
+        "I": "framework",
+        "J": "structure",
+        "S": "container"
+      },
+      "question": "Problem A-4\nA \"bypass\" operation on a set \\( container \\) is a mapping from \\( container \\times container \\) to \\( container \\) with the property\n\\[\nlighthouse(lighthouse(elderberry, gooseberry), lighthouse(huckleberry, cloudberry))=lighthouse(elderberry, cloudberry) \\quad \\text { for all } \\quad elderberry, gooseberry, huckleberry, cloudberry \\text { in } container .\n\\]\n(a) Prove that \\( lighthouse(pineapple, chocolate)=cinnamon \\) implies \\( lighthouse(cinnamon, cinnamon)=cinnamon \\) when \\( lighthouse \\) is a bypass.\n(b) Prove that \\( lighthouse(pineapple, chocolate)=cinnamon \\) implies \\( lighthouse(pineapple, gooseberry)=lighthouse(cinnamon, gooseberry) \\) for all \\( gooseberry \\) in \\( container \\) when \\( lighthouse \\) is a bypass.\n(c) Construct a table for a bypass operation \\( lighthouse \\) on a finite set \\( container \\) with the following three properties:\n(i) \\( lighthouse(gooseberry, gooseberry)=gooseberry \\) for all \\( gooseberry \\) in \\( container \\).\n(ii) There exist \\( blueberry \\) and \\( watermelon \\) in \\( container \\) with \\( lighthouse(blueberry, watermelon)=blueberry \\neq watermelon \\).\n(iii) There exist \\( strawberry \\) and \\( cucumber \\) in \\( container \\) with \\( lighthouse(strawberry, cucumber) \\neq strawberry \\).",
+      "solution": "A-4.\n(a) The defining property with \\( [elderberry, gooseberry, huckleberry, cloudberry]=[pineapple, chocolate, pineapple, chocolate] \\) and the hypothesis \\( lighthouse(pineapple, chocolate)=cinnamon \\) give us\n\\[\nlighthouse(cinnamon, cinnamon)=lighthouse(lighthouse(pineapple, chocolate), lighthouse(pineapple, chocolate))=lighthouse(pineapple, chocolate)=cinnamon\n\\]\n(b) The defining property with \\( [elderberry, gooseberry, huckleberry, cloudberry]=[pineapple, chocolate, gooseberry, gooseberry] \\) and \\( lighthouse(pineapple, chocolate)=cinnamon \\) give\n\\[\nlighthouse(cinnamon, lighthouse(gooseberry, gooseberry))=lighthouse(lighthouse(pineapple, chocolate), lighthouse(gooseberry, gooseberry))=lighthouse(pineapple, gooseberry)\n\\]\n\nThen using the result in (a) and \\( [elderberry, gooseberry, huckleberry, cloudberry]=[cinnamon, cinnamon, gooseberry, gooseberry] \\), one has\n\\[\nlighthouse(cinnamon, lighthouse(gooseberry, gooseberry))=lighthouse(lighthouse(cinnamon, cinnamon), lighthouse(gooseberry, gooseberry))=lighthouse(cinnamon, gooseberry)\n\\]\n\nTogether, these show that \\( lighthouse(pineapple, chocolate)=cinnamon \\) implies \\( lighthouse(pineapple, gooseberry)=lighthouse(cinnamon, gooseberry) \\) for all \\( gooseberry \\) in \\( container \\).\n(c) An easy way to obtain a bypass with property (i) is to let \\( container \\) be a cartesian product \\( framework \\times structure \\) and to define the operation \\( lighthouse \\) by\n\\[\nlighthouse((peppermint, marigold),(butternut, hazelnut))=(peppermint, hazelnut)\n\\]\n\nProperties (ii) and (iii) will hold if \\( framework \\) and \\( structure \\), respectively, have more than one element. Except for notation, every bypass is obtained this way.\n\nTables with \\( container=\\{pineapple, chocolate, cinnamon, blueberry\\} \\) and with \\( container=\\{raspberry, blackberry, elderberry, gooseberry, huckleberry, cloudberry\\} \\) follow:\n\\begin{tabular}{c|cc} \n& \\( pineapple \\) or \\( cinnamon \\) & \\( chocolate \\) or \\( blueberry \\) \\\\\n\\hline\\( pineapple \\) or \\( chocolate \\) & \\( pineapple \\) & \\( chocolate \\) \\\\\n\\( cinnamon \\) or \\( blueberry \\) & \\( cinnamon \\) & \\( blueberry \\)\n\\end{tabular}\n\\begin{tabular}{c|ccc} \n& \\( raspberry \\) or \\( gooseberry \\) & \\( blackberry \\) or \\( huckleberry \\) & \\( elderberry \\) or \\( cloudberry \\) \\\\\n\\hline\\( raspberry \\) or \\( blackberry \\) or \\( elderberry \\) & \\( raspberry \\) & \\( blackberry \\) & \\( elderberry \\) \\\\\n\\( gooseberry \\) or \\( huckleberry \\) or \\( cloudberry \\) & \\( gooseberry \\) & \\( huckleberry \\) & \\( cloudberry \\)\n\\end{tabular}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "lastelement",
+        "b": "firstpiece",
+        "c": "sourcepart",
+        "d": "recipient",
+        "e": "dispatcher",
+        "f": "staticunit",
+        "g": "mobileone",
+        "h": "suffixidx",
+        "i": "secondidx",
+        "j": "firstidx",
+        "k": "zerothidx",
+        "u": "lowerpart",
+        "v": "totalpart",
+        "w": "horizontal",
+        "x": "verticals",
+        "y": "eastbound",
+        "z": "westbound",
+        "B": "blockage",
+        "I": "outgroup",
+        "J": "innerzone",
+        "S": "emptiness"
+      },
+      "question": "Problem A-4\nA \"bypass\" operation on a set \\( emptiness \\) is a mapping from \\( emptiness \\times emptiness \\) to \\( emptiness \\) with the property\n\\[\nblockage(blockage(horizontal, verticals), blockage(eastbound, westbound))=blockage(horizontal, westbound) \\quad \\text { for all } \\quad horizontal, verticals, eastbound, westbound \\text { in } emptiness .\n\\]\n(a) Prove that \\( blockage(lastelement, firstpiece)=sourcepart \\) implies \\( blockage(sourcepart, sourcepart)=sourcepart \\) when \\( blockage \\) is a bypass.\n(b) Prove that \\( blockage(lastelement, firstpiece)=sourcepart \\) implies \\( blockage(lastelement, verticals)=blockage(sourcepart, verticals) \\) for all \\( verticals \\) in \\( emptiness \\) when \\( blockage \\) is a bypass.\n(c) Construct a table for a bypass operation \\( blockage \\) on a finite set \\( emptiness \\) with the following three properties:\n(i) \\( blockage(verticals, verticals)=verticals \\) for all \\( verticals \\) in \\( emptiness \\).\n(ii) There exist \\( recipient \\) and \\( dispatcher \\) in \\( emptiness \\) with \\( blockage(recipient, dispatcher)=recipient \\neq dispatcher \\).\n(iii) There exist \\( staticunit \\) and \\( mobileone \\) in \\( emptiness \\) with \\( blockage(staticunit, mobileone) \\neq staticunit \\).",
+      "solution": "A-4.\n(a) The defining property with \\( [horizontal, verticals, eastbound, westbound]=[lastelement, firstpiece, lastelement, firstpiece] \\) and the hypothesis \\( blockage(lastelement, firstpiece)=sourcepart \\) give us\n\\[\nblockage(sourcepart, sourcepart)=blockage(blockage(lastelement, firstpiece), blockage(lastelement, firstpiece))=blockage(lastelement, firstpiece)=sourcepart\n\\]\n(b) The defining property with \\( [horizontal, verticals, eastbound, westbound]=[lastelement, firstpiece, verticals, verticals] \\) and \\( blockage(lastelement, firstpiece)=sourcepart \\) give\n\\[\nblockage(sourcepart, blockage(verticals, verticals))=blockage(blockage(lastelement, firstpiece), blockage(verticals, verticals))=blockage(lastelement, verticals)\n\\]\n\nThen using the result in (a) and \\( [horizontal, verticals, eastbound, westbound]=[sourcepart, sourcepart, verticals, verticals] \\), one has\n\\[\nblockage(sourcepart, blockage(verticals, verticals))=blockage(blockage(sourcepart, sourcepart), blockage(verticals, verticals))=blockage(sourcepart, verticals)\n\\]\n\nTogether, these show that \\( blockage(lastelement, firstpiece)=sourcepart \\) implies \\( blockage(lastelement, verticals)=blockage(sourcepart, verticals) \\) for all \\( verticals \\) in \\( emptiness \\).\n(c) An easy way to obtain a bypass with property (i) is to let \\( emptiness \\) be a cartesian product \\( outgroup \\times innerzone \\) and to define the operation \\( blockage \\) by\n\\[\nblockage((secondidx, firstidx),(suffixidx, zerothidx))=(secondidx, zerothidx)\n\\]\n\nProperties (ii) and (iii) will hold if \\( outgroup \\) and \\( innerzone \\), respectively, have more than one element. Except for notation, every bypass is obtained this way.\n\nTables with \\( emptiness=\\{lastelement, firstpiece, sourcepart, recipient\\} \\) and with \\( emptiness=\\{lowerpart, totalpart, horizontal, verticals, eastbound, westbound\\} \\) follow:\n\\begin{tabular}{c|cc} \n& \\( lastelement \\) or \\( sourcepart \\) & \\( firstpiece \\) or \\( recipient \\) \\\\\n\\hline\\( lastelement \\) or \\( firstpiece \\) & \\( lastelement \\) & \\( firstpiece \\) \\\\\n\\( sourcepart \\) or \\( recipient \\) & \\( sourcepart \\) & \\( recipient \\)\n\\end{tabular}\n\\begin{tabular}{c|ccc} \n& \\( lowerpart \\) or \\( verticals \\) & \\( totalpart \\) or \\( eastbound \\) & \\( horizontal \\) or \\( westbound \\) \\\\\n\\hline\\( lowerpart \\) or \\( totalpart \\) or \\( horizontal \\) & \\( lowerpart \\) & \\( totalpart \\) & \\( horizontal \\) \\\\\n\\( verticals \\) or \\( eastbound \\) or \\( westbound \\) & \\( verticals \\) & \\( eastbound \\) & \\( westbound \\)\n\\end{tabular}"
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "pnfqtdmz",
+        "d": "xvmncrge",
+        "e": "tldsjzqa",
+        "f": "vrbhclyu",
+        "g": "swdmpoke",
+        "h": "oagxtnzb",
+        "i": "yftskdec",
+        "j": "plorquve",
+        "k": "nemwbfri",
+        "u": "dcmyvlek",
+        "v": "rigptnsa",
+        "w": "hfrmzqcj",
+        "x": "zalegtor",
+        "y": "vgqushbn",
+        "z": "mdkfyxpe",
+        "B": "lqwxfjda",
+        "I": "euvghqst",
+        "J": "yzprfdmk",
+        "S": "lhbxcwou"
+      },
+      "question": "Problem A-4\nA \"bypass\" operation on a set \\( lhbxcwou \\) is a mapping from \\( lhbxcwou \\times lhbxcwou \\) to \\( lhbxcwou \\) with the property\n\\[\nlqwxfjda(lqwxfjda(hfrmzqcj, zalegtor), lqwxfjda(vgqushbn, mdkfyxpe))=lqwxfjda(hfrmzqcj, mdkfyxpe) \\quad \\text { for all } \\quad hfrmzqcj, zalegtor, vgqushbn, mdkfyxpe \\text { in } lhbxcwou .\n\\]\n(a) Prove that \\( lqwxfjda(qzxwvtnp, hjgrksla)=pnfqtdmz \\) implies \\( lqwxfjda(pnfqtdmz, pnfqtdmz)=pnfqtdmz \\) when \\( lqwxfjda \\) is a bypass.\n(b) Prove that \\( lqwxfjda(qzxwvtnp, hjgrksla)=pnfqtdmz \\) implies \\( lqwxfjda(qzxwvtnp, zalegtor)=lqwxfjda(pnfqtdmz, zalegtor) \\) for all \\( zalegtor \\) in \\( lhbxcwou \\) when \\( lqwxfjda \\) is a bypass.\n(c) Construct a table for a bypass operation \\( lqwxfjda \\) on a finite set \\( lhbxcwou \\) with the following three properties:\n(i) \\( lqwxfjda(zalegtor, zalegtor)=zalegtor \\) for all \\( zalegtor \\) in \\( lhbxcwou \\).\n(ii) There exist \\( xvmncrge \\) and \\( tldsjzqa \\) in \\( lhbxcwou \\) with \\( lqwxfjda(xvmncrge, tldsjzqa)=xvmncrge \\neq tldsjzqa \\).\n(iii) There exist \\( vrbhclyu \\) and \\( swdmpoke \\) in \\( lhbxcwou \\) with \\( lqwxfjda(vrbhclyu, swdmpoke) \\neq vrbhclyu \\).",
+      "solution": "A-4.\n(a) The defining property with \\( [hfrmzqcj, zalegtor, vgqushbn, mdkfyxpe]=[qzxwvtnp, hjgrksla, qzxwvtnp, hjgrksla] \\) and the hypothesis \\( lqwxfjda(qzxwvtnp, hjgrksla)=pnfqtdmz \\) give us\n\\[\nlqwxfjda(pnfqtdmz, pnfqtdmz)=lqwxfjda(lqwxfjda(qzxwvtnp, hjgrksla), lqwxfjda(qzxwvtnp, hjgrksla))=lqwxfjda(qzxwvtnp, hjgrksla)=pnfqtdmz\n\\]\n(b) The defining property with \\( [hfrmzqcj, zalegtor, vgqushbn, mdkfyxpe]=[qzxwvtnp, hjgrksla, zalegtor, zalegtor] \\) and \\( lqwxfjda(qzxwvtnp, hjgrksla)=pnfqtdmz \\) give\n\\[\nlqwxfjda(pnfqtdmz, lqwxfjda(zalegtor, zalegtor))=lqwxfjda(lqwxfjda(qzxwvtnp, hjgrksla), lqwxfjda(zalegtor, zalegtor))=lqwxfjda(qzxwvtnp, zalegtor)\n\\]\nThen using the result in (a) and \\( [hfrmzqcj, zalegtor, vgqushbn, mdkfyxpe]=[pnfqtdmz, pnfqtdmz, zalegtor, zalegtor] \\), one has\n\\[\nlqwxfjda(pnfqtdmz, lqwxfjda(zalegtor, zalegtor))=lqwxfjda(lqwxfjda(pnfqtdmz, pnfqtdmz), lqwxfjda(zalegtor, zalegtor))=lqwxfjda(pnfqtdmz, zalegtor)\n\\]\nTogether, these show that \\( lqwxfjda(qzxwvtnp, hjgrksla)=pnfqtdmz \\) implies \\( lqwxfjda(qzxwvtnp, zalegtor)=lqwxfjda(pnfqtdmz, zalegtor) \\) for all \\( zalegtor \\) in \\( lhbxcwou \\).\n(c) An easy way to obtain a bypass with property (i) is to let \\( lhbxcwou \\) be a cartesian product \\( euvghqst \\times yzprfdmk \\) and to define the operation \\( lqwxfjda \\) by\n\\[\nlqwxfjda((yftskdec, plorquve),(oagxtnzb, nemwbfri))=(yftskdec, nemwbfri)\n\\]\nProperties (ii) and (iii) will hold if \\( euvghqst \\) and \\( yzprfdmk \\), respectively, have more than one element. Except for notation, every bypass is obtained this way.\n\nTables with \\( lhbxcwou=\\{qzxwvtnp, hjgrksla, pnfqtdmz, xvmncrge\\} \\) and with \\( lhbxcwou=\\{dcmyvlek, rigptnsa, hfrmzqcj, zalegtor, vgqushbn, mdkfyxpe\\} \\) follow:\n\\begin{tabular}{c|cc} \n& \\( qzxwvtnp \\) or \\( pnfqtdmz \\) & \\( hjgrksla \\) or \\( xvmncrge \\) \\\\\n\\hline\\( qzxwvtnp \\) or \\( hjgrksla \\) & \\( qzxwvtnp \\) & \\( hjgrksla \\) \\\\\n\\( pnfqtdmz \\) or \\( xvmncrge \\) & \\( pnfqtdmz \\) & \\( xvmncrge \\)\n\\end{tabular}\n\\begin{tabular}{c|ccc} \n& \\( dcmyvlek \\) or \\( zalegtor \\) & \\( rigptnsa \\) or \\( vgqushbn \\) & \\( hfrmzqcj \\) or \\( mdkfyxpe \\) \\\\\n\\hline\\( dcmyvlek \\) or \\( rigptnsa \\) or \\( hfrmzqcj \\) & \\( dcmyvlek \\) & \\( rigptnsa \\) & \\( hfrmzqcj \\) \\\\\n\\( zalegtor \\) or \\( vgqushbn \\) or \\( mdkfyxpe \\) & \\( zalegtor \\) & \\( vgqushbn \\) & \\( mdkfyxpe \\)\n\\end{tabular}"
+    },
+    "kernel_variant": {
+      "question": "Let S be a non-empty set and let P : S \\times S \\to S be a binary operation satisfying\n\\[\n               P\\bigl(P(u,v),\\,P(w,x)\\bigr)=P(u,x)\\qquad\\text{for all }u,v,w,x\\in S.\\tag{\\star }\n\\]\nSuch an operation will be called a portal.\n\n(a)  Show that if P(p,q)=r for some p,q,r\\in S, then P(r,r)=r.\n\n(b)  Using (a), prove that the same hypothesis P(p,q)=r implies\n        P(p,y)=P(r,y)  for every y\\in S.\n\n(c)  Construct an explicit portal on a finite set S that simultaneously enjoys the following three properties:\n   (i)  P(s,s)=s for every s\\in S;\n  (ii)  there exist d,e\\in S with P(d,e)=d\\neq e; \n (iii) there exist f,g\\in S with P(f,g)\\neq f.\nProvide the full Cayley table of your example.",
+      "solution": "Solution.\n\nWe work throughout with the identity\n    P(P(u,v),P(w,x))=P(u,x)\nfor all u,v,w,x \\in  S.\n\n(a) Suppose P(p,q)=r.  Substituting (u,v,w,x)=(p,q,p,q) gives\n    P(P(p,q),P(p,q))=P(p,q).\nHence P(r,r)=r, as required.\n\n(b) Again assume P(p,q)=r, and let y\\in S be arbitrary.\n\n1. Substitute (u,v,w,x)=(p,q,y,y):\n    P(P(p,q),P(y,y))=P(p,y).\nSince P(p,q)=r, this is\n    P(r,P(y,y))=P(p,y).  (1)\n\n2. From (a) we know P(r,r)=r.  Substitute (u,v,w,x)=(r,r,y,y):\n    P(P(r,r),P(y,y))=P(r,y).\nUsing P(r,r)=r gives\n    P(r,P(y,y))=P(r,y).  (2)\n\n3. Comparing (1) and (2) shows P(p,y)=P(r,y).  Since y was arbitrary, P(p,y)=P(r,y) for all y\\in S.\n\n(c) We construct a finite portal with the required properties.  Let\n    A={0,1,2},\n    B={\\alpha ,\\beta },\n    S=A\\times B.\nDefine P: S\\times S\\to S by\n    P((a,i),(b,j))=(a,j)\nfor all a,b\\in A and i,j\\in B.\n\nVerification of the portal law.  Write u=(u_1,u_2), v=(v_1,v_2), w=(w_1,w_2), x=(x_1,x_2).  Then\n  P(P(u,v),P(w,x))\n= P((u_1,v_2),(w_1,x_2))\n= (u_1,x_2)\n= P((u_1,u_2),(x_1,x_2))\n= P(u,x).\nThus P obeys P(P(u,v),P(w,x))=P(u,x).\n\n(i) For any s=(a,i)\\in S,\n    P(s,s)=P((a,i),(a,i))=(a,i)=s.\n\n(ii) Take d=(0,\\alpha ) and e=(1,\\alpha ).  Then\n    P(d,e)=P((0,\\alpha ),(1,\\alpha ))=(0,\\alpha )=d,\nand d\\neq e since 0\\neq 1.\n\n(iii) Take f=(0,\\alpha ) and g=(0,\\beta ).  Then\n    P(f,g)=P((0,\\alpha ),(0,\\beta ))=(0,\\beta )\\neq (0,\\alpha )=f.\n\nThus (i)-(iii) are all satisfied.\n\nFinally, we display the Cayley table of P with the rows and columns ordered as\n(0,\\alpha ), (0,\\beta ), (1,\\alpha ), (1,\\beta ), (2,\\alpha ), (2,\\beta ).\n\n      | (0,\\alpha )  (0,\\beta )  (1,\\alpha )  (1,\\beta )  (2,\\alpha )  (2,\\beta )\n------------------------------------------------\n(0,\\alpha )| (0,\\alpha )  (0,\\beta )  (0,\\alpha )  (0,\\beta )  (0,\\alpha )  (0,\\beta )\n(0,\\beta )| (0,\\alpha )  (0,\\beta )  (0,\\alpha )  (0,\\beta )  (0,\\alpha )  (0,\\beta )\n(1,\\alpha )| (1,\\alpha )  (1,\\beta )  (1,\\alpha )  (1,\\beta )  (1,\\alpha )  (1,\\beta )\n(1,\\beta )| (1,\\alpha )  (1,\\beta )  (1,\\alpha )  (1,\\beta )  (1,\\alpha )  (1,\\beta )\n(2,\\alpha )| (2,\\alpha )  (2,\\beta )  (2,\\alpha )  (2,\\beta )  (2,\\alpha )  (2,\\beta )\n(2,\\beta )| (2,\\alpha )  (2,\\beta )  (2,\\alpha )  (2,\\beta )  (2,\\alpha )  (2,\\beta )\n\nThis completes the construction of a finite portal satisfying (i)-(iii).",
+      "_meta": {
+        "core_steps": [
+          "Plug (w,x,y,z) = (a,b,a,b) into B(B(w,x),B(y,z)) = B(w,z) to get B(c,c)=c (idempotence of c).",
+          "Plug (w,x,y,z) = (a,b,x,x) and then (c,c,x,x) into the same identity and use idempotence to deduce B(a,x)=B(c,x).",
+          "Realize/construct every bypass as the coordinate-projection B((i,j),(h,k)) = (i,k) on S = I×J; choose |I|,|J|>1 so (i)–(iii) hold."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Letters used for specific elements substituted into the identity (e.g., a, b, c, x). Any distinct symbols work.",
+            "original": "a, b, c, x"
+          },
+          "slot2": {
+            "description": "Exact quadruples substituted: (a,b,a,b), (a,b,x,x), (c,c,x,x). Any choices retaining the repeated-pair pattern (p,q,p,q) and (p,q,r,r) suffice.",
+            "original": "(a,b,a,b); (a,b,x,x); (c,c,x,x)"
+          },
+          "slot3": {
+            "description": "Sizes/labels of the factor sets in the construction S = I×J; only the conditions |I|>1 and |J|>1 matter.",
+            "original": "examples with |I|=|J|=2 (table of 4) and |I|=3, |J|=2 (table of 6)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

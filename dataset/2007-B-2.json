@@ -1,0 +1,105 @@
+{
+  "index": "2007-B-2",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Suppose that $f: [0,1] \\to \\mathbb{R}$ has a continuous derivative\nand that $\\int_0^1 f(x)\\,dx = 0$. Prove that for every $\\alpha \\in (0,1)$,\n\\[\n\\left| \\int_0^\\alpha f(x)\\,dx \\right| \\leq \\frac{1}{8} \\max_{0 \\leq x\n\\leq 1} |f'(x)|.\n\\]",
+  "solution": "Put $B = \\max_{0 \\leq x \\leq 1} |f'(x)|$\nand $g(x) = \\int_0^x f(y)\\,dy$. Since $g(0) = g(1) = 0$, the maximum value\nof $|g(x)|$ must occur at a critical point $y \\in (0,1)$ satisfying\n$g'(y) = f(y) = 0$. We may thus take $\\alpha = y$ hereafter.\n\nSince $\\int_0^\\alpha f(x)\\,dx = -\\int_0^{1-\\alpha} f(1-x)\\,dx$,\nwe may assume that $\\alpha \\leq 1/2$. By then substituting $-f(x)$\nfor $f(x)$ if needed, we may assume that $\\int_0^\\alpha f(x)\\,dx \\geq 0$.\n{}From the inequality $f'(x) \\geq -B$, we deduce\n$f(x) \\leq B(\\alpha - x)$ for $0 \\leq x \\leq \\alpha$, so\n\\begin{align*}\n\\int_0^\\alpha f(x)\\,dx \\leq &\\int_0^\\alpha B(\\alpha-x)\\,dx \\\\\n&= -\\left. \\frac{1}{2} B (\\alpha - x)^2 \\right|_0^\\alpha \\\\\n&= \\frac{\\alpha^2}{2} B \\leq \\frac{1}{8} B\n\\end{align*}\nas desired.",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "f",
+    "\\\\alpha",
+    "B",
+    "g"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "absciss",
+        "y": "ordinate",
+        "f": "realfunc",
+        "\\alpha": "fraction",
+        "B": "maxbound",
+        "g": "primitive"
+      },
+      "question": "Suppose that $realfunc: [0,1] \\to \\mathbb{R}$ has a continuous derivative\nand that \\(\\int_0^1 realfunc(absciss)\\,d absciss = 0\\). Prove that for every $fraction \\in (0,1)$,\n\\[\n\\left| \\int_0^{fraction} realfunc(absciss)\\,d absciss \\right| \\leq \\frac{1}{8} \\max_{0 \\leq absciss\n\\leq 1} |realfunc'(absciss)|.\n\\]",
+      "solution": "Put $maxbound = \\max_{0 \\leq absciss \\leq 1} |realfunc'(absciss)|$\nand $primitive(absciss) = \\int_0^{absciss} realfunc(ordinate)\\,d ordinate$. Since $primitive(0) = primitive(1) = 0$, the maximum value\nof $|primitive(absciss)|$ must occur at a critical point $ordinate \\in (0,1)$ satisfying\n$primitive'(ordinate) = realfunc(ordinate) = 0$. We may thus take $fraction = ordinate$ hereafter.\n\nSince $\\int_0^{fraction} realfunc(absciss)\\,d absciss = -\\int_0^{1-fraction} realfunc(1-absciss)\\,d absciss$,\nwe may assume that $fraction \\leq 1/2$. By then substituting $-realfunc(absciss)$\nfor $realfunc(absciss)$ if needed, we may assume that $\\int_0^{fraction} realfunc(absciss)\\,d absciss \\geq 0$.\nFrom the inequality $realfunc'(absciss) \\geq -maxbound$, we deduce\n$realfunc(absciss) \\leq maxbound(fraction - absciss)$ for $0 \\leq absciss \\leq fraction$, so\n\\begin{align*}\n\\int_0^{fraction} realfunc(absciss)\\,d absciss &\\leq \\int_0^{fraction} maxbound(fraction-absciss)\\,d absciss \\\\\n&= -\\left. \\frac{1}{2} maxbound (fraction - absciss)^2 \\right|_0^{fraction} \\\\\n&= \\frac{fraction^2}{2} maxbound \\leq \\frac{1}{8} maxbound\n\\end{align*}\nas desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "chandelier",
+        "y": "hurricane",
+        "f": "newspaper",
+        "\\alpha": "rainstorm",
+        "B": "toothpick",
+        "g": "marshmallow"
+      },
+      "question": "Suppose that $newspaper: [0,1] \\to \\mathbb{R}$ has a continuous derivative\nand that $\\int_0^1 newspaper(chandelier)\\,dchandelier = 0$. Prove that for every $rainstorm \\in (0,1)$,\n\\[\n\\left| \\int_0^{rainstorm} newspaper(chandelier)\\,dchandelier \\right| \\leq \\frac{1}{8} \\max_{0 \\leq chandelier\n\\leq 1} |newspaper'(chandelier)|.\n\\]",
+      "solution": "Put $toothpick = \\max_{0 \\leq chandelier \\leq 1} |newspaper'(chandelier)|$\nand $marshmallow(chandelier) = \\int_0^{chandelier} newspaper(hurricane)\\,dhurricane$. Since $marshmallow(0) = marshmallow(1) = 0$, the maximum value\nof $|marshmallow(chandelier)|$ must occur at a critical point $hurricane \\in (0,1)$ satisfying\n$marshmallow'(hurricane) = newspaper(hurricane) = 0$. We may thus take $rainstorm = hurricane$ hereafter.\n\nSince $\\int_0^{rainstorm} newspaper(chandelier)\\,dchandelier = -\\int_0^{1-rainstorm} newspaper(1-chandelier)\\,dchandelier$,\nwe may assume that $rainstorm \\leq 1/2$. By then substituting $-newspaper(chandelier)$\nfor $newspaper(chandelier)$ if needed, we may assume that $\\int_0^{rainstorm} newspaper(chandelier)\\,dchandelier \\geq 0$.\n{}From the inequality $newspaper'(chandelier) \\geq -toothpick$, we deduce\n$newspaper(chandelier) \\leq toothpick(rainstorm - chandelier)$ for $0 \\leq chandelier \\leq rainstorm$, so\n\\begin{align*}\n\\int_0^{rainstorm} newspaper(chandelier)\\,dchandelier \\leq &\\int_0^{rainstorm} toothpick(rainstorm-chandelier)\\,dchandelier \\\\\n&= -\\left. \\frac{1}{2} toothpick (rainstorm - chandelier)^2 \\right|_0^{rainstorm} \\\\\n&= \\frac{rainstorm^2}{2} toothpick \\leq \\frac{1}{8} toothpick\n\\end{align*}\nas desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedpoint",
+        "y": "constant",
+        "f": "nonvarying",
+        "\\alpha": "infinity",
+        "B": "lowestval",
+        "g": "discrete"
+      },
+      "question": "Suppose that $nonvarying: [0,1] \\to \\mathbb{R}$ has a continuous derivative\nand that $\\int_0^1 nonvarying(fixedpoint)\\,d fixedpoint = 0$. Prove that for every $infinity \\in (0,1)$,\n\\[\n\\left| \\int_0^{infinity} nonvarying(fixedpoint)\\,d fixedpoint \\right| \\leq \\frac{1}{8} \\max_{0 \\leq fixedpoint\n\\leq 1} |nonvarying'(fixedpoint)|.\n\\]",
+      "solution": "Put $lowestval = \\max_{0 \\leq fixedpoint \\leq 1} |nonvarying'(fixedpoint)|$\nand $discrete(fixedpoint) = \\int_0^{fixedpoint} nonvarying(constant)\\,d constant$. Since $discrete(0) = discrete(1) = 0$, the maximum value\nof $|discrete(fixedpoint)|$ must occur at a critical point $constant \\in (0,1)$ satisfying\n$discrete'(constant) = nonvarying(constant) = 0$. We may thus take $infinity = constant$ hereafter.\n\nSince $\\int_0^{infinity} nonvarying(fixedpoint)\\,d fixedpoint = -\\int_0^{1-infinity} nonvarying(1-fixedpoint)\\,d fixedpoint$,\nwe may assume that $infinity \\leq 1/2$. By then substituting $-nonvarying(fixedpoint)$\nfor $nonvarying(fixedpoint)$ if needed, we may assume that $\\int_0^{infinity} nonvarying(fixedpoint)\\,d fixedpoint \\geq 0$.\n{}From the inequality $nonvarying'(fixedpoint) \\geq -lowestval$, we deduce\n$nonvarying(fixedpoint) \\leq lowestval(infinity - fixedpoint)$ for $0 \\leq fixedpoint \\leq infinity$, so\n\\begin{align*}\n\\int_0^{infinity} nonvarying(fixedpoint)\\,d fixedpoint \\leq &\\int_0^{infinity} lowestval(infinity-fixedpoint)\\,d fixedpoint \\\\\n&= -\\left. \\frac{1}{2} lowestval (infinity - fixedpoint)^2 \\right|_0^{infinity} \\\\\n&= \\frac{infinity^2}{2} lowestval \\leq \\frac{1}{8} lowestval\n\\end{align*}\nas desired."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zemyofqt",
+        "y": "hleruvkc",
+        "f": "qofuihgs",
+        "\\alpha": "vpsgnkmu",
+        "B": "moypqksa",
+        "g": "twlzrnka"
+      },
+      "question": "Suppose that $qofuihgs: [0,1] \\to \\mathbb{R}$ has a continuous derivative\nand that $\\int_0^1 qofuihgs(zemyofqt)\\,dzemyofqt = 0$. Prove that for every $vpsgnkmu \\in (0,1)$,\n\\[\n\\left| \\int_0^{vpsgnkmu} qofuihgs(zemyofqt)\\,dzemyofqt \\right| \\leq \\frac{1}{8} \\max_{0 \\leq zemyofqt\n\\leq 1} |qofuihgs'(zemyofqt)|.\n\\]",
+      "solution": "Put $moypqksa = \\max_{0 \\leq zemyofqt \\leq 1} |qofuihgs'(zemyofqt)|$\nand $twlzrnka(zemyofqt) = \\int_0^{zemyofqt} qofuihgs(hleruvkc)\\,dhleruvkc$. Since $twlzrnka(0) = twlzrnka(1) = 0$, the maximum value\nof $|twlzrnka(zemyofqt)|$ must occur at a critical point $hleruvkc \\in (0,1)$ satisfying\n$twlzrnka'(hleruvkc) = qofuihgs(hleruvkc) = 0$. We may thus take $vpsgnkmu = hleruvkc$ hereafter.\n\nSince $\\int_0^{vpsgnkmu} qofuihgs(zemyofqt)\\,dzemyofqt = -\\int_0^{1-vpsgnkmu} qofuihgs(1-zemyofqt)\\,dzemyofqt$,\nwe may assume that $vpsgnkmu \\leq 1/2$. By then substituting $-qofuihgs(zemyofqt)$\nfor $qofuihgs(zemyofqt)$ if needed, we may assume that $\\int_0^{vpsgnkmu} qofuihgs(zemyofqt)\\,dzemyofqt \\geq 0$.\n{}From the inequality $qofuihgs'(zemyofqt) \\geq -moypqksa$, we deduce\n$qofuihgs(zemyofqt) \\leq moypqksa(vpsgnkmu - zemyofqt)$ for $0 \\leq zemyofqt \\leq vpsgnkmu$, so\n\\begin{align*}\n\\int_0^{vpsgnkmu} qofuihgs(zemyofqt)\\,dzemyofqt \\leq &\\int_0^{vpsgnkmu} moypqksa(vpsgnkmu-zemyofqt)\\,dzemyofqt \\\\\n&= -\\left. \\frac{1}{2} moypqksa (vpsgnkmu - zemyofqt)^2 \\right|_0^{vpsgnkmu} \\\\\n&= \\frac{vpsgnkmu^2}{2} moypqksa \\leq \\frac{1}{8} moypqksa\n\\end{align*}\nas desired."
+    },
+    "kernel_variant": {
+      "question": "Let  \n  f : [0,3] \\longrightarrow \\mathbb R  \nbe absolutely continuous and assume that its (a.e. defined) derivative satisfies\n|f'(x)| \\le M \\qquad (0\\le x\\le 3) \nfor some constant M>0.  Suppose further that\n\\[\n\\int_{0}^{3} f(x)\\,dx = 0.\n\\]\nProve that for every \\alpha\\in[0,3]\n\\[\n\\Bigl|\\int_{0}^{\\alpha} f(x)\\,dx\\Bigr|\\;\\le\\;\\frac{9}{8}\\,M.\n\\]\n(The numerical constant 9/8 is sharp.)",
+      "solution": "1.  Notation and first observations.\nPut\n    g(x):=\\int_{0}^{x}f(t)\\,dt\\qquad(0\\le x\\le 3),\\qquad\n    G:=\\max_{0\\le x\\le 3}|g(x)|.\nBecause f is absolutely continuous,  g is continuously differentiable,\ng(0)=g(3)=0 and g'(x)=f(x) for a.e. x.  If g\\equiv 0 the desired\nestimate is immediate; hence we assume G>0.  After replacing f by -f if\nnecessary we may suppose that g attains the value G (and therefore its\nmaximum) somewhere and that G>0.\n\n2.  Reduction to the half-interval [0,3/2] by reflection.\nIf g reaches its positive maximum at a point x_{0}\\le 3/2 we keep the\nfunction as it is.  If x_{0}>3/2 we reflect the graph in the midpoint\nx\\mapsto3-x and work with\n   \\widetilde f(x):=f(3-x),\\;\\widetilde g(x):=\\int_{0}^{x}\\widetilde f.\nThe reflected function has the same bound on the derivative, satisfies\n\\widetilde g(0)=\\widetilde g(3)=0 and still has maximum value G, this time\nattained at y_{0}:=3-x_{0}\\in(0,3/2].  Hence it suffices to treat the\ncase in which some maximiser lies in the interval [0,3/2].  From now on\nwe assume\n          0<\\alpha_{*}\\le\\frac32,\\qquad g(\\alpha_{*})=G.\n\n3.  Approximating the maximiser by points where g' exists.\nThe derivative g'=f exists almost everywhere, so the exceptional set\nN:=\\{x\\in[0,3]: g'(x) \\text{ does not exist}\\} has measure 0.  For each\n\\varepsilon>0 choose a point \\alpha\\in(0,3/2]\\setminus N such that\n      g(\\alpha)>G-\\varepsilon.              (1)\n(This is possible because the complement of N is dense.)  Fix such an\n\\alpha and keep \\varepsilon>0 arbitrary for the moment.\n\n4.  An upper bound for |f(\\alpha)|.\nLet h>0 be so small that \\alpha+h\\le3.  Using the fundamental theorem of\ncalculus twice and the bound |f'|\\le M we obtain\n\\begin{align*}\n g(\\alpha+h)-g(\\alpha)\n      &=\\int_{\\alpha}^{\\alpha+h}f(t)\\,dt\\\\\n      &=f(\\alpha)h+ \\int_{\\alpha}^{\\alpha+h}\\!\\int_{\\alpha}^{t} f'(s)\\,ds\\,dt\\\\\n      &=f(\\alpha)h+\\theta_{+},\\qquad |\\theta_{+}|\\le \\frac{M h^{2}}{2}.\n\\end{align*}\nBecause g(\\alpha+h)\\le G and g(\\alpha)\\ge G-\\varepsilon,  we have\n        f(\\alpha)h \\le \\varepsilon + \\frac{M h^{2}}{2}.             (2)\nRepeating the same computation with a negative step -h (and \\alpha-h\\ge0)\nwe derive\n       -f(\\alpha)h \\le \\varepsilon + \\frac{M h^{2}}{2}.             (3)\nTogether (2)-(3) give, for every 0<h\\le\\min\\{\\alpha,3-\\alpha\\},\n        |f(\\alpha)| \\le \\frac{\\varepsilon}{h}+\\frac{M h}{2}.          (4)\nChoosing the optimal step  h:=\\sqrt{2\\varepsilon/M}  (which is admissible\nwhen \\varepsilon is small enough) we finally obtain\n        |f(\\alpha)| \\le \\sqrt{2M\\varepsilon}.                       (5)\n\n5.  Estimating g(\\alpha).\nWrite\n   g(\\alpha)=\\int_{0}^{\\alpha}f(x)\\,dx=\n             \\int_{0}^{\\alpha}\\bigl(f(x)-f(\\alpha)\\bigr)\\,dx+f(\\alpha)\\alpha.\nFor the first integral we use |f(x)-f(\\alpha)|\\le M|x-\\alpha|\n(which follows from |f'|\\le M) to get\n   \\Bigl|\\int_{0}^{\\alpha}\\bigl(f(x)-f(\\alpha)\\bigr)dx\\Bigr|\n             \\le M\\!\\int_{0}^{\\alpha}|x-\\alpha|dx=\\frac{M\\alpha^{2}}{2}.\nCombining this with (5) yields\n        g(\\alpha)\\le \\frac{M\\alpha^{2}}{2}+\\alpha\\sqrt{2M\\varepsilon}.  (6)\nSince \\alpha\\le3/2, letting \\varepsilon\\to0 in (6) gives\n        g(\\alpha)\\le \\frac{M\\alpha^{2}}{2}\\le \\frac{M}{2}\\Bigl(\\frac32\\Bigr)^{2}\n                     =\\frac{9}{8}M.\n\n6.  Passage to the true maximum.\nInequality (6) holds for every \\varepsilon>0 and every corresponding\npoint \\alpha satisfying (1).  Taking the limit \\varepsilon\\to0 we obtain\nG=\\max_{[0,3]}g\\le 9M/8.  Therefore\n     \\bigl|\\,g(x)\\,\\bigr|\\le G\\le \\frac{9}{8}M\\qquad(0\\le x\\le3),\nwhich is exactly the required estimate\n     \\Bigl|\\int_{0}^{\\alpha}f(x)\\,dx\\Bigr|\\le\\frac{9}{8}M\\qquad(0\\le\\alpha\\le3).\n\n7.  Sharpness of the constant.\nEquality is realised (up to scaling) by the piecewise quadratic function\nwhose second derivative alternates between \\pm M on the three sub-intervals\n[0,\\tfrac32], [\\tfrac32,\\tfrac52] and [\\tfrac52,3].  Hence 9/8 cannot be\nimproved.\n\nThis completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Define g(x)=∫₀ˣ f, note g(0)=g(1)=0 ⇒ |g| attains max at α with f(α)=0 (critical–point argument).",
+          "Use symmetry (g(α)=−g(1−α)) and sign–flip (replace f by −f if needed) to arrange α≤1/2 and ∫₀^α f≥0.",
+          "From |f'|≤B deduce f(x)=f(α)−∫ₓ^α f' ≥ −B(α−x) ⇒ f(x) ≤ B(α−x) on [0,α].",
+          "Integrate this linear bound: ∫₀^α f ≤ ∫₀^α B(α−x)dx = Bα²/2.",
+          "Combine α≤1/2 with previous line to get ∫₀^α |f| ≤ B/8, i.e. desired inequality."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Length-1 domain [0,1]; any fixed finite interval of length L would work after rescaling.",
+            "original": "[0,1]"
+          },
+          "slot2": {
+            "description": "Numerical mid-point used for symmetry reduction; any c with 0<c<1 giving α≤c would only change the final constant.",
+            "original": "1/2"
+          },
+          "slot3": {
+            "description": "Resulting constant in the inequality, coming from (α≤1/2)²/2; changes if slot2 changes or if interval length scales.",
+            "original": "1/8"
+          },
+          "slot4": {
+            "description": "Assumption that f has a continuous derivative; bounded (or merely integrable) derivative suffices for the integral estimates.",
+            "original": "continuous derivative"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,129 @@
+{
+  "index": "1979-B-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-3\nLet \\( F \\) be a finite field having an odd number \\( m \\) of elements. Let \\( p(x) \\) be an irreducible (i.e., nonfactorable) polynomial over \\( F \\) of the form\n\\[\nx^{2}+b x+c, \\quad b, c \\in F\n\\]\n\nFor how many elements \\( k \\) in \\( F \\) is \\( p(x)+k \\) irreducible over \\( F \\) ?",
+  "solution": "B-3.\nLet \\( r=(m-1) / 2 \\). We show that \\( q(x)=p(x)+k \\) is irreducible over \\( F \\) for \\( r \\) elements \\( k \\) of \\( F \\). Since \\( m \\) is odd, the characteristic of \\( F \\) is not \\( 2,1+1=2 \\neq 0,2^{-1} b \\) is an element \\( h \\) of \\( F \\), the \\( 2 r+1 \\) elements of \\( F \\) can be expressed in the form \\( 0, f_{1},-f_{1}, \\ldots, f_{r},-f_{r} \\), and \\( \\left\\{0, f_{1}^{2}, \\ldots, f_{r}^{2}\\right\\} \\) is the set of the \\( r+1 \\) distinct squares in \\( F \\). Now\n\\[\nq(x)=(x+h)^{2}-\\left(h^{2}-c-k\\right)\n\\]\nis irreducible over \\( F \\) if and only if it has no zero in \\( F \\), i.e., if and only if \\( h^{2}-c-k \\) is not one of the \\( r+1 \\) squares \\( f^{2} \\) in \\( F \\). Hence \\( k \\) must be one of the \\( r \\) elements left when the \\( r+1 \\) elements of the form \\( h^{2}-c-f^{2} \\) are removed from the \\( 2 r+1 \\) elements of \\( F \\).",
+  "vars": [
+    "x",
+    "k",
+    "f",
+    "f_1",
+    "f_r"
+  ],
+  "params": [
+    "F",
+    "m",
+    "p",
+    "b",
+    "c",
+    "r",
+    "q",
+    "h"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "k": "fieldelem",
+        "f": "genericf",
+        "f_1": "firstf",
+        "f_r": "lastrvar",
+        "F": "finfield",
+        "m": "fieldsize",
+        "p": "polyorig",
+        "b": "coeffb",
+        "c": "coeffc",
+        "r": "halfsize",
+        "q": "newpoly",
+        "h": "halfcoef"
+      },
+      "question": "Problem B-3\nLet finfield be a finite field having an odd number fieldsize of elements. Let polyorig(variablex) be an irreducible (i.e., nonfactorable) polynomial over finfield of the form\n\\[\nvariablex^{2}+coeffb\\, variablex+coeffc, \\quad coeffb, coeffc \\in finfield\n\\]\n\nFor how many elements fieldelem in finfield is polyorig(variablex)+fieldelem irreducible over finfield ?",
+      "solution": "B-3.\nLet halfsize=(fieldsize-1) / 2. We show that newpoly(variablex)=polyorig(variablex)+fieldelem is irreducible over finfield for halfsize elements fieldelem of finfield. Since fieldsize is odd, the characteristic of finfield is not 2, \\(1+1=2 \\neq 0\\); thus \\(2^{-1} coeffb\\) is an element halfcoef of finfield. The \\(2\\,halfsize+1\\) elements of finfield can be written as\n\\[\n0,\\; firstf,-firstf,\\; \\ldots,\\; lastrvar,-lastrvar,\n\\]\nand\n\\[\n\\{0, firstf^{2}, \\ldots, lastrvar^{2}\\}\n\\]\nis the set of the \\(halfsize+1\\) distinct squares in finfield. Now\n\\[\nnewpoly(variablex)=(variablex+halfcoef)^{2}-\\left(halfcoef^{2}-coeffc-fieldelem\\right)\n\\]\nis irreducible over finfield if and only if it has no zero in finfield, i.e., if and only if \\(halfcoef^{2}-coeffc-fieldelem\\) is not one of the \\(halfsize+1\\) squares \\(genericf^{2}\\) in finfield. Hence fieldelem must be one of the halfsize elements left when the \\(halfsize+1\\) elements of the form \\(halfcoef^{2}-coeffc-genericf^{2}\\) are removed from the \\(2\\,halfsize+1\\) elements of finfield."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "k": "cinnamon",
+        "f": "leopards",
+        "f_1": "squirrel",
+        "f_r": "butterfly",
+        "F": "limestone",
+        "m": "sandstone",
+        "p": "whitefish",
+        "b": "pinecones",
+        "c": "hammocks",
+        "r": "alligator",
+        "q": "woodpeck",
+        "h": "raincloud"
+      },
+      "question": "Problem B-3\nLet \\( limestone \\) be a finite field having an odd number \\( sandstone \\) of elements. Let \\( whitefish(marigold) \\) be an irreducible (i.e., nonfactorable) polynomial over \\( limestone \\) of the form\n\\[\nmarigold^{2}+pinecones marigold+hammocks, \\quad pinecones, hammocks \\in limestone\n\\]\n\nFor how many elements \\( cinnamon \\) in \\( limestone \\) is \\( whitefish(marigold)+cinnamon \\) irreducible over \\( limestone \\) ?",
+      "solution": "B-3.\nLet \\( alligator=(sandstone-1)/2 \\). We show that \\( woodpeck(marigold)=whitefish(marigold)+cinnamon \\) is irreducible over \\( limestone \\) for \\( alligator \\) elements \\( cinnamon \\) of \\( limestone \\). Since \\( sandstone \\) is odd, the characteristic of \\( limestone \\) is not \\( 2,1+1=2 \\neq 0,2^{-1} pinecones \\) is an element \\( raincloud \\) of \\( limestone \\), the \\( 2 alligator+1 \\) elements of \\( limestone \\) can be expressed in the form \\( 0, squirrel_{1},-squirrel_{1}, \\ldots, butterfly_{alligator},-butterfly_{alligator} \\), and \\( \\left\\{0, squirrel_{1}^{2}, \\ldots, butterfly_{alligator}^{2}\\right\\} \\) is the set of the \\( alligator+1 \\) distinct squares in \\( limestone \\). Now\n\\[\nwoodpeck(marigold)=(marigold+raincloud)^{2}-\\left(raincloud^{2}-hammocks-cinnamon\\right)\n\\]\nis irreducible over \\( limestone \\) if and only if it has no zero in \\( limestone \\), i.e., if and only if \\( raincloud^{2}-hammocks-cinnamon \\) is not one of the \\( alligator+1 \\) squares \\( leopards^{2} \\) in \\( limestone \\). Hence \\( cinnamon \\) must be one of the \\( alligator \\) elements left when the \\( alligator+1 \\) elements of the form \\( raincloud^{2}-hammocks-leopards^{2} \\) are removed from the \\( 2 alligator+1 \\) elements of \\( limestone \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constant",
+        "k": "stationary",
+        "f": "nonfactor",
+        "f_1": "antibase",
+        "f_r": "antisummit",
+        "F": "voidspace",
+        "m": "continuum",
+        "p": "compositepoly",
+        "b": "immutable",
+        "c": "fluctuate",
+        "r": "infinite",
+        "q": "factorable",
+        "h": "uncertain"
+      },
+      "question": "Problem B-3\nLet \\( voidspace \\) be a finite field having an odd number \\( continuum \\) of elements. Let \\( compositepoly(constant) \\) be an irreducible (i.e., nonfactorable) polynomial over \\( voidspace \\) of the form\n\\[\nconstant^{2}+immutable constant+fluctuate, \\quad immutable, fluctuate \\in voidspace\n\\]\n\nFor how many elements \\( stationary \\) in \\( voidspace \\) is \\( compositepoly(constant)+stationary \\) irreducible over \\( voidspace \\) ?",
+      "solution": "B-3.\nLet \\( infinite=(continuum-1) / 2 \\). We show that \\( factorable(constant)=compositepoly(constant)+stationary \\) is irreducible over \\( voidspace \\) for \\( infinite \\) elements \\( stationary \\) of \\( voidspace \\). Since \\( continuum \\) is odd, the characteristic of \\( voidspace \\) is not \\( 2,1+1=2 \\neq 0,2^{-1} immutable \\) is an element \\( uncertain \\) of \\( voidspace \\), the \\( 2 infinite+1 \\) elements of \\( voidspace \\) can be expressed in the form \\( 0, antibase,-antibase, \\ldots, antisummit,-antisummit \\), and \\( \\left\\{0, antibase^{2}, \\ldots, antisummit^{2}\\right\\} \\) is the set of the \\( infinite+1 \\) distinct squares in \\( voidspace \\). Now\n\\[\nfactorable(constant)=(constant+uncertain)^{2}-\\left(uncertain^{2}-fluctuate-stationary\\right)\n\\]\nis irreducible over \\( voidspace \\) if and only if it has no zero in \\( voidspace \\), i.e., if and only if \\( uncertain^{2}-fluctuate-stationary \\) is not one of the \\( infinite+1 \\) squares \\( nonfactor^{2} \\) in \\( voidspace \\). Hence \\( stationary \\) must be one of the \\( infinite \\) elements left when the \\( infinite+1 \\) elements of the form \\( uncertain^{2}-fluctuate-nonfactor^{2} \\) are removed from the \\( 2 infinite+1 \\) elements of \\( voidspace \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "k": "hjgrksla",
+        "f": "mnbvcxql",
+        "f_1": "rtyuioaz",
+        "f_r": "lkjhgfdp",
+        "F": "asdfghjk",
+        "m": "zxcvbnml",
+        "p": "qwertyui",
+        "b": "poiuytre",
+        "c": "lkjyhgfd",
+        "r": "qazwsxed",
+        "q": "plmoknij",
+        "h": "ujmkoikl"
+      },
+      "question": "Problem B-3\nLet \\( asdfghjk \\) be a finite field having an odd number \\( zxcvbnml \\) of elements. Let \\( qwertyui(qzxwvtnp) \\) be an irreducible (i.e., nonfactorable) polynomial over \\( asdfghjk \\) of the form\n\\[\nqzxwvtnp^{2}+poiuytre qzxwvtnp+lkjyhgfd, \\quad poiuytre, lkjyhgfd \\in asdfghjk\n\\]\n\nFor how many elements \\( hjgrksla \\) in \\( asdfghjk \\) is \\( qwertyui(qzxwvtnp)+hjgrksla \\) irreducible over \\( asdfghjk \\) ?",
+      "solution": "B-3.\nLet \\( qazwsxed=(zxcvbnml-1) / 2 \\). We show that \\( plmoknij(qzxwvtnp)=qwertyui(qzxwvtnp)+hjgrksla \\) is irreducible over \\( asdfghjk \\) for \\( qazwsxed \\) elements \\( hjgrksla \\) of \\( asdfghjk \\). Since \\( zxcvbnml \\) is odd, the characteristic of \\( asdfghjk \\) is not \\( 2,1+1=2 \\neq 0,2^{-1} poiuytre \\) is an element \\( ujmkoikl \\) of \\( asdfghjk \\), the \\( 2 qazwsxed+1 \\) elements of \\( asdfghjk \\) can be expressed in the form \\( 0, rtyuioaz_{1},-rtyuioaz_{1}, \\ldots, lkjhgfdp_{qazwsxed},-lkjhgfdp_{qazwsxed} \\), and \\( \\left\\{0, rtyuioaz_{1}^{2}, \\ldots, lkjhgfdp_{qazwsxed}^{2}\\right\\} \\) is the set of the \\( qazwsxed+1 \\) distinct squares in \\( asdfghjk \\). Now\n\\[\nplmoknij(qzxwvtnp)=(qzxwvtnp+ujmkoikl)^{2}-\\left(ujmkoikl^{2}-lkjyhgfd-hjgrksla\\right)\n\\]\nis irreducible over \\( asdfghjk \\) if and only if it has no zero in \\( asdfghjk \\), i.e., if and only if \\( ujmkoikl^{2}-lkjyhgfd-hjgrksla \\) is not one of the \\( qazwsxed+1 \\) squares \\( mnbvcxql^{2} \\) in \\( asdfghjk \\). Hence \\( hjgrksla \\) must be one of the \\( qazwsxed \\) elements left when the \\( qazwsxed+1 \\) elements of the form \\( ujmkoikl^{2}-lkjyhgfd-mnbvcxql^{2} \\) are removed from the \\( 2 qazwsxed+1 \\) elements of \\( asdfghjk \\)."
+    },
+    "kernel_variant": {
+      "question": "Let F be a finite field with  \n  q = 4t + 3  (t \\geq  0),  \nso that q \\equiv  3 (mod 4) and therefore -1 is a quadratic non-residue in F.\n\nFix two quadratic polynomials  \n\n  p_1(x) = a_1x^2 + b_1x + c_1,  p_2(x) = a_2x^2 + b_2x + c_2  (a_1, a_2 \\in  F\\times )\n\nsubject to  \n\n1. Each p_i(x) is irreducible over F.  \n2. The quotient a_1 / a_2 is a quadratic non-residue in F (equivalently \\chi (a_1)=-\\chi (a_2) for the quadratic character \\chi  of F).  \n3. U_1V_2 \\neq  U_2V_1,  where U_i = b_i^2 - 4a_ic_i and V_i = 4a_i.  (Thus the two ``discriminant-zeros'' defined below are distinct.)\n\nFor every k \\in  F set  \n  p_1,_k(x) = p_1(x) + k,  p_2,_k(x) = p_2(x) + k.\n\nLet N be the number of elements k \\in  F for which both p_1,_k(x) and p_2,_k(x) are irreducible over F.\n\nDetermine N in closed form in terms of q and the coefficients of p_1 and p_2.",
+      "solution": "Write \\chi  for the quadratic character of F, extended by \\chi (0)=0 and \\chi |_{F\\times }=\\pm 1.\n\n1. Discriminants.  \nFor i = 1,2 put  \n  U_i = b_i^2 - 4a_ic_i,  V_i = 4a_i (\\neq  0),  \nand define the k-dependent discriminants  \n\n  \\Delta _i(k) = U_i - V_ik  (k \\in  F).  (1)\n\nBecause q is odd, a quadratic over F is irreducible iff its discriminant is non-zero and a nonsquare; hence  \n\n  p_i,_k irreducible  \\Leftrightarrow   \\Delta _i(k) \\neq  0  and  \\chi (\\Delta _i(k)) = -1.  (2)\n\nEach \\Delta _i is affine linear, so \\Delta _i(k) = 0 has exactly one root,\n  k_1 = U_1 / V_1,  k_2 = U_2 / V_2, and k_1 \\neq  k_2 by hypothesis 3. (3)\n\nSet  \n  \\delta  = k_2 - k_1 = (U_2V_1 - U_1V_2)/(V_1V_2) \\in  F\\times .  (4)\n\n2. Indicator.  \nDefine the indicator for simultaneous irreducibility  \n\n  J(k) = \\frac{1}{4}(1 - \\chi (\\Delta _1(k)))(1 - \\chi (\\Delta _2(k))).  (5)\n\n* If k \\neq  k_1,k_2 then \\Delta _1(k), \\Delta _2(k) \\in  F\\times  and  \n J(k)=1  iff \\chi (\\Delta _1(k)) = \\chi (\\Delta _2(k)) = -1; otherwise J(k)=0.\n\n* If k = k_1 (resp. k_2) exactly one discriminant vanishes and \\chi (0)=0, giving  \n  J(k_1) = \\frac{1}{4}(1 - \\chi (\\Delta _2(k_1))),  J(k_2) = \\frac{1}{4}(1 - \\chi (\\Delta _1(k_2))). (6)\n\nHence  \n\n  N = \\Sigma _{k\\in F\\{k_1,k_2\\}} J(k).  (7)\n\n3. Global character sum.  \nSum J over all k and then subtract the two exceptional points:\n\n \\Sigma _{k\\in F} J(k)\n = \\frac{1}{4} \\Sigma _{k\\in F}[1 - \\chi (\\Delta _1(k)) - \\chi (\\Delta _2(k)) + \\chi (\\Delta _1(k))\\chi (\\Delta _2(k))]. (8)\n\nFor any non-constant affine function \\alpha k+\\beta , the sum \\Sigma _{k\\in F} \\chi (\\alpha k+\\beta )=0; thus  \n \\Sigma  \\chi (\\Delta _1(k)) = \\Sigma  \\chi (\\Delta _2(k)) = 0.\n\nLet  \n\n  T = \\Sigma _{k\\in F} \\chi (\\Delta _1(k)\\Delta _2(k)), so \\Sigma _{k\\in F} J(k) = \\frac{1}{4}(q + T). (9)\n\nTherefore  \n\n  N = \\frac{1}{4}(q + T) - [J(k_1) + J(k_2)].  (10)\n\n4. Evaluating T.  \nExpand  \n\n \\Delta _1(k)\\Delta _2(k) = (U_1 - V_1k)(U_2 - V_2k) = Ak^2 + Bk + C  (11)\n\nwith A = V_1V_2, B = -(U_1V_2 + U_2V_1), C = U_1U_2.\n\nSince U_1V_2 \\neq  U_2V_1, the polynomial Ak^2+Bk+C is not an affine square; the classical quadratic-character sum therefore yields  \n\n \\Sigma _{k\\in F} \\chi (Ak^2 + Bk + C) = -\\chi (A).  (12)\n\nHere A = 16a_1a_2, and 16 is a square in F, so \\chi (A)=\\chi (a_1a_2).  \nCondition 2 forces \\chi (a_1)=-\\chi (a_2), whence \\chi (a_1a_2)=-1 and  \n\n  T = -\\chi (A) = 1.  (13)\n\n5. Exceptional points.  \nUsing \\chi (0)=0 and (4),\n\n  \\Delta _2(k_1)=V_2\\delta ,  \\Delta _1(k_2)=-V_1\\delta ,\n\nso  \n\n  \\chi (\\Delta _2(k_1)) = \\chi (V_2)\\chi (\\delta ),  \n  \\chi (\\Delta _1(k_2)) = \\chi (-1)\\chi (V_1)\\chi (\\delta ) = -\\chi (V_1)\\chi (\\delta ) (because q\\equiv 3 (mod 4)). (14)\n\nBecause \\chi (V_i)=\\chi (4a_i)=\\chi (a_i),\n\n J(k_1)=\\frac{1}{4}(1 - \\chi (a_2)\\chi (\\delta )),  J(k_2)=\\frac{1}{4}(1 + \\chi (a_1)\\chi (\\delta )). (15)\n\nHence  \n\n J(k_1)+J(k_2)=\\frac{1}{2}(1 + \\chi (a_1)\\chi (\\delta )).  (16)\n\n6. Final count.  \nInsert (13) and (16) into (10):\n\n N = \\frac{1}{4}(q + 1) - \\frac{1}{2}(1 + \\chi (a_1)\\chi (\\delta ))  \n   = (q - 1)/4 - \\frac{1}{2} \\chi (a_1)\\chi (\\delta ).  (17)\n\nSince q = 4t + 3, we have (q - 1)/4 = t + \\frac{1}{2}, and therefore  \n\n N = t         if \\chi (a_1)\\chi (\\delta ) =  1,  \n N = t + 1  if \\chi (a_1)\\chi (\\delta ) = -1.  (18)\n\nHere  \n\n \\delta  = (U_2V_1 - U_1V_2)/(V_1V_2),  U_i = b_i^2 - 4a_ic_i,  V_i = 4a_i.\n\nThus N is completely determined by q and the single character value \\chi (a_1)\\chi (k_2-k_1); both possibilities (t and t+1) occur for suitable choices of the coefficients, so no further simplification is possible without additional hypotheses.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.642069",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Two interacting quadratics instead of one:  irreducibility must hold simultaneously for p₁,ₖ and p₂,ₖ, introducing correlation phenomena absent from the original problem.  \n•  Additional field-theoretic conditions (ratio of leading coefficients nonsquare, distinct scaled discriminants) rule out degenerate cases and force the solver to track quadratic character interactions.  \n•  The solution demands manipulation of character sums, notably the non-trivial evaluation of Σχ(Q(k)) for a quadratic Q(k); this is a classical but decidedly deeper technique than the single-variable square-counting used in the original problem.  \n•  Careful algebra shows that the leading coefficient of Q(k) is a prescribed nonsquare; connecting this with the global sum produces the constant term “+1” governing the final answer.  \n•  The final formula N = (q+1)/4 requires combining combinatorial counting with multiplicative-character theory and exploiting the specific congruence q ≡ 3 (mod 4) to guarantee integrality.  \nHence the enhanced variant is appreciably harder, intertwining quadratic character theory, correlation of linear sequences, and finer arithmetic conditions rather than a single square–counting argument."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let F be a finite field with  \n  q = 4t + 3  (t \\geq  0),  \nso that q \\equiv  3 (mod 4) and therefore -1 is a quadratic non-residue in F.\n\nFix two quadratic polynomials  \n\n  p_1(x) = a_1x^2 + b_1x + c_1,  p_2(x) = a_2x^2 + b_2x + c_2  (a_1, a_2 \\in  F\\times )\n\nsubject to  \n\n1. Each p_i(x) is irreducible over F.  \n2. The quotient a_1 / a_2 is a quadratic non-residue in F (equivalently \\chi (a_1)=-\\chi (a_2) for the quadratic character \\chi  of F).  \n3. U_1V_2 \\neq  U_2V_1,  where U_i = b_i^2 - 4a_ic_i and V_i = 4a_i.  (Thus the two ``discriminant-zeros'' defined below are distinct.)\n\nFor every k \\in  F set  \n  p_1,_k(x) = p_1(x) + k,  p_2,_k(x) = p_2(x) + k.\n\nLet N be the number of elements k \\in  F for which both p_1,_k(x) and p_2,_k(x) are irreducible over F.\n\nDetermine N in closed form in terms of q and the coefficients of p_1 and p_2.",
+      "solution": "Write \\chi  for the quadratic character of F, extended by \\chi (0)=0 and \\chi |_{F\\times }=\\pm 1.\n\n1. Discriminants.  \nFor i = 1,2 put  \n  U_i = b_i^2 - 4a_ic_i,  V_i = 4a_i (\\neq  0),  \nand define the k-dependent discriminants  \n\n  \\Delta _i(k) = U_i - V_ik  (k \\in  F).  (1)\n\nBecause q is odd, a quadratic over F is irreducible iff its discriminant is non-zero and a nonsquare; hence  \n\n  p_i,_k irreducible  \\Leftrightarrow   \\Delta _i(k) \\neq  0  and  \\chi (\\Delta _i(k)) = -1.  (2)\n\nEach \\Delta _i is affine linear, so \\Delta _i(k) = 0 has exactly one root,\n  k_1 = U_1 / V_1,  k_2 = U_2 / V_2, and k_1 \\neq  k_2 by hypothesis 3. (3)\n\nSet  \n  \\delta  = k_2 - k_1 = (U_2V_1 - U_1V_2)/(V_1V_2) \\in  F\\times .  (4)\n\n2. Indicator.  \nDefine the indicator for simultaneous irreducibility  \n\n  J(k) = \\frac{1}{4}(1 - \\chi (\\Delta _1(k)))(1 - \\chi (\\Delta _2(k))).  (5)\n\n* If k \\neq  k_1,k_2 then \\Delta _1(k), \\Delta _2(k) \\in  F\\times  and  \n J(k)=1  iff \\chi (\\Delta _1(k)) = \\chi (\\Delta _2(k)) = -1; otherwise J(k)=0.\n\n* If k = k_1 (resp. k_2) exactly one discriminant vanishes and \\chi (0)=0, giving  \n  J(k_1) = \\frac{1}{4}(1 - \\chi (\\Delta _2(k_1))),  J(k_2) = \\frac{1}{4}(1 - \\chi (\\Delta _1(k_2))). (6)\n\nHence  \n\n  N = \\Sigma _{k\\in F\\{k_1,k_2\\}} J(k).  (7)\n\n3. Global character sum.  \nSum J over all k and then subtract the two exceptional points:\n\n \\Sigma _{k\\in F} J(k)\n = \\frac{1}{4} \\Sigma _{k\\in F}[1 - \\chi (\\Delta _1(k)) - \\chi (\\Delta _2(k)) + \\chi (\\Delta _1(k))\\chi (\\Delta _2(k))]. (8)\n\nFor any non-constant affine function \\alpha k+\\beta , the sum \\Sigma _{k\\in F} \\chi (\\alpha k+\\beta )=0; thus  \n \\Sigma  \\chi (\\Delta _1(k)) = \\Sigma  \\chi (\\Delta _2(k)) = 0.\n\nLet  \n\n  T = \\Sigma _{k\\in F} \\chi (\\Delta _1(k)\\Delta _2(k)), so \\Sigma _{k\\in F} J(k) = \\frac{1}{4}(q + T). (9)\n\nTherefore  \n\n  N = \\frac{1}{4}(q + T) - [J(k_1) + J(k_2)].  (10)\n\n4. Evaluating T.  \nExpand  \n\n \\Delta _1(k)\\Delta _2(k) = (U_1 - V_1k)(U_2 - V_2k) = Ak^2 + Bk + C  (11)\n\nwith A = V_1V_2, B = -(U_1V_2 + U_2V_1), C = U_1U_2.\n\nSince U_1V_2 \\neq  U_2V_1, the polynomial Ak^2+Bk+C is not an affine square; the classical quadratic-character sum therefore yields  \n\n \\Sigma _{k\\in F} \\chi (Ak^2 + Bk + C) = -\\chi (A).  (12)\n\nHere A = 16a_1a_2, and 16 is a square in F, so \\chi (A)=\\chi (a_1a_2).  \nCondition 2 forces \\chi (a_1)=-\\chi (a_2), whence \\chi (a_1a_2)=-1 and  \n\n  T = -\\chi (A) = 1.  (13)\n\n5. Exceptional points.  \nUsing \\chi (0)=0 and (4),\n\n  \\Delta _2(k_1)=V_2\\delta ,  \\Delta _1(k_2)=-V_1\\delta ,\n\nso  \n\n  \\chi (\\Delta _2(k_1)) = \\chi (V_2)\\chi (\\delta ),  \n  \\chi (\\Delta _1(k_2)) = \\chi (-1)\\chi (V_1)\\chi (\\delta ) = -\\chi (V_1)\\chi (\\delta ) (because q\\equiv 3 (mod 4)). (14)\n\nBecause \\chi (V_i)=\\chi (4a_i)=\\chi (a_i),\n\n J(k_1)=\\frac{1}{4}(1 - \\chi (a_2)\\chi (\\delta )),  J(k_2)=\\frac{1}{4}(1 + \\chi (a_1)\\chi (\\delta )). (15)\n\nHence  \n\n J(k_1)+J(k_2)=\\frac{1}{2}(1 + \\chi (a_1)\\chi (\\delta )).  (16)\n\n6. Final count.  \nInsert (13) and (16) into (10):\n\n N = \\frac{1}{4}(q + 1) - \\frac{1}{2}(1 + \\chi (a_1)\\chi (\\delta ))  \n   = (q - 1)/4 - \\frac{1}{2} \\chi (a_1)\\chi (\\delta ).  (17)\n\nSince q = 4t + 3, we have (q - 1)/4 = t + \\frac{1}{2}, and therefore  \n\n N = t         if \\chi (a_1)\\chi (\\delta ) =  1,  \n N = t + 1  if \\chi (a_1)\\chi (\\delta ) = -1.  (18)\n\nHere  \n\n \\delta  = (U_2V_1 - U_1V_2)/(V_1V_2),  U_i = b_i^2 - 4a_ic_i,  V_i = 4a_i.\n\nThus N is completely determined by q and the single character value \\chi (a_1)\\chi (k_2-k_1); both possibilities (t and t+1) occur for suitable choices of the coefficients, so no further simplification is possible without additional hypotheses.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.509935",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Two interacting quadratics instead of one:  irreducibility must hold simultaneously for p₁,ₖ and p₂,ₖ, introducing correlation phenomena absent from the original problem.  \n•  Additional field-theoretic conditions (ratio of leading coefficients nonsquare, distinct scaled discriminants) rule out degenerate cases and force the solver to track quadratic character interactions.  \n•  The solution demands manipulation of character sums, notably the non-trivial evaluation of Σχ(Q(k)) for a quadratic Q(k); this is a classical but decidedly deeper technique than the single-variable square-counting used in the original problem.  \n•  Careful algebra shows that the leading coefficient of Q(k) is a prescribed nonsquare; connecting this with the global sum produces the constant term “+1” governing the final answer.  \n•  The final formula N = (q+1)/4 requires combining combinatorial counting with multiplicative-character theory and exploiting the specific congruence q ≡ 3 (mod 4) to guarantee integrality.  \nHence the enhanced variant is appreciably harder, intertwining quadratic character theory, correlation of linear sequences, and finer arithmetic conditions rather than a single square–counting argument."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

@@ -1,0 +1,152 @@
+{
+  "index": "1962-B-3",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "3. Let \\( S \\) be a convex region in the Euclidean plane containing the origin. Assume that every ray (that is, half-line) from the origin has at least one point outside \\( S \\). Prove that \\( S \\) is bounded. (A region in the plane is defined to be convex if and only if the line segment joining every pair of its points lies entirely within the region.)",
+  "solution": "Solution. The examiners presumably intended region to mean open set, for the statement is false without some topological hypothesis on \\( S \\). For example, the strip \\( 0<x<1 \\) in the \\( x y \\)-plane together with the origin forms an unbounded convex set \\( S \\) such that no ray from the origin lies wholly in \\( S \\).\n\nWe shall prove that a ray-bounded convex set \\( S \\) is bounded provided either the origin is an interior point of \\( S \\) or \\( S \\) is closed.\n\nWe shall use polar coordinates \\( (\\rho, \\theta) \\). For any \\( \\theta \\) the set \\( \\{\\rho:(\\rho, \\theta) \\notin S\\} \\) is not empty by hypothesis and bounded below by zero. Let\n\\[\nf(\\theta)=\\inf \\{\\rho:(\\rho, \\theta) \\notin S\\} .\n\\]\n\nThe intersection of \\( S \\) with a ray is an interval, so we have\n\\[\n0 \\leq \\rho<f(\\theta) \\Rightarrow(\\rho, \\theta) \\in S\n\\]\nand\n\\[\n\\rho>f(\\theta) \\Rightarrow(\\rho, \\theta) \\notin S .\n\\]\n\nHence, if \\( M \\) is an upper bound for \\( f \\), then \\( S \\) lies in the closed disk of radius \\( M \\) about \\( O \\).\n\nAssume \\( O \\) is an interior point of \\( S \\). Let \\( D \\) be a disk centered at \\( O \\) with\n\\( D \\subseteq S \\). For any \\( \\alpha \\in[0,2 \\pi] \\), let \\( P_{\\alpha} \\) be the point \\( (1+f(\\alpha), \\alpha) \\) and let \\( D_{\\alpha} \\) be the disk obtained by reflecting \\( D \\) through \\( P_{\\text {. }} \\). Suppose \\( Q \\in D_{\\text {c }} \\), and let \\( Q^{*} \\) be its reflection through \\( P_{\\alpha} \\). Then \\( Q^{*} \\in D \\subseteq S \\), so if \\( Q \\in S \\), then \\( P_{\\text { }} \\) would lie between two points of \\( S \\), which is impossible. So \\( D_{\\text {, }} \\cap S=\\emptyset \\). Now \\( D_{\\text {cr }} \\) subtends a positive angle, say \\( 2 \\epsilon \\), at the origin, and every ray from the origin having direction angle in \\( I_{\\alpha}=(\\alpha-\\epsilon, \\alpha+\\epsilon) \\) meets \\( D_{\\alpha} \\) at a distance less than \\( 2(1+f(\\alpha)) \\). Therefore\n\\[\nf(\\theta) \\leq 2(1+f(\\alpha))\n\\]\nfor \\( \\theta \\in I_{\\text { }} \\). By the Heine-Borel theorem, some finite number of these intervals, say \\( I_{\\left(x_{1}\\right.}, I_{x_{2}}, \\ldots, I_{x_{n}} \\), cover \\( [0,2 \\pi] \\). Then the largest of the numbers \\( 2\\left(1+f\\left(\\alpha_{1}\\right)\\right), 2\\left(1+f\\left(\\alpha_{2}\\right)\\right), \\ldots, 2\\left(1+f\\left(\\alpha_{n}\\right)\\right) \\), is an upper bound for \\( f \\). This proves that \\( S \\) is bounded if \\( O \\) is an interior point.\n\nNow assume that \\( S \\) is closed but unbounded. Then we can choose angles \\( \\theta_{n} \\) in \\( [0,2 \\pi] \\) so that \\( f^{\\prime}\\left(\\theta_{n}\\right) \\rightarrow \\infty \\). By the Bolzano-Weierstrass theorem some subsequence of \\( \\left\\{\\theta_{n}\\right\\} \\) is convergent, and we may as well assume that \\( \\left\\{\\theta_{n}\\right\\} \\) itself is convergent. Say \\( \\theta_{n} \\rightarrow \\beta \\). Let \\( \\rho_{0}=1+f(\\beta) \\). Then for all large \\( n \\), \\( f\\left(\\theta_{n}\\right)>\\rho_{0} \\), so by \\( (1),\\left(\\rho_{0}, \\theta_{n}\\right) \\in S \\). Now \\( S \\) is closed and \\( \\left(\\rho_{0}, \\theta_{n}\\right) \\rightarrow\\left(\\rho_{0}, \\beta\\right) \\), so \\( \\left(\\rho_{0}, \\beta\\right) \\in S \\). But we know from (2) that \\( \\left(\\rho_{0}, \\beta\\right) \\notin S \\). This contradiction proves that \\( S \\) is bounded if it is closed.",
+  "vars": [
+    "x",
+    "y",
+    "\\\\rho",
+    "\\\\theta",
+    "\\\\alpha",
+    "\\\\beta",
+    "\\\\epsilon",
+    "\\\\theta_n",
+    "\\\\rho_0",
+    "Q"
+  ],
+  "params": [
+    "S",
+    "D",
+    "O",
+    "M",
+    "P_\\\\alpha",
+    "I_\\\\alpha",
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xcoordinate",
+        "y": "ycoordinate",
+        "\\rho": "radialdist",
+        "\\theta": "anglevar",
+        "\\alpha": "anglealpha",
+        "\\beta": "anglebeta",
+        "\\epsilon": "epsilonv",
+        "\\theta_n": "angletn",
+        "\\rho_0": "radialzero",
+        "Q": "pointq",
+        "S": "regionset",
+        "D": "diskregion",
+        "O": "originpt",
+        "M": "upperbound",
+        "P_\\alpha": "pointalpha",
+        "I_\\alpha": "intervala",
+        "f": "radiusfunc"
+      },
+      "question": "3. Let \\( regionset \\) be a convex region in the Euclidean plane containing the origin. Assume that every ray (that is, half-line) from the origin has at least one point outside \\( regionset \\). Prove that \\( regionset \\) is bounded. (A region in the plane is defined to be convex if and only if the line segment joining every pair of its points lies entirely within the region.)",
+      "solution": "Solution. The examiners presumably intended region to mean open set, for the statement is false without some topological hypothesis on \\( regionset \\). For example, the strip \\( 0<xcoordinate<1 \\) in the \\( xcoordinate ycoordinate \\)-plane together with the origin forms an unbounded convex set \\( regionset \\) such that no ray from the origin lies wholly in \\( regionset \\).\n\nWe shall prove that a ray-bounded convex set \\( regionset \\) is bounded provided either the origin is an interior point of \\( regionset \\) or \\( regionset \\) is closed.\n\nWe shall use polar coordinates \\( (radialdist, anglevar) \\). For any \\( anglevar \\) the set \\( \\{radialdist:(radialdist, anglevar) \\notin regionset\\} \\) is not empty by hypothesis and bounded below by zero. Let\n\\[\nradiusfunc(anglevar)=\\inf \\{radialdist:(radialdist, anglevar) \\notin regionset\\} .\n\\]\n\nThe intersection of \\( regionset \\) with a ray is an interval, so we have\n\\[\n0 \\leq radialdist<radiusfunc(anglevar) \\Rightarrow(radialdist, anglevar) \\in regionset\n\\]\nand\n\\[\nradialdist>radiusfunc(anglevar) \\Rightarrow(radialdist, anglevar) \\notin regionset .\n\\]\n\nHence, if \\( upperbound \\) is an upper bound for \\( radiusfunc \\), then \\( regionset \\) lies in the closed disk of radius \\( upperbound \\) about \\( originpt \\).\n\nAssume \\( originpt \\) is an interior point of \\( regionset \\). Let \\( diskregion \\) be a disk centered at \\( originpt \\) with\n\\( diskregion \\subseteq regionset \\). For any \\( anglealpha \\in[0,2 \\pi] \\), let \\( pointalpha \\) be the point \\( (1+radiusfunc(anglealpha), anglealpha) \\) and let \\( diskregion_{anglealpha} \\) be the disk obtained by reflecting \\( diskregion \\) through \\( pointalpha \\). Suppose \\( pointq \\in diskregion_{\\text {c }} \\), and let \\( pointq^{*} \\) be its reflection through \\( pointalpha \\). Then \\( pointq^{*} \\in diskregion \\subseteq regionset \\), so if \\( pointq \\in regionset \\), then \\( pointalpha \\) would lie between two points of \\( regionset \\), which is impossible. So \\( diskregion \\cap regionset=\\emptyset \\). Now \\( diskregion \\) subtends a positive angle, say \\( 2 epsilonv \\), at the origin, and every ray from the origin having direction angle in \\( intervala=(anglealpha-epsilonv, anglealpha+epsilonv) \\) meets \\( diskregion_{anglealpha} \\) at a distance less than \\( 2(1+radiusfunc(anglealpha)) \\). Therefore\n\\[\nradiusfunc(anglevar) \\leq 2(1+radiusfunc(anglealpha))\n\\]\nfor \\( anglevar \\in intervala \\). By the Heine-Borel theorem, some finite number of these intervals, say \\( intervala_{\\left(xcoordinate_{1}\\right.}, intervala_{xcoordinate_{2}}, \\ldots, intervala_{xcoordinate_{n}} \\), cover \\( [0,2 \\pi] \\). Then the largest of the numbers \\( 2\\left(1+radiusfunc\\left(anglealpha_{1}\\right)\\right), 2\\left(1+radiusfunc\\left(anglealpha_{2}\\right)\\right), \\ldots, 2\\left(1+radiusfunc\\left(anglealpha_{n}\\right)\\right) \\), is an upper bound for \\( radiusfunc \\). This proves that \\( regionset \\) is bounded if \\( originpt \\) is an interior point.\n\nNow assume that \\( regionset \\) is closed but unbounded. Then we can choose angles \\( angletn \\) in \\( [0,2 \\pi] \\) so that \\( radiusfunc^{\\prime}\\left(angletn\\right) \\rightarrow \\infty \\). By the Bolzano-Weierstrass theorem some subsequence of \\( \\{angletn\\} \\) is convergent, and we may as well assume that \\( \\{angletn\\} \\) itself is convergent. Say \\( angletn \\rightarrow anglebeta \\). Let \\( radialzero=1+radiusfunc(anglebeta) \\). Then for all large \\( n \\), \\( radiusfunc\\left(angletn\\right)>radialzero \\), so by \\( (1),\\left(radialzero, angletn\\right) \\in regionset \\). Now \\( regionset \\) is closed and \\( \\left(radialzero, angletn\\right) \\rightarrow\\left(radialzero, anglebeta\\right) \\), so \\( \\left(radialzero, anglebeta\\right) \\in regionset \\). But we know from (2) that \\( \\left(radialzero, anglebeta\\right) \\notin regionset \\). This contradiction proves that \\( regionset \\) is bounded if it is closed."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "candlewax",
+        "y": "harmonica",
+        "\\\\rho": "backpack",
+        "\\\\theta": "watershed",
+        "\\\\alpha": "lumberjack",
+        "\\\\beta": "toothpick",
+        "\\\\epsilon": "sailboat",
+        "\\\\theta_n": "marshmallow",
+        "\\\\rho_0": "silverware",
+        "Q": "moonlight",
+        "S": "sunflower",
+        "D": "butterfly",
+        "O": "honeycomb",
+        "M": "rainstorm",
+        "P_\\\\alpha": "riverbank",
+        "I_\\\\alpha": "stargazer",
+        "f": "cornfield"
+      },
+      "question": "3. Let \\( sunflower \\) be a convex region in the Euclidean plane containing the origin. Assume that every ray (that is, half-line) from the origin has at least one point outside \\( sunflower \\). Prove that \\( sunflower \\) is bounded. (A region in the plane is defined to be convex if and only if the line segment joining every pair of its points lies entirely within the region.)",
+      "solution": "Solution. The examiners presumably intended region to mean open set, for the statement is false without some topological hypothesis on \\( sunflower \\). For example, the strip \\( 0<candlewax<1 \\) in the \\( candlewax harmonica \\)-plane together with the origin forms an unbounded convex set \\( sunflower \\) such that no ray from the origin lies wholly in \\( sunflower \\).\n\nWe shall prove that a ray-bounded convex set \\( sunflower \\) is bounded provided either the origin is an interior point of \\( sunflower \\) or \\( sunflower \\) is closed.\n\nWe shall use polar coordinates \\( (backpack, watershed) \\). For any \\( watershed \\) the set \\( \\{backpack:(backpack, watershed) \\notin sunflower\\} \\) is not empty by hypothesis and bounded below by zero. Let\n\\[\ncornfield(watershed)=\\inf \\{backpack:(backpack, watershed) \\notin sunflower\\} .\n\\]\n\nThe intersection of \\( sunflower \\) with a ray is an interval, so we have\n\\[\n0 \\leq backpack<cornfield(watershed) \\Rightarrow(backpack, watershed) \\in sunflower\n\\]\nand\n\\[\nbackpack>cornfield(watershed) \\Rightarrow(backpack, watershed) \\notin sunflower .\n\\]\n\nHence, if \\( rainstorm \\) is an upper bound for \\( cornfield \\), then \\( sunflower \\) lies in the closed disk of radius \\( rainstorm \\) about \\( honeycomb \\).\n\nAssume \\( honeycomb \\) is an interior point of \\( sunflower \\). Let \\( butterfly \\) be a disk centered at \\( honeycomb \\) with\n\\( butterfly \\subseteq sunflower \\). For any \\( lumberjack \\in[0,2 \\pi] \\), let \\( riverbank \\) be the point \\( (1+cornfield(lumberjack), lumberjack) \\) and let \\( butterfly_{lumberjack} \\) be the disk obtained by reflecting \\( butterfly \\) through \\( riverbank_{\\text {. }} \\). Suppose \\( moonlight \\in butterfly_{\\text {c }} \\), and let \\( moonlight^{*} \\) be its reflection through \\( riverbank \\). Then \\( moonlight^{*} \\in butterfly \\subseteq sunflower \\), so if \\( moonlight \\in sunflower \\), then \\( riverbank_{\\text { }} \\) would lie between two points of \\( sunflower \\), which is impossible. So \\( butterfly_{\\text {, }} \\cap sunflower=\\emptyset \\). Now \\( butterfly_{\\text {cr }} \\) subtends a positive angle, say \\( 2 sailboat \\), at the origin, and every ray from the origin having direction angle in \\( stargazer=(lumberjack-sailboat, lumberjack+sailboat) \\) meets \\( butterfly_{lumberjack} \\) at a distance less than \\( 2(1+cornfield(lumberjack)) \\). Therefore\n\\[\ncornfield(watershed) \\leq 2(1+cornfield(lumberjack))\n\\]\nfor \\( watershed \\in stargazer \\). By the Heine-Borel theorem, some finite number of these intervals, say \\( stargazer_{\\left(candlewax_{1}\\right.}, stargazer_{candlewax_{2}}, \\ldots, stargazer_{candlewax_{n}} \\), cover \\( [0,2 \\pi] \\). Then the largest of the numbers \\( 2\\left(1+cornfield\\left(lumberjack_{1}\\right)\\right), 2\\left(1+cornfield\\left(lumberjack_{2}\\right)\\right), \\ldots, 2\\left(1+cornfield\\left(lumberjack_{n}\\right)\\right) \\), is an upper bound for \\( cornfield \\). This proves that \\( sunflower \\) is bounded if \\( honeycomb \\) is an interior point.\n\nNow assume that \\( sunflower \\) is closed but unbounded. Then we can choose angles \\( marshmallow \\) in \\( [0,2 \\pi] \\) so that \\( cornfield^{\\prime}\\left(marshmallow\\right) \\rightarrow \\infty \\). By the Bolzano-Weierstrass theorem some subsequence of \\( \\{marshmallow\\} \\) is convergent, and we may as well assume that \\( \\{marshmallow\\} \\) itself is convergent. Say \\( marshmallow \\rightarrow toothpick \\). Let \\( silverware=1+cornfield(toothpick) \\). Then for all large \\n, \\( cornfield\\left(marshmallow\\right)>silverware \\), so by \\( (1),(silverware, marshmallow) \\in sunflower \\). Now \\( sunflower \\) is closed and \\( (silverware, marshmallow) \\rightarrow(silverware, toothpick) \\), so \\( (silverware, toothpick) \\in sunflower \\). But we know from (2) that \\( (silverware, toothpick) \\notin sunflower \\). This contradiction proves that \\( sunflower \\) is bounded if it is closed."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedpoint",
+        "y": "stillpoint",
+        "\\rho": "tangential",
+        "\\theta": "linearval",
+        "\\alpha": "endingval",
+        "\\beta": "startingval",
+        "\\epsilon": "largesize",
+        "\\theta_n": "linearindex",
+        "\\rho_0": "tangentzero",
+        "Q": "voidspot",
+        "S": "emptiness",
+        "D": "squarearea",
+        "O": "farpoint",
+        "M": "lowerlim",
+        "P_\\alpha": "lineending",
+        "I_\\alpha": "pointending",
+        "f": "constant"
+      },
+      "question": "3. Let \\( emptiness \\) be a convex region in the Euclidean plane containing the origin. Assume that every ray (that is, half-line) from the origin has at least one point outside \\( emptiness \\). Prove that \\( emptiness \\) is bounded. (A region in the plane is defined to be convex if and only if the line segment joining every pair of its points lies entirely within the region.)",
+      "solution": "Solution. The examiners presumably intended region to mean open set, for the statement is false without some topological hypothesis on \\( emptiness \\). For example, the strip \\( 0<fixedpoint<1 \\) in the \\( fixedpoint\\,stillpoint \\)-plane together with the origin forms an unbounded convex set \\( emptiness \\) such that no ray from the origin lies wholly in \\( emptiness \\).\n\nWe shall prove that a ray-bounded convex set \\( emptiness \\) is bounded provided either the origin is an interior point of \\( emptiness \\) or \\( emptiness \\) is closed.\n\nWe shall use polar coordinates \\( (tangential, linearval) \\). For any \\( linearval \\) the set \\( \\{tangential:(tangential, linearval) \\notin emptiness\\} \\) is not empty by hypothesis and bounded below by zero. Let\n\\[\nconstant(linearval)=\\inf \\{tangential:(tangential, linearval) \\notin emptiness\\} .\n\\]\n\nThe intersection of \\( emptiness \\) with a ray is an interval, so we have\n\\[\n0 \\leq tangential<constant(linearval) \\Rightarrow(tangential, linearval) \\in emptiness\n\\]\nand\n\\[\ntangential>constant(linearval) \\Rightarrow(tangential, linearval) \\notin emptiness .\n\\]\n\nHence, if \\( lowerlim \\) is an upper bound for \\( constant \\), then \\( emptiness \\) lies in the closed disk of radius \\( lowerlim \\) about \\( farpoint \\).\n\nAssume \\( farpoint \\) is an interior point of \\( emptiness \\). Let \\( squarearea \\) be a disk centered at \\( farpoint \\) with\n\\( squarearea \\subseteq emptiness \\). For any \\( endingval \\in[0,2 \\pi] \\), let \\( lineending_{endingval} \\) be the point \\( (1+constant(endingval), endingval) \\) and let \\( squarearea_{endingval} \\) be the disk obtained by reflecting \\( squarearea \\) through \\( lineending_{endingval} \\). Suppose \\( voidspot \\in squarearea_{endingval} \\), and let \\( voidspot^{*} \\) be its reflection through \\( lineending_{endingval} \\). Then \\( voidspot^{*} \\in squarearea \\subseteq emptiness \\), so if \\( voidspot \\in emptiness \\), then \\( lineending_{endingval} \\) would lie between two points of \\( emptiness \\), which is impossible. So \\( squarearea_{endingval} \\cap emptiness=\\emptyset \\). Now \\( squarearea_{endingval} \\) subtends a positive angle, say \\( 2 largesize \\), at the origin, and every ray from the origin having direction angle in \\( pointending_{endingval}=(endingval-largesize, endingval+largesize) \\) meets \\( squarearea_{endingval} \\) at a distance less than \\( 2(1+constant(endingval)) \\). Therefore\n\\[\nconstant(linearval) \\leq 2(1+constant(endingval))\n\\]\nfor \\( linearval \\in pointending_{endingval} \\). By the Heine-Borel theorem, some finite number of these intervals, say \\( pointending_{endingval_{1}}, pointending_{endingval_{2}}, \\ldots, pointending_{endingval_{n}} \\), cover \\( [0,2 \\pi] \\). Then the largest of the numbers \\( 2\\left(1+constant\\left(endingval_{1}\\right)\\right), 2\\left(1+constant\\left(endingval_{2}\\right)\\right), \\ldots, 2\\left(1+constant\\left(endingval_{n}\\right)\\right) \\), is an upper bound for \\( constant \\). This proves that \\( emptiness \\) is bounded if \\( farpoint \\) is an interior point.\n\nNow assume that \\( emptiness \\) is closed but unbounded. Then we can choose angles \\( linearindex \\) in \\( [0,2 \\pi] \\) so that \\( constant^{\\prime}\\left(linearindex\\right) \\rightarrow \\infty \\). By the Bolzano-Weierstrass theorem some subsequence of \\( \\{linearindex\\} \\) is convergent, and we may as well assume that \\( \\{linearindex\\} \\) itself is convergent. Say \\( linearindex \\rightarrow startingval \\). Let \\( tangentzero=1+constant(startingval) \\). Then for all large \\( n \\), \\( constant\\left(linearindex\\right)>tangentzero \\), so by \\( (1),(tangentzero, linearindex) \\in emptiness \\). Now \\( emptiness \\) is closed and \\( (tangentzero, linearindex) \\rightarrow(tangentzero, startingval) \\), so \\( (tangentzero, startingval) \\in emptiness \\). But we know from (2) that \\( (tangentzero, startingval) \\notin emptiness \\). This contradiction proves that \\( emptiness \\) is bounded if it is closed."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "wodnzmhg",
+        "y": "flqsnjte",
+        "\\\\rho": "qzxwvtnp",
+        "\\\\theta": "hjgrksla",
+        "\\\\alpha": "mzkvdhtr",
+        "\\\\beta": "lgsrqunc",
+        "\\\\epsilon": "vpctwjda",
+        "\\\\theta_n": "zcqhibkw",
+        "\\\\rho_0": "rfnqtmxb",
+        "Q": "kxjpldus",
+        "S": "nvhazmro",
+        "D": "coypwhzt",
+        "O": "esfykbld",
+        "M": "gytrnsvq",
+        "P_\\\\alpha": "ugzsxkew",
+        "I_\\\\alpha": "ptnzvrli",
+        "f": "oqsmxjpn"
+      },
+      "question": "3. Let \\( nvhazmro \\) be a convex region in the Euclidean plane containing the origin. Assume that every ray (that is, half-line) from the origin has at least one point outside \\( nvhazmro \\). Prove that \\( nvhazmro \\) is bounded. (A region in the plane is defined to be convex if and only if the line segment joining every pair of its points lies entirely within the region.)",
+      "solution": "Solution. The examiners presumably intended region to mean open set, for the statement is false without some topological hypothesis on \\( nvhazmro \\). For example, the strip \\( 0<wodnzmhg<1 \\) in the \\( wodnzmhg flqsnjte \\)-plane together with the origin forms an unbounded convex set \\( nvhazmro \\) such that no ray from the origin lies wholly in \\( nvhazmro \\).\n\nWe shall prove that a ray-bounded convex set \\( nvhazmro \\) is bounded provided either the origin is an interior point of \\( nvhazmro \\) or \\( nvhazmro \\) is closed.\n\nWe shall use polar coordinates \\( (qzxwvtnp, hjgrksla) \\). For any \\( hjgrksla \\) the set \\( \\{qzxwvtnp:(qzxwvtnp, hjgrksla) \\notin nvhazmro\\} \\) is not empty by hypothesis and bounded below by zero. Let\n\\[\noqsmxjpn(hjgrksla)=\\inf \\{qzxwvtnp:(qzxwvtnp, hjgrksla) \\notin nvhazmro\\} .\n\\]\n\nThe intersection of \\( nvhazmro \\) with a ray is an interval, so we have\n\\[\n0 \\leq qzxwvtnp<oqsmxjpn(hjgrksla) \\Rightarrow(qzxwvtnp, hjgrksla) \\in nvhazmro \\tag{1}\n\\]\nand\n\\[\nqzxwvtnp>oqsmxjpn(hjgrksla) \\Rightarrow(qzxwvtnp, hjgrksla) \\notin nvhazmro .\\tag{2}\n\\]\n\nHence, if \\( gytrnsvq \\) is an upper bound for \\( oqsmxjpn \\), then \\( nvhazmro \\) lies in the closed disk of radius \\( gytrnsvq \\) about \\( esfykbld \\).\n\nAssume \\( esfykbld \\) is an interior point of \\( nvhazmro \\). Let \\( coypwhzt \\) be a disk centered at \\( esfykbld \\) with\n\\( coypwhzt \\subseteq nvhazmro \\). For any \\( mzkvdhtr \\in[0,2 \\pi] \\), let \\( ugzsxkew \\) be the point \\( (1+oqsmxjpn(mzkvdhtr), mzkvdhtr) \\) and let \\( coypwhzt_{mzkvdhtr} \\) be the disk obtained by reflecting \\( coypwhzt \\) through \\( ugzsxkew \\). Suppose \\( kxjpldus \\in coypwhzt_{mzkvdhtr} \\), and let \\( kxjpldus^{*} \\) be its reflection through \\( ugzsxkew \\). Then \\( kxjpldus^{*} \\in coypwhzt \\subseteq nvhazmro \\), so if \\( kxjpldus \\in nvhazmro \\), then \\( ugzsxkew \\) would lie between two points of \\( nvhazmro \\), which is impossible. So \\( coypwhzt_{mzkvdhtr} \\cap nvhazmro=\\emptyset \\). Now \\( coypwhzt_{mzkvdhtr} \\) subtends a positive angle, say \\( 2 vpctwjda \\), at the origin, and every ray from the origin having direction angle in \\( ptnzvrli=(mzkvdhtr-vpctwjda, mzkvdhtr+vpctwjda) \\) meets \\( coypwhzt_{mzkvdhtr} \\) at a distance less than \\( 2(1+oqsmxjpn(mzkvdhtr)) \\). Therefore\n\\[\noqsmxjpn(hjgrksla) \\leq 2\\bigl(1+oqsmxjpn(mzkvdhtr)\\bigr)\n\\]\nfor \\( hjgrksla \\in ptnzvrli. By the Heine-Borel theorem, some finite number of these intervals, say \\( ptnzvrli_{(wodnzmhg_{1})}, ptnzvrli_{wodnzmhg_{2}}, \\ldots, ptnzvrli_{wodnzmhg_{n}} \\), cover \\( [0,2 \\pi] \\). Then the largest of the numbers \\( 2\\bigl(1+oqsmxjpn(mzkvdhtr_{1})\\bigr), 2\\bigl(1+oqsmxjpn(mzkvdhtr_{2})\\bigr), \\ldots, 2\\bigl(1+oqsmxjpn(mzkvdhtr_{n})\\bigr) \\) is an upper bound for \\( oqsmxjpn \\). This proves that \\( nvhazmro \\) is bounded if \\( esfykbld \\) is an interior point.\n\nNow assume that \\( nvhazmro \\) is closed but unbounded. Then we can choose angles \\( zcqhibkw \\) in \\( [0,2 \\pi] \\) such that \\( oqsmxjpn^{\\prime}(zcqhibkw) \\rightarrow \\infty \\). By the Bolzano-Weierstrass theorem some subsequence of \\( \\{zcqhibkw\\} \\) is convergent, and we may as well assume that \\( \\{zcqhibkw\\} \\) itself is convergent. Say \\( zcqhibkw \\rightarrow lgsrqunc \\). Let \\( rfnqtmxb=1+oqsmxjpn(lgsrqunc) \\). Then for all large \\( n \\), \\( oqsmxjpn(zcqhibkw)>rfnqtmxb \\), so by (1) \\( (rfnqtmxb, zcqhibkw) \\in nvhazmro \\). Now \\( nvhazmro \\) is closed and \\( (rfnqtmxb, zcqhibkw) \\rightarrow(rfnqtmxb, lgsrqunc) \\), so \\( (rfnqtmxb, lgsrqunc) \\in nvhazmro \\). But from (2) we know that \\( (rfnqtmxb, lgsrqunc) \\notin nvhazmro \\), a contradiction. This proves that \\( nvhazmro \\) is bounded if it is closed."
+    },
+    "kernel_variant": {
+      "question": "Let S be a convex subset of the Euclidean plane that contains the origin O. Suppose that every ray R_\\theta  = \\{ t(\\cos\\theta,\\sin\\theta) : t \\ge 0 \\} issued from O meets the complement \\(\\mathbb{R}^2 \\setminus S\\); in other words, no ray is contained entirely in S. Prove that S is necessarily contained in some finite disc centred at O in each of the following two situations.\n(a) The origin is an interior point of S.\n(b) The set S is closed.",
+      "solution": "We work in polar coordinates (\\rho ,\\theta ) about O.  By hypothesis, for each \\theta  the set A_\\theta ={\\rho \\geq 0:(\\rho ,\\theta )\\notin S} is nonempty (no ray lies entirely in S) and bounded below.  Set\n   f(\\theta )=inf A_\\theta .\nConvexity of S implies that on each ray R_\\theta  the intersection S\\cap R_\\theta  is a (possibly half-open) interval containing 0, so in fact\n (i)  0\\leq \\rho <f(\\theta ) \\Rightarrow  (\\rho ,\\theta )\\in S,\n(ii)  \\rho >f(\\theta ) \\Rightarrow  (\\rho ,\\theta )\\notin S.\nHence if we show f is bounded above by some M<\\infty  then S\\subset {\\rho \\leq M} and we are done.  We split into the two cases.\n\nCase (a):  O is an interior point of S.  Then there is r>0 so that the open disk D={\\rho <r} lies inside S, hence f(\\theta )\\geq r for every \\theta .\n\nFix \\alpha .  Choose the point\n   P_\\alpha =(f(\\alpha )+r,\\alpha ),\nwhich by (ii) lies outside S.  Reflect the small disk D through P_\\alpha : define\n   D_\\alpha ={Q:Q^*=2P_\\alpha -Q\\in D}.\nThen D_\\alpha  is a disk of radius r whose centre C_\\alpha =2P_\\alpha  has distance\n   |OC_\\alpha |=2(f(\\alpha )+r)\nfrom the origin.  If Q\\in D_\\alpha  then Q^*\\in D\\subset S; if also Q\\in S, convexity forces the segment QQ^*\\subset S and its midpoint P_\\alpha \\in S, contradicting P_\\alpha \\notin S.  Hence D_\\alpha \\cap S=\\emptyset .\n\nAt O the disk D_\\alpha  of radius r centred at distance 2(f(\\alpha )+r) subtends angle 2\\varepsilon _\\alpha  with\n   sin \\varepsilon _\\alpha  = r/[2(f(\\alpha )+r)]>0.\nThus every ray R_\\theta  with \\theta  in I_\\alpha =(\\alpha -\\varepsilon _\\alpha ,\\alpha +\\varepsilon _\\alpha ) meets D_\\alpha , and so must exit S by radius \\leq |OC_\\alpha |+r=2f(\\alpha )+3r.  Hence\n   f(\\theta )\\leq 2f(\\alpha )+3r   for all \\theta \\in I_\\alpha .\nBy compactness of [0,2\\pi ] finitely many I_{\\alpha _i} cover the circle; setting\n   M = max_i(2f(\\alpha _i)+3r)\ngives f(\\theta )\\leq M for all \\theta , whence S\\subset {\\rho \\leq M}.\n\nCase (b):  S is closed.  If S were unbounded then f would be unbounded.  Pick \\theta _n with f(\\theta _n)\\to \\infty , and by Bolzano-Weierstrass let \\theta _n\\to \\beta .  Put \\rho _0=1+f(\\beta ).  For large n, f(\\theta _n)>\\rho _0, hence by (i) (\\rho _0,\\theta _n)\\in S.  Closedness gives (\\rho _0,\\beta )\\in S, contradicting (ii) since \\rho _0>f(\\beta ).  Thus f is bounded above and S\\subset {\\rho \\leq M} for some finite M.  \\square ",
+      "_meta": {
+        "core_steps": [
+          "Introduce polar coordinates and set f(θ)=inf{ρ : (ρ,θ)∉S}; convexity ⇒ ρ<f(θ) in S, ρ>f(θ) outside.",
+          "Note: if f is bounded above, then S lies in a finite disc and is therefore bounded.",
+          "If 0 is interior: pick a small disc D⊂S; reflect D across Pα=(c+f(α),α) to get Dα⊂Sᶜ; rays in a neighbourhood Iα give f(θ)≤C(α); compactness of [0,2π] (Heine–Borel) yields a global bound for f.",
+          "If S is closed: assuming f unbounded, choose θ_n with f(θ_n)→∞; compactness (Bolzano–Weierstrass) gives θ_n→β; closedness forces (ρ₀,β)∈S, contradicting definition of f; hence f bounded.",
+          "Therefore f is bounded in either case, so S is bounded."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Positive constant added to f(θ) when defining the reflection point Pα and ρ₀ (any c>0 works).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Multiplicative constant in the local bound f(θ)≤k(1+f(α)) (comes from diameter of chosen interior disc; any fixed k>1 suffices).",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

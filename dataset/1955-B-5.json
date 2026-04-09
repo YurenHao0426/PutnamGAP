@@ -1,0 +1,98 @@
+{
+  "index": "1955-B-5",
+  "type": "COMB",
+  "tag": [
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "5. Given an infinite sequence of 0's and 1's and a fixed integer \\( k \\), suppose that there are no more than \\( k \\) distinct blocks of \\( k \\) consecutive terms. Show that the sequence is eventually periodic. (For example, the sequence 11011010101 followed by alternating 0 's and 1 's indefinitely, which is periodic beginning with the fifth term.)",
+  "solution": "Solution. We shall refer to a block of \\( n \\) consecutive terms as an \\( n \\)-block.\nThe proof is by induction on \\( k \\). Clearly, if there is at most one 1 -block, the sequence is constant, i.e., periodic with period 1.\n\nNow suppose that every infinite sequence with at most \\( k \\) distinct \\( k \\)-blocks is eventually periodic. Then, given an infinite sequence with at most \\( k+1 \\) distinct \\( (k+1) \\)-blocks, consider what happens when each of these blocks is shortened by one on the right. If we obtain in this way fewer than \\( k+1 \\) distinct \\( k \\)-blocks, then the given sequence has at most \\( k \\) distinct \\( k \\)-blocks and is therefore eventually periodic by the inductive hypothesis.\n\nOn the other hand, suppose we obtain \\( k+1 \\) distinct \\( k \\)-blocks. Then each \\( k \\)-block has a unique extension to a \\( (k+1) \\)-block. Then in the given sequence, if the \\( i \\) th and the \\( (i+p) \\) th \\( k \\)-blocks are the same for some \\( i \\) (where \\( p>0 \\) ), it follows that the \\( (i+k) \\) th and \\( (i+p+k) \\) th terms are the same. Hence the \\( (i+1) \\) st and \\( (i+p+1) \\) st \\( k \\)-blocks are the same, and it follows by induction that the sequence is periodic with period \\( p \\) starting with the \\( i \\) th term. Since there are at most \\( k+1 \\) distinct \\( k \\)-blocks in the sequence, a repeated block must appear within the first \\( k+2 \\) blocks, so periodicity must begin not later than the \\( (k+1) \\) st term.\n\nThus we have shown that every infinite sequence in which there are at most \\( \\boldsymbol{k}+1 \\) distinct \\( (\\boldsymbol{k}+1) \\)-blocks is eventually periodic. This completes the induction.\n\nRemarks. It may be shown that the number of terms before the periodic part of the sequence is at most \\( k-p \\). The following sequence shows that this statement is best possible.\n\nIt does not matter how many distinct characters are permitted in the original sequence.\n\nA related problem appears as Problem E 2307 in the American Mathematical Monthly, vol. 79 (1972) page 773.",
+  "vars": [
+    "n",
+    "i",
+    "p"
+  ],
+  "params": [
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "blocksz",
+        "i": "position",
+        "p": "periodp",
+        "k": "limitk"
+      },
+      "question": "5. Given an infinite sequence of 0's and 1's and a fixed integer \\( limitk \\), suppose that there are no more than \\( limitk \\) distinct blocks of \\( limitk \\) consecutive terms. Show that the sequence is eventually periodic. (For example, the sequence 11011010101 followed by alternating 0 's and 1 's indefinitely, which is periodic beginning with the fifth term.)",
+      "solution": "Solution. We shall refer to a block of \\( blocksz \\) consecutive terms as an \\( blocksz \\)-block.\nThe proof is by induction on \\( limitk \\). Clearly, if there is at most one 1 -block, the sequence is constant, i.e., periodic with period 1.\n\nNow suppose that every infinite sequence with at most \\( limitk \\) distinct \\( limitk \\)-blocks is eventually periodic. Then, given an infinite sequence with at most \\( limitk+1 \\) distinct \\( (limitk+1) \\)-blocks, consider what happens when each of these blocks is shortened by one on the right. If we obtain in this way fewer than \\( limitk+1 \\) distinct \\( limitk \\)-blocks, then the given sequence has at most \\( limitk \\) distinct \\( limitk \\)-blocks and is therefore eventually periodic by the inductive hypothesis.\n\nOn the other hand, suppose we obtain \\( limitk+1 \\) distinct \\( limitk \\)-blocks. Then each \\( limitk \\)-block has a unique extension to a \\( (limitk+1) \\)-block. Then in the given sequence, if the \\( position \\) th and the \\( (position+periodp) \\) th \\( limitk \\)-blocks are the same for some \\( position \\) (where \\( periodp>0 \\) ), it follows that the \\( (position+limitk) \\) th and \\( (position+periodp+limitk) \\) th terms are the same. Hence the \\( (position+1) \\) st and the \\( (position+periodp+1) \\) st \\( limitk \\)-blocks are the same, and it follows by induction that the sequence is periodic with period \\( periodp \\) starting with the \\( position \\) th term. Since there are at most \\( limitk+1 \\) distinct \\( limitk \\)-blocks in the sequence, a repeated block must appear within the first \\( limitk+2 \\) blocks, so periodicity must begin not later than the \\( (limitk+1) \\) st term.\n\nThus we have shown that every infinite sequence in which there are at most \\( \\boldsymbol{limitk}+1 \\) distinct \\( (\\boldsymbol{limitk}+1) \\)-blocks is eventually periodic. This completes the induction.\n\nRemarks. It may be shown that the number of terms before the periodic part of the sequence is at most \\( limitk-periodp \\). The following sequence shows that this statement is best possible.\n\nIt does not matter how many distinct characters are permitted in the original sequence.\n\nA related problem appears as Problem E 2307 in the American Mathematical Monthly, vol. 79 (1972) page 773."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "i": "teapotlid",
+        "p": "doorhandle",
+        "k": "raincloud"
+      },
+      "question": "5. Given an infinite sequence of 0's and 1's and a fixed integer \\( raincloud \\), suppose that there are no more than \\( raincloud \\) distinct blocks of \\( raincloud \\) consecutive terms. Show that the sequence is eventually periodic. (For example, the sequence 11011010101 followed by alternating 0 's and 1 's indefinitely, which is periodic beginning with the fifth term.)",
+      "solution": "Solution. We shall refer to a block of \\( sunflower \\) consecutive terms as an \\( sunflower \\)-block.\nThe proof is by induction on \\( raincloud \\). Clearly, if there is at most one 1 -block, the sequence is constant, i.e., periodic with period 1.\n\nNow suppose that every infinite sequence with at most \\( raincloud \\) distinct \\( raincloud \\)-blocks is eventually periodic. Then, given an infinite sequence with at most \\( raincloud+1 \\) distinct \\( (raincloud+1) \\)-blocks, consider what happens when each of these blocks is shortened by one on the right. If we obtain in this way fewer than \\( raincloud+1 \\) distinct \\( raincloud \\)-blocks, then the given sequence has at most \\( raincloud \\) distinct \\( raincloud \\)-blocks and is therefore eventually periodic by the inductive hypothesis.\n\nOn the other hand, suppose we obtain \\( raincloud+1 \\) distinct \\( raincloud \\)-blocks. Then each \\( raincloud \\)-block has a unique extension to a \\( (raincloud+1) \\)-block. Then in the given sequence, if the \\( teapotlid \\) th and the \\( (teapotlid+doorhandle) \\) th \\( raincloud \\)-blocks are the same for some \\( teapotlid \\) (where \\( doorhandle>0 \\) ), it follows that the \\( (teapotlid+raincloud) \\) th and the \\( (teapotlid+doorhandle+raincloud) \\) th terms are the same. Hence the \\( (teapotlid+1) \\) st and \\( (teapotlid+doorhandle+1) \\) st \\( raincloud \\)-blocks are the same, and it follows by induction that the sequence is periodic with period \\( doorhandle \\) starting with the \\( teapotlid \\) th term. Since there are at most \\( raincloud+1 \\) distinct \\( raincloud \\)-blocks in the sequence, a repeated block must appear within the first \\( raincloud+2 \\) blocks, so periodicity must begin not later than the \\( (raincloud+1) \\) st term.\n\nThus we have shown that every infinite sequence in which there are at most \\( \\boldsymbol{raincloud}+1 \\) distinct \\( (\\boldsymbol{raincloud}+1) \\)-blocks is eventually periodic. This completes the induction.\n\nRemarks. It may be shown that the number of terms before the periodic part of the sequence is at most \\( raincloud-doorhandle \\). The following sequence shows that this statement is best possible.\n\nIt does not matter how many distinct characters are permitted in the original sequence.\n\nA related problem appears as Problem E 2307 in the American Mathematical Monthly, vol. 79 (1972) page 773."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "lengthless",
+        "i": "wholeness",
+        "p": "aperiodic",
+        "k": "uniformity"
+      },
+      "question": "5. Given an infinite sequence of 0's and 1's and a fixed integer \\( uniformity \\), suppose that there are no more than \\( uniformity \\) distinct blocks of \\( uniformity \\) consecutive terms. Show that the sequence is eventually periodic. (For example, the sequence 11011010101 followed by alternating 0 's and 1 's indefinitely, which is periodic beginning with the fifth term.)",
+      "solution": "Solution. We shall refer to a block of \\( lengthless \\) consecutive terms as an \\( lengthless \\)-block.\nThe proof is by induction on \\( uniformity \\). Clearly, if there is at most one 1 -block, the sequence is constant, i.e., periodic with period 1.\n\nNow suppose that every infinite sequence with at most \\( uniformity \\) distinct \\( uniformity \\)-blocks is eventually periodic. Then, given an infinite sequence with at most \\( uniformity+1 \\) distinct \\( (uniformity+1) \\)-blocks, consider what happens when each of these blocks is shortened by one on the right. If we obtain in this way fewer than \\( uniformity+1 \\) distinct \\( uniformity \\)-blocks, then the given sequence has at most \\( uniformity \\) distinct \\( uniformity \\)-blocks and is therefore eventually periodic by the inductive hypothesis.\n\nOn the other hand, suppose we obtain \\( uniformity+1 \\) distinct \\( uniformity \\)-blocks. Then each \\( uniformity \\)-block has a unique extension to a \\( (uniformity+1) \\)-block. Then in the given sequence, if the \\( wholeness \\) th and the \\( (wholeness+aperiodic) \\) th \\( uniformity \\)-blocks are the same for some \\( wholeness \\) (where \\( aperiodic>0 \\) ), it follows that the \\( (wholeness+uniformity) \\) th and \\( (wholeness+aperiodic+uniformity) \\) th terms are the same. Hence the \\( (wholeness+1) \\) st and \\( (wholeness+aperiodic+1) \\) st \\( uniformity \\)-blocks are the same, and it follows by induction that the sequence is periodic with period \\( aperiodic \\) starting with the \\( wholeness \\) th term. Since there are at most \\( uniformity+1 \\) distinct \\( uniformity \\)-blocks in the sequence, a repeated block must appear within the first \\( uniformity+2 \\) blocks, so periodicity must begin not later than the \\( (uniformity+1) \\) st term.\n\nThus we have shown that every infinite sequence in which there are at most \\( \\boldsymbol{uniformity}+1 \\) distinct \\( (\\boldsymbol{uniformity}+1) \\)-blocks is eventually periodic. This completes the induction.\n\nRemarks. It may be shown that the number of terms before the periodic part of the sequence is at most \\( uniformity-aperiodic \\). The following sequence shows that this statement is best possible.\n\nIt does not matter how many distinct characters are permitted in the original sequence.\n\nA related problem appears as Problem E 2307 in the American Mathematical Monthly, vol. 79 (1972) page 773."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "vxqrmstl",
+        "i": "bgvhdjqp",
+        "p": "kjzlmnry",
+        "k": "tcswfrlu"
+      },
+      "question": "5. Given an infinite sequence of 0's and 1's and a fixed integer \\( tcswfrlu \\), suppose that there are no more than \\( tcswfrlu \\) distinct blocks of \\( tcswfrlu \\) consecutive terms. Show that the sequence is eventually periodic. (For example, the sequence 11011010101 followed by alternating 0 's and 1 's indefinitely, which is periodic beginning with the fifth term.)",
+      "solution": "Solution. We shall refer to a block of \\( vxqrmstl \\) consecutive terms as an \\( vxqrmstl \\)-block.\nThe proof is by induction on \\( tcswfrlu \\). Clearly, if there is at most one 1 -block, the sequence is constant, i.e., periodic with period 1.\n\nNow suppose that every infinite sequence with at most \\( tcswfrlu \\) distinct \\( tcswfrlu \\)-blocks is eventually periodic. Then, given an infinite sequence with at most \\( tcswfrlu+1 \\) distinct \\( (tcswfrlu+1) \\)-blocks, consider what happens when each of these blocks is shortened by one on the right. If we obtain in this way fewer than \\( tcswfrlu+1 \\) distinct \\( tcswfrlu \\)-blocks, then the given sequence has at most \\( tcswfrlu \\) distinct \\( tcswfrlu \\)-blocks and is therefore eventually periodic by the inductive hypothesis.\n\nOn the other hand, suppose we obtain \\( tcswfrlu+1 \\) distinct \\( tcswfrlu \\)-blocks. Then each \\( tcswfrlu \\)-block has a unique extension to a \\( (tcswfrlu+1) \\)-block. Then in the given sequence, if the \\( bgvhdjqp \\) th and the \\( (bgvhdjqp+kjzlmnry) \\) th \\( tcswfrlu \\)-blocks are the same for some \\( bgvhdjqp \\) (where \\( kjzlmnry>0 \\) ), it follows that the \\( (bgvhdjqp+tcswfrlu) \\) th and \\( (bgvhdjqp+kjzlmnry+tcswfrlu) \\) th terms are the same. Hence the \\( (bgvhdjqp+1) \\) st and \\( (bgvhdjqp+kjzlmnry+1) \\) st \\( tcswfrlu \\)-blocks are the same, and it follows by induction that the sequence is periodic with period \\( kjzlmnry \\) starting with the \\( bgvhdjqp \\) th term. Since there are at most \\( tcswfrlu+1 \\) distinct \\( tcswfrlu \\)-blocks in the sequence, a repeated block must appear within the first \\( tcswfrlu+2 \\) blocks, so periodicity must begin not later than the \\( (tcswfrlu+1) \\) st term.\n\nThus we have shown that every infinite sequence in which there are at most \\( \\boldsymbol{tcswfrlu}+1 \\) distinct \\( (\\boldsymbol{tcswfrlu}+1) \\)-blocks is eventually periodic. This completes the induction.\n\nRemarks. It may be shown that the number of terms before the periodic part of the sequence is at most \\( tcswfrlu-kjzlmnry \\). The following sequence shows that this statement is best possible.\n\nIt does not matter how many distinct characters are permitted in the original sequence.\n\nA related problem appears as Problem E 2307 in the American Mathematical Monthly, vol. 79 (1972) page 773."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\Sigma=\\{0,1,2\\}\\) be a three-letter alphabet and let \\(k\\ge 1\\) be a fixed integer.  In an infinite word \n\n\\[w=w_1w_2w_3\\ldots ,\\qquad w_i\\in\\Sigma,\\]\n\ncall a string of \\(m\\) consecutive symbols an \\(m\\)-block.  Suppose that the whole word contains at most \\(k\\) distinct \\(k\\)-blocks.  Prove that \\(w\\) is eventually periodic; i.e. there exist integers \\(N\\ge 0\\) and \\(p>0\\) such that \\(w_{n+p}=w_n\\) for every \\(n\\ge N\\).\n\n(For example, the word\n\n\\[201\\,201\\,220\\,120120120\\ldots\\]\n\nis ultimately periodic beginning with its fourth symbol.)",
+      "solution": "We follow the same inductive idea as in the official binary-alphabet solution, but now over \\Sigma ={0,1,2}.  We even allow the non-optimal bound 2k+3 on how far one must go to find a repeated k-block.  \n\nClaim.  If an infinite word w over \\Sigma  has at most k distinct k-blocks, then w is eventually periodic.  \nProof by induction on k\\geq 1.\n\nBase case k=1.  A 1-block is just a single letter.  If there is at most one distinct 1-block in w, then w is constant, hence periodic of period 1 starting at position 1.\n\nInductive step.  Assume the claim holds for k.  Let w be an infinite word with at most k+1 distinct (k+1)-blocks.  We form k-blocks from them by deleting the last symbol of each (k+1)-block.  There are k+1 original blocks, so two cases:\n\nCase 1: Fewer than k+1 distinct k-blocks occur among these deletions.  Then w actually has at most k distinct k-blocks, so by the induction hypothesis w is eventually periodic.\n\nCase 2: Exactly k+1 distinct k-blocks occur.  The deletion-map from the set of (k+1)-blocks onto the set of k-blocks is then a bijection, so each k-block has a unique right-extension to a (k+1)-block.  \n\nNext, look at the sequence of all k-blocks that occur in w, starting with the one at positions 1\\ldots k, then at 2\\ldots k+1, 3\\ldots k+2, and so on.  Since there are only k+1 distinct k-blocks, the pigeonhole principle forces a repetition among the first (k+2) such k-blocks (and a fortiori among the first 2k+3).  Thus there exist indices i and p>0 with i\\leq 2k+2 such that the k-block at positions i\\ldots i+k-1 equals the k-block at positions i+p\\ldots i+p+k-1.  \n\nBecause each of those two k-blocks admits a unique right-extension, the next symbol after each block must be the same:\n    w_{i+k} = w_{i+p+k}.\nTherefore the (k+1)-blocks at positions i\\ldots i+k and at i+p\\ldots i+p+k coincide.  Their k-suffixes (positions i+1\\ldots i+k and i+1+p\\ldots i+p+k) also coincide, so again uniqueness of right-extension gives\n    w_{i+k+1} = w_{i+p+k+1},\nand so on.  By repeating this argument indefinitely, we get\n    w_{n} = w_{n+p}  for every n \\geq  i.\nHence w is ultimately periodic from position i onward, with period p.  \n\nThis completes the induction and proves that any infinite word over \\Sigma  with \\leq k distinct k-blocks is eventually periodic.  Moreover, since one finds a repeated k-block among the first 2k+3 k-blocks, the periodic part begins by position at most 2k+3.  \n\n\\square ",
+      "_meta": {
+        "core_steps": [
+          "Induct on k (number/length of blocks).",
+          "Shorten each (k+1)-block by one symbol; if ≤ k distinct k-blocks, invoke induction to get periodicity.",
+          "If exactly k+1 distinct k-blocks, the shortening map is bijective, so every k-block has a unique extension.",
+          "A first repeated k-block (p apart) forces the following symbols to repeat by uniqueness, yielding period p.",
+          "With ≤ k+1 distinct k-blocks a repeat occurs within the first k+2 blocks, so the sequence is eventually periodic."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Alphabet used for the sequence; any finite set works.",
+            "original": "{0,1}"
+          },
+          "slot2": {
+            "description": "Side from which (k+1)-blocks are truncated when forming k-blocks.",
+            "original": "right end"
+          },
+          "slot3": {
+            "description": "Concrete example that illustrates an eventually periodic sequence.",
+            "original": "11011010101 …"
+          },
+          "slot4": {
+            "description": "Numerical bound guaranteeing a repeat among k-blocks (can be any number ≥ k+2).",
+            "original": "k+2"
+          },
+          "slot5": {
+            "description": "Base-case constant showing that ≤1 distinct 1-block forces period 1; any base case where the number of distinct blocks is < alphabet size works.",
+            "original": "1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

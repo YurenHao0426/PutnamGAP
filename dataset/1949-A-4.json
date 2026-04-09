@@ -1,0 +1,215 @@
+{
+  "index": "1949-A-4",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "4. Given that \\( P \\) is a point inside a tetrahedron with vertices at \\( A, B, C \\), and \\( D \\), such that the sum of the distances \\( P A+P B+P C+P D \\) is a minimum, show that the two angles \\( \\angle A P B \\) and \\( \\angle C P D \\) are equal and are bisected by the same straight line. What other pairs of angles must be equal?",
+  "solution": "First Solution. Consider the ellipsoid of revolution \\( \\mathcal{E}_{1} \\), with foci \\( A \\) and \\( B \\), which passes through the given point \\( P . \\mathcal{E}_{1} \\) is the locus of all points \\( X \\) such that \\( |A X|+|X B|=|A P|+|P B| \\) and points \\( Y \\) interior to \\( \\varepsilon_{1} \\) satisfy \\( |A Y|+|Y B|<|A P|+|P B| \\). Let \\( \\mathcal{E}_{2} \\) be the ellipsoid of revolution, with foci \\( C \\) and \\( D \\), which passes through \\( P \\). Since \\( P \\) minimizes the sum of the distances \\( |P A|+|P B|+|P C|+|P D| \\), the ellipsoids \\( \\varepsilon_{1} \\) and \\( \\mathcal{E}_{2} \\) can have no interior point in common. Thus they are tangent and have a common normal line \\( l \\) at \\( P \\), which intersects the segments \\( A B \\) and \\( C D \\). By the reflection property of the ellipse, \\( l \\) bisects the angles \\( A P B \\) and CPD.\n\nTo show that these last two angles are equal, consider points \\( A_{1}, B_{1} \\), \\( C_{1} \\), and \\( D_{1} \\) on the rays \\( P A, P B, P C \\), and \\( P D \\), respectively, such that \\( \\left|P A_{1}\\right|=\\left|P B_{1}\\right|=\\left|P C_{1}\\right|=\\left|P D_{1}\\right|=1 \\), for example. Line \\( l \\) meets segment \\( A_{1} B_{1} \\) at its midpoint \\( M \\) and meets segment \\( C_{1} D_{1} \\) at its midpoint \\( N \\). Thus \\( P \\) is on the line joining the midpoints of two opposite edges of the new tetrahedron \\( A_{1} B_{1} C_{1} D_{1} \\). A similar argument shows that \\( P \\) is on the line joining the midpoints of \\( A_{1} C_{1} \\) and \\( B_{1} D_{1} \\), say \\( Q \\) and \\( R \\). But \\( M, N, R \\), \\( Q \\) are the vertices of a parallelogram, and \\( P \\) is the intersection of its diagonals. Hence \\( P \\) bisects \\( M N \\), and it follows that triangles \\( A_{1} P B_{1} \\) and \\( C_{1} P D_{1} \\) are congruent. Hence \\( \\angle A P B=\\angle C P D \\). Likewise, it can be shown that \\( \\angle A P C=\\angle B P D \\) and \\( \\angle A P D=\\angle B P C \\).\n\nSecond Solution. In Euclidean 3-space (or even in Euclidean \\( n \\)-space), the function \\( f_{A}(X)=|A X| \\), the distance between the fixed point \\( A \\) and the variable point \\( X \\), is differentiable at all points except \\( A \\). The gradient \\( \\left(\\nabla f_{A}\\right)(X) \\) is the unit vector in the direction from \\( A \\) to \\( X \\). [This is geometrically obvious, since at any point the distance from \\( A \\) to that point increases most rapidly in the direction away from \\( A \\). It is a unit vector, since the distance from \\( A \\) increases at the same rate as the distance from \\( X \\).]\n\nChoose a coordinate system with \\( P \\) at the origin. We are given that the function\n\\[\ng=f_{A}+f_{B}+f_{C}+f_{D}\n\\]\nhas its minimum at \\( P \\) and that \\( P \\) is none of the points \\( A, B, C \\), or \\( D \\). Since \\( g \\) is differentiable at \\( P \\), we have\n\\[\n(\\nabla g)(P)=0,\n\\]\nthat is,\n\\[\n\\left(\\nabla f_{A}\\right)(P)+\\left(\\nabla f_{B}\\right)(P)+\\left(\\nabla f_{c}\\right)(P)+\\left(\\nabla f_{D}\\right)(P)=0 .\n\\]\n\nWe have already noted that \\( \\left(\\nabla f_{A}\\right)(P) \\) is the unit vector from \\( P \\) to \\( A \\). Hence, with a sign change, (1) becomes\n\\[\n\\mathbf{a}+\\mathbf{b}+\\mathbf{c}+\\mathbf{d}=0,\n\\]\nwhere \\( \\mathbf{a}, \\mathbf{b}, \\mathbf{c} \\), and \\( \\mathbf{d} \\) are the unit vectors from \\( P \\) to \\( A, B, C \\), and \\( D \\), respectively. Since \\( P \\) is inside the given tetrahedron, no two of these unit vectors are collinear. The sum of two non-collinear unit vectors has the direction of the bisector of the angle formed by them. Hence, when (2) is rewritten as\n\\[\n\\mathbf{a}+\\mathbf{b}=-(\\mathbf{c}+\\mathbf{d}),\n\\]\nwe see that the bisector of \\( \\angle A P B \\) is opposite to that of \\( \\angle C P D \\); that is, these angles are bisected by the same straight line. It also follows from (3) that\n\\[\n(\\mathbf{a}+\\mathbf{b}, \\mathbf{a}+\\mathbf{b})=(\\mathbf{c}+\\mathbf{d}, \\mathbf{c}+\\mathbf{d})\n\\]\nwhich reduces (because \\( \\mathbf{a}, \\mathbf{b}, \\mathbf{c} \\), and \\( \\mathbf{d} \\) are unit vectors) to\n\\[\n(\\mathbf{a}, \\mathbf{b})=(\\mathbf{c}, \\mathbf{d}),\n\\]\nwhich tells us that the angle between \\( \\mathbf{a} \\) and \\( \\mathbf{b} \\) is the same as the angle between \\( \\mathbf{c} \\) and d, i.e.,\n\\[\n\\angle A P B=\\angle C P D .\n\\]\n\nSimilarly, \\( \\angle A P C=\\angle B P D \\) and \\( \\angle A P D=\\angle B P C \\).",
+  "vars": [
+    "P",
+    "X",
+    "Y",
+    "l",
+    "g",
+    "f_A",
+    "f_B",
+    "f_C",
+    "f_D",
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "params": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "A_1",
+    "B_1",
+    "C_1",
+    "D_1",
+    "M",
+    "N",
+    "Q",
+    "R",
+    "E_1",
+    "E_2",
+    "\\\\varepsilon_1"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P": "pointp",
+        "X": "pointx",
+        "Y": "pointy",
+        "l": "normalline",
+        "g": "sumfunc",
+        "f_A": "funca",
+        "f_B": "funcb",
+        "f_C": "funcc",
+        "f_D": "funcd",
+        "a": "unitveca",
+        "b": "unitvecb",
+        "c": "unitvecc",
+        "d": "unitvecd",
+        "A": "vertexa",
+        "B": "vertexb",
+        "C": "vertexc",
+        "D": "vertexd",
+        "A_1": "vertexaone",
+        "B_1": "vertexbone",
+        "C_1": "vertexcone",
+        "D_1": "vertexdone",
+        "M": "midpointm",
+        "N": "midpointn",
+        "Q": "midpointq",
+        "R": "midpointr",
+        "E_1": "ellipsoidone",
+        "E_2": "ellipsoidtwo",
+        "\\\\varepsilon_1": "ellipseone"
+      },
+      "question": "4. Given that \\( pointp \\) is a point inside a tetrahedron with vertices at \\( vertexa, vertexb, vertexc \\), and \\( vertexd \\), such that the sum of the distances \\( pointp vertexa+pointp vertexb+pointp vertexc+pointp vertexd \\) is a minimum, show that the two angles \\( \\angle vertexa\\ pointp\\ vertexb \\) and \\( \\angle vertexc\\ pointp\\ vertexd \\) are equal and are bisected by the same straight line. What other pairs of angles must be equal?",
+      "solution": "First Solution. Consider the ellipsoid of revolution \\( \\mathcal{ellipsoidone} \\), with foci \\( vertexa \\) and \\( vertexb \\), which passes through the given point \\( pointp . \\mathcal{ellipsoidone} \\) is the locus of all points \\( pointx \\) such that \\( |vertexa pointx|+|pointx vertexb|=|vertexa pointp|+|pointp vertexb| \\) and points \\( pointy \\) interior to \\( ellipseone \\) satisfy \\( |vertexa pointy|+|pointy vertexb|<|vertexa pointp|+|pointp vertexb| \\). Let \\( \\mathcal{ellipsoidtwo} \\) be the ellipsoid of revolution, with foci \\( vertexc \\) and \\( vertexd \\), which passes through \\( pointp \\). Since \\( pointp \\) minimizes the sum of the distances \\( |pointp vertexa|+|pointp vertexb|+|pointp vertexc|+|pointp vertexd| \\), the ellipsoids \\( ellipseone \\) and \\( \\mathcal{ellipsoidtwo} \\) can have no interior point in common. Thus they are tangent and have a common normal line \\( normalline \\) at \\( pointp \\), which intersects the segments \\( vertexa vertexb \\) and \\( vertexc vertexd \\). By the reflection property of the ellipse, \\( normalline \\) bisects the angles \\( vertexa pointp vertexb \\) and vertexcpointpvertexd.\n\nTo show that these last two angles are equal, consider points \\( vertexaone, vertexbone \\), \\( vertexcone \\), and \\( vertexdone \\) on the rays \\( pointp vertexa, pointp vertexb, pointp vertexc \\), and \\( pointp vertexd \\), respectively, such that \\( \\left|pointp vertexaone\\right|=\\left|pointp vertexbone\\right|=\\left|pointp vertexcone\\right|=\\left|pointp vertexdone\\right|=1 \\), for example. Line \\( normalline \\) meets segment \\( vertexaone vertexbone \\) at its midpoint \\( midpointm \\) and meets segment \\( vertexcone vertexdone \\) at its midpoint \\( midpointn \\). Thus \\( pointp \\) is on the line joining the midpoints of two opposite edges of the new tetrahedron \\( vertexaone vertexbone vertexcone vertexdone \\). A similar argument shows that \\( pointp \\) is on the line joining the midpoints of \\( vertexaone vertexcone \\) and \\( vertexbone vertexdone \\), say \\( midpointq \\) and \\( midpointr \\). But \\( midpointm, midpointn, midpointr \\), \\( midpointq \\) are the vertices of a parallelogram, and \\( pointp \\) is the intersection of its diagonals. Hence \\( pointp \\) bisects \\( midpointm midpointn \\), and it follows that triangles \\( vertexaone pointp vertexbone \\) and \\( vertexcone pointp vertexdone \\) are congruent. Hence \\( \\angle vertexa pointp vertexb=\\angle vertexc pointp vertexd \\). Likewise, it can be shown that \\( \\angle vertexa pointp vertexc=\\angle vertexb pointp vertexd \\) and \\( \\angle vertexa pointp vertexd=\\angle vertexb pointp vertexc \\).\n\nSecond Solution. In Euclidean 3-space (or even in Euclidean \\( n \\)-space), the function \\( funca(pointx)=|vertexa pointx| \\), the distance between the fixed point \\( vertexa \\) and the variable point \\( pointx \\), is differentiable at all points except \\( vertexa \\). The gradient \\( \\left(\\nabla funca\\right)(pointx) \\) is the unit vector in the direction from \\( vertexa \\) to \\( pointx \\). [This is geometrically obvious, since at any point the distance from \\( vertexa \\) to that point increases most rapidly in the direction away from \\( vertexa \\). It is a unit vector, since the distance from \\( vertexa \\) increases at the same rate as the distance from \\( pointx \\).]\n\nChoose a coordinate system with \\( pointp \\) at the origin. We are given that the function\n\\[\nsumfunc=funca+funcb+funcc+funcd\n\\]\nhas its minimum at \\( pointp \\) and that \\( pointp \\) is none of the points \\( vertexa, vertexb, vertexc \\), or \\( vertexd \\). Since \\( sumfunc \\) is differentiable at \\( pointp \\), we have\n\\[\n(\\nabla sumfunc)(pointp)=0,\n\\]\nthat is,\n\\[\n\\left(\\nabla funca\\right)(pointp)+\\left(\\nabla funcb\\right)(pointp)+\\left(\\nabla funcc\\right)(pointp)+\\left(\\nabla funcd\\right)(pointp)=0 .\n\\]\n\nWe have already noted that \\( \\left(\\nabla funca\\right)(pointp) \\) is the unit vector from \\( pointp \\) to \\( vertexa \\). Hence, with a sign change, (1) becomes\n\\[\nunitveca+unitvecb+unitvecc+unitvecd=0,\n\\]\nwhere \\( unitveca, unitvecb, unitvecc \\), and \\( unitvecd \\) are the unit vectors from \\( pointp \\) to \\( vertexa, vertexb, vertexc \\), and \\( vertexd \\), respectively. Since \\( pointp \\) is inside the given tetrahedron, no two of these unit vectors are collinear. The sum of two non-collinear unit vectors has the direction of the bisector of the angle formed by them. Hence, when (2) is rewritten as\n\\[\nunitveca+unitvecb=-(unitvecc+unitvecd),\n\\]\nwe see that the bisector of \\( \\angle vertexa pointp vertexb \\) is opposite to that of \\( \\angle vertexc pointp vertexd \\); that is, these angles are bisected by the same straight line. It also follows from (3) that\n\\[\n(unitveca+unitvecb, unitveca+unitvecb)=(unitvecc+unitvecd, unitvecc+unitvecd)\n\\]\nwhich reduces (because \\( unitveca, unitvecb, unitvecc \\), and \\( unitvecd \\) are unit vectors) to\n\\[\n(unitveca, unitvecb)=(unitvecc, unitvecd),\n\\]\nwhich tells us that the angle between \\( unitveca \\) and \\( unitvecb \\) is the same as the angle between \\( unitvecc \\) and unitvecd, i.e.,\n\\[\n\\angle vertexa pointp vertexb=\\angle vertexc pointp vertexd .\n\\]\n\nSimilarly, \\( \\angle vertexa pointp vertexc=\\angle vertexb pointp vertexd \\) and \\( \\angle vertexa pointp vertexd=\\angle vertexb pointp vertexc \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P": "waterfall",
+        "X": "sandstone",
+        "Y": "birchwood",
+        "l": "hummingbird",
+        "g": "cornflower",
+        "f_A": "cinnamon",
+        "f_B": "butternut",
+        "f_C": "marigold",
+        "f_D": "peppermint",
+        "a": "snowflake",
+        "b": "thunderbolt",
+        "c": "dragonfly",
+        "d": "strawberry",
+        "A": "parchment",
+        "B": "limestone",
+        "C": "evergreen",
+        "D": "moonlight",
+        "A_1": "saffronia",
+        "B_1": "graniteor",
+        "C_1": "lavendera",
+        "D_1": "obsidiane",
+        "M": "cloudtree",
+        "N": "brookline",
+        "Q": "windchime",
+        "R": "wildfire",
+        "E_1": "labyrinth",
+        "E_2": "curiosity",
+        "\\\\varepsilon_1": "chrysanthemum"
+      },
+      "question": "4. Given that \\( waterfall \\) is a point inside a tetrahedron with vertices at \\( parchment, limestone, evergreen \\), and \\( moonlight \\), such that the sum of the distances \\( waterfall parchment+waterfall limestone+waterfall evergreen+waterfall moonlight \\) is a minimum, show that the two angles \\( \\angle parchment waterfall limestone \\) and \\( \\angle evergreen waterfall moonlight \\) are equal and are bisected by the same straight line. What other pairs of angles must be equal?",
+      "solution": "First Solution. Consider the ellipsoid of revolution \\( \\mathcal{labyrinth}_{1} \\), with foci \\( parchment \\) and \\( limestone \\), which passes through the given point \\( waterfall . \\mathcal{labyrinth}_{1} \\) is the locus of all points \\( sandstone \\) such that \\( |parchment sandstone|+|sandstone limestone|=|parchment waterfall|+|waterfall limestone| \\) and points \\( birchwood \\) interior to \\( chrysanthemum_{1} \\) satisfy \\( |parchment birchwood|+|birchwood limestone|<|parchment waterfall|+|waterfall limestone| \\). Let \\( \\mathcal{curiosity}_{2} \\) be the ellipsoid of revolution, with foci \\( evergreen \\) and \\( moonlight \\), which passes through \\( waterfall \\). Since \\( waterfall \\) minimizes the sum of the distances \\( |waterfall parchment|+|waterfall limestone|+|waterfall evergreen|+|waterfall moonlight| \\), the ellipsoids \\( chrysanthemum_{1} \\) and \\( \\mathcal{curiosity}_{2} \\) can have no interior point in common. Thus they are tangent and have a common normal line \\( hummingbird \\) at \\( waterfall \\), which intersects the segments \\( parchment limestone \\) and \\( evergreen moonlight \\). By the reflection property of the ellipse, \\( hummingbird \\) bisects the angles \\( parchment waterfall limestone \\) and \\( evergreen waterfall moonlight \\).\n\nTo show that these last two angles are equal, consider points \\( saffronia, graniteor \\), \\( lavendera \\), and \\( obsidiane \\) on the rays \\( waterfall parchment, waterfall limestone, waterfall evergreen \\), and \\( waterfall moonlight \\), respectively, such that \\( \\left|waterfall saffronia\\right|=\\left|waterfall graniteor\\right|=\\left|waterfall lavendera\\right|=\\left|waterfall obsidiane\\right|=1 \\), for example. Line \\( hummingbird \\) meets segment \\( saffronia graniteor \\) at its midpoint \\( cloudtree \\) and meets segment \\( lavendera obsidiane \\) at its midpoint \\( brookline \\). Thus \\( waterfall \\) is on the line joining the midpoints of two opposite edges of the new tetrahedron \\( saffronia graniteor lavendera obsidiane \\). A similar argument shows that \\( waterfall \\) is on the line joining the midpoints of \\( saffronia lavendera \\) and \\( graniteor obsidiane \\), say \\( windchime \\) and \\( wildfire \\). But \\( cloudtree, brookline, wildfire \\), \\( windchime \\) are the vertices of a parallelogram, and \\( waterfall \\) is the intersection of its diagonals. Hence \\( waterfall \\) bisects \\( cloudtree brookline \\), and it follows that triangles \\( saffronia waterfall graniteor \\) and \\( lavendera waterfall obsidiane \\) are congruent. Hence \\( \\angle parchment waterfall limestone=\\angle evergreen waterfall moonlight \\). Likewise, it can be shown that \\( \\angle parchment waterfall evergreen=\\angle limestone waterfall moonlight \\) and \\( \\angle parchment waterfall moonlight=\\angle limestone waterfall evergreen \\).\n\nSecond Solution. In Euclidean 3-space (or even in Euclidean \\( n \\)-space), the function \\( cinnamon(sandstone)=|parchment sandstone| \\), the distance between the fixed point \\( parchment \\) and the variable point \\( sandstone \\), is differentiable at all points except \\( parchment \\). The gradient \\( \\left(\\nabla cinnamon\\right)(sandstone) \\) is the unit vector in the direction from \\( parchment \\) to \\( sandstone \\). [This is geometrically obvious, since at any point the distance from \\( parchment \\) to that point increases most rapidly in the direction away from \\( parchment \\). It is a unit vector, since the distance from \\( parchment \\) increases at the same rate as the distance from \\( sandstone \\).]\n\nChoose a coordinate system with \\( waterfall \\) at the origin. We are given that the function\n\\[\ncornflower=cinnamon+butternut+marigold+peppermint\n\\]\nhas its minimum at \\( waterfall \\) and that \\( waterfall \\) is none of the points \\( parchment, limestone, evergreen \\), or \\( moonlight \\). Since \\( cornflower \\) is differentiable at \\( waterfall \\), we have\n\\[\n(\\nabla cornflower)(waterfall)=0,\n\\]\nthat is,\n\\[\n\\left(\\nabla cinnamon\\right)(waterfall)+\\left(\\nabla butternut\\right)(waterfall)+\\left(\\nabla marigold\\right)(waterfall)+\\left(\\nabla peppermint\\right)(waterfall)=0 .\n\\]\n\nWe have already noted that \\( \\left(\\nabla cinnamon\\right)(waterfall) \\) is the unit vector from \\( waterfall \\) to \\( parchment \\). Hence, with a sign change, (1) becomes\n\\[\n\\mathbf{snowflake}+\\mathbf{thunderbolt}+\\mathbf{dragonfly}+\\mathbf{strawberry}=0,\n\\]\nwhere \\( \\mathbf{snowflake}, \\mathbf{thunderbolt}, \\mathbf{dragonfly} \\), and \\( \\mathbf{strawberry} \\) are the unit vectors from \\( waterfall \\) to \\( parchment, limestone, evergreen \\), and \\( moonlight \\), respectively. Since \\( waterfall \\) is inside the given tetrahedron, no two of these unit vectors are collinear. The sum of two non-collinear unit vectors has the direction of the bisector of the angle formed by them. Hence, when (2) is rewritten as\n\\[\n\\mathbf{snowflake}+\\mathbf{thunderbolt}=-(\\mathbf{dragonfly}+\\mathbf{strawberry}),\n\\]\nwe see that the bisector of \\( \\angle parchment waterfall limestone \\) is opposite to that of \\( \\angle evergreen waterfall moonlight \\); that is, these angles are bisected by the same straight line. It also follows from (3) that\n\\[\n(\\mathbf{snowflake}+\\mathbf{thunderbolt}, \\mathbf{snowflake}+\\mathbf{thunderbolt})=(\\mathbf{dragonfly}+\\mathbf{strawberry}, \\mathbf{dragonfly}+\\mathbf{strawberry})\n\\]\nwhich reduces (because \\( \\mathbf{snowflake}, \\mathbf{thunderbolt}, \\mathbf{dragonfly} \\), and \\( \\mathbf{strawberry} \\) are unit vectors) to\n\\[\n(\\mathbf{snowflake}, \\mathbf{thunderbolt})=(\\mathbf{dragonfly}, \\mathbf{strawberry}),\n\\]\nwhich tells us that the angle between \\( \\mathbf{snowflake} \\) and \\( \\mathbf{thunderbolt} \\) is the same as the angle between \\( \\mathbf{dragonfly} \\) and \\( \\mathbf{strawberry} \\), i.e.,\n\\[\n\\angle parchment waterfall limestone=\\angle evergreen waterfall moonlight .\n\\]\n\nSimilarly, \\( \\angle parchment waterfall evergreen=\\angle limestone waterfall moonlight \\) and \\( \\angle parchment waterfall moonlight=\\angle limestone waterfall evergreen \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P": "exteriorpt",
+        "X": "nonfocalpt",
+        "Y": "boundarypt",
+        "l": "curvepath",
+        "g": "maxifunc",
+        "f_A": "nonmetric",
+        "f_B": "nonmeasure",
+        "f_C": "nonspacing",
+        "f_D": "nonradius",
+        "a": "pushvector",
+        "b": "shovevector",
+        "c": "pressvector",
+        "d": "thrustvect",
+        "A": "oppositea",
+        "B": "oppositeb",
+        "C": "oppositec",
+        "D": "opposited",
+        "A_1": "remotinga",
+        "B_1": "remotingb",
+        "C_1": "remotingc",
+        "D_1": "remotingd",
+        "M": "noncenter",
+        "N": "nonvertex",
+        "Q": "nonpointq",
+        "R": "nonpointr",
+        "E_1": "flatshape",
+        "E_2": "blockshape",
+        "\\varepsilon_1": "hollowset"
+      },
+      "question": "4. Given that \\( exteriorpt \\) is a point inside a tetrahedron with vertices at \\( oppositea, oppositeb, oppositec \\), and \\( opposited \\), such that the sum of the distances \\( exteriorpt\\ oppositea+exteriorpt\\ oppositeb+exteriorpt\\ oppositec+exteriorpt\\ opposited \\) is a minimum, show that the two angles \\( \\angle oppositea\\ exteriorpt\\ oppositeb \\) and \\( \\angle oppositec\\ exteriorpt\\ opposited \\) are equal and are bisected by the same straight line. What other pairs of angles must be equal?",
+      "solution": "First Solution. Consider the ellipsoid of revolution \\( \\mathcal{flatshape}_{1} \\), with foci \\( oppositea \\) and \\( oppositeb \\), which passes through the given point \\( exteriorpt . \\mathcal{flatshape}_{1} \\) is the locus of all points \\( nonfocalpt \\) such that \\( |oppositea nonfocalpt|+|nonfocalpt oppositeb|=|oppositea exteriorpt|+|exteriorpt oppositeb| \\) and points \\( boundarypt \\) interior to \\( hollowset \\) satisfy \\( |oppositea boundarypt|+|boundarypt oppositeb|<|oppositea exteriorpt|+|exteriorpt oppositeb| \\). Let \\( \\mathcal{blockshape}_{2} \\) be the ellipsoid of revolution, with foci \\( oppositec \\) and \\( opposited \\), which passes through \\( exteriorpt \\). Since \\( exteriorpt \\) minimizes the sum of the distances \\( |exteriorpt oppositea|+|exteriorpt oppositeb|+|exteriorpt oppositec|+|exteriorpt opposited| \\), the ellipsoids \\( hollowset \\) and \\( \\mathcal{blockshape}_{2} \\) can have no interior point in common. Thus they are tangent and have a common normal line \\( curvepath \\) at \\( exteriorpt \\), which intersects the segments \\( oppositea oppositeb \\) and \\( oppositec opposited \\). By the reflection property of the ellipse, \\( curvepath \\) bisects the angles \\( oppositea exteriorpt oppositeb \\) and \\( oppositec exteriorpt opposited \\).\n\nTo show that these last two angles are equal, consider points \\( remotinga, remotingb \\), \\( remotingc \\), and \\( remotingd \\) on the rays \\( exteriorpt oppositea, exteriorpt oppositeb, exteriorpt oppositec \\), and \\( exteriorpt opposited \\), respectively, such that \\( \\left|exteriorpt remotinga\\right|=\\left|exteriorpt remotingb\\right|=\\left|exteriorpt remotingc\\right|=\\left|exteriorpt remotingd\\right|=1 \\), for example. Line \\( curvepath \\) meets segment \\( remotinga remotingb \\) at its midpoint \\( noncenter \\) and meets segment \\( remotingc remotingd \\) at its midpoint \\( nonvertex \\). Thus \\( exteriorpt \\) is on the line joining the midpoints of two opposite edges of the new tetrahedron \\( remotinga remotingb remotingc remotingd \\). A similar argument shows that \\( exteriorpt \\) is on the line joining the midpoints of \\( remotinga remotingc \\) and \\( remotingb remotingd \\), say \\( nonpointq \\) and \\( nonpointr \\). But \\( noncenter, nonvertex, nonpointr, nonpointq \\) are the vertices of a parallelogram, and \\( exteriorpt \\) is the intersection of its diagonals. Hence \\( exteriorpt \\) bisects \\( noncenter nonvertex \\), and it follows that triangles \\( remotinga exteriorpt remotingb \\) and \\( remotingc exteriorpt remotingd \\) are congruent. Hence \\( \\angle oppositea exteriorpt oppositeb=\\angle oppositec exteriorpt opposited \\). Likewise, it can be shown that \\( \\angle oppositea exteriorpt oppositec=\\angle oppositeb exteriorpt opposited \\) and \\( \\angle oppositea exteriorpt opposited=\\angle oppositeb exteriorpt oppositec \\).\n\nSecond Solution. In Euclidean 3-space (or even in Euclidean \\( n \\)-space), the function \\( nonmetric(nonfocalpt)=|oppositea nonfocalpt| \\), the distance between the fixed point \\( oppositea \\) and the variable point \\( nonfocalpt \\), is differentiable at all points except \\( oppositea \\). The gradient \\( \\left(\\nabla nonmetric\\right)(nonfocalpt) \\) is the unit vector in the direction from \\( oppositea \\) to \\( nonfocalpt \\). [This is geometrically obvious, since at any point the distance from \\( oppositea \\) to that point increases most rapidly in the direction away from \\( oppositea \\). It is a unit vector, since the distance from \\( oppositea \\) increases at the same rate as the distance from \\( nonfocalpt \\).]\n\nChoose a coordinate system with \\( exteriorpt \\) at the origin. We are given that the function\n\\[\nmaxifunc=nonmetric+nonmeasure+nonspacing+nonradius\n\\]\nhas its minimum at \\( exteriorpt \\) and that \\( exteriorpt \\) is none of the points \\( oppositea, oppositeb, oppositec \\), or \\( opposited \\). Since \\( maxifunc \\) is differentiable at \\( exteriorpt \\), we have\n\\[\n(\\nabla maxifunc)(exteriorpt)=0,\n\\]\nthat is,\n\\[\n\\left(\\nabla nonmetric\\right)(exteriorpt)+\\left(\\nabla nonmeasure\\right)(exteriorpt)+\\left(\\nabla nonspacing\\right)(exteriorpt)+\\left(\\nabla nonradius\\right)(exteriorpt)=0 .\n\\]\n\nWe have already noted that \\( \\left(\\nabla nonmetric\\right)(exteriorpt) \\) is the unit vector from \\( exteriorpt \\) to \\( oppositea \\). Hence, with a sign change, (1) becomes\n\\[\n\\mathbf{pushvector}+\\mathbf{shovevector}+\\mathbf{pressvector}+\\mathbf{thrustvect}=0,\n\\]\nwhere \\( \\mathbf{pushvector}, \\mathbf{shovevector}, \\mathbf{pressvector} \\), and \\( \\mathbf{thrustvect} \\) are the unit vectors from \\( exteriorpt \\) to \\( oppositea, oppositeb, oppositec \\), and \\( opposited \\), respectively. Since \\( exteriorpt \\) is inside the given tetrahedron, no two of these unit vectors are collinear. The sum of two non-collinear unit vectors has the direction of the bisector of the angle formed by them. Hence, when (2) is rewritten as\n\\[\n\\mathbf{pushvector}+\\mathbf{shovevector}=-(\\mathbf{pressvector}+\\mathbf{thrustvect}),\n\\]\nwe see that the bisector of \\( \\angle oppositea exteriorpt oppositeb \\) is opposite to that of \\( \\angle oppositec exteriorpt opposited \\); that is, these angles are bisected by the same straight line. It also follows from (3) that\n\\[\n(\\mathbf{pushvector}+\\mathbf{shovevector}, \\mathbf{pushvector}+\\mathbf{shovevector})=(\\mathbf{pressvector}+\\mathbf{thrustvect}, \\mathbf{pressvector}+\\mathbf{thrustvect})\n\\]\nwhich reduces (because \\( \\mathbf{pushvector}, \\mathbf{shovevector}, \\mathbf{pressvector} \\), and \\( \\mathbf{thrustvect} \\) are unit vectors) to\n\\[\n(\\mathbf{pushvector}, \\mathbf{shovevector})=(\\mathbf{pressvector}, \\mathbf{thrustvect}),\n\\]\nwhich tells us that the angle between \\( \\mathbf{pushvector} \\) and \\( \\mathbf{shovevector} \\) is the same as the angle between \\( \\mathbf{pressvector} \\) and \\( \\mathbf{thrustvect} \\), i.e.,\n\\[\n\\angle oppositea exteriorpt oppositeb=\\angle oppositec exteriorpt opposited .\n\\]\n\nSimilarly, \\( \\angle oppositea exteriorpt oppositec=\\angle oppositeb exteriorpt opposited \\) and \\( \\angle oppositea exteriorpt opposited=\\angle oppositeb exteriorpt oppositec \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "P": "qzxwvtnp",
+        "X": "hjgrksla",
+        "Y": "nmbtcxqo",
+        "l": "zfgtrmwe",
+        "g": "plokijuh",
+        "f_A": "ybdkcefl",
+        "f_B": "rvhopqta",
+        "f_C": "uizlkrnp",
+        "f_D": "ojchbtye",
+        "a": "ghvmlnpo",
+        "b": "ksdarqwe",
+        "c": "pxneqlrz",
+        "d": "vmbtiyok",
+        "A": "wmlkpsud",
+        "B": "cqznhvtr",
+        "C": "sgdjmpxe",
+        "D": "hrvfbyla",
+        "A_1": "utdbqwre",
+        "B_1": "rnpaqksh",
+        "C_1": "mefhzlty",
+        "D_1": "xgpcvorb",
+        "M": "ypzkruwa",
+        "N": "tbqlsndf",
+        "Q": "fjdmyhcz",
+        "R": "kztarswg",
+        "E_1": "dlwpqnez",
+        "E_2": "ayrntxum",
+        "\\varepsilon_1": "exbqsdjp"
+      },
+      "question": "Given that \\( qzxwvtnp \\) is a point inside a tetrahedron with vertices at \\( wmlkpsud, cqznhvtr, sgdjmpxe \\), and \\( hrvfbyla \\), such that the sum of the distances \\( qzxwvtnp wmlkpsud+qzxwvtnp cqznhvtr+qzxwvtnp sgdjmpxe+qzxwvtnp hrvfbyla \\) is a minimum, show that the two angles \\( \\angle wmlkpsud qzxwvtnp cqznhvtr \\) and \\( \\angle sgdjmpxe qzxwvtnp hrvfbyla \\) are equal and are bisected by the same straight line. What other pairs of angles must be equal?",
+      "solution": "First Solution. Consider the ellipsoid of revolution \\( dlwpqnez \\), with foci \\( wmlkpsud \\) and \\( cqznhvtr \\), which passes through the given point \\( qzxwvtnp . dlwpqnez \\) is the locus of all points \\( hjgrksla \\) such that \\( |wmlkpsud hjgrksla|+|hjgrksla cqznhvtr|=|wmlkpsud qzxwvtnp|+|qzxwvtnp cqznhvtr| \\) and points \\( nmbtcxqo \\) interior to \\( exbqsdjp \\) satisfy \\( |wmlkpsud nmbtcxqo|+|nmbtcxqo cqznhvtr|<|wmlkpsud qzxwvtnp|+|qzxwvtnp cqznhvtr| \\). Let \\( ayrntxum \\) be the ellipsoid of revolution, with foci \\( sgdjmpxe \\) and \\( hrvfbyla \\), which passes through \\( qzxwvtnp \\). Since \\( qzxwvtnp \\) minimizes the sum of the distances \\( |qzxwvtnp wmlkpsud|+|qzxwvtnp cqznhvtr|+|qzxwvtnp sgdjmpxe|+|qzxwvtnp hrvfbyla| \\), the ellipsoids \\( exbqsdjp \\) and \\( ayrntxum \\) can have no interior point in common. Thus they are tangent and have a common normal line \\( zfgtrmwe \\) at \\( qzxwvtnp \\), which intersects the segments \\( wmlkpsud cqznhvtr \\) and \\( sgdjmpxe hrvfbyla \\). By the reflection property of the ellipse, \\( zfgtrmwe \\) bisects the angles \\( wmlkpsud qzxwvtnp cqznhvtr \\) and sgdjmpxe qzxwvtnp hrvfbyla.\n\nTo show that these last two angles are equal, consider points \\( utdbqwre, rnpaqksh \\), \\( mefhzlty \\), and \\( xgpcvorb \\) on the rays \\( qzxwvtnp wmlkpsud, qzxwvtnp cqznhvtr, qzxwvtnp sgdjmpxe \\), and \\( qzxwvtnp hrvfbyla \\), respectively, such that \\( \\left|qzxwvtnp utdbqwre\\right|=\\left|qzxwvtnp rnpaqksh\\right|=\\left|qzxwvtnp mefhzlty\\right|=\\left|qzxwvtnp xgpcvorb\\right|=1 \\), for example. Line \\( zfgtrmwe \\) meets segment \\( utdbqwre rnpaqksh \\) at its midpoint \\( ypzkruwa \\) and meets segment \\( mefhzlty xgpcvorb \\) at its midpoint \\( tbqlsndf \\). Thus \\( qzxwvtnp \\) is on the line joining the midpoints of two opposite edges of the new tetrahedron \\( utdbqwre rnpaqksh mefhzlty xgpcvorb \\). A similar argument shows that \\( qzxwvtnp \\) is on the line joining the midpoints of \\( utdbqwre mefhzlty \\) and \\( rnpaqksh xgpcvorb \\), say \\( fjdmyhcz \\) and \\( kztarswg \\). But \\( ypzkruwa, tbqlsndf, kztarswg \\), \\( fjdmyhcz \\) are the vertices of a parallelogram, and \\( qzxwvtnp \\) is the intersection of its diagonals. Hence \\( qzxwvtnp \\) bisects \\( ypzkruwa tbqlsndf \\), and it follows that triangles \\( utdbqwre qzxwvtnp rnpaqksh \\) and \\( mefhzlty qzxwvtnp xgpcvorb \\) are congruent. Hence \\( \\angle wmlkpsud qzxwvtnp cqznhvtr=\\angle sgdjmpxe qzxwvtnp hrvfbyla \\). Likewise, it can be shown that \\( \\angle wmlkpsud qzxwvtnp sgdjmpxe=\\angle cqznhvtr qzxwvtnp hrvfbyla \\) and \\( \\angle wmlkpsud qzxwvtnp hrvfbyla=\\angle cqznhvtr qzxwvtnp sgdjmpxe \\).\n\nSecond Solution. In Euclidean 3-space (or even in Euclidean \\( n \\)-space), the function \\( ybdkcefl(hjgrksla)=|wmlkpsud hjgrksla| \\), the distance between the fixed point \\( wmlkpsud \\) and the variable point \\( hjgrksla \\), is differentiable at all points except \\( wmlkpsud \\). The gradient \\( \\left(\\nabla ybdkcefl\\right)(hjgrksla) \\) is the unit vector in the direction from \\( wmlkpsud \\) to \\( hjgrksla \\). [This is geometrically obvious, since at any point the distance from \\( wmlkpsud \\) to that point increases most rapidly in the direction away from \\( wmlkpsud \\). It is a unit vector, since the distance from \\( wmlkpsud \\) increases at the same rate as the distance from \\( hjgrksla \\).]\n\nChoose a coordinate system with \\( qzxwvtnp \\) at the origin. We are given that the function\n\\[\nplokijuh=ybdkcefl+rvhopqta+uizlkrnp+ojchbtye\n\\]\nhas its minimum at \\( qzxwvtnp \\) and that \\( qzxwvtnp \\) is none of the points \\( wmlkpsud, cqznhvtr, sgdjmpxe \\), or \\( hrvfbyla \\). Since \\( plokijuh \\) is differentiable at \\( qzxwvtnp \\), we have\n\\[\n(\\nabla plokijuh)(qzxwvtnp)=0,\n\\]\nthat is,\n\\[\n\\left(\\nabla ybdkcefl\\right)(qzxwvtnp)+\\left(\\nabla rvhopqta\\right)(qzxwvtnp)+\\left(\\nabla uizlkrnp\\right)(qzxwvtnp)+\\left(\\nabla ojchbtye\\right)(qzxwvtnp)=0 .\n\\]\n\nWe have already noted that \\( \\left(\\nabla ybdkcefl\\right)(qzxwvtnp) \\) is the unit vector from \\( qzxwvtnp \\) to \\( wmlkpsud \\). Hence, with a sign change, (1) becomes\n\\[\nghvmlnpo+ksdarqwe+pxneqlrz+vmbtiyok=0,\n\\]\nwhere \\( ghvmlnpo, ksdarqwe, pxneqlrz \\), and \\( vmbtiyok \\) are the unit vectors from \\( qzxwvtnp \\) to \\( wmlkpsud, cqznhvtr, sgdjmpxe \\), and \\( hrvfbyla \\), respectively. Since \\( qzxwvtnp \\) is inside the given tetrahedron, no two of these unit vectors are collinear. The sum of two non-collinear unit vectors has the direction of the bisector of the angle formed by them. Hence, when (2) is rewritten as\n\\[\nghvmlnpo+ksdarqwe=-(pxneqlrz+vmbtiyok),\n\\]\nwe see that the bisector of \\( \\angle wmlkpsud qzxwvtnp cqznhvtr \\) is opposite to that of \\( \\angle sgdjmpxe qzxwvtnp hrvfbyla \\); that is, these angles are bisected by the same straight line. It also follows from (3) that\n\\[\n(ghvmlnpo+ksdarqwe, ghvmlnpo+ksdarqwe)=(pxneqlrz+vmbtiyok, pxneqlrz+vmbtiyok)\n\\]\nwhich reduces (because \\( ghvmlnpo, ksdarqwe, pxneqlrz \\), and \\( vmbtiyok \\) are unit vectors) to\n\\[\n(ghvmlnpo, ksdarqwe)=(pxneqlrz, vmbtiyok),\n\\]\nwhich tells us that the angle between \\( ghvmlnpo \\) and \\( ksdarqwe \\) is the same as the angle between \\( pxneqlrz \\) and vmbtiyok, i.e.,\n\\[\n\\angle wmlkpsud qzxwvtnp cqznhvtr=\\angle sgdjmpxe qzxwvtnp hrvfbyla .\n\\]\n\nSimilarly, \\( \\angle wmlkpsud qzxwvtnp sgdjmpxe=\\angle cqznhvtr qzxwvtnp hrvfbyla \\) and \\( \\angle wmlkpsud qzxwvtnp hrvfbyla=\\angle cqznhvtr qzxwvtnp sgdjmpxe \\)."
+    },
+    "kernel_variant": {
+      "question": "Let W, X, Y, Z be four affinely-independent points in Euclidean four-space \\mathbb{R}^4 and let \\Delta  = WXYZ be the 3-simplex that they span.  A point P is situated in the interior of \\Delta  and is an interior \nlocal minimiser of the function\n\nT(Q)=|QW|+|QX|+|QY|+|QZ|,  Q\\in \\mathbb{R}^4.\n\na)  Prove that the two angles \\angle WPX and \\angle YPZ are equal and are bisected by the same straight line through P.\n\nb)  Determine all other pairs of angles at P that must necessarily be equal.",
+      "solution": "We work in a coordinate system with origin at P (so P is the point 0).  For any vertex V write the vector \\(\\vec{PV}\\) simply as the boldface lower-case letter v.\n\nStep 1.  The vanishing gradient.\nFor a fixed point v the map \\(f_v(Q)=|Qv|\\) is differentiable away from v and\n\\[\\nabla f_v(Q)=\\frac{Q-v}{|Q-v|}.\\]\nEvaluated at Q=0 it equals \\(-\\dfrac{v}{|v|}\\).  Hence, with\n\\[\\alpha =\\frac{w}{|w|},\\;\\beta =\\frac{x}{|x|},\\;\\gamma =\\frac{y}{|y|},\\;\\delta =\\frac{z}{|z|},\\]\nwe have at P\n\\[\\nabla T(P)=-(\\alpha +\\beta +\\gamma +\\delta ).\n\\]\nBecause P is a (local) minimiser, \\(\\nabla T(P)=0\\); therefore\n\\[\\alpha +\\beta +\\gamma +\\delta =0.  \\tag{1}\\]\n\nStep 2.  No two of the four rays are collinear.\nSuppose, for a contradiction, that \\alpha  and \\beta  are collinear; then w and x lie on the same line through P.  There is a non-zero real number k with w = kx.\nBecause P lies in the interior of \\Delta , there exist positive barycentric coefficients \\lambda _W,\\lambda _X,\\lambda _Y,\\lambda _Z (summing to 1) that satisfy\n\\[\\lambda _W w + \\lambda _X x + \\lambda _Y y + \\lambda _Z z = 0.\\tag{2}\\]\nSubstituting w = kx into (2) gives\n\\[(k\\lambda _W+\\lambda _X)x + \\lambda _Y y + \\lambda _Z z = 0.\\tag{3}\\]\nThe vectors x, y, z are linearly independent (W, X, Y, Z are affinely independent and w is a multiple of x), so the three coefficients in (3) must vanish:\n\\[k\\lambda _W+\\lambda _X = 0,\\quad \\lambda _Y = 0,\\quad \\lambda _Z = 0.\\]\nBut \\lambda _Y and \\lambda _Z are required to be positive---contradiction.  Consequently no two of the unit vectors \\alpha ,\\beta ,\\gamma ,\\delta  are collinear and every angle determined by the four rays PW, PX, PY, PZ is strictly between 0 and \\pi .\n\nStep 3.  A common bisector for \\angle WPX and \\angle YPZ.\nBecause \\alpha  and \\beta  are not collinear, the vector \\alpha +\\beta  bisects the ordinary (non-straight) angle \\angle WPX; likewise \\gamma +\\delta  bisects \\angle YPZ.  From (1)\n\\[\\alpha +\\beta  = -(\\gamma +\\delta ).\\tag{4}\\]\nThus the two bisecting vectors are equal in magnitude and opposite in direction---they lie on one and the same line through P.  This line therefore bisects both angles.\n\nStep 4.  Equality of the two angles.\nTake squared norms in (4):\n\\[|\\alpha +\\beta |^2 = |\\gamma +\\delta |^2 \\;\\Longrightarrow\\; \\alpha \\cdot \\beta  = \\gamma \\cdot \\delta .\\]\nSince \\alpha \\cdot \\beta  = cos\\angle WPX and \\gamma \\cdot \\delta  = cos\\angle YPZ, the two angles have the same cosine and, being acute or obtuse but not straight, must be equal:\n\\[\\angle WPX = \\angle YPZ.\\]\nThis proves part (a).\n\nStep 5.  The remaining equal-angle pairs.\nThe vanishing-sum identity (1) can be rearranged cyclically:\n\\[\\alpha +\\gamma  = -(\\beta +\\delta ),\\qquad \\alpha +\\delta  = -(\\beta +\\gamma ).\\]\nExactly the same reasoning as above shows\n\\[\\angle WPY = \\angle XPZ,\\qquad \\angle WPZ = \\angle XPY,\\]\nand that each pair shares a common bisector.  These are the only further equalities: every vertex index appears once on each side of the equation, so no other unordered pair of angles can be forced equal by (1).\n\nConsequently the three pairs of opposite angles determined by the four rays PW, PX, PY and PZ are equal and each pair is bisected by a single line through P.\n\n\\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "At an interior minimum of the distance-sum, the gradient of g(X)=XA+XB+XC+XD vanishes.",
+          "Hence the unit vectors a,b,c,d from P toward A,B,C,D satisfy a+b+c+d = 0.",
+          "Because the sum of two non-collinear unit vectors points along the angle-bisector of the pair, a+b is the bisector of ∠APB and c+d is the bisector of ∠CPD.",
+          "Equality a+b = −(c+d) forces the two bisectors to coincide and implies |∠APB| = |∠CPD|; repeating with other pairings gives the remaining equal-angle statements."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Ambient Euclidean dimension in which the four points lie; angles and gradients are still defined.",
+            "original": "3"
+          },
+          "slot2": {
+            "description": "Name/ordering of the four fixed vertices; any distinct labels work.",
+            "original": "A, B, C, D"
+          },
+          "slot3": {
+            "description": "Geometric description of the convex hull; ‘tetrahedron’ can be replaced by ‘simplex with four non-coplanar vertices’.",
+            "original": "tetrahedron"
+          },
+          "slot4": {
+            "description": "Global minimum can be weakened to ‘interior critical point (local minimum)’; gradient-zero argument is unchanged.",
+            "original": "sum PA+PB+PC+PD is a minimum"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

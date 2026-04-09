@@ -1,0 +1,139 @@
+{
+  "index": "2004-B-4",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $n$ be a positive integer, $n \\ge\n2$, and put  $\\theta = 2 \\pi / n$.\nDefine points $P_k = (k,0)$ in the $xy$-plane, for $k = 1, 2\n, \\dots, n$.\nLet $R_k$ be the map that rotates the plane counterclockwise by the\nangle $\\theta$ about the point $P_k$.  Let $R$ denote the map obtained\nby applying, in order, $R_1$,  then $R_2, \\dots$,\nthen $R_n$.\nFor an arbitrary point $(x,y)$, find, and simplify, the coordinates\nof $R(x,y)$.",
+  "solution": "\\textbf{First solution:}\nIdentify the $xy$-plane with the complex plane $\\mathbb{C}$, so that\n$P_k$ is the real number $k$. If $z$ is sent to $z'$ by a\ncounterclockwise rotation by $\\theta$ about $P_k$, then $z'-k =\ne^{i\\theta} (z-k)$; hence the rotation $R_k$ sends $z$ to $\\zeta z +\nk (1-\\zeta)$, where $\\zeta = e^{2\\pi i/n}$. It follows that $R_1$\nfollowed by $R_2$ sends $z$ to $\\zeta(\\zeta z +(1-\\zeta)) + 2\n(1-\\zeta) = \\zeta^2 z + (1-\\zeta)(\\zeta + 2)$, and so forth; an easy\ninduction shows that $R$ sends $z$ to\n\\[\n\\zeta^n z + (1-\\zeta)(\\zeta^{n-1} + 2 \\zeta^{n-2} + \\dots + (n-1)\n\\zeta + n).\n\\]\nExpanding the product $(1-\\zeta)(\\zeta^{n-1} + 2 \\zeta^{n-2} + \\dots\n+ (n-1) \\zeta + n)$ yields $-\\zeta^n - \\zeta^{n-1} - \\dots - \\zeta +\nn = n$. Thus $R$ sends $z$ to $z+n$; in cartesian coordinates,\n$R(x,y) = (x+n,y)$.\n\n\\textbf{Second solution:}\n(by Andy Lutomirski, via Ravi Vakil)\nImagine a regular $n$-gon of side length 1 placed with its top edge\non the $x$-axis and the left endpoint of that edge\nat the origin. Then the rotations\ncorrespond to rolling this $n$-gon along the $x$-axis; after the\n$n$ rotations, it clearly ends up in its original rotation and translated\n$n$ units to the right. Hence the whole plane must do so as well.\n\n\\textbf{Third solution:} (attribution unknown)\nViewing each $R_k$ as a function of a complex number $z$ as in the\nfirst solution, the function $R_n \\circ R_{n-1} \\circ \\cdots \\circ\nR_1(z)$ is linear in $z$ with slope $\\zeta^n = 1$. It thus equals\n$z + T$ for some $T \\in \\CC$. Since $f_1(1) = 1$, we can write\n$1+T = R_n \\circ \\cdots \\circ R_2(1)$. However, we also have\n\\[\nR_n \\circ \\cdots \\circ R_2(1) = R_{n-1} \\circ R_1(0) + 1\n\\]\nby the symmetry in how the $R_i$ are defined. Hence\n\\[\nR_n(1+T) = R_n \\circ R_1(0) + R_n(1) = T + R_n(1);\n\\]\nthat is, $R_n(T) = T$. Hence $T = n$, as desired.",
+  "vars": [
+    "x",
+    "y",
+    "k",
+    "z"
+  ],
+  "params": [
+    "n",
+    "\\\\theta",
+    "P_k",
+    "R_k",
+    "R",
+    "\\\\zeta",
+    "T",
+    "f_1"
+  ],
+  "sci_consts": [
+    "e",
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xcoord",
+        "y": "ycoord",
+        "k": "indexk",
+        "z": "complexz",
+        "n": "integern",
+        "\\theta": "angleth",
+        "P_k": "pointk",
+        "R_k": "rotatek",
+        "R": "rotsequence",
+        "\\zeta": "rootunity",
+        "T": "translationt",
+        "f_1": "funcone"
+      },
+      "question": "Let $integern$ be a positive integer, $integern \\ge 2$, and put  $angleth = 2 \\pi / integern$.\nDefine points $pointk = (indexk,0)$ in the $xcoord ycoord$-plane, for $indexk = 1, 2 , \\dots, integern$.\nLet $rotatek$ be the map that rotates the plane counterclockwise by the angle $angleth$ about the point $pointk$.  Let $rotsequence$ denote the map obtained by applying, in order, $rotsequence_1$,  then $rotsequence_2, \\dots$, then $rotsequence_{integern}$.\nFor an arbitrary point $(xcoord,ycoord)$, find, and simplify, the coordinates of $rotsequence(xcoord,ycoord)$.",
+      "solution": "\\textbf{First solution:}\nIdentify the $xcoord ycoord$-plane with the complex plane $\\mathbb{C}$, so that\n$pointk$ is the real number $indexk$. If $complexz$ is sent to $complexz'$ by a\ncounterclockwise rotation by $angleth$ about $pointk$, then $complexz'-indexk =\ne^{i angleth} (complexz-indexk)$; hence the rotation $rotatek$ sends $complexz$ to $rootunity complexz +\nindexk (1-rootunity)$, where $rootunity = e^{2\\pi i/integern}$. It follows that $rotsequence_1$\nfollowed by $rotsequence_2$ sends $complexz$ to $rootunity(rootunity complexz +(1-rootunity)) + 2\n(1-rootunity) = rootunity^2 complexz + (1-rootunity)(rootunity + 2)$, and so forth; an easy\ninduction shows that $rotsequence$ sends $complexz$ to\n\\[\nrootunity^{integern} complexz + (1-rootunity)(rootunity^{integern-1} + 2 rootunity^{integern-2} + \\dots + (integern-1)\nrootunity + integern).\n\\]\nExpanding the product $(1-rootunity)(rootunity^{integern-1} + 2 rootunity^{integern-2} + \\dots\n+ (integern-1) rootunity + integern)$ yields $-rootunity^{integern} - rootunity^{integern-1} - \\dots - rootunity +\nintegern = integern$. Thus $rotsequence$ sends $complexz$ to $complexz+integern$; in cartesian coordinates,\n$rotsequence(xcoord,ycoord) = (xcoord+integern,ycoord)$.\n\n\\textbf{Second solution:}\nImagine a regular $integern$-gon of side length 1 placed with its top edge\non the $xcoord$-axis and the left endpoint of that edge\nat the origin. Then the rotations\ncorrespond to rolling this $integern$-gon along the $xcoord$-axis; after the\n$integern$ rotations, it clearly ends up in its original rotation and translated\n$integern$ units to the right. Hence the whole plane must do so as well.\n\n\\textbf{Third solution:} (attribution unknown)\nViewing each $rotatek$ as a function of a complex number $complexz$ as in the\nfirst solution, the function $rotsequence_{integern} \\circ rotsequence_{integern-1} \\circ \\cdots \\circ\nrotsequence_1(complexz)$ is linear in $complexz$ with slope $rootunity^{integern} = 1$. It thus equals\n$complexz + translationt$ for some $translationt \\in \\CC$. Since $funcone(1) = 1$, we can write\n$1+translationt = rotsequence_{integern} \\circ \\cdots \\circ rotsequence_2(1)$. However, we also have\n\\[\nrotsequence_{integern} \\circ \\cdots \\circ rotsequence_2(1) = rotsequence_{integern-1} \\circ rotsequence_1(0) + 1\n\\]\nby the symmetry in how the $rotsequence_i$ are defined. Hence\n\\[\nrotsequence_{integern}(1+translationt) = rotsequence_{integern} \\circ rotsequence_1(0) + rotsequence_{integern}(1) = translationt + rotsequence_{integern}(1);\n\\]\nthat is, $rotsequence_{integern}(translationt) = translationt$. Hence $translationt = integern$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "windsurfer",
+        "y": "raincloud",
+        "k": "teacupset",
+        "z": "lighthouse",
+        "n": "avalanche",
+        "\\theta": "sailcloth",
+        "P_k": "moonstone",
+        "R_k": "rivertrail",
+        "R": "campfire",
+        "\\zeta": "willowherb",
+        "T": "bricklayer",
+        "f_1": "stardust"
+      },
+      "question": "Let $avalanche$ be a positive integer, $avalanche \\ge 2$, and put  $sailcloth = 2 \\pi / avalanche$.\\nDefine points $moonstone = (teacupset,0)$ in the $windsurfer raincloud$-plane, for $teacupset = 1, 2 , \\dots, avalanche$.\\nLet $rivertrail$ be the map that rotates the plane counterclockwise by the angle $sailcloth$ about the point $moonstone$.  Let $campfire$ denote the map obtained by applying, in order, $campfire_1$,  then $campfire_2, \\dots$, then $campfire_{avalanche}$.\\nFor an arbitrary point $(windsurfer,raincloud)$, find, and simplify, the coordinates of $campfire(windsurfer,raincloud)$.",
+      "solution": "\\textbf{First solution:}\\nIdentify the $windsurfer raincloud$-plane with the complex plane $\\mathbb{C}$, so that\\n$moonstone$ is the real number $teacupset$. If $lighthouse$ is sent to $lighthouse'$ by a\\ncounterclockwise rotation by $sailcloth$ about $moonstone$, then $lighthouse'-teacupset =\\ne^{i sailcloth} (lighthouse-teacupset)$; hence the rotation $rivertrail$ sends $lighthouse$ to $willowherb lighthouse +\\nteacupset (1-willowherb)$, where $willowherb = e^{2\\pi i/avalanche}$. It follows that $campfire_1$\\nfollowed by $campfire_2$ sends $lighthouse$ to $willowherb(willowherb lighthouse +(1-willowherb)) + 2\\n(1-willowherb) = willowherb^{2} lighthouse + (1-willowherb)(willowherb + 2)$, and so forth; an easy\\ninduction shows that $campfire$ sends $lighthouse$ to\\n\\[\\nwillowherb^{avalanche} lighthouse + (1-willowherb)(willowherb^{avalanche-1} + 2 willowherb^{avalanche-2} + \\dots + (avalanche-1)\\nwillowherb + avalanche).\\n\\]\\nExpanding the product $(1-willowherb)(willowherb^{avalanche-1} + 2 willowherb^{avalanche-2} + \\dots\\n+ (avalanche-1) willowherb + avalanche)$ yields $-willowherb^{avalanche} - willowherb^{avalanche-1} - \\dots - willowherb +\\navalanche = avalanche$. Thus $campfire$ sends $lighthouse$ to $lighthouse+avalanche$; in cartesian coordinates,\\n$campfire(windsurfer,raincloud) = (windsurfer+avalanche,raincloud)$.\\n\\n\\textbf{Second solution:}\\nImagine a regular $avalanche$-gon of side length 1 placed with its top edge\\non the $windsurfer$-axis and the left endpoint of that edge\\nat the origin. Then the rotations\\ncorrespond to rolling this $avalanche$-gon along the $windsurfer$-axis; after the\\n$avalanche$ rotations, it clearly ends up in its original rotation and translated\\n$avalanche$ units to the right. Hence the whole plane must do so as well.\\n\\n\\textbf{Third solution:} (attribution unknown)\\nViewing each $rivertrail$ as a function of a complex number $lighthouse$ as in the\\nfirst solution, the function $campfire_{avalanche} \\circ campfire_{avalanche-1} \\circ \\cdots \\circ\\ncampfire_1(lighthouse)$ is linear in $lighthouse$ with slope $willowherb^{avalanche} = 1$. It thus equals\\n$lighthouse + bricklayer$ for some $bricklayer \\in \\CC$. Since $stardust(1) = 1$, we can write\\n$1+bricklayer = campfire_{avalanche} \\circ \\cdots \\circ campfire_2(1)$. However, we also have\\n\\[\\ncampfire_{avalanche} \\circ \\cdots \\circ campfire_2(1) = campfire_{avalanche-1} \\circ campfire_1(0) + 1\\n\\]\\nby the symmetry in how the $campfire_i$ are defined. Hence\\n\\[\\ncampfire_{avalanche}(1+bricklayer) = campfire_{avalanche} \\circ campfire_1(0) + campfire_{avalanche}(1) = bricklayer + campfire_{avalanche}(1);\\n\\]\\nthat is, $campfire_{avalanche}(bricklayer) = bricklayer$. Hence $bricklayer = avalanche$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalcoordinate",
+        "y": "horizontalcoordinate",
+        "k": "constantvalue",
+        "z": "realconstant",
+        "n": "negativeinteger",
+        "\\theta": "lengthmeasure",
+        "P_k": "straightline",
+        "R_k": "reflectionmap",
+        "R": "identitymap",
+        "\\zeta": "randomnumber",
+        "T": "rotationvalue",
+        "f_1": "constantfunction"
+      },
+      "question": "Let $negativeinteger$ be a positive integer, $negativeinteger \\ge\n2$, and put  $lengthmeasure = 2 \\pi / negativeinteger$.\nDefine points $straightline = (constantvalue,0)$ in the $verticalcoordinate horizontalcoordinate$-plane, for $constantvalue = 1, 2\n, \\dots, negativeinteger$.\nLet $reflectionmap$ be the map that rotates the plane counterclockwise by the\nangle $lengthmeasure$ about the point $straightline$.  Let $identitymap$ denote the map obtained\nby applying, in order, $R_1$,  then $R_2, \\dots$,\nthen $R_n$.\nFor an arbitrary point $(verticalcoordinate,horizontalcoordinate)$, find, and simplify, the coordinates\nof $identitymap(verticalcoordinate,horizontalcoordinate)$.",
+      "solution": "\\textbf{First solution:}\nIdentify the $verticalcoordinate horizontalcoordinate$-plane with the complex plane $\\mathbb{C}$, so that\n$straightline$ is the real number $constantvalue$. If $realconstant$ is sent to $realconstant'$ by a\ncounterclockwise rotation by $lengthmeasure$ about $straightline$, then $realconstant'-constantvalue =\ne^{i lengthmeasure} (realconstant-constantvalue)$; hence the rotation $reflectionmap$ sends $realconstant$ to $randomnumber realconstant +\nconstantvalue (1-randomnumber)$, where $randomnumber = e^{2\\pi i/negativeinteger}$. It follows that $R_1$\nfollowed by $R_2$ sends $realconstant$ to $randomnumber(randomnumber realconstant +(1-randomnumber)) + 2\n(1-randomnumber) = randomnumber^2 realconstant + (1-randomnumber)(randomnumber + 2)$, and so forth; an easy\ninduction shows that $identitymap$ sends $realconstant$ to\n\\[\nrandomnumber^{negativeinteger} realconstant + (1-randomnumber)(randomnumber^{negativeinteger-1} + 2 randomnumber^{negativeinteger-2} + \\dots + (negativeinteger-1)\nrandomnumber + negativeinteger).\n\\]\nExpanding the product $(1-randomnumber)(randomnumber^{negativeinteger-1} + 2 randomnumber^{negativeinteger-2} + \\dots\n+ (negativeinteger-1) randomnumber + negativeinteger)$ yields $-randomnumber^{negativeinteger} - randomnumber^{negativeinteger-1} - \\dots - randomnumber +\nnegativeinteger = negativeinteger$. Thus $identitymap$ sends $realconstant$ to $realconstant+negativeinteger$; in cartesian coordinates,\n$identitymap(verticalcoordinate,horizontalcoordinate) = (verticalcoordinate+negativeinteger,horizontalcoordinate)$.\n\n\\textbf{Second solution:}\n(by Andy Lutomirski, via Ravi Vakil)\nImagine a regular $negativeinteger$-gon of side length 1 placed with its top edge\non the $verticalcoordinate$-axis and the left endpoint of that edge\nat the origin. Then the rotations\ncorrespond to rolling this $negativeinteger$-gon along the $verticalcoordinate$-axis; after the\n$negativeinteger$ rotations, it clearly ends up in its original rotation and translated\n$negativeinteger$ units to the right. Hence the whole plane must do so as well.\n\n\\textbf{Third solution:} (attribution unknown)\nViewing each $reflectionmap$ as a function of a complex number $realconstant$ as in the\nfirst solution, the function $R_n \\circ R_{n-1} \\circ \\cdots \\circ\nR_1(realconstant)$ is linear in $realconstant$ with slope $randomnumber^{negativeinteger} = 1$. It thus equals\n$realconstant + rotationvalue$ for some $rotationvalue \\in \\CC$. Since $constantfunction(1) = 1$, we can write\n$1+rotationvalue = R_n \\circ \\cdots \\circ R_2(1)$. However, we also have\n\\[\nR_n \\circ \\cdots \\circ R_2(1) = R_{n-1} \\circ R_1(0) + 1\n\\]\nby the symmetry in how the $reflectionmap$ are defined. Hence\n\\[\nR_n(1+rotationvalue) = R_n \\circ R_1(0) + R_n(1) = rotationvalue + R_n(1);\n\\]\nthat is, $R_n(rotationvalue) = rotationvalue$. Hence $rotationvalue = negativeinteger$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "bopqvazt",
+        "y": "mqksliej",
+        "k": "rndvefhu",
+        "z": "olpcrymn",
+        "n": "qksjdhre",
+        "\\\\theta": "pvmlzyak",
+        "P_k": "xztpjhsa",
+        "R_k": "gvydpqum",
+        "R": "sdlkfjqw",
+        "\\\\zeta": "ajkqweop",
+        "T": "zmxncvbf",
+        "f_1": "weriuopa"
+      },
+      "question": "Let $qksjdhre$ be a positive integer, $qksjdhre \\ge\n2$, and put  $pvmlzyak = 2 \\pi / qksjdhre$.\nDefine points $xztpjhsa = (rndvefhu,0)$ in the $bopqvazt mqksliej$-plane, for $rndvefhu = 1, 2\n, \\dots, qksjdhre$.\nLet $gvydpqum$ be the map that rotates the plane counterclockwise by the\nangle $pvmlzyak$ about the point $xztpjhsa$.  Let $sdlkfjqw$ denote the map obtained\nby applying, in order, $gvydpqum_1$,  then $gvydpqum_2, \\dots$,\nthen $gvydpqum_{qksjdhre}$.\nFor an arbitrary point $(bopqvazt,mqksliej)$, find, and simplify, the coordinates\nof $sdlkfjqw(bopqvazt,mqksliej)$.",
+      "solution": "\\textbf{First solution:}\nIdentify the $bopqvaztmqksliej$-plane with the complex plane $\\mathbb{C}$, so that\n$xztpjhsa$ is the real number $rndvefhu$. If $olpcrymn$ is sent to $olpcrymn'$ by a\ncounterclockwise rotation by $pvmlzyak$ about $xztpjhsa$, then $olpcrymn'-rndvefhu =\ne^{i pvmlzyak} (olpcrymn-rndvefhu)$; hence the rotation $gvydpqum$ sends $olpcrymn$ to $ajkqweop\\,olpcrymn +\nrndvefhu (1-ajkqweop)$, where $ajkqweop = e^{2\\pi i/qksjdhre}$. It follows that $gvydpqum_1$\nfollowed by $gvydpqum_2$ sends $olpcrymn$ to $ajkqweop(ajkqweop\\,olpcrymn +(1-ajkqweop)) + 2\n(1-ajkqweop) = ajkqweop^2\\,olpcrymn + (1-ajkqweop)(ajkqweop + 2)$, and so forth; an easy\ninduction shows that $sdlkfjqw$ sends $olpcrymn$ to\n\\[\najkqweop^{qksjdhre}\\,olpcrymn + (1-ajkqweop)(ajkqweop^{qksjdhre-1} + 2 ajkqweop^{qksjdhre-2} + \\dots + (qksjdhre-1)\najkqweop + qksjdhre).\n\\]\nExpanding the product $(1-ajkqweop)(ajkqweop^{qksjdhre-1} + 2 ajkqweop^{qksjdhre-2} + \\dots\n+ (qksjdhre-1) ajkqweop + qksjdhre)$ yields $-ajkqweop^{qksjdhre} - ajkqweop^{qksjdhre-1} - \\dots - ajkqweop +\nqksjdhre = qksjdhre$. Thus $sdlkfjqw$ sends $olpcrymn$ to $olpcrymn+qksjdhre$; in cartesian coordinates,\n$sdlkfjqw(bopqvazt,mqksliej) = (bopqvazt+qksjdhre,mqksliej)$.\n\n\\textbf{Second solution:}\n(by Andy Lutomirski, via Ravi Vakil)\nImagine a regular $qksjdhre$-gon of side length 1 placed with its top edge\non the $bopqvazt$-axis and the left endpoint of that edge\nat the origin. Then the rotations\ncorrespond to rolling this $qksjdhre$-gon along the $bopqvazt$-axis; after the\n$qksjdhre$ rotations, it clearly ends up in its original rotation and translated\n$qksjdhre$ units to the right. Hence the whole plane must do so as well.\n\n\\textbf{Third solution:} (attribution unknown)\nViewing each $gvydpqum$ as a function of a complex number $olpcrymn$ as in the\nfirst solution, the function $gvydpqum_{qksjdhre} \\circ gvydpqum_{qksjdhre-1} \\circ \\cdots \\circ\ngvydpqum_1(olpcrymn)$ is linear in $olpcrymn$ with slope $ajkqweop^{qksjdhre} = 1$. It thus equals\n$olpcrymn + zmxncvbf$ for some $zmxncvbf \\in \\CC$. Since $weriuopa(1) = 1$, we can write\n$1+zmxncvbf = gvydpqum_{qksjdhre} \\circ \\cdots \\circ gvydpqum_2(1)$. However, we also have\n\\[\ngvydpqum_{qksjdhre} \\circ \\cdots \\circ gvydpqum_2(1) = gvydpqum_{qksjdhre-1} \\circ gvydpqum_1(0) + 1\n\\]\nby the symmetry in how the $gvydpqum_i$ are defined. Hence\n\\[\ngvydpqum_{qksjdhre}(1+zmxncvbf) = gvydpqum_{qksjdhre} \\circ gvydpqum_1(0) + gvydpqum_{qksjdhre}(1) = zmxncvbf + gvydpqum_{qksjdhre}(1);\n\\]\nthat is, $gvydpqum_{qksjdhre}(zmxncvbf) = zmxncvbf$. Hence $zmxncvbf = qksjdhre$, as desired."
+    },
+    "kernel_variant": {
+      "question": "Let $n\\ge 2$ be an integer and set \\(\\vartheta = \\dfrac{6\\pi}{n}\\).  \nFor $k=1,2,\\dots ,n$ define\n\\[\nP_k= \\bigl(-5,\\,4\\bigr) + (k-1)\\,(2,1),\n\\]\nso that the consecutive centres are spaced by the fixed vector \\((2,1)\\).  \nLet $R_k$ denote the map that rotates the entire plane \\\\textit{clockwise} by the angle $\\vartheta$ about the point $P_k$.  \nLet\n\\[ R = R_n \\circ R_{n-1}\\circ \\dots \\circ R_1. \\]\nFor an arbitrary point $(x,y)$, find--- and simplify completely---the coordinates of $R(x,y)$.",
+      "solution": "We work in the complex plane z=x+iy.  For each k=1,\\ldots ,n let \n  P_k=-5+4i+(k-1)(2+i).\nA clockwise rotation by \\theta =6\\pi /n about P_k is\n  z \\mapsto  R_k(z)=\\zeta z+(1-\\zeta )P_k,\nwhere \\zeta =e^{-i\\theta }=e^{-6\\pi i/n}.  Then\n  R=R_n\\circ \\cdots \\circ R_1\nis an affine map whose linear part is \\zeta ^n=e^{-6\\pi i}=1, so\n  R(z)=z+T\nfor some constant T.  We compute\n\n  T=(1-\\zeta )\\sum _{k=1}^n \\zeta ^{n-k}P_k.\n\nWrite P_k=P_1+(k-1)v with v=2+i.  Then\n\n  \\sum _{k=1}^n \\zeta ^{n-k}P_1=P_1\\cdot \\sum _{j=0}^{n-1}\\zeta ^j,\n  \\sum _{k=1}^n \\zeta ^{n-k}(k-1)v=v\\cdot \\sum _{j=0}^{n-1}j\\zeta ^{n-1-j}.\n\nCase 1: \\zeta \\neq 1 (equivalently n\\neq 3).  Then \\sum _{j=0}^{n-1}\\zeta ^j=0, and by the usual geometric-series argument\n  (1-\\zeta )\\sum _{j=0}^{n-1}j\\zeta ^{n-1-j}=n.\nHence\n  T=(1-\\zeta )v\\cdot \\sum _{j=0}^{n-1}j\\zeta ^{n-1-j}=n\\cdot v=n(2+i),\nso in real coordinates\n  R(x,y)=(x+2n,\n          y+n).\n\nCase 2: \\zeta =1 (n=3).  Here \\theta =6\\pi /3=2\\pi , so each R_k is the identity.  Thus R=identity and\n  R(x,y)=(x,y).\n\nSummary.\nFor n=3:  R(x,y)=(x,y).  For all other integers n\\geq 2:\n  R(x,y)=(x+2n,\n          y+n).",
+      "_meta": {
+        "core_steps": [
+          "Model the plane as ℂ and write each rotation about P_k as the affine map  z ↦ ζ z + (1−ζ)P_k  with ζ = e^{iθ}.",
+          "Compose these n affine maps; the linear parts multiply to ζⁿ = 1, so the composite is a pure translation z ↦ z + T.",
+          "Express T = (1−ζ)∑_{k=1}^{n} k ζ^{n−k}.",
+          "Use the identity (1−ζ)∑_{k=1}^{n} k ζ^{n−k} = n, obtaining T = n.",
+          "Convert back to Cartesian coordinates to get R(x,y) = (x + n, y)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Common vector increment between successive centers (P_{k+1}−P_k); changing it rescales/redirects the final translation but leaves the proof intact.",
+            "original": "(1,0)  (unit step along the positive x-axis)"
+          },
+          "slot2": {
+            "description": "Global offset of all centers, i.e., the location of P_1; it cancels out algebraically and does not affect the final translation.",
+            "original": "P_1 = (1,0)"
+          },
+          "slot3": {
+            "description": "Sense of rotation at each step (counter- vs. clockwise); replacing θ by −θ merely conjugates ζ, still giving ζⁿ = 1.",
+            "original": "counterclockwise"
+          },
+          "slot4": {
+            "description": "Angle per rotation as any integer multiple m·2π/n (ζ = e^{i·m·2π/n}); the key fact ζⁿ = 1 remains valid for all integer m.",
+            "original": "θ = 2π/n  (m = 1)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

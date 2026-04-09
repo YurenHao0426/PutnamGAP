@@ -1,0 +1,120 @@
+{
+  "index": "1991-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "For each integer $n \\geq 0$, let $S(n) = n - m^2$, where $m$ is the\ngreatest integer with $m^2 \\leq n$. Define a sequence\n$(a_k)_{k=0}^\\infty$ by $a_0 = A$ and $a_{k+1} = a_k + S(a_k)$ for $k\n\\geq 0$. For what positive integers $A$ is this sequence eventually constant?",
+  "solution": "Solution. If \\( a_{k} \\) is a perfect square, then \\( a_{k+1}=a_{k} \\), and the sequence is constant thereafter.\n\nConversely, if \\( a_{k} \\) is not a perfect square, then suppose \\( r^{2}<a_{k}<(r+1)^{2} \\). Then \\( S\\left(a_{k}\\right)=a_{k}-r^{2} \\) is in the interval \\( [1,2 r] \\), so \\( a_{k+1}=r^{2}+2 S\\left(a_{k}\\right) \\) is greater than \\( r^{2} \\) but less than \\( (r+2)^{2} \\), and not equal to \\( (r+1)^{2} \\) by parity. Thus \\( a_{k+1} \\) is also not a perfect square, and is greater than \\( a_{k} \\). Hence if \\( A \\) is not a perfect square, then no \\( a_{k} \\) is a perfect square, and the sequence diverges to infinity.",
+  "vars": [
+    "n",
+    "m",
+    "k",
+    "r",
+    "a_k",
+    "a_k+1",
+    "a_0",
+    "S"
+  ],
+  "params": [
+    "A"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "integerindex",
+        "m": "floorroot",
+        "k": "stepindex",
+        "r": "squareroot",
+        "a_k": "termcurrent",
+        "a_k+1": "termnext",
+        "a_0": "termstart",
+        "S": "squarereduce",
+        "A": "initialvalue"
+      },
+      "question": "For each integer $integerindex \\geq 0$, let $squarereduce(integerindex) = integerindex - floorroot^2$, where $floorroot$ is the greatest integer with $floorroot^2 \\leq integerindex$. Define a sequence $(termcurrent)_{stepindex=0}^{\\infty}$ by $termstart = initialvalue$ and $termnext = termcurrent + squarereduce(termcurrent)$ for $stepindex \\geq 0$. For what positive integers $initialvalue$ is this sequence eventually constant?",
+      "solution": "Solution. If \\( termcurrent \\) is a perfect square, then \\( termnext = termcurrent \\), and the sequence is constant thereafter.\n\nConversely, if \\( termcurrent \\) is not a perfect square, then suppose \\( squareroot^{2} < termcurrent < (squareroot + 1)^{2} \\). Then \\( squarereduce\\left(termcurrent\\right) = termcurrent - squareroot^{2} \\) is in the interval \\( [1, 2\\, squareroot] \\), so \\( termnext = squareroot^{2} + 2\\, squarereduce\\left(termcurrent\\right) \\) is greater than \\( squareroot^{2} \\) but less than \\( (squareroot + 2)^{2} \\), and not equal to \\( (squareroot + 1)^{2} \\) by parity. Thus \\( termnext \\) is also not a perfect square, and is greater than \\( termcurrent \\). Hence if \\( initialvalue \\) is not a perfect square, then no \\( termcurrent \\) is a perfect square, and the sequence diverges to infinity."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "blueberry",
+        "m": "pinecone",
+        "k": "rainstorm",
+        "r": "sandpiper",
+        "a_k": "buttercup",
+        "a_k+1": "dragonfly",
+        "a_0": "salamander",
+        "S": "hydrangea",
+        "A": "seashores"
+      },
+      "question": "For each integer $blueberry \\geq 0$, let $hydrangea(blueberry) = blueberry - pinecone^2$, where $pinecone$ is the greatest integer with $pinecone^2 \\leq blueberry$. Define a sequence $(buttercup)_{rainstorm=0}^\\infty$ by $salamander = seashores$ and $dragonfly = buttercup + hydrangea(buttercup)$ for $rainstorm \\geq 0$. For what positive integers $seashores$ is this sequence eventually constant?",
+      "solution": "Solution. If \\( buttercup \\) is a perfect square, then \\( dragonfly = buttercup \\), and the sequence is constant thereafter.\n\nConversely, if \\( buttercup \\) is not a perfect square, then suppose \\( sandpiper^{2} < buttercup < (sandpiper+1)^{2} \\). Then \\( hydrangea\\left(buttercup\\right)=buttercup-sandpiper^{2} \\) is in the interval \\( [1,2\\,sandpiper] \\), so \\( dragonfly = sandpiper^{2} + 2\\,hydrangea\\left(buttercup\\right) \\) is greater than \\( sandpiper^{2} \\) but less than \\( (sandpiper+2)^{2} \\), and not equal to \\( (sandpiper+1)^{2} \\) by parity. Thus \\( dragonfly \\) is also not a perfect square, and is greater than \\( buttercup \\). Hence if \\( seashores \\) is not a perfect square, then no \\( buttercup \\) is a perfect square, and the sequence diverges to infinity."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "irrational",
+        "m": "minuscule",
+        "k": "chaoticid",
+        "r": "nonradical",
+        "a_k": "stationary",
+        "a_k+1": "stationarynext",
+        "a_0": "boundless",
+        "S": "summation",
+        "A": "variable"
+      },
+      "question": "For each integer $irrational \\geq 0$, let $summation(irrational) = irrational - minuscule^2$, where $minuscule$ is the greatest integer with $minuscule^2 \\leq irrational$. Define a sequence $(stationary)_{chaoticid=0}^\\infty$ by $boundless = variable$ and $stationarynext = stationary + summation(stationary)$ for $chaoticid \\geq 0$. For what positive integers $variable$ is this sequence eventually constant?",
+      "solution": "If \\( stationary \\) is a perfect square, then \\( stationarynext = stationary \\), and the sequence is constant thereafter.\n\nConversely, if \\( stationary \\) is not a perfect square, then suppose \\( nonradical^{2}<stationary<(nonradical+1)^{2} \\). Then \\( summation\\left(stationary\\right)=stationary-nonradical^{2} \\) is in the interval \\( [1,2\\,nonradical] \\), so \\( stationarynext = nonradical^{2}+2\\,summation\\left(stationary\\right) \\) is greater than \\( nonradical^{2} \\) but less than \\( (nonradical+2)^{2} \\), and not equal to \\( (nonradical+1)^{2} \\) by parity. Thus \\( stationarynext \\) is also not a perfect square, and is greater than \\( stationary \\). Hence if \\( variable \\) is not a perfect square, then no \\( stationary \\) is a perfect square, and the sequence diverges to infinity."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "vzhpqjse",
+        "m": "qdrtlnua",
+        "k": "nbzflsji",
+        "r": "mscxgvqo",
+        "a_k": "upngwzeb",
+        "a_k+1": "pjrzktwh",
+        "a_0": "wpfyjatc",
+        "S": "lzndomri",
+        "A": "xqhrmebv"
+      },
+      "question": "For each integer $vzhpqjse \\geq 0$, let $lzndomri(vzhpqjse) = vzhpqjse - qdrtlnua^2$, where $qdrtlnua$ is the\ngreatest integer with $qdrtlnua^2 \\leq vzhpqjse$. Define a sequence\n$(upngwzeb)_{nbzflsji=0}^\\infty$ by $wpfyjatc = xqhrmebv$ and $pjrzktwh = upngwzeb + lzndomri(upngwzeb)$ for $nbzflsji\n\\geq 0$. For what positive integers $xqhrmebv$ is this sequence eventually constant?",
+      "solution": "Solution. If \\( upngwzeb \\) is a perfect square, then \\( pjrzktwh=upngwzeb \\), and the sequence is constant thereafter.\n\nConversely, if \\( upngwzeb \\) is not a perfect square, then suppose \\( mscxgvqo^{2}<upngwzeb<(mscxgvqo+1)^{2} \\). Then \\( lzndomri\\left(upngwzeb\\right)=upngwzeb-mscxgvqo^{2} \\) is in the interval \\( [1,2 mscxgvqo] \\), so \\( pjrzktwh=mscxgvqo^{2}+2 lzndomri\\left(upngwzeb\\right) \\) is greater than \\( mscxgvqo^{2} \\) but less than \\( (mscxgvqo+2)^{2} \\), and not equal to \\( (mscxgvqo+1)^{2} \\) by parity. Thus \\( pjrzktwh \\) is also not a perfect square, and is greater than \\( upngwzeb \\). Hence if \\( xqhrmebv \\) is not a perfect square, then no \\( upngwzeb \\) is a perfect square, and the sequence diverges to infinity."
+    },
+    "kernel_variant": {
+      "question": "For every integer $x\\ge 1$, let \\[\\Delta(x)=x-z^{2},\\qquad z=\\lfloor\\sqrt{x}\\rfloor.\\]  \nStarting from a positive integer $B$, define a sequence $(b_t)_{t\\ge 1}$ by  \n$$b_1=B,\\qquad b_{t+1}=b_t+\\Delta(b_t)\\quad(t\\ge 1).$$  \nFor which positive integers $B$ is the sequence $(b_t)$ eventually constant?",
+      "solution": "First observe that if $b_t$ is a perfect square, say $b_t=q^{2}$, then $\\Delta(b_t)=0$, so $b_{t+1}=b_t$ and the sequence remains constant from that point on.\n\nConversely, suppose some term $b_t$ is not a perfect square.  Let $q$ be the integer with $q^{2}<b_t<(q+1)^{2}$.  Then\n$$\\Delta(b_t)=b_t-q^{2}\\in[1,2q].$$\nHence\n$$b_{t+1}=b_t+\\Delta(b_t)=q^{2}+2\\,\\Delta(b_t).$$\nBecause $2\\,\\Delta(b_t)\\le 4q$, we have\n$$q^{2}<b_{t+1}<q^{2}+4q+4=(q+2)^{2}.$$ \nThus $b_{t+1}$ lies strictly between $q^{2}$ and $(q+2)^{2}$.  To see that it cannot equal the intermediate square $(q+1)^{2}$, note that\n$$(q+1)^{2}-q^{2}=2q+1\\quad\\text{is odd},$$\nwhile\n$$b_{t+1}-q^{2}=2\\,\\Delta(b_t)\\quad\\text{is even}.$$ \nTherefore $b_{t+1}\\neq(q+1)^{2}$, so $b_{t+1}$ is also not a perfect square.  Moreover, since $\\Delta(b_t)\\ge1$, we have $b_{t+1}>b_t$.\n\nInductively, if the initial term $B$ is not a perfect square, every subsequent term is a larger non-square, and the sequence can never stabilize.\n\nConsequently, the sequence $(b_t)$ is eventually constant precisely when the starting value $B$ is a perfect square.",
+      "_meta": {
+        "core_steps": [
+          "Observe S(n)=0 exactly when n is a perfect square.",
+          "Hence a_k square ⇒ a_{k+1}=a_k, making the sequence constant.",
+          "If r^2 < a_k < (r+1)^2 then 1 ≤ S(a_k) ≤ 2r.",
+          "Compute a_{k+1}=r^2+2S(a_k) which lies in (r^2,(r+2)^2) and can’t equal any intervening square (mod 2).",
+          "Thus non-square start ⇒ strictly increasing, never square; therefore eventual constancy ⇔ A is a perfect square."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Purely cosmetic choice of letters for the main variables.",
+            "original": "n, m, A, a_k, r"
+          },
+          "slot2": {
+            "description": "Where the indexing of the sequence begins.",
+            "original": "k starts at 0 with a_0 = A"
+          },
+          "slot3": {
+            "description": "Whether zero is included among the allowed inputs.",
+            "original": "Problem says n ≥ 0 and A positive; could equally take n, A ∈ ℕ"
+          },
+          "slot4": {
+            "description": "The particular way the ‘parity’ obstruction is stated (any mod-2 wording works).",
+            "original": "“not equal to (r+1)^2 by parity”"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

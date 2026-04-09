@@ -1,0 +1,112 @@
+{
+  "index": "2005-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Show that every positive integer is a sum of one or more numbers of the\nform $2^r 3^s$, where $r$ and $s$ are nonnegative integers and no\nsummand divides another.\n(For example, 23 = 9 + 8 + 6.)",
+  "solution": "We proceed by induction, with base case $1 = 2^0 3^0$. Suppose all\nintegers less than $n-1$ can be represented. If $n$ is even, then\nwe can take a representation of $n/2$ and multiply each term by 2 to\nobtain a representation of $n$. If $n$ is odd,\nput $m = \\lfloor \\log_3 n\n\\rfloor$, so that $3^m \\leq n < 3^{m+1}$. If $3^m = n$, we are done.\nOtherwise, choose a representation $(n-3^m)/2 = s_1 + \\cdots + s_k$\nin the desired form. Then\n\\[\nn = 3^m + 2s_1 + \\cdots + 2s_k,\n\\]\nand clearly none of the $2s_i$ divide each other or $3^m$. Moreover,\nsince $2s_i \\leq n-3^m < 3^{m+1} - 3^m$, we have $s_i < 3^m$,\nso $3^m$ cannot divide $2s_i$ either. Thus $n$ has a representation\nof the desired form in all cases, completing the induction.\n\n\\textbf{Remarks:}\nThis problem is originally due to Paul Erd\\H{o}s.\nNote that the representations need not be unique: for instance,\n\\[\n11 = 2+9 = 3+8.\n\\]",
+  "vars": [
+    "n",
+    "r",
+    "s",
+    "m",
+    "k",
+    "i",
+    "s_1",
+    "s_k",
+    "s_i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "targetint",
+        "r": "exponenttwo",
+        "s": "exponentthree",
+        "m": "logthree",
+        "k": "termcount",
+        "i": "indexvar",
+        "s_1": "summandone",
+        "s_k": "summandlast",
+        "s_i": "summandgen"
+      },
+      "question": "Show that every positive integer is a sum of one or more numbers of the form $2^{exponenttwo} 3^{exponentthree}$, where $exponenttwo$ and $exponentthree$ are nonnegative integers and no summand divides another.\n(For example, 23 = 9 + 8 + 6.)",
+      "solution": "We proceed by induction, with base case $1 = 2^0 3^0$. Suppose all\nintegers less than $targetint-1$ can be represented. If $targetint$ is even, then\nwe can take a representation of $targetint/2$ and multiply each term by 2 to\nobtain a representation of $targetint$. If $targetint$ is odd,\nput $logthree = \\lfloor \\log_3 targetint\n\\rfloor$, so that $3^{logthree} \\leq targetint < 3^{logthree+1}$. If $3^{logthree} = targetint$, we are done.\nOtherwise, choose a representation $(targetint-3^{logthree})/2 = summandone + \\cdots + summandlast$\nin the desired form. Then\n\\[\ntargetint = 3^{logthree} + 2summandone + \\cdots + 2summandlast,\n\\]\nand clearly none of the $2summandgen$ divide each other or $3^{logthree}$. Moreover,\nsince $2summandgen \\leq targetint-3^{logthree} < 3^{logthree+1} - 3^{logthree}$, we have $summandgen < 3^{logthree}$,\nso $3^{logthree}$ cannot divide $2summandgen$ either. Thus $targetint$ has a representation\nof the desired form in all cases, completing the induction.\n\n\\textbf{Remarks:}\nThis problem is originally due to Paul Erd\\H{o}s.\nNote that the representations need not be unique: for instance,\n\\[\n11 = 2+9 = 3+8.\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "blueberries",
+        "r": "harmonies",
+        "s": "pebbles",
+        "m": "raincloud",
+        "k": "lanterns",
+        "i": "cowbells",
+        "s_1": "fireflies",
+        "s_k": "moonlight",
+        "s_i": "starlight"
+      },
+      "question": "Show that every positive integer is a sum of one or more numbers of the\nform $2^{harmonies} 3^{pebbles}$, where harmonies and pebbles are nonnegative integers and no\nsummand divides another.\n(For example, 23 = 9 + 8 + 6.)",
+      "solution": "We proceed by induction, with base case $1 = 2^0 3^0$. Suppose all\nintegers less than $blueberries-1$ can be represented. If $blueberries$ is even, then\nwe can take a representation of $blueberries/2$ and multiply each term by 2 to\nobtain a representation of $blueberries$. If $blueberries$ is odd,\nput $raincloud = \\lfloor \\log_3 blueberries\n\\rfloor$, so that $3^{raincloud} \\leq blueberries < 3^{raincloud+1}$. If $3^{raincloud} = blueberries$, we are done.\nOtherwise, choose a representation $(blueberries-3^{raincloud})/2 = fireflies + \\cdots + moonlight$\nin the desired form. Then\n\\[\nblueberries = 3^{raincloud} + 2fireflies + \\cdots + 2moonlight,\n\\]\nand clearly none of the $2starlight$ divide each other or $3^{raincloud}$. Moreover,\nsince $2starlight \\leq blueberries-3^{raincloud} < 3^{raincloud+1} - 3^{raincloud}$, we have $starlight < 3^{raincloud}$,\nso $3^{raincloud}$ cannot divide $2starlight$ either. Thus $blueberries$ has a representation\n of the desired form in all cases, completing the induction.\n\n\\textbf{Remarks:}\nThis problem is originally due to Paul Erd\\H{o}s.\nNote that the representations need not be unique: for instance,\n\\[\n11 = 2+9 = 3+8.\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "fractionalvalue",
+        "r": "rootscale",
+        "s": "logscale",
+        "m": "baserank",
+        "k": "singular",
+        "i": "totality",
+        "s_1": "aggregateone",
+        "s_k": "aggregateend",
+        "s_i": "aggregatesome"
+      },
+      "question": "Show that every positive integer is a sum of one or more numbers of the\nform $2^{rootscale} 3^{logscale}$, where $rootscale$ and $logscale$ are nonnegative integers and no\nsummand divides another.\n(For example, 23 = 9 + 8 + 6.)",
+      "solution": "We proceed by induction, with base case $1 = 2^0 3^0$. Suppose all\nintegers less than $fractionalvalue-1$ can be represented. If $fractionalvalue$ is even, then\nwe can take a representation of $fractionalvalue/2$ and multiply each term by 2 to\nobtain a representation of $fractionalvalue$. If $fractionalvalue$ is odd,\nput $baserank = \\lfloor \\log_3 fractionalvalue\n\\rfloor$, so that $3^{baserank} \\leq fractionalvalue < 3^{baserank+1}$. If $3^{baserank} = fractionalvalue$, we are done.\nOtherwise, choose a representation $(fractionalvalue-3^{baserank})/2 = aggregateone + \\cdots + aggregateend$\nin the desired form. Then\n\\[\nfractionalvalue = 3^{baserank} + 2aggregateone + \\cdots + 2aggregateend,\n\\]\nand clearly none of the $2aggregatesome$ divide each other or $3^{baserank}$. Moreover,\nsince $2aggregatesome \\leq fractionalvalue-3^{baserank} < 3^{baserank+1} - 3^{baserank}$, we have $aggregatesome < 3^{baserank}$,\nso $3^{baserank}$ cannot divide $2aggregatesome$ either. Thus $fractionalvalue$ has a representation\nof the desired form in all cases, completing the induction.\n\n\\textbf{Remarks:}\nThis problem is originally due to Paul Erd\\H{o}s.\nNote that the representations need not be unique: for instance,\n\\[\n11 = 2+9 = 3+8.\n\\]\n"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "r": "hjgrksla",
+        "s": "mnbvcxzl",
+        "m": "plmoknji",
+        "k": "uhypoilk",
+        "i": "asdfergt",
+        "s_1": "poiulkjh",
+        "s_k": "zmxncble",
+        "s_i": "qwertyuio"
+      },
+      "question": "Show that every positive integer is a sum of one or more numbers of the\nform $2^{hjgrksla} 3^{mnbvcxzl}$, where $hjgrksla$ and $mnbvcxzl$ are nonnegative integers and no\nsummand divides another.\n(For example, 23 = 9 + 8 + 6.)",
+      "solution": "We proceed by induction, with base case $1 = 2^0 3^0$. Suppose all\nintegers less than $qzxwvtnp-1$ can be represented. If $qzxwvtnp$ is even, then\nwe can take a representation of $qzxwvtnp/2$ and multiply each term by 2 to\nobtain a representation of $qzxwvtnp$. If $qzxwvtnp$ is odd,\nput $plmoknji = \\lfloor \\log_3 qzxwvtnp\n\\rfloor$, so that $3^{plmoknji} \\leq qzxwvtnp < 3^{plmoknji+1}$. If $3^{plmoknji} = qzxwvtnp$, we are done.\nOtherwise, choose a representation $(qzxwvtnp-3^{plmoknji})/2 = poiulkjh + \\cdots + zmxncble$\nin the desired form. Then\n\\[\nqzxwvtnp = 3^{plmoknji} + 2poiulkjh + \\cdots + 2zmxncble,\n\\]\nand clearly none of the $2qwertyuio$ divide each other or $3^{plmoknji}$. Moreover,\nsince $2qwertyuio \\leq qzxwvtnp-3^{plmoknji} < 3^{plmoknji+1} - 3^{plmoknji}$, we have $qwertyuio < 3^{plmoknji}$,\nso $3^{plmoknji}$ cannot divide $2qwertyuio$ either. Thus $qzxwvtnp$ has a representation\nof the desired form in all cases, completing the induction.\n\n\\textbf{Remarks:}\nThis problem is originally due to Paul Erd\\H{\\o}s.\nNote that the representations need not be unique: for instance,\n\\[\n11 = 2+9 = 3+8.\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Prove that every positive integer can be written as a sum of one or more \nmutually non-dividing numbers of the form\n\na_{r,s}=2^{r}3^{s} \\qquad (r,s\\ge 0),\n\ni.e. distinct powers of 2 and 3, such that no summand divides any other.\nFor example\n23 = 9 + 8 + 6 = 2^{0}3^{2}+2^{3}3^{0}+2^{1}3^{1}.",
+      "solution": "We prove the statement by strong induction on the integer n \\geq  1.\n\n------------------------------------------------------------\nBase step   n = 1\n------------------------------------------------------------\n1 = 2^{0}3^{0}.  Because the decomposition contains a single summand, the\n\"no-divisor\" requirement is vacuous, so the claim holds for n = 1.\n\n------------------------------------------------------------\nInduction hypothesis\n------------------------------------------------------------\nAssume that every integer m with 1 \\leq  m < n can be expressed as a sum of\npairwise non-dividing numbers of the required form.\n\n------------------------------------------------------------\nInduction step   (constructing a decomposition for n)\n------------------------------------------------------------\nWe distinguish two cases according to the parity of n.\n\nCase 1.  n is even.\nWrite n = 2t.  By the induction hypothesis, t can be written as\n\nt = s_{1}+\\ldots +s_{k}, \\qquad s_{i}=2^{r_{i}}3^{s_{i}} (1\\leq i\\leq k),\n\nwith no s_{i} dividing another.  Multiplying every term by 2 gives\n\nn = 2s_{1}+2s_{2}+\\ldots +2s_{k},\n\nand each summand 2s_{i}=2^{r_{i}+1}3^{s_{i}} is still of the form 2^{r}3^{s}.\nFor i\\neq j we have 2s_{i} | 2s_{j} \\Leftrightarrow  s_{i} | s_{j}, so divisibility is still\nabsent.  Hence a suitable decomposition exists in this case.\n\nCase 2.  n is odd.\nPut m = \\lfloor log_{3} n\\rfloor , so 3^{m} \\leq  n < 3^{m+1}.  If n = 3^{m} we are done, so\nassume n > 3^{m}.  Because n is odd, n - 3^{m} is even; set\n\nq = (n-3^{m})/2.\n\nThen 0 < q < 3^{m} < n.  By the induction hypothesis,\n\nq = t_{1}+\\ldots +t_{\\ell }, \\qquad t_{j}=2^{r'_{j}}3^{s'_{j}} (1\\leq j\\leq \\ell ),\n\nwith the t_{j} pairwise non-dividing.  Multiply these summands by 2 and\nadjoin 3^{m}:\n\nn = 3^{m} + 2t_{1} + \\ldots  + 2t_{\\ell }.\n\nAll summands are of the required shape:\n* 3^{m} = 2^{0}3^{m},\n* 2t_{j} = 2^{r'_{j}+1}3^{s'_{j}}.\n\nIt remains to show that no summand divides another.\n\n(i)  Among the numbers 2t_{j} themselves: 2t_{i} | 2t_{j} \\Leftrightarrow  t_{i} | t_{j},\nwhich never happens by construction.\n\n(ii)  Between 3^{m} and any 2t_{j}.\n     - 2t_{j} cannot divide 3^{m} because it contains the prime 2, whereas\n       3^{m} does not.\n     - 3^{m} cannot divide 2t_{j} because the highest power of 3 dividing\n       2t_{j} is 3^{s'_{j}}, where s'_{j} < m.  (Indeed, t_{j} < 3^{m}\n       implies s'_{j} \\leq  m-1.)  Therefore the exponent of 3 in 2t_{j} is\n       strictly smaller than the exponent m in 3^{m}, so 3^{m} \\nmid  2t_{j}.\n\nHence the required decomposition exists for odd n as well.\n\n------------------------------------------------------------\nConclusion\n------------------------------------------------------------\nBy strong induction, every positive integer can be expressed as a sum of\none or more numbers 2^{r}3^{s} such that no summand divides another.\n\n------------------------------------------------------------\nExample\n------------------------------------------------------------\n23 = 9 + 8 + 6, with 9 = 2^{0}3^{2}, 8 = 2^{3}3^{0}, 6 = 2^{1}3^{1}; none\nof these three numbers divides any of the others.\n\n(The result is originally due to P. Erdos.)",
+      "_meta": {
+        "core_steps": [
+          "Strong induction on n, base case n = 1",
+          "If n is divisible by 2, take a representation of n/2 and multiply every summand by 2",
+          "If n is not divisible by 2, let m be the largest exponent with 3^m ≤ n",
+          "Write (n − 3^m)/2, represent it inductively, double those terms, then add 3^m",
+          "Use size inequalities to show no new term divides another"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The fixed factor used for the ‘divisible / not-divisible’ split and for scaling the inductive representation",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "The base whose largest power ≤ n is peeled off in the ‘not-divisible’ case",
+            "original": "3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

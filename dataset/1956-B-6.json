@@ -1,0 +1,148 @@
+{
+  "index": "1956-B-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "6. Given \\( T_{1}=2, T_{n+1}=T_{n}{ }^{2}-T_{n}+1, n>0 \\), Prove:\n(i) If \\( m \\neq n, T_{m} \\) and \\( T_{n} \\) have no common factor greater than 1 .\n\\[\n\\sum_{i=1}^{\\infty} \\frac{1}{T_{i}}=1\n\\]",
+  "solution": "Solution. The first few members of the sequences are \\( T_{1}=2, T_{2}=3 \\), \\( T_{3}=7 \\). We shall prove by induction that\n\\[\nT_{n+1}=1+\\prod_{i=1}^{n} T_{i} \\text { for } n \\geq 1\n\\]\n\nThis is true for \\( n=1 \\). Suppose it is true for \\( n=k \\). Then\n\\[\n\\begin{aligned}\nT_{k+2} & =1+T_{k+1}\\left(T_{k+1}-1\\right) \\\\\n& =1+T_{k+1}\\left[\\prod_{i=1}^{k} T_{i}\\right] \\\\\n& =1+\\prod_{i=1}^{k+1} T_{i}\n\\end{aligned}\n\\]\n(The first step by the given recursion, the second by the inductive hypothesis.) This completes the inductive proof of (1).\n\nNow suppose \\( m \\neq n \\), say \\( m<n \\). Then (1) shows that \\( T_{m} \\) divides \\( T_{n}-1 \\), so \\( T_{m} \\) and \\( T_{n} \\) are relatively prime. This is (i).\nNext we prove by induction that\n\\[\n\\sum_{i=1}^{n} \\frac{1}{T_{i}}=1-\\frac{1}{T_{n+1}-1}\n\\]\nfor all \\( n \\). This is true for \\( n=1 \\) and, if it is true for \\( n=k \\), we have\n\\[\n\\begin{aligned}\n\\sum_{i=1}^{k+1} \\frac{1}{T_{i}} & =1-\\frac{1}{T_{k+1}-1}+\\frac{1}{T_{k+1}} \\\\\n& =1-\\frac{1}{T_{k+1}\\left(T_{k+1}-1\\right)} \\\\\n& =1-\\frac{1}{T_{k+2}-1}\n\\end{aligned}\n\\]\n\nThus (2) is established.\nSince \\( T_{n} \\rightarrow \\infty \\) as \\( n \\rightarrow \\infty \\), it follows from (2) that\n\\[\n\\sum_{i=1}^{\\infty} \\frac{1}{T_{i}}=1\n\\]\nas required.\nRemark. It has been proved by P. Erdos and E. G. Straus (Indian Journal of Mathematics, vol. 27 (1963), pp. 129-133) that if \\( a_{1}, a_{2}, \\ldots \\) are positive integers such that\n\\[\na_{n+1} \\geq \\prod_{k=1}^{n} a_{k} \\text { and } \\sum_{n=1}^{\\infty} \\frac{1}{a_{n}}\n\\]\nis rational, then \\( a_{n+1}=a_{n}{ }^{2}-a_{n}+1 \\) for all sufficiently large \\( n \\).",
+  "vars": [
+    "T_1",
+    "T_n",
+    "T_n+1",
+    "n",
+    "m",
+    "k",
+    "i",
+    "T_m",
+    "T_k",
+    "T_k+1",
+    "T_k+2",
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_n+1",
+    "a_k",
+    "T_i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "T_1": "firstterm",
+        "T_n": "generalterm",
+        "T_n+1": "nextterm",
+        "n": "counter",
+        "m": "secondidx",
+        "k": "inductidx",
+        "i": "iteridx",
+        "T_m": "termother",
+        "T_k": "terminduct",
+        "T_k+1": "termnext",
+        "T_k+2": "termnexttwo",
+        "a_1": "seqone",
+        "a_2": "seqtwo",
+        "a_n": "seqgeneral",
+        "a_n+1": "seqnext",
+        "a_k": "seqinduct",
+        "T_i": "termloop"
+      },
+      "question": "6. Given \\( firstterm=2, nextterm=generalterm^{2}-generalterm+1, counter>0 \\), Prove:\n(i) If \\( secondidx \\neq counter, termother \\) and \\( generalterm \\) have no common factor greater than 1 .\n\\[\n\\sum_{iteridx=1}^{\\infty} \\frac{1}{termloop}=1\n\\]",
+      "solution": "Solution. The first few members of the sequence are \\( firstterm=2, T_{2}=3 \\), \\( T_{3}=7 \\). We shall prove by induction that\n\\[\nnextterm=1+\\prod_{iteridx=1}^{counter} termloop \\text { for } counter \\geq 1\n\\]\nThis is true for \\( counter=1 \\). Suppose it is true for \\( counter=inductidx \\). Then\n\\[\n\\begin{aligned}\ntermnexttwo & =1+termnext\\left(termnext-1\\right) \\\\\n& =1+termnext\\left[\\prod_{iteridx=1}^{inductidx} termloop\\right] \\\\\n& =1+\\prod_{iteridx=1}^{inductidx+1} termloop\n\\end{aligned}\n\\]\n(The first step by the given recursion, the second by the inductive hypothesis.) This completes the inductive proof of (1).\n\nNow suppose \\( secondidx \\neq counter \\), say \\( secondidx<counter \\). Then (1) shows that \\( termother \\) divides \\( generalterm-1 \\), so \\( termother \\) and \\( generalterm \\) are relatively prime. This is (i).\n\nNext we prove by induction that\n\\[\n\\sum_{iteridx=1}^{counter} \\frac{1}{termloop}=1-\\frac{1}{nextterm-1}\n\\]\nfor all \\( counter \\). This is true for \\( counter=1 \\) and, if it is true for \\( counter=inductidx \\), we have\n\\[\n\\begin{aligned}\n\\sum_{iteridx=1}^{inductidx+1} \\frac{1}{termloop} & =1-\\frac{1}{termnext-1}+\\frac{1}{termnext} \\\\\n& =1-\\frac{1}{termnext\\left(termnext-1\\right)} \\\\\n& =1-\\frac{1}{termnexttwo-1}\n\\end{aligned}\n\\]\nThus (2) is established.\n\nSince \\( generalterm \\rightarrow \\infty \\) as \\( counter \\rightarrow \\infty \\), it follows from (2) that\n\\[\n\\sum_{iteridx=1}^{\\infty} \\frac{1}{termloop}=1\n\\]\nas required.\n\nRemark. It has been proved by P. Erdos and E. G. Straus (Indian Journal of Mathematics, vol. 27 (1963), pp. 129-133) that if \\( seqone, seqtwo, \\ldots \\) are positive integers such that\n\\[\nseqnext \\geq \\prod_{inductidx=1}^{counter} seqinduct \\text { and } \\sum_{counter=1}^{\\infty} \\frac{1}{seqgeneral}\n\\]\nis rational, then \\( seqnext=seqgeneral^{2}-seqgeneral+1 \\) for all sufficiently large \\( counter \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "T_1": "hazelnuts",
+        "T_n": "lightning",
+        "T_n+1": "parchment",
+        "n": "doorbells",
+        "m": "snowflake",
+        "k": "pinecones",
+        "i": "sandstorm",
+        "T_m": "driftwood",
+        "T_k": "starfruit",
+        "T_k+1": "lighthouse",
+        "T_k+2": "campground",
+        "a_1": "moonlight",
+        "a_2": "gemstone",
+        "a_n": "windchime",
+        "a_n+1": "raincloud",
+        "a_k": "seashells",
+        "T_i": "scarecrow"
+      },
+      "question": "6. Given \\( hazelnuts =2, parchment = lightning^{2}- lightning +1, doorbells >0 \\), Prove:\n(i) If \\( snowflake \\neq doorbells, driftwood \\) and \\( lightning \\) have no common factor greater than 1 .\n\\[\n\\sum_{sandstorm=1}^{\\infty} \\frac{1}{scarecrow}=1\n\\]\n",
+      "solution": "Solution. The first few members of the sequences are \\( hazelnuts =2, T_{2}=3 \\), \\( T_{3}=7 \\). We shall prove by induction that\n\\[\nparchment =1+\\prod_{sandstorm=1}^{doorbells} scarecrow \\text { for } doorbells \\geq 1\n\\]\n\nThis is true for \\( doorbells =1 \\). Suppose it is true for \\( doorbells = pinecones \\). Then\n\\[\n\\begin{aligned}\ncampground & =1+lighthouse\\left(lighthouse-1\\right) \\\\\n& =1+lighthouse\\left[\\prod_{sandstorm=1}^{pinecones} scarecrow\\right] \\\\\n& =1+\\prod_{sandstorm=1}^{\\left(pinecones+1\\right)} scarecrow\n\\end{aligned}\n\\]\n(The first step by the given recursion, the second by the inductive hypothesis.) This completes the inductive proof of (1).\n\nNow suppose \\( snowflake \\neq doorbells \\), say \\( snowflake<doorbells \\). Then (1) shows that \\( driftwood \\) divides \\( lightning-1 \\), so \\( driftwood \\) and \\( lightning \\) are relatively prime. This is (i).\n\nNext we prove by induction that\n\\[\n\\sum_{sandstorm=1}^{doorbells} \\frac{1}{scarecrow}=1-\\frac{1}{parchment-1}\n\\]\nfor all \\( doorbells \\). This is true for \\( doorbells =1 \\) and, if it is true for \\( doorbells = pinecones \\), we have\n\\[\n\\begin{aligned}\n\\sum_{sandstorm=1}^{pinecones+1} \\frac{1}{scarecrow} & =1-\\frac{1}{lighthouse-1}+\\frac{1}{lighthouse} \\\\\n& =1-\\frac{1}{lighthouse\\left(lighthouse-1\\right)} \\\\\n& =1-\\frac{1}{campground-1}\n\\end{aligned}\n\\]\n\nThus (2) is established.\nSince \\( lightning \\rightarrow \\infty \\) as \\( doorbells \\rightarrow \\infty \\), it follows from (2) that\n\\[\n\\sum_{sandstorm=1}^{\\infty} \\frac{1}{scarecrow}=1\n\\]\nas required.\n\nRemark. It has been proved by P. Erdos and E. G. Straus (Indian Journal of Mathematics, vol. 27 (1963), pp. 129-133) that if \\( moonlight , gemstone , \\ldots \\) are positive integers such that\n\\[\nraincloud \\geq \\prod_{pinecones=1}^{doorbells} seashells \\text { and } \\sum_{doorbells=1}^{\\infty} \\frac{1}{windchime}\n\\]\nis rational, then \\( raincloud = windchime^{2}- windchime +1 \\) for all sufficiently large \\( doorbells \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "T_1": "initialzero",
+        "T_n": "genericnull",
+        "T_n+1": "posteriorgap",
+        "n": "noncount",
+        "m": "identical",
+        "k": "dynamicvar",
+        "i": "aggregate",
+        "T_m": "identicalgap",
+        "T_k": "dynamicgap",
+        "T_k+1": "dynamicgapnext",
+        "T_k+2": "dynamicgaplater",
+        "a_1": "firstomega",
+        "a_2": "secondomega",
+        "a_n": "noncountomega",
+        "a_n+1": "posterioromega",
+        "a_k": "dynamicomega",
+        "T_i": "aggregategap"
+      },
+      "question": "6. Given \\( initialzero=2, posteriorgap=genericnull{ }^{2}-genericnull+1, noncount>0 \\), Prove:\n(i) If \\( identical \\neq noncount, identicalgap \\) and \\( genericnull \\) have no common factor greater than 1 .\n\\[\n\\sum_{aggregate=1}^{\\infty} \\frac{1}{aggregategap}=1\n\\]",
+      "solution": "Solution. The first few members of the sequences are \\( initialzero=2, T_{2}=3 \\), \\( T_{3}=7 \\). We shall prove by induction that\n\\[\nposteriorgap=1+\\prod_{aggregate=1}^{noncount} aggregategap \\text { for } noncount \\geq 1\n\\]\n\nThis is true for \\( noncount=1 \\). Suppose it is true for \\( noncount=dynamicvar \\). Then\n\\[\n\\begin{aligned}\n dynamicgaplater & =1+dynamicgapnext\\left(dynamicgapnext-1\\right) \\\\ & =1+dynamicgapnext\\left[\\prod_{aggregate=1}^{dynamicvar} aggregategap\\right] \\\\ & =1+\\prod_{aggregate=1}^{dynamicvar+1} aggregategap\n\\end{aligned}\n\\]\n(The first step by the given recursion, the second by the inductive hypothesis.) This completes the inductive proof of (1).\n\nNow suppose \\( identical \\neq noncount \\), say \\( identical<noncount \\). Then (1) shows that \\( identicalgap \\) divides \\( genericnull-1 \\), so \\( identicalgap \\) and \\( genericnull \\) are relatively prime. This is (i).\nNext we prove by induction that\n\\[\n\\sum_{aggregate=1}^{noncount} \\frac{1}{aggregategap}=1-\\frac{1}{posteriorgap-1}\n\\]\nfor all \\( noncount \\). This is true for \\( noncount=1 \\) and, if it is true for \\( noncount=dynamicvar \\), we have\n\\[\n\\begin{aligned}\n\\sum_{aggregate=1}^{dynamicvar+1} \\frac{1}{aggregategap} & =1-\\frac{1}{dynamicgapnext-1}+\\frac{1}{dynamicgapnext} \\\\ & =1-\\frac{1}{dynamicgapnext\\left(dynamicgapnext-1\\right)} \\\\ & =1-\\frac{1}{dynamicgaplater-1}\n\\end{aligned}\n\\]\n\nThus (2) is established.\nSince \\( genericnull \\rightarrow \\infty \\) as \\( noncount \\rightarrow \\infty \\), it follows from (2) that\n\\[\n\\sum_{aggregate=1}^{\\infty} \\frac{1}{aggregategap}=1\n\\]\nas required.\nRemark. It has been proved by P. Erdos and E. G. Straus (Indian Journal of Mathematics, vol. 27 (1963), pp. 129-133) that if \\( firstomega, secondomega, \\ldots \\) are positive integers such that\n\\[\nposterioromega \\geq \\prod_{dynamicvar=1}^{noncount} dynamicomega \\text { and } \\sum_{noncount=1}^{\\infty} \\frac{1}{noncountomega}\n\\]\nis rational, then \\( posterioromega=noncountomega{ }^{2}-noncountomega+1 \\) for all sufficiently large \\( noncount \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "T_1": "qzxwvtnp",
+        "T_n": "hjgrksla",
+        "T_n+1": "bdlmtrqz",
+        "n": "swycfodh",
+        "m": "zplkvgbe",
+        "k": "xcrjhaut",
+        "i": "uvmbqsei",
+        "T_m": "arnljdps",
+        "T_k": "oiwqzneb",
+        "T_k+1": "dexslgfa",
+        "T_k+2": "yvhncptr",
+        "a_1": "rgaslmpe",
+        "a_2": "cmbtejos",
+        "a_n": "fnqvzuck",
+        "a_n+1": "htmsyrkd",
+        "a_k": "wpelzvri",
+        "T_i": "skuydamr"
+      },
+      "question": "6. Given \\( qzxwvtnp=2, bdlmtrqz=hjgrksla { }^{2}-hjgrksla+1, swycfodh>0 \\), Prove:\n(i) If \\( zplkvgbe \\neq swycfodh, arnljdps \\) and \\( hjgrksla \\) have no common factor greater than 1 .\n\\[\n\\sum_{uvmbqsei=1}^{\\infty} \\frac{1}{skuydamr}=1\n\\]",
+      "solution": "Solution. The first few members of the sequences are \\( qzxwvtnp=2, T_{2}=3 \\), \\( T_{3}=7 \\). We shall prove by induction that\n\\[\nbdlmtrqz=1+\\prod_{uvmbqsei=1}^{swycfodh} skuydamr \\text { for } swycfodh \\geq 1\n\\]\n\nThis is true for \\( swycfodh=1 \\). Suppose it is true for \\( swycfodh=xcrjhaut \\). Then\n\\[\n\\begin{aligned}\nyvhncptr & =1+dexslgfa\\left(dexslgfa-1\\right) \\\\\n& =1+dexslgfa\\left[\\prod_{uvmbqsei=1}^{xcrjhaut} skuydamr\\right] \\\\\n& =1+\\prod_{uvmbqsei=1}^{xcrjhaut+1} skuydamr\n\\end{aligned}\n\\]\n(The first step by the given recursion, the second by the inductive hypothesis.) This completes the inductive proof of (1).\n\nNow suppose \\( zplkvgbe \\neq swycfodh \\), say \\( zplkvgbe<swycfodh \\). Then (1) shows that \\( arnljdps \\) divides \\( hjgrksla-1 \\), so \\( arnljdps \\) and \\( hjgrksla \\) are relatively prime. This is (i).\nNext we prove by induction that\n\\[\n\\sum_{uvmbqsei=1}^{swycfodh} \\frac{1}{skuydamr}=1-\\frac{1}{bdlmtrqz-1}\n\\]\nfor all \\( swycfodh \\). This is true for \\( swycfodh=1 \\) and, if it is true for \\( swycfodh=xcrjhaut \\), we have\n\\[\n\\begin{aligned}\n\\sum_{uvmbqsei=1}^{xcrjhaut+1} \\frac{1}{skuydamr} & =1-\\frac{1}{dexslgfa-1}+\\frac{1}{dexslgfa} \\\\\n& =1-\\frac{1}{dexslgfa\\left(dexslgfa-1\\right)} \\\\\n& =1-\\frac{1}{yvhncptr-1}\n\\end{aligned}\n\\]\n\nThus (2) is established.\nSince \\( hjgrksla \\rightarrow \\infty \\) as \\( swycfodh \\rightarrow \\infty \\), it follows from (2) that\n\\[\n\\sum_{uvmbqsei=1}^{\\infty} \\frac{1}{skuydamr}=1\n\\]\nas required.\nRemark. It has been proved by P. Erdos and E. G. Straus (Indian Journal of Mathematics, vol. 27 (1963), pp. 129-133) that if \\( rgaslmpe, cmbtejos, \\ldots \\) are positive integers such that\n\\[\nhtmsyrkd \\geq \\prod_{xcrjhaut=1}^{swycfodh} wpelzvri \\text { and } \\sum_{swycfodh=1}^{\\infty} \\frac{1}{fnqvzuck}\n\\]\nis rational, then \\( htmsyrkd=fnqvzuck^{2}-fnqvzuck+1 \\) for all sufficiently large \\( swycfodh \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $a$ be an integer with $a\\ge 3$ and define the sequence $(T_n)_{n\\ge 1}$ by \n\\[\nT_1=a,\\qquad \nT_{n+1}=T_n^{\\,2}-T_n+1\\qquad(n\\ge 1).\n\\]\n\nFor every $n\\ge 1$ put \n\\[\nQ_n:=\\frac{T_{n+1}-1}{a-1}\\;=\\;\\prod_{k=1}^{n}T_k,\\qquad\nS_n:=\\sum_{k=1}^{n}\\frac1{T_k},\\qquad\nP_n:=\\prod_{k=1}^{n}\\Bigl(1-\\frac1{T_k}\\Bigr),\n\\]\nand agree that the empty product is $Q_0:=1$.\n\nProve the following five assertions.\n\n1. (Structure and coprimality) Show that  \n\\[\nT_{n+1}=1+(a-1)\\,\\prod_{k=1}^{n}T_k\\qquad(n\\ge 1)\n\\]\nand deduce that $\\gcd(T_m,T_n)=1$ whenever $m\\ne n$.\n\n2. (Uniqueness of prime factors)  \n   Prove that no prime number divides two distinct terms of the sequence.  \n   Deduce that the first $n$ terms together contain at least $n$ distinct primes.\n\n3. (Exact telescoping identity) Establish the identity  \n\\[\nS_N=\\frac1{a-1}\\Bigl(1-\\frac1{Q_N}\\Bigr)\\qquad(N\\ge 1)\n\\]\nand hence evaluate the infinite series  \n\\[\n\\sum_{n=1}^{\\infty}\\frac1{T_n}=\\frac1{a-1}.\n\\]\n\n4. (Explicit double-exponential growth and remainder estimate)  \n   Prove that for every $n\\ge 1$\n\\[\n\\Bigl(\\frac{a}{2}\\Bigr)^{2^{\\,n-1}}<T_n\\le a^{2^{\\,n-1}},\n\\]\nand deduce the bound for the remainder of the series\n\\[\n0<\\frac1{a-1}-S_N<\\frac{(2/a)^{2^{\\,N}-1}}{a-1}\\qquad(N\\ge 1).\n\\]\n\n5. (Convergence of an Euler-type product)  \n   (a) Show that the limit $P:=\\displaystyle\\lim_{N\\to\\infty}P_N$ exists and is positive.  \n   (b) Put \n\\[\nc(a):=\\frac{(2/a)^{2}}{1-(2/a)^{2}}.\n\\]\n      Prove the double inequality\n\\[\ne^{-1/(a-1)-\\,c(a)}<P<e^{-1/(a-1)}.\n\\]",
+      "solution": "Throughout we employ only elementary number theory, induction and standard analytic estimates.  \nDenote $\\Pi_n:=\\prod_{k=1}^{n}T_k$ (with $\\Pi_0:=1$); by definition $Q_n=\\Pi_n$.\n\n\\bigskip\n\\textbf{1. Structure and coprimality}\n\nInduction on $n$.  \n\nBase $n=1$: \n\\[\nT_2-1=a^{2}-a=(a-1)T_1,\n\\]\nso $T_2=1+(a-1)T_1$.\n\nInductive step: assume \n\\[\nT_{n+1}-1=(a-1)\\Pi_n\\qquad(\\ast)\n\\]\nfor some $n\\ge 1$.  Then\n\\[\nT_{n+2}-1=T_{n+1}(T_{n+1}-1)\n         =T_{n+1}\\,(a-1)\\Pi_n\n         =(a-1)\\Pi_{n+1},\n\\]\nso the desired formula holds for $n+1$.\n\nIf $m<n$, then from $(\\ast)$ we have $T_m\\mid(T_n-1)$.  Any common divisor $d$ of $T_m$ and $T_n$ therefore divides both $T_n$ and $T_n-1$, hence $d\\mid 1$; consequently $\\gcd(T_m,T_n)=1$.\n\n\\bigskip\n\\textbf{2. Uniqueness of prime factors}\n\nLet a prime $p$ divide $T_m$ and $T_n$ with $m<n$.  By Part~1, $p$ divides $T_n-1$ as well, and hence divides $T_n-(T_n-1)=1$, a contradiction.  \nThus each prime divisor occurs in at most one term, so the first $n$ terms contain at least $n$ distinct primes.\n\n\\bigskip\n\\textbf{3. Telescoping identity}\n\nFrom Part~1 we have \n\\[\nT_k=1+(a-1)Q_{k-1}\\qquad(k\\ge 1). \\tag{1}\n\\]\n\nBecause $Q_k=Q_{k-1}T_k$, \n\\[\n\\frac1{Q_{k-1}}-\\frac1{Q_k}\n=\\frac{T_k-1}{Q_{k-1}T_k}\n=\\frac{(a-1)Q_{k-1}}{Q_{k-1}T_k} \\quad\\text{(by (1))} \n=\\frac{a-1}{T_k}.\n\\]\nHence for every $k\\ge 1$\n\\[\n\\frac1{T_k}=\\frac1{a-1}\\Bigl(\\frac1{Q_{k-1}}-\\frac1{Q_k}\\Bigr). \\tag{2}\n\\]\n\nSumming (2) for $k=1,\\dots,N$ and using $Q_0=1$ gives\n\\[\nS_N=\\frac1{a-1}\\Bigl(1-\\frac1{Q_N}\\Bigr).\n\\]\nSince $Q_N\\to\\infty$, letting $N\\to\\infty$ yields \n\\[\n\\sum_{n=1}^{\\infty}\\frac1{T_n}=\\frac1{a-1}.\n\\]\n\n\\bigskip\n\\textbf{4. Explicit double-exponential growth and remainder}\n\nUpper bound.  As $T_n\\ge 2$,\n\\[\nT_{n+1}=T_n^{\\,2}-T_n+1\\le T_n^{\\,2}.\n\\]\nInduction yields $T_n\\le a^{2^{\\,n-1}}$ (equality for $n=1$).\n\nLower bound.  For $x\\ge 2$ we have $x^{2}-x+1\\ge x^{2}-x\\ge x^{2}/2$, hence  \n\\[\nT_{n+1}\\ge \\frac{T_n^{\\,2}}{2}. \\tag{3}\n\\]\nWe prove by induction that for every $n\\ge 1$\n\\[\nT_n\\ge\\frac{a^{2^{\\,n-1}}}{2^{\\,2^{\\,n-1}-1}}. \\tag{4}\n\\]\nBase $n=1$: equality holds.  \nInductive step: assume (4) for $n$.  Using (3),\n\\[\nT_{n+1}\\ge\\frac12\\,T_n^{\\,2}\n          \\ge\\frac12\\Bigl(\\frac{a^{2^{\\,n-1}}}{2^{\\,2^{\\,n-1}-1}}\\Bigr)^{\\!2}\n          =\\frac{a^{2^{\\,n}}}{2^{\\,2^{\\,n}-1}},\n\\]\nso (4) holds for $n+1$.\n\nSince $a^{2^{\\,n-1}}/2^{\\,2^{\\,n-1}-1}=2\\,(a/2)^{2^{\\,n-1}}$, inequality (4) implies\n\\[\nT_n>(a/2)^{2^{\\,n-1}}\\qquad(n\\ge 1),\n\\]\nproving the asserted growth.\n\nRemainder.  From (4)\n\\[\nQ_N=\\Pi_N\n   \\ge\\prod_{k=1}^{N}\\frac{a^{2^{\\,k-1}}}{2^{\\,2^{\\,k-1}-1}}\n   =2^{\\,N}\\,(a/2)^{2^{\\,N}-1}.\n\\]\nHence\n\\[\n0<\\frac1{a-1}-S_N=\\frac1{(a-1)Q_N}\n  <\\frac{(2/a)^{2^{\\,N}-1}}{a-1}.\n\\]\n\n\\bigskip\n\\textbf{5. Convergence of the Euler-type product}\n\n\\textit{(a) Existence and positivity of the limit.}  \nWrite \n\\[\n\\log P_N=\\sum_{k=1}^{N}\\log\\Bigl(1-\\frac1{T_k}\\Bigr).\n\\]\nSince $a\\ge 3$, $1/T_k\\le 1/3<1/2$, and for $0<t\\le 1/2$\n\\[\n-\\,t-t^{2}\\le\\log(1-t)\\le -\\,t. \\tag{5}\n\\]\nApplying (5) with $t=1/T_k$,\n\\[\n-\\sum_{k=1}^{N}\\frac1{T_k}-\\sum_{k=1}^{N}\\frac1{T_k^{\\,2}}\n\\;\\le\\;\n\\log P_N\n\\;\\le\\;\n-\\,\\sum_{k=1}^{N}\\frac1{T_k}. \\tag{6}\n\\]\n\nThe first sum tends to $-1/(a-1)$ by Part~3.  \nFor the second sum we use $T_k\\ge 2\\,(a/2)^{2^{\\,k-1}}$ (from Part~4), giving\n\\[\n\\frac1{T_k^{\\,2}}\\le \\frac14\\,(2/a)^{2^{\\,k}}\n                 <(2/a)^{2^{\\,k}}. \\tag{7}\n\\]\nBecause $0<(2/a)<1$, the series $\\sum_{k\\ge 1}(2/a)^{2^{\\,k}}$ converges and satisfies\n\\[\n\\sum_{k=1}^{\\infty}(2/a)^{2^{\\,k}}\n\\;\\le\\;\n\\sum_{k=1}^{\\infty}(2/a)^{2k}\n=\\frac{(2/a)^{2}}{1-(2/a)^{2}}\n=:c(a). \\tag{8}\n\\]\nCombining (7) and (8) we obtain  \n\\[\n\\sum_{k=1}^{\\infty}\\frac1{T_k^{\\,2}}\\le c(a)<\\infty.\n\\]\nTherefore the sequence $(\\log P_N)_N$ is Cauchy and\n\\[\nP:=\\lim_{N\\to\\infty}P_N\n\\]\nexists; inequality (6) also implies $P>0$.\n\n\\smallskip\n\\textit{(b) Quantitative bounds.}  \nLetting $N\\to\\infty$ in (6) yields\n\\[\n-\\frac1{a-1}-c(a)\\;\\le\\;\\log P\\;\\le\\;-\\frac1{a-1},\n\\]\nso\n\\[\ne^{-1/(a-1)-\\,c(a)}<P<e^{-1/(a-1)}.\n\\]\n\nThe five assertions are proved in full.\n\n\\bigskip",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.484954",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original problem, several layers of additional complexity were introduced.\n\n•  A variable initial value a ≥ 2 replaces the fixed value 2 or 4; all identities now have to be proved in full generality.\n\n•  Beyond pairwise coprimality, part 2 demands a proof of square–freeness and the non-recurrence of prime divisors, forcing the solver to combine p-adic valuation arguments with the structural identity from part 1.\n\n•  Part 3 generalises the telescoping trick and produces an exact finite-N identity whose infinite-N limit recovers the series value.  Handling the parameter a adds algebraic complications.\n\n•  Part 4 requires growth estimates for T_n and gives explicit double-exponential bounds, introducing asymptotic reasoning that never appears in the original exercise.\n\n•  Part 5 turns the classical Euler product into an analytic question, bounding log P between two explicit constants by estimating the error term ∑1/T_k².  This merges elementary number theory with real analysis (series of logarithms, uniform bounds).\n\nAltogether the solver must master induction, valuation theory, double-exponential estimates, telescoping techniques in unusual disguises, and analytic bounding of infinite products—considerably deeper and more varied than the tasks in either the original problem or the existing kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $a$ be an integer with $a\\ge 3$ and define the sequence $(T_n)_{n\\ge 1}$ by \n\\[\nT_1=a,\\qquad \nT_{n+1}=T_n^{\\,2}-T_n+1\\qquad(n\\ge 1).\n\\]\n\nFor every $n\\ge 1$ put \n\\[\nQ_n:=\\frac{T_{n+1}-1}{a-1}\\;=\\;\\prod_{k=1}^{n}T_k,\\qquad\nS_n:=\\sum_{k=1}^{n}\\frac1{T_k},\\qquad\nP_n:=\\prod_{k=1}^{n}\\Bigl(1-\\frac1{T_k}\\Bigr),\n\\]\nand agree that the empty product is $Q_0:=1$.\n\nProve the following five assertions.\n\n1. (Structure and coprimality) Show that  \n\\[\nT_{n+1}=1+(a-1)\\,\\prod_{k=1}^{n}T_k\\qquad(n\\ge 1)\n\\]\nand deduce that $\\gcd(T_m,T_n)=1$ whenever $m\\ne n$.\n\n2. (Uniqueness of prime factors)  \n   Prove that no prime number divides two distinct terms of the sequence.  \n   Deduce that the first $n$ terms together contain at least $n$ distinct primes.\n\n3. (Exact telescoping identity) Establish the identity  \n\\[\nS_N=\\frac1{a-1}\\Bigl(1-\\frac1{Q_N}\\Bigr)\\qquad(N\\ge 1)\n\\]\nand hence evaluate the infinite series  \n\\[\n\\sum_{n=1}^{\\infty}\\frac1{T_n}=\\frac1{a-1}.\n\\]\n\n4. (Explicit double-exponential growth and remainder estimate)  \n   Prove that for every $n\\ge 1$\n\\[\n\\Bigl(\\frac{a}{2}\\Bigr)^{2^{\\,n-1}}<T_n\\le a^{2^{\\,n-1}},\n\\]\nand deduce the bound for the remainder of the series\n\\[\n0<\\frac1{a-1}-S_N<\\frac{(2/a)^{2^{\\,N}-1}}{a-1}\\qquad(N\\ge 1).\n\\]\n\n5. (Convergence of an Euler-type product)  \n   (a) Show that the limit $P:=\\displaystyle\\lim_{N\\to\\infty}P_N$ exists and is positive.  \n   (b) Put \n\\[\nc(a):=\\frac{(2/a)^{2}}{1-(2/a)^{2}}.\n\\]\n      Prove the double inequality\n\\[\ne^{-1/(a-1)-\\,c(a)}<P<e^{-1/(a-1)}.\n\\]",
+      "solution": "Throughout we employ only elementary number theory, induction and standard analytic estimates.  \nDenote $\\Pi_n:=\\prod_{k=1}^{n}T_k$ (with $\\Pi_0:=1$); by definition $Q_n=\\Pi_n$.\n\n\\bigskip\n\\textbf{1. Structure and coprimality}\n\nInduction on $n$.  \n\nBase $n=1$: \n\\[\nT_2-1=a^{2}-a=(a-1)T_1,\n\\]\nso $T_2=1+(a-1)T_1$.\n\nInductive step: assume \n\\[\nT_{n+1}-1=(a-1)\\Pi_n\\qquad(\\ast)\n\\]\nfor some $n\\ge 1$.  Then\n\\[\nT_{n+2}-1=T_{n+1}(T_{n+1}-1)\n         =T_{n+1}\\,(a-1)\\Pi_n\n         =(a-1)\\Pi_{n+1},\n\\]\nso the desired formula holds for $n+1$.\n\nIf $m<n$, then from $(\\ast)$ we have $T_m\\mid(T_n-1)$.  Any common divisor $d$ of $T_m$ and $T_n$ therefore divides both $T_n$ and $T_n-1$, hence $d\\mid 1$; consequently $\\gcd(T_m,T_n)=1$.\n\n\\bigskip\n\\textbf{2. Uniqueness of prime factors}\n\nLet a prime $p$ divide $T_m$ and $T_n$ with $m<n$.  By Part~1, $p$ divides $T_n-1$ as well, and hence divides $T_n-(T_n-1)=1$, a contradiction.  \nThus each prime divisor occurs in at most one term, so the first $n$ terms contain at least $n$ distinct primes.\n\n\\bigskip\n\\textbf{3. Telescoping identity}\n\nFrom Part~1 we have \n\\[\nT_k=1+(a-1)Q_{k-1}\\qquad(k\\ge 1). \\tag{1}\n\\]\n\nBecause $Q_k=Q_{k-1}T_k$, \n\\[\n\\frac1{Q_{k-1}}-\\frac1{Q_k}\n=\\frac{T_k-1}{Q_{k-1}T_k}\n=\\frac{(a-1)Q_{k-1}}{Q_{k-1}T_k} \\quad\\text{(by (1))} \n=\\frac{a-1}{T_k}.\n\\]\nHence for every $k\\ge 1$\n\\[\n\\frac1{T_k}=\\frac1{a-1}\\Bigl(\\frac1{Q_{k-1}}-\\frac1{Q_k}\\Bigr). \\tag{2}\n\\]\n\nSumming (2) for $k=1,\\dots,N$ and using $Q_0=1$ gives\n\\[\nS_N=\\frac1{a-1}\\Bigl(1-\\frac1{Q_N}\\Bigr).\n\\]\nSince $Q_N\\to\\infty$, letting $N\\to\\infty$ yields \n\\[\n\\sum_{n=1}^{\\infty}\\frac1{T_n}=\\frac1{a-1}.\n\\]\n\n\\bigskip\n\\textbf{4. Explicit double-exponential growth and remainder}\n\nUpper bound.  As $T_n\\ge 2$,\n\\[\nT_{n+1}=T_n^{\\,2}-T_n+1\\le T_n^{\\,2}.\n\\]\nInduction yields $T_n\\le a^{2^{\\,n-1}}$ (equality for $n=1$).\n\nLower bound.  For $x\\ge 2$ we have $x^{2}-x+1\\ge x^{2}-x\\ge x^{2}/2$, hence  \n\\[\nT_{n+1}\\ge \\frac{T_n^{\\,2}}{2}. \\tag{3}\n\\]\nWe prove by induction that for every $n\\ge 1$\n\\[\nT_n\\ge\\frac{a^{2^{\\,n-1}}}{2^{\\,2^{\\,n-1}-1}}. \\tag{4}\n\\]\nBase $n=1$: equality holds.  \nInductive step: assume (4) for $n$.  Using (3),\n\\[\nT_{n+1}\\ge\\frac12\\,T_n^{\\,2}\n          \\ge\\frac12\\Bigl(\\frac{a^{2^{\\,n-1}}}{2^{\\,2^{\\,n-1}-1}}\\Bigr)^{\\!2}\n          =\\frac{a^{2^{\\,n}}}{2^{\\,2^{\\,n}-1}},\n\\]\nso (4) holds for $n+1$.\n\nSince $a^{2^{\\,n-1}}/2^{\\,2^{\\,n-1}-1}=2\\,(a/2)^{2^{\\,n-1}}$, inequality (4) implies\n\\[\nT_n>(a/2)^{2^{\\,n-1}}\\qquad(n\\ge 1),\n\\]\nproving the asserted growth.\n\nRemainder.  From (4)\n\\[\nQ_N=\\Pi_N\n   \\ge\\prod_{k=1}^{N}\\frac{a^{2^{\\,k-1}}}{2^{\\,2^{\\,k-1}-1}}\n   =2^{\\,N}\\,(a/2)^{2^{\\,N}-1}.\n\\]\nHence\n\\[\n0<\\frac1{a-1}-S_N=\\frac1{(a-1)Q_N}\n  <\\frac{(2/a)^{2^{\\,N}-1}}{a-1}.\n\\]\n\n\\bigskip\n\\textbf{5. Convergence of the Euler-type product}\n\n\\textit{(a) Existence and positivity of the limit.}  \nWrite \n\\[\n\\log P_N=\\sum_{k=1}^{N}\\log\\Bigl(1-\\frac1{T_k}\\Bigr).\n\\]\nSince $a\\ge 3$, $1/T_k\\le 1/3<1/2$, and for $0<t\\le 1/2$\n\\[\n-\\,t-t^{2}\\le\\log(1-t)\\le -\\,t. \\tag{5}\n\\]\nApplying (5) with $t=1/T_k$,\n\\[\n-\\sum_{k=1}^{N}\\frac1{T_k}-\\sum_{k=1}^{N}\\frac1{T_k^{\\,2}}\n\\;\\le\\;\n\\log P_N\n\\;\\le\\;\n-\\,\\sum_{k=1}^{N}\\frac1{T_k}. \\tag{6}\n\\]\n\nThe first sum tends to $-1/(a-1)$ by Part~3.  \nFor the second sum we use $T_k\\ge 2\\,(a/2)^{2^{\\,k-1}}$ (from Part~4), giving\n\\[\n\\frac1{T_k^{\\,2}}\\le \\frac14\\,(2/a)^{2^{\\,k}}\n                 <(2/a)^{2^{\\,k}}. \\tag{7}\n\\]\nBecause $0<(2/a)<1$, the series $\\sum_{k\\ge 1}(2/a)^{2^{\\,k}}$ converges and satisfies\n\\[\n\\sum_{k=1}^{\\infty}(2/a)^{2^{\\,k}}\n\\;\\le\\;\n\\sum_{k=1}^{\\infty}(2/a)^{2k}\n=\\frac{(2/a)^{2}}{1-(2/a)^{2}}\n=:c(a). \\tag{8}\n\\]\nCombining (7) and (8) we obtain  \n\\[\n\\sum_{k=1}^{\\infty}\\frac1{T_k^{\\,2}}\\le c(a)<\\infty.\n\\]\nTherefore the sequence $(\\log P_N)_N$ is Cauchy and\n\\[\nP:=\\lim_{N\\to\\infty}P_N\n\\]\nexists; inequality (6) also implies $P>0$.\n\n\\smallskip\n\\textit{(b) Quantitative bounds.}  \nLetting $N\\to\\infty$ in (6) yields\n\\[\n-\\frac1{a-1}-c(a)\\;\\le\\;\\log P\\;\\le\\;-\\frac1{a-1},\n\\]\nso\n\\[\ne^{-1/(a-1)-\\,c(a)}<P<e^{-1/(a-1)}.\n\\]\n\nThe five assertions are proved in full.\n\n\\bigskip",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.405997",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original problem, several layers of additional complexity were introduced.\n\n•  A variable initial value a ≥ 2 replaces the fixed value 2 or 4; all identities now have to be proved in full generality.\n\n•  Beyond pairwise coprimality, part 2 demands a proof of square–freeness and the non-recurrence of prime divisors, forcing the solver to combine p-adic valuation arguments with the structural identity from part 1.\n\n•  Part 3 generalises the telescoping trick and produces an exact finite-N identity whose infinite-N limit recovers the series value.  Handling the parameter a adds algebraic complications.\n\n•  Part 4 requires growth estimates for T_n and gives explicit double-exponential bounds, introducing asymptotic reasoning that never appears in the original exercise.\n\n•  Part 5 turns the classical Euler product into an analytic question, bounding log P between two explicit constants by estimating the error term ∑1/T_k².  This merges elementary number theory with real analysis (series of logarithms, uniform bounds).\n\nAltogether the solver must master induction, valuation theory, double-exponential estimates, telescoping techniques in unusual disguises, and analytic bounding of infinite products—considerably deeper and more varied than the tasks in either the original problem or the existing kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

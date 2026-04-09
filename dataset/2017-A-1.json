@@ -1,0 +1,100 @@
+{
+  "index": "2017-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $S$ be the smallest set of positive integers such that\n\\begin{enumerate}\n\\item[(a)]\n$2$ is in $S$,\n\\item[(b)]\n$n$ is in $S$ whenever $n^2$ is in $S$, and\n\\item[(c)]\n$(n+5)^2$ is in $S$ whenever $n$ is in $S$.\n\\end{enumerate}\nWhich positive integers are not in $S$?\n\n(The set $S$ is ``smallest'' in the sense that $S$ is contained in any other such set.)",
+  "solution": "We claim that the positive integers not in $S$ are $1$ and all multiples of $5$. If $S$ consists of all other natural numbers, then $S$ satisfies the given conditions: note that the only perfect squares not in $S$ are $1$ and numbers of the form $(5k)^2$ for some positive integer $k$, and it readily follows that both (b) and (c) hold.\n\n\nNow suppose that $T$ is another set of positive integers satisfying (a), (b), and (c). Note from (b) and (c) that if $n \\in T$ then $n+5 \\in T$, and so $T$ satisfies the following property: \n\\begin{itemize}\n\\item[(d)]\nif $n\\in T$, then $n+5k \\in T$ for all $k \\geq 0$.\n\\end{itemize} \nThe following must then be in $T$, with implications labeled by conditions (b) through (d):\n\\begin{gather*}\n2 \\stackrel{c}{\\Rightarrow} 49 \\stackrel{c}{\\Rightarrow} 54^2 \\stackrel{d}{\\Rightarrow} 56^2 \\stackrel{b}{\\Rightarrow} 56 \\stackrel{d}{\\Rightarrow} 121 \\stackrel{b}{\\Rightarrow} 11 \\\\\n11 \\stackrel{d}{\\Rightarrow} 16 \\stackrel{b}{\\Rightarrow} 4 \\stackrel{d}{\\Rightarrow} 9 \\stackrel{b}{\\Rightarrow} 3 \\\\\n16 \\stackrel{d}{\\Rightarrow} 36 \\stackrel{b}{\\Rightarrow} 6\n\\end{gather*}\n\nSince $2,3,4,6 \\in T$, by (d) $S \\subseteq T$, and so $S$ is smallest.",
+  "vars": [
+    "n",
+    "k"
+  ],
+  "params": [
+    "S",
+    "T"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "variableinteger",
+        "k": "shiftindex",
+        "S": "minimalset",
+        "T": "otherset"
+      },
+      "question": "Let $minimalset$ be the smallest set of positive integers such that\n\\begin{enumerate}\n\\item[(a)]\n$2$ is in $minimalset$,\n\\item[(b)]\n$variableinteger$ is in $minimalset$ whenever $variableinteger^2$ is in $minimalset$, and\n\\item[(c)]\n$(variableinteger+5)^2$ is in $minimalset$ whenever $variableinteger$ is in $minimalset$.\n\\end{enumerate}\nWhich positive integers are not in $minimalset$?",
+      "solution": "We claim that the positive integers not in $minimalset$ are $1$ and all multiples of $5$. If $minimalset$ consists of all other natural numbers, then $minimalset$ satisfies the given conditions: note that the only perfect squares not in $minimalset$ are $1$ and numbers of the form $(5\\shiftindex)^2$ for some positive integer $\\shiftindex$, and it readily follows that both (b) and (c) hold.\n\nNow suppose that $otherset$ is another set of positive integers satisfying (a), (b), and (c). Note from (b) and (c) that if $variableinteger \\in otherset$ then $variableinteger+5 \\in otherset$, and so $otherset$ satisfies the following property:\n\\begin{itemize}\n\\item[(d)]\nif $variableinteger\\in otherset$, then $variableinteger+5\\shiftindex \\in otherset$ for all $\\shiftindex \\geq 0$.\n\\end{itemize}\nThe following must then be in $otherset$, with implications labeled by conditions (b) through (d):\n\\begin{gather*}\n2 \\stackrel{c}{\\Rightarrow} 49 \\stackrel{c}{\\Rightarrow} 54^2 \\stackrel{d}{\\Rightarrow} 56^2 \\stackrel{b}{\\Rightarrow} 56 \\stackrel{d}{\\Rightarrow} 121 \\stackrel{b}{\\Rightarrow} 11 \\\\\n11 \\stackrel{d}{\\Rightarrow} 16 \\stackrel{b}{\\Rightarrow} 4 \\stackrel{d}{\\Rightarrow} 9 \\stackrel{b}{\\Rightarrow} 3 \\\\\n16 \\stackrel{d}{\\Rightarrow} 36 \\stackrel{b}{\\Rightarrow} 6\n\\end{gather*}\n\nSince $2,3,4,6 \\in otherset$, by (d) $minimalset \\subseteq otherset$, and so $minimalset$ is smallest."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "passenger",
+        "k": "lanterns",
+        "S": "sunflower",
+        "T": "tangerine"
+      },
+      "question": "Let $sunflower$ be the smallest set of positive integers such that\n\\begin{enumerate}\n\\item[(a)]\n$2$ is in $sunflower$,\n\\item[(b)]\n$passenger$ is in $sunflower$ whenever $passenger^2$ is in $sunflower$, and\n\\item[(c)]\n$(passenger+5)^2$ is in $sunflower$ whenever $passenger$ is in $sunflower$.\n\\end{enumerate}\nWhich positive integers are not in $sunflower$?\n\n(The set $sunflower$ is ``smallest'' in the sense that $sunflower$ is contained in any other such set.)",
+      "solution": "We claim that the positive integers not in $sunflower$ are $1$ and all multiples of $5$. If $sunflower$ consists of all other natural numbers, then $sunflower$ satisfies the given conditions: note that the only perfect squares not in $sunflower$ are $1$ and numbers of the form $(5lanterns)^2$ for some positive integer $lanterns$, and it readily follows that both (b) and (c) hold.\n\n\nNow suppose that $tangerine$ is another set of positive integers satisfying (a), (b), and (c). Note from (b) and (c) that if $passenger \\in tangerine$ then $passenger+5 \\in tangerine$, and so $tangerine$ satisfies the following property: \n\\begin{itemize}\n\\item[(d)]\nif $passenger\\in tangerine$, then $passenger+5lanterns \\in tangerine$ for all $lanterns \\geq 0$.\n\\end{itemize} \nThe following must then be in $tangerine$, with implications labeled by conditions (b) through (d):\n\\begin{gather*}\n2 \\stackrel{c}{\\Rightarrow} 49 \\stackrel{c}{\\Rightarrow} 54^2 \\stackrel{d}{\\Rightarrow} 56^2 \\stackrel{b}{\\Rightarrow} 56 \\stackrel{d}{\\Rightarrow} 121 \\stackrel{b}{\\Rightarrow} 11 \\\\\n11 \\stackrel{d}{\\Rightarrow} 16 \\stackrel{b}{\\Rightarrow} 4 \\stackrel{d}{\\Rightarrow} 9 \\stackrel{b}{\\Rightarrow} 3 \\\\\n16 \\stackrel{d}{\\Rightarrow} 36 \\stackrel{b}{\\Rightarrow} 6\n\\end{gather*}\n\nSince $2,3,4,6 \\in tangerine$, by (d) $sunflower \\subseteq tangerine$, and so $sunflower$ is smallest."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "nonnumber",
+        "k": "nonmultiple",
+        "S": "largestset",
+        "T": "emptyset"
+      },
+      "question": "Let $largestset$ be the smallest set of positive integers such that\n\\begin{enumerate}\n\\item[(a)]\n$2$ is in $largestset$,\n\\item[(b)]\n$nonnumber$ is in $largestset$ whenever $nonnumber^2$ is in $largestset$, and\n\\item[(c)]\n$(nonnumber+5)^2$ is in $largestset$ whenever $nonnumber$ is in $largestset$.\n\\end{enumerate}\nWhich positive integers are not in $largestset$?",
+      "solution": "We claim that the positive integers not in $largestset$ are $1$ and all multiples of $5$. If $largestset$ consists of all other natural numbers, then $largestset$ satisfies the given conditions: note that the only perfect squares not in $largestset$ are $1$ and numbers of the form $(5\\nonmultiple)^2$ for some positive integer $\\nonmultiple$, and it readily follows that both (b) and (c) hold.\n\n\nNow suppose that $emptyset$ is another set of positive integers satisfying (a), (b), and (c). Note from (b) and (c) that if $\\nonnumber \\in emptyset$ then $\\nonnumber+5 \\in emptyset$, and so $emptyset$ satisfies the following property: \n\\begin{itemize}\n\\item[(d)]\nif $\\nonnumber\\in emptyset$, then $\\nonnumber+5\\nonmultiple \\in emptyset$ for all $\\nonmultiple \\geq 0$.\n\\end{itemize} \nThe following must then be in $emptyset$, with implications labeled by conditions (b) through (d):\n\\begin{gather*}\n2 \\stackrel{c}{\\Rightarrow} 49 \\stackrel{c}{\\Rightarrow} 54^2 \\stackrel{d}{\\Rightarrow} 56^2 \\stackrel{b}{\\Rightarrow} 56 \\stackrel{d}{\\Rightarrow} 121 \\stackrel{b}{\\Rightarrow} 11 \\\\\n11 \\stackrel{d}{\\Rightarrow} 16 \\stackrel{b}{\\Rightarrow} 4 \\stackrel{d}{\\Rightarrow} 9 \\stackrel{b}{\\Rightarrow} 3 \\\\\n16 \\stackrel{d}{\\Rightarrow} 36 \\stackrel{b}{\\Rightarrow} 6\n\\end{gather*}\n\nSince $2,3,4,6 \\in emptyset$, by (d) $largestset \\subseteq emptyset$, and so $largestset$ is smallest."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "S": "vmdlqsrp",
+        "T": "xpwztjkc"
+      },
+      "question": "Let $vmdlqsrp$ be the smallest set of positive integers such that\n\\begin{enumerate}\n\\item[(a)]\n$2$ is in $vmdlqsrp$,\n\\item[(b)]\n$qzxwvtnp$ is in $vmdlqsrp$ whenever $qzxwvtnp^2$ is in $vmdlqsrp$, and\n\\item[(c)]\n$(qzxwvtnp+5)^2$ is in $vmdlqsrp$ whenever $qzxwvtnp$ is in $vmdlqsrp$.\n\\end{enumerate}\nWhich positive integers are not in $vmdlqsrp$?\n\n(The set $vmdlqsrp$ is ``smallest'' in the sense that $vmdlqsrp$ is contained in any other such set.)",
+      "solution": "We claim that the positive integers not in $vmdlqsrp$ are $1$ and all multiples of $5$. If $vmdlqsrp$ consists of all other natural numbers, then $vmdlqsrp$ satisfies the given conditions: note that the only perfect squares not in $vmdlqsrp$ are $1$ and numbers of the form $(5hjgrksla)^2$ for some positive integer $hjgrksla$, and it readily follows that both (b) and (c) hold.\n\n\nNow suppose that $xpwztjkc$ is another set of positive integers satisfying (a), (b), and (c). Note from (b) and (c) that if $qzxwvtnp \\in xpwztjkc$ then $qzxwvtnp+5 \\in xpwztjkc$, and so $xpwztjkc$ satisfies the following property: \n\\begin{itemize}\n\\item[(d)]\nif $qzxwvtnp\\in xpwztjkc$, then $qzxwvtnp+5hjgrksla \\in xpwztjkc$ for all $hjgrksla \\geq 0$.\n\\end{itemize} \nThe following must then be in $xpwztjkc$, with implications labeled by conditions (b) through (d):\n\\begin{gather*}\n2 \\stackrel{c}{\\Rightarrow} 49 \\stackrel{c}{\\Rightarrow} 54^2 \\stackrel{d}{\\Rightarrow} 56^2 \\stackrel{b}{\\Rightarrow} 56 \\stackrel{d}{\\Rightarrow} 121 \\stackrel{b}{\\Rightarrow} 11 \\\\\n11 \\stackrel{d}{\\Rightarrow} 16 \\stackrel{b}{\\Rightarrow} 4 \\stackrel{d}{\\Rightarrow} 9 \\stackrel{b}{\\Rightarrow} 3 \\\\\n16 \\stackrel{d}{\\Rightarrow} 36 \\stackrel{b}{\\Rightarrow} 6\n\\end{gather*}\n\nSince $2,3,4,6 \\in xpwztjkc$, by (d) $vmdlqsrp \\subseteq xpwztjkc$, and so $vmdlqsrp$ is smallest."
+    },
+    "kernel_variant": {
+      "question": "Let $S$ be the smallest set of positive integers satisfying\n(a) $3\\in S$;\n(b) whenever $n^{2}\\in S$ we also have $n\\in S$;\n(c) whenever $n\\in S$ we also have $(n+4)^{2}\\in S$.\nDetermine exactly which positive integers are \nNOT contained in $S$.",
+      "solution": "1.  Parity.\nThe only element placed in $S$ at the start is $3$, which is odd.  \nRules (b) and (c) both preserve parity:  \n- If $n$ is even (resp.\thinspace odd) then $n^{2}$ is even (resp.\thinspace odd);  \n- If $n$ is even (resp.\thinspace odd) then $n+4$ is even (resp.\thinspace odd), so $(n+4)^{2}$ has the same parity.  \nConsequently every number ever produced from $3$ is odd.  Hence\n\n          every even positive integer is **not** in $S$.\n\n2.  A useful closure property.\nCombining (c) and (b) gives\n        $n\\in S\\;\\Longrightarrow\\;(n+4)^{2}\\in S\\;\\Longrightarrow\\;n+4\\in S.$   (\\star )\nThus $S$ is closed under repeatedly adding $4$.\nIn particular $3\\in S$ produces\n        $3,7,11,15,19,\\dots$;\nso every integer that is $\\equiv 3\\pmod 4$ lies in $S$.\n\n3.  Getting a first square that is $1\\pmod 4$.\nApplying (c) to $3$ gives $(3+4)^{2}=7^{2}=49\\in S$.  By (\\star ),\n        $49,53,57,61,\\dots$ are also in $S$.\nAmong these is $81=49+8\\cdot4$, whence $81\\in S$.\n\n4.  A smaller element enters.\nBecause $81=9^{2}$ and $81\\in S$, rule (b) forces\n        $9\\in S$.\n\n5.  From $9$ we descend to $5$.\nApplying (\\star ) to $9$ four times yields\n        $9\\rightarrow 13\\rightarrow 17\\rightarrow 21\\rightarrow 25$.\nNow $25=5^{2}\\in S$, so rule (b) gives\n        $5\\in S$.\n\n6.  All odd integers $\\ge 3$ are in $S$.\nStarting with $5\\in S$, the closure (\\star ) supplies every integer\n        $5,9,13,17,\\dots$, i.e. all odd integers that are $\\equiv 1\\pmod 4$ and at least $5$.\nTogether with the $\\equiv 3\\pmod 4$ integers produced in Step\u00192 we obtain **every odd integer $\\ge 3$.**\n\n7.  Why $1$ never appears.\nThe only rule that can produce a *smaller* number is (b).  It converts\n$n^{2}$ to $n$.  For (b) to create $1$ we would need $1^{2}=1$ already in\n$S$, but $1$ was not given initially and cannot arise from (c) or (\\star )\n(these always create numbers $\\ge 49$ and numbers larger than the start\nrespectively).  Hence $1\\notin S$.\n\n8.  Description of $S$ and of its complement.\nFrom the preceding steps\n        $S=\\{\\text{all odd positive integers}\\}\\setminus\\{1\\}.$\nTherefore the positive integers **not** in $S$ are\n        $1$ and every even positive integer.\n\n9.  Minimality check.\nLet $T$ be any set satisfying (a)\u0013(c).  Step\u00191 shows that $T$ contains only odd integers, so all even numbers are excluded from every such set.  The argument of Steps\u00192\u00136 is constructive and works inside any set satisfying (a)\u0013(c); hence every such set must contain all odd numbers $\\ge 3$.  As argued in Step\u00197 no such set can contain $1$.  Thus the set we have identified is contained in every other admissible set and is therefore the required smallest set.  \\(\\Box\\)",
+      "_meta": {
+        "core_steps": [
+          "From (b)+(c) derive closure:  n∈S ⇒ n+5∈S (call this property (d)).",
+          "Propose candidate set S* = ℕ \\ {1 and all multiples of 5}; verify (a),(b),(c) using mod-5 check.",
+          "Use the seed 2 together with (b),(c),(d) to build at least one number in every allowed residue class mod 5 (e.g. get 3,4,6).",
+          "Property (d) then fills out all numbers ≡2,3,4 (mod 5); hence any set satisfying (a)–(c) contains S*.",
+          "Therefore the integers not in S are exactly 1 and the multiples of 5."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Translation constant in rule (c), i.e. the '+5' that defines the relevant modulus.",
+            "original": "5"
+          },
+          "slot2": {
+            "description": "Designated starting element supplied by condition (a).  It only needs to avoid the excluded residue classes.",
+            "original": "2"
+          },
+          "slot3": {
+            "description": "Isolated excluded integer that is not a multiple of the translation constant.",
+            "original": "1"
+          },
+          "slot4": {
+            "description": "Entire residue class excluded from S (here, the multiples of the translation constant).",
+            "original": "all multiples of 5"
+          },
+          "slot5": {
+            "description": "Specific numerical chain chosen to exhibit representatives of the allowed residue classes (e.g. 49, 54², 56², 56, 121, 11, 16, 4, 9, 3, 36, 6). Any alternative chain achieving the same representatives would work equally well.",
+            "original": "[49, 54^2, 56^2, 56, 121, 11, 16, 4, 9, 3, 36, 6]"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

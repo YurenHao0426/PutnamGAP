@@ -1,0 +1,124 @@
+{
+  "index": "2004-A-3",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Define a sequence $\\{ u_n \\}_{n=0}^\\infty$\nby  $u_0 = u_1 = u_2 = 1$, and thereafter by\nthe\ncondition that\n\\[\n\\det\\begin{pmatrix}\nu_n &   u_{n+1}\\\\\nu_{n+2} & u_{n+3}\n\\end{pmatrix}\n= n!\n\\]\nfor all $n \\ge 0$. Show that $u_n$ is an integer for all $n$.\n(By convention, $0! = 1$.)",
+  "solution": "Define a sequence $v_n$ by $v_n = (n-1)(n-3)\\cdots(4)(2)$ if $n$ is\nodd and $v_n = (n-1)(n-3)\\cdots(3)(1)$ if $n$ is even; it suffices to\nprove that $u_n = v_n$ for all $n \\geq 2$. Now $v_{n+3} v_n =\n(n+2)(n)(n-1)!$ and $v_{n+2}v_{n+1} = (n+1)!$, and so $v_{n+3} v_n -\nv_{n+2} v_{n+1} = n!$. Since we can check that $u_n = v_n$ for\n$n=2,3,4$, and $u_n$ and $v_n$ satisfy the same recurrence, it\nfollows by induction that $u_n = v_n$ for all $n\\geq 2$, as desired.",
+  "vars": [
+    "n",
+    "u_0",
+    "u_1",
+    "u_2",
+    "u_n",
+    "u_n+1",
+    "u_n+2",
+    "u_n+3",
+    "v_n",
+    "v_n+1",
+    "v_n+2",
+    "v_n+3"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "u_0": "seqzero",
+        "u_1": "seqone",
+        "u_2": "seqtwo",
+        "u_n": "seqterm",
+        "u_n+1": "seqnexta",
+        "u_n+2": "seqnextb",
+        "u_n+3": "seqnextc",
+        "v_n": "auxterm",
+        "v_n+1": "auxnexta",
+        "v_n+2": "auxnextb",
+        "v_n+3": "auxnextc"
+      },
+      "question": "Define a sequence $\\{ seqterm \\}_{indexvar=0}^\\infty$\nby  $seqzero = seqone = seqtwo = 1$, and thereafter by\nthe\ncondition that\n\\[\n\\det\\begin{pmatrix}\nseqterm &   seqnexta\\\\\nseqnextb & seqnextc\n\\end{pmatrix}\n= indexvar!\n\\]\nfor all $indexvar \\ge 0$. Show that $seqterm$ is an integer for all $indexvar$.\n(By convention, $0! = 1$.)",
+      "solution": "Define a sequence $auxterm$ by $auxterm = (indexvar-1)(indexvar-3)\\cdots(4)(2)$ if $indexvar$ is\nodd and $auxterm = (indexvar-1)(indexvar-3)\\cdots(3)(1)$ if $indexvar$ is even; it suffices to\nprove that $seqterm = auxterm$ for all $indexvar \\geq 2$. Now $auxnextc\\, auxterm =\n(indexvar+2)(indexvar)(indexvar-1)!$ and $auxnextb auxnexta = (indexvar+1)!$, and so $auxnextc\\, auxterm -\nauxnextb\\, auxnexta = indexvar!$. Since we can check that $seqterm = auxterm$ for\n$indexvar=2,3,4$, and $seqterm$ and $auxterm$ satisfy the same recurrence, it\nfollows by induction that $seqterm = auxterm$ for all $indexvar\\geq 2$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "compassrose",
+        "u_0": "gemstonezero",
+        "u_1": "gemstoneone",
+        "u_2": "gemstonetwo",
+        "u_n": "gemstonecore",
+        "u_n+1": "gemstonenext",
+        "u_n+2": "gemstoneplus",
+        "u_n+3": "gemstonebeyond",
+        "v_n": "quartzcore",
+        "v_n+1": "quartznext",
+        "v_n+2": "quartzplus",
+        "v_n+3": "quartzbeyond"
+      },
+      "question": "Define a sequence $\\{ gemstonecore \\}_{compassrose=0}^\\infty$\nby  $gemstonezero = gemstoneone = gemstonetwo = 1$, and thereafter by\nthe\ncondition that\n\\[\n\\det\\begin{pmatrix}\ngemstonecore &   gemstonenext\\\\\ngemstoneplus & gemstonebeyond\n\\end{pmatrix}\n= compassrose!\n\\]\nfor all $compassrose \\ge 0$. Show that gemstonecore is an integer for all $compassrose$.\n(By convention, $0! = 1$.)",
+      "solution": "Define a sequence $quartzcore$ by $quartzcore = (compassrose-1)(compassrose-3)\\cdots(4)(2)$ if $compassrose$ is\nodd and $quartzcore = (compassrose-1)(compassrose-3)\\cdots(3)(1)$ if $compassrose$ is even; it suffices to\nprove that $gemstonecore = quartzcore$ for all $compassrose \\geq 2$. Now $quartzbeyond\\, quartzcore =\n(compassrose+2)(compassrose)(compassrose-1)!$ and $quartzplus\\, quartznext = (compassrose+1)!$, and so $quartzbeyond\\, quartzcore -\nquartzplus\\, quartznext = compassrose!$. Since we can check that $gemstonecore = quartzcore$ for\n$compassrose=2,3,4$, and $gemstonecore$ and $quartzcore$ satisfy the same recurrence, it\nfollows by induction that $gemstonecore = quartzcore$ for all $compassrose\\geq 2$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "staticnumber",
+        "u_0": "terminalzero",
+        "u_1": "terminalone",
+        "u_2": "terminaltwo",
+        "u_n": "terminalvariable",
+        "u_{n+1}": "terminalvarplusone",
+        "u_{n+2}": "terminalvarplustwo",
+        "u_{n+3}": "terminalvarplusthree",
+        "v_n": "destinationvariable",
+        "v_{n+1}": "destinationvarplusone",
+        "v_{n+2}": "destinationvarplustwo",
+        "v_{n+3}": "destinationvarplusthree"
+      },
+      "question": "Define a sequence $\\{ terminalvariable \\}_{staticnumber=0}^\\infty$\nby  $terminalzero = terminalone = terminaltwo = 1$, and thereafter by\nthe\ncondition that\n\\[\n\\det\\begin{pmatrix}\nterminalvariable &   terminalvarplusone\\\\\nterminalvarplustwo & terminalvarplusthree\n\\end{pmatrix}\n= staticnumber!\n\\]\nfor all $staticnumber \\ge 0$. Show that $terminalvariable$ is an integer for all $staticnumber$.\n(By convention, $0! = 1$.)",
+      "solution": "Define a sequence $destinationvariable$ by $destinationvariable = (staticnumber-1)(staticnumber-3)\\cdots(4)(2)$ if $staticnumber$ is\nodd and $destinationvariable = (staticnumber-1)(staticnumber-3)\\cdots(3)(1)$ if $staticnumber$ is even; it suffices to\nprove that $terminalvariable = destinationvariable$ for all $staticnumber \\geq 2$. Now $destinationvarplusthree destinationvariable =\n(staticnumber+2)(staticnumber)(staticnumber-1)!$ and $destinationvarplustwo destinationvarplusone = (staticnumber+1)!$, and so $destinationvarplusthree destinationvariable -\ndestinationvarplustwo destinationvarplusone = staticnumber!$. Since we can check that $terminalvariable = destinationvariable$ for\n$staticnumber=2,3,4$, and $terminalvariable$ and $destinationvariable$ satisfy the same recurrence, it\nfollows by induction that $terminalvariable = destinationvariable$ for all $staticnumber\\geq 2$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "u_0": "hjgrksla",
+        "u_1": "pvdnqrem",
+        "u_2": "wclsakge",
+        "u_n": "zmbxoqti",
+        "u_n+1": "epldhvra",
+        "u_n+2": "rctiowmx",
+        "u_n+3": "ygsnfequ",
+        "v_n": "lzumxpcy",
+        "v_n+1": "asdkfjeu",
+        "v_n+2": "obmtyhqi",
+        "v_n+3": "ukvzrepa"
+      },
+      "question": "Define a sequence $\\{ zmbxoqti \\}_{qzxwvtnp=0}^\\infty$\nby  $hjgrksla = pvdnqrem = wclsakge = 1$, and thereafter by\nthe\ncondition that\n\\[\n\\det\\begin{pmatrix}\nzmbxoqti &   epldhvra\\\\\nrctiowmx & ygsnfequ\n\\end{pmatrix}\n= qzxwvtnp!\n\\]\nfor all $qzxwvtnp \\ge 0$. Show that $zmbxoqti$ is an integer for all $qzxwvtnp$.\n(By convention, $0! = 1$.)",
+      "solution": "Define a sequence $lzumxpcy$ by $lzumxpcy = (qzxwvtnp-1)(qzxwvtnp-3)\\cdots(4)(2)$ if $qzxwvtnp$ is\nodd and $lzumxpcy = (qzxwvtnp-1)(qzxwvtnp-3)\\cdots(3)(1)$ if $qzxwvtnp$ is even; it suffices to\nprove that $zmbxoqti = lzumxpcy$ for all $qzxwvtnp \\geq 2$. Now $ukvzrepa\\, lzumxpcy =\n(qzxwvtnp+2)(qzxwvtnp)(qzxwvtnp-1)!$ and $obmtyhqi\\,asdkfjeu = (qzxwvtnp+1)!$, and so $ukvzrepa\\, lzumxpcy -\nobmtyhqi\\, asdkfjeu = qzxwvtnp!$. Since we can check that $zmbxoqti = lzumxpcy$ for\n$qzxwvtnp=2,3,4$, and $zmbxoqti$ and $lzumxpcy$ satisfy the same recurrence, it\nfollows by induction that $zmbxoqti = lzumxpcy$ for all $qzxwvtnp\\geq 2$, as desired."
+    },
+    "kernel_variant": {
+      "question": "Let $k\\ge 1$ be a fixed integer and define \n\\[\nc_{k}:=(-1)^{k(k+1)/2}\\in\\{\\pm 1\\}.\n\\]\n\nFor a sequence of rational numbers $\\bigl(u_{n}\\bigr)_{n\\ge 0}$ assume \n\n\\[\nu_{j}= \\binom{j+k}{k}\\qquad(0\\le j\\le k)\\tag{I}\n\\]\n\ntogether with the two Hankel constraints  \n\n\\[\n\\det\\!\\bigl(u_{\\,n+i+j}\\bigr)_{\\!0\\le i,j\\le k}=c_{k}\\qquad(n\\ge 0),\\tag{H}\n\\]\n\\[\n\\det\\!\\bigl(u_{\\,n+i+j}\\bigr)_{\\!0\\le i,j\\le k+1}=0\\qquad(n\\ge 0).\\tag{V}\n\\]\n\n(Proviso (H) says that every Hankel determinant of order $k+1$ equals the fixed non-zero\nconstant $c_{k}$, whereas (V) says that every determinant of order $k+2$ vanishes.)\n\nProve that  \n\\[\nu_{n}\\in\\mathbf Z\\qquad\\text{for all }n\\ge 0.\n\\]",
+      "solution": "Write \n\\[\nD_{n}^{(m)}:=\\det\\!\\bigl(u_{\\,n+i+j}\\bigr)_{\\!0\\le i,j\\le m}\\qquad(m,n\\ge 0).\n\\]\nHypotheses (H) and (V) read  \n\n\\[\nD_{n}^{(k)}=c_{k}\\neq 0,\\qquad D_{n}^{(k+1)}=0\\qquad(n\\ge 0).\\tag{0.1}\n\\]\n\nStep 1.  A reference sequence.  \nPut $v_{n}:=\\binom{n+k}{k}$ $(n\\ge 0)$.  A well-known evaluation of\nbinomial Hankel matrices gives  \n\n\\[\n\\det\\!\\bigl(v_{\\,n+i+j}\\bigr)_{\\!0\\le i,j\\le k}=c_{k},\\qquad\n\\det\\!\\bigl(v_{\\,n+i+j}\\bigr)_{\\!0\\le i,j\\le k+1}=0,\n\\]\nso $(v_{n})_{n\\ge 0}$ fulfils (I), (H) and (V).\n\nStep 2.  Rank $k+1$ and the canonical recurrence.  \nLet \n\\[\n\\mathcal H:=(u_{\\,i+j})_{i,j\\ge 0},\\qquad\nC_{j}:=\\text{column }j\\text{ of }\\mathcal H\\;(j\\ge 0).\n\\]\nBecause every $(k+2)\\times(k+2)$ Hankel minor vanishes while some\n$(k+1)\\times(k+1)$ minor does not,\n\\[\n\\operatorname{rank}\\mathcal H=k+1.\\tag{2.1}\n\\]\n\nHence $C_{0},\\dots ,C_{k}$ are linearly independent and each further\ncolumn is their \\emph{unique} $\\mathbf Q$-linear combination.  \nThus there are unique coefficients \n$\\alpha_{0},\\dots,\\alpha_{k}\\in\\mathbf Q$ such that  \n\n\\[\nC_{k+1}=-\\sum_{r=0}^{k}\\alpha_{r}\\,C_{r}.\\tag{2.2}\n\\]\nShifting all indices by $n$ gives the linear recurrence\n\\[\nu_{\\,n+k+1}+\\alpha_{k}u_{\\,n+k}+\\dots+\\alpha_{1}u_{\\,n+1}\n+\\alpha_{0}u_{\\,n}=0\\qquad(n\\ge 0).\\tag{R}\n\\]\nWrite\n\\[\nP(x):=x^{k+1}+\\alpha_{k}x^{k}+\\dots+\\alpha_{1}x+\\alpha_{0}.\\tag{2.3}\n\\]\n\nStep 3.  General shape of the solutions of (R).  \nFactor\n\\[\nP(x)=\\prod_{s=1}^{\\ell}(x-\\lambda_{s})^{d_{s}},\\qquad\n\\lambda_{1},\\dots,\\lambda_{\\ell}\\in\\mathbf C,\\;\nd_{s}\\ge 1,\\;\n\\sum_{s=1}^{\\ell}d_{s}=k+1.\\tag{3.1}\n\\]\n(The $\\lambda_{s}$ are pairwise distinct.)\nStandard theory gives\n\\[\nu_{n}=\\sum_{s=1}^{\\ell}Q_{s}(n)\\,\\lambda_{s}^{\\,n}\\qquad(n\\ge 0),\\tag{3.2}\n\\]\nwith $\\deg Q_{s}\\le d_{s}-1$.\n\nStep 4.  A correct link between the constant determinant and $\\alpha_{0}$.  \n\nLet $M_{n}:=(u_{\\,n+i+j})_{0\\le i,j\\le k}=[C_{0}\\;C_{1}\\;\\dots\\;C_{k}]$.\nThen\n\\[\nM_{n+1}=[C_{1}\\;C_{2}\\;\\dots\\;C_{k}\\;C_{k+1}]\n       =[C_{1}\\;C_{2}\\;\\dots\\;C_{k}\\;-\\!\\sum_{r=0}^{k}\\alpha_{r}C_{r}]\n\\]\nby \\eqref{2.2}.  Using multilinearity in the last column,\n\n\\[\n\\begin{aligned}\nD_{n+1}^{(k)}\n      &=\\det[C_{1},\\dots,C_{k},-\\!\\sum_{r=0}^{k}\\alpha_{r}C_{r}]  \\\\\n      &=-\\alpha_{0}\\det[C_{1},\\dots,C_{k},C_{0}]\n        \\quad(\\text{the terms }r=1,\\dots ,k\\text{ vanish because of duplicate columns})\\\\\n      &=(-1)^{k+1}\\alpha_{0}\\det[C_{0},C_{1},\\dots ,C_{k}]\\\\\n      &=(-1)^{k+1}\\alpha_{0}D_{n}^{(k)}.\n\\end{aligned}\\tag{4.1}\n\\]\n\nSince $D_{n}^{(k)}$ is \\emph{independent of $n$} by (H), relation\n\\eqref{4.1} forces \n\\[\n(-1)^{k+1}\\alpha_{0}=1,\\qquad\\text{i.e.}\\qquad\n\\alpha_{0}=(-1)^{k+1}.\\tag{4.2}\n\\]\n\nStep 5.  From the vanishing $(k+2)$-determinants to $\\ell=1$.  \n\nBecause of \\eqref{3.2} the $(k+2)\\times(k+2)$ Hankel determinant can be\nexpanded into an \\emph{exponential-polynomial}\n\\[\nD_{n}^{(k+1)}\n   =V(\\lambda_{1},\\dots,\\lambda_{\\ell})^{2}\\,\n     R(n)\\,\n     \\Bigl(\\prod_{s=1}^{\\ell}\\lambda_{s}^{\\,d_{s}}\\Bigr)^{(k+2)n}\\tag{5.1}\n\\]\nwhere  \n\n$\\bullet$ $V(\\lambda_{1},\\dots,\\lambda_{\\ell})\n           :=\\prod_{1\\le s<t\\le\\ell}(\\lambda_{t}-\\lambda_{s})$ is the\nordinary Vandermonde (hence $V\\neq 0$ if $\\ell\\ge 2$);\n\n$\\bullet$ $R\\in\\mathbf C[X]$ is a \\emph{non-zero} polynomial (the\nhighest-total-degree part of the determinant is a non-degenerate\nconfluent Vandermonde and cannot cancel).\n\nBy \\eqref{4.2} the constant term of $P$ equals\n$\\alpha_{0}=(-1)^{k+1}$.  On the other hand, with multiplicities taken\ninto account,\n\\[\n\\alpha_{0}=(-1)^{k+1}\\prod_{s=1}^{\\ell}\\lambda_{s}^{\\,d_{s}},\n\\]\nhence\n\\[\n\\prod_{s=1}^{\\ell}\\lambda_{s}^{\\,d_{s}}=1.\\tag{5.2}\n\\]\nInsert \\eqref{5.2} into \\eqref{5.1}.  If $\\ell\\ge 2$, then $V\\neq 0$\nand $R\\not\\equiv 0$, so $D_{n}^{(k+1)}$ cannot vanish identically, in\ncontradiction to (V).  Therefore\n\\[\n\\ell=1,\\qquad d_{1}=k+1.\\tag{5.3}\n\\]\n\nStep 6.  Determining the single eigen-value.  \n\nWith $\\ell=1$ the product condition \\eqref{5.2} becomes\n$\\lambda^{\\,k+1}=1$.  Because $u_{n}\\in\\mathbf Q$ for infinitely many\n$n$, the only rational possibilities are $\\lambda=1$ or\n$\\lambda=-1$.  The initial value\n\\[\nu_{1}=\\binom{k+1}{k}=k+1>0\n\\]\nexcludes $\\lambda=-1$, hence\n\\[\n\\lambda=1,\\qquad P(x)=(x-1)^{k+1}.\\tag{6.1}\n\\]\n\nStep 7.  Polynomiality of the sequence.  \n\nEquation \\eqref{6.1} implies $\\Delta^{\\,k+1}u_{n}=0$ ($n\\ge 0$), where\n$\\Delta u_{n}=u_{n+1}-u_{n}$ is the forward difference.  Thus $u_{n}$\nis a polynomial in $n$ of degree at most $k$, and the natural basis\n$\\{\\binom{n}{s}\\}_{0\\le s\\le k}$ yields\n\\[\nu_{n}=\\sum_{s=0}^{k}a_{s}\\binom{n}{s}\\qquad(a_{s}\\in\\mathbf Q).\\tag{7.1}\n\\]\nThe triangular system obtained from (I) gives $a_{s}=\\binom{k}{s}$, so\n\\[\nu_{n}=\\sum_{s=0}^{k}\\binom{k}{s}\\binom{n}{s}\n     =\\binom{n+k}{k}\\qquad(n\\ge 0)\\tag{7.2}\n\\]\nby Chu-Vandermonde.\n\nStep 8.  Integrality.  \nFormula \\eqref{7.2} shows\n\\[\nu_{n}=\\binom{n+k}{k}\\in\\mathbf Z\\qquad\\forall\\,n\\ge 0,\n\\]\ncompleting the proof. \\hfill$\\square$",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.784825",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher dimension:  the determinant has size (k + 1) × (k + 1);\n  when k = 1 we recover the original 2 × 2 set-up, but for k ≥ 2 the\n  Hankel determinant involves up to 2k + 1 consecutive terms.\n\n• Additional variables and deeper theory:  the solution uses\n  r-step falling factorials, finite-difference calculus, and explicit\n  evaluation of determinants of polynomial Hankel matrices (a classical\n  moment-matrix/Vandermonde argument).\n\n• Structural complexity:  the dependence of det Mₙ on f(n−r) and the\n  elimination of the apparent extra factor (r!)^{k} require a delicate\n  factor-counting argument impossible to avoid once k ≥ 2.\n\n• Multiple interacting concepts:  the proof blends combinatorial\n  identities (generalised falling factorials), linear-algebraic\n  techniques (determinant factoring, triangularisation), and recursive\n  uniqueness, each of which alone would suffice for k = 1 but whose\n  simultaneous use is unavoidable for k ≥ 2.\n\nBecause all these facets are absent from the original problem, the\npresent variant is significantly harder and demands a much broader\narsenal of mathematical tools."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $k\\ge 1$ be a fixed integer and write  \n\\[\nc_{k}:=(-1)^{k(k+1)/2}\\;\\in\\;\\{\\,\\pm1\\,\\}.\n\\]\n\nFor a sequence of rational numbers $(u_n)_{n\\ge 0}$ assume  \n\\[\nu_j=\\binom{\\,j+k\\,}{k}\\qquad(0\\le j\\le k)\\tag{I}\n\\]\nand that the following Hankel conditions hold for every $n\\ge 0$\n\\[\n\\det\\!\\bigl(u_{\\,n+i+j}\\bigr)_{0\\le i,j\\le k}=c_{k},\\tag{H}\n\\]\n\\[\n\\det\\!\\bigl(u_{\\,n+i+j}\\bigr)_{0\\le i,j\\le k+1}=0.\\tag{V}\n\\]\n\n(Thus every Hankel determinant of size $k+1$ equals the non-zero\nconstant $c_{k}$, whereas all determinants of the next size $k+2$\nvanish.)\n\nProve that  \n\\[\nu_{n}\\in\\mathbf Z\\qquad\\text{for every }n\\ge 0.\n\\]\n\n--------------------------------------------------------------------",
+      "solution": "Throughout put  \n\\[\nD_{n}^{(m)}:=\\det\\!\\bigl(u_{\\,n+i+j}\\bigr)_{0\\le i,j\\le m}\n\\qquad(m,n\\ge 0).\n\\]\nCondition (H) reads $D_{n}^{(k)}=c_{k}\\neq 0$ and (V) says\n$D_{n}^{(k+1)}=0$ for all $n\\ge 0$.\n\nStep 1.  A \\emph{model sequence}.  \nDefine  \n\\[\nv_{n}:=\\binom{\\,n+k\\,}{k}\\qquad(n\\ge 0).\n\\]\nBecause the polynomial $x\\mapsto\\binom{x+k}{k}$ has degree $k$,\nelementary column operations reduce the Hankel matrices\n$\\bigl(v_{n+i+j}\\bigr)_{0\\le i,j\\le k}$ to a Vandermonde matrix,\nwhence  \n\\[\n\\det\\!\\bigl(v_{n+i+j}\\bigr)_{0\\le i,j\\le k}=c_{k}\\quad(n\\ge 0),\n\\tag{1.1}\n\\]\nand clearly $D_{n}^{(k+1)}(v)=0$ (the $k+2$ columns come from a\ndegree-$k$ polynomial).  Hence $(v_{n})_{n\\ge 0}$ fulfils (I), (H) and\n(V).\n\nStep 2.  Rank $k+1$ for the \\emph{infinite} Hankel matrix.\n\nAs (H)-(V) hold for \\emph{every} shift $n$, the $(k+2)\\times(k+2)$\nminors of the infinite Hankel matrix  \n\\[\n\\mathcal H:=(u_{i+j})_{i,j\\ge 0}\n\\]\nall vanish, while the principal $(k+1)\\times(k+1)$ minors equal\n$c_{k}\\neq 0$.  Consequently  \n\\[\n\\operatorname{rank}\\mathcal H=k+1.\\tag{2.1}\n\\]\n\nWrite $C_{j}$ for the $j$-th column of $\\mathcal H$; thus\n$C_{j+1}$ is obtained from $C_{j}$ by deleting its first entry and\nadding $u_{j}$ at the bottom.  Because the first $k+1$ columns are\nlinearly independent by (H), (2.1) implies\n\n(A) every column $C_{m}$ with $m\\ge k+1$ is a \\emph{unique} $\\mathbf\nQ$-linear combination of $C_{0},\\dots ,C_{k}$.\n\nHence there are unique numbers $\\alpha_{0},\\dots ,\\alpha_{k}\\in\\mathbf\nQ$ such that  \n\\[\nC_{k+1}=-\\sum_{r=0}^{k}\\alpha_{r}\\,C_{r}.\\tag{2.2}\n\\]\n\nBecause of the shift-equivariance of the columns, the same coefficients\nwork for \\emph{every} later column:\n\n(B) $C_{m+1}=-\\sum_{r=0}^{k}\\alpha_{r}\\,C_{m-k+r}$ for every $m\\ge k$.\n\nExtracting the first $k+2$ entries of identity (B) for $m=n+k$ we\nobtain the \\emph{constant-coefficient recurrence}  \n\\[\nu_{\\,n+k+1}+\\alpha_{k}u_{\\,n+k}+\\dots+\\alpha_{1}u_{\\,n+1}\n+\\alpha_{0}u_{\\,n}=0\\qquad(n\\ge 0).\\tag{R}\n\\]\n\nRemark 2.1 (correctness of (R)).  \nEquation (2.2) expresses the \\emph{whole} semi-infinite column\n$C_{k+1}$ in terms of $C_{0},\\dots ,C_{k}$; shift-invariance of the\nHankel structure forces the same linear relation to hold after every\nvertical translation, hence for all $n\\ge 0$.  In particular, the\ncoefficients $\\alpha_{0},\\dots ,\\alpha_{k}$ are \\emph{independent of\nthe shift $n$}.  This yields the statement that was intended (but\nnot correctly proved) in the original Lemma 2.1.\n\nStep 3.  The recurrence determines the sequence.\n\nBecause $c_{k}\\neq 0$, at least one $\\alpha_{r}$ is non-zero, so the\norder of (R) is exactly $k+1$.  Together with the initial block (I),\nthe recurrence determines the sequence $(u_{n})$ uniquely.  The model\nsequence $(v_{n})$ satisfies the \\emph{same} recurrence (R), because\nits Hankel matrix has the same rank $k+1$ and the same first $k+1$\ncolumns; moreover $(v_{0},\\dots ,v_{k})=(u_{0},\\dots ,u_{k})$ by (I).\nHence by induction on $n$\n\\[\nu_{n}=v_{n}=\\binom{\\,n+k\\,}{k}\\qquad\\forall\\,n\\ge 0.\\tag{3.1}\n\\]\n\nStep 4.  Integrality.\n\nBinomial coefficients are integers, therefore  \n\\[\nu_{n}=\\binom{\\,n+k\\,}{k}\\;\\in\\;\\mathbf Z\\qquad\\forall\\,n\\ge 0,\n\\]\nas required.  $\\square$\n\n\\medskip\nAppendix:  Proof of the Vandermonde evaluation (1.1).  \nFor the $(k+1)\\times(k+1)$ Hankel matrix\n$H=(v_{n+i+j})_{0\\le i,j\\le k}$ perform the elementary column\noperations\n\\[\nC_{j}\\longleftarrow C_{j}-C_{j-1}\\qquad(j=k,k-1,\\dots ,1).\n\\]\nColumn $C_{j}$ is transformed into\n$\\bigl(\\binom{n+i+j-1}{k-1}\\bigr)_{0\\le i\\le k}$, so we end with an\nupper-triangular matrix whose $i$-th diagonal entry equals\n$\\binom{n+i}{k-i}$.  Computing its determinant gives\n$(-1)^{k(k+1)/2}\\prod_{i=0}^{k}\\binom{k}{i}=c_{k}$, establishing\n(1.1).\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.600649",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher dimension:  the determinant has size (k + 1) × (k + 1);\n  when k = 1 we recover the original 2 × 2 set-up, but for k ≥ 2 the\n  Hankel determinant involves up to 2k + 1 consecutive terms.\n\n• Additional variables and deeper theory:  the solution uses\n  r-step falling factorials, finite-difference calculus, and explicit\n  evaluation of determinants of polynomial Hankel matrices (a classical\n  moment-matrix/Vandermonde argument).\n\n• Structural complexity:  the dependence of det Mₙ on f(n−r) and the\n  elimination of the apparent extra factor (r!)^{k} require a delicate\n  factor-counting argument impossible to avoid once k ≥ 2.\n\n• Multiple interacting concepts:  the proof blends combinatorial\n  identities (generalised falling factorials), linear-algebraic\n  techniques (determinant factoring, triangularisation), and recursive\n  uniqueness, each of which alone would suffice for k = 1 but whose\n  simultaneous use is unavoidable for k ≥ 2.\n\nBecause all these facets are absent from the original problem, the\npresent variant is significantly harder and demands a much broader\narsenal of mathematical tools."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

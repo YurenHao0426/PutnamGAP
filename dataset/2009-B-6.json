@@ -1,0 +1,153 @@
+{
+  "index": "2009-B-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Prove that for every positive integer $n$, there is a sequence of integers\n$a_0, a_1, \\dots, a_{2009}$ with $a_0 = 0$ and $a_{2009} = n$ such that each term\nafter $a_0$ is either an earlier term plus $2^k$ for some nonnegative integer $k$,\nor of the form $b\\,\\mathrm{mod}\\,c$ for some earlier positive terms $b$ and $c$.\n[Here $b\\,\\mathrm{mod}\\,c$ denotes the remainder when $b$ is divided by $c$,\nso $0 \\leq (b\\,\\mathrm{mod}\\,c) < c$.]\n\n\\end{itemize}\n\n\\end{document}",
+  "solution": "\\textbf{First solution.}\n(based on work of Yufei Zhao)\nSince any sequence of the desired form remains of the desired form upon multiplying each term by 2,\nwe may reduce to the case where $n$ is odd. In this case, take $x = 2^h$ for some\npositive integer $h$ for which $x \\geq n$, and set\n\\begin{align*}\na_0 &= 0\\\\\na_1 &= 1\\\\\na_2 &= 2x+1 = a_1 + 2x \\\\\na_3 &= (x+1)^2 = a_2 + x^2 \\\\\na_4 &= x^n+1 = a_1 + x^n\\\\\na_5 &= n(x+1) = a_4 \\mod a_3\\\\\na_6 &= x \\\\\na_7 &= n = a_5 \\mod a_6.\n\\end{align*}\nWe may pad the sequence to the desired length by taking\n$a_8 = \\cdots = a_{2009} = n$.\n\n\\textbf{Second solution.}\n(by James Merryfield)\nSuppose first that $n$ is not divisible by 3. Recall that since $2$ is a primitive root modulo\n$3^2$, it is also a primitive root modulo $3^h$ for any positive integer $h$. In particular,\nif we choose $h$ so that $3^{2h} > n$, then\nthere exists a positive integer $c$ for which $2^c \\mod 3^{2h} = n$.\nWe now take $b$ to be a positive integer for which $2^b > 3^{2h}$, and then put\n\\begin{align*}\na_0 &= 0\\\\\na_1 &= 1\\\\\na_2 &= 3 = a_1 + 2\\\\\na_3 &= 3 + 2^b \\\\\na_4 &= 2^{2hb} \\\\\na_5 &= 3^{2h} = a_4 \\mod a_3 \\\\\na_6 &= 2^c \\\\\na_7 &= n = a_6 \\mod a_5.\n\\end{align*}\nIf $n$ is divisible by 3, we can force $a_7 = n-1$ as in the above\nconstruction, then put $a_{8} = a_7 + 1 = n$. In both cases, we then pad the sequence\nas in the first solution.\n\n\\textbf{Remark.}\nHendrik Lenstra, Ronald van Luijk, and Gabriele Della Torre\nsuggest the following variant of the first solution requiring only 6 steps.\nFor $n$ odd and $x$ as in the first solution, set\n\\begin{align*}\na_0 &= 0\\\\\na_1 &= 1\\\\\na_2 &= x+1 = a_1 + x\\\\\na_3 &= x^n+x+1 = a_2 + x^n\\\\\na_4 &= x^{(n-1)(\\phi(a_3)-1)}\\\\\na_5 &= \\frac{x^n+1}{x+1} = a_4 \\mod a_3 \\\\\na_6 &= n = a_5 \\mod a_2.\n\\end{align*}\nIt seems unlikely that a shorter solution can be constructed without relying on\nany deep number-theoretic conjectures.\n\n\\end{itemize}\n\\end{document}",
+  "vars": [
+    "a_0",
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_4",
+    "a_5",
+    "a_6",
+    "a_7",
+    "a_8",
+    "a_2009",
+    "n",
+    "x"
+  ],
+  "params": [
+    "k",
+    "h",
+    "b",
+    "c",
+    "\\\\phi"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_0": "startzero",
+        "a_1": "firstval",
+        "a_2": "secondval",
+        "a_3": "thirdval",
+        "a_4": "fourthval",
+        "a_5": "fifthval",
+        "a_6": "sixthval",
+        "a_7": "seventhval",
+        "a_8": "eighthval",
+        "a_2009": "finalval",
+        "n": "targetnum",
+        "x": "powerbase",
+        "k": "powindex",
+        "h": "powheight",
+        "b": "bigexpon",
+        "c": "modconst",
+        "\\phi": "eulerphi"
+      },
+      "question": "Prove that for every positive integer $targetnum$, there is a sequence of integers $startzero, firstval, \\dots, finalval$ with $startzero = 0$ and $finalval = targetnum$ such that each term after $startzero$ is either an earlier term plus $2^{powindex}$ for some nonnegative integer $powindex$, or of the form $bigexpon\\,\\mathrm{mod}\\,modconst$ for some earlier positive terms $bigexpon$ and $modconst$. [Here $bigexpon\\,\\mathrm{mod}\\,modconst$ denotes the remainder when $bigexpon$ is divided by $modconst$, so $0 \\leq (bigexpon\\,\\mathrm{mod}\\,modconst) < modconst$.]\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "\\textbf{First solution.}\n(based on work of Yufei Zhao)\nSince any sequence of the desired form remains of the desired form upon multiplying each term by 2, we may reduce to the case where $targetnum$ is odd. In this case, take $powerbase = 2^{powheight}$ for some positive integer $powheight$ for which $powerbase \\geq targetnum$, and set\n\\begin{align*}\nstartzero &= 0\\\\\nfirstval &= 1\\\\\nsecondval &= 2powerbase+1 = firstval + 2powerbase \\\\\nthirdval &= (powerbase+1)^2 = secondval + powerbase^2 \\\\\nfourthval &= powerbase^{targetnum}+1 = firstval + powerbase^{targetnum}\\\\\nfifthval &= targetnum(powerbase+1) = fourthval \\mod thirdval\\\\\nsixthval &= powerbase \\\\\nseventhval &= targetnum = fifthval \\mod sixthval.\n\\end{align*}\nWe may pad the sequence to the desired length by taking $eighthval = \\cdots = finalval = targetnum$.\n\n\\textbf{Second solution.}\n(by James Merryfield)\nSuppose first that $targetnum$ is not divisible by 3. Recall that since $2$ is a primitive root modulo $3^2$, it is also a primitive root modulo $3^{powheight}$ for any positive integer $powheight$. In particular, if we choose $powheight$ so that $3^{2powheight} > targetnum$, then there exists a positive integer $modconst$ for which $2^{modconst} \\mod 3^{2powheight} = targetnum$. We now take $bigexpon$ to be a positive integer for which $2^{bigexpon} > 3^{2powheight}$, and then put\n\\begin{align*}\nstartzero &= 0\\\\\nfirstval &= 1\\\\\nsecondval &= 3 = firstval + 2\\\\\nthirdval &= 3 + 2^{bigexpon} \\\\\nfourthval &= 2^{2powheight bigexpon} \\\\\nfifthval &= 3^{2powheight} = fourthval \\mod thirdval \\\\\nsixthval &= 2^{modconst} \\\\\nseventhval &= targetnum = sixthval \\mod fifthval.\n\\end{align*}\nIf $targetnum$ is divisible by 3, we can force $seventhval = targetnum-1$ as in the above construction, then put $eighthval = seventhval + 1 = targetnum$. In both cases, we then pad the sequence as in the first solution.\n\n\\textbf{Remark.}\nHendrik Lenstra, Ronald van Luijk, and Gabriele Della Torre suggest the following variant of the first solution requiring only 6 steps. For $targetnum$ odd and $powerbase$ as in the first solution, set\n\\begin{align*}\nstartzero &= 0\\\\\nfirstval &= 1\\\\\nsecondval &= powerbase+1 = firstval + powerbase\\\\\nthirdval &= powerbase^{targetnum}+powerbase+1 = secondval + powerbase^{targetnum}\\\\\nfourthval &= powerbase^{(targetnum-1)(eulerphi(thirdval)-1)}\\\\\nfifthval &= \\frac{powerbase^{targetnum}+1}{powerbase+1} = fourthval \\mod thirdval \\\\\nsixthval &= targetnum = fifthval \\mod secondval.\n\\end{align*}\nIt seems unlikely that a shorter solution can be constructed without relying on any deep number-theoretic conjectures.\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_0": "cloudberry",
+        "a_1": "elderberry",
+        "a_2": "passionfruit",
+        "a_3": "gooseberry",
+        "a_4": "pomegranate",
+        "a_5": "blackcurrant",
+        "a_6": "persimmon",
+        "a_7": "boysenberry",
+        "a_8": "mulberry",
+        "a_2009": "cantaloupe",
+        "a_{2009}": "cantaloupe",
+        "n": "porcupine",
+        "x": "tortoise",
+        "k": "windflower",
+        "h": "sandpiper",
+        "b": "lemongrass",
+        "c": "watercress",
+        "\\phi": "kingfisher"
+      },
+      "question": "Prove that for every positive integer $porcupine$, there is a sequence of integers\n$cloudberry, elderberry, \\dots, cantaloupe$ with $cloudberry = 0$ and $cantaloupe = porcupine$ such that each term\nafter $cloudberry$ is either an earlier term plus $2^{windflower}$ for some nonnegative integer $windflower$,\nor of the form $lemongrass\\,\\mathrm{mod}\\,watercress$ for some earlier positive terms $lemongrass$ and $watercress$.\n[Here $lemongrass\\,\\mathrm{mod}\\,watercress$ denotes the remainder when $lemongrass$ is divided by $watercress$,\nso $0 \\leq (lemongrass\\,\\mathrm{mod}\\,watercress) < watercress$.]\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "\\textbf{First solution.}\n(based on work of Yufei Zhao)\nSince any sequence of the desired form remains of the desired form upon multiplying each term by 2,\nwe may reduce to the case where $porcupine$ is odd. In this case, take $tortoise = 2^{sandpiper}$ for some\npositive integer $sandpiper$ for which $tortoise \\geq porcupine$, and set\n\\begin{align*}\ncloudberry &= 0\\\\\nelderberry &= 1\\\\\npassionfruit &= 2tortoise+1 = elderberry + 2tortoise \\\\\ngooseberry &= (tortoise+1)^2 = passionfruit + tortoise^2 \\\\\npomegranate &= tortoise^{porcupine}+1 = elderberry + tortoise^{porcupine}\\\\\nblackcurrant &= porcupine(tortoise+1) = pomegranate \\mod gooseberry\\\\\npersimmon &= tortoise \\\\\nboysenberry &= porcupine = blackcurrant \\mod persimmon.\n\\end{align*}\nWe may pad the sequence to the desired length by taking\n$mulberry = \\cdots = cantaloupe = porcupine$.\n\n\\textbf{Second solution.}\n(by James Merryfield)\nSuppose first that $porcupine$ is not divisible by 3. Recall that since $2$ is a primitive root modulo\n$3^2$, it is also a primitive root modulo $3^{sandpiper}$ for any positive integer $sandpiper$. In particular,\nif we choose $sandpiper$ so that $3^{2sandpiper} > porcupine$, then\nthere exists a positive integer $watercress$ for which $2^{watercress} \\mod 3^{2sandpiper} = porcupine$.\nWe now take $lemongrass$ to be a positive integer for which $2^{lemongrass} > 3^{2sandpiper}$, and then put\n\\begin{align*}\ncloudberry &= 0\\\\\nelderberry &= 1\\\\\npassionfruit &= 3 = elderberry + 2\\\\\ngooseberry &= 3 + 2^{lemongrass} \\\\\npomegranate &= 2^{2 sandpiper lemongrass} \\\\\nblackcurrant &= 3^{2sandpiper} = pomegranate \\mod gooseberry \\\\\npersimmon &= 2^{watercress} \\\\\nboysenberry &= porcupine = persimmon \\mod blackcurrant.\n\\end{align*}\nIf $porcupine$ is divisible by 3, we can force $boysenberry = porcupine-1$ as in the above\nconstruction, then put $mulberry = boysenberry + 1 = porcupine$. In both cases, we then pad the sequence\nas in the first solution.\n\n\\textbf{Remark.}\nHendrik Lenstra, Ronald van Luijk, and Gabriele Della Torre\nsuggest the following variant of the first solution requiring only 6 steps.\nFor $porcupine$ odd and $tortoise$ as in the first solution, set\n\\begin{align*}\ncloudberry &= 0\\\\\nelderberry &= 1\\\\\npassionfruit &= tortoise+1 = elderberry + tortoise\\\\\ngooseberry &= tortoise^{porcupine}+tortoise+1 = passionfruit + tortoise^{porcupine}\\\\\npomegranate &= tortoise^{(porcupine-1)(kingfisher(gooseberry)-1)}\\\\\nblackcurrant &= \\frac{tortoise^{porcupine}+1}{tortoise+1} = pomegranate \\mod gooseberry \\\\\nboysenberry &= porcupine = blackcurrant \\mod passionfruit.\n\\end{align*}\nIt seems unlikely that a shorter solution can be constructed without relying on\nany deep number-theoretic conjectures.\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_0": "endpoint",
+        "a_1": "ultimate",
+        "a_2": "postfinal",
+        "a_3": "postfinish",
+        "a_4": "overfinish",
+        "a_5": "beyondend",
+        "a_6": "laststage",
+        "a_7": "terminus",
+        "a_8": "climaxzone",
+        "a_2009": "neverstart",
+        "n": "negativity",
+        "x": "minuscule",
+        "k": "basepart",
+        "h": "magnitude",
+        "b": "littlebit",
+        "c": "voidness",
+        "\\phi": "noncoprime"
+      },
+      "question": "Prove that for every positive integer $negativity$, there is a sequence of integers\n$endpoint, ultimate, \\dots, neverstart$ with $endpoint = 0$ and $neverstart = negativity$ such that each term\nafter $endpoint$ is either an earlier term plus $2^{basepart}$ for some nonnegative integer $basepart$,\nor of the form $littlebit\\,\\mathrm{mod}\\,voidness$ for some earlier positive terms $littlebit$ and $voidness$.\n[Here $littlebit\\,\\mathrm{mod}\\,voidness$ denotes the remainder when $littlebit$ is divided by $voidness$,\nso $0 \\leq (littlebit\\,\\mathrm{mod}\\,voidness) < voidness$.]\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "\\textbf{First solution.}\n(based on work of Yufei Zhao)\nSince any sequence of the desired form remains of the desired form upon multiplying each term by 2,\nwe may reduce to the case where $negativity$ is odd. In this case, take $minuscule = 2^{magnitude}$ for some\npositive integer $magnitude$ for which $minuscule \\geq negativity$, and set\n\\begin{align*}\nendpoint &= 0\\\\\nultimate &= 1\\\\\npostfinal &= 2minuscule+1 = ultimate + 2minuscule \\\\\npostfinish &= (minuscule+1)^2 = postfinal + minuscule^2 \\\\\noverfinish &= minuscule^{negativity}+1 = ultimate + minuscule^{negativity}\\\\\nbeyondend &= negativity(minuscule+1) = overfinish \\mod postfinish\\\\\nlaststage &= minuscule \\\\\nterminus &= negativity = beyondend \\mod laststage.\n\\end{align*}\nWe may pad the sequence to the desired length by taking\n$climaxzone = \\cdots = neverstart = negativity$.\n\n\\textbf{Second solution.}\n(by James Merryfield)\nSuppose first that $negativity$ is not divisible by 3. Recall that since $2$ is a primitive root modulo\n$3^2$, it is also a primitive root modulo $3^{magnitude}$ for any positive integer $magnitude$. In particular,\nif we choose $magnitude$ so that $3^{2magnitude} > negativity$, then\nthere exists a positive integer $voidness$ for which $2^{voidness} \\mod 3^{2magnitude} = negativity$.\nWe now take $littlebit$ to be a positive integer for which $2^{littlebit} > 3^{2magnitude}$, and then put\n\\begin{align*}\nendpoint &= 0\\\\\nultimate &= 1\\\\\npostfinal &= 3 = ultimate + 2\\\\\npostfinish &= 3 + 2^{littlebit} \\\\\noverfinish &= 2^{2 magnitude littlebit} \\\\\nbeyondend &= 3^{2magnitude} = overfinish \\mod postfinish \\\\\nlaststage &= 2^{voidness} \\\\\nterminus &= negativity = laststage \\mod beyondend.\n\\end{align*}\nIf $negativity$ is divisible by 3, we can force $terminus = negativity-1$ as in the above\nconstruction, then put $climaxzone = terminus + 1 = negativity$. In both cases, we then pad the sequence\nas in the first solution.\n\n\\textbf{Remark.}\nHendrik Lenstra, Ronald van Luijk, and Gabriele Della Torre\nsuggest the following variant of the first solution requiring only 6 steps.\nFor $negativity$ odd and $minuscule$ as in the first solution, set\n\\begin{align*}\nendpoint &= 0\\\\\nultimate &= 1\\\\\npostfinal &= minuscule+1 = ultimate + minuscule\\\\\npostfinish &= minuscule^{negativity}+minuscule+1 = postfinal + minuscule^{negativity}\\\\\noverfinish &= minuscule^{(negativity-1)(noncoprime(postfinish)-1)}\\\\\nbeyondend &= \\frac{minuscule^{negativity}+1}{minuscule+1} = overfinish \\mod postfinish \\\\\nlaststage &= negativity = beyondend \\mod postfinal.\n\\end{align*}\nIt seems unlikely that a shorter solution can be constructed without relying on\nany deep number-theoretic conjectures.\n\n\\end{itemize}\n\\end{document}"
+    },
+    "garbled_string": {
+      "map": {
+        "a_0": "qzxwvtnp",
+        "a_1": "hjgrksla",
+        "a_2": "pqlmznxy",
+        "a_3": "dvhsakjt",
+        "a_4": "mnygqzrb",
+        "a_5": "tcfklswe",
+        "a_6": "vblxqjrh",
+        "a_7": "sgzmtrpy",
+        "a_8": "kldsnwqe",
+        "a_2009": "zfplqwdm",
+        "n": "ghsdvrke",
+        "x": "lrqtmnvy",
+        "k": "jhvlspdo",
+        "h": "wqztnmpr",
+        "b": "xdgklvtr",
+        "c": "rqspmnhd",
+        "\\phi": "lkdjvhru"
+      },
+      "question": "Prove that for every positive integer $ghsdvrke$, there is a sequence of integers\n$qzxwvtnp, hjgrksla, \\dots, zfplqwdm$ with $qzxwvtnp = 0$ and $zfplqwdm = ghsdvrke$ such that each term\nafter $qzxwvtnp$ is either an earlier term plus $2^{jhvlspdo}$ for some nonnegative integer $jhvlspdo$,\nor of the form $xdgklvtr\\,\\mathrm{mod}\\,rqspmnhd$ for some earlier positive terms $xdgklvtr$ and $rqspmnhd$.\n[Here $xdgklvtr\\,\\mathrm{mod}\\,rqspmnhd$ denotes the remainder when $xdgklvtr$ is divided by $rqspmnhd$,\nso $0 \\leq (xdgklvtr\\,\\mathrm{mod}\\,rqspmnhd) < rqspmnhd$.]",
+      "solution": "\\textbf{First solution.}\n(based on work of Yufei Zhao)\nSince any sequence of the desired form remains of the desired form upon multiplying each term by 2,\nwe may reduce to the case where $ghsdvrke$ is odd. In this case, take $lrqtmnvy = 2^{wqztnmpr}$ for some\npositive integer $wqztnmpr$ for which $lrqtmnvy \\geq ghsdvrke$, and set\n\\begin{align*}\nqzxwvtnp &= 0\\\\\nhjgrksla &= 1\\\\\npqlmznxy &= 2lrqtmnvy+1 = hjgrksla + 2lrqtmnvy \\\\\ndvhsakjt &= (lrqtmnvy+1)^2 = pqlmznxy + lrqtmnvy^2 \\\\\nmnygqzrb &= lrqtmnvy^{ghsdvrke}+1 = hjgrksla + lrqtmnvy^{ghsdvrke}\\\\\ntcfklswe &= ghsdvrke(lrqtmnvy+1) = mnygqzrb \\mod dvhsakjt\\\\\nvblxqjrh &= lrqtmnvy \\\\\nsgzmtrpy &= ghsdvrke = tcfklswe \\mod vblxqjrh.\n\\end{align*}\nWe may pad the sequence to the desired length by taking\nkldsnwqe = \\cdots = zfplqwdm = ghsdvrke.\n\n\\textbf{Second solution.}\n(by James Merryfield)\nSuppose first that $ghsdvrke$ is not divisible by 3. Recall that since $2$ is a primitive root modulo\n$3^2$, it is also a primitive root modulo $3^{wqztnmpr}$ for any positive integer $wqztnmpr$. In particular,\nif we choose $wqztnmpr$ so that $3^{2 wqztnmpr} > ghsdvrke$, then\nthere exists a positive integer $rqspmnhd$ for which $2^{rqspmnhd} \\mod 3^{2 wqztnmpr} = ghsdvrke$.\nWe now take $xdgklvtr$ to be a positive integer for which $2^{xdgklvtr} > 3^{2 wqztnmpr}$, and then put\n\\begin{align*}\nqzxwvtnp &= 0\\\\\nhjgrksla &= 1\\\\\npqlmznxy &= 3 = hjgrksla + 2\\\\\ndvhsakjt &= 3 + 2^{xdgklvtr} \\\\\nmnygqzrb &= 2^{2 wqztnmpr xdgklvtr} \\\\\ntcfklswe &= 3^{2 wqztnmpr} = mnygqzrb \\mod dvhsakjt \\\\\nvblxqjrh &= 2^{rqspmnhd} \\\\\nsgzmtrpy &= ghsdvrke = vblxqjrh \\mod tcfklswe.\n\\end{align*}\nIf $ghsdvrke$ is divisible by 3, we can force $sgzmtrpy = ghsdvrke-1$ as in the above\nconstruction, then put $kldsnwqe = sgzmtrpy + 1 = ghsdvrke$. In both cases, we then pad the sequence\nas in the first solution.\n\n\\textbf{Remark.}\nHendrik Lenstra, Ronald van Luijk, and Gabriele Della Torre\nsuggest the following variant of the first solution requiring only 6 steps.\nFor $ghsdvrke$ odd and $lrqtmnvy$ as in the first solution, set\n\\begin{align*}\nqzxwvtnp &= 0\\\\\nhjgrksla &= 1\\\\\npqlmznxy &= lrqtmnvy+1 = hjgrksla + lrqtmnvy\\\\\ndvhsakjt &= lrqtmnvy^{ghsdvrke}+lrqtmnvy+1 = pqlmznxy + lrqtmnvy^{ghsdvrke}\\\\\nmnygqzrb &= lrqtmnvy^{(ghsdvrke-1)(lkdjvhru(dvhsakjt)-1)}\\\\\ntcfklswe &= \\frac{lrqtmnvy^{ghsdvrke}+1}{lrqtmnvy+1} = mnygqzrb \\mod dvhsakjt \\\\\nvblxqjrh &= ghsdvrke = tcfklswe \\mod pqlmznxy.\n\\end{align*}\nIt seems unlikely that a shorter solution can be constructed without relying on\nany deep number-theoretic conjectures."
+    },
+    "kernel_variant": {
+      "question": "Let $n$ be a positive integer.  Prove that there exists a sequence of integers\n\\[b_0,b_1,\\dots ,b_{2024}\\]\nwith $b_0=0$ and $b_{2024}=n$ such that for every $j>0$ the term $b_j$ is obtained from \nsome earlier terms in one of the following two ways:\n\\begin{itemize}\n\\item $b_j=b_i+2^k$ for some $i<j$ and some non-negative integer $k$, or\n\\item $b_j=b_i\\bmod b_{\\ell}$ for some $i,\\ell<j$ with $b_{\\ell}>0$.\n\\end{itemize}\n(Here $x\\bmod y$ denotes the remainder on dividing $x$ by $y$, so $0\\le x\\bmod y<y$.)",
+      "solution": "We prove by construction that for any positive integer n there is a sequence b_0,\\ldots ,b_{2024} with b_0=0, b_{2024}=n, and each b_j (j>0) obtained either as an earlier term plus a power of two or as a remainder of one earlier term modulo another.\n\nStep 1. Reduction to n odd.\nWrite n=2^s\\cdot n_0 with n_0 odd.  By induction assume we have built a sequence ending at n_0.  Multiplying every term by 2^s preserves both allowed moves (adding 2^k becomes adding 2^{k+s}, and taking x mod y becomes (x\\cdot 2^s) mod (y\\cdot 2^s)), so we obtain a valid sequence ending at n.  Hence from now on assume n is odd.\n\nStep 2. Choose a large power of two.\nLet h be an integer with 2^h > n^2, and set x = 2^h.  In particular x > n.\n\nStep 3. Build auxiliary terms by +2^k moves.\nb_0 = 0,\n\nb_1 = 1,\n\nb_2 = 2x + 1 = b_1 + 2\\cdot x,\n\nb_3 = (x+1)^2 = b_2 + x^2,\n\nb_4 = x^n + 1 = b_1 + x^n.\n\nHere 2x, x^2, x^n are all powers of two, so each step is of the form ``previous term + 2^k.''\n\nStep 4. Extract n via two modulo moves.\nBy the binomial theorem (and n odd) we have\n  x^n + 1 \\equiv  n(x+1)  (mod (x+1)^2).\nHence define\n  b_5 = b_4 mod b_3 = (x^n + 1) mod (x+1)^2 = n(x+1).\n\nNext set\n  b_6 = x = b_0 + x  \n(a valid +2^k move).\nThen\n  b_7 = b_5 mod b_6 = n(x+1) mod x = n,\nsince n(x+1)=nx + n and n < x.\n\nStep 5. Pad to length 2025 by modulo moves.\nFor each j = 8,9,\\ldots ,2024 define\n  b_j = b_7 mod b_6.\nBecause b_7 = n < x = b_6, we have b_j = n each time, and taking a remainder of an earlier term by an earlier larger term is allowed.\n\nFinal check.  We have produced b_0,\\ldots ,b_{2024} with b_0=0, b_{2024}=n, and every step either adds a power of two or takes a remainder, as required.  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Remove even factors: multiply any admissible sequence by 2 so only the case n odd has to be built",
+          "Choose a power of two x = 2^h ≥ n so every needed +2^k jump is available",
+          "Via +2^k moves create the numbers 1, x+1, (x+1)^2, and x^n+1",
+          "Apply mod-steps: (x^n+1) mod (x+1)^2 = n(x+1) and then [n(x+1)] mod x = n",
+          "Pad with repeated n’s to reach the prescribed sequence length"
+        ],
+        "mutable_slots": {
+          "slot_length": {
+            "description": "Total required length of the sequence; any value ≥ 7 lets the padding trick work",
+            "original": "2009"
+          },
+          "slot_x_power": {
+            "description": "Power-of-two bound chosen for x; only the inequality x ≥ n is needed",
+            "original": "x = 2^h"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

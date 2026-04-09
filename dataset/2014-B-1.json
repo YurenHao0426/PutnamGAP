@@ -1,0 +1,147 @@
+{
+  "index": "2014-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A \\emph{base $10$ over-expansion} of a positive integer $N$ is an expression of the form\n\\[\nN = d_k 10^k + d_{k-1} 10^{k-1} + \\cdots + d_0 10^0\n\\]\nwith $d_k \\neq 0$ and $d_i \\in \\{0,1,2,\\dots,10\\}$ for all $i$.\nFor instance, the integer $N = 10$ has two base 10 over-expansions: $10 = 10 \\cdot 10^0$\nand the usual base 10 expansion $10 = 1 \\cdot 10^1 + 0 \\cdot 10^0$.\nWhich positive integers have a unique base 10 over-expansion?",
+  "solution": "These are the integers with no $0$'s in their usual base $10$ expansion. If the usual base $10$ expansion of $N$ is $d_k 10^k + \\cdots + d_0 10^0$ and one of the digits is $0$, then there exists an $i \\leq k-1$ such that $d_i = 0$ and $d_{i+1} > 0$; then we can replace $d_{i+1} 10^{i+1} + (0) 10^i$ by $(d_{i+1}-1) 10^{i+1} + (10) 10^i$ to obtain a second base $10$ over-expansion.\n\nWe claim conversely that if $N$ has no $0$'s in its usual base $10$ expansion, then this standard form is the unique base $10$ over-expansion for $N$. This holds by induction on the number of digits of $N$: if $1\\leq N\\leq 9$, then the result is clear. Otherwise, any base $10$ over-expansion $N = d_k 10^k + \\cdots + d_1 10 + d_0 10^0$ must have $d_0 \\equiv N \\pmod{10}$, which uniquely determines $d_0$ since $N$ is not a multiple of $10$; then $(N-d_0)/10$ inherits the base $10$ over-expansion $d_k 10^{k-1} + \\cdots + d_1 10^0$, which must be unique by the induction hypothesis.\n\n\\noindent\n\\textbf{Remark:}\nKarl Mahlburg suggests an alternate proof of uniqueness (due to Shawn Williams):\nwrite the usual expansion $N = d_k 10^k + \\cdots + d_0 10^0$ and suppose $d_i \\neq 0$ for all $i$. Let $M = c_l 10^l + \\cdots + c_0 10^0$ be an over-expansion with at least one 10. To have $M = N$, we must have $l \\leq k$; we may pad the expansion of $M$ with zeroes to force $l=k$. Now define $e_i = c_i - d_i$; since $1 \\leq d_i \\leq 9$ and $0 \\leq c_i \\leq 10$,\nwe have $0 \\leq |e_i| \\leq 9$. Moreover, there exists at least one index $i$ with $e_i \\neq 0$, since any index for which $c_i = 10$ has this property. But if $i$ is the largest such index, we have \n\\begin{align*}\n10^i &\\leq \\left| e_i 10^i \\right| = \\left| -\\sum_{j=0}^{i-1} e_i 10^i \\right| \\\\\n&\\leq \\sum_{j=0}^{i-1} \\left| e_i| 10^i \\right| \\leq 9 \\cdot 10^{i-1} + \\cdots + 9 \\cdot 10^0,\n\\end{align*}\na contradiction.",
+  "vars": [
+    "N",
+    "d_k",
+    "d_k-1",
+    "d_0",
+    "d_i",
+    "d_i+1",
+    "d_1",
+    "k",
+    "i",
+    "M",
+    "c_l",
+    "c_0",
+    "c_i",
+    "l",
+    "e_i",
+    "j"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "N": "numbern",
+        "d_k": "digitk",
+        "d_k-1": "digitkminusone",
+        "d_0": "digitzero",
+        "d_i": "digiti",
+        "d_i+1": "digitiplusone",
+        "d_1": "digitone",
+        "k": "topindex",
+        "i": "indexi",
+        "M": "numberm",
+        "c_l": "coeffl",
+        "c_0": "coeffzero",
+        "c_i": "coeffi",
+        "l": "indexl",
+        "e_i": "diffi",
+        "j": "indexj"
+      },
+      "question": "A \\emph{base $10$ over-expansion} of a positive integer $numbern$ is an expression of the form\n\\[\nnumbern = digitk 10^{topindex} + digitkminusone 10^{topindex-1} + \\cdots + digitzero 10^0\n\\]\nwith $digitk \\neq 0$ and $digiti \\in \\{0,1,2,\\dots,10\\}$ for all $indexi$.\nFor instance, the integer $numbern = 10$ has two base 10 over-expansions: $10 = 10 \\cdot 10^0$\nand the usual base 10 expansion $10 = 1 \\cdot 10^1 + 0 \\cdot 10^0$.\nWhich positive integers have a unique base 10 over-expansion?",
+      "solution": "These are the integers with no $0$'s in their usual base $10$ expansion. If the usual base $10$ expansion of $numbern$ is $digitk 10^{topindex} + \\cdots + digitzero 10^0$ and one of the digits is $0$, then there exists an $indexi \\leq topindex-1$ such that $digiti = 0$ and $digitiplusone > 0$; then we can replace $digitiplusone 10^{indexi+1} + (0) 10^{indexi}$ by $(digitiplusone-1) 10^{indexi+1} + (10) 10^{indexi}$ to obtain a second base $10$ over-expansion.\n\nWe claim conversely that if $numbern$ has no $0$'s in its usual base $10$ expansion, then this standard form is the unique base $10$ over-expansion for $numbern$. This holds by induction on the number of digits of $numbern$: if $1\\leq numbern\\leq 9$, then the result is clear. Otherwise, any base $10$ over-expansion $numbern = digitk 10^{topindex} + \\cdots + digitone 10 + digitzero 10^0$ must have $digitzero \\equiv numbern \\pmod{10}$, which uniquely determines $digitzero$ since $numbern$ is not a multiple of $10$; then $(numbern-digitzero)/10$ inherits the base $10$ over-expansion $digitk 10^{topindex-1} + \\cdots + digitone 10^0$, which must be unique by the induction hypothesis.\n\n\\noindent\n\\textbf{Remark:}\nKarl Mahlburg suggests an alternate proof of uniqueness (due to Shawn Williams):\nwrite the usual expansion $numbern = digitk 10^{topindex} + \\cdots + digitzero 10^0$ and suppose $digiti \\neq 0$ for all $indexi$. Let $numberm = coeffl 10^{indexl} + \\cdots + coeffzero 10^0$ be an over-expansion with at least one 10. To have $numberm = numbern$, we must have $indexl \\leq topindex$; we may pad the expansion of $numberm$ with zeroes to force $indexl=topindex$. Now define $diffi = coeffi - digiti$; since $1 \\leq digiti \\leq 9$ and $0 \\leq coeffi \\leq 10$, we have $0 \\leq |diffi| \\leq 9$. Moreover, there exists at least one index $indexi$ with $diffi \\neq 0$, since any index for which $coeffi = 10$ has this property. But if $indexi$ is the largest such index, we have \n\\begin{align*}\n10^{indexi} &\\leq \\left| diffi 10^{indexi} \\right| = \\left| -\\sum_{indexj=0}^{indexi-1} diffi 10^{indexi} \\right| \\\\\n&\\leq \\sum_{indexj=0}^{indexi-1} \\left| diffi| 10^{indexi} \\right| \\leq 9 \\cdot 10^{indexi-1} + \\cdots + 9 \\cdot 10^0,\n\\end{align*}\na contradiction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "N": "lighthouse",
+        "d_k": "marigold",
+        "d_{k-1}": "pinecones",
+        "d_k-1": "ivoryfish",
+        "d_0": "arrowhead",
+        "d_i": "bluewhale",
+        "d_{i+1}": "sandstorm",
+        "d_i+1": "quicklime",
+        "d_1": "blackbird",
+        "k": "mountains",
+        "i": "waterfall",
+        "M": "starlight",
+        "c_l": "dreamboat",
+        "c_0": "silverfox",
+        "c_i": "moonstone",
+        "l": "peppermint",
+        "e_i": "seabreeze",
+        "j": "heronwing"
+      },
+      "question": "A \\emph{base $10$ over-expansion} of a positive integer $lighthouse$ is an expression of the form\n\\[\nlighthouse = marigold 10^{mountains} + pinecones 10^{mountains-1} + \\cdots + arrowhead 10^0\n\\]\nwith $marigold \\neq 0$ and $bluewhale \\in \\{0,1,2,\\dots,10\\}$ for all $waterfall$.\nFor instance, the integer $lighthouse = 10$ has two base 10 over-expansions: $10 = 10 \\cdot 10^0$\nand the usual base 10 expansion $10 = 1 \\cdot 10^1 + 0 \\cdot 10^0$.\nWhich positive integers have a unique base 10 over-expansion?",
+      "solution": "These are the integers with no $0$'s in their usual base $10$ expansion. If the usual base $10$ expansion of $lighthouse$ is $marigold 10^{mountains} + \\cdots + arrowhead 10^0$ and one of the digits is $0$, then there exists an $waterfall \\leq mountains-1$ such that $bluewhale = 0$ and $sandstorm > 0$; then we can replace $sandstorm 10^{waterfall+1} + (0) 10^{waterfall}$ by $(sandstorm-1) 10^{waterfall+1} + (10) 10^{waterfall}$ to obtain a second base $10$ over-expansion.\n\nWe claim conversely that if $lighthouse$ has no $0$'s in its usual base $10$ expansion, then this standard form is the unique base $10$ over-expansion for $lighthouse$. This holds by induction on the number of digits of $lighthouse$: if $1\\leq lighthouse\\leq 9$, then the result is clear. Otherwise, any base $10$ over-expansion $lighthouse = marigold 10^{mountains} + \\cdots + blackbird 10 + arrowhead 10^0$ must have $arrowhead \\equiv lighthouse \\pmod{10}$, which uniquely determines $arrowhead$ since $lighthouse$ is not a multiple of $10$; then $(lighthouse-arrowhead)/10$ inherits the base $10$ over-expansion $marigold 10^{mountains-1} + \\cdots + blackbird 10^0$, which must be unique by the induction hypothesis.\n\n\\noindent\n\\textbf{Remark:}\nKarl Mahlburg suggests an alternate proof of uniqueness (due to Shawn Williams):\nwrite the usual expansion $lighthouse = marigold 10^{mountains} + \\cdots + arrowhead 10^0$ and suppose $bluewhale \\neq 0$ for all $waterfall$. Let $starlight = dreamboat 10^{peppermint} + \\cdots + silverfox 10^0$ be an over-expansion with at least one 10. To have $starlight = lighthouse$, we must have $peppermint \\leq mountains$; we may pad the expansion of $starlight$ with zeroes to force $peppermint=mountains$. Now define $seabreeze = moonstone - bluewhale$; since $1 \\leq bluewhale \\leq 9$ and $0 \\leq moonstone \\leq 10$,\nwe have $0 \\leq |seabreeze| \\leq 9$. Moreover, there exists at least one index $waterfall$ with $seabreeze \\neq 0$, since any index for which $moonstone = 10$ has this property. But if $waterfall$ is the largest such index, we have \n\\begin{align*}\n10^{waterfall} &\\leq \\left| seabreeze 10^{waterfall} \\right| = \\left| -\\sum_{heronwing=0}^{waterfall-1} seabreeze 10^{waterfall} \\right| \\\\\n&\\leq \\sum_{heronwing=0}^{waterfall-1} \\left| seabreeze| 10^{waterfall} \\right| \\leq 9 \\cdot 10^{waterfall-1} + \\cdots + 9 \\cdot 10^0,\n\\end{align*}\na contradiction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "N": "negativereal",
+        "d_k": "lettertop",
+        "d_k-1": "letterprev",
+        "d_0": "letterzero",
+        "d_i": "letterindex",
+        "d_i+1": "letternext",
+        "d_1": "letterone",
+        "k": "tinyindex",
+        "i": "bigindex",
+        "M": "fractional",
+        "c_l": "nondigitl",
+        "c_0": "nondigitzero",
+        "c_i": "nondigitindex",
+        "l": "massiveidx",
+        "e_i": "sumindex",
+        "j": "outermost"
+      },
+      "question": "A \\emph{base $10$ over-expansion} of a positive integer $negativereal$ is an expression of the form\n\\[\nnegativereal = lettertop 10^{tinyindex} + letterprev 10^{tinyindex-1} + \\cdots + letterzero 10^0\n\\]\nwith $lettertop \\neq 0$ and $letterindex \\in \\{0,1,2,\\dots,10\\}$ for all $bigindex$.\nFor instance, the integer $negativereal = 10$ has two base 10 over-expansions: $10 = 10 \\cdot 10^0$\nand the usual base 10 expansion $10 = 1 \\cdot 10^1 + 0 \\cdot 10^0$.\nWhich positive integers have a unique base 10 over-expansion?",
+      "solution": "These are the integers with no $0$'s in their usual base $10$ expansion. If the usual base $10$ expansion of $negativereal$ is $lettertop 10^{tinyindex} + \\cdots + letterzero 10^0$ and one of the digits is $0$, then there exists a $bigindex \\leq tinyindex-1$ such that $letterindex = 0$ and $letternext > 0$; then we can replace $letternext 10^{bigindex+1} + (0) 10^{bigindex}$ by $(letternext-1) 10^{bigindex+1} + (10) 10^{bigindex}$ to obtain a second base $10$ over-expansion.\n\nWe claim conversely that if $negativereal$ has no $0$'s in its usual base $10$ expansion, then this standard form is the unique base $10$ over-expansion for $negativereal$. This holds by induction on the number of digits of $negativereal$: if $1\\leq negativereal\\leq 9$, then the result is clear. Otherwise, any base $10$ over-expansion $negativereal = lettertop 10^{tinyindex} + \\cdots + letterone 10 + letterzero 10^0$ must have $letterzero \\equiv negativereal \\pmod{10}$, which uniquely determines $letterzero$ since $negativereal$ is not a multiple of $10$; then $(negativereal-letterzero)/10$ inherits the base $10$ over-expansion $lettertop 10^{tinyindex-1} + \\cdots + letterone 10^0$, which must be unique by the induction hypothesis.\n\n\\noindent\n\\textbf{Remark:}\nKarl Mahlburg suggests an alternate proof of uniqueness (due to Shawn Williams):\nwrite the usual expansion $negativereal = lettertop 10^{tinyindex} + \\cdots + letterzero 10^0$ and suppose $letterindex \\neq 0$ for all $bigindex$. Let $fractional = nondigitl 10^{massiveidx} + \\cdots + nondigitzero 10^0$ be an over-expansion with at least one 10. To have $fractional = negativereal$, we must have $massiveidx \\leq tinyindex$; we may pad the expansion of $fractional$ with zeroes to force $massiveidx=tinyindex$. Now define $sumindex = nondigitindex - letterindex$; since $1 \\leq letterindex \\leq 9$ and $0 \\leq nondigitindex \\leq 10$,\nwe have $0 \\leq |sumindex| \\leq 9$. Moreover, there exists at least one index $bigindex$ with $sumindex \\neq 0$, since any index for which $nondigitindex = 10$ has this property. But if $bigindex$ is the largest such index, we have \n\\begin{align*}\n10^{bigindex} &\\leq \\left| sumindex\\, 10^{bigindex} \\right| = \\left| -\\sum_{outermost=0}^{bigindex-1} sumindex\\, 10^{bigindex} \\right| \\\\\n&\\leq \\sum_{outermost=0}^{bigindex-1} \\left| sumindex\\, 10^{bigindex} \\right| \\leq 9 \\cdot 10^{bigindex-1} + \\cdots + 9 \\cdot 10^0,\n\\end{align*}\na contradiction."
+    },
+    "garbled_string": {
+      "map": {
+        "N": "qzxwvtnp",
+        "d_k": "hjgrksla",
+        "d_k-1": "nqsdltwe",
+        "d_0": "xbcmqiou",
+        "d_i": "vaqplfmn",
+        "d_i+1": "lthczrke",
+        "d_1": "sofwarju",
+        "k": "jemxdvoq",
+        "i": "rbitlafy",
+        "M": "oekpsgyl",
+        "c_l": "evrjwosu",
+        "c_0": "yzmlqtgc",
+        "c_i": "uhkwdeop",
+        "l": "fsngoqaj",
+        "e_i": "ktwvrsuh",
+        "j": "bpmzakec"
+      },
+      "question": "A \\emph{base $10$ over-expansion} of a positive integer $qzxwvtnp$ is an expression of the form\n\\[\nqzxwvtnp = hjgrksla 10^{jemxdvoq} + nqsdltwe 10^{jemxdvoq-1} + \\cdots + xbcmqiou 10^0\n\\]\nwith $hjgrksla \\neq 0$ and $vaqplfmn \\in \\{0,1,2,\\dots,10\\}$ for all $rbitlafy$.\nFor instance, the integer $qzxwvtnp = 10$ has two base 10 over-expansions: $10 = 10 \\cdot 10^0$\nand the usual base 10 expansion $10 = 1 \\cdot 10^1 + 0 \\cdot 10^0$.\nWhich positive integers have a unique base 10 over-expansion?",
+      "solution": "These are the integers with no $0$'s in their usual base $10$ expansion. If the usual base $10$ expansion of $qzxwvtnp$ is $hjgrksla 10^{jemxdvoq} + \\cdots + xbcmqiou 10^0$ and one of the digits is $0$, then there exists an $rbitlafy \\leq jemxdvoq-1$ such that $vaqplfmn = 0$ and $lthczrke > 0$; then we can replace $lthczrke 10^{rbitlafy+1} + (0) 10^{rbitlafy}$ by $(lthczrke-1) 10^{rbitlafy+1} + (10) 10^{rbitlafy}$ to obtain a second base $10$ over-expansion.\n\nWe claim conversely that if $qzxwvtnp$ has no $0$'s in its usual base $10$ expansion, then this standard form is the unique base $10$ over-expansion for $qzxwvtnp$. This holds by induction on the number of digits of $qzxwvtnp$: if $1\\leq qzxwvtnp\\leq 9$, then the result is clear. Otherwise, any base $10$ over-expansion $qzxwvtnp = hjgrksla 10^{jemxdvoq} + \\cdots + sofwarju 10 + xbcmqiou 10^0$ must have $xbcmqiou \\equiv qzxwvtnp \\pmod{10}$, which uniquely determines $xbcmqiou$ since $qzxwvtnp$ is not a multiple of $10$; then $(qzxwvtnp-xbcmqiou)/10$ inherits the base $10$ over-expansion $hjgrksla 10^{jemxdvoq-1} + \\cdots + sofwarju 10^0$, which must be unique by the induction hypothesis.\n\n\\noindent\n\\textbf{Remark:}\nKarl Mahlburg suggests an alternate proof of uniqueness (due to Shawn Williams):\nwrite the usual expansion $qzxwvtnp = hjgrksla 10^{jemxdvoq} + \\cdots + xbcmqiou 10^0$ and suppose $vaqplfmn \\neq 0$ for all $rbitlafy$. Let $oekpsgyl = evrjwosu 10^{fsngoqaj} + \\cdots + yzmlqtgc 10^0$ be an over-expansion with at least one 10. To have $oekpsgyl = qzxwvtnp$, we must have $fsngoqaj \\leq jemxdvoq$; we may pad the expansion of $oekpsgyl$ with zeroes to force $fsngoqaj=jemxdvoq$. Now define $ktwvrsuh = uhkwdeop - vaqplfmn$; since $1 \\leq vaqplfmn \\leq 9$ and $0 \\leq uhkwdeop \\leq 10$,\nwe have $0 \\leq |ktwvrsuh| \\leq 9$. Moreover, there exists at least one index $rbitlafy$ with $ktwvrsuh \\neq 0$, since any index for which $uhkwdeop = 10$ has this property. But if $rbitlafy$ is the largest such index, we have \n\\begin{align*}\n10^{rbitlafy} &\\leq \\left| ktwvrsuh 10^{rbitlafy} \\right| = \\left| -\\sum_{bpmzakec=0}^{rbitlafy-1} ktwvrsuh 10^{rbitlafy} \\right| \\\\\n&\\leq \\sum_{bpmzakec=0}^{rbitlafy-1} \\left| ktwvrsuh| 10^{rbitlafy} \\right| \\leq 9 \\cdot 10^{rbitlafy-1} + \\cdots + 9 \\cdot 10^0,\n\\end{align*}\na contradiction."
+    },
+    "kernel_variant": {
+      "question": "Fix the integer base $b=8$.  A \\emph{base $8$ over-expansion} of a positive integer $N$ is an expression\n\\[\nN = d_k8^k+d_{k-1}8^{k-1}+\\cdots+d_08^0,\\qquad d_k\\neq0,\\qquad d_i\\in\\{0,1,2,\\dots,8\\}\\; (0\\le i\\le k).\n\\]\nFor instance, the number $N=16$ has two such representations,\n\\[\n16 = 2\\,8^1+0\\,8^0 = 1\\,8^1+8\\,8^0.\n\\]\nDetermine exactly which positive integers possess a \\textbf{unique} base $8$ over-expansion.",
+      "solution": "Write the usual (standard) base-8 expansion of N as\n\n  N = d_k 8^k + d_{k-1} 8^{k-1} + \\cdots  + d_1 8 + d_0,\n  with d_k \\neq  0 and d_i \\in  {0,1,\\ldots ,7}.\n\n1. If at some position i \\leq  k-1 we have d_{i+1} > 0 and d_i = 0, then\n   d_{i+1}8^{i+1} + 0\\cdot 8^i = (d_{i+1}-1)8^{i+1} + 8\\cdot 8^i,\n   and replacing this block in the usual expansion produces a second over-expansion of N. Hence every integer whose standard base-8 expansion contains a 0 has at least two over-expansions.\n\n2. Conversely, suppose the usual expansion of N has no zeros, i.e.\n   1 \\leq  d_i \\leq  7 for all i. We show by induction on the number of digits that the usual expansion is the only over-expansion.\n\n   * Base case k = 0 (numbers 1,\\ldots ,7): the single digit d_0 \\equiv  N mod 8 is uniquely determined in {1,\\ldots ,7}, so the expansion is unique.\n\n   * Induction step: assume uniqueness holds for all numbers with at most k digits and no zeros. Let N have k+1 digits, all in {1,\\ldots ,7}. In any over-expansion\n     N = c_k 8^k + \\cdots  + c_1 8 + c_0,   with 0 \\leq  c_i \\leq  8,\n   the final digit is fixed because c_0 \\equiv  N mod 8, and N is not a multiple of 8, so c_0 = d_0. Dividing by 8 gives\n     (N - d_0)/8 = c_k 8^{k-1} + \\cdots  + c_1.\n   The right-hand side is an over-expansion of (N - d_0)/8, which has k digits and no zeros; by the induction hypothesis it is unique, forcing c_i = d_i for all i \\geq  1. Thus the only over-expansion is the usual one.\n\nTherefore an integer has a unique base-8 over-expansion if and only if its ordinary base-8 representation contains no zero digits. Equivalently, the desired integers are exactly those whose standard base-8 expansion consists solely of the digits 1,2,\\ldots ,7.",
+      "_meta": {
+        "core_steps": [
+          "If the ordinary base-10 expansion contains a 0 preceded by a non-zero digit, decrease that digit by 1 and add 10 to the 0-place to get a second over-expansion.",
+          "Hence any number whose standard decimal form has a 0 admits at least two over-expansions.",
+          "When no zeros occur, the last digit is fixed by N mod 10, forcing d₀.",
+          "Divide by 10 and repeat; induction on the number of digits gives uniqueness."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The numeral base in which all expansions are taken; the symbol 10 in the text always means this base.",
+            "original": 10
+          },
+          "slot2": {
+            "description": "The specific example used to illustrate multiple expansions (currently the number equal to the base).",
+            "original": 10
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

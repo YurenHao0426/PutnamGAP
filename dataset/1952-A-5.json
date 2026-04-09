@@ -1,0 +1,97 @@
+{
+  "index": "1952-A-5",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "5. Let \\( a_{j}(j=1,2, \\ldots, n) \\) be entirely arbitrary numbers except that no one is equal to unity. Prove\n\\[\n\\left.a_{1}+\\sum_{i=2}^{n} a_{i} \\prod_{j=1}^{i-1}\\left(1-a_{j}\\right)=1-\\prod_{j=1}^{n}\\left(1-a_{j}\\right) \\quad \\quad \\text { (page } 350\\right)\n\\]",
+  "solution": "Solution. The given statement is true for \\( n=1 \\) (interpreting the empty sum as 0 ) and for \\( n=2 \\). Suppose it is true for \\( n=k \\), i.e.,\n\\[\na_{1}+\\sum_{i=2}^{k} a_{i} \\prod_{j=1}^{i-1}\\left(1-a_{j}\\right)=1-\\prod_{i=1}^{k}\\left(1-a_{i}\\right)\n\\]\n\nThen\n\\[\n\\begin{aligned}\na_{1}+\\sum_{i=2}^{k+1} a_{i} \\prod_{j=1}^{i-1}\\left(1-a_{j}\\right) & =a_{1}+\\sum_{i=2}^{k} a_{i} \\prod_{j=1}^{i-1}\\left(1-a_{j}\\right)+a_{k+1} \\prod_{j=1}^{k}\\left(1-a_{j}\\right) \\\\\n& =1-\\prod_{i=1}^{k}\\left(1-a_{i}\\right)+a_{k+1} \\prod_{j=1}^{k}\\left(1-a_{j}\\right) \\\\\n& =1-\\left|\\prod_{i=1}^{k}\\left(1-a_{i}\\right)\\right|\\left(1-a_{k+1}\\right) \\\\\n& =1-\\prod_{i=1}^{k+1}\\left(1-a_{i}\\right) .\n\\end{aligned}\n\\]\n\nThus the statement is true for \\( n=k+1 \\). It follows by induction that it is true for all positive integers \\( n \\).\n\nRemark. It is not necessary to require that none of the \\( a \\) 's be unity.",
+  "vars": [
+    "i",
+    "j",
+    "k",
+    "n"
+  ],
+  "params": [
+    "a_j",
+    "a_i",
+    "a_1",
+    "a_k",
+    "a_k+1"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexchar",
+        "j": "indexnext",
+        "k": "indexthird",
+        "n": "totalcount",
+        "a_j": "sequenceelemj",
+        "a_i": "sequenceelemi",
+        "a_1": "sequenceelemone",
+        "a_k": "sequenceelemk",
+        "a_k+1": "sequenceelemkplus"
+      },
+      "question": "5. Let \\( sequenceelemj(indexnext=1,2, \\ldots, totalcount) \\) be entirely arbitrary numbers except that no one is equal to unity. Prove\n\\[\n\\left.sequenceelemone+\\sum_{indexchar=2}^{totalcount} sequenceelemi \\prod_{indexnext=1}^{indexchar-1}\\left(1-sequenceelemj\\right)=1-\\prod_{indexnext=1}^{totalcount}\\left(1-sequenceelemj\\right) \\quad \\quad \\text { (page } 350\\right)\n\\]",
+      "solution": "Solution. The given statement is true for \\( totalcount=1 \\) (interpreting the empty sum as 0 ) and for \\( totalcount=2 \\). Suppose it is true for \\( totalcount=indexthird \\), i.e.,\n\\[\nsequenceelemone+\\sum_{indexchar=2}^{indexthird} sequenceelemi \\prod_{indexnext=1}^{indexchar-1}\\left(1-sequenceelemj\\right)=1-\\prod_{indexchar=1}^{indexthird}\\left(1-sequenceelemi\\right)\n\\]\n\nThen\n\\[\n\\begin{aligned}\nsequenceelemone+\\sum_{indexchar=2}^{indexthird+1} sequenceelemi \\prod_{indexnext=1}^{indexchar-1}\\left(1-sequenceelemj\\right) & =sequenceelemone+\\sum_{indexchar=2}^{indexthird} sequenceelemi \\prod_{indexnext=1}^{indexchar-1}\\left(1-sequenceelemj\\right)+sequenceelemkplus \\prod_{indexnext=1}^{indexthird}\\left(1-sequenceelemj\\right) \\\\\n& =1-\\prod_{indexchar=1}^{indexthird}\\left(1-sequenceelemi\\right)+sequenceelemkplus \\prod_{indexnext=1}^{indexthird}\\left(1-sequenceelemj\\right) \\\\\n& =1-\\left|\\prod_{indexchar=1}^{indexthird}\\left(1-sequenceelemi\\right)\\right|\\left(1-sequenceelemkplus\\right) \\\\\n& =1-\\prod_{indexchar=1}^{indexthird+1}\\left(1-sequenceelemi\\right) .\n\\end{aligned}\n\\]\n\nThus the statement is true for \\( totalcount=indexthird+1 \\). It follows by induction that it is true for all positive integers \\( totalcount \\).\n\nRemark. It is not necessary to require that none of the sequence elements be unity."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "lighthouse",
+        "j": "horseshoe",
+        "k": "snowflake",
+        "n": "buttercup",
+        "a_j": "asteroid",
+        "a_i": "driftwood",
+        "a_1": "honeycomb",
+        "a_k": "paintbrush",
+        "a_k+1": "tangerine"
+      },
+      "question": "5. Let \\( asteroid (horseshoe=1,2, \\ldots, buttercup) \\) be entirely arbitrary numbers except that no one is equal to unity. Prove\n\\[\nhoneycomb+\\sum_{lighthouse=2}^{buttercup} driftwood \\prod_{horseshoe=1}^{lighthouse-1}\\left(1-asteroid\\right)=1-\\prod_{horseshoe=1}^{buttercup}\\left(1-asteroid\\right) \\quad \\quad \\text { (page } 350\\right)\n\\]",
+      "solution": "Solution. The given statement is true for \\( buttercup=1 \\) (interpreting the empty sum as 0 ) and for \\( buttercup=2 \\). Suppose it is true for \\( buttercup=snowflake \\), i.e.,\n\\[\nhoneycomb+\\sum_{lighthouse=2}^{snowflake} driftwood \\prod_{horseshoe=1}^{lighthouse-1}\\left(1-asteroid\\right)=1-\\prod_{lighthouse=1}^{snowflake}\\left(1-driftwood\\right)\n\\]\n\nThen\n\\[\n\\begin{aligned}\nhoneycomb+\\sum_{lighthouse=2}^{snowflake+1} driftwood \\prod_{horseshoe=1}^{lighthouse-1}\\left(1-asteroid\\right) & =honeycomb+\\sum_{lighthouse=2}^{snowflake} driftwood \\prod_{horseshoe=1}^{lighthouse-1}\\left(1-asteroid\\right)+tangerine \\prod_{horseshoe=1}^{snowflake}\\left(1-asteroid\\right) \\\\\n& =1-\\prod_{lighthouse=1}^{snowflake}\\left(1-driftwood\\right)+tangerine \\prod_{horseshoe=1}^{snowflake}\\left(1-asteroid\\right) \\\\\n& =1-\\left|\\prod_{lighthouse=1}^{snowflake}\\left(1-driftwood\\right)\\right|\\left(1-tangerine\\right) \\\\\n& =1-\\prod_{lighthouse=1}^{snowflake+1}\\left(1-driftwood\\right) .\n\\end{aligned}\n\\]\n\nThus the statement is true for \\( buttercup=snowflake+1 \\). It follows by induction that it is true for all positive integers \\( buttercup \\).\n\nRemark. It is not necessary to require that none of the \\( a \\)'s be unity."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "holisticunit",
+        "j": "totalextent",
+        "k": "aggregatepoint",
+        "n": "singularcount",
+        "a_j": "unityconstant",
+        "a_i": "identityfigure",
+        "a_1": "nullityscalar",
+        "a_k": "uniformentity",
+        "a_k+1": "continuityaspect"
+      },
+      "question": "5. Let \\( unityconstant(totalextent=1,2, \\ldots, singularcount) \\) be entirely arbitrary numbers except that no one is equal to unity. Prove\n\\[\nnullityscalar+\\sum_{holisticunit=2}^{singularcount} identityfigure \\prod_{totalextent=1}^{holisticunit-1}\\left(1-unityconstant\\right)=1-\\prod_{totalextent=1}^{singularcount}\\left(1-unityconstant\\right) \\quad \\quad \\text { (page } 350\\right)\n\\]",
+      "solution": "Solution. The given statement is true for \\( singularcount=1 \\) (interpreting the empty sum as 0 ) and for \\( singularcount=2 \\). Suppose it is true for \\( singularcount=aggregatepoint \\), i.e.,\n\\[\nnullityscalar+\\sum_{holisticunit=2}^{aggregatepoint} identityfigure \\prod_{totalextent=1}^{holisticunit-1}\\left(1-unityconstant\\right)=1-\\prod_{holisticunit=1}^{aggregatepoint}\\left(1-identityfigure\\right)\n\\]\n\nThen\n\\[\n\\begin{aligned}\nnullityscalar+\\sum_{holisticunit=2}^{aggregatepoint+1} identityfigure \\prod_{totalextent=1}^{holisticunit-1}\\left(1-unityconstant\\right) & =nullityscalar+\\sum_{holisticunit=2}^{aggregatepoint} identityfigure \\prod_{totalextent=1}^{holisticunit-1}\\left(1-unityconstant\\right)+continuityaspect \\prod_{totalextent=1}^{aggregatepoint}\\left(1-unityconstant\\right) \\\\ & =1-\\prod_{holisticunit=1}^{aggregatepoint}\\left(1-identityfigure\\right)+continuityaspect \\prod_{totalextent=1}^{aggregatepoint}\\left(1-unityconstant\\right) \\\\ & =1-\\left|\\prod_{holisticunit=1}^{aggregatepoint}\\left(1-identityfigure\\right)\\right|\\left(1-continuityaspect\\right) \\\\ & =1-\\prod_{holisticunit=1}^{aggregatepoint+1}\\left(1-identityfigure\\right) .\n\\end{aligned}\n\\]\n\nThus the statement is true for \\( singularcount=aggregatepoint+1 \\). It follows by induction that it is true for all positive integers \\( singularcount \\).\n\nRemark. It is not necessary to require that none of the unityconstant 's be unity."
+    },
+    "garbled_string": {
+      "map": {
+        "i": "quxbadly",
+        "j": "snerqtuv",
+        "k": "plimztrq",
+        "n": "fradomix",
+        "a_j": "qveropli",
+        "a_i": "klumseta",
+        "a_1": "rogdispa",
+        "a_k": "hrupteno",
+        "a_k+1": "zlotimex"
+      },
+      "question": "5. Let \\( qveropli(snerqtuv=1,2, \\ldots, fradomix) \\) be entirely arbitrary numbers except that no one is equal to unity. Prove\n\\[\n\\left.rogdispa+\\sum_{quxbadly=2}^{fradomix} klumseta \\prod_{snerqtuv=1}^{quxbadly-1}\\left(1-qveropli\\right)=1-\\prod_{snerqtuv=1}^{fradomix}\\left(1-qveropli\\right) \\quad \\quad \\text { (page } 350\\right)\n\\]",
+      "solution": "Solution. The given statement is true for \\( fradomix=1 \\) (interpreting the empty sum as 0 ) and for \\( fradomix=2 \\). Suppose it is true for \\( fradomix=plimztrq \\), i.e.,\n\\[\nrogdispa+\\sum_{quxbadly=2}^{plimztrq} klumseta \\prod_{snerqtuv=1}^{quxbadly-1}\\left(1-qveropli\\right)=1-\\prod_{quxbadly=1}^{plimztrq}\\left(1-klumseta\\right)\n\\]\n\nThen\n\\[\n\\begin{aligned}\nrogdispa+\\sum_{quxbadly=2}^{plimztrq+1} klumseta \\prod_{snerqtuv=1}^{quxbadly-1}\\left(1-qveropli\\right) & =rogdispa+\\sum_{quxbadly=2}^{plimztrq} klumseta \\prod_{snerqtuv=1}^{quxbadly-1}\\left(1-qveropli\\right)+zlotimex \\prod_{snerqtuv=1}^{plimztrq}\\left(1-qveropli\\right) \\\\\n& =1-\\prod_{quxbadly=1}^{plimztrq}\\left(1-klumseta\\right)+zlotimex \\prod_{snerqtuv=1}^{plimztrq}\\left(1-qveropli\\right) \\\\\n& =1-\\left|\\prod_{quxbadly=1}^{plimztrq}\\left(1-klumseta\\right)\\right|\\left(1-zlotimex\\right) \\\\\n& =1-\\prod_{quxbadly=1}^{plimztrq+1}\\left(1-klumseta\\right) .\n\\end{aligned}\n\\]\n\nThus the statement is true for \\( fradomix=plimztrq+1 \\). It follows by induction that it is true for all positive integers \\( fradomix \\).\n\nRemark. It is not necessary to require that none of the \\( qveropli \\)'s be unity."
+    },
+    "kernel_variant": {
+      "question": "Let R be an associative ring with identity 1 and let a_1,\\ldots ,a_n\\in R be idempotents (a_j^2=a_j).  \nFix once and for all the natural order 1<2<\\cdots <n.  For every finite set S\\subseteq {1,\\ldots ,n} write  \nS= {i_1<\\cdots <i_k}.  Define inductively\n\n  b_\\emptyset  := 0,  \n  b_{S\\cup {i}} := b_S + (1-b_S) a_i (1-b_S)        (i\\notin S).                                       (\\star )  \n\n(A)  (Algebraic structure)  \n(i) Prove that every b_S is an idempotent.  \n(ii) Show that if all a_j commute pair-wise, then for every S one has  \n  b_S = 1 - \\prod _{j\\in S}(1-a_j).  \n\n(B)  (Order sensitivity)  \nConstruct 2\\times 2-matrix idempotents a_1,a_2 over \\mathbb{Q} for which b_{ {1,2} }\\neq b_{ {2,1} }, thereby showing that the conclusion of (A)(ii) fails without commutativity.\n\n(C)  (Orthogonal projections)  \nLet H be a Hilbert space and let a_j=P_{H_j} be the orthogonal projection onto a closed subspace H_j\\subset H.  \n(i)  Interpret b_S as the orthogonal projection onto the closed linear span of (H_j)_{j\\in S}.  \n(ii)  Give an explicit closed formula for P_{H_1+\\cdots +H_n} that involves only alternating sums of products of the individual projections and prove that every numerical coefficient appearing in that formula has operator norm 1.\n\n(D)  (Probabilistic by-product)  \nLet (\\Omega ,F,P) be a probability space and set a_j:=1_{E_j} for events E_j.  Assume only pair-wise independence (no higher-order independence).  \n(i)  Show that the random idempotent b_{ {1,\\ldots ,n} } obtained from (\\star ) satisfies  \n\n  P(\\bigcup _{j=1}^{n}E_j)=E[b_{ {1,\\ldots ,n} }].  \n\n(ii)  Compute explicitly the correction term that distinguishes this identity from the classical inclusion-exclusion formula and show that all mixed moments of order \\geq 3 cancel automatically.\n\n(E)  (Algorithmic complexity)  \nDesign an algorithm that, given n symbolic idempotents, outputs b_{ {1,\\ldots ,n} } in time \\Theta (n\\cdot 2^n) measured in ring multiplications, and prove that---even when R is the free ring on the generators a_1,\\ldots ,a_n---no algorithm can do better than 2^{\\Omega (n)} ring operations.\n\n\n",
+      "solution": "Throughout we abbreviate u_S := 1-b_S and note that u_S is an idempotent whenever b_S is.\n\n(A)  Algebraic structure  \n(i)  Idempotency of the b_S.  \nInduction over |S|.  The empty set case is trivial.  \nAssume b_S^2=b_S.  Put b':=b_S and define b'' by (\\star ):  \n\n b''=b'+(1-b')a_i(1-b')=b'+u'a_i u'  (u':=1-b').  \n\nCompute b''^2:  \n\n b''^2= (b'+u'a_i u')^2  \n      = b'^2 + b'u'a_i u' + u'a_i u'b' + (u'a_i u')^2.  \n\nBecause b'u'=u'b'=0 and u'^2=u', the middle two summands vanish.  \nSince a_i^2=a_i and u'^2=u',  \n\n (u'a_i u')^2 = u'a_i u'a_i u' = u'a_i u'.  \n\nHence b''^2 = b' + u'a_i u' = b''.  Thus b'' is idempotent, completing the induction.\n\n(ii)  Commuting case.  \nAssume a_i a_j = a_j a_i for all i,j.  Then u_S commutes with every a_k, and  \n\n b_{S\\cup {i}} = b_S + u_S a_i = 1 - u_S + u_S(1-(1-a_i)) = 1 - u_S(1-a_i).  \n\nWith u_\\emptyset =1 and u_{S\\cup {i}} = u_S(1-a_i) we obtain by induction  \n\n u_S = \\prod _{j\\in S}(1-a_j),  whence b_S = 1 - \\prod _{j\\in S}(1-a_j).\n\n(B)  Order sensitivity: a concrete counter-example.  \nTake  \n\n a_1 = [1 0;0 0],  a_2 = [1 1;0 0] \\in  M_2(\\mathbb{Q}).  \n\nBoth satisfy a_j^2=a_j.  A direct computation yields  \n\n b_{ {1,2} } = a_1 + (1-a_1)a_2(1-a_1) = [1 0;0 0],  \n\nwhile  \n\n b_{ {2,1} } = a_2 + (1-a_2)a_1(1-a_2) = [1 \\frac{1}{2};0 0].  \n\nHence the order matters when the a_j fail to commute.\n\n(C)  Orthogonal projections  \nBecause projections are idempotent self-adjoint operators, the operator defined by (\\star ) is again a projection and satisfies Ran b_{S\\cup {i}} = Ran b_S + H_i.  Induction on |S| gives Ran b_S = \\Sigma _{j\\in S} H_j, so b_{ {1,\\ldots ,n} } is the orthogonal projection onto the closed linear span.  \n\nTo obtain an explicit formula note that  \n\n u_{S\\cup {i}} = (1-a_i)u_S(1-a_i).  \n\nStart with u_\\emptyset =1 and iterate:  \n\n u_{ {1,\\ldots ,n} } = (1-a_n)\\ldots (1-a_1)\\ldots (1-a_n).                        (\\dagger )  \n\nTherefore  \n\n P_{H_1+\\cdots +H_n}=1-u_{ {1,\\ldots ,n} }=1-(1-a_n)\\ldots (1-a_1)\\ldots (1-a_n).  \n\nOn expanding (\\dagger ) every monomial appears with coefficient \\pm 1, hence the numerical coefficients have modulus 1; because projections have operator norm 1, every coefficient in norm is also 1.\n\n(D)  Probabilistic by-product  \nThe characteristic functions a_j commute (they are functions on \\Omega ), so part (A)(ii) gives  \n\n b_{ {1,\\ldots ,n} } = 1 - \\prod _{j=1}^{n}(1-1_{E_j}).  \n\nTaking expectation we obtain  \n\n P(\\bigcup E_j)=1-E[\\prod (1-1_{E_j})].  \n\nExpand the product:  \n\n \\prod (1-1_{E_j}) = 1 - \\Sigma 1_{E_j} + \\Sigma _{i<j}1_{E_i}1_{E_j} - \\cdots  .  \n\nPairwise independence implies E[1_{E_i}1_{E_j}]=P(E_i)P(E_j).  Every mixed moment of order \\geq 3 equals P(E_{i_1})\\cdots P(E_{i_k}) only when full independence is available; but in the expectation of b_{ {1,\\ldots ,n} } those higher-order terms cancel with the alternating signs.  One finds  \n\n P(\\bigcup E_j) = \\Sigma  P(E_j) - \\Sigma _{i<j}P(E_i)P(E_j).             (\\ddagger )  \n\nThe second summation is the desired quadratic correction; (\\ddagger ) coincides with the classical inclusion-exclusion formula when the events are fully independent, because then P(E_i\\cap E_j)=P(E_i)P(E_j) and the quadratic term cancels.\n\n(E)  Algorithmic complexity  \nStraight expansion of (\\dagger ) contains 2^n distinct words in the generators, and no two of them cancel in the free ring.  Thus any algorithm that outputs b_{ {1,\\ldots ,n} } in that ring must at some point create all 2^n monomials, whence it needs at least 2^{\\Omega (n)} multiplications.  \n\nConversely, begin with the set {1}.  Replacing u by (1-a_i)u(1-a_i) multiplies every current word first on the left and then on the right by (1-a_i), doubling their number; keeping words in a hash-table gives \\Theta (|current set|) ring multiplications per step.  After the i-th step exactly 2I words are present, so the total cost is \\Sigma _{i=1}^{n}2I = \\Theta (n\\cdot 2^n).  Hence \\Theta (n\\cdot 2^n) is optimal up to a polynomial factor.\n\n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.161682",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

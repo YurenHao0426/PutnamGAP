@@ -1,0 +1,69 @@
+{
+  "index": "1955-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "4. On a circle, \\( n \\) points are selected and the chords joining them in pairs are drawn. Assuming that no three of these chords are concurrent (except at the endpoints), how many points of intersection are there?",
+  "solution": "Solution. Any four points on a circle determine just one pair of chords that intersect at an interior point. Since the hypothesis implies that all such points of intersection are distinct, there are \\( \\binom{n}{4} \\) points of intersection in the interior of the circle.",
+  "vars": [],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "pointsnum"
+      },
+      "question": "4. On a circle, \\( pointsnum \\) points are selected and the chords joining them in pairs are drawn. Assuming that no three of these chords are concurrent (except at the endpoints), how many points of intersection are there?",
+      "solution": "Solution. Any four points on a circle determine just one pair of chords that intersect at an interior point. Since the hypothesis implies that all such points of intersection are distinct, there are \\( \\binom{pointsnum}{4} \\) points of intersection in the interior of the circle."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "cupholder"
+      },
+      "question": "4. On a circle, \\( cupholder \\) points are selected and the chords joining them in pairs are drawn. Assuming that no three of these chords are concurrent (except at the endpoints), how many points of intersection are there?",
+      "solution": "Solution. Any four points on a circle determine just one pair of chords that intersect at an interior point. Since the hypothesis implies that all such points of intersection are distinct, there are \\( \\binom{cupholder}{4} \\) points of intersection in the interior of the circle."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "scarcityvalue"
+      },
+      "question": "4. On a circle, \\( scarcityvalue \\) points are selected and the chords joining them in pairs are drawn. Assuming that no three of these chords are concurrent (except at the endpoints), how many points of intersection are there?",
+      "solution": "Solution. Any four points on a circle determine just one pair of chords that intersect at an interior point. Since the hypothesis implies that all such points of intersection are distinct, there are \\( \\binom{scarcityvalue}{4} \\) points of intersection in the interior of the circle."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp"
+      },
+      "question": "4. On a circle, \\( qzxwvtnp \\) points are selected and the chords joining them in pairs are drawn. Assuming that no three of these chords are concurrent (except at the endpoints), how many points of intersection are there?",
+      "solution": "Solution. Any four points on a circle determine just one pair of chords that intersect at an interior point. Since the hypothesis implies that all such points of intersection are distinct, there are \\( \\binom{qzxwvtnp}{4} \\) points of intersection in the interior of the circle."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\Gamma\\) be any strictly convex closed curve in the plane, and let \\(n\\ge 4\\) distinct points be marked on \\(\\Gamma\\) in clockwise order.  Every pair of marked points is joined by the straight-line segment connecting them (so all \\(\\binom{n}{2}\\) segments of the complete graph are drawn).  Assume that every intersection point that lies in the interior of \\(\\Gamma\\) is incident with exactly two of the drawn segments---that is, no interior point of \\(\\Gamma\\) lies on three or more of the segments.  Determine, as a function of \\(n\\), the total number of interior intersection points of these segments.",
+      "solution": "Call the marked points (in order) P_1,P_2,\\ldots ,P_n.  We count the interior intersection points in two complementary ways.\n\n1. From 4-tuples of vertices to interior intersections.\n   Take any unordered set {P_a,P_b,P_c,P_d} of four distinct marked points.  Because the points lie on a convex curve, they form a convex quadrilateral whose two diagonals intersect at a single point inside that quadrilateral and hence inside \\Gamma .  No other pair of the six segments determined by the four vertices meets in the interior of \\Gamma  (adjacent sides meet only at the vertices, and the remaining two sides do not cross inside the quadrilateral).  Thus every 4-tuple of vertices yields exactly one interior intersection point.  Since there are \\(\\binom{n}{4}\\) such 4-tuples, we have produced that many interior points so far.\n\n2. From an interior intersection back to a 4-tuple.\n   Conversely, let X be any interior intersection point.  By hypothesis, exactly two segments meet at X; denote them P_iP_j and P_kP_\\ell .  Because the endpoints lie on a convex curve, the two segments intersect in the interior only when their endpoints alternate around \\Gamma .  Hence the four indices i,j,k,\\ell  are distinct, and X is the intersection of the two diagonals of the convex quadrilateral with vertices P_i,P_j,P_k,P_\\ell .  Therefore the intersection point X arises from the unique 4-tuple {P_i,P_j,P_k,P_\\ell }.\n\nThe two steps establish a one-to-one correspondence between interior intersection points and 4-element subsets of the n vertices.  Consequently the total number of interior intersection points is\n\n\\[\\boxed{\\binom{n}{4}}.\\]\n\n(Strict convexity of \\Gamma  guarantees that any segment joining two vertices lies completely inside \\Gamma  except for its endpoints, so the above arguments use only convexity, not any special property such as circularity.)",
+      "_meta": {
+        "core_steps": [
+          "Observe that 4 chosen vertices determine exactly one pair of crossing chords (the diagonals of that quadrilateral).",
+          "Show the given “no-concurrency” hypothesis makes this correspondence one-to-one: each interior intersection comes from a unique 4-tuple.",
+          "Count 4-tuples of the n vertices: C(n,4)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The ambient convex curve on which the n points lie; only convexity is used, not circularity.",
+            "original": "circle"
+          },
+          "slot2": {
+            "description": "The exact concurrency bound; it suffices to forbid any interior point where 3 (or more) chords meet.",
+            "original": "three"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

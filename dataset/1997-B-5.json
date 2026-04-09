@@ -1,0 +1,118 @@
+{
+  "index": "1997-B-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Prove that for $n\\geq 2$,\n\\[\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$n$ terms}} \\equiv\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$n-1$ terms}} \\quad \\pmod{n}.\n\\]",
+  "solution": "Define the sequence $x_1 = 2$, $x_n = 2^{x_{n-1}}$ for $n > 1$. It\nsuffices to show that for every $n$, $x_m \\equiv x_{m+1} \\equiv \\cdots\n\\pmod n$ for some $m < n$. We do this by induction on $n$, with $n=2$\nbeing obvious.\n\nWrite $n = 2^a b$, where $b$ is odd. It suffices to show that $x_m\n\\equiv \\cdots$ modulo $2^a$ and modulo $b$, for some $m < n$. For the\nformer, we only need $x_{n-1} \\geq a$, but clearly\n$x_{n-1} \\geq n$ by induction on $n$. For the latter, note that\n$x_m \\equiv x_{m+1} \\equiv \\cdots\n\\pmod b$ as long as $x_{m-1} \\equiv x_m \\equiv \\cdots \\pmod{\\phi(b)}$,\nwhere $\\phi(n)$ is the Euler totient function. By hypothesis, this\noccurs for some $m < \\phi(b) + 1 \\leq n$. (Thanks to Anoop Kulkarni\nfor catching a lethal typo in an earlier version.)",
+  "vars": [
+    "n",
+    "m",
+    "x_1",
+    "x_n",
+    "x_n-1",
+    "x_m",
+    "x_m+1"
+  ],
+  "params": [
+    "a",
+    "b",
+    "\\\\phi"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "modulus",
+        "m": "counter",
+        "x_1": "termone",
+        "x_n": "termnth",
+        "x_n-1": "termprior",
+        "x_m": "termindex",
+        "x_m+1": "termnext",
+        "a": "twopower",
+        "b": "oddpart",
+        "\\phi": "totient"
+      },
+      "question": "Prove that for $modulus\\geq 2$,\\[\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$modulus$ terms}} \\equiv\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$modulus-1$ terms}} \\quad \\pmod{modulus}.\n\\]",
+      "solution": "Define the sequence $termone = 2$, $termnth = 2^{termprior}$ for $modulus > 1$. It\nsuffices to show that for every $modulus$, $termindex \\equiv termnext \\equiv \\cdots\n\\pmod{modulus}$ for some $counter < modulus$. We do this by induction on $modulus$, with $modulus=2$\nbeing obvious.\n\nWrite $modulus = 2^{twopower}\\, oddpart$, where $oddpart$ is odd. It suffices to show that $termindex\n\\equiv \\cdots$ modulo $2^{twopower}$ and modulo $oddpart$, for some $counter < modulus$. For the\nformer, we only need $termprior \\geq twopower$, but clearly\n$termprior \\geq modulus$ by induction on $modulus$. For the latter, note that\n$termindex \\equiv termnext \\equiv \\cdots\n\\pmod{oddpart}$ as long as $x_{counter-1} \\equiv termindex \\equiv \\cdots \\pmod{totient(oddpart)}$,\nwhere $totient(modulus)$ is the Euler totient function. By hypothesis, this\noccurs for some $counter < totient(oddpart) + 1 \\leq modulus$. (Thanks to Anoop Kulkarni\nfor catching a lethal typo in an earlier version.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "marblerug",
+        "m": "silktrail",
+        "x_1": "pebblekite",
+        "x_n": "emberglove",
+        "x_n-1": "ivoryspoon",
+        "x_m": "canyonreed",
+        "x_m+1": "walnutquill",
+        "a": "dapplegrain",
+        "b": "lilacshard",
+        "\\phi": "vortexlumen"
+      },
+      "question": "Prove that for $\\marblerug\\geq 2$,\n\\[\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$\\marblerug$ terms}} \\equiv\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$\\marblerug-1$ terms}} \\quad \\pmod{\\marblerug}.\n\\]",
+      "solution": "Define the sequence $\\pebblekite = 2$, $\\emberglove = 2^{\\ivoryspoon}$ for $\\marblerug > 1$. It\nsuffices to show that for every $\\marblerug$, $\\canyonreed \\equiv \\walnutquill \\equiv \\cdots\n\\pmod{\\marblerug}$ for some $\\silktrail < \\marblerug$. We do this by induction on $\\marblerug$, with $\\marblerug = 2$\nbeing obvious.\n\nWrite $\\marblerug = 2^{dapplegrain} \\, \\lilacshard$, where $\\lilacshard$ is odd. It suffices to show that $\\canyonreed\n\\equiv \\cdots$ modulo $2^{dapplegrain}$ and modulo $\\lilacshard$, for some $\\silktrail < \\marblerug$. For the\nformer, we only need $\\ivoryspoon \\geq dapplegrain$, but clearly\n$\\ivoryspoon \\geq \\marblerug$ by induction on $\\marblerug$. For the latter, note that\n$\\canyonreed \\equiv \\walnutquill \\equiv \\cdots\n\\pmod{\\lilacshard}$ as long as $x_{\\silktrail-1} \\equiv \\canyonreed \\equiv \\cdots \\pmod{\\vortexlumen(\\lilacshard)}$,\nwhere $\\vortexlumen(\\marblerug)$ is the Euler totient function. By hypothesis, this\noccurs for some $\\silktrail < \\vortexlumen(\\lilacshard) + 1 \\leq \\marblerug$. (Thanks to Anoop Kulkarni\nfor catching a lethal typo in an earlier version.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "infinitecount",
+        "m": "unbounded",
+        "x_1": "lastvalue",
+        "x_n": "firstvalue",
+        "x_n-1": "secondvalue",
+        "x_m": "constantval",
+        "x_m+1": "previousval",
+        "a": "boundless",
+        "b": "evenfactor",
+        "\\\\phi": "nonunitcnt"
+      },
+      "question": "Prove that for $infinitecount\\geq 2$,\\n\\[\\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$infinitecount$ terms}} \\equiv\\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$infinitecount-1$ terms}} \\quad \\pmod{infinitecount}.\\n\\]",
+      "solution": "Define the sequence $lastvalue = 2$, $firstvalue = 2^{secondvalue}$ for $infinitecount > 1$. It\\nsuffices to show that for every $infinitecount$, $constantval \\equiv previousval \\equiv \\cdots\\n\\pmod{infinitecount}$ for some $unbounded < infinitecount$. We do this by induction on $infinitecount$, with $infinitecount=2$\\nbeing obvious.\\n\\nWrite $infinitecount = 2^{boundless} evenfactor$, where $evenfactor$ is odd. It suffices to show that $constantval\\n\\equiv \\cdots$ modulo $2^{boundless}$ and modulo $evenfactor$, for some $unbounded < infinitecount$. For the\\nformer, we only need $secondvalue \\geq boundless$, but clearly\\n$secondvalue \\geq infinitecount$ by induction on $infinitecount$. For the latter, note that\\n$constantval \\equiv previousval \\equiv \\cdots\\n\\pmod{evenfactor}$ as long as $x_{m-1} \\equiv constantval \\equiv \\cdots \\pmod{nonunitcnt(evenfactor)}$,\\nwhere $nonunitcnt(infinitecount)$ is the Euler totient function. By hypothesis, this\\noccurs for some $unbounded < nonunitcnt(evenfactor) + 1 \\leq infinitecount$. (Thanks to Anoop Kulkarni\\nfor catching a lethal typo in an earlier version.)"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "plxqudws",
+        "m": "hjryeabt",
+        "x_1": "fzvscmop",
+        "x_n": "djqowkzm",
+        "x_n-1": "rqsydvha",
+        "x_m": "klgtevbn",
+        "x_m+1": "wchmiosl",
+        "a": "uskezapq",
+        "b": "yvtrldse",
+        "\\phi": "\\qkemsnad"
+      },
+      "question": "Prove that for $plxqudws\\geq 2$,\n\\[\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$plxqudws$ terms}} \\equiv\n\\overbrace{2^{2^{\\cdots^{2}}}}^{\\mbox{$plxqudws-1$ terms}} \\quad \\pmod{plxqudws}.\n\\]",
+      "solution": "Define the sequence $fzvscmop = 2$, $djqowkzm = 2^{rqsydvha}$ for $plxqudws > 1$. It\nsuffices to show that for every $plxqudws$, $klgtevbn \\equiv wchmiosl \\equiv \\cdots\n\\pmod{plxqudws}$ for some $hjryeabt < plxqudws$. We do this by induction on $plxqudws$, with $plxqudws=2$\nbeing obvious.\n\nWrite $plxqudws = 2^{uskezapq} yvtrldse$, where $yvtrldse$ is odd. It suffices to show that $klgtevbn\n\\equiv \\cdots$ modulo $2^{uskezapq}$ and modulo $yvtrldse$, for some $hjryeabt < plxqudws$. For the\nformer, we only need $rqsydvha \\geq uskezapq$, but clearly\n$rqsydvha \\geq plxqudws$ by induction on $plxqudws$. For the latter, note that\n$klgtevbn \\equiv wchmiosl \\equiv \\cdots\n\\pmod{yvtrldse}$ as long as $x_{m-1} \\equiv klgtevbn \\equiv \\cdots \\pmod{\\qkemsnad(yvtrldse)}$,\nwhere $\\qkemsnad(plxqudws)$ is the Euler totient function. By hypothesis, this\noccurs for some $hjryeabt < \\qkemsnad(yvtrldse) + 1 \\leq plxqudws$. (Thanks to Anoop Kulkarni\nfor catching a lethal typo in an earlier version.)"
+    },
+    "kernel_variant": {
+      "question": "For $n\\ge 2$ let the sequence $(E_k)_{k\\ge 1}$ be defined by\n\\[\nE_1=2,\\qquad  E_{k+1}=2^{E_k}\\;(k\\ge 1),\n\\]\nso that $E_k$ is a power-tower of $k$ twos.  Prove that for every integer $n\\ge 2$\n\\[\nE_{2n}\\equiv E_{n}\\pmod{n}.\n\\]",
+      "solution": "We prove the statement by treating the highest power of two dividing $n$ and the odd part of $n$ separately.\n\n1.  Preparations and notation.\n   Write\n   \\[\n   n=2^{\\rho}\\,\\beta ,\\qquad \\rho\\ge 0,\\;\\beta\\text{ odd}.\n   \\]\n   As usual, $\\varphi$ denotes Euler's totient function.  Our aim is to show\n   \\[\n   E_{2n}\\equiv E_{n}\\pmod{2^{\\rho}}\\quad\\text{and}\\quad\n   E_{2n}\\equiv E_{n}\\pmod{\\beta},\n   \\]\n   because the two moduli are coprime and the desired congruence then follows from the Chinese Remainder Theorem.\n\n2.  The power-of-two part.\n   The tower $E_{k+1}=2^{E_k}$ grows monotonically, so $E_{n-1}\\ge n-1\\ge \\rho$.  Hence $E_n=2^{E_{n-1}}$ is divisible by $2^{\\rho}$, and the same is true for every later term $E_{k}$ ($k\\ge n$).  Consequently\n   \\[\n   E_{2n}\\equiv E_n\\equiv 0\\pmod{2^{\\rho}}.\n   \\]\n\n3.  The odd part - inductive set-up.\n   We prove the following stronger statement by induction on $t\\;(t\\ge 2)$:\n\n   (\\*)  For every modulus $t$ there exists an index $m_t<t$ such that\n   \\[\n   E_{m_t}\\equiv E_{m_t+1}\\equiv E_{m_t+2}\\equiv\\dotsm\\pmod{t}.\n   \\]\n   The desired congruence with modulus $n$ will then be an immediate consequence, because $m_n<n\\le 2n$ implies $E_n\\equiv E_{2n}\\,(\\mathrm{mod}\\,n)$.\n\n   Base case $t=2$.  Since $E_1=2\\equiv 0\\,(\\mathrm{mod}\\,2)$, every subsequent $E_k$ is also $0$ modulo $2$, so (\\*) holds with $m_2=1$.\n\n   Induction step.  Assume (\\*) is true for every positive integer smaller than some fixed $t\\;(t\\ge 3)$, and write $t=2^{\\rho}\\beta$ as above.  We construct an $m_t$ that works simultaneously modulo $2^{\\rho}$ and modulo $\\beta$.\n\n   *  Modulo $2^{\\rho}$.  As in Section 2, $E_{k}\\equiv 0\\,(\\mathrm{mod}\\,2^{\\rho})$ for every $k\\ge n-1\\;(\\ge\\rho)$, so the sequence is constant from index $n-1$ on with respect to this modulus.\n\n   *  Modulo $\\beta$.  Because $\\beta$ is odd, $2$ is coprime to $\\beta$, and $\\varphi(\\beta)<\\beta<t$.  By the induction hypothesis applied to the smaller modulus $\\varphi(\\beta)$ there exists an index $m_0<\\varphi(\\beta)$ such that\n   \\[\n   E_{m_0}\\equiv E_{m_0+1}\\equiv E_{m_0+2}\\equiv\\dotsm\\pmod{\\varphi(\\beta)}.\n   \\]\n   Put $m:=m_0+1$; then $m\\le\\varphi(\\beta)<\\beta\\le t$.  In particular\n   \\[\n   E_{m-1}\\equiv E_m\\pmod{\\varphi(\\beta)}. \\tag{1}\n   \\]\n\n   3a.  A fixed-point lemma.\n   We need to know that equality mod $\\varphi(\\beta)$ between a number $r$ and $2^{r}$ forces $2^{r}$ to be a fixed point of the map $x\\mapsto 2^{x}\\,(\\mathrm{mod}\\,\\beta)$.  More precisely:\n\n   Lemma.  If $r\\equiv 2^{r}\\,(\\mathrm{mod}\\,\\varphi(\\beta))$, then\n   \\[\n   2^{2^{r}}\\equiv 2^{r}\\pmod{\\beta}.\n   \\]\n   Proof of the Lemma.  Write $2^{r}=r+k\\varphi(\\beta)$ with some integer $k$.  Using Euler's theorem $2^{\\varphi(\\beta)}\\equiv 1 \\,(\\mathrm{mod}\\,\\beta)$ we obtain\n   \\[\n   2^{2^{r}}\\;=\\;2^{r+k\\varphi(\\beta)}\\;=\\;2^{r}\\,\\bigl(2^{\\varphi(\\beta)}\\bigr)^{k}\\;\\equiv\\;2^{r}\\cdot 1^{k}\\;=\\;2^{r}\\pmod{\\beta},\n   \\]\n   which proves the claim. \\hfill$\\square$\n\n   3b.  Stabilisation modulo $\\beta$.  Take $r:=E_{m-1}$.  By (1) the hypothesis of the lemma is satisfied, whence\n   \\[\n   E_{m+1}=2^{E_{m}}=2^{2^{r}}\\equiv 2^{r}=E_{m}\\pmod{\\beta}.\n   \\]\n   Thus $E_m\\equiv E_{m+1}\\,(\\mathrm{mod}\\,\\beta)$.  Applying the lemma repeatedly now shows that\n   \\[\n   E_{m+k+1}=2^{E_{m+k}}\\equiv E_{m+k}\\pmod{\\beta}\\quad(k\\ge 0),\n   \\]\n   so the whole tail $E_m,E_{m+1},E_{m+2},\\dotsc$ is constant modulo $\\beta$.\n\n   3c.  Choosing a common index.  We already know that the sequence is constant modulo $2^{\\rho}$ from index $t-1$ on and constant modulo $\\beta$ from index $m$ on, where $m<\\beta\\le t$.  Therefore the two congruences hold simultaneously from index $m_t:=\\max\\{m,\\,t-1\\}<t$.  This completes the induction step and proves statement (\\*).\n\n4.  Completion of the original problem.\n   Apply (\\*) with $t=n$: there exists $m_n<n\\le 2n$ for which $E_k\\equiv E_{m_n}$ \\,(mod $n$) for every $k\\ge m_n$.  Since both $n$ and $2n$ are $\\ge m_n$, we obtain the required relation\n   \\[\n   E_{2n}\\equiv E_{n}\\pmod{n}. \\qedhere\n   \\]",
+      "_meta": {
+        "core_steps": [
+          "Define the power-tower sequence x₁ = 2,  x_k = 2^{x_{k-1}}.",
+          "Show that the sequence becomes constant mod n within the first n terms (induction on n).",
+          "Write n = 2^{a}·b with b odd and treat the two moduli independently (CRT idea).",
+          "For the 2^{a} part: once an exponent ≥ a appears (which happens because x_{n-1} ≥ n), all later x_k are 0 mod 2^{a}.",
+          "For the odd part b: apply Euler’s theorem—stability mod φ(b) forces stability mod b, giving an index m ≤ φ(b)+1 < n."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Exact numerical bound used to pin down the stabilizing index; any inequality that still enforces the index to be < n suffices.",
+            "original": "m < φ(b) + 1 ≤ n"
+          },
+          "slot2": {
+            "description": "The notation of the factorization n = 2^{a}·b (letters a, b, their order, or use of another symbol set).",
+            "original": "n = 2^a b with b odd"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

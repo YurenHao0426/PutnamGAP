@@ -1,0 +1,157 @@
+{
+  "index": "1982-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-6\nLet \\( \\sigma \\) be a bijection of the positive integers, that is, a one-to-one function from ( \\( 1,2,3, \\ldots \\) ) onto itself. Let \\( x_{1}, x_{2}, x_{3}, \\ldots \\) be a sequence of real numbers with the following three properties:\n(i) \\( \\left|x_{n}\\right| \\) is a strictly decreasing function of \\( n \\);\n(ii) \\( |\\sigma(n)-n| \\cdot\\left|x_{n}\\right| \\rightarrow 0 \\) as \\( n \\rightarrow \\infty \\);\n(iii) \\( \\lim _{n \\rightarrow \\infty} \\sum_{k=1}^{n} x_{k}=1 \\).\n\nProve or disprove that these conditions imply that\n\\[\n\\lim _{n \\rightarrow \\infty} \\sum_{k=1}^{n} x_{\\theta(k)}=1\n\\]",
+  "solution": "A-6.\nWe disprove the assertion. Let \\( y_{n}=1 /(n+1) \\ln (n+1) \\). Then \\( \\sum_{n=1}^{\\infty}(-1)^{n+1} y_{n} \\) converges to some \\( g>0 \\) since \\( y_{n} \\rightarrow 0 \\) as \\( n \\rightarrow \\infty \\) and \\( y_{1}>y_{2}>\\cdots \\). Let \\( x_{n}=(-1)^{n+1} y_{n} / g \\). Then conditions (i) and (iii) are satisfied. Let \\( a_{0}, a_{1}, \\ldots \\) be positive integers to be made more definite later. Let \\( b_{0}=0 \\) and \\( b_{t+1}=b_{i}+4 a_{i} \\) for \\( i=0,1, \\ldots \\). The bijection \\( \\sigma \\) is defined as follows:\n\\[\n\\begin{array}{l}\n\\sigma(n)=2 n-1-b_{i} \\text { for } b_{i}<n \\leqslant b_{i}+2 a_{i} \\\\\n\\sigma(n)=2 n-b_{i+1} \\text { for } b_{i}+2 a_{i}<n \\leqslant b_{i+1}\n\\end{array}\n\\]\n\nThen \\( 0<\\sigma(n)<2 n \\) and hence \\( |\\sigma(n)-n|<n \\). Thus\n\\[\n|\\sigma(n)-n| \\cdot\\left|x_{n}\\right|<\\frac{n}{g(n+1) \\ln (n+1)}\n\\]\nwhich implies condition (ii). Let \\( C(n)=\\sum_{i=1}^{n} x_{i} \\) and \\( D(n)=\\sum_{l=1}^{n} x_{\\sigma(i)} \\). Then\n\\[\nD\\left(b_{1}+2 a_{i}\\right)-C\\left(b_{1}+2 a_{i}\\right)=\\frac{1}{g} \\sum_{j=1}^{a_{1}} y_{b_{1}+2 j}+\\frac{1}{g} \\sum_{k=1}^{a_{1}} y_{b_{1}+2 a_{i}+2 k-1}\n\\]\n\nSince \\( y_{2}+y_{4}+y_{6}+\\cdots \\) diverges to \\( +\\infty \\) by the integral test, the \\( a_{1} \\) can be chosen large enough so that the first sum in (A) exceeds 1 for each \\( i \\). Then \\( D(n)>1+C(n) \\) for an unbounded sequence of \\( n \\) 's. Hence \\( D(n) \\) and \\( C(n) \\) cannot converge to the same limit.",
+  "vars": [
+    "x_n",
+    "y_n",
+    "n",
+    "k",
+    "i",
+    "t",
+    "l",
+    "C",
+    "D",
+    "\\\\sigma",
+    "\\\\theta"
+  ],
+  "params": [
+    "a_0",
+    "a_1",
+    "a_i",
+    "b_0",
+    "b_i",
+    "b_t+1",
+    "g"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_n": "seqxval",
+        "y_n": "seqyval",
+        "n": "indexn",
+        "k": "indexk",
+        "i": "indexi",
+        "t": "indext",
+        "l": "indexl",
+        "C": "partialc",
+        "D": "partiald",
+        "\\\\sigma": "permutfn",
+        "\\\\theta": "thetafn",
+        "a_0": "paramazero",
+        "a_1": "paramaone",
+        "a_i": "paramai",
+        "b_0": "parambzero",
+        "b_i": "parambi",
+        "b_t+1": "parambtplusone",
+        "g": "constgval"
+      },
+      "question": "Problem A-6\nLet \\( permutfn \\) be a bijection of the positive integers, that is, a one-to-one function from ( \\( 1,2,3, \\ldots \\) ) onto itself. Let \\( seqxval_{1}, seqxval_{2}, seqxval_{3}, \\ldots \\) be a sequence of real numbers with the following three properties:\n(i) \\( \\left|seqxval_{indexn}\\right| \\) is a strictly decreasing function of \\( indexn \\);\n(ii) \\( |permutfn(indexn)-indexn| \\cdot\\left|seqxval_{indexn}\\right| \\rightarrow 0 \\) as \\( indexn \\rightarrow \\infty \\);\n(iii) \\( \\lim _{indexn \\rightarrow \\infty} \\sum_{indexk=1}^{indexn} seqxval_{indexk}=1 \\).\n\nProve or disprove that these conditions imply that\n\\[\n\\lim _{indexn \\rightarrow \\infty} \\sum_{indexk=1}^{indexn} seqxval_{thetafn(indexk)}=1\n\\]",
+      "solution": "A-6.\nWe disprove the assertion. Let \\( seqyval_{indexn}=1 /\\bigl((indexn+1) \\ln (indexn+1)\\bigr) \\). Then \\( \\sum_{indexn=1}^{\\infty}(-1)^{indexn+1} seqyval_{indexn} \\) converges to some \\( constgval>0 \\) since \\( seqyval_{indexn} \\rightarrow 0 \\) as \\( indexn \\rightarrow \\infty \\) and \\( seqyval_{1}>seqyval_{2}>\\cdots \\). Let \\( seqxval_{indexn}=(-1)^{indexn+1} seqyval_{indexn} / constgval \\). Then conditions (i) and (iii) are satisfied. Let \\( paramazero, paramaone, \\ldots \\) be positive integers to be made more definite later. Let \\( parambzero=0 \\) and \\( parambtplusone=parambi+4\\,paramai \\) for \\( indexi=0,1, \\ldots \\). The bijection \\( permutfn \\) is defined as follows:\n\\[\n\\begin{array}{l}\npermutfn(indexn)=2\\,indexn-1-parambi \\text { for } parambi<indexn \\leqslant parambi+2\\,paramai \\\\\npermutfn(indexn)=2\\,indexn-b_{indexi+1} \\text { for } parambi+2\\,paramai<indexn \\leqslant b_{indexi+1}\n\\end{array}\n\\]\n\nThen \\( 0<permutfn(indexn)<2\\,indexn \\) and hence \\( |permutfn(indexn)-indexn|<indexn \\). Thus\n\\[\n|permutfn(indexn)-indexn| \\cdot \\left|seqxval_{indexn}\\right|<\\frac{indexn}{constgval\\,(indexn+1) \\ln (indexn+1)}\n\\]\nwhich implies condition (ii). Let \\( partialc(indexn)=\\sum_{indexi=1}^{indexn} seqxval_{indexi} \\) and \\( partiald(indexn)=\\sum_{indexl=1}^{indexn} seqxval_{permutfn(indexi)} \\). Then\n\\[\npartiald\\left(b_{1}+2\\,paramai\\right)-partialc\\left(b_{1}+2\\,paramai\\right)=\\frac{1}{constgval} \\sum_{j=1}^{paramaone} seqyval_{b_{1}+2 j}+\\frac{1}{constgval} \\sum_{indexk=1}^{paramaone} seqyval_{b_{1}+2\\,paramai+2\\,indexk-1}\n\\]\n\nSince \\( seqyval_{2}+seqyval_{4}+seqyval_{6}+\\cdots \\) diverges to \\( +\\infty \\) by the integral test, the \\( paramaone \\) can be chosen large enough so that the first sum in (A) exceeds 1 for each \\( indexi \\). Then \\( partiald(indexn)>1+partialc(indexn) \\) for an unbounded sequence of \\( indexn \\)'s. Hence \\( partiald(indexn) \\) and \\( partialc(indexn) \\) cannot converge to the same limit."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_n": "orchardia",
+        "y_n": "lanternfy",
+        "n": "pebblenum",
+        "k": "quartzkey",
+        "i": "emberite",
+        "t": "cobaltusk",
+        "l": "fireneedle",
+        "C": "midnight",
+        "D": "sunshadow",
+        "\\\\sigma": "driftwood",
+        "\\\\theta": "hemlocker",
+        "a_0": "marblezero",
+        "a_1": "marblesolo",
+        "a_i": "marbleember",
+        "b_0": "cobblezero",
+        "b_i": "cobbleember",
+        "b_t+1": "cobbleplus",
+        "g": "glacierio"
+      },
+      "question": "Problem A-6\nLet \\( driftwood \\) be a bijection of the positive integers, that is, a one-to-one function from ( \\( 1,2,3, \\ldots \\) ) onto itself. Let \\( orchardia_{1}, orchardia_{2}, orchardia_{3}, \\ldots \\) be a sequence of real numbers with the following three properties:\n(i) \\( \\left|orchardia_{pebblenum}\\right| \\) is a strictly decreasing function of \\( pebblenum \\);\n(ii) \\( |driftwood(pebblenum)-pebblenum| \\cdot\\left|orchardia_{pebblenum}\\right| \\rightarrow 0 \\) as \\( pebblenum \\rightarrow \\infty \\);\n(iii) \\( \\lim _{pebblenum \\rightarrow \\infty} \\sum_{quartzkey=1}^{pebblenum} orchardia_{quartzkey}=1 \\).\n\nProve or disprove that these conditions imply that\n\\[\n\\lim _{pebblenum \\rightarrow \\infty} \\sum_{quartzkey=1}^{pebblenum} orchardia_{hemlocker(quartzkey)}=1\n\\]",
+      "solution": "A-6.\nWe disprove the assertion. Let \\( lanternfy_{pebblenum}=1 /(pebblenum+1) \\ln (pebblenum+1) \\). Then \\( \\sum_{pebblenum=1}^{\\infty}(-1)^{pebblenum+1} lanternfy_{pebblenum} \\) converges to some \\( glacierio>0 \\) since \\( lanternfy_{pebblenum} \\rightarrow 0 \\) as \\( pebblenum \\rightarrow \\infty \\) and \\( lanternfy_{1}>lanternfy_{2}>\\cdots \\). Let \\( orchardia_{pebblenum}=(-1)^{pebblenum+1} lanternfy_{pebblenum} / glacierio \\). Then conditions (i) and (iii) are satisfied. Let \\( marblezero, marblesolo, \\ldots \\) be positive integers to be made more definite later. Let \\( cobblezero=0 \\) and \\( cobbleplus=cobbleember+4\\, marbleember \\) for \\( emberite=0,1, \\ldots \\). The bijection \\( driftwood \\) is defined as follows:\n\\[\n\\begin{array}{l}\ndriftwood(pebblenum)=2\\,pebblenum-1-cobbleember \\text { for } cobbleember<pebblenum \\leqslant cobbleember+2\\, marbleember \\\\\ndriftwood(pebblenum)=2\\,pebblenum-b_{emberite+1} \\text { for } cobbleember+2\\, marbleember<pebblenum \\leqslant b_{emberite+1}\n\\end{array}\n\\]\n\nThen \\( 0<driftwood(pebblenum)<2\\,pebblenum \\) and hence \\( |driftwood(pebblenum)-pebblenum|<pebblenum \\). Thus\n\\[\n|driftwood(pebblenum)-pebblenum| \\cdot\\left|orchardia_{pebblenum}\\right|<\\frac{pebblenum}{glacierio(pebblenum+1) \\ln (pebblenum+1)}\n\\]\nwhich implies condition (ii). Let \\( midnight(pebblenum)=\\sum_{emberite=1}^{pebblenum} orchardia_{emberite} \\) and \\( sunshadow(pebblenum)=\\sum_{fireneedle=1}^{pebblenum} orchardia_{driftwood(emberite)} \\). Then\n\\[\nsunshadow\\left(b_{1}+2\\, marbleember\\right)-midnight\\left(b_{1}+2\\, marbleember\\right)=\\frac{1}{glacierio} \\sum_{j=1}^{marblesolo} lanternfy_{b_{1}+2 j}+\\frac{1}{glacierio} \\sum_{quartzkey=1}^{marblesolo} lanternfy_{b_{1}+2\\, marbleember+2\\, quartzkey-1}\n\\]\n\nSince \\( lanternfy_{2}+lanternfy_{4}+lanternfy_{6}+\\cdots \\) diverges to \\( +\\infty \\) by the integral test, the \\( marblesolo \\) can be chosen large enough so that the first sum in (A) exceeds 1 for each \\( emberite \\). Then \\( sunshadow(pebblenum)>1+midnight(pebblenum) \\) for an unbounded sequence of \\( pebblenum \\)'s. Hence \\( sunshadow(pebblenum) \\) and \\( midnight(pebblenum) \\) cannot converge to the same limit."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_n": "dullconstant",
+        "y_n": "fixedelement",
+        "n": "continuum",
+        "k": "wholepart",
+        "i": "aggregate",
+        "t": "duration",
+        "l": "altitude",
+        "C": "differing",
+        "D": "uniformity",
+        "\\sigma": "constancy",
+        "\\theta": "vagueness",
+        "a_0": "emptystart",
+        "a_1": "vacantone",
+        "a_i": "vacantelem",
+        "b_0": "fullzero",
+        "b_i": "fullelem",
+        "b_t+1": "fullnext",
+        "g": "emptiness"
+      },
+      "question": "Problem A-6\nLet \\( constancy \\) be a bijection of the positive integers, that is, a one-to-one function from ( \\( 1,2,3, \\ldots \\) ) onto itself. Let \\( x_{1}, x_{2}, x_{3}, \\ldots \\) be a sequence of real numbers with the following three properties:\n(i) \\( \\left|dullconstant\\right| \\) is a strictly decreasing function of \\( continuum \\);\n(ii) \\( |constancy(continuum)-continuum| \\cdot\\left|dullconstant\\right| \\rightarrow 0 \\) as \\( continuum \\rightarrow \\infty \\);\n(iii) \\( \\lim _{continuum \\rightarrow \\infty} \\sum_{wholepart=1}^{continuum} x_{wholepart}=1 \\).\n\nProve or disprove that these conditions imply that\n\\[\n\\lim _{continuum \\rightarrow \\infty} \\sum_{wholepart=1}^{continuum} x_{vagueness(wholepart)}=1\n\\]",
+      "solution": "A-6.\nWe disprove the assertion. Let \\( fixedelement=1 /(continuum+1) \\ln (continuum+1) \\). Then \\( \\sum_{continuum=1}^{\\infty}(-1)^{continuum+1} fixedelement \\) converges to some \\( emptiness>0 \\) since \\( fixedelement \\rightarrow 0 \\) as \\( continuum \\rightarrow \\infty \\) and \\( y_{1}>y_{2}>\\cdots \\). Let \\( dullconstant=(-1)^{continuum+1} fixedelement / emptiness \\). Then conditions (i) and (iii) are satisfied. Let \\( emptystart, vacantone, \\ldots \\) be positive integers to be made more definite later. Let \\( fullzero=0 \\) and \\( fullnext=fullelem+4 vacantelem \\) for \\( aggregate=0,1, \\ldots \\). The bijection \\( constancy \\) is defined as follows:\n\\[\n\\begin{array}{l}\nconstancy(continuum)=2 continuum-1-fullelem \\text { for } fullelem<continuum \\leqslant fullelem+2 vacantelem \\\\\nconstancy(continuum)=2 continuum-b_{aggregate+1} \\text { for } fullelem+2 vacantelem<continuum \\leqslant b_{aggregate+1}\n\\end{array}\n\\]\n\nThen \\( 0<constancy(continuum)<2 continuum \\) and hence \\( |constancy(continuum)-continuum|<continuum \\). Thus\n\\[\n|constancy(continuum)-continuum| \\cdot\\left|dullconstant\\right|<\\frac{continuum}{emptiness(continuum+1) \\ln (continuum+1)}\n\\]\nwhich implies condition (ii). Let \\( differing(continuum)=\\sum_{aggregate=1}^{continuum} x_{aggregate} \\) and \\( uniformity(continuum)=\\sum_{altitude=1}^{continuum} x_{constancy(aggregate)} \\). Then\n\\[\nuniformity\\left(b_{1}+2 vacantelem\\right)-differing\\left(b_{1}+2 vacantelem\\right)=\\frac{1}{emptiness} \\sum_{j=1}^{vacantone} y_{b_{1}+2 j}+\\frac{1}{emptiness} \\sum_{wholepart=1}^{vacantone} y_{b_{1}+2 vacantelem+2 wholepart-1}\n\\]\n\nSince \\( y_{2}+y_{4}+y_{6}+\\cdots \\) diverges to \\( +\\infty \\) by the integral test, the \\( vacantone \\) can be chosen large enough so that the first sum in (A) exceeds 1 for each \\( aggregate \\). Then \\( uniformity(continuum)>1+differing(continuum) \\) for an unbounded sequence of \\( continuum \\)'s. Hence \\( uniformity(continuum) \\) and \\( differing(continuum) \\) cannot converge to the same limit."
+    },
+    "garbled_string": {
+      "map": {
+        "x_n": "qzxwvtnp",
+        "y_n": "hjgrksla",
+        "n": "pfldaqiw",
+        "k": "trbvesmu",
+        "i": "wjlxhzgn",
+        "t": "zkcroyvm",
+        "l": "xbvyfnda",
+        "C": "mzoejykl",
+        "D": "shfcgrpo",
+        "\\sigma": "oupkyqrs",
+        "\\theta": "bafrmgch",
+        "a_0": "jkduhser",
+        "a_1": "gtypznql",
+        "a_i": "navorxke",
+        "b_0": "yapfukdm",
+        "b_i": "rlvcwjqo",
+        "b_t+1": "tqgmsovh",
+        "g": "esmcxkri"
+      },
+      "question": "Problem A-6\nLet \\( oupkyqrs \\) be a bijection of the positive integers, that is, a one-to-one function from ( \\( 1,2,3, \\ldots \\) ) onto itself. Let \\( x_{1}, x_{2}, x_{3}, \\ldots \\) be a sequence of real numbers with the following three properties:\n(i) \\( \\left|qzxwvtnp\\right| \\) is a strictly decreasing function of \\( pfldaqiw \\);\n(ii) \\( |oupkyqrs(pfldaqiw)-pfldaqiw| \\cdot\\left|qzxwvtnp\\right| \\rightarrow 0 \\) as \\( pfldaqiw \\rightarrow \\infty \\);\n(iii) \\( \\lim _{pfldaqiw \\rightarrow \\infty} \\sum_{trbvesmu=1}^{pfldaqiw} x_{trbvesmu}=1 \\).\n\nProve or disprove that these conditions imply that\n\\[\n\\lim _{pfldaqiw \\rightarrow \\infty} \\sum_{trbvesmu=1}^{pfldaqiw} x_{bafrmgch(trbvesmu)}=1\n\\]\n",
+      "solution": "A-6.\nWe disprove the assertion. Let \\( hjgrksla=1 /(pfldaqiw+1) \\ln (pfldaqiw+1) \\). Then \\( \\sum_{pfldaqiw=1}^{\\infty}(-1)^{pfldaqiw+1} hjgrksla \\) converges to some \\( esmcxkri>0 \\) since \\( hjgrksla \\rightarrow 0 \\) as \\( pfldaqiw \\rightarrow \\infty \\) and \\( y_{1}>y_{2}>\\cdots \\). Let \\( qzxwvtnp=(-1)^{pfldaqiw+1} hjgrksla / esmcxkri \\). Then conditions (i) and (iii) are satisfied. Let \\( jkduhser, gtypznql, \\ldots \\) be positive integers to be made more definite later. Let \\( yapfukdm=0 \\) and \\( tqgmsovh=rlvcwjqo+4 navorxke \\) for \\( wjlxhzgn=0,1, \\ldots \\). The bijection \\( oupkyqrs \\) is defined as follows:\n\\[\n\\begin{array}{l}\noupkyqrs(pfldaqiw)=2 pfldaqiw-1-rlvcwjqo \\text { for } rlvcwjqo<pfldaqiw \\leqslant rlvcwjqo+2 navorxke \\\\\noupkyqrs(pfldaqiw)=2 pfldaqiw-b_{wjlxhzgn+1} \\text { for } rlvcwjqo+2 navorxke<pfldaqiw \\leqslant b_{wjlxhzgn+1}\n\\end{array}\n\\]\n\nThen \\( 0<oupkyqrs(pfldaqiw)<2 pfldaqiw \\) and hence \\( |oupkyqrs(pfldaqiw)-pfldaqiw|<pfldaqiw \\). Thus\n\\[\n|oupkyqrs(pfldaqiw)-pfldaqiw| \\cdot\\left|qzxwvtnp\\right|<\\frac{pfldaqiw}{esmcxkri(pfldaqiw+1) \\ln (pfldaqiw+1)}\n\\]\nwhich implies condition (ii). Let \\( mzoejykl(pfldaqiw)=\\sum_{wjlxhzgn=1}^{pfldaqiw} x_{wjlxhzgn} \\) and \\( shfcgrpo(pfldaqiw)=\\sum_{xbvyfnda=1}^{pfldaqiw} x_{oupkyqrs(wjlxhzgn)} \\). Then\n\\[\nshfcgrpo\\left(b_{1}+2 navorxke\\right)-mzoejykl\\left(b_{1}+2 navorxke\\right)=\\frac{1}{esmcxkri} \\sum_{j=1}^{gtypznql} y_{b_{1}+2 j}+\\frac{1}{esmcxkri} \\sum_{trbvesmu=1}^{gtypznql} y_{b_{1}+2 navorxke+2 trbvesmu-1}\n\\]\n\nSince \\( y_{2}+y_{4}+y_{6}+\\cdots \\) diverges to \\( +\\infty \\) by the integral test, the \\( gtypznql \\) can be chosen large enough so that the first sum in (A) exceeds 1 for each \\( wjlxhzgn \\). Then \\( shfcgrpo(pfldaqiw)>1+mzoejykl(pfldaqiw) \\) for an unbounded sequence of \\( pfldaqiw \\)'s. Hence \\( shfcgrpo(pfldaqiw) \\) and \\( mzoejykl(pfldaqiw) \\) cannot converge to the same limit.\n"
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\sigma\\colon\\Bbb N\\to\\Bbb N\\) be a bijection.  Suppose that a real sequence \\((x_n)_{n\\ge 1}\\) satisfies\n(i) \\( |x_{n+1}|<|x_n| \\) for every \\(n\\),\n(ii) \\( \\bigl(|\\sigma(n)-n|\\bigr)^{1/2}\\,|x_n|\\longrightarrow 0 \\) as \\( n\\to\\infty\\),\n(iii) \\(\\displaystyle \\lim_{n\\to\\infty}\\sum_{k=1}^{n}x_k=1.\\)\nDoes it necessarily follow that\n\\[\\lim_{n\\to\\infty}\\sum_{k=1}^{n}x_{\\sigma(k)}=1\\ ?\\]\nProve your answer.",
+      "solution": "We shall exhibit a bijection \\sigma  and a real sequence x_n satisfying (i),(ii),(iii) but for which \\sum _{k=1}^n x_{\\sigma (k)} does not tend to 1.  The construction follows the official A-6 counterexample.\n\n1.  Define\n   y_n = 1\\bigl/\\bigl((n+1)\\sqrt{\\ln(n+1)}\\bigr),  n\\ge1.\nSince y_n>0, y_n\\to 0, and y_1>y_2>\\cdots , the alternating series \\sum _{n=1}^\\infty  (-1)^{n+1}y_n converges by the Leibniz test.  On the other hand, by the integral test\n   \\sum _{j=1}^\\infty  y_{2j} = \\sum _{j=1}^\\infty  \\frac1{(2j+1)\\sqrt{\\ln(2j+1)}} = \\infty .\nCall the limit of the alternating series g>0, and set\n   x_n = \\frac{(-1)^{n+1}y_n}{g}.\nThen |x_n|=y_n/g strictly decreases to 0, and\n   \\sum _{k=1}^n x_k \\to  1\nas n\\to \\infty .  Thus (i) and (iii) hold.\n\n2.  Choose any strictly increasing integers a_0<a_1<a_2<\\cdots , and put b_0=0,  b_{t+1}=b_t+4a_t.  We define \\sigma  on the t-th block {b_t+1,\\ldots ,b_t+4a_t} by\n  *  for b_t<n\\leq b_t+2a_t,   \\sigma (n)=2n-1-b_t,\n  *  for b_t+2a_t<n\\leq b_t+4a_t,   \\sigma (n)=2n-(b_t+4a_t).\nOne easily checks that this gives a permutation of \\mathbb{N}, and that the image of the t-th block is again {b_t+1,\\ldots ,b_t+4a_t}.\n\n3.  Verification of (ii):  Since 0<\\sigma (n)<2n one has |\\sigma (n)-n|<n, so\n   (|\\sigma (n)-n|)^{1/2}|x_n| \\leq  \\sqrt{n}\\cdot y_n/g = \\frac{\\sqrt{n}}{g\\,(n+1)\\sqrt{\\ln(n+1)}}\nwhich tends to 0.  Hence (ii) holds.\n\n4.  Finally set\n   C(n)=\\sum _{k=1}^n x_k,   D(n)=\\sum _{k=1}^n x_{\\sigma (k)}.\nFix t and let N=b_t+2a_t (the midpoint of the t-th block).  One checks by listing which x_k get moved forward or backward that\n\n  D(N)-C(N)\n  = \\frac1g \\Bigl( \\sum _{j=1}^{a_t}y_{b_t+2j}  \n                  +\\sum _{j=1}^{a_t}y_{b_t+2a_t+2j-1}\\Bigr).\n\nBecause \\sum _{j=1}^\\infty  y_{b_t+2j}=\\infty , we may choose a_t so large that\n   \\sum _{j=1}^{a_t}y_{b_t+2j} > 2.\nThen D(N)-C(N)>2/g, so for those N we have D(N)>C(N)+2/g.  But C(N)\\to 1, so the values D(N) cannot approach 1.  Hence \\sum _{k=1}^n x_{\\sigma (k)} does not converge to 1.\n\nThis completes the counterexample, showing that (i)-(iii) need not force \\sum _{k=1}^n x_{\\sigma (k)}\\to 1.",
+      "_meta": {
+        "core_steps": [
+          "Pick a conditionally convergent alternating series whose positive (or negative) subseries diverges",
+          "Scale the series so its standard partial sums approach 1",
+          "Design a block-wise permutation that drags many same-sign terms forward while keeping |σ(n)−n|·|x_n|→0",
+          "Verify displacement condition (ii) via a crude upper bound on |σ(n)−n| and the slow decay of |x_n|",
+          "Use the divergence of the grouped subseries to force the permuted partial sums away from 1 infinitely often"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Concrete choice of the slowly varying positive terms that make the alternating series conditionally convergent but whose even-indexed sum diverges",
+            "original": "y_n = 1 / ((n+1) ln(n+1))"
+          },
+          "slot2": {
+            "description": "Numerical constant controlling block length in the definition of b_{t+1} = b_t + (constant)·a_t",
+            "original": "4"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

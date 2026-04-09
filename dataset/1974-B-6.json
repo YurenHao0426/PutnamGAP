@@ -1,0 +1,154 @@
+{
+  "index": "1974-B-6",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "B-6. For a set with \\( n \\) elements, how many subsets are there whose cardinality (the number of elements in the subset) is respectively \\( \\equiv 0(\\bmod 3), \\equiv 1(\\bmod 3), \\equiv 2(\\bmod 3) \\) ? In other words, calculate\n\\[\ns_{i, n}=\\sum_{k=i(\\bmod ))}\\binom{n}{k} \\quad \\text { for } i=0,1,2 .\n\\]\n\nYour result should be strong enough to permit direct evaluation of the numbers \\( s_{1 . n} \\) and to show clearly the relationship of \\( s_{0, n} \\) and \\( s_{1, n} \\) and \\( s_{2, n} \\) to each other for all positive integers \\( n \\). In particular, show the relationships among these three sums for \\( n=1000 \\). [An illustration of the definition of \\( s_{\\text {l. }} \\) is \\( s_{0.6}=\\binom{6}{0}+\\binom{6}{3}+\\binom{6}{6}=22.1 \\)",
+  "solution": "B-6.\nLet \\( n \\equiv r(\\bmod 6) \\) with \\( r \\) in \\( \\{0,1,2,3,4,5\\} \\). Then the pattern is\n\\begin{tabular}{lcccccc}\n\\( r \\) & 0 & 1 & 2 & 3 & 4 & 5 \\\\\n\\( s_{0 . n} \\) & \\( a+1 \\) & \\( b \\) & \\( c \\) & \\( d-1 \\) & \\( e \\) & \\( f \\) \\\\\n\\( s_{1 . n} \\) & \\( a \\) & \\( b \\) & \\( c+1 \\) & \\( d \\) & \\( e \\) & \\( f-1 \\) \\\\\n\\( s_{2 . n} \\) & \\( a \\) & \\( b-1 \\) & \\( c \\) & \\( d \\) & \\( e+1 \\) & \\( f \\)\n\\end{tabular}\n\nThis is easily proved by mathematical induction using the formulas\n\\[\ns_{i, n}=s_{i-1, n-1}+s_{i, n-1} . \\quad[\\text { Here } 0-1=2(\\bmod 3) .]\n\\]\n\nThese formulas follow immediately from the rule\n\\[\n\\binom{n}{k}=\\binom{n-1}{k-1}+\\binom{n-1}{k} .\n\\]\n\nThe sums may be computed readily using the above patterns and\n\\[\ns_{0, n}+s_{1, n}+s_{2, n}=2^{n} .\n\\]\n\nFor \\( n=1000, r=4 \\) and\n\\[\ns_{0.1000}=s_{1.1000}=s_{2.1000}-1=\\left(2^{1000}-1\\right) / 3 .\n\\]",
+  "vars": [
+    "n",
+    "k",
+    "i",
+    "r",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "s_i,n",
+    "s_0,n",
+    "s_1,n",
+    "s_2,n",
+    "s_0,6",
+    "s_0,1000",
+    "s_1,1000",
+    "s_2,1000"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "totalselems",
+        "k": "subsetsize",
+        "i": "modulusindex",
+        "r": "residueclass",
+        "a": "patternvala",
+        "b": "patternvalb",
+        "c": "patternvalc",
+        "d": "patternvald",
+        "e": "patternvale",
+        "f": "patternvalf",
+        "s_i,n": "sumindex",
+        "s_0,n": "summodzero",
+        "s_1,n": "summodone",
+        "s_2,n": "summodtwo",
+        "s_0,6": "summodzerosix",
+        "s_0,1000": "summodzerothousand",
+        "s_1,1000": "summodonethousand",
+        "s_2,1000": "summodtwothousand"
+      },
+      "question": "B-6. For a set with \\( totalselems \\) elements, how many subsets are there whose cardinality (the number of elements in the subset) is respectively \\( \\equiv 0(\\bmod 3), \\equiv 1(\\bmod 3), \\equiv 2(\\bmod 3) \\) ? In other words, calculate\n\\[\nsumindex=\\sum_{subsetsize=modulusindex(\\bmod ))}\\binom{totalselems}{subsetsize} \\quad \\text { for } modulusindex=0,1,2 .\n\\]\n\nYour result should be strong enough to permit direct evaluation of the numbers \\( summodone \\) and to show clearly the relationship of \\( summodzero \\) and \\( summodone \\) and \\( summodtwo \\) to each other for all positive integers \\( totalselems \\). In particular, show the relationships among these three sums for \\( totalselems=1000 \\). [An illustration of the definition of \\( s_{\\text {l. }} \\) is \\( summodzerosix=\\binom{6}{0}+\\binom{6}{3}+\\binom{6}{6}=22.1 \\)",
+      "solution": "B-6.\nLet \\( totalselems \\equiv residueclass(\\bmod 6) \\) with \\( residueclass \\) in \\{0,1,2,3,4,5\\}. Then the pattern is\n\\begin{tabular}{lcccccc}\n\\( residueclass \\) & 0 & 1 & 2 & 3 & 4 & 5 \\\\\n\\( summodzero \\) & \\( patternvala+1 \\) & \\( patternvalb \\) & \\( patternvalc \\) & \\( patternvald-1 \\) & \\( patternvale \\) & \\( patternvalf \\) \\\\\n\\( summodone \\) & \\( patternvala \\) & \\( patternvalb \\) & \\( patternvalc+1 \\) & \\( patternvald \\) & \\( patternvale \\) & \\( patternvalf-1 \\) \\\\\n\\( summodtwo \\) & \\( patternvala \\) & \\( patternvalb-1 \\) & \\( patternvalc \\) & \\( patternvald \\) & \\( patternvale+1 \\) & \\( patternvalf \\)\n\\end{tabular}\n\nThis is easily proved by mathematical induction using the formulas\n\\[\ns_{modulusindex, totalselems}=s_{modulusindex-1, totalselems-1}+s_{modulusindex, totalselems-1} . \\quad[\\text { Here } 0-1=2(\\bmod 3) .]\n\\]\n\nThese formulas follow immediately from the rule\n\\[\n\\binom{totalselems}{subsetsize}=\\binom{totalselems-1}{subsetsize-1}+\\binom{totalselems-1}{subsetsize} .\n\\]\n\nThe sums may be computed readily using the above patterns and\n\\[\nsummodzero+summodone+summodtwo=2^{totalselems} .\n\\]\n\nFor \\( totalselems=1000, residueclass=4 \\) and\n\\[\nsummodzerothousand=summodonethousand=summodtwothousand-1=\\left(2^{1000}-1\\right) / 3 .\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "pebblejar",
+        "k": "lanternfog",
+        "i": "quillstone",
+        "r": "cobbletide",
+        "a": "echofern",
+        "b": "willowmist",
+        "c": "emberglow",
+        "d": "marblewing",
+        "e": "hazelcrest",
+        "f": "orchidvale",
+        "s_i,n": "glistenbay",
+        "s_0,n": "glistenbayzero",
+        "s_1,n": "glistenbayone",
+        "s_2,n": "glistenbaytwo",
+        "s_0,6": "glistenbayzerosix",
+        "s_0,1000": "glistenbayzerogale",
+        "s_1,1000": "glistenbayonegale",
+        "s_2,1000": "glistenbaytwogale"
+      },
+      "question": "B-6. For a set with \\( pebblejar \\) elements, how many subsets are there whose cardinality (the number of elements in the subset) is respectively \\( \\equiv 0(\\bmod 3), \\equiv 1(\\bmod 3), \\equiv 2(\\bmod 3) \\)? In other words, calculate\n\\[\nglistenbay_{quillstone,\\,pebblejar}=\\sum_{lanternfog=quillstone(\\bmod ))}\\binom{pebblejar}{lanternfog}\\quad\\text{ for }quillstone=0,1,2.\n\\]\nYour result should be strong enough to permit direct evaluation of the numbers \\( glistenbay_{1,\\,pebblejar} \\) and to show clearly the relationship of \\( glistenbay_{0,\\,pebblejar} \\), \\( glistenbay_{1,\\,pebblejar} \\) and \\( glistenbay_{2,\\,pebblejar} \\) to each other for all positive integers \\( pebblejar \\). In particular, show the relationships among these three sums for \\( pebblejar=1000 \\). [An illustration of the definition of \\( glistenbay_{\\text{l.}} \\) is \\( glistenbay_{0.6}=\\binom{6}{0}+\\binom{6}{3}+\\binom{6}{6}=22.1 \\)]",
+      "solution": "B-6.\\newline\nLet \\( pebblejar \\equiv cobbletide\\,(\\bmod 6) \\) with \\( cobbletide \\in\\{0,1,2,3,4,5\\} \\). Then the pattern is\n\\begin{tabular}{lcccccc}\n\\( cobbletide \\)&0&1&2&3&4&5\\\\\n\\( glistenbay_{0.\\,pebblejar} \\)&\\( echofern+1 \\)&\\( willowmist \\)&\\( emberglow \\)&\\( marblewing-1 \\)&\\( hazelcrest \\)&\\( orchidvale \\)\\\\\n\\( glistenbay_{1.\\,pebblejar} \\)&\\( echofern \\)&\\( willowmist \\)&\\( emberglow+1 \\)&\\( marblewing \\)&\\( hazelcrest \\)&\\( orchidvale-1 \\)\\\\\n\\( glistenbay_{2.\\,pebblejar} \\)&\\( echofern \\)&\\( willowmist-1 \\)&\\( emberglow \\)&\\( marblewing \\)&\\( hazelcrest+1 \\)&\\( orchidvale \\)\n\\end{tabular}\\newline\nThis is easily proved by mathematical induction using the formulas\n\\[\nglistenbay_{quillstone,\\,pebblejar}=glistenbay_{quillstone-1,\\,pebblejar-1}+glistenbay_{quillstone,\\,pebblejar-1}.\\quad[\\text{Here }0-1\\equiv2\\,(\\bmod 3).]\n\\]\nThese formulas follow immediately from the rule\n\\[\n\\binom{pebblejar}{lanternfog}=\\binom{pebblejar-1}{lanternfog-1}+\\binom{pebblejar-1}{lanternfog}.\n\\]\nThe sums may be computed readily using the above patterns and\n\\[\nglistenbay_{0,\\,pebblejar}+glistenbay_{1,\\,pebblejar}+glistenbay_{2,\\,pebblejar}=2^{pebblejar}.\n\\]\nFor \\( pebblejar=1000,\\,cobbletide=4 \\) and\n\\[\nglistenbayzerogale=glistenbayonegale=glistenbaytwogale-1=\\frac{2^{1000}-1}{3}.\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "emptiness",
+        "k": "wholeness",
+        "i": "totality",
+        "r": "quotient",
+        "a": "scarcity",
+        "b": "deficiency",
+        "c": "shortfall",
+        "d": "voidance",
+        "e": "shortage",
+        "f": "lackness",
+        "s_i,n": "nonsummary",
+        "s_0,n": "antisumzero",
+        "s_1,n": "antisumone",
+        "s_2,n": "antisumtwo",
+        "s_0,6": "antisumzerosix",
+        "s_0,1000": "antisumzerokilo",
+        "s_1,1000": "antisumonekilo",
+        "s_2,1000": "antisumtwokilo"
+      },
+      "question": "B-6. For a set with \\( emptiness \\) elements, how many subsets are there whose cardinality (the number of elements in the subset) is respectively \\( \\equiv 0(\\bmod 3), \\equiv 1(\\bmod 3), \\equiv 2(\\bmod 3) \\) ? In other words, calculate\n\\[\n nonsummary=\\sum_{wholeness=totality(\\bmod ))}\\binom{emptiness}{wholeness} \\quad \\text { for } totality=0,1,2 .\n\\]\n\nYour result should be strong enough to permit direct evaluation of the numbers \\( antisumone \\) and to show clearly the relationship of \\( antisumzero \\) and \\( antisumone \\) and \\( antisumtwo \\) to each other for all positive integers \\( emptiness \\). In particular, show the relationships among these three sums for \\( emptiness=1000 \\). [An illustration of the definition of \\( s_{\\text {l. }} \\) is \\( antisumzerosix=\\binom{6}{0}+\\binom{6}{3}+\\binom{6}{6}=22.1 \\)]",
+      "solution": "B-6.\nLet \\( emptiness \\equiv quotient(\\bmod 6) \\) with \\( quotient \\) in \\{0,1,2,3,4,5\\}. Then the pattern is\n\\begin{tabular}{lcccccc}\n\\( quotient \\) & 0 & 1 & 2 & 3 & 4 & 5 \\\\\n\\( antisumzero \\) & \\( scarcity+1 \\) & \\( deficiency \\) & \\( shortfall \\) & \\( voidance-1 \\) & \\( shortage \\) & \\( lackness \\) \\\\\n\\( antisumone \\) & \\( scarcity \\) & \\( deficiency \\) & \\( shortfall+1 \\) & \\( voidance \\) & \\( shortage \\) & \\( lackness-1 \\) \\\\\n\\( antisumtwo \\) & \\( scarcity \\) & \\( deficiency-1 \\) & \\( shortfall \\) & \\( voidance \\) & \\( shortage+1 \\) & \\( lackness \\)\n\\end{tabular}\n\nThis is easily proved by mathematical induction using the formulas\n\\[\n nonsummary=s_{totality-1,\\,emptiness-1}+s_{totality,\\,emptiness-1} . \\quad[\\text { Here } 0-1=2(\\bmod 3) .]\n\\]\n\nThese formulas follow immediately from the rule\n\\[\n \\binom{emptiness}{wholeness}=\\binom{emptiness-1}{wholeness-1}+\\binom{emptiness-1}{wholeness} .\n\\]\n\nThe sums may be computed readily using the above patterns and\n\\[\n antisumzero+antisumone+antisumtwo=2^{emptiness} .\n\\]\n\nFor \\( emptiness=1000, quotient=4 \\) and\n\\[\n antisumzerokilo=antisumonekilo=antisumtwokilo-1=\\left(2^{1000}-1\\right) / 3 .\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "i": "mncvopqe",
+        "r": "tksldhfa",
+        "a": "lqwertyu",
+        "b": "asdfghjk",
+        "c": "zxcvbnmq",
+        "d": "poiuytre",
+        "e": "mnbvcxza",
+        "f": "lkjasdfg",
+        "s_i,n": "qazwsxed",
+        "s_0,n": "edcrfvtg",
+        "s_1,n": "ujmnhygt",
+        "s_2,n": "yhnmjuik",
+        "s_0,6": "tgbvfred",
+        "s_0,1000": "plmoknij",
+        "s_1,1000": "okijplmn",
+        "s_2,1000": "ijplmnok"
+      },
+      "question": "B-6. For a set with \\( qzxwvtnp \\) elements, how many subsets are there whose cardinality (the number of elements in the subset) is respectively \\( \\equiv 0(\\bmod 3), \\equiv 1(\\bmod 3), \\equiv 2(\\bmod 3) \\) ? In other words, calculate\n\\[\nqazwsxed_{mncvopqe, qzxwvtnp}=\\sum_{hjgrksla=mncvopqe(\\bmod ))}\\binom{qzxwvtnp}{hjgrksla} \\quad \\text { for } mncvopqe=0,1,2 .\n\\]\n\nYour result should be strong enough to permit direct evaluation of the numbers \\( ujmnhygt \\) and to show clearly the relationship of \\( edcrfvtg \\) and \\( ujmnhygt \\) and \\( yhnmjuik \\) to each other for all positive integers \\( qzxwvtnp \\). In particular, show the relationships among these three sums for \\( qzxwvtnp=1000 \\). [An illustration of the definition of \\( s_{\\text {l. }} \\) is \\( tgbvfred=\\binom{6}{0}+\\binom{6}{3}+\\binom{6}{6}=22.1 \\)]",
+      "solution": "B-6.\nLet \\( qzxwvtnp \\equiv tksldhfa(\\bmod 6) \\) with \\( tksldhfa \\) in \\( \\{0,1,2,3,4,5\\} \\). Then the pattern is\n\\begin{tabular}{lcccccc}\n\\( tksldhfa \\) & 0 & 1 & 2 & 3 & 4 & 5 \\\\\n\\( edcrfvtg \\) & \\( lqwertyu+1 \\) & \\( asdfghjk \\) & \\( zxcvbnmq \\) & \\( poiuytre-1 \\) & \\( mnbvcxza \\) & \\( lkjasdfg \\) \\\\\n\\( ujmnhygt \\) & \\( lqwertyu \\) & \\( asdfghjk \\) & \\( zxcvbnmq+1 \\) & \\( poiuytre \\) & \\( mnbvcxza \\) & \\( lkjasdfg-1 \\) \\\\\n\\( yhnmjuik \\) & \\( lqwertyu \\) & \\( asdfghjk-1 \\) & \\( zxcvbnmq \\) & \\( poiuytre \\) & \\( mnbvcxza+1 \\) & \\( lkjasdfg \\)\n\\end{tabular}\n\nThis is easily proved by mathematical induction using the formulas\n\\[\nqazwsxed_{mncvopqe, qzxwvtnp}=qazwsxed_{mncvopqe-1, qzxwvtnp-1}+qazwsxed_{mncvopqe, qzxwvtnp-1} . \\quad[\\text { Here } 0-1=2(\\bmod 3) .]\n\\]\n\nThese formulas follow immediately from the rule\n\\[\n\\binom{qzxwvtnp}{hjgrksla}=\\binom{qzxwvtnp-1}{hjgrksla-1}+\\binom{qzxwvtnp-1}{hjgrksla} .\n\\]\n\nThe sums may be computed readily using the above patterns and\n\\[\nedcrfvtg+ujmnhygt+yhnmjuik=2^{qzxwvtnp} .\\]\n\nFor \\( qzxwvtnp=1000, tksldhfa=4 \\) and\n\\[\nplmoknij=okijplmn=ijplmnok-1=\\left(2^{1000}-1\\right) / 3 .\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let n \\geq  4 be an even integer and, for a,b \\in  {0,1,2,3}, put  \n\n  T_{a,b}(n) = #{ A \\subset  {1,\\ldots ,n} :  |A| \\equiv  a (mod 4), \\sum _{x\\in A}x \\equiv  b (mod 4) }.\n\n1.  Prove that the sixteen numbers T_{a,b}(n) depend on n only through the residue  \n  r := n (mod 16) (so r \\in  {0,2,4,6,8,10,12,14}).  \n  For an even n write  \n\n    P_n = 2^{\\,n-4},  Q_n = 2^{\\,n/2-2},  R_n = 2^{\\,n/2-3}( = \\frac{1}{2}Q_n).\n\n  Show that for every even residue r there exist two 4 \\times  4 matrices  \n\n    \\varepsilon ^{(r)} = (\\varepsilon ^{(r)}_{a,b}),  \\theta ^{(r)} = (\\theta ^{(r)}_{a,b})  (\\varepsilon ^{(r)}_{a,b}, \\theta ^{(r)}_{a,b} \\in  {-1,0,1})\n\n  such that for all a,b \\in  {0,1,2,3} and all n \\equiv  r (mod 16)\n\n    (\\star )  T_{a,b}(n) = P_n + \\theta ^{(r)}_{a,b} Q_n + \\varepsilon ^{(r)}_{a,b} R_n.\n\n2.  Determine the eight pairs (\\varepsilon ^{(r)},\\theta ^{(r)}).  \n  (It is enough to list them for r = 0,2,4,6; when r is replaced by r+8 the matrices are unchanged.)\n\n  (i) r = 0, 8 (k = n/2 (mod 4) = 0) \n\n    \\theta ^{(r)} =  1 0 1 0; 0 0 0 0; -1 0 -1 0; 0 0 0 0 ,  \\varepsilon ^{(r)} = 0.\n\n  (ii) r = 2, 10 (k = 1)\n\n    \\varepsilon ^{(r)} =  1 -1 1 -1; 1 1 1 1; -1 1 -1 1; -1 -1 -1 -1 ,  \\theta ^{(r)} = 0.\n\n  (iii) r = 4, 12 (k = 2)\n\n    \\theta ^{(r)} =  0 -1 0 -1; 0 0 0 0; 0 1 0 1; 0 0 0 0 ,  \\varepsilon ^{(r)} = 0.\n\n  (iv) r = 6, 14 (k = 3)\n\n    \\varepsilon ^{(r)} =  1 -1 1 -1; -1 -1 -1 -1; -1 1 -1 1; 1 1 1 1 ,  \\theta ^{(r)} = 0.\n\n3.  Evaluate all sixteen numbers T_{a,b}(2024) (note 2024 \\equiv  8 (mod 16)).",
+      "solution": "Throughout bold i denotes the imaginary unit and a,b range over {0,1,2,3}.\n\n0.  Fourier inversion.  \n Let \\zeta  = exp(\\pi i/2) = i, so \\zeta ^4 = 1.  Insert the simultaneous indicator\n\n  1_{A,a,b} = \\frac{1}{4} \\cdot  \\frac{1}{4} \\sum _{\\alpha ,\\beta =0}^{3} \\zeta ^{-\\alpha a - \\beta b} \\zeta ^{\\alpha |A| + \\beta \\sum _{x\\in A}x}\n\n and sum over all A \\subset  {1,\\ldots ,n}.  We obtain  \n\n  T_{a,b}(n) = 1/16 \\sum _{\\alpha ,\\beta  = 0}^{3} \\zeta ^{-\\alpha a - \\beta b} F_{\\alpha ,\\beta }(n)  (1)\n\n with  \n\n  F_{\\alpha ,\\beta }(n) := \\prod _{k=1}^{n} (1 + \\zeta ^{\\alpha  + \\beta k}).\n\n1.  Detecting vanishing factors.  \n Using 1 + \\zeta ^{m} = 2 \\zeta ^{m/2} cos(\\pi m/4) we have cos(\\pi m/4) = 0 \\Longleftrightarrow  m \\equiv  2,6 (mod 8).  \n Hence (1 + \\zeta ^{m}) = 0 iff m \\equiv  2,6 (mod 8).  Therefore F_{\\alpha ,\\beta }(n) can vanish only\n if some term 1 + \\zeta ^{\\alpha +\\beta k} has exponent \\alpha +\\beta k \\equiv  2,6 (mod 8).  \n A short check shows that for even n we must have\n\n  (\\alpha ,\\beta ) \\in  {(0,0),(1,0),(3,0),(1,2),(3,2)}  (2)\n\n (the same five pairs already used in the draft), and for those five pairs no\n factor ever vanishes.\n\n2.  Evaluating the five surviving products (even n).  \n Write k := (n/2) (mod 4) \\in  {0,1,2,3} and set U_n := i^{\\,k}.  A direct grouping of\n the n factors in pairs (k, n-k+1) gives\n\n  F_{0,0}(n) = 2^{\\,n},  \n  F_{1,0}(n) = 2^{\\,n/2} U_n,  F_{3,0}(n) = 2^{\\,n/2} U_n^{3},  \n  F_{1,2}(n) = 2^{\\,n/2},   F_{3,2}(n) = 2^{\\,n/2}.  (3)\n\n3.  Normalisation.  \n Define  \n\n  P_n = 2^{\\,n-4},  Q_n = 2^{\\,n/2-2},  R_n = 2^{\\,n/2-3}.  (4)\n\n Write T_{a,b}(n) = P_n + S_{a,b}(n).  Plugging (2)-(3) into (1) yields\n\n  S_{a,b}(n) = 2^{\\,n/2-4}( \\Phi _a(k) + (-1)^{\\,b} \\Psi _a ),  (5)\n\n where \\Phi _a(k) = i^{-a}U_n + i^{-3a}U_n^{3},  \\Psi _a = i^{-a} + i^{-3a}.\n\n4.  Small integer values of \\Phi _a(k) and \\Psi _a.  \n Compute once and for all:\n\n  \\Psi _0 = 2, \\Psi _1 = 0, \\Psi _2 = -2, \\Psi _3 = 0.\n\n For k = 0,1,2,3 the quadruples (\\Phi _0,\\Phi _1,\\Phi _2,\\Phi _3) are\n\n  k  0  1  2  3  \n  \\Phi _0  2  0 -2  0  \n  \\Phi _1  0  2  0 -2  \n  \\Phi _2 -2  0  2  0  \n  \\Phi _3  0 -2  0  2\n\n Hence each  \n\n  X_{a,b}(n) := \\frac{1}{2}(\\Phi _a(k) + (-1)^{\\,b}\\Psi _a)  \n\n takes one of the five values -2, -1, 0, 1, 2.\n\n Write X_{a,b} = \\varepsilon _{a,b}(n) + 2 \\theta _{a,b}(n) with \\varepsilon _{a,b}(n), \\theta _{a,b}(n) \\in  {-1,0,1}\n choosing the canonical decomposition (\\theta  = 0 if |X| = 1, \\varepsilon  = 0 if |X| = 2).\n Then\n\n  S_{a,b}(n) = \\theta _{a,b}(n) Q_n + \\varepsilon _{a,b}(n) R_n,\n\n and the required representation (\\star ) follows.\n\n5.  Periodicity.  \n Because k = (n/2) (mod 4), the pair (\\varepsilon _{a,b}(n), \\theta _{a,b}(n)) depends only on\n r = n (mod 16).  Denote by \\varepsilon ^{(r)}, \\theta ^{(r)} the corresponding 4 \\times  4 matrices.\n Reading the above table exactly reproduces the eight matrices listed in\n Question 2, completing Part 1.\n\n6.  Explicit matrices (Part 2).  \n The four matrices displayed in Part 2 are obtained from the table in Step 4;\n for r and r+8 they coincide because k remains unchanged.\n\n7.  The case n = 2024 (r = 8, k = 0).  \n From Part 2(i) we have\n\n  \\theta ^{(8)} =\n   1 0 1 0; 0 0 0 0; -1 0 -1 0; 0 0 0 0 ,  \\varepsilon ^{(8)} = 0,\n\n while P_{2024} = 2^{2020}, Q_{2024} = 2^{1010}, R_{2024} = 2^{1009}.  \n Using (\\star ):\n\n  T_{0,0}(2024) = T_{0,2}(2024) = 2^{2020} + 2^{1010},  \n  T_{2,0}(2024) = T_{2,2}(2024) = 2^{2020} - 2^{1010},  \n  all other T_{a,b}(2024) = 2^{2020}.\n\n A check gives \\sum _{a,b} T_{a,b}(2024) = 2^{2024}, as required.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.617692",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Two simultaneous congruence conditions (subset size and element-sum) replace\n    the single congruence in the original problems, multiplying the number of\n    quantities to determine from 3 or 4 to 16.\n\n2.  Solving the problem demands a double roots-of-unity filter and hence a\n    two-dimensional discrete Fourier transform; simple Pascal-triangle recurrences\n    are no longer sufficient.\n\n3.  The evaluation of the products F_{α,β}(n) forces the solver to analyse cosine\n    patterns that depend delicately on both β and the residue class of n; this\n    introduces powers 2^{⌊n/2⌋}, 2^{⌊n/4⌋}, and signs controlled by n (mod 16),\n    whereas the original variant involved only one extra power of 2.\n\n4.  The final closed form (1) features three separate “correction terms’’ with\n    three independent sign tensors, making the bookkeeping far more intricate\n    than the single-tensor description in the current kernel variant.\n\n5.  Direct numerical evaluation for n=2023 is impossible without the full theory,\n    compelling the use of the derived formulae; contrast this with the original\n    problem where parity rules and a short induction suffice.\n\nThese layers of extra structure, algebra, and case analysis make the enhanced\nkernel variant substantially harder than both the original and the existing\nkernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let n \\geq  4 be an even integer and, for a,b \\in  {0,1,2,3}, put  \n\n  T_{a,b}(n) = #{ A \\subset  {1,\\ldots ,n} :  |A| \\equiv  a (mod 4), \\sum _{x\\in A}x \\equiv  b (mod 4) }.\n\n1.  Prove that the sixteen numbers T_{a,b}(n) depend on n only through the residue  \n  r := n (mod 16) (so r \\in  {0,2,4,6,8,10,12,14}).  \n  For an even n write  \n\n    P_n = 2^{\\,n-4},  Q_n = 2^{\\,n/2-2},  R_n = 2^{\\,n/2-3}( = \\frac{1}{2}Q_n).\n\n  Show that for every even residue r there exist two 4 \\times  4 matrices  \n\n    \\varepsilon ^{(r)} = (\\varepsilon ^{(r)}_{a,b}),  \\theta ^{(r)} = (\\theta ^{(r)}_{a,b})  (\\varepsilon ^{(r)}_{a,b}, \\theta ^{(r)}_{a,b} \\in  {-1,0,1})\n\n  such that for all a,b \\in  {0,1,2,3} and all n \\equiv  r (mod 16)\n\n    (\\star )  T_{a,b}(n) = P_n + \\theta ^{(r)}_{a,b} Q_n + \\varepsilon ^{(r)}_{a,b} R_n.\n\n2.  Determine the eight pairs (\\varepsilon ^{(r)},\\theta ^{(r)}).  \n  (It is enough to list them for r = 0,2,4,6; when r is replaced by r+8 the matrices are unchanged.)\n\n  (i) r = 0, 8 (k = n/2 (mod 4) = 0) \n\n    \\theta ^{(r)} =  1 0 1 0; 0 0 0 0; -1 0 -1 0; 0 0 0 0 ,  \\varepsilon ^{(r)} = 0.\n\n  (ii) r = 2, 10 (k = 1)\n\n    \\varepsilon ^{(r)} =  1 -1 1 -1; 1 1 1 1; -1 1 -1 1; -1 -1 -1 -1 ,  \\theta ^{(r)} = 0.\n\n  (iii) r = 4, 12 (k = 2)\n\n    \\theta ^{(r)} =  0 -1 0 -1; 0 0 0 0; 0 1 0 1; 0 0 0 0 ,  \\varepsilon ^{(r)} = 0.\n\n  (iv) r = 6, 14 (k = 3)\n\n    \\varepsilon ^{(r)} =  1 -1 1 -1; -1 -1 -1 -1; -1 1 -1 1; 1 1 1 1 ,  \\theta ^{(r)} = 0.\n\n3.  Evaluate all sixteen numbers T_{a,b}(2024) (note 2024 \\equiv  8 (mod 16)).",
+      "solution": "Throughout bold i denotes the imaginary unit and a,b range over {0,1,2,3}.\n\n0.  Fourier inversion.  \n Let \\zeta  = exp(\\pi i/2) = i, so \\zeta ^4 = 1.  Insert the simultaneous indicator\n\n  1_{A,a,b} = \\frac{1}{4} \\cdot  \\frac{1}{4} \\sum _{\\alpha ,\\beta =0}^{3} \\zeta ^{-\\alpha a - \\beta b} \\zeta ^{\\alpha |A| + \\beta \\sum _{x\\in A}x}\n\n and sum over all A \\subset  {1,\\ldots ,n}.  We obtain  \n\n  T_{a,b}(n) = 1/16 \\sum _{\\alpha ,\\beta  = 0}^{3} \\zeta ^{-\\alpha a - \\beta b} F_{\\alpha ,\\beta }(n)  (1)\n\n with  \n\n  F_{\\alpha ,\\beta }(n) := \\prod _{k=1}^{n} (1 + \\zeta ^{\\alpha  + \\beta k}).\n\n1.  Detecting vanishing factors.  \n Using 1 + \\zeta ^{m} = 2 \\zeta ^{m/2} cos(\\pi m/4) we have cos(\\pi m/4) = 0 \\Longleftrightarrow  m \\equiv  2,6 (mod 8).  \n Hence (1 + \\zeta ^{m}) = 0 iff m \\equiv  2,6 (mod 8).  Therefore F_{\\alpha ,\\beta }(n) can vanish only\n if some term 1 + \\zeta ^{\\alpha +\\beta k} has exponent \\alpha +\\beta k \\equiv  2,6 (mod 8).  \n A short check shows that for even n we must have\n\n  (\\alpha ,\\beta ) \\in  {(0,0),(1,0),(3,0),(1,2),(3,2)}  (2)\n\n (the same five pairs already used in the draft), and for those five pairs no\n factor ever vanishes.\n\n2.  Evaluating the five surviving products (even n).  \n Write k := (n/2) (mod 4) \\in  {0,1,2,3} and set U_n := i^{\\,k}.  A direct grouping of\n the n factors in pairs (k, n-k+1) gives\n\n  F_{0,0}(n) = 2^{\\,n},  \n  F_{1,0}(n) = 2^{\\,n/2} U_n,  F_{3,0}(n) = 2^{\\,n/2} U_n^{3},  \n  F_{1,2}(n) = 2^{\\,n/2},   F_{3,2}(n) = 2^{\\,n/2}.  (3)\n\n3.  Normalisation.  \n Define  \n\n  P_n = 2^{\\,n-4},  Q_n = 2^{\\,n/2-2},  R_n = 2^{\\,n/2-3}.  (4)\n\n Write T_{a,b}(n) = P_n + S_{a,b}(n).  Plugging (2)-(3) into (1) yields\n\n  S_{a,b}(n) = 2^{\\,n/2-4}( \\Phi _a(k) + (-1)^{\\,b} \\Psi _a ),  (5)\n\n where \\Phi _a(k) = i^{-a}U_n + i^{-3a}U_n^{3},  \\Psi _a = i^{-a} + i^{-3a}.\n\n4.  Small integer values of \\Phi _a(k) and \\Psi _a.  \n Compute once and for all:\n\n  \\Psi _0 = 2, \\Psi _1 = 0, \\Psi _2 = -2, \\Psi _3 = 0.\n\n For k = 0,1,2,3 the quadruples (\\Phi _0,\\Phi _1,\\Phi _2,\\Phi _3) are\n\n  k  0  1  2  3  \n  \\Phi _0  2  0 -2  0  \n  \\Phi _1  0  2  0 -2  \n  \\Phi _2 -2  0  2  0  \n  \\Phi _3  0 -2  0  2\n\n Hence each  \n\n  X_{a,b}(n) := \\frac{1}{2}(\\Phi _a(k) + (-1)^{\\,b}\\Psi _a)  \n\n takes one of the five values -2, -1, 0, 1, 2.\n\n Write X_{a,b} = \\varepsilon _{a,b}(n) + 2 \\theta _{a,b}(n) with \\varepsilon _{a,b}(n), \\theta _{a,b}(n) \\in  {-1,0,1}\n choosing the canonical decomposition (\\theta  = 0 if |X| = 1, \\varepsilon  = 0 if |X| = 2).\n Then\n\n  S_{a,b}(n) = \\theta _{a,b}(n) Q_n + \\varepsilon _{a,b}(n) R_n,\n\n and the required representation (\\star ) follows.\n\n5.  Periodicity.  \n Because k = (n/2) (mod 4), the pair (\\varepsilon _{a,b}(n), \\theta _{a,b}(n)) depends only on\n r = n (mod 16).  Denote by \\varepsilon ^{(r)}, \\theta ^{(r)} the corresponding 4 \\times  4 matrices.\n Reading the above table exactly reproduces the eight matrices listed in\n Question 2, completing Part 1.\n\n6.  Explicit matrices (Part 2).  \n The four matrices displayed in Part 2 are obtained from the table in Step 4;\n for r and r+8 they coincide because k remains unchanged.\n\n7.  The case n = 2024 (r = 8, k = 0).  \n From Part 2(i) we have\n\n  \\theta ^{(8)} =\n   1 0 1 0; 0 0 0 0; -1 0 -1 0; 0 0 0 0 ,  \\varepsilon ^{(8)} = 0,\n\n while P_{2024} = 2^{2020}, Q_{2024} = 2^{1010}, R_{2024} = 2^{1009}.  \n Using (\\star ):\n\n  T_{0,0}(2024) = T_{0,2}(2024) = 2^{2020} + 2^{1010},  \n  T_{2,0}(2024) = T_{2,2}(2024) = 2^{2020} - 2^{1010},  \n  all other T_{a,b}(2024) = 2^{2020}.\n\n A check gives \\sum _{a,b} T_{a,b}(2024) = 2^{2024}, as required.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.493703",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Two simultaneous congruence conditions (subset size and element-sum) replace\n    the single congruence in the original problems, multiplying the number of\n    quantities to determine from 3 or 4 to 16.\n\n2.  Solving the problem demands a double roots-of-unity filter and hence a\n    two-dimensional discrete Fourier transform; simple Pascal-triangle recurrences\n    are no longer sufficient.\n\n3.  The evaluation of the products F_{α,β}(n) forces the solver to analyse cosine\n    patterns that depend delicately on both β and the residue class of n; this\n    introduces powers 2^{⌊n/2⌋}, 2^{⌊n/4⌋}, and signs controlled by n (mod 16),\n    whereas the original variant involved only one extra power of 2.\n\n4.  The final closed form (1) features three separate “correction terms’’ with\n    three independent sign tensors, making the bookkeeping far more intricate\n    than the single-tensor description in the current kernel variant.\n\n5.  Direct numerical evaluation for n=2023 is impossible without the full theory,\n    compelling the use of the derived formulae; contrast this with the original\n    problem where parity rules and a short induction suffice.\n\nThese layers of extra structure, algebra, and case analysis make the enhanced\nkernel variant substantially harder than both the original and the existing\nkernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

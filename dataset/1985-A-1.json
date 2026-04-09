@@ -1,0 +1,96 @@
+{
+  "index": "1985-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Determine, with proof, the number of ordered triples $(A_1, A_2, A_3)$\nof sets which have the property that\n\\begin{enumerate}\n\\item[(i)] $A_1 \\cup A_2 \\cup A_3 = \\{1,2,3,4,5,6,7,8,9,10\\}$, and\n\\item[(ii)] $A_1 \\cap A_2 \\cap A_3 = \\emptyset$.\n\\end{enumerate}\nExpress your answer in the form $2^a 3^b 5^c 7^d$, where $a,b,c,d$\nare nonnegative integers.",
+  "solution": "Solution. There is a bijection between triples of subsets of \\( \\{1, \\ldots, 10\\} \\) and \\( 10 \\times 3 \\) matrices with 0,1 entries, sending \\( \\left(A_{1}, A_{2}, A_{3}\\right) \\) to the matrix \\( B=\\left(b_{i j}\\right) \\) with \\( b_{i j}=1 \\) if \\( i \\in A_{j} \\) and \\( b_{i j}=0 \\) otherwise. Under this bijection the set \\( S \\) of triples satisfying\n\\[\nA_{1} \\cup A_{2} \\cup A_{3}=\\{1, \\ldots, 10\\} \\quad \\text { and } \\quad A_{1} \\cap A_{2} \\cap A_{3}=\\emptyset\n\\]\nmaps onto the set \\( T \\) of \\( 10 \\times 3 \\) matrices with 0,1 entries such that no row is (000) or (111). The number of possibilities for each row of such a matrix is \\( 2^{3}-2=6 \\), so \\( \\# T=6^{10} \\). Hence \\( \\# S=\\# T=2^{10} 3^{10} \\).\n\nReinterpretation. Equivalently, this problem asks for the number of ways of placing the numbers 1 through 10 in the Venn diagram of Figure 1, where no numbers are placed in the two regions marked with an \" \\( \\times \\) \".",
+  "vars": [
+    "A_1",
+    "A_2",
+    "A_3",
+    "B",
+    "b_ij",
+    "i",
+    "j",
+    "S",
+    "T"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A_1": "setalpha",
+        "A_2": "setbeta",
+        "A_3": "setgamma",
+        "B": "matrixb",
+        "b_ij": "entrybij",
+        "i": "rowidx",
+        "j": "colidx",
+        "S": "setspace",
+        "T": "matspace"
+      },
+      "question": "Determine, with proof, the number of ordered triples $(setalpha, setbeta, setgamma)$ of sets which have the property that\n\\begin{enumerate}\n\\item[(i)] $setalpha \\cup setbeta \\cup setgamma = \\{1,2,3,4,5,6,7,8,9,10\\}$, and\n\\item[(ii)] $setalpha \\cap setbeta \\cap setgamma = \\emptyset$.\n\\end{enumerate}\nExpress your answer in the form $2^a 3^b 5^c 7^d$, where $a,b,c,d$ are nonnegative integers.",
+      "solution": "Solution. There is a bijection between triples of subsets of \\( \\{1, \\ldots, 10\\} \\) and \\( 10 \\times 3 \\) matrices with 0,1 entries, sending \\( \\left(setalpha, setbeta, setgamma\\right) \\) to the matrix \\( matrixb=\\left(entrybij\\right) \\) with \\( entrybij=1 \\) if \\( rowidx \\) is an element of the \\( colidx\\)-th set of the triple and \\( entrybij=0 \\) otherwise. Under this bijection the set \\( setspace \\) of triples satisfying\n\\[\nsetalpha \\cup setbeta \\cup setgamma=\\{1, \\ldots, 10\\} \\quad \\text { and } \\quad setalpha \\cap setbeta \\cap setgamma=\\emptyset\n\\]\nmaps onto the set \\( matspace \\) of \\( 10 \\times 3 \\) matrices with 0,1 entries such that no row is (000) or (111). The number of possibilities for each row of such a matrix is \\( 2^{3}-2=6 \\), so \\( \\# matspace=6^{10} \\). Hence \\( \\# setspace=\\# matspace=2^{10} 3^{10} \\).\n\nReinterpretation. Equivalently, this problem asks for the number of ways of placing the numbers 1 through 10 in the Venn diagram of Figure 1, where no numbers are placed in the two regions marked with an \" \\( \\times \\) \"."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A_1": "featherbed",
+        "A_2": "lanternfish",
+        "A_3": "blacksmith",
+        "B": "raincloud",
+        "b_ij": "dragonfly",
+        "i": "paperclip",
+        "j": "toadstool",
+        "S": "gemstone",
+        "T": "woodpecker"
+      },
+      "question": "Determine, with proof, the number of ordered triples $(featherbed, lanternfish, blacksmith)$\nof sets which have the property that\n\\begin{enumerate}\n\\item[(i)] $featherbed \\cup lanternfish \\cup blacksmith = \\{1,2,3,4,5,6,7,8,9,10\\}$, and\n\\item[(ii)] $featherbed \\cap lanternfish \\cap blacksmith = \\emptyset$.\n\\end{enumerate}\nExpress your answer in the form $2^a 3^b 5^c 7^d$, where $a,b,c,d$\nare nonnegative integers.",
+      "solution": "Solution. There is a bijection between triples of subsets of \\( \\{1, \\ldots, 10\\} \\) and \\( 10 \\times 3 \\) matrices with 0,1 entries, sending \\( \\left(featherbed, lanternfish, blacksmith\\right) \\) to the matrix \\( raincloud=\\left(dragonfly\\right) \\) with \\( dragonfly=1 \\) if \\( paperclip \\in A_{toadstool} \\) and \\( dragonfly=0 \\) otherwise. Under this bijection the set \\( gemstone \\) of triples satisfying\n\\[\nfeatherbed \\cup lanternfish \\cup blacksmith=\\{1, \\ldots, 10\\} \\quad \\text { and } \\quad featherbed \\cap lanternfish \\cap blacksmith=\\emptyset\n\\]\nmaps onto the set \\( woodpecker \\) of \\( 10 \\times 3 \\) matrices with 0,1 entries such that no row is (000) or (111). The number of possibilities for each row of such a matrix is \\( 2^{3}-2=6 \\), so \\( \\# woodpecker=6^{10} \\). Hence \\( \\# gemstone=\\# woodpecker=2^{10} 3^{10} \\).\n\nReinterpretation. Equivalently, this problem asks for the number of ways of placing the numbers 1 through 10 in the Venn diagram of Figure 1, where no numbers are placed in the two regions marked with an \" \\( \\times \\) \"."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A_1": "voidgroup",
+        "A_2": "emptycluster",
+        "A_3": "nullfamily",
+        "B": "scalarbody",
+        "b_ij": "bulkwhole",
+        "i": "colmarker",
+        "j": "rowmarker",
+        "S": "singularone",
+        "T": "monomatrix"
+      },
+      "question": "Determine, with proof, the number of ordered triples $(voidgroup, emptycluster, nullfamily)$\nof sets which have the property that\n\\begin{enumerate}\n\\item[(i)] $voidgroup \\cup emptycluster \\cup nullfamily = \\{1,2,3,4,5,6,7,8,9,10\\}$, and\n\\item[(ii)] $voidgroup \\cap emptycluster \\cap nullfamily = \\emptyset$.\n\\end{enumerate}\nExpress your answer in the form $2^a 3^b 5^c 7^d$, where $a,b,c,d$\nare nonnegative integers.",
+      "solution": "Solution. There is a bijection between triples of subsets of \\( \\{1, \\ldots, 10\\} \\) and \\( 10 \\times 3 \\) matrices with 0,1 entries, sending \\( \\left(voidgroup, emptycluster, nullfamily\\right) \\) to the matrix \\( scalarbody=\\left(bulkwhole\\right) \\) with \\( bulkwhole=1 \\) if \\( colmarker \\in voidgroup_{rowmarker} \\) and \\( bulkwhole=0 \\) otherwise. Under this bijection the set \\( singularone \\) of triples satisfying\n\\[\nvoidgroup \\cup emptycluster \\cup nullfamily=\\{1, \\ldots, 10\\} \\quad \\text { and } \\quad voidgroup \\cap emptycluster \\cap nullfamily=\\emptyset\n\\]\nmaps onto the set \\( monomatrix \\) of \\( 10 \\times 3 \\) matrices with 0,1 entries such that no row is (000) or (111). The number of possibilities for each row of such a matrix is \\( 2^{3}-2=6 \\), so \\( \\# monomatrix=6^{10} \\). Hence \\( \\# singularone=\\# monomatrix=2^{10} 3^{10} \\).\n\nReinterpretation. Equivalently, this problem asks for the number of ways of placing the numbers 1 through 10 in the Venn diagram of Figure 1, where no numbers are placed in the two regions marked with an \" \\( \\times \\) \".\n"
+    },
+    "garbled_string": {
+      "map": {
+        "A_1": "qzxwvtnp",
+        "A_2": "hjgrksla",
+        "A_3": "fzmbylqe",
+        "B": "ksdjhqwe",
+        "b_ij": "voskgmpl",
+        "i": "zdtrqfwu",
+        "j": "lsnkvhpe",
+        "S": "xunopqra",
+        "T": "ykrbsmte"
+      },
+      "question": "Determine, with proof, the number of ordered triples $(qzxwvtnp, hjgrksla, fzmbylqe)$ of sets which have the property that\n\\begin{enumerate}\n\\item[(i)] $qzxwvtnp \\cup hjgrksla \\cup fzmbylqe = \\{1,2,3,4,5,6,7,8,9,10\\}$, and\n\\item[(ii)] $qzxwvtnp \\cap hjgrksla \\cap fzmbylqe = \\emptyset$.\n\\end{enumerate}\nExpress your answer in the form $2^a 3^b 5^c 7^d$, where $a,b,c,d$ are nonnegative integers.",
+      "solution": "Solution. There is a bijection between triples of subsets of \\( \\{1, \\ldots, 10\\} \\) and \\( 10 \\times 3 \\) matrices with 0,1 entries, sending \\( \\left(qzxwvtnp, hjgrksla, fzmbylqe\\right) \\) to the matrix \\( ksdjhqwe=\\left(voskgmpl\\right) \\) with \\( voskgmpl=1 \\) if \\( zdtrqfwu \\in A_{lsnkvhpe} \\) and \\( voskgmpl=0 \\) otherwise. Under this bijection the set \\( xunopqra \\) of triples satisfying\n\\[\nqzxwvtnp \\cup hjgrksla \\cup fzmbylqe=\\{1, \\ldots, 10\\} \\quad \\text { and } \\quad qzxwvtnp \\cap hjgrksla \\cap fzmbylqe=\\emptyset\n\\]\nmaps onto the set \\( ykrbsmte \\) of \\( 10 \\times 3 \\) matrices with 0,1 entries such that no row is (000) or (111). The number of possibilities for each row of such a matrix is \\( 2^{3}-2=6 \\), so \\( \\# ykrbsmte=6^{10} \\). Hence \\( \\# xunopqra=\\# ykrbsmte=2^{10} 3^{10} \\).\n\nReinterpretation. Equivalently, this problem asks for the number of ways of placing the numbers 1 through 10 in the Venn diagram of Figure 1, where no numbers are placed in the two regions marked with an \" \\( \\times \\) \"."
+    },
+    "kernel_variant": {
+      "question": "1. ENHANCED PROBLEM  \nLet \\Omega  = {1,2,\\ldots ,12}.  A 7-tuple (C_1,C_2,\\ldots ,C_7) of subsets of \\Omega  is called admissible when the following four conditions hold.  \n(i)  C_1\\cup C_2\\cup \\cdots \\cup C_7 = \\Omega   \n(ii) C_1\\cap C_2\\cap \\cdots \\cap C_7 = \\emptyset   \n(iii) every element of \\Omega  belongs to at least two of the seven sets  \n(iv) each of the seven sets has even size: |C_j|\\equiv 0 (mod 2) for j = 1,\\ldots ,7\n\nDetermine, with proof, the total number N of admissible 7-tuples and show that  \n\n  N = (119^{12} + 28\\cdot 3^{12} + 28\\cdot 5^{12} + 7^{12} + 70) / 2^7.  \n\n(Observe that the right-hand side is an integer.)  ",
+      "solution": "2. ENHANCED SOLUTION\n\nStep 1.  Encoding by incidence matrices  \nTo every ordered 7-tuple (C_1,\\ldots ,C_7) we attach its 12\\times 7 incidence matrix  \nM = (m_{ij})  with m_{ij} = 1  if i\\in C_j and 0 otherwise.  \nThe map ``tuple \\mapsto  matrix'' is a bijection.  \n\n* Conditions (i)-(iii) restrict the rows.  \n - (i) forbids the all-zero row;  \n - (ii) forbids the all-one row;  \n - (iii) forbids rows containing exactly one 1.  \n\n Consequently every row has Hamming weight 2,3,4,5 or 6.  The set  \n\n  S := { v\\in F_2^7 | 2\\leq wt(v)\\leq 6 }  \n\ncontains |S| = \\Sigma _{k=2}^{6} C(7,k) = 119 vectors.  \n\n* Condition (iv) is a column condition:  \n for each column j the sum of the 12 entries m_{1j}+\\cdots +m_{12j} is even,  \n i.e. the 12 row vectors v_1,\\ldots ,v_{12} add up to 0 in the vector space V = F_2^7:  \n\n  v_1+v_2+\\cdots +v_{12} = 0.                                          (1)  \n\nThus N equals the number of 12-term sequences in S whose sum is 0.  \n\nStep 2.  A character sum (Fourier) evaluation  \nWrite \\chi _\\lambda (v) = (-1)^{\\lambda \\cdot v} for \\lambda ,v\\in V and let  \n\n  \\sigma (\\lambda ) = \\Sigma _{v\\in S} \\chi _\\lambda (v)                            (2)  \n\nbe the Fourier transform of the characteristic function of S.  \nBy the standard ``root-of-unity filter'' (or orthogonality of characters),\n\n  N = 2^{-7} \\Sigma _{\\lambda \\in V} \\sigma (\\lambda )^{12}.                       (3)  \n\nStep 3.  Computing \\sigma (\\lambda )  \nThe value \\sigma (\\lambda ) depends only on r = wt(\\lambda ).  Put \\sigma _r := \\sigma (\\lambda ) for any \\lambda  of\nweight r (0\\leq r\\leq 7).  Because V splits into r coordinates in the support of \\lambda \nand 7-r outside the support, routine inclusion-exclusion gives\n\n  \\sigma _r = \\Sigma _{k=2}^{6} \\Sigma _{s=0}^{k} (-1)^s C(r,s) C(7-r,k-s).        (4)\n\nA quicker way is to observe that \\Sigma _{v\\in V}\\chi _\\lambda (v)=0 when \\lambda \\neq 0 and rewrite S as\nV minus the vectors of weight 0,1,7.  One obtains\n\n  \\sigma _r = -[ 1 + (7-2r) + (-1)^r ] = 2r - 8 - (-1)^r.            (5)\n\nHence  \n\n \\sigma _0 = 119, \\sigma _1 = \\sigma _2 = -5, \\sigma _3 = \\sigma _4 = -1, \\sigma _5 = \\sigma _6 = 3, \\sigma _7 = 7.  \n\nStep 4.  Feeding \\sigma _r into (3)  \nLet N_r = C(7,r) be the number of \\lambda  with wt(\\lambda )=r.  Then\n\n N = 2^{-7} [ N_0\\sigma _0^{12} + (N_1+N_2)(-5)^{12} + (N_3+N_4)(-1)^{12}  \n       + (N_5+N_6)3^{12} + N_7 7^{12} ].\n\nInsert the binomial coefficients:\n\n N = 2^{-7} [ 1\\cdot 119^{12} + 28\\cdot 5^{12} + 70\\cdot 1 + 28\\cdot 3^{12} + 1\\cdot 7^{12} ]  \n  = (119^{12} + 28\\cdot 5^{12} + 28\\cdot 3^{12} + 7^{12} + 70) / 2^{7}.   (6)\n\nThe numerator is even and in fact divisible by 2^7, so the quotient is an\ninteger, completing the enumeration.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.074756",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

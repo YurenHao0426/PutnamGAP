@@ -1,0 +1,145 @@
+{
+  "index": "1969-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-6. Let a sequence \\( \\left\\{x_{n}\\right\\} \\) be given, and let \\( y_{n}=x_{n-1}+2 x_{n}, n=2,3,4, \\cdots \\) Suppose that the sequence \\( \\left\\{y_{n}\\right\\} \\) converges. Prove that the sequence \\( \\left\\{x_{n}\\right\\} \\) also converges.",
+  "solution": "A-6 Let \\( \\bar{y}=\\lim _{n \\rightarrow \\infty} y_{n} \\) and set \\( \\bar{x}=\\bar{y} / 3 \\). We will show that \\( \\bar{x}=\\lim _{n \\rightarrow \\infty} x_{n} \\). For any \\( \\epsilon>0 \\) there is an \\( N \\) such that for all \\( n>N,\\left|y_{n}-\\bar{y}\\right|<\\epsilon / 2 \\).\n\\[\n\\begin{aligned}\n\\epsilon / 2>\\left|y_{n}-\\bar{y}\\right| & =\\left|x_{n-1}+2 x_{n}-3 \\bar{x}\\right|=\\left|2\\left(x_{n}-\\bar{x}\\right)+\\left(x_{n-1}-\\bar{x}\\right)\\right| \\\\\n& \\geqq 2\\left|x_{n}-\\bar{x}\\right|-\\left|x_{n-1}-\\bar{x}\\right| .\n\\end{aligned}\n\\]\n\nThis may be rewritten as \\( \\left|x_{n}-\\bar{x}\\right|<\\epsilon / 4+\\frac{1}{2}\\left|x_{n-1}-\\bar{x}\\right| \\), which can be iterated to give\n\\[\n\\left|x_{n+m}-\\bar{x}\\right|<\\epsilon / 4\\left(\\sum_{i=0}^{m} 2^{-i}\\right)+2^{-(m+1)}\\left|x_{n-1}-\\bar{x}\\right|<\\epsilon / 2+2^{-(m+1)}\\left|x_{n-1}-\\bar{x}\\right| .\n\\]\n\nBy taking \\( m \\) large enough, \\( 2^{-(m+1)}\\left|x_{n-1}-\\bar{x}\\right|<\\epsilon / 2 \\). Thus for all sufficiently large \\( k_{,}\\left|x_{k}-\\bar{x}\\right|<\\epsilon \\).",
+  "vars": [
+    "x_n",
+    "x_n-1",
+    "x_n+m",
+    "x_k",
+    "y_n",
+    "y_n+m"
+  ],
+  "params": [
+    "n",
+    "m",
+    "k",
+    "i",
+    "N",
+    "\\\\bar{y}",
+    "\\\\bar{x}",
+    "\\\\epsilon"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_n": "sequence",
+        "x_n-1": "previous",
+        "x_n+m": "advanced",
+        "x_k": "elementk",
+        "y_n": "aggregate",
+        "y_n+m": "aggregates",
+        "n": "indexvar",
+        "m": "offseter",
+        "k": "locindex",
+        "i": "summand",
+        "N": "bounder",
+        "\\bar{y}": "limitagg",
+        "\\bar{x}": "limitseq",
+        "\\epsilon": "tolerance"
+      },
+      "question": "A-6. Let a sequence \\( \\left\\{sequence\\right\\} \\) be given, and let \\( aggregate=previous+2 sequence, indexvar=2,3,4, \\cdots \\) Suppose that the sequence \\( \\left\\{aggregate\\right\\} \\) converges. Prove that the sequence \\( \\left\\{sequence\\right\\} \\) also converges.",
+      "solution": "A-6 Let \\( limitagg=\\lim _{indexvar \\rightarrow \\infty} aggregate \\) and set \\( limitseq=limitagg / 3 \\). We will show that \\( limitseq=\\lim _{indexvar \\rightarrow \\infty} sequence \\). For any \\( tolerance>0 \\) there is an \\( bounder \\) such that for all \\( indexvar>bounder,\\left|aggregate-limitagg\\right|<tolerance / 2 \\).\n\\[\n\\begin{aligned}\ntolerance / 2>\\left|aggregate-limitagg\\right| &=\\left|previous+2 sequence-3 limitseq\\right|=\\left|2\\left(sequence-limitseq\\right)+\\left(previous-limitseq\\right)\\right| \\\\\n& \\geqq 2\\left|sequence-limitseq\\right|-\\left|previous-limitseq\\right| .\n\\end{aligned}\n\\]\n\nThis may be rewritten as \\( \\left|sequence-limitseq\\right|<tolerance / 4+\\frac{1}{2}\\left|previous-limitseq\\right| \\), which can be iterated to give\n\\[\n\\left|advanced-limitseq\\right|<tolerance / 4\\left(\\sum_{summand=0}^{offseter} 2^{-summand}\\right)+2^{-(offseter+1)}\\left|previous-limitseq\\right|<tolerance / 2+2^{-(offseter+1)}\\left|previous-limitseq\\right| .\n\\]\n\nBy taking \\( offseter \\) large enough, \\( 2^{-(offseter+1)}\\left|previous-limitseq\\right|<tolerance / 2 \\). Thus for all sufficiently large \\( locindex_{,}\\left|elementk-limitseq\\right|<tolerance \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_n": "pineapples",
+        "x_n-1": "chandeliers",
+        "x_n+m": "rainclouds",
+        "x_k": "toothbrush",
+        "y_n": "marigolds",
+        "y_n+m": "skylights",
+        "n": "velocity",
+        "m": "longitude",
+        "k": "heartbeat",
+        "i": "adventure",
+        "N": "flashlight",
+        "\\bar{y}": "telescope",
+        "\\bar{x}": "binoculars",
+        "\\epsilon": "waterfall"
+      },
+      "question": "A-6. Let a sequence \\( \\left\\{pineapples\\right\\} \\) be given, and let \\( marigolds=chandeliers+2\\,pineapples, velocity=2,3,4, \\cdots \\). Suppose that the sequence \\( \\left\\{marigolds\\right\\} \\) converges. Prove that the sequence \\( \\left\\{pineapples\\right\\} \\) also converges.",
+      "solution": "A-6 Let \\( telescope=\\lim _{velocity \\rightarrow \\infty} marigolds \\) and set \\( binoculars=telescope / 3 \\). We will show that \\( binoculars=\\lim _{velocity \\rightarrow \\infty} pineapples \\). For any \\( waterfall>0 \\) there is an \\( flashlight \\) such that for all \\( velocity>flashlight,\\left|marigolds-telescope\\right|<waterfall / 2 \\).\n\\[\n\\begin{aligned}\nwaterfall / 2>\\left|marigolds-telescope\\right| & =\\left|chandeliers+2 pineapples-3 binoculars\\right|=\\left|2\\left(pineapples-binoculars\\right)+\\left(chandeliers-binoculars\\right)\\right| \\\\\n& \\geqq 2\\left|pineapples-binoculars\\right|-\\left|chandeliers-binoculars\\right| .\n\\end{aligned}\n\\]\n\nThis may be rewritten as \\( \\left|pineapples-binoculars\\right|<waterfall / 4+\\frac{1}{2}\\left|chandeliers-binoculars\\right| \\), which can be iterated to give\n\\[\n\\left|rainclouds-binoculars\\right|<waterfall / 4\\left(\\sum_{adventure=0}^{longitude} 2^{-adventure}\\right)+2^{-(longitude+1)}\\left|chandeliers-binoculars\\right|<waterfall / 2+2^{-(longitude+1)}\\left|chandeliers-binoculars\\right| .\n\\]\n\nBy taking \\( longitude \\) large enough, \\( 2^{-(longitude+1)}\\left|chandeliers-binoculars\\right|<waterfall / 2 \\). Thus for all sufficiently large heartbeat, \\( \\left|toothbrush-binoculars\\right|<waterfall \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_n": "fixedvalue",
+        "x_n-1": "futurevalue",
+        "x_n+m": "pastvalue",
+        "x_k": "settledvalue",
+        "y_n": "isolatedseq",
+        "y_n+m": "integratedseq",
+        "n": "limitless",
+        "m": "staticbound",
+        "k": "coreindex",
+        "i": "holistic",
+        "N": "startersize",
+        "\\bar{y}": "initialstate",
+        "\\bar{x}": "transientstate",
+        "\\epsilon": "certitudelvl"
+      },
+      "question": "A-6. Let a sequence \\( \\left\\{fixedvalue\\right\\} \\) be given, and let \\( isolatedseq=futurevalue+2 fixedvalue, limitless=2,3,4, \\cdots \\) Suppose that the sequence \\( \\left\\{isolatedseq\\right\\} \\) converges. Prove that the sequence \\( \\left\\{fixedvalue\\right\\} \\) also converges.",
+      "solution": "A-6 Let \\( initialstate=\\lim _{limitless \\rightarrow \\infty} isolatedseq \\) and set \\( transientstate=initialstate / 3 \\). We will show that \\( transientstate=\\lim _{limitless \\rightarrow \\infty} fixedvalue \\). For any \\( certitudelvl>0 \\) there is an \\( startersize \\) such that for all \\( limitless>startersize,\\left|isolatedseq-initialstate\\right|<certitudelvl / 2 \\).\n\\[\n\\begin{aligned}\ncertitudelvl / 2>\\left|isolatedseq-initialstate\\right| &=\\left|futurevalue+2 fixedvalue-3 transientstate\\right|=\\left|2\\left(fixedvalue-transientstate\\right)+\\left(futurevalue-transientstate\\right)\\right| \\\\\n& \\geqq 2\\left|fixedvalue-transientstate\\right|-\\left|futurevalue-transientstate\\right| .\n\\end{aligned}\n\\]\nThis may be rewritten as \\( \\left|fixedvalue-transientstate\\right|<certitudelvl / 4+\\frac{1}{2}\\left|futurevalue-transientstate\\right| \\), which can be iterated to give\n\\[\n\\left|pastvalue-transientstate\\right|<certitudelvl / 4\\left(\\sum_{holistic=0}^{staticbound} 2^{-holistic}\\right)+2^{-(staticbound+1)}\\left|futurevalue-transientstate\\right|<certitudelvl / 2+2^{-(staticbound+1)}\\left|futurevalue-transientstate\\right| .\n\\]\nBy taking \\( staticbound \\) large enough, \\( 2^{-(staticbound+1)}\\left|futurevalue-transientstate\\right|<certitudelvl / 2 \\). Thus for all sufficiently large \\( coreindex,\\left|settledvalue-transientstate\\right|<certitudelvl \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x_n": "qzxwvtnp",
+        "x_n-1": "hjgrksla",
+        "x_n+m": "rpldsvmq",
+        "x_k": "vcnjxqtr",
+        "y_n": "wjlmftqp",
+        "y_n+m": "zxfvbrmc",
+        "n": "rzmqknvb",
+        "m": "spqdfhkl",
+        "k": "bltrmwsq",
+        "i": "tgfbmwqa",
+        "N": "fskdlwpt",
+        "\\bar{y}": "\\bar{gnbhrcxa}",
+        "\\bar{x}": "\\bar{sxqplmrv}",
+        "\\epsilon": "uvwhjkdq"
+      },
+      "question": "A-6. Let a sequence \\( \\left\\{qzxwvtnp\\right\\} \\) be given, and let \\( wjlmftqp=hjgrksla+2 qzxwvtnp, rzmqknvb=2,3,4, \\cdots \\) Suppose that the sequence \\( \\left\\{wjlmftqp\\right\\} \\) converges. Prove that the sequence \\( \\left\\{qzxwvtnp\\right\\} \\) also converges.",
+      "solution": "A-6 Let \\( \\bar{gnbhrcxa}=\\lim _{rzmqknvb \\rightarrow \\infty} wjlmftqp \\) and set \\( \\bar{sxqplmrv}=\\bar{gnbhrcxa} / 3 \\). We will show that \\( \\bar{sxqplmrv}=\\lim _{rzmqknvb \\rightarrow \\infty} qzxwvtnp \\). For any \\( uvwhjkdq>0 \\) there is an \\( fskdlwpt \\) such that for all \\( rzmqknvb>fskdlwpt,\\left|wjlmftqp-\\bar{gnbhrcxa}\\right|<uvwhjkdq / 2 \\).\n\\[\n\\begin{aligned}\nuvwhjkdq / 2>\\left|wjlmftqp-\\bar{gnbhrcxa}\\right| & =\\left|hjgrksla+2 qzxwvtnp-3 \\bar{sxqplmrv}\\right|=\\left|2\\left(qzxwvtnp-\\bar{sxqplmrv}\\right)+\\left(hjgrksla-\\bar{sxqplmrv}\\right)\\right| \\\\\n& \\geqq 2\\left|qzxwvtnp-\\bar{sxqplmrv}\\right|-\\left|hjgrksla-\\bar{sxqplmrv}\\right| .\n\\end{aligned}\n\\]\n\nThis may be rewritten as \\( \\left|qzxwvtnp-\\bar{sxqplmrv}\\right|<uvwhjkdq / 4+\\frac{1}{2}\\left|hjgrksla-\\bar{sxqplmrv}\\right| \\), which can be iterated to give\n\\[\n\\left|rpldsvmq-\\bar{sxqplmrv}\\right|<uvwhjkdq / 4\\left(\\sum_{tgfbmwqa=0}^{spqdfhkl} 2^{-tgfbmwqa}\\right)+2^{-(spqdfhkl+1)}\\left|hjgrksla-\\bar{sxqplmrv}\\right|<uvwhjkdq / 2+2^{-(spqdfhkl+1)}\\left|hjgrksla-\\bar{sxqplmrv}\\right| .\n\\]\n\nBy taking \\( spqdfhkl \\) large enough, \\( 2^{-(spqdfhkl+1)}\\left|hjgrksla-\\bar{sxqplmrv}\\right|<uvwhjkdq / 2 \\). Thus for all sufficiently large \\( bltrmwsq,\\left|vcnjxqtr-\\bar{sxqplmrv}\\right|<uvwhjkdq \\)."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\{x_n\\}_{n\\ge 0}\\) be a real sequence and for every integer \\(n\\ge 2\\) define\n\\[\n          y_n = 2x_{n-1}+7x_n .\n\\]\nAssume that the sequence \\(\\{y_n\\}\\) converges.  Show that the sequence \\(\\{x_n\\}\\) must also converge.",
+      "solution": "Let L=lim_n\\to \\infty y_n and define x=L/9. We show lim_n\\to \\infty x_n=x.\n\n1. Since y_n\\to L, for a given \\varepsilon >0 choose N so large that for all n>N\n   |y_n-9x|<5\\varepsilon .\n\n2. For n>N we have\n   |7(x_n-x)+2(x_{n-1}-x)|=|y_n-9x|<5\\varepsilon .\n   Hence by the triangle inequality\n   7|x_n-x| \\leq  |7(x_n-x)+2(x_{n-1}-x)| + 2|x_{n-1}-x| < 5\\varepsilon  + 2|x_{n-1}-x|,\n   so\n   |x_n-x| < (5/7)\\varepsilon  + (2/7)|x_{n-1}-x|.\n\n3. Iterating this bound for k\\geq 1 gives, by a standard geometric-series argument,\n   |x_{N+k}-x|\n   < (5/7)\\varepsilon  \\sum _{i=0}^{k-1}(2/7)^i + (2/7)^k|x_N-x|\n   = \\varepsilon \\cdot (1-(2/7)^k) + (2/7)^k|x_N-x|.\n\n4. Since (2/7)^k\\to 0, choose k large enough that\n   (2/7)^k|x_N-x|<\\varepsilon .\n   Set K=N+k. Then for every n\\geq K we may write n=N+k' with k'\\geq k and obtain\n   |x_n-x| = |x_{N+k'}-x|\n   < \\varepsilon (1-(2/7)^{k'}) + (2/7)^{k'}|x_N-x|\n   \\leq  \\varepsilon  + \\varepsilon  =2\\varepsilon .\n\n5. Finally, replace \\varepsilon  by \\varepsilon /2. We conclude that for every \\varepsilon >0 there is K such that for all n\\geq K,\n   |x_n-x|<\\varepsilon .\n\nHence x_n\\to x=L/9, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Use the linear relation y_n = x_{n-1} + 2x_n to predict the candidate limit 𝑥̄ = lim x_n = (lim y_n)/(1+2).",
+          "Fix ε>0 and take N so that |y_n − ȳ| < ε/2 for n>N (convergence of {y_n}).",
+          "Rewrite |y_n − ȳ| = |2(x_n−𝑥̄) + (x_{n−1}−𝑥̄)| and apply the reverse triangle inequality to obtain |x_n−𝑥̄| < ε/4 + ½|x_{n−1}−𝑥̄|.",
+          "Iterate the recursive bound to get |x_{n+m}−𝑥̄| < ε/2 + 2^{−(m+1)}|x_{n−1}−𝑥̄|.",
+          "Let m→∞ to force the tail term below ε/2, proving |x_k−𝑥̄|<ε for all large k and hence convergence of {x_n}."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Coefficient of x_{n-1} in the definition y_n = ax_{n-1} + bx_n; any non-negative a that is strictly smaller than b still yields a contraction.",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Coefficient of x_n in y_n; needs to dominate the previous one (b>a) so that a/b<1 appears in the recursive inequality.",
+            "original": "2"
+          },
+          "slot3": {
+            "description": "Denominator used for the candidate limit 𝑥̄ = ȳ/(a+b); changes automatically with slot1 and slot2.",
+            "original": "3"
+          },
+          "slot4": {
+            "description": "The particular split of ε into ε/2 and ε/4; any constants c, d with 0<c<1 and d=c/2 will work in the argument.",
+            "original": "ε/2 and ε/4"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

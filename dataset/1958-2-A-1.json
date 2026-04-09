@@ -1,0 +1,123 @@
+{
+  "index": "1958-2-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Let \\( f(m, 1)=f(1, n)=1 \\) for \\( m \\geq 1, n \\geq 1 \\), and let \\( f(m, n)= \\) \\( f(m-1, n)+f(m, n-1)+f(m-1, n-1) \\) for \\( m>1 \\) and \\( n>1 \\). Also let\n\\[\nS(n)=\\sum_{a+b=n} f(a, b), \\quad a \\geq 1 \\text { and } b \\geq 1\n\\]\n\nProve that\n\\[\nS(n+2)=S(n)+2 S(n+1) \\quad \\text { for } n \\geq 2\n\\]",
+  "solution": "Solution. If we write the value of \\( f(m, n) \\) at the point \\( \\langle m, n\\rangle \\) in the plane and border the resulting array with zeros as in the diagram,\n\\begin{tabular}{|l|l|l|l|l|l|l|}\n\\hline 0 & 1 & & \\multicolumn{4}{|c|}{\\( f(m-1, n) \\rightarrow f(m, n) \\)} \\\\\n\\hline 0 & 1 & 7 & & \\( f(m \\) & \\( -1, n-1) \\) & \\begin{tabular}{l}\n\\( f(m \\). \\\\\n\\( n-1) \\)\n\\end{tabular} \\\\\n\\hline 0 & 1 & 5 & 13 & 25 & & \\\\\n\\hline & & & & & & \\\\\n\\hline 0 & 1 & 3 & 5 & 7 & & \\\\\n\\hline 0 & 1 & 1 & 1 & 1 & 1 & \\\\\n\\hline 0 & 0 & 0 & 0 & 0 & 0 & \\\\\n\\hline\n\\end{tabular}\nwe see that the recursion relation together with the given values for \\( f(1, n) \\) and \\( f(m, 1) \\) amount to the assertion that every non-zero entry in this array (except \\( f(1,1) \\) ) is the sum of the entry immediately to its left, the entry just below it, and the entry diagonally below it to the left.\n\nNow \\( S(n+2) \\) is the sum of the terms on the \\( (n+2) \\) nd diagonal, \\( x+y \\) \\( =n+2 \\), and it is clear from the diagram that each non-zero term on the \\( (n+1) \\) st diagonal enters this sum twice while each term on the \\( n \\)th diagonal enters once; hence, \\( S(n+2)=2 S(n+1)+S(n) \\).\n\nThis argument can be carried out formally as follows:\n\\[\n\\begin{aligned}\nS(n+2)= & \\sum_{i=1}^{n+1} f(n+2-j, j) \\\\\n= & f(n+1,1)+\\sum_{i=2}^{n}\\{f(n+1-j, j)+f(n+2-j, j-1) \\\\\n& +f(n+1-j, j-1)\\}+f(1, n+1) \\\\\n= & \\left\\{f(n, 1)+\\sum_{i=2}^{n} f(n+1-j, j)\\right\\} \\\\\n+ & \\left\\{\\sum_{k=1}^{n-1} f(n+1-k, k)+f(1, n)\\right\\}+\\sum_{k=1}^{n-1} f(n-k, k) \\\\\n= & S(n+1)+S(n+1)+S(n)\n\\end{aligned}\n\\]\n\nIn the third step we set \\( j=k+1 \\) in two of the sums and used the facts that \\( f(n+1,1)=f(n, 1) \\) and \\( f(1, n+1)=f(1, n) \\).\n\nRemark. This recursion is studied in greater detail by R. G. Stanton and D. D. Cowan, \"Note on a 'Square' Functional Equation,\" SIAM Review, vol. 12, no. 2 (April 1970), pages 277-279. This problem occurs as Lemma 4 in the given paper.",
+  "vars": [
+    "m",
+    "n",
+    "a",
+    "b",
+    "i",
+    "j",
+    "k",
+    "x",
+    "y"
+  ],
+  "params": [
+    "f",
+    "S"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "m": "rowindex",
+        "n": "colindex",
+        "a": "sumterm",
+        "b": "complement",
+        "i": "iterator",
+        "j": "subindex",
+        "k": "auxindex",
+        "x": "horizco",
+        "y": "vertico",
+        "f": "basefunc",
+        "S": "summation"
+      },
+      "question": "1. Let \\( basefunc(rowindex, 1)=basefunc(1, colindex)=1 \\) for \\( rowindex \\geq 1, colindex \\geq 1 \\), and let \\( basefunc(rowindex, colindex)= basefunc(rowindex-1, colindex)+basefunc(rowindex, colindex-1)+basefunc(rowindex-1, colindex-1) \\) for \\( rowindex>1 \\) and \\( colindex>1 \\). Also let\n\\[\nsummation(colindex)=\\sum_{sumterm+complement=colindex} basefunc(sumterm, complement), \\quad sumterm \\geq 1 \\text { and } complement \\geq 1\n\\]\n\nProve that\n\\[\nsummation(colindex+2)=summation(colindex)+2\\,summation(colindex+1) \\quad \\text { for } colindex \\geq 2\n\\]",
+      "solution": "Solution. If we write the value of \\( basefunc(rowindex, colindex) \\) at the point \\( \\langle rowindex, colindex\\rangle \\) in the plane and border the resulting array with zeros as in the diagram,\n\\begin{tabular}{|l|l|l|l|l|l|l|}\n\\hline 0 & 1 & & \\multicolumn{4}{|c|}{\\( basefunc(rowindex-1, colindex) \\rightarrow basefunc(rowindex, colindex) \\)} \\\\\n\\hline 0 & 1 & 7 & & \\( basefunc(rowindex \\) & \\( -1, colindex-1) \\) & \\begin{tabular}{l}\n\\( basefunc(rowindex \\). \\\\\n\\( colindex-1) \\)\n\\end{tabular} \\\\\n\\hline 0 & 1 & 5 & 13 & 25 & & \\\\\n\\hline & & & & & & \\\\\n\\hline 0 & 1 & 3 & 5 & 7 & & \\\\\n\\hline 0 & 1 & 1 & 1 & 1 & 1 & \\\\\n\\hline 0 & 0 & 0 & 0 & 0 & 0 & \\\\\n\\hline\n\\end{tabular}\nwe see that the recursion relation together with the given values for \\( basefunc(1, colindex) \\) and \\( basefunc(rowindex, 1) \\) amount to the assertion that every non-zero entry in this array (except \\( basefunc(1,1) \\) ) is the sum of the entry immediately to its left, the entry just below it, and the entry diagonally below it to the left.\n\nNow \\( summation(colindex+2) \\) is the sum of the terms on the \\( (colindex+2) \\) nd diagonal, \\( horizco+vertico = colindex+2 \\), and it is clear from the diagram that each non-zero term on the \\( (colindex+1) \\) st diagonal enters this sum twice while each term on the \\( colindex \\)th diagonal enters once; hence, \\( summation(colindex+2)=2\\,summation(colindex+1)+summation(colindex) \\).\n\nThis argument can be carried out formally as follows:\n\\[\n\\begin{aligned}\nsummation(colindex+2)= & \\sum_{iterator=1}^{colindex+1} basefunc(colindex+2-subindex, subindex) \\\\\n= & basefunc(colindex+1,1)+\\sum_{iterator=2}^{colindex}\\{basefunc(colindex+1-subindex, subindex)+basefunc(colindex+2-subindex, subindex-1) \\\\\n& +basefunc(colindex+1-subindex, subindex-1)\\}+basefunc(1, colindex+1) \\\\\n= & \\left\\{basefunc(colindex, 1)+\\sum_{iterator=2}^{colindex} basefunc(colindex+1-subindex, subindex)\\right\\} \\\\\n+ & \\left\\{\\sum_{auxindex=1}^{colindex-1} basefunc(colindex+1-auxindex, auxindex)+basefunc(1, colindex)\\right\\}+\\sum_{auxindex=1}^{colindex-1} basefunc(colindex-auxindex, auxindex) \\\\\n= & summation(colindex+1)+summation(colindex+1)+summation(colindex)\n\\end{aligned}\n\\]\n\nIn the third step we set \\( subindex=auxindex+1 \\) in two of the sums and used the facts that \\( basefunc(colindex+1,1)=basefunc(colindex, 1) \\) and \\( basefunc(1, colindex+1)=basefunc(1, colindex) \\).\n\nRemark. This recursion is studied in greater detail by R. G. Stanton and D. D. Cowan, \"Note on a 'Square' Functional Equation,\" SIAM Review, vol. 12, no. 2 (April 1970), pages 277-279. This problem occurs as Lemma 4 in the given paper."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "m": "pinecone",
+        "n": "thunderbolt",
+        "a": "dinosaur",
+        "b": "avalanche",
+        "i": "i",
+        "j": "unicorns",
+        "k": "jellyfish",
+        "x": "tornadoes",
+        "y": "sandstorm",
+        "f": "blueprint",
+        "S": "lighthouse"
+      },
+      "question": "1. Let \\( blueprint(pinecone, 1)=blueprint(1, thunderbolt)=1 \\) for \\( pinecone \\geq 1, thunderbolt \\geq 1 \\), and let \\( blueprint(pinecone, thunderbolt)= \\) \\( blueprint(pinecone-1, thunderbolt)+blueprint(pinecone, thunderbolt-1)+blueprint(pinecone-1, thunderbolt-1) \\) for \\( pinecone>1 \\) and \\( thunderbolt>1 \\). Also let\n\\[\nlighthouse(thunderbolt)=\\sum_{dinosaur+avalanche=thunderbolt} blueprint(dinosaur, avalanche), \\quad dinosaur \\geq 1 \\text { and } avalanche \\geq 1\n\\]\n\nProve that\n\\[\nlighthouse(thunderbolt+2)=lighthouse(thunderbolt)+2\\, lighthouse(thunderbolt+1) \\quad \\text { for } thunderbolt \\geq 2\n\\]",
+      "solution": "Solution. If we write the value of \\( blueprint(pinecone, thunderbolt) \\) at the point \\( \\langle pinecone, thunderbolt\\rangle \\) in the plane and border the resulting array with zeros as in the diagram,\n\\begin{tabular}{|l|l|l|l|l|l|l|}\n\\hline 0 & 1 & & \\multicolumn{4}{|c|}{\\( blueprint(pinecone-1, thunderbolt) \\rightarrow blueprint(pinecone, thunderbolt) \\)} \\\\\n\\hline 0 & 1 & 7 & & \\( blueprint(pinecone \\) & \\( -1, thunderbolt-1) \\) & \\begin{tabular}{l}\n\\( blueprint(pinecone \\). \\\\\n\\( thunderbolt-1) \\)\n\\end{tabular} \\\\\n\\hline 0 & 1 & 5 & 13 & 25 & & \\\\\n\\hline & & & & & & \\\\\n\\hline 0 & 1 & 3 & 5 & 7 & & \\\\\n\\hline 0 & 1 & 1 & 1 & 1 & 1 & \\\\\n\\hline 0 & 0 & 0 & 0 & 0 & 0 & \\\\\n\\hline\n\\end{tabular}\nwe see that the recursion relation together with the given values for \\( blueprint(1, thunderbolt) \\) and \\( blueprint(pinecone, 1) \\) amount to the assertion that every non-zero entry in this array (except \\( blueprint(1,1) \\) ) is the sum of the entry immediately to its left, the entry just below it, and the entry diagonally below it to the left.\n\nNow \\( lighthouse(thunderbolt+2) \\) is the sum of the terms on the \\( (thunderbolt+2) \\)nd diagonal, \\( tornadoes+sandstorm \\)\n\\( =thunderbolt+2 \\), and it is clear from the diagram that each non-zero term on the \\( (thunderbolt+1) \\)st diagonal enters this sum twice while each term on the \\( thunderbolt \\)th diagonal enters once; hence, \\( lighthouse(thunderbolt+2)=2\\,lighthouse(thunderbolt+1)+lighthouse(thunderbolt) \\).\n\nThis argument can be carried out formally as follows:\n\\[\n\\begin{aligned}\nlighthouse(thunderbolt+2)= & \\sum_{i=1}^{thunderbolt+1} blueprint(thunderbolt+2-unicorns, unicorns) \\\\\n= & blueprint(thunderbolt+1,1)+\\sum_{i=2}^{thunderbolt}\\{blueprint(thunderbolt+1-unicorns, unicorns)+blueprint(thunderbolt+2-unicorns, unicorns-1) \\\\\n& +blueprint(thunderbolt+1-unicorns, unicorns-1)\\}+blueprint(1, thunderbolt+1) \\\\\n= & \\left\\{blueprint(thunderbolt, 1)+\\sum_{i=2}^{thunderbolt} blueprint(thunderbolt+1-unicorns, unicorns)\\right\\} \\\\\n+ & \\left\\{\\sum_{jellyfish=1}^{thunderbolt-1} blueprint(thunderbolt+1-jellyfish, jellyfish)+blueprint(1, thunderbolt)\\right\\}+\\sum_{jellyfish=1}^{thunderbolt-1} blueprint(thunderbolt-jellyfish, jellyfish) \\\\\n= & lighthouse(thunderbolt+1)+lighthouse(thunderbolt+1)+lighthouse(thunderbolt)\n\\end{aligned}\n\\]\n\nIn the third step we set \\( unicorns=jellyfish+1 \\) in two of the sums and used the facts that \\( blueprint(thunderbolt+1,1)=blueprint(thunderbolt, 1) \\) and \\( blueprint(1, thunderbolt+1)=blueprint(1, thunderbolt) \\).\n\nRemark. This recursion is studied in greater detail by R. G. Stanton and D. D. Cowan, \"Note on a 'Square' Functional Equation,\" SIAM Review, vol. 12, no. 2 (April 1970), pages 277-279. This problem occurs as Lemma 4 in the given paper."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "m": "constantone",
+        "n": "constanttwo",
+        "a": "constantthr",
+        "b": "constantfour",
+        "i": "constantfive",
+        "j": "constantsix",
+        "k": "constantseven",
+        "x": "constanteight",
+        "y": "constantnine",
+        "f": "staticfunc",
+        "S": "differencer"
+      },
+      "question": "1. Let \\( staticfunc(constantone, 1)=staticfunc(1, constanttwo)=1 \\) for \\( constantone \\geq 1, constanttwo \\geq 1 \\), and let \\( staticfunc(constantone, constanttwo)= \\) \\( staticfunc(constantone-1, constanttwo)+staticfunc(constantone, constanttwo-1)+staticfunc(constantone-1, constanttwo-1) \\) for \\( constantone>1 \\) and \\( constanttwo>1 \\). Also let\n\\[\ndifferencer(constanttwo)=\\sum_{constantthr+constantfour=constanttwo} staticfunc(constantthr, constantfour), \\quad constantthr \\geq 1 \\text { and } constantfour \\geq 1\n\\]\n\nProve that\n\\[\ndifferencer(constanttwo+2)=differencer(constanttwo)+2 differencer(constanttwo+1) \\quad \\text { for } constanttwo \\geq 2\n\\]",
+      "solution": "Solution. If we write the value of \\( staticfunc(constantone, constanttwo) \\) at the point \\( \\langle constantone, constanttwo\\rangle \\) in the plane and border the resulting array with zeros as in the diagram,\n\\begin{tabular}{|l|l|l|l|l|l|l|}\n\\hline 0 & 1 & & \\multicolumn{4}{|c|}{\\( staticfunc(constantone-1, constanttwo) \\rightarrow staticfunc(constantone, constanttwo) \\)} \\\\\n\\hline 0 & 1 & 7 & & \\( staticfunc(constantone \\) & \\( -1, constanttwo-1) \\) & \\begin{tabular}{l}\n\\( staticfunc(constantone \\). \\\\\n\\( constanttwo-1) \\)\n\\end{tabular} \\\\\n\\hline 0 & 1 & 5 & 13 & 25 & & \\\\\n\\hline & & & & & & \\\\\n\\hline 0 & 1 & 3 & 5 & 7 & & \\\\\n\\hline 0 & 1 & 1 & 1 & 1 & 1 & \\\\\n\\hline 0 & 0 & 0 & 0 & 0 & 0 & \\\\\n\\hline\n\\end{tabular}\nwe see that the recursion relation together with the given values for \\( staticfunc(1, constanttwo) \\) and \\( staticfunc(constantone, 1) \\) amount to the assertion that every non-zero entry in this array (except \\( staticfunc(1,1) \\) ) is the sum of the entry immediately to its left, the entry just below it, and the entry diagonally below it to the left.\n\nNow \\( differencer(constanttwo+2) \\) is the sum of the terms on the \\( (constanttwo+2) \\) nd diagonal, \\( constanteight+constantnine \\) \\( =constanttwo+2 \\), and it is clear from the diagram that each non-zero term on the \\( (constanttwo+1) \\) st diagonal enters this sum twice while each term on the \\( constanttwo \\)th diagonal enters once; hence, \\( differencer(constanttwo+2)=2\\,differencer(constanttwo+1)+differencer(constanttwo) \\).\n\nThis argument can be carried out formally as follows:\n\\[\n\\begin{aligned}\ndifferencer(constanttwo+2)= & \\sum_{constantfive=1}^{constanttwo+1} staticfunc(constanttwo+2-constantsix, constantsix) \\\\\n= & staticfunc(constanttwo+1,1)+\\sum_{constantfive=2}^{constanttwo}\\{staticfunc(constanttwo+1-constantsix, constantsix)+staticfunc(constanttwo+2-constantsix, constantsix-1) \\\\\n& +staticfunc(constanttwo+1-constantsix, constantsix-1)\\}+staticfunc(1, constanttwo+1) \\\\\n= & \\left\\{staticfunc(constanttwo, 1)+\\sum_{constantfive=2}^{constanttwo} staticfunc(constanttwo+1-constantsix, constantsix)\\right\\} \\\\\n+ & \\left\\{\\sum_{constantseven=1}^{constanttwo-1} staticfunc(constanttwo+1-constantseven, constantseven)+staticfunc(1, constanttwo)\\right\\}+\\sum_{constantseven=1}^{constanttwo-1} staticfunc(constanttwo-constantseven, constantseven) \\\\\n= & differencer(constanttwo+1)+differencer(constanttwo+1)+differencer(constanttwo)\n\\end{aligned}\n\\]\n\nIn the third step we set \\( constantsix=constantseven+1 \\) in two of the sums and used the facts that \\( staticfunc(constanttwo+1,1)=staticfunc(constanttwo, 1) \\) and \\( staticfunc(1, constanttwo+1)=staticfunc(1, constanttwo) \\).\n\nRemark. This recursion is studied in greater detail by R. G. Stanton and D. D. Cowan, \"Note on a 'Square' Functional Equation,\" SIAM Review, vol. 12, no. 2 (April 1970), pages 277-279. This problem occurs as Lemma 4 in the given paper."
+    },
+    "garbled_string": {
+      "map": {
+        "m": "qzxwvtnp",
+        "n": "hjgrksla",
+        "a": "vlmnyqrs",
+        "b": "tcdkufpe",
+        "i": "sowrtbmk",
+        "j": "pfkzleqh",
+        "k": "dyrpwmse",
+        "x": "agbcsnmd",
+        "y": "zlhvkrue",
+        "f": "xowbeltr",
+        "S": "udftqzni"
+      },
+      "question": "1. Let \\( xowbeltr(qzxwvtnp, 1)=xowbeltr(1, hjgrksla)=1 \\) for \\( qzxwvtnp \\geq 1, hjgrksla \\geq 1 \\), and let \\( xowbeltr(qzxwvtnp, hjgrksla)= \\) \\( xowbeltr(qzxwvtnp-1, hjgrksla)+xowbeltr(qzxwvtnp, hjgrksla-1)+xowbeltr(qzxwvtnp-1, hjgrksla-1) \\) for \\( qzxwvtnp>1 \\) and \\( hjgrksla>1 \\). Also let\n\\[\nudftqzni(hjgrksla)=\\sum_{vlmnyqrs+tcdkufpe=hjgrksla} xowbeltr(vlmnyqrs, tcdkufpe), \\quad vlmnyqrs \\geq 1 \\text { and } tcdkufpe \\geq 1\n\\]\n\nProve that\n\\[\nudftqzni(hjgrksla+2)=udftqzni(hjgrksla)+2 \\, udftqzni(hjgrksla+1) \\quad \\text { for } hjgrksla \\geq 2\n\\]",
+      "solution": "Solution. If we write the value of \\( xowbeltr(qzxwvtnp, hjgrksla) \\) at the point \\( \\langle qzxwvtnp, hjgrksla\\rangle \\) in the plane and border the resulting array with zeros as in the diagram,\n\\begin{tabular}{|l|l|l|l|l|l|l|}\n\\hline 0 & 1 & & \\multicolumn{4}{|c|}{\\( xowbeltr(qzxwvtnp-1, hjgrksla) \\rightarrow xowbeltr(qzxwvtnp, hjgrksla) \\)} \\\\\n\\hline 0 & 1 & 7 & & \\( xowbeltr(qzxwvtnp \\) & \\( -1, hjgrksla-1) \\) & \\begin{tabular}{l}\n\\( xowbeltr(qzxwvtnp \\). \\\\\n\\( hjgrksla-1) \\)\n\\end{tabular} \\\\\n\\hline 0 & 1 & 5 & 13 & 25 & & \\\\\n\\hline & & & & & & \\\\\n\\hline 0 & 1 & 3 & 5 & 7 & & \\\\\n\\hline 0 & 1 & 1 & 1 & 1 & 1 & \\\\\n\\hline 0 & 0 & 0 & 0 & 0 & 0 & \\\\\n\\hline\n\\end{tabular}\nwe see that the recursion relation together with the given values for \\( xowbeltr(1, hjgrksla) \\) and \\( xowbeltr(qzxwvtnp, 1) \\) amount to the assertion that every non-zero entry in this array (except \\( xowbeltr(1,1) \\) ) is the sum of the entry immediately to its left, the entry just below it, and the entry diagonally below it to the left.\n\nNow \\( udftqzni(hjgrksla+2) \\) is the sum of the terms on the \\( (hjgrksla+2) \\) nd diagonal, \\( agbcsnmd+zlhvkrue =hjgrksla+2 \\), and it is clear from the diagram that each non-zero term on the \\( (hjgrksla+1) \\) st diagonal enters this sum twice while each term on the \\( hjgrksla \\)th diagonal enters once; hence, \\( udftqzni(hjgrksla+2)=2 \\, udftqzni(hjgrksla+1)+udftqzni(hjgrksla) \\).\n\nThis argument can be carried out formally as follows:\n\\[\n\\begin{aligned}\nudftqzni(hjgrksla+2)= & \\sum_{sowrtbmk=1}^{hjgrksla+1} xowbeltr(hjgrksla+2-pfkzleqh, pfkzleqh) \\\\\n= & xowbeltr(hjgrksla+1,1)+\\sum_{sowrtbmk=2}^{hjgrksla}\\{xowbeltr(hjgrksla+1-pfkzleqh, pfkzleqh)+xowbeltr(hjgrksla+2-pfkzleqh, pfkzleqh-1) \\\\\n& +xowbeltr(hjgrksla+1-pfkzleqh, pfkzleqh-1)\\}+xowbeltr(1, hjgrksla+1) \\\\\n= & \\left\\{xowbeltr(hjgrksla, 1)+\\sum_{sowrtbmk=2}^{hjgrksla} xowbeltr(hjgrksla+1-pfkzleqh, pfkzleqh)\\right\\} \\\\\n+ & \\left\\{\\sum_{dyrpwmse=1}^{hjgrksla-1} xowbeltr(hjgrksla+1-dyrpwmse, dyrpwmse)+xowbeltr(1, hjgrksla)\\right\\}+\\sum_{dyrpwmse=1}^{hjgrksla-1} xowbeltr(hjgrksla-dyrpwmse, dyrpwmse) \\\\\n= & udftqzni(hjgrksla+1)+udftqzni(hjgrksla+1)+udftqzni(hjgrksla)\n\\end{aligned}\n\\]\n\nIn the third step we set \\( pfkzleqh=dyrpwmse+1 \\) in two of the sums and used the facts that \\( xowbeltr(hjgrksla+1,1)=xowbeltr(hjgrksla, 1) \\) and \\( xowbeltr(1, hjgrksla+1)=xowbeltr(1, hjgrksla) \\).\n\nRemark. This recursion is studied in greater detail by R. G. Stanton and D. D. Cowan, \"Note on a 'Square' Functional Equation,\" SIAM Review, vol. 12, no. 2 (April 1970), pages 277-279. This problem occurs as Lemma 4 in the given paper."
+    },
+    "kernel_variant": {
+      "question": "Let a function g: \\mathbb{Z}_{>0} \\times  \\mathbb{Z}_{>0} \\to  \\mathbb{R} be defined by the boundary values\n  g(m,1) = g(1,n) = 5      (m \\geq  1, n \\geq  1)\nand the interior recursion\n  g(m,n) = g(m-1,n) + g(m,n-1) + g(m-1,n-1)      (m>1, n>1).\nFor every integer k \\geq  1 put\n  T(k) = \\sum _{\\substack{a+b = k\\\\ a,b \\geq  1}} g(a,b).\n(The sum is empty when k = 1, so T(1) = 0.)\nProve that the diagonal sums satisfy the recurrence relation\n  T(k+2) = 2 T(k+1) + T(k)      for all k \\geq  1.",
+      "solution": "Step 1 - Extending g with a zero border.\nIntroduce the auxiliary values\n      g(0,n) = g(m,0) = 0   (m,n \\geq  0).\nWith this convention the relation\n      g(m,n) = g(m-1,n) + g(m,n-1) + g(m-1,n-1)            (1)\nnow holds for every pair (m,n) with m,n \\geq  1 except for the single point (1,1).  Indeed:\n* If m = 1 and n > 1, the right-hand side is 0 + 5 + 0 = 5 = g(1,n).\n* If n = 1 and m > 1, it is 5 + 0 + 0 = 5 = g(m,1).\n* If m,n > 1, (1) is exactly the given interior rule.\n(The case m = n = 1 gives 0 \\neq  5, so (1) is not claimed there.)\n\nStep 2 - Antidiagonal notation.\nFor r \\geq  1 define\n      D_r = { (a,b) \\in  \\mathbb{Z}_{>0}^2 : a + b = r },\n      T(r) = \\sum _{(a,b)\\in D_r} g(a,b).\nNote that D_1 = \\emptyset , hence T(1) = 0 as required.\n\nStep 3 - Summing the recursion along D_{k+2}.\nFix k \\geq  1.  Since every point of D_{k+2} satisfies a+b = k+2 \\geq  3, it is different from (1,1); therefore formula (1) is valid for all points of D_{k+2}.  Summing (1) over that diagonal yields\n      T(k+2) = \\sum _{a+b=k+2} g(a,b)\n             = \\sum _{a+b=k+2} g(a-1,b)   +   \\sum _{a+b=k+2} g(a,b-1)\n               + \\sum _{a+b=k+2} g(a-1,b-1).          (2)\n\nStep 4 - Re-indexing the three sums.\n* First sum: put u = a-1, v = b.  Then u+v = k+1 and v \\geq  1.  When u = 0 the term is g(0,v)=0, so only u \\geq  1 contributes.  Thus the sum equals T(k+1).\n\n* Second sum: put u = a, v = b-1.  Again u+v = k+1 with u \\geq  1, and possible v = 0 gives g(u,0)=0.  Hence this sum is another T(k+1).\n\n* Third sum: put u = a-1, v = b-1.  Then u+v = k with u,v \\geq  0.  Terms with u = 0 or v = 0 vanish, so the sum equals T(k).\n\nSubstituting these evaluations into (2) gives\n      T(k+2) = T(k+1) + T(k+1) + T(k) = 2 T(k+1) + T(k)\nfor every k \\geq  1.\n\nStep 5 - Initial values and conclusion.\nBecause T(1)=0 and T(2)=g(1,1)=5, the recurrence determines all further values (for instance T(3)=g(1,2)+g(2,1)=10).  The identity T(k+2)=2T(k+1)+T(k) is therefore proved.",
+      "_meta": {
+        "core_steps": [
+          "View the values f(m,n) as entries of an infinite array bordered by constant edge–values.",
+          "Note that the given recursion makes every interior entry the sum of its left, lower and lower-left neighbours.",
+          "Realise that S(k) is precisely the sum of the entries lying on the diagonal m+n = k.",
+          "Apply the recursion to every entry of the (n+2)-diagonal; each term of the (n+1)-diagonal is created twice and each term of the n-diagonal once.",
+          "Collect coefficients to obtain S(n+2)=2·S(n+1)+S(n)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Common constant prescribed on the two coordinate axes (the ‘boundary value’  for f(m,1) and f(1,n)).  Because all later steps are linear, replacing 1 by any common constant merely scales every f–value and every S(k) by that factor, leaving the final relation unchanged.",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "The lower index from which the identity is asserted; any starting index for which the three involved diagonals exist (e.g. n≥1 instead of n≥2) works equally well.",
+            "original": "n ≥ 2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

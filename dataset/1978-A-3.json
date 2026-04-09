@@ -1,0 +1,99 @@
+{
+  "index": "1978-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-3\nLet \\( p(x)=2+4 x+3 x^{2}+5 x^{3}+3 x^{4}+4 x^{5}+2 x^{6} \\). For \\( k \\) with \\( 0<k<5 \\), define\n\\[\nI_{k}=\\int_{0}^{\\infty} \\frac{x^{k}}{p(x)} d x\n\\]\n\nFor which \\( k \\) is \\( I_{k} \\) smallest?",
+  "solution": "A-3.\nSince the integral converges for \\( -1<k<5 \\), one can consider \\( I_{k} \\) to be defined on this open interval. Letting \\( x=1 / t \\), one finds that\n\\[\nI_{k}=\\int_{\\infty}^{0} \\frac{t^{-k}}{t^{-6} p(t)}\\left(\\frac{-d t}{t^{2}}\\right)=\\int_{0}^{\\infty} \\frac{t^{4-k} d t}{p(t)}=I_{4-k}\n\\]\n\nThen\n\\[\nI_{k}=\\left(I_{k}+I_{4-k}\\right) / 2=\\int_{0}^{\\infty} \\frac{\\left[\\left(x^{k}+x^{4-k}\\right) / 2\\right] d x}{p(x)} \\geqslant \\int_{0}^{\\infty} \\frac{x^{2} d x}{p(x)}=I_{2}\n\\]\nsince \\( \\left(x^{k}+x^{4-k}\\right) / 2 \\geqslant \\sqrt{x^{k} \\cdot x^{4-k}}=x^{2} \\) by the Arithmetic Mean-Geometric Mean Inequality. Thus \\( I_{k} \\) is smallest for \\( k=2 \\).",
+  "vars": [
+    "x",
+    "t"
+  ],
+  "params": [
+    "k",
+    "p",
+    "I_k",
+    "I_4-k",
+    "I_2"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variate",
+        "t": "auxvar",
+        "k": "exponent",
+        "p": "polynomf",
+        "I_k": "integralexp",
+        "I_4-k": "integralcmp",
+        "I_2": "integralref"
+      },
+      "question": "Problem A-3\nLet \\( polynomf(variate)=2+4 variate+3 variate^{2}+5 variate^{3}+3 variate^{4}+4 variate^{5}+2 variate^{6} \\). For \\( exponent \\) with \\( 0<exponent<5 \\), define\n\\[\nintegralexp=\\int_{0}^{\\infty} \\frac{variate^{exponent}}{polynomf(variate)} d variate\n\\]\n\nFor which \\( exponent \\) is \\( integralexp \\) smallest?",
+      "solution": "A-3.\nSince the integral converges for \\( -1<exponent<5 \\), one can consider \\( integralexp \\) to be defined on this open interval. Letting \\( variate=1 / auxvar \\), one finds that\n\\[\nintegralexp=\\int_{\\infty}^{0} \\frac{auxvar^{-exponent}}{auxvar^{-6} polynomf(auxvar)}\\left(\\frac{-d auxvar}{auxvar^{2}}\\right)=\\int_{0}^{\\infty} \\frac{auxvar^{4-exponent} d auxvar}{polynomf(auxvar)}=integralcmp\n\\]\n\nThen\n\\[\nintegralexp=\\left(integralexp+integralcmp\\right) / 2=\\int_{0}^{\\infty} \\frac{\\left[\\left(variate^{exponent}+variate^{4-exponent}\\right) / 2\\right] d variate}{polynomf(variate)} \\geqslant \\int_{0}^{\\infty} \\frac{variate^{2} d variate}{polynomf(variate)}=integralref\n\\]\nsince \\( \\left(variate^{exponent}+variate^{4-exponent}\\right) / 2 \\geqslant \\sqrt{variate^{exponent} \\cdot variate^{4-exponent}}=variate^{2} \\) by the Arithmetic Mean-Geometric Mean Inequality. Thus \\( integralexp \\) is smallest for \\( exponent=2 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandwich",
+        "t": "playhouse",
+        "k": "pineapple",
+        "p": "horseshoe",
+        "I_k": "tangerine",
+        "I_4-k": "blueberry",
+        "I_2": "raspberry"
+      },
+      "question": "Problem A-3\nLet \\( horseshoe(sandwich)=2+4 sandwich+3 sandwich^{2}+5 sandwich^{3}+3 sandwich^{4}+4 sandwich^{5}+2 sandwich^{6} \\). For \\( pineapple \\) with \\( 0<pineapple<5 \\), define\n\\[\ntangerine=\\int_{0}^{\\infty} \\frac{sandwich^{pineapple}}{horseshoe(sandwich)} d sandwich\n\\]\n\nFor which \\( pineapple \\) is \\( tangerine \\) smallest?",
+      "solution": "A-3.\nSince the integral converges for \\( -1<pineapple<5 \\), one can consider \\( tangerine \\) to be defined on this open interval. Letting \\( sandwich=1 / playhouse \\), one finds that\n\\[\ntangerine=\\int_{\\infty}^{0} \\frac{playhouse^{-pineapple}}{playhouse^{-6} horseshoe(playhouse)}\\left(\\frac{-d playhouse}{playhouse^{2}}\\right)=\\int_{0}^{\\infty} \\frac{playhouse^{4-pineapple} d playhouse}{horseshoe(playhouse)}=blueberry\n\\]\nThen\n\\[\ntangerine=\\left(tangerine+blueberry\\right) / 2=\\int_{0}^{\\infty} \\frac{\\left[\\left(sandwich^{pineapple}+sandwich^{4-pineapple}\\right) / 2\\right] d sandwich}{horseshoe(sandwich)} \\geqslant \\int_{0}^{\\infty} \\frac{sandwich^{2} d sandwich}{horseshoe(sandwich)}=raspberry\n\\]\nsince \\( \\left(sandwich^{pineapple}+sandwich^{4-pineapple}\\right) / 2 \\geqslant \\sqrt{sandwich^{pineapple} \\cdot sandwich^{4-pineapple}}=sandwich^{2} \\) by the Arithmetic Mean-Geometric Mean Inequality. Thus \\( tangerine \\) is smallest for \\( pineapple=2 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "t": "timeless",
+        "k": "unchanged",
+        "p": "constantfn",
+        "I_k": "sumdiscrete",
+        "I_4-k": "summirror",
+        "I_2": "sumcenter"
+      },
+      "question": "Problem A-3\nLet \\( constantfn(constantval)=2+4 constantval+3 constantval^{2}+5 constantval^{3}+3 constantval^{4}+4 constantval^{5}+2 constantval^{6} \\). For \\( unchanged \\) with \\( 0<unchanged<5 \\), define\n\\[\nsumdiscrete=\\int_{0}^{\\infty} \\frac{constantval^{unchanged}}{constantfn(constantval)} d constantval\n\\]\n\nFor which \\( unchanged \\) is \\( sumdiscrete \\) smallest?",
+      "solution": "A-3.\nSince the integral converges for \\( -1<unchanged<5 \\), one can consider \\( sumdiscrete \\) to be defined on this open interval. Letting \\( constantval=1 / timeless \\), one finds that\n\\[\nsumdiscrete=\\int_{\\infty}^{0} \\frac{timeless^{-unchanged}}{timeless^{-6} constantfn(timeless)}\\left(\\frac{-d timeless}{timeless^{2}}\\right)=\\int_{0}^{\\infty} \\frac{timeless^{4-unchanged} d timeless}{constantfn(timeless)}=summirror\n\\]\n\nThen\n\\[\nsumdiscrete=\\left(sumdiscrete+summirror\\right) / 2=\\int_{0}^{\\infty} \\frac{\\left[\\left(constantval^{unchanged}+constantval^{4-unchanged}\\right) / 2\\right] d constantval}{constantfn(constantval)} \\geqslant \\int_{0}^{\\infty} \\frac{constantval^{2} d constantval}{constantfn(constantval)}=sumcenter\n\\]\nsince \\( \\left(constantval^{unchanged}+constantval^{4-unchanged}\\right) / 2 \\geqslant \\sqrt{constantval^{unchanged} \\cdot constantval^{4-unchanged}}=constantval^{2} \\) by the Arithmetic Mean-Geometric Mean Inequality. Thus \\( sumdiscrete \\) is smallest for \\( unchanged=2 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "t": "hjgrksla",
+        "k": "mnbvcxzq",
+        "p": "lkjhgfds",
+        "I_k": "poiuytre",
+        "I_4-k": "qazxswed",
+        "I_2": "plmoknij"
+      },
+      "question": "Problem A-3\nLet \\( lkjhgfds(qzxwvtnp)=2+4 qzxwvtnp+3 qzxwvtnp^{2}+5 qzxwvtnp^{3}+3 qzxwvtnp^{4}+4 qzxwvtnp^{5}+2 qzxwvtnp^{6} \\). For \\( mnbvcxzq \\) with \\( 0<mnbvcxzq<5 \\), define\n\\[\npoiuytre=\\int_{0}^{\\infty} \\frac{qzxwvtnp^{mnbvcxzq}}{lkjhgfds(qzxwvtnp)} d qzxwvtnp\n\\]\n\nFor which \\( mnbvcxzq \\) is \\( poiuytre \\) smallest?",
+      "solution": "A-3.\nSince the integral converges for \\( -1<mnbvcxzq<5 \\), one can consider \\( poiuytre \\) to be defined on this open interval. Letting \\( qzxwvtnp=1 / hjgrksla \\), one finds that\n\\[\npoiuytre = \\int_{\\infty}^{0} \\frac{hjgrksla^{-mnbvcxzq}}{hjgrksla^{-6} lkjhgfds(hjgrksla)}\\left(\\frac{-d hjgrksla}{hjgrksla^{2}}\\right)=\\int_{0}^{\\infty} \\frac{hjgrksla^{4-mnbvcxzq} d hjgrksla}{lkjhgfds(hjgrksla)}=qazxswed\n\\]\n\nThen\n\\[\npoiuytre = \\left(poiuytre + qazxswed\\right) / 2 = \\int_{0}^{\\infty} \\frac{\\left[\\left(qzxwvtnp^{mnbvcxzq}+qzxwvtnp^{4-mnbvcxzq}\\right) / 2\\right] d qzxwvtnp}{lkjhgfds(qzxwvtnp)} \\geqslant \\int_{0}^{\\infty} \\frac{qzxwvtnp^{2} d qzxwvtnp}{lkjhgfds(qzxwvtnp)} = plmoknij\n\\]\nsince \\( \\left(qzxwvtnp^{mnbvcxzq}+qzxwvtnp^{4-mnbvcxzq}\\right) / 2 \\geqslant \\sqrt{qzxwvtnp^{mnbvcxzq} \\cdot qzxwvtnp^{4-mnbvcxzq}}=qzxwvtnp^{2} \\) by the Arithmetic Mean-Geometric Mean Inequality. Thus \\( poiuytre \\) is smallest for \\( mnbvcxzq=2 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let  \n  p(x)=2+5x+4x^{2}+7x^{3}+4x^{4}+5x^{5}+2x^{6}.  \n\nFor every real parameter \\alpha >0 and every real k with -1<k<6\\alpha -1 define  \n  I_{k}(\\alpha )=\\int _{0}^{\\infty } \\dfrac{x^{k}}{p(x)^{\\alpha }}\\;dx.  \n\n(a)  Show that the integral converges precisely for  \n  -1<k<6\\alpha -1.  \n\n(b)  Prove the reflection identity  \n  I_{k}(\\alpha )=I_{6\\alpha -2-k}(\\alpha ).  \n\n(c)  Assume from now on \\alpha >1/3 so that the open interval  \n  (0,6\\alpha -2) is non-empty.  \n  Fix such an \\alpha  and determine all k\\in (0,6\\alpha -2) at which I_{k}(\\alpha ) attains its minimum value.  \n\n(d)  Describe explicitly how the minimising k depends on \\alpha , and list every \\alpha >1/3 for which this minimiser is an integer.  \n\n(e)  Analyse the complementary regime 0<\\alpha \\leq 1/3.  Prove that for these \\alpha  the set  \n  {I_{k}(\\alpha ):k\\in (0,6\\alpha -2)}  \n  is empty, hence has infimum +\\infty , and consequently no minimum can be realised at either endpoint of the (degenerate) interval.",
+      "solution": "Throughout denote d:=6 (the degree of p).  By inspection p has palindromic coefficients, whence  \n  x^{d}\\,p(1/x)=p(x)  for all x>0.  (0.1)\n\nStep (a) - Domain of convergence.  \nNear the origin p(x)=p(0)+O(x)=2+O(x), so  \n  x^{k}/p(x)^{\\alpha }=x^{k}/2^{\\alpha }+O(x^{k+1}).  \nHence \\int _{0}^{1} converges iff k>-1.\n\nFor large x one has p(x)=2x^{6}+O(x^{5}).  Therefore  \n  p(x)^{\\alpha }=2^{\\alpha }x^{6\\alpha }\\bigl(1+O(x^{-1})\\bigr),  \nand  \n  x^{k}/p(x)^{\\alpha }=2^{-\\alpha }x^{k-6\\alpha }\\bigl(1+o(1)\\bigr).  \nThe tail integral \\int _{1}^{\\infty } converges iff k-6\\alpha <-1, i.e. k<6\\alpha -1.\n\nCombining the two local conditions gives the announced strip  \n  -1<k<6\\alpha -1. \\blacksquare \n\n\n\nStep (b) - Reflection identity.  \nSubstitute x=1/t.  Using (0.1) and dx=-t^{-2}dt,\n\nI_{k}(\\alpha )=\\int _{\\infty }^{0}\\frac{t^{-k}}{t^{-6\\alpha }p(t)^{\\alpha }}\\,(-t^{-2})dt\n        =\\int _{0}^{\\infty }\\frac{t^{6\\alpha -2-k}}{p(t)^{\\alpha }}\\,dt\n        =I_{6\\alpha -2-k}(\\alpha ). \\blacksquare \n\n\n\nStep (c) - The minimiser for \\alpha >1/3.\n\n(i) Symmetry.  \nIdentity (b) shows that k\\mapsto I_{k}(\\alpha ) is symmetric about  \n  k_{0}:=(6\\alpha -2)/2=3\\alpha -1.  (3.1)\n\n(ii) Strict log-convexity.  \nLet k_{1},k_{2}\\in (-1,6\\alpha -1), k_{1}\\neq k_{2}, and \\theta \\in (0,1); set k_{\\theta }=(1-\\theta )k_{1}+\\theta k_{2}.  \nBy Holder's inequality,\n\nI_{k_{\\theta }}(\\alpha )=\\int _{0}^{\\infty }\\!\\frac{x^{k_{\\theta }}}{p(x)^{\\alpha }}dx\n          \\leq \\Bigl(\\int _{0}^{\\infty }\\!\\frac{x^{k_{1}}}{p(x)^{\\alpha }}dx\\Bigr)^{1-\\theta }\n           \\Bigl(\\int _{0}^{\\infty }\\!\\frac{x^{k_{2}}}{p(x)^{\\alpha }}dx\\Bigr)^{\\theta }\n          =I_{k_{1}}(\\alpha )^{1-\\theta }I_{k_{2}}(\\alpha )^{\\theta },\n\nwith strict inequality when k_{1}\\neq k_{2}.  Hence ln I_{k}(\\alpha ) is strictly convex, and the map k\\mapsto I_{k}(\\alpha )=exp(ln I_{k}(\\alpha )) is strictly convex as well.\n\n(iii) Uniqueness of the minimum.  \nA strictly convex function symmetric about k_{0} has exactly one minimiser, namely k_{0}.  For \\alpha >1/3 we have\n\n-1<3\\alpha -1<6\\alpha -1 and 0<3\\alpha -1<6\\alpha -2,\n\nso k_{0} lies inside both the convergence strip and the interval demanded in the question.  Consequently  \n\n  k_{min}(\\alpha )=3\\alpha -1  for every \\alpha >1/3. \\blacksquare \n\n\n\nStep (d) - Dependence on \\alpha  and integral minimisers.  \nThe minimiser is the linear function k_{min}(\\alpha )=3\\alpha -1.  It is integral iff 3\\alpha -1\\in \\mathbb{Z}, i.e.\n\n  \\alpha =(m+1)/3 with m\\in \\mathbb{Z}.\n\nImposing \\alpha >1/3 forces m\\geq 1, whence the complete list\n\n  \\alpha =2/3,1,4/3,5/3,\\ldots  (m=1,2,3,4,\\ldots )  \n\nwith corresponding integer minima k_{min}=1,2,3,4,\\ldots  \\blacksquare \n\n\n\nStep (e) - The range 0<\\alpha \\leq 1/3.\n\nFor 0<\\alpha <1/3 we have 6\\alpha -2<0, so the open interval (0,6\\alpha -2) is empty.  \nFor \\alpha =1/3 one obtains 6\\alpha -2=0, and the open interval (0,0) is again empty.\n\nTherefore in either case the set of admissible indices\n\n  S_{\\alpha }:=(0,6\\alpha -2)\n\nis empty, and consequently\n\n  inf {I_{k}(\\alpha ):k\\in S_{\\alpha }} = inf \\emptyset  = +\\infty .\n\nBecause this infimum is infinite, it is certainly not realised by any k, let alone by an endpoint such as k=0.  In particular, although I_{0}(1/3)=\\int _{0}^{\\infty }p(x)^{-1/3}dx is finite, the value k=0 does not belong to S_{\\alpha } and hence plays no role in the minimisation problem that was posed.\n\nSummary for 0<\\alpha \\leq 1/3: the minimisation problem over (0,6\\alpha -2) has no solution, and the infimum over that interval equals +\\infty , so it is not attained at either endpoint. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.635717",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Extra parameter α introduces a two-variable family of integrals; the solver must work uniformly in α.\n2. Denominator raised to an arbitrary power demands careful convergence analysis and produces the general reflection k↦6α−2−k, rather than the fixed reflection in the original problem.\n3. Proving strict convexity of k↦I_{k}(α) by Hölder’s inequality is a deeper analytical step absent from the original A-3 (which relied only on AM–GM for two points).\n4. Part (d) mixes discrete (integrality) and continuous (real α) aspects, adding a number-theoretic flavour.\n5. Altogether the solution requires: asymptotic analysis, substitution symmetry, Hölder’s inequality, convexity theory, and a final diophantine argument—far more varied and sophisticated than in the original problem."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n  p(x)=2+5x+4x^{2}+7x^{3}+4x^{4}+5x^{5}+2x^{6}.  \n\nFor every real parameter \\alpha >0 and every real k with -1<k<6\\alpha -1 define  \n  I_{k}(\\alpha )=\\int _{0}^{\\infty } \\dfrac{x^{k}}{p(x)^{\\alpha }}\\;dx.  \n\n(a)  Show that the integral converges precisely for  \n  -1<k<6\\alpha -1.  \n\n(b)  Prove the reflection identity  \n  I_{k}(\\alpha )=I_{6\\alpha -2-k}(\\alpha ).  \n\n(c)  Assume from now on \\alpha >1/3 so that the open interval  \n  (0,6\\alpha -2) is non-empty.  \n  Fix such an \\alpha  and determine all k\\in (0,6\\alpha -2) at which I_{k}(\\alpha ) attains its minimum value.  \n\n(d)  Describe explicitly how the minimising k depends on \\alpha , and list every \\alpha >1/3 for which this minimiser is an integer.  \n\n(e)  Analyse the complementary regime 0<\\alpha \\leq 1/3.  Prove that for these \\alpha  the set  \n  {I_{k}(\\alpha ):k\\in (0,6\\alpha -2)}  \n  is empty, hence has infimum +\\infty , and consequently no minimum can be realised at either endpoint of the (degenerate) interval.",
+      "solution": "Throughout denote d:=6 (the degree of p).  By inspection p has palindromic coefficients, whence  \n  x^{d}\\,p(1/x)=p(x)  for all x>0.  (0.1)\n\nStep (a) - Domain of convergence.  \nNear the origin p(x)=p(0)+O(x)=2+O(x), so  \n  x^{k}/p(x)^{\\alpha }=x^{k}/2^{\\alpha }+O(x^{k+1}).  \nHence \\int _{0}^{1} converges iff k>-1.\n\nFor large x one has p(x)=2x^{6}+O(x^{5}).  Therefore  \n  p(x)^{\\alpha }=2^{\\alpha }x^{6\\alpha }\\bigl(1+O(x^{-1})\\bigr),  \nand  \n  x^{k}/p(x)^{\\alpha }=2^{-\\alpha }x^{k-6\\alpha }\\bigl(1+o(1)\\bigr).  \nThe tail integral \\int _{1}^{\\infty } converges iff k-6\\alpha <-1, i.e. k<6\\alpha -1.\n\nCombining the two local conditions gives the announced strip  \n  -1<k<6\\alpha -1. \\blacksquare \n\n\n\nStep (b) - Reflection identity.  \nSubstitute x=1/t.  Using (0.1) and dx=-t^{-2}dt,\n\nI_{k}(\\alpha )=\\int _{\\infty }^{0}\\frac{t^{-k}}{t^{-6\\alpha }p(t)^{\\alpha }}\\,(-t^{-2})dt\n        =\\int _{0}^{\\infty }\\frac{t^{6\\alpha -2-k}}{p(t)^{\\alpha }}\\,dt\n        =I_{6\\alpha -2-k}(\\alpha ). \\blacksquare \n\n\n\nStep (c) - The minimiser for \\alpha >1/3.\n\n(i) Symmetry.  \nIdentity (b) shows that k\\mapsto I_{k}(\\alpha ) is symmetric about  \n  k_{0}:=(6\\alpha -2)/2=3\\alpha -1.  (3.1)\n\n(ii) Strict log-convexity.  \nLet k_{1},k_{2}\\in (-1,6\\alpha -1), k_{1}\\neq k_{2}, and \\theta \\in (0,1); set k_{\\theta }=(1-\\theta )k_{1}+\\theta k_{2}.  \nBy Holder's inequality,\n\nI_{k_{\\theta }}(\\alpha )=\\int _{0}^{\\infty }\\!\\frac{x^{k_{\\theta }}}{p(x)^{\\alpha }}dx\n          \\leq \\Bigl(\\int _{0}^{\\infty }\\!\\frac{x^{k_{1}}}{p(x)^{\\alpha }}dx\\Bigr)^{1-\\theta }\n           \\Bigl(\\int _{0}^{\\infty }\\!\\frac{x^{k_{2}}}{p(x)^{\\alpha }}dx\\Bigr)^{\\theta }\n          =I_{k_{1}}(\\alpha )^{1-\\theta }I_{k_{2}}(\\alpha )^{\\theta },\n\nwith strict inequality when k_{1}\\neq k_{2}.  Hence ln I_{k}(\\alpha ) is strictly convex, and the map k\\mapsto I_{k}(\\alpha )=exp(ln I_{k}(\\alpha )) is strictly convex as well.\n\n(iii) Uniqueness of the minimum.  \nA strictly convex function symmetric about k_{0} has exactly one minimiser, namely k_{0}.  For \\alpha >1/3 we have\n\n-1<3\\alpha -1<6\\alpha -1 and 0<3\\alpha -1<6\\alpha -2,\n\nso k_{0} lies inside both the convergence strip and the interval demanded in the question.  Consequently  \n\n  k_{min}(\\alpha )=3\\alpha -1  for every \\alpha >1/3. \\blacksquare \n\n\n\nStep (d) - Dependence on \\alpha  and integral minimisers.  \nThe minimiser is the linear function k_{min}(\\alpha )=3\\alpha -1.  It is integral iff 3\\alpha -1\\in \\mathbb{Z}, i.e.\n\n  \\alpha =(m+1)/3 with m\\in \\mathbb{Z}.\n\nImposing \\alpha >1/3 forces m\\geq 1, whence the complete list\n\n  \\alpha =2/3,1,4/3,5/3,\\ldots  (m=1,2,3,4,\\ldots )  \n\nwith corresponding integer minima k_{min}=1,2,3,4,\\ldots  \\blacksquare \n\n\n\nStep (e) - The range 0<\\alpha \\leq 1/3.\n\nFor 0<\\alpha <1/3 we have 6\\alpha -2<0, so the open interval (0,6\\alpha -2) is empty.  \nFor \\alpha =1/3 one obtains 6\\alpha -2=0, and the open interval (0,0) is again empty.\n\nTherefore in either case the set of admissible indices\n\n  S_{\\alpha }:=(0,6\\alpha -2)\n\nis empty, and consequently\n\n  inf {I_{k}(\\alpha ):k\\in S_{\\alpha }} = inf \\emptyset  = +\\infty .\n\nBecause this infimum is infinite, it is certainly not realised by any k, let alone by an endpoint such as k=0.  In particular, although I_{0}(1/3)=\\int _{0}^{\\infty }p(x)^{-1/3}dx is finite, the value k=0 does not belong to S_{\\alpha } and hence plays no role in the minimisation problem that was posed.\n\nSummary for 0<\\alpha \\leq 1/3: the minimisation problem over (0,6\\alpha -2) has no solution, and the infimum over that interval equals +\\infty , so it is not attained at either endpoint. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.505949",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Extra parameter α introduces a two-variable family of integrals; the solver must work uniformly in α.\n2. Denominator raised to an arbitrary power demands careful convergence analysis and produces the general reflection k↦6α−2−k, rather than the fixed reflection in the original problem.\n3. Proving strict convexity of k↦I_{k}(α) by Hölder’s inequality is a deeper analytical step absent from the original A-3 (which relied only on AM–GM for two points).\n4. Part (d) mixes discrete (integrality) and continuous (real α) aspects, adding a number-theoretic flavour.\n5. Altogether the solution requires: asymptotic analysis, substitution symmetry, Hölder’s inequality, convexity theory, and a final diophantine argument—far more varied and sophisticated than in the original problem."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

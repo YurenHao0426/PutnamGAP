@@ -1,0 +1,195 @@
+{
+  "index": "2003-B-1",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Do there exist polynomials  $a(x), b(x), c(y), d(y)$  such that\n\\[\n       1 + x y + x^2 y^2 = a(x) c(y) + b(x) d(y)\n\\]\nholds identically?",
+  "solution": "No, there do not.\n\n\\textbf{First solution:}\nSuppose the contrary.  By setting $y=-1,0,1$ in succession, we see that\nthe polynomials $1-x+x^2, 1, 1+x+x^2$ are linear combinations of $a(x)$\nand $b(x)$.  But these three polynomials are linearly independent, so\ncannot all be written as linear combinations of two other polynomials,\ncontradiction.\n\nAlternate formulation: the given equation expresses a diagonal matrix with\n$1,1,1$ and zeroes on the diagonal, which has rank 3, as the sum of two\nmatrices of rank 1. But the rank of a sum of matrices is at most the sum\nof the ranks of the individual matrices.\n\n\\textbf{Second solution:}\nIt is equivalent (by relabeling and rescaling)\nto show that $1 + xy + x^2y^2$ cannot be written\nas $a(x) d(y) - b(x) c(y)$.\nWrite $a(x) = \\sum a_i x^i$,\n$b(x) = \\sum b_i x^i$, $c(y) = \\sum c_j y^j$,\n$d(y) = \\sum d_j y^j$. We now start comparing coefficients\nof $1 + xy + x^2 y^2$. By comparing coefficients of\n$1+xy + x^2y^2 $ and $a(x)d(y) - b(x)c(y)$, we get\n\\begin{align*}\n1 &= a_id_i - b_i c_i \\qquad (i=0,1,2)\\\\\n0 &= a_id_j - b_i c_j \\qquad (i \\neq j).\n\\end{align*}\nThe first equation says that $a_i$ and $b_i$ cannot both vanish,\nand $c_i$ and $d_i$ cannot both vanish. The second equation says that\n$a_i/b_i = c_j/d_j$ when $i \\neq j$, where both sides should be viewed\nin $\\RR \\cup \\{\\infty\\}$ (and neither is undetermined if\n$i,j \\in \\{0,1,2\\}$). But then\n\\[\na_0/b_0 = c_1/d_1 = a_2/b_2 = c_0/d_0\n\\]\ncontradicting the equation $a_0d_0 - b_0c_0 = 1$.\n\n\\textbf{Third solution:}\nWe work over the complex numbers, in which we have a primitive cube root\n$\\omega$ of 1. We also use without further comment unique factorization\nfor polynomials in two variables over a field.  And we keep the relabeling\nof the second solution.\n\nSuppose the contrary.  Since $1+xy+x^2y^2 = (1 - xy/\\omega)(1 -\nxy/\\omega^2)$, the rational function $a(\\omega/y) d(y) - b(\\omega/y) c(y)$\nmust vanish identically (that is, coefficient by coefficient).  If one of\nthe polynomials, say $a$, vanished identically, then one of $b$ or $c$\nwould also, and the desired inequality could not hold. So none of them\nvanish identically, and we can write\n\\[\n\\frac{c(y)}{d(y)} = \\frac{a(\\omega/y)}{b(\\omega/y)}.\n\\]\nLikewise,\n\\[\n\\frac{c(y)}{d(y)}= \\frac{a(\\omega^2/y)}{b(\\omega^2/y)}.\n\\]\nPut $f(x) = a(x)/b(x)$; then we have $f(\\omega x) = f(x)$ identically. That is,\n$a(x) b(\\omega x) = b(x) a(\\omega x)$. Since $a$ and $b$ have no common\nfactor (otherwise $1+xy+x^2y^2$ would have a factor divisible only by\n$x$, which it doesn't since it doesn't vanish identically for any particular\n$x$), $a(x)$ divides $a(\\omega x)$. Since they have the same degree, they\nare equal up to scalars. It follows that one of $a(x), xa(x), x^2a(x)$\nis a polynomial in $x^3$ alone, and likewise for $b$ (with the same\npower of $x$).\n\nIf $xa(x)$ and $xb(x)$, or $x^2 a(x)$ and $x^2 b(x)$, are polynomials in\n$x^3$, then $a$ and $b$ are divisible by $x$, but we know $a$ and $b$ have no\ncommon factor. Hence $a(x)$ and $b(x)$ are polynomials in $x^3$. Likewise,\n$c(y)$ and $d(y)$ are polynomials in $y^3$. But then $1 + xy + x^2 y^2 =\na(x)d(y) - b(x) c(y)$ is a polynomial in $x^3$ and $y^3$, contradiction.\n\n\\textbf{Note:}\nThe third solution only works over fields of characteristic not equal to 3,\nwhereas the other two work over arbitrary fields. (In the first solution,\none must replace $-1$ by another value if working in characteristic 2.)",
+  "vars": [
+    "x",
+    "y",
+    "i",
+    "j"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "f",
+    "a_i",
+    "a_0",
+    "a_1",
+    "a_2",
+    "b_i",
+    "b_0",
+    "b_1",
+    "b_2",
+    "c_j",
+    "c_0",
+    "c_1",
+    "c_2",
+    "d_j",
+    "d_0",
+    "d_1",
+    "d_2",
+    "\\\\omega"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "varxcoord",
+        "y": "varycoord",
+        "i": "indexivar",
+        "j": "indexjvar",
+        "a": "polynomiala",
+        "b": "polynomialb",
+        "c": "polynomialc",
+        "d": "polynomiald",
+        "f": "rationalfunc",
+        "a_i": "coefficientai",
+        "a_0": "coefficienta0",
+        "a_1": "coefficienta1",
+        "a_2": "coefficienta2",
+        "b_i": "coefficientbi",
+        "b_0": "coefficientb0",
+        "b_1": "coefficientb1",
+        "b_2": "coefficientb2",
+        "c_j": "coefficientcj",
+        "c_0": "coefficientc0",
+        "c_1": "coefficientc1",
+        "c_2": "coefficientc2",
+        "d_j": "coefficientdj",
+        "d_0": "coefficientd0",
+        "d_1": "coefficientd1",
+        "d_2": "coefficientd2",
+        "\\\\omega": "cuberoot"
+      },
+      "question": "Do there exist polynomials  $polynomiala(varxcoord), polynomialb(varxcoord), polynomialc(varycoord), polynomiald(varycoord)$  such that\n\\[\n       1 + varxcoord varycoord + varxcoord^2 varycoord^2 = polynomiala(varxcoord) polynomialc(varycoord) + polynomialb(varxcoord) polynomiald(varycoord)\n\\]\nholds identically?",
+      "solution": "No, there do not.\n\n\\textbf{First solution:}\nSuppose the contrary.  By setting $varycoord=-1,0,1$ in succession, we see that\nthe polynomials $1-varxcoord+varxcoord^2, 1, 1+varxcoord+varxcoord^2$ are linear combinations of $polynomiala(varxcoord)$\nand $polynomialb(varxcoord)$.  But these three polynomials are linearly independent, so\ncannot all be written as linear combinations of two other polynomials,\ncontradiction.\n\nAlternate formulation: the given equation expresses a diagonal matrix with\n$1,1,1$ and zeroes on the diagonal, which has rank 3, as the sum of two\nmatrices of rank 1. But the rank of a sum of matrices is at most the sum\nof the ranks of the individual matrices.\n\n\\textbf{Second solution:}\nIt is equivalent (by relabeling and rescaling)\nto show that $1 + varxcoord varycoord + varxcoord^2 varycoord^2$ cannot be written\nas $polynomiala(varxcoord) polynomiald(varycoord) - polynomialb(varxcoord) polynomialc(varycoord)$.\nWrite $polynomiala(varxcoord) = \\sum coefficientai varxcoord^{indexivar}$,\n$polynomialb(varxcoord) = \\sum coefficientbi varxcoord^{indexivar}$, $polynomialc(varycoord) = \\sum coefficientcj varycoord^{indexjvar}$,\n$polynomiald(varycoord) = \\sum coefficientdj varycoord^{indexjvar}$. We now start comparing coefficients\nof $1 + varxcoord varycoord + varxcoord^2 varycoord^2$. By comparing coefficients of\n$1+varxcoord varycoord + varxcoord^2 varycoord^2$ and $polynomiala(varxcoord) polynomiald(varycoord) - polynomialb(varxcoord) polynomialc(varycoord)$, we get\n\\begin{align*}\n1 &= coefficientai polynomiald_{indexivar} - coefficientbi polynomialc_{indexivar} \\qquad (indexivar=0,1,2)\\\\\n0 &= coefficientai coefficientdj - coefficientbi coefficientcj \\qquad (indexivar \\neq indexjvar).\n\\end{align*}\nThe first equation says that $coefficientai$ and $coefficientbi$ cannot both vanish,\nand $polynomialc_{indexivar}$ and $polynomiald_{indexivar}$ cannot both vanish. The second equation says that\n$coefficientai/coefficientbi = coefficientcj/coefficientdj$ when $indexivar \\neq indexjvar$, where both sides should be viewed\nin $\\RR \\cup \\{\\infty\\}$ (and neither is undetermined if\n$indexivar,indexjvar \\in \\{0,1,2\\}$). But then\n\\[\ncoefficienta0/coefficientb0 = coefficientc1/coefficientd1 = coefficienta2/coefficientb2 = coefficientc0/coefficientd0\n\\]\ncontradicting the equation $coefficienta0 coefficientd0 - coefficientb0 coefficientc0 = 1$.\n\n\\textbf{Third solution:}\nWe work over the complex numbers, in which we have a primitive cube root\ncuberoot of 1. We also use without further comment unique factorization\nfor polynomials in two variables over a field.  And we keep the relabeling\nof the second solution.\n\nSuppose the contrary.  Since $1+varxcoord varycoord+varxcoord^2 varycoord^2 = (1 - varxcoord varycoord/cuberoot)(1 -\nvarxcoord varycoord/cuberoot^2)$, the rational function $polynomiala(cuberoot/varycoord) polynomiald(varycoord) - polynomialb(cuberoot/varycoord) polynomialc(varycoord)$\nmust vanish identically (that is, coefficient by coefficient).  If one of\nthe polynomials, say $polynomiala$, vanished identically, then one of $polynomialb$ or $polynomialc$\nwould also, and the desired inequality could not hold. So none of them\nvanish identically, and we can write\n\\[\n\\frac{polynomialc(varycoord)}{polynomiald(varycoord)} = \\frac{polynomiala(cuberoot/varycoord)}{polynomialb(cuberoot/varycoord)}.\n\\]\nLikewise,\n\\[\n\\frac{polynomialc(varycoord)}{polynomiald(varycoord)}= \\frac{polynomiala(cuberoot^2/varycoord)}{polynomialb(cuberoot^2/varycoord)}.\n\\]\nPut $rationalfunc(varxcoord) = polynomiala(varxcoord)/polynomialb(varxcoord)$; then we have $rationalfunc(cuberoot varxcoord) = rationalfunc(varxcoord)$ identically. That is,\n$polynomiala(varxcoord) polynomialb(cuberoot varxcoord) = polynomialb(varxcoord) polynomiala(cuberoot varxcoord)$. Since $polynomiala$ and $polynomialb$ have no common\nfactor (otherwise $1+varxcoord varycoord+varxcoord^2 varycoord^2$ would have a factor divisible only by\n$varxcoord$, which it doesn't since it doesn't vanish identically for any particular\n$varxcoord$), $polynomiala(varxcoord)$ divides $polynomiala(cuberoot varxcoord)$. Since they have the same degree, they\nare equal up to scalars. It follows that one of $polynomiala(varxcoord), varxcoord polynomiala(varxcoord), varxcoord^2 polynomiala(varxcoord)$\nis a polynomial in $varxcoord^3$ alone, and likewise for $polynomialb$ (with the same\npower of $varxcoord$).\n\nIf $varxcoord polynomiala(varxcoord)$ and $varxcoord polynomialb(varxcoord)$, or $varxcoord^2 polynomiala(varxcoord)$ and $varxcoord^2 polynomialb(varxcoord)$, are polynomials in\n$varxcoord^3$, then $polynomiala$ and $polynomialb$ are divisible by $varxcoord$, but we know $polynomiala$ and $polynomialb$ have no\ncommon factor. Hence $polynomiala(varxcoord)$ and $polynomialb(varxcoord)$ are polynomials in $varxcoord^3$. Likewise,\n$polynomialc(varycoord)$ and $polynomiald(varycoord)$ are polynomials in $varycoord^3$. But then $1 + varxcoord varycoord + varxcoord^2 varycoord^2 =\npolynomiala(varxcoord) polynomiald(varycoord) - polynomialb(varxcoord) polynomialc(varycoord)$ is a polynomial in $varxcoord^3$ and $varycoord^3$, contradiction.\n\n\\textbf{Note:}\nThe third solution only works over fields of characteristic not equal to 3,\nwhereas the other two work over arbitrary fields. (In the first solution,\none must replace $-1$ by another value if working in characteristic 2.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "honeycomb",
+        "y": "marigolds",
+        "i": "lumberjack",
+        "j": "buttercup",
+        "a": "sunflower",
+        "b": "dragonfly",
+        "c": "blackberry",
+        "d": "rainforest",
+        "f": "candletree",
+        "a_i": "hinterland",
+        "a_0": "arrowplane",
+        "a_1": "barbecue",
+        "a_2": "snowflake",
+        "b_i": "sailorboat",
+        "b_0": "pineapple",
+        "b_1": "strawhat",
+        "b_2": "windchime",
+        "c_j": "lighthouse",
+        "c_0": "earthquake",
+        "c_1": "tangerine",
+        "c_2": "skylarker",
+        "d_j": "watermelon",
+        "d_0": "blueberry",
+        "d_1": "blacksmith",
+        "d_2": "ornament",
+        "\\omega": "\\wanderlust"
+      },
+      "question": "Do there exist polynomials  $sunflower(honeycomb), dragonfly(honeycomb), blackberry(marigolds), rainforest(marigolds)$  such that\n\\[\n       1 + honeycomb marigolds + honeycomb^2 marigolds^2 = sunflower(honeycomb) blackberry(marigolds) + dragonfly(honeycomb) rainforest(marigolds)\n\\]\nholds identically?",
+      "solution": "No, there do not.\n\n\\textbf{First solution:}\nSuppose the contrary.  By setting $marigolds=-1,0,1$ in succession, we see that\nthe polynomials $1-honeycomb+honeycomb^2, 1, 1+honeycomb+honeycomb^2$ are linear combinations of $sunflower(honeycomb)$\nand $dragonfly(honeycomb)$.  But these three polynomials are linearly independent, so\ncannot all be written as linear combinations of two other polynomials,\ncontradiction.\n\nAlternate formulation: the given equation expresses a diagonal matrix with\n$1,1,1$ and zeroes on the diagonal, which has rank 3, as the sum of two\nmatrices of rank 1. But the rank of a sum of matrices is at most the sum\nof the ranks of the individual matrices.\n\n\\textbf{Second solution:}\nIt is equivalent (by relabeling and rescaling)\nto show that $1 + honeycomb marigolds + honeycomb^2 marigolds^2$ cannot be written\nas $sunflower(honeycomb) rainforest(marigolds) - dragonfly(honeycomb) blackberry(marigolds)$.\nWrite $sunflower(honeycomb) = \\sum hinterland honeycomb^{lumberjack}$,\n$dragonfly(honeycomb) = \\sum sailorboat honeycomb^{lumberjack}$, $blackberry(marigolds) = \\sum lighthouse marigolds^{buttercup}$,\n$rainforest(marigolds) = \\sum watermelon marigolds^{buttercup}$. We now start comparing coefficients\nof $1 + honeycomb marigolds + honeycomb^2 marigolds^2$. By comparing coefficients of\n$1+honeycomb marigolds + honeycomb^2 marigolds^2 $ and $sunflower(honeycomb)rainforest(marigolds) - dragonfly(honeycomb)blackberry(marigolds)$, we get\n\\begin{align*}\n1 &= hinterland d_i - sailorboat c_i \\qquad (lumberjack=0,1,2)\\\\\n0 &= hinterland watermelon - sailorboat lighthouse \\qquad (lumberjack \\neq buttercup).\n\\end{align*}\nThe first equation says that $hinterland$ and $sailorboat$ cannot both vanish,\nand $c_i$ and $d_i$ cannot both vanish. The second equation says that\n$hinterland/sailorboat = lighthouse/watermelon$ when $lumberjack \\neq buttercup$, where both sides should be viewed\nin $\\RR \\cup \\{\\infty\\}$ (and neither is undetermined if\n$lumberjack,buttercup \\in \\{0,1,2\\}$). But then\n\\[\narrowplane/pineapple = tangerine/blacksmith = snowflake/windchime = earthquake/blueberry\n\\]\ncontradicting the equation $arrowplane\\,blueberry - pineapple\\,earthquake = 1$.\n\n\\textbf{Third solution:}\nWe work over the complex numbers, in which we have a primitive cube root\n$\\wanderlust$ of 1. We also use without further comment unique factorization\nfor polynomials in two variables over a field.  And we keep the relabeling\nof the second solution.\n\nSuppose the contrary.  Since $1+honeycomb marigolds+honeycomb^2 marigolds^2 = (1 - honeycomb marigolds/\\wanderlust)(1 -\nhoneycomb marigolds/\\wanderlust^2)$, the rational function $sunflower(\\wanderlust/marigolds) rainforest(marigolds) - dragonfly(\\wanderlust/marigolds) blackberry(marigolds)$\nmust vanish identically (that is, coefficient by coefficient).  If one of\nthe polynomials, say $sunflower$, vanished identically, then one of $dragonfly$ or $blackberry$\nwould also, and the desired inequality could not hold. So none of them\nvanish identically, and we can write\n\\[\n\\frac{blackberry(marigolds)}{rainforest(marigolds)} = \\frac{sunflower(\\wanderlust/marigolds)}{dragonfly(\\wanderlust/marigolds)}.\n\\]\nLikewise,\n\\[\n\\frac{blackberry(marigolds)}{rainforest(marigolds)}= \\frac{sunflower(\\wanderlust^2/marigolds)}{dragonfly(\\wanderlust^2/marigolds)}.\n\\]\nPut $candletree(honeycomb) = sunflower(honeycomb)/dragonfly(honeycomb)$; then we have $candletree(\\wanderlust honeycomb) = candletree(honeycomb)$ identically. That is,\n$sunflower(honeycomb)\\,dragonfly(\\wanderlust honeycomb) = dragonfly(honeycomb)\\,sunflower(\\wanderlust honeycomb)$. Since $sunflower$ and $dragonfly$ have no common\nfactor (otherwise $1+honeycomb marigolds+honeycomb^2 marigolds^2$ would have a factor divisible only by\n$honeycomb$, which it doesn't since it doesn't vanish identically for any particular\n$honeycomb$), $sunflower(honeycomb)$ divides $sunflower(\\wanderlust honeycomb)$. Since they have the same degree, they\nare equal up to scalars. It follows that one of $sunflower(honeycomb), honeycomb\\,sunflower(honeycomb), honeycomb^2 sunflowersunflower(honeycomb)$\nis a polynomial in $honeycomb^3$ alone, and likewise for $dragonfly$ (with the same\npower of $honeycomb$).\n\nIf $honeycomb\\,sunflower(honeycomb)$ and $honeycomb\\,dragonfly(honeycomb)$, or $honeycomb^2 sunflowersunflower(honeycomb)$ and $honeycomb^2 dragonfly(honeycomb)$, are polynomials in\n$honeycomb^3$, then $sunflower$ and $dragonfly$ are divisible by $honeycomb$, but we know $sunflower$ and $dragonfly$ have no\ncommon factor. Hence $sunflower(honeycomb)$ and $dragonfly(honeycomb)$ are polynomials in $honeycomb^3$. Likewise,\n$blackberry(marigolds)$ and $rainforest(marigolds)$ are polynomials in $marigolds^3$. But then $1 + honeycomb marigolds + honeycomb^2 marigolds^2 =\nsunflower(honeycomb)rainforest(marigolds) - dragonfly(honeycomb) blackberry(marigolds)$ is a polynomial in $honeycomb^3$ and $marigolds^3$, contradiction.\n\n\\textbf{Note:}\nThe third solution only works over fields of characteristic not equal to 3,\nwhereas the other two work over arbitrary fields. (In the first solution,\none must replace $-1$ by another value if working in characteristic 2.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "i": "constantindex",
+        "j": "fixedindex",
+        "a": "inconsistentpoly",
+        "b": "constantpoly",
+        "c": "dependentpoly",
+        "d": "varyingpoly",
+        "f": "nonfunction",
+        "a_i": "inconsistentcoeffi",
+        "a_0": "inconsistentcoeffzero",
+        "a_1": "inconsistentcoeffone",
+        "a_2": "inconsistentcoefftwo",
+        "b_i": "constantcoeffi",
+        "b_0": "constantcoeffzero",
+        "b_1": "constantcoeffone",
+        "b_2": "constantcoefftwo",
+        "c_j": "dependentcoeffj",
+        "c_0": "dependentcoeffzero",
+        "c_1": "dependentcoeffone",
+        "c_2": "dependentcoefftwo",
+        "d_j": "varyingcoeffj",
+        "d_0": "varyingcoeffzero",
+        "d_1": "varyingcoeffone",
+        "d_2": "varyingcoefftwo",
+        "\\\\omega": "identityelement"
+      },
+      "question": "Do there exist polynomials  $inconsistentpoly(verticalaxis), constantpoly(verticalaxis), dependentpoly(horizontalaxis), varyingpoly(horizontalaxis)$  such that\n\\[\n       1 + verticalaxis horizontalaxis + verticalaxis^2 horizontalaxis^2 = inconsistentpoly(verticalaxis) dependentpoly(horizontalaxis) + constantpoly(verticalaxis) varyingpoly(horizontalaxis)\n\\]\nholds identically?",
+      "solution": "No, there do not.\n\n\\textbf{First solution:}\nSuppose the contrary.  By setting $horizontalaxis=-1,0,1$ in succession, we see that\nthe polynomials $1-verticalaxis+verticalaxis^2, 1, 1+verticalaxis+verticalaxis^2$ are linear combinations of $inconsistentpoly(verticalaxis)$\nand $constantpoly(verticalaxis)$.  But these three polynomials are linearly independent, so\ncannot all be written as linear combinations of two other polynomials,\ncontradiction.\n\nAlternate formulation: the given equation expresses a diagonal matrix with\n$1,1,1$ and zeroes on the diagonal, which has rank 3, as the sum of two\nmatrices of rank 1. But the rank of a sum of matrices is at most the sum\nof the ranks of the individual matrices.\n\n\\textbf{Second solution:}\nIt is equivalent (by relabeling and rescaling)\nto show that $1 + verticalaxis horizontalaxis + verticalaxis^2 horizontalaxis^2$ cannot be written\nas $inconsistentpoly(verticalaxis) varyingpoly(horizontalaxis) - constantpoly(verticalaxis) dependentpoly(horizontalaxis)$.\nWrite $inconsistentpoly(verticalaxis) = \\sum inconsistentcoeffi verticalaxis^{constantindex}$,\n$constantpoly(verticalaxis) = \\sum constantcoeffi verticalaxis^{constantindex}$, $dependentpoly(horizontalaxis) = \\sum dependentcoeffj horizontalaxis^{fixedindex}$,\n$varyingpoly(horizontalaxis) = \\sum varyingcoeffj horizontalaxis^{fixedindex}$. We now start comparing coefficients\nof $1 + verticalaxis horizontalaxis + verticalaxis^2 horizontalaxis^2$. By comparing coefficients of\n$1+verticalaxis horizontalaxis + verticalaxis^2 horizontalaxis^2 $ and $inconsistentpoly(verticalaxis)varyingpoly(horizontalaxis) - constantpoly(verticalaxis)dependentpoly(horizontalaxis)$, we get\n\\begin{align*}\n1 &= inconsistentcoeffi varyingcoeffj - constantcoeffi dependentcoeffj \\qquad (constantindex=0,1,2)\\\\\n0 &= inconsistentcoeffi varyingcoeffj - constantcoeffi dependentcoeffj \\qquad (constantindex \\neq fixedindex).\n\\end{align*}\nThe first equation says that inconsistentcoeffi and constantcoeffi cannot both vanish,\nand dependentcoeffj and varyingcoeffj cannot both vanish. The second equation says that\ninconsistentcoeffi/constantcoeffi = dependentcoeffj/varyingcoeffj when constantindex \\neq fixedindex, where both sides should be viewed\nin $\\RR \\cup \\{\\infty\\}$ (and neither is undetermined if\nconstantindex,fixedindex \\in \\{0,1,2\\}). But then\n\\[\ninconsistentcoeffzero/constantcoeffzero = dependentcoeffone/varyingcoeffone = inconsistentcoefftwo/constantcoefftwo = dependentcoeffzero/varyingcoeffzero\n\\]\ncontradicting the equation inconsistentcoeffzero varyingcoeffzero - constantcoeffzero dependentcoeffzero = 1.\n\n\\textbf{Third solution:}\nWe work over the complex numbers, in which we have a primitive cube root\nidentityelement of 1. We also use without further comment unique factorization\nfor polynomials in two variables over a field.  And we keep the relabeling\nof the second solution.\n\nSuppose the contrary.  Since $1+verticalaxis horizontalaxis+verticalaxis^2 horizontalaxis^2 = (1 - verticalaxis horizontalaxis/identityelement)(1 -\nverticalaxis horizontalaxis/identityelement^2)$, the rational function $inconsistentpoly(identityelement/horizontalaxis) varyingpoly(horizontalaxis) - constantpoly(identityelement/horizontalaxis) dependentpoly(horizontalaxis)$\nmust vanish identically (that is, coefficient by coefficient).  If one of\nthe polynomials, say inconsistentpoly, vanished identically, then one of constantpoly or dependentpoly\nwould also, and the desired inequality could not hold. So none of them\nvanish identically, and we can write\n\\[\n\\frac{dependentpoly(horizontalaxis)}{varyingpoly(horizontalaxis)} = \\frac{inconsistentpoly(identityelement/horizontalaxis)}{constantpoly(identityelement/horizontalaxis)}.\n\\]\nLikewise,\n\\[\n\\frac{dependentpoly(horizontalaxis)}{varyingpoly(horizontalaxis)}= \\frac{inconsistentpoly(identityelement^2/horizontalaxis)}{constantpoly(identityelement^2/horizontalaxis)}.\n\\]\nPut $nonfunction(verticalaxis) = inconsistentpoly(verticalaxis)/constantpoly(verticalaxis)$; then we have $nonfunction(identityelement verticalaxis) = nonfunction(verticalaxis)$ identically. That is,\n$inconsistentpoly(verticalaxis) constantpoly(identityelement verticalaxis) = constantpoly(verticalaxis) inconsistentpoly(identityelement verticalaxis)$. Since inconsistentpoly and constantpoly have no common\nfactor (otherwise $1+verticalaxis horizontalaxis+verticalaxis^2 horizontalaxis^2$ would have a factor divisible only by\nverticalaxis, which it doesn't since it doesn't vanish identically for any particular\nverticalaxis), inconsistentpoly(verticalaxis) divides inconsistentpoly(identityelement verticalaxis). Since they have the same degree, they\nare equal up to scalars. It follows that one of inconsistentpoly(verticalaxis), verticalaxis inconsistentpoly(verticalaxis), verticalaxis^2 inconsistentpoly(verticalaxis)\nis a polynomial in verticalaxis^3 alone, and likewise for constantpoly (with the same\npower of verticalaxis).\n\nIf verticalaxis inconsistentpoly(verticalaxis) and verticalaxis constantpoly(verticalaxis), or verticalaxis^2 inconsistentpoly(verticalaxis) and verticalaxis^2 constantpoly(verticalaxis), are polynomials in\nverticalaxis^3, then inconsistentpoly and constantpoly are divisible by verticalaxis, but we know inconsistentpoly and constantpoly have no\ncommon factor. Hence inconsistentpoly(verticalaxis) and constantpoly(verticalaxis) are polynomials in verticalaxis^3. Likewise,\ndependentpoly(horizontalaxis) and varyingpoly(horizontalaxis) are polynomials in horizontalaxis^3. But then $1 + verticalaxis horizontalaxis + verticalaxis^2 horizontalaxis^2 =\ninconsistentpoly(verticalaxis)varyingpoly(horizontalaxis) - constantpoly(verticalaxis) dependentpoly(horizontalaxis)$ is a polynomial in verticalaxis^3 and horizontalaxis^3, contradiction.\n\n\\textbf{Note:}\nThe third solution only works over fields of characteristic not equal to 3,\nwhereas the other two work over arbitrary fields. (In the first solution,\none must replace $-1$ by another value if working in characteristic 2.)"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "i": "klmnoqrs",
+        "j": "tuvwxabc",
+        "a": "pldkrsfo",
+        "b": "zvxtnqwe",
+        "c": "rgfdsalu",
+        "d": "yuxplebn",
+        "f": "wvhazrqi",
+        "a_i": "ocmednkl",
+        "a_0": "zqbhyloa",
+        "a_1": "sldpqrna",
+        "a_2": "mntoxpla",
+        "b_i": "ykmprcuz",
+        "b_0": "gtwqivsr",
+        "b_1": "uhndsjzl",
+        "b_2": "pskrqbvn",
+        "c_j": "nqwsldve",
+        "c_0": "blfrqoke",
+        "c_1": "cprslbne",
+        "c_2": "xzmlqapv",
+        "d_j": "vqyzamcf",
+        "d_0": "kbvtnshp",
+        "d_1": "ruxfcloq",
+        "d_2": "hwemkpga",
+        "\\omega": "qjdrxtmf"
+      },
+      "question": "Do there exist polynomials  $pldkrsfo(qzxwvtnp), zvxtnqwe(qzxwvtnp), rgfdsalu(hjgrksla), yuxplebn(hjgrksla)$  such that\n\\[\n       1 + qzxwvtnp hjgrksla + qzxwvtnp^2 hjgrksla^2 = pldkrsfo(qzxwvtnp) rgfdsalu(hjgrksla) + zvxtnqwe(qzxwvtnp) yuxplebn(hjgrksla)\n\\]\nholds identically?",
+      "solution": "No, there do not.\n\n\\textbf{First solution:}\nSuppose the contrary.  By setting $hjgrksla=-1,0,1$ in succession, we see that\nthe polynomials $1-qzxwvtnp+qzxwvtnp^2, 1, 1+qzxwvtnp+qzxwvtnp^2$ are linear combinations of $pldkrsfo(qzxwvtnp)$\nand $zvxtnqwe(qzxwvtnp)$.  But these three polynomials are linearly independent, so\ncannot all be written as linear combinations of two other polynomials,\ncontradiction.\n\nAlternate formulation: the given equation expresses a diagonal matrix with\n$1,1,1$ and zeroes on the diagonal, which has rank 3, as the sum of two\nmatrices of rank 1. But the rank of a sum of matrices is at most the sum\nof the ranks of the individual matrices.\n\n\\textbf{Second solution:}\nIt is equivalent (by relabeling and rescaling)\nto show that $1 + qzxwvtnphjgrksla + qzxwvtnp^2hjgrksla^2$ cannot be written\nas $pldkrsfo(qzxwvtnp) yuxplebn(hjgrksla) - zvxtnqwe(qzxwvtnp) rgfdsalu(hjgrksla)$.\nWrite $pldkrsfo(qzxwvtnp) = \\sum ocmednkl qzxwvtnp^{klmnoqrs}$,\n$zvxtnqwe(qzxwvtnp) = \\sum ykmprcuz qzxwvtnp^{klmnoqrs}$, $rgfdsalu(hjgrksla) = \\sum nqwsldve hjgrksla^{tuvwxabc}$,\n$yuxplebn(hjgrksla) = \\sum vqyzamcf hjgrksla^{tuvwxabc}$. We now start comparing coefficients\nof $1 + qzxwvtnphjgrksla + qzxwvtnp^2 hjgrksla^2$. By comparing coefficients of\n$1+qzxwvtnphjgrksla + qzxwvtnp^2hjgrksla^2 $ and $pldkrsfo(qzxwvtnp) yuxplebn(hjgrksla) - zvxtnqwe(qzxwvtnp) rgfdsalu(hjgrksla)$, we get\n\\begin{align*}\n1 &= ocmednkl vqyzamcf - ykmprcuz nqwsldve \\qquad (klmnoqrs=0,1,2)\\\\\n0 &= ocmednkl vqyzamcf - ykmprcuz nqwsldve \\qquad (klmnoqrs \\neq tuvwxabc).\n\\end{align*}\nThe first equation says that $ocmednkl$ and $ykmprcuz$ cannot both vanish,\nand $nqwsldve$ and $vqyzamcf$ cannot both vanish. The second equation says that\n$ocmednkl/ykmprcuz = nqwsldve/vqyzamcf$ when $klmnoqrs \\neq tuvwxabc$, where both sides should be viewed\nin $\\RR \\cup \\{\\infty\\}$ (and neither is undetermined if\n$klmnoqrs,tuvwxabc \\in \\{0,1,2\\}$). But then\n\\[\nzqbhyloa/gtwqivsr = cprslbne/ruxfcloq = mntoxpla/pskrqbvn = blfrqoke/kbvtnshp\n\\]\ncontradicting the equation $zqbhyloa kbvtnshp - gtwqivsr blfrqoke = 1$.\n\n\\textbf{Third solution:}\nWe work over the complex numbers, in which we have a primitive cube root\n$qjdrxtmf$ of 1. We also use without further comment unique factorization\nfor polynomials in two variables over a field.  And we keep the relabeling\nof the second solution.\n\nSuppose the contrary.  Since $1+qzxwvtnphjgrksla+qzxwvtnp^2hjgrksla^2 = (1 - qzxwvtnphjgrksla/qjdrxtmf)(1 -\nqzxwvtnphjgrksla/qjdrxtmf^2)$, the rational function $pldkrsfo(qjdrxtmf/hjgrksla) yuxplebn(hjgrksla) - zvxtnqwe(qjdrxtmf/hjgrksla) rgfdsalu(hjgrksla)$\nmust vanish identically (that is, coefficient by coefficient).  If one of\nthe polynomials, say $pldkrsfo$, vanished identically, then one of $zvxtnqwe$ or $rgfdsalu$\nwould also, and the desired inequality could not hold. So none of them\nvanish identically, and we can write\n\\[\n\\frac{rgfdsalu(hjgrksla)}{yuxplebn(hjgrksla)} = \\frac{pldkrsfo(qjdrxtmf/hjgrksla)}{zvxtnqwe(qjdrxtmf/hjgrksla)}.\n\\]\nLikewise,\n\\[\n\\frac{rgfdsalu(hjgrksla)}{yuxplebn(hjgrksla)}= \\frac{pldkrsfo(qjdrxtmf^2/hjgrksla)}{zvxtnqwe(qjdrxtmf^2/hjgrksla)}.\n\\]\nPut $wvhazrqi(qzxwvtnp) = pldkrsfo(qzxwvtnp)/zvxtnqwe(qzxwvtnp)$; then we have $wvhazrqi(qjdrxtmf qzxwvtnp) = wvhazrqi(qzxwvtnp)$ identically. That is,\n$pldkrsfo(qzxwvtnp) zvxtnqwe(qjdrxtmf qzxwvtnp) = zvxtnqwe(qzxwvtnp) pldkrsfo(qjdrxtmf qzxwvtnp)$. Since $pldkrsfo$ and $zvxtnqwe$ have no common\nfactor (otherwise $1+qzxwvtnphjgrksla+qzxwvtnp^2hjgrksla^2$ would have a factor divisible only by\n$qzxwvtnp$, which it doesn't since it doesn't vanish identically for any particular\n$qzxwvtnp$), $pldkrsfo(qzxwvtnp)$ divides $pldkrsfo(qjdrxtmf qzxwvtnp)$. Since they have the same degree, they\nare equal up to scalars. It follows that one of $pldkrsfo(qzxwvtnp), qzxwvtnp pldkrsfo(qzxwvtnp), qzxwvtnp^2pldkrsfo(qzxwvtnp)$\nis a polynomial in $qzxwvtnp^3$ alone, and likewise for $zvxtnqwe$ (with the same\npower of $qzxwvtnp$).\n\nIf $qzxwvtnp pldkrsfo(qzxwvtnp)$ and $qzxwvtnp zvxtnqwe(qzxwvtnp)$, or $qzxwvtnp^2 pldkrsfo(qzxwvtnp)$ and $qzxwvtnp^2 zvxtnqwe(qzxwvtnp)$, are polynomials in\n$qzxwvtnp^3$, then $pldkrsfo$ and $zvxtnqwe$ are divisible by $qzxwvtnp$, but we know $pldkrsfo$ and $zvxtnqwe$ have no\ncommon factor. Hence $pldkrsfo(qzxwvtnp)$ and $zvxtnqwe(qzxwvtnp)$ are polynomials in $qzxwvtnp^3$. Likewise,\n$rgfdsalu(hjgrksla)$ and $yuxplebn(hjgrksla)$ are polynomials in $hjgrksla^3$. But then $1 + qzxwvtnphjgrksla + qzxwvtnp^2 hjgrksla^2 =\npldkrsfo(qzxwvtnp) yuxplebn(hjgrksla) - zvxtnqwe(qzxwvtnp) rgfdsalu(hjgrksla)$ is a polynomial in $qzxwvtnp^3$ and $hjgrksla^3$, contradiction.\n\n\\textbf{Note:}\nThe third solution only works over fields of characteristic not equal to 3,\nwhereas the other two work over arbitrary fields. (In the first solution,\none must replace $-1$ by another value if working in characteristic 2.)"
+    },
+    "kernel_variant": {
+      "question": "Do there exist real polynomials \\(a(x),\\,b(x),\\,c(y),\\,d(y)\\) such that\n\\[\n        2 + 3xy + x^{2}y^{2} \\;=\\; a(x)\\,c(y)\\; +\\; b(x)\\,d(y)\n\\]\nidentically in the variables \\(x\\) and \\(y\\)?",
+      "solution": "Assume, for the sake of contradiction, that such polynomials exist.\n\n1.  Fix y=0, 1, 2 successively in the alleged identity\n       2 + 3xy + x^2y^2 = a(x)c(y) + b(x)d(y).\n    For y=0,1,2 we obtain the three quadratic polynomials in x:\n      y=0:    2           = a(x)c(0) + b(x)d(0)   \\Rightarrow  p_0(x) = 2,\n      y=1:    2+3x+x^2     = a(x)c(1) + b(x)d(1)   \\Rightarrow  p_1(x) = 2+3x+x^2,\n      y=2:    2+6x+4x^2    = a(x)c(2) + b(x)d(2)   \\Rightarrow  p_2(x) = 2+6x+4x^2.\n    Since each p_i lies in the two-dimensional span{a(x), b(x)}, they cannot exceed dimension two.\n\n2.  We show p_0, p_1, p_2 are linearly independent.  Suppose\n      \\alpha \\cdot p_0(x) + \\beta \\cdot p_1(x) + \\gamma \\cdot p_2(x) \\equiv  0.\n    Equating coefficients of x^2, x, and the constant term gives:\n      x^2:   \\beta  + 4\\gamma  = 0,\n      x:   3\\beta  + 6\\gamma  = 0,\n      1:   2\\alpha  + 2\\beta  + 2\\gamma  = 0.\n    From \\beta  + 4\\gamma  = 0 we get \\beta  = -4\\gamma .  Substituting into 3\\beta  + 6\\gamma  = 0 gives -12\\gamma  + 6\\gamma  = -6\\gamma  = 0 \\Rightarrow  \\gamma  = 0 \\Rightarrow  \\beta  = 0 \\Rightarrow  \\alpha  = 0.\n    Hence the only solution is trivial, so p_0,p_1,p_2 are independent.\n\n3.  A two-dimensional span cannot contain three linearly independent vectors.  This contradiction shows there do not exist real polynomials a(x), b(x), c(y), d(y) satisfying the given identity.",
+      "_meta": {
+        "core_steps": [
+          "Assume the identity holds for some polynomials a(x), b(x), c(y), d(y).",
+          "Fix three distinct y-values and substitute them, obtaining three x-polynomials lying in span{a,b}.",
+          "Verify these three x-polynomials are pairwise linearly independent.",
+          "A two–dimensional span cannot contain three independent vectors ⇒ contradiction."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of the three special y-values used for substitution; any triple that keeps the resulting x-polynomials independent works.",
+            "original": "y = −1, 0, 1"
+          },
+          "slot2": {
+            "description": "Specific coefficients/monomials of the target bivariate polynomial; they may be altered provided the three chosen y-sections remain independent quadratics in x.",
+            "original": "1 + x y + x² y²"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

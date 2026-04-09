@@ -1,0 +1,79 @@
+{
+  "index": "1976-B-5",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "\\begin{array}{l}\n\\text { B-5. Evaluate }\\\\\n\\sum_{k=0}^{n}(-1)^{k}\\binom{n}{k}(x-k)^{n} .\n\\end{array}",
+  "solution": "\\begin{array}{l}\n\\text { B-5. }\\\\\n\\text { The sum is } n!\\text { since it is an } n \\text {th difference of a monic polynomial, } x^{n} \\text {, of degree } n \\text {. }\n\\end{array}",
+  "vars": [
+    "k",
+    "x"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "indexvar",
+        "x": "inputval",
+        "n": "sizeparam"
+      },
+      "question": "\\begin{array}{l}\n\\text { B-5. Evaluate }\\\\\n\\sum_{indexvar=0}^{sizeparam}(-1)^{indexvar}\\binom{sizeparam}{indexvar}(inputval-indexvar)^{sizeparam} .\n\\end{array}",
+      "solution": "\\begin{array}{l}\n\\text { B-5. }\\\\\n\\text { The sum is } sizeparam!\\text { since it is an } sizeparam \\text {th difference of a monic polynomial, } inputval^{sizeparam} \\text {, of degree } sizeparam \\text {. }\n\\end{array}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "sandstone",
+        "x": "driftwood",
+        "n": "firestarter"
+      },
+      "question": "\\begin{array}{l}\n\\text { B-5. Evaluate }\\\\\n\\sum_{sandstone=0}^{firestarter}(-1)^{sandstone}\\binom{firestarter}{sandstone}(driftwood-sandstone)^{firestarter} .\n\\end{array}",
+      "solution": "\\begin{array}{l}\n\\text { B-5. }\\\\\n\\text { The sum is } firestarter!\\text { since it is an } firestarter \\text {th difference of a monic polynomial, } driftwood^{firestarter} \\text {, of degree } firestarter \\text {. }\n\\end{array}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "continuousvalue",
+        "x": "knownvalue",
+        "n": "limitless"
+      },
+      "question": "\\begin{array}{l}\n\\text { B-5. Evaluate }\\\\\n\\sum_{continuousvalue=0}^{limitless}(-1)^{continuousvalue}\\binom{limitless}{continuousvalue}(knownvalue-continuousvalue)^{limitless} .\n\\end{array}",
+      "solution": "\\begin{array}{l}\n\\text { B-5. }\\\\\n\\text { The sum is } limitless!\\text { since it is an } limitless \\text {th difference of a monic polynomial, } knownvalue^{limitless} \\text {, of degree } limitless \\text {. }\n\\end{array}"
+    },
+    "garbled_string": {
+      "map": {
+        "k": "alvgrmns",
+        "x": "pqhtrdlu",
+        "n": "zmbqefsj"
+      },
+      "question": "\\begin{array}{l}\n\\text { B-5. Evaluate }\\\\\n\\sum_{alvgrmns=0}^{zmbqefsj}(-1)^{alvgrmns}\\binom{zmbqefsj}{alvgrmns}(pqhtrdlu-alvgrmns)^{zmbqefsj} .\n\\end{array}",
+      "solution": "\\begin{array}{l}\n\\text { B-5. }\\\\\n\\text { The sum is } zmbqefsj!\\text { since it is an } zmbqefsj \\text {th difference of a monic polynomial, } pqhtrdlu^{zmbqefsj} \\text {, of degree } zmbqefsj \\text {. }\n\\end{array}"
+    },
+    "kernel_variant": {
+      "question": "Let n \\geq  4 be an integer (no parity restriction) and let a be any non-zero real number.  \nFor x \\in  \\mathbb{R} put  \n\n  x^{\\overline{m}}:=x(x+1)(x+2)\\cdots(x+m-1)  (m \\in  \\mathbb{N})  \n\n(the m-th rising factorial, so that x^{\\overline{m}}=\\Gamma (x+m)/\\Gamma (x)).  \nFor every real number y define  \n\n  W_n,_a(y)=\\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}\\Bigl[\\,\n                \\pi \\,(\\,y+ak)^{\\overline{\\,n\\,}}\n              +e\\,(\\,y+ak+2)^{\\overline{\\,n-3\\,}}\n              +\\ln 2\\Bigr].                                       (\\star )\n\n(a) Show that W_n,_a(y) is independent of y.  \n(b) Prove the closed form  \n\n  W_n,_a(y)=\\pi \\,(-a)^{\\,n}\\,n!.                                                (**)\n\n(Hint: interpret (\\star ) as the n-th forward difference of a degree-n polynomial but beware of the overall sign of (1-E_a)^n.)\n\n",
+      "solution": "Throughout let  \n\n  (\\Delta _{n,a}f)(t):=(1-E_{a})^{n}f(t)\n        =\\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}f(t+ak),  E_{a}f(t):=f(t+a).  (1)\n\nWith  \n\n  f(t):=\\pi \\,t^{\\overline{n}}+e\\,(t+2)^{\\overline{\\,n-3\\,}}+\\ln 2         (2)\n\nwe have exactly W_n,_a(y)=\\Delta _{n,a}f(y).\n\nStep 1 -  The n-th difference of a rising factorial.  \nClaim. For every real t and every a\\neq 0  \n\n  \\Delta _{n,a}\\bigl(t^{\\overline{n}}\\bigr)=(-a)^{\\,n}\\,n!.  (3)\n\nProof.  \nBecause t^{\\overline{n}} is a monic polynomial of degree n, write  \n\n t^{\\overline{n}}=\\sum _{j=0}^{n}c_{j}t^{j}  (c_{n}=1).\n\nApplying (1-E_{a})^{n} and extracting the leading term gives  \n\n \\Delta _{n,a}t^{\\overline{n}}=\\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}(t+ak)^{n}+(\\text{terms of degree }<n).\n\nThe inner sum equals (1-E_{a})^{n}t^{n}, which in turn equals  \n (1-E_{a})^{n}t^{n}=(-a)^{n}n!                                              (4)  \n\n(the classical formula for the n-th difference of x^{n} with operator (1-E_{a})).  \nAll lower-degree terms vanish because \\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}k^{j}=0 for j<n.  \nTherefore (3) holds. \\blacksquare \n\nRemark.  Had we used the more customary operator (E_{a}-1)^{n}, the sign would be a^{n}n!.  The present definition differs by a factor (-1)^{n}, hence formula (3).\n\nStep 2 -  Vanishing of lower-degree pieces.  \n\n(i) g_1(t)=t^{\\overline{n}}  (degree n).  \n(ii) g_2(t)=(t+2)^{\\overline{\\,n-3\\,}}  (degree n-3 < n).  \n(iii) g_3(t)=1.\n\nFor any polynomial of degree m<n we have \\Delta _{n,a}(\\text{that polynomial})=0, because (1-E_{a})^{n} annihilates every polynomial of degree <n.  Hence  \n\n \\Delta _{n,a}\\bigl[e\\,g_2\\bigr](y)=0,  \\Delta _{n,a}\\bigl[\\ln 2\\bigr](y)=0.  (5)\n\nStep 3 -  Putting the parts together.  \nUsing (3) and (5) in (1)-(2),\n\n W_n,_a(y)=\\pi \\cdot \\Delta _{n,a}(g_1)(y)=\\pi \\cdot (-a)^{n}n!.  (6)\n\nThe right-hand side contains no y, which simultaneously proves\n\n(a) W_n,_a(y) is y-independent, and  \n(b) W_n,_a(y)=\\pi (-a)^{\\,n}n!, i.e. (**) holds.\n\nObservation.  If n is even the sign disappears and the value reduces to \\pi a^{n}n!, recovering the version stated in the original draft.\n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.627678",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher‐degree structure.  \n   • The core term (y²+y(k−1)+k²)^{n/2} is built from a quadratic in k and y, then raised to the power n/2, producing a degree-n polynomial whose leading monic coefficient must be identified.  \n   • Recognising that this expression is still monic of exact degree n is essential and is subtler than in the original problem where the leading term is manifestly (±k)^{n}.\n\n2. Several additional components.  \n   • A second polynomial of degree n−4 and a pure constant are present; one has to know (and prove) that an n-th finite difference annihilates them.  \n   • This forces the solver to distinguish carefully which pieces survive and which vanish after Δₙ is applied.\n\n3. Use of finite–difference operators.  \n   • The problem now explicitly requires operator algebra (E-shift, Δ, powers of Δ) to justify the conclusions rigorously, not merely the “nth difference of a monic polynomial” slogan.\n\n4. Necessity of a full degree argument.  \n   • Because the first summand is disguised inside a power of a quadratic, seeing that its leading coefficient is still 1 and of exactly degree n demands deliberate expansion or a theorem on leading terms, unlike the original k-shift monomial.\n\n5. Combined reasoning.  \n   • The solver must blend polynomial degree analysis, properties of forward differences, and an operator perspective (or Stirling-number machinery) into a coherent proof.  \n   • A careless attempt that ignores any one of these strands (for example, overlooking the monic leading term or miscounting the degree of P₂) produces the wrong result.\n\nOverall, the variant keeps the fundamental idea (an n-th alternating sum of binomial-weighted values) but embeds it in a far more intricate algebraic environment, demands precise operator knowledge, and introduces several interacting terms that must be treated separately—making it **significantly harder** than both the original and the current kernel versions."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let n \\geq  4 be an integer (no parity restriction) and let a be any non-zero real number.  \nFor x \\in  \\mathbb{R} put  \n\n  x^{\\overline{m}}:=x(x+1)(x+2)\\cdots(x+m-1)  (m \\in  \\mathbb{N})  \n\n(the m-th rising factorial, so that x^{\\overline{m}}=\\Gamma (x+m)/\\Gamma (x)).  \nFor every real number y define  \n\n  W_n,_a(y)=\\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}\\Bigl[\\,\n                \\pi \\,(\\,y+ak)^{\\overline{\\,n\\,}}\n              +e\\,(\\,y+ak+2)^{\\overline{\\,n-3\\,}}\n              +\\ln 2\\Bigr].                                       (\\star )\n\n(a) Show that W_n,_a(y) is independent of y.  \n(b) Prove the closed form  \n\n  W_n,_a(y)=\\pi \\,(-a)^{\\,n}\\,n!.                                                (**)\n\n(Hint: interpret (\\star ) as the n-th forward difference of a degree-n polynomial but beware of the overall sign of (1-E_a)^n.)\n\n",
+      "solution": "Throughout let  \n\n  (\\Delta _{n,a}f)(t):=(1-E_{a})^{n}f(t)\n        =\\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}f(t+ak),  E_{a}f(t):=f(t+a).  (1)\n\nWith  \n\n  f(t):=\\pi \\,t^{\\overline{n}}+e\\,(t+2)^{\\overline{\\,n-3\\,}}+\\ln 2         (2)\n\nwe have exactly W_n,_a(y)=\\Delta _{n,a}f(y).\n\nStep 1 -  The n-th difference of a rising factorial.  \nClaim. For every real t and every a\\neq 0  \n\n  \\Delta _{n,a}\\bigl(t^{\\overline{n}}\\bigr)=(-a)^{\\,n}\\,n!.  (3)\n\nProof.  \nBecause t^{\\overline{n}} is a monic polynomial of degree n, write  \n\n t^{\\overline{n}}=\\sum _{j=0}^{n}c_{j}t^{j}  (c_{n}=1).\n\nApplying (1-E_{a})^{n} and extracting the leading term gives  \n\n \\Delta _{n,a}t^{\\overline{n}}=\\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}(t+ak)^{n}+(\\text{terms of degree }<n).\n\nThe inner sum equals (1-E_{a})^{n}t^{n}, which in turn equals  \n (1-E_{a})^{n}t^{n}=(-a)^{n}n!                                              (4)  \n\n(the classical formula for the n-th difference of x^{n} with operator (1-E_{a})).  \nAll lower-degree terms vanish because \\sum _{k=0}^{n}(-1)^{k}\\binom{n}{k}k^{j}=0 for j<n.  \nTherefore (3) holds. \\blacksquare \n\nRemark.  Had we used the more customary operator (E_{a}-1)^{n}, the sign would be a^{n}n!.  The present definition differs by a factor (-1)^{n}, hence formula (3).\n\nStep 2 -  Vanishing of lower-degree pieces.  \n\n(i) g_1(t)=t^{\\overline{n}}  (degree n).  \n(ii) g_2(t)=(t+2)^{\\overline{\\,n-3\\,}}  (degree n-3 < n).  \n(iii) g_3(t)=1.\n\nFor any polynomial of degree m<n we have \\Delta _{n,a}(\\text{that polynomial})=0, because (1-E_{a})^{n} annihilates every polynomial of degree <n.  Hence  \n\n \\Delta _{n,a}\\bigl[e\\,g_2\\bigr](y)=0,  \\Delta _{n,a}\\bigl[\\ln 2\\bigr](y)=0.  (5)\n\nStep 3 -  Putting the parts together.  \nUsing (3) and (5) in (1)-(2),\n\n W_n,_a(y)=\\pi \\cdot \\Delta _{n,a}(g_1)(y)=\\pi \\cdot (-a)^{n}n!.  (6)\n\nThe right-hand side contains no y, which simultaneously proves\n\n(a) W_n,_a(y) is y-independent, and  \n(b) W_n,_a(y)=\\pi (-a)^{\\,n}n!, i.e. (**) holds.\n\nObservation.  If n is even the sign disappears and the value reduces to \\pi a^{n}n!, recovering the version stated in the original draft.\n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.501180",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher‐degree structure.  \n   • The core term (y²+y(k−1)+k²)^{n/2} is built from a quadratic in k and y, then raised to the power n/2, producing a degree-n polynomial whose leading monic coefficient must be identified.  \n   • Recognising that this expression is still monic of exact degree n is essential and is subtler than in the original problem where the leading term is manifestly (±k)^{n}.\n\n2. Several additional components.  \n   • A second polynomial of degree n−4 and a pure constant are present; one has to know (and prove) that an n-th finite difference annihilates them.  \n   • This forces the solver to distinguish carefully which pieces survive and which vanish after Δₙ is applied.\n\n3. Use of finite–difference operators.  \n   • The problem now explicitly requires operator algebra (E-shift, Δ, powers of Δ) to justify the conclusions rigorously, not merely the “nth difference of a monic polynomial” slogan.\n\n4. Necessity of a full degree argument.  \n   • Because the first summand is disguised inside a power of a quadratic, seeing that its leading coefficient is still 1 and of exactly degree n demands deliberate expansion or a theorem on leading terms, unlike the original k-shift monomial.\n\n5. Combined reasoning.  \n   • The solver must blend polynomial degree analysis, properties of forward differences, and an operator perspective (or Stirling-number machinery) into a coherent proof.  \n   • A careless attempt that ignores any one of these strands (for example, overlooking the monic leading term or miscounting the degree of P₂) produces the wrong result.\n\nOverall, the variant keeps the fundamental idea (an n-th alternating sum of binomial-weighted values) but embeds it in a far more intricate algebraic environment, demands precise operator knowledge, and introduces several interacting terms that must be treated separately—making it **significantly harder** than both the original and the current kernel versions."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

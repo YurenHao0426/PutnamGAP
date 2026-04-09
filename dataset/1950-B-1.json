@@ -1,0 +1,136 @@
+{
+  "index": "1950-B-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "1. In each of \\( n \\) houses on a straight street are one or more boys. At what point should all the boys meet so that the sum of the distances that they walk is as small as possible?",
+  "solution": "First Solution. Suppose the linear coordinate of the \\( i \\) th boy's house is \\( x_{i} \\). We can number the boys so that \\( x_{1} \\leq x_{2} \\leq \\cdots \\leq x_{n} \\). Let \\( y \\) be the coordinate of the best meeting point. (There is a best meeting point because the total distance walked to a meeting at \\( z \\) is a continuous function of \\( z \\) that tends to infinity as \\( z \\rightarrow \\pm \\infty \\).)\n\nSuppose that \\( r \\) boys live to the right of \\( y \\) and \\( l \\) boys to the left of \\( y \\). If \\( y^{\\prime} \\) is a point to the right of \\( y \\) but not beyond the next house and the boys congregated at \\( y^{\\prime} \\) instead of \\( y \\), then \\( r \\) boys would walk \\( y^{\\prime}-y \\) less and \\( n-r \\) would walk \\( y^{\\prime}-y \\) farther. If \\( n<2 r \\), this would make the total distance walked less by \\( (2 r-n)\\left(y^{\\prime}-y\\right) \\), contrary to the choice of \\( y \\). Hence \\( n \\geq 2 r \\). Similarly, \\( n \\geq 2 l \\).\n\nSuppose \\( n \\) is odd, say, \\( n=2 k-1 \\). We cannot have \\( y<x_{k} \\) because then at least \\( k+1 \\) boys would live to the right of \\( y \\), that is \\( r \\geq k+1 \\), contradicting the previous paragraph. Similarly, we cannot have \\( y>x_{k} \\). So \\( y=x_{k} \\).\n\nNow suppose \\( n \\) is even, \\( n=2 k \\). By the same reasoning, we cannot have \\( y<x_{k} \\) or \\( y>x_{k+1} \\); therefore, \\( x_{k} \\leq y \\leq x_{k+1} \\). Moreover, the total distance walked will be the same for any choice of \\( y \\) in this interval, as shown in the second paragraph.\n\nSummarizing, if \\( n \\) is odd, the boys should meet at the home of the middle boy; if \\( n \\) is even, they should meet at any point between (or at) the homes of the two middle boys. If the two middle boys happen to live in the same house, the interval degenerates to a point and the meeting place is uniquely determined.\n\nSecond Solution. Number the boys as above. Wherever they meet, the first and \\( n \\)th boys together must walk at least \\( x_{n}-x_{1} \\); the second and \\( (n-1) \\) st boys together must walk at least \\( x_{n-1}-x_{2} \\); etc.\nIf \\( n \\) is even, \\( n=2 k \\), the boys must walk altogether at least\n\\[\n\\left(x_{n}-x_{1}\\right)+\\cdots+\\left(x_{k+1}-x_{k}\\right)\n\\]\nwith equality if and only if the meeting place \\( y \\) is in each of the intervals \\( \\left[x_{1}, x_{n}\\right], \\ldots,\\left[x_{k}, x_{k+1}\\right] \\). Since these intervals are nested, this is equivalent to \\( y \\in\\left[x_{k}, x_{k+1}\\right] \\).\nIf \\( n \\) is odd, \\( n=2 k-1 \\), the pairing above leaves the \\( k \\) th boy unpaired; but he must walk at least 0 , so the total distance walked is at least\n\\[\n\\left(x_{n}-x_{1}\\right)+\\cdots+\\left(x_{k+1}-x_{k-1}\\right)+0\n\\]\nwith equality if and only if \\( y=x_{k} \\).\nThis second proof was adapted from A. R. Kokan, \"The Minimum Property of the Mean Deviation,\" Mathematical Gazette, 59 (1975), 111.",
+  "vars": [
+    "y",
+    "z",
+    "r",
+    "l"
+  ],
+  "params": [
+    "n",
+    "k",
+    "x_i",
+    "x_1",
+    "x_2",
+    "x_k",
+    "x_k+1",
+    "x_k-1",
+    "x_n",
+    "x_n-1"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "y": "meetupcoordinate",
+        "z": "candidatepoint",
+        "r": "rightboys",
+        "l": "leftboys",
+        "n": "totalboys",
+        "k": "halfindex",
+        "x_i": "ithhouse",
+        "x_1": "firsthouse",
+        "x_2": "secondhouse",
+        "x_k": "kthhouse",
+        "x_k+1": "nextkhouse",
+        "x_k-1": "prevkhouse",
+        "x_n": "lasthouse",
+        "x_n-1": "penulthouse"
+      },
+      "question": "1. In each of \\( totalboys \\) houses on a straight street are one or more boys. At what point should all the boys meet so that the sum of the distances that they walk is as small as possible?",
+      "solution": "First Solution. Suppose the linear coordinate of the \\( i \\)th boy's house is \\( ithhouse \\). We can number the boys so that \\( firsthouse \\leq secondhouse \\leq \\cdots \\leq lasthouse \\). Let \\( meetupcoordinate \\) be the coordinate of the best meeting point. (There is a best meeting point because the total distance walked to a meeting at \\( candidatepoint \\) is a continuous function of \\( candidatepoint \\) that tends to infinity as \\( candidatepoint \\rightarrow \\pm \\infty \\).)\n\nSuppose that \\( rightboys \\) boys live to the right of \\( meetupcoordinate \\) and \\( leftboys \\) boys to the left of \\( meetupcoordinate \\). If \\( meetupcoordinate^{\\prime} \\) is a point to the right of \\( meetupcoordinate \\) but not beyond the next house and the boys congregated at \\( meetupcoordinate^{\\prime} \\) instead of \\( meetupcoordinate \\), then \\( rightboys \\) boys would walk \\( meetupcoordinate^{\\prime}-meetupcoordinate \\) less and \\( totalboys-rightboys \\) would walk \\( meetupcoordinate^{\\prime}-meetupcoordinate \\) farther. If \\( totalboys<2\\, rightboys \\), this would make the total distance walked less by \\( (2\\, rightboys-totalboys)\\left(meetupcoordinate^{\\prime}-meetupcoordinate\\right) \\), contrary to the choice of \\( meetupcoordinate \\). Hence \\( totalboys \\geq 2\\, rightboys \\). Similarly, \\( totalboys \\geq 2\\, leftboys \\).\n\nSuppose \\( totalboys \\) is odd, say, \\( totalboys = 2\\, halfindex-1 \\). We cannot have \\( meetupcoordinate<kthhouse \\) because then at least \\( halfindex+1 \\) boys would live to the right of \\( meetupcoordinate \\), that is \\( rightboys \\geq halfindex+1 \\), contradicting the previous paragraph. Similarly, we cannot have \\( meetupcoordinate>kthhouse \\). So \\( meetupcoordinate=kthhouse \\).\n\nNow suppose \\( totalboys \\) is even, \\( totalboys = 2\\, halfindex \\). By the same reasoning, we cannot have \\( meetupcoordinate<kthhouse \\) or \\( meetupcoordinate>nextkhouse \\); therefore, \\( kthhouse \\leq meetupcoordinate \\leq nextkhouse \\). Moreover, the total distance walked will be the same for any choice of \\( meetupcoordinate \\) in this interval, as shown in the second paragraph.\n\nSummarizing, if \\( totalboys \\) is odd, the boys should meet at the home of the middle boy; if \\( totalboys \\) is even, they should meet at any point between (or at) the homes of the two middle boys. If the two middle boys happen to live in the same house, the interval degenerates to a point and the meeting place is uniquely determined.\n\nSecond Solution. Number the boys as above. Wherever they meet, the first and \\( totalboys \\)th boys together must walk at least \\( lasthouse-firsthouse \\); the second and \\( (totalboys-1) \\)st boys together must walk at least \\( penulthouse-secondhouse \\); etc.\nIf \\( totalboys \\) is even, \\( totalboys = 2\\, halfindex \\), the boys must walk altogether at least\n\\[\n\\left(lasthouse-firsthouse\\right)+\\cdots+\\left(nextkhouse-kthhouse\\right)\n\\]\nwith equality if and only if the meeting place \\( meetupcoordinate \\) is in each of the intervals \\( \\left[firsthouse, lasthouse\\right], \\ldots,\\left[kthhouse, nextkhouse\\right] \\). Since these intervals are nested, this is equivalent to \\( meetupcoordinate \\in\\left[kthhouse, nextkhouse\\right] \\).\nIf \\( totalboys \\) is odd, \\( totalboys = 2\\, halfindex-1 \\), the pairing above leaves the \\( halfindex \\)th boy unpaired; but he must walk at least 0, so the total distance walked is at least\n\\[\n\\left(lasthouse-firsthouse\\right)+\\cdots+\\left(nextkhouse-prevkhouse\\right)+0\n\\]\nwith equality if and only if \\( meetupcoordinate=kthhouse \\).\n\nThis second proof was adapted from A. R. Kokan, \"The Minimum Property of the Mean Deviation,\" Mathematical Gazette, 59 (1975), 111."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "y": "blueberry",
+        "z": "pinecone",
+        "r": "snowflake",
+        "l": "buttercup",
+        "n": "paintbrush",
+        "k": "horseshoe",
+        "x_i": "gardenpot",
+        "x_1": "sunflower",
+        "x_2": "raincloud",
+        "x_k": "stargazer",
+        "x_k+1": "driftwood",
+        "x_k-1": "dandelion",
+        "x_n": "firebrick",
+        "x_n-1": "marshmallow"
+      },
+      "question": "In each of \\( paintbrush \\) houses on a straight street are one or more boys. At what point should all the boys meet so that the sum of the distances that they walk is as small as possible?",
+      "solution": "First Solution. Suppose the linear coordinate of the \\( i \\) th boy's house is \\( gardenpot \\). We can number the boys so that \\( sunflower \\leq raincloud \\leq \\cdots \\leq firebrick \\). Let \\( blueberry \\) be the coordinate of the best meeting point. (There is a best meeting point because the total distance walked to a meeting at \\( pinecone \\) is a continuous function of \\( pinecone \\) that tends to infinity as \\( pinecone \\rightarrow \\pm \\infty \\).)\n\nSuppose that \\( snowflake \\) boys live to the right of \\( blueberry \\) and \\( buttercup \\) boys to the left of \\( blueberry \\). If \\( blueberry^{\\prime} \\) is a point to the right of \\( blueberry \\) but not beyond the next house and the boys congregated at \\( blueberry^{\\prime} \\) instead of \\( blueberry \\), then \\( snowflake \\) boys would walk \\( blueberry^{\\prime}-blueberry \\) less and \\( paintbrush-snowflake \\) would walk \\( blueberry^{\\prime}-blueberry \\) farther. If \\( paintbrush<2\\,snowflake \\), this would make the total distance walked less by \\( (2\\,snowflake-paintbrush)\\left(blueberry^{\\prime}-blueberry\\right) \\), contrary to the choice of \\( blueberry \\). Hence \\( paintbrush \\geq 2\\,snowflake \\). Similarly, \\( paintbrush \\geq 2\\,buttercup \\).\n\nSuppose \\( paintbrush \\) is odd, say, \\( paintbrush=2\\,horseshoe-1 \\). We cannot have \\( blueberry<stargazer \\) because then at least \\( horseshoe+1 \\) boys would live to the right of \\( blueberry \\), that is \\( snowflake \\geq horseshoe+1 \\), contradicting the previous paragraph. Similarly, we cannot have \\( blueberry>stargazer \\). So \\( blueberry=stargazer \\).\n\nNow suppose \\( paintbrush \\) is even, \\( paintbrush=2\\,horseshoe \\). By the same reasoning, we cannot have \\( blueberry<stargazer \\) or \\( blueberry>driftwood \\); therefore, \\( stargazer \\leq blueberry \\leq driftwood \\). Moreover, the total distance walked will be the same for any choice of \\( blueberry \\) in this interval, as shown in the second paragraph.\n\nSummarizing, if \\( paintbrush \\) is odd, the boys should meet at the home of the middle boy; if \\( paintbrush \\) is even, they should meet at any point between (or at) the homes of the two middle boys. If the two middle boys happen to live in the same house, the interval degenerates to a point and the meeting place is uniquely determined.\n\nSecond Solution. Number the boys as above. Wherever they meet, the first and \\( paintbrush \\)th boys together must walk at least \\( firebrick-sunflower \\); the second and \\( (paintbrush-1) \\) st boys together must walk at least \\( marshmallow-raincloud \\); etc.\nIf \\( paintbrush \\) is even, \\( paintbrush=2\\,horseshoe \\), the boys must walk altogether at least\n\\[\n\\left(firebrick-sunflower\\right)+\\cdots+\\left(driftwood-stargazer\\right)\n\\]\nwith equality if and only if the meeting place \\( blueberry \\) is in each of the intervals \\( \\left[sunflower,firebrick\\right], \\ldots,\\left[stargazer,driftwood\\right] \\). Since these intervals are nested, this is equivalent to \\( blueberry \\in\\left[stargazer,driftwood\\right] \\).\nIf \\( paintbrush \\) is odd, \\( paintbrush=2\\,horseshoe-1 \\), the pairing above leaves the \\( horseshoe \\) th boy unpaired; but he must walk at least 0 , so the total distance walked is at least\n\\[\n\\left(firebrick-sunflower\\right)+\\cdots+\\left(driftwood-dandelion\\right)+0\n\\]\nwith equality if and only if \\( blueberry=stargazer \\).\nThis second proof was adapted from A. R. Kokan, \"The Minimum Property of the Mean Deviation,\" Mathematical Gazette, 59 (1975), 111."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "y": "worstpoint",
+        "z": "distantzone",
+        "r": "leftside",
+        "l": "rightside",
+        "n": "emptiness",
+        "k": "boundary",
+        "x_i": "remotepoint",
+        "x_1": "vacantone",
+        "x_2": "vacanttwo",
+        "x_k": "vacantmid",
+        "x_k+1": "vacantnext",
+        "x_k-1": "vacantprev",
+        "x_n": "vacantlast",
+        "x_n-1": "vacantprelast"
+      },
+      "question": "1. In each of \\( emptiness \\) houses on a straight street are one or more boys. At what point should all the boys meet so that the sum of the distances that they walk is as small as possible?",
+      "solution": "First Solution. Suppose the linear coordinate of the \\( i \\) th boy's house is \\( remotepoint \\). We can number the boys so that \\( vacantone \\leq vacanttwo \\leq \\cdots \\leq vacantlast \\). Let \\( worstpoint \\) be the coordinate of the best meeting point. (There is a best meeting point because the total distance walked to a meeting at \\( distantzone \\) is a continuous function of \\( distantzone \\) that tends to infinity as \\( distantzone \\rightarrow \\pm \\infty \\).)\n\nSuppose that \\( leftside \\) boys live to the right of \\( worstpoint \\) and \\( rightside \\) boys to the left of \\( worstpoint \\). If \\( worstpoint^{\\prime} \\) is a point to the right of \\( worstpoint \\) but not beyond the next house and the boys congregated at \\( worstpoint^{\\prime} \\) instead of \\( worstpoint \\), then \\( leftside \\) boys would walk \\( worstpoint^{\\prime}-worstpoint \\) less and \\( emptiness-leftside \\) would walk \\( worstpoint^{\\prime}-worstpoint \\) farther. If \\( emptiness<2 leftside \\), this would make the total distance walked less by \\( (2 leftside-emptiness)\\left(worstpoint^{\\prime}-worstpoint\\right) \\), contrary to the choice of \\( worstpoint \\). Hence \\( emptiness \\geq 2 leftside \\). Similarly, \\( emptiness \\geq 2 rightside \\).\n\nSuppose \\( emptiness \\) is odd, say, \\( emptiness=2 boundary-1 \\). We cannot have \\( worstpoint<vacantmid \\) because then at least \\( boundary+1 \\) boys would live to the right of \\( worstpoint \\), that is \\( leftside \\geq boundary+1 \\), contradicting the previous paragraph. Similarly, we cannot have \\( worstpoint>vacantmid \\). So \\( worstpoint=vacantmid \\).\n\nNow suppose \\( emptiness \\) is even, \\( emptiness=2 boundary \\). By the same reasoning, we cannot have \\( worstpoint<vacantmid \\) or \\( worstpoint>vacantnext \\); therefore, \\( vacantmid \\leq worstpoint \\leq vacantnext \\). Moreover, the total distance walked will be the same for any choice of \\( worstpoint \\) in this interval, as shown in the second paragraph.\n\nSummarizing, if \\( emptiness \\) is odd, the boys should meet at the home of the middle boy; if \\( emptiness \\) is even, they should meet at any point between (or at) the homes of the two middle boys. If the two middle boys happen to live in the same house, the interval degenerates to a point and the meeting place is uniquely determined.\n\nSecond Solution. Number the boys as above. Wherever they meet, the first and \\( emptiness \\)th boys together must walk at least \\( vacantlast-vacantone \\); the second and \\( (emptiness-1) \\)st boys together must walk at least \\( vacantprelast-vacanttwo \\); etc.\nIf \\( emptiness \\) is even, \\( emptiness=2 boundary \\), the boys must walk altogether at least\n\\[\n\\left(vacantlast-vacantone\\right)+\\cdots+\\left(vacantnext-vacantmid\\right)\n\\]\nwith equality if and only if the meeting place \\( worstpoint \\) is in each of the intervals \\( \\left[vacantone, vacantlast\\right], \\ldots,\\left[vacantmid, vacantnext\\right] \\). Since these intervals are nested, this is equivalent to \\( worstpoint \\in\\left[vacantmid, vacantnext\\right] \\).\nIf \\( emptiness \\) is odd, \\( emptiness=2 boundary-1 \\), the pairing above leaves the \\( boundary \\) th boy unpaired; but he must walk at least 0 , so the total distance walked is at least\n\\[\n\\left(vacantlast-vacantone\\right)+\\cdots+\\left(vacantnext-vacantprev\\right)+0\n\\]\nwith equality if and only if \\( worstpoint=vacantmid \\).\nThis second proof was adapted from A. R. Kokan, \"The Minimum Property of the Mean Deviation,\" Mathematical Gazette, 59 (1975), 111."
+    },
+    "garbled_string": {
+      "map": {
+        "y": "qzxwvtnp",
+        "z": "hjgrksla",
+        "r": "vbncmwqe",
+        "l": "fghtrdsa",
+        "n": "pqowielk",
+        "k": "zmxncbva",
+        "x_i": "kjhgtrwe",
+        "x_1": "qazwsxed",
+        "x_2": "rfvtgbyh",
+        "x_k": "poiulkjh",
+        "x_k+1": "mnbvcxzq",
+        "x_k-1": "lkjhgfds",
+        "x_n": "asdfghjk",
+        "x_n-1": "ghtyuiop"
+      },
+      "question": "1. In each of \\( pqowielk \\) houses on a straight street are one or more boys. At what point should all the boys meet so that the sum of the distances that they walk is as small as possible?",
+      "solution": "First Solution. Suppose the linear coordinate of the \\( i \\) th boy's house is \\( kjhgtrwe \\). We can number the boys so that \\( qazwsxed \\leq rfvtgbyh \\leq \\cdots \\leq asdfghjk \\). Let \\( qzxwvtnp \\) be the coordinate of the best meeting point. (There is a best meeting point because the total distance walked to a meeting at \\( hjgrksla \\) is a continuous function of \\( hjgrksla \\) that tends to infinity as \\( hjgrksla \\rightarrow \\pm \\infty \\).)\n\nSuppose that \\( vbncmwqe \\) boys live to the right of \\( qzxwvtnp \\) and \\( fghtrdsa \\) boys to the left of \\( qzxwvtnp \\). If \\( qzxwvtnp^{\\prime} \\) is a point to the right of \\( qzxwvtnp \\) but not beyond the next house and the boys congregated at \\( qzxwvtnp^{\\prime} \\) instead of \\( qzxwvtnp \\), then \\( vbncmwqe \\) boys would walk \\( qzxwvtnp^{\\prime}-qzxwvtnp \\) less and \\( pqowielk-vbncmwqe \\) would walk \\( qzxwvtnp^{\\prime}-qzxwvtnp \\) farther. If \\( pqowielk<2 vbncmwqe \\), this would make the total distance walked less by \\( (2 vbncmwqe-pqowielk)\\left(qzxwvtnp^{\\prime}-qzxwvtnp\\right) \\), contrary to the choice of \\( qzxwvtnp \\). Hence \\( pqowielk \\geq 2 vbncmwqe \\). Similarly, \\( pqowielk \\geq 2 fghtrdsa \\).\n\nSuppose \\( pqowielk \\) is odd, say, \\( pqowielk=2 zmxncbva-1 \\). We cannot have \\( qzxwvtnp<poiulkjh \\) because then at least \\( zmxncbva+1 \\) boys would live to the right of \\( qzxwvtnp \\), that is \\( vbncmwqe \\geq zmxncbva+1 \\), contradicting the previous paragraph. Similarly, we cannot have \\( qzxwvtnp>poiulkjh \\). So \\( qzxwvtnp=poiulkjh \\).\n\nNow suppose \\( pqowielk \\) is even, \\( pqowielk=2 zmxncbva \\). By the same reasoning, we cannot have \\( qzxwvtnp<poiulkjh \\) or \\( qzxwvtnp>mnbvcxzq \\); therefore, \\( poiulkjh \\leq qzxwvtnp \\leq mnbvcxzq \\). Moreover, the total distance walked will be the same for any choice of \\( qzxwvtnp \\) in this interval, as shown in the second paragraph.\n\nSummarizing, if \\( pqowielk \\) is odd, the boys should meet at the home of the middle boy; if \\( pqowielk \\) is even, they should meet at any point between (or at) the homes of the two middle boys. If the two middle boys happen to live in the same house, the interval degenerates to a point and the meeting place is uniquely determined.\n\nSecond Solution. Number the boys as above. Wherever they meet, the first and \\( pqowielk \\)th boys together must walk at least \\( asdfghjk-qazwsxed \\); the second and \\( (pqowielk-1) \\) st boys together must walk at least \\( ghtyuiop-rfvtgbyh \\); etc.\nIf \\( pqowielk \\) is even, \\( pqowielk=2 zmxncbva \\), the boys must walk altogether at least\n\\[\n\\left(asdfghjk-qazwsxed\\right)+\\cdots+\\left(mnbvcxzq-poiulkjh\\right)\n\\]\nwith equality if and only if the meeting place \\( qzxwvtnp \\) is in each of the intervals \\( \\left[qazwsxed, asdfghjk\\right], \\ldots,\\left[poiulkjh, mnbvcxzq\\right] \\). Since these intervals are nested, this is equivalent to \\( qzxwvtnp \\in\\left[poiulkjh, mnbvcxzq\\right] \\).\nIf \\( pqowielk \\) is odd, \\( pqowielk=2 zmxncbva-1 \\), the pairing above leaves the \\( zmxncbva \\) th boy unpaired; but he must walk at least 0 , so the total distance walked is at least\n\\[\n\\left(asdfghjk-qazwsxed\\right)+\\cdots+\\left(mnbvcxzq-lkjhgfds\\right)+0\n\\]\nwith equality if and only if \\( qzxwvtnp=poiulkjh \\).\nThis second proof was adapted from A. R. Kokan, \"The Minimum Property of the Mean Deviation,\" Mathematical Gazette, 59 (1975), 111."
+    },
+    "kernel_variant": {
+      "question": "Along a long, perfectly straight corridor of a space-station lie \\(n\\) maintenance bays whose positions (measured in metres from the air-lock at one end) are the real numbers \\(x_1,\\dots ,x_n\\; (n\\ge 1)\\). In each bay waits exactly one probe droid.  The droids must choose a point \\(y\\) on the corridor (not necessarily coinciding with a bay) at which to assemble, and each droid will simply roll along the corridor to \\(y\\).  For which values of \\(y\\) is the total distance \n\\[\nS(y)=\\sum_{i=1}^{n}|x_i-y|\n\\]\ntravelled by all the droids minimal?",
+      "solution": "Sort the bay positions in nondecreasing order: x_1\\leq x_2\\leq \\cdots \\leq x_n, and define\n\n  S(y)=\\sum _{i=1}^n|x_i-y|.\n\n1.  Existence of a minimizer.\n    S(y) is continuous in y and S(y)\\to +\\infty  as y\\to \\pm \\infty , so there is at least one global minimizer y.\n\n2.  Piecewise-linear derivative.\n    For y\\neq x_i, S is differentiable.  Let \\ell =#{x_i<y} and r=#{x_i>y}, so \\ell +r=n.  A small increment y\\mapsto y+\\varepsilon  (\\varepsilon >0 small) gives\n\n    for each x_i<y: |x_i-(y+\\varepsilon )|-|x_i-y|=+\\varepsilon ,\n    for each x_i>y: |x_i-(y+\\varepsilon )|-|x_i-y|=-\\varepsilon .\n\n    Hence\n      S(y+\\varepsilon )-S(y)=(\\ell -r)\\varepsilon ,\n    and so S'(y)=\\ell -r.\n\n    A necessary condition for a local minimum in a differentiable region is S'(y)=0, i.e. \\ell =r=n/2, which can only happen if n is even.\n\n3.  Analysis by parity of n.\n\n   Case A: n is odd, say n=2k-1.  Then there is no open interval on which \\ell =r.  Indeed:\n     *  For y<x_k, \\ell \\leq k-1, r\\geq (2k-1)-(k-1)=k, so S'(y)=\\ell -r\\leq -1<0 (S is strictly decreasing).\n     *  For y>x_k, \\ell \\geq k, r\\leq (2k-1)-k=k-1, so S'(y)=\\ell -r\\geq +1>0 (S is strictly increasing).\n   Therefore S decreases until y reaches x_k and then increases afterwards.  The unique global minimum is at y=x_k, the median bay.\n\n   Case B: n is even, say n=2k.  Then:\n     *  For y<x_k, \\ell \\leq k-1, r\\geq 2k-(k-1)=k+1, so S'(y)=\\ell -r\\leq -2<0 (S strictly decreasing).\n     *  For y>x_{k+1}, \\ell \\geq k+1, r\\leq 2k-(k+1)=k-1, so S'(y)=\\ell -r\\geq +2>0 (S strictly increasing).\n     *  On the open interval x_k<y<x_{k+1}, we have \\ell =r=k, so S'(y)=0 and S is constant there.\n   Thus S decreases up to y=x_k, is flat on [x_k,x_{k+1}], and increases thereafter.  The entire closed interval [x_k,x_{k+1}] comprises the global minimizers.\n\nConclusion.\n  *  If n is odd, the unique minimizer is the median bay x_{(n+1)/2}.\n  *  If n is even, any y\\in [x_{n/2},x_{n/2+1}] minimizes \\sum |x_i-y|.  In particular, if x_{n/2}=x_{n/2+1} the interval collapses to that point.",
+      "_meta": {
+        "core_steps": [
+          "Order the positions x1 ≤ … ≤ xn along the line.",
+          "Let y be a candidate meeting point and count l, r = # left/right of y.",
+          "Moving y infinitesimally toward the side with fewer than half cannot shorten the total distance; if a side has > n/2 the distance decreases, contradiction.",
+          "Thus no side may contain more than ⌊n/2⌋ participants, so y must be a median: odd n ⇒ y = x_k, even n ⇒ y ∈ [x_k, x_{k+1}]."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Type/name of the participants",
+            "original": "boys"
+          },
+          "slot2": {
+            "description": "Linear setting in which the locations lie",
+            "original": "straight street (one-dimensional line)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,176 @@
+{
+  "index": "1987-B-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $O_n$ be the $n$-dimensional vector $(0,0,\\cdots, 0)$. Let $M$ be\na $2n \\times n$ matrix of complex numbers such that whenever $(z_1,\nz_2, \\dots, z_{2n})M = O_n$, with complex $z_i$, not all zero, then at\nleast one of the $z_i$ is not real. Prove that for arbitrary real\nnumbers $r_1, r_2, \\dots, r_{2n}$, there are complex numbers $w_1,\nw_2, \\dots, w_n$ such that\n\\[\n\\mathrm{re}\\left[ M \\left( \\begin{array}{c} w_1 \\\\ \\vdots \\\\ w_n \\end{array}\n\\right) \\right] = \\left( \\begin{array}{c} r_1 \\\\ \\vdots \\\\ r_n\n\\end{array} \\right).\n\\]\n(Note: if $C$ is a matrix of complex numbers, $\\mathrm{re}(C)$ is the matrix\nwhose entries are the real parts of the entries of $C$.)",
+  "solution": "Solution. Write \\( M=A+i B \\) where \\( A \\) and \\( B \\) are real \\( 2 n \\times n \\) matrices. If \\( z=\\left(\\begin{array}{llll}z_{1} & z_{2} & \\cdots & z_{2 n}\\end{array}\\right) \\) is a row vector with real entries such that \\( z\\left(\\begin{array}{ll}A & B\\end{array}\\right)=0 \\), then \\( z M=z A+i z B=0 \\), so \\( z=0 \\) by hypothesis. Hence \\( \\left(\\begin{array}{ll}A & B\\end{array}\\right) \\) is an invertible real \\( 2 n \\times 2 n \\) matrix.\n\nLet \\( r \\) be the real column vector \\( \\left(r_{1}, \\ldots, r_{2 n}\\right) \\). If \\( w \\) is a complex column vector of length \\( n \\), and we write \\( w=u+i v \\) where \\( u \\) and \\( v \\) are the real and imaginary parts of \\( w \\), then the condition \\( \\operatorname{Re}[M w]=r \\) is equivalent to \\( A u-B v=r \\), and to \\( \\left(\\begin{array}{ll}A & B\\end{array}\\right)\\binom{u}{-v}=r \\). Since \\( \\left(\\begin{array}{ll}A & B\\end{array}\\right) \\) is invertible, we can find a real column vector \\( \\binom{u}{-v} \\) satisfying this.",
+  "vars": [
+    "w_1",
+    "w_2",
+    "w_n",
+    "w",
+    "u",
+    "v",
+    "z_1",
+    "z_2",
+    "z_i",
+    "z_2n",
+    "z"
+  ],
+  "params": [
+    "n",
+    "M",
+    "A",
+    "B",
+    "C",
+    "O_n",
+    "r_1",
+    "r_2",
+    "r_n",
+    "r_2n",
+    "r"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "w_1": "compone",
+        "w_2": "comptwo",
+        "w_n": "compenn",
+        "w": "compvector",
+        "u": "realpart",
+        "v": "imagpart",
+        "z_1": "testone",
+        "z_2": "testtwo",
+        "z_i": "testidx",
+        "z_2n": "testtwon",
+        "z": "testvector",
+        "n": "dimcount",
+        "M": "bigmatrix",
+        "A": "realmatrix",
+        "B": "imagmatrix",
+        "C": "anymatrix",
+        "O_n": "zerovect",
+        "r_1": "targetone",
+        "r_2": "targettwo",
+        "r_n": "targetn",
+        "r_2n": "targettwon",
+        "r": "targetvec"
+      },
+      "question": "Let $zerovect$ be the $dimcount$-dimensional vector $(0,0,\\cdots, 0)$. Let $bigmatrix$ be\na $2 dimcount \\times dimcount$ matrix of complex numbers such that whenever $(testone,\ntesttwo, \\dots, testtwon) bigmatrix = zerovect$, with complex $testidx$, not all zero, then at\nleast one of the $testidx$ is not real. Prove that for arbitrary real\nnumbers $targetone, targettwo, \\dots, targettwon$, there are complex numbers $compone,\ncomptwo, \\dots, compenn$ such that\n\\[\n\\mathrm{re}\\left[ bigmatrix \\left( \\begin{array}{c} compone \\\\ \\vdots \\\\ compenn \\end{array}\n\\right) \\right] = \\left( \\begin{array}{c} targetone \\\\ \\vdots \\\\ targetn\n\\end{array} \\right).\n\\]\n(Note: if $anymatrix$ is a matrix of complex numbers, $\\mathrm{re}(anymatrix)$ is the matrix\nwhose entries are the real parts of the entries of $anymatrix$.)",
+      "solution": "Solution. Write \\( bigmatrix = realmatrix + i\\, imagmatrix \\) where \\( realmatrix \\) and \\( imagmatrix \\) are real \\( 2 dimcount \\times dimcount \\) matrices. If \\( testvector = \\left(\\begin{array}{llll}testone & testtwo & \\cdots & testtwon\\end{array}\\right) \\) is a row vector with real entries such that \\( testvector \\left(\\begin{array}{ll}realmatrix & imagmatrix\\end{array}\\right) = 0 \\), then \\( testvector bigmatrix = testvector realmatrix + i\\, testvector imagmatrix = 0 \\), so \\( testvector = 0 \\) by hypothesis. Hence \\( \\left(\\begin{array}{ll}realmatrix & imagmatrix\\end{array}\\right) \\) is an invertible real \\( 2 dimcount \\times 2 dimcount \\) matrix.\n\nLet \\( targetvec \\) be the real column vector \\( \\left(targetone, \\ldots, targettwon\\right) \\). If \\( compvector \\) is a complex column vector of length \\( dimcount \\), and we write \\( compvector = realpart + i\\, imagpart \\) where \\( realpart \\) and \\( imagpart \\) are the real and imaginary parts of \\( compvector \\), then the condition \\( \\operatorname{Re}[bigmatrix\\, compvector] = targetvec \\) is equivalent to \\( realmatrix\\, realpart - imagmatrix\\, imagpart = targetvec \\), and to \\( \\left(\\begin{array}{ll}realmatrix & imagmatrix\\end{array}\\right) \\binom{realpart}{-imagpart} = targetvec \\). Since \\( \\left(\\begin{array}{ll}realmatrix & imagmatrix\\end{array}\\right) \\) is invertible, we can find a real column vector \\( \\binom{realpart}{-imagpart} \\) satisfying this."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "w_1": "daffodils",
+        "w_2": "buttercup",
+        "w_n": "chrysalis",
+        "w": "hummingbrd",
+        "u": "lighthouse",
+        "v": "marzipans",
+        "z_1": "peppermint",
+        "z_2": "blackberry",
+        "z_i": "tangerine",
+        "z_2n": "watermelon",
+        "z": "thunderclap",
+        "n": "caterpillar",
+        "M": "windjammer",
+        "A": "whirlpool",
+        "B": "ironclad",
+        "C": "dragonfly",
+        "O_n": "rainshadow",
+        "r_1": "bluebonnet",
+        "r_2": "kingfisher",
+        "r_n": "orangutang",
+        "r_2n": "planktonic",
+        "r": "wildflower"
+      },
+      "question": "Let $rainshadow$ be the $caterpillar$-dimensional vector $(0,0,\\cdots, 0)$. Let $windjammer$ be\na $2caterpillar \\times caterpillar$ matrix of complex numbers such that whenever $(peppermint,\nblackberry, \\dots, watermelon)windjammer = rainshadow$, with complex tangerine, not all zero, then at\nleast one of the tangerine is not real. Prove that for arbitrary real\nnumbers bluebonnet, kingfisher, \\dots, planktonic, there are complex numbers daffodils,\nbuttercup, \\dots, chrysalis such that\n\\[\n\\mathrm{re}\\left[ windjammer \\left( \\begin{array}{c} daffodils \\\\ \\vdots \\\\ chrysalis \\end{array}\n\\right) \\right] = \\left( \\begin{array}{c} bluebonnet \\\\ \\vdots \\\\ orangutang\n\\end{array} \\right).\n\\]\n(Note: if dragonfly is a matrix of complex numbers, $\\mathrm{re}(dragonfly)$ is the matrix\nwhose entries are the real parts of the entries of dragonfly.)",
+      "solution": "Solution. Write \\( windjammer=whirlpool+i ironclad \\) where \\( whirlpool \\) and \\( ironclad \\) are real \\( 2 caterpillar \\times caterpillar \\) matrices. If \\( thunderclap=\\left(\\begin{array}{llll}peppermint & blackberry & \\cdots & watermelon\\end{array}\\right) \\) is a row vector with real entries such that \\( thunderclap\\left(\\begin{array}{ll}whirlpool & ironclad\\end{array}\\right)=0 \\), then \\( thunderclap windjammer=thunderclap whirlpool+i thunderclap ironclad=0 \\), so \\( thunderclap=0 \\) by hypothesis. Hence \\( \\left(\\begin{array}{ll}whirlpool & ironclad\\end{array}\\right) \\) is an invertible real \\( 2 caterpillar \\times 2 caterpillar \\) matrix.\n\nLet \\( wildflower \\) be the real column vector \\( \\left(bluebonnet, \\ldots, planktonic\\right) \\). If \\( hummingbrd \\) is a complex column vector of length \\( caterpillar \\), and we write \\( hummingbrd=lighthouse+i marzipans \\) where \\( lighthouse \\) and \\( marzipans \\) are the real and imaginary parts of \\( hummingbrd \\), then the condition \\( \\operatorname{Re}[windjammer\\, hummingbrd]=wildflower \\) is equivalent to \\( whirlpool\\, lighthouse-ironclad\\, marzipans=wildflower \\), and to \\( \\left(\\begin{array}{ll}whirlpool & ironclad\\end{array}\\right)\\binom{lighthouse}{-marzipans}=wildflower \\). Since \\( \\left(\\begin{array}{ll}whirlpool & ironclad\\end{array}\\right) \\) is invertible, we can find a real column vector \\( \\binom{lighthouse}{-marzipans} \\) satisfying this."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "w_1": "fixedrealone",
+        "w_2": "fixedrealtwo",
+        "w_n": "fixedrealn",
+        "w": "fixedrealvar",
+        "u": "imaginary",
+        "v": "realpart",
+        "z_1": "constantone",
+        "z_2": "constanttwo",
+        "z_i": "constantindex",
+        "z_2n": "constanttwon",
+        "z": "constantvector",
+        "n": "infinite",
+        "M": "singular",
+        "A": "complexes",
+        "B": "realistic",
+        "C": "simplicity",
+        "O_n": "fullvector",
+        "r_1": "imaginaryone",
+        "r_2": "imaginarytwo",
+        "r_n": "imaginaryn",
+        "r_2n": "imaginarytwon",
+        "r": "imaginarycol"
+      },
+      "question": "Let $fullvector$ be the $infinite$-dimensional vector $(0,0,\\cdots, 0)$. Let $singular$ be\na $2n \\times infinite$ matrix of complex numbers such that whenever $(constantone,\nconstanttwo, \\dots, constanttwon)singular = fullvector$, with complex $constantindex$, not all zero, then at\nleast one of the $constantindex$ is not real. Prove that for arbitrary real\nnumbers $imaginaryone, imaginarytwo, \\dots, imaginarytwon$, there are complex numbers $fixedrealone,\nfixedrealtwo, \\dots, fixedrealn$ such that\n\\[\n\\mathrm{re}\\left[ singular \\left( \\begin{array}{c} fixedrealone \\\\ \\vdots \\\\ fixedrealn \\end{array}\n\\right) \\right] = \\left( \\begin{array}{c} imaginaryone \\\\ \\vdots \\\\ imaginaryn\n\\end{array} \\right).\n\\]\n(Note: if $simplicity$ is a matrix of complex numbers, $\\mathrm{re}(simplicity)$ is the matrix\nwhose entries are the real parts of the entries of $simplicity$.)",
+      "solution": "Solution. Write \\( singular=complexes+i realistic \\) where \\( complexes \\) and \\( realistic \\) are real \\( 2 infinite \\times infinite \\) matrices. If \\( constantvector=\\left(\\begin{array}{llll}constantone & constanttwo & \\cdots & constanttwon\\end{array}\\right) \\) is a row vector with real entries such that \\( constantvector\\left(\\begin{array}{ll}complexes & realistic\\end{array}\\right)=0 \\), then \\( constantvector singular=constantvector complexes+i constantvector realistic=0 \\), so \\( constantvector=0 \\) by hypothesis. Hence \\( \\left(\\begin{array}{ll}complexes & realistic\\end{array}\\right) \\) is an invertible real \\( 2 infinite \\times 2 infinite \\) matrix.\n\nLet \\( imaginarycol \\) be the real column vector \\( \\left(imaginaryone, \\ldots, imaginarytwon\\right) \\). If \\( fixedrealvar \\) is a complex column vector of length \\( infinite \\), and we write \\( fixedrealvar=imaginary+i realpart \\) where \\( imaginary \\) and \\( realpart \\) are the real and imaginary parts of \\( fixedrealvar \\), then the condition \\( \\operatorname{Re}[singular fixedrealvar]=imaginarycol \\) is equivalent to \\( complexes imaginary-realistic realpart=imaginarycol \\), and to \\( \\left(\\begin{array}{ll}complexes & realistic\\end{array}\\right)\\binom{imaginary}{-realpart}=imaginarycol \\). Since \\( \\left(\\begin{array}{ll}complexes & realistic\\end{array}\\right) \\) is invertible, we can find a real column vector \\( \\binom{imaginary}{-realpart} \\) satisfying this."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzpvktsj",
+        "M": "hvdfxgkr",
+        "A": "prnslmct",
+        "B": "lkjtfzpw",
+        "C": "zbhnqsvy",
+        "O_n": "tmxkhrqa",
+        "r_1": "fdrhqkzn",
+        "r_2": "zvxplcht",
+        "r_n": "wsvlynod",
+        "r_2n": "qnkbdxre",
+        "r": "vjbgmzsa",
+        "w_1": "hjgrksla",
+        "w_2": "gplmnxra",
+        "w_n": "qrfsvyct",
+        "w": "knbtdslq",
+        "u": "zlgmdwkp",
+        "v": "yrhmcdst",
+        "z_1": "mvspkhyn",
+        "z_2": "jtfwnzqa",
+        "z_i": "dxhrplgm",
+        "z_2n": "fqstxwrd",
+        "z": "nlcsgvke"
+      },
+      "question": "Let $tmxkhrqa$ be the $qzpvktsj$-dimensional vector $(0,0,\\cdots, 0)$. Let $hvdfxgkr$ be\na $2qzpvktsj \\times qzpvktsj$ matrix of complex numbers such that whenever $(mvspkhyn,\njtfwnzqa, \\dots, fqstxwrd)hvdfxgkr = tmxkhrqa$, with complex dxhrplgm, not all zero, then at\nleast one of the dxhrplgm is not real. Prove that for arbitrary real\nnumbers fdrhqkzn, zvxplcht, \\dots, qnkbdxre, there are complex numbers hjgrksla,\ngplmnxra, \\dots, qrfsvyct such that\n\\[\n\\mathrm{re}\\left[ hvdfxgkr \\left( \\begin{array}{c} hjgrksla \\\\ \\vdots \\\\ qrfsvyct \\end{array}\n\\right) \\right] = \\left( \\begin{array}{c} fdrhqkzn \\\\ \\vdots \\\\ wsvlynod\n\\end{array} \\right).\n\\]\n(Note: if $zbhnqsvy$ is a matrix of complex numbers, $\\mathrm{re}(zbhnqsvy)$ is the matrix\nwhose entries are the real parts of the entries of $zbhnqsvy$.)",
+      "solution": "Solution. Write \\( hvdfxgkr=prnslmct+i lkjtfzpw \\) where \\( prnslmct \\) and \\( lkjtfzpw \\) are real \\( 2 qzpvktsj \\times qzpvktsj \\) matrices. If \\( nlcsgvke=\\left(\\begin{array}{llll}mvspkhyn & jtfwnzqa & \\cdots & fqstxwrd\\end{array}\\right) \\) is a row vector with real entries such that \\( nlcsgvke\\left(\\begin{array}{ll}prnslmct & lkjtfzpw\\end{array}\\right)=0 \\), then \\( nlcsgvke hvdfxgkr=nlcsgvke prnslmct+i nlcsgvke lkjtfzpw=0 \\), so \\( nlcsgvke=0 \\) by hypothesis. Hence \\( \\left(\\begin{array}{ll}prnslmct & lkjtfzpw\\end{array}\\right) \\) is an invertible real \\( 2 qzpvktsj \\times 2 qzpvktsj \\) matrix.\n\nLet \\( vjbgmzsa \\) be the real column vector \\( \\left(fdrhqkzn, \\ldots, qnkbdxre\\right) \\). If \\( knbtdslq \\) is a complex column vector of length \\( qzpvktsj \\), and we write \\( knbtdslq=zlgmdwkp+i yrhmcdst \\) where \\( zlgmdwkp \\) and \\( yrhmcdst \\) are the real and imaginary parts of \\( knbtdslq \\), then the condition \\( \\operatorname{Re}[hvdfxgkr\\, knbtdslq]=vjbgmzsa \\) is equivalent to \\( prnslmct zlgmdwkp-lkjtfzpw yrhmcdst=vjbgmzsa \\), and to \\( \\left(\\begin{array}{ll}prnslmct & lkjtfzpw\\end{array}\\right)\\binom{zlgmdwkp}{-yrhmcdst}=vjbgmzsa \\). Since \\( \\left(\\begin{array}{ll}prnslmct & lkjtfzpw\\end{array}\\right) \\) is invertible, we can find a real column vector \\( \\binom{zlgmdwkp}{-yrhmcdst} \\) satisfying this."
+    },
+    "kernel_variant": {
+      "question": "Let n\\in \\mathbb{N} and write the quaternionic 4n \\times  n matrix  \n  Q = Q^{(0)} + i\\,Q^{(1)} + j\\,Q^{(2)} + k\\,Q^{(3)}  (\\dagger )  \n\nwith real component blocks Q^{(\\ell )}\\in \\mathbb{R}^{4n\\times n} (0\\leq \\ell \\leq 3).  Column vectors are multiplied from the right, row vectors from the left.  \n\nNon-degeneracy hypotheses  \n(NL) If a quaternionic row vector y\\in \\mathbb{H}^{4n} satisfies yQ = 0^{(n)} and y\\neq 0^{(4n)}, then at least one entry of y is non-real.  \n(NR) Q has trivial right kernel: Qx = 0^{(4n)} \\Rightarrow  x = 0^{(n)}.\n\nIntroduce the real matrices  \n\n(1) Full real model of Q  \n\n  Q =\n    Q^{(0)}  -Q^{(1)}  -Q^{(2)}  -Q^{(3)} \n    Q^{(1)}   Q^{(0)}  -Q^{(3)}   Q^{(2)} \n    Q^{(2)}   Q^{(3)}   Q^{(0)}  -Q^{(1)} \n    Q^{(3)}  -Q^{(2)}   Q^{(1)}   Q^{(0)}  , size 16n \\times  4n;\n\n(2) Real-part block  \n\n  R = ( Q^{(0)} | -Q^{(1)} | -Q^{(2)} | -Q^{(3)} ), size 4n \\times  4n.\n\nTasks  \nA. Prove rank Q = 4n.  \nB. Deduce that the square matrix R is invertible.  \nC. Show that for every r\\in \\mathbb{R}^{4n} there exists a unique x\\in \\mathbb{H}^{n} with  \n\n  Re[Qx] = r.  (\\star )\n\nD. Partition R^{-1} by rows,\n\n  R^{-1} =  S^{(0)}   \n        S^{(1)}   \n        S^{(2)}   \n        S^{(3)}  , S^{(\\ell )}\\in \\mathbb{R}^{n\\times 4n},\n\nand set  \n\n  P := S^{(0)} + iS^{(1)} + jS^{(2)} + kS^{(3)}.  (\\ddagger )\n\nEstablish  \n\n  Re[Q P] = I_{4n}.  (\\dagger \\dagger )\n\nProve further that P is the unique quaternionic matrix satisfying (\\dagger \\dagger ).\n\n(The hypotheses are minimal: (NR) is indispensable for A, (NL) for B.)\n\n",
+      "solution": "Notation.  Identify \\mathbb{H} with \\mathbb{R}^4 via  \n a_0+a_1i+a_2j+a_3k \\mapsto  (a_0,a_1,a_2,a_3)^t.  \nFor x=(x_1,\\ldots ,x_n)^t\\in \\mathbb{H}^n write  \n\n x_j = a_{0j}+a_{1j}i+a_{2j}j+a_{3j}k\n\nand assemble the real vector  \n\n x := (a_{01},\\ldots ,a_{0n}, a_{11},\\ldots ,a_{1n}, a_{21},\\ldots ,a_{2n}, a_{31},\\ldots ,a_{3n})^t \\in  \\mathbb{R}^{4n}.\n\nStep 0.  Real model of the map x\\mapsto Qx.  \nWith this identification  \n\n widehat{Qx} = Q x,   (1)\n\nwhere widehat{Qx} stacks the four real components of Qx (length 16n).  \nThe first 4n entries are  \n\n Re(Qx) = R x.   (2)\n\nStep 1.  Task A - rank Q = 4n.  \nIf u\\in \\mathbb{R}^{4n} satisfies Qu=0, write u=x for a quaternionic column x via the\nabove correspondence.  Then (1) gives Qx=0, hence x=0 by (NR); thus\nu=0 and ker Q={0}.  Because Q has 4n columns, its rank equals 4n.\n\nStep 2.  Task B - R is invertible.  \nAssume, towards a contradiction, that R is singular.  \nThen a non-zero real row vector y\\in \\mathbb{R}^{1\\times 4n} obeys y R=0.  \nKeep y as a single 1\\times 4n row vector and observe the block structure\n\n R = ( Q^{(0)} | -Q^{(1)} | -Q^{(2)} | -Q^{(3)} ).\n\nBecause the n columns belonging to Q^{(0)} occur in positions\n1,\\ldots ,n, the equality yR=0 forces  \n\n yQ^{(0)} = 0^{(n)}.                          (3)\n\nLikewise, the next three blocks give  \n\n yQ^{(1)} = yQ^{(2)} = yQ^{(3)} = 0^{(n)}.   (4)\n\nForm the quaternionic row vector  \n\n y := y + 0\\cdot i + 0\\cdot j + 0\\cdot k \\in  \\mathbb{H}^{4n};\n\nits entries are all real, and by (3)-(4)\n\n y Q = yQ^{(0)} + iyQ^{(1)} + jyQ^{(2)} + kyQ^{(3)} = 0^{(n)}.\n\nThus a non-zero quaternionic row vector with purely real entries\nannihilates Q, contradicting (NL).  Hence det R\\neq 0; R is invertible.\n\nStep 3.  Task C - solvability and uniqueness of Re(Qx)=r.  \nInvertibility of R converts (2) into a bijection x\\mapsto r, giving the unique\nx=R^{-1}r.  Reassembling x from x yields the required quaternionic vector.\n\nStep 4.  Task D - construction of P, identity (\\dagger \\dagger ) and its uniqueness.\n\n(i)  Construction and verification of (\\dagger \\dagger ).  \nWrite R^{-1} by rows as announced and form P by (\\ddagger ).\nFor r\\in \\mathbb{R}^{4n} put  \n\n x := R^{-1}r = (S^{(0)}r; S^{(1)}r; S^{(2)}r; S^{(3)}r).\n\nCorrespondingly  \n\n x := S^{(0)}r + iS^{(1)}r + jS^{(2)}r + kS^{(3)}r = P r.\n\nThen x is the real model of x, so using (2) we obtain  \n\n Re(QP r)=Re(Qx)=R x=r for every r\\in \\mathbb{R}^{4n}.\n\nHence Re(QP)=I_{4n}.\n\n(ii)  Uniqueness of P.  \nLet P' be another quaternionic matrix with Re(QP')=I_{4n}.  \nPut \\Delta :=P-P'.  For arbitrary r\\in \\mathbb{R}^{4n} define x:=\\Delta  r.  Then  \n\n Re(Qx)=Re(Q\\Delta  r)=Re(QP r-QP' r)=r-r=0.\n\nVia (2) we have 0=Re(Qx)=R x.  Because R is invertible, x=0,\nhence x=0.  As this holds for every r, \\Delta =0, so P=P'.\n\nDependence on the hypotheses is explicit: (NR) was used only in Step 1, (NL) only in Step 2.\n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.701508",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher-dimensional algebra.  \n   The problem moves from the complex field (dimension 2 over ℝ) to\n   the non-commutative quaternionic division algebra (dimension 4 over ℝ),\n   doubling the ambient real dimension once again and forcing the solver to\n   cope with non-commutativity and four real structure blocks instead of two.\n\n2.  Block-matrix representation.  \n   The solver must know and exploit the\n   \\(4\\times4\\) real matrices that represent left multiplication by\n   \\(\\mathbf i,\\mathbf j,\\mathbf k\\), then assemble them into the big\n   \\(4n\\times4n\\) real matrix \\(\\mathcal Q\\).\n   Correctly setting up and manipulating this\n   representation is technically delicate and absent from the original task.\n\n3.  Kernel argument in a non-commutative setting.  \n   Showing that \\(\\mathcal Q\\) is invertible requires translating the\n   quaternionic “no-real-kernel’’ hypothesis into a statement about a real\n   matrix.  Because quaternions do not commute, standard complex tricks\n   do not apply verbatim; the solver must work carefully with row vectors\n   viewed as left modules.\n\n4.  Additional constraints on the solution.  \n   Besides existence, Part (3) asks the solver to impose arbitrary\n   real parts on the unknown quaternionic vector.\n   Meeting these extra linear constraints while still satisfying\n   \\(\\operatorname{Re}(Qx)=r\\) forces a second, subtler linear–algebra\n   argument using the block-structure and full-rank properties of \\(\\mathcal Q_2\\).\n\n5.  Depth and length of the argument.  \n   Each stage—real representation, kernel analysis, solvability,\n   freedom to prescribe parts of the solution—adds a layer absent from\n   the original olympiad problem, demanding a broader toolkit\n   (quaternionic algebra, block-matrix manipulation, rank arguments)\n   and significantly more work."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let n\\in \\mathbb{N} and write the quaternionic 4n \\times  n matrix  \n  Q = Q^{(0)} + i\\,Q^{(1)} + j\\,Q^{(2)} + k\\,Q^{(3)}  (\\dagger )  \n\nwith real component blocks Q^{(\\ell )}\\in \\mathbb{R}^{4n\\times n} (0\\leq \\ell \\leq 3).  Column vectors are multiplied from the right, row vectors from the left.  \n\nNon-degeneracy hypotheses  \n(NL) If a quaternionic row vector y\\in \\mathbb{H}^{4n} satisfies yQ = 0^{(n)} and y\\neq 0^{(4n)}, then at least one entry of y is non-real.  \n(NR) Q has trivial right kernel: Qx = 0^{(4n)} \\Rightarrow  x = 0^{(n)}.\n\nIntroduce the real matrices  \n\n(1) Full real model of Q  \n\n  Q =\n    Q^{(0)}  -Q^{(1)}  -Q^{(2)}  -Q^{(3)} \n    Q^{(1)}   Q^{(0)}  -Q^{(3)}   Q^{(2)} \n    Q^{(2)}   Q^{(3)}   Q^{(0)}  -Q^{(1)} \n    Q^{(3)}  -Q^{(2)}   Q^{(1)}   Q^{(0)}  , size 16n \\times  4n;\n\n(2) Real-part block  \n\n  R = ( Q^{(0)} | -Q^{(1)} | -Q^{(2)} | -Q^{(3)} ), size 4n \\times  4n.\n\nTasks  \nA. Prove rank Q = 4n.  \nB. Deduce that the square matrix R is invertible.  \nC. Show that for every r\\in \\mathbb{R}^{4n} there exists a unique x\\in \\mathbb{H}^{n} with  \n\n  Re[Qx] = r.  (\\star )\n\nD. Partition R^{-1} by rows,\n\n  R^{-1} =  S^{(0)}   \n        S^{(1)}   \n        S^{(2)}   \n        S^{(3)}  , S^{(\\ell )}\\in \\mathbb{R}^{n\\times 4n},\n\nand set  \n\n  P := S^{(0)} + iS^{(1)} + jS^{(2)} + kS^{(3)}.  (\\ddagger )\n\nEstablish  \n\n  Re[Q P] = I_{4n}.  (\\dagger \\dagger )\n\nProve further that P is the unique quaternionic matrix satisfying (\\dagger \\dagger ).\n\n(The hypotheses are minimal: (NR) is indispensable for A, (NL) for B.)\n\n",
+      "solution": "Notation.  Identify \\mathbb{H} with \\mathbb{R}^4 via  \n a_0+a_1i+a_2j+a_3k \\mapsto  (a_0,a_1,a_2,a_3)^t.  \nFor x=(x_1,\\ldots ,x_n)^t\\in \\mathbb{H}^n write  \n\n x_j = a_{0j}+a_{1j}i+a_{2j}j+a_{3j}k\n\nand assemble the real vector  \n\n x := (a_{01},\\ldots ,a_{0n}, a_{11},\\ldots ,a_{1n}, a_{21},\\ldots ,a_{2n}, a_{31},\\ldots ,a_{3n})^t \\in  \\mathbb{R}^{4n}.\n\nStep 0.  Real model of the map x\\mapsto Qx.  \nWith this identification  \n\n widehat{Qx} = Q x,   (1)\n\nwhere widehat{Qx} stacks the four real components of Qx (length 16n).  \nThe first 4n entries are  \n\n Re(Qx) = R x.   (2)\n\nStep 1.  Task A - rank Q = 4n.  \nIf u\\in \\mathbb{R}^{4n} satisfies Qu=0, write u=x for a quaternionic column x via the\nabove correspondence.  Then (1) gives Qx=0, hence x=0 by (NR); thus\nu=0 and ker Q={0}.  Because Q has 4n columns, its rank equals 4n.\n\nStep 2.  Task B - R is invertible.  \nAssume, towards a contradiction, that R is singular.  \nThen a non-zero real row vector y\\in \\mathbb{R}^{1\\times 4n} obeys y R=0.  \nKeep y as a single 1\\times 4n row vector and observe the block structure\n\n R = ( Q^{(0)} | -Q^{(1)} | -Q^{(2)} | -Q^{(3)} ).\n\nBecause the n columns belonging to Q^{(0)} occur in positions\n1,\\ldots ,n, the equality yR=0 forces  \n\n yQ^{(0)} = 0^{(n)}.                          (3)\n\nLikewise, the next three blocks give  \n\n yQ^{(1)} = yQ^{(2)} = yQ^{(3)} = 0^{(n)}.   (4)\n\nForm the quaternionic row vector  \n\n y := y + 0\\cdot i + 0\\cdot j + 0\\cdot k \\in  \\mathbb{H}^{4n};\n\nits entries are all real, and by (3)-(4)\n\n y Q = yQ^{(0)} + iyQ^{(1)} + jyQ^{(2)} + kyQ^{(3)} = 0^{(n)}.\n\nThus a non-zero quaternionic row vector with purely real entries\nannihilates Q, contradicting (NL).  Hence det R\\neq 0; R is invertible.\n\nStep 3.  Task C - solvability and uniqueness of Re(Qx)=r.  \nInvertibility of R converts (2) into a bijection x\\mapsto r, giving the unique\nx=R^{-1}r.  Reassembling x from x yields the required quaternionic vector.\n\nStep 4.  Task D - construction of P, identity (\\dagger \\dagger ) and its uniqueness.\n\n(i)  Construction and verification of (\\dagger \\dagger ).  \nWrite R^{-1} by rows as announced and form P by (\\ddagger ).\nFor r\\in \\mathbb{R}^{4n} put  \n\n x := R^{-1}r = (S^{(0)}r; S^{(1)}r; S^{(2)}r; S^{(3)}r).\n\nCorrespondingly  \n\n x := S^{(0)}r + iS^{(1)}r + jS^{(2)}r + kS^{(3)}r = P r.\n\nThen x is the real model of x, so using (2) we obtain  \n\n Re(QP r)=Re(Qx)=R x=r for every r\\in \\mathbb{R}^{4n}.\n\nHence Re(QP)=I_{4n}.\n\n(ii)  Uniqueness of P.  \nLet P' be another quaternionic matrix with Re(QP')=I_{4n}.  \nPut \\Delta :=P-P'.  For arbitrary r\\in \\mathbb{R}^{4n} define x:=\\Delta  r.  Then  \n\n Re(Qx)=Re(Q\\Delta  r)=Re(QP r-QP' r)=r-r=0.\n\nVia (2) we have 0=Re(Qx)=R x.  Because R is invertible, x=0,\nhence x=0.  As this holds for every r, \\Delta =0, so P=P'.\n\nDependence on the hypotheses is explicit: (NR) was used only in Step 1, (NL) only in Step 2.\n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.547952",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher-dimensional algebra.  \n   The problem moves from the complex field (dimension 2 over ℝ) to\n   the non-commutative quaternionic division algebra (dimension 4 over ℝ),\n   doubling the ambient real dimension once again and forcing the solver to\n   cope with non-commutativity and four real structure blocks instead of two.\n\n2.  Block-matrix representation.  \n   The solver must know and exploit the\n   \\(4\\times4\\) real matrices that represent left multiplication by\n   \\(\\mathbf i,\\mathbf j,\\mathbf k\\), then assemble them into the big\n   \\(4n\\times4n\\) real matrix \\(\\mathcal Q\\).\n   Correctly setting up and manipulating this\n   representation is technically delicate and absent from the original task.\n\n3.  Kernel argument in a non-commutative setting.  \n   Showing that \\(\\mathcal Q\\) is invertible requires translating the\n   quaternionic “no-real-kernel’’ hypothesis into a statement about a real\n   matrix.  Because quaternions do not commute, standard complex tricks\n   do not apply verbatim; the solver must work carefully with row vectors\n   viewed as left modules.\n\n4.  Additional constraints on the solution.  \n   Besides existence, Part (3) asks the solver to impose arbitrary\n   real parts on the unknown quaternionic vector.\n   Meeting these extra linear constraints while still satisfying\n   \\(\\operatorname{Re}(Qx)=r\\) forces a second, subtler linear–algebra\n   argument using the block-structure and full-rank properties of \\(\\mathcal Q_2\\).\n\n5.  Depth and length of the argument.  \n   Each stage—real representation, kernel analysis, solvability,\n   freedom to prescribe parts of the solution—adds a layer absent from\n   the original olympiad problem, demanding a broader toolkit\n   (quaternionic algebra, block-matrix manipulation, rank arguments)\n   and significantly more work."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

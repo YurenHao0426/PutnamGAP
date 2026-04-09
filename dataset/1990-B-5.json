@@ -1,0 +1,196 @@
+{
+  "index": "1990-B-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "nonzero real numbers such that for $n = 1, 2, 3, \\dots$ the polynomial\n\\[\np_n(x) = a_0 + a_1x + a_2x^2 + \\cdots + a_nx^n\n\\]\nhas exactly $n$ distinct real roots?",
+  "solution": "Solution 1. Take \\( a_{0}=1, a_{1}=-1 \\), and for \\( n \\geq 1 \\) construct \\( a_{n+1} \\) inductively as follows. Suppose \\( p_{n}(x) \\) has \\( n \\) distinct real zeros: \\( x_{1}<x_{2}<\\cdots<x_{n} \\). Choose \\( \\alpha_{0}, \\ldots \\), \\( \\alpha_{n} \\) so that\n\\[\n\\alpha_{0}<x_{1}<\\alpha_{1}<\\cdots<x_{n}<\\alpha_{n} .\n\\]\n\nThen the signs of \\( p_{n}\\left(\\alpha_{0}\\right), p_{n}\\left(\\alpha_{1}\\right), \\ldots, p_{n}\\left(\\alpha_{n}\\right) \\) alternate. Define \\( a_{n+1}=-\\epsilon \\operatorname{sgn}\\left(p_{n}\\left(\\alpha_{n}\\right)\\right) \\), where \\( \\epsilon \\) is positive and small enough that\n\\[\n\\operatorname{sgn}\\left(p_{n+1}\\left(\\alpha_{i}\\right)\\right)=\\operatorname{sgn}\\left(p_{n}\\left(\\alpha_{i}\\right)\\right)\n\\]\nfor all \\( i \\). Let\n\\[\np_{n+1}(x)=p_{n}(x)+a_{n+1} x^{n+1} .\n\\]\n\nBy the Intermediate Value Theorem, \\( p_{n+1} \\) has a zero between \\( \\alpha_{i} \\) and \\( \\alpha_{i+1} \\) for \\( 0 \\leq i \\leq n-1 \\), and a zero greater than \\( \\alpha_{n} \\) since\n\\[\n\\operatorname{sgn}\\left(p_{n+1}\\left(\\alpha_{n}\\right)\\right) \\neq \\lim _{x \\rightarrow \\infty} \\operatorname{sgn}\\left(p_{n+1}(x)\\right) .\n\\]\n\nBecause \\( p_{n+1}(x) \\) is of degree \\( n+1 \\), it cannot have more than these \\( n+1 \\) zeros, so \\( p_{n+1}(x) \\) has \\( n+1 \\) distinct real zeros, as desired.\n\nSolution 2. For \\( n \\geq 0 \\), let \\( a_{n}=(-1)^{n} 10^{-n^{2}} \\). For \\( 0 \\leq k \\leq n \\),\n\\[\n\\begin{aligned}\n(-1)^{k} 10^{-k^{2}} p_{n}\\left(10^{2 k}\\right) & =\\sum_{i=0}^{n}(-1)^{i-k} 10^{-(i-k)^{2}} \\\\\n& =\\sum_{j=-k}^{n-k}(-1)^{j} 10^{-j^{2}} \\\\\n& >1-2 \\sum_{j=1}^{\\infty} 10^{-j^{2}} \\\\\n& >0\n\\end{aligned}\n\\]\nso \\( p_{n}(1), p_{n}\\left(10^{2}\\right), p_{n}\\left(10^{4}\\right), \\ldots, p_{n}\\left(10^{2 n}\\right) \\) alternate in sign. By the Intermediate Value Theorem, it follows that \\( p_{n}(x) \\) has at least \\( n \\) distinct real zeros. Since \\( p_{n}(x) \\) has degree \\( n \\), there cannot be more than \\( n \\) zeros.\n\nRemark. Solution 2 is motivated by the theory of Newton polygons for polynomials with coefficients in the field \\( \\mathbb{Q}_{p} \\) of \\( p \\)-adic numbers. Let \\( |\\cdot|_{p} \\) denote the \\( p \\)-adic absolute value on \\( \\mathbb{Q}_{p} \\). If \\( \\left\\{a_{i}\\right\\}_{i \\geq 0} \\) is a sequence of nonzero \\( p \\)-adic numbers such that the lower convex hull of \\( \\left\\{\\left(i,-\\ln \\left|a_{i}\\right|_{p}\\right): 0 \\leq i \\leq n\\right\\} \\) consists of \\( n \\) segments with different slopes, then \\( \\sum_{i=0}^{n} a_{i} x^{i} \\) has \\( n \\) distinct zeros in \\( \\mathbb{Q}_{p} \\); in particular this holds for \\( a_{i}=p^{i^{2}} \\). The analogous statement over \\( \\mathbb{R} \\), with \\( |\\cdot|_{p} \\) replaced by the standard absolute value, is not true in general, but it is true if the differences between the slopes are sufficiently large relative to \\( n \\). For an introduction to \\( p \\)-adic numbers and Newton polygons, see [Kob].",
+  "vars": [
+    "n",
+    "k",
+    "i",
+    "j",
+    "x",
+    "x_1",
+    "x_2",
+    "x_n",
+    "\\\\alpha_0",
+    "\\\\alpha_1",
+    "\\\\alpha_n"
+  ],
+  "params": [
+    "a_0",
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_n+1",
+    "p_n",
+    "p_n+1",
+    "\\\\epsilon",
+    "p",
+    "Q_p"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexcount",
+        "k": "indexalt",
+        "i": "indexiter",
+        "j": "indexloop",
+        "x": "realinput",
+        "x_1": "firstroot",
+        "x_2": "secondroot",
+        "x_n": "nthroot",
+        "\\alpha_0": "separatorzero",
+        "\\alpha_1": "separatorone",
+        "\\alpha_n": "separatornth",
+        "a_0": "coeffzero",
+        "a_1": "coeffone",
+        "a_2": "coefftwo",
+        "a_n": "coeffnth",
+        "a_n+1": "coeffnext",
+        "p_n": "polynnth",
+        "p_n+1": "polynnext",
+        "\\epsilon": "smallepsilon",
+        "p": "primevar",
+        "Q_p": "padicfield"
+      },
+      "question": "nonzero real numbers such that for $indexcount = 1, 2, 3, \\dots$ the polynomial\n\\[\npolynnth(realinput) = coeffzero + coeffone realinput + coefftwo realinput^{2} + \\cdots + coeffnth realinput^{indexcount}\n\\]\nhas exactly $indexcount$ distinct real roots?",
+      "solution": "Solution 1. Take \\( coeffzero = 1, coeffone = -1 \\), and for \\( indexcount \\geq 1 \\) construct \\( coeffnext \\) inductively as follows. Suppose \\( polynnth(realinput) \\) has \\( indexcount \\) distinct real zeros: \\( firstroot < secondroot < \\cdots < nthroot \\). Choose \\( separatorzero, \\ldots, separatornth \\) so that\n\\[\nseparatorzero < firstroot < separatorone < \\cdots < nthroot < separatornth .\n\\]\n\nThen the signs of \\( polynnth\\left(separatorzero\\right), polynnth\\left(separatorone\\right), \\ldots, polynnth\\left(separatornth\\right) \\) alternate. Define \\( coeffnext = - smallepsilon \\operatorname{sgn}\\left(polynnth\\left(separatornth\\right)\\right) \\), where \\( smallepsilon \\) is positive and small enough that\n\\[\n\\operatorname{sgn}\\left(polynnext\\left(\\alpha_{indexiter}\\right)\\right)=\\operatorname{sgn}\\left(polynnth\\left(\\alpha_{indexiter}\\right)\\right)\n\\]\nfor all \\( indexiter \\). Let\n\\[\npolynnext(realinput)=polynnth(realinput)+coeffnext \\, realinput^{indexcount+1} .\n\\]\n\nBy the Intermediate Value Theorem, \\( polynnext \\) has a zero between \\( \\alpha_{indexiter} \\) and \\( \\alpha_{indexiter+1} \\) for \\( 0 \\leq indexiter \\leq indexcount-1 \\), and a zero greater than \\( separatornth \\) since\n\\[\n\\operatorname{sgn}\\left(polynnext\\left(separatornth\\right)\\right) \\neq \\lim _{realinput \\rightarrow \\infty} \\operatorname{sgn}\\left(polynnext(realinput)\\right) .\n\\]\n\nBecause \\( polynnext(realinput) \\) is of degree \\( indexcount+1 \\), it cannot have more than these \\( indexcount+1 \\) zeros, so \\( polynnext(realinput) \\) has \\( indexcount+1 \\) distinct real zeros, as desired.\n\nSolution 2. For \\( indexcount \\geq 0 \\), let \\( coeffnth = (-1)^{indexcount} 10^{-indexcount^{2}} \\). For \\( 0 \\leq indexalt \\leq indexcount \\),\n\\[\n\\begin{aligned}\n(-1)^{indexalt} 10^{-indexalt^{2}} \\, polynnth\\left(10^{2 indexalt}\\right) & =\\sum_{indexiter=0}^{indexcount}(-1)^{indexiter-indexalt} 10^{-(indexiter-indexalt)^{2}} \\\\ & =\\sum_{indexloop=-indexalt}^{indexcount-indexalt}(-1)^{indexloop} 10^{-indexloop^{2}} \\\\ & >1-2 \\sum_{indexloop=1}^{\\infty} 10^{-indexloop^{2}} \\\\ & >0\n\\end{aligned}\n\\]\nso \\( polynnth(1), polynnth\\left(10^{2}\\right), polynnth\\left(10^{4}\\right), \\ldots, polynnth\\left(10^{2 indexcount}\\right) \\) alternate in sign. By the Intermediate Value Theorem, it follows that \\( polynnth(realinput) \\) has at least \\( indexcount \\) distinct real zeros. Since \\( polynnth(realinput) \\) has degree \\( indexcount \\), there cannot be more than \\( indexcount \\) zeros.\n\nRemark. Solution 2 is motivated by the theory of Newton polygons for polynomials with coefficients in the field \\( \\padicfield \\) of \\( primevar \\)-adic numbers. Let \\( |\\cdot|_{primevar} \\) denote the \\( primevar \\)-adic absolute value on \\( \\padicfield \\). If \\( \\left\\{coeff_{indexiter}\\right\\}_{indexiter \\geq 0} \\) is a sequence of nonzero \\( primevar \\)-adic numbers such that the lower convex hull of \\( \\left\\{\\left(indexiter,-\\ln \\left|coeff_{indexiter}\\right|_{primevar}\\right): 0 \\leq indexiter \\leq indexcount\\right\\} \\) consists of \\( indexcount \\) segments with different slopes, then \\( \\sum_{indexiter=0}^{indexcount} coeff_{indexiter} realinput^{indexiter} \\) has \\( indexcount \\) distinct zeros in \\( \\padicfield \\); in particular this holds for \\( coeff_{indexiter}=primevar^{indexiter^{2}} \\). The analogous statement over \\( \\mathbb{R} \\), with \\( |\\cdot|_{primevar} \\) replaced by the standard absolute value, is not true in general, but it is true if the differences between the slopes are sufficiently large relative to \\( indexcount \\). For an introduction to \\( primevar \\)-adic numbers and Newton polygons, see [Kob]."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "eaglemirror",
+        "k": "jadeballoon",
+        "i": "copperlantern",
+        "j": "velvetanchor",
+        "x": "spongecanyon",
+        "x_1": "orchardbreeze",
+        "x_2": "pelicanforest",
+        "x_n": "pumpkinhollow",
+        "\\alpha_0": "lanternshadow",
+        "\\alpha_1": "willowharbor",
+        "\\alpha_n": "marigoldfield",
+        "a_0": "crystalbridge",
+        "a_1": "emeraldstream",
+        "a_2": "tigerlilypath",
+        "a_n": "saffronvalley",
+        "a_n+1": "coconutgrove",
+        "a_{n+1}": "papayaisland",
+        "p_n": "thunderprairie",
+        "p_n+1": "ottermidnight",
+        "\\epsilon": "gingercompass",
+        "p": "tulipcathedral",
+        "Q_p": "dragonparade"
+      },
+      "question": "nonzero real numbers such that for $eaglemirror = 1, 2, 3, \\dots$ the polynomial\n\\[\nthunderprairie(spongecanyon) = crystalbridge + emeraldstream\\,spongecanyon + tigerlilypath\\,spongecanyon^{2} + \\cdots + saffronvalley\\,spongecanyon^{eaglemirror}\n\\]\nhas exactly $eaglemirror$ distinct real roots?",
+      "solution": "Solution 1. Take \\( crystalbridge = 1,\\; emeraldstream = -1 \\), and for \\( eaglemirror \\ge 1 \\) construct \\( papayaisland \\) inductively as follows. Suppose \\( thunderprairie(spongecanyon) \\) has \\( eaglemirror \\) distinct real zeros: \\( orchardbreeze < pelicanforest < \\cdots < pumpkinhollow \\). Choose \\( lanternshadow, \\ldots, marigoldfield \\) so that\n\\[\nlanternshadow < orchardbreeze < willowharbor < \\cdots < pumpkinhollow < marigoldfield .\n\\]\nThen the signs of \\( thunderprairie(lanternshadow),\\; thunderprairie(willowharbor),\\; \\ldots,\\; thunderprairie(marigoldfield) \\) alternate. Define\n\\[\npapayaisland = -\\, gingercompass \\, \\operatorname{sgn}\\!\\left( thunderprairie\\!\\left( marigoldfield \\right) \\right),\n\\]\nwhere \\( gingercompass \\) is positive and small enough that\n\\[\n\\operatorname{sgn}\\!\\left( ottermidnight\\!\\left( \\alpha_{copperlantern} \\right) \\right) = \\operatorname{sgn}\\!\\left( thunderprairie\\!\\left( \\alpha_{copperlantern} \\right) \\right)\n\\]\nfor all \\( copperlantern \\). Let\n\\[\nottermidnight(spongecanyon)=thunderprairie(spongecanyon)+papayaisland\\,spongecanyon^{eaglemirror+1} .\\]\nBy the Intermediate Value Theorem, \\( ottermidnight \\) has a zero between \\( \\alpha_{copperlantern} \\) and \\( \\alpha_{copperlantern+1} \\) for \\( 0 \\le copperlantern \\le eaglemirror-1 \\), and a zero greater than \\( marigoldfield \\) since\n\\[\n\\operatorname{sgn}\\!\\left( ottermidnight\\!\\left( marigoldfield \\right) \\right) \\neq \\lim_{spongecanyon \\to \\infty} \\operatorname{sgn}\\!\\left( ottermidnight(spongecanyon) \\right) .\n\\]\nBecause \\( ottermidnight(spongecanyon) \\) is of degree \\( eaglemirror+1 \\), it cannot have more than these \\( eaglemirror+1 \\) zeros, so it has exactly that many distinct real zeros, as desired.\n\nSolution 2. For \\( eaglemirror \\ge 0 \\), let \\( saffronvalley = (-1)^{eaglemirror} 10^{-eaglemirror^{2}} \\). For \\( 0 \\le jadeballoon \\le eaglemirror \\),\n\\[\n\\begin{aligned}\n(-1)^{jadeballoon} 10^{-jadeballoon^{2}} \\, thunderprairie\\!\\left( 10^{2 jadeballoon} \\right)\n&= \\sum_{copperlantern = 0}^{eaglemirror} (-1)^{copperlantern - jadeballoon} 10^{-(copperlantern - jadeballoon)^{2}} \\\\\n&= \\sum_{velvetanchor = -jadeballoon}^{eaglemirror - jadeballoon} (-1)^{velvetanchor} 10^{-\\velvetanchor^{2}} \\\\\n&> 1 - 2 \\sum_{velvetanchor = 1}^{\\infty} 10^{-\\velvetanchor^{2}} \\\\\n&> 0 .\n\\end{aligned}\n\\]\nHence \\( thunderprairie(1),\\; thunderprairie\\!\\left(10^{2}\\right),\\; thunderprairie\\!\\left(10^{4}\\right), \\ldots, thunderprairie\\!\\left(10^{2eaglemirror}\\right) \\) alternate in sign. By the Intermediate Value Theorem, \\( thunderprairie(spongecanyon) \\) has at least \\( eaglemirror \\) distinct real zeros. Since its degree is \\( eaglemirror \\), it cannot have more.\n\nRemark. Solution 2 is motivated by the theory of Newton polygons for polynomials with coefficients in the field \\( dragonparade \\) of \\( tulipcathedral \\)-adic numbers. Let \\(|\\cdot|_{tulipcathedral}\\) denote the \\( tulipcathedral \\)-adic absolute value on \\( dragonparade \\). If \\( \\{ a_{copperlantern} \\}_{copperlantern \\ge 0} \\) is a sequence of non-zero \\( tulipcathedral \\)-adic numbers such that the lower convex hull of \\( \\{ (copperlantern, -\\ln |a_{copperlantern}|_{tulipcathedral}) : 0 \\le copperlantern \\le eaglemirror \\} \\) consists of \\( eaglemirror \\) segments with different slopes, then \\( \\sum_{copperlantern = 0}^{eaglemirror} a_{copperlantern} spongecanyon^{copperlantern} \\) has \\( eaglemirror \\) distinct zeros in \\( dragonparade \\); in particular this holds for \\( a_{copperlantern} = tulipcathedral^{copperlantern^{2}} \\). The analogous statement over \\( \\mathbb{R} \\), with \\(|\\cdot|_{tulipcathedral}|\\) replaced by the standard absolute value, is not true in general, but it is true if the differences between the slopes are sufficiently large relative to \\( eaglemirror \\). For an introduction to \\( tulipcathedral \\)-adic numbers and Newton polygons, see [Kob]."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "unicount",
+        "k": "fractional",
+        "i": "realunit",
+        "j": "fixedval",
+        "x": "constantvar",
+        "x_1": "nonrootone",
+        "x_{1}": "nonrootone",
+        "x_2": "nonroottwo",
+        "x_{2}": "nonroottwo",
+        "x_n": "nonrootmany",
+        "x_{n}": "nonrootmany",
+        "\\alpha_0": "omegapoint",
+        "\\alpha_{0}": "omegapoint",
+        "\\alpha_1": "omeganext",
+        "\\alpha_{1}": "omeganext",
+        "\\alpha_n": "omegafinal",
+        "\\alpha_{n}": "omegafinal",
+        "a_0": "antibase",
+        "a_{0}": "antibase",
+        "a_1": "antiliner",
+        "a_{1}": "antiliner",
+        "a_2": "antiquadr",
+        "a_{2}": "antiquadr",
+        "a_n": "antidegree",
+        "a_{n}": "antidegree",
+        "a_{n+1}": "antisuccess",
+        "p_n": "transfunc",
+        "p_{n}": "transfunc",
+        "p_{n+1}": "linearfunc",
+        "\\epsilon": "largelta",
+        "p": "composite",
+        "Q_p": "realfield",
+        "\\mathbb{Q}_{p}": "realfield"
+      },
+      "question": "nonzero real numbers such that for $unicount = 1, 2, 3, \\dots$ the polynomial\n\\[\ntransfunc(constantvar) = antibase + antiliner constantvar + antiquadr constantvar^2 + \\cdots + antidegree constantvar^{unicount}\n\\]\nhas exactly $unicount$ distinct real roots?",
+      "solution": "Solution 1. Take \\( antibase = 1, antiliner = -1 \\), and for \\( unicount \\geq 1 \\) construct \\( antisuccess \\) inductively as follows. Suppose \\( transfunc(constantvar) \\) has \\( unicount \\) distinct real zeros: \\( nonrootone < nonroottwo < \\cdots < nonrootmany \\). Choose \\( omegapoint, \\ldots, \\omegafinal \\) so that\n\\[\nomegapoint < nonrootone < omeganext < \\cdots < nonrootmany < omegafinal .\n\\]\n\nThen the signs of \\( transfunc\\left(omegapoint\\right), transfunc\\left(omeganext\\right), \\ldots, transfunc\\left(omegafinal\\right) \\) alternate. Define \\( antisuccess = -largelta \\operatorname{sgn}\\left(transfunc\\left(omegafinal\\right)\\right) \\), where \\( largelta \\) is positive and small enough that\n\\[\n\\operatorname{sgn}\\left(linearfunc\\left(\\alpha_{realunit}\\right)\\right)=\\operatorname{sgn}\\left(transfunc\\left(\\alpha_{realunit}\\right)\\right)\n\\]\nfor all \\( realunit \\). Let\n\\[\nlinearfunc(constantvar)=transfunc(constantvar)+antisuccess \\, constantvar^{unicount+1} .\n\\]\n\nBy the Intermediate Value Theorem, \\( linearfunc \\) has a zero between \\( \\alpha_{realunit} \\) and \\( \\alpha_{realunit+1} \\) for \\( 0 \\leq realunit \\leq unicount-1 \\), and a zero greater than \\( omegafinal \\) since\n\\[\n\\operatorname{sgn}\\left(linearfunc\\left(omegafinal\\right)\\right) \\neq \\lim _{constantvar \\rightarrow \\infty} \\operatorname{sgn}\\left(linearfunc(constantvar)\\right) .\n\\]\n\nBecause \\( linearfunc(constantvar) \\) is of degree \\( unicount+1 \\), it cannot have more than these \\( unicount+1 \\) zeros, so \\( linearfunc(constantvar) \\) has \\( unicount+1 \\) distinct real zeros, as desired.\n\nSolution 2. For \\( unicount \\geq 0 \\), let \\( antidegree = (-1)^{unicount} 10^{-unicount^{2}} \\). For \\( 0 \\leq fractional \\leq unicount \\),\n\\[\n\\begin{aligned}\n(-1)^{fractional} 10^{-fractional^{2}} transfunc\\left(10^{2 fractional}\\right) &= \\sum_{realunit=0}^{unicount} (-1)^{realunit-fractional} 10^{-(realunit-fractional)^{2}} \\\\\n&= \\sum_{fixedval=-fractional}^{unicount-fractional} (-1)^{fixedval} 10^{-fixedval^{2}} \\\\\n&> 1 - 2 \\sum_{fixedval=1}^{\\infty} 10^{-fixedval^{2}} \\\\\n&> 0\n\\end{aligned}\n\\]\nso \\( transfunc(1), transfunc\\left(10^{2}\\right), transfunc\\left(10^{4}\\right), \\ldots, transfunc\\left(10^{2 unicount}\\right) \\) alternate in sign. By the Intermediate Value Theorem, it follows that \\( transfunc(constantvar) \\) has at least \\( unicount \\) distinct real zeros. Since \\( transfunc(constantvar) \\) has degree \\( unicount \\), there cannot be more than \\( unicount \\) zeros.\n\nRemark. Solution 2 is motivated by the theory of Newton polygons for polynomials with coefficients in the field \\( realfield \\) of \\( composite \\)-adic numbers. Let \\( |\\cdot|_{composite} \\) denote the \\( composite \\)-adic absolute value on \\( realfield \\). If \\( \\left\\{a_{realunit}\\right\\}_{realunit \\geq 0} \\) is a sequence of nonzero \\( composite \\)-adic numbers such that the lower convex hull of \\( \\left\\{\\left(realunit,-\\ln \\left|a_{realunit}\\right|_{composite}\\right): 0 \\leq realunit \\leq unicount\\right\\} \\) consists of \\( unicount \\) segments with different slopes, then \\( \\sum_{realunit=0}^{unicount} a_{realunit} constantvar^{realunit} \\) has \\( unicount \\) distinct zeros in \\( realfield \\); in particular this holds for \\( a_{realunit}=composite^{realunit^{2}} \\). The analogous statement over \\( \\mathbb{R} \\), with \\( |\\cdot|_{composite} \\) replaced by the standard absolute value, is not true in general, but it is true if the differences between the slopes are sufficiently large relative to \\( unicount \\). For an introduction to \\( composite \\)-adic numbers and Newton polygons, see [Kob]."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "j": "pbrmtnqs",
+        "x": "lkvmdpha",
+        "x_{1}": "cqwztrpa",
+        "x_{2}": "wndfgsah",
+        "x_{n}": "jskvqpmd",
+        "\\alpha_{0}": "sghxbrta",
+        "\\alpha_{1}": "vczrplum",
+        "\\alpha_{n}": "frljskad",
+        "a_{0}": "mgldwqrf",
+        "a_{1}": "pxqntzsl",
+        "a_{2}": "rlskqpdf",
+        "a_{n}": "tkdpmqsr",
+        "a_{n+1}": "tnqhsgra",
+        "p_{n}": "xdfrplmq",
+        "p_{n+1}": "mgsdwqkl",
+        "\\epsilon": "qmskgrpt",
+        "p": "fqdvzjrm",
+        "Q_{p}": "zlxcbnpa"
+      },
+      "question": "nonzero real numbers such that for $qzxwvtnp = 1, 2, 3, \\dots$ the polynomial\n\\[\nxdfrplmq(lkvmdpha) = mgldwqrf + pxqntzsl lkvmdpha + rlskqpdf lkvmdpha^{2} + \\cdots + tkdpmqsr lkvmdpha^{qzxwvtnp}\n\\]\nhas exactly $qzxwvtnp$ distinct real roots?",
+      "solution": "Solution 1. Take \\( mgldwqrf = 1, pxqntzsl = -1 \\), and for \\( qzxwvtnp \\geq 1 \\) construct \\( tnqhsgra \\) inductively as follows. Suppose \\( xdfrplmq(lkvmdpha) \\) has \\( qzxwvtnp \\) distinct real zeros: \\( cqwztrpa<wndfgsah<\\cdots<jskvqpmd \\). Choose \\( sghxbrta, \\ldots \\), \\( frljskad \\) so that\n\\[\nsghxbrta<cqwztrpa<vczrplum<\\cdots<jskvqpmd<frljskad .\n\\]\nThen the signs of \\( xdfrplmq\\left(sghxbrta\\right), xdfrplmq\\left(vczrplum\\right), \\ldots, xdfrplmq\\left(frljskad\\right) \\) alternate. Define \\( tnqhsgra = - qmskgrpt \\operatorname{sgn}\\left(xdfrplmq\\left(frljskad\\right)\\right) \\), where \\( qmskgrpt \\) is positive and small enough that\n\\[\n\\operatorname{sgn}\\left(mgsdwqkl\\left(\\alpha_{i}\\right)\\right)=\\operatorname{sgn}\\left(xdfrplmq\\left(\\alpha_{i}\\right)\\right)\n\\]\nfor all \\( i \\). Let\n\\[\nmgsdwqkl(lkvmdpha)=xdfrplmq(lkvmdpha)+tnqhsgra\\, lkvmdpha^{qzxwvtnp+1} .\n\\]\nBy the Intermediate Value Theorem, \\( mgsdwqkl \\) has a zero between \\( \\alpha_{i} \\) and \\( \\alpha_{i+1} \\) for \\( 0 \\leq i \\leq qzxwvtnp-1 \\), and a zero greater than \\( frljskad \\) since\n\\[\n\\operatorname{sgn}\\left(mgsdwqkl\\left(frljskad\\right)\\right) \\neq \\lim _{lkvmdpha \\rightarrow \\infty} \\operatorname{sgn}\\left(mgsdwqkl(lkvmdpha)\\right) .\n\\]\nBecause \\( mgsdwqkl(lkvmdpha) \\) is of degree \\( qzxwvtnp+1 \\), it cannot have more than these \\( qzxwvtnp+1 \\) zeros, so \\( mgsdwqkl(lkvmdpha) \\) has \\( qzxwvtnp+1 \\) distinct real zeros, as desired.\n\nSolution 2. For \\( qzxwvtnp \\geq 0 \\), let \\( tkdpmqsr = (-1)^{qzxwvtnp} 10^{-qzxwvtnp^{2}} \\). For \\( 0 \\leq hjgrksla \\leq qzxwvtnp \\),\n\\[\n\\begin{aligned}\n(-1)^{hjgrksla} 10^{-hjgrksla^{2}} xdfrplmq\\left(10^{2 hjgrksla}\\right) & = \\sum_{i=0}^{qzxwvtnp}(-1)^{i-hjgrksla} 10^{-(i-hjgrksla)^{2}} \\\\\n& = \\sum_{pbrmtnqs=-hjgrksla}^{qzxwvtnp-hjgrksla} (-1)^{pbrmtnqs} 10^{-pbrmtnqs^{2}} \\\\\n& > 1-2 \\sum_{pbrmtnqs=1}^{\\infty} 10^{-pbrmtnqs^{2}} \\\\\n& > 0\n\\end{aligned}\n\\]\nso \\( xdfrplmq(1), xdfrplmq\\left(10^{2}\\right), xdfrplmq\\left(10^{4}\\right), \\ldots, xdfrplmq\\left(10^{2 qzxwvtnp}\\right) \\) alternate in sign. By the Intermediate Value Theorem, it follows that \\( xdfrplmq(lkvmdpha) \\) has at least \\( qzxwvtnp \\) distinct real zeros. Since \\( xdfrplmq(lkvmdpha) \\) has degree \\( qzxwvtnp \\), there cannot be more than \\( qzxwvtnp \\) zeros.\n\nRemark. Solution 2 is motivated by the theory of Newton polygons for polynomials with coefficients in the field \\( \\mathbb{zlxcbnpa} \\) of \\( fqdvzjrm \\)-adic numbers. Let \\( |\\cdot|_{fqdvzjrm} \\) denote the \\( fqdvzjrm \\)-adic absolute value on \\( \\mathbb{zlxcbnpa} \\). If \\( \\left\\{a_{i}\\right\\}_{i \\geq 0} \\) is a sequence of nonzero \\( fqdvzjrm \\)-adic numbers such that the lower convex hull of \\( \\left\\{\\left(i,-\\ln \\left|a_{i}\\right|_{fqdvzjrm}\\right): 0 \\leq i \\leq qzxwvtnp\\right\\} \\) consists of \\( qzxwvtnp \\) segments with different slopes, then \\( \\sum_{i=0}^{qzxwvtnp} a_{i} lkvmdpha^{i} \\) has \\( qzxwvtnp \\) distinct zeros in \\( \\mathbb{zlxcbnpa} \\); in particular this holds for \\( a_{i}=fqdvzjrm^{i^{2}} \\). The analogous statement over \\( \\mathbb{R} \\), with \\( |\\cdot|_{fqdvzjrm} \\) replaced by the standard absolute value, is not true in general, but it is true if the differences between the slopes are sufficiently large relative to \\( qzxwvtnp \\). For an introduction to \\( fqdvzjrm \\)-adic numbers and Newton polygons, see [Kob]."
+    },
+    "kernel_variant": {
+      "question": "Let $(b_k)_{k\\ge 0}$ be a sequence of non-zero real numbers and, for $n\\ge 1$, set\n\\[\nq_n(x)=b_0+b_1x+\\dots +b_nx^n\\,.\n\\]\nDoes there exist such a sequence for which $q_n$ has \\\\emph{exactly} $n$ distinct real zeros for every $n=1,2,3,\\dots$?  Construct one, or prove that none exists.",
+      "solution": "Solution.  We shall present two complete constructions.  The first is the standard inductive perturbation (Construction A), and the second is an explicit formula (a corrected Construction B).\n\nConstruction A (induction).  Define q_{n}(x)=b_{0}+b_{1}x+\\cdots+b_{n}x^{n}.  We choose the b_{k}\\neq0 inductively so that q_{n} has exactly n distinct real simple roots.\n\nBase Case (n=1).  Take b_{0}=1,\n      b_{1}=-1.\nThen q_{1}(x)=1-x has the unique real root x_{1}=1 (simple).\n\nInductive Step.  Suppose for some n\\ge1 we have chosen nonzero b_{0},\\ldots ,b_{n} so that q_{n}(x)=b_{0}+\\ldots +b_{n}x^{n} has exactly n simple real roots x_{1}<x_{2}<\\ldots <x_{n}.  Write x_{0}=-\\infty, x_{n+1}=+\\infty, and choose points \\alpha _{i} in each gap (x_{i},x_{i+1}) (i=0,\\ldots ,n) so that q_{n}(\\alpha _{i})\\neq0.  By checking the sign of q_{n} at \\pm \\infty  and the fact that each root is simple one shows easily that\n      sgn\\,q_{n}(\\alpha _{i})=sgn(b_{n})\\cdot(-1)^{n-i},\nfor i=0,\\ldots ,n.\n\nNow choose a positive \\varepsilon  so small that for every i\n      \\varepsilon \\,|\\alpha _{i}|^{n+1}<\\tfrac12\\,|q_{n}(\\alpha _{i})|.\nDefine\n      b_{n+1}=-\\varepsilon \\,\\sgn\\bigl(q_{n}(\\alpha _{n})\\bigr),\nso |b_{n+1}|=\\varepsilon >0 and sgn(b_{n+1})=-sgn(q_{n}(\\alpha _{n})).  Set\n      q_{n+1}(x)=q_{n}(x)+b_{n+1}x^{n+1}.\nThen for each i=0,\\ldots ,n,\n      |b_{n+1}\\,\\alpha _{i}^{n+1}|<\\tfrac12|q_{n}(\\alpha _{i})|,  \nso q_{n+1}(\\alpha _{i}) has the same sign as q_{n}(\\alpha _{i}).  Hence q_{n+1} alternates sign on the n intervals (\\alpha _{i-1},\\alpha _{i}), giving n distinct real zeros there.  Finally as x\\to +\\infty  the term b_{n+1}x^{n+1} dominates, and since sgn(b_{n+1})=-sgn(q_{n}(\\alpha _{n})), there is one more sign change after \\alpha _{n}, hence one more real root.  Altogether q_{n+1} has exactly n+1 simple real roots.  This completes the induction.\n\nConstruction B (explicit coefficients).  Fix any integer M\\geq 5 and define\n      b_{k}=(-1)^{k}\\,M^{-k^{2}},  k=0,1,2,\\ldots .  \nThen for each n define q_{n}(x)=\\sum _{k=0}^{n}b_{k}x^{k}.  We claim q_{n} has exactly n real roots.  For each k=0,1,\\ldots ,n let x_{k}=M^{2k}.  Then\n      q_{n}(M^{2k})=\\sum _{i=0}^{n}(-1)^{i}M^{-i^{2}}M^{2ki}.\nMultiply by (-1)^{k}M^{-k^{2}} to get\n      (-1)^{k}M^{-k^{2}}q_{n}(M^{2k})=\n        \\sum _{i=0}^{n}(-1)^{i-k}M^{-i^{2}+2ki-k^{2}}\n        =\\sum _{s=-k}^{n-k}(-1)^{s}M^{-s^{2}}\n        =1+\\sum _{s\\neq 0}(-1)^{s}M^{-s^{2}}.\nSince \\sum _{s=1}^{\\infty }M^{-s^{2}}\\leq M^{-1}+M^{-4}+\\ldots <0.21 for M\\geq 5, we have\n      \\mid \\sum _{s\\neq 0}(-1)^{s}M^{-s^{2}}\\mid \n      \\leq 2\\sum _{s=1}^{\\infty }M^{-s^{2}} <0.42<1.\nHence (-1)^{k}M^{-k^{2}}q_{n}(M^{2k})>1-0.42>0, so\n      sgn\\,q_{n}(M^{2k})=(-1)^{k}.\nThus the sequence of values q_{n}(1),q_{n}(M^{2}),\\ldots ,q_{n}(M^{2n}) alternates in sign, and by the Intermediate Value Theorem there are at least n sign-changes (hence n distinct real zeros) in the intervals between these points.  But deg q_{n}=n, so there are exactly n real roots.  This explicit choice of b_{k} solves the problem.\n\nConclusion.  Either Construction A or the corrected Construction B exhibits a sequence of nonzero real b_{k} for which q_{n}(x)=b_{0}+\\ldots +b_{n}x^{n} has exactly n distinct real zeros for every n.  Hence such a sequence does exist.",
+      "_meta": {
+        "core_steps": [
+          "Arrange (n+1) real sample points where p_n alternates sign",
+          "Choose coefficients so the desired sign pattern actually holds (induction or fast–decay trick)",
+          "Invoke the Intermediate Value Theorem to obtain ≥ n distinct real zeros",
+          "Use degree-n bound to conclude exactly n zeros"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Initial fixed coefficients that start the induction (need opposite signs, both non-zero).",
+            "original": "a_0 = 1 , a_1 = -1"
+          },
+          "slot2": {
+            "description": "Interlacing evaluation points used to monitor signs during the inductive step.",
+            "original": "α_0 < x_1 < α_1 < … < x_n < α_n"
+          },
+          "slot3": {
+            "description": "Magnitude of the perturbation added at each step so signs don’t flip at the chosen points.",
+            "original": "ε > 0 ‘sufficiently small’ in a_{n+1} = −ε·sgn(p_n(α_n))"
+          },
+          "slot4": {
+            "description": "Numerical base that spaces the geometric test points in Solution 2.",
+            "original": "10 in 10^{2k} and 10^{-n^{2}}"
+          },
+          "slot5": {
+            "description": "Quadratic exponent governing the rapid decay/growth in Solution 2.",
+            "original": "power 2 in 10^{2k} and exponent −n^{2}"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

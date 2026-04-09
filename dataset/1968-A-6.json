@@ -1,0 +1,108 @@
+{
+  "index": "1968-A-6",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "A-6. Determine all polynomials of the form \\( \\sum_{0}^{n} a_{i} x^{n-i} \\) with \\( a_{i}= \\pm 1(0 \\leqq i \\leqq n, 1 \\leqq n<\\infty) \\) such that each has only real zeros.",
+  "solution": "A-6 (0) The desired polynomials with \\( a_{0}=-1 \\) are the negative of those with \\( a_{0}=1 \\), so consider \\( a_{0}=1 \\). The sum of the squares of the zeros of \\( x^{n}+a_{1} x^{n-1}+\\cdots \\) \\( +a_{n} \\) is \\( a_{1}^{2}-2 a_{2} \\). The product of the squares of these zeros is \\( a_{n}^{2} \\). If all the zeros are real, we can apply the arithmetic-geometric mean inequality to obtain\n\\[\n\\frac{a_{1}^{2}-2 a_{2}}{n} \\geqq\\left(a_{n}^{2}\\right)^{1 / n}\n\\]\nwith equality only if the zeros are numerically equal. In our case this inequality becomes \\( (1 \\pm 2) / n \\geqq 1 \\) or \\( n \\leqq 3 \\). Note that \\( n>1 \\) implies \\( a_{2}=-1 \\) and \\( n=3 \\) implies all zeros are \\( \\pm 1 \\). Thus the list of polynomials is:\n\\[\n\\begin{array}{c} \n\\pm(x-1), \\quad \\pm(x+1), \\quad \\pm\\left(x^{2}+x-1\\right), \\quad \\pm\\left(x^{2}-x-1\\right), \\\\\n\\pm\\left(x^{3}+x^{2}-x-1\\right), \\quad \\pm\\left(x^{3}-x^{2}-x+1\\right) .\n\\end{array}\n\\]",
+  "vars": [
+    "x",
+    "n",
+    "i"
+  ],
+  "params": [
+    "a_i",
+    "a_0",
+    "a_1",
+    "a_2",
+    "a_n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "n": "degcount",
+        "i": "indexer",
+        "a_i": "coeffindex",
+        "a_0": "coeffzero",
+        "a_1": "coeffone",
+        "a_2": "coefftwo",
+        "a_n": "coefflast"
+      },
+      "question": "A-6. Determine all polynomials of the form \\( \\sum_{0}^{degcount} coeffindex \\, variable^{degcount-indexer} \\) with \\( coeffindex= \\pm 1(0 \\leqq indexer \\leqq degcount, 1 \\leqq degcount<\\infty) \\) such that each has only real zeros.",
+      "solution": "A-6 (0) The desired polynomials with \\( coeffzero=-1 \\) are the negative of those with \\( coeffzero=1 \\), so consider \\( coeffzero=1 \\). The sum of the squares of the zeros of \\( variable^{degcount}+coeffone \\, variable^{degcount-1}+\\cdots +coefflast \\) is \\( coeffone^{2}-2 coefftwo \\). The product of the squares of these zeros is \\( coefflast^{2} \\). If all the zeros are real, we can apply the arithmetic-geometric mean inequality to obtain\n\\[\n\\frac{coeffone^{2}-2 coefftwo}{degcount} \\geqq\\left(coefflast^{2}\\right)^{1 / degcount}\n\\]\nwith equality only if the zeros are numerically equal. In our case this inequality becomes \\( (1 \\pm 2) / degcount \\geqq 1 \\) or \\( degcount \\leqq 3 \\). Note that \\( degcount>1 \\) implies \\( coefftwo=-1 \\) and \\( degcount=3 \\) implies all zeros are \\( \\pm 1 \\). Thus the list of polynomials is:\n\\[\n\\begin{array}{c} \n\\pm(variable-1), \\quad \\pm(variable+1), \\quad \\pm\\left(variable^{2}+variable-1\\right), \\quad \\pm\\left(variable^{2}-variable-1\\right), \\\\\n\\pm\\left(variable^{3}+variable^{2}-variable-1\\right), \\quad \\pm\\left(variable^{3}-variable^{2}-variable+1\\right) .\n\\end{array}\n\\]\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marinade",
+        "n": "bluegrass",
+        "i": "cantaloup",
+        "a_i": "buttercup",
+        "a_0": "dandelion",
+        "a_1": "honeysuck",
+        "a_2": "lilywhite",
+        "a_n": "snapdragon"
+      },
+      "question": "A-6. Determine all polynomials of the form \\( \\sum_{0}^{bluegrass} buttercup marinade^{bluegrass-cantaloup} \\) with \\( buttercup= \\pm 1(0 \\leqq cantaloup \\leqq bluegrass, 1 \\leqq bluegrass<\\infty) \\) such that each has only real zeros.",
+      "solution": "A-6 (0) The desired polynomials with \\( dandelion=-1 \\) are the negative of those with \\( dandelion=1 \\), so consider \\( dandelion=1 \\). The sum of the squares of the zeros of \\( marinade^{bluegrass}+honeysuck marinade^{bluegrass-1}+\\cdots \\) \\( +snapdragon \\) is \\( honeysuck^{2}-2 lilywhite \\). The product of the squares of these zeros is \\( snapdragon^{2} \\). If all the zeros are real, we can apply the arithmetic-geometric mean inequality to obtain\n\\[\\frac{honeysuck^{2}-2 lilywhite}{bluegrass} \\geqq\\left(snapdragon^{2}\\right)^{1 / bluegrass}\\]\nwith equality only if the zeros are numerically equal. In our case this inequality becomes \\( (1 \\pm 2) / bluegrass \\geqq 1 \\) or \\( bluegrass \\leqq 3 \\). Note that \\( bluegrass>1 \\) implies \\( lilywhite=-1 \\) and \\( bluegrass=3 \\) implies all zeros are \\( \\pm 1 \\). Thus the list of polynomials is:\n\\[\\begin{array}{c} \n\\pm(marinade-1), \\quad \\pm(marinade+1), \\quad \\pm\\left(marinade^{2}+marinade-1\\right), \\quad \\pm\\left(marinade^{2}-marinade-1\\right), \\\\\n\\pm\\left(marinade^{3}+marinade^{2}-marinade-1\\right), \\quad \\pm\\left(marinade^{3}-marinade^{2}-marinade+1\\right) .\n\\end{array}\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "unchanging",
+        "n": "boundless",
+        "i": "complete",
+        "a_i": "variableco",
+        "a_0": "movingcore",
+        "a_1": "shiftstart",
+        "a_2": "shiftsecond",
+        "a_n": "shiftend"
+      },
+      "question": "A-6. Determine all polynomials of the form \\( \\sum_{0}^{boundless} variableco\\, unchanging^{boundless-complete} \\) with \\( variableco = \\pm 1(0 \\leqq complete \\leqq boundless, 1 \\leqq boundless < \\infty) \\) such that each has only real zeros.",
+      "solution": "A-6 (0) The desired polynomials with \\( movingcore=-1 \\) are the negative of those with \\( movingcore=1 \\), so consider \\( movingcore=1 \\). The sum of the squares of the zeros of \\( unchanging^{boundless}+shiftstart\\, unchanging^{boundless-1}+\\cdots \\) \\( +shiftend \\) is \\( shiftstart^{2}-2 shiftsecond \\). The product of the squares of these zeros is \\( shiftend^{2} \\). If all the zeros are real, we can apply the arithmetic-geometric mean inequality to obtain\n\\[\n\\frac{shiftstart^{2}-2 shiftsecond}{boundless} \\geqq \\left(shiftend^{2}\\right)^{1 / boundless}\n\\]\nwith equality only if the zeros are numerically equal. In our case this inequality becomes \\( (1 \\pm 2) / boundless \\geqq 1 \\) or \\( boundless \\leqq 3 \\). Note that \\( boundless>1 \\) implies \\( shiftsecond=-1 \\) and \\( boundless=3 \\) implies all zeros are \\( \\pm 1 \\). Thus the list of polynomials is:\n\\[\n\\begin{array}{c}\n\\pm(unchanging-1), \\quad \\pm(unchanging+1), \\quad \\pm\\left(unchanging^{2}+unchanging-1\\right), \\quad \\pm\\left(unchanging^{2}-unchanging-1\\right), \\\\\n\\pm\\left(unchanging^{3}+unchanging^{2}-unchanging-1\\right), \\quad \\pm\\left(unchanging^{3}-unchanging^{2}-unchanging+1\\right) .\n\\end{array}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "n": "hjgrksla",
+        "i": "rmdfplkc",
+        "a_i": "vsnejrpa",
+        "a_0": "pdxkqlru",
+        "a_1": "fqnzmoch",
+        "a_2": "tgrylxse",
+        "a_n": "kavshude"
+      },
+      "question": "A-6. Determine all polynomials of the form \\( \\sum_{0}^{hjgrksla} vsnejrpa qzxwvtnp^{hjgrksla-rmdfplkc} \\) with \\( vsnejrpa= \\pm 1(0 \\leqq rmdfplkc \\leqq hjgrksla, 1 \\leqq hjgrksla<\\infty) \\) such that each has only real zeros.",
+      "solution": "A-6 (0) The desired polynomials with \\( pdxkqlru=-1 \\) are the negative of those with \\( pdxkqlru=1 \\), so consider \\( pdxkqlru=1 \\). The sum of the squares of the zeros of \\( qzxwvtnp^{hjgrksla}+fqnzmoch qzxwvtnp^{hjgrksla-1}+\\cdots +kavshude \\) is \\( fqnzmoch^{2}-2 tgrylxse \\). The product of the squares of these zeros is \\( kavshude^{2} \\). If all the zeros are real, we can apply the arithmetic-geometric mean inequality to obtain\n\\[\n\\frac{fqnzmoch^{2}-2 tgrylxse}{hjgrksla} \\geqq\\left(kavshude^{2}\\right)^{1 / hjgrksla}\n\\]\nwith equality only if the zeros are numerically equal. In our case this inequality becomes \\( (1 \\pm 2) / hjgrksla \\geqq 1 \\) or \\( hjgrksla \\leqq 3 \\). Note that \\( hjgrksla>1 \\) implies \\( tgrylxse=-1 \\) and \\( hjgrksla=3 \\) implies all zeros are \\( \\pm 1 \\). Thus the list of polynomials is:\n\\[\n\\begin{array}{c} \n\\pm(qzxwvtnp-1), \\quad \\pm(qzxwvtnp+1), \\quad \\pm\\left(qzxwvtnp^{2}+qzxwvtnp-1\\right), \\quad \\pm\\left(qzxwvtnp^{2}-qzxwvtnp-1\\right), \\\\\n\\pm\\left(qzxwvtnp^{3}+qzxwvtnp^{2}-qzxwvtnp-1\\right), \\quad \\pm\\left(qzxwvtnp^{3}-qzxwvtnp^{2}-qzxwvtnp+1\\right) .\n\\end{array}\n\\]\n"
+    },
+    "kernel_variant": {
+      "question": "Let\nP(x)= -x^{n}+a_{1}x^{n-1}+a_{2}x^{n-2}+\\cdots +a_{n-1}x-1 \\qquad(n\\ge 1),\nwhere each coefficient satisfies a_{k}\\in\\{\\pm 1\\}.\n(Thus both the leading coefficient and the constant term of P are equal to -1.)\nDetermine all such polynomials whose zeros are all real numbers.",
+      "solution": "Step 1.  Replace P by a monic polynomial.\nSet\n   Q(x)= -P(x)=x^{n}+b_{1}x^{n-1}+b_{2}x^{n-2}+\\cdots +b_{n-1}x+1,\nwhere b_{k}=-a_{k}\\;(1\\le k\\le n-1).  Each b_{k} equals \\pm1 and the constant term of Q is +1.  Because the roots of P and Q coincide, it suffices to find all Q of the above shape whose n zeros r_{1},\\dots ,r_{n} are real.\n\nStep 2.  A general inequality for n\\ge 3.\nAssume first that n\\ge 3 so that both a_{1} and a_{2} (hence b_{1},b_{2}) are present.\nBy Vieta,\n  \\sum_{k=1}^{n} r_{k}= -b_{1}= a_{1},\n  \\sum_{1\\le i<j\\le n} r_{i}r_{j}= b_{2}= -a_{2},\n  \\prod_{k=1}^{n} r_{k}= (-1)^{n} \\,(\\text{coefficient of }x^{0})= (-1)^{n}.\nHence\n  \\sum_{k=1}^{n} r_{k}^{2}= (\\sum r_{k})^{2}-2 \\sum_{i<j} r_{i}r_{j}\n                        = a_{1}^{2}-2(-a_{2})\n                        = 1+2a_{2},\nwhile\n  \\prod_{k=1}^{n} r_{k}^{2}=1.\nBecause all r_{k}^{2}\\ge 0, the arithmetic-geometric-mean (AM-GM) inequality gives\n   (\\sum r_{k}^{2})/n \\ge (\\prod r_{k}^{2})^{1/n}=1,\\qquad\\text{i.e.}\\qquad 1+2a_{2}\\ge n.\nSince a_{2}=\\pm1, 1+2a_{2} equals 3 or -1.  The inequality can hold only for 1+2a_{2}=3 and n\\le3.  As we are in the case n\\ge3, we must have\n               n=3 \\quad\\text{and}\\quad a_{2}=+1 (equivalently, b_{2}=-1).\n\nStep 3.  Examine n=3.\nWith n=3 we have\n   Q(x)=x^{3}+b_{1}x^{2}+b_{2}x+1=x^{3}+b_{1}x^{2}-x+1,\\quad b_{1}=\\pm1.\n(a)  b_{1}=1:\n       Q(x)=x^{3}+x^{2}-x+1.\n     A cubic always has at least one real zero; here the discriminant is negative, so exactly one zero is real and two are complex, hence not all three zeros are real.\n(b)  b_{1}=-1:\n       Q(x)=x^{3}-x^{2}-x+1=(x-1)^{2}(x+1).\n     All three zeros (1,1,-1) are real.  Thus this choice works.\nTherefore, for n=3 the unique acceptable polynomial is\n    Q(x)=x^{3}-x^{2}-x+1,\\quad\\text{hence}\\quad P(x)=-x^{3}+x^{2}+x-1.\n\nStep 4.  Examine n=2 separately.\nIf n=2 then Q(x)=x^{2}+b_{1}x+1 with b_{1}=\\pm1.  Its discriminant is\n   \\Delta=b_{1}^{2}-4=1-4=-3<0,\nso Q has two non-real conjugate zeros.  Thus no quadratic of the required form has all real zeros.\n\nStep 5.  Examine n=1.\nFor n=1 we have Q(x)=x+1, whose single zero -1 is real.  Consequently\n   P(x)=-x-1.\n\nStep 6.  Collect the answers.\nHence the polynomials satisfying the stated conditions are\n   P_{1}(x)= -x-1  \\quad(n=1),\n   P_{2}(x)= -x^{3}+x^{2}+x-1 \\quad(n=3).\nBoth indeed have only real zeros (respectively -1 and 1,1,-1), completing the classification.",
+      "_meta": {
+        "core_steps": [
+          "Negate-invariance ⇒ assume constant term a₀ = +1",
+          "Use Vieta:  Σ(roots²) = a₁² − 2a₂  and  Π(roots²) = a_n²",
+          "Apply AGM to the squares of real roots:  (a₁²−2a₂)/n ≥ (a_n²)^{1/n}",
+          "Substitute a_i = ±1 to get (1±2)/n ≥ 1 ⇒ n ≤ 3 and force a₂ = –1, equality only when all roots = ±1",
+          "List the degree-1, 2, 3 sign patterns that satisfy the above and re-adjoin the overall ± sign"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Overall sign of the polynomial (multiply every coefficient by −1)",
+            "original": "positive (analysis done for a₀ = +1)"
+          },
+          "slot2": {
+            "description": "Sign of the constant coefficient a_n; its square remains 1 so proof unchanged",
+            "original": "+1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,91 @@
+{
+  "index": "1978-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Problem A-1\nLet \\( A \\) be any set of 20 distinct integers chosen from the arithmetic progression \\( 1,4,7, \\ldots, 100 \\). Prove that there must be two distinct integers in \\( A \\) whose sum is 104.",
+  "solution": "A-1.\nEach of the twenty integers of \\( A \\) must be in one of the eighteen disjoint sets\n\\[\n\\{1\\},\\{52\\},\\{4,100\\},\\{7,97\\},\\{10,94\\}, \\ldots,\\{49,55\\} .\n\\]\n\nHence some (at least two) of the pairs \\( \\{4,100\\}, \\ldots,\\{49,55\\} \\) must have two integers from \\( A \\). But the sum for each of these pairs is 104 .",
+  "vars": [
+    "A"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "chosenints"
+      },
+      "question": "Problem A-1\nLet \\( chosenints \\) be any set of 20 distinct integers chosen from the arithmetic progression \\( 1,4,7, \\ldots, 100 \\). Prove that there must be two distinct integers in \\( chosenints \\) whose sum is 104.",
+      "solution": "A-1.\nEach of the twenty integers of \\( chosenints \\) must be in one of the eighteen disjoint sets\n\\[\n\\{1\\},\\{52\\},\\{4,100\\},\\{7,97\\},\\{10,94\\}, \\ldots,\\{49,55\\} .\n\\]\n\nHence some (at least two) of the pairs \\( \\{4,100\\}, \\ldots,\\{49,55\\} \\) must have two integers from \\( chosenints \\). But the sum for each of these pairs is 104 ."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "sunflower"
+      },
+      "question": "Problem A-1\nLet \\( sunflower \\) be any set of 20 distinct integers chosen from the arithmetic progression \\( 1,4,7, \\ldots, 100 \\). Prove that there must be two distinct integers in \\( sunflower \\) whose sum is 104.",
+      "solution": "A-1.\nEach of the twenty integers of \\( sunflower \\) must be in one of the eighteen disjoint sets\n\\[\n\\{1\\},\\{52\\},\\{4,100\\},\\{7,97\\},\\{10,94\\}, \\ldots,\\{49,55\\} .\n\\]\n\nHence some (at least two) of the pairs \\( \\{4,100\\}, \\ldots,\\{49,55\\} \\) must have two integers from \\( sunflower \\). But the sum for each of these pairs is 104 ."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "multiset"
+      },
+      "question": "Problem A-1\nLet \\( multiset \\) be any set of 20 distinct integers chosen from the arithmetic progression \\( 1,4,7, \\ldots, 100 \\). Prove that there must be two distinct integers in \\( multiset \\) whose sum is 104.",
+      "solution": "A-1.\nEach of the twenty integers of \\( multiset \\) must be in one of the eighteen disjoint sets\n\\[\n\\{1\\},\\{52\\},\\{4,100\\},\\{7,97\\},\\{10,94\\}, \\ldots,\\{49,55\\} .\n\\]\n\nHence some (at least two) of the pairs \\{4,100\\}, \\ldots,\\{49,55\\} must have two integers from \\( multiset \\). But the sum for each of these pairs is 104 ."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp"
+      },
+      "question": "Problem:\n<<<\nProblem A-1\nLet \\( qzxwvtnp \\) be any set of 20 distinct integers chosen from the arithmetic progression \\( 1,4,7, \\ldots, 100 \\). Prove that there must be two distinct integers in \\( qzxwvtnp \\) whose sum is 104.\n>>>",
+      "solution": "Solution:\n<<<\nA-1.\nEach of the twenty integers of \\( qzxwvtnp \\) must be in one of the eighteen disjoint sets\n\\[\n\\{1\\},\\{52\\},\\{4,100\\},\\{7,97\\},\\{10,94\\}, \\ldots,\\{49,55\\} .\n\\]\n\nHence some (at least two) of the pairs \\( \\{4,100\\}, \\ldots,\\{49,55\\} \\) must have two integers from \\( qzxwvtnp \\). But the sum for each of these pairs is 104 .\n>>>"
+    },
+    "kernel_variant": {
+      "question": "Let $A$ be any set of $11$ distinct integers chosen from the arithmetic progression\n\\[5,\\;11,\\;17,\\;\\dots ,\\;113.\\]\nProve that there must be two distinct integers in $A$ whose sum is $124$.",
+      "solution": "Denote by S=124.  Partition the terms of the given progression into disjoint subsets as follows:\n\n{5},    {11,113}, {17,107}, {23,101}, {29,95}, {35,89}, {41,83}, {47,77}, {53,71}, {59,65}.\n\nEach two-element set {x, S-x} consists of members of the progression whose sum is S, and the singleton accounts for the number that has no partner inside the progression (here 5, since 124-5=119\\notin the progression).  There are 9 two-element subsets and 1 singleton, for a total of 10 disjoint subsets.  Because |A|=11>10, the pigeonhole principle guarantees that at least one of the two-element subsets contains two members of A.  Those two members add up to S=124.  Hence A necessarily contains a pair of distinct integers whose sum is 124, as desired.",
+      "_meta": {
+        "core_steps": [
+          "Form disjoint subsets by pairing every term x of the progression with S−x, leaving at most two singletons",
+          "Compute the number of resulting subsets (pairs plus singletons)",
+          "Note that |A| is larger than that subset count",
+          "Invoke the pigeonhole principle to guarantee one full pair inside A",
+          "Conclude the two chosen numbers add up to the fixed sum S"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "size of the chosen set A",
+            "original": 20
+          },
+          "slot2": {
+            "description": "first term of the arithmetic progression",
+            "original": 1
+          },
+          "slot3": {
+            "description": "common difference of the progression",
+            "original": 3
+          },
+          "slot4": {
+            "description": "last term of the progression",
+            "original": 100
+          },
+          "slot5": {
+            "description": "fixed sum S used for pairing",
+            "original": 104
+          },
+          "slot6": {
+            "description": "singleton produced by lack of partner in progression",
+            "original": 1
+          },
+          "slot7": {
+            "description": "singleton produced when x = S/2 lies in the progression",
+            "original": 52
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,146 @@
+{
+  "index": "2010-B-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Is there a strictly increasing function $f: \\mathbb{R} \\to \\mathbb{R}$ such that $f'(x) = f(f(x))$ for all $x$?",
+  "solution": "\\textbf{First solution.}\nThe answer is no. Suppose otherwise. For the condition to make sense, $f$ must be differentiable.\nSince $f$ is strictly increasing, we must have $f'(x) \\geq 0$ for all $x$.\nAlso, the function $f'(x)$ is strictly increasing: if $y>x$ then $f'(y) = f(f(y)) > f(f(x)) = f'(x)$.\nIn particular, $f'(y) > 0$ for all $y \\in \\RR$.\n\nFor any $x_0 \\geq -1$, if $f(x_0) = b$ and $f'(x_0) = a > 0$, then $f'(x) > a$ for $x>x_0$ and thus $f(x) \\geq a(x-x_0)+b$ for $x\\geq x_0$. Then either $b < x_0$ or\n$a = f'(x_0) = f(f(x_0)) = f(b) \\geq a(b-x_0)+b$. In the latter case,\n$b \\leq a(x_0+1)/(a+1) \\leq x_0+1$. We conclude in either case that $f(x_0) \\leq x_0+1$ for all $x_0 \\geq -1$.\n\nIt must then be the case that $f(f(x)) = f'(x) \\leq 1$ for all $x$, since otherwise $f(x) > x+1$ for large $x$. Now by the above reasoning, if $f(0) = b_0$ and $f'(0) = a_0>0$, then $f(x) > a_0x+b_0$ for $x>0$. Thus for $x > \\max\\{0,-b_0/a_0\\}$, we have\n$f(x) > 0$ and $f(f(x)) > a_0x+b_0$. But then $f(f(x)) > 1$ for sufficiently large $x$, a contradiction.\n\n\\textbf{Second solution.}\n(Communicated by Catalin Zara.)\nSuppose such a function exists. Since $f$ is strictly increasing and differentiable, so is $f \\circ f = f'$.\nIn particular, $f$ is twice differentiable; also, $f''(x) = f'(f(x)) f'(x)$ is the product of two strictly\nincreasing nonnegative functions, so it is also strictly increasing and nonnegative. In particular, we can choose\n$\\alpha>0$ and $M \\in \\RR$ such that $f''(x) > 4\\alpha$ for all $x \\geq M$. Then for all $x \\geq M$,\n\\[\nf(x) \\geq f(M) + f'(M)(x-M) + 2\\alpha (x-M)^2.\n\\]\nIn particular, for some $M' > M$, we have $f(x) \\geq \\alpha x^2$ for all $x \\geq M'$.\n\nPick $T>0$ so that $\\alpha T^2 > M'$. Then for $x \\geq T$,\n$f(x) > M'$ and so $f'(x) = f(f(x)) \\geq \\alpha f(x)^2$.\nNow\n\\[\n\\frac{1}{f(T)} - \\frac{1}{f(2T)}\n= \\int_T^{2T} \\frac{f'(t)}{f(t)^2}\\,dt \\geq \\int_T^{2T} \\alpha\\,dt;\n\\]\nhowever, as $T \\to \\infty$, the left side of this inequality\ntends to 0 while the right side tends to $+\\infty$,\na contradiction.\n\n\\textbf{Third solution.}\n(Communicated by Noam Elkies.)\nSince $f$ is strictly increasing, for some $y_0$, we can define the inverse function\n$g(y)$ of $f$ for $y \\geq y_0$. Then $x = g(f(x))$, and we may differentiate to find that\n$1 = g'(f(x)) f'(x) = g'(f(x)) f(f(x))$. It follows that $g'(y) = 1/f(y)$ for $y \\geq y_0$;\nsince $g$ takes arbitrarily large values, the integral $\\int_{y_0}^\\infty dy/f(y)$ must diverge.\nOne then gets a contradiction from any reasonable lower bound on $f(y)$ for $y$ large,\ne.g., the bound $f(x) \\geq \\alpha x^2$ from the second solution. (One can also\nstart with a linear lower bound $f(x) \\geq \\beta x$, then use the integral expression for $g$\nto deduce that $g(x) \\leq \\gamma \\log x$, which in turn forces $f(x)$ to grow exponentially.)",
+  "vars": [
+    "f",
+    "g",
+    "x",
+    "y",
+    "t"
+  ],
+  "params": [
+    "a",
+    "b",
+    "x_0",
+    "y_0",
+    "a_0",
+    "b_0",
+    "M",
+    "T",
+    "\\\\alpha",
+    "\\\\beta"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "increas",
+        "g": "inverse",
+        "x": "inputvar",
+        "y": "outputv",
+        "t": "paramet",
+        "a": "coeffa",
+        "b": "coeffb",
+        "x_0": "originx",
+        "y_0": "sourcey",
+        "a_0": "initiala",
+        "b_0": "initialb",
+        "M": "boundup",
+        "T": "timelim",
+        "\\alpha": "alphaid",
+        "\\beta": "betaid"
+      },
+      "question": "Is there a strictly increasing function $increas: \\mathbb{R} \\to \\mathbb{R}$ such that $increas'(inputvar) = increas(increas(inputvar))$ for all $inputvar$?",
+      "solution": "\\textbf{First solution.}\\nThe answer is no. Suppose otherwise. For the condition to make sense, $increas$ must be differentiable.\\nSince $increas$ is strictly increasing, we must have $increas'(inputvar) \\geq 0$ for all $inputvar$.\\nAlso, the function $increas'(inputvar)$ is strictly increasing: if $outputv>inputvar$ then $increas'(outputv) = increas(increas(outputv)) > increas(increas(inputvar)) = increas'(inputvar)$.\\nIn particular, $increas'(outputv) > 0$ for all $outputv \\in \\RR$.\\n\\nFor any $originx \\geq -1$, if $increas(originx) = coeffb$ and $increas'(originx) = coeffa > 0$, then $increas'(inputvar) > coeffa$ for $inputvar>originx$ and thus $increas(inputvar) \\geq coeffa(inputvar-originx)+coeffb$ for $inputvar\\geq originx$. Then either $coeffb < originx$ or\\n$coeffa = increas'(originx) = increas(increas(originx)) = increas(coeffb) \\geq coeffa(coeffb-originx)+coeffb$. In the latter case,\\n$coeffb \\leq coeffa(originx+1)/(coeffa+1) \\leq originx+1$. We conclude in either case that $increas(originx) \\leq originx+1$ for all $originx \\geq -1$.\\n\\nIt must then be the case that $increas(increas(inputvar)) = increas'(inputvar) \\leq 1$ for all $inputvar$, since otherwise $increas(inputvar) > inputvar+1$ for large $inputvar$. Now by the above reasoning, if $increas(0) = initialb$ and $increas'(0) = initiala>0$, then $increas(inputvar) > initiala\\,inputvar+initialb$ for $inputvar>0$. Thus for $inputvar > \\max\\{0,-initialb/initiala\\}$, we have\\n$increas(inputvar) > 0$ and $increas(increas(inputvar)) > initiala\\,inputvar+initialb$. But then $increas(increas(inputvar)) > 1$ for sufficiently large $inputvar$, a contradiction.\\n\\n\\textbf{Second solution.}\\n(Communicated by Catalin Zara.)\\nSuppose such a function exists. Since $increas$ is strictly increasing and differentiable, so is $increas \\circ increas = increas'$.\\nIn particular, $increas$ is twice differentiable; also, $increas''(inputvar) = increas'(increas(inputvar))\\,increas'(inputvar)$ is the product of two strictly\\nincreasing nonnegative functions, so it is also strictly increasing and nonnegative. In particular, we can choose\\n$alphaid>0$ and $boundup \\in \\RR$ such that $increas''(inputvar) > 4\\,alphaid$ for all $inputvar \\geq boundup$. Then for all $inputvar \\geq boundup$,\\n$\\[\\nincreas(inputvar) \\geq increas(boundup) + increas'(boundup)(inputvar-boundup) + 2\\,alphaid (inputvar-boundup)^2.\\n\\]$\\nIn particular, for some $boundup' > boundup$, we have $increas(inputvar) \\geq alphaid\\,inputvar^2$ for all $inputvar \\geq boundup'$.\\n\\nPick $timelim>0$ so that $alphaid\\,timelim^2 > boundup'$. Then for $inputvar \\geq timelim$,\\n$increas(inputvar) > boundup'$ and so $increas'(inputvar) = increas(increas(inputvar)) \\geq alphaid\\,increas(inputvar)^2$.\\nNow\\n$\\[\\n\\frac{1}{increas(timelim)} - \\frac{1}{increas(2\\,timelim)}\\n= \\int_{timelim}^{2\\,timelim} \\frac{increas'(paramet)}{increas(paramet)^2}\\,dparamet \\geq \\int_{timelim}^{2\\,timelim} alphaid\\,dparamet;\\n\\]$\\nhowever, as $timelim \\to \\infty$, the left side of this inequality\\ntends to 0 while the right side tends to $+\\infty$,\\na contradiction.\\n\\n\\textbf{Third solution.}\\n(Communicated by Noam Elkies.)\\nSince $increas$ is strictly increasing, for some $sourcey$, we can define the inverse function\\n$inverse(outputv)$ of $increas$ for $outputv \\geq sourcey$. Then $inputvar = inverse(increas(inputvar))$, and we may differentiate to find that\\n$1 = inverse'(increas(inputvar))\\,increas'(inputvar) = inverse'(increas(inputvar))\\,increas(increas(inputvar))$. It follows that $inverse'(outputv) = 1/increas(outputv)$ for $outputv \\geq sourcey$;\\nsince $inverse$ takes arbitrarily large values, the integral $\\int_{sourcey}^\\infty doutputv/increas(outputv)$ must diverge.\\nOne then gets a contradiction from any reasonable lower bound on $increas(outputv)$ for $outputv$ large,\\ne.g., the bound $increas(inputvar) \\geq alphaid\\,inputvar^2$ from the second solution. (One can also\\nstart with a linear lower bound $increas(inputvar) \\geq betaid\\,inputvar$, then use the integral expression for $inverse$\\nto deduce that $inverse(inputvar) \\leq \\gamma \\log inputvar$, which in turn forces $increas(inputvar)$ to grow exponentially.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "waterflow",
+        "g": "stonepath",
+        "x": "cloudwave",
+        "y": "firelight",
+        "t": "windspore",
+        "a": "riverbank",
+        "b": "moonridge",
+        "x_0": "starfield",
+        "y_0": "sunhaven",
+        "a_0": "earthrise",
+        "b_0": "skydancer",
+        "M": "frostvale",
+        "T": "emberglow",
+        "\\alpha": "quilldart",
+        "\\beta": "leafwhirl"
+      },
+      "question": "Is there a strictly increasing function $waterflow: \\mathbb{R} \\to \\mathbb{R}$ such that $waterflow'(cloudwave) = waterflow(waterflow(cloudwave))$ for all $cloudwave$?",
+      "solution": "\\textbf{First solution.}\nThe answer is no. Suppose otherwise. For the condition to make sense, $waterflow$ must be differentiable.\nSince $waterflow$ is strictly increasing, we must have $waterflow'(cloudwave) \\geq 0$ for all $cloudwave$.\nAlso, the function $waterflow'(cloudwave)$ is strictly increasing: if $firelight>cloudwave$ then $waterflow'(firelight) = waterflow(waterflow(firelight)) > waterflow(waterflow(cloudwave)) = waterflow'(cloudwave)$.\nIn particular, $waterflow'(firelight) > 0$ for all $firelight \\in \\RR$.\n\nFor any $starfield \\geq -1$, if $waterflow(starfield) = moonridge$ and $waterflow'(starfield) = riverbank > 0$, then $waterflow'(cloudwave) > riverbank$ for $cloudwave>starfield$ and thus $waterflow(cloudwave) \\geq riverbank(cloudwave-starfield)+moonridge$ for $cloudwave\\geq starfield$. Then either $moonridge < starfield$ or\n$riverbank = waterflow'(starfield) = waterflow(waterflow(starfield)) = waterflow(moonridge) \\geq riverbank(moonridge-starfield)+moonridge$. In the latter case,\n$moonridge \\leq riverbank(starfield+1)/(riverbank+1) \\leq starfield+1$. We conclude in either case that $waterflow(starfield) \\leq starfield+1$ for all $starfield \\geq -1$.\n\nIt must then be the case that $waterflow(waterflow(cloudwave)) = waterflow'(cloudwave) \\leq 1$ for all $cloudwave$, since otherwise $waterflow(cloudwave) > cloudwave+1$ for large $cloudwave$. Now by the above reasoning, if $waterflow(0) = skydancer$ and $waterflow'(0) = earthrise>0$, then $waterflow(cloudwave) > earthrise\\,cloudwave+skydancer$ for $cloudwave>0$. Thus for $cloudwave > \\max\\{0,-skydancer/earthrise\\}$, we have\n$waterflow(cloudwave) > 0$ and $waterflow(waterflow(cloudwave)) > earthrise\\,cloudwave+skydancer$. But then $waterflow(waterflow(cloudwave)) > 1$ for sufficiently large $cloudwave$, a contradiction.\n\n\\textbf{Second solution.}\n(Communicated by Catalin Zara.)\nSuppose such a function exists. Since $waterflow$ is strictly increasing and differentiable, so is $waterflow\\circ waterflow = waterflow'$.\nIn particular, $waterflow$ is twice differentiable; also, $waterflow''(cloudwave) = waterflow'(waterflow(cloudwave))\\, waterflow'(cloudwave)$ is the product of two strictly\nincreasing nonnegative functions, so it is also strictly increasing and nonnegative. In particular, we can choose\n$quilldart>0$ and $frostvale \\in \\RR$ such that $waterflow''(cloudwave) > 4quilldart$ for all $cloudwave \\geq frostvale$. Then for all $cloudwave \\geq frostvale$,\n\\[\nwaterflow(cloudwave) \\geq waterflow(frostvale) + waterflow'(frostvale)(cloudwave-frostvale) + 2quilldart (cloudwave-frostvale)^2.\n\\]\nIn particular, for some $M' > frostvale$, we have $waterflow(cloudwave) \\geq quilldart\\,cloudwave^2$ for all $cloudwave \\geq M'$.\n\nPick $emberglow>0$ so that $quilldart\\,emberglow^2 > M'$. Then for $cloudwave \\geq emberglow$,\n$waterflow(cloudwave) > M'$ and so $waterflow'(cloudwave) = waterflow(waterflow(cloudwave)) \\geq quilldart\\,waterflow(cloudwave)^2$.\nNow\n\\[\n\\frac{1}{waterflow(emberglow)} - \\frac{1}{waterflow(2\\,emberglow)}\n= \\int_{emberglow}^{2\\,emberglow} \\frac{waterflow'(windspore)}{waterflow(windspore)^2}\\,dwindspore \\geq \\int_{emberglow}^{2\\,emberglow} quilldart\\,dwindspore;\n\\]\nhowever, as $emberglow \\to \\infty$, the left side of this inequality\ntends to 0 while the right side tends to $+\\infty$,\na contradiction.\n\n\\textbf{Third solution.}\n(Communicated by Noam Elkies.)\nSince $waterflow$ is strictly increasing, for some $sunhaven$, we can define the inverse function\n$stonepath(firelight)$ of $waterflow$ for $firelight \\geq sunhaven$. Then $cloudwave = stonepath(waterflow(cloudwave))$, and we may differentiate to find that\n$1 = stonepath'(waterflow(cloudwave))\\,waterflow'(cloudwave) = stonepath'(waterflow(cloudwave))\\,waterflow(waterflow(cloudwave))$. It follows that $stonepath'(firelight) = 1/waterflow(firelight)$ for $firelight \\geq sunhaven$;\nsince $stonepath$ takes arbitrarily large values, the integral $\\int_{sunhaven}^{\\infty} d\\,firelight / waterflow(firelight)$ must diverge.\nOne then gets a contradiction from any reasonable lower bound on $waterflow(firelight)$ for $firelight$ large,\ne.g., the bound $waterflow(cloudwave) \\geq quilldart\\,cloudwave^2$ from the second solution. (One can also\nstart with a linear lower bound $waterflow(cloudwave) \\geq leafwhirl\\,cloudwave$, then use the integral expression for $stonepath$\nto deduce that $stonepath(cloudwave) \\leq \\gamma \\log cloudwave$, which in turn forces $waterflow(cloudwave)$ to grow exponentially.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "constantfunc",
+        "g": "directmap",
+        "x": "fixedvalue",
+        "y": "staticinput",
+        "t": "steadystate",
+        "a": "negativevalue",
+        "b": "lowestpoint",
+        "x_0": "finalvalue",
+        "y_0": "endpoint",
+        "a_0": "nullslope",
+        "b_0": "endvalue",
+        "M": "minvalue",
+        "T": "startzero",
+        "\\\\alpha": "nonpositive",
+        "\\\\beta": "zeroparam"
+      },
+      "question": "Is there a strictly increasing function $constantfunc: \\mathbb{R} \\to \\mathbb{R}$ such that $constantfunc'(fixedvalue) = constantfunc(constantfunc(fixedvalue))$ for all $fixedvalue$?",
+      "solution": "\\textbf{First solution.}\\nThe answer is no. Suppose otherwise. For the condition to make sense, $constantfunc$ must be differentiable.\\nSince $constantfunc$ is strictly increasing, we must have $constantfunc'(fixedvalue) \\geq 0$ for all $fixedvalue$.\\nAlso, the function $constantfunc'(fixedvalue)$ is strictly increasing: if $staticinput>fixedvalue$ then $constantfunc'(staticinput) = constantfunc(constantfunc(staticinput)) > constantfunc(constantfunc(fixedvalue)) = constantfunc'(fixedvalue)$.\\nIn particular, $constantfunc'(staticinput) > 0$ for all $staticinput \\in \\RR$.\\n\\nFor any $finalvalue \\geq -1$, if $constantfunc(finalvalue) = lowestpoint$ and $constantfunc'(finalvalue) = negativevalue > 0$, then $constantfunc'(fixedvalue) > negativevalue$ for $fixedvalue>finalvalue$ and thus $constantfunc(fixedvalue) \\geq negativevalue(fixedvalue-finalvalue)+lowestpoint$ for $fixedvalue\\geq finalvalue$. Then either $lowestpoint < finalvalue$ or\\n$negativevalue = constantfunc'(finalvalue) = constantfunc(constantfunc(finalvalue)) = constantfunc(lowestpoint) \\geq negativevalue(lowestpoint-finalvalue)+lowestpoint$. In the latter case,\\n$lowestpoint \\leq negativevalue(finalvalue+1)/(negativevalue+1) \\leq finalvalue+1$. We conclude in either case that $constantfunc(finalvalue) \\leq finalvalue+1$ for all $finalvalue \\geq -1$.\\n\\nIt must then be the case that $constantfunc(constantfunc(fixedvalue)) = constantfunc'(fixedvalue) \\leq 1$ for all $fixedvalue$, since otherwise $constantfunc(fixedvalue) > fixedvalue+1$ for large $fixedvalue$. Now by the above reasoning, if $constantfunc(0) = endvalue$ and $constantfunc'(0) = nullslope>0$, then $constantfunc(fixedvalue) > nullslope fixedvalue+endvalue$ for $fixedvalue>0$. Thus for $fixedvalue > \\max\\{0,-endvalue/nullslope\\}$, we have\\n$constantfunc(fixedvalue) > 0$ and $constantfunc(constantfunc(fixedvalue)) > nullslope fixedvalue+endvalue$. But then $constantfunc(constantfunc(fixedvalue)) > 1$ for sufficiently large $fixedvalue$, a contradiction.\\n\\n\\textbf{Second solution.}\\n(Communicated by Catalin Zara.)\\nSuppose such a function exists. Since $constantfunc$ is strictly increasing and differentiable, so is $constantfunc \\circ constantfunc = constantfunc'$.\\nIn particular, $constantfunc$ is twice differentiable; also, $constantfunc''(fixedvalue) = constantfunc'(constantfunc(fixedvalue)) constantfunc'(fixedvalue)$ is the product of two strictly\\nincreasing nonnegative functions, so it is also strictly increasing and nonnegative. In particular, we can choose\\n$nonpositive>0$ and $minvalue \\in \\RR$ such that $constantfunc''(fixedvalue) > 4\\,nonpositive$ for all $fixedvalue \\geq minvalue$. Then for all $fixedvalue \\geq minvalue$,\\n\\[\\nconstantfunc(fixedvalue) \\geq constantfunc(minvalue) + constantfunc'(minvalue)(fixedvalue-minvalue) + 2\\,nonpositive (fixedvalue-minvalue)^2.\\n\\]\\nIn particular, for some $minvalue' > minvalue$, we have $constantfunc(fixedvalue) \\geq nonpositive\\, fixedvalue^2$ for all $fixedvalue \\geq minvalue'$.\\n\\nPick $startzero>0$ so that $nonpositive\\, startzero^2 > minvalue'$. Then for $fixedvalue \\geq startzero$,\\n$constantfunc(fixedvalue) > minvalue'$ and so $constantfunc'(fixedvalue) = constantfunc(constantfunc(fixedvalue)) \\geq nonpositive\\, constantfunc(fixedvalue)^2$.\\nNow\\n\\[\\n\\frac{1}{constantfunc(startzero)} - \\frac{1}{constantfunc(2 startzero)}\\n= \\int_{startzero}^{2 startzero} \\frac{constantfunc'(steadystate)}{constantfunc(steadystate)^2}\\,dsteadystate \\geq \\int_{startzero}^{2 startzero} nonpositive\\,dsteadystate;\\n\\]\\nhowever, as $startzero \\to \\infty$, the left side of this inequality\\ntends to 0 while the right side tends to $+\\infty$,\\na contradiction.\\n\\n\\textbf{Third solution.}\\n(Communicated by Noam Elkies.)\\nSince $constantfunc$ is strictly increasing, for some $endpoint$, we can define the inverse function\\n$directmap(staticinput)$ of $constantfunc$ for $staticinput \\geq endpoint$. Then $fixedvalue = directmap(constantfunc(fixedvalue))$, and we may differentiate to find that\\n$1 = directmap'(constantfunc(fixedvalue)) constantfunc'(fixedvalue) = directmap'(constantfunc(fixedvalue)) constantfunc(constantfunc(fixedvalue))$. It follows that $directmap'(staticinput) = 1/constantfunc(staticinput)$ for $staticinput \\geq endpoint$;\\nsince $directmap$ takes arbitrarily large values, the integral $\\int_{endpoint}^{\\infty} dstaticinput/constantfunc(staticinput)$ must diverge.\\nOne then gets a contradiction from any reasonable lower bound on $constantfunc(staticinput)$ for $staticinput$ large,\\ne.g., the bound $constantfunc(fixedvalue) \\geq nonpositive\\, fixedvalue^2$ from the second solution. (One can also\\nstart with a linear lower bound $constantfunc(fixedvalue) \\geq zeroparam\\, fixedvalue$, then use the integral expression for $directmap$\\nto deduce that $directmap(fixedvalue) \\leq \\gamma \\log fixedvalue$, which in turn forces $constantfunc(fixedvalue)$ to grow exponentially.)"
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "g": "hjgrksla",
+        "x": "vcbmltaz",
+        "y": "kpqrsnmd",
+        "t": "ouyinwer",
+        "a": "sldkfjwe",
+        "b": "qweipzmq",
+        "x_0": "fhdjskla",
+        "y_0": "poiruzmx",
+        "a_0": "ajskdlfh",
+        "b_0": "zmxncbvq",
+        "M": "qptnsldk",
+        "T": "asrthfgu",
+        "\\alpha": "xcvbnmas",
+        "\\beta": "qwerlkjh"
+      },
+      "question": "Is there a strictly increasing function $qzxwvtnp: \\mathbb{R} \\to \\mathbb{R}$ such that $qzxwvtnp'(vcbmltaz) = qzxwvtnp(qzxwvtnp(vcbmltaz))$ for all $vcbmltaz$?",
+      "solution": "\\textbf{First solution.}\nThe answer is no. Suppose otherwise. For the condition to make sense, $qzxwvtnp$ must be differentiable.\nSince $qzxwvtnp$ is strictly increasing, we must have $qzxwvtnp'(vcbmltaz) \\geq 0$ for all $vcbmltaz$.\nAlso, the function $qzxwvtnp'(vcbmltaz)$ is strictly increasing: if $kpqrsnmd>vcbmltaz$ then $qzxwvtnp'(kpqrsnmd) = qzxwvtnp(qzxwvtnp(kpqrsnmd)) > qzxwvtnp(qzxwvtnp(vcbmltaz)) = qzxwvtnp'(vcbmltaz)$.\nIn particular, $qzxwvtnp'(kpqrsnmd) > 0$ for all $kpqrsnmd \\in \\RR$.\n\nFor any $fhdjskla \\geq -1$, if $qzxwvtnp(fhdjskla) = qweipzmq$ and $qzxwvtnp'(fhdjskla) = sldkfjwe > 0$, then $qzxwvtnp'(vcbmltaz) > sldkfjwe$ for $vcbmltaz>fhdjskla$ and thus $qzxwvtnp(vcbmltaz) \\geq sldkfjwe(vcbmltaz-fhdjskla)+qweipzmq$ for $vcbmltaz\\geq fhdjskla$. Then either $qweipzmq < fhdjskla$ or\n$sldkfjwe = qzxwvtnp'(fhdjskla) = qzxwvtnp(qzxwvtnp(fhdjskla)) = qzxwvtnp(qweipzmq) \\geq sldkfjwe(qweipzmq-fhdjskla)+qweipzmq$. In the latter case,\n$qweipzmq \\leq sldkfjwe(fhdjskla+1)/(sldkfjwe+1) \\leq fhdjskla+1$. We conclude in either case that $qzxwvtnp(fhdjskla) \\leq fhdjskla+1$ for all $fhdjskla \\geq -1$.\n\nIt must then be the case that $qzxwvtnp(qzxwvtnp(vcbmltaz)) = qzxwvtnp'(vcbmltaz) \\leq 1$ for all $vcbmltaz$, since otherwise $qzxwvtnp(vcbmltaz) > vcbmltaz+1$ for large $vcbmltaz$. Now by the above reasoning, if $qzxwvtnp(0) = zmxncbvq$ and $qzxwvtnp'(0) = ajskdlfh>0$, then $qzxwvtnp(vcbmltaz) > ajskdlfh\\,vcbmltaz+zmxncbvq$ for $vcbmltaz>0$. Thus for $vcbmltaz > \\max\\{0,-zmxncbvq/ajskdlfh\\}$, we have\n$qzxwvtnp(vcbmltaz) > 0$ and $qzxwvtnp(qzxwvtnp(vcbmltaz)) > ajskdlfh\\,vcbmltaz+zmxncbvq$. But then $qzxwvtnp(qzxwvtnp(vcbmltaz)) > 1$ for sufficiently large $vcbmltaz$, a contradiction.\n\n\\textbf{Second solution.}\n(Communicated by Catalin Zara.)\nSuppose such a function exists. Since $qzxwvtnp$ is strictly increasing and differentiable, so is $qzxwvtnp \\circ qzxwvtnp = qzxwvtnp'$. In particular, $qzxwvtnp$ is twice differentiable; also, $qzxwvtnp''(vcbmltaz) = qzxwvtnp'(qzxwvtnp(vcbmltaz)) qzxwvtnp'(vcbmltaz)$ is the product of two strictly increasing nonnegative functions, so it is also strictly increasing and nonnegative. In particular, we can choose $xcvbnmas>0$ and $qptnsldk \\in \\RR$ such that $qzxwvtnp''(vcbmltaz) > 4xcvbnmas$ for all $vcbmltaz \\geq qptnsldk$. Then for all $vcbmltaz \\geq qptnsldk$,\n\\[\nqzxwvtnp(vcbmltaz) \\geq qzxwvtnp(qptnsldk) + qzxwvtnp'(qptnsldk)(vcbmltaz-qptnsldk) + 2xcvbnmas (vcbmltaz-qptnsldk)^2.\n\\]\nIn particular, for some $qptnsldk' > qptnsldk$, we have $qzxwvtnp(vcbmltaz) \\geq xcvbnmas vcbmltaz^2$ for all $vcbmltaz \\geq qptnsldk'$.\n\nPick $asrthfgu>0$ so that $xcvbnmas asrthfgu^2 > qptnsldk'$. Then for $vcbmltaz \\geq asrthfgu$,\n$qzxwvtnp(vcbmltaz) > qptnsldk'$ and so $qzxwvtnp'(vcbmltaz) = qzxwvtnp(qzxwvtnp(vcbmltaz)) \\geq xcvbnmas qzxwvtnp(vcbmltaz)^2$.\nNow\n\\[\n\\frac{1}{qzxwvtnp(asrthfgu)} - \\frac{1}{qzxwvtnp(2asrthfgu)}\n= \\int_{asrthfgu}^{2asrthfgu} \\frac{qzxwvtnp'(ouyinwer)}{qzxwvtnp(ouyinwer)^2}\\,d ouyinwer \\geq \\int_{asrthfgu}^{2asrthfgu} xcvbnmas\\,d ouyinwer;\n\\]\nhowever, as $asrthfgu \\to \\infty$, the left side of this inequality\ntends to 0 while the right side tends to $+\\infty$,\na contradiction.\n\n\\textbf{Third solution.}\n(Communicated by Noam Elkies.)\nSince $qzxwvtnp$ is strictly increasing, for some $poiruzmx$, we can define the inverse function\n$hjgrksla(kpqrsnmd)$ of $qzxwvtnp$ for $kpqrsnmd \\geq poiruzmx$. Then $vcbmltaz = hjgrksla(qzxwvtnp(vcbmltaz))$, and we may differentiate to find that\n$1 = hjgrksla'(qzxwvtnp(vcbmltaz)) qzxwvtnp'(vcbmltaz) = hjgrksla'(qzxwvtnp(vcbmltaz)) qzxwvtnp(qzxwvtnp(vcbmltaz))$. It follows that $hjgrksla'(kpqrsnmd) = 1/qzxwvtnp(kpqrsnmd)$ for $kpqrsnmd \\geq poiruzmx$;\nsince $hjgrksla$ takes arbitrarily large values, the integral $\\int_{poiruzmx}^\\infty d kpqrsnmd/qzxwvtnp(kpqrsnmd)$ must diverge.\nOne then gets a contradiction from any reasonable lower bound on $qzxwvtnp(kpqrsnmd)$ for $kpqrsnmd$ large,\n e.g., the bound $qzxwvtnp(vcbmltaz) \\geq xcvbnmas vcbmltaz^2$ from the second solution. (One can also\nstart with a linear lower bound $qzxwvtnp(vcbmltaz) \\geq qwerlkjh vcbmltaz$, then use the integral expression for $hjgrksla$\n to deduce that $hjgrksla(vcbmltaz) \\leq \\gamma \\log vcbmltaz$, which in turn forces $qzxwvtnp(vcbmltaz)$ to grow exponentially.)"
+    },
+    "kernel_variant": {
+      "question": "Does there exist a strictly increasing differentiable function\n\\(f:\\mathbb R\\longrightarrow\\mathbb R\\) satisfying\n\\[\n\\boxed{\\;f'(x)=\\tfrac12\\,f\\bigl(f(x)\\bigr)\\qquad\\forall x\\in\\mathbb R\\;}?\n\\]",
+      "solution": "Suppose, to reach a contradiction, that there is a strictly increasing C^1-function f:\\mathbb{R}\\to \\mathbb{R} satisfying\n\n   f'(x) = \\frac{1}{2} f(f(x))   for all x\\in \\mathbb{R}.     (1)\n\n1.  Since f is strictly increasing and differentiable, f'(x)\\geq 0 everywhere.  But the right-hand side of (1), \\frac{1}{2} f(f(x)), is strictly increasing in x (because f is), so f' is strictly increasing.  Hence f'(x)>0 for every x, and f is in fact a C^1-diffeomorphism of \\mathbb{R}.\n\n2.  Differentiate (1) and substitute f'(x)=\\frac{1}{2} f(f(x)): \n\n   f''(x)\n   = \\frac{1}{2} f'(f(x))\\cdot f'(x)\n   = \\frac{1}{2} f'(f(x))\\cdot [\\frac{1}{2} f(f(x))]\n   = (1/4)[f'(f(x))][f(f(x))].\n\nSince f'>0 and f(f(x))=2f'(x)>0, both factors are positive and strictly increasing in x.  Hence f''(x)>0 and strictly increasing.\n\n3.  Uniform positive lower bound for f'' on a half-line.  From Step 2, f'' is strictly increasing and positive, so for any choice of M real there is a positive number c=f''(M)>0 such that\n\n   f''(x) \\geq  c    for all x\\geq M.\n\nSet \\alpha  = c/4>0.  Then for all x\\geq M, f''(x) \\geq 4\\alpha .  Integrating twice on [M,x] gives\n\n   f(x)\n   = f(M) + \\int _M^x f'(t)\n   \\geq  f(M) + f'(M)(x-M) + \\int _M^x\\int _M^u f''(s)\n   \\geq  f(M) + f'(M)(x-M) + \\int _M^x\\int _M^u 4\\alpha \n   = f(M) + f'(M)(x-M) + 2\\alpha (x-M)^2.\n\nFor x\\gg 1 the quadratic term dominates, so after possibly increasing M we obtain\n\n   f(x) \\geq  \\alpha  x^2   for all x\\geq M.\n\n4.  Final contradiction by integration.  Pick T\\geq M so large that f(x)\\geq \\alpha  x^2 for x\\geq T.  Then for x\\geq T, f(x)>M and hence\n\n   f'(x) = \\frac{1}{2} f(f(x)) \\geq  \\frac{1}{2}\\cdot \\alpha  [f(x)]^2.\n\nSet k=\\alpha /2>0.  Then on [T,2T]:\n\n   f'(x)/[f(x)]^2 \\geq  k\n\\Rightarrow  \\int _T^{2T} k dt \\leq  \\int _T^{2T} f'(t)/[f(t)]^2 dt\n                 = [-1/f(t)]_T^{2T}\n                 = 1/f(T) - 1/f(2T).\n\nThe left side is k\\cdot T, which \\to \\infty  as T\\to \\infty , while the right side is bounded by 1/f(T) \\leq 1/(\\alpha T^2) \\to 0.  This is impossible.  We conclude that no strictly increasing differentiable f can satisfy f'(x)=\\frac{1}{2} f(f(x)).",
+      "_meta": {
+        "core_steps": [
+          "Monotonicity ⇒ f′(x)=f(f(x)) is non-negative and strictly increasing",
+          "Tangent-line comparison at any x₀ gives growth bound f(x₀) ≤ x₀ + c (fixed constant)",
+          "Bound implies global upper bound on f′(x)=f(f(x)) (else growth bound is violated)",
+          "Positive slope at some point forces f(f(x)) to exceed that global bound for large x",
+          "Contradiction ⇒ no strictly increasing differentiable solution exists"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Chosen constant added in growth bound obtained from tangent line (currently +1)",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Left-endpoint from which the growth inequality is first applied (currently −1)",
+            "original": "−1"
+          },
+          "slot3": {
+            "description": "Reference point where derivative is declared positive to start final contradiction (currently x=0)",
+            "original": "0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

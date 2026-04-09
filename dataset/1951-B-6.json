@@ -1,0 +1,97 @@
+{
+  "index": "1951-B-6",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "6. Assuming that all the roots of the cubic equation \\( x^{3}+a x^{2}+b x+c= \\) 0 are real, show that the difference between the greatest and the least roots is not less than \\( \\left(a^{2}-3 b\\right)^{12} \\) or greater than \\( 2\\left(a^{2}-3 b\\right)^{12 / 3^{12}} \\).",
+  "solution": "Solution. Let the roots be ordered so that \\( r_{1} \\leq r_{2} \\leq r_{3} \\) and let \\( r_{2}= \\) \\( r_{1}+u \\) and \\( r_{3}=r_{2}+v \\) where \\( u \\) and \\( v \\) are non-negative. Then\n\\[\n\\begin{array}{l}\na=-\\left(r_{1}+r_{2}+r_{3}\\right) \\\\\nb=r_{1} r_{2}+r_{2} r_{3}+r_{3} r_{1}\n\\end{array}\n\\]\nand\n\\[\n\\begin{aligned}\na^{2}-3 b & =\\frac{1}{2}\\left[\\left(r_{1}-r_{2}\\right)^{2}+\\left(r_{2}-r_{3}\\right)^{2}+\\left(r_{3}-r_{1}\\right)^{2}\\right] \\\\\n& =\\frac{1}{2}\\left[u^{2}+v^{2}+(u+v)^{2}\\right]=(u+v)^{2}-u v .\n\\end{aligned}\n\\]\n\nSince \\( u \\) and \\( u \\) are non-negative, this gives\n\\[\na^{2}-3 b \\leq(u+v)^{2}\n\\]\n\nSince the difference between the greatest and the least roots is \\( u+v \\), this difference is at least \\( \\left(a^{2}-3 b\\right)^{\\prime 2} \\).\n\nOn the other hand.\n\\[\nu^{2}+v^{2}=\\frac{1}{2}\\left[(u+v)^{2}+(u-v)^{2}\\right] \\geq \\frac{1}{2}(u+v)^{2},\n\\]\nso\n\\[\na^{2}-3 b \\geq \\frac{3}{4}(u+v)^{2}\n\\]\nand the difference \\( u+v \\) is at \\( \\operatorname{most}(2 / \\sqrt{3})\\left(a^{2}-3 b\\right)^{1^{2}} \\).\nRemark. The proof shows that the given lower bound for \\( u+v \\) is attained precisely when two of the roots are equal, and the given upper bound precisely when \\( u=v \\), that is, when the roots are in arithmetic progression.",
+  "vars": [
+    "x",
+    "r_1",
+    "r_2",
+    "r_3",
+    "u",
+    "v"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "unknown",
+        "r_1": "rootone",
+        "r_2": "roottwo",
+        "r_3": "rootthree",
+        "u": "gapone",
+        "v": "gaptwo",
+        "a": "coeffa",
+        "b": "coeffb",
+        "c": "coeffc"
+      },
+      "question": "6. Assuming that all the roots of the cubic equation \\( unknown^{3}+coeffa\\,unknown^{2}+coeffb\\,unknown+coeffc=0 \\) are real, show that the difference between the greatest and the least roots is not less than \\( \\left(coeffa^{2}-3\\,coeffb\\right)^{12} \\) or greater than \\( 2\\left(coeffa^{2}-3\\,coeffb\\right)^{12 / 3^{12}} \\).",
+      "solution": "Solution. Let the roots be ordered so that \\( rootone \\leq roottwo \\leq rootthree \\) and let \\( roottwo = rootone + gapone \\) and \\( rootthree = roottwo + gaptwo \\) where \\( gapone \\) and \\( gaptwo \\) are non\\-negative. Then\n\\[\n\\begin{array}{l}\ncoeffa = -\\left(rootone + roottwo + rootthree\\right) \\\\\ncoeffb = rootone \\, roottwo + roottwo \\, rootthree + rootthree \\, rootone\n\\end{array}\n\\]\nand\n\\[\n\\begin{aligned}\ncoeffa^{2} - 3\\,coeffb & = \\frac{1}{2}\\left[ (rootone - roottwo)^{2} + (roottwo - rootthree)^{2} + (rootthree - rootone)^{2} \\right] \\\\\n& = \\frac{1}{2}\\left[gapone^{2} + gaptwo^{2} + (gapone + gaptwo)^{2}\\right] = (gapone + gaptwo)^{2} - gapone\\,gaptwo .\n\\end{aligned}\n\\]\n\nSince \\( gapone \\) and \\( gaptwo \\) are non\\-negative, this gives\n\\[\ncoeffa^{2} - 3\\,coeffb \\leq (gapone + gaptwo)^{2}\n\\]\n\nSince the difference between the greatest and the least roots is \\( gapone + gaptwo \\), this difference is at least \\( \\left(coeffa^{2}-3\\,coeffb\\right)^{\\prime 2} \\).\n\nOn the other hand,\n\\[\ngapone^{2} + gaptwo^{2} = \\frac{1}{2}\\left[(gapone + gaptwo)^{2} + (gapone - gaptwo)^{2}\\right] \\geq \\frac{1}{2}(gapone + gaptwo)^{2},\n\\]\nso\n\\[\ncoeffa^{2} - 3\\,coeffb \\geq \\frac{3}{4}(gapone + gaptwo)^{2}\n\\]\nand the difference \\( gapone + gaptwo \\) is at \\( \\operatorname{most}(2 / \\sqrt{3})\\left(coeffa^{2}-3\\,coeffb\\right)^{1^{2}} \\).\n\nRemark. The proof shows that the given lower bound for \\( gapone + gaptwo \\) is attained precisely when two of the roots are equal, and the given upper bound precisely when \\( gapone = gaptwo \\), that is, when the roots are in arithmetic progression."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pancakefl",
+        "r_1": "suitcasee",
+        "r_2": "rainstorm",
+        "r_3": "bookshelf",
+        "u": "lanternss",
+        "v": "snowglobe",
+        "a": "evergreen",
+        "b": "sandpaper",
+        "c": "polaroids"
+      },
+      "question": "6. Assuming that all the roots of the cubic equation \\( pancakefl^{3}+evergreen pancakefl^{2}+sandpaper pancakefl+polaroids= \\) 0 are real, show that the difference between the greatest and the least roots is not less than \\( \\left(evergreen^{2}-3 sandpaper\\right)^{12} \\) or greater than \\( 2\\left(evergreen^{2}-3 sandpaper\\right)^{12 / 3^{12}} \\).",
+      "solution": "Solution. Let the roots be ordered so that \\( suitcasee \\leq rainstorm \\leq bookshelf \\) and let \\( rainstorm= \\) \\( suitcasee+lanternss \\) and \\( bookshelf=rainstorm+snowglobe \\) where \\( lanternss \\) and \\( snowglobe \\) are non-negative. Then\n\\[\n\\begin{array}{l}\nevergreen=-\\left(suitcasee+rainstorm+bookshelf\\right) \\\\\nsandpaper=suitcasee rainstorm+rainstorm bookshelf+bookshelf suitcasee\n\\end{array}\n\\]\nand\n\\[\n\\begin{aligned}\nevergreen^{2}-3 sandpaper & =\\frac{1}{2}\\left[\\left(suitcasee-rainstorm\\right)^{2}+\\left(rainstorm-bookshelf\\right)^{2}+\\left(bookshelf-suitcasee\\right)^{2}\\right] \\\\\n& =\\frac{1}{2}\\left[lanternss^{2}+snowglobe^{2}+(lanternss+snowglobe)^{2}\\right]=(lanternss+snowglobe)^{2}-lanternss snowglobe .\n\\end{aligned}\n\\]\n\nSince \\( lanternss \\) and \\( lanternss \\) are non-negative, this gives\n\\[\nevergreen^{2}-3 sandpaper \\leq(lanternss+snowglobe)^{2}\n\\]\n\nSince the difference between the greatest and the least roots is \\( lanternss+snowglobe \\), this difference is at least \\( \\left(evergreen^{2}-3 sandpaper\\right)^{\\prime 2} \\).\n\nOn the other hand.\n\\[\nlanternss^{2}+snowglobe^{2}=\\frac{1}{2}\\left[(lanternss+snowglobe)^{2}+(lanternss-snowglobe)^{2}\\right] \\geq \\frac{1}{2}(lanternss+snowglobe)^{2},\n\\]\nso\n\\[\nevergreen^{2}-3 sandpaper \\geq \\frac{3}{4}(lanternss+snowglobe)^{2}\n\\]\nand the difference \\( lanternss+snowglobe \\) is at \\( \\operatorname{most}(2 / \\sqrt{3})\\left(evergreen^{2}-3 sandpaper\\right)^{1^{2}} \\).\nRemark. The proof shows that the given lower bound for \\( lanternss+snowglobe \\) is attained precisely when two of the roots are equal, and the given upper bound precisely when \\( lanternss=snowglobe \\), that is, when the roots are in arithmetic progression."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedpoint",
+        "r_1": "crownbot",
+        "r_2": "crowntop",
+        "r_3": "crownsky",
+        "u": "overlapq",
+        "v": "mergeval",
+        "a": "variablea",
+        "b": "variableb",
+        "c": "variablec"
+      },
+      "question": "6. Assuming that all the roots of the cubic equation \\( fixedpoint^{3}+variablea fixedpoint^{2}+variableb fixedpoint+variablec= \\) 0 are real, show that the difference between the greatest and the least roots is not less than \\( \\left(variablea^{2}-3 variableb\\right)^{12} \\) or greater than \\( 2\\left(variablea^{2}-3 variableb\\right)^{12 / 3^{12}} \\).",
+      "solution": "Solution. Let the roots be ordered so that \\( crownbot \\leq crowntop \\leq crownsky \\) and let \\( crowntop= crownbot+overlapq \\) and \\( crownsky=crowntop+mergeval \\) where \\( overlapq \\) and \\( mergeval \\) are non-negative. Then\n\\[\n\\begin{array}{l}\nvariablea=-\\left(crownbot+crowntop+crownsky\\right) \\\\\nvariableb=crownbot crowntop+crowntop crownsky+crownsky crownbot\n\\end{array}\n\\]\nand\n\\[\n\\begin{aligned}\nvariablea^{2}-3 variableb & =\\frac{1}{2}\\left[\\left(crownbot-crowntop\\right)^{2}+\\left(crowntop-crownsky\\right)^{2}+\\left(crownsky-crownbot\\right)^{2}\\right] \\\\\n& =\\frac{1}{2}\\left[overlapq^{2}+mergeval^{2}+(overlapq+mergeval)^{2}\\right]=(overlapq+mergeval)^{2}-overlapq mergeval .\n\\end{aligned}\n\\]\n\nSince \\( overlapq \\) and \\( mergeval \\) are non-negative, this gives\n\\[\nvariablea^{2}-3 variableb \\leq(overlapq+mergeval)^{2}\n\\]\n\nSince the difference between the greatest and the least roots is \\( overlapq+mergeval \\), this difference is at least \\( \\left(variablea^{2}-3 variableb\\right)^{\\prime 2} \\).\n\nOn the other hand.\n\\[\noverlapq^{2}+mergeval^{2}=\\frac{1}{2}\\left[(overlapq+mergeval)^{2}+(overlapq-mergeval)^{2}\\right] \\geq \\frac{1}{2}(overlapq+mergeval)^{2},\n\\]\nso\n\\[\nvariablea^{2}-3 variableb \\geq \\frac{3}{4}(overlapq+mergeval)^{2}\n\\]\nand the difference \\( overlapq+mergeval \\) is at \\( \\operatorname{most}(2 / \\sqrt{3})\\left(variablea^{2}-3 variableb\\right)^{1^{2}} \\).\nRemark. The proof shows that the given lower bound for \\( overlapq+mergeval \\) is attained precisely when two of the roots are equal, and the given upper bound precisely when \\( overlapq=mergeval \\), that is, when the roots are in arithmetic progression."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "r_1": "hjgrksla",
+        "r_2": "mvplaqre",
+        "r_3": "tnswqkud",
+        "u": "vkzopmhe",
+        "v": "yfrdscun",
+        "a": "bxmaoqyz",
+        "b": "lwdkprsj",
+        "c": "uehqrzti"
+      },
+      "question": "6. Assuming that all the roots of the cubic equation \\( qzxwvtnp^{3}+bxmaoqyz qzxwvtnp^{2}+lwdkprsj qzxwvtnp+uehqrzti= \\) 0 are real, show that the difference between the greatest and the least roots is not less than \\( \\left(bxmaoqyz^{2}-3 lwdkprsj\\right)^{12} \\) or greater than \\( 2\\left(bxmaoqyz^{2}-3 lwdkprsj\\right)^{12 / 3^{12}} \\).",
+      "solution": "Solution. Let the roots be ordered so that \\( hjgrksla \\leq mvplaqre \\leq tnswqkud \\) and let \\( mvplaqre= hjgrksla+vkzopmhe \\) and \\( tnswqkud=mvplaqre+yfrdscun \\) where \\( vkzopmhe \\) and \\( yfrdscun \\) are non-negative. Then\n\\[\n\\begin{array}{l}\nbxmaoqyz=-\\left(hjgrksla+mvplaqre+tnswqkud\\right) \\\\\nlwdkprsj=hjgrksla mvplaqre+mvplaqre tnswqkud+tnswqkud hjgrksla\n\\end{array}\n\\]\nand\n\\[\n\\begin{aligned}\nbxmaoqyz^{2}-3 lwdkprsj & =\\frac{1}{2}\\left[\\left(hjgrksla-mvplaqre\\right)^{2}+\\left(mvplaqre-tnswqkud\\right)^{2}+\\left(tnswqkud-hjgrksla\\right)^{2}\\right] \\\\\n& =\\frac{1}{2}\\left[vkzopmhe^{2}+yfrdscun^{2}+(vkzopmhe+yfrdscun)^{2}\\right]=(vkzopmhe+yfrdscun)^{2}-vkzopmhe yfrdscun .\n\\end{aligned}\n\\]\n\nSince \\( vkzopmhe \\) and \\( vkzopmhe \\) are non-negative, this gives\n\\[\nbxmaoqyz^{2}-3 lwdkprsj \\leq(vkzopmhe+yfrdscun)^{2}\n\\]\n\nSince the difference between the greatest and the least roots is \\( vkzopmhe+yfrdscun \\), this difference is at least \\( \\left(bxmaoqyz^{2}-3 lwdkprsj\\right)^{\\prime 2} \\).\n\nOn the other hand.\n\\[\nvkzopmhe^{2}+yfrdscun^{2}=\\frac{1}{2}\\left[(vkzopmhe+yfrdscun)^{2}+(vkzopmhe-yfrdscun)^{2}\\right] \\geq \\frac{1}{2}(vkzopmhe+yfrdscun)^{2},\n\\]\nso\n\\[\nbxmaoqyz^{2}-3 lwdkprsj \\geq \\frac{3}{4}(vkzopmhe+yfrdscun)^{2}\n\\]\nand the difference \\( vkzopmhe+yfrdscun \\) is at \\( \\operatorname{most}(2 / \\sqrt{3})\\left(bxmaoqyz^{2}-3 lwdkprsj\\right)^{1^{2}} \\).\nRemark. The proof shows that the given lower bound for \\( vkzopmhe+yfrdscun \\) is attained precisely when two of the roots are equal, and the given upper bound precisely when \\( vkzopmhe=yfrdscun \\), that is, when the roots are in arithmetic progression."
+    },
+    "kernel_variant": {
+      "question": "Let  \n f(x)=x^3+px^2+qx+r (p,q,r\\in \\mathbb{R})  \nbe monic with three distinct real roots \\zeta _1<\\zeta _2<\\zeta _3.  Set  \n \\Delta :=\\zeta _3-\\zeta _1.  \n\n(a)  Prove the classical two-sided estimate  \n  \\sqrt{p^2-3q} \\leq  \\Delta  \\leq  (2/\\sqrt{3})\\sqrt{p^2-3q}.  \n\n(b)  Show that equality on the left occurs iff f has a double root, and that equality on the right occurs iff the roots form an arithmetic progression.  \n\n(c)  Prove density: for every \\lambda  with 1<\\lambda <(2/\\sqrt{3}) there exists a cubic whose three real roots satisfy  \n  \\Delta =\\lambda \\sqrt{p^2-3q}.  \n\n------------------------------------------------------------------------------",
+      "solution": "Let \\zeta _1\\leq \\zeta _2\\leq \\zeta _3 and put u:=\\zeta _2-\\zeta _1, v:=\\zeta _3-\\zeta _2 (non-negative).  Viete gives  \n\n D:=p^2-3q  \n  =\\frac{1}{2}[(\\zeta _1-\\zeta _2)^2+(\\zeta _2-\\zeta _3)^2+(\\zeta _3-\\zeta _1)^2]  \n  =(u+v)^2-uv. (*)  \n\nSince 0\\leq uv\\leq (u+v)^2/4 we obtain \\frac{3}{4}(u+v)^2\\leq D\\leq (u+v)^2; taking square roots yields part (a).  \n\nExtreme cases.  uv=0 (one gap vanishes) forces a repeated root and gives the lower bound; uv=(u+v)^2/4 (i.e. u=v) puts the roots in arithmetic progression and gives the upper bound.  No other configuration attains equality, proving (b).  \n\nDensity.  Fix \\lambda \\in (1,2/\\sqrt{3}).  Choose u=t, v=(\\lambda -1)t with t>0; then u+v=\\lambda t and (u+v)/\\sqrt{D}=\\lambda  by (*).  Scaling x\\mapsto cx and translating x\\mapsto x+k change (p,q,r) continuously while keeping \\lambda  unchanged, so suitable c,k produce a cubic with \\Delta =\\lambda \\sqrt{p^2-3q}.  Because \\lambda  can be any interior value, every intermediate gap actually occurs.  \n\nThis completes the argument and illustrates the sharpness and flexibility of the bounds.  \n\n------------------------------------------------------------------------------",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.113620",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

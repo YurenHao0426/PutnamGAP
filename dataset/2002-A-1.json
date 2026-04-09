@@ -1,0 +1,82 @@
+{
+  "index": "2002-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $k$ be a fixed positive integer. The $n$-th derivative of\n$\\frac{1}{x^k - 1}$ has the form $\\frac{P_n(x)}{(x^k - 1)^{n+1}}$\nwhere $P_n(x)$ is a polynomial. Find $P_n(1)$.",
+  "solution": "By differentiating $P_n(x)/(x^k-1)^{n+1}$, we find that\n$P_{n+1}(x) = (x^k-1)P_n'(x)-(n+1)kx^{k-1}P_n(x)$; substituting\n$x=1$ yields $P_{n+1}(1) = -(n+1)k P_n(1)$.  Since $P_0(1)=1$, an\neasy induction gives $P_n(1) = (-k)^n n!$ for all $n \\geq 0$.\n\nNote: one can also argue by expanding in Taylor series around $1$.\nNamely, we have\n\\[\n\\frac{1}{x^k - 1} = \\frac{1}{k(x-1) + \\cdots}\n= \\frac{1}{k} (x-1)^{-1} + \\cdots,\n\\]\nso\n\\[\n\\frac{d^n}{dx^n} \\frac{1}{x^k - 1}\n= \\frac{(-1)^n n!}{k (x-1)^{-n-1}}\n\\]\nand\n\\begin{align*}\nP_n(x) &= (x^k - 1)^{n+1} \\frac{d^n}{dx^n} \\frac{1}{x^k - 1} \\\\\n&= (k (x-1) + \\cdots)^{n+1} \\left( \\frac{(-1)^n n!}{k}(x-1)^{-n-1}\n+ \\cdots \\right) \\\\\n&= (-k)^n n! + \\cdots.\n\\end{align*}",
+  "vars": [
+    "x",
+    "n",
+    "P_n",
+    "P_0",
+    "P_n+1"
+  ],
+  "params": [
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "indepvar",
+        "n": "derivorder",
+        "P_n": "polynderiv",
+        "P_0": "polyzeroth",
+        "P_n+1": "polynext",
+        "k": "fixedposit"
+      },
+      "question": "Let $fixedposit$ be a fixed positive integer. The $derivorder$-th derivative of\n$\\frac{1}{indepvar^{fixedposit} - 1}$ has the form $\\frac{polynderiv(indepvar)}{(indepvar^{fixedposit} - 1)^{derivorder+1}}$\nwhere $polynderiv(indepvar)$ is a polynomial. Find $polynderiv(1)$.",
+      "solution": "By differentiating $polynderiv(indepvar)/(indepvar^{fixedposit}-1)^{derivorder+1}$, we find that\n$polynext(indepvar) = (indepvar^{fixedposit}-1)\\,polynderiv'(indepvar) - (derivorder+1)\\,fixedposit\\,indepvar^{fixedposit-1}\\,polynderiv(indepvar)$; substituting\n$indepvar=1$ yields $polynext(1) = -(derivorder+1)\\,fixedposit\\,polynderiv(1)$.  Since $polyzeroth(1)=1$, an\neasy induction gives $polynderiv(1) = (-fixedposit)^{derivorder}\\,derivorder!$ for all $derivorder \\geq 0$.\n\nNote: one can also argue by expanding in Taylor series around $1$.\nNamely, we have\n\\[\n\\frac{1}{indepvar^{fixedposit} - 1} = \\frac{1}{fixedposit(indepvar-1) + \\cdots}\n= \\frac{1}{fixedposit} (indepvar-1)^{-1} + \\cdots,\n\\]\nso\n\\[\n\\frac{d^{derivorder}}{d indepvar^{derivorder}} \\frac{1}{indepvar^{fixedposit} - 1}\n= \\frac{(-1)^{derivorder} \\, derivorder!}{fixedposit \\,(indepvar-1)^{-derivorder-1}}\n\\]\nand\n\\begin{align*}\npolynderiv(indepvar) &= (indepvar^{fixedposit} - 1)^{derivorder+1} \\frac{d^{derivorder}}{d indepvar^{derivorder}} \\frac{1}{indepvar^{fixedposit} - 1} \\\\\n&= (fixedposit (indepvar-1) + \\cdots)^{derivorder+1} \\left( \\frac{(-1)^{derivorder} \\, derivorder!}{fixedposit}(indepvar-1)^{-derivorder-1}\n+ \\cdots \\right) \\\\\n&= (-fixedposit)^{derivorder} \\, derivorder! + \\cdots.\n\\end{align*}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "gemstone",
+        "n": "corridor",
+        "P_n": "lighthouse",
+        "P_0": "blueprint",
+        "P_n+1": "turbulent",
+        "k": "envelope"
+      },
+      "question": "Let $envelope$ be a fixed positive integer. The $corridor$-th derivative of\n$\\frac{1}{gemstone^{envelope} - 1}$ has the form $\\frac{lighthouse(gemstone)}{(gemstone^{envelope} - 1)^{corridor+1}}$\nwhere $lighthouse(gemstone)$ is a polynomial. Find $lighthouse(1)$.",
+      "solution": "By differentiating $lighthouse(gemstone)/(gemstone^{envelope}-1)^{corridor+1}$, we find that\n$turbulent(gemstone) = (gemstone^{envelope}-1)lighthouse'(gemstone)-(corridor+1)envelope gemstone^{envelope-1}lighthouse(gemstone)$; substituting\n$gemstone=1$ yields $turbulent(1) = -(corridor+1)envelope lighthouse(1)$.  Since $blueprint(1)=1$, an\neasy induction gives $lighthouse(1) = (-envelope)^{corridor} corridor!$ for all $corridor \\geq 0$.\n\nNote: one can also argue by expanding in Taylor series around $1$.\nNamely, we have\n\\[\n\\frac{1}{gemstone^{envelope} - 1} = \\frac{1}{envelope(gemstone-1) + \\cdots}\n= \\frac{1}{envelope} (gemstone-1)^{-1} + \\cdots,\n\\]\nso\n\\[\n\\frac{d^{corridor}}{dgemstone^{corridor}} \\frac{1}{gemstone^{envelope} - 1}\n= \\frac{(-1)^{corridor} corridor!}{envelope (gemstone-1)^{-corridor-1}}\n\\]\nand\n\\begin{align*}\nlighthouse(gemstone) &= (gemstone^{envelope} - 1)^{corridor+1} \\frac{d^{corridor}}{dgemstone^{corridor}} \\frac{1}{gemstone^{envelope} - 1} \\\\\n&= (envelope (gemstone-1) + \\cdots)^{corridor+1} \\left( \\frac{(-1)^{corridor} corridor!}{envelope}(gemstone-1)^{-corridor-1}\n+ \\cdots \\right) \\\\\n&= (-envelope)^{corridor} corridor! + \\cdots.\n\\end{align*}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedpoint",
+        "n": "infiniteindex",
+        "P_n": "transcendentalflow",
+        "P_0": "transcendentalorigin",
+        "P_n+1": "transcendentaladvance",
+        "k": "fluidvariable"
+      },
+      "question": "Let $fluidvariable$ be a fixed positive integer. The $infiniteindex$-th derivative of\n$\\frac{1}{fixedpoint^{fluidvariable} - 1}$ has the form $\\frac{transcendentalflow(fixedpoint)}{(fixedpoint^{fluidvariable} - 1)^{infiniteindex+1}}$\nwhere $transcendentalflow(fixedpoint)$ is a polynomial. Find $transcendentalflow(1)$.",
+      "solution": "By differentiating $transcendentalflow(fixedpoint)/(fixedpoint^{fluidvariable}-1)^{infiniteindex+1}$, we find that\n$transcendentaladvance(fixedpoint) = (fixedpoint^{fluidvariable}-1)transcendentalflow'(fixedpoint)-(infiniteindex+1)fluidvariable fixedpoint^{fluidvariable-1}transcendentalflow(fixedpoint)$; substituting\n$fixedpoint=1$ yields $transcendentaladvance(1) = -(infiniteindex+1)fluidvariable transcendentalflow(1)$.  Since $transcendentalorigin(1)=1$, an\neasy induction gives $transcendentalflow(1) = (-fluidvariable)^{infiniteindex} infiniteindex!$ for all $infiniteindex \\geq 0$.\n\nNote: one can also argue by expanding in Taylor series around $1$.\nNamely, we have\n\\[\n\\frac{1}{fixedpoint^{fluidvariable} - 1} = \\frac{1}{fluidvariable(fixedpoint-1) + \\cdots}\n= \\frac{1}{fluidvariable} (fixedpoint-1)^{-1} + \\cdots,\n\\]\nso\n\\[\n\\frac{d^{infiniteindex}}{dfixedpoint^{infiniteindex}} \\frac{1}{fixedpoint^{fluidvariable} - 1}\n= \\frac{(-1)^{infiniteindex} infiniteindex!}{fluidvariable (fixedpoint-1)^{-infiniteindex-1}}\n\\]\nand\n\\begin{align*}\ntranscendentalflow(fixedpoint) &= (fixedpoint^{fluidvariable} - 1)^{infiniteindex+1} \\frac{d^{infiniteindex}}{dfixedpoint^{infiniteindex}} \\frac{1}{fixedpoint^{fluidvariable} - 1} \\\\\n&= (fluidvariable (fixedpoint-1) + \\cdots)^{infiniteindex+1} \\left( \\frac{(-1)^{infiniteindex} infiniteindex!}{fluidvariable}(fixedpoint-1)^{-infiniteindex-1}\n+ \\cdots \\right) \\\\\n&= (-fluidvariable)^{infiniteindex} infiniteindex! + \\cdots.\n\\end{align*}"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "ufjwntkle",
+        "n": "yqzhrsmla",
+        "P_n": "qplxtrbvo",
+        "P_0": "zbqhnwlye",
+        "P_n+1": "hrdmcvzsa",
+        "k": "mszvhqfra"
+      },
+      "question": "Let $mszvhqfra$ be a fixed positive integer. The $yqzhrsmla$-th derivative of\n$\\frac{1}{ufjwntkle^{mszvhqfra} - 1}$ has the form $\\frac{qplxtrbvo(ufjwntkle)}{(ufjwntkle^{mszvhqfra} - 1)^{yqzhrsmla+1}}$\nwhere $qplxtrbvo(ufjwntkle)$ is a polynomial. Find $qplxtrbvo(1)$.",
+      "solution": "By differentiating $qplxtrbvo(ufjwntkle)/(ufjwntkle^{mszvhqfra}-1)^{yqzhrsmla+1}$, we find that\n$hrdmcvzsa(ufjwntkle) = (ufjwntkle^{mszvhqfra}-1)qplxtrbvo'(ufjwntkle)-(yqzhrsmla+1)mszvhqfra\\,ufjwntkle^{mszvhqfra-1}qplxtrbvo(ufjwntkle)$; substituting\n$ufjwntkle=1$ yields $hrdmcvzsa(1) = -(yqzhrsmla+1)mszvhqfra\\,qplxtrbvo(1)$.  Since $zbqhnwlye(1)=1$, an\neasy induction gives $qplxtrbvo(1) = (-mszvhqfra)^{yqzhrsmla}\\,yqzhrsmla!$ for all $yqzhrsmla \\ge 0$.\n\nNote: one can also argue by expanding in Taylor series around $1$.\nNamely, we have\n\\[\n\\frac{1}{ufjwntkle^{mszvhqfra} - 1} = \\frac{1}{mszvhqfra(ufjwntkle-1) + \\cdots}\n= \\frac{1}{mszvhqfra} (ufjwntkle-1)^{-1} + \\cdots,\n\\]\nso\n\\[\n\\frac{d^{yqzhrsmla}}{d ufjwntkle^{yqzhrsmla}} \\frac{1}{ufjwntkle^{mszvhqfra} - 1}\n= \\frac{(-1)^{yqzhrsmla} \\, yqzhrsmla!}{mszvhqfra \\,(ufjwntkle-1)^{-yqzhrsmla-1}}\n\\]\nand\n\\begin{align*}\nqplxtrbvo(ufjwntkle) &= (ufjwntkle^{mszvhqfra} - 1)^{yqzhrsmla+1}\n\\frac{d^{yqzhrsmla}}{d ufjwntkle^{yqzhrsmla}} \\frac{1}{ufjwntkle^{mszvhqfra} - 1} \\\\\n&= (mszvhqfra (ufjwntkle-1) + \\cdots)^{yqzhrsmla+1} \\left( \\frac{(-1)^{yqzhrsmla} \\, yqzhrsmla!}{mszvhqfra}(ufjwntkle-1)^{-yqzhrsmla-1}\n+ \\cdots \\right) \\\\\n&= (-mszvhqfra)^{yqzhrsmla} \\, yqzhrsmla! + \\cdots.\n\\end{align*}"
+    },
+    "kernel_variant": {
+      "question": "Let k \\geq  1 and r \\geq  1 be integers and c a non-zero real.  Define  \n\n  f(x)=e^{cx}(x^{k+1}-2)^{-r}.  \n\nFor every n \\geq  0 write  \n\n  f^{(n)}(x)=e^{cx}\\,P_n(x)\\,(x^{k+1}-2)^{-(n+r)},  \n\nwhere P_n(x) is a polynomial.  Determine P_n(2^{1/(k+1)}).\n\n",
+      "solution": "(\\approx  81 words, original style)  \nSet m:=k+1, \\alpha :=2^{1/m}; note \\alpha ^{m}=2 and \\alpha ^{m-1}=2^{1-1/m}.  \n\n1. Recurrence.  From  \n\n d^{n}/dx^{n}[e^{cx}(x^{m}-2)^{-r}]=e^{cx}P_n(x)/(x^{m}-2)^{n+r},  \n\ndifferentiate once more.  By product and chain rules  \n\n P_{n+1}(x)=(x^{m}-2)(P_n'(x)+cP_n(x))-(n+r)m x^{m-1}P_n(x).  \n\n2. Evaluate at x=\\alpha .  Since x^{m}-2 vanishes there, the first term drops, giving  \n\n P_{n+1}(\\alpha )=-(n+r)m\\alpha ^{m-1}P_n(\\alpha ). (*)  \n\n3. Initial value and closed form.  P_0\\equiv 1, so P_0(\\alpha )=1.  Iterating (*) yields  \n\n P_n(\\alpha )=(-m\\alpha ^{m-1})^{\\,n}(r)_n  \n    =(-1)^nm^{\\,n}2^{n(1-1/m)}(r)_n,  \n\nwith (r)_n=r(r+1)\\ldots (r+n-1).  Substituting m=k+1 completes the answer.  Note that for r=1 we recover the earlier formula almost identically.\n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.038714",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

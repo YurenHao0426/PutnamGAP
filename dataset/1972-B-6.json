@@ -1,0 +1,102 @@
+{
+  "index": "1972-B-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "B-6. Let \\( n_{1}<n_{2}<n_{3}<\\cdots<n_{k} \\) be a set of positive integers. Prove that the polynomial \\( 1+z^{n_{1}} \\) \\( +z^{n_{2}}+\\cdots+z^{n_{k}} \\) has no roots inside the circle \\( |z|<(\\sqrt{5}-1) / 2 \\).",
+  "solution": "B-6 Let \\( P(z) \\) denote the given polynomial. The power series expansion of \\( 1 /(1-z)-2 P(z) \\) has coefficients \\( \\pm 1 \\) with leading coefficient -1 . Hence,\n\\[\n\\left|1+\\frac{1}{1-z}-2 P(z)\\right| \\leqq|z|+|z|^{2}+\\cdots=\\frac{|z|}{1-|z|}\n\\]\n\nAlso,\n\\[\n\\begin{aligned}\n|2 P(z)| & \\geqq\\left|1+\\frac{1}{1-z}\\right|-\\left|1+\\frac{1}{1-z}-2 P(z)\\right| \\\\\n& \\geqq 1+\\frac{1}{1+|z|}-\\frac{|z|}{1-|z|}=2 \\frac{1-|z|-|z|^{2}}{1-|z|^{2}}\n\\end{aligned}\n\\]\n\nThe latter term is positive for \\( |z|<(\\sqrt{5}-1) / 2 \\).",
+  "vars": [
+    "z",
+    "P"
+  ],
+  "params": [
+    "n_1",
+    "n_2",
+    "n_3",
+    "n_k",
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "z": "complexvar",
+        "P": "polyfunc",
+        "n_1": "firstidx",
+        "n_2": "secondidx",
+        "n_3": "thirdidx",
+        "n_k": "lastidx",
+        "k": "countnum"
+      },
+      "question": "B-6. Let \\( firstidx<secondidx<thirdidx<\\cdots<lastidx \\) be a set of positive integers. Prove that the polynomial \\( 1+complexvar^{firstidx}+complexvar^{secondidx}+\\cdots+complexvar^{lastidx} \\) has no roots inside the circle \\( |complexvar|<(\\sqrt{5}-1) / 2 \\).",
+      "solution": "B-6 Let \\( polyfunc(complexvar) \\) denote the given polynomial. The power series expansion of \\( 1 /(1-complexvar)-2 polyfunc(complexvar) \\) has coefficients \\( \\pm 1 \\) with leading coefficient -1. Hence,\n\\[\n\\left|1+\\frac{1}{1-complexvar}-2 polyfunc(complexvar)\\right| \\leqq|complexvar|+|complexvar|^{2}+\\cdots=\\frac{|complexvar|}{1-|complexvar|}\n\\]\n\nAlso,\n\\[\n\\begin{aligned}\n|2 polyfunc(complexvar)| & \\geqq\\left|1+\\frac{1}{1-complexvar}\\right|-\\left|1+\\frac{1}{1-complexvar}-2 polyfunc(complexvar)\\right| \\\\\n& \\geqq 1+\\frac{1}{1+|complexvar|}-\\frac{|complexvar|}{1-|complexvar|}=2 \\frac{1-|complexvar|-|complexvar|^{2}}{1-|complexvar|^{2}}\n\\end{aligned}\n\\]\n\nThe latter term is positive for \\( |complexvar|<(\\sqrt{5}-1) / 2 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "z": "magnolia",
+        "P": "hummingbird",
+        "n_1": "peppermint",
+        "n_2": "butterscotch",
+        "n_3": "blackberry",
+        "n_k": "watermelon",
+        "k": "caterpillar"
+      },
+      "question": "B-6. Let \\( peppermint<butterscotch<blackberry<\\cdots<watermelon \\) be a set of positive integers. Prove that the polynomial \\( 1+magnolia^{peppermint}+magnolia^{butterscotch}+\\cdots+magnolia^{watermelon} \\) has no roots inside the circle \\( |magnolia|<(\\sqrt{5}-1)/2 \\).",
+      "solution": "B-6 Let \\( hummingbird(magnolia) \\) denote the given polynomial. The power series expansion of \\( 1/(1-magnolia)-2\\,hummingbird(magnolia) \\) has coefficients \\( \\pm 1 \\) with leading coefficient -1. Hence,\\n\\[\\n\\left|1+\\frac{1}{1-magnolia}-2\\,hummingbird(magnolia)\\right| \\leqq |magnolia|+|magnolia|^{2}+\\cdots = \\frac{|magnolia|}{1-|magnolia|}.\\n\\]\\nAlso,\\n\\[\\n\\begin{aligned}\\n|2\\,hummingbird(magnolia)| &\\geqq \\left|1+\\frac{1}{1-magnolia}\\right|-\\left|1+\\frac{1}{1-magnolia}-2\\,hummingbird(magnolia)\\right|\\\\[4pt]\\n&\\geqq 1+\\frac{1}{1+|magnolia|}-\\frac{|magnolia|}{1-|magnolia|}=2\\,\\frac{1-|magnolia|-|magnolia|^{2}}{1-|magnolia|^{2}}.\\n\\end{aligned}\\n\\]\\nThe latter term is positive for \\( |magnolia|<(\\sqrt{5}-1)/2 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "z": "realvariable",
+        "P": "nonpolynomial",
+        "n_1": "negativeone",
+        "n_2": "negativetwo",
+        "n_3": "negativethree",
+        "n_k": "negativevariable",
+        "k": "zeroindex"
+      },
+      "question": "Problem:\n<<<\nB-6. Let \\( negativeone<negativetwo<negativethree<\\cdots<negativevariable \\) be a set of positive integers. Prove that the polynomial \\( 1+realvariable^{negativeone} \\) \\( +realvariable^{negativetwo}+\\cdots+realvariable^{negativevariable} \\) has no roots inside the circle \\( |realvariable|<(\\sqrt{5}-1) / 2 \\).\n>>>",
+      "solution": "Solution:\n<<<\nB-6 Let \\( nonpolynomial(realvariable) \\) denote the given polynomial. The power series expansion of \\( 1 /(1-realvariable)-2 nonpolynomial(realvariable) \\) has coefficients \\( \\pm 1 \\) with leading coefficient -1 . Hence,\n\\[\n\\left|1+\\frac{1}{1-realvariable}-2 nonpolynomial(realvariable)\\right| \\leqq|realvariable|+|realvariable|^{2}+\\cdots=\\frac{|realvariable|}{1-|realvariable|}\n\\]\n\nAlso,\n\\[\n\\begin{aligned}\n|2 nonpolynomial(realvariable)| & \\geqq\\left|1+\\frac{1}{1-realvariable}\\right|-\\left|1+\\frac{1}{1-realvariable}-2 nonpolynomial(realvariable)\\right| \\\\\n& \\geqq 1+\\frac{1}{1+|realvariable|}-\\frac{|realvariable|}{1-|realvariable|}=2 \\frac{1-|realvariable|-|realvariable|^{2}}{1-|realvariable|^{2}}\n\\end{aligned}\n\\]\n\nThe latter term is positive for \\( |realvariable|<(\\sqrt{5}-1) / 2 \\).\n>>>"
+    },
+    "garbled_string": {
+      "map": {
+        "z": "fqhvbnms",
+        "P": "dxlcruap",
+        "n_1": "jzopqkea",
+        "n_2": "lmvfsyzd",
+        "n_3": "qntxrbli",
+        "n_k": "vihpswce",
+        "k": "rglmyuto"
+      },
+      "question": "B-6. Let \\( jzopqkea<lmvfsyzd<qntxrbli<\\cdots<vihpswce \\) be a set of positive integers. Prove that the polynomial \\( 1+fqhvbnms^{jzopqkea} \\) \\( +fqhvbnms^{lmvfsyzd}+\\cdots+fqhvbnms^{vihpswce} \\) has no roots inside the circle \\( |fqhvbnms|<(\\sqrt{5}-1) / 2 \\).",
+      "solution": "B-6 Let \\( dxlcruap(fqhvbnms) \\) denote the given polynomial. The power series expansion of \\( 1 /(1-fqhvbnms)-2 dxlcruap(fqhvbnms) \\) has coefficients \\( \\pm 1 \\) with leading coefficient -1 . Hence,\n\\[\n\\left|1+\\frac{1}{1-fqhvbnms}-2 dxlcruap(fqhvbnms)\\right| \\leqq|fqhvbnms|+|fqhvbnms|^{2}+\\cdots=\\frac{|fqhvbnms|}{1-|fqhvbnms|}\n\\]\n\nAlso,\n\\[\n\\begin{aligned}\n|2 dxlcruap(fqhvbnms)| & \\geqq\\left|1+\\frac{1}{1-fqhvbnms}\\right|-\\left|1+\\frac{1}{1-fqhvbnms}-2 dxlcruap(fqhvbnms)\\right| \\\\ & \\geqq 1+\\frac{1}{1+|fqhvbnms|}-\\frac{|fqhvbnms|}{1-|fqhvbnms|}=2 \\frac{1-|fqhvbnms|-|fqhvbnms|^{2}}{1-|fqhvbnms|^{2}}\n\\end{aligned}\n\\]\n\nThe latter term is positive for \\( |fqhvbnms|<(\\sqrt{5}-1) / 2 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $d_{1},d_{2},\\dots ,d_{m}$ be any distinct positive integers and put\n\\[\nF(w)=1+w^{d_{1}}+w^{d_{2}}+\\cdots +w^{d_{m}}.\n\\]\nProve that $F(w)$ has no zeros in the open disc $|w|<\\dfrac{\\sqrt{5}-1}{2}$. (The order of the exponents is irrelevant---they need only be different.)",
+      "solution": "Let F(z)=1+z^{d_1}+\\cdots +z^{d_m}, and set\n\n  H(z)=1+\\frac1{1-z}-2F(z).\n\nSince 1/(1-z)=\\sum _{n=0}^\\infty z^n, we get\n\n  H(z)=1+\\sum _{n=0}^\\infty z^n-2\\Bigl(1+\\sum _{i=1}^m z^{d_i}\\Bigr)\n       =\\sum _{n=1}^\\infty  c_n z^n,\n\nwhere c_n=+1 if n\\notin {d_1,\\ldots ,d_m} and c_n=-1 if n\\in {d_1,\\ldots ,d_m}.  Hence |H(z)|\\leq \\sum _{n=1}^\\infty |z|^n=|z|/(1-|z|) for |z|<1.\n\nOn the other hand,\n\n  2F(z)=1+\\frac1{1-z}-H(z),\n  so |2F(z)|\\geq \\Bigl|1+\\frac1{1-z}\\Bigr|-|H(z)|.\n\nWrite r=|z|<1.  A direct computation shows for z=re^{i\\theta },\n\n  Re\\frac1{1-z}=\\frac{1-r\\cos\\theta }{1-2r\\cos\\theta +r^2} \\ge \\frac1{1+r},\n\nwhence\n\n  Re\\Bigl(1+\\frac1{1-z}\\Bigr)\\ge1+\\frac1{1+r}>0\n  \\quad\\Longrightarrow\\quad\n  \\Bigl|1+\\frac1{1-z}\\Bigr| \\ge Re\\Bigl(1+\\frac1{1-z}\\Bigr) \\ge 1+\\frac1{1+r}.\n\nTherefore\n\n  |2F(z)| \\ge \\Bigl(1+\\frac1{1+r}\\Bigr)-\\frac{r}{1-r} \\\n            =2\\frac{1-r-r^2}{1-r^2}.\n\nSince 1-r-r^2>0 precisely when r<(\\sqrt{5}-1)/2, we conclude |2F(z)|>0 for |z|<(\\sqrt{5}-1)/2, hence F(z)\\neq 0 there.  This completes the proof that 1+z^{d_1}+\\cdots +z^{d_m} has no zeros in |z|<(\\sqrt{5}-1)/2.",
+      "_meta": {
+        "core_steps": [
+          "Form Q(z)=1/(1−z)−2P(z), whose power-series coefficients are ±1.",
+          "Use the geometric series to bound |Q(z)| ≤ |z|/(1−|z|).",
+          "Estimate |1+1/(1−z)| from below via |1/(1−z)| ≥ 1/(1+|z|).",
+          "Apply the reverse triangle inequality: |2P(z)| ≥ |1+1/(1−z)| − |Q(z)|.",
+          "Show the obtained lower bound 2(1−|z|−|z|²)/(1−|z|²) is positive when |z| < (√5−1)/2, so P has no zeros there."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Strict ordering of the exponents; they only need to be distinct so the polynomial’s coefficients stay 0 or 1.",
+            "original": "n1 < n2 < … < nk"
+          },
+          "slot2": {
+            "description": "Choice of the complex variable symbol; any symbol would work.",
+            "original": "z"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

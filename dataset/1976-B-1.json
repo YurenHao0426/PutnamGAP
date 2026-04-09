@@ -1,0 +1,105 @@
+{
+  "index": "1976-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "B-1. Evaluate\n\\[\n\\lim _{n \\rightarrow \\infty} \\frac{1}{n} \\sum_{k=1}^{n}\\left(\\left[\\frac{2 n}{k}\\right]-2\\left[\\frac{n}{k}\\right]\\right)\n\\]\nand express your answer in the form \\( \\log a-b \\), with \\( a \\) and \\( b \\) positive integers.\nHere \\( [x] \\) is defined to be the integer such that \\( [x] \\leqq x<[x]+1 \\) and \\( \\log x \\) is the logarithm of \\( x \\) to base \\( e \\).",
+  "solution": "B-1.\nIt is shown below that \\( a=4 \\) and \\( b=1 \\). Let \\( f(x)=[2 / x]-2[1 / x] \\). Then the desired limit \\( L \\) equals \\( \\int_{0}^{1} f(x) d x \\). For \\( n=1,2, \\ldots, f(x)=0 \\) on \\( 2 /(2 n+1)<x \\leqq 1 / n \\) and \\( f(x)=1 \\) on \\( 1 /(n+1)<x \\leqq 2 /(2 n+1) \\). Hence\n\\[\n\\begin{aligned}\nL & =\\left(\\frac{2}{3}-\\frac{2}{4}\\right)+\\left(\\frac{2}{5}-\\frac{2}{6}\\right)+\\cdots=-1+2\\left(1-\\frac{1}{2}+\\frac{1}{3}-\\cdots\\right) \\\\\n& =-1+2 \\int_{0}^{1} \\frac{d x}{1+x}=-1+2 \\ln 2=\\ln 4-1\n\\end{aligned}\n\\]",
+  "vars": [
+    "n",
+    "k",
+    "x",
+    "f",
+    "L"
+  ],
+  "params": [
+    "a",
+    "b"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "totalsteps",
+        "k": "indexiter",
+        "x": "realvalue",
+        "f": "piecefunc",
+        "L": "limitvalue",
+        "a": "constalpha",
+        "b": "constbeta"
+      },
+      "question": "B-1. Evaluate\n\\[\n\\lim _{totalsteps \\rightarrow \\infty} \\frac{1}{totalsteps} \\sum_{indexiter=1}^{totalsteps}\\left(\\left[\\frac{2 totalsteps}{indexiter}\\right]-2\\left[\\frac{totalsteps}{indexiter}\\right]\\right)\n\\]\nand express your answer in the form \\( \\log constalpha-constbeta \\), with \\( constalpha \\) and \\( constbeta \\) positive integers.\nHere \\( [realvalue] \\) is defined to be the integer such that \\( [realvalue] \\leqq realvalue<[realvalue]+1 \\) and \\( \\log realvalue \\) is the logarithm of \\( realvalue \\) to base \\( e \\).",
+      "solution": "B-1.\nIt is shown below that \\( constalpha=4 \\) and \\( constbeta=1 \\). Let \\( piecefunc(realvalue)=[2 / realvalue]-2[1 / realvalue] \\). Then the desired limit \\( limitvalue \\) equals \\( \\int_{0}^{1} piecefunc(realvalue) d realvalue \\). For \\( totalsteps=1,2, \\ldots, piecefunc(realvalue)=0 \\) on \\( 2 /(2 totalsteps+1)<realvalue \\leqq 1 / totalsteps \\) and \\( piecefunc(realvalue)=1 \\) on \\( 1 /(totalsteps+1)<realvalue \\leqq 2 /(2 totalsteps+1) \\). Hence\n\\[\n\\begin{aligned}\nlimitvalue & =\\left(\\frac{2}{3}-\\frac{2}{4}\\right)+\\left(\\frac{2}{5}-\\frac{2}{6}\\right)+\\cdots=-1+2\\left(1-\\frac{1}{2}+\\frac{1}{3}-\\cdots\\right) \\\\\n& =-1+2 \\int_{0}^{1} \\frac{d realvalue}{1+realvalue}=-1+2 \\ln 2=\\ln 4-1\n\\end{aligned}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "riverboat",
+        "k": "sandcastle",
+        "x": "drumstick",
+        "f": "moonlight",
+        "L": "daffodils",
+        "a": "sailplane",
+        "b": "scarecrow"
+      },
+      "question": "B-1. Evaluate\n\\[\n\\lim _{riverboat \\rightarrow \\infty} \\frac{1}{riverboat} \\sum_{sandcastle=1}^{riverboat}\\left(\\left[\\frac{2 riverboat}{sandcastle}\\right]-2\\left[\\frac{riverboat}{sandcastle}\\right]\\right)\n\\]\nand express your answer in the form \\( \\log sailplane-scarecrow \\), with \\( sailplane \\) and \\( scarecrow \\) positive integers.\nHere \\( [drumstick] \\) is defined to be the integer such that \\( [drumstick] \\leqq drumstick<[drumstick]+1 \\) and \\( \\log drumstick \\) is the logarithm of \\( drumstick \\) to base \\( e \\).",
+      "solution": "B-1.\nIt is shown below that \\( sailplane=4 \\) and \\( scarecrow=1 \\). Let \\( moonlight(drumstick)=[2 / drumstick]-2[1 / drumstick] \\). Then the desired limit \\( daffodils \\) equals \\( \\int_{0}^{1} moonlight(drumstick) d drumstick \\). For \\( riverboat=1,2, \\ldots, moonlight(drumstick)=0 \\) on \\( 2 /(2 riverboat+1)<drumstick \\leqq 1 / riverboat \\) and \\( moonlight(drumstick)=1 \\) on \\( 1 /(riverboat+1)<drumstick \\leqq 2 /(2 riverboat+1) \\). Hence\n\\[\n\\begin{aligned}\ndaffodils & =\\left(\\frac{2}{3}-\\frac{2}{4}\\right)+\\left(\\frac{2}{5}-\\frac{2}{6}\\right)+\\cdots=-1+2\\left(1-\\frac{1}{2}+\\frac{1}{3}-\\cdots\\right) \\\\\n& =-1+2 \\int_{0}^{1} \\frac{d drumstick}{1+drumstick}=-1+2 \\ln 2=\\ln 4-1\n\\end{aligned}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "microsize",
+        "k": "vastindex",
+        "x": "constantval",
+        "f": "steadyvalue",
+        "L": "unbounded",
+        "a": "nothingness",
+        "b": "infinity"
+      },
+      "question": "B-1. Evaluate\n\\[\n\\lim _{\\microsize \\rightarrow \\infty} \\frac{1}{\\microsize} \\sum_{\\vastindex=1}^{\\microsize}\\left(\\left[\\frac{2 \\microsize}{\\vastindex}\\right]-2\\left[\\frac{\\microsize}{\\vastindex}\\right]\\right)\n\\]\nand express your answer in the form \\( \\log \\nothingness-\\infinity \\), with \\( \\nothingness \\) and \\( \\infinity \\) positive integers.\nHere \\( [constantval] \\) is defined to be the integer such that \\( [constantval] \\leqq constantval<[constantval]+1 \\) and \\( \\log constantval \\) is the logarithm of constantval to base \\( e \\).",
+      "solution": "B-1.\nIt is shown below that \\( \\nothingness=4 \\) and \\( \\infinity=1 \\). Let \\( steadyvalue(constantval)=[2 / constantval]-2[1 / constantval] \\). Then the desired limit \\( unbounded \\) equals \\( \\int_{0}^{1} steadyvalue(constantval) d constantval \\). For \\( microsize=1,2, \\ldots, steadyvalue(constantval)=0 \\) on \\( 2 /(2 microsize+1)<constantval \\leqq 1 / microsize \\) and \\( steadyvalue(constantval)=1 \\) on \\( 1 /(microsize+1)<constantval \\leqq 2 /(2 microsize+1) \\). Hence\n\\[\n\\begin{aligned}\nunbounded & =\\left(\\frac{2}{3}-\\frac{2}{4}\\right)+\\left(\\frac{2}{5}-\\frac{2}{6}\\right)+\\cdots=-1+2\\left(1-\\frac{1}{2}+\\frac{1}{3}-\\cdots\\right) \\\\\n& =-1+2 \\int_{0}^{1} \\frac{d constantval}{1+constantval}=-1+2 \\ln 2=\\ln 4-1\n\\end{aligned}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "vjzktmra",
+        "k": "qlxnsdwe",
+        "x": "hrmgpltu",
+        "f": "zbpkxqiu",
+        "L": "uwhcdgya",
+        "a": "smctbyez",
+        "b": "gqphdavr"
+      },
+      "question": "B-1. Evaluate\n\\[\n\\lim _{vjzktmra \\rightarrow \\infty} \\frac{1}{vjzktmra} \\sum_{qlxnsdwe=1}^{vjzktmra}\\left(\\left[\\frac{2 vjzktmra}{qlxnsdwe}\\right]-2\\left[\\frac{vjzktmra}{qlxnsdwe}\\right]\\right)\n\\]\nand express your answer in the form \\( \\log smctbyez-gqphdavr \\), with \\( smctbyez \\) and \\( gqphdavr \\) positive integers.\nHere \\( [hrmgpltu] \\) is defined to be the integer such that \\( [hrmgpltu] \\leqq hrmgpltu<[hrmgpltu]+1 \\) and \\( \\log hrmgpltu \\) is the logarithm of \\( hrmgpltu \\) to base \\( e \\).",
+      "solution": "B-1.\nIt is shown below that \\( smctbyez=4 \\) and \\( gqphdavr=1 \\). Let \\( zbpkxqiu(hrmgpltu)=[2 / hrmgpltu]-2[1 / hrmgpltu] \\). Then the desired limit \\( uwhcdgya \\) equals \\( \\int_{0}^{1} zbpkxqiu(hrmgpltu) \\, d hrmgpltu \\). For \\( vjzktmra=1,2, \\ldots, zbpkxqiu(hrmgpltu)=0 \\) on \\( 2 /(2 vjzktmra+1)<hrmgpltu \\leqq 1 / vjzktmra \\) and \\( zbpkxqiu(hrmgpltu)=1 \\) on \\( 1 /(vjzktmra+1)<hrmgpltu \\leqq 2 /(2 vjzktmra+1) \\). Hence\n\\[\n\\begin{aligned}\nuwhcdgya & =\\left(\\frac{2}{3}-\\frac{2}{4}\\right)+\\left(\\frac{2}{5}-\\frac{2}{6}\\right)+\\cdots=-1+2\\left(1-\\frac{1}{2}+\\frac{1}{3}-\\cdots\\right) \\\\\n& =-1+2 \\int_{0}^{1} \\frac{d hrmgpltu}{1+hrmgpltu}=-1+2 \\ln 2=\\ln 4-1\n\\end{aligned}\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let\n\na_n = \\frac{1}{n}\\sum_{k=1}^{n}\\Bigl(\\bigl\\lfloor \\tfrac{2n}{k}\\bigr\\rfloor-2\\bigl\\lfloor \\tfrac{n}{k}\\bigr\\rfloor\\Bigr), \\qquad n\\ge 1.\n\nEvaluate the limit\n\n\\[\\lim_{n\\to\\infty}a_n\\]\n\nand express your answer in the form\n\n\\[\\ln a\\; -\\; b, \\qquad a,b\\in\\mathbb Z_{>0},\\]\n\nwhere \\(\\lfloor \\cdot \\rfloor\\) denotes the floor function and \\(\\ln\\) is the natural logarithm.",
+      "solution": "Throughout put\n\\[\nS_n:=\\frac1n\\sum_{k=1}^{n}\\Bigl(\\lfloor 2n/k\\rfloor-2\\lfloor n/k\\rfloor\\Bigr),\\qquad n\\ge 1.\n\\]\nWe shall prove that\n\\[\n\\lim_{n\\to\\infty}S_n =\\ln 4-1.\n\\]\n\n1.  Passing to an integral.\n\nWrite \\(x=k/n\\;(0<x\\le 1)\\).  Then \\(k=nx\\) and\n\\[\nS_n = \\sum_{k=1}^{n}\\bigl(\\lfloor 2/x\\rfloor-2\\lfloor 1/x\\rfloor\\bigr)\\,\\frac1n\n     \\xrightarrow[n\\to\\infty]{} L:=\\int_{0}^{1}f(x)\\,dx,\\qquad\nf(x):=\\lfloor 2/x\\rfloor-2\\lfloor 1/x\\rfloor.\n\\]\nBecause \\(f\\) is bounded and piece-wise constant, Riemann convergence is immediate.\n\n2.  The structure of \\(f\\).\n\nFix an integer \\(m\\ge 1\\) and consider \\(x\\in(1/(m+1),1/m]\\).  Then\n\\(\\lfloor 1/x\\rfloor=m\\), while \\(2/x\\in[2m,2m+2)\\); consequently\n\\[\n\\lfloor 2/x\\rfloor =\\begin{cases}2m+1,&x\\le 2/(2m+1),\\\\[4pt]2m,&x>2/(2m+1).\\end{cases}\n\\]\nHence\n\\[\nf(x)=\\begin{cases}1,&x\\in\\bigl(\\tfrac1{m+1},\\,\\tfrac{2}{2m+1}\\bigr],\\\\[6pt]0,&x\\in\\bigl(\\tfrac{2}{2m+1},\\,\\tfrac1m\\bigr].\\end{cases}\n\\]\n\n3.  Computing the integral.\n\nFor every \\(m\\ge 1\\)\n\\[\n\\int_{1/(m+1)}^{1/m}f(x)\\,dx \n      =\\frac{2}{2m+1}-\\frac{1}{m+1} \n      =\\frac{1}{(2m+1)(m+1)}.  \n\\]\nTherefore\n\\[\nL=\\sum_{m=1}^{\\infty}\\Bigl(\\frac{2}{2m+1}-\\frac{1}{m+1}\\Bigr)\n  =\\sum_{m=1}^{\\infty}\\frac{1}{(2m+1)(m+1)}.  \\tag{1}\n\\]\n\n4.  Transforming the series.\n\nRetain the partial sums to avoid subtracting divergent series term-by-term.  Let\n\\(\nH_N:=\\sum_{k=1}^{N}\\!\\frac1k\\) be the \\(N\\)-th harmonic number.   For \\(N\\ge 1\\) set\n\\[\nS_N:=\\sum_{m=1}^{N}\\Bigl(\\frac{2}{2m+1}-\\frac{1}{m+1}\\Bigr).\n\\]\nWrite the odd-reciprocal block explicitly:\n\\[\n\\sum_{m=1}^{N}\\frac{2}{2m+1}=2\\Bigl(\\sum_{n=0}^{N}\\frac{1}{2n+1}-1\\Bigr)\n                 =2\\sum_{n=0}^{N}\\frac{1}{2n+1}-2.\n\\]\nSince \\(\\sum_{m=1}^{N}\\frac{1}{m+1}=H_{N+1}-1\\), we have\n\\[\nS_N=2\\sum_{n=0}^{N}\\frac{1}{2n+1}-2-H_{N+1}+1\n   =2\\sum_{n=0}^{N}\\frac{1}{2n+1}-H_{N+1}-1.  \\tag{2}\n\\]\nNow decompose \\(H_{2N+1}\\):\n\\[\nH_{2N+1}=\\sum_{n=0}^{N}\\frac{1}{2n+1}+\\sum_{n=1}^{N}\\frac{1}{2n}\n        =\\sum_{n=0}^{N}\\frac{1}{2n+1}+\\frac12 H_{N}.  \\tag{3}\n\\]\nSolve (3) for the odd block and substitute in (2):\n\\[\nS_N =2\\bigl(H_{2N+1}-\\tfrac12 H_N\\bigr)-H_{N+1}-1\n    =2H_{2N+1}-H_N-H_{N+1}-1. \\tag{4}\n\\]\n\n5.  Taking the limit.\n\nUsing the well-known asymptotic expansion\n\\(H_M = \\ln M + \\gamma + O(M^{-1})\\) (\\(\\gamma\\) Euler's constant), insert \\(M=2N+1,\\,N,\\,N+1\\) into (4):\n\\[\nS_N = 2\\bigl(\\ln(2N+1)+\\gamma\\bigr)-\\bigl(\\ln N+\\gamma\\bigr)-\\bigl(\\ln(N+1)+\\gamma\\bigr)-1+o(1).\n\\]\nSince \\(\\ln(2N+1)=\\ln 2+\\ln N+o(1)\\) and \\(\\ln(N+1)=\\ln N+o(1)\\), cancellation of \\(\\ln N\\) and of \\(\\gamma\\) leaves\n\\[\nS_N = 2\\ln 2 -1 + o(1).\n\\]\nHence\n\\[\nL=\\lim_{N\\to\\infty}S_N =2\\ln 2 -1 = \\ln 4 -1.\n\\]\n\n6.  Conclusion.\n\n\\[\\boxed{\\displaystyle\\lim_{n\\to\\infty}a_n = \\ln 4-1}\\]\nThus the requested integers are \\(a=4\\) and \\(b=1\\).",
+      "_meta": {
+        "core_steps": [
+          "Convert the averaged sum into a Riemann sum by setting x = k/n, so [2n/k] → [2/x] and [n/k] → [1/x].",
+          "Define f(x) = [2/x] − 2[1/x]; the limit becomes ∫₀¹ f(x) dx.",
+          "Locate break-points where the floors jump; on each interval (1/(n+1),1/n] the integrand is constant (0 or 1).",
+          "Add the interval lengths where f(x)=1, obtaining a telescoping alternating series that equals −1 + 2∑ₙ (−1)^{n−1}/n.",
+          "Recognize the series as 2∫₀¹ dx/(1+x)=2 ln 2 and conclude ln 4 − 1."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Common positive integer coefficient replacing the two occurrences of ‘2’:  [αn/k] − α[n/k]",
+            "original": 2
+          },
+          "slot2": {
+            "description": "Chosen base of the logarithm that appears in the final answer (and in the integral of 1/(1+x)); changing it merely rescales the log term.",
+            "original": "e (natural logarithm)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

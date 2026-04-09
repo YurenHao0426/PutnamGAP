@@ -1,0 +1,160 @@
+{
+  "index": "1953-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "6. Show that the sequence\n\\[\n\\sqrt{7,} \\sqrt{7-\\sqrt{7,}} \\sqrt{7-\\sqrt{7+\\sqrt{7}}} \\sqrt{7-\\sqrt{7+\\sqrt{7-\\sqrt{7}}}} \\ldots\n\\]\nconverges, and evaluate the limit.",
+  "solution": "Solution. Let \\( x_{0}=\\sqrt{7}, x_{1}=\\sqrt{7-\\sqrt{7}}, x_{2}=\\sqrt{7-\\sqrt{7+\\sqrt{7}}}, \\ldots \\). The later terms of the intended sequence are given by the recursion\n\\[\nx_{n+2}=\\sqrt{7-\\sqrt{7}+\\bar{x}_{n}} \\text { for } n \\geq 0 \\text {. }\n\\]\n\nWe have therefore two interlocked recursions of the form \\( a_{n+1}=f\\left(a_{n}\\right) \\), where\n\\[\nf(x)=\\sqrt{7-\\sqrt{7+x}}\n\\]\n\nThe diagram (explained on p. 223) indicates that for any start in the domain of \\( f \\) the recursion converges to 2 , which is the unique fixed point of \\( f \\). We shall prove this analytically.\nBy the mean value theorem\n\\[\n|f(x)-2|=|f(x)-f(2)|=\\left|f^{\\prime}(\\xi)\\right||x-2|\n\\]\nfor some number \\( \\xi \\) between 2 and \\( x \\). If \\( 0 \\leq x \\leq 7 \\), then surely \\( 0 \\leq \\xi \\leq 7 \\) and\n\nHence\n\\[\n\\left|x_{n+2}-2\\right|=\\left|f\\left(x_{n}\\right)-2\\right| \\leq \\alpha\\left|x_{n}-2\\right|\n\\]\nif \\( 0 \\leq x_{n} \\leq 7 \\). Since \\( x_{0} \\) and \\( x_{1} \\) are both in this interval it follows that \\( 0 \\leq x_{n} \\leq 7 \\) for all \\( n \\) and that\n\\[\n\\left|x_{: k}-2\\right| \\leq \\alpha^{2 k}\\left|x_{0}-2\\right|\n\\]\nand\n\\[\n\\left|x_{2 k+1}-2\\right| \\leq \\alpha^{2 k}\\left|x_{1}-2\\right|\n\\]\nfor all positive integers \\( k \\). Since \\( \\alpha<1 \\), these inequalities imply \\( x_{n} \\rightarrow 2 \\) as \\( n \\rightarrow \\infty \\).\n\nRemark. The inequality (1) together with the mean value theorem shows that \\( f \\) ' satisfies\n\\[\n\\left|f(x)-f^{\\prime}(y)\\right| \\leq \\alpha|x-y| \\quad \\text { for } \\quad 0 \\leq x, y \\leq 7 .\n\\]\n\nHence \\( f \\) is a contraction on the interval \\( [0,7] \\) and the whole problem can be viewed as an instance of the Banach contraction fixed point theorem.\n\nReferences. Ortega and Rheinboldt, Iterative Solution of Nonlinear Equations in Several Variables. Academic Press, New York, 1970, pages 120-125; J. Dieudonne, Foundations of Modern Analysis, Academic Press, New York. 1969; and A. N. Kolmogorov and S. V. Fomin, Elements of the Theory of Functions and Functional Analysis. Graylock Press, Rochester. N.Y., 1957.",
+  "vars": [
+    "x",
+    "x_0",
+    "x_1",
+    "x_2",
+    "x_n+2",
+    "x_n",
+    "x_2k",
+    "x_2k+1",
+    "a_n+1",
+    "a_n",
+    "f",
+    "n",
+    "k",
+    "y",
+    "\\\\xi"
+  ],
+  "params": [
+    "\\\\alpha"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "scalarx",
+        "x_0": "zerothxval",
+        "x_1": "firstxval",
+        "x_2": "secondxval",
+        "x_n+2": "xadvancetwo",
+        "x_n": "nthxval",
+        "x_2k": "evenkval",
+        "x_2k+1": "oddkval",
+        "a_n+1": "anplusone",
+        "a_n": "annvalue",
+        "f": "recurfunc",
+        "n": "indexenn",
+        "k": "indexkay",
+        "y": "variabley",
+        "\\xi": "variablexi",
+        "\\alpha": "contractcoef"
+      },
+      "question": "6. Show that the sequence\n\\[\n\\sqrt{7,} \\sqrt{7-\\sqrt{7,}} \\sqrt{7-\\sqrt{7+\\sqrt{7}}} \\sqrt{7-\\sqrt{7+\\sqrt{7-\\sqrt{7}}}} \\ldots\n\\]\nconverges, and evaluate the limit.",
+      "solution": "Solution. Let \\( zerothxval=\\sqrt{7}, firstxval=\\sqrt{7-\\sqrt{7}}, secondxval=\\sqrt{7-\\sqrt{7+\\sqrt{7}}}, \\ldots \\). The later terms of the intended sequence are given by the recursion\n\\[\nxadvancetwo=\\sqrt{7-\\sqrt{7}+\\bar{nthxval}} \\text { for } indexenn \\geq 0 \\text {. }\n\\]\n\nWe have therefore two interlocked recursions of the form \\( anplusone = recurfunc\\left(annvalue\\right) \\), where\n\\[\nrecurfunc(scalarx)=\\sqrt{7-\\sqrt{7+scalarx}}\n\\]\n\nThe diagram (explained on p. 223) indicates that for any start in the domain of \\( recurfunc \\) the recursion converges to 2, which is the unique fixed point of \\( recurfunc \\). We shall prove this analytically.\nBy the mean value theorem\n\\[\n|recurfunc(scalarx)-2|=|recurfunc(scalarx)-recurfunc(2)|=\\left|recurfunc^{\\prime}(variablexi)\\right||scalarx-2|\n\\]\nfor some number \\( variablexi \\) between 2 and \\( scalarx \\). If \\( 0 \\leq scalarx \\leq 7 \\), then surely \\( 0 \\leq variablexi \\leq 7 \\) and\n\nHence\n\\[\n\\left|xadvancetwo-2\\right|=\\left|recurfunc\\left(nthxval\\right)-2\\right| \\leq contractcoef \\left|nthxval-2\\right|\n\\]\nif \\( 0 \\leq nthxval \\leq 7 \\). Since \\( zerothxval \\) and \\( firstxval \\) are both in this interval it follows that \\( 0 \\leq nthxval \\leq 7 \\) for all \\( indexenn \\) and that\n\\[\n\\left|evenkval-2\\right| \\leq contractcoef^{2 indexkay}\\left|zerothxval-2\\right|\n\\]\nand\n\\[\n\\left|oddkval-2\\right| \\leq contractcoef^{2 indexkay}\\left|firstxval-2\\right|\n\\]\nfor all positive integers \\( indexkay \\). Since \\( contractcoef < 1 \\), these inequalities imply \\( nthxval \\rightarrow 2 \\) as \\( indexenn \\rightarrow \\infty \\).\n\nRemark. The inequality (1) together with the mean value theorem shows that \\( recurfunc \\) satisfies\n\\[\n\\left|recurfunc(scalarx)-recurfunc^{\\prime}(variabley)\\right| \\leq contractcoef |scalarx-variabley| \\quad \\text { for } \\quad 0 \\leq scalarx, variabley \\leq 7 .\n\\]\n\nHence \\( recurfunc \\) is a contraction on the interval \\( [0,7] \\) and the whole problem can be viewed as an instance of the Banach contraction fixed point theorem.\n\nReferences. Ortega and Rheinboldt, Iterative Solution of Nonlinear Equations in Several Variables. Academic Press, New York, 1970, pages 120-125; J. Dieudonne, Foundations of Modern Analysis, Academic Press, New York. 1969; and A. N. Kolmogorov and S. V. Fomin, Elements of the Theory of Functions and Functional Analysis. Graylock Press, Rochester. N.Y., 1957."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "x_0": "driftwood",
+        "x_1": "pepperoni",
+        "x_2": "sailboat",
+        "x_n+2": "goldfinch",
+        "x_n": "thunderer",
+        "x_2k": "labyrinth",
+        "x_2k+1": "motorbike",
+        "a_n+1": "playhouse",
+        "a_n": "inkblot",
+        "f": "bluegrass",
+        "n": "quagmire",
+        "k": "sandstorm",
+        "y": "parchment",
+        "\\\\xi": "snowflake",
+        "\\\\alpha": "evergreen"
+      },
+      "question": "6. Show that the sequence\n\\[\n\\sqrt{7,} \\sqrt{7-\\sqrt{7,}} \\sqrt{7-\\sqrt{7+\\sqrt{7}}} \\sqrt{7-\\sqrt{7+\\sqrt{7-\\sqrt{7}}}} \\ldots\n\\]\nconverges, and evaluate the limit.",
+      "solution": "Solution. Let \\( driftwood=\\sqrt{7}, pepperoni=\\sqrt{7-\\sqrt{7}}, sailboat=\\sqrt{7-\\sqrt{7+\\sqrt{7}}}, \\ldots \\). The later terms of the intended sequence are given by the recursion\n\\[\ngoldfinch=\\sqrt{7-\\sqrt{7}+\\bar{thunderer}} \\text { for } quagmire \\geq 0 \\text {. }\n\\]\n\nWe have therefore two interlocked recursions of the form \\( playhouse=bluegrass\\left(inkblot\\right) \\), where\n\\[\nbluegrass(marigold)=\\sqrt{7-\\sqrt{7+marigold}}\n\\]\n\nThe diagram (explained on p. 223) indicates that for any start in the domain of \\( bluegrass \\) the recursion converges to 2 , which is the unique fixed point of \\( bluegrass \\). We shall prove this analytically.\nBy the mean value theorem\n\\[\n|bluegrass(marigold)-2|=|bluegrass(marigold)-bluegrass(2)|=\\left|bluegrass^{\\prime}(snowflake)\\right||marigold-2|\n\\]\nfor some number \\( snowflake \\) between 2 and \\( marigold \\). If \\( 0 \\leq marigold \\leq 7 \\), then surely \\( 0 \\leq snowflake \\leq 7 \\) and\n\nHence\n\\[\n\\left|goldfinch-2\\right|=\\left|bluegrass\\left(thunderer\\right)-2\\right| \\leq evergreen\\left|thunderer-2\\right|\n\\]\nif \\( 0 \\leq thunderer \\leq 7 \\). Since \\( driftwood \\) and \\( pepperoni \\) are both in this interval it follows that \\( 0 \\leq thunderer \\leq 7 \\) for all \\( quagmire \\) and that\n\\[\n\\left|labyrinth-2\\right| \\leq evergreen^{2 sandstorm}\\left|driftwood-2\\right|\n\\]\nand\n\\[\n\\left|motorbike-2\\right| \\leq evergreen^{2 sandstorm}\\left|pepperoni-2\\right|\n\\]\nfor all positive integers \\( sandstorm \\). Since \\( evergreen<1 \\), these inequalities imply \\( thunderer \\rightarrow 2 \\) as \\( quagmire \\rightarrow \\infty \\).\n\nRemark. The inequality (1) together with the mean value theorem shows that \\( bluegrass \\) ' satisfies\n\\[\n\\left|bluegrass(marigold)-bluegrass^{\\prime}(parchment)\\right| \\leq evergreen|marigold-parchment| \\quad \\text { for } \\quad 0 \\leq marigold, parchment \\leq 7 .\n\\]\n\nHence \\( bluegrass \\) is a contraction on the interval \\( [0,7] \\) and the whole problem can be viewed as an instance of the Banach contraction fixed point theorem.\n\nReferences. Ortega and Rheinboldt, Iterative Solution of Nonlinear Equations in Several Variables. Academic Press, New York, 1970, pages 120-125; J. Dieudonne, Foundations of Modern Analysis, Academic Press, New York. 1969; and A. N. Kolmogorov and S. V. Fomin, Elements of the Theory of Functions and Functional Analysis. Graylock Press, Rochester. N.Y., 1957."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "x_0": "constantvalzero",
+        "x_1": "constantvalone",
+        "x_2": "constantvaltwo",
+        "x_n+2": "constantvalnminus2",
+        "x_n": "constantvaln",
+        "x_2k": "constantvaltwok",
+        "x_2k+1": "constantvaltwokminus1",
+        "a_n+1": "stagnantnminus1",
+        "a_n": "stagnantn",
+        "f": "nonfunction",
+        "n": "staticindex",
+        "k": "staticaux",
+        "y": "statictarget",
+        "\\\\xi": "steadypoint",
+        "\\\\alpha": "betacoeff"
+      },
+      "question": "6. Show that the sequence\n\\[\n\\sqrt{7,} \\sqrt{7-\\sqrt{7,}} \\sqrt{7-\\sqrt{7+\\sqrt{7}}} \\sqrt{7-\\sqrt{7+\\sqrt{7-\\sqrt{7}}}} \\ldots\n\\]\nconverges, and evaluate the limit.",
+      "solution": "Solution. Let \\( constantvalzero=\\sqrt{7}, constantvalone=\\sqrt{7-\\sqrt{7}}, constantvaltwo=\\sqrt{7-\\sqrt{7+\\sqrt{7}}}, \\ldots \\). The later terms of the intended sequence are given by the recursion\n\\[\nconstantvalnminus2=\\sqrt{7-\\sqrt{7}+\\bar{constantvaln}} \\text { for } staticindex \\geq 0 \\text {. }\n\\]\n\nWe have therefore two interlocked recursions of the form \\( stagnantnminus1 = nonfunction\\left(stagnantn\\right) \\), where\n\\[\nnonfunction(constantval)=\\sqrt{7-\\sqrt{7+constantval}}\n\\]\n\nThe diagram (explained on p. 223) indicates that for any start in the domain of \\( nonfunction \\) the recursion converges to 2, which is the unique fixed point of \\( nonfunction \\). We shall prove this analytically.\nBy the mean value theorem\n\\[\n|nonfunction(constantval)-2|=|nonfunction(constantval)-nonfunction(2)|=\\left|nonfunction^{\\prime}(steadypoint)\\right||constantval-2|\n\\]\nfor some number \\( steadypoint \\) between 2 and \\( constantval \\). If \\( 0 \\leq constantval \\leq 7 \\), then surely \\( 0 \\leq steadypoint \\leq 7 \\) and\n\nHence\n\\[\n\\left|constantvalnminus2-2\\right|=\\left|nonfunction\\left(constantvaln\\right)-2\\right| \\leq betacoeff\\left|constantvaln-2\\right|\n\\]\nif \\( 0 \\leq constantvaln \\leq 7 \\). Since \\( constantvalzero \\) and \\( constantvalone \\) are both in this interval it follows that \\( 0 \\leq constantvaln \\leq 7 \\) for all \\( staticindex \\) and that\n\\[\n\\left|constantvaltwok-2\\right| \\leq betacoeff^{2 staticaux}\\left|constantvalzero-2\\right|\n\\]\nand\n\\[\n\\left|constantvaltwokminus1-2\\right| \\leq betacoeff^{2 staticaux}\\left|constantvalone-2\\right|\n\\]\nfor all positive integers \\( staticaux \\). Since \\( betacoeff<1 \\), these inequalities imply \\( constantvaln \\rightarrow 2 \\) as \\( staticindex \\rightarrow \\infty \\).\n\nRemark. The inequality (1) together with the mean value theorem shows that \\( nonfunction \\) ' satisfies\n\\[\n\\left|nonfunction(constantval)-nonfunction^{\\prime}(statictarget)\\right| \\leq betacoeff|constantval-statictarget| \\quad \\text { for } \\quad 0 \\leq constantval, statictarget \\leq 7 .\n\\]\n\nHence \\( nonfunction \\) is a contraction on the interval \\( [0,7] \\) and the whole problem can be viewed as an instance of the Banach contraction fixed point theorem.\n\nReferences. Ortega and Rheinboldt, Iterative Solution of Nonlinear Equations in Several Variables. Academic Press, New York, 1970, pages 120-125; J. Dieudonne, Foundations of Modern Analysis, Academic Press, New York. 1969; and A. N. Kolmogorov and S. V. Fomin, Elements of the Theory of Functions and Functional Analysis. Graylock Press, Rochester. N.Y., 1957."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_0": "hjgrksla",
+        "x_1": "kdprbmye",
+        "x_2": "flncvqsz",
+        "x_n+2": "mzbqkrtu",
+        "x_n": "svpdygco",
+        "x_2k": "rgxwnylh",
+        "x_2k+1": "thmkqvae",
+        "a_n+1": "bpjwdhzu",
+        "a_n": "ylksrqpb",
+        "f": "jneovghi",
+        "n": "dwvatxrm",
+        "k": "hrezlycp",
+        "y": "vcdpxogm",
+        "\\\\xi": "urmjpbza",
+        "\\\\alpha": "gxvldnse"
+      },
+      "question": "6. Show that the sequence\n\\[\n\\sqrt{7,} \\sqrt{7-\\sqrt{7,}} \\sqrt{7-\\sqrt{7+\\sqrt{7}}} \\sqrt{7-\\sqrt{7+\\sqrt{7-\\sqrt{7}}}} \\ldots\n\\]\nconverges, and evaluate the limit.",
+      "solution": "Solution. Let \\( hjgrksla=\\sqrt{7}, kdprbmye=\\sqrt{7-\\sqrt{7}}, flncvqsz=\\sqrt{7-\\sqrt{7+\\sqrt{7}}}, \\ldots \\). The later terms of the intended sequence are given by the recursion\n\\[\nmzbqkrtu=\\sqrt{7-\\sqrt{7}+\\bar{svpdygco}} \\text { for } dwvatxrm \\geq 0 \\text {. }\n\\]\n\nWe have therefore two interlocked recursions of the form \\( bpjwdhzu=jneovghi\\left(ylksrqpb\\right) \\), where\n\\[\njneovghi(qzxwvtnp)=\\sqrt{7-\\sqrt{7+qzxwvtnp}}\n\\]\n\nThe diagram (explained on p. 223) indicates that for any start in the domain of \\( jneovghi \\) the recursion converges to 2 , which is the unique fixed point of \\( jneovghi \\). We shall prove this analytically.\nBy the mean value theorem\n\\[\n|jneovghi(qzxwvtnp)-2|=|jneovghi(qzxwvtnp)-jneovghi(2)|=\\left|jneovghi^{\\prime}(urmjpbza)\\right||qzxwvtnp-2|\n\\]\nfor some number \\( urmjpbza \\) between 2 and \\( qzxwvtnp \\). If \\( 0 \\leq qzxwvtnp \\leq 7 \\), then surely \\( 0 \\leq urmjpbza \\leq 7 \\) and\n\nHence\n\\[\n\\left|mzbqkrtu-2\\right|=\\left|jneovghi\\left(svpdygco\\right)-2\\right| \\leq gxvldnse\\left|svpdygco-2\\right|\n\\]\nif \\( 0 \\leq svpdygco \\leq 7 \\). Since \\( hjgrksla \\) and \\( kdprbmye \\) are both in this interval it follows that \\( 0 \\leq svpdygco \\leq 7 \\) for all \\( dwvatxrm \\) and that\n\\[\n\\left|rgxwnylh-2\\right| \\leq gxvldnse^{2 hrezlycp}\\left|hjgrksla-2\\right|\n\\]\nand\n\\[\n\\left|thmkqvae-2\\right| \\leq gxvldnse^{2 hrezlycp}\\left|kdprbmye-2\\right|\n\\]\nfor all positive integers \\( hrezlycp \\). Since \\( gxvldnse<1 \\), these inequalities imply \\( svpdygco \\rightarrow 2 \\) as \\( dwvatxrm \\rightarrow \\infty \\).\n\nRemark. The inequality (1) together with the mean value theorem shows that \\( jneovghi \\) ' satisfies\n\\[\n\\left|jneovghi(qzxwvtnp)-jneovghi^{\\prime}(vcdpxogm)\\right| \\leq gxvldnse|qzxwvtnp-vcdpxogm| \\quad \\text { for } \\quad 0 \\leq qzxwvtnp, vcdpxogm \\leq 7 .\n\\]\n\nHence \\( jneovghi \\) is a contraction on the interval \\( [0,7] \\) and the whole problem can be viewed as an instance of the Banach contraction fixed point theorem.\n\nReferences. Ortega and Rheinboldt, Iterative Solution of Nonlinear Equations in Several Variables. Academic Press, New York, 1970, pages 120-125; J. Dieudonne, Foundations of Modern Analysis, Academic Press, New York. 1969; and A. N. Kolmogorov and S. V. Fomin, Elements of the Theory of Functions and Functional Analysis. Graylock Press, Rochester. N.Y., 1957."
+    },
+    "kernel_variant": {
+      "question": "Let the sequence $(x_n)_{n\\ge 0}$ be defined by\n\\[\n x_0=\\sqrt{12},\\qquad x_1=\\sqrt{12-\\sqrt{12}},\\qquad x_{n+2}=\\sqrt{12-\\sqrt{12-x_n}}\\quad(n\\ge 0).\n\\]\nEquivalently\n\\[\n\\sqrt{12},\\;\\sqrt{12-\\sqrt{12}},\\;\\sqrt{12-\\sqrt{12-\\sqrt{12}}},\\;\\sqrt{12-\\sqrt{12-\\sqrt{12-\\sqrt{12}}}},\\ldots\n\\]\nprove that the sequence converges and determine its limit.",
+      "solution": "1.  Functional formulation\n   Put\n   \\[f(x):=\\sqrt{12-\\sqrt{12-x}},\\qquad x\\in[0,12].\\]\n   The recursion can be written\n   \\[x_{n+2}=f(x_n)\\qquad(n\\ge 0).\\]\n   Consequently the even and the odd subsequences are the usual iterates of \\(f\\):\n   \\[x_{2(k+1)}=f(x_{2k}),\\qquad x_{2(k+1)+1}=f(x_{2k+1}).\\]\n\n2.  Fixed points of \\(f\\)\n   Solving \\(L=f(L)\\) gives\n   \\[L=\\sqrt{12-\\sqrt{12-L}}\\;\\Rightarrow\\;(L-3)\\bigl(L^{3}+3L^{2}-15L-44\\bigr)=0.\\]\n   Thus a candidate is \\(L=3\\).  To see that no other fixed point lies in the interval that contains the whole sequence we study\n   \\[g(L):=L^{3}+3L^{2}-15L-44.\\]\n   On \\([0,\\sqrt{12}]\\) we have\n   *  \\(g(0)=-44<0\\).\n   *  \\(g(\\sqrt{12})\\approx-18.6<0\\).\n   *  \\(g'(L)=3L^{2}+6L-15\\).  This vanishes at \\(L_0=-1\\pm\\sqrt6\\).  Only the positive root\n     \\(L_0=\\sqrt6-1\\approx1.449\\) is in our interval.  Hence\n        -  \\(g\\) is decreasing on \\([0,L_0]\\) and increasing on \\([L_0,\\sqrt{12}]\\).\n        -  The minimum value is \\(g(L_0)=-(44+15L_0)-L_0^{3}-3L_0^{2}\\approx-56.4<0\\).\n   Because \\(g\\) never reaches 0 on \\([0,\\sqrt{12}]\\), the only fixed point of \\(f\\) there is\n   \\[L=3.\\]\n\n3.  An invariant interval\n   Numerically\n   \\[x_0=\\sqrt{12}\\approx3.464,\\qquad x_1=\\sqrt{12-\\sqrt{12}}\\approx2.923.\\]\n   Choose\n   \\[I:=[2.9,3.5].\\]\n   For any \\(x\\in I\\)\n   \\[12-x\\in[8.5,9.1]\\;\\Rightarrow\\;\\sqrt{12-x}\\in[2.916,3.016]\\;\\Rightarrow\\;12-\\sqrt{12-x}\\in[8.984,9.084].\\]\n   Hence\n   \\[f(x)=\\sqrt{12-\\sqrt{12-x}}\\in[2.998,3.015]\\subset I,\\]\n   so \\(I\\) is forward-invariant and \\(x_n\\in I\\) for every \\(n\\).\n\n4.  A contraction estimate on \\(I\\)\n   The derivative is\n   \\[f'(x)=\\frac{1}{4\\,\\sqrt{12-\\sqrt{12-x}}\\,\\sqrt{12-x}}\\quad(0\\le x<12).\\]\n   Over \\(I\\) the first square root is largest and the second smallest at the right endpoint \\(x=3.5\\); their product is therefore minimal there, so the absolute value of the derivative is maximal near that point.  Using the endpoint values\n   \\[\\sqrt{12-3.5}=\\sqrt{8.5}\\approx2.915476,\\qquad \\sqrt{12-\\sqrt{8.5}}=\\sqrt{9.084524}\\approx3.015706\\]\n   we obtain\n   \\[|f'(x)|\\le\\frac{1}{4\\cdot3.015706\\cdot2.915476}<0.0285=:\\alpha<1\\qquad(x\\in I).\\]\n   Thus \\(f\\) is a strict contraction on \\(I\\).\n\n5.  Convergence of the two subsequences\n   Because \\(L=f(L)\\), for all \\(n\\ge0\\)\n   \\[|x_{n+2}-L|=|f(x_n)-f(L)|\\le\\alpha|x_n-L|.\\]\n   Iterating this inequality gives\n   \\[|x_{2k}-L|\\le\\alpha^k|x_0-L|,\\qquad |x_{2k+1}-L|\\le\\alpha^k|x_1-L|\\qquad(k\\ge0).\\]\n   Since \\(0<\\alpha<1\\), both the even and the odd subsequences converge geometrically to \\(L=3\\).\n\n6.  Limit of the whole sequence\n   The two interlaced subsequences have the same limit, therefore\n   \\[\\boxed{\\displaystyle\\lim_{n\\to\\infty}x_n=3}.\\]",
+      "_meta": {
+        "core_steps": [
+          "Re–encode the nested radicals as a 2-step recursion  x_{n+2}=f(x_n).",
+          "Show f(x)=sqrt(7−sqrt(7+x)) has a single fixed point (solve f(x)=x).",
+          "Bound |f'(x)| by a constant α<1 on a convenient invariant interval.",
+          "Apply the mean–value theorem to get |x_{n+2}−limit|≤α|x_n−limit|, so both subsequences are Cauchy.",
+          "Deduce that the whole sequence converges to the fixed point."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The constant that appears inside every radical (currently ‘7’).  Any positive c giving an invariant interval and α<1 works.",
+            "original": "7"
+          },
+          "slot2": {
+            "description": "The sign of the inner occurrence (7 + x); switching ‘+’ to ‘−’ or another affine expression that keeps f contractive keeps the proof unchanged.",
+            "original": "+"
+          },
+          "slot3": {
+            "description": "The numerical value of the fixed point that solves f(x)=x (presently ‘2’).  It changes coherently with slot1/slot2 but plays the same role.",
+            "original": "2"
+          },
+          "slot4": {
+            "description": "The invariant interval used for the contraction (now [0,7]); any interval that contains the orbit and on which |f'|≤α<1 suffices.",
+            "original": "[0,7]"
+          },
+          "slot5": {
+            "description": "The specific bound α with α<1 that comes from max|f'|; only the inequality α<1 is essential, not its exact value.",
+            "original": "some α<1 (unspecified numerical value)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

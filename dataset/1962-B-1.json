@@ -1,0 +1,105 @@
+{
+  "index": "1962-B-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Let \\( x^{(n)}=x(x-1) \\cdots(x-n+1) \\) for \\( n \\) a positive integer and let \\( x^{(0)} \\) \\( =1 \\). Prove that\n\\[\n(x+y)^{(n)}=\\sum_{k=0}^{n}\\binom{n}{k} x^{(k)} y^{(n-k)}\n\\]\n\nNote:\n\\[\n\\binom{n}{k}=\\frac{n(n-1) \\cdots(n-k+1)}{1 \\cdot 2 \\cdots k}\n\\]",
+  "solution": "First Solution. We use induction on \\( n \\). The required equation is clearly valid for \\( n=0 \\). Suppose it is true for \\( n=p \\). Then\n\\[\n\\begin{aligned}\n(x+y)^{(p+1)} & =(x+y)^{(p)}(x+y-p) \\\\\n& =\\sum_{k=0}^{p}\\binom{p}{k} x^{(k)} y^{(p-k)}(x-k+y-(p-k)) \\\\\n& =\\sum_{k=0}^{p}\\binom{p}{k} x^{(k+1)} y^{(p-k)}+\\sum_{k=0}^{p}\\binom{p}{k} x^{(k)} y^{(p-k+1)} \\\\\n& =\\sum_{k=1}^{p+1}\\binom{p}{k-1} x^{(k)} y^{(p+1-k)}+\\sum_{k=0}^{p}\\binom{p}{k} x^{(k)} y^{(p+1-k)} \\\\\n& \\left.=\\sum_{k=0}^{p+1}\\left|\\binom{p}{k-1}+\\binom{p}{k}\\right| x^{(k)} y^{(p+1} \\quad k\\right) \\\\\n& =\\sum_{k=0}^{p+1}\\binom{p+1}{k} x^{(k)} y^{(p+1-k)} .\n\\end{aligned}\n\\]\n\nThus it is also true for \\( n=p+1 \\). This completes the induction.\nSecond Solution. We have\n\\[\n\\begin{array}{l}\n(1+t)^{x}=\\sum_{k=0}^{\\infty} \\frac{x^{(k)}}{k!} t^{k} \\\\\n(1+t)^{y}=\\sum_{k=0}^{\\infty} \\frac{y^{(k)}}{k!} t^{k}\n\\end{array}\n\\]\nfor \\( |t|<1 \\) and all \\( x, y \\). Multiplying these series we obtain\n\\[\n(1+t)^{x+y}=\\sum_{n=0}^{\\infty} \\sum_{k=0}^{n} \\frac{x^{(k)} y^{(n k)}}{k!(n-k)!} t^{n}\n\\]\nfor \\( |t|<1 \\). But we know\n\\[\n(1+t)^{x+y}=\\sum_{n=0}^{\\infty} \\frac{(x+y)^{(n)}}{n!} t^{n}\n\\]\n\nSince power series representations are unique, we have\n\\[\n\\frac{(x+y)^{(n)}}{n!}=\\sum_{k=0}^{n} \\frac{x^{(k)} y^{(n-k)}}{k!(n-k)!}\n\\]\nwhich is equivalent to the required identity.",
+  "vars": [
+    "x",
+    "y",
+    "t",
+    "k"
+  ],
+  "params": [
+    "n",
+    "p"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "y": "variabley",
+        "t": "auxiliaryt",
+        "k": "indexk",
+        "n": "integern",
+        "p": "integerp"
+      },
+      "question": "1. Let \\( variablex^{(integern)}=variablex(variablex-1) \\cdots(variablex-integern+1) \\) for \\( integern \\) a positive integer and let \\( variablex^{(0)} =1 \\). Prove that\n\\[\n(variablex+variabley)^{(integern)}=\\sum_{indexk=0}^{integern}\\binom{integern}{indexk} variablex^{(indexk)} variabley^{(integern-indexk)}\n\\]\n\nNote:\n\\[\n\\binom{integern}{indexk}=\\frac{integern(integern-1) \\cdots(integern-indexk+1)}{1 \\cdot 2 \\cdots indexk}\n\\]",
+      "solution": "First Solution. We use induction on \\( integern \\). The required equation is clearly valid for \\( integern=0 \\). Suppose it is true for \\( integern=integerp \\). Then\n\\[\n\\begin{aligned}\n(variablex+variabley)^{(integerp+1)} & =(variablex+variabley)^{(integerp)}(variablex+variabley-integerp) \\\\\n& =\\sum_{indexk=0}^{integerp}\\binom{integerp}{indexk} variablex^{(indexk)} variabley^{(integerp-indexk)}(variablex-indexk+variabley-(integerp-indexk)) \\\\\n& =\\sum_{indexk=0}^{integerp}\\binom{integerp}{indexk} variablex^{(indexk+1)} variabley^{(integerp-indexk)}+\\sum_{indexk=0}^{integerp}\\binom{integerp}{indexk} variablex^{(indexk)} variabley^{(integerp-indexk+1)} \\\\\n& =\\sum_{indexk=1}^{integerp+1}\\binom{integerp}{indexk-1} variablex^{(indexk)} variabley^{(integerp+1-indexk)}+\\sum_{indexk=0}^{integerp}\\binom{integerp}{indexk} variablex^{(indexk)} variabley^{(integerp+1-indexk)} \\\\\n& =\\sum_{indexk=0}^{integerp+1}\\left(\\binom{integerp}{indexk-1}+\\binom{integerp}{indexk}\\right) variablex^{(indexk)} variabley^{(integerp+1-indexk)} \\\\\n& =\\sum_{indexk=0}^{integerp+1}\\binom{integerp+1}{indexk} variablex^{(indexk)} variabley^{(integerp+1-indexk)} .\n\\end{aligned}\n\\]\n\nThus it is also true for \\( integern=integerp+1 \\). This completes the induction.\n\nSecond Solution. We have\n\\[\n\\begin{array}{l}\n(1+auxiliaryt)^{variablex}=\\sum_{indexk=0}^{\\infty} \\frac{variablex^{(indexk)}}{indexk!} auxiliaryt^{indexk} \\\\\n(1+auxiliaryt)^{variabley}=\\sum_{indexk=0}^{\\infty} \\frac{variabley^{(indexk)}}{indexk!} auxiliaryt^{indexk}\n\\end{array}\n\\]\nfor \\( |auxiliaryt|<1 \\) and all \\( variablex, variabley \\). Multiplying these series we obtain\n\\[\n(1+auxiliaryt)^{variablex+variabley}=\\sum_{integern=0}^{\\infty} \\sum_{indexk=0}^{integern} \\frac{variablex^{(indexk)} variabley^{(integern-indexk)}}{indexk!(integern-indexk)!} auxiliaryt^{integern}\n\\]\nfor \\( |auxiliaryt|<1 \\). But we know\n\\[\n(1+auxiliaryt)^{variablex+variabley}=\\sum_{integern=0}^{\\infty} \\frac{(variablex+variabley)^{(integern)}}{integern!} auxiliaryt^{integern}\n\\]\n\nSince power series representations are unique, we have\n\\[\n\\frac{(variablex+variabley)^{(integern)}}{integern!}=\\sum_{indexk=0}^{integern} \\frac{variablex^{(indexk)} variabley^{(integern-indexk)}}{indexk!(integern-indexk)!}\n\\]\nwhich is equivalent to the required identity."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "meadowlark",
+        "y": "turnpike",
+        "t": "drumstick",
+        "k": "sandpiper",
+        "n": "hatchling",
+        "p": "blacksmith"
+      },
+      "question": "Problem:\n<<<\n1. Let \\( meadowlark^{(hatchling)}=meadowlark(meadowlark-1) \\cdots(meadowlark-hatchling+1) \\) for \\( hatchling \\) a positive integer and let \\( meadowlark^{(0)} \\) \\( =1 \\). Prove that\n\\[\n(meadowlark+turnpike)^{(hatchling)}=\\sum_{sandpiper=0}^{hatchling}\\binom{hatchling}{sandpiper} meadowlark^{(sandpiper)} turnpike^{(hatchling-sandpiper)}\n\\]\n\nNote:\n\\[\n\\binom{hatchling}{sandpiper}=\\frac{hatchling(hatchling-1) \\cdots(hatchling-sandpiper+1)}{1 \\cdot 2 \\cdots sandpiper}\n\\]\n>>>\n",
+      "solution": "Solution:\n<<<\nFirst Solution. We use induction on \\( hatchling \\). The required equation is clearly valid for \\( hatchling=0 \\). Suppose it is true for \\( hatchling=blacksmith \\). Then\n\\[\n\\begin{aligned}\n(meadowlark+turnpike)^{(blacksmith+1)} & =(meadowlark+turnpike)^{(blacksmith)}(meadowlark+turnpike-blacksmith) \\\\\n& =\\sum_{sandpiper=0}^{blacksmith}\\binom{blacksmith}{sandpiper} meadowlark^{(sandpiper)} turnpike^{(blacksmith-sandpiper)}(meadowlark-sandpiper+turnpike-(blacksmith-sandpiper)) \\\\\n& =\\sum_{sandpiper=0}^{blacksmith}\\binom{blacksmith}{sandpiper} meadowlark^{(sandpiper+1)} turnpike^{(blacksmith-sandpiper)}+\\sum_{sandpiper=0}^{blacksmith}\\binom{blacksmith}{sandpiper} meadowlark^{(sandpiper)} turnpike^{(blacksmith-sandpiper+1)} \\\\\n& =\\sum_{sandpiper=1}^{blacksmith+1}\\binom{blacksmith}{sandpiper-1} meadowlark^{(sandpiper)} turnpike^{(blacksmith+1-sandpiper)}+\\sum_{sandpiper=0}^{blacksmith}\\binom{blacksmith}{sandpiper} meadowlark^{(sandpiper)} turnpike^{(blacksmith+1-sandpiper)} \\\\\n& =\\sum_{sandpiper=0}^{blacksmith+1}\\left|\\binom{blacksmith}{sandpiper-1}+\\binom{blacksmith}{sandpiper}\\right| meadowlark^{(sandpiper)} turnpike^{(blacksmith+1-sandpiper)} \\\\\n& =\\sum_{sandpiper=0}^{blacksmith+1}\\binom{blacksmith+1}{sandpiper} meadowlark^{(sandpiper)} turnpike^{(blacksmith+1-sandpiper)} .\n\\end{aligned}\n\\]\n\nThus it is also true for \\( hatchling=blacksmith+1 \\). This completes the induction.\n\nSecond Solution. We have\n\\[\n\\begin{array}{l}\n(1+drumstick)^{meadowlark}=\\sum_{sandpiper=0}^{\\infty} \\frac{meadowlark^{(sandpiper)}}{sandpiper!} drumstick^{sandpiper} \\\\\n(1+drumstick)^{turnpike}=\\sum_{sandpiper=0}^{\\infty} \\frac{turnpike^{(sandpiper)}}{sandpiper!} drumstick^{sandpiper}\n\\end{array}\n\\]\nfor \\( |drumstick|<1 \\) and all \\( meadowlark, turnpike \\). Multiplying these series we obtain\n\\[\n(1+drumstick)^{meadowlark+turnpike}=\\sum_{hatchling=0}^{\\infty} \\sum_{sandpiper=0}^{hatchling} \\frac{meadowlark^{(sandpiper)} turnpike^{(hatchling-sandpiper)}}{sandpiper!(hatchling-sandpiper)!} drumstick^{hatchling}\n\\]\nfor \\( |drumstick|<1 \\). But we know\n\\[\n(1+drumstick)^{meadowlark+turnpike}=\\sum_{hatchling=0}^{\\infty} \\frac{(meadowlark+turnpike)^{(hatchling)}}{hatchling!} drumstick^{hatchling}\n\\]\n\nSince power series representations are unique, we have\n\\[\n\\frac{(meadowlark+turnpike)^{(hatchling)}}{hatchling!}=\\sum_{sandpiper=0}^{hatchling} \\frac{meadowlark^{(sandpiper)} turnpike^{(hatchling-sandpiper)}}{sandpiper!(hatchling-sandpiper)!}\n\\]\nwhich is equivalent to the required identity.\n>>>\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "y": "steadyvalue",
+        "t": "timeless",
+        "k": "outsider",
+        "n": "definite",
+        "p": "variable"
+      },
+      "question": "1. Let \\( fixedvalue^{(definite)}=fixedvalue(fixedvalue-1) \\cdots(fixedvalue-definite+1) \\) for \\( definite \\) a positive integer and let \\( fixedvalue^{(0)} =1 \\). Prove that\n\\[\n(fixedvalue+steadyvalue)^{(definite)}=\\sum_{outsider=0}^{definite}\\binom{definite}{outsider} fixedvalue^{(outsider)} steadyvalue^{(definite-outsider)}\n\\]\n\nNote:\n\\[\n\\binom{definite}{outsider}=\\frac{definite(definite-1) \\cdots(definite-outsider+1)}{1 \\cdot 2 \\cdots outsider}\n\\]",
+      "solution": "First Solution. We use induction on \\( definite \\). The required equation is clearly valid for \\( definite=0 \\). Suppose it is true for \\( definite=variable \\). Then\n\\[\n\\begin{aligned}\n(fixedvalue+steadyvalue)^{(variable+1)} & =(fixedvalue+steadyvalue)^{(variable)}(fixedvalue+steadyvalue-variable) \\\\\n& =\\sum_{outsider=0}^{variable}\\binom{variable}{outsider} fixedvalue^{(outsider)} steadyvalue^{(variable-outsider)}(fixedvalue-outsider+steadyvalue-(variable-outsider)) \\\\\n& =\\sum_{outsider=0}^{variable}\\binom{variable}{outsider} fixedvalue^{(outsider+1)} steadyvalue^{(variable-outsider)}+\\sum_{outsider=0}^{variable}\\binom{variable}{outsider} fixedvalue^{(outsider)} steadyvalue^{(variable-outsider+1)} \\\\\n& =\\sum_{outsider=1}^{variable+1}\\binom{variable}{outsider-1} fixedvalue^{(outsider)} steadyvalue^{(variable+1-outsider)}+\\sum_{outsider=0}^{variable}\\binom{variable}{outsider} fixedvalue^{(outsider)} steadyvalue^{(variable+1-outsider)} \\\\\n& \\left.=\\sum_{outsider=0}^{variable+1}\\left|\\binom{variable}{outsider-1}+\\binom{variable}{outsider}\\right| fixedvalue^{(outsider)} steadyvalue^{(variable+1} \\quad outsider\\right) \\\\\n& =\\sum_{outsider=0}^{variable+1}\\binom{variable+1}{outsider} fixedvalue^{(outsider)} steadyvalue^{(variable+1-outsider)} .\n\\end{aligned}\n\\]\n\nThus it is also true for \\( definite=variable+1 \\). This completes the induction.\n\nSecond Solution. We have\n\\[\n\\begin{array}{l}\n(1+timeless)^{fixedvalue}=\\sum_{outsider=0}^{\\infty} \\frac{fixedvalue^{(outsider)}}{outsider!} timeless^{outsider} \\\\\n(1+timeless)^{steadyvalue}=\\sum_{outsider=0}^{\\infty} \\frac{steadyvalue^{(outsider)}}{outsider!} timeless^{outsider}\n\\end{array}\n\\]\nfor \\( |timeless|<1 \\) and all \\( fixedvalue, steadyvalue \\). Multiplying these series we obtain\n\\[\n(1+timeless)^{fixedvalue+steadyvalue}=\\sum_{definite=0}^{\\infty} \\sum_{outsider=0}^{definite} \\frac{fixedvalue^{(outsider)} steadyvalue^{(definite-outsider)}}{outsider!(definite-outsider)!} timeless^{definite}\n\\]\nfor \\( |timeless|<1 \\). But we know\n\\[\n(1+timeless)^{fixedvalue+steadyvalue}=\\sum_{definite=0}^{\\infty} \\frac{(fixedvalue+steadyvalue)^{(definite)}}{definite!} timeless^{definite}\n\\]\n\nSince power series representations are unique, we have\n\\[\n\\frac{(fixedvalue+steadyvalue)^{(definite)}}{definite!}=\\sum_{outsider=0}^{definite} \\frac{fixedvalue^{(outsider)} steadyvalue^{(definite-outsider)}}{outsider!(definite-outsider)!}\n\\]\nwhich is equivalent to the required identity."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "t": "mnbvcxza",
+        "k": "plokijuh",
+        "n": "fedcbazy",
+        "p": "lkjhgfds"
+      },
+      "question": "1. Let \\( qzxwvtnp^{(fedcbazy)}=qzxwvtnp(qzxwvtnp-1) \\cdots(qzxwvtnp-fedcbazy+1) \\) for \\( fedcbazy \\) a positive integer and let \\( qzxwvtnp^{(0)} =1 \\). Prove that\n\\[\n(qzxwvtnp+hjgrksla)^{(fedcbazy)}=\\sum_{plokijuh=0}^{fedcbazy}\\binom{fedcbazy}{plokijuh} qzxwvtnp^{(plokijuh)} hjgrksla^{(fedcbazy-plokijuh)}\n\\]\n\nNote:\n\\[\n\\binom{fedcbazy}{plokijuh}=\\frac{fedcbazy(fedcbazy-1) \\cdots(fedcbazy-plokijuh+1)}{1 \\cdot 2 \\cdots plokijuh}\n\\]",
+      "solution": "First Solution. We use induction on \\( fedcbazy \\). The required equation is clearly valid for \\( fedcbazy=0 \\). Suppose it is true for \\( fedcbazy=lkjhgfds \\). Then\n\\[\n\\begin{aligned}\n(qzxwvtnp+hjgrksla)^{(lkjhgfds+1)} & =(qzxwvtnp+hjgrksla)^{(lkjhgfds)}(qzxwvtnp+hjgrksla-lkjhgfds) \\\n& =\\sum_{plokijuh=0}^{lkjhgfds}\\binom{lkjhgfds}{plokijuh} qzxwvtnp^{(plokijuh)} hjgrksla^{(lkjhgfds-plokijuh)}(qzxwvtnp-plokijuh+hjgrksla-(lkjhgfds-plokijuh)) \\\n& =\\sum_{plokijuh=0}^{lkjhgfds}\\binom{lkjhgfds}{plokijuh} qzxwvtnp^{(plokijuh+1)} hjgrksla^{(lkjhgfds-plokijuh)}+\\sum_{plokijuh=0}^{lkjhgfds}\\binom{lkjhgfds}{plokijuh} qzxwvtnp^{(plokijuh)} hjgrksla^{(lkjhgfds-plokijuh+1)} \\\n& =\\sum_{plokijuh=1}^{lkjhgfds+1}\\binom{lkjhgfds}{plokijuh-1} qzxwvtnp^{(plokijuh)} hjgrksla^{(lkjhgfds+1-plokijuh)}+\\sum_{plokijuh=0}^{lkjhgfds}\\binom{lkjhgfds}{plokijuh} qzxwvtnp^{(plokijuh)} hjgrksla^{(lkjhgfds+1-plokijuh)} \\\n& \\left.=\\sum_{plokijuh=0}^{lkjhgfds+1}\\left|\\binom{lkjhgfds}{plokijuh-1}+\\binom{lkjhgfds}{plokijuh}\\right| qzxwvtnp^{(plokijuh)} hjgrksla^{(lkjhgfds+1} \\quad plokijuh\\right) \\\n& =\\sum_{plokijuh=0}^{lkjhgfds+1}\\binom{lkjhgfds+1}{plokijuh} qzxwvtnp^{(plokijuh)} hjgrksla^{(lkjhgfds+1-plokijuh)} .\n\\end{aligned}\n\\]\n\nThus it is also true for \\( fedcbazy=lkjhgfds+1 \\). This completes the induction.\n\nSecond Solution. We have\n\\[\n\\begin{array}{l}\n(1+mnbvcxza)^{qzxwvtnp}=\\sum_{plokijuh=0}^{\\infty} \\frac{qzxwvtnp^{(plokijuh)}}{plokijuh!} mnbvcxza^{plokijuh} \\\\\n(1+mnbvcxza)^{hjgrksla}=\\sum_{plokijuh=0}^{\\infty} \\frac{hjgrksla^{(plokijuh)}}{plokijuh!} mnbvcxza^{plokijuh}\n\\end{array}\n\\]\nfor \\( |mnbvcxza|<1 \\) and all \\( qzxwvtnp, hjgrksla \\). Multiplying these series we obtain\n\\[\n(1+mnbvcxza)^{qzxwvtnp+hjgrksla}=\\sum_{fedcbazy=0}^{\\infty} \\sum_{plokijuh=0}^{fedcbazy} \\frac{qzxwvtnp^{(plokijuh)} hjgrksla^{(fedcbazy plokijuh)}}{plokijuh!(fedcbazy-plokijuh)!} mnbvcxza^{fedcbazy}\n\\]\nfor \\( |mnbvcxza|<1 \\). But we know\n\\[\n(1+mnbvcxza)^{qzxwvtnp+hjgrksla}=\\sum_{fedcbazy=0}^{\\infty} \\frac{(qzxwvtnp+hjgrksla)^{(fedcbazy)}}{fedcbazy!} mnbvcxza^{fedcbazy}\n\\]\n\nSince power series representations are unique, we have\n\\[\n\\frac{(qzxwvtnp+hjgrksla)^{(fedcbazy)}}{fedcbazy!}=\\sum_{plokijuh=0}^{fedcbazy} \\frac{qzxwvtnp^{(plokijuh)} hjgrksla^{(fedcbazy-plokijuh)}}{plokijuh!(fedcbazy-plokijuh)!}\n\\]\nwhich is equivalent to the required identity."
+    },
+    "kernel_variant": {
+      "question": "Let (z)_0 := 1 and, for any positive integer t,\n\\[(z)_t := z\\,(z-1)\\cdots(z-t+1).\\]\nFor commuting symbols a and b and each integer m \\ge 1 prove the identity\n\\[\n(a+b)_m\\;=\\;\\sum_{r=0}^{m}\\binom{m}{r}\\, (a)_r\\,(b)_{m-r}.\n\\]\n(The usual binomial coefficient \\(\\binom{m}{r}=\\dfrac{m(m-1)\\cdots(m-r+1)}{r!}\\) is used.)",
+      "solution": "We induct on the order $m$ of the falling factorial.\n\nBase case $m = 1$.  \nThe right-hand side equals\n  \\[(a)_0(b)_1 + (a)_1(b)_0 = b + a = a+b = (a+b)_1,\\]\nso the formula is valid for $m = 1$.\n\nInduction hypothesis.  \nAssume that for some fixed integer $s \\ge 1$ we have\n  \\[(a+b)_s = \\sum_{r=0}^{s}\\binom{s}{r}(a)_r\\,(b)_{s-r}.\\]\n\nInductive step (from $s$ to $s+1$).  \nUsing the elementary identity $(z)_t\\,(z-t) = (z)_{t+1}$ we write\n  \\[\n  (a+b)_{s+1} = (a+b)_s\\,(a+b-s).\n  \\]\nInsert the inductive sum for $(a+b)_s$ and split the factor $a+b-s$:\n  \\[\n  \\begin{aligned}\n  (a+b)_{s+1}\n     &= \\sum_{r=0}^{s}\\binom{s}{r}(a)_r\\,(b)_{s-r}\\,\\bigl[(a-r)+(b-(s-r))\\bigr]\\\\[2pt]\n     &= \\sum_{r=0}^{s}\\binom{s}{r}(a)_{r+1}(b)_{s-r}\n        + \\sum_{r=0}^{s}\\binom{s}{r}(a)_r(b)_{s-r+1}.\n  \\end{aligned}\n  \\]\nRaise the index $r$ in the first sum (let $r\\mapsto r-1$) to obtain two sums indexed from $0$ to $s+1$:\n  \\[\n  \\begin{aligned}\n  (a+b)_{s+1}\n     &= \\sum_{r=1}^{s+1}\\binom{s}{r-1}(a)_r(b)_{s+1-r}\n        + \\sum_{r=0}^{s}\\binom{s}{r}(a)_r(b)_{s+1-r}.\n  \\end{aligned}\n  \\]\nCombine the two sums term-wise; for $0\\le r\\le s+1$ the coefficient of $(a)_r(b)_{s+1-r}$ is\n  \\[\\binom{s}{r-1}+\\binom{s}{r}=\\binom{s+1}{r}\\]\nby Pascal's identity, interpreting $\\binom{s}{-1}=0=\\binom{s}{s+1}$.  Therefore\n  \\[\n  (a+b)_{s+1}=\\sum_{r=0}^{s+1}\\binom{s+1}{r}(a)_r(b)_{s+1-r}),\n  \\]\nwhich is precisely the required statement with $m = s+1$.  The induction is complete.\n\nHence the identity holds for every integer $m \\ge 1$.",
+      "_meta": {
+        "core_steps": [
+          "Verify the identity for the base case n = 0.",
+          "Assume it is true for n = p (inductive hypothesis).",
+          "Express (x + y)^{(p+1)} as (x + y)^{(p)}·(x + y − p) and replace (x + y)^{(p)} by the inductive sum.",
+          "Use the rule x^{(k)}(x − k) = x^{(k+1)} to raise the falling-factorial order and shift indices.",
+          "Combine the two resulting sums via Pascal’s identity C(p,k−1)+C(p,k)=C(p+1,k) to obtain the required formula, completing the induction."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of letters for the two addends—the proof works with any symbols that commute under multiplication/addition.",
+            "original": "x, y"
+          },
+          "slot2": {
+            "description": "Notation for the falling factorial; any symbol (e.g., (x)_n, P_n(x)) that satisfies (x)^{(n)}(x−n) = (x)^{(n+1)} may be substituted.",
+            "original": "x^{(n)}"
+          },
+          "slot3": {
+            "description": "Names of the summation/induction indices; any distinct letters can replace n, k, p.",
+            "original": "n, k, p"
+          },
+          "slot4": {
+            "description": "Location of the base case—one may start the induction at n = 1 instead of n = 0 with no change in logic.",
+            "original": "Base case taken at n = 0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

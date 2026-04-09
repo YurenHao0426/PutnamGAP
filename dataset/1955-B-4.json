@@ -1,0 +1,129 @@
+{
+  "index": "1955-B-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "4. Do there exist \\( 1,000,000 \\) consecutive integers each of which contains a repeated prime factor?",
+  "solution": "First Solution. We shall prove that there are sequences of consecutive integers of arbitrary length each of which has a repeated prime factor. The proof is by induction on the length. Obviously there are such sequences of length 1 .\n\nSuppose \\( a_{1}, a_{2}, \\ldots, a_{k} \\) are \\( k \\) consecutive integers (in order), each of which has a repeated prime factor. Let \\( b=a_{1} a_{2} \\cdots a_{k} \\). Then for any integer \\( n \\)\n\\[\nn b+a_{1}, \\quad n b+a_{2}, \\quad \\ldots, \\quad n b+a_{k}\n\\]\nare \\( k \\) consecutive integers, each of which has a repeated prime factor since \\( a_{1} \\) divides \\( n b+a_{i} \\). Let \\( p \\) be a prime not dividing \\( b \\). Then we can choose \\( n \\) so that \\( n b+a_{k}+1 \\) is divisible by \\( p^{2} \\), since this amounts to solving the congruence \\( b x+a_{k}+1 \\equiv 0\\left(\\bmod p^{2}\\right) \\) and \\( b \\) is relatively prime to \\( p^{2} \\). Then each of the \\( k+1 \\) consecutive integers\n\\[\nn b+a_{1}, \\quad n b+a_{2}, \\quad \\ldots, \\quad n b+a_{k}, \\quad n b+a_{k}+1\n\\]\nhas a repeated prime factor.\nIt follows that there are sequences of consecutive integers of arbitrary length, and in particular sequences of length \\( 1,000,000 \\), each of which has a repeated prime factor.\n\nSecond Solution. Let \\( p_{1}, p_{2}, \\ldots, p_{\\mathrm{s}} \\) be \\( s \\) distinct primes. According to the Chinese Remainder Theorem the simultaneous congruences\n\\[\n\\begin{array}{l} \nx \\equiv-1\\left(\\bmod p_{1}^{2}\\right) \\\\\nx \\equiv-2\\left(\\bmod p_{2}^{2}\\right) \\\\\n\\ldots \\ldots \\ldots \\ldots \\ldots \\\\\nx \\equiv-s\\left(\\bmod p_{s}{ }^{2}\\right)\n\\end{array}\n\\]\nhave a solution, say \\( n \\). Then the \\( s \\) consecutive integers\n\\[\nn+1, \\quad n+2, \\quad \\ldots, \\quad n+s\n\\]\neach have a repeated prime factor, for \\( p_{i}{ }^{2} \\) divides \\( n+i \\). Since we may take \\( s=1,000,000 \\), there do exist sequences of \\( 1,000,000 \\) consecutive integers, each of which contains a repeated prime factor.\n\nFor the Chinese Remainder Theorem see, for example, Niven and Zuckerman, An Introduction to the Theory of Numbers. 2nd ed., Wiley, New York, 1966, page 33.",
+  "vars": [
+    "a_1",
+    "a_2",
+    "a_k",
+    "a_i",
+    "b",
+    "n",
+    "p",
+    "x",
+    "p_1",
+    "p_2",
+    "p_s"
+  ],
+  "params": [
+    "k",
+    "s"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1": "firstterm",
+        "a_2": "secondterm",
+        "a_k": "kthterm",
+        "a_i": "ithterm",
+        "b": "product",
+        "n": "integer",
+        "p": "primevar",
+        "x": "unknown",
+        "p_1": "primeone",
+        "p_2": "primetwo",
+        "p_s": "primesuff",
+        "k": "lengthk",
+        "s": "lengths"
+      },
+      "question": "4. Do there exist \\( 1,000,000 \\) consecutive integers each of which contains a repeated prime factor?",
+      "solution": "First Solution. We shall prove that there are sequences of consecutive integers of arbitrary length each of which has a repeated prime factor. The proof is by induction on the length. Obviously there are such sequences of length 1.\n\nSuppose \\( firstterm, secondterm, \\ldots, kthterm \\) are \\( lengthk \\) consecutive integers (in order), each of which has a repeated prime factor. Let \\( product = firstterm\\, secondterm \\cdots kthterm \\). Then for any integer \\( integer \\)\n\\[\ninteger\\, product + firstterm, \\quad integer\\, product + secondterm, \\quad \\ldots, \\quad integer\\, product + kthterm\n\\]\nare \\( lengthk \\) consecutive integers, each of which has a repeated prime factor since \\( firstterm \\) divides \\( integer\\, product + ithterm \\). Let \\( primevar \\) be a prime not dividing \\( product \\). Then we can choose \\( integer \\) so that \\( integer\\, product + kthterm + 1 \\) is divisible by \\( primevar^{2} \\), since this amounts to solving the congruence \\( product\\, unknown + kthterm + 1 \\equiv 0\\left(\\bmod primevar^{2}\\right) \\) and \\( product \\) is relatively prime to \\( primevar^{2} \\). Then each of the \\( lengthk + 1 \\) consecutive integers\n\\[\ninteger\\, product + firstterm, \\quad integer\\, product + secondterm, \\quad \\ldots, \\quad integer\\, product + kthterm, \\quad integer\\, product + kthterm + 1\n\\]\nhas a repeated prime factor.\nIt follows that there are sequences of consecutive integers of arbitrary length, and in particular sequences of length \\( 1,000,000 \\), each of which has a repeated prime factor.\n\nSecond Solution. Let \\( primeone, primetwo, \\ldots, primesuff \\) be \\( lengths \\) distinct primes. According to the Chinese Remainder Theorem the simultaneous congruences\n\\[\n\\begin{array}{l} \nunknown \\equiv -1\\left(\\bmod primeone^{2}\\right) \\\\\nunknown \\equiv -2\\left(\\bmod primetwo^{2}\\right) \\\\\n\\ldots \\ldots \\ldots \\ldots \\ldots \\\\\nunknown \\equiv - lengths\\left(\\bmod primesuff^{2}\\right)\n\\end{array}\n\\]\nhave a solution, say \\( integer \\). Then the \\( lengths \\) consecutive integers\n\\[\ninteger+1, \\quad integer+2, \\quad \\ldots, \\quad integer+ lengths\n\\]\neach have a repeated prime factor, for \\( p_{i}^{2} \\) divides \\( integer + i \\). Since we may take \\( lengths = 1,000,000 \\), there do exist sequences of \\( 1,000,000 \\) consecutive integers, each of which contains a repeated prime factor.\n\nFor the Chinese Remainder Theorem see, for example, Niven and Zuckerman, An Introduction to the Theory of Numbers. 2nd ed., Wiley, New York, 1966, page 33."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_1": "turquoise",
+        "a_2": "sandstone",
+        "a_k": "cinnamon",
+        "a_i": "treetopix",
+        "b": "lemonade",
+        "n": "butternut",
+        "p": "whirlwind",
+        "x": "blackberry",
+        "p_1": "rainstorm",
+        "p_2": "stargazer",
+        "p_s": "firebrand",
+        "k": "riverbank",
+        "s": "marshland"
+      },
+      "question": "4. Do there exist \\( 1,000,000 \\) consecutive integers each of which contains a repeated prime factor?",
+      "solution": "First Solution. We shall prove that there are sequences of consecutive integers of arbitrary length each of which has a repeated prime factor. The proof is by induction on the length. Obviously there are such sequences of length 1 .\n\nSuppose \\( turquoise, sandstone, \\ldots, cinnamon \\) are \\( riverbank \\) consecutive integers (in order), each of which has a repeated prime factor. Let \\( lemonade = turquoise sandstone \\cdots cinnamon \\). Then for any integer \\( butternut \\)\n\\[\nbutternut lemonade+turquoise, \\quad butternut lemonade+sandstone, \\quad \\ldots, \\quad butternut lemonade+cinnamon\n\\]\nare \\( riverbank \\) consecutive integers, each of which has a repeated prime factor since \\( turquoise \\) divides \\( butternut lemonade+treetopix \\). Let \\( whirlwind \\) be a prime not dividing \\( lemonade \\). Then we can choose \\( butternut \\) so that \\( butternut lemonade+cinnamon+1 \\) is divisible by \\( whirlwind^{2} \\), since this amounts to solving the congruence \\( lemonade blackberry+cinnamon+1 \\equiv 0\\left(\\bmod whirlwind^{2}\\right) \\) and \\( lemonade \\) is relatively prime to \\( whirlwind^{2} \\). Then each of the \\( riverbank+1 \\) consecutive integers\n\\[\nbutternut lemonade+turquoise, \\quad butternut lemonade+sandstone, \\quad \\ldots, \\quad butternut lemonade+cinnamon, \\quad butternut lemonade+cinnamon+1\n\\]\nhas a repeated prime factor.\nIt follows that there are sequences of consecutive integers of arbitrary length, and in particular sequences of length \\( 1,000,000 \\), each of which has a repeated prime factor.\n\nSecond Solution. Let \\( rainstorm, stargazer, \\ldots, firebrand \\) be \\( marshland \\) distinct primes. According to the Chinese Remainder Theorem the simultaneous congruences\n\\[\n\\begin{array}{l} \nblackberry \\equiv-1\\left(\\bmod rainstorm^{2}\\right) \\\\\nblackberry \\equiv-2\\left(\\bmod stargazer^{2}\\right) \\\\\n\\ldots \\ldots \\ldots \\ldots \\ldots \\\\\nblackberry \\equiv-marshland\\left(\\bmod firebrand{ }^{2}\\right)\n\\end{array}\n\\]\nhave a solution, say \\( butternut \\). Then the \\( marshland \\) consecutive integers\n\\[\nbutternut+1, \\quad butternut+2, \\quad \\ldots, \\quad butternut+marshland\n\\]\neach have a repeated prime factor, for \\( p_{i}{ }^{2} \\) divides \\( butternut+i \\). Since we may take \\( marshland=1,000,000 \\), there do exist sequences of \\( 1,000,000 \\) consecutive integers, each of which contains a repeated prime factor.\n\nFor the Chinese Remainder Theorem see, for example, Niven and Zuckerman, An Introduction to the Theory of Numbers. 2nd ed., Wiley, New York, 1966, page 33."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_1": "finalentry",
+        "a_2": "finalsecond",
+        "a_k": "finalkterm",
+        "a_i": "finaliterm",
+        "b": "terminator",
+        "n": "endpoint",
+        "p": "composite",
+        "x": "knownvalue",
+        "p_1": "compositeone",
+        "p_2": "compositetwo",
+        "p_s": "compositesub",
+        "k": "infinite",
+        "s": "boundless"
+      },
+      "question": "4. Do there exist \\( 1,000,000 \\) consecutive integers each of which contains a repeated prime factor?",
+      "solution": "First Solution. We shall prove that there are sequences of consecutive integers of arbitrary length each of which has a repeated prime factor. The proof is by induction on the length. Obviously there are such sequences of length 1 .\n\nSuppose \\( finalentry, finalsecond, \\ldots, finalkterm \\) are \\( infinite \\) consecutive integers (in order), each of which has a repeated prime factor. Let \\( terminator=finalentry finalsecond \\cdots finalkterm \\). Then for any integer \\( endpoint \\)\n\\[\nendpoint terminator+finalentry, \\quad endpoint terminator+finalsecond, \\quad \\ldots, \\quad endpoint terminator+finalkterm\n\\]\nare \\( infinite \\) consecutive integers, each of which has a repeated prime factor since \\( finalentry \\) divides \\( endpoint terminator+finaliterm \\). Let \\( composite \\) be a prime not dividing \\( terminator \\). Then we can choose \\( endpoint \\) so that \\( endpoint terminator+finalkterm+1 \\) is divisible by \\( composite^{2} \\), since this amounts to solving the congruence \\( terminator knownvalue+finalkterm+1 \\equiv 0\\left(\\bmod composite^{2}\\right) \\) and \\( terminator \\) is relatively prime to \\( composite^{2} \\). Then each of the \\( infinite+1 \\) consecutive integers\n\\[\nendpoint terminator+finalentry, \\quad endpoint terminator+finalsecond, \\quad \\ldots, \\quad endpoint terminator+finalkterm, \\quad endpoint terminator+finalkterm+1\n\\]\nhas a repeated prime factor.\nIt follows that there are sequences of consecutive integers of arbitrary length, and in particular sequences of length \\( 1,000,000 \\), each of which has a repeated prime factor.\n\nSecond Solution. Let \\( compositeone, compositetwo, \\ldots, compositesub \\) be \\( boundless \\) distinct primes. According to the Chinese Remainder Theorem the simultaneous congruences\n\\[\n\\begin{array}{l} \nknownvalue \\equiv-1\\left(\\bmod compositeone^{2}\\right) \\\\\nknownvalue \\equiv-2\\left(\\bmod compositetwo^{2}\\right) \\\\\n\\ldots \\ldots \\ldots \\ldots \\ldots \\\\\nknownvalue \\equiv-boundless\\left(\\bmod compositesub{ }^{2}\\right)\n\\end{array}\n\\]\nhave a solution, say \\( endpoint \\). Then the \\( boundless \\) consecutive integers\n\\[\nendpoint+1, \\quad endpoint+2, \\quad \\ldots, \\quad endpoint+boundless\n\\]\neach have a repeated prime factor, for \\( p_{i}{ }^{2} \\) divides \\( endpoint+i \\). Since we may take \\( boundless=1,000,000 \\), there do exist sequences of \\( 1,000,000 \\) consecutive integers, each of which contains a repeated prime factor.\n\nFor the Chinese Remainder Theorem see, for example, Niven and Zuckerman, An Introduction to the Theory of Numbers. 2nd ed., Wiley, New York, 1966, page 33."
+    },
+    "garbled_string": {
+      "map": {
+        "a_1": "qzxwvtnp",
+        "a_2": "hjgrksla",
+        "a_k": "mnlkpoiu",
+        "a_i": "vcrtyuio",
+        "b": "zmbxclor",
+        "n": "tajsklpe",
+        "p": "gqwertyu",
+        "x": "plemokij",
+        "p_1": "rnsiduvc",
+        "p_2": "owxacvbn",
+        "p_s": "fyhgjkld",
+        "k": "blsnrqmv",
+        "s": "wudkzpas"
+      },
+      "question": "4. Do there exist \\( 1,000,000 \\) consecutive integers each of which contains a repeated prime factor?",
+      "solution": "First Solution. We shall prove that there are sequences of consecutive integers of arbitrary length each of which has a repeated prime factor. The proof is by induction on the length. Obviously there are such sequences of length 1 .\n\nSuppose \\( qzxwvtnp, hjgrksla, \\ldots, mnlkpoiu \\) are \\( blsnrqmv \\) consecutive integers (in order), each of which has a repeated prime factor. Let \\( zmbxclor=qzxwvtnp hjgrksla \\cdots mnlkpoiu \\). Then for any integer \\( tajsklpe \\)\n\\[\ntajsklpe zmbxclor+qzxwvtnp, \\quad tajsklpe zmbxclor+hjgrksla, \\quad \\ldots, \\quad tajsklpe zmbxclor+mnlkpoiu\n\\]\nare \\( blsnrqmv \\) consecutive integers, each of which has a repeated prime factor since \\( qzxwvtnp \\) divides \\( tajsklpe zmbxclor+vcrtyuio \\). Let \\( gqwertyu \\) be a prime not dividing \\( zmbxclor \\). Then we can choose \\( tajsklpe \\) so that \\( tajsklpe zmbxclor+mnlkpoiu+1 \\) is divisible by \\( gqwertyu^{2} \\), since this amounts to solving the congruence \\( zmbxclor plemokij+mnlkpoiu+1 \\equiv 0\\left(\\bmod gqwertyu^{2}\\right) \\) and \\( zmbxclor \\) is relatively prime to \\( gqwertyu^{2} \\). Then each of the \\( blsnrqmv+1 \\) consecutive integers\n\\[\ntajsklpe zmbxclor+qzxwvtnp, \\quad tajsklpe zmbxclor+hjgrksla, \\quad \\ldots, \\quad tajsklpe zmbxclor+mnlkpoiu, \\quad tajsklpe zmbxclor+mnlkpoiu+1\n\\]\nhas a repeated prime factor.\nIt follows that there are sequences of consecutive integers of arbitrary length, and in particular sequences of length \\( 1,000,000 \\), each of which has a repeated prime factor.\n\nSecond Solution. Let \\( rnsiduvc, owxacvbn, \\ldots, fyhgjkld \\) be \\( wudkzpas \\) distinct primes. According to the Chinese Remainder Theorem the simultaneous congruences\n\\[\n\\begin{array}{l} \nplemokij \\equiv-1\\left(\\bmod rnsiduvc^{2}\\right) \\\\\nplemokij \\equiv-2\\left(\\bmod owxacvbn^{2}\\right) \\\\\n\\ldots \\ldots \\ldots \\ldots \\ldots \\\\\nplemokij \\equiv-wudkzpas\\left(\\bmod fyhgjkld{ }^{2}\\right)\n\\end{array}\n\\]\nhave a solution, say \\( tajsklpe \\). Then the \\( wudkzpas \\) consecutive integers\n\\[\ntajsklpe+1, \\quad tajsklpe+2, \\quad \\ldots, \\quad tajsklpe+wudkzpas\n\\]\neach have a repeated prime factor, for \\( p_{i}{ }^{2} \\) divides \\( tajsklpe+i \\). Since we may take \\( wudkzpas=1,000,000 \\), there do exist sequences of \\( 1,000,000 \\) consecutive integers, each of which contains a repeated prime factor.\n\nFor the Chinese Remainder Theorem see, for example, Niven and Zuckerman, An Introduction to the Theory of Numbers. 2nd ed., Wiley, New York, 1966, page 33."
+    },
+    "kernel_variant": {
+      "question": "Let $L=2\\,024$ and let $t=3$.  Prove that there exist  \n\n(1) an integer $N\\ge 0$, and  \n\n(2) $3L=6\\,072$ pairwise-distinct primes  \n\\[\np_{i,1},\\;p_{i,2},\\;p_{i,3}\\qquad (1\\le i\\le L)\n\\]  \n\nsuch that for every $1\\le i\\le L$  \n\\[\np_{i,1}^{4}\\,p_{i,2}^{4}\\,p_{i,3}^{4}\\;\\mid\\;N+i .\n\\]\n\nEquivalently, in the block of consecutive integers  \n\\[\nN+1,\\;N+2,\\;\\dots ,\\;N+L\n\\]\neach member is divisible by the fourth power of three different primes, and the $6\\,072$ primes occurring in this prescribed way are all different from one another.  \n(Primes that are **not** listed among the $p_{i,j}$ may divide the numbers in the block in any fashion; no condition is imposed on them.)",
+      "solution": "Step 1 - Choosing a supply of large, pairwise-coprime moduli  \n\nSelect $6\\,072$ distinct primes  \n\\[\nq_{1},\\,q_{2},\\,\\dots ,\\,q_{6\\,072}\n\\]  \nsatisfying  \n\\[\nq_{k}>L \\;=\\;2\\,024\\qquad (1\\le k\\le 6\\,072).\n\\tag{1}\n\\]\nBecause $q_{k}>2\\,024$, also $q_{k}^{4}>2\\,024$.  \n\nPartition the chosen primes into $2\\,024$ ordered triples\n\\[\n(q_{3i-2},\\,q_{3i-1},\\,q_{3i}) \\qquad (1\\le i\\le 2\\,024),\n\\]\nand set  \n\\[\nM_{i}=q_{3i-2}^{4}\\,q_{3i-1}^{4}\\,q_{3i}^{4}\\qquad(1\\le i\\le 2\\,024).\n\\]\nAs the underlying primes are distinct, the moduli $M_{1},M_{2},\\dots ,M_{2\\,024}$ are pairwise coprime.\n\nStep 2 - A simultaneous system of congruences  \n\nFor $1\\le i\\le 2\\,024$ impose the linear congruence  \n\\[\nN+i\\equiv 0\\pmod{M_{i}}\n\\quad\\Longleftrightarrow\\quad\nN\\equiv -i\\pmod{M_{i}} .\n\\]\nBecause the moduli are pairwise coprime, the Chinese Remainder Theorem guarantees a solution  \n\\[\nN\\equiv r\\pmod{M}\\qquad\\bigl(M:=M_{1}M_{2}\\cdots M_{2\\,024}\\bigr).\n\\]\nChoose the unique representative $N$ with $0\\le N<M$.  This $N$ automatically satisfies every congruence.\n\nStep 3 - Verifying the fourth-power divisibility  \n\nFix $i\\;(1\\le i\\le 2\\,024)$.  From $N+i\\equiv 0\\pmod{M_{i}}$ we have the chain of divisibilities  \n\\[\nq_{3i-2}^{4}\\mid N+i,\\qquad\nq_{3i-1}^{4}\\mid N+i,\\qquad\nq_{3i}^{4}\\mid N+i.\n\\]\nHence Condition (1) of the problem statement is met with  \n\\[\np_{i,1}=q_{3i-2},\\; p_{i,2}=q_{3i-1},\\; p_{i,3}=q_{3i}.\n\\]\n\nStep 4 - Distinctness of the prescribed primes  \n\nBecause the $q_{k}$ were chosen distinct, the list  \n\\[\np_{i,j}=q_{3i-3+j}\\qquad(1\\le i\\le 2\\,024,\\;1\\le j\\le 3)\n\\]\nalready consists of $6\\,072$ different primes, so Condition (2) is satisfied.  To see that no prime **among those $6\\,072$** divides two different integers of the block to the fourth power, assume to the contrary that some $q_{k}$ lies in the $i$-th triple **and**  \n\\[\nq_{k}^{4}\\mid N+j\\quad\\text{for some }j\\neq i.\n\\]\nThen  \n\\[\nq_{k}^{4}\\mid (N+j)-(N+i)=j-i,\n\\]\nso $q_{k}^{4}\\le |j-i|\\le L-1=2\\,023$, contradicting $q_{k}^{4}>2\\,024$ from (1).  \nConsequently each prime $q_{k}$ occurs to the fourth power in **exactly one** integer of the block.\n\nSince both required properties hold, the constructed block  \n\\[\nN+1,\\;N+2,\\;\\dots ,\\;N+2\\,024\n\\]\naccomplishes the task, completing the proof.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.476011",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Extra repeated factors: the original problem asked for only one repeated prime factor per integer; the current kernel variant increased this to two cubes.  The enhanced variant demands THREE DISTINCT primes all occurring to the fourth power in every integer—both a larger number of repeated factors and a higher exponent.  \n\n•  Global non-overlap constraint: it is no longer enough to find the required divisibility locally; one must guarantee that the “high-power primes’’ associated with different integers are entirely disjoint.  This forces the solver to juggle 6 072 separate prime-power moduli and to ensure pairwise coprimality across the whole block.\n\n•  Managing 2 024 simultaneous congruences whose moduli are enormous fourth powers introduces a heavier computational and conceptual load.  Although the Chinese Remainder Theorem still underpins the construction, the scale (thousands of congruences, high exponents, and a global disjointness condition) requires significantly greater organisational care than the original problems.\n\n•  The solution demands a deeper understanding of how to orchestrate many coprime moduli simultaneously and how to encode multiple divisibility and non-overlap requirements inside a single CRT argument—techniques well beyond straightforward pattern matching or the elementary one-congruence tricks sufficient for the earlier versions."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $L=2\\,024$ and let $t=3$.  Prove that there exist  \n\n(1) an integer $N\\ge 0$, and  \n\n(2) $3L=6\\,072$ pairwise-distinct primes  \n\\[\np_{i,1},\\;p_{i,2},\\;p_{i,3}\\qquad (1\\le i\\le L)\n\\]  \n\nsuch that for every $1\\le i\\le L$  \n\\[\np_{i,1}^{4}\\,p_{i,2}^{4}\\,p_{i,3}^{4}\\;\\mid\\;N+i .\n\\]\n\nEquivalently, in the block of consecutive integers  \n\\[\nN+1,\\;N+2,\\;\\dots ,\\;N+L\n\\]\neach member is divisible by the fourth power of three different primes, and the $6\\,072$ primes occurring in this prescribed way are all different from one another.  \n(Primes that are **not** listed among the $p_{i,j}$ may divide the numbers in the block in any fashion; no condition is imposed on them.)",
+      "solution": "Step 1 - Choosing a supply of large, pairwise-coprime moduli  \n\nSelect $6\\,072$ distinct primes  \n\\[\nq_{1},\\,q_{2},\\,\\dots ,\\,q_{6\\,072}\n\\]  \nsatisfying  \n\\[\nq_{k}>L \\;=\\;2\\,024\\qquad (1\\le k\\le 6\\,072).\n\\tag{1}\n\\]\nBecause $q_{k}>2\\,024$, also $q_{k}^{4}>2\\,024$.  \n\nPartition the chosen primes into $2\\,024$ ordered triples\n\\[\n(q_{3i-2},\\,q_{3i-1},\\,q_{3i}) \\qquad (1\\le i\\le 2\\,024),\n\\]\nand set  \n\\[\nM_{i}=q_{3i-2}^{4}\\,q_{3i-1}^{4}\\,q_{3i}^{4}\\qquad(1\\le i\\le 2\\,024).\n\\]\nAs the underlying primes are distinct, the moduli $M_{1},M_{2},\\dots ,M_{2\\,024}$ are pairwise coprime.\n\nStep 2 - A simultaneous system of congruences  \n\nFor $1\\le i\\le 2\\,024$ impose the linear congruence  \n\\[\nN+i\\equiv 0\\pmod{M_{i}}\n\\quad\\Longleftrightarrow\\quad\nN\\equiv -i\\pmod{M_{i}} .\n\\]\nBecause the moduli are pairwise coprime, the Chinese Remainder Theorem guarantees a solution  \n\\[\nN\\equiv r\\pmod{M}\\qquad\\bigl(M:=M_{1}M_{2}\\cdots M_{2\\,024}\\bigr).\n\\]\nChoose the unique representative $N$ with $0\\le N<M$.  This $N$ automatically satisfies every congruence.\n\nStep 3 - Verifying the fourth-power divisibility  \n\nFix $i\\;(1\\le i\\le 2\\,024)$.  From $N+i\\equiv 0\\pmod{M_{i}}$ we have the chain of divisibilities  \n\\[\nq_{3i-2}^{4}\\mid N+i,\\qquad\nq_{3i-1}^{4}\\mid N+i,\\qquad\nq_{3i}^{4}\\mid N+i.\n\\]\nHence Condition (1) of the problem statement is met with  \n\\[\np_{i,1}=q_{3i-2},\\; p_{i,2}=q_{3i-1},\\; p_{i,3}=q_{3i}.\n\\]\n\nStep 4 - Distinctness of the prescribed primes  \n\nBecause the $q_{k}$ were chosen distinct, the list  \n\\[\np_{i,j}=q_{3i-3+j}\\qquad(1\\le i\\le 2\\,024,\\;1\\le j\\le 3)\n\\]\nalready consists of $6\\,072$ different primes, so Condition (2) is satisfied.  To see that no prime **among those $6\\,072$** divides two different integers of the block to the fourth power, assume to the contrary that some $q_{k}$ lies in the $i$-th triple **and**  \n\\[\nq_{k}^{4}\\mid N+j\\quad\\text{for some }j\\neq i.\n\\]\nThen  \n\\[\nq_{k}^{4}\\mid (N+j)-(N+i)=j-i,\n\\]\nso $q_{k}^{4}\\le |j-i|\\le L-1=2\\,023$, contradicting $q_{k}^{4}>2\\,024$ from (1).  \nConsequently each prime $q_{k}$ occurs to the fourth power in **exactly one** integer of the block.\n\nSince both required properties hold, the constructed block  \n\\[\nN+1,\\;N+2,\\;\\dots ,\\;N+2\\,024\n\\]\naccomplishes the task, completing the proof.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.400276",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Extra repeated factors: the original problem asked for only one repeated prime factor per integer; the current kernel variant increased this to two cubes.  The enhanced variant demands THREE DISTINCT primes all occurring to the fourth power in every integer—both a larger number of repeated factors and a higher exponent.  \n\n•  Global non-overlap constraint: it is no longer enough to find the required divisibility locally; one must guarantee that the “high-power primes’’ associated with different integers are entirely disjoint.  This forces the solver to juggle 6 072 separate prime-power moduli and to ensure pairwise coprimality across the whole block.\n\n•  Managing 2 024 simultaneous congruences whose moduli are enormous fourth powers introduces a heavier computational and conceptual load.  Although the Chinese Remainder Theorem still underpins the construction, the scale (thousands of congruences, high exponents, and a global disjointness condition) requires significantly greater organisational care than the original problems.\n\n•  The solution demands a deeper understanding of how to orchestrate many coprime moduli simultaneously and how to encode multiple divisibility and non-overlap requirements inside a single CRT argument—techniques well beyond straightforward pattern matching or the elementary one-congruence tricks sufficient for the earlier versions."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

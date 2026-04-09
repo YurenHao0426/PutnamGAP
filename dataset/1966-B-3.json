@@ -1,0 +1,127 @@
+{
+  "index": "1966-B-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "B-3. Show that if the series\n\\[\n\\sum_{n=1}^{\\infty} \\frac{1}{p_{n}}\n\\]\nis convergent, where \\( p_{1}, p_{2}, p_{3}, \\cdots, p_{n}, \\cdots \\) are positive real numbers, then the series\n\\[\n\\sum_{n=1}^{\\infty} \\frac{n^{2}}{\\left(p_{1}+p_{2}+\\cdots+p_{n}\\right)^{2}} p_{n}\n\\]\nis also convergent.",
+  "solution": "B-3 Set \\( q_{n}=p_{1}+p_{2}+\\cdots+p_{n}\\left(q_{0}=0\\right) \\). We are led to estimate \\( S_{N} \\) \\( =\\sum_{x=1}^{N}\\left(n / q_{n}\\right)^{2}\\left(q_{n}-q_{n-1}\\right) \\) in terms of \\( T=\\sum_{n=1}^{\\infty} 1 / p_{n} \\). Note that\n\\[\n\\begin{aligned}\nS_{N} & \\leqq \\frac{1}{p_{1}}+\\sum_{n=2}^{N} \\frac{n^{2}}{q_{n} q_{n-1}}\\left(q_{n}-q_{n-1}\\right)=\\frac{1}{p_{1}}+\\sum_{n=2}^{N} \\frac{n^{2}}{q_{n-1}}-\\sum_{n=2}^{N} \\frac{n^{2}}{q_{n}} \\\\\n& =\\frac{1}{p_{1}}+\\sum_{n=1}^{N-1} \\frac{(n+1)^{2}}{q_{n}}-\\sum_{n=2}^{N} \\frac{n^{2}}{q_{n}} \\leqq \\frac{5}{p_{1}}+2 \\sum_{n=2}^{N} \\frac{n}{q_{n}}+\\sum_{n=2}^{N} \\frac{1}{q_{n}} .\n\\end{aligned}\n\\]\n\nBy Schwarz's inequality,\n\\[\n\\left(\\sum_{n=2}^{N} \\frac{n}{q_{n}}\\right)^{2} \\leqq \\sum_{n=2}^{N} \\frac{n^{2}}{q_{n}^{2}} p_{n} \\sum_{n=1}^{\\infty} \\frac{1}{p_{n}}\n\\]\nand thus\n\\[\nS_{N} \\leqq \\frac{5}{p_{1}}+2 \\sqrt{S_{N} T}+T\n\\]\n\nThis quadratic inequality implies that \\( \\sqrt{S_{N}} \\leqq \\sqrt{T}+\\sqrt{2 T+5 / p_{1}} \\).",
+  "vars": [
+    "n",
+    "x",
+    "N"
+  ],
+  "params": [
+    "p_n",
+    "p_1",
+    "p_2",
+    "p_3",
+    "q_n",
+    "q_n-1",
+    "q_0",
+    "S_N",
+    "T"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "x": "summand",
+        "N": "uppernn",
+        "p_n": "seqelem",
+        "p_1": "firstelem",
+        "p_2": "secondelem",
+        "p_3": "thirdelem",
+        "q_n": "partialsum",
+        "q_n-1": "previouspartial",
+        "q_0": "zeropartial",
+        "S_N": "partialseries",
+        "T": "totalsum"
+      },
+      "question": "B-3. Show that if the series\n\\[\n\\sum_{indexvar=1}^{\\infty} \\frac{1}{seqelem}\n\\]\nis convergent, where \\( firstelem, secondelem, thirdelem, \\cdots, seqelem, \\cdots \\) are positive real numbers, then the series\n\\[\n\\sum_{indexvar=1}^{\\infty} \\frac{indexvar^{2}}{\\left(firstelem+secondelem+\\cdots+seqelem\\right)^{2}} seqelem\n\\]\nis also convergent.",
+      "solution": "B-3 Set \\( partialsum=firstelem+secondelem+\\cdots+seqelem\\left(zeropartial=0\\right) \\). We are led to estimate \\( partialseries \\) \\( =\\sum_{summand=1}^{uppernn}\\left(indexvar / partialsum\\right)^{2}\\left(partialsum-previouspartial\\right) \\) in terms of \\( totalsum=\\sum_{indexvar=1}^{\\infty} 1 / seqelem \\). Note that\n\\[\n\\begin{aligned}\npartialseries & \\leqq \\frac{1}{firstelem}+\\sum_{indexvar=2}^{uppernn} \\frac{indexvar^{2}}{partialsum\\,previouspartial}\\left(partialsum-previouspartial\\right)=\\frac{1}{firstelem}+\\sum_{indexvar=2}^{uppernn} \\frac{indexvar^{2}}{previouspartial}-\\sum_{indexvar=2}^{uppernn} \\frac{indexvar^{2}}{partialsum} \\\\\n& =\\frac{1}{firstelem}+\\sum_{indexvar=1}^{uppernn-1} \\frac{(indexvar+1)^{2}}{partialsum}-\\sum_{indexvar=2}^{uppernn} \\frac{indexvar^{2}}{partialsum} \\leqq \\frac{5}{firstelem}+2 \\sum_{indexvar=2}^{uppernn} \\frac{indexvar}{partialsum}+\\sum_{indexvar=2}^{uppernn} \\frac{1}{partialsum} .\n\\end{aligned}\n\\]\n\nBy Schwarz's inequality,\n\\[\n\\left(\\sum_{indexvar=2}^{uppernn} \\frac{indexvar}{partialsum}\\right)^{2} \\leqq \\sum_{indexvar=2}^{uppernn} \\frac{indexvar^{2}}{partialsum^{2}} seqelem \\sum_{indexvar=1}^{\\infty} \\frac{1}{seqelem}\n\\]\nand thus\n\\[\npartialseries \\leqq \\frac{5}{firstelem}+2 \\sqrt{partialseries\\, totalsum}+totalsum\n\\]\n\nThis quadratic inequality implies that \\( \\sqrt{partialseries} \\leqq \\sqrt{totalsum}+\\sqrt{2\\, totalsum+5 / firstelem} \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "pineapple",
+        "x": "tangerine",
+        "N": "toothbrush",
+        "p_n": "marigolds",
+        "p_1": "jellyfish",
+        "p_2": "blackbird",
+        "p_3": "rainstorm",
+        "q_n": "snowflake",
+        "q_n-1": "lemonade",
+        "q_0": "treasurer",
+        "S_N": "horseshoe",
+        "T": "whisperer"
+      },
+      "question": "B-3. Show that if the series\n\\[\n\\sum_{pineapple=1}^{\\infty} \\frac{1}{marigolds}\n\\]\nis convergent, where \\( jellyfish, blackbird, rainstorm, \\cdots, marigolds, \\cdots \\) are positive real numbers, then the series\n\\[\n\\sum_{pineapple=1}^{\\infty} \\frac{pineapple^{2}}{\\left(jellyfish+blackbird+\\cdots+marigolds\\right)^{2}} marigolds\n\\]\nis also convergent.",
+      "solution": "B-3 Set \\( snowflake=jellyfish+blackbird+\\cdots+marigolds\\left(treasurer=0\\right) \\). We are led to estimate \\( horseshoe \\) \\( =\\sum_{tangerine=1}^{toothbrush}\\left(pineapple / snowflake\\right)^{2}\\left(snowflake-lemonade\\right) \\) in terms of \\( whisperer=\\sum_{pineapple=1}^{\\infty} 1 / marigolds \\). Note that\n\\[\n\\begin{aligned}\nhorseshoe & \\leqq \\frac{1}{jellyfish}+\\sum_{pineapple=2}^{toothbrush} \\frac{pineapple^{2}}{snowflake \\, lemonade}\\left(snowflake-lemonade\\right)=\\frac{1}{jellyfish}+\\sum_{pineapple=2}^{toothbrush} \\frac{pineapple^{2}}{lemonade}-\\sum_{pineapple=2}^{toothbrush} \\frac{pineapple^{2}}{snowflake} \\\\\n& =\\frac{1}{jellyfish}+\\sum_{pineapple=1}^{toothbrush-1} \\frac{(pineapple+1)^{2}}{snowflake}-\\sum_{pineapple=2}^{toothbrush} \\frac{pineapple^{2}}{snowflake} \\leqq \\frac{5}{jellyfish}+2 \\sum_{pineapple=2}^{toothbrush} \\frac{pineapple}{snowflake}+\\sum_{pineapple=2}^{toothbrush} \\frac{1}{snowflake} .\n\\end{aligned}\n\\]\n\nBy Schwarz's inequality,\n\\[\n\\left(\\sum_{pineapple=2}^{toothbrush} \\frac{pineapple}{snowflake}\\right)^{2} \\leqq \\sum_{pineapple=2}^{toothbrush} \\frac{pineapple^{2}}{snowflake^{2}} marigolds \\sum_{pineapple=1}^{\\infty} \\frac{1}{marigolds}\n\\]\nand thus\n\\[\nhorseshoe \\leqq \\frac{5}{jellyfish}+2 \\sqrt{horseshoe \\, whisperer}+whisperer\n\\]\n\nThis quadratic inequality implies that \\( \\sqrt{horseshoe} \\leqq \\sqrt{whisperer}+\\sqrt{2 \\, whisperer+5 / jellyfish} \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "finishline",
+        "x": "stillness",
+        "N": "originpoint",
+        "p_n": "negativeseq",
+        "p_1": "negseqfirst",
+        "p_2": "negseqsecond",
+        "p_3": "negseqthird",
+        "q_n": "differencevar",
+        "q_n-1": "differenceprev",
+        "q_0": "differencestart",
+        "S_N": "gapaggregate",
+        "T": "singlevalue"
+      },
+      "question": "B-3. Show that if the series\n\\[\n\\sum_{finishline=1}^{\\infty} \\frac{1}{negativeseq_{finishline}}\n\\]\nis convergent, where \\( negseqfirst, negseqsecond, negseqthird, \\cdots, negativeseq_{finishline}, \\cdots \\) are positive real numbers, then the series\n\\[\n\\sum_{finishline=1}^{\\infty} \\frac{finishline^{2}}{\\left(negseqfirst+negseqsecond+\\cdots+negativeseq_{finishline}\\right)^{2}} \\, negativeseq_{finishline}\n\\]\nis also convergent.",
+      "solution": "B-3 Set \\( differencevar_{finishline}=negseqfirst+negseqsecond+\\cdots+negativeseq_{finishline}\\left(differencestart=0\\right) \\). We are led to estimate \\( gapaggregate \\) \\( =\\sum_{stillness=1}^{originpoint}\\left(finishline / differencevar_{finishline}\\right)^{2}\\left(differencevar_{finishline}-differenceprev\\right) \\) in terms of \\( singlevalue=\\sum_{finishline=1}^{\\infty} 1 / negativeseq_{finishline} \\). Note that\n\\[\n\\begin{aligned}\ngapaggregate & \\leqq \\frac{1}{negseqfirst}+\\sum_{finishline=2}^{originpoint} \\frac{finishline^{2}}{differencevar_{finishline}\\,differenceprev}\\left(differencevar_{finishline}-differenceprev\\right)=\\frac{1}{negseqfirst}+\\sum_{finishline=2}^{originpoint} \\frac{finishline^{2}}{differenceprev}-\\sum_{finishline=2}^{originpoint} \\frac{finishline^{2}}{differencevar_{finishline}} \\\\\n& =\\frac{1}{negseqfirst}+\\sum_{finishline=1}^{originpoint-1} \\frac{(finishline+1)^{2}}{differencevar_{finishline}}-\\sum_{finishline=2}^{originpoint} \\frac{finishline^{2}}{differencevar_{finishline}} \\leqq \\frac{5}{negseqfirst}+2 \\sum_{finishline=2}^{originpoint} \\frac{finishline}{differencevar_{finishline}}+\\sum_{finishline=2}^{originpoint} \\frac{1}{differencevar_{finishline}} .\n\\end{aligned}\n\\]\n\nBy Schwarz's inequality,\n\\[\n\\left(\\sum_{finishline=2}^{originpoint} \\frac{finishline}{differencevar_{finishline}}\\right)^{2} \\leqq \\sum_{finishline=2}^{originpoint} \\frac{finishline^{2}}{differencevar_{finishline}^{2}} \\, negativeseq_{finishline} \\, \\sum_{finishline=1}^{\\infty} \\frac{1}{negativeseq_{finishline}}\n\\]\nand thus\n\\[\ngapaggregate \\leqq \\frac{5}{negseqfirst}+2 \\sqrt{gapaggregate \\, singlevalue}+singlevalue\n\\]\n\nThis quadratic inequality implies that \\( \\sqrt{gapaggregate} \\leqq \\sqrt{singlevalue}+\\sqrt{2 \\, singlevalue+5 / negseqfirst} \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "vzxlrkqa",
+        "x": "mfdjwhzs",
+        "N": "tbqphkro",
+        "p_n": "epqtrmno",
+        "p_1": "uavdkhzc",
+        "p_2": "jrosqnel",
+        "p_3": "abqlisef",
+        "q_n": "ulfwymte",
+        "q_n-1": "wtbrmlas",
+        "q_0": "gksajfzi",
+        "S_N": "bnkohuds",
+        "T": "rgtdycwe"
+      },
+      "question": "B-3. Show that if the series\n\\[\n\\sum_{vzxlrkqa=1}^{\\infty} \\frac{1}{epqtrmno}\n\\]\nis convergent, where \\( uavdkhzc, jrosqnel, abqlisef, \\cdots, epqtrmno, \\cdots \\) are positive real numbers, then the series\n\\[\n\\sum_{vzxlrkqa=1}^{\\infty} \\frac{vzxlrkqa^{2}}{\\left(uavdkhzc+jrosqnel+\\cdots+epqtrmno\\right)^{2}} epqtrmno\n\\]\nis also convergent.",
+      "solution": "B-3 Set \\( ulfwymte=uavdkhzc+jrosqnel+\\cdots+epqtrmno\\left(gksajfzi=0\\right) \\). We are led to estimate \\( bnkohuds \\) \\( =\\sum_{mfdjwhzs=1}^{tbqphkro}\\left(vzxlrkqa / ulfwymte\\right)^{2}\\left(ulfwymte-wtbrmlas\\right) \\) in terms of \\( rgtdycwe=\\sum_{vzxlrkqa=1}^{\\infty} 1 / epqtrmno \\). Note that\n\\[\n\\begin{aligned}\nbnkohuds & \\leqq \\frac{1}{uavdkhzc}+\\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{vzxlrkqa^{2}}{ulfwymte wtbrmlas}\\left(ulfwymte-wtbrmlas\\right)=\\frac{1}{uavdkhzc}+\\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{vzxlrkqa^{2}}{wtbrmlas}-\\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{vzxlrkqa^{2}}{ulfwymte} \\\\\n& =\\frac{1}{uavdkhzc}+\\sum_{vzxlrkqa=1}^{tbqphkro-1} \\frac{(vzxlrkqa+1)^{2}}{ulfwymte}-\\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{vzxlrkqa^{2}}{ulfwymte} \\leqq \\frac{5}{uavdkhzc}+2 \\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{vzxlrkqa}{ulfwymte}+\\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{1}{ulfwymte} .\n\\end{aligned}\n\\]\n\nBy Schwarz's inequality,\n\\[\n\\left(\\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{vzxlrkqa}{ulfwymte}\\right)^{2} \\leqq \\sum_{vzxlrkqa=2}^{tbqphkro} \\frac{vzxlrkqa^{2}}{ulfwymte^{2}} epqtrmno \\sum_{vzxlrkqa=1}^{\\infty} \\frac{1}{epqtrmno}\n\\]\nand thus\n\\[\nbnkohuds \\leqq \\frac{5}{uavdkhzc}+2 \\sqrt{bnkohuds\\, rgtdycwe}+rgtdycwe\n\\]\n\nThis quadratic inequality implies that \\( \\sqrt{bnkohuds} \\leqq \\sqrt{rgtdycwe}+\\sqrt{2 rgtdycwe+5 / uavdkhzc} \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $(p_n)_{n\\ge 1}$ be a sequence of positive real numbers such that\n\\[\\sum_{n=1}^{\\infty}\\frac1{p_n}<\\infty.\\]\nDenote the partial sums by $q_n=p_1+p_2+\\dots+p_n\\;(q_0:=0)$.  Prove that the series\n\\[\\sum_{n=1}^{\\infty}\\frac{n(n+1)}{q_n^{\\,2}}\\,p_n\\]\nconverges.",
+      "solution": "Let p_1,p_2,\\ldots  be positive with \\sum _n1/p_n=T<\\infty , and set q_0=0, q_n=p_1+\\cdots +p_n.  We must show the partial sums\n  S_N=\\sum _{n=1}^N n(n+1)\\cdot p_n/q_n^2\nstay bounded as N\\to \\infty .\n\n1.  For n=1,\n  1\\cdot 2\\cdot p_1/q_1^2=2p_1/p_1^2=2/p_1.\n\n2.  For n\\geq 2, q_n\\geq q_{n-1}>0 implies 1/q_n^2 \\leq 1/(q_n q_{n-1}).  Hence\n  n(n+1)p_n/q_n^2=n(n+1)(q_n-q_{n-1})/q_n^2\n    \\leq n(n+1)(q_n-q_{n-1})/(q_n q_{n-1})\n    =n(n+1)(1/q_{n-1}-1/q_n).\nThus\n  S_N \\leq 2/p_1 + \\sum _{n=2}^N n(n+1)(1/q_{n-1}-1/q_n).\n\n3.  Telescope the sum for n\\geq 2.  Writing\n  \\sum _{n=2}^N n(n+1)/q_{n-1}-\\sum _{n=2}^N n(n+1)/q_n\nand shifting indices in the first sum shows it equals\n  6/p_1 + \\sum _{k=2}^{N-1}2(k+1)/q_k - N(N+1)/q_N.\nDropping the nonpositive last term gives\n  \\sum _{n=2}^N n(n+1)(1/q_{n-1}-1/q_n)\n    \\leq 6/p_1 +2\\sum _{k=2}^{N-1}(k+1)/q_k\n    =6/p_1 +2\\sum _{k=2}^{N-1}k/q_k +2\\sum _{k=2}^{N-1}1/q_k.\n\n4.  Hence\n  S_N \\leq 2/p_1 +6/p_1 +2\\sum _{k=2}^{N-1}k/q_k +2\\sum _{k=2}^{N-1}1/q_k\n       =8/p_1 +2\\sum _{k=2}^{N-1}k/q_k +2\\sum _{k=2}^{N-1}1/q_k.\nSince q_k\\geq p_k,  \\sum 1/q_k \\leq \\sum 1/p_k=T, so\n  S_N \\leq 8/p_1 +2\\sum _{k=2}^{N-1}k/q_k +2T.\n\n5.  By Cauchy-Schwarz with a_k=k\\sqrt{p}_k/q_k, b_k=1/\\sqrt{p}_k,\n  (\\sum k/q_k)^2=(\\sum a_k b_k)^2\\leq (\\sum a_k^2)(\\sum b_k^2)\n    \\leq (\\sum k^2p_k/q_k^2)(\\sum 1/p_k)\\leq S_N\\cdot T.\nThus A=\\sum _{k=2}^{N-1}k/q_k \\leq \\sqrt{T\\cdot S_N}.\n\n6.  Therefore\n  S_N \\leq 8/p_1 +2\\sqrt{T\\cdot S_N}+2T,\nso setting x=\\sqrt{S}_N gives\n  x^2-2\\sqrt{T}\\cdot x-(8/p_1+2T)\\leq 0\n\\Leftrightarrow x\\leq \\sqrt{T}+\\sqrt{3T+8/p_1}.\nThus S_N remains bounded as N\\to \\infty , and \\sum n(n+1)p_n/q_n^2 converges.",
+      "_meta": {
+        "core_steps": [
+          "Introduce partial sums q_n = p_1 + … + p_n and rewrite S_N as Σ (n/q_n)^2 (q_n − q_{n−1}).",
+          "Use the inequality (q_n − q_{n−1})/q_{n−1} ≤ 1 to obtain a telescoping bound that reduces S_N to a linear combination of Σ n/q_n, Σ 1/q_n, and a finite constant.",
+          "Apply Cauchy–Schwarz to bound Σ n/q_n by √(S_N · T), where T = Σ 1/p_n is finite.",
+          "Combine the bounds to get a quadratic inequality S_N ≤ C_0 + 2√(S_N T) + T.",
+          "Solve the quadratic inequality to show S_N is bounded, hence the target series converges."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Exact finite constant that comes from isolating the first few terms in the telescoping estimate (written as 5/p_1 in the solution). Any other fixed constant produced by treating finitely many initial indices separately would work.",
+            "original": "5"
+          },
+          "slot2": {
+            "description": "The point at which the sum is split off before applying the inequality (the solution starts telescoping from n = 2). Any fixed starting index k ≥ 2 would leave the argument intact after adjusting the finite constant.",
+            "original": "n = 2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

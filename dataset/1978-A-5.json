@@ -1,0 +1,78 @@
+{
+  "index": "1978-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem A-5\nLet \\( 0<x_{i}<\\pi \\) for \\( i=1,2, \\ldots, n \\) and set\n\\[\nx=\\frac{x_{1}+x_{2}+\\cdots+x_{n}}{n}\n\\]\n\nProve that\n\\[\n\\prod_{i=1}^{n} \\frac{\\sin x_{i}}{x_{i}}<\\left(\\frac{\\sin x}{x}\\right)^{n}\n\\]",
+  "solution": "A-5.\nLet \\( g(x)=\\ln [(\\sin x) / x]=\\ln (\\sin x)-\\ln x \\). Then\n\\[\ng^{\\prime \\prime}(x)=-\\csc ^{2} x+\\frac{1}{x^{2}}=\\frac{1}{x^{2}}-\\frac{1}{\\sin ^{2} x}<0 \\quad \\text { for } 0<x<\\pi\n\\]\nsince \\( x>\\sin x \\) for \\( x>0 \\). Thus the graph of \\( g(x) \\) is concave down and hence\n\\[\n\\frac{1}{n} \\sum_{i=1}^{n} g\\left(x_{i}\\right) \\leqslant g\\left(\\frac{\\sum_{i=1}^{n} x_{i}}{n}\\right)=g(x)\n\\]\nor \\( \\sum g\\left(x_{i}\\right) \\leqslant n g(x) \\). Since \\( e^{x} \\) is an increasing function, this implies\n\\[\n\\prod_{i=1}^{n} \\frac{\\sin x_{i}}{x_{i}}=e^{\\Sigma g\\left(x_{i}\\right)} \\leqslant e^{n g(x)}=\\left(\\frac{\\sin x}{x}\\right)^{n}\n\\]",
+  "vars": [
+    "x",
+    "x_i",
+    "i",
+    "g"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "angleval",
+        "x_i": "angleindi",
+        "i": "indexsymb",
+        "g": "logsinrat",
+        "n": "countcons"
+      },
+      "question": "Problem A-5\nLet \\( 0<angleindi<\\pi \\) for \\( indexsymb=1,2, \\ldots, countcons \\) and set\n\\[\nangleval=\\frac{angleval_{1}+angleval_{2}+\\cdots+angleval_{countcons}}{countcons}\n\\]\n\nProve that\n\\[\n\\prod_{indexsymb=1}^{countcons} \\frac{\\sin angleindi}{angleindi}<\\left(\\frac{\\sin angleval}{angleval}\\right)^{countcons}\n\\]",
+      "solution": "A-5.\nLet \\( logsinrat(angleval)=\\ln [(\\sin angleval) / angleval]=\\ln (\\sin angleval)-\\ln angleval \\). Then\n\\[\nlogsinrat^{\\prime \\prime}(angleval)=-\\csc ^{2} angleval+\\frac{1}{angleval^{2}}=\\frac{1}{angleval^{2}}-\\frac{1}{\\sin ^{2} angleval}<0 \\quad \\text { for } 0<angleval<\\pi\n\\]\nsince \\( angleval>\\sin angleval \\) for \\( angleval>0 \\). Thus the graph of \\( logsinrat(angleval) \\) is concave down and hence\n\\[\n\\frac{1}{countcons} \\sum_{indexsymb=1}^{countcons} logsinrat(angleindi) \\leqslant logsinrat\\left(\\frac{\\sum_{indexsymb=1}^{countcons} angleindi}{countcons}\\right)=logsinrat(angleval)\n\\]\nor \\( \\sum logsinrat(angleindi) \\leqslant countcons \\, logsinrat(angleval) \\). Since \\( e^{angleval} \\) is an increasing function, this implies\n\\[\n\\prod_{indexsymb=1}^{countcons} \\frac{\\sin angleindi}{angleindi}=e^{\\Sigma logsinrat(angleindi)} \\leqslant e^{countcons \\, logsinrat(angleval)}=\\left(\\frac{\\sin angleval}{angleval}\\right)^{countcons}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sunflower",
+        "x_i": "skyscraper",
+        "i": "blueberry",
+        "g": "watermelon",
+        "n": "velociraptor"
+      },
+      "question": "Problem A-5\nLet \\( 0<skyscraper_{blueberry}<\\pi \\) for \\( blueberry=1,2, \\ldots, velociraptor \\) and set\n\\[\nsunflower=\\frac{skyscraper_{1}+skyscraper_{2}+\\cdots+skyscraper_{velociraptor}}{velociraptor}\n\\]\n\nProve that\n\\[\n\\prod_{blueberry=1}^{velociraptor} \\frac{\\sin skyscraper_{blueberry}}{skyscraper_{blueberry}}<\\left(\\frac{\\sin sunflower}{sunflower}\\right)^{velociraptor}\n\\]",
+      "solution": "A-5.\nLet \\( watermelon(sunflower)=\\ln [(\\sin sunflower) / sunflower]=\\ln (\\sin sunflower)-\\ln sunflower \\). Then\n\\[\nwatermelon^{\\prime \\prime}(sunflower)=-\\csc ^{2} sunflower+\\frac{1}{sunflower^{2}}=\\frac{1}{sunflower^{2}}-\\frac{1}{\\sin ^{2} sunflower}<0 \\quad \\text { for } 0<sunflower<\\pi\n\\]\nsince \\( sunflower>\\sin sunflower \\) for \\( sunflower>0 \\). Thus the graph of \\( watermelon(sunflower) \\) is concave down and hence\n\\[\n\\frac{1}{velociraptor} \\sum_{blueberry=1}^{velociraptor} watermelon\\left(skyscraper_{blueberry}\\right) \\leqslant watermelon\\left(\\frac{\\sum_{blueberry=1}^{velociraptor} skyscraper_{blueberry}}{velociraptor}\\right)=watermelon(sunflower)\n\\]\nor \\( \\sum watermelon\\left(skyscraper_{blueberry}\\right) \\leqslant velociraptor\\, watermelon(sunflower) \\). Since \\( e^{sunflower} \\) is an increasing function, this implies\n\\[\n\\prod_{blueberry=1}^{velociraptor} \\frac{\\sin skyscraper_{blueberry}}{skyscraper_{blueberry}}=e^{\\Sigma watermelon\\left(skyscraper_{blueberry}\\right)} \\leqslant e^{velociraptor\\, watermelon(sunflower)}=\\left(\\frac{\\sin sunflower}{sunflower}\\right)^{velociraptor}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "immutable",
+        "x_i": "uniformed",
+        "i": "totality",
+        "g": "exponential",
+        "n": "fractional"
+      },
+      "question": "Problem A-5\nLet \\( 0<uniformed_{totality}<\\pi \\) for \\( totality=1,2, \\ldots, fractional \\) and set\n\\[\nimmutable=\\frac{uniformed_{1}+uniformed_{2}+\\cdots+uniformed_{fractional}}{fractional}\n\\]\n\nProve that\n\\[\n\\prod_{totality=1}^{fractional} \\frac{\\sin uniformed_{totality}}{uniformed_{totality}}<\\left(\\frac{\\sin immutable}{immutable}\\right)^{fractional}\n\\]",
+      "solution": "A-5.\nLet \\( exponential(immutable)=\\ln [(\\sin immutable) / immutable]=\\ln (\\sin immutable)-\\ln immutable \\). Then\n\\[\nexponential^{\\prime \\prime}(immutable)=-\\csc ^{2} immutable+\\frac{1}{immutable^{2}}=\\frac{1}{immutable^{2}}-\\frac{1}{\\sin ^{2} immutable}<0 \\quad \\text { for } 0<immutable<\\pi\n\\]\nsince \\( immutable>\\sin immutable \\) for \\( immutable>0 \\). Thus the graph of \\( exponential(immutable) \\) is concave down and hence\n\\[\n\\frac{1}{fractional} \\sum_{totality=1}^{fractional} exponential\\left(uniformed_{totality}\\right) \\leqslant exponential\\left(\\frac{\\sum_{totality=1}^{fractional} uniformed_{totality}}{fractional}\\right)=exponential(immutable)\n\\]\nor \\( \\sum exponential\\left(uniformed_{totality}\\right) \\leqslant fractional \\, exponential(immutable) \\). Since \\( e^{immutable} \\) is an increasing function, this implies\n\\[\n\\prod_{totality=1}^{fractional} \\frac{\\sin uniformed_{totality}}{uniformed_{totality}}=e^{\\Sigma exponential\\left(uniformed_{totality}\\right)} \\leqslant e^{fractional \\, exponential(immutable)}=\\left(\\frac{\\sin immutable}{immutable}\\right)^{fractional}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_i": "hjgrksla",
+        "i": "mvbgcysu",
+        "g": "pfcdklqr",
+        "n": "wpsjotuv"
+      },
+      "question": "Problem A-5\nLet \\( 0<hjgrksla<\\pi \\) for \\( mvbgcysu=1,2, \\ldots, wpsjotuv \\) and set\n\\[\nqzxwvtnp=\\frac{qzxwvtnp_{1}+qzxwvtnp_{2}+\\cdots+qzxwvtnp_{wpsjotuv}}{wpsjotuv}\n\\]\n\nProve that\n\\[\n\\prod_{mvbgcysu=1}^{wpsjotuv} \\frac{\\sin hjgrksla}{hjgrksla}<\\left(\\frac{\\sin qzxwvtnp}{qzxwvtnp}\\right)^{wpsjotuv}\n\\]",
+      "solution": "A-5.\nLet \\( pfcdklqr(qzxwvtnp)=\\ln [(\\sin qzxwvtnp) / qzxwvtnp]=\\ln (\\sin qzxwvtnp)-\\ln qzxwvtnp \\). Then\n\\[\npfcdklqr^{\\prime \\prime}(qzxwvtnp)=-\\csc ^{2} qzxwvtnp+\\frac{1}{qzxwvtnp^{2}}=\\frac{1}{qzxwvtnp^{2}}-\\frac{1}{\\sin ^{2} qzxwvtnp}<0 \\quad \\text { for } 0<qzxwvtnp<\\pi\n\\]\nsince \\( qzxwvtnp>\\sin qzxwvtnp \\) for \\( qzxwvtnp>0 \\). Thus the graph of \\( pfcdklqr(qzxwvtnp) \\) is concave down and hence\n\\[\n\\frac{1}{wpsjotuv} \\sum_{mvbgcysu=1}^{wpsjotuv} pfcdklqr\\left(hjgrksla\\right) \\leqslant pfcdklqr\\left(\\frac{\\sum_{mvbgcysu=1}^{wpsjotuv} qzxwvtnp_{mvbgcysu}}{wpsjotuv}\\right)=pfcdklqr(qzxwvtnp)\n\\]\nor \\( \\sum pfcdklqr\\left(hjgrksla\\right) \\leqslant wpsjotuv pfcdklqr(qzxwvtnp) \\). Since \\( e^{qzxwvtnp} \\) is an increasing function, this implies\n\\[\n\\prod_{mvbgcysu=1}^{wpsjotuv} \\frac{\\sin hjgrksla}{hjgrksla}=e^{\\Sigma pfcdklqr\\left(hjgrksla\\right)} \\leqslant e^{wpsjotuv pfcdklqr(qzxwvtnp)}=\\left(\\frac{\\sin qzxwvtnp}{qzxwvtnp}\\right)^{wpsjotuv}\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let m \\geq  2 and let 0 < y_i < \\pi /2 (i = 1,\\ldots ,m).  \nChoose positive weights \\lambda _1,\\ldots ,\\lambda _m with \\Sigma \\lambda _i = 1 and set the weighted mean  \n\n  y = \\Sigma  \\lambda _iy_i.  \n\na) Prove  \\prod (sin y_i / y_i)^{\\lambda _i} \\leq  sin y / y.  \nb) Describe all equality cases.  \nc) Fix y. Show that, among all (y_1,\\ldots ,y_m) with \\Sigma \\lambda _iy_i = y, the product \\prod sin y_i / y_i attains its unique maximum when y_1 = \\cdots  = y_m = y and tends to its minimum as one coordinate approaches 0.",
+      "solution": "(\\approx  72 words)  \nSet g(x)=ln(sin x)-ln x, 0<x<\\pi /2.  Since sin x<x,  \n\n  g''(x)=1/x^2-1/sin^2x<0,  \n\nso g is strictly concave.  \na) Jensen: \\Sigma \\lambda _ig(y_i) \\leq  g(\\Sigma \\lambda _iy_i)=g(y).  Exponentiating yields the desired inequality.  \nb) For concave g, equality in Jensen occurs iff every y_i with \\lambda _i>0 equals y; thus equality holds exactly when y_1=\\cdots =y_m (or when some \\lambda _i=0, which removes the corresponding variable).  \nc) Strict concavity gives \\Sigma \\lambda _ig(y_i)<g(y) whenever at least two positive-weight arguments differ, so the product is strictly largest at the diagonal point y_i\\equiv y.  As some y_i\\to 0 the factor sin y_i/y_i\\to 1, while the remaining factors force the mean, driving the product downward; hence the minimum is approached on the boundary.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.011250",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

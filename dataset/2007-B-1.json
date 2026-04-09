@@ -1,0 +1,91 @@
+{
+  "index": "2007-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $f$ be a polynomial with positive integer coefficients. Prove\nthat if $n$ is a positive integer, then $f(n)$ divides $f(f(n)+1)$ if\nand only if $n=1$. [Editor's note: one must assume $f$ is nonconstant.]",
+  "solution": "The problem fails if $f$ is allowed to be constant, e.g., take $f(n) = 1$.\nWe thus assume that $f$ is nonconstant.\nWrite $f(n) = \\sum_{i=0}^d a_i n^i$ with $a_i > 0$. Then\n\\begin{align*}\nf(f(n)+1) &= \\sum_{i=0}^d a_i (f(n) + 1)^i \\\\\n&\\equiv f(1) \\pmod{f(n)}.\n\\end{align*}\nIf $n = 1$, then this implies that $f(f(n)+1)$ is divisible by $f(n)$.\nOtherwise, $0 < f(1) < f(n)$ since $f$ is nonconstant and has positive\ncoefficients, so $f(f(n)+1)$ cannot be divisible by $f(n)$.",
+  "vars": [
+    "n",
+    "i"
+  ],
+  "params": [
+    "d",
+    "a_i",
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "posintn",
+        "i": "sumidxi",
+        "d": "degrees",
+        "a_i": "coeffi",
+        "f": "polyfun"
+      },
+      "question": "Let $polyfun$ be a polynomial with positive integer coefficients. Prove\nthat if $posintn$ is a positive integer, then $polyfun(posintn)$ divides $polyfun(polyfun(posintn)+1)$ if\nand only if $posintn=1$. [Editor's note: one must assume $polyfun$ is nonconstant.]",
+      "solution": "The problem fails if $polyfun$ is allowed to be constant, e.g., take $polyfun(posintn) = 1$.\nWe thus assume that $polyfun$ is nonconstant.\nWrite $polyfun(posintn) = \\sum_{sumidxi=0}^{degrees} coeffi \\, posintn^{sumidxi}$ with $coeffi > 0$. Then\n\\begin{align*}\npolyfun(polyfun(posintn)+1) &= \\sum_{sumidxi=0}^{degrees} coeffi \\, (polyfun(posintn) + 1)^{sumidxi} \\\\\n&\\equiv polyfun(1) \\pmod{polyfun(posintn)}.\n\\end{align*}\nIf $posintn = 1$, then this implies that $polyfun(polyfun(posintn)+1)$ is divisible by $polyfun(posintn)$.\nOtherwise, $0 < polyfun(1) < polyfun(posintn)$ since $polyfun$ is nonconstant and has positive\ncoefficients, so $polyfun(polyfun(posintn)+1)$ cannot be divisible by $polyfun(posintn)$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "rhinocero",
+        "i": "tangerine",
+        "d": "saxophone",
+        "a_i": "windsock_{tangerine}",
+        "f": "pineapple"
+      },
+      "question": "Let $pineapple$ be a polynomial with positive integer coefficients. Prove\nthat if $rhinocero$ is a positive integer, then $pineapple(rhinocero)$ divides $pineapple(pineapple(rhinocero)+1)$ if\nand only if $rhinocero=1$. [Editor's note: one must assume $pineapple$ is nonconstant.]",
+      "solution": "The problem fails if $pineapple$ is allowed to be constant, e.g., take $pineapple(rhinocero) = 1$.\nWe thus assume that $pineapple$ is nonconstant.\nWrite $pineapple(rhinocero) = \\sum_{tangerine=0}^{saxophone} windsock_{tangerine} rhinocero^{tangerine}$ with $windsock_{tangerine} > 0$. Then\n\\begin{align*}\npineapple(pineapple(rhinocero)+1) &= \\sum_{tangerine=0}^{saxophone} windsock_{tangerine} (pineapple(rhinocero) + 1)^{tangerine} \\\\\n&\\equiv pineapple(1) \\pmod{pineapple(rhinocero)}.\n\\end{align*}\nIf $rhinocero = 1$, then this implies that $pineapple(pineapple(rhinocero)+1)$ is divisible by $pineapple(rhinocero)$.\nOtherwise, $0 < pineapple(1) < pineapple(rhinocero)$ since $pineapple$ is nonconstant and has positive\ncoefficients, so $pineapple(pineapple(rhinocero)+1)$ cannot be divisible by $pineapple(rhinocero)$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "irrational",
+        "i": "constant",
+        "d": "nodegree",
+        "a_i": "variable",
+        "f": "nonpolyfn"
+      },
+      "question": "Let $nonpolyfn$ be a polynomial with positive integer coefficients. Prove that if $irrational$ is a positive integer, then $nonpolyfn(irrational)$ divides $nonpolyfn(nonpolyfn(irrational)+1)$ if and only if $irrational=1$. [Editor's note: one must assume $nonpolyfn$ is nonconstant.]",
+      "solution": "The problem fails if $nonpolyfn$ is allowed to be constant, e.g., take $nonpolyfn(irrational) = 1$.\nWe thus assume that $nonpolyfn$ is nonconstant.\nWrite $nonpolyfn(irrational) = \\sum_{constant=0}^{nodegree} variable \\; irrational^{constant}$ with $variable > 0$. Then\n\\begin{align*}\nnonpolyfn(nonpolyfn(irrational)+1) &= \\sum_{constant=0}^{nodegree} variable \\,(nonpolyfn(irrational) + 1)^{constant} \\\\\n&\\equiv nonpolyfn(1) \\pmod{nonpolyfn(irrational)}.\n\\end{align*}\nIf $irrational = 1$, then this implies that $nonpolyfn(nonpolyfn(irrational)+1)$ is divisible by $nonpolyfn(irrational)$.\nOtherwise, $0 < nonpolyfn(1) < nonpolyfn(irrational)$ since $nonpolyfn$ is nonconstant and has positive\ncoefficients, so $nonpolyfn(nonpolyfn(irrational)+1)$ cannot be divisible by $nonpolyfn(irrational)$.",
+      "confidence": 0.14
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "d": "pqlmnvzb",
+        "a_i": "hskdjfla",
+        "f": "mnbvcxql"
+      },
+      "question": "Let $mnbvcxql$ be a polynomial with positive integer coefficients. Prove\nthat if $qzxwvtnp$ is a positive integer, then $mnbvcxql(qzxwvtnp)$ divides $mnbvcxql(mnbvcxql(qzxwvtnp)+1)$ if\nand only if $qzxwvtnp=1$. [Editor's note: one must assume $mnbvcxql$ is nonconstant.]",
+      "solution": "The problem fails if $mnbvcxql$ is allowed to be constant, e.g., take $mnbvcxql(qzxwvtnp) = 1$.\nWe thus assume that $mnbvcxql$ is nonconstant.\nWrite $mnbvcxql(qzxwvtnp) = \\sum_{i=0}^{pqlmnvzb} hskdjfla\\, qzxwvtnp^i$ with $hskdjfla > 0$. Then\n\\begin{align*}\nmnbvcxql(mnbvcxql(qzxwvtnp)+1) &= \\sum_{i=0}^{pqlmnvzb} hskdjfla\\, (mnbvcxql(qzxwvtnp) + 1)^i \\\\\n&\\equiv mnbvcxql(1) \\pmod{mnbvcxql(qzxwvtnp)}.\n\\end{align*}\nIf $qzxwvtnp = 1$, then this implies that $mnbvcxql(mnbvcxql(qzxwvtnp)+1)$ is divisible by $mnbvcxql(qzxwvtnp)$.\nOtherwise, $0 < mnbvcxql(1) < mnbvcxql(qzxwvtnp)$ since $mnbvcxql$ is nonconstant and has positive\ncoefficients, so $mnbvcxql(mnbvcxql(qzxwvtnp)+1)$ cannot be divisible by $mnbvcxql(qzxwvtnp)$.}  Strouvezgne\\omega d \n"
+    },
+    "kernel_variant": {
+      "question": "Let $f(x)=a_{0}+a_{1}x+\boldsymbol{\bigl(\text{non-negative integer coefficients}\bigr)}\\cdots +a_{d}x^{d}$ be a non-constant polynomial whose constant term satisfies $a_{0}>0$ and whose highest-degree coefficient $a_{d}>0$.  Show that for a non-negative integer $n$,\n\\[\n     f(n)\\mid f\\bigl(f(n)\\bigr)\\qquad\\text{iff}\\qquad n=0.\n\\]",
+      "solution": "Write f(n)=\\sum _{i=0}^d a_i n^i.  Because every a_i\\geq 0 and at least one a_i with i\\geq 1 is positive, we have\nf(n)>a_0=f(0)  for every n\\geq 1.  (1)\n\nStep 1 - Work modulo f(n).  Expand at x=f(n):\nf(f(n))=\\sum _{i=0}^d a_i (f(n))^i.\n\nStep 2 - Collapse the powers.  Since (f(n))^i\\equiv 0 (mod f(n)) for every i\\geq 1, the expansion reduces to\nf(f(n))\\equiv a_0=f(0)  (mod f(n)).  (2)\n\nStep 3 - Translate divisibility.  Condition f(n)\\mid f(f(n)) coupled with (2) gives\nf(n)\\mid f(0)=a_0.  (3)\n\nStep 4 - Rule out n\\geq 1.  By (1) we have f(n)>a_0 whenever n\\geq 1, contradicting (3).  Hence no positive n works.\n\nStep 5 - Verify n=0.  For n=0 we have f(0)=a_0>0 and\nf(f(0))=f(a_0)=\\sum _{i=0}^d a_i a_0^i,\nwhich is a sum of terms each divisible by a_0.  Thus a_0=f(0)\\mid f(f(0)), satisfying the condition.\n\nCombining Steps 4 and 5, the divisibility holds exactly for n=0, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Expand f(f(n)+1) and work modulo f(n)",
+          "Observe (f(n)+1)^i ≡ 1^i, giving f(f(n)+1) ≡ f(1) (mod f(n))",
+          "Divisibility condition becomes f(n) | f(1)",
+          "Positive-coefficient monotonicity yields f(1) < f(n) for n>1, so only n=1 works"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Fixed constant added to f(n) inside the outer evaluation (currently \"+1\"); replacing it by any integer c would change the residue to f(c) and the candidate n=c but leaves the argument structure intact.",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Stipulation that every coefficient is strictly positive; relaxing this to “non-negative integer coefficients with at least one positive coefficient of positive degree” keeps the key inequality f(1) < f(n) for n>1 and thus preserves the proof flow.",
+            "original": "all coefficients positive"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

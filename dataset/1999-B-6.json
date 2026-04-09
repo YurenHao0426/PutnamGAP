@@ -1,0 +1,148 @@
+{
+  "index": "1999-B-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Let $S$ be a finite set of integers, each greater than 1.  Suppose that\nfor each integer $n$ there is some $s\\in S$ such that $\\gcd(s,n)=1$ or\n$\\gcd(s,n)=s$.  Show that there exist $s,t\\in S$ such that $\\gcd(s,t)$\nis prime.\n\n\\end{itemize}\n\\end{document}",
+  "solution": "First solution:\nChoose a sequence $p_1, p_2, \\dots$ of primes as follows. Let $p_1$ be any prime\ndividing an element of $S$. To define $p_{j+1}$ given $p_1, \\dots, p_j$,\nchoose an integer $N_j \\in S$ relatively prime to $p_1 \\cdots p_j$ and let\n$p_{j+1}$ be a prime divisor of $N_j$, or stop if no such $N_j$ exists.\n\nSince $S$ is finite, the above algorithm eventually terminates in a finite\nsequence $p_1, \\dots, p_k$.\nLet $m$ be the smallest integer such that $p_1 \\cdots p_m$ has a divisor in $S$.\n(By the assumption on $S$ with $n=p_1\\cdots p_k$,\n$m=k$ has this property, so $m$ is well-defined.)\nIf $m=1$, then $p_1\\in S$, and we are done, so assume $m\\geq 2$.\nAny divisor $d$ of $p_1\\cdots p_m$ in $S$ must be a multiple of $p_m$, or else\nit would also be a divisor of $p_1 \\cdots p_{m-1}$, contradicting the choice\nof $m$. But now $\\gcd(d, N_{m-1}) = p_m$, as desired.\n\nSecond solution (from \\texttt{sci.math}):\nLet $n$ be the smallest integer such that $\\gcd(s,n) > 1$ for all $s$ in\n$n$; note that $n$ obviously has no repeated prime factors.\nBy the condition on $S$, there exists $s \\in S$ which divides $n$.\n\nOn the other hand, if $p$ is a prime divisor of $s$, then by the choice\nof $n$, $n/p$ is relatively prime to some element $t$ of $S$. Since $n$ cannot\nbe relatively prime to $t$, $t$ is divisible by $p$, but not by any other\nprime divisor of $n$ (as those primes divide $n/p$). Thus $\\gcd(s,t) = p$,\nas desired.\n\n\\end{itemize}\n\n\\end{document}",
+  "vars": [
+    "n",
+    "s",
+    "t",
+    "p_1",
+    "p_2",
+    "p_j",
+    "p_j+1",
+    "p_m",
+    "p_k",
+    "p",
+    "N_j",
+    "N_m-1",
+    "d",
+    "m",
+    "k"
+  ],
+  "params": [
+    "S"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexinteger",
+        "s": "setmember",
+        "t": "twinmember",
+        "p_1": "primeone",
+        "p_2": "primetwo",
+        "p_j": "primejvar",
+        "p_j+1": "primejnext",
+        "p_m": "primemvar",
+        "p_k": "primekvar",
+        "p": "primegeneric",
+        "N_j": "numberjvar",
+        "N_m-1": "numbermprev",
+        "d": "divisorelem",
+        "m": "mininteger",
+        "k": "maxindex",
+        "S": "intset"
+      },
+      "question": "Let $intset$ be a finite set of integers, each greater than 1.  Suppose that\nfor each integer $indexinteger$ there is some $setmember\\in intset$ such that $\\gcd(setmember,indexinteger)=1$ or\n$\\gcd(setmember,indexinteger)=setmember$.  Show that there exist $setmember,twinmember\\in intset$ such that $\\gcd(setmember,twinmember)$\nis prime.",
+      "solution": "First solution:\nChoose a sequence $primeone, primetwo, \\dots$ of primes as follows. Let $primeone$ be any prime\ndividing an element of $intset$. To define $primejnext$ given $primeone, \\dots, primejvar$,\nchoose an integer $numberjvar \\in intset$ relatively prime to $primeone \\cdots primejvar$ and let\n$primejnext$ be a prime divisor of $numberjvar$, or stop if no such $numberjvar$ exists.\n\nSince $intset$ is finite, the above algorithm eventually terminates in a finite\nsequence $primeone, \\dots, primekvar$.\nLet $mininteger$ be the smallest integer such that $primeone \\cdots primemvar$ has a divisor in $intset$.\n(By the assumption on $intset$ with $indexinteger=primeone\\cdots primekvar$,\n$mininteger=maxindex$ has this property, so $mininteger$ is well-defined.)\nIf $mininteger=1$, then $primeone\\in intset$, and we are done, so assume $mininteger\\geq 2$.\nAny divisor $divisorelem$ of $primeone\\cdots primemvar$ in $intset$ must be a multiple of $primemvar$, or else\nit would also be a divisor of $primeone \\cdots p_{m-1}$, contradicting the choice\nof $mininteger$. But now $\\gcd(divisorelem, numbermprev) = primemvar$, as desired.\n\nSecond solution (from \\texttt{sci.math}):\nLet $indexinteger$ be the smallest integer such that $\\gcd(setmember,indexinteger) > 1$ for all $setmember$ in\n$indexinteger$; note that $indexinteger$ obviously has no repeated prime factors.\nBy the condition on $intset$, there exists $setmember \\in intset$ which divides $indexinteger$.\n\nOn the other hand, if $primegeneric$ is a prime divisor of $setmember$, then by the choice\nof $indexinteger$, $indexinteger/primegeneric$ is relatively prime to some element $twinmember$ of $intset$. Since $indexinteger$ cannot\nbe relatively prime to $twinmember$, $twinmember$ is divisible by $primegeneric$, but not by any other\nprime divisor of $indexinteger$ (as those primes divide $indexinteger/primegeneric$). Thus $\\gcd(setmember,twinmember) = primegeneric$,\nas desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "cliffhanger",
+        "s": "parliament",
+        "t": "silhouette",
+        "p_1": "ornamenta",
+        "p_2": "chandelier",
+        "p_j": "aftershock",
+        "p_j+1": "aftershocknext",
+        "p_m": "windjammer",
+        "p_k": "blacksmith",
+        "p": "hinterland",
+        "N_j": "roundabout",
+        "N_m-1": "roundaboutprev",
+        "d": "moonlight",
+        "m": "dragonfly",
+        "k": "chevalier",
+        "S": "lighthouse"
+      },
+      "question": "Let $lighthouse$ be a finite set of integers, each greater than 1.  Suppose that\nfor each integer $cliffhanger$ there is some $parliament\\in lighthouse$ such that $\\gcd(parliament,cliffhanger)=1$ or\n$\\gcd(parliament,cliffhanger)=parliament$.  Show that there exist $parliament,silhouette\\in lighthouse$ such that $\\gcd(parliament,silhouette)$\nis prime.\n\n\\end{itemize}\n\\end{document}",
+      "solution": "First solution:\nChoose a sequence $ornamenta, chandelier, \\dots$ of primes as follows. Let $ornamenta$ be any prime\ndividing an element of $lighthouse$. To define $aftershocknext$ given $ornamenta, \\dots, aftershock$,\nchoose an integer $roundabout \\in lighthouse$ relatively prime to $ornamenta \\cdots aftershock$ and let\n$aftershocknext$ be a prime divisor of $roundabout$, or stop if no such $roundabout$ exists.\n\nSince $lighthouse$ is finite, the above algorithm eventually terminates in a finite\nsequence $ornamenta, \\dots, blacksmith$.\nLet $dragonfly$ be the smallest integer such that $ornamenta \\cdots windjammer$ has a divisor in $lighthouse$.\n(By the assumption on $lighthouse$ with $cliffhanger=ornamenta\\cdots blacksmith$,\n$dragonfly=chevalier$ has this property, so $dragonfly$ is well-defined.)\nIf $dragonfly=1$, then $ornamenta\\in lighthouse$, and we are done, so assume $dragonfly\\geq 2$.\nAny divisor $moonlight$ of $ornamenta\\cdots windjammer$ in $lighthouse$ must be a multiple of $windjammer$, or else\nit would also be a divisor of $ornamenta \\cdots p_{m-1}$, contradicting the choice\nof $dragonfly$. But now $\\gcd(moonlight, roundaboutprev) = windjammer$, as desired.\n\nSecond solution (from \\texttt{sci.math}):\nLet $cliffhanger$ be the smallest integer such that $\\gcd(parliament,cliffhanger) > 1$ for all $parliament$ in\n$cliffhanger$; note that $cliffhanger$ obviously has no repeated prime factors.\nBy the condition on $lighthouse$, there exists $parliament \\in lighthouse$ which divides $cliffhanger$.\n\nOn the other hand, if $hinterland$ is a prime divisor of $parliament$, then by the choice\nof $cliffhanger$, $cliffhanger/hinterland$ is relatively prime to some element $silhouette$ of $lighthouse$. Since $cliffhanger$ cannot\nbe relatively prime to $silhouette$, $silhouette$ is divisible by $hinterland$, but not by any other\nprime divisor of $cliffhanger$ (as those primes divide $cliffhanger/hinterland$). Thus $\\gcd(parliament,silhouette) = hinterland$,\nas desired.\n\n\\end{itemize}\n\n\\end{document}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "fractional",
+        "s": "outsider",
+        "t": "stranger",
+        "p_1": "compositealpha_1",
+        "p_2": "compositebeta_2",
+        "p_j": "compositegamma_j",
+        "p_j+1": "compositegamma_{j+1}",
+        "p_m": "compositedelta_m",
+        "p_k": "compositeepsilon_k",
+        "p": "nonprime",
+        "N_j": "triviality_j",
+        "N_m-1": "trivialminus_{m-1}",
+        "d": "nonfactor",
+        "m": "maximal",
+        "k": "minimums",
+        "S": "infiniteset"
+      },
+      "question": "Let $infiniteset$ be a finite set of integers, each greater than 1.  Suppose that\nfor each integer $fractional$ there is some $outsider\\in infiniteset$ such that $\\gcd(outsider,fractional)=1$ or\n$\\gcd(outsider,fractional)=outsider$.  Show that there exist $outsider,stranger\\in infiniteset$ such that $\\gcd(outsider,stranger)$\nis prime.\n\n\\end{itemize}\n\\end{document}",
+      "solution": "First solution:\nChoose a sequence $compositealpha_1, compositebeta_2, \\dots$ of primes as follows. Let $compositealpha_1$ be any prime\ndividing an element of $infiniteset$. To define $compositegamma_{j+1}$ given $compositealpha_1, \\dots, compositegamma_j$,\nchoose an integer $triviality_j \\in infiniteset$ relatively prime to $compositealpha_1 \\cdots compositegamma_j$ and let\n$compositegamma_{j+1}$ be a prime divisor of $triviality_j$, or stop if no such $triviality_j$ exists.\n\nSince $infiniteset$ is finite, the above algorithm eventually terminates in a finite\nsequence $compositealpha_1, \\dots, compositeepsilon_k$.\nLet $maximal$ be the smallest integer such that $compositealpha_1 \\cdots compositedelta_m$ has a divisor in $infiniteset$.\n(By the assumption on $infiniteset$ with $fractional=compositealpha_1\\cdots compositeepsilon_k$,\n$maximal=minimums$ has this property, so $maximal$ is well-defined.)\nIf $maximal=1$, then $compositealpha_1\\in infiniteset$, and we are done, so assume $maximal\\geq 2$.\nAny divisor $nonfactor$ of $compositealpha_1\\cdots compositedelta_m$ in $infiniteset$ must be a multiple of $compositedelta_m$, or else\nit would also be a divisor of $compositealpha_1 \\cdots p_{m-1}$, contradicting the choice\nof $maximal$. But now $\\gcd(nonfactor, trivialminus_{m-1}) = compositedelta_m$, as desired.\n\nSecond solution (from \\texttt{sci.math}):\nLet $fractional$ be the smallest integer such that $\\gcd(outsider,fractional) > 1$ for all $outsider$ in\n$fractional$; note that $fractional$ obviously has no repeated prime factors.\nBy the condition on $infiniteset$, there exists $outsider \\in infiniteset$ which divides $fractional$.\n\nOn the other hand, if $nonprime$ is a prime divisor of $outsider$, then by the choice\nof $fractional$, $fractional/nonprime$ is relatively prime to some element $stranger$ of $infiniteset$. Since $fractional$ cannot\nbe relatively prime to $stranger$, $stranger$ is divisible by $nonprime$, but not by any other\nprime divisor of $fractional$ (as those primes divide $fractional/nonprime$). Thus $\\gcd(outsider,stranger) = nonprime$,\nas desired.\n\n\\end{itemize}\n\n\\end{document}"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "xljvtewm",
+        "s": "ghzscpkr",
+        "t": "nlxbdfow",
+        "p_1": "cbrxglou",
+        "p_2": "pkomszyu",
+        "p_j": "zrqnvpey",
+        "p_j+1": "clovjrtm",
+        "p_m": "vejkwluz",
+        "p_k": "nyortzse",
+        "p": "mwashqre",
+        "N_j": "tsobvekw",
+        "N_m-1": "atvhscum",
+        "d": "qemivlaj",
+        "m": "kbouxzwr",
+        "k": "rwsijgpd",
+        "S": "fqnvxkema"
+      },
+      "question": "Let $fqnvxkema$ be a finite set of integers, each greater than 1.  Suppose that\nfor each integer $xljvtewm$ there is some $ghzscpkr\\in fqnvxkema$ such that $\\gcd(ghzscpkr,xljvtewm)=1$ or\n$\\gcd(ghzscpkr,xljvtewm)=ghzscpkr$.  Show that there exist $ghzscpkr,nlxbdfow\\in fqnvxkema$ such that $\\gcd(ghzscpkr,nlxbdfow)$\nis prime.\n\n\\end{itemize}\n\\end{document}",
+      "solution": "First solution:\nChoose a sequence $cbrxglou, pkomszyu, \\dots$ of primes as follows. Let $cbrxglou$ be any prime\ndividing an element of $fqnvxkema$. To define $clovjrtm$ given $cbrxglou, \\dots, zrqnvpey$,\nchoose an integer $tsobvekw \\in fqnvxkema$ relatively prime to $cbrxglou \\cdots zrqnvpey$ and let\n$clovjrtm$ be a prime divisor of $tsobvekw$, or stop if no such $tsobvekw$ exists.\n\nSince $fqnvxkema$ is finite, the above algorithm eventually terminates in a finite\nsequence $cbrxglou, \\dots, nyortzse$.\nLet $kbouxzwr$ be the smallest integer such that $cbrxglou \\cdots vejkwluz$ has a divisor in $fqnvxkema$.\n(By the assumption on $fqnvxkema$ with $xljvtewm=cbrxglou\\cdots nyortzse$,\n$kbouxzwr=rwsijgpd$ has this property, so $kbouxzwr$ is well-defined.)\nIf $kbouxzwr=1$, then $cbrxglou\\in fqnvxkema$, and we are done, so assume $kbouxzwr\\geq 2$.\nAny divisor $qemivlaj$ of $cbrxglou\\cdots vejkwluz$ in $fqnvxkema$ must be a multiple of $vejkwluz$, or else\nit would also be a divisor of $cbrxglou \\cdots mwashqre_{kbouxzwr-1}$, contradicting the choice\nof $kbouxzwr$. But now $\\gcd(qemivlaj, atvhscum) = vejkwluz$, as desired.\n\nSecond solution (from \\texttt{sci.math}):\nLet $xljvtewm$ be the smallest integer such that $\\gcd(ghzscpkr,xljvtewm) > 1$ for all $ghzscpkr$ in\n$xljvtewm$; note that $xljvtewm$ obviously has no repeated prime factors.\nBy the condition on $fqnvxkema$, there exists $ghzscpkr \\in fqnvxkema$ which divides $xljvtewm$.\n\nOn the other hand, if $mwashqre$ is a prime divisor of $ghzscpkr$, then by the choice\nof $xljvtewm$, $xljvtewm/mwashqre$ is relatively prime to some element $nlxbdfow$ of $fqnvxkema$. Since $xljvtewm$ cannot\nbe relatively prime to $nlxbdfow$, $nlxbdfow$ is divisible by $mwashqre$, but not by any other\nprime divisor of $xljvtewm$ (as those primes divide $xljvtewm/mwashqre$). Thus $\\gcd(ghzscpkr,nlxbdfow) = mwashqre$,\nas desired.\n\n\\end{itemize}\n\n\\end{document}"
+    },
+    "kernel_variant": {
+      "question": "Let S be a finite set of non-unit integers (that is, |s|>1 for every s\\in S) with |S|\\geq 2.  Throughout write gcd(x,y)=gcd(|x|,|y|), so signs are ignored.\n\nHypothesis.  For every positive integer m there exists an element s\\in S such that\n                 gcd(s,m)=1   or   gcd(s,m)=|s|.\n\nProve that there exist (not necessarily distinct) elements u,v\\in S such that gcd(u,v) is a prime number.",
+      "solution": "We prove that some pair u,v\\in S (possibly u=v) has prime greatest common divisor.  All greatest common divisors are taken between absolute values.\n\n1.  A minimal integer n.\n   Set\n        n := min { k\\geq 1 : gcd(s,k)>1 for every s\\in S } .\n   The set over which the minimum is taken is non-empty because the product \\prod _{s\\in S}|s| satisfies the condition, so n is well-defined and finite.\n\n2.  n is square-free.\n   Suppose, to the contrary, that p^2|n for some prime p and put n':=n/p<n.\n   We show that gcd(s,n')>1 for every s\\in S, contradicting the minimality of n.\n   Indeed, fix s\\in S.  Because gcd(s,n)>1, let q be any prime divisor of gcd(s,n).  If q\\neq p then q divides n' outright, while if q=p then p still divides n' because p^2|n.  Thus in either case q|n' and q|s, so gcd(s,n')\\geq q>1.  Consequently n' enjoys the same property that defines n, contradicting the choice of n.  Hence no prime divides n twice and n is square-free.\n\n3.  An element of S dividing n.\n   Because no element of S is coprime to n, the hypothesis furnishes s\\in S with gcd(s,n)=|s|, i.e. |s| divides n.  Fix such an s and let p be any prime divisor of s (necessarily a divisor of n as well).\n\n4.  A second element whose gcd with n/p equals 1.\n   By the minimality of n, the smaller number n/p cannot have the property that every element of S shares a common factor with it.  Hence there is t\\in S such that\n         gcd(t,n/p)=1.  (1)\n   Yet by the defining property of n we still have gcd(t,n)>1, so t shares at least one prime factor with n.  Let q be any prime dividing gcd(t,n).  From (1) we know that q\\nmid n/p, so q must be the prime p that was removed in forming n/p.  Therefore\n         p | t.  (2)\n   Relations (2) and p | s give gcd(s,t)\\geq p.  Because n is square-free, every other prime dividing s also divides n/p and hence, by (1), does not divide t.  Thus\n         gcd(s,t)=p, a prime.  (3)\n\n5.  The required pair.\n   Put u:=s and v:=t.  Equation (3) shows gcd(u,v) is the prime p.  If u\\neq v we have two distinct elements; if u=v then |u|=p is itself prime and gcd(u,u)=p, which also satisfies the requirement.\n\nTherefore there exist u,v\\in S (not necessarily distinct) whose greatest common divisor is prime, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Pick the smallest integer  n  such that every  s∈S  shares a non-trivial gcd with n (⇒ no s is coprime to n).",
+          "The given property then forces some  s∈S  to actually divide n.",
+          "Choose a prime p dividing that particular s.",
+          "Because of the minimality of n, the number n/p is coprime to some t∈S.",
+          "Hence  gcd(s,t)=p , a prime, so the required pair (s,t) exists."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The universe over which n ranges can be restricted to positive integers without affecting the argument.",
+            "original": "“for each integer n”"
+          },
+          "slot2": {
+            "description": "Stating that elements of S are at least 2 (or |s|>1) rather than “greater than 1” leaves the proof unchanged.",
+            "original": "“each greater than 1”"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

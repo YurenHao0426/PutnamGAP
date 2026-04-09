@@ -1,0 +1,122 @@
+{
+  "index": "1961-A-7",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "7. Let \\( S \\) be a nonempty closed set in the Euclidean plane for which there is a closed disk \\( D \\) (a circle together with its interior) containing \\( S \\) such that \\( D \\) is a subset of every.closed disk that contains \\( S \\). Prove that every point inside \\( D \\) is the midpoint of a segment joining two points of \\( S \\).",
+  "solution": "Solution. We claim that \\( S \\) contains the entire circumference of \\( D \\). If not, there is a point \\( P \\) on the circumference of \\( D \\) not in \\( S \\), and since \\( S \\) is closed there is disk \\( E \\) of radius \\( \\epsilon>0 \\) about \\( P \\) containing no point of \\( S \\). Then there is a disk \\( F \\) that contains all of \\( D-E \\) and hence all of \\( S \\), but not \\( P \\). But this contradicts the fact that any disk containing \\( S \\) contains all of \\( D \\). [We give an analytic proof of the existence of \\( F \\) below.]\n\nObviously, every point inside \\( D \\) is the midpoint of a chord of the circumference of \\( D \\), and hence the midpoint of a segment joining two points of \\( S \\).\n\nAnalytic proof of the existence of \\( F \\) : We may suppose that \\( D \\) is bounded by the circle \\( x^{2}+y^{2}-a^{2}=0 \\) and that \\( \\mathrm{P}\\langle a, 0\\rangle \\) is not in \\( S \\). Then \\( E \\) is bounded by \\( (x-a)^{2}+y^{2}-\\epsilon^{2}=0 \\). Let \\( F \\) be the disk bounded by the circle\n\\[\n\\phi(x, y)=\\left(x^{2}+y^{2}-a^{2}\\right)-\\frac{1}{2}\\left((x-a)^{2}+y^{2}-\\epsilon^{2}\\right)=0 .\n\\]\n\nThen \\( F=\\{\\langle x, y\\rangle: \\phi(x, y) \\leq 0\\} \\). Since \\( \\left(x^{2}+y^{2}-a^{2}\\right) \\leq 0 \\) for \\( \\langle x, y\\rangle \\in D \\) and \\( (x-a)^{2}+y^{2}-\\epsilon^{2}>0 \\) for \\( \\langle x, y\\rangle \\notin E \\), we have \\( \\phi(x, y)<0 \\) for \\( \\langle x, y\\rangle \\in D-E \\), so \\( D-E \\subseteq F \\). But \\( \\phi(a, 0)=\\frac{1}{2} \\epsilon^{2} \\), so \\( P \\notin F \\).",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "S",
+    "D",
+    "P",
+    "E",
+    "F",
+    "a",
+    "\\\\epsilon",
+    "\\\\phi"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S": "closedset",
+        "D": "minimaldisk",
+        "P": "boundarypt",
+        "E": "excludedisk",
+        "F": "coverdisk",
+        "a": "radiusval",
+        "\\epsilon": "smallrad",
+        "\\phi": "combifunc",
+        "x": "xcoord",
+        "y": "ycoord"
+      },
+      "question": "7. Let \\( closedset \\) be a nonempty closed set in the Euclidean plane for which there is a closed disk \\( minimaldisk \\) (a circle together with its interior) containing \\( closedset \\) such that \\( minimaldisk \\) is a subset of every.closed disk that contains \\( closedset \\). Prove that every point inside \\( minimaldisk \\) is the midpoint of a segment joining two points of \\( closedset \\).",
+      "solution": "Solution. We claim that \\( closedset \\) contains the entire circumference of \\( minimaldisk \\). If not, there is a point \\( boundarypt \\) on the circumference of \\( minimaldisk \\) not in \\( closedset \\), and since \\( closedset \\) is closed there is disk \\( excludedisk \\) of radius \\( smallrad>0 \\) about \\( boundarypt \\) containing no point of \\( closedset \\). Then there is a disk \\( coverdisk \\) that contains all of \\( minimaldisk - excludedisk \\) and hence all of \\( closedset \\), but not \\( boundarypt \\). But this contradicts the fact that any disk containing \\( closedset \\) contains all of \\( minimaldisk \\). [We give an analytic proof of the existence of \\( coverdisk \\) below.]\n\nObviously, every point inside \\( minimaldisk \\) is the midpoint of a chord of the circumference of \\( minimaldisk \\), and hence the midpoint of a segment joining two points of \\( closedset \\).\n\nAnalytic proof of the existence of \\( coverdisk \\) : We may suppose that \\( minimaldisk \\) is bounded by the circle \\( xcoord^{2}+ycoord^{2}-radiusval^{2}=0 \\) and that \\( \\mathrm{boundarypt}\\langle radiusval, 0\\rangle \\) is not in \\( closedset \\). Then \\( excludedisk \\) is bounded by \\( (xcoord-radiusval)^{2}+ycoord^{2}-smallrad^{2}=0 \\). Let \\( coverdisk \\) be the disk bounded by the circle\n\\[\ncombifunc(xcoord, ycoord)=\\left(xcoord^{2}+ycoord^{2}-radiusval^{2}\\right)-\\frac{1}{2}\\left((xcoord-radiusval)^{2}+ycoord^{2}-smallrad^{2}\\right)=0 .\n\\]\n\nThen \\( coverdisk=\\{\\langle xcoord, ycoord\\rangle: combifunc(xcoord, ycoord) \\leq 0\\} \\). Since \\( \\left(xcoord^{2}+ycoord^{2}-radiusval^{2}\\right) \\leq 0 \\) for \\( \\langle xcoord, ycoord\\rangle \\in minimaldisk \\) and \\( (xcoord-radiusval)^{2}+ycoord^{2}-smallrad^{2}>0 \\) for \\( \\langle xcoord, ycoord\\rangle \\notin excludedisk \\), we have \\( combifunc(xcoord, ycoord)<0 \\) for \\( \\langle xcoord, ycoord\\rangle \\in minimaldisk - excludedisk \\), so \\( minimaldisk - excludedisk \\subseteq coverdisk \\). But \\( combifunc(radiusval, 0)=\\frac{1}{2} smallrad^{2} \\), so \\( boundarypt \\notin coverdisk \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "astronaut",
+        "y": "butterfly",
+        "S": "blueprint",
+        "D": "snapshot",
+        "P": "quarantine",
+        "E": "tapestry",
+        "F": "landscape",
+        "a": "pendulum",
+        "\\epsilon": "tournament",
+        "\\phi": "compendium"
+      },
+      "question": "7. Let \\( blueprint \\) be a nonempty closed set in the Euclidean plane for which there is a closed disk \\( snapshot \\) (a circle together with its interior) containing \\( blueprint \\) such that \\( snapshot \\) is a subset of every.closed disk that contains \\( blueprint \\). Prove that every point inside \\( snapshot \\) is the midpoint of a segment joining two points of \\( blueprint \\).",
+      "solution": "Solution. We claim that \\( blueprint \\) contains the entire circumference of \\( snapshot \\). If not, there is a point \\( quarantine \\) on the circumference of \\( snapshot \\) not in \\( blueprint \\), and since \\( blueprint \\) is closed there is disk \\( tapestry \\) of radius \\( tournament>0 \\) about \\( quarantine \\) containing no point of \\( blueprint \\). Then there is a disk \\( landscape \\) that contains all of \\( snapshot-tapestry \\) and hence all of \\( blueprint \\), but not \\( quarantine \\). But this contradicts the fact that any disk containing \\( blueprint \\) contains all of \\( snapshot \\). [We give an analytic proof of the existence of \\( landscape \\) below.]\n\nObviously, every point inside \\( snapshot \\) is the midpoint of a chord of the circumference of \\( snapshot \\), and hence the midpoint of a segment joining two points of \\( blueprint \\).\n\nAnalytic proof of the existence of \\( landscape \\) : We may suppose that \\( snapshot \\) is bounded by the circle \\( astronaut^{2}+butterfly^{2}-pendulum^{2}=0 \\) and that \\( \\mathrm{quarantine}\\langle pendulum, 0\\rangle \\) is not in \\( blueprint \\). Then \\( tapestry \\) is bounded by \\( (astronaut-pendulum)^{2}+butterfly^{2}-tournament^{2}=0 \\). Let \\( landscape \\) be the disk bounded by the circle\n\\[\ncompendium(astronaut, butterfly)=\\left(astronaut^{2}+butterfly^{2}-pendulum^{2}\\right)-\\frac{1}{2}\\left((astronaut-pendulum)^{2}+butterfly^{2}-tournament^{2}\\right)=0 .\n\\]\n\nThen \\( landscape=\\{\\langle astronaut, butterfly\\rangle: compendium(astronaut, butterfly) \\leq 0\\} \\). Since \\( \\left(astronaut^{2}+butterfly^{2}-pendulum^{2}\\right) \\leq 0 \\) for \\( \\langle astronaut, butterfly\\rangle \\in snapshot \\) and \\( (astronaut-pendulum)^{2}+butterfly^{2}-tournament^{2}>0 \\) for \\( \\langle astronaut, butterfly\\rangle \\notin tapestry \\), we have \\( compendium(astronaut, butterfly)<0 \\) for \\( \\langle astronaut, butterfly\\rangle \\in snapshot-tapestry \\), so \\( snapshot-tapestry \\subseteq landscape \\). But \\( compendium(pendulum, 0)=\\frac{1}{2} tournament^{2} \\), so \\( quarantine \\notin landscape \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "y": "steadystate",
+        "S": "uncloseset",
+        "D": "vastregion",
+        "P": "broadarea",
+        "E": "fullzone",
+        "F": "tinyspot",
+        "a": "nullsize",
+        "\\epsilon": "enormgap",
+        "\\phi": "steadyval"
+      },
+      "question": "7. Let \\( uncloseset \\) be a nonempty closed set in the Euclidean plane for which there is a closed disk \\( vastregion \\) (a circle together with its interior) containing \\( uncloseset \\) such that \\( vastregion \\) is a subset of every.closed disk that contains \\( uncloseset \\). Prove that every point inside \\( vastregion \\) is the midpoint of a segment joining two points of \\( uncloseset \\).",
+      "solution": "Solution. We claim that \\( uncloseset \\) contains the entire circumference of \\( vastregion \\). If not, there is a point \\( broadarea \\) on the circumference of \\( vastregion \\) not in \\( uncloseset \\), and since \\( uncloseset \\) is closed there is disk \\( fullzone \\) of radius \\( enormgap>0 \\) about \\( broadarea \\) containing no point of \\( uncloseset \\). Then there is a disk \\( tinyspot \\) that contains all of \\( vastregion-fullzone \\) and hence all of \\( uncloseset \\), but not \\( broadarea \\). But this contradicts the fact that any disk containing \\( uncloseset \\) contains all of \\( vastregion \\). [We give an analytic proof of the existence of \\( tinyspot \\) below.]\n\nObviously, every point inside \\( vastregion \\) is the midpoint of a chord of the circumference of \\( vastregion \\), and hence the midpoint of a segment joining two points of \\( uncloseset \\).\n\nAnalytic proof of the existence of \\( tinyspot \\) : We may suppose that \\( vastregion \\) is bounded by the circle \\( fixedvalue^{2}+steadystate^{2}-nullsize^{2}=0 \\) and that \\( \\mathrm{broadarea}\\langle nullsize, 0\\rangle \\) is not in \\( uncloseset \\). Then \\( fullzone \\) is bounded by \\( (fixedvalue-nullsize)^{2}+steadystate^{2}-enormgap^{2}=0 \\). Let \\( tinyspot \\) be the disk bounded by the circle\n\\[\nsteadyval(fixedvalue, steadystate)=(fixedvalue^{2}+steadystate^{2}-nullsize^{2})-\\frac{1}{2}((fixedvalue-nullsize)^{2}+steadystate^{2}-enormgap^{2})=0 .\n\\]\n\nThen \\( tinyspot=\\{\\langle fixedvalue, steadystate\\rangle: steadyval(fixedvalue, steadystate) \\leq 0\\} \\). Since \\( (fixedvalue^{2}+steadystate^{2}-nullsize^{2}) \\leq 0 \\) for \\( \\langle fixedvalue, steadystate\\rangle \\in vastregion \\) and \\( (fixedvalue-nullsize)^{2}+steadystate^{2}-enormgap^{2}>0 \\) for \\( \\langle fixedvalue, steadystate\\rangle \\notin fullzone \\), we have \\( steadyval(fixedvalue, steadystate)<0 \\) for \\( \\langle fixedvalue, steadystate\\rangle \\in vastregion-fullzone \\), so \\( vastregion-fullzone \\subseteq tinyspot \\). But \\( steadyval(nullsize, 0)=\\frac{1}{2} enormgap^{2} \\), so \\( broadarea \\notin tinyspot \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "kpbvtdij",
+        "y": "frlchszm",
+        "S": "qmnptrla",
+        "D": "vczhqsok",
+        "P": "ldnxvqwe",
+        "E": "mzqftrvh",
+        "F": "jhswcloe",
+        "a": "dbvrypka",
+        "\\epsilon": "nlzkgwop",
+        "\\phi": "hwtsmqre"
+      },
+      "question": "7. Let \\( qmnptrla \\) be a nonempty closed set in the Euclidean plane for which there is a closed disk \\( vczhqsok \\) (a circle together with its interior) containing \\( qmnptrla \\) such that \\( vczhqsok \\) is a subset of every.closed disk that contains \\( qmnptrla \\). Prove that every point inside \\( vczhqsok \\) is the midpoint of a segment joining two points of \\( qmnptrla \\).",
+      "solution": "Solution. We claim that \\( qmnptrla \\) contains the entire circumference of \\( vczhqsok \\). If not, there is a point \\( ldnxvqwe \\) on the circumference of \\( vczhqsok \\) not in \\( qmnptrla \\), and since \\( qmnptrla \\) is closed there is disk \\( mzqftrvh \\) of radius \\( nlzkgwop>0 \\) about \\( ldnxvqwe \\) containing no point of \\( qmnptrla \\). Then there is a disk \\( jhswcloe \\) that contains all of \\( vczhqsok-mzqftrvh \\) and hence all of \\( qmnptrla \\), but not \\( ldnxvqwe \\). But this contradicts the fact that any disk containing \\( qmnptrla \\) contains all of \\( vczhqsok \\). [We give an analytic proof of the existence of \\( jhswcloe \\) below.]\n\nObviously, every point inside \\( vczhqsok \\) is the midpoint of a chord of the circumference of \\( vczhqsok \\), and hence the midpoint of a segment joining two points of \\( qmnptrla \\).\n\nAnalytic proof of the existence of \\( jhswcloe \\) : We may suppose that \\( vczhqsok \\) is bounded by the circle \\( kpbvtdij^{2}+frlchszm^{2}-dbvrypka^{2}=0 \\) and that \\( \\mathrm{ldnxvqwe}\\langle dbvrypka, 0\\rangle \\) is not in \\( qmnptrla \\). Then \\( mzqftrvh \\) is bounded by \\( (kpbvtdij-dbvrypka)^{2}+frlchszm^{2}-nlzkgwop^{2}=0 \\). Let \\( jhswcloe \\) be the disk bounded by the circle\n\\[\nhwtsmqre(kpbvtdij, frlchszm)=\\left(kpbvtdij^{2}+frlchszm^{2}-dbvrypka^{2}\\right)-\\frac{1}{2}\\left((kpbvtdij-dbvrypka)^{2}+frlchszm^{2}-nlzkgwop^{2}\\right)=0 .\n\\]\n\nThen \\( jhswcloe=\\{\\langle kpbvtdij, frlchszm\\rangle: hwtsmqre(kpbvtdij, frlchszm) \\leq 0\\} \\). Since \\( \\left(kpbvtdij^{2}+frlchszm^{2}-dbvrypka^{2}\\right) \\leq 0 \\) for \\( \\langle kpbvtdij, frlchszm\\rangle \\in vczhqsok \\) and \\( (kpbvtdij-dbvrypka)^{2}+frlchszm^{2}-nlzkgwop^{2}>0 \\) for \\( \\langle kpbvtdij, frlchszm\\rangle \\notin mzqftrvh \\), we have \\( hwtsmqre(kpbvtdij, frlchszm)<0 \\) for \\( \\langle kpbvtdij, frlchszm\\rangle \\in vczhqsok-mzqftrvh \\), so \\( vczhqsok-mzqftrvh \\subseteq jhswcloe \\). But \\( hwtsmqre(dbvrypka, 0)=\\frac{1}{2} nlzkgwop^{2} \\), so \\( ldnxvqwe \\notin jhswcloe \\)."
+    },
+    "kernel_variant": {
+      "question": "Let S be a non-empty closed subset of \\mathbb{R}^3.  Assume that there is a closed ball\n\n   B = {(x,y,z) \\in  \\mathbb{R}^3 : (x-3)^2 + (y-4)^2 + (z+1)^2 \\leq  16}\n\nwith the following two properties.\n\n1. (Containment) S \\subseteq  B.\n2. (Minimal-ball property) Whenever C is a closed ball with S \\subseteq  C, we already have B \\subseteq  C.\n\nProve that every point of the interior of B is the midpoint of a segment whose endpoints both belong to S.",
+      "solution": "Write O = (3,4,-1), so B = {x \\in  \\mathbb{R}^3 : \\|x-O\\| \\leq  4}.  We prove two lemmas.\n\nLemma 1.  \\partial B \\subseteq  S.\n\nProof.  Suppose, to obtain a contradiction, that some boundary point P \\in  \\partial B satisfies P \\notin  S.  Because S is closed, there exists \\varepsilon  > 0 such that the open ball\n   E = {x \\in  \\mathbb{R}^3 : \\|x-P\\| < \\varepsilon }\nis disjoint from S.\n\nDefine\n   \\varphi (x) = \\|x-O\\|^2 - 16 - \\frac{1}{2}(\\|x-P\\|^2 - \\varepsilon ^2), x \\in  \\mathbb{R}^3.\nSet\n   F = {x \\in  \\mathbb{R}^3 : \\varphi (x) \\leq  0}.\nWe show that F is a closed ball containing S but omitting P, contradicting the minimality of B.\n\nFirst, expand:\n   2\\varphi (x) = 2\\|x-O\\|^2 - \\|x-P\\|^2 - 32 + \\varepsilon ^2.\nComplete the square.  A short calculation gives\n   2\\varphi (x) = \\|x - (2O - P)\\|^2 - (64 - \\varepsilon ^2),\nso\n   F = {x : \\|x - (2O - P)\\| \\leq  \\sqrt{64 - \\varepsilon ^2}}\nis indeed a closed ball.\n\nNext, let x \\in  S.  Because S \\subseteq  B we have \\|x-O\\| \\leq  4, and because S \\cap  E = \\emptyset  we have \\|x-P\\| \\geq  \\varepsilon .  Hence\n   \\varphi (x) = \\|x-O\\|^2 - 16 - \\frac{1}{2}(\\|x-P\\|^2 - \\varepsilon ^2) \\leq  0,\nso x \\in  F.  Thus S \\subseteq  F.\n\nFinally, \\varphi (P) = \\varepsilon ^2/2 > 0, so P \\notin  F.  Therefore F is a closed ball containing S but not P, while B \\not\\subset  F.  This violates property 2, proving Lemma 1.\n\\blacksquare \n\nLemma 2.  Every point Q in int B is the midpoint of a segment whose endpoints lie in \\partial B (hence, by Lemma 1, in S).\n\nProof.  Two cases.\n\n(i) Q = O.  Choose any diameter of B; its endpoints belong to \\partial B and O is their midpoint.\n\n(ii) Q \\neq  O.  Let v be any unit vector orthogonal to Q-O and put\n      \\ell  = {Q + t v : t \\in  \\mathbb{R}}.\nFor t \\in  \\mathbb{R},\n      \\|(Q + t v) - O\\|^2 = \\|Q-O\\|^2 + t^2\nbecause v \\perp  (Q-O).  Since \\|Q-O\\| < 4 there exists t_0 = \\sqrt{16 - \\|Q-O\\|^2} > 0 with\n      \\|Q \\pm  t_0 v - O\\| = 4.\nThus the points\n      A = Q + t_0 v, B = Q - t_0 v\nlie on \\partial B.  Moreover A + B = 2Q, so Q is the midpoint of AB.  By Lemma 1, A, B \\in  S.\n\\blacksquare \n\nCombining Lemmas 1 and 2, every point of int B is indeed the midpoint of a segment whose endpoints both belong to S, completing the proof. \\square ",
+      "_meta": {
+        "core_steps": [
+          "Assume a boundary point P of D lies outside S and use closedness of S to find a small open disk E around P disjoint from S.",
+          "Construct a larger disk F that contains D \\ E and hence contains S but omits P.",
+          "F contradicts the minimal-disk property (every disk covering S must already contain D); therefore the entire boundary of D lies in S.",
+          "Any interior point of a disk is the midpoint of some chord of its boundary circle.",
+          "Thus every interior point of D is the midpoint of a segment with both endpoints in S."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Ambient dimension of the Euclidean space (the argument works in any dimension ≥2 with disks replaced by balls).",
+            "original": "2 (the plane)"
+          },
+          "slot2": {
+            "description": "Exact location and radius of the minimal disk D; one may translate/rotate the plane or rescale the radius without affecting the proof.",
+            "original": "Circle x^2 + y^2 = a^2 centred at (0,0) with radius a"
+          },
+          "slot3": {
+            "description": "Choice of the missing boundary point P and of the positive radius ε for the empty neighbourhood E around P.",
+            "original": "P = (a,0),  ε > 0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,172 @@
+{
+  "index": "2012-A-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $\\FF_p$ denote the field of integers modulo a prime $p$, and let $n$ be a positive integer.\nLet $v$ be a fixed vector in $\\FF_p^n$, let $M$ be an $n \\times n$ matrix with entries of $\\FF_p$,\nand define $G: \\FF_p^n \\to \\FF_p^n$ by $G(x) = v + Mx$. Let $G^{(k)}$ denote the $k$-fold\ncomposition of $G$ with itself, that is, $G^{(1)}(x) = G(x)$ and $G^{(k+1)}(x) = G(G^{(k)}(x))$.\nDetermine all pairs $p, n$ for which there exist $v$ and $M$ such that the $p^n$ vectors\n$G^{(k)}(0)$, $k=1,2,\\dots,p^n$ are distinct.",
+  "solution": "The pairs $(p,n)$ with the specified property are those pairs with $n=1$, together with the single pair\n$(2,2)$. We first check that these do work. For $n=1$, it is clear that taking $v = (1)$ and $M = (0)$\nhas the desired effect. For $(p,n) = (2,2)$, we take $v = \\begin{pmatrix} 0 & 1 \\end{pmatrix}$\nand $M = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$ and then observe that\n\\[\nG^{(k)}(0) = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}, \\,\nk=0,1,2,3.\n\\]\nWe next check that no other pairs work, keeping in mind that the desired condition means that\n$G$ acts on $\\FF_p^n$ as a cyclic permutation. Assume by way of contradiction that $(p,n)$ has the desired\nproperty but does not appear in our list. In particular, we have $n \\geq 2$.\n\nLet $I$ be the $n \\times n$ identity matrix over $\\FF_p$.\nDecompose $\\FF_p^n$ as a direct sum of two subspaces $V,W$ such that\n$M-I$ is nilpotent on $V$ and invertible on $W$. Suppose that $W \\neq 0$.\nSplit $v$ as $v_1 + v_2$ with $v_1 \\in V$, $v_2 \\in W$. Since $M-I$ is invertible on $W$, there exists a\nunique $w \\in W$ such that $(M-I)w = -v_2$. Then $G^{(k)}(w) - w \\in V$ for all nonnegative integers $k$.\nLet $k$ be the least positive integer such that $G^{(k)}(w) = w$; then $k$ is at most the cardinality of $V$,\nwhich is strictly less than $p^n$ because $W \\neq 0$. This gives a contradiction and thus forces $W = 0$.\n\nIn other words, the matrix $N = M-I$ is nilpotent; consequently, $N^n = 0$.\nFor any positive integer $k$, we have\n\\begin{align*}\nG^{(k)}(0) &= v + Mv + \\cdots + M^{k-1}v \\\\\n&=  \\sum_{j=0}^{k-1}  \\sum_{i=0}^{n-1} \\binom{j}{i} N^i v \\\\\n&= \\sum_{i=0}^{n-1} \\binom{k}{i+1} N^i v.\n\\end{align*}\nIf $n \\geq 2$ and $(p,n) \\neq (2,2)$, then $p^{n-1} > n$ and so $G^{k}(0) = 0$ for $k = p^{n-1}$ (because all\nof the binomial coefficients are divisible by $p$). This contradiction\ncompletes the proof.",
+  "vars": [
+    "x",
+    "k",
+    "j",
+    "i",
+    "w",
+    "v_1",
+    "v_2"
+  ],
+  "params": [
+    "p",
+    "n",
+    "v",
+    "M",
+    "G",
+    "I",
+    "N",
+    "F_p",
+    "V",
+    "W"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "p": "primechar",
+        "n": "dimension",
+        "v": "shiftvec",
+        "M": "matrixmap",
+        "G": "affinefnc",
+        "I": "identmat",
+        "N": "nilmatrx",
+        "F_p": "finitefld",
+        "V": "nullspace",
+        "W": "invspace",
+        "x": "inputvec",
+        "k": "iterate",
+        "j": "summand",
+        "i": "indexvar",
+        "w": "pickvec",
+        "v_1": "subvecone",
+        "v_2": "subvectwo"
+      },
+      "question": "Let $finitefld$ denote the field of integers modulo a prime $primechar$, and let $dimension$ be a positive integer.\nLet $shiftvec$ be a fixed vector in $finitefld^{dimension}$, let $matrixmap$ be a $dimension \\times dimension$ matrix with entries of $finitefld$,\nand define $affinefnc: finitefld^{dimension} \\to finitefld^{dimension}$ by $affinefnc(inputvec) = shiftvec + matrixmap inputvec$. Let $affinefnc^{(iterate)}$ denote the $iterate$-fold\ncomposition of $affinefnc$ with itself, that is, $affinefnc^{(1)}(inputvec) = affinefnc(inputvec)$ and $affinefnc^{(iterate+1)}(inputvec) = affinefnc(affinefnc^{(iterate)}(inputvec))$.\nDetermine all pairs $primechar, dimension$ for which there exist $shiftvec$ and $matrixmap$ such that the $primechar^{dimension}$ vectors\n$affinefnc^{(iterate)}(0)$, $iterate=1,2,\\dots,primechar^{dimension}$ are distinct.",
+      "solution": "The pairs $(primechar,dimension)$ with the specified property are those pairs with $dimension=1$, together with the single pair\n$(2,2)$. We first check that these do work. For $dimension=1$, it is clear that taking $shiftvec = (1)$ and $matrixmap = (0)$\nhas the desired effect. For $(primechar,dimension) = (2,2)$, we take $shiftvec = \\begin{pmatrix} 0 & 1 \\end{pmatrix}$\nand $matrixmap = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$ and then observe that\n\\[\naffinefnc^{(iterate)}(0) = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}, \\,\niterate=0,1,2,3.\n\\]\nWe next check that no other pairs work, keeping in mind that the desired condition means that\naffinefnc acts on $finitefld^{dimension}$ as a cyclic permutation. Assume by way of contradiction that $(primechar,dimension)$ has the desired\nproperty but does not appear in our list. In particular, we have $dimension \\geq 2$.\n\nLet $identmat$ be the $dimension \\times dimension$ identity matrix over $finitefld$.\nDecompose $finitefld^{dimension}$ as a direct sum of two subspaces $nullspace,invspace$ such that\n$matrixmap-identmat$ is nilpotent on $nullspace$ and invertible on $invspace$. Suppose that $invspace \\neq 0$.\nSplit $shiftvec$ as $subvecone + subvectwo$ with $subvecone \\in nullspace$, $subvectwo \\in invspace$. Since $matrixmap-identmat$ is invertible on $invspace$, there exists a\nunique $pickvec \\in invspace$ such that $(matrixmap-identmat)pickvec = -subvectwo$. Then $affinefnc^{(iterate)}(pickvec) - pickvec \\in nullspace$ for all nonnegative integers $iterate$.\nLet $iterate$ be the least positive integer such that $affinefnc^{(iterate)}(pickvec) = pickvec$; then $iterate$ is at most the cardinality of $nullspace$,\nwhich is strictly less than $primechar^{dimension}$ because $invspace \\neq 0$. This gives a contradiction and thus forces $invspace = 0$.\n\nIn other words, the matrix $nilmatrx = matrixmap-identmat$ is nilpotent; consequently, $nilmatrx^{dimension} = 0$.\nFor any positive integer $iterate$, we have\n\\begin{align*}\naffinefnc^{(iterate)}(0) &= shiftvec + matrixmap shiftvec + \\cdots + matrixmap^{iterate-1} shiftvec \\\\\n&=  \\sum_{summand=0}^{iterate-1}  \\sum_{indexvar=0}^{dimension-1} \\binom{summand}{indexvar} nilmatrx^{indexvar} shiftvec \\\\\n&= \\sum_{indexvar=0}^{dimension-1} \\binom{iterate}{indexvar+1} nilmatrx^{indexvar} shiftvec.\n\\end{align*}\nIf $dimension \\geq 2$ and $(primechar,dimension) \\neq (2,2)$, then $primechar^{dimension-1} > dimension$ and so $affinefnc^{iterate}(0) = 0$ for $iterate = primechar^{dimension-1}$ (because all\nof the binomial coefficients are divisible by $primechar$). This contradiction\ncompletes the proof."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "candlewax",
+        "k": "driftwood",
+        "j": "bluegrass",
+        "i": "peppermint",
+        "w": "hazelnuts",
+        "v_1": "silkworms",
+        "v_2": "raincloud",
+        "p": "sandpaper",
+        "n": "afterglow",
+        "v": "meadowlark",
+        "M": "tangerine",
+        "G": "moonscape",
+        "I": "stonework",
+        "N": "riverbank",
+        "F_p": "buttercup",
+        "V": "lemonleaf",
+        "W": "feathered"
+      },
+      "question": "Let $buttercup$ denote the field of integers modulo a prime $sandpaper$, and let $afterglow$ be a positive integer.\nLet $meadowlark$ be a fixed vector in $buttercup^{afterglow}$, let $tangerine$ be an $afterglow \\times afterglow$ matrix with entries of $buttercup$,\nand define $moonscape: buttercup^{afterglow} \\to buttercup^{afterglow}$ by $moonscape(candlewax) = meadowlark + tangerine candlewax$. Let $moonscape^{(driftwood)}$ denote the $driftwood$-fold\ncomposition of $moonscape$ with itself, that is, $moonscape^{(1)}(candlewax) = moonscape(candlewax)$ and $moonscape^{(driftwood+1)}(candlewax) = moonscape(moonscape^{(driftwood)}(candlewax))$.\nDetermine all pairs $sandpaper, afterglow$ for which there exist $meadowlark$ and $tangerine$ such that the $sandpaper^{afterglow}$ vectors\n$moonscape^{(driftwood)}(0)$, $driftwood=1,2,\\dots,sandpaper^{afterglow}$ are distinct.",
+      "solution": "The pairs $(sandpaper,afterglow)$ with the specified property are those pairs with $afterglow=1$, together with the single pair\n$(2,2)$. We first check that these do work. For $afterglow=1$, it is clear that taking $meadowlark = (1)$ and $tangerine = (0)$\nhas the desired effect. For $(sandpaper,afterglow) = (2,2)$, we take $meadowlark = \\begin{pmatrix} 0 & 1 \\end{pmatrix}$\nand $tangerine = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$ and then observe that\n\\[\nmoonscape^{(driftwood)}(0) = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}, \\,\ndriftwood=0,1,2,3.\n\\]\nWe next check that no other pairs work, keeping in mind that the desired condition means that\n$moonscape$ acts on $buttercup^{afterglow}$ as a cyclic permutation. Assume by way of contradiction that $(sandpaper,afterglow)$ has the desired\nproperty but does not appear in our list. In particular, we have $afterglow \\geq 2$.\n\nLet $stonework$ be the $afterglow \\times afterglow$ identity matrix over $buttercup$.\nDecompose $buttercup^{afterglow}$ as a direct sum of two subspaces $lemonleaf,feathered$ such that\n$tangerine-stonework$ is nilpotent on $lemonleaf$ and invertible on $feathered$. Suppose that $feathered \\neq 0$.\nSplit $meadowlark$ as $silkworms + raincloud$ with $silkworms \\in lemonleaf$, $raincloud \\in feathered$. Since $tangerine-stonework$ is invertible on $feathered$, there exists a\nunique $hazelnuts \\in feathered$ such that $(tangerine-stonework)hazelnuts = -raincloud$. Then $moonscape^{(driftwood)}(hazelnuts) - hazelnuts \\in lemonleaf$ for all nonnegative integers $driftwood$.\nLet $driftwood$ be the least positive integer such that $moonscape^{(driftwood)}(hazelnuts) = hazelnuts$; then $driftwood$ is at most the cardinality of $lemonleaf$,\nwhich is strictly less than $sandpaper^{afterglow}$ because $feathered \\neq 0$. This gives a contradiction and thus forces $feathered = 0$.\n\nIn other words, the matrix $riverbank = tangerine-stonework$ is nilpotent; consequently, $riverbank^{afterglow} = 0$.\nFor any positive integer $driftwood$, we have\n\\begin{align*}\nmoonscape^{(driftwood)}(0) &= meadowlark + tangerine meadowlark + \\cdots + tangerine^{driftwood-1} meadowlark \\\\\n&=  \\sum_{bluegrass=0}^{driftwood-1}  \\sum_{peppermint=0}^{afterglow-1} \\binom{bluegrass}{peppermint} riverbank^{peppermint} meadowlark \\\\\n&= \\sum_{peppermint=0}^{afterglow-1} \\binom{driftwood}{peppermint+1} riverbank^{peppermint} meadowlark.\n\\end{align*}\nIf $afterglow \\geq 2$ and $(sandpaper,afterglow) \\neq (2,2)$, then $sandpaper^{afterglow-1} > afterglow$ and so $moonscape^{driftwood}(0) = 0$ for $driftwood = sandpaper^{afterglow-1}$ (because all\nof the binomial coefficients are divisible by $sandpaper$). This contradiction\ncompletes the proof."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownscalar",
+        "k": "endingcount",
+        "j": "endpoint",
+        "i": "collective",
+        "w": "fixedpoint",
+        "v_1": "outercomponent",
+        "v_2": "innercomponent",
+        "p": "compositenumber",
+        "n": "zerovalue",
+        "v": "scalaroffset",
+        "M": "singlevector",
+        "G": "constantmap",
+        "I": "zeromatrix",
+        "N": "idempotent",
+        "F_p": "finitering",
+        "V": "superfullspace",
+        "W": "emptysubspace"
+      },
+      "question": "Let $\\finitering$ denote the field of integers modulo a prime $\\compositenumber$, and let $\\zerovalue$ be a positive integer.\nLet $\\scalaroffset$ be a fixed vector in $\\finitering^{\\zerovalue}$, let $\\singlevector$ be an $\\zerovalue \\times \\zerovalue$ matrix with entries of $\\finitering$, and define $\\constantmap: \\finitering^{\\zerovalue} \\to \\finitering^{\\zerovalue}$ by $\\constantmap(\\knownscalar) = \\scalaroffset + \\singlevector\\knownscalar$. Let $\\constantmap^{(\\endingcount)}$ denote the $\\endingcount$-fold composition of $\\constantmap$ with itself, that is, $\\constantmap^{(1)}(\\knownscalar) = \\constantmap(\\knownscalar)$ and $\\constantmap^{(\\endingcount+1)}(\\knownscalar) = \\constantmap(\\constantmap^{(\\endingcount)}(\\knownscalar))$.  Determine all pairs $\\compositenumber, \\zerovalue$ for which there exist $\\scalaroffset$ and $\\singlevector$ such that the $\\compositenumber^{\\zerovalue}$ vectors $\\constantmap^{(\\endingcount)}(0)$, $\\endingcount=1,2,\\dots,\\compositenumber^{\\zerovalue}$ are distinct.",
+      "solution": "The pairs $(\\compositenumber,\\zerovalue)$ with the specified property are those pairs with $\\zerovalue=1$, together with the single pair $(2,2)$. We first check that these do work. For $\\zerovalue=1$, it is clear that taking $\\scalaroffset = (1)$ and $\\singlevector = (0)$ has the desired effect. For $(\\compositenumber,\\zerovalue) = (2,2)$, we take $\\scalaroffset = \\begin{pmatrix} 0 & 1 \\end{pmatrix}$ and $\\singlevector = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$ and then observe that\n\\[\n\\constantmap^{(\\endingcount)}(0) = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}, \\,\n\\endingcount=0,1,2,3.\n\\]\n\nWe next check that no other pairs work, keeping in mind that the desired condition means that $\\constantmap$ acts on $\\finitering^{\\zerovalue}$ as a cyclic permutation. Assume by way of contradiction that $(\\compositenumber,\\zerovalue)$ has the desired property but does not appear in our list. In particular, we have $\\zerovalue \\geq 2$.\n\nLet $\\zeromatrix$ be the $\\zerovalue \\times \\zerovalue$ identity matrix over $\\finitering$. Decompose $\\finitering^{\\zerovalue}$ as a direct sum of two subspaces $\\superfullspace,\\emptysubspace$ such that $\\singlevector-\\zeromatrix$ is nilpotent on $\\superfullspace$ and invertible on $\\emptysubspace$. Suppose that $\\emptysubspace \\neq 0$. Split $\\scalaroffset$ as $\\outercomponent + \\innercomponent$ with $\\outercomponent \\in \\superfullspace$, $\\innercomponent \\in \\emptysubspace$. Since $\\singlevector-\\zeromatrix$ is invertible on $\\emptysubspace$, there exists a unique $\\fixedpoint \\in \\emptysubspace$ such that $(\\singlevector-\\zeromatrix)\\fixedpoint = -\\innercomponent$. Then $\\constantmap^{(\\endingcount)}(\\fixedpoint) - \\fixedpoint \\in \\superfullspace$ for all nonnegative integers $\\endingcount$. Let $\\endingcount$ be the least positive integer such that $\\constantmap^{(\\endingcount)}(\\fixedpoint) = \\fixedpoint$; then $\\endingcount$ is at most the cardinality of $\\superfullspace$, which is strictly less than $\\compositenumber^{\\zerovalue}$ because $\\emptysubspace \\neq 0$. This gives a contradiction and thus forces $\\emptysubspace = 0$.\n\nIn other words, the matrix $\\idempotent = \\singlevector-\\zeromatrix$ is nilpotent; consequently, $\\idempotent^{\\zerovalue} = 0$. For any positive integer $\\endingcount$, we have\n\\begin{align*}\n\\constantmap^{(\\endingcount)}(0) &= \\scalaroffset + \\singlevector\\scalaroffset + \\cdots + \\singlevector^{\\endingcount-1}\\scalaroffset \\\\\n&=  \\sum_{\\endpoint=0}^{\\endingcount-1}  \\sum_{\\collective=0}^{\\zerovalue-1} \\binom{\\endpoint}{\\collective} \\idempotent^{\\collective} \\scalaroffset \\\\\n&= \\sum_{\\collective=0}^{\\zerovalue-1} \\binom{\\endingcount}{\\collective+1} \\idempotent^{\\collective} \\scalaroffset.\n\\end{align*}\nIf $\\zerovalue \\geq 2$ and $(\\compositenumber,\\zerovalue) \\neq (2,2)$, then $\\compositenumber^{\\zerovalue-1} > \\zerovalue$ and so $\\constantmap^{\\compositenumber^{\\zerovalue-1}}(0) = 0$ (because all of the binomial coefficients are divisible by $\\compositenumber$). This contradiction completes the proof."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "k": "hjgrksla",
+        "j": "nfldkseo",
+        "i": "lxqtyrmd",
+        "w": "soihqtbk",
+        "v_1": "mqazplxm",
+        "v_2": "kgtrswop",
+        "p": "uiopghjk",
+        "n": "lkjhrewq",
+        "v": "asdfghjk",
+        "M": "zxcvbnml",
+        "G": "poiuytre",
+        "I": "mnbvcxzq",
+        "N": "qwertyui",
+        "F_p": "plmoknij",
+        "V": "qazwsxed",
+        "W": "edcrfvtg"
+      },
+      "question": "Let $\\plmoknij$ denote the field of integers modulo a prime $\\uiopghjk$, and let $\\lkjhrewq$ be a positive integer.\nLet $\\asdfghjk$ be a fixed vector in $\\plmoknij^{\\lkjhrewq}$, let $\\zxcvbnml$ be an $\\lkjhrewq \\times \\lkjhrewq$ matrix with entries of $\\plmoknij$, and define $\\poiuytre: \\plmoknij^{\\lkjhrewq} \\to \\plmoknij^{\\lkjhrewq}$ by $\\poiuytre(\\qzxwvtnp) = \\asdfghjk + \\zxcvbnml\\qzxwvtnp$. Let $\\poiuytre^{(\\hjgrksla)}$ denote the $\\hjgrksla$-fold composition of $\\poiuytre$ with itself, that is, $\\poiuytre^{(1)}(\\qzxwvtnp) = \\poiuytre(\\qzxwvtnp)$ and $\\poiuytre^{(\\hjgrksla+1)}(\\qzxwvtnp) = \\poiuytre(\\poiuytre^{(\\hjgrksla)}(\\qzxwvtnp))$. Determine all pairs $\\uiopghjk, \\lkjhrewq$ for which there exist $\\asdfghjk$ and $\\zxcvbnml$ such that the $\\uiopghjk^{\\lkjhrewq}$ vectors $\\poiuytre^{(\\hjgrksla)}(0)$, $\\hjgrksla=1,2,\\dots,\\uiopghjk^{\\lkjhrewq}$ are distinct.",
+      "solution": "The pairs $(\\uiopghjk,\\lkjhrewq)$ with the specified property are those pairs with $\\lkjhrewq=1$, together with the single pair $(2,2)$. We first check that these do work. For $\\lkjhrewq=1$, it is clear that taking $\\asdfghjk = (1)$ and $\\zxcvbnml = (0)$ has the desired effect. For $(\\uiopghjk,\\lkjhrewq) = (2,2)$, we take $\\asdfghjk = \\begin{pmatrix} 0 & 1 \\end{pmatrix}$ and $\\zxcvbnml = \\begin{pmatrix} 1 & 1 \\\\ 0 & 1 \\end{pmatrix}$ and then observe that\n\\[\n\\poiuytre^{(\\hjgrksla)}(0) = \\begin{pmatrix} 0 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 0 \\end{pmatrix},\n\\begin{pmatrix} 1 \\\\ 1 \\end{pmatrix}, \\,\n\\hjgrksla=0,1,2,3.\n\\]\nWe next check that no other pairs work, keeping in mind that the desired condition means that $\\poiuytre$ acts on $\\plmoknij^{\\lkjhrewq}$ as a cyclic permutation. Assume by way of contradiction that $(\\uiopghjk,\\lkjhrewq)$ has the desired property but does not appear in our list. In particular, we have $\\lkjhrewq \\ge 2$.\n\nLet $\\mnbvcxzq$ be the $\\lkjhrewq \\times \\lkjhrewq$ identity matrix over $\\plmoknij$.\nDecompose $\\plmoknij^{\\lkjhrewq}$ as a direct sum of two subspaces $\\qazwsxed,\\edcrfvtg$ such that $\\zxcvbnml-\\mnbvcxzq$ is nilpotent on $\\qazwsxed$ and invertible on $\\edcrfvtg$. Suppose that $\\edcrfvtg \\neq 0$.\nSplit $\\asdfghjk$ as $\\mqazplxm + \\kgtrswop$ with $\\mqazplxm \\in \\qazwsxed$, $\\kgtrswop \\in \\edcrfvtg$. Since $\\zxcvbnml-\\mnbvcxzq$ is invertible on $\\edcrfvtg$, there exists a unique $\\soihqtbk \\in \\edcrfvtg$ such that $(\\zxcvbnml-\\mnbvcxzq)\\soihqtbk = -\\kgtrswop$. Then $\\poiuytre^{(\\hjgrksla)}(\\soihqtbk) - \\soihqtbk \\in \\qazwsxed$ for all non-negative integers $\\hjgrksla$.\nLet $\\hjgrksla$ be the least positive integer such that $\\poiuytre^{(\\hjgrksla)}(\\soihqtbk) = \\soihqtbk$; then $\\hjgrksla$ is at most the cardinality of $\\qazwsxed$, which is strictly less than $\\uiopghjk^{\\lkjhrewq}$ because $\\edcrfvtg \\neq 0$. This gives a contradiction and thus forces $\\edcrfvtg = 0$.\n\nIn other words, the matrix $\\qwertyui = \\zxcvbnml-\\mnbvcxzq$ is nilpotent; consequently, $\\qwertyui^{\\lkjhrewq} = 0$.\nFor any positive integer $\\hjgrksla$, we have\n\\begin{align*}\n\\poiuytre^{(\\hjgrksla)}(0) &= \\asdfghjk + \\zxcvbnml\\asdfghjk + \\cdots + \\zxcvbnml^{\\hjgrksla-1}\\asdfghjk \\\\\n&= \\sum_{\\nfldkseo=0}^{\\hjgrksla-1} \\sum_{\\lxqtyrmd=0}^{\\lkjhrewq-1} \\binom{\\nfldkseo}{\\lxqtyrmd} \\qwertyui^{\\lxqtyrmd} \\asdfghjk \\\\\n&= \\sum_{\\lxqtyrmd=0}^{\\lkjhrewq-1} \\binom{\\hjgrksla}{\\lxqtyrmd+1} \\qwertyui^{\\lxqtyrmd} \\asdfghjk.\n\\end{align*}\nIf $\\lkjhrewq \\ge 2$ and $(\\uiopghjk,\\lkjhrewq) \\neq (2,2)$, then $\\uiopghjk^{\\lkjhrewq-1} > \\lkjhrewq$ and so $\\poiuytre^{\\hjgrksla}(0) = 0$ for $\\hjgrksla = \\uiopghjk^{\\lkjhrewq-1}$ (because all of the binomial coefficients are divisible by $\\uiopghjk$). This contradiction completes the proof."
+    },
+    "kernel_variant": {
+      "question": "Let $p$ be a prime and $n$ a positive integer.  Pick a vector $a\\in\\mathbb F_p^{\\,n}$ and an $n\\times n$ matrix $A$ with entries in $\\mathbb F_p$.  Define the affine map\n\\[\\qquad T(x)=a+Ax,\\qquad x\\in\\mathbb F_p^{\\,n}.\\]\nFor $k\\ge 1$ write $T^{(k)}$ for the $k$-fold iterate of $T$.  \n\nDetermine all pairs $(p,n)$ for which there exist $a$ and $A$ such that the $p^{n}$ vectors\n\\[T^{(k)}(0),\\;k=0,1,\\dots ,p^{n}-1\\]\nare pairwise distinct (so that $T$ acts as a single $p^{n}$-cycle on the space).",
+      "solution": "Answer.  The only pairs (p,n) for which such an affine map exists are\n\n   n=1  (for any prime p),\n   and the single extra case (p,n)=(2,2).\n\nWe first exhibit constructions in these cases, then show no others work.\n\n1.  Existence when n=1.  Work in F_p^1.  Take A=(1) (the 1\\times 1 identity) and choose any nonzero a\\in F_p (for instance a=1).  Then\n\n   T(x)=a+Ax = a+x,\n   so by induction\n   T^{(k)}(0) = k\\cdot a  in F_p.\n\nSince a\\neq 0 and F_p is a field of prime order, multiplication by a is a bijection, and k\\mapsto k\\cdot a runs through all p elements as k=0,1,\\ldots ,p-1.  Thus the orbit of 0 has length p.\n\n2.  Existence when (p,n)=(2,2).  Over F_2 take\n\n   a = [1;1],\n   A = [[1,0];[1,1]].\n\nThen one checks\n\n   T^{(0)}(0) = [0;0],\n   T^{(1)}(0) = [1;1],\n   T^{(2)}(0) = [0;1],\n   T^{(3)}(0) = [1;0],\n\nwhich exhausts all four vectors of F_2^2, giving a 4-cycle.\n\n3.  Necessity for all other (p,n).  Suppose n\\geq 2 and (p,n)\\neq (2,2), and that T(x)=a+Ax is a single p^n-cycle on F_p^n.  Let I be the identity and set N=A-I.\n\n  (a)  Decompose F_p^n = S\\oplus R so that N is nilpotent on S and invertible on R (Fitting decomposition).  Write a=s+r accordingly.\n\n  (b)  If R\\neq 0, solve N\\cdot u=-r in R (possible since N|_R invertible).  Then by induction one shows for all k\\geq 0,\n\n       T^{(k)}(u) - u \\in  S.\n\n   Hence the orbit of u lies in the affine subspace u+S of size p^{dim S}<p^n, contradicting transitivity of length p^n.  Thus R=0, and N=A-I is nilpotent on all of F_p^n.\n\n  (c)  Since N^n=0, one has (for any k\\geq 1)\n\n       T^{(k)}(0)\n       = a + A a + \\cdot \\cdot \\cdot  + A^{k-1}a\n       = \\sum _{j=0}^{k-1}(I+N)^j a\n       = \\sum _{i=0}^{n-1} binom(k,i+1)\\cdot N^i a.\n\n  (d)  Now choose k = p^{n-1}.  Because n\\geq 2 and (p,n)\\neq (2,2), we have p^{n-1}>n, so for each i with 0\\leq i\\leq n-1 the integer 1\\leq i+1\\leq n<p^{n-1}.  By Lucas's theorem each binomial coefficient binom(p^{n-1},i+1) is divisible by p.  Hence in F_p\n\n       T^{(k)}(0) = \\sum _{i=0}^{n-1} binom(p^{n-1},i+1)\\cdot N^i a = 0.\n\nSince 1\\leq k<p^n this contradicts the assumed full cycle of length p^n.  Thus no other pairs (p,n) can occur.\n\nCombining (1), (2), and (3) completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Distinct orbit ⇒ G acts as a cyclic permutation of 𝔽_p^n (order p^n).",
+          "Split 𝔽_p^n into V ⊕ W where N:=M−I is nilpotent on V and invertible on W.",
+          "If W≠0, pick w with (M−I)w = −v_W to get a cycle inside V, contradicting maximality; hence W=0 and N is nilpotent on all of 𝔽_p^n.",
+          "Expand G^{(k)}(0)=∑_{i=0}^{n−1} binom(k,i+1) N^{i}v using binomial theorem with N nilpotent (N^n=0).",
+          "Take k=p^{n−1}; binomial coefficients are 0 mod p when n≥2 except (p,n)=(2,2), forcing repetition and leaving only n=1 or (2,2)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Concrete v,M used to show existence for n=1.",
+            "original": "v=(1),  M=(0)."
+          },
+          "slot2": {
+            "description": "Concrete v,M used to show existence for (p,n)=(2,2).",
+            "original": "v=(0,1)^T,  M=[[1,1],[0,1]]."
+          },
+          "slot3": {
+            "description": "Choice of complementary subspaces V,W with the stated properties; many such decompositions work.",
+            "original": "Any decomposition so that (M−I)|_V is nilpotent and (M−I)|_W invertible."
+          },
+          "slot4": {
+            "description": "Vector w chosen to satisfy (M−I)w = −v_W; uniqueness/not needed.",
+            "original": "Any w in W solving (M−I)w = −v_2."
+          },
+          "slot5": {
+            "description": "Numerical bound k ≤ |V| used to get a short cycle; only need k < p^n.",
+            "original": "k chosen as the first positive integer with G^{(k)}(w)=w, so k≤|V|."
+          },
+          "slot6": {
+            "description": "Exponent n used in N^n=0; any exponent ≥ nilpotent index would suffice.",
+            "original": "N^n = 0 because dim 𝔽_p^n = n."
+          },
+          "slot7": {
+            "description": "Specific choice k = p^{n−1} to annihilate binomial coefficients; any p-power > n works.",
+            "original": "k = p^{n−1}."
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

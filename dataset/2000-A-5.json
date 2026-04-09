@@ -1,0 +1,91 @@
+{
+  "index": "2000-A-5",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Three distinct points with integer coordinates lie in the plane on a\ncircle of radius $r>0$.  Show that two of these points are separated by a\ndistance of at least $r^{1/3}$.",
+  "solution": "Let $a,b,c$ be the distances between the points. Then the area of the triangle\nwith the three points as vertices\nis $abc/4r$. On the other hand, the area of a triangle whose vertices\nhave integer coordinates is at least 1/2 (for example,\nby Pick's Theorem). Thus $abc/4r \\geq 1/2$,\nand so\n\\[\n\\max\\{a,b,c\\} \\geq (abc)^{1/3} \\geq (2r)^{1/3} > r^{1/3}.\n\\]",
+  "vars": [
+    "a",
+    "b",
+    "c"
+  ],
+  "params": [
+    "r"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "distone",
+        "b": "disttwo",
+        "c": "distthree",
+        "r": "radiusv"
+      },
+      "question": "Three distinct points with integer coordinates lie in the plane on a\ncircle of radius $radiusv>0$.  Show that two of these points are separated by a\ndistance of at least $radiusv^{1/3}$.",
+      "solution": "Let $distone,disttwo,distthree$ be the distances between the points. Then the area of the triangle\nwith the three points as vertices\nis $distone disttwo distthree/4 radiusv$. On the other hand, the area of a triangle whose vertices\nhave integer coordinates is at least 1/2 (for example,\nby Pick's Theorem). Thus $distone disttwo distthree/4 radiusv \\geq 1/2$,\nand so\n\\[\n\\max\\{distone,disttwo,distthree\\} \\geq (distone disttwo distthree)^{1/3} \\geq (2 radiusv)^{1/3} > radiusv^{1/3}.\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "raincoat",
+        "b": "theorems",
+        "c": "sunlight",
+        "r": "lampstand"
+      },
+      "question": "Three distinct points with integer coordinates lie in the plane on a\ncircle of radius $lampstand>0$.  Show that two of these points are separated by a\ndistance of at least $lampstand^{1/3}$.",
+      "solution": "Let $raincoat,theorems,sunlight$ be the distances between the points. Then the area of the triangle\nwith the three points as vertices\nis $raincoat\\,theorems\\,sunlight/4lampstand$. On the other hand, the area of a triangle whose vertices\nhave integer coordinates is at least 1/2 (for example,\nby Pick's Theorem). Thus $raincoat\\,theorems\\,sunlight/4lampstand \\geq 1/2$,\nand so\n\\[\n\\max\\{raincoat,theorems,sunlight\\} \\geq (raincoat\\,theorems\\,sunlight)^{1/3} \\geq (2lampstand)^{1/3} > lampstand^{1/3}.\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "proximity",
+        "b": "closeness",
+        "c": "adjacency",
+        "r": "centroid"
+      },
+      "question": "Three distinct points with integer coordinates lie in the plane on a\ncircle of radius $centroid>0$.  Show that two of these points are separated by a\ndistance of at least $centroid^{1/3}$.",
+      "solution": "Let $proximity,closeness,adjacency$ be the distances between the points. Then the area of the triangle\nwith the three points as vertices\nis $proximity closeness adjacency/4centroid$. On the other hand, the area of a triangle whose vertices\nhave integer coordinates is at least 1/2 (for example,\nby Pick's Theorem). Thus $proximity closeness adjacency/4centroid \\geq 1/2$,\nand so\n\\[\n\\max\\{proximity,closeness,adjacency\\} \\geq (proximity closeness adjacency)^{1/3} \\geq (2centroid)^{1/3} > centroid^{1/3}.\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "prbqlvex",
+        "r": "mxtkjesu"
+      },
+      "question": "Three distinct points with integer coordinates lie in the plane on a\ncircle of radius $mxtkjesu>0$.  Show that two of these points are separated by a\ndistance of at least $mxtkjesu^{1/3}$.",
+      "solution": "Let $qzxwvtnp,hjgrksla,prbqlvex$ be the distances between the points. Then the area of the triangle\nwith the three points as vertices\nis $qzxwvtnphjgrkslaprbqlvex/4mxtkjesu$. On the other hand, the area of a triangle whose vertices\nhave integer coordinates is at least 1/2 (for example,\nby Pick's Theorem). Thus $qzxwvtnphjgrkslaprbqlvex/4mxtkjesu \\geq 1/2$,\nand so\n\\[\n\\max\\{qzxwvtnp,hjgrksla,prbqlvex\\} \\geq (qzxwvtnphjgrkslaprbqlvex)^{1/3} \\geq (2mxtkjesu)^{1/3} > mxtkjesu^{1/3}.\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $r>0$.  Five distinct points whose \ncoordinates are all even integers lie on a common circle of radius $r$ in the plane.  Prove that among these five points there exist two whose distance is at least $2\\,r^{1/3}$.",
+      "solution": "Label any three of the given points and denote the pairwise distances between them by a, b, c.  These three points are vertices of a triangle inscribed in the circle of radius r, so\n\n    Area = abc/(4r).\n\nNext we estimate this area from below.  Because every coordinate of every vertex is an even integer, each vertex can be written as 2(x,y) with x,y\\in \\mathbb{Z}.  Dividing all coordinates by 2 therefore maps our triangle bijectively onto a triangle whose vertices have ordinary integer coordinates.  The linear map (x,y)\\mapsto (2x,2y) multiplies areas by the factor 2^2=4, hence\n\n    Area of original triangle = 4\\times (Area of image triangle).\n\nFor a triangle with integer-coordinate vertices the classical Pick (or Pick-type) argument gives a minimal positive area of 1/2.  Consequently, the original triangle has area at least\n\n    4\\times (1/2) = 2.\n\nCombining these two facts yields\n\n    abc/(4r) \\geq  2  \\Rightarrow   abc \\geq  8r.\n\nAmong the three numbers a,b,c let d = max{a,b,c}.  Then d^3 \\geq  abc, so from abc \\geq  8r\n\n    d^3 \\geq  8r  \\Rightarrow   d \\geq  (8r)^(1/3) = 2 r^(1/3).\n\nThus the chosen triple already contains two points at distance at least 2 r^(1/3).  A fortiori, the original collection of five points must contain such a pair as well.  This establishes the desired bound.",
+      "_meta": {
+        "core_steps": [
+          "Form the triangle determined by three lattice points on the circle.",
+          "Express its area with sides a,b,c and circumradius r:  A = abc / (4r).",
+          "Invoke lattice-area quantization (Pick): any non-degenerate lattice triangle has area ≥ A₀ (here 1/2).",
+          "Combine:  abc ≥ 4rA₀, hence max{a,b,c} ≥ (abc)^{1/3}.",
+          "Conclude a side ≥ (4A₀)^{1/3} · r^{1/3} > r^{1/3}."
+        ],
+        "mutable_slots": {
+          "slot_number_of_points": {
+            "description": "Total lattice points given on the circle (only three are needed for the argument).",
+            "original": "three distinct points"
+          },
+          "slot_min_lattice_area": {
+            "description": "Smallest positive area attainable by a lattice triangle, entering the Pick bound.",
+            "original": "1/2"
+          },
+          "slot_distance_threshold_factor": {
+            "description": "Leading constant multiplying r^{1/3} in the claimed separation; any value ≤ (4·(min lattice area))^{1/3} would still be guaranteed.",
+            "original": "1 (as in r^{1/3})"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

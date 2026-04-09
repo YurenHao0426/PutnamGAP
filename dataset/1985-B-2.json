@@ -1,0 +1,98 @@
+{
+  "index": "1985-B-2",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Define polynomials $f_n(x)$ for $n \\geq 0$ by $f_0(x)=1$, $f_n(0)=0$\nfor $n \\geq 1$, and\n\\[\n\\frac{d}{dx} f_{n+1}(x) = (n+1)f_n(x+1)\n\\]\nfor $n \\geq 0$. Find, with proof, the explicit factorization of\n$f_{100}(1)$ into powers of distinct primes.",
+  "solution": "Solution. By induction, the given properties determine \\( f_{n}(x) \\) uniquely. Computing and factoring \\( f_{n}(x) \\) for the first few \\( n \\) suggests that \\( f_{n}(x)=x(x+n)^{n-1} \\). We prove this by induction on \\( n \\). The base case \\( n=0 \\) is given: \\( f_{0}(x)=1 \\). For \\( n \\geq 0 \\), we indeed have \\( f_{n+1}(0)=0 \\) and\n\\[\n\\begin{aligned}\n\\frac{d}{d x} f_{n+1}(x) & =(x+n+1)^{n}+n x(x+n+1)^{n-1} \\\\\n& =(n+1)(x+1)(x+n+1)^{n-1} \\\\\n& =(n+1) f_{n}(x+1),\n\\end{aligned}\n\\]\nwhich completes the inductive step. Hence \\( f_{100}(1)=101^{99} \\). (Note that 101 is prime.)",
+  "vars": [
+    "x",
+    "f_0",
+    "f_n",
+    "f_n+1",
+    "f_100"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "inputvar",
+        "f_0": "polyzero",
+        "f_n": "polygenn",
+        "f_n+1": "polyincrement",
+        "f_100": "polyhundred",
+        "n": "indexvar"
+      },
+      "question": "Define polynomials $polygenn(inputvar)$ for $indexvar \\geq 0$ by $polyzero(inputvar)=1$, $polygenn(0)=0$ for $indexvar \\geq 1$, and\\[\n\\frac{d}{dinputvar} polyincrement(inputvar) = (indexvar+1)polygenn(inputvar+1)\\]for $indexvar \\geq 0$. Find, with proof, the explicit factorization of $polyhundred(1)$ into powers of distinct primes.",
+      "solution": "Solution. By induction, the given properties determine \\( polygenn(inputvar) \\) uniquely. Computing and factoring \\( polygenn(inputvar) \\) for the first few \\( indexvar \\) suggests that \\( polygenn(inputvar)=inputvar(inputvar+indexvar)^{indexvar-1} \\). We prove this by induction on \\( indexvar \\). The base case \\( indexvar=0 \\) is given: \\( polyzero(inputvar)=1 \\). For \\( indexvar \\geq 0 \\), we indeed have \\( polyincrement(0)=0 \\) and\n\\[\n\\begin{aligned}\n\\frac{d}{dinputvar} polyincrement(inputvar) & =(inputvar+indexvar+1)^{indexvar}+indexvar\\,inputvar(inputvar+indexvar+1)^{indexvar-1} \\\\\n& =(indexvar+1)(inputvar+1)(inputvar+indexvar+1)^{indexvar-1} \\\\\n& =(indexvar+1) polygenn(inputvar+1),\n\\end{aligned}\n\\]\nwhich completes the inductive step. Hence \\( polyhundred(1)=101^{99} \\). (Note that 101 is prime.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "blueberry",
+        "f_0": "albatross",
+        "f_n": "chandelier",
+        "f_n+1": "kangaroo",
+        "f_100": "marshmallow",
+        "n": "pineapple"
+      },
+      "question": "Define polynomials $chandelier(blueberry)$ for $pineapple \\geq 0$ by $albatross(blueberry)=1$, $chandelier(0)=0$\nfor $pineapple \\geq 1$, and\n\\[\n\\frac{d}{d blueberry} kangaroo(blueberry) = (pineapple+1)chandelier(blueberry+1)\n\\]\nfor $pineapple \\geq 0$. Find, with proof, the explicit factorization of\n$marshmallow(1)$ into powers of distinct primes.",
+      "solution": "Solution. By induction, the given properties determine \\( chandelier(blueberry) \\) uniquely. Computing and factoring \\( chandelier(blueberry) \\) for the first few \\( pineapple \\) suggests that \\( chandelier(blueberry)=blueberry(blueberry+pineapple)^{pineapple-1} \\). We prove this by induction on \\( pineapple \\). The base case \\( pineapple=0 \\) is given: \\( albatross(blueberry)=1 \\). For \\( pineapple \\geq 0 \\), we indeed have \\( kangaroo(0)=0 \\) and\n\\[\n\\begin{aligned}\n\\frac{d}{d blueberry} kangaroo(blueberry) & =(blueberry+pineapple+1)^{pineapple}+pineapple\\; blueberry(blueberry+pineapple+1)^{pineapple-1} \\\\\n& =(pineapple+1)(blueberry+1)(blueberry+pineapple+1)^{pineapple-1} \\\\\n& =(pineapple+1) chandelier(blueberry+1),\n\\end{aligned}\n\\]\nwhich completes the inductive step. Hence \\( marshmallow(1)=101^{99} \\). (Note that 101 is prime.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownvalue",
+        "f_0": "variablebasis",
+        "f_n": "constantpoly",
+        "f_n+1": "staticpoly",
+        "f_100": "mutablehundred",
+        "n": "fixedscalar"
+      },
+      "question": "Define polynomials $constantpoly(knownvalue)$ for $fixedscalar \\geq 0$ by $variablebasis(knownvalue)=1$, $constantpoly(0)=0$\nfor $fixedscalar \\geq 1$, and\n\\[\n\\frac{d}{dknownvalue} staticpoly(knownvalue) = (fixedscalar+1)constantpoly(knownvalue+1)\n\\]\nfor $fixedscalar \\geq 0$. Find, with proof, the explicit factorization of\n$mutablehundred(1)$ into powers of distinct primes.",
+      "solution": "Solution. By induction, the given properties determine \\( constantpoly(knownvalue) \\) uniquely. Computing and factoring \\( constantpoly(knownvalue) \\) for the first few \\( fixedscalar \\) suggests that \\( constantpoly(knownvalue)=knownvalue(knownvalue+fixedscalar)^{fixedscalar-1} \\). We prove this by induction on \\( fixedscalar \\). The base case \\( fixedscalar=0 \\) is given: \\( variablebasis(knownvalue)=1 \\). For \\( fixedscalar \\geq 0 \\), we indeed have \\( constantpoly(0)=0 \\) and\n\\[\n\\begin{aligned}\n\\frac{d}{d knownvalue} staticpoly(knownvalue) & =(knownvalue+fixedscalar+1)^{fixedscalar}+fixedscalar\\; knownvalue(knownvalue+fixedscalar+1)^{fixedscalar-1} \\\\\n& =(fixedscalar+1)(knownvalue+1)(knownvalue+fixedscalar+1)^{fixedscalar-1} \\\\\n& =(fixedscalar+1) constantpoly(knownvalue+1),\n\\end{aligned}\n\\]\nwhich completes the inductive step. Hence \\( mutablehundred(1)=101^{99} \\). (Note that 101 is prime.)"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "f_0": "hjgrksla",
+        "f_{0}": "hjgrksla",
+        "f_n": "pldmxcve",
+        "f_{n}": "pldmxcve",
+        "f_n+1": "rnjqtwya",
+        "f_{n+1}": "rnjqtwya",
+        "f_100": "skvdmhou",
+        "f_{100}": "skvdmhou",
+        "n": "vyteqzrb"
+      },
+      "question": "Define polynomials $pldmxcve(qzxwvtnp)$ for $vyteqzrb \\geq 0$ by $hjgrksla(qzxwvtnp)=1$, $pldmxcve(0)=0$\nfor $vyteqzrb \\geq 1$, and\n\\[\n\\frac{d}{d qzxwvtnp} rnjqtwya(qzxwvtnp) = (vyteqzrb+1)pldmxcve(qzxwvtnp+1)\n\\]\nfor $vyteqzrb \\geq 0$. Find, with proof, the explicit factorization of\n$skvdmhou(1)$ into powers of distinct primes.",
+      "solution": "Solution. By induction, the given properties determine \\( pldmxcve(qzxwvtnp) \\) uniquely. Computing and factoring \\( pldmxcve(qzxwvtnp) \\) for the first few \\( vyteqzrb \\) suggests that \\( pldmxcve(qzxwvtnp)=qzxwvtnp(qzxwvtnp+vyteqzrb)^{vyteqzrb-1} \\). We prove this by induction on \\( vyteqzrb \\). The base case \\( vyteqzrb=0 \\) is given: \\( hjgrksla(qzxwvtnp)=1 \\). For \\( vyteqzrb \\geq 0 \\), we indeed have \\( rnjqtwya(0)=0 \\) and\n\\[\n\\begin{aligned}\n\\frac{d}{d qzxwvtnp} rnjqtwya(qzxwvtnp) & =(qzxwvtnp+vyteqzrb+1)^{vyteqzrb}+vyteqzrb \\, qzxwvtnp(qzxwvtnp+vyteqzrb+1)^{vyteqzrb-1} \\\\\n& =(vyteqzrb+1)(qzxwvtnp+1)(qzxwvtnp+vyteqzrb+1)^{vyteqzrb-1} \\\\\n& =(vyteqzrb+1) pldmxcve(qzxwvtnp+1),\n\\end{aligned}\n\\]\nwhich completes the inductive step. Hence \\( skvdmhou(1)=101^{99} \\). (Note that 101 is prime.)"
+    },
+    "kernel_variant": {
+      "question": "Let $a=210$ and construct the sequence of monic polynomials $\\bigl(P_{n}(x)\\bigr)_{n\\ge 0}$ by the four simultaneous conditions  \n\n1. $P_{0}(x)=1$;\n\n2. $P_{n}(a)=0\\quad(n\\ge 1)$;\n\n3. $P_{n+1}'(x)=(n+1)\\,P_{n}(x+a)\\quad(n\\ge 0)$;\n\n4. the coefficient of $x^{n}$ in $P_{n}(x)$ equals $1\\;(n\\ge 1)$.  \n\n(The four requirements determine each $P_{n}$ uniquely and guarantee its existence.)\n\nDetermine, with proof, the complete factorisation of the integer  \n\n\\[\nP_{210}(a+14)=P_{210}(224)\n\\]\n\ninto powers of (distinct) prime numbers.\n\n--------------------------------------------------------------------",
+      "solution": "\\textbf{Step 1: A closed formula for $P_{n}$.}  \nWe claim that, for every integer $n\\ge 1$,  \n\\[\nP_{n}(x)=\\bigl(x-a\\bigr)\\bigl(x+(n-1)a\\bigr)^{\\,n-1}.\n\\tag{$\\ast$}\n\\]\nThe right-hand side is a monic polynomial of degree $n$.  \nIf it satisfies the zero-condition (2) and the derivative condition (3), then by uniqueness it coincides with $P_{n}$.\n\n\\textit{Verification by induction on $n$.}\n\nBase case $n=1$.  \nCondition (3) with $n=0$ gives $P_{1}'(x)=P_{0}(x+a)=1$, so $P_{1}(x)=x+C$.  \nCondition (2) forces $C=-a$, whence $P_{1}(x)=x-a$, agreeing with $(\\ast)$.\n\nInduction step.  \nAssume $(\\ast)$ holds for a fixed $n\\ge 1$ and define  \n\\[\nQ_{n+1}(x):=\\bigl(x-a\\bigr)\\bigl(x+na\\bigr)^{\\,n}.\n\\]\nDifferentiate:\n\\[\n\\begin{aligned}\nQ_{n+1}'(x)\n&=\\bigl(x+na\\bigr)^{n}+n\\bigl(x-a\\bigr)\\bigl(x+na\\bigr)^{n-1}\\\\\n&=\\bigl(x+na\\bigr)^{n-1}\\!\\Bigl[(x+na)+n(x-a)\\Bigr]\\\\\n&=\\bigl(x+na\\bigr)^{n-1}(n+1)\\,x\\\\\n&=(n+1)\\,P_{n}(x+a),\n\\end{aligned}\n\\]\nwhere the last equality uses the induction hypothesis with $x$ replaced by $x+a$.  \nHence $Q_{n+1}$ satisfies (3); it also satisfies (2) because of the factor $(x-a)$ and is visibly monic.  \nBy uniqueness $Q_{n+1}=P_{n+1}$, completing the induction and proving $(\\ast)$.\n\n\\textbf{Step 2: Specialise to $a=210,\\;n=210$.}\n\nBy $(\\ast)$,\n\\[\nP_{210}(x)=\\bigl(x-210\\bigr)\\bigl(x+209\\cdot210\\bigr)^{209}.\n\\]\nPut $x=224=210+14$:\n\\[\nP_{210}(224)=14\\;\\bigl(224+209\\cdot210\\bigr)^{209}\n           =14\\,(44114)^{209}.\n\\tag{1}\n\\]\n\n\\textbf{Step 3: Factor $14$ and $44114$.}\n\n(i) $14=2\\times7$.\n\n(ii) $44114$ is even, so $2$ is a factor.  Write $44114=2\\times22057$.  \nSince $22057\\equiv0\\pmod 7$, divide: $22057=7\\times3151$.  \nNow  \n\\[\n3151\\equiv0\\pmod{23}\\quad\\bigl(23\\times137=3151\\bigr),\n\\]\nand $137$ is prime.  Thus  \n\\[\n44114=2\\times7\\times23\\times137.\n\\]\n\n\\textbf{Step 4: Assemble the exponents.}\n\nEquation (1) gives\n\\[\nP_{210}(224)\n   =(2\\times7)\\bigl(2\\times7\\times23\\times137\\bigr)^{209}\n   =2^{1+209}\\,7^{1+209}\\,23^{209}\\,137^{209}.\n\\]\n\nHence  \n\\[\nP_{210}(224)=2^{210}\\times7^{210}\\times23^{209}\\times137^{209},\n\\]\nwhich is already a product of powers of distinct primes.\n\n\\textbf{Answer.}\\quad\n\\[\n\\boxed{P_{210}(224)=2^{210}\\,7^{210}\\,23^{209}\\,137^{209}.}\n\\]\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.685538",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  The original problem required guessing a one–factor closed form; here we must discover and justify a two–parameter family (shift $a$, degree $n$) and verify it under three simultaneous constraints (differential equation, zero–condition, and normalisation).  \n2.  The presence of the extra normalisation condition removes the spurious constant multiples that usually plague first–order differential recursions, forcing a more careful uniqueness argument.  \n3.  The factor $(x-a)\\bigl(x+(n-1)a\\bigr)^{n-1}$ must be inferred, proved, and then specialised; this is subtler than the single–shift pattern $x(x+n)^{n-1}$ in the kernel variant.  \n4.  Final evaluation requires handling three different primes, giving exponents that are linear functions of $n$; the prime $2$ has to be tracked twice (from the prefactor and from $506$ itself), so systematic exponent bookkeeping is mandatory.  \n5.  Overall, compared with the kernel variant (“one zero, one derivative, one prime”), we now have two structural constraints, parametrised shift $a$, an extra normalisation condition, three primes in the answer, and longer inductive verifications—substantially increasing both conceptual and computational complexity."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $a=210$ and construct the sequence of monic polynomials $\\bigl(P_{n}(x)\\bigr)_{n\\ge 0}$ by the four simultaneous conditions  \n\n1. $P_{0}(x)=1$;\n\n2. $P_{n}(a)=0\\quad(n\\ge 1)$;\n\n3. $P_{n+1}'(x)=(n+1)\\,P_{n}(x+a)\\quad(n\\ge 0)$;\n\n4. the coefficient of $x^{n}$ in $P_{n}(x)$ equals $1\\;(n\\ge 1)$.  \n\n(The four requirements determine each $P_{n}$ uniquely and guarantee its existence.)\n\nDetermine, with proof, the complete factorisation of the integer  \n\n\\[\nP_{210}(a+14)=P_{210}(224)\n\\]\n\ninto powers of (distinct) prime numbers.\n\n--------------------------------------------------------------------",
+      "solution": "\\textbf{Step 1: A closed formula for $P_{n}$.}  \nWe claim that, for every integer $n\\ge 1$,  \n\\[\nP_{n}(x)=\\bigl(x-a\\bigr)\\bigl(x+(n-1)a\\bigr)^{\\,n-1}.\n\\tag{$\\ast$}\n\\]\nThe right-hand side is a monic polynomial of degree $n$.  \nIf it satisfies the zero-condition (2) and the derivative condition (3), then by uniqueness it coincides with $P_{n}$.\n\n\\textit{Verification by induction on $n$.}\n\nBase case $n=1$.  \nCondition (3) with $n=0$ gives $P_{1}'(x)=P_{0}(x+a)=1$, so $P_{1}(x)=x+C$.  \nCondition (2) forces $C=-a$, whence $P_{1}(x)=x-a$, agreeing with $(\\ast)$.\n\nInduction step.  \nAssume $(\\ast)$ holds for a fixed $n\\ge 1$ and define  \n\\[\nQ_{n+1}(x):=\\bigl(x-a\\bigr)\\bigl(x+na\\bigr)^{\\,n}.\n\\]\nDifferentiate:\n\\[\n\\begin{aligned}\nQ_{n+1}'(x)\n&=\\bigl(x+na\\bigr)^{n}+n\\bigl(x-a\\bigr)\\bigl(x+na\\bigr)^{n-1}\\\\\n&=\\bigl(x+na\\bigr)^{n-1}\\!\\Bigl[(x+na)+n(x-a)\\Bigr]\\\\\n&=\\bigl(x+na\\bigr)^{n-1}(n+1)\\,x\\\\\n&=(n+1)\\,P_{n}(x+a),\n\\end{aligned}\n\\]\nwhere the last equality uses the induction hypothesis with $x$ replaced by $x+a$.  \nHence $Q_{n+1}$ satisfies (3); it also satisfies (2) because of the factor $(x-a)$ and is visibly monic.  \nBy uniqueness $Q_{n+1}=P_{n+1}$, completing the induction and proving $(\\ast)$.\n\n\\textbf{Step 2: Specialise to $a=210,\\;n=210$.}\n\nBy $(\\ast)$,\n\\[\nP_{210}(x)=\\bigl(x-210\\bigr)\\bigl(x+209\\cdot210\\bigr)^{209}.\n\\]\nPut $x=224=210+14$:\n\\[\nP_{210}(224)=14\\;\\bigl(224+209\\cdot210\\bigr)^{209}\n           =14\\,(44114)^{209}.\n\\tag{1}\n\\]\n\n\\textbf{Step 3: Factor $14$ and $44114$.}\n\n(i) $14=2\\times7$.\n\n(ii) $44114$ is even, so $2$ is a factor.  Write $44114=2\\times22057$.  \nSince $22057\\equiv0\\pmod 7$, divide: $22057=7\\times3151$.  \nNow  \n\\[\n3151\\equiv0\\pmod{23}\\quad\\bigl(23\\times137=3151\\bigr),\n\\]\nand $137$ is prime.  Thus  \n\\[\n44114=2\\times7\\times23\\times137.\n\\]\n\n\\textbf{Step 4: Assemble the exponents.}\n\nEquation (1) gives\n\\[\nP_{210}(224)\n   =(2\\times7)\\bigl(2\\times7\\times23\\times137\\bigr)^{209}\n   =2^{1+209}\\,7^{1+209}\\,23^{209}\\,137^{209}.\n\\]\n\nHence  \n\\[\nP_{210}(224)=2^{210}\\times7^{210}\\times23^{209}\\times137^{209},\n\\]\nwhich is already a product of powers of distinct primes.\n\n\\textbf{Answer.}\\quad\n\\[\n\\boxed{P_{210}(224)=2^{210}\\,7^{210}\\,23^{209}\\,137^{209}.}\n\\]\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.537524",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  The original problem required guessing a one–factor closed form; here we must discover and justify a two–parameter family (shift $a$, degree $n$) and verify it under three simultaneous constraints (differential equation, zero–condition, and normalisation).  \n2.  The presence of the extra normalisation condition removes the spurious constant multiples that usually plague first–order differential recursions, forcing a more careful uniqueness argument.  \n3.  The factor $(x-a)\\bigl(x+(n-1)a\\bigr)^{n-1}$ must be inferred, proved, and then specialised; this is subtler than the single–shift pattern $x(x+n)^{n-1}$ in the kernel variant.  \n4.  Final evaluation requires handling three different primes, giving exponents that are linear functions of $n$; the prime $2$ has to be tracked twice (from the prefactor and from $506$ itself), so systematic exponent bookkeeping is mandatory.  \n5.  Overall, compared with the kernel variant (“one zero, one derivative, one prime”), we now have two structural constraints, parametrised shift $a$, an extra normalisation condition, three primes in the answer, and longer inductive verifications—substantially increasing both conceptual and computational complexity."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

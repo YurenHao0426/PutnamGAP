@@ -1,0 +1,82 @@
+{
+  "index": "1973-A-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-3. Let \\( n \\) be a fixed positive integer and let \\( b(n) \\) be the minimum value of\n\\[\nk+\\frac{n}{k}\n\\]\nas \\( k \\) is allowed to range through all positive integers. Prove that \\( b(n) \\) and \\( \\sqrt{4 n+1} \\) have the same integer part. [The \"integer part\" of a real number is the greatest integer which does not exceed it, e.g. for \\( \\pi \\) it is 3 , for \\( \\sqrt{21} \\) it is 4 , for 5 it is 5 , etc.]",
+  "solution": "A-3. Let \\( c(n)=\\sqrt{4 n+1} \\) and let \\( [x] \\) denote the greatest integer in \\( x \\); then we wish to show that \\( [b(n)]=[c(n)] \\). Let \\( k(n) \\) be a value of \\( k \\) that minimizes \\( k+(n / k) \\). Then\n\\[\nb(n-1) \\leqq k(n)+\\{(n-1) / k(n)\\}<k(n)+\\{n / k(n)\\}=b(n)\n\\]\ni.e., \\( b(n-1)<b(n) \\). Let \\( m \\) be a positive integer. Then\n\\[\nb\\left(m^{2}\\right)=2 m, b\\left(m^{2}+m\\right)=2 m+1 .\n\\]\n\nIt follows from formulas (I) and the strictly increasing nature of \\( b(n) \\) that\n\\[\n\\begin{array}{c}\n{[b(n)]=2 m \\text { for } m^{2} \\leqq n<m^{2}+m,[b(n)]=2 m+1 \\text { for } m^{2}+m} \\\\\n\\leqq n<(m+1)^{2}\n\\end{array}\n\\]\n\nOn the other hand, \\( c(n) \\) is also an increasing function and\n\\[\n\\begin{aligned}\nc\\left(m^{2}-1\\right)=\\sqrt{4 m^{2}-3}<2 m, c\\left(m^{2}\\right) & =\\sqrt{4 m^{2}+1}>2 m, c\\left(m^{2}+m\\right) \\\\\n& =\\sqrt{4 m^{2}+4 m+1}=2 m+1\n\\end{aligned}\n\\]\n\nThese facts show that (II) remains true when \\( [c(n)] \\) is substituted for \\( [b(n)] \\).",
+  "vars": [
+    "n",
+    "k",
+    "m",
+    "x"
+  ],
+  "params": [
+    "b",
+    "c"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvalue",
+        "k": "divisorvalue",
+        "m": "integerparam",
+        "x": "realnumber",
+        "b": "minimizer",
+        "c": "rootvalue"
+      },
+      "question": "A-3. Let \\( indexvalue \\) be a fixed positive integer and let \\( minimizer(indexvalue) \\) be the minimum value of\n\\[\ndivisorvalue+\\frac{indexvalue}{divisorvalue}\n\\]\nas \\( divisorvalue \\) is allowed to range through all positive integers. Prove that \\( minimizer(indexvalue) \\) and \\( \\sqrt{4 indexvalue+1} \\) have the same integer part. [The \"integer part\" of a real number is the greatest integer which does not exceed it, e.g. for \\( \\pi \\) it is 3 , for \\( \\sqrt{21} \\) it is 4 , for 5 it is 5 , etc.]",
+      "solution": "A-3. Let \\( rootvalue(indexvalue)=\\sqrt{4 indexvalue+1} \\) and let \\([realnumber]\\) denote the greatest integer in \\( realnumber \\); then we wish to show that \\([minimizer(indexvalue)]=[rootvalue(indexvalue)]\\). Let \\( divisorvalue(indexvalue) \\) be a value of \\( divisorvalue \\) that minimizes \\( divisorvalue+(indexvalue / divisorvalue) \\). Then\n\\[\nminimizer(indexvalue-1) \\leqq divisorvalue(indexvalue)+\\{(indexvalue-1) / divisorvalue(indexvalue)\\}<divisorvalue(indexvalue)+\\{indexvalue / divisorvalue(indexvalue)\\}=minimizer(indexvalue)\n\\]\ni.e., \\( minimizer(indexvalue-1)<minimizer(indexvalue) \\). Let \\( integerparam \\) be a positive integer. Then\n\\[\nminimizer\\left(integerparam^{2}\\right)=2 integerparam, \\quad minimizer\\left(integerparam^{2}+integerparam\\right)=2 integerparam+1 .\n\\]\nIt follows from formulas (I) and the strictly increasing nature of \\( minimizer(indexvalue) \\) that\n\\[\n\\begin{array}{c}\n{[minimizer(indexvalue)]=2 integerparam \\text { for } integerparam^{2} \\leqq indexvalue<integerparam^{2}+integerparam,[minimizer(indexvalue)]=2 integerparam+1 \\text { for } integerparam^{2}+integerparam} \\\\\n\\leqq indexvalue<(integerparam+1)^{2}\n\\end{array}\n\\]\nOn the other hand, \\( rootvalue(indexvalue) \\) is also an increasing function and\n\\[\n\\begin{aligned}\nrootvalue\\left(integerparam^{2}-1\\right)=\\sqrt{4 integerparam^{2}-3}<2 integerparam, \\quad rootvalue\\left(integerparam^{2}\\right) & =\\sqrt{4 integerparam^{2}+1}>2 integerparam, \\\\ rootvalue\\left(integerparam^{2}+integerparam\\right) & =\\sqrt{4 integerparam^{2}+4 integerparam+1}=2 integerparam+1\n\\end{aligned}\n\\]\nThese facts show that (II) remains true when \\([rootvalue(indexvalue)]\\) is substituted for \\([minimizer(indexvalue)]\\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "orchardgoat",
+        "k": "lanternmist",
+        "m": "quiverstone",
+        "x": "harborclock",
+        "b": "spectrumleaf",
+        "c": "thunderpatch"
+      },
+      "question": "A-3. Let \\( orchardgoat \\) be a fixed positive integer and let \\( spectrumleaf(orchardgoat) \\) be the minimum value of\n\\[\nlanternmist+\\frac{orchardgoat}{lanternmist}\n\\]\nas \\( lanternmist \\) is allowed to range through all positive integers. Prove that \\( spectrumleaf(orchardgoat) \\) and \\( \\sqrt{4 orchardgoat+1} \\) have the same integer part. [The \"integer part\" of a real number is the greatest integer which does not exceed it, e.g. for \\( \\pi \\) it is 3 , for \\( \\sqrt{21} \\) it is 4 , for 5 it is 5 , etc.]",
+      "solution": "A-3. Let \\( thunderpatch(orchardgoat)=\\sqrt{4 orchardgoat+1} \\) and let \\( [harborclock] \\) denote the greatest integer in \\( harborclock \\); then we wish to show that \\( [spectrumleaf(orchardgoat)]=[thunderpatch(orchardgoat)] \\). Let \\( lanternmist(orchardgoat) \\) be a value of \\( lanternmist \\) that minimizes \\( lanternmist+(orchardgoat / lanternmist) \\). Then\n\\[\nspectrumleaf(orchardgoat-1) \\leqq lanternmist(orchardgoat)+\\{(orchardgoat-1) / lanternmist(orchardgoat)\\}<lanternmist(orchardgoat)+\\{orchardgoat / lanternmist(orchardgoat)\\}=spectrumleaf(orchardgoat)\n\\]\ni.e., \\( spectrumleaf(orchardgoat-1)<spectrumleaf(orchardgoat) \\). Let \\( quiverstone \\) be a positive integer. Then\n\\[\nspectrumleaf\\left(quiverstone^{2}\\right)=2 quiverstone, spectrumleaf\\left(quiverstone^{2}+quiverstone\\right)=2 quiverstone+1 .\n\\]\n\nIt follows from formulas (I) and the strictly increasing nature of \\( spectrumleaf(orchardgoat) \\) that\n\\[\n\\begin{array}{c}\n{[spectrumleaf(orchardgoat)]=2 quiverstone \\text { for } quiverstone^{2} \\leqq orchardgoat<quiverstone^{2}+quiverstone,[spectrumleaf(orchardgoat)]=2 quiverstone+1 \\text { for } quiverstone^{2}+quiverstone} \\\\\n\\leqq orchardgoat<(quiverstone+1)^{2}\n\\end{array}\n\\]\n\nOn the other hand, \\( thunderpatch(orchardgoat) \\) is also an increasing function and\n\\[\n\\begin{aligned}\nthunderpatch\\left(quiverstone^{2}-1\\right)=\\sqrt{4 quiverstone^{2}-3}<2 quiverstone, thunderpatch\\left(quiverstone^{2}\\right) & =\\sqrt{4 quiverstone^{2}+1}>2 quiverstone, thunderpatch\\left(quiverstone^{2}+quiverstone\\right) \\\\\n& =\\sqrt{4 quiverstone^{2}+4 quiverstone+1}=2 quiverstone+1\n\\end{aligned}\n\\]\n\nThese facts show that (II) remains true when \\( [thunderpatch(orchardgoat)] \\) is substituted for \\( [spectrumleaf(orchardgoat)] \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "irrational",
+        "k": "continuous",
+        "m": "noninteger",
+        "x": "knownvalue",
+        "b": "upperbound",
+        "c": "smallest"
+      },
+      "question": "A-3. Let \\( irrational \\) be a fixed positive integer and let \\( upperbound(irrational) \\) be the minimum value of\n\\[\ncontinuous+\\frac{irrational}{continuous}\n\\]\nas \\( continuous \\) is allowed to range through all positive integers. Prove that \\( upperbound(irrational) \\) and \\( \\sqrt{4 irrational+1} \\) have the same integer part. [The \"integer part\" of a real number is the greatest integer which does not exceed it, e.g. for \\( \\pi \\) it is 3 , for \\( \\sqrt{21} \\) it is 4 , for 5 it is 5 , etc.]",
+      "solution": "A-3. Let \\( smallest(irrational)=\\sqrt{4 irrational+1} \\) and let \\( [knownvalue] \\) denote the greatest integer in \\( knownvalue \\); then we wish to show that \\( [upperbound(irrational)]=[smallest(irrational)] \\). Let \\( continuous(irrational) \\) be a value of \\( continuous \\) that minimizes \\( continuous+(irrational / continuous) \\). Then\n\\[\nupperbound(irrational-1) \\leqq continuous(irrational)+\\{(irrational-1) / continuous(irrational)\\}<continuous(irrational)+\\{irrational / continuous(irrational)\\}=upperbound(irrational)\n\\]\ni.e., \\( upperbound(irrational-1)<upperbound(irrational) \\). Let \\( noninteger \\) be a positive integer. Then\n\\[\nupperbound\\left(noninteger^{2}\\right)=2 noninteger, upperbound\\left(noninteger^{2}+noninteger\\right)=2 noninteger+1 .\n\\]\n\nIt follows from formulas (I) and the strictly increasing nature of \\( upperbound(irrational) \\) that\n\\[\n\\begin{array}{c}\n{[upperbound(irrational)]=2 noninteger \\text { for } noninteger^{2} \\leqq irrational<noninteger^{2}+noninteger,[upperbound(irrational)]=2 noninteger+1 \\text { for } noninteger^{2}+noninteger} \\\\\n\\leqq irrational<(noninteger+1)^{2}\n\\end{array}\n\\]\n\nOn the other hand, \\( smallest(irrational) \\) is also an increasing function and\n\\[\n\\begin{aligned}\nsmallest\\left(noninteger^{2}-1\\right)=\\sqrt{4 noninteger^{2}-3}<2 noninteger, smallest\\left(noninteger^{2}\\right) & =\\sqrt{4 noninteger^{2}+1}>2 noninteger, smallest\\left(noninteger^{2}+noninteger\\right) \\\\\n& =\\sqrt{4 noninteger^{2}+4 noninteger+1}=2 noninteger+1\n\\end{aligned}\n\\]\n\nThese facts show that (II) remains true when \\( [smallest(irrational)] \\) is substituted for \\( [upperbound(irrational)] \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "zqtrblmn",
+        "k": "hvcxroje",
+        "m": "dlkiuqpa",
+        "x": "gfnesvot",
+        "b": "pqwelyui",
+        "c": "mnbvdser"
+      },
+      "question": "A-3. Let \\( zqtrblmn \\) be a fixed positive integer and let \\( pqwelyui(zqtrblmn) \\) be the minimum value of\n\\[\nhvcxroje+\\frac{zqtrblmn}{hvcxroje}\n\\]\nas \\( hvcxroje \\) is allowed to range through all positive integers. Prove that \\( pqwelyui(zqtrblmn) \\) and \\( \\sqrt{4 zqtrblmn+1} \\) have the same integer part. [The \"integer part\" of a real number is the greatest integer which does not exceed it, e.g. for \\( \\pi \\) it is 3 , for \\( \\sqrt{21} \\) it is 4 , for 5 it is 5 , etc.]",
+      "solution": "A-3. Let \\( mnbvdser(zqtrblmn)=\\sqrt{4 zqtrblmn+1} \\) and let \\( [gfnesvot] \\) denote the greatest integer in \\( gfnesvot \\); then we wish to show that \\( [pqwelyui(zqtrblmn)]=[mnbvdser(zqtrblmn)] \\). Let \\( hvcxroje(zqtrblmn) \\) be a value of \\( hvcxroje \\) that minimizes \\( hvcxroje+(zqtrblmn / hvcxroje) \\). Then\n\\[\npqwelyui(zqtrblmn-1) \\leqq hvcxroje(zqtrblmn)+\\{(zqtrblmn-1) / hvcxroje(zqtrblmn)\\}<hvcxroje(zqtrblmn)+\\{zqtrblmn / hvcxroje(zqtrblmn)\\}=pqwelyui(zqtrblmn)\n\\]\ni.e., \\( pqwelyui(zqtrblmn-1)<pqwelyui(zqtrblmn) \\). Let \\( dlkiuqpa \\) be a positive integer. Then\n\\[\npqwelyui\\left(dlkiuqpa^{2}\\right)=2 dlkiuqpa, \\quad pqwelyui\\left(dlkiuqpa^{2}+dlkiuqpa\\right)=2 dlkiuqpa+1 .\n\\]\n\nIt follows from formulas (I) and the strictly increasing nature of \\( pqwelyui(zqtrblmn) \\) that\n\\[\n\\begin{array}{c}\n{[pqwelyui(zqtrblmn)]=2 dlkiuqpa \\text { for } dlkiuqpa^{2} \\leqq zqtrblmn<dlkiuqpa^{2}+dlkiuqpa,[pqwelyui(zqtrblmn)]=2 dlkiuqpa+1 \\text { for } dlkiuqpa^{2}+dlkiuqpa} \\\\\n\\leqq zqtrblmn<(dlkiuqpa+1)^{2}\n\\end{array}\n\\]\n\nOn the other hand, \\( mnbvdser(zqtrblmn) \\) is also an increasing function and\n\\[\n\\begin{aligned}\nmnbvdser\\left(dlkiuqpa^{2}-1\\right)=\\sqrt{4 dlkiuqpa^{2}-3}<2 dlkiuqpa, \\quad mnbvdser\\left(dlkiuqpa^{2}\\right) & =\\sqrt{4 dlkiuqpa^{2}+1}>2 dlkiuqpa, \\\\ mnbvdser\\left(dlkiuqpa^{2}+dlkiuqpa\\right) & =\\sqrt{4 dlkiuqpa^{2}+4 dlkiuqpa+1}=2 dlkiuqpa+1\n\\end{aligned}\n\\]\n\nThese facts show that (II) remains true when \\( [mnbvdser(zqtrblmn)] \\) is substituted for \\( [pqwelyui(zqtrblmn)] \\)."
+    },
+    "kernel_variant": {
+      "question": "For a positive integer n define  \n b(n)=min_{k\\in \\mathbb{Z}_{>0}} (k+n/k) and M(n)={k>0 : k+n/k=b(n)}.  \n\n(a) Prove that \\lfloor b(n)\\rfloor =\\lfloor \\sqrt{4n+1}\\rfloor .  \n(b) Determine the complete set M(n).  \n(c) Show the sharp estimate 0\\leq b(n)-2\\sqrt{n}<1/(2\\sqrt{n}).",
+      "solution": "Write f_n(k)=k+n/k, c(n)=\\sqrt{4n+1}, and let m=\\lfloor \\sqrt{n}\\rfloor .\n\n1.  Monotonicity. For every k, f_{n+1}(k)=f_n(k)+1/k>f_n(k); hence b(n+1)>b(n).\n\n2.  Anchor values. By AM-GM, f_{m^2}(m)=2m is minimal, so b(m^2)=2m.  \n Similarly f_{m^2+m}(m)=f_{m^2+m}(m+1)=2m+1 and neighbouring k's give larger\n values, whence b(m^2+m)=2m+1.  Using the strict increase proved in 1,\n\n  m^2\\leq n<m^2+m \\Rightarrow  2m\\leq b(n)<2m+1,  \n  m^2+m\\leq n<(m+1)^2 \\Rightarrow  2m+1\\leq b(n)<2m+2.\n\n Taking integer parts yields (a): \\lfloor b(n)\\rfloor =\\lfloor c(n)\\rfloor .\n\n3.  Minimizers.  Because k\\mapsto f_n(k) is convex, a minimiser lies in {m,m+1}.  \n Direct comparison gives  \n  M(n)={m}  if m^2\\leq n<m^2+m;  \n  M(n)={m,m+1} if n=m^2+m;  \n  M(n)={m+1} if m^2+m<n<(m+1)^2.\n\n4.  Error bound.  Write f_n(k)=2\\sqrt{n}+(k-\\sqrt{n})^2/k.  \n For k\\in M(n) we have |k-\\sqrt{n}|\\leq \\frac{1}{2}, hence\n\n  0\\leq b(n)-2\\sqrt{n}<(\\frac{1}{2})^2/(\\sqrt{n}-\\frac{1}{2})<1/(2\\sqrt{n}),\n\n establishing (c).",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.018972",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

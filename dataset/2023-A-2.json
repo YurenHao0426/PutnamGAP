@@ -1,0 +1,128 @@
+{
+  "index": "2023-A-2",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $n$ be an even positive integer. Let $p$ be a monic, real polynomial of degree $2n$; that is to say, $p(x) = x^{2n} + a_{2n-1} x^{2n-1} + \\cdots + a_1 x + a_0$ for some real coefficients $a_0, \\dots, a_{2n-1}$. Suppose that $p(1/k) = k^2$ for all integers $k$ such that $1 \\leq |k| \\leq n$. Find all other real numbers $x$ for which $p(1/x) = x^2$.",
+  "solution": "The only other real numbers with this property are $\\pm 1/n!$.\n(Note that these are indeed \\emph{other} values than $\\pm 1, \\dots, \\pm n$ because $n>1$.)\n\nDefine the polynomial $q(x) = x^{2n+2}-x^{2n}p(1/x) = x^{2n+2}-(a_0x^{2n}+\\cdots+a_{2n-1}x+1)$. The statement that $p(1/x)=x^2$ is equivalent (for $x\\neq 0$) to the statement that $x$ is a root of $q(x)$. Thus we know that $\\pm 1,\\pm 2,\\ldots,\\pm n$ are roots of $q(x)$, and we can write\n\\[\nq(x) = (x^2+ax+b)(x^2-1)(x^2-4)\\cdots (x^2-n^2)\n\\]\nfor some monic quadratic polynomial $x^2+ax+b$. Equating the coefficients of $x^{2n+1}$ and $x^0$ on both sides gives $0=a$ and $-1=(-1)^n(n!)^2 b$, respectively. Since $n$ is even, we have $x^2+ax+b = x^2-(n!)^{-2}$. We conclude that there are precisely two other real numbers $x$ such that $p(1/x)=x^2$, and they are $\\pm 1/n!$.",
+  "vars": [
+    "x",
+    "k"
+  ],
+  "params": [
+    "n",
+    "p",
+    "a_2n-1",
+    "a_1",
+    "a_0",
+    "q",
+    "a",
+    "b"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "indepvar",
+        "k": "intindex",
+        "n": "evenparam",
+        "p": "monicpoly",
+        "a_2n-1": "highcoeff",
+        "a_1": "firstcoeff",
+        "a_0": "zerocoeff",
+        "q": "auxipoly",
+        "a": "lincoeff",
+        "b": "constcoef"
+      },
+      "question": "Let $\\text{evenparam}$ be an even positive integer. Let $\\text{monicpoly}$ be a monic, real polynomial of degree $2\\text{evenparam}$; that is to say, $\\text{monicpoly}(\\text{indepvar}) = \\text{indepvar}^{2\\text{evenparam}} + \\text{highcoeff}\\,\\text{indepvar}^{2\\text{evenparam}-1} + \\cdots + \\text{firstcoeff}\\,\\text{indepvar} + \\text{zerocoeff}$ for some real coefficients $\\text{zerocoeff}, \\dots, \\text{highcoeff}$. Suppose that $\\text{monicpoly}(1/\\text{intindex}) = \\text{intindex}^2$ for all integers $\\text{intindex}$ such that $1 \\leq |\\text{intindex}| \\leq \\text{evenparam}$. Find all other real numbers $\\text{indepvar}$ for which $\\text{monicpoly}(1/\\text{indepvar}) = \\text{indepvar}^2$.",
+      "solution": "The only other real numbers with this property are $\\pm 1/\\text{evenparam}!$.\\par (Note that these are indeed \\emph{other} values than $\\pm 1, \\dots, \\pm \\text{evenparam}$ because $\\text{evenparam}>1$.)\\par Define the polynomial $\\text{auxipoly}(\\text{indepvar}) = \\text{indepvar}^{2\\text{evenparam}+2}-\\text{indepvar}^{2\\text{evenparam}}\\text{monicpoly}(1/\\text{indepvar}) = \\text{indepvar}^{2\\text{evenparam}+2}-(\\text{zerocoeff}\\,\\text{indepvar}^{2\\text{evenparam}}+\\cdots+\\text{highcoeff}\\,\\text{indepvar}+1)$. The statement that $\\text{monicpoly}(1/\\text{indepvar})=\\text{indepvar}^2$ is equivalent (for $\\text{indepvar}\\neq 0$) to the statement that $\\text{indepvar}$ is a root of $\\text{auxipoly}(\\text{indepvar})$. Thus we know that $\\pm 1,\\pm 2,\\ldots,\\pm \\text{evenparam}$ are roots of $\\text{auxipoly}(\\text{indepvar})$, and we can write\\[\n\\text{auxipoly}(\\text{indepvar}) = (\\text{indepvar}^2+\\lincoeff\\text{indepvar}+\\constcoef)(\\text{indepvar}^2-1)(\\text{indepvar}^2-4)\\cdots (\\text{indepvar}^2-\\text{evenparam}^2)\\]for some monic quadratic polynomial $\\text{indepvar}^2+\\lincoeff\\text{indepvar}+\\constcoef$. Equating the coefficients of $\\text{indepvar}^{2\\text{evenparam}+1}$ and $\\text{indepvar}^0$ on both sides gives $0=\\lincoeff$ and $-1=(-1)^{\\text{evenparam}}(\\text{evenparam}!)^2 \\constcoef$, respectively. Since $\\text{evenparam}$ is even, we have $\\text{indepvar}^2+\\lincoeff\\text{indepvar}+\\constcoef = \\text{indepvar}^2-(\\text{evenparam}!)^{-2}$. We conclude that there are precisely two other real numbers $\\text{indepvar}$ such that $\\text{monicpoly}(1/\\text{indepvar})=\\text{indepvar}^2$, and they are $\\pm 1/\\text{evenparam}!$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "dandelion",
+        "k": "butterscotch",
+        "n": "quartzite",
+        "p": "lemongrass",
+        "a_2n-1": "watermelon",
+        "a_1": "blackberry",
+        "a_0": "raspberry",
+        "q": "huckleberry",
+        "a": "tangerine",
+        "b": "cantaloupe"
+      },
+      "question": "Let $quartzite$ be an even positive integer. Let $lemongrass$ be a monic, real polynomial of degree $2quartzite$; that is to say, $lemongrass(dandelion) = dandelion^{2quartzite} + watermelon dandelion^{2quartzite-1} + \\cdots + blackberry dandelion + raspberry$ for some real coefficients raspberry, \\dots, watermelon. Suppose that $lemongrass(1/butterscotch) = butterscotch^2$ for all integers $butterscotch$ such that $1 \\leq |butterscotch| \\leq quartzite$. Find all other real numbers $dandelion$ for which $lemongrass(1/dandelion) = dandelion^2$.",
+      "solution": "The only other real numbers with this property are $\\pm 1/quartzite!$.\n(Note that these are indeed \\emph{other} values than $\\pm 1, \\dots, \\pm quartzite$ because $quartzite>1$.)\n\nDefine the polynomial $huckleberry(dandelion) = dandelion^{2quartzite+2}-dandelion^{2quartzite}lemongrass(1/dandelion) = dandelion^{2quartzite+2}-(raspberry dandelion^{2quartzite}+\\cdots+watermelon dandelion+1)$. The statement that $lemongrass(1/dandelion)=dandelion^2$ is equivalent (for $dandelion\\neq 0$) to the statement that $dandelion$ is a root of $huckleberry(dandelion)$. Thus we know that $\\pm 1,\\pm 2,\\ldots,\\pm quartzite$ are roots of $huckleberry(dandelion)$, and we can write\n\\[\nhuckleberry(dandelion) = (dandelion^2+tangerine dandelion+cantaloupe)(dandelion^2-1)(dandelion^2-4)\\cdots (dandelion^2-quartzite^2)\n\\]\nfor some monic quadratic polynomial $dandelion^2+tangerine dandelion+cantaloupe$. Equating the coefficients of $dandelion^{2quartzite+1}$ and $dandelion^0$ on both sides gives $0=tangerine$ and $-1=(-1)^{quartzite}(quartzite!)^2 cantaloupe$, respectively. Since $quartzite$ is even, we have $dandelion^2+tangerine dandelion+cantaloupe = dandelion^2-(quartzite!)^{-2}$. We conclude that there are precisely two other real numbers $dandelion$ such that $lemongrass(1/dandelion)=dandelion^2$, and they are $\\pm 1/quartzite!$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "k": "fractional",
+        "n": "oddnegative",
+        "p": "linearfunc",
+        "a_2n-1": "randomconst",
+        "a_1": "steadyconst",
+        "a_0": "nullconst",
+        "q": "singlenum",
+        "a": "nonzeroval",
+        "b": "variablex"
+      },
+      "question": "Let $\\oddnegative$ be an even positive integer. Let $\\linearfunc$ be a monic, real polynomial of degree $2\\oddnegative$; that is to say, $\\linearfunc(\\constantval) = \\constantval^{2\\oddnegative} + \\randomconst \\constantval^{2\\oddnegative-1} + \\cdots + \\steadyconst \\constantval + \\nullconst$ for some real coefficients $\\nullconst, \\dots, \\randomconst$. Suppose that $\\linearfunc(1/\\fractional) = \\fractional^2$ for all integers $\\fractional$ such that $1 \\leq |\\fractional| \\leq \\oddnegative$. Find all other real numbers $\\constantval$ for which $\\linearfunc(1/\\constantval) = \\constantval^2$.",
+      "solution": "The only other real numbers with this property are $\\pm 1/\\oddnegative!$.\n(Note that these are indeed \\emph{other} values than $\\pm 1, \\dots, \\pm \\oddnegative$ because $\\oddnegative>1$.)\n\nDefine the polynomial $\\singlenum(\\constantval) = \\constantval^{2\\oddnegative+2}-\\constantval^{2\\oddnegative}\\linearfunc(1/\\constantval) = \\constantval^{2\\oddnegative+2}-(\\nullconst\\constantval^{2\\oddnegative}+\\cdots+\\randomconst\\constantval+1)$. The statement that $\\linearfunc(1/\\constantval)=\\constantval^2$ is equivalent (for $\\constantval\\neq 0$) to the statement that $\\constantval$ is a root of $\\singlenum(\\constantval)$. Thus we know that $\\pm 1,\\pm 2,\\ldots,\\pm \\oddnegative$ are roots of $\\singlenum(\\constantval)$, and we can write\n\\[\n\\singlenum(\\constantval) = (\\constantval^2+\\nonzeroval\\constantval+\\variablex)(\\constantval^2-1)(\\constantval^2-4)\\cdots (\\constantval^2-\\oddnegative^2)\n\\]\nfor some monic quadratic polynomial $\\constantval^2+\\nonzeroval\\constantval+\\variablex$. Equating the coefficients of $\\constantval^{2\\oddnegative+1}$ and $\\constantval^0$ on both sides gives $0=\\nonzeroval$ and $-1=(-1)^{\\oddnegative}(\\oddnegative!)^2 \\, \\variablex$, respectively. Since $\\oddnegative$ is even, we have $\\constantval^2+\\nonzeroval\\constantval+\\variablex = \\constantval^2-(\\oddnegative!)^{-2}$. We conclude that there are precisely two other real numbers $\\constantval$ such that $\\linearfunc(1/\\constantval)=\\constantval^2$, and they are $\\pm 1/\\oddnegative!$.",
+      "comments": ""
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qlmnvwxz",
+        "k": "hrstuvab",
+        "n": "xcfgpqrs",
+        "p": "asdhjklo",
+        "a_2n-1": "qweruiop",
+        "a_1": "zxcvmnbq",
+        "a_0": "plokmijn",
+        "q": "ytrewqas",
+        "a": "bnhgvfcd",
+        "b": "mjuiklop"
+      },
+      "question": "Let $xcfgpqrs$ be an even positive integer. Let $asdhjklo$ be a monic, real polynomial of degree $2xcfgpqrs$; that is to say, $asdhjklo(qlmnvwxz) = qlmnvwxz^{2xcfgpqrs} + qweruiop \\, qlmnvwxz^{2xcfgpqrs-1} + \\cdots + zxcvmnbq \\, qlmnvwxz + plokmijn$ for some real coefficients $plokmijn, \\dots, qweruiop$. Suppose that $asdhjklo(1/hrstuvab) = hrstuvab^2$ for all integers $hrstuvab$ such that $1 \\leq |hrstuvab| \\leq xcfgpqrs$. Find all other real numbers $qlmnvwxz$ for which $asdhjklo(1/qlmnvwxz) = qlmnvwxz^2$.",
+      "solution": "The only other real numbers with this property are $\\pm 1/xcfgpqrs!$.\n(Note that these are indeed \\emph{other} values than $\\pm 1, \\dots, \\pm xcfgpqrs$ because $xcfgpqrs>1$.)\n\nDefine the polynomial $ytrewqas(qlmnvwxz) = qlmnvwxz^{2xcfgpqrs+2}-qlmnvwxz^{2xcfgpqrs}asdhjklo(1/qlmnvwxz) = qlmnvwxz^{2xcfgpqrs+2}-(plokmijn\\,qlmnvwxz^{2xcfgpqrs}+\\cdots+qweruiop\\,qlmnvwxz+1)$. The statement that $asdhjklo(1/qlmnvwxz)=qlmnvwxz^2$ is equivalent (for $qlmnvwxz\\neq 0$) to the statement that $qlmnvwxz$ is a root of $ytrewqas(qlmnvwxz)$. Thus we know that $\\pm 1,\\pm 2,\\ldots,\\pm xcfgpqrs$ are roots of $ytrewqas$, and we can write\n\\[\nytrewqas(qlmnvwxz) = (qlmnvwxz^2+bnhgvfcd\\,qlmnvwxz+mjuiklop)(qlmnvwxz^2-1)(qlmnvwxz^2-4)\\cdots (qlmnvwxz^2-xcfgpqrs^2)\n\\]\nfor some monic quadratic polynomial $qlmnvwxz^2+bnhgvfcd\\,qlmnvwxz+mjuiklop$. Equating the coefficients of $qlmnvwxz^{2xcfgpqrs+1}$ and $qlmnvwxz^0$ on both sides gives $0=bnhgvfcd$ and $-1=(-1)^{xcfgpqrs}(xcfgpqrs!)^2 mjuiklop$, respectively. Since $xcfgpqrs$ is even, we have $qlmnvwxz^2+bnhgvfcd\\,qlmnvwxz+mjuiklop = qlmnvwxz^2-(xcfgpqrs!)^{-2}$. We conclude that there are precisely two other real numbers $qlmnvwxz$ such that $asdhjklo(1/qlmnvwxz)=qlmnvwxz^2$, and they are $\\pm 1/xcfgpqrs!$.",
+      "confidence": "0.14"
+    },
+    "kernel_variant": {
+      "question": "Let n\\ge 1 be an integer.  Let p be a real polynomial of degree 2n whose leading coefficient is\n\\[\n\\operatorname{lc}(p)=(-1)^{n}\\,(2^{n}n!)^{2}=(-1)^{n}4^{n}(n!)^{2}.\n\\]\nThat is\n\\[\n p(x)=(-1)^{n}(2^{n}n!)^{2}x^{2n}+a_{2n-1}x^{2n-1}+\\dots +a_0\\qquad(a_j\\in\\mathbb R).\n\\]\nAssume that for every integer k with 1\\le |k|\\le n we have the interpolation conditions\n\\[\n p\\!\\Bigl(\\tfrac1{2k}\\Bigr)=(2k)^{4}.\n\\]\n(Thus p(1/(\\pm 2),\\,1/(\\pm4),\\dots ,1/(\\pm 2n))=(\\pm2,\\pm4,\\dots ,\\pm2n)^{4}.)\n\nDetermine all real numbers x\\neq0 that satisfy the equation\n\\[\n p\\bigl(1/x\\bigr)=x^{4}.\n\\]",
+      "solution": "We keep the notation\n\\[\n q(x)=x^{2n+4}-x^{2n}p\\bigl(1/x\\bigr) \\qquad(x\\ne0).\\tag{1}\n\\]\nFor x\\ne0 the identity p(1/x)=x^{4} is equivalent to q(x)=0.\n\nStep 1 (the known roots).\nFor every k with 1\\le |k|\\le n the hypothesis gives p(\\tfrac1{\\,2k})=(2k)^{4}.  Substituting x=\\pm2k in (1) we obtain q(\\pm2k)=0.  Hence\n\\[\n P(x):=\\prod_{k=1}^{n}\\bigl(x^{2}-(2k)^{2}\\bigr)\\tag{2}\n\\]\n(divisor of degree 2n) is a factor of q.\n\nStep 2 (quotient by the known factor).\nSince \\deg q=2n+4, dividing q by P leaves a monic quartic polynomial:\n\\[\n q(x)=R(x)\\,P(x), \\qquad R(x)=x^{4}+ax^{3}+bx^{2}+cx+d.\\tag{3}\n\\]\n\nStep 3 (coefficient a).\nBecause P(x) is even, the x^{2n+3}-coefficient of q comes only from the term ax^{3}P(x); but q has no x^{2n+3}-term.  Therefore\n\\[\n a=0.\\tag{4}\n\\]\n\nStep 4 (coefficient b).\nWrite\n\\[\n P(x)=x^{2n}+s_{1}x^{2n-2}+s_{2}x^{2n-4}+\\dots+s_{n}.\\tag{5}\n\\]\n(The s_{j} are real and s_{1} is the coefficient of x^{2n-2}.)\nThe x^{2n+2}-coefficient of q(x)=R(x)P(x) receives contributions from\n*  bx^{2}\\cdot x^{2n}=bx^{2n+2},\n*  x^{4}\\cdot s_{1}x^{2n-2}=s_{1}x^{2n+2}.\nSince q has no x^{2n+2}-term we get b+s_{1}=0, i.e.\n\\[\n b=-s_{1}.\\tag{6}\n\\]\nThe first elementary symmetric sum of the numbers (2k)^{2} is\n\\[\n \\sum_{k=1}^{n}(2k)^{2}=4\\sum_{k=1}^{n}k^{2}=4\\,\\frac{n(n+1)(2n+1)}{6}=\\frac{2}{3}n(n+1)(2n+1),\n\\]\nhence\n\\[\n s_{1}=-\\sum_{k=1}^{n}(2k)^{2}=-\\frac{2}{3}n(n+1)(2n+1).\\tag{7}\n\\]\nCombining (6) and (7):\n\\[\n b=\\frac{2}{3}n(n+1)(2n+1)>0.\\tag{8}\n\\]\n\nStep 5 (coefficient c).\nThe x^{2n+1}-term of q stems only from cxP(x)=cx^{2n+1}.  Because this term is absent in q we have\n\\[\n c=0.\\tag{9}\n\\]\n\nStep 6 (constant term d).\nEvaluating (1) at x=0 we get q(0)=-\\operatorname{lc}(p)=(-1)^{\\,n+1}4^{n}(n!)^{2}.  From (3) we also have q(0)=d\\,P(0) with\n\\[\n P(0)=\\prod_{k=1}^{n}\\bigl(-4k^{2}\\bigr)=(-1)^{n}4^{n}(n!)^{2}.\n\\]\nHence d=\\,-1.\n\nStep 7 (complete factorisation).\nWith (4), (8), (9) and d=-1 the quartic factor is\n\\[\n R(x)=x^{4}+\\Bigl[\\tfrac{2}{3}n(n+1)(2n+1)\\Bigr]x^{2}-1.\\tag{10}\n\\]\nEquation (3) becomes\n\\[\n q(x)=\\Bigl(x^{4}+\\beta x^{2}-1\\Bigr)\\prod_{k=1}^{n}\\bigl(x^{2}-(2k)^{2}\\bigr),\\qquad\\beta=\\frac{2}{3}n(n+1)(2n+1).\\tag{11}\n\\]\n\nStep 8 (the additional real roots).\nBesides the prescribed roots \\pm2,\\pm4,\\dots,\\pm2n, the real roots of q(x)=0 come from the quartic factor.  Put y=x^{2}\\ge0; then (10) reads\n\\[\n y^{2}+\\beta y-1=0.\\tag{12}\n\\]\nBecause \\beta>0, (12) has one positive and one negative solution:\n\\[\n y_{\\,+}=\\frac{-\\beta+\\sqrt{\\beta^{2}+4}}{2}>0,\\qquad y_{\\,-}=\\frac{-\\beta-\\sqrt{\\beta^{2}+4}}{2}<0.\n\\]\nOnly y_{+} yields real x, giving the two additional real solutions\n\\[\n x=\\pm\\sqrt{\\;\\frac{-\\beta+\\sqrt{\\beta^{2}+4}}{2}\\;}.\\tag{13}\n\\]\n\nStep 9 (conclusion).\nAll real numbers x\\neq0 that satisfy p(1/x)=x^{4} are\n\\[\n \\boxed{\\;x=\\pm2,\\,\\pm4,\\,\\dots,\\,\\pm2n\\;}\\ \\text{and}\\ \\boxed{\\;x=\\pm\\sqrt{\\dfrac{-\\beta+\\sqrt{\\beta^{2}+4}}{2}}\\;},\n\\]\nwhere \\(\\beta=\\dfrac{2}{3}n(n+1)(2n+1)\\).\n\n(In particular, for n=1 one obtains the additional solutions x=\\pm\\sqrt{-2+\\sqrt5}\\approx\\pm0.486, confirming that \\pm1 are **not** solutions.)",
+      "_meta": {
+        "core_steps": [
+          "Form the auxiliary polynomial q(x)=x^{2n+2}-x^{2n}p(1/x) so that p(1/x)=x^2 ⇔ q(x)=0",
+          "Because p(1/k)=k^2 for k=±1,…,±n, those 2n numbers are roots; hence q(x) is divisible by ∏_{k=1}^{n}(x^2−k^2)",
+          "Degree count (2n known roots versus total 2n+2) shows the remaining factor is a monic quadratic x^2+ax+b",
+          "Match the x^{2n+1}– and constant–coefficients of the two factorizations to get a=0 and b=−(n!)⁻²",
+          "Solve x^2+ax+b=0, yielding the additional real roots ±1/n!"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Parity restriction on n; the derivation only uses that n is positive, not that it is even",
+            "original": "n is even"
+          },
+          "slot2": {
+            "description": "The exponent 2 in the requirement p(1/k)=k^2 (and consequently in p(1/x)=x^2); any fixed positive integer power r keeps the argument intact",
+            "original": "power 2"
+          },
+          "slot3": {
+            "description": "Assumption that p is monic; a different leading coefficient merely rescales the constant-term comparison",
+            "original": "p is monic"
+          },
+          "slot4": {
+            "description": "The specific set of interpolation points ±1,±2,…,±n; any 2n distinct non-zero real numbers symmetric about 0 would allow the same x^2−k^2 factorization argument",
+            "original": "the consecutive integers with |k|≤n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,159 @@
+{
+  "index": "1981-B-6",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem B-6\nLet \\( C \\) be a fixed unit circle in the Cartesian plane. For any convex polygon \\( P \\) each of whose sides is tangent to \\( C \\). let \\( N(P, h, k) \\) be the number of points common to \\( P \\) and the unit circle with center at (h.k). Let \\( H(P) \\) be the region of all points \\( (x, y) \\) for which \\( N(P, x, y) \\geq 1 \\) and \\( F(P) \\) be the area of \\( H(P) \\). Find the smallest number \\( u \\) with\n\\[\n\\frac{1}{F(P)} \\iint N(P, x, y) d x d y<u\n\\]\nfor all polygons \\( P \\), where the double integral is taken over \\( H(P) \\).",
+  "solution": "B-6.\nLet \\( L=L(P) \\) be the perimeter of \\( P \\). One sees that \\( H(P) \\) consists of the region bounded by \\( P \\), the regions bounded by rectangles whose bases are the sides of \\( P \\) and whose altitudes equal 1 , and sectors of unit circles which can be put together to form one unit circle. Hence\n\\[\nF(P)=(L / 2)+L+\\pi=\\pi+3 L / 2\n\\]\n\nIf \\( A \\) and \\( B \\) are two consecutive vertices of \\( P \\), the contribution of side \\( A B \\) to the double integral\n\\( I \\) is double the area of the region (of the figure) bounded by the unit semicircles with centers at \\( A \\) and \\( B \\) and segments \\( C D \\) and \\( E F \\) such that \\( A B C D \\) and \\( A B E F \\) are rectangles and \\( |A D|=1=|A F| \\).\n\nFig. 1.\n\nOne doubles this area because there is a symmetric region bounded by \\( C D, E F \\), and the other halves of the unit circles centered at \\( A \\) and \\( B \\). The overlap of the two regions counts twice. By Cavalieri's slicing principle, this contribution of side \\( A B \\) to \\( I \\) is 4 times the length of \\( A B \\). Hence \\( I=4 L \\) and\n\\[\n\\frac{I}{F(P)}=\\frac{4 L}{\\pi+3 L / 2}=\\frac{8}{3+(2 \\pi / L)}\n\\]\n\nOne can make \\( L \\) arbitrarily large (e.g., by letting \\( P \\) be a triangle with two angles arbitrarily close to right angles). Hence the desired least upper bound is \\( 8 / 3 \\).",
+  "vars": [
+    "x",
+    "y",
+    "h",
+    "k",
+    "L"
+  ],
+  "params": [
+    "C",
+    "P",
+    "N",
+    "H",
+    "F",
+    "u",
+    "A",
+    "B",
+    "D",
+    "E",
+    "I"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "h": "centerx",
+        "k": "centery",
+        "L": "perimeter",
+        "C": "unitcircle",
+        "P": "polygon",
+        "N": "countfun",
+        "H": "hitregion",
+        "F": "areaexpr",
+        "u": "upperlim",
+        "A": "vertexa",
+        "B": "vertexb",
+        "D": "vertexd",
+        "E": "vertexe",
+        "I": "integral"
+      },
+      "question": "Problem B-6\nLet \\( unitcircle \\) be a fixed unit circle in the Cartesian plane. For any convex polygon \\( polygon \\) each of whose sides is tangent to \\( unitcircle \\). let \\( countfun(polygon, centerx, centery) \\) be the number of points common to \\( polygon \\) and the unit circle with center at (centerx, centery). Let \\( hitregion(polygon) \\) be the region of all points \\( (abscissa, ordinate) \\) for which \\( countfun(polygon, abscissa, ordinate) \\geq 1 \\) and \\( areaexpr(polygon) \\) be the area of \\( hitregion(polygon) \\). Find the smallest number \\( upperlim \\) with\n\\[\n\\frac{1}{areaexpr(polygon)} \\iint countfun(polygon, abscissa, ordinate) d abscissa d ordinate<upperlim\n\\]\nfor all polygons \\( polygon \\), where the double integral is taken over \\( hitregion(polygon) \\).",
+      "solution": "B-6.\nLet \\( perimeter = perimeter(polygon) \\) be the perimeter of \\( polygon \\). One sees that \\( hitregion(polygon) \\) consists of the region bounded by \\( polygon \\), the regions bounded by rectangles whose bases are the sides of \\( polygon \\) and whose altitudes equal 1 , and sectors of unit circles which can be put together to form one unit circle. Hence\n\\[\nareaexpr(polygon)=(perimeter / 2)+perimeter+\\pi=\\pi+3 perimeter / 2\n\\]\n\nIf \\( vertexa \\) and \\( vertexb \\) are two consecutive vertices of \\( polygon \\), the contribution of side \\( vertexa vertexb \\) to the double integral\n\\( integral \\) is double the area of the region (of the figure) bounded by the unit semicircles with centers at \\( vertexa \\) and \\( vertexb \\) and segments \\( unitcircle vertexd \\) and \\( vertexe areaexpr \\) such that \\( vertexa vertexb unitcircle vertexd \\) and \\( vertexa vertexb vertexe areaexpr \\) are rectangles and \\( |vertexa vertexd|=1=|vertexa areaexpr| \\).\n\nFig. 1.\n\nOne doubles this area because there is a symmetric region bounded by \\( unitcircle vertexd, vertexe areaexpr \\), and the other halves of the unit circles centered at \\( vertexa \\) and \\( vertexb \\). The overlap of the two regions counts twice. By Cavalieri's slicing principle, this contribution of side \\( vertexa vertexb \\) to \\( integral \\) is 4 times the length of \\( vertexa vertexb \\). Hence \\( integral=4 perimeter \\) and\n\\[\n\\frac{integral}{areaexpr(polygon)}=\\frac{4 perimeter}{\\pi+3 perimeter / 2}=\\frac{8}{3+(2 \\pi / perimeter)}\n\\]\n\nOne can make \\( perimeter \\) arbitrarily large (e.g., by letting \\( polygon \\) be a triangle with two angles arbitrarily close to right angles). Hence the desired least upper bound is \\( 8 / 3 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "moonlight",
+        "y": "toothpaste",
+        "h": "goldfish",
+        "k": "undertaker",
+        "L": "jellybean",
+        "C": "teaspoon",
+        "P": "hammock",
+        "N": "sunflower",
+        "H": "arrowhead",
+        "F": "drumstick",
+        "u": "raincloud",
+        "A": "pinecone",
+        "B": "whirlpool",
+        "D": "gravestone",
+        "E": "sailcloth",
+        "I": "bricklayer"
+      },
+      "question": "Problem B-6\nLet \\( teaspoon \\) be a fixed unit circle in the Cartesian plane. For any convex polygon \\( hammock \\) each of whose sides is tangent to \\( teaspoon \\). let \\( sunflower(hammock, goldfish, undertaker) \\) be the number of points common to \\( hammock \\) and the unit circle with center at (goldfish.undertaker). Let \\( arrowhead(hammock) \\) be the region of all points \\( (moonlight, toothpaste) \\) for which \\( sunflower(hammock, moonlight, toothpaste) \\geq 1 \\) and \\( drumstick(hammock) \\) be the area of \\( arrowhead(hammock) \\). Find the smallest number \\( raincloud \\) with\n\\[\n\\frac{1}{drumstick(hammock)} \\iint sunflower(hammock, moonlight, toothpaste) d moonlight d toothpaste<raincloud\n\\]\nfor all polygons \\( hammock \\), where the double integral is taken over \\( arrowhead(hammock) \\).",
+      "solution": "B-6.\nLet \\( jellybean=jellybean(hammock) \\) be the perimeter of \\( hammock \\). One sees that \\( arrowhead(hammock) \\) consists of the region bounded by \\( hammock \\), the regions bounded by rectangles whose bases are the sides of \\( hammock \\) and whose altitudes equal 1 , and sectors of unit circles which can be put together to form one unit circle. Hence\n\\[\ndrumstick(hammock)=(jellybean / 2)+jellybean+\\pi=\\pi+3 jellybean / 2\n\\]\n\nIf \\( pinecone \\) and \\( whirlpool \\) are two consecutive vertices of \\( hammock \\), the contribution of side \\( pinecone whirlpool \\) to the double integral\n\\( bricklayer \\) is double the area of the region (of the figure) bounded by the unit semicircles with centers at \\( pinecone \\) and \\( whirlpool \\) and segments \\( teaspoon gravestone \\) and \\( sailcloth drumstick \\) such that \\( pinecone whirlpool teaspoon gravestone \\) and \\( pinecone whirlpool sailcloth drumstick \\) are rectangles and \\( |pinecone gravestone|=1=|pinecone drumstick| \\).\n\nFig. 1.\n\nOne doubles this area because there is a symmetric region bounded by \\( teaspoon gravestone, sailcloth drumstick \\), and the other halves of the unit circles centered at \\( pinecone \\) and \\( whirlpool \\). The overlap of the two regions counts twice. By Cavalieri's slicing principle, this contribution of side \\( pinecone whirlpool \\) to \\( bricklayer \\) is 4 times the length of \\( pinecone whirlpool \\). Hence \\( bricklayer=4 jellybean \\) and\n\\[\n\\frac{bricklayer}{drumstick(hammock)}=\\frac{4 jellybean}{\\pi+3 jellybean / 2}=\\frac{8}{3+(2 \\pi / jellybean)}\n\\]\n\nOne can make \\( jellybean \\) arbitrarily large (e.g., by letting \\( hammock \\) be a triangle with two angles arbitrarily close to right angles). Hence the desired least upper bound is \\( 8 / 3 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "vertcoord",
+        "y": "horizcoord",
+        "h": "edgepoint",
+        "k": "outskirt",
+        "L": "interiorlen",
+        "C": "squarezone",
+        "P": "concavefig",
+        "N": "subtractor",
+        "H": "singularity",
+        "F": "boundarylen",
+        "u": "lowerbound",
+        "A": "centralpt",
+        "B": "outerpoint",
+        "D": "midregion",
+        "E": "inneredge",
+        "I": "differential"
+      },
+      "question": "Problem B-6\nLet \\( squarezone \\) be a fixed unit circle in the Cartesian plane. For any convex polygon \\( concavefig \\) each of whose sides is tangent to \\( squarezone \\). let \\( subtractor(concavefig, edgepoint, outskirt) \\) be the number of points common to \\( concavefig \\) and the unit circle with center at (edgepoint.outskirt). Let \\( singularity(concavefig) \\) be the region of all points \\( (vertcoord, horizcoord) \\) for which \\( subtractor(concavefig, vertcoord, horizcoord) \\geq 1 \\) and \\( boundarylen(concavefig) \\) be the area of \\( singularity(concavefig) \\). Find the smallest number \\( lowerbound \\) with\n\\[\n\\frac{1}{boundarylen(concavefig)} \\iint subtractor(concavefig, vertcoord, horizcoord) d vertcoord d horizcoord<lowerbound\n\\]\nfor all polygons \\( concavefig \\), where the double integral is taken over \\( singularity(concavefig) \\).",
+      "solution": "B-6.\nLet \\( interiorlen=interiorlen(concavefig) \\) be the perimeter of \\( concavefig \\). One sees that \\( singularity(concavefig) \\) consists of the region bounded by \\( concavefig \\), the regions bounded by rectangles whose bases are the sides of \\( concavefig \\) and whose altitudes equal 1 , and sectors of unit circles which can be put together to form one unit circle. Hence\n\\[\nboundarylen(concavefig)=(interiorlen / 2)+interiorlen+\\pi=\\pi+3 interiorlen / 2\n\\]\n\nIf \\( centralpt \\) and \\( outerpoint \\) are two consecutive vertices of \\( concavefig \\), the contribution of side \\( centralpt outerpoint \\) to the double integral\n\\( differential \\) is double the area of the region (of the figure) bounded by the unit semicircles with centers at \\( centralpt \\) and \\( outerpoint \\) and segments \\( squarezone midregion \\) and \\( inneredge boundarylen \\) such that \\( centralpt outerpoint squarezone midregion \\) and \\( centralpt outerpoint inneredge boundarylen \\) are rectangles and \\( |centralpt midregion|=1=|centralpt boundarylen| \\).\n\nFig. 1.\n\nOne doubles this area because there is a symmetric region bounded by \\( squarezone midregion, inneredge boundarylen \\), and the other halves of the unit circles centered at \\( centralpt \\) and \\( outerpoint \\). The overlap of the two regions counts twice. By Cavalieri's slicing principle, this contribution of side \\( centralpt outerpoint \\) to \\( differential \\) is 4 times the length of \\( centralpt outerpoint \\). Hence \\( differential=4 interiorlen \\) and\n\\[\n\\frac{differential}{boundarylen(concavefig)}=\\frac{4 interiorlen}{\\pi+3 interiorlen / 2}=\\frac{8}{3+(2 \\pi / interiorlen)}\n\\]\n\nOne can make \\( interiorlen \\) arbitrarily large (e.g., by letting \\( concavefig \\) be a triangle with two angles arbitrarily close to right angles). Hence the desired least upper bound is \\( 8 / 3 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "h": "vmnqplzd",
+        "k": "rscphxfo",
+        "L": "ftgdmnre",
+        "C": "lqkmbvcz",
+        "P": "nfrskjht",
+        "N": "rfqblpwj",
+        "H": "sdmvrnkg",
+        "F": "wptzclha",
+        "u": "tdjmnqrv",
+        "A": "zbhdmral",
+        "B": "kqhvlpsw",
+        "D": "sczmtrfa",
+        "E": "pgxrtmnl",
+        "I": "hvqsrnkp"
+      },
+      "question": "Problem B-6\nLet \\( lqkmbvcz \\) be a fixed unit circle in the Cartesian plane. For any convex polygon \\( nfrskjht \\) each of whose sides is tangent to \\( lqkmbvcz \\). let \\( rfqblpwj(nfrskjht, vmnqplzd, rscphxfo) \\) be the number of points common to \\( nfrskjht \\) and the unit circle with center at (vmnqplzd.rscphxfo). Let \\( sdmvrnkg(nfrskjht) \\) be the region of all points \\( (qzxwvtnp, hjgrksla) \\) for which \\( rfqblpwj(nfrskjht, qzxwvtnp, hjgrksla) \\geq 1 \\) and \\( wptzclha(nfrskjht) \\) be the area of \\( sdmvrnkg(nfrskjht) \\). Find the smallest number \\( tdjmnqrv \\) with\n\\[\n\\frac{1}{wptzclha(nfrskjht)} \\iint rfqblpwj(nfrskjht, qzxwvtnp, hjgrksla) d qzxwvtnp d hjgrksla<tdjmnqrv\n\\]\nfor all polygons \\( nfrskjht \\), where the double integral is taken over \\( sdmvrnkg(nfrskjht) \\).",
+      "solution": "B-6.\nLet \\( ftgdmnre=ftgdmnre(nfrskjht) \\) be the perimeter of \\( nfrskjht \\). One sees that \\( sdmvrnkg(nfrskjht) \\) consists of the region bounded by \\( nfrskjht \\), the regions bounded by rectangles whose bases are the sides of \\( nfrskjht \\) and whose altitudes equal 1 , and sectors of unit circles which can be put together to form one unit circle. Hence\n\\[\nwptzclha(nfrskjht)=(ftgdmnre / 2)+ftgdmnre+\\pi=\\pi+3 ftgdmnre / 2\n\\]\n\nIf \\( zbhdmral \\) and \\( kqhvlpsw \\) are two consecutive vertices of \\( nfrskjht \\), the contribution of side \\( zbhdmral kqhvlpsw \\) to the double integral\n\\( hvqsrnkp \\) is double the area of the region (of the figure) bounded by the unit semicircles with centers at \\( zbhdmral \\) and \\( kqhvlpsw \\) and segments \\( lqkmbvcz sczmtrfa \\) and \\( pgxrtmnl wptzclha \\) such that \\( zbhdmral kqhvlpsw lqkmbvcz sczmtrfa \\) and \\( zbhdmral kqhvlpsw pgxrtmnl wptzclha \\) are rectangles and \\( |zbhdmral sczmtrfa|=1=|zbhdmral wptzclha| \\).\n\nFig. 1.\n\nOne doubles this area because there is a symmetric region bounded by \\( lqkmbvcz sczmtrfa, pgxrtmnl wptzclha \\), and the other halves of the unit circles centered at \\( zbhdmral \\) and \\( kqhvlpsw \\). The overlap of the two regions counts twice. By Cavalieri's slicing principle, this contribution of side \\( zbhdmral kqhvlpsw \\) to \\( hvqsrnkp \\) is 4 times the length of \\( zbhdmral kqhvlpsw \\). Hence \\( hvqsrnkp=4 ftgdmnre \\) and\n\\[\n\\frac{hvqsrnkp}{wptzclha(nfrskjht)}=\\frac{4 ftgdmnre}{\\pi+3 ftgdmnre / 2}=\\frac{8}{3+(2 \\pi / ftgdmnre)}\n\\]\n\nOne can make \\( ftgdmnre \\) arbitrarily large (e.g., by letting \\( nfrskjht \\) be a triangle with two angles arbitrarily close to right angles). Hence the desired least upper bound is \\( 8 / 3 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let C be the fixed circle of radius 2 in the Euclidean plane.  A convex polygon P is said to be tangential to C if every side of P is tangent to C (so the inradius of P equals 2).  For every point (h,k)\\in \\mathbb{R}^2 put\n  N(P,h,k)= number of intersection points of the circle (x-h)^2+(y-k)^2=4 with the boundary of P.\n(The value of N on the set of centres for which the circle meets P in an entire arc is irrelevant for what follows; we are free to keep the above definition for all centres except on a set of Lebesgue measure 0, on which the integral we shall consider does not depend.)\nWrite\n  M(P,h,k)=2\\cdot N(P,h,k),\n  H(P)= {(x,y)\\in \\mathbb{R}^2 : N(P,x,y) \\geq  1 },\n  F(P)= area(H(P)).\nDetermine the least real number u for which the inequality\n         (1/F(P)) \\cdot  \\iint _{H(P)} M(P,x,y) dx dy  <  u                       (\\dagger )\nholds for every convex polygon P whose sides are all tangent to the circle C.",
+      "solution": "Throughout we put r=2 and let L=L(P) be the perimeter of P.\n\n1.  The set H(P) and its area F(P)\n---------------------------------\nSince every side of P is tangent to the circle C of radius r, the inradius of P equals r and therefore (area of P)=r\\cdot (L/2)=L.  For a convex set K the area of its closed r-neighbourhood K\\oplus D(0,r) is given by the classical Steiner formula\n        area(K\\oplus D(0,r)) = area(K) + r\\cdot perimeter(K) + \\pi r^2.\nTaking K=P we obtain\n        F(P)= L + rL + \\pi r^2 = L + 2L + 4\\pi  = 3L + 4\\pi .      (1)\n\n2.  The integral  I(P)= \\iint _{H(P)} M(P,x,y) dx dy\n------------------------------------------------\nBecause M(P,x,y)=2N(P,x,y), write\n        I(P)=2 \\iint _{H(P)} N(P,x,y) dx dy = 2J(P),          (2)\nwhere J(P)= \\iint _{H(P)} N(P,x,y) dx dy.\n\nTo compute J(P) fix one side AB of P and denote its length by s.  Place a coordinate system so that AB is the segment [0,s] of the x-axis.  For t with |t|<r put d(t)=\\sqrt{r^2-t^2} and let \\ell _t be the line y=t.\n\nFor (u,t)\\in \\ell _t the circle of radius r centred at (u,t) meets the x-axis in the two points u-d(t) and u+d(t).  Hence the number of intersection points of that circle with the side AB equals\n\n        N(u,t)= \\chi _{[0,s]}(u-d(t)) + \\chi _{[0,s]}(u+d(t)),\n\nwhere \\chi  denotes the characteristic function.  Integrating N(u,t) in the u-direction we obtain\n\n        S(t)= \\int _{-\\infty }^{\\infty } N(u,t) du\n            = \\int _{-\\infty }^{\\infty } \\chi _{[0,s]}(u-d(t)) du + \\int _{-\\infty }^{\\infty } \\chi _{[0,s]}(u+d(t)) du.\n\nIn the first integral substitute w = u-d(t); in the second put w = u+d(t).  In both cases dw = du and w ranges over [0,s], whence\n\n        S(t)= s + s = 2s,                                (3)\n\na value that is indeed independent of t.\n\nIntegrating (3) over t from -r to r shows that the contribution of the side AB to J(P) equals\n        \\int _{-r}^{r} S(t) dt = \\int _{-r}^{r} 2s dt = 4rs.    (4)\nSumming (4) over all sides of P gives\n        J(P)=4rL  = 8L.                                  (5)\nUsing (2) we therefore have\n        I(P)=2J(P)=16L.                                  (6)\n\n3.  The required quotient\n------------------------\nCombining (1) and (6) we find\n        I(P)/F(P)= 16L /(3L + 4\\pi ) = 16 /(3 + 4\\pi /L).      (7)\nBecause a tangential polygon can be constructed with perimeter as large as desired (for instance a very long, thin tangential quadrilateral), the quantity 4\\pi /L can be made arbitrarily small and hence the expression (7) can be made arbitrarily close to 16/3 from below.  On the other hand (7) is always strictly less than 16/3.  Consequently\n        u = 16/3                                         (8)\n is the least real number for which the inequality (\\dagger ) holds for all admissible polygons P.\n\nAnswer:  u = 16/3.",
+      "_meta": {
+        "core_steps": [
+          "Decompose H(P) into the tangential polygon, one rectangle of height r on each side, and a circle of radius r to get F(P).",
+          "For a side of length s, apply symmetry/Cavalieri to show its contribution to the integral is 4r·s; summing gives I = 4r·L.",
+          "Compute I/F(P) = 4rL / (πr² + (3/2)rL) = 8 / (3 + 2πr/L).",
+          "Let the perimeter L → ∞ to force the denominator to 3 and obtain the sharp upper bound 8/3."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Radius of the fixed circle to which every side is tangent (scales every length in the argument)",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Altitude of each added rectangle (taken equal to the circle’s radius)",
+            "original": "1"
+          },
+          "slot3": {
+            "description": "Area of the reassembled circle that appears in F(P) (π·r² when the radius is r)",
+            "original": "π"
+          },
+          "slot4": {
+            "description": "Constant multiplier for a side’s contribution to the integral (4r for radius r, equals 4 when r = 1)",
+            "original": "4"
+          },
+          "slot5": {
+            "description": "Resulting supremum of the average intersection number",
+            "original": "8/3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

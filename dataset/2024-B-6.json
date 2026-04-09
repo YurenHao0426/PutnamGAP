@@ -1,0 +1,118 @@
+{
+  "index": "2024-B-6",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "For a real number $a$, let $F_a(x) = \\sum_{n \\geq 1} n^a e^{2n} x^{n^2}$ for $0 \\leq x < 1$.\nFind a real number $c$ such that\n\\begin{align*}\n& \\lim_{x \\to 1^-} F_a(x) e^{-1/(1-x)} = 0 \\qquad \\mbox{for all $a < c$, and} \\\\\n& \\lim_{x \\to 1^-} F_a(x) e^{-1/(1-x)} = \\infty \\qquad \\mbox{for all $a > c$.}\n\\end{align*}\n\n\\end{itemize}\n\n\\end{document}z",
+  "solution": "The claim holds with $c=-\\frac{1}{2}$.\nSet $t := 1/(1-x)$, so that $x = 1 - 1/t$\nand\n\\[\n- \\frac{1}{t} - \\frac{1}{t^2} \\leq \\log x \\leq - \\frac{1}{t}.\n\\]\nSet also $m := \\lfloor t \\rfloor$.\nIn the following arguments, we use $c$ to refer to some positive constant independent of $n$ and $t$,\nbut a different such constant at each appearance.\n\nSuppose first that $a > -\\frac{1}{2}$. Then\n\\begin{align*}\nF_a(x)e^{-t} &= \\sum_{n=1}^\\infty n^a e^{2n-t} x^{n^2}  \\\\\n&\\geq \\sum_{n=1}^\\infty n^a e^{2n-t-n^2/t-n^2/t^2}  \\\\\n&= \\sum_{n=1}^\\infty n^a e^{-n^2/t^2} e^{-t(1-n/t)^2}.\n\\end{align*}\nIf we restrict the sum to the range $t < n < t + \\sqrt{t}$, we may bound the summand from below by\n$c t^a$; we then have\n$F_a(x) e^{-t} > ct^{a+1/2}$ and this tends to $\\infty$ as $t \\to \\infty$.\n\nSuppose next that $a < -\\frac{1}{2}$. Then\n\\begin{align*}\nF_a(x)e^{-t} &= \\sum_{n=1}^\\infty n^a e^{2n-t} x^{n^2} \\\\\n&\\leq \\sum_{n=1}^\\infty n^a e^{-t(1-n/t)^2}.\n\\end{align*}\nFix $\\epsilon>0$ such that $a+\\epsilon < -\\frac{1}{2}$.\nFor the summands with $t - t^{1/2+\\epsilon} < n < t + t^{1/2+\\epsilon}$, we may bound the summand from above by $ct^a$; this range of the sum is then dominated by\n$ct^{a+1/2+\\epsilon}$. \nFor the summands with $n < t - t^{1/2+\\epsilon}$, we may bound the summand by\n$n^a e^{-t^{2\\epsilon}}$; this range of the sum is then dominated by $t e^{-t^{2\\epsilon}}$.\nFor the summands with $n > t - t^{1/2+\\epsilon}$, we may again bound the summand by\n$n^a e^{-t^{2\\epsilon}}$; this range of the sum is then dominated by $c t^{a+1} e^{-t^{2\\epsilon}}$.\nSince all three bounds tends to 0 as $t \\to \\infty$, so then does $F_a(x) e^{-t}$.\n\n\\end{itemize}\n\\end{document}",
+  "vars": [
+    "n",
+    "x",
+    "t",
+    "m"
+  ],
+  "params": [
+    "a",
+    "c",
+    "\\\\epsilon",
+    "F_a"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "x": "variablex",
+        "t": "variablet",
+        "m": "indexmvar",
+        "a": "realparam",
+        "c": "genconst",
+        "\\\\epsilon": "smalleps",
+        "F_a": "seriesfunc"
+      },
+      "question": "For a real number $realparam$, let $seriesfunc(variablex) = \\sum_{indexvar \\geq 1} indexvar^{realparam} e^{2 indexvar} variablex^{indexvar^2}$ for $0 \\leq variablex < 1$.\nFind a real number $genconst$ such that\n\\begin{align*}\n& \\lim_{variablex \\to 1^-} seriesfunc(variablex) e^{-1/(1-variablex)} = 0 \\qquad \\mbox{for all $realparam < genconst$, and} \\\\\n& \\lim_{variablex \\to 1^-} seriesfunc(variablex) e^{-1/(1-variablex)} = \\infty \\qquad \\mbox{for all $realparam > genconst$.}\n\\end{align*}\n\n\\end{itemize}\n\n\\end{document}z",
+      "solution": "The claim holds with $genconst=-\\frac{1}{2}$.\nSet $variablet := 1/(1-variablex)$, so that $variablex = 1 - 1/variablet$\nand\n\\[\n- \\frac{1}{variablet} - \\frac{1}{variablet^2} \\leq \\log variablex \\leq - \\frac{1}{variablet}.\n\\]\nSet also $indexmvar := \\lfloor variablet \\rfloor$.\nIn the following arguments, we use $genconst$ to refer to some positive constant independent of $indexvar$ and $variablet$,\nbut a different such constant at each appearance.\n\nSuppose first that $realparam > -\\frac{1}{2}$. Then\n\\begin{align*}\nseriesfunc(variablex)e^{-variablet} &= \\sum_{indexvar=1}^\\infty indexvar^{realparam} e^{2 indexvar-variablet} variablex^{indexvar^2}  \\\\\n&\\geq \\sum_{indexvar=1}^\\infty indexvar^{realparam} e^{2 indexvar-variablet-indexvar^2/variablet-indexvar^2/variablet^2}  \\\\\n&= \\sum_{indexvar=1}^\\infty indexvar^{realparam} e^{-indexvar^2/variablet^2} e^{-variablet(1-indexvar/variablet)^2}.\n\\end{align*}\nIf we restrict the sum to the range $variablet < indexvar < variablet + \\sqrt{variablet}$, we may bound the summand from below by\n$genconst\\, variablet^{realparam}$; we then have\n$seriesfunc(variablex) e^{-variablet} > genconst variablet^{realparam+1/2}$ and this tends to $\\infty$ as $variablet \\to \\infty$.\n\nSuppose next that $realparam < -\\frac{1}{2}$. Then\n\\begin{align*}\nseriesfunc(variablex)e^{-variablet} &= \\sum_{indexvar=1}^\\infty indexvar^{realparam} e^{2 indexvar-variablet} variablex^{indexvar^2} \\\\\n&\\leq \\sum_{indexvar=1}^\\infty indexvar^{realparam} e^{-variablet(1-indexvar/variablet)^2}.\n\\end{align*}\nFix $smalleps>0$ such that $realparam+smalleps < -\\frac{1}{2}$.\nFor the summands with $variablet - variablet^{1/2+smalleps} < indexvar < variablet + variablet^{1/2+smalleps}$, we may bound the summand from above by $genconst variablet^{realparam}$; this range of the sum is then dominated by\n$genconst variablet^{realparam+1/2+smalleps}$. \nFor the summands with $indexvar < variablet - variablet^{1/2+smalleps}$, we may bound the summand by\n$indexvar^{realparam} e^{-variablet^{2 smalleps}}$; this range of the sum is then dominated by $variablet e^{-variablet^{2 smalleps}}$.\nFor the summands with $indexvar > variablet - variablet^{1/2+smalleps}$, we may again bound the summand by\n$indexvar^{realparam} e^{-variablet^{2 smalleps}}$; this range of the sum is then dominated by $genconst variablet^{realparam+1} e^{-variablet^{2 smalleps}}$.\nSince all three bounds tends to 0 as $variablet \\to \\infty$, so then does $seriesfunc(variablex) e^{-variablet}$.\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "moonstone",
+        "x": "riverbank",
+        "t": "pinecrown",
+        "m": "foxglove",
+        "a": "shoreline",
+        "c": "driftwood",
+        "\\\\epsilon": "buttercup",
+        "F_a": "glowquartz"
+      },
+      "question": "For a real number $shoreline$, let $glowquartz(riverbank) = \\sum_{moonstone \\geq 1} moonstone^{shoreline} e^{2 moonstone} riverbank^{moonstone^{2}}$ for $0 \\leq riverbank < 1$.\nFind a real number $driftwood$ such that\n\\begin{align*}\n& \\lim_{riverbank \\to 1^-} glowquartz(riverbank) e^{-1/(1-riverbank)} = 0 \\qquad \\mbox{for all $shoreline < driftwood$, and} \\\\\n& \\lim_{riverbank \\to 1^-} glowquartz(riverbank) e^{-1/(1-riverbank)} = \\infty \\qquad \\mbox{for all $shoreline > driftwood$.}\n\\end{align*}\n\n\\end{itemize}\n\n\\end{document}z",
+      "solution": "The claim holds with $driftwood=-\\frac{1}{2}$.\nSet $pinecrown := 1/(1-riverbank)$, so that $riverbank = 1 - 1/pinecrown$\nand\n\\[\n- \\frac{1}{pinecrown} - \\frac{1}{pinecrown^{2}} \\leq \\log riverbank \\leq - \\frac{1}{pinecrown}.\n\\]\nSet also $foxglove := \\lfloor pinecrown \\rfloor$.\nIn the following arguments, we use $driftwood$ to refer to some positive constant independent of $moonstone$ and $pinecrown$,\nbut a different such constant at each appearance.\n\nSuppose first that $shoreline > -\\frac{1}{2}$. Then\n\\begin{align*}\nglowquartz(riverbank)e^{-pinecrown} &= \\sum_{moonstone=1}^{\\infty} moonstone^{shoreline} e^{2 moonstone-pinecrown} riverbank^{moonstone^{2}}  \\\\\n&\\geq \\sum_{moonstone=1}^{\\infty} moonstone^{shoreline} e^{2 moonstone-pinecrown-moonstone^{2}/pinecrown-moonstone^{2}/pinecrown^{2}}  \\\\\n&= \\sum_{moonstone=1}^{\\infty} moonstone^{shoreline} e^{-moonstone^{2}/pinecrown^{2}} e^{-pinecrown(1-moonstone/pinecrown)^{2}}.\n\\end{align*}\nIf we restrict the sum to the range $pinecrown < moonstone < pinecrown + \\sqrt{pinecrown}$, we may bound the summand from below by\n$driftwood\\, pinecrown^{shoreline}$; we then have\n$glowquartz(riverbank) e^{-pinecrown} > driftwood\\, pinecrown^{shoreline+1/2}$ and this tends to $\\infty$ as $pinecrown \\to \\infty$.\n\nSuppose next that $shoreline < -\\frac{1}{2}$. Then\n\\begin{align*}\nglowquartz(riverbank)e^{-pinecrown} &= \\sum_{moonstone=1}^{\\infty} moonstone^{shoreline} e^{2 moonstone-pinecrown} riverbank^{moonstone^{2}} \\\\\n&\\leq \\sum_{moonstone=1}^{\\infty} moonstone^{shoreline} e^{-pinecrown(1-moonstone/pinecrown)^{2}}.\n\\end{align*}\nFix $buttercup>0$ such that $shoreline+buttercup < -\\frac{1}{2}$.\nFor the summands with $pinecrown - pinecrown^{1/2+buttercup} < moonstone < pinecrown + pinecrown^{1/2+buttercup}$, we may bound the summand from above by $driftwood\\, pinecrown^{shoreline}$; this range of the sum is then dominated by\n$driftwood\\, pinecrown^{shoreline+1/2+buttercup}$. \nFor the summands with $moonstone < pinecrown - pinecrown^{1/2+buttercup}$, we may bound the summand by\n$moonstone^{shoreline} e^{-pinecrown^{2 buttercup}}$; this range of the sum is then dominated by $pinecrown e^{-pinecrown^{2 buttercup}}$.\nFor the summands with $moonstone > pinecrown - pinecrown^{1/2+buttercup}$, we may again bound the summand by\n$moonstone^{shoreline} e^{-pinecrown^{2 buttercup}}$; this range of the sum is then dominated by $driftwood\\, pinecrown^{shoreline+1} e^{-pinecrown^{2 buttercup}}$.\nSince all three bounds tends to 0 as $pinecrown \\to \\infty$, so then does $glowquartz(riverbank) e^{-pinecrown}$.\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "continuum",
+        "x": "constant",
+        "t": "timeless",
+        "m": "limitless",
+        "a": "basement",
+        "c": "variable",
+        "\\epsilon": "magnitude",
+        "F_a": "emptiness"
+      },
+      "question": "For a real number $basement$, let $emptiness(constant) = \\sum_{continuum \\geq 1} continuum^{basement} e^{2continuum} constant^{continuum^2}$ for $0 \\leq constant < 1$.\nFind a real number $variable$ such that\n\\begin{align*}\n& \\lim_{constant \\to 1^-} emptiness(constant) e^{-1/(1-constant)} = 0 \\qquad \\mbox{for all $basement < variable$, and} \\\\\n& \\lim_{constant \\to 1^-} emptiness(constant) e^{-1/(1-constant)} = \\infty \\qquad \\mbox{for all $basement > variable$.}\n\\end{align*}",
+      "solution": "The claim holds with $variable=-\\frac{1}{2}$.\nSet $timeless := 1/(1-constant)$, so that $constant = 1 - 1/timeless$\nand\n\\[\n- \\frac{1}{timeless} - \\frac{1}{timeless^2} \\leq \\log constant \\leq - \\frac{1}{timeless}.\n\\]\nSet also $limitless := \\lfloor timeless \\rfloor$.\nIn the following arguments, we use $variable$ to refer to some positive constant independent of $continuum$ and $timeless$,\nbut a different such constant at each appearance.\n\nSuppose first that $basement > -\\frac{1}{2}$. Then\n\\begin{align*}\nemptiness(constant)e^{-timeless} &= \\sum_{continuum=1}^\\infty continuum^{basement} e^{2continuum-timeless} constant^{continuum^2}  \\\\\n&\\geq \\sum_{continuum=1}^\\infty continuum^{basement} e^{2continuum-timeless-continuum^2/timeless-continuum^2/timeless^2}  \\\\\n&= \\sum_{continuum=1}^\\infty continuum^{basement} e^{-continuum^2/timeless^2} e^{-timeless(1-continuum/timeless)^2}.\n\\end{align*}\nIf we restrict the sum to the range $timeless < continuum < timeless + \\sqrt{timeless}$, we may bound the summand from below by\n$variable timeless^{basement}$; we then have\n$emptiness(constant) e^{-timeless} > variabletimeless^{basement+1/2}$ and this tends to $\\infty$ as $timeless \\to \\infty$.\n\nSuppose next that $basement < -\\frac{1}{2}$. Then\n\\begin{align*}\nemptiness(constant)e^{-timeless} &= \\sum_{continuum=1}^\\infty continuum^{basement} e^{2continuum-timeless} constant^{continuum^2} \\\\\n&\\leq \\sum_{continuum=1}^\\infty continuum^{basement} e^{-timeless(1-continuum/timeless)^2}.\n\\end{align*}\nFix $magnitude>0$ such that $basement+magnitude < -\\frac{1}{2}$.\nFor the summands with $timeless - timeless^{1/2+magnitude} < continuum < timeless + timeless^{1/2+magnitude}$, we may bound the summand from above by $variabletimeless^{basement}$; this range of the sum is then dominated by\n$variabletimeless^{basement+1/2+magnitude}$. \nFor the summands with $continuum < timeless - timeless^{1/2+magnitude}$, we may bound the summand by\n$continuum^{basement} e^{-timeless^{2magnitude}}$; this range of the sum is then dominated by $timeless e^{-timeless^{2magnitude}}$.\nFor the summands with $continuum > timeless - timeless^{1/2+magnitude}$, we may again bound the summand by\n$continuum^{basement} e^{-timeless^{2magnitude}}$; this range of the sum is then dominated by $variable timeless^{basement+1} e^{-timeless^{2magnitude}}$.\nSince all three bounds tends to 0 as $timeless \\to \\infty$, so then does $emptiness(constant) e^{-timeless}$. "
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "x": "hjgrksla",
+        "t": "pldmqner",
+        "m": "vbschfou",
+        "a": "ksdjfpow",
+        "c": "wlenrtuv",
+        "\\epsilon": "gmxvckpu",
+        "F_a": "fhgqupaz"
+      },
+      "question": "For a real number $ksdjfpow$, let $fhgqupaz(hjgrksla) = \\sum_{qzxwvtnp \\geq 1} qzxwvtnp^{ksdjfpow} e^{2qzxwvtnp} hjgrksla^{qzxwvtnp^{2}}$ for $0 \\leq hjgrksla < 1$.\nFind a real number $wlenrtuv$ such that\n\\begin{align*}\n& \\lim_{hjgrksla \\to 1^-} fhgqupaz(hjgrksla) e^{-1/(1-hjgrksla)} = 0 \\qquad \\mbox{for all $ksdjfpow < wlenrtuv$, and} \\\\\n& \\lim_{hjgrksla \\to 1^-} fhgqupaz(hjgrksla) e^{-1/(1-hjgrksla)} = \\infty \\qquad \\mbox{for all $ksdjfpow > wlenrtuv$.}\n\\end{align*}",
+      "solution": "The claim holds with $wlenrtuv=-\\frac{1}{2}$.\nSet $pldmqner := 1/(1-hjgrksla)$, so that $hjgrksla = 1 - 1/pldmqner$\nand\n\\[\n- \\frac{1}{pldmqner} - \\frac{1}{pldmqner^2} \\leq \\log hjgrksla \\leq - \\frac{1}{pldmqner}.\n\\]\nSet also $vbschfou := \\lfloor pldmqner \\rfloor$.\nIn the following arguments, we use $wlenrtuv$ to refer to some positive constant independent of $qzxwvtnp$ and $pldmqner$,\nbut a different such constant at each appearance.\n\nSuppose first that $ksdjfpow > -\\frac{1}{2}$. Then\n\\begin{align*}\nfhgqupaz(hjgrksla)e^{-pldmqner} &= \\sum_{qzxwvtnp=1}^\\infty qzxwvtnp^{ksdjfpow} e^{2qzxwvtnp-pldmqner} hjgrksla^{qzxwvtnp^2}  \\\\\n&\\geq \\sum_{qzxwvtnp=1}^\\infty qzxwvtnp^{ksdjfpow} e^{2qzxwvtnp-pldmqner-qzxwvtnp^2/pldmqner-qzxwvtnp^2/pldmqner^2}  \\\\\n&= \\sum_{qzxwvtnp=1}^\\infty qzxwvtnp^{ksdjfpow} e^{-qzxwvtnp^2/pldmqner^2} e^{-pldmqner(1-qzxwvtnp/pldmqner)^2}.\n\\end{align*}\nIf we restrict the sum to the range $pldmqner < qzxwvtnp < pldmqner + \\sqrt{pldmqner}$, we may bound the summand from below by\n$wlenrtuv pldmqner^{ksdjfpow}$; we then have\n$fhgqupaz(hjgrksla) e^{-pldmqner} > wlenrtuv pldmqner^{ksdjfpow+1/2}$ and this tends to $\\infty$ as $pldmqner \\to \\infty$.\n\nSuppose next that $ksdjfpow < -\\frac{1}{2}$. Then\n\\begin{align*}\nfhgqupaz(hjgrksla)e^{-pldmqner} &= \\sum_{qzxwvtnp=1}^\\infty qzxwvtnp^{ksdjfpow} e^{2qzxwvtnp-pldmqner} hjgrksla^{qzxwvtnp^2} \\\\\n&\\leq \\sum_{qzxwvtnp=1}^\\infty qzxwvtnp^{ksdjfpow} e^{-pldmqner(1-qzxwvtnp/pldmqner)^2}.\n\\end{align*}\nFix $gmxvckpu>0$ such that $ksdjfpow+gmxvckpu < -\\frac{1}{2}$.\nFor the summands with $pldmqner - pldmqner^{1/2+gmxvckpu} < qzxwvtnp < pldmqner + pldmqner^{1/2+gmxvckpu}$, we may bound the summand from above by $wlenrtuv pldmqner^{ksdjfpow}$; this range of the sum is then dominated by\n$wlenrtuv pldmqner^{ksdjfpow+1/2+gmxvckpu}$. \nFor the summands with $qzxwvtnp < pldmqner - pldmqner^{1/2+gmxvckpu}$, we may bound the summand by\n$qzxwvtnp^{ksdjfpow} e^{-pldmqner^{2gmxvckpu}}$; this range of the sum is then dominated by $pldmqner e^{-pldmqner^{2gmxvckpu}}$.\nFor the summands with $qzxwvtnp > pldmqner - pldmqner^{1/2+gmxvckpu}$, we may again bound the summand by\n$qzxwvtnp^{ksdjfpow} e^{-pldmqner^{2gmxvckpu}}$; this range of the sum is then dominated by $wlenrtuv pldmqner^{ksdjfpow+1} e^{-pldmqner^{2gmxvckpu}}$.\nSince all three bounds tends to 0 as $pldmqner \\to \\infty$, so then does $fhgqupaz(hjgrksla) e^{-pldmqner}$.",
+      "end": ""
+    },
+    "kernel_variant": {
+      "question": "For a real number b define\n\ng_b(x)=\\sum_{n\\ge 1} n^{\\,b}\\,e^{2n}\\,x^{n^{2}},\\qquad 0\\le x<1.\n\nFind a real number d such that\n\n\\[\n\\lim_{x\\to 1^-} g_b(x)\\,\\exp\\!\\Bigl(-\\tfrac{1}{1-x}\\Bigr)=0 \\quad\\text{for all } b<d,\\qquad\n\\lim_{x\\to 1^-} g_b(x)\\,\\exp\\!\\Bigl(-\\tfrac{1}{1-x}\\Bigr)=\\infty \\quad\\text{for all } b>d.\n\\]",
+      "solution": "Answer: d = -\\tfrac12.\n\nProof.\n\n1.  Preparations\n   Let t := 1/(1-x), so that x = 1-1/t and t \\to \\infty as x \\to 1^-.\n   We will frequently use the bounds\n   \\[\n      -\\frac1t-\\frac1{t^{2}} \\;\\le\\; \\log x \\;\\le\\; -\\frac1t.\\tag{1}\n   \\]\n   With this change of variables\n   \\[\n        g_b(x)\\,e^{-t}\n      = \\sum_{n\\ge 1} n^{b}\\,e^{2n-t}\\,x^{n^{2}}\n      = \\sum_{n\\ge 1} n^{b}\\exp\\bigl(2n-t+n^{2}\\log x\\bigr).\\tag{2}\n   \\]\n\n2.  Lower bound when b > -1/2\n\n   We employ the lower estimate in (1): \\log x \\ge -1/t-1/t^{2}.  Then\n   \\[\n      2n-t+n^{2}\\log x \\ge 2n-t-\\frac{n^{2}}t-\\frac{n^{2}}{t^{2}}\n                       = -t\\Bigl(1-\\frac{n}{t}\\Bigr)^{2}-\\frac{n^{2}}{t^{2}}.\\tag{3}\n   \\]\n   Restrict the sum in (2) to the window\n   \\[\n           t < n < t+\\sqrt{t}.\\tag{4}\n   \\]\n   For such n we have |1-n/t| \\le 1/\\sqrt{t}, hence by (3)\n   2n-t+n^{2}\\log x \\ge -1-\\mathcal{O}(1/t). Thus every term in (2)\n   belonging to the window (4) satisfies\n   \\[\n       n^{b}\\exp(2n-t+n^{2}\\log x) \\ge c\\,n^{b}\\ge c'\\,t^{b},\\tag{5}\n   \\]\n   for suitable positive constants c,c'.  The number of indices n in (4)\n   is \\asymp\\sqrt{t}, so (2) yields\n   \\[\n      g_b(x)\\,e^{-t}\\;\\ge\\;C\\,t^{b+1/2},\\tag{6}\n   \\]\n   where C>0 is independent of t.  Since b+1/2>0, the right-hand side\n   tends to +\\infty.  Therefore\n   \\[\n       \\lim_{x\\to1^-} g_b(x)\\,e^{-t}=\\infty \\qquad (b>-\\tfrac12).\\tag{7}\n   \\]\n\n3.  Upper bound when b < -1/2\n\n   Now use the upper estimate in (1): \\log x \\le -1/t.  From (2)\n   2n-t+n^{2}\\log x \\le 2n-t-n^{2}/t = -t(1-n/t)^{2}.  Consequently\n   \\[\n       g_b(x)\\,e^{-t}\\;\\le\\;\\sum_{n\\ge1} n^{b}\\,e^{-t(1-n/t)^{2}}.\\tag{8}\n   \\]\n   Fix \\varepsilon>0 with b+\\varepsilon<-1/2.\n\n   *  Central region: |n-t| \\le t^{1/2+\\varepsilon}.  Here\n      e^{-t(1-n/t)^{2}}\\le 1, so the contribution is \\(\\ll\n      t^{b+1/2+\\varepsilon}\\to0\\).\n\n   *  Left tail: n < t-t^{1/2+\\varepsilon}.  Then\n      (1-n/t)^{2}\\ge t^{2\\varepsilon}/t = t^{2\\varepsilon-1}, whence\n      e^{-t(1-n/t)^{2}}\\le e^{-t^{2\\varepsilon}}.  The whole tail sums to\n      \\(\\ll t\\,e^{-t^{2\\varepsilon}}\\to0\\).\n\n   *  Right tail: n > t+t^{1/2+\\varepsilon}.  The treatment is identical.\n\n   Putting the three pieces together gives\n   \\[\n      g_b(x)\\,e^{-t}\\;\\longrightarrow\\;0 \\qquad (b<-\\tfrac12).\\tag{9}\n   \\]\n\n4.  Threshold value\n   Combining (7) and (9) we see that\n   \\[\n      \\lim_{x\\to1^-} g_b(x)\\,e^{-t}=\n      \\begin{cases}\n         0 & (b< -\\tfrac12),\\\\\n         \\infty & (b> -\\tfrac12).\n      \\end{cases}\n   \\]\n   Hence the required separating constant is d= -1/2.\n\n5.  Remark on the critical index b = -1/2\n   The problem does not ask for the limit when b=-1/2; with the standard\n   saddle-point estimates one finds that g_{-1/2}(x)\\,e^{-t} stays\n   bounded away from both 0 and \\infty.\n\nThus d=-1/2 is the unique threshold.",
+      "_meta": {
+        "core_steps": [
+          "Re-parametrize with t = 1/(1-x) so that x→1⁻ corresponds to t→∞.",
+          "Use elementary bounds on log(1−1/t) to approximate x^{n²} and obtain an exponent of the form −n²/t − t(1−n/t)² (plus harmless O(n²/t²)).",
+          "Factor out e^{-t} and recognize a Gaussian weight e^{-t(1−n/t)²}, locating the main contribution at n≈t with natural width √t.",
+          "Estimate the sum by splitting n into a ‘central’ band (|n−t|≲√t) and the two ‘tail’ regions; compare the total size with t^{a+1/2}.",
+          "Deduce that the sum grows like t^{a+1/2}, giving divergence for a>−1/2 and vanishing for a<−1/2, hence c = −1/2."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The exact constant multiplying 1/t² in the lower bound for log x; any positive constant would suffice for the error term.",
+            "original": "−1/t − 1/t² ≤ log x"
+          },
+          "slot2": {
+            "description": "The precise width chosen for the ‘central’ band around n≈t; any band of order √t (e.g. t < n < t+k√t for fixed k>0) works.",
+            "original": "t < n < t + √t"
+          },
+          "slot3": {
+            "description": "The small positive ε used to thicken the band in the upper estimate; only ε>0 with a+ε<−1/2 is needed.",
+            "original": "ε in t^{1/2+ε}"
+          },
+          "slot4": {
+            "description": "The undetermined positive constant c repeatedly used in inequalities; its actual value is irrelevant.",
+            "original": "symbol ‘c’ indicating some positive constant"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

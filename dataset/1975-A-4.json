@@ -1,0 +1,94 @@
+{
+  "index": "1975-A-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-4. Let \\( n=2 m \\), where \\( m \\) is an odd integer greater than 1 . Let \\( \\theta=e^{2 m / n} \\). Express \\( (1-\\theta)^{-1} \\) explicitly as a polynomial in \\( \\boldsymbol{\\theta} \\),\n\\[\na_{k} \\theta^{k}+a_{k-1} \\theta^{k-1}+\\cdots+a_{1} \\theta+a_{0}\n\\]\nwith integer coefficients \\( a_{1} \\).\n[Note that \\( \\boldsymbol{\\theta} \\) is a primitive \\( \\boldsymbol{n} \\)-th root of unity, and thus it satisfies all of the identities which hold for such roots.]",
+  "solution": "A-4.\nLet \\( n=4 k+2 \\) with \\( k>0 \\). Then\n\\[\n\\begin{array}{l}\n0=\\theta^{n}-1=\\theta^{4 k+2}-1=\\left(\\theta^{2 k+1}-1\\right)\\left(\\theta^{2 k+1}+1\\right), \\\\\n0=\\left(\\theta^{2 k+1}-1\\right)(\\theta+1)\\left(\\theta^{2 k}-\\theta^{2 k-1}+\\theta^{2 k-2}-\\cdots-\\theta+1\\right) .\n\\end{array}\n\\]\n\nSince \\( \\theta \\) is a primitive \\( n \\)th root of unity with \\( n>2 k+1 \\) and \\( n>2 \\),\n\\[\n\\left(\\theta^{2 k+1}-1\\right)(\\theta+1) \\neq 0\n\\]\n\nHence\n(A)\n\\[\n\\begin{array}{l}\n\\theta^{2 k}-\\theta^{2 k-1}+\\theta^{2 k-2}-\\cdots+\\theta^{2}-\\theta+1=0 \\\\\n1=\\theta-\\theta^{2}+\\theta^{3}-\\cdots-\\theta^{2 k}=(1-\\theta)\\left(\\theta+\\theta^{3}+\\theta^{5}+\\cdots+\\theta^{2 k-1}\\right) \\\\\n(1-\\theta)^{-1}=\\theta+\\theta^{3}+\\cdots+\\theta^{2 k-1}[\\text { where } 2 k-1=(n-4) / 2]\n\\end{array}\n\\]\n\nAnother solution is \\( (1-\\theta)^{-1}=1+\\theta^{2}+\\theta^{4}+\\cdots+\\theta^{2 k} \\) as one sees from (A).",
+  "vars": [
+    "\\\\theta"
+  ],
+  "params": [
+    "n",
+    "m",
+    "k",
+    "a_k",
+    "a_k-1",
+    "a_1",
+    "a_0"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "\\\\theta": "unityroot",
+        "n": "modulusvalue",
+        "m": "oddmultiple",
+        "k": "halfindex",
+        "a_k": "topcoeff",
+        "a_k-1": "prevcoeff",
+        "a_1": "firstcoeff",
+        "a_0": "zerocoeff"
+      },
+      "question": "A-4. Let \\( modulusvalue=2 oddmultiple \\), where \\( oddmultiple \\) is an odd integer greater than 1 . Let \\( unityroot=e^{2 oddmultiple / modulusvalue} \\). Express \\( (1-unityroot)^{-1} \\) explicitly as a polynomial in \\( \\boldsymbol{unityroot} \\),\n\\[\n topcoeff unityroot^{halfindex}+prevcoeff unityroot^{halfindex-1}+\\cdots+firstcoeff unityroot+zerocoeff\n\\]\nwith integer coefficients \\( firstcoeff \\).\n[Note that \\( \\boldsymbol{unityroot} \\) is a primitive \\( \\boldsymbol{modulusvalue} \\)-th root of unity, and thus it satisfies all of the identities which hold for such roots.]",
+      "solution": "A-4.\nLet \\( modulusvalue=4 halfindex+2 \\) with \\( halfindex>0 \\). Then\n\\[\n\\begin{array}{l}\n0=unityroot^{modulusvalue}-1=unityroot^{4 halfindex+2}-1=\\left(unityroot^{2 halfindex+1}-1\\right)\\left(unityroot^{2 halfindex+1}+1\\right), \\\\\n0=\\left(unityroot^{2 halfindex+1}-1\\right)(unityroot+1)\\left(unityroot^{2 halfindex}-unityroot^{2 halfindex-1}+unityroot^{2 halfindex-2}-\\cdots-unityroot+1\\right) .\n\\end{array}\n\\]\n\nSince \\( unityroot \\) is a primitive \\( modulusvalue \\)th root of unity with \\( modulusvalue>2 halfindex+1 \\) and \\( modulusvalue>2 \\),\n\\[\n\\left(unityroot^{2 halfindex+1}-1\\right)(unityroot+1) \\neq 0\n\\]\n\nHence\n(A)\n\\[\n\\begin{array}{l}\nunityroot^{2 halfindex}-unityroot^{2 halfindex-1}+unityroot^{2 halfindex-2}-\\cdots+unityroot^{2}-unityroot+1=0 \\\\\n1=unityroot-unityroot^{2}+unityroot^{3}-\\cdots-unityroot^{2 halfindex}=(1-unityroot)\\left(unityroot+unityroot^{3}+unityroot^{5}+\\cdots+unityroot^{2 halfindex-1}\\right) \\\\\n(1-unityroot)^{-1}=unityroot+unityroot^{3}+\\cdots+unityroot^{2 halfindex-1}[\\text { where } 2 halfindex-1=(modulusvalue-4) / 2]\n\\end{array}\n\\]\n\nAnother solution is \\( (1-unityroot)^{-1}=1+unityroot^{2}+unityroot^{4}+\\cdots+unityroot^{2 halfindex} \\) as one sees from (A)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "\\theta": "rainshadow",
+        "n": "lampposts",
+        "m": "buttercup",
+        "k": "sailboats",
+        "a_k": "hammockers",
+        "a_k-1": "tangerines",
+        "a_1": "lumberjack",
+        "a_0": "florentine"
+      },
+      "question": "A-4. Let \\( lampposts=2 buttercup \\), where \\( buttercup \\) is an odd integer greater than 1 . Let \\( rainshadow=e^{2 buttercup / lampposts} \\). Express \\( (1-rainshadow)^{-1} \\) explicitly as a polynomial in \\( \\boldsymbol{rainshadow} \\),\n\\[\nhammockers \\, rainshadow^{sailboats}+tangerines \\, rainshadow^{sailboats-1}+\\cdots+lumberjack \\, rainshadow+florentine\n\\]\nwith integer coefficients \\( lumberjack \\).\n[Note that \\( \\boldsymbol{rainshadow} \\) is a primitive \\( \\boldsymbol{lampposts} \\)-th root of unity, and thus it satisfies all of the identities which hold for such roots.]",
+      "solution": "A-4.\nLet \\( lampposts=4 sailboats+2 \\) with \\( sailboats>0 \\). Then\n\\[\n\\begin{array}{l}\n0=rainshadow^{lampposts}-1=rainshadow^{4 sailboats+2}-1=\\left(rainshadow^{2 sailboats+1}-1\\right)\\left(rainshadow^{2 sailboats+1}+1\\right), \\\\\n0=\\left(rainshadow^{2 sailboats+1}-1\\right)(rainshadow+1)\\left(rainshadow^{2 sailboats}-rainshadow^{2 sailboats-1}+rainshadow^{2 sailboats-2}-\\cdots-rainshadow+1\\right) .\n\\end{array}\n\\]\n\nSince \\( rainshadow \\) is a primitive \\( lampposts \\)th root of unity with \\( lampposts>2 sailboats+1 \\) and \\( lampposts>2 \\),\n\\[\n\\left(rainshadow^{2 sailboats+1}-1\\right)(rainshadow+1) \\neq 0\n\\]\n\nHence\n(A)\n\\[\n\\begin{array}{l}\nrainshadow^{2 sailboats}-rainshadow^{2 sailboats-1}+rainshadow^{2 sailboats-2}-\\cdots+rainshadow^{2}-rainshadow+1=0 \\\\\n1=rainshadow-rainshadow^{2}+rainshadow^{3}-\\cdots-rainshadow^{2 sailboats}=(1-rainshadow)\\left(rainshadow+rainshadow^{3}+rainshadow^{5}+\\cdots+rainshadow^{2 sailboats-1}\\right) \\\\\n(1-rainshadow)^{-1}=rainshadow+rainshadow^{3}+\\cdots+rainshadow^{2 sailboats-1}[\\text { where } 2 sailboats-1=(lampposts-4) / 2]\n\\end{array}\n\\]\n\nAnother solution is \\( (1-rainshadow)^{-1}=1+rainshadow^{2}+rainshadow^{4}+\\cdots+rainshadow^{2 sailboats} \\) as one sees from (A)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "\\theta": "\\nonangle",
+        "n": "tinyindex",
+        "m": "evenindex",
+        "k": "zerovalue",
+        "a_k": "constantcoef",
+        "a_k-1": "variablecoef",
+        "a_1": "zerocoef",
+        "a_0": "infinitecoef"
+      },
+      "question": "A-4. Let \\( tinyindex=2 evenindex \\), where \\( evenindex \\) is an odd integer greater than 1 . Let \\( \\nonangle=e^{2 evenindex / tinyindex} \\). Express \\( (1-\\nonangle)^{-1} \\) explicitly as a polynomial in \\( \\boldsymbol{\\nonangle} \\),\n\\[\nconstantcoef \\nonangle^{zerovalue}+variablecoef \\nonangle^{zerovalue-1}+\\cdots+zerocoef \\nonangle+infinitecoef\n\\]\nwith integer coefficients \\( zerocoef \\).\n[Note that \\( \\boldsymbol{\\nonangle} \\) is a primitive \\( \\boldsymbol{tinyindex} \\)-th root of unity, and thus it satisfies all of the identities which hold for such roots.]",
+      "solution": "A-4.\nLet \\( tinyindex=4 zerovalue+2 \\) with \\( zerovalue>0 \\). Then\n\\[\n\\begin{array}{l}\n0=\\nonangle^{tinyindex}-1=\\nonangle^{4 zerovalue+2}-1=\\left(\\nonangle^{2 zerovalue+1}-1\\right)\\left(\\nonangle^{2 zerovalue+1}+1\\right), \\\\\n0=\\left(\\nonangle^{2 zerovalue+1}-1\\right)(\\nonangle+1)\\left(\\nonangle^{2 zerovalue}-\\nonangle^{2 zerovalue-1}+\\nonangle^{2 zerovalue-2}-\\cdots-\\nonangle+1\\right) .\n\\end{array}\n\\]\n\nSince \\( \\nonangle \\) is a primitive \\( tinyindex \\)th root of unity with \\( tinyindex>2 zerovalue+1 \\) and \\( tinyindex>2 \\),\n\\[\n\\left(\\nonangle^{2 zerovalue+1}-1\\right)(\\nonangle+1) \\neq 0\n\\]\n\nHence\n(A)\n\\[\n\\begin{array}{l}\n\\nonangle^{2 zerovalue}-\\nonangle^{2 zerovalue-1}+\\nonangle^{2 zerovalue-2}-\\cdots+\\nonangle^{2}-\\nonangle+1=0 \\\\\n1=\\nonangle-\\nonangle^{2}+\\nonangle^{3}-\\cdots-\\nonangle^{2 zerovalue}=(1-\\nonangle)\\left(\\nonangle+\\nonangle^{3}+\\nonangle^{5}+\\cdots+\\nonangle^{2 zerovalue-1}\\right) \\\\\n(1-\\nonangle)^{-1}=\\nonangle+\\nonangle^{3}+\\cdots+\\nonangle^{2 zerovalue-1}[\\text { where } 2 zerovalue-1=(tinyindex-4) / 2]\n\\end{array}\n\\]\n\nAnother solution is \\( (1-\\nonangle)^{-1}=1+\\nonangle^{2}+\\nonangle^{4}+\\cdots+\\nonangle^{2 zerovalue} \\) as one sees from (A)."
+    },
+    "garbled_string": {
+      "map": {
+        "\\theta": "qzxwvtnp",
+        "n": "blrmishg",
+        "m": "thsjpzva",
+        "k": "fzcoynwb",
+        "a_k": "lpeyvgxr",
+        "a_k-1": "bqstjhdu",
+        "a_1": "nkdxhpza",
+        "a_0": "crhsmvye"
+      },
+      "question": "A-4. Let \\( blrmishg=2 thsjpzva \\), where \\( thsjpzva \\) is an odd integer greater than 1. Let \\( qzxwvtnp=e^{2 thsjpzva / blrmishg} \\). Express \\( (1-qzxwvtnp)^{-1} \\) explicitly as a polynomial in \\( \\boldsymbol{qzxwvtnp} \\),\n\\[\nlpeyvgxr qzxwvtnp^{fzcoynwb}+bqstjhdu qzxwvtnp^{fzcoynwb-1}+\\cdots+nkdxhpza qzxwvtnp+crhsmvye\n\\]\nwith integer coefficients \\( nkdxhpza \\).\n[Note that \\( \\boldsymbol{qzxwvtnp} \\) is a primitive \\( \\boldsymbol{blrmishg} \\)-th root of unity, and thus it satisfies all of the identities which hold for such roots.]",
+      "solution": "A-4.\nLet \\( blrmishg=4 fzcoynwb+2 \\) with \\( fzcoynwb>0 \\). Then\n\\[\n\\begin{array}{l}\n0=qzxwvtnp^{blrmishg}-1=qzxwvtnp^{4 fzcoynwb+2}-1=\\left(qzxwvtnp^{2 fzcoynwb+1}-1\\right)\\left(qzxwvtnp^{2 fzcoynwb+1}+1\\right),\\\\\n0=\\left(qzxwvtnp^{2 fzcoynwb+1}-1\\right)(qzxwvtnp+1)\\left(qzxwvtnp^{2 fzcoynwb}-qzxwvtnp^{2 fzcoynwb-1}+qzxwvtnp^{2 fzcoynwb-2}-\\cdots-qzxwvtnp+1\\right) .\n\\end{array}\n\\]\n\nSince \\( qzxwvtnp \\) is a primitive \\( blrmishg \\)th root of unity with \\( blrmishg>2 fzcoynwb+1 \\) and \\( blrmishg>2 \\),\n\\[\n\\left(qzxwvtnp^{2 fzcoynwb+1}-1\\right)(qzxwvtnp+1)\\neq0\n\\]\n\nHence\n(A)\n\\[\n\\begin{array}{l}\nqzxwvtnp^{2 fzcoynwb}-qzxwvtnp^{2 fzcoynwb-1}+qzxwvtnp^{2 fzcoynwb-2}-\\cdots+qzxwvtnp^{2}-qzxwvtnp+1=0\\\\\n1=qzxwvtnp-qzxwvtnp^{2}+qzxwvtnp^{3}-\\cdots-qzxwvtnp^{2 fzcoynwb}=(1-qzxwvtnp)\\left(qzxwvtnp+qzxwvtnp^{3}+qzxwvtnp^{5}+\\cdots+qzxwvtnp^{2 fzcoynwb-1}\\right)\\\\\n(1-qzxwvtnp)^{-1}=qzxwvtnp+qzxwvtnp^{3}+\\cdots+qzxwvtnp^{2 fzcoynwb-1}[\\text { where } 2 fzcoynwb-1=(blrmishg-4)/2]\n\\end{array}\n\\]\n\nAnother solution is \\( (1-qzxwvtnp)^{-1}=1+qzxwvtnp^{2}+qzxwvtnp^{4}+\\cdots+qzxwvtnp^{2 fzcoynwb} \\) as one sees from (A)."
+    },
+    "kernel_variant": {
+      "question": "Let s be a positive integer and put  \n  n = 2(2s+1) (> 2),  \\theta  = e^{2\\pi i/n}.  \n(The number n is even but not divisible by 4, and \\theta  is a primitive n-th root of unity.)  \nExpand the second reciprocal  \n\n  (1 - \\theta )^{-2}\n\nas a polynomial in \\theta  whose exponents are all even:  \n\n  (1 - \\theta )^{-2}=d_0+d_1\\theta ^{2}+d_2\\theta ^{4}+\\cdots +d_{2s}\\theta ^{4s}.  \n\nDetermine each coefficient d_k explicitly and prove your formula.",
+      "solution": "Factor once more than before.  Note that  \n\n (1-\\theta )^{-2}=((1-\\theta )^{-1})^{2}. (1)\n\nSince n=4s+2, the argument used earlier still gives  \n\n (1-\\theta )^{-1}=1+\\theta ^{2}+\\theta ^{4}+\\cdots +\\theta ^{2s}. (2)\n\nSquare the right-hand side of (2):\n\n (1-\\theta )^{-2}=\\sum _{j=0}^{s}\\theta ^{2j}^{2}\n      =\\sum _{j=0}^{s}\\sum _{\\ell =0}^{s}\\theta ^{2(j+\\ell )}\n      =\\sum _{k=0}^{2s} d_k \\theta ^{2k}, (3)\n\nwhere d_k counts the ordered pairs (j, \\ell ) with 0\\leq j,\\ell \\leq s and j+\\ell =k.\n\n* If 0 \\leq  k \\leq  s, the pairs are (0,k), (1,k-1), \\ldots , (k,0): exactly k+1 of them.  \n* If s<k\\leq 2s, both indices must stay \\leq s, so j ranges from k-s to s.  The number of possibilities is  \n\n s-(k-s)+1 = 2s-k+1.  \n\nHence  \n\n d_k = k+1  (0\\leq k\\leq s),  \n d_k = 2s-k+1 (s<k\\leq 2s). (4)\n\nBecause the convolution in (3) reproduces every term of (1) with the multiplicities in (4), identity (1) is verified, so the expansion is correct. \\square ",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.076242",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

@@ -1,0 +1,131 @@
+{
+  "index": "2002-B-2",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "Consider a polyhedron with at least five faces such that exactly three\nedges emerge from each of its vertices. Two players play the following\ngame:\n\\begin{verse}\n\\noindent\nEach player, in turn, signs his or her name on a previously\nunsigned face. The winner is the player who first succeeds in\nsigning three faces that share a common vertex.\n\\end{verse}\nShow that the player who signs first will always win by playing\nas well as possible.",
+  "solution": "(Note: the problem statement assumes that all polyhedra are connected\nand that no two edges share more than one face,\nso we will do likewise. In particular, these are true for all convex\npolyhedra.)\nWe show that in fact the first player can win on the third move.\nSuppose the polyhedron has a face $A$ with at least four edges. If\nthe first player plays there first, after the second player's first move\nthere will be three consecutive faces $B,C,D$ adjacent to $A$ which\nare all unoccupied. The first player wins by playing in $C$; after\nthe second player's second move, at least one of $B$ and $D$ remains\nunoccupied, and either is a winning move for the first player.\n\nIt remains to show that the polyhedron has a face with at least four\nedges. (Thanks to Russ Mann for suggesting the following argument.)\nSuppose on the contrary that each face has only three edges.\nStarting with any face $F_1$ with vertices $v_1, v_2, v_3$, let\n$v_4$ be the other endpoint of the third edge out of $v_1$. Then\nthe faces adjacent to $F_1$ must have vertices $v_1, v_2, v_4$;\n$v_1, v_3, v_4$; and $v_2, v_3, v_4$. Thus $v_1, v_2, v_3, v_4$ form\na polyhedron by themselves, contradicting the fact that the given\npolyhedron is connected and has at least five vertices.\n(One can also deduce this using Euler's formula\n$V - E + F = 2 - 2g$, where $V,E,F$ are the numbers of vertices,\nedges and faces, respectively, and $g$ is the genus of the polyhedron.\nFor a convex polyhedron, $g=0$ and you get the ``usual'' Euler's formula.)\n\nNote: Walter Stromquist points out the following counterexample if\none relaxes the assumption that a pair of faces may not share multiple\nedges. Take a tetrahedron and remove a smaller tetrahedron from the\ncenter of an edge; this creates two small triangular faces and turns two\nof the original faces into hexagons. Then the second player can draw\nby signing one of the hexagons, one of the large triangles, and one\nof the small triangles. (He does this by ``mirroring'': wherever the first\nplayer signs, the second player signs the other face of the same type.)",
+  "vars": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "F_1",
+    "v_1",
+    "v_2",
+    "v_3",
+    "v_4",
+    "V",
+    "E",
+    "g"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "facealpha",
+        "B": "facebeta",
+        "C": "facegamma",
+        "D": "facedelta",
+        "F": "facenum",
+        "F_1": "facefirst",
+        "v_1": "vertexone",
+        "v_2": "vertextwo",
+        "v_3": "vertexthree",
+        "v_4": "vertexfour",
+        "V": "vertexnum",
+        "E": "edgenum",
+        "g": "genusvar"
+      },
+      "question": "Consider a polyhedron with at least five faces such that exactly three\nedges emerge from each of its vertices. Two players play the following\ngame:\n\\begin{verse}\n\\noindent\nEach player, in turn, signs his or her name on a previously\nunsigned face. The winner is the player who first succeeds in\nsigning three faces that share a common vertex.\n\\end{verse}\nShow that the player who signs first will always win by playing\nas well as possible.",
+      "solution": "(Note: the problem statement assumes that all polyhedra are connected\nand that no two edges share more than one face,\nso we will do likewise. In particular, these are true for all convex\npolyhedra.)\nWe show that in fact the first player can win on the third move.\nSuppose the polyhedron has a face $facealpha$ with at least four edges. If\nthe first player plays there first, after the second player's first move\nthere will be three consecutive faces $facebeta,facegamma,facedelta$ adjacent to $facealpha$ which\nare all unoccupied. The first player wins by playing in $facegamma$; after\nthe second player's second move, at least one of $facebeta$ and $facedelta$ remains\nunoccupied, and either is a winning move for the first player.\n\nIt remains to show that the polyhedron has a face with at least four\nedges. (Thanks to Russ Mann for suggesting the following argument.)\nSuppose on the contrary that each face has only three edges.\nStarting with any face $facefirst$ with vertices $vertexone, vertextwo, vertexthree$, let\n$vertexfour$ be the other endpoint of the third edge out of $vertexone$. Then\nthe faces adjacent to $facefirst$ must have vertices $vertexone, vertextwo, vertexfour$;\n$vertexone, vertexthree, vertexfour$; and $vertextwo, vertexthree, vertexfour$. Thus $vertexone, vertextwo, vertexthree, vertexfour$ form\na polyhedron by themselves, contradicting the fact that the given\npolyhedron is connected and has at least five vertices.\n(One can also deduce this using Euler's formula\n$vertexnum - edgenum + facenum = 2 - 2genusvar$, where $vertexnum,edgenum,facenum$ are the numbers of vertices,\nedges and faces, respectively, and $genusvar$ is the genus of the polyhedron.\nFor a convex polyhedron, $genusvar=0$ and you get the ``usual'' Euler's formula.)\n\nNote: Walter Stromquist points out the following counterexample if\none relaxes the assumption that a pair of faces may not share multiple\nedges. Take a tetrahedron and remove a smaller tetrahedron from the\ncenter of an edge; this creates two small triangular faces and turns two\nof the original faces into hexagons. Then the second player can draw\nby signing one of the hexagons, one of the large triangles, and one\nof the small triangles. (He does this by ``mirroring'': wherever the first\nplayer signs, the second player signs the other face of the same type.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "marigold",
+        "B": "brickwork",
+        "C": "lumberjack",
+        "D": "waterfall",
+        "F": "archangel",
+        "F_1": "lighthouse",
+        "v_1": "peppermint",
+        "v_2": "raincloud",
+        "v_3": "buttercup",
+        "v_4": "sandcastle",
+        "V": "dragonfly",
+        "E": "companion",
+        "g": "volleyball"
+      },
+      "question": "Consider a polyhedron with at least five faces such that exactly three\nedges emerge from each of its vertices. Two players play the following\ngame:\n\\begin{verse}\n\\noindent\nEach player, in turn, signs his or her name on a previously\nunsigned face. The winner is the player who first succeeds in\nsigning three faces that share a common vertex.\n\\end{verse}\nShow that the player who signs first will always win by playing\nas well as possible.",
+      "solution": "(Note: the problem statement assumes that all polyhedra are connected\nand that no two edges share more than one face,\nso we will do likewise. In particular, these are true for all convex\npolyhedra.)\nWe show that in fact the first player can win on the third move.\nSuppose the polyhedron has a face $marigold$ with at least four edges. If\nthe first player plays there first, after the second player's first move\nthere will be three consecutive faces $brickwork,lumberjack,waterfall$ adjacent to $marigold$ which\nare all unoccupied. The first player wins by playing in $lumberjack$; after\nthe second player's second move, at least one of $brickwork$ and $waterfall$ remains\nunoccupied, and either is a winning move for the first player.\n\nIt remains to show that the polyhedron has a face with at least four\nedges. (Thanks to Russ Mann for suggesting the following argument.)\nSuppose on the contrary that each face has only three edges.\nStarting with any face $lighthouse$ with vertices $peppermint, raincloud, buttercup$, let\n$sandcastle$ be the other endpoint of the third edge out of $peppermint$. Then\nthe faces adjacent to $lighthouse$ must have vertices $peppermint, raincloud, sandcastle$;\n$peppermint, buttercup, sandcastle$; and $raincloud, buttercup, sandcastle$. Thus $peppermint, raincloud, buttercup, sandcastle$ form\na polyhedron by themselves, contradicting the fact that the given\npolyhedron is connected and has at least five vertices.\n(One can also deduce this using Euler's formula\n$dragonfly - companion + archangel = 2 - 2volleyball$, where $dragonfly,companion,archangel$ are the numbers of vertices,\nedges and faces, respectively, and $volleyball$ is the genus of the polyhedron.\nFor a convex polyhedron, $volleyball=0$ and you get the ``usual'' Euler's formula.)\n\nNote: Walter Stromquist points out the following counterexample if\none relaxes the assumption that a pair of faces may not share multiple\nedges. Take a tetrahedron and remove a smaller tetrahedron from the\ncenter of an edge; this creates two small triangular faces and turns two\nof the original faces into hexagons. Then the second player can draw\nby signing one of the hexagons, one of the large triangles, and one\nof the small triangles. (He does this by ``mirroring'': wherever the first\nplayer signs, the second player signs the other face of the same type.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "omegaface",
+        "B": "abyssface",
+        "C": "troughside",
+        "D": "finalfacet",
+        "F": "voidshape",
+        "F_1": "nullshape",
+        "v_1": "antipoint",
+        "v_2": "negapoint",
+        "v_3": "zeropoint",
+        "v_4": "nonepoint",
+        "V": "emptysize",
+        "E": "gapamount",
+        "g": "flatness"
+      },
+      "question": "Consider a polyhedron with at least five faces such that exactly three\nedges emerge from each of its vertices. Two players play the following\ngame:\n\\begin{verse}\n\\noindent\nEach player, in turn, signs his or her name on a previously\nunsigned face. The winner is the player who first succeeds in\nsigning three faces that share a common vertex.\n\\end{verse}\nShow that the player who signs first will always win by playing\nas well as possible.",
+      "solution": "(Note: the problem statement assumes that all polyhedra are connected\nand that no two edges share more than one face,\nso we will do likewise. In particular, these are true for all convex\npolyhedra.)\nWe show that in fact the first player can win on the third move.\nSuppose the polyhedron has a face $omegaface$ with at least four edges. If\nthe first player plays there first, after the second player's first move\nthere will be three consecutive faces $abyssface,troughside,finalfacet$ adjacent to $omegaface$ which\nare all unoccupied. The first player wins by playing in $troughside$; after\nthe second player's second move, at least one of $abyssface$ and $finalfacet$ remains\nunoccupied, and either is a winning move for the first player.\n\nIt remains to show that the polyhedron has a face with at least four\nedges. (Thanks to Russ Mann for suggesting the following argument.)\nSuppose on the contrary that each face has only three edges.\nStarting with any face $nullshape$ with vertices $antipoint, negapoint, zeropoint$, let\n$nonepoint$ be the other endpoint of the third edge out of $antipoint$. Then\nthe faces adjacent to $nullshape$ must have vertices $antipoint, negapoint, nonepoint$;\n$antipoint, zeropoint, nonepoint$; and $negapoint, zeropoint, nonepoint$. Thus $antipoint, negapoint, zeropoint, nonepoint$ form\na polyhedron by themselves, contradicting the fact that the given\npolyhedron is connected and has at least five vertices.\n(One can also deduce this using Euler's formula\n$emptysize - gapamount + voidshape = 2 - 2flatness$, where $emptysize,gapamount,voidshape$ are the numbers of vertices,\nedges and faces, respectively, and $flatness$ is the genus of the polyhedron.\nFor a convex polyhedron, $flatness=0$ and you get the ``usual'' Euler's formula.)\n\nNote: Walter Stromquist points out the following counterexample if\none relaxes the assumption that a pair of faces may not share multiple\nedges. Take a tetrahedron and remove a smaller tetrahedron from the\ncenter of an edge; this creates two small triangular faces and turns two\nof the original faces into hexagons. Then the second player can draw\nby signing one of the hexagons, one of the large triangles, and one\nof the small triangles. (He does this by ``mirroring'': wherever the first\nplayer signs, the second player signs the other face of the same type.)"
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "C": "mnbvcxqe",
+        "D": "plokijuh",
+        "F": "uytredsx",
+        "F_1": "lkhdsaop",
+        "v_1": "zabxswer",
+        "v_2": "tyumghji",
+        "v_3": "pqanerfg",
+        "v_4": "yczbxnml",
+        "V": "qertyuio",
+        "E": "asdfghjk",
+        "g": "zxcvbnml"
+      },
+      "question": "Consider a polyhedron with at least five faces such that exactly three\nedges emerge from each of its vertices. Two players play the following\ngame:\n\\begin{verse}\n\\noindent\nEach player, in turn, signs his or her name on a previously\nunsigned face. The winner is the player who first succeeds in\nsigning three faces that share a common vertex.\n\\end{verse}\nShow that the player who signs first will always win by playing\nas well as possible.",
+      "solution": "(Note: the problem statement assumes that all polyhedra are connected\nand that no two edges share more than one face,\nso we will do likewise. In particular, these are true for all convex\npolyhedra.)\nWe show that in fact the first player can win on the third move.\nSuppose the polyhedron has a face $qzxwvtnp$ with at least four edges. If\nthe first player plays there first, after the second player's first move\nthere will be three consecutive faces $hjgrksla,mnbvcxqe,plokijuh$ adjacent to $qzxwvtnp$ which\nare all unoccupied. The first player wins by playing in $mnbvcxqe$; after\nthe second player's second move, at least one of $hjgrksla$ and $plokijuh$ remains\nunoccupied, and either is a winning move for the first player.\n\nIt remains to show that the polyhedron has a face with at least four\nedges. (Thanks to Russ Mann for suggesting the following argument.)\nSuppose on the contrary that each face has only three edges.\nStarting with any face $lkhdsaop$ with vertices $zabxswer, tyumghji, pqanerfg$, let\n$yczbxnml$ be the other endpoint of the third edge out of $zabxswer$. Then\nthe faces adjacent to $lkhdsaop$ must have vertices $zabxswer, tyumghji, yczbxnml$;\n$zabxswer, pqanerfg, yczbxnml$; and $tyumghji, pqanerfg, yczbxnml$. Thus $zabxswer, tyumghji, pqanerfg, yczbxnml$ form\na polyhedron by themselves, contradicting the fact that the given\npolyhedron is connected and has at least five vertices.\n(One can also deduce this using Euler's formula\n$qertyuio - asdfghjk + uytredsx = 2 - 2 zxcvbnml$, where $qertyuio,asdfghjk,uytredsx$ are the numbers of vertices,\nedges and faces, respectively, and $zxcvbnml$ is the genus of the polyhedron.\nFor a convex polyhedron, $zxcvbnml=0$ and you get the ``usual'' Euler's formula.)\n\nNote: Walter Stromquist points out the following counterexample if\none relaxes the assumption that a pair of faces may not share multiple\nedges. Take a tetrahedron and remove a smaller tetrahedron from the\ncenter of an edge; this creates two small triangular faces and turns two\nof the original faces into hexagons. Then the second player can draw\nby signing one of the hexagons, one of the large triangles, and one\nof the small triangles. (He does this by ``mirroring'': wherever the first\nplayer signs, the second player signs the other face of the same type.)"
+    },
+    "kernel_variant": {
+      "question": "Let P be a connected polyhedron with at least seven faces, and assume that exactly three edges meet at every vertex of P. Two players, Red (first) and Blue (second), take turns colouring one previously uncoloured face of P with their own colour. A player wins immediately when, at the end of his or her turn, three faces of that player's colour share a common vertex. Prove that Red can play so as to guarantee a win no later than Red's fourth turn (i.e.\red's seventh move of the game).",
+      "solution": "Corrected Solution:\n\nLet P be a connected polyhedron with at least seven faces, in which exactly three edges meet at every vertex.  We play the game in which Red and Blue alternately colour an uncoloured face with their own colour, and a player wins immediately when three faces of that player's colour share a common vertex.  We show Red can force a win by his third turn (move 5), certainly no later than his fourth turn (move 7).\n\n1.  Existence of a face with \\geq 4 edges.  Suppose for contradiction that every face is a triangle.  Let V,E,F be the numbers of vertices, edges, and faces.  Since each vertex has degree 3, the sum of vertex-degrees is 3V=2E, so E=3V/2.  Since each face is a triangle, the sum of face-lengths is 3F=2E, so F=2E/3=V.  Then Euler's formula for a connected planar map,\n\n   V - E + F = 2,\n\nsubstituting E=3V/2 and F=V gives\n\n   V - (3V/2) + V = 2  \\Rightarrow   V/2 = 2  \\Rightarrow   V = 4,  F = 4,\n\ncontradicting F \\geq  7.  Hence there is at least one face A with at least four edges.\n\n2.  Red's first move: Colour A.\n\n3.  Blue makes some move; he colours one other face, possibly adjacent to A, but at most one neighbor of A.\n\n4.  Consider the faces adjacent to A.  Since A is k-gonal with k \\geq  4, it has k neighbours arranged in a cycle around A.  Blue's single move so far can occupy at most one of those k neighbours.  Because k \\geq  4, there exists a block of three consecutive neighbours B,C,D none of which has been coloured by Blue.\n\n5.  Red's second move: Colour C, the middle face of that unoccupied triple.\n\n6.  Now observe that faces A,C,B all meet at the vertex where edges of A and C meet at the end shared with B; likewise A,C,D meet at the adjacent vertex of A.  Thus on his next turn Red threatens to complete three at a common vertex by colouring either B or D.\n\n7.  Blue's second move can colour at most one of B or D, so one of them remains uncoloured.\n\n8.  Red's third move: Colour whichever of B or D remains uncoloured.  Together with A and C, these three red faces now share a common vertex, and Red wins.\n\nThis concludes that Red wins by his third turn (the 5th move), certainly no later than his fourth turn (the 7th move), as required. QED.",
+      "_meta": {
+        "core_steps": [
+          "If every face were triangular, the cubic‐vertex condition would force the whole solid to be a tetrahedron; this contradicts the given ‘big enough’ hypothesis, so some face has ≥4 edges.",
+          "First player signs that ≥4-edged face A.",
+          "After the rival’s reply there remain three consecutive neighbouring faces B, C, D around a common vertex that are still unsigned.",
+          "First player now signs the middle one C, leaving two simultaneous winning threats (B or D) at that vertex.",
+          "Whatever the opponent does next, at least one threat survives; the first player signs it on the next turn and owns three faces meeting at one vertex—hence wins."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Minimum number of faces required merely to rule out the tetrahedron; any integer ≥5 works.",
+            "original": "at least five faces"
+          },
+          "slot2": {
+            "description": "Stated upper bound on moves needed for the forced win; saying ‘within four moves’ (or any ≥3) would not alter the logic.",
+            "original": "third move"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,128 @@
+{
+  "index": "1993-A-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "The infinite sequence of 2's and 3's\n\\begin{align*}\n&2,3,3,2,3,3,3,2,3,3,3,2,3,3,2,3,3, \\\\\n&3,2,3,3,3,2,3,3,3,2,3,3,2,3,3,3,2,\\dots\n\\end{align*}\nhas the property that, if one forms a second sequence that records the\nnumber of 3's between successive 2's, the result is identical to the\ngiven sequence. Show that there exists a real number $r$ such that, for\nany $n$, the $n$th term of the sequence is 2 if and only if $n = 1 +\n\\lfloor rm \\rfloor$ for some nonnegative integer $m$. (Note: $\\lfloor x\n\\rfloor$ denotes the largest integer less than or equal to $x$.)",
+  "solution": "Solution. Let \\( r=2+\\sqrt{3} \\). The sequence is uniquely determined by the self-generation property and its first few terms. Therefore it suffices to show that the sequence \\( a_{0}, a_{1}, a_{2}, \\ldots \\) has the self-generation property when we define \\( a_{n}=2 \\) if \\( n=\\lfloor\\mathrm{rm}\\rfloor \\) for some \\( m \\), and \\( a_{n}=3 \\) otherwise. (Note that the first term is \\( a_{0} \\).)\n\nThe self-generation property for \\( \\left(a_{n}\\right) \\) is equivalent to\n\\[\n\\lfloor r(n+1)\\rfloor-\\lfloor r n\\rfloor=\\left\\{\\begin{array}{ll}\n3 & \\text { if } n=\\lfloor r m\\rfloor \\text { for some } m \\\\\n4 & \\text { otherwise }\n\\end{array}\\right.\n\\]\n\nSince \\( \\lfloor r(n+1)\\rfloor-\\lfloor r n\\rfloor \\) is always 3 or 4 , we seek to prove:\n\\[\nn \\text { is of the form }\\lfloor r m\\rfloor \\quad \\Longleftrightarrow \\quad\\lfloor r(n+1)\\rfloor-\\lfloor r n\\rfloor=3\n\\]\n\nThis is a consequence of the following series of equivalences, in which we use the identity\n\\[\n\\lceil z / r\\rceil=\\lceil 4 z-r z\\rceil=4 z-\\lfloor r z\\rfloor\n\\]\nfor integer \\( z \\) :\n\\( n \\) is of the form \\( \\lfloor\\mathrm{rm}\\rfloor \\).\n\\( \\Longleftrightarrow \\) There is an \\( m \\) for which \\( n+1>r m>n \\).\n\\( \\Longleftrightarrow \\) There is an \\( m \\) for which \\( (n+1) / r>m>n / r \\).\n\\( \\Longleftrightarrow\\lceil(n+1) / r\\rceil-\\lceil n / r\\rceil=1 \\).\n\\( \\Longleftrightarrow 4(n+1)-\\lfloor(n+1) r\\rfloor-4 n+\\lfloor n r\\rfloor=1 \\) (by (1) with \\( z=n \\) and \\( z=n+1 \\) ).\n\\( \\Longleftrightarrow\\lfloor(n+1) r\\rfloor-\\lfloor n r\\rfloor=3 \\).",
+  "vars": [
+    "n",
+    "m",
+    "a_0",
+    "a_1",
+    "a_2",
+    "a_n",
+    "z"
+  ],
+  "params": [
+    "r"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "m": "counterr",
+        "a_0": "termzero",
+        "a_1": "termonee",
+        "a_2": "termtwoo",
+        "a_n": "termindx",
+        "z": "placeholder",
+        "r": "ratiooo"
+      },
+      "question": "The infinite sequence of 2's and 3's\n\\begin{align*}\n&2,3,3,2,3,3,3,2,3,3,3,2,3,3,2,3,3, \\\\\n&3,2,3,3,3,2,3,3,3,2,3,3,2,3,3,3,2,\\dots\n\\end{align*}\nhas the property that, if one forms a second sequence that records the\nnumber of 3's between successive 2's, the result is identical to the\ngiven sequence. Show that there exists a real number $ratiooo$ such that, for\nany $indexvar$, the $indexvar$th term of the sequence is 2 if and only if $indexvar = 1 +\n\\lfloor ratiooo\\, counterr \\rfloor$ for some nonnegative integer $counterr$. (Note: $\\lfloor x\n\\rfloor$ denotes the largest integer less than or equal to $x$.)",
+      "solution": "Solution. Let \\( ratiooo = 2+\\sqrt{3} \\). The sequence is uniquely determined by the self-generation property and its first few terms. Therefore it suffices to show that the sequence \\( termzero, termonee, termtwoo, \\ldots \\) has the self-generation property when we define \\( termindx = 2 \\) if \\( indexvar = \\lfloor ratiooo\\, counterr \\rfloor \\) for some \\( counterr \\), and \\( termindx = 3 \\) otherwise. (Note that the first term is \\( termzero \\).)\n\nThe self-generation property for \\( \\left(termindx\\right) \\) is equivalent to\n\\[\n\\lfloor ratiooo(indexvar+1)\\rfloor-\\lfloor ratiooo\\, indexvar\\rfloor=\\left\\{\\begin{array}{ll}\n3 & \\text { if } indexvar=\\lfloor ratiooo\\, counterr\\rfloor \\text { for some } counterr \\\\\n4 & \\text { otherwise }\n\\end{array}\\right.\n\\]\n\nSince \\( \\lfloor ratiooo(indexvar+1)\\rfloor-\\lfloor ratiooo\\, indexvar\\rfloor \\) is always 3 or 4, we seek to prove:\n\\[\nindexvar \\text { is of the form }\\lfloor ratiooo\\, counterr\\rfloor \\quad \\Longleftrightarrow \\quad\\lfloor ratiooo(indexvar+1)\\rfloor-\\lfloor ratiooo\\, indexvar\\rfloor=3\n\\]\n\nThis is a consequence of the following series of equivalences, in which we use the identity\n\\[\n\\lceil placeholder / ratiooo\\rceil=\\lceil 4\\, placeholder- ratiooo\\, placeholder\\rceil=4\\, placeholder-\\lfloor ratiooo\\, placeholder\\rfloor\n\\]\nfor integer \\( placeholder \\):\n\\begin{align*}\n& indexvar \\text { is of the form } \\lfloor ratiooo\\, counterr\\rfloor.\\\\\n& \\Longleftrightarrow \\text { There is a } counterr \\text { for which } indexvar+1>ratiooo\\, counterr>indexvar.\\\\\n& \\Longleftrightarrow \\text { There is a } counterr \\text { for which } (indexvar+1)/ratiooo>counterr>indexvar/ratiooo.\\\\\n& \\Longleftrightarrow \\lceil(indexvar+1)/ratiooo\\rceil-\\lceil indexvar/ratiooo\\rceil=1.\\\\\n& \\Longleftrightarrow 4(indexvar+1)-\\lfloor(indexvar+1)\\, ratiooo\\rfloor-4\\, indexvar+\\lfloor indexvar\\, ratiooo\\rfloor=1 \\quad (\\text{by (1) with } placeholder=indexvar \\text { and } placeholder=indexvar+1).\\\\\n& \\Longleftrightarrow \\lfloor(indexvar+1)\\, ratiooo\\rfloor-\\lfloor indexvar\\, ratiooo\\rfloor=3.\n\\end{align*}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "pineapple",
+        "m": "blueberry",
+        "a_0": "parliament",
+        "a_1": "strawhat",
+        "a_2": "chocolate",
+        "a_n": "marigold",
+        "z": "honeycomb",
+        "r": "raincloud"
+      },
+      "question": "The infinite sequence of 2's and 3's\n\\begin{align*}\n&2,3,3,2,3,3,3,2,3,3,3,2,3,3,2,3,3, \\\\\n&3,2,3,3,3,2,3,3,3,2,3,3,2,3,3,3,2,\\dots\n\\end{align*}\nhas the property that, if one forms a second sequence that records the\nnumber of 3's between successive 2's, the result is identical to the\ngiven sequence. Show that there exists a real number $raincloud$ such that, for\nany $pineapple$, the $pineapple$th term of the sequence is 2 if and only if $pineapple = 1 +\n\\lfloor raincloudblueberry \\rfloor$ for some nonnegative integer $blueberry$. (Note: $\\lfloor x\n\\rfloor$ denotes the largest integer less than or equal to $x$.)",
+      "solution": "Solution. Let \\( raincloud=2+\\sqrt{3} \\). The sequence is uniquely determined by the self-generation property and its first few terms. Therefore it suffices to show that the sequence \\( parliament, strawhat, chocolate, \\ldots \\) has the self-generation property when we define \\( marigold=2 \\) if \\( pineapple=\\lfloor\\mathrm{raincloudblueberry}\\rfloor \\) for some \\( blueberry \\), and \\( marigold=3 \\) otherwise. (Note that the first term is \\( parliament \\).)\n\nThe self-generation property for \\( \\left(marigold\\right) \\) is equivalent to\n\\[\n\\lfloor raincloud(pineapple+1)\\rfloor-\\lfloor raincloud\\,pineapple\\rfloor=\\left\\{\\begin{array}{ll}\n3 & \\text { if } pineapple=\\lfloor raincloud\\,blueberry\\rfloor \\text { for some } blueberry \\\\\n4 & \\text { otherwise }\n\\end{array}\\right.\n\\]\n\nSince \\( \\lfloor raincloud(pineapple+1)\\rfloor-\\lfloor raincloud\\,pineapple\\rfloor \\) is always 3 or 4 , we seek to prove:\n\\[\npineapple \\text { is of the form }\\lfloor raincloud\\,blueberry\\rfloor \\quad \\Longleftrightarrow \\quad\\lfloor raincloud(pineapple+1)\\rfloor-\\lfloor raincloud\\,pineapple\\rfloor=3\n\\]\n\nThis is a consequence of the following series of equivalences, in which we use the identity\n\\[\n\\lceil honeycomb / raincloud\\rceil=\\lceil 4\\,honeycomb-raincloud\\,honeycomb\\rceil=4\\,honeycomb-\\lfloor raincloud\\,honeycomb\\rfloor\n\\]\nfor integer \\( honeycomb \\) :\n\\( pineapple \\) is of the form \\( \\lfloor\\mathrm{raincloudblueberry}\\rfloor \\).\n\\( \\Longleftrightarrow \\) There is an \\( blueberry \\) for which \\( pineapple+1>raincloud\\,blueberry>pineapple \\).\n\\( \\Longleftrightarrow \\) There is an \\( blueberry \\) for which \\( (pineapple+1) / raincloud>blueberry>pineapple / raincloud \\).\n\\( \\Longleftrightarrow\\lceil(pineapple+1) / raincloud\\rceil-\\lceil pineapple / raincloud\\rceil=1 \\).\n\\( \\Longleftrightarrow 4(pineapple+1)-\\lfloor(pineapple+1) raincloud\\rfloor-4\\,pineapple+\\lfloor pineapple\\,raincloud\\rfloor=1 \\) (by (1) with \\( honeycomb=pineapple \\) and \\( honeycomb=pineapple+1 \\) ).\n\\( \\Longleftrightarrow\\lfloor(pineapple+1) raincloud\\rfloor-\\lfloor pineapple\\,raincloud\\rfloor=3 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "realvalue",
+        "m": "continuum",
+        "a_0": "voidzero",
+        "a_1": "voidonee",
+        "a_2": "voidtwoo",
+        "a_n": "voidindex",
+        "z": "floatval",
+        "r": "imaginary"
+      },
+      "question": "The infinite sequence of 2's and 3's\n\\begin{align*}\n&2,3,3,2,3,3,3,2,3,3,3,2,3,3,2,3,3, \\\\\n&3,2,3,3,3,2,3,3,3,2,3,3,2,3,3,3,2,\\dots\n\\end{align*}\nhas the property that, if one forms a second sequence that records the\nnumber of 3's between successive 2's, the result is identical to the\ngiven sequence. Show that there exists a real number $imaginary$ such that, for\nany $realvalue$, the $realvalue$th term of the sequence is 2 if and only if $realvalue = 1 +\n\\lfloor imaginary continuum \\rfloor$ for some nonnegative integer $continuum$. (Note: $\\lfloor x\n\\rfloor$ denotes the largest integer less than or equal to $x$.)",
+      "solution": "Solution. Let \\( imaginary=2+\\sqrt{3} \\). The sequence is uniquely determined by the self-generation property and its first few terms. Therefore it suffices to show that the sequence \\( voidzero, voidonee, voidtwoo, \\ldots \\) has the self-generation property when we define \\( voidindex=2 \\) if \\( realvalue=\\lfloor\\mathrm{imaginarycontinuum}\\rfloor \\) for some \\( continuum \\), and \\( voidindex=3 \\) otherwise. (Note that the first term is \\( voidzero \\).)\n\nThe self-generation property for \\( \\left(voidindex\\right) \\) is equivalent to\n\\[\n\\lfloor imaginary(realvalue+1)\\rfloor-\\lfloor imaginary\\, realvalue\\rfloor=\\left\\{\\begin{array}{ll}\n3 & \\text { if } realvalue=\\lfloor imaginary\\, continuum\\rfloor \\text { for some } continuum \\\\\n4 & \\text { otherwise }\n\\end{array}\\right.\n\\]\n\nSince \\( \\lfloor imaginary(realvalue+1)\\rfloor-\\lfloor imaginary\\, realvalue\\rfloor \\) is always 3 or 4 , we seek to prove:\n\\[\nrealvalue \\text { is of the form }\\lfloor imaginary\\, continuum\\rfloor \\quad \\Longleftrightarrow \\quad\\lfloor imaginary(realvalue+1)\\rfloor-\\lfloor imaginary\\, realvalue\\rfloor=3\n\\]\n\nThis is a consequence of the following series of equivalences, in which we use the identity\n\\[\n\\lceil floatval / imaginary\\rceil=\\lceil 4 floatval-imaginary\\, floatval\\rceil=4 floatval-\\lfloor imaginary\\, floatval\\rfloor\n\\]\nfor integer \\( floatval \\) :\n\\( realvalue \\) is of the form \\( \\lfloor\\mathrm{imaginarycontinuum}\\rfloor \\).\n\\( \\Longleftrightarrow \\) There is an \\( continuum \\) for which \\( realvalue+1>imaginary\\, continuum>realvalue \\).\n\\( \\Longleftrightarrow \\) There is an \\( continuum \\) for which \\( (realvalue+1) / imaginary>continuum>realvalue / imaginary \\).\n\\( \\Longleftrightarrow\\lceil(realvalue+1) / imaginary\\rceil-\\lceil realvalue / imaginary\\rceil=1 \\).\n\\( \\Longleftrightarrow 4(realvalue+1)-\\lfloor(realvalue+1) imaginary\\rfloor-4 realvalue+\\lfloor realvalue imaginary\\rfloor=1 \\) (by (1) with \\( floatval=realvalue \\) and \\( floatval=realvalue+1 \\) ).\n\\( \\Longleftrightarrow\\lfloor(realvalue+1) imaginary\\rfloor-\\lfloor realvalue imaginary\\rfloor=3 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "m": "hjgrksla",
+        "a_0": "lskdprmq",
+        "a_1": "cnvbwtzx",
+        "a_2": "mpqsdjrh",
+        "a_n": "hfgtrmnl",
+        "z": "plmoknji",
+        "r": "asldkfgh"
+      },
+      "question": "The infinite sequence of 2's and 3's\n\\begin{align*}\n&2,3,3,2,3,3,3,2,3,3,3,2,3,3,2,3,3, \\\\\n&3,2,3,3,3,2,3,3,3,2,3,3,2,3,3,3,2,\\dots\n\\end{align*}\nhas the property that, if one forms a second sequence that records the\nnumber of 3's between successive 2's, the result is identical to the\ngiven sequence. Show that there exists a real number $asldkfgh$ such that, for\nany $qzxwvtnp$, the $qzxwvtnp$th term of the sequence is 2 if and only if $qzxwvtnp = 1 +\n\\lfloor asldkfgh hjgrksla \\rfloor$ for some nonnegative integer $hjgrksla$. (Note: $\\lfloor x\n\\rfloor$ denotes the largest integer less than or equal to $x$.)",
+      "solution": "Solution. Let \\( asldkfgh=2+\\sqrt{3} \\). The sequence is uniquely determined by the self-generation property and its first few terms. Therefore it suffices to show that the sequence \\( lskdprmq, cnvbwtzx, mpqsdjrh, \\ldots \\) has the self-generation property when we define \\( hfgtrmnl=2 \\) if \\( qzxwvtnp=\\lfloor asldkfgh hjgrksla\\rfloor \\) for some \\( hjgrksla \\), and \\( hfgtrmnl=3 \\) otherwise. (Note that the first term is \\( lskdprmq \\).)\n\nThe self-generation property for \\( \\left(hfgtrmnl\\right) \\) is equivalent to\n\\[\n\\lfloor asldkfgh(qzxwvtnp+1)\\rfloor-\\lfloor asldkfgh qzxwvtnp\\rfloor=\\left\\{\\begin{array}{ll}\n3 & \\text { if } qzxwvtnp=\\lfloor asldkfgh hjgrksla\\rfloor \\text { for some } hjgrksla \\\\\n4 & \\text { otherwise }\n\\end{array}\\right.\n\\]\n\nSince \\( \\lfloor asldkfgh(qzxwvtnp+1)\\rfloor-\\lfloor asldkfgh qzxwvtnp\\rfloor \\) is always 3 or 4 , we seek to prove:\n\\[\nqzxwvtnp \\text { is of the form }\\lfloor asldkfgh hjgrksla\\rfloor \\quad \\Longleftrightarrow \\quad\\lfloor asldkfgh(qzxwvtnp+1)\\rfloor-\\lfloor asldkfgh qzxwvtnp\\rfloor=3\n\\]\n\nThis is a consequence of the following series of equivalences, in which we use the identity\n\\[\n\\lceil plmoknji / asldkfgh\\rceil=\\lceil 4 plmoknji-asldkfgh plmoknji\\rceil=4 plmoknji-\\lfloor asldkfgh plmoknji\\rfloor\n\\]\nfor integer \\( plmoknji \\) :\n\\( qzxwvtnp \\) is of the form \\( \\lfloor asldkfgh hjgrksla\\rfloor \\).\n\\( \\Longleftrightarrow \\) There is an \\( hjgrksla \\) for which \\( qzxwvtnp+1>asldkfgh hjgrksla>qzxwvtnp \\).\n\\( \\Longleftrightarrow \\) There is an \\( hjgrksla \\) for which \\( (qzxwvtnp+1) / asldkfgh>hjgrksla>qzxwvtnp / asldkfgh \\).\n\\( \\Longleftrightarrow\\lceil(qzxwvtnp+1) / asldkfgh\\rceil-\\lceil qzxwvtnp / asldkfgh\\rceil=1 \\).\n\\( \\Longleftrightarrow 4(qzxwvtnp+1)-\\lfloor(qzxwvtnp+1) asldkfgh\\rfloor-4 qzxwvtnp+\\lfloor qzxwvtnp asldkfgh\\rfloor=1 \\) (by (1) with \\( plmoknji=qzxwvtnp \\) and \\( plmoknji=qzxwvtnp+1 \\) ).\n\\( \\Longleftrightarrow\\lfloor(qzxwvtnp+1) asldkfgh\\rfloor-\\lfloor qzxwvtnp asldkfgh\\rfloor=3 \\)."
+    },
+    "kernel_variant": {
+      "question": "Corrected Problem\n\nConsider an infinite sequence on the alphabet {5,6}\n\na0 , a1 , a2 , \\ldots   ,  ak \\in  {5,6}  (k = 0,1,2, \\ldots ),\nwith a0 = 5, which satisfies the following self-generation rule:\n\nIf the sequence is scanned from left to right and, for every pair of consecutive 5's, one writes down the number of 6's that occur between them, then the list that is produced is again the original sequence.\n\nProve that there is an irrational number\n\n            r = (7 + 3\\sqrt{5})/2  \\simeq  6.854101\\ldots \n\nsuch that, for every non-negative integer n,\n\n            a_n = 5     \\Leftrightarrow      n = \\lfloor r m\\rfloor   for some integer m \\geq  0.\n\n(Here \\lfloor x\\rfloor  denotes the greatest integer not exceeding x and the indexing of the sequence starts with n = 0.)\n\nShow, moreover, that the sequence satisfying the stated rule is unique.",
+      "solution": "Corrected Solution\n\n1.  The parameter r\n\nLet r be the positive root of\n            x^2 - 7x + 1 = 0 .\nHence            r = (7 + 3\\sqrt{5})/2,   6 < r < 7,   r is irrational.\nConsequently               \\lfloor r\\rfloor  = 6   and   \\lceil r\\rceil  = 7.\nBecause r + 1/r = 7, for every integer z we have\n\n          \\lceil  z / r \\rceil  = 7 z - \\lfloor  r z \\rfloor  .        (1)\n\n2.  Beatty set and the candidate sequence\n\nDefine the Beatty set\n          B_r = { \\lfloor r m\\rfloor  :  m = 0,1,2,\\ldots  }.\nPut\n          a_n = 5  if  n \\in  B_r ,\n          a_n = 6  otherwise.                      (2)\nWe shall show that (a_n) fulfils the self-generation rule and that it is the unique sequence with this property.\n\n3.  Forward differences\n\nFor every n \\geq  0 set\n          \\Delta _n = \\lfloor  r(n+1) \\rfloor  - \\lfloor  r n \\rfloor  .            (3)\nBecause 6 < r < 7 and r is irrational, \\Delta _n can take only the two values 6 or 7.\n\n4.  Characterising membership in B_r\n\nClaim.  For every n \\geq  0,\n          n \\in  B_r   \\Leftrightarrow    \\Delta _n = 6 .                (4)\n\nProof.  (\\Rightarrow )  Assume n = \\lfloor r m\\rfloor  for some m \\geq  0.\nThen   n \\leq  r m < n+1,  hence  n/r \\leq  m < (n+1)/r .   Consequently\n          \\lceil  (n+1)/r \\rceil  - \\lceil  n/r \\rceil  = 1.                       (5)\nApply (1) with z = n and z = n+1:\n   7(n+1) - \\lfloor  r(n+1) \\rfloor  - [ 7 n - \\lfloor  r n \\rfloor  ] = 1,\nwhich simplifies to \\Delta _n = 6.  Thus (\\Rightarrow ) holds, including the case n = 0.\n\n(\\Leftarrow )  Suppose \\Delta _n = 6.  Reversing the above steps gives (5), that is\n          \\lceil  (n+1)/r \\rceil  - \\lceil  n/r \\rceil  = 1.\nTherefore there exists an integer m with\n          n/r \\leq  m < (n+1)/r.\nTaking floors after multiplying through by r yields n = \\lfloor r m\\rfloor ; hence n \\in  B_r.  This proves (4).\n\n5.  Verifying the self-generation rule\n\nLet the positions of the 5's be\n          p_m = \\lfloor  r m \\rfloor    (m = 0,1,2,\\ldots ).\nThen p_{m+1} - p_m - 1 equals the number of 6's lying strictly between the two 5's at positions p_m and p_{m+1}.  Using (3) we have\n          p_{m+1} - p_m - 1 = \\Delta _m - 1.                 (6)\nBy (4) there are two cases.\n*  If m \\in  B_r, then \\Delta _m = 6 and (6) equals 5.\n*  If m \\notin  B_r, then \\Delta _m = 7 and (6) equals 6.\nBut (2) says exactly that a_m is 5 in the first case and 6 in the second.  Hence\n          number of 6's between p_m and p_{m+1} = a_m        (7)\nfor every m \\geq  0.  Statement (7) is precisely the required self-generation property; thus (a_n) satisfies the rule.\n\n6.  Uniqueness of the sequence\n\nWe now show that the rule together with the initial condition a_0 = 5 determines the sequence uniquely.\n\nWrite again p_0 = 0.  Suppose that, for some k \\geq  0, the sequence has already been constructed up to the k-th 5, situated at position p_k, and consequently all letters with indices \\leq  p_k are known.\n\n*  Among these known letters is a_k, because k \\leq  p_k.\n*  The rule says that a_k equals the number of 6's between the 5 at p_k and the next 5.  Therefore that next 5 must be placed at\n\n          p_{k+1} = p_k + a_k + 1.                       (8)\n\n*  Every position strictly between p_k and p_{k+1} has to be filled with the symbol 6, while the symbol at p_{k+1} has to be 5.\n\nThus the block of letters from p_k+1 up to and including p_{k+1} is uniquely fixed, and with it the value a_{k+1}.  Repeating the argument for k = 0,1,2,\\ldots  determines successively p_1, p_2, \\ldots  and at the same time settles every letter of the sequence.  Hence the sequence constructed in Sections 1-5 is the only sequence on {5,6} satisfying the self-generation property.\n\n7.  Conclusion\n\nThe sequence defined in (2) - namely\n          a_n = 5  if  n = \\lfloor  ((7+3\\sqrt{5})/2) m \\rfloor   for some m \\geq  0,\n          a_n = 6  otherwise -\nreproduces itself when one records the numbers of 6's that lie between successive 5's, and it is the unique sequence with this property.\n\nThus the problem is completely solved.",
+      "_meta": {
+        "core_steps": [
+          "Pick an irrational r so that r + 1/r is an integer (Beatty-type choice).",
+          "Use the complementary Beatty identity  ceil(z/r) = (r + 1/r)·z − floor(rz) for integers z.",
+          "Show that Δ_n = floor(r(n+1)) − floor(rn) assumes only two consecutive integers (⌊r⌋ and ⌈r⌉).",
+          "Prove Δ_n equals the smaller of these two values exactly when n itself equals floor(rm) for some m (complementarity argument).",
+          "Translate that equivalence into the self-generation rule “term is the marker symbol ⇔ n has the Beatty form”, completing the proof."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "value used for the marker symbol (called 2 in the statement/solution)",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "value used for the filler symbol that is counted between markers (called 3)",
+            "original": "3"
+          },
+          "slot3": {
+            "description": "index offset in the position formula  n = offset + floor(r·m)",
+            "original": "1"
+          },
+          "slot4": {
+            "description": "integer constant C = r + 1/r appearing in the Beatty identity",
+            "original": "4"
+          },
+          "slot5": {
+            "description": "chosen irrational root  r of  x² − Cx + 1 = 0",
+            "original": "2 + √3"
+          },
+          "slot6": {
+            "description": "smaller step size  ⌊r⌋  realized by Δ_n (called 3 in the solution)",
+            "original": "3"
+          },
+          "slot7": {
+            "description": "larger step size  ⌈r⌉  realized by Δ_n (called 4 in the solution)",
+            "original": "4"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

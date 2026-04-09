@@ -1,0 +1,118 @@
+{
+  "index": "1970-A-4",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "A-4. Given a sequence \\( \\left\\{x_{n}\\right\\}, n=1,2, \\cdots \\), such that \\( \\operatorname{limit}_{n \\rightarrow \\infty}\\left\\{x_{n}-x_{n-2}\\right\\}=0 \\). Prove that\n\\[\n\\operatorname{limit}_{n \\rightarrow \\infty} \\frac{x_{n}-x_{n-1}}{n}=0\n\\]",
+  "solution": "A-4 For \\( \\epsilon>0 \\), let \\( N \\) be sufficiently large so that \\( \\left|x_{n}-x_{n-2}\\right|<\\epsilon \\) for all \\( n \\geqq N \\). Note that for any \\( n>N \\),\n\\[\n\\begin{aligned}\nx_{n}-x_{n-1}= & \\left(x_{n}-x_{n-2}\\right)-\\left(x_{n-1}-x_{n-3}\\right)+\\left(x_{n-2}-x_{n-8}\\right)-\\cdots \\\\\n& \\pm\\left(x_{N+1}-x_{N-1}\\right) \\mp\\left(x_{N}-x_{N-1}\\right) .\n\\end{aligned}\n\\]\n\nThus \\( \\left|x_{n}-x_{n-1}\\right| \\leqq(n-N) \\epsilon+\\left|x_{N}-x_{N-1}\\right| \\) and \\( \\lim _{n \\rightarrow \\infty}\\left(x_{n}-x_{n-1}\\right) / n=0 \\).",
+  "vars": [
+    "x_n",
+    "x_n-2",
+    "x_n-1",
+    "x_n-3",
+    "x_n-8",
+    "x_N+1",
+    "x_N-1",
+    "x_N",
+    "n"
+  ],
+  "params": [
+    "N",
+    "\\\\epsilon"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_n": "seqelem",
+        "x_n-2": "seqminustwo",
+        "x_n-1": "seqminusone",
+        "x_n-3": "seqminusthree",
+        "x_n-8": "seqminuseight",
+        "x_N+1": "seqplusone",
+        "x_N-1": "seqnminusone",
+        "x_N": "seqbound",
+        "n": "indexvar",
+        "N": "boundvar",
+        "\\epsilon": "tolerance"
+      },
+      "question": "A-4. Given a sequence \\( \\left\\{seqelem\\right\\}, indexvar=1,2, \\cdots \\), such that \\( \\operatorname{limit}_{indexvar \\rightarrow \\infty}\\left\\{seqelem-seqminustwo\\right\\}=0 \\). Prove that\n\\[\n\\operatorname{limit}_{indexvar \\rightarrow \\infty} \\frac{seqelem-seqminusone}{indexvar}=0\n\\]",
+      "solution": "A-4 For \\( tolerance>0 \\), let \\( boundvar \\) be sufficiently large so that \\( \\left|seqelem-seqminustwo\\right|<tolerance \\) for all \\( indexvar \\geqq boundvar \\). Note that for any \\( indexvar>boundvar \\),\n\\[\n\\begin{aligned}\nseqelem-seqminusone= & \\left(seqelem-seqminustwo\\right)-\\left(seqminusone-seqminusthree\\right)+\\left(seqminustwo-seqminuseight\\right)-\\cdots \\\\\n& \\pm\\left(seqplusone-seqnminusone\\right) \\mp\\left(seqbound-seqnminusone\\right) .\n\\end{aligned}\n\\]\n\nThus \\( \\left|seqelem-seqminusone\\right| \\leqq(indexvar-boundvar)\\, tolerance+\\left|seqbound-seqnminusone\\right| \\) and \\( \\lim _{indexvar \\rightarrow \\infty}\\left(seqelem-seqminusone\\right) / indexvar=0 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_n": "bluewhale",
+        "x_n-2": "redtulip",
+        "x_n-1": "greentea",
+        "x_n-3": "yellowmaple",
+        "x_n-8": "silvermoon",
+        "x_N+1": "orangepeel",
+        "x_N-1": "purpleiris",
+        "x_N": "whitecloud",
+        "n": "sandcastle",
+        "N": "stonebridge",
+        "\\\\epsilon": "rainbowfish"
+      },
+      "question": "A-4. Given a sequence \\( \\left\\{bluewhale\\right\\}, sandcastle=1,2, \\cdots \\), such that \\( \\operatorname{limit}_{sandcastle \\rightarrow \\infty}\\left\\{bluewhale-redtulip\\right\\}=0 \\). Prove that\n\\[\n\\operatorname{limit}_{sandcastle \\rightarrow \\infty} \\frac{bluewhale-greentea}{sandcastle}=0\n\\]",
+      "solution": "A-4 For \\( rainbowfish>0 \\), let \\( stonebridge \\) be sufficiently large so that \\( \\left|bluewhale-redtulip\\right|<rainbowfish \\) for all \\( sandcastle \\geqq stonebridge \\). Note that for any \\( sandcastle>stonebridge \\),\n\\[\n\\begin{aligned}\nbluewhale-greentea= & \\left(bluewhale-redtulip\\right)-\\left(greentea-yellowmaple\\right)+\\left(redtulip-silvermoon\\right)-\\cdots \\\\\n& \\pm\\left(orangepeel-purpleiris\\right) \\mp\\left(whitecloud-purpleiris\\right) .\n\\end{aligned}\n\\]\n\nThus \\( \\left|bluewhale-greentea\\right| \\leqq(sandcastle-stonebridge) rainbowfish+\\left|whitecloud-purpleiris\\right| \\) and \\( \\lim _{sandcastle \\rightarrow \\infty}\\left(bluewhale-greentea\\right) / sandcastle=0 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_n": "constantseq",
+        "x_n-2": "fixedtwoago",
+        "x_n-1": "fixedoneago",
+        "x_n-3": "fixedthreeago",
+        "x_n-8": "fixedeightago",
+        "x_N+1": "fixedafter",
+        "x_N-1": "fixedbefore",
+        "x_N": "fixedcurrent",
+        "n": "constantindx",
+        "N": "variablelimit",
+        "\\epsilon": "largedeviate"
+      },
+      "question": "Problem:\n<<<\nA-4. Given a sequence \\( \\left\\{constantseq\\right\\}, constantindx=1,2, \\cdots \\), such that \\( \\operatorname{limit}_{constantindx \\rightarrow \\infty}\\left\\{constantseq-fixedtwoago\\right\\}=0 \\). Prove that\n\\[\n\\operatorname{limit}_{constantindx \\rightarrow \\infty} \\frac{constantseq-fixedoneago}{constantindx}=0\n\\]\n>>>\n",
+      "solution": "Solution:\n<<<\nA-4 For \\( largedeviate>0 \\), let \\( variablelimit \\) be sufficiently large so that \\( \\left|constantseq-fixedtwoago\\right|<largedeviate \\) for all \\( constantindx \\geqq variablelimit \\). Note that for any \\( constantindx>variablelimit \\),\n\\[\n\\begin{aligned}\nconstantseq-fixedoneago= & \\left(constantseq-fixedtwoago\\right)-\\left(fixedoneago-fixedthreeago\\right)+\\left(fixedtwoago-fixedeightago\\right)-\\cdots \\\\\n& \\pm\\left(fixedafter-fixedbefore\\right) \\mp\\left(fixedcurrent-fixedbefore\\right) .\n\\end{aligned}\n\\]\n\nThus \\( \\left|constantseq-fixedoneago\\right| \\leqq(constantindx-variablelimit) largedeviate+\\left|fixedcurrent-fixedbefore\\right| \\) and \\( \\lim _{constantindx \\rightarrow \\infty}\\left(constantseq-fixedoneago\\right) / constantindx=0 \\).\n>>>\n"
+    },
+    "garbled_string": {
+      "map": {
+        "x_n": "qzxwvtnp",
+        "x_n-2": "hjgrksla",
+        "x_n-1": "mpltrnck",
+        "x_n-3": "vbndkqwe",
+        "x_n-8": "fslpdmrz",
+        "x_N+1": "lkjnhgry",
+        "x_N-1": "wqptrsdv",
+        "x_N": "cgdmprsl",
+        "n": "wprhslqa",
+        "N": "rtxvbksm",
+        "\\\\epsilon": "zpeiyxwr"
+      },
+      "question": "A-4. Given a sequence \\( \\left\\{qzxwvtnp\\right\\}, wprhslqa=1,2, \\cdots \\), such that \\( \\operatorname{limit}_{wprhslqa \\rightarrow \\infty}\\left\\{qzxwvtnp-hjgrksla\\right\\}=0 \\). Prove that\n\\[\n\\operatorname{limit}_{wprhslqa \\rightarrow \\infty} \\frac{qzxwvtnp-mpltrnck}{wprhslqa}=0\n\\]",
+      "solution": "A-4 For \\( zpeiyxwr>0 \\), let \\( rtxvbksm \\) be sufficiently large so that \\( \\left|qzxwvtnp-hjgrksla\\right|<zpeiyxwr \\) for all \\( wprhslqa \\geqq rtxvbksm \\). Note that for any \\( wprhslqa>rtxvbksm \\),\n\\[\n\\begin{aligned}\nqzxwvtnp-mpltrnck= & \\left(qzxwvtnp-hjgrksla\\right)-\\left(mpltrnck-vbndkqwe\\right)+\\left(hjgrksla-fslpdmrz\\right)-\\cdots \\\\\n& \\pm\\left(lkjnhgry-wqptrsdv\\right) \\mp\\left(cgdmprsl-wqptrsdv\\right) .\n\\end{aligned}\n\\]\n\nThus \\( \\left|qzxwvtnp-mpltrnck\\right| \\leqq(wprhslqa-rtxvbksm) zpeiyxwr+\\left|cgdmprsl-wqptrsdv\\right| \\) and \\( \\lim _{wprhslqa \\rightarrow \\infty}\\left(qzxwvtnp-mpltrnck\\right) / wprhslqa=0 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $1<m_{1}<m_{2}<\\dots <m_{s}$ be fixed positive integers with $s\\ge 2$ and let $(X,\\lVert\\cdot\\rVert)$ be an arbitrary real Banach space.  \nFor a sequence $(x_{n})_{n\\ge 0}\\subset X$ assume that, for every $j=1,\\dots ,s$, the limit  \n\\[\nL_{j}\\;:=\\;\\lim_{n\\to\\infty}\\bigl(x_{n}-x_{\\,n-m_{j}}\\bigr)\n\\tag{$\\ast$}\n\\]\nexists (in $X$).\n\n(a) Prove that the following two statements are equivalent.\n\n(a$_1$) The normalised sequence $x_{n}/n$ converges in $X$; that is, the limit  \n\\[\n\\lambda\\;:=\\;\\lim_{n\\to\\infty}\\frac{x_{n}}{n}\n\\]\nexists in $X$.\n\n(a$_2$) All quotients $L_{j}/m_{j}$ coincide; equivalently, there is a vector $\\lambda\\in X$ such that  \n\\[\nL_{j}\\;=\\;\\lambda\\,m_{j}\\qquad\\text{for every }j=1,\\dots ,s .\n\\]\n\n(b) \\emph{Assuming that the equivalent assertions in (a) hold}, show that for every integer $r\\ge 1$\n\\[\n\\lim_{n\\to\\infty}\\frac{x_{n}-x_{\\,n-r}-\\lambda r}{n}=0 ,\n\\tag{$\\clubsuit$}\n\\]\nthat is, $x_{n}-x_{\\,n-r}= \\lambda r + o(n)$.\n\n(c) \\emph{Again under the hypotheses of (a) (equivalently of (b))}, prove that if $L_{j}=0$ for at least one index $j$ then necessarily $\\lambda =0$ and, consequently,\n\\[\nx_{n}=o(n)\\quad\\text{and}\\quad x_{n}-x_{\\,n-r}=o(n)\\quad\\text{for every fixed }r\\ge 1 .\n\\]",
+      "solution": "Throughout put \\(\\Delta_{k}x_{n}:=x_{n}-x_{\\,n-k}\\) (defined for \\(n\\ge k\\)).\n\n\\textbf{Step 1.  Implication \\((a_{1}\\Rightarrow a_{2})\\).}  \nAssume \\(\\displaystyle\\lim_{n\\to\\infty}\\frac{x_{n}}{n}= \\lambda\\) and define the remainder sequence\n\\[\na_{n}:=x_{n}-\\lambda n\\qquad(n\\ge 0).\n\\]\nThen \\(a_{n}/n\\to 0\\).\n\nFix \\(j\\in\\{1,\\dots ,s\\}\\).  For \\(n\\ge m_{j}\\),\n\\[\n\\Delta_{m_{j}}x_{n}= \\lambda m_{j} + (a_{n}-a_{\\,n-m_{j}}).\n\\tag{1}\n\\]\nBecause the limit \\((\\ast)\\) exists, the difference sequence has a limit\n\\[\n\\delta_{j}:=\\lim_{n\\to\\infty}(a_{n}-a_{\\,n-m_{j}})\\in X .\n\\tag{2}\n\\]\n\n\\emph{Claim.} \\(\\delta_{j}=0\\).\n\nSuppose to the contrary that \\(\\delta_{j}\\ne 0\\).  \nBy the Hahn-Banach theorem there is \\(f\\in X^{\\ast}\\) with \\(\\lVert f\\rVert=1\\) and \\(f(\\delta_{j})=\\lVert\\delta_{j}\\rVert>0\\).\nApplying \\(f\\) to (2) and arguing as in the original text yields, for a suitable \\(\\varepsilon>0\\),\n\\[\n\\lVert a_{N+r+qm_{j}}\\rVert \\ge q\\varepsilon - C\\qquad(q\\ge 0),\n\\]\nwhence \\(\\lVert a_{n}\\rVert/n\\not\\to 0\\), contradicting \\(a_{n}/n\\to 0\\).  \nThus \\(\\delta_{j}=0\\), and (1) now implies\n\\[\nL_{j}= \\lambda m_{j}.\n\\]\nHence all quotients \\(L_{j}/m_{j}\\) equal \\(\\lambda\\); therefore \\((a_{2})\\) holds.\n\n\\textbf{Step 2.  Implication \\((a_{2}\\Rightarrow a_{1})\\).}  \nAssume \\(L_{j}= \\lambda m_{j}\\;(j=1,\\dots ,s)\\) and keep the definition of \\(a_{n}\\).  \nThen \\((\\ast)\\) reads \\(\\displaystyle\\lim_{n\\to\\infty}\\Delta_{m_{j}}a_{n}=0\\) for every \\(j\\), in particular for \\(j=1\\).\n\nFix \\(\\varepsilon>0\\).  Choose \\(N\\) so that \\(\\lVert\\Delta_{m_{1}}a_{p}\\rVert<\\varepsilon\\) for all \\(p\\ge N\\).  \nFor \\(n\\ge N\\) write \\(n=qm_{1}+r\\) with \\(0\\le r<m_{1}\\).  A telescoping sum gives\n\\[\na_{n}= \\sum_{k=0}^{q-1}\\bigl(a_{\\,r+(k+1)m_{1}}-a_{\\,r+km_{1}}\\bigr)+a_{r}.\n\\]\nEach summand with index at least \\(N\\) has norm \\(\\le\\varepsilon\\), and there are at most \\(q\\) such terms; the remaining finitely many terms are uniformly bounded.  Hence\n\\[\n\\lVert a_{n}\\rVert\\le q\\varepsilon + C,\n\\]\nso that \\(\\lVert a_{n}\\rVert/n\\le \\varepsilon/m_{1}+C/n\\to\\varepsilon/m_{1}\\).  \nLetting \\(\\varepsilon\\to 0\\) yields \\(a_{n}/n\\to 0\\), i.e.\\ \\(x_{n}/n\\to\\lambda\\).  \nThus \\((a_{1})\\) holds.\n\nConsequently \\((a_{1})\\) and \\((a_{2})\\) are equivalent.\n\n\\textbf{Step 3.  Proof of \\((\\clubsuit)\\).}  \nWith \\(a_{n}\\) as above,\n\\[\nx_{n}-x_{\\,n-r}-\\lambda r = a_{n}-a_{\\,n-r}.\n\\]\nDividing by \\(n\\) and using \\(a_{k}/k\\to 0\\) we obtain\n\\[\n\\frac{x_{n}-x_{\\,n-r}-\\lambda r}{n} = \\frac{a_{n}}{n}-\\frac{a_{\\,n-r}}{n}\\;\\longrightarrow\\;0,\n\\]\nproving \\((\\clubsuit)\\).\n\n\\textbf{Step 4.  Part (c).}  \nUnder the hypotheses of (a) (hence of (b)), assume \\(L_{j_{0}}=0\\) for some \\(j_{0}\\).  \nFrom (a$_2$) we have \\(L_{j}= \\lambda m_{j}\\;(j=1,\\dots ,s)\\); thus\n\\[\n\\lambda=\\frac{L_{j_{0}}}{m_{\\,j_{0}}}=0 .\n\\]\nWith \\(\\lambda=0\\) the definition of \\(a_{n}\\) gives \\(a_{n}=x_{n}\\).  \nStep 2 then yields \\(\\lVert x_{n}\\rVert/n\\to 0\\), i.e.\\ \\(x_{n}=o(n)\\).  \nSubstituting \\(\\lambda=0\\) into \\((\\clubsuit)\\) further gives\n\\[\n\\frac{x_{n}-x_{\\,n-r}}{n}\\to 0 \\quad(r\\ge 1),\n\\]\nhence \\(x_{n}-x_{\\,n-r}=o(n)\\) for every fixed \\(r\\ge 1\\).  \\(\\qed\\)",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.590101",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Multiple interacting constraints: limits of s distinct step–differences must be handled simultaneously, not just one.  \n2. Logical equivalence: the problem asks for an “if and only if’’ statement linking those limits to the existence of lim xₙ/n, increasing conceptual depth.  \n3. Banach-space setting: arguments must avoid scalar ordering and use norm estimates, demanding knowledge of functional analysis.  \n4. General asymptotic formula (♣) for every r requires a refined telescoping argument combined with the limit already proved, far beyond the single-step estimate in the original.  \n5. The gcd-1 hypothesis introduces number-theoretic structure (it guarantees that every r can be decomposed in terms of m₁, … , m_s), adding an extra theoretical layer.\n\nOverall the enhanced variant requires deeper insight into difference equations in Banach spaces, simultaneous limit constraints, and a careful combination of analytic and number-theoretic techniques—substantially harder than both the original problem and the previous kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $1<m_{1}<m_{2}<\\dots <m_{s}$ be fixed positive integers with $s\\ge 2$ and let $(X,\\lVert\\cdot\\rVert)$ be an arbitrary real Banach space.  \nFor a sequence $(x_{n})_{n\\ge 0}\\subset X$ assume that, for every $j=1,\\dots ,s$, the limit  \n\\[\nL_{j}\\;:=\\;\\lim_{n\\to\\infty}\\bigl(x_{n}-x_{\\,n-m_{j}}\\bigr)\n\\tag{$\\ast$}\n\\]\nexists (in $X$).\n\n(a) Prove that the following two statements are equivalent.\n\n(a$_1$) The normalised sequence $x_{n}/n$ converges in $X$; that is, the limit  \n\\[\n\\lambda\\;:=\\;\\lim_{n\\to\\infty}\\frac{x_{n}}{n}\n\\]\nexists in $X$.\n\n(a$_2$) All quotients $L_{j}/m_{j}$ coincide; equivalently, there is a vector $\\lambda\\in X$ such that  \n\\[\nL_{j}\\;=\\;\\lambda\\,m_{j}\\qquad\\text{for every }j=1,\\dots ,s .\n\\]\n\n(b) \\emph{Assuming that the equivalent assertions in (a) hold}, show that for every integer $r\\ge 1$\n\\[\n\\lim_{n\\to\\infty}\\frac{x_{n}-x_{\\,n-r}-\\lambda r}{n}=0 ,\n\\tag{$\\clubsuit$}\n\\]\nthat is, $x_{n}-x_{\\,n-r}= \\lambda r + o(n)$.\n\n(c) \\emph{Again under the hypotheses of (a) (equivalently of (b))}, prove that if $L_{j}=0$ for at least one index $j$ then necessarily $\\lambda =0$ and, consequently,\n\\[\nx_{n}=o(n)\\quad\\text{and}\\quad x_{n}-x_{\\,n-r}=o(n)\\quad\\text{for every fixed }r\\ge 1 .\n\\]",
+      "solution": "Throughout put \\(\\Delta_{k}x_{n}:=x_{n}-x_{\\,n-k}\\) (defined for \\(n\\ge k\\)).\n\n\\textbf{Step 1.  Implication \\((a_{1}\\Rightarrow a_{2})\\).}  \nAssume \\(\\displaystyle\\lim_{n\\to\\infty}\\frac{x_{n}}{n}= \\lambda\\) and define the remainder sequence\n\\[\na_{n}:=x_{n}-\\lambda n\\qquad(n\\ge 0).\n\\]\nThen \\(a_{n}/n\\to 0\\).\n\nFix \\(j\\in\\{1,\\dots ,s\\}\\).  For \\(n\\ge m_{j}\\),\n\\[\n\\Delta_{m_{j}}x_{n}= \\lambda m_{j} + (a_{n}-a_{\\,n-m_{j}}).\n\\tag{1}\n\\]\nBecause the limit \\((\\ast)\\) exists, the difference sequence has a limit\n\\[\n\\delta_{j}:=\\lim_{n\\to\\infty}(a_{n}-a_{\\,n-m_{j}})\\in X .\n\\tag{2}\n\\]\n\n\\emph{Claim.} \\(\\delta_{j}=0\\).\n\nSuppose to the contrary that \\(\\delta_{j}\\ne 0\\).  \nBy the Hahn-Banach theorem there is \\(f\\in X^{\\ast}\\) with \\(\\lVert f\\rVert=1\\) and \\(f(\\delta_{j})=\\lVert\\delta_{j}\\rVert>0\\).\nApplying \\(f\\) to (2) and arguing as in the original text yields, for a suitable \\(\\varepsilon>0\\),\n\\[\n\\lVert a_{N+r+qm_{j}}\\rVert \\ge q\\varepsilon - C\\qquad(q\\ge 0),\n\\]\nwhence \\(\\lVert a_{n}\\rVert/n\\not\\to 0\\), contradicting \\(a_{n}/n\\to 0\\).  \nThus \\(\\delta_{j}=0\\), and (1) now implies\n\\[\nL_{j}= \\lambda m_{j}.\n\\]\nHence all quotients \\(L_{j}/m_{j}\\) equal \\(\\lambda\\); therefore \\((a_{2})\\) holds.\n\n\\textbf{Step 2.  Implication \\((a_{2}\\Rightarrow a_{1})\\).}  \nAssume \\(L_{j}= \\lambda m_{j}\\;(j=1,\\dots ,s)\\) and keep the definition of \\(a_{n}\\).  \nThen \\((\\ast)\\) reads \\(\\displaystyle\\lim_{n\\to\\infty}\\Delta_{m_{j}}a_{n}=0\\) for every \\(j\\), in particular for \\(j=1\\).\n\nFix \\(\\varepsilon>0\\).  Choose \\(N\\) so that \\(\\lVert\\Delta_{m_{1}}a_{p}\\rVert<\\varepsilon\\) for all \\(p\\ge N\\).  \nFor \\(n\\ge N\\) write \\(n=qm_{1}+r\\) with \\(0\\le r<m_{1}\\).  A telescoping sum gives\n\\[\na_{n}= \\sum_{k=0}^{q-1}\\bigl(a_{\\,r+(k+1)m_{1}}-a_{\\,r+km_{1}}\\bigr)+a_{r}.\n\\]\nEach summand with index at least \\(N\\) has norm \\(\\le\\varepsilon\\), and there are at most \\(q\\) such terms; the remaining finitely many terms are uniformly bounded.  Hence\n\\[\n\\lVert a_{n}\\rVert\\le q\\varepsilon + C,\n\\]\nso that \\(\\lVert a_{n}\\rVert/n\\le \\varepsilon/m_{1}+C/n\\to\\varepsilon/m_{1}\\).  \nLetting \\(\\varepsilon\\to 0\\) yields \\(a_{n}/n\\to 0\\), i.e.\\ \\(x_{n}/n\\to\\lambda\\).  \nThus \\((a_{1})\\) holds.\n\nConsequently \\((a_{1})\\) and \\((a_{2})\\) are equivalent.\n\n\\textbf{Step 3.  Proof of \\((\\clubsuit)\\).}  \nWith \\(a_{n}\\) as above,\n\\[\nx_{n}-x_{\\,n-r}-\\lambda r = a_{n}-a_{\\,n-r}.\n\\]\nDividing by \\(n\\) and using \\(a_{k}/k\\to 0\\) we obtain\n\\[\n\\frac{x_{n}-x_{\\,n-r}-\\lambda r}{n} = \\frac{a_{n}}{n}-\\frac{a_{\\,n-r}}{n}\\;\\longrightarrow\\;0,\n\\]\nproving \\((\\clubsuit)\\).\n\n\\textbf{Step 4.  Part (c).}  \nUnder the hypotheses of (a) (hence of (b)), assume \\(L_{j_{0}}=0\\) for some \\(j_{0}\\).  \nFrom (a$_2$) we have \\(L_{j}= \\lambda m_{j}\\;(j=1,\\dots ,s)\\); thus\n\\[\n\\lambda=\\frac{L_{j_{0}}}{m_{\\,j_{0}}}=0 .\n\\]\nWith \\(\\lambda=0\\) the definition of \\(a_{n}\\) gives \\(a_{n}=x_{n}\\).  \nStep 2 then yields \\(\\lVert x_{n}\\rVert/n\\to 0\\), i.e.\\ \\(x_{n}=o(n)\\).  \nSubstituting \\(\\lambda=0\\) into \\((\\clubsuit)\\) further gives\n\\[\n\\frac{x_{n}-x_{\\,n-r}}{n}\\to 0 \\quad(r\\ge 1),\n\\]\nhence \\(x_{n}-x_{\\,n-r}=o(n)\\) for every fixed \\(r\\ge 1\\).  \\(\\qed\\)",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.473552",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Multiple interacting constraints: limits of s distinct step–differences must be handled simultaneously, not just one.  \n2. Logical equivalence: the problem asks for an “if and only if’’ statement linking those limits to the existence of lim xₙ/n, increasing conceptual depth.  \n3. Banach-space setting: arguments must avoid scalar ordering and use norm estimates, demanding knowledge of functional analysis.  \n4. General asymptotic formula (♣) for every r requires a refined telescoping argument combined with the limit already proved, far beyond the single-step estimate in the original.  \n5. The gcd-1 hypothesis introduces number-theoretic structure (it guarantees that every r can be decomposed in terms of m₁, … , m_s), adding an extra theoretical layer.\n\nOverall the enhanced variant requires deeper insight into difference equations in Banach spaces, simultaneous limit constraints, and a careful combination of analytic and number-theoretic techniques—substantially harder than both the original problem and the previous kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

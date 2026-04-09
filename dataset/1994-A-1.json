@@ -1,0 +1,140 @@
+{
+  "index": "1994-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Suppose that a sequence $a_1, a_2, a_3, \\dots$ satisfies\n$0 < a_n \\leq a_{2n} + a_{2n+1}$ for all $n \\geq 1$. Prove that the series\n$\\sum_{n=1}^{\\infty} a_n$ diverges.",
+  "solution": "Solution. For \\( m \\geq 1 \\), let \\( b_{m}=\\sum_{i=2^{m-1}}^{2} a_{i} \\). Summing \\( a_{n} \\leq a_{2 n}+a_{2 n+1} \\) from \\( n=2^{m-1} \\) to \\( n=2^{m}-1 \\) yields \\( b_{m} \\leq b_{m+1} \\) for all \\( m \\geq 1 \\). For any \\( t \\geq 1 \\),\n\\[\n\\sum_{n=1}^{2^{t}-1} a_{n}=\\sum_{m=1}^{t} b_{m} \\geq t b_{1}=t a_{1}\n\\]\nwhich is unbounded as \\( t \\rightarrow \\infty \\) since \\( a_{1}>0 \\), so \\( \\sum_{n=1}^{\\infty} a_{n} \\) diverges.\nAlternatively, assuming the series converges to a finite value \\( L \\), we obtain the contradiction\n\\[\n\\begin{aligned}\nL & =b_{1}+\\left(b_{2}+b_{3}+\\cdots\\right) \\\\\n& \\geq b_{1}+\\left(b_{1}+b_{2}+\\cdots\\right) \\\\\n& =b_{1}+L\n\\end{aligned}\n\\]",
+  "vars": [
+    "n",
+    "m",
+    "i",
+    "t",
+    "a_n",
+    "a_2n",
+    "a_2n+1",
+    "a_i",
+    "b_m",
+    "b_m+1",
+    "b_2",
+    "b_3"
+  ],
+  "params": [
+    "a_1",
+    "b_1",
+    "L"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexn",
+        "m": "levelm",
+        "i": "indexi",
+        "t": "levelt",
+        "a_n": "seqterm",
+        "a_2n": "seqdouble",
+        "a_2n+1": "seqdoubleplus",
+        "a_i": "seqindex",
+        "b_m": "blocksum",
+        "b_m+1": "blocksumnext",
+        "b_2": "blocksumtwo",
+        "b_3": "blocksumthree",
+        "a_1": "firstterm",
+        "b_1": "blocksumone",
+        "L": "limitval"
+      },
+      "question": "Suppose that a sequence $firstterm, a_2, a_3, \\dots$ satisfies\n$0 < seqterm \\leq seqdouble + seqdoubleplus$ for all $indexn \\geq 1$. Prove that the series\n$\\sum_{indexn=1}^{\\infty} seqterm$ diverges.",
+      "solution": "Solution. For $( levelm \\geq 1 )$, let $ blocksum=\\sum_{indexi=2^{levelm-1}}^{2} seqindex $. Summing $ seqterm \\leq seqdouble+seqdoubleplus $ from $ indexn=2^{levelm-1} $ to $ indexn=2^{levelm}-1 $ yields $ blocksum \\leq blocksumnext $ for all $ levelm \\geq 1 $. For any $ levelt \\geq 1 $,\n\\[\n\\sum_{indexn=1}^{2^{levelt}-1} seqterm=\\sum_{levelm=1}^{levelt} blocksum \\geq levelt\\, blocksumone=levelt\\, firstterm\n\\]\nwhich is unbounded as $ levelt \\rightarrow \\infty $ since $ firstterm>0 $, so $ \\sum_{indexn=1}^{\\infty} seqterm $ diverges.\nAlternatively, assuming the series converges to a finite value $ limitval $, we obtain the contradiction\n\\[\n\\begin{aligned}\nlimitval & =blocksumone+\\left(blocksumtwo+blocksumthree+\\cdots\\right) \\\\\n& \\geq blocksumone+\\left(blocksumone+blocksumtwo+\\cdots\\right) \\\\\n& =blocksumone+limitval\n\\end{aligned}\n\\]\nwhich is impossible; therefore the series cannot converge."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "m": "pancake",
+        "i": "wardrobe",
+        "t": "lemonade",
+        "a_n": "blueberry",
+        "a_2n": "raspberry",
+        "a_2n+1": "gooseberry",
+        "a_i": "cranberry",
+        "b_m": "marshmallow",
+        "b_m+1": "butterscotch",
+        "b_2": "cheesecake",
+        "b_3": "moussecake",
+        "a_1": "strawberry",
+        "b_1": "chocolate",
+        "L": "buttermilk"
+      },
+      "question": "Suppose that a sequence $strawberry, a_2, a_3, \\dots$ satisfies\n$0 < blueberry \\leq raspberry + gooseberry$ for all $sunflower \\geq 1$. Prove that the series\n$\\sum_{sunflower=1}^{\\infty} blueberry$ diverges.",
+      "solution": "Solution. For \\( pancake \\geq 1 \\), let \\( marshmallow=\\sum_{wardrobe=2^{pancake-1}}^{2} cranberry \\). Summing \\( blueberry \\leq raspberry+gooseberry \\) from \\( sunflower=2^{pancake-1} \\) to \\( sunflower=2^{pancake}-1 \\) yields \\( marshmallow \\leq butterscotch \\) for all \\( pancake \\geq 1 \\). For any \\( lemonade \\geq 1 \\),\n\\[\n\\sum_{sunflower=1}^{2^{lemonade}-1} blueberry=\\sum_{pancake=1}^{lemonade} marshmallow \\geq lemonade\\; chocolate=lemonade\\; strawberry\n\\]\nwhich is unbounded as \\( lemonade \\rightarrow \\infty \\) since \\( strawberry>0 \\), so \\( \\sum_{sunflower=1}^{\\infty} blueberry \\) diverges.\nAlternatively, assuming the series converges to a finite value \\( buttermilk \\), we obtain the contradiction\n\\[\n\\begin{aligned}\nbuttermilk & =chocolate+\\left(cheesecake+moussecake+\\cdots\\right) \\\\\n& \\geq chocolate+\\left(chocolate+cheesecake+\\cdots\\right) \\\\\n& =chocolate+buttermilk\n\\end{aligned}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "continuum",
+        "m": "fraction",
+        "i": "outsider",
+        "t": "staticvar",
+        "a_n": "zerosequence",
+        "a_2n": "zerosequenceeven",
+        "a_2n+1": "zerosequenceodd",
+        "a_i": "zerosequenceindex",
+        "b_m": "shrinksum",
+        "b_m+1": "shrinksumnext",
+        "b_2": "shrinksumtwo",
+        "b_3": "shrinksumthree",
+        "a_1": "zerosequenceone",
+        "b_1": "shrinksumone",
+        "L": "infinityvalue"
+      },
+      "question": "Suppose that a sequence $zerosequenceone, a_2, a_3, \\dots$ satisfies\n$0 < zerosequence \\leq zerosequenceeven + zerosequenceodd$ for all $continuum \\geq 1$. Prove that the series\n$\\sum_{continuum=1}^{\\infty} zerosequence$ diverges.",
+      "solution": "Solution. For \\( fraction \\geq 1 \\), let \\( shrinksum=\\sum_{outsider=2^{fraction-1}}^{2} zerosequenceindex \\). Summing \\( zerosequence \\leq zerosequenceeven+zerosequenceodd \\) from \\( continuum=2^{fraction-1} \\) to \\( continuum=2^{fraction}-1 \\) yields \\( shrinksum \\leq shrinksumnext \\) for all \\( fraction \\geq 1 \\). For any \\( staticvar \\geq 1 \\),\n\\[\n\\sum_{continuum=1}^{2^{staticvar}-1} zerosequence=\\sum_{fraction=1}^{staticvar} shrinksum \\geq staticvar shrinksumone=staticvar zerosequenceone\n\\]\nwhich is unbounded as \\( staticvar \\rightarrow \\infty \\) since \\( zerosequenceone>0 \\), so \\( \\sum_{continuum=1}^{\\infty} zerosequence \\) diverges.\nAlternatively, assuming the series converges to a finite value \\( infinityvalue \\), we obtain the contradiction\n\\[\n\\begin{aligned}\ninfinityvalue & =shrinksumone+\\left(shrinksumtwo+shrinksumthree+\\cdots\\right) \\\\\n& \\geq shrinksumone+\\left(shrinksumone+shrinksumtwo+\\cdots\\right) \\\\\n& =shrinksumone+infinityvalue\n\\end{aligned}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "m": "ghsdaluy",
+        "i": "ncewyprk",
+        "t": "vnmhqdse",
+        "a_n": "kzfdyniv",
+        "a_2n": "ysqplmre",
+        "a_2n+1": "wdkunbza",
+        "a_i": "rhtgvope",
+        "b_m": "pahokzdr",
+        "b_m+1": "xjtwlqse",
+        "b_2": "muycdahn",
+        "b_3": "fzarlbqe",
+        "a_1": "icxewpno",
+        "b_1": "qudskvya",
+        "L": "oemrwlyg"
+      },
+      "question": "Suppose that a sequence $icxewpno, a_2, a_3, \\dots$ satisfies\n$0 < kzfdyniv \\leq ysqplmre + wdkunbza$ for all $qzxwvtnp \\geq 1$. Prove that the series\n$\\sum_{qzxwvtnp=1}^{\\infty} kzfdyniv$ diverges.",
+      "solution": "Solution. For \\( ghsdaluy \\geq 1 \\), let \\( pahokzdr=\\sum_{ncewyprk=2^{ghsdaluy-1}}^{2} rhtgvope \\). Summing \\( kzfdyniv \\leq ysqplmre+wdkunbza \\) from \\( qzxwvtnp=2^{ghsdaluy-1} \\) to \\( qzxwvtnp=2^{ghsdaluy}-1 \\) yields \\( pahokzdr \\leq xjtwlqse \\) for all \\( ghsdaluy \\geq 1 \\). For any \\( vnmhqdse \\geq 1 \\),\n\\[\n\\sum_{qzxwvtnp=1}^{2^{vnmhqdse}-1} kzfdyniv=\\sum_{ghsdaluy=1}^{vnmhqdse} pahokzdr \\geq vnmhqdse\\, qudskvya=vnmhqdse\\, icxewpno\n\\]\nwhich is unbounded as \\( vnmhqdse \\rightarrow \\infty \\) since \\( icxewpno>0 \\), so \\( \\sum_{qzxwvtnp=1}^{\\infty} kzfdyniv \\) diverges.\nAlternatively, assuming the series converges to a finite value \\( oemrwlyg \\), we obtain the contradiction\n\\[\n\\begin{aligned}\noemrwlyg & =qudskvya+\\left(muycdahn+fzarlbqe+\\cdots\\right) \\\\\n& \\geq qudskvya+\\left(qudskvya+muycdahn+\\cdots\\right) \\\\\n& =qudskvya+oemrwlyg\n\\end{aligned}\n\\]\n"
+    },
+    "kernel_variant": {
+      "question": "Let $(a_n)_{n\\ge 1}$ be a sequence of positive real numbers satisfying\n\\[\n0< a_n\\le a_{3n}+a_{3n+1}+a_{3n+2}\\qquad\\text{for every }n\\ge 1.\n\\]\nShow that the series\n\\[\\sum_{n=1}^{\\infty} a_n\\]\ndiverges.",
+      "solution": "For each integer m \\geq  1 define the ``block-sum''\n\nb_m := \\sum _{i=3^{m-1}}^{3^m-1} a_i.\n\n(Thus b_1 = a_1 + a_2, b_2 = a_3 + a_4 + \\cdots  + a_8, and so on.)\n\nStep 1. Monotonicity of the block sums.\nFix m \\geq  1 and sum the given inequality for all n with 3^{m-1} \\leq  n \\leq  3^m-1:\n\n\\sum _{n=3^{m-1}}^{3^m-1} a_n \\leq  \\sum _{n=3^{m-1}}^{3^m-1} (a_{3n} + a_{3n+1} + a_{3n+2}).\n\nAs n runs from 3^{m-1} to 3^m-1, the triples (3n,3n+1,3n+2) enumerate exactly the integers j=3^m,\\ldots ,3^{m+1}-1 once each. Hence the right-hand side is\n\n    \\sum _{j=3^m}^{3^{m+1}-1} a_j = b_{m+1}.\n\nTherefore\n\n    b_m \\leq  b_{m+1}\n\nfor all m \\geq  1, so the sequence (b_m) is nondecreasing.\n\nStep 2. A lower bound for partial sums.\nFor any integer t \\geq  1, the first 3^t-1 terms of the series split into the first t blocks:\n\n    \\sum _{n=1}^{3^t-1} a_n = \\sum _{m=1}^t b_m \\geq  t \\cdot  b_1.\n\nHere b_1 = a_1 + a_2 > 0 because all a_n are positive.\n\nStep 3. Divergence of the series.\nSince b_1 > 0, t\\cdot b_1 \\to  \\infty  as t \\to  \\infty . Thus the partial sums \\sum _{n=1}^{3^t-1} a_n are unbounded, and so \\sum _{n=1}^\\infty  a_n diverges.",
+      "_meta": {
+        "core_steps": [
+          "Group the sequence into consecutive ‘blocks’ whose indices run from 2^{m-1} to 2^{m}-1; call their sums b_m.",
+          "Add the given inequality over one block to get b_m ≤ b_{m+1}; hence the block sums form a non-decreasing sequence.",
+          "Express the partial sum up to 2^{t}-1 as Σ_{m=1}^{t} b_m and bound it below by t·b_1.",
+          "Because b_1 = a_1 > 0, these partial sums grow without bound, so the series ∑ a_n diverges."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Branching/base number that determines both the size of each successive block and the indices on the right-hand side of the inequality.",
+            "original": 2
+          },
+          "slot2": {
+            "description": "Choice of the initial positive term used to obtain the linear lower bound t·b_1 in the partial sums.",
+            "original": "a_1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

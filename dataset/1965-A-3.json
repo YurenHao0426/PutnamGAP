@@ -1,0 +1,142 @@
+{
+  "index": "1965-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-3. Show that, for any sequence \\( a_{1}, a_{2}, \\cdots \\) of real numbers, the two conditions\n(A)\n\\[\n\\lim _{n \\rightarrow \\infty} \\frac{e^{\\left(i a_{1}\\right)}+e^{\\left(i a_{2}\\right)}+\\cdots+e^{\\left(i a_{n}\\right)}}{n}=\\alpha\n\\]\nand\n(B)\n\\[\n\\lim _{n \\rightarrow \\infty} \\frac{e^{\\left(i a_{1}\\right)}+e^{\\left(i a_{4}\\right)}+\\cdots+e^{\\left(i a_{n}^{2}\\right)}}{n^{2}}=\\alpha\n\\]\nare equivalent.",
+  "solution": "A-3. That (A) implies (B) follows from the fact that subsequences of a convergent sequence converge to the limit of the sequence. We simplify the notation by setting \\( c_{r}=\\exp i a_{r} \\) and \\( S(t)=c_{1}+c_{2}+\\cdots+c_{t} \\). Note that \\( \\left|c_{r}\\right|=1 \\) and \\( |S(t+k)-S(t)| \\leqq k \\). Suppose now that (B) holds and write \\( m=n^{2}+k \\), where \\( 0 \\leqq k \\leqq 2 n \\).\n\\[\n\\begin{aligned}\n\\left|\\frac{S(m)}{m}-\\frac{S\\left(n^{2}\\right)}{n^{2}}\\right| & \\leqq\\left|\\frac{S(m)}{m}-\\frac{S\\left(n^{2}\\right)}{m}\\right|+\\left|\\frac{S\\left(n^{2}\\right)}{n^{2}}-\\frac{S\\left(n^{2}\\right)}{m}\\right| \\\\\n& \\leqq \\frac{k}{m}+n^{2}\\left(\\frac{1}{n^{2}}-\\frac{1}{m}\\right)=\\frac{k+m-n^{2}}{m}=\\frac{2 k}{m} \\leqq \\frac{4 n}{n^{2}}\n\\end{aligned}\n\\]\n\nWe conclude that \\( \\lim _{m \\rightarrow \\infty}\\left(S(m) / m-S\\left(n^{2}\\right) / n^{2}\\right)=0 \\) or that \\( S(m) / m \\) converges to \\( \\alpha \\).",
+  "vars": [
+    "a_1",
+    "a_2",
+    "a_4",
+    "a_n",
+    "a_r",
+    "c_1",
+    "c_2",
+    "c_r",
+    "c_t",
+    "S",
+    "t",
+    "k",
+    "m",
+    "n"
+  ],
+  "params": [
+    "\\\\alpha"
+  ],
+  "sci_consts": [
+    "e",
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1": "firstval",
+        "a_2": "secondva",
+        "a_4": "fourthva",
+        "a_n": "genericv",
+        "a_r": "indexval",
+        "c_1": "firstexp",
+        "c_2": "secondex",
+        "c_r": "indexexp",
+        "c_t": "tempexp",
+        "S": "sumfunc",
+        "t": "counter",
+        "k": "offsetk",
+        "m": "totalidx",
+        "n": "basenum",
+        "\\alpha": "limitvl"
+      },
+      "question": "A-3. Show that, for any sequence \\( firstval, secondva, \\cdots \\) of real numbers, the two conditions\n(A)\n\\[\n\\lim _{basenum \\rightarrow \\infty} \\frac{e^{\\left(i firstval\\right)}+e^{\\left(i secondva\\right)}+\\cdots+e^{\\left(i genericv\\right)}}{basenum}=limitvl\n\\]\nand\n(B)\n\\[\n\\lim _{basenum \\rightarrow \\infty} \\frac{e^{\\left(i firstval\\right)}+e^{\\left(i fourthva\\right)}+\\cdots+e^{\\left(i genericv^{2}\\right)}}{basenum^{2}}=limitvl\n\\]\nare equivalent.",
+      "solution": "A-3. That (A) implies (B) follows from the fact that subsequences of a convergent sequence converge to the limit of the sequence. We simplify the notation by setting \\( indexexp=\\exp i indexval \\) and \\( sumfunc(counter)=firstexp+secondex+\\cdots+tempexp \\). Note that \\( \\left|indexexp\\right|=1 \\) and \\( |sumfunc(counter+offsetk)-sumfunc(counter)| \\leqq offsetk \\). Suppose now that (B) holds and write \\( totalidx=basenum^{2}+offsetk \\), where \\( 0 \\leqq offsetk \\leqq 2 basenum \\).\n\\[\n\\begin{aligned}\n\\left|\\frac{sumfunc(totalidx)}{totalidx}-\\frac{sumfunc\\left(basenum^{2}\\right)}{basenum^{2}}\\right| & \\leqq\\left|\\frac{sumfunc(totalidx)}{totalidx}-\\frac{sumfunc\\left(basenum^{2}\\right)}{totalidx}\\right|+\\left|\\frac{sumfunc\\left(basenum^{2}\\right)}{basenum^{2}}-\\frac{sumfunc\\left(basenum^{2}\\right)}{totalidx}\\right| \\\\\n& \\leqq \\frac{offsetk}{totalidx}+basenum^{2}\\left(\\frac{1}{basenum^{2}}-\\frac{1}{totalidx}\\right)=\\frac{offsetk+totalidx-basenum^{2}}{totalidx}=\\frac{2 offsetk}{totalidx} \\leqq \\frac{4 basenum}{basenum^{2}}\n\\end{aligned}\n\\]\n\nWe conclude that \\( \\lim _{totalidx \\rightarrow \\infty}\\left(sumfunc(totalidx) / totalidx-sumfunc\\left(basenum^{2}\\right) / basenum^{2}\\right)=0 \\) or that \\( sumfunc(totalidx) / totalidx \\) converges to \\( limitvl \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_1": "skyscraper",
+        "a_2": "toothpaste",
+        "a_4": "lighthouse",
+        "a_n": "moonlight",
+        "a_r": "bluewhale",
+        "c_1": "raincloud",
+        "c_2": "sunflower",
+        "c_r": "driftwood",
+        "c_t": "snowflake",
+        "S": "waterside",
+        "t": "avalanche",
+        "k": "gingerale",
+        "m": "drumstick",
+        "n": "blackbird",
+        "\\\\alpha": "hummingbird"
+      },
+      "question": "A-3. Show that, for any sequence \\( skyscraper, toothpaste, \\cdots \\) of real numbers, the two conditions\n(A)\n\\[\n\\lim _{blackbird \\rightarrow \\infty} \\frac{e^{\\left(i skyscraper\\right)}+e^{\\left(i toothpaste\\right)}+\\cdots+e^{\\left(i moonlight\\right)}}{blackbird}=hummingbird\n\\]\nand\n(B)\n\\[\n\\lim _{blackbird \\rightarrow \\infty} \\frac{e^{\\left(i skyscraper\\right)}+e^{\\left(i lighthouse\\right)}+\\cdots+e^{\\left(i moonlight^{2}\\right)}}{blackbird^{2}}=hummingbird\n\\]\nare equivalent.",
+      "solution": "A-3. That (A) implies (B) follows from the fact that subsequences of a convergent sequence converge to the limit of the sequence. We simplify the notation by setting \\( driftwood=\\exp i bluewhale \\) and \\( waterside(avalanche)=raincloud+sunflower+\\cdots+snowflake \\). Note that \\( \\left|driftwood\\right|=1 \\) and \\( |waterside(avalanche+gingerale)-waterside(avalanche)| \\leqq gingerale \\). Suppose now that (B) holds and write \\( drumstick=blackbird^{2}+gingerale \\), where \\( 0 \\leqq gingerale \\leqq 2 blackbird \\).\n\\[\n\\begin{aligned}\n\\left|\\frac{waterside(drumstick)}{drumstick}-\\frac{waterside\\left(blackbird^{2}\\right)}{blackbird^{2}}\\right| & \\leqq\\left|\\frac{waterside(drumstick)}{drumstick}-\\frac{waterside\\left(blackbird^{2}\\right)}{drumstick}\\right|+\\left|\\frac{waterside\\left(blackbird^{2}\\right)}{blackbird^{2}}-\\frac{waterside\\left(blackbird^{2}\\right)}{drumstick}\\right| \\\\\n& \\leqq \\frac{gingerale}{drumstick}+blackbird^{2}\\left(\\frac{1}{blackbird^{2}}-\\frac{1}{drumstick}\\right)=\\frac{gingerale+drumstick-blackbird^{2}}{drumstick}=\\frac{2 gingerale}{drumstick} \\leqq \\frac{4 blackbird}{blackbird^{2}}\n\\end{aligned}\n\\]\n\nWe conclude that \\( \\lim _{drumstick \\rightarrow \\infty}\\left(waterside(drumstick) / drumstick-waterside\\left(blackbird^{2}\\right) / blackbird^{2}\\right)=0 \\) or that \\( waterside(drumstick) / drumstick \\) converges to \\( hummingbird \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_1": "finalterm",
+        "a_2": "penultimate",
+        "a_4": "uncertainterm",
+        "a_n": "specificterm",
+        "a_r": "fixedposition",
+        "c_1": "realnumber",
+        "c_2": "realfigure",
+        "c_r": "realplaceholder",
+        "c_t": "realvariable",
+        "S": "difference",
+        "t": "constantvar",
+        "k": "majorpart",
+        "m": "smallvalue",
+        "n": "fixedsize",
+        "\\alpha": "startpoint"
+      },
+      "question": "A-3. Show that, for any sequence \\( finalterm, penultimate, \\cdots \\) of real numbers, the two conditions\n(A)\n\\[\n\\lim _{fixedsize \\rightarrow \\infty} \\frac{e^{\\left(i finalterm\\right)}+e^{\\left(i penultimate\\right)}+\\cdots+e^{\\left(i specificterm\\right)}}{fixedsize}=startpoint\n\\]\nand\n(B)\n\\[\n\\lim _{fixedsize \\rightarrow \\infty} \\frac{e^{\\left(i finalterm\\right)}+e^{\\left(i uncertainterm\\right)}+\\cdots+e^{\\left(i specificterm^{2}\\right)}}{fixedsize^{2}}=startpoint\n\\]\nare equivalent.",
+      "solution": "A-3. That (A) implies (B) follows from the fact that subsequences of a convergent sequence converge to the limit of the sequence. We simplify the notation by setting \\( realplaceholder=\\exp i fixedposition \\) and \\( difference(constantvar)=realnumber+realfigure+\\cdots+realvariable \\). Note that \\( \\left|realplaceholder\\right|=1 \\) and \\( |difference(constantvar+majorpart)-difference(constantvar)| \\leqq majorpart \\). Suppose now that (B) holds and write \\( smallvalue=fixedsize^{2}+majorpart \\), where \\( 0 \\leqq majorpart \\leqq 2 fixedsize \\).\n\\[\n\\begin{aligned}\n\\left|\\frac{difference(smallvalue)}{smallvalue}-\\frac{difference\\left(fixedsize^{2}\\right)}{fixedsize^{2}}\\right| & \\leqq\\left|\\frac{difference(smallvalue)}{smallvalue}-\\frac{difference\\left(fixedsize^{2}\\right)}{smallvalue}\\right|+\\left|\\frac{difference\\left(fixedsize^{2}\\right)}{fixedsize^{2}}-\\frac{difference\\left(fixedsize^{2}\\right)}{smallvalue}\\right| \\\\\n& \\leqq \\frac{majorpart}{smallvalue}+fixedsize^{2}\\left(\\frac{1}{fixedsize^{2}}-\\frac{1}{smallvalue}\\right)=\\frac{majorpart+smallvalue-fixedsize^{2}}{smallvalue}=\\frac{2 majorpart}{smallvalue} \\leqq \\frac{4 fixedsize}{fixedsize^{2}}\n\\end{aligned}\n\\]\n\nWe conclude that \\( \\lim _{smallvalue \\rightarrow \\infty}\\left(difference(smallvalue) / smallvalue-difference\\left(fixedsize^{2}\\right) / fixedsize^{2}\\right)=0 \\) or that \\( difference(smallvalue) / smallvalue \\) converges to \\( startpoint \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "a_1": "qzxwvtnp",
+        "a_2": "hjgrksla",
+        "a_4": "mfjdksle",
+        "a_n": "yerlskdf",
+        "a_r": "pwocsneq",
+        "c_1": "lskdjgha",
+        "c_2": "mcnvbqwe",
+        "c_r": "vhaldspt",
+        "c_t": "roqpsndl",
+        "S": "zxmvbnqw",
+        "t": "plmoknji",
+        "k": "ujmnbvcz",
+        "m": "jikoswpe",
+        "n": "rfnuydke",
+        "\\alpha": "pqlasjdf"
+      },
+      "question": "A-3. Show that, for any sequence \\( qzxwvtnp, hjgrksla, \\cdots \\) of real numbers, the two conditions\n(A)\n\\[\n\\lim _{rfnuydke \\rightarrow \\infty} \\frac{e^{\\left(i qzxwvtnp\\right)}+e^{\\left(i hjgrksla\\right)}+\\cdots+e^{\\left(i yerlskdf\\right)}}{rfnuydke}=\\pqlasjdf\n\\]\nand\n(B)\n\\[\n\\lim _{rfnuydke \\rightarrow \\infty} \\frac{e^{\\left(i qzxwvtnp\\right)}+e^{\\left(i mfjdksle\\right)}+\\cdots+e^{\\left(i yerlskdf^{2}\\right)}}{rfnuydke^{2}}=\\pqlasjdf\n\\]\nare equivalent.",
+      "solution": "A-3. That (A) implies (B) follows from the fact that subsequences of a convergent sequence converge to the limit of the sequence. We simplify the notation by setting \\( vhaldspt=\\exp i pwocsneq \\) and \\( zxmvbnqw(plmoknji)=lskdjgha+mcnvbqwe+\\cdots+roqpsndl \\). Note that \\( \\left|vhaldspt\\right|=1 \\) and \\( |zxmvbnqw(plmoknji+ujmnbvcz)-zxmvbnqw(plmoknji)| \\leqq ujmnbvcz \\). Suppose now that (B) holds and write \\( jikoswpe=rfnuydke^{2}+ujmnbvcz \\), where \\( 0 \\leqq ujmnbvcz \\leqq 2 rfnuydke \\).\n\\[\n\\begin{aligned}\n\\left|\\frac{zxmvbnqw(jikoswpe)}{jikoswpe}-\\frac{zxmvbnqw\\left(rfnuydke^{2}\\right)}{rfnuydke^{2}}\\right| & \\leqq\\left|\\frac{zxmvbnqw(jikoswpe)}{jikoswpe}-\\frac{zxmvbnqw\\left(rfnuydke^{2}\\right)}{jikoswpe}\\right|+\\left|\\frac{zxmvbnqw\\left(rfnuydke^{2}\\right)}{rfnuydke^{2}}-\\frac{zxmvbnqw\\left(rfnuydke^{2}\\right)}{jikoswpe}\\right| \\\\\n& \\leqq \\frac{ujmnbvcz}{jikoswpe}+rfnuydke^{2}\\left(\\frac{1}{rfnuydke^{2}}-\\frac{1}{jikoswpe}\\right)=\\frac{ujmnbvcz+jikoswpe-rfnuydke^{2}}{jikoswpe}=\\frac{2 ujmnbvcz}{jikoswpe} \\leqq \\frac{4 rfnuydke}{rfnuydke^{2}}\n\\end{aligned}\n\\]\n\nWe conclude that \\( \\lim _{jikoswpe \\rightarrow \\infty}\\left(zxmvbnqw(jikoswpe) / jikoswpe-zxmvbnqw\\left(rfnuydke^{2}\\right) / rfnuydke^{2}\\right)=0 \\) or that \\( zxmvbnqw(jikoswpe) / jikoswpe \\) converges to \\( \\pqlasjdf \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $\\bigl(\\mathcal B,\\lVert\\cdot\\rVert\\bigr)$ be a real (or complex) Banach space and let the vector sequence $\\bigl(v_k\\bigr)_{k\\ge 1}\\subset \\mathcal B$ satisfy\n\\[\n\\sup_{k\\ge 1}\\lVert v_k\\rVert\\le 1 .\n\\]\n\nFix two integers  \n\n\\quad$\\bullet$ $r\\ge 1$  (order of the iterated Ces\\`aro mean),  \n\n\\quad$\\bullet$ $s\\ge 2$  (degree of the polynomial subsequence).\n\nLet \n\\[\nP(n)=a_s n^{s}+a_{s-1}n^{s-1}+\\dots +a_1 n+a_0\\qquad(n\\in\\mathbb N)\n\\]\nbe an integer-valued polynomial of degree $s$ with $a_s>0$; in particular $P(n)<P(n+1)$ and $P(n)\\in\\mathbb N$ for every $n\\ge 1$.\n\nFor $N\\in\\mathbb N$ define the $r$-fold iterated partial sums  \n\\[\nS_r(N)=\\sum_{1\\le k_1\\le k_2\\le\\dots\\le k_r\\le N} v_{k_1},\n\\]\ntogether with the normalising constants  \n\\[\nC_r(N)=\\binom{N+r-1}{\\,r\\,},\\qquad \nA_r(N)=\\frac{S_r(N)}{C_r(N)} .\n\\]\n\nFor $n\\in\\mathbb N$ put  \n\\[\nT_r(n)=S_r\\bigl(P(n)\\bigr),\\qquad  \nB_r(n)=\\frac{T_r(n)}{C_r\\bigl(P(n)\\bigr)}=A_r\\!\\bigl(P(n)\\bigr).\n\\]\n\nProve that the following two assertions are equivalent.\n\n(A) $\\displaystyle\\lim_{N\\to\\infty}A_r(N)=L\\in\\mathcal B.$\n\n(B) $\\displaystyle\\lim_{n\\to\\infty}B_r(n)=L\\in\\mathcal B.$",
+      "solution": "Fix once and for all the integers $r\\ge 1$, $s\\ge 2$ and the polynomial  \n\\[\nP(n)=\\sum_{j=0}^{s}a_j n^{j}\\quad(a_s>0).\n\\]\nAll constants below may depend on $r,s$ and on the coefficients $a_j$, but they are independent of $n$.\n\nNotation. For $m\\in\\mathbb N$ write  \n\\[\nC_r(m)=\\binom{m+r-1}{\\,r\\,},\\qquad \nC_{r-1}(m)=\\binom{m+r-2}{\\,r-1\\,}.\n\\]\n\n--------------------------------------------------------------------\nStep 1.  A telescoping bound for $r$-fold sums.  \nFor every $M\\ge N\\ge 1$ one has\n\\[\n\\tag{1}\\bigl\\lVert S_r(M)-S_r(N)\\bigr\\rVert\n       \\le (M-N)\\,C_{r-1}(M).\n\\]\nIndeed, each tuple counted in $S_r(M)-S_r(N)$ contains a smallest index $k_1$ satisfying $N<k_1\\le M$; fixing $k_1$, the remaining $r-1$ indices can be chosen in at most $C_{r-1}(M)$ ways, and $\\lVert v_{k_1}\\rVert\\le 1$.\n\nA useful identity is  \n\\[\n\\tag{2}C_{r-1}(M)=\\frac{r}{M+r-1}\\,C_r(M).\n\\]\n\n--------------------------------------------------------------------\nStep 2.  $(A)\\Longrightarrow(B)$.  \nIf $\\bigl(A_r(N)\\bigr)_{N\\ge 1}$ converges to $L$, then every subsequence converges to $L$, in particular $B_r(n)=A_r\\!\\bigl(P(n)\\bigr)\\to L$.\n\n--------------------------------------------------------------------\nStep 3.  A uniform modulus of continuity for $A_r$.  \n\nFix $n\\ge 2$ and set  \n\\[\nN:=P(n), \\qquad M:=P(n+1), \\qquad [N,M]=\\{m\\in\\mathbb N:N\\le m\\le M\\}.\n\\]\nFor $m\\in[N,M]$ we write\n\\[\n\\tag{3}A_r(m)-A_r(N)=E_1(m)+E_2(m),\n\\]\nwhere\n\\[\nE_1(m)=\\frac{S_r(m)-S_r(N)}{C_r(m)},\\qquad \nE_2(m)=S_r(N)\\Bigl(\\frac{1}{C_r(m)}-\\frac{1}{C_r(N)}\\Bigr).\n\\]\n\nPolynomial increment.  \nSince $P$ is increasing, $M-N=P(n+1)-P(n)$.  Using the binomial expansion,\n\\[\nP(n+1)-P(n)=\\sum_{j=1}^{s}a_j\\bigl((n+1)^j-n^{\\,j}\\bigr)\n           =\\sum_{j=1}^{s}a_j\\Bigl(\\sum_{k=0}^{j-1}\\binom{j}{k}n^{\\,k}\\Bigr).\n\\]\nHence there is a constant\n\\[\nK_P:=\\sum_{j=1}^{s}a_j j 2^{j-1}>0\n\\]\nsuch that\n\\[\n\\tag{4}M-N\\le K_P(n+1)^{s-1}\\le K_P\\,2^{\\,s-1}n^{s-1}\n       =:K_0\\,n^{s-1}\\qquad(n\\ge 1).\n\\]\nSince $a_s>0$, there is another constant $c_P>0$ with  \n\\[\n\\tag{5}N=P(n)\\ge c_P n^{s}\\qquad(n\\ge 1).\n\\]\n\n----- Estimate of $E_{1}(m)$.  \nApply (1) with $(M,m)$ replaced by $(m,N)$ and then (2):\n\\[\n\\lVert E_1(m)\\rVert\n   \\le\\frac{m-N}{C_r(m)}\\,C_{r-1}(m)\n   =\\frac{r(m-N)}{m+r-1}\n   \\le r\\frac{m-N}{N}.\n\\]\nBecause $m\\le M$, inequalities (4)-(5) give\n\\[\n\\lVert E_1(m)\\rVert\n      \\le r\\,\\frac{K_0 n^{s-1}}{c_P n^{s}}\n      =\\frac{K_1}{n},\\qquad \n      K_1:=\\frac{rK_0}{c_P}.\n\\]\n\n----- Estimate of $E_{2}(m)$.  \nSince $\\lVert S_r(N)\\rVert\\le C_r(N)$,\n\\[\n\\lVert E_2(m)\\rVert\n      \\le\\frac{C_r(m)-C_r(N)}{C_r(m)}\n      =1-\\frac{C_r(N)}{C_r(m)} .\n\\]\nPut $x=(m-N)/N\\;(x\\ge 0)$.  Because $m\\le M$, we have by (4)-(5)\n\\[\nx=\\frac{m-N}{N}\\le\\frac{M-N}{N}\n   \\le\\frac{K_0 n^{s-1}}{c_P n^{s}}\n   =\\frac{K_2}{n},\\qquad K_2:=\\frac{K_0}{c_P}.\n\\]\nUsing $\\dfrac{C_r(N)}{C_r(m)}\n      =\\prod_{j=0}^{r-1}\\dfrac{N+j}{m+j}\n      =\\prod_{j=0}^{r-1}\\bigl(1+\\tfrac{x}{1+\\frac{j}{N}}\\bigr)^{-1}\n      \\ge(1+x)^{-r}$,\n\\[\n\\lVert E_2(m)\\rVert\n      \\le 1-(1+x)^{-r}.\n\\]\nApply the mean-value theorem to $f(t)=(1+t)^{-r}$ on $[0,x]$:\n$1-(1+x)^{-r}=r(1+\\xi)^{-r-1}x$ for some $0\\le\\xi\\le x$.  Hence\n\\[\n\\lVert E_2(m)\\rVert\n        \\le r x\n        \\le r\\frac{K_2}{n}\n        =\\frac{K_3}{n},\\qquad K_3:=rK_2 .\n\\]\n\n----- Collecting the two estimates.  \nWith $K:=K_1+K_3$ we obtain from (3)\n\\[\n\\tag{6}\\lVert A_r(m)-A_r(N)\\rVert\\le\\frac{K}{n}\n      \\qquad(m\\in[N,M],\\;n\\ge 2).\n\\]\n\n--------------------------------------------------------------------\nStep 4.  $(B)\\Longrightarrow(A)$.  \n\nAssume $B_r(n)=A_r\\!\\bigl(P(n)\\bigr)\\longrightarrow L$.  \nGiven $\\varepsilon>0$ choose $n_0\\ge 2$ such that  \n\n(i) $\\lVert A_r\\!\\bigl(P(n)\\bigr)-L\\rVert<\\varepsilon$ \\quad$(n\\ge n_0)$,  \n\n(ii) $\\dfrac{K}{n}<\\varepsilon$ \\quad$(n\\ge n_0)$.\n\nLet $m\\ge N_0:=P(n_0)$ be arbitrary.  Pick $n\\ge n_0$ with  \n$N:=P(n)\\le m\\le M:=P(n+1)$.  Then (6) and (i) give\n\\[\n\\lVert A_r(m)-L\\rVert\n\\le \\lVert A_r(m)-A_r(N)\\rVert+\\lVert A_r(N)-L\\rVert\n<\\frac{K}{n}+\\varepsilon\n<2\\varepsilon .\n\\]\nSince $\\varepsilon>0$ was arbitrary, $A_r(m)\\to L$; hence (A) holds.\n\n--------------------------------------------------------------------\nStep 5.  Conclusion.  \nSteps 2 and 4 establish $(A)\\Longleftrightarrow(B)$; therefore the two limits exist simultaneously and coincide. \\hfill$\\square$",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.552717",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-order structure – Instead of simple partial sums, the problem involves $r$-fold iterated sums, whose denominators are the binomial coefficients $C_r(N)$.  Handling these requires combinatorial counting and an understanding of how multi-indices accumulate.\n\n2. Polynomial growth in two interacting parameters – The indices are sampled at $N=n^{s}$ with $s\\ge 2$.  Controlling how $C_r(n^{s})$ changes when $n$ increments forces the use of refined polynomial estimates (mean-value theorem, degree comparison).\n\n3. Vector-valued context – The sequence lives in an arbitrary Banach space, so pointwise techniques are insufficient; uniform norm bounds and the triangle inequality must be used carefully.\n\n4. Non-trivial error analysis – Bounding $\\|A_r(M)-A_r(N)\\|$ demands a two-term decomposition and delicate asymptotics for both the numerator and denominator; this is substantially subtler than the single-line bound $|S(m)-S(n)|\\le m-n$ in the original exercise.\n\n5. Multiple parameters – The proof must work simultaneously for every pair $(r,s)$ with $r\\ge1$, $s\\ge2$, greatly increasing bookkeeping and algebraic complexity.\n\nOverall, the enhanced variant requires advanced combinatorial counting, polynomial asymptotics, norm estimates in Banach spaces, and a layered approximation argument—considerably deeper and more technical than either the original Olympiad problem or the simpler “cube” kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $\\bigl(\\mathcal B,\\lVert\\cdot\\rVert\\bigr)$ be a real (or complex) Banach space and let the vector sequence $\\bigl(v_k\\bigr)_{k\\ge 1}\\subset \\mathcal B$ satisfy\n\\[\n\\sup_{k\\ge 1}\\lVert v_k\\rVert\\le 1 .\n\\]\n\nFix two integers  \n\n\\quad$\\bullet$ $r\\ge 1$  (order of the iterated Ces\\`aro mean),  \n\n\\quad$\\bullet$ $s\\ge 2$  (degree of the polynomial subsequence).\n\nLet \n\\[\nP(n)=a_s n^{s}+a_{s-1}n^{s-1}+\\dots +a_1 n+a_0\\qquad(n\\in\\mathbb N)\n\\]\nbe an integer-valued polynomial of degree $s$ with $a_s>0$; in particular $P(n)<P(n+1)$ and $P(n)\\in\\mathbb N$ for every $n\\ge 1$.\n\nFor $N\\in\\mathbb N$ define the $r$-fold iterated partial sums  \n\\[\nS_r(N)=\\sum_{1\\le k_1\\le k_2\\le\\dots\\le k_r\\le N} v_{k_1},\n\\]\ntogether with the normalising constants  \n\\[\nC_r(N)=\\binom{N+r-1}{\\,r\\,},\\qquad \nA_r(N)=\\frac{S_r(N)}{C_r(N)} .\n\\]\n\nFor $n\\in\\mathbb N$ put  \n\\[\nT_r(n)=S_r\\bigl(P(n)\\bigr),\\qquad  \nB_r(n)=\\frac{T_r(n)}{C_r\\bigl(P(n)\\bigr)}=A_r\\!\\bigl(P(n)\\bigr).\n\\]\n\nProve that the following two assertions are equivalent.\n\n(A) $\\displaystyle\\lim_{N\\to\\infty}A_r(N)=L\\in\\mathcal B.$\n\n(B) $\\displaystyle\\lim_{n\\to\\infty}B_r(n)=L\\in\\mathcal B.$",
+      "solution": "Fix once and for all the integers $r\\ge 1$, $s\\ge 2$ and the polynomial  \n\\[\nP(n)=\\sum_{j=0}^{s}a_j n^{j}\\quad(a_s>0).\n\\]\nAll constants below may depend on $r,s$ and on the coefficients $a_j$, but they are independent of $n$.\n\nNotation. For $m\\in\\mathbb N$ write  \n\\[\nC_r(m)=\\binom{m+r-1}{\\,r\\,},\\qquad \nC_{r-1}(m)=\\binom{m+r-2}{\\,r-1\\,}.\n\\]\n\n--------------------------------------------------------------------\nStep 1.  A telescoping bound for $r$-fold sums.  \nFor every $M\\ge N\\ge 1$ one has\n\\[\n\\tag{1}\\bigl\\lVert S_r(M)-S_r(N)\\bigr\\rVert\n       \\le (M-N)\\,C_{r-1}(M).\n\\]\nIndeed, each tuple counted in $S_r(M)-S_r(N)$ contains a smallest index $k_1$ satisfying $N<k_1\\le M$; fixing $k_1$, the remaining $r-1$ indices can be chosen in at most $C_{r-1}(M)$ ways, and $\\lVert v_{k_1}\\rVert\\le 1$.\n\nA useful identity is  \n\\[\n\\tag{2}C_{r-1}(M)=\\frac{r}{M+r-1}\\,C_r(M).\n\\]\n\n--------------------------------------------------------------------\nStep 2.  $(A)\\Longrightarrow(B)$.  \nIf $\\bigl(A_r(N)\\bigr)_{N\\ge 1}$ converges to $L$, then every subsequence converges to $L$, in particular $B_r(n)=A_r\\!\\bigl(P(n)\\bigr)\\to L$.\n\n--------------------------------------------------------------------\nStep 3.  A uniform modulus of continuity for $A_r$.  \n\nFix $n\\ge 2$ and set  \n\\[\nN:=P(n), \\qquad M:=P(n+1), \\qquad [N,M]=\\{m\\in\\mathbb N:N\\le m\\le M\\}.\n\\]\nFor $m\\in[N,M]$ we write\n\\[\n\\tag{3}A_r(m)-A_r(N)=E_1(m)+E_2(m),\n\\]\nwhere\n\\[\nE_1(m)=\\frac{S_r(m)-S_r(N)}{C_r(m)},\\qquad \nE_2(m)=S_r(N)\\Bigl(\\frac{1}{C_r(m)}-\\frac{1}{C_r(N)}\\Bigr).\n\\]\n\nPolynomial increment.  \nSince $P$ is increasing, $M-N=P(n+1)-P(n)$.  Using the binomial expansion,\n\\[\nP(n+1)-P(n)=\\sum_{j=1}^{s}a_j\\bigl((n+1)^j-n^{\\,j}\\bigr)\n           =\\sum_{j=1}^{s}a_j\\Bigl(\\sum_{k=0}^{j-1}\\binom{j}{k}n^{\\,k}\\Bigr).\n\\]\nHence there is a constant\n\\[\nK_P:=\\sum_{j=1}^{s}a_j j 2^{j-1}>0\n\\]\nsuch that\n\\[\n\\tag{4}M-N\\le K_P(n+1)^{s-1}\\le K_P\\,2^{\\,s-1}n^{s-1}\n       =:K_0\\,n^{s-1}\\qquad(n\\ge 1).\n\\]\nSince $a_s>0$, there is another constant $c_P>0$ with  \n\\[\n\\tag{5}N=P(n)\\ge c_P n^{s}\\qquad(n\\ge 1).\n\\]\n\n----- Estimate of $E_{1}(m)$.  \nApply (1) with $(M,m)$ replaced by $(m,N)$ and then (2):\n\\[\n\\lVert E_1(m)\\rVert\n   \\le\\frac{m-N}{C_r(m)}\\,C_{r-1}(m)\n   =\\frac{r(m-N)}{m+r-1}\n   \\le r\\frac{m-N}{N}.\n\\]\nBecause $m\\le M$, inequalities (4)-(5) give\n\\[\n\\lVert E_1(m)\\rVert\n      \\le r\\,\\frac{K_0 n^{s-1}}{c_P n^{s}}\n      =\\frac{K_1}{n},\\qquad \n      K_1:=\\frac{rK_0}{c_P}.\n\\]\n\n----- Estimate of $E_{2}(m)$.  \nSince $\\lVert S_r(N)\\rVert\\le C_r(N)$,\n\\[\n\\lVert E_2(m)\\rVert\n      \\le\\frac{C_r(m)-C_r(N)}{C_r(m)}\n      =1-\\frac{C_r(N)}{C_r(m)} .\n\\]\nPut $x=(m-N)/N\\;(x\\ge 0)$.  Because $m\\le M$, we have by (4)-(5)\n\\[\nx=\\frac{m-N}{N}\\le\\frac{M-N}{N}\n   \\le\\frac{K_0 n^{s-1}}{c_P n^{s}}\n   =\\frac{K_2}{n},\\qquad K_2:=\\frac{K_0}{c_P}.\n\\]\nUsing $\\dfrac{C_r(N)}{C_r(m)}\n      =\\prod_{j=0}^{r-1}\\dfrac{N+j}{m+j}\n      =\\prod_{j=0}^{r-1}\\bigl(1+\\tfrac{x}{1+\\frac{j}{N}}\\bigr)^{-1}\n      \\ge(1+x)^{-r}$,\n\\[\n\\lVert E_2(m)\\rVert\n      \\le 1-(1+x)^{-r}.\n\\]\nApply the mean-value theorem to $f(t)=(1+t)^{-r}$ on $[0,x]$:\n$1-(1+x)^{-r}=r(1+\\xi)^{-r-1}x$ for some $0\\le\\xi\\le x$.  Hence\n\\[\n\\lVert E_2(m)\\rVert\n        \\le r x\n        \\le r\\frac{K_2}{n}\n        =\\frac{K_3}{n},\\qquad K_3:=rK_2 .\n\\]\n\n----- Collecting the two estimates.  \nWith $K:=K_1+K_3$ we obtain from (3)\n\\[\n\\tag{6}\\lVert A_r(m)-A_r(N)\\rVert\\le\\frac{K}{n}\n      \\qquad(m\\in[N,M],\\;n\\ge 2).\n\\]\n\n--------------------------------------------------------------------\nStep 4.  $(B)\\Longrightarrow(A)$.  \n\nAssume $B_r(n)=A_r\\!\\bigl(P(n)\\bigr)\\longrightarrow L$.  \nGiven $\\varepsilon>0$ choose $n_0\\ge 2$ such that  \n\n(i) $\\lVert A_r\\!\\bigl(P(n)\\bigr)-L\\rVert<\\varepsilon$ \\quad$(n\\ge n_0)$,  \n\n(ii) $\\dfrac{K}{n}<\\varepsilon$ \\quad$(n\\ge n_0)$.\n\nLet $m\\ge N_0:=P(n_0)$ be arbitrary.  Pick $n\\ge n_0$ with  \n$N:=P(n)\\le m\\le M:=P(n+1)$.  Then (6) and (i) give\n\\[\n\\lVert A_r(m)-L\\rVert\n\\le \\lVert A_r(m)-A_r(N)\\rVert+\\lVert A_r(N)-L\\rVert\n<\\frac{K}{n}+\\varepsilon\n<2\\varepsilon .\n\\]\nSince $\\varepsilon>0$ was arbitrary, $A_r(m)\\to L$; hence (A) holds.\n\n--------------------------------------------------------------------\nStep 5.  Conclusion.  \nSteps 2 and 4 establish $(A)\\Longleftrightarrow(B)$; therefore the two limits exist simultaneously and coincide. \\hfill$\\square$",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.456523",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-order structure – Instead of simple partial sums, the problem involves $r$-fold iterated sums, whose denominators are the binomial coefficients $C_r(N)$.  Handling these requires combinatorial counting and an understanding of how multi-indices accumulate.\n\n2. Polynomial growth in two interacting parameters – The indices are sampled at $N=n^{s}$ with $s\\ge 2$.  Controlling how $C_r(n^{s})$ changes when $n$ increments forces the use of refined polynomial estimates (mean-value theorem, degree comparison).\n\n3. Vector-valued context – The sequence lives in an arbitrary Banach space, so pointwise techniques are insufficient; uniform norm bounds and the triangle inequality must be used carefully.\n\n4. Non-trivial error analysis – Bounding $\\|A_r(M)-A_r(N)\\|$ demands a two-term decomposition and delicate asymptotics for both the numerator and denominator; this is substantially subtler than the single-line bound $|S(m)-S(n)|\\le m-n$ in the original exercise.\n\n5. Multiple parameters – The proof must work simultaneously for every pair $(r,s)$ with $r\\ge1$, $s\\ge2$, greatly increasing bookkeeping and algebraic complexity.\n\nOverall, the enhanced variant requires advanced combinatorial counting, polynomial asymptotics, norm estimates in Banach spaces, and a layered approximation argument—considerably deeper and more technical than either the original Olympiad problem or the simpler “cube” kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

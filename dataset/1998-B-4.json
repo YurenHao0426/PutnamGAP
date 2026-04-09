@@ -1,0 +1,108 @@
+{
+  "index": "1998-B-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find necessary and sufficient conditions on positive integers $m$ and $n$\nso that\n\\[\\sum_{i=0}^{mn-1} (-1)^{\\lfloor i/m \\rfloor +\\lfloor i/n\\rfloor}=0.\\]",
+  "solution": "For convenience, define $f_{m,n}(i) = \\lfloor \\frac{i}{m} \\rfloor +\n\\lfloor \\frac{i}{n} \\rfloor$, so that the given sum is\n$S(m,n) = \\sum_{i=0}^{mn-1} (-1)^{f_{m,n}(i)}$.\nIf $m$ and $n$ are both odd, then $S(m,n)$ is the sum of\nan odd number of $\\pm 1$'s, and thus cannot be zero.  Now consider\nthe case where $m$ and $n$ have opposite parity.  Note that\n$\\lfloor \\frac{i}{m} \\rfloor + \\lfloor k - \\frac{i+1}{m} \\rfloor\n= k-1$ for all integers $i,k,m$.  Thus\n$\\lfloor \\frac{i}{m} \\rfloor + \\lfloor \\frac{mn-i-1}{m} \\rfloor\n= n-1$ and $\\lfloor \\frac{i}{n} \\rfloor + \\lfloor \\frac{mn-i-1}{n}\n\\rfloor = m-1$; this implies that $f_{m,n}(i) + f_{m,n}(mn-i-1) =\nm+n-2$ is odd, and so $(-1)^{f_{m,n}(i)} =\n-(-1)^{f_{m,n}(mn-i-1)}$ for\nall $i$.  It follows that $S(m,n) = 0$ if $m$ and\n$n$ have opposite parity.\n\nNow suppose that $m=2k$ and $n=2l$ are both even.\nThen $\\lfloor \\frac{2j}{2m} \\rfloor = \\lfloor \\frac{2j+1}{2m} \\rfloor$\nfor all $j$, so $S$ can be computed as twice the sum over only even\nindices:\n\\[\nS(2k, 2l) = 2 \\sum_{i=0}^{2kl-1} (-1)^{f_{k,l}(i)}\n= S(k,l)(1 + (-1)^{k+l}).\n\\]\nThus $S(2k,2l)$ vanishes if and only if $S(k,l)$ vanishes (if $1 +\n(-1)^{k+l} = 0$, then $k$ and $l$ have opposite parity and so\n$S(k,l)$ also vanishes).\n\nPiecing our various cases together, we easily deduce that\n$S(m,n) = 0$ if and only if the highest powers of 2 dividing\n$m$ and $n$ are different.",
+  "vars": [
+    "i",
+    "j",
+    "k",
+    "l"
+  ],
+  "params": [
+    "m",
+    "n",
+    "S",
+    "f_m,n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexone",
+        "j": "indextwo",
+        "k": "indextri",
+        "l": "indexfor",
+        "m": "paramone",
+        "n": "paramtwo",
+        "S": "sumfunc",
+        "f_m,n": "floorfunc"
+      },
+      "question": "Find necessary and sufficient conditions on positive integers paramone and paramtwo so that\n\\[\\sum_{indexone=0}^{paramone paramtwo-1} (-1)^{\\lfloor indexone/paramone \\rfloor +\\lfloor indexone/paramtwo\\rfloor}=0.\\]",
+      "solution": "For convenience, define floorfunc_{paramone,paramtwo}(indexone) = \\lfloor \\frac{indexone}{paramone} \\rfloor +\n\\lfloor \\frac{indexone}{paramtwo} \\rfloor, so that the given sum is\nsumfunc(paramone,paramtwo) = \\sum_{indexone=0}^{paramone paramtwo-1} (-1)^{floorfunc_{paramone,paramtwo}(indexone)}.\nIf paramone and paramtwo are both odd, then sumfunc(paramone,paramtwo) is the sum of\nan odd number of \\pm 1's, and thus cannot be zero.  Now consider\nthe case where paramone and paramtwo have opposite parity.  Note that\n\\lfloor \\frac{indexone}{paramone} \\rfloor + \\lfloor indextri - \\frac{indexone+1}{paramone} \\rfloor\n= indextri-1 for all integers indexone,indextri,paramone.  Thus\n\\lfloor \\frac{indexone}{paramone} \\rfloor + \\lfloor \\frac{paramone paramtwo-indexone-1}{paramone} \\rfloor\n= paramtwo-1 and \\lfloor \\frac{indexone}{paramtwo} \\rfloor + \\lfloor \\frac{paramone paramtwo-indexone-1}{paramtwo}\n\\rfloor = paramone-1; this implies that floorfunc_{paramone,paramtwo}(indexone) + floorfunc_{paramone,paramtwo}(paramone paramtwo-indexone-1) =\nparamone+paramtwo-2 is odd, and so (-1)^{floorfunc_{paramone,paramtwo}(indexone)} =\n-(-1)^{floorfunc_{paramone,paramtwo}(paramone paramtwo-indexone-1)} for\nall indexone.  It follows that sumfunc(paramone,paramtwo) = 0 if paramone and\nparamtwo have opposite parity.\n\nNow suppose that paramone=2indextri and paramtwo=2indexfor are both even.\nThen \\lfloor \\frac{2indextwo}{2paramone} \\rfloor = \\lfloor \\frac{2indextwo+1}{2paramone} \\rfloor\nfor all indextwo, so sumfunc can be computed as twice the sum over only even\nindices:\n\\[\nsumfunc(2indextri, 2indexfor) = 2 \\sum_{indexone=0}^{2 indextri indexfor-1} (-1)^{floorfunc_{indextri,indexfor}(indexone)}\n= sumfunc(indextri,indexfor)(1 + (-1)^{indextri+indexfor}).\n\\]\nThus sumfunc(2indextri,2indexfor) vanishes if and only if sumfunc(indextri,indexfor) vanishes (if 1 +\n(-1)^{indextri+indexfor} = 0, then indextri and indexfor have opposite parity and so\nsumfunc(indextri,indexfor) also vanishes).\n\nPiecing our various cases together, we easily deduce that\nsumfunc(paramone,paramtwo) = 0 if and only if the highest powers of 2 dividing\nparamone and paramtwo are different."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "autumnleaf",
+        "j": "riverstone",
+        "k": "moonshadow",
+        "l": "starflower",
+        "m": "thunderbolt",
+        "n": "sunriseglow",
+        "S": "nebulamyst",
+        "f_m,n": "silverwisp"
+      },
+      "question": "Find necessary and sufficient conditions on positive integers $thunderbolt$ and $sunriseglow$\nso that\n\\[\\sum_{autumnleaf=0}^{thunderboltsunriseglow-1} (-1)^{\\lfloor autumnleaf/thunderbolt \\rfloor +\\lfloor autumnleaf/sunriseglow\\rfloor}=0.\\]",
+      "solution": "For convenience, define $silverwisp_{thunderbolt,sunriseglow}(autumnleaf) = \\lfloor \\frac{autumnleaf}{thunderbolt} \\rfloor +\n\\lfloor \\frac{autumnleaf}{sunriseglow} \\rfloor$, so that the given sum is\n$nebulamyst(thunderbolt,sunriseglow) = \\sum_{autumnleaf=0}^{thunderboltsunriseglow-1} (-1)^{silverwisp_{thunderbolt,sunriseglow}(autumnleaf)}$.\nIf $thunderbolt$ and $sunriseglow$ are both odd, then $nebulamyst(thunderbolt,sunriseglow)$ is the sum of\nan odd number of $\\pm 1$'s, and thus cannot be zero.  Now consider\nthe case where $thunderbolt$ and $sunriseglow$ have opposite parity.  Note that\n$\\lfloor \\frac{autumnleaf}{thunderbolt} \\rfloor + \\lfloor moonshadow - \\frac{autumnleaf+1}{thunderbolt} \\rfloor\n= moonshadow-1$ for all integers $autumnleaf,moonshadow,thunderbolt$.  Thus\n$\\lfloor \\frac{autumnleaf}{thunderbolt} \\rfloor + \\lfloor \\frac{thunderboltsunriseglow-autumnleaf-1}{thunderbolt} \\rfloor\n= sunriseglow-1$ and $\\lfloor \\frac{autumnleaf}{sunriseglow} \\rfloor + \\lfloor \\frac{thunderboltsunriseglow-autumnleaf-1}{sunriseglow}\n\\rfloor = thunderbolt-1$; this implies that $silverwisp_{thunderbolt,sunriseglow}(autumnleaf) + silverwisp_{thunderbolt,sunriseglow}(thunderboltsunriseglow-autumnleaf-1) =\nthunderbolt+sunriseglow-2$ is odd, and so $(-1)^{silverwisp_{thunderbolt,sunriseglow}(autumnleaf)} =\n-(-1)^{silverwisp_{thunderbolt,sunriseglow}(thunderboltsunriseglow-autumnleaf-1)}$ for\nall $autumnleaf$.  It follows that $nebulamyst(thunderbolt,sunriseglow) = 0$ if $thunderbolt$ and\n$sunriseglow$ have opposite parity.\n\nNow suppose that $thunderbolt=2moonshadow$ and $sunriseglow=2starflower$ are both even.\nThen $\\lfloor \\frac{2riverstone}{2thunderbolt} \\rfloor = \\lfloor \\frac{2riverstone+1}{2thunderbolt} \\rfloor$\nfor all $riverstone$, so $nebulamyst$ can be computed as twice the sum over only even\nindices:\n\\[\nnebulamyst(2moonshadow, 2starflower) = 2 \\sum_{autumnleaf=0}^{2moonshadow starflower-1} (-1)^{silverwisp_{moonshadow,starflower}(autumnleaf)}\n= nebulamyst(moonshadow,starflower)(1 + (-1)^{moonshadow+starflower}).\n\\]\nThus $nebulamyst(2moonshadow,2starflower)$ vanishes if and only if $nebulamyst(moonshadow,starflower)$ vanishes (if $1 +\n(-1)^{moonshadow+starflower} = 0$, then $moonshadow$ and $starflower$ have opposite parity and so\n$nebulamyst(moonshadow,starflower)$ also vanishes).\n\nPiecing our various cases together, we easily deduce that\n$nebulamyst(thunderbolt,sunriseglow) = 0$ if and only if the highest powers of 2 dividing\n$thunderbolt$ and $sunriseglow$ are different."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "totalvalue",
+        "j": "unifiedsum",
+        "k": "completepart",
+        "l": "nothingness",
+        "m": "negativenumber",
+        "n": "zeroelement",
+        "S": "difference",
+        "f_m,n": "oppositefunction"
+      },
+      "question": "Find necessary and sufficient conditions on positive integers $negativenumber$ and $zeroelement$ so that\n\\[\\sum_{totalvalue=0}^{negativenumber zeroelement-1} (-1)^{\\lfloor \\frac{totalvalue}{negativenumber} \\rfloor +\\lfloor \\frac{totalvalue}{zeroelement}\\rfloor}=0.\\]",
+      "solution": "For convenience, define $oppositefunction_{negativenumber,zeroelement}(totalvalue) = \\left\\lfloor \\frac{totalvalue}{negativenumber} \\right\\rfloor +\n\\left\\lfloor \\frac{totalvalue}{zeroelement} \\right\\rfloor$, so that the given sum is\n$difference(negativenumber,zeroelement) = \\sum_{totalvalue=0}^{negativenumber zeroelement-1} (-1)^{oppositefunction_{negativenumber,zeroelement}(totalvalue)}$.\nIf $negativenumber$ and $zeroelement$ are both odd, then $difference(negativenumber,zeroelement)$ is the sum of\nan odd number of $\\pm 1$'s, and thus cannot be zero.  Now consider\nthe case where $negativenumber$ and $zeroelement$ have opposite parity.  Note that\n$\\left\\lfloor \\frac{totalvalue}{negativenumber} \\right\\rfloor + \\left\\lfloor completepart - \\frac{totalvalue+1}{negativenumber} \\right\\rfloor\n= completepart-1$ for all integers $totalvalue,completepart,negativenumber$.  Thus\n$\\left\\lfloor \\frac{totalvalue}{negativenumber} \\right\\rfloor + \\left\\lfloor \\frac{negativenumber zeroelement-totalvalue-1}{negativenumber} \\right\\rfloor\n= zeroelement-1$ and $\\left\\lfloor \\frac{totalvalue}{zeroelement} \\right\\rfloor + \\left\\lfloor \\frac{negativenumber zeroelement-totalvalue-1}{zeroelement}\n\\right\\rfloor = negativenumber-1$; this implies that $oppositefunction_{negativenumber,zeroelement}(totalvalue) + oppositefunction_{negativenumber,zeroelement}(negativenumber zeroelement-totalvalue-1) =\nnegativenumber+zeroelement-2$ is odd, and so $(-1)^{oppositefunction_{negativenumber,zeroelement}(totalvalue)} =\n-(-1)^{oppositefunction_{negativenumber,zeroelement}(negativenumber zeroelement-totalvalue-1)}$ for\nall $totalvalue$.  It follows that $difference(negativenumber,zeroelement) = 0$ if $negativenumber$ and\n$zeroelement$ have opposite parity.\n\nNow suppose that $negativenumber = 2 completepart$ and $zeroelement = 2 nothingness$ are both even.\nThen $\\left\\lfloor \\frac{2 unifiedsum}{2 negativenumber} \\right\\rfloor = \\left\\lfloor \\frac{2 unifiedsum+1}{2 negativenumber} \\right\\rfloor$\nfor all $unifiedsum$, so $difference$ can be computed as twice the sum over only even\nindices:\n\\[\ndifference(2 completepart, 2 nothingness) = 2 \\sum_{totalvalue=0}^{2 completepart nothingness-1} (-1)^{oppositefunction_{completepart,nothingness}(totalvalue)}\n= difference(completepart,nothingness)(1 + (-1)^{completepart+nothingness}).\n\\]\nThus $difference(2 completepart,2 nothingness)$ vanishes if and only if $difference(completepart,nothingness)$ vanishes (if $1 +\n(-1)^{completepart+nothingness} = 0$, then $completepart$ and $nothingness$ have opposite parity and so\n$difference(completepart,nothingness)$ also vanishes).\n\nPiecing our various cases together, we easily deduce that\n$difference(negativenumber,zeroelement) = 0$ if and only if the highest powers of 2 dividing\n$negativenumber$ and $zeroelement$ are different."
+    },
+    "garbled_string": {
+      "map": {
+        "i": "zbqmrkly",
+        "j": "vbnmxzpq",
+        "k": "trwqplmn",
+        "l": "asdkjher",
+        "m": "abcdefgh",
+        "n": "qwertyui",
+        "S": "czxvplkj",
+        "f_m,n": "hgjklmzx"
+      },
+      "question": "Find necessary and sufficient conditions on positive integers abcdefgh and qwertyui\nso that\n\\[\\sum_{zbqmrkly=0}^{abcdefghqwertyui-1} (-1)^{\\lfloor zbqmrkly/abcdefgh \\rfloor +\\lfloor zbqmrkly/qwertyui\\rfloor}=0.\\]",
+      "solution": "For convenience, define hgjklmzx(zbqmrkly) = \\lfloor \\frac{zbqmrkly}{abcdefgh} \\rfloor +\n\\lfloor \\frac{zbqmrkly}{qwertyui} \\rfloor, so that the given sum is\nczxvplkj(abcdefgh,qwertyui) = \\sum_{zbqmrkly=0}^{abcdefghqwertyui-1} (-1)^{hgjklmzx(zbqmrkly)}.\nIf abcdefgh and qwertyui are both odd, then czxvplkj(abcdefgh,qwertyui) is the sum of\nan odd number of \\pm 1's, and thus cannot be zero.  Now consider\nthe case where abcdefgh and qwertyui have opposite parity.  Note that\n$\\lfloor \\frac{zbqmrkly}{abcdefgh} \\rfloor + \\lfloor trwqplmn - \\frac{zbqmrkly+1}{abcdefgh} \\rfloor\n= trwqplmn-1$ for all integers $zbqmrkly,trwqplmn,abcdefgh$.  Thus\n$\\lfloor \\frac{zbqmrkly}{abcdefgh} \\rfloor + \\lfloor \\frac{abcdefghqwertyui-zbqmrkly-1}{abcdefgh} \\rfloor\n= qwertyui-1$ and $\\lfloor \\frac{zbqmrkly}{qwertyui} \\rfloor + \\lfloor \\frac{abcdefghqwertyui-zbqmrkly-1}{qwertyui}\n\\rfloor = abcdefgh-1$; this implies that $hgjklmzx(zbqmrkly) + hgjklmzx(abcdefghqwertyui-zbqmrkly-1) =\nabcdefgh+qwertyui-2$ is odd, and so $(-1)^{hgjklmzx(zbqmrkly)} =\n-(-1)^{hgjklmzx(abcdefghqwertyui-zbqmrkly-1)}$ for\nall $zbqmrkly$.  It follows that czxvplkj(abcdefgh,qwertyui) = 0 if abcdefgh and\nqwertyui have opposite parity.\n\nNow suppose that abcdefgh=2trwqplmn and qwertyui=2asdkjher are both even.\nThen $\\lfloor \\frac{2vbnmxzpq}{2abcdefgh} \\rfloor = \\lfloor \\frac{2vbnmxzpq+1}{2abcdefgh} \\rfloor$\nfor all $vbnmxzpq$, so czxvplkj can be computed as twice the sum over only even\nindices:\n\\[\nczxvplkj(2trwqplmn, 2asdkjher) = 2 \\sum_{zbqmrkly=0}^{2trwqplmnasdkjher-1} (-1)^{hgjklmzx(zbqmrkly)}\n= czxvplkj(trwqplmn,asdkjher)(1 + (-1)^{trwqplmn+asdkjher}).\n\\]\nThus czxvplkj(2trwqplmn,2asdkjher) vanishes if and only if czxvplkj(trwqplmn,asdkjher) vanishes (if $1 +\n(-1)^{trwqplmn+asdkjher} = 0$, then trwqplmn and asdkjher have opposite parity and so\nczxvplkj(trwqplmn,asdkjher) also vanishes).\n\nPiecing our various cases together, we easily deduce that\nczxvplkj(abcdefgh,qwertyui) = 0 if and only if the highest powers of 2 dividing\nabcdefgh and qwertyui are different."
+    },
+    "kernel_variant": {
+      "question": "Let m and n be positive integers and define\n\\[\nT(m,n)=\\sum_{i=2}^{mn+1}(-1)^{\\left\\lfloor\\dfrac{i-2}{m}\\right\\rfloor+\\left\\lfloor\\dfrac{i-2}{n}\\right\\rfloor}.\n\\]\nFor which pairs (m,n) does T(m,n)=0?",
+      "solution": "We set j = i - 2; then as i runs 2,\\ldots ,mn+1 we have j = 0,\\ldots ,mn-1.  Hence\n  T(m,n)\n    = \\sum _{i=2}^{mn+1}(-1)^{\\lfloor (i-2)/m\\rfloor +\\lfloor (i-2)/n\\rfloor }\n    = \\sum _{j=0}^{mn-1}(-1)^{\\lfloor j/m\\rfloor +\\lfloor j/n\\rfloor }\nwhich is exactly the classical sum S(m,n).  We prove:\n\nClaim.  T(m,n)=0 \\Leftrightarrow  \\nu _2(m)\\neq \\nu _2(n).\n\n1.  Both m,n odd.  Then mn is odd, and we sum an odd number of terms \\pm 1.  Such a sum cannot vanish, so T(m,n)\\neq 0.\n\n2.  Opposite parity.  Say m even, n odd.  For each j\\in [0,mn-1] pair j\\leftrightarrow j'=mn-1-j.  A standard floor-identity gives\n   \\lfloor j/m\\rfloor +\\lfloor (mn-1-j)/m\\rfloor =n-1,\n   \\lfloor j/n\\rfloor +\\lfloor (mn-1-j)/n\\rfloor =m-1.\nHence\n   (\\lfloor j/m\\rfloor +\\lfloor j/n\\rfloor )+(\\lfloor j'/m\\rfloor +\\lfloor j'/n\\rfloor )=m+n-2\\equiv 1(mod 2)\n(since one of m,n is even, the other odd).  Thus (-1)^{f(j)}=-(-1)^{f(j')}, so every pair cancels and T(m,n)=0.\n\n3.  Both even.  Write m=2k, n=2\\ell .  Then\n   T(2k,2\\ell )=\\sum _{j=0}^{4k\\ell -1}(-1)^{\\lfloor j/(2k)\\rfloor +\\lfloor j/(2\\ell )\\rfloor }\n splits into even and odd j.  If j=2s or j=2s+1 then\n   \\lfloor 2s/(2k)\\rfloor =\\lfloor (2s+1)/(2k)\\rfloor =\\lfloor s/k\\rfloor ,\n   \\lfloor 2s/(2\\ell )\\rfloor =\\lfloor (2s+1)/(2\\ell )\\rfloor =\\lfloor s/\\ell \\rfloor .\nHence\n   T(2k,2\\ell )=2\\sum _{s=0}^{2k\\ell -1}(-1)^{\\lfloor s/k\\rfloor +\\lfloor s/\\ell \\rfloor }.\nSplit that sum as s=0\\ldots k\\ell -1 and s=k\\ell \\ldots 2k\\ell -1.  For the latter write s=k\\ell +t (0\\leq t<k\\ell ), then\n   \\lfloor (k\\ell +t)/k\\rfloor +\\lfloor (k\\ell +t)/\\ell \\rfloor  = (\\ell +\\lfloor t/k\\rfloor )+(k+\\lfloor t/\\ell \\rfloor )\n                           =k+\\ell  +\\lfloor t/k\\rfloor +\\lfloor t/\\ell \\rfloor .\nThus\n   \\sum _{s=0}^{2k\\ell -1}(-1)^{\\lfloor s/k\\rfloor +\\lfloor s/\\ell \\rfloor }\n     =\\sum _{t=0}^{k\\ell -1}(-1)^{\\lfloor t/k\\rfloor +\\lfloor t/\\ell \\rfloor }[1+(-1)^{k+\\ell }]\n     =T(k,\\ell )[1+(-1)^{k+\\ell }].\nTherefore\n   T(2k,2\\ell )=2 T(k,\\ell )[1+(-1)^{k+\\ell }].\n\n* If k+\\ell  is odd, then 1+(-1)^{k+\\ell }=0 \\Rightarrow  T(2k,2\\ell )=0.\n* If k+\\ell  is even, then 1+(-1)^{k+\\ell }=2 and T(2k,2\\ell )=4 T(k,\\ell ), so T(2k,2\\ell ) vanishes exactly when T(k,\\ell ) does.\n\nBy iterating---halving common factors of 2 until one or both are odd---we see that the only obstruction to vanishing is when m,n have the same 2-adic valuation.\n\nConclusion.  T(m,n)=0 if and only if \\nu _2(m)\\neq \\nu _2(n).  In other words, T(m,n)=0 exactly when the highest powers of 2 dividing m and n differ.",
+      "_meta": {
+        "core_steps": [
+          "Rule-out case m,n both odd via ‘odd number of ±1 terms can’t sum to 0’.",
+          "Pair i with mn−i−1; their exponents add to m+n−2, hence terms cancel when m,n have opposite parity.",
+          "If m,n are both even write m=2k,n=2ℓ; group even indices to get S(2k,2ℓ)=2·S(k,ℓ)·(1+(-1)^{k+ℓ}).",
+          "Iterate halving until one of the numbers becomes odd; cancellation occurs exactly when 2-adic orders differ.",
+          "Conclude: S(m,n)=0 ⇔ ν₂(m) ≠ ν₂(n)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The constant used in the symmetric partner index mn−i−⟨const⟩; any fixed shift keeps the pairing idea intact (only translates every index by the same amount).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "The lower limit of summation (currently 0); changing it to any fixed integer merely translates all indices and leaves the argument unchanged after a uniform re-indexing.",
+            "original": "0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

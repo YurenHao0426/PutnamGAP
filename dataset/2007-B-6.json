@@ -1,0 +1,143 @@
+{
+  "index": "2007-B-6",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "For each positive integer $n$, let $f(n)$ be the number of ways to\nmake $n!$ cents using an unordered collection of coins, each worth $k!$\ncents for some $k$, $1 \\leq k \\leq n$. Prove that for some constant $C$,\nindependent of $n$,\n\\[\nn^{n^2/2 - Cn} e^{-n^2/4} \\leq f(n) \\leq n^{n^2/2 + Cn}e^{-n^2/4}.\n\\]\n\n\\end{itemize}\n\n\\end{document}",
+  "solution": "(Suggested by Oleg Golberg)\nAssume $n \\geq 2$, or else the problem\nis trivially false.\nThroughout this proof, any $C_i$ will be a positive constant whose exact\nvalue is immaterial.\nAs in the proof of Stirling's approximation, we\nestimate for any fixed $c \\in \\RR$,\n\\[\n\\sum_{i=1}^n (i+c) \\log i =\n\\frac{1}{2} n^2 \\log n - \\frac{1}{4} n^2 + O(n \\log n)\n\\]\nby comparing the sum to an integral. This gives\n\\begin{align*}\nn^{n^2/2-C_1 n} e^{-n^2/4} &\\leq 1^{1+c} 2^{2+c} \\cdots n^{n+c} \\\\\n&\\leq n^{n^2/2+C_2 n} e^{-n^2/4}.\n\\end{align*}\nWe now interpret $f(n)$ as counting the number of $n$-tuples\n$(a_1, \\dots, a_n)$ of nonnegative integers such that\n\\[\na_1 1! + \\cdots + a_n n! = n!.\n\\]\nFor an upper bound on $f(n)$, we use the inequalities\n$0 \\leq a_i \\leq n!/i!$ to deduce that there are at most $n!/i! + 1 \\leq 2(n!/i!)$\nchoices for $a_i$. Hence\n\\begin{align*}\nf(n) &\\leq 2^n \\frac{n!}{1!} \\cdots \\frac{n!}{n!} \\\\\n&= 2^n 2^1 3^2 \\cdots n^{n-1} \\\\\n&\\leq n^{n^2/2+C_3 n} e^{-n^2/4}.\n\\end{align*}\nFor a lower bound on $f(n)$, we note that if $0 \\leq a_i < (n-1)!/i!$\nfor $i=2,\\dots,n-1$ and $a_n = 0$,\nthen $0 \\leq a_2 2! + \\cdots + a_n n! \\leq n!$, so there is a unique\nchoice of $a_1$ to complete this to a solution of\n$a_1 1! + \\cdots + a_n n! = n!$. Hence\n\\begin{align*}\nf(n) &\\geq \\frac{(n-1)!}{2!} \\cdots \\frac{(n-1)!}{(n-1)!} \\\\\n&= 3^1 4^2 \\cdots (n-1)^{n-3} \\\\\n&\\geq n^{n^2/2+C_4 n} e^{-n^2/4}.\n\\end{align*}\n\n\\end{itemize}\n\\end{document}",
+  "vars": [
+    "n",
+    "k",
+    "i",
+    "a",
+    "a_i",
+    "f"
+  ],
+  "params": [
+    "C",
+    "C_i",
+    "C_1",
+    "C_2",
+    "C_3",
+    "C_4",
+    "c"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexsize",
+        "k": "iterindex",
+        "i": "loopindex",
+        "a": "coeffbase",
+        "a_i": "coefficienti",
+        "f": "wayscount",
+        "C": "constcap",
+        "C_i": "constseqi",
+        "C_1": "constone",
+        "C_2": "consttwo",
+        "C_3": "constthree",
+        "C_4": "constfour",
+        "c": "offsetcon"
+      },
+      "question": "For each positive integer $indexsize$, let $wayscount(indexsize)$ be the number of ways to\nmake $indexsize!$ cents using an unordered collection of coins, each worth $iterindex!$\ncents for some $iterindex$, $1 \\leq iterindex \\leq indexsize$. Prove that for some\nconstant $constcap$, independent of $indexsize$,\n\\[\nindexsize^{indexsize^2/2 - constcap\\, indexsize} e^{-indexsize^2/4} \\leq\nwayscount(indexsize) \\leq indexsize^{indexsize^2/2 + constcap\\, indexsize}e^{-indexsize^2/4}.\n\\]\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "(Suggested by Oleg Golberg)\nAssume $indexsize \\geq 2$, or else the problem\nis trivially false.\nThroughout this proof, any $constseqi$ will be a positive constant whose exact\nvalue is immaterial.\nAs in the proof of Stirling's approximation, we\nestimate for any fixed $offsetcon \\in \\RR$,\n\\[\n\\sum_{loopindex=1}^{indexsize} (loopindex+offsetcon) \\log loopindex =\n\\frac{1}{2} indexsize^2 \\log indexsize - \\frac{1}{4} indexsize^2 + O(indexsize \\log indexsize)\n\\]\nby comparing the sum to an integral. This gives\n\\begin{align*}\nindexsize^{indexsize^2/2-constone\\, indexsize} e^{-indexsize^2/4} &\\leq 1^{1+offsetcon} 2^{2+offsetcon} \\cdots indexsize^{indexsize+offsetcon} \\\\\n&\\leq indexsize^{indexsize^2/2+consttwo\\, indexsize} e^{-indexsize^2/4}.\n\\end{align*}\nWe now interpret $wayscount(indexsize)$ as counting the number of $indexsize$-tuples\n$(coeffbase_1, \\dots, coeffbase_{indexsize})$ of nonnegative integers such that\n\\[\ncoeffbase_1 1! + \\cdots + coeffbase_{indexsize} indexsize! = indexsize!.\n\\]\nFor an upper bound on $wayscount(indexsize)$, we use the inequalities\n$0 \\leq coefficienti \\leq indexsize!/loopindex!$ to deduce that there are at most $indexsize!/loopindex! + 1 \\leq 2(indexsize!/loopindex!)$\nchoices for $coefficienti$. Hence\n\\begin{align*}\nwayscount(indexsize) &\\leq 2^{indexsize} \\frac{indexsize!}{1!} \\cdots \\frac{indexsize!}{indexsize!} \\\\\n&= 2^{indexsize} 2^1 3^2 \\cdots indexsize^{indexsize-1} \\\\\n&\\leq indexsize^{indexsize^2/2+constthree\\, indexsize} e^{-indexsize^2/4}.\n\\end{align*}\nFor a lower bound on $wayscount(indexsize)$, we note that if $0 \\leq coefficienti < (indexsize-1)!/loopindex!$\nfor $loopindex=2,\\dots,indexsize-1$ and $coefficienti_{indexsize} = 0$,\nthen $0 \\leq coefficienti_2 2! + \\cdots + coefficienti_{indexsize} indexsize! \\leq indexsize!$, so there is a unique\nchoice of $coeffbase_1$ to complete this to a solution of\n$coeffbase_1 1! + \\cdots + coeffbase_{indexsize} indexsize! = indexsize!$. Hence\n\\begin{align*}\nwayscount(indexsize) &\\geq \\frac{(indexsize-1)!}{2!} \\cdots \\frac{(indexsize-1)!}{(indexsize-1)!} \\\\\n&= 3^1 4^2 \\cdots (indexsize-1)^{indexsize-3} \\\\\n&\\geq indexsize^{indexsize^2/2+constfour\\, indexsize} e^{-indexsize^2/4}.\n\\end{align*}\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "labyrinth",
+        "k": "trelliswork",
+        "i": "chandelier",
+        "a": "snowflake",
+        "a_i": "nightshade",
+        "f": "afterimage",
+        "C": "pinecone",
+        "C_i": "houndfish",
+        "C_1": "bluebonnet",
+        "C_2": "rattlesnake",
+        "C_3": "dragonfly",
+        "C_4": "bottlenose",
+        "c": "riverbank"
+      },
+      "question": "For each positive integer $labyrinth$, let $afterimage(labyrinth)$ be the number of ways to\nmake $labyrinth!$ cents using an unordered collection of coins, each worth $trelliswork!$\ncents for some $trelliswork$, $1 \\leq trelliswork \\leq labyrinth$. Prove that for some constant $pinecone$,\nindependent of $labyrinth$,\n\\[\nlabyrinth^{labyrinth^2/2 - pinecone labyrinth} e^{-labyrinth^2/4} \\leq afterimage(labyrinth) \\leq labyrinth^{labyrinth^2/2 + pinecone labyrinth}e^{-labyrinth^2/4}.\n\\]\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "(Suggested by Oleg Golberg)\nAssume $labyrinth \\geq 2$, or else the problem\nis trivially false.\nThroughout this proof, any $houndfish_{chandelier}$ will be a positive constant whose exact\nvalue is immaterial.\nAs in the proof of Stirling's approximation, we\nestimate for any fixed $riverbank \\in \\RR$,\n\\[\n\\sum_{chandelier=1}^{labyrinth} (chandelier+riverbank) \\log chandelier =\n\\frac{1}{2} labyrinth^2 \\log labyrinth - \\frac{1}{4} labyrinth^2 + O(labyrinth \\log labyrinth)\n\\]\nby comparing the sum to an integral. This gives\n\\begin{align*}\nlabyrinth^{labyrinth^2/2-bluebonnet_1 labyrinth} e^{-labyrinth^2/4} &\\leq 1^{1+riverbank} 2^{2+riverbank} \\cdots labyrinth^{labyrinth+riverbank} \\\\\n&\\leq labyrinth^{labyrinth^2/2+rattlesnake_2 labyrinth} e^{-labyrinth^2/4}.\n\\end{align*}\nWe now interpret $afterimage(labyrinth)$ as counting the number of $labyrinth$-tuples\n$(nightshade_1, \\dots, nightshade_{labyrinth})$ of nonnegative integers such that\n\\[\nnightshade_1 1! + \\cdots + nightshade_{labyrinth} labyrinth! = labyrinth!.\n\\]\nFor an upper bound on $afterimage(labyrinth)$, we use the inequalities\n$0 \\leq nightshade_{chandelier} \\leq labyrinth!/chandelier!$ to deduce that there are at most $labyrinth!/chandelier! + 1 \\leq 2(labyrinth!/chandelier!)$\nchoices for $nightshade_{chandelier}$. Hence\n\\begin{align*}\nafterimage(labyrinth) &\\leq 2^{labyrinth} \\frac{labyrinth!}{1!} \\cdots \\frac{labyrinth!}{labyrinth!} \\\\\n&= 2^{labyrinth} 2^1 3^2 \\cdots labyrinth^{labyrinth-1} \\\\\n&\\leq labyrinth^{labyrinth^2/2+dragonfly_3 labyrinth} e^{-labyrinth^2/4}.\n\\end{align*}\nFor a lower bound on $afterimage(labyrinth)$, we note that if $0 \\leq nightshade_{chandelier} < (labyrinth-1)!/chandelier!$\nfor $chandelier=2,\\dots,labyrinth-1$ and $nightshade_{labyrinth} = 0$,\nthen $0 \\leq nightshade_2 2! + \\cdots + nightshade_{labyrinth} labyrinth! \\leq labyrinth!$, so there is a unique\nchoice of $nightshade_1$ to complete this to a solution of\n$nightshade_1 1! + \\cdots + nightshade_{labyrinth} labyrinth! = labyrinth!$. Hence\n\\begin{align*}\nafterimage(labyrinth) &\\geq \\frac{(labyrinth-1)!}{2!} \\cdots \\frac{(labyrinth-1)!}{(labyrinth-1)!} \\\\\n&= 3^1 4^2 \\cdots (labyrinth-1)^{labyrinth-3} \\\\\n&\\geq labyrinth^{labyrinth^2/2+bottlenose_4 labyrinth} e^{-labyrinth^2/4}.\n\\end{align*}\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "constant",
+        "k": "immobile",
+        "i": "terminal",
+        "a": "motionless",
+        "a_i": "stagnant",
+        "f": "disorder",
+        "C": "variable",
+        "C_i": "fluctuating",
+        "C_1": "unsteady",
+        "C_2": "unstable",
+        "C_3": "wavering",
+        "C_4": "vacillate",
+        "c": "changeful"
+      },
+      "question": "For each positive integer $constant$, let $disorder(constant)$ be the number of ways to\nmake $constant!$ cents using an unordered collection of coins, each worth $immobile!$\ncents for some $immobile$, $1 \\leq immobile \\leq constant$. Prove that for some constant $variable$,\nindependent of $constant$,\n\\[\nconstant^{constant^2/2 - variable\\,constant} e^{-constant^2/4} \\leq disorder(constant) \\leq constant^{constant^2/2 + variable\\,constant}e^{-constant^2/4}.\n\\]",
+      "solution": "(Suggested by Oleg Golberg)\nAssume $constant \\geq 2$, or else the problem\nis trivially false.\nThroughout this proof, any $fluctuating$ will be a positive constant whose exact\nvalue is immaterial.\nAs in the proof of Stirling's approximation, we\nestimate for any fixed $changeful \\in \\RR$,\n\\[\n\\sum_{terminal=1}^{constant} (terminal+changeful) \\log terminal =\n\\frac{1}{2} constant^2 \\log constant - \\frac{1}{4} constant^2 + O(constant \\log constant)\n\\]\nby comparing the sum to an integral. This gives\n\\begin{align*}\nconstant^{constant^2/2-unsteady\\,constant} e^{-constant^2/4} &\\leq 1^{1+changeful} 2^{2+changeful} \\cdots constant^{constant+changeful} \\\\\n&\\leq constant^{constant^2/2+unstable\\,constant} e^{-constant^2/4}.\n\\end{align*}\nWe now interpret $disorder(constant)$ as counting the number of $constant$-tuples\n$(stagnant_1, \\dots, stagnant_{constant})$ of nonnegative integers such that\n\\[\nstagnant_1 1! + \\cdots + stagnant_{constant} constant! = constant!.\n\\]\nFor an upper bound on $disorder(constant)$, we use the inequalities\n$0 \\leq stagnant_{terminal} \\leq constant!/terminal!$ to deduce that there are at most $constant!/terminal! + 1 \\leq 2(constant!/terminal!)$\nchoices for $stagnant_{terminal}$. Hence\n\\begin{align*}\ndisorder(constant) &\\leq 2^{constant} \\frac{constant!}{1!} \\cdots \\frac{constant!}{constant!} \\\\\n&= 2^{constant} 2^1 3^2 \\cdots constant^{constant-1} \\\\\n&\\leq constant^{constant^2/2+wavering\\,constant} e^{-constant^2/4}.\n\\end{align*}\nFor a lower bound on $disorder(constant)$, we note that if $0 \\leq stagnant_{terminal} < (constant-1)!/terminal!$\nfor $terminal=2,\\dots,constant-1$ and $stagnant_{constant} = 0$,\nthen $0 \\leq stagnant_{2} 2! + \\cdots + stagnant_{constant} constant! \\leq constant!$, so there is a unique\nchoice of $stagnant_{1}$ to complete this to a solution of\n$stagnant_1 1! + \\cdots + stagnant_{constant} constant! = constant!$. Hence\n\\begin{align*}\ndisorder(constant) &\\geq \\frac{(constant-1)!}{2!} \\cdots \\frac{(constant-1)!}{(constant-1)!} \\\\\n&= 3^1 4^2 \\cdots (constant-1)^{constant-3} \\\\\n&\\geq constant^{constant^2/2+vacillate\\,constant} e^{-constant^2/4}.\n\\end{align*}"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "i": "abcdefgh",
+        "a": "uvwxyzzz",
+        "a_i": "plmoknij",
+        "f": "rtyuipas",
+        "C": "qazwsxed",
+        "C_i": "edcvfrtg",
+        "C_1": "yhnujmik",
+        "C_2": "ikmjunhy",
+        "C_3": "olpazsxw",
+        "C_4": "wsxedcrf",
+        "c": "mnbvcxzq"
+      },
+      "question": "For each positive integer $qzxwvtnp$, let $rtyuipas(qzxwvtnp)$ be the number of ways to\nmake $qzxwvtnp!$ cents using an unordered collection of coins, each worth $hjgrksla!$\ncents for some $hjgrksla$, $1 \\leq hjgrksla \\leq qzxwvtnp$. Prove that for some constant $qazwsxed$,\nindependent of $qzxwvtnp$,\n\\[\nqzxwvtnp^{qzxwvtnp^2/2 - qazwsxed qzxwvtnp} e^{-qzxwvtnp^2/4} \\leq rtyuipas(qzxwvtnp) \\leq qzxwvtnp^{qzxwvtnp^2/2 + qazwsxed qzxwvtnp}e^{-qzxwvtnp^2/4}.\n\\]",
+      "solution": "(Suggested by Oleg Golberg)\nAssume $qzxwvtnp \\geq 2$, or else the problem\nis trivially false.\nThroughout this proof, any $edcvfrtg$ will be a positive constant whose exact\nvalue is immaterial.\nAs in the proof of Stirling's approximation, we\nestimate for any fixed $mnbvcxzq \\in \\RR$,\n\\[\n\\sum_{abcdefgh=1}^{qzxwvtnp} (abcdefgh+mnbvcxzq) \\log abcdefgh =\n\\frac{1}{2} qzxwvtnp^2 \\log qzxwvtnp - \\frac{1}{4} qzxwvtnp^2 + O(qzxwvtnp \\log qzxwvtnp)\n\\]\nby comparing the sum to an integral. This gives\n\\begin{align*}\nqzxwvtnp^{qzxwvtnp^2/2-yhnujmik qzxwvtnp} e^{-qzxwvtnp^2/4} &\\leq 1^{1+mnbvcxzq} 2^{2+mnbvcxzq} \\cdots qzxwvtnp^{qzxwvtnp+mnbvcxzq} \\\\\n&\\leq qzxwvtnp^{qzxwvtnp^2/2+ikmjunhy qzxwvtnp} e^{-qzxwvtnp^2/4}.\n\\end{align*}\nWe now interpret $rtyuipas(qzxwvtnp)$ as counting the number of $qzxwvtnp$-tuples\n$(uvwxyzzz_1, \\dots, uvwxyzzz_{qzxwvtnp})$ of nonnegative integers such that\n\\[\nuvwxyzzz_1 1! + \\cdots + uvwxyzzz_{qzxwvtnp} qzxwvtnp! = qzxwvtnp!.\n\\]\nFor an upper bound on $rtyuipas(qzxwvtnp)$, we use the inequalities\n$0 \\leq plmoknij \\leq qzxwvtnp!/abcdefgh!$ to deduce that there are at most $qzxwvtnp!/abcdefgh! + 1 \\leq 2(qzxwvtnp!/abcdefgh!)$\nchoices for $plmoknij$. Hence\n\\begin{align*}\nrtyuipas(qzxwvtnp) &\\leq 2^{qzxwvtnp} \\frac{qzxwvtnp!}{1!} \\cdots \\frac{qzxwvtnp!}{qzxwvtnp!} \\\\\n&= 2^{qzxwvtnp} 2^1 3^2 \\cdots qzxwvtnp^{qzxwvtnp-1} \\\\\n&\\leq qzxwvtnp^{qzxwvtnp^2/2+olpazsxw qzxwvtnp} e^{-qzxwvtnp^2/4}.\n\\end{align*}\nFor a lower bound on $rtyuipas(qzxwvtnp)$, we note that if $0 \\leq plmoknij < (qzxwvtnp-1)!/abcdefgh!$\nfor $abcdefgh=2,\\dots,qzxwvtnp-1$ and $uvwxyzzz_{qzxwvtnp} = 0$,\nthen $0 \\leq uvwxyzzz_2 2! + \\cdots + uvwxyzzz_{qzxwvtnp} qzxwvtnp! \\leq qzxwvtnp!$, so there is a unique\nchoice of $uvwxyzzz_1$ to complete this to a solution of\n$uvwxyzzz_1 1! + \\cdots + uvwxyzzz_{qzxwvtnp} qzxwvtnp! = qzxwvtnp!$. Hence\n\\begin{align*}\nrtyuipas(qzxwvtnp) &\\geq \\frac{(qzxwvtnp-1)!}{2!} \\cdots \\frac{(qzxwvtnp-1)!}{(qzxwvtnp-1)!} \\\\\n&= 3^1 4^2 \\cdots (qzxwvtnp-1)^{qzxwvtnp-3} \\\\\n&\\geq qzxwvtnp^{qzxwvtnp^2/2+wsxedcrf qzxwvtnp} e^{-qzxwvtnp^2/4}.\n\\end{align*}"
+    },
+    "kernel_variant": {
+      "question": "Let n \\geq  5 be an integer and put\n\ng(n) = #{ unordered multisets {k1!, k2!, \\ldots  } \\subset  {1!, 2!, \\ldots  , n!} having total value n!/2 } .\n\n(The quantity n!/2 is an integer for every n \\geq  2.)\n\nProve that there is an absolute constant C > 0 such that, for every integer n \\geq  5,\n\n        n^{n^{2}/2 - C n}\n   e^{ - n^{2}/4 }   \\leq   g(n)  \\leq   n^{n^{2}/2 + C n}\n   e^{ - n^{2}/4 } .",
+      "solution": "Fix an integer n \\geq  5 and denote\n        N := n!/2 .\nEvery unordered multiset of factorial-coins whose total value is N can be encoded\nby an n-tuple of non-negative integers\n        a = (a1, \\ldots  , an)\nsatisfying the linear diophantine equation\n        a1\\cdot 1! + a2\\cdot 2! + \\ldots  + an\\cdot n! = N.                (\\star )\nIn what follows we repeatedly use the classical asymptotic estimate, valid for\nany fixed real constant c,\n        \\Sigma _{j=1}^{n} (j + c) log j = \\frac{1}{2} n^2 log n - \\frac{1}{4} n^2 + O(n log n).      (1)\n(The proof is a standard comparison of the sum with an integral and is the\ncore of Stirling's formula.)\n\n---------------------------------------------------------------------\n1.  Upper bound for g(n).\n---------------------------------------------------------------------\nFor each i we have 0 \\leq  ai \\leq  \\lfloor N/i!\\rfloor , so the number of possible values of ai is\n        \\lfloor N/i!\\rfloor  + 1 \\leq  3 N/i!         (1 \\leq  i \\leq  n).                (2)\nIndeed, for i \\leq  n-1 we have N/i! \\geq  1, hence \\lfloor x\\rfloor  + 1 \\leq  2x \\leq  3x; for i = n we\nhave N/n! = \\frac{1}{2}, so \\lfloor \\frac{1}{2}\\rfloor  + 1 = 1 \\leq  3\\cdot \\frac{1}{2} as well.  By (2)\n        g(n) \\leq  \\prod _{i=1}^n 3 N / i!\n              = 3^n \\cdot  \\prod _{i=1}^n N/i! .                        (3)\nBecause N = n!/2 we may factor out 2^{-n}:\n        \\prod _{i=1}^n N/i! = 2^{-n} \\prod _{i=1}^n n!/i! .            (4)\nA standard telescoping cancellation (or induction) shows that\n        \\prod _{i=1}^n n!/i! = \\prod _{j=2}^n j^{j-1}.                 (5)\nSubstituting (4)-(5) into (3) gives\n        g(n) \\leq  (3/2)^n \\cdot  \\prod _{j=2}^n j^{j-1}.                 (6)\nTaking logarithms and applying (1) with c = -1 we obtain\n        log g(n) \\leq  n log(3/2)\n                    + \\Sigma _{j=2}^n (j-1) log j\n                  = \\frac{1}{2} n^2 log n - \\frac{1}{4} n^2 + O(n log n).\nThe additive term n log(3/2) is absorbed in the O(n log n) remainder.  After\nexponentiation we find an absolute constant C_1 such that\n        g(n) \\leq  n^{n^2/2 + C_1 n} e^{-n^2/4}.                 (7)\n\n---------------------------------------------------------------------\n2.  Lower bound for g(n).\n---------------------------------------------------------------------\nSet a1 = an = 0 and allow the variables a3, \\ldots  , a_{n-1} to vary\nindependently in the ranges\n        0 \\leq  ai \\leq  \\lfloor  (n-2)! / i! \\rfloor     (3 \\leq  i \\leq  n-1).          (8)\nLet\n        S := \\Sigma _{i=3}^{n-1} ai i! .\nSince each summand in (8) is at most (n-2)! and there are n-3 of them,\n        S \\leq  (n-3)(n-2)!  <  N = n!/2                    (n \\geq  5).\nConsequently the difference R := N - S is a non-negative even integer.\nDefine\n        a2 := R/2 .\nBecause R \\leq  N we have a2 \\leq  N/2! = n!/4, so (a1, \\ldots  , an) meets the requirement\n(\\star ).  Different choices in (8) yield distinct solutions; hence\n        g(n) \\geq  \\prod _{i=3}^{n-1} ( \\lfloor  (n-2)! / i! \\rfloor  + 1 )\n              \\geq  \\prod _{i=3}^{n-1} ( (n-2)! / i! )                (9)\n              =          (n-2)!^{n-3}\n                 ------------------------------------------------\n                 3!\\cdot 4!\\cdot \\ldots \\cdot (n-1)! .\nWriting the factorials in the denominator multiplicatively and isolating the\nfactor i = n-1 gives\n        g(n) \\geq  [ \\prod _{t=4}^{n-2} t^{t-3} ] / (n-1).           (10)\nTaking logarithms and using (1) with c = -3,\n        log g(n) \\geq  \\Sigma _{t=4}^{n-2} (t-3) log t - log(n-1)\n                  = \\frac{1}{2} n^2 log n - \\frac{1}{4} n^2 + O(n log n).\nThe final term -log(n-1) is of lower order and can be absorbed. Therefore\nthere exists an absolute constant C_2 with\n        g(n) \\geq  n^{n^2/2 - C_2 n} e^{-n^2/4}.                 (11)\n\n---------------------------------------------------------------------\n3.  Conclusion.\n---------------------------------------------------------------------\nCombining (7) and (11) and enlarging the larger of C_1, C_2 if necessary we find\na universal constant C such that, for every n \\geq  5,\n        n^{n^{2}/2 - C n} e^{-n^{2}/4} \\leq  g(n) \\leq  n^{n^{2}/2 + C n} e^{-n^{2}/4} .\nThis completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Encode a coin selection as an n-tuple (a1,…,an) of non-negative integers satisfying Σ ai·i! = n!",
+          "Crude upper bound: each ai ∈ [0, n!/i!] ⇒ #(choices) ≤ K·(n!/i!) for a fixed K>1, so f(n) ≤ ∏ K(n!/i!)",
+          "Crude lower bound: restrict a2,…,a_{n−1} to a small rectangular box (e.g. ai < (n−1)!/i!), set an=0, then the equation forces a1; thus f(n) ≥ ∏ L((n−1)!/i!) for some L>0",
+          "Rewrite the products as 1^{1+c}·2^{2+c}·…·n^{n+c} and approximate ∑(i+c)log i by an integral (Stirling-type) to obtain n^{n²/2±Cn}e^{−n²/4}"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "constant used to turn (n!/i!) + 1 into a multiple of n!/i! in the upper bound",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "size of the rectangular box picked for the lower bound (factorial one step smaller than n!)",
+            "original": "(n−1)!"
+          },
+          "slot3": {
+            "description": "fixed shift in the exponent pattern 1^{1+c}·2^{2+c}·…·n^{n+c} employed in the Stirling estimate",
+            "original": "c (any fixed real number, often taken as 0)"
+          },
+          "slot4": {
+            "description": "pre-setting the last coordinate in the lower-bound construction",
+            "original": "an = 0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,159 @@
+{
+  "index": "1966-B-5",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "B-5. Given \\( n(\\geqq 3) \\) distinct points in the plane, no three of which are on the same straight line, prove that there exists a simple closed polygon with these points as vertices.",
+  "solution": "B-5 Let these points be denoted by \\( P_{1}, P_{2}, \\cdots, P_{n} \\). To every permutation ( \\( \\sigma_{1}, \\sigma_{2}, \\cdots, \\sigma_{n} \\) ) of ( \\( 1,2,3, \\cdots, n \\) ) we associate a closed polygon, namely \\( P_{\\sigma_{1}} P_{\\sigma_{2}} \\cdots P_{\\sigma_{n}} P_{\\sigma_{1}} \\). This way we obtain ( \\( n-1 \\) )! distinct closed polygons some of which may have selfintersections. We claim that anyone of these polygons whose length is the shortest possible is simple. By the hypothesis that no three\n\\( P_{i} \\) 's are on the same line, a selfintersection occurs if and only if two segments say \\( {\\bar{P} \\sigma_{1} P}_{\\sigma_{2}} \\) and \\( {\\bar{P} \\sigma_{m} P \\sigma_{m+1}} \\) cross each other. However, then the closed polygon \\( P_{\\sigma_{2}} \\cdots P_{\\sigma_{m-1}} P_{\\sigma_{m}} P_{\\sigma_{1}} P_{\\sigma_{n}} P_{\\sigma_{n-1}} \\cdots P_{\\sigma_{m+1}} P_{\\sigma_{2}} \\) would have shorter length. Thus there can't be a cross if the length of \\( P_{\\sigma_{1}} \\cdots P_{\\sigma_{n}} P_{\\sigma_{1}} \\) is shortest possible.\n\nAlternate solution: Take two points \\( P_{1} \\) and \\( P_{2} \\) such that all the other points \\( P_{3}, P_{4}, \\cdots, P_{n} \\) are on the same side of the line connecting \\( P_{1} \\) and \\( P_{2} \\). Each point \\( P_{i}, i>2 \\), determines an angle \\( \\theta_{i} \\) between \\( P_{1} P_{2} \\) and \\( P_{1} P_{i} \\), with \\( 0<\\theta_{i}<\\pi \\). By hypothesis, \\( \\theta_{i} \\neq \\theta_{j} \\) if \\( i \\neq j \\). Let \\( \\left(i_{3}, i_{4}, \\cdots, i_{n}\\right) \\) be the permutation of \\( (3,4, \\cdots, n) \\) such that \\( \\theta_{i_{4}}<\\theta_{i_{4}}<\\cdots<\\theta_{i_{n}} \\). Then \\( P_{1} P_{2} P_{i_{3}} P_{i_{4}} \\cdots P_{i_{n}} P_{1} \\) is a closed simple polygon.",
+  "vars": [
+    "P_1",
+    "P_2",
+    "P_3",
+    "P_4",
+    "P_n",
+    "P_i",
+    "P_\\\\sigma_{1}",
+    "P_\\\\sigma_{2}",
+    "P_\\\\sigma_{n}",
+    "P_\\\\sigma_{m}",
+    "\\\\sigma_1",
+    "\\\\sigma_2",
+    "\\\\sigma_n",
+    "\\\\sigma_m",
+    "\\\\theta_i",
+    "i",
+    "j",
+    "m"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P_1": "pointone",
+        "P_2": "pointtwo",
+        "P_3": "pointthree",
+        "P_4": "pointfour",
+        "P_n": "pointlast",
+        "P_i": "pointvar",
+        "P_\\sigma_{1}": "pointpermone",
+        "P_\\sigma_{2}": "pointpermtwo",
+        "P_\\sigma_{n}": "pointpermlast",
+        "P_\\sigma_{m}": "pointpermmid",
+        "\\sigma_1": "permone",
+        "\\sigma_2": "permtwo",
+        "\\sigma_n": "permlast",
+        "\\sigma_m": "permmid",
+        "\\theta_i": "angledvar",
+        "i": "indexi",
+        "j": "indexj",
+        "m": "indexm",
+        "n": "totaln"
+      },
+      "question": "B-5. Given \\( totaln(\\geqq 3) \\) distinct points in the plane, no three of which are on the same straight line, prove that there exists a simple closed polygon with these points as vertices.",
+      "solution": "B-5 Let these points be denoted by \\( pointone, pointtwo, \\cdots, pointlast \\). To every permutation ( \\( permone, permtwo, \\cdots, permlast \\) ) of ( \\( 1,2,3, \\cdots, totaln \\) ) we associate a closed polygon, namely \\( pointpermone pointpermtwo \\cdots pointpermlast pointpermone \\). This way we obtain ( \\( totaln-1 \\) )! distinct closed polygons some of which may have selfintersections. We claim that anyone of these polygons whose length is the shortest possible is simple. By the hypothesis that no three \\( pointvar \\)'s are on the same line, a selfintersection occurs if and only if two segments, say \\( \\overline{pointpermone pointpermtwo} \\) and \\( \\overline{pointpermmid P_{\\sigma_{indexm+1}}} \\), cross each other. However, then the closed polygon \\( pointpermtwo \\cdots P_{\\sigma_{indexm-1}} pointpermmid pointpermone pointpermlast P_{\\sigma_{totaln-1}} \\cdots P_{\\sigma_{indexm+1}} pointpermtwo \\) would have shorter length. Thus there can't be a cross if the length of \\( pointpermone \\cdots pointpermlast pointpermone \\) is shortest possible.\n\nAlternate solution: Take two points \\( pointone \\) and \\( pointtwo \\) such that all the other points \\( pointthree, pointfour, \\cdots, pointlast \\) are on the same side of the line connecting \\( pointone \\) and \\( pointtwo \\). Each point \\( pointvar, indexi>2 \\), determines an angle \\( angledvar \\) between \\( pointone pointtwo \\) and \\( pointone pointvar \\), with \\( 0<angledvar<\\pi \\). By hypothesis, \\( angledvar \\neq \\theta_{indexj} \\) if \\( indexi \\neq indexj \\). Let \\( \\left(indexi_{3}, indexi_{4}, \\cdots, indexi_{totaln}\\right) \\) be the permutation of \\( (3,4, \\cdots, totaln) \\) such that \\( \\theta_{indexi_{4}}<\\theta_{indexi_{4}}<\\cdots<\\theta_{indexi_{totaln}} \\). Then \\( pointone pointtwo P_{indexi_{3}} P_{indexi_{4}} \\cdots P_{indexi_{totaln}} pointone \\) is a closed simple polygon."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P_1": "marblewood",
+        "P_2": "pineforest",
+        "P_3": "cedarbranch",
+        "P_4": "birchgrove",
+        "P_n": "walnutshade",
+        "P_i": "maplecreek",
+        "P_\\sigma_{1}": "elmmeadow",
+        "P_\\sigma_{2}": "aldervalley",
+        "P_\\sigma_{n}": "sprucehollow",
+        "P_\\sigma_{m}": "fircanyon",
+        "\\sigma_1": "stonestream",
+        "\\sigma_2": "sandharbor",
+        "\\sigma_n": "clayridge",
+        "\\sigma_m": "siltmeadow",
+        "\\theta_i": "pebbleangle",
+        "i": "coralpoint",
+        "j": "shellcove",
+        "m": "driftplain",
+        "n": "reedisle"
+      },
+      "question": "B-5. Given \\( reedisle(\\geqq 3) \\) distinct points in the plane, no three of which are on the same straight line, prove that there exists a simple closed polygon with these points as vertices.",
+      "solution": "B-5 Let these points be denoted by \\( marblewood, pineforest, \\cdots, walnutshade \\). To every permutation ( \\( stonestream, sandharbor, \\cdots, clayridge \\) ) of ( \\( 1,2,3, \\cdots, reedisle \\) ) we associate a closed polygon, namely \\( elmmeadow\\, aldervalley \\cdots sprucehollow\\, elmmeadow \\). This way we obtain ( \\( reedisle-1 \\) )! distinct closed polygons some of which may have selfintersections. We claim that anyone of these polygons whose length is the shortest possible is simple. By the hypothesis that no three \\( maplecreek \\)'s are on the same line, a selfintersection occurs if and only if two segments say \\( {\\bar{P} \\sigma_{1} P}_{\\sigma_{2}} \\) and \\( {\\bar{P} \\sigma_{m} P \\sigma_{m+1}} \\) cross each other. However, then the closed polygon \\( aldervalley \\cdots P_{\\sigma_{m-1}} fircanyon elmmeadow sprucehollow P_{\\sigma_{n-1}} \\cdots P_{\\sigma_{m+1}} aldervalley \\) would have shorter length. Thus there can't be a cross if the length of \\( elmmeadow \\cdots sprucehollow elmmeadow \\) is shortest possible.\n\nAlternate solution: Take two points \\( marblewood \\) and \\( pineforest \\) such that all the other points \\( cedarbranch, birchgrove, \\cdots, walnutshade \\) are on the same side of the line connecting \\( marblewood \\) and \\( pineforest \\). Each point \\( maplecreek, coralpoint>2 \\), determines an angle \\( pebbleangle \\) between \\( marblewood pineforest \\) and \\( marblewood maplecreek \\), with \\( 0<pebbleangle<\\pi \\). By hypothesis, \\( pebbleangle \\neq \\theta_{j} \\) if \\( coralpoint \\neq shellcove \\). Let \\( \\left(i_{3}, i_{4}, \\cdots, i_{n}\\right) \\) be the permutation of \\( (3,4, \\cdots, reedisle) \\) such that \\( \\theta_{i_{4}}<\\theta_{i_{4}}<\\cdots<\\theta_{i_{n}} \\). Then \\( marblewood pineforest P_{i_{3}} P_{i_{4}} \\cdots P_{i_{n}} marblewood \\) is a closed simple polygon."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P_1": "voidpointone",
+        "P_2": "voidpointtwo",
+        "P_3": "voidpointthree",
+        "P_4": "voidpointfour",
+        "P_n": "voidpointmany",
+        "P_i": "voidpointvar",
+        "P_\\sigma_{1}": "voidpointsone",
+        "P_\\sigma_{2}": "voidpointstwo",
+        "P_\\sigma_{n}": "voidpointsnum",
+        "P_\\sigma_{m}": "voidpointsidx",
+        "\\sigma_1": "orderlessone",
+        "\\sigma_2": "orderlesstwo",
+        "\\sigma_n": "orderlessnum",
+        "\\sigma_m": "orderlessidx",
+        "\\theta_i": "flatnessvar",
+        "i": "wholeindex",
+        "j": "totalindex",
+        "m": "completeidx",
+        "n": "voidcount"
+      },
+      "question": "B-5. Given \\( voidcount(\\geqq 3) \\) distinct points in the plane, no three of which are on the same straight line, prove that there exists a simple closed polygon with these points as vertices.",
+      "solution": "B-5 Let these points be denoted by \\( voidpointone, voidpointtwo, \\cdots, voidpointmany \\). To every permutation ( \\( orderlessone, orderlesstwo, \\cdots, orderlessnum \\) ) of ( \\( 1,2,3, \\cdots, voidcount \\) ) we associate a closed polygon, namely \\( voidpointsone voidpointstwo \\cdots voidpointsnum voidpointsone \\). This way we obtain ( \\( voidcount-1 \\) )! distinct closed polygons some of which may have selfintersections. We claim that anyone of these polygons whose length is the shortest possible is simple. By the hypothesis that no three\n\\( voidpointvar \\) 's are on the same line, a selfintersection occurs if and only if two segments say \\( \\overline{voidpointsone\\,voidpointstwo} \\) and \\( \\overline{voidpointsidx\\,P_{\\sigma_{m+1}}} \\) cross each other. However, then the closed polygon \\( voidpointstwo \\cdots P_{\\sigma_{m-1}} voidpointsidx voidpointsone voidpointsnum P_{\\sigma_{n-1}} \\cdots P_{\\sigma_{m+1}} voidpointstwo \\) would have shorter length. Thus there can't be a cross if the length of \\( voidpointsone \\cdots voidpointsnum voidpointsone \\) is shortest possible.\n\nAlternate solution: Take two points \\( voidpointone \\) and \\( voidpointtwo \\) such that all the other points \\( voidpointthree, voidpointfour, \\cdots, voidpointmany \\) are on the same side of the line connecting \\( voidpointone \\) and \\( voidpointtwo \\). Each point \\( voidpointvar, wholeindex>2 \\), determines an angle \\( flatnessvar \\) between \\( voidpointone voidpointtwo \\) and \\( voidpointone voidpointvar \\), with \\( 0<flatnessvar<\\pi \\). By hypothesis, \\( flatnessvar \\neq \\theta_{totalindex} \\) if \\( wholeindex \\neq totalindex \\). Let \\( \\left(i_{3}, i_{4}, \\cdots, i_{voidcount}\\right) \\) be the permutation of \\( (3,4, \\cdots, voidcount) \\) such that \\( \\theta_{i_{4}}<\\theta_{i_{4}}<\\cdots<\\theta_{i_{voidcount}} \\). Then \\( voidpointone voidpointtwo P_{i_{3}} P_{i_{4}} \\cdots P_{i_{voidcount}} voidpointone \\) is a closed simple polygon."
+    },
+    "garbled_string": {
+      "map": {
+        "P_1": "qzxwvtnp",
+        "P_2": "hjgrksla",
+        "P_3": "fkdjpsmb",
+        "P_4": "vlczimro",
+        "P_n": "ycmtahsd",
+        "P_i": "keqbrxgu",
+        "P_\\sigma_{1}": "bnolvayh",
+        "P_\\sigma_{2}": "tgtwxpse",
+        "P_\\sigma_{n}": "sdmrvgqi",
+        "P_\\sigma_{m}": "rdkehpaz",
+        "\\sigma_1": "gnyltzpr",
+        "\\sigma_2": "vqmslpob",
+        "\\sigma_n": "cwejkhdu",
+        "\\sigma_m": "liztqarn",
+        "\\theta_i": "oxnbqfse",
+        "i": "wzarukph",
+        "j": "ptmvsgeo",
+        "m": "lbreqdni",
+        "n": "hskdovtm"
+      },
+      "question": "B-5. Given \\( hskdovtm(\\geqq 3) \\) distinct points in the plane, no three of which are on the same straight line, prove that there exists a simple closed polygon with these points as vertices.",
+      "solution": "B-5 Let these points be denoted by \\( qzxwvtnp, hjgrksla, \\cdots, ycmtahsd \\). To every permutation ( \\( gnyltzpr, vqmslpob, \\cdots, cwejkhdu \\) ) of ( \\( 1,2,3, \\cdots, hskdovtm \\) ) we associate a closed polygon, namely \\( bnolvayh tgtwxpse \\cdots sdmrvgqi bnolvayh \\). This way we obtain ( \\( hskdovtm-1 \\) )! distinct closed polygons some of which may have selfintersections. We claim that anyone of these polygons whose length is the shortest possible is simple. By the hypothesis that no three \\( keqbrxgu \\) 's are on the same line, a selfintersection occurs if and only if two segments say \\( {\\bar{P} gnyltzpr P}_{vqmslpob} \\) and \\( {\\bar{P} liztqarn P liztqarn+1} \\) cross each other. However, then the closed polygon \\( vqmslpob \\cdots P_{\\sigma_{lbreqdni-1}} rdkehpaz gnyltzpr sdmrvgqi P_{\\sigma_{n-1}} \\cdots P_{\\sigma_{lbreqdni+1}} vqmslpob \\) would have shorter length. Thus there can't be a cross if the length of \\( bnolvayh \\cdots sdmrvgqi bnolvayh \\) is shortest possible.\n\nAlternate solution: Take two points \\( qzxwvtnp \\) and \\( hjgrksla \\) such that all the other points \\( fkdjpsmb, vlczimro, \\cdots, ycmtahsd \\) are on the same side of the line connecting \\( qzxwvtnp \\) and \\( hjgrksla \\). Each point \\( keqbrxgu, wzarukph>2 \\), determines an angle \\( oxnbqfse \\) between \\( qzxwvtnp hjgrksla \\) and \\( qzxwvtnp keqbrxgu \\), with \\( 0<oxnbqfse<\\pi \\). By hypothesis, \\( oxnbqfse \\neq \\theta_{ptmvsgeo} \\) if \\( wzarukph \\neq ptmvsgeo \\). Let \\( \\left(wzarukph_{3}, wzarukph_{4}, \\cdots, wzarukph_{hskdovtm}\\right) \\) be the permutation of \\( (3,4, \\cdots, hskdovtm) \\) such that \\( \\theta_{wzarukph_{4}}<\\theta_{wzarukph_{4}}<\\cdots<\\theta_{wzarukph_{hskdovtm}} \\). Then \\( qzxwvtnp hjgrksla keqbrxgu_{3} keqbrxgu_{4} \\cdots keqbrxgu_{hskdovtm} qzxwvtnp \\) is a closed simple polygon."
+    },
+    "kernel_variant": {
+      "question": "Let $k\\,( \\ge 4)$ be an integer and let  \n\\[\nS=\\{P_{1},P_{2},\\dots ,P_{k}\\}\\subset\\Bbb S^{2}\\subset\\Bbb R^{3}\n\\]\nbe $k$ distinct points on the unit sphere which satisfy  \n(i) no three of them lie on a common great circle, and  \n(ii) every point belongs to the open southern hemisphere\n\\[\n\\mathcal H^{-}=\\{(x,y,z)\\in\\Bbb S^{2}\\mid z<0\\}.\n\\]\n\nFor a permutation $\\sigma$ of $\\{1,\\dots ,k\\}$ form the spherical tour  \n\\[\n\\Omega_{\\sigma}=(P_{\\sigma(1)},P_{\\sigma(2)},\\dots ,P_{\\sigma(k)},P_{\\sigma(1)})\n\\]\nby joining successive points by the shorter great-circle arc (the unique geodesic segment of length $<\\pi$).  \nTwo tours that differ anywhere in the cyclic order of the $k$ points are regarded as different, so exactly $k!$ tours exist.\n\n(a)\\; Prove that at least one of the $k!$ tours traces a simple spherical polygon; that is, its $k$ great-circle edges meet only in their common endpoints.\n\n(b)\\; Denote by  \n\\[\nL(\\sigma)=\\sum_{i=1}^{k}\\bigl|P_{\\sigma(i)}P_{\\sigma(i+1)}\\bigr|\\qquad(\\text{indices taken mod }k)\n\\]\nthe total spherical length of $\\Omega_{\\sigma}$.  \nShow that every tour of $S$ whose total length is minimal among all tours is necessarily simple.",
+      "solution": "Throughout we write $|AB|$ for the length of the shorter great-circle arc joining two points $A,B\\in\\Bbb S^{2}$, so that $0<|AB|<\\pi$ whenever $A\\ne B$ and both lie in $\\mathcal H^{-}$.\n\n--------------------------------------------------------------------\nStep 1 - Existence of a length-minimising tour\n--------------------------------------------------------------------\nBecause there are only $k!$ tours, the set  \n\\[\n\\{L(\\sigma)\\mid\\sigma\\text{ is a permutation of }\\{1,\\dots ,k\\}\\}\n\\]\nis finite and therefore possesses a minimum.  \nFix a permutation $\\sigma^{\\star}$ that attains this minimum; i.e.  \n\\[\nL(\\sigma^{\\star})=\\min_{\\sigma}L(\\sigma).\n\\]\nHence a length-minimising tour always exists.\n\n--------------------------------------------------------------------\nStep 2 - A four-point inequality on $\\Bbb S^{2}$\n--------------------------------------------------------------------\nLemma 1 (Spherical quadrilateral with crossing sides).  \nLet $A,B,C,D\\in\\mathcal H^{-}$ be four distinct points such that the shorter arcs $AB$ and $CD$ intersect at an interior point $X$ (so $X\\notin\\{A,B,C,D\\}$).  \nThen\n\\[\n\\tag{2a}|AB|+|CD|>|AC|+|BD|,\\qquad\n\\tag{2b}|AB|+|CD|>|AD|+|BC|.\n\\]\n\nProof.  We prove (2a); inequality (2b) is analogous after exchanging $C$ and $D$.  \nBecause $X$ lies in the interiors of both arcs,\n\\[\n|AB|=|AX|+|XB|,\\qquad|CD|=|CX|+|XD|.\n\\]\nFurthermore, $X$ is not on either arc $AC$ or $BD$, so both spherical triangle inequalities are strict:\n\\[\n|AC|<|AX|+|XC|,\\qquad|BD|<|BX|+|XD|.\n\\]\nAdding the two strict inequalities and substituting the decompositions above gives\n\\[\n|AC|+|BD|<(|AX|+|XC|)+(|BX|+|XD|)=|AB|+|CD|,\n\\]\nas desired. \\blacksquare \n\nRemark 1.  Because $A,B,C,D\\in\\mathcal H^{-}$ and every involved distance is $<\\pi$, the ``shorter-arc'' convention is well defined; the point $X$ also belongs to $\\mathcal H^{-}$ because it lies on both arcs of length $<\\pi$ whose endpoints stay in $\\mathcal H^{-}$.\n\n--------------------------------------------------------------------\nStep 3 - Minimal tours are simple (proof of part (b))\n--------------------------------------------------------------------\nAssume, for contradiction, that a length-minimising tour $\\Omega_{\\sigma^{\\star}}$ is not simple.  \nThen two non-adjacent edges meet at an interior point.  \nRenumber the vertices along the tour so that those edges are\n\\[\nAB=P_{\\sigma^{\\star}(r)}P_{\\sigma^{\\star}(r+1)},\\quad\nCD=P_{\\sigma^{\\star}(s)}P_{\\sigma^{\\star}(s+1)},\\qquad r+1<s<k,\n\\]\nand denote their interior intersection by $X$.  \nAll four endpoints lie in $\\mathcal H^{-}$, so Lemma 1 applies and yields\n\\[\n|AB|+|CD|>|AC|+|BD|.\n\\]\nDefine a new permutation $\\sigma'$ by keeping the cyclic order but reversing the block between $B$ and $C$; equivalently, replace the two edges $AB,CD$ with $AC,BD$ while leaving every other adjacency untouched.  \nThe resulting closed tour $\\Omega_{\\sigma'}$ visits each point of $S$ exactly once, and its length satisfies  \n\\[\nL(\\sigma')=L(\\sigma^{\\star})-\\bigl(|AB|+|CD|\\bigr)+\\bigl(|AC|+|BD|\\bigr)<L(\\sigma^{\\star}),\n\\]\ncontradicting the minimality of $L(\\sigma^{\\star})$.  \nTherefore every length-minimising tour is simple, completing the proof of part (b). \\blacksquare \n\n--------------------------------------------------------------------\nStep 4 - Deduction of part (a) from part (b)\n--------------------------------------------------------------------\nStep 1 guarantees the existence of at least one length-minimising tour.  \nBy Step 3 every such tour is simple, so a simple spherical polygon using all $k$ points indeed exists.  This proves part (a).\n\n--------------------------------------------------------------------\nConcluding remarks\n--------------------------------------------------------------------\n1.  The order ``(b) $\\Rightarrow$ (a)'' avoids any projection arguments and hence bypasses the domain problem noted in the reviewer's feedback.  \n2.  Hypothesis (i) (``no three points on a great circle'') is not needed for Step 3 but is retained to keep the two parts symmetrical and to rule out degenerate situations in which many tours would share the same length.  \n3.  The argument can be adapted verbatim to any collection of points in an open hemisphere, so the southern-hemisphere formulation is merely conventional.\n\n\\hfill$\\square$",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.568578",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional setting.  The problem moves from ℝ² to the two-dimensional *manifold* 𝕊² sitting in ℝ³.  Competitors must be comfortable with spherical geometry and with the behaviour of great-circle arcs, none of which is needed in the original task.\n\n2. Sophisticated tool – gnomonic projection.  Solving the problem elegantly requires recognising that the gnomonic map sends great-circle arcs to straight lines, preserves incidences, and can therefore convert a spherical question into a planar one and back.  Establishing and justifying these properties is technically non-trivial.\n\n3. Two distinct existence claims.  \n   • Part (a) asks merely for *some* simple polygon, but in the spherical setting.  \n   • Part (b) asks to *characterise* any length-minimising tour, forcing contestants to prove that every minimiser is simple, i.e. they must engage with spherical triangle inequalities and a non-local optimisation argument.  Nothing comparable appears in the original problem.\n\n4. Additional geometric inequalities.  The “spherical four-point lemma’’ used in the proof has no Euclidean analogue; it obliges solvers to manipulate spherical distances and to understand when inequalities become strict on the sphere.\n\n5. Interaction of several advanced concepts.  Topology (embedded curves on a manifold), differential geometry (great circles, hemispheres), projective geometry (gnomonic map), and optimisation (minimal total length) all play an essential role, making the enhanced variant substantially more demanding than both the original and the kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let k (\\geq  4) be an integer and let  \nS = {P_1 , \\ldots  , P_k} be k distinct points on the unit sphere S^2 \\subset  \\mathbb{R}^3 that satisfy  \n\n* no three of them lie on a common great circle, and  \n* all of them belong to the open hemisphere  \n  H^- = { (x,y,z) \\in  S^2 | z < 0 }  \nwhose bounding great circle is orthogonal to the vector (0,0,1).  \n(Equivalently, the third coordinate of every P_i is strictly negative.)\n\nFor a permutation \\sigma  of {1,\\ldots ,k} form the spherical tour  \n\n\\Omega _\\sigma  =(P_{\\sigma (1)}, P_{\\sigma (2)}, \\ldots  , P_{\\sigma (k)}, P_{\\sigma (1)})  \n\nby joining successive points with the shorter great-circle arc (the unique geodesic segment of length < \\pi ).  \nTwo tours that differ anywhere in the cyclic order of the k points are regarded as different; hence exactly k! tours exist.\n\n(a) Prove that at least one of these k! tours traces a simple spherical polygon; that is, its k great-circle edges intersect only at their common endpoints.\n\n(b) Let L(\\sigma )= \\Sigma _{i=1}^{k}|P_{\\sigma (i)}P_{\\sigma (i+1)}| (indices modulo k) be the total spherical length of \\Omega _\\sigma .  \nShow that every tour of S whose total length L(\\sigma ) is minimal among all tours is necessarily simple.",
+      "solution": "Notation.  O=(0,0,0) and S_0=(0,0,-1) denote the centre and the south pole of S^2.  \n\\Pi  = { (x,y,z) | z = -1 } is the plane tangent to S^2 at S_0.\n\n--------------------------------------------------------------------\nStep 0 - The gnomonic projection and its properties\n--------------------------------------------------------------------\nDefine g : H^- \\to  \\Pi  by letting g(Q) be the intersection of the ray OQ with \\Pi .  \nA short computation gives g(x,y,z) = (x/(-z), y/(-z), -1).\n\n(G1)  g is a bijection of H^- onto \\Pi .  \n(G2)  g sends every great circle contained in H^- to a straight line in \\Pi  and therefore maps each shorter great-circle arc wholly into the corresponding Euclidean segment.  \n(G3)  g is a homeomorphism; hence two such spherical arcs meet in their interiors if and only if their images meet in their interiors.  \n(G4)  Because no three points of S lie on a great circle, no three of their images are collinear in \\Pi .\n\nAll subsequent arguments use only (G1)-(G4).\n\n--------------------------------------------------------------------\nStep 1 - Proof of part (a)\n--------------------------------------------------------------------\nWrite Q_i = g(P_i) (1 \\leq  i \\leq  k).  \nFor every permutation \\sigma  let  \n\n\\Lambda _\\sigma  = (Q_{\\sigma (1)}, \\ldots  , Q_{\\sigma (k)}, Q_{\\sigma (1)})\n\nbe the planar tour obtained by replacing each geodesic edge of \\Omega _\\sigma  with its image segment.  \nBy (G2)-(G3) we have\n\n \\Omega _\\sigma  is simple \\Leftrightarrow  \\Lambda _\\sigma  is simple.  (1)\n\nHence it suffices to show that at least one planar tour \\Lambda _\\sigma  is simple.\n\nPlanar lemma (proved below).  \nGiven k points in the Euclidean plane, no three collinear, at least one of the k! tours is simple.\n\nApplying the lemma to {Q_1,\\ldots ,Q_k} (recall (G4)) we obtain a \\sigma _0 for which \\Lambda _{\\sigma _0} is simple, and hence by (1) \\Omega _{\\sigma _0} is simple.  Part (a) is proved.\n\nSelf-contained proof of the planar lemma.  \nAmong the k! polygonal tours choose one with minimal Euclidean length; call it \\Gamma .  \nIf \\Gamma  were self-intersecting, two non-adjacent edges AB and CD would cross.  \nExactly as in Step 3 below (but now in the plane) replacing AB, CD with AC, BD produces a new tour whose length is strictly smaller, contradicting the choice of \\Gamma .  Therefore \\Gamma  is simple and the lemma follows.\n\n--------------------------------------------------------------------\nStep 2 - A four-point inequality on S^2\n--------------------------------------------------------------------\nLemma (spherical quadrilateral with crossing sides).  \nLet A,B,C,D be four distinct points lying in a common open hemisphere, and assume that the shorter arcs AB and CD intersect at an interior point X.  Then\n\n|AB| + |CD|  >  |AC| + |BD|,                 (2a)  \n|AB| + |CD|  >  |AD| + |BC|.                 (2b)\n\nProof.  Only (2a) is shown; (2b) is identical with the roles of C and D exchanged.\n\nBecause X is interior to both arcs AB and CD we have the exact decompositions\n\n|AB| = |AX| + |XB|   and   |CD| = |CX| + |XD|.       (3)\n\nMoreover, X does not lie on the arc AC or BD, so each spherical triangle inequality is strict:\n\n|AC| < |AX| + |XC|,                                    (4)  \n|BD| < |BX| + |XD|.                                    (5)\n\nAdding (4) and (5) and substituting (3) yields\n\n|AC| + |BD|  <  (|AX|+|XC|)+(|BX|+|XD|)  \n       =  |AX|+|XB|+|XC|+|XD|  \n       =  |AB| + |CD|,\n\nwhich is precisely (2a). \\blacksquare \n\nRemark.  Because all points lie in the open hemisphere, every distance appearing above is strictly smaller than \\pi , so the ``shorter arc'' is unambiguous and relations like (3) hold.\n\n--------------------------------------------------------------------\nStep 3 - Proof of part (b)\n--------------------------------------------------------------------\nAssume \\Omega _\\sigma  has minimal total length L(\\sigma ) but is not simple.  \nThen two non-adjacent edges intersect.  Relabel the vertices along the tour so that these edges are\n\nAB = P_{\\sigma (r)}P_{\\sigma (r+1)},    CD = P_{\\sigma (s)}P_{\\sigma (s+1)}   with  r+1<s,\n\nand let X be their interior intersection.  All four vertices lie in H^-, so the lemma applies:\n\n|AB| + |CD|  >  |AC| + |BD|.                        (6)\n\nNow define \\sigma ' by reversing the block of vertices between B and C, i.e. replace the edges AB, CD by AC, BD but leave every other adjacency unchanged.  The resulting \\Omega _{\\sigma '} is a closed tour of the same k points (it may still self-intersect, but that is irrelevant here).  From (6)\n\nL(\\sigma ') = L(\\sigma ) - (|AB|+|CD|) + (|AC|+|BD|)  <  L(\\sigma ),\n\ncontradicting the minimality of L(\\sigma ).  Therefore every length-minimising tour must be simple.\n\n--------------------------------------------------------------------\nStep 4 - Legitimacy of the projection\n--------------------------------------------------------------------\nBecause each edge of any tour is the shorter arc between its endpoints and every vertex belongs to H^-, the entire tour is contained in H^-.  Hence g is defined on every point of every tour, and all uses of (G1)-(G4) are justified.\n\n--------------------------------------------------------------------\nConclusion\n--------------------------------------------------------------------\nPart (a) is established by a reduction to a planar statement, and part (b) follows from the spherical four-point lemma.  Both assertions are therefore proved.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.463236",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional setting.  The problem moves from ℝ² to the two-dimensional *manifold* 𝕊² sitting in ℝ³.  Competitors must be comfortable with spherical geometry and with the behaviour of great-circle arcs, none of which is needed in the original task.\n\n2. Sophisticated tool – gnomonic projection.  Solving the problem elegantly requires recognising that the gnomonic map sends great-circle arcs to straight lines, preserves incidences, and can therefore convert a spherical question into a planar one and back.  Establishing and justifying these properties is technically non-trivial.\n\n3. Two distinct existence claims.  \n   • Part (a) asks merely for *some* simple polygon, but in the spherical setting.  \n   • Part (b) asks to *characterise* any length-minimising tour, forcing contestants to prove that every minimiser is simple, i.e. they must engage with spherical triangle inequalities and a non-local optimisation argument.  Nothing comparable appears in the original problem.\n\n4. Additional geometric inequalities.  The “spherical four-point lemma’’ used in the proof has no Euclidean analogue; it obliges solvers to manipulate spherical distances and to understand when inequalities become strict on the sphere.\n\n5. Interaction of several advanced concepts.  Topology (embedded curves on a manifold), differential geometry (great circles, hemispheres), projective geometry (gnomonic map), and optimisation (minimal total length) all play an essential role, making the enhanced variant substantially more demanding than both the original and the kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

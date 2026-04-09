@@ -1,0 +1,89 @@
+{
+  "index": "1969-A-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "A-4. Show that\n\\[\n\\int_{0}^{1} x^{x} d x=\\sum_{n=1}^{\\infty}(-1)^{n+1} n^{-n}\n\\]\n(The integrand is taken to be 1 at \\( x=0 \\).)",
+  "solution": "A-4 A reasonable way to get a series (other than using Riemann sums, which apparently doesn't work) is to write the integrand as a power of \\( e \\) and use the series expansion for \\( e \\). Then uniform convergence can be applied to interchange integration and summation, and show that\n\\[\n\\int_{0}^{1} x^{x} d x=\\sum_{m=0}^{\\infty} \\frac{1}{m!} \\int_{0}^{1} x^{m}(\\log x)^{m} d x\n\\]\n\nLet \\( F(m, k)=\\int_{0}^{1} x^{m}(\\log x)^{k} d x \\). Integration by parts shows, if applied to a typical term in the summation, why we are interested in \\( F(m, k) \\) and also shows that \\( F(m, k)=-k /(m+1) F(m, k-1) \\) for \\( m \\geqq 0 \\) and \\( k \\geqq 1 \\). As a result, \\( F(m, m) \\) \\( =(-1)^{m} m!(m+1)^{-m} F(m, 0)=(-1)^{m} m!(m+1)^{-m-1} \\). To get the given formula in the problem, replace \\( m+1 \\) by \\( n \\) and adjust the limits on the summation accordingly.",
+  "vars": [
+    "x",
+    "n",
+    "m",
+    "k"
+  ],
+  "params": [
+    "F"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "n": "sequenceindex",
+        "m": "seriescounter",
+        "k": "generalindex",
+        "F": "integralfunc"
+      },
+      "question": "A-4. Show that\n\\[\n\\int_{0}^{1} variable^{variable} d variable=\\sum_{sequenceindex=1}^{\\infty}(-1)^{sequenceindex+1} sequenceindex^{-sequenceindex}\n\\]\n(The integrand is taken to be 1 at \\( variable=0 \\).)",
+      "solution": "A-4 A reasonable way to get a series (other than using Riemann sums, which apparently doesn't work) is to write the integrand as a power of \\( e \\) and use the series expansion for \\( e \\). Then uniform convergence can be applied to interchange integration and summation, and show that\n\\[\n\\int_{0}^{1} variable^{variable} d variable=\\sum_{seriescounter=0}^{\\infty} \\frac{1}{seriescounter!} \\int_{0}^{1} variable^{seriescounter}(\\log variable)^{seriescounter} d variable\n\\]\n\nLet \\( integralfunc(seriescounter, generalindex)=\\int_{0}^{1} variable^{seriescounter}(\\log variable)^{generalindex} d variable \\). Integration by parts shows, if applied to a typical term in the summation, why we are interested in \\( integralfunc(seriescounter, generalindex) \\) and also shows that \\( integralfunc(seriescounter, generalindex)=-generalindex /(seriescounter+1) integralfunc(seriescounter, generalindex-1) \\) for \\( seriescounter \\geqq 0 \\) and \\( generalindex \\geqq 1 \\). As a result, \\( integralfunc(seriescounter, seriescounter) \\)\n\\( =(-1)^{seriescounter} seriescounter!(seriescounter+1)^{-seriescounter} integralfunc(seriescounter, 0)=(-1)^{seriescounter} seriescounter!(seriescounter+1)^{-seriescounter-1} \\). To get the given formula in the problem, replace \\( seriescounter+1 \\) by \\( sequenceindex \\) and adjust the limits on the summation accordingly."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "flamingo",
+        "n": "tangerine",
+        "m": "porcupine",
+        "k": "semaphore",
+        "F": "marigold"
+      },
+      "question": "A-4. Show that\n\\[\n\\int_{0}^{1} flamingo^{flamingo} d flamingo=\\sum_{tangerine=1}^{\\infty}(-1)^{tangerine+1} tangerine^{-tangerine}\n\\]\n(The integrand is taken to be 1 at \\( flamingo=0 \\).)",
+      "solution": "A-4 A reasonable way to get a series (other than using Riemann sums, which apparently doesn't work) is to write the integrand as a power of \\( e \\) and use the series expansion for \\( e \\). Then uniform convergence can be applied to interchange integration and summation, and show that\n\\[\n\\int_{0}^{1} flamingo^{flamingo} d flamingo=\\sum_{porcupine=0}^{\\infty} \\frac{1}{porcupine!} \\int_{0}^{1} flamingo^{porcupine}(\\log flamingo)^{porcupine} d flamingo\n\\]\n\nLet \\( marigold(porcupine, semaphore)=\\int_{0}^{1} flamingo^{porcupine}(\\log flamingo)^{semaphore} d flamingo \\). Integration by parts shows, if applied to a typical term in the summation, why we are interested in \\( marigold(porcupine, semaphore) \\) and also shows that \\( marigold(porcupine, semaphore)=-semaphore /(porcupine+1) marigold(porcupine, semaphore-1) \\) for \\( porcupine \\geqq 0 \\) and \\( semaphore \\geqq 1 \\). As a result, \\( marigold(porcupine, porcupine) \\)\n\\[ =(-1)^{porcupine} porcupine!(porcupine+1)^{-porcupine} marigold(porcupine, 0)=(-1)^{porcupine} porcupine!(porcupine+1)^{-porcupine-1} \\]\nTo get the given formula in the problem, replace \\( porcupine+1 \\) by \\( tangerine \\) and adjust the limits on the summation accordingly."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "n": "continuousindex",
+        "m": "fractionalcount",
+        "k": "baseline",
+        "F": "constantmap"
+      },
+      "question": "A-4. Show that\n\\[\n\\int_{0}^{1} constantvalue^{constantvalue} d constantvalue=\\sum_{continuousindex=1}^{\\infty}(-1)^{continuousindex+1} continuousindex^{-continuousindex}\n\\]\n(The integrand is taken to be 1 at \\( constantvalue=0 \\).)",
+      "solution": "A-4 A reasonable way to get a series (other than using Riemann sums, which apparently doesn't work) is to write the integrand as a power of \\( e \\) and use the series expansion for \\( e \\). Then uniform convergence can be applied to interchange integration and summation, and show that\n\\[\n\\int_{0}^{1} constantvalue^{constantvalue} d constantvalue=\\sum_{fractionalcount=0}^{\\infty} \\frac{1}{fractionalcount!} \\int_{0}^{1} constantvalue^{fractionalcount}(\\log constantvalue)^{fractionalcount} d constantvalue\n\\]\n\nLet \\( constantmap(fractionalcount, baseline)=\\int_{0}^{1} constantvalue^{fractionalcount}(\\log constantvalue)^{baseline} d constantvalue \\). Integration by parts shows, if applied to a typical term in the summation, why we are interested in \\( constantmap(fractionalcount, baseline) \\) and also shows that \\( constantmap(fractionalcount, baseline)=-baseline /(fractionalcount+1) constantmap(fractionalcount, baseline-1) \\) for \\( fractionalcount \\geqq 0 \\) and \\( baseline \\geqq 1 \\). As a result, \\( constantmap(fractionalcount, fractionalcount) \\) \\( =(-1)^{fractionalcount} fractionalcount!(fractionalcount+1)^{-fractionalcount} constantmap(fractionalcount, 0)=(-1)^{fractionalcount} fractionalcount!(fractionalcount+1)^{-fractionalcount-1} \\). To get the given formula in the problem, replace \\( fractionalcount+1 \\) by \\( continuousindex \\) and adjust the limits on the summation accordingly."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zqptmnlh",
+        "n": "grdksefa",
+        "m": "vxbqplui",
+        "k": "hjzrcias",
+        "F": "ujmksvne"
+      },
+      "question": "A-4. Show that\n\\[\n\\int_{0}^{1} zqptmnlh^{zqptmnlh} d zqptmnlh=\\sum_{grdksefa=1}^{\\infty}(-1)^{grdksefa+1} grdksefa^{-grdksefa}\n\\]\n(The integrand is taken to be 1 at \\( zqptmnlh=0 \\).)",
+      "solution": "A-4 A reasonable way to get a series (other than using Riemann sums, which apparently doesn't work) is to write the integrand as a power of \\( e \\) and use the series expansion for \\( e \\). Then uniform convergence can be applied to interchange integration and summation, and show that\n\\[\n\\int_{0}^{1} zqptmnlh^{zqptmnlh} d zqptmnlh=\\sum_{vxbqplui=0}^{\\infty} \\frac{1}{vxbqplui!} \\int_{0}^{1} zqptmnlh^{vxbqplui}(\\log zqptmnlh)^{vxbqplui} d zqptmnlh\n\\]\n\nLet \\( ujmksvne(vxbqplui, hjzrcias)=\\int_{0}^{1} zqptmnlh^{vxbqplui}(\\log zqptmnlh)^{hjzrcias} d zqptmnlh \\). Integration by parts shows, if applied to a typical term in the summation, why we are interested in \\( ujmksvne(vxbqplui, hjzrcias) \\) and also shows that \\( ujmksvne(vxbqplui, hjzrcias)=-hjzrcias /(vxbqplui+1) ujmksvne(vxbqplui, hjzrcias-1) \\) for \\( vxbqplui \\geqq 0 \\) and \\( hjzrcias \\geqq 1 \\). As a result, \\( ujmksvne(vxbqplui, vxbqplui) \\) \\( =(-1)^{vxbqplui} vxbqplui!(vxbqplui+1)^{-vxbqplui} ujmksvne(vxbqplui, 0)=(-1)^{vxbqplui} vxbqplui!(vxbqplui+1)^{-vxbqplui-1} \\). To get the given formula in the problem, replace \\( vxbqplui+1 \\) by \\( grdksefa \\) and adjust the limits on the summation accordingly."
+    },
+    "kernel_variant": {
+      "question": "Show that\n\\[\n\\int_{0}^{1} x^{\\,2x}\\,dx\\;=\\;\\sum_{n=1}^{\\infty}(-1)^{n+1}\\,2^{\\,n-1}\\,n^{-n}\\qquad (\\text{with the integrand taken to be }1\\text{ at }x=0).\n\\]",
+      "solution": "Corrected Solution:  \nWe wish to show  \\int _0^1 x^{2x} dx = \\sum _{n=1}^\\infty  (-1)^{n+1}2^{n-1}n^{-n}.  \n\n1.  Write the integrand as an exponential power series:  \n   x^{2x} = e^{2x ln x} = \\sum _{m=0}^\\infty  (2x ln x)^m/m!.  \n   For each fixed x\\in [0,1], this converges absolutely.  Moreover, since on [0,1] the function f(x)=|2x ln x| attains its maximum at x=1/e with value 2/e, we have  \n       |(2x ln x)^m/m!| \\leq  (2/e)^m/m!,  \n   and \\sum _{m=0}^\\infty (2/e)^m/m! = e^{2/e}<\\infty .  Hence the series converges uniformly on [0,1].  By uniform convergence of continuous functions, we may interchange summation and integration:  \n   \\int _0^1 x^{2x} dx = \\sum _{m=0}^\\infty  1/m! \\int _0^1 (2x ln x)^m dx = \\sum _{m=0}^\\infty  2^m/m! \\cdot  I_m,  \n   where I_m = \\int _0^1 x^m (ln x)^m dx.  \n\n2.  Evaluate I_m by the standard formula.  For any a>-1 and integer n\\geq 0,  \n    \\int _0^1 x^a (ln x)^n dx = (-1)^n n!/(a+1)^{n+1}.  \n   Here take a=m and n=m.  Then  \n    I_m = \\int _0^1 x^m (ln x)^m dx = (-1)^m m!/(m+1)^{m+1}.  \n\n3.  Substitute back into the series:  \n   \\int _0^1 x^{2x} dx = \\sum _{m=0}^\\infty  2^m/m! \\cdot  ( (-1)^m m!/(m+1)^{m+1} )  \n                  = \\sum _{m=0}^\\infty  (-1)^m 2^m/(m+1)^{m+1}.  \n\n4.  Re-index by setting n=m+1.  Then as m runs 0,1,2,\\ldots , n runs 1,2,3,\\ldots , and  \n   (-1)^m 2^m/(m+1)^{m+1} = (-1)^{n-1}2^{n-1}/n^n.  \n   Since (-1)^{n-1}=(-1)^{n+1}, we obtain exactly  \n   \\int _0^1 x^{2x} dx = \\sum _{n=1}^\\infty  (-1)^{n+1}2^{n-1}n^{-n},  \nas required.  \n\nAll steps are now fully justified: uniform convergence on [0,1] legitimizes termwise integration, and the standard integral formula for x^a(ln x)^n closes the argument.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite x^x as exp(x·ln x) and expand the exponential into its power series.",
+          "Interchange the order of summation and integration using uniform (or dominated) convergence on [0,1].",
+          "Evaluate I_m = ∫₀¹ x^{m}(ln x)^{m} dx by m-fold integration by parts, obtaining I_m = (–1)^m m!/(m+1)^{m+1}.",
+          "Insert I_m/m! back into the series and re-index (n = m + 1) to arrive at Σ_{n≥1} (–1)^{n+1} n^{-n}."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The constant coefficient multiplying x inside the exponent of the integrand; i.e. replacing x^x with x^{c·x}. The whole proof goes through with an arbitrary fixed real c, producing the series Σ (–1)^{n+1} c^{n-1} n^{-n}.",
+            "original": "1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

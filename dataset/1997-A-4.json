@@ -1,0 +1,132 @@
+{
+  "index": "1997-A-4",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $G$ be a group with identity $e$ and $\\phi:G\\rightarrow G$\na function such that\n\\[\\phi(g_1)\\phi(g_2)\\phi(g_3)=\\phi(h_1)\\phi(h_2)\\phi(h_3)\\]\nwhenever $g_1g_2g_3=e=h_1h_2h_3$.  Prove that there exists an element\n$a\\in G$ such that $\\psi(x)=a\\phi(x)$ is a homomorphism (i.e.\n$\\psi(xy)=\\psi(x)\\psi(y)$ for all $x,y\\in G$).",
+  "solution": "In order to have $\\psi(x) = a \\phi(x)$ for all $x$, we must in\nparticular have this for $x = e$, and so we take $a = \\phi(e)^{-1}$.\nWe first note that\n\\[\n\\phi(g) \\phi(e) \\phi(g^{-1}) = \\phi(e) \\phi(g) \\phi(g^{-1})\n\\]\nand so $\\phi(g)$ commutes with $\\phi(e)$ for all $g$. Next, we note that\n\\[\n\\phi(x) \\phi(y) \\phi(y^{-1}x^{-1}) = \\phi(e) \\phi(xy) \\phi(y^{-1}x^{-1})\n\\]\nand using the commutativity of $\\phi(e)$, we deduce\n\\[\n\\phi(e)^{-1} \\phi(x) \\phi(e)^{-1} \\phi(y) = \\phi(e)^{-1} \\phi(xy)\n\\]\nor $\\psi(xy) = \\psi(x) \\psi(y)$, as desired.",
+  "vars": [
+    "g_1",
+    "g_2",
+    "g_3",
+    "h_1",
+    "h_2",
+    "h_3",
+    "x",
+    "y",
+    "g"
+  ],
+  "params": [
+    "G",
+    "e",
+    "\\\\phi",
+    "\\\\psi",
+    "a"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "g_1": "gfirst",
+        "g_2": "gsecond",
+        "g_3": "gthird",
+        "h_1": "hfirst",
+        "h_2": "hsecond",
+        "h_3": "hthird",
+        "x": "xinvar",
+        "y": "yinvar",
+        "g": "gvarbl",
+        "G": "groupwhole",
+        "\\phi": "mysteryfunc",
+        "\\psi": "adjustfunc",
+        "a": "shiftconst"
+      },
+      "question": "Let $groupwhole$ be a group with identity $e$ and $mysteryfunc:groupwhole\\rightarrow groupwhole$\na function such that\n\\[\nmysteryfunc(gfirst)mysteryfunc(gsecond)mysteryfunc(gthird)=mysteryfunc(hfirst)mysteryfunc(hsecond)mysteryfunc(hthird)\n\\]\nwhenever $gfirst gsecond gthird=e=hfirst hsecond hthird$.  Prove that there exists an element\n$shiftconst\\in groupwhole$ such that $adjustfunc(xinvar)=shiftconst mysteryfunc(xinvar)$ is a homomorphism (i.e.\n$adjustfunc(xinvar yinvar)=adjustfunc(xinvar)adjustfunc(yinvar)$ for all $xinvar,yinvar\\in groupwhole$).",
+      "solution": "In order to have $adjustfunc(xinvar) = shiftconst mysteryfunc(xinvar)$ for all $xinvar$, we must in\nparticular have this for $xinvar = e$, and so we take $shiftconst = mysteryfunc(e)^{-1}$.\nWe first note that\n\\[\nmysteryfunc(gvarbl) \\, mysteryfunc(e) \\, mysteryfunc(gvarbl^{-1}) = mysteryfunc(e) \\, mysteryfunc(gvarbl) \\, mysteryfunc(gvarbl^{-1})\n\\]\nand so $mysteryfunc(gvarbl)$ commutes with $mysteryfunc(e)$ for all $gvarbl$. Next, we note that\n\\[\nmysteryfunc(xinvar) \\, mysteryfunc(yinvar) \\, mysteryfunc(yinvar^{-1} xinvar^{-1}) = mysteryfunc(e) \\, mysteryfunc(xinvar yinvar) \\, mysteryfunc(yinvar^{-1} xinvar^{-1})\n\\]\nand using the commutativity of $mysteryfunc(e)$, we deduce\n\\[\nmysteryfunc(e)^{-1} \\, mysteryfunc(xinvar) \\, mysteryfunc(e)^{-1} \\, mysteryfunc(yinvar) = mysteryfunc(e)^{-1} \\, mysteryfunc(xinvar yinvar)\n\\]\nor $adjustfunc(xinvar yinvar) = adjustfunc(xinvar) \\, adjustfunc(yinvar)$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "g_1": "drumstick",
+        "g_2": "photograph",
+        "g_3": "rainforest",
+        "h_1": "buttercup",
+        "h_2": "watermelon",
+        "h_3": "quicksand",
+        "x": "pineapple",
+        "y": "tombstone",
+        "g": "sandcastle",
+        "G": "blueprint",
+        "\\phi": "crosswind",
+        "\\psi": "silhouette",
+        "a": "landscape"
+      },
+      "question": "Let $blueprint$ be a group with identity $e$ and $crosswind:blueprint\\rightarrow blueprint$\na function such that\n\\[\ncrosswind(drumstick)crosswind(photograph)crosswind(rainforest)=crosswind(buttercup)crosswind(watermelon)crosswind(quicksand)\n\\]\nwhenever $drumstickphotographrainforest=e=buttercupwatermelonquicksand$.  Prove that there exists an element\n$landscape\\in blueprint$ such that $silhouette(pineapple)=landscape crosswind(pineapple)$ is a homomorphism (i.e.\n$silhouette(pineapple tombstone)=silhouette(pineapple)silhouette(tombstone)$ for all $pineapple,tombstone\\in blueprint$).",
+      "solution": "In order to have $silhouette(pineapple) = landscape crosswind(pineapple)$ for all $pineapple$, we must in\nparticular have this for $pineapple = e$, and so we take $landscape = crosswind(e)^{-1}$.\nWe first note that\n\\[\ncrosswind(sandcastle) crosswind(e) crosswind(sandcastle^{-1}) = crosswind(e) crosswind(sandcastle) crosswind(sandcastle^{-1})\n\\]\nand so $crosswind(sandcastle)$ commutes with $crosswind(e)$ for all $sandcastle$. Next, we note that\n\\[\ncrosswind(pineapple) crosswind(tombstone) crosswind(tombstone^{-1}pineapple^{-1}) = crosswind(e) crosswind(pineapple tombstone) crosswind(tombstone^{-1}pineapple^{-1})\n\\]\nand using the commutativity of $crosswind(e)$, we deduce\n\\[\ncrosswind(e)^{-1} crosswind(pineapple) crosswind(e)^{-1} crosswind(tombstone) = crosswind(e)^{-1} crosswind(pineapple tombstone)\n\\]\nor $silhouette(pineapple tombstone) = silhouette(pineapple) silhouette(tombstone)$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "g_1": "outsidera",
+        "g_2": "outsiderb",
+        "g_3": "outsiderc",
+        "h_1": "strangera",
+        "h_2": "strangerb",
+        "h_3": "strangerc",
+        "x": "nonmember",
+        "y": "foreigner",
+        "g": "antiunit",
+        "G": "unordered",
+        "e": "nonentity",
+        "\\phi": "antiimage",
+        "\\psi": "distorter",
+        "a": "constant"
+      },
+      "question": "Let $unordered$ be a group with identity $nonentity$ and $antiimage:unordered\\rightarrow unordered$\na function such that\n\\[\nantiimage(outsidera)antiimage(outsiderb)antiimage(outsiderc)=antiimage(strangera)antiimage(strangerb)antiimage(strangerc)\n\\]\nwhenever $outsideraoutsiderboutsiderc=nonentity=strangerastrangerbstrangerc$.  Prove that there exists an element\n$constant\\in unordered$ such that $distorter(nonmember)=constant\\,antiimage(nonmember)$ is a homomorphism (i.e.\n$distorter(nonmember\\,foreigner)=distorter(nonmember)distorter(foreigner)$ for all $nonmember,foreigner\\in unordered$).",
+      "solution": "In order to have $distorter(nonmember) = constant\\,antiimage(nonmember)$ for all $nonmember$, we must in\nparticular have this for $nonmember = nonentity$, and so we take $constant = antiimage(nonentity)^{-1}$.\nWe first note that\n\\[\nantiimage(antiunit) \\, antiimage(nonentity) \\, antiimage(antiunit^{-1}) = antiimage(nonentity) \\, antiimage(antiunit) \\, antiimage(antiunit^{-1})\n\\]\nand so $antiimage(antiunit)$ commutes with $antiimage(nonentity)$ for all $antiunit$. Next, we note that\n\\[\nantiimage(nonmember) \\, antiimage(foreigner) \\, antiimage(foreigner^{-1}nonmember^{-1}) = antiimage(nonentity) \\, antiimage(nonmember\\,foreigner) \\, antiimage(foreigner^{-1}nonmember^{-1})\n\\]\nand using the commutativity of $antiimage(nonentity)$, we deduce\n\\[\nantiimage(nonentity)^{-1} \\, antiimage(nonmember) \\, antiimage(nonentity)^{-1} \\, antiimage(foreigner) = antiimage(nonentity)^{-1} \\, antiimage(nonmember\\,foreigner)\n\\]\nor $distorter(nonmember\\,foreigner) = distorter(nonmember) \\, distorter(foreigner)$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "g_1": "qzxwvtnp",
+        "g_2": "hjgrksla",
+        "g_3": "bmvcltqe",
+        "h_1": "pzkrdmqc",
+        "h_2": "tfhyznwa",
+        "h_3": "nlsrjdop",
+        "x": "vjbqslrk",
+        "y": "zmndplfh",
+        "g": "kwtrslvn",
+        "G": "sdhgrlta",
+        "e": "mxcvplod",
+        "\\phi": "\\lqkngwaz",
+        "\\psi": "\\kdrjtwqm",
+        "a": "flrpbqsn"
+      },
+      "question": "Let $sdhgrlta$ be a group with identity $mxcvplod$ and $\\lqkngwaz:sdhgrlta\\rightarrow sdhgrlta$\na function such that\n\\[\\lqkngwaz(qzxwvtnp)\\lqkngwaz(hjgrksla)\\lqkngwaz(bmvcltqe)=\\lqkngwaz(pzkrdmqc)\\lqkngwaz(tfhyznwa)\\lqkngwaz(nlsrjdop)\\]\nwhenever $qzxwvtnp hjgrksla bmvcltqe=mxcvplod=pzkrdmqc tfhyznwa nlsrjdop$.  Prove that there exists an element\n$flrpbqsn\\in sdhgrlta$ such that $\\kdrjtwqm(vjbqslrk)=flrpbqsn\\lqkngwaz(vjbqslrk)$ is a homomorphism (i.e.\n$\\kdrjtwqm(vjbqslrk zmndplfh)=\\kdrjtwqm(vjbqslrk)\\kdrjtwqm(zmndplfh)$ for all $vjbqslrk,zmndplfh\\in sdhgrlta$).",
+      "solution": "In order to have $\\kdrjtwqm(vjbqslrk) = flrpbqsn \\lqkngwaz(vjbqslrk)$ for all $vjbqslrk$, we must in\nparticular have this for $vjbqslrk = mxcvplod$, and so we take $flrpbqsn = \\lqkngwaz(mxcvplod)^{-1}$.\nWe first note that\n\\[\n\\lqkngwaz(kwtrslvn) \\lqkngwaz(mxcvplod) \\lqkngwaz(kwtrslvn^{-1}) = \\lqkngwaz(mxcvplod) \\lqkngwaz(kwtrslvn) \\lqkngwaz(kwtrslvn^{-1})\n\\]\nand so $\\lqkngwaz(kwtrslvn)$ commutes with $\\lqkngwaz(mxcvplod)$ for all $kwtrslvn$. Next, we note that\n\\[\n\\lqkngwaz(vjbqslrk) \\lqkngwaz(zmndplfh) \\lqkngwaz(zmndplfh^{-1}vjbqslrk^{-1}) = \\lqkngwaz(mxcvplod) \\lqkngwaz(vjbqslrk zmndplfh) \\lqkngwaz(zmndplfh^{-1}vjbqslrk^{-1})\n\\]\nand using the commutativity of $\\lqkngwaz(mxcvplod)$, we deduce\n\\[\n\\lqkngwaz(mxcvplod)^{-1} \\lqkngwaz(vjbqslrk) \\lqkngwaz(mxcvplod)^{-1} \\lqkngwaz(zmndplfh) = \\lqkngwaz(mxcvplod)^{-1} \\lqkngwaz(vjbqslrk zmndplfh)\n\\]\nor $\\kdrjtwqm(vjbqslrk zmndplfh) = \\kdrjtwqm(vjbqslrk) \\kdrjtwqm(zmndplfh)$, as desired."
+    },
+    "kernel_variant": {
+      "question": "Let $G$ be a group with identity element $e$, and let $H$ be \nany (possibly different) group.  Suppose a map $\\varphi:G\\to H$ satisfies\n\n\\[\\varphi(g_1)\\varphi(g_2)\\varphi(g_3)\\varphi(g_4)\n      =\\varphi(h_1)\\varphi(h_2)\\varphi(h_3)\\varphi(h_4)\\tag{\\*}\\]\nwhenever the four-fold products in $G$ obey\n$g_1g_2g_3g_4=h_1h_2h_3h_4=e$.  \n\nProve that there is an element $a\\in H$ such that the map\n$\\psi:G\\to H$ defined by $\\displaystyle \\psi(x)=a\\,\\varphi(x)$ is a\nhomomorphism, i.e.\n$\\psi(xy)=\\psi(x)\\psi(y)$ for every $x,y\\in G$.\n",
+      "solution": "Throughout write c = \\varphi (e) \\in  H.\n\nStep 1.  Choosing the multiplier.\nFor \\psi (x) = a \\varphi (x) to satisfy \\psi (e) = e_H, we must have\n  e_H = \\psi (e) = a \\varphi (e) = a c,\nhence we take\n  a = c^{-1} = \\varphi (e)^{-1}.\n\nStep 2.  c is central in the image of \\varphi .\nCompare in (*) the two quadruples\n    (g, g^{-1}, e, e)\n    (g, e, g^{-1}, e)\nfor any g \\in  G.  Both products equal e in G, so (*) gives\n    \\varphi (g) \\varphi (g^{-1}) c c = \\varphi (g) c \\varphi (g^{-1}) c.\nRight-multiply by c^{-1} to obtain\n    \\varphi (g) \\varphi (g^{-1}) c = \\varphi (g) c \\varphi (g^{-1}).\nLeft-multiply by \\varphi (g)^{-1} to get\n    \\varphi (g^{-1}) c = c \\varphi (g^{-1}).\nSince {g^{-1}: g \\in  G} = G, it follows that\n    c \\varphi (x) = \\varphi (x) c   for every x \\in  G.\n\nStep 3.  A key product relation.\nApply (*) to the quadruples\n    (x, y, y^{-1} x^{-1}, e)\n    (e, x y, y^{-1} x^{-1}, e)\nfor any x,y \\in  G.  Both products equal e, so\n    \\varphi (x) \\varphi (y) \\varphi (y^{-1} x^{-1}) c\n  = c \\varphi (x y) \\varphi (y^{-1} x^{-1}) c.\nRight-multiply by c^{-1} and use the centrality of c:\n    \\varphi (x) \\varphi (y) \\varphi (y^{-1} x^{-1})\n  = c \\varphi (x y) \\varphi (y^{-1} x^{-1}).\nCancel \\varphi (y^{-1} x^{-1}) on the right (valid in H) to conclude\n    \\varphi (x) \\varphi (y) = c \\varphi (x y).\nBecause c is central this is equivalent to \\varphi (x) \\varphi (y) = \\varphi (x y) c.\n\nStep 4.  Verifying the homomorphism property.\nUsing \\varphi (x) \\varphi (y) = c \\varphi (x y) and the centrality of c:\n  \\psi (x) \\psi (y)\n    = c^{-1} \\varphi (x) \\cdot  c^{-1} \\varphi (y)\n    = c^{-2} \\varphi (x) \\varphi (y)\n    = c^{-2} \\cdot  c \\varphi (x y)\n    = c^{-1} \\varphi (x y)\n    = \\psi (x y).\nThus \\psi  is a homomorphism G \\to  H.\n\nConclusion.\nTaking a = \\varphi (e)^{-1} makes \\psi (x) = a \\varphi (x) a group homomorphism, as required.",
+      "_meta": {
+        "core_steps": [
+          "Pick a = φ(e)^{-1} so that ψ(x)=aφ(x) satisfies ψ(e)=e.",
+          "From the equality for triples (g,e,g^{-1}) and (e,g,g^{-1}), deduce that φ(e) commutes with every φ(g).",
+          "Apply the triple–equality to (x, y, y^{-1}x^{-1}) versus (e, xy, y^{-1}x^{-1}); use the centrality of φ(e) to conclude ψ(xy)=ψ(x)ψ(y)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Codomain of the map φ (need only be a group, not necessarily the same as the domain).",
+            "original": "G"
+          },
+          "slot2": {
+            "description": "Number of factors in the hypothesis (any fixed integer ≥3 works, since extra identity elements can pad the needed decompositions).",
+            "original": "3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,142 @@
+{
+  "index": "1990-A-4",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "the plane and that, when operated, removes from the plane precisely those\npoints whose distance from the center is irrational. How many punches are\nneeded to remove every point?",
+  "solution": "Solution. Punches at two points \\( P \\) and \\( Q \\) are not enough to remove all points, because if \\( r \\) is any rational number exceeding \\( P Q / 2 \\), the circles of radius \\( r \\) centered at \\( P \\) and \\( Q \\) intersect in at least one point \\( R \\), and \\( R \\) is not removed by either punch. We next show that three carefully chosen punches suffice.\n\nProof 1: Existential. Punch twice, at distinct centers. Since each punch leaves countably many circles, and any two distinct circles intersect in at most two points, the two punches leave behind a countable set. Consider all circles with rational radii centered at points of this set. Their intersections with a fixed line \\( L \\) form a countable set \\( S \\). A point of \\( L-S \\) is at an irrational distance from all unpunched points; apply the third punch there.\n\nRemark. The fact that the plane is not a countable union of circles can also be deduced from measure theory: a circle (without its interior) in the plane has measure zero, and a countable union of measure zero sets still has measure zero, but the entire plane has infinite measure. See \\( [\\mathrm{Ru}] \\) for more on measure theory.\n\nProof 2: Constructive. Choose \\( \\alpha \\in \\mathbb{R} \\) such that \\( \\alpha^{2} \\) is irrational, for example \\( \\alpha=\\sqrt[3]{2} \\). Use punches centered at \\( A=(-\\alpha, 0), B=(0,0) \\), and \\( C=(\\alpha, 0) \\). If \\( P=(x, y) \\) is any point,\n\\[\nA P^{2}+C P^{2}-2 B P^{2}=(x+\\alpha)^{2}+y^{2}+(x-\\alpha)^{2}+y^{2}-2\\left(x^{2}+y^{2}\\right)=2 \\alpha^{2}\n\\]\nis irrational, so \\( A P, B P, C P \\) cannot all be rational. Hence all \\( P \\) get removed.\nRemark. The motivation for taking \\( A P^{2}+C P^{2}-2 B P^{2} \\) is that it is the linear combination which eliminates the terms involving \\( x \\) or \\( y \\).\n\nRemark. Both proofs easily generalize to prove the same result where the punch removes only those points whose distance from the center is transcendental. Recall that a real or complex number \\( \\alpha \\) is said to be algebraic if \\( \\alpha \\) is a zero of a nonzero polynomial with rational coefficients, and \\( \\alpha \\) is said to be transcendental otherwise. In Proof 1, observe that the set of real algebraic numbers is countable. In Proof 2, simply take \\( \\alpha \\) transcendental.\n\nRemark. Essentially the same question appeared as [New, Problem 28].\nRelated question. There are many interesting questions concerning distances between points in a subset of the plane. For example, for any set of \\( n \\) points, in the plane, Erdos [Er], [Hon2, Ch. 12] proved that\n- the number of different distances produced must be at least \\( \\sqrt{n-3 / 4}-1 / 2 \\),\n- the smallest distance produced cannot occur more often than \\( 3 n-6 \\) times,\n- the greatest distance produced cannot occur more often than \\( n \\) times,\n- no distance produced can occur more than \\( 2^{-1 / 2} n^{3 / 2}+n / 4 \\) times.\n\nAlso, Problem 5 on the 1987 International Mathematical Olympiad [IMO87] asks\nLet \\( n \\) be an integer greater than or equal to 3 . Prove that there is a set of \\( n \\) points in the plane such that the distance between any two points is irrational and each set of three points determines a nondegenerate triangle with rational area.",
+  "vars": [
+    "P",
+    "Q",
+    "R",
+    "x",
+    "y"
+  ],
+  "params": [
+    "r",
+    "n",
+    "\\\\alpha",
+    "A",
+    "B",
+    "C",
+    "L",
+    "S"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P": "pointone",
+        "Q": "pointtwo",
+        "R": "pointthree",
+        "x": "abscissa",
+        "y": "ordinate",
+        "r": "radius",
+        "n": "countnum",
+        "\\alpha": "alphavar",
+        "A": "centerone",
+        "B": "centertwo",
+        "C": "centerthree",
+        "L": "baseline",
+        "S": "setpoints"
+      },
+      "question": "the plane and that, when operated, removes from the plane precisely those\npoints whose distance from the center is irrational. How many punches are\nneeded to remove every point?",
+      "solution": "Solution. Punches at two points \\( pointone \\) and \\( pointtwo \\) are not enough to remove all points, because if \\( radius \\) is any rational number exceeding \\( pointone pointtwo / 2 \\), the circles of radius \\( radius \\) centered at \\( pointone \\) and \\( pointtwo \\) intersect in at least one point \\( pointthree \\), and \\( pointthree \\) is not removed by either punch. We next show that three carefully chosen punches suffice.\n\nProof 1: Existential. Punch twice, at distinct centers. Since each punch leaves countably many circles, and any two distinct circles intersect in at most two points, the two punches leave behind a countable set. Consider all circles with rational radii centered at points of this set. Their intersections with a fixed line \\( baseline \\) form a countable set \\( setpoints \\). A point of \\( baseline-setpoints \\) is at an irrational distance from all unpunched points; apply the third punch there.\n\nRemark. The fact that the plane is not a countable union of circles can also be deduced from measure theory: a circle (without its interior) in the plane has measure zero, and a countable union of measure zero sets still has measure zero, but the entire plane has infinite measure. See \\( [\\mathrm{Ru}] \\) for more on measure theory.\n\nProof 2: Constructive. Choose \\( alphavar \\in \\mathbb{R} \\) such that \\( alphavar^{2} \\) is irrational, for example \\( alphavar=\\sqrt[3]{2} \\). Use punches centered at \\( centerone=(-alphavar, 0), centertwo=(0,0) \\), and \\( centerthree=(alphavar, 0) \\). If \\( pointone=(abscissa, ordinate) \\) is any point,\n\\[\ncenterone pointone^{2}+centerthree pointone^{2}-2 centertwo pointone^{2}=(abscissa+alphavar)^{2}+ordinate^{2}+(abscissa-alphavar)^{2}+ordinate^{2}-2\\left(abscissa^{2}+ordinate^{2}\\right)=2 alphavar^{2}\n\\]\nis irrational, so \\( centerone pointone, centertwo pointone, centerthree pointone \\) cannot all be rational. Hence all \\( pointone \\) get removed.\nRemark. The motivation for taking \\( centerone pointone^{2}+centerthree pointone^{2}-2 centertwo pointone^{2} \\) is that it is the linear combination which eliminates the terms involving \\( abscissa \\) or \\( ordinate \\).\n\nRemark. Both proofs easily generalize to prove the same result where the punch removes only those points whose distance from the center is transcendental. Recall that a real or complex number \\( alphavar \\) is said to be algebraic if \\( alphavar \\) is a zero of a nonzero polynomial with rational coefficients, and \\( alphavar \\) is said to be transcendental otherwise. In Proof 1, observe that the set of real algebraic numbers is countable. In Proof 2, simply take \\( alphavar \\) transcendental.\n\nRemark. Essentially the same question appeared as [New, Problem 28].\nRelated question. There are many interesting questions concerning distances between points in a subset of the plane. For example, for any set of \\( countnum \\) points, in the plane, Erdos [Er], [Hon2, Ch. 12] proved that\n- the number of different distances produced must be at least \\( \\sqrt{countnum-3 / 4}-1 / 2 \\),\n- the smallest distance produced cannot occur more often than \\( 3 countnum-6 \\) times,\n- the greatest distance produced cannot occur more often than \\( countnum \\) times,\n- no distance produced can occur more than \\( 2^{-1 / 2} countnum^{3 / 2}+countnum / 4 \\) times.\n\nAlso, Problem 5 on the 1987 International Mathematical Olympiad [IMO87] asks\nLet \\( countnum \\) be an integer greater than or equal to 3 . Prove that there is a set of \\( countnum \\) points in the plane such that the distance between any two points is irrational and each set of three points determines a nondegenerate triangle with rational area."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P": "treetoppe",
+        "Q": "moonlight",
+        "R": "riverbank",
+        "x": "bookshelf",
+        "y": "sandstorm",
+        "r": "lemonade",
+        "n": "paintbrush",
+        "\\alpha": "chandelier",
+        "A": "sunflower",
+        "B": "rainforest",
+        "C": "thunderbolt",
+        "L": "breezesky",
+        "S": "lighthouse"
+      },
+      "question": "the plane and that, when operated, removes from the plane precisely those\npoints whose distance from the center is irrational. How many punches are\nneeded to remove every point?",
+      "solution": "Solution. Punches at two points \\( treetoppe \\) and \\( moonlight \\) are not enough to remove all points, because if \\( lemonade \\) is any rational number exceeding \\( treetoppe moonlight / 2 \\), the circles of radius \\( lemonade \\) centered at \\( treetoppe \\) and \\( moonlight \\) intersect in at least one point \\( riverbank \\), and \\( riverbank \\) is not removed by either punch. We next show that three carefully chosen punches suffice.\n\nProof 1: Existential. Punch twice, at distinct centers. Since each punch leaves countably many circles, and any two distinct circles intersect in at most two points, the two punches leave behind a countable set. Consider all circles with rational radii centered at points of this set. Their intersections with a fixed line \\( breezesky \\) form a countable set \\( lighthouse \\). A point of \\( breezesky-lighthouse \\) is at an irrational distance from all unpunched points; apply the third punch there.\n\nRemark. The fact that the plane is not a countable union of circles can also be deduced from measure theory: a circle (without its interior) in the plane has measure zero, and a countable union of measure zero sets still has measure zero, but the entire plane has infinite measure. See \\( [\\mathrm{Ru}] \\) for more on measure theory.\n\nProof 2: Constructive. Choose \\( chandelier \\in \\mathbb{R} \\) such that \\( chandelier^{2} \\) is irrational, for example \\( chandelier=\\sqrt[3]{2} \\). Use punches centered at \\( sunflower=(-chandelier, 0), rainforest=(0,0) \\), and \\( thunderbolt=(chandelier, 0) \\). If \\( treetoppe=(bookshelf, sandstorm) \\) is any point,\n\\[\nsunflower treetoppe^{2}+thunderbolt treetoppe^{2}-2 rainforest treetoppe^{2}=(bookshelf+chandelier)^{2}+sandstorm^{2}+(bookshelf-chandelier)^{2}+sandstorm^{2}-2\\left(bookshelf^{2}+sandstorm^{2}\\right)=2 chandelier^{2}\n\\]\nis irrational, so \\( sunflower treetoppe, rainforest treetoppe, thunderbolt treetoppe \\) cannot all be rational. Hence all \\( treetoppe \\) get removed.\nRemark. The motivation for taking \\( sunflower treetoppe^{2}+thunderbolt treetoppe^{2}-2 rainforest treetoppe^{2} \\) is that it is the linear combination which eliminates the terms involving \\( bookshelf \\) or \\( sandstorm \\).\n\nRemark. Both proofs easily generalize to prove the same result where the punch removes only those points whose distance from the center is transcendental. Recall that a real or complex number \\( chandelier \\) is said to be algebraic if \\( chandelier \\) is a zero of a nonzero polynomial with rational coefficients, and \\( chandelier \\) is said to be transcendental otherwise. In Proof 1, observe that the set of real algebraic numbers is countable. In Proof 2, simply take \\( chandelier \\) transcendental.\n\nRemark. Essentially the same question appeared as [New, Problem 28].\nRelated question. There are many interesting questions concerning distances between points in a subset of the plane. For example, for any set of \\( paintbrush \\) points, in the plane, Erdos [Er], [Hon2, Ch. 12] proved that\n- the number of different distances produced must be at least \\( \\sqrt{paintbrush-3 / 4}-1 / 2 \\),\n- the smallest distance produced cannot occur more often than \\( 3 paintbrush-6 \\) times,\n- the greatest distance produced cannot occur more often than \\( paintbrush \\) times,\n- no distance produced can occur more than \\( 2^{-1 / 2} paintbrush^{3 / 2}+paintbrush / 4 \\) times.\n\nAlso, Problem 5 on the 1987 International Mathematical Olympiad [IMO87] asks\nLet \\( paintbrush \\) be an integer greater than or equal to 3 . Prove that there is a set of \\( paintbrush \\) points in the plane such that the distance between any two points is irrational and each set of three points determines a nondegenerate triangle with rational area."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P": "wholeplane",
+        "Q": "continuum",
+        "R": "emptiness",
+        "x": "constantval",
+        "y": "fixedscalar",
+        "r": "nonradius",
+        "n": "infinity",
+        "\\alpha": "rationalnum",
+        "A": "straightline",
+        "B": "surfacearea",
+        "C": "voidspace",
+        "L": "singularity",
+        "S": "universalset"
+      },
+      "question": "the plane and that, when operated, removes from the plane precisely those\npoints whose distance from the center is irrational. How many punches are\nneeded to remove every point?",
+      "solution": "Solution. Punches at two points \\( wholeplane \\) and \\( continuum \\) are not enough to remove all points, because if \\( nonradius \\) is any rational number exceeding \\( wholeplane continuum / 2 \\), the circles of radius \\( nonradius \\) centered at \\( wholeplane \\) and \\( continuum \\) intersect in at least one point \\( emptiness \\), and \\( emptiness \\) is not removed by either punch. We next show that three carefully chosen punches suffice.\n\nProof 1: Existential. Punch twice, at distinct centers. Since each punch leaves countably many circles, and any two distinct circles intersect in at most two points, the two punches leave behind a countable set. Consider all circles with rational radii centered at points of this set. Their intersections with a fixed line \\( singularity \\) form a countable set \\( universalset \\). A point of \\( singularity-universalset \\) is at an irrational distance from all unpunched points; apply the third punch there.\n\nRemark. The fact that the plane is not a countable union of circles can also be deduced from measure theory: a circle (without its interior) in the plane has measure zero, and a countable union of measure zero sets still has measure zero, but the entire plane has infinite measure. See \\( [\\mathrm{Ru}] \\) for more on measure theory.\n\nProof 2: Constructive. Choose \\( rationalnum \\in \\mathbb{R} \\) such that \\( rationalnum^{2} \\) is irrational, for example \\( rationalnum=\\sqrt[3]{2} \\). Use punches centered at \\( straightline=(-rationalnum, 0), surfacearea=(0,0) \\), and \\( voidspace=(rationalnum, 0) \\). If \\( wholeplane=(constantval, fixedscalar) \\) is any point,\n\\[\nstraightline\\,wholeplane^{2}+voidspace\\,wholeplane^{2}-2\\,surfacearea\\,wholeplane^{2}=(constantval+rationalnum)^{2}+fixedscalar^{2}+(constantval-rationalnum)^{2}+fixedscalar^{2}-2\\left(constantval^{2}+fixedscalar^{2}\\right)=2\\,rationalnum^{2}\n\\]\nis irrational, so \\( straightline\\,wholeplane, surfacearea\\,wholeplane, voidspace\\,wholeplane \\) cannot all be rational. Hence all \\( wholeplane \\) get removed.\nRemark. The motivation for taking \\( straightline\\,wholeplane^{2}+voidspace\\,wholeplane^{2}-2\\,surfacearea\\,wholeplane^{2} \\) is that it is the linear combination which eliminates the terms involving \\( constantval \\) or \\( fixedscalar \\).\n\nRemark. Both proofs easily generalize to prove the same result where the punch removes only those points whose distance from the center is transcendental. Recall that a real or complex number \\( rationalnum \\) is said to be algebraic if \\( rationalnum \\) is a zero of a nonzero polynomial with rational coefficients, and \\( rationalnum \\) is said to be transcendental otherwise. In Proof 1, observe that the set of real algebraic numbers is countable. In Proof 2, simply take \\( rationalnum \\) transcendental.\n\nRemark. Essentially the same question appeared as [New, Problem 28].\nRelated question. There are many interesting questions concerning distances between points in a subset of the plane. For example, for any set of \\( infinity \\) points, in the plane, Erdos [Er], [Hon2, Ch. 12] proved that\n- the number of different distances produced must be at least \\( \\sqrt{infinity-3 / 4}-1 / 2 \\),\n- the smallest distance produced cannot occur more often than \\( 3 infinity-6 \\) times,\n- the greatest distance produced cannot occur more often than \\( infinity \\) times,\n- no distance produced can occur more than \\( 2^{-1 / 2} infinity^{3 / 2}+infinity / 4 \\) times.\n\nAlso, Problem 5 on the 1987 International Mathematical Olympiad [IMO87] asks\nLet \\( infinity \\) be an integer greater than or equal to 3 . Prove that there is a set of \\( infinity \\) points in the plane such that the distance between any two points is irrational and each set of three points determines a nondegenerate triangle with rational area."
+    },
+    "garbled_string": {
+      "map": {
+        "P": "ztkywopq",
+        "Q": "rnvajcid",
+        "R": "xosblemi",
+        "x": "mpqusejd",
+        "y": "vkzratou",
+        "r": "lfqwczhp",
+        "n": "judiyvsm",
+        "\\alpha": "bgdurnae",
+        "A": "tqbvlona",
+        "B": "hfsqyzem",
+        "C": "wduyknar",
+        "L": "gicjleow",
+        "S": "pfbsvqit"
+      },
+      "question": "the plane and that, when operated, removes from the plane precisely those points whose distance from the center is irrational. How many punches are needed to remove every point?",
+      "solution": "Solution. Punches at two points \\( ztkywopq \\) and \\( rnvajcid \\) are not enough to remove all points, because if \\( lfqwczhp \\) is any rational number exceeding \\( ztkywopq rnvajcid / 2 \\), the circles of radius \\( lfqwczhp \\) centered at \\( ztkywopq \\) and \\( rnvajcid \\) intersect in at least one point \\( xosblemi \\), and \\( xosblemi \\) is not removed by either punch. We next show that three carefully chosen punches suffice.\n\nProof 1: Existential. Punch twice, at distinct centers. Since each punch leaves countably many circles, and any two distinct circles intersect in at most two points, the two punches leave behind a countable set. Consider all circles with rational radii centered at points of this set. Their intersections with a fixed line \\( gicjleow \\) form a countable set \\( pfbsvqit \\). A point of \\( gicjleow-pfbsvqit \\) is at an irrational distance from all unpunched points; apply the third punch there.\n\nRemark. The fact that the plane is not a countable union of circles can also be deduced from measure theory: a circle (without its interior) in the plane has measure zero, and a countable union of measure zero sets still has measure zero, but the entire plane has infinite measure. See \\( [\\mathrm{Ru}] \\) for more on measure theory.\n\nProof 2: Constructive. Choose \\( bgdurnae \\in \\mathbb{R} \\) such that \\( bgdurnae^{2} \\) is irrational, for example \\( bgdurnae=\\sqrt[3]{2} \\). Use punches centered at \\( tqbvlona=(-bgdurnae, 0), hfsqyzem=(0,0) \\), and \\( wduyknar=(bgdurnae, 0) \\). If \\( ztkywopq=(mpqusejd, vkzratou) \\) is any point,\n\\[\ntqbvlona ztkywopq^{2}+wduyknar ztkywopq^{2}-2 hfsqyzem ztkywopq^{2}=(mpqusejd+bgdurnae)^{2}+vkzratou^{2}+(mpqusejd-bgdurnae)^{2}+vkzratou^{2}-2\\left(mpqusejd^{2}+vkzratou^{2}\\right)=2 bgdurnae^{2}\n\\]\nis irrational, so \\( tqbvlona ztkywopq, hfsqyzem ztkywopq, wduyknar ztkywopq \\) cannot all be rational. Hence all \\( ztkywopq \\) get removed.\nRemark. The motivation for taking \\( tqbvlona ztkywopq^{2}+wduyknar ztkywopq^{2}-2 hfsqyzem ztkywopq^{2} \\) is that it is the linear combination which eliminates the terms involving \\( mpqusejd \\) or \\( vkzratou \\).\n\nRemark. Both proofs easily generalize to prove the same result where the punch removes only those points whose distance from the center is transcendental. Recall that a real or complex number \\( bgdurnae \\) is said to be algebraic if \\( bgdurnae \\) is a zero of a nonzero polynomial with rational coefficients, and \\( bgdurnae \\) is said to be transcendental otherwise. In Proof 1, observe that the set of real algebraic numbers is countable. In Proof 2, simply take \\( bgdurnae \\) transcendental.\n\nRemark. Essentially the same question appeared as [New, Problem 28].\nRelated question. There are many interesting questions concerning distances between points in a subset of the plane. For example, for any set of \\( judiyvsm \\) points, in the plane, Erdos [Er], [Hon2, Ch. 12] proved that\n- the number of different distances produced must be at least \\( \\sqrt{judiyvsm-3 / 4}-1 / 2 \\),\n- the smallest distance produced cannot occur more often than \\( 3 judiyvsm-6 \\) times,\n- the greatest distance produced cannot occur more often than \\( judiyvsm \\) times,\n- no distance produced can occur more than \\( 2^{-1 / 2} judiyvsm^{3 / 2}+judiyvsm / 4 \\) times.\n\nAlso, Problem 5 on the 1987 International Mathematical Olympiad [IMO87] asks\nLet \\( judiyvsm \\) be an integer greater than or equal to 3 . Prove that there is a set of \\( judiyvsm \\) points in the plane such that the distance between any two points is irrational and each set of three points determines a nondegenerate triangle with rational area."
+    },
+    "kernel_variant": {
+      "question": "In the Euclidean plane a ``spectral punch'' centred at a point O instantaneously deletes every point whose distance from O is irrational.  What is the least positive integer n for which one can choose n centres so that, after punching once at each of those centres, every point of the plane has been deleted?",
+      "solution": "Answer: 3\n\n1.  Two punches can leave points alive\n   -------------------------------------------------\n   Let the two centres be P and Q with PQ = d.  Pick any rational number r with d < r < 2r (for instance, r = \\lceil d\\rceil  + 1).  The equal-radius circles\n        C_1 : centre P, radius r,      C_2 : centre Q, radius r\n   intersect because the distance between their centres is less than the sum 2r of their radii.  Choose an intersection point R.  Then PR = QR = r is rational, so R survives both punches.  Hence two punches never suffice.\n\n2.  Three explicitly placed punches destroy the whole plane\n   ---------------------------------------------------------\n   Choose a real number \\alpha  whose square is irrational; for definiteness set \\alpha  = ^3\\sqrt{2.}  Punch at the three collinear points\n        A = (-\\alpha , 0),   B = (0, 0),   C = (\\alpha , 0).\n\n   For any point P = (x, y) write the squared distances\n        AP^2 = (x + \\alpha )^2 + y^2,\n        BP^2 =  x^2       + y^2,\n        CP^2 = (x - \\alpha )^2 + y^2.\n   Then\n        AP^2 + CP^2 - 2BP^2 = 2\\alpha ^2,\n   which is irrational by choice of \\alpha .  Consequently AP^2, BP^2 and CP^2 cannot simultaneously be rational; at least one of the three numbers is irrational, so P is eliminated by the corresponding punch.  Because P was arbitrary, every point of the plane is deleted.\n\n3.  Minimality\n   ------------\n   Part 1 shows that two punches are insufficient, while Part 2 gives an explicit configuration of three punches that always succeeds.  Therefore the least number required is\n        n = 3.\n\nRemark.\n-------\nThe preceding constructive proof is completely self-contained and does not rely on any cardinality or measure considerations.  (A previously circulated argument incorrectly claimed that the set of points surviving two punches is countable; this is false because a countable union of circles, each of which is uncountable, need not be countable.  The error has been removed, and the current solution is valid without that claim.)",
+      "_meta": {
+        "core_steps": [
+          "Two punches are insufficient: for centers P,Q pick a rational r> PQ/2; the circles of radius r intersect in a point R that survives both punches.",
+          "Therefore at least three punches are needed.",
+          "Choose three collinear centers A, B, C with AB = BC = α where α^2 is irrational.",
+          "For any point P one has AP² + CP² − 2 BP² = 2 α² (irrational), so the three distances AP, BP, CP cannot all be rational.",
+          "Hence every point is removed and three punches, being both necessary and sufficient, is the minimal number."
+        ],
+        "mutable_slots": {
+          "slot_alpha": {
+            "description": "Any non-zero real number whose square is irrational (or, more generally, not in the countable set being avoided).",
+            "original": "α with α² irrational (e.g. α = ∛2)"
+          },
+          "slot_centers": {
+            "description": "Exact placement of the three punch centers; any rigid motion/rotation/scale keeping them collinear with equal spacing α works.",
+            "original": "A = (−α,0),  B = (0,0),  C = (α,0)"
+          },
+          "slot_radius_choice": {
+            "description": "Rational radius used to exhibit a surviving point when only two punches are used.",
+            "original": "Any rational r > PQ/2"
+          },
+          "slot_reference_line": {
+            "description": "Arbitrary line employed in the countability/existence variant of the third punch argument.",
+            "original": "Fixed line L"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

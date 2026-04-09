@@ -1,0 +1,78 @@
+{
+  "index": "1998-A-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A right circular cone has base of radius 1 and height 3.  A\ncube is inscribed in the cone so that one face of the cube is\ncontained in the base of the cone.  What is the side-length of\nthe cube?",
+  "solution": "Consider the plane containing both the axis of the cone and two opposite\nvertices of the cube's bottom face.  The cross section of the cone and\nthe cube in this plane consists of a rectangle of sides $s$ and\n$s\\sqrt{2}$ inscribed in an isosceles triangle of base $2$ and height\n$3$, where $s$ is the side-length of the cube.  (The $s\\sqrt{2}$ side\nof the rectangle lies on the base of the triangle.)  Similar triangles\nyield $s/3 = (1-s\\sqrt{2}/2)/1$, or $s = (9\\sqrt{2} - 6)/7.$",
+  "vars": [
+    "s"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "s": "cubeedge"
+      },
+      "question": "A right circular cone has base of radius 1 and height 3.  A\ncube is inscribed in the cone so that one face of the cube is\ncontained in the base of the cone.  What is the side-length of\nthe cube?",
+      "solution": "Consider the plane containing both the axis of the cone and two opposite\nvertices of the cube's bottom face.  The cross section of the cone and\nthe cube in this plane consists of a rectangle of sides $cubeedge$ and\n$cubeedge\\sqrt{2}$ inscribed in an isosceles triangle of base $2$ and height\n$3$, where $cubeedge$ is the side-length of the cube.  (The $cubeedge\\sqrt{2}$ side\nof the rectangle lies on the base of the triangle.)  Similar triangles\nyield $cubeedge/3 = (1-cubeedge\\sqrt{2}/2)/1$, or $cubeedge = (9\\sqrt{2} - 6)/7.$"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "s": "pineapple"
+      },
+      "question": "A right circular cone has base of radius 1 and height 3.  A cube is inscribed in the cone so that one face of the cube is contained in the base of the cone.  What is the side-length of the cube?",
+      "solution": "Consider the plane containing both the axis of the cone and two opposite vertices of the cube's bottom face.  The cross section of the cone and the cube in this plane consists of a rectangle of sides $pineapple$ and $pineapple\\sqrt{2}$ inscribed in an isosceles triangle of base $2$ and height $3$, where $pineapple$ is the side-length of the cube.  (The $pineapple\\sqrt{2}$ side of the rectangle lies on the base of the triangle.)  Similar triangles yield $pineapple/3 = (1-pineapple\\sqrt{2}/2)/1$, or $pineapple = (9\\sqrt{2} - 6)/7.$"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "s": "perimeter"
+      },
+      "question": "A right circular cone has base of radius 1 and height 3.  A\ncube is inscribed in the cone so that one face of the cube is\ncontained in the base of the cone.  What is the side-length of\nthe cube?",
+      "solution": "Consider the plane containing both the axis of the cone and two opposite\nvertices of the cube's bottom face.  The cross section of the cone and\nthe cube in this plane consists of a rectangle of sides $perimeter$ and\n$perimeter\\sqrt{2}$ inscribed in an isosceles triangle of base $2$ and height\n$3$, where $perimeter$ is the side-length of the cube.  (The $perimeter\\sqrt{2}$ side\nof the rectangle lies on the base of the triangle.)  Similar triangles\nyield $perimeter/3 = (1-perimeter\\sqrt{2}/2)/1$, or $perimeter = (9\\sqrt{2} - 6)/7.$"
+    },
+    "garbled_string": {
+      "map": {
+        "s": "qzxwvtnp"
+      },
+      "question": "A right circular cone has base of radius 1 and height 3.  A\ncube is inscribed in the cone so that one face of the cube is\ncontained in the base of the cone.  What is the side-length of\nthe cube?",
+      "solution": "Consider the plane containing both the axis of the cone and two opposite\nvertices of the cube's bottom face.  The cross section of the cone and\nthe cube in this plane consists of a rectangle of sides $qzxwvtnp$ and\n$qzxwvtnp\\sqrt{2}$ inscribed in an isosceles triangle of base $2$ and height\n$3$, where $qzxwvtnp$ is the side-length of the cube.  (The $qzxwvtnp\\sqrt{2}$ side\nof the rectangle lies on the base of the triangle.)  Similar triangles\nyield $qzxwvtnp/3 = (1-qzxwvtnp\\sqrt{2}/2)/1$, or $qzxwvtnp = (9\\sqrt{2} - 6)/7.$"
+    },
+    "kernel_variant": {
+      "question": "A right circular cone has a base of radius $2$ and height $5$.  A cube is inscribed in the cone so that one face of the cube is contained in the base of the cone.  What is the side-length $s$ of the cube?",
+      "solution": "Slice the solid with the plane that contains the cone's axis and the two opposite vertices of the cube's bottom face. In this plane the cone becomes an isosceles triangle whose base equals the diameter of the cone, 4, and whose altitude equals the height of the cone, 5. The cube appears as a rectangle. Because the slice passes through opposite vertices of the square bottom, the rectangle's width is the diagonal of that square: s\\sqrt{2.} Its height is the edge-length s.\n\nLabel by t the distance (measured upward) from the base of the triangle to the top side of the rectangle. Since that top side is a segment parallel to the base of the triangle, the small triangle that sits above the rectangle is similar to the whole triangle. Hence\n\n\\[\\frac{s\\sqrt{2}}{4}=\\frac{5-t}{5}.\\]\n\nBut t equals the height of the rectangle, s. Substituting t=s and solving for s gives\n\n\\[\\frac{s\\sqrt{2}}{4}=\\frac{5-s}{5}\\quad\\Longrightarrow\\quad 5s\\sqrt{2}=4(5-s)\\]\n\\[\\Rightarrow\\;5s\\sqrt{2}=20-4s\\quad\\Longrightarrow\\quad s\\,(5\\sqrt{2}+4)=20.\\]\n\nTherefore\n\n\\[\\boxed{\\displaystyle s=\\frac{20}{5\\sqrt{2}+4}=\\frac{50\\sqrt{2}-40}{17}}.\\]\n\n(Rationalisation in the last step multiplies numerator and denominator by 5\\sqrt{2}-4.)",
+      "_meta": {
+        "core_steps": [
+          "Take the plane through the cone’s axis and two opposite vertices of the cube’s bottom face, producing a 2-D problem.",
+          "Recognize the cross section: a rectangle of height s and width s√2 inside an isosceles triangle whose base equals the cone’s diameter and whose altitude equals the cone’s height.",
+          "Use similarity of the small triangle above the rectangle and the whole cone-section triangle to relate the rectangle’s dimensions to the cone’s.",
+          "Solve the resulting linear equation for s (cube side-length)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Radius of the cone’s base (sets the triangle’s half-base).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Height of the cone (sets the triangle’s altitude).",
+            "original": "3"
+          },
+          "slot3": {
+            "description": "Ratio between rectangle width and cube side (comes from the square’s diagonal in the chosen plane).",
+            "original": "√2"
+          },
+          "slot4": {
+            "description": "Triangle base length used in similarity (twice the radius).",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

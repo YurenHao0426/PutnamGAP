@@ -1,0 +1,132 @@
+{
+  "index": "2021-B-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Say that an $n$-by-$n$ matrix $A = (a_{ij})_{1 \\leq i,j \\leq n}$ with integer entries is \\emph{very odd} if, for every nonempty subset $S$ of $\\{1,2,\\dots,n\\}$, the $|S|$-by-$|S|$ submatrix $(a_{ij})_{i,j \\in S}$ has odd determinant. Prove that if $A$ is very odd, then $A^k$ is very odd for every $k \\geq 1$.",
+  "solution": "For convenience, throughout we work with matrices over the field of 2 elements. In this language, if there exists a permutation matrix $P$ such that $P^{-1} A P$ is unipotent (i.e., has 1s on the main diagonal and 0s below it), then $A$ is very odd: any principal submatrix of $A$ is conjugate to a principal submatrix of $P^{-1} A P$, which is again unipotent and in particular nonsingular.\nWe will solve the problem by showing that conversely, for any very odd matrix $A$, there exists a permutation matrix $P$ such that $P^{-1} A P$ is unipotent. Since the latter condition is preserved by taking powers, this will prove the desired result.\n\nTo begin, we may take $S = \\{i\\}$ to see that $a_{ii} = 1$. We next form a (loopless) directed graph on the vertex set $\\{1,\\dots,n\\}$ with an edge from $i$ to $j$ whenever $a_{ij} = 1$, and claim that this graph has no cycles.\nTo see this, suppose the contrary,\nchoose a cycle of minimal length $m \\geq 2$, and let $i_1,\\dots,i_m$ be the vertices in order.\nThe minimality of the cycle implies that\n\\[\na_{i_j i_k} = \\begin{cases} 1 & \\mbox{if } k - j \\equiv 0 \\mbox{ or } 1 \\pmod{m} \\\\\n0 & \\mbox{otherwise}.\n\\end{cases}\n\\]\nThe submatrix corresponding to $S = \\{i_1,\\dots,i_m\\}$ has row sum 0 and hence is singular, a contradiction.\n\nWe now proceed by induction on $n$.\nSince the directed graph has no cycles, there must be some vertex which is not the starting point of any edge\n(e.g., the endpoint of any path of maximal length).\nWe may conjugate by a permutation matrix so that this vertex becomes 1. We now apply the induction hypothesis to the submatrix corresponding to $S = \\{2,\\dots,n\\}$ to conclude.\n\n\\noindent\n\\textbf{Remark.}\nA directed graph without cycles, as in our solution, is commonly called a \\emph{DAG (directed acyclic graph)}. It is a standard fact that a directed graph is a TAG if and only if there is a linear ordering of its vertices consistent with all edge directions.\nSee for example \\url{https://en.wikipedia.org/wiki/Directed_acyclic_graph}.\n\n\\noindent\n\\textbf{Remark.}\nAn $n \\times n$ matrix $A = (a_{ij})$ for which the value of $a_{ij}$ depends only on $i-j \\pmod{n}$ is called a \\emph{circulant matrix}.\nThe circulant matrix with first row $(1,1,0,\\dots,0)$ is an example of an $n \\times n$ matrix whose determinant is even, but whose other principal minors are all odd.",
+  "vars": [
+    "A",
+    "a_ij",
+    "S",
+    "i",
+    "j",
+    "P",
+    "i_1",
+    "i_j",
+    "i_k",
+    "i_m"
+  ],
+  "params": [
+    "n",
+    "k",
+    "m"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "matrixa",
+        "a_ij": "entryij",
+        "S": "subsetx",
+        "i": "rowidx",
+        "j": "colidx",
+        "P": "permute",
+        "i_1": "vertexa",
+        "i_j": "vertexc",
+        "i_k": "vertexd",
+        "i_m": "vertexe",
+        "n": "matricesize",
+        "k": "exponent",
+        "m": "cyclelen"
+      },
+      "question": "Say that an $matricesize$-by-$matricesize$ matrix $matrixa = (entryij)_{1 \\leq rowidx,colidx \\leq matricesize}$ with integer entries is \\emph{very odd} if, for every nonempty subset $subsetx$ of $\\{1,2,\\dots,matricesize\\}$, the $|subsetx|$-by-$|subsetx|$ submatrix $(entryij)_{rowidx,colidx \\in subsetx}$ has odd determinant. Prove that if $matrixa$ is very odd, then $matrixa^{exponent}$ is very odd for every $exponent \\geq 1$.",
+      "solution": "For convenience, throughout we work with matrices over the field of 2 elements. In this language, if there exists a permutation matrix $permute$ such that $permute^{-1}\\, matrixa \\, permute$ is unipotent (i.e., has 1s on the main diagonal and 0s below it), then $matrixa$ is very odd: any principal submatrix of $matrixa$ is conjugate to a principal submatrix of $permute^{-1}\\, matrixa \\, permute$, which is again unipotent and in particular nonsingular.\nWe will solve the problem by showing that conversely, for any very odd matrix $matrixa$, there exists a permutation matrix $permute$ such that $permute^{-1}\\, matrixa \\, permute$ is unipotent. Since the latter condition is preserved by taking powers, this will prove the desired result.\n\nTo begin, we may take $subsetx = \\{rowidx\\}$ to see that $a_{rowidx rowidx} = 1$. We next form a (loopless) directed graph on the vertex set $\\{1,\\dots,matricesize\\}$ with an edge from $rowidx$ to $colidx$ whenever $entryij_{rowidx colidx} = 1$, and claim that this graph has no cycles.\nTo see this, suppose the contrary, choose a cycle of minimal length $cyclelen \\geq 2$, and let $vertexa,\\dots,vertexe$ be the vertices in order.\nThe minimality of the cycle implies that\n\\[\nentryij_{vertexc\\, vertexd} = \\begin{cases} 1 & \\mbox{if } exponent - colidx \\equiv 0 \\mbox{ or } 1 \\pmod{cyclelen} \\\\ 0 & \\mbox{otherwise}. \\end{cases}\n\\]\nThe submatrix corresponding to $subsetx = \\{vertexa,\\dots,vertexe\\}$ has row sum 0 and hence is singular, a contradiction.\n\nWe now proceed by induction on $matricesize$. Since the directed graph has no cycles, there must be some vertex which is not the starting point of any edge (e.g., the endpoint of any path of maximal length). We may conjugate by a permutation matrix so that this vertex becomes 1. We now apply the induction hypothesis to the submatrix corresponding to $subsetx = \\{2,\\dots,matricesize\\}$ to conclude.\n\n\\noindent\n\\textbf{Remark.} A directed graph without cycles, as in our solution, is commonly called a \\emph{DAG (directed acyclic graph)}. It is a standard fact that a directed graph is a TAG if and only if there is a linear ordering of its vertices consistent with all edge directions. See for example \\url{https://en.wikipedia.org/wiki/Directed_acyclic_graph}.\n\n\\noindent\n\\textbf{Remark.} An $matricesize \\times matricesize$ matrix $matrixa = (entryij)$ for which the value of $entryij$ depends only on $rowidx-colidx \\pmod{matricesize}$ is called a \\emph{circulant matrix}. The circulant matrix with first row $(1,1,0,\\dots,0)$ is an example of an $matricesize \\times matricesize$ matrix whose determinant is even, but whose other principal minors are all odd."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "daffodil",
+        "a_ij": "bricklayer",
+        "S": "windchimes",
+        "i": "sunflower",
+        "j": "coatbutton",
+        "P": "tortoise",
+        "i_1": "lighthouse",
+        "i_j": "sandcastle",
+        "i_k": "blueberry",
+        "i_m": "driftwood",
+        "n": "raincloud",
+        "k": "parchment",
+        "m": "screwdriver"
+      },
+      "question": "Say that an $raincloud$-by-$raincloud$ matrix $daffodil = (bricklayer)_{1 \\leq sunflower,coatbutton \\leq raincloud}$ with integer entries is \\emph{very odd} if, for every nonempty subset $windchimes$ of $\\{1,2,\\dots,raincloud\\}$, the $|windchimes|$-by-$|windchimes|$ submatrix $(bricklayer)_{sunflower,coatbutton \\in windchimes}$ has odd determinant. Prove that if $daffodil$ is very odd, then $daffodil^{parchment}$ is very odd for every $parchment \\geq 1$.",
+      "solution": "For convenience, throughout we work with matrices over the field of 2 elements. In this language, if there exists a permutation matrix $tortoise$ such that $tortoise^{-1} \\, daffodil \\, tortoise$ is unipotent (i.e., has 1s on the main diagonal and 0s below it), then $daffodil$ is very odd: any principal submatrix of $daffodil$ is conjugate to a principal submatrix of $tortoise^{-1} \\, daffodil \\, tortoise$, which is again unipotent and in particular nonsingular.\nWe will solve the problem by showing that conversely, for any very odd matrix $daffodil$, there exists a permutation matrix $tortoise$ such that $tortoise^{-1} \\, daffodil \\, tortoise$ is unipotent. Since the latter condition is preserved by taking powers, this will prove the desired result.\n\nTo begin, we may take $windchimes = \\{sunflower\\}$ to see that $bricklayer_{sunflower sunflower} = 1$. We next form a (loopless) directed graph on the vertex set $\\{1,\\dots,raincloud\\}$ with an edge from $sunflower$ to $coatbutton$ whenever $bricklayer_{sunflower coatbutton} = 1$, and claim that this graph has no cycles.\nTo see this, suppose the contrary, choose a cycle of minimal length $screwdriver \\geq 2$, and let $lighthouse,\\dots,driftwood$ be the vertices in order. The minimality of the cycle implies that\n\\[\nbricklayer_{sandcastle blueberry} = \\begin{cases} 1 & \\mbox{if } blueberry - sandcastle \\equiv 0 \\mbox{ or } 1 \\pmod{screwdriver} \\\\ 0 & \\mbox{otherwise}. \\end{cases}\n\\]\nThe submatrix corresponding to $windchimes = \\{lighthouse,\\dots,driftwood\\}$ has row sum 0 and hence is singular, a contradiction.\n\nWe now proceed by induction on $raincloud$. Since the directed graph has no cycles, there must be some vertex which is not the starting point of any edge (e.g., the endpoint of any path of maximal length). We may conjugate by a permutation matrix so that this vertex becomes 1. We now apply the induction hypothesis to the submatrix corresponding to $windchimes = \\{2,\\dots,raincloud\\}$ to conclude.\n\n\\noindent\\textbf{Remark.} A directed graph without cycles, as in our solution, is commonly called a \\emph{DAG (directed acyclic graph)}. It is a standard fact that a directed graph is a TAG if and only if there is a linear ordering of its vertices consistent with all edge directions. See for example \\url{https://en.wikipedia.org/wiki/Directed_acyclic_graph}.\n\n\\noindent\\textbf{Remark.} An $raincloud \\times raincloud$ matrix $daffodil = (bricklayer)$ for which the value of $bricklayer$ depends only on $sunflower-coatbutton \\pmod{raincloud}$ is called a \\emph{circulant matrix}. The circulant matrix with first row $(1,1,0,\\dots,0)$ is an example of an $raincloud \\times raincloud$ matrix whose determinant is even, but whose other principal minors are all odd."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "voidmatrix",
+        "a_ij": "blankentry",
+        "S": "totalset",
+        "i": "endpoint",
+        "j": "startnode",
+        "P": "staticmatrix",
+        "i_1": "lastnode",
+        "i_j": "randomnode",
+        "i_k": "fixednode",
+        "i_m": "firstnode",
+        "n": "tinycount",
+        "k": "rootvalue",
+        "m": "linecount"
+      },
+      "question": "Say that an $tinycount$-by-$tinycount$ matrix $voidmatrix = (blankentry)_{1 \\leq endpoint,startnode \\leq tinycount}$ with integer entries is \\emph{very odd} if, for every nonempty subset $totalset$ of $\\{1,2,\\dots,tinycount\\}$, the $|totalset|$-by-$|totalset|$ submatrix $(blankentry)_{endpoint,startnode \\in totalset}$ has odd determinant. Prove that if $voidmatrix$ is very odd, then $voidmatrix^{rootvalue}$ is very odd for every $rootvalue \\geq 1$.",
+      "solution": "For convenience, throughout we work with matrices over the field of 2 elements. In this language, if there exists a permutation matrix $staticmatrix$ such that $staticmatrix^{-1} voidmatrix staticmatrix$ is unipotent (i.e., has 1s on the main diagonal and 0s below it), then $voidmatrix$ is very odd: any principal submatrix of $voidmatrix$ is conjugate to a principal submatrix of $staticmatrix^{-1} voidmatrix staticmatrix$, which is again unipotent and in particular nonsingular.\nWe will solve the problem by showing that conversely, for any very odd matrix $voidmatrix$, there exists a permutation matrix $staticmatrix$ such that $staticmatrix^{-1} voidmatrix staticmatrix$ is unipotent. Since the latter condition is preserved by taking powers, this will prove the desired result.\n\nTo begin, we may take $totalset = \\{endpoint\\}$ to see that $blankentry = 1$. We next form a (loopless) directed graph on the vertex set $\\{1,\\dots,tinycount\\}$ with an edge from $endpoint$ to $startnode$ whenever $blankentry = 1$, and claim that this graph has no cycles.\nTo see this, suppose the contrary,\nchoose a cycle of minimal length $linecount \\geq 2$, and let $lastnode,\\dots,firstnode$ be the vertices in order.\nThe minimality of the cycle implies that\n\\[\nblankentry = \\begin{cases} 1 & \\mbox{if } rootvalue - startnode \\equiv 0 \\mbox{ or } 1 \\pmod{linecount} \\\\\n0 & \\mbox{otherwise}.\n\\end{cases}\n\\]\nThe submatrix corresponding to $totalset = \\{lastnode,\\dots,firstnode\\}$ has row sum 0 and hence is singular, a contradiction.\n\nWe now proceed by induction on $tinycount$.\nSince the directed graph has no cycles, there must be some vertex which is not the starting point of any edge\n(e.g., the endpoint of any path of maximal length).\nWe may conjugate by a permutation matrix so that this vertex becomes 1. We now apply the induction hypothesis to the submatrix corresponding to $totalset = \\{2,\\dots,tinycount\\}$ to conclude.\n\n\\noindent\n\\textbf{Remark.}\nA directed graph without cycles, as in our solution, is commonly called a \\emph{DAG (directed acyclic graph)}. It is a standard fact that a directed graph is a TAG if and only if there is a linear ordering of its vertices consistent with all edge directions.\nSee for example \\url{https://en.wikipedia.org/wiki/Directed_acyclic_graph}.\n\n\\noindent\n\\textbf{Remark.}\nAn $tinycount \\times tinycount$ matrix $voidmatrix = (blankentry)$ for which the value of blankentry depends only on endpoint-startnode $\\pmod{tinycount}$ is called a \\emph{circulant matrix}.\nThe circulant matrix with first row $(1,1,0,\\dots,0)$ is an example of an $tinycount \\times tinycount$ matrix whose determinant is even, but whose other principal minors are all odd."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "a_ij": "hrplmnbt",
+        "S": "kjdhrpqw",
+        "i": "tznasqwe",
+        "j": "mpqldkhs",
+        "P": "vclohsat",
+        "i_1": "yzxcvbnm",
+        "i_j": "rtasdfgh",
+        "i_k": "lkjhgfdz",
+        "i_m": "poiulkjh",
+        "n": "asdfghjk",
+        "k": "qwertyui",
+        "m": "zxcvbnas"
+      },
+      "question": "Say that an asdfghjk-by-asdfghjk matrix $qzxwvtnp = (hrplmnbt)_{1 \\leq tznasqwe,mpqldkhs \\leq asdfghjk}$ with integer entries is \\emph{very odd} if, for every nonempty subset $kjdhrpqw$ of $\\{1,2,\\dots,asdfghjk\\}$, the $|kjdhrpqw|$-by-$|kjdhrpqw|$ submatrix $(hrplmnbt)_{tznasqwe,mpqldkhs \\in kjdhrpqw}$ has odd determinant. Prove that if $qzxwvtnp$ is very odd, then $qzxwvtnp^{qwertyui}$ is very odd for every $qwertyui \\geq 1$.",
+      "solution": "For convenience, throughout we work with matrices over the field of 2 elements. In this language, if there exists a permutation matrix $vclohsat$ such that $vclohsat^{-1} qzxwvtnp vclohsat$ is unipotent (i.e., has 1s on the main diagonal and 0s below it), then $qzxwvtnp$ is very odd: any principal submatrix of $qzxwvtnp$ is conjugate to a principal submatrix of $vclohsat^{-1} qzxwvtnp vclohsat$, which is again unipotent and in particular nonsingular.\nWe will solve the problem by showing that conversely, for any very odd matrix $qzxwvtnp$, there exists a permutation matrix $vclohsat$ such that $vclohsat^{-1} qzxwvtnp vclohsat$ is unipotent. Since the latter condition is preserved by taking powers, this will prove the desired result.\n\nTo begin, we may take $kjdhrpqw = \\{tznasqwe\\}$ to see that $(hrplmnbt)_{tznasqwe tznasqwe} = 1$. We next form a (loopless) directed graph on the vertex set $\\{1,\\dots,asdfghjk\\}$ with an edge from $tznasqwe$ to $mpqldkhs$ whenever $(hrplmnbt)_{tznasqwe mpqldkhs} = 1$, and claim that this graph has no cycles.\nTo see this, suppose the contrary,\nchoose a cycle of minimal length $zxcvbnas \\geq 2$, and let $yzxcvbnm,\\dots,poiulkjh$ be the vertices in order.\nThe minimality of the cycle implies that\n\\[\n(hrplmnbt)_{rtasdfgh\\, lkjhgfdz} = \\begin{cases} 1 & \\mbox{if } qwertyui - mpqldkhs \\equiv 0 \\mbox{ or } 1 \\pmod{zxcvbnas} \\\\\n0 & \\mbox{otherwise}.\n\\end{cases}\n\\]\nThe submatrix corresponding to $kjdhrpqw = \\{yzxcvbnm,\\dots,poiulkjh\\}$ has row sum 0 and hence is singular, a contradiction.\n\nWe now proceed by induction on $asdfghjk$.\nSince the directed graph has no cycles, there must be some vertex which is not the starting point of any edge\n(e.g., the endpoint of any path of maximal length).\nWe may conjugate by a permutation matrix so that this vertex becomes 1. We now apply the induction hypothesis to the submatrix corresponding to $kjdhrpqw = \\{2,\\dots,asdfghjk\\}$ to conclude.\n\n\\noindent\n\\textbf{Remark.}\nA directed graph without cycles, as in our solution, is commonly called a \\emph{DAG (directed acyclic graph)}. It is a standard fact that a directed graph is a TAG if and only if there is a linear ordering of its vertices consistent with all edge directions.\nSee for example \\url{https://en.wikipedia.org/wiki/Directed_acyclic_graph}.\n\n\\noindent\n\\textbf{Remark.}\nAn $asdfghjk \\times asdfghjk$ matrix $qzxwvtnp = (hrplmnbt)$ for which the value of $(hrplmnbt)_{tznasqwe mpqldkhs}$ depends only on $tznasqwe-mpqldkhs \\pmod{asdfghjk}$ is called a \\emph{circulant matrix}.\nThe circulant matrix with first row $(1,1,0,\\dots,0)$ is an example of an $asdfghjk \\times asdfghjk$ matrix whose determinant is even, but whose other principal minors are all odd."
+    },
+    "kernel_variant": {
+      "question": "Call an $n\\times n$ integer matrix $A=(a_{ij})_{1\\le i,j\\le n}$ overwhelmingly odd if, for every non-empty subset $S\\subseteq\\{1,2,\\dots ,n\\}$, the principal submatrix $(a_{ij})_{i,j\\in S}$ has odd determinant.  Prove that if $A$ is overwhelmingly odd, then $A^{k}$ is overwhelmingly odd for every integer power $k\\ge 2$.",
+      "solution": "We give a clean corrected proof, working throughout mod 2.  Over F_2, ``determinant odd'' \\Leftrightarrow  ``matrix nonsingular.''  Let A be an n\\times n integer matrix with every principal minor odd; write A = A mod 2.\n\n1.  Diagonals are 1.  Taking any 1\\times 1 principal minor shows a_{ii} \\equiv  1 (so A_{ii}=1).\n\n2.  Build a simple directed graph G on vertices {1,\\ldots ,n}, with a (strict) edge i\\to j (i\\neq j) exactly when A_{ij}=1.  We claim G has no directed cycle of length \\geq 2.  Otherwise, pick a minimal cycle i_1\\to i_2\\to \\cdots \\to i_m\\to i_1 (m\\geq 2).  Minimality forces no additional off-cycle directed edges among these vertices, so in the m\\times m submatrix S=(A_{i_j,i_k}) each row j has exactly two 1's (the diagonal and the one edge to i_{j+1}), giving row-sum 0.  Hence S\\cdot (1,\\ldots ,1)^T=0, so S is singular mod 2---a contradiction.\n\n3.  Topological sort.  Since G has no directed cycle, there is a linear ordering v_1,\\ldots ,v_n of the vertices so that all edges point from a higher index to a lower one.\n\n4.  Permute into unipotent form.  Let P be the permutation matrix sending v_i to i.  Then B := P^{-1}AP has B_{ii}=1 and B_{ij}=0 for i<j, i.e. B is lower-triangular unipotent over F_2.\n\n5.  Powers remain unipotent.  For any k\\geq 1, B^k is still lower-triangular with all diagonal entries (1)^k=1.  Every principal submatrix of B^k is thus a unipotent triangular matrix and so invertible mod 2.\n\n6.  Return to A.  Since A = A mod 2 and permutation-conjugation commutes with taking powers, we have A^k mod 2 = P B^k P^{-1}.  Conjugation by P preserves principal minors, so each principal minor of A^k remains odd.  Therefore A^k is overwhelmingly odd for every k\\geq 2 (in fact for k\\geq 1), as required.",
+      "_meta": {
+        "core_steps": [
+          "Work modulo 2 so “odd determinant” ⇔ “nonsingular over 𝔽₂”.",
+          "1×1 principal minors odd ⇒ every diagonal entry is 1.",
+          "Represent the 1-entries by a digraph; a directed cycle would give a principal minor whose rows sum to 0 ⇒ contradiction, so the digraph is acyclic.",
+          "A DAG has a topological order ⇒ a permutation matrix P with P⁻¹AP unipotent (upper- or lower-triangular with diagonal 1’s).",
+          "Unipotent form is preserved under powers, hence every Aᵏ (k≥1) is again very odd."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which triangular side is forced to have zeros after the permutation (upper vs. lower).  Reversing all edge directions in the digraph would give the opposite choice without affecting the proof.",
+            "original": "0s below the main diagonal (upper-triangular unipotent)."
+          },
+          "slot2": {
+            "description": "Range of exponents for which the conclusion is stated.  Any set containing all positive integers works because the argument uses only the fact that powers with k≥1 preserve unipotency.",
+            "original": "k ≥ 1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

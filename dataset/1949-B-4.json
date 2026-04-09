@@ -1,0 +1,129 @@
+{
+  "index": "1949-B-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "4. Show that the coefficients \\( a_{1}, a_{2}, a_{3}, \\ldots \\) in the expansion \\( \\frac{1}{4}[1+x- \\) \\( \\left.\\left(1-6 x+x^{2}\\right)^{12}\\right]=a_{1} x+a_{2} x^{2}+a_{3} x^{3}+\\cdots \\) are positive integers.",
+  "solution": "Solution. Let\n\\[\ny=y(x)=\\frac{1}{4}\\left[1+x-\\left(1-6 x+x^{2}\\right)^{1 / 2}\\right]\n\\]\n\nBy the general binomial theorem \\( \\left(1-6 x+x^{2}\\right)^{1 / 2} \\), and hence \\( y \\), can be expanded in a power series convergent for values of \\( x \\) such that \\( \\left|x^{2}\\right|+|6 x| \\) \\( <1 \\). Since \\( y(0)=0 \\), the series has the form\n\\[\ny(x)=a_{1} x+a_{2} x^{2}+a_{3} x^{3}+\\cdots\n\\]\n\nNow\n\\[\n2 y^{2}-(1+x) y+x=0\n\\]\nso if we substitute the power series for \\( y \\) in (2) we have\n\\[\n2\\left(a_{1} x+a_{2} x^{2}+a_{3} x^{3}+\\cdots\\right)^{2}=(1+x)\\left(a_{1} x+a_{2} x^{2}+a_{3} x^{3}+\\cdots\\right)-x\n\\]\n\nComparing coefficients of \\( x \\), we see that \\( a_{1}=1 \\), and for \\( n>1 \\),\n\\[\n2\\left(a_{1} a_{n-1}+a_{2} a_{n-2}+\\cdots+a_{n-1} a_{1}\\right)=a_{n}+a_{n-1}\n\\]\n\nHence \\( a_{2}=1 \\) and\n\\[\na_{n}=3 a_{n-1}+2 \\sum_{i=2}^{n-2} a_{i} a_{n-i} \\text { for } n>2\n\\]\n\nTherefore, if \\( a_{1}, a_{2}, \\ldots, a_{n-1} \\) are positive integers, \\( a_{n} \\) is also a positive integer. Since \\( a_{1} \\) and \\( a_{2} \\) are positive integers, all the coefficients \\( \\left\\{a_{i}\\right\\} \\) are positive integers.",
+  "vars": [
+    "i",
+    "n",
+    "x",
+    "y"
+  ],
+  "params": [
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_i",
+    "a_n",
+    "a_n-1",
+    "a_n-2",
+    "a_n-i"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1": "coeffone",
+        "a_2": "coefftwo",
+        "a_3": "coeffthr",
+        "a_i": "coeffsubi",
+        "a_n": "coeffsubn",
+        "a_n-1": "coeffnmin",
+        "a_n-2": "coeffnmin2",
+        "a_n-i": "coeffnmini",
+        "n": "indexer",
+        "x": "inputvar",
+        "y": "outputval"
+      },
+      "question": "4. Show that the coefficients \\( coeffone, coefftwo, coeffthr, \\ldots \\) in the expansion \\( \\frac{1}{4}\\left[1+inputvar-\\left(1-6 inputvar+inputvar^{2}\\right)^{12}\\right]=coeffone inputvar+coefftwo inputvar^{2}+coeffthr inputvar^{3}+\\cdots \\) are positive integers.",
+      "solution": "Solution. Let\n\\[\noutputval=outputval(inputvar)=\\frac{1}{4}\\left[1+inputvar-\\left(1-6 inputvar+inputvar^{2}\\right)^{1 / 2}\\right]\n\\]\n\nBy the general binomial theorem \\( \\left(1-6 inputvar+inputvar^{2}\\right)^{1 / 2} \\), and hence \\( outputval \\), can be expanded in a power series convergent for values of \\( inputvar \\) such that \\( \\left|inputvar^{2}\\right|+|6 inputvar|<1 \\). Since \\( outputval(0)=0 \\), the series has the form\n\\[\noutputval(inputvar)=coeffone inputvar+coefftwo inputvar^{2}+coeffthr inputvar^{3}+\\cdots\n\\]\n\nNow\n\\[\n2\\,outputval^{2}-(1+inputvar)\\,outputval+inputvar=0\n\\]\nso if we substitute the power series for \\( outputval \\) we have\n\\[\n2\\left(coeffone inputvar+coefftwo inputvar^{2}+coeffthr inputvar^{3}+\\cdots\\right)^{2}=(1+inputvar)\\left(coeffone inputvar+coefftwo inputvar^{2}+coeffthr inputvar^{3}+\\cdots\\right)-inputvar .\n\\]\n\nComparing coefficients of \\( inputvar \\) gives \\( coeffone=1 \\), and for \\( indexer>1 \\),\n\\[\n2\\left(coeffone\\,coeffnmin+coefftwo\\,coeffnmin2+\\cdots+coeffnmin\\,coeffone\\right)=coeffsubn+coeffnmin .\n\\]\n\nHence \\( coefftwo=1 \\) and\n\\[\ncoeffsubn=3\\,coeffnmin+2\\sum_{i=2}^{indexer-2} coeffsubi\\,coeffnmini \\quad\\text{for } indexer>2 .\n\\]\n\nTherefore, if \\( coeffone, coefftwo, \\ldots, coeffnmin \\) are positive integers, then \\( coeffsubn \\) is also a positive integer. Since \\( coeffone \\) and \\( coefftwo \\) are positive integers, all the coefficients \\( \\{coeffsubi\\} \\) are positive integers."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "sunflower",
+        "n": "riverbank",
+        "x": "cloudless",
+        "y": "marshland",
+        "a_1": "turnpike",
+        "a_2": "footbridge",
+        "a_3": "workbench",
+        "a_i": "courthouse",
+        "a_n": "strawberry",
+        "a_n-1": "rainstorm",
+        "a_n-2": "bricklayer",
+        "a_n-i": "lighthouse"
+      },
+      "question": "4. Show that the coefficients \\( turnpike, footbridge, workbench, \\ldots \\) in the expansion \\( \\frac{1}{4}[1+cloudless- \\) \\( \\left.\\left(1-6 cloudless+cloudless^{2}\\right)^{12}\\right]=turnpike\\, cloudless+footbridge\\, cloudless^{2}+workbench\\, cloudless^{3}+\\cdots \\) are positive integers.",
+      "solution": "Solution. Let\n\\[\nmarshland = marshland(cloudless)=\\frac{1}{4}\\left[1+cloudless-\\left(1-6 cloudless+cloudless^{2}\\right)^{1 / 2}\\right]\n\\]\n\nBy the general binomial theorem \\( \\left(1-6 cloudless+cloudless^{2}\\right)^{1 / 2} \\), and hence \\( marshland \\), can be expanded in a power series convergent for values of \\( cloudless \\) such that \\( \\left|cloudless^{2}\\right|+|6 cloudless| <1 \\). Since \\( marshland(0)=0 \\), the series has the form\n\\[\nmarshland(cloudless)=turnpike\\, cloudless+footbridge\\, cloudless^{2}+workbench\\, cloudless^{3}+\\cdots\n\\]\n\nNow\n\\[\n2\\, marshland^{2}-(1+cloudless)\\, marshland+cloudless=0\n\\]\nso if we substitute the power series for \\( marshland \\) in (2) we have\n\\[\n2\\left(turnpike\\, cloudless+footbridge\\, cloudless^{2}+workbench\\, cloudless^{3}+\\cdots\\right)^{2}=(1+cloudless)\\left(turnpike\\, cloudless+footbridge\\, cloudless^{2}+workbench\\, cloudless^{3}+\\cdots\\right)-cloudless\n\\]\n\nComparing coefficients of \\( cloudless \\), we see that \\( turnpike=1 \\), and for \\( riverbank>1 \\),\n\\[\n2\\left(turnpike\\, rainstorm+footbridge\\, bricklayer+\\cdots+rainstorm\\, turnpike\\right)=strawberry+rainstorm\n\\]\n\nHence \\( footbridge=1 \\) and\n\\[\nstrawberry = 3\\, rainstorm + 2 \\sum_{sunflower=2}^{riverbank-2} courthouse\\, lighthouse \\text { for } riverbank>2\n\\]\n\nTherefore, if \\( turnpike, footbridge, \\ldots, rainstorm \\) are positive integers, \\( strawberry \\) is also a positive integer. Since \\( turnpike \\) and \\( footbridge \\) are positive integers, all the coefficients \\( \\left\\{courthouse\\right\\} \\) are positive integers."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "stationary",
+        "n": "continuous",
+        "x": "constant",
+        "y": "fixedvalue",
+        "a_1": "negativeterm",
+        "a_2": "nonpositive",
+        "a_3": "subzeroelem",
+        "a_i": "staticentry",
+        "a_n": "unchanging",
+        "a_n-1": "aheadindex",
+        "a_n-2": "aheadtwice",
+        "a_n-i": "reverseplus"
+      },
+      "question": "4. Show that the coefficients \\( negativeterm, nonpositive, subzeroelem, \\ldots \\) in the expansion \\( \\frac{1}{4}[1+constant-\\left(1-6 constant+constant^{2}\\right)^{12}] = negativeterm constant+nonpositive constant^{2}+subzeroelem constant^{3}+\\cdots \\) are positive integers.",
+      "solution": "Solution. Let\n\\[\nfixedvalue=fixedvalue(constant)=\\frac{1}{4}\\left[1+constant-\\left(1-6 constant+constant^{2}\\right)^{1 / 2}\\right]\n\\]\n\nBy the general binomial theorem \\( \\left(1-6 constant+constant^{2}\\right)^{1 / 2} \\), and hence \\( fixedvalue \\), can be expanded in a power series convergent for values of \\( constant \\) such that \\( \\left|constant^{2}\\right|+|6 constant|<1 \\). Since \\( fixedvalue(0)=0 \\), the series has the form\n\\[\nfixedvalue(constant)=negativeterm constant+nonpositive constant^{2}+subzeroelem constant^{3}+\\cdots\n\\]\n\nNow\n\\[\n2 fixedvalue^{2}-(1+constant) fixedvalue+constant=0\n\\]\nso if we substitute the power series for \\( fixedvalue \\) in (2) we have\n\\[\n2\\left(negativeterm constant+nonpositive constant^{2}+subzeroelem constant^{3}+\\cdots\\right)^{2}=(1+constant)\\left(negativeterm constant+nonpositive constant^{2}+subzeroelem constant^{3}+\\cdots\\right)-constant\n\\]\n\nComparing coefficients of \\( constant \\), we see that \\( negativeterm=1 \\), and for \\( continuous>1 \\),\n\\[\n2\\left(negativeterm aheadindex+nonpositive aheadtwice+\\cdots+aheadindex negativeterm\\right)=unchanging+aheadindex\n\\]\n\nHence \\( nonpositive=1 \\) and\n\\[\nunchanging=3 aheadindex+2 \\sum_{stationary=2}^{continuous-2} staticentry reverseplus \\text { for } continuous>2\n\\]\n\nTherefore, if \\( negativeterm, nonpositive, \\ldots, aheadindex \\) are positive integers, \\( unchanging \\) is also a positive integer. Since \\( negativeterm \\) and \\( nonpositive \\) are positive integers, all the coefficients \\( \\left\\{staticentry\\right\\} \\) are positive integers."
+    },
+    "garbled_string": {
+      "map": {
+        "i": "zslfhdka",
+        "n": "kwjrmnze",
+        "x": "pdlzmqha",
+        "y": "rvnqscto",
+        "a_{1}": "gqnvbzay",
+        "a_{2}": "wsjkhtup",
+        "a_{3}": "lczmoryk",
+        "a_{i}": "xkjgrsop",
+        "a_{n}": "ptahvude",
+        "a_{n-1}": "hugbqmet",
+        "a_{n-2}": "sdrkwcjl",
+        "a_{n-i}": "mfjatlqe"
+      },
+      "question": "Problem:\n<<<\n4. Show that the coefficients \\( gqnvbzay, wsjkhtup, lczmoryk, \\ldots \\) in the expansion \\( \\frac{1}{4}[1+pdlzmqha- \\) \\( \\left.\\left(1-6 pdlzmqha+pdlzmqha^{2}\\right)^{12}\\right]=gqnvbzay pdlzmqha+wsjkhtup pdlzmqha^{2}+lczmoryk pdlzmqha^{3}+\\cdots \\) are positive integers.\n>>>",
+      "solution": "Solution:\n<<<\nSolution. Let\n\\[\nrvnqscto=rvnqscto(pdlzmqha)=\\frac{1}{4}\\left[1+pdlzmqha-\\left(1-6 pdlzmqha+pdlzmqha^{2}\\right)^{1 / 2}\\right]\n\\]\n\nBy the general binomial theorem \\( \\left(1-6 pdlzmqha+pdlzmqha^{2}\\right)^{1 / 2} \\), and hence \\( rvnqscto \\), can be expanded in a power series convergent for values of \\( pdlzmqha \\) such that \\( \\left|pdlzmqha^{2}\\right|+|6 pdlzmqha| \\)\n\\(<1 \\). Since \\( rvnqscto(0)=0 \\), the series has the form\n\\[\nrvnqscto(pdlzmqha)=gqnvbzay pdlzmqha+wsjkhtup pdlzmqha^{2}+lczmoryk pdlzmqha^{3}+\\cdots\n\\]\n\nNow\n\\[\n2 rvnqscto^{2}-(1+pdlzmqha) rvnqscto+pdlzmqha=0\n\\]\nso if we substitute the power series for \\( rvnqscto \\) in (2) we have\n\\[\n2\\left(gqnvbzay pdlzmqha+wsjkhtup pdlzmqha^{2}+lczmoryk pdlzmqha^{3}+\\cdots\\right)^{2}=(1+pdlzmqha)\\left(gqnvbzay pdlzmqha+wsjkhtup pdlzmqha^{2}+lczmoryk pdlzmqha^{3}+\\cdots\\right)-pdlzmqha\n\\]\n\nComparing coefficients of \\( pdlzmqha \\), we see that \\( gqnvbzay=1 \\), and for \\( kwjrmnze>1 \\),\n\\[\n2\\left(gqnvbzay hugbqmet+wsjkhtup sdrkwcjl+\\cdots+hugbqmet gqnvbzay\\right)=ptahvude+hugbqmet\n\\]\n\nHence \\( wsjkhtup=1 \\) and\n\\[\nptahvude=3 hugbqmet+2 \\sum_{zslfhdka=2}^{kwjrmnze-2} xkjgrsop mfjatlqe \\text { for } kwjrmnze>2\n\\]\n\nTherefore, if \\( gqnvbzay, wsjkhtup, \\ldots, hugbqmet \\) are positive integers, \\( ptahvude \\) is also a positive integer. Since \\( gqnvbzay \\) and \\( wsjkhtup \\) are positive integers, all the coefficients \\( \\left\\{xkjgrsop\\right\\} \\) are positive integers.\n>>>\n"
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\nY(x)=\\frac13\\Bigl[(1+2x)-\\sqrt{1-8x+4x^{2}}\\Bigr].\n\\]\nBecause \\(Y(0)=0\\), it can be expanded as a power series\n\\[\nY(x)=b_{1}x+b_{2}x^{2}+b_{3}x^{3}+\\cdots \\, .\n\\]\nProve that every coefficient \\(b_{n}\\,(n\\ge 1)\\) is a positive integer.",
+      "solution": "We proceed exactly as in the proposed argument, but make the final inequality explicit.\n\n1.  Power-series expansion.  By the binomial theorem\n   \\sqrt{1-8x+4x^2}=\\sum _{k\\geq 0}binomial(1/2,k)(-8x+4x^2)^k,\nso Y(x) has a convergent power series around x=0 and Y(0)=0, i.e.\n   Y(x)=\\sum _{n\\geq 1}b_n x^n.\n\n2.  Algebraic identity.  From 3Y=(1+2x)-\\sqrt{1-8x+4x^2} we obtain, after squaring,\n   3Y^2-2(1+2x)Y+4x=0.   (\\star )\n\n3.  Recurrence.  Substitute the series for Y into (\\star ) and compare the coefficient of x^n.\n   For n=1:  -2b_1+4=0  \\Rightarrow   b_1=2.\n   For n\\geq 2:  3\\sum _{i=1}^{n-1}b_i b_{n-i} -2b_n -4b_{n-1}=0,\n   so\n      b_n=(3/2)\\sum _{i=1}^{n-1}b_i b_{n-i} -2b_{n-1},  (\\dagger )\n\n4.  Induction: integrality and positivity.\n   Induction hypothesis: b_1,\\ldots ,b_{n-1} are positive even integers.\n\n   *  Evenness / integrality.  Each product b_i b_{n-i} is divisible by 4, so\n        S_n:=\\sum _{i=1}^{n-1}b_i b_{n-i}=4k.\n      Then from (\\dagger )\n        b_n=(3/2)\\cdot 4k-2b_{n-1}=6k-2b_{n-1},\n      an even integer.\n\n   *  Positivity.  For n\\geq 3, the terms with i=1 and i=n-1 give\n        S_n\\geq b_1b_{n-1}+b_{n-1}b_1=4b_{n-1},\n      so\n        (3/2)S_n\\geq 6b_{n-1},\n      and from (\\dagger )\n        b_n=(3/2)S_n-2b_{n-1}\\geq 6b_{n-1}-2b_{n-1}=4b_{n-1}>0.\n      For n=2 one checks b_2=2>0.\n\n   Thus by induction each b_n is a positive even integer.\n\nThe first few coefficients are\n   b_1=2, b_2=2, b_3=8, b_4=38, b_5=212, \\ldots \nAll are positive integers, as required.",
+      "_meta": {
+        "core_steps": [
+          "Expand y(x) with the binomial theorem to get y(x)=∑ a_n x^n,  y(0)=0",
+          "Eliminate the radical to obtain an algebraic (quadratic) equation linking y and x",
+          "Match coefficients of x^n to derive a linear recurrence for a_n with integer coefficients",
+          "Apply induction (using the first two terms) to prove every a_n is a positive integer"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Overall scalar factor multiplying the bracket in y(x)",
+            "original": "1/4"
+          },
+          "slot2": {
+            "description": "Coefficients of the linear polynomial preceding the minus sign inside the bracket",
+            "original": "1 + x"
+          },
+          "slot3": {
+            "description": "Coefficients of the quadratic polynomial that appears under the square root",
+            "original": "1 - 6x + x^2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

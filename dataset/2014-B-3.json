@@ -1,0 +1,213 @@
+{
+  "index": "2014-B-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Let $A$ be an $m \\times n$ matrix with rational entries.\nSuppose that there are at least $m+n$ distinct prime numbers among the absolute values of the entries of $A$. Show that the rank of $A$ is at least 2.",
+  "solution": "\\textbf{First solution:}\nAssume by way of contradiction that $A$ has rank at most 1;\nin this case, we can find rational numbers $a_1,\\dots,a_m$, $b_1,\\dots,b_n$ such that\n$A_{ij} = a_i b_j$ for all $i,j$. By deleting rows or columns, we may reduce to the case where the $a_i$'s and $b_j$'s are all nonzero.\n\nRecall that any nonzero rational number $q$ has a unique prime factorization\n\\[\nq = \\pm 2^{c_1} 3^{c_2} 5^{c_3} \\cdots\n\\]\nwith exponents in $\\ZZ$. Set\n\\[\nc(q) = (c_1, c_2, c_3, \\dots).\n\\]\nNote that $|a_i b_j|$ is prime if and only if $c(a_i) + c(b_j)$ has one entry equal to 1 and all others equal to 0. The condition that $m+n$ distinct primes appear in the matrix implies that the vector space \n\\[\n\\left\\{ \\sum_i x_i c(a_i) + \\sum_j y_i c(b_j) : x_i, y_j \\in \\RR, \\sum_i x_i = \\sum_j y_j \\right\\} \n\\]\ncontains a linearly independent set of size $m+n$. But that space evidently has dimension at most $m+n-1$, contradiction.\n\n\\textbf{Second solution:}\nIn this solution, we use standard terminology of graph theory, considering only simple undirected graphs (with no self-loops or multiple edges).\nWe first recall the quick induction proof that that a graph on $k$ vertices\n with no cycles contains at most $k-1$ edges: for $k=1$, the claim is trivially true because there can be no edges.\nFor $k>1$, choose any vertex $v$ and let $d$ be its degree. Removing the vertex $v$ and the edges incident to it leaves a disjoint union of $d$ different graphs, each having no cycles. If the numbers of vertices in these graphs are $k_1,\\dots,k_d$, by induction the total number of edges in the original graph is at most $(k_1 - 1) + \\cdots + (k_d - 1) + d = k - 1$.\n\nReturning to the original problem, suppose that $A$ has rank at most 1.\nDraw a bipartite graph whose vertices correspond to the rows and columns of $A$, with an edge joining a particular row and column if the entry where they intersect has prime absolute value. By the previous paragraph, this graph must contain a cycle. Since the graph is bipartite, this cycle must be of length $2k$ for some integer $k \\geq 2$ (we cannot have $k=1$ because the graph has no repeated edges). Without loss of generality, we may assume that the cycle consists of row 1, column 1, row 2, column 2, and so on. There must then exist distinct prime numbers $p_1, \\dots, p_{2k}$ such that\n\\[\n\\left| A_{11} \\right| = p_1, \\left| A_{21} \\right| = p_2, \\dots,\n\\left| A_{kk} \\right| = p_{2k-1}, \\left| A_{1k} \\right| = p_{2k}.\n\\]\nHowever, since $A$ has rank 1, the $2 \\times 2$ minor $A_{11} A_{ij} - A_{i1} A_{1j}$ must vanish for all $i,j$. If we put $r_i = \\left|A_{i1} \\right|$ and $c_j = \\left| A_{ij}/A_{11} \\right|$, we have\n\\begin{align*}\np_1 \\cdots p_{2k} &= (r_1 c_1)(r_2 c_1) \\cdots (r_k c_k) (r_1 c_k) \\\\\n&= (r_1 c_1 \\cdots r_k c_k)^2,\n\\end{align*}\nwhich contradicts the existence of unique prime factorizations for positive rational numbers: the prime $p_1$ occurs with exponent 1 on the left, but with some even exponent on the right. This contradiction completes the proof.",
+  "vars": [
+    "A",
+    "A_ij",
+    "A_11",
+    "A_21",
+    "A_kk",
+    "A_1k",
+    "a_i",
+    "b_j",
+    "q",
+    "c",
+    "c_1",
+    "c_2",
+    "c_3",
+    "x_i",
+    "y_j",
+    "v",
+    "k",
+    "k_1",
+    "k_d",
+    "d",
+    "p_1",
+    "p_2k",
+    "r_i",
+    "c_j",
+    "i",
+    "j"
+  ],
+  "params": [
+    "m",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "matrixa",
+        "A_ij": "matrixentry",
+        "A_11": "entryoneone",
+        "A_21": "entrytwoone",
+        "A_kk": "entrykk",
+        "A_1k": "entryonek",
+        "a_i": "rowfactor",
+        "b_j": "colfactor",
+        "q": "rationum",
+        "c": "expvector",
+        "c_1": "expone",
+        "c_2": "exptwo",
+        "c_3": "expthree",
+        "x_i": "coeffx",
+        "y_j": "coeffy",
+        "v": "graphnode",
+        "k": "cyclenum",
+        "k_1": "subsizeone",
+        "k_d": "subsized",
+        "d": "degreecnt",
+        "p_1": "primeone",
+        "p_2k": "primelast",
+        "r_i": "rowmag",
+        "c_j": "colmag",
+        "i": "rowidx",
+        "j": "colidx",
+        "m": "numrows",
+        "n": "numcols"
+      },
+      "question": "Let $matrixa$ be a $numrows \\times numcols$ matrix with rational entries.\nSuppose that there are at least $numrows+numcols$ distinct prime numbers among the absolute values of the entries of $matrixa$. Show that the rank of $matrixa$ is at least 2.",
+      "solution": "\\textbf{First solution:}\nAssume by way of contradiction that $matrixa$ has rank at most 1; in this case, we can find rational numbers $rowfactor_1,\\dots,rowfactor_{numrows}$, $colfactor_1,\\dots,colfactor_{numcols}$ such that $matrixentry = rowfactor\\, colfactor$ for all $rowidx,colidx$. By deleting rows or columns, we may reduce to the case where the $rowfactor$'s and $colfactor$'s are all nonzero.\n\nRecall that any nonzero rational number $rationum$ has a unique prime factorization\n\\[\nrationum = \\pm 2^{expone} 3^{exptwo} 5^{expthree} \\cdots\n\\]\nwith exponents in $\\mathbb{Z}$. Set\n\\[\nexpvector(rationum) = (expone, exptwo, expthree, \\dots).\n\\]\nNote that $|rowfactor\\, colfactor|$ is prime if and only if $expvector(rowfactor) + expvector(colfactor)$ has one entry equal to $1$ and all others equal to $0$. The condition that $numrows+numcols$ distinct primes appear in the matrix implies that the vector space\n\\[\n\\left\\{ \\sum_{rowidx} coeffx\\, expvector(rowfactor) + \\sum_{colidx} coeffy\\, expvector(colfactor) : coeffx, coeffy \\in \\mathbb{R}, \\sum_{rowidx} coeffx = \\sum_{colidx} coeffy \\right\\}\n\\]\ncontains a linearly independent set of size $numrows+numcols$. But that space evidently has dimension at most $numrows+numcols-1$, contradiction.\n\n\\textbf{Second solution:}\nIn this solution, we use standard terminology of graph theory, considering only simple undirected graphs (with no self-loops or multiple edges). We first recall the quick induction proof that a graph on $cyclenum$ vertices with no cycles contains at most $cyclenum-1$ edges: for $cyclenum=1$, the claim is trivially true because there can be no edges. For $cyclenum>1$, choose any vertex $graphnode$ and let $degreecnt$ be its degree. Removing the vertex $graphnode$ and the edges incident to it leaves a disjoint union of $degreecnt$ different graphs, each having no cycles. If the numbers of vertices in these graphs are $subsizeone,\\dots,subsized$, by induction the total number of edges in the original graph is at most $(subsizeone - 1) + \\cdots + (subsized - 1) + degreecnt = cyclenum - 1$.\n\nReturning to the original problem, suppose that $matrixa$ has rank at most 1. Draw a bipartite graph whose vertices correspond to the rows and columns of $matrixa$, with an edge joining a particular row and column if the entry where they intersect has prime absolute value. By the previous paragraph, this graph must contain a cycle. Since the graph is bipartite, this cycle must be of length $2cyclenum$ for some integer $cyclenum \\ge 2$ (we cannot have $cyclenum=1$ because the graph has no repeated edges). Without loss of generality, we may assume that the cycle consists of row $1$, column $1$, row $2$, column $2$, and so on. There must then exist distinct prime numbers $primeone, \\dots, primelast$ such that\n\\[\n\\left| entryoneone \\right| = primeone, \\left| entrytwoone \\right| = p_2, \\dots, \\left| entrykk \\right| = p_{2cyclenum-1}, \\left| entryonek \\right| = primelast.\n\\]\nHowever, since $matrixa$ has rank $1$, the $2 \\times 2$ minor $entryoneone\\, matrixentry - matrixa_{rowidx1}\\, matrixa_{1colidx}$ must vanish for all $rowidx,colidx$. If we put $rowmag = \\left| matrixa_{rowidx1} \\right|$ and $colmag = \\left| matrixa_{rowidx colidx} / entryoneone \\right|$, we have\n\\[\nprimeone \\cdots primelast = (rowmag_1\\, colmag_1)(rowmag_2\\, colmag_1) \\cdots (rowmag_{cyclenum}\\, colmag_{cyclenum}) (rowmag_1\\, colmag_{cyclenum}) = (rowmag_1\\, colmag_1 \\cdots rowmag_{cyclenum}\\, colmag_{cyclenum})^{2},\n\\]\nwhich contradicts the existence of unique prime factorizations for positive rational numbers: the prime $primeone$ occurs with exponent $1$ on the left, but with some even exponent on the right. This contradiction completes the proof."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "lighthouse",
+        "A_ij": "riverbank",
+        "A_11": "starflower",
+        "A_21": "moonbeacon",
+        "A_kk": "sandcastle",
+        "A_1k": "raincloud",
+        "a_i": "treetower",
+        "b_j": "stonechair",
+        "q": "penumbra",
+        "c": "driftwood",
+        "c_1": "sunflower",
+        "c_2": "thunderclap",
+        "c_3": "ridgecrest",
+        "x_i": "silkgarden",
+        "y_j": "copperveil",
+        "v": "windchime",
+        "k": "glowworm",
+        "k_1": "nightshade",
+        "k_d": "riverstone",
+        "d": "stargazer",
+        "p_1": "mistletoe",
+        "p_2k": "heartforge",
+        "r_i": "cloudspire",
+        "c_j": "frostbloom",
+        "i": "labyrinth",
+        "j": "stonewell",
+        "m": "parchment",
+        "n": "blacksmith"
+      },
+      "question": "Let $lighthouse$ be an $parchment \\times blacksmith$ matrix with rational entries.\nSuppose that there are at least $parchment+blacksmith$ distinct prime numbers among the absolute values of the entries of $lighthouse$. Show that the rank of $lighthouse$ is at least 2.",
+      "solution": "\\textbf{First solution:}\nAssume by way of contradiction that $lighthouse$ has rank at most 1;\nin this case, we can find rational numbers $a_1,\\dots,a_{parchment}$, $b_1,\\dots,b_{blacksmith}$ such that\n$riverbank = treetower stonechair$ for all $labyrinth,stonewell$. By deleting rows or columns, we may reduce to the case where the $treetower$'s and $stonechair$'s are all nonzero.\n\nRecall that any nonzero rational number $penumbra$ has a unique prime factorization\n\\[\npenumbra = \\pm 2^{sunflower} 3^{thunderclap} 5^{ridgecrest} \\cdots\n\\]\nwith exponents in \\ZZ. Set\n\\[\ndriftwood(penumbra) = (sunflower, thunderclap, ridgecrest, \\dots).\n\\]\nNote that $|treetower stonechair|$ is prime if and only if $driftwood(treetower) + driftwood(stonechair)$ has one entry equal to 1 and all others equal to 0. The condition that $parchment+blacksmith$ distinct primes appear in the matrix implies that the vector space \n\\[\n\\left\\{ \\sum_{labyrinth} silkgarden\\, driftwood(treetower) + \\sum_{stonewell} copperveil\\, driftwood(stonechair) : silkgarden, copperveil \\in \\RR, \\sum_{labyrinth} silkgarden = \\sum_{stonewell} copperveil \\right\\} \n\\]\ncontains a linearly independent set of size $parchment+blacksmith$. But that space evidently has dimension at most $parchment+blacksmith-1$, contradiction.\n\n\\textbf{Second solution:}\nIn this solution, we use standard terminology of graph theory, considering only simple undirected graphs (with no self-loops or multiple edges).\nWe first recall the quick induction proof that that a graph on $glowworm$ vertices\n with no cycles contains at most $glowworm-1$ edges: for $glowworm=1$, the claim is trivially true because there can be no edges.\nFor $glowworm>1$, choose any vertex $windchime$ and let $stargazer$ be its degree. Removing the vertex $windchime$ and the edges incident to it leaves a disjoint union of $stargazer$ different graphs, each having no cycles. If the numbers of vertices in these graphs are $nightshade,\\dots,riverstone$, by induction the total number of edges in the original graph is at most $(nightshade - 1) + \\cdots + (riverstone - 1) + stargazer = glowworm - 1$.\n\nReturning to the original problem, suppose that $lighthouse$ has rank at most 1.\nDraw a bipartite graph whose vertices correspond to the rows and columns of $lighthouse$, with an edge joining a particular row and column if the entry where they intersect has prime absolute value. By the previous paragraph, this graph must contain a cycle. Since the graph is bipartite, this cycle must be of length $2glowworm$ for some integer $glowworm \\geq 2$ (we cannot have $glowworm=1$ because the graph has no repeated edges). Without loss of generality, we may assume that the cycle consists of row 1, column 1, row 2, column 2, and so on. There must then exist distinct prime numbers $mistletoe, \\dots, heartforge$ such that\n\\[\n\\left| starflower \\right| = mistletoe, \\left| moonbeacon \\right| = p_2, \\dots,\n\\left| sandcastle \\right| = p_{2k-1}, \\left| raincloud \\right| = heartforge.\n\\]\nHowever, since $lighthouse$ has rank 1, the $2 \\times 2$ minor $starflower riverbank - A_{i1} A_{1j}$ must vanish for all $labyrinth,stonewell$. If we put $cloudspire = \\left|A_{i1} \\right|$ and $frostbloom = \\left| riverbank/starflower \\right|$, we have\n\\begin{align*}\nmistletoe \\cdots heartforge &= (r_1 c_1)(r_2 c_1) \\cdots (r_k c_k) (r_1 c_k) \\\\\n&= (r_1 c_1 \\cdots r_k c_k)^2,\n\\end{align*}\nwhich contradicts the existence of unique prime factorizations for positive rational numbers: the prime $mistletoe$ occurs with exponent 1 on the left, but with some even exponent on the right. This contradiction completes the proof."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "scalarform",
+        "A_ij": "globalentity",
+        "A_11": "peripheral",
+        "A_21": "centralpiece",
+        "A_kk": "fixedspot",
+        "A_1k": "randomspot",
+        "a_i": "staticconstant",
+        "b_j": "steadyfactor",
+        "q": "irrational",
+        "c": "inflator",
+        "c_1": "diminishone",
+        "c_2": "diminishtwo",
+        "c_3": "diminishthree",
+        "x_i": "lockedvalue",
+        "y_j": "frozenvalue",
+        "v": "edgelink",
+        "k": "infinite",
+        "k_1": "eternalone",
+        "k_d": "eternaldim",
+        "d": "degreeless",
+        "p_1": "compositeone",
+        "p_2k": "compositelast",
+        "r_i": "roughvalue",
+        "c_j": "variablerate",
+        "i": "primaryidx",
+        "j": "secondaryidx",
+        "m": "miniscule",
+        "n": "neglectable"
+      },
+      "question": "Let $scalarform$ be an $miniscule \\times neglectable$ matrix with rational entries.\nSuppose that there are at least $miniscule+neglectable$ distinct prime numbers among the absolute values of the entries of $scalarform$. Show that the rank of $scalarform$ is at least 2.",
+      "solution": "\\textbf{First solution:}\nAssume by way of contradiction that $scalarform$ has rank at most 1; in this case, we can find rational numbers $staticconstant_1,\\dots,staticconstant_{miniscule}$, $steadyfactor_1,\\dots,steadyfactor_{neglectable}$ such that $globalentity = staticconstant\\,steadyfactor$ for all $primaryidx,secondaryidx$. By deleting rows or columns, we may reduce to the case where the $staticconstant$'s and $steadyfactor$'s are all nonzero.\n\nRecall that any nonzero rational number $irrational$ has a unique prime factorization\n\\[\nirrational = \\pm 2^{diminishone} 3^{diminishtwo} 5^{diminishthree} \\cdots\n\\]\nwith exponents in $\\ZZ$. Set\n\\[\ninflator(irrational) = (diminishone, diminishtwo, diminishthree, \\dots).\n\\]\nNote that $|staticconstant\\,steadyfactor|$ is prime if and only if $inflator(staticconstant) + inflator(steadyfactor)$ has one entry equal to 1 and all others equal to 0. The condition that $miniscule+neglectable$ distinct primes appear in the matrix implies that the vector space\n\\[\n\\left\\{ \\sum_{primaryidx} lockedvalue\\,inflator(staticconstant) + \\sum_{secondaryidx} frozenvalue\\,inflator(steadyfactor) : lockedvalue, frozenvalue \\in \\RR, \\sum_{primaryidx} lockedvalue = \\sum_{secondaryidx} frozenvalue \\right\\}\n\\]\ncontains a linearly independent set of size $miniscule+neglectable$. But that space evidently has dimension at most $miniscule+neglectable-1$, contradiction.\n\n\\textbf{Second solution:}\nIn this solution, we use standard terminology of graph theory, considering only simple undirected graphs (with no self-loops or multiple edges). We first recall the quick induction proof that a graph on $infinite$ vertices with no cycles contains at most $infinite-1$ edges: for $infinite=1$, the claim is trivially true because there can be no edges. For $infinite>1$, choose any vertex $edgelink$ and let $degreeless$ be its degree. Removing the vertex $edgelink$ and the edges incident to it leaves a disjoint union of $degreeless$ different graphs, each having no cycles. If the numbers of vertices in these graphs are $eternalone,\\dots,eternaldim$, by induction the total number of edges in the original graph is at most $(eternalone - 1) + \\cdots + (eternaldim - 1) + degreeless = infinite - 1$.\n\nReturning to the original problem, suppose that $scalarform$ has rank at most 1. Draw a bipartite graph whose vertices correspond to the rows and columns of $scalarform$, with an edge joining a particular row and column if the entry where they intersect has prime absolute value. By the previous paragraph, this graph must contain a cycle. Since the graph is bipartite, this cycle must be of length $2infinite$ for some integer $infinite \\ge 2$ (we cannot have $infinite=1$ because the graph has no repeated edges). Without loss of generality, we may assume that the cycle consists of row 1, column 1, row 2, column 2, and so on. There must then exist distinct prime numbers $compositeone, \\dots, p_{2infinite}$ such that\n\\[\n\\left| peripheral \\right| = compositeone, \\left| centralpiece \\right| = p_2, \\dots, \\left| fixedspot \\right| = p_{2infinite-1}, \\left| randomspot \\right| = compositelast.\n\\]\nHowever, since $scalarform$ has rank 1, the $2 \\times 2$ minor $peripheral\\,globalentity - A_{primaryidx1} A_{1\\,secondaryidx}$ must vanish for all $primaryidx,secondaryidx$. If we put $roughvalue = \\left|A_{primaryidx1} \\right|$ and $variablerate = \\left| A_{primaryidx\\,secondaryidx}/peripheral \\right|$, we have\n\\begin{align*}\ncompositeone \\cdots compositelast &= (roughvalue_1\\,variablerate_1)(roughvalue_2\\,variablerate_1) \\cdots (roughvalue_{infinite}\\,variablerate_{infinite}) (roughvalue_1\\,variablerate_{infinite}) \\\\\n&= (roughvalue_1\\,variablerate_1 \\cdots roughvalue_{infinite}\\,variablerate_{infinite})^2,\n\\end{align*}\nwhich contradicts the existence of unique prime factorizations for positive rational numbers: the prime $compositeone$ occurs with exponent 1 on the left, but with some even exponent on the right. This contradiction completes the proof."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "A_ij": "hjgrksla",
+        "A_11": "pldmqwer",
+        "A_21": "xbtgsfao",
+        "A_kk": "ndvplmre",
+        "A_1k": "vscmjhqa",
+        "a_i": "tqwhdlfb",
+        "b_j": "czxlpqme",
+        "q": "svtrbnel",
+        "c": "mzafglio",
+        "c_1": "lopkrdse",
+        "c_2": "wenvfhrs",
+        "c_3": "jyudpxam",
+        "x_i": "tmezfjqn",
+        "y_j": "pkslrtnv",
+        "v": "rghaldux",
+        "k": "nbxsoyle",
+        "k_1": "qbhrsnwd",
+        "k_d": "zlatmxpe",
+        "d": "uemrkdsa",
+        "p_1": "ihvbpsol",
+        "p_2k": "flkdrtne",
+        "r_i": "jkawnvsq",
+        "c_j": "fumqtbro",
+        "i": "ywhdkpsn",
+        "j": "oslrcvta",
+        "m": "qdnweipz",
+        "n": "svajkbum"
+      },
+      "question": "Let $qzxwvtnp$ be an $qdnweipz \\times svajkbum$ matrix with rational entries.\nSuppose that there are at least $qdnweipz+svajkbum$ distinct prime numbers among the absolute values of the entries of $qzxwvtnp$. Show that the rank of $qzxwvtnp$ is at least 2.",
+      "solution": "\\textbf{First solution:}\nAssume by way of contradiction that $qzxwvtnp$ has rank at most 1; in this case, we can find rational numbers $tqwhdlfb_1,\\dots,tqwhdlfb_{qdnweipz}$, $czxlpqme_1,\\dots,czxlpqme_{svajkbum}$ such that\n$hjgrksla = tqwhdlfb_{ywhdkpsn} czxlpqme_{oslrcvta}$ for all $ywhdkpsn,oslrcvta$. By deleting rows or columns, we may reduce to the case where the $tqwhdlfb_{ywhdkpsn}$'s and $czxlpqme_{oslrcvta}$'s are all nonzero.\n\nRecall that any nonzero rational number $svtrbnel$ has a unique prime factorization\n\\[\nsvtrbnel = \\pm 2^{lopkrdse} 3^{wenvfhrs} 5^{jyudpxam} \\cdots\n\\]\nwith exponents in $\\ZZ$. Set\n\\[\nmzafglio(svtrbnel) = (lopkrdse, wenvfhrs, jyudpxam, \\dots).\n\\]\nNote that $|tqwhdlfb_{ywhdkpsn} czxlpqme_{oslrcvta}|$ is prime if and only if $mzafglio(tqwhdlfb_{ywhdkpsn}) + mzafglio(czxlpqme_{oslrcvta})$ has one entry equal to 1 and all others equal to 0. The condition that $qdnweipz+svajkbum$ distinct primes appear in the matrix implies that the vector space \n\\[\n\\left\\{ \\sum_{ywhdkpsn} tmezfjqn_{ywhdkpsn}\\, mzafglio(tqwhdlfb_{ywhdkpsn}) + \\sum_{oslrcvta} pkslrtnv_{oslrcvta}\\, mzafglio(czxlpqme_{oslrcvta}) : tmezfjqn_{ywhdkpsn}, pkslrtnv_{oslrcvta} \\in \\RR, \\sum_{ywhdkpsn} tmezfjqn_{ywhdkpsn} = \\sum_{oslrcvta} pkslrtnv_{oslrcvta} \\right\\} \n\\]\ncontains a linearly independent set of size $qdnweipz+svajkbum$. But that space evidently has dimension at most $qdnweipz+svajkbum-1$, contradiction.\n\n\\textbf{Second solution:}\nIn this solution, we use standard terminology of graph theory, considering only simple undirected graphs (with no self-loops or multiple edges).\nWe first recall the quick induction proof that a graph on $nbxsoyle$ vertices with no cycles contains at most $nbxsoyle-1$ edges: for $nbxsoyle=1$, the claim is trivially true because there can be no edges.\nFor $nbxsoyle>1$, choose any vertex $rghaldux$ and let $uemrkdsa$ be its degree. Removing the vertex $rghaldux$ and the edges incident to it leaves a disjoint union of $uemrkdsa$ different graphs, each having no cycles. If the numbers of vertices in these graphs are $qbhrsnwd,\\dots,zlatmxpe$, by induction the total number of edges in the original graph is at most $(qbhrsnwd - 1) + \\cdots + (zlatmxpe - 1) + uemrkdsa = nbxsoyle - 1$.\n\nReturning to the original problem, suppose that $qzxwvtnp$ has rank at most 1.\nDraw a bipartite graph whose vertices correspond to the rows and columns of $qzxwvtnp$, with an edge joining a particular row and column if the entry where they intersect has prime absolute value. By the previous paragraph, this graph must contain a cycle. Since the graph is bipartite, this cycle must be of length $2nbxsoyle$ for some integer $nbxsoyle \\ge 2$ (we cannot have $nbxsoyle=1$ because the graph has no repeated edges). Without loss of generality, we may assume that the cycle consists of row 1, column 1, row 2, column 2, and so on. There must then exist distinct prime numbers $ihvbpsol, \\dots, flkdrtne$ such that\n\\[\n\\left| pldmqwer \\right| = ihvbpsol, \\left| xbtgsfao \\right| = p_2, \\dots,\n\\left| ndvplmre \\right| = p_{2nbxsoyle-1}, \\left| vscmjhqa \\right| = flkdrtne.\n\\]\nHowever, since $qzxwvtnp$ has rank 1, the $2 \\times 2$ minor $pldmqwer\\, hjgrksla - qzxwvtnp_{ywhdkpsn1}\\, qzxwvtnp_{1\\,oslrcvta}$ must vanish for all $ywhdkpsn,oslrcvta$. If we put $jkawnvsq_{ywhdkpsn} = \\left|qzxwvtnp_{ywhdkpsn1} \\right|$ and $fumqtbro_{oslrcvta} = \\left| qzxwvtnp_{ywhdkpsn\\,oslrcvta}/pldmqwer \\right|$, we have\n\\begin{align*}\nihvbpsol \\cdots flkdrtne &= (jkawnvsq_1\\, fumqtbro_1)(jkawnvsq_2\\, fumqtbro_1) \\cdots (jkawnvsq_{nbxsoyle}\\, fumqtbro_{nbxsoyle}) (jkawnvsq_1\\, fumqtbro_{nbxsoyle}) \\\\\n&= (jkawnvsq_1\\, fumqtbro_1 \\cdots jkawnvsq_{nbxsoyle}\\, fumqtbro_{nbxsoyle})^2,\n\\end{align*}\nwhich contradicts the existence of unique prime factorizations for positive rational numbers: the prime $ihvbpsol$ occurs with exponent 1 on the left, but with some even exponent on the right. This contradiction completes the proof."
+    },
+    "kernel_variant": {
+      "question": "Let m,n \\ge 1 and let A be an m \\times n matrix whose entries lie in the polynomial ring \\(\\mathbb Q[X]\\).  Suppose that at least m+n of the entries of A are monic, irreducible polynomials and that these polynomials are pairwise distinct.  Show that the rank of A over the field \\(\\mathbb Q(X)\\) of rational functions is at least 2.",
+      "solution": "We argue by contradiction.  Assume that \\(\\operatorname{rank}_{\\mathbb Q(X)} A \\le 1\\).\n\nStep 0.  Remove the zero rows and columns.\nBecause \\(\\operatorname{rank}A\\le 1\\), there exist (not simultaneously-zero) vectors\n\\[u=(u_1,\\dots,u_m)^T\\in\\mathbb Q(X)^m, \\qquad v=(v_1,\\dots,v_n)^T\\in\\mathbb Q(X)^n\\]\nsuch that A = u v^{\\!T}; i.e. \\(A_{ij}=u_i v_j\\) for all i,j.\n\nPut\n\\[I:=\\{i\\mid u_i\\ne 0\\},\\qquad J:=\\{j\\mid v_j\\ne 0\\}.\n\\]\nIf a row i \\notin I (or a column j \\notin J) then that whole row (column) is zero and hence cannot contain any monic irreducible entry.  Therefore every monic irreducible entry of A lies inside the sub-matrix\n\\[A'=(A_{ij})_{i\\in I,\\,j\\in J}\\in\\mathbb Q[X]^{|I|\\times|J|}.\\]\nLet\n\\[m':=|I|,\\qquad n':=|J|.\\]\nWe still have at least m+n \\ge m'+n' distinct monic irreducible entries inside A'.  Re-indexing, we may (and shall) assume from now on that A itself is this \\(m'\\times n'\\) matrix and that the representing vectors satisfy\n\\[A_{ij}=a_i b_j\\quad(1\\le i\\le m',\\;1\\le j\\le n'),\\qquad a_i,b_j\\in\\mathbb Q(X)^\\times.\\]\n(The non-vanishing of each a_i and b_j is the only new input of Step 0.)\n\nStep 1.  Exponent vectors.\nEvery non-zero \\(f\\in\\mathbb Q(X)\\) has a unique factorisation\n\\[f=c\\prod_{P} P^{e_P},\\qquad c\\in\\mathbb Q^{\\times},\\;e_P\\in\\mathbb Z,\\]\nwhere the product ranges over the monic irreducible polynomials \\(P\\in\\mathbb Q[X]\\).  Define its exponent vector\n\\[\\mathbf c(f)=(e_P)_P\\in\\mathbb Z^{(\\mathcal P)},\\]\n\\(\\mathcal P\\) being the set of monic irreducibles.\n\nStep 2.  Irreducible entries give independent vectors.\nLet \\(Q_1,\\dots,Q_{m'+n'}\\) be \\(m'+n'\\) pairwise distinct monic irreducible entries of A.  Then each \\(\\mathbf c(Q_k)\\) has a single 1-coordinate and zeros elsewhere, so the family \\(\\{\\mathbf c(Q_k)\\}_{k=1}^{m'+n'}\\) is linearly independent over \\(\\mathbb Q\\).\n\nStep 3.  All exponent vectors lie in a small subspace.\nFrom \\(A_{ij}=a_i b_j\\) we obtain\n\\[\\mathbf c(A_{ij})=\\mathbf c(a_i)+\\mathbf c(b_j).\\]\nConsequently every exponent vector of an entry of A belongs to\n\\[W=\\Bigl\\{\\sum_{i=1}^{m'} x_i\\,\\mathbf c(a_i)+\\sum_{j=1}^{n'} y_j\\,\\mathbf c(b_j):x_i,y_j\\in\\mathbb Q,\\;\\sum_i x_i=\\sum_j y_j\\Bigr\\}\\subset\\mathbb Q^{(\\mathcal P)}.\\]\nThe \\(m'+n'\\) vectors \\(\\mathbf c(a_1),\\dots,\\mathbf c(a_{m'}),\\mathbf c(b_1),\\dots,\\mathbf c(b_{n'})\\) span W, subject to the single linear relation \\(\\sum_i x_i=\\sum_j y_j\\); hence\n\\[\\dim W\\le(m'+n')-1.\\]\n\nStep 4.  Contradiction.\nBut W contains the \\(m'+n'\\) linearly independent vectors \\(\\mathbf c(Q_1),\\dots,\\mathbf c(Q_{m'+n'})\\).  Therefore\n\\[m'+n'\\le\\dim W\\le m'+n'-1,\\]\na contradiction.  Our initial assumption that \\(\\operatorname{rank}A\\le1\\) is impossible; hence\n\\[\\boxed{\\operatorname{rank}_{\\mathbb Q(X)} A\\ge 2}.\\]\n\nThis completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "If rank ≤ 1, write A_ij = a_i b_j with non-zero rationals a_i , b_j.",
+          "Map each non-zero rational q to the infinite exponent vector c(q) recording its prime factorization.",
+          "A prime entry |A_ij| gives a standard basis vector; ≥ m+n different primes ⇒ ≥ m+n independent vectors inside one linear space.",
+          "That space is {Σ x_i c(a_i)+Σ y_j c(b_j) : Σ x_i = Σ y_j}, which has dimension ≤ m+n−1.",
+          "Independent-set size m+n > dimension ⇒ contradiction; hence rank ≥ 2."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Scalars allowed in the linear combinations that define the subspace (currently ℝ); any field of characteristic 0 would work.",
+            "original": "ℝ  (x_i , y_j ∈ ℝ)"
+          },
+          "slot2": {
+            "description": "Ring in which the matrix entries live; only unique factorization is needed.",
+            "original": "ℚ  (rational numbers)"
+          },
+          "slot3": {
+            "description": "Objects whose distinctness is counted; any set of pairwise non-associate irreducibles suffices.",
+            "original": "prime numbers"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

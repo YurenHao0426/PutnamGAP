@@ -1,0 +1,121 @@
+{
+  "index": "2000-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $A$ be a positive real number.  What are the possible values of\n$\\sum_{j=0}^\\infty x_j^2$, given that $x_0,x_1,\\ldots$ are positive\nnumbers\nfor which $\\sum_{j=0}^\\infty x_j=A$?",
+  "solution": "The possible values comprise the interval $(0, A^2)$.\n\nTo see that the values must lie in this interval, note that\n\\[\n\\left(\\sum_{j=0}^m x_j\\right)^2\n= \\sum_{j=0}^m x_j^2 + \\sum_{0\\leq j<k\\leq m} 2x_jx_k,\n\\]\nso $\\sum_{j=0}^m x_j^2 \\leq A^2 - 2x_0x_1$. Letting $m \\to \\infty$,\nwe have $\\sum_{j=0}^\\infty x_j^2 \\leq A^2-2x_0x_1 < A^2$.\n\nTo show that all values in $(0, A^2)$ can be obtained, we\nuse geometric progressions with $x_1/x_0 = x_2/x_1 = \\cdots = d$\nfor variable $d$.\nThen $\\sum_{j=0}^\\infty x_j = x_0/(1-d)$ and\n\\[\n\\sum_{j=0}^\\infty x_j^2 = \\frac{x_0^2}{1-d^2} = \\frac{1-d}{1+d} \\left(\n\\sum_{j=0}^\\infty x_j \\right)^2.\n\\]\nAs $d$ increases from 0 to 1, $(1-d)/(1+d)$ decreases from 1 to 0.\nThus if we take geometric progressions with $\\sum_{j=0}^\\infty\nx_j = A$, $\\sum_{j=0}^\\infty x_j^2$ ranges from 0 to $A^2$.\nThus the possible values are indeed those in the interval $(0, A^2)$,\nas claimed.",
+  "vars": [
+    "x_j",
+    "x_0",
+    "x_1",
+    "x_2",
+    "x_k",
+    "j",
+    "m",
+    "k",
+    "d"
+  ],
+  "params": [
+    "A"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "totalpos",
+        "x_j": "sequencej",
+        "x_0": "sequencezero",
+        "x_1": "sequenceone",
+        "x_2": "sequencetwo",
+        "x_k": "sequencek",
+        "j": "indexj",
+        "m": "indexm",
+        "k": "indexk",
+        "d": "ratioconst"
+      },
+      "question": "Let $totalpos$ be a positive real number.  What are the possible values of\n$\\sum_{indexj=0}^{\\infty} sequencej^2$, given that $sequencezero,sequenceone,\\ldots$ are positive\nnumbers\nfor which $\\sum_{indexj=0}^{\\infty} sequencej=totalpos$?",
+      "solution": "The possible values comprise the interval $(0, totalpos^2)$.\n\nTo see that the values must lie in this interval, note that\n\\[\n\\left(\\sum_{indexj=0}^{indexm} sequencej\\right)^2\n= \\sum_{indexj=0}^{indexm} sequencej^2 + \\sum_{0\\leq indexj<indexk\\leq indexm} 2 sequencej sequencek,\n\\]\nso $\\sum_{indexj=0}^{indexm} sequencej^2 \\leq totalpos^2 - 2 sequencezero sequenceone$. Letting $indexm \\to \\infty$,\nwe have $\\sum_{indexj=0}^{\\infty} sequencej^2 \\leq totalpos^2-2 sequencezero sequenceone < totalpos^2$.\n\nTo show that all values in $(0, totalpos^2)$ can be obtained, we\nuse geometric progressions with $sequenceone/sequencezero = sequencetwo/sequenceone = \\cdots = ratioconst$\nfor variable $ratioconst$.\nThen $\\sum_{indexj=0}^{\\infty} sequencej = sequencezero/(1-ratioconst)$ and\n\\[\n\\sum_{indexj=0}^{\\infty} sequencej^2 = \\frac{sequencezero^2}{1-ratioconst^2} = \\frac{1-ratioconst}{1+ratioconst} \\left(\n\\sum_{indexj=0}^{\\infty} sequencej \\right)^2.\n\\]\nAs $ratioconst$ increases from 0 to 1, $(1-ratioconst)/(1+ratioconst)$ decreases from 1 to 0.\nThus if we take geometric progressions with $\\sum_{indexj=0}^{\\infty}\nsequencej = totalpos$, $\\sum_{indexj=0}^{\\infty} sequencej^2$ ranges from 0 to $totalpos^2$.\nThus the possible values are indeed those in the interval $(0, totalpos^2)$,\nas claimed."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_j": "marshmallow",
+        "x_0": "pineapple",
+        "x_1": "caterpillar",
+        "x_2": "butterscotch",
+        "x_k": "watermelon",
+        "j": "geranium",
+        "m": "maelstrom",
+        "k": "kangaroo",
+        "d": "daffodil",
+        "A": "armadillo"
+      },
+      "question": "Let $armadillo$ be a positive real number.  What are the possible values of\n$\\sum_{geranium=0}^\\infty marshmallow^2$, given that $pineapple,caterpillar,\\ldots$ are positive\nnumbers\nfor which $\\sum_{geranium=0}^\\infty marshmallow=armadillo$?",
+      "solution": "The possible values comprise the interval $(0, armadillo^2)$.\n\nTo see that the values must lie in this interval, note that\n\\[\n\\left(\\sum_{geranium=0}^{maelstrom} marshmallow\\right)^2\n= \\sum_{geranium=0}^{maelstrom} marshmallow^2 + \\sum_{0\\leq geranium<kangaroo\\leq maelstrom} 2 marshmallow watermelon,\n\\]\nso $\\sum_{geranium=0}^{maelstrom} marshmallow^2 \\leq armadillo^2 - 2 pineapple caterpillar$. Letting $maelstrom \\to \\infty$,\nwe have $\\sum_{geranium=0}^\\infty marshmallow^2 \\leq armadillo^2-2 pineapple caterpillar < armadillo^2$.\n\nTo show that all values in $(0, armadillo^2)$ can be obtained, we\nuse geometric progressions with $caterpillar/pineapple = butterscotch/caterpillar = \\cdots = daffodil$\nfor variable $daffodil$.\nThen $\\sum_{geranium=0}^\\infty marshmallow = \\frac{pineapple}{1-daffodil}$ and\n\\[\n\\sum_{geranium=0}^\\infty marshmallow^2 = \\frac{pineapple^2}{1-daffodil^2} = \\frac{1-daffodil}{1+daffodil} \\left(\n\\sum_{geranium=0}^\\infty marshmallow \\right)^2.\n\\]\nAs $daffodil$ increases from 0 to 1, $(1-daffodil)/(1+daffodil)$ decreases from 1 to 0.\nThus if we take geometric progressions with $\\sum_{geranium=0}^\\infty\nmarshmallow = armadillo$, $\\sum_{geranium=0}^\\infty marshmallow^2$ ranges from 0 to $armadillo^2$.\nThus the possible values are indeed those in the interval $(0, armadillo^2)$,\nas claimed."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_j": "nonpositiveterm",
+        "x_0": "negativeinitial",
+        "x_1": "negativefirst",
+        "x_2": "negativesecond",
+        "x_k": "negativeindex",
+        "j": "terminator",
+        "m": "unbounded",
+        "k": "limitless",
+        "d": "irregularity",
+        "A": "shortfall"
+      },
+      "question": "Let $shortfall$ be a positive real number.  What are the possible values of\n$\\sum_{terminator=0}^\\infty nonpositiveterm^2$, given that $negativeinitial,negativefirst,\\ldots$ are positive\nnumbers\nfor which $\\sum_{terminator=0}^\\infty nonpositiveterm=shortfall$?",
+      "solution": "The possible values comprise the interval $(0, shortfall^2)$.\n\nTo see that the values must lie in this interval, note that\n\\[\n\\left(\\sum_{terminator=0}^{unbounded} nonpositiveterm\\right)^2\n= \\sum_{terminator=0}^{unbounded} nonpositiveterm^2 + \\sum_{0\\leq terminator<limitless\\leq unbounded} 2 nonpositiveterm negativeindex,\n\\]\nso $\\sum_{terminator=0}^{unbounded} nonpositiveterm^2 \\leq shortfall^2 - 2 negativeinitial negativefirst$. Letting $unbounded \\to \\infty$,\nwe have $\\sum_{terminator=0}^\\infty nonpositiveterm^2 \\leq shortfall^2-2 negativeinitial negativefirst < shortfall^2$.\n\nTo show that all values in $(0, shortfall^2)$ can be obtained, we\nuse geometric progressions with $negativefirst/negativeinitial = negativesecond/negativefirst = \\cdots = irregularity$\nfor variable $irregularity$.\nThen $\\sum_{terminator=0}^\\infty nonpositiveterm = negativeinitial/(1-irregularity)$ and\n\\[\n\\sum_{terminator=0}^\\infty nonpositiveterm^2 = \\frac{negativeinitial^2}{1-irregularity^2} = \\frac{1-irregularity}{1+irregularity} \\left(\n\\sum_{terminator=0}^\\infty nonpositiveterm \\right)^2.\n\\]\nAs $irregularity$ increases from 0 to 1, $(1-irregularity)/(1+irregularity)$ decreases from 1 to 0.\nThus if we take geometric progressions with $\\sum_{terminator=0}^\\infty\nnonpositiveterm = shortfall$, $\\sum_{terminator=0}^\\infty nonpositiveterm^2$ ranges from 0 to $shortfall^2$.\nThus the possible values are indeed those in the interval $(0, shortfall^2)$,\nas claimed."
+    },
+    "garbled_string": {
+      "map": {
+        "x_j": "qzxwvtnp",
+        "x_0": "hjgrksla",
+        "x_1": "mwuepdvn",
+        "x_2": "fkiotczb",
+        "x_k": "rbasmqye",
+        "j": "sdfrlqpo",
+        "m": "vycnoeht",
+        "k": "wqemznal",
+        "d": "pijxrluk",
+        "A": "algbnxts"
+      },
+      "question": "Let $algbnxts$ be a positive real number.  What are the possible values of\n$\\sum_{sdfrlqpo=0}^\\infty qzxwvtnp^2$, given that $hjgrksla,mwuepdvn,\\ldots$ are positive\nnumbers\nfor which $\\sum_{sdfrlqpo=0}^\\infty qzxwvtnp=algbnxts$?",
+      "solution": "The possible values comprise the interval $(0, algbnxts^2)$.\n\nTo see that the values must lie in this interval, note that\n\\[\n\\left(\\sum_{sdfrlqpo=0}^{vycnoeht} qzxwvtnp\\right)^2\n= \\sum_{sdfrlqpo=0}^{vycnoeht} qzxwvtnp^2 + \\sum_{0\\leq sdfrlqpo<wqemznal\\leq vycnoeht} 2qzxwvtnp rbasmqye,\n\\]\nso $\\sum_{sdfrlqpo=0}^{vycnoeht} qzxwvtnp^2 \\leq algbnxts^2 - 2hjgrksla mwuepdvn$. Letting $vycnoeht \\to \\infty$,\nwe have $\\sum_{sdfrlqpo=0}^\\infty qzxwvtnp^2 \\leq algbnxts^2-2hjgrksla mwuepdvn < algbnxts^2$.\n\nTo show that all values in $(0, algbnxts^2)$ can be obtained, we\nuse geometric progressions with $mwuepdvn/hjgrksla = fkiotczb/mwuepdvn = \\cdots = pijxrluk$\nfor variable $pijxrluk$.\nThen $\\sum_{sdfrlqpo=0}^\\infty qzxwvtnp = hjgrksla/(1-pijxrluk)$ and\n\\[\n\\sum_{sdfrlqpo=0}^\\infty qzxwvtnp^2 = \\frac{hjgrksla^2}{1-pijxrluk^2} = \\frac{1-pijxrluk}{1+pijxrluk} \\left(\n\\sum_{sdfrlqpo=0}^\\infty qzxwvtnp \\right)^2.\n\\]\nAs $pijxrluk$ increases from 0 to 1, $(1-pijxrluk)/(1+pijxrluk)$ decreases from 1 to 0.\nThus if we take geometric progressions with $\\sum_{sdfrlqpo=0}^\\infty\nqzxwvtnp = algbnxts$, $\\sum_{sdfrlqpo=0}^\\infty qzxwvtnp^2$ ranges from 0 to $algbnxts^2$.\nThus the possible values are indeed those in the interval $(0, algbnxts^2)$,\nas claimed."
+    },
+    "kernel_variant": {
+      "question": "Let $A>0$.  For a sequence of positive real numbers $(x_1,x_2,\\dots)$ satisfying\n\\[\\sum_{j=1}^{\\infty}x_j=A,\\]\ndetermine all possible values of the series\n\\[S=\\sum_{j=1}^{\\infty}x_j^{\\,2}.\\]\nGive your answer in terms of $A$.",
+      "solution": "Denote S=\\sum_{j=1}^{\\infty}x_j^{2}.  \n\n1.  An upper bound that is strictly below A^2.  \nFor every m\\ge3,  \n(\\sum_{j=1}^{m}x_j)^2=\\sum_{j=1}^{m}x_j^{2}+2\\sum_{1\\le j<k\\le m}x_jx_k.  \nKeeping only the mixed term with indices 1 and 3 we obtain  \n\\sum_{j=1}^{m}x_j^{2}\\le A^{2}-2x_1x_3<A^{2},  \nbecause x_1x_3>0.  Letting m\\to\\infty gives  \n(*)\\quad 0<S<A^{2}.  \n\n2.  A one-parameter family that attains every value in (0,A^2).  \nFix s>1 and set  \nc_s=A/\\zeta(s),\\quad x_j=c_s j^{-s} (j\\ge1),  \nwhere \\zeta is the Riemann zeta-function.  Then  \n\\sum_{j=1}^{\\infty}x_j=A,  \nS(s)=\\sum_{j=1}^{\\infty}x_j^{2}=c_s^{2}\\sum_{j=1}^{\\infty}j^{-2s}=A^{2}\\,\\frac{\\zeta(2s)}{\\zeta(s)^{2}}.  \nThe map s\\mapsto\\zeta(2s)/\\zeta(s)^{2} is continuous for s>1, and  \n\\lim_{s\\downarrow1}\\zeta(s)=\\infty\\Longrightarrow\\lim_{s\\downarrow1}S(s)=0,  \n\\lim_{s\\to\\infty}\\zeta(s)=1\\Longrightarrow\\lim_{s\\to\\infty}S(s)=A^{2}.  \nHence S(s) ranges over the entire open interval (0,A^2) as s runs through (1,\\infty).  \n\n3.  Conclusion.  \nCombining the bound (*) with the construction above, the set of all attainable values of \\sum_{j=1}^{\\infty}x_j^{2} is precisely the interval (0,A^{2}).",
+      "_meta": {
+        "core_steps": [
+          "Square of partial sum identity gives Σx_j^2 ≤ A^2 – 2x_p x_q < A^2",
+          "Hence any admissible value is strictly below A² (lower bound is 0)",
+          "Pick a one-parameter family of positive sequences with fixed total A (take a GP)",
+          "For that family, Σx_j^2 = (1–d)/(1+d) · A² where d is the parameter",
+          "As d ranges through (0,1), the factor covers (0,1), so every value in (0,A²) occurs"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which particular pair of indices is used to make the inequality strict (any two distinct terms would do).",
+            "original": "(p,q) = (0,1)"
+          },
+          "slot2": {
+            "description": "The specific shape of the one-parameter family that realises all intermediate values (any smoothly parameterised positive sequence whose Σx_j^2/Σx_j^2 ratio sweeps (0,1) suffices).",
+            "original": "Geometric progression with common ratio d ∈ (0,1)"
+          },
+          "slot3": {
+            "description": "Endpoints chosen for the parameter interval; only need a continuous range whose image is (0,1).",
+            "original": "d starts at 0 and approaches 1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,123 @@
+{
+  "index": "1957-B-7",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "7. Let \\( C \\) be a closed convex planar disc bounded by a regular polygon. Show that for each positive integer \\( n \\) there exists a set of points \\( S(n) \\) in the plane such that each \\( n \\) points of \\( S(n) \\) can be covered by \\( C \\), but \\( S(n) \\) itself cannot be covered by \\( \\boldsymbol{C} \\).",
+  "solution": "Solution. Suppose \\( C \\) is a regular polygon of \\( k \\)-sides and \\( r \\) is the radius of the inscribed circle. For a given positive integer \\( n \\), let \\( S=S(n) \\) be a circle of radius \\( r \\sec (\\pi / 2 k n) \\). We must show that\n(i) \\( C \\) cannot be placed so as to cover \\( S \\), and\n(ii) if \\( P_{1}, P_{2}, \\ldots, P_{n} \\) are any \\( n \\) points of \\( S \\), then \\( C \\) can be placed so as to cover \\( \\left\\{P_{1}, \\ldots, P_{n}\\right\\} \\).\n\nKeeping \\( C \\) fixed, we prove that no circular disk of radius exceeding \\( r \\) can be placed inside of \\( C \\). From this (i) follows immediately. For a fixed radius \\( r_{1} \\), the set \\( E \\) of points that are centers of disks of radius \\( r_{1} \\) lying inside \\( C \\) is convex. Moreover, \\( E \\) is invariant under rotations about the center \\( O \\) of \\( C \\) of angle \\( 2 \\pi / k \\). Hence, \\( E \\) is either void or contains \\( O \\). If \\( r_{1}>r \\), the circle of radius \\( r_{1} \\) about \\( O \\) does not lie inside \\( C \\), so \\( E \\) is void in this case; that is, no circular disk of radius \\( r_{1} \\) can be placed inside \\( C \\).\n\nNow we attack (ii). Let \\( P_{1}, P_{2}, \\ldots, P_{n} \\) be points of \\( S \\) and fix a reference point \\( Q \\) in \\( C \\) at distance \\( r \\sec (\\pi / 2 k n) \\) from \\( O \\); place \\( C \\) so that \\( O \\) coincides with the center of \\( S \\), and rotate \\( C \\) about \\( O \\) so that \\( Q \\) describes the circle \\( S \\). Consider one of the \\( P \\) 's, say \\( P_{i} \\). As \\( Q \\) describes \\( S, P_{i} \\) will be on or outside of \\( C \\) when \\( Q \\) is in a set \\( A_{i} \\) that is the union of \\( k \\) closed arcs each of length \\( \\pi / k n \\) radians (precisely when \\( 2 \\pi m / k \\leq \\angle P_{i} O Q \\leq 2 \\pi m / k+\\pi / k n \\) for some integer \\( m \\), if \\( Q \\) is chosen as shown). The length of \\( A_{i} \\) is \\( \\pi / n \\) and the total length of \\( \\bigcup_{i=1}^{n} A_{i} \\) is at most \\( \\pi \\). Therefore \\( S-\\bigcup_{i=1}^{n} A_{i} \\) has length at least \\( \\pi \\) and so is not void. If \\( C \\) is rotated so that \\( Q \\in S-\\cup A_{i} \\), then each of the points \\( P_{1}, \\ldots, P_{n} \\) is inside of \\( C \\). Thus (ii) is proved.",
+  "vars": [
+    "S",
+    "P_i",
+    "r_1",
+    "E",
+    "O",
+    "Q",
+    "m"
+  ],
+  "params": [
+    "C",
+    "n",
+    "k",
+    "r"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "C": "polygoncover",
+        "n": "pointcount",
+        "k": "sidescount",
+        "r": "inradius",
+        "S": "pointset",
+        "P_i": "samplepoint",
+        "r_1": "candidaterad",
+        "E": "centerset",
+        "O": "polygoncenter",
+        "Q": "referencepoint",
+        "m": "integerindex"
+      },
+      "question": "7. Let \\( polygoncover \\) be a closed convex planar disc bounded by a regular polygon. Show that for each positive integer \\( pointcount \\) there exists a set of points \\( pointset(pointcount) \\) in the plane such that each \\( pointcount \\) points of \\( pointset(pointcount) \\) can be covered by \\( polygoncover \\), but \\( pointset(pointcount) \\) itself cannot be covered by \\boldsymbol{polygoncover}.",
+      "solution": "Solution. Suppose \\( polygoncover \\) is a regular polygon of \\( sidescount \\)-sides and \\( inradius \\) is the radius of the inscribed circle. For a given positive integer \\( pointcount \\), let \\( pointset=pointset(pointcount) \\) be a circle of radius \\( inradius \\sec (\\pi / 2\\,sidescount\\,pointcount) \\). We must show that\n(i) \\( polygoncover \\) cannot be placed so as to cover \\( pointset \\), and\n(ii) if \\( samplepoint_{1}, samplepoint_{2}, \\ldots, samplepoint_{pointcount} \\) are any \\( pointcount \\) points of \\( pointset \\), then \\( polygoncover \\) can be placed so as to cover \\( \\left\\{samplepoint_{1}, \\ldots, samplepoint_{pointcount}\\right\\} \\).\n\nKeeping \\( polygoncover \\) fixed, we prove that no circular disk of radius exceeding \\( inradius \\) can be placed inside of \\( polygoncover \\). From this (i) follows immediately. For a fixed radius \\( candidaterad \\), the set \\( centerset \\) of points that are centers of disks of radius \\( candidaterad \\) lying inside \\( polygoncover \\) is convex. Moreover, \\( centerset \\) is invariant under rotations about the center \\( polygoncenter \\) of \\( polygoncover \\) of angle \\( 2 \\pi / sidescount \\). Hence, \\( centerset \\) is either void or contains \\( polygoncenter \\). If \\( candidaterad>inradius \\), the circle of radius \\( candidaterad \\) about \\( polygoncenter \\) does not lie inside \\( polygoncover \\), so \\( centerset \\) is void in this case; that is, no circular disk of radius \\( candidaterad \\) can be placed inside \\( polygoncover \\).\n\nNow we attack (ii). Let \\( samplepoint_{1}, samplepoint_{2}, \\ldots, samplepoint_{pointcount} \\) be points of \\( pointset \\) and fix a reference point \\( referencepoint \\) in \\( polygoncover \\) at distance \\( inradius \\sec (\\pi / 2\\,sidescount\\,pointcount) \\) from \\( polygoncenter \\); place \\( polygoncover \\) so that \\( polygoncenter \\) coincides with the center of \\( pointset \\), and rotate \\( polygoncover \\) about \\( polygoncenter \\) so that \\( referencepoint \\) describes the circle \\( pointset \\). Consider one of the samplepoint's, say \\( samplepoint_{i} \\). As \\( referencepoint \\) describes \\( pointset, samplepoint_{i} \\) will be on or outside of \\( polygoncover \\) when \\( referencepoint \\) is in a set \\( A_{i} \\) that is the union of \\( sidescount \\) closed arcs each of length \\( \\pi / sidescount\\,pointcount \\) radians (precisely when \\( 2 \\pi integerindex / sidescount \\leq \\angle samplepoint_{i} polygoncenter referencepoint \\leq 2 \\pi integerindex / sidescount+\\pi / sidescount\\,pointcount \\) for some integer \\( integerindex \\), if \\( referencepoint \\) is chosen as shown). The length of \\( A_{i} \\) is \\( \\pi / pointcount \\) and the total length of \\( \\bigcup_{i=1}^{pointcount} A_{i} \\) is at most \\( \\pi \\). Therefore \\( pointset-\\bigcup_{i=1}^{pointcount} A_{i} \\) has length at least \\( \\pi \\) and so is not void. If \\( polygoncover \\) is rotated so that \\( referencepoint \\in pointset-\\cup A_{i} \\), then each of the points \\( samplepoint_{1}, \\ldots, samplepoint_{pointcount} \\) is inside of \\( polygoncover \\). Thus (ii) is proved."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S": "bouncepad",
+        "P_i": "gearshift",
+        "r_1": "moondance",
+        "E": "hushpuppy",
+        "O": "driftwood",
+        "Q": "blueberry",
+        "m": "sandstorm",
+        "C": "marshland",
+        "n": "silhouette",
+        "k": "pineconed",
+        "r": "floodgate"
+      },
+      "question": "Problem:\n<<<\n7. Let \\( marshland \\) be a closed convex planar disc bounded by a regular polygon. Show that for each positive integer \\( silhouette \\) there exists a set of points \\( bouncepad(silhouette) \\) in the plane such that each \\( silhouette \\) points of \\( bouncepad(silhouette) \\) can be covered by \\( marshland \\), but \\( bouncepad(silhouette) \\) itself cannot be covered by \\( \\boldsymbol{marshland} \\).\n>>>\n",
+      "solution": "Solution:\n<<<\nSolution. Suppose \\( marshland \\) is a regular polygon of \\( pineconed \\)-sides and \\( floodgate \\) is the radius of the inscribed circle. For a given positive integer \\( silhouette \\), let \\( bouncepad=bouncepad(silhouette) \\) be a circle of radius \\( floodgate \\sec (\\pi / 2 pineconed silhouette) \\). We must show that\n(i) \\( marshland \\) cannot be placed so as to cover \\( bouncepad \\), and\n(ii) if \\( gearshift_{1}, gearshift_{2}, \\ldots, gearshift_{silhouette} \\) are any \\( silhouette \\) points of \\( bouncepad \\), then \\( marshland \\) can be placed so as to cover \\( \\{gearshift_{1}, \\ldots, gearshift_{silhouette}\\} \\).\n\nKeeping \\( marshland \\) fixed, we prove that no circular disk of radius exceeding \\( floodgate \\) can be placed inside of \\( marshland \\). From this (i) follows immediately. For a fixed radius \\( moondance_{1} \\), the set \\( hushpuppy \\) of points that are centers of disks of radius \\( moondance_{1} \\) lying inside \\( marshland \\) is convex. Moreover, \\( hushpuppy \\) is invariant under rotations about the center \\( driftwood \\) of \\( marshland \\) of angle \\( 2 \\pi / pineconed \\). Hence, \\( hushpuppy \\) is either void or contains \\( driftwood \\). If \\( moondance_{1}>floodgate \\), the circle of radius \\( moondance_{1} \\) about \\( driftwood \\) does not lie inside \\( marshland \\), so \\( hushpuppy \\) is void in this case; that is, no circular disk of radius \\( moondance_{1} \\) can be placed inside \\( marshland \\).\n\nNow we attack (ii). Let \\( gearshift_{1}, gearshift_{2}, \\ldots, gearshift_{silhouette} \\) be points of \\( bouncepad \\) and fix a reference point \\( blueberry \\) in \\( marshland \\) at distance \\( floodgate \\sec (\\pi / 2 pineconed silhouette) \\) from \\( driftwood \\); place \\( marshland \\) so that \\( driftwood \\) coincides with the center of \\( bouncepad \\), and rotate \\( marshland \\) about \\( driftwood \\) so that \\( blueberry \\) describes the circle \\( bouncepad \\). Consider one of the \\( gearshift \\) 's, say \\( gearshift_{i} \\). As \\( blueberry \\) describes \\( bouncepad, gearshift_{i} \\) will be on or outside of \\( marshland \\) when \\( blueberry \\) is in a set \\( A_{i} \\) that is the union of \\( pineconed \\) closed arcs each of length \\( \\pi / pineconed silhouette \\) radians (precisely when \\( 2 \\pi sandstorm / pineconed \\leq \\angle gearshift_{i} driftwood blueberry \\leq 2 \\pi sandstorm / pineconed+\\pi / pineconed silhouette \\) for some integer \\( sandstorm \\), if \\( blueberry \\) is chosen as shown). The length of \\( A_{i} \\) is \\( \\pi / silhouette \\) and the total length of \\( \\bigcup_{i=1}^{silhouette} A_{i} \\) is at most \\( \\pi \\). Therefore \\( bouncepad-\\bigcup_{i=1}^{silhouette} A_{i} \\) has length at least \\( \\pi \\) and so is not void. If \\( marshland \\) is rotated so that \\( blueberry \\in bouncepad-\\cup A_{i} \\), then each of the points \\( gearshift_{1}, \\ldots, gearshift_{silhouette} \\) is inside of \\( marshland \\). Thus (ii) is proved.\n>>>\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S": "emptypool",
+        "P_i": "voidcluster",
+        "r_1": "widthless",
+        "E": "nonconvexset",
+        "O": "cornerpoint",
+        "Q": "stagnantpt",
+        "m": "fractional",
+        "C": "concavezone",
+        "n": "infinite",
+        "k": "variable",
+        "r": "diameter"
+      },
+      "question": "7. Let \\( concavezone \\) be a closed convex planar disc bounded by a regular polygon. Show that for each positive integer \\( infinite \\) there exists a set of points \\( emptypool(infinite) \\) in the plane such that each \\( infinite \\) points of \\( emptypool(infinite) \\) can be covered by \\( concavezone \\), but \\( emptypool(infinite) \\) itself cannot be covered by \\( \\boldsymbol{concavezone} \\).",
+      "solution": "Solution. Suppose \\( concavezone \\) is a regular polygon of \\( variable \\)-sides and \\( diameter \\) is the radius of the inscribed circle. For a given positive integer \\( infinite \\), let \\( emptypool=emptypool(infinite) \\) be a circle of radius \\( diameter \\sec (\\pi / 2 variable infinite) \\). We must show that\n(i) \\( concavezone \\) cannot be placed so as to cover \\( emptypool \\), and\n(ii) if \\( voidcluster_{1}, voidcluster_{2}, \\ldots, voidcluster_{infinite} \\) are any \\( infinite \\) points of \\( emptypool \\), then \\( concavezone \\) can be placed so as to cover \\( \\left\\{voidcluster_{1}, \\ldots, voidcluster_{infinite}\\right\\} \\).\n\nKeeping \\( concavezone \\) fixed, we prove that no circular disk of radius exceeding \\( diameter \\) can be placed inside of \\( concavezone \\). From this (i) follows immediately. For a fixed radius \\( widthless \\), the set \\( nonconvexset \\) of points that are centers of disks of radius \\( widthless \\) lying inside \\( concavezone \\) is convex. Moreover, \\( nonconvexset \\) is invariant under rotations about the center \\( cornerpoint \\) of \\( concavezone \\) of angle \\( 2 \\pi / variable \\). Hence, \\( nonconvexset \\) is either void or contains \\( cornerpoint \\). If \\( widthless>diameter \\), the circle of radius \\( widthless \\) about \\( cornerpoint \\) does not lie inside \\( concavezone \\), so \\( nonconvexset \\) is void in this case; that is, no circular disk of radius \\( widthless \\) can be placed inside \\( concavezone \\).\n\nNow we attack (ii). Let \\( voidcluster_{1}, voidcluster_{2}, \\ldots, voidcluster_{infinite} \\) be points of \\( emptypool \\) and fix a reference point \\( stagnantpt \\) in \\( concavezone \\) at distance \\( diameter \\sec (\\pi / 2 variable infinite) \\) from \\( cornerpoint \\); place \\( concavezone \\) so that \\( cornerpoint \\) coincides with the center of \\( emptypool \\), and rotate \\( concavezone \\) about \\( cornerpoint \\) so that \\( stagnantpt \\) describes the circle \\( emptypool \\). Consider one of the \\( voidcluster \\)'s, say \\( voidcluster_{i} \\). As \\( stagnantpt \\) describes \\( emptypool, voidcluster_{i} \\) will be on or outside of \\( concavezone \\) when \\( stagnantpt \\) is in a set \\( A_{i} \\) that is the union of \\( variable \\) closed arcs each of length \\( \\pi / variable infinite \\) radians (precisely when \\( 2 \\pi fractional / variable \\leq \\angle voidcluster_{i} cornerpoint stagnantpt \\leq 2 \\pi fractional / variable+\\pi / variable infinite \\) for some integer \\( fractional \\), if \\( stagnantpt \\) is chosen as shown). The length of \\( A_{i} \\) is \\( \\pi / infinite \\) and the total length of \\( \\bigcup_{i=1}^{infinite} A_{i} \\) is at most \\( \\pi \\). Therefore \\( emptypool-\\bigcup_{i=1}^{infinite} A_{i} \\) has length at least \\( \\pi \\) and so is not void. If \\( concavezone \\) is rotated so that \\( stagnantpt \\in emptypool-\\cup A_{i} \\), then each of the points \\( voidcluster_{1}, \\ldots, voidcluster_{infinite} \\) is inside of \\( concavezone \\). Thus (ii) is proved."
+    },
+    "garbled_string": {
+      "map": {
+        "S": "qzxwvtnp",
+        "P_i": "hjgrksla",
+        "r_1": "plmoknji",
+        "E": "cvbnmasd",
+        "O": "lkjhgfds",
+        "Q": "poiuytre",
+        "m": "nbvcxzlk",
+        "C": "asdfghjk",
+        "n": "zxcvbnml",
+        "k": "qwertyui",
+        "r": "hgfdsaqw"
+      },
+      "question": "7. Let \\( asdfghjk \\) be a closed convex planar disc bounded by a regular polygon. Show that for each positive integer \\( zxcvbnml \\) there exists a set of points \\( qzxwvtnp(zxcvbnml) \\) in the plane such that each \\( zxcvbnml \\) points of \\( qzxwvtnp(zxcvbnml) \\) can be covered by \\( asdfghjk \\), but \\( qzxwvtnp(zxcvbnml) \\) itself cannot be covered by \\( \\boldsymbol{asdfghjk} \\).",
+      "solution": "Solution. Suppose \\( asdfghjk \\) is a regular polygon of \\( qwertyui \\)-sides and \\( hgfdsaqw \\) is the radius of the inscribed circle. For a given positive integer \\( zxcvbnml \\), let \\( qzxwvtnp=qzxwvtnp(zxcvbnml) \\) be a circle of radius \\( hgfdsaqw \\sec (\\pi / 2 qwertyui zxcvbnml) \\). We must show that\n(i) \\( asdfghjk \\) cannot be placed so as to cover \\( qzxwvtnp \\), and\n(ii) if \\( hjgrksla_{1}, hjgrksla_{2}, \\ldots, hjgrksla_{zxcvbnml} \\) are any \\( zxcvbnml \\) points of \\( qzxwvtnp \\), then \\( asdfghjk \\) can be placed so as to cover \\( \\left\\{hjgrksla_{1}, \\ldots, hjgrksla_{zxcvbnml}\\right\\} \\).\n\nKeeping \\( asdfghjk \\) fixed, we prove that no circular disk of radius exceeding \\( hgfdsaqw \\) can be placed inside of \\( asdfghjk \\). From this (i) follows immediately. For a fixed radius \\( plmoknji_{1} \\), the set \\( cvbnmasd \\) of points that are centers of disks of radius \\( plmoknji_{1} \\) lying inside \\( asdfghjk \\) is convex. Moreover, \\( cvbnmasd \\) is invariant under rotations about the center \\( lkjhgfds \\) of \\( asdfghjk \\) of angle \\( 2 \\pi / qwertyui \\). Hence, \\( cvbnmasd \\) is either void or contains \\( lkjhgfds \\). If \\( plmoknji_{1}>hgfdsaqw \\), the circle of radius \\( plmoknji_{1} \\) about \\( lkjhgfds \\) does not lie inside \\( asdfghjk \\), so \\( cvbnmasd \\) is void in this case; that is, no circular disk of radius \\( plmoknji_{1} \\) can be placed inside \\( asdfghjk \\).\n\nNow we attack (ii). Let \\( hjgrksla_{1}, hjgrksla_{2}, \\ldots, hjgrksla_{zxcvbnml} \\) be points of \\( qzxwvtnp \\) and fix a reference point \\( poiuytre \\) in \\( asdfghjk \\) at distance \\( hgfdsaqw \\sec (\\pi / 2 qwertyui zxcvbnml) \\) from \\( lkjhgfds \\); place \\( asdfghjk \\) so that \\( lkjhgfds \\) coincides with the center of \\( qzxwvtnp \\), and rotate \\( asdfghjk \\) about \\( lkjhgfds \\) so that \\( poiuytre \\) describes the circle \\( qzxwvtnp \\). Consider one of the \\( hjgrksla \\)'s, say \\( hjgrksla_{i} \\). As \\( poiuytre \\) describes \\( qzxwvtnp, hjgrksla_{i} \\) will be on or outside of \\( asdfghjk \\) when \\( poiuytre \\) is in a set \\( A_{i} \\) that is the union of \\( qwertyui \\) closed arcs each of length \\( \\pi / qwertyui zxcvbnml \\) radians (precisely when \\( 2 \\pi nbvcxzlk / qwertyui \\leq \\angle hjgrksla_{i} lkjhgfds poiuytre \\leq 2 \\pi nbvcxzlk / qwertyui+\\pi / qwertyui zxcvbnml \\) for some integer \\( nbvcxzlk \\), if \\( poiuytre \\) is chosen as shown). The length of \\( A_{i} \\) is \\( \\pi / zxcvbnml \\) and the total length of \\( \\bigcup_{i=1}^{zxcvbnml} A_{i} \\) is at most \\( \\pi \\). Therefore \\( qzxwvtnp-\\bigcup_{i=1}^{zxcvbnml} A_{i} \\) has length at least \\( \\pi \\) and so is not void. If \\( asdfghjk \\) is rotated so that \\( poiuytre \\in qzxwvtnp-\\cup A_{i} \\), then each of the points \\( hjgrksla_{1}, \\ldots, hjgrksla_{zxcvbnml} \\) is inside of \\( asdfghjk \\). Thus (ii) is proved."
+    },
+    "kernel_variant": {
+      "question": "Let D be a closed convex planar region whose boundary is a regular m-gon (m \\geq  3) with inradius \\rho .  Prove that for every positive integer n there exists an explicit set of points T(n) in the plane such that\n\n(1) any n points of T(n) can be covered by a suitable congruent copy of D (i.e. by an appropriate translation and rotation), whereas\n\n(2) T(n) itself cannot be covered by any congruent copy of D.\n\nA concrete choice works: take T(n) to be the circle of radius\n        \\rho  \\cdot  sec(\\pi  / (2 m n))\nconcentric with D.  Justify that this choice satisfies (1) and (2).",
+      "solution": "Fix a positive integer n and set\n        \\theta  = \\pi  / (2 m n),     R = \\rho  \\cdot  sec \\theta   (> \\rho ).\nDenote by O the centre of the regular m-gon D and put\n        \\Sigma  := T(n) = { X \\in  \\mathbb{R}^2 : |OX| = R }.\nThus \\Sigma  is the circle of radius R concentric with D.\n\nStep 1.  \\Sigma  cannot be covered by any congruent copy of D.\n--------------------------------------------------------\nAssume, for a contradiction, that a translate-rotation D' of D contains \\Sigma .  Because D' is convex, it then contains the closed disk \\Delta  := { X : |OX| \\leq  R } bounded by \\Sigma ; in particular, the point O lies in D'.  Translating and rotating D' back to D therefore gives a copy of D that still contains \\Delta .  Hence it suffices to show:\n\n   No copy of D contains a circular disk of radius r > \\rho .\n\nFor fixed r > \\rho  let\n        E_r := { Y \\in  D : the closed disk of radius r centred at Y lies in D }.\nE_r is convex (intersection of translations of D) and is invariant under the rotation by 2\\pi /m about O (because D is).  Consequently, if E_r is non-empty it must contain the centre O.  But the disk of radius r > \\rho  about O is not contained in D, since \\rho  is the inradius of D.  Hence E_r = \\emptyset , a contradiction.  Therefore \\Sigma  is not contained in any congruent copy of D, proving property (2).\n\nStep 2.  Any n points of \\Sigma  can be covered by a suitable rotation of D.\n---------------------------------------------------------------------\nPlace a copy of D with its centre at O and keep its position fixed except for rotations about O.  For a point P \\in  \\Sigma  let \\varphi  be the directed angle \\angle POX measured from some fixed ray OX.  While we rotate D through an angle \\alpha  about O, the relative position of P with respect to D depends only on the sum \\varphi  + \\alpha .\n\nBecause D is regular with m sides, P lies on or outside the boundary of the rotated D precisely when \\varphi  + \\alpha  falls into one of m closed intervals\n        I_j := [ 2\\pi j/m , 2\\pi j/m + 2\\theta  ]  (j = 0,1,\\ldots ,m-1),\neach of length 2\\theta .  (Geometrically, these intervals mark the directions in which a radius of length R meets a side of D or exits the polygon.)  Denote by A_P = \\bigcup _{j=0}^{m-1} I_j the `forbidden-rotation' set for P; its total length is\n        m \\cdot  2\\theta  = m \\cdot  \\pi /(m n) = \\pi /n.   (1)\n\nNow take arbitrary points P_1,\\ldots ,P_n on \\Sigma  and form the union\n        A := \\bigcup _{i=1}^n A_{P_i}.\nUsing (1),\n        length(A) \\leq  n \\cdot  (\\pi /n) = \\pi  < 2\\pi ,   (2)\nso there exists a rotation angle \\alpha  \\in  (0,2\\pi ) \\ A.  Rotating D through this \\alpha  leaves every P_i strictly inside D.  Thus any n points of \\Sigma  can be covered by a congruent copy of D, establishing property (1).\n\nCombining Steps 1 and 2 we conclude that the set\n        T(n) = { X : |OX| = \\rho  \\cdot  sec(\\pi  / (2 m n)) }\nsatisfies the required conditions for every positive integer n.",
+      "_meta": {
+        "core_steps": [
+          "Inside a regular k-gon C no circle of radius larger than its inradius r fits (convexity + k-fold rotational symmetry).",
+          "Take S(n) to be the concentric circle of radius r·sec(π⁄(2kn)) so S(n) itself cannot lie in C.",
+          "Fix a point Q on S(n) and rotate C about its center; for any point P on S(n) the set of rotations that leave P outside C is the union of k equal arcs, each of length π⁄(kn).",
+          "For n chosen points the total length of all ‘bad’ arcs is ≤ π < 2π, hence there exists a rotation that puts every one of the n points inside C.",
+          "Therefore every n-subset of S(n) is coverable by C, while S(n) as a whole is not."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Number of sides of the regular polygon (must be an integer ≥3 but otherwise arbitrary).",
+            "original": "k"
+          },
+          "slot2": {
+            "description": "Specific angle used in the radius formula; any positive angle θ ≤ π⁄(2kn) would work if r·sec θ is used instead.",
+            "original": "π⁄(2kn)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

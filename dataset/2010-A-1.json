@@ -1,0 +1,74 @@
+{
+  "index": "2010-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Given a positive integer $n$, what is the largest $k$ such that the\nnumbers $1,2,\\dots,n$ can be put into $k$ boxes so that the sum of the numbers\nin each box is the same? [When $n=8$, the example $\\{1,2,3,6\\}, \\{4,8\\}, \\{5,7\\}$\nshows that the largest $k$ is \\emph{at least} 3.]",
+  "solution": "The largest such $k$ is $\\lfloor \\frac{n+1}{2} \\rfloor = \\lceil \\frac{n}{2} \\rceil$.\nFor $n$ even, this value is achieved by the partition\n\\[\n\\{1, n\\}, \\{2, n-1\\}, \\dots;\n\\]\nfor $n$ odd, it is achieved by the partition\n\\[\n\\{n\\}, \\{1, n-1\\}, \\{2, n-2\\}, \\dots.\n\\]\nOne way to see that this is optimal is to note that the common sum can never be less than $n$,\nsince $n$ itself belongs to one of the boxes. This implies that $k \\leq (1 + \\cdots + n)/n = (n+1)/2$.\nAnother argument is that if $k > (n+1)/2$, then there would have to be two boxes with one number each\n(by the pigeonhole principle), but such boxes could not have the same sum.\n\n\n\\textbf{Remark.} A much subtler question would be to find the smallest $k$ (as a function of $n$)\nfor which no such arrangement exists.",
+  "vars": [
+    "n",
+    "k"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "itemcount",
+        "k": "boxcount"
+      },
+      "question": "Given a positive integer $itemcount$, what is the largest $boxcount$ such that the numbers $1,2,\\dots,itemcount$ can be put into $boxcount$ boxes so that the sum of the numbers in each box is the same? [When $itemcount=8$, the example $\\{1,2,3,6\\}, \\{4,8\\}, \\{5,7\\}$ shows that the largest $boxcount$ is \\emph{at least} 3.]",
+      "solution": "The largest such $boxcount$ is $\\lfloor \\frac{itemcount+1}{2} \\rfloor = \\lceil \\frac{itemcount}{2} \\rceil$. For $itemcount$ even, this value is achieved by the partition\n\\[\\{1, itemcount\\}, \\{2, itemcount-1\\}, \\dots;\\]\nfor $itemcount$ odd, it is achieved by the partition\n\\[\\{itemcount\\}, \\{1, itemcount-1\\}, \\{2, itemcount-2\\}, \\dots.\\]\nOne way to see that this is optimal is to note that the common sum can never be less than $itemcount$, since $itemcount$ itself belongs to one of the boxes. This implies that $boxcount \\leq (1 + \\cdots + itemcount)/itemcount = (itemcount+1)/2$. Another argument is that if $boxcount > (itemcount+1)/2$, then there would have to be two boxes with one number each (by the pigeonhole principle), but such boxes could not have the same sum.\n\n\\textbf{Remark.} A much subtler question would be to find the smallest $boxcount$ (as a function of $itemcount$) for which no such arrangement exists."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "landscape",
+        "k": "bluegrass"
+      },
+      "question": "Given a positive integer $landscape$, what is the largest $bluegrass$ such that the\nnumbers $1,2,\\dots,landscape$ can be put into $bluegrass$ boxes so that the sum of the numbers\nin each box is the same? [When $landscape=8$, the example $\\{1,2,3,6\\}, \\{4,8\\}, \\{5,7\\}$\nshows that the largest $bluegrass$ is \\emph{at least} 3.]",
+      "solution": "The largest such $bluegrass$ is $\\lfloor \\frac{landscape+1}{2} \\rfloor = \\lceil \\frac{landscape}{2} \\rceil$.\nFor $landscape$ even, this value is achieved by the partition\n\\[\n\\{1, landscape\\}, \\{2, landscape-1\\}, \\dots;\n\\]\nfor $landscape$ odd, it is achieved by the partition\n\\[\n\\{landscape\\}, \\{1, landscape-1\\}, \\{2, landscape-2\\}, \\dots.\n\\]\nOne way to see that this is optimal is to note that the common sum can never be less than $landscape$,\nsince $landscape$ itself belongs to one of the boxes. This implies that $bluegrass \\leq (1 + \\cdots + landscape)/landscape = (landscape+1)/2$.\nAnother argument is that if $bluegrass > (landscape+1)/2$, then there would have to be two boxes with one number each\n(by the pigeonhole principle), but such boxes could not have the same sum.\n\n\n\\textbf{Remark.} A much subtler question would be to find the smallest $bluegrass$ (as a function of $landscape$)\nfor which no such arrangement exists."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "negativeinteger",
+        "k": "smallest"
+      },
+      "question": "Given a positive integer $negativeinteger$, what is the largest $smallest$ such that the\nnumbers $1,2,\\dots,negativeinteger$ can be put into $smallest$ boxes so that the sum of the numbers\nin each box is the same? [When $negativeinteger=8$, the example $\\{1,2,3,6\\}, \\{4,8\\}, \\{5,7\\}$\nshows that the largest $smallest$ is \\emph{at least} 3.]",
+      "solution": "The largest such $smallest$ is $\\lfloor \\frac{negativeinteger+1}{2} \\rfloor = \\lceil \\frac{negativeinteger}{2} \\rceil$.\nFor $negativeinteger$ even, this value is achieved by the partition\n\\[\n\\{1, negativeinteger\\}, \\{2, negativeinteger-1\\}, \\dots;\n\\]\nfor $negativeinteger$ odd, it is achieved by the partition\n\\[\n\\{negativeinteger\\}, \\{1, negativeinteger-1\\}, \\{2, negativeinteger-2\\}, \\dots.\n\\]\nOne way to see that this is optimal is to note that the common sum can never be less than $negativeinteger$,\nsince $negativeinteger$ itself belongs to one of the boxes. This implies that $smallest \\leq (1 + \\cdots + negativeinteger)/negativeinteger = (negativeinteger+1)/2$.\nAnother argument is that if $smallest > (negativeinteger+1)/2$, then there would have to be two boxes with one number each\n(by the pigeonhole principle), but such boxes could not have the same sum.\n\n\n\\textbf{Remark.} A much subtler question would be to find the smallest $smallest$ (as a function of $negativeinteger$)\nfor which no such arrangement exists."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla"
+      },
+      "question": "Given a positive integer $qzxwvtnp$, what is the largest $hjgrksla$ such that the\nnumbers $1,2,\\dots,qzxwvtnp$ can be put into $hjgrksla$ boxes so that the sum of the numbers\nin each box is the same? [When $qzxwvtnp=8$, the example $\\{1,2,3,6\\}, \\{4,8\\}, \\{5,7\\}$\nshows that the largest $hjgrksla$ is \\emph{at least} 3.]",
+      "solution": "The largest such $hjgrksla$ is $\\lfloor \\frac{qzxwvtnp+1}{2} \\rfloor = \\lceil \\frac{qzxwvtnp}{2} \\rceil$.\nFor $qzxwvtnp$ even, this value is achieved by the partition\n\\[\n\\{1, qzxwvtnp\\}, \\{2, qzxwvtnp-1\\}, \\dots;\n\\]\nfor $qzxwvtnp$ odd, it is achieved by the partition\n\\[\n\\{qzxwvtnp\\}, \\{1, qzxwvtnp-1\\}, \\{2, qzxwvtnp-2\\}, \\dots.\n\\]\nOne way to see that this is optimal is to note that the common sum can never be less than $qzxwvtnp$,\nsince $qzxwvtnp$ itself belongs to one of the boxes. This implies that $hjgrksla \\leq (1 + \\cdots + qzxwvtnp)/qzxwvtnp = (qzxwvtnp+1)/2$.\nAnother argument is that if $hjgrksla > (qzxwvtnp+1)/2$, then there would have to be two boxes with one number each\n(by the pigeonhole principle), but such boxes could not have the same sum.\n\n\\textbf{Remark.} A much subtler question would be to find the smallest $hjgrksla$ (as a function of $qzxwvtnp$)\nfor which no such arrangement exists."
+    },
+    "kernel_variant": {
+      "question": "Let n\\ge 1 be an integer.  Consider the  n  even numbers\n\n$$2,4,6,\\dots ,2n.$$\n\nDetermine the largest integer k for which these numbers can be partitioned into k (non-empty) boxes so that the sum of the numbers in every box is the same.\n\n(For instance, when n=9 one possible partition is\n$$\\{18\\},\\;\\{2,16\\},\\;\\{4,14\\},\\;\\{6,12\\},\\;\\{8,10\\},$$\nso the answer is at least 5 in that case.)",
+      "solution": "Write S = 2 + 4 + \\cdots  + 2n = n(n+1) for the total sum of the numbers, and let s be the common sum and k the number of boxes.\n\nUpper bound.\nSince the largest entry 2n must lie in some box, s \\geq  2n.  Hence\n  k = S/s \\leq  S/(2n) = n(n+1)/(2n) = (n+1)/2,\nso\n  k \\leq  \\lfloor (n+1)/2\\rfloor .\nMoreover, if k > (n+1)/2 then the average number of elements per box is n/k < 2, which forces at least two singleton boxes (by a simple pigeonhole argument), but two distinct even singletons cannot have the same sum.  Thus k cannot exceed \\lfloor (n+1)/2\\rfloor .\n\nConstructions achieving \\lfloor (n+1)/2\\rfloor  boxes.\nCase 1: n even, n=2m.\n Pair the numbers as\n   (2, 2n), (4, 2n-2), \\ldots , (2m, 2n-2m+2).\nEach pair sums to 2n+2 = 2(n+1), giving k = m = n/2 = \\lfloor (n+1)/2\\rfloor  boxes of equal sum.\n\nCase 2: n odd, n=2m+1.\n Isolate {2n} as one box (sum = 2n), and pair the remaining 2m numbers:\n   (2, 2n-2), (4, 2n-4), \\ldots , (2m, 2n-2m).\nEach box sums to 2n, yielding k = m+1 = \\lfloor (n+1)/2\\rfloor  boxes.\n\nHence in both cases the maximal number of boxes is k_{max} = \\lfloor (n+1)/2\\rfloor .",
+      "_meta": {
+        "core_steps": [
+          "Common-sum ≥ largest entry n ⇒ k ≤ (1+⋯+n)/n = (n+1)/2",
+          "Form boxes (1,n), (2,n−1), … (plus {n} if n is odd) to reach k = ⌊(n+1)/2⌋",
+          "Upper and lower bounds coincide, yielding maximal k = ⌊(n+1)/2⌋"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Concrete numerical illustration that is not used in the proof itself",
+            "original": "n = 8 and the partition {1,2,3,6}, {4,8}, {5,7}"
+          },
+          "slot2": {
+            "description": "Secondary pigeonhole explanation for the upper bound (proof still works without it)",
+            "original": "Statement that k > (n+1)/2 would force two singleton boxes with unequal sums"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

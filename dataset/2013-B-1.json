@@ -1,0 +1,101 @@
+{
+  "index": "2013-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "For positive integers $n$, let the numbers $c(n)$ be determined by \nthe rules $c(1) = 1$, $c(2n) = c(n)$, and $c(2n+1) = (-1)^n c(n)$.\nFind the value of \n\\[\n\\sum_{n=1}^{2013} c(n) c(n+2).\n\\]",
+  "solution": "Note that \n\\begin{align*}\nc(2k+1)c(2k+3) &= (-1)^k c(k) (-1)^{k+1} c(k+1) \\\\\n&= -c(k)c(k+1) \\\\ \n&= -c(2k)c(2k+2).\n\\end{align*}\nIt follows that $\\sum_{n=2}^{2013} c(n)c(n+2) = \\sum_{k=1}^{1006} (c(2k)c(2k+2)+c(2k+1)c(2k+3)) = 0$,\nand so the desired sum is $c(1)c(3) = -1$. \n\n\\textbf{Remark}: Karl Mahlburg points out the general formula\n$c(n) = (-1)^{b_0 b_1 + b_1 b_2 + \\dots + b_{k-1} b_k}$\nfor $n$ having binary representation $b_k \\cdots b_0$.",
+  "vars": [
+    "b_0",
+    "b_1",
+    "b_k-1",
+    "b_k",
+    "k",
+    "n"
+  ],
+  "params": [
+    "c"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "b_0": "digitzero",
+        "b_1": "digitone",
+        "b_k-1": "digprev",
+        "b_k": "digitk",
+        "k": "indexk",
+        "n": "numind",
+        "c": "coeffs"
+      },
+      "question": "For positive integers $numind$, let the numbers $coeffs(numind)$ be determined by \nthe rules $coeffs(1) = 1$, $coeffs(2numind) = coeffs(numind)$, and $coeffs(2numind+1) = (-1)^{numind} coeffs(numind)$. \nFind the value of \n\\[\n\\sum_{numind=1}^{2013} coeffs(numind) coeffs(numind+2).\n\\]",
+      "solution": "Note that \n\\begin{align*}\ncoeffs(2indexk+1)coeffs(2indexk+3) &= (-1)^{indexk} coeffs(indexk) (-1)^{indexk+1} coeffs(indexk+1) \\\n&= -coeffs(indexk)coeffs(indexk+1) \\\n&= -coeffs(2indexk)coeffs(2indexk+2).\n\\end{align*}\nIt follows that $\\sum_{numind=2}^{2013} coeffs(numind)coeffs(numind+2) = \\sum_{indexk=1}^{1006} (coeffs(2indexk)coeffs(2indexk+2)+coeffs(2indexk+1)coeffs(2indexk+3)) = 0$,\nand so the desired sum is $coeffs(1)coeffs(3) = -1$. \n\n\\textbf{Remark}: Karl Mahlburg points out the general formula\n$coeffs(numind) = (-1)^{digitzero digitone + digitone b_2 + \\dots + digprev digitk}$\nfor $numind$ having binary representation $digitk \\cdots digitzero$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "b_0": "lanternfish",
+        "b_1": "goldenrod",
+        "b_k-1": "buttercup",
+        "b_k": "arrowhead",
+        "k": "moonstone",
+        "n": "roundabout",
+        "c": "driftwood"
+      },
+      "question": "For positive integers $roundabout$, let the numbers $driftwood(roundabout)$ be determined by \nthe rules $driftwood(1) = 1$, $driftwood(2roundabout) = driftwood(roundabout)$, and $driftwood(2roundabout+1) = (-1)^{roundabout} driftwood(roundabout)$. \nFind the value of \n\\[\n\\sum_{roundabout=1}^{2013} driftwood(roundabout) driftwood(roundabout+2).\n\\]",
+      "solution": "Note that \n\\begin{align*}\ndriftwood(2moonstone+1)driftwood(2moonstone+3) &= (-1)^{moonstone} driftwood(moonstone) (-1)^{moonstone+1} driftwood(moonstone+1) \\\n&= -driftwood(moonstone)driftwood(moonstone+1) \\\n&= -driftwood(2moonstone)driftwood(2moonstone+2).\n\\end{align*}\nIt follows that $\\sum_{roundabout=2}^{2013} driftwood(roundabout)driftwood(roundabout+2) = \\sum_{moonstone=1}^{1006} (driftwood(2moonstone)driftwood(2moonstone+2)+driftwood(2moonstone+1)driftwood(2moonstone+3)) = 0$, \nand so the desired sum is $driftwood(1)driftwood(3) = -1$. \n\n\\textbf{Remark}: Karl Mahlburg points out the general formula\n$driftwood(roundabout) = (-1)^{lanternfish goldenrod + goldenrod b_2 + \\dots + buttercup arrowhead}$\nfor $roundabout$ having binary representation $arrowhead \\cdots lanternfish$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "b_0": "decimalmax",
+        "b_1": "decimalmin",
+        "b_k-1": "overflowbit",
+        "b_k": "underflowbit",
+        "k": "megastep",
+        "n": "totalzero",
+        "c": "instability"
+      },
+      "question": "For positive integers $totalzero$, let the numbers $instability(totalzero)$ be determined by the rules $instability(1) = 1$, $instability(2totalzero) = instability(totalzero)$, and $instability(2totalzero+1) = (-1)^{totalzero} instability(totalzero)$. Find the value of \n\\[\n\\sum_{totalzero=1}^{2013} instability(totalzero) instability(totalzero+2).\n\\]",
+      "solution": "Note that \n\\begin{align*}\ninstability(2megastep+1)instability(2megastep+3) &= (-1)^{megastep} instability(megastep) (-1)^{megastep+1} instability(megastep+1) \\\\ &= -instability(megastep)instability(megastep+1) \\\\ &= -instability(2megastep)instability(2megastep+2).\n\\end{align*}\nIt follows that $\\sum_{totalzero=2}^{2013} instability(totalzero)instability(totalzero+2) = \\sum_{megastep=1}^{1006} (instability(2megastep)instability(2megastep+2)+instability(2megastep+1)instability(2megastep+3)) = 0$, and so the desired sum is $instability(1)instability(3) = -1$. \n\n\\textbf{Remark}: Karl Mahlburg points out the general formula $instability(totalzero) = (-1)^{decimalmax\\,decimalmin + decimalmin\\,b_2 + \\dots + overflowbit\\,underflowbit}$ for $totalzero$ having binary representation $underflowbit \\cdots decimalmax$. "
+    },
+    "garbled_string": {
+      "map": {
+        "b_0": "qpzldhnm",
+        "b_1": "wnskgvrq",
+        "b_k-1": "ydfqmnzc",
+        "b_k": "rscvltpu",
+        "k": "xytvznhqa",
+        "n": "dlgwmprea",
+        "c": "zjqkshvba"
+      },
+      "question": "For positive integers $dlgwmprea$, let the numbers $zjqkshvba(dlgwmprea)$ be determined by \nthe rules $zjqkshvba(1) = 1$, $zjqkshvba(2dlgwmprea) = zjqkshvba(dlgwmprea)$, and $zjqkshvba(2dlgwmprea+1) = (-1)^{dlgwmprea} zjqkshvba(dlgwmprea)$. \nFind the value of \n\\[\n\\sum_{dlgwmprea=1}^{2013} zjqkshvba(dlgwmprea) zjqkshvba(dlgwmprea+2).\n\\]",
+      "solution": "Note that \n\\begin{align*}\nzjqkshvba(2xytvznhqa+1)zjqkshvba(2xytvznhqa+3) &= (-1)^{xytvznhqa} zjqkshvba(xytvznhqa) (-1)^{xytvznhqa+1} zjqkshvba(xytvznhqa+1) \\\\&= -zjqkshvba(xytvznhqa)zjqkshvba(xytvznhqa+1) \\\\&= -zjqkshvba(2xytvznhqa)zjqkshvba(2xytvznhqa+2).\n\\end{align*}\nIt follows that $\\sum_{dlgwmprea=2}^{2013} zjqkshvba(dlgwmprea)zjqkshvba(dlgwmprea+2) = \\sum_{xytvznhqa=1}^{1006} (zjqkshvba(2xytvznhqa)zjqkshvba(2xytvznhqa+2)+zjqkshvba(2xytvznhqa+1)zjqkshvba(2xytvznhqa+3)) = 0$,\nand so the desired sum is $zjqkshvba(1)zjqkshvba(3) = -1$. \n\n\\textbf{Remark}: Karl Mahlburg points out the general formula\n$zjqkshvba(dlgwmprea) = (-1)^{qpzldhnm wnskgvrq + wnskgvrq b_2 + \\dots + ydfqmnzc rscvltpu}$\nfor $dlgwmprea$ having binary representation $rscvltpu \\cdots qpzldhnm$.}"
+    },
+    "kernel_variant": {
+      "question": "For positive integers $n$ let the numbers $c(n)$ be defined recursively by\n\\[\n c(1)=2, \\qquad c(2n)=c(n), \\qquad c(2n+1)=(-1)^n c(n)\\; .\n\\]\nCompute the value of the sum\n\\[\n\\boxed{\\displaystyle\\sum_{n=1}^{2025} c(n)\\,c(n+2)}\\; .\n\\]",
+      "solution": "First rewrite the terms that will appear in the required cancellation identity.\n\n1. For every integer k\\geq 1,\n   c(2k)=c(k),   c(2k+2)=c(k+1).\n   Also,\n   c(2k+1)=(-1)^k c(k),   c(2k+3)=(-1)^{k+1} c(k+1).\n\n2. Multiply corresponding even-odd expressions:\n   c(2k+1)c(2k+3)=(-1)^k c(k)\\cdot (-1)^{k+1}c(k+1)\n                 = -c(k)c(k+1)\n                 = -c(2k)c(2k+2).\n   Hence\n   c(2k)c(2k+2)+c(2k+1)c(2k+3)=0   (k\\geq 1).\n\n3. Break the required sum into n=1 and the rest, and pair the latter indices as (2k,2k+1):\n   \\Sigma _{n=1 to 2025} c(n)c(n+2) = c(1)c(3) + \\Sigma _{n=2 to 2025} c(n)c(n+2)\n                             = c(1)c(3) + \\Sigma _{k=1 to 1012}[c(2k)c(2k+2) + c(2k+1)c(2k+3)].\n   Here 2\\cdot 1012+1 = 2025, so every n\\geq 2 appears exactly once in some pair.\n\n4. By the identity in Step 2, every summand in the big sum cancels to 0. Therefore\n   \\Sigma _{n=1 to 2025} c(n)c(n+2) = c(1)c(3).\n   Since c(1)=2 and\n         c(3)=c(2\\cdot 1+1) = (-1)^1 c(1) = -2,\n   we obtain c(1)c(3) = 2\\cdot (-2) = -4.\n\nHence the value of the sum is\n   -4.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite c(2k) and c(2k+1) with the given recurrences.",
+          "Establish the identity c(2k+1)c(2k+3) = −c(2k)c(2k+2).",
+          "Pair the summation indices (2k, 2k+1); each pair’s contributions cancel to 0.",
+          "Only the n = 1 term survives, and c(1)c(3) is computed directly."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Upper limit of the summation (must stay an odd integer ≥ 3 so that every term except n = 1 can be paired).",
+            "original": 2013
+          },
+          "slot2": {
+            "description": "Chosen value of c(1); changing it rescales every c(n) uniformly and leaves the cancellation argument intact.",
+            "original": 1
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

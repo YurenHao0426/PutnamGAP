@@ -1,0 +1,147 @@
+{
+  "index": "1958-B-5",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "5. Given an infinite number of points in a plane, prove that if all the distances determined between them are integers then the points are all in a straight line.",
+  "solution": "Solution. Suppose the given set contains three non-collinear points, say \\( A, B \\), and \\( C \\), such that \\( |A B|=r \\) and \\( |A C|=s \\) where \\( r \\) and \\( s \\) are integers. If \\( P \\) is any point at integral distance from both \\( A \\) and \\( B \\), then by the triangle inequality, \\( |P A-P B| \\) is one of the integers \\( 0,1,2, \\ldots, r \\). Hence \\( P \\) must fall on one of the hyperbolas\n\\[\nH_{i}=\\{X:|X A-X B|=i\\}, \\quad i=1,2, \\ldots, r-1\n\\]\nor on the union \\( H_{0} \\) of \\( \\stackrel{\\rightharpoonup}{A B} \\) and the perpendicular bisector of \\( A B \\).\nSimilarly, a point \\( P \\) at integral distance from both \\( A \\) and \\( C \\) must be on one of the hyperbolas\n\\[\nK_{i}=\\{X:|X A-X C|=i\\}, \\quad i=1,2, \\ldots, s-1\n\\]\nor on the union \\( K_{0} \\) of \\( \\overleftrightarrow{A C} \\) and the perpendicular bisector of \\( A C \\). Any point of our given set must be in one of the sets \\( H_{i} \\cap K_{j} \\). Because \\( \\overleftarrow{A B} \\neq \\overleftarrow{A C} \\), none of the sets \\( H_{i} \\) is the same as any of the sets \\( K_{i} \\). Unless both \\( i \\) and \\( j \\) are \\( 0, H_{i} \\cap K_{j} \\) is the intersection of two second-degree curves not both degenerate; hence \\( H_{i} \\cap K_{j} \\) contains at most four points. But \\( H_{0} \\cap K_{0} \\) also contains at most four points since \\( H_{0} \\) and \\( K_{0} \\) do not share a common line. Therefore the given set contains at most \\( 4(r+1)(s+1) \\) points, contrary to the hypothesis that it is infinite. This contradiction shows that the given points are collinear.\n\nRemark. It is known that for any positive integer \\( n \\), there exist \\( n \\) non-collinear points in the plane such that each set of two are at integral distances. In fact, we can construct such a set lying on a circle. If \\( \\theta \\) is an angle such that both \\( \\sin \\theta \\) and \\( \\cos \\theta \\) are rational, the points \\( e^{2 m i \\theta}, m \\) an integer, are all at rational distances from one another. By a change of scale we can make any finite number of these distances integral.\n\nReferences. N. H. Anning and P. Erdos, \"Integral Distances,\" Bulletin of the American Mathematical Society, vol. 51 (1945), pages 598-600; A. S. Besicovitch, \"Rational Polygons,\" Mathematika, vol. 6 (1959), page 98; D. E. Daykin, \"Rational Polygons,\" Mathematika, vol. 10 (1963), pages 125-131; and H. Hadwiger, H. Debrunner, and V. Klee, Combinatorial Geometry in the Plane, Holt, Rinehart and Winston, New York, 1964, pages 4-6.",
+  "vars": [
+    "A",
+    "B",
+    "C",
+    "P",
+    "X",
+    "H_i",
+    "H_0",
+    "K_i",
+    "K_0",
+    "m",
+    "n",
+    "j"
+  ],
+  "params": [
+    "r",
+    "s",
+    "\\\\theta"
+  ],
+  "sci_consts": [
+    "e",
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "pointalpha",
+        "B": "pointbeta",
+        "C": "pointgamma",
+        "P": "pointdelta",
+        "X": "pointxi",
+        "H_i": "hyperbolaset",
+        "H_0": "hyperbazero",
+        "K_i": "hyperkindex",
+        "K_0": "hyperkzero",
+        "m": "stepindex",
+        "n": "countvalue",
+        "j": "indexjvalue",
+        "r": "distanceab",
+        "s": "distanceac",
+        "\\theta": "angletheta"
+      },
+      "question": "5. Given an infinite number of points in a plane, prove that if all the distances determined between them are integers then the points are all in a straight line.",
+      "solution": "Solution. Suppose the given set contains three non-collinear points, say \\( pointalpha, pointbeta \\), and \\( pointgamma \\), such that \\( | pointalpha pointbeta | = distanceab \\) and \\( | pointalpha pointgamma | = distanceac \\) where \\( distanceab \\) and \\( distanceac \\) are integers. If \\( pointdelta \\) is any point at integral distance from both \\( pointalpha \\) and \\( pointbeta \\), then by the triangle inequality, \\( | pointdelta pointalpha - pointdelta pointbeta | \\) is one of the integers \\( 0,1,2, \\ldots , distanceab \\). Hence \\( pointdelta \\) must fall on one of the hyperbolas\n\\[\nhyperbolaset = \\{ pointxi : | pointxi pointalpha - pointxi pointbeta | = i \\}, \\quad i = 1,2, \\ldots , distanceab - 1\n\\]\nor on the union \\( hyperbazero \\) of \\( \\stackrel{\\rightharpoonup}{ pointalpha pointbeta } \\) and the perpendicular bisector of \\( pointalpha pointbeta \\).\n\nSimilarly, a point \\( pointdelta \\) at integral distance from both \\( pointalpha \\) and \\( pointgamma \\) must be on one of the hyperbolas\n\\[\nhyperkindex = \\{ pointxi : | pointxi pointalpha - pointxi pointgamma | = i \\}, \\quad i = 1,2, \\ldots , distanceac - 1\n\\]\nor on the union \\( hyperkzero \\) of \\( \\overleftrightarrow{ pointalpha pointgamma } \\) and the perpendicular bisector of \\( pointalpha pointgamma \\). Any point of our given set must be in one of the sets \\( hyperbolaset \\cap hyperkindex \\). Because \\( \\overleftarrow{ pointalpha pointbeta } \\neq \\overleftarrow{ pointalpha pointgamma } \\), none of the sets \\( hyperbolaset \\) is the same as any of the sets \\( hyperkindex \\). Unless both \\( i \\) and \\( indexjvalue \\) are \\( 0 \\), the set \\( hyperbolaset \\cap hyperkindex \\) is the intersection of two second-degree curves not both degenerate; hence \\( hyperbolaset \\cap hyperkindex \\) contains at most four points. But \\( hyperbazero \\cap hyperkzero \\) also contains at most four points since \\( hyperbazero \\) and \\( hyperkzero \\) do not share a common line. Therefore the given set contains at most \\( 4( distanceab + 1)( distanceac + 1) \\) points, contrary to the hypothesis that it is infinite. This contradiction shows that the given points are collinear.\n\nRemark. It is known that for any positive integer \\( countvalue \\), there exist \\( countvalue \\) non-collinear points in the plane such that each set of two are at integral distances. In fact, we can construct such a set lying on a circle. If \\( angletheta \\) is an angle such that both \\( \\sin angletheta \\) and \\( \\cos angletheta \\) are rational, the points \\( e^{ 2 \\, stepindex \\, i \\, angletheta }, stepindex \\) an integer, are all at rational distances from one another. By a change of scale we can make any finite number of these distances integral.\n\nReferences. N. H. Anning and P. Erdos, \"Integral Distances,\" Bulletin of the American Mathematical Society, vol. 51 (1945), pages 598-600; A. S. Besicovitch, \"Rational Polygons,\" Mathematika, vol. 6 (1959), page 98; D. E. Daykin, \"Rational Polygons,\" Mathematika, vol. 10 (1963), pages 125-131; and H. Hadwiger, H. Debrunner, and V. Klee, Combinatorial Geometry in the Plane, Holt, Rinehart and Winston, New York, 1964, pages 4-6."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "sunflower",
+        "B": "bookshelf",
+        "C": "wallpaper",
+        "P": "raincloud",
+        "X": "pinecone",
+        "H_i": "mahogany",
+        "H_0": "fireflies",
+        "K_i": "buttercup",
+        "K_0": "dragonfly",
+        "m": "longitude",
+        "n": "rainwater",
+        "j": "pineapple",
+        "r": "equation",
+        "s": "notebook",
+        "\\theta": "corridor"
+      },
+      "question": "5. Given an infinite number of points in a plane, prove that if all the distances determined between them are integers then the points are all in a straight line.",
+      "solution": "Solution. Suppose the given set contains three non-collinear points, say \\( sunflower, bookshelf \\), and \\( wallpaper \\), such that \\( |sunflower bookshelf|=equation \\) and \\( |sunflower wallpaper|=notebook \\) where \\( equation \\) and \\( notebook \\) are integers. If \\( raincloud \\) is any point at integral distance from both \\( sunflower \\) and \\( bookshelf \\), then by the triangle inequality, \\( |raincloud sunflower-raincloud bookshelf| \\) is one of the integers \\( 0,1,2, \\ldots, equation \\). Hence \\( raincloud \\) must fall on one of the hyperbolas\n\\[\nmahogany_{i}=\\{pinecone:|pinecone sunflower-pinecone bookshelf|=i\\}, \\quad i=1,2, \\ldots, equation-1\n\\]\nor on the union \\( fireflies_{0} \\) of \\( \\stackrel{\\rightharpoonup}{sunflower bookshelf} \\) and the perpendicular bisector of \\( sunflower bookshelf \\).\nSimilarly, a point \\( raincloud \\) at integral distance from both \\( sunflower \\) and \\( wallpaper \\) must be on one of the hyperbolas\n\\[\nbuttercup_{i}=\\{pinecone:|pinecone sunflower-pinecone wallpaper|=i\\}, \\quad i=1,2, \\ldots, notebook-1\n\\]\nor on the union \\( dragonfly_{0} \\) of \\( \\overleftrightarrow{sunflower wallpaper} \\) and the perpendicular bisector of \\( sunflower wallpaper \\). Any point of our given set must be in one of the sets \\( mahogany_{i} \\cap buttercup_{pineapple} \\). Because \\( \\overleftarrow{sunflower bookshelf} \\neq \\overleftarrow{sunflower wallpaper} \\), none of the sets \\( mahogany_{i} \\) is the same as any of the sets \\( buttercup_{i} \\). Unless both \\( i \\) and \\( pineapple \\) are \\( 0, mahogany_{i} \\cap buttercup_{pineapple} \\) is the intersection of two second-degree curves not both degenerate; hence \\( mahogany_{i} \\cap buttercup_{pineapple} \\) contains at most four points. But \\( fireflies_{0} \\cap dragonfly_{0} \\) also contains at most four points since \\( fireflies_{0} \\) and \\( dragonfly_{0} \\) do not share a common line. Therefore the given set contains at most \\( 4(equation+1)(notebook+1) \\) points, contrary to the hypothesis that it is infinite. This contradiction shows that the given points are collinear.\n\nRemark. It is known that for any positive integer \\( rainwater \\), there exist \\( rainwater \\) non-collinear points in the plane such that each set of two are at integral distances. In fact, we can construct such a set lying on a circle. If \\( corridor \\) is an angle such that both \\( \\sin corridor \\) and \\( \\cos corridor \\) are rational, the points \\( e^{2 longitude i corridor}, longitude \\) an integer, are all at rational distances from one another. By a change of scale we can make any finite number of these distances integral.\n\nReferences. N. H. Anning and P. Erdos, \"Integral Distances,\" Bulletin of the American Mathematical Society, vol. 51 (1945), pages 598-600; A. S. Besicovitch, \"Rational Polygons,\" Mathematika, vol. 6 (1959), page 98; D. E. Daykin, \"Rational Polygons,\" Mathematika, vol. 10 (1963), pages 125-131; and H. Hadwiger, H. Debrunner, and V. Klee, Combinatorial Geometry in the Plane, Holt, Rinehart and Winston, New York, 1964, pages 4-6."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "emptypoint",
+        "B": "nullpoint",
+        "C": "voidpoint",
+        "P": "constantpoint",
+        "X": "specificpoint",
+        "H_i": "straightset",
+        "H_0": "curvedset",
+        "K_i": "flatline",
+        "K_0": "rigidset",
+        "m": "constant",
+        "n": "irrational",
+        "j": "fractional",
+        "r": "infinitevalue",
+        "s": "infinitesimal",
+        "\\theta": "lineardist"
+      },
+      "question": "5. Given an infinite number of points in a plane, prove that if all the distances determined between them are integers then the points are all in a straight line.",
+      "solution": "Solution. Suppose the given set contains three non-collinear points, say emptypoint, nullpoint, and voidpoint, such that \\(|emptypoint\\ nullpoint|=infinitevalue\\) and \\(|emptypoint\\ voidpoint|=infinitesimal\\) where infinitevalue and infinitesimal are integers. If constantpoint is any point at integral distance from both emptypoint and nullpoint, then by the triangle inequality, \\(|constantpoint\\ emptypoint-constantpoint\\ nullpoint|\\) is one of the integers \\(0,1,2, \\ldots, infinitevalue\\). Hence constantpoint must fall on one of the hyperbolas\n\\[\nstraightset_{i}=\\{specificpoint:|specificpoint\\ emptypoint-specificpoint\\ nullpoint|=i\\}, \\quad i=1,2, \\ldots, infinitevalue-1\n\\]\nor on the union curvedset_{0} of \\(\\stackrel{\\rightharpoonup}{emptypoint\\ nullpoint}\\) and the perpendicular bisector of emptypoint nullpoint.\n\nSimilarly, a point constantpoint at integral distance from both emptypoint and voidpoint must be on one of the hyperbolas\n\\[\nflatline_{i}=\\{specificpoint:|specificpoint\\ emptypoint-specificpoint\\ voidpoint|=i\\}, \\quad i=1,2, \\ldots, infinitesimal-1\n\\]\nor on the union rigidset_{0} of \\(\\overleftrightarrow{emptypoint\\ voidpoint}\\) and the perpendicular bisector of emptypoint voidpoint. Any point of our given set must be in one of the sets straightset_{i} \\cap flatline_{fractional}. Because \\(\\overleftarrow{emptypoint\\ nullpoint} \\neq \\overleftarrow{emptypoint\\ voidpoint}\\), none of the sets straightset_{i} is the same as any of the sets flatline_{i}. Unless both \\(i\\) and fractional are \\(0, straightset_{i} \\cap flatline_{fractional}\\) is the intersection of two second-degree curves not both degenerate; hence \\(straightset_{i} \\cap flatline_{fractional}\\) contains at most four points. But curvedset_{0} \\cap rigidset_{0} also contains at most four points since curvedset_{0} and rigidset_{0} do not share a common line. Therefore the given set contains at most \\(4(infinitevalue+1)(infinitesimal+1)\\) points, contrary to the hypothesis that it is infinite. This contradiction shows that the given points are collinear.\n\nRemark. It is known that for any positive integer irrational, there exist irrational non-collinear points in the plane such that each set of two are at integral distances. In fact, we can construct such a set lying on a circle. If lineardist is an angle such that both \\(\\sin lineardist\\) and \\(\\cos lineardist\\) are rational, the points \\(e^{2 constant i lineardist}, constant\\) an integer, are all at rational distances from one another. By a change of scale we can make any finite number of these distances integral.\n\nReferences. N. H. Anning and P. Erdos, \"Integral Distances,\" Bulletin of the American Mathematical Society, vol. 51 (1945), pages 598-600; A. S. Besicovitch, \"Rational Polygons,\" Mathematika, vol. 6 (1959), page 98; D. E. Daykin, \"Rational Polygons,\" Mathematika, vol. 10 (1963), pages 125-131; and H. Hadwiger, H. Debrunner, and V. Klee, Combinatorial Geometry in the Plane, Holt, Rinehart and Winston, New York, 1964, pages 4-6."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "C": "vbfkqjse",
+        "P": "ldmpwzra",
+        "X": "crsmnhdy",
+        "H_i": "mjtqnswe",
+        "H_0": "yzvdwcua",
+        "K_i": "bxrgpezo",
+        "K_0": "nfzkhula",
+        "m": "gdlqrfse",
+        "n": "ksrmnqva",
+        "j": "fqpdlwmn",
+        "r": "wktrmsla",
+        "s": "flnqxzje",
+        "\\\\theta": "zdwkxbhi"
+      },
+      "question": "5. Given an infinite number of points in a plane, prove that if all the distances determined between them are integers then the points are all in a straight line.",
+      "solution": "Solution. Suppose the given set contains three non-collinear points, say \\( qzxwvtnp, hjgrksla \\), and \\( vbfkqjse \\), such that \\( |qzxwvtnp hjgrksla|=wktrmsla \\) and \\( |qzxwvtnp vbfkqjse|=flnqxzje \\) where \\( wktrmsla \\) and \\( flnqxzje \\) are integers. If \\( ldmpwzra \\) is any point at integral distance from both \\( qzxwvtnp \\) and \\( hjgrksla \\), then by the triangle inequality, \\( |ldmpwzra qzxwvtnp-ldmpwzra hjgrksla| \\) is one of the integers \\( 0,1,2, \\ldots, wktrmsla \\). Hence \\( ldmpwzra \\) must fall on one of the hyperbolas\n\\[\nmjtqnswe=\\{crsmnhdy:|crsmnhdy qzxwvtnp-crsmnhdy hjgrksla|=i\\}, \\quad i=1,2, \\ldots, wktrmsla-1\n\\]\nor on the union \\( yzvdwcua \\) of \\( \\stackrel{\\rightharpoonup}{qzxwvtnp hjgrksla} \\) and the perpendicular bisector of \\( qzxwvtnp hjgrksla \\).\nSimilarly, a point \\( ldmpwzra \\) at integral distance from both \\( qzxwvtnp \\) and \\( vbfkqjse \\) must be on one of the hyperbolas\n\\[\nbxrgpezo=\\{crsmnhdy:|crsmnhdy qzxwvtnp-crsmnhdy vbfkqjse|=i\\}, \\quad i=1,2, \\ldots, flnqxzje-1\n\\]\nor on the union \\( nfzkhula \\) of \\( \\overleftrightarrow{qzxwvtnp vbfkqjse} \\) and the perpendicular bisector of \\( qzxwvtnp vbfkqjse \\). Any point of our given set must be in one of the sets \\( mjtqnswe \\cap bxrgpezo \\). Because \\( \\overleftarrow{qzxwvtnp hjgrksla} \\neq \\overleftarrow{qzxwvtnp vbfkqjse} \\), none of the sets \\( mjtqnswe \\) is the same as any of the sets \\( bxrgpezo \\). Unless both \\( i \\) and \\( fqpdlwmn \\) are \\( 0, mjtqnswe \\cap bxrgpezo \\) is the intersection of two second-degree curves not both degenerate; hence \\( mjtqnswe \\cap bxrgpezo \\) contains at most four points. But \\( yzvdwcua \\cap nfzkhula \\) also contains at most four points since \\( yzvdwcua \\) and \\( nfzkhula \\) do not share a common line. Therefore the given set contains at most \\( 4(wktrmsla+1)(flnqxzje+1) \\) points, contrary to the hypothesis that it is infinite. This contradiction shows that the given points are collinear.\n\nRemark. It is known that for any positive integer \\( ksrmnqva \\), there exist \\( ksrmnqva \\) non-collinear points in the plane such that each set of two are at integral distances. In fact, we can construct such a set lying on a circle. If \\( zdwkxbhi \\) is an angle such that both \\( \\sin zdwkxbhi \\) and \\( \\cos zdwkxbhi \\) are rational, the points \\( e^{2 gdlqrfse i zdwkxbhi}, gdlqrfse \\) an integer, are all at rational distances from one another. By a change of scale we can make any finite number of these distances integral.\n\nReferences. N. H. Anning and P. Erdos, \"Integral Distances,\" Bulletin of the American Mathematical Society, vol. 51 (1945), pages 598-600; A. S. Besicovitch, \"Rational Polygons,\" Mathematika, vol. 6 (1959), page 98; D. E. Daykin, \"Rational Polygons,\" Mathematika, vol. 10 (1963), pages 125-131; and H. Hadwiger, H. Debrunner, and V. Klee, Combinatorial Geometry in the Plane, Holt, Rinehart and Winston, New York, 1964, pages 4-6."
+    },
+    "kernel_variant": {
+      "question": "Let \\kappa  be a fixed positive real number.  A set S of points in the Euclidean plane has the property that the distance between any two distinct points of S is an integral multiple of \\kappa .  Prove that if S is infinite, then all of its points must lie on the same straight line.",
+      "solution": "Assume, to obtain a contradiction, that S is infinite but not collinear.  Then S contains three non-collinear points A , B , C.  Put\n                |AB| = p \\kappa  , |AC| = q \\kappa   with p , q \\in  \\mathbb{N} , p , q \\geq  1.      (1)\n\nNotation.\nFor points X , Y write d(X , Y) for the Euclidean distance |XY|.  All distances that appear below are integral multiples of \\kappa , so we write d(X , Y) = k \\kappa  with k \\in  \\mathbb{N}.\n\nStep 1.  Loci determined by the pair (A , B).\nFor P \\in  S let\n                d(P , A) = m \\kappa  , d(P , B) = n \\kappa   (m , n \\in  \\mathbb{N}).\nThe triangle inequality gives\n      | d(P , A) - d(P , B) | \\leq  d(A , B) = p \\kappa  ,\nso\n                |m - n| = i with 0 \\leq  i \\leq  p.                            (2)\nDefine\n                H_i := { X \\in  \\mathbb{R}^2 : | d(X , A) - d(X , B) | = i \\kappa  } , i = 0 , \\ldots  , p.  (3)\nIf i \\geq  1, H_i is a (two-branched) hyperbola with foci A , B.  If i = 0, H_0 is the single straight line that is the perpendicular bisector of segment AB.  By (2) every point of S lies on one of the curves H_i.\n\nStep 2.  Loci determined by the pair (A , C).\nIn the same way, for 0 \\leq  j \\leq  q set\n                K_j := { X \\in  \\mathbb{R}^2 : | d(X , A) - d(X , C) | = j \\kappa  }.        (4)\nAgain K_j is a hyperbola when j \\geq  1 and the perpendicular bisector of AC when j = 0.  Each point of S lies on some K_j.\n\nConsequently every P \\in  S belongs to one of the finite family of intersections\n                H_i \\cap  K_j with 0 \\leq  i \\leq  p , 0 \\leq  j \\leq  q.                 (5)\n\nStep 3.  The curves H_i and K_j share no common irreducible component.\n*  If i \\geq  1 and j \\geq  1, H_i and K_j are distinct hyperbolas: they have different pairs of foci (A , B versus A , C).  Since A , B , C are not collinear, the two curves cannot coincide.\n*  If exactly one of i , j equals 0, one curve is a hyperbola and the other a line; clearly they do not coincide.\n*  If i = j = 0, H_0 and K_0 are the perpendicular bisectors of AB and AC.  These two lines are distinct because the chords AB and AC are not parallel (A , B , C are non-collinear).  Hence the lines themselves are distinct.\nThus in every case H_i and K_j have no common irreducible component.\n\nStep 4.  Bounding the size of H_i \\cap  K_j.\nBecause two algebraic curves of degrees r and s without a common component have at most r\\cdot s intersection points (Bezout's theorem), we obtain\n*  hyperbola (degree 2) \\cap  hyperbola (degree 2): \\leq  4 points;\n*  line (degree 1) \\cap  hyperbola (degree 2): \\leq  2 points;\n*  line (degree 1) \\cap  line (degree 1): \\leq  1 point.\nAll of these numbers are \\leq  4, so\n                | H_i \\cap  K_j | \\leq  4 for all 0 \\leq  i \\leq  p , 0 \\leq  j \\leq  q.       (6)\n\nStep 5.  Counting points of S.\nThere are (p + 1)(q + 1) ordered pairs (i , j).  Using (5) and (6)\n      |S| = | \\bigcup _{i=0}^{p} \\bigcup _{j=0}^{q} (H_i \\cap  K_j) |\n           \\leq  \\sum _{i=0}^{p} \\sum _{j=0}^{q} | H_i \\cap  K_j |\n           \\leq  4 (p + 1)(q + 1) < \\infty .                                        (7)\nThis contradicts the assumption that S is infinite.  Therefore the original supposition---that S contained three non-collinear points---must be false.  All points of S lie on a single straight line. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Assume three non-collinear points A,B,C with integer side-lengths r=AB and s=AC.",
+          "Describe all points P having integral distances to both A and B as belonging to finitely many conics H_i (difference |PA−PB| = i); do the same for A and C, getting K_j.",
+          "Use Bézout (two distinct conics have ≤4 common points) to bound |H_i ∩ K_j| for every pair (i,j).",
+          "There are (r+1)(s+1) such pairs, so the whole configuration contains ≤4(r+1)(s+1) points—finite.",
+          "Contradiction with the hypothesis of infinitely many points ⇒ all points must be collinear."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Chosen anchor distances from A to B and A to C; only required to be positive integers.",
+            "original": "r = |AB|,  s = |AC|"
+          },
+          "slot2": {
+            "description": "Numerical constant used for the intersection bound of two conics; any fixed universal upper bound would still yield finiteness.",
+            "original": "4  (the Bézout maximum for two second-degree curves)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

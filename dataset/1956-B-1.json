@@ -1,0 +1,115 @@
+{
+  "index": "1956-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Show that if the differential equation\n\\[\nM(x, y) d x+N(x, y) d y=0\n\\]\nis both homogeneous and exact then the solution \\( y=f(x) \\) satisfies \\( x M+y N \\) \\( =C( \\) constant \\( ) \\).",
+  "solution": "Solution. If \\( M \\) and \\( N \\) are homogeneous of degree \\( k \\), then by Euler's theorem\n\\[\nx \\frac{\\partial M}{\\partial x}+y \\frac{\\partial M}{\\partial y}=k M\n\\]\nand\n\\[\nx \\frac{\\partial N}{\\partial x}+y \\frac{\\partial N}{\\partial y}=k N\n\\]\n\nIf the given differential equation is exact, then\n\\[\n\\frac{\\partial M}{\\partial y}=\\frac{\\partial N}{\\partial x}\n\\]\n\nHence, if both conditions are satisfied,\n\\[\n\\begin{aligned}\nd(x M+y N)= & M d x+N d y+x\\left(\\frac{\\partial M}{\\partial x} d x+\\frac{\\partial M}{\\partial y} d y\\right) \\\\\n& +y\\left(\\frac{\\partial N}{\\partial x} d x+\\frac{\\partial N}{\\partial y} d y\\right) \\\\\n= & M d x+N d y+\\left(x \\frac{\\partial M}{\\partial x}+y \\frac{\\partial M}{\\partial y}\\right) d x \\\\\n& +\\left(x \\frac{\\partial N}{\\partial x}+y \\frac{\\partial N}{\\partial y}\\right) d y \\\\\n= & (k+1)(M d x+N d y)\n\\end{aligned}\n\\]\na relation valid on the entire domain of \\( M \\) and \\( N \\).\nNow if \\( y=f(x) \\), where \\( f \\) is defined on an interval, is a solution of the given differential equation (that is, the substitution of \\( f(x) \\) for \\( y \\) makes \\( M d x+N d y \\) zero) then this substitution in \\( x M+y N \\) gives a function \\( g \\) defined on an interval with \\( d g=0 \\). Hence \\( g \\) is a constant, say \\( g(x)=C \\). Then \\( y=f(x) \\) satisfies \\( x M+y N=C \\).",
+  "vars": [
+    "x",
+    "y",
+    "M",
+    "N",
+    "f",
+    "g"
+  ],
+  "params": [
+    "k",
+    "C"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizcoor",
+        "y": "vertcoor",
+        "M": "firstfunc",
+        "N": "secondfunc",
+        "f": "solufunc",
+        "g": "auxifunc",
+        "k": "homodegr",
+        "C": "constval"
+      },
+      "question": "1. Show that if the differential equation\n\\[\nfirstfunc(horizcoor, vertcoor) d horizcoor+secondfunc(horizcoor, vertcoor) d vertcoor=0\n\\]\nis both homogeneous and exact then the solution \\( vertcoor=solufunc(horizcoor) \\) satisfies \\( horizcoor firstfunc+vertcoor secondfunc \\) \\( =constval( \\) constant \\( ) \\).",
+      "solution": "Solution. If \\( firstfunc \\) and \\( secondfunc \\) are homogeneous of degree \\( homodegr \\), then by Euler's theorem\n\\[\nhorizcoor \\frac{\\partial firstfunc}{\\partial horizcoor}+vertcoor \\frac{\\partial firstfunc}{\\partial vertcoor}=homodegr\\, firstfunc\n\\]\nand\n\\[\nhorizcoor \\frac{\\partial secondfunc}{\\partial horizcoor}+vertcoor \\frac{\\partial secondfunc}{\\partial vertcoor}=homodegr\\, secondfunc\n\\]\n\nIf the given differential equation is exact, then\n\\[\n\\frac{\\partial firstfunc}{\\partial vertcoor}=\\frac{\\partial secondfunc}{\\partial horizcoor}\n\\]\n\nHence, if both conditions are satisfied,\n\\[\n\\begin{aligned}\nd(horizcoor\\, firstfunc+vertcoor\\, secondfunc)= & firstfunc\\, d horizcoor+secondfunc\\, d vertcoor+horizcoor\\left(\\frac{\\partial firstfunc}{\\partial horizcoor} d horizcoor+\\frac{\\partial firstfunc}{\\partial vertcoor} d vertcoor\\right) \\\\\n& +vertcoor\\left(\\frac{\\partial secondfunc}{\\partial horizcoor} d horizcoor+\\frac{\\partial secondfunc}{\\partial vertcoor} d vertcoor\\right) \\\\\n= & firstfunc\\, d horizcoor+secondfunc\\, d vertcoor+\\left(horizcoor \\frac{\\partial firstfunc}{\\partial horizcoor}+vertcoor \\frac{\\partial firstfunc}{\\partial vertcoor}\\right) d horizcoor \\\\\n& +\\left(horizcoor \\frac{\\partial secondfunc}{\\partial horizcoor}+vertcoor \\frac{\\partial secondfunc}{\\partial vertcoor}\\right) d vertcoor \\\\\n= & (homodegr+1)(firstfunc\\, d horizcoor+secondfunc\\, d vertcoor)\n\\end{aligned}\n\\]\na relation valid on the entire domain of \\( firstfunc \\) and \\( secondfunc \\).\nNow if \\( vertcoor=solufunc(horizcoor) \\), where solufunc is defined on an interval, is a solution of the given differential equation (that is, the substitution of solufunc(horizcoor) for vertcoor makes firstfunc\\, d horizcoor+secondfunc\\, d vertcoor zero) then this substitution in \\( horizcoor\\, firstfunc+vertcoor\\, secondfunc \\) gives a function auxifunc defined on an interval with \\( d\\, auxifunc=0 \\). Hence auxifunc is a constant, say auxifunc(horizcoor)=constval. Then vertcoor=solufunc(horizcoor) satisfies \\( horizcoor\\, firstfunc+vertcoor\\, secondfunc=constval \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandstone",
+        "y": "driftwood",
+        "M": "lighthouse",
+        "N": "moonlight",
+        "f": "sunflower",
+        "g": "horseshoe",
+        "k": "blackberry",
+        "C": "waterfall"
+      },
+      "question": "1. Show that if the differential equation\n\\[\nlighthouse(sandstone, driftwood) d sandstone+moonlight(sandstone, driftwood) d driftwood=0\n\\]\nis both homogeneous and exact then the solution \\( driftwood=sunflower(sandstone) \\) satisfies \\( sandstone lighthouse+driftwood moonlight \\) \\( =waterfall( \\) constant \\( ) \\).",
+      "solution": "Solution. If \\( lighthouse \\) and \\( moonlight \\) are homogeneous of degree \\( blackberry \\), then by Euler's theorem\n\\[\nsandstone \\frac{\\partial lighthouse}{\\partial sandstone}+driftwood \\frac{\\partial lighthouse}{\\partial driftwood}=blackberry lighthouse\n\\]\nand\n\\[\nsandstone \\frac{\\partial moonlight}{\\partial sandstone}+driftwood \\frac{\\partial moonlight}{\\partial driftwood}=blackberry moonlight\n\\]\n\nIf the given differential equation is exact, then\n\\[\n\\frac{\\partial lighthouse}{\\partial driftwood}=\\frac{\\partial moonlight}{\\partial sandstone}\n\\]\n\nHence, if both conditions are satisfied,\n\\[\n\\begin{aligned}\nd(sandstone lighthouse+driftwood moonlight)= & lighthouse d sandstone+moonlight d driftwood+sandstone\\left(\\frac{\\partial lighthouse}{\\partial sandstone} d sandstone+\\frac{\\partial lighthouse}{\\partial driftwood} d driftwood\\right) \\\\\n& +driftwood\\left(\\frac{\\partial moonlight}{\\partial sandstone} d sandstone+\\frac{\\partial moonlight}{\\partial driftwood} d driftwood\\right) \\\\\n= & lighthouse d sandstone+moonlight d driftwood+\\left(sandstone \\frac{\\partial lighthouse}{\\partial sandstone}+driftwood \\frac{\\partial lighthouse}{\\partial driftwood}\\right) d sandstone \\\\\n& +\\left(sandstone \\frac{\\partial moonlight}{\\partial sandstone}+driftwood \\frac{\\partial moonlight}{\\partial driftwood}\\right) d driftwood \\\\\n= & (blackberry+1)(lighthouse d sandstone+moonlight d driftwood)\n\\end{aligned}\n\\]\na relation valid on the entire domain of \\( lighthouse \\) and \\( moonlight \\).\nNow if \\( driftwood=sunflower(sandstone) \\), where \\( sunflower \\) is defined on an interval, is a solution of the given differential equation (that is, the substitution of \\( sunflower(sandstone) \\) for \\( driftwood \\) makes \\( lighthouse d sandstone+moonlight d driftwood \\) zero) then this substitution in \\( sandstone lighthouse+driftwood moonlight \\) gives a function \\( horseshoe \\) defined on an interval with \\( d horseshoe=0 \\). Hence \\( horseshoe \\) is a constant, say \\( horseshoe(sandstone)=waterfall \\). Then \\( driftwood=sunflower(sandstone) \\) satisfies \\( sandstone lighthouse+driftwood moonlight=waterfall \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "M": "minusculevalue",
+        "N": "massivevalue",
+        "f": "antifunction",
+        "g": "variable",
+        "k": "irregularity",
+        "C": "variability"
+      },
+      "question": "1. Show that if the differential equation\n\\[\n\\minusculevalue(\\verticalaxis, \\horizontalaxis) d \\verticalaxis+\\massivevalue(\\verticalaxis, \\horizontalaxis) d \\horizontalaxis=0\n\\]\nis both homogeneous and exact then the solution \\( \\horizontalaxis=\\antifunction(\\verticalaxis) \\) satisfies \\( \\verticalaxis \\minusculevalue+\\horizontalaxis \\massivevalue \\) \\( =\\variability( \\) constant \\( ) \\).",
+      "solution": "Solution. If \\( \\minusculevalue \\) and \\( \\massivevalue \\) are homogeneous of degree \\( \\irregularity \\), then by Euler's theorem\n\\[\n\\verticalaxis \\frac{\\partial \\minusculevalue}{\\partial \\verticalaxis}+\\horizontalaxis \\frac{\\partial \\minusculevalue}{\\partial \\horizontalaxis}=\\irregularity \\minusculevalue\n\\]\nand\n\\[\n\\verticalaxis \\frac{\\partial \\massivevalue}{\\partial \\verticalaxis}+\\horizontalaxis \\frac{\\partial \\massivevalue}{\\partial \\horizontalaxis}=\\irregularity \\massivevalue\n\\]\nIf the given differential equation is exact, then\n\\[\n\\frac{\\partial \\minusculevalue}{\\partial \\horizontalaxis}=\\frac{\\partial \\massivevalue}{\\partial \\verticalaxis}\n\\]\nHence, if both conditions are satisfied,\n\\[\n\\begin{aligned}\nd(\\verticalaxis \\minusculevalue+\\horizontalaxis \\massivevalue)= & \\minusculevalue d \\verticalaxis+\\massivevalue d \\horizontalaxis+\\verticalaxis\\left(\\frac{\\partial \\minusculevalue}{\\partial \\verticalaxis} d \\verticalaxis+\\frac{\\partial \\minusculevalue}{\\partial \\horizontalaxis} d \\horizontalaxis\\right) \\\\\n& +\\horizontalaxis\\left(\\frac{\\partial \\massivevalue}{\\partial \\verticalaxis} d \\verticalaxis+\\frac{\\partial \\massivevalue}{\\partial \\horizontalaxis} d \\horizontalaxis\\right) \\\\\n= & \\minusculevalue d \\verticalaxis+\\massivevalue d \\horizontalaxis+\\left(\\verticalaxis \\frac{\\partial \\minusculevalue}{\\partial \\verticalaxis}+\\horizontalaxis \\frac{\\partial \\minusculevalue}{\\partial \\horizontalaxis}\\right) d \\verticalaxis \\\\\n& +\\left(\\verticalaxis \\frac{\\partial \\massivevalue}{\\partial \\verticalaxis}+\\horizontalaxis \\frac{\\partial \\massivevalue}{\\partial \\horizontalaxis}\\right) d \\horizontalaxis \\\\\n= & (\\irregularity+1)(\\minusculevalue d \\verticalaxis+\\massivevalue d \\horizontalaxis)\n\\end{aligned}\n\\]\na relation valid on the entire domain of \\( \\minusculevalue \\) and \\( \\massivevalue \\).\nNow if \\( \\horizontalaxis=\\antifunction(\\verticalaxis) \\), where \\( \\antifunction \\) is defined on an interval, is a solution of the given differential equation (that is, the substitution of \\( \\antifunction(\\verticalaxis) \\) for \\( \\horizontalaxis \\) makes \\( \\minusculevalue d \\verticalaxis+\\massivevalue d \\horizontalaxis \\) zero) then this substitution in \\( \\verticalaxis \\minusculevalue+\\horizontalaxis \\massivevalue \\) gives a function \\( \\variable \\) defined on an interval with \\( d \\variable=0 \\). Hence \\( \\variable \\) is a constant, say \\( \\variable(\\verticalaxis)=\\variability \\). Then \\( \\horizontalaxis=\\antifunction(\\verticalaxis) \\) satisfies \\( \\verticalaxis \\minusculevalue+\\horizontalaxis \\massivevalue=\\variability \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "M": "bcnlkfqe",
+        "N": "rixowtuz",
+        "f": "savdnpjg",
+        "g": "mqlzheru",
+        "k": "ydfsvbmt",
+        "C": "plwnjkrz"
+      },
+      "question": "1. Show that if the differential equation\n\\[\nbcnlkfqe(qzxwvtnp, hjgrksla) d qzxwvtnp+rixowtuz(qzxwvtnp, hjgrksla) d hjgrksla=0\n\\]\nis both homogeneous and exact then the solution \\( hjgrksla=savdnpjg(qzxwvtnp) \\) satisfies \\( qzxwvtnp bcnlkfqe+hjgrksla rixowtuz \\) \\( =plwnjkrz( \\) constant \\( ) \\).",
+      "solution": "Solution. If \\( bcnlkfqe \\) and \\( rixowtuz \\) are homogeneous of degree \\( ydfsvbmt \\), then by Euler's theorem\n\\[\nqzxwvtnp \\frac{\\partial bcnlkfqe}{\\partial qzxwvtnp}+hjgrksla \\frac{\\partial bcnlkfqe}{\\partial hjgrksla}=ydfsvbmt bcnlkfqe\n\\]\nand\n\\[\nqzxwvtnp \\frac{\\partial rixowtuz}{\\partial qzxwvtnp}+hjgrksla \\frac{\\partial rixowtuz}{\\partial hjgrksla}=ydfsvbmt rixowtuz\n\\]\n\nIf the given differential equation is exact, then\n\\[\n\\frac{\\partial bcnlkfqe}{\\partial hjgrksla}=\\frac{\\partial rixowtuz}{\\partial qzxwvtnp}\n\\]\n\nHence, if both conditions are satisfied,\n\\[\n\\begin{aligned}\nd(qzxwvtnp bcnlkfqe+hjgrksla rixowtuz)= & bcnlkfqe d qzxwvtnp+rixowtuz d hjgrksla+qzxwvtnp\\left(\\frac{\\partial bcnlkfqe}{\\partial qzxwvtnp} d qzxwvtnp+\\frac{\\partial bcnlkfqe}{\\partial hjgrksla} d hjgrksla\\right) \\\\\n& +hjgrksla\\left(\\frac{\\partial rixowtuz}{\\partial qzxwvtnp} d qzxwvtnp+\\frac{\\partial rixowtuz}{\\partial hjgrksla} d hjgrksla\\right) \\\\\n= & bcnlkfqe d qzxwvtnp+rixowtuz d hjgrksla+\\left(qzxwvtnp \\frac{\\partial bcnlkfqe}{\\partial qzxwvtnp}+hjgrksla \\frac{\\partial bcnlkfqe}{\\partial hjgrksla}\\right) d qzxwvtnp \\\\\n& +\\left(qzxwvtnp \\frac{\\partial rixowtuz}{\\partial qzxwvtnp}+hjgrksla \\frac{\\partial rixowtuz}{\\partial hjgrksla}\\right) d hjgrksla \\\\\n= & (ydfsvbmt+1)(bcnlkfqe d qzxwvtnp+rixowtuz d hjgrksla)\n\\end{aligned}\n\\]\na relation valid on the entire domain of \\( bcnlkfqe \\) and \\( rixowtuz \\).\nNow if \\( hjgrksla=savdnpjg(qzxwvtnp) \\), where \\( savdnpjg \\) is defined on an interval, is a solution of the given differential equation (that is, the substitution of \\( savdnpjg(qzxwvtnp) \\) for \\( hjgrksla \\) makes \\( bcnlkfqe d qzxwvtnp+rixowtuz d hjgrksla \\) zero) then this substitution in \\( qzxwvtnp bcnlkfqe+hjgrksla rixowtuz \\) gives a function \\( mqlzheru \\) defined on an interval with \\( d mqlzheru=0 \\). Hence \\( mqlzheru \\) is a constant, say \\( mqlzheru(qzxwvtnp)=plwnjkrz \\). Then \\( hjgrksla=savdnpjg(qzxwvtnp) \\) satisfies \\( qzxwvtnp bcnlkfqe+hjgrksla rixowtuz=plwnjkrz \\)."
+    },
+    "kernel_variant": {
+      "question": "Let P(s,t) and Q(s,t) be C^{1} functions defined on a cone-shaped domain in \\(\\mathbb R^{2}\\setminus\\{(0,0)\\}\\) such that\n1. (Homogeneity)  there exists a real number \\(\\lambda\\) with\n   \\[P(\\alpha s,\\alpha t)=\\alpha^{\\lambda}P(s,t),\\qquad Q(\\alpha s,\\alpha t)=\\alpha^{\\lambda}Q(s,t)\\quad(\\alpha>0).\\]\n2. (Exactness)  the 1-form\n   \\[\\omega:=P(s,t)\\,ds+Q(s,t)\\,dt\\]\n   is exact on that domain.\n\nProve that every differentiable solution curve of the differential equation\n\\[P(s,t)\\,ds+Q(s,t)\\,dt=0\\]\nnecessarily lies on a level set of the function\n\\[F(s,t):=s\\,P(s,t)+t\\,Q(s,t),\\]\ni.e. there exists a constant \\(D\\) (depending on the curve but not on the point of the curve) such that\n\\[F(s(t),t(t))=D\\quad\\text{along the curve}.\\]",
+      "solution": "Because P and Q are homogeneous of degree \\lambda , Euler's theorem gives\n\\[\ns\\,P_{s}+t\\,P_{t}=\\lambda P,\\qquad s\\,Q_{s}+t\\,Q_{t}=\\lambda Q.\\tag{1}\n\\]\n(Here subscripts denote partial derivatives.)\n\nExactness of \\omega  = P ds + Q dt means\n\\[\nP_{t}=Q_{s}.\\tag{2}\n\\]\n\nLet F(s,t)=s P(s,t)+t Q(s,t).  Then\n\\[\n\\begin{aligned}\n dF&=d(sP)+d(tQ)=P\\,ds+s\\,dP+Q\\,dt+t\\,dQ\\\\\n &=P\\,ds+Q\\,dt+s(P_{s}\\,ds+P_{t}\\,dt)+t(Q_{s}\\,ds+Q_{t}\\,dt)\\\\\n &=\\bigl[P+sP_{s}+tQ_{s}\\bigr]ds+\\bigl[Q+sP_{t}+tQ_{t}\\bigr]dt.\n\\end{aligned}\n\\]\nUsing P_{t}=Q_{s} to swap mixed derivatives, we rewrite\n\\[\nsP_{s}+tQ_{s}=sP_{s}+tP_{t},\\quad sP_{t}+tQ_{t}=sQ_{s}+tQ_{t},\n\\]\nso by (1)\n\\[\ndF=\\bigl[P+\\lambda P\\bigr]ds+\\bigl[Q+\\lambda Q\\bigr]dt=(1+\\lambda)(P\\,ds+Q\\,dt).\n\\tag{3}\n\\]\nFinally, along any solution curve of P ds+Q dt=0, the right-hand side of (3) vanishes, so dF=0.  Hence F is constant along each integral curve, as required.",
+      "_meta": {
+        "core_steps": [
+          "Apply Euler’s theorem to the homogeneous functions M and N:  x∂M/∂x + y∂M/∂y = kM and x∂N/∂x + y∂N/∂y = kN",
+          "Use exactness (∂M/∂y = ∂N/∂x)",
+          "Differentiate the expression xM + yN and substitute the two previous relations to obtain d(xM + yN) = (k+1)(M dx + N dy)",
+          "Observe that along any solution curve of M dx + N dy = 0 the right–hand side vanishes, so d(xM + yN) = 0",
+          "Conclude that xM + yN is constant on each solution curve"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Symbol/ value chosen for the common degree of homogeneity",
+            "original": "k"
+          },
+          "slot2": {
+            "description": "Names of the two independent variables",
+            "original": "(x, y)"
+          },
+          "slot3": {
+            "description": "Label for the constant value of xM + yN along a solution",
+            "original": "C"
+          },
+          "slot4": {
+            "description": "Explicit form of the non-zero scalar factor relating differentials (here k+1)",
+            "original": "k+1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

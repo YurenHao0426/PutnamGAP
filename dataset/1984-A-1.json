@@ -1,0 +1,95 @@
+{
+  "index": "1984-A-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem A-1\nLet \\( A \\) be a solid \\( a \\times b \\times c \\) rectangular brick in three dimensions, where \\( a, b, c>0 \\). Let \\( B \\) be the set of all points which are a distance at most one from some point of \\( A \\) (in particular, \\( B \\) contains \\( A \\) ). Express the volume of \\( B \\) as a polynomial in \\( a, b \\), and \\( c \\).",
+  "solution": "A-1.\nThe set \\( B \\) can be partitioned into the following sets:\n(i) A itself, of volume \\( a b c \\);\n(ii) two \\( a \\times b \\times 1 \\) bricks, two \\( a \\times c \\times 1 \\) bricks, and two \\( b \\times c \\times 1 \\) bricks, of total volume \\( 2 a b+2 a c+2 b c \\);\n(iii) four quarter-cylinders of length \\( a \\) and radius 1 , four quarter-cylinders of length \\( b \\) and radius 1 , and four quarter-cylinders of length \\( c \\) and radius 1 , of total volume \\( (a+b+c) \\pi \\);\n(iv) eight spherical sectors, each consisting of one-eighth of a sphere of radius 1 , of total volume \\( 4 \\pi / 3 \\).\n\nHence the volume of \\( B \\) is\n\\[\na b c+2(a b+a c+b c)+\\pi(a+b+c)+\\frac{4 \\pi}{3}\n\\]",
+  "vars": [
+    "A",
+    "B"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "brickbody",
+        "B": "bufferzone",
+        "a": "lengthone",
+        "b": "breadthone",
+        "c": "heightone"
+      },
+      "question": "Problem A-1\nLet \\( brickbody \\) be a solid \\( lengthone \\times breadthone \\times heightone \\) rectangular brick in three dimensions, where \\( lengthone, breadthone, heightone>0 \\). Let \\( bufferzone \\) be the set of all points which are a distance at most one from some point of \\( brickbody \\) (in particular, \\( bufferzone \\) contains \\( brickbody \\) ). Express the volume of \\( bufferzone \\) as a polynomial in \\( lengthone, breadthone \\), and \\( heightone \\).",
+      "solution": "A-1.\nThe set \\( bufferzone \\) can be partitioned into the following sets:\n(i) brickbody itself, of volume \\( lengthone\\, breadthone\\, heightone \\);\n(ii) two \\( lengthone \\times breadthone \\times 1 \\) bricks, two \\( lengthone \\times heightone \\times 1 \\) bricks, and two \\( breadthone \\times heightone \\times 1 \\) bricks, of total volume \\( 2\\, lengthone\\, breadthone+2\\, lengthone\\, heightone+2\\, breadthone\\, heightone \\);\n(iii) four quarter-cylinders of length \\( lengthone \\) and radius 1 , four quarter-cylinders of length \\( breadthone \\) and radius 1 , and four quarter-cylinders of length \\( heightone \\) and radius 1 , of total volume \\( (lengthone+breadthone+heightone) \\pi \\);\n(iv) eight spherical sectors, each consisting of one-eighth of a sphere of radius 1 , of total volume \\( 4 \\pi / 3 \\).\n\nHence the volume of \\( bufferzone \\) is\n\\[\nlengthone\\, breadthone\\, heightone+2(lengthone\\, breadthone+lengthone\\, heightone+breadthone\\, heightone)+\\pi(lengthone+breadthone+heightone)+\\frac{4 \\pi}{3}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "sunflower",
+        "B": "blueberry",
+        "a": "cardinal",
+        "b": "monarchs",
+        "c": "crocodile"
+      },
+      "question": "Problem A-1\nLet \\( sunflower \\) be a solid \\( cardinal \\times monarchs \\times crocodile \\) rectangular brick in three dimensions, where \\( cardinal, monarchs, crocodile>0 \\). Let \\( blueberry \\) be the set of all points which are a distance at most one from some point of \\( sunflower \\) (in particular, \\( blueberry \\) contains \\( sunflower \\) ). Express the volume of \\( blueberry \\) as a polynomial in \\( cardinal, monarchs \\), and \\( crocodile \\).",
+      "solution": "A-1.\nThe set \\( blueberry \\) can be partitioned into the following sets:\n(i) sunflower itself, of volume \\( cardinal monarchs crocodile \\);\n(ii) two \\( cardinal \\times monarchs \\times 1 \\) bricks, two \\( cardinal \\times crocodile \\times 1 \\) bricks, and two \\( monarchs \\times crocodile \\times 1 \\) bricks, of total volume \\( 2 cardinal monarchs+2 cardinal crocodile+2 monarchs crocodile \\);\n(iii) four quarter-cylinders of length \\( cardinal \\) and radius 1 , four quarter-cylinders of length \\( monarchs \\) and radius 1 , and four quarter-cylinders of length \\( crocodile \\) and radius 1 , of total volume \\( (cardinal+monarchs+crocodile) \\pi \\);\n(iv) eight spherical sectors, each consisting of one-eighth of a sphere of radius 1 , of total volume \\( 4 \\pi / 3 \\).\n\nHence the volume of \\( blueberry \\) is\n\\[\ncardinal monarchs crocodile+2(cardinal monarchs+cardinal crocodile+monarchs crocodile)+\\pi(cardinal+monarchs+crocodile)+\\frac{4 \\pi}{3}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "emptiness",
+        "B": "shrinkage",
+        "a": "zeroextent",
+        "b": "lengthless",
+        "c": "sizeless"
+      },
+      "question": "Problem A-1\nLet \\( emptiness \\) be a solid \\( zeroextent \\times lengthless \\times sizeless \\) rectangular brick in three dimensions, where \\( zeroextent, lengthless, sizeless>0 \\). Let \\( shrinkage \\) be the set of all points which are a distance at most one from some point of \\( emptiness \\) (in particular, \\( shrinkage \\) contains \\( emptiness \\) ). Express the volume of \\( shrinkage \\) as a polynomial in \\( zeroextent, lengthless \\), and \\( sizeless \\).",
+      "solution": "A-1.\nThe set \\( shrinkage \\) can be partitioned into the following sets:\n(i) emptiness itself, of volume \\( zeroextent lengthless sizeless \\);\n(ii) two \\( zeroextent \\times lengthless \\times 1 \\) bricks, two \\( zeroextent \\times sizeless \\times 1 \\) bricks, and two \\( lengthless \\times sizeless \\times 1 \\) bricks, of total volume \\( 2 zeroextent lengthless+2 zeroextent sizeless+2 lengthless sizeless \\);\n(iii) four quarter-cylinders of length \\( zeroextent \\) and radius 1 , four quarter-cylinders of length \\( lengthless \\) and radius 1 , and four quarter-cylinders of length \\( sizeless \\) and radius 1 , of total volume \\( (zeroextent+lengthless+sizeless) \\pi \\);\n(iv) eight spherical sectors, each consisting of one-eighth of a sphere of radius 1 , of total volume \\( 4 \\pi / 3 \\).\n\nHence the volume of \\( shrinkage \\) is\n\\[\nzeroextent lengthless sizeless+2(zeroextent lengthless+zeroextent sizeless+lengthless sizeless)+\\pi(zeroextent+lengthless+sizeless)+\\frac{4 \\pi}{3}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "a": "mnpqrsuv",
+        "b": "wxyzabcd",
+        "c": "efghijkl"
+      },
+      "question": "Problem A-1\nLet \\( qzxwvtnp \\) be a solid \\( mnpqrsuv \\times wxyzabcd \\times efghijkl \\) rectangular brick in three dimensions, where \\( mnpqrsuv, wxyzabcd, efghijkl>0 \\). Let \\( hjgrksla \\) be the set of all points which are a distance at most one from some point of \\( qzxwvtnp \\) (in particular, \\( hjgrksla \\) contains \\( qzxwvtnp \\) ). Express the volume of \\( hjgrksla \\) as a polynomial in \\( mnpqrsuv, wxyzabcd \\), and \\( efghijkl \\).",
+      "solution": "A-1.\nThe set \\( hjgrksla \\) can be partitioned into the following sets:\n(i) qzxwvtnp itself, of volume \\( mnpqrsuv wxyzabcd efghijkl \\);\n(ii) two \\( mnpqrsuv \\times wxyzabcd \\times 1 \\) bricks, two \\( mnpqrsuv \\times efghijkl \\times 1 \\) bricks, and two \\( wxyzabcd \\times efghijkl \\times 1 \\) bricks, of total volume \\( 2 mnpqrsuv wxyzabcd+2 mnpqrsuv efghijkl+2 wxyzabcd efghijkl \\);\n(iii) four quarter-cylinders of length \\( mnpqrsuv \\) and radius 1 , four quarter-cylinders of length \\( wxyzabcd \\) and radius 1 , and four quarter-cylinders of length \\( efghijkl \\) and radius 1 , of total volume \\( (mnpqrsuv+wxyzabcd+efghijkl) \\pi \\);\n(iv) eight spherical sectors, each consisting of one-eighth of a sphere of radius 1 , of total volume \\( 4 \\pi / 3 \\).\n\nHence the volume of \\( hjgrksla \\) is\n\\[\nmnpqrsuv wxyzabcd efghijkl+2(mnpqrsuv wxyzabcd+mnpqrsuv efghijkl+wxyzabcd efghijkl)+\\pi(mnpqrsuv+wxyzabcd+efghijkl)+\\frac{4 \\pi}{3}\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $r>0$ and let $L,M,N>0$.  Let $A$ be the solid $L\\times M\\times N$ rectangular brick in $\\mathbb{R}^3$.  Let $C$ be the set of all points in $\\mathbb{R}^3$ whose distance from some point of $A$ is at most $r$ (so $A\\subset C$).  Express the volume $\\operatorname{Vol}(C)$ as a polynomial in $L,M,N$, and $r$ (with the constant $\\pi$ permitted).",
+      "solution": "LMN + 2r(LM + LN + MN) + \\pi r^2(L + M + N) + \\frac{4\\pi r^3}{3}",
+      "_meta": {
+        "core_steps": [
+          "View B as the Minkowski sum of A with a unit ball (all points ≤1 away).",
+          "Partition B by the type of nearest point in A: interior, face, edge, corner.",
+          "Identify resulting pieces: the original brick, 6 face-prisms of thickness 1, 12 quarter-cylinders along edges, 8 octants of a sphere at corners.",
+          "Compute volumes of each piece with standard formulas and add."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Radius of the neighborhood added to A (currently the unit distance).",
+            "original": 1
+          },
+          "slot2": {
+            "description": "Side-length parameters of the rectangular brick (three positive variables).",
+            "original": [
+              "a",
+              "b",
+              "c"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

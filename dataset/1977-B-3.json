@@ -1,0 +1,146 @@
+{
+  "index": "1977-B-3",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Problem B-3\nAn (ordered) triple ( \\( x_{1}, x_{2}, x_{3} \\) ) of positive irrational numbers with \\( x_{1}+x_{2}+x_{3}=1 \\) is called \"balanced\" if each \\( x_{i}<1 / 2 \\). If a triple is not balanced, say if \\( x_{j}>1 / 2 \\), one performs the following \"balancing act\"\n\\[\nB\\left(x_{1}, x_{2}, x_{3}\\right)=\\left(x_{1}^{\\prime}, x_{2}^{\\prime}, x_{3}^{\\prime}\\right),\n\\]\nwhere \\( x_{i}^{\\prime}=2 x_{i} \\) if \\( i \\neq j \\) and \\( x_{j}^{\\prime}=2 x_{j}-1 \\). If the new triple is not balanced, one performs the balancing act on it. Does continuation of this process always lead to a balanced triple after a finite number of performances of the balancing act?",
+  "solution": "B-3.\nLet \\( x_{i}=\\sum_{j=1}^{\\infty} a_{i j} 2^{-j} \\), with \\( a_{i j} \\in\\{0,1\\} \\), be the binary expansion of \\( x_{i} \\). The triple is balanced if \\( a_{11}=a_{21}=a_{31}=0 \\). Otherwise, \\( a_{i 1}=1 \\) for exactly one \\( i \\) and the balancing act produces \\( x_{i}^{\\prime}= \\) \\( \\sum_{j=1}^{\\infty} a_{i, j+1} 2^{-j} \\). An unbalanced triple that remains unbalanced after any finite number of balancing acts is constructed by choosing the \\( a_{i j} \\) so that exactly one of \\( a_{1 j}, a_{2 j}, a_{3 j} \\) equals 1 for each \\( j \\) while taking care that no one of sequences \\( a_{i 1}, a_{i 2}, \\ldots \\) repeats in blocks, i.e., that each \\( x_{i} \\) is irrational. One such solution has\n\\[\n\\begin{array}{l}\na_{1 j}=1 \\quad \\text { if and only if } j \\in\\{1,9,25,49, \\ldots\\}, \\\\\na_{2 j}=1 \\quad \\text { if and only if } j \\in\\{4,16,36,64, \\ldots\\}, \\\\\na_{3 j}=1 \\quad \\text { if and only if } j \\in\\{2,3,5,6, \\ldots\\} .\n\\end{array}\n\\]",
+  "vars": [
+    "i",
+    "j",
+    "x_1",
+    "x_2",
+    "x_3",
+    "x_i",
+    "x_j",
+    "x_1^{\\\\prime}",
+    "x_2^{\\\\prime}",
+    "x_3^{\\\\prime}",
+    "x_i^{\\\\prime}",
+    "x_j^{\\\\prime}"
+  ],
+  "params": [
+    "a",
+    "a_ij",
+    "B"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexi",
+        "j": "indexj",
+        "x_1": "coordinateone",
+        "x_2": "coordinatetwo",
+        "x_3": "coordinatethree",
+        "x_i": "coordinatevar",
+        "x_j": "coordinatevarb",
+        "x_1^{\\prime}": "coordoneprime",
+        "x_2^{\\prime}": "coordtwoprime",
+        "x_3^{\\prime}": "coordthreeprime",
+        "x_i^{\\prime}": "coordinatevarprime",
+        "x_j^{\\prime}": "coordinatevarbprime",
+        "a": "binarycoef",
+        "a_ij": "binarycoefij",
+        "B": "balanceop"
+      },
+      "question": "Problem balanceop-3\nAn (ordered) triple ( \\( coordinateone, coordinatetwo, coordinatethree \\) ) of positive irrational numbers with \\( coordinateone+coordinatetwo+coordinatethree=1 \\) is called \"balanced\" if each \\( coordinatevar<1 / 2 \\). If a triple is not balanced, say if \\( coordinatevarb>1 / 2 \\), one performs the following \"balancing act\"\n\\[\nbalanceop\\left(coordinateone, coordinatetwo, coordinatethree\\right)=\\left(coordoneprime, coordtwoprime, coordthreeprime\\right),\n\\]\nwhere \\( coordinatevarprime=2\\,coordinatevar \\) if \\( indexi \\neq indexj \\) and \\( coordinatevarbprime=2\\,coordinatevarb-1 \\). If the new triple is not balanced, one performs the balancing act on it. Does continuation of this process always lead to a balanced triple after a finite number of performances of the balancing act?",
+      "solution": "balanceop-3.\nLet \\( coordinatevar=\\sum_{indexj=1}^{\\infty} binarycoef_{indexi\\,indexj} \\, 2^{-indexj} \\), with \\( binarycoef_{indexi\\,indexj} \\in\\{0,1\\} \\), be the binary expansion of \\( coordinatevar \\). The triple is balanced if \\( binarycoef_{1\\,1}=binarycoef_{2\\,1}=binarycoef_{3\\,1}=0 \\). Otherwise, \\( binarycoef_{indexi\\,1}=1 \\) for exactly one \\( indexi \\) and the balancing act produces \\( coordinatevarprime=\\sum_{indexj=1}^{\\infty} binarycoef_{indexi,\\,indexj+1} \\, 2^{-indexj} \\). An unbalanced triple that remains unbalanced after any finite number of balancing acts is constructed by choosing the \\( binarycoef_{indexi\\,indexj} \\) so that exactly one of \\( binarycoef_{1\\,indexj}, binarycoef_{2\\,indexj}, binarycoef_{3\\,indexj} \\) equals 1 for each \\( indexj \\) while taking care that no one of sequences \\( binarycoef_{indexi\\,1}, binarycoef_{indexi\\,2}, \\ldots \\) repeats in blocks, i.e., that each \\( coordinatevar \\) is irrational. One such solution has\n\\[\n\\begin{array}{l}\nbinarycoef_{1\\,indexj}=1 \\quad \\text { if and only if } \\; indexj \\in\\{1,9,25,49, \\ldots\\}, \\\\\nbinarycoef_{2\\,indexj}=1 \\quad \\text { if and only if } \\; indexj \\in\\{4,16,36,64, \\ldots\\}, \\\\\nbinarycoef_{3\\,indexj}=1 \\quad \\text { if and only if } \\; indexj \\in\\{2,3,5,6, \\ldots\\} .\n\\end{array}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "parrotfish",
+        "j": "hummingbee",
+        "x_1": "dandelion",
+        "x_2": "marigolds",
+        "x_3": "columbine",
+        "x_i": "asterdale",
+        "x_j": "lilacbush",
+        "x_1^{\\prime}": "sunflower^{\\prime}",
+        "x_2^{\\prime}": "buttercup^{\\prime}",
+        "x_3^{\\prime}": "hibiscus^{\\prime}",
+        "x_i^{\\prime}": "magnolia^{\\prime}",
+        "x_j^{\\prime}": "cranberry^{\\prime}",
+        "a": "toadflax",
+        "a_ij": "wildbison",
+        "B": "persimmon"
+      },
+      "question": "Problem B-3\nAn (ordered) triple ( \\( dandelion, marigolds, columbine \\) ) of positive irrational numbers with \\( dandelion+marigolds+columbine=1 \\) is called \"balanced\" if each \\( asterdale<1 / 2 \\). If a triple is not balanced, say if \\( lilacbush>1 / 2 \\), one performs the following \"balancing act\"\n\\[\npersimmon\\left(dandelion, marigolds, columbine\\right)=\\left(sunflower^{\\prime}, buttercup^{\\prime}, hibiscus^{\\prime}\\right),\n\\]\nwhere \\( magnolia^{\\prime}=2 asterdale \\) if \\( parrotfish \\neq hummingbee \\) and \\( cranberry^{\\prime}=2 lilacbush-1 \\). If the new triple is not balanced, one performs the balancing act on it. Does continuation of this process always lead to a balanced triple after a finite number of performances of the balancing act?",
+      "solution": "B-3.\nLet \\( asterdale=\\sum_{hummingbee=1}^{\\infty} toadflax_{parrotfish hummingbee} 2^{-hummingbee} \\), with \\( toadflax_{parrotfish hummingbee} \\in\\{0,1\\} \\), be the binary expansion of \\( asterdale \\). The triple is balanced if \\( toadflax_{11}=toadflax_{21}=toadflax_{31}=0 \\). Otherwise, \\( toadflax_{parrotfish 1}=1 \\) for exactly one \\( parrotfish \\) and the balancing act produces \\( magnolia^{\\prime}= \\) \\( \\sum_{hummingbee=1}^{\\infty} toadflax_{parrotfish, hummingbee+1} 2^{-hummingbee} \\). An unbalanced triple that remains unbalanced after any finite number of balancing acts is constructed by choosing the \\( toadflax_{parrotfish hummingbee} \\) so that exactly one of \\( toadflax_{1 hummingbee}, toadflax_{2 hummingbee}, toadflax_{3 hummingbee} \\) equals 1 for each \\( hummingbee \\) while taking care that no one of sequences \\( toadflax_{parrotfish 1}, toadflax_{parrotfish 2}, \\ldots \\) repeats in blocks, i.e., that each \\( asterdale \\) is irrational. One such solution has\n\\[\n\\begin{array}{l}\ntoadflax_{1 hummingbee}=1 \\quad \\text { if and only if } hummingbee \\in\\{1,9,25,49, \\ldots\\}, \\\\\ntoadflax_{2 hummingbee}=1 \\quad \\text { if and only if } hummingbee \\in\\{4,16,36,64, \\ldots\\}, \\\\\ntoadflax_{3 hummingbee}=1 \\quad \\text { if and only if } hummingbee \\in\\{2,3,5,6, \\ldots\\} .\n\\end{array}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "totalcount",
+        "j": "entirety",
+        "x_1": "knownalpha",
+        "x_2": "knownbeta",
+        "x_3": "knowngamma",
+        "x_i": "knownindex",
+        "x_j": "knownwhole",
+        "x_1^{\\\\prime}": "knownalphaalt",
+        "x_2^{\\\\prime}": "knownbetaalt",
+        "x_3^{\\\\prime}": "knowngammaalt",
+        "x_i^{\\\\prime}": "knownindexalt",
+        "x_j^{\\\\prime}": "knownwholealt",
+        "a": "zerodigit",
+        "a_ij": "infinitydigit",
+        "B": "unbalancer"
+      },
+      "question": "Problem B-3\nAn (ordered) triple ( \\( knownalpha, knownbeta, knowngamma \\) ) of positive irrational numbers with \\( knownalpha+knownbeta+knowngamma=1 \\) is called \"balanced\" if each \\( knownindex<1 / 2 \\). If a triple is not balanced, say if \\( knownwhole>1 / 2 \\), one performs the following \"balancing act\"\n\\[\nunbalancer\\left(knownalpha, knownbeta, knowngamma\\right)=\\left(knownalphaalt, knownbetaalt, knowngammaalt\\right),\n\\]\nwhere \\( knownindexalt=2 knownindex \\) if \\( totalcount \\neq entirety \\) and \\( knownwholealt=2 knownwhole-1 \\). If the new triple is not balanced, one performs the balancing act on it. Does continuation of this process always lead to a balanced triple after a finite number of performances of the balancing act?",
+      "solution": "B-3.\nLet \\( knownindex=\\sum_{entirety=1}^{\\infty} zerodigit_{totalcount entirety} 2^{-entirety} \\), with \\( zerodigit_{totalcount entirety} \\in\\{0,1\\} \\), be the binary expansion of \\( knownindex \\). The triple is balanced if \\( zerodigit_{11}=zerodigit_{21}=zerodigit_{31}=0 \\). Otherwise, \\( zerodigit_{totalcount 1}=1 \\) for exactly one \\( totalcount \\) and the balancing act produces \\( knownindexalt= \\) \\( \\sum_{entirety=1}^{\\infty} zerodigit_{totalcount, entirety+1} 2^{-entirety} \\). An unbalanced triple that remains unbalanced after any finite number of balancing acts is constructed by choosing the \\( zerodigit_{totalcount entirety} \\) so that exactly one of \\( zerodigit_{1 entirety}, zerodigit_{2 entirety}, zerodigit_{3 entirety} \\) equals 1 for each \\( entirety \\) while taking care that no one of sequences \\( zerodigit_{totalcount 1}, zerodigit_{totalcount 2}, \\ldots \\) repeats in blocks, i.e., that each \\( knownindex \\) is irrational. One such solution has\n\\[\n\\begin{array}{l}\nzerodigit_{1 entirety}=1 \\quad \\text { if and only if } entirety \\in\\{1,9,25,49, \\ldots\\}, \\\\\nzerodigit_{2 entirety}=1 \\quad \\text { if and only if } entirety \\in\\{4,16,36,64, \\ldots\\}, \\\\\nzerodigit_{3 entirety}=1 \\quad \\text { if and only if } entirety \\in\\{2,3,5,6, \\ldots\\} .\n\\end{array}\n\\]\n"
+    },
+    "garbled_string": {
+      "map": {
+        "i": "qzxwvtnp",
+        "j": "hjgrksla",
+        "x_1": "brnfqmtc",
+        "x_2": "fdvshzle",
+        "x_3": "gpktrwoc",
+        "x_i": "pvschmye",
+        "x_j": "klmqntrb",
+        "x_1^{\\\\prime}": "zlxwfgod",
+        "x_2^{\\\\prime}": "hsfknrva",
+        "x_3^{\\\\prime}": "cprzlotu",
+        "x_i^{\\\\prime}": "jtdblqwe",
+        "x_j^{\\\\prime}": "fkhzpsuy",
+        "a": "vctmshrq",
+        "a_ij": "wqbcdosu",
+        "B": "lzkmpran"
+      },
+      "question": "Problem B-3\nAn (ordered) triple ( \\( brnfqmtc, fdvshzle, gpktrwoc \\) ) of positive irrational numbers with \\( brnfqmtc+fdvshzle+gpktrwoc=1 \\) is called \"balanced\" if each \\( pvschmye<1 / 2 \\). If a triple is not balanced, say if \\( klmqntrb>1 / 2 \\), one performs the following \"balancing act\"\n\\[\nlzkmpran\\left(brnfqmtc, fdvshzle, gpktrwoc\\right)=\\left(zlxwfgod, hsfknrva, cprzlotu\\right),\n\\]\nwhere \\( jtdblqwe=2 pvschmye \\) if \\( qzxwvtnp \\neq hjgrksla \\) and \\( fkhzpsuy=2 klmqntrb-1 \\). If the new triple is not balanced, one performs the balancing act on it. Does continuation of this process always lead to a balanced triple after a finite number of performances of the balancing act?",
+      "solution": "B-3.\nLet \\( pvschmye=\\sum_{hjgrksla=1}^{\\infty} vctmshrq_{qzxwvtnp hjgrksla} 2^{-hjgrksla} \\), with \\( vctmshrq_{qzxwvtnp hjgrksla} \\in\\{0,1\\} \\), be the binary expansion of \\( pvschmye \\). The triple is balanced if \\( vctmshrq_{11}=vctmshrq_{21}=vctmshrq_{31}=0 \\). Otherwise, \\( vctmshrq_{qzxwvtnp 1}=1 \\) for exactly one \\( qzxwvtnp \\) and the balancing act produces \\( jtdblqwe= \\) \\( \\sum_{hjgrksla=1}^{\\infty} vctmshrq_{qzxwvtnp, hjgrksla+1} 2^{-hjgrksla} \\). An unbalanced triple that remains unbalanced after any finite number of balancing acts is constructed by choosing the \\( vctmshrq_{qzxwvtnp hjgrksla} \\) so that exactly one of \\( vctmshrq_{1 hjgrksla}, vctmshrq_{2 hjgrksla}, vctmshrq_{3 hjgrksla} \\) equals 1 for each \\( hjgrksla \\) while taking care that no one of sequences \\( vctmshrq_{qzxwvtnp 1}, vctmshrq_{qzxwvtnp 2}, \\ldots \\) repeats in blocks, i.e., that each \\( pvschmye \\) is irrational. One such solution has\n\\[\n\\begin{array}{l}\nvctmshrq_{1 hjgrksla}=1 \\quad \\text { if and only if } hjgrksla \\in\\{1,9,25,49, \\ldots\\}, \\\\\nvctmshrq_{2 hjgrksla}=1 \\quad \\text { if and only if } hjgrksla \\in\\{4,16,36,64, \\ldots\\}, \\\\\nvctmshrq_{3 hjgrksla}=1 \\quad \\text { if and only if } hjgrksla \\in\\{2,3,5,6, \\ldots\\} .\n\\end{array}\n\\]\n"
+    },
+    "kernel_variant": {
+      "question": "Let $(x_{1},x_{2},x_{3})$ be an ordered triple of positive irrational numbers that satisfies\n\\[\nx_{1}+x_{2}+x_{3}=1 .\n\\]\nCall the triple calm if $x_{i}<\\tfrac12$ for $i=1,2,3$.  Whenever the triple is not calm there is a unique index $j$ with $x_{j} > \\tfrac12$; replace the triple by\n\\[\n\\mathcal T(x_{1},x_{2},x_{3})\\;=\\;(x_{1}',x_{2}',x_{3}'),\\qquad\nx_{j}' = 2x_{j}-1,\\;\\;x_{i}' = 2x_{i}\\;(i\\neq j).\n\\]\nIterate the map $\\mathcal T$ as long as the resulting triple is not calm.\n\nMust this procedure reach a calm triple after finitely many steps?  Justify your answer.",
+      "solution": "Answer: No.  There exist starting triples of positive irrational numbers for which the iteration never becomes calm.\n\nConstruction of such a triple.\n\n1. Binary expansions.\n   Write each x_i in binary,\n   x_i = \\Sigma _{j=1}^\\infty  a_{ij} 2^{-j},   a_{ij}\\in {0,1}.\n\n2. Calmness and the first binary digit.\n   The triple is calm exactly when the first binary digit of every x_i is 0, i.e. when a_{11}=a_{21}=a_{31}=0.  Indeed, a_{i1}=1 means x_i\\geq \\frac{1}{2}.\n\n3. Effect of one iteration.\n   If the triple is not calm, then a_{k1}=1 for exactly one k.  The definition of T multiplies the two smaller coordinates by 2 while sending x_k to 2x_k-1.  In binary this deletes the leading digit of x_k and shifts every other digit one place to the left for all three numbers.  Hence after t iterations the first t columns of the infinite array (a_{ij}) are discarded.\n\n4. An infinite array with a permanent leading 1.\n   We now build an array (a_{ij}) with the following two properties:\n     *  In every column j exactly one of a_{1j},a_{2j},a_{3j} equals 1.\n     *  No row is eventually periodic (so every x_i is irrational).\n\n   Choose the sets of column indices\n   A_1 = {1,2,4,8,16,32,\\ldots }={2^k | k\\geq 0},\n   A_2 = {3,6,12,24,48,\\ldots }={3\\cdot 2^k | k\\geq 0},\n   A_3 = \\mathbb{N}\\setminus (A_1\\cup A_2).\n   Define a_{1j}=1 iff j\\in A_1, a_{2j}=1 iff j\\in A_2, and a_{3j}=1 iff j\\in A_3.  Every positive integer j lies in exactly one of the three sets, so the first requirement holds.\n\n   None of the three binary rows is eventually periodic.  (For instance, the gaps between successive 1's in row 1 double, precluding periodicity; row 2 behaves similarly; the complement A_3 therefore also lacks periodicity.)  Consequently each x_i is irrational.\n\n5. Why the triple never calms down.\n   At the beginning the first column of the array contains exactly one 1, so the triple is not calm.  After any finite number t of iterations of T the first t columns are removed, but the (t+1)-st column still contains exactly one 1 by construction.  Thus the transformed triple is still not calm.  Inductively, the process can never reach a stage in which the first column of the remaining array is (0,0,0), i.e. it can never become calm.\n\nTherefore the iterative procedure does not always terminate; the triple obtained from the binary rows determined by A_1,A_2,A_3 is a concrete counter-example.",
+      "_meta": {
+        "core_steps": [
+          "Express each x_i in binary: x_i = Σ a_{ij}·2^{-j},  a_{ij}∈{0,1}.",
+          "Note: triple is balanced ⇔ first binary digit of every x_i is 0.",
+          "Show: one balancing act deletes the first digit of the UNIQUE x_k with a_{k1}=1 and shifts others; hence after t acts the first t columns of the a-table are discarded.",
+          "Build an infinite binary table with exactly one ‘1’ in every column and non-periodic rows ⇒ some first digit is always 1 even after any finite number of deletions.",
+          "Choose the rows non-periodic to keep each x_i irrational, producing a counter-example."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Exact choice of column-indices where a_{1j}=1 (only requirement: no periodic pattern and never share a ‘1’ with another row).",
+            "original": "{1, 9, 25, 49, …}"
+          },
+          "slot2": {
+            "description": "Exact choice of column-indices where a_{2j}=1 under same constraints as slot1.",
+            "original": "{4, 16, 36, 64, …}"
+          },
+          "slot3": {
+            "description": "Exact choice of column-indices where a_{3j}=1 under same constraints as slot1.",
+            "original": "{2, 3, 5, 6, …}"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

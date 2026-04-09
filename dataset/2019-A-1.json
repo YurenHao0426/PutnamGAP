@@ -1,0 +1,123 @@
+{
+  "index": "2019-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Determine all possible values of the expression\n\\[\nA^3+B^3+C^3-3ABC\n\\]\nwhere $A, B$, and $C$ are nonnegative integers.",
+  "solution": "The answer is all nonnegative integers not congruent to $3$ or $6 \\pmod{9}$. Let $X$ denote the given expression;\nwe first show that we can make $X$ equal to each of the claimed values. Write $B=A+b$ and $C=A+c$, so that\n\\[\nX = (b^2-bc+c^2)(3A+b+c).\n\\]\nBy taking $(b,c) = (0,1)$ or $(b,c) = (1,1)$, we obtain respectively $X = 3A+1$ and $X = 3A+2$; consequently, as $A$ varies, we achieve every nonnegative integer not divisible by 3. By taking $(b,c) = (1,2)$, we obtain $X = 9A+9$; consequently, as $A$ varies, we achieve every positive integer divisible by 9. We may also achieve $X=0$\nby taking $(b,c) = (0,0)$.\n\nIn the other direction, $X$ is always nonnegative: either apply the arithmetic mean-geometric mean inequality, or write $b^2-bc+c^2 = (b - c/2)^2 + 3c^2/4$ to see that it is nonnegative.\nIt thus only remains to show that if $X$ is a multiple of $3$, then it is a multiple of $9$. Note that\n$3A+b+c \\equiv b+c \\pmod{3}$ and $b^2-bc+c^2 \\equiv (b+c)^2 \\pmod{3}$; consequently, if $X$ is divisible by $3$,\nthen $b+c$ must be divisible by $3$, so each factor in $X = (b^2-bc+c^2)(3A+b+c)$ is divisible by $3$.\nThis proves the claim.\n\n\\noindent\n\\textbf{Remark.}\nThe factorization of $X$ used above can be written more symmetrically as\n\\[\nX = (A+B+C)(A^2+B^2+C^2-AB-BC-CA).\n\\]\nOne interpretation of the factorization is that $X$ is the determinant of the circulant matrix\n\\[\n\\begin{pmatrix}\nA & B & C \\\\\nC & A & B \\\\\nB & C & A\n\\end{pmatrix}\n\\]\nwhich has the vector $(1,1,1)$ as an eigenvector (on either side) with eigenvalue $A+B+C$. The other eigenvalues are $A + \\zeta B + \\zeta^2 C$ where $\\zeta$ is a primitive cube root of unity; in fact, $X$ is the norm form for the ring $\\ZZ[T]/(T^3 - 1)$, from which it follows directly that the image of $X$ is closed under multiplication. (This is similar to the fact that the image of $A^2+B^2$, which is the norm form for the ring $\\mathbb{Z}[i]$ of Gaussian integers, is closed under multiplication.)\n\nOne can also the unique factorization property of the ring $\\ZZ[\\zeta]$ of Eisenstein integers as follows.\nThe three factors of $X$ over $\\ZZ[\\zeta_3]$ are pairwise congruent modulo $1-\\zeta_3$; consequently,\nif $X$ is divisible by 3, then it is divisible by $(1-\\zeta_3)^3 = -3\\zeta_3(1-\\zeta_3)$ and hence \n(because it is a rational integer) by $3^2$.",
+  "vars": [
+    "A",
+    "B",
+    "C",
+    "X",
+    "b",
+    "c",
+    "T"
+  ],
+  "params": [
+    "\\\\zeta",
+    "\\\\zeta_3"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "alphavar",
+        "B": "betavar",
+        "C": "gammavar",
+        "X": "exprvalue",
+        "b": "offsetb",
+        "c": "offsetc",
+        "T": "polyvar",
+        "\\zeta": "zetaconst",
+        "\\zeta_3": "zeta3const"
+      },
+      "question": "Determine all possible values of the expression\n\\[\nalphavar^3+betavar^3+gammavar^3-3 alphavar betavar gammavar\n\\]\nwhere $alphavar, betavar$, and $gammavar$ are nonnegative integers.",
+      "solution": "The answer is all nonnegative integers not congruent to $3$ or $6 \\pmod{9}$. Let $exprvalue$ denote the given expression; we first show that we can make $exprvalue$ equal to each of the claimed values. Write $betavar = alphavar+offsetb$ and $gammavar = alphavar+offsetc$, so that\n\\[\nexprvalue = (offsetb^2-offsetb offsetc+offsetc^2)(3 alphavar+offsetb+offsetc).\n\\]\nBy taking $(offsetb,offsetc) = (0,1)$ or $(offsetb,offsetc) = (1,1)$, we obtain respectively $exprvalue = 3 alphavar+1$ and $exprvalue = 3 alphavar+2$; consequently, as $alphavar$ varies, we achieve every nonnegative integer not divisible by 3. By taking $(offsetb,offsetc) = (1,2)$, we obtain $exprvalue = 9 alphavar+9$; consequently, as $alphavar$ varies, we achieve every positive integer divisible by 9. We may also achieve $exprvalue = 0$ by taking $(offsetb,offsetc) = (0,0)$.\n\nIn the other direction, $exprvalue$ is always nonnegative: either apply the arithmetic mean-geometric mean inequality, or write $offsetb^2-offsetb offsetc+offsetc^2 = (offsetb - offsetc/2)^2 + 3 offsetc^2/4$ to see that it is nonnegative. It thus only remains to show that if $exprvalue$ is a multiple of $3$, then it is a multiple of $9$. Note that\n$3 alphavar+offsetb+offsetc \\equiv offsetb+offsetc \\pmod{3}$ and $offsetb^2-offsetb offsetc+offsetc^2 \\equiv (offsetb+offsetc)^2 \\pmod{3}$; consequently, if $exprvalue$ is divisible by $3$, then $offsetb+offsetc$ must be divisible by $3$, so each factor in $exprvalue = (offsetb^2-offsetb offsetc+offsetc^2)(3 alphavar+offsetb+offsetc)$ is divisible by $3$. This proves the claim.\n\n\\noindent\n\\textbf{Remark.}\nThe factorization of $exprvalue$ used above can be written more symmetrically as\n\\[\nexprvalue = (alphavar+betavar+gammavar)(alphavar^2+betavar^2+gammavar^2-alphavar betavar-betavar gammavar-gammavar alphavar).\n\\]\nOne interpretation of the factorization is that $exprvalue$ is the determinant of the circulant matrix\n\\[\n\\begin{pmatrix}\nalphavar & betavar & gammavar \\\\\ngammavar & alphavar & betavar \\\\\nbetavar & gammavar & alphavar\n\\end{pmatrix}\n\\]\nwhich has the vector $(1,1,1)$ as an eigenvector (on either side) with eigenvalue $alphavar+betavar+gammavar$. The other eigenvalues are $alphavar + zetaconst betavar + zetaconst^2 gammavar$ where $zetaconst$ is a primitive cube root of unity; in fact, $exprvalue$ is the norm form for the ring $\\ZZ[polyvar]/(polyvar^3 - 1)$, from which it follows directly that the image of $exprvalue$ is closed under multiplication. (This is similar to the fact that the image of $alphavar^2+betavar^2$, which is the norm form for the ring $\\mathbb{Z}[i]$ of Gaussian integers, is closed under multiplication.)\n\nOne can also use the unique factorization property of the ring $\\ZZ[zetaconst]$ of Eisenstein integers as follows. The three factors of $exprvalue$ over $\\ZZ[zeta3const]$ are pairwise congruent modulo $1-zeta3const$; consequently, if $exprvalue$ is divisible by 3, then it is divisible by $(1-zeta3const)^3 = -3 zeta3const (1-zeta3const)$ and hence (because it is a rational integer) by $3^2$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "watermelon",
+        "B": "buttercup",
+        "C": "windshield",
+        "X": "turnpike",
+        "b": "dandelion",
+        "c": "chocolate",
+        "T": "peppermint",
+        "\\zeta": "\\dragonfly",
+        "\\zeta_3": "\\grasshopper"
+      },
+      "question": "Determine all possible values of the expression\n\\[\nwatermelon^3+buttercup^3+windshield^3-3watermelonbuttercupwindshield\n\\]\nwhere $watermelon, buttercup$, and $windshield$ are nonnegative integers.",
+      "solution": "The answer is all nonnegative integers not congruent to $3$ or $6 \\pmod{9}$. Let $turnpike$ denote the given expression; we first show that we can make $turnpike$ equal to each of the claimed values. Write $buttercup=watermelon+dandelion$ and $windshield=watermelon+chocolate$, so that\n\\[\nturnpike=(dandelion^2-dandelion chocolate+chocolate^2)(3watermelon+dandelion+chocolate).\n\\]\nBy taking $(dandelion,\\,chocolate)=(0,1)$ or $(dandelion,\\,chocolate)=(1,1)$, we obtain respectively $turnpike=3watermelon+1$ and $turnpike=3watermelon+2$; consequently, as $watermelon$ varies, we achieve every nonnegative integer not divisible by $3$. By taking $(dandelion,\\,chocolate)=(1,2)$, we obtain $turnpike=9watermelon+9$; consequently, as $watermelon$ varies, we achieve every positive integer divisible by $9$. We may also achieve $turnpike=0$ by taking $(dandelion,\\,chocolate)=(0,0)$.\n\nIn the other direction, $turnpike$ is always nonnegative: either apply the arithmetic mean-geometric mean inequality, or write $dandelion^2-dandelion chocolate+chocolate^2=(dandelion-chocolate/2)^2+3chocolate^2/4$ to see that it is nonnegative. It thus only remains to show that if $turnpike$ is a multiple of $3$, then it is a multiple of $9$. Note that $3watermelon+dandelion+chocolate\\equiv dandelion+chocolate\\pmod{3}$ and $dandelion^2-dandelion chocolate+chocolate^2\\equiv(dandelion+chocolate)^2\\pmod{3}$; consequently, if $turnpike$ is divisible by $3$, then $dandelion+chocolate$ must be divisible by $3$, so each factor in $turnpike=(dandelion^2-dandelion chocolate+chocolate^2)(3watermelon+dandelion+chocolate)$ is divisible by $3$. This proves the claim.\n\n\\textbf{Remark.} The factorization of $turnpike$ used above can be written more symmetrically as\n\\[\nturnpike=(watermelon+buttercup+windshield)(watermelon^2+buttercup^2+windshield^2-watermelon buttercup-buttercup windshield-windshield watermelon).\n\\]\nOne interpretation of the factorization is that $turnpike$ is the determinant of the circulant matrix\n\\[\n\\begin{pmatrix}\nwatermelon & buttercup & windshield \\\\\nwindshield & watermelon & buttercup \\\\\nbuttercup & windshield & watermelon\n\\end{pmatrix}\n\\]\nwhich has the vector $(1,1,1)$ as an eigenvector (on either side) with eigenvalue $watermelon+buttercup+windshield$. The other eigenvalues are $watermelon+\\dragonfly buttercup+\\dragonfly^2 windshield$ where $\\dragonfly$ is a primitive cube root of unity; in fact, $turnpike$ is the norm form for the ring $\\ZZ[peppermint]/(peppermint^3-1)$, from which it follows directly that the image of $turnpike$ is closed under multiplication. (This is similar to the fact that the image of $watermelon^2+buttercup^2$, which is the norm form for the ring $\\mathbb{Z}[i]$ of Gaussian integers, is closed under multiplication.)\n\nOne can also use the unique factorization property of the ring $\\ZZ[\\grasshopper]$ of Eisenstein integers as follows. The three factors of $turnpike$ over $\\ZZ[\\grasshopper]$ are pairwise congruent modulo $1-\\grasshopper$; consequently, if $turnpike$ is divisible by $3$, then it is divisible by $(1-\\grasshopper)^3=-3\\grasshopper(1-\\grasshopper)$ and hence (because it is a rational integer) by $3^2$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "fixedvalue",
+        "B": "stabledata",
+        "C": "knownvalue",
+        "X": "inputdata",
+        "b": "decrement",
+        "c": "reduction",
+        "T": "realvalue",
+        "\\zeta": "divergent",
+        "\\zeta_3": "divergentthree"
+      },
+      "question": "Determine all possible values of the expression\n\\[\nfixedvalue^3+stabledata^3+knownvalue^3-3fixedvaluestabledataknownvalue\n\\]\nwhere $fixedvalue, stabledata$, and $knownvalue$ are nonnegative integers.",
+      "solution": "The answer is all nonnegative integers not congruent to $3$ or $6 \\pmod{9}$. Let $inputdata$ denote the given expression; we first show that we can make $inputdata$ equal to each of the claimed values. Write $stabledata=fixedvalue+decrement$ and $knownvalue=fixedvalue+reduction$, so that\n\\[\ninputdata = (decrement^2-decrementreduction+reduction^2)(3fixedvalue+decrement+reduction).\n\\]\nBy taking $(decrement,reduction) = (0,1)$ or $(decrement,reduction) = (1,1)$, we obtain respectively $inputdata = 3fixedvalue+1$ and $inputdata = 3fixedvalue+2$; consequently, as $fixedvalue$ varies, we achieve every nonnegative integer not divisible by 3. By taking $(decrement,reduction) = (1,2)$, we obtain $inputdata = 9fixedvalue+9$; consequently, as $fixedvalue$ varies, we achieve every positive integer divisible by 9. We may also achieve $inputdata=0$ by taking $(decrement,reduction) = (0,0)$.\n\nIn the other direction, $inputdata$ is always nonnegative: either apply the arithmetic mean-geometric mean inequality, or write $decrement^2-decrementreduction+reduction^2 = (decrement - reduction/2)^2 + 3reduction^2/4$ to see that it is nonnegative.\nIt thus only remains to show that if $inputdata$ is a multiple of $3$, then it is a multiple of $9$. Note that $3fixedvalue+decrement+reduction \\equiv decrement+reduction \\pmod{3}$ and $decrement^2-decrementreduction+reduction^2 \\equiv (decrement+reduction)^2 \\pmod{3}$; consequently, if $inputdata$ is divisible by $3$, then $decrement+reduction$ must be divisible by $3$, so each factor in $inputdata = (decrement^2-decrementreduction+reduction^2)(3fixedvalue+decrement+reduction)$ is divisible by $3$. This proves the claim.\n\n\\noindent\\textbf{Remark.} The factorization of $inputdata$ used above can be written more symmetrically as\n\\[\ninputdata = (fixedvalue+stabledata+knownvalue)(fixedvalue^2+stabledata^2+knownvalue^2-fixedvaluestabledata-stabledataknownvalue-knownvaluefixedvalue).\n\\]\nOne interpretation of the factorization is that $inputdata$ is the determinant of the circulant matrix\n\\[\n\\begin{pmatrix}\nfixedvalue & stabledata & knownvalue \\\\\nknownvalue & fixedvalue & stabledata \\\\\nstabledata & knownvalue & fixedvalue\n\\end{pmatrix}\n\\]\nwhich has the vector $(1,1,1)$ as an eigenvector (on either side) with eigenvalue $fixedvalue+stabledata+knownvalue$. The other eigenvalues are $fixedvalue + divergent\\,stabledata + divergent^2\\,knownvalue$ where $divergent$ is a primitive cube root of unity; in fact, $inputdata$ is the norm form for the ring $\\ZZ[realvalue]/(realvalue^3 - 1)$, from which it follows directly that the image of $inputdata$ is closed under multiplication. (This is similar to the fact that the image of $fixedvalue^2+stabledata^2$, which is the norm form for the ring $\\mathbb{Z}[i]$ of Gaussian integers, is closed under multiplication.)\n\nOne can also use the unique factorization property of the ring $\\ZZ[divergent]$ of Eisenstein integers as follows. The three factors of $inputdata$ over $\\ZZ[divergentthree]$ are pairwise congruent modulo $1-divergentthree$; consequently, if $inputdata$ is divisible by 3, then it is divisible by $(1-divergentthree)^3 = -3divergentthree(1-divergentthree)$ and hence (because it is a rational integer) by $3^2$. "
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "C": "mvldkepr",
+        "X": "syhcambq",
+        "b": "ftnpsqgz",
+        "c": "lwrvkmda",
+        "T": "vphqsnru",
+        "\\zeta": "\\akdjwqpo",
+        "\\zeta_3": "\\gsjrndlm"
+      },
+      "question": "Determine all possible values of the expression\n\\[\nqzxwvtnp^3+hjgrksla^3+mvldkepr^3-3qzxwvtnphjgrkslamvldkepr\n\\]\nwhere $qzxwvtnp, hjgrksla$, and $mvldkepr$ are nonnegative integers.",
+      "solution": "The answer is all nonnegative integers not congruent to $3$ or $6 \\pmod{9}$. Let syhcambq denote the given expression; we first show that we can make syhcambq equal to each of the claimed values. Write $hjgrksla=qzxwvtnp+ftnpsqgz$ and $mvldkepr=qzxwvtnp+lwrvkmda$, so that\n\\[\nsyhcambq = (ftnpsqgz^2-ftnpsqgzlwrvkmda+lwrvkmda^2)(3qzxwvtnp+ftnpsqgz+lwrvkmda).\n\\]\nBy taking $(ftnpsqgz,lwrvkmda) = (0,1)$ or $(ftnpsqgz,lwrvkmda) = (1,1)$, we obtain respectively $syhcambq = 3qzxwvtnp+1$ and $syhcambq = 3qzxwvtnp+2$; consequently, as $qzxwvtnp$ varies, we achieve every nonnegative integer not divisible by 3. By taking $(ftnpsqgz,lwrvkmda) = (1,2)$, we obtain $syhcambq = 9qzxwvtnp+9$; consequently, as $qzxwvtnp$ varies, we achieve every positive integer divisible by 9. We may also achieve $syhcambq=0$ by taking $(ftnpsqgz,lwrvkmda) = (0,0)$.\n\nIn the other direction, syhcambq is always nonnegative: either apply the arithmetic mean-geometric mean inequality, or write $ftnpsqgz^2-ftnpsqgzlwrvkmda+lwrvkmda^2 = (ftnpsqgz - lwrvkmda/2)^2 + 3lwrvkmda^2/4$ to see that it is nonnegative. It thus only remains to show that if syhcambq is a multiple of 3, then it is a multiple of 9. Note that\n$3qzxwvtnp+ftnpsqgz+lwrvkmda \\equiv ftnpsqgz+lwrvkmda \\pmod{3}$ and $ftnpsqgz^2-ftnpsqgzlwrvkmda+lwrvkmda^2 \\equiv (ftnpsqgz+lwrvkmda)^2 \\pmod{3}$; consequently, if syhcambq is divisible by 3, then $ftnpsqgz+lwrvkmda$ must be divisible by 3, so each factor in $syhcambq = (ftnpsqgz^2-ftnpsqgzlwrvkmda+lwrvkmda^2)(3qzxwvtnp+ftnpsqgz+lwrvkmda)$ is divisible by 3. This proves the claim.\n\n\\textbf{Remark.} The factorization of syhcambq used above can be written more symmetrically as\n\\[\nsyhcambq = (qzxwvtnp+hjgrksla+mvldkepr)(qzxwvtnp^2+hjgrksla^2+mvldkepr^2-qzxwvtnphjgrksla-hjgrkslamvldkepr-mvldkeprqzxwvtnp).\n\\]\nOne interpretation of the factorization is that syhcambq is the determinant of the circulant matrix\n\\[\n\\begin{pmatrix}\nqzxwvtnp & hjgrksla & mvldkepr \\\\\nmvldkepr & qzxwvtnp & hjgrksla \\\\\nhjgrksla & mvldkepr & qzxwvtnp\n\\end{pmatrix}\n\\]\nwhich has the vector $(1,1,1)$ as an eigenvector (on either side) with eigenvalue $qzxwvtnp+hjgrksla+mvldkepr$. The other eigenvalues are $qzxwvtnp + \\akdjwqpo hjgrksla + \\akdjwqpo^2 mvldkepr$ where $\\akdjwqpo$ is a primitive cube root of unity; in fact, syhcambq is the norm form for the ring $\\ZZ[vphqsnru]/(vphqsnru^3 - 1)$, from which it follows directly that the image of syhcambq is closed under multiplication. (This is similar to the fact that the image of $qzxwvtnp^2+hjgrksla^2$, which is the norm form for the ring $\\mathbb{Z}[i]$ of Gaussian integers, is closed under multiplication.)\n\nOne can also use the unique factorization property of the ring $\\ZZ[\\akdjwqpo]$ of Eisenstein integers as follows. The three factors of syhcambq over $\\ZZ[\\gsjrndlm]$ are pairwise congruent modulo $1-\\gsjrndlm$; consequently, if syhcambq is divisible by 3, then it is divisible by $(1-\\gsjrndlm)^3 = -3\\gsjrndlm(1-\\gsjrndlm)$ and hence (because it is a rational integer) by $3^2$.",
+      "confidence": "0.19"
+    },
+    "kernel_variant": {
+      "question": "For non-negative integers $A,B,C$ let  \n\\[\nY=(A+B+C)(A^{2}+B^{2}+C^{2}-AB-BC-CA).\n\\] \nDescribe completely the set of values that $Y$ can take.",
+      "solution": "We wish to describe the set of values of\n  Y = A^3 + B^3 + C^3 - 3ABC\nfor nonnegative integers A, B, C.  Recall the well-known factorization\n  A^3 + B^3 + C^3 - 3ABC = (A + B + C)\\cdot (A^2 + B^2 + C^2 - AB - BC - CA).\n\n1.  Change of variables.  Set B = A + b and C = A + c, where b, c are integers with b, c \\geq  -A so that B, C \\geq  0.  Then\n  A + B + C = 3A + b + c,\n  A^2 + B^2 + C^2 - AB - BC - CA = b^2 - b c + c^2,\nso\n  Y = (3A + b + c)\\cdot (b^2 - b c + c^2).\n\n2.  Nonnegativity.  Since b^2 - b c + c^2 = (b - c/2)^2 + 3c^2/4 \\geq  0, and 3A + b + c \\geq  3A - 2A = A \\geq  0, it follows that Y \\geq  0.\n\n3.  Realizing all residues \\not\\equiv  0 mod 3.  Note that b^2 - b c + c^2 = 1 exactly when (b, c) is one of the ``units'' in the Eisenstein form, for instance (1, 0) or (1, 1).\n  *  If (b, c) = (1, 0), then Y = (3A + 1)\\cdot 1 = 3A + 1, which as A runs over 0, 1, 2, \\ldots  produces every integer \\equiv  1 mod 3.\n  *  If (b, c) = (1, 1), then Y = (3A + 2)\\cdot 1 = 3A + 2, producing every integer \\equiv  2 mod 3.\nHence every nonnegative integer not divisible by 3 occurs.\n\n4.  Realizing all positive multiples of 9.  Take (b, c) = (1, 2).  Then\n  b^2 - b c + c^2 = 1 - 2 + 4 = 3,\n  3A + b + c = 3A + 3,\nso\n  Y = 3\\cdot (3A + 3) = 9\\cdot (A + 1).\nAs A runs over 0, 1, 2, \\ldots  this yields exactly the positive multiples of 9.  Additionally, the choice (b, c) = (0, 0) gives Y = 0.\n\n5.  Excluding multiples of 3 that are not multiples of 9.  Observe modulo 3 that\n  3A + b + c \\equiv  b + c,\n  b^2 - b c + c^2 \\equiv  (b + c)^2.\nHence if Y is divisible by 3 then b + c \\equiv  0 mod 3 and therefore each factor is divisible by 3; thus 9 | Y.  In particular no Y \\equiv  3 or 6 mod 9 arises.\n\nConclusion.  The set of all possible values of Y is exactly\n  {n \\in  \\mathbb{Z} : n \\geq  0 and n \\not\\equiv  3, 6 (mod 9)}.\nEquivalently,\n  Y can be any nonnegative integer not congruent to 3 or 6 modulo 9.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite B=A+b, C=A+c and factor X = (b^2 - bc + c^2)(3A + b + c).",
+          "Show non-negativity of X (e.g. via AM ≥ GM or completing the square).",
+          "Pick b,c so the first factor equals 1 or 2 ⇒ X runs through all numbers 3A+1, 3A+2 (hence all non-multiples of 3).",
+          "Pick b,c so the first factor equals 9 ⇒ X runs through 9A+9, giving every positive multiple of 9 (plus 0 when b=c=0).",
+          "Modulo-3 argument: if 3 | X then 3 | (b+c) so both factors are multiples of 3 ⇒ 9 | X, excluding the classes 3,6 (mod 9)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Concrete (b,c) pair used to make first factor 1 (so X = 3A+1). Any pair with b^2-bc+c^2 = 1 works.",
+            "original": "(b,c) = (0,1)"
+          },
+          "slot2": {
+            "description": "Concrete (b,c) pair used to make first factor 1 or 2 (so X = 3A+2). Any pair giving value 2 works.",
+            "original": "(b,c) = (1,1)"
+          },
+          "slot3": {
+            "description": "Concrete (b,c) pair used to make first factor 9 (so X a multiple of 9). Any pair giving value 9 works.",
+            "original": "(b,c) = (1,2)"
+          },
+          "slot4": {
+            "description": "Choice of argument establishing non-negativity (AM–GM vs quadratic rewrite). Either may be swapped without affecting the logic.",
+            "original": "AM–GM inequality OR (b-c/2)^2 + 3c^2/4 ≥ 0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

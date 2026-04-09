@@ -1,0 +1,122 @@
+{
+  "index": "2015-A-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "For each real number $x$, let\n\\[\nf(x) = \\sum_{n\\in S_x} \\frac{1}{2^n},\n\\]\nwhere $S_x$ is the set of positive integers $n$ for which $\\lfloor nx \\rfloor$ is even. What is the largest real number $L$ such that $f(x) \\geq L$ for all $x \\in [0,1)$? (As usual, $\\lfloor z \\rfloor$ denotes the greatest integer less than or equal to $z$.)",
+  "solution": "The answer is $L = 4/7$. For $S \\subset \\mathbb{N}$, let $F(S) = \\sum_{n\\in S} 1/2^n$, so that $f(x) = F(S_x)$. Note that for $T = \\{1,4,7,10,\\ldots\\}$, we have $F(T) = 4/7$.\n\nWe first show by contradiction that for any $x \\in [0,1)$, $f(x) \\geq 4/7$.\nSince each term in the geometric series $\\sum_n 1/2^n$ is equal to the sum of all subsequent terms, if $S,S'$ are different subsets of $\\mathbb{N}$ and the smallest positive integer in one of $S,S'$ but not in the other is in $S$, then $F(S) \\geq F(S')$. Assume $f(x) < 4/7$; then the smallest integer in one of $S_x,T$ but not in the other is in $T$. Now $1 \\in S_x$ for any $x \\in [0,1)$, and we conclude that there are three consecutive integers $n,n+1,n+2$ that are not in $S_x$: that is, $\\lfloor nx\\rfloor$, $\\lfloor (n+1)x\\rfloor$, $\\lfloor (n+2)x\\rfloor$ are all odd. Since the difference between consecutive terms in $nx$, $(n+1)x$, $(n+2)x$ is $x<1$, we conclude that $\\lfloor nx\\rfloor = \\lfloor (n+1)x\\rfloor = \\lfloor (n+2)x\\rfloor$ and so $x<1/2$. But then $2\\in S_x$ and so $f(x) \\geq 3/4$, contradicting our assumption.\n\nIt remains to show that $4/7$ is the greatest lower bound for $f(x)$, $x\\in [0,1)$.\nFor any $n$, choose $x = 2/3-\\epsilon$ with $0<\\epsilon<1/(9n)$; then for $1\\leq k\\leq n$, we have $0<m\\epsilon<1/3$ for $m \\leq 3n$, and so\n\\begin{align*}\n\\lfloor (3k-2)x \\rfloor &= \\lfloor (2k-2)+2/3-(3k-2)\\epsilon \\rfloor = 2k-2 \\\\\n\\lfloor (3k-1)x \\rfloor &= \\lfloor (2k-1)+1/3-(3k-1)\\epsilon \\rfloor = 2k-1 \\\\\n\\lfloor (3k)x \\rfloor &= \\lfloor (2k-1)+1-3k\\epsilon \\rfloor = 2k-1.\n\\end{align*}\nIt follows that $S_x$ is a subset of $S = \\{1,4,7,\\ldots,3n-2,3n+1,3n+2,3n+3,\\ldots\\}$, and so\n$f(x) = F(S_x) \\leq f(S) = (1/2+1/2^4+\\cdots+1/2^{3n+1})+1/2^{3n+1}$. This last expression tends to $4/7$ as $n\\to\\infty$, and so no number greater than $4/7$ can be a lower bound for $f(x)$ for all $x\\in [0,1)$.",
+  "vars": [
+    "x",
+    "f",
+    "n",
+    "S_x",
+    "S",
+    "T",
+    "k",
+    "m",
+    "\\\\epsilon",
+    "F"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "realvar",
+        "f": "funcval",
+        "n": "posindex",
+        "S_x": "subsetx",
+        "S": "subfamily",
+        "T": "trialset",
+        "k": "altindex",
+        "m": "midindex",
+        "\\epsilon": "varepsilon",
+        "F": "sumseries"
+      },
+      "question": "For each real number $realvar$, let\n\\[\nfuncval(realvar) = \\sum_{posindex\\in subsetx} \\frac{1}{2^{posindex}},\n\\]\nwhere $subsetx$ is the set of positive integers $posindex$ for which $\\lfloor posindex realvar \\rfloor$ is even. What is the largest real number $L$ such that $funcval(realvar) \\geq L$ for all $realvar \\in [0,1)$? (As usual, $\\lfloor z \\rfloor$ denotes the greatest integer less than or equal to $z$.)",
+      "solution": "The answer is $L = 4/7$. For $subfamily \\subset \\mathbb{N}$, let $sumseries(subfamily) = \\sum_{posindex\\in subfamily} 1/2^{posindex}$, so that $funcval(realvar) = sumseries(subsetx)$. Note that for $trialset = \\{1,4,7,10,\\ldots\\}$, we have $sumseries(trialset) = 4/7$.\n\nWe first show by contradiction that for any $realvar \\in [0,1)$, $funcval(realvar) \\geq 4/7$.\nSince each term in the geometric series $\\sum_{posindex} 1/2^{posindex}$ is equal to the sum of all subsequent terms, if $subfamily,subfamily'$ are different subsets of $\\mathbb{N}$ and the smallest positive integer in one of $subfamily,subfamily'$ but not in the other is in $subfamily$, then $sumseries(subfamily) \\geq sumseries(subfamily')$. Assume $funcval(realvar) < 4/7$; then the smallest integer in one of $subsetx,trialset$ but not in the other is in $trialset$. Now $1 \\in subsetx$ for any $realvar \\in [0,1)$, and we conclude that there are three consecutive integers $posindex,posindex+1,posindex+2$ that are not in $subsetx$: that is, $\\lfloor posindex realvar\\rfloor$, $\\lfloor (posindex+1)realvar\\rfloor$, $\\lfloor (posindex+2)realvar\\rfloor$ are all odd. Since the difference between consecutive terms in $posindex realvar$, $(posindex+1)realvar$, $(posindex+2)realvar$ is $realvar<1$, we conclude that $\\lfloor posindex realvar\\rfloor = \\lfloor (posindex+1)realvar\\rfloor = \\lfloor (posindex+2)realvar\\rfloor$ and so $realvar<1/2$. But then $2\\in subsetx$ and so $funcval(realvar) \\geq 3/4$, contradicting our assumption.\n\nIt remains to show that $4/7$ is the greatest lower bound for $funcval(realvar)$, $realvar\\in [0,1)$.\nFor any $posindex$, choose $realvar = 2/3-varepsilon$ with $0<varepsilon<1/(9 posindex)$; then for $1\\leq altindex\\leq posindex$, we have $0<midindex varepsilon<1/3$ for $midindex \\leq 3 posindex$, and so\n\\begin{align*}\n\\lfloor (3 altindex-2)realvar \\rfloor &= \\lfloor (2 altindex-2)+2/3-(3 altindex-2)varepsilon \\rfloor = 2 altindex-2 \\\\\n\\lfloor (3 altindex-1)realvar \\rfloor &= \\lfloor (2 altindex-1)+1/3-(3 altindex-1)varepsilon \\rfloor = 2 altindex-1 \\\\\n\\lfloor (3 altindex)realvar \\rfloor &= \\lfloor (2 altindex-1)+1-3 altindex varepsilon \\rfloor = 2 altindex-1.\n\\end{align*}\nIt follows that $subsetx$ is a subset of $subfamily = \\{1,4,7,\\ldots,3 altindex-2,3 altindex+1,3 altindex+2,3 altindex+3,\\ldots\\}$, and so\n$funcval(realvar) = sumseries(subsetx) \\leq funcval(subfamily) = (1/2+1/2^4+\\cdots+1/2^{3 altindex+1})+1/2^{3 altindex+1}$. This last expression tends to $4/7$ as $posindex\\to\\infty$, and so no number greater than $4/7$ can be a lower bound for $funcval(realvar)$ for all $realvar\\in [0,1)$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "cloudship",
+        "f": "drumroll",
+        "n": "illustrator",
+        "S_x": "marathon",
+        "S": "explorer",
+        "T": "windsong",
+        "k": "gemstone",
+        "m": "lighthouse",
+        "\\epsilon": "pendulum",
+        "F": "harvester"
+      },
+      "question": "For each real number $cloudship$, let\n\\[\ndrumroll(cloudship) = \\sum_{illustrator\\in marathon} \\frac{1}{2^{illustrator}},\n\\]\nwhere marathon is the set of positive integers illustrator for which $\\lfloor illustrator\\,cloudship \\rfloor$ is even. What is the largest real number $L$ such that $drumroll(cloudship) \\geq L$ for all $cloudship \\in [0,1)$? (As usual, $\\lfloor z \\rfloor$ denotes the greatest integer less than or equal to $z$.)",
+      "solution": "The answer is $L = 4/7$. For explorer $\\subset \\mathbb{N}$, let $harvester(explorer) = \\sum_{illustrator\\in explorer} 1/2^{illustrator}$, so that $drumroll(cloudship) = harvester(marathon)$. Note that for windsong = $\\{1,4,7,10,\\ldots\\}$, we have $harvester(windsong) = 4/7$.\n\nWe first show by contradiction that for any $cloudship \\in [0,1)$, $drumroll(cloudship) \\geq 4/7$.\nSince each term in the geometric series $\\sum_{illustrator} 1/2^{illustrator}$ is equal to the sum of all subsequent terms, if $explorer,explorer'$ are different subsets of $\\mathbb{N}$ and the smallest positive integer in one of $explorer,explorer'$ but not in the other is in explorer, then $harvester(explorer) \\geq harvester(explorer')$. Assume $drumroll(cloudship) < 4/7$; then the smallest integer in one of marathon,windsong but not in the other is in windsong. Now $1 \\in$ marathon for any $cloudship \\in [0,1)$, and we conclude that there are three consecutive integers illustrator, illustrator+1, illustrator+2 that are not in marathon: that is, $\\lfloor illustrator\\,cloudship\\rfloor$, $\\lfloor (illustrator+1)cloudship\\rfloor$, $\\lfloor (illustrator+2)cloudship\\rfloor$ are all odd. Since the difference between consecutive terms in illustrator cloudship, $(illustrator+1)cloudship$, $(illustrator+2)cloudship$ is $cloudship<1$, we conclude that $\\lfloor illustrator\\,cloudship\\rfloor = \\lfloor (illustrator+1)cloudship\\rfloor = \\lfloor (illustrator+2)cloudship\\rfloor$ and so $cloudship<1/2$. But then $2\\in$ marathon and so $drumroll(cloudship) \\geq 3/4$, contradicting our assumption.\n\nIt remains to show that $4/7$ is the greatest lower bound for $drumroll(cloudship)$, $cloudship\\in [0,1)$. For any illustrator, choose $cloudship = 2/3-pendulum$ with $0<pendulum<1/(9illustrator)$; then for $1\\leq gemstone\\leq illustrator$, we have $0<lighthouse\\,pendulum<1/3$ for $lighthouse \\leq 3illustrator$, and so\n\\begin{align*}\n\\lfloor (3gemstone-2)cloudship \\rfloor &= \\lfloor (2gemstone-2)+2/3-(3gemstone-2)pendulum \\rfloor = 2gemstone-2 \\\\\n\\lfloor (3gemstone-1)cloudship \\rfloor &= \\lfloor (2gemstone-1)+1/3-(3gemstone-1)pendulum \\rfloor = 2gemstone-1 \\\\\n\\lfloor (3gemstone)cloudship \\rfloor &= \\lfloor (2gemstone-1)+1-3gemstone\\,pendulum \\rfloor = 2gemstone-1.\n\\end{align*}\nIt follows that marathon is a subset of explorer = $\\{1,4,7,\\ldots,3illustrator-2,3illustrator+1,3illustrator+2,3illustrator+3,\\ldots\\}$, and so\n$drumroll(cloudship) = harvester(marathon) \\leq harvester(explorer) = (1/2+1/2^4+\\cdots+1/2^{3illustrator+1})+1/2^{3illustrator+1}$. This last expression tends to $4/7$ as $illustrator\\to\\infty$, and so no number greater than $4/7$ can be a lower bound for $drumroll(cloudship)$ for all $cloudship\\in [0,1)$.",
+      "precision": 2
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "f": "nonfunction",
+        "n": "irrational",
+        "S_x": "complementset",
+        "S": "universalset",
+        "T": "continuum",
+        "k": "nonindex",
+        "m": "fractional",
+        "\\\\epsilon": "infinite",
+        "F": "difference"
+      },
+      "question": "For each real number $constantval$, let\n\\[\nnonfunction(constantval) = \\sum_{irrational\\in complementset} \\frac{1}{2^{irrational}},\n\\]\nwhere $complementset$ is the set of positive integers $irrational$ for which $\\lfloor irrational\\,constantval \\rfloor$ is even. What is the largest real number $L$ such that $nonfunction(constantval) \\geq L$ for all $constantval \\in [0,1)$? (As usual, $\\lfloor z \\rfloor$ denotes the greatest integer less than or equal to $z$.)",
+      "solution": "The answer is $L = 4/7$. For $universalset \\subset \\mathbb{N}$, let $difference(universalset) = \\sum_{irrational\\in universalset} 1/2^{irrational}$, so that $nonfunction(constantval) = difference(complementset)$. Note that for $continuum = \\{1,4,7,10,\\ldots\\}$, we have $difference(continuum) = 4/7$.\n\nWe first show by contradiction that for any $constantval \\in [0,1)$, $nonfunction(constantval) \\geq 4/7$.\nSince each term in the geometric series $\\sum_{irrational} 1/2^{irrational}$ is equal to the sum of all subsequent terms, if $universalset,universalset'$ are different subsets of $\\mathbb{N}$ and the smallest positive integer in one of $universalset,universalset'$ but not in the other is in $universalset$, then $difference(universalset) \\geq difference(universalset')$. Assume $nonfunction(constantval) < 4/7$; then the smallest integer in one of $complementset,continuum$ but not in the other is in $continuum$. Now $1 \\in complementset$ for any $constantval \\in [0,1)$, and we conclude that there are three consecutive integers $irrational,irrational+1,irrational+2$ that are not in $complementset$: that is, $\\lfloor irrational\\,constantval\\rfloor$, $\\lfloor (irrational+1)constantval\\rfloor$, $\\lfloor (irrational+2)constantval\\rfloor$ are all odd. Since the difference between consecutive terms in $irrational\\,constantval$, $(irrational+1)constantval$, $(irrational+2)constantval$ is $constantval<1$, we conclude that $\\lfloor irrational\\,constantval\\rfloor = \\lfloor (irrational+1)constantval\\rfloor = \\lfloor (irrational+2)constantval\\rfloor$ and so $constantval<1/2$. But then $2\\in complementset$ and so $nonfunction(constantval) \\geq 3/4$, contradicting our assumption.\n\nIt remains to show that $4/7$ is the greatest lower bound for $nonfunction(constantval)$, $constantval\\in [0,1)$.\nFor any $irrational$, choose $constantval = 2/3-infinite$ with $0<infinite<1/(9irrational)$; then for $1\\leq nonindex\\leq irrational$, we have $0<fractional\\,infinite<1/3$ for $fractional \\leq 3irrational$, and so\n\\begin{align*}\n\\lfloor (3nonindex-2)constantval \\rfloor &= \\lfloor (2nonindex-2)+2/3-(3nonindex-2)infinite \\rfloor = 2nonindex-2 \\\\\n\\lfloor (3nonindex-1)constantval \\rfloor &= \\lfloor (2nonindex-1)+1/3-(3nonindex-1)infinite \\rfloor = 2nonindex-1 \\\\\n\\lfloor (3nonindex)constantval \\rfloor &= \\lfloor (2nonindex-1)+1-3nonindex\\,infinite \\rfloor = 2nonindex-1.\n\\end{align*}\nIt follows that $complementset$ is a subset of $universalset = \\{1,4,7,\\ldots,3irrational-2,3irrational+1,3irrational+2,3irrational+3,\\ldots\\}$, and so\n$nonfunction(constantval) = difference(complementset) \\leq nonfunction(universalset) = (1/2+1/2^4+\\cdots+1/2^{3irrational+1})+1/2^{3irrational+1}$. This last expression tends to $4/7$ as $irrational\\to\\infty$, and so no number greater than $4/7$ can be a lower bound for $nonfunction(constantval)$ for all $constantval\\in [0,1)$.}"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "f": "hjgrksla",
+        "n": "bldqmnvx",
+        "S_x": "khefdypl",
+        "S": "vnlcjxqs",
+        "T": "dprzwmth",
+        "k": "gshtmnbr",
+        "m": "lqdzxcvb",
+        "\\epsilon": "wpeiqrzn",
+        "F": "uoyjklas"
+      },
+      "question": "For each real number $qzxwvtnp$, let\n\\[\nhjgrksla(qzxwvtnp) = \\sum_{bldqmnvx\\in khefdypl} \\frac{1}{2^{bldqmnvx}},\n\\]\nwhere $khefdypl$ is the set of positive integers $bldqmnvx$ for which $\\lfloor bldqmnvx qzxwvtnp \\rfloor$ is even. What is the largest real number $L$ such that $hjgrksla(qzxwvtnp) \\geq L$ for all $qzxwvtnp \\in [0,1)$? (As usual, $\\lfloor z \\rfloor$ denotes the greatest integer less than or equal to $z$.)",
+      "solution": "The answer is $L = 4/7$. For $vnlcjxqs \\subset \\mathbb{N}$, let $uoyjklas(vnlcjxqs) = \\sum_{bldqmnvx\\in vnlcjxqs} 1/2^{bldqmnvx}$, so that $hjgrksla(qzxwvtnp) = uoyjklas(khefdypl)$. Note that for $dprzwmth = \\{1,4,7,10,\\ldots\\}$, we have $uoyjklas(dprzwmth) = 4/7$.\n\nWe first show by contradiction that for any $qzxwvtnp \\in [0,1)$, $hjgrksla(qzxwvtnp) \\geq 4/7$.\nSince each term in the geometric series $\\sum_{bldqmnvx} 1/2^{bldqmnvx}$ is equal to the sum of all subsequent terms, if $vnlcjxqs,vnlcjxqs'$ are different subsets of $\\mathbb{N}$ and the smallest positive integer in one of $vnlcjxqs,vnlcjxqs'$ but not in the other is in $vnlcjxqs$, then $uoyjklas(vnlcjxqs) \\geq uoyjklas(vnlcjxqs')$. Assume $hjgrksla(qzxwvtnp) < 4/7$; then the smallest integer in one of $khefdypl,dprzwmth$ but not in the other is in $dprzwmth$. Now $1 \\in khefdypl$ for any $qzxwvtnp \\in [0,1)$, and we conclude that there are three consecutive integers $bldqmnvx,bldqmnvx+1,bldqmnvx+2$ that are not in $khefdypl$: that is, $\\lfloor bldqmnvx qzxwvtnp\\rfloor$, $\\lfloor (bldqmnvx+1)qzxwvtnp\\rfloor$, $\\lfloor (bldqmnvx+2)qzxwvtnp\\rfloor$ are all odd. Since the difference between consecutive terms in $bldqmnvx qzxwvtnp$, $(bldqmnvx+1)qzxwvtnp$, $(bldqmnvx+2)qzxwvtnp$ is $qzxwvtnp<1$, we conclude that $\\lfloor bldqmnvx qzxwvtnp\\rfloor = \\lfloor (bldqmnvx+1)qzxwvtnp\\rfloor = \\lfloor (bldqmnvx+2)qzxwvtnp\\rfloor$ and so $qzxwvtnp<1/2$. But then $2\\in khefdypl$ and so $hjgrksla(qzxwvtnp) \\geq 3/4$, contradicting our assumption.\n\nIt remains to show that $4/7$ is the greatest lower bound for $hjgrksla(qzxwvtnp)$, $qzxwvtnp\\in [0,1)$.\nFor any $bldqmnvx$, choose $qzxwvtnp = 2/3-wpeiqrzn$ with $0<wpeiqrzn<1/(9 bldqmnvx)$; then for $1\\leq gshtmnbr\\leq bldqmnvx$, we have $0<lqdzxcvb wpeiqrzn<1/3$ for $lqdzxcvb \\leq 3 bldqmnvx$, and so\n\\begin{align*}\n\\lfloor (3 gshtmnbr-2)qzxwvtnp \\rfloor &= \\lfloor (2 gshtmnbr-2)+2/3-(3 gshtmnbr-2)wpeiqrzn \\rfloor = 2 gshtmnbr-2 \\\\\n\\lfloor (3 gshtmnbr-1)qzxwvtnp \\rfloor &= \\lfloor (2 gshtmnbr-1)+1/3-(3 gshtmnbr-1)wpeiqrzn \\rfloor = 2 gshtmnbr-1 \\\\\n\\lfloor (3 gshtmnbr)qzxwvtnp \\rfloor &= \\lfloor (2 gshtmnbr-1)+1-3 gshtmnbr wpeiqrzn \\rfloor = 2 gshtmnbr-1.\n\\end{align*}\nIt follows that $khefdypl$ is a subset of $vnlcjxqs = \\{1,4,7,\\ldots,3 bldqmnvx-2,3 bldqmnvx+1,3 bldqmnvx+2,3 bldqmnvx+3,\\ldots\\}$, and so\n$hjgrksla(qzxwvtnp) = uoyjklas(khefdypl) \\leq hjgrksla(vnlcjxqs) = (1/2+1/2^4+\\cdots+1/2^{3 bldqmnvx+1})+1/2^{3 bldqmnvx+1}$. This last expression tends to $4/7$ as $bldqmnvx\\to\\infty$, and so no number greater than $4/7$ can be a lower bound for $hjgrksla(qzxwvtnp)$ for all $qzxwvtnp\\in [0,1)$.}",
+      "confidence": 0.08
+    },
+    "kernel_variant": {
+      "question": "For every real number $x\\in[0,1)$ let\n\\[\nS_x=\bigl\\{n\\in\\mathbb N:\\;\\lfloor nx\\rfloor\\text{ is even}\\bigr\\}, \\qquad G(x)=\\sum_{n\\in S_x}\\frac1{3^{n}}.\n\\]\nDetermine the largest real number $L$ for which $G(x)\\ge L$ holds for all $x\\in[0,1)$. (Throughout, $\\lfloor z\\rfloor$ denotes the greatest integer not exceeding $z$.)",
+      "solution": "Answer: L=9/26.\n\nLet for any S\\subset \\mathbb{N} define F(S)=\\sum _{n\\in S}3^{-n}.  Observe that if S\\neq T and the least n in the symmetric difference S\\Delta T lies in S, then F(S)>F(T), because 3^{-n}>\\sum _{k>n}3^{-k}.\n\n1.  Define the ``benchmark'' set T={1,4,7,10,\\ldots }={3k+1:k\\geq 0}.  Then\n   F(T)=\\sum _{k=0}^\\infty 3^{-(3k+1)}=(1/3)/(1-1/27)=9/26.\n\n2.  We claim G(x)=F(S_x)\\geq 9/26 for every x\\in [0,1).  Suppose, to the contrary, that G(x)<9/26.  Then by the lex-ordering argument, the smallest n for which S_x and T differ must satisfy n\\in T but n\\notin S_x.  Hence n=3k+1\\geq 4 and \\lfloor n x\\rfloor  is odd.  For every m<n we have S_x and T agree, so if m\\equiv 1 mod3 then m\\in T\\Rightarrow \\lfloor m x\\rfloor  even, and if m\\equiv 0 or 2 mod3 then m\\notin T\\Rightarrow \\lfloor m x\\rfloor  odd.  In particular m=n-2,n-1 give \\lfloor (n-2)x\\rfloor ,\\lfloor (n-1)x\\rfloor  odd, and at m=n we have \\lfloor n x\\rfloor  odd.  Therefore\n   \\lfloor (n-2)x\\rfloor =\\lfloor (n-1)x\\rfloor =\\lfloor n x\\rfloor ,\nand so\n   2x=(n x)-((n-2)x)<1  \\Rightarrow   x<1/2.\nOn the other hand at m=2<n, 2\\equiv 2 mod3\\Rightarrow \\lfloor 2x\\rfloor  odd \\Rightarrow \\lfloor 2x\\rfloor =1\\Rightarrow 2x\\geq 1\\Rightarrow x\\geq 1/2.  This contradiction shows G(x)\\geq 9/26.\n\n3.  To see that 9/26 is best possible, fix N and choose x=2/3-\\varepsilon  with 0<\\varepsilon <1/(9N).  Then for 1\\leq m\\leq 3N we have m\\varepsilon <1/3, and a direct check shows\n   \\lfloor (3k-2)x\\rfloor =2k-2,\n   \\lfloor (3k-1)x\\rfloor =2k-1,\n   \\lfloor (3k)x\\rfloor =2k-1\nfor k=1,\\ldots ,N.  Hence in each block {3k-2,3k-1,3k} exactly the first index lies in S_x, so\n   G(x)\\leq \\sum _{k=0}^{N-1}3^{-(3k+1)} + \\sum _{m>3N}3^{-m}\\to 9/26\nas N\\to \\infty .  Thus no larger L can work.\n\nConclusion: The greatest lower bound is L=9/26.",
+      "_meta": {
+        "core_steps": [
+          "Order subsets of ℕ via binary-weighting: the first index where two subsets differ decides which has the larger  ∑1/2^n.",
+          "Pick the comparison set T={1,4,7,…} whose binary sum is 4/7; if f(x)<4/7 the first disagreement must be an element of T that is missing from S_x.",
+          "That disagreement forces three consecutive indices absent from S_x, hence their floors are equal odd integers; equality of ⌊(n+2)x⌋ and ⌊nx⌋ gives 2x<1 so x<1/2, but then 2∈S_x – contradiction.",
+          "Therefore f(x)≥4/7 for all x.",
+          "Choose x=2/3−ε (ε small) so that in each triple 3k−2,3k−1,3k only the first index lies in S_x; letting ε→0 shows f(x) can be made arbitrarily close to 4/7 from above, proving 4/7 is the greatest lower bound."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Exact size restriction on ε; it just needs to be small enough to keep (3k)ε below the chosen safety margin.",
+            "original": "ε<1/(9n)"
+          },
+          "slot2": {
+            "description": "Chosen safety margin used in mε<1/3; any positive constant <1/2 would work.",
+            "original": "1/3"
+          },
+          "slot3": {
+            "description": "Upper index m≤3n in the inequality mε<1/3; any bound proportional to n (e.g. m≤Cn with C>2) suffices.",
+            "original": "3n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

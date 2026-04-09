@@ -1,0 +1,195 @@
+{
+  "index": "1955-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "3. Suppose that \\( \\sum_{i=1}^{\\infty} x_{i} \\) is a convergent series of positive terms which monotonically decrease (that is, \\( x_{1} \\geq x_{2} \\geq x_{3} \\geq \\cdots \\) ). Let \\( P \\) denote the set of all numbers which are sums of some (finite or infinite) subseries of \\( \\sum_{i=1}^{\\infty} x_{i} \\). Show that \\( P \\) is an interval if and only if\n\\[\nx_{n} \\leq \\sum_{i=n+1}^{\\infty} x_{i} \\quad \\text { for every integer } n . \\quad \\text { (page 403) }\n\\]",
+  "solution": "Solution. Let \\( \\mathbf{N} \\) be the set of positive integers, and let \\( J \\) be a subset of \\( \\mathbf{N} \\). We write \\( S(J) \\) for \\( \\Sigma_{i \\in J} x_{i} \\). The problem requires us to show that the range of \\( S \\) is an interval if and only if (1) holds.\n\nSuppose (1) fails for a given sequence. Let \\( p \\) be an index such that\n\\[\nx_{p}>\\sum_{i>p} x_{i}\n\\]\n\nChoose \\( \\alpha \\) so that \\( \\sum_{i>p} x_{i}<\\alpha<x_{p} \\). Then there is no \\( J \\) for which \\( S(J)=\\alpha \\); for if \\( J \\cap\\{1,2, \\ldots, p\\} \\neq \\emptyset \\), then \\( S(J) \\geq x_{p} \\) by the monotonicity of the \\( x \\) 's, while if \\( J \\cap\\{1,2, \\ldots, p\\}=\\emptyset \\), then \\( S(J) \\leq \\Sigma_{i>p} x_{i} \\). Since \\( \\Sigma_{i>p} x_{i} \\) and \\( x_{l} \\), are both in range \\( (S) \\), we see that range \\( (S) \\) is not an interval. Thus \\( (1) \\) is necessary in order that range \\( (S) \\) be an interval.\n\nNow suppose (1) holds and \\( 0<y<S(\\mathbf{N}) \\). We shall construct a set \\( L \\) such that \\( S(L)=y \\). We define a sequence \\( n_{1}, n_{2}, n_{3}, \\ldots \\) by induction as follows. Let \\( n_{1} \\) be the least index for which\n\\[\nx_{n_{t}}<y .\n\\]\n(Such an index exists because \\( x_{k} \\rightarrow 0 \\).) Assuming that \\( n_{1}, n_{2}, \\ldots, n_{k} \\) have been chosen so that\n\\[\nx_{n_{1}}+x_{n_{2}}+\\cdots+x_{n_{k}}<y .\n\\]\nlet \\( \\boldsymbol{n}_{k+1} \\) be the least index exceeding \\( \\boldsymbol{n}_{\\boldsymbol{k}} \\) such that\n\\[\nx_{n_{1}}+x_{n_{2}}+\\cdots+x_{n_{k}}+x_{n_{k+1}}<y .\n\\]\n(Again, such an index exists.)\nLet \\( L=\\left\\{n_{1}, n_{2}, \\ldots\\right\\} \\). Clearly\n\\[\nS(L) \\leq y .\n\\]\n\nIf \\( p \\in N-L \\), there is a least index \\( k \\) such that \\( n_{k}>p \\). In choosing \\( n_{k} \\) we rejected \\( p \\), hence\n\\[\nx_{n_{1}}+x_{n_{2}}+\\cdots+x_{n_{k-1}}+x_{p} \\geq y\n\\]\nand therefore\n\\[\nS(L)+x_{p} \\geq y\n\\]\n\nWe split the remainder of the proof into two cases.\nCase 1. The set \\( N-L \\) is finite. Note that \\( N-L \\neq \\emptyset \\), since in that case \\( S(L)=S(N)>y \\), contradicting (2). Hence \\( N-L \\) has a largest element which we can take to be \\( p \\) in (4). Then\n\\[\nL=\\left\\{n_{1}, n_{2}, \\ldots, n_{k-1}\\right\\} \\cup\\{p+1, p+2, \\ldots\\}\n\\]\n\nThen combining (1) and (3) we see that\n\\[\nS(L)=x_{n_{1}}+x_{n_{2}}+\\cdots+x_{n_{k-1}}+\\sum_{i>p} x_{i} \\geq y\n\\]\nwhich together with (2) shows that \\( S(L)=y \\).\nCase 2. The set \\( N-L \\) is infinite. Then for any \\( \\epsilon>0 \\), we can choose \\( p \\in N-L \\) so that \\( x_{p}<\\epsilon \\). Then (4) yields\n\\[\ny \\leq S(L)+\\epsilon\n\\]\n\nSince \\( \\epsilon \\) is arbitrary, we obtain \\( y \\leq S(L) \\). So again we must have \\( S(L)=y \\).\nSince \\( S(0)=0 \\), it follows that range \\( (S)=[0, S(\\mathbb{N})] \\). Thus (1) is both necessary and sufficient in order that range \\( (S) \\) be an interval.",
+  "vars": [
+    "i",
+    "n",
+    "p",
+    "k",
+    "t",
+    "l",
+    "y",
+    "S",
+    "J",
+    "L",
+    "N",
+    "n_1",
+    "n_2",
+    "n_k",
+    "n_k+1",
+    "n_t"
+  ],
+  "params": [
+    "x_i",
+    "x_n",
+    "x_p",
+    "x_k",
+    "x_1",
+    "x_2",
+    "x_3",
+    "x_l"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexvar",
+        "n": "mainind",
+        "p": "pivotal",
+        "k": "counter",
+        "t": "tempvar",
+        "l": "ellvar",
+        "y": "targetv",
+        "S": "sumfunc",
+        "J": "subsetj",
+        "L": "subsetl",
+        "N": "allnats",
+        "n_1": "firstin",
+        "n_2": "secondi",
+        "n_k": "nthkidx",
+        "n_k+1": "kplusone",
+        "n_t": "ntindex",
+        "x_i": "termind",
+        "x_n": "termnind",
+        "x_p": "termpivo",
+        "x_k": "termcoun",
+        "x_1": "firsterm",
+        "x_2": "seconterm",
+        "x_3": "thirdterm",
+        "x_l": "termellv"
+      },
+      "question": "3. Suppose that \\( \\sum_{indexvar=1}^{\\infty} termind \\) is a convergent series of positive terms which monotonically decrease (that is, \\( firsterm \\geq seconterm \\geq thirdterm \\geq \\cdots \\) ). Let \\( P \\) denote the set of all numbers which are sums of some (finite or infinite) subseries of \\( \\sum_{indexvar=1}^{\\infty} termind \\). Show that \\( P \\) is an interval if and only if\n\\[\ntermnind \\leq \\sum_{indexvar=mainind+1}^{\\infty} termind \\quad \\text { for every integer } mainind . \\quad \\text { (page 403) }\n\\]\n",
+      "solution": "Solution. Let \\( \\mathbf{allnats} \\) be the set of positive integers, and let \\( subsetj \\) be a subset of \\( \\mathbf{allnats} \\). We write \\( sumfunc(subsetj) \\) for \\( \\Sigma_{indexvar \\in subsetj} termind \\). The problem requires us to show that the range of \\( sumfunc \\) is an interval if and only if (1) holds.\n\nSuppose (1) fails for a given sequence. Let \\( pivotal \\) be an index such that\n\\[\ntermpivo > \\sum_{indexvar>pivotal} termind\n\\]\nChoose \\( \\alpha \\) so that \\( \\sum_{indexvar>pivotal} termind < \\alpha < termpivo \\). Then there is no \\( subsetj \\) for which \\( sumfunc(subsetj)=\\alpha \\); for if \\( subsetj \\cap \\{1,2, \\ldots, pivotal\\} \\neq \\emptyset \\), then \\( sumfunc(subsetj) \\geq termpivo \\) by the monotonicity of the \\( x \\)'s, while if \\( subsetj \\cap \\{1,2, \\ldots, pivotal\\}=\\emptyset \\), then \\( sumfunc(subsetj) \\leq \\Sigma_{indexvar>pivotal} termind \\). Since \\( \\Sigma_{indexvar>pivotal} termind \\) and \\( termellv \\) are both in range \\( sumfunc \\), we see that range \\( sumfunc \\) is not an interval. Thus (1) is necessary in order that range \\( sumfunc \\) be an interval.\n\nNow suppose (1) holds and \\( 0<targetv<sumfunc(\\mathbf{allnats}) \\). We shall construct a set \\( subsetl \\) such that \\( sumfunc(subsetl)=targetv \\). We define a sequence firstin, secondi, nthkidx, \\ldots\\ by induction as follows. Let firstin be the least index for which\n\\[\n x_{ntindex} < targetv .\n\\]\n(Such an index exists because \\( termcoun \\rightarrow 0 \\).) Assuming that firstin, secondi, \\ldots, nthkidx have been chosen so that\n\\[\n x_{firstin}+x_{secondi}+\\cdots+x_{nthkidx} < targetv .\n\\]\nLet \\( \\boldsymbol{kplusone} \\) be the least index exceeding \\( \\boldsymbol{nthkidx} \\) such that\n\\[\n x_{firstin}+x_{secondi}+\\cdots+x_{nthkidx}+x_{kplusone} < targetv .\n\\]\n(Again, such an index exists.)\nLet \\( subsetl = \\{firstin, secondi, \\ldots\\} \\). Clearly\n\\[\n sumfunc(subsetl) \\leq targetv .\n\\]\nIf \\( pivotal \\in allnats - subsetl \\), there is a least index counter such that nthkidx > pivotal. In choosing nthkidx we rejected pivotal, hence\n\\[\n x_{firstin}+x_{secondi}+\\cdots+x_{mainind_{counter-1}}+termpivo \\geq targetv\n\\]\nand therefore\n\\[\n sumfunc(subsetl)+termpivo \\geq targetv\n\\]\nWe split the remainder of the proof into two cases.\n\nCase 1. The set \\( allnats - subsetl \\) is finite. Note that \\( allnats - subsetl \\neq \\emptyset \\), since in that case \\( sumfunc(subsetl)=sumfunc(allnats)>targetv \\), contradicting (2). Hence \\( allnats - subsetl \\) has a largest element which we can take to be pivotal in (4). Then\n\\[\n subsetl = \\{firstin, secondi, \\ldots, mainind_{counter-1}\\} \\cup \\{pivotal+1, pivotal+2, \\ldots\\}\n\\]\nCombining (1) and (3) we see that\n\\[\n sumfunc(subsetl) = x_{firstin}+x_{secondi}+\\cdots+x_{mainind_{counter-1}}+\\sum_{indexvar>pivotal} termind \\geq targetv\n\\]\nwhich together with (2) shows that \\( sumfunc(subsetl)=targetv \\).\n\nCase 2. The set \\( allnats - subsetl \\) is infinite. Then for any \\( \\epsilon>0 \\), we can choose \\( pivotal \\in allnats - subsetl \\) so that \\( termpivo < \\epsilon \\). Then (4) yields\n\\[\n targetv \\leq sumfunc(subsetl)+\\epsilon\n\\]\nSince \\( \\epsilon \\) is arbitrary, we obtain \\( targetv \\leq sumfunc(subsetl) \\). So again we must have \\( sumfunc(subsetl)=targetv \\).\n\nSince \\( sumfunc(0)=0 \\), it follows that range \\( sumfunc \\) = [0, sumfunc(\\mathbb{allnats})]. Thus (1) is both necessary and sufficient in order that range \\( sumfunc \\) be an interval.\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "lanternly",
+        "n": "meadowsun",
+        "p": "buttercup",
+        "k": "driftwood",
+        "t": "zephyrion",
+        "l": "moondance",
+        "y": "riverbloom",
+        "S": "starlancer",
+        "J": "patchwork",
+        "L": "hillsideg",
+        "N": "dawnembark",
+        "n_1": "stonepath",
+        "n_2": "cloudberry",
+        "n_k": "ivygarland",
+        "n_k+1": "emberquill",
+        "n_t": "quartzvine",
+        "x_i": "frosthaven",
+        "x_n": "willowmist",
+        "x_p": "duskshadow",
+        "x_k": "thistleday",
+        "x_1": "sunpetals",
+        "x_2": "brightsand",
+        "x_3": "maplewind",
+        "x_l": "hazelgrove"
+      },
+      "question": "3. Suppose that \\( \\sum_{lanternly=1}^{\\infty} frosthaven \\) is a convergent series of positive terms which monotonically decrease (that is, \\( sunpetals \\geq brightsand \\geq maplewind \\geq \\cdots \\) ). Let \\( P \\) denote the set of all numbers which are sums of some (finite or infinite) subseries of \\( \\sum_{lanternly=1}^{\\infty} frosthaven \\). Show that \\( P \\) is an interval if and only if\n\\[\nwillowmist \\leq \\sum_{lanternly=meadowsun+1}^{\\infty} frosthaven \\quad \\text { for every integer } meadowsun . \\quad \\text { (page 403) }\n\\]\n",
+      "solution": "Solution. Let \\( \\mathbf{dawnembark} \\) be the set of positive integers, and let \\( patchwork \\) be a subset of \\( \\mathbf{dawnembark} \\). We write \\( starlancer(patchwork) \\) for \\( \\Sigma_{lanternly \\in patchwork} frosthaven \\). The problem requires us to show that the range of \\( starlancer \\) is an interval if and only if (1) holds.\n\nSuppose (1) fails for a given sequence. Let \\( buttercup \\) be an index such that\n\\[\nduskshadow>\\sum_{lanternly>buttercup} frosthaven\n\\]\n\nChoose \\( \\alpha \\) so that \\( \\sum_{lanternly>buttercup} frosthaven<\\alpha<duskshadow \\). Then there is no \\( patchwork \\) for which \\( starlancer(patchwork)=\\alpha \\); for if \\( patchwork \\cap\\{1,2, \\ldots, buttercup\\} \\neq \\emptyset \\), then \\( starlancer(patchwork) \\geq duskshadow \\) by the monotonicity of the \\( x \\) 's, while if \\( patchwork \\cap\\{1,2, \\ldots, buttercup\\}=\\emptyset \\), then \\( starlancer(patchwork) \\leq \\Sigma_{lanternly>buttercup} frosthaven \\). Since \\( \\Sigma_{lanternly>buttercup} frosthaven \\) and \\( hazelgrove \\) are both in range \\( (starlancer) \\), we see that range \\( (starlancer) \\) is not an interval. Thus \\( (1) \\) is necessary in order that range \\( (starlancer) \\) be an interval.\n\nNow suppose (1) holds and \\( 0<riverbloom<starlancer(\\mathbf{dawnembark}) \\). We shall construct a set \\( hillsideg \\) such that \\( starlancer(hillsideg)=riverbloom \\). We define a sequence stonepath, cloudberry, \\( n_{3} \\), \\ldots\\ by induction as follows. Let stonepath be the least index for which\n\\[\nx_{quartzvine}<riverbloom .\n\\]\n(Such an index exists because \\( thistleday \\rightarrow 0 \\).) Assuming that stonepath, cloudberry, \\ldots, ivygarland have been chosen so that\n\\[\nx_{stonepath}+x_{cloudberry}+\\cdots+x_{ivygarland}<riverbloom .\n\\]\nlet \\( emberquill \\) be the least index exceeding \\( ivygarland \\) such that\n\\[\nx_{stonepath}+x_{cloudberry}+\\cdots+x_{ivygarland}+x_{emberquill}<riverbloom .\n\\]\n(Again, such an index exists.)\nLet \\( hillsideg=\\left\\{stonepath, cloudberry, \\ldots\\right\\} \\). Clearly\n\\[\nstarlancer(hillsideg) \\leq riverbloom .\n\\]\n\nIf \\( buttercup \\in dawnembark-hillsideg \\), there is a least index driftwood such that \\( ivygarland>buttercup \\). In choosing \\( ivygarland \\) we rejected \\( buttercup \\), hence\n\\[\nx_{stonepath}+x_{cloudberry}+\\cdots+x_{n_{driftwood-1}}+x_{buttercup} \\geq riverbloom\n\\]\nand therefore\n\\[\nstarlancer(hillsideg)+x_{buttercup} \\geq riverbloom\n\\]\n\nWe split the remainder of the proof into two cases.\nCase 1. The set \\( dawnembark-hillsideg \\) is finite. Note that \\( dawnembark-hillsideg \\neq \\emptyset \\), since in that case \\( starlancer(hillsideg)=starlancer(dawnembark)>riverbloom \\), contradicting (2). Hence \\( dawnembark-hillsideg \\) has a largest element which we can take to be \\( buttercup \\) in (4). Then\n\\[\nhillsideg=\\left\\{stonepath, cloudberry, \\ldots, n_{driftwood-1}\\right\\} \\cup\\{buttercup+1, buttercup+2, \\ldots\\}\n\\]\n\nThen combining (1) and (3) we see that\n\\[\nstarlancer(hillsideg)=x_{stonepath}+x_{cloudberry}+\\cdots+x_{n_{driftwood-1}}+\\sum_{lanternly>buttercup} x_{lanternly} \\geq riverbloom\n\\]\nwhich together with (2) shows that \\( starlancer(hillsideg)=riverbloom \\).\nCase 2. The set \\( dawnembark-hillsideg \\) is infinite. Then for any \\( \\epsilon>0 \\), we can choose \\( buttercup \\in dawnembark-hillsideg \\) so that \\( x_{buttercup}<\\epsilon \\). Then (4) yields\n\\[\nriverbloom \\leq starlancer(hillsideg)+\\epsilon\n\\]\n\nSince \\( \\epsilon \\) is arbitrary, we obtain \\( riverbloom \\leq starlancer(hillsideg) \\). So again we must have \\( starlancer(hillsideg)=riverbloom \\).\nSince \\( starlancer(0)=0 \\), it follows that range \\( (starlancer)=[0, starlancer(\\mathbb{dawnembark})] \\). Thus (1) is both necessary and sufficient in order that range \\( (starlancer) \\) be an interval."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "bulkvalue",
+        "n": "eternity",
+        "p": "universal",
+        "k": "boundless",
+        "t": "staticval",
+        "l": "immensity",
+        "y": "emptiness",
+        "S": "difference",
+        "J": "superset",
+        "L": "emptyset",
+        "N": "noninteger",
+        "n_1": "firstvoid",
+        "n_2": "secondvoid",
+        "n_k": "genericvoid",
+        "n_k+1": "incrementvoid",
+        "n_t": "temporalvoid",
+        "x_i": "negamount",
+        "x_n": "neglimit",
+        "x_p": "negpeakval",
+        "x_k": "negvoided",
+        "x_1": "finalneg",
+        "x_2": "prelastneg",
+        "x_3": "medianneg",
+        "x_l": "negimmense"
+      },
+      "question": "3. Suppose that \\( \\sum_{bulkvalue=1}^{\\infty} negamount \\) is a convergent series of positive terms which monotonically decrease (that is, \\( finalneg \\geq prelastneg \\geq medianneg \\geq \\cdots \\) ). Let \\( P \\) denote the set of all numbers which are sums of some (finite or infinite) subseries of \\( \\sum_{bulkvalue=1}^{\\infty} negamount \\). Show that \\( P \\) is an interval if and only if\n\\[\nneglimit \\leq \\sum_{bulkvalue=eternity+1}^{\\infty} negamount \\quad \\text { for every integer } eternity . \\quad \\text { (page 403) }\n\\]",
+      "solution": "Solution. Let \\( \\mathbf{noninteger} \\) be the set of positive integers, and let \\( superset \\) be a subset of \\( \\mathbf{noninteger} \\). We write \\( difference(superset) \\) for \\( \\Sigma_{bulkvalue \\in superset} negamount \\). The problem requires us to show that the range of \\( difference \\) is an interval if and only if (1) holds.\n\nSuppose (1) fails for a given sequence. Let \\( universal \\) be an index such that\n\\[\nnegpeakval>\\sum_{bulkvalue>universal} negamount\n\\]\n\nChoose \\( \\alpha \\) so that \\( \\sum_{bulkvalue>universal} negamount<\\alpha<negpeakval \\). Then there is no \\( superset \\) for which \\( difference(superset)=\\alpha \\); for if \\( superset \\cap\\{1,2, \\ldots, universal\\} \\neq \\emptyset \\), then \\( difference(superset) \\geq negpeakval \\) by the monotonicity of the \\( x \\)'s, while if \\( superset \\cap\\{1,2, \\ldots, universal\\}=\\emptyset \\), then \\( difference(superset) \\leq \\Sigma_{bulkvalue>universal} negamount \\). Since \\( \\Sigma_{bulkvalue>universal} negamount \\) and \\( negimmense \\) are both in range \\( (difference) \\), we see that range \\( (difference) \\) is not an interval. Thus (1) is necessary in order that range \\( (difference) \\) be an interval.\n\nNow suppose (1) holds and \\( 0<emptiness<difference(\\mathbf{noninteger}) \\). We shall construct a set \\( emptyset \\) such that \\( difference(emptyset)=emptiness \\). We define a sequence \\( firstvoid, secondvoid, n_{3}, \\ldots \\) by induction as follows. Let \\( firstvoid \\) be the least index for which\n\\[\nx_{temporalvoid}<emptiness .\n\\]\n(Such an index exists because \\( negvoided \\rightarrow 0 \\).) Assuming that \\( firstvoid, secondvoid, \\ldots, genericvoid \\) have been chosen so that\n\\[\nx_{firstvoid}+x_{secondvoid}+\\cdots+x_{genericvoid}<emptiness .\n\\]\nlet \\( \\boldsymbol{incrementvoid} \\) be the least index exceeding \\( \\boldsymbol{genericvoid} \\) such that\n\\[\nx_{firstvoid}+x_{secondvoid}+\\cdots+x_{genericvoid}+x_{incrementvoid}<emptiness .\n\\]\n(Again, such an index exists.)\nLet \\( emptyset=\\{firstvoid, secondvoid, \\ldots\\} \\). Clearly\n\\[\ndifference(emptyset) \\leq emptiness .\n\\]\n\nIf \\( universal \\in noninteger-emptyset \\), there is a least index \\( boundless \\) such that \\( genericvoid>universal \\). In choosing \\( genericvoid \\) we rejected \\( universal \\); hence\n\\[\nx_{firstvoid}+x_{secondvoid}+\\cdots+x_{n_{boundless-1}}+negpeakval \\geq emptiness\n\\]\nand therefore\n\\[\ndifference(emptyset)+negpeakval \\geq emptiness .\n\\]\n\nWe split the remainder of the proof into two cases.\n\nCase 1. The set \\( noninteger-emptyset \\) is finite. Note that \\( noninteger-emptyset \\neq \\emptyset \\), since in that case \\( difference(emptyset)=difference(noninteger)>emptiness \\), contradicting (2). Hence \\( noninteger-emptyset \\) has a largest element which we can take to be \\( universal \\) in (4). Then\n\\[\nemptyset=\\{firstvoid, secondvoid, \\ldots, n_{boundless-1}\\} \\cup\\{universal+1, universal+2, \\ldots\\}\n\\]\n\nCombining (1) and (3) we see that\n\\[\ndifference(emptyset)=x_{firstvoid}+x_{secondvoid}+\\cdots+x_{n_{boundless-1}}+\\sum_{bulkvalue>universal} negamount \\geq emptiness\n\\]\nwhich together with (2) shows that \\( difference(emptyset)=emptiness \\).\n\nCase 2. The set \\( noninteger-emptyset \\) is infinite. Then for any \\( \\epsilon>0 \\), we can choose \\( universal \\in noninteger-emptyset \\) so that \\( negpeakval<\\epsilon \\). Then (4) yields\n\\[\nemptiness \\leq difference(emptyset)+\\epsilon\n\\]\n\nSince \\( \\epsilon \\) is arbitrary, we obtain \\( emptiness \\leq difference(emptyset) \\). So again we must have \\( difference(emptyset)=emptiness \\).\n\nSince \\( difference(0)=0 \\), it follows that range \\( (difference)=[0, difference(\\mathbb{noninteger})] \\). Thus (1) is both necessary and sufficient in order that range \\( (difference) \\) be an interval."
+    },
+    "garbled_string": {
+      "map": {
+        "i": "qzxwvtnp",
+        "n": "hjgrksla",
+        "p": "brimtoqu",
+        "k": "fylasunm",
+        "t": "cerploid",
+        "l": "smevjaru",
+        "y": "gokwhane",
+        "S": "droxampl",
+        "J": "falnurib",
+        "L": "kuztemqa",
+        "N": "wehgopol",
+        "n_1": "vezuroac",
+        "n_2": "lumidgan",
+        "n_k": "sorplive",
+        "n_k+1": "krendupa",
+        "n_t": "farvexin",
+        "x_i": "zodimagu",
+        "x_n": "parquilv",
+        "x_p": "setzibrn",
+        "x_k": "loptruva",
+        "x_1": "mectovah",
+        "x_2": "nirdalop",
+        "x_3": "wespikra",
+        "x_l": "qusnibor"
+      },
+      "question": "3. Suppose that \\( \\sum_{qzxwvtnp=1}^{\\infty} zodimagu \\) is a convergent series of positive terms which monotonically decrease (that is, \\( mectovah \\geq nirdalop \\geq wespikra \\geq \\cdots \\) ). Let \\( P \\) denote the set of all numbers which are sums of some (finite or infinite) subseries of \\( \\sum_{qzxwvtnp=1}^{\\infty} zodimagu \\). Show that \\( P \\) is an interval if and only if\n\\[\nparquilv \\leq \\sum_{qzxwvtnp=hjgrksla+1}^{\\infty} zodimagu \\quad \\text { for every integer } hjgrksla . \\quad \\text { (page 403) }\n\\]",
+      "solution": "Solution. Let \\( \\mathbf{wehgopol} \\) be the set of positive integers, and let falnurib be a subset of \\( \\mathbf{wehgopol} \\). We write \\( droxampl(falnurib) \\) for \\( \\Sigma_{qzxwvtnp \\in falnurib} zodimagu \\). The problem requires us to show that the range of \\( droxampl \\) is an interval if and only if (1) holds.\n\nSuppose (1) fails for a given sequence. Let \\( brimtoqu \\) be an index such that\n\\[\nsetzibrn>\\sum_{qzxwvtnp>brimtoqu} zodimagu\n\\]\n\nChoose \\( \\alpha \\) so that \\( \\sum_{qzxwvtnp>brimtoqu} zodimagu<\\alpha<setzibrn \\). Then there is no falnurib for which \\( droxampl(falnurib)=\\alpha \\); for if \\( falnurib \\cap\\{1,2, \\ldots, brimtoqu\\} \\neq \\emptyset \\), then \\( droxampl(falnurib) \\geq setzibrn \\) by the monotonicity of the \\( x \\)'s, while if \\( falnurib \\cap\\{1,2, \\ldots, brimtoqu\\}=\\emptyset \\), then \\( droxampl(falnurib) \\leq \\Sigma_{qzxwvtnp>brimtoqu} zodimagu \\). Since \\( \\Sigma_{qzxwvtnp>brimtoqu} zodimagu \\) and qusnibor, are both in range \\( (droxampl) \\), we see that range \\( (droxampl) \\) is not an interval. Thus (1) is necessary in order that range \\( (droxampl) \\) be an interval.\n\nNow suppose (1) holds and \\( 0<gokwhane<droxampl(\\mathbf{wehgopol}) \\). We shall construct a set kuztemqa such that \\( droxampl(kuztemqa)=gokwhane \\). We define a sequence \\( vezuroac, lumidgan, sorplive, \\ldots \\) by induction as follows. Let \\( vezuroac \\) be the least index for which\n\\[\nx_{farvexin}<gokwhane .\n\\]\n(Such an index exists because \\( loptruva \\rightarrow 0 \\).) Assuming that \\( vezuroac, lumidgan, \\ldots, sorplive \\) have been chosen so that\n\\[\nx_{vezuroac}+x_{lumidgan}+\\cdots+x_{sorplive}<gokwhane .\n\\]\nlet \\( \\boldsymbol{krendupa} \\) be the least index exceeding \\( \\boldsymbol{sorplive} \\) such that\n\\[\nx_{vezuroac}+x_{lumidgan}+\\cdots+x_{sorplive}+x_{krendupa}<gokwhane .\n\\]\n(Again, such an index exists.)\nLet \\( kuztemqa=\\left\\{vezuroac, lumidgan, \\ldots\\right\\} \\). Clearly\n\\[\ndroxampl(kuztemqa) \\leq gokwhane .\n\\]\n\nIf \\( brimtoqu \\in wehgopol-kuztemqa \\), there is a least index \\( fylasunm \\) such that \\( sorplive>brimtoqu \\). In choosing \\( sorplive \\) we rejected \\( brimtoqu \\), hence\n\\[\nx_{vezuroac}+x_{lumidgan}+\\cdots+x_{n_{fylasunm-1}}+setzibrn \\geq gokwhane\n\\]\nand therefore\n\\[\ndroxampl(kuztemqa)+setzibrn \\geq gokwhane\n\\]\n\nWe split the remainder of the proof into two cases.\n\nCase 1. The set \\( wehgopol-kuztemqa \\) is finite. Note that \\( wehgopol-kuztemqa \\neq \\emptyset \\), since in that case \\( droxampl(kuztemqa)=droxampl(wehgopol)>gokwhane \\), contradicting (2). Hence \\( wehgopol-kuztemqa \\) has a largest element which we can take to be \\( brimtoqu \\) in (4). Then\n\\[\nkuztemqa=\\left\\{vezuroac, lumidgan, \\ldots, n_{fylasunm-1}\\right\\} \\cup\\{brimtoqu+1, brimtoqu+2, \\ldots\\}\n\\]\n\nThen combining (1) and (3) we see that\n\\[\ndroxampl(kuztemqa)=x_{vezuroac}+x_{lumidgan}+\\cdots+x_{n_{fylasunm-1}}+\\sum_{qzxwvtnp>brimtoqu} zodimagu \\geq gokwhane\n\\]\nwhich together with (2) shows that \\( droxampl(kuztemqa)=gokwhane \\).\n\nCase 2. The set \\( wehgopol-kuztemqa \\) is infinite. Then for any \\( \\epsilon>0 \\), we can choose \\( brimtoqu \\in wehgopol-kuztemqa \\) so that \\( setzibrn<\\epsilon \\). Then (4) yields\n\\[\ngokwhane \\leq droxampl(kuztemqa)+\\epsilon\n\\]\n\nSince \\( \\epsilon \\) is arbitrary, we obtain \\( gokwhane \\leq droxampl(kuztemqa) \\). So again we must have \\( droxampl(kuztemqa)=gokwhane \\).\n\nSince \\( droxampl(0)=0 \\), it follows that range \\( (droxampl)=[0, droxampl(\\mathbf{wehgopol})] \\). Thus (1) is both necessary and sufficient in order that range \\( (droxampl) \\) be an interval."
+    },
+    "kernel_variant": {
+      "question": "Let $(a_k)_{k=0}^{\\infty}$ be a non-increasing sequence of strictly positive real numbers such that the series\\n\\n  \\[\\sum_{k=0}^{\\infty} a_k = S<\\infty\\]\\n\\nconverges.  For every subset $J\\subseteq\\mathbb N=\\{0,1,2,\\dots\\}$ (possibly empty and possibly infinite) put\\n\\n  \\[T(J)=\\sum_{k\\in J}a_k\\qquad (T(\\varnothing)=0)\\]\\n\\nand denote by\\n\\n  \\[Q:=\\{T(J):J\\subseteq\\mathbb N\\}\\subseteq[0,S]\\]\\n\\nthe set of all subsums of the series.\\n\\nDetermine, with proof, exactly when $Q$ coincides with the whole interval $[0,S]$.  Prove that\\n\\n  \\[\\boxed{\\;Q=[0,S]\\;\\Longleftrightarrow\\; a_m\\le\\sum_{k>m}a_k\\quad(m=0,1,2,\\dots).\\;}\\]",
+      "solution": "Throughout we denote\\n\\n  \\[(\\ast)\\qquad a_m\\le \\sum_{k>m}a_k\\quad(m=0,1,2,\\dots).\\]\\n\\nWe prove that $Q=[0,S]$ holds exactly when $(\\ast)$ holds.\\n\\n\\n1.  Necessity of $(\\ast)$.\\n\\nAssume $Q\\neq[0,S]$.  Since $Q$ is compact, it must then fail to be an interval, so there exists $\\alpha\\in(0,S)$ with $\\alpha\\notin Q$.  Because $(a_k)$ is non-increasing, choose\\n\\n  \\[p:=\\min\\{m\\ge 0: a_m>\\sum_{k>m}a_k\\}.\\]\\n\\n(Such $p$ exists, otherwise $(\\ast)$ would hold.)  Put $\\beta:=\\sum_{k>p}a_k$.\\n\\nPick any $\\alpha$ with $\\beta<\\alpha<a_p$.  For every subset $J\\subseteq\\mathbb N$ we have\\n* if $J$ contains an index $\\le p$ then $T(J)\\ge a_p>\\alpha$;\\n* if $J$ is disjoint from $\\{0,\\dots ,p\\}$ then $T(J)\\le\\beta<\\alpha$.\\nThus $\\alpha\\notin Q$, so $Q\\neq[0,S]$.  Hence $(\\ast)$ is necessary.\\n\\n\\n2.  Sufficiency of $(\\ast)$.\\n\\nFix $y\\in[0,S]$.  The values $y=0$ and $y=S$ are realised by $J=\\varnothing$ and $J=\\mathbb N$, respectively, so assume $0<y<S$.\\n\\nGreedy construction of the set $J$.\\nSet $J:=\\varnothing$ and $s_0:=0$.  For $m=0,1,2,\\dots$ perform\\n\\n  \\[\\text{if }s_m+a_m<y\\text{ put }J:=J\\cup\\{m\\}\\text{ and set }s_{m+1}:=s_m+a_m;\\;\\text{else }s_{m+1}:=s_m.\\]\\n\\nThe sequence $(s_m)$ is non-decreasing and bounded above by $y$, hence it converges; let\\n\\n  \\[s:=\\lim_{m\\to\\infty}s_m=T(J)\\le y.\\]\\n\\nWe show that $s=y$.  Suppose, toward a contradiction, that $s<y$ and put $\\delta:=y-s>0$.\\n\\nStep 1.  Every rejected index $m$ satisfies $a_m\\ge\\delta$.\\nIndeed, if $m$ was rejected then $s_m+a_m\\ge y=s+\\delta$ and $s_m\\ge s$, so\\n\\n  \\[a_m=(s_m+a_m)-s_m\\ge(s+\\delta)-s_m\\ge\\delta.\\]\\n\\nStep 2.  Only finitely many indices are rejected.\\nBecause $a_m\\to 0$, choose $N$ with $a_N<\\delta$.  Monotonicity gives $a_k<\\delta$ for all $k\\ge N$.  By Step 1 these $k$ cannot be rejected, hence every $k\\ge N$ is accepted; the set $R$ of rejected indices is therefore finite.\\n\\nStep 3.  The contradiction.\\nLet $p:=\\max R$ (well-defined by Step 2).  Since $p\\notin J$, all $k>p$ belong to $J$, so\\n\\n  \\[s=T(J)=s_p+\\sum_{k>p}a_k.\\]\\n\\nAt the moment $m=p$ was examined we had $s_p+a_p\\ge y$, therefore\\n\\n  \\[y\\le s_p+a_p = s-\\sum_{k>p}a_k + a_p.\\]\\n\\nBecause of $(\\ast)$ we have $a_p\\le\\sum_{k>p}a_k$, whence\\n\\n  \\[y\\le s-\\underbrace{\\sum_{k>p}a_k}_{\\ge a_p}+a_p\\le s.\\]\\n\\nBut $s\\le y$, so $y=s$, contradicting $s<y$.\\n\\nConsequently the assumption $s<y$ is impossible; hence $s=y$.  We have exhibited a subset $J$ with $T(J)=y$, so $y\\in Q$.  Since $y\\in[0,S]$ was arbitrary, $Q=[0,S]$.  Thus $(\\ast)$ is sufficient.\\n\\n\\n3.  Conclusion.\\n\\nWe have proved both directions\\n\\n  \\[Q=[0,S]\\;\\Rightarrow\\;(\\ast),\\qquad (\\ast)\\;\\Rightarrow\\;Q=[0,S].\\]\\n\\nTherefore $Q=[0,S]$ holds precisely when $(\\ast)$ does.\\n\\n\\u220e",
+      "_meta": {
+        "core_steps": [
+          "Necessity: if some x_p exceeds its tail, pick α between them to create a gap, so the image is not an interval",
+          "Greedy construction: for any target y in (0, total sum) successively choose the least unused index whose term keeps the partial sum below y",
+          "Inequality x_n ≤ tail ensures every unused term can push the running sum up to or beyond y",
+          "Separate cases: finite versus infinite complement of chosen indices; in either case the limit (or last step) forces the sum to hit y",
+          "Therefore the image of all subseries is the whole interval [0, total sum] iff the inequality holds"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Where the indexing of the series begins",
+            "original": "starts at i = 1"
+          },
+          "slot2": {
+            "description": "Strict positivity of terms; mere non-negativity with at least one positive term suffices",
+            "original": "‘positive terms’"
+          },
+          "slot3": {
+            "description": "Strictly decreasing requirement can be relaxed to non-increasing",
+            "original": "‘monotonically decrease’ (x₁ ≥ x₂ ≥ …)"
+          },
+          "slot4": {
+            "description": "Including the empty subseries (sum 0) in P",
+            "original": "P is defined using ‘finite or infinite’ subseries, implicitly allowing the empty set"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

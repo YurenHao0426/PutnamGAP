@@ -1,0 +1,109 @@
+{
+  "index": "1946-B-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "4. For each positive integer \\( n \\), put\n\\[\np_{n}=(1+1 / n)^{n}, P_{n}=(1+1 / n)^{n+1}, h_{n}=\\frac{2 p_{n} P_{n}}{p_{n}+P_{n}}\n\\]\n\nProve that \\( h_{1}<h_{2}<\\cdots<h_{n}<\\cdots \\).",
+  "solution": "First Solution. We find \\( h_{n}=2(n+1)^{n+1} n^{-n}(2 n+1)^{-1} \\). Consider the function \\( g \\) defined by\n\\[\ng(x)=\\log 2+(x+1) \\log (x+1)-x \\log x-\\log (2 x+1)\n\\]\n\nWe have\n\\[\n\\begin{array}{c}\ng^{\\prime}(x)=\\log (x+1)-\\log x-\\frac{2}{2 x+1} \\\\\ng^{\\prime \\prime}(x)=\\frac{1}{x+1}-\\frac{1}{x}+\\frac{4}{(2 x+1)^{2}}=-\\frac{1}{x(x+1)(2 x+1)^{2}}<0\n\\end{array}\n\\]\nfor \\( 0<x<\\infty \\). Hence \\( g^{\\prime} \\) decreases on \\( (0, \\infty) \\). Since\n\\[\n\\lim _{x \\rightarrow \\infty} g^{\\prime}(x)=\\lim _{x \\rightarrow \\infty} \\log \\left(\\frac{x+1}{x}\\right)-\\lim _{x \\rightarrow \\infty} \\frac{2}{2 x+1}=0\n\\]\nit follows that \\( g^{\\prime} \\) is positive on \\( (0, \\infty) \\). Therefore \\( g \\) increases on \\( (0, \\infty) \\), so \\( h_{n}=\\exp g(n) \\) is strictly increasing for positive integers \\( n \\).\n\nSecond Solution. We find\n\\[\n\\frac{h_{n}}{h_{n-1}}=\\left(1-\\frac{1}{n^{2}}\\right)^{n} \\cdot \\frac{1+\\frac{1}{n}}{1-\\frac{1}{n}} \\cdot \\frac{1-\\frac{1}{2 n}}{1+\\frac{1}{2 n}}\n\\]\n\nSince\n\\[\n\\log (1-x)=-\\sum_{k=1}^{\\infty} \\frac{x^{k}}{k}\n\\]\nand\n\\[\n\\log \\frac{1+x}{1-x}=2 \\sum_{k=1}^{\\infty} \\frac{x^{2 k-1}}{2 k-1}\n\\]\nfor \\( |x|<1 \\), it follows that for \\( n>1 \\),\n\\[\n\\begin{aligned}\n\\log \\frac{h_{n}}{h_{n-1}}= & -n \\sum_{k=1}^{\\infty} \\frac{1}{k n^{2 k}}+2 \\sum_{k=1}^{\\infty} \\frac{1}{(2 k-1) n^{2 k-1}} \\\\\n& -2 \\sum_{k=1}^{\\infty} \\frac{1}{(2 k-1)(2 n)^{2 k-1}} \\\\\n= & \\sum_{k=1}^{\\infty} \\frac{1}{n^{2 k-1}}\\left(-\\frac{1}{k}+\\frac{2}{2 k-1}-\\frac{1}{(2 k-1) 2^{2 k-2}}\\right) \\\\\n= & \\sum_{k=1}^{\\infty} \\frac{1}{n^{2 k-1}} \\frac{2^{2 k-2}-k}{k(2 k-1) 2^{2 k-2}}>0\n\\end{aligned}\n\\]\n\nHence \\( h_{n}>h_{n-1} \\) for \\( n>1 \\), so \\( h_{1}<h_{2}<h_{3}<\\cdots \\).\nRemark. Since \\( h_{n} \\) is the harmonic mean between \\( p_{n} \\) and \\( P_{n} \\), and \\( \\lim p_{n} \\) \\( =\\lim P_{n}=e \\), it follows that \\( \\lim h_{n}=e \\).",
+  "vars": [
+    "n",
+    "p_n",
+    "P_n",
+    "h_n",
+    "h_1",
+    "h_2",
+    "h_3",
+    "h_n-1",
+    "g",
+    "x",
+    "k"
+  ],
+  "params": [],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "p_n": "powseqterm",
+        "P_n": "powseqnext",
+        "h_n": "harmseqterm",
+        "h_1": "harmsecone",
+        "h_2": "harmsectwo",
+        "h_3": "harmsecthre",
+        "h_n-1": "harmseqprev",
+        "g": "logfuncg",
+        "x": "realvarx",
+        "k": "sumindexk"
+      },
+      "question": "4. For each positive integer \\( indexvar \\), put\n\\[\npowseqterm=(1+1 / indexvar)^{indexvar},\\; powseqnext=(1+1 / indexvar)^{indexvar+1},\\; harmseqterm=\\frac{2\\,powseqterm\\,powseqnext}{powseqterm+powseqnext}\n\\]\n\nProve that \\( harmsecone<harmsectwo<\\cdots<harmseqterm<\\cdots \\).",
+      "solution": "First Solution. We find \\( harmseqterm=2(indexvar+1)^{indexvar+1}\\,indexvar^{-indexvar}(2 indexvar+1)^{-1} \\). Consider the function \\( logfuncg \\) defined by\n\\[\nlogfuncg(realvarx)=\\log 2+(realvarx+1)\\log(realvarx+1)-realvarx\\,\\log realvarx-\\log(2 realvarx+1)\n\\]\n\nWe have\n\\[\n\\begin{array}{c}\nlogfuncg^{\\prime}(realvarx)=\\log(realvarx+1)-\\log realvarx-\\frac{2}{2 realvarx+1} \\\\\nlogfuncg^{\\prime\\prime}(realvarx)=\\frac{1}{realvarx+1}-\\frac{1}{realvarx}+\\frac{4}{(2 realvarx+1)^{2}}=-\\frac{1}{realvarx(realvarx+1)(2 realvarx+1)^{2}}<0\n\\end{array}\n\\]\nfor \\( 0<realvarx<\\infty \\). Hence \\( logfuncg^{\\prime} \\) decreases on \\( (0,\\infty) \\). Since\n\\[\n\\lim_{realvarx\\to\\infty}logfuncg^{\\prime}(realvarx)=\\lim_{realvarx\\to\\infty}\\log\\!\\left(\\frac{realvarx+1}{realvarx}\\right)-\\lim_{realvarx\\to\\infty}\\frac{2}{2 realvarx+1}=0,\n\\]\nit follows that \\( logfuncg^{\\prime} \\) is positive on \\( (0,\\infty) \\). Therefore \\( logfuncg \\) increases on \\( (0,\\infty) \\), so \\( harmseqterm=\\exp logfuncg(indexvar) \\) is strictly increasing for positive integers \\( indexvar \\).\n\nSecond Solution. We find\n\\[\n\\frac{harmseqterm}{harmseqprev}=\\left(1-\\frac{1}{indexvar^{2}}\\right)^{indexvar}\\cdot\\frac{1+\\frac{1}{indexvar}}{1-\\frac{1}{indexvar}}\\cdot\\frac{1-\\frac{1}{2 indexvar}}{1+\\frac{1}{2 indexvar}}.\n\\]\n\nSince\n\\[\n\\log(1-realvarx)=-\\sum_{sumindexk=1}^{\\infty}\\frac{realvarx^{sumindexk}}{sumindexk},\n\\qquad\n\\log\\frac{1+realvarx}{1-realvarx}=2\\sum_{sumindexk=1}^{\\infty}\\frac{realvarx^{2 sumindexk-1}}{2 sumindexk-1},\n\\]\nfor \\( |realvarx|<1 \\), it follows that for \\( indexvar>1 \\),\n\\[\n\\begin{aligned}\n\\log\\frac{harmseqterm}{harmseqprev}=\\;&-indexvar\\sum_{sumindexk=1}^{\\infty}\\frac{1}{sumindexk\\,indexvar^{2 sumindexk}}+2\\sum_{sumindexk=1}^{\\infty}\\frac{1}{(2 sumindexk-1)\\,indexvar^{2 sumindexk-1}}\\\\\n&-2\\sum_{sumindexk=1}^{\\infty}\\frac{1}{(2 sumindexk-1)(2 indexvar)^{2 sumindexk-1}}\\\\\n=\\;&\\sum_{sumindexk=1}^{\\infty}\\frac{1}{indexvar^{2 sumindexk-1}}\\left(-\\frac{1}{sumindexk}+\\frac{2}{2 sumindexk-1}-\\frac{1}{(2 sumindexk-1)2^{2 sumindexk-2}}\\right)\\\\\n=\\;&\\sum_{sumindexk=1}^{\\infty}\\frac{1}{indexvar^{2 sumindexk-1}}\\,\\frac{2^{2 sumindexk-2}-sumindexk}{sumindexk(2 sumindexk-1)2^{2 sumindexk-2}}>0.\n\\end{aligned}\n\\]\n\nHence \\( harmseqterm>harmseqprev \\) for \\( indexvar>1 \\), so \\( harmsecone<harmsectwo<harmsecthre<\\cdots \\).\n\nRemark. Since \\( harmseqterm \\) is the harmonic mean between \\( powseqterm \\) and \\( powseqnext \\), and \\( \\lim powseqterm=\\lim powseqnext=e \\), it follows that \\( \\lim harmseqterm=e \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "wanderers",
+        "p_n": "sapphire",
+        "P_n": "buttercup",
+        "h_n": "sandstone",
+        "h_1": "cloverleaf",
+        "h_2": "starlighter",
+        "h_3": "mirrorball",
+        "h_n-1": "ironsmith",
+        "g": "lumberjack",
+        "x": "dragonfly",
+        "k": "raincloud"
+      },
+      "question": "4. For each positive integer \\( wanderers \\), put\n\\[\n    sapphire=(1+1 / wanderers)^{wanderers}, \\; buttercup=(1+1 / wanderers)^{wanderers+1}, \\; sandstone=\\frac{2\\,sapphire\\,buttercup}{sapphire+buttercup}\n\\]\n\nProve that \\( cloverleaf<starlighter<\\cdots<sandstone<\\cdots \\).",
+      "solution": "First Solution. We find \\( sandstone=2(wanderers+1)^{wanderers+1} wanderers^{-wanderers}(2 wanderers+1)^{-1} \\). Consider the function \\( lumberjack \\) defined by\n\\[\n    lumberjack(dragonfly)=\\log 2+(dragonfly+1) \\log (dragonfly+1)-dragonfly \\log dragonfly-\\log (2 dragonfly+1)\n\\]\n\nWe have\n\\[\n\\begin{array}{c}\n    lumberjack^{\\prime}(dragonfly)=\\log (dragonfly+1)-\\log dragonfly-\\frac{2}{2 dragonfly+1} \\\\\n    lumberjack^{\\prime\\prime}(dragonfly)=\\frac{1}{dragonfly+1}-\\frac{1}{dragonfly}+\\frac{4}{(2 dragonfly+1)^{2}}=-\\frac{1}{dragonfly(dragonfly+1)(2 dragonfly+1)^{2}}<0\n\\end{array}\n\\]\nfor \\( 0<dragonfly<\\infty \\). Hence \\( lumberjack^{\\prime} \\) decreases on \\( (0, \\infty) \\). Since\n\\[\n    \\lim_{dragonfly\\to\\infty} lumberjack^{\\prime}(dragonfly)=\\lim_{dragonfly\\to\\infty} \\log\\!\\left(\\frac{dragonfly+1}{dragonfly}\\right)-\\lim_{dragonfly\\to\\infty} \\frac{2}{2 dragonfly+1}=0\n\\]\nit follows that \\( lumberjack^{\\prime} \\) is positive on \\( (0, \\infty) \\). Therefore \\( lumberjack \\) increases on \\( (0, \\infty) \\), so \\( sandstone=\\exp lumberjack(wanderers) \\) is strictly increasing for positive integers \\( wanderers \\).\n\nSecond Solution. We find\n\\[\n    \\frac{sandstone}{ironsmith}=\\left(1-\\frac{1}{wanderers^{2}}\\right)^{wanderers} \\cdot \\frac{1+\\frac{1}{wanderers}}{1-\\frac{1}{wanderers}} \\cdot \\frac{1-\\frac{1}{2 wanderers}}{1+\\frac{1}{2 wanderers}}\n\\]\n\nSince\n\\[\n    \\log(1-dragonfly)=-\\sum_{raincloud=1}^{\\infty} \\frac{dragonfly^{raincloud}}{raincloud}\n\\]\nand\n\\[\n    \\log\\frac{1+dragonfly}{1-dragonfly}=2 \\sum_{raincloud=1}^{\\infty} \\frac{dragonfly^{2 raincloud-1}}{2 raincloud-1}\n\\]\nfor \\( |dragonfly|<1 \\), it follows that for \\( wanderers>1 \\),\n\\[\n\\begin{aligned}\n    \\log\\frac{sandstone}{ironsmith}= & -wanderers \\sum_{raincloud=1}^{\\infty} \\frac{1}{raincloud\\,wanderers^{2 raincloud}}+2 \\sum_{raincloud=1}^{\\infty} \\frac{1}{(2 raincloud-1) wanderers^{2 raincloud-1}} \\\\\n    & -2 \\sum_{raincloud=1}^{\\infty} \\frac{1}{(2 raincloud-1)(2 wanderers)^{2 raincloud-1}} \\\\\n    = & \\sum_{raincloud=1}^{\\infty} \\frac{1}{wanderers^{2 raincloud-1}}\\left(-\\frac{1}{raincloud}+\\frac{2}{2 raincloud-1}-\\frac{1}{(2 raincloud-1) 2^{2 raincloud-2}}\\right) \\\\\n    = & \\sum_{raincloud=1}^{\\infty} \\frac{1}{wanderers^{2 raincloud-1}} \\frac{2^{2 raincloud-2}-raincloud}{raincloud(2 raincloud-1) 2^{2 raincloud-2}}>0\n\\end{aligned}\n\\]\n\nHence \\( sandstone>ironsmith \\) for \\( wanderers>1 \\), so \\( cloverleaf<starlighter<mirrorball<\\cdots \\).\n\nRemark. Since sandstone is the harmonic mean between sapphire and buttercup, and \\( \\lim sapphire=\\lim buttercup=e \\), it follows that \\( \\lim sandstone=e \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "endlesscount",
+        "p_n": "vanishseq",
+        "P_n": "shrinkseq",
+        "h_n": "discordseq",
+        "h_1": "solediscord",
+        "h_2": "duodiscord",
+        "h_3": "tridiscord",
+        "h_n-1": "prediscord",
+        "g": "decayfunc",
+        "x": "staticvar",
+        "k": "randomizer"
+      },
+      "question": "4. For each positive integer \\( endlesscount \\), put\n\\[\nvanishseq_{endlesscount}=(1+1 / endlesscount)^{endlesscount},\\; shrinkseq_{endlesscount}=(1+1 / endlesscount)^{endlesscount+1},\\; discordseq_{endlesscount}=\\frac{2\\, vanishseq_{endlesscount}\\, shrinkseq_{endlesscount}}{vanishseq_{endlesscount}+shrinkseq_{endlesscount}}\n\\]\n\nProve that \\( solediscord<duodiscord<\\cdots<discordseq_{endlesscount}<\\cdots \\).",
+      "solution": "First Solution. We find \\( discordseq_{endlesscount}=2(endlesscount+1)^{endlesscount+1} endlesscount^{-endlesscount}(2\\,endlesscount+1)^{-1} \\). Consider the function \\( decayfunc \\) defined by\n\\[\ndecayfunc(staticvar)=\\log 2+(staticvar+1)\\log(staticvar+1)-staticvar\\log staticvar-\\log(2\\,staticvar+1)\n\\]\n\nWe have\n\\[\n\\begin{array}{c}\ndecayfunc^{\\prime}(staticvar)=\\log(staticvar+1)-\\log staticvar-\\frac{2}{2\\,staticvar+1} \\\\\ndecayfunc^{\\prime\\prime}(staticvar)=\\frac{1}{staticvar+1}-\\frac{1}{staticvar}+\\frac{4}{(2\\,staticvar+1)^{2}}=-\\frac{1}{staticvar(staticvar+1)(2\\,staticvar+1)^{2}}<0\n\\end{array}\n\\]\nfor \\( 0<staticvar<\\infty \\). Hence \\( decayfunc^{\\prime} \\) decreases on \\( (0,\\infty) \\). Since\n\\[\n\\lim_{staticvar\\to\\infty}decayfunc^{\\prime}(staticvar)=\\lim_{staticvar\\to\\infty}\\log\\left(\\frac{staticvar+1}{staticvar}\\right)-\\lim_{staticvar\\to\\infty}\\frac{2}{2\\,staticvar+1}=0\n\\]\nit follows that \\( decayfunc^{\\prime} \\) is positive on \\( (0,\\infty) \\). Therefore \\( decayfunc \\) increases on \\( (0,\\infty) \\), so \\( discordseq_{endlesscount}=\\exp decayfunc(endlesscount) \\) is strictly increasing for positive integers \\( endlesscount \\).\n\nSecond Solution. We find\n\\[\n\\frac{discordseq_{endlesscount}}{prediscord}=\\left(1-\\frac{1}{endlesscount^{2}}\\right)^{endlesscount}\\cdot\\frac{1+\\frac{1}{endlesscount}}{1-\\frac{1}{endlesscount}}\\cdot\\frac{1-\\frac{1}{2\\,endlesscount}}{1+\\frac{1}{2\\,endlesscount}}\n\\]\n\nSince\n\\[\n\\log(1-staticvar)=-\\sum_{randomizer=1}^{\\infty}\\frac{staticvar^{randomizer}}{randomizer}\n\\]\nand\n\\[\n\\log\\frac{1+staticvar}{1-staticvar}=2\\sum_{randomizer=1}^{\\infty}\\frac{staticvar^{2\\,randomizer-1}}{2\\,randomizer-1}\n\\]\nfor \\( |staticvar|<1 \\), it follows that for \\( endlesscount>1 \\),\n\\[\n\\begin{aligned}\n\\log\\frac{discordseq_{endlesscount}}{prediscord}= & -endlesscount\\sum_{randomizer=1}^{\\infty}\\frac{1}{randomizer\\,endlesscount^{2\\,randomizer}}+2\\sum_{randomizer=1}^{\\infty}\\frac{1}{(2\\,randomizer-1)endlesscount^{2\\,randomizer-1}}\\\\\n& -2\\sum_{randomizer=1}^{\\infty}\\frac{1}{(2\\,randomizer-1)(2\\,endlesscount)^{2\\,randomizer-1}} \\\\\n= & \\sum_{randomizer=1}^{\\infty}\\frac{1}{endlesscount^{2\\,randomizer-1}}\\left(-\\frac{1}{randomizer}+\\frac{2}{2\\,randomizer-1}-\\frac{1}{(2\\,randomizer-1)2^{2\\,randomizer-2}}\\right) \\\\\n= & \\sum_{randomizer=1}^{\\infty}\\frac{1}{endlesscount^{2\\,randomizer-1}}\\frac{2^{2\\,randomizer-2}-randomizer}{randomizer(2\\,randomizer-1)2^{2\\,randomizer-2}}>0\n\\end{aligned}\n\\]\n\nHence \\( discordseq_{endlesscount}>prediscord \\) for \\( endlesscount>1 \\), so \\( solediscord<duodiscord<tridiscord<\\cdots \\).\n\nRemark. Since \\( discordseq_{endlesscount} \\) is the harmonic mean between \\( vanishseq_{endlesscount} \\) and \\( shrinkseq_{endlesscount} \\), and \\( \\lim vanishseq_{endlesscount}=\\lim shrinkseq_{endlesscount}=e \\), it follows that \\( \\lim discordseq_{endlesscount}=e \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "p_n": "hjgrksla",
+        "P_n": "lmdkqweo",
+        "h_n": "suifvgab",
+        "h_1": "uapcnehr",
+        "h_2": "rvokzyut",
+        "h_3": "ptlaqnwi",
+        "h_n-1": "gdvczmra",
+        "g": "ojnefkli",
+        "x": "mwbtrhac",
+        "k": "zeiygnus"
+      },
+      "question": "For each positive integer \\( qzxwvtnp \\), put\n\\[\nhjgrksla=(1+1 / qzxwvtnp)^{qzxwvtnp},\\ lmdkqweo=(1+1 / qzxwvtnp)^{qzxwvtnp+1},\\ suifvgab=\\frac{2 hjgrksla lmdkqweo}{hjgrksla+lmdkqweo}\n\\]\n\nProve that \\( uapcnehr<rvokzyut<\\cdots<suifvgab<\\cdots \\).",
+      "solution": "First Solution. We find \\( suifvgab=2(qzxwvtnp+1)^{qzxwvtnp+1} qzxwvtnp^{-qzxwvtnp}(2 qzxwvtnp+1)^{-1} \\). Consider the function \\( ojnefkli \\) defined by\n\\[\nojnefkli(mwbtrhac)=\\log 2+(mwbtrhac+1) \\log (mwbtrhac+1)-mwbtrhac \\log mwbtrhac-\\log (2 mwbtrhac+1)\n\\]\n\nWe have\n\\[\n\\begin{array}{c}\nojnefkli^{\\prime}(mwbtrhac)=\\log (mwbtrhac+1)-\\log mwbtrhac-\\frac{2}{2 mwbtrhac+1} \\\\\nojnefkli^{\\prime \\prime}(mwbtrhac)=\\frac{1}{mwbtrhac+1}-\\frac{1}{mwbtrhac}+\\frac{4}{(2 mwbtrhac+1)^{2}}=-\\frac{1}{mwbtrhac(mwbtrhac+1)(2 mwbtrhac+1)^{2}}<0\n\\end{array}\n\\]\nfor \\( 0<mwbtrhac<\\infty \\). Hence \\( ojnefkli^{\\prime} \\) decreases on \\( (0, \\infty) \\). Since\n\\[\n\\lim _{mwbtrhac \\rightarrow \\infty} ojnefkli^{\\prime}(mwbtrhac)=\\lim _{mwbtrhac \\rightarrow \\infty} \\log \\left(\\frac{mwbtrhac+1}{mwbtrhac}\\right)-\\lim _{mwbtrhac \\rightarrow \\infty} \\frac{2}{2 mwbtrhac+1}=0\n\\]\nit follows that \\( ojnefkli^{\\prime} \\) is positive on \\( (0, \\infty) \\). Therefore \\( ojnefkli \\) increases on \\( (0, \\infty) \\), so \\( suifvgab=\\exp ojnefkli(qzxwvtnp) \\) is strictly increasing for positive integers \\( qzxwvtnp \\).\n\nSecond Solution. We find\n\\[\n\\frac{suifvgab}{gdvczmra}=\\left(1-\\frac{1}{qzxwvtnp^{2}}\\right)^{qzxwvtnp} \\cdot \\frac{1+\\frac{1}{qzxwvtnp}}{1-\\frac{1}{qzxwvtnp}} \\cdot \\frac{1-\\frac{1}{2 qzxwvtnp}}{1+\\frac{1}{2 qzxwvtnp}}\n\\]\n\nSince\n\\[\n\\log (1-mwbtrhac)=-\\sum_{zeiygnus=1}^{\\infty} \\frac{mwbtrhac^{zeiygnus}}{zeiygnus}\n\\]\nand\n\\[\n\\log \\frac{1+mwbtrhac}{1-mwbtrhac}=2 \\sum_{zeiygnus=1}^{\\infty} \\frac{mwbtrhac^{2 zeiygnus-1}}{2 zeiygnus-1}\n\\]\nfor \\( |mwbtrhac|<1 \\), it follows that for \\( qzxwvtnp>1 \\),\n\\[\n\\begin{aligned}\n\\log \\frac{suifvgab}{gdvczmra}= & -qzxwvtnp \\sum_{zeiygnus=1}^{\\infty} \\frac{1}{zeiygnus qzxwvtnp^{2 zeiygnus}}+2 \\sum_{zeiygnus=1}^{\\infty} \\frac{1}{(2 zeiygnus-1) qzxwvtnp^{2 zeiygnus-1}} \\\\\n& -2 \\sum_{zeiygnus=1}^{\\infty} \\frac{1}{(2 zeiygnus-1)(2 qzxwvtnp)^{2 zeiygnus-1}} \\\\\n= & \\sum_{zeiygnus=1}^{\\infty} \\frac{1}{qzxwvtnp^{2 zeiygnus-1}}\\left(-\\frac{1}{zeiygnus}+\\frac{2}{2 zeiygnus-1}-\\frac{1}{(2 zeiygnus-1) 2^{2 zeiygnus-2}}\\right) \\\\\n= & \\sum_{zeiygnus=1}^{\\infty} \\frac{1}{qzxwvtnp^{2 zeiygnus-1}} \\frac{2^{2 zeiygnus-2}-zeiygnus}{zeiygnus(2 zeiygnus-1) 2^{2 zeiygnus-2}}>0\n\\end{aligned}\n\\]\n\nHence \\( suifvgab>gdvczmra \\) for \\( qzxwvtnp>1 \\), so \\( uapcnehr<rvokzyut<ptlaqnwi<\\cdots \\).\n\nRemark. Since \\( suifvgab \\) is the harmonic mean between \\( hjgrksla \\) and \\( lmdkqweo \\), and \\( \\lim hjgrksla =\\lim lmdkqweo=e \\), it follows that \\( \\lim suifvgab=e \\)."
+    },
+    "kernel_variant": {
+      "question": "Fix an integer m \\geq  2.  For every positive integer n set  \n a_n = (1+1/n)^n, A_n = (1+1/n)^{n+1}, and define the weighted m-harmonic mean  \n  s_n^{(m)} =  (m+2) a_n^{\\,m}A_n /(a_n^{\\,m}+A_n^{\\,m}).  \n\n(a) Show that, for each fixed m, the sequence (s_n^{(m)})_{n\\geq 1} is strictly increasing.  \n(b) Prove  lim_{n\\to \\infty } s_n^{(m)} = e.  \n(c) If m_1>m_2 \\geq  2, prove s_n^{(m_1)} > s_n^{(m_2)} for every n.\n\n",
+      "solution": "(\\approx  185 words)\n\nStep 1.  Closed form.  \na_n^{\\,m}A_n=(n+1)^{(2n+1)m}/n^{(2n+1)m} and  \na_n^{\\,m}+A_n^{\\,m}=(n+1)^{nm}/n^{nm}\\cdot (m n+1)/n.  \nHence  \n s_n^{(m)}=(m+2)(n+1)^{(n+1)m}/[n^{nm}(m n+1)].             (\\star )\n\nStep 2.  A continuous companion.  \nFor x>0 put  \n S_{m}(x)=(m+2)(x+1)^{(x+1)m}\\cdot x^{-xm}(m x+1)^{-1},  \n g_{m}(x)=ln S_{m}(x).\n\nStep 3.  Derivatives.  \ng'_{m}(x)=m[ln(x+1)-ln x]-m/(m x+1);  \ng''_{m}(x)=m[1/(x+1)-1/x]+m^2/(m x+1)^2  \n     =-m/(x(x+1)(m x+1)^2)<0 (x>0).  \nSo g'_{m} is strictly decreasing.\n\nStep 4.  Sign of g'_{m}.  \nBecause ln(x+1)-ln x ~ 1/x while m/(m x+1)~1/x, we obtain  \n lim_{x\\to \\infty }g'_{m}(x)=0.  \nWith g'_{m} decreasing towards 0 we have g'_{m}(x)>0 for every x>0.  \nTherefore g_{m} is strictly increasing, and by (\\star )  \n s_1^{(m)}<s_2^{(m)}<\\cdots  - proving (a).\n\nStep 5.  Limit.  \nSince a_n\\to e and A_n\\to e, both numerator and denominator in s_n^{(m)} tend to e^{m+1}; their ratio tends to 1, hence lim s_n^{(m)}=e, establishing (b).\n\nStep 6.  Dependence on m.  \nFor fixed x the map m\\mapsto g_{m}(x) is increasing because \\partial g_{m}/\\partial m = ln(x+1)-ln x-1/(m x+1)>0.  \nThus, for m_1>m_2 and every integer n, g_{m_1}(n)>g_{m_2}(n) \\Rightarrow  s_n^{(m_1)}>s_n^{(m_2)}, yielding (c). \\blacksquare \n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.116164",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

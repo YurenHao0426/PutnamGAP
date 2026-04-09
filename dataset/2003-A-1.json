@@ -1,0 +1,97 @@
+{
+  "index": "2003-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $n$ be a fixed positive integer. How many ways are there to write  $n$\nas a sum of positive integers,  \n\\[\nn = a_1 + a_2 + \\cdots + a_k,\n\\]\nwith  $k$  an\narbitrary positive integer and  $a_1 \\le a_2 \\le \\cdots \\le a_k \\le a_1  + 1$?\nFor example, with $n=4$ there are four ways: 4, 2+2, 1+1+2, 1+1+1+1.",
+  "solution": "There are $n$ such sums. More precisely, there is exactly one such sum\nwith $k$ terms for each of $k=1, \\dots, n$ (and clearly no others).\nTo see this, note that if $n = a_1 + a_2 + \\cdots + a_k$ with\n$a_1 \\leq a_2 \\leq \\cdots \\leq a_k \\leq a_1 + 1$, then\n\\begin{align*}\nka_1 &= a_1 + a_1 + \\cdots + a_1 \\\\\n&\\leq n \\leq a_1 + (a_1 + 1) + \\cdots + (a_1 + 1) \\\\\n&= ka_1 + k-1.\n\\end{align*}\nHowever, there is a unique integer $a_1$ satisfying these inequalities,\nnamely $a_1 = \\lfloor n/k \\rfloor$. Moreover, once $a_1$ is fixed,\nthere are $k$ different possibilities for the sum $a_1 + a_2 + \\cdots + a_k$:\nif $i$ is the last integer such that $a_i = a_1$, then the sum equals\n$ka_1 + (i-1)$. The possible values of $i$ are $1, \\dots, k$,\nand exactly one of these sums comes out equal to $n$, proving\nour claim.\n\n\\textbf{Note:}\nIn summary, there is a unique partition of $n$ with $k$ terms that is\n``as equally spaced as possible''.\nOne can also obtain essentially the same construction inductively: except\nfor the all-ones sum, each partition of $n$ is obtained by ``augmenting''\na unique partition of $n-1$.",
+  "vars": [
+    "n",
+    "k",
+    "a_1",
+    "a_2",
+    "a_k",
+    "i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "totalint",
+        "k": "termcount",
+        "a_1": "firstpart",
+        "a_2": "secondpart",
+        "a_k": "lastpart",
+        "i": "indexvar"
+      },
+      "question": "Let $totalint$ be a fixed positive integer. How many ways are there to write  $totalint$ as a sum of positive integers,\n\\[\ntotalint = firstpart + secondpart + \\cdots + lastpart,\n\\]\nwith  $termcount$  an arbitrary positive integer and  $firstpart \\le secondpart \\le \\cdots \\le lastpart \\le firstpart  + 1$?\nFor example, with $totalint=4$ there are four ways: 4, 2+2, 1+1+2, 1+1+1+1.",
+      "solution": "There are $totalint$ such sums. More precisely, there is exactly one such sum with $termcount$ terms for each of $termcount=1, \\dots, totalint$ (and clearly no others).\nTo see this, note that if $totalint = firstpart + secondpart + \\cdots + lastpart$ with $firstpart \\leq secondpart \\leq \\cdots \\leq lastpart \\leq firstpart + 1$, then\n\\begin{align*}\ntermcount\\, firstpart &= firstpart + firstpart + \\cdots + firstpart \\\\\n&\\leq totalint \\leq firstpart + (firstpart + 1) + \\cdots + (firstpart + 1) \\\\\n&= termcount\\, firstpart + termcount-1.\n\\end{align*}\nHowever, there is a unique integer $firstpart$ satisfying these inequalities, namely $firstpart = \\lfloor totalint/termcount \\rfloor$. Moreover, once $firstpart$ is fixed, there are $termcount$ different possibilities for the sum $firstpart + secondpart + \\cdots + lastpart$: if $indexvar$ is the last integer such that $a_{indexvar} = firstpart$, then the sum equals termcount\\, firstpart + (indexvar-1). The possible values of $indexvar$ are $1, \\dots, termcount$, and exactly one of these sums comes out equal to $totalint$, proving our claim.\n\n\\textbf{Note:}\nIn summary, there is a unique partition of $totalint$ with $termcount$ terms that is ``as equally spaced as possible''. One can also obtain essentially the same construction inductively: except for the all-ones sum, each partition of $totalint$ is obtained by ``augmenting'' a unique partition of $totalint-1$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "lighthouse",
+        "k": "notebook",
+        "a_1": "horizongo",
+        "a_2": "monolith",
+        "a_k": "pendulum",
+        "i": "waterfall"
+      },
+      "question": "Let $lighthouse$ be a fixed positive integer. How many ways are there to write  $lighthouse$\nas a sum of positive integers,  \n\\[\nlighthouse = horizongo + monolith + \\cdots + pendulum,\n\\]\nwith  $notebook$  an\narbitrary positive integer and  $horizongo \\le monolith \\le \\cdots \\le pendulum \\le horizongo  + 1$?\nFor example, with $lighthouse=4$ there are four ways: 4, 2+2, 1+1+2, 1+1+1+1.",
+      "solution": "There are $lighthouse$ such sums. More precisely, there is exactly one such sum\nwith $notebook$ terms for each of $notebook=1, \\dots, lighthouse$ (and clearly no others).\nTo see this, note that if $lighthouse = horizongo + monolith + \\cdots + pendulum$ with\n$horizongo \\leq monolith \\leq \\cdots \\leq pendulum \\leq horizongo + 1$, then\n\\begin{align*}\nnotebook\\,horizongo &= horizongo + horizongo + \\cdots + horizongo \\\\\n&\\leq lighthouse \\leq horizongo + (horizongo + 1) + \\cdots + (horizongo + 1) \\\\\n&= notebook\\,horizongo + notebook-1.\n\\end{align*}\nHowever, there is a unique integer $horizongo$ satisfying these inequalities,\nnamely $horizongo = \\lfloor lighthouse/notebook \\rfloor$. Moreover, once $horizongo$ is fixed,\nthere are $notebook$ different possibilities for the sum $horizongo + monolith + \\cdots + pendulum$:\nif $waterfall$ is the last integer such that $a_i = horizongo$, then the sum equals\n$notebook\\,horizongo + (waterfall-1)$. The possible values of $waterfall$ are $1, \\dots, notebook$,\nand exactly one of these sums comes out equal to $lighthouse$, proving\nour claim.\n\n\\textbf{Note:}\nIn summary, there is a unique partition of $lighthouse$ with $notebook$ terms that is\n``as equally spaced as possible''.\nOne can also obtain essentially the same construction inductively: except\nfor the all-ones sum, each partition of $lighthouse$ is obtained by ``augmenting''\na unique partition of $lighthouse-1$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "unfixedvalue",
+        "k": "singleton",
+        "a_1": "largestpart",
+        "a_2": "unordered",
+        "a_k": "firstpiece",
+        "i": "totality"
+      },
+      "question": "Let $unfixedvalue$ be a fixed positive integer. How many ways are there to write  $unfixedvalue$\nas a sum of positive integers,  \n\\[\nunfixedvalue = largestpart + unordered + \\cdots + firstpiece,\n\\]\nwith  $singleton$  an\narbitrary positive integer and  $largestpart \\le unordered \\le \\cdots \\le firstpiece \\le largestpart  + 1$?\nFor example, with $unfixedvalue=4$ there are four ways: 4, 2+2, 1+1+2, 1+1+1+1.",
+      "solution": "There are $unfixedvalue$ such sums. More precisely, there is exactly one such sum\nwith $singleton$ terms for each of $singleton=1, \\dots, unfixedvalue$ (and clearly no others).\nTo see this, note that if $unfixedvalue = largestpart + unordered + \\cdots + firstpiece$ with\n$largestpart \\leq unordered \\leq \\cdots \\leq firstpiece \\leq largestpart + 1$, then\n\\begin{align*}\nsingletonlargestpart &= largestpart + largestpart + \\cdots + largestpart \\\\\n&\\leq unfixedvalue \\leq largestpart + (largestpart + 1) + \\cdots + (largestpart + 1) \\\\\n&= singletonlargestpart + singleton-1.\n\\end{align*}\nHowever, there is a unique integer $largestpart$ satisfying these inequalities,\nnamely $largestpart = \\lfloor unfixedvalue/singleton \\rfloor$. Moreover, once $largestpart$ is fixed,\nthere are $singleton$ different possibilities for the sum $largestpart + unordered + \\cdots + firstpiece$:\nif $totality$ is the last integer such that $a_{totality} = largestpart$, then the sum equals\nsingletonlargestpart + (totality-1). The possible values of $totality$ are $1, \\dots, singleton$,\nand exactly one of these sums comes out equal to $unfixedvalue$, proving\nour claim.\n\n\\textbf{Note:}\nIn summary, there is a unique partition of $unfixedvalue$ with $singleton$ terms that is\n``as equally spaced as possible\".\nOne can also obtain essentially the same construction inductively: except\nfor the all-ones sum, each partition of $unfixedvalue$ is obtained by ``augmenting''\na unique partition of $unfixedvalue-1$.}",
+      "confidence": "0.16"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "vxqplzmj",
+        "k": "fhsndwrl",
+        "a_1": "qzxwvtnp",
+        "a_2": "hjgrksla",
+        "a_k": "lmdtfbqs",
+        "i": "gprlvhcn"
+      },
+      "question": "Let $vxqplzmj$ be a fixed positive integer. How many ways are there to write  $vxqplzmj$\nas a sum of positive integers,  \n\\[\nvxqplzmj = qzxwvtnp + hjgrksla + \\cdots + lmdtfbqs,\n\\]\nwith  $fhsndwrl$  an\narbitrary positive integer and  $qzxwvtnp \\le hjgrksla \\le \\cdots \\le lmdtfbqs \\le qzxwvtnp  + 1$?\nFor example, with $vxqplzmj=4$ there are four ways: 4, 2+2, 1+1+2, 1+1+1+1.",
+      "solution": "There are $vxqplzmj$ such sums. More precisely, there is exactly one such sum\nwith $fhsndwrl$ terms for each of $fhsndwrl=1, \\dots, vxqplzmj$ (and clearly no others).\nTo see this, note that if $vxqplzmj = qzxwvtnp + hjgrksla + \\cdots + lmdtfbqs$ with\n$qzxwvtnp \\leq hjgrksla \\leq \\cdots \\leq lmdtfbqs \\leq qzxwvtnp + 1$, then\n\\begin{align*}\nfhsndwrl qzxwvtnp &= qzxwvtnp + qzxwvtnp + \\cdots + qzxwvtnp \\\\\n&\\leq vxqplzmj \\leq qzxwvtnp + (qzxwvtnp + 1) + \\cdots + (qzxwvtnp + 1) \\\\\n&= fhsndwrl qzxwvtnp + fhsndwrl-1.\n\\end{align*}\nHowever, there is a unique integer $qzxwvtnp$ satisfying these inequalities,\nnamely $qzxwvtnp = \\lfloor vxqplzmj/fhsndwrl \\rfloor$. Moreover, once $qzxwvtnp$ is fixed,\nthere are $fhsndwrl$ different possibilities for the sum $qzxwvtnp + hjgrksla + \\cdots + lmdtfbqs$:\nif $gprlvhcn$ is the last integer such that $a_{gprlvhcn} = qzxwvtnp$, then the sum equals\nfhsndwrl qzxwvtnp + (gprlvhcn-1). The possible values of $gprlvhcn$ are $1, \\dots, fhsndwrl$,\nand exactly one of these sums comes out equal to $vxqplzmj$, proving\nour claim.\n\n\\textbf{Note:}\nIn summary, there is a unique partition of $vxqplzmj$ with $fhsndwrl$ terms that is\n``as equally spaced as possible''.\nOne can also obtain essentially the same construction inductively: except\nfor the all-ones sum, each partition of $vxqplzmj$ is obtained by ``augmenting''\na unique partition of $vxqplzmj-1$.}",
+      "\n  \n  \"solution\"": ""
+    },
+    "kernel_variant": {
+      "question": "Fix a positive integer $N$.  A ``nearly-constant'' decomposition of $N$ is an expression  \n\\[\nN = b_1 + b_2 + \\dots + b_m, \\qquad m\\ge 1,\n\\]\ninto positive integers that satisfy the inequalities\n\\[\nb_1 \\le b_2 \\le \\dots \\le b_m \\le b_1+1.\n\\]\nHow many such decompositions does a given $N$ possess?  (For instance, when $N=5$ there are exactly five of them: $5$, $2+3$, $1+2+2$, $1+1+1+2$, and $1+1+1+1+1$.)",
+      "solution": "We show that for each k=1,2,\\cdots ,N there is exactly one nearly-constant decomposition of N into k parts, and no decomposition can have more than N parts since each part is \\geq 1.  Hence the total number is N.\n\nStep 1 (Bounds). Suppose\n    N = b_1 + b_2 + \\cdots  + b_k,\nwith b_1 \\leq  b_2 \\leq  \\cdots  \\leq  b_k \\leq  b_1+1. Then each b_j\\in {b_1,b_1+1}, so the minimum sum is all b_1's, k\\cdot b_1, and the maximum is one b_1 and k-1 copies of b_1+1, namely\n    k\\cdot b_1 \\leq  N \\leq  b_1 + (k-1)(b_1+1) = k\\cdot b_1 + (k-1).\n\nStep 2 (Determine b_1). The interval [k\\cdot b_1, k\\cdot b_1 + (k-1)] has length k-1<k, so it contains at most one multiple of k. Thus there is a unique integer b_1 satisfying\n    k\\cdot b_1 \\leq  N \\leq  k\\cdot b_1 + (k-1),\nnamely\n    b_1 = \\lfloor N/k\\rfloor .\n\nStep 3 (Recover the decomposition). Having fixed b_1, the summands are either b_1 or b_1+1. Let i be the number of summands equal to b_1 (so 1\\leq i\\leq k). Then the remaining k-i summands are b_1+1, and\n    N = i\\cdot b_1 + (k-i)\\cdot (b_1+1) = k\\cdot b_1 + (k-i).\nAs i runs over 1,2,\\ldots ,k the term (k-i) runs over k-1,k-2,\\ldots ,0, hence the sums k\\cdot b_1+(k-i) assume exactly the k consecutive values\n    k\\cdot b_1, k\\cdot b_1+1, \\ldots , k\\cdot b_1+(k-1).\nSince N lies in that interval, exactly one index i produces the given N, and that determines the unique non-decreasing k-tuple.\n\nStep 4 (Count). Every k from 1 to N gives exactly one decomposition, and no k>N is possible. Therefore the total number of nearly-constant decompositions of N is N. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Bound n between k·a₁ and k·a₁ + (k−1) using  a₁ ≤ a₂ ≤ … ≤ a_k ≤ a₁+1",
+          "Infer unique a₁ = ⌊n/k⌋ since interval length (k−1) < k",
+          "Write n = k·a₁ + (i−1) where i counts terms equal to a₁; only one i (1…k) works",
+          "Thus exactly one partition for each k = 1…n, so total count is n"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Specific numerical example used for illustration in the problem statement",
+            "original": "n = 4 with partitions 4; 2+2; 1+1+2; 1+1+1+1"
+          },
+          "slot2": {
+            "description": "Choice of symbol names for summands and their count (a₁, a₂, … , a_k and k)",
+            "original": "Letters a_i and k"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

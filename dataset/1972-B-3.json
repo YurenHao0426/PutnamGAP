@@ -1,0 +1,96 @@
+{
+  "index": "1972-B-3",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "B-3. Let \\( A \\) and \\( B \\) be two elements in a group such that \\( A B A=B A^{2} B, A^{3}=1 \\) and \\( B^{2 n-1}=1 \\) for some positive integer \\( n \\). Prove \\( B=1 \\).",
+  "solution": "B-3 From \\( A B A=B A^{2} B=B A^{-1} B \\), we have\n\\[\nA B^{2}=A B A \\cdot A^{-1} B=B A^{-1} B A^{-1} B=B A^{-1} \\cdot A B A=B^{2} A\n\\]\n\nBy induction, \\( A B^{2 r}=B^{2 r} A \\) so that \\( A B=A B^{2 n}=B^{2 n} A=B A \\). Since \\( A \\) and \\( B \\) commute, \\( A B A=B A^{2} B \\) implies \\( A^{2} B=A^{2} B^{2} \\), or \\( B=B^{2} \\), or \\( B=1 \\).\n\nAlternate Solution: It can be shown that \\( A \\) and \\( B \\) commute by expressing each as powers of the same group element. Because \\( A^{3}=1 \\) it is tempting to multiply \\( A B A \\) \\( =B A^{2} B \\) on the right by \\( A^{2} \\) and then on the left by \\( B A^{2} \\) to get \\( B^{2}=\\left(B A^{2}\\right)^{3} \\). Set \\( X=B A^{2} \\) and use \\( B^{2 n}=B \\) to obtain\n\\[\nB=X^{3 n}\n\\]\n\nFrom \\( X=B A^{2} \\), we get \\( X A=B, A=X^{-1} B \\), or\n\\[\nA=X^{3 n-1}\n\\]\n\nThe conclusion that \\( B=1 \\) is as before.",
+  "vars": [
+    "A",
+    "B",
+    "r",
+    "X"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "groupelemaalpha",
+        "B": "groupelembeta",
+        "r": "indexvar",
+        "X": "auxiliaryelem",
+        "n": "posinteger"
+      },
+      "question": "B-3. Let \\( groupelemaalpha \\) and \\( groupelembeta \\) be two elements in a group such that \\( groupelemaalpha groupelembeta groupelemaalpha = groupelembeta groupelemaalpha^{2} groupelembeta,\\; groupelemaalpha^{3}=1 \\) and \\( groupelembeta^{2 posinteger -1}=1 \\) for some positive integer \\( posinteger \\). Prove \\( groupelembeta = 1 \\).",
+      "solution": "B-3 From \\( groupelemaalpha groupelembeta groupelemaalpha = groupelembeta groupelemaalpha^{2} groupelembeta = groupelembeta groupelemaalpha^{-1} groupelembeta \\), we have\n\\[\ngroupelemaalpha groupelembeta^{2}=groupelemaalpha groupelembeta groupelemaalpha \\cdot groupelemaalpha^{-1} groupelembeta=groupelembeta groupelemaalpha^{-1} groupelembeta groupelemaalpha^{-1} groupelembeta=groupelembeta groupelemaalpha^{-1} \\cdot groupelemaalpha groupelembeta groupelemaalpha=groupelembeta^{2} groupelemaalpha\n\\]\n\nBy induction, \\( groupelemaalpha groupelembeta^{2 indexvar}=groupelembeta^{2 indexvar} groupelemaalpha \\) so that \\( groupelemaalpha groupelembeta = groupelemaalpha groupelembeta^{2 posinteger} = groupelembeta^{2 posinteger} groupelemaalpha = groupelembeta groupelemaalpha \\). Since \\( groupelemaalpha \\) and \\( groupelembeta \\) commute, \\( groupelemaalpha groupelembeta groupelemaalpha = groupelembeta groupelemaalpha^{2} groupelembeta \\) implies \\( groupelemaalpha^{2} groupelembeta = groupelemaalpha^{2} groupelembeta^{2} \\), or \\( groupelembeta = groupelembeta^{2} \\), or \\( groupelembeta = 1 \\).\n\nAlternate Solution: It can be shown that \\( groupelemaalpha \\) and \\( groupelembeta \\) commute by expressing each as powers of the same group element. Because \\( groupelemaalpha^{3}=1 \\) it is tempting to multiply \\( groupelemaalpha groupelembeta groupelemaalpha = groupelembeta groupelemaalpha^{2} groupelembeta \\) on the right by \\( groupelemaalpha^{2} \\) and then on the left by \\( groupelembeta groupelemaalpha^{2} \\) to get \\( groupelembeta^{2} = \\left( groupelembeta groupelemaalpha^{2} \\right)^{3} \\). Set \\( auxiliaryelem = groupelembeta groupelemaalpha^{2} \\) and use \\( groupelembeta^{2 posinteger} = groupelembeta \\) to obtain\n\\[\ngroupelembeta = auxiliaryelem^{3 posinteger}\n\\]\n\nFrom \\( auxiliaryelem = groupelembeta groupelemaalpha^{2} \\), we get \\( auxiliaryelem groupelemaalpha = groupelembeta,\\; groupelemaalpha = auxiliaryelem^{-1} groupelembeta \\), or\n\\[\ngroupelemaalpha = auxiliaryelem^{3 posinteger - 1}\n\\]\n\nThe conclusion that \\( groupelembeta = 1 \\) is as before."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "raincloud",
+        "B": "sunsprout",
+        "r": "marigold",
+        "X": "waterfall",
+        "n": "thunderer"
+      },
+      "question": "B-3. Let \\( raincloud \\) and \\( sunsprout \\) be two elements in a group such that \\( raincloud sunsprout raincloud = sunsprout raincloud^{2} sunsprout, raincloud^{3}=1 \\) and \\( sunsprout^{2 thunderer -1}=1 \\) for some positive integer \\( thunderer \\). Prove \\( sunsprout=1 \\).",
+      "solution": "B-3 From \\( raincloud sunsprout raincloud = sunsprout raincloud^{2} sunsprout = sunsprout raincloud^{-1} sunsprout \\), we have\n\\[\nraincloud sunsprout^{2}=raincloud sunsprout raincloud \\cdot raincloud^{-1} sunsprout = sunsprout raincloud^{-1} sunsprout raincloud^{-1} sunsprout = sunsprout raincloud^{-1} \\cdot raincloud sunsprout raincloud = sunsprout^{2} raincloud\n\\]\n\nBy induction, \\( raincloud sunsprout^{2 marigold}=sunsprout^{2 marigold} raincloud \\) so that \\( raincloud sunsprout = raincloud sunsprout^{2 thunderer} = sunsprout^{2 thunderer} raincloud = sunsprout raincloud \\). Since \\( raincloud \\) and \\( sunsprout \\) commute, \\( raincloud sunsprout raincloud = sunsprout raincloud^{2} sunsprout \\) implies \\( raincloud^{2} sunsprout = raincloud^{2} sunsprout^{2} \\), or \\( sunsprout = sunsprout^{2} \\), or \\( sunsprout = 1 \\).\n\nAlternate Solution: It can be shown that \\( raincloud \\) and \\( sunsprout \\) commute by expressing each as powers of the same group element. Because \\( raincloud^{3}=1 \\) it is tempting to multiply \\( raincloud sunsprout raincloud \\) \\( = sunsprout raincloud^{2} sunsprout \\) on the right by \\( raincloud^{2} \\) and then on the left by \\( sunsprout raincloud^{2} \\) to get \\( sunsprout^{2}=\\left( sunsprout raincloud^{2} \\right)^{3} \\). Set \\( waterfall = sunsprout raincloud^{2} \\) and use \\( sunsprout^{2 thunderer}=sunsprout \\) to obtain\n\\[\nsunsprout = waterfall^{3 thunderer}\n\\]\n\nFrom \\( waterfall = sunsprout raincloud^{2} \\), we get \\( waterfall raincloud = sunsprout, raincloud = waterfall^{-1} sunsprout \\), or\n\\[\nraincloud = waterfall^{3 thunderer -1}\n\\]\n\nThe conclusion that \\( sunsprout = 1 \\) is as before."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "finalelem",
+        "B": "alphaelement",
+        "r": "staticcounter",
+        "X": "knownvalue",
+        "n": "constantparam"
+      },
+      "question": "B-3. Let \\( finalelem \\) and \\( alphaelement \\) be two elements in a group such that \\( finalelem alphaelement finalelem = alphaelement finalelem^{2} alphaelement, finalelem^{3}=1 \\) and \\( alphaelement^{2 constantparam-1}=1 \\) for some positive integer constantparam. Prove \\( alphaelement =1 \\).",
+      "solution": "B-3 From \\( finalelem alphaelement finalelem = alphaelement finalelem^{2} alphaelement = alphaelement finalelem^{-1} alphaelement \\), we have\n\\[\nfinalelem alphaelement^{2}=finalelem alphaelement finalelem \\cdot finalelem^{-1} alphaelement = alphaelement finalelem^{-1} alphaelement finalelem^{-1} alphaelement = alphaelement finalelem^{-1} \\cdot finalelem alphaelement finalelem = alphaelement^{2} finalelem\n\\]\n\nBy induction, \\( finalelem alphaelement^{2 staticcounter}=alphaelement^{2 staticcounter} finalelem \\) so that \\( finalelem alphaelement = finalelem alphaelement^{2 constantparam}=alphaelement^{2 constantparam} finalelem = alphaelement finalelem \\). Since \\( finalelem \\) and \\( alphaelement \\) commute, \\( finalelem alphaelement finalelem = alphaelement finalelem^{2} alphaelement \\) implies \\( finalelem^{2} alphaelement = finalelem^{2} alphaelement^{2} \\), or \\( alphaelement = alphaelement^{2} \\), or \\( alphaelement =1 \\).\n\nAlternate Solution: It can be shown that \\( finalelem \\) and \\( alphaelement \\) commute by expressing each as powers of the same group element. Because \\( finalelem^{3}=1 \\) it is tempting to multiply \\( finalelem alphaelement finalelem = alphaelement finalelem^{2} alphaelement \\) on the right by \\( finalelem^{2} \\) and then on the left by \\( alphaelement finalelem^{2} \\) to get \\( alphaelement^{2}=\\left(alphaelement finalelem^{2}\\right)^{3} \\). Set \\( knownvalue = alphaelement finalelem^{2} \\) and use \\( alphaelement^{2 constantparam}=alphaelement \\) to obtain\n\\[\nalphaelement=knownvalue^{3 constantparam}\n\\]\n\nFrom \\( knownvalue = alphaelement finalelem^{2} \\), we get \\( knownvalue finalelem = alphaelement, finalelem = knownvalue^{-1} alphaelement \\), or\n\\[\nfinalelem=knownvalue^{3 constantparam-1}\n\\]\n\nThe conclusion that \\( alphaelement =1 \\) is as before."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "r": "mxdpqzrv",
+        "X": "tcrlgnws",
+        "n": "sbkzphqm"
+      },
+      "question": "B-3. Let \\( qzxwvtnp \\) and \\( hjgrksla \\) be two elements in a group such that \\( qzxwvtnp hjgrksla qzxwvtnp=hjgrksla qzxwvtnp^{2} hjgrksla, qzxwvtnp^{3}=1 \\) and \\( hjgrksla^{2 sbkzphqm-1}=1 \\) for some positive integer \\( sbkzphqm \\). Prove \\( hjgrksla=1 \\).",
+      "solution": "B-3 From \\( qzxwvtnp hjgrksla qzxwvtnp=hjgrksla qzxwvtnp^{2} hjgrksla=hjgrksla qzxwvtnp^{-1} hjgrksla \\), we have\n\\[\nqzxwvtnp hjgrksla^{2}=qzxwvtnp hjgrksla qzxwvtnp \\cdot qzxwvtnp^{-1} hjgrksla=hjgrksla qzxwvtnp^{-1} hjgrksla qzxwvtnp^{-1} hjgrksla=hjgrksla qzxwvtnp^{-1} \\cdot qzxwvtnp hjgrksla qzxwvtnp=hjgrksla^{2} qzxwvtnp\n\\]\n\nBy induction, \\( qzxwvtnp hjgrksla^{2 mxdpqzrv}=hjgrksla^{2 mxdpqzrv} qzxwvtnp \\) so that \\( qzxwvtnp hjgrksla=qzxwvtnp hjgrksla^{2 sbkzphqm}=hjgrksla^{2 sbkzphqm} qzxwvtnp=hjgrksla qzxwvtnp \\). Since \\( qzxwvtnp \\) and \\( hjgrksla \\) commute, \\( qzxwvtnp hjgrksla qzxwvtnp=hjgrksla qzxwvtnp^{2} hjgrksla \\) implies \\( qzxwvtnp^{2} hjgrksla=qzxwvtnp^{2} hjgrksla^{2} \\), or \\( hjgrksla=hjgrksla^{2} \\), or \\( hjgrksla=1 \\).\n\nAlternate Solution: It can be shown that \\( qzxwvtnp \\) and \\( hjgrksla \\) commute by expressing each as powers of the same group element. Because \\( qzxwvtnp^{3}=1 \\) it is tempting to multiply \\( qzxwvtnp hjgrksla qzxwvtnp \\) \\( =hjgrksla qzxwvtnp^{2} hjgrksla \\) on the right by \\( qzxwvtnp^{2} \\) and then on the left by \\( hjgrksla qzxwvtnp^{2} \\) to get \\( hjgrksla^{2}=\\left(hjgrksla qzxwvtnp^{2}\\right)^{3} \\). Set \\( tcrlgnws=hjgrksla qzxwvtnp^{2} \\) and use \\( hjgrksla^{2 sbkzphqm}=hjgrksla \\) to obtain\n\\[\nhjgrksla=tcrlgnws^{3 sbkzphqm}\n\\]\n\nFrom \\( tcrlgnws=hjgrksla qzxwvtnp^{2} \\), we get \\( tcrlgnws qzxwvtnp=hjgrksla, qzxwvtnp=tcrlgnws^{-1} hjgrksla \\), or\n\\[\nqzxwvtnp=tcrlgnws^{3 sbkzphqm-1}\n\\]\n\nThe conclusion that \\( hjgrksla=1 \\) is as before."
+    },
+    "kernel_variant": {
+      "question": "Let G be a (not necessarily finite) group and let A , B \\in  G satisfy \n1.  A^5 = 1;\n2.  A B A = B A^4 B  (equivalently, A B A = B A^{-1} B);\n3.  B^{4 n + 3} = 1 for some positive integer n;\n4.  gcd(5 , 4 n + 3) = 1   (equivalently, 5 \\nmid  (4 n + 3)).\n\nProve that B = 1.",
+      "solution": "Step 1.  Derive the basic commutation rule  A B^2 = B^2 A.\n\nIndeed,\nA B^2 = A B A \\cdot  A^{-1} B = (B A^{-1} B) A^{-1} B = B A^{-1} \\cdot  (B A^{-1} B)\n                 = B A^{-1} \\cdot  A B A = B A^{-1} \\cdot  B A^{-1} B = B^2 A.\n\nStep 2.  By induction on r \\geq  1,   A B^{2 r} = B^{2 r} A.\n\nAssume it holds for r.  Then\nA B^{2(r+1)} = (A B^{2 r}) B^2 = (B^{2 r} A) B^2 = B^{2 r} (A B^2) = B^{2 r} (B^2 A) = B^{2(r+1)} A.\n\nStep 3.  Show that A and B commute.\n\nBecause 4 n + 4 = 2 (2 n + 2) is even, Step 2 gives\nA B^{4 n + 4} = B^{4 n + 4} A.\nBut   B^{4 n + 4} = B^{(4 n + 3)+1} = 1\\cdot B = B,\nso  A B = A B^{4 n + 4} = B^{4 n + 4} A = B A.\nTherefore A and B commute.\n\nStep 4.  Express B in terms of A.\n\nWith AB = BA the defining relation becomes\nA B A = B A^{-1} B \\Rightarrow  A^2 B = A^{-1} B^2.\nMultiply on the left by A^3 (note A^5 = 1):\nA^3\\cdot A^2 B = A^3\\cdot A^{-1} B^2  \\Rightarrow   A^5 B = A^2 B^2  \\Rightarrow   B = A^2 B^2.\nRight-multiply by B^{-1}:\n1 = A^2 B   \\Rightarrow    B = A^{-2} = A^3.\n\nStep 5.  Use the order conditions to force A = 1 and hence B = 1.\n\nSince B = A^3, condition (3) gives\n1 = B^{4 n + 3} = (A^3)^{4 n + 3} = A^{3(4 n + 3)}.\nThus ord(A) divides both 5 (because A^5 = 1) and 3(4 n + 3).  Consequently\nord(A) | gcd(5 , 3(4 n + 3)).\nBecause gcd(3 , 5) = 1 we have\n    gcd(5 , 3(4 n + 3)) = gcd(5 , 4 n + 3) = 1  (by hypothesis (4)).\nHence ord(A) = 1, so A = 1.\nFinally B = A^3 = 1, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite ABA = BA^{m-1}B (using A^{m}=1 ⇒ A^{-1}=A^{m-1}) to obtain AB² = B²A.",
+          "Induct on r to get A B^{2r} = B^{2r} A for every r ≥ 1.",
+          "Combine B^{ℓ}=1 (ℓ odd) with the previous identity at r=(ℓ+1)/2 to deduce AB=BA, i.e. A and B commute.",
+          "With commutativity, the original relation reduces to B = B², which in a group forces B = 1."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Order of A; any integer m ≥ 2 for which A^{m}=1 is assumed.",
+            "original": "3"
+          },
+          "slot2": {
+            "description": "Exponent of A appearing in the relation ABA = BA^{m-1}B (equals m−1 so that A^{m-1}=A^{-1}).",
+            "original": "2"
+          },
+          "slot3": {
+            "description": "Odd exponent ℓ for which B^{ℓ}=1 (given as ℓ = 2n−1).",
+            "original": "2n−1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

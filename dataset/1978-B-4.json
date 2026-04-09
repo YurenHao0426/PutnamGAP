@@ -1,0 +1,102 @@
+{
+  "index": "1978-B-4",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-4\nProve that for every real number \\( N \\), the equation\n\\[\nx_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}=x_{1} x_{2} x_{3}+x_{1} x_{2} x_{4}+x_{1} x_{3} x_{4}+x_{2} x_{3} x_{4}\n\\]\nhas a solution for which \\( x_{1}, x_{2}, x_{3}, x_{4} \\) are all integers larger than \\( N \\).",
+  "solution": "B-4.\nClearly ( \\( 1,1,1,1 \\) ) is a solution. Thinking of \\( x_{1}, x_{2}, x_{3} \\) as fixed, the equation is quadratic in \\( x_{4} \\) and one sees that the \\( x_{4} \\) of a solution can be replaced by \\( x_{4}^{\\prime}=x_{1} x_{2}+x_{1} x_{3}+x_{2} x_{3}-x_{4} \\) to obtain a new solution when \\( x_{4}^{\\prime} \\neq x_{4} \\). Also, the \\( x_{i} \\) may be permuted arbitrarily since the equation is symmetric in the \\( x_{i} \\). Thus we may assume that \\( x_{4}<m=\\min \\left(x_{1}, x_{2}, x_{3}\\right) \\). Also assume that each \\( x_{i}>1 \\). Then \\( x_{4}^{\\prime}>3 m^{2}-m>m \\). This implies that one can start with the solution ( \\( 1,1,1,1 \\) ) and through repeated use of the procedures stated above obtain a solution with each \\( x_{i} \\) an integer greater than \\( N \\).",
+  "vars": [
+    "x_1",
+    "x_2",
+    "x_3",
+    "x_4",
+    "x_i",
+    "m"
+  ],
+  "params": [
+    "N"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_1": "firstvar",
+        "x_2": "secondvar",
+        "x_3": "thirdvar",
+        "x_4": "fourthvar",
+        "x_i": "genericvar",
+        "m": "minvalue",
+        "N": "threshold"
+      },
+      "question": "Problem B-4\nProve that for every real number \\( threshold \\), the equation\n\\[\nfirstvar^{2}+secondvar^{2}+thirdvar^{2}+fourthvar^{2}=firstvar\\,secondvar\\,thirdvar+firstvar\\,secondvar\\,fourthvar+firstvar\\,thirdvar\\,fourthvar+secondvar\\,thirdvar\\,fourthvar\n\\]\nhas a solution for which \\( firstvar, secondvar, thirdvar, fourthvar \\) are all integers larger than \\( threshold \\).",
+      "solution": "B-4.\nClearly \\( (1,1,1,1) \\) is a solution. Thinking of \\( firstvar, secondvar, thirdvar \\) as fixed, the equation is quadratic in \\( fourthvar \\) and one sees that the \\( fourthvar \\) of a solution can be replaced by \\( fourthvar^{\\prime}=firstvar\\,secondvar+firstvar\\,thirdvar+secondvar\\,thirdvar-fourthvar \\) to obtain a new solution when \\( fourthvar^{\\prime}\\neq fourthvar \\). Also, the \\( genericvar \\) may be permuted arbitrarily since the equation is symmetric in the \\( genericvar \\). Thus we may assume that \\( fourthvar<minvalue=\\min\\left(firstvar, secondvar, thirdvar\\right) \\). Also assume that each \\( genericvar>1 \\). Then \\( fourthvar^{\\prime}>3\\,minvalue^{2}-minvalue>minvalue \\). This implies that one can start with the solution \\( (1,1,1,1) \\) and through repeated use of the procedures stated above obtain a solution with each \\( genericvar \\) an integer greater than \\( threshold \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_1": "pineapple",
+        "x_2": "tortoise",
+        "x_3": "lighthouse",
+        "x_4": "marigold",
+        "x_i": "sandcastle",
+        "m": "driftwood",
+        "N": "waterfall"
+      },
+      "question": "Problem B-4\nProve that for every real number \\( waterfall \\), the equation\n\\[\npineapple^{2}+tortoise^{2}+lighthouse^{2}+marigold^{2}=pineapple\\,tortoise\\,lighthouse+pineapple\\,tortoise\\,marigold+pineapple\\,lighthouse\\,marigold+tortoise\\,lighthouse\\,marigold\n\\]\nhas a solution for which \\( pineapple, tortoise, lighthouse, marigold \\) are all integers larger than \\( waterfall \\).",
+      "solution": "B-4.\nClearly ( \\( 1,1,1,1 \\) ) is a solution. Thinking of \\( pineapple, tortoise, lighthouse \\) as fixed, the equation is quadratic in \\( marigold \\) and one sees that the \\( marigold \\) of a solution can be replaced by \\( marigold^{\\prime}=pineapple\\,tortoise+pineapple\\,lighthouse+tortoise\\,lighthouse-marigold \\) to obtain a new solution when \\( marigold^{\\prime} \\neq marigold \\). Also, the \\( sandcastle \\) may be permuted arbitrarily since the equation is symmetric in the \\( sandcastle \\). Thus we may assume that \\( marigold<driftwood=\\min \\left(pineapple, tortoise, lighthouse\\right) \\). Also assume that each \\( sandcastle>1 \\). Then \\( marigold^{\\prime}>3 driftwood^{2}-driftwood>driftwood \\). This implies that one can start with the solution ( \\( 1,1,1,1 \\) ) and through repeated use of the procedures stated above obtain a solution with each \\( sandcastle \\) an integer greater than \\( waterfall \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_1": "fixedconst",
+        "x_2": "steadyvalue",
+        "x_3": "immutable",
+        "x_4": "staticnumber",
+        "x_i": "unchanging",
+        "m": "maximumly",
+        "N": "negativebound"
+      },
+      "question": "Problem B-4\nProve that for every real number \\( negativebound \\), the equation\n\\[\nfixedconst^{2}+steadyvalue^{2}+immutable^{2}+staticnumber^{2}=fixedconst steadyvalue immutable+fixedconst steadyvalue staticnumber+fixedconst immutable staticnumber+steadyvalue immutable staticnumber\n\\]\nhas a solution for which \\( fixedconst, steadyvalue, immutable, staticnumber \\) are all integers larger than \\( negativebound \\).",
+      "solution": "B-4.\nClearly ( \\( 1,1,1,1 \\) ) is a solution. Thinking of \\( fixedconst, steadyvalue, immutable \\) as fixed, the equation is quadratic in \\( staticnumber \\) and one sees that the \\( staticnumber \\) of a solution can be replaced by \\( staticnumber^{\\prime}=fixedconst steadyvalue+fixedconst immutable+steadyvalue immutable-staticnumber \\) to obtain a new solution when \\( staticnumber^{\\prime} \\neq staticnumber \\). Also, the \\( unchanging \\) may be permuted arbitrarily since the equation is symmetric in the \\( unchanging \\). Thus we may assume that \\( staticnumber<maximumly=\\min \\left(fixedconst, steadyvalue, immutable\\right) \\). Also assume that each \\( unchanging>1 \\). Then \\( staticnumber^{\\prime}>3 maximumly^{2}-maximumly>maximumly \\). This implies that one can start with the solution ( \\( 1,1,1,1 \\) ) and through repeated use of the procedures stated above obtain a solution with each \\( unchanging \\) an integer greater than \\( negativebound \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x_1": "qzxwvtnp",
+        "x_2": "hjgrksla",
+        "x_3": "vyqmbncd",
+        "x_4": "fskdtwpr",
+        "x_i": "lzxmbyqv",
+        "m": "rdgphkse",
+        "N": "wjztrqlo"
+      },
+      "question": "Problem B-4\nProve that for every real number \\( wjztrqlo \\), the equation\n\\[\nqzxwvtnp^{2}+hjgrksla^{2}+vyqmbncd^{2}+fskdtwpr^{2}=qzxwvtnp hjgrksla vyqmbncd+qzxwvtnp hjgrksla fskdtwpr+qzxwvtnp vyqmbncd fskdtwpr+hjgrksla vyqmbncd fskdtwpr\n\\]\nhas a solution for which \\( qzxwvtnp, hjgrksla, vyqmbncd, fskdtwpr \\) are all integers larger than \\( wjztrqlo \\).",
+      "solution": "B-4.\nClearly ( \\( 1,1,1,1 \\) ) is a solution. Thinking of \\( qzxwvtnp, hjgrksla, vyqmbncd \\) as fixed, the equation is quadratic in \\( fskdtwpr \\) and one sees that the \\( fskdtwpr \\) of a solution can be replaced by \\( fskdtwpr^{\\prime}=qzxwvtnp hjgrksla+qzxwvtnp vyqmbncd+hjgrksla vyqmbncd-fskdtwpr \\) to obtain a new solution when \\( fskdtwpr^{\\prime} \\neq fskdtwpr \\). Also, the \\( lzxmbyqv \\) may be permuted arbitrarily since the equation is symmetric in the \\( lzxmbyqv \\). Thus we may assume that \\( fskdtwpr<rdgphkse=\\min \\left(qzxwvtnp, hjgrksla, vyqmbncd\\right) \\). Also assume that each \\( lzxmbyqv>1 \\). Then \\( fskdtwpr^{\\prime}>3 rdgphkse^{2}-rdgphkse>rdgphkse \\). This implies that one can start with the solution ( \\( 1,1,1,1 \\) ) and through repeated use of the procedures stated above obtain a solution with each \\( lzxmbyqv \\) an integer greater than \\( wjztrqlo \\)."
+    },
+    "kernel_variant": {
+      "question": "Prove that for every real number N there exists a quadruple of integers (x_1 , x_2 , x_3 , x_4), all strictly larger than N, such that\n\n      x_1^2 + x_2^2 + x_3^2 + x_4^2 = x_1x_2x_3 + x_1x_2x_4 + x_1x_3x_4 + x_2x_3x_4 .",
+      "solution": "Solution.\n\n1.  A seed solution.\n    The quadruple (1,1,1,1) satisfies the required equation, so the set of integer\n    solutions is non-empty.\n\n2.  The ``flip'' operation.\n    Fix three coordinates and view the equation as quadratic in the fourth one.  For\n    instance, keeping x_1,x_2,x_3 fixed gives\n        x_4^2 - (x_1x_2 + x_1x_3 + x_2x_3) x_4 + (x_1^2 + x_2^2 + x_3^2 - x_1x_2x_3) = 0.      (1)\n    Thus, whenever (x_1,x_2,x_3,x_4) is a solution, the second root of (1), namely\n        x_4' = (x_1x_2 + x_1x_3 + x_2x_3) - x_4,                            (2)\n    is also an integer and replacing x_4 by x_4' produces another solution.  Denote\n    this operation by T_4; define T_i analogously for the other positions.\n\n    Distinctness of the two roots.\n    If a flip were to leave a coordinate unchanged, then x_4 = x_4' = (x_1x_2 + x_1x_3 + x_2x_3)/2.\n    Substituting this value into (1) forces\n        x_1^2 + x_2^2 + x_3^2 = x_1x_2x_3,                                   (3)\n    whence (3) together with the original equation implies x_1 = x_2 = x_3 = x_4.\n    Consequently all four numbers would be equal, contradicting the fact that the\n    chosen coordinate is the (strict) minimum in our iteration (see Step 3 below).\n    Hence the quadratic always has two distinct integer roots, and every flip truly\n    changes the selected entry.\n\n    Because the defining equation is symmetric, permutations of the coordinates\n    also preserve the solution set.\n\n3.  Iterative scheme.\n    Starting from (1,1,1,1) we repeatedly perform the following cycle.\n       (i)  Permute the coordinates so that the smallest entry occupies the fourth\n            position; call that minimum m = x_4.\n      (ii)  Apply the flip T_4, replacing x_4 by x_4' given in (2).\n    The preceding paragraph guarantees that the new quadruple differs from the old\n    one and is still a solution with integer entries.\n\n4.  Eliminating the value 1.\n    Suppose the current minimum equals 1, so after the permutation we have x_4 = 1\n    and x_1,x_2,x_3 \\geq  1.  Then\n        x_4' = x_1x_2 + x_1x_3 + x_2x_3 - 1 \\geq  1 + 1 + 1 - 1 = 2 > 1.        (4)\n    Hence a flip performed on a coordinate equal to 1 replaces it by 2 or a larger\n    integer, thereby decreasing the total number of 1's in the quadruple.  Because\n    only finitely many 1's are present initially, finitely many flips eliminate\n    the value 1 altogether.  From that moment on every entry is at least 2.\n\n5.  Eliminating the value 2.\n    Next assume that every coordinate is \\geq  2 and that the minimum equals m = 2.\n    With x_4 = 2 and x_1,x_2,x_3 \\geq  2 we obtain\n        x_4' = x_1x_2 + x_1x_3 + x_2x_3 - 2 \\geq  4 + 4 + 4 - 2 = 10 > 2.       (5)\n    Thus each flip carried out on a coordinate equal to 2 removes that value.  A\n    finite number of flips therefore suffices to rid the quadruple of the entry\n    2, after which all coordinates are at least 3.\n\n6.  Guaranteed growth once all coordinates are \\geq  3.\n    Let every x_i \\geq  3, and let m be the minimum.  After the usual permutation we\n    have x_4 = m and, since x_1,x_2,x_3 \\geq  m,\n        x_1x_2 + x_1x_3 + x_2x_3 \\geq  3m^2.\n    Consequently\n        x_4' = (x_1x_2 + x_1x_3 + x_2x_3) - x_4 \\geq  3m^2 - m > m.               (6)\n    One flip therefore strictly increases the selected minimum value.  If the\n    value m occurs k times (1 \\leq  k \\leq  4), at most k flips raise every occurrence\n    above m.  Hence the global minimum rises after at most four flips.\n\n7.  Driving every entry past N.\n    * By Step 4 a finite number of flips makes all entries at least 2.\n    * By Step 5 another finite batch of flips raises every entry to at least 3.\n    * Thereafter, Step 6 shows that the minimum increases after at most four flips;\n      thus the minimum - and therefore every coordinate - eventually exceeds any\n      prescribed real bound N.\n\n    Since every permutation and every flip preserves integrality, the procedure\n    terminates with a quadruple of integers strictly larger than N satisfying the\n    required equation.  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Start from the known integer solution (1,1,1,1).",
+          "Fix three coordinates; view the equation as a quadratic in the 4th variable and use Vieta to get the companion root  x' = (x₁x₂ + x₁x₃ + x₂x₃) – x.",
+          "Exploit full symmetry to relabel variables so that the chosen variable is currently the smallest one.",
+          "Verify that when all coordinates exceed a positive threshold, the companion-root transformation strictly increases that smallest coordinate.",
+          "Iterate the transformation, thereby forcing every coordinate past any prescribed bound N."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Positive threshold required in the monotonic-growth inequality; any value r>2⁄3 suffices.",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Which coordinate is treated as the quadratic variable (x₄ in the write-up).",
+            "original": "x₄"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

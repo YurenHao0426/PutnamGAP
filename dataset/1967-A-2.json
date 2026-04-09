@@ -1,0 +1,129 @@
+{
+  "index": "1967-A-2",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-2. Define \\( S_{0} \\) to be 1 . For \\( n \\geqq 1 \\), let \\( S_{n} \\) be the number of \\( n \\times n \\) matrices whose elements are nonnegative integers with the property that \\( a_{i j}=a_{j i},(i, j=1,2, \\cdots, n) \\) and where \\( \\sum_{i=1}^{n} a_{i j} \\) \\( =1,(j=1,2, \\cdots, n) \\). Prove\n(a) \\( S_{n+1}=S_{n}+n S_{n-1} \\),\n(b) \\( \\sum_{n=0}^{\\infty} S_{n} \\frac{x^{n}}{n!}=\\exp \\left(x+x^{2} / 2\\right), \\quad \\) where \\( \\exp (x)=e^{x} \\).",
+  "solution": "A-2 \\( \\quad S_{n} \\) is the number of symmetric \\( n \\times n \\) permutation matrices (a permutation matrix has exactly one 1 in each row and column with 0 's elsewhere). Let the 1 in the first row be in the \\( k \\) th column. If \\( k=1 \\), then there are \\( S_{n-1} \\) ways to complete the matrix. If \\( k \\neq 1 \\) then \\( a_{1 k}=a_{k 1}=1 \\) and the deletion of the 1st and \\( k \\) th rows and columns leaves a symmetric \\( (n-2) \\times(n-2) \\) permutation matrix. Consequently \\( S_{n}=S_{n-1}+(n-1) S_{n-2} \\).\n\nFor part (b), let\n\\[\n\\begin{aligned}\nF(x) & =\\sum_{n=0}^{\\infty}\\left\\{S_{n} \\frac{x^{n}}{n!}\\right\\} \\cdot \\quad F^{\\prime}(x)=\\sum_{n=1}^{\\infty}\\left\\{S_{n} \\frac{x^{n-1}}{(n-1)!}\\right\\} \\\\\n& =\\sum_{n=1}^{\\infty}\\left\\{S_{n-1} \\frac{x^{n-1}}{(n-1)!}+(n-1) S_{n-2} \\frac{x^{n-1}}{(n-1)!}\\right\\} \\\\\n& =\\sum_{n=0}^{\\infty}\\left\\{S_{n} \\frac{x^{n}}{n!}\\right\\}+\\sum_{n=2}^{\\infty}\\left\\{S_{n-2} \\frac{x^{n-1}}{(n-2)!}\\right\\}=F(x)+x F(x) .\n\\end{aligned}\n\\]\n\nHence \\( F^{\\prime}(x) / F(x)=1+x \\). Integration and use of \\( F(0)=S_{0}=1 \\) yields \\( F(x) \\) \\( =\\exp \\left(x+x^{2} / 2\\right) \\). Now the series for \\( F(x) \\) is uniformly convergent for all \\( x \\), so all the operations are legal.\n\nComment: \\( S_{n} \\) is the number of permutations \\( \\pi \\), with \\( \\pi^{2}=1 \\), in the symmetric group on \\( n \\) symbols. Some contestants used this observation together with known formulas for the number of permutations with a given cycle structure to check part (b) by multiplying the series for \\( \\exp (x) \\) and \\( \\exp \\left(x^{2} / 2\\right) \\).",
+  "vars": [
+    "i",
+    "j",
+    "k",
+    "n",
+    "x",
+    "F",
+    "a_ij",
+    "a_ji",
+    "a_1k",
+    "a_k1"
+  ],
+  "params": [
+    "S_0",
+    "S_n",
+    "S_n-1",
+    "S_n-2",
+    "S_n+1"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexone",
+        "j": "indextwo",
+        "k": "indexthree",
+        "n": "sizedim",
+        "x": "seriesvar",
+        "F": "generating",
+        "a_ij": "entryij",
+        "a_ji": "entryji",
+        "a_1k": "entryonek",
+        "a_k1": "entrykone",
+        "S_0": "countzero",
+        "S_n": "countsizedim",
+        "S_n-1": "countprevone",
+        "S_n-2": "countprevtwo",
+        "S_n+1": "countnextone"
+      },
+      "question": "A-2. Define \\( countzero \\) to be 1 . For \\( sizedim \\geqq 1 \\), let \\( countsizedim \\) be the number of \\( sizedim \\times sizedim \\) matrices whose elements are nonnegative integers with the property that \\( entryij = entryji ,(indexone, indextwo =1,2, \\cdots, sizedim) \\) and where \\( \\sum_{indexone=1}^{sizedim} entryij \\)\n\\( =1,(indextwo=1,2, \\cdots, sizedim) \\). Prove\n(a) \\( countnextone = countsizedim + sizedim countprevone \\),\n(b) \\( \\sum_{sizedim=0}^{\\infty} countsizedim \\frac{seriesvar^{sizedim}}{sizedim!}=\\exp \\left(seriesvar+seriesvar^{2} / 2\\right), \\quad \\) where \\( \\exp (seriesvar)=e^{seriesvar} \\).",
+      "solution": "A-2 \\( \\quad countsizedim \\) is the number of symmetric \\( sizedim \\times sizedim \\) permutation matrices (a permutation matrix has exactly one 1 in each row and column with 0's elsewhere). Let the 1 in the first row be in the \\( indexthree \\) th column. If \\( indexthree=1 \\), then there are \\( countprevone \\) ways to complete the matrix. If \\( indexthree \\neq 1 \\) then \\( entryonek = entrykone =1 \\) and the deletion of the first and \\( indexthree \\) th rows and columns leaves a symmetric \\( (sizedim-2) \\times(sizedim-2) \\) permutation matrix. Consequently \\( countsizedim = countprevone +(sizedim-1) countprevtwo \\).\n\nFor part (b), let\n\\[\n\\begin{aligned}\n generating(seriesvar) & =\\sum_{sizedim=0}^{\\infty}\\left\\{countsizedim \\frac{seriesvar^{sizedim}}{sizedim!}\\right\\} \\cdot \\quad generating^{\\prime}(seriesvar)=\\sum_{sizedim=1}^{\\infty}\\left\\{countsizedim \\frac{seriesvar^{sizedim-1}}{(sizedim-1)!}\\right\\} \\\\\n & =\\sum_{sizedim=1}^{\\infty}\\left\\{countprevone \\frac{seriesvar^{sizedim-1}}{(sizedim-1)!}+(sizedim-1) countprevtwo \\frac{seriesvar^{sizedim-1}}{(sizedim-1)!}\\right\\} \\\\\n & =\\sum_{sizedim=0}^{\\infty}\\left\\{countsizedim \\frac{seriesvar^{sizedim}}{sizedim!}\\right\\}+\\sum_{sizedim=2}^{\\infty}\\left\\{countprevtwo \\frac{seriesvar^{sizedim-1}}{(sizedim-2)!}\\right\\}=generating(seriesvar)+seriesvar\\, generating(seriesvar) .\n\\end{aligned}\n\\]\n\nHence \\( generating^{\\prime}(seriesvar) / generating(seriesvar)=1+seriesvar \\). Integration and use of \\( generating(0)=countzero =1 \\) yields \\( generating(seriesvar) =\\exp \\left(seriesvar+seriesvar^{2} / 2\\right) \\). Now the series for \\( generating(seriesvar) \\) is uniformly convergent for all \\( seriesvar \\), so all the operations are legal.\n\nComment: \\( countsizedim \\) is the number of permutations \\( \\pi \\), with \\( \\pi^{2}=1 \\), in the symmetric group on \\( sizedim \\) symbols. Some contestants used this observation together with known formulas for the number of permutations with a given cycle structure to check part (b) by multiplying the series for \\( \\exp (seriesvar) \\) and \\( \\exp \\left(seriesvar^{2} / 2\\right) \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "hummingbird",
+        "j": "kangaroose",
+        "k": "lighthouse",
+        "n": "raspberry",
+        "x": "buttercup",
+        "F": "cottonwood",
+        "a_ij": "quartzite",
+        "a_ji": "porcupine",
+        "a_1k": "dragonfly",
+        "a_k1": "waterfall",
+        "S_0": "pineapple",
+        "S_n": "blackberry",
+        "S_n-1": "strawberry",
+        "S_n-2": "chocolate",
+        "S_n+1": "blueberry"
+      },
+      "question": "A-2. Define \\( pineapple \\) to be 1 . For \\( raspberry \\geqq 1 \\), let \\( blackberry \\) be the number of \\( raspberry \\times raspberry \\) matrices whose elements are nonnegative integers with the property that \\( quartzite=porcupine,( hummingbird, kangaroose=1,2, \\cdots, raspberry ) \\) and where \\( \\sum_{ hummingbird=1}^{ raspberry } quartzite \\) \\( =1,( kangaroose=1,2, \\cdots, raspberry ) \\). Prove\n(a) \\( blueberry = blackberry + raspberry strawberry \\),\n(b) \\( \\sum_{ raspberry=0}^{\\infty} blackberry \\frac{ buttercup^{ raspberry }}{ raspberry !}=\\exp \\left( buttercup+ buttercup^{2} / 2\\right), \\quad \\) where \\( \\exp ( buttercup )=e^{ buttercup }.",
+      "solution": "A-2 \\( \\quad blackberry \\) is the number of symmetric \\( raspberry \\times raspberry \\) permutation matrices (a permutation matrix has exactly one 1 in each row and column with 0 's elsewhere). Let the 1 in the first row be in the \\( lighthouse \\) th column. If \\( lighthouse=1 \\), then there are \\( strawberry \\) ways to complete the matrix. If \\( lighthouse \\neq 1 \\) then \\( dragonfly = waterfall =1 \\) and the deletion of the 1st and \\( lighthouse \\) th rows and columns leaves a symmetric \\( (raspberry-2) \\times(raspberry-2) \\) permutation matrix. Consequently \\( blackberry = strawberry +( raspberry -1) chocolate \\).\n\nFor part (b), let\n\\[\n\\begin{aligned}\ncottonwood( buttercup ) & =\\sum_{ raspberry =0}^{\\infty}\\left\\{ blackberry \\frac{ buttercup^{ raspberry }}{ raspberry !}\\right\\} \\cdot \\quad cottonwood^{\\prime}( buttercup )=\\sum_{ raspberry =1}^{\\infty}\\left\\{ blackberry \\frac{ buttercup^{ raspberry -1}}{( raspberry -1)!}\\right\\} \\\\\n& =\\sum_{ raspberry =1}^{\\infty}\\left\\{ strawberry \\frac{ buttercup^{ raspberry -1}}{( raspberry -1)!}+( raspberry -1) chocolate \\frac{ buttercup^{ raspberry -1}}{( raspberry -1)!}\\right\\} \\\\\n& =\\sum_{ raspberry =0}^{\\infty}\\left\\{ blackberry \\frac{ buttercup^{ raspberry }}{ raspberry !}\\right\\}+\\sum_{ raspberry =2}^{\\infty}\\left\\{ chocolate \\frac{ buttercup^{ raspberry -1}}{( raspberry -2)!}\\right\\}=cottonwood( buttercup )+ buttercup cottonwood( buttercup ) .\n\\end{aligned}\n\\]\n\nHence \\( cottonwood^{\\prime}( buttercup ) / cottonwood( buttercup )=1+ buttercup \\). Integration and use of \\( cottonwood(0)= pineapple =1 \\) yields \\( cottonwood( buttercup ) =\\exp \\left( buttercup + buttercup^{2} / 2\\right) \\). Now the series for \\( cottonwood( buttercup ) \\) is uniformly convergent for all \\( buttercup \\), so all the operations are legal.\n\nComment: \\( blackberry \\) is the number of permutations \\( \\pi \\), with \\( \\pi^{2}=1 \\), in the symmetric group on \\( raspberry \\) symbols. Some contestants used this observation together with known formulas for the number of permutations with a given cycle structure to check part (b) by multiplying the series for \\( \\exp ( buttercup ) \\) and \\( \\exp \\left( buttercup^{2} / 2\\right) \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "exiterator",
+        "j": "contravary",
+        "k": "unchanger",
+        "n": "finiteend",
+        "x": "constantz",
+        "F": "antifunc",
+        "a_ij": "wholematrix",
+        "a_ji": "matrixwhole",
+        "a_1k": "outercell",
+        "a_k1": "innercell",
+        "S_0": "endmaximal",
+        "S_n": "emptiness",
+        "S_n-1": "emptinessprev",
+        "S_n-2": "emptinessearlier",
+        "S_n+1": "emptinessnext"
+      },
+      "question": "A-2. Define \\( endmaximal \\) to be 1 . For \\( finiteend \\geqq 1 \\), let \\( emptiness \\) be the number of \\( finiteend \\times finiteend \\) matrices whose elements are nonnegative integers with the property that \\( wholematrix = matrixwhole ,(exiterator , contravary =1,2, \\cdots, finiteend ) \\) and where \\( \\sum_{exiterator =1}^{finiteend } wholematrix \\) \\( =1,(contravary =1,2, \\cdots, finiteend ) \\). Prove\n(a) \\( emptinessnext = emptiness + finiteend emptinessprev \\),\n(b) \\( \\sum_{finiteend =0}^{\\infty} emptiness \\frac{constantz ^{finiteend }}{finiteend !}=\\exp \\left(constantz + constantz ^{2} / 2\\right), \\quad \\) where \\( \\exp (constantz )=e^{constantz } \\).",
+      "solution": "A-2 \\( \\quad emptiness \\) is the number of symmetric \\( finiteend \\times finiteend \\) permutation matrices (a permutation matrix has exactly one 1 in each row and column with 0 's elsewhere). Let the 1 in the first row be in the \\( unchanger \\) th column. If \\( unchanger =1 \\), then there are \\( emptinessprev \\) ways to complete the matrix. If \\( unchanger \\neq 1 \\) then \\( outercell = innercell =1 \\) and the deletion of the 1st and \\( unchanger \\) th rows and columns leaves a symmetric \\( (finiteend -2) \\times(finiteend -2) \\) permutation matrix. Consequently \\( emptiness = emptinessprev +(finiteend -1) emptinessearlier \\).\n\nFor part (b), let\n\\[\n\\begin{aligned}\nantifunc(constantz ) & =\\sum_{finiteend =0}^{\\infty}\\left\\{emptiness \\frac{constantz ^{finiteend }}{finiteend !}\\right\\} \\cdot \\quad antifunc^{\\prime}(constantz )=\\sum_{finiteend =1}^{\\infty}\\left\\{emptiness \\frac{constantz ^{finiteend -1}}{(finiteend -1)!}\\right\\} \\\\\n& =\\sum_{finiteend =1}^{\\infty}\\left\\{emptinessprev \\frac{constantz ^{finiteend -1}}{(finiteend -1)!}+(finiteend -1) emptinessearlier \\frac{constantz ^{finiteend -1}}{(finiteend -1)!}\\right\\} \\\\\n& =\\sum_{finiteend =0}^{\\infty}\\left\\{emptiness \\frac{constantz ^{finiteend }}{finiteend !}\\right\\}+\\sum_{finiteend =2}^{\\infty}\\left\\{emptinessearlier \\frac{constantz ^{finiteend -1}}{(finiteend -2)!}\\right\\}=antifunc(constantz )+ constantz \\, antifunc(constantz ) .\n\\end{aligned}\n\\]\n\nHence \\( antifunc^{\\prime}(constantz ) / antifunc(constantz )=1+ constantz  \\). Integration and use of \\( antifunc(0)=endmaximal =1 \\) yields \\( antifunc(constantz ) \\) \\( =\\exp \\left(constantz + constantz ^{2} / 2\\right) \\). Now the series for \\( antifunc(constantz ) \\) is uniformly convergent for all \\( constantz  \\), so all the operations are legal.\n\nComment: \\( emptiness \\) is the number of permutations \\( \\pi \\), with \\( \\pi^{2}=1 \\), in the symmetric group on \\( finiteend  \\) symbols. Some contestants used this observation together with known formulas for the number of permutations with a given cycle structure to check part (b) by multiplying the series for \\( \\exp (constantz ) \\) and \\( \\exp \\left(constantz ^{2} / 2\\right) \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "i": "sljeprmn",
+        "j": "pnqzrutk",
+        "k": "fvdalyop",
+        "n": "akzuqher",
+        "x": "wlbpcasi",
+        "F": "tnosrmbh",
+        "a_ij": "ydkqnaso",
+        "a_ji": "sruqnpov",
+        "a_1k": "blzqiart",
+        "a_k1": "dmveqush",
+        "S_0": "rgjfysot",
+        "S_n": "mlaeqvhu",
+        "S_n-1": "qteivbap",
+        "S_n-2": "xhcluozd",
+        "S_n+1": "wfzkjroy"
+      },
+      "question": "A-2. Define \\( rgjfysot \\) to be 1 . For \\( akzuqher \\geqq 1 \\), let \\( mlaeqvhu \\) be the number of \\( akzuqher \\times akzuqher \\) matrices whose elements are nonnegative integers with the property that \\( ydkqnaso = sruqnpov ,(sljeprmn, pnqzrutk=1,2, \\cdots, akzuqher) \\) and where \\( \\sum_{sljeprmn=1}^{akzuqher} ydkqnaso \\) \\( =1,(pnqzrutk=1,2, \\cdots, akzuqher) \\). Prove\n(a) \\( wfzkjroy = mlaeqvhu + akzuqher qteivbap \\),\n(b) \\( \\sum_{akzuqher=0}^{\\infty} mlaeqvhu \\frac{wlbpcasi^{akzuqher}}{akzuqher!}=\\exp \\left(wlbpcasi+wlbpcasi^{2} / 2\\right), \\quad \\) where \\( \\exp (wlbpcasi)=e^{wlbpcasi} \\).",
+      "solution": "A-2 \\( \\quad mlaeqvhu \\) is the number of symmetric \\( akzuqher \\times akzuqher \\) permutation matrices (a permutation matrix has exactly one 1 in each row and column with 0's elsewhere). Let the 1 in the first row be in the \\( fvdalyop \\) th column. If \\( fvdalyop=1 \\), then there are \\( qteivbap \\) ways to complete the matrix. If \\( fvdalyop \\neq 1 \\) then \\( blzqiart=dmveqush=1 \\) and the deletion of the 1st and \\( fvdalyop \\) th rows and columns leaves a symmetric \\( (akzuqher-2) \\times(akzuqher-2) \\) permutation matrix. Consequently \\( mlaeqvhu=qteivbap+(akzuqher-1) xhcluozd \\).\n\nFor part (b), let\n\\[\n\\begin{aligned}\ntnosrmbh(wlbpcasi) & =\\sum_{akzuqher=0}^{\\infty}\\left\\{mlaeqvhu \\frac{wlbpcasi^{akzuqher}}{akzuqher!}\\right\\} \\cdot \\quad tnosrmbh^{\\prime}(wlbpcasi)=\\sum_{akzuqher=1}^{\\infty}\\left\\{mlaeqvhu \\frac{wlbpcasi^{akzuqher-1}}{(akzuqher-1)!}\\right\\} \\\\\n& =\\sum_{akzuqher=1}^{\\infty}\\left\\{qteivbap \\frac{wlbpcasi^{akzuqher-1}}{(akzuqher-1)!}+(akzuqher-1) xhcluozd \\frac{wlbpcasi^{akzuqher-1}}{(akzuqher-1)!}\\right\\} \\\\\n& =\\sum_{akzuqher=0}^{\\infty}\\left\\{mlaeqvhu \\frac{wlbpcasi^{akzuqher}}{akzuqher!}\\right\\}+\\sum_{akzuqher=2}^{\\infty}\\left\\{xhcluozd \\frac{wlbpcasi^{akzuqher-1}}{(akzuqher-2)!}\\right\\}=tnosrmbh(wlbpcasi)+wlbpcasi\\,tnosrmbh(wlbpcasi) .\n\\end{aligned}\n\\]\n\nHence \\( tnosrmbh^{\\prime}(wlbpcasi) / tnosrmbh(wlbpcasi)=1+wlbpcasi \\). Integration and use of \\( tnosrmbh(0)=rgjfysot=1 \\) yields \\( tnosrmbh(wlbpcasi)=\\exp \\left(wlbpcasi+wlbpcasi^{2} / 2\\right) \\). Now the series for \\( tnosrmbh(wlbpcasi) \\) is uniformly convergent for all \\( wlbpcasi \\), so all the operations are legal.\n\nComment: \\( mlaeqvhu \\) is the number of permutations \\( \\pi \\), with \\( \\pi^{2}=1 \\), in the symmetric group on \\( akzuqher \\) symbols. Some contestants used this observation together with known formulas for the number of permutations with a given cycle structure to check part (b) by multiplying the series for \\( \\exp (wlbpcasi) \\) and \\( \\exp \\left(wlbpcasi^{2} / 2\\right) \\)."
+    },
+    "kernel_variant": {
+      "question": "Let \\(V_{0}=1\\). For \\(n\\ge1\\) define \\(V_{n}\\) to be the number of simple graphs on the labelled vertex-set \\(\\{1,2,\\dots ,n\\}\\) such that every connected component is a copy of \\(K_{1}\\), \\(K_{2}\\), or \\(K_{3}\\) (an isolated vertex, a single edge, or a triangle).  \n\n(a)  Establish the recurrence  \n\\[\nV_{n}=V_{n-1}+(n-1)V_{n-2}+{n-1\\choose2}\\,V_{n-3}\\qquad(n\\ge3),\n\\]\ntogether with the initial values \\(V_{1}=1,\\;V_{2}=2\\).  \n\n(b)  Let  \n\\[\nH(t)=\\sum_{n=0}^{\\infty}V_{n}\\frac{t^{n}}{n!}.\n\\]\nShow that  \n\\[\nH(t)=\\exp\\!\\Bigl(t+\\frac{t^{2}}{2}+\\frac{t^{3}}{6}\\Bigr).\n\\]\n\n(c)  For each integer \\(m\\ge0\\) determine the exponential generating function for graphs counted by \\(V_{n}\\) that contain exactly \\(m\\) triangles, and deduce an explicit formula\n\\[\nV_{n}=\\sum_{m=0}^{\\lfloor n/3\\rfloor}\\frac{n!}{(n-3m)!m!2^{n-2m}3^{m}}.\n\\]",
+      "solution": "(a)  Fix vertex \\(n\\).  Three mutually exclusive cases occur.  \n\n* Isolated: deleting \\(n\\) leaves a permissible graph on \\(n-1\\) vertices, giving \\(V_{n-1}\\) possibilities.  \n\n* Edge: choose its partner \\(k\\) (\\(1\\le k\\le n-1\\)), remove both vertices, and supply a graph on the remaining \\(n-2\\) labels; this yields \\((n-1)V_{n-2}\\) graphs.  \n\n* Triangle: pick an unordered pair \\(\\{i,j\\}\\subset\\{1,\\dots ,n-1\\}\\), erase the three involved vertices, and finish with a graph on \\(n-3\\) labels, contributing \\(\\binom{n-1}{2}V_{n-3}\\).  \n\nSumming the disjoint cases furnishes the stated recurrence; the two initial values follow by inspection.\n\n(b)  Differentiate \\(H\\):\n\\[\nH'(t)=\\sum_{n\\ge1}V_{n}\\frac{t^{\\,n-1}}{(n-1)!}.\n\\]\nInsert the recurrence (valid for \\(n\\ge3\\)) and separate indices:\n\\[\nH'=\\sum_{m\\ge0}\\!V_{m}\\frac{t^{m}}{m!}+t\\!\\sum_{m\\ge0}\\!V_{m}\\frac{t^{m}}{m!}+\\frac{t^{2}}{2}\\!\\sum_{m\\ge0}\\!V_{m}\\frac{t^{m}}{m!}\n        =H+tH+\\frac{t^{2}}{2}H.\n\\]\nHence \\(H'/H=1+t+\\tfrac{t^{2}}{2}\\).  Integrating and using \\(H(0)=1\\) we obtain \\(H(t)=\\exp\\bigl(t+t^{2}/2+t^{3}/6\\bigr)\\).\n\n(c)  Attach a weight \\(u\\) to each triangle while keeping weight \\(1\\) on \\(K_{1}\\) and \\(K_{2}\\).  The preceding argument replaces \\(H\\) by\n\\[\nH(t,u)=\\exp\\!\\Bigl(t+\\frac{t^{2}}{2}+u\\frac{t^{3}}{6}\\Bigr).\n\\]\nExpanding in \\(u\\) gives\n\\[\nH(t,u)=\\sum_{m\\ge0}\\frac{u^{m}}{m!}\\Bigl(\\frac{t^{3}}{6}\\Bigr)^{\\!m}\\exp\\!\\Bigl(t+\\frac{t^{2}}{2}\\Bigr).\n\\]\nExtracting the coefficient of \\(u^{m}\\) and then of \\(t^{n}\\) yields the claimed closed form for \\(V_{n}\\) after routine algebraic simplification.  Observe that \\(m\\) triangles consume \\(3m\\) vertices, leaving \\(n-3m\\) vertices that form an involution; the factorial term counts labelings, while the powers \\(2^{n-2m}3^{m}\\) account respectively for edges and triangles.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.093166",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

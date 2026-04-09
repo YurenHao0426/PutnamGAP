@@ -1,0 +1,117 @@
+{
+  "index": "1963-A-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "2. Let \\( \\{f(n)\\} \\) be a strictly increasing sequence of positive integers such that \\( f(2)=2 \\) and \\( f(m n)=f(m) f(n) \\) for every relatively prime pair of positive integers \\( m \\) and \\( n \\) (the greatest common divisor of \\( m \\) and \\( n \\) is equal to 1). Prove that \\( f(n)=n \\) for every positive integer \\( n \\).",
+  "solution": "Solution. Since \\( f \\) is strictly increasing and integer-valued, \\( f(n+p) \\geq \\) \\( f(n)+p \\) for any integers \\( n \\) and \\( p \\). Let \\( f(3)=a \\). Then\n\\[\n\\begin{aligned}\nf(5) & \\geq a+2 \\\\\nf(15) & =f(3) f(5) \\geq a(a+2)=a^{2}+2 a \\\\\nf(18) & \\geq a^{2}+2 a+3 .\n\\end{aligned}\n\\]\n\nAlso\n\\[\n\\begin{aligned}\nf(6) & =f(2) f(3)=2 a \\\\\nf(5) & \\leq 2 a-1 \\\\\nf(10) & =f(2) f(5) \\leq 4 a-2 \\\\\nf(9) & \\leq 4 a-3 \\\\\nf(18) & =f(2) f(9) \\leq 8 a-6 .\n\\end{aligned}\n\\]\n\nSo, comparing the two values of \\( f(18) \\), we have\n\\[\na^{2}+2 a+3 \\leq 8 a-6, \\quad \\text { i.e., }(a-3)^{2} \\leq 0,\n\\]\nso \\( f(3)=a=3 \\).\nNow if \\( f(p)=p \\) for some integer \\( p \\), then \\( f(n)=n \\) for all integers \\( n \\leq p \\) because of the strict monotonicity property.\n\nWe will establish\n\\[\nf\\left(2^{k}+1\\right)=2^{k}+1\n\\]\nby induction. We have already shown this for \\( k=1 \\). Suppose it is true for some integer \\( t \\). Then\n\\[\nf\\left(2^{\\prime+1}+2\\right)=f(2) f\\left(2^{\\prime}+1\\right)=2\\left(2^{\\prime}+1\\right)=2^{\\prime+1}+2 ;\n\\]\nhence \\( f\\left(2^{\\prime+1}+1\\right)=2^{\\prime+1}+1 \\). This completes the induction. Thus \\( f(p) \\) \\( =p \\) for arbitrarily large integers \\( p \\), and hence \\( f(n)=n \\) for all \\( n \\).",
+  "vars": [
+    "n",
+    "m",
+    "p",
+    "k",
+    "t"
+  ],
+  "params": [
+    "f",
+    "a"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "varnumber",
+        "m": "varmult",
+        "p": "varplus",
+        "k": "varindex",
+        "t": "vartemp",
+        "f": "funcvalue",
+        "a": "constalpha"
+      },
+      "question": "2. Let \\( \\{funcvalue(varnumber)\\} \\) be a strictly increasing sequence of positive integers such that \\( funcvalue(2)=2 \\) and \\( funcvalue(varmult\\, varnumber)=funcvalue(varmult)\\, funcvalue(varnumber) \\) for every relatively prime pair of positive integers \\( varmult \\) and \\( varnumber \\) (the greatest common divisor of \\( varmult \\) and \\( varnumber \\) is equal to 1). Prove that \\( funcvalue(varnumber)=varnumber \\) for every positive integer \\( varnumber \\).",
+      "solution": "Solution. Since \\( funcvalue \\) is strictly increasing and integer-valued, \\( funcvalue(varnumber+varplus) \\geq \\) \\( funcvalue(varnumber)+varplus \\) for any integers \\( varnumber \\) and \\( varplus \\). Let \\( funcvalue(3)=constalpha \\). Then\n\\[\n\\begin{aligned}\nfuncvalue(5) & \\geq constalpha+2 \\\nfuncvalue(15) & =funcvalue(3)\\, funcvalue(5) \\geq constalpha(constalpha+2)=constalpha^{2}+2\\, constalpha \\\\\nfuncvalue(18) & \\geq constalpha^{2}+2\\, constalpha+3 .\n\\end{aligned}\n\\]\n\nAlso\n\\[\n\\begin{aligned}\nfuncvalue(6) & =funcvalue(2)\\, funcvalue(3)=2\\, constalpha \\\\\nfuncvalue(5) & \\leq 2\\, constalpha-1 \\\\\nfuncvalue(10) & =funcvalue(2)\\, funcvalue(5) \\leq 4\\, constalpha-2 \\\\\nfuncvalue(9) & \\leq 4\\, constalpha-3 \\\\\nfuncvalue(18) & =funcvalue(2)\\, funcvalue(9) \\leq 8\\, constalpha-6 .\n\\end{aligned}\n\\]\n\nSo, comparing the two values of \\( funcvalue(18) \\), we have\n\\[\nconstalpha^{2}+2\\, constalpha+3 \\leq 8\\, constalpha-6, \\quad \\text { i.e., }(constalpha-3)^{2} \\leq 0,\n\\]\nso \\( funcvalue(3)=constalpha=3 \\).\nNow if \\( funcvalue(varplus)=varplus \\) for some integer \\( varplus \\), then \\( funcvalue(varnumber)=varnumber \\) for all integers \\( varnumber \\leq varplus \\) because of the strict monotonicity property.\n\nWe will establish\n\\[\nfuncvalue\\left(2^{varindex}+1\\right)=2^{varindex}+1\n\\]\nby induction. We have already shown this for \\( varindex=1 \\). Suppose it is true for some integer \\( vartemp \\). Then\n\\[\nfuncvalue\\left(2^{vartemp+1}+2\\right)=funcvalue(2)\\, funcvalue\\left(2^{vartemp}+1\\right)=2\\left(2^{vartemp}+1\\right)=2^{vartemp+1}+2 ;\n\\]\nhence \\( funcvalue\\left(2^{vartemp+1}+1\\right)=2^{vartemp+1}+1 \\). This completes the induction. Thus \\( funcvalue(varplus) \\) \\( =varplus \\) for arbitrarily large integers \\( varplus \\), and hence \\( funcvalue(varnumber)=varnumber \\) for all \\( varnumber \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "lighthouse",
+        "m": "pineapple",
+        "p": "tangerine",
+        "k": "blackboard",
+        "t": "chocolate",
+        "f": "watermelon",
+        "a": "strawberry"
+      },
+      "question": "2. Let \\( \\{watermelon(lighthouse)\\} \\) be a strictly increasing sequence of positive integers such that \\( watermelon(2)=2 \\) and \\( watermelon(pineapple lighthouse)=watermelon(pineapple) watermelon(lighthouse) \\) for every relatively prime pair of positive integers \\( pineapple \\) and \\( lighthouse \\) (the greatest common divisor of \\( pineapple \\) and \\( lighthouse \\) is equal to 1). Prove that \\( watermelon(lighthouse)=lighthouse \\) for every positive integer \\( lighthouse \\).",
+      "solution": "Solution. Since \\( watermelon \\) is strictly increasing and integer-valued, \\( watermelon(lighthouse+tangerine) \\geq \\) \\( watermelon(lighthouse)+tangerine \\) for any integers \\( lighthouse \\) and \\( tangerine \\). Let \\( watermelon(3)=strawberry \\). Then\n\\[\n\\begin{aligned}\nwatermelon(5) & \\geq strawberry+2 \\\\\nwatermelon(15) & =watermelon(3) watermelon(5) \\geq strawberry(strawberry+2)=strawberry^{2}+2 strawberry \\\\\nwatermelon(18) & \\geq strawberry^{2}+2 strawberry+3 .\n\\end{aligned}\n\\]\n\nAlso\n\\[\n\\begin{aligned}\nwatermelon(6) & =watermelon(2) watermelon(3)=2 strawberry \\\\\nwatermelon(5) & \\leq 2 strawberry-1 \\\\\nwatermelon(10) & =watermelon(2) watermelon(5) \\leq 4 strawberry-2 \\\\\nwatermelon(9) & \\leq 4 strawberry-3 \\\\\nwatermelon(18) & =watermelon(2) watermelon(9) \\leq 8 strawberry-6 .\n\\end{aligned}\n\\]\n\nSo, comparing the two values of \\( watermelon(18) \\), we have\n\\[\nstrawberry^{2}+2 strawberry+3 \\leq 8 strawberry-6, \\quad \\text { i.e., }(strawberry-3)^{2} \\leq 0,\n\\]\nso \\( watermelon(3)=strawberry=3 \\).\nNow if \\( watermelon(tangerine)=tangerine \\) for some integer \\( tangerine \\), then \\( watermelon(lighthouse)=lighthouse \\) for all integers \\( lighthouse \\leq tangerine \\) because of the strict monotonicity property.\n\nWe will establish\n\\[\nwatermelon\\left(2^{blackboard}+1\\right)=2^{blackboard}+1\n\\]\nby induction. We have already shown this for \\( blackboard=1 \\). Suppose it is true for some integer \\( chocolate \\). Then\n\\[\nwatermelon\\left(2^{\\prime+1}+2\\right)=watermelon(2) watermelon\\left(2^{\\prime}+1\\right)=2\\left(2^{\\prime}+1\\right)=2^{\\prime+1}+2 ;\n\\]\nhence \\( watermelon\\left(2^{\\prime+1}+1\\right)=2^{\\prime+1}+1 \\). This completes the induction. Thus \\( watermelon(tangerine) \\) \\( =tangerine \\) for arbitrarily large integers \\( tangerine \\), and hence \\( watermelon(lighthouse)=lighthouse \\) for all \\( lighthouse \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "nonwhole",
+        "m": "undivide",
+        "p": "nonprime",
+        "k": "antilogy",
+        "t": "limitless",
+        "f": "malfunction",
+        "a": "voidness"
+      },
+      "question": "2. Let \\( \\{malfunction(nonwhole)\\} \\) be a strictly increasing sequence of positive integers such that \\( malfunction(2)=2 \\) and \\( malfunction(undivide\\, nonwhole)=malfunction(undivide)\\,malfunction(nonwhole) \\) for every relatively prime pair of positive integers \\( undivide \\) and \\( nonwhole \\) (the greatest common divisor of \\( undivide \\) and \\( nonwhole \\) is equal to 1). Prove that \\( malfunction(nonwhole)=nonwhole \\) for every positive integer \\( nonwhole \\).",
+      "solution": "Solution. Since \\( malfunction \\) is strictly increasing and integer-valued, \\( malfunction(nonwhole+nonprime) \\geq malfunction(nonwhole)+nonprime \\) for any integers \\( nonwhole \\) and \\( nonprime \\). Let \\( malfunction(3)=voidness \\). Then\n\\[\n\\begin{aligned}\nmalfunction(5) & \\geq voidness+2 \\\\\nmalfunction(15) & =malfunction(3)\\,malfunction(5) \\geq voidness(voidness+2)=voidness^{2}+2\\,voidness \\\\\nmalfunction(18) & \\geq voidness^{2}+2\\,voidness+3 .\n\\end{aligned}\n\\]\n\nAlso\n\\[\n\\begin{aligned}\nmalfunction(6) & =malfunction(2)\\,malfunction(3)=2\\,voidness \\\\\nmalfunction(5) & \\leq 2\\,voidness-1 \\\\\nmalfunction(10) & =malfunction(2)\\,malfunction(5) \\leq 4\\,voidness-2 \\\\\nmalfunction(9) & \\leq 4\\,voidness-3 \\\\\nmalfunction(18) & =malfunction(2)\\,malfunction(9) \\leq 8\\,voidness-6 .\n\\end{aligned}\n\\]\n\nSo, comparing the two values of \\( malfunction(18) \\), we have\n\\[\nvoidness^{2}+2\\,voidness+3 \\leq 8\\,voidness-6, \\quad \\text{ i.e., }(voidness-3)^{2} \\leq 0,\n\\]\nso \\( malfunction(3)=voidness=3 \\).\n\nNow if \\( malfunction(nonprime)=nonprime \\) for some integer \\( nonprime \\), then \\( malfunction(nonwhole)=nonwhole \\) for all integers \\( nonwhole \\leq nonprime \\) because of the strict monotonicity property.\n\nWe will establish\n\\[\nmalfunction\\left(2^{antilogy}+1\\right)=2^{antilogy}+1\n\\]\nby induction. We have already shown this for \\( antilogy=1 \\). Suppose it is true for some integer \\( limitless \\). Then\n\\[\nmalfunction\\left(2^{limitless+1}+2\\right)=malfunction(2)\\,malfunction\\left(2^{limitless}+1\\right)=2\\left(2^{limitless}+1\\right)=2^{limitless+1}+2 ;\n\\]\nhence \\( malfunction\\left(2^{limitless+1}+1\\right)=2^{limitless+1}+1 \\). This completes the induction. Thus \\( malfunction(nonprime)=nonprime \\) for arbitrarily large integers \\( nonprime \\), and hence \\( malfunction(nonwhole)=nonwhole \\) for all \\( nonwhole \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "m": "hjgrksla",
+        "p": "vbkzqemu",
+        "k": "rcpnlydf",
+        "t": "gxumforp",
+        "f": "yslqdkzn",
+        "a": "wefmbjco"
+      },
+      "question": "2. Let \\( \\{yslqdkzn(qzxwvtnp)\\} \\) be a strictly increasing sequence of positive integers such that \\( yslqdkzn(2)=2 \\) and \\( yslqdkzn(hjgrksla qzxwvtnp)=yslqdkzn(hjgrksla) yslqdkzn(qzxwvtnp) \\) for every relatively prime pair of positive integers \\( hjgrksla \\) and \\( qzxwvtnp \\) (the greatest common divisor of \\( hjgrksla \\) and \\( qzxwvtnp \\) is equal to 1). Prove that \\( yslqdkzn(qzxwvtnp)=qzxwvtnp \\) for every positive integer \\( qzxwvtnp \\).",
+      "solution": "Solution. Since \\( yslqdkzn \\) is strictly increasing and integer-valued, \\( yslqdkzn(qzxwvtnp+vbkzqemu) \\geq \\) \\( yslqdkzn(qzxwvtnp)+vbkzqemu \\) for any integers \\( qzxwvtnp \\) and \\( vbkzqemu \\). Let \\( yslqdkzn(3)=wefmbjco \\). Then\n\\[\n\\begin{aligned}\nyslqdkzn(5) & \\geq wefmbjco+2 \\\\\nyslqdkzn(15) & =yslqdkzn(3) yslqdkzn(5) \\geq wefmbjco(wefmbjco+2)=wefmbjco^{2}+2 wefmbjco \\\\\nyslqdkzn(18) & \\geq wefmbjco^{2}+2 wefmbjco+3 .\n\\end{aligned}\n\\]\n\nAlso\n\\[\n\\begin{aligned}\nyslqdkzn(6) & =yslqdkzn(2) yslqdkzn(3)=2 wefmbjco \\\\\nyslqdkzn(5) & \\leq 2 wefmbjco-1 \\\\\nyslqdkzn(10) & =yslqdkzn(2) yslqdkzn(5) \\leq 4 wefmbjco-2 \\\\\nyslqdkzn(9) & \\leq 4 wefmbjco-3 \\\\\nyslqdkzn(18) & =yslqdkzn(2) yslqdkzn(9) \\leq 8 wefmbjco-6 .\n\\end{aligned}\n\\]\n\nSo, comparing the two values of \\( yslqdkzn(18) \\), we have\n\\[\nwefmbjco^{2}+2 wefmbjco+3 \\leq 8 wefmbjco-6, \\quad \\text { i.e., }(wefmbjco-3)^{2} \\leq 0,\n\\]\nso \\( yslqdkzn(3)=wefmbjco=3 \\).\nNow if \\( yslqdkzn(vbkzqemu)=vbkzqemu \\) for some integer \\( vbkzqemu \\), then \\( yslqdkzn(qzxwvtnp)=qzxwvtnp \\) for all integers \\( qzxwvtnp \\leq vbkzqemu \\) because of the strict monotonicity property.\n\nWe will establish\n\\[\nyslqdkzn\\left(2^{rcpnlydf}+1\\right)=2^{rcpnlydf}+1\n\\]\nby induction. We have already shown this for \\( rcpnlydf=1 \\). Suppose it is true for some integer \\( gxumforp \\). Then\n\\[\nyslqdkzn\\left(2^{\\prime+1}+2\\right)=yslqdkzn(2) yslqdkzn\\left(2^{\\prime}+1\\right)=2\\left(2^{\\prime}+1\\right)=2^{\\prime+1}+2 ;\n\\]\nhence \\( yslqdkzn\\left(2^{\\prime+1}+1\\right)=2^{\\prime+1}+1 \\). This completes the induction. Thus \\( yslqdkzn(vbkzqemu) \\) \\( =vbkzqemu \\) for arbitrarily large integers \\( vbkzqemu \\), and hence \\( yslqdkzn(qzxwvtnp)=qzxwvtnp \\) for all \\( qzxwvtnp \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $g:\bigl(\text{positive integers}\bigr)\to\bigl(\text{positive integers}\bigr)$ be strictly increasing and satisfy \n\\[g(2)=2,\tag{1}\\]\n\\[g(mn)=g(m)\\,g(n)\\qquad\text{whenever } \bigl(m,n\bigr)=1.\\tag{2}\\]\nProve that $g(n)=n$ for every positive integer $n$.  (Hint: work with $g(3)=a$ and compare two different estimates for $g(26)$.)",
+      "solution": "Let a = g(3).  Since g is strictly increasing and integer-valued we have in general\n  g(n+1) \\geq  g(n) + 1,\nand hence by induction\n  g(n+p) \\geq  g(n) + p  for any integer p > 0.\n\n1. Lower bound for g(18).\n\nFirst,\n  g(5) \\geq  g(3) + (5-3) = a + 2.\nSince gcd(3,5)=1,\n  g(15) = g(3) g(5) \\geq  a(a+2) = a^2 + 2a.\nThen\n  g(18) = g(15+3) \\geq  g(15) + 3 \\geq  a^2 + 2a + 3.\n\n2. Upper bound for g(18).\n\nWe have\n  g(6) = g(2) g(3) = 2a,\nso\n  g(5) \\leq  g(6) - 1 = 2a - 1.\nHence\n  g(10) = g(2) g(5) = 2(2a-1) = 4a-2,\n  g(9) \\leq  g(10) - 1 = 4a - 3,\n  g(18) = g(2) g(9) \\leq  2(4a-3) = 8a - 6.\n\n3. Combine bounds.\n\na^2 + 2a + 3 \\leq  g(18) \\leq  8a - 6\n\\Rightarrow  a^2 - 6a + 9 \\leq  0\n\\Rightarrow  (a - 3)^2 \\leq  0\n\\Rightarrow  a = 3.\n\n4. Initial fixed points.\n\nSince g is strictly increasing and g(1) < g(2) = 2 < g(3) = 3, we get g(1)=1, g(2)=2, g(3)=3.\n\n5. Induction on numbers of the form 2^k + 1.\n\nBase k=1: 2^1+1=3, so g(3)=3.  Now assume g(2^k+1)=2^k+1.  Then gcd(2^k+1,2)=1 gives\n  g(2\\cdot (2^k+1)) = g(2) g(2^k+1) = 2(2^k+1) = 2^{k+1} + 2.\nUsing g(n+p) \\geq  g(n) + p with n=2^k+1, p=2^k,\n  g(2^k+1 + 2^k) = g(2^{k+1} + 1) \\geq  g(2^k+1) + 2^k\n    = (2^k+1) + 2^k = 2^{k+1} + 1.\nOn the other hand,\n  g(2^{k+1} + 1) \\leq  g(2^{k+1} + 2) - 1 = (2^{k+1} + 2) - 1 = 2^{k+1} + 1.\nHence g(2^{k+1} + 1) = 2^{k+1} + 1, completing the induction.\n\n6. Conclusion.\n\nFrom g(n+p) \\geq  g(n) + p with n=1 we get g(n) \\geq  n for all n.  Since we have shown g(N)=N for infinitely many arbitrarily large N = 2^k+1, if for some m we had g(m) > m then choosing N > g(m) would give\n  g(N) = g(m + (N-m)) \\geq  g(m) + (N-m) > N,\ncontradicting g(N)=N.  Therefore g(m)=m for every positive integer m.",
+      "_meta": {
+        "core_steps": [
+          "Introduce a = f(3) and obtain lower & upper bounds for f(18) from monotonicity plus multiplicativity, yielding (a−3)^2 ≤ 0.",
+          "Conclude f(3) = 3; monotonicity then gives f(n) = n for all n ≤ any confirmed fixed point p.",
+          "Use induction: from f(2)=2 and coprimality, show f(2^k+1)=2^k+1 for every k (consecutive–integer squeeze).",
+          "Because such fixed points grow without bound, monotonicity forces f(n)=n for every positive integer n."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Auxiliary odd integer >3, coprime to 3, used to start the bounding chain (original choice 5 is arbitrary).",
+            "original": "5"
+          },
+          "slot2": {
+            "description": "Number 3·slot1 that appears in the lower-bound product (original 15).",
+            "original": "15"
+          },
+          "slot3": {
+            "description": "Common argument where the two bounds are equated; equals slot2 + 3 and also 2·slot6 (original 18).",
+            "original": "18"
+          },
+          "slot4": {
+            "description": "Value 2·3 arising from f(2)f(3) in the upper-bound chain (original 6).",
+            "original": "6"
+          },
+          "slot5": {
+            "description": "Value 2·slot1 = f(2)f(slot1) used for an upper bound (original 10).",
+            "original": "10"
+          },
+          "slot6": {
+            "description": "Number slot5 − 1, whose double equals slot3 (original 9).",
+            "original": "9"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

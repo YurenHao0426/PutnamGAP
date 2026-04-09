@@ -1,0 +1,98 @@
+{
+  "index": "1996-A-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "If $p$ is a prime number greater than 3 and $k = \\lfloor 2p/3\n\\rfloor$, prove that the sum\n\\[\n\\binom p1 + \\binom p2 + \\cdots + \\binom pk\n\\]\nof binomial coefficients is divisible by $p^2$.",
+  "solution": "For $1 \\leq n \\leq p-1$, $p$ divides $\\binom pn$ and\n\\begin{align*}\n\\frac{1}{p} \\binom pn &= \\frac{1}{n} \\frac{p-1}{1} \\frac{p-2}{2} \\cdots\n\\frac{p-n+1}{n-1} \\\\\n&\\equiv \\frac{(-1)^{n-1}}{n} \\mymod{p},\n\\end{align*}\nwhere the congruence $x \\equiv y \\mymod{p}$ means that $x-y$ is a\nrational number whose numerator, in reduced form, is divisible by $p$.\nHence it suffices to show that\n\\[\n\\sum_{n=1}^k \\frac{(-1)^{n-1}}{n} \\equiv 0 \\mymod{p}.\n\\]\nWe distinguish two cases based on $p \\mymod{6}$. First suppose $p =\n6r+1$, so that $k = 4r$. Then\n\\begin{align*}\n\\sum_{n=1}^{4r} \\frac{(-1)^{n-1}}{n}\n&= \\sum_{n=1}^{4r} \\frac{1}{n} - 2 \\sum_{n=1}^{2r} \\frac{1}{2n} \\\\\n&= \\sum_{n=1}^{2r} \\left( \\frac{1}{n} - \\frac{1}{n} \\right)\n+ \\sum_{n=2r+1}^{3r} \\left( \\frac{1}{n} + \\frac{1}{6r+1-n} \\right) \\\\\n&= \\sum_{n=2r+1}^{3r} \\frac{p}{n(p-n)} \\equiv 0 \\mymod{p},\n\\end{align*}\nsince $p = 6r+1$.\n\nNow suppose $p = 6r+5$, so that $k = 4r + 3$. A similar argument gives\n\\begin{align*}\n\\sum_{n=1}^{4r+3}\\ \\frac{(-1)^{n-1}}{n}\n&= \\sum_{n=1}^{4r+3} \\frac{1}{n} + 2 \\sum_{n=1}^{2r+1} \\frac{1}{2n} \\\\\n&= \\sum_{n=1}^{2r+1} \\left( \\frac{1}{n} - \\frac{1}{n} \\right)\n+ \\sum_{n=2r+2}^{3r+2} \\left( \\frac{1}{n} + \\frac{1}{6r+5-n} \\right) \\\\\n&= \\sum_{n=2r+2}^{3r+2} \\frac{p}{n(p-n)} \\equiv 0 \\mymod{p}.\n\\end{align*}",
+  "vars": [
+    "n",
+    "x",
+    "y"
+  ],
+  "params": [
+    "p",
+    "k",
+    "r"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "counter",
+        "x": "variablex",
+        "y": "variabley",
+        "p": "primevalue",
+        "k": "upperindex",
+        "r": "auxfactor"
+      },
+      "question": "If $primevalue$ is a prime number greater than 3 and $upperindex = \\lfloor 2primevalue/3 \\rfloor$, prove that the sum\n\\[\n\\binom{primevalue}{1} + \\binom{primevalue}{2} + \\cdots + \\binom{primevalue}{upperindex}\n\\]\nof binomial coefficients is divisible by $primevalue^2$.",
+      "solution": "For $1 \\leq counter \\leq primevalue-1$, primevalue divides $\\binom{primevalue}{counter}$ and\n\\begin{align*}\n\\frac{1}{primevalue} \\binom{primevalue}{counter} &= \\frac{1}{counter} \\frac{primevalue-1}{1} \\frac{primevalue-2}{2} \\cdots\n\\frac{primevalue-counter+1}{counter-1} \\\\\n&\\equiv \\frac{(-1)^{counter-1}}{counter} \\mymod{primevalue},\n\\end{align*}\nwhere the congruence $variablex \\equiv variabley \\mymod{primevalue}$ means that $variablex-variabley$ is a\nrational number whose numerator, in reduced form, is divisible by primevalue.\nHence it suffices to show that\n\\[\n\\sum_{counter=1}^{upperindex} \\frac{(-1)^{counter-1}}{counter} \\equiv 0 \\mymod{primevalue}.\n\\]\nWe distinguish two cases based on $primevalue \\mymod{6}$. First suppose $primevalue =\n6auxfactor+1$, so that $upperindex = 4auxfactor$. Then\n\\begin{align*}\n\\sum_{counter=1}^{4auxfactor} \\frac{(-1)^{counter-1}}{counter}\n&= \\sum_{counter=1}^{4auxfactor} \\frac{1}{counter} - 2 \\sum_{counter=1}^{2auxfactor} \\frac{1}{2counter} \\\\\n&= \\sum_{counter=1}^{2auxfactor} \\left( \\frac{1}{counter} - \\frac{1}{counter} \\right)\n+ \\sum_{counter=2auxfactor+1}^{3auxfactor} \\left( \\frac{1}{counter} + \\frac{1}{6auxfactor+1-counter} \\right) \\\\\n&= \\sum_{counter=2auxfactor+1}^{3auxfactor} \\frac{primevalue}{counter(primevalue-counter)} \\equiv 0 \\mymod{primevalue},\n\\end{align*}\nsince $primevalue = 6auxfactor+1$.\n\nNow suppose $primevalue = 6auxfactor+5$, so that $upperindex = 4auxfactor + 3$. A similar argument gives\n\\begin{align*}\n\\sum_{counter=1}^{4auxfactor+3}\\ \\frac{(-1)^{counter-1}}{counter}\n&= \\sum_{counter=1}^{4auxfactor+3} \\frac{1}{counter} + 2 \\sum_{counter=1}^{2auxfactor+1} \\frac{1}{2counter} \\\\\n&= \\sum_{counter=1}^{2auxfactor+1} \\left( \\frac{1}{counter} - \\frac{1}{counter} \\right)\n+ \\sum_{counter=2auxfactor+2}^{3auxfactor+2} \\left( \\frac{1}{counter} + \\frac{1}{6auxfactor+5-counter} \\right) \\\\\n&= \\sum_{counter=2auxfactor+2}^{3auxfactor+2} \\frac{primevalue}{counter(primevalue-counter)} \\equiv 0 \\mymod{primevalue}.\n\\end{align*}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "x": "marigold",
+        "y": "daffodil",
+        "p": "chandelier",
+        "k": "snowflake",
+        "r": "tangerine"
+      },
+      "question": "If $chandelier$ is a prime number greater than 3 and $snowflake = \\lfloor 2chandelier/3\\rfloor$, prove that the sum\n\\[\n\\binom chandelier1 + \\binom chandelier2 + \\cdots + \\binom chandeliersnowflake\n\\]\nof binomial coefficients is divisible by $chandelier^2$.",
+      "solution": "For $1 \\leq sunflower \\leq chandelier-1$, $chandelier$ divides $\\binom chandeliersunflower$ and\n\\begin{align*}\n\\frac{1}{chandelier} \\binom chandeliersunflower &= \\frac{1}{sunflower} \\frac{chandelier-1}{1} \\frac{chandelier-2}{2} \\cdots\n\\frac{chandelier-sunflower+1}{sunflower-1} \\\\\n&\\equiv \\frac{(-1)^{sunflower-1}}{sunflower} \\mymod{chandelier},\n\\end{align*}\nwhere the congruence $marigold \\equiv daffodil \\mymod{chandelier}$ means that $marigold-daffodil$ is a\nrational number whose numerator, in reduced form, is divisible by $chandelier$.\nHence it suffices to show that\n\\[\n\\sum_{sunflower=1}^{snowflake} \\frac{(-1)^{sunflower-1}}{sunflower} \\equiv 0 \\mymod{chandelier}.\n\\]\nWe distinguish two cases based on $chandelier \\mymod{6}$. First suppose $chandelier =\n6tangerine+1$, so that $snowflake = 4tangerine$. Then\n\\begin{align*}\n\\sum_{sunflower=1}^{4tangerine} \\frac{(-1)^{sunflower-1}}{sunflower}\n&= \\sum_{sunflower=1}^{4tangerine} \\frac{1}{sunflower} - 2 \\sum_{sunflower=1}^{2tangerine} \\frac{1}{2sunflower} \\\\\n&= \\sum_{sunflower=1}^{2tangerine} \\left( \\frac{1}{sunflower} - \\frac{1}{sunflower} \\right)\n+ \\sum_{sunflower=2tangerine+1}^{3tangerine} \\left( \\frac{1}{sunflower} + \\frac{1}{6tangerine+1-sunflower} \\right) \\\\\n&= \\sum_{sunflower=2tangerine+1}^{3tangerine} \\frac{chandelier}{sunflower(chandelier-sunflower)} \\equiv 0 \\mymod{chandelier},\n\\end{align*}\nsince $chandelier = 6tangerine+1$.\n\nNow suppose $chandelier = 6tangerine+5$, so that $snowflake = 4tangerine + 3$. A similar argument gives\n\\begin{align*}\n\\sum_{sunflower=1}^{4tangerine+3}\\ \\frac{(-1)^{sunflower-1}}{sunflower}\n&= \\sum_{sunflower=1}^{4tangerine+3} \\frac{1}{sunflower} + 2 \\sum_{sunflower=1}^{2tangerine+1} \\frac{1}{2sunflower} \\\\\n&= \\sum_{sunflower=1}^{2tangerine+1} \\left( \\frac{1}{sunflower} - \\frac{1}{sunflower} \\right)\n+ \\sum_{sunflower=2tangerine+2}^{3tangerine+2} \\left( \\frac{1}{sunflower} + \\frac{1}{6tangerine+5-sunflower} \\right) \\\\\n&= \\sum_{sunflower=2tangerine+2}^{3tangerine+2} \\frac{chandelier}{sunflower(chandelier-sunflower)} \\equiv 0 \\mymod{chandelier}.\n\\end{align*}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "continuous",
+        "x": "fixedvalue",
+        "y": "horizontal",
+        "p": "composite",
+        "k": "ceilingvalue",
+        "r": "multiple"
+      },
+      "question": "If $composite$ is a prime number greater than 3 and $ceilingvalue = \\lfloor 2composite/3 \\rfloor$, prove that the sum\n\\[\n\\binom{composite}{1} + \\binom{composite}{2} + \\cdots + \\binom{composite}{ceilingvalue}\n\\]\nof binomial coefficients is divisible by $composite^2$.",
+      "solution": "For $1 \\leq continuous \\leq composite-1$, $composite$ divides $\\binom{composite}{continuous}$ and\n\\begin{align*}\n\\frac{1}{composite} \\binom{composite}{continuous} &= \\frac{1}{continuous} \\frac{composite-1}{1} \\frac{composite-2}{2} \\cdots\n\\frac{composite-continuous+1}{continuous-1} \\\\\n&\\equiv \\frac{(-1)^{continuous-1}}{continuous} \\mymod{composite},\n\\end{align*}\nwhere the congruence $fixedvalue \\equiv horizontal \\mymod{composite}$ means that $fixedvalue-horizontal$ is a\nrational number whose numerator, in reduced form, is divisible by $composite$.\nHence it suffices to show that\n\\[\n\\sum_{continuous=1}^{ceilingvalue} \\frac{(-1)^{continuous-1}}{continuous} \\equiv 0 \\mymod{composite}.\n\\]\nWe distinguish two cases based on $composite \\mymod{6}$. First suppose $composite = 6multiple+1$, so that $ceilingvalue = 4multiple$. Then\n\\begin{align*}\n\\sum_{continuous=1}^{4multiple} \\frac{(-1)^{continuous-1}}{continuous}\n&= \\sum_{continuous=1}^{4multiple} \\frac{1}{continuous} - 2 \\sum_{continuous=1}^{2multiple} \\frac{1}{2continuous} \\\\\n&= \\sum_{continuous=1}^{2multiple} \\left( \\frac{1}{continuous} - \\frac{1}{continuous} \\right)\n+ \\sum_{continuous=2multiple+1}^{3multiple} \\left( \\frac{1}{continuous} + \\frac{1}{6multiple+1-continuous} \\right) \\\\\n&= \\sum_{continuous=2multiple+1}^{3multiple} \\frac{composite}{continuous(composite-continuous)} \\equiv 0 \\mymod{composite},\n\\end{align*}\nsince $composite = 6multiple+1$.\n\nNow suppose $composite = 6multiple+5$, so that $ceilingvalue = 4multiple + 3$. A similar argument gives\n\\begin{align*}\n\\sum_{continuous=1}^{4multiple+3}\\ \\frac{(-1)^{continuous-1}}{continuous}\n&= \\sum_{continuous=1}^{4multiple+3} \\frac{1}{continuous} + 2 \\sum_{continuous=1}^{2multiple+1} \\frac{1}{2continuous} \\\\\n&= \\sum_{continuous=1}^{2multiple+1} \\left( \\frac{1}{continuous} - \\frac{1}{continuous} \\right)\n+ \\sum_{continuous=2multiple+2}^{3multiple+2} \\left( \\frac{1}{continuous} + \\frac{1}{6multiple+5-continuous} \\right) \\\\\n&= \\sum_{continuous=2multiple+2}^{3multiple+2} \\frac{composite}{continuous(composite-continuous)} \\equiv 0 \\mymod{composite}.\n\\end{align*}"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "x": "hjgrksla",
+        "y": "mplkzqsn",
+        "p": "ftbzcxao",
+        "k": "rwldnuye",
+        "r": "gacplmse"
+      },
+      "question": "If $ftbzcxao$ is a prime number greater than 3 and $rwldnuye = \\lfloor 2ftbzcxao/3\\rfloor$, prove that the sum\n\\[\n\\binom {ftbzcxao}1 + \\binom {ftbzcxao}2 + \\cdots + \\binom {ftbzcxao}{rwldnuye}\n\\]\nof binomial coefficients is divisible by $ftbzcxao^2$.",
+      "solution": "For $1 \\leq qzxwvtnp \\leq ftbzcxao-1$, $ftbzcxao$ divides $\\binom {ftbzcxao}{qzxwvtnp}$ and\n\\begin{align*}\n\\frac{1}{ftbzcxao} \\binom {ftbzcxao}{qzxwvtnp} &= \\frac{1}{qzxwvtnp} \\frac{ftbzcxao-1}{1} \\frac{ftbzcxao-2}{2} \\cdots\n\\frac{ftbzcxao-qzxwvtnp+1}{qzxwvtnp-1} \\\\\n&\\equiv \\frac{(-1)^{qzxwvtnp-1}}{qzxwvtnp} \\mymod{ftbzcxao},\n\\end{align*}\nwhere the congruence $hjgrksla \\equiv mplkzqsn \\mymod{ftbzcxao}$ means that $hjgrksla-mplkzqsn$ is a\nrational number whose numerator, in reduced form, is divisible by $ftbzcxao$.\nHence it suffices to show that\n\\[\n\\sum_{qzxwvtnp=1}^{rwldnuye} \\frac{(-1)^{qzxwvtnp-1}}{qzxwvtnp} \\equiv 0 \\mymod{ftbzcxao}.\n\\]\nWe distinguish two cases based on $ftbzcxao \\mymod{6}$. First suppose $ftbzcxao =\n6gacplmse+1$, so that $rwldnuye = 4gacplmse$. Then\n\\begin{align*}\n\\sum_{qzxwvtnp=1}^{4gacplmse} \\frac{(-1)^{qzxwvtnp-1}}{qzxwvtnp}\n&= \\sum_{qzxwvtnp=1}^{4gacplmse} \\frac{1}{qzxwvtnp} - 2 \\sum_{qzxwvtnp=1}^{2gacplmse} \\frac{1}{2qzxwvtnp} \\\\\n&= \\sum_{qzxwvtnp=1}^{2gacplmse} \\left( \\frac{1}{qzxwvtnp} - \\frac{1}{qzxwvtnp} \\right)\n+ \\sum_{qzxwvtnp=2gacplmse+1}^{3gacplmse} \\left( \\frac{1}{qzxwvtnp} + \\frac{1}{6gacplmse+1-qzxwvtnp} \\right) \\\\\n&= \\sum_{qzxwvtnp=2gacplmse+1}^{3gacplmse} \\frac{ftbzcxao}{qzxwvtnp(ftbzcxao-qzxwvtnp)} \\equiv 0 \\mymod{ftbzcxao},\n\\end{align*}\nsince $ftbzcxao = 6gacplmse+1$.\n\nNow suppose $ftbzcxao = 6gacplmse+5$, so that $rwldnuye = 4gacplmse + 3$. A similar argument gives\n\\begin{align*}\n\\sum_{qzxwvtnp=1}^{4gacplmse+3}\\ \\frac{(-1)^{qzxwvtnp-1}}{qzxwvtnp}\n&= \\sum_{qzxwvtnp=1}^{4gacplmse+3} \\frac{1}{qzxwvtnp} + 2 \\sum_{qzxwvtnp=1}^{2gacplmse+1} \\frac{1}{2qzxwvtnp} \\\\\n&= \\sum_{qzxwvtnp=1}^{2gacplmse+1} \\left( \\frac{1}{qzxwvtnp} - \\frac{1}{qzxwvtnp} \\right)\n+ \\sum_{qzxwvtnp=2gacplmse+2}^{3gacplmse+2} \\left( \\frac{1}{qzxwvtnp} + \\frac{1}{6gacplmse+5-qzxwvtnp} \\right) \\\\\n&= \\sum_{qzxwvtnp=2gacplmse+2}^{3gacplmse+2} \\frac{ftbzcxao}{qzxwvtnp(ftbzcxao-qzxwvtnp)} \\equiv 0 \\mymod{ftbzcxao}.\n\\end{align*}"
+    },
+    "kernel_variant": {
+      "question": "Let p be a prime number strictly larger than 3 and set\n\n                  k = \\lfloor  2p/3 \\rfloor  .\n\nLet\n                  A = 1/k \\cdot  ( C(p,1) + C(p,2) + \\ldots  + C(p,k) ) ,\n\nwhere C(p,n) = \\binom{p}{n}.  (Thus A is the arithmetic mean of the first k non-trivial binomial coefficients of order p.)\n\nShow that when A is written in lowest terms its numerator is divisible by p^2.",
+      "solution": "Throughout we write x \\equiv _p y to mean that x - y is a rational number whose\nreduced numerator is a multiple of p.  (In particular, x \\equiv _p 0 says that the\nreduced numerator of x is divisible by p.)\n\nStep 1 - Removing one factor p.\nFor 1 \\leq  n \\leq  p - 1 the prime p divides \\binom{p}{n} and\n\n    1/p \\cdot  \\binom{p}{n}\n     = 1/n \\cdot  (p-1)/1 \\cdot  (p-2)/2 \\cdot  \\ldots  \\cdot  (p-n+1)/(n-1)\n     \\equiv _p (-1)^{n-1} / n .\n\nMultiplying the definition of A by 1/p and using this congruence we obtain\n\n        A / p \\equiv _p (1/k) \\cdot  \\Sigma _{n=1}^{k} (-1)^{n-1} / n .\n\nHence A will be divisible by p^2 once we prove\n\n        S := \\Sigma _{n=1}^{k} (-1)^{n-1} / n  \\equiv _p 0.      (1)\n\nStep 2 - Even and odd denominators.\nWrite the prime either as p = 3q + 1 or p = 3q + 2 (q \\geq  1 because p > 3).\nThen\n           k = \\lfloor  2p/3 \\rfloor  = 2q          if  p = 3q + 1 ,\n           k = \\lfloor  2p/3 \\rfloor  = 2q + 1      if  p = 3q + 2 .\n\nSeparate the terms of S according to the parity of the denominator:\n\n        S = \\Sigma _{n=1}^{k} 1/n - 2 \\Sigma _{n=1}^{\\lfloor k/2\\rfloor } 1/(2n) .      (2)\n\nStep 3 - Rewriting S as a harmonic tail.\n\n*  If k = 2q (i.e. p = 3q + 1), then \\lfloor k/2\\rfloor  = q and (2) gives\n        S = \\Sigma _{n=1}^{2q} 1/n - 2 \\Sigma _{n=1}^{q} 1/(2n)\n          = \\Sigma _{n=q+1}^{2q} 1/n .                              (3)\n\n*  If k = 2q + 1 (i.e. p = 3q + 2), then \\lfloor k/2\\rfloor  = q and\n        S = \\Sigma _{n=1}^{2q+1} 1/n - 2 \\Sigma _{n=1}^{q} 1/(2n)\n          = \\Sigma _{n=q+1}^{2q+1} 1/n .                            (4)\n\nThus in either case\n        S = \\Sigma _{n=q+1}^{m} 1/n ,\nwhere m = 2q or m = 2q + 1 respectively.\n\nStep 4 - Using the symmetry n \\leftrightarrow  p - n (corrected counting).\nBecause p = 3q + 1 or 3q + 2, the set\n        R := { n \\in  \\mathbb{Z} : q < n \\leq  m }                 (so q < n \\leq  2q   or   q < n \\leq  2q+1)\nobeys the symmetry n \\in  R  \\Leftrightarrow   p - n \\in  R ; moreover exactly one of the two\nintegers in the pair { n , p - n } lies below p/2 while the other lies above\np/2.  Consequently every unordered pair { n , p - n } contributes once (and\nonly once) to the next sum when we restrict ourselves to the elements that\nare < p/2.  Hence\n\n        S = \\Sigma _{ q < n < p/2 } ( 1/n + 1/(p - n) ).            (5)\n\n(No factor 1/2 is present, because the restriction n < p/2 removes the\nduplication.)\n\nEach summand in (5) equals\n        1/n + 1/(p - n) = p / [ n(p - n) ] ,\nwhose reduced numerator is a multiple of p.  Therefore every term of (5) is\n\\equiv _p 0, and so\n        S \\equiv _p 0 .\n\nStep 5 - Restoring the missing factor of p.\nWe have shown S \\equiv _p 0, whence A/p \\equiv _p 0.  The reduced numerator of A/p is\ntherefore divisible by p; multiplying by the factor p that we removed at the\nstart shows that the reduced numerator of A is divisible by p^2.\n\nThis completes the proof that the arithmetic mean A is divisible by p^2.",
+      "_meta": {
+        "core_steps": [
+          "Use p | C(p,n) to rewrite (1/p)·C(p,n) ≡ (−1)^{n−1}/n (mod p).",
+          "Reduce the problem to showing  S = Σ_{n=1}^{k} (−1)^{n−1}/n ≡ 0 (mod p).",
+          "Write the prime as 3q+1 or 3q+2 (equivalently 6r+1 or 6r+5), giving k = 2q or 2q+1, and split S into odd–even harmonic parts.",
+          "Pair terms n and p−n so that each pair gives p/[n(p−n)], which is 0 modulo p.",
+          "Hence S ≡ 0 (mod p) ⇒ original binomial sum ≡ 0 (mod p²)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Notation used for congruence modulo p.",
+            "original": "x ≡ y \\mymod{p}"
+          },
+          "slot2": {
+            "description": "Choice of modulus-6 parametrisation (6r+1 / 6r+5, k=4r or 4r+3); one could equally use modulus 3 (3q+1 / 3q+2, k=2q or 2q+1) without affecting the argument.",
+            "original": "p = 6r+1 or 6r+5, k = 4r or 4r+3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

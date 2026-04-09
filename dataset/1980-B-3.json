@@ -1,0 +1,118 @@
+{
+  "index": "1980-B-3",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Problem B-3\nFor which real numbers \\( a \\) does the sequence defined by the initial condition \\( u_{0}=a \\) and the recursion \\( u_{n+1}=2 u_{n}-n^{2} \\) have \\( u_{n}>0 \\) for all \\( n>0 \\) ?\n(Express the answer in the simplest form.)",
+  "solution": "B-3.\nWe show that \\( u_{n}>0 \\) for all \\( n \\geqslant 0 \\) if and only if \\( a \\geqslant 3 \\). Let \\( \\Delta u_{n}=u_{n+1}-u_{n} \\). Then the recursion (i.e., difference equation) takes the form ( \\( 1-\\Delta \\) ) \\( u_{n}=n^{2} \\). Since \\( n^{2} \\) is a polynomial, a particular solution is\n\\[\nu_{n}=(1-\\Delta)^{-1} n^{2}=\\left(1+\\Delta+\\Delta^{2}+\\cdots\\right) n^{2}=n^{2}+(2 n+1)+2=n^{2}+2 n+3 .\n\\]\n(This is easily verified by substitution.) The complete solution is \\( u_{n}=n^{2}+2 n+3+k \\cdot 2^{n} \\), since \\( v_{n}=k \\cdot 2^{n} \\) is the solution of the associated homogeneous difference equation \\( v_{n+1}-2 v_{n}=0 \\). The desired solution with \\( u_{0}=a \\) is \\( u_{n}=n^{2}+2 n+3+(a-3) 2^{n} \\). Since \\( \\lim _{n \\rightarrow \\infty}\\left[2^{n} /\\left(n^{2}+2 n+3\\right)\\right] \\) \\( =+\\infty, u_{n} \\) will be negative for large enough \\( n \\) if \\( a-3<0 \\). Conversely, if \\( a-3 \\geqslant 0 \\), it is clear that each \\( u_{n}>0 \\).\n\nAlternatively, one sees that \\( u_{0}=a \\) and \\( u_{1}=2 a \\) and one can prove by mathematical induction that\n\\[\nu_{n}=2^{n} a-\\sum_{k=1}^{n-1} 2^{n-1-k} k^{2} \\text { for } n \\geqslant 2 .\n\\]\n\nHence \\( u_{n}>0 \\) for \\( n \\geqslant 0 \\) if and only if \\( a>\\sum_{k=1}^{n-1} 2^{-1-k} k^{2} \\) and this holds if and only if \\( a \\geqslant L \\), where \\( L=\\sum_{k=1}^{\\infty} 2^{-1-k} k^{2} \\). Let \\( D \\) mean \\( d / d x \\). Then for \\( |x|<1 \\),\n\\[\n\\begin{array}{c}\n(1-x)^{-1}=\\sum_{k=0}^{\\infty} x^{k} \\\\\nD(1-x)^{-1}=(1-x)^{-2}=\\sum_{k=1}^{\\infty} k x^{k-1} \\\\\nD(1-x)^{-2}=2(1-x)^{-3}=\\sum_{k=2}^{\\infty} k(k-1) x^{k-2} .\n\\end{array}\n\\]\n\nLet \\( g(x)=2 x^{3}(1-x)^{-3}+x^{2}(1-x)^{-2} \\). Then \\( L=g(1 / 2)=3 \\) and the answer is all \\( a \\geqslant 3 \\).",
+  "vars": [
+    "g",
+    "n",
+    "u_0",
+    "u_1",
+    "u_n",
+    "u_n+1",
+    "v_n",
+    "x"
+  ],
+  "params": [
+    "D",
+    "L",
+    "a",
+    "k",
+    "\\\\Delta"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "g": "genfunc",
+        "n": "indexvar",
+        "u_0": "seqzero",
+        "u_1": "seqone",
+        "u_n": "seqterm",
+        "u_n+1": "seqnext",
+        "v_n": "homoseq",
+        "x": "dummyvar",
+        "D": "diffoper",
+        "L": "threshold",
+        "a": "startval",
+        "k": "summindex",
+        "\\\\Delta": "deltasym"
+      },
+      "question": "Problem B-3\nFor which real numbers \\( startval \\) does the sequence defined by the initial condition \\( seqzero = startval \\) and the recursion \\( seqnext = 2 seqterm - indexvar^{2} \\) have \\( seqterm > 0 \\) for all \\( indexvar > 0 \\) ?\n(Express the answer in the simplest form.)",
+      "solution": "B-3.\nWe show that \\( seqterm>0 \\) for all \\( indexvar \\geqslant 0 \\) if and only if \\( startval \\geqslant 3 \\). Let \\( deltasym\\, seqterm = seqnext - seqterm \\). Then the recursion (i.e., difference equation) takes the form ( \\( 1-deltasym \\) ) \\( seqterm = indexvar^{2} \\). Since \\( indexvar^{2} \\) is a polynomial, a particular solution is\n\\[\nseqterm=(1-deltasym)^{-1} indexvar^{2}=\\left(1+deltasym+deltasym^{2}+\\cdots\\right) indexvar^{2}=indexvar^{2}+(2 indexvar+1)+2=indexvar^{2}+2 indexvar+3 .\n\\]\n(This is easily verified by substitution.) The complete solution is \\( seqterm=indexvar^{2}+2 indexvar+3+summindex \\cdot 2^{indexvar} \\), since \\( homoseq=summindex \\cdot 2^{indexvar} \\) is a solution of the associated homogeneous difference equation. The desired solution with \\( seqzero=startval \\) is \\( seqterm=indexvar^{2}+2 indexvar+3+(startval-3) 2^{indexvar} \\). Since \\( \\lim _{indexvar \\rightarrow \\infty}\\left[2^{indexvar} /\\left(indexvar^{2}+2 indexvar+3\\right)\\right] \\)\n\\( =+\\infty, seqterm \\) will be negative for large enough \\( indexvar \\) if \\( startval-3<0 \\). Conversely, if \\( startval-3 \\geqslant 0 \\), it is clear that each \\( seqterm>0 \\).\n\nAlternatively, one sees that \\( seqzero=startval \\) and \\( seqone=2 startval \\) and one can prove by mathematical induction that\n\\[\nseqterm=2^{indexvar} startval-\\sum_{summindex=1}^{indexvar-1} 2^{indexvar-1-summindex} summindex^{2} \\text { for } indexvar \\geqslant 2 .\n\\]\n\nHence \\( seqterm>0 \\) for \\( indexvar \\geqslant 0 \\) if and only if \\( startval>\\sum_{summindex=1}^{indexvar-1} 2^{-1-summindex} summindex^{2} \\) and this holds if and only if \\( startval \\geqslant threshold \\), where \\( threshold=\\sum_{summindex=1}^{\\infty} 2^{-1-summindex} summindex^{2} \\). Let \\( diffoper \\) mean \\( d / d dummyvar \\). Then for \\( |dummyvar|<1 \\),\n\\[\n\\begin{array}{c}\n(1-dummyvar)^{-1}=\\sum_{summindex=0}^{\\infty} dummyvar^{summindex} \\\\\n diffoper(1-dummyvar)^{-1}=(1-dummyvar)^{-2}=\\sum_{summindex=1}^{\\infty} summindex\\, dummyvar^{summindex-1} \\\\\n diffoper(1-dummyvar)^{-2}=2(1-dummyvar)^{-3}=\\sum_{summindex=2}^{\\infty} summindex(summindex-1)\\, dummyvar^{summindex-2} .\n\\end{array}\n\\]\n\nLet \\( genfunc(dummyvar)=2\\, dummyvar^{3}(1-dummyvar)^{-3}+dummyvar^{2}(1-dummyvar)^{-2} \\). Then \\( threshold=genfunc(1 / 2)=3 \\) and the answer is all \\( startval \\geqslant 3 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "g": "marigold",
+        "n": "honeycomb",
+        "u_0": "seashore",
+        "u_1": "lighthouse",
+        "u_n": "buttercup",
+        "u_n+1": "dragonfly",
+        "v_n": "raincloud",
+        "x": "pineapple",
+        "D": "waterfall",
+        "L": "meadowlark",
+        "a": "starflower",
+        "k": "sandcastle",
+        "\\\\Delta": "tangerine"
+      },
+      "question": "Problem B-3\nFor which real numbers \\( starflower \\) does the sequence defined by the initial condition \\( seashore=starflower \\) and the recursion \\( dragonfly=2 buttercup-honeycomb^{2} \\) have \\( buttercup>0 \\) for all \\( honeycomb>0 \\) ?\n(Express the answer in the simplest form.)",
+      "solution": "B-3.\nWe show that \\( buttercup>0 \\) for all \\( honeycomb \\geqslant 0 \\) if and only if \\( starflower \\geqslant 3 \\). Let \\( tangerine buttercup = dragonfly - buttercup \\). Then the recursion (i.e., difference equation) takes the form ( \\( 1-tangerine \\) ) \\( buttercup = honeycomb^{2} \\). Since \\( honeycomb^{2} \\) is a polynomial, a particular solution is\n\\[\nbuttercup=(1-tangerine)^{-1} honeycomb^{2}=\\left(1+tangerine+tangerine^{2}+\\cdots\\right) honeycomb^{2}=honeycomb^{2}+(2 honeycomb+1)+2=honeycomb^{2}+2 honeycomb+3 .\n\\]\n(This is easily verified by substitution.) The complete solution is \\( buttercup=honeycomb^{2}+2 honeycomb+3+sandcastle \\cdot 2^{honeycomb} \\), since \\( raincloud = sandcastle \\cdot 2^{honeycomb} \\) is the solution of the associated homogeneous difference equation \\( raincloud_{honeycomb+1}-2 raincloud_{honeycomb}=0 \\). The desired solution with \\( seashore=starflower \\) is \\( buttercup=honeycomb^{2}+2 honeycomb+3+(starflower-3) 2^{honeycomb} \\). Since \\( \\lim _{honeycomb \\rightarrow \\infty}\\left[2^{honeycomb} /\\left(honeycomb^{2}+2 honeycomb+3\\right)\\right] =+\\infty, buttercup \\) will be negative for large enough \\( honeycomb \\) if \\( starflower-3<0 \\). Conversely, if \\( starflower-3 \\geqslant 0 \\), it is clear that each \\( buttercup>0 \\).\n\nAlternatively, one sees that \\( seashore=starflower \\) and \\( lighthouse=2 starflower \\) and one can prove by mathematical induction that\n\\[\nbuttercup=2^{honeycomb} starflower-\\sum_{sandcastle=1}^{honeycomb-1} 2^{honeycomb-1-sandcastle} sandcastle^{2} \\text { for } honeycomb \\geqslant 2 .\n\\]\nHence \\( buttercup>0 \\) for \\( honeycomb \\geqslant 0 \\) if and only if \\( starflower>\\sum_{sandcastle=1}^{honeycomb-1} 2^{-1-sandcastle} sandcastle^{2} \\) and this holds if and only if \\( starflower \\geqslant meadowlark \\), where \\( meadowlark=\\sum_{sandcastle=1}^{\\infty} 2^{-1-sandcastle} sandcastle^{2} \\). Let \\( waterfall \\) mean \\( d / d pineapple \\). Then for \\( |pineapple|<1 \\),\n\\[\n\\begin{array}{c}\n(1-pineapple)^{-1}=\\sum_{sandcastle=0}^{\\infty} pineapple^{sandcastle} \\\\\nwaterfall(1-pineapple)^{-1}=(1-pineapple)^{-2}=\\sum_{sandcastle=1}^{\\infty} sandcastle pineapple^{sandcastle-1} \\\\\nwaterfall(1-pineapple)^{-2}=2(1-pineapple)^{-3}=\\sum_{sandcastle=2}^{\\infty} sandcastle(sandcastle-1) pineapple^{sandcastle-2} .\n\\end{array}\n\\]\nLet \\( marigold(pineapple)=2 pineapple^{3}(1-pineapple)^{-3}+pineapple^{2}(1-pineapple)^{-2} \\). Then \\( meadowlark=marigold(1 / 2)=3 \\) and the answer is all \\( starflower \\geqslant 3 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "g": "levityfn",
+        "n": "continuumindex",
+        "u_0": "finalvaluezero",
+        "u_1": "finalvalueone",
+        "u_n": "finalvaluen",
+        "u_n+1": "finalvaluenplusone",
+        "v_n": "voidvaluen",
+        "x": "nonvariable",
+        "D": "integralop",
+        "L": "fluidconstant",
+        "a": "outcomeval",
+        "k": "flexiblecoeff",
+        "\\Delta": "aggregation"
+      },
+      "question": "Problem B-3\nFor which real numbers \\( outcomeval \\) does the sequence defined by the initial condition \\( finalvaluezero=outcomeval \\) and the recursion \\( finalvaluenplusone=2 finalvaluen-continuumindex^{2} \\) have \\( finalvaluen>0 \\) for all \\( continuumindex>0 \\) ?\n(Express the answer in the simplest form.)",
+      "solution": "B-3.\nWe show that \\( finalvaluen>0 \\) for all \\( continuumindex \\geqslant 0 \\) if and only if \\( outcomeval \\geqslant 3 \\). Let \\( aggregation finalvaluen=finalvaluenplusone-finalvaluen \\). Then the recursion (i.e., difference equation) takes the form ( \\( 1-aggregation \\) ) \\( finalvaluen=continuumindex^{2} \\). Since \\( continuumindex^{2} \\) is a polynomial, a particular solution is\n\\[\nfinalvaluen=(1-aggregation)^{-1} continuumindex^{2}=\\left(1+aggregation+aggregation^{2}+\\cdots\\right) continuumindex^{2}=continuumindex^{2}+(2 continuumindex+1)+2=continuumindex^{2}+2 continuumindex+3 .\n\\]\n(This is easily verified by substitution.) The complete solution is \\( finalvaluen=continuumindex^{2}+2 continuumindex+3+flexiblecoeff \\cdot 2^{continuumindex} \\), since \\( voidvaluen=flexiblecoeff \\cdot 2^{continuumindex} \\) is the solution of the associated homogeneous difference equation \\( v_{continuumindex+1}-2 voidvaluen=0 \\). The desired solution with \\( finalvaluezero=outcomeval \\) is \\( finalvaluen=continuumindex^{2}+2 continuumindex+3+(outcomeval-3) 2^{continuumindex} \\). Since \\( \\lim _{continuumindex \\rightarrow \\infty}\\left[2^{continuumindex} /\\left(continuumindex^{2}+2 continuumindex+3\\right)\\right] \\)\n\\( =+\\infty, finalvaluen \\) will be negative for large enough \\( continuumindex \\) if \\( outcomeval-3<0 \\). Conversely, if \\( outcomeval-3 \\geqslant 0 \\), it is clear that each \\( finalvaluen>0 \\).\n\nAlternatively, one sees that \\( finalvaluezero=outcomeval \\) and \\( finalvalueone=2 outcomeval \\) and one can prove by mathematical induction that\n\\[\nfinalvaluen=2^{continuumindex} outcomeval-\\sum_{flexiblecoeff=1}^{continuumindex-1} 2^{continuumindex-1-flexiblecoeff} flexiblecoeff^{2} \\text { for } continuumindex \\geqslant 2 .\n\\]\n\nHence \\( finalvaluen>0 \\) for \\( continuumindex \\geqslant 0 \\) if and only if \\( outcomeval>\\sum_{flexiblecoeff=1}^{continuumindex-1} 2^{-1-flexiblecoeff} flexiblecoeff^{2} \\) and this holds if and only if \\( outcomeval \\geqslant fluidconstant \\), where \\( fluidconstant=\\sum_{flexiblecoeff=1}^{\\infty} 2^{-1-flexiblecoeff} flexiblecoeff^{2} \\). Let \\( integralop \\) mean \\( d / d nonvariable \\). Then for \\( |nonvariable|<1 \\),\n\\[\n\\begin{array}{c}\n(1-nonvariable)^{-1}=\\sum_{flexiblecoeff=0}^{\\infty} nonvariable^{flexiblecoeff} \\\\\nintegralop(1-nonvariable)^{-1}=(1-nonvariable)^{-2}=\\sum_{flexiblecoeff=1}^{\\infty} flexiblecoeff nonvariable^{flexiblecoeff-1} \\\\\nintegralop(1-nonvariable)^{-2}=2(1-nonvariable)^{-3}=\\sum_{flexiblecoeff=2}^{\\infty} flexiblecoeff(flexiblecoeff-1) nonvariable^{flexiblecoeff-2} .\n\\end{array}\n\\]\n\nLet \\( levityfn(nonvariable)=2 nonvariable^{3}(1-nonvariable)^{-3}+nonvariable^{2}(1-nonvariable)^{-2} \\). Then \\( fluidconstant=levityfn(1 / 2)=3 \\) and the answer is all \\( outcomeval \\geqslant 3 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "g": "frnudjla",
+        "n": "mjqwsnzd",
+        "u_0": "qhxbctaj",
+        "u_1": "pevlwyrm",
+        "u_n": "xkjrsnei",
+        "u_n+1": "yzmpdkhu",
+        "v_n": "tbfoxgai",
+        "x": "wraqmcpl",
+        "D": "fteznamc",
+        "L": "sdhomrvi",
+        "a": "vgabwyze",
+        "k": "ljmuehzp",
+        "\\Delta": "zcvrskod"
+      },
+      "question": "Problem B-3\nFor which real numbers \\( vgabwyze \\) does the sequence defined by the initial condition \\( qhxbctaj = vgabwyze \\) and the recursion \\( yzmpdkhu = 2 xkjrsnei - mjqwsnzd^{2} \\) have \\( xkjrsnei > 0 \\) for all \\( mjqwsnzd > 0 \\) ?\n(Express the answer in the simplest form.)",
+      "solution": "B-3.\nWe show that \\( xkjrsnei > 0 \\) for all \\( mjqwsnzd \\geqslant 0 \\) if and only if \\( vgabwyze \\geqslant 3 \\). Let \\( zcvrskod xkjrsnei = yzmpdkhu - xkjrsnei \\). Then the recursion (i.e., difference equation) takes the form ( \\( 1- zcvrskod \\) ) \\( xkjrsnei = mjqwsnzd^{2} \\). Since \\( mjqwsnzd^{2} \\) is a polynomial, a particular solution is\n\\[\nxkjrsnei = (1- zcvrskod)^{-1} mjqwsnzd^{2} = \\left(1+ zcvrskod + zcvrskod^{2} + \\cdots\\right) mjqwsnzd^{2} = mjqwsnzd^{2} + (2 mjqwsnzd + 1) + 2 = mjqwsnzd^{2} + 2 mjqwsnzd + 3 .\n\\]\n(This is easily verified by substitution.) The complete solution is \\( xkjrsnei = mjqwsnzd^{2} + 2 mjqwsnzd + 3 + ljmuehzp \\cdot 2^{mjqwsnzd} \\), since \\( tbfoxgai = ljmuehzp \\cdot 2^{mjqwsnzd} \\) is the solution of the associated homogeneous difference equation \\( v_{n+1} - 2 tbfoxgai = 0 \\). The desired solution with \\( qhxbctaj = vgabwyze \\) is \\( xkjrsnei = mjqwsnzd^{2} + 2 mjqwsnzd + 3 + ( vgabwyze - 3 ) 2^{mjqwsnzd} \\). Since \\( \\lim _{mjqwsnzd \\rightarrow \\infty}\\left[ 2^{mjqwsnzd} / \\left( mjqwsnzd^{2} + 2 mjqwsnzd + 3 \\right) \\right] = +\\infty, xkjrsnei \\) will be negative for large enough \\( mjqwsnzd \\) if \\( vgabwyze - 3 < 0 \\). Conversely, if \\( vgabwyze - 3 \\geqslant 0 \\), it is clear that each \\( xkjrsnei > 0 \\).\n\nAlternatively, one sees that \\( qhxbctaj = vgabwyze \\) and \\( pevlwyrm = 2 vgabwyze \\) and one can prove by mathematical induction that\n\\[\nxkjrsnei = 2^{mjqwsnzd} vgabwyze - \\sum_{ljmuehzp=1}^{mjqwsnzd-1} 2^{mjqwsnzd-1- ljmuehzp } ljmuehzp^{2} \\text { for } mjqwsnzd \\geqslant 2 .\n\\]\n\nHence \\( xkjrsnei > 0 \\) for \\( mjqwsnzd \\geqslant 0 \\) if and only if \\( vgabwyze > \\sum_{ljmuehzp=1}^{mjqwsnzd-1} 2^{-1- ljmuehzp } ljmuehzp^{2} \\) and this holds if and only if \\( vgabwyze \\geqslant sdhomrvi \\), where \\( sdhomrvi = \\sum_{ljmuehzp=1}^{\\infty} 2^{-1- ljmuehzp } ljmuehzp^{2} \\). Let \\( fteznamc \\) mean \\( d / d wraqmcpl \\). Then for \\( | wraqmcpl | < 1 \\),\n\\[\n\\begin{array}{c}\n(1- wraqmcpl)^{-1} = \\sum_{ljmuehzp=0}^{\\infty} wraqmcpl^{ljmuehzp} \\\\\nfteznamc(1- wraqmcpl)^{-1} = (1- wraqmcpl)^{-2} = \\sum_{ljmuehzp=1}^{\\infty} ljmuehzp wraqmcpl^{ljmuehzp - 1} \\\\\nfteznamc(1- wraqmcpl)^{-2} = 2 (1- wraqmcpl)^{-3} = \\sum_{ljmuehzp=2}^{\\infty} ljmuehzp( ljmuehzp - 1 ) wraqmcpl^{ljmuehzp - 2} .\n\\end{array}\n\\]\n\nLet \\( frnudjla( wraqmcpl ) = 2 wraqmcpl^{3} (1- wraqmcpl)^{-3} + wraqmcpl^{2} (1- wraqmcpl)^{-2} \\). Then \\( sdhomrvi = frnudjla(1 / 2) = 3 \\) and the answer is all \\( vgabwyze \\geqslant 3 \\)."
+    },
+    "kernel_variant": {
+      "question": "For each real pair \\((b,c)\\) define the two-component sequence \\(\\{(u_n,v_n)\\}_{n\\ge 1}\\) by  \n\\[\n\\begin{cases}\nu_{1}=b,\\qquad v_{1}=c,\\\\[2mm]\nu_{n+1}=3u_{n}-n^{3}+v_{n},\\\\[2mm]\nv_{n+1}=2v_{n}-n^{2}\\qquad(n\\ge 1).\n\\end{cases}\n\\]  \nDetermine all initial pairs \\((b,c)\\in\\mathbb R^{2}\\) for which  \n\\[\nu_{n}<0<v_{n}\\qquad\\text{for every integer }n\\ge 1.\n\\]\n\n",
+      "solution": "Step 1.  Solve the decoupled \\(v\\)-recurrence.  \nWrite \\(v_{n+1}-2v_{n}=-n^{2}\\).  Since the right-hand side is a quadratic, a particular solution of the form \\(p_{n}=An^{2}+Bn+C\\) works.  Substituting yields \\(A=-\\tfrac12,\\;B=-1,\\;C=-\\tfrac32\\), whence  \n\\[\np_{n}=-\\frac12n^{2}-n-\\frac32.\n\\]  \nThe homogeneous solution is \\(K\\,2^{n}\\); therefore  \n\\[\nv_{n}=p_{n}+(c+\\tfrac32)\\,2^{n-1}\n      =-\\frac12n^{2}-n-\\frac32+(c+\\tfrac32)\\,2^{n-1}.\n\\tag{1}\n\\]\n\nStep 2.  Impose \\(v_{n}>0\\;\\forall n\\).  \nNote that \\(2^{n-1}\\) dominates the quadratic term, so (1) is positive for all large \\(n\\) iff \\(c+\\tfrac32>0\\).  Since \\(v_{1}=c\\) must also be positive, we obtain  \n\\[\nc>-\\frac32.\n\\tag{2}\n\\]\n\nStep 3.  Express \\(u_{n}\\) explicitly.  \nUsing \\(u_{n+1}-3u_{n}=-n^{3}+v_{n}\\) and iterating (``variation of constants'') we get  \n\\[\nu_{n}=3^{\\,n-1}b-\\sum_{k=1}^{\\,n-1}3^{\\,n-1-k}\\bigl(k^{3}-v_{k}\\bigr).\n\\tag{3}\n\\]  \nInsert (1) into (3).  Separating the parts that grow like \\(3^{\\,n}\\), \\(2^{\\,n}\\) and at most polynomially, we find  \n\\[\nu_{n}=3^{\\,n-1}\\Bigl[b-\\!(c+\\tfrac32)S\\Bigr]\n      +(c+\\tfrac32)\\,2^{\\,n-1}+Q(n),\n\\tag{4}\n\\]  \nwhere  \n\\[\nS=\\sum_{k=1}^{\\infty}\\frac{1}{3^{k}}\n  =\\frac{1}{2},\\qquad\nQ(n)=\\sum_{k=1}^{n-1}3^{\\,n-1-k}\\!\\Bigl(\\!-\\frac12k^{2}-k-\\frac32\\Bigr)\n\\]  \nsatisfies \\(Q(n)=O(n^{2}3^{\\,n-1})\\), hence is dominated by the first term in (4).\n\nStep 4.  Positivity/negativity for large \\(n\\).  \nObserve that \\(2^{\\,n-1}=o(3^{\\,n-1})\\); consequently the sign of \\(u_{n}\\) for sufficiently large \\(n\\) is determined by the coefficient of \\(3^{\\,n-1}\\) in (4).  Requirement \\(u_{n}<0\\) therefore forces  \n\\[\nb-\\frac12(c+\\tfrac32)<0\n\\;\\Longleftrightarrow\\;\nb<\\frac12c+\\frac34.\n\\tag{5}\n\\]\n\nStep 5.  Check the first term.  \nSince \\(u_{1}=b\\) must be negative, condition (5) already guarantees \\(u_{1}<0\\).  Notice that \\(u_{2}=3b-1^{3}+c\\), and substituting the bound (5) together with (2) gives  \n\\[\nu_{2}\\le 3\\Bigl(\\tfrac12c+\\tfrac34-\\varepsilon\\Bigr)-1+c\n      =\\tfrac52c+\\tfrac94-3\\varepsilon<0\n\\]\nfor some \\(\\varepsilon>0\\).  A short induction using (4) and the same comparison proves \\(u_{n}<0\\) for every \\(n\\).\n\nStep 6.  Collect the admissible region.  \nCombining (2) and (5) we conclude  \n\n u_n < 0 < v_n \\forall  n \\Leftrightarrow  \n c>-\\dfrac32 and b<\\dfrac12c+\\dfrac34.\n\nThus the required set is the open half-plane  \n\\[\n\\boxed{\\; \\bigl\\{(b,c)\\in\\mathbb R^{2}\\mid c>-\\tfrac32,\\; b<\\tfrac12c+\\tfrac34\\bigr\\}\\; }.\n\\]\n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.157393",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

@@ -1,0 +1,130 @@
+{
+  "index": "2010-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Suppose that the function $h:\\mathbb{R}^2\\to \\mathbb{R}$ has continuous partial\nderivatives and satisfies the equation\n\\[\nh(x,y) = a \\frac{\\partial h}{\\partial x}(x,y) +\nb \\frac{\\partial h}{\\partial y}(x,y)\n\\]\nfor some constants $a,b$. Prove that if there is a constant $M$ such that\n$|h(x,y)|\\leq M$ for all $(x,y) \\in \\mathbb{R}^2$, then $h$ is identically zero.",
+  "solution": "If $a=b=0$, then the desired result holds trivially, so we assume that at least one of $a,b$ is nonzero.\nPick any point $(a_0, b_0) \\in \\mathbb{R}^2$, and let $L$ be the line given by the parametric equation\n$L(t) = (a_0,b_0) + (a,b) t$ for $t\\in \\mathbb{R}$. By the chain rule and the given equation, we have $\\frac{d}{dt}(h\\circ L) = h\\circ L$. If we write $f = h\\circ L:\\mathbb{R} \\to \\mathbb{R}$, then $f'(t) = f(t)$ for all $t$. It follows that $f(t) = Ce^t$ for some constant $C$. Since $|f(t)| \\leq M$ for all $t$, we must have $C=0$.\nIt follows that $h(a_0,b_0) = 0$; since $(a_0,b_0)$ was an arbitrary point,\n$h$ is identically $0$ over all of $\\mathbb{R}^2$.",
+  "vars": [
+    "f",
+    "h",
+    "L",
+    "t",
+    "x",
+    "y"
+  ],
+  "params": [
+    "a",
+    "a_0",
+    "b",
+    "b_0",
+    "C",
+    "M",
+    "R"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "curveval",
+        "h": "planefun",
+        "L": "straightpath",
+        "t": "paramval",
+        "x": "horizvar",
+        "y": "vertvar",
+        "a": "coeffax",
+        "a_0": "originax",
+        "b": "coeffy",
+        "b_0": "originby",
+        "C": "expconst",
+        "M": "boundmax",
+        "R": "realset"
+      },
+      "question": "Suppose that the function $planefun:\\mathbb{realset}^2\\to \\mathbb{realset}$ has continuous partial\nderivatives and satisfies the equation\n\\[\nplanefun(horizvar,vertvar) = coeffax \\frac{\\partial planefun}{\\partial horizvar}(horizvar,vertvar) +\ncoeffy \\frac{\\partial planefun}{\\partial vertvar}(horizvar,vertvar)\n\\]\nfor some constants $coeffax,coeffy$. Prove that if there is a constant $boundmax$ such that\n$|planefun(horizvar,vertvar)|\\leq boundmax$ for all $(horizvar,vertvar) \\in \\mathbb{realset}^2$, then $planefun$ is identically zero.",
+      "solution": "If $coeffax=coeffy=0$, then the desired result holds trivially, so we assume that at least one of $coeffax,coeffy$ is nonzero.\nPick any point $(originax, originby) \\in \\mathbb{realset}^2$, and let $straightpath$ be the line given by the parametric equation\n$straightpath(paramval) = (originax,originby) + (coeffax,coeffy) paramval$ for $paramval\\in \\mathbb{realset}$. By the chain rule and the given equation, we have $\\frac{d}{dparamval}(planefun\\circ straightpath) = planefun\\circ straightpath$. If we write $curveval = planefun\\circ straightpath:\\mathbb{realset} \\to \\mathbb{realset}$, then $curveval'(paramval) = curveval(paramval)$ for all $paramval$. It follows that $curveval(paramval) = expconst e^{paramval}$ for some constant $expconst$. Since $|curveval(paramval)| \\leq boundmax$ for all $paramval$, we must have $expconst=0$.\nIt follows that $planefun(originax,originby) = 0$; since $(originax,originby)$ was an arbitrary point,\n$planefun$ is identically $0$ over all of $\\mathbb{realset}^2$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "blueberry",
+        "h": "sandstone",
+        "L": "lighthouse",
+        "t": "marigolds",
+        "x": "pendulum",
+        "y": "gemstone",
+        "a": "sailplane",
+        "a_0": "raincloud",
+        "b": "campfire",
+        "b_0": "waterfall",
+        "C": "hummingbird",
+        "M": "blacksmith",
+        "R": "windswept"
+      },
+      "question": "Suppose that the function $sandstone:\\mathbb{R}^2\\to \\mathbb{R}$ has continuous partial\nderivatives and satisfies the equation\n\\[\nsandstone(pendulum,gemstone) = sailplane \\frac{\\partial sandstone}{\\partial pendulum}(pendulum,gemstone) +\ncampfire \\frac{\\partial sandstone}{\\partial gemstone}(pendulum,gemstone)\n\\]\nfor some constants $sailplane,campfire$. Prove that if there is a constant $blacksmith$ such that\n$|sandstone(pendulum,gemstone)|\\leq blacksmith$ for all $(pendulum,gemstone) \\in \\mathbb{R}^2$, then $sandstone$ is identically zero.",
+      "solution": "If $sailplane=campfire=0$, then the desired result holds trivially, so we assume that at least one of $sailplane,campfire$ is nonzero.\nPick any point $(raincloud, waterfall) \\in \\mathbb{R}^2$, and let $lighthouse$ be the line given by the parametric equation\n$lighthouse(marigolds) = (raincloud,waterfall) + (sailplane,campfire) \\, marigolds$ for $marigolds\\in \\mathbb{R}$. By the chain rule and the given equation, we have $\\frac{d}{d marigolds}(sandstone\\circ lighthouse) = sandstone\\circ lighthouse$. If we write $blueberry = sandstone\\circ lighthouse:\\mathbb{R} \\to \\mathbb{R}$, then $blueberry'(marigolds) = blueberry(marigolds)$ for all $marigolds$. It follows that $blueberry(marigolds) = hummingbird e^{marigolds}$ for some constant $hummingbird$. Since $|blueberry(marigolds)| \\leq blacksmith$ for all $marigolds$, we must have $hummingbird=0$.\nIt follows that $sandstone(raincloud,waterfall) = 0$; since $(raincloud,waterfall)$ was an arbitrary point,\n$sandstone$ is identically $0$ over all of $\\mathbb{R}^2$.}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "constantval",
+        "h": "deepness",
+        "L": "curvature",
+        "t": "spaceval",
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "a": "variable",
+        "a_0": "variableone",
+        "b": "dynamism",
+        "b_0": "dynamismone",
+        "C": "changing",
+        "M": "unbounded",
+        "R": "imaginary"
+      },
+      "question": "Suppose that the function $deepness:\\mathbb{R}^2\\to \\mathbb{R}$ has continuous partial\nderivatives and satisfies the equation\n\\[\ndeepness(verticalaxis,horizontalaxis) = variable \\frac{\\partial deepness}{\\partial verticalaxis}(verticalaxis,horizontalaxis) +\ndynamism \\frac{\\partial deepness}{\\partial horizontalaxis}(verticalaxis,horizontalaxis)\n\\]\nfor some constants $variable,dynamism$. Prove that if there is a constant $unbounded$ such that\n$|deepness(verticalaxis,horizontalaxis)|\\leq unbounded$ for all $(verticalaxis,horizontalaxis) \\in \\mathbb{R}^2$, then $deepness$ is identically zero.",
+      "solution": "If $variable=dynamism=0$, then the desired result holds trivially, so we assume that at least one of $variable,dynamism$ is nonzero.\nPick any point $(variableone, dynamismone) \\in \\mathbb{R}^2$, and let $curvature$ be the line given by the parametric equation\n$curvature(spaceval) = (variableone,dynamismone) + (variable,dynamism) spaceval$ for $spaceval\\in \\mathbb{R}$. By the chain rule and the given equation, we have $\\frac{d}{d spaceval}(deepness\\circ curvature) = deepness\\circ curvature$. If we write $constantval = deepness\\circ curvature:\\mathbb{R} \\to \\mathbb{R}$, then $constantval'(spaceval) = constantval(spaceval)$ for all $spaceval$. It follows that $constantval(spaceval) = changing e^{spaceval}$ for some constant $changing$. Since $|constantval(spaceval)| \\leq unbounded$ for all $spaceval$, we must have $changing=0$.\nIt follows that $deepness(variableone,dynamismone) = 0$; since $(variableone,dynamismone)$ was an arbitrary point,\n$deepness$ is identically $0$ over all of $\\mathbb{R}^2$. "
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "h": "hjgrksla",
+        "L": "klmnbvcx",
+        "t": "pqowieur",
+        "x": "zmcnvbqw",
+        "y": "lkjhgfdp",
+        "a": "asdfghjk",
+        "a_0": "plmoknij",
+        "b": "zxcvbnml",
+        "b_0": "qazwsxed",
+        "C": "mnbvcxzq",
+        "M": "poiuytre",
+        "R": "lkjqwert"
+      },
+      "question": "Suppose that the function $hjgrksla:\\mathbb{R}^2\\to \\mathbb{R}$ has continuous partial derivatives and satisfies the equation\n\\[\nhjgrksla(zmcnvbqw,lkjhgfdp) = asdfghjk \\frac{\\partial hjgrksla}{\\partial zmcnvbqw}(zmcnvbqw,lkjhgfdp) +\nzxcvbnml \\frac{\\partial hjgrksla}{\\partial lkjhgfdp}(zmcnvbqw,lkjhgfdp)\n\\]\nfor some constants $asdfghjk,zxcvbnml$. Prove that if there is a constant $poiuytre$ such that\n$|hjgrksla(zmcnvbqw,lkjhgfdp)|\\leq poiuytre$ for all $(zmcnvbqw,lkjhgfdp) \\in \\mathbb{R}^2$, then $hjgrksla$ is identically zero.",
+      "solution": "If $asdfghjk=zxcvbnml=0$, then the desired result holds trivially, so we assume that at least one of $asdfghjk,zxcvbnml$ is nonzero. Pick any point $(plmoknij, qazwsxed) \\in \\mathbb{R}^2$, and let $klmnbvcx$ be the line given by the parametric equation $klmnbvcx(pqowieur) = (plmoknij,qazwsxed) + (asdfghjk,zxcvbnml) pqowieur$ for $pqowieur\\in \\mathbb{R}$. By the chain rule and the given equation, we have $\\frac{d}{d pqowieur}(hjgrksla\\circ klmnbvcx) = hjgrksla\\circ klmnbvcx$. If we write $qzxwvtnp = hjgrksla\\circ klmnbvcx:\\mathbb{R} \\to \\mathbb{R}$, then $qzxwvtnp'(pqowieur) = qzxwvtnp(pqowieur)$ for all $pqowieur$. It follows that $qzxwvtnp(pqowieur) = mnbvcxzq e^{pqowieur}$ for some constant $mnbvcxzq$. Since $|qzxwvtnp(pqowieur)| \\leq poiuytre$ for all $pqowieur$, we must have $mnbvcxzq=0$. It follows that $hjgrksla(plmoknij,qazwsxed) = 0$; since $(plmoknij,qazwsxed)$ was an arbitrary point, $hjgrksla$ is identically $0$ over all of \\mathbb{R}^2$."
+    },
+    "kernel_variant": {
+      "question": "Let H be a real, separable Hilbert space with inner product \\langle \\cdot ,\\cdot \\rangle  and norm \\|\\cdot \\|.  \nLet A : D(A) \\subset  H \\to  H be a (possibly unbounded) densely-defined, closed linear operator that generates an exponentially stable C_0-semigroup S(t)=e^{tA} (t \\geq  0); i.e. there are constants  \n\n  C \\geq  1  and  \\gamma  > 0  such that  \\|S(t)\\| \\leq  C e^{-\\gamma  t} for every t \\geq  0.               (0)\n\nA function h : H \\to  \\mathbb{R} is called Frechet differentiable if for every x \\in  H there exists a bounded linear functional Dh(x) satisfying  \n\n  lim_{\\|v\\|\\to 0} ( h(x+v) - h(x) - Dh(x)[v] ) / \\|v\\| = 0.\n\nVia the Riesz representation theorem we identify Dh(x) with the gradient \\nabla h(x) \\in  H so that Dh(x)[v]=\\langle \\nabla h(x),v\\rangle  for all v\\in H.\n\nAssume\n(1)  h is bounded: sup_{y\\in H}|h(y)| < \\infty ;  \n(2)  h is Frechet differentiable and the map x \\mapsto  \\nabla h(x) is continuous on H (h is therefore continuous as well);  \n(3)  h satisfies the first-order functional identity on the (possibly proper) domain D(A):\n  h(x) = \\langle \\nabla h(x), Ax\\rangle   for every x \\in  D(A).                                                            (\\star )\n\nProve that h is identically zero on the whole Hilbert space H.",
+      "solution": "We write S(t):=e^{tA}, note that S(t)D(A)\\subset D(A) for all t\\geq 0 (standard semigroup theory), and keep the constants C,\\gamma  of (0).  Fix M:=sup_{y\\in H}|h(y)|<\\infty .\n\nStep 1 - Absolute continuity of  \\varphi _x(t):=h(S(t)x)  when x \\in  D(A).  \nFor x\\in D(A) the map t\\mapsto S(t)x is C^1 in H and satisfies d/dt S(t)x=AS(t)x.  \nBecause h is C^1 (Frechet) and \\nabla h is continuous, the classical chain rule in Banach spaces gives that \\varphi _x is absolutely continuous on every compact interval and\n\n  \\varphi _x'(t)=\\langle \\nabla h(S(t)x),AS(t)x\\rangle          a.e. t\\geq 0.                             (1)\n\nA short derivation: write \\Delta h = h(S(t+h)x)-h(S(t)x) and use the first-order Taylor formula with remainder  \n \\Delta h = \\langle \\nabla h(S(t)x),S(t+h)x-S(t)x\\rangle  + r(t,h),  r(t,h)=o(\\|S(t+h)x-S(t)x\\|).  \nSince S(t+h)x-S(t)x = \\int _0^h S(t+s)Ax ds, divide by h and let h\\to 0; boundedness of \\nabla h on bounded sets together with (0) provides a dominating L^1-function in s \\in  (0,h), justifying the limit by dominated convergence.\n\nStep 2 - The orbit ODE.  \nBecause S(t)x\\in D(A) for every t and because (\\star ) holds on D(A),\n\n \\varphi _x'(t)=\\langle \\nabla h(S(t)x),AS(t)x\\rangle  = h(S(t)x)=\\varphi _x(t) a.e. t\\geq 0.\n\nThus \\varphi _x solves \\varphi '=\\varphi , hence\n\n  \\varphi _x(t)=h(x)e^{t}  for all t\\geq 0.                                             (2)\n\nStep 3 - Exponential stability forces vanishing on D(A).  \nThe semigroup estimate (0) gives \\|S(t)x\\| \\leq  C\\|x\\|e^{-\\gamma  t} \\to  0   as t\\to \\infty .  \nBecause h is bounded,\n\n |h(x)| e^{t}=|\\varphi _x(t)|=|h(S(t)x)| \\leq  M  \\forall  t\\geq 0.\n\nLetting t\\to \\infty  yields h(x)=0 for every x\\in D(A).                               (3)\n\nStep 4 - Extension from D(A) to all of H.  \nSince A is densely defined, D(A) is dense in H.  \nBecause h is continuous on H, its zero set contains the dense subset D(A) and is therefore the whole space:\n\n \\forall x\\in H,  \\exists x_n\\in D(A) with x_n\\to x \\Rightarrow  h(x)=lim_{n\\to \\infty }h(x_n)=0.\n\nThus h\\equiv 0 on H.\n\n\\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.816413",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Infinite-dimensional setting  \n   • The domain is an arbitrary separable Hilbert space, not ℝⁿ, so standard finite-dimensional tools (determinants, coordinates, compactness of spheres) no longer apply.  \n   • One must manipulate bounded linear operators and their functional calculus (the semigroup e^{t𝑇}) instead of simple vectors.\n\n2. Spectral theory and semigroup estimates  \n   • The hypothesis s(𝑇)<0 invokes the spectrum of 𝑇 and requires knowing that e^{t𝑇} forms a strongly continuous semigroup with exponential decay.  \n   • Handling e^{t𝑇} demands familiarity with the Hille–Yosida theory or equivalent functional-analytic results.\n\n3. Fréchet differentiability and the Riesz identification  \n   • Recasting the Fréchet derivative as a gradient via the Riesz map introduces an additional layer of abstraction not present in the original finite-dimensional gradient.\n\n4. Method of characteristics in Hilbert spaces  \n   • The solution traces the flow of the vector field x↦𝑇x and derives an ODE along infinite-dimensional integral curves, a non-trivial extension of the finite-dimensional characteristic method.\n\n5. Subtle use of boundedness  \n   • Boundedness is combined with exponential decay of the orbit to force vanishing of the coefficient in an exponential ODE, a step absent from the original problem.\n\nBecause of these added layers – spectral analysis, semigroup theory, infinite-dimensional calculus, and a more delicate exploitation of boundedness – the enhanced variant demands considerably deeper theoretical insight and a longer chain of advanced arguments than both the original problem and the current kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let H be a real, separable Hilbert space with inner product \\langle \\cdot ,\\cdot \\rangle  and norm \\|\\cdot \\|.  \nLet A : D(A) \\subset  H \\to  H be a (possibly unbounded) densely-defined, closed linear operator that generates an exponentially stable C_0-semigroup S(t)=e^{tA} (t \\geq  0); i.e. there are constants  \n\n  C \\geq  1  and  \\gamma  > 0  such that  \\|S(t)\\| \\leq  C e^{-\\gamma  t} for every t \\geq  0.               (0)\n\nA function h : H \\to  \\mathbb{R} is called Frechet differentiable if for every x \\in  H there exists a bounded linear functional Dh(x) satisfying  \n\n  lim_{\\|v\\|\\to 0} ( h(x+v) - h(x) - Dh(x)[v] ) / \\|v\\| = 0.\n\nVia the Riesz representation theorem we identify Dh(x) with the gradient \\nabla h(x) \\in  H so that Dh(x)[v]=\\langle \\nabla h(x),v\\rangle  for all v\\in H.\n\nAssume\n(1)  h is bounded: sup_{y\\in H}|h(y)| < \\infty ;  \n(2)  h is Frechet differentiable and the map x \\mapsto  \\nabla h(x) is continuous on H (h is therefore continuous as well);  \n(3)  h satisfies the first-order functional identity on the (possibly proper) domain D(A):\n  h(x) = \\langle \\nabla h(x), Ax\\rangle   for every x \\in  D(A).                                                            (\\star )\n\nProve that h is identically zero on the whole Hilbert space H.",
+      "solution": "We write S(t):=e^{tA}, note that S(t)D(A)\\subset D(A) for all t\\geq 0 (standard semigroup theory), and keep the constants C,\\gamma  of (0).  Fix M:=sup_{y\\in H}|h(y)|<\\infty .\n\nStep 1 - Absolute continuity of  \\varphi _x(t):=h(S(t)x)  when x \\in  D(A).  \nFor x\\in D(A) the map t\\mapsto S(t)x is C^1 in H and satisfies d/dt S(t)x=AS(t)x.  \nBecause h is C^1 (Frechet) and \\nabla h is continuous, the classical chain rule in Banach spaces gives that \\varphi _x is absolutely continuous on every compact interval and\n\n  \\varphi _x'(t)=\\langle \\nabla h(S(t)x),AS(t)x\\rangle          a.e. t\\geq 0.                             (1)\n\nA short derivation: write \\Delta h = h(S(t+h)x)-h(S(t)x) and use the first-order Taylor formula with remainder  \n \\Delta h = \\langle \\nabla h(S(t)x),S(t+h)x-S(t)x\\rangle  + r(t,h),  r(t,h)=o(\\|S(t+h)x-S(t)x\\|).  \nSince S(t+h)x-S(t)x = \\int _0^h S(t+s)Ax ds, divide by h and let h\\to 0; boundedness of \\nabla h on bounded sets together with (0) provides a dominating L^1-function in s \\in  (0,h), justifying the limit by dominated convergence.\n\nStep 2 - The orbit ODE.  \nBecause S(t)x\\in D(A) for every t and because (\\star ) holds on D(A),\n\n \\varphi _x'(t)=\\langle \\nabla h(S(t)x),AS(t)x\\rangle  = h(S(t)x)=\\varphi _x(t) a.e. t\\geq 0.\n\nThus \\varphi _x solves \\varphi '=\\varphi , hence\n\n  \\varphi _x(t)=h(x)e^{t}  for all t\\geq 0.                                             (2)\n\nStep 3 - Exponential stability forces vanishing on D(A).  \nThe semigroup estimate (0) gives \\|S(t)x\\| \\leq  C\\|x\\|e^{-\\gamma  t} \\to  0   as t\\to \\infty .  \nBecause h is bounded,\n\n |h(x)| e^{t}=|\\varphi _x(t)|=|h(S(t)x)| \\leq  M  \\forall  t\\geq 0.\n\nLetting t\\to \\infty  yields h(x)=0 for every x\\in D(A).                               (3)\n\nStep 4 - Extension from D(A) to all of H.  \nSince A is densely defined, D(A) is dense in H.  \nBecause h is continuous on H, its zero set contains the dense subset D(A) and is therefore the whole space:\n\n \\forall x\\in H,  \\exists x_n\\in D(A) with x_n\\to x \\Rightarrow  h(x)=lim_{n\\to \\infty }h(x_n)=0.\n\nThus h\\equiv 0 on H.\n\n\\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.624866",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Infinite-dimensional setting  \n   • The domain is an arbitrary separable Hilbert space, not ℝⁿ, so standard finite-dimensional tools (determinants, coordinates, compactness of spheres) no longer apply.  \n   • One must manipulate bounded linear operators and their functional calculus (the semigroup e^{t𝑇}) instead of simple vectors.\n\n2. Spectral theory and semigroup estimates  \n   • The hypothesis s(𝑇)<0 invokes the spectrum of 𝑇 and requires knowing that e^{t𝑇} forms a strongly continuous semigroup with exponential decay.  \n   • Handling e^{t𝑇} demands familiarity with the Hille–Yosida theory or equivalent functional-analytic results.\n\n3. Fréchet differentiability and the Riesz identification  \n   • Recasting the Fréchet derivative as a gradient via the Riesz map introduces an additional layer of abstraction not present in the original finite-dimensional gradient.\n\n4. Method of characteristics in Hilbert spaces  \n   • The solution traces the flow of the vector field x↦𝑇x and derives an ODE along infinite-dimensional integral curves, a non-trivial extension of the finite-dimensional characteristic method.\n\n5. Subtle use of boundedness  \n   • Boundedness is combined with exponential decay of the orbit to force vanishing of the coefficient in an exponential ODE, a step absent from the original problem.\n\nBecause of these added layers – spectral analysis, semigroup theory, infinite-dimensional calculus, and a more delicate exploitation of boundedness – the enhanced variant demands considerably deeper theoretical insight and a longer chain of advanced arguments than both the original problem and the current kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

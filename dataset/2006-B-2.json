@@ -1,0 +1,156 @@
+{
+  "index": "2006-B-2",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Prove that, for every set $X = \\{x_1, x_2, \\dots, x_n\\}$ of $n$\nreal numbers, there exists a non-empty subset $S$ of $X$ and an integer $m$\nsuch that\n\\[\n\\left| m + \\sum_{s \\in S} s \\right| \\leq \\frac{1}{n+1}.\n\\]",
+  "solution": "Let $\\{x\\} = x - \\lfloor x \\rfloor$ denote the fractional part of $x$.\nFor $i=0,\\dots, n$, put $s_i = x_1 + \\cdots + x_i$ (so that $s_0 = 0$).\nSort the numbers $\\{s_0\\}, \\dots, \\{s_n\\}$ into ascending order,\nand call the result $t_0, \\dots, t_n$. Since $0 = t_0 \\leq \\cdots \\leq\nt_n < 1$, the differences\n\\[\nt_1 - t_0, \\dots, t_n - t_{n-1}, 1 - t_n\n\\]\nare nonnegative and add up to 1. Hence (as in  the pigeonhole principle) one\nof these differences\nis no more than $1/(n+1)$; if it is anything other than $1 - t_n$,\nit equals $\\pm (\\{s_i\\} - \\{s_j\\})$ for some\n$0 \\leq i < j \\leq n$. Put $S = \\{x_{i+1}, \\dots, x_j\\}$ and\n$m = \\lfloor s_i \\rfloor - \\lfloor s_j \\rfloor$; then\n\\begin{align*}\n\\left| m + \\sum_{s \\in S} s \\right|\n&= |m + s_j - s_i| \\\\\n&= |\\{s_j\\} - \\{s_i\\}| \\\\\n&\\leq \\frac{1}{n+1},\n\\end{align*}\nas desired. In case $1 - t_n \\leq 1 / (n+1)$, we take\n$S = \\{x_1, \\dots, x_n\\}$ and $m = -\\lceil s_n \\rceil$, and again obtain\nthe desired conclusion.",
+  "vars": [
+    "S",
+    "m",
+    "s",
+    "s_i",
+    "s_0",
+    "s_n",
+    "t",
+    "t_i",
+    "t_0",
+    "t_n",
+    "i"
+  ],
+  "params": [
+    "X",
+    "x",
+    "x_1",
+    "x_i",
+    "x_n",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S": "subsetv",
+        "m": "integerm",
+        "s": "sumroot",
+        "s_i": "indexsum",
+        "s_0": "sumzero",
+        "s_n": "sumsmax",
+        "t": "baseord",
+        "t_i": "indexord",
+        "t_0": "ordzero",
+        "t_n": "ordnmax",
+        "i": "iterator",
+        "X": "setfull",
+        "x": "element",
+        "x_1": "elementa",
+        "x_i": "elementi",
+        "x_n": "elementn",
+        "n": "countsz"
+      },
+      "question": "Prove that, for every set $setfull = \\{elementa, x_2, \\dots, elementn\\}$ of $countsz$\nreal numbers, there exists a non-empty subset $subsetv$ of $setfull$ and an integer $integerm$\nsuch that\n\\[\n\\left| integerm + \\sum_{sumroot \\in subsetv} sumroot \\right| \\leq \\frac{1}{countsz+1}.\n\\]",
+      "solution": "Let $\\{element\\} = element - \\lfloor element \\rfloor$ denote the fractional part of $element$.\nFor $iterator=0,\\dots, countsz$, put $indexsum = elementa + \\cdots + elementi$ (so that $sumzero = 0$).\nSort the numbers $\\{sumzero\\}, \\dots, \\{sumsmax\\}$ into ascending order,\nand call the result $ordzero, \\dots, ordnmax$. Since $0 = ordzero \\leq \\cdots \\leq\nordnmax < 1$, the differences\n\\[\nbaseord_1 - ordzero, \\dots, ordnmax - baseord_{countsz-1}, 1 - ordnmax\n\\]\nare nonnegative and add up to 1. Hence (as in  the pigeonhole principle) one\nof these differences\nis no more than $1/(countsz+1)$; if it is anything other than $1 - ordnmax$,\nit equals $\\pm (\\{indexsum\\} - \\{sumroot_j\\})$ for some\n$0 \\leq iterator < j \\leq countsz$. Put $subsetv = \\{element_{iterator+1}, \\dots, element_j\\}$ and\n$integerm = \\lfloor indexsum \\rfloor - \\lfloor sumroot_j \\rfloor$; then\n\\begin{align*}\n\\left| integerm + \\sum_{sumroot \\in subsetv} sumroot \\right|\n&= |integerm + sumroot_j - indexsum| \\\\\n&= |\\{sumroot_j\\} - \\{indexsum\\}| \\\\\n&\\leq \\frac{1}{countsz+1},\n\\end{align*}\nas desired. In case $1 - ordnmax \\leq 1 / (countsz+1)$, we take\n$subsetv = \\{elementa, \\dots, elementn\\}$ and $integerm = -\\lceil sumsmax \\rceil$, and again obtain\nthe desired conclusion."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S": "marigold",
+        "m": "zeppelin",
+        "s": "cucumber",
+        "s_i": "butterfly",
+        "s_0": "clipboard",
+        "s_n": "harmonica",
+        "t": "pineapple",
+        "t_i": "sapphire",
+        "t_0": "quagmire",
+        "t_n": "lighthouse",
+        "i": "strawhat",
+        "X": "peppermint",
+        "x": "rainstorm",
+        "x_1": "tapestry",
+        "x_i": "windchime",
+        "x_n": "honeycomb",
+        "n": "evergreen"
+      },
+      "question": "Prove that, for every set $peppermint = \\{tapestry, x_2, \\dots, honeycomb\\}$ of $evergreen$\nreal numbers, there exists a non-empty subset $marigold$ of $peppermint$ and an integer $zeppelin$\nsuch that\n\\[\n\\left| zeppelin + \\sum_{cucumber \\in marigold} cucumber \\right| \\leq \\frac{1}{evergreen+1}.\n\\]",
+      "solution": "Let $\\{rainstorm\\} = rainstorm - \\lfloor rainstorm \\rfloor$ denote the fractional part of $rainstorm$.\nFor $strawhat=0,\\dots, evergreen$, put $butterfly = tapestry + \\cdots + windchime$ (so that $clipboard = 0$).\nSort the numbers $\\{clipboard\\}, \\dots, \\{harmonica\\}$ into ascending order,\nand call the result $quagmire, \\dots, lighthouse$. Since $0 = quagmire \\leq \\cdots \\leq\nlighthouse < 1$, the differences\n\\[\n t_1 - quagmire, \\dots, t_n - t_{n-1}, 1 - lighthouse\n\\]\nare nonnegative and add up to 1. Hence (as in  the pigeonhole principle) one\nof these differences\nis no more than $1/(evergreen+1)$; if it is anything other than $1 - lighthouse$,\nit equals $\\pm (\\{butterfly\\} - \\{s_j\\})$ for some\n$0 \\leq strawhat < j \\leq evergreen$. Put $marigold = \\{x_{strawhat+1}, \\dots, x_j\\}$ and\n$zeppelin = \\lfloor butterfly \\rfloor - \\lfloor s_j \\rfloor$; then\n\\begin{align*}\n\\left| zeppelin + \\sum_{cucumber \\in marigold} cucumber \\right|\n&= |zeppelin + s_j - butterfly| \\\\\n&= |\\{s_j\\} - \\{butterfly\\}| \\\\\n&\\leq \\frac{1}{evergreen+1},\n\\end{align*}\nas desired. In case $1 - lighthouse \\leq 1 / (evergreen+1)$, we take\n$marigold = \\{tapestry, \\dots, honeycomb\\}$ and $zeppelin = -\\lceil harmonica \\rceil$, and again obtain\nthe desired conclusion."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S": "supersetset",
+        "m": "irrational",
+        "s": "difference",
+        "s_i": "differenceindex",
+        "s_0": "differencezero",
+        "s_n": "differencefinal",
+        "t": "unsorted",
+        "t_i": "unsortedindex",
+        "t_0": "unsortedzero",
+        "t_n": "unsortedfinal",
+        "i": "indexless",
+        "X": "sequence",
+        "x": "complexes",
+        "x_1": "complexfirst",
+        "x_i": "complexindex",
+        "x_n": "complexfinal",
+        "n": "infinite"
+      },
+      "question": "Prove that, for every set $sequence = \\{complexfirst, complexes_2, \\dots, complexfinal\\}$ of $infinite$\nreal numbers, there exists a non-empty subset $supersetset$ of $sequence$ and an integer $irrational$\nsuch that\n\\[\n\\left| irrational + \\sum_{difference \\in supersetset} difference \\right| \\leq \\frac{1}{infinite+1}.\n\\]",
+      "solution": "Let $\\{complexes\\} = complexes - \\lfloor complexes \\rfloor$ denote the fractional part of complexes.\nFor $indexless=0,\\dots, infinite$, put $differenceindex = complexfirst + \\cdots + complexindex$ (so that $differencezero = 0$).\nSort the numbers $\\{differencezero\\}, \\dots, \\{differencefinal\\}$ into ascending order,\nand call the result unsortedzero, \\dots, unsortedfinal. Since $0 = unsortedzero \\leq \\cdots \\leq\nunsortedfinal < 1$, the differences\n\\[\nt_1 - unsortedzero, \\dots, unsortedfinal - t_{infinite-1}, 1 - unsortedfinal\n\\]\nare nonnegative and add up to 1. Hence (as in  the pigeonhole principle) one\nof these differences\nis no more than $1/(infinite+1)$; if it is anything other than $1 - unsortedfinal$,\nit equals $\\pm (\\{differenceindex\\} - \\{s_j\\})$ for some\n$0 \\leq indexless < j \\leq infinite$. Put $supersetset = \\{complexes_{indexless+1}, \\dots, complexes_j\\}$ and\n$irrational = \\lfloor differenceindex \\rfloor - \\lfloor s_j \\rfloor$; then\n\\begin{align*}\n\\left| irrational + \\sum_{difference \\in supersetset} difference \\right|\n&= |irrational + s_j - differenceindex| \\\\\n&= |\\{s_j\\} - \\{differenceindex\\}| \\\\\n&\\leq \\frac{1}{infinite+1},\n\\end{align*}\nas desired. In case $1 - unsortedfinal \\leq 1 / (infinite+1)$, we take\n$supersetset = \\{complexfirst, \\dots, complexfinal\\}$ and $irrational = -\\lceil differencefinal \\rceil$, and again obtain\nthe desired conclusion."
+    },
+    "garbled_string": {
+      "map": {
+        "S": "ghrpqsle",
+        "m": "zbvynkte",
+        "s": "lmqzthar",
+        "s_i": "jpkarnul",
+        "s_0": "uwmnfocs",
+        "s_n": "qdervzop",
+        "t": "yxplomiv",
+        "t_i": "hcuenvaz",
+        "t_0": "rfstoeqa",
+        "t_n": "voxkrtim",
+        "i": "widjpmqa",
+        "X": "drnqsavm",
+        "x": "kzpravle",
+        "x_1": "ucnokims",
+        "x_i": "hgtlfwaz",
+        "x_n": "rdycehvm",
+        "n": "swbfojzt"
+      },
+      "question": "Prove that, for every set $drnqsavm = \\{ucnokims, kzpravle_2, \\dots, rdycehvm\\}$ of $swbfojzt$\nreal numbers, there exists a non-empty subset $ghrpqsle$ of $drnqsavm$ and an integer $zbvynkte$\nsuch that\n\\[\n\\left| zbvynkte + \\sum_{lmqzthar \\in ghrpqsle} lmqzthar \\right| \\leq \\frac{1}{swbfojzt+1}.\n\\]",
+      "solution": "Let $\\{kzpravle\\} = kzpravle - \\lfloor kzpravle \\rfloor$ denote the fractional part of $kzpravle$.\nFor $widjpmqa = 0, \\dots, swbfojzt$, put $jpkarnul = ucnokims + \\cdots + hgtlfwaz$ (so that $uwmnfocs = 0$).\nSort the numbers $\\{uwmnfocs\\}, \\dots, \\{qdervzop\\}$ into ascending order,\nand call the result $rfstoeqa, \\dots, voxkrtim$. Since $0 = rfstoeqa \\leq \\cdots \\leq\nvoxkrtim < 1$, the differences\n\\[\nyxplomiv_1 - rfstoeqa, \\dots, voxkrtim - yxplomiv_{swbfojzt-1}, 1 - voxkrtim\n\\]\nare nonnegative and add up to 1. Hence (as in the pigeonhole principle) one\nof these differences\nis no more than $1/(swbfojzt+1)$; if it is anything other than $1 - voxkrtim$,\nit equals $\\pm (\\{jpkarnul\\} - \\{\\lmqzthar_j\\})$ for some\n$0 \\leq widjpmqa < j \\leq swbfojzt$. Put $ghrpqsle = \\{kzpravle_{widjpmqa+1}, \\dots, kzpravle_j\\}$ and\n$zbvynkte = \\lfloor jpkarnul \\rfloor - \\lfloor \\lmqzthar_j \\rfloor$; then\n\\begin{align*}\n\\left| zbvynkte + \\sum_{lmqzthar \\in ghrpqsle} lmqzthar \\right|\n&= |zbvynkte + \\lmqzthar_j - jpkarnul| \\\\\n&= |\\{\\lmqzthar_j\\} - \\{jpkarnul\\}| \\\\\n&\\leq \\frac{1}{swbfojzt+1},\n\\end{align*}\nas desired. In case $1 - voxkrtim \\leq 1 / (swbfojzt+1)$, we take\n$ghrpqsle = \\{ucnokims, \\dots, rdycehvm\\}$ and $zbvynkte = -\\lceil qdervzop \\rceil$, and again obtain\nthe desired conclusion."
+    },
+    "kernel_variant": {
+      "question": "Let n be a positive integer and let x_1,\\ldots ,x_n be real numbers.  Show that there exist indices 0\\le p<q\\le n (so that the sum x_{p+1}+\\cdots +x_q is taken over a consecutive block of terms) and an integer k such that\n\\[\n\\left|\\,k-\\bigl(x_{p+1}+\\cdots +x_q\\bigr)\\right|\\le \\frac1{n+1} .\n\\]",
+      "solution": "Let n\\geq 1 and x_1,\\ldots ,x_n be real. Define the partial sums\n  s_0=0,   s_i=x_1+\\cdots +x_i  for 1\\leq i\\leq n.\nWrite the fractional part {y}=y-\\lfloor y\\rfloor \\in [0,1). Consider the n+1 numbers\n  {s_0}, {s_1}, \\ldots , {s_n}.\nSince {s_0}=0, sort these into ascending order\n  t_0\\leq t_1\\leq \\cdots \\leq t_n<1,\nwhere t_0={s_0}=0. There are n+1 gaps\n  t_1-t_0,  t_2-t_1, \\ldots , t_n-t_{n-1}, 1-t_n,\nand they sum to 1. Hence at least one gap \\leq 1/(n+1). We distinguish two cases:\n\nCase 1 (interior gap). Suppose for some 1\\leq r\\leq n the gap t_r-t_{r-1} \\leq  1/(n+1). By definition there are 0\\leq i<j\\leq n with\n  t_{r-1}={s_i}, t_r={s_j}.\nThen\n  0\\leq {s_j}-{s_i}=t_r-t_{r-1}\\leq 1/(n+1).\nSet\n  p=i, q=j, m=\\lfloor s_i\\rfloor -\\lfloor s_j\\rfloor \\in \\mathbb{Z}.\nThen x_{p+1}+\\cdots +x_q=s_j-s_i and\n  m+(s_j-s_i)=\\lfloor s_i\\rfloor -\\lfloor s_j\\rfloor +s_j-s_i={s_j}-{s_i},\nso\n  |m+(x_{p+1}+\\cdots +x_q)|=|{s_j}-{s_i}|\\leq 1/(n+1).\n\nCase 2 (wrap-around gap). Suppose instead\n  1-t_n\\leq 1/(n+1).\nThen t_n={s_j} for some j (1\\leq j\\leq n), and\n  1-{s_j}\\leq 1/(n+1).\nTake the block x_1,\\ldots ,x_j so that p=0, q=j, and set\n  m=-\\lceil s_j\\rceil \\in \\mathbb{Z}.\nThen x_1+\\cdots +x_j=s_j and\n  m+s_j=-\\lceil s_j\\rceil +s_j=-(\\lceil s_j\\rceil -s_j)=-(1-{s_j}),\nso\n  |m+(x_1+\\cdots +x_j)|=1-{s_j}\\leq 1/(n+1).\n\nIn either case we have found 0\\leq p<q\\leq n and an integer m with\n  |m+(x_{p+1}+\\cdots +x_q)|\\leq 1/(n+1).\nTaking k=-m (also an integer) yields\n  |k-(x_{p+1}+\\cdots +x_q)|\\leq 1/(n+1),\ncompleting the proof.",
+      "_meta": {
+        "core_steps": [
+          "Form the partial sums s_i = x_1 + … + x_i with s_0 = 0",
+          "Take the fractional parts {s_i} and sort them to get t_0,…,t_n",
+          "Apply the pigeonhole principle to the n+1 gaps (t_1−t_0,…,t_n−t_{n−1},1−t_n) to obtain a gap ≤ 1/(n+1)",
+          "Express that gap as ±({s_j}−{s_i}) = m + (x_{i+1}+…+x_j) for a suitable integer m, giving the required bound"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The order in which the fractional parts are arranged—any total order (e.g. descending) would work if gaps are taken consecutively on the circle.",
+            "original": "ascending order t_0 ≤ t_1 ≤ … ≤ t_n"
+          },
+          "slot2": {
+            "description": "The specific integer-part operator used; ceiling could replace floor throughout with sign adjustments.",
+            "original": "floor function ⌊·⌋ in {x}=x−⌊x⌋ and in the definition m = ⌊s_i⌋−⌊s_j⌋"
+          },
+          "slot3": {
+            "description": "The choice of the ‘wrap-around’ gap 1−t_n; one could instead view the fractional parts on a circle and pick any of the n+1 cyclic gaps.",
+            "original": "the additional interval 1 − t_n appended to the list of n interior gaps"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

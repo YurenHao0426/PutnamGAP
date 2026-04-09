@@ -1,0 +1,148 @@
+{
+  "index": "2019-A-4",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $f$ be a continuous real-valued function on $\\mathbb{R}^3$. Suppose that for every sphere $S$ of radius 1,\nthe integral of $f(x,y,z)$ over the surface of $S$ equals 0. Must $f(x,y,z)$ be identically 0?",
+  "solution": "The answer is no. Let $g :\\thinspace \\mathbb{R} \\to \\mathbb{R}$ be any continuous function with $g(t+2) = g(t)$ for all $t$ and $\\int_0^2 g(t)\\,dt = 0$ (for instance, $g(t) = \\sin(\\pi t)$). Define $f(x,y,z) = g(z)$. We claim that for any sphere $S$ of radius $1$, $\\iint_S f\\,dS = 0$.\n\n\nIndeed, let $S$ be the unit sphere centered at $(x_0,y_0,z_0)$. We can parametrize $S$ by $S(\\phi,\\theta) = (x_0,y_0,z_0)+(\\sin\\phi\\cos\\theta,\n\\sin\\phi\\sin\\theta,\\cos\\phi)$ for $\\phi \\in [0,\\pi]$ and $\\theta \\in [0,2\\pi]$. Then we have\n\n\\begin{align*}\n\\iint_S f(x,y,z)\\,dS &= \\int_0^\\pi \\int_0^{2\\pi} f(S(\\phi,\\theta))\\left\\|\\frac{\\partial S}{\\partial \\phi} \\times \\frac{\\partial S}{\\partial \\theta}\\right\\|\\,d\\theta\\,d\\phi \\\\\n&=  \\int_0^\\pi \\int_0^{2\\pi} g(z_0+\\cos\\phi) \\sin\\phi\\,d\\theta\\,d\\phi \\\\\n&= 2\\pi \\int_{-1}^1 g(z_0+t)\\,dt,\n\\end{align*}\n\nwhere we have used the substitution $t = \\cos\\phi$; but this last integral is $0$ for any $z_0$ by construction.\n\n\\noindent\n\\textbf{Remark.}\nThe solution recovers the famous observation of Archimedes that the surface area of a spherical cap is linear in the height of the cap. In place of spherical coordinates, one may also compute $\\iint_S f(x,y,z)\\,dS$ by computing the integral over a ball of radius $r$, then computing the derivative with respect to $r$ and evaluating at $r=1$.\n\nNoam Elkies points out that a similar result holds in $\\mathbb{R}^n$ for any $n$. Also, there exist nonzero continuous functions on $\\mathbb{R}^n$ whose integral over any unit ball vanishes; this implies certain negative results about image reconstruction.",
+  "vars": [
+    "f",
+    "g",
+    "t",
+    "x",
+    "y",
+    "z",
+    "S",
+    "\\\\phi",
+    "\\\\theta",
+    "n",
+    "r"
+  ],
+  "params": [
+    "x_0",
+    "y_0",
+    "z_0"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "contifunc",
+        "g": "periodfunc",
+        "t": "paramtime",
+        "x": "firstcoord",
+        "y": "secondcoord",
+        "z": "thirdcoord",
+        "S": "spheresurf",
+        "\\\\phi": "phaseangle",
+        "\\\\theta": "rotangle",
+        "n": "dimension",
+        "r": "radiusval",
+        "x_0": "centerfirst",
+        "y_0": "centersecond",
+        "z_0": "centerthird"
+      },
+      "question": "Let $contifunc$ be a continuous real-valued function on $\\mathbb{R}^3$. Suppose that for every sphere $spheresurf$ of radius 1,\n the integral of $contifunc(firstcoord,secondcoord,thirdcoord)$ over the surface of $spheresurf$ equals 0. Must $contifunc(firstcoord,secondcoord,thirdcoord)$ be identically 0?",
+      "solution": "The answer is no. Let $periodfunc :\\thinspace \\mathbb{R} \\to \\mathbb{R}$ be any continuous function with $periodfunc(paramtime+2) = periodfunc(paramtime)$ for all $paramtime$ and $\\int_0^2 periodfunc(paramtime)\\,dparamtime = 0$ (for instance, $periodfunc(paramtime) = \\sin(\\pi paramtime)$). Define $contifunc(firstcoord,secondcoord,thirdcoord) = periodfunc(thirdcoord)$. We claim that for any sphere $spheresurf$ of radius $1$, $\\iint_{spheresurf} contifunc\\,dspheresurf = 0$.\n\nIndeed, let $spheresurf$ be the unit sphere centered at $(centerfirst,centersecond,centerthird)$. We can parametrize $spheresurf$ by $spheresurf(phaseangle,rotangle) = (centerfirst,centersecond,centerthird)+(\\sin phaseangle\\cos rotangle,\\\n\\sin phaseangle\\sin rotangle,\\cos phaseangle)$ for $phaseangle \\in [0,\\pi]$ and $rotangle \\in [0,2\\pi]$. Then we have\n\n\\begin{align*}\n\\iint_{spheresurf} contifunc(firstcoord,secondcoord,thirdcoord)\\,dspheresurf &= \\int_0^{\\pi} \\int_0^{2\\pi} contifunc(spheresurf(phaseangle,rotangle))\\left\\|\\frac{\\partial spheresurf}{\\partial phaseangle} \\times \\frac{\\partial spheresurf}{\\partial rotangle}\\right\\|\\,drotangle\\,dphaseangle \\\\\n&=  \\int_0^{\\pi} \\int_0^{2\\pi} periodfunc(centerthird+\\cos phaseangle) \\sin phaseangle\\,drotangle\\,dphaseangle \\\\\n&= 2\\pi \\int_{-1}^1 periodfunc(centerthird+paramtime)\\,dparamtime,\n\\end{align*}\n\nwhere we have used the substitution $paramtime = \\cos phaseangle$; but this last integral is $0$ for any $centerthird$ by construction.\n\n\\noindent\n\\textbf{Remark.}\nThe solution recovers the famous observation of Archimedes that the surface area of a spherical cap is linear in the height of the cap. In place of spherical coordinates, one may also compute $\\iint_{spheresurf} contifunc(firstcoord,secondcoord,thirdcoord)\\,dspheresurf$ by computing the integral over a ball of radius $radiusval$, then computing the derivative with respect to $radiusval$ and evaluating at $radiusval=1$.\n\nNoam Elkies points out that a similar result holds in $\\mathbb{R}^{dimension}$ for any $dimension$. Also, there exist nonzero continuous functions on $\\mathbb{R}^{dimension}$ whose integral over any unit ball vanishes; this implies certain negative results about image reconstruction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "decorative",
+        "g": "marmalade",
+        "t": "excursion",
+        "x": "lantern",
+        "y": "pigeonhole",
+        "z": "quagmire",
+        "S": "chandelier",
+        "\\phi": "breadcrumb",
+        "\\theta": "paintbrush",
+        "n": "shoelaces",
+        "r": "daydream",
+        "x_0": "lanternbase",
+        "y_0": "pigeonholebase",
+        "z_0": "quagmirebase"
+      },
+      "question": "Let $decorative$ be a continuous real-valued function on $\\mathbb{R}^3$. Suppose that for every sphere $chandelier$ of radius 1, the integral of $decorative(lantern,pigeonhole,quagmire)$ over the surface of $chandelier$ equals 0. Must $decorative(lantern,pigeonhole,quagmire)$ be identically 0?",
+      "solution": "The answer is no. Let $marmalade :\\thinspace \\mathbb{R} \\to \\mathbb{R}$ be any continuous function with $marmalade(excursion+2) = marmalade(excursion)$ for all $excursion$ and $\\int_0^2 marmalade(excursion)\\,dexcursion = 0$ (for instance, $marmalade(excursion) = \\sin(\\pi excursion)$). Define $decorative(lantern,pigeonhole,quagmire) = marmalade(quagmire)$. We claim that for any sphere $chandelier$ of radius $1$, $\\iint_{chandelier} decorative\\,dchandelier = 0$.\n\nIndeed, let $chandelier$ be the unit sphere centered at $(lanternbase,pigeonholebase,quagmirebase)$. We can parametrize $chandelier$ by $chandelier(breadcrumb,paintbrush) = (lanternbase,pigeonholebase,quagmirebase)+(\\sin breadcrumb\\cos paintbrush,\\sin breadcrumb\\sin paintbrush,\\cos breadcrumb)$ for $breadcrumb \\in [0,\\pi]$ and $paintbrush \\in [0,2\\pi]$. Then we have\n\n\\begin{align*}\n\\iint_{chandelier} decorative(lantern,pigeonhole,quagmire)\\,dchandelier &= \\int_0^\\pi \\int_0^{2\\pi} decorative(chandelier(breadcrumb,paintbrush))\\left\\|\\frac{\\partial chandelier}{\\partial breadcrumb} \\times \\frac{\\partial chandelier}{\\partial paintbrush}\\right\\|\\,dpaintbrush\\,dbreadcrumb \\\\\n&=  \\int_0^\\pi \\int_0^{2\\pi} marmalade(quagmirebase+\\cos breadcrumb) \\sin breadcrumb\\,dpaintbrush\\,dbreadcrumb \\\\\n&= 2\\pi \\int_{-1}^1 marmalade(quagmirebase+excursion)\\,dexcursion,\n\\end{align*}\n\nwhere we have used the substitution $excursion = \\cos breadcrumb$; but this last integral is $0$ for any $quagmirebase$ by construction.\n\n\\noindent\\textbf{Remark.} The solution recovers the famous observation of Archimedes that the surface area of a spherical cap is linear in the height of the cap. In place of spherical coordinates, one may also compute $\\iint_{chandelier} decorative(lantern,pigeonhole,quagmire)\\,dchandelier$ by computing the integral over a ball of radius $daydream$, then computing the derivative with respect to $daydream$ and evaluating at $daydream=1$.\n\nNoam Elkies points out that a similar result holds in $\\mathbb{R}^{shoelaces}$ for any $shoelaces$. Also, there exist nonzero continuous functions on $\\mathbb{R}^{shoelaces}$ whose integral over any unit ball vanishes; this implies certain negative results about image reconstruction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "antifunc",
+        "g": "unvarying",
+        "t": "permanent",
+        "x": "vertical",
+        "y": "horizontal",
+        "z": "planaraxis",
+        "S": "interior",
+        "\\phi": "distance",
+        "\\theta": "magnitude",
+        "n": "singular",
+        "r": "centerpos",
+        "x_0": "rightmost",
+        "y_0": "leftmost",
+        "z_0": "uppermost"
+      },
+      "question": "Let $antifunc$ be a continuous real-valued function on $\\mathbb{R}^3$. Suppose that for every sphere $interior$ of radius 1,\nthe integral of $antifunc(vertical,horizontal,planaraxis)$ over the surface of $interior$ equals 0. Must $antifunc(vertical,horizontal,planaraxis)$ be identically 0?",
+      "solution": "The answer is no. Let $unvarying :\\thinspace \\mathbb{R} \\to \\mathbb{R}$ be any continuous function with $unvarying(permanent+2) = unvarying(permanent)$ for all $permanent$ and $\\int_0^2 unvarying(permanent)\\,dpermanent = 0$ (for instance, $unvarying(permanent) = \\sin(\\pi permanent)$). Define $antifunc(vertical,horizontal,planaraxis) = unvarying(planaraxis)$. We claim that for any sphere $interior$ of radius $1$, $\\iint_{interior} antifunc\\,dinterior = 0$.\n\n\nIndeed, let $interior$ be the unit sphere centered at $(rightmost,leftmost,uppermost)$. We can parametrize $interior$ by $interior(distance,magnitude) = (rightmost,leftmost,uppermost)+(\\sin distance\\cos magnitude,\n\\sin distance\\sin magnitude,\\cos distance)$ for $distance \\in [0,\\pi]$ and $magnitude \\in [0,2\\pi]$. Then we have\n\n\\begin{align*}\n\\iint_{interior} antifunc(vertical,horizontal,planaraxis)\\,dinterior &= \\int_0^\\pi \\int_0^{2\\pi} antifunc(interior(distance,magnitude))\\left\\|\\frac{\\partial interior}{\\partial distance} \\times \\frac{\\partial interior}{\\partial magnitude}\\right\\|\\,dmagnitude\\,ddistance \\\\\n&=  \\int_0^\\pi \\int_0^{2\\pi} unvarying(uppermost+\\cos distance) \\sin distance\\,dmagnitude\\,ddistance \\\\\n&= 2\\pi \\int_{-1}^1 unvarying(uppermost+permanent)\\,dpermanent,\n\\end{align*}\n\nwhere we have used the substitution $permanent = \\cos distance$; but this last integral is $0$ for any $uppermost$ by construction.\n\n\\noindent\n\\textbf{Remark.}\nThe solution recovers the famous observation of Archimedes that the surface area of a spherical cap is linear in the height of the cap. In place of spherical coordinates, one may also compute $\\iint_{interior} antifunc(vertical,horizontal,planaraxis)\\,dinterior$ by computing the integral over a ball of radius $centerpos$, then computing the derivative with respect to $centerpos$ and evaluating at $centerpos=1$.\n\nNoam Elkies points out that a similar result holds in $\\mathbb{R}^{singular}$ for any $singular$. Also, there exist nonzero continuous functions on $\\mathbb{R}^{singular}$ whose integral over any unit ball vanishes; this implies certain negative results about image reconstruction."
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "g": "hjgrksla",
+        "t": "mcnlqeof",
+        "x": "pdyrhmav",
+        "y": "slktbqre",
+        "z": "vjncopas",
+        "S": "lfaqmxne",
+        "\\phi": "kzbwrtui",
+        "\\theta": "onmxirqp",
+        "n": "twcyzeul",
+        "r": "shplovda",
+        "x_0": "jebnrfqs",
+        "y_0": "ugqosdcl",
+        "z_0": "vyhkpmet"
+      },
+      "question": "Let $qzxwvtnp$ be a continuous real-valued function on $\\mathbb{R}^3$. Suppose that for every sphere $lfaqmxne$ of radius 1,\nthe integral of $qzxwvtnp(pdyrhmav,slktbqre,vjncopas)$ over the surface of $lfaqmxne$ equals 0. Must $qzxwvtnp(pdyrhmav,slktbqre,vjncopas)$ be identically 0?",
+      "solution": "The answer is no. Let $hjgrksla :\\thinspace \\mathbb{R} \\to \\mathbb{R}$ be any continuous function with $hjgrksla(mcnlqeof+2) = hjgrksla(mcnlqeof)$ for all $mcnlqeof$ and $\\int_0^2 hjgrksla(mcnlqeof)\\,d mcnlqeof = 0$ (for instance, $hjgrksla(mcnlqeof) = \\sin(\\pi mcnlqeof)$). Define $qzxwvtnp(pdyrhmav,slktbqre,vjncopas) = hjgrksla(vjncopas)$. We claim that for any sphere $lfaqmxne$ of radius $1$, $\\iint_{lfaqmxne} qzxwvtnp\\,dS = 0$.\n\nIndeed, let $lfaqmxne$ be the unit sphere centered at $(jebnrfqs,ugqosdcl,vyhkpmet)$. We can parametrize $lfaqmxne$ by $lfaqmxne(kzbwrtui,onmxirqp) = (jebnrfqs,ugqosdcl,vyhkpmet)+(\\sin kzbwrtui\\cos onmxirqp,\n\\sin kzbwrtui\\sin onmxirqp,\\cos kzbwrtui)$ for $kzbwrtui \\in [0,\\pi]$ and $onmxirqp \\in [0,2\\pi]$. Then we have\n\n\\begin{align*}\n\\iint_{lfaqmxne} qzxwvtnp(pdyrhmav,slktbqre,vjncopas)\\,dS &= \\int_0^\\pi \\int_0^{2\\pi} qzxwvtnp(lfaqmxne(kzbwrtui,onmxirqp))\\left\\|\\frac{\\partial lfaqmxne}{\\partial kzbwrtui} \\times \\frac{\\partial lfaqmxne}{\\partial onmxirqp}\\right\\|\\,d onmxirqp\\,d kzbwrtui \\\\\n&=  \\int_0^\\pi \\int_0^{2\\pi} hjgrksla(vyhkpmet+\\cos kzbwrtui) \\sin kzbwrtui\\,d onmxirqp\\,d kzbwrtui \\\\\n&= 2\\pi \\int_{-1}^1 hjgrksla(vyhkpmet+mcnlqeof)\\,d mcnlqeof,\n\\end{align*}\n\nwhere we have used the substitution $mcnlqeof = \\cos kzbwrtui$; but this last integral is $0$ for any $vyhkpmet$ by construction.\n\n\\noindent\n\\textbf{Remark.}\nThe solution recovers the famous observation of Archimedes that the surface area of a spherical cap is linear in the height of the cap. In place of spherical coordinates, one may also compute $\\iint_{lfaqmxne} qzxwvtnp(pdyrhmav,slktbqre,vjncopas)\\,dS$ by computing the integral over a ball of radius $shplovda$, then computing the derivative with respect to $shplovda$ and evaluating at $shplovda=1$.\n\nNoam Elkies points out that a similar result holds in $\\mathbb{R}^{twcyzeul}$ for any $twcyzeul$. Also, there exist nonzero continuous functions on $\\mathbb{R}^{twcyzeul}$ whose integral over any unit ball vanishes; this implies certain negative results about image reconstruction."
+    },
+    "kernel_variant": {
+      "question": "Let $f:\\mathbb R^{4}\\longrightarrow\\mathbb R$ be a continuous function with the property that for every $3$-sphere of radius $2$ (the boundary of a $4$-dimensional ball of radius $2$) one has\n\\[\n\\iint_{\\Sigma} f\\,d\\Sigma=0.\n\\]\nMust $f$ be identically zero?  Prove your claim.",
+      "solution": "Answer: No, f need not be identically zero.  We exhibit a nontrivial continuous f on \\mathbb{R}^4 whose surface integral over every 3-sphere of radius 2 vanishes.\n\nStep 1.  Choose \\lambda =j_1,_1/2, where j_1,_1\\approx 3.8317 is the first positive zero of the Bessel function J_1.  Define g(t)=sin(\\lambda t).  Then g is continuous, nonzero, and \\int _0^{2\\pi /\\lambda }g(t)dt=0.\n\nStep 2.  Define f(x_1,x_2,x_3,x_4)=g(x_1).  Clearly f\\neq 0.\n\nStep 3.  Fix any centre (a,b,c,d)\\in \\mathbb{R}^4 and let \\Sigma  be the 3-sphere of radius 2 about that centre.  By rotational symmetry, if F depends only on x_1 then\n   \\iint _\\Sigma F d\\Sigma  = C \\int _{-2}^2 F(a+t) \\sqrt{4-t^2}\n   dt,\nfor some constant C>0 (in fact C=8\\pi , though the exact value is irrelevant).\n\nStep 4.  Apply this to F(x_1)=g(x_1)=sin(\\lambda x_1):\n   \\iint _\\Sigma  f d\\Sigma  = C \\int _{-2}^2 sin(\\lambda (a+t))\\sqrt{4-t^2}\n   dt.\nWrite sin(\\lambda (a+t))=sin(\\lambda a)cos(\\lambda t)+cos(\\lambda a)sin(\\lambda t).  Since \\sqrt{4-t^2} is even, the sin(\\lambda t)-term integrates to 0, so\n   \\iint _\\Sigma  f d\\Sigma  = C\\cdot sin(\\lambda a)\\cdot \\int _{-2}^2 cos(\\lambda t)\\sqrt{4-t^2}\n   dt.\nBut the standard formula\n   \\int _{-R}^R cos(\\xi t)\\sqrt{R^2-t^2}\n   dt = (\\pi R/\\xi )J_1(R\\xi )\nimplies with R=2 and \\xi =\\lambda  that\n   \\int _{-2}^2 cos(\\lambda t)\\sqrt{4-t^2}\n   dt = (2\\pi /\\lambda )J_1(2\\lambda ) = (2\\pi /\\lambda )J_1(j_1,_1) = 0.\nHence \\iint _\\Sigma  f d\\Sigma =0 for every 3-sphere of radius 2.\n\nConclusion.  f is not identically zero but its surface integral over every 3-sphere of radius 2 vanishes.  Therefore the answer is No.",
+      "_meta": {
+        "core_steps": [
+          "Choose a non-zero continuous function g with zero average over one full period.",
+          "Set f(x,y,z)=g(z), i.e. make f depend on a single coordinate only.",
+          "Parametrize an arbitrary unit sphere and write its surface element.",
+          "Observe the z–coordinate on the sphere runs through one full period of g with the correct density.",
+          "Conclude the surface integral equals that period’s zero average, so f need not vanish identically."
+        ],
+        "mutable_slots": {
+          "radius": {
+            "description": "Fixed radius of the spheres being integrated over.",
+            "original": 1
+          },
+          "period": {
+            "description": "Length of the period of g (chosen to be twice the radius).",
+            "original": 2
+          },
+          "axis": {
+            "description": "Coordinate direction along which f is constant on planes.",
+            "original": "z"
+          },
+          "dimension": {
+            "description": "Ambient Euclidean space in which the spheres lie.",
+            "original": 3
+          },
+          "example_function": {
+            "description": "Concrete choice of g satisfying the zero-mean condition.",
+            "original": "sin(π t)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

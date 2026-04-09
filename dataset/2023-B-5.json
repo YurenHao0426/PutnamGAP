@@ -1,0 +1,120 @@
+{
+  "index": "2023-B-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Determine which positive integers $n$ have the following property:\nFor all integers $m$ that are relatively prime to $n$, there exists a permutation $\\pi\\colon \\{1,2,\\dots,n\\} \\to \\{1,2,\\dots,n\\}$ such that $\\pi(\\pi(k)) \\equiv mk \\pmod{n}$ for all $k \\in \\{1,2,\\dots,n\\}$.",
+  "solution": "The desired property holds if and only if $n = 1$ or $n \\equiv 2 \\pmod{4}$.\n\nLet $\\sigma_{n,m}$ be the permutation of $\\ZZ/n\\ZZ$ induced by multiplication by $m$; the original problem asks for which $n$ does $\\sigma_{n,m}$ always have a square root. For $n=1$, $\\sigma_{n,m}$ is the identity permutation and hence has a square root.\n\nWe next identify when a general permutation admits a square root.\n\n\\begin{lemma} \\label{lem:2023B5-2}\nA permutation $\\sigma$ in $S_n$ can be written as the square of another permutation if and only if for every even positive integer $m$, the number of cycles of length $m$ in $\\sigma$ is even.\n\\end{lemma}\n\\begin{proof}\nWe first check the ``only if'' direction. Suppose that $\\sigma = \\tau^2$. Then every cycle of $\\tau$ of length $m$ remains a cycle in $\\sigma$ if $m$ is odd, and splits into two cycles of length $m/2$ if $m$ is even.\n\nWe next check the ``if'' direction. We may partition the cycles of $\\sigma$ into individual cycles of odd length and pairs of cycles of the same even length; then we may argue as above to write each partition as the square of another permutation.\n\\end{proof}\n\nSuppose now that $n>1$ is odd. Write $n = p^e k$ where $p$ is an odd prime, $k$ is a positive integer, and $\\gcd(p,k) = 1$. \nBy the Chinese remainder theorem, we have a ring isomorphism \n\\[\n\\ZZ/n\\ZZ \\cong \\ZZ/p^e \\ZZ \\times \\ZZ/k \\ZZ.\n\\]\nRecall that the group $(\\ZZ/p^e \\ZZ)^\\times$ is cyclic; choose $m \\in \\ZZ$ reducing to a generator of $(\\ZZ/p^e \\ZZ)^\\times$ and to the identity in $(\\ZZ/k\\ZZ)^\\times$. Then $\\sigma_{n,m}$ consists of $k$ cycles (an odd number) of length $p^{e-1}(p-1)$ (an even number) plus some shorter cycles. By Lemma~\\ref{lem:2023B5-2}, $\\sigma_{n,m}$ does not have a square root.\n\nSuppose next that $n \\equiv 2 \\pmod{4}$. Write $n = 2k$ with $k$ odd, so that \n\\[\n\\ZZ/n\\ZZ \\cong \\ZZ/2\\ZZ \\times \\ZZ/k\\ZZ.\n\\]\nThen $\\sigma_{n,m}$ acts on $\\{0\\} \\times \\ZZ/k\\ZZ$ and $\\{1\\} \\times \\ZZ/k\\ZZ$ with the same cycle structure, so every cycle length occurs an even number of times. By Lemma~\\ref{lem:2023B5-2}, $\\sigma_{n,m}$ has a square root.\n\nFinally, suppose that $n$ is divisible by 4. For $m = -1$, $\\sigma_{n,m}$ consists of two fixed points ($0$ and $n/2$) together with $n/2-1$ cycles (an odd number) of length 2 (an even number). \nBy Lemma~\\ref{lem:2023B5-2}, $\\sigma_{n,m}$ does not have a square root.",
+  "vars": [
+    "n",
+    "m",
+    "k",
+    "p",
+    "e",
+    "\\\\pi",
+    "\\\\sigma_n,m",
+    "\\\\tau",
+    "S_n"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "modulusn",
+        "m": "multiplier",
+        "k": "factoral",
+        "p": "primevar",
+        "e": "exponent",
+        "\\pi": "permute",
+        "\\sigma_n,m": "sigmaperm",
+        "\\tau": "taurule",
+        "S_n": "symmcgrp"
+      },
+      "question": "Determine which positive integers $modulusn$ have the following property:\nFor all integers $multiplier$ that are relatively prime to $modulusn$, there exists a permutation $permute\\colon \\{1,2,\\dots,modulusn\\} \\to \\{1,2,\\dots,modulusn\\}$ such that $permute(permute(factoral)) \\equiv multiplier\\,factoral \\pmod{modulusn}$ for all $factoral \\in \\{1,2,\\dots,modulusn\\}$.",
+      "solution": "The desired property holds if and only if $modulusn = 1$ or $modulusn \\equiv 2 \\pmod{4}$.\n\nLet $sigmaperm$ be the permutation of $\\ZZ/modulusn\\ZZ$ induced by multiplication by $multiplier$; the original problem asks for which $modulusn$ does $sigmaperm$ always have a square root. For $modulusn=1$, $sigmaperm$ is the identity permutation and hence has a square root.\n\nWe next identify when a general permutation admits a square root.\n\n\\begin{lemma} \\label{lem:2023B5-2}\nA permutation $\\sigma$ in $symmcgrp$ can be written as the square of another permutation if and only if for every even positive integer $multiplier$, the number of cycles of length $multiplier$ in $\\sigma$ is even.\n\\end{lemma}\n\\begin{proof}\nWe first check the ``only if'' direction. Suppose that $\\sigma = taurule^2$. Then every cycle of $taurule$ of length $multiplier$ remains a cycle in $\\sigma$ if $multiplier$ is odd, and splits into two cycles of length $multiplier/2$ if $multiplier$ is even.\n\nWe next check the ``if'' direction. We may partition the cycles of $\\sigma$ into individual cycles of odd length and pairs of cycles of the same even length; then we may argue as above to write each partition as the square of another permutation.\n\\end{proof}\n\nSuppose now that $modulusn>1$ is odd. Write $modulusn = primevar^{exponent} factoral$ where $primevar$ is an odd prime, $factoral$ is a positive integer, and $\\gcd(primevar,factoral) = 1$.\nBy the Chinese remainder theorem, we have a ring isomorphism\n\\[\n\\ZZ/modulusn\\ZZ \\cong \\ZZ/primevar^{exponent} \\ZZ \\times \\ZZ/factoral \\ZZ.\n\\]\nRecall that the group $(\\ZZ/primevar^{exponent} \\ZZ)^\\times$ is cyclic; choose $multiplier \\in \\ZZ$ reducing to a generator of $(\\ZZ/primevar^{exponent} \\ZZ)^\\times$ and to the identity in $(\\ZZ/factoral\\ZZ)^\\times$. Then $sigmaperm$ consists of $factoral$ cycles (an odd number) of length $primevar^{exponent-1}(primevar-1)$ (an even number) plus some shorter cycles. By Lemma~\\ref{lem:2023B5-2}, $sigmaperm$ does not have a square root.\n\nSuppose next that $modulusn \\equiv 2 \\pmod{4}$. Write $modulusn = 2factoral$ with $factoral$ odd, so that\n\\[\n\\ZZ/modulusn\\ZZ \\cong \\ZZ/2\\ZZ \\times \\ZZ/factoral\\ZZ.\n\\]\nThen $sigmaperm$ acts on $\\{0\\} \\times \\ZZ/factoral\\ZZ$ and $\\{1\\} \\times \\ZZ/factoral\\ZZ$ with the same cycle structure, so every cycle length occurs an even number of times. By Lemma~\\ref{lem:2023B5-2}, $sigmaperm$ has a square root.\n\nFinally, suppose that $modulusn$ is divisible by 4. For $multiplier = -1$, $sigmaperm$ consists of two fixed points ($0$ and $modulusn/2$) together with $modulusn/2-1$ cycles (an odd number) of length 2 (an even number).\nBy Lemma~\\ref{lem:2023B5-2}, $sigmaperm$ does not have a square root."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "compassone",
+        "m": "gardenkey",
+        "k": "lanterns",
+        "p": "quilting",
+        "e": "harmonic",
+        "\\\\pi": "sunflower",
+        "\\\\sigma_n,m": "windchime",
+        "\\\\tau": "lighthouse",
+        "S_n": "archipelago"
+      },
+      "question": "Determine which positive integers $compassone$ have the following property:\nFor all integers $gardenkey$ that are relatively prime to $compassone$, there exists a permutation $sunflower\\colon \\{1,2,\\dots,compassone\\} \\to \\{1,2,\\dots,compassone\\}$ such that $sunflower(sunflower(lanterns)) \\equiv gardenkey\\,lanterns \\pmod{compassone}$ for all $lanterns \\in \\{1,2,\\dots,compassone\\}$.",
+      "solution": "The desired property holds if and only if $compassone = 1$ or $compassone \\equiv 2 \\pmod{4}$.\n\nLet $windchime_{\\compassone,\\gardenkey}$ be the permutation of $\\ZZ/compassone\\ZZ$ induced by multiplication by $gardenkey$; the original problem asks for which $compassone$ does $windchime_{\\compassone,\\gardenkey}$ always have a square root. For $compassone = 1$, $windchime_{\\compassone,\\gardenkey}$ is the identity permutation and hence has a square root.\n\nWe next identify when a general permutation admits a square root.\n\n\\begin{lemma} \\label{lem:2023B5-2}\nA permutation $\\sigma$ in $archipelago_{\\compassone}$ can be written as the square of another permutation if and only if for every even positive integer $gardenkey$, the number of cycles of length $gardenkey$ in $\\sigma$ is even.\n\\end{lemma}\n\\begin{proof}\nWe first check the ``only if'' direction. Suppose that $\\sigma = lighthouse^2$. Then every cycle of $lighthouse$ of length $gardenkey$ remains a cycle in $\\sigma$ if $gardenkey$ is odd, and splits into two cycles of length $gardenkey/2$ if $gardenkey$ is even.\n\nWe next check the ``if'' direction. We may partition the cycles of $\\sigma$ into individual cycles of odd length and pairs of cycles of the same even length; then we may argue as above to write each partition as the square of another permutation.\n\\end{proof}\n\nSuppose now that $compassone > 1$ is odd. Write $compassone = quilting^{harmonic} \\; lanterns$ where $quilting$ is an odd prime, $lanterns$ is a positive integer, and $\\gcd(quilting,lanterns) = 1$.\nBy the Chinese remainder theorem, we have a ring isomorphism\n\\[\n\\ZZ/compassone\\ZZ \\cong \\ZZ/quilting^{harmonic}\\ZZ \\times \\ZZ/lanterns\\ZZ.\n\\]\nRecall that the group $(\\ZZ/quilting^{harmonic}\\ZZ)^{\\times}$ is cyclic; choose $gardenkey \\in \\ZZ$ reducing to a generator of $(\\ZZ/quilting^{harmonic}\\ZZ)^{\\times}$ and to the identity in $(\\ZZ/lanterns\\ZZ)^{\\times}$. Then $windchime_{\\compassone,\\gardenkey}$ consists of $lanterns$ cycles (an odd number) of length $quilting^{harmonic-1}(quilting-1)$ (an even number) plus some shorter cycles. By Lemma~\\ref{lem:2023B5-2}, $windchime_{\\compassone,\\gardenkey}$ does not have a square root.\n\nSuppose next that $compassone \\equiv 2 \\pmod{4}$. Write $compassone = 2\\,lanterns$ with $lanterns$ odd, so that\n\\[\n\\ZZ/compassone\\ZZ \\cong \\ZZ/2\\ZZ \\times \\ZZ/lanterns\\ZZ.\n\\]\nThen $windchime_{\\compassone,\\gardenkey}$ acts on $\\{0\\} \\times \\ZZ/lanterns\\ZZ$ and $\\{1\\} \\times \\ZZ/lanterns\\ZZ$ with the same cycle structure, so every cycle length occurs an even number of times. By Lemma~\\ref{lem:2023B5-2}, $windchime_{\\compassone,\\gardenkey}$ has a square root.\n\nFinally, suppose that $compassone$ is divisible by 4. For $gardenkey = -1$, $windchime_{\\compassone,\\gardenkey}$ consists of two fixed points ($0$ and $compassone/2$) together with $compassone/2 - 1$ cycles (an odd number) of length 2 (an even number). By Lemma~\\ref{lem:2023B5-2}, $windchime_{\\compassone,\\gardenkey}$ does not have a square root."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "infinitesize",
+        "m": "compositefactor",
+        "k": "evenparameter",
+        "p": "compositenumber",
+        "e": "basemember",
+        "\\pi": "identitymap",
+        "\\sigma_{n,m}": "additionstatic",
+        "\\tau": "randomperm",
+        "S_n": "asymmetricset"
+      },
+      "question": "Determine which positive integers $infinitesize$ have the following property:\nFor all integers $compositefactor$ that are relatively prime to $infinitesize$, there exists a permutation $identitymap\\colon \\{1,2,\\dots,infinitesize\\} \\to \\{1,2,\\dots,infinitesize\\}$ such that $identitymap(identitymap(evenparameter)) \\equiv compositefactor evenparameter \\pmod{infinitesize}$ for all $evenparameter \\in \\{1,2,\\dots,infinitesize\\}$.",
+      "solution": "The desired property holds if and only if $infinitesize = 1$ or $infinitesize \\equiv 2 \\pmod{4}$.\n\nLet $additionstatic$ be the permutation of $\\ZZ/infinitesize\\ZZ$ induced by multiplication by $compositefactor$; the original problem asks for which $infinitesize$ does $additionstatic$ always have a square root. For $infinitesize=1$, $additionstatic$ is the identity permutation and hence has a square root.\n\nWe next identify when a general permutation admits a square root.\n\n\\begin{lemma} \\label{lem:2023B5-2}\nA permutation $\\sigma$ in $asymmetricset$ can be written as the square of another permutation if and only if for every even positive integer $compositefactor$, the number of cycles of length $compositefactor$ in $\\sigma$ is even.\n\\end{lemma}\n\\begin{proof}\nWe first check the ``only if'' direction. Suppose that $\\sigma = randomperm^2$. Then every cycle of $randomperm$ of length $compositefactor$ remains a cycle in $\\sigma$ if $compositefactor$ is odd, and splits into two cycles of length $compositefactor/2$ if $compositefactor$ is even.\n\nWe next check the ``if'' direction. We may partition the cycles of $\\sigma$ into individual cycles of odd length and pairs of cycles of the same even length; then we may argue as above to write each partition as the square of another permutation.\n\\end{proof}\n\nSuppose now that $infinitesize>1$ is odd. Write $infinitesize = compositenumber^{basemember} evenparameter$ where $compositenumber$ is an odd prime, $evenparameter$ is a positive integer, and $\\gcd(compositenumber,evenparameter) = 1$. \nBy the Chinese remainder theorem, we have a ring isomorphism \n\\[\n\\ZZ/infinitesize\\ZZ \\cong \\ZZ/compositenumber^{basemember} \\ZZ \\times \\ZZ/evenparameter \\ZZ.\n\\]\nRecall that the group $(\\ZZ/compositenumber^{basemember} \\ZZ)^\\times$ is cyclic; choose $compositefactor \\in \\ZZ$ reducing to a generator of $(\\ZZ/compositenumber^{basemember} \\ZZ)^\\times$ and to the identity in $(\\ZZ/evenparameter\\ZZ)^\\times$. Then $additionstatic$ consists of $evenparameter$ cycles (an odd number) of length $compositenumber^{basemember-1}(compositenumber-1)$ (an even number) plus some shorter cycles. By Lemma~\\ref{lem:2023B5-2}, $additionstatic$ does not have a square root.\n\nSuppose next that $infinitesize \\equiv 2 \\pmod{4}$. Write $infinitesize = 2evenparameter$ with $evenparameter$ odd, so that \n\\[\n\\ZZ/infinitesize\\ZZ \\cong \\ZZ/2\\ZZ \\times \\ZZ/evenparameter\\ZZ.\n\\]\nThen $additionstatic$ acts on $\\{0\\} \\times \\ZZ/evenparameter\\ZZ$ and $\\{1\\} \\times \\ZZ/evenparameter\\ZZ$ with the same cycle structure, so every cycle length occurs an even number of times. By Lemma~\\ref{lem:2023B5-2}, $additionstatic$ has a square root.\n\nFinally, suppose that $infinitesize$ is divisible by 4. For $compositefactor = -1$, $additionstatic$ consists of two fixed points ($0$ and $infinitesize/2$) together with $infinitesize/2-1$ cycles (an odd number) of length 2 (an even number). \nBy Lemma~\\ref{lem:2023B5-2}, $additionstatic$ does not have a square root."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "m": "hjgrksla",
+        "k": "pqowjehr",
+        "p": "xmvnlksa",
+        "e": "zcnvmbqw",
+        "\\pi": "ouytrewq",
+        "\\\\sigma_n,m": "aftyqplm",
+        "\\tau": "wfghjkle",
+        "S_n": "crjtbvsa"
+      },
+      "question": "Determine which positive integers $qzxwvtnp$ have the following property:\nFor all integers $hjgrksla$ that are relatively prime to $qzxwvtnp$, there exists a permutation $ouytrewq\\colon \\{1,2,\\dots,qzxwvtnp\\} \\to \\{1,2,\\dots,qzxwvtnp\\}$ such that $ouytrewq(ouytrewq(pqowjehr)) \\equiv hjgrksla pqowjehr \\pmod{qzxwvtnp}$ for all $pqowjehr \\in \\{1,2,\\dots,qzxwvtnp\\}$.",
+      "solution": "The desired property holds if and only if $qzxwvtnp = 1$ or $qzxwvtnp \\equiv 2 \\pmod{4}$.\n\nLet $aftyqplm$ be the permutation of $\\ZZ/qzxwvtnp\\ZZ$ induced by multiplication by $hjgrksla$; the original problem asks for which $qzxwvtnp$ does $aftyqplm$ always have a square root. For $qzxwvtnp=1$, $aftyqplm$ is the identity permutation and hence has a square root.\n\nWe next identify when a general permutation admits a square root.\n\n\\begin{lemma} \\label{lem:2023B5-2}\nA permutation $\\sigma$ in $crjtbvsa$ can be written as the square of another permutation if and only if for every even positive integer $hjgrksla$, the number of cycles of length $hjgrksla$ in $\\sigma$ is even.\n\\end{lemma}\n\\begin{proof}\nWe first check the ``only if'' direction. Suppose that $\\sigma = wfghjkle^2$. Then every cycle of $wfghjkle$ of length $hjgrksla$ remains a cycle in $\\sigma$ if $hjgrksla$ is odd, and splits into two cycles of length $hjgrksla/2$ if $hjgrksla$ is even.\n\nWe next check the ``if'' direction. We may partition the cycles of $\\sigma$ into individual cycles of odd length and pairs of cycles of the same even length; then we may argue as above to write each partition as the square of another permutation.\n\\end{proof}\n\nSuppose now that $qzxwvtnp>1$ is odd. Write $qzxwvtnp = xmvnlksa^{zcnvmbqw} pqowjehr$ where $xmvnlksa$ is an odd prime, $pqowjehr$ is a positive integer, and $\\gcd(xmvnlksa,pqowjehr) = 1$. \nBy the Chinese remainder theorem, we have a ring isomorphism \n\\[\n\\ZZ/qzxwvtnp\\ZZ \\cong \\ZZ/xmvnlksa^{zcnvmbqw} \\ZZ \\times \\ZZ/pqowjehr \\ZZ.\n\\]\nRecall that the group $(\\ZZ/xmvnlksa^{zcnvmbqw} \\ZZ)^\\times$ is cyclic; choose $hjgrksla \\in \\ZZ$ reducing to a generator of $(\\ZZ/xmvnlksa^{zcnvmbqw} \\ZZ)^\\times$ and to the identity in $(\\ZZ/pqowjehr\\ZZ)^\\times$. Then $aftyqplm$ consists of $pqowjehr$ cycles (an odd number) of length $xmvnlksa^{zcnvmbqw-1}(xmvnlksa-1)$ (an even number) plus some shorter cycles. By Lemma~\\ref{lem:2023B5-2}, $aftyqplm$ does not have a square root.\n\nSuppose next that $qzxwvtnp \\equiv 2 \\pmod{4}$. Write $qzxwvtnp = 2pqowjehr$ with $pqowjehr$ odd, so that \n\\[\n\\ZZ/qzxwvtnp\\ZZ \\cong \\ZZ/2\\ZZ \\times \\ZZ/pqowjehr\\ZZ.\n\\]\nThen $aftyqplm$ acts on $\\{0\\} \\times \\ZZ/pqowjehr\\ZZ$ and $\\{1\\} \\times \\ZZ/pqowjehr\\ZZ$ with the same cycle structure, so every cycle length occurs an even number of times. By Lemma~\\ref{lem:2023B5-2}, $aftyqplm$ has a square root.\n\nFinally, suppose that $qzxwvtnp$ is divisible by 4. For $hjgrksla = -1$, $aftyqplm$ consists of two fixed points ($0$ and $qzxwvtnp/2$) together with $qzxwvtnp/2-1$ cycles (an odd number) of length 2 (an even number). \nBy Lemma~\\ref{lem:2023B5-2}, $aftyqplm$ does not have a square root."
+    },
+    "kernel_variant": {
+      "question": "For a positive integer $n$ let\n$$\boxed{\\mathcal S_n=\\Bigl\\{\\,-\\Bigl\\lfloor\\frac{n-1}{2}\\Bigr\\rfloor,\",-\\Bigl\\lfloor\\frac{n-1}{2}\\Bigr\\rfloor+1,\\dots ,\\Bigl\\lfloor\\frac{n}{2}\\Bigr\\rfloor\\Bigr\\}}$$\nbe the symmetric system of representatives for $\\mathbb Z/n\\mathbb Z$.  \nDetermine all positive integers $n$ having the following property:\n\n(P)\nFor every integer $m$ with $\\gcd(m,n)=1$ there exists a bijection\n$\\pi:\\mathcal S_n\\to \\mathcal S_n$ such that\n$$\\pi\\bigl(\\pi(k)\\bigr)\\equiv m k\\pmod n \\qquad(\\forall k\\in\\mathcal S_n).$$",
+      "solution": "We identify \\(S_n\\) with \\(\\ZZ/n\\ZZ\\) and write \\(\\sigma_{n,m}:\\ZZ/n\\ZZ\\to\\ZZ/n\\ZZ\\) for the map \\(x\\mapsto m\\,x\\pmod n\\).  The problem asks: for which \\(n\\) does every \\(\\sigma_{n,m}\\) (with \\((m,n)=1\\)) admit a square root in the symmetric group on \\(n\\) points?  We use the following classical criterion:\n\nLemma.  A permutation \\(\\sigma\\) is a square in \\(S_n\\) if and only if for every even integer \\(d\\), the number of \\(d\\)-cycles of \\(\\sigma\\) is even.\nProof.  If \\(\\sigma=\\tau^2\\), then each odd-cycle of \\(\\tau\\) remains one odd-cycle in \\(\\sigma\\), while each even-cycle of \\(\\tau\\) of length \\(2k\\) splits into two \\(k\\)-cycles in \\(\\sigma\\).  Hence \\(\\sigma\\) has an even number of cycles of each even length.  Conversely, if \\(\\sigma\\) has an even number of cycles of each even length, one can pair them off and reverse the splitting process to build \\(\\tau\\).\n\nCase 1: \\(n=1.\\)  Trivial: the only permutation is the identity, which is a square.\n\nCase 2: \\(n>1\\) odd.  Write \\(n=p^e k\\) with \\(p\\) an odd prime, \\(e\\ge1\\), \\(\\gcd(p,k)=1\\).  By the Chinese Remainder Theorem,\n\\(\\ZZ/n\\ZZ\\cong\\ZZ/p^e\\ZZ\\times\\ZZ/k\\ZZ.\\)\nChoose \\(m\\) with\n\\[m\\equiv g\\; (\\bmod\\,p^e),\\quad m\\equiv1\\;(\\bmod\\,k),\\]\nwhere \\(g\\) is a generator of \\((\\ZZ/p^e\\ZZ)^\\times\\).  Then \\(\\sigma_{n,m}(x,y)=(g\\,x,y)\\).  For each \\(0\\le s<e\\), points with \\(v_p(x)=s\\) lie in cycles of length \\(d_s=\\phi(p^{e-s})\\), which is even since \\(p-1\\) is even.  There are exactly \\(\\phi(p^{e-s})\\cdot k\\) such points, so \\(k\\) cycles of that (even) length.  Since \\(k\\) is odd, each even cycle-length occurs an odd number of times, so by the Lemma \\(\\sigma_{n,m}\\) is not a square.  Hence no odd \\(n>1\\) satisfies the property.\n\nCase 3: \\(n\\equiv2\\pmod4.\\)  Write \\(n=2k\\) with \\(k\\) odd, so\n\\(\\ZZ/n\\ZZ\\cong\\ZZ/2\\ZZ\\times\\ZZ/k\\ZZ.\\)\nAny \\(m\\) with \\((m,n)=1\\) is odd, so on the first factor the map is the identity.  Thus every cycle in the action on \\(\\ZZ/k\\ZZ\\) appears twice (once on each coset of \\(\\ZZ/2\\ZZ\\)), and hence every cycle-length occurs an even number of times.  By the Lemma, \\(\\sigma_{n,m}\\) is a square for every such \\(m\\).  Thus all \\(n\\equiv2\\pmod4\\) satisfy (P).\n\nCase 4: \\(n\\) divisible by 4.  Write \\(n=4t\\), and take \\(m\\equiv-1\\pmod n\\).  Then \\(\\sigma_{n,m}(x)=-x\\) is an involution with two fixed points (\\(x=0,n/2\\)) and \\((n-2)/2=2t-1\\) transpositions.  Since there is an odd number of 2-cycles, the Lemma forbids a square root.  Hence no multiple of 4 satisfies (P).\n\nConclusion.  The only positive integers \\(n\\) with the required property are exactly\n\\[n=1\\quad\\text{or}\\quad n\\equiv2\\pmod4.\\]  This agrees with the official answer.",
+      "_meta": {
+        "core_steps": [
+          "Translate the question into: when does the multiplication–by–m permutation σ_{n,m} on ℤ/nℤ admit a square root?",
+          "Invoke the permutation–square criterion: a permutation is a square ⇔ every even cycle‐length occurs an even number of times.",
+          "Describe the cycle structure of σ_{n,m} by decomposing ℤ/nℤ with the Chinese Remainder Theorem.",
+          "For ‘bad’ n (odd >1 or ≡0 mod 4) build an m whose cycles violate the criterion, so at least one σ_{n,m} has no square root.",
+          "For ‘good’ n (≡2 mod 4 or n=1) show every σ_{n,m} automatically pairs its even cycles, hence all have square roots."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "How the residue classes of ℤ/nℤ are named (e.g. {0,…,n−1} vs {1,…,n})",
+            "original": "0,1,…,n−1 representatives are used."
+          },
+          "slot2": {
+            "description": "Which odd prime divisor p of an odd n is singled out for the CRT split",
+            "original": "The first mentioned divisor is an arbitrary odd prime p with n = p^e·k."
+          },
+          "slot3": {
+            "description": "Concrete choice of m that is a generator mod p^e and 1 mod k (any such m works)",
+            "original": "m reduces to a generator of (ℤ/p^eℤ)^× and to 1 in (ℤ/kℤ)^×."
+          },
+          "slot4": {
+            "description": "Particular m chosen when n is divisible by 4 to create 2-cycles",
+            "original": "m = −1 (i.e. n−1 modulo n)."
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

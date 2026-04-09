@@ -1,0 +1,164 @@
+{
+  "index": "2021-B-3",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $h(x,y)$ be a real-valued function that is twice continuously differentiable throughout $\\mathbb{R}^2$, and define\n\\[\n\\rho(x,y) = yh_x - xh_y.\n\\]\nProve or disprove: For any positive constants $d$ and $r$ with $d>r$, there is a circle $\\mathcal{S}$ of radius $r$ whose center is a distance $d$ away from the origin such that the integral of $\\rho$ over the interior of $\\mathcal{S}$ is zero.",
+  "solution": "We prove the given statement.\n\nFor any circle $\\mathcal{S}$ of radius $r$ whose center is at distance $d$ from the origin, express the integral in polar coordinates $s,\\theta$:\n\\[\n\\iint_{\\mathcal{S}} \\rho = \\int_{s_1}^{s_2} \\int_{\\theta_1(s)}^{\\theta_2(s)} (yh_x - xh_y)(s \\sin \\theta, s \\cos \\theta) s\\,d\\theta\\,ds.\n\\]\nFor fixed $s$, the integral over $\\theta$ is a line integral of $\\mathrm{grad} \\, h$, which evaluates to $h(P_2) - h(P_1)$\nwhere $P_1, P_2$ are the endpoints of the endpoints of the arc of the circle of radius $s$ centered at the origin lying within $\\mathcal{S}$. If we now fix $r$ and $d$ and integrate $\\iint_{\\mathcal{S}} \\rho$ over all choices of $\\mathcal{S}$ (this amounts to a single integral over an angle in the range $[0, 2\\pi]$), we may interchange the order of integration to first integrate over $\\theta$,\nthen over the choice of $\\mathcal{S}$, and at this point we get 0 for every $s$.\nWe conclude that the integral of $\\iint_{\\mathcal{S}}$ over all choices of $\\mathcal{S}$ vanishes; since the given integral varies continuously in $\\mathcal{S}$, by the intermediate value theorem there must be some $\\mathcal{S}$  where the given integral is 0.",
+  "vars": [
+    "x",
+    "y",
+    "s",
+    "\\\\theta"
+  ],
+  "params": [
+    "d",
+    "r",
+    "h",
+    "h_x",
+    "h_y",
+    "\\\\rho",
+    "S",
+    "s_1",
+    "s_2",
+    "\\\\theta_1",
+    "\\\\theta_2",
+    "P_1",
+    "P_2"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "s": "radiusvar",
+        "\\theta": "anglevar",
+        "d": "distance",
+        "r": "circler",
+        "h": "heightfn",
+        "h_x": "heightdx",
+        "h_y": "heightdy",
+        "\\rho": "integrand",
+        "S": "circleab",
+        "s_1": "firstlim",
+        "s_2": "secondli",
+        "\\theta_1": "angleone",
+        "\\theta_2": "angletwo",
+        "P_1": "firstpt",
+        "P_2": "secondpt"
+      },
+      "question": "Let $heightfn(abscissa,ordinate)$ be a real-valued function that is twice continuously differentiable throughout $\\mathbb{R}^2$, and define\n\\[\nintegrand(abscissa,ordinate) = ordinate\\,heightdx - abscissa\\,heightdy.\n\\]\nProve or disprove: For any positive constants $distance$ and $circler$ with $distance>circler$, there is a circle $\\mathcal{circleab}$ of radius $circler$ whose center is a distance $distance$ away from the origin such that the integral of $integrand$ over the interior of $\\mathcal{circleab}$ is zero.",
+      "solution": "We prove the given statement.\n\nFor any circle $\\mathcal{circleab}$ of radius $circler$ whose center is at distance $distance$ from the origin, express the integral in polar coordinates $radiusvar,anglevar$:\n\\[\n\\iint_{\\mathcal{circleab}} integrand = \\int_{firstlim}^{secondli} \\int_{angleone(radiusvar)}^{angletwo(radiusvar)} (ordinate\\,heightdx - abscissa\\,heightdy)(radiusvar \\sin anglevar,\\, radiusvar \\cos anglevar)\\, radiusvar\\,danglevar\\,dradiusvar.\n\\]\nFor fixed $radiusvar$, the integral over $anglevar$ is a line integral of $\\mathrm{grad}\\, heightfn$, which evaluates to $heightfn(secondpt) - heightfn(firstpt)$ where $firstpt, secondpt$ are the endpoints of the arc of the circle of radius $radiusvar$ centered at the origin lying within $\\mathcal{circleab}$. If we now fix $circler$ and $distance$ and integrate $\\iint_{\\mathcal{circleab}} integrand$ over all choices of $\\mathcal{circleab}$ (this amounts to a single integral over an angle in the range $[0, 2\\pi]$), we may interchange the order of integration to first integrate over $anglevar$, then over the choice of $\\mathcal{circleab}$, and at this point we get $0$ for every $radiusvar$.\n\nWe conclude that the integral of $\\iint_{\\mathcal{circleab}}$ over all choices of $\\mathcal{circleab}$ vanishes; since the given integral varies continuously in $\\mathcal{circleab}$, by the intermediate value theorem there must be some $\\mathcal{circleab}$ where the given integral is $0$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pinegreen",
+        "y": "amberleaf",
+        "s": "stonewall",
+        "\\theta": "brightsky",
+        "d": "coralreef",
+        "r": "silktouch",
+        "h": "starlight",
+        "h_x": "moonriver",
+        "h_y": "sweetwind",
+        "\\rho": "blossompe",
+        "S": "rainstorm",
+        "s_1": "goldentip",
+        "s_2": "blueshade",
+        "\\theta_1": "redsunset",
+        "\\theta_2": "greendawn",
+        "P_1": "ivorystone",
+        "P_2": "silvermoon"
+      },
+      "question": "Let $starlight(pinegreen,amberleaf)$ be a real-valued function that is twice continuously differentiable throughout $\\mathbb{R}^2$, and define\n\\[\nblossompe(pinegreen,amberleaf) = amberleaf moonriver - pinegreen sweetwind.\n\\]\nProve or disprove: For any positive constants $coralreef$ and $silktouch$ with $coralreef>silktouch$, there is a circle $\\mathcal{rainstorm}$ of radius $silktouch$ whose center is a distance $coralreef$ away from the origin such that the integral of $blossompe$ over the interior of $\\mathcal{rainstorm}$ is zero.",
+      "solution": "We prove the given statement.\n\nFor any circle $\\mathcal{rainstorm}$ of radius $silktouch$ whose center is at distance $coralreef$ from the origin, express the integral in polar coordinates $stonewall,brightsky$:\n\\[\n\\iint_{\\mathcal{rainstorm}} blossompe = \\int_{goldentip}^{blueshade} \\int_{redsunset(stonewall)}^{greendawn(stonewall)} (amberleaf\\, moonriver - pinegreen\\, sweetwind)(stonewall \\sin brightsky, stonewall \\cos brightsky)\\, stonewall\\,d brightsky\\,d stonewall.\n\\]\nFor fixed $stonewall$, the integral over $brightsky$ is a line integral of $\\mathrm{grad}\\, starlight$, which evaluates to $starlight(silvermoon) - starlight(ivorystone)$ where $ivorystone,\\, silvermoon$ are the endpoints of the arc of the circle of radius $stonewall$ centered at the origin lying within $\\mathcal{rainstorm}$. If we now fix $silktouch$ and $coralreef$ and integrate $\\iint_{\\mathcal{rainstorm}} blossompe$ over all choices of $\\mathcal{rainstorm}$ (this amounts to a single integral over an angle in the range $[0, 2\\pi]$), we may interchange the order of integration to first integrate over $brightsky$, then over the choice of $\\mathcal{rainstorm}$, and at this point we get 0 for every $stonewall$.\n\nWe conclude that the integral of $\\iint_{\\mathcal{rainstorm}}$ over all choices of $\\mathcal{rainstorm}$ vanishes; since the given integral varies continuously in $\\mathcal{rainstorm}$, by the intermediate value theorem there must be some $\\mathcal{rainstorm}$ where the given integral is 0."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "s": "tangentlength",
+        "\\\\theta": "lengthvalue",
+        "d": "closeness",
+        "r": "diameterlength",
+        "h": "constantvalue",
+        "h_x": "antiderivative",
+        "h_y": "integralvalue",
+        "\\\\rho": "emptiness",
+        "S": "squarezone",
+        "s_1": "tangentialone",
+        "s_2": "tangentialtwo",
+        "\\\\theta_1": "lengthone",
+        "\\\\theta_2": "lengthtwo",
+        "P_1": "linealpha",
+        "P_2": "linebeta"
+      },
+      "question": "Let $constantvalue(verticalaxis,horizontalaxis)$ be a real-valued function that is twice continuously differentiable throughout $\\mathbb{R}^2$, and define\n\\[\nemptiness(verticalaxis,horizontalaxis) = horizontalaxis antiderivative - verticalaxis integralvalue.\n\\]\nProve or disprove: For any positive constants $closeness$ and $diameterlength$ with $closeness>diameterlength$, there is a circle $\\mathcal{squarezone}$ of radius $diameterlength$ whose center is a distance $closeness$ away from the origin such that the integral of $emptiness$ over the interior of $\\mathcal{squarezone}$ is zero.",
+      "solution": "We prove the given statement.\n\nFor any circle $\\mathcal{squarezone}$ of radius $diameterlength$ whose center is at distance $closeness$ from the origin, express the integral in polar coordinates $tangentlength,lengthvalue$:\n\\[\n\\iint_{\\mathcal{squarezone}} emptiness = \\int_{tangentialone}^{tangentialtwo} \\int_{lengthone(tangentlength)}^{lengthtwo(tangentlength)} (horizontalaxis antiderivative - verticalaxis integralvalue)(tangentlength \\sin lengthvalue, \\; tangentlength \\cos lengthvalue) \\, tangentlength\\,d lengthvalue\\,d tangentlength.\n\\]\nFor fixed $tangentlength$, the integral over $lengthvalue$ is a line integral of $\\mathrm{grad}\\, constantvalue$, which evaluates to $constantvalue(linebeta) - constantvalue(linealpha)$ where $linealpha, linebeta$ are the endpoints of the arc of the circle of radius $tangentlength$ centered at the origin lying within $\\mathcal{squarezone}$. If we now fix $diameterlength$ and $closeness$ and integrate $\\iint_{\\mathcal{squarezone}} emptiness$ over all choices of $\\mathcal{squarezone}$ (this amounts to a single integral over an angle in the range $[0,2\\pi]$), we may interchange the order of integration to first integrate over $lengthvalue$, then over the choice of $\\mathcal{squarezone}$, and at this point we get $0$ for every $tangentlength$.\n\nWe conclude that the integral $\\iint_{\\mathcal{squarezone}} emptiness$ averaged over all choices of $\\mathcal{squarezone}$ vanishes; since the given integral varies continuously in $\\mathcal{squarezone}$, the intermediate value theorem guarantees that there exists some $\\mathcal{squarezone}$ for which the integral is exactly $0$. Thus the statement is proved."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "s": "mflqwert",
+        "\\theta": "bnvcxzas",
+        "d": "poirueht",
+        "r": "lkjhgdas",
+        "h": "cvbnmwer",
+        "h_x": "asdfghjk",
+        "h_y": "qweruiop",
+        "\\rho": "zxcvbnas",
+        "S": "poiulkjh",
+        "s_1": "nmqowieu",
+        "s_2": "plmnbvca",
+        "\\theta_1": "iuytrewq",
+        "\\theta_2": "qazwsxed",
+        "P_1": "mnbvcxza",
+        "P_2": "lkjhgfdw"
+      },
+      "question": "Let $cvbnmwer(qzxwvtnp,hjgrksla)$ be a real-valued function that is twice continuously differentiable throughout $\\mathbb{R}^2$, and define\n\\[\nzxcvbnas(qzxwvtnp,hjgrksla) = hjgrksla\\,asdfghjk - qzxwvtnp\\,qweruiop.\n\\]\nProve or disprove: For any positive constants $poirueht$ and $lkjhgdas$ with $poirueht>lkjhgdas$, there is a circle $\\mathcal{poiulkjh}$ of radius $lkjhgdas$ whose center is a distance $poirueht$ away from the origin such that the integral of $zxcvbnas$ over the interior of $\\mathcal{poiulkjh}$ is zero.",
+      "solution": "We prove the given statement.\n\nFor any circle $\\mathcal{poiulkjh}$ of radius $lkjhgdas$ whose center is at distance $poirueht$ from the origin, express the integral in polar coordinates $mflqwert,bnvcxzas$:\n\\[\n\\iint_{\\mathcal{poiulkjh}} zxcvbnas = \\int_{nmqowieu}^{plmnbvca} \\int_{iuytrewq(mflqwert)}^{qazwsxed(mflqwert)} (hjgrksla\\,asdfghjk - qzxwvtnp\\,qweruiop)(mflqwert \\sin bnvcxzas, mflqwert \\cos bnvcxzas) mflqwert\\,d bnvcxzas\\,d mflqwert.\n\\]\nFor fixed $mflqwert$, the integral over $bnvcxzas$ is a line integral of $\\mathrm{grad} \\, cvbnmwer$, which evaluates to $cvbnmwer(lkjhgfdw) - cvbnmwer(mnbvcxza)$ where $mnbvcxza, lkjhgfdw$ are the endpoints of the arc of the circle of radius $mflqwert$ centered at the origin lying within $\\mathcal{poiulkjh}$. If we now fix $lkjhgdas$ and $poirueht$ and integrate $\\iint_{\\mathcal{poiulkjh}} zxcvbnas$ over all choices of $\\mathcal{poiulkjh}$ (this amounts to a single integral over an angle in the range $[0, 2\\pi]$), we may interchange the order of integration to first integrate over $bnvcxzas$, then over the choice of $\\mathcal{poiulkjh}$, and at this point we get $0$ for every $mflqwert$.\n\nWe conclude that the integral of $\\iint_{\\mathcal{poiulkjh}}$ over all choices of $\\mathcal{poiulkjh}$ vanishes; since the given integral varies continuously in $\\mathcal{poiulkjh}$, by the intermediate value theorem there must be some $\\mathcal{poiulkjh}$ where the given integral is $0$.",
+      "confidence": "0.20"
+    },
+    "kernel_variant": {
+      "question": "Let r and d be positive real numbers with d>2r.  \nLet h:\\mathbb R^2\\to\\mathbb R be a real-analytic function on a neighbourhood of the closed disk \\{(x,y):x^2+y^2\\le(d+r)^2\\}.  \nFix a non-zero real constant c and define\n\\[\\rho(x,y)=c\\bigl(x\\,h_y(x,y)-y\\,h_x(x,y)\\bigr).\\]\nShow that there exists a circle \\mathcal S of radius r whose centre is at distance d from the origin such that\n\\[\\iint_{\\mathcal S}\\rho(x,y)\\,dx\\,dy=0.\\]",
+      "solution": "Corrected Solution.\n\nLet h be C^2 (even real-analytic) on a neighborhood of the disk of radius d+r, fix r>0, d>r, and c\\neq 0.  For each \\varphi \\in [0,2\\pi ] let S_\\varphi  be the closed disk of radius r centered at C_\\varphi =(d cos\\varphi ,d sin\\varphi ).  Define\n\n  I(\\varphi )=\\iint _{S_\\varphi } c\bigl(x h_y(x,y)-y h_x(x,y)\bigr)\n         dx dy.\n\nWe will show that \\varphi \\mapsto I(\\varphi ) is continuous and that its average over [0,2\\pi ] is zero, so by the Intermediate Value Theorem there is \\varphi _0 with I(\\varphi _0)=0.  That \\varphi _0 yields the required circle.\n\n1. Polar coordinates.  Write (x,y)=(s cos\\theta ,s sin\\theta ), so dx dy=s ds d\\theta .  For fixed \\varphi  and s define the arc\n\n  A_\\varphi (s)=\\{\\theta \\in [0,2\\pi ): (s cos\\theta ,s sin\\theta )\\in S_\\varphi \\}.\n\nAn elementary distance check shows A_\\varphi (s)=\\emptyset  unless d-r\\leq s\\leq d+r, and when d-r\\leq s\\leq d+r it is a single closed \\theta -interval of length 2\\alpha (s), where\n\n  \\alpha (s)=arccos\\bigl((s^2+d^2-r^2)/(2sd)\\).\n\nHence\n\n  I(\\varphi )\n  =c\\int _0^\\infty \\int _{\\theta \\in A_\\varphi (s)}(x h_y-y h_x)\bigl(s cos\\theta ,s sin\\theta \bigr)\ts d\\theta  ds\n  =c\\int _{s=d-r}^{d+r}\biggl[\\int _{\\theta \\in A_\\varphi (s)}(x h_y-y h_x)\ts d\\theta \\biggr]ds.\n\n2. Line-integral rewrite.  On the circle {s=const} we have dr=(dx,dy)=(-s sin\\theta ,s cos\\theta )d\\theta , so\n\n  \\nabla h\\cdot dr=h_x dx+h_y dy\n     =s(h_y cos\\theta -h_x sin\\theta )d\\theta \n     =(x h_y-y h_x)d\\theta .\n\nThus\n\n  \\int _{\\theta \\in A_\\varphi (s)}(x h_y-y h_x)d\\theta \n  =\\int _{P_1(s,\\varphi )}^{P_2(s,\\varphi )}\\nabla h\\cdot dr\n  =h(P_2(s,\\varphi ))-h(P_1(s,\\varphi )),\n\nwhere P_1,P_2 are the two intersection points at \\theta =\\varphi -\\alpha (s) and \\theta =\\varphi +\\alpha (s).  Hence\n\n  I(\\varphi )\n  =c\\int _{s=d-r}^{d+r} s\bigl[h(P_2(s,\\varphi ))-h(P_1(s,\\varphi ))\\bigr]ds.\n\n3. Averaging over \\varphi .  Compute the mean of I:\n\n  \\overline I\n  =\\frac1{2\\pi }\\int _0^{2\\pi }I(\\varphi )\\,d\\varphi \n  =\\frac{c}{2\\pi }\\int _{s=d-r}^{d+r}s\\biggl[\\int _0^{2\\pi }\\bigl(h(P_2)-h(P_1)\\bigr)d\\varphi \\biggr]ds.\n\nFix s in (d-r,d+r).  Then \\alpha =\\alpha (s) is a constant.  We have\n\n  P_1(s,\\varphi )=s e^{i(\\varphi -\\alpha )},\n  P_2(s,\\varphi )=s e^{i(\\varphi +\\alpha )}\n\nso the change of variable \\varphi \\mapsto u=\\varphi +2\\alpha  carries P_1(s,\\cdot ) onto P_2(s,\\cdot ) and is a bijection mod 2\\pi .  Therefore\n\n  \\int _0^{2\\pi }h(P_2(s,\\varphi ))d\\varphi \n   =\\int _{2\\alpha }^{2\\pi +2\\alpha }h(P_1(s,u))du\n   =\\int _0^{2\\pi }h(P_1(s,u))du\n\nand hence\n\n  \\int _0^{2\\pi }\\bigl[h(P_2)-h(P_1)\\bigr]d\\varphi =0.\n\nThus \\overline I=0.\n\n4. Conclusion.  \\varphi \\mapsto I(\\varphi ) is continuous (by continuity of h and of the domain S_\\varphi ) on the compact interval [0,2\\pi ], and its average is zero.  Hence there are \\varphi  where I(\\varphi )\\geq 0 and \\varphi  where I(\\varphi )\\leq 0, and by the Intermediate Value Theorem a \\varphi _0 with I(\\varphi _0)=0.  The disk S_{\\varphi _0} has radius r, its center is at distance d from the origin, and\n\n  \\iint _{S_{\\varphi _0}}\\rho (x,y)\n  =\\iint _{S_{\\varphi _0}}c\\bigl(x h_y-y h_x\\bigr)dx dy\n  =I(\\varphi _0)=0.\n\nThis completes the proof.  Q.E.D.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite ∬_S ρ by switching to polar coordinates (s,θ).",
+          "For fixed s, integrate over θ; the integrand becomes a tangential line-integral of ∇h, giving h(P₂)−h(P₁).",
+          "Average that circle–integral over all orientations of the center and swap the order of integrations (θ first, orientation second).",
+          "For every s the summed endpoint differences cancel, so the averaged value is 0.",
+          "Because the integral depends continuously on the orientation, IVT guarantees an orientation (hence a circle) with integral 0."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Smoothness required of h",
+            "original": "twice continuously differentiable (C²)"
+          },
+          "slot2": {
+            "description": "Strict inequality between d and r",
+            "original": "d > r"
+          },
+          "slot3": {
+            "description": "Sign convention in ρ",
+            "original": "ρ = y h_x − x h_y"
+          },
+          "slot4": {
+            "description": "Global domain of h",
+            "original": "defined on all of ℝ²"
+          },
+          "slot5": {
+            "description": "Absence of a non-zero scalar factor in the definition of ρ",
+            "original": "ρ appears without a multiplicative constant"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

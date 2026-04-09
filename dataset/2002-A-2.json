@@ -1,0 +1,84 @@
+{
+  "index": "2002-A-2",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "Given any five points on a sphere, show that some four of them\nmust lie on a closed hemisphere.",
+  "solution": "Draw a great circle through two of the points. There are two\nclosed hemispheres with this great circle as boundary, and each of\nthe other three points lies in one of them. By the pigeonhole principle,\ntwo of those three points lie in the same hemisphere, and that hemisphere\nthus contains four of the five given points.\n\nNote: by a similar argument, one can prove that among any $n+3$ points on\nan $n$-dimensional sphere, some $n+2$ of them lie on a closed hemisphere.\n(One cannot get by with only $n+2$ points: put them at the vertices of\na regular simplex.)\nNamely, any $n$ of the points lie on a great sphere, which forms the boundary\nof two hemispheres; of the remaining three points, some two lie in the\nsame hemisphere.",
+  "vars": [],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "dimension"
+      },
+      "question": "Given any five points on a sphere, show that some four of them must lie on a closed hemisphere.",
+      "solution": "Draw a great circle through two of the points. There are two closed hemispheres with this great circle as boundary, and each of the other three points lies in one of them. By the pigeonhole principle, two of those three points lie in the same hemisphere, and that hemisphere thus contains four of the five given points.\n\nNote: by a similar argument, one can prove that among any $dimension+3$ points on an $dimension$-dimensional sphere, some $dimension+2$ of them lie on a closed hemisphere. (One cannot get by with only $dimension+2$ points: put them at the vertices of a regular simplex.) Namely, any $dimension$ of the points lie on a great sphere, which forms the boundary of two hemispheres; of the remaining three points, some two lie in the same hemisphere."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "greenhouse"
+      },
+      "question": "Given any five points on a sphere, show that some four of them\nmust lie on a closed hemisphere.",
+      "solution": "Draw a great circle through two of the points. There are two\nclosed hemispheres with this great circle as boundary, and each of\nthe other three points lies in one of them. By the pigeonhole principle,\ntwo of those three points lie in the same hemisphere, and that hemisphere\nthus contains four of the five given points.\n\nNote: by a similar argument, one can prove that among any $greenhouse+3$ points on\nan $greenhouse$-dimensional sphere, some $greenhouse+2$ of them lie on a closed hemisphere.\n(One cannot get by with only $greenhouse+2$ points: put them at the vertices of\na regular simplex.)\nNamely, any $greenhouse$ of the points lie on a great sphere, which forms the boundary\nof two hemispheres; of the remaining three points, some two lie in the\nsame hemisphere."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "emptiness"
+      },
+      "question": "Given any five points on a sphere, show that some four of them\nmust lie on a closed hemisphere.",
+      "solution": "Draw a great circle through two of the points. There are two\nclosed hemispheres with this great circle as boundary, and each of\nthe other three points lies in one of them. By the pigeonhole principle,\ntwo of those three points lie in the same hemisphere, and that hemisphere\nthus contains four of the five given points.\n\nNote: by a similar argument, one can prove that among any $\\emptiness+3$ points on\nan $\\emptiness$-dimensional sphere, some $\\emptiness+2$ of them lie on a closed hemisphere.\n(One cannot get by with only $\\emptiness+2$ points: put them at the vertices of\na regular simplex.)\nNamely, any $\\emptiness$ of the points lie on a great sphere, which forms the boundary\nof two hemispheres; of the remaining three points, some two lie in the\nsame hemisphere."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp"
+      },
+      "question": "Given any five points on a sphere, show that some four of them\nmust lie on a closed hemisphere.",
+      "solution": "Draw a great circle through two of the points. There are two\nclosed hemispheres with this great circle as boundary, and each of\nthe other three points lies in one of them. By the pigeonhole principle,\ntwo of those three points lie in the same hemisphere, and that hemisphere\nthus contains four of the five given points.\n\nNote: by a similar argument, one can prove that among any $qzxwvtnp+3$ points on\nan $qzxwvtnp$-dimensional sphere, some $qzxwvtnp+2$ of them lie on a closed hemisphere.\n(One cannot get by with only $qzxwvtnp+2$ points: put them at the vertices of\na regular simplex.)\nNamely, any $qzxwvtnp$ of the points lie on a great sphere, which forms the boundary\nof two hemispheres; of the remaining three points, some two lie in the\nsame hemisphere."
+    },
+    "kernel_variant": {
+      "question": "Let\n\nS^{3}=\\{(x_{1},x_{2},x_{3},x_{4})\\in\\mathbb R^{4}:x_{1}^{2}+x_{2}^{2}+x_{3}^{2}+x_{4}^{2}=1\\}\n\nbe the unit 3-sphere.  Prove that among any nine points on S^{3} there exist six that lie in one closed hemisphere of S^{3}; that is, in a set of the form\n\nH(v)=\\{x\\in S^{3}:\\langle x,v\\rangle\\ge 0\\}\n\nfor some non-zero vector v\\in\\mathbb R^{4}.",
+      "solution": "Let x_{1},\\dots ,x_{9}\\in S^{3} be arbitrary.  We shall show that a single closed hemisphere of S^{3} contains at least six of them.\n\n------------------------------------------------------------\nCase 1.  All nine points lie in a common 2-dimensional linear subspace \\Pi  of \\mathbb R^{4}.\n\nThen \\Pi \\cap S^{3} is a great circle (an S^{1}).  Choose a unit vector n that is orthogonal to \\Pi .  The two closed hemispheres\n\n  H_{+}=\\{x\\in S^{3}:\\langle x,n\\rangle\\ge 0\\},\\qquad\n  H_{-}=\\{x\\in S^{3}:\\langle x,n\\rangle\\le 0\\}\n\nhave common boundary \\partial H_{+}=\\partial H_{-}=S^{3}\\cap n^{\\perp}, which is a great 2-sphere S^{2}.  Because \\Pi \\subset n^{\\perp}, the entire great circle \\Pi \\cap S^{3} is contained in this boundary, and hence in both hemispheres.  Consequently every x_{i} lies in both H_{+} and H_{-}; in particular either hemisphere contains all nine points and therefore at least six of them.\n\n------------------------------------------------------------\nCase 2.  The nine points are not contained in any single 2-plane.\n\nThen their linear span has dimension at least 3, so we may pick three of the points, say P_{1},P_{2},P_{3}, whose span \\Pi =\\operatorname{span}\\{P_{1},P_{2},P_{3}\\} is 3-dimensional.  Let n be a unit normal vector to \\Pi , and put\n\n  H_{+}=\\{x\\in S^{3}:\\langle x,n\\rangle\\ge 0\\},\\qquad\n  H_{-}=\\{x\\in S^{3}:\\langle x,n\\rangle\\le 0\\}.\n\nAs before the common boundary \\Sigma =\\partial H_{+}=\\partial H_{-}=S^{3}\\cap n^{\\perp} is a great 2-sphere.  Because \\Pi \\subset n^{\\perp}, the three points P_{1},P_{2},P_{3} lie on \\Sigma  and hence in both hemispheres.\n\nLabel the remaining six points Q_{1},\\dots ,Q_{6}.  Each Q_{j} lies in at least one of H_{+},H_{-}.  By the pigeon-hole principle at least three of the Q_{j} lie in the same hemisphere; without loss of generality assume Q_{1},Q_{2},Q_{3}\\in H_{+}.  Then the six points\n\n  P_{1},P_{2},P_{3},Q_{1},Q_{2},Q_{3}\n\nall belong to H_{+}.  Thus H_{+} is the required closed hemisphere that contains six of the original nine points.\n\n------------------------------------------------------------\nIn either case we have produced a closed hemisphere of S^{3} containing at least six of the nine given points, completing the proof. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Select a great circle determined by a chosen subset of the given points.",
+          "This great circle splits the sphere into two closed hemispheres.",
+          "Place each of the remaining points into the hemisphere that contains it.",
+          "Use the pigeonhole principle to show at least two of those remaining points fall in the same hemisphere.",
+          "Combine those points with the points that defined the great circle to reach the required count in one closed hemisphere."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Total number of points stipulated in the problem (it must be large enough so that at least three remain after the ‘dividing’ points are chosen).",
+            "original": 5
+          },
+          "slot2": {
+            "description": "Number of points chosen to define the separating great circle / great (n−1)-sphere.",
+            "original": 2
+          },
+          "slot3": {
+            "description": "Number of points left over after the separating points are fixed (pigeon-holed into two hemispheres).",
+            "original": 3
+          },
+          "slot4": {
+            "description": "Number of points the conclusion asserts lie in one closed hemisphere.",
+            "original": 4
+          },
+          "slot5": {
+            "description": "Dimension of the ambient sphere (2 in the stated problem, n in the generalisation).",
+            "original": 2
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

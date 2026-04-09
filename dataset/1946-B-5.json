@@ -1,0 +1,117 @@
+{
+  "index": "1946-B-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "\\text { 5. Show that the integer next above }(\\sqrt{3}+1)^{2 n} \\text { is divisible by } 2^{n+1} \\text {. }",
+  "solution": "Solution. The key to this and many similar problems is that the next integer above \\( (1+\\sqrt{3})^{2 n} \\) is \\( (1+\\sqrt{3})^{2 n}+(1-\\sqrt{3})^{2 n} \\). To establish this, note that for every positive integer \\( n \\), there are integers \\( A_{n} \\) and \\( B_{n} \\) such that\n\\[\n(1+\\sqrt{3})^{2 n}=A_{n}+B_{n} \\sqrt{3}\n\\]\nand\n\\[\n(1-\\sqrt{3})^{2 n}=A_{n}-B_{n} \\sqrt{3}\n\\]\n\nThus \\( (1+\\sqrt{3})^{2 n}+(1-\\sqrt{3})^{2 n}=2 A_{n} \\) is certainly an integer. Since \\( |1-\\sqrt{3}|<1 \\), we have \\( 0<(1-\\sqrt{3})^{2 n}<1 \\). Hence \\( 2 A_{n} \\) is indeed the next integer above \\( (1+\\sqrt{3})^{2 n} \\).\n\nThe problem, therefore, is to show that \\( 2 A_{n} \\) is divisible by \\( 2^{n+1} \\), or that \\( A_{n} \\) is divisible by \\( 2^{n} \\).\n\nWe claim that for all \\( n \\), both \\( A_{n} \\) and \\( B_{n} \\) are divisible by \\( 2^{n} \\). We prove this by induction. Since \\( A_{1}=4 \\) and \\( B_{1}=2 \\), it is true for \\( n=1 \\). Suppose it is true for \\( n=k \\). Then we have\n\\[\n\\begin{aligned}\nA_{k+1}+B_{k+1} \\sqrt{3} & =(1+\\sqrt{3})^{2}\\left(A_{k}+B_{k} \\sqrt{3}\\right) \\\\\n& =\\left(4 A_{k}+6 B_{k}\\right)+\\left(2 A_{k}+4 B_{k}\\right) \\sqrt{3}\n\\end{aligned}\n\\]\nso\n\\[\n\\begin{aligned}\nA_{k+1} & =2\\left(2 A_{k}+3 B_{k}\\right), \\\\\nB_{k+1} & =2\\left(A_{k}+2 B_{k}\\right),\n\\end{aligned}\n\\]\nand it is clear from our inductive hypothesis that both of these are divisible by \\( 2^{k+1} \\). This establishes our claim.",
+  "vars": [
+    "n",
+    "k"
+  ],
+  "params": [
+    "A_n",
+    "B_n",
+    "A_1",
+    "B_1",
+    "A_k",
+    "B_k",
+    "A_k+1",
+    "B_k+1"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexn",
+        "k": "iterat",
+        "A_n": "coeffan",
+        "B_n": "coeffbn",
+        "A_1": "coeffaone",
+        "B_1": "coeffbone",
+        "A_k": "coeffak",
+        "B_k": "coeffbk",
+        "A_k+1": "coeffasuc",
+        "B_k+1": "coeffbsuc"
+      },
+      "question": "\\text { 5. Show that the integer next above }(\\sqrt{3}+1)^{2 indexn} \\text { is divisible by } 2^{indexn+1} \\text {. }",
+      "solution": "Solution. The key to this and many similar problems is that the next integer above \\( (1+\\sqrt{3})^{2 indexn} \\) is \\( (1+\\sqrt{3})^{2 indexn}+(1-\\sqrt{3})^{2 indexn} \\). To establish this, note that for every positive integer \\( indexn \\), there are integers \\( coeffan \\) and \\( coeffbn \\) such that\n\\[\n(1+\\sqrt{3})^{2 indexn}=coeffan+coeffbn \\sqrt{3}\n\\]\nand\n\\[\n(1-\\sqrt{3})^{2 indexn}=coeffan-coeffbn \\sqrt{3}\n\\]\n\nThus \\( (1+\\sqrt{3})^{2 indexn}+(1-\\sqrt{3})^{2 indexn}=2 coeffan \\) is certainly an integer. Since \\( |1-\\sqrt{3}|<1 \\), we have \\( 0<(1-\\sqrt{3})^{2 indexn}<1 \\). Hence \\( 2 coeffan \\) is indeed the next integer above \\( (1+\\sqrt{3})^{2 indexn} \\).\n\nThe problem, therefore, is to show that \\( 2 coeffan \\) is divisible by \\( 2^{indexn+1} \\), or that \\( coeffan \\) is divisible by \\( 2^{indexn} \\).\n\nWe claim that for all \\( indexn \\), both \\( coeffan \\) and \\( coeffbn \\) are divisible by \\( 2^{indexn} \\). We prove this by induction. Since \\( coeffaone =4 \\) and \\( coeffbone =2 \\), it is true for \\( indexn =1 \\). Suppose it is true for \\( indexn =iterat \\). Then we have\n\\[\n\\begin{aligned}\ncoeffasuc+coeffbsuc \\sqrt{3} & =(1+\\sqrt{3})^{2}\\left(coeffak+coeffbk \\sqrt{3}\\right) \\\\\n& =\\left(4 coeffak+6 coeffbk\\right)+\\left(2 coeffak+4 coeffbk\\right) \\sqrt{3}\n\\end{aligned}\n\\]\nso\n\\[\n\\begin{aligned}\ncoeffasuc & =2\\left(2 coeffak+3 coeffbk\\right), \\\\\ncoeffbsuc & =2\\left(coeffak+2 coeffbk\\right),\n\\end{aligned}\n\\]\nand it is clear from our inductive hypothesis that both of these are divisible by \\( 2^{iterat+1} \\). This establishes our claim."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "k": "parchment",
+        "A_n": "teaspoon",
+        "B_n": "raincloud",
+        "A_1": "firebrick",
+        "B_1": "scarecrow",
+        "A_k": "sandpaper",
+        "B_k": "toothpick",
+        "A_k+1": "goldsmith",
+        "B_k+1": "lighthouse"
+      },
+      "question": "\\text { 5. Show that the integer next above }(\\sqrt{3}+1)^{2 sunflower} \\text { is divisible by } 2^{sunflower+1} \\text {. }",
+      "solution": "Solution. The key to this and many similar problems is that the next integer above \\( (1+\\sqrt{3})^{2 sunflower} \\) is \\( (1+\\sqrt{3})^{2 sunflower}+(1-\\sqrt{3})^{2 sunflower} \\). To establish this, note that for every positive integer \\( sunflower \\), there are integers \\( teaspoon \\) and \\( raincloud \\) such that\n\\[\n(1+\\sqrt{3})^{2 sunflower}=teaspoon+raincloud \\sqrt{3}\n\\]\nand\n\\[\n(1-\\sqrt{3})^{2 sunflower}=teaspoon-raincloud \\sqrt{3}\n\\]\n\nThus \\( (1+\\sqrt{3})^{2 sunflower}+(1-\\sqrt{3})^{2 sunflower}=2 teaspoon \\) is certainly an integer. Since \\( |1-\\sqrt{3}|<1 \\), we have \\( 0<(1-\\sqrt{3})^{2 sunflower}<1 \\). Hence \\( 2 teaspoon \\) is indeed the next integer above \\( (1+\\sqrt{3})^{2 sunflower} \\).\n\nThe problem, therefore, is to show that \\( 2 teaspoon \\) is divisible by \\( 2^{sunflower+1} \\), or that \\( teaspoon \\) is divisible by \\( 2^{sunflower} \\).\n\nWe claim that for all \\( sunflower \\), both \\( teaspoon \\) and \\( raincloud \\) are divisible by \\( 2^{sunflower} \\). We prove this by induction. Since \\( firebrick=4 \\) and \\( scarecrow=2 \\), it is true for \\( sunflower=1 \\). Suppose it is true for \\( sunflower=parchment \\). Then we have\n\\[\n\\begin{aligned}\ngoldsmith+lighthouse \\sqrt{3} & =(1+\\sqrt{3})^{2}\\left(sandpaper+toothpick \\sqrt{3}\\right) \\\\\n& =\\left(4 sandpaper+6 toothpick\\right)+\\left(2 sandpaper+4 toothpick\\right) \\sqrt{3}\n\\end{aligned}\n\\]\nso\n\\[\n\\begin{aligned}\ngoldsmith & =2\\left(2 sandpaper+3 toothpick\\right), \\\\\nlighthouse & =2\\left(sandpaper+2 toothpick\\right),\n\\end{aligned}\n\\]\nand it is clear from our inductive hypothesis that both of these are divisible by \\( 2^{parchment+1} \\). This establishes our claim."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "infinitecount",
+        "k": "constantterm",
+        "A_n": "nonintegralseq",
+        "B_n": "irrationalseq",
+        "A_1": "nonintegralone",
+        "B_1": "irrationalone",
+        "A_k": "nonintegralkey",
+        "B_k": "irrationalkey",
+        "A_{k+1}": "nonintegralsucc",
+        "B_{k+1}": "irrationalsucc"
+      },
+      "question": "\\text { 5. Show that the integer next above }(\\sqrt{3}+1)^{2 infinitecount} \\text { is divisible by } 2^{infinitecount+1} \\text {. }",
+      "solution": "Solution. The key to this and many similar problems is that the next integer above \\( (1+\\sqrt{3})^{2 infinitecount} \\) is \\( (1+\\sqrt{3})^{2 infinitecount}+(1-\\sqrt{3})^{2 infinitecount} \\). To establish this, note that for every positive integer \\( infinitecount \\), there are integers \\( nonintegralseq \\) and \\( irrationalseq \\) such that\n\\[\n(1+\\sqrt{3})^{2 infinitecount}=nonintegralseq+irrationalseq \\sqrt{3}\n\\]\nand\n\\[\n(1-\\sqrt{3})^{2 infinitecount}=nonintegralseq-irrationalseq \\sqrt{3}\n\\]\n\nThus \\( (1+\\sqrt{3})^{2 infinitecount}+(1-\\sqrt{3})^{2 infinitecount}=2 nonintegralseq \\) is certainly an integer. Since \\( |1-\\sqrt{3}|<1 \\), we have \\( 0<(1-\\sqrt{3})^{2 infinitecount}<1 \\). Hence \\( 2 nonintegralseq \\) is indeed the next integer above \\( (1+\\sqrt{3})^{2 infinitecount} \\).\n\nThe problem, therefore, is to show that \\( 2 nonintegralseq \\) is divisible by \\( 2^{infinitecount+1} \\), or that \\( nonintegralseq \\) is divisible by \\( 2^{infinitecount} \\).\n\nWe claim that for all \\( infinitecount \\), both \\( nonintegralseq \\) and \\( irrationalseq \\) are divisible by \\( 2^{infinitecount} \\). We prove this by induction. Since \\( nonintegralone=4 \\) and \\( irrationalone=2 \\), it is true for \\( infinitecount=1 \\). Suppose it is true for \\( infinitecount=constantterm \\). Then we have\n\\[\n\\begin{aligned}\nnonintegralsucc+irrationalsucc \\sqrt{3} & =(1+\\sqrt{3})^{2}\\left(nonintegralkey+irrationalkey \\sqrt{3}\\right) \\\\\n& =\\left(4 nonintegralkey+6 irrationalkey\\right)+\\left(2 nonintegralkey+4 irrationalkey\\right) \\sqrt{3}\n\\end{aligned}\n\\]\nso\n\\[\n\\begin{aligned}\nnonintegralsucc & =2\\left(2 nonintegralkey+3 irrationalkey\\right), \\\\\nirrationalsucc & =2\\left(nonintegralkey+2 irrationalkey\\right),\n\\end{aligned}\n\\]\nand it is clear from our inductive hypothesis that both of these are divisible by \\( 2^{constantterm+1} \\). This establishes our claim."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "A_n": "mnrpsfql",
+        "B_n": "gklvzrtu",
+        "A_1": "pskdhqwe",
+        "B_1": "xnvbtyra",
+        "A_k": "lqzmxnwe",
+        "B_k": "chyrbtkl",
+        "A_k+1": "dqwpmzci",
+        "B_k+1": "zyvfwots"
+      },
+      "question": "\\text { 5. Show that the integer next above }(\\sqrt{3}+1)^{2 qzxwvtnp} \\text { is divisible by } 2^{qzxwvtnp+1} \\text {. }",
+      "solution": "Solution. The key to this and many similar problems is that the next integer above \\( (1+\\sqrt{3})^{2 qzxwvtnp} \\) is \\( (1+\\sqrt{3})^{2 qzxwvtnp}+(1-\\sqrt{3})^{2 qzxwvtnp} \\). To establish this, note that for every positive integer \\( qzxwvtnp \\), there are integers \\( mnrpsfql \\) and \\( gklvzrtu \\) such that\n\\[\n(1+\\sqrt{3})^{2 qzxwvtnp}=mnrpsfql+gklvzrtu \\sqrt{3}\n\\]\nand\n\\[\n(1-\\sqrt{3})^{2 qzxwvtnp}=mnrpsfql-gklvzrtu \\sqrt{3}\n\\]\n\nThus \\( (1+\\sqrt{3})^{2 qzxwvtnp}+(1-\\sqrt{3})^{2 qzxwvtnp}=2 mnrpsfql \\) is certainly an integer. Since \\( |1-\\sqrt{3}|<1 \\), we have \\( 0<(1-\\sqrt{3})^{2 qzxwvtnp}<1 \\). Hence \\( 2 mnrpsfql \\) is indeed the next integer above \\( (1+\\sqrt{3})^{2 qzxwvtnp} \\).\n\nThe problem, therefore, is to show that \\( 2 mnrpsfql \\) is divisible by \\( 2^{qzxwvtnp+1} \\), or that \\( mnrpsfql \\) is divisible by \\( 2^{qzxwvtnp} \\).\n\nWe claim that for all \\( qzxwvtnp \\), both \\( mnrpsfql \\) and \\( gklvzrtu \\) are divisible by \\( 2^{qzxwvtnp} \\). We prove this by induction. Since \\( pskdhqwe=4 \\) and \\( xnvbtyra=2 \\), it is true for \\( qzxwvtnp=1 \\). Suppose it is true for \\( qzxwvtnp=hjgrksla \\). Then we have\n\\[\n\\begin{aligned}\ndqwpmzci+zyvfwots \\sqrt{3} & =(1+\\sqrt{3})^{2}\\left(lqzmxnwe+chyrbtkl \\sqrt{3}\\right) \\\\\n& =\\left(4 lqzmxnwe+6 chyrbtkl\\right)+\\left(2 lqzmxnwe+4 chyrbtkl\\right) \\sqrt{3}\n\\end{aligned}\n\\]\nso\n\\[\n\\begin{aligned}\ndqwpmzci & =2\\left(2 lqzmxnwe+3 chyrbtkl\\right), \\\\\nzyvfwots & =2\\left(lqzmxnwe+2 chyrbtkl\\right),\n\\end{aligned}\n\\]\nand it is clear from our inductive hypothesis that both of these are divisible by \\( 2^{hjgrksla+1} \\). This establishes our claim."
+    },
+    "kernel_variant": {
+      "question": "For every non-negative integer $n$, let\\[M_n=\\Bigl(1+\\sqrt{3}\\Bigr)^{4n}.\\]Denote by $I_n$ the least integer that is strictly larger than $M_n$.  Prove that\\[2^{2n+1}\\mid I_n\\quad\\text{for every }n\\ge 0.\\]",
+      "solution": "Let M_n=(1+\\sqrt{3})^{4n} (n\\geq 0),    I_n=\\lceil M_n\\rceil  (the least integer >M_n).  We prove 2^{2n+1}\\mid I_n.  \n\n1. The ``next-integer'' expression.  For every integer m\\geq 1 we have |1-\\sqrt{3}|<1, hence 0<(1-\\sqrt{3})^{2m}<1.  Therefore\n    J_m:=(1+\\sqrt{3})^{2m}+(1-\\sqrt{3})^{2m}\nis an integer that lies strictly between (1+\\sqrt{3})^{2m} and (1+\\sqrt{3})^{2m}+1; i.e.\n    J_m\nis the next integer above (1+\\sqrt{3})^{2m}.  For m=0 we obtain J_0=2, which is indeed the next integer above (1+\\sqrt{3})^0=1,\nso the statement also holds when m=0.\n\n2. Reduction to the required case.  Put m=2n.  Then\n    I_n = J_{2n} = (1+\\sqrt{3})^{4n} + (1-\\sqrt{3})^{4n}.\nConsequently it suffices to prove that J_m is divisible by 2^{m+1} for every m\\geq 0.\n\n3. Separating rational and irrational parts.  Write\n    (1+\\sqrt{3})^{2m} = C_m + D_m\\sqrt{3},  C_m,D_m\\in \\mathbb{Z}.\nConjugating \\sqrt{3} gives\n    (1-\\sqrt{3})^{2m} = C_m - D_m\\sqrt{3},\nwhence\n    J_m = 2C_m.\nOur task is thus to show\n    2^m \\mid  C_m  (m\\geq 0).\n\n4. A doubling recursion.  Because (1+\\sqrt{3})^2 = 4+2\\sqrt{3} = 2(2+\\sqrt{3}), we have\n    (1+\\sqrt{3})^{2(m+1)}\n      = (4+2\\sqrt{3})(C_m + D_m\\sqrt{3})\n      = (4C_m+6D_m) + (2C_m+4D_m)\\sqrt{3.}\nHence\n    C_{m+1} = 4C_m + 6D_m = 2(2C_m + 3D_m),\n    D_{m+1} = 2C_m + 4D_m = 2(C_m + 2D_m).\nBoth C_{m+1} and D_{m+1} carry an overall factor 2.\n\n5. Induction.  Base case m=0: (1+\\sqrt{3})^0=1 gives C_0=1, D_0=0; clearly 1=2^0 divides both numbers.\n\nInductive step: assume 2^m \\mid  C_m and 2^m \\mid  D_m.  Then\n    C_{m+1} = 2(2C_m+3D_m),\n    D_{m+1} = 2(C_m+2D_m),\nand since 2^m divides both C_m and D_m, it divides 2C_m+3D_m and C_m+2D_m, hence 2^{m+1} divides C_{m+1}, D_{m+1}.\n\nConsequently J_m = 2C_m is divisible by 2\\cdot 2^m = 2^{m+1}.\n\n6. Conclusion for the original problem.  Taking m=2n gives\n    I_n = J_{2n} \\Rightarrow  2^{2n+1} \\mid  I_n.\n\nTherefore the integer immediately following (1+\\sqrt{3})^{4n} is always a multiple of 2^{2n+1}. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Conjugate trick: write (1+√3)^{2n} + (1−√3)^{2n} = 2A_n ∈ ℤ",
+          "Size bound: 0 < (1−√3)^{2n} < 1 so 2A_n is the ceiling of (1+√3)^{2n}",
+          "Define integer sequences A_n, B_n via (1+√3)^{2n} = A_n + B_n√3",
+          "Recurrence: (1+√3)^2(A_k + B_k√3) gives A_{k+1}, B_{k+1} each containing an overall factor 2",
+          "Induction on n: base case then recurrence ⇒ A_n divisible by 2^n ⇒ 2A_n divisible by 2^{n+1}"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Names of the integer sequences arising from the expansion",
+            "original": "A_n, B_n"
+          },
+          "slot2": {
+            "description": "Choice of the initial index for the induction (could start at n=0 instead of n=1)",
+            "original": "n = 1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,110 @@
+{
+  "index": "1989-B-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "A dart, thrown at random, hits a square target. Assuming that any two\nparts of the target of equal area are equally likely to be hit, find\nthe probability that the point hit is nearer to the center than to any\nedge. Express your answer in the form $\\displaystyle{\\frac{a\\sqrt{b} + c}{d}}$,\nwhere $a,\\,b,\\,c,\\,d$ are integers.",
+  "solution": "Solution. We may assume that the dartboard has corners at \\( ( \\pm 1, \\pm 1) \\). A point \\( (x, y) \\) in the square is closer to the center than to the top edge if and only if \\( \\sqrt{x^{2}+y^{2}} \\leq 1-y \\), which is equivalent to \\( x^{2}+y^{2} \\leq(1-y)^{2} \\), and to \\( y \\leq\\left(1-x^{2}\\right) / 2 \\). This describes a region below a parabola. The region consisting of points in the board closer to the center than to any edge is the intersection of the four symmetrical parabolic regions inside the board: it is union of eight symmetric copies of the region \\( A \\) bounded by \\( x \\geq 0, y \\geq x, y \\leq\\left(1-x^{2}\\right) / 2 \\). (See Figure 12.) A short calculation shows that the bounding curves \\( y=x \\) and \\( y=\\left(1-x^{2}\\right) / 2 \\) intersect at \\( (x, y)=(\\sqrt{2}-1, \\sqrt{2}-1) \\). Thus the desired probability is\n\\[\n\\frac{8 \\operatorname{Area}(A)}{\\text { Area }(\\text { board })}=2 \\operatorname{Area}(A)=2 \\int_{0}^{\\sqrt{2}-1}\\left(\\frac{1-x^{2}}{2}-x\\right) d x=\\frac{4 \\sqrt{2}-5}{3}\n\\]\n\nRelated question. If a billiard table had the same shape as the region of points of the square closer to the center than to any edge, and a ball at the center were pushed in some direction not towards the corners, what would its path be?",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "A",
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizcoor",
+        "y": "verticcoor",
+        "A": "regionarea",
+        "a": "coefalpha",
+        "b": "coefbeta",
+        "c": "coefgamma",
+        "d": "coefdelta"
+      },
+      "question": "A dart, thrown at random, hits a square target. Assuming that any two\nparts of the target of equal area are equally likely to be hit, find\nthe probability that the point hit is nearer to the center than to any\nedge. Express your answer in the form $\\displaystyle{\\frac{coefalpha\\sqrt{coefbeta} + coefgamma}{coefdelta}}$,\nwhere $coefalpha,\\,coefbeta,\\,coefgamma,\\,coefdelta$ are integers.",
+      "solution": "Solution. We may assume that the dartboard has corners at \\( ( \\pm 1, \\pm 1) \\). A point \\( (horizcoor, verticcoor) \\) in the square is closer to the center than to the top edge if and only if \\( \\sqrt{horizcoor^{2}+verticcoor^{2}} \\leq 1-verticcoor \\), which is equivalent to \\( horizcoor^{2}+verticcoor^{2} \\leq(1-verticcoor)^{2} \\), and to \\( verticcoor \\leq\\left(1-horizcoor^{2}\\right) / 2 \\). This describes a region below a parabola. The region consisting of points in the board closer to the center than to any edge is the intersection of the four symmetrical parabolic regions inside the board: it is union of eight symmetric copies of the region \\( regionarea \\) bounded by \\( horizcoor \\geq 0, verticcoor \\geq horizcoor, verticcoor \\leq\\left(1-horizcoor^{2}\\right) / 2 \\). (See Figure 12.) A short calculation shows that the bounding curves \\( verticcoor=horizcoor \\) and \\( verticcoor=\\left(1-horizcoor^{2}\\right) / 2 \\) intersect at \\( (horizcoor, verticcoor)=(\\sqrt{2}-1, \\sqrt{2}-1) \\). Thus the desired probability is\n\\[\n\\frac{8 \\operatorname{Area}(regionarea)}{\\text { Area }(\\text { board })}=2 \\operatorname{Area}(regionarea)=2 \\int_{0}^{\\sqrt{2}-1}\\left(\\frac{1-horizcoor^{2}}{2}-horizcoor\\right) d\\,horizcoor=\\frac{4 \\sqrt{2}-5}{3}\n\\]\n\nRelated question. If a billiard table had the same shape as the region of points of the square closer to the center than to any edge, and a ball at the center were pushed in some direction not towards the corners, what would its path be?"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sunflower",
+        "y": "lanternfish",
+        "A": "cathedral",
+        "a": "compass",
+        "b": "telescope",
+        "c": "suitcase",
+        "d": "hammock"
+      },
+      "question": "A dart, thrown at random, hits a square target. Assuming that any two\nparts of the target of equal area are equally likely to be hit, find\nthe probability that the point hit is nearer to the center than to any\nedge. Express your answer in the form $\\displaystyle{\\frac{compass\\sqrt{telescope} + suitcase}{hammock}}$,\nwhere $compass,\\,telescope,\\,suitcase,\\,hammock$ are integers.",
+      "solution": "Solution. We may assume that the dartboard has corners at \\( ( \\pm 1, \\pm 1) \\). A point \\( (sunflower, lanternfish) \\) in the square is closer to the center than to the top edge if and only if \\( \\sqrt{sunflower^{2}+lanternfish^{2}} \\leq 1-lanternfish \\), which is equivalent to \\( sunflower^{2}+lanternfish^{2} \\leq(1-lanternfish)^{2} \\), and to \\( lanternfish \\leq\\left(1-sunflower^{2}\\right) / 2 \\). This describes a region below a parabola. The region consisting of points in the board closer to the center than to any edge is the intersection of the four symmetrical parabolic regions inside the board: it is union of eight symmetric copies of the region \\( cathedral \\) bounded by \\( sunflower \\geq 0, lanternfish \\geq sunflower, lanternfish \\leq\\left(1-sunflower^{2}\\right) / 2 \\). (See Figure 12.) A short calculation shows that the bounding curves \\( lanternfish=sunflower \\) and \\( lanternfish=\\left(1-sunflower^{2}\\right) / 2 \\) intersect at \\( (sunflower, lanternfish)=(\\sqrt{2}-1, \\sqrt{2}-1) \\). Thus the desired probability is\n\\[\n\\frac{8 \\operatorname{Area}(cathedral)}{\\text { Area }(\\text { board })}=2 \\operatorname{Area}(cathedral)=2 \\int_{0}^{\\sqrt{2}-1}\\left(\\frac{1-sunflower^{2}}{2}-sunflower\\right) hammock sunflower=\\frac{4 \\sqrt {2}-5}{3}\n\\]\n\nRelated question. If a billiard table had the same shape as the region of points of the square closer to the center than to any edge, and a ball at the center were pushed in some direction not towards the corners, what would its path be?"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "A": "nowherezone",
+        "a": "denompiece",
+        "b": "nonrootvalue",
+        "c": "productfactor",
+        "d": "numeratorpart"
+      },
+      "question": "A dart, thrown at random, hits a square target. Assuming that any two\nparts of the target of equal area are equally likely to be hit, find\nthe probability that the point hit is nearer to the center than to any\nedge. Express your answer in the form $\\displaystyle{\\frac{denompiece\\sqrt{nonrootvalue} + productfactor}{numeratorpart}}$,\nwhere denompiece,\\,nonrootvalue,\\,productfactor,\\,numeratorpart are integers.",
+      "solution": "Solution. We may assume that the dartboard has corners at \\( ( \\pm 1, \\pm 1) \\). A point \\( (verticalaxis, horizontalaxis) \\) in the square is closer to the center than to the top edge if and only if \\( \\sqrt{verticalaxis^{2}+horizontalaxis^{2}} \\leq 1-horizontalaxis \\), which is equivalent to \\( verticalaxis^{2}+horizontalaxis^{2} \\leq(1-horizontalaxis)^{2} \\), and to \\( horizontalaxis \\leq\\left(1-verticalaxis^{2}\\right) / 2 \\). This describes a region below a parabola. The region consisting of points in the board closer to the center than to any edge is the intersection of the four symmetrical parabolic regions inside the board: it is union of eight symmetric copies of the region \\( nowherezone \\) bounded by \\( verticalaxis \\geq 0, horizontalaxis \\geq verticalaxis, horizontalaxis \\leq\\left(1-verticalaxis^{2}\\right) / 2 \\). (See Figure 12.) A short calculation shows that the bounding curves \\( horizontalaxis=verticalaxis \\) and \\( horizontalaxis=\\left(1-verticalaxis^{2}\\right) / 2 \\) intersect at \\( (verticalaxis, horizontalaxis)=(\\sqrt{2}-1, \\sqrt{2}-1) \\). Thus the desired probability is\n\\[\n\\frac{8 \\operatorname{Area}(nowherezone)}{\\text { Area }(\\text { board })}=2 \\operatorname{Area}(nowherezone)=2 \\int_{0}^{\\sqrt{2}-1}\\left(\\frac{1-verticalaxis^{2}}{2}-verticalaxis\\right) numeratorpart\\, verticalaxis=\\frac{4 \\sqrt{2}-5}{3}\n\\]\n\nRelated question. If a billiard table had the same shape as the region of points of the square closer to the center than to any edge, and a ball at the center were pushed in some direction not towards the corners, what would its path be?"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "A": "mfldqzpe",
+        "a": "wyxtrbcn",
+        "b": "kghsmlae",
+        "c": "vpdjqwto",
+        "d": "rznkylfa"
+      },
+      "question": "A dart, thrown at random, hits a square target. Assuming that any two\nparts of the target of equal area are equally likely to be hit, find\nthe probability that the point hit is nearer to the center than to any\nedge. Express your answer in the form $\\displaystyle{\\frac{wyxtrbcn\\sqrt{kghsmlae} + vpdjqwto}{rznkylfa}}$,\nwhere $wyxtrbcn,\\,kghsmlae,\\,vpdjqwto,\\,rznkylfa$ are integers.",
+      "solution": "Solution. We may assume that the dartboard has corners at \\( ( \\pm 1, \\pm 1) \\). A point \\( (qzxwvtnp, hjgrksla) \\) in the square is closer to the center than to the top edge if and only if \\( \\sqrt{qzxwvtnp^{2}+hjgrksla^{2}} \\leq 1-hjgrksla \\), which is equivalent to \\( qzxwvtnp^{2}+hjgrksla^{2} \\leq(1-hjgrksla)^{2} \\), and to \\( hjgrksla \\leq\\left(1-qzxwvtnp^{2}\\right) / 2 \\). This describes a region below a parabola. The region consisting of points in the board closer to the center than to any edge is the intersection of the four symmetrical parabolic regions inside the board: it is union of eight symmetric copies of the region \\( mfldqzpe \\) bounded by \\( qzxwvtnp \\geq 0, hjgrksla \\geq qzxwvtnp, hjgrksla \\leq\\left(1-qzxwvtnp^{2}\\right) / 2 \\). (See Figure 12.) A short calculation shows that the bounding curves \\( hjgrksla=qzxwvtnp \\) and \\( hjgrksla=\\left(1-qzxwvtnp^{2}\\right) / 2 \\) intersect at \\( (qzxwvtnp, hjgrksla)=(\\sqrt{2}-1, \\sqrt{2}-1) \\). Thus the desired probability is\n\\[\n\\frac{8 \\operatorname{Area}(mfldqzpe)}{\\text { Area }(\\text { board })}=2 \\operatorname{Area}(mfldqzpe)=2 \\int_{0}^{\\sqrt{2}-1}\\left(\\frac{1-qzxwvtnp^{2}}{2}-qzxwvtnp\\right) d qzxwvtnp=\\frac{4 \\sqrt{2}-5}{3}\n\\]\n\nRelated question. If a billiard table had the same shape as the region of points of the square closer to the center than to any edge, and a ball at the center were pushed in some direction not towards the corners, what would its path be?"
+    },
+    "kernel_variant": {
+      "question": "A square target of side length $4$ has its center at the origin and its sides parallel to the coordinate axes (so its four corners are $(\\pm 2,\\,\\pm 2)$).  A dart lands at a point chosen uniformly at random in the square.  What is the probability that the point of impact is at least $\\tfrac12$ unit closer to the center than to every edge of the square?  Express the answer in the form \\(\\displaystyle \\frac{a\\sqrt{b}+c}{d}\\), where $a,\\,b,\\,c,\\,d$ are integers.",
+      "solution": "1.  Let the square be S = { (x,y): -2 \\leq  x,y \\leq  2 }, area 16.  A random dart's point (x,y) is equally likely in S.\n\n2.  For any point (x,y), its distance to the center is r = \\sqrt{x^2+y^2}.  Its distances to the four edges y=2, y=-2, x=2, x=-2 are d_1=2-y, d_2=2+y, d_3=2-x, d_4=2+x, respectively.  The condition ``at least \\frac{1}{2} unit closer to the center than to every edge'' means\n\n     r + \\frac{1}{2}  \\leq   min{d_1,d_2,d_3,d_4}.\n\n3.  Equivalently, we require\n\n     r + \\frac{1}{2}  \\leq   2 - |y|   and   r + \\frac{1}{2}  \\leq   2 - |x|.\n\n   In particular, if M = max{|x|,|y|}, then the nearest-edge distance is (2 - M), so\n\n     r + \\frac{1}{2}  \\leq   2 - M.                             (\\star )\n\n4.  By the dihedral symmetry of the square, it suffices to work in the first-octant sector\n\n     A = { (x,y):  0 \\leq  x \\leq  y,\n                   r + \\frac{1}{2} \\leq  2 - y },\n\n   since in this sector M=y.  The inequality r + \\frac{1}{2} \\leq  2 - y becomes\n\n     \\sqrt{x^2+y^2} \\leq  3/2 - y,\n\n   which (upon squaring) is\n\n     x^2 + y^2  \\leq   (3/2 - y)^2  =  9/4 - 3y + y^2\n      \\Longrightarrow   x^2  \\leq   9/4 - 3y\n      \\Longrightarrow   y  \\leq   (9/4 - x^2)/3  =  \\frac{3}{4} - x^2/3.\n\n   Hence in A we have\n\n     0 \\leq  x \\leq  y  \\leq   \\frac{3}{4} - x^2/3.\n\n5.  The two boundary curves y = x and y = \\frac{3}{4} - x^2/3 meet when\n\n     x = \\frac{3}{4} - x^2/3   \\Longrightarrow   x^2 + 3x - 9/4 = 0\n      \\Longrightarrow   x = (-3 + 3\\sqrt{2})/2  =  (3(\\sqrt{2}-1))/2  =: t.\n\n   Thus\n\n     Area(A)  =  \\int _0^t [ (\\frac{3}{4} - x^2/3) - x ]  dx\n              =  [ \\frac{3}{4} x - x^3/9 - x^2/2 ]_0^t.\n\n   Substituting t = 3(\\sqrt{2}-1)/2 and simplifying gives\n\n     Area(A)  =  (12\\sqrt{2} - 15)/8.\n\n6.  By the 8-fold symmetry of the square (rotations and reflections), the total region satisfying (\\star ) has area\n\n     8 \\cdot  Area(A)  =  12\\sqrt{2} - 15.\n\n   Dividing by the square's area 16 yields the probability\n\n     P = (12\\sqrt{2} - 15)/16.\n\nAnswer:\n   (12\\sqrt{2} - 15)/16",
+      "_meta": {
+        "core_steps": [
+          "Exploit symmetry: scale/translate square to corners (±1,±1) so probability = (desired area)/(total area).",
+          "Translate “closer to center than to an edge” into an inequality giving a parabola; repeat for all 4 edges.",
+          "Use symmetry to restrict to fundamental sector A (x ≥ 0, y ≥ x); overall region is 8 copies of A.",
+          "Find intersection of bounding curves y = x and y = (1 − x²)/2.",
+          "Integrate over A, multiply by 8, divide by board area to get probability."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Half–side length of the square after scaling/translation (corners at (±L,±L)).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Parabola coefficient 1/2 in y = (1 − x²)/2 (becomes 1/(2L) for general side length 2L).",
+            "original": "1/2"
+          },
+          "slot3": {
+            "description": "Intersection ordinate/abscissa of the line y = x with the parabola (√2 − 1 for L = 1).",
+            "original": "√2 − 1"
+          },
+          "slot4": {
+            "description": "Final probability value, here (4√2 − 5)/3; changes with side length but obtained by same steps.",
+            "original": "(4√2 − 5)/3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

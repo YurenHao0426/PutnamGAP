@@ -1,0 +1,153 @@
+{
+  "index": "1959-B-7",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "7. For each positive integer \\( n \\), let \\( f_{n} \\) be a real-valued symmetric function of \\( n \\) real variables. Suppose that for all \\( n \\) and for all real numbers \\( x_{1}, \\ldots \\), \\( x_{n+1}, y \\), it is true that\n(1) \\( f_{n}\\left(x_{1}+y, \\ldots, x_{n}+y\\right)=f_{n}\\left(x_{1}, \\ldots, x_{n}\\right)+y \\),\n(2) \\( f_{n}\\left(-x_{1}, \\ldots,-x_{n}\\right)=-f_{n}\\left(x_{1}, \\ldots x_{n}\\right) \\),\n(3) \\( f_{n+1}\\left(f_{n}\\left(x_{1}, \\ldots, x_{n}\\right), \\ldots, f_{n}\\left(x_{1}, \\ldots, x_{n}\\right), x_{n+1}\\right)=f_{n+1}\\left(x_{1}, \\ldots, x_{n+1}\\right) \\).\n\nProve that\n(4) \\( f_{n}\\left(x_{1}, \\ldots, x_{n}\\right)=\\left(x_{1}+\\cdots+x_{n}\\right) / n \\).",
+  "solution": "Solution. Since \\( f_{1}(0)=-f_{1}(0) \\) by (2), we see that\n\\[\nf_{1}(0)=0 .\n\\]\n\nBy (1) and (5) we have\n\\[\nf_{1}(x)=f_{1}(0)+x=x\n\\]\nand this relation is (4) for the case \\( n=1 \\).\nFor any integer \\( n>1 \\) and any number \\( c \\)\n\\[\n\\begin{aligned}\nf_{n}(c, 0, \\ldots, 0,-c) & =f_{n}(-c, 0, \\ldots, 0, c) \\\\\n& =-f_{n}(c, 0, \\ldots, 0,-c)\n\\end{aligned}\n\\]\nby symmetry and by (2); hence\n\\[\nf_{n}(c, 0, \\ldots, 0,-c)=0 .\n\\]\n\nWe now make the inductive hypothesis that (4) is valid for \\( n=k \\). Then equation (3) says that \\( f_{k+1}\\left(x_{1}, x_{2}, \\ldots, x_{k+1}\\right) \\) depends only on \\( x_{k+1} \\) and the sum of \\( x_{1}, \\ldots, x_{k} \\). Hence, if \\( a_{1}+a_{2}+\\cdots+a_{k+1}=0 \\), then\n\\[\nf_{k+1}\\left(a_{1}, a_{2}, \\ldots, a_{k+1}\\right)=f_{k+1}\\left(-a_{k+1}, 0, \\ldots, 0, a_{k+1}\\right)=0,\n\\]\nusing (6).\nNow let \\( x_{1}, x_{2}, \\ldots, x_{k+1} \\) be any numbers and let \\( u \\) be their average. Set \\( a=x_{i}-u \\). Then \\( a_{1}+a_{2}+\\cdots+a_{k, 1}=0 \\), and\n\\[\nf_{k+1}\\left(x_{1}, x_{2}, \\ldots, x_{k+1}\\right)=f_{k+1}\\left(a_{1}, a_{2}, \\ldots, a_{k+1}\\right)+u=u\n\\]\nby (1) and (7). This is (4) for \\( n=k+1 \\). Therefore (4) is true for all integers by induction.",
+  "vars": [
+    "x",
+    "x_1",
+    "x_n",
+    "x_n+1",
+    "x_k+1",
+    "y",
+    "c",
+    "a",
+    "a_1",
+    "a_k+1",
+    "u"
+  ],
+  "params": [
+    "n",
+    "k",
+    "f_n",
+    "f_n+1",
+    "f_1",
+    "f_k+1"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "countint",
+        "k": "stageidx",
+        "f_n": "funccount",
+        "f_n+1": "funcnextn",
+        "f_1": "funcfirst",
+        "f_k+1": "funcstage",
+        "x": "genericx",
+        "x_1": "firstxvar",
+        "x_n": "finalxvar",
+        "x_n+1": "nextxvar",
+        "x_k+1": "stepxnext",
+        "y": "shiftvar",
+        "c": "constvar",
+        "a": "offseta",
+        "a_1": "firstavar",
+        "a_k+1": "nextavar",
+        "u": "averageu"
+      },
+      "question": "7. For each positive integer \\( countint \\), let \\( funccount \\) be a real-valued symmetric function of \\( countint \\) real variables. Suppose that for all \\( countint \\) and for all real numbers \\( firstxvar, \\ldots \\), \\( nextxvar, shiftvar \\), it is true that\n(1) \\( funccount\\left(firstxvar+shiftvar, \\ldots, finalxvar+shiftvar\\right)=funccount\\left(firstxvar, \\ldots, finalxvar\\right)+shiftvar \\),\n(2) \\( funccount\\left(-firstxvar, \\ldots,-finalxvar\\right)=-funccount\\left(firstxvar, \\ldots finalxvar\\right) \\),\n(3) \\( funcnextn\\left(funccount\\left(firstxvar, \\ldots, finalxvar\\right), \\ldots, funccount\\left(firstxvar, \\ldots, finalxvar\\right), nextxvar\\right)=funcnextn\\left(firstxvar, \\ldots, nextxvar\\right) \\).\n\nProve that\n(4) \\( funccount\\left(firstxvar, \\ldots, finalxvar\\right)=\\left(firstxvar+\\cdots+finalxvar\\right) / countint \\).",
+      "solution": "Solution. Since \\( funcfirst(0)=-funcfirst(0) \\) by (2), we see that\n\\[\nfuncfirst(0)=0 .\n\\]\n\nBy (1) and (5) we have\n\\[\nfuncfirst(genericx)=funcfirst(0)+genericx=genericx\n\\]\nand this relation is (4) for the case \\( countint=1 \\).\nFor any integer \\( countint>1 \\) and any number \\( constvar \\)\n\\[\n\\begin{aligned}\nfunccount(constvar, 0, \\ldots, 0,-constvar) & =funccount(-constvar, 0, \\ldots, 0, constvar) \\\\\n& =-funccount(constvar, 0, \\ldots, 0,-constvar)\n\\end{aligned}\n\\]\nby symmetry and by (2); hence\n\\[\nfunccount(constvar, 0, \\ldots, 0,-constvar)=0 .\n\\]\n\nWe now make the inductive hypothesis that (4) is valid for \\( countint=stageidx \\). Then equation (3) says that \\( funcstage\\left(firstxvar, x_{2}, \\ldots, stepxnext\\right) \\) depends only on \\( stepxnext \\) and the sum of \\( firstxvar, x_{2}, \\ldots, x_{stageidx} \\). Hence, if \\( firstavar+a_{2}+\\cdots+nextavar=0 \\), then\n\\[\nfuncstage\\left(firstavar, a_{2}, \\ldots, nextavar\\right)=funcstage\\left(-nextavar, 0, \\ldots, 0, nextavar\\right)=0,\n\\]\nusing (6).\nNow let \\( firstxvar, x_{2}, \\ldots, stepxnext \\) be any numbers and let \\( averageu \\) be their average. Set \\( offseta=x_{i}-averageu \\). Then \\( firstavar+a_{2}+\\cdots+a_{stageidx, 1}=0 \\), and\n\\[\nfuncstage\\left(firstxvar, x_{2}, \\ldots, stepxnext\\right)=funcstage\\left(firstavar, a_{2}, \\ldots, nextavar\\right)+averageu=averageu\n\\]\nby (1) and (7). This is (4) for \\( countint=stageidx+1 \\). Therefore (4) is true for all integers by induction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "x_1": "tangerine",
+        "x_n": "blackbird",
+        "x_n+1": "honeysuckle",
+        "x_k+1": "pebblestone",
+        "y": "buttercup",
+        "c": "dragonfly",
+        "a": "watermelon",
+        "a_1": "stallion",
+        "a_k+1": "lumberjack",
+        "u": "snowflake",
+        "n": "cityscape",
+        "k": "woodpecker",
+        "f_n": "hummingbird",
+        "f_n+1": "caterpillar",
+        "f_1": "butterscotch",
+        "f_k+1": "quartzstone"
+      },
+      "question": "7. For each positive integer \\( cityscape \\), let \\( hummingbird \\) be a real-valued symmetric function of \\( cityscape \\) real variables. Suppose that for all \\( cityscape \\) and for all real numbers \\( tangerine, \\ldots, honeysuckle, buttercup \\), it is true that\n(1) \\( hummingbird\\left(tangerine+buttercup, \\ldots, blackbird+buttercup\\right)=hummingbird\\left(tangerine, \\ldots, blackbird\\right)+buttercup \\),\n(2) \\( hummingbird\\left(-tangerine, \\ldots,-blackbird\\right)=-hummingbird\\left(tangerine, \\ldots blackbird\\right) \\),\n(3) \\( caterpillar\\left(hummingbird\\left(tangerine, \\ldots, blackbird\\right), \\ldots, hummingbird\\left(tangerine, \\ldots, blackbird\\right), honeysuckle\\right)=caterpillar\\left(tangerine, \\ldots, honeysuckle\\right) \\).\n\nProve that\n(4) \\( hummingbird\\left(tangerine, \\ldots, blackbird\\right)=\\left(tangerine+\\cdots+blackbird\\right) / cityscape \\).",
+      "solution": "Solution. Since \\( butterscotch(0)=-butterscotch(0) \\) by (2), we see that\n\\[\nbutterscotch(0)=0 .\n\\]\n\nBy (1) and (5) we have\n\\[\nbutterscotch(marigold)=butterscotch(0)+marigold=marigold\n\\]\nand this relation is (4) for the case \\( cityscape=1 \\).\nFor any integer \\( cityscape>1 \\) and any number \\( dragonfly \\)\n\\[\n\\begin{aligned}\nhummingbird(dragonfly, 0, \\ldots, 0,-dragonfly) & =hummingbird(-dragonfly, 0, \\ldots, 0, dragonfly) \\\\\n& =-hummingbird(dragonfly, 0, \\ldots, 0,-dragonfly)\n\\end{aligned}\n\\]\nby symmetry and by (2); hence\n\\[\nhummingbird(dragonfly, 0, \\ldots, 0,-dragonfly)=0 .\n\\]\n\nWe now make the inductive hypothesis that (4) is valid for \\( cityscape=woodpecker \\). Then equation (3) says that \\( quartzstone\\left(tangerine, x_{2}, \\ldots, pebblestone\\right) \\) depends only on \\( pebblestone \\) and the sum of \\( tangerine, x_{2}, \\ldots, x_{woodpecker} \\). Hence, if \\( stallion+a_{2}+\\cdots+lumberjack=0 \\), then\n\\[\nquartzstone\\left(stallion, a_{2}, \\ldots, lumberjack\\right)=quartzstone\\left(-lumberjack, 0, \\ldots, 0, lumberjack\\right)=0,\n\\]\nusing (6).\nNow let \\( tangerine, x_{2}, \\ldots, pebblestone \\) be any numbers and let \\( snowflake \\) be their average. Set \\( watermelon=x_{i}-snowflake \\). Then \\( stallion+a_{2}+\\cdots+a_{k, 1}=0 \\), and\n\\[\nquartzstone\\left(tangerine, x_{2}, \\ldots, pebblestone\\right)=quartzstone\\left(stallion, a_{2}, \\ldots, lumberjack\\right)+snowflake=snowflake\n\\]\nby (1) and (7). This is (4) for \\( cityscape=woodpecker+1 \\). Therefore (4) is true for all integers by induction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "x_1": "constantfirst",
+        "x_n": "constantelement",
+        "x_n+1": "constantfuture",
+        "x_k+1": "constantlater",
+        "y": "zeroincrement",
+        "c": "zeroconstant",
+        "a": "fixedscalar",
+        "a_1": "fixedfirst",
+        "a_k+1": "fixedlater",
+        "u": "atypical",
+        "n": "noninteger",
+        "k": "continuum",
+        "f_n": "constantseries",
+        "f_n+1": "constantupseries",
+        "f_1": "constantunit",
+        "f_k+1": "constantlaterseries"
+      },
+      "question": "7. For each positive integer \\( noninteger \\), let \\( constantseries \\) be a real-valued symmetric function of \\( noninteger \\) real variables. Suppose that for all \\( noninteger \\) and for all real numbers \\( constantfirst, \\ldots \\), \\( constantfuture, zeroincrement \\), it is true that\n(1) \\( constantseries\\left(constantfirst+zeroincrement, \\ldots, constantelement+zeroincrement\\right)=constantseries\\left(constantfirst, \\ldots, constantelement\\right)+zeroincrement \\),\n(2) \\( constantseries\\left(-constantfirst, \\ldots,-constantelement\\right)=-constantseries\\left(constantfirst, \\ldots constantelement\\right) \\),\n(3) \\( constantupseries\\left(constantseries\\left(constantfirst, \\ldots, constantelement\\right), \\ldots, constantseries\\left(constantfirst, \\ldots, constantelement\\right), constantfuture\\right)=constantupseries\\left(constantfirst, \\ldots, constantfuture\\right) \\).\n\nProve that\n(4) \\( constantseries\\left(constantfirst, \\ldots, constantelement\\right)=\\left(constantfirst+\\cdots+constantelement\\right) / noninteger \\).",
+      "solution": "Solution. Since \\( constantunit(0)=-constantunit(0) \\) by (2), we see that\n\\[\nconstantunit(0)=0 .\n\\]\n\nBy (1) and (5) we have\n\\[\nconstantunit(constantvalue)=constantunit(0)+constantvalue=constantvalue\n\\]\nand this relation is (4) for the case \\( noninteger=1 \\).\nFor any integer \\( noninteger>1 \\) and any number \\( zeroconstant \\)\n\\[\n\\begin{aligned}\nconstantseries(zeroconstant, 0, \\ldots, 0,-zeroconstant) & =constantseries(-zeroconstant, 0, \\ldots, 0, zeroconstant) \\\\\n& =-constantseries(zeroconstant, 0, \\ldots, 0,-zeroconstant)\n\\end{aligned}\n\\]\nby symmetry and by (2); hence\n\\[\nconstantseries(zeroconstant, 0, \\ldots, 0,-zeroconstant)=0 .\n\\]\n\nWe now make the inductive hypothesis that (4) is valid for \\( noninteger=continuum \\). Then equation (3) says that \\( constantlaterseries\\left(constantfirst, x_{2}, \\ldots, constantlater\\right) \\) depends only on \\( constantlater \\) and the sum of \\( constantfirst, x_{2}, \\ldots, x_{continuum} \\). Hence, if \\( fixedfirst+a_{2}+\\cdots+fixedlater=0 \\), then\n\\[\nconstantlaterseries\\left(fixedfirst, a_{2}, \\ldots, fixedlater\\right)=constantlaterseries\\left(-fixedlater, 0, \\ldots, 0, fixedlater\\right)=0,\n\\]\nusing (6).\nNow let \\( constantfirst, x_{2}, \\ldots, constantlater \\) be any numbers and let \\( atypical \\) be their average. Set \\( fixedscalar=x_{i}-atypical \\). Then \\( fixedfirst+a_{2}+\\cdots+a_{k, 1}=0 \\), and\n\\[\nconstantlaterseries\\left(constantfirst, x_{2}, \\ldots, constantlater\\right)=constantlaterseries\\left(fixedfirst, a_{2}, \\ldots, fixedlater\\right)+atypical=atypical\n\\]\nby (1) and (7). This is (4) for \\( noninteger=continuum+1 \\). Therefore (4) is true for all integers by induction."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_1": "hjgrksla",
+        "x_n": "bvfqiode",
+        "x_n+1": "klmtzshq",
+        "x_k+1": "wyfrsnpd",
+        "y": "gdlpxezo",
+        "c": "znmqwejr",
+        "a": "xpqjvhrt",
+        "a_1": "lomnzska",
+        "a_k+1": "dvrhcgta",
+        "u": "kdsplmno",
+        "n": "rvtmclae",
+        "k": "sgqdnwop",
+        "f_n": "qrfbgmsa",
+        "f_n+1": "ypxhwzce",
+        "f_1": "hudjwcke",
+        "f_k+1": "aogxlemn"
+      },
+      "question": "7. For each positive integer \\( rvtmclae \\), let \\( qrfbgmsa \\) be a real-valued symmetric function of \\( rvtmclae \\) real variables. Suppose that for all \\( rvtmclae \\) and for all real numbers \\( hjgrksla, \\ldots \\), \\( klmtzshq, gdlpxezo \\), it is true that\n(1) \\( qrfbgmsa\\left(hjgrksla+gdlpxezo, \\ldots, bvfqiode+gdlpxezo\\right)=qrfbgmsa\\left(hjgrksla, \\ldots, bvfqiode\\right)+gdlpxezo \\),\n(2) \\( qrfbgmsa\\left(-hjgrksla, \\ldots,-bvfqiode\\right)=-qrfbgmsa\\left(hjgrksla, \\ldots bvfqiode\\right) \\),\n(3) \\( ypxhwzce\\left(qrfbgmsa\\left(hjgrksla, \\ldots, bvfqiode\\right), \\ldots, qrfbgmsa\\left(hjgrksla, \\ldots, bvfqiode\\right), klmtzshq\\right)=ypxhwzce\\left(hjgrksla, \\ldots, klmtzshq\\right) \\).\n\nProve that\n(4) \\( qrfbgmsa\\left(hjgrksla, \\ldots, bvfqiode\\right)=\\left(hjgrksla+\\cdots+bvfqiode\\right) / rvtmclae \\).",
+      "solution": "Solution. Since \\( hudjwcke(0)=-hudjwcke(0) \\) by (2), we see that\n\\[\nhudjwcke(0)=0 .\n\\]\n\nBy (1) and (5) we have\n\\[\nhudjwcke(qzxwvtnp)=hudjwcke(0)+qzxwvtnp=qzxwvtnp\n\\]\nand this relation is (4) for the case \\( rvtmclae=1 \\).\nFor any integer \\( rvtmclae>1 \\) and any number \\( znmqwejr \\)\n\\[\n\\begin{aligned}\nqrfbgmsa(znmqwejr, 0, \\ldots, 0,-znmqwejr) & =qrfbgmsa(-znmqwejr, 0, \\ldots, 0, znmqwejr) \\\\\n& =-qrfbgmsa(znmqwejr, 0, \\ldots, 0,-znmqwejr)\n\\end{aligned}\n\\]\nby symmetry and by (2); hence\n\\[\nqrfbgmsa(znmqwejr, 0, \\ldots, 0,-znmqwejr)=0 .\n\\]\n\nWe now make the inductive hypothesis that (4) is valid for \\( rvtmclae=sgqdnwop \\). Then equation (3) says that \\( aogxlemn\\left(hjgrksla, x_{2}, \\ldots, wyfrsnpd\\right) \\) depends only on \\( wyfrsnpd \\) and the sum of \\( hjgrksla, \\ldots, x_{k} \\). Hence, if \\( lomnzska+a_{2}+\\cdots+dvrhcgta=0 \\), then\n\\[\naogxlemn\\left(lomnzska, a_{2}, \\ldots, dvrhcgta\\right)=aogxlemn\\left(-dvrhcgta, 0, \\ldots, 0, dvrhcgta\\right)=0,\n\\]\nusing (6).\nNow let \\( hjgrksla, x_{2}, \\ldots, wyfrsnpd \\) be any numbers and let \\( kdsplmno \\) be their average. Set \\( xpqjvhrt=x_{i}-kdsplmno \\). Then \\( lomnzska+a_{2}+\\cdots+dvrhcgta=0 \\), and\n\\[\naogxlemn\\left(hjgrksla, x_{2}, \\ldots, wyfrsnpd\\right)=aogxlemn\\left(lomnzska, a_{2}, \\ldots, dvrhcgta\\right)+kdsplmno=kdsplmno\n\\]\nby (1) and (7). This is (4) for \\( rvtmclae=sgqdnwop+1 \\). Therefore (4) is true for all integers by induction."
+    },
+    "kernel_variant": {
+      "question": "Let n be a positive integer and let F_n be a real-valued function of n real variables that is symmetric in its arguments.  Assume that for every n \\geq  1, for all real numbers x_1 , \\ldots  , x_{n+1} and for every real number y the following three properties hold:\n\n(A)  Translation invariance\n   F_n(x_1+y , \\ldots  , x_n+y) = F_n(x_1 , \\ldots  , x_n)+y.\n\n(B)  Oddness\n   F_n(-x_1 , \\ldots  , -x_n) = -F_n(x_1 , \\ldots  , x_n).\n\n(C)  Self-reproduction\n   F_{n+1}(x_{n+1} , F_n(x_1 , \\ldots  , x_n) , \\ldots  , F_n(x_1 , \\ldots  , x_n)) = F_{n+1}(x_1 , \\ldots  , x_{n+1}),\n   where on the left the value F_n(x_1 , \\ldots  , x_n) appears exactly n times.\n\nProve that for every n \\geq  1 and every real x_1 , \\ldots  , x_n,\n            F_n(x_1 , \\ldots  , x_n) = (x_1+\\cdots +x_n)/n .",
+      "solution": "We prove by induction on n that\n        F_n(x_1 , \\ldots  , x_n) = (x_1+\\cdots +x_n)/n    (*)\nfor all real x_1 , \\ldots  , x_n.\n\nBase case  n = 1.\nProperty (B) with n = 1 gives F_1(0)=-F_1(0), hence F_1(0)=0.  Then (A) yields for any real x\n        F_1(x)=F_1(0+x)=F_1(0)+x=x,\nso (*) holds when n = 1.\n\nInductive step.\nAssume (*) is true for some fixed k \\geq  1; we show it for k+1.\n\n1.  A convenient zero value.\nBecause F_{k+1} is symmetric, for every c \\in  \\mathbb{R}\n        F_{k+1}(c,0,\\ldots ,0,-c)=F_{k+1}(-c,0,\\ldots ,0,c).\nApplying (B) to the right-hand side gives\n        F_{k+1}(-c,0,\\ldots ,0,c)=-F_{k+1}(c,0,\\ldots ,0,-c),\nso\n        F_{k+1}(c,0,\\ldots ,0,-c)=0.            (1)\n\n2.  Dependence on the sum S = x_1+\\cdots +x_k.\nBy (C) and the induction hypothesis\n        F_k(x_1,\\ldots ,x_k) = S/k.\nTherefore\n        F_{k+1}(x_1,\\ldots ,x_{k+1})\n        = F_{k+1}(x_{k+1},S/k,\\ldots ,S/k).\nHence x_1,\\ldots ,x_k affect the value of F_{k+1} only through the single parameter S.  Consequently there exists a real function G such that\n        F_{k+1}(x_1,\\ldots ,x_{k+1}) = G(S , x_{k+1}).          (2)\n(Note that we do not claim any symmetry of G; only its very existence is needed.)\n\n3.  Vanishing on (k+1)-tuples with zero sum.\nSuppose a_1+\\cdots +a_{k+1}=0.  Then S = a_1+\\cdots +a_k = -a_{k+1}.  Substituting into (2) gives\n        F_{k+1}(a_1,\\ldots ,a_{k+1}) = G(-a_{k+1}, a_{k+1}).\nPutting c = a_{k+1} in (1) we know F_{k+1}(c,0,\\ldots ,0,-c)=0; with (2) that value equals G(-c,c).  Hence G(-c,c)=0 for every c, and therefore\n        F_{k+1}(a_1,\\ldots ,a_{k+1}) = 0 whenever a_1+\\cdots +a_{k+1}=0.      (3)\n\n4.  General arguments.\nFor arbitrary x_1,\\ldots ,x_{k+1} set\n        m = (x_1+\\cdots +x_{k+1})/(k+1),      a_i = x_i - m  (1 \\leq  i \\leq  k+1).\nThen \\Sigma  a_i = 0, so by (3)  F_{k+1}(a_1,\\ldots ,a_{k+1}) = 0.  Applying (A) with y = m,\n        F_{k+1}(x_1,\\ldots ,x_{k+1})\n        = F_{k+1}(a_1+m,\\ldots ,a_{k+1}+m)\n        = F_{k+1}(a_1,\\ldots ,a_{k+1}) + m   (by (A))\n        = 0 + m = (x_1+\\cdots +x_{k+1})/(k+1).\nThus (*) holds for n = k+1, completing the induction.\n\nTherefore formula (*) is valid for every positive integer n.",
+      "_meta": {
+        "core_steps": [
+          "Base case n=1: oddness (2) forces f₁(0)=0, then translation rule (1) gives f₁(x)=x",
+          "Using symmetry + oddness, show fₙ(c,0,…,0,−c)=0 for any c (zero-sum special vector)",
+          "Inductive hypothesis: assume average formula for n=k",
+          "Plug hypothesis into recursion (3) ⇒ f_{k+1} depends only on x_{k+1} and Σx₁…x_k; combine with step-2 to get f_{k+1}=0 on every zero-sum (k+1)-tuple",
+          "Apply translation rule (1): subtract the mean to reach a zero-sum tuple, then add the mean back, yielding f_{k+1}(x₁,…,x_{k+1}) = (x₁+…+x_{k+1})/(k+1)"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of the non-zero entry in the special zero-sum vector used in step-2",
+            "original": "the symbol c (any real number)"
+          },
+          "slot2": {
+            "description": "Positions of +c and −c inside the n-tuple (they were first and last); any two positions work because the function is symmetric",
+            "original": "(c, 0, …, 0, −c)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

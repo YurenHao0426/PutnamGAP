@@ -1,0 +1,172 @@
+{
+  "index": "1953-B-7",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "7. Let \\( w \\) be an irrational number with \\( 0<w<1 \\). Prove that \\( w \\) has a unique convergent expansion of the form\n\\[\nw=\\frac{1}{p_{0}}-\\frac{1}{p_{0} p_{1}}+\\frac{1}{p_{0} p_{1} p_{2}}-\\frac{1}{p_{0} p_{1} p_{2} p_{3}}+\\cdots\n\\]\nwhere \\( p_{0}, p_{1}, p_{2}, \\ldots \\) are integers and \\( 1 \\leq p_{0}<p_{1}<p_{2}<\\cdots \\). If \\( w= \\) \\( \\frac{1}{2} \\sqrt{2} \\), find \\( p_{0}, p_{1}, p_{2} \\).",
+  "solution": "Solution. Before starting the construction we make an observation.\n(1) If \\( \\alpha \\) is an irrational number such that \\( 0<\\alpha<1 \\), there is a unique integer \\( p \\) such that\n\\[\n\\frac{1}{p+1}<\\alpha<\\frac{1}{p}\n\\]\nmoreover, \\( p \\) is positive, \\( 1-p \\alpha \\) is irrational, and \\( 0<1-p \\alpha<1 /(p+1) \\). Now define a sequence \\( w_{0}, w_{1}, w_{2}, \\ldots \\) of irrational numbers between 0 and 1 and a sequence of positive integers by induction as follows:\n\nLet \\( w_{0}=w \\) and let \\( p_{0} \\) be the integer such that\n\\[\n\\frac{1}{p_{0}+1}<w_{0}<\\frac{1}{p_{0}}\n\\]\n\nLet \\( w_{1}=1-p_{0} w_{0}( \\) which is irrational and between 0 and 1 , by (1)) and let \\( p_{1} \\) be the integer such that\n\\[\n\\frac{1}{p_{1}+1}<w_{1}<\\frac{1}{p_{1}}\n\\]\n\nAfter \\( \\omega_{k} \\), and \\( p_{k} \\), have been defined so that\n\\[\n\\frac{1}{p_{k}+1}<w_{k}:<\\frac{1}{p_{k},}\n\\]\nlet \\( w_{k}=1-p_{k} \\omega_{k} 1 \\), which is irrational and between 0 and 1 , and let \\( p_{k} \\) be the integer such that\n\\[\n\\frac{1}{p_{k}+1}<w_{k}<\\frac{1}{p_{k}}\n\\]\n\nFrom (1) and (2) it follows that\n\\[\nn_{k}^{\\prime}<\\frac{1}{p_{k}+1}\n\\]\nso \\( p_{k} \\geq p_{k}+1 \\). Hence the \\( p \\) 's increase strictly. Now\n\\[\n\\boldsymbol{w}_{k}=\\frac{1}{p_{k}}-\\frac{w_{k+1}}{p_{k}} \\text { for } k=0,1,2, \\ldots\n\\]\nso\n\\[\n\\begin{aligned}\nw & =w_{0}=\\frac{1}{p_{0}}-\\frac{w_{1}}{p_{0}} \\\\\n& =\\frac{1}{p_{0}}-\\frac{1}{p_{0} p_{1}}+\\frac{w_{2}}{p_{0} p_{1}} \\\\\n& =\\sum_{n=0}^{k} \\frac{(-1)^{n}}{p_{0} p_{1} \\cdots p_{n}}+(-1)^{k+1} \\frac{w_{k+1}}{p_{0} p_{1} \\cdots p_{k}}\n\\end{aligned}\n\\]\nfor all \\( k \\). The \\( p \\) 's increase strictly, so \\( p_{0} p_{1} \\cdots p_{k} \\geq(k+1) \\) ! Furthermore, the \\( w \\) 's are bounded, so the last term of (3) approaches 0 as \\( k \\rightarrow \\infty \\). Hence we have\n\\[\nw=\\sum_{n}^{\\infty} \\frac{(-1)^{n}}{p_{0} p_{1} \\cdots p_{n}}\n\\]\nas required.\nNext we show uniqueness. Suppose\n\\[\nw=\\sum_{n=0}^{\\infty} \\frac{(-1)^{n}}{q_{0} q_{1} \\cdots q_{n}}\n\\]\nwhere \\( q_{0}, q_{1}, q_{2}, \\ldots \\) is a strictly increasing sequence of positive integers. We shall prove that, if the preceding construction is carried out, \\( p_{n}=q_{n} \\) for all \\( n \\).\n\nSince the series appearing in (4) is alternating with terms strictly decreasing in absolute value, we have\n\\[\n\\frac{1}{q_{0}}>w_{0}>\\frac{1}{q_{0}}-\\frac{1}{q_{0} q_{1}} \\geq \\frac{1}{q_{0}}-\\frac{1}{q_{0}\\left(q_{0}+1\\right)}=\\frac{1}{q_{0}+1}\n\\]\n\nTherefore \\( p_{0}=q_{0} \\), and\n\\[\nw_{1}=1-p_{0} w_{0}=\\sum_{n=1}^{\\infty} \\frac{(-1)^{n-1}}{q_{1} q_{2} \\cdots q_{n}}\n\\]\n\nRepeating this argument inductively we find \\( p_{k-1}=q_{k-1} \\) and\n\\[\nw_{k}=\\sum_{n=k}^{\\infty} \\frac{(-1)^{n-k}}{q_{k} q_{k+1} \\cdots q_{n}}\n\\]\nfor \\( k=1,2,3, \\ldots \\) This proves the uniqueness of the expansion.\nIf \\( \\boldsymbol{w}_{0}=\\frac{1}{2} \\sqrt{2} \\), then \\( p_{0}=1 \\).\n\\[\n\\begin{array}{c}\nw_{1}=1-\\frac{1}{2} \\sqrt{2}=\\frac{1}{2+\\sqrt{2}}, \\text { so } p_{1}=[2+\\sqrt{2}]=3 \\\\\nw_{2}=1-3\\left(1-\\frac{1}{2} \\sqrt{2}\\right)=\\frac{1}{4+3 \\sqrt{2}}, \\quad \\text { so } p_{2}=[4+3 \\sqrt{2}]=8\n\\end{array}\n\\]\n\nRemark. If we start with a rational number \\( \\boldsymbol{w} \\) in the interval \\( (0,1) \\), we are led to a terminating expansion of the form (4). The expansion is not unique, however; for example,\n\\[\n\\frac{2}{3}=\\frac{1}{1}-\\frac{1}{1 \\cdot 3}=\\frac{1}{1}-\\frac{1}{1 \\cdot 2}+\\frac{1}{1 \\cdot 2 \\cdot 3}\n\\]\n\nThe series (4) will converge for any strictly increasing sequence of positive integers \\( \\left\\{q_{i}\\right\\} \\), and it is easy to see that the sum will always be irrational. Hence\n\\[\nw_{0} \\mapsto\\left\\{p_{0}, p_{1}, p_{2}, \\ldots\\right\\}\n\\]\nis an explicit bijective correspondence between the irrational numbers in \\( (0,1) \\) and the strictly increasing sequences of positive integers.",
+  "vars": [
+    "\\\\alpha",
+    "\\\\omega_k",
+    "w",
+    "w_0",
+    "w_1",
+    "w_2",
+    "w_k"
+  ],
+  "params": [
+    "k",
+    "n",
+    "n_k",
+    "p",
+    "p_0",
+    "p_1",
+    "p_2",
+    "p_k",
+    "q",
+    "q_0",
+    "q_1",
+    "q_2",
+    "q_k",
+    "q_i"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "\\alpha": "alphavar",
+        "\\omega_k": "omegaterm",
+        "w": "irration",
+        "w_0": "irrzeroth",
+        "w_1": "irrfirst",
+        "w_2": "irrsecond",
+        "w_k": "irrkth",
+        "k": "indexk",
+        "n": "indexn",
+        "n_k": "indexnk",
+        "p": "intpvar",
+        "p_0": "intpzero",
+        "p_1": "intpone",
+        "p_2": "intptwo",
+        "p_k": "intpkth",
+        "q": "intqvar",
+        "q_0": "intqzero",
+        "q_1": "intqone",
+        "q_2": "intqtwo",
+        "q_k": "intqkth",
+        "q_i": "intqith"
+      },
+      "question": "7. Let \\( irration \\) be an irrational number with \\( 0<irration<1 \\). Prove that \\( irration \\) has a unique convergent expansion of the form\n\\[\nirration=\\frac{1}{intpzero}-\\frac{1}{intpzero intpone}+\\frac{1}{intpzero intpone intptwo}-\\frac{1}{intpzero intpone intptwo p_{3}}+\\cdots\n\\]\nwhere \\( intpzero, intpone, intptwo, \\ldots \\) are integers and \\( 1 \\leq intpzero<intpone<intptwo<\\cdots \\). If \\( irration= \\frac{1}{2} \\sqrt{2} \\), find \\( intpzero, intpone, intptwo \\).",
+      "solution": "Solution. Before starting the construction we make an observation.\n(1) If \\( alphavar \\) is an irrational number such that \\( 0<alphavar<1 \\), there is a unique integer \\( intpvar \\) such that\n\\[\n\\frac{1}{intpvar+1}<alphavar<\\frac{1}{intpvar}\n\\]\nmoreover, \\( intpvar \\) is positive, \\( 1-intpvar\\,alphavar \\) is irrational, and \\( 0<1-intpvar\\,alphavar<1 /(intpvar+1) \\). Now define a sequence \\( irrzeroth, irrfirst, irrsecond, \\ldots \\) of irrational numbers between 0 and 1 and a sequence of positive integers by induction as follows:\n\nLet \\( irrzeroth=irration \\) and let \\( intpzero \\) be the integer such that\n\\[\n\\frac{1}{intpzero+1}<irrzeroth<\\frac{1}{intpzero}\n\\]\n\nLet \\( irrfirst=1-intpzero\\,irrzeroth \\) (which is irrational and between 0 and 1, by (1)) and let \\( intpone \\) be the integer such that\n\\[\n\\frac{1}{intpone+1}<irrfirst<\\frac{1}{intpone}\n\\]\n\nAfter \\( omegaterm \\) and \\( intpkth \\) have been defined so that\n\\[\n\\frac{1}{intpkth+1}<irrkth<\\frac{1}{intpkth},\n\\]\nlet \\( irrkth=1-intpkth\\,omegaterm \\), which is irrational and between 0 and 1, and let \\( intpkth \\) be the integer such that\n\\[\n\\frac{1}{intpkth+1}<irrkth<\\frac{1}{intpkth}\n\\]\n\nFrom (1) and (2) it follows that\n\\[\nindexnk^{\\prime}<\\frac{1}{intpkth+1}\n\\]\nso \\( intpkth \\ge intpkth+1 \\). Hence the \\( intpvar \\)'s increase strictly. Now\n\\[\n\\boldsymbol{irrkth}=\\frac{1}{intpkth}-\\frac{w_{k+1}}{intpkth}\\quad\\text{for}\\quad indexk=0,1,2,\\ldots\n\\]\nso\n\\[\n\\begin{aligned}\nirration &= irrzeroth = \\frac{1}{intpzero}-\\frac{irrfirst}{intpzero} \\\\\n&=\\frac{1}{intpzero}-\\frac{1}{intpzero intpone}+\\frac{irrsecond}{intpzero intpone} \\\\\n&=\\sum_{indexn=0}^{indexk} \\frac{(-1)^{indexn}}{intpzero intpone \\cdots intp_{n}}+(-1)^{indexk+1}\\frac{w_{k+1}}{intpzero intpone \\cdots intpkth}\n\\end{aligned}\n\\]\nfor all \\( indexk \\). The \\( intpvar \\)'s increase strictly, so \\( intpzero intpone \\cdots intpkth \\ge (indexk+1)! \\). Furthermore, the \\( irration \\)'s are bounded, so the last term of (3) approaches 0 as \\( indexk \\to \\infty \\). Hence we have\n\\[\nirration=\\sum_{indexn}^{\\infty} \\frac{(-1)^{indexn}}{intpzero intpone \\cdots intp_{n}}\n\\]\nas required.\n\nNext we show uniqueness. Suppose\n\\[\nirration=\\sum_{indexn=0}^{\\infty} \\frac{(-1)^{indexn}}{intqzero intqone \\cdots q_{n}}\n\\]\nwhere \\( intqzero, intqone, intqtwo, \\ldots \\) is a strictly increasing sequence of positive integers. We shall prove that, if the preceding construction is carried out, \\( p_{n}=q_{n} \\) for all \\( indexn \\).\n\nSince the series appearing in (4) is alternating with terms strictly decreasing in absolute value, we have\n\\[\n\\frac{1}{intqzero}>irrzeroth>\\frac{1}{intqzero}-\\frac{1}{intqzero intqone}\\ge\\frac{1}{intqzero}-\\frac{1}{intqzero(intqzero+1)}=\\frac{1}{intqzero+1}\n\\]\n\nTherefore \\( intpzero=intqzero \\), and\n\\[\nirrfirst=1-intpzero\\,irrzeroth=\\sum_{indexn=1}^{\\infty} \\frac{(-1)^{indexn-1}}{intqone intqtwo \\cdots q_{n}}\n\\]\n\nRepeating this argument inductively we find \\( p_{k-1}=q_{k-1} \\) and\n\\[\nirrkth=\\sum_{indexn=indexk}^{\\infty} \\frac{(-1)^{indexn-indexk}}{intqkth q_{k+1} \\cdots q_{n}}\n\\]\nfor \\( indexk=1,2,3,\\ldots \\). This proves the uniqueness of the expansion.\n\nIf \\( \\boldsymbol{irrzeroth}=\\frac{1}{2} \\sqrt{2} \\), then \\( intpzero=1 \\).\n\\[\n\\begin{array}{c}\nirrfirst=1-\\frac{1}{2}\\sqrt{2}=\\frac{1}{2+\\sqrt{2}},\\quad\\text{so}\\; intpone=[2+\\sqrt{2}]=3 \\\\\nirrsecond=1-3\\left(1-\\frac{1}{2}\\sqrt{2}\\right)=\\frac{1}{4+3\\sqrt{2}},\\quad\\text{so}\\; intptwo=[4+3\\sqrt{2}]=8\n\\end{array}\n\\]\n\nRemark. If we start with a rational number \\( \\boldsymbol{irration} \\) in the interval \\( (0,1) \\), we are led to a terminating expansion of the form (4). The expansion is not unique, however; for example,\n\\[\n\\frac{2}{3}=\\frac{1}{1}-\\frac{1}{1\\cdot3}=\\frac{1}{1}-\\frac{1}{1\\cdot2}+\\frac{1}{1\\cdot2\\cdot3}\n\\]\n\nThe series (4) will converge for any strictly increasing sequence of positive integers \\( \\{intqith\\} \\), and it is easy to see that the sum will always be irrational. Hence\n\\[\nirrzeroth \\mapsto \\{intpzero, intpone, intptwo, \\ldots\\}\n\\]\nis an explicit bijective correspondence between the irrational numbers in \\( (0,1) \\) and the strictly increasing sequences of positive integers."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "\\alpha": "hazelnuts",
+        "\\omega_k": "marshmallow",
+        "w": "dragonfruit",
+        "w_0": "elderberry",
+        "w_1": "butterscotch",
+        "w_2": "pomegranate",
+        "w_k": "butternut",
+        "k": "thumbtacks",
+        "n": "journeyman",
+        "n_k": "fireflower",
+        "p": "lightning",
+        "p_0": "sailboats",
+        "p_1": "starships",
+        "p_2": "raincloud",
+        "p_k": "sandcastle",
+        "q": "whiskbroom",
+        "q_0": "snowflake",
+        "q_1": "springtime",
+        "q_2": "waterwheel",
+        "q_k": "gemstone",
+        "q_i": "honeycomb"
+      },
+      "question": "7. Let \\( dragonfruit \\) be an irrational number with \\( 0<dragonfruit<1 \\). Prove that \\( dragonfruit \\) has a unique convergent expansion of the form\n\\[\ndragonfruit=\\frac{1}{sailboats}-\\frac{1}{sailboats starships}+\\frac{1}{sailboats starships raincloud}-\\frac{1}{sailboats starships raincloud p_{3}}+\\cdots\n\\]\nwhere \\( sailboats, starships, raincloud, \\ldots \\) are integers and \\( 1 \\leq sailboats<starships<raincloud<\\cdots \\). If \\( dragonfruit= \\frac{1}{2} \\sqrt{2} \\), find \\( sailboats, starships, raincloud \\).",
+      "solution": "Solution. Before starting the construction we make an observation.\n(1) If \\( hazelnuts \\) is an irrational number such that \\( 0<hazelnuts<1 \\), there is a unique integer \\( lightning \\) such that\n\\[\n\\frac{1}{lightning+1}<hazelnuts<\\frac{1}{lightning}\n\\]\nmoreover, \\( lightning \\) is positive, \\( 1-lightning\\,hazelnuts \\) is irrational, and \\( 0<1-lightning\\,hazelnuts<1 /(lightning+1) \\). Now define a sequence \\( elderberry, butterscotch, pomegranate, \\ldots \\) of irrational numbers between 0 and 1 and a sequence of positive integers by induction as follows:\n\nLet \\( elderberry=dragonfruit \\) and let \\( sailboats \\) be the integer such that\n\\[\n\\frac{1}{sailboats+1}<elderberry<\\frac{1}{sailboats}\n\\]\n\nLet \\( butterscotch=1-sailboats\\,elderberry \\) (which is irrational and between 0 and 1, by (1)) and let \\( starships \\) be the integer such that\n\\[\n\\frac{1}{starships+1}<butterscotch<\\frac{1}{starships}\n\\]\n\nAfter \\( marshmallow \\) and \\( sandcastle \\) have been defined so that\n\\[\n\\frac{1}{sandcastle+1}<butternut<\\frac{1}{sandcastle},\n\\]\nlet \\( butternut=1-sandcastle\\,marshmallow \\), which is irrational and between 0 and 1, and let \\( sandcastle \\) be the integer such that\n\\[\n\\frac{1}{sandcastle+1}<butternut<\\frac{1}{sandcastle}\n\\]\n\nFrom (1) and (2) it follows that\n\\[\nfireflower^{\\prime}<\\frac{1}{sandcastle+1}\n\\]\nso \\( sandcastle \\geq sandcastle+1 \\). Hence the \\( lightning \\)'s increase strictly. Now\n\\[\n\\boldsymbol{butternut}=\\frac{1}{sandcastle}-\\frac{w_{thumbtacks+1}}{sandcastle} \\text { for } thumbtacks=0,1,2,\\ldots\n\\]\nso\n\\[\n\\begin{aligned}\ndragonfruit & =elderberry=\\frac{1}{sailboats}-\\frac{butterscotch}{sailboats} \\\\\n& =\\frac{1}{sailboats}-\\frac{1}{sailboats starships}+\\frac{pomegranate}{sailboats starships} \\\\\n& =\\sum_{journeyman=0}^{thumbtacks} \\frac{(-1)^{journeyman}}{sailboats starships \\cdots sandcastle}+(-1)^{thumbtacks+1} \\frac{w_{thumbtacks+1}}{sailboats starships \\cdots sandcastle}\n\\end{aligned}\n\\]\nfor all \\( thumbtacks \\). The \\( lightning \\)'s increase strictly, so \\( sailboats starships \\cdots sandcastle \\geq(thumbtacks+1)! \\) Furthermore, the \\( dragonfruit \\)'s are bounded, so the last term of (3) approaches 0 as \\( thumbtacks \\rightarrow \\infty \\). Hence we have\n\\[\ndragonfruit=\\sum_{journeyman=0}^{\\infty} \\frac{(-1)^{journeyman}}{sailboats starships \\cdots p_{journeyman}}\n\\]\nas required.\n\nNext we show uniqueness. Suppose\n\\[\ndragonfruit=\\sum_{journeyman=0}^{\\infty} \\frac{(-1)^{journeyman}}{snowflake springtime \\cdots q_{journeyman}}\n\\]\nwhere \\( snowflake, springtime, waterwheel, \\ldots \\) is a strictly increasing sequence of positive integers. We shall prove that, if the preceding construction is carried out, \\( sailboats=snowflake \\) for all indices.\n\nSince the series appearing in (4) is alternating with terms strictly decreasing in absolute value, we have\n\\[\n\\frac{1}{snowflake}>elderberry>\\frac{1}{snowflake}-\\frac{1}{snowflake springtime} \\geq \\frac{1}{snowflake}-\\frac{1}{snowflake\\left(snowflake+1\\right)}=\\frac{1}{snowflake+1}\n\\]\n\nTherefore \\( sailboats=snowflake \\), and\n\\[\nbutterscotch=1-sailboats\\,elderberry=\\sum_{journeyman=1}^{\\infty} \\frac{(-1)^{journeyman-1}}{springtime waterwheel \\cdots q_{journeyman}}\n\\]\n\nRepeating this argument inductively we find \\( sandcastle=gemstone \\) and\n\\[\nbutternut=\\sum_{journeyman=thumbtacks}^{\\infty} \\frac{(-1)^{journeyman-thumbtacks}}{gemstone q_{thumbtacks+1} \\cdots q_{journeyman}}\n\\]\nfor \\( thumbtacks=1,2,3,\\ldots \\). This proves the uniqueness of the expansion.\n\nIf \\( \\boldsymbol{elderberry}=\\frac{1}{2} \\sqrt{2} \\), then \\( sailboats=1 \\).\n\\[\n\\begin{array}{c}\nbutterscotch=1-\\frac{1}{2} \\sqrt{2}=\\frac{1}{2+\\sqrt{2}}, \\text { so } starships=[2+\\sqrt{2}]=3 \\\\\npomegranate=1-3\\left(1-\\frac{1}{2} \\sqrt{2}\\right)=\\frac{1}{4+3 \\sqrt{2}}, \\quad \\text { so } raincloud=[4+3 \\sqrt{2}]=8\n\\end{array}\n\\]\n\nRemark. If we start with a rational number \\( \\boldsymbol{dragonfruit} \\) in the interval \\( (0,1) \\), we are led to a terminating expansion of the form (4). The expansion is not unique, however; for example,\n\\[\n\\frac{2}{3}=\\frac{1}{1}-\\frac{1}{1 \\cdot 3}=\\frac{1}{1}-\\frac{1}{1 \\cdot 2}+\\frac{1}{1 \\cdot 2 \\cdot 3}\n\\]\n\nThe series (4) will converge for any strictly increasing sequence of positive integers \\( \\left\\{honeycomb\\right\\} \\), and it is easy to see that the sum will always be irrational. Hence\n\\[\nelderberry \\mapsto\\left\\{sailboats, starships, raincloud, \\ldots\\right\\}\n\\]\nis an explicit bijective correspondence between the irrational numbers in \\( (0,1) \\) and the strictly increasing sequences of positive integers."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "\\\\alpha": "rationalalpha",
+        "\\\\omega_k": "steadysequence",
+        "w": "rationalvalue",
+        "w_0": "rationalzero",
+        "w_1": "rationalone",
+        "w_2": "rationaltwo",
+        "w_k": "rationalkappa",
+        "k": "finishindex",
+        "n": "nonindex",
+        "n_k": "nonindexk",
+        "p": "fractionpart",
+        "p_0": "fractionzero",
+        "p_1": "fractionone",
+        "p_2": "fractiontwo",
+        "p_k": "fractionk",
+        "q": "decimalpiece",
+        "q_0": "decimalzero",
+        "q_1": "decimalone",
+        "q_2": "decimaltwo",
+        "q_k": "decimalk",
+        "q_i": "decimalindex"
+      },
+      "question": "7. Let \\( rationalvalue \\) be an irrational number with \\( 0<rationalvalue<1 \\). Prove that \\( rationalvalue \\) has a unique convergent expansion of the form\n\\[\nrationalvalue=\\frac{1}{fractionzero}-\\frac{1}{fractionzero fractionone}+\\frac{1}{fractionzero fractionone fractiontwo}-\\frac{1}{fractionzero fractionone fractiontwo fractionpart_{3}}+\\cdots\n\\]\nwhere \\( fractionzero, fractionone, fractiontwo, \\ldots \\) are integers and \\( 1 \\leq fractionzero<fractionone<fractiontwo<\\cdots \\). If \\( rationalvalue= \\) \\( \\frac{1}{2} \\sqrt{2} \\), find \\( fractionzero, fractionone, fractiontwo \\).",
+      "solution": "Solution. Before starting the construction we make an observation.\n\n(1) If \\( rationalalpha \\) is an irrational number such that \\( 0<rationalalpha<1 \\), there is a unique integer \\( fractionpart \\) such that\n\\[\n\\frac{1}{fractionpart+1}<rationalalpha<\\frac{1}{fractionpart}\n\\]\nmoreover, \\( fractionpart \\) is positive, \\( 1-fractionpart\\,rationalalpha \\) is irrational, and \\( 0<1-fractionpart\\,rationalalpha<\\frac{1}{fractionpart+1} \\).\n\nNow define a sequence \\( rationalzero, rationalone, rationaltwo, \\ldots \\) of irrational numbers between 0 and 1 and a sequence of positive integers by induction as follows:\n\nLet \\( rationalzero=rationalvalue \\) and let \\( fractionzero \\) be the integer such that\n\\[\n\\frac{1}{fractionzero+1}<rationalzero<\\frac{1}{fractionzero}\n\\]\n\nLet \\( rationalone=1-fractionzero\\,rationalzero \\) (which is irrational and between 0 and 1, by (1)) and let \\( fractionone \\) be the integer such that\n\\[\n\\frac{1}{fractionone+1}<rationalone<\\frac{1}{fractionone}\n\\]\n\nAfter \\( steadysequence \\) and \\( fractionk \\) have been defined so that\n\\[\n\\frac{1}{fractionk+1}<rationalkappa<\\frac{1}{fractionk},\n\\]\nlet \\( rationalkappa=1-fractionk\\,steadysequence \\), which is irrational and between 0 and 1, and let \\( fractionk \\) be the integer such that\n\\[\n\\frac{1}{fractionk+1}<rationalkappa<\\frac{1}{fractionk}.\n\\]\n\nFrom (1) and (2) it follows that\n\\[\nnonindexk^{\\prime}<\\frac{1}{fractionk+1},\n\\]\nso \\( fractionk \\geq fractionk+1 \\). Hence the \\( fractionpart \\)'s increase strictly. Now\n\\[\n\\boldsymbol{rationalkappa}= \\frac{1}{fractionk}-\\frac{rationalvalue_{finishindex+1}}{fractionk} \\quad\\text{for } finishindex=0,1,2,\\ldots\n\\]\nso\n\\[\n\\begin{aligned}\nrationalvalue &= rationalzero = \\frac{1}{fractionzero}-\\frac{rationalone}{fractionzero} \\\\\n&= \\frac{1}{fractionzero}-\\frac{1}{fractionzero\\,fractionone}+\\frac{rationaltwo}{fractionzero\\,fractionone} \\\\\n&= \\sum_{nonindex=0}^{finishindex} \\frac{(-1)^{nonindex}}{fractionzero\\,fractionone\\cdots fraction_{nonindex}}\n      + (-1)^{finishindex+1}\\frac{rationalvalue_{finishindex+1}}\n      {fractionzero\\,fractionone\\cdots fractionk}.\n\\end{aligned}\n\\]\nfor all \\( finishindex \\). The \\( fractionpart \\)'s increase strictly, so \\( fractionzero\\,fractionone\\cdots fractionk \\geq (finishindex+1)! \\). Furthermore, the \\( rationalvalue \\)'s are bounded, so the last term of (3) approaches 0 as \\( finishindex \\rightarrow \\infty \\). Hence we have\n\\[\nrationalvalue=\\sum_{nonindex=0}^{\\infty} \\frac{(-1)^{nonindex}}{fractionzero\\,fractionone\\cdots fraction_{nonindex}},\n\\]\nas required.\n\nNext we show uniqueness. Suppose\n\\[\nrationalvalue=\\sum_{nonindex=0}^{\\infty} \\frac{(-1)^{nonindex}}{decimalzero\\,decimalone\\cdots decimal_{nonindex}},\n\\]\nwhere \\( decimalzero, decimalone, decimaltwo, \\ldots \\) is a strictly increasing sequence of positive integers. We shall prove that, if the preceding construction is carried out, \\( fraction_{nonindex}=decimal_{nonindex} \\) for all \\( nonindex \\).\n\nSince the series appearing in (4) is alternating with terms strictly decreasing in absolute value, we have\n\\[\n\\frac{1}{decimalzero}>rationalzero>\\frac{1}{decimalzero}-\\frac{1}{decimalzero\\,decimalone}\n      \\geq \\frac{1}{decimalzero}-\\frac{1}{decimalzero\\bigl(decimalzero+1\\bigr)}\n      =\\frac{1}{decimalzero+1}.\n\\]\n\nTherefore \\( fractionzero=decimalzero \\), and\n\\[\nrationalone = 1-fractionzero\\,rationalzero\n            = \\sum_{nonindex=1}^{\\infty} \\frac{(-1)^{nonindex-1}}\n              {decimalone\\,decimaltwo\\cdots decimal_{nonindex}}.\n\\]\n\nRepeating this argument inductively we find \\( fraction_{finishindex-1}=decimal_{finishindex-1} \\) and\n\\[\nrationalkappa = \\sum_{nonindex=finishindex}^{\\infty} \\frac{(-1)^{nonindex-finishindex}}\n               {decimal_{finishindex}\\,decimal_{finishindex+1}\\cdots decimal_{nonindex}}\n\\]\nfor \\( finishindex=1,2,3,\\ldots \\). This proves the uniqueness of the expansion.\n\nIf \\( \\boldsymbol{rationalzero}=\\frac{1}{2}\\sqrt{2} \\), then \\( fractionzero=1 \\).\n\\[\n\\begin{array}{c}\nrationalone = 1-\\frac{1}{2}\\sqrt{2} = \\frac{1}{2+\\sqrt{2}}, \\quad\\text{so } fractionone=[2+\\sqrt{2}]=3,\\\\\nrationaltwo = 1-3\\left(1-\\frac{1}{2}\\sqrt{2}\\right)=\\frac{1}{4+3\\sqrt{2}}, \\quad\\text{so } fractiontwo=[4+3\\sqrt{2}]=8.\n\\end{array}\n\\]\n\nRemark. If we start with a rational number \\( \\boldsymbol{rationalvalue} \\) in the interval \\( (0,1) \\), we are led to a terminating expansion of the form (4). The expansion is not unique, however; for example,\n\\[\n\\frac{2}{3}=\\frac{1}{1}-\\frac{1}{1\\cdot3}=\\frac{1}{1}-\\frac{1}{1\\cdot2}+\\frac{1}{1\\cdot2\\cdot3}.\n\\]\n\nThe series (4) will converge for any strictly increasing sequence of positive integers \\( \\{decimalindex\\} \\), and it is easy to see that the sum will always be irrational. Hence\n\\[\nrationalzero \\mapsto \\{fractionzero, fractionone, fractiontwo, \\ldots\\}\n\\]\nis an explicit bijective correspondence between the irrational numbers in \\( (0,1) \\) and the strictly increasing sequences of positive integers."
+    },
+    "garbled_string": {
+      "map": {
+        "\\alpha": "qzxwvtnp",
+        "\\omega_k": "hjgrksla",
+        "w": "bntvxclm",
+        "w_0": "gkqpsdva",
+        "w_1": "mlzfhwre",
+        "w_2": "pdxtkqbn",
+        "w_k": "vrplsgae",
+        "k": "rfzhykua",
+        "n": "sldmtqpa",
+        "n_k": "tpxwgnob",
+        "p": "jscvhrmd",
+        "p_0": "lkhqszpo",
+        "p_1": "mzdfqubg",
+        "p_2": "qbnvlxsa",
+        "p_k": "hvdrlgpe",
+        "q": "xrmdvokl",
+        "q_0": "czvalrje",
+        "q_1": "knshvtep",
+        "q_2": "pvcluqsm",
+        "q_k": "ywzrmcob",
+        "q_i": "sjtrmoxa"
+      },
+      "question": "7. Let \\( bntvxclm \\) be an irrational number with \\( 0<bntvxclm<1 \\). Prove that \\( bntvxclm \\) has a unique convergent expansion of the form\n\\[\nbntvxclm=\\frac{1}{lkhqszpo}-\\frac{1}{lkhqszpo\\, mzdfqubg}+\\frac{1}{lkhqszpo\\, mzdfqubg\\, qbnvlxsa}-\\frac{1}{lkhqszpo\\, mzdfqubg\\, qbnvlxsa\\, jscvhrmd_{3}}+\\cdots\n\\]\nwhere \\( lkhqszpo, mzdfqubg, qbnvlxsa, \\ldots \\) are integers and \\( 1 \\le lkhqszpo<mzdfqubg<qbnvlxsa<\\cdots \\). If \\( bntvxclm=\\frac{1}{2}\\sqrt{2} \\), find \\( lkhqszpo, mzdfqubg, qbnvlxsa \\).",
+      "solution": "Solution. Before starting the construction we make an observation.\n\n(1) If \\( qzxwvtnp \\) is an irrational number such that \\( 0<qzxwvtnp<1 \\), there is a unique integer \\( jscvhrmd \\) such that\n\\[\n\\frac{1}{jscvhrmd+1}<qzxwvtnp<\\frac{1}{jscvhrmd}\n\\]\nmoreover, \\( jscvhrmd \\) is positive, \\( 1-jscvhrmd\\, qzxwvtnp \\) is irrational, and\n\\( 0<1-jscvhrmd\\, qzxwvtnp<\\frac{1}{jscvhrmd+1} \\).\n\nNow define a sequence \\( gkqpsdva, mlzfhwre, pdxtkqbn, \\ldots \\) of irrational numbers between 0 and 1 and a sequence of positive integers by induction as follows:\n\nLet \\( gkqpsdva=bntvxclm \\) and let \\( lkhqszpo \\) be the integer such that\n\\[\n\\frac{1}{lkhqszpo+1}<gkqpsdva<\\frac{1}{lkhqszpo}\n\\]\n\nLet \\( mlzfhwre=1-lkhqszpo\\, gkqpsdva \\) (which is irrational and between 0 and 1, by (1)) and let \\( mzdfqubg \\) be the integer such that\n\\[\n\\frac{1}{mzdfqubg+1}<mlzfhwre<\\frac{1}{mzdfqubg}\n\\]\n\nAfter \\( hjgrksla \\) and \\( hvdrlgpe \\) have been defined so that\n\\[\n\\frac{1}{hvdrlgpe+1}<vrplsgae<\\frac{1}{hvdrlgpe},\n\\]\nlet\n\\( vrplsgae=1-hvdrlgpe\\, hjgrksla \\),\nwhich is irrational and between 0 and 1, and let \\( hvdrlgpe \\) be the integer such that\n\\[\n\\frac{1}{hvdrlgpe+1}<vrplsgae<\\frac{1}{hvdrlgpe}\n\\]\n\nFrom (1) and (2) it follows that\n\\[\n tpxwgnob^{\\prime}<\\frac{1}{hvdrlgpe+1}\n\\]\nso \\( hvdrlgpe\\ge hvdrlgpe+1 \\). Hence the \\( jscvhrmd \\)'s increase strictly. Now\n\\[\n\\boldsymbol{vrplsgae}=\\frac{1}{hvdrlgpe}-\\frac{bntvxclm_{rfzhykua+1}}{hvdrlgpe}\\quad\\text{for } rfzhykua=0,1,2,\\ldots\n\\]\nso\n\\[\n\\begin{aligned}\nbntvxclm &= gkqpsdva=\\frac{1}{lkhqszpo}-\\frac{mlzfhwre}{lkhqszpo}\\\\\n&=\\frac{1}{lkhqszpo}-\\frac{1}{lkhqszpo\\, mzdfqubg}+\\frac{pdxtkqbn}{lkhqszpo\\, mzdfqubg}\\\\\n&=\\sum_{sldmtqpa=0}^{rfzhykua}\\frac{(-1)^{sldmtqpa}}{lkhqszpo\\, mzdfqubg\\cdots jscvhrmd_{sldmtqpa}}\n+(-1)^{rfzhykua+1}\\frac{bntvxclm_{rfzhykua+1}}{lkhqszpo\\, mzdfqubg\\cdots jscvhrmd_{rfzhykua}}\n\\end{aligned}\n\\]\nfor all \\( rfzhykua \\). The \\( jscvhrmd \\)'s increase strictly, so\n\\( lkhqszpo\\, mzdfqubg\\cdots jscvhrmd_{rfzhykua}\\ge (rfzhykua+1)! \\).\nFurthermore, the \\( bntvxclm \\)'s are bounded, so the last term of (3) approaches 0 as \\( rfzhykua\\rightarrow\\infty \\). Hence we have\n\\[\nbntvxclm=\\sum_{sldmtqpa=0}^{\\infty}\\frac{(-1)^{sldmtqpa}}{lkhqszpo\\, mzdfqubg\\cdots jscvhrmd_{sldmtqpa}}\n\\]\nas required.\n\nNext we show uniqueness. Suppose\n\\[\nbntvxclm=\\sum_{sldmtqpa=0}^{\\infty}\\frac{(-1)^{sldmtqpa}}{czvalrje\\, knshvtep\\cdots ywzrmcob_{sldmtqpa}}\n\\]\nwhere \\( czvalrje, knshvtep, pvcluqsm, \\ldots \\) is a strictly increasing sequence of positive integers. We shall prove that, if the preceding construction is carried out, \\( jscvhrmd_{sldmtqpa}=ywzrmcob_{sldmtqpa} \\) for all \\( sldmtqpa \\).\n\nSince the series appearing in (4) is alternating with terms strictly decreasing in absolute value, we have\n\\[\n\\frac{1}{czvalrje}>gkqpsdva>\\frac{1}{czvalrje}-\\frac{1}{czvalrje\\, knshvtep}\n\\ge \\frac{1}{czvalrje}-\\frac{1}{czvalrje\\left(czvalrje+1\\right)}=\\frac{1}{czvalrje+1}\n\\]\n\nTherefore \\( lkhqszpo=czvalrje \\), and\n\\[\nmlzfhwre=1-lkhqszpo\\, gkqpsdva=\\sum_{sldmtqpa=1}^{\\infty}\\frac{(-1)^{sldmtqpa-1}}{knshvtep\\, pvcluqsm\\cdots ywzrmcob_{sldmtqpa}}\n\\]\n\nRepeating this argument inductively we find \\( jscvhrmd_{rfzhykua-1}=ywzrmcob_{rfzhykua-1} \\) and\n\\[\nvrplsgae=\\sum_{sldmtqpa=rfzhykua}^{\\infty}\\frac{(-1)^{sldmtqpa-rfzhykua}}{ywzrmcob_{rfzhykua}\\, ywzrmcob_{rfzhykua+1}\\cdots ywzrmcob_{sldmtqpa}}\n\\]\nfor \\( rfzhykua=1,2,3,\\ldots \\). This proves the uniqueness of the expansion.\n\nIf \\( \\boldsymbol{gkqpsdva}=\\frac{1}{2}\\sqrt{2} \\), then \\( lkhqszpo=1 \\).\n\\[\n\\begin{array}{c}\nmlzfhwre=1-\\frac{1}{2}\\sqrt{2}=\\frac{1}{2+\\sqrt{2}},\\quad\\text{so } mzdfqubg=[2+\\sqrt{2}]=3\\\\[6pt]\npdxtkqbn=1-3\\left(1-\\frac{1}{2}\\sqrt{2}\\right)=\\frac{1}{4+3\\sqrt{2}},\\quad\\text{so } qbnvlxsa=[4+3\\sqrt{2}]=8\n\\end{array}\n\\]\n\nRemark. If we start with a rational number \\( \\boldsymbol{bntvxclm} \\) in the interval \\( (0,1) \\), we are led to a terminating expansion of the form (4). The expansion is not unique, however; for example,\n\\[\n\\frac{2}{3}=\\frac{1}{1}-\\frac{1}{1\\cdot 3}=\\frac{1}{1}-\\frac{1}{1\\cdot 2}+\\frac{1}{1\\cdot 2\\cdot 3}\n\\]\n\nThe series (4) will converge for any strictly increasing sequence of positive integers \\( \\{sjtrmoxa\\} \\), and it is easy to see that the sum will always be irrational. Hence\n\\[\ngkqpsdva \\mapsto \\{lkhqszpo, mzdfqubg, qbnvlxsa, \\ldots\\}\n\\]\nis an explicit bijective correspondence between the irrational numbers in \\( (0,1) \\) and the strictly increasing sequences of positive integers."
+    },
+    "kernel_variant": {
+      "question": "Let \\(w\\) be an irrational real number with \\(0<w<1\\).  \n(a)  Show that there is a unique strictly increasing sequence of positive integers\n\\[1\\le p_0<p_1<p_2<\\dots\\]\nsuch that the alternating infinite product-denominator series\n\\[\n w\\;=\\;\\frac{1}{p_{0}}-\\frac{1}{p_{0}p_{1}}+\\frac{1}{p_{0}p_{1}p_{2}}-\\frac{1}{p_{0}p_{1}p_{2}p_{3}}+\\cdots\n\\]\nconverges to \\(w\\).\n\n(b)  For the specific irrational\n\\[\\displaystyle w=\\pi-3\\,(\\approx0.14159),\\]\ncompute the first three integers of the sequence, \\(p_{0},p_{1},p_{2}.\\)",
+      "solution": "Part (a): Existence of the expansion\n------------------------------------------------\nStep 1  (unique integer bracketing).\nFor an irrational \\(\\alpha\\in(0,1)\\) there is a unique positive integer \\(p\\) satisfying\n\\[\n\\frac1{p+1}<\\alpha<\\frac1p.\n\\]\nIndeed, \\(p=\\lfloor 1/\\alpha\\rfloor\\) works and uniqueness is obvious.\n\nStep 2  (recursive construction).\nPut \\(w_0=w\\).  Having defined an irrational \\(w_k\\in(0,1)\\), choose the unique\n\\(p_k\\) with  \\(1/(p_k+1)<w_k<1/p_k\\) and set\n\\[\nw_{k+1}=1-p_k w_k.\n\\]\nBecause \\(w_k<1/p_k\\) we get \\(0<w_{k+1}<1\\); irrationality of \\(w_{k+1}\\) follows\nfrom that of \\(w_k\\).  Moreover\n\\[\nw_{k+1}<\\frac{1}{p_k+1}\\ \\Longrightarrow\\ p_{k+1}>p_k,\n\\]\nso the \\(p_k\\) form a strictly increasing sequence.\n\nStep 3  (telescoping identity).\nFrom the definition we have\n\\[\nw_k = \\frac1{p_k}-\\frac{w_{k+1}}{p_k}\\quad(k\\ge0).\n\\]\nIterating this identity \\(k+1\\) times gives\n\\[\nw = w_0 = \\sum_{n=0}^{k} \\frac{(-1)^n}{p_0p_1\\dots p_n}\n         +(-1)^{k+1}\\,\\frac{w_{k+1}}{p_0p_1\\dots p_k}.\n\\]\n\nStep 4  (convergence of the tail).\nSince every \\(w_{k+1}\\) lies in \\((0,1)\\), the remainder has absolute value\n\\[\n\\Bigl|(-1)^{k+1}\\,\\frac{w_{k+1}}{p_0\\dots p_k}\\Bigr|<\\frac1{p_0p_1\\dots p_k}.\n\\]\nBecause \\(p_1,p_2,\\dots\\) are all \\(\\ge2\\) we have the easy bound\n\\[\np_0p_1\\dots p_k\\;\\ge\\;2^{\\,k}\\quad(k\\ge1),\n\\]\nso the denominator tends to infinity and the remainder tends to 0.  Hence the\ninfinite series converges to \\(w\\), proving existence of the desired expansion.\n\nPart (b): Uniqueness of the sequence\n------------------------------------\nSuppose another strictly increasing sequence \\(q_0<q_1<\\dots\\) satisfied the\nsame equality.  The resulting series is alternating with strictly decreasing\nterms, so its first two partial sums give the bounds\n\\[\n\\frac1{q_0}>w>\\frac1{q_0}-\\frac1{q_0q_1}>\\frac1{q_0+1}.\n\\]\nBy the uniqueness in Step 1 this forces \\(p_0=q_0\\).  Substituting back and\nrepeating the argument inductively yields \\(p_n=q_n\\) for all \\(n\\).  Hence the\nsequence \\((p_n))\\) is unique.\n\nPart (c): Numerical example  \\(w=\\pi-3\\)\n----------------------------------------\n1.  First term.\n\\[\n0.14159<\\frac17\\quad\\text{and}\\quad 0.14159>\\frac18,\\quad\\text{so}\\quad p_0=7.\n\\]\n\n2.  Compute \\(w_1\\).\n\\[\nw_1=1-7(\\pi-3)=22-7\\pi\\approx0.008851425.\n\\]\nBracketing gives \\(1/113< w_1 < 1/112\\), hence \\(p_1=112.\\)\n\n3.  Compute \\(w_2\\).\n\\[\nw_2=1-112w_1=1-112(22-7\\pi)=784\\pi-2463\\approx0.008640414.\n\\]\nNow \\(1/116< w_2 < 1/115\\), so \\(p_2=115.\\)\n\nTherefore the first three integers in the expansion of \\(\\pi-3\\) are\n\\[\n\\boxed{p_0=7},\\;\\boxed{p_1=112},\\;\\boxed{p_2=115}.\n\\]",
+      "_meta": {
+        "core_steps": [
+          "Unique–integer bracketing: for any irrational α∈(0,1) there is exactly one p with 1/(p+1)<α<1/p.",
+          "Recursive construction: define w_{k+1}=1−p_k w_k and choose p_k via the bracket; this keeps w_k in (0,1) and forces p_{k+1}>p_k.",
+          "Telescoping identity: w_k = 1/p_k − w_{k+1}/p_k, iterated to express w as the alternating series Σ (−1)^n /(p_0…p_n) plus a tail.",
+          "Convergence/existence: product p_0…p_k grows unbounded (≥ (k+1)!) so the tail →0, giving the desired expansion.",
+          "Uniqueness: any other strictly increasing {q_n} gives an alternating series with decreasing terms; comparison of first–term bounds forces p_0=q_0 and inductively p_n=q_n."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Particular numerical example used to illustrate the construction and compute first few p_n.",
+            "original": "w = (1/2)·√2"
+          },
+          "slot2": {
+            "description": "Specific lower bound chosen for the product p_0 p_1 … p_k when proving convergence.",
+            "original": "(k+1)!"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

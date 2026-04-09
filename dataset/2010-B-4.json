@@ -1,0 +1,194 @@
+{
+  "index": "2010-B-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Find all pairs of polynomials $p(x)$ and $q(x)$ with real coefficients for which\n\\[\np(x) q(x+1) - p(x+1) q(x) = 1.\n\\]",
+  "solution": "\\textbf{First solution.}\nThe pairs $(p,q)$ satisfying the given equation are those of the form $p(x) = ax+b, q(x) = cx+d$\nfor $a,b,c,d \\in \\RR$ such that $bc- ad = 1$. We will see later that these indeed give solutions.\n\nSuppose $p$ and $q$ satisfy the given equation; note that neither $p$ nor $q$ can be identically zero.\nBy subtracting the equations\n\\begin{align*}\np(x) q(x+1) - p(x+1) q(x) &= 1 \\\\\np(x-1) q(x) - p(x) q(x-1) &= 1,\n\\end{align*}\nwe obtain the equation\n\\[\np(x) (q(x+1) + q(x-1)) = q(x) (p(x+1) + p(x-1)).\n\\]\nThe original equation implies that $p(x)$ and $q(x)$ have no common nonconstant factor,\nso $p(x)$ divides $p(x+1) + p(x-1)$. Since each of $p(x+1)$ and $p(x-1)$ has the same degree and leading\ncoefficient as $p$, we must have\n\\[\np(x+1) + p(x-1) = 2p(x).\n\\]\nIf we define the polynomials $r(x) = p(x+1) - p(x)$, $s(x) = q(x+1) - q(x)$,\nwe have $r(x+1) = r(x)$, and similarly $s(x+1) = s(x)$.\nPut\n\\[\na = r(0), b = p(0), c = s(0), d = q(0).\n\\]\nThen $r(x) = a, s(x) = c$ for all $x \\in \\ZZ$, and hence identically;\nconsequently, $p(x) = ax + b, q(x) = cx + d$ for all $x \\in \\ZZ$, and hence identically.\nFor $p$ and $q$ of this form,\n\\[\np(x) q(x+1) - p(x+1) q(x) = bc - ad,\n\\]\nso we get a solution if and only if $bc-ad=1$, as claimed.\n\n\\textbf{Second solution.}\n(Communicated by Catalin Zara.)\nAgain, note that $p$ and $q$ must be nonzero.\nWrite\n\\begin{align*}\np(x) &= p_0 + p_1 x + \\cdots + p_m x^m \\\\\nq(x) &= q_0 + q_1 x + \\cdots + q_n x^n\n\\end{align*}\nwith $p_m, q_n \\neq 0$, so that $m = \\deg(p), n = \\deg(q)$. It is enough to derive a contradiction\nassuming that $\\max\\{m,n\\} > 1$, the remaining cases being treated as in the\nfirst solution.\n\nPut $R(x) = p(x) q(x+1) - p(x+1) q(x)$. Since $m+n \\geq 2$ by assumption,\nthe coefficient of $x^{m+n-1}$ in $R(x)$\nmust vanish. By easy algebra, this coefficient equals $(m-n) p_m q_n$, so we must have $m=n > 1$.\n\nFor $k=1,\\dots,2m-2$, the coefficient of $x^k$ in $R(x)$ is\n\\[\n\\sum_{i+j>k, j>i} \\left( \\binom{j}{k-i} - \\binom{i}{k-j} \\right)(p_i q_j - p_j q_i)\n\\]\nand must vanish.\nFor $k=2m-2$, the only summand is for $(i,j) = (m-1,m)$, so $p_{m-1} q_m = p_m q_{m-1}$.\n\nSuppose now that $h \\geq 1$ and that $p_i q_j = p_j q_i$ is known to vanish whenever\n$j>i \\geq h$. (By the previous paragraph, we initially have this for $h=m-1$.)\nTake $k = m+h-2$ and note that the conditions $i+j > h, j \\leq m$ force $i \\geq h-1$.\nUsing the hypothesis, we see that the only possible nonzero contribution to the coefficient of $x^k$ in $R(x)$\nis from $(i,j) = (h-1,m)$. Hence $p_{h-1} q_m = p_m q_{h-1}$; since $p_m, q_m \\neq 0$, this implies\n$p_{h-1} q_j = p_j q_{h-1}$ whenever $j > h-1$.\n\nBy descending induction, we deduce that $p_i q_j = p_j q_i$ whenever $j>i \\geq 0$. Consequently,\n$p(x)$ and $q(x)$ are scalar multiples of each other, forcing $R(x) = 0$, a contradiction.\n\n\\textbf{Third solution.}\n(Communicated by David Feldman.)\nAs in the second solution, we note that there are no solutions where $m = \\deg(p), n = \\deg(q)$\nare distinct and $m+n \\geq 2$. Suppose $p,q$ form a solution with $m = n \\geq 2$.\nThe desired identity asserts that the matrix\n\\[\n\\begin{pmatrix}\np(x) & p(x+1) \\\\\nq(x) & q(x+1)\n\\end{pmatrix}\n\\]\nhas determinant 1. This condition is preserved by replacing $q(x)$ with $q(x) - tp(x)$ for any\nreal number $t$. In particular, we can choose $t$ so that $\\deg(q(x) - tp(x)) < m$;\nwe then obtain a contradiction.",
+  "vars": [
+    "x",
+    "i",
+    "j",
+    "k",
+    "h",
+    "t"
+  ],
+  "params": [
+    "p",
+    "q",
+    "r",
+    "s",
+    "R",
+    "a",
+    "b",
+    "c",
+    "d",
+    "m",
+    "n",
+    "p_m",
+    "q_n",
+    "p_i",
+    "q_j",
+    "p_m-1",
+    "q_m-1",
+    "p_h-1",
+    "q_h-1"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "realvar",
+        "i": "indexone",
+        "j": "indextwo",
+        "k": "indexthr",
+        "h": "indexfor",
+        "t": "paramtee",
+        "p": "polyone",
+        "q": "polytwo",
+        "r": "diffpoly",
+        "s": "diffpolyq",
+        "R": "resultant",
+        "a": "constalpha",
+        "b": "constbeta",
+        "c": "constgamma",
+        "d": "constdelta",
+        "m": "degreep",
+        "n": "degreeq",
+        "p_m": "leadcoeffp",
+        "q_n": "leadcoeffq",
+        "p_i": "coeffpi",
+        "q_j": "coeffqj",
+        "p_m-1": "prevcoefp",
+        "q_m-1": "prevcoefq",
+        "p_h-1": "prevcoefph",
+        "q_h-1": "prevcoefqh"
+      },
+      "question": "Find all pairs of polynomials $polyone(realvar)$ and $polytwo(realvar)$ with real coefficients for which\n\\[\npolyone(realvar)\\,polytwo(realvar+1)-polyone(realvar+1)\\,polytwo(realvar)=1.\n\\]",
+      "solution": "\\textbf{First solution.}\\nThe pairs $(polyone,polytwo)$ satisfying the given equation are those of the form $polyone(realvar)=constalpha\\,realvar+constbeta$, $polytwo(realvar)=constgamma\\,realvar+constdelta$ for $constalpha,constbeta,constgamma,constdelta\\in\\RR$ such that $constbeta constgamma-constalpha constdelta=1$. We will see later that these indeed give solutions.\\n\\nSuppose polyone and polytwo satisfy the given equation; note that neither polyone nor polytwo can be identically zero. By subtracting the equations\\n\\[\\npolyone(realvar)\\,polytwo(realvar+1)-polyone(realvar+1)\\,polytwo(realvar)=1,\\\\\npolyone(realvar-1)\\,polytwo(realvar)-polyone(realvar)\\,polytwo(realvar-1)=1,\\n\\] we obtain\\n\\[\\npolyone(realvar)\\bigl(polytwo(realvar+1)+polytwo(realvar-1)\\bigr)=polytwo(realvar)\\bigl(polyone(realvar+1)+polyone(realvar-1)\\bigr).\\n\\]The original equation implies that $polyone(realvar)$ and $polytwo(realvar)$ have no common nonconstant factor, so $polyone(realvar)$ divides $polyone(realvar+1)+polyone(realvar-1)$. Since each of $polyone(realvar+1)$ and $polyone(realvar-1)$ has the same degree and leading coefficient as $polyone$, we must have\\n\\[\\npolyone(realvar+1)+polyone(realvar-1)=2\\,polyone(realvar).\\n\\]\\nDefine $diffpoly(realvar)=polyone(realvar+1)-polyone(realvar)$ and $diffpolyq(realvar)=polytwo(realvar+1)-polytwo(realvar)$; then $diffpoly(realvar+1)=diffpoly(realvar)$ and $diffpolyq(realvar+1)=diffpolyq(realvar)$. Put\\n\\[\\nconstalpha=diffpoly(0),\\quad constbeta=polyone(0),\\quad constgamma=diffpolyq(0),\\quad constdelta=polytwo(0).\\n\\]Hence $diffpoly(realvar)=constalpha$ and $diffpolyq(realvar)=constgamma$ identically, so $polyone(realvar)=constalpha\\,realvar+constbeta$ and $polytwo(realvar)=constgamma\\,realvar+constdelta$. For such polynomials\\n\\[\\npolyone(realvar)\\,polytwo(realvar+1)-polyone(realvar+1)\\,polytwo(realvar)=constbeta constgamma-constalpha constdelta,\\n\\]so a solution occurs exactly when $constbeta constgamma-constalpha constdelta=1$.\\n\\n\\textbf{Second solution.}\\nAgain, polyone and polytwo must be non-zero. Write\\n\\[\\n\\begin{aligned}\npolyone(realvar)&=p_0+p_1 realvar+\\cdots+leadcoeffp\\,realvar^{degreep},\\\\\npolytwo(realvar)&=q_0+q_1 realvar+\\cdots+leadcoeffq\\,realvar^{degreeq},\n\\end{aligned}\\n\\]with $leadcoeffp,leadcoeffq\\neq0$, so $degreep=\\deg(polyone)$ and $degreeq=\\deg(polytwo)$. Assume $\\max\\{degreep,degreeq\\}>1$; the remaining cases are settled by the first solution.\\n\\nPut $resultant(realvar)=polyone(realvar)\\,polytwo(realvar+1)-polyone(realvar+1)\\,polytwo(realvar)$. Because $degreep+degreeq\\ge2$, the coefficient of $realvar^{degreep+degreeq-1}$ in $resultant(realvar)$ vanishes. A direct calculation gives this coefficient as $(degreep-degreeq)leadcoeffp leadcoeffq$, forcing $degreep=degreeq>1$.\\n\\nFor $indexthr=1,\\dots,2degreep-2$, the coefficient of $realvar^{indexthr}$ in $resultant(realvar)$ is\\n\\[\\n\\sum_{indexone+indextwo>indexthr,\\;indextwo>indexone}\\Bigl(\\binom{indextwo}{indexthr-indexone}-\\binom{indexone}{indexthr-indextwo}\\Bigr)\\bigl(coeffpi\\,coeffqj-p_{indextwo}q_{indexone}\\bigr),\\n\\]and must be zero. For $indexthr=2degreep-2$ the only summand is $(indexone,indextwo)=(degreep-1,degreep)$, giving $prevcoefp\\,q_{degreep}=leadcoeffp\\,prevcoefq$.\\n\\nNow suppose $indexfor\\ge1$ and that $p_{indexone}q_{indextwo}=p_{indextwo}q_{indexone}$ whenever $indextwo>indexone\\ge indexfor$ (initially true for $indexfor=degreep-1$). Taking $indexthr=degreep+indexfor-2$, the conditions $indexone+indextwo>indexfor$ and $indextwo\\le degreep$ force $indexone\\ge indexfor-1$. The only potential contribution to the coefficient of $realvar^{indexthr}$ then comes from $(indexone,indextwo)=(indexfor-1,degreep)$, giving $prevcoefph\\,q_{degreep}=leadcoeffp\\,prevcoefqh$. Because $leadcoeffp,q_{degreep}\\neq0$, we deduce $p_{indexfor-1}q_{indextwo}=p_{indextwo}q_{indexfor-1}$ whenever $indextwo>indexfor-1$.\\n\\nDescending induction yields $p_{indexone}q_{indextwo}=p_{indextwo}q_{indexone}$ whenever $indextwo>indexone\\ge0$. Thus polyone and polytwo are scalar multiples, so $resultant(realvar)=0$, contradicting the given identity.\\n\\n\\textbf{Third solution.}\\nAs above, there are no solutions with distinct degrees when $degreep+degreeq\\ge2$. Assume $degreep=degreeq\\ge2$. The identity asserts that the matrix\\n\\[\\n\\begin{pmatrix}\npolyone(realvar)&polyone(realvar+1)\\\\[4pt]\npolytwo(realvar)&polytwo(realvar+1)\n\\end{pmatrix}\n\\]has determinant 1. Replacing $polytwo(realvar)$ by $polytwo(realvar)-paramtee\\,polyone(realvar)$ for any real $paramtee$ preserves the determinant. Choosing $paramtee$ so that $\\deg\\bigl(polytwo(realvar)-paramtee\\,polyone(realvar)\\bigr)<degreep$ gives a contradiction, completing the proof."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "hummingbird",
+        "j": "telescope",
+        "k": "crocodile",
+        "h": "caterpillar",
+        "t": "jellybean",
+        "p": "tornadoes",
+        "q": "rainstorm",
+        "r": "shipwreck",
+        "s": "bricklayer",
+        "R": "chandelier",
+        "a": "pinecone",
+        "b": "horseshoe",
+        "c": "lilypond",
+        "d": "snowflake",
+        "m": "blueberry",
+        "n": "goldfish",
+        "p_m": "avalanche",
+        "q_n": "pepperoni",
+        "p_i": "raincloud",
+        "q_j": "marshland",
+        "p_{m-1}": "starfruit",
+        "q_{m-1}": "blackbird",
+        "p_{h-1}": "scarecrow",
+        "q_{h-1}": "snowstorm"
+      },
+      "question": "Find all pairs of polynomials $tornadoes(hummingbird)$ and $rainstorm(hummingbird)$ with real coefficients for which\n\\[\ntornadoes(hummingbird) rainstorm(hummingbird+1) - tornadoes(hummingbird+1) rainstorm(hummingbird) = 1.\n\\]",
+      "solution": "\\textbf{First solution.}\nThe pairs $(tornadoes,rainstorm)$ satisfying the given equation are those of the form $tornadoes(hummingbird) = pinecone\\,hummingbird + horseshoe,\\; rainstorm(hummingbird) = lilypond\\,hummingbird + snowflake$ for $pinecone, horseshoe, lilypond, snowflake \\in \\RR$ such that $horseshoe\\,lilypond - pinecone\\,snowflake = 1$. We will see later that these indeed give solutions.\n\nSuppose $tornadoes$ and $rainstorm$ satisfy the given equation; note that neither $tornadoes$ nor $rainstorm$ can be identically zero.\nBy subtracting the equations\n\\begin{align*}\ntornadoes(hummingbird)\\,rainstorm(hummingbird+1) - tornadoes(hummingbird+1)\\,rainstorm(hummingbird) &= 1 \\\\\ntornadoes(hummingbird-1)\\,rainstorm(hummingbird) - tornadoes(hummingbird)\\,rainstorm(hummingbird-1) &= 1,\n\\end{align*}\nwe obtain the equation\n\\[\ntornadoes(hummingbird)\\bigl(rainstorm(hummingbird+1)+rainstorm(hummingbird-1)\\bigr)=rainstorm(hummingbird)\\bigl(tornadoes(hummingbird+1)+tornadoes(hummingbird-1)\\bigr).\n\\]\nThe original equation implies that $tornadoes(hummingbird)$ and $rainstorm(hummingbird)$ have no common nonconstant factor, so $tornadoes(hummingbird)$ divides $tornadoes(hummingbird+1)+tornadoes(hummingbird-1)$. Since each of $tornadoes(hummingbird+1)$ and $tornadoes(hummingbird-1)$ has the same degree and leading coefficient as $tornadoes$, we must have\n\\[\ntornadoes(hummingbird+1)+tornadoes(hummingbird-1)=2\\,tornadoes(hummingbird).\n\\]\nIf we define the polynomials $shipwreck(hummingbird)=tornadoes(hummingbird+1)-tornadoes(hummingbird)$, $bricklayer(hummingbird)=rainstorm(hummingbird+1)-rainstorm(hummingbird)$, we have $shipwreck(hummingbird+1)=shipwreck(hummingbird)$ and $bricklayer(hummingbird+1)=bricklayer(hummingbird)$. Put\n\\[\npinecone=shipwreck(0),\\quad horseshoe=tornadoes(0),\\quad lilypond=bricklayer(0),\\quad snowflake=rainstorm(0).\n\\]\nThen $shipwreck(hummingbird)=pinecone$ and $bricklayer(hummingbird)=lilypond$ for all $hummingbird\\in\\ZZ$, and hence identically; consequently,\n\\[\ntornadoes(hummingbird)=pinecone\\,hummingbird+horseshoe,\\qquad rainstorm(hummingbird)=lilypond\\,hummingbird+snowflake\n\\]\nfor all $hummingbird\\in\\ZZ$, and hence identically.  For $tornadoes$ and $rainstorm$ of this form,\n\\[\ntornadoes(hummingbird)\\,rainstorm(hummingbird+1)-tornadoes(hummingbird+1)\\,rainstorm(hummingbird)=horseshoe\\,lilypond-pinecone\\,snowflake,\n\\]\nso we get a solution if and only if $horseshoe\\,lilypond-pinecone\\,snowflake=1$, as claimed.\n\n\\textbf{Second solution.}\n(Communicated by Catalin Zara.)\nAgain, note that $tornadoes$ and $rainstorm$ must be nonzero.\nWrite\n\\begin{align*}\ntornadoes(hummingbird) &= tornadoes_0 + tornadoes_1\\,hummingbird + \\cdots + avalanche\\,hummingbird^{blueberry},\\\\\nrainstorm(hummingbird) &= rainstorm_0 + rainstorm_1\\,hummingbird + \\cdots + pepperoni\\,hummingbird^{goldfish},\n\\end{align*}\nwith $avalanche, pepperoni \\neq 0$, so that $blueberry=\\deg(tornadoes)$ and $goldfish=\\deg(rainstorm)$.  It is enough to derive a contradiction assuming that $\\max\\{blueberry, goldfish\\}>1$, the remaining cases being treated as in the first solution.\n\nPut $chandelier(hummingbird)=tornadoes(hummingbird)\\,rainstorm(hummingbird+1)-tornadoes(hummingbird+1)\\,rainstorm(hummingbird)$. Since $blueberry+goldfish\\ge2$ by assumption, the coefficient of $hummingbird^{\\,blueberry+goldfish-1}$ in $chandelier(hummingbird)$ must vanish.  By easy algebra, this coefficient equals $(blueberry-goldfish)\\,avalanche\\,pepperoni$, so we must have $blueberry=goldfish>1$.\n\nFor $crocodile=1,\\dots,2\\,blueberry-2$, the coefficient of $hummingbird^{\\,crocodile}$ in $chandelier(hummingbird)$ is\n\\[\n\\sum_{i+\\telescope>crocodile,\\;\\telescope>i}\\Bigl(\\binom{\\telescope}{crocodile-i}-\\binom{i}{crocodile-\\telescope}\\Bigr)(raincloud\\,marshland-marshland\\,raincloud)\n\\]\nand must vanish.  For $crocodile=2\\,blueberry-2$, the only summand is for $(i,\\telescope)=(blueberry-1,\\,blueberry)$, so $starfruit\\,pepperoni=avalanche\\,blackbird$.\n\nSuppose now that $caterpillar\\ge1$ and that $raincloud\\,marshland=marshland\\,raincloud$ is known to vanish whenever $\\telescope>i\\ge ceterpillar$. (By the previous paragraph, we initially have this for $caterpillar=blueberry-1$.)\nTake $crocodile=blueberry+caterpillar-2$ and note that the conditions $i+\\telescope>caterpillar,\\ \\telescope\\le blue\\-berry$ force $i\\ge ceterpillar-1$. Using the hypothesis, we see that the only possible nonzero contribution to the coefficient of $hummingbird^{\\,crocodile}$ in $chandelier(hummingbird)$ is from $(i,\\telescope)=(caterpillar-1,\\,blueberry)$. Hence $scarecrow\\,pepperoni=avalanche\\,snowstorm$; since $avalanche,pepperoni\\neq0$, this implies $scarecrow\\,marshland=marshland\\,scarecrow$ whenever $\\telescope>caterpillar-1$.\n\nBy descending induction, we deduce that $raincloud\\,marshland=marshland\\,raincloud$ whenever $\\telescope>i\\ge0$. Consequently, $tornadoes(hummingbird)$ and $rainstorm(hummingbird)$ are scalar multiples of each other, forcing $chandelier(hummingbird)=0$, a contradiction.\n\n\\textbf{Third solution.}\n(Communicated by David Feldman.)\nAs in the second solution, we note that there are no solutions where $blueberry=\\deg(tornadoes)$, $goldfish=\\deg(rainstorm)$ are distinct and $blueberry+goldfish\\ge2$.  Suppose $tornadoes,\\,rainstorm$ form a solution with $blueberry=goldfish\\ge2$. The desired identity asserts that the matrix\n\\[\n\\begin{pmatrix}\n t tornadoes(hummingbird) & tornadoes(hummingbird+1)\\\\\n rainstorm(hummingbird) & rainstorm(hummingbird+1)\n\\end{pmatrix}\n\\]\nhas determinant $1$. This condition is preserved by replacing $rainstorm(hummingbird)$ with $rainstorm(hummingbird)-jellybean\\,tornadoes(hummingbird)$ for any real number $jellybean$.  In particular, we can choose $jellybean$ so that $\\deg\\bigl(rainstorm(hummingbird)-jellybean\\,tornadoes(hummingbird)\\bigr)<blueberry$; we then obtain a contradiction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "i": "wholeunit",
+        "j": "entirety",
+        "k": "aggregate",
+        "h": "holistic",
+        "t": "permanent",
+        "p": "staticnum",
+        "q": "fixeddigit",
+        "r": "sumvalue",
+        "s": "prodvalue",
+        "R": "dullnull",
+        "a": "curvyval",
+        "b": "depthval",
+        "c": "mutablex",
+        "d": "fluxunit",
+        "m": "baselevel",
+        "n": "lowlevel",
+        "p_m": "lowcoefa",
+        "q_n": "lowcoefq",
+        "p_i": "staticcoef",
+        "q_j": "dynamiccoef",
+        "p_m-1": "nearcoefp",
+        "q_m-1": "nearcoefq",
+        "p_h-1": "offsetcoefp",
+        "q_h-1": "offsetcoefq"
+      },
+      "question": "Find all pairs of polynomials $staticnum(fixedvalue)$ and $fixeddigit(fixedvalue)$ with real coefficients for which\n\\[\nstaticnum(fixedvalue) fixeddigit(fixedvalue+1) - staticnum(fixedvalue+1) fixeddigit(fixedvalue) = 1.\n\\]",
+      "solution": "\\textbf{First solution.}\nThe pairs $(staticnum,fixeddigit)$ satisfying the given equation are those of the form $staticnum(fixedvalue)=curvyval fixedvalue + depthval$, $fixeddigit(fixedvalue)=mutablex fixedvalue + fluxunit$ for $curvyval,depthval,mutablex,fluxunit \\in \\RR$ such that $depthval mutablex - curvyval fluxunit = 1$. We will see later that these indeed give solutions.\n\nSuppose $staticnum$ and $fixeddigit$ satisfy the given equation; note that neither $staticnum$ nor $fixeddigit$ can be identically zero.\nBy subtracting the equations\n\\[\nstaticnum(fixedvalue) fixeddigit(fixedvalue+1) - staticnum(fixedvalue+1) fixeddigit(fixedvalue)=1,\\qquad\nstaticnum(fixedvalue-1) fixeddigit(fixedvalue) - staticnum(fixedvalue) fixeddigit(fixedvalue-1)=1,\n\\]\nwe obtain\n\\[\nstaticnum(fixedvalue)\\bigl(fixeddigit(fixedvalue+1)+fixeddigit(fixedvalue-1)\\bigr)=fixeddigit(fixedvalue)\\bigl(staticnum(fixedvalue+1)+staticnum(fixedvalue-1)\\bigr).\n\\]\nHence $staticnum(fixedvalue)$ divides $staticnum(fixedvalue+1)+staticnum(fixedvalue-1)$; comparing degrees yields\n\\[\nstaticnum(fixedvalue+1)+staticnum(fixedvalue-1)=2\\,staticnum(fixedvalue).\n\\]\nSet $sumvalue(fixedvalue)=staticnum(fixedvalue+1)-staticnum(fixedvalue)$ and $prodvalue(fixedvalue)=fixeddigit(fixedvalue+1)-fixeddigit(fixedvalue)$. Then $sumvalue(fixedvalue+1)=sumvalue(fixedvalue)$ and $prodvalue(fixedvalue+1)=prodvalue(fixedvalue)$, so with\n\\[\ncurvyval=sumvalue(0),\\; depthval=staticnum(0),\\; mutablex=prodvalue(0),\\; fluxunit=fixeddigit(0),\n\\]\nwe have $sumvalue(fixedvalue)=curvyval$ and $prodvalue(fixedvalue)=mutablex$ for all $fixedvalue\\in\\ZZ$. Thus\n\\[\nstaticnum(fixedvalue)=curvyval fixedvalue+depthval,\\qquad fixeddigit(fixedvalue)=mutablex fixedvalue+fluxunit.\n\\]\nFor such linear polynomials,\n\\[\nstaticnum(fixedvalue) fixeddigit(fixedvalue+1)-staticnum(fixedvalue+1) fixeddigit(fixedvalue)=depthval mutablex-curvyval fluxunit,\n\\]\nso a solution arises exactly when $depthval mutablex-curvyval fluxunit=1$.\n\n\\textbf{Second solution.} (Communicated by Catalin Zara.)  Again, $staticnum$ and $fixeddigit$ are nonzero.\nWrite\n\\[\nstaticnum(fixedvalue)=staticnum_0+staticnum_1 fixedvalue+\\cdots+staticnum_{baselevel} fixedvalue^{baselevel},\\qquad\nfixeddigit(fixedvalue)=fixeddigit_0+fixeddigit_1 fixedvalue+\\cdots+fixeddigit_{lowlevel} fixedvalue^{lowlevel},\n\\]\nwith $lowcoefa,lowcoefq\\neq0$, so $baselevel=\\deg(staticnum)$ and $lowlevel=\\deg(fixeddigit)$.  Assume $\\max\\{baselevel,lowlevel\\}>1$.\n\nPut $dullnull(fixedvalue)=staticnum(fixedvalue) fixeddigit(fixedvalue+1)-staticnum(fixedvalue+1) fixeddigit(fixedvalue)$.  The coefficient of $fixedvalue^{\\,baselevel+lowlevel-1}$ in $dullnull$ equals $(baselevel-lowlevel)lowcoefa\\,lowcoefq$, forcing $baselevel=lowlevel>1$.\n\nFor $aggregate=1,\\dots,2baselevel-2$, the coefficient of $fixedvalue^{aggregate}$ in $dullnull$ is\n\\[\n\\sum_{wholeunit+entirety>aggregate,\\;entirety>wholeunit}\\!\n\\Bigl(\\tbinom{entirety}{aggregate-\\,wholeunit}-\\tbinom{wholeunit}{aggregate-\\,entirety}\\Bigr)\n\\bigl(staticcoef\\,dynamiccoef-staticnum_{entirety} fixeddigit_{wholeunit}\\bigr),\n\\]\nand must vanish.  For $aggregate=2baselevel-2$ the only summand is $(wholeunit,entirety)=(baselevel-1,baselevel)$, giving $nearcoefp\\,fixeddigit_{baselevel}=lowcoefa\\,nearcoefq$.\n\nSuppose $holistic\\ge1$ and that $staticcoef\\,dynamiccoef=staticnum_{entirety} fixeddigit_{wholeunit}$ whenever $entirety>wholeunit\\ge hol istic$ (true initially for $holistic=baselevel-1$).  Put $aggregate=baselevel+holistic-2$; the possible contribution to the corresponding coefficient of $dullnull$ is from $(wholeunit,entirety)=(holistic-1,baselevel)$.  Hence $offsetcoefp\\,fixeddigit_{baselevel}=lowcoefa\\,offsetcoefq$.  Since $lowcoefa,fixeddigit_{baselevel}\\neq0$, we deduce $staticnum_{holistic-1} fixeddigit_{entirety}=staticnum_{entirety} fixeddigit_{holistic-1}$ for $entirety>holistic-1$.\nDescending induction yields $staticnum_{wholeunit} fixeddigit_{entirety}=staticnum_{entirety} fixeddigit_{wholeunit}$ for all $entirety>wholeunit\\ge0$.  Thus $staticnum$ and $fixeddigit$ are scalar multiples, contradicting $dullnull\\not\\equiv0$.\n\n\\textbf{Third solution.} (Communicated by David Feldman.)  As above, there are no solutions with $baselevel\\neq lowlevel$ and $baselevel+lowlevel\\ge2$.  Suppose instead $staticnum,fixeddigit$ satisfy the equation with $baselevel=lowlevel\\ge2$.  The identity states that\n\\[\n\\begin{pmatrix}\nstaticnum(fixedvalue)&staticnum(fixedvalue+1)\\\\\nfixeddigit(fixedvalue)&fixeddigit(fixedvalue+1)\n\\end{pmatrix}\n\\]\nhas determinant $1$.  Replacing $fixeddigit(fixedvalue)$ by $fixeddigit(fixedvalue)-permanent\\,staticnum(fixedvalue)$ preserves the determinant.  Choosing $permanent$ so that $\\deg\\bigl(fixeddigit-permanent\\,staticnum\\bigr)<baselevel$ contradicts minimality, so no such higher-degree solutions exist."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "i": "hjgrksla",
+        "j": "mfldqpei",
+        "k": "tnjsgcha",
+        "h": "rplsizno",
+        "t": "vkuyedab",
+        "p": "lfrqnboe",
+        "q": "pshgmieu",
+        "r": "xjodwzyv",
+        "s": "ubnemtci",
+        "R": "owkvtqsa",
+        "a": "cidvrmka",
+        "b": "zylnoqep",
+        "c": "bhrpasew",
+        "d": "swxjzfac",
+        "m": "gabnrfot",
+        "n": "kwmpiedu",
+        "p_m": "fgowrjxz",
+        "q_n": "gkqdyhvt",
+        "p_i": "ehmkwcsa",
+        "q_j": "rtxvoine",
+        "p_m-1": "qdhlvtsa",
+        "q_m-1": "avitgsek",
+        "p_h-1": "llhndrcq",
+        "q_h-1": "yudpgmow"
+      },
+      "question": "Find all pairs of polynomials $lfrqnboe(qzxwvtnp)$ and $pshgmieu(qzxwvtnp)$ with real coefficients for which\n\\[\nlfrqnboe(qzxwvtnp) pshgmieu(qzxwvtnp+1) - lfrqnboe(qzxwvtnp+1) pshgmieu(qzxwvtnp) = 1.\n\\]",
+      "solution": "\\textbf{First solution.}\nThe pairs $(lfrqnboe, pshgmieu)$ satisfying the given equation are those of the form $lfrqnboe(qzxwvtnp) = cidvrmka qzxwvtnp + zylnoqep, \\; pshgmieu(qzxwvtnp) = bhrpasew qzxwvtnp + swxjzfac$\nfor $cidvrmka, zylnoqep, bhrpasew, swxjzfac \\in \\RR$ such that $zylnoqep bhrpasew - cidvrmka swxjzfac = 1$. We will see later that these indeed give solutions.\n\nSuppose $lfrqnboe$ and $pshgmieu$ satisfy the given equation; note that neither $lfrqnboe$ nor $pshgmieu$ can be identically zero.\nBy subtracting the equations\n\\begin{align*}\nlfrqnboe(qzxwvtnp) pshgmieu(qzxwvtnp+1) - lfrqnboe(qzxwvtnp+1) pshgmieu(qzxwvtnp) &= 1 \\\\\nlfrqnboe(qzxwvtnp-1) pshgmieu(qzxwvtnp) - lfrqnboe(qzxwvtnp) pshgmieu(qzxwvtnp-1) &= 1,\n\\end{align*}\nwe obtain the equation\n\\[\nlfrqnboe(qzxwvtnp) \\bigl( pshgmieu(qzxwvtnp+1) + pshgmieu(qzxwvtnp-1) \\bigr)\n= pshgmieu(qzxwvtnp) \\bigl( lfrqnboe(qzxwvtnp+1) + lfrqnboe(qzxwvtnp-1) \\bigr).\n\\]\nThe original equation implies that $lfrqnboe(qzxwvtnp)$ and $pshgmieu(qzxwvtnp)$ have no common nonconstant factor,\nso $lfrqnboe(qzxwvtnp)$ divides $lfrqnboe(qzxwvtnp+1) + lfrqnboe(qzxwvtnp-1)$. Since each of $lfrqnboe(qzxwvtnp+1)$ and $lfrqnboe(qzxwvtnp-1)$ has the same degree and leading\ncoefficient as $lfrqnboe$, we must have\n\\[\nlfrqnboe(qzxwvtnp+1) + lfrqnboe(qzxwvtnp-1) = 2 lfrqnboe(qzxwvtnp).\n\\]\nIf we define the polynomials $xjodwzyv(qzxwvtnp) = lfrqnboe(qzxwvtnp+1) - lfrqnboe(qzxwvtnp)$ and $ubnemtci(qzxwvtnp) = pshgmieu(qzxwvtnp+1) - pshgmieu(qzxwvtnp)$,\nwe have $xjodwzyv(qzxwvtnp+1) = xjodwzyv(qzxwvtnp)$, and similarly $ubnemtci(qzxwvtnp+1) = ubnemtci(qzxwvtnp)$.\nPut\n\\[\ncidvrmka = xjodwzyv(0), \\qquad zylnoqep = lfrqnboe(0), \\qquad bhrpasew = ubnemtci(0), \\qquad swxjzfac = pshgmieu(0).\n\\]\nThen $xjodwzyv(qzxwvtnp) = cidvrmka, \\; ubnemtci(qzxwvtnp) = bhrpasew$ for all $qzxwvtnp \\in \\ZZ$, and hence identically;\nconsequently, $lfrqnboe(qzxwvtnp) = cidvrmka qzxwvtnp + zylnoqep,\\; pshgmieu(qzxwvtnp) = bhrpasew qzxwvtnp + swxjzfac$ for all $qzxwvtnp \\in \\ZZ$, and hence identically.\nFor $lfrqnboe$ and $pshgmieu$ of this form,\n\\[\nlfrqnboe(qzxwvtnp) pshgmieu(qzxwvtnp+1) - lfrqnboe(qzxwvtnp+1) pshgmieu(qzxwvtnp) = zylnoqep bhrpasew - cidvrmka swxjzfac,\n\\]\nso we get a solution if and only if $zylnoqep bhrpasew - cidvrmka swxjzfac = 1$, as claimed.\n\n\\textbf{Second solution.}\n(Communicated by Catalin Zara.)\nAgain, note that $lfrqnboe$ and $pshgmieu$ must be nonzero.\nWrite\n\\begin{align*}\nlfrqnboe(qzxwvtnp) &= p_0 + p_1 qzxwvtnp + \\cdots + fgowrjxz\\, qzxwvtnp^{gabnrfot},\\\\\npshgmieu(qzxwvtnp) &= q_0 + q_1 qzxwvtnp + \\cdots + gkqdyhvt\\, qzxwvtnp^{kwmpiedu}\n\\end{align*}\nwith $fgowrjxz, gkqdyhvt \\neq 0$, so that $gabnrfot = \\deg(lfrqnboe)$ and $kwmpiedu = \\deg(pshgmieu)$. It is enough to derive a contradiction\nassuming that $\\max\\{gabnrfot,kwmpiedu\\} > 1$, the remaining cases being treated as in the\nfirst solution.\n\nPut $owkvtqsa(qzxwvtnp) = lfrqnboe(qzxwvtnp) pshgmieu(qzxwvtnp+1) - lfrqnboe(qzxwvtnp+1) pshgmieu(qzxwvtnp)$. Since $gabnrfot + kwmpiedu \\ge 2$ by assumption,\nthe coefficient of $qzxwvtnp^{gabnrfot + kwmpiedu - 1}$ in $owkvtqsa(qzxwvtnp)$\nmust vanish. By easy algebra, this coefficient equals $(gabnrfot - kwmpiedu) fgowrjxz gkqdyhvt$, so we must have $gabnrfot = kwmpiedu > 1$.\n\nFor $tnjsgcha = 1, \\dots, 2gabnrfot - 2$, the coefficient of $qzxwvtnp^{tnjsgcha}$ in $owkvtqsa(qzxwvtnp)$ is\n\\[\n\\sum_{hjgrksla + mfldqpei > tnjsgcha,\\; mfldqpei > hjgrksla}\n\\left(\n\\binom{mfldqpei}{tnjsgcha - hjgrksla}\n-\n\\binom{hjgrksla}{tnjsgcha - mfldqpei}\n\\right)\n\\bigl(ehmkwcsa\\, rtxvoine - lfrqnboe_{mfldqpei}\\, pshgmieu_{hjgrksla}\\bigr)\n\\]\nand must vanish.\nFor $tnjsgcha = 2gabnrfot - 2$, the only summand is for $(hjgrksla,mfldqpei) = (gabnrfot - 1, gabnrfot)$, so $qdhlvtsa\\, pshgmieu_{gabnrfot} = fgowrjxz\\, avitgsek$.\n\nSuppose now that $rplsizno \\ge 1$ and that $lfrqnboe_{hjgrksla} \\, pshgmieu_{mfldqpei} = lfrqnboe_{mfldqpei} \\, pshgmieu_{hjgrksla}$ is known to vanish whenever\n$mfldqpei > hjgrksla \\ge rplsizno$. (By the previous paragraph, we initially have this for $rplsizno = gabnrfot - 1$.)\nTake $tnjsgcha = gabnrfot + rplsizno - 2$ and note that the conditions $hjgrksla + mfldqpei > rplsizno,\\; mfldqpei \\le gabnrfot$ force $hjgrksla \\ge rplsizno - 1$.\nUsing the hypothesis, we see that the only possible nonzero contribution to the coefficient of $qzxwvtnp^{tnjsgcha}$ in $owkvtqsa(qzxwvtnp)$\nis from $(hjgrksla,mfldqpei) = (rplsizno - 1, gabnrfot)$. Hence $llhndrcq\\, pshgmieu_{gabnrfot} = fgowrjxz\\, yudpgmow$; since $fgowrjxz, pshgmieu_{gabnrfot} \\neq 0$, this implies\n$lfrqnboe_{rplsizno - 1} \\, pshgmieu_{mfldqpei} = lfrqnboe_{mfldqpei} \\, pshgmieu_{rplsizno - 1}$ whenever $mfldqpei > rplsizno - 1$.\n\nBy descending induction, we deduce that $lfrqnboe_{hjgrksla} \\, pshgmieu_{mfldqpei} = lfrqnboe_{mfldqpei} \\, pshgmieu_{hjgrksla}$ whenever $mfldqpei > hjgrksla \\ge 0$. Consequently,\n$lfrqnboe(qzxwvtnp)$ and $pshgmieu(qzxwvtnp)$ are scalar multiples of each other, forcing $owkvtqsa(qzxwvtnp) = 0$, a contradiction.\n\n\\textbf{Third solution.}\n(Communicated by David Feldman.)\nAs in the second solution, we note that there are no solutions where $gabnrfot = \\deg(lfrqnboe)$ and $kwmpiedu = \\deg(pshgmieu)$\nare distinct and $gabnrfot + kwmpiedu \\ge 2$. Suppose $lfrqnboe, pshgmieu$ form a solution with $gabnrfot = kwmpiedu \\ge 2$.\nThe desired identity asserts that the matrix\n\\[\n\\begin{pmatrix}\nlfrqnboe(qzxwvtnp) & lfrqnboe(qzxwvtnp + 1) \\\\\npshgmieu(qzxwvtnp) & pshgmieu(qzxwvtnp + 1)\n\\end{pmatrix}\n\\]\nhas determinant $1$. This condition is preserved by replacing $pshgmieu(qzxwvtnp)$ with $pshgmieu(qzxwvtnp) - vkuyedab\\, lfrqnboe(qzxwvtnp)$ for any\nreal number $vkuyedab$. In particular, we can choose $vkuyedab$ so that $\\deg\\bigl(pshgmieu(qzxwvtnp) - vkuyedab\\, lfrqnboe(qzxwvtnp)\\bigr) < gabnrfot$;\nwe then obtain a contradiction."
+    },
+    "kernel_variant": {
+      "question": "Find all pairs of polynomials\n\\[\n p(x),\\;q(x)\\in\\mathbb C[x]\n\\]\nfor which the identity\n\\[\n p(x)\\,q(x+2)\n \\,\\;-\n \\,\\;p(x+2)\\,q(x)\n \\,=\\,2\n\\]\nholds for every complex number \\(x\\).",
+      "solution": "We prove that the only solutions are\n\\[\n p(x)=ax+b,\\qquad q(x)=cx+d\\quad(a,b,c,d\\in\\mathbb C),\\qquad bc-ad=1.\n\\]\n(The converse is immediate, since then\n\\[(ax+b)\\bigl(c(x+2)+d\\bigr)-(a(x+2)+b)(cx+d)=2(bc-ad)=2.\\])\n\n1.  Starting from\n\\[p(x)q(x+2)-p(x+2)q(x)=2,\\tag{A}\\]\nand replacing $x$ by $x-2$ gives\n\\[p(x-2)q(x)-p(x)q(x-2)=2.\\tag{B}\\]\nSubtracting (B) from (A) yields\n\\[p(x)\\bigl(q(x+2)+q(x-2)\\bigr)=q(x)\\bigl(p(x+2)+p(x-2)\\bigr).\\tag{1}\\]\n\n2.  Any nonconstant common factor of $p$ and $q$ would divide the constant~2, hence must be constant.  Thus $\\gcd(p,q)=1$, and from (1) it follows that\n$$p(x)\\mid p(x+2)+p(x-2).$$\nComparing degrees shows the quotient is constant, and matching leading coefficients gives\n\\[p(x+2)+p(x-2)=2p(x),\\qquad q(x+2)+q(x-2)=2q(x).\\tag{2}\\]\n\n3.  Define $r(x)=p(x+2)-p(x)$.  From (2) and a shift by~2 one finds\n\\[r(x+2)=p(x+4)-p(x+2)=p(x+2)-p(x)=r(x),\\]\nso $r$ is a polynomial periodic of period~2, hence constant.  Thus\n$$p(x+2)-p(x)=c$$\nfor some constant $c$, and the only polynomial solutions of this difference equation are linear.  Similarly $q$ is linear.  Hence\n\\[p(x)=ax+b,\\quad q(x)=cx+d\\ (a,b,c,d\\in\\C).\\]\n\n4.  Substituting into the original identity,\n\\[(ax+b)(c(x+2)+d)-(a(x+2)+b)(cx+d)=2\\]\nyields after cancellation\n\\[2(bc-ad)=2,\\quad\\Longrightarrow\\quad bc-ad=1.\\]\n\nTherefore the required pairs are exactly the linear ones with $bc-ad=1$.  Conversely, any such choice gives the desired identity.",
+      "_meta": {
+        "core_steps": [
+          "Shift the identity by one unit and subtract to get p(x)(q(x+1)+q(x-1)) = q(x)(p(x+1)+p(x-1)).",
+          "Use coprimality to show p | [p(x+1)+p(x-1)], forcing the discrete-second-difference equation p(x+1)+p(x-1)=2p(x) (and the analogue for q).",
+          "Set r(x)=p(x+1)-p(x); periodicity r(x+1)=r(x) implies r is constant, hence p (and likewise q) is linear.",
+          "Write p=ax+b, q=cx+d; substitute into the original determinant to obtain bc−ad equals the prescribed constant."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The right-hand side constant in the determinant identity",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "The forward shift in the arguments ( +1 ) used throughout the identity",
+            "original": "1"
+          },
+          "slot3": {
+            "description": "The ground field over which the polynomial coefficients are taken",
+            "original": "real numbers ℝ"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

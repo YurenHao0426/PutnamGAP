@@ -1,0 +1,169 @@
+{
+  "index": "1951-A-7",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "7. Show that if the series \\( a_{1}+a_{2}+a_{3}+\\cdots+a_{n}+\\cdots \\) converges, then the series \\( a_{1}+a_{2} 2+a_{3}^{\\prime} 3+\\cdots+a_{n}^{\\prime} n+\\cdots \\) converges also.",
+  "solution": "Solution. This is a special case of a result sometimes called Abel's summation theorem: If the partial sums of the series \\( \\Sigma a_{n} \\) are bounded and the sequence \\( \\left\\{b_{n}\\right\\} \\) decreases to zero, then \\( \\Sigma a_{n} b_{n} \\) is convergent.\n\nThis theorem can be proved as follows. Let \\( s_{k}=\\sum_{i=1}^{k} a_{i} \\) and let \\( M \\) be a bound for \\( \\left\\{\\left|s_{k}\\right|\\right\\} \\). Then\n\\[\n\\begin{aligned}\na_{1} b_{1}+a_{2} b_{2} & +\\cdots+a_{n} b_{n} \\\\\n& =s_{1} b_{1}+\\left(s_{2}-s_{1}\\right) b_{2}+\\cdots+\\left(s_{n}-s_{n-1}\\right) b_{n} \\\\\n& =s_{1}\\left(b_{1}-b_{2}\\right)+s_{2}\\left(b_{2}-b_{3}\\right)+\\cdots+s_{n-1}\\left(b_{n-1}-b_{n}\\right)+s_{n} b_{n}\n\\end{aligned}\n\\]\nthat is,\n\\[\n\\sum_{i=1}^{n} a_{i} b_{i}=\\sum_{i=1}^{n-1} s_{i}\\left(b_{i}-b_{i+1}\\right)+s_{n} b_{n}\n\\]\n\nNow the series \\( \\sum_{i=1}^{\\infty} s_{i}\\left(b_{i}-b_{i+1}\\right) \\) is absolutely convergent, for\n\\[\n\\left|s_{i}\\left(b_{i}-b_{i+1}\\right)\\right| \\leq M\\left(b_{i}-b_{i+1}\\right)\n\\]\nand \\( \\sum_{i=1}^{\\infty}\\left(b_{i}-b_{i+1}\\right) \\) converges to \\( b_{1} \\).\nMoreover, \\( \\lim _{n \\rightarrow \\infty} s_{n} b_{n}=0 \\) because \\( \\left\\{s_{n}\\right\\} \\) is bounded. Therefore,\n\\[\n\\lim _{n \\rightarrow \\infty} \\sum_{i=1}^{n} a_{i} b_{i}=\\sum_{i=1}^{\\infty} s_{i}\\left(b_{i}-b_{i+1}\\right)\n\\]\n\nThus the theorem is proved.\nFor the particular problem, take \\( b_{n}=1 / n \\) and the result is immediate.",
+  "vars": [
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_n",
+    "a_i",
+    "b_n",
+    "b_i",
+    "b_1",
+    "b_2",
+    "b_3",
+    "b_i+1",
+    "s_k",
+    "s_i",
+    "s_n-1",
+    "s_n",
+    "s_1",
+    "s_2",
+    "n",
+    "k",
+    "i"
+  ],
+  "params": [
+    "M"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1": "termone",
+        "a_2": "termtwo",
+        "a_3": "termthree",
+        "a_n": "termindex",
+        "a_i": "termgeneric",
+        "b_n": "coefindex",
+        "b_i": "coefgeneric",
+        "b_1": "coefone",
+        "b_2": "coeftwo",
+        "b_3": "coefthree",
+        "b_i+1": "coefnext",
+        "s_k": "partialk",
+        "s_i": "partiali",
+        "s_n-1": "partialnprev",
+        "s_n": "partialn",
+        "s_1": "partialone",
+        "s_2": "partialtwo",
+        "n": "indexvar",
+        "k": "counterk",
+        "i": "counteri",
+        "M": "boundmax"
+      },
+      "question": "7. Show that if the series \\( termone+termtwo+termthree+\\cdots+termindex+\\cdots \\) converges, then the series \\( termone+termtwo 2+termthree^{\\prime} 3+\\cdots+termindex^{\\prime} indexvar+\\cdots \\) converges also.",
+      "solution": "Solution. This is a special case of a result sometimes called Abel's summation theorem: If the partial sums of the series \\( \\Sigma termindex \\) are bounded and the sequence \\( \\{coefindex\\} \\) decreases to zero, then \\( \\Sigma termindex\\,coefindex \\) is convergent.\n\nThis theorem can be proved as follows. Let \\( partialk=\\sum_{counteri=1}^{counterk} termgeneric \\) and let \\( boundmax \\) be a bound for \\( \\{|partialk|\\} \\). Then\n\\[\n\\begin{aligned}\ntermone\\,coefone+termtwo\\,coeftwo & +\\cdots+termindex\\,coefindex \\\\\n& =partialone\\,coefone+\\left(partialtwo-partialone\\right)\\,coeftwo+\\cdots+\\left(partialn-partialnprev\\right)\\,coefindex \\\\\n& =partialone\\left(coefone-coeftwo\\right)+partialtwo\\left(coeftwo-coefthree\\right)+\\cdots+partialnprev\\left(b_{n-1}-coefindex\\right)+partialn\\,coefindex\n\\end{aligned}\n\\]\nthat is,\n\\[\n\\sum_{counteri=1}^{indexvar} termgeneric\\,coefgeneric=\\sum_{counteri=1}^{indexvar-1} partiali\\left(coefgeneric-coefnext\\right)+partialn\\,coefindex\n\\]\n\nNow the series \\( \\sum_{counteri=1}^{\\infty} partiali\\left(coefgeneric-coefnext\\right) \\) is absolutely convergent, for\n\\[\n\\left|partiali\\left(coefgeneric-coefnext\\right)\\right| \\le boundmax\\left(coefgeneric-coefnext\\right)\n\\]\nand \\( \\sum_{counteri=1}^{\\infty}\\left(coefgeneric-coefnext\\right) \\) converges to \\( coefone \\).\nMoreover, \\( \\lim_{indexvar \\to \\infty} partialn\\,coefindex=0 \\) because \\( \\{partialn\\} \\) is bounded. Therefore,\n\\[\n\\lim_{indexvar \\to \\infty} \\sum_{counteri=1}^{indexvar} termgeneric\\,coefgeneric=\\sum_{counteri=1}^{\\infty} partiali\\left(coefgeneric-coefnext\\right)\n\\]\n\nThus the theorem is proved.\nFor the particular problem, take \\( coefindex = 1 / indexvar \\) and the result is immediate."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_1": "butternut",
+        "a_2": "candlewax",
+        "a_3": "dragonfly",
+        "a_n": "elephanty",
+        "a_i": "fireplace",
+        "b_n": "giraffery",
+        "b_i": "hazelnuts",
+        "b_1": "jellybean",
+        "b_2": "kaleidoso",
+        "b_3": "lemongrass",
+        "b_i+1": "marigolds",
+        "s_k": "nectarine",
+        "s_i": "orangutan",
+        "s_n-1": "pomegranate",
+        "s_n": "quartzite",
+        "s_1": "raspberry",
+        "s_2": "strawberry",
+        "n": "tangerine",
+        "k": "umbrella",
+        "i": "violinist",
+        "M": "watermelon"
+      },
+      "question": "7. Show that if the series \\( butternut+candlewax+dragonfly+\\cdots+elephanty+\\cdots \\) converges, then the series \\( butternut+candlewax 2+a_{3}^{\\prime} 3+\\cdots+a_{n}^{\\prime} tangerine+\\cdots \\) converges also.",
+      "solution": "Solution. This is a special case of a result sometimes called Abel's summation theorem: If the partial sums of the series \\( \\Sigma elephanty \\) are bounded and the sequence \\( \\left\\{giraffery\\right\\} \\) decreases to zero, then \\( \\Sigma elephanty giraffery \\) is convergent.\n\nThis theorem can be proved as follows. Let \\( nectarine=\\sum_{violinist=1}^{umbrella} fireplace \\) and let \\( watermelon \\) be a bound for \\( \\left\\{\\left|nectarine\\right|\\right\\} \\). Then\n\\[\n\\begin{aligned}\nbutternut\\ jellybean+candlewax\\ kaleidoso & +\\cdots+elephanty\\ giraffery \\\\\n& =raspberry\\ jellybean+\\left(strawberry-raspberry\\right)\\ kaleidoso+\\cdots+\\left(quartzite-pomegranate\\right)\\ giraffery \\\\\n& =raspberry\\left(jellybean-kaleidoso\\right)+strawberry\\left(kaleidoso-lemongrass\\right)+\\cdots+pomegranate\\left(b_{n-1}-giraffery\\right)+quartzite\\ giraffery\n\\end{aligned}\n\\]\nthat is,\n\\[\n\\sum_{violinist=1}^{tangerine} fireplace\\ hazelnuts=\\sum_{violinist=1}^{tangerine-1} orangutan\\left(hazelnuts-marigolds\\right)+quartzite\\ giraffery\n\\]\n\nNow the series \\( \\sum_{violinist=1}^{\\infty} orangutan\\left(hazelnuts-marigolds\\right) \\) is absolutely convergent, for\n\\[\n\\left|orangutan\\left(hazelnuts-marigolds\\right)\\right| \\leq watermelon\\left(hazelnuts-marigolds\\right)\n\\]\nand \\( \\sum_{violinist=1}^{\\infty}\\left(hazelnuts-marigolds\\right) \\) converges to \\( jellybean \\).\nMoreover, \\( \\lim _{tangerine \\rightarrow \\infty} quartzite\\ giraffery=0 \\) because \\( \\left\\{quartzite\\right\\} \\) is bounded. Therefore,\n\\[\n\\lim _{tangerine \\rightarrow \\infty} \\sum_{violinist=1}^{tangerine} fireplace\\ hazelnuts=\\sum_{violinist=1}^{\\infty} orangutan\\left(hazelnuts-marigolds\\right)\n\\]\n\nThus the theorem is proved.\nFor the particular problem, take \\( giraffery=1 / tangerine \\) and the result is immediate."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_1": "lastcomponent",
+        "a_2": "penultimatepiece",
+        "a_3": "finalfragment",
+        "a_n": "constantvalue",
+        "a_i": "unindexedwhole",
+        "b_n": "steadyfactor",
+        "b_i": "invariantmass",
+        "b_1": "terminalmass",
+        "b_2": "penultimatemass",
+        "b_3": "antepenultimatemass",
+        "b_i+1": "successormass",
+        "s_k": "completesum",
+        "s_i": "wholesum",
+        "s_n-1": "nearlycompletesum",
+        "s_n": "entiresum",
+        "s_1": "remainder",
+        "s_2": "headlesssum",
+        "n": "beginner",
+        "k": "endpoint",
+        "i": "aggregate",
+        "M": "unbounded"
+      },
+      "question": "7. Show that if the series \\( lastcomponent + penultimatepiece + finalfragment + \\cdots + constantvalue + \\cdots \\) converges, then the series \\( lastcomponent + penultimatepiece 2 + finalfragment^{\\prime} 3 + \\cdots + constantvalue^{\\prime} beginner + \\cdots \\) converges also.",
+      "solution": "Solution. This is a special case of a result sometimes called Abel's summation theorem: If the partial sums of the series \\( \\Sigma constantvalue \\) are bounded and the sequence \\( \\{steadyfactor\\} \\) decreases to zero, then \\( \\Sigma constantvalue\\, steadyfactor \\) is convergent.\n\nThis theorem can be proved as follows. Let \\( completesum = \\sum_{aggregate=1}^{endpoint} unindexedwhole \\) and let \\( unbounded \\) be a bound for \\( \\{\\lvert completesum \\rvert\\} \\). Then\n\\[\n\\begin{aligned}\nlastcomponent\\, terminalmass + penultimatepiece\\, penultimatemass & + \\cdots + constantvalue\\, steadyfactor \\\\ & = remainder\\, terminalmass + ( headlesssum - remainder )\\, penultimatemass + \\cdots + ( entiresum - nearlycompletesum )\\, steadyfactor \\\\ & = remainder( terminalmass - penultimatemass ) + headlesssum( penultimatemass - antepenultimatemass ) + \\cdots + nearlycompletesum( b_{beginner-1} - steadyfactor ) + entiresum\\, steadyfactor\n\\end{aligned}\n\\]\nthat is,\n\\[\n\\sum_{aggregate=1}^{beginner} unindexedwhole\\, invariantmass = \\sum_{aggregate=1}^{beginner-1} wholesum( invariantmass - successormass ) + entiresum\\, steadyfactor\n\\]\n\nNow the series \\( \\sum_{aggregate=1}^{\\infty} wholesum( invariantmass - successormass ) \\) is absolutely convergent, for\n\\[\n\\lvert wholesum( invariantmass - successormass ) \\rvert \\le unbounded( invariantmass - successormass )\n\\]\nand \\( \\sum_{aggregate=1}^{\\infty} ( invariantmass - successormass ) \\) converges to \\( terminalmass \\).\nMoreover, \\( \\lim_{beginner \\to \\infty} entiresum\\, steadyfactor = 0 \\) because \\( \\{ entiresum \\} \\) is bounded. Therefore,\n\\[\n\\lim_{beginner \\to \\infty} \\sum_{aggregate=1}^{beginner} unindexedwhole\\, invariantmass = \\sum_{aggregate=1}^{\\infty} wholesum( invariantmass - successormass )\n\\]\n\nThus the theorem is proved.\nFor the particular problem, take \\( steadyfactor = 1 / beginner \\) and the result is immediate."
+    },
+    "garbled_string": {
+      "map": {
+        "a_1": "qzxwvtnp",
+        "a_2": "hjgrksla",
+        "a_3": "mnbvcxqe",
+        "a_n": "plokijuy",
+        "a_i": "asdfghjk",
+        "b_n": "zxcvbnml",
+        "b_i": "qwertyui",
+        "b_1": "lkjhgfdp",
+        "b_2": "poiuytre",
+        "b_3": "qazwsxed",
+        "b_i+1": "edcrfvtg",
+        "s_k": "yhnujmik",
+        "s_i": "ikmjnhuy",
+        "s_n-1": "ujmnhygt",
+        "s_n": "tfghbnji",
+        "s_1": "rfvtgbyh",
+        "s_2": "vtgbyhnu",
+        "n": "klmnopqr",
+        "k": "bvcxzasd",
+        "i": "qplmokni",
+        "M": "zswedcfg"
+      },
+      "question": "Problem:\n<<<\n7. Show that if the series \\( qzxwvtnp+hjgrksla+mnbvcxqe+\\cdots+plokijuy+\\cdots \\) converges, then the series \\( qzxwvtnp+hjgrksla 2+mnbvcxqe^{\\prime} 3+\\cdots+plokijuy^{\\prime} klmnopqr+\\cdots \\) converges also.\n>>>",
+      "solution": "Solution:\n<<<\nSolution. This is a special case of a result sometimes called Abel's summation theorem: If the partial sums of the series \\( \\Sigma plokijuy \\) are bounded and the sequence \\( \\left\\{zxcvbnml\\right\\} \\) decreases to zero, then \\( \\Sigma plokijuy zxcvbnml \\) is convergent.\n\nThis theorem can be proved as follows. Let \\( yhnujmik=\\sum_{qplmokni=1}^{bvcxzasd} asdfghjk \\) and let \\( zswedcfg \\) be a bound for \\( \\left\\{\\left|yhnujmik\\right|\\right\\} \\). Then\n\\[\n\\begin{aligned}\nqzxwvtnp lkjhgfdp+hjgrksla poiuytre & +\\cdots+plokijuy zxcvbnml \\\\\n& =rfvtgbyh lkjhgfdp+\\left(vtgbyhnu-rfvtgbyh\\right) poiuytre+\\cdots+\\left(tfghbnji-ujmnhygt\\right) zxcvbnml \\\\\n& =rfvtgbyh\\left(lkjhgfdp-poiuytre\\right)+vtgbyhnu\\left(poiuytre-qazwsxed\\right)+\\cdots+ujmnhygt\\left(b_{n-1}-zxcvbnml\\right)+tfghbnji zxcvbnml\n\\end{aligned}\n\\]\nthat is,\n\\[\n\\sum_{qplmokni=1}^{klmnopqr} asdfghjk qwertyui=\\sum_{qplmokni=1}^{klmnopqr-1} ikmjnhuy\\left(qwertyui-edcrfvtg\\right)+tfghbnji zxcvbnml\n\\]\n\nNow the series \\( \\sum_{qplmokni=1}^{\\infty} ikmjnhuy\\left(qwertyui-edcrfvtg\\right) \\) is absolutely convergent, for\n\\[\n\\left|ikmjnhuy\\left(qwertyui-edcrfvtg\\right)\\right| \\leq zswedcfg\\left(qwertyui-edcrfvtg\\right)\n\\]\nand \\( \\sum_{qplmokni=1}^{\\infty}\\left(qwertyui-edcrfvtg\\right) \\) converges to \\( lkjhgfdp \\).\nMoreover, \\( \\lim _{klmnopqr \\rightarrow \\infty} tfghbnji zxcvbnml=0 \\) because \\( \\left\\{tfghbnji\\right\\} \\) is bounded. Therefore,\n\\[\n\\lim _{klmnopqr \\rightarrow \\infty} \\sum_{qplmokni=1}^{klmnopqr} asdfghjk qwertyui=\\sum_{qplmokni=1}^{\\infty} ikmjnhuy\\left(qwertyui-edcrfvtg\\right)\n\\]\n\nThus the theorem is proved.\nFor the particular problem, take \\( zxcvbnml=1 / klmnopqr \\) and the result is immediate.\n>>>"
+    },
+    "kernel_variant": {
+      "question": "Let $\\bigl(a_{m,n}\\bigr)_{m,n\\ge 1}$ be a doubly indexed complex sequence and\n\n\\[\nA_{M,N}:=\\sum_{m=1}^{M}\\sum_{n=1}^{N}a_{m,n}\\qquad(M,N\\in\\mathbb{N})\n\\]\n\nits rectangular partial sums.  \nAssume that these sums are uniformly bounded, i.e.\n\n\\[\n\\lvert A_{M,N}\\rvert\\le K\\qquad(M,N\\ge 1) \\tag{1}\n\\]\n\nfor some finite constant $K>0$.\n\nDefine the positive weight array  \n\n\\[\nb_{m,n}:=\\log\\!\\Bigl(1+\\frac{1}{m}\\Bigr)\\,\n          \\log\\!\\Bigl(1+\\frac{1}{n}\\Bigr)\\qquad(m,n\\ge 1).          \\tag{2}\n\\]\n\n(a)  Prove that the limit  \n\\[\nS:=\\lim_{\\,M,N\\to\\infty}\\;\n     \\sum_{m=1}^{M}\\sum_{n=1}^{N}a_{m,n}\\,b_{m,n}                   \\tag{3}\n\\]\nexists, i.e. the double series with rectangular summation converges (possibly only conditionally).\n\n(b)  Show the sharp bound  \n\\[\n\\lvert S\\rvert\\le K\\,\\bigl(\\log 2\\bigr)^{2}.                        \\tag{4}\n\\]\n\n(c)  Construct a sequence $\\bigl(a_{m,n}\\bigr)$ satisfying \\textup{(1)} but for which  \n\\[\n\\sum_{m=1}^{\\infty}\\sum_{n=1}^{\\infty}\\lvert a_{m,n}\\rvert\\,b_{m,n}=\\infty,\n\\]\nthereby proving that absolute convergence cannot be demanded in part (a).\n\n(The first two items constitute a genuinely two-dimensional Abel-Dirichlet\ntheorem; the third item shows that estimate \\textup{(4)} is best possible.)\n\n\\bigskip",
+      "solution": "\\textbf{1.\\;A discrete second-difference representation.}\nIntroduce the forward difference operators\n\\[\n\\Delta_{1}f_{m,n}:=f_{m,n}-f_{m+1,n},\\qquad\n\\Delta_{2}f_{m,n}:=f_{m,n}-f_{m,n+1}\\qquad(m,n\\ge 1),\n\\]\nand extend every array by $0$ on the ``border'' $m=0$ or $n=0$.  Then\n\\[\na_{m,n}=\\Delta_{1}\\Delta_{2}A_{m-1,n-1}\\qquad(m,n\\ge 1).          \\tag{5}\n\\]\n\n\\textbf{2.\\;Second differences of the weight array.}\nDefine\n\\[\nc_{m,n}:=\\Delta_{1}\\Delta_{2}b_{m,n}\\qquad(m,n\\ge 1).             \\tag{6}\n\\]\nBecause the map $t\\mapsto\\log\\!\\bigl(1+\\frac{1}{t}\\bigr)$ is strictly decreasing,\n\\[\n\\Delta_{1}b_{m,n}>0,\\quad\\Delta_{2}b_{m,n}>0,\\quad c_{m,n}>0.      \\tag{7}\n\\]\nA direct factorisation gives\n\\[\nc_{m,n}= \\Bigl( \\log\\!\\bigl(1+\\tfrac1m\\bigr)\n              -\\log\\!\\bigl(1+\\tfrac1{m+1}\\bigr) \\Bigr)\n         \\Bigl( \\log\\!\\bigl(1+\\tfrac1n\\bigr)\n              -\\log\\!\\bigl(1+\\tfrac1{n+1}\\bigr) \\Bigr).             \\tag{8}\n\\]\nHence the double sum telescopes:\n\\[\n\\sum_{m=1}^{\\infty}\\sum_{n=1}^{\\infty}c_{m,n}\n          =\\bigl(\\log(1+\\tfrac{1}{1})\\bigr)^{2}\n          =\\bigl(\\log 2\\bigr)^{2}.                                 \\tag{9}\n\\]\n\n\\textbf{3.\\;A layer-cake (discrete potential) representation of $b_{m,n}$.}\nSince $c_{m,n}\\ge 0$ and $\\sum_{m,n}c_{m,n}<\\infty$, double telescoping yields  \n\\[\nb_{m,n}=\\sum_{i=m}^{\\infty}\\sum_{j=n}^{\\infty}c_{i,j}\\qquad(m,n\\ge 1). \\tag{10}\n\\]\n\n\\textbf{4.\\;Rewriting the truncated sums $S_{M,N}$.}\nPut\n\\[\nS_{M,N}:=\\sum_{m=1}^{M}\\sum_{n=1}^{N}a_{m,n}\\,b_{m,n}\\qquad(M,N\\ge 1). \\tag{11}\n\\]\nInserting \\textup{(10)} and swapping the order of summation,\n\\[\n\\begin{aligned}\nS_{M,N}\n  &=\\sum_{m=1}^{M}\\sum_{n=1}^{N}a_{m,n}\\!\n      \\sum_{i=m}^{\\infty}\\sum_{j=n}^{\\infty}c_{i,j} \\\\\n  &=\\sum_{i=1}^{\\infty}\\sum_{j=1}^{\\infty}c_{i,j}\n      \\sum_{m=1}^{\\min\\{i,M\\}}\\sum_{n=1}^{\\min\\{j,N\\}}a_{m,n}\\\\\n  &=\\sum_{i=1}^{\\infty}\\sum_{j=1}^{\\infty}\n        c_{i,j}\\,A_{\\min\\{i,M\\},\\,\\min\\{j,N\\}}.                    \\tag{12}\n\\end{aligned}\n\\]\n\n\\textbf{5.\\;Cauchy property of the net $\\bigl(S_{M,N}\\bigr)_{M,N\\ge 1}$.}\nFor two rectangles $(M,N)$ and $(P,Q)$,\n\\[\nS_{M,N}-S_{P,Q}\n   =\\sum_{i=1}^{\\infty}\\sum_{j=1}^{\\infty} c_{i,j}\\,\n     \\bigl(A_{\\min\\{i,M\\},\\min\\{j,N\\}}\n           -A_{\\min\\{i,P\\},\\min\\{j,Q\\}}\\bigr).\n\\]\nBecause each partial sum is bounded by $K$, we have\n\\[\n\\bigl\\lvert A_{\\min\\{i,M\\},\\min\\{j,N\\}}\n           -A_{\\min\\{i,P\\},\\min\\{j,Q\\}}\\bigr\\rvert\\le 2K.\n\\]\nHence\n\\[\n\\lvert S_{M,N}-S_{P,Q}\\rvert\n     \\le 2K\n        \\sum_{\\substack{i>\\min\\{M,P\\}\\\\\\text{or }j>\\min\\{N,Q\\}}}\n            c_{i,j}.                                               \\tag{13}\n\\]\nBecause $\\sum_{i,j}c_{i,j}<\\infty$ by \\textup{(9)}, the right-hand side can be made arbitrarily small by taking all four indices large enough; therefore the net $\\bigl(S_{M,N}\\bigr)$ is Cauchy and the limit $S$ in \\textup{(3)} exists.  \nThis proves (a).\n\n\\textbf{6.\\;Evaluation of $S$ and the sharp bound.}\nLetting $M,N\\to\\infty$ in \\textup{(12)} and applying dominated convergence\n(domination by $Kc_{i,j}$) we obtain the absolutely convergent\nrepresentation\n\\[\nS=\\sum_{i=1}^{\\infty}\\sum_{j=1}^{\\infty}c_{i,j}\\,A_{i,j}.          \\tag{14}\n\\]\nConsequently\n\\[\n\\lvert S\\rvert\\le K\\sum_{i=1}^{\\infty}\\sum_{j=1}^{\\infty}c_{i,j}\n        =K\\bigl(\\log 2\\bigr)^{2},                                  \\tag{15}\n\\]\nwhich is exactly the bound asserted in \\textup{(4)}.  This completes (b).\n\n\\textbf{7.\\;Absolute convergence cannot be required (part (c)).}\nChoose\n\\[\na_{m,n}:=(-1)^{m+n}\\qquad(m,n\\ge 1).                               \\tag{16}\n\\]\nThen\n\\[\nA_{M,N}\n   =\\Bigl(\\sum_{m=1}^{M}(-1)^{m}\\Bigr)\n    \\Bigl(\\sum_{n=1}^{N}(-1)^{n}\\Bigr)\n   \\in\\{0,\\pm1\\},                                                  \\tag{17}\n\\]\nso condition \\textup{(1)} holds with $K=1$.  However,\n$\\lvert a_{m,n}\\rvert=1$ and therefore\n\\[\n\\sum_{m=1}^{\\infty}\\sum_{n=1}^{\\infty}\\lvert a_{m,n}\\rvert\\,b_{m,n}\n        =\\sum_{m=1}^{\\infty}\\sum_{n=1}^{\\infty}b_{m,n}\n        \\ge\\sum_{m=1}^{\\infty}b_{m,1}\n        =\\sum_{m=1}^{\\infty}\\log\\!\\bigl(1+\\tfrac1m\\bigr)=\\infty.    \\tag{18}\n\\]\nAbsolute convergence thus fails, even though the (conditionally) convergent sum $S$ exists by (a)-(b).  \nPart (c) is proved, and the argument is complete.\n\n\\bigskip",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.439525",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Dimensional Elevation.  The original exercise is one–dimensional;\n    the variant demands a fully two–dimensional treatment.\n\n2.  Advanced Tools.  Where the classical solution only needs Abel’s\n    single-variable summation, the enhanced problem forces the competitor\n    to perform a two–variable discrete integration by parts, keep track of\n    mixed finite differences and boundary terms, and control them\n    simultaneously.\n\n3.  Non-trivial Weight Structure.  The new weights are products of\n    logarithms, generating mixed differences whose behaviour must be\n    analysed in both indices at once; simple monotonicity in one index\n    is no longer sufficient.\n\n4.  Uniform Bound Management.  One must recognise that boundedness of all\n    rectangular partial sums is the correct analogue of “bounded partial\n    sums” in one dimension and learn how to exploit it in a two-variable\n    setting.\n\n5.  Multiple Interacting Concepts.  The solution blends Dirichlet’s idea,\n    multidimensional Abel summation, telescoping in two axes, positivity of\n    mixed differences, and careful interchange of limits—significantly more\n    conceptual load and technical detail than the original task."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $(a_{m,n})_{m,n\\ge 1}$ be a doubly-indexed complex sequence and let  \n\n  A_{M,N}\\;=\\;\\displaystyle\\sum_{m=1}^{M}\\sum_{n=1}^{N}a_{m,n}\\qquad (M,N\\in\\Bbb N)  \n\nbe its rectangular partial sums.  \nAssume that these partial sums are uniformly bounded, i.e.  \n\n  |A_{M,N}|\\;\\le K\\qquad(M,N\\ge 1)                                                    (1)\n\nfor some constant $K<\\infty$.\n\nDefine the positive weight array  \n\n  b_{m,n}\\;=\\;\\log\\!\\Bigl(1+\\frac1m\\Bigr)\\,\\log\\!\\Bigl(1+\\frac1n\\Bigr),\\qquad m,n\\ge 1.     (2)\n\n(a)  Prove that the limit  \n\n  S\\;=\\;\\lim_{M,N\\to\\infty}\\;\\sum_{m=1}^{M}\\sum_{n=1}^{N} a_{m,n}\\,b_{m,n}                     (3)\n\nexists, i.e. the double series with rectangular summation converges (possibly only\nconditionally).  \n\n(b)  Show moreover that  \n\n  |S|\\;\\le\\;K\\,(\\log 2)^{2}.                                                               (4)\n\n(c)  Give an example of a sequence $(a_{m,n})$ that satisfies hypothesis (1) but\nfor which  \n\n  \\displaystyle\\sum_{m=1}^{\\infty}\\sum_{n=1}^{\\infty}|a_{m,n}|\\,b_{m,n}=\\infty,\n\nthereby proving that absolute convergence cannot be demanded in (a).\n\n(Parts (a)-(b) amount to a genuinely two-dimensional Abel-Dirichlet theorem.\nPart (c) shows that the estimate (4) is the strongest possible.)",
+      "solution": "1.  Notation and discrete derivatives.  \nFor $f=(f_{m,n})_{m,n\\ge 1}$ we use the forward difference operators  \n\n  \\Delta _{1}f_{m,n}=f_{m,n}-f_{m+1,n},  \\Delta _{2}f_{m,n}=f_{m,n}-f_{m,n+1},  \n\nand their composition  \n\n  \\Delta _{1}\\Delta _{2}f_{m,n}=f_{m,n}-f_{m+1,n}-f_{m,n+1}+f_{m+1,n+1}\\qquad(m,n\\ge 1).     (5)\n\nExtend $A_{M,N}$ to indices $0$ by $A_{0,N}=A_{M,0}=0$.  Then, for every $m,n\\ge1$,  \n\n  a_{m,n}=\\Delta _{1}\\Delta _{2}A_{m-1,n-1}.                                                        (6)\n\n(The single-step shift corrects the identity used in the original draft.)\n\n2.  A two-dimensional Abel summation formula.  \nPut  \n\n  S_{M,N}:=\\sum_{m=1}^{M}\\sum_{n=1}^{N} a_{m,n}b_{m,n}.                                     (7)\n\nWith (6) and the change of indices $m\\mapsto m+1,\\;n\\mapsto n+1$ we obtain  \n\\[\nS_{M,N}= \\sum_{m=0}^{M-1}\\sum_{n=0}^{N-1}\\bigl(\\Delta _{1}\\Delta _{2}A_{m,n}\\bigr)\\,b_{m+1,n+1}.\n\\]\nApplying two successive discrete integrations by parts (i.e. moving the\noperators $\\Delta _{1},\\Delta _{2}$ from $A$ to $b$) yields the exact identity\n\n\\[\n\\boxed{\\;\n\\begin{aligned}\nS_{M,N}\n&=\\sum_{m=0}^{M-1}\\sum_{n=0}^{N-1} A_{m,n}\\,\\Delta _{1}\\Delta _{2}b_{m+1,n+1} \\\\\n&\\quad+\\sum_{m=0}^{M-1}A_{m,N}\\,\\Delta _{1}b_{m+1,N+1}\n      +\\sum_{n=0}^{N-1}A_{M,n}\\,\\Delta _{2}b_{M+1,n+1}\n      +A_{M,N}\\,b_{M+1,N+1}.\n\\end{aligned}}\\qquad(8)\n\\]\n\n(The calculation is a straightforward two-dimensional analogue of the\none-variable Abel transformation and is omitted for brevity.)\n\n3.  Positivity and summability of the weight differences.  \nBecause $t\\mapsto\\log(1+1/t)$ is positive and strictly decreasing,  \n\n  \\Delta _{1}b_{m,n},\\,\\Delta _{2}b_{m,n},\\,\\Delta _{1}\\Delta _{2}b_{m,n}>0\\qquad(m,n\\ge1).     (9)\n\nA direct factorisation gives\n\n  \\Delta _{1}\\Delta _{2}b_{m,n}\n     =\\bigl(\\log(1+\\tfrac1m)-\\log(1+\\tfrac1{m+1})\\bigr)\n      \\bigl(\\log(1+\\tfrac1n)-\\log(1+\\tfrac1{n+1})\\bigr).             (10)\n\nTherefore\n\n  \\sum _{m=1}^{\\infty}\\sum _{n=1}^{\\infty}\\Delta _{1}\\Delta _{2}b_{m,n}\n     =\\bigl(\\log(1+\\tfrac11)\\bigr)^{2}=(\\log 2)^{2}.             (11)\n\nFurthermore, for every fixed $n$ one has  \n  \\sum _{m=1}^{\\infty}\\Delta _{1}b_{m,n}=b_{1,n}\\le\\log 2   and similarly  \n  \\sum _{n=1}^{\\infty}\\Delta _{2}b_{m,n}\\le\\log 2.                             (12)\n\n4.  Passage to the limit.  \nUsing the bounds (1) and the positivity of the differences we can\nestimate each term in (8) as follows:\n\n(i)  Mixed term:\n\n  | \\sum _{m=0}^{M-1}\\sum _{n=0}^{N-1} A_{m,n}\\Delta _{1}\\Delta _{2}b_{m+1,n+1} |\n     \\leq K\\sum _{m,n}\\Delta _{1}\\Delta _{2}b_{m,n}\n     \\leq K(\\log 2)^{2}.                                           (13)\n\n(ii)  Horizontal boundary:\n\n  \\bigl|\\sum _{m=0}^{M-1}A_{m,N}\\Delta _{1}b_{m+1,N+1}\\bigr|\n     \\leq K\\sum _{m=0}^{\\infty}\\Delta _{1}b_{m+1,N+1}\n     =K\\,b_{1,N+1}\\xrightarrow[N\\to\\infty]{}0.                      (14)\n\n(iii)  Vertical boundary is handled symmetrically and also tends to $0$.\n\n(iv)  Corner term:\n\n  |A_{M,N}|\\;b_{M+1,N+1}\\le K\\,b_{M+1,N+1}\\xrightarrow[M,N\\to\\infty]{}0.     (15)\n\nPutting (13)-(15) together shows that the net\n$\\bigl(S_{M,N}\\bigr)_{M,N\\ge1}$ is Cauchy; hence the limit (3) exists and\n\n  |S|\\le K(\\log 2)^{2},                                             (16)\n\nwhich proves both statements (a) and (b).\n\n5.  Why absolute convergence cannot be required (part (c)).  \nConsider  \n\n  a_{m,n}=(-1)^{m+n}\\qquad(m,n\\ge1).\n\nIts rectangular sums oscillate between $-1,0,1$, so (1) holds with $K=1$.\nHowever  \n\n  |a_{m,n}|\\,b_{m,n}=b_{m,n},\n\nand  \n\n  \\sum _{m=1}^{\\infty}b_{m,1}=\\sum _{m=1}^{\\infty}\\log\\!\\bigl(1+\\tfrac1m\\bigr)=\\infty,\n\nhence  \n\n  \\sum _{m,n}|a_{m,n}|\\,b_{m,n}=\\infty.\n\nThe main series itself does converge, though, by (a)-(b); indeed\nthe estimate (16) gives $|S|\\le(\\log 2)^{2}$.\n\nThus the absolute version of part (a) is false, completing the answer to (c).",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.380033",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Dimensional Elevation.  The original exercise is one–dimensional;\n    the variant demands a fully two–dimensional treatment.\n\n2.  Advanced Tools.  Where the classical solution only needs Abel’s\n    single-variable summation, the enhanced problem forces the competitor\n    to perform a two–variable discrete integration by parts, keep track of\n    mixed finite differences and boundary terms, and control them\n    simultaneously.\n\n3.  Non-trivial Weight Structure.  The new weights are products of\n    logarithms, generating mixed differences whose behaviour must be\n    analysed in both indices at once; simple monotonicity in one index\n    is no longer sufficient.\n\n4.  Uniform Bound Management.  One must recognise that boundedness of all\n    rectangular partial sums is the correct analogue of “bounded partial\n    sums” in one dimension and learn how to exploit it in a two-variable\n    setting.\n\n5.  Multiple Interacting Concepts.  The solution blends Dirichlet’s idea,\n    multidimensional Abel summation, telescoping in two axes, positivity of\n    mixed differences, and careful interchange of limits—significantly more\n    conceptual load and technical detail than the original task."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

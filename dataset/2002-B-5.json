@@ -1,0 +1,117 @@
+{
+  "index": "2002-B-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "A palindrome in base $b$ is a positive integer whose base-$b$\ndigits read the same backwards and forwards; for example,\n$2002$ is a 4-digit palindrome in base 10. Note that 200 is not\na palindrome in base 10, but it is the 3-digit palindrome\n242 in base 9, and 404 in base 7. Prove that there is an integer\nwhich is a 3-digit palindrome in base $b$ for at least 2002\ndifferent values of $b$.",
+  "solution": "(due to Dan Bernstein)\nPut $N = 2002!$. Then for $d=1, \\dots, 2002$,\nthe number $N^2$ written in base $b = N/d - 1$ has digits\n$d^2, 2d^2, d^2$. (Note that these really are digits because\n$2(2002)^2 < (2002!)^2/2002 - 1$.)\n\nNote: one can also produce an integer $N$ which has base $b$\ndigits $1, *, 1$ for $n$ different values of $b$, as follows.\nChoose $c$ with $0 < c < 2^{1/n}$. For $m$ a large positive integer,\nput $N = 1 + (m+1)\\cdots (m+n)\\lfloor cm \\rfloor^{n-2}$.\nFor $m$ sufficiently large, the bases\n\\[\nb = \\frac{N-1}{(m+i)m^{n-2}} = \\prod_{j \\neq i} (m+j)\n\\]\nfor $i=1, \\dots, n$ will\nhave the properties that $N \\equiv 1 \\pmod{b}$ and $b^2 < N < 2b^2$\nfor $m$ sufficiently large.\n\nNote (due to Russ Mann):\none can also give a ``nonconstructive'' argument. Let $N$ be a\nlarge positive integer. For $b \\in (N^2, N^3)$, the number of 3-digit\nbase-$b$ palindromes in the range $[b^2, N^6 - 1]$ is at least\n\\[\n\\left\\lfloor \\frac{N^6 - b^2}{b} \\right\\rfloor - 1\n\\geq \\frac{N^6}{b^2} - b - 2,\n\\]\nsince there is a palindrome in each interval $[kb, (k+1)b-1]$ for\n$k=b, \\dots, b^2-1$. Thus the average number of bases for which\na number in $[1, N^6-1]$ is at least\n\\[\n\\frac{1}{N^6} \\sum_{b=N^2+1}^{N^3-1} \\left( \\frac{N^6}{b} - b-2 \\right)\n\\geq  \\log(N) - c\n\\]\nfor some constant $c>0$. Take $N$ so that the right side exceeds $2002$;\nthen at least one number in $[1, N^6-1]$ is a base-$b$ palindrome\nfor at least 2002 values of $b$.",
+  "vars": [
+    "b",
+    "d",
+    "m",
+    "i",
+    "j",
+    "k"
+  ],
+  "params": [
+    "N",
+    "c",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "b": "baseval",
+        "d": "divisor",
+        "m": "largenum",
+        "i": "indexone",
+        "j": "indextwo",
+        "k": "indexthr",
+        "N": "factorialproduct",
+        "c": "constantc",
+        "n": "paramcount"
+      },
+      "question": "A palindrome in base $\\text{baseval}$ is a positive integer whose base-$\\text{baseval}$ digits read the same backwards and forwards; for example, 2002 is a 4-digit palindrome in base 10. Note that 200 is not a palindrome in base 10, but it is the 3-digit palindrome 242 in base 9, and 404 in base 7. Prove that there is an integer which is a 3-digit palindrome in base $\\text{baseval}$ for at least 2002 different values of $\\text{baseval}$. ",
+      "solution": "(due to Dan Bernstein)\nPut $\\text{factorialproduct}=2002!$. Then for $\\text{divisor}=1,\\dots,2002$, the number $\\text{factorialproduct}^2$ written in base $\\text{baseval}=\\text{factorialproduct}/\\text{divisor}-1$ has digits $\\text{divisor}^2, 2\\text{divisor}^2, \\text{divisor}^2$. (Note that these really are digits because $2(2002)^2<\\text{factorialproduct}^2/2002-1$.)\n\nNote: one can also produce an integer $\\text{factorialproduct}$ which has base $\\text{baseval}$ digits $1,*,1$ for $\\text{paramcount}$ different values of $\\text{baseval}$, as follows. Choose $\\text{constantc}$ with $0<\\text{constantc}<2^{1/\\text{paramcount}}$. For $\\text{largenum}$ a large positive integer, put\n\\[\n\\text{factorialproduct}=1+(\\text{largenum}+1)\\cdots(\\text{largenum}+\\text{paramcount})\\lfloor\\text{constantc}\\,\\text{largenum}\\rfloor^{\\text{paramcount}-2}.\n\\]\nFor $\\text{largenum}$ sufficiently large, the bases\n\\[\n\\text{baseval}=\\frac{\\text{factorialproduct}-1}{(\\text{largenum}+\\text{indexone})\\text{largenum}^{\\text{paramcount}-2}}=\\prod_{\\text{indextwo}\\ne\\text{indexone}}(\\text{largenum}+\\text{indextwo})\n\\]\nfor $\\text{indexone}=1,\\dots,\\text{paramcount}$ will have the properties that $\\text{factorialproduct}\\equiv1\\pmod{\\text{baseval}}$ and $\\text{baseval}^2<\\text{factorialproduct}<2\\text{baseval}^2$ for $\\text{largenum}$ sufficiently large.\n\nNote (due to Russ Mann): one can also give a ``non-constructive'' argument. Let $\\text{factorialproduct}$ be a large positive integer. For $\\text{baseval}\\in(\\text{factorialproduct}^2,\\text{factorialproduct}^3)$, the number of 3-digit base-$\\text{baseval}$ palindromes in the range $[\\text{baseval}^2,\\text{factorialproduct}^6-1]$ is at least\n\\[\n\\left\\lfloor\\frac{\\text{factorialproduct}^6-\\text{baseval}^2}{\\text{baseval}}\\right\\rfloor-1\\ge\\frac{\\text{factorialproduct}^6}{\\text{baseval}^2}-\\text{baseval}-2,\n\\]\nsince there is a palindrome in each interval $[\\text{indexthr}\\,\\text{baseval},(\\text{indexthr}+1)\\text{baseval}-1]$ for $\\text{indexthr}=\\text{baseval},\\dots,\\text{baseval}^2-1$. Thus the average number of bases for which a number in $[1,\\text{factorialproduct}^6-1]$ is a base-$\\text{baseval}$ palindrome is at least\n\\[\n\\frac{1}{\\text{factorialproduct}^6}\\sum_{\\text{baseval}=\\text{factorialproduct}^2+1}^{\\text{factorialproduct}^3-1}\\left(\\frac{\\text{factorialproduct}^6}{\\text{baseval}}-\\text{baseval}-2\\right)\\ge\\log(\\text{factorialproduct})-\\text{constantc},\n\\]\nfor some constant $\\text{constantc}>0$. Take $\\text{factorialproduct}$ so that the right side exceeds 2002; then at least one number in $[1,\\text{factorialproduct}^6-1]$ is a base-$\\text{baseval}$ palindrome for at least 2002 values of $\\text{baseval}$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "b": "pineapple",
+        "d": "suitcase",
+        "m": "elevator",
+        "i": "waterfall",
+        "j": "chocolate",
+        "k": "teaspoon",
+        "N": "jellyfish",
+        "c": "harmonica",
+        "n": "sunflower"
+      },
+      "question": "A palindrome in base $pineapple$ is a positive integer whose base-$pineapple$\ndigits read the same backwards and forwards; for example,\n$2002$ is a 4-digit palindrome in base 10. Note that 200 is not\na palindrome in base 10, but it is the 3-digit palindrome\n242 in base 9, and 404 in base 7. Prove that there is an integer\nwhich is a 3-digit palindrome in base $pineapple$ for at least 2002\ndifferent values of $pineapple$.",
+      "solution": "(due to Dan Bernstein)\nPut $jellyfish = 2002!$. Then for $suitcase=1, \\dots, 2002$,\nthe number $jellyfish^2$ written in base $pineapple = jellyfish/suitcase - 1$ has digits\n$suitcase^2, 2suitcase^2, suitcase^2$. (Note that these really are digits because\n$2(2002)^2 < (2002!)^2/2002 - 1$.)\n\nNote: one can also produce an integer $jellyfish$ which has base $pineapple$\ndigits $1, *, 1$ for $sunflower$ different values of $pineapple$, as follows.\nChoose $harmonica$ with $0 < harmonica < 2^{1/sunflower}$. For $elevator$ a large positive integer,\nput $jellyfish = 1 + (elevator+1)\\cdots (elevator+sunflower)\\lfloor harmonica\\,elevator \\rfloor^{sunflower-2}$.\nFor $elevator$ sufficiently large, the bases\n\\[\npineapple = \\frac{jellyfish-1}{(elevator+waterfall)elevator^{sunflower-2}} = \\prod_{chocolate \\neq waterfall} (elevator+chocolate)\n\\]\nfor $waterfall=1, \\dots, sunflower$ will\nhave the properties that $jellyfish \\equiv 1 \\pmod{pineapple}$ and $pineapple^2 < jellyfish < 2pineapple^2$\nfor $elevator$ sufficiently large.\n\nNote (due to Russ Mann):\none can also give a ``nonconstructive'' argument. Let $jellyfish$ be a\nlarge positive integer. For $pineapple \\in (jellyfish^2, jellyfish^3)$, the number of 3-digit\nbase-$pineapple$ palindromes in the range $[pineapple^2, jellyfish^6 - 1]$ is at least\n\\[\n\\left\\lfloor \\frac{jellyfish^6 - pineapple^2}{pineapple} \\right\\rfloor - 1\n\\geq \\frac{jellyfish^6}{pineapple^2} - pineapple - 2,\n\\]\nsince there is a palindrome in each interval $[teaspoon\\,pineapple, (teaspoon+1)pineapple-1]$ for\n$teaspoon=pineapple, \\dots, pineapple^2-1$. Thus the average number of bases for which\na number in $[1, jellyfish^6-1]$ is at least\n\\[\n\\frac{1}{jellyfish^6} \\sum_{pineapple=jellyfish^2+1}^{jellyfish^3-1} \\left( \\frac{jellyfish^6}{pineapple} - pineapple-2 \\right)\n\\geq  \\log(jellyfish) - c\n\\]\nfor some constant $c>0$. Take $jellyfish$ so that the right side exceeds $2002$;\nthen at least one number in $[1, jellyfish^6-1]$ is a base-$pineapple$ palindrome\nfor at least 2002 values of $pineapple$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "b": "ceilingpt",
+        "d": "wholepart",
+        "m": "smallneg",
+        "i": "outerval",
+        "j": "surround",
+        "k": "staticval",
+        "N": "tinyvalue",
+        "c": "gigaconst",
+        "n": "unitvalue"
+      },
+      "question": "A palindrome in base $ceilingpt$ is a positive integer whose base-$ceilingpt$ digits read the same backwards and forwards; for example,\n$2002$ is a 4-digit palindrome in base 10. Note that 200 is not a palindrome in base 10, but it is the 3-digit palindrome 242 in base 9, and 404 in base 7. Prove that there is an integer which is a 3-digit palindrome in base $ceilingpt$ for at least 2002 different values of $ceilingpt$.",
+      "solution": "(due to Dan Bernstein)\nPut $tinyvalue = 2002!$. Then for $wholepart=1, \\dots, 2002$, the number $tinyvalue^2$ written in base $ceilingpt = tinyvalue/wholepart - 1$ has digits $wholepart^2, 2wholepart^2, wholepart^2$. (Note that these really are digits because $2(2002)^2 < (2002!)^2/2002 - 1$.)\n\nNote: one can also produce an integer $tinyvalue$ which has base $ceilingpt$ digits $1, *, 1$ for $unitvalue$ different values of $ceilingpt$, as follows. Choose $gigaconst$ with $0 < gigaconst < 2^{1/unitvalue}$. For $smallneg$ a large positive integer, put $tinyvalue = 1 + (smallneg+1)\\cdots (smallneg+unitvalue)\\lfloor gigaconst smallneg \\rfloor^{unitvalue-2}$. For $smallneg$ sufficiently large, the bases\n\\[\nceilingpt = \\frac{tinyvalue-1}{(smallneg+outerval)smallneg^{unitvalue-2}} = \\prod_{surround \\neq outerval} (smallneg+surround)\n\\]\nfor $outerval=1, \\dots, unitvalue$ will have the properties that $tinyvalue \\equiv 1 \\pmod{ceilingpt}$ and $ceilingpt^2 < tinyvalue < 2ceilingpt^2$ for $smallneg$ sufficiently large.\n\nNote (due to Russ Mann): one can also give a ``nonconstructive'' argument. Let $tinyvalue$ be a large positive integer. For $ceilingpt \\in (tinyvalue^2, tinyvalue^3)$, the number of 3-digit base-$ceilingpt$ palindromes in the range $[ceilingpt^2, tinyvalue^6 - 1]$ is at least\n\\[\n\\left\\lfloor \\frac{tinyvalue^6 - ceilingpt^2}{ceilingpt} \\right\\rfloor - 1 \\geq \\frac{tinyvalue^6}{ceilingpt^2} - ceilingpt - 2,\n\\]\nsince there is a palindrome in each interval $[staticvalceilingpt, (staticval+1)ceilingpt-1]$ for $staticval=ceilingpt, \\dots, ceilingpt^2-1$. Thus the average number of bases for which a number in $[1, tinyvalue^6-1]$ is at least\n\\[\n\\frac{1}{tinyvalue^6} \\sum_{ceilingpt=tinyvalue^2+1}^{tinyvalue^3-1} \\left( \\frac{tinyvalue^6}{ceilingpt} - ceilingpt-2 \\right) \\geq  \\log(tinyvalue) - gigaconst\n\\]\nfor some constant $gigaconst>0$. Take $tinyvalue$ so that the right side exceeds $2002$; then at least one number in $[1, tinyvalue^6-1]$ is a base-$ceilingpt$ palindrome for at least 2002 values of $ceilingpt$.}"
+    },
+    "garbled_string": {
+      "map": {
+        "b": "qzxwvtnp",
+        "d": "hjgrksla",
+        "m": "vblektrs",
+        "i": "pqudnjow",
+        "j": "rysovkma",
+        "k": "eftujhcl",
+        "N": "lamkduse",
+        "c": "worziple",
+        "n": "gytdomer"
+      },
+      "question": "A palindrome in base $qzxwvtnp$ is a positive integer whose base-$qzxwvtnp$ digits read the same backwards and forwards; for example, $2002$ is a 4-digit palindrome in base 10. Note that 200 is not a palindrome in base 10, but it is the 3-digit palindrome 242 in base 9, and 404 in base 7. Prove that there is an integer which is a 3-digit palindrome in base $qzxwvtnp$ for at least 2002 different values of $qzxwvtnp$.",
+      "solution": "(due to Dan Bernstein)\nPut $lamkduse = 2002!$. Then for $hjgrksla=1, \\dots, 2002$, the number $lamkduse^2$ written in base $qzxwvtnp = lamkduse/hjgrksla - 1$ has digits $hjgrksla^2, 2hjgrksla^2, hjgrksla^2$. (Note that these really are digits because $2(2002)^2 < (2002!)^2/2002 - 1$.)\n\nNote: one can also produce an integer $lamkduse$ which has base $qzxwvtnp$ digits $1, *, 1$ for $gytdomer$ different values of $qzxwvtnp$, as follows. Choose $worziple$ with $0 < worziple < 2^{1/gytdomer}$. For $vblektrs$ a large positive integer, put $lamkduse = 1 + (vblektrs+1)\\cdots (vblektrs+gytdomer)\\lfloor worziple vblektrs \\rfloor^{gytdomer-2}$. For $vblektrs$ sufficiently large, the bases\n\\[\nqzxwvtnp = \\frac{lamkduse-1}{(vblektrs+pqudnjow)vblektrs^{gytdomer-2}} = \\prod_{rysovkma \\neq pqudnjow} (vblektrs+rysovkma)\n\\]\nfor $pqudnjow=1, \\dots, gytdomer$ will have the properties that $lamkduse \\equiv 1 \\pmod{qzxwvtnp}$ and $qzxwvtnp^2 < lamkduse < 2qzxwvtnp^2$ for $vblektrs$ sufficiently large.\n\nNote (due to Russ Mann): one can also give a ``nonconstructive'' argument. Let $lamkduse$ be a large positive integer. For $qzxwvtnp \\in (lamkduse^2, lamkduse^3)$, the number of 3-digit base-$qzxwvtnp$ palindromes in the range $[qzxwvtnp^2, lamkduse^6 - 1]$ is at least\n\\[\n\\left\\lfloor \\frac{lamkduse^6 - qzxwvtnp^2}{qzxwvtnp} \\right\\rfloor - 1 \\geq \\frac{lamkduse^6}{qzxwvtnp^2} - qzxwvtnp - 2,\n\\]\nsince there is a palindrome in each interval $[eftujhcl qzxwvtnp, (eftujhcl+1)qzxwvtnp-1]$ for $eftujhcl = qzxwvtnp, \\dots, qzxwvtnp^2-1$. Thus the average number of bases for which a number in $[1, lamkduse^6-1]$ is at least\n\\[\n\\frac{1}{lamkduse^6} \\sum_{qzxwvtnp=lamkduse^2+1}^{lamkduse^3-1} \\left( \\frac{lamkduse^6}{qzxwvtnp} - qzxwvtnp-2 \\right) \\geq \\log(lamkduse) - c\n\\]\nfor some constant $c>0$. Take $lamkduse$ so that the right side exceeds 2002; then at least one number in $[1, lamkduse^6-1]$ is a base-$qzxwvtnp$ palindrome for at least 2002 values of $qzxwvtnp$.}"
+    },
+    "kernel_variant": {
+      "question": "A positive integer is called a three-digit palindrome in base b (b\\geq 2) if its base-b representation has the form aba, where a\\neq 0. Prove that there exists a positive integer that is a three-digit palindrome in at least 2500 distinct bases.",
+      "solution": "Take k = 2500 and put N = k!.\nFor every integer d with 1 \\leq  d \\leq  k define\n  b = N / d - 1 .  (1)\nBecause d divides N, b is an integer.  Writing N = d(b+1) we obtain\n  N^2 = d^2(b+1)^2 = d^2b^2 + 2d^2b + d^2.  (2)\nHence, when N^2 is written in base b its three digits are d^2 , 2d^2 , d^2 ; in other words,\n  N^2 (base b) = d^2 2d^2 d^2 ,\nwhich is a palindrome.  To complete the proof we must show that\n(a) d^2 and 2d^2 are legitimate base-b digits, i.e. 0 < d^2 , 2d^2 < b, and\n(b) every b produced by (1) is at least 2; moreover the k values of b are distinct.\n\n1.  The digit bound  2d^2 < b.\n   From (1) we have  b + 1 = N/d , so the required inequality is\n  2d^2 < N/d.  (3)\n   Multiplying by d gives  2d^3 < N = k! .  Because d \\leq  k we may use the crude estimate 2d^3 \\leq  2k^3, so it is enough to check  2k^3 < k!.\n   For k = 2500, Stirling's formula (or the elementary bound n! \\geq  (n/3)^{n}) shows k! exceeds  (k/3)^k > 2k^3; hence (3) certainly holds.\n\n   Strictness: we must also rule out the equality 2d^2 = b.  If 2d^2 = b, then from (1)\n  N = d(b+1) = d(2d^2+1) = 2d^3 + d \\leq  3d^3 \\leq  3k^3,\n   contradicting  k! > 3k^3.  Thus  2d^2 \\neq  b and (3) is strict, whence even d^2 < b.\n   Therefore the three symbols d^2, 2d^2, d^2 are valid base-b digits with the leading one non-zero (since d\\geq 1).\n\n2.  The lower bound  b \\geq  2.\n   The smallest base occurs when d = k, giving\n  b_min = N/k - 1 = (k!)/k - 1 = (k-1)! - 1.\n   Because k = 2500 \\geq  3 we have (k-1)! \\geq  2\\cdot 3 \\geq  6, so b_min \\geq  5 > 2.  Hence every base produced is at least 2.\n\n3.  Distinctness of the bases.\n   In (1) the function d \\mapsto  N/d - 1 is strictly decreasing, so the k choices d = 1,2,\\ldots ,k yield k distinct bases.\n\nConsequently the single integer N^2 is a three-digit palindrome in each of the k = 2500 distinct bases determined above.  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Pick N that is divisible by each d in {1,…,k} (take N = k!).",
+          "For each d set the base b = N/d − 1 so that N = d(b+1).",
+          "Expand N² = d²(b+1)² = d²b² + 2d²b + d², giving base-b digits d², 2d², d² (a 3-digit palindrome).",
+          "Check the digit bound 2d² < b; this holds because N (=k!) grows faster than d³.",
+          "Thus N² is a 3-digit palindrome for every d, yielding k ≥ 2002 admissible bases when k = 2002."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Required count of different bases",
+            "original": "2002"
+          },
+          "slot2": {
+            "description": "Specific choice of N as the factorial of that count",
+            "original": "2002!"
+          },
+          "slot3": {
+            "description": "Upper limit of the divisor index used to generate bases",
+            "original": "d = 1,…,2002"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

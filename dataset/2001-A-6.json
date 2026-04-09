@@ -1,0 +1,112 @@
+{
+  "index": "2001-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "Can an arc of a parabola inside a circle of radius 1 have a length\ngreater than 4?",
+  "solution": "The answer is yes.  Consider the arc of the parabola\n$y=Ax^2$ inside the circle $x^2+(y-1)^2 = 1$, where we initially assume\nthat $A > 1/2$.  This intersects the circle in three points,\n$(0,0)$ and $(\\pm \\sqrt{2A-1}/A, (2A-1)/A)$.  We claim that for\n$A$ sufficiently large, the length $L$ of the parabolic arc between\n$(0,0)$ and $(\\sqrt{2A-1}/A, (2A-1)/A)$ is greater than $2$, which\nimplies the desired result by symmetry.  We express $L$ using the\nusual formula for arclength:\n\\begin{align*}\nL &= \\int_0^{\\sqrt{2A-1}/A} \\sqrt{1+(2Ax)^2} \\, dx \\\\\n&= \\frac{1}{2A} \\int_0^{2\\sqrt{2A-1}} \\sqrt{1+x^2} \\, dx \\\\\n&= 2 + \\frac{1}{2A} \\left( \\int_0^{2\\sqrt{2A-1}}\n(\\sqrt{1+x^2}-x)\\,dx -2\\right),\n\\end{align*}\nwhere we have artificially introduced $-x$ into the integrand in the\nlast step.  Now, for $x \\geq 0$,\n\\[\n\\sqrt{1+x^2}-x = \\frac{1}{\\sqrt{1+x^2}+x} > \\frac{1}{2\\sqrt{1+x^2}}\n\\geq \\frac{1}{2(x+1)};\n\\]\nsince $\\int_0^\\infty dx/(2(x+1))$ diverges, so does\n$\\int_0^\\infty (\\sqrt{1+x^2}-x)\\,dx$.  Hence, for sufficiently large\n$A$, we have $\\int_0^{2\\sqrt{2A-1}} (\\sqrt{1+x^2}-x)\\,dx > 2$,\nand hence $L > 2$.\n\nNote: a numerical computation shows that one must take $A > 34.7$ to\nobtain $L > 2$, and that the maximum value of $L$ is about\n$4.0027$, achieved for $A \\approx 94.1$.",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "A",
+    "L"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizcoor",
+        "y": "vertcoor",
+        "A": "parabcoef",
+        "L": "arclength"
+      },
+      "question": "Can an arc of a parabola inside a circle of radius 1 have a length\ngreater than 4?",
+      "solution": "The answer is yes.  Consider the arc of the parabola\n$vertcoor=parabcoef horizcoor^2$ inside the circle $horizcoor^2+(vertcoor-1)^2 = 1$, where we initially assume\nthat $parabcoef > 1/2$.  This intersects the circle in three points,\n$(0,0)$ and $(\\pm \\sqrt{2parabcoef-1}/parabcoef, (2parabcoef-1)/parabcoef)$.  We claim that for\n$parabcoef$ sufficiently large, the length $arclength$ of the parabolic arc between\n$(0,0)$ and $(\\sqrt{2parabcoef-1}/parabcoef, (2parabcoef-1)/parabcoef)$ is greater than $2$, which\nimplies the desired result by symmetry.  We express $arclength$ using the\nusual formula for arclength:\n\\begin{align*}\narclength &= \\int_0^{\\sqrt{2parabcoef-1}/parabcoef} \\sqrt{1+(2parabcoef horizcoor)^2} \\, d horizcoor \\\\\n&= \\frac{1}{2parabcoef} \\int_0^{2\\sqrt{2parabcoef-1}} \\sqrt{1+horizcoor^2} \\, d horizcoor \\\\\n&= 2 + \\frac{1}{2parabcoef} \\left( \\int_0^{2\\sqrt{2parabcoef-1}}\n(\\sqrt{1+horizcoor^2}-horizcoor)\\,d horizcoor -2\\right),\n\\end{align*}\nwhere we have artificially introduced $-horizcoor$ into the integrand in the\nlast step.  Now, for $horizcoor \\geq 0$,\n\\[\n\\sqrt{1+horizcoor^2}-horizcoor = \\frac{1}{\\sqrt{1+horizcoor^2}+horizcoor} > \\frac{1}{2\\sqrt{1+horizcoor^2}}\n\\geq \\frac{1}{2(horizcoor+1)};\n\\]\nsince $\\int_0^\\infty d horizcoor/(2(horizcoor+1))$ diverges, so does\n$\\int_0^\\infty (\\sqrt{1+horizcoor^2}-horizcoor)\\,d horizcoor$.  Hence, for sufficiently large\n$parabcoef$, we have $\\int_0^{2\\sqrt{2parabcoef-1}} (\\sqrt{1+horizcoor^2}-horizcoor)\\,d horizcoor > 2$,\nand hence $arclength > 2$.\n\nNote: a numerical computation shows that one must take $parabcoef > 34.7$ to\nobtain $arclength > 2$, and that the maximum value of $arclength$ is about\n$4.0027$, achieved for $parabcoef \\approx 94.1$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "latitude",
+        "y": "longitude",
+        "A": "diameter",
+        "L": "altitude"
+      },
+      "question": "Can an arc of a parabola inside a circle of radius 1 have a length\ngreater than 4?",
+      "solution": "The answer is yes.  Consider the arc of the parabola\n$longitude=diameter latitude^2$ inside the circle $latitude^2+(longitude-1)^2 = 1$, where we initially assume\nthat $diameter > 1/2$.  This intersects the circle in three points,\n$(0,0)$ and $(\\pm \\sqrt{2 diameter-1}/diameter, (2 diameter-1)/diameter)$.  We claim that for\n$diameter$ sufficiently large, the length $altitude$ of the parabolic arc between\n$(0,0)$ and $(\\sqrt{2 diameter-1}/diameter, (2 diameter-1)/diameter)$ is greater than $2$, which\nimplies the desired result by symmetry.  We express $altitude$ using the\nusual formula for arclength:\n\\begin{align*}\naltitude &= \\int_0^{\\sqrt{2 diameter-1}/diameter} \\sqrt{1+(2 diameter latitude)^2} \\, d latitude \\\\\n&= \\frac{1}{2 diameter} \\int_0^{2\\sqrt{2 diameter-1}} \\sqrt{1+latitude^2} \\, d latitude \\\\\n&= 2 + \\frac{1}{2 diameter} \\left( \\int_0^{2\\sqrt{2 diameter-1}}\n(\\sqrt{1+latitude^2}-latitude)\\,d latitude -2\\right),\n\\end{align*}\nwhere we have artificially introduced $-latitude$ into the integrand in the\nlast step.  Now, for $latitude \\geq 0$,\n\\[\n\\sqrt{1+latitude^2}-latitude = \\frac{1}{\\sqrt{1+latitude^2}+latitude} > \\frac{1}{2\\sqrt{1+latitude^2}}\n\\geq \\frac{1}{2(latitude+1)};\n\\]\nsince $\\int_0^\\infty d latitude/(2(latitude+1))$ diverges, so does\n$\\int_0^\\infty (\\sqrt{1+latitude^2}-latitude)\\,d latitude$.  Hence, for sufficiently large\n$diameter$, we have $\\int_0^{2\\sqrt{2 diameter-1}} (\\sqrt{1+latitude^2}-latitude)\\,d latitude > 2$,\nand hence $altitude > 2$.\n\nNote: a numerical computation shows that one must take $diameter > 34.7$ to\nobtain $altitude > 2$, and that the maximum value of $altitude$ is about\n$4.0027$, achieved for $diameter \\approx 94.1$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "A": "flatnessfactor",
+        "L": "shortness"
+      },
+      "question": "Can an arc of a parabola inside a circle of radius 1 have a length\ngreater than 4?",
+      "solution": "The answer is yes.  Consider the arc of the parabola\n$horizontalaxis=flatnessfactor verticalaxis^2$ inside the circle $verticalaxis^2+(horizontalaxis-1)^2 = 1$, where we initially assume\nthat $flatnessfactor > 1/2$.  This intersects the circle in three points,\n$(0,0)$ and $(\\pm \\sqrt{2flatnessfactor-1}/flatnessfactor, (2flatnessfactor-1)/flatnessfactor)$.  We claim that for\n$flatnessfactor$ sufficiently large, the length $shortness$ of the parabolic arc between\n$(0,0)$ and $(\\sqrt{2flatnessfactor-1}/flatnessfactor, (2flatnessfactor-1)/flatnessfactor)$ is greater than $2$, which\nimplies the desired result by symmetry.  We express $shortness$ using the\nusual formula for arclength:\n\\begin{align*}\nshortness &= \\int_0^{\\sqrt{2flatnessfactor-1}/flatnessfactor} \\sqrt{1+(2flatnessfactor verticalaxis)^2} \\, dverticalaxis \\\\\n&= \\frac{1}{2flatnessfactor} \\int_0^{2\\sqrt{2flatnessfactor-1}} \\sqrt{1+verticalaxis^2} \\, dverticalaxis \\\\\n&= 2 + \\frac{1}{2flatnessfactor} \\left( \\int_0^{2\\sqrt{2flatnessfactor-1}}\n(\\sqrt{1+verticalaxis^2}-verticalaxis)\\,dverticalaxis -2\\right),\n\\end{align*}\nwhere we have artificially introduced $-verticalaxis$ into the integrand in the\nlast step.  Now, for $verticalaxis \\geq 0$,\n\\[\n\\sqrt{1+verticalaxis^2}-verticalaxis = \\frac{1}{\\sqrt{1+verticalaxis^2}+verticalaxis} > \\frac{1}{2\\sqrt{1+verticalaxis^2}}\n\\geq \\frac{1}{2(verticalaxis+1)};\n\\]\nsince $\\int_0^\\infty dverticalaxis/(2(verticalaxis+1))$ diverges, so does\n$\\int_0^\\infty (\\sqrt{1+verticalaxis^2}-verticalaxis)\\,dverticalaxis$.  Hence, for sufficiently large\n$flatnessfactor$, we have $\\int_0^{2\\sqrt{2flatnessfactor-1}} (\\sqrt{1+verticalaxis^2}-verticalaxis)\\,dverticalaxis > 2$,\nand hence $shortness > 2$.\n\nNote: a numerical computation shows that one must take $flatnessfactor > 34.7$ to\nobtain $shortness > 2$, and that the maximum value of $shortness$ is about\n$4.0027$, achieved for $flatnessfactor \\approx 94.1$. "
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "A": "plmnbvcy",
+        "L": "sdfghjkl"
+      },
+      "question": "Can an arc of a parabola inside a circle of radius 1 have a length\ngreater than 4?",
+      "solution": "The answer is yes.  Consider the arc of the parabola $hjgrksla=plmnbvcy qzxwvtnp^2$ inside the circle $qzxwvtnp^2+(hjgrksla-1)^2 = 1$, where we initially assume that $plmnbvcy > 1/2$.  This intersects the circle in three points, $(0,0)$ and $(\\pm \\sqrt{2plmnbvcy-1}/plmnbvcy, (2plmnbvcy-1)/plmnbvcy)$.  We claim that for $plmnbvcy$ sufficiently large, the length $sdfghjkl$ of the parabolic arc between $(0,0)$ and $(\\sqrt{2plmnbvcy-1}/plmnbvcy, (2plmnbvcy-1)/plmnbvcy)$ is greater than $2$, which implies the desired result by symmetry.  We express $sdfghjkl$ using the usual formula for arclength:\n\\begin{align*}\nsdfghjkl &= \\int_0^{\\sqrt{2plmnbvcy-1}/plmnbvcy} \\sqrt{1+(2plmnbvcy qzxwvtnp)^2} \\, d qzxwvtnp \\\\\n&= \\frac{1}{2plmnbvcy} \\int_0^{2\\sqrt{2plmnbvcy-1}} \\sqrt{1+qzxwvtnp^2} \\, d qzxwvtnp \\\\\n&= 2 + \\frac{1}{2plmnbvcy} \\left( \\int_0^{2\\sqrt{2plmnbvcy-1}} (\\sqrt{1+qzxwvtnp^2}-qzxwvtnp)\\,d qzxwvtnp -2\\right),\n\\end{align*}\nwhere we have artificially introduced $-qzxwvtnp$ into the integrand in the last step.  Now, for $qzxwvtnp \\geq 0$,\n\\[\n\\sqrt{1+qzxwvtnp^2}-qzxwvtnp = \\frac{1}{\\sqrt{1+qzxwvtnp^2}+qzxwvtnp} > \\frac{1}{2\\sqrt{1+qzxwvtnp^2}} \\geq \\frac{1}{2(qzxwvtnp+1)};\n\\]\nsince $\\int_0^\\infty d qzxwvtnp/(2(qzxwvtnp+1))$ diverges, so does $\\int_0^\\infty (\\sqrt{1+qzxwvtnp^2}-qzxwvtnp)\\,d qzxwvtnp$.  Hence, for sufficiently large $plmnbvcy$, we have $\\int_0^{2\\sqrt{2plmnbvcy-1}} (\\sqrt{1+qzxwvtnp^2}-qzxwvtnp)\\,d qzxwvtnp > 2$, and hence $sdfghjkl > 2$.\n\nNote: a numerical computation shows that one must take $plmnbvcy > 34.7$ to obtain $sdfghjkl > 2$, and that the maximum value of $sdfghjkl$ is about $4.0027$, achieved for $plmnbvcy \\approx 94.1$. "
+    },
+    "kernel_variant": {
+      "question": "Can an arc of a parabola that lies completely inside the circle\n\tx^{2}+(y-\\tfrac32)^{2}=\\left(\\tfrac32\\right)^{2}\nhave total length greater than 6?",
+      "solution": "Throughout let C be the circle\n\t(1)\tx^{2}+(y-\\tfrac32)^{2}=\\left(\\tfrac32\\right)^{2}\ncentred at (0,3/2) with radius 3/2.\nWe look for a vertical parabola that is symmetric about the y-axis and whose\nwhole visible arc lies inside C.  By symmetry it is enough to study the right-hand\nhalf-arc and to show that its length can exceed 3.\n\n1.  Choice of parabola and intersection points.\n    Take the parabola\n\t(2)\t y = A x^{2},     A>0 .\n    Substituting (2) in (1) gives\n      x^{2} + (A x^{2}-\\tfrac32)^{2} = (\\tfrac32)^{2}\n      \\;\\Longrightarrow\\; A^{2}x^{4} + (1-3A)x^{2} = 0 .\n    Hence x = 0 (a double root) or\n      x^{2} = (3A-1)/A^{2}. \n    There are therefore two non-zero real intersection points provided that\n      A>\\tfrac13.  They are\n      (\\pm x_{1}, y_{1}) with\n           x_{1}=\\sqrt{(3A-1)}/A,\\qquad y_{1}=A x_{1}^{2}= (3A-1)/A .\n\n2.  Arc-length integral.\n    On (2) one has y' = 2A x, so the half-arc length is\n      L(A)=\\displaystyle \\int_{0}^{x_{1}} \\!\\sqrt{1+(2A x)^{2}}\\,dx.\n    Put u=2A x (so dx =du/(2A)); when x=x_{1} we obtain u=2\\sqrt{3A-1}.  Thus\n      L(A)=\\frac{1}{2A}\\,\\int_{0}^{M} \\!\\sqrt{1+u^{2}}\\,du,\\qquad M:=2\\sqrt{3A-1}.\n\n3.  Splitting off an elementary part.\n    Write  \\sqrt{1+u^{2}}=u+\\bigl(\\sqrt{1+u^{2}}-u\\bigr).  Then\n      L(A)=\\frac{1}{2A}\\Bigl[\\underbrace{\\int_{0}^{M} u\\,du}_{=\\,M^{2}/2}\n                            +J(A)\\Bigr],\\quad \n      J(A):=\\int_{0}^{M}\\!(\\sqrt{1+u^{2}}-u)\\,du.\n    Since M^{2}/2 = 2(3A-1)=6A-2, we obtain the convenient form\n      (3)\n      L(A)=3-\\frac1A+\\frac{J(A)}{2A}\n           =3+\\frac{J(A)-2}{2A}.\n    Therefore the half-arc will be longer than 3 whenever J(A)>2.\n\n4.  A lower bound for J(A).\n    For u\\ge 0 we have\n      \\sqrt{1+u^{2}}-u=\\frac1{\\sqrt{1+u^{2}}+u} \\;\\ge\\; \\frac1{2u+1}\n                     \\;\\ge\\; \\frac1{3(u+1)}.\n    Consequently\n      J(A)\\ge \\tfrac13\\int_{0}^{M}\\!\\frac{du}{u+1}=\\tfrac13\\ln(M+1).\n    Because M=2\\sqrt{3A-1}\\to\\infty as A\\to\\infty, J(A) is unbounded.\n    Hence there exists A with J(A)>2, so that L(A)>3 and a full symmetric\n    parabolic arc of length 2L(A)>6 is possible.\n\n5.  A concrete numerical choice.\n    Using the antiderivative\n      F(u)=\\tfrac12\\bigl[u\\sqrt{1+u^{2}}+\\operatorname{arsinh}u\\bigr]-\\tfrac12u^{2},\n    one finds\n      J(53)=F\\bigl(2\\sqrt{3\\cdot 53-1}\\bigr)-F(0)\\approx 2.31>2.\n    Formula (3) then gives\n      L(53)=3+\\frac{2.31-2}{2\\cdot 53}\\approx 3.0029,\n      so the whole parabolic arc has length\n      2L(53)\\approx6.0058>6.\n\n6.  About the maximal excess length.\n    Let f(A):=\\dfrac{J(A)-2}{A}=2\\bigl(L(A)-3\\bigr).  A direct numerical\n    search (or plotting f) for A\\ge \\tfrac13 shows\n      f(A) \\text{ attains its global maximum near } A\\approx 53\\,(\\pm1).\n    For example\n      A=52\\!:\\;2L(52)\\approx 6.0055,\\qquad\n      A=54\\!:\\;2L(54)\\approx 6.0059,\n    while f(A) is already decreasing by A=60 and has fallen to\n      2L(144)\\approx6.0020.\n    Thus the greatest total length obtainable with such symmetric parabolic\n    arcs is about 6.006, and it occurs for A in the narrow band 52-55, not\n    near A=144 as was mistakenly asserted previously.\n\nConclusion.  Yes; in fact the parabola y=53x^{2} produces an arc lying\nentirely inside the circle (1) whose total length is about 6.006, which\nis strictly greater than 6.",
+      "_meta": {
+        "core_steps": [
+          "Pick a one-parameter family of parabolas (y = A x^2) that are tangent to the given circle at the origin; the larger A is, the steeper the curve.",
+          "Locate the two intersection points and write the half-arc length with the standard formula, then rescale to L(A) = (1/(2A)) ∫_0^{2√(2A−1)} √(1+x^2) dx.",
+          "Subtract x inside the integrand so that the length splits into an easily evaluated part plus ∫ (√(1+x^2) − x) dx.",
+          "Estimate √(1+x^2) − x from below by 1/(2(x+1)); the integral of this lower bound diverges, so for sufficiently large A the half-length exceeds any preset number.",
+          "Choose A so that the half-arc exceeds 2; by symmetry the full arc then exceeds 4, giving an affirmative answer."
+        ],
+        "mutable_slots": {
+          "slot_radius": {
+            "description": "radius of the circle in which the parabola is inscribed",
+            "original": "1"
+          },
+          "slot_center_y": {
+            "description": "vertical coordinate of the circle’s center (equal to the radius so that the circle is tangent at the origin)",
+            "original": "1"
+          },
+          "slot_length_total": {
+            "description": "target total arc-length to be beaten",
+            "original": "4"
+          },
+          "slot_length_half": {
+            "description": "corresponding half-arc length used in the computation (= slot_length_total / 2)",
+            "original": "2"
+          },
+          "slot_lower_bound_const": {
+            "description": "constant 1/2 in the inequality √(1+x^2) − x ≥ 1/(2(x+1))",
+            "original": "1/2"
+          },
+          "slot_numeric_estimate_A": {
+            "description": "numerical value of A beyond which the explicit computation shows L>2",
+            "original": "34.7"
+          },
+          "slot_numeric_estimate_Lmax": {
+            "description": "reported maximum obtainable arc length in the example",
+            "original": "4.0027"
+          },
+          "slot_numeric_estimate_Amax": {
+            "description": "value of A that (numerically) attains the cited maximum length",
+            "original": "94.1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

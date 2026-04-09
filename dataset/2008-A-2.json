@@ -1,0 +1,75 @@
+{
+  "index": "2008-A-2",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Alan and Barbara play a game in which they take turns filling entries of\nan initially empty $2008 \\times 2008$ array. Alan plays first. At each\nturn, a player chooses a real number and places it in a vacant entry.\nThe game ends when all the entries are filled. Alan wins if the\ndeterminant of the resulting matrix is nonzero; Barbara wins if it is zero.\nWhich player has a winning strategy?",
+  "solution": "Barbara wins using one of the following strategies.\n\n\\textbf{First solution:}\nPair each entry of the first row with the entry directly below it in\nthe second row. If Alan ever writes a number in one of the first two\nrows, Barbara writes the same number in the other entry in the pair.\nIf Alan writes a number anywhere other than the first two rows, Barbara\ndoes likewise.\nAt the end, the resulting matrix will have two identical rows, so its\ndeterminant will be zero.\n\n\\textbf{Second solution:} (by Manjul Bhargava)\nWhenever Alan writes a number $x$ in an entry in some row, Barbara writes\n$-x$ in some other entry in the same row.\nAt the end, the resulting matrix will have all rows summing to zero,\nso it cannot have full rank.",
+  "vars": [
+    "x"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "placeholder"
+      },
+      "question": "Alan and Barbara play a game in which they take turns filling entries of\nan initially empty $2008 \\times 2008$ array. Alan plays first. At each\nturn, a player chooses a real number and places it in a vacant entry.\nThe game ends when all the entries are filled. Alan wins if the\ndeterminant of the resulting matrix is nonzero; Barbara wins if it is zero.\nWhich player has a winning strategy?",
+      "solution": "Barbara wins using one of the following strategies.\n\n\\textbf{First solution:}\nPair each entry of the first row with the entry directly below it in\nthe second row. If Alan ever writes a number in one of the first two\nrows, Barbara writes the same number in the other entry in the pair.\nIf Alan writes a number anywhere other than the first two rows, Barbara\ndoes likewise.\nAt the end, the resulting matrix will have two identical rows, so its\ndeterminant will be zero.\n\n\\textbf{Second solution:} (by Manjul Bhargava)\nWhenever Alan writes a number $\\mathrm{placeholder}$ in an entry in some row, Barbara writes\n$-\\mathrm{placeholder}$ in some other entry in the same row.\nAt the end, the resulting matrix will have all rows summing to zero,\nso it cannot have full rank."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "buttercup"
+      },
+      "question": "Alan and Barbara play a game in which they take turns filling entries of\nan initially empty $2008 \\times 2008$ array. Alan plays first. At each\nturn, a player chooses a real number and places it in a vacant entry.\nThe game ends when all the entries are filled. Alan wins if the\ndeterminant of the resulting matrix is nonzero; Barbara wins if it is zero.\nWhich player has a winning strategy?",
+      "solution": "Barbara wins using one of the following strategies.\n\n\\textbf{First solution:}\nPair each entry of the first row with the entry directly below it in\nthe second row. If Alan ever writes a number in one of the first two\nrows, Barbara writes the same number in the other entry in the pair.\nIf Alan writes a number anywhere other than the first two rows, Barbara\ndoes likewise.\nAt the end, the resulting matrix will have two identical rows, so its\ndeterminant will be zero.\n\n\\textbf{Second solution:} (by Manjul Bhargava)\nWhenever Alan writes a number $buttercup$ in an entry in some row, Barbara writes\n$-buttercup$ in some other entry in the same row.\nAt the end, the resulting matrix will have all rows summing to zero,\nso it cannot have full rank."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownconstant"
+      },
+      "question": "Alan and Barbara play a game in which they take turns filling entries of\nan initially empty $2008 \\times 2008$ array. Alan plays first. At each\nturn, a player chooses a real number and places it in a vacant entry.\nThe game ends when all the entries are filled. Alan wins if the\ndeterminant of the resulting matrix is nonzero; Barbara wins if it is zero.\nWhich player has a winning strategy?",
+      "solution": "Barbara wins using one of the following strategies.\n\n\\textbf{First solution:}\nPair each entry of the first row with the entry directly below it in\nthe second row. If Alan ever writes a number in one of the first two\nrows, Barbara writes the same number in the other entry in the pair.\nIf Alan writes a number anywhere other than the first two rows, Barbara\ndoes likewise.\nAt the end, the resulting matrix will have two identical rows, so its\ndeterminant will be zero.\n\n\\textbf{Second solution:} (by Manjul Bhargava)\nWhenever Alan writes a number $knownconstant$ in an entry in some row, Barbara writes\n$-knownconstant$ in some other entry in the same row.\nAt the end, the resulting matrix will have all rows summing to zero,\nso it cannot have full rank."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp"
+      },
+      "question": "Alan and Barbara play a game in which they take turns filling entries of\nan initially empty $2008 \\times 2008$ array. Alan plays first. At each\nturn, a player chooses a real number and places it in a vacant entry.\nThe game ends when all the entries are filled. Alan wins if the\ndeterminant of the resulting matrix is nonzero; Barbara wins if it is zero.\nWhich player has a winning strategy?",
+      "solution": "Barbara wins using one of the following strategies.\n\n\\textbf{First solution:}\nPair each entry of the first row with the entry directly below it in\nthe second row. If Alan ever writes a number in one of the first two\nrows, Barbara writes the same number in the other entry in the pair.\nIf Alan writes a number anywhere other than the first two rows, Barbara\ndoes likewise.\nAt the end, the resulting matrix will have two identical rows, so its\ndeterminant will be zero.\n\n\\textbf{Second solution:} (by Manjul Bhargava)\nWhenever Alan writes a number $qzxwvtnp$ in an entry in some row, Barbara writes\n$-qzxwvtnp$ in some other entry in the same row.\nAt the end, the resulting matrix will have all rows summing to zero,\nso it cannot have full rank."
+    },
+    "kernel_variant": {
+      "question": "Alan and Barbara alternately fill the entries of an initially empty $2025\\times 2025$ array.  Alan moves first.  On each turn a player chooses an element of the field $\\mathbf F_{101}=\\{0,1,\\dots ,100\\}$ (arithmetic taken modulo $101$) and writes it in a vacant entry.  When every entry has been filled, Alan wins if the determinant of the resulting matrix (computed over $\\mathbf F_{101}$) is non-zero; otherwise Barbara wins.  Which player has a winning strategy?",
+      "solution": "Barbara has a winning strategy.\n\nStrategy\n========\nBarbara designates a single pair of rows, say rows $1$ and $2$, before the game starts.  Throughout the game she follows the rule\n\nCopy rule for the chosen rows\n---------------------------------------------------------------------\nIf Alan places a number $x\\in\\mathbf F_{101}$ in column $j$ of row $1$ or $2$, then on her very next move Barbara writes the *same* number $x$ in column $j$ of the other row of the pair.\n\nOutside these two rows Barbara may play arbitrarily, but she never writes in rows $1$ or $2$ unless she is copying.\n\nWhy the strategy can always be carried out\n------------------------------------------\nInductively we show that after each of Barbara's turns the two chosen rows are *identical* and contain the same set of filled columns.\n*  At the start both rows are empty - the claim holds.\n*  Suppose the claim is true after some Barbara turn.\n      -  If Alan now plays outside the chosen rows, Barbara also plays outside them; the two rows remain unchanged and hence identical.\n      -  If Alan writes $x$ in column $j$ of (say) row $1$, then column $j$ of row $2$ is still empty (because the two rows had identical filled sets).  Barbara can therefore copy: she writes $x$ in that empty square.  The two rows are again identical when her move is finished.\nThus the claim holds after every Barbara turn.\n\nAlan's final move cannot destroy the equality\n--------------------------------------------\nThe board contains $2025^{2}$ squares, an odd number, so Alan makes the last move of the game.  Could his last move lie in one of the chosen rows?  Immediately *before* this last move exactly one square of the whole board is empty.  Because the two chosen rows have been identical up to that moment, all empty squares in those rows have occurred in *pairs* (they share the same columns).  Hence there cannot be exactly one empty square inside the chosen rows.  Therefore the unique remaining empty square - and hence Alan's final move - must be somewhere *outside* rows $1$ and $2$.\n\nConsequently the two chosen rows are still identical when the game ends.\n\nEnd of the game\n---------------\nBecause the completed matrix contains two identical rows, its rank is strictly smaller than its size, so its determinant is $0$ in $\\mathbf F_{101}$.  Hence Alan loses and Barbara wins.\n\nConclusion\n----------\nBarbara's copying strategy guarantees a zero determinant, so Barbara has a winning strategy.",
+      "_meta": {
+        "core_steps": [
+          "Pair every cell of one row with the cell directly below it in another row.",
+          "Barbara copies Alan’s entry into the paired cell whenever he plays in those rows; otherwise she mirrors his move arbitrarily.",
+          "When the board is full, the two chosen rows are identical.",
+          "A matrix with two identical rows is singular (determinant = 0).",
+          "Hence the second player (Barbara) always wins."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Order of the square matrix (number of rows/columns).  Needs only to be ≥2.",
+            "original": "2008"
+          },
+          "slot2": {
+            "description": "Allowed set/field of numbers in the entries.",
+            "original": "real numbers"
+          },
+          "slot3": {
+            "description": "Which two distinct rows are pre-paired for duplication.",
+            "original": "first row and second row"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,113 @@
+{
+  "index": "2006-B-1",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "GEO",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Show that the curve $x^3 + 3xy + y^3 = 1$ contains only one set of three\ndistinct points, $A$, $B$, and $C$, which are vertices of an equilateral\ntriangle, and find its area.",
+  "solution": "The ``curve'' $x^3 + 3xy + y^3 - 1 = 0$ is actually reducible, because the\nleft side factors as\n\\[\n(x+y-1)(x^2 -xy + y^2 + x + y + 1).\n\\]\nMoreover, the second factor is\n\\[\n\\frac{1}{2} ((x+1)^2 + (y+1)^2 + (x-y)^2),\n\\]\nso it only vanishes at $(-1,-1)$. Thus the curve in question consists of the\nsingle point $(-1,-1)$ together with the line $x+y=1$. To form a triangle\nwith three points on this curve, one of its vertices must be $(-1,-1)$.\nThe other two vertices lie on the line $x+y=1$, so the length of the altitude\nfrom $(-1,-1)$ is the distance from $(-1,-1)$ to $(1/2,1/2)$, or\n$3 \\sqrt{2}/2$. The area of an equilateral triangle of height $h$ is\n$h^2 \\sqrt{3}/3$, so the desired area is\n$3 \\sqrt{3}/2$.\n\n\\textbf{Remark:} The factorization used above is a special case of the fact\nthat\n\\begin{align*}\n&x^3 + y^3 + z^3 - 3xyz \\\\\n&= (x+y+z)(x+\\omega y + \\omega^2 z)(x + \\omega^2 y\n+ \\omega z),\n\\end{align*}\nwhere $\\omega$ denotes a primitive cube root of unity. That fact in turn follows\nfrom the evaluation of the determinant of the \\emph{circulant matrix}\n\\[\n\\begin{pmatrix} x & y & z \\\\ z & x & y \\\\ y & z & x\n\\end{pmatrix}\n\\]\nby reading off the eigenvalues of the eigenvectors\n$(1, \\omega^i, \\omega^{2i})$ for $i=0,1,2$.",
+  "vars": [
+    "x",
+    "y",
+    "z",
+    "A",
+    "B",
+    "C",
+    "h",
+    "i"
+  ],
+  "params": [
+    "\\\\omega"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "z": "applicate",
+        "A": "vertexalpha",
+        "B": "vertexbeta",
+        "C": "vertexgamma",
+        "h": "heighttri",
+        "\\omega": "unityroot"
+      },
+      "question": "Show that the curve $abscissa^3 + 3\\,abscissa\\,ordinate + ordinate^3 = 1$ contains only one set of three distinct points, $vertexalpha$, $vertexbeta$, and $vertexgamma$, which are vertices of an equilateral triangle, and find its area.",
+      "solution": "The ``curve'' $abscissa^3 + 3\\,abscissa\\,ordinate + ordinate^3 - 1 = 0$ is actually reducible, because the left side factors as\n\\[\n(abscissa+ordinate-1)(abscissa^2 -abscissa\\,ordinate + ordinate^2 + abscissa + ordinate + 1).\n\\]\nMoreover, the second factor is\n\\[\n\\frac{1}{2} ((abscissa+1)^2 + (ordinate+1)^2 + (abscissa-ordinate)^2),\n\\]\nso it only vanishes at $(-1,-1)$. Thus the curve in question consists of the single point $(-1,-1)$ together with the line $abscissa+ordinate=1$. To form a triangle with three points on this curve, one of its vertices must be $(-1,-1)$. The other two vertices lie on the line $abscissa+ordinate=1$, so the length of the altitude from $(-1,-1)$ is the distance from $(-1,-1)$ to $(1/2,1/2)$, or $3 \\sqrt{2}/2$. The area of an equilateral triangle of height $heighttri$ is $heighttri^2 \\sqrt{3}/3$, so the desired area is $3 \\sqrt{3}/2$.\n\n\\textbf{Remark:} The factorization used above is a special case of the fact\n\\begin{align*}\n&abscissa^3 + ordinate^3 + applicate^3 - 3\\,abscissa\\,ordinate\\,applicate \\\\\n&= (abscissa+ordinate+applicate)(abscissa+unityroot\\,ordinate + unityroot^{2}\\,applicate)(abscissa + unityroot^{2}\\,ordinate + unityroot\\,applicate),\n\\end{align*}\nwhere $unityroot$ denotes a primitive cube root of unity. That fact in turn follows from the evaluation of the determinant of the \\emph{circulant matrix}\n\\[\n\\begin{pmatrix} abscissa & ordinate & applicate \\\\ applicate & abscissa & ordinate \\\\ ordinate & applicate & abscissa \\end{pmatrix}\n\\]\nby reading off the eigenvalues of the eigenvectors $(1, unityroot^{i}, unityroot^{2i})$ for $i=0,1,2$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marshland",
+        "y": "driftwood",
+        "z": "hummingbird",
+        "A": "shoreline",
+        "B": "treeline",
+        "C": "meadowlands",
+        "h": "riverbank",
+        "i": "lighthouse",
+        "\\omega": "cornerstone"
+      },
+      "question": "Show that the curve $marshland^3 + 3 marshland driftwood + driftwood^3 = 1$ contains only one set of three\ndistinct points, $shoreline$, $treeline$, and $meadowlands$, which are vertices of an equilateral\ntriangle, and find its area.",
+      "solution": "The ``curve'' $marshland^3 + 3 marshland driftwood + driftwood^3 - 1 = 0$ is actually reducible, because the\nleft side factors as\n\\[\n(marshland+driftwood-1)(marshland^2 - marshland driftwood + driftwood^2 + marshland + driftwood + 1).\n\\]\nMoreover, the second factor is\n\\[\n\\frac{1}{2} ((marshland+1)^2 + (driftwood+1)^2 + (marshland-driftwood)^2),\n\\]\nso it only vanishes at $(-1,-1)$. Thus the curve in question consists of the\nsingle point $(-1,-1)$ together with the line $marshland+driftwood=1$. To form a triangle\nwith three points on this curve, one of its vertices must be $(-1,-1)$.\nThe other two vertices lie on the line $marshland+driftwood=1$, so the length of the altitude\nfrom $(-1,-1)$ is the distance from $(-1,-1)$ to $(1/2,1/2)$, or\n$3 \\sqrt{2}/2$. The area of an equilateral triangle of height $riverbank$ is\n$riverbank^2 \\sqrt{3}/3$, so the desired area is\n$3 \\sqrt{3}/2$.\n\n\\textbf{Remark:} The factorization used above is a special case of the fact\nthat\n\\begin{align*}\n&marshland^3 + driftwood^3 + hummingbird^3 - 3 marshland driftwood hummingbird \\\\\n&= (marshland+driftwood+hummingbird)(marshland+cornerstone driftwood + cornerstone^2 hummingbird)(marshland + cornerstone^2 driftwood\n+ cornerstone hummingbird),\n\\end{align*}\nwhere $cornerstone$ denotes a primitive cube root of unity. That fact in turn follows\nfrom the evaluation of the determinant of the \\emph{circulant matrix}\n\\[\n\\begin{pmatrix} marshland & driftwood & hummingbird \\\\ hummingbird & marshland & driftwood \\\\ driftwood & hummingbird & marshland\n\\end{pmatrix}\n\\]\nby reading off the eigenvalues of the eigenvectors\n$(1, cornerstone^{lighthouse}, cornerstone^{2 lighthouse})$ for $lighthouse=0,1,2$. }"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "z": "planarcoordinate",
+        "A": "nonvertexalpha",
+        "B": "nonvertexbeta",
+        "C": "nonvertexgamma",
+        "h": "basewidth",
+        "i": "realindex",
+        "\\omega": "alphastart"
+      },
+      "question": "Show that the curve $verticalaxis^3 + 3verticalaxishorizontalaxis + horizontalaxis^3 = 1$ contains only one set of three\ndistinct points, $nonvertexalpha$, $nonvertexbeta$, and $nonvertexgamma$, which are vertices of an equilateral\ntriangle, and find its area.",
+      "solution": "The ``curve'' $verticalaxis^3 + 3verticalaxishorizontalaxis + horizontalaxis^3 - 1 = 0$ is actually reducible, because the\nleft side factors as\n\\[\n(verticalaxis+horizontalaxis-1)(verticalaxis^2 -verticalaxishorizontalaxis + horizontalaxis^2 + verticalaxis + horizontalaxis + 1).\n\\]\nMoreover, the second factor is\n\\[\n\\frac{1}{2} ((verticalaxis+1)^2 + (horizontalaxis+1)^2 + (verticalaxis-horizontalaxis)^2),\n\\]\nso it only vanishes at $(-1,-1)$. Thus the curve in question consists of the\nsingle point $(-1,-1)$ together with the line $verticalaxis+horizontalaxis=1$. To form a triangle\nwith three points on this curve, one of its vertices must be $(-1,-1)$.\nThe other two vertices lie on the line $verticalaxis+horizontalaxis=1$, so the length of the altitude\nfrom $(-1,-1)$ is the distance from $(-1,-1)$ to $(1/2,1/2)$, or\n$3 \\sqrt{2}/2$. The area of an equilateral triangle of height $basewidth$ is\n$basewidth^2 \\sqrt{3}/3$, so the desired area is\n$3 \\sqrt{3}/2$.\n\n\\textbf{Remark:} The factorization used above is a special case of the fact\nthat\n\\begin{align*}\n&verticalaxis^3 + horizontalaxis^3 + planarcoordinate^3 - 3verticalaxishorizontalaxisplanarcoordinate \\\\\n&= (verticalaxis+horizontalaxis+planarcoordinate)(verticalaxis+alphastart horizontalaxis + alphastart^2 planarcoordinate)(verticalaxis + alphastart^2 horizontalaxis\n+ alphastart planarcoordinate),\n\\end{align*}\nwhere $alphastart$ denotes a primitive cube root of unity. That fact in turn follows\nfrom the evaluation of the determinant of the \\emph{circulant matrix}\n\\[\n\\begin{pmatrix} verticalaxis & horizontalaxis & planarcoordinate \\\\ planarcoordinate & verticalaxis & horizontalaxis \\\\ horizontalaxis & planarcoordinate & verticalaxis\n\\end{pmatrix}\n\\]\nby reading off the eigenvalues of the eigenvectors\n$(1, alphastart^{realindex}, alphastart^{2realindex})$ for $realindex=0,1,2$. "
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hxvplkda",
+        "z": "vrbjcqsm",
+        "A": "nmbtkyse",
+        "B": "xbqdhram",
+        "C": "pslgnuyk",
+        "h": "dncfrqle",
+        "i": "ghtlsnzm",
+        "\\omega": "\\wqvmdnla"
+      },
+      "question": "Show that the curve $qzxwvtnp^3 + 3 qzxwvtnp hxvplkda + hxvplkda^3 = 1$ contains only one set of three\ndistinct points, $nmbtkyse$, $xbqdhram$, and $pslgnuyk$, which are vertices of an equilateral\ntriangle, and find its area.",
+      "solution": "The ``curve'' $qzxwvtnp^3 + 3 qzxwvtnp hxvplkda + hxvplkda^3 - 1 = 0$ is actually reducible, because the\nleft side factors as\n\\[\n(qzxwvtnp+hxvplkda-1)(qzxwvtnp^2 -qzxwvtnp hxvplkda + hxvplkda^2 + qzxwvtnp + hxvplkda + 1).\n\\]\nMoreover, the second factor is\n\\[\n\\frac{1}{2} ((qzxwvtnp+1)^2 + (hxvplkda+1)^2 + (qzxwvtnp-hxvplkda)^2),\n\\]\nso it only vanishes at $(-1,-1)$. Thus the curve in question consists of the\nsingle point $(-1,-1)$ together with the line $qzxwvtnp+hxvplkda=1$. To form a triangle\nwith three points on this curve, one of its vertices must be $(-1,-1)$.\nThe other two vertices lie on the line $qzxwvtnp+hxvplkda=1$, so the length of the altitude\nfrom $(-1,-1)$ is the distance from $(-1,-1)$ to $(1/2,1/2)$, or\n$3 \\sqrt{2}/2$. The area of an equilateral triangle of height $dncfrqle$ is\n$dncfrqle^2 \\sqrt{3}/3$, so the desired area is\n$3 \\sqrt{3}/2$.\n\n\\textbf{Remark:} The factorization used above is a special case of the fact\nthat\n\\begin{align*}\n&qzxwvtnp^3 + hxvplkda^3 + vrbjcqsm^3 - 3 qzxwvtnp hxvplkda vrbjcqsm \\\\\n&= (qzxwvtnp+hxvplkda+vrbjcqsm)(qzxwvtnp+\\wqvmdnla hxvplkda + \\wqvmdnla^2 vrbjcqsm)(qzxwvtnp + \\wqvmdnla^2 hxvplkda\n+ \\wqvmdnla vrbjcqsm),\n\\end{align*}\nwhere $\\wqvmdnla$ denotes a primitive cube root of unity. That fact in turn follows\nfrom the evaluation of the determinant of the \\emph{circulant matrix}\n\\[\n\\begin{pmatrix} qzxwvtnp & hxvplkda & vrbjcqsm \\\\ vrbjcqsm & qzxwvtnp & hxvplkda \\\\ hxvplkda & vrbjcqsm & qzxwvtnp\n\\end{pmatrix}\n\\]\nby reading off the eigenvalues of the eigenvectors\n$(1, \\wqvmdnla^{ghtlsnzm}, \\wqvmdnla^{2 ghtlsnzm})$ for $ghtlsnzm=0,1,2$. }.",
+      "error": ""
+    },
+    "kernel_variant": {
+      "question": "Show that the plane curve\n\\[\n   x^{3}+6xy+y^{3}=8\n\\]\ncontains exactly one triple of distinct points \\(A,\\,B,\\,C\\) that are the vertices of an equilateral triangle, and determine the area of that triangle.",
+      "solution": "Write the equation as\n  x^3 + y^3 + (-2)^3 - 3xy(-2) = 0.\nBy the classical identity\n  x^3 + y^3 + z^3 - 3xyz\n    = (x+y+z)(x+\\omega y+\\omega ^2z)(x+\\omega ^2y+\\omega z),   (\\omega ^3=1, \\omega \\neq 1),\nwith z=-2 we obtain the factorization\n  x^3+6xy+y^3-8 = (x+y-2)(x^2-xy+y^2+2x+2y+4).\nThe quadratic factor is\n  \\frac{1}{2}[(x+2)^2+(y+2)^2+(x-y)^2] \\geq  0,\nvanishing only at (x,y) = (-2,-2).  Hence the curve is the line L: x+y=2 together with the isolated point P = (-2,-2).\n\n1. Any triangle with three vertices on the curve must use P and two distinct points B,C on L.\n\n2. The foot M of the perpendicular from P to L is found by intersecting x=y with x+y=2, giving M=(1,1).  The distance (altitude) is\n  h = dist(P,L)\n    = |(-2)+(-2)-2|/\\sqrt{1^2+1^2}\n    = 6/\\sqrt{2} = 3\\sqrt{2.}\n\n3. In an equilateral triangle of side a the altitude is a\\sqrt{3}/2, so\n  a = 2h/\\sqrt{3} = 2\\cdot 3\\sqrt{2}/\\sqrt{3} = 6\\sqrt{2/3}.\nAlong L the unit direction is (1,-1)/\\sqrt{2}, so the two vertices at distance a/2 from M are\n  B = M + (a/2)(1,-1)/\\sqrt{2},\n  C = M - (a/2)(1,-1)/\\sqrt{2.}\nThis triangle is unique.\n\n4. Its area is\n  A = h^2\\sqrt{3}/3 = (3\\sqrt{2})^2\\sqrt{3}/3 = 18\\sqrt{3}/3 = 6\\sqrt{3.}\n\nTherefore there is exactly one such equilateral triangle, and its area is 6\\sqrt{3.}",
+      "_meta": {
+        "core_steps": [
+          "Apply identity x^3+y^3+z^3-3xyz to factor x^3+3xy+y^3-1 into (x+y-1)(positive-definite quadratic)",
+          "Observe the quadratic factor is ≥0 and vanishes only at one point, so the curve is that point plus the line x+y=1",
+          "Any triangle on the curve must use the isolated point together with two points on the line",
+          "Compute altitude as the distance from the isolated point to the line",
+          "Convert altitude to area via the equilateral-triangle formula A = h^2√3/3"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Constant c in a more general equation x^3 + 3c·xy + y^3 = c^3 (here c=1); changing c just translates/scales the line x+y=c and the special point (−c,−c)",
+            "original": 1
+          },
+          "slot2": {
+            "description": "Coefficient 3c of the xy-term (equals 3 when c=1); it must vary consistently with slot1 but its exact value is otherwise irrelevant to the logical chain",
+            "original": 3
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,112 @@
+{
+  "index": "1977-B-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem B-5\nSuppose that \\( a_{1}, a_{2}, \\ldots, a_{n} \\) are real \\( (n>1) \\) and\n\\[\nA+\\sum_{i=1}^{n} a_{i}^{2}<\\frac{1}{n-1}\\left(\\sum_{i=1}^{n} a_{i}\\right)^{2}\n\\]\n\nProve that \\( A<2 a_{i} a_{j} \\) for \\( 1<i<j<n \\).",
+  "solution": "B-5.\nFrom the Cauchy-Schwarz Inequality, one has\n\\[\n\\left[\\left(a_{1}+a_{2}\\right)+a_{3}+a_{4}+\\cdots+a_{n}\\right]^{2} \\leqslant\\left[1^{2}+1^{2}+\\cdots+1^{2}\\right]\\left[\\left(a_{1}+a_{2}\\right)^{2}+a_{3}^{2}+\\cdots+a_{n}^{2}\\right]\n\\]\nor\n\\[\n\\left(\\sum a_{i}\\right)^{2} \\leqslant(n-1)\\left[\\left(\\sum a_{i}^{2}\\right)+2 a_{1} a_{2}\\right] \\quad \\text { or } \\quad[1 /(n-1)]\\left(\\sum a_{i}\\right)^{2} \\leqslant\\left(\\sum a_{i}^{2}\\right)+2 a_{1} a_{2}\n\\]\n\nUsing the hypothesis, one then has\n\\[\nA<-\\left(\\sum a_{i}^{2}\\right)+\\frac{1}{n-1}\\left(\\sum a_{i}\\right)^{2} \\leqslant-\\left(\\sum a_{i}^{2}\\right)+\\left(\\sum a_{i}^{2}\\right)+2 a_{1} a_{2}=2 a_{1} a_{2} .\n\\]\n\nSimilarly, \\( A<2 a_{i} a_{j} \\) for \\( 1 \\leqslant i<j \\leqslant n \\).",
+  "vars": [
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_i",
+    "a_j",
+    "i",
+    "j"
+  ],
+  "params": [
+    "A",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1": "firstcoef",
+        "a_2": "secondcoef",
+        "a_n": "lastcoef",
+        "a_i": "variablecoef",
+        "a_j": "anothercoef",
+        "i": "indexvar",
+        "j": "secondidx",
+        "A": "fixedvalue",
+        "n": "arraysize"
+      },
+      "question": "Problem B-5\nSuppose that \\( firstcoef, secondcoef, \\ldots, lastcoef \\) are real \\( (arraysize>1) \\) and\n\\[\nfixedvalue+\\sum_{indexvar=1}^{arraysize} variablecoef^{2}<\\frac{1}{arraysize-1}\\left(\\sum_{indexvar=1}^{arraysize} variablecoef\\right)^{2}\n\\]\n\nProve that \\( fixedvalue<2\\,variablecoef\\,anothercoef \\) for \\( 1<indexvar<secondidx<arraysize \\).",
+      "solution": "B-5.\nFrom the Cauchy-Schwarz Inequality, one has\n\\[\n\\left[\\left(firstcoef+secondcoef\\right)+a_{3}+a_{4}+\\cdots+lastcoef\\right]^{2}\\leqslant\\left[1^{2}+1^{2}+\\cdots+1^{2}\\right]\\left[\\left(firstcoef+secondcoef\\right)^{2}+a_{3}^{2}+\\cdots+lastcoef^{2}\\right]\n\\]\nor\n\\[\n\\left(\\sum variablecoef\\right)^{2}\\leqslant(arraysize-1)\\left[\\left(\\sum variablecoef^{2}\\right)+2\\,firstcoef\\,secondcoef\\right]\\quad\\text{or}\\quad[1 /(arraysize-1)]\\left(\\sum variablecoef\\right)^{2}\\leqslant\\left(\\sum variablecoef^{2}\\right)+2\\,firstcoef\\,secondcoef\n\\]\n\nUsing the hypothesis, one then has\n\\[\nfixedvalue< -\\left(\\sum variablecoef^{2}\\right)+\\frac{1}{arraysize-1}\\left(\\sum variablecoef\\right)^{2}\\leqslant -\\left(\\sum variablecoef^{2}\\right)+\\left(\\sum variablecoef^{2}\\right)+2\\,firstcoef\\,secondcoef=2\\,firstcoef\\,secondcoef .\n\\]\n\nSimilarly, \\( fixedvalue<2\\,variablecoef\\,anothercoef \\) for \\( 1\\leqslant indexvar<secondidx\\leqslant arraysize \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_1": "windmill",
+        "a_2": "lighthouse",
+        "a_n": "sailboat",
+        "a_i": "fernleaf",
+        "a_j": "raincloud",
+        "i": "sunflower",
+        "j": "stargazer",
+        "A": "pendulum",
+        "n": "harborage"
+      },
+      "question": "Problem B-5\nSuppose that \\( windmill, lighthouse, \\ldots, sailboat \\) are real \\( (harborage>1) \\) and\n\\[\npendulum+\\sum_{sunflower=1}^{harborage} fernleaf^{2}<\\frac{1}{harborage-1}\\left(\\sum_{sunflower=1}^{harborage} fernleaf\\right)^{2}\n\\]\n\nProve that \\( pendulum<2 fernleaf raincloud \\) for \\( 1<sunflower<stargazer<harborage \\).",
+      "solution": "B-5.\nFrom the Cauchy-Schwarz Inequality, one has\n\\[\n\\left[\\left(windmill+lighthouse\\right)+a_{3}+a_{4}+\\cdots+sailboat\\right]^{2} \\leqslant\\left[1^{2}+1^{2}+\\cdots+1^{2}\\right]\\left[\\left(windmill+lighthouse\\right)^{2}+a_{3}^{2}+\\cdots+sailboat^{2}\\right]\n\\]\nor\n\\[\n\\left(\\sum fernleaf\\right)^{2} \\leqslant(harborage-1)\\left[\\left(\\sum fernleaf^{2}\\right)+2 windmill lighthouse\\right] \\quad \\text { or } \\quad[1 /(harborage-1)]\\left(\\sum fernleaf\\right)^{2} \\leqslant\\left(\\sum fernleaf^{2}\\right)+2 windmill lighthouse\n\\]\n\nUsing the hypothesis, one then has\n\\[\npendulum<-\\left(\\sum fernleaf^{2}\\right)+\\frac{1}{harborage-1}\\left(\\sum fernleaf\\right)^{2} \\leqslant-\\left(\\sum fernleaf^{2}\\right)+\\left(\\sum fernleaf^{2}\\right)+2 windmill lighthouse=2 windmill lighthouse .\n\\]\n\nSimilarly, \\( pendulum<2 fernleaf raincloud \\) for \\( 1 \\leqslant sunflower<stargazer \\leqslant harborage \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_1": "terminalvalue",
+        "a_2": "initialvalue",
+        "a_n": "beginningvalue",
+        "a_i": "fixedvalue",
+        "a_j": "settledvalue",
+        "i": "wholeindex",
+        "j": "completeindex",
+        "A": "mutableamount",
+        "n": "boundlessnumber"
+      },
+      "question": "Problem B-5\nSuppose that \\( terminalvalue, initialvalue, \\ldots, beginningvalue \\) are real \\( (boundlessnumber>1) \\) and\n\\[\nmutableamount+\\sum_{wholeindex=1}^{boundlessnumber} fixedvalue^{2}<\\frac{1}{boundlessnumber-1}\\left(\\sum_{wholeindex=1}^{boundlessnumber} fixedvalue\\right)^{2}\n\\]\n\nProve that \\( mutableamount<2 fixedvalue settledvalue \\) for \\( 1<wholeindex<completeindex<boundlessnumber \\).",
+      "solution": "B-5.\nFrom the Cauchy-Schwarz Inequality, one has\n\\[\n\\left[\\left(terminalvalue+initialvalue\\right)+a_{3}+a_{4}+\\cdots+beginningvalue\\right]^{2} \\leqslant\\left[1^{2}+1^{2}+\\cdots+1^{2}\\right]\\left[\\left(terminalvalue+initialvalue\\right)^{2}+a_{3}^{2}+\\cdots+beginningvalue^{2}\\right]\n\\]\nor\n\\[\n\\left(\\sum fixedvalue\\right)^{2} \\leqslant(boundlessnumber-1)\\left[\\left(\\sum fixedvalue^{2}\\right)+2 terminalvalue initialvalue\\right] \\quad \\text { or } \\quad[1 /(boundlessnumber-1)]\\left(\\sum fixedvalue\\right)^{2} \\leqslant\\left(\\sum fixedvalue^{2}\\right)+2 terminalvalue initialvalue\n\\]\n\nUsing the hypothesis, one then has\n\\[\nmutableamount<-\\left(\\sum fixedvalue^{2}\\right)+\\frac{1}{boundlessnumber-1}\\left(\\sum fixedvalue\\right)^{2} \\leqslant-\\left(\\sum fixedvalue^{2}\\right)+\\left(\\sum fixedvalue^{2}\\right)+2 terminalvalue initialvalue=2 terminalvalue initialvalue .\n\\]\n\nSimilarly, \\( mutableamount<2 fixedvalue settledvalue \\) for \\( 1 \\leqslant wholeindex<completeindex \\leqslant boundlessnumber \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "plkjsdwe",
+        "n": "qzxctbhu",
+        "a_1": "fghqweop",
+        "a_2": "mnbvrtyu",
+        "a_n": "xcvsdfrt",
+        "a_i": "ljhqwept",
+        "a_j": "zmxnertl",
+        "i": "sduifghk",
+        "j": "gperyand"
+      },
+      "question": "Problem B-5\nSuppose that \\( fghqweop, mnbvrtyu, \\ldots, xcvsdfrt \\) are real \\( (qzxctbhu>1) \\) and\n\\[\nplkjsdwe+\\sum_{sduifghk=1}^{qzxctbhu} ljhqwept^{2}<\\frac{1}{qzxctbhu-1}\\left(\\sum_{sduifghk=1}^{qzxctbhu} ljhqwept\\right)^{2}\n\\]\n\nProve that \\( plkjsdwe<2 ljhqwept zmxnertl \\) for \\( 1<sduifghk<gperyand<qzxctbhu \\).",
+      "solution": "B-5.\nFrom the Cauchy-Schwarz Inequality, one has\n\\[\n\\left[\\left(fghqweop+mnbvrtyu\\right)+a_{3}+a_{4}+\\cdots+xcvsdfrt\\right]^{2} \\leqslant\\left[1^{2}+1^{2}+\\cdots+1^{2}\\right]\\left[\\left(fghqweop+mnbvrtyu\\right)^{2}+a_{3}^{2}+\\cdots+xcvsdfrt^{2}\\right]\n\\]\nor\n\\[\n\\left(\\sum ljhqwept\\right)^{2} \\leqslant(qzxctbhu-1)\\left[\\left(\\sum ljhqwept^{2}\\right)+2 fghqweop mnbvrtyu\\right] \\quad \\text { or } \\quad[1 /(qzxctbhu-1)]\\left(\\sum ljhqwept\\right)^{2} \\leqslant\\left(\\sum ljhqwept^{2}\\right)+2 fghqweop mnbvrtyu\n\\]\n\nUsing the hypothesis, one then has\n\\[\nplkjsdwe<-\\left(\\sum ljhqwept^{2}\\right)+\\frac{1}{qzxctbhu-1}\\left(\\sum ljhqwept\\right)^{2} \\leqslant-\\left(\\sum ljhqwept^{2}\\right)+\\left(\\sum ljhqwept^{2}\\right)+2 fghqweop mnbvrtyu=2 fghqweop mnbvrtyu .\n\\]\n\nSimilarly, \\( plkjsdwe<2 ljhqwept zmxnertl \\) for \\( 1 \\leqslant sduifghk<gperyand \\leqslant qzxctbhu \\)."
+    },
+    "kernel_variant": {
+      "question": "Let n be an integer greater than 1 and let x_{1},x_{2},\\ldots ,x_{n}\\in\\mathbb R satisfy\n\nB+\\sum_{i=1}^{n}x_{i}^{2}<\\frac{1}{n-1}\\Bigl(\\sum_{i=1}^{n}x_{i}\\Bigr)^{2}.\n\nProve that\n\nB<2x_{i}x_{j}\\qquad\\text{for every }1\\le i<j\\le n.",
+      "solution": "We treat the cases n=2 and n\\ge 3 separately.\n\nCase 1: n = 2.\nThe hypothesis reads\nB+x_{1}^{2}+x_{2}^{2}<\\frac{1}{1}(x_{1}+x_{2})^{2}=x_{1}^{2}+x_{2}^{2}+2x_{1}x_{2}.\nSubtract x_{1}^{2}+x_{2}^{2} from both sides to get B<2x_{1}x_{2}, which is exactly the desired conclusion.\n\nCase 2: n \\ge 3.\nFix two distinct indices i,j with 1\\le i<j\\le n.  To avoid clutter we illustrate the argument with (i,j)=(2,3); the same computation works for every pair by symmetry.\n\nWrite the total sum of the x_{k} as\n(x_{2}+x_{3})+x_{1}+x_{4}+\\dots +x_{n}.\n\nApply the Cauchy-Schwarz inequality to the vectors\n(1,1,\\dots ,1) (consisting of n-1 ones) and\n((x_{2}+x_{3}),\\,x_{1},\\,x_{4},\\dots ,x_{n}):\n\n[(x_{2}+x_{3})+x_{1}+x_{4}+\\dots +x_{n}]^{2}\\le (n-1)[(x_{2}+x_{3})^{2}+x_{1}^{2}+x_{4}^{2}+\\dots +x_{n}^{2}].\n\nHence\n\\Bigl(\\sum_{k=1}^{n}x_{k}\\Bigr)^{2}\\le (n-1)\\Bigl(\\sum_{k=1}^{n}x_{k}^{2}+2x_{2}x_{3}\\Bigr),\nso that\n\\frac{1}{n-1}\\Bigl(\\sum_{k=1}^{n}x_{k}\\Bigr)^{2}\\le \\sum_{k=1}^{n}x_{k}^{2}+2x_{2}x_{3}.\\tag{1}\n\nStarting from the hypothesis and subtracting \\sum x_{k}^{2} we obtain\nB< -\\sum_{k=1}^{n}x_{k}^{2}+\\frac{1}{n-1}\\Bigl(\\sum_{k=1}^{n}x_{k}\\Bigr)^{2}.\n\nInsert the upper bound (1) for the last term:\nB< -\\sum_{k=1}^{n}x_{k}^{2}+\\Bigl(\\sum_{k=1}^{n}x_{k}^{2}+2x_{2}x_{3}\\Bigr)=2x_{2}x_{3}.\n\nBecause the whole argument is symmetric in the indices, replacing (2,3) with any pair (i,j) shows\nB<2x_{i}x_{j}\\qquad(1\\le i<j\\le n).\n\nCombining the two cases completes the proof for all n>1.",
+      "_meta": {
+        "core_steps": [
+          "Group any two variables and use Cauchy–Schwarz on (1,1,…,1) vs. (a_p+a_q , remaining a_k)",
+          "Derive (Σ a_i)^2 / (n−1) ≤ Σ a_i^2 + 2 a_p a_q",
+          "Combine with the hypothesis A + Σ a_i^2 < (Σ a_i)^2 / (n−1) to get A < 2 a_p a_q",
+          "Apply symmetry (rename indices) to cover all pairs 1 ≤ i<j ≤ n"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which two indices are paired in the Cauchy–Schwarz step",
+            "original": "(1,2)"
+          },
+          "slot2": {
+            "description": "Label chosen for the constant being estimated",
+            "original": "A"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

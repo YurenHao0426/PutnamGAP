@@ -1,0 +1,111 @@
+{
+  "index": "1968-B-4",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "B-4. Show that if \\( f \\) is real-valued and continuous on \\( (-\\infty, \\infty) \\) and \\( \\int_{-\\infty}^{\\infty} f(x) d x \\) exists, then \\( \\int_{-\\infty}^{\\infty} f\\left(x-\\frac{1}{x}\\right) d x=\\int_{-\\infty}^{\\infty} f(x) d x \\).",
+  "solution": "B-4 The graph of \\( y=x-1 / x \\) suggests splitting the integral into the form\n\\[\n\\begin{aligned}\n\\int_{-\\infty}^{\\infty} f(x-1 / x) d x= & \\lim _{u \\rightarrow-\\infty} \\int_{a}^{-1} f(x-1 / x) d x+\\lim _{b \\rightarrow 0^{-}} \\int_{-1}^{b} f(x-1 / x) d x \\\\\n& +\\lim _{c \\rightarrow 0^{+}} \\int_{c}^{1} f(x-1 / x) d x+\\lim _{a \\rightarrow \\infty} \\int_{1}^{d} f(x-1 / x) d x\n\\end{aligned}\n\\]\nand making the change of variables \\( x=\\frac{1}{2}\\left[y-\\sqrt{y^{2}+4}\\right] \\), in the first two integrals, and the change of variables \\( x=\\frac{1}{2}\\left[y+\\sqrt{y^{2}+4}\\right] \\), in the second two integrals. Since both of these functions of \\( y \\) have continuous first derivatives on the intervals involved, the change of variables is valid. After the changes of variable, we have four improper integrals. The convergence of each of these integrals is established by a corollary of the Dirichlet Test (Advanced Calculus, R. C. Buck, McGrawHill, p. 143). Thus it is permissable to rewrite the first and third of these improper integrals as a single integral by adding the integrands, since they have the same limits from \\( -\\infty \\) to 0 . The result is \\( \\int_{-\\infty}^{0} f(y) d y \\). Likewise, the other two integrals combine to give \\( \\int_{0}^{\\infty} f(y) d y \\). In this combining, there is a canceling of a term involving \\( y / \\sqrt{y^{2}+4} \\) because it appears once with a plus sign and once with a minus sign. We have shown both the convergence of \\( \\int_{-\\infty}^{\\infty} f(x-1 / x) d x \\) and the desired equality.",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "f",
+    "a",
+    "b",
+    "c",
+    "d",
+    "u"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "realvarx",
+        "y": "realvary",
+        "f": "contifunc",
+        "a": "firstcut",
+        "b": "secondcut",
+        "c": "thirdcut",
+        "d": "fourthcut",
+        "u": "leftlimit"
+      },
+      "question": "B-4. Show that if \\( contifunc \\) is real-valued and continuous on \\( (-\\infty, \\infty) \\) and \\( \\int_{-\\infty}^{\\infty} contifunc( realvarx ) \\, d realvarx \\) exists, then \\( \\int_{-\\infty}^{\\infty} contifunc\\left( realvarx-\\frac{1}{ realvarx }\\right) \\, d realvarx = \\int_{-\\infty}^{\\infty} contifunc( realvarx ) \\, d realvarx \\).",
+      "solution": "B-4 The graph of \\( realvary = realvarx - 1 / realvarx \\) suggests splitting the integral into the form\n\\[\n\\begin{aligned}\n\\int_{-\\infty}^{\\infty} contifunc( realvarx - 1 / realvarx ) \\, d realvarx = &\\; \\lim_{ leftlimit \\to -\\infty } \\int_{ firstcut }^{-1} contifunc( realvarx - 1 / realvarx ) \\, d realvarx + \\lim_{ secondcut \\to 0^{-} } \\int_{ -1 }^{ secondcut } contifunc( realvarx - 1 / realvarx ) \\, d realvarx \\\\ \n& + \\lim_{ thirdcut \\to 0^{+} } \\int_{ thirdcut }^{1} contifunc( realvarx - 1 / realvarx ) \\, d realvarx + \\lim_{ firstcut \\to \\infty } \\int_{ 1 }^{ fourthcut } contifunc( realvarx - 1 / realvarx ) \\, d realvarx\n\\end{aligned}\n\\]\nand making the change of variables \\( realvarx = \\frac{1}{2}\\left[ realvary - \\sqrt{ realvary^{2} + 4 } \\right] \\) in the first two integrals, and the change of variables \\( realvarx = \\frac{1}{2}\\left[ realvary + \\sqrt{ realvary^{2} + 4 } \\right] \\) in the second two integrals. Since both of these functions of \\( realvary \\) have continuous first derivatives on the intervals involved, the change of variables is valid. After the changes of variable we have four improper integrals. The convergence of each of these integrals is established by a corollary of the Dirichlet Test (Advanced Calculus, R. C. Buck, McGraw-Hill, p. 143). Thus it is permissible to rewrite the first and third of these improper integrals as a single integral by adding the integrands, since they have the same limits from \\( -\\infty \\) to 0. The result is \\( \\int_{-\\infty}^{0} contifunc( realvary ) \\, d realvary \\). Likewise, the other two integrals combine to give \\( \\int_{0}^{\\infty} contifunc( realvary ) \\, d realvary \\). In this combining, there is a canceling of a term involving \\( realvary / \\sqrt{ realvary^{2} + 4 } \\) because it appears once with a plus sign and once with a minus sign. We have shown both the convergence of \\( \\int_{-\\infty}^{\\infty} contifunc( realvarx - 1 / realvarx ) \\, d realvarx \\) and the desired equality."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "vertebra",
+        "y": "semaphore",
+        "f": "windchime",
+        "a": "quarantine",
+        "b": "kaleidos",
+        "c": "pavilion",
+        "d": "nightfall",
+        "u": "tapestry"
+      },
+      "question": "B-4. Show that if \\( windchime \\) is real-valued and continuous on \\( (-\\infty, \\infty) \\) and \\( \\int_{-\\infty}^{\\infty} windchime(vertebra) d vertebra \\) exists, then \\( \\int_{-\\infty}^{\\infty} windchime\\left(vertebra-\\frac{1}{vertebra}\\right) d vertebra=\\int_{-\\infty}^{\\infty} windchime(vertebra) d vertebra \\).",
+      "solution": "B-4 The graph of \\( semaphore=vertebra-1 / vertebra \\) suggests splitting the integral into the form\n\\[\n\\begin{aligned}\n\\int_{-\\infty}^{\\infty} windchime(vertebra-1 / vertebra) d vertebra= & \\lim _{tapestry \\rightarrow-\\infty} \\int_{quarantine}^{-1} windchime(vertebra-1 / vertebra) d vertebra+\\lim _{kaleidos \\rightarrow 0^{-}} \\int_{-1}^{kaleidos} windchime(vertebra-1 / vertebra) d vertebra \\\\\n& +\\lim _{pavilion \\rightarrow 0^{+}} \\int_{pavilion}^{1} windchime(vertebra-1 / vertebra) d vertebra+\\lim _{quarantine \\rightarrow \\infty} \\int_{1}^{nightfall} windchime(vertebra-1 / vertebra) d vertebra\n\\end{aligned}\n\\]\nand making the change of variables \\( vertebra=\\frac{1}{2}\\left[semaphore-\\sqrt{semaphore^{2}+4}\\right] \\), in the first two integrals, and the change of variables \\( vertebra=\\frac{1}{2}\\left[semaphore+\\sqrt{semaphore^{2}+4}\\right] \\), in the second two integrals. Since both of these functions of \\( semaphore \\) have continuous first derivatives on the intervals involved, the change of variables is valid. After the changes of variable, we have four improper integrals. The convergence of each of these integrals is established by a corollary of the Dirichlet Test (Advanced Calculus, R. C. Buck, McGrawHill, p. 143). Thus it is permissable to rewrite the first and third of these improper integrals as a single integral by adding the integrands, since they have the same limits from \\( -\\infty \\) to 0 . The result is \\( \\int_{-\\infty}^{0} windchime(semaphore) d semaphore \\). Likewise, the other two integrals combine to give \\( \\int_{0}^{\\infty} windchime(semaphore) d semaphore \\). In this combining, there is a canceling of a term involving \\( semaphore / \\sqrt{semaphore^{2}+4} \\) because it appears once with a plus sign and once with a minus sign. We have shown both the convergence of \\( \\int_{-\\infty}^{\\infty} windchime(vertebra-1 / vertebra) d vertebra \\) and the desired equality."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownvertical",
+        "y": "fixedhorizontal",
+        "f": "nonfunctional",
+        "a": "originpoint",
+        "b": "finishpoint",
+        "c": "infinitevalue",
+        "d": "lowerbound",
+        "u": "finitepeak"
+      },
+      "question": "B-4. Show that if \\( nonfunctional \\) is real-valued and continuous on \\( (-\\infty, \\infty) \\) and \\( \\int_{-\\infty}^{\\infty} nonfunctional(knownvertical) lowerbound knownvertical \\) exists, then \\( \\int_{-\\infty}^{\\infty} nonfunctional\\left(knownvertical-\\frac{1}{knownvertical}\\right) lowerbound knownvertical=\\int_{-\\infty}^{\\infty} nonfunctional(knownvertical) lowerbound knownvertical \\).",
+      "solution": "B-4 The graph of \\( fixedhorizontal=knownvertical-1 / knownvertical \\) suggests splitting the integral into the form\n\\[\n\\begin{aligned}\n\\int_{-\\infty}^{\\infty} nonfunctional(knownvertical-1 / knownvertical) lowerbound knownvertical= & \\lim _{finitepeak \\rightarrow-\\infty} \\int_{originpoint}^{-1} nonfunctional(knownvertical-1 / knownvertical) lowerbound knownvertical+\\lim _{finishpoint \\rightarrow 0^{-}} \\int_{-1}^{finishpoint} nonfunctional(knownvertical-1 / knownvertical) lowerbound knownvertical \\\\\n& +\\lim _{infinitevalue \\rightarrow 0^{+}} \\int_{infinitevalue}^{1} nonfunctional(knownvertical-1 / knownvertical) lowerbound knownvertical+\\lim _{originpoint \\rightarrow \\infty} \\int_{1}^{lowerbound} nonfunctional(knownvertical-1 / knownvertical) lowerbound knownvertical\n\\end{aligned}\n\\]\nand making the change of variables \\( knownvertical=\\frac{1}{2}\\left[fixedhorizontal-\\sqrt{fixedhorizontal^{2}+4}\\right] \\), in the first two integrals, and the change of variables \\( knownvertical=\\frac{1}{2}\\left[fixedhorizontal+\\sqrt{fixedhorizontal^{2}+4}\\right] \\), in the second two integrals. Since both of these functions of \\( fixedhorizontal \\) have continuous first derivatives on the intervals involved, the change of variables is valid. After the changes of variable, we have four improper integrals. The convergence of each of these integrals is established by a corollary of the Dirichlet Test (Advanced Calculus, R. C. Buck, McGrawHill, p. 143). Thus it is permissable to rewrite the first and third of these improper integrals as a single integral by adding the integrands, since they have the same limits from \\( -\\infty \\) to 0 . The result is \\( \\int_{-\\infty}^{0} nonfunctional(fixedhorizontal) lowerbound fixedhorizontal \\). Likewise, the other two integrals combine to give \\( \\int_{0}^{\\infty} nonfunctional(fixedhorizontal) lowerbound fixedhorizontal \\). In this combining, there is a canceling of a term involving \\( fixedhorizontal / \\sqrt{fixedhorizontal^{2}+4} \\) because it appears once with a plus sign and once with a minus sign. We have shown both the convergence of \\( \\int_{-\\infty}^{\\infty} nonfunctional(knownvertical-1 / knownvertical) lowerbound knownvertical \\) and the desired equality."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "f": "mnbvcxzas",
+        "a": "plmoknijb",
+        "b": "qazwsxedc",
+        "c": "rfvtgbyhn",
+        "d": "ujmikolpa",
+        "u": "seilruppe"
+      },
+      "question": "B-4. Show that if \\( mnbvcxzas \\) is real-valued and continuous on \\( (-\\infty, \\infty) \\) and \\( \\int_{-\\infty}^{\\infty} mnbvcxzas(qzxwvtnp) d qzxwvtnp \\) exists, then \\( \\int_{-\\infty}^{\\infty} mnbvcxzas\\left(qzxwvtnp-\\frac{1}{qzxwvtnp}\\right) d qzxwvtnp=\\int_{-\\infty}^{\\infty} mnbvcxzas(qzxwvtnp) d qzxwvtnp \\).",
+      "solution": "B-4 The graph of \\( hjgrksla=qzxwvtnp-1 / qzxwvtnp \\) suggests splitting the integral into the form\n\\[\n\\begin{aligned}\n\\int_{-\\infty}^{\\infty} mnbvcxzas(qzxwvtnp-1 / qzxwvtnp) d qzxwvtnp= & \\lim _{seilruppe \\rightarrow-\\infty} \\int_{plmoknijb}^{-1} mnbvcxzas(qzxwvtnp-1 / qzxwvtnp) d qzxwvtnp+\\lim _{qazwsxedc \\rightarrow 0^{-}} \\int_{-1}^{qazwsxedc} mnbvcxzas(qzxwvtnp-1 / qzxwvtnp) d qzxwvtnp \\\\\n& +\\lim _{rfvtgbyhn \\rightarrow 0^{+}} \\int_{rfvtgbyhn}^{1} mnbvcxzas(qzxwvtnp-1 / qzxwvtnp) d qzxwvtnp+\\lim _{plmoknijb \\rightarrow \\infty} \\int_{1}^{ujmikolpa} mnbvcxzas(qzxwvtnp-1 / qzxwvtnp) d qzxwvtnp\n\\end{aligned}\n\\]\nand making the change of variables \\( qzxwvtnp=\\frac{1}{2}\\left[hjgrksla-\\sqrt{hjgrksla^{2}+4}\\right] \\), in the first two integrals, and the change of variables \\( qzxwvtnp=\\frac{1}{2}\\left[hjgrksla+\\sqrt{hjgrksla^{2}+4}\\right] \\), in the second two integrals. Since both of these functions of \\( hjgrksla \\) have continuous first derivatives on the intervals involved, the change of variables is valid. After the changes of variable, we have four improper integrals. The convergence of each of these integrals is established by a corollary of the Dirichlet Test (Advanced Calculus, R. C. Buck, McGrawHill, p. 143). Thus it is permissable to rewrite the first and third of these improper integrals as a single integral by adding the integrands, since they have the same limits from \\( -\\infty \\) to 0 . The result is \\( \\int_{-\\infty}^{0} mnbvcxzas(hjgrksla) d hjgrksla \\). Likewise, the other two integrals combine to give \\( \\int_{0}^{\\infty} mnbvcxzas(hjgrksla) d hjgrksla \\). In this combining, there is a canceling of a term involving \\( hjgrksla / \\sqrt{hjgrksla^{2}+4} \\) because it appears once with a plus sign and once with a minus sign. We have shown both the convergence of \\( \\int_{-\\infty}^{\\infty} mnbvcxzas(qzxwvtnp-1 / qzxwvtnp) d qzxwvtnp \\) and the desired equality."
+    },
+    "kernel_variant": {
+      "question": "Let f: \\mathbb{R} \\to  \\mathbb{R} be continuous and suppose that the improper integral\n\n\\int _{-\\infty }^{\\infty } f(x) \\, dx\n\nexists (it may converge only conditionally). Prove that the integral\n\n\\int _{-\\infty }^{\\infty } f\\!\\left(x-\\dfrac{2}{x}\\right) dx\n\nalso converges and that\n\n\\int _{-\\infty }^{\\infty } f\\!\\left(x-\\dfrac{2}{x}\\right) dx \\,=\\, \\int _{-\\infty }^{\\infty } f(x) \\, dx .",
+      "solution": "Put g(x)=x-2/x.  We first study g.\n\n1.  Geometry of g.\n   g is C^1 on (-\\infty ,0) and (0,\\infty ) with\n      g'(x)=1+2/x^{2}>0,  x\\neq0.\n   Thus g is strictly increasing on each half-line.  Moreover\n      lim_{x\\to 0-} g(x)=+\\infty , \\; lim_{x\\to 0+} g(x)=-\\infty ,\n      lim_{x\\to -\\infty } g(x)=-\\infty , \\; lim_{x\\to +\\infty } g(x)=+\\infty .\n   Hence the restrictions\n      g_{-}: (-\\infty ,0)\\to \\mathbb{R}   and   g_{+}: (0,\\infty )\\to \\mathbb{R}\n   are C^1-diffeomorphisms.  The inverse branches are\n      x_{-}(y)=\\frac{y-\\sqrt{y^{2}+8}}{2}<0,\\qquad\n      x_{+}(y)=\\frac{y+\\sqrt{y^{2}+8}}{2}>0.  \n   Their derivatives will be needed later:\n      x_{-}'(y)=\\frac{1-y/\\sqrt{y^{2}+8}}{2},\\qquad\n      x_{+}'(y)=\\frac{1+y/\\sqrt{y^{2}+8}}{2}.\n\n2.  Splitting the integral.\n   For A>0 write\n      \\int _{-A}^{A} f(g(x)) dx = \\int _{-A}^{0} f(g(x)) dx + \\int _{0}^{A} f(g(x)) dx.\n   We treat each half-line separately and then pass to the limit A\\to \\infty .\n\n3.  Change of variables on (-\\infty ,0).\n   Put y=g(x).  Then x=x_{-}(y) and dx=x_{-}'(y) dy.  Because g_{-} is onto \\mathbb{R}, y runs from -\\infty  to +\\infty .  Hence\n      \\int _{-A}^{0} f(g(x)) dx\\xrightarrow[A\\to \\infty ]{} \\int _{-\\infty }^{\\infty } f(y) k_{-}(y) dy,\n   where\n      k_{-}(y):=\\frac{1-y/\\sqrt{y^{2}+8}}{2}.\n\n4.  Change of variables on (0,\\infty ).\n   With the same substitution we obtain\n      \\int _{0}^{A} f(g(x)) dx\\xrightarrow[A\\to \\infty ]{} \\int _{-\\infty }^{\\infty } f(y) k_{+}(y) dy,\n   where\n      k_{+}(y):=\\frac{1+y/\\sqrt{y^{2}+8}}{2}.\n\n5.  Convergence of the transformed integrals.\n   Merely knowing that 0\\leq k_{\\pm }(y)\\leq 1 is not enough, because f may converge only conditionally.  We justify convergence by an integration-by-parts (or Dirichlet) argument.\n\n   Define the antiderivative\n      F(y):=\\int _{0}^{y} f(t) dt.\n   Since \\int _{-\\infty }^{\\infty } f converges, the limits\n      L_{+}:=lim_{y\\to \\infty } F(y)=\\int _{0}^{\\infty } f(t) dt,\\qquad L_{-}:=lim_{y\\to -\\infty } F(y)=-\\int _{-\\infty }^{0} f(t) dt\n   exist and are finite, so F is bounded on \\mathbb{R}.\n\n   Observe that k_{\\pm } are C^{1} on \\mathbb{R} with\n      k_{\\pm }'(y)=\\pm  \\frac{4}{(y^{2}+8)^{3/2}} = O(|y|^{-3})\\quad(|y|\\to \\infty ),\n   hence k_{\\pm }' is integrable over \\mathbb{R}.\n\n   Consider, for example, I_{+}:=\\int _{0}^{\\infty } f(y) k_{+}(y) dy.  For B>0,\n      \\int _{0}^{B} f(y) k_{+}(y) dy\n      = [F(y) k_{+}(y)]_{0}^{B} - \\int _{0}^{B} F(y) k_{+}'(y) dy.\n   The boundary term tends to L_{+}\\cdot 1-0\\cdot k_{+}(0)=L_{+}, a finite number, and |F(y) k_{+}'(y)|\\leq \\|F\\|_{\\infty } |k_{+}'(y)| with \\|F\\|_{\\infty }<\\infty  and k_{+}' integrable, so the second term converges as B\\to \\infty .  Hence I_{+} exists.  A similar computation on (-\\infty ,0) shows that \\int _{-\\infty }^{0} f(y) k_{+}(y) dy also converges, so the whole integral with weight k_{+} converges.\n\n   The same argument works for k_{-}.  Therefore both\n      \\int _{-\\infty }^{\\infty } f(y) k_{-}(y) dy\\quad\\text{and}\\quad \\int _{-\\infty }^{\\infty } f(y) k_{+}(y) dy\n   are convergent.\n\n6.  Finishing the calculation.\n   Adding the two integrals we get\n      \\int _{-\\infty }^{\\infty } f(g(x)) dx\n      = \\int _{-\\infty }^{\\infty } f(y) [k_{-}(y)+k_{+}(y)] dy\n      = \\int _{-\\infty }^{\\infty } f(y) dy,  because k_{-}(y)+k_{+}(y)\\equiv1.\n\n   Consequently the integral \\int _{-\\infty }^{\\infty } f(x-2/x) dx exists and equals \\int _{-\\infty }^{\\infty } f(x) dx, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Split the integral into regions on which x↦x−1/x is continuously invertible (one branch for x<0, one for x>0).",
+          "On each region apply the inverse substitution x = (y ∓ √(y²+4))/2, converting ∫f(x−1/x)dx to ∫f(y)·J(y)dy.",
+          "Pair the two negative-x integrals and the two positive-x integrals; the Jacobian terms ±y/√(y²+4) cancel, leaving ∫_{−∞}^0 f(y)dy and ∫_{0}^{∞} f(y)dy.",
+          "Establish convergence of the resulting improper integrals (any standard test suffices, e.g. Dirichlet).",
+          "Add the two pieces to obtain ∫_{−∞}^{∞} f(y)dy, proving the equality."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The finite breakpoints chosen to split the real line before substitution; any negative number <0 and positive number >0 would work.",
+            "original": "−1 and 1"
+          },
+          "slot2": {
+            "description": "The specific convergence test invoked to justify exchanging limits and combining integrals.",
+            "original": "Dirichlet Test (via Buck’s corollary)"
+          },
+          "slot3": {
+            "description": "Notation for the limits in the four improper integrals.",
+            "original": "letters a, b, c, d used for endpoints tending to ±∞ or 0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

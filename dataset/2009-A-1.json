@@ -1,0 +1,117 @@
+{
+  "index": "2009-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "Let $f$ be a real-valued function on the plane such that for every\nsquare $ABCD$ in the plane, $f(A)+f(B)+f(C)+f(D)=0$. Does it follow that\n$f(P)=0$ for all points $P$ in the plane?",
+  "solution": "Yes, it does follow. Let $P$ be any point in the plane. Let $ABCD$ be any square with center $P$.\nLet $E,F,G,H$ be the midpoints of the segments $AB, BC, CD, DA$, respectively. The function\n$f$ must satisfy the equations\n\\begin{align*}\n0 &= f(A) + f(B) + f(C) + f(D) \\\\\n0 &= f(E) + f(F) + f(G) + f(H) \\\\\n0 &= f(A) + f(E) + f(P) + f(H) \\\\\n0 &= f(B) + f(F) + f(P) + f(E) \\\\\n0 &= f(C) + f(G) + f(P) + f(F) \\\\\n0 &= f(D) + f(H) + f(P) + f(G).\n\\end{align*}\nIf we add the last four equations, then subtract the first equation and twice the second equation,\nwe obtain $0 = 4f(P)$, whence $f(P) = 0$.\n\n\\textbf{Remark.} Problem 1 of the 1996 Romanian IMO team selection exam asks the same\nquestion with squares replaced by regular polygons of any (fixed) number of vertices.",
+  "vars": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "P",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "params": [
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "cornera",
+        "B": "cornerb",
+        "C": "cornerc",
+        "D": "cornerd",
+        "P": "centerp",
+        "E": "midptab",
+        "F": "midptbc",
+        "G": "midptcd",
+        "H": "midptda",
+        "f": "planeval"
+      },
+      "question": "Let $planeval$ be a real-valued function on the plane such that for every square $cornera\\ cornerb\\ cornerc\\ cornerd$ in the plane, $planeval(cornera)+planeval(cornerb)+planeval(cornerc)+planeval(cornerd)=0$. Does it follow that $planeval(centerp)=0$ for all points $centerp$ in the plane?",
+      "solution": "Yes, it does follow. Let $centerp$ be any point in the plane. Let $cornera\\ cornerb\\ cornerc\\ cornerd$ be any square with center $centerp$. Let $midptab, midptbc, midptcd, midptda$ be the midpoints of the segments $cornera\\ cornerb, cornerb\\ cornerc, cornerc\\ cornerd, cornerd\\ cornera$, respectively. The function $planeval$ must satisfy the equations\n\\begin{align*}\n0 &= planeval(cornera) + planeval(cornerb) + planeval(cornerc) + planeval(cornerd) \\\\\n0 &= planeval(midptab) + planeval(midptbc) + planeval(midptcd) + planeval(midptda) \\\\\n0 &= planeval(cornera) + planeval(midptab) + planeval(centerp) + planeval(midptda) \\\\\n0 &= planeval(cornerb) + planeval(midptbc) + planeval(centerp) + planeval(midptab) \\\\\n0 &= planeval(cornerc) + planeval(midptcd) + planeval(centerp) + planeval(midptbc) \\\\\n0 &= planeval(cornerd) + planeval(midptda) + planeval(centerp) + planeval(midptcd).\n\\end{align*}\nIf we add the last four equations, then subtract the first equation and twice the second equation, we obtain $0 = 4 planeval(centerp)$, whence $planeval(centerp) = 0$.\n\n\\textbf{Remark.} Problem 1 of the 1996 Romanian IMO team selection exam asks the same question with squares replaced by regular polygons of any (fixed) number of vertices."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "shoreline",
+        "B": "hammock",
+        "C": "lanterns",
+        "D": "bluebird",
+        "P": "compasses",
+        "E": "driftwood",
+        "F": "starlight",
+        "G": "pinecone",
+        "H": "stoneware",
+        "f": "curvature"
+      },
+      "question": "Let $curvature$ be a real-valued function on the plane such that for every\nsquare $shoreline hammock lanterns bluebird$ in the plane, $curvature(shoreline)+curvature(hammock)+curvature(lanterns)+curvature(bluebird)=0$. Does it follow that\n$curvature(compasses)=0$ for all points $compasses$ in the plane?",
+      "solution": "Yes, it does follow. Let $compasses$ be any point in the plane. Let $shoreline hammock lanterns bluebird$ be any square with center $compasses$.\nLet $driftwood, starlight, pinecone, stoneware$ be the midpoints of the segments $shoreline hammock, hammock lanterns, lanterns bluebird, bluebird shoreline$, respectively. The function\n$curvature$ must satisfy the equations\n\\begin{align*}\n0 &= curvature(shoreline) + curvature(hammock) + curvature(lanterns) + curvature(bluebird) \\\\\n0 &= curvature(driftwood) + curvature(starlight) + curvature(pinecone) + curvature(stoneware) \\\\\n0 &= curvature(shoreline) + curvature(driftwood) + curvature(compasses) + curvature(stoneware) \\\\\n0 &= curvature(hammock) + curvature(starlight) + curvature(compasses) + curvature(driftwood) \\\\\n0 &= curvature(lanterns) + curvature(pinecone) + curvature(compasses) + curvature(starlight) \\\\\n0 &= curvature(bluebird) + curvature(stoneware) + curvature(compasses) + curvature(pinecone).\n\\end{align*}\nIf we add the last four equations, then subtract the first equation and twice the second equation,\nwe obtain $0 = 4curvature(compasses)$, whence $curvature(compasses) = 0$.\n\n\\textbf{Remark.} Problem 1 of the 1996 Romanian IMO team selection exam asks the same\nquestion with squares replaced by regular polygons of any (fixed) number of vertices."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "distantpoint",
+        "B": "closepoint",
+        "C": "outsidecorner",
+        "D": "insidecorner",
+        "P": "offcenter",
+        "E": "edgeendpoint",
+        "F": "farendpoint",
+        "G": "vagueendpoint",
+        "H": "hiddenendpoint",
+        "f": "constantmapping"
+      },
+      "question": "Let $constantmapping$ be a real-valued function on the plane such that for every square $distantpoint closepoint outsidecorner insidecorner$ in the plane, $constantmapping(distantpoint)+constantmapping(closepoint)+constantmapping(outsidecorner)+constantmapping(insidecorner)=0$. Does it follow that $constantmapping(offcenter)=0$ for all points $offcenter$ in the plane?",
+      "solution": "Yes, it does follow. Let $offcenter$ be any point in the plane. Let $distantpoint closepoint outsidecorner insidecorner$ be any square with center $offcenter$.\nLet $edgeendpoint,farendpoint,vagueendpoint,hiddenendpoint$ be the midpoints of the segments $distantpoint closepoint, closepoint outsidecorner, outsidecorner insidecorner, insidecorner distantpoint$, respectively. The function\n$constantmapping$ must satisfy the equations\n\\begin{align*}\n0 &= constantmapping(distantpoint) + constantmapping(closepoint) + constantmapping(outsidecorner) + constantmapping(insidecorner) \\\\\n0 &= constantmapping(edgeendpoint) + constantmapping(farendpoint) + constantmapping(vagueendpoint) + constantmapping(hiddenendpoint) \\\\\n0 &= constantmapping(distantpoint) + constantmapping(edgeendpoint) + constantmapping(offcenter) + constantmapping(hiddenendpoint) \\\\\n0 &= constantmapping(closepoint) + constantmapping(farendpoint) + constantmapping(offcenter) + constantmapping(edgeendpoint) \\\\\n0 &= constantmapping(outsidecorner) + constantmapping(vagueendpoint) + constantmapping(offcenter) + constantmapping(farendpoint) \\\\\n0 &= constantmapping(insidecorner) + constantmapping(hiddenendpoint) + constantmapping(offcenter) + constantmapping(vagueendpoint).\n\\end{align*}\nIf we add the last four equations, then subtract the first equation and twice the second equation,\nwe obtain $0 = 4\\,constantmapping(offcenter)$, whence $constantmapping(offcenter) = 0$.\n\n\\textbf{Remark.} Problem 1 of the 1996 Romanian IMO team selection exam asks the same\nquestion with squares replaced by regular polygons of any (fixed) number of vertices."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "C": "mofidble",
+        "D": "taycepur",
+        "P": "niskuvod",
+        "E": "grevjaln",
+        "F": "wopclaim",
+        "G": "zinctura",
+        "H": "pekrival",
+        "f": "lodsnmqa"
+      },
+      "question": "Let $lodsnmqa$ be a real-valued function on the plane such that for every\nsquare $qzxwvtnphjgrkslamofidbletaycepur$ in the plane, $lodsnmqa(qzxwvtnp)+lodsnmqa(hjgrksla)+lodsnmqa(mofidble)+lodsnmqa(taycepur)=0$. Does it follow that\n$lodsnmqa(niskuvod)=0$ for all points $niskuvod$ in the plane?",
+      "solution": "Yes, it does follow. Let $niskuvod$ be any point in the plane. Let $qzxwvtnphjgrkslamofidbletaycepur$ be any square with center $niskuvod$.\nLet $grevjaln,wopclaim,zinctura,pekrival$ be the midpoints of the segments $qzxwvtnphjgrksla, hjgrkslamofidble, mofidbletaycepur, taycepurqzxwvtnp$, respectively. The function\n$lodsnmqa$ must satisfy the equations\n\\begin{align*}\n0 &= lodsnmqa(qzxwvtnp) + lodsnmqa(hjgrksla) + lodsnmqa(mofidble) + lodsnmqa(taycepur) \\\\\n0 &= lodsnmqa(grevjaln) + lodsnmqa(wopclaim) + lodsnmqa(zinctura) + lodsnmqa(pekrival) \\\\\n0 &= lodsnmqa(qzxwvtnp) + lodsnmqa(grevjaln) + lodsnmqa(niskuvod) + lodsnmqa(pekrival) \\\\\n0 &= lodsnmqa(hjgrksla) + lodsnmqa(wopclaim) + lodsnmqa(niskuvod) + lodsnmqa(grevjaln) \\\\\n0 &= lodsnmqa(mofidble) + lodsnmqa(zinctura) + lodsnmqa(niskuvod) + lodsnmqa(wopclaim) \\\\\n0 &= lodsnmqa(taycepur) + lodsnmqa(pekrival) + lodsnmqa(niskuvod) + lodsnmqa(zinctura).\n\\end{align*}\nIf we add the last four equations, then subtract the first equation and twice the second equation,\nwe obtain $0 = 4lodsnmqa(niskuvod)$, whence $lodsnmqa(niskuvod) = 0$.\n\n\\textbf{Remark.} Problem 1 of the 1996 Romanian IMO team selection exam asks the same\nquestion with squares replaced by regular polygons of any (fixed) number of vertices."
+    },
+    "kernel_variant": {
+      "question": "Let f:\\,\\mathbb R^{2}\\to\\mathbb C be a function with the property that for every parallelogram ABCD in the plane one has\n\\[\nf(A)+f(B)+f(C)+f(D)=0.\n\\]\nMust f be identically zero?  Prove your answer.",
+      "solution": "Yes; in fact f(P)=0 for every point P in the plane.\n\nFix any point P.  Choose an arbitrary parallelogram ABCD whose centre (the intersection of its diagonals) is P.  Let E, F, G, H be the mid-points of AB, BC, CD, DA, respectively; by Varignon's theorem EFGH is also a parallelogram with the same centre P.  A direct vector check shows that the four ``mixed'' quadrilaterals\n  AEPH, BFPE, CGPF, DHPG\nare likewise parallelograms centred at P.\n\nBecause the given hypothesis applies to every parallelogram, we have the six equations\n(1) f(A)+f(B)+f(C)+f(D)=0,\n(2) f(E)+f(F)+f(G)+f(H)=0,\n(3) f(A)+f(E)+f(P)+f(H)=0,\n(4) f(B)+f(F)+f(P)+f(E)=0,\n(5) f(C)+f(G)+f(P)+f(F)=0,\n(6) f(D)+f(H)+f(P)+f(G)=0.\n\nAdding (3)+(4)+(5)+(6) and grouping terms gives\n  [f(A)+f(B)+f(C)+f(D)]\n+2[f(E)+f(F)+f(G)+f(H)]\n+4f(P)\n=0.\nBy (1) and (2) the first two bracketed sums vanish, yielding 4f(P)=0.  In \\mathbb{C} multiplication by 4 is injective, so f(P)=0.  Since P was arbitrary, f\\equiv 0 on the entire plane.",
+      "_meta": {
+        "core_steps": [
+          "Place an arbitrary point P at the center of a square ABCD.",
+          "Introduce the side–midpoints E, F, G, H, which themselves form a second square with the same center P.",
+          "Use the given hypothesis on six squares: ABCD, EFGH, and the four ‘mixed’ squares AEPH, BFP E, CGPF, DHP G.",
+          "Add the four mixed-square equations and subtract the ABCD and twice the EFGH equations to isolate 4·f(P).",
+          "Conclude f(P)=0 and hence f vanishes identically."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Target set of the function – only additivity is used, not order or completeness.",
+            "original": "real numbers ℝ"
+          },
+          "slot2": {
+            "description": "The class of quadrilaterals on which the vanishing-sum condition is imposed – it suffices that (i) each has four vertices, (ii) the midpoints of its sides form another member of the class, and (iii) with any vertex–pair of the original and the corresponding midpoints one can again form a member of the class around the same center.",
+            "original": "all squares in the plane"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

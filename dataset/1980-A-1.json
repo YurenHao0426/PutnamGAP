@@ -1,0 +1,128 @@
+{
+  "index": "1980-A-1",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-1\nLet \\( b \\) and \\( c \\) be fixed real numbers and let the ten points \\( \\left(j, y_{j}\\right) . j=1.2 \\ldots .10 \\), lie on the parabola \\( y=x^{2}+b x+c \\). For \\( j=1,2 \\ldots, 9 \\), let \\( I \\), be the point of intersection of the tangents to the given parabola at \\( \\left(j, y_{j}\\right) \\) and \\( \\left(\\jmath+1, y_{j+1}\\right) \\). Determine the polynomial function \\( y=g(x) \\) of least degree whose graph passes through all nine points \\( I_{f} \\).",
+  "solution": "A-1.\nWe show that \\( g(x)=x^{2}+b x+c-(1 / 4) \\). The equation of the tangent to the given parabola at \\( P_{j}=\\left(j, y_{j}\\right) \\) is easily seen to be \\( y=L_{j} \\), where \\( L_{j}=(2 j+b) x-j^{2}+c \\). Solving \\( y=L_{j} \\) and \\( y=L_{j+1} \\) simultaneously, one finds that \\( x=(2 j+1) / 2 \\) and so \\( j=(2 x-1) / 2 \\) at \\( I_{j} \\). Substituting this expression for \\( j \\) into \\( L_{j} \\) gives the \\( g(x) \\) above.",
+  "vars": [
+    "x",
+    "y",
+    "y_j",
+    "j",
+    "I",
+    "I_j",
+    "g",
+    "P_j",
+    "L_j"
+  ],
+  "params": [
+    "b",
+    "c"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "y_j": "ordinatej",
+        "j": "indexvar",
+        "I": "intersect",
+        "I_j": "intersectj",
+        "g": "targetpoly",
+        "P_j": "parabpoint",
+        "L_j": "tangentln",
+        "b": "lincoefb",
+        "c": "constcval"
+      },
+      "question": "Problem A-1\nLet \\( lincoefb \\) and \\( constcval \\) be fixed real numbers and let the ten points \\( (indexvar,ordinatej) ,\\ indexvar=1,2,\\ldots ,10 \\), lie on the parabola \\( ordinate = abscissa^{2}+lincoefb\\,abscissa+constcval \\). For \\( indexvar=1,2,\\ldots ,9 \\), let \\( intersect \\) be the point of intersection of the tangents to the given parabola at \\( (indexvar,ordinatej) \\) and \\( (indexvar+1, ordinate_{indexvar+1}) \\). Determine the polynomial function \\( ordinate = targetpoly(abscissa) \\) of least degree whose graph passes through all nine points \\( intersect_{f} \\).",
+      "solution": "A-1.\nWe show that \\( targetpoly(abscissa)=abscissa^{2}+lincoefb\\,abscissa+constcval-(1/4) \\). The equation of the tangent to the given parabola at \\( parabpoint = (indexvar, ordinatej) \\) is easily seen to be \\( ordinate = tangentln \\), where \\( tangentln = (2\\,indexvar + lincoefb)\\,abscissa - indexvar^{2} + constcval \\). Solving \\( ordinate = tangentln \\) and \\( ordinate = tangentln_{indexvar+1} \\) simultaneously, one finds that \\( abscissa = (2\\,indexvar + 1)/2 \\) and so \\( indexvar = (2\\,abscissa - 1)/2 \\) at \\( intersectj \\). Substituting this expression for \\( indexvar \\) into \\( tangentln \\) gives the \\( targetpoly(abscissa) \\) above."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "blueberry",
+        "y": "pineapple",
+        "y_j": "marigold",
+        "j": "snowflake",
+        "I": "butterfly",
+        "I_j": "thunderbolt",
+        "g": "asteroid",
+        "P_j": "rhinoceros",
+        "L_j": "caterpillar",
+        "b": "watermelon",
+        "c": "harmonica"
+      },
+      "question": "Problem A-1\nLet \\( watermelon \\) and \\( harmonica \\) be fixed real numbers and let the ten points \\( \\left(snowflake, marigold\\right) . snowflake=1.2 \\ldots .10 \\), lie on the parabola \\( pineapple=blueberry^{2}+watermelon blueberry+harmonica \\). For \\( snowflake=1,2 \\ldots, 9 \\), let \\( butterfly \\), be the point of intersection of the tangents to the given parabola at \\( \\left(snowflake, marigold\\right) \\) and \\( \\left(\\jmath+1, y_{j+1}\\right) \\). Determine the polynomial function \\( pineapple=asteroid(blueberry) \\) of least degree whose graph passes through all nine points \\( I_{f} \\).",
+      "solution": "A-1.\nWe show that \\( asteroid(blueberry)=blueberry^{2}+watermelon blueberry+harmonica-(1 / 4) \\). The equation of the tangent to the given parabola at \\( rhinoceros=\\left(snowflake, marigold\\right) \\) is easily seen to be \\( pineapple=caterpillar \\), where \\( caterpillar=(2 snowflake+watermelon) blueberry-snowflake^{2}+harmonica \\). Solving \\( pineapple=caterpillar \\) and \\( pineapple=caterpillar_{snowflake+1} \\) simultaneously, one finds that \\( blueberry=(2 snowflake+1) / 2 \\) and so \\( snowflake=(2 blueberry-1) / 2 \\) at \\( thunderbolt \\). Substituting this expression for \\( snowflake \\) into \\( caterpillar \\) gives the \\( asteroid(blueberry) \\) above."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "y_j": "horizontalcomponent",
+        "j": "constantvalue",
+        "I": "disjointpoint",
+        "I_j": "disjointitem",
+        "g": "nonpolynomial",
+        "P_j": "offcurvepoint",
+        "L_j": "nonlinearpath",
+        "b": "invariable",
+        "c": "dynamicterm"
+      },
+      "question": "Problem A-1\nLet \\( invariable \\) and \\( dynamicterm \\) be fixed real numbers and let the ten points \\( \\left(constantvalue, horizontalcomponent\\right) , \\ constantvalue=1.2 \\ldots .10 \\), lie on the parabola \\( horizontalaxis=verticalaxis^{2}+invariable \\, verticalaxis+dynamicterm \\). For \\( constantvalue=1,2 \\ldots, 9 \\), let \\( disjointpoint \\) be the point of intersection of the tangents to the given parabola at \\( \\left(constantvalue, horizontalcomponent\\right) \\) and \\( \\left(constantvalue+1, horizontalaxis_{constantvalue+1}\\right) \\). Determine the polynomial function \\( horizontalaxis=nonpolynomial(verticalaxis) \\) of least degree whose graph passes through all nine points \\( disjointpoint_{f} \\).",
+      "solution": "A-1.\nWe show that \\( nonpolynomial(verticalaxis)=verticalaxis^{2}+invariable \\, verticalaxis+dynamicterm-(1 / 4) \\). The equation of the tangent to the given parabola at \\( offcurvepoint=\\left(constantvalue, horizontalcomponent\\right) \\) is easily seen to be \\( horizontalaxis=nonlinearpath \\), where \\( nonlinearpath=(2 \\, constantvalue+invariable) \\, verticalaxis-constantvalue^{2}+dynamicterm \\). Solving \\( horizontalaxis=nonlinearpath \\) and \\( horizontalaxis=nonlinearpath_{constantvalue+1} \\) simultaneously, one finds that \\( verticalaxis=(2 \\, constantvalue+1) / 2 \\) and so \\( constantvalue=(2 \\, verticalaxis-1) / 2 \\) at \\( disjointitem \\). Substituting this expression for \\( constantvalue \\) into \\( nonlinearpath \\) gives the \\( nonpolynomial(verticalaxis) \\) above."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "wflkmsop",
+        "y": "kdgjthpq",
+        "y_j": "zqnhakle",
+        "j": "rmdyfcua",
+        "I": "tgcxvepl",
+        "I_j": "kslrdmvo",
+        "g": "fqrzhypn",
+        "P_j": "uhlpvmse",
+        "L_j": "obsucqtr",
+        "b": "xjvdrmye",
+        "c": "awtgehlk"
+      },
+      "question": "Problem A-1\nLet \\( xjvdrmye \\) and \\( awtgehlk \\) be fixed real numbers and let the ten points \\( \\left(rmdyfcua, zqnhakle\\right) . rmdyfcua=1.2 \\ldots .10 \\), lie on the parabola \\( kdgjthpq=wflkmsop^{2}+xjvdrmye \\, wflkmsop+awtgehlk \\). For \\( rmdyfcua=1,2 \\ldots, 9 \\), let \\( tgcxvepl \\), be the point of intersection of the tangents to the given parabola at \\( \\left(rmdyfcua, zqnhakle\\right) \\) and \\( \\left(\\jmath+1, kdgjthpq_{rmdyfcua+1}\\right) \\). Determine the polynomial function \\( kdgjthpq=fqrzhypn(wflkmsop) \\) of least degree whose graph passes through all nine points \\( I_{f} \\).",
+      "solution": "A-1.\nWe show that \\( fqrzhypn(wflkmsop)=wflkmsop^{2}+xjvdrmye \\, wflkmsop+awtgehlk-(1 / 4) \\). The equation of the tangent to the given parabola at \\( uhlpvmse=\\left(rmdyfcua, zqnhakle\\right) \\) is easily seen to be \\( kdgjthpq=obsucqtr \\), where \\( obsucqtr=(2 rmdyfcua+xjvdrmye) \\, wflkmsop-rmdyfcua^{2}+awtgehlk \\). Solving \\( kdgjthpq=obsucqtr \\) and \\( kdgjthpq=obsucqtr_{rmdyfcua+1} \\) simultaneously, one finds that \\( wflkmsop=(2 rmdyfcua+1) / 2 \\) and so \\( rmdyfcua=(2 wflkmsop-1) / 2 \\) at \\( kslrdmvo \\). Substituting this expression for \\( rmdyfcua \\) into \\( obsucqtr \\) gives the \\( fqrzhypn(wflkmsop) \\) above."
+    },
+    "kernel_variant": {
+      "question": "Let $a, b,$ and $c$ be fixed real numbers with $a\\neq 0$.  Consider the seven points \n$$P_k=(2k,\\,a(2k)^2+b(2k)+c), \\qquad k=0,1,2,3,4,5,6,$$\nwhich lie on the parabola $y = a x^{2}+b x+c$.  For each $k=0,1,\\dots ,5$, let $I_k$ be the point of intersection of the tangents to the parabola at $P_k$ and $P_{k+1}$.  Find, with proof, the polynomial function $y=g(x)$ of least degree whose graph passes through all six points $I_k\\,(k=0,1,\\dots ,5)$.",
+      "solution": "Because the parabola is quadratic, its tangents are linear.  We compute the tangent at a generic point and then locate the intersections of consecutive tangents.\n\n1.  Tangent at a generic even integer.\n   For an integer j (0\\leq j\\leq 6) we have P_j=(2j, a(2j)^2+b(2j)+c).  Since y=ax^2+bx+c, the derivative is y'=2ax+b, so the slope at x=2j is\n   m_j=2a(2j)+b=4aj+b.\n   The tangent line \\ell _j at P_j is therefore\n   y=(4aj+b)(x-2j)+(4aj^2+2bj+c).\n   Simplifying its y-intercept gives the convenient form\n   \\ell _j: y=(4aj+b)x-4aj^2+c.  \n\n2.  Intersection of consecutive tangents.\n   For k=0,1,\\ldots ,5 we set \\ell _k=\\ell _{k+1}:\n      (4ak+b)x-4ak^2+c=(4a(k+1)+b)x-4a(k+1)^2+c.\n   The c's cancel, and rearranging yields 4ax=4a((k+1)^2-k^2)=4a(2k+1), hence\n   x_{I_k}=2k+1\n   for every intersection point I_k.\n\n3.  Index each intersection by its abscissa.\n   From x=2k+1 we have k=(x-1)/2.  Thus every intersection I_k can be regarded as I(x), where x=1,3,5,7,9,11.\n\n4.  Eliminate k to obtain a single curve through all I_k.\n   Substitute k=(x-1)/2 into \\ell _k:\n      g(x)=(4a\\cdot (x-1)/2+b)x-4a((x-1)/2)^2+c\n           =[2a(x-1)+b]x-a(x-1)^2+c\n           =a x^2+bx+c-a.\n   Consequently every I_k lies on the quadratic\ng(x)=a x^2+b x+c-a.\n\nSince a quadratic already passes through all six points and a single quadratic is determined by any five noncollinear points, g(x) is the polynomial of least possible degree.  \n\nTherefore the required function is\n   g(x)=a x^2+b x+c-a.",
+      "_meta": {
+        "core_steps": [
+          "Write the tangent line at a generic point j on the quadratic y = x² + bx + c.",
+          "Set the two consecutive tangents (at j and j+1) equal and solve the resulting linear system to get their intersection abscissa x = (2j+1)/2.",
+          "Invert the relation j = (2x−1)/2 so every intersection point I_j can be indexed by x.",
+          "Substitute that j-expression back into one of the tangent equations to obtain a single quadratic curve, namely g(x) = x² + bx + c − 1/4, passing through all intersection points."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Leading coefficient of the original quadratic (currently 1 in x²). Any non-zero real value works; it only scales the final vertical shift.",
+            "original": 1
+          },
+          "slot2": {
+            "description": "First x–coordinate in the list of points (currently j = 1). Shifting all indices by a constant does not affect the argument.",
+            "original": 1
+          },
+          "slot3": {
+            "description": "Step size between successive x–coordinates (currently 1, i.e., consecutive integers). Any fixed real step h keeps the same logic; the final shift becomes h²/4.",
+            "original": 1
+          },
+          "slot4": {
+            "description": "Total number of sample points on the parabola (currently 10, yielding 9 intersections). Any number ≥2 suffices because each step only uses a single consecutive pair.",
+            "original": 10
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

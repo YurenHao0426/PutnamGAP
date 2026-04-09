@@ -1,0 +1,95 @@
+{
+  "index": "1989-A-2",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Evaluate\n$\\displaystyle{\\int_0^a\\int_0^b e^{{\\rm max}\\{b^2x^2, a^2y^2\\}}\\,dy\\,dx}$\nwhere $a$ and $b$ are positive.",
+  "solution": "Solution. Divide the rectangle into two parts by the diagonal line \\( a y=b x \\) to obtain\n\\[\n\\begin{aligned}\n\\int_{0}^{a} \\int_{0}^{b} e^{\\max \\left\\{b^{2} x^{2}, a^{2} y^{2}\\right\\}} d y d x & =\\int_{0}^{a} \\int_{0}^{b x / a} e^{b^{2} x^{2}} d y d x+\\int_{0}^{b} \\int_{0}^{a y / b} e^{a^{2} y^{2}} d x d y \\\\\n& =\\int_{0}^{a} \\frac{b x}{a} e^{b^{2} x^{2}} d x+\\int_{0}^{b} \\frac{a y}{b} e^{a^{2} y^{2}} d y \\\\\n& =\\int_{0}^{a^{2} b^{2}} \\frac{1}{2 a b} e^{u} d u+\\int_{0}^{a^{2} b^{2}} \\frac{1}{2 a b} e^{v} d v \\\\\n& =\\frac{e^{a^{2} b^{2}}-1}{a b}\n\\end{aligned}\n\\]",
+  "vars": [
+    "u",
+    "v",
+    "x",
+    "y"
+  ],
+  "params": [
+    "a",
+    "b"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "u": "auxiliaryu",
+        "v": "auxiliaryv",
+        "x": "variablex",
+        "y": "variabley",
+        "a": "parametera",
+        "b": "parameterb"
+      },
+      "question": "Evaluate\n$\\displaystyle{\\int_0^{parametera}\\int_0^{parameterb} e^{{\\rm max}\\{parameterb^{2} variablex^{2}, parametera^{2} variabley^{2}\\}}\\,d variabley\\,d variablex}$\nwhere $parametera$ and $parameterb$ are positive.",
+      "solution": "Solution. Divide the rectangle into two parts by the diagonal line \\( parametera variabley=parameterb variablex \\) to obtain\n\\[\n\\begin{aligned}\n\\int_{0}^{parametera} \\int_{0}^{parameterb} e^{\\max \\left\\{parameterb^{2} variablex^{2}, parametera^{2} variabley^{2}\\right\\}} d variabley d variablex & =\\int_{0}^{parametera} \\int_{0}^{parameterb variablex / parametera} e^{parameterb^{2} variablex^{2}} d variabley d variablex+\\int_{0}^{parameterb} \\int_{0}^{parametera variabley / parameterb} e^{parametera^{2} variabley^{2}} d variablex d variabley \\\\\n& =\\int_{0}^{parametera} \\frac{parameterb variablex}{parametera} e^{parameterb^{2} variablex^{2}} d variablex+\\int_{0}^{parameterb} \\frac{parametera variabley}{parameterb} e^{parametera^{2} variabley^{2}} d variabley \\\\\n& =\\int_{0}^{parametera^{2} parameterb^{2}} \\frac{1}{2 parametera parameterb} e^{auxiliaryu} d auxiliaryu+\\int_{0}^{parametera^{2} parameterb^{2}} \\frac{1}{2 parametera parameterb} e^{auxiliaryv} d auxiliaryv \\\\\n& =\\frac{e^{parametera^{2} parameterb^{2}}-1}{parametera parameterb}\n\\end{aligned}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "u": "dinosauria",
+        "v": "margaritas",
+        "x": "lightning",
+        "y": "waterfall",
+        "a": "hummingbird",
+        "b": "spectacular"
+      },
+      "question": "Evaluate\n$\\displaystyle{\\int_0^{hummingbird}\\int_0^{spectacular} e^{{\\rm max}\\{spectacular^2 lightning^2, hummingbird^2 waterfall^2\\}}\\,d waterfall\\,d lightning}$\nwhere $hummingbird$ and $spectacular$ are positive.",
+      "solution": "Solution. Divide the rectangle into two parts by the diagonal line \\( hummingbird\\, waterfall = spectacular\\, lightning \\) to obtain\n\\[\n\\begin{aligned}\n\\int_{0}^{hummingbird} \\int_{0}^{spectacular} e^{\\max \\left\\{spectacular^{2} lightning^{2}, hummingbird^{2} waterfall^{2}\\right\\}} d waterfall d lightning & =\\int_{0}^{hummingbird} \\int_{0}^{spectacular lightning / hummingbird} e^{spectacular^{2} lightning^{2}} d waterfall d lightning+\\int_{0}^{spectacular} \\int_{0}^{hummingbird waterfall / spectacular} e^{hummingbird^{2} waterfall^{2}} d lightning d waterfall \\\\\n& =\\int_{0}^{hummingbird} \\frac{spectacular\\, lightning}{hummingbird} e^{spectacular^{2} lightning^{2}} d lightning+\\int_{0}^{spectacular} \\frac{hummingbird\\, waterfall}{spectacular} e^{hummingbird^{2} waterfall^{2}} d waterfall \\\\\n& =\\int_{0}^{hummingbird^{2} spectacular^{2}} \\frac{1}{2 hummingbird spectacular} e^{dinosauria} d dinosauria+\\int_{0}^{hummingbird^{2} spectacular^{2}} \\frac{1}{2 hummingbird spectacular} e^{margaritas} d margaritas \\\\\n& =\\frac{e^{hummingbird^{2} spectacular^{2}}-1}{hummingbird spectacular}\n\\end{aligned}\n\\]\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "u": "outputdummy",
+        "v": "initialdummy",
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "a": "negativealpha",
+        "b": "negativebeta"
+      },
+      "question": "Problem:\n<<<\nEvaluate\n$\\displaystyle{\\int_0^{negativealpha}\\int_0^{negativebeta} e^{{\\rm max}\\{negativebeta^2 verticalaxis^2, negativealpha^2 horizontalaxis^2\\}}\\,d horizontalaxis\\,d verticalaxis}$\nwhere $negativealpha$ and $negativebeta$ are positive.\n>>>\n",
+      "solution": "Solution:\n<<<\nSolution. Divide the rectangle into two parts by the diagonal line \\( negativealpha\\, horizontalaxis=negativebeta\\, verticalaxis \\) to obtain\n\\[\n\\begin{aligned}\n\\int_{0}^{negativealpha} \\int_{0}^{negativebeta} e^{\\max \\left\\{negativebeta^{2} verticalaxis^{2}, negativealpha^{2} horizontalaxis^{2}\\right\\}} d horizontalaxis d verticalaxis & =\\int_{0}^{negativealpha} \\int_{0}^{negativebeta verticalaxis / negativealpha} e^{negativebeta^{2} verticalaxis^{2}} d horizontalaxis d verticalaxis+\\int_{0}^{negativebeta} \\int_{0}^{negativealpha horizontalaxis / negativebeta} e^{negativealpha^{2} horizontalaxis^{2}} d verticalaxis d horizontalaxis \\\\\n& =\\int_{0}^{negativealpha} \\frac{negativebeta verticalaxis}{negativealpha} e^{negativebeta^{2} verticalaxis^{2}} d verticalaxis+\\int_{0}^{negativebeta} \\frac{negativealpha horizontalaxis}{negativebeta} e^{negativealpha^{2} horizontalaxis^{2}} d horizontalaxis \\\\\n& =\\int_{0}^{negativealpha^{2} negativebeta^{2}} \\frac{1}{2 negativealpha negativebeta} e^{outputdummy} d outputdummy+\\int_{0}^{negativealpha^{2} negativebeta^{2}} \\frac{1}{2 negativealpha negativebeta} e^{initialdummy} d initialdummy \\\\\n& =\\frac{e^{negativealpha^{2} negativebeta^{2}}-1}{negativealpha negativebeta}\n\\end{aligned}\n\\]\n>>>\n"
+    },
+    "garbled_string": {
+      "map": {
+        "u": "fazrhctl",
+        "v": "qledsmop",
+        "x": "pkuwzoyd",
+        "y": "cgmhixra",
+        "a": "sxjqlfhe",
+        "b": "ntrvpezo"
+      },
+      "question": "Evaluate\n$\\displaystyle{\\int_0^{sxjqlfhe}\\int_0^{ntrvpezo} e^{{\\rm max}\\{ntrvpezo^2 pkuwzoyd^2, sxjqlfhe^2 cgmhixra^2\\}}\\,d cgmhixra\\,d pkuwzoyd}$\nwhere $sxjqlfhe$ and $ntrvpezo$ are positive.",
+      "solution": "Solution. Divide the rectangle into two parts by the diagonal line $( sxjqlfhe cgmhixra=ntrvpezo pkuwzoyd )$ to obtain\n\\[\n\\begin{aligned}\n\\int_{0}^{sxjqlfhe} \\int_{0}^{ntrvpezo} e^{\\max \\left\\{ntrvpezo^{2} pkuwzoyd^{2}, sxjqlfhe^{2} cgmhixra^{2}\\right\\}} d cgmhixra d pkuwzoyd &= \\int_{0}^{sxjqlfhe} \\int_{0}^{ntrvpezo pkuwzoyd / sxjqlfhe} e^{ntrvpezo^{2} pkuwzoyd^{2}} d cgmhixra d pkuwzoyd + \\int_{0}^{ntrvpezo} \\int_{0}^{sxjqlfhe cgmhixra / ntrvpezo} e^{sxjqlfhe^{2} cgmhixra^{2}} d pkuwzoyd d cgmhixra \\\\\n&= \\int_{0}^{sxjqlfhe} \\frac{ntrvpezo pkuwzoyd}{sxjqlfhe} e^{ntrvpezo^{2} pkuwzoyd^{2}} d pkuwzoyd + \\int_{0}^{ntrvpezo} \\frac{sxjqlfhe cgmhixra}{ntrvpezo} e^{sxjqlfhe^{2} cgmhixra^{2}} d cgmhixra \\\\\n&= \\int_{0}^{sxjqlfhe^{2} ntrvpezo^{2}} \\frac{1}{2 sxjqlfhe ntrvpezo} e^{fazrhctl} d fazrhctl + \\int_{0}^{sxjqlfhe^{2} ntrvpezo^{2}} \\frac{1}{2 sxjqlfhe ntrvpezo} e^{qledsmop} d qledsmop \\\\\n&= \\frac{e^{sxjqlfhe^{2} ntrvpezo^{2}}-1}{sxjqlfhe ntrvpezo}\n\\end{aligned}\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let  \n* a,b > 0, * m,n > -1, * p,q > 0, * \\kappa  > 1  \n\nand set  \n\\sigma  := ln \\kappa  > 0.  \nEvaluate the double integral  \n\n  I(a,b;m,n;p,q;\\kappa ) := \\int _0^a \\int _0^b x^{m} y^{n} \\kappa ^{\\,\\max\\{\\,b^{q}x^{p},\\;a^{p}y^{q}\\}} dy dx.\n\n(When m = n = 0, p = q = 2 and \\kappa  = e the original problem is recovered.)",
+      "solution": "Step 1 - Splitting the rectangle.  \nThe switching curve is obtained from  \nb^{q}x^{p} = a^{p}y^{q} \\Leftrightarrow  y = c x^{p/q}, where c := (b^{q}/a^{p})^{1/q}.  \n\nRegion R_1 (``below'' the curve): 0 \\leq  y \\leq  c x^{p/q}.  \nHere max{\\ldots }=b^{q}x^{p}.  \n\nRegion R_2 (``above'' the curve): c x^{p/q} \\leq  y \\leq  b.  \nHere max{\\ldots }=a^{p}y^{q}.  \n\nI splits into I = I_1+I_2.\n\n------------------------------------------------------------  \nStep 2 - Region R_1.  \nI_1 = \\int _0^a \\int _0^{c x^{p/q}} x^{m}y^{n} \\kappa ^{\\,b^{q}x^{p}} dy dx.\n\nInner integral  \n \\int _0^{c x^{p/q}} y^{n} dy = c^{\\,n+1}x^{(n+1)p/q}/(n+1).\n\nHence  \nI_1 = c^{\\,n+1}/[(n+1)] \\int _0^a x^{m+(n+1)p/q} \\kappa ^{\\,b^{q}x^{p}} dx.\n\nPut u := b^{q}x^{p} \\Rightarrow  x = (b^{-q}u)^{1/p}, dx = u^{1/p-1}b^{-q/p}du/p.  \nLet  \n\n \\alpha  := (m+1)/p + (n+1)/q  (>0).  \n\nThen  \nx^{m+(n+1)p/q}dx = b^{-q\\alpha }u^{\\alpha -1}du/p.\n\nTherefore  \n\nI_1 = c^{\\,n+1}b^{-q\\alpha }/[(n+1)p] \\int _0^{A} u^{\\alpha -1} e^{\\sigma u} du, A := a^{p}b^{q}.     (1)\n\n------------------------------------------------------------  \nStep 3 - Region R_2 (roles of x,y exchanged).  \nWrite the curve as x = d y^{q/p}, d := (a^{p}/b^{q})^{1/p}.  \n\nI_2 = \\int _0^b \\int _0^{d y^{q/p}} x^{m}y^{n} \\kappa ^{\\,a^{p}y^{q}} dx dy.\n\nInner integral  \n \\int _0^{d y^{q/p}} x^{m} dx = d^{\\,m+1}y^{(m+1)q/p}/(m+1).\n\nProceed exactly as for I_1 using v := a^{p}y^{q}.  \nOne finds\n\nI_2 = d^{\\,m+1}a^{-p\\alpha }/[(m+1)q] \\int _0^{A} v^{\\alpha -1} e^{\\sigma v} dv.     (2)\n\n------------------------------------------------------------  \nStep 4 - Putting the constants together.  \nBecause  \nc^{\\,n+1} = (b^{q}/a^{p})^{(n+1)/q}, d^{\\,m+1} = (a^{p}/b^{q})^{(m+1)/p},\n\na short calculation shows  \n\nc^{\\,n+1}b^{-q\\alpha } = a^{-p(n+1)/q}b^{-q(m+1)/p},  \nd^{\\,m+1}a^{-p\\alpha } = a^{-p(n+1)/q}b^{-q(m+1)/p}.  \n\nHence the same factor multiplies both integrals.  \nUsing the notation  \n\nE_{\\alpha }(z) := \\int _0^{z} t^{\\alpha -1}e^{t}dt (the ``generalised exponential integral''),\n\nand observing that the integrals in (1) and (2) are identical (u \\leftrightarrow  v), we get  \n\nI = a^{-p(n+1)/q}b^{-q(m+1)/p} E_{\\alpha }(\\sigma A) \\sigma ^{-\\alpha } \\cdot  [1/((n+1)p)+1/((m+1)q)].  \n\nMore compactly, with  \n\n\\alpha  = (m+1)/p + (n+1)/q, A = a^{p}b^{q}, \\sigma  = ln \\kappa ,\n\nI(a,b;m,n;p,q;\\kappa )  \n  = [(m+1)q + (n+1)p]/[(m+1)(n+1)pq] \\cdot  a^{-p(n+1)/q}b^{-q(m+1)/p}  \n    \\cdot  \\sigma ^{-\\alpha } E_{\\alpha }(\\sigma A).                                            (*)\n\n------------------------------------------------------------  \nStep 5 - Check with the original problem.  \nTake m = n = 0, p = q = 2, \\kappa  = e (\\sigma  = 1).  \nThen \\alpha  = 1, the bracketed constant equals 1, and (*) gives  \n\nI = a^{-1}b^{-1}(e^{a^{2}b^{2}}-1),  \n\nwhich is exactly the original answer (with e-base).",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.708671",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher-dimensional parameter space – Six independent positive parameters (a,b,m,n,p,q) plus the base κ make the integral far richer than the 2-parameter original.  \n• Variable weights – The algebraic factors x^{m}y^{n} introduce Beta/Gamma–type behaviour and require controlling convergence at the axes.  \n• Arbitrary powers – The exponents p,q force a non-linear switching curve y = c x^{p/q}, turning the simple straight-line partition of the rectangle into a curvilinear one.  \n• Advanced special functions – The answer cannot be expressed with elementary functions; the generalised exponential integral (equivalently, incomplete gamma with a negative argument) is unavoidable.  \n• Structural subtlety – A careful balance of exponents is needed to recognise that both sub-integrals lead to the same power α, enabling the final simplification.  \n• Multiple interacting concepts – Change of variables, curvilinear region splitting, homogeneity considerations, and special-function identities must all be blended to reach the compact closed form.\n\nThese layers of complexity make the enhanced variant substantially harder than both the original problem and the current kernel variant, while still being fully solvable."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n* a,b > 0, * m,n > -1, * p,q > 0, * \\kappa  > 1  \n\nand set  \n\\sigma  := ln \\kappa  > 0.  \nEvaluate the double integral  \n\n  I(a,b;m,n;p,q;\\kappa ) := \\int _0^a \\int _0^b x^{m} y^{n} \\kappa ^{\\,\\max\\{\\,b^{q}x^{p},\\;a^{p}y^{q}\\}} dy dx.\n\n(When m = n = 0, p = q = 2 and \\kappa  = e the original problem is recovered.)",
+      "solution": "Step 1 - Splitting the rectangle.  \nThe switching curve is obtained from  \nb^{q}x^{p} = a^{p}y^{q} \\Leftrightarrow  y = c x^{p/q}, where c := (b^{q}/a^{p})^{1/q}.  \n\nRegion R_1 (``below'' the curve): 0 \\leq  y \\leq  c x^{p/q}.  \nHere max{\\ldots }=b^{q}x^{p}.  \n\nRegion R_2 (``above'' the curve): c x^{p/q} \\leq  y \\leq  b.  \nHere max{\\ldots }=a^{p}y^{q}.  \n\nI splits into I = I_1+I_2.\n\n------------------------------------------------------------  \nStep 2 - Region R_1.  \nI_1 = \\int _0^a \\int _0^{c x^{p/q}} x^{m}y^{n} \\kappa ^{\\,b^{q}x^{p}} dy dx.\n\nInner integral  \n \\int _0^{c x^{p/q}} y^{n} dy = c^{\\,n+1}x^{(n+1)p/q}/(n+1).\n\nHence  \nI_1 = c^{\\,n+1}/[(n+1)] \\int _0^a x^{m+(n+1)p/q} \\kappa ^{\\,b^{q}x^{p}} dx.\n\nPut u := b^{q}x^{p} \\Rightarrow  x = (b^{-q}u)^{1/p}, dx = u^{1/p-1}b^{-q/p}du/p.  \nLet  \n\n \\alpha  := (m+1)/p + (n+1)/q  (>0).  \n\nThen  \nx^{m+(n+1)p/q}dx = b^{-q\\alpha }u^{\\alpha -1}du/p.\n\nTherefore  \n\nI_1 = c^{\\,n+1}b^{-q\\alpha }/[(n+1)p] \\int _0^{A} u^{\\alpha -1} e^{\\sigma u} du, A := a^{p}b^{q}.     (1)\n\n------------------------------------------------------------  \nStep 3 - Region R_2 (roles of x,y exchanged).  \nWrite the curve as x = d y^{q/p}, d := (a^{p}/b^{q})^{1/p}.  \n\nI_2 = \\int _0^b \\int _0^{d y^{q/p}} x^{m}y^{n} \\kappa ^{\\,a^{p}y^{q}} dx dy.\n\nInner integral  \n \\int _0^{d y^{q/p}} x^{m} dx = d^{\\,m+1}y^{(m+1)q/p}/(m+1).\n\nProceed exactly as for I_1 using v := a^{p}y^{q}.  \nOne finds\n\nI_2 = d^{\\,m+1}a^{-p\\alpha }/[(m+1)q] \\int _0^{A} v^{\\alpha -1} e^{\\sigma v} dv.     (2)\n\n------------------------------------------------------------  \nStep 4 - Putting the constants together.  \nBecause  \nc^{\\,n+1} = (b^{q}/a^{p})^{(n+1)/q}, d^{\\,m+1} = (a^{p}/b^{q})^{(m+1)/p},\n\na short calculation shows  \n\nc^{\\,n+1}b^{-q\\alpha } = a^{-p(n+1)/q}b^{-q(m+1)/p},  \nd^{\\,m+1}a^{-p\\alpha } = a^{-p(n+1)/q}b^{-q(m+1)/p}.  \n\nHence the same factor multiplies both integrals.  \nUsing the notation  \n\nE_{\\alpha }(z) := \\int _0^{z} t^{\\alpha -1}e^{t}dt (the ``generalised exponential integral''),\n\nand observing that the integrals in (1) and (2) are identical (u \\leftrightarrow  v), we get  \n\nI = a^{-p(n+1)/q}b^{-q(m+1)/p} E_{\\alpha }(\\sigma A) \\sigma ^{-\\alpha } \\cdot  [1/((n+1)p)+1/((m+1)q)].  \n\nMore compactly, with  \n\n\\alpha  = (m+1)/p + (n+1)/q, A = a^{p}b^{q}, \\sigma  = ln \\kappa ,\n\nI(a,b;m,n;p,q;\\kappa )  \n  = [(m+1)q + (n+1)p]/[(m+1)(n+1)pq] \\cdot  a^{-p(n+1)/q}b^{-q(m+1)/p}  \n    \\cdot  \\sigma ^{-\\alpha } E_{\\alpha }(\\sigma A).                                            (*)\n\n------------------------------------------------------------  \nStep 5 - Check with the original problem.  \nTake m = n = 0, p = q = 2, \\kappa  = e (\\sigma  = 1).  \nThen \\alpha  = 1, the bracketed constant equals 1, and (*) gives  \n\nI = a^{-1}b^{-1}(e^{a^{2}b^{2}}-1),  \n\nwhich is exactly the original answer (with e-base).",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.552821",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher-dimensional parameter space – Six independent positive parameters (a,b,m,n,p,q) plus the base κ make the integral far richer than the 2-parameter original.  \n• Variable weights – The algebraic factors x^{m}y^{n} introduce Beta/Gamma–type behaviour and require controlling convergence at the axes.  \n• Arbitrary powers – The exponents p,q force a non-linear switching curve y = c x^{p/q}, turning the simple straight-line partition of the rectangle into a curvilinear one.  \n• Advanced special functions – The answer cannot be expressed with elementary functions; the generalised exponential integral (equivalently, incomplete gamma with a negative argument) is unavoidable.  \n• Structural subtlety – A careful balance of exponents is needed to recognise that both sub-integrals lead to the same power α, enabling the final simplification.  \n• Multiple interacting concepts – Change of variables, curvilinear region splitting, homogeneity considerations, and special-function identities must all be blended to reach the compact closed form.\n\nThese layers of complexity make the enhanced variant substantially harder than both the original problem and the current kernel variant, while still being fully solvable."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

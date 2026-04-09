@@ -1,0 +1,138 @@
+{
+  "index": "1976-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "A-6. Suppose \\( f(x) \\) is a twice continuously differentiable real valued function defined for all real numbers \\( x \\) and satisfying \\( |f(x)| \\leqq 1 \\) for all \\( x \\) and \\( (f(0))^{2}+\\left(f^{\\prime}(0)\\right)^{2}=4 \\). Prove that there exists a real number \\( x_{0} \\) such that \\( f\\left(x_{0}\\right)+f^{\\prime \\prime}\\left(x_{0}\\right)=0 \\).",
+  "solution": "A-6.\nLet \\( G(x)=[f(x)]^{2}+\\left[f^{\\prime}(x)\\right]^{2} \\) and \\( H(x)=f(x)+f^{\\prime \\prime}(x) \\) Since \\( H \\) is continuous, it suffices to show that \\( H \\) changes sign. We assume that either \\( H(x)>0 \\) for all \\( x \\) or \\( H(x)<0 \\) for all \\( x \\) and obtain a contradiction.\n\nSince \\( |f(0)| \\leqq 1 \\) and \\( G(0)=4 \\), either \\( f^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) or \\( f^{\\prime}(0) \\leqq-\\sqrt{ } 3 \\). We deal with the case in which \\( H(x)>0 \\) for all \\( x \\) and \\( f^{\\prime}(0) \\geqq v^{\\prime} 3 \\); the other cases are similar.\n\nAssume that the set \\( S \\) of positive \\( x \\) with \\( f^{\\prime}(x)<1 \\) is nonempty and let \\( g \\) be the greatest lower bound of \\( S \\). Then \\( f^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) and continuity of \\( f^{\\prime}(x) \\) imply \\( g>0 \\). Now \\( f^{\\prime}(x) \\geqq 0 \\) and \\( H(x) \\geqq 0 \\) for \\( 0 \\leqq x \\leqq g \\) lead to\n\\[\nG(g)=4+2 \\int_{0}^{g} f^{\\prime}(x)\\left[f(x)+f^{\\prime \\prime}(x)\\right] d x \\geqslant 4\n\\]\n\nSince \\( |f(g)| \\leqq 1 \\), this implies \\( f^{\\prime}(g) \\geqq \\sqrt{ } 3 \\). Then continuity of \\( f^{\\prime}(x) \\) tells us that there is an \\( a>0 \\) such that \\( f^{\\prime}(x) \\geqq 1 \\) for \\( 0 \\leqq x<g+a \\). This contradicts the definition of \\( g \\) and hence \\( S \\) is empty. Now \\( f^{\\prime}(x) \\geqq 1 \\) for all \\( x \\) and this implies that \\( f(x) \\) is unbounded, contradicting \\( |f(x)| \\leqq 1 \\). This contradiction means that \\( H(x) \\) must change sign and so \\( H\\left(x_{1}\\right)=0 \\) for some real \\( x_{11} \\).\n\nAlternately, we use the Mean Value Theorem to deduce the existence of \\( a \\) and \\( b \\) with \\( -2<a<0<h-2 \\) and\n\\[\nf^{\\prime}(a)^{\\prime}=\\frac{' f(0)-f(-2)}{2} \\leqq \\frac{|f(0)!+|f(-2)|}{2} \\leqq \\frac{1+1}{2}=1\n\\]\nand similarly \\( \\mid f^{\\prime}(b) \\leqq 1 \\). Then \\( G(a)=|f(a)|^{\\prime}+\\left[\\left.f^{\\prime}(a)\\right|^{\\prime} \\leqq 1+1=2\\right. \\) and also \\( G(b) \\leqq 2 \\). Since \\( G(0)=4 \\), \\( G(x) \\) attains its maximum on \\( a \\leqq x \\leqq b \\) at an interior point \\( x_{11} \\) and hence \\( G^{\\prime}\\left(x_{01}\\right)=f^{\\prime}\\left(x_{0}\\right) H\\left(x_{10}\\right)=0 \\). But \\( f^{\\prime}\\left(x_{0}\\right) \\neq 0 \\) since otherwise \\( \\left[f\\left(x_{0}\\right)\\right]^{2}=G\\left(x_{0}\\right) \\geqq 4 \\) and \\( \\left|f\\left(x_{0}\\right)\\right|>1 \\). Thus \\( H\\left(x_{0}\\right)=0 \\).",
+  "vars": [
+    "x",
+    "x_0",
+    "x_1",
+    "x_01",
+    "x_10",
+    "x_11"
+  ],
+  "params": [
+    "f",
+    "G",
+    "H",
+    "S",
+    "g",
+    "a",
+    "b"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "x_0": "zeropos",
+        "x_1": "oneposi",
+        "x_01": "zeroone",
+        "x_10": "onezero",
+        "x_11": "oneonep",
+        "f": "functxn",
+        "G": "grandgee",
+        "H": "bigaitch",
+        "S": "setgroup",
+        "g": "geeminor",
+        "a": "varalpha",
+        "b": "varbeta"
+      },
+      "question": "A-6. Suppose \\( functxn(variable) \\) is a twice continuously differentiable real valued function defined for all real numbers \\( variable \\) and satisfying \\( |functxn(variable)| \\leqq 1 \\) for all \\( variable \\) and \\( (functxn(0))^{2}+\\left(functxn^{\\prime}(0)\\right)^{2}=4 \\). Prove that there exists a real number zeropos such that \\( functxn\\left(zeropos\\right)+functxn^{\\prime \\prime}\\left(zeropos\\right)=0 \\).",
+      "solution": "A-6.\nLet \\( grandgee(variable)=[functxn(variable)]^{2}+\\left[functxn^{\\prime}(variable)\\right]^{2} \\) and \\( bigaitch(variable)=functxn(variable)+functxn^{\\prime \\prime}(variable) \\). Since \\( bigaitch \\) is continuous, it suffices to show that \\( bigaitch \\) changes sign. We assume that either \\( bigaitch(variable)>0 \\) for all \\( variable \\) or \\( bigaitch(variable)<0 \\) for all \\( variable \\) and obtain a contradiction.\n\nSince \\( |functxn(0)| \\leqq 1 \\) and \\( grandgee(0)=4 \\), either \\( functxn^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) or \\( functxn^{\\prime}(0) \\leqq-\\sqrt{ } 3 \\). We deal with the case in which \\( bigaitch(variable)>0 \\) for all \\( variable \\) and \\( functxn^{\\prime}(0) \\geqq v^{\\prime} 3 \\); the other cases are similar.\n\nAssume that the set \\( setgroup \\) of positive \\( variable \\) with \\( functxn^{\\prime}(variable)<1 \\) is nonempty and let \\( geeminor \\) be the greatest lower bound of \\( setgroup \\). Then \\( functxn^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) and continuity of \\( functxn^{\\prime}(variable) \\) imply \\( geeminor>0 \\). Now \\( functxn^{\\prime}(variable) \\geqq 0 \\) and \\( bigaitch(variable) \\geqq 0 \\) for \\( 0 \\leqq variable \\leqq geeminor \\) lead to\n\\[\ngrandgee(geeminor)=4+2 \\int_{0}^{geeminor} functxn^{\\prime}(variable)\\left[functxn(variable)+functxn^{\\prime \\prime}(variable)\\right] d variable \\geqslant 4\n\\]\n\nSince \\( |functxn(geeminor)| \\leqq 1 \\), this implies \\( functxn^{\\prime}(geeminor) \\geqq \\sqrt{ } 3 \\). Then continuity of \\( functxn^{\\prime}(variable) \\) tells us that there is an \\( varalpha>0 \\) such that \\( functxn^{\\prime}(variable) \\geqq 1 \\) for \\( 0 \\leqq variable<geeminor+varalpha \\). This contradicts the definition of \\( geeminor \\) and hence \\( setgroup \\) is empty. Now \\( functxn^{\\prime}(variable) \\geqq 1 \\) for all \\( variable \\) and this implies that \\( functxn(variable) \\) is unbounded, contradicting \\( |functxn(variable)| \\leqq 1 \\). This contradiction means that \\( bigaitch(variable) \\) must change sign and so \\( bigaitch\\left(oneposi\\right)=0 \\) for some real \\( oneonep \\).\n\nAlternately, we use the Mean Value Theorem to deduce the existence of \\( varalpha \\) and \\( varbeta \\) with \\( -2<varalpha<0<varbeta-2 \\) and\n\\[\nfunctxn^{\\prime}(varalpha)^{\\prime}=\\frac{' functxn(0)-functxn(-2)}{2} \\leqq \\frac{|functxn(0)!+|functxn(-2)|}{2} \\leqq \\frac{1+1}{2}=1\n\\]\nand similarly \\( \\mid functxn^{\\prime}(varbeta) \\leqq 1 \\). Then \\( grandgee(varalpha)=|functxn(varalpha)|^{\\prime}+\\left[\\left.functxn^{\\prime}(varalpha)\\right|^{\\prime} \\leqq 1+1=2\\right. \\) and also \\( grandgee(varbeta) \\leqq 2 \\). Since \\( grandgee(0)=4 \\), \\( grandgee(variable) \\) attains its maximum on \\( varalpha \\leqq variable \\leqq varbeta \\) at an interior point \\( oneonep \\) and hence \\( grandgee^{\\prime}\\left(zeroone\\right)=functxn^{\\prime}\\left(zeropos\\right) bigaitch\\left(onezero\\right)=0 \\). But \\( functxn^{\\prime}\\left(zeropos\\right) \\neq 0 \\) since otherwise \\( \\left[functxn\\left(zeropos\\right)\\right]^{2}=grandgee\\left(zeropos\\right) \\geqq 4 \\) and \\( \\left|functxn\\left(zeropos\\right)\\right|>1 \\). Thus \\( bigaitch\\left(zeropos\\right)=0 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pineapple",
+        "x_0": "lemondrop",
+        "x_1": "cantaloup",
+        "x_01": "butterscotch",
+        "x_10": "strawberry",
+        "x_11": "blackberry",
+        "f": "hummingbird",
+        "G": "watermelon",
+        "H": "dragonfruit",
+        "S": "raspberry",
+        "g": "passionfruit",
+        "a": "persimmon",
+        "b": "tangerine"
+      },
+      "question": "A-6. Suppose \\( hummingbird(pineapple) \\) is a twice continuously differentiable real valued function defined for all real numbers \\( pineapple \\) and satisfying \\( |hummingbird(pineapple)| \\leqq 1 \\) for all \\( pineapple \\) and \\( (hummingbird(0))^{2}+\\left(hummingbird^{\\prime}(0)\\right)^{2}=4 \\). Prove that there exists a real number \\( lemondrop \\) such that \\( hummingbird\\left(lemondrop\\right)+hummingbird^{\\prime \\prime}\\left(lemondrop\\right)=0 \\).",
+      "solution": "A-6.\nLet \\( watermelon(pineapple)=[hummingbird(pineapple)]^{2}+\\left[hummingbird^{\\prime}(pineapple)\\right]^{2} \\) and \\( dragonfruit(pineapple)=hummingbird(pineapple)+hummingbird^{\\prime \\prime}(pineapple) \\) Since \\( dragonfruit \\) is continuous, it suffices to show that \\( dragonfruit \\) changes sign. We assume that either \\( dragonfruit(pineapple)>0 \\) for all \\( pineapple \\) or \\( dragonfruit(pineapple)<0 \\) for all \\( pineapple \\) and obtain a contradiction.\n\nSince \\( |hummingbird(0)| \\leqq 1 \\) and \\( watermelon(0)=4 \\), either \\( hummingbird^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) or \\( hummingbird^{\\prime}(0) \\leqq-\\sqrt{ } 3 \\). We deal with the case in which \\( dragonfruit(pineapple)>0 \\) for all \\( pineapple \\) and \\( hummingbird^{\\prime}(0) \\geqq v^{\\prime} 3 \\); the other cases are similar.\n\nAssume that the set \\( raspberry \\) of positive \\( pineapple \\) with \\( hummingbird^{\\prime}(pineapple)<1 \\) is nonempty and let \\( passionfruit \\) be the greatest lower bound of \\( raspberry \\). Then \\( hummingbird^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) and continuity of \\( hummingbird^{\\prime}(pineapple) \\) imply \\( passionfruit>0 \\). Now \\( hummingbird^{\\prime}(pineapple) \\geqq 0 \\) and \\( dragonfruit(pineapple) \\geqq 0 \\) for \\( 0 \\leqq pineapple \\leqq passionfruit \\) lead to\n\\[\nwatermelon(passionfruit)=4+2 \\int_{0}^{passionfruit} hummingbird^{\\prime}(pineapple)\\left[hummingbird(pineapple)+hummingbird^{\\prime \\prime}(pineapple)\\right] d pineapple \\geqslant 4\n\\]\n\nSince \\( |hummingbird(passionfruit)| \\leqq 1 \\), this implies \\( hummingbird^{\\prime}(passionfruit) \\geqq \\sqrt{ } 3 \\). Then continuity of \\( hummingbird^{\\prime}(pineapple) \\) tells us that there is an \\( persimmon>0 \\) such that \\( hummingbird^{\\prime}(pineapple) \\geqq 1 \\) for \\( 0 \\leqq pineapple<passionfruit+persimmon \\). This contradicts the definition of \\( passionfruit \\) and hence \\( raspberry \\) is empty. Now \\( hummingbird^{\\prime}(pineapple) \\geqq 1 \\) for all \\( pineapple \\) and this implies that \\( hummingbird(pineapple) \\) is unbounded, contradicting \\( |hummingbird(pineapple)| \\leqq 1 \\). This contradiction means that \\( dragonfruit(pineapple) \\) must change sign and so \\( dragonfruit\\left(cantaloup\\right)=0 \\) for some real \\( blackberry \\).\n\nAlternately, we use the Mean Value Theorem to deduce the existence of \\( persimmon \\) and \\( tangerine \\) with \\( -2<persimmon<0<h-2 \\) and\n\\[\nhummingbird^{\\prime}(persimmon)^{\\prime}=\\frac{' hummingbird(0)-hummingbird(-2)}{2} \\leqq \\frac{|hummingbird(0)!+|hummingbird(-2)|}{2} \\leqq \\frac{1+1}{2}=1\n\\]\nand similarly \\( \\mid hummingbird^{\\prime}(tangerine) \\leqq 1 \\). Then \\( watermelon(persimmon)=|hummingbird(persimmon)|^{\\prime}+\\left[\\left.hummingbird^{\\prime}(persimmon)\\right|^{\\prime} \\leqq 1+1=2\\right. \\) and also \\( watermelon(tangerine) \\leqq 2 \\). Since \\( watermelon(0)=4 \\), \\( watermelon(pineapple) \\) attains its maximum on \\( persimmon \\leqq pineapple \\leqq tangerine \\) at an interior point \\( blackberry \\) and hence \\( watermelon^{\\prime}\\left(butterscotch\\right)=hummingbird^{\\prime}\\left(lemondrop\\right) dragonfruit\\left(strawberry\\right)=0 \\). But \\( hummingbird^{\\prime}\\left(lemondrop\\right) \\neq 0 \\) since otherwise \\( \\left[hummingbird\\left(lemondrop\\right)\\right]^{2}=watermelon\\left(lemondrop\\right) \\geqq 4 \\) and \\( \\left|hummingbird\\left(lemondrop\\right)\\right|>1 \\). Thus \\( dragonfruit\\left(lemondrop\\right)=0 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "x_0": "infinitepoint",
+        "x_1": "limitlesspoint",
+        "x_01": "emptypoint",
+        "x_10": "fullnesspoint",
+        "x_11": "everythingpoint",
+        "f": "steadyvalue",
+        "G": "linearmeasure",
+        "H": "difference",
+        "S": "wholeness",
+        "g": "leastupper",
+        "a": "negativeval",
+        "b": "precedent"
+      },
+      "question": "A-6. Suppose \\( steadyvalue(constantvalue) \\) is a twice continuously differentiable real valued function defined for all real numbers \\( constantvalue \\) and satisfying \\( |steadyvalue(constantvalue)| \\leqq 1 \\) for all \\( constantvalue \\) and \\( (steadyvalue(0))^{2}+\\left(steadyvalue^{\\prime}(0)\\right)^{2}=4 \\). Prove that there exists a real number \\( infinitepoint \\) such that \\( steadyvalue\\left(infinitepoint\\right)+steadyvalue^{\\prime \\prime}\\left(infinitepoint\\right)=0 \\).",
+      "solution": "A-6.\nLet \\( linearmeasure(constantvalue)=[steadyvalue(constantvalue)]^{2}+\\left[steadyvalue^{\\prime}(constantvalue)\\right]^{2} \\) and \\( difference(constantvalue)=steadyvalue(constantvalue)+steadyvalue^{\\prime \\prime}(constantvalue) \\). Since \\( difference \\) is continuous, it suffices to show that \\( difference \\) changes sign. We assume that either \\( difference(constantvalue)>0 \\) for all \\( constantvalue \\) or \\( difference(constantvalue)<0 \\) for all \\( constantvalue \\) and obtain a contradiction.\n\nSince \\( |steadyvalue(0)| \\leqq 1 \\) and \\( linearmeasure(0)=4 \\), either \\( steadyvalue^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) or \\( steadyvalue^{\\prime}(0) \\leqq -\\sqrt{ } 3 \\). We deal with the case in which \\( difference(constantvalue)>0 \\) for all \\( constantvalue \\) and \\( steadyvalue^{\\prime}(0) \\geqq v^{\\prime} 3 \\); the other cases are similar.\n\nAssume that the set \\( wholeness \\) of positive \\( constantvalue \\) with \\( steadyvalue^{\\prime}(constantvalue)<1 \\) is nonempty and let \\( leastupper \\) be the greatest lower bound of \\( wholeness \\). Then \\( steadyvalue^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) and continuity of \\( steadyvalue^{\\prime}(constantvalue) \\) imply \\( leastupper>0 \\). Now \\( steadyvalue^{\\prime}(constantvalue) \\geqq 0 \\) and \\( difference(constantvalue) \\geqq 0 \\) for \\( 0 \\leqq constantvalue \\leqq leastupper \\) lead to\n\\[\nlinearmeasure(leastupper)=4+2 \\int_{0}^{leastupper} steadyvalue^{\\prime}(constantvalue)\\left[steadyvalue(constantvalue)+steadyvalue^{\\prime \\prime}(constantvalue)\\right] d constantvalue \\geqslant 4\n\\]\n\nSince \\( |steadyvalue(leastupper)| \\leqq 1 \\), this implies \\( steadyvalue^{\\prime}(leastupper) \\geqq \\sqrt{ } 3 \\). Then continuity of \\( steadyvalue^{\\prime}(constantvalue) \\) tells us that there is a \\( negativeval>0 \\) such that \\( steadyvalue^{\\prime}(constantvalue) \\geqq 1 \\) for \\( 0 \\leqq constantvalue<leastupper+negativeval \\). This contradicts the definition of \\( leastupper \\) and hence \\( wholeness \\) is empty. Now \\( steadyvalue^{\\prime}(constantvalue) \\geqq 1 \\) for all \\( constantvalue \\) and this implies that \\( steadyvalue(constantvalue) \\) is unbounded, contradicting \\( |steadyvalue(constantvalue)| \\leqq 1 \\). This contradiction means that \\( difference(constantvalue) \\) must change sign and so \\( difference\\left(limitlesspoint\\right)=0 \\) for some real \\( everythingpoint \\).\n\nAlternately, we use the Mean Value Theorem to deduce the existence of \\( negativeval \\) and \\( precedent \\) with \\( -2<negativeval<0<h-2 \\) and\n\\[\nsteadyvalue^{\\prime}(negativeval)^{\\prime}=\\frac{' steadyvalue(0)-steadyvalue(-2)}{2} \\leqq \\frac{|steadyvalue(0)!+|steadyvalue(-2)|}{2} \\leqq \\frac{1+1}{2}=1\n\\]\nand similarly \\( \\mid steadyvalue^{\\prime}(precedent) \\leqq 1 \\). Then \\( linearmeasure(negativeval)=|steadyvalue(negativeval)|^{\\prime}+\\left[\\left.steadyvalue^{\\prime}(negativeval)\\right|^{\\prime} \\leqq 1+1=2\\right. \\) and also \\( linearmeasure(precedent) \\leqq 2 \\). Since \\( linearmeasure(0)=4 \\), \\( linearmeasure(constantvalue) \\) attains its maximum on \\( negativeval \\leqq constantvalue \\leqq precedent \\) at an interior point \\( everythingpoint \\) and hence \\( linearmeasure^{\\prime}\\left(emptypoint\\right)=steadyvalue^{\\prime}\\left(infinitepoint\\right) difference\\left(fullnesspoint\\right)=0 \\). But \\( steadyvalue^{\\prime}\\left(infinitepoint\\right) \\neq 0 \\) since otherwise \\( \\left[steadyvalue\\left(infinitepoint\\right)\\right]^{2}=linearmeasure\\left(infinitepoint\\right) \\geqq 4 \\) and \\( \\left|steadyvalue\\left(infinitepoint\\right)\\right|>1 \\). Thus \\( difference\\left(infinitepoint\\right)=0 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zulqmvid",
+        "x_0": "rofxqjct",
+        "x_1": "gyvtcplk",
+        "x_01": "skmvdraq",
+        "x_10": "pewzlfuo",
+        "x_11": "htbravsy",
+        "f": "qudrkepm",
+        "G": "mgfnzqye",
+        "H": "plovskdj",
+        "S": "yqnhucra",
+        "g": "lxavwseo",
+        "a": "bdqfslme",
+        "b": "vnechspo"
+      },
+      "question": "A-6. Suppose \\( qudrkepm(zulqmvid) \\) is a twice continuously differentiable real valued function defined for all real numbers \\( zulqmvid \\) and satisfying \\( |qudrkepm(zulqmvid)| \\leqq 1 \\) for all \\( zulqmvid \\) and \\( (qudrkepm(0))^{2}+\\left(qudrkepm^{\\prime}(0)\\right)^{2}=4 \\). Prove that there exists a real number \\( rofxqjct \\) such that \\( qudrkepm\\left(rofxqjct\\right)+qudrkepm^{\\prime \\prime}\\left(rofxqjct\\right)=0 \\).",
+      "solution": "A-6.\nLet \\( mgfnzqye(zulqmvid)=[qudrkepm(zulqmvid)]^{2}+\\left[qudrkepm^{\\prime}(zulqmvid)\\right]^{2} \\) and \\( plovskdj(zulqmvid)=qudrkepm(zulqmvid)+qudrkepm^{\\prime \\prime}(zulqmvid) \\) Since \\( plovskdj \\) is continuous, it suffices to show that \\( plovskdj \\) changes sign. We assume that either \\( plovskdj(zulqmvid)>0 \\) for all \\( zulqmvid \\) or \\( plovskdj(zulqmvid)<0 \\) for all \\( zulqmvid \\) and obtain a contradiction.\n\nSince \\( |qudrkepm(0)| \\leqq 1 \\) and \\( mgfnzqye(0)=4 \\), either \\( qudrkepm^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) or \\( qudrkepm^{\\prime}(0) \\leqq-\\sqrt{ } 3 \\). We deal with the case in which \\( plovskdj(zulqmvid)>0 \\) for all \\( zulqmvid \\) and \\( qudrkepm^{\\prime}(0) \\geqq v^{\\prime} 3 \\); the other cases are similar.\n\nAssume that the set \\( yqnhucra \\) of positive \\( zulqmvid \\) with \\( qudrkepm^{\\prime}(zulqmvid)<1 \\) is nonempty and let \\( lxavwseo \\) be the greatest lower bound of \\( yqnhucra \\). Then \\( qudrkepm^{\\prime}(0) \\geqq \\sqrt{ } 3 \\) and continuity of \\( qudrkepm^{\\prime}(zulqmvid) \\) imply \\( lxavwseo>0 \\). Now \\( qudrkepm^{\\prime}(zulqmvid) \\geqq 0 \\) and \\( plovskdj(zulqmvid) \\geqq 0 \\) for \\( 0 \\leqq zulqmvid \\leqq lxavwseo \\) lead to\n\\[\nmgfnzqye(lxavwseo)=4+2 \\int_{0}^{lxavwseo} qudrkepm^{\\prime}(zulqmvid)\\left[qudrkepm(zulqmvid)+qudrkepm^{\\prime \\prime}(zulqmvid)\\right] d zulqmvid \\geqslant 4\n\\]\n\nSince \\( |qudrkepm(lxavwseo)| \\leqq 1 \\), this implies \\( qudrkepm^{\\prime}(lxavwseo) \\geqq \\sqrt{ } 3 \\). Then continuity of \\( qudrkepm^{\\prime}(zulqmvid) \\) tells us that there is an \\( bdqfslme>0 \\) such that \\( qudrkepm^{\\prime}(zulqmvid) \\geqq 1 \\) for \\( 0 \\leqq zulqmvid<lxavwseo+bdqfslme \\). This contradicts the definition of \\( lxavwseo \\) and hence \\( yqnhucra \\) is empty. Now \\( qudrkepm^{\\prime}(zulqmvid) \\geqq 1 \\) for all \\( zulqmvid \\) and this implies that \\( qudrkepm(zulqmvid) \\) is unbounded, contradicting \\( |qudrkepm(zulqmvid)| \\leqq 1 \\). This contradiction means that \\( plovskdj(zulqmvid) \\) must change sign and so \\( plovskdj\\left(gyvtcplk\\right)=0 \\) for some real \\( htbravsy \\).\n\nAlternately, we use the Mean Value Theorem to deduce the existence of \\( bdqfslme \\) and \\( vnechspo \\) with \\( -2<bdqfslme<0<h-2 \\) and\n\\[\nqudrkepm^{\\prime}(bdqfslme)^{\\prime}=\\frac{' qudrkepm(0)-qudrkepm(-2)}{2} \\leqq \\frac{|qudrkepm(0)!+|qudrkepm(-2)|}{2} \\leqq \\frac{1+1}{2}=1\n\\]\nand similarly \\( \\mid qudrkepm^{\\prime}(vnechspo) \\leqq 1 \\). Then \\( mgfnzqye(bdqfslme)=|qudrkepm(bdqfslme)|^{\\prime}+\\left[\\left.qudrkepm^{\\prime}(bdqfslme)\\right|^{\\prime} \\leqq 1+1=2\\right. \\) and also \\( mgfnzqye(vnechspo) \\leqq 2 \\). Since \\( mgfnzqye(0)=4 \\), \\( mgfnzqye(zulqmvid) \\) attains its maximum on \\( bdqfslme \\leqq zulqmvid \\leqq vnechspo \\) at an interior point \\( htbravsy \\) and hence \\( mgfnzqye^{\\prime}\\left(skmvdraq\\right)=qudrkepm^{\\prime}\\left(rofxqjct\\right) plovskdj\\left(pewzlfuo\\right)=0 \\). But \\( qudrkepm^{\\prime}\\left(rofxqjct\\right) \\neq 0 \\) since otherwise \\( \\left[qudrkepm\\left(rofxqjct\\right)\\right]^{2}=mgfnzqye\\left(rofxqjct\\right) \\geqq 4 \\) and \\( \\left|qudrkepm\\left(rofxqjct\\right)\\right|>1 \\). Thus \\( plovskdj\\left(rofxqjct\\right)=0 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let \\(f:\\mathbb R\\to\\mathbb R\\) be a twice-continuously differentiable function that satisfies\n\\[|f(x)|\\le 2 \\quad\\text{for every}\\;x\\in\\mathbb R\\] \nand\n\\[(f(1))^{2}+\\bigl(f'(1)\\bigr)^{2}=10.\\]\nProve that there exists a real number \\(x_{0}\\) such that\n\\[f(x_{0})+f''(x_{0})=0.\\]",
+      "solution": "1.  Set\n   G(x)=f(x)^{2}+\\bigl(f'(x)\\bigr)^{2},\\quad H(x)=f(x)+f''(x).\n   Then G is differentiable and a direct calculation gives\n   G'(x)=2f'(x)H(x)\\quad(*).\n\n2.  A large value of G at the point c=1.\n   Because |f(1)|\\le 2 yet G(1)=10, we have\n   (f'(1))^{2}=G(1)-f(1)^{2}\\ge 10-4=6,\\quad f'(1)\\ne 0.\n\n3.  Small values of G nearby (Mean-Value-Theorem estimate).\n   Choose the length d=4 and consider the points\n   -3=1-d<c=1<c+d=5.\n   By the Mean Value Theorem there exist\n   a\\in(-3,1)\\quad\\text{and}\\quad b\\in(1,5)\n   with\n   f'(a)=\\frac{f(1)-f(-3)}{4},\\quad f'(b)=\\frac{f(5)-f(1)}{4}.\n   The uniform bound |f|\\le 2 yields\n   |f'(a)|\\le\\tfrac{|f(1)|+|f(-3)|}{4}\\le1,\\quad\n   |f'(b)|\\le1.\n   Consequently\n   G(a)=f(a)^{2}+f'(a)^{2}\\le 4+1=5,\\quad\n   G(b)\\le 5.\n   Because G(1)=10>5, the continuous function G attains a strict\n   interior maximum on the closed interval [a,b].  Denote the maximiser\n   by x_{0}\\in(a,b).\n\n4.  Vanishing of H at the maximum.\n   At the interior maximum we have G'(x_{0})=0, so by (*),\n   f'(x_{0})\\,H(x_{0})=0.\n   If f'(x_{0})=0 then G(x_{0})=f(x_{0})^{2}\\le 4,\n   contradicting G(x_{0})\\ge G(1)=10.  Hence f'(x_{0})\\ne 0 and\n   therefore H(x_{0})=0, i.e.\n   f(x_{0})+f''(x_{0})=0.\n\nSuch an x_{0} exists, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Set G(x)=f(x)^2+f'(x)^2 and H(x)=f(x)+f''(x); compute G'(x)=2f'(x)H(x).",
+          "Use the big prescribed value of G at a chosen point versus the uniform bound on |f| to force G to be smaller at some nearby points (Mean-Value-Theorem argument).",
+          "Hence G reaches a strict interior maximum; at that point G'(x0)=0.",
+          "Because |f| is uniformly bounded, f'(x0)≠0, so G'(x0)=0 implies H(x0)=0."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Uniform bound M on |f(x)| (any positive constant works as long as the data below are adapted).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Prescribed value K=(f(c))^2+(f'(c))^2 at the reference point c, required only to satisfy K>2·slot1.",
+            "original": "4"
+          },
+          "slot3": {
+            "description": "Reference point c at which the large value K is given.",
+            "original": "0"
+          },
+          "slot4": {
+            "description": "Length d used to pick the two auxiliary points c−d and c+d in the Mean-Value-Theorem step.",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

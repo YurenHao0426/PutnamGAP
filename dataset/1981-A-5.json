@@ -1,0 +1,156 @@
+{
+  "index": "1981-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-5\nLet \\( P(x) \\) be a polynomial with real coefficients and form the polynomial\n\\[\nQ(x)=\\left(x^{2}+1\\right) P(x) P^{\\prime}(x)+x\\left([P(x)]^{2}+\\left[P^{\\prime}(x)\\right]^{2}\\right)\n\\]\n\nGiven that the equation \\( P(x)=0 \\) has \\( n \\) distinct real roots exceeding 1 , prove or disprove that the equation \\( Q(x)=0 \\) has at least \\( 2 n-1 \\) distinct real roots.",
+  "solution": "A-5.\nWe show that \\( Q(x) \\) has at least \\( 2 n-1 \\) real zeros. One finds that \\( Q(x)=F(x) G(x) \\), where\n\\[\nF(x)=P^{\\prime}(x)+x P(x)=e^{-x^{2} / 2}\\left[e^{x^{2} / 2} P(x)\\right]^{\\prime}, G(x)=x P^{\\prime}(x)+P(x)=[x P(x)]^{\\prime}\n\\]\n\nWe can assume that \\( P(x) \\) has exactly \\( n \\) zeros \\( a_{1} \\) exceeding 1 with \\( 1<a_{1}<a_{2}<\\cdots<a_{n} \\). It follows from Rolle's Theorem that \\( F(x) \\) has \\( n-1 \\) zeros \\( b_{l} \\) and \\( G(x) \\) has \\( n \\) zeros \\( c_{l} \\) with\n\\[\n1<a_{1}<b_{1}<a_{2}<b_{2}<\\cdots<b_{n-1}<a_{n}, \\quad 0<c_{1}<a_{1}<c_{2}<a_{2}<\\cdots<c_{n}<a_{n}\n\\]\n\nIf \\( b_{1} \\neq c_{1+1} \\) for all \\( i \\), the \\( b \\) 's and \\( c \\) 's are \\( 2 n-1 \\) distinct zeros of \\( Q(x) \\). So we assume that \\( b_{t}=c_{t+1}=r \\) for some \\( i \\). Then\n\\[\nP^{\\prime}(r)+r P(r)=0=r P^{\\prime}(r)+P(r)\n\\]\nand so \\( \\left(r^{2}-1\\right) P(r)=0 \\). Since \\( r=b_{1}>1, P(r)=0 \\). Since \\( a_{1}<r<a_{1+1} \\), this contradicts the fact that the \\( a \\) 's are all the zeros exceeding 1 of \\( P(x) \\). Hence \\( Q(x) \\) has at least \\( 2 n-1 \\) distinct real zeros.",
+  "vars": [
+    "x",
+    "P",
+    "Q",
+    "F",
+    "G",
+    "n",
+    "a_1",
+    "a_2",
+    "a_n",
+    "b_l",
+    "b_1",
+    "c_l",
+    "c_1",
+    "c_n",
+    "r",
+    "i",
+    "t"
+  ],
+  "params": [],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "P": "polyfunc",
+        "Q": "derivedpoly",
+        "F": "helperone",
+        "G": "helpertwo",
+        "n": "rootcount",
+        "a_1": "firstroot",
+        "a_2": "secondroot",
+        "a_n": "lastroot",
+        "b_l": "broots",
+        "b_1": "firstb",
+        "c_l": "croots",
+        "c_1": "firstc",
+        "c_n": "lastcroot",
+        "r": "sharedroot",
+        "i": "indexvar",
+        "t": "tempsym"
+      },
+      "question": "Problem A-5\nLet \\( polyfunc(variable) \\) be a polynomial with real coefficients and form the polynomial\n\\[\nderivedpoly(variable)=\\left(variable^{2}+1\\right) polyfunc(variable) polyfunc^{\\prime}(variable)+variable\\left([polyfunc(variable)]^{2}+\\left[polyfunc^{\\prime}(variable)\\right]^{2}\\right)\n\\]\n\nGiven that the equation \\( polyfunc(variable)=0 \\) has \\( rootcount \\) distinct real roots exceeding 1 , prove or disprove that the equation \\( derivedpoly(variable)=0 \\) has at least \\( 2 rootcount-1 \\) distinct real roots.",
+      "solution": "A-5.\nWe show that \\( derivedpoly(variable) \\) has at least \\( 2 rootcount-1 \\) real zeros. One finds that \\( derivedpoly(variable)=helperone(variable)\\, helpertwo(variable) \\), where\n\\[\nhelperone(variable)=polyfunc^{\\prime}(variable)+variable\\, polyfunc(variable)=e^{-variable^{2} / 2}\\left[e^{variable^{2} / 2}\\, polyfunc(variable)\\right]^{\\prime},\\qquad helpertwo(variable)=variable\\, polyfunc^{\\prime}(variable)+polyfunc(variable)=[variable\\, polyfunc(variable)]^{\\prime}\n\\]\n\nWe can assume that \\( polyfunc(variable) \\) has exactly \\( rootcount \\) zeros greater than 1, which we label \\( firstroot \\) with \\( 1<firstroot<secondroot<\\cdots<lastroot \\). It follows from Rolle's theorem that \\( helperone(variable) \\) has \\( rootcount-1 \\) zeros, call them \\( broots \\), and \\( helpertwo(variable) \\) has \\( rootcount \\) zeros, call them \\( croots \\), satisfying\n\\[\n1<firstroot<firstb<secondroot<broots_{2}<\\cdots<broots_{rootcount-1}<lastroot,\\qquad 0<firstc<firstroot<croots_{2}<secondroot<\\cdots<lastcroot<lastroot .\n\\]\n\nIf \\( firstb \\neq croots_{1+1} \\) for every \\( indexvar \\), the \\( broots \\) and \\( croots \\) together provide \\( 2 rootcount-1 \\) distinct zeros of \\( derivedpoly(variable) \\).  Suppose instead that \\( broots_{tempsym}=croots_{tempsym+1}=sharedroot \\) for some \\( indexvar \\).  Then\n\\[\npolyfunc^{\\prime}(sharedroot)+sharedroot\\, polyfunc(sharedroot)=0=sharedroot\\, polyfunc^{\\prime}(sharedroot)+polyfunc(sharedroot),\n\\]\nso \\( (sharedroot^{2}-1)\\, polyfunc(sharedroot)=0 \\).  Because \\( sharedroot=firstb>1 \\), the last relation forces \\( polyfunc(sharedroot)=0 \\).  But the chain of inequalities above shows \\( firstroot<sharedroot<secondroot \\), contradicting the assumption that \\( firstroot,secondroot,\\dots,lastroot \\) are all of the zeros of \\( polyfunc \\) exceeding 1.  Hence \\( derivedpoly(variable) \\) must possess at least \\( 2 rootcount-1 \\) distinct real zeros."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "elephants",
+        "P": "sunflower",
+        "Q": "butterfly",
+        "F": "raincloud",
+        "G": "stargazer",
+        "n": "pineapple",
+        "a_1": "marigolds",
+        "a_2": "dandelion",
+        "a_n": "blueberry",
+        "b_l": "honeycomb",
+        "b_1": "tangerine",
+        "c_l": "porcupine",
+        "c_1": "watermelon",
+        "c_n": "blackberry",
+        "r": "lampstand",
+        "i": "jellyfish",
+        "t": "rainstorm"
+      },
+      "question": "Problem A-5\nLet \\( sunflower(elephants) \\) be a polynomial with real coefficients and form the polynomial\n\\[\nbutterfly(elephants)=\\left(elephants^{2}+1\\right) sunflower(elephants) sunflower^{\\prime}(elephants)+elephants\\left([sunflower(elephants)]^{2}+\\left[sunflower^{\\prime}(elephants)\\right]^{2}\\right)\n\\]\n\nGiven that the equation \\( sunflower(elephants)=0 \\) has \\( pineapple \\) distinct real roots exceeding 1 , prove or disprove that the equation \\( butterfly(elephants)=0 \\) has at least \\( 2 pineapple-1 \\) distinct real roots.",
+      "solution": "A-5.\nWe show that \\( butterfly(elephants) \\) has at least \\( 2 pineapple-1 \\) real zeros. One finds that \\( butterfly(elephants)=raincloud(elephants) stargazer(elephants) \\), where\n\\[\nraincloud(elephants)=sunflower^{\\prime}(elephants)+elephants\\, sunflower(elephants)=e^{-elephants^{2} / 2}\\left[e^{elephants^{2} / 2}\\, sunflower(elephants)\\right]^{\\prime},\\quad\nstargazer(elephants)=elephants\\, sunflower^{\\prime}(elephants)+sunflower(elephants)=[elephants\\, sunflower(elephants)]^{\\prime}\n\\]\n\nWe can assume that \\( sunflower(elephants) \\) has exactly \\( pineapple \\) zeros \\( marigolds \\) exceeding 1 with \\( 1<marigolds<dandelion<\\cdots<blueberry \\). It follows from Rolle's Theorem that \\( raincloud(elephants) \\) has \\( pineapple-1 \\) zeros \\( honeycomb \\) and \\( stargazer(elephants) \\) has \\( pineapple \\) zeros \\( porcupine \\) with\n\\[\n1<marigolds<tangerine<dandelion<b_{2}<\\cdots<b_{n-1}<blueberry,\\quad 0<watermelon<marigolds<c_{2}<dandelion<\\cdots<blackberry<blueberry\n\\]\n\nIf \\( tangerine \\neq c_{1+1} \\) for all \\( jellyfish \\), the \\( b \\) 's and \\( c \\) 's are \\( 2 pineapple-1 \\) distinct zeros of \\( butterfly(elephants) \\). So we assume that \\( b_{rainstorm}=c_{rainstorm+1}=lampstand \\) for some \\( jellyfish \\). Then\n\\[\nsunflower^{\\prime}(lampstand)+lampstand\\, sunflower(lampstand)=0=lampstand\\, sunflower^{\\prime}(lampstand)+sunflower(lampstand)\n\\]\nand so \\( \\left(lampstand^{2}-1\\right) sunflower(lampstand)=0 \\). Since \\( lampstand=tangerine>1, sunflower(lampstand)=0 \\). Since \\( marigolds<lampstand<a_{1+1} \\), this contradicts the fact that the \\( a \\) 's are all the zeros exceeding 1 of \\( sunflower(elephants) \\). Hence \\( butterfly(elephants) \\) has at least \\( 2 pineapple-1 \\) distinct real zeros."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "dependent",
+        "P": "nonpolynomial",
+        "Q": "simpleconstant",
+        "F": "muddling",
+        "G": "voidness",
+        "n": "scarcity",
+        "a_1": "pinnacleone",
+        "a_2": "pinnacletwo",
+        "a_n": "pinnaclefinal",
+        "b_l": "infiniteindex",
+        "b_1": "infiniteone",
+        "c_l": "boundlessindex",
+        "c_1": "boundlessone",
+        "c_n": "boundlessfinal",
+        "r": "expansion",
+        "t": "terminal"
+      },
+      "question": "Problem A-5\nLet \\( nonpolynomial(dependent) \\) be a polynomial with real coefficients and form the polynomial\n\\[\nsimpleconstant(dependent)=\\left(dependent^{2}+1\\right) nonpolynomial(dependent) nonpolynomial^{\\prime}(dependent)+dependent\\left([nonpolynomial(dependent)]^{2}+\\left[nonpolynomial^{\\prime}(dependent)\\right]^{2}\\right)\n\\]\n\nGiven that the equation \\( nonpolynomial(dependent)=0 \\) has \\( scarcity \\) distinct real roots exceeding 1 , prove or disprove that the equation \\( simpleconstant(dependent)=0 \\) has at least \\( 2\\,scarcity-1 \\) distinct real roots.",
+      "solution": "A-5.\nWe show that \\( simpleconstant(dependent) \\) has at least \\( 2\\,scarcity-1 \\) real zeros. One finds that\n\\[\nsimpleconstant(dependent)=muddling(dependent)\\,voidness(dependent),\n\\]\nwhere\n\\[\n\\begin{aligned}\nmuddling(dependent)&=nonpolynomial^{\\prime}(dependent)+dependent\\,nonpolynomial(dependent)=e^{-dependent^{2}/2}\\left[e^{dependent^{2}/2} nonpolynomial(dependent)\\right]^{\\prime},\\\\\nvoidness(dependent)&=dependent\\,nonpolynomial^{\\prime}(dependent)+nonpolynomial(dependent)=[\\,dependent\\,nonpolynomial(dependent)\\,]^{\\prime}.\n\\end{aligned}\n\\]\n\nWe can assume that \\( nonpolynomial(dependent) \\) has exactly \\( scarcity \\) zeros \\( pinnacleone \\) exceeding 1 with\n\\[\n1<pinnacleone<pinnacletwo<\\cdots<pinnaclefinal.\n\\]\nIt follows from Rolle's Theorem that \\( muddling(dependent) \\) has \\( scarcity-1 \\) zeros \\( infiniteindex \\) and \\( voidness(dependent) \\) has \\( scarcity \\) zeros \\( boundlessindex \\) with\n\\[\n1<pinnacleone<infiniteone<pinnacletwo<infinite_{2}<\\cdots<infinite_{scarcity-1}<pinnaclefinal,\n\\quad 0<boundlessone<pinnacleone<boundless_{2}<pinnacletwo<\\cdots<boundlessfinal<pinnaclefinal.\n\\]\n\nIf \\( infiniteone\\neq boundless_{1+1} \\) for all \\( i \\), the infinite's and boundless's are \\( 2\\,scarcity-1 \\) distinct zeros of \\( simpleconstant(dependent) \\). So we assume that\n\\[\ninfinite_{terminal}=boundless_{terminal+1}=expansion\n\\]\nfor some \\( i \\). Then\n\\[\nnonpolynomial^{\\prime}(expansion)+expansion\\,nonpolynomial(expansion)=0=expansion\\,nonpolynomial^{\\prime}(expansion)+nonpolynomial(expansion),\n\\]\nand so\n\\[\n(expansion^{2}-1)\\,nonpolynomial(expansion)=0.\n\\]\nSince \\( expansion=infiniteone>1 \\), we have \\( nonpolynomial(expansion)=0 \\). Because \\( pinnacleone<expansion<pinnacle_{1+1} \\), this contradicts the assumption that the pinnacles are all the zeros exceeding 1 of \\( nonpolynomial(dependent) \\). Hence \\( simpleconstant(dependent) \\) has at least \\( 2\\,scarcity-1 \\) distinct real zeros."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "P": "hjgrksla",
+        "Q": "pzmxyqwe",
+        "F": "ldnvfqwe",
+        "G": "kjsdhrty",
+        "n": "frbclqae",
+        "a_1": "zbqmpvca",
+        "a_2": "pslkhrtd",
+        "a_n": "jfgsklmq",
+        "b_l": "dhgqwnzx",
+        "b_1": "xqplmnbv",
+        "c_l": "tkrsbvha",
+        "c_1": "gmvqfshp",
+        "c_n": "rnbtvsqe",
+        "r": "qlmzdnca",
+        "t": "mxfpluds"
+      },
+      "question": "Problem A-5\nLet \\( hjgrksla(qzxwvtnp) \\) be a polynomial with real coefficients and form the polynomial\n\\[\npzmxyqwe(qzxwvtnp)=\\left(qzxwvtnp^{2}+1\\right) hjgrksla(qzxwvtnp) hjgrksla^{\\prime}(qzxwvtnp)+qzxwvtnp\\left([hjgrksla(qzxwvtnp)]^{2}+\\left[hjgrksla^{\\prime}(qzxwvtnp)\\right]^{2}\\right)\n\\]\n\nGiven that the equation \\( hjgrksla(qzxwvtnp)=0 \\) has \\( frbclqae \\) distinct real roots exceeding 1 , prove or disprove that the equation \\( pzmxyqwe(qzxwvtnp)=0 \\) has at least \\( 2 frbclqae-1 \\) distinct real roots.",
+      "solution": "A-5.\nWe show that \\( pzmxyqwe(qzxwvtnp) \\) has at least \\( 2 frbclqae-1 \\) real zeros. One finds that \\( pzmxyqwe(qzxwvtnp)=ldnvfqwe(qzxwvtnp) kjsdhrty(qzxwvtnp) \\), where\n\\[\nldnvfqwe(qzxwvtnp)=hjgrksla^{\\prime}(qzxwvtnp)+qzxwvtnp hjgrksla(qzxwvtnp)=e^{-qzxwvtnp^{2} / 2}\\left[e^{qzxwvtnp^{2} / 2} hjgrksla(qzxwvtnp)\\right]^{\\prime}, \\quad kjsdhrty(qzxwvtnp)=qzxwvtnp hjgrksla^{\\prime}(qzxwvtnp)+hjgrksla(qzxwvtnp)=[qzxwvtnp hjgrksla(qzxwvtnp)]^{\\prime}\n\\]\n\nWe can assume that \\( hjgrksla(qzxwvtnp) \\) has exactly \\( frbclqae \\) zeros \\( zbqmpvca \\) exceeding 1 with \\( 1<zbqmpvca<pslkhrtd<\\cdots<jfgsklmq \\). It follows from Rolle's Theorem that \\( ldnvfqwe(qzxwvtnp) \\) has \\( frbclqae-1 \\) zeros \\( dhgqwnzx \\) and \\( kjsdhrty(qzxwvtnp) \\) has \\( frbclqae \\) zeros \\( tkrsbvha \\) with\n\\[\n1<zbqmpvca<xqplmnbv<pslkhrtd<b_{2}<\\cdots<b_{n-1}<jfgsklmq, \\quad 0<gmvqfshp<zbqmpvca<c_{2}<pslkhrtd<\\cdots<rnbtvsqe<jfgsklmq\n\\]\n\nIf \\( xqplmnbv \\neq c_{1+1} \\) for all \\( i \\), the \\( b \\) 's and \\( c \\) 's are \\( 2 frbclqae-1 \\) distinct zeros of \\( pzmxyqwe(qzxwvtnp) \\). So we assume that \\( b_{mxfpluds}=c_{mxfpluds+1}=qlmzdnca \\) for some \\( i \\). Then\n\\[\nhjgrksla^{\\prime}(qlmzdnca)+qlmzdnca hjgrksla(qlmzdnca)=0=qlmzdnca hjgrksla^{\\prime}(qlmzdnca)+hjgrksla(qlmzdnca)\n\\]\nand so \\( \\left(qlmzdnca^{2}-1\\right) hjgrksla(qlmzdnca)=0 \\). Since \\( qlmzdnca=xqplmnbv>1, hjgrksla(qlmzdnca)=0 \\). Since \\( zbqmpvca<qlmzdnca<a_{1+1} \\), this contradicts the fact that the \\( a \\) 's are all the zeros exceeding 1 of \\( hjgrksla(qzxwvtnp) \\). Hence \\( pzmxyqwe(qzxwvtnp) \\) has at least \\( 2 frbclqae-1 \\) distinct real zeros."
+    },
+    "kernel_variant": {
+      "question": "Let  \nP(x)\n be a polynomial with real coefficients.  Suppose that the equation  \nP(x)=0\n has\nm\\,(\\ge 1) distinct real roots and that all of them are strictly smaller than -1.  Define  \n\nR(x)=\\bigl(x^{2}+1\\bigr)P(x)P'(x)+x\\bigl(P(x)^{2}+P'(x)^{2}\\bigr).\n\nProve that the equation  \nR(x)=0\n possesses at least  2m-1  distinct real solutions.",
+      "solution": "1.  A convenient factorisation.\n   \n   Put\n      H(x)=P'(x)+xP(x),   K(x)=P(x)+xP'(x).\n   \n   A routine expansion gives\n      H(x)K(x)=\\bigl(P'(x)+xP(x)\\bigr)\\bigl(P(x)+xP'(x)\\bigr)\n               =(x^{2}+1)P(x)P'(x)+x\\bigl(P(x)^{2}+P'(x)^{2}\\bigr)=R(x).   (1)\n   Thus every real zero of H or of K is a real zero of R.\n\n2.  Useful rewritings.\n\n   For an arbitrary non-zero constant \\(\\lambda\\),\n      H(x)=P'(x)+xP(x)=e^{-x^{2}/2}\\,[\\,\\lambda e^{x^{2}/2}P(x)\\,]',\n   and\n      K(x)=P(x)+xP'(x)=[\\,xP(x)\\,]'.                                                 (2)\n   Hence H is the derivative of the smooth function \\(e^{x^{2}/2}P(x)\\) (up to a non-zero factor) and K is the derivative of the polynomial xP(x).\n\n3.  Zeros supplied by Rolle's theorem.\n\n   Denote the m roots of P by\n        -\\infty<\\alpha_{1}<\\alpha_{2}<\\dots<\\alpha_{m}< -1.\n\n   (a)  Zeros of H.\n        Because \\(e^{x^{2}/2}P(x)\\) vanishes at every \\(\\alpha_i\\), Rolle's theorem furnishes at least one zero of its derivative---hence of H---in every open interval (\\alpha_{j},\\alpha_{j+1})\\,(j=1,\\dots ,m-1).  Call these points\n           \\beta_{1},\\dots ,\\beta_{m-1};  then\n              \\alpha_{1}<\\beta_{1}<\\alpha_{2}<\\beta_{2}<\\dots<\\beta_{m-1}<\\alpha_{m}.        (3)\n\n   (b)  Zeros of K.\n        The polynomial xP(x) vanishes at the m numbers \\(\\alpha_i\\) and at x=0.  Applying Rolle's theorem to these m+1 zeros yields at least m zeros of its derivative K.  Label them\n           \\gamma_{1},\\dots ,\\gamma_{m}\n        so that\n           \\alpha_{1}<\\gamma_{1}<\\alpha_{2}<\\gamma_{2}<\\dots<\\alpha_{m}<\\gamma_{m}<0.        (4)\n\n4.  The two lists of zeros are disjoint.\n\n   Suppose that some real r satisfies H(r)=K(r)=0.  Solving the two equations\n          P'(r)+rP(r)=0,\\quad P(r)+rP'(r)=0\n   gives (subtract the first equation multiplied by r from the second)\n          (1-r^{2})P(r)=0.                                                (5)\n   Hence any common zero of H and K must satisfy either P(r)=0 or r=\\pm1.\n\n   *  P(r)=0 would force r to be one of the \\(\\alpha_i\\).  But the roots \\(\\alpha_i\\) are distinct, so P'(\\alpha_i)\\neq0; consequently H(\\alpha_i)=P'(\\alpha_i)\\neq0.  Thus r cannot be an \\(\\alpha_i\\).\n   \n   *  Therefore the only possible common real zeros are r=-1 or r=1.  Since all numbers in (3) and (4) lie strictly below -1, none of them equals 1, and no \\(\\beta_j\\) equals -1.  In addition, the numbers \\(\\gamma_1,\\dots ,\\gamma_{m-1}\\) are all below -1, while \\(\\gamma_m\\) lies in (\\alpha_m,0); so at most \\(\\gamma_m\\) may coincide with -1.\n\n   Consequently\n        {\\beta_1,\\dots ,\\beta_{m-1}} \\cap {\\gamma_1,\\dots ,\\gamma_m}=\\varnothing.        (6)\n   Thus the two lists of zeros obtained in (3) and (4) are pairwise distinct.  (It is immaterial whether or not -1 itself is a common zero of H and K.)\n\n5.  Counting distinct zeros of R.\n\n   From (3) we have m-1 distinct real zeros of H, and from (4) we have m distinct real zeros of K.  Because of (6) these m-1 and m numbers are all different from one another, so R(x)=H(x)K(x) possesses at least\n          (m-1)+m = 2m-1\n   distinct real zeros.\n\n   This proves the desired inequality.\n\nRemark.  The possibility that H and K both vanish at x=-1 (or at x=1) does not affect the above count: if it happens, x=-1 simply joins the already-listed m zeros of K, while remaining different from every \\(\\beta_j\\); the total number of distinct zeros of R can only increase.",
+      "_meta": {
+        "core_steps": [
+          "Factor Q(x) as (P′(x)+xP(x))·(P(x)+xP′(x)).",
+          "Rewrite P′(x)+xP(x) = e^{−x²/2}(e^{x²/2}P(x))′ and P(x)+xP′(x) = (xP(x))′.",
+          "Apply Rolle’s theorem to e^{x²/2}P(x) and xP(x) to get n−1 zeros of the first derivative factor and n zeros of the second, with the two sets interlacing the roots of P.",
+          "Count: (n−1)+(n)=2n−1 real zeros for Q(x).",
+          "Show an overlap of the two zero-sets is impossible (would force (r²−1)P(r)=0 with r>1, contradicting the list of P-roots), hence the 2n−1 zeros are distinct."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of symbols for the two factors of Q(x).",
+            "original": "F(x), G(x)"
+          },
+          "slot2": {
+            "description": "Notation for the various zeros of P, F and G.",
+            "original": "a_i, b_i, c_i"
+          },
+          "slot3": {
+            "description": "Overall non-zero constant that could multiply the integrating factor e^{x²/2} without affecting the derivative identity.",
+            "original": "implicit coefficient 1 in e^{x²/2}"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

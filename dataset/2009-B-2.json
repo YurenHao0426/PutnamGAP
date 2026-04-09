@@ -1,0 +1,156 @@
+{
+  "index": "2009-B-2",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A game involves jumping to the right on the real number line. If $a$ and $b$ are real numbers\nand $b > a$, the cost of jumping from $a$ to $b$ is $b^3-ab^2$. For what real numbers\n$c$ can one travel from $0$ to $1$ in a finite number of jumps with total cost exactly $c$?",
+  "solution": "The desired real numbers $c$ are precisely those for which $1/3 < c \\leq 1$.\nFor any positive integer $m$ and any\nsequence $0 = x_0 < x_1 < \\cdots < x_m = 1$,\nthe cost of jumping along this sequence is\n$\\sum_{i=1}^m (x_i - x_{i-1})x_i^2$. Since\n\\begin{align*}\n1 = \\sum_{i=1}^m (x_i - x_{i-1}) &\\geq \\sum_{i=1}^m (x_i - x_{i-1})x_i^2 \\\\\n&> \\sum_{i=1}^m \\int_{x_i}^{x_{i-1}} t^2\\,dt \\\\\n&= \\int_0^1 t^2\\,dt = \\frac{1}{3},\n\\end{align*}\nwe can only achieve costs $c$ for which $1/3 < c \\leq 1$.\n\nIt remains to check that any such $c$ can be achieved.\nSuppose $0 = x_0 < \\dots < x_m = 1$ is a sequence with $m \\geq 1$.\nFor $i=1,\\dots,m$,\nlet $c_i$ be the cost of the sequence $0, x_i, x_{i+1},\\dots,x_m$.\nFor $i > 1$ and $0 < y \\leq x_{i-1}$,\nthe cost of the sequence $0, y, x_{i}, \\dots, x_m$\nis\n\\[\nc_{i} + y^3 + (x_i - y)x_i^2 - x_i^3\n= c_i - y(x_i^2 - y^2),\n\\]\nwhich is less than $c_i$ but approaches $c_i$ as $y \\to 0$.\nBy continuity, for $i=2,\\dots,m$,\nevery value in the interval $[c_{i-1}, c_{i})$ can be achieved,\nas can $c_m = 1$ by the sequence $0,1$.\n\nTo show that all costs $c$ with $1/3 < c \\leq 1$ can be achieved, it now suffices\nto check that for every $\\epsilon > 0$, there exists a sequence with cost at most\n$1/3 + \\epsilon$. For instance, if we take $x_i = i/m$ for $i=0,\\dots,m$, the cost\nbecomes\n\\[\n\\frac{1}{m^3} (1^2 + \\cdots + m^2)\n = \\frac{(m+1)(2m+1)}{6m^2},\n\\]\nwhich converges to $1/3$ as $m \\to +\\infty$.\n\n\\textbf{Reinterpretation.} The cost of jumping along a particular sequence is an\nupper Riemann sum of the function $t^2$. The fact that this function admits a Riemann\nintegral implies that for any $\\epsilon > 0$, there exists $\\delta_0$ such that the\ncost of the sequence $x_0,\\dots,x_m$ is at most $1/3 + \\epsilon$ as long as\n$\\max_i \\{x_i - x_{i-1}\\} < \\epsilon$. (The computation of the integral using the\nsequence $x_i = i/m$ was already known to Archimedes.)",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "c_i",
+    "c_i-1",
+    "c_m",
+    "i",
+    "t",
+    "x_0",
+    "x_1",
+    "x_i",
+    "x_i-1",
+    "x_i+1",
+    "x_m",
+    "y"
+  ],
+  "params": [
+    "m",
+    "\\\\epsilon",
+    "\\\\delta_0"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "startpoint",
+        "b": "endpoint",
+        "c": "totalcost",
+        "c_i": "costindex",
+        "c_i-1": "costprev",
+        "c_m": "costfinal",
+        "i": "iterator",
+        "t": "integrand",
+        "x_0": "pointzero",
+        "x_1": "pointone",
+        "x_i": "pointvar",
+        "x_i-1": "pointpre",
+        "x_i+1": "pointnext",
+        "x_m": "pointend",
+        "y": "auxpoint",
+        "m": "partition",
+        "\\epsilon": "accuracy",
+        "\\delta_0": "threshold"
+      },
+      "question": "A game involves jumping to the right on the real number line. If $startpoint$ and $endpoint$ are real numbers\nand $endpoint > startpoint$, the cost of jumping from $startpoint$ to $endpoint$ is $endpoint^3-startpoint\\,endpoint^2$. For what real numbers\n$totalcost$ can one travel from $0$ to $1$ in a finite number of jumps with total cost exactly $totalcost$?",
+      "solution": "The desired real numbers $totalcost$ are precisely those for which $\\tfrac13 < totalcost \\le 1$.\nFor any positive integer $partition$ and any\nsequence $0 = pointzero < pointone < \\cdots < pointend = 1$, the cost of jumping along this sequence is\n$\\displaystyle \\sum_{iterator=1}^{partition}(pointvar-pointpre)pointvar^2$. Since\n\\begin{align*}\n1 = \\sum_{iterator=1}^{partition}(pointvar-pointpre) &\\ge \\sum_{iterator=1}^{partition}(pointvar-pointpre)pointvar^2\\\\\n&> \\sum_{iterator=1}^{partition}\\int_{pointvar}^{pointpre}integrand^2\\,d integrand\\\\\n&= \\int_0^1 integrand^2\\,d integrand = \\frac{1}{3},\n\\end{align*}\nwe can only achieve costs $totalcost$ for which $\\tfrac13 < totalcost \\le 1$.\n\nIt remains to check that any such $totalcost$ can be achieved.\nSuppose $0 = pointzero < \\dots < pointend = 1$ is a sequence with $partition \\ge 1$.\nFor $iterator=1,\\dots,partition$, let $costindex$ be the cost of the sequence $0, pointvar, pointnext,\\dots, pointend$.\nFor $iterator>1$ and $0 < auxpoint \\le pointpre$, the cost of the sequence $0, auxpoint, pointvar, \\dots, pointend$ is\n\\[\ncostindex + auxpoint^3 + (pointvar-auxpoint)pointvar^2 - pointvar^3\n= costindex - auxpoint(pointvar^2 - auxpoint^2),\n\\]\nwhich is less than $costindex$ but approaches $costindex$ as $auxpoint \\to 0$.\nBy continuity, for $iterator=2,\\dots,partition$, every value in the interval $[costprev, costindex)$ can be achieved, as can\n$costfinal = 1$ by the sequence $0,1$.\n\nTo show that all costs $totalcost$ with $\\tfrac13 < totalcost \\le 1$ can be achieved, it now suffices to check that for every $accuracy > 0$, there exists a sequence with cost at most $\\tfrac13 + accuracy$. For instance, if we take $pointvar = iterator/partition$ for $iterator=0,\\dots,partition$, the cost becomes\n\\[\n\\frac{1}{partition^3}(1^2+\\cdots+partition^2) = \\frac{(partition+1)(2partition+1)}{6partition^2},\n\\]\nwhich converges to $\\tfrac13$ as $partition \\to +\\infty$.\n\n\\textbf{Reinterpretation.} The cost of jumping along a particular sequence is an upper Riemann sum of the function $integrand^2$. The fact that this function admits a Riemann integral implies that for any $accuracy > 0$, there exists $threshold$ such that the cost of the sequence $pointzero,\\dots,pointend$ is at most $\\tfrac13 + accuracy$ as long as $\\max_{iterator}(pointvar-pointpre) < accuracy$. (The computation of the integral using the sequence $pointvar = iterator/partition$ was already known to Archimedes.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "sunflower",
+        "b": "expedition",
+        "c": "starfish",
+        "c_i": "lighthouse",
+        "c_i-1": "hurricane",
+        "c_m": "porcupine",
+        "t": "sandcastle",
+        "x_0": "thunderstorm",
+        "x_1": "bracelet",
+        "x_i": "marigold",
+        "x_i-1": "crocodile",
+        "x_i+1": "pinecone",
+        "x_m": "swallows",
+        "y": "sailboat",
+        "m": "avalanche",
+        "\\epsilon": "asteroid",
+        "\\delta_0": "gemstone"
+      },
+      "question": "A game involves jumping to the right on the real number line. If $sunflower$ and $expedition$ are real numbers\nand $expedition > sunflower$, the cost of jumping from $sunflower$ to $expedition$ is $expedition^3 - sunflower\\,expedition^{2}$. For what real numbers\n$starfish$ can one travel from $0$ to $1$ in a finite number of jumps with total cost exactly $starfish$?",
+      "solution": "The desired real numbers $starfish$ are precisely those for which $1/3 < starfish \\leq 1$.\nFor any positive integer $avalanche$ and any\nsequence $0 = thunderstorm < bracelet < \\cdots < swallows = 1$,\nthe cost of jumping along this sequence is\n$\\sum_{i=1}^{avalanche} (marigold - crocodile)\\,marigold^{2}$. Since\n\\begin{align*}\n1 = \\sum_{i=1}^{avalanche} (marigold - crocodile) &\\geq \\sum_{i=1}^{avalanche} (marigold - crocodile)\\,marigold^{2} \\\\\n&> \\sum_{i=1}^{avalanche} \\int_{marigold}^{crocodile} sandcastle^{2}\\,d sandcastle \\\\\n&= \\int_0^1 sandcastle^{2}\\,d sandcastle = \\frac{1}{3},\n\\end{align*}\nwe can only achieve costs $starfish$ for which $1/3 < starfish \\leq 1$.\n\nIt remains to check that any such $starfish$ can be achieved.\nSuppose $0 = thunderstorm < \\dots < swallows = 1$ is a sequence with $avalanche \\geq 1$.\nFor $i=1,\\dots,avalanche$, let $lighthouse$ be the cost of the sequence $0, marigold, pinecone,\\dots,swallows$.\nFor $i > 1$ and $0 < sailboat \\leq crocodile$, the cost of the sequence $0, sailboat, marigold, \\dots, swallows$ is\n\\[\nlighthouse + sailboat^{3} + (marigold - sailboat)\\,marigold^{2} - marigold^{3}\n= lighthouse - sailboat\\,(marigold^{2} - sailboat^{2}),\n\\]\nwhich is less than $lighthouse$ but approaches $lighthouse$ as $sailboat \\to 0$.\nBy continuity, for $i=2,\\dots,avalanche$, every value in the interval $[hurricane, lighthouse)$ can be achieved,\nas can $porcupine = 1$ by the sequence $0,1$.\n\nTo show that all costs $starfish$ with $1/3 < starfish \\leq 1$ can be achieved, it now suffices to check\nthat for every $asteroid > 0$, there exists a sequence with cost at most $1/3 + asteroid$.\nFor instance, if we take $marigold = i/avalanche$ for $i=0,\\dots,avalanche$, the cost becomes\n\\[\n\\frac{1}{avalanche^{3}}(1^{2} + \\cdots + avalanche^{2})\n= \\frac{(avalanche+1)(2\\,avalanche+1)}{6\\,avalanche^{2}},\n\\]\nwhich converges to $1/3$ as $avalanche \\to +\\infty$.\n\n\\textbf{Reinterpretation.} The cost of jumping along a particular sequence is an upper Riemann sum of the\nfunction $sandcastle^{2}$. The fact that this function admits a Riemann integral implies that for any $asteroid > 0$, there exists\n$gemstone$ such that the cost of the sequence $thunderstorm,\\dots,swallows$ is at most $1/3 + asteroid$ as long as\n$\\max_i \\{marigold - crocodile\\} < asteroid$. (The computation of the integral using the sequence\n$marigold = i/avalanche$ was already known to Archimedes.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "terminal",
+        "b": "smallest",
+        "c": "windfall",
+        "c_i": "largesse",
+        "c_i-1": "donation",
+        "c_m": "abundance",
+        "i": "entirety",
+        "t": "timeless",
+        "x_0": "endpoint",
+        "x_1": "terminus",
+        "x_i": "destination",
+        "x_i-1": "originator",
+        "x_i+1": "departure",
+        "x_m": "commence",
+        "y": "vastness",
+        "m": "continuum",
+        "\\epsilon": "gigantic",
+        "\\delta_0": "enormity"
+      },
+      "question": "A game involves jumping to the right on the real number line. If $terminal$ and $smallest$ are real numbers\nand $smallest > terminal$, the cost of jumping from $terminal$ to $smallest$ is $smallest^3-terminal\\,smallest^2$. For what real numbers\n$windfall$ can one travel from $0$ to $1$ in a finite number of jumps with total cost exactly $windfall$?",
+      "solution": "The desired real numbers $windfall$ are precisely those for which $1/3 < windfall \\leq 1$.\nFor any positive integer $continuum$ and any\nsequence $0 = endpoint < terminus < \\cdots < commence = 1$,\nthe cost of jumping along this sequence is\n$\\sum_{entirety=1}^{continuum} (destination - originator)destination^2$.\nSince\n\\begin{align*}\n1 = \\sum_{entirety=1}^{continuum} (destination - originator) &\\geq \\sum_{entirety=1}^{continuum} (destination - originator)destination^2 \\\\\n&> \\sum_{entirety=1}^{continuum} \\int_{destination}^{originator} timeless^2\\,d timeless \\\\\n&= \\int_0^1 timeless^2\\,d timeless = \\frac{1}{3},\n\\end{align*}\nwe can only achieve costs $windfall$ for which $1/3 < windfall \\leq 1$.\n\nIt remains to check that any such $windfall$ can be achieved.\nSuppose $0 = endpoint < \\dots < commence = 1$ is a sequence with $continuum \\geq 1$.\nFor $entirety=1,\\dots,continuum$,\nlet $largesse$ be the cost of the sequence $0, destination, departure,\\dots,commence$.\nFor $entirety > 1$ and $0 < vastness \\leq originator$,\nthe cost of the sequence $0, vastness, destination, \\dots, commence$ is\n\\[\nlargesse + vastness^3 + (destination - vastness)destination^2 - destination^3\n= largesse - vastness(destination^2 - vastness^2),\n\\]\nwhich is less than $largesse$ but approaches $largesse$ as $vastness \\to 0$.\nBy continuity, for $entirety=2,\\dots,continuum$,\nevery value in the interval $[donation, largesse)$ can be achieved,\nas can $abundance = 1$ by the sequence $0,1$.\n\nTo show that all costs $windfall$ with $1/3 < windfall \\leq 1$ can be achieved, it now suffices\nto check that for every $gigantic > 0$, there exists a sequence with cost at most\n$1/3 + gigantic$. For instance, if we take $destination = entirety/continuum$ for $entirety=0,\\dots,continuum$, the cost\nbecomes\n\\[\n\\frac{1}{continuum^3} (1^2 + \\cdots + continuum^2)\n = \\frac{(continuum+1)(2continuum+1)}{6continuum^2},\n\\]\nwhich converges to $1/3$ as $continuum \\to +\\infty$.\n\n\\textbf{Reinterpretation.} The cost of jumping along a particular sequence is an upper Riemann sum of the function $timeless^2$. The fact that this function admits a Riemann integral implies that for any $gigantic > 0$, there exists $enormity$ such that the cost of the sequence $endpoint,\\dots,commence$ is at most $1/3 + gigantic$ as long as $\\max_{entirety} \\{destination - originator\\} < gigantic$. (The computation of the integral using the sequence $destination = entirety/continuum$ was already known to Archimedes.)"
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "brgmlswz",
+        "c_i": "kndjvqpo",
+        "c_i-1": "zcsfxeua",
+        "c_m": "ldowrngi",
+        "i": "pivchzqe",
+        "t": "mlekfaru",
+        "x_0": "afzxsqwe",
+        "x_1": "vklmnqpt",
+        "x_i": "guxsnbre",
+        "x_i-1": "ojprytcm",
+        "x_i+1": "fvdhqazx",
+        "x_m": "scrlivuw",
+        "y": "dernmpqc",
+        "m": "rwkcyhbt",
+        "\\epsilon": "vysqnjlo",
+        "\\delta_0": "cakvzerw"
+      },
+      "question": "A game involves jumping to the right on the real number line. If $qzxwvtnp$ and $hjgrksla$ are real numbers\nand $hjgrksla > qzxwvtnp$, the cost of jumping from $qzxwvtnp$ to $hjgrksla$ is $hjgrksla^3-qzxwvtnp hjgrksla^2$. For what real numbers\n$brgmlswz$ can one travel from $0$ to $1$ in a finite number of jumps with total cost exactly $brgmlswz$?",
+      "solution": "The desired real numbers $brgmlswz$ are precisely those for which $1/3 < brgmlswz \\leq 1$.\nFor any positive integer $rwkcyhbt$ and any\nsequence $0 = afzxsqwe < vklmnqpt < \\cdots < scrlivuw = 1$, the cost of jumping along this sequence is\n$\\sum_{pivchzqe=1}^{rwkcyhbt} (guxsnbre - ojprytcm)guxsnbre^2$. Since\n\\begin{align*}\n1 = \\sum_{pivchzqe=1}^{rwkcyhbt} (guxsnbre - ojprytcm) &\\geq \\sum_{pivchzqe=1}^{rwkcyhbt} (guxsnbre - ojprytcm)guxsnbre^2 \\\\\n&> \\sum_{pivchzqe=1}^{rwkcyhbt} \\int_{guxsnbre}^{ojprytcm} mlekfaru^2\\,d mlekfaru \\\\\n&= \\int_0^1 mlekfaru^2\\,d mlekfaru = \\frac{1}{3},\n\\end{align*}\nwe can only achieve costs $brgmlswz$ for which $1/3 < brgmlswz \\leq 1$.\n\nIt remains to check that any such $brgmlswz$ can be achieved.\nSuppose $0 = afzxsqwe < \\dots < scrlivuw = 1$ is a sequence with $rwkcyhbt \\geq 1$.\nFor $pivchzqe=1,\\dots,rwkcyhbt$, let $kndjvqpo$ be the cost of the sequence $0, guxsnbre, fvdhqazx,\\dots,scrlivuw$.\nFor $pivchzqe > 1$ and $0 < dernmpqc \\leq ojprytcm$, the cost of the sequence $0, dernmpqc, guxsnbre, \\dots, scrlivuw$ is\n\\[\nkndjvqpo + dernmpqc^3 + (guxsnbre - dernmpqc)guxsnbre^2 - guxsnbre^3\n= kndjvqpo - dernmpqc(guxsnbre^2 - dernmpqc^2),\n\\]\nwhich is less than $kndjvqpo$ but approaches $kndjvqpo$ as $dernmpqc \\to 0$.\nBy continuity, for $pivchzqe=2,\\dots,rwkcyhbt$, every value in the interval $[zcsfxeua, kndjvqpo)$ can be achieved, as can $ldowrngi = 1$ by the sequence $0,1$.\n\nTo show that all costs $brgmlswz$ with $1/3 < brgmlswz \\leq 1$ can be achieved, it now suffices to check that for every $vysqnjlo > 0$, there exists a sequence with cost at most $1/3 + vysqnjlo$.\nFor instance, if we take $guxsnbre = pivchzqe/rwkcyhbt$ for $pivchzqe=0,\\dots,rwkcyhbt$, the cost becomes\n\\[\n\\frac{1}{rwkcyhbt^3} (1^2 + \\cdots + rwkcyhbt^2)\n = \\frac{(rwkcyhbt+1)(2rwkcyhbt+1)}{6rwkcyhbt^2},\n\\]\nwhich converges to $1/3$ as $rwkcyhbt \\to +\\infty$.\n\n\\textbf{Reinterpretation.} The cost of jumping along a particular sequence is an upper Riemann sum of the function $mlekfaru^2$.\nThe fact that this function admits a Riemann integral implies that for any $vysqnjlo > 0$, there exists $cakvzerw$ such that the cost of the sequence $afzxsqwe,\\dots,scrlivuw$ is at most $1/3 + vysqnjlo$ as long as $\\max_{pivchzqe} \\{guxsnbre - ojprytcm\\} < vysqnjlo$.\n(The computation of the integral using the sequence $guxsnbre = pivchzqe/rwkcyhbt$ was already known to Archimedes.)"
+    },
+    "kernel_variant": {
+      "question": "A game is played on the real number line.  For real numbers a<b the (right-hand) jump from a to b costs\n\n        cost(a\\to b)=b^4-ab^3.\n\nStarting at 0 you must reach 2 by a finite sequence of right-hand jumps\n\n        0=x_0<x_1<\\cdots <x_m=2.\n\nFor which real numbers c can the total cost\n\n        C(x_0,x_1,\\ldots ,x_m)=\\sum _{i=1}^{m}cost(x_{i-1}\\to x_i)\n\nbe made exactly equal to c ?",
+      "solution": "Answer.  A total cost can be realised exactly when\n                    4 < c \\leq  16.\n\nProof.\n\n1.  Universal lower and upper bounds\n   ---------------------------------\n   For a single jump x_{i-1}\\to x_i we have\n        cost(x_{i-1}\\to x_i)=x_i^4-x_{i-1}x_i^3=(x_i-x_{i-1})x_i^3.\n   Therefore\n        C=\\sum _{i=1}^{m}(x_i-x_{i-1})x_i^3.             (1)\n\n   Because t\\mapsto t^3 is increasing on [0,2], the right-hand sum in (1) is an\n   upper Riemann sum for \\int _0^2t^3dt; hence\n        C > \\int _0^2 t^3dt = 4.                              (2)\n\n   On the other hand x_i\\leq 2, so each term in (1) is at most\n        (x_i-x_{i-1})\\cdot 2^3 = 8(x_i-x_{i-1}),\n   which gives\n        C \\leq  8\\cdot (2-0)=16.                               (3)\n   Thus every attainable cost satisfies\n                      4 < C \\leq  16.                    (\\star )\n\n2.  A family of partitions that attains every value in (4,16]\n   ---------------------------------------------------------\n   Fix an integer N\\geq 2 and a parameter k with 0<k\\leq 2.  Consider the partition\n        P_N(k): 0, k, k+h, k+2h,\\ldots ,k+Nh = 2,\n   where h=(2-k)/N.  There are N+1 jumps, the first of length k and the\n   remaining N jumps all of length h.  Let\n        C_N(k) = k^4 + \\sum _{j=1}^{N} h (k+jh)^3.          (4)\n   Plainly k\\mapsto C_N(k) is continuous on [0,2].\n\n   End-values.  Directly from (4)\n        C_N(2)=2^4=16.                                 (5)\n   Taking k\\to 0^+ while keeping N fixed gives\n        C_N(0^+)=4\\left(1+\\dfrac{1}{N}\\right)^{2}.      (6)\n   This number exceeds 4 for every N.\n\n   A value strictly smaller than C_N(0^+).  What we really need is a single\n   point where C_N drops below the value in (6).  Set k=2/N (note that\n   k>0 because N\\geq 2).  Elementary but careful algebra based on (4) yields\n\n        C_N\\!\\left(\\tfrac{2}{N}\\right)\n            =4+\\frac{8}{N}-\\frac{4}{N^{2}}-\\frac{8}{N^{3}}+\\frac{4}{N^{4}}\n             +\\frac{16}{N^{5}}-\\frac{4}{N^{6}}.        (7)\n\n   Compare this with (6):\n        C_N(0^+)-C_N\\!\\left(\\tfrac{2}{N}\\right)\n          =  \\frac{8}{N^{2}}+\\frac{8}{N^{3}}-\\frac{4}{N^{4}}-\\frac{16}{N^{5}}+\\frac{4}{N^{6}}\n          =  \\frac{8N^{4}+8N^{3}-4N^{2}-16N+4}{N^{6}}. (8)\n   The numerator in (8) is 8N^{4}+8N^{3}-4N^{2}-16N+4>0 for every N\\geq 2,\n   so indeed\n        C_N\\!\\left(\\tfrac{2}{N}\\right) < C_N(0^+).      (9)\n   Consequently the image of the continuous map k\\mapsto C_N(k) is an interval\n        [m_N,16] with 4<m_N<C_N(0^+).                   (10)\n\n   Approximating an arbitrary c\\in (4,16].\n   ------------------------------------\n   Given c with 4<c\\leq 16, choose N so large that\n        C_N(0^+)=4(1+1/N)^{2}<c.                        (11)\n   Because m_N<c\\leq 16 and m_N\\leq C_N(0^+) by (10), the value c lies inside the\n   image interval [m_N,16].  By continuity there exists k\\in (0,2] such that\n        C_N(k)=c.                                      (12)\n   The partition P_N(k) therefore realises the cost c.\n\n3.  Conclusion\n   -----------\n   Part 1 showed that every attainable cost lies in (4,16];\n   Part 2 showed that every number in that interval is attainable.\n   Hence the set of attainable costs is exactly (4,16], as claimed. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Rewrite each jump cost as (b−a)·b², so the total cost for 0=x₀<⋯<x_m=1 is Σ (x_i−x_{i−1})x_i² — an upper Riemann sum for f(t)=t² on [0,1].",
+          "Because t² is increasing, ∫₀¹ t²dt < Σ (x_i−x_{i−1})x_i² ≤ Σ (x_i−x_{i−1})·1 = 1, giving 1/3 < cost ≤ 1.",
+          "Uniform partitions with mesh →0 (e.g., x_i=i/m) make the upper sum arbitrarily close to 1/3 from above.",
+          "Moving the first (or any) breakpoint continuously varies the cost, filling every value between two attainable sums; inductively this produces all costs in (1/3,1]."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Final point of the journey (currently the target right-endpoint of the interval).",
+            "original": 1
+          },
+          "slot2": {
+            "description": "Power of b in the cost formula: jumps have cost (b−a)·b^k (here k=2, coming from b³−ab²).",
+            "original": 2
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

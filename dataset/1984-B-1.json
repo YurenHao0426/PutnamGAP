@@ -1,0 +1,90 @@
+{
+  "index": "1984-B-1",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-1\nLet \\( n \\) be a positive integer, and define\n\\[\nf(n)=1!+2!+\\cdots+n!\n\\]\n\nFind polynomials \\( P(x) \\) and \\( Q(x) \\) such that\n\\[\nf(n+2)=P(n) f(n+1)+Q(n) f(n)\n\\]\nfor all \\( n \\geqslant 1 \\).",
+  "solution": "B-1.\nWe have\n\\[\nf(n+2)-f(n+1)=(n+2)!=(n+2)(n+1)!=(n+2)[f(n+1)-f(n)] .\n\\]\n\nIt follows that we can take \\( P(x)=x+3 \\) and \\( Q(x)=-x-2 \\).",
+  "vars": [
+    "n",
+    "x"
+  ],
+  "params": [
+    "f",
+    "P",
+    "Q"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "x": "inputvar",
+        "f": "sumfactor",
+        "P": "polyfirst",
+        "Q": "polysecond"
+      },
+      "question": "Problem B-1\nLet \\( indexvar \\) be a positive integer, and define\n\\[\nsumfactor(indexvar)=1!+2!+\\cdots+indexvar!\n\\]\n\nFind polynomials \\( polyfirst(inputvar) \\) and \\( polysecond(inputvar) \\) such that\n\\[\nsumfactor(indexvar+2)=polyfirst(indexvar) sumfactor(indexvar+1)+polysecond(indexvar) sumfactor(indexvar)\n\\]\nfor all \\( indexvar \\geqslant 1 \\).",
+      "solution": "We have\n\\[\nsumfactor(indexvar+2)-sumfactor(indexvar+1)=(indexvar+2)!=(indexvar+2)(indexvar+1)!=(indexvar+2)[sumfactor(indexvar+1)-sumfactor(indexvar)] .\n\\]\n\nIt follows that we can take \\( polyfirst(inputvar)=inputvar+3 \\) and \\( polysecond(inputvar)=-inputvar-2 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "longitude",
+        "x": "photograph",
+        "f": "cylinder",
+        "P": "sandwich",
+        "Q": "backpack"
+      },
+      "question": "Problem B-1\nLet \\( longitude \\) be a positive integer, and define\n\\[\ncylinder(longitude)=1!+2!+\\cdots+longitude!\n\\]\n\nFind polynomials \\( sandwich(photograph) \\) and \\( backpack(photograph) \\) such that\n\\[\ncylinder(longitude+2)=sandwich(longitude) cylinder(longitude+1)+backpack(longitude) cylinder(longitude)\n\\]\nfor all \\( longitude \\geqslant 1 \\).",
+      "solution": "B-1.\nWe have\n\\[\ncylinder(longitude+2)-cylinder(longitude+1)=(longitude+2)!=(longitude+2)(longitude+1)!=(longitude+2)[cylinder(longitude+1)-cylinder(longitude)] .\n\\]\n\nIt follows that we can take \\( sandwich(photograph)=photograph+3 \\) and \\( backpack(photograph)=-photograph-2 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "negativeindex",
+        "x": "constantvalue",
+        "f": "fixedvalue",
+        "P": "nonpolynomial",
+        "Q": "irrational"
+      },
+      "question": "Problem B-1\nLet \\( negativeindex \\) be a positive integer, and define\n\\[\nfixedvalue(negativeindex)=1!+2!+\\cdots+negativeindex!\n\\]\n\nFind polynomials \\( nonpolynomial(constantvalue) \\) and \\( irrational(constantvalue) \\) such that\n\\[\nfixedvalue(negativeindex+2)=nonpolynomial(negativeindex) fixedvalue(negativeindex+1)+irrational(negativeindex) fixedvalue(negativeindex)\n\\]\nfor all \\( negativeindex \\geqslant 1 \\).",
+      "solution": "B-1.\nWe have\n\\[\nfixedvalue(negativeindex+2)-fixedvalue(negativeindex+1)=(negativeindex+2)!=(negativeindex+2)(negativeindex+1)!=(negativeindex+2)[fixedvalue(negativeindex+1)-fixedvalue(negativeindex)] .\n\\]\n\nIt follows that we can take \\( nonpolynomial(constantvalue)=constantvalue+3 \\) and \\( irrational(constantvalue)=-constantvalue-2 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "x": "hjgrksla",
+        "f": "bvxrtkwe",
+        "P": "sdlkfjwe",
+        "Q": "aowpeiqu"
+      },
+      "question": "Problem B-1\nLet \\( qzxwvtnp \\) be a positive integer, and define\n\\[\nbvxrtkwe(qzxwvtnp)=1!+2!+\\cdots+qzxwvtnp!\n\\]\n\nFind polynomials \\( sdlkfjwe(hjgrksla) \\) and \\( aowpeiqu(hjgrksla) \\) such that\n\\[\nbvxrtkwe(qzxwvtnp+2)=sdlkfjwe(qzxwvtnp) bvxrtkwe(qzxwvtnp+1)+aowpeiqu(qzxwvtnp) bvxrtkwe(qzxwvtnp)\n\\]\nfor all \\( qzxwvtnp \\geqslant 1 \\).",
+      "solution": "B-1.\nWe have\n\\[\nbvxrtkwe(qzxwvtnp+2)-bvxrtkwe(qzxwvtnp+1)=(qzxwvtnp+2)!=(qzxwvtnp+2)(qzxwvtnp+1)!=(qzxwvtnp+2)[bvxrtkwe(qzxwvtnp+1)-bvxrtkwe(qzxwvtnp)] .\n\\]\n\nIt follows that we can take \\( sdlkfjwe(hjgrksla)=hjgrksla+3 \\) and \\( aowpeiqu(hjgrksla)=-hjgrksla-2 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $n$ be a non-negative integer and define\n\\[\nf(n)=0!+1!+2!+\\dots +n!.\n\\]\nFind polynomials $P(x)$ and $Q(x)$ such that\n\\[\nf(n+3)=P(n)\\,f(n+2)+Q(n)\\,f(n+1)\n\\]\nholds for every $n\\ge 0$.",
+      "solution": "First note that for every n\\geq 0\n\\[f(n+3)-f(n+2)=(n+3)!\\]\nUsing the factorial identity (n+3)!=(n+3)(n+2)! we obtain\n\\[f(n+3)-f(n+2)=(n+3)(n+2)!\\]\nBecause f(n+2)-f(n+1)=(n+2)!, we may substitute (n+2)! = f(n+2)-f(n+1) to get\n\\[f(n+3)-f(n+2)=(n+3)\\bigl[f(n+2)-f(n+1)\\bigr]\\]\nRearranging gives\n\\[f(n+3)=(n+3)f(n+2)-(n+3)f(n+1)+f(n+2)\n      =(n+4)f(n+2)-(n+3)f(n+1).\\]\nTherefore the required polynomials are\n\\[P(x)=x+4\\quad\\text{and}\\quad Q(x)=-(x+3),\\]\nwhich indeed satisfy\n\\[f(n+3)=(n+4)f(n+2)-(n+3)f(n+1)\\qquad(n\\geq 0).\\]\nThis completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Write the forward difference  f(n+2) − f(n+1)  as the new summand  (n+2)!.",
+          "Use the factorial identity  (n+2)! = (n+2)(n+1)!.",
+          "Recognize  (n+1)! = f(n+1) − f(n).",
+          "Substitute and collect terms to obtain  f(n+2) = (n+3)f(n+1) − (n+2)f(n)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Fixed forward step in the target recurrence  f(n+Δ) = …  (currently Δ = 2).  Any other positive integer step would admit the same ‘difference-of-sums’ argument repeated Δ times.",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "Lower limit of the defining sum for  f(n) (now starts at 1!).  Shifting to 0! or any other constant starting index leaves the difference method unchanged.",
+            "original": "1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

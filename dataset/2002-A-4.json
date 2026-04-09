@@ -1,0 +1,135 @@
+{
+  "index": "2002-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "In Determinant Tic-Tac-Toe, Player 1 enters a 1 in an empty\n$3 \\times 3$ matrix. Player 0 counters with a 0 in a vacant position,\nand play continues in turn until the $3 \\times 3$ matrix is\ncompleted with five 1's and four 0's. Player 0 wins if the\ndeterminant is 0 and player 1 wins otherwise. Assuming both\nplayers pursue optimal strategies, who will win and how?",
+  "solution": "(partly due to David Savitt)\nPlayer 0 wins with optimal play. In fact, we prove that Player 1 cannot\nprevent Player 0 from creating a row of all zeroes, a column of all\nzeroes, or a $2 \\times 2$ submatrix of all zeroes. Each of these forces\nthe determinant of the matrix to be zero.\n\nFor $i,j=1, 2,3$, let $A_{ij}$ denote the position in row $i$ and\ncolumn $j$. Without loss of generality, we may assume that Player\n1's first move is at $A_{11}$. Player 0 then plays at $A_{22}$:\n\\[\n\\begin{pmatrix}\n1 & * & * \\\\\n* & 0 & * \\\\\n* & * & *\n\\end{pmatrix}\n\\]\nAfter Player 1's second move, at least one of $A_{23}$ and $A_{32}$\nremains vacant. Without loss of generality, assume $A_{23}$ remains\nvacant; Player 0 then plays there.\n\nAfter Player 1's third move, Player 0 wins by playing at $A_{21}$ if that\nposition is unoccupied. So assume instead that Player 1 has played there.\nThus of Player 1's three moves so far, two are at $A_{11}$ and $A_{21}$.\nHence for $i$ equal to one of 1 or 3, and for $j$ equal to one of 2 or 3,\nthe following are both true:\n\\begin{enumerate}\n\\item[(a)]\nThe $2 \\times 2$ submatrix formed by rows 2 and $i$ and by columns\n2 and 3 contains two zeroes and two empty positions.\n\\item[(b)]\nColumn $j$ contains one zero and two empty positions.\n\\end{enumerate}\nPlayer 0 next plays at $A_{ij}$. To prevent a zero column, Player 1\nmust play in column $j$, upon which Player 0 completes the $2 \\times 2$\nsubmatrix in (a) for the win.\n\nNote: one can also solve this problem directly by making a tree of\npossible play sequences. This tree can be considerably collapsed\nusing symmetries: the symmetry between rows and columns, the invariance\nof the outcome under reordering of rows or columns, and the fact that\nthe scenario after a sequence of moves does not depend on the order of\nthe moves (sometimes called ``transposition invariance'').\n\nNote (due to Paul Cheng):\none can reduce Determinant\nTic-Tac-Toe to a variant of ordinary tic-tac-toe.\nNamely, consider a tic-tac-toe grid\nlabeled as follows:\n\\[\n\\begin{array}{c|c|c}\nA_{11} & A_{22} & A_{33} \\\\\n\\hline\nA_{23} & A_{31} & A_{12} \\\\\n\\hline\nA_{32} & A_{13} & A_{21}\n\\end{array}\n\\]\nThen each term in the expansion of the determinant occurs in a row\nor column of the grid. Suppose Player 1 first plays in the top left.\nPlayer 0 wins by playing first in the top row, and second in the left\ncolumn. Then there are only one row and column left for Player 1\nto threaten, and Player 1 cannot already threaten both on the third move,\nso Player 0 has time to block both.",
+  "vars": [
+    "A_ij",
+    "A_11",
+    "A_22",
+    "A_23",
+    "A_32",
+    "A_21",
+    "A_33",
+    "A_31",
+    "A_12",
+    "A_13",
+    "i",
+    "j"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A_ij": "matrixentry",
+        "A_11": "entryoneone",
+        "A_22": "entrytwotwo",
+        "A_23": "entrytwothree",
+        "A_32": "entrythreetwo",
+        "A_21": "entrytwoone",
+        "A_33": "entrythreethree",
+        "A_31": "entrythreeone",
+        "A_12": "entryonetwo",
+        "A_13": "entryonethree",
+        "i": "rowindex",
+        "j": "colindex"
+      },
+      "question": "In Determinant Tic-Tac-Toe, Player 1 enters a 1 in an empty\n$3 \\times 3$ matrix. Player 0 counters with a 0 in a vacant position,\nand play continues in turn until the $3 \\times 3$ matrix is\ncompleted with five 1's and four 0's. Player 0 wins if the\ndeterminant is 0 and player 1 wins otherwise. Assuming both\nplayers pursue optimal strategies, who will win and how?",
+      "solution": "(partly due to David Savitt)\nPlayer 0 wins with optimal play. In fact, we prove that Player 1 cannot\nprevent Player 0 from creating a row of all zeroes, a column of all\nzeroes, or a $2 \\times 2$ submatrix of all zeroes. Each of these forces\nthe determinant of the matrix to be zero.\n\nFor $rowindex , colindex = 1, 2,3$, let $matrixentry$ denote the position in row $rowindex$ and\ncolumn $colindex$. Without loss of generality, we may assume that Player\n1's first move is at $entryoneone$. Player 0 then plays at $entrytwotwo$:\n\\[\n\\begin{pmatrix}\n1 & * & * \\\\\n* & 0 & * \\\\\n* & * & *\n\\end{pmatrix}\n\\]\nAfter Player 1's second move, at least one of $entrytwothree$ and $entrythreetwo$\nremains vacant. Without loss of generality, assume $entrytwothree$ remains\nvacant; Player 0 then plays there.\n\nAfter Player 1's third move, Player 0 wins by playing at $entrytwoone$ if that\nposition is unoccupied. So assume instead that Player 1 has played there.\nThus of Player 1's three moves so far, two are at $entryoneone$ and $entrytwoone$.\nHence for $rowindex$ equal to one of 1 or 3, and for $colindex$ equal to one of 2 or 3,\nthe following are both true:\n\\begin{enumerate}\n\\item[(a)]\nThe $2 \\times 2$ submatrix formed by rows 2 and $rowindex$ and by columns\n2 and 3 contains two zeroes and two empty positions.\n\\item[(b)]\nColumn $colindex$ contains one zero and two empty positions.\n\\end{enumerate}\nPlayer 0 next plays at $matrixentry$. To prevent a zero column, Player 1\nmust play in column $colindex$, upon which Player 0 completes the $2 \\times 2$\nsubmatrix in (a) for the win.\n\nNote: one can also solve this problem directly by making a tree of\npossible play sequences. This tree can be considerably collapsed\nusing symmetries: the symmetry between rows and columns, the invariance\nof the outcome under reordering of rows or columns, and the fact that\nthe scenario after a sequence of moves does not depend on the order of\nthe moves (sometimes called ``transposition invariance'').\n\nNote (due to Paul Cheng):\none can reduce Determinant\nTic-Tac-Toe to a variant of ordinary tic-tac-toe.\nNamely, consider a tic-tac-toe grid\nlabeled as follows:\n\\[\n\\begin{array}{c|c|c}\nentryoneone & entrytwotwo & entrythreethree \\\\\n\\hline\nentrytwothree & entrythreeone & entryonetwo \\\\\n\\hline\nentrythreetwo & entryonethree & entrytwoone\n\\end{array}\n\\]\nThen each term in the expansion of the determinant occurs in a row\nor column of the grid. Suppose Player 1 first plays in the top left.\nPlayer 0 wins by playing first in the top row, and second in the left\ncolumn. Then there are only one row and column left for Player 1\nto threaten, and Player 1 cannot already threaten both on the third move,\nso Player 0 has time to block both."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A_ij": "buttercup",
+        "A_11": "gardenia",
+        "A_22": "blueberry",
+        "A_23": "honeysuckle",
+        "A_32": "peppermint",
+        "A_21": "raincloud",
+        "A_33": "sunflower",
+        "A_31": "lavender",
+        "A_12": "moonstone",
+        "A_13": "cinnamon",
+        "i": "daisyseed",
+        "j": "rosethorn"
+      },
+      "question": "In Determinant Tic-Tac-Toe, Player 1 enters a 1 in an empty\n$3 \\times 3$ matrix. Player 0 counters with a 0 in a vacant position,\nand play continues in turn until the $3 \\times 3$ matrix is\ncompleted with five 1's and four 0's. Player 0 wins if the\ndeterminant is 0 and player 1 wins otherwise. Assuming both\nplayers pursue optimal strategies, who will win and how?",
+      "solution": "(partly due to David Savitt)\nPlayer 0 wins with optimal play. In fact, we prove that Player 1 cannot\nprevent Player 0 from creating a row of all zeroes, a column of all\nzeroes, or a $2 \\times 2$ submatrix of all zeroes. Each of these forces\nthe determinant of the matrix to be zero.\n\nFor $daisyseed,rosethorn=1, 2,3$, let $buttercup$ denote the position in row $daisyseed$ and\ncolumn $rosethorn$. Without loss of generality, we may assume that Player\n1's first move is at $gardenia$. Player 0 then plays at $blueberry$:\n\\[\n\\begin{pmatrix}\n1 & * & * \\\\\n* & 0 & * \\\\\n* & * & *\n\\end{pmatrix}\n\\]\nAfter Player 1's second move, at least one of $honeysuckle$ and $peppermint$\nremains vacant. Without loss of generality, assume $honeysuckle$ remains\nvacant; Player 0 then plays there.\n\nAfter Player 1's third move, Player 0 wins by playing at $raincloud$ if that\nposition is unoccupied. So assume instead that Player 1 has played there.\nThus of Player 1's three moves so far, two are at $gardenia$ and $raincloud$.\nHence for $daisyseed$ equal to one of 1 or 3, and for $rosethorn$ equal to one of 2 or 3,\nthe following are both true:\n\\begin{enumerate}\n\\item[(a)]\nThe $2 \\times 2$ submatrix formed by rows 2 and $daisyseed$ and by columns\n2 and 3 contains two zeroes and two empty positions.\n\\item[(b)]\nColumn $rosethorn$ contains one zero and two empty positions.\n\\end{enumerate}\nPlayer 0 next plays at $buttercup$. To prevent a zero column, Player 1\nmust play in column $rosethorn$, upon which Player 0 completes the $2 \\times 2$\nsubmatrix in (a) for the win.\n\nNote: one can also solve this problem directly by making a tree of\npossible play sequences. This tree can be considerably collapsed\nusing symmetries: the symmetry between rows and columns, the invariance\nof the outcome under reordering of rows or columns, and the fact that\nthe scenario after a sequence of moves does not depend on the order of\nthe moves (sometimes called ``transposition invariance'').\n\nNote (due to Paul Cheng):\none can reduce Determinant\nTic-Tac-Toe to a variant of ordinary tic-tac-toe.\nNamely, consider a tic-tac-toe grid\nlabeled as follows:\n\\[\n\\begin{array}{c|c|c}\ngardenia & blueberry & sunflower \\\\\n\\hline\nhoneysuckle & lavender & moonstone \\\\\n\\hline\npeppermint & cinnamon & raincloud\n\\end{array}\n\\]\nThen each term in the expansion of the determinant occurs in a row\nor column of the grid. Suppose Player 1 first plays in the top left.\nPlayer 0 wins by playing first in the top row, and second in the left\ncolumn. Then there are only one row and column left for Player 1\nto threaten, and Player 1 cannot already threaten both on the third move,\nso Player 0 has time to block both."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A_ij": "outsideentry",
+        "A_11": "bottomright",
+        "A_22": "outerring",
+        "A_23": "leftmost",
+        "A_32": "topouter",
+        "A_21": "rightright",
+        "A_33": "upperleft",
+        "A_31": "topright",
+        "A_12": "bottommid",
+        "A_13": "bottomleft",
+        "i": "columnvar",
+        "j": "rowvariable"
+      },
+      "question": "In Determinant Tic-Tac-Toe, Player 1 enters a 1 in an empty\n$3 \\times 3$ matrix. Player 0 counters with a 0 in a vacant position,\nand play continues in turn until the $3 \\times 3$ matrix is\ncompleted with five 1's and four 0's. Player 0 wins if the\ndeterminant is 0 and player 1 wins otherwise. Assuming both\nplayers pursue optimal strategies, who will win and how?",
+      "solution": "(partly due to David Savitt)\nPlayer 0 wins with optimal play. In fact, we prove that Player 1 cannot\nprevent Player 0 from creating a row of all zeroes, a column of all\nzeroes, or a $2 \\times 2$ submatrix of all zeroes. Each of these forces\nthe determinant of the matrix to be zero.\n\nFor $columnvar,rowvariable=1, 2,3$, let $outsideentry$ denote the position in row $columnvar$ and\ncolumn $rowvariable$. Without loss of generality, we may assume that Player\n1's first move is at $bottomright$. Player 0 then plays at $outerring$:\n\\[\n\\begin{pmatrix}\n1 & * & * \\\\\n* & 0 & * \\\\\n* & * & *\n\\end{pmatrix}\n\\]\nAfter Player 1's second move, at least one of $leftmost$ and $topouter$\nremains vacant. Without loss of generality, assume $leftmost$ remains\nvacant; Player 0 then plays there.\n\nAfter Player 1's third move, Player 0 wins by playing at $rightright$ if that\nposition is unoccupied. So assume instead that Player 1 has played there.\nThus of Player 1's three moves so far, two are at $bottomright$ and $rightright$.\nHence for $columnvar$ equal to one of 1 or 3, and for $rowvariable$ equal to one of 2 or 3,\nthe following are both true:\n\\begin{enumerate}\n\\item[(a)]\nThe $2 \\times 2$ submatrix formed by rows 2 and $columnvar$ and by columns\n2 and 3 contains two zeroes and two empty positions.\n\\item[(b)]\nColumn $rowvariable$ contains one zero and two empty positions.\n\\end{enumerate}\nPlayer 0 next plays at $outsideentry$. To prevent a zero column, Player 1\nmust play in column $rowvariable$, upon which Player 0 completes the $2 \\times 2$\nsubmatrix in (a) for the win.\n\nNote: one can also solve this problem directly by making a tree of\npossible play sequences. This tree can be considerably collapsed\nusing symmetries: the symmetry between rows and columns, the invariance\nof the outcome under reordering of rows or columns, and the fact that\nthe scenario after a sequence of moves does not depend on the order of\nthe moves (sometimes called ``transposition invariance'').\n\nNote (due to Paul Cheng):\none can reduce Determinant\nTic-Tac-Toe to a variant of ordinary tic-tac-toe.\nNamely, consider a tic-tac-toe grid\nlabeled as follows:\n\\[\n\\begin{array}{c|c|c}\nbottomright & outerring & upperleft \\\\\n\\hline\nleftmost & topright & bottommid \\\\\n\\hline\ntopouter & bottomleft & rightright\n\\end{array}\n\\]\nThen each term in the expansion of the determinant occurs in a row\nor column of the grid. Suppose Player 1 first plays in the top left.\nPlayer 0 wins by playing first in the top row, and second in the left\ncolumn. Then there are only one row and column left for Player 1\nto threaten, and Player 1 cannot already threaten both on the third move,\nso Player 0 has time to block both."
+    },
+    "garbled_string": {
+      "map": {
+        "A_ij": "qzxwvtnp",
+        "A_11": "hjgrksla",
+        "A_22": "vdmqlcea",
+        "A_23": "tnswyzro",
+        "A_32": "fkmcveuj",
+        "A_21": "rgpdoxhb",
+        "A_33": "saqnjvel",
+        "A_31": "ylxmdoqe",
+        "A_12": "wgrkpbzu",
+        "A_13": "ecbqsnwy",
+        "i": "klvhaqrs",
+        "j": "bndtrepo"
+      },
+      "question": "In Determinant Tic-Tac-Toe, Player 1 enters a 1 in an empty\n$3 \\times 3$ matrix. Player 0 counters with a 0 in a vacant position,\nand play continues in turn until the $3 \\times 3$ matrix is\ncompleted with five 1's and four 0's. Player 0 wins if the\ndeterminant is 0 and player 1 wins otherwise. Assuming both\nplayers pursue optimal strategies, who will win and how?",
+      "solution": "(partly due to David Savitt)\nPlayer 0 wins with optimal play. In fact, we prove that Player 1 cannot\nprevent Player 0 from creating a row of all zeroes, a column of all\nzeroes, or a $2 \\times 2$ submatrix of all zeroes. Each of these forces\nthe determinant of the matrix to be zero.\n\nFor $klvhaqrs,bndtrepo=1, 2,3$, let $qzxwvtnp$ denote the position in row $klvhaqrs$ and\ncolumn $bndtrepo$. Without loss of generality, we may assume that Player\n1's first move is at $hjgrksla$. Player 0 then plays at $vdmqlcea$:\n\\[\n\\begin{pmatrix}\n1 & * & * \\\\\n* & 0 & * \\\\\n* & * & *\n\\end{pmatrix}\n\\]\nAfter Player 1's second move, at least one of $tnswyzro$ and $fkmcveuj$\nremains vacant. Without loss of generality, assume $tnswyzro$ remains\nvacant; Player 0 then plays there.\n\nAfter Player 1's third move, Player 0 wins by playing at $rgpdoxhb$ if that\nposition is unoccupied. So assume instead that Player 1 has played there.\nThus of Player 1's three moves so far, two are at $hjgrksla$ and $rgpdoxhb$.\nHence for $klvhaqrs$ equal to one of 1 or 3, and for $bndtrepo$ equal to one of 2 or 3,\nthe following are both true:\n\\begin{enumerate}\n\\item[(a)]\nThe $2 \\times 2$ submatrix formed by rows 2 and $klvhaqrs$ and by columns\n2 and 3 contains two zeroes and two empty positions.\n\\item[(b)]\nColumn $bndtrepo$ contains one zero and two empty positions.\n\\end{enumerate}\nPlayer 0 next plays at $qzxwvtnp$. To prevent a zero column, Player 1\nmust play in column $bndtrepo$, upon which Player 0 completes the $2 \\times 2$\nsubmatrix in (a) for the win.\n\nNote: one can also solve this problem directly by making a tree of\npossible play sequences. This tree can be considerably collapsed\nusing symmetries: the symmetry between rows and columns, the invariance\nof the outcome under reordering of rows or columns, and the fact that\nthe scenario after a sequence of moves does not depend on the order of\nthe moves (sometimes called ``transposition invariance'').\n\nNote (due to Paul Cheng):\none can reduce Determinant\nTic-Tac-Toe to a variant of ordinary tic-tac-toe.\nNamely, consider a tic-tac-toe grid\nlabeled as follows:\n\\[\n\\begin{array}{c|c|c}\nhjgrksla & vdmqlcea & saqnjvel \\\\\n\\hline\ntnswyzro & ylxmdoqe & wgrkpbzu \\\\\n\\hline\nfkmcveuj & ecbqsnwy & rgpdoxhb\n\\end{array}\n\\]\nThen each term in the expansion of the determinant occurs in a row\nor column of the grid. Suppose Player 1 first plays in the top left.\nPlayer 0 wins by playing first in the top row, and second in the left\ncolumn. Then there are only one row and column left for Player 1\nto threaten, and Player 1 cannot already threaten both on the third move,\nso Player 0 has time to block both."
+    },
+    "kernel_variant": {
+      "question": "Determinant Tic-Tac-Toe is played on a 3 \\times  3 real matrix (A_{ij}).\nPlayer 1 (the ``1-player'') and Player 0 (the ``0-player'') alternately write a 1 or a 0 respectively in a vacant entry until the matrix is full (five 1's and four 0's).\nWhen the last number has been written the determinant of the completed matrix is evaluated;  Player 0 wins if the determinant is 0, and Player 1 wins otherwise.\nAssuming both players use perfect play, which player has a winning strategy and what is such a strategy?",
+      "solution": "Answer.  Player 0 has a winning strategy; with optimal play the determinant is forced to be 0.\n\nPreliminaries\n-------------\nThroughout, A_{ij} denotes the entry in row i and column j (i,j\\in {1,2,3}).\nA row or column that consists entirely of 0's clearly gives determinant 0; a little linear-algebra shows that a 2 \\times  2 sub-matrix that is entirely 0's also forces determinant 0, because it makes two rows (or two columns) linearly dependent.\nTherefore it suffices for Player 0 to guarantee the appearance of one of the following three \"zero configurations\" :\n\n  * a row of three 0's;               * a column of three 0's;              * a 2 \\times  2 block of 0's.\n\nBecause any permutation of the rows followed by any permutation of the columns changes the determinant only by a sign, Player 0 may, for the purpose of planning, relabel the board after each move.  In particular we may---and will---assume that the very first 1 written by Player 1 always occupies the upper-left corner A_{11}.\n\nThe winning plan\n----------------\nThe moves of the two players will be numbered consecutively 1,\\ldots ,9.  Player 1 moves on the odd numbers, Player 0 on the even numbers.\n\nMove 1 (Player 1).  By the convention above A_{11} \\leftarrow  1.\n\nMove 2 (Player 0).  Write 0 in the centre position A_{22}.\n\nMove 3 (Player 1).  Any empty square may be chosen.  Whatever the choice, at least one of the positions A_{23} and A_{32} is still vacant afterwards.\n\nMove 4 (Player 0).  Put 0 in one of A_{23},A_{32} that is still empty.  To have a definite picture, suppose A_{23} is chosen; the other case is identical after a suitable permutation of rows and columns.\n\nCurrent situation (after four moves)\n\n          1   *   *\n          *   0   0\n          *   *   *\n\nMove 5 (Player 1).  Two cases are distinguished.\n\n  (a)  If Player 1 does NOT occupy A_{21}, then\n       \n       Move 6 (Player 0).  Play A_{21} \\leftarrow  0, thereby completing row 2 with three 0's and winning immediately.\n       \n  (b)  Hence, to avoid the lose-in-one described in (a), Player 1 must place his third 1 at A_{21}.  The board now looks like\n\n          1   *   *\n          1   0   0\n          *   *   *\n\nFrom now on we write\n\n     i \\in {1,3}   and   j\\in {2,3}\n\nto denote indices which will be specified in a moment; the idea is to use one of the two outer rows together with the two right-most columns.\n\nObservation 1 - a promising 2 \\times  2 sub-matrix.\nFor each i\\in {1,3} the 2 \\times  2 sub-matrix consisting of rows 2 & i and of columns 2 & 3 presently contains two 0's (at A_{22} and A_{23}) and two empty squares.\n\nObservation 2 - a nearly-empty column.\nFor each j\\in {2,3}, column j currently has exactly one 0 (in row 2) and two empty squares.\n\nBy pigeon-hole, choose i\\in {1,3} and j\\in {2,3} so that the empty square A_{ij} belongs to the sub-matrix of Observation 1 and to the column of Observation 2 (for instance i=1, j=2 would work in the diagram).\n\nMove 6 (Player 0).  Place a 0 at A_{ij}.\n\nConsequences of Move 6\n----------------------\n* Column j now contains two 0's and one empty square.\n* The chosen 2 \\times  2 sub-matrix (rows 2 & i, columns 2 & 3) now holds three 0's and one empty square.\n\nMove 7 (Player 1).  If Player 1 does not put a 1 into the single still-vacant square of column j, Player 0 will do so on the following move and create a column of three 0's.  Therefore optimal play forces\n\n     column-blocking move :  Player 1 writes 1 in the last empty square of column j.\n\nThe unique remaining empty square is now the lone empty position of the 2 \\times  2 sub-matrix mentioned above.\n\nMove 8 (Player 0).  Write 0 in that square, completing a 2 \\times  2 block of 0's and thereby assuring determinant 0.\n\nMove 9 (Player 1).  Whatever number is written, the determinant is already forced to be 0, so the game is lost for Player 1.\n\nHence Player 0 wins with the strategy summarised below.\n\nSummary of Player 0's strategy\n------------------------------\n1.  Reply in the centre A_{22}.\n2.  On the second turn occupy whichever of A_{23},A_{32} is still vacant.\n3.  If A_{21} is free on the third turn, play there and finish with a zero row.\n4.  Otherwise (if Player 1 has just occupied A_{21}) choose indices i\\in {1,3} and j\\in {2,3} as above, write 0 at A_{ij}, force Player 1 to block the column, then complete the resulting 2 \\times  2 zero block.\n\nAll branches end in one of the three zero configurations, and therefore in determinant 0.  Consequently Player 0 has a sure win under perfect play.",
+      "_meta": {
+        "core_steps": [
+          "Use symmetry to assume Player 1 opens in a corner.",
+          "Player 0 replies in the center, putting the first 0 there.",
+          "Player 0’s second 0 is placed in one of two symmetric off-diagonal squares, simultaneously threatening a zero column and a 2×2 all-zero submatrix.",
+          "Whatever Player 1 does, Player 0 can next occupy a square that again leaves two forced threats; after the reply, one of them can be finished.",
+          "Completing the zero column/row or the 2×2 zero block makes det = 0, so Player 0 wins."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which corner is fixed (by symmetry) as Player 1’s first move.",
+            "original": "A_{11}"
+          },
+          "slot2": {
+            "description": "The symmetric off-diagonal pair used for the first fork.",
+            "original": "{A_{23}, A_{32}}"
+          },
+          "slot3": {
+            "description": "Square that gives an immediate win if free after move 3.",
+            "original": "A_{21}"
+          },
+          "slot4": {
+            "description": "The indices i∈{1,3} and j∈{2,3} chosen when defining the final 2×2 submatrix/column fork.",
+            "original": "i∈{1,3}, j∈{2,3}"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

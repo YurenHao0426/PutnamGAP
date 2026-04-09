@@ -1,0 +1,123 @@
+{
+  "index": "1985-B-1",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $k$ be the smallest positive integer for which there exist\ndistinct integers $m_1, m_2, m_3, m_4, m_5$ such that the polynomial\n\\[\np(x) = (x-m_1)(x-m_2)(x-m_3)(x-m_4)(x-m_5)\n\\]\nhas exactly $k$ nonzero coefficients. Find, with proof, a set of\nintegers $m_1, m_2, m_3, m_4, m_5$ for which this minimum $k$ is achieved.",
+  "solution": "Solution. If \\( k=1 \\), then \\( p(x) \\) must be \\( x^{5} \\), but this does not have five distinct integer zeros. If \\( k=2 \\), then \\( p(x)=x^{5}+a x^{r} \\) for some nonzero \\( a \\in \\mathbb{Z} \\) and \\( 0 \\leq r \\leq 4 \\); this has \\( x=0 \\) as double zero if \\( r \\geq 2 \\) and has a nonreal zero if \\( r=0 \\) or \\( r=1 \\). Thus \\( k \\geq 3 \\). The example\n\\[\nx(x-1)(x+1)(x-2)(x+2)=x\\left(x^{2}-1\\right)\\left(x^{2}-4\\right)=x^{5}-5 x^{3}+4 x\n\\]\nshows that in fact \\( k=3 \\).\nRemark. More generally, we can prove that given \\( n \\geq 1 \\), the smallest integer \\( k \\) for which there exist distinct integers \\( m_{1}, \\ldots, m_{n} \\) such that the polynomial\n\\[\np(x)=\\left(x-m_{1}\\right) \\cdots\\left(x-m_{n}\\right)\n\\]\nhas exactly \\( k \\) nonzero coefficients is \\( k=\\lceil(n+1) / 2\\rceil=\\lfloor n / 2\\rfloor+1 \\). The key is Descartes, Rule of Signs, which states that if \\( p(x)=a_{1} x^{r_{1}}+a_{2} x^{r_{2}}+\\cdots+a_{k} x^{r_{k}} \\) is a polynomial with \\( a_{i} \\in \\mathbb{R}^{*} \\) and \\( r_{1}>r_{2}>\\cdots>r_{k} \\), then the number of positive real zeros of \\( p(x) \\) counted with multiplicity is the number of sign changes in the sequence \\( a_{1}, a_{2}, \\ldots, a_{k} \\) minus a nonnegative even integer.\n\nIf \\( p(x) \\) has \\( k \\) nonzero coefficients, \\( p(x) \\) has at most \\( k-1 \\) positive real zeros. Applying Descartes' Rule of Signs to \\( p(-x) \\) shows that \\( p(x) \\) has at most \\( k-1 \\) negative real zeros. Hence the total number of distinct zeros of \\( p(x) \\) is at most \\( (k-1)+(k-1)+1=2 k-1 \\), where the +1 is for the possibility that 0 might be a root. If \\( p(x) \\) has \\( n \\) distinct zeros all of which are integers, then \\( n \\leq 2 k-1 \\), so \\( k \\geq\\lceil(n+1) / 2\\rceil \\).\n\nOn the other hand, given \\( n \\geq 1 \\), we can exhibit a polynomial \\( p(x)=(x- \\) \\( \\left.m_{1}\\right) \\cdots\\left(x-m_{n}\\right) \\) with distinct integer zeros \\( m_{1}, \\ldots, m_{n} \\) and with at most (hence exactly) \\( k=\\lceil(n+1) / 2\\rceil \\) nonzero coefficients:\n\\[\np(x)=\\left\\{\\begin{array}{ll}\n(x+1)(x-1)(x+2)(x-2) \\cdots(x+(k-1))(x-(k-1)) & \\text { if } n=2 k-2 \\\\\nx(x+1)(x-1)(x+2)(x-2) \\cdots(x+(k-1))(x-(k-1)) & \\text { if } n=2 k-1 .\n\\end{array}\\right.\n\\]",
+  "vars": [
+    "x"
+  ],
+  "params": [
+    "k",
+    "m_1",
+    "m_2",
+    "m_3",
+    "m_4",
+    "m_5",
+    "p",
+    "a",
+    "r",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "k": "mincoeff",
+        "m_1": "rootone",
+        "m_2": "roottwo",
+        "m_3": "rootthree",
+        "m_4": "rootfour",
+        "m_5": "rootfive",
+        "p": "polynomial",
+        "a": "coeffa",
+        "r": "exponent",
+        "n": "rootscount"
+      },
+      "question": "Let $mincoeff$ be the smallest positive integer for which there exist distinct integers $rootone, roottwo, rootthree, rootfour, rootfive$ such that the polynomial\n\\[\npolynomial(variable) = (variable-rootone)(variable-roottwo)(variable-rootthree)(variable-rootfour)(variable-rootfive)\n\\]\nhas exactly $mincoeff$ nonzero coefficients. Find, with proof, a set of integers $rootone, roottwo, rootthree, rootfour, rootfive$ for which this minimum $mincoeff$ is achieved.",
+      "solution": "Solution. If \\( mincoeff=1 \\), then \\( polynomial(variable) \\) must be \\( variable^{5} \\), but this does not have five distinct integer zeros. If \\( mincoeff=2 \\), then \\( polynomial(variable)=variable^{5}+coeffa\\,variable^{exponent} \\) for some nonzero \\( coeffa \\in \\mathbb{Z} \\) and \\( 0 \\leq exponent \\leq 4 \\); this has \\( variable=0 \\) as a double zero if \\( exponent \\geq 2 \\) and has a nonreal zero if \\( exponent=0 \\) or \\( exponent=1 \\). Thus \\( mincoeff \\geq 3 \\). The example\n\\[\nvariable(variable-1)(variable+1)(variable-2)(variable+2)=variable\\left(variable^{2}-1\\right)\\left(variable^{2}-4\\right)=variable^{5}-5\\,variable^{3}+4\\,variable\n\\]\nshows that in fact \\( mincoeff=3 \\).\n\nRemark. More generally, we can prove that given \\( rootscount \\geq 1 \\), the smallest integer \\( mincoeff \\) for which there exist distinct integers \\( rootone, \\ldots, m_{rootscount} \\) such that the polynomial\n\\[\npolynomial(variable)=\\left(variable-rootone\\right)\\cdots\\left(variable-m_{rootscount}\\right)\n\\]\nhas exactly \\( mincoeff \\) nonzero coefficients is\n\\[\nmincoeff=\\lceil(rootscount+1)/2\\rceil=\\lfloor rootscount/2\\rfloor+1 .\n\\]\nThe key is Descartes' Rule of Signs, which states that if\n\\[\npolynomial(variable)=coeffa_{1}\\,variable^{exponent_{1}}+coeffa_{2}\\,variable^{exponent_{2}}+\\cdots+coeffa_{mincoeff}\\,variable^{exponent_{mincoeff}}\n\\]\nis a polynomial with \\( coeffa_{i}\\in\\mathbb{R}^{*} \\) and \\( exponent_{1}>exponent_{2}>\\cdots>exponent_{mincoeff} \\), then the number of positive real zeros of \\( polynomial(variable) \\) counted with multiplicity is the number of sign changes in the sequence \\( coeffa_{1}, coeffa_{2},\\ldots, coeffa_{mincoeff} \\) minus a non-negative even integer.\n\nIf \\( polynomial(variable) \\) has \\( mincoeff \\) nonzero coefficients, it has at most \\( mincoeff-1 \\) positive real zeros. Applying Descartes' Rule of Signs to \\( polynomial(-variable) \\) shows that it has at most \\( mincoeff-1 \\) negative real zeros. Hence the total number of distinct zeros of \\( polynomial(variable) \\) is at most \\( (mincoeff-1)+(mincoeff-1)+1=2\\,mincoeff-1 \\), where the \\( +1 \\) is for the possibility that \\( 0 \\) might be a root. If \\( polynomial(variable) \\) has \\( rootscount \\) distinct zeros all of which are integers, then \\( rootscount\\le 2\\,mincoeff-1 \\), so \\( mincoeff \\ge \\lceil(rootscount+1)/2\\rceil \\).\n\nOn the other hand, given \\( rootscount \\ge 1 \\), we can exhibit a polynomial\n\\[\npolynomial(variable)=\\left(variable-rootone\\right)\\cdots\\left(variable-m_{rootscount}\\right)\n\\]\nwith distinct integer zeros \\( rootone, \\ldots, m_{rootscount} \\) and with at most (hence exactly) \\( mincoeff=\\lceil(rootscount+1)/2\\rceil \\) nonzero coefficients:\n\\[\npolynomial(variable)=\n\\begin{cases}\n(variable+1)(variable-1)(variable+2)(variable-2)\\cdots(variable+(mincoeff-1))(variable-(mincoeff-1)) & \\text{if } rootscount=2\\,mincoeff-2,\\\\[6pt]\nvariable(variable+1)(variable-1)(variable+2)(variable-2)\\cdots(variable+(mincoeff-1))(variable-(mincoeff-1)) & \\text{if } rootscount=2\\,mincoeff-1 .\n\\end{cases}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "harboring",
+        "k": "dandelion",
+        "m_1": "pineapple",
+        "m_2": "strawberry",
+        "m_3": "blackberry",
+        "m_4": "raspberry",
+        "m_5": "cranberry",
+        "p": "watermelon",
+        "a": "buttercup",
+        "r": "caterpillar",
+        "n": "honeysuckle"
+      },
+      "question": "Let $dandelion$ be the smallest positive integer for which there exist\ndistinct integers $pineapple, strawberry, blackberry, raspberry, cranberry$ such that the polynomial\n\\[\nwatermelon(harboring) = (harboring-pineapple)(harboring-strawberry)(harboring-blackberry)(harboring-raspberry)(harboring-cranberry)\n\\]\nhas exactly $dandelion$ nonzero coefficients. Find, with proof, a set of\nintegers $pineapple, strawberry, blackberry, raspberry, cranberry$ for which this minimum $dandelion$ is achieved.",
+      "solution": "Solution. If \\( dandelion=1 \\), then \\( watermelon(harboring) \\) must be \\( harboring^{5} \\), but this does not have five distinct integer zeros. If \\( dandelion=2 \\), then \\( watermelon(harboring)=harboring^{5}+buttercup harboring^{caterpillar} \\) for some nonzero \\( buttercup \\in \\mathbb{Z} \\) and \\( 0 \\leq caterpillar \\leq 4 \\); this has \\( harboring=0 \\) as double zero if \\( caterpillar \\geq 2 \\) and has a nonreal zero if \\( caterpillar=0 \\) or \\( caterpillar=1 \\). Thus \\( dandelion \\geq 3 \\). The example\n\\[\nharboring(harboring-1)(harboring+1)(harboring-2)(harboring+2)=harboring\\left(harboring^{2}-1\\right)\\left(harboring^{2}-4\\right)=harboring^{5}-5 harboring^{3}+4 harboring\n\\]\nshows that in fact \\( dandelion=3 \\).\n\nRemark. More generally, we can prove that given \\( honeysuckle \\geq 1 \\), the smallest integer \\( dandelion \\) for which there exist distinct integers \\( pineapple, \\ldots, m_{honeysuckle} \\) such that the polynomial\n\\[\nwatermelon(harboring)=\\left(harboring-pineapple\\right) \\cdots\\left(harboring-m_{honeysuckle}\\right)\n\\]\nhas exactly \\( dandelion \\) nonzero coefficients is \\( dandelion=\\lceil(honeysuckle+1) / 2\\rceil=\\lfloor honeysuckle / 2\\rfloor+1 \\). The key is Descartes' Rule of Signs, which states that if \\( watermelon(harboring)=a_{1} harboring^{r_{1}}+a_{2} harboring^{r_{2}}+\\cdots+a_{dandelion} harboring^{r_{dandelion}} \\) is a polynomial with \\( a_{i} \\in \\mathbb{R}^{*} \\) and \\( r_{1}>r_{2}>\\cdots>r_{dandelion} \\), then the number of positive real zeros of \\( watermelon(harboring) \\) counted with multiplicity is the number of sign changes in the sequence \\( a_{1}, a_{2}, \\ldots, a_{dandelion} \\) minus a nonnegative even integer.\n\nIf \\( watermelon(harboring) \\) has \\( dandelion \\) nonzero coefficients, it has at most \\( dandelion-1 \\) positive real zeros. Applying Descartes' Rule of Signs to \\( watermelon(-harboring) \\) shows that it has at most \\( dandelion-1 \\) negative real zeros. Hence the total number of distinct zeros is at most \\( (dandelion-1)+(dandelion-1)+1=2 dandelion-1 \\), where the +1 is for the possibility that 0 might be a root. If \\( watermelon(harboring) \\) has \\( honeysuckle \\) distinct zeros all of which are integers, then \\( honeysuckle \\leq 2 dandelion-1 \\), so \\( dandelion \\geq\\lceil(honeysuckle+1) / 2\\rceil \\).\n\nOn the other hand, given \\( honeysuckle \\geq 1 \\), we can exhibit a polynomial with at most (hence exactly) \\( dandelion=\\lceil(honeysuckle+1) / 2\\rceil \\) nonzero coefficients:\n\\[\nwatermelon(harboring)=\\begin{cases}\n(harboring+1)(harboring-1)(harboring+2)(harboring-2) \\cdots(harboring+(dandelion-1))(harboring-(dandelion-1)) & \\text{if } honeysuckle=2 dandelion-2 \\\\\nharboring(harboring+1)(harboring-1)(harboring+2)(harboring-2) \\cdots(harboring+(dandelion-1))(harboring-(dandelion-1)) & \\text{if } honeysuckle=2 dandelion-1 .\n\\end{cases}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "k": "largestnegative",
+        "m_1": "nonrootone",
+        "m_2": "nonroottwo",
+        "m_3": "nonrootthree",
+        "m_4": "nonrootfour",
+        "m_5": "nonrootfive",
+        "p": "staticnumber",
+        "a": "zerocoeff",
+        "r": "basenum",
+        "n": "emptiness"
+      },
+      "question": "Let largestnegative be the smallest positive integer for which there exist\ndistinct integers nonrootone, nonroottwo, nonrootthree, nonrootfour, nonrootfive such that the polynomial\n\\[\nstaticnumber(constantvalue) = (constantvalue-nonrootone)(constantvalue-nonroottwo)(constantvalue-nonrootthree)(constantvalue-nonrootfour)(constantvalue-nonrootfive)\n\\]\nhas exactly largestnegative nonzero coefficients. Find, with proof, a set of\nintegers nonrootone, nonroottwo, nonrootthree, nonrootfour, nonrootfive for which this minimum largestnegative is achieved.",
+      "solution": "Solution. If \\( largestnegative=1 \\), then \\( staticnumber(constantvalue) \\) must be \\( constantvalue^{5} \\), but this does not have five distinct integer zeros. If \\( largestnegative=2 \\), then \\( staticnumber(constantvalue)=constantvalue^{5}+zerocoeff constantvalue^{basenum} \\) for some nonzero \\( zerocoeff \\in \\mathbb{Z} \\) and \\( 0 \\leq basenum \\leq 4 \\); this has \\( constantvalue=0 \\) as double zero if \\( basenum \\geq 2 \\) and has a nonreal zero if \\( basenum=0 \\) or \\( basenum=1 \\). Thus \\( largestnegative \\geq 3 \\). The example\n\\[\nconstantvalue(constantvalue-1)(constantvalue+1)(constantvalue-2)(constantvalue+2)=constantvalue\\left(constantvalue^{2}-1\\right)\\left(constantvalue^{2}-4\\right)=constantvalue^{5}-5 constantvalue^{3}+4 constantvalue\n\\]\nshows that in fact \\( largestnegative=3 \\).\nRemark. More generally, we can prove that given \\( emptiness \\geq 1 \\), the smallest integer \\( largestnegative \\) for which there exist distinct integers nonrootone, \\ldots, nonrootfive such that the polynomial\n\\[\nstaticnumber(constantvalue)=\\left(constantvalue-m_{1}\\right) \\cdots\\left(constantvalue-m_{emptiness}\\right)\n\\]\nhas exactly \\( largestnegative \\) nonzero coefficients is \\( largestnegative=\\lceil(emptiness+1) / 2\\rceil=\\lfloor emptiness / 2\\rfloor+1 \\). The key is Descartes, Rule of Signs, which states that if \\( staticnumber(constantvalue)=zerocoeff_{1} constantvalue^{basenum_{1}}+zerocoeff_{2} constantvalue^{basenum_{2}}+\\cdots+zerocoeff_{largestnegative} constantvalue^{basenum_{largestnegative}} \\) is a polynomial with \\( zerocoeff_{i} \\in \\mathbb{R}^{*} \\) and \\( basenum_{1}>basenum_{2}>\\cdots>basenum_{largestnegative} \\), then the number of positive real zeros of \\( staticnumber \\) counted with multiplicity is the number of sign changes in the sequence \\( zerocoeff_{1}, zerocoeff_{2}, \\ldots, zerocoeff_{largestnegative} \\) minus a nonnegative even integer.\n\nIf \\( staticnumber(constantvalue) \\) has \\( largestnegative \\) nonzero coefficients, \\( staticnumber \\) has at most \\( largestnegative-1 \\) positive real zeros. Applying Descartes' Rule of Signs to \\( staticnumber(-constantvalue) \\) shows that \\( staticnumber \\) has at most \\( largestnegative-1 \\) negative real zeros. Hence the total number of distinct zeros of \\( staticnumber \\) is at most \\( (largestnegative-1)+(largestnegative-1)+1=2 largestnegative-1 \\), where the +1 is for the possibility that 0 might be a root. If \\( staticnumber \\) has \\( emptiness \\) distinct zeros all of which are integers, then \\( emptiness \\leq 2 largestnegative-1 \\), so \\( largestnegative \\geq\\lceil(emptiness+1) / 2\\rceil \\).\n\nOn the other hand, given \\( emptiness \\geq 1 \\), we can exhibit a polynomial \\( staticnumber(constantvalue)=(constantvalue- \\) \\( \\left.m_{1}\\right) \\cdots\\left(constantvalue-m_{emptiness}\\right) \\) with distinct integer zeros \\( m_{1}, \\ldots, m_{emptiness} \\) and with at most (hence exactly) \\( largestnegative=\\lceil(emptiness+1) / 2\\rceil \\) nonzero coefficients:\n\\[\nstaticnumber(constantvalue)=\\left\\{\\begin{array}{ll}\n(constantvalue+1)(constantvalue-1)(constantvalue+2)(constantvalue-2) \\cdots(constantvalue+(largestnegative-1))(constantvalue-(largestnegative-1)) & \\text { if } emptiness=2 largestnegative-2 \\\\\nconstantvalue(constantvalue+1)(constantvalue-1)(constantvalue+2)(constantvalue-2) \\cdots(constantvalue+(largestnegative-1))(constantvalue-(largestnegative-1)) & \\text { if } emptiness=2 largestnegative-1 .\n\\end{array}\\right.\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zolimbrn",
+        "k": "flugmats",
+        "m_1": "jargtwlv",
+        "m_2": "navshock",
+        "m_3": "pixmervu",
+        "m_4": "flarnosk",
+        "m_5": "zotykelr",
+        "p": "skirvopa",
+        "a": "glovertn",
+        "r": "cludexin",
+        "n": "whostuda"
+      },
+      "question": "Let flugmats be the smallest positive integer for which there exist\ndistinct integers jargtwlv, navshock, pixmervu, flarnosk, zotykelr such that the polynomial\n\\[\nskirvopa(zolimbrn) = (zolimbrn-jargtwlv)(zolimbrn-navshock)(zolimbrn-pixmervu)(zolimbrn-flarnosk)(zolimbrn-zotykelr)\n\\]\nhas exactly flugmats nonzero coefficients. Find, with proof, a set of\nintegers jargtwlv, navshock, pixmervu, flarnosk, zotykelr for which this minimum flugmats is achieved.",
+      "solution": "Solution. If \\( flugmats=1 \\), then \\( skirvopa(zolimbrn) \\) must be \\( zolimbrn^{5} \\), but this does not have five distinct integer zeros. If \\( flugmats=2 \\), then \\( skirvopa(zolimbrn)=zolimbrn^{5}+glovertn zolimbrn^{cludexin} \\) for some nonzero \\( glovertn \\in \\mathbb{Z} \\) and \\( 0 \\leq cludexin \\leq 4 \\); this has \\( zolimbrn=0 \\) as double zero if \\( cludexin \\geq 2 \\) and has a nonreal zero if \\( cludexin=0 \\) or \\( cludexin=1 \\). Thus \\( flugmats \\geq 3 \\). The example\n\\[\nzolimbrn(zolimbrn-1)(zolimbrn+1)(zolimbrn-2)(zolimbrn+2)=zolimbrn\\left(zolimbrn^{2}-1\\right)\\left(zolimbrn^{2}-4\\right)=zolimbrn^{5}-5 zolimbrn^{3}+4 zolimbrn\n\\]\nshows that in fact \\( flugmats=3 \\).\nRemark. More generally, we can prove that given \\( whostuda \\geq 1 \\), the smallest integer \\( flugmats \\) for which there exist distinct integers \\( jargtwlv, \\ldots, m_{whostuda} \\) such that the polynomial\n\\[\nskirvopa(zolimbrn)=\\left(zolimbrn-jargtwlv\\right) \\cdots\\left(zolimbrn-m_{whostuda}\\right)\n\\]\nhas exactly \\( flugmats \\) nonzero coefficients is \\( flugmats=\\lceil(whostuda+1) / 2\\rceil=\\lfloor whostuda / 2\\rfloor+1 \\). The key is Descartes' Rule of Signs, which states that if \\( skirvopa(zolimbrn)=glovertn_{1} zolimbrn^{cludexin_{1}}+glovertn_{2} zolimbrn^{cludexin_{2}}+\\cdots+glovertn_{flugmats} zolimbrn^{cludexin_{flugmats}} \\) is a polynomial with \\( glovertn_{i} \\in \\mathbb{R}^{*} \\) and \\( cludexin_{1}>cludexin_{2}>\\cdots>cludexin_{flugmats} \\), then the number of positive real zeros of \\( skirvopa(zolimbrn) \\) counted with multiplicity is the number of sign changes in the sequence \\( glovertn_{1}, glovertn_{2}, \\ldots, glovertn_{flugmats} \\) minus a nonnegative even integer.\n\nIf \\( skirvopa(zolimbrn) \\) has \\( flugmats \\) nonzero coefficients, \\( skirvopa(zolimbrn) \\) has at most \\( flugmats-1 \\) positive real zeros. Applying Descartes' Rule of Signs to \\( skirvopa(-zolimbrn) \\) shows that \\( skirvopa(zolimbrn) \\) has at most \\( flugmats-1 \\) negative real zeros. Hence the total number of distinct zeros of \\( skirvopa(zolimbrn) \\) is at most \\( (flugmats-1)+(flugmats-1)+1=2 flugmats-1 \\), where the +1 is for the possibility that 0 might be a root. If \\( skirvopa(zolimbrn) \\) has \\( whostuda \\) distinct zeros all of which are integers, then \\( whostuda \\leq 2 flugmats-1 \\), so \\( flugmats \\geq\\lceil(whostuda+1) / 2\\rceil \\).\n\nOn the other hand, given \\( whostuda \\geq 1 \\), we can exhibit a polynomial \\( skirvopa(zolimbrn)=(zolimbrn- \\left.jargtwlv\\right) \\cdots\\left(zolimbrn-m_{whostuda}\\right) \\) with distinct integer zeros \\( jargtwlv, \\ldots, m_{whostuda} \\) and with at most (hence exactly) \\( flugmats=\\lceil(whostuda+1) / 2\\rceil \\) nonzero coefficients:\n\\[\nskirvopa(zolimbrn)=\\left\\{\\begin{array}{ll}\n(zolimbrn+1)(zolimbrn-1)(zolimbrn+2)(zolimbrn-2) \\cdots(zolimbrn+(flugmats-1))(zolimbrn-(flugmats-1)) & \\text { if } whostuda=2 flugmats-2 \\\\\nzolimbrn(zolimbrn+1)(zolimbrn-1)(zolimbrn+2)(zolimbrn-2) \\cdots(zolimbrn+(flugmats-1))(zolimbrn-(flugmats-1)) & \\text { if } whostuda=2 flugmats-1 .\n\\end{array}\\right.\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let k be the smallest positive integer for which there exist distinct integers\nm_1,m_2,\\dots ,m_7 such that the polynomial\n\\[\np(x)=\\prod_{j=1}^{7}(x-m_j)\n\\]\nhas exactly k non-zero coefficients when expanded.  Determine this minimum k and exhibit a 7-tuple of distinct integers that attains it.",
+      "solution": "Step 1 (Descartes' Rule of Signs).\nWrite the expanded form of p(x) as\n  p(x)=a_0x^r+a_1x^{r-1}+\\ldots +a_{k-1}x^{r-k+1},  a_0a_{k-1}\\neq 0,\nso p has k nonzero coefficients.  Descartes' Rule of Signs bounds the number of positive real roots by the number of sign changes in the sequence (a_0,\\ldots ,a_{k-1}), i.e. by k-1.  Applying the rule to p(-x) gives the same bound for the number of negative real roots.  Thus the total number of distinct real roots of p is at most\n  (k-1)+(k-1)+1=2k-1,\nwhere the +1 accounts for the possible root x=0.  Because the seven zeros m_1,\\ldots ,m_7 are distinct integers, we must have\n  7\\leq 2k-1  \\Rightarrow   k\\geq \\lceil (7+1)/2\\rceil =4.\n\nStep 2 (Sharpness: constructing k=4).\nTake the symmetric set of integer roots\n  {0,\\pm 1,\\pm 2,\\pm 3}.\nThen\n  p(x)=x(x-1)(x+1)(x-2)(x+2)(x-3)(x+3)\n        =x(x^2-1)(x^2-4)(x^2-9).\nA direct expansion gives\n  p(x)=x^7-(1+4+9)x^5+(1\\cdot 4+1\\cdot 9+4\\cdot 9)x^3-(1\\cdot 4\\cdot 9)x\n       =x^7-14x^5+49x^3-36x.\nOnly the x^7, x^5, x^3, and x terms appear, so p(x) has exactly 4 nonzero coefficients.\n\nStep 3 (Conclusion).\nWe have exhibited a degree-7 monic polynomial with seven distinct integer roots and only four nonzero coefficients, while Step 1 proves that no such polynomial can have fewer than four.  Therefore the minimum possible value of k is\n  4,\nand an explicit 7-tuple achieving it is\n  (m_1,\\ldots ,m_7)=(0,1,-1,2,-2,3,-3).",
+      "_meta": {
+        "core_steps": [
+          "Use Descartes’ Rule of Signs on p(x) and p(−x) to get n ≤ 2k−1, hence k ≥ ⌈(n+1)/2⌉.",
+          "Insert n = 5 to deduce the lower bound k ≥ 3.",
+          "Choose a symmetric set of integer roots {0, ±a, ±b}; expand to obtain a 5th-degree polynomial with exactly the linear, cubic, and quintic terms non-zero, proving k = 3 is attainable."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Total number n of required distinct integer roots (odd in the construction).",
+            "original": 5
+          },
+          "slot2": {
+            "description": "The positive integers a and b used for the symmetric root pairs ±a, ±b (distinct, non-zero).",
+            "original": [
+              1,
+              2
+            ]
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

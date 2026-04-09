@@ -1,0 +1,137 @@
+{
+  "index": "1949-B-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "5. Let \\( a_{1}, a_{2}, \\ldots, a_{n}, \\ldots \\) be an arbitrary sequence of positive numbers. Show that\n\\[\n\\lim _{n \\rightarrow \\infty} \\sup \\left(\\frac{a_{1}+a_{n+1}}{a_{n}}\\right)^{n} \\geq e\n\\]",
+  "solution": "Solution. We shall show that there are infinitely many integers \\( n \\) for which\n\\[\n\\frac{a_{1}+a_{n+1}}{a_{n}}>1+1 / n .\n\\]\n\nOur proof is indirect. Suppose it is false. Then for some integer \\( k \\) and for all \\( n \\geq k \\)\n\\[\n\\frac{a_{1}+a_{n+1}}{a_{n}} \\leq \\frac{n+1}{n}\n\\]\nwhence\n\\[\n\\frac{a_{n}}{n} \\geq \\frac{a_{1}}{n+1}+\\frac{a_{n+1}}{n+1} .\n\\]\n\nTherefore\n\\[\n\\begin{aligned}\n\\frac{a_{k}}{k} & \\geq \\frac{a_{1}}{k+1}+\\frac{a_{k+1}}{k+1} \\geq \\frac{a_{1}}{k+1}+\\frac{a_{1}}{k+2}+\\frac{a_{k+2}}{k+2} \\\\\n& \\geq \\frac{a_{1}}{k+1}+\\frac{a_{1}}{k+2}+\\frac{a_{1}}{k+3}+\\frac{a_{k+3}}{k+3} .\n\\end{aligned}\n\\]\n\nBy induction\n\\[\n\\frac{a_{k}}{k} \\geq a_{1}\\left(\\sum_{i=k+1}^{p} \\frac{1}{i}\\right)+\\frac{a_{p}}{p}\n\\]\nfor any \\( p \\geq k \\). Then\n\\[\n\\sum_{i=k+1}^{p} \\frac{1}{i} \\leq \\frac{a_{k}}{k a_{1}} \\text { for } p \\geq k .\n\\]\n\nBut the harmonic series diverges, so the sums \\( \\sum_{i=k+1}^{p} 1 / i \\) are unbounded. Thus relation (1) cannot hold for all \\( n \\geq k \\), and hence there must be infinitely many integers \\( \\boldsymbol{n} \\) for which\n\\[\n\\frac{a_{1}+a_{n+1}}{a_{n}}>1+\\frac{1}{n} .\n\\]\n\nThen\n\\[\n\\lim _{n \\rightarrow \\infty} \\sup \\left(\\frac{a_{1}+a_{n+1}}{a_{n}}\\right)^{n} \\geq \\lim _{n-\\infty}\\left(1+\\frac{1}{n}\\right)^{n}=e .\n\\]\n\nRemark. The lower bound \\( e \\) cannot be improved because there is a sequence such that\n\\[\n\\lim \\left(\\frac{a_{1}+a_{n+1}}{a_{n}}\\right)^{n}=e .\n\\]\n\nSuch a sequence is given by\n\\[\na_{1}=1, \\quad a_{n}=n \\log n \\quad \\text { for } n \\geq 1 .\n\\]\n\nFor this sequence\n\\[\n\\frac{a_{1}+a_{n+1}}{a_{n}}=1+\\frac{b_{n}}{n}\n\\]\nwhere\n\\[\nb_{n}=\\frac{1}{\\log n}\\left(1+n \\log \\left(\\frac{n+1}{n}\\right)+\\log (n+1)\\right) .\n\\]\n\nThen\n\\[\n\\left(\\frac{a_{1}+a_{n+1}}{a_{n}}\\right)^{n}=\\left(1+\\frac{b_{n}}{n}\\right)^{n} \\rightarrow e\n\\]\nsince \\( b_{n} \\rightarrow 1 \\) as \\( n \\rightarrow \\infty \\).",
+  "vars": [
+    "n",
+    "k",
+    "p",
+    "i"
+  ],
+  "params": [
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_n+1",
+    "a_k",
+    "a_k+1",
+    "a_k+2",
+    "a_k+3",
+    "a_p",
+    "b_n"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "k": "startidx",
+        "p": "limitidx",
+        "i": "loopidx",
+        "a_1": "firstterm",
+        "a_2": "secondtm",
+        "a_n": "nthterm",
+        "a_n+1": "nextterm",
+        "a_k": "kthterm",
+        "a_k+1": "kplusone",
+        "a_k+2": "kplustwo",
+        "a_k+3": "kplusthr",
+        "a_p": "pthterm",
+        "b_n": "bnseries"
+      },
+      "question": "5. Let \\( firstterm, secondtm, \\ldots, nthterm, \\ldots \\) be an arbitrary sequence of positive numbers. Show that\n\\[\n\\lim _{indexvar \\rightarrow \\infty} \\sup \\left(\\frac{firstterm+nextterm}{nthterm}\\right)^{indexvar} \\geq e\n\\]",
+      "solution": "Solution. We shall show that there are infinitely many integers \\( indexvar \\) for which\n\\[\n\\frac{firstterm+nextterm}{nthterm}>1+1 / indexvar .\n\\]\n\nOur proof is indirect. Suppose it is false. Then for some integer \\( startidx \\) and for all \\( indexvar \\geq startidx \\)\n\\[\n\\frac{firstterm+nextterm}{nthterm} \\leq \\frac{indexvar+1}{indexvar}\n\\]\nwhence\n\\[\n\\frac{nthterm}{indexvar} \\geq \\frac{firstterm}{indexvar+1}+\\frac{nextterm}{indexvar+1} .\n\\]\n\nTherefore\n\\[\n\\begin{aligned}\n\\frac{kthterm}{startidx} & \\geq \\frac{firstterm}{startidx+1}+\\frac{kplusone}{startidx+1} \\geq \\frac{firstterm}{startidx+1}+\\frac{firstterm}{startidx+2}+\\frac{kplustwo}{startidx+2} \\\\\n& \\geq \\frac{firstterm}{startidx+1}+\\frac{firstterm}{startidx+2}+\\frac{firstterm}{startidx+3}+\\frac{kplusthr}{startidx+3} .\n\\end{aligned}\n\\]\n\nBy induction\n\\[\n\\frac{kthterm}{startidx} \\geq firstterm\\left(\\sum_{loopidx=startidx+1}^{limitidx} \\frac{1}{loopidx}\\right)+\\frac{pthterm}{limitidx}\n\\]\nfor any \\( limitidx \\geq startidx \\). Then\n\\[\n\\sum_{loopidx=startidx+1}^{limitidx} \\frac{1}{loopidx} \\leq \\frac{kthterm}{startidx\\,firstterm} \\text { for } limitidx \\geq startidx .\n\\]\n\nBut the harmonic series diverges, so the sums \\( \\sum_{loopidx=startidx+1}^{limitidx} 1 / loopidx \\) are unbounded. Thus relation (1) cannot hold for all \\( indexvar \\geq startidx \\), and hence there must be infinitely many integers \\( \\boldsymbol{indexvar} \\) for which\n\\[\n\\frac{firstterm+nextterm}{nthterm}>1+\\frac{1}{indexvar} .\n\\]\n\nThen\n\\[\n\\lim _{indexvar \\rightarrow \\infty} \\sup \\left(\\frac{firstterm+nextterm}{nthterm}\\right)^{indexvar} \\geq \\lim _{indexvar \\rightarrow \\infty}\\left(1+\\frac{1}{indexvar}\\right)^{indexvar}=e .\n\\]\n\nRemark. The lower bound \\( e \\) cannot be improved because there is a sequence such that\n\\[\n\\lim \\left(\\frac{firstterm+nextterm}{nthterm}\\right)^{indexvar}=e .\n\\]\n\nSuch a sequence is given by\n\\[\nfirstterm=1, \\quad nthterm=indexvar \\log indexvar \\quad \\text { for } indexvar \\geq 1 .\n\\]\n\nFor this sequence\n\\[\n\\frac{firstterm+nextterm}{nthterm}=1+\\frac{bnseries}{indexvar}\n\\]\nwhere\n\\[\nbnseries=\\frac{1}{\\log indexvar}\\left(1+indexvar \\log \\left(\\frac{indexvar+1}{indexvar}\\right)+\\log (indexvar+1)\\right) .\n\\]\n\nThen\n\\[\n\\left(\\frac{firstterm+nextterm}{nthterm}\\right)^{indexvar}=\\left(1+\\frac{bnseries}{indexvar}\\right)^{indexvar} \\rightarrow e\n\\]\nsince \\( bnseries \\rightarrow 1 \\) as \\( indexvar \\rightarrow \\infty \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "lighthouse",
+        "k": "riverstone",
+        "p": "meadowlark",
+        "i": "stargazer",
+        "a_1": "silvercloud",
+        "a_2": "copperfield",
+        "a_n": "ambertrail",
+        "a_n+1": "midnightowl",
+        "a_k": "duskmirror",
+        "a_k+1": "moongarden",
+        "a_k+2": "sunparlor",
+        "a_k+3": "starcanyon",
+        "a_p": "mistyharbor",
+        "b_n": "windwhisper"
+      },
+      "question": "5. Let \\( silvercloud, copperfield, \\ldots, ambertrail, \\ldots \\) be an arbitrary sequence of positive numbers. Show that\n\\[\n\\lim _{lighthouse \\rightarrow \\infty} \\sup \\left(\\frac{silvercloud+midnightowl}{ambertrail}\\right)^{lighthouse} \\geq e\n\\]",
+      "solution": "Solution. We shall show that there are infinitely many integers \\( lighthouse \\) for which\n\\[\n\\frac{silvercloud+midnightowl}{ambertrail}>1+1 / lighthouse .\n\\]\n\nOur proof is indirect. Suppose it is false. Then for some integer \\( riverstone \\) and for all \\( lighthouse \\geq riverstone \\)\n\\[\n\\frac{silvercloud+midnightowl}{ambertrail} \\leq \\frac{lighthouse+1}{lighthouse}\n\\]\nwhence\n\\[\n\\frac{ambertrail}{lighthouse} \\geq \\frac{silvercloud}{lighthouse+1}+\\frac{midnightowl}{lighthouse+1} .\n\\]\n\nTherefore\n\\[\n\\begin{aligned}\n\\frac{duskmirror}{riverstone} & \\geq \\frac{silvercloud}{riverstone+1}+\\frac{moongarden}{riverstone+1} \\geq \\frac{silvercloud}{riverstone+1}+\\frac{silvercloud}{riverstone+2}+\\frac{sunparlor}{riverstone+2} \\\\\n& \\geq \\frac{silvercloud}{riverstone+1}+\\frac{silvercloud}{riverstone+2}+\\frac{silvercloud}{riverstone+3}+\\frac{starcanyon}{riverstone+3} .\n\\end{aligned}\n\\]\n\nBy induction\n\\[\n\\frac{duskmirror}{riverstone} \\geq silvercloud\\left(\\sum_{stargazer=riverstone+1}^{meadowlark} \\frac{1}{stargazer}\\right)+\\frac{mistyharbor}{meadowlark}\n\\]\nfor any \\( meadowlark \\geq riverstone \\). Then\n\\[\n\\sum_{stargazer=riverstone+1}^{meadowlark} \\frac{1}{stargazer} \\leq \\frac{duskmirror}{riverstone\\, silvercloud} \\text { for } meadowlark \\geq riverstone .\n\\]\n\nBut the harmonic series diverges, so the sums \\( \\sum_{stargazer=riverstone+1}^{meadowlark} 1 / stargazer \\) are unbounded. Thus relation (1) cannot hold for all \\( lighthouse \\geq riverstone \\), and hence there must be infinitely many integers \\( \\boldsymbol{lighthouse} \\) for which\n\\[\n\\frac{silvercloud+midnightowl}{ambertrail}>1+\\frac{1}{lighthouse} .\n\\]\n\nThen\n\\[\n\\lim _{lighthouse \\rightarrow \\infty} \\sup \\left(\\frac{silvercloud+midnightowl}{ambertrail}\\right)^{lighthouse} \\geq \\lim _{lighthouse-\\infty}\\left(1+\\frac{1}{lighthouse}\\right)^{lighthouse}=e .\n\\]\n\nRemark. The lower bound \\( e \\) cannot be improved because there is a sequence such that\n\\[\n\\lim \\left(\\frac{silvercloud+midnightowl}{ambertrail}\\right)^{lighthouse}=e .\n\\]\n\nSuch a sequence is given by\n\\[\nsilvercloud=1, \\quad ambertrail=lighthouse \\log lighthouse \\quad \\text { for } lighthouse \\geq 1 .\n\\]\n\nFor this sequence\n\\[\n\\frac{silvercloud+midnightowl}{ambertrail}=1+\\frac{windwhisper}{lighthouse}\n\\]\nwhere\n\\[\nwindwhisper=\\frac{1}{\\log lighthouse}\\left(1+lighthouse \\log \\left(\\frac{lighthouse+1}{lighthouse}\\right)+\\log (lighthouse+1)\\right) .\n\\]\n\nThen\n\\[\n\\left(\\frac{silvercloud+midnightowl}{ambertrail}\\right)^{lighthouse}=\\left(1+\\frac{windwhisper}{lighthouse}\\right)^{lighthouse} \\rightarrow e\n\\]\nsince \\( windwhisper \\rightarrow 1 \\) as \\( lighthouse \\rightarrow \\infty \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "constantval",
+        "k": "immutable",
+        "p": "steadfast",
+        "i": "finalindex",
+        "a_1": "lastterm",
+        "a_2": "lastbutone",
+        "a_n": "constantterm",
+        "a_n+1": "previousitem",
+        "a_k": "fixedelement",
+        "a_k+1": "beforeelement",
+        "a_k+2": "twobehind",
+        "a_k+3": "threebehind",
+        "a_p": "staticentry",
+        "b_n": "stagnantseries"
+      },
+      "question": "5. Let \\( lastterm, lastbutone, \\ldots, constantterm, \\ldots \\) be an arbitrary sequence of positive numbers. Show that\n\\[\n\\lim _{constantval \\rightarrow \\infty} \\sup \\left(\\frac{lastterm+previousitem}{constantterm}\\right)^{constantval} \\geq e\n\\]",
+      "solution": "Solution. We shall show that there are infinitely many integers \\( constantval \\) for which\n\\[\n\\frac{lastterm+previousitem}{constantterm}>1+1 / constantval .\n\\]\n\nOur proof is indirect. Suppose it is false. Then for some integer \\( immutable \\) and for all \\( constantval \\geq immutable \\)\n\\[\n\\frac{lastterm+previousitem}{constantterm} \\leq \\frac{constantval+1}{constantval}\n\\]\nwhence\n\\[\n\\frac{constantterm}{constantval} \\geq \\frac{lastterm}{constantval+1}+\\frac{previousitem}{constantval+1} .\n\\]\n\nTherefore\n\\[\n\\begin{aligned}\n\\frac{fixedelement}{immutable} & \\geq \\frac{lastterm}{immutable+1}+\\frac{beforeelement}{immutable+1} \\geq \\frac{lastterm}{immutable+1}+\\frac{lastterm}{immutable+2}+\\frac{twobehind}{immutable+2} \\\\\n& \\geq \\frac{lastterm}{immutable+1}+\\frac{lastterm}{immutable+2}+\\frac{lastterm}{immutable+3}+\\frac{threebehind}{immutable+3} .\n\\end{aligned}\n\\]\n\nBy induction\n\\[\n\\frac{fixedelement}{immutable} \\geq lastterm\\left(\\sum_{finalindex=immutable+1}^{steadfast} \\frac{1}{finalindex}\\right)+\\frac{staticentry}{steadfast}\n\\]\nfor any \\( steadfast \\geq immutable \\). Then\n\\[\n\\sum_{finalindex=immutable+1}^{steadfast} \\frac{1}{finalindex} \\leq \\frac{fixedelement}{immutable\\; lastterm} \\text { for } steadfast \\geq immutable .\n\\]\n\nBut the harmonic series diverges, so the sums \\( \\sum_{finalindex=immutable+1}^{steadfast} 1 / finalindex \\) are unbounded. Thus relation (1) cannot hold for all \\( constantval \\geq immutable \\), and hence there must be infinitely many integers \\( \\boldsymbol{constantval} \\) for which\n\\[\n\\frac{lastterm+previousitem}{constantterm}>1+\\frac{1}{constantval} .\n\\]\n\nThen\n\\[\n\\lim _{constantval \\rightarrow \\infty} \\sup \\left(\\frac{lastterm+previousitem}{constantterm}\\right)^{constantval} \\geq \\lim _{constantval-\\infty}\\left(1+\\frac{1}{constantval}\\right)^{constantval}=e .\n\\]\n\nRemark. The lower bound \\( e \\) cannot be improved because there is a sequence such that\n\\[\n\\lim \\left(\\frac{lastterm+previousitem}{constantterm}\\right)^{constantval}=e .\n\\]\n\nSuch a sequence is given by\n\\[\nlastterm=1, \\quad constantterm=constantval \\log constantval \\quad \\text { for } constantval \\geq 1 .\n\\]\n\nFor this sequence\n\\[\n\\frac{lastterm+previousitem}{constantterm}=1+\\frac{stagnantseries}{constantval}\n\\]\nwhere\n\\[\nstagnantseries=\\frac{1}{\\log constantval}\\left(1+constantval \\log \\left(\\frac{constantval+1}{constantval}\\right)+\\log (constantval+1)\\right) .\n\\]\n\nThen\n\\[\n\\left(\\frac{lastterm+previousitem}{constantterm}\\right)^{constantval}=\\left(1+\\frac{stagnantseries}{constantval}\\right)^{constantval} \\rightarrow e\n\\]\nsince \\( stagnantseries \\rightarrow 1 \\) as \\( constantval \\rightarrow \\infty \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "k": "hjgrksla",
+        "p": "mndfqucz",
+        "i": "trgsplok",
+        "a_1": "sldkfght",
+        "a_2": "cvbnmwer",
+        "a_n": "abtrplmz",
+        "a_n+1": "xmvplkqs",
+        "a_k": "oeirutyw",
+        "a_k+1": "pqlxvzsd",
+        "a_k+2": "urmnsdjk",
+        "a_k+3": "jkgfalsn",
+        "a_p": "vhwsdfrq",
+        "b_n": "lqmxncpt"
+      },
+      "question": "5. Let \\( sldkfght, cvbnmwer, \\ldots, abtrplmz, \\ldots \\) be an arbitrary sequence of positive numbers. Show that\n\\[\n\\lim _{qzxwvtnp \\rightarrow \\infty} \\sup \\left(\\frac{sldkfght+xmvplkqs}{abtrplmz}\\right)^{qzxwvtnp} \\geq e\n\\]",
+      "solution": "Solution. We shall show that there are infinitely many integers \\( qzxwvtnp \\) for which\n\\[\n\\frac{sldkfght+xmvplkqs}{abtrplmz}>1+1 / qzxwvtnp .\n\\]\n\nOur proof is indirect. Suppose it is false. Then for some integer \\( hjgrksla \\) and for all \\( qzxwvtnp \\geq hjgrksla \\)\n\\[\n\\frac{sldkfght+xmvplkqs}{abtrplmz} \\leq \\frac{qzxwvtnp+1}{qzxwvtnp}\n\\]\nwhence\n\\[\n\\frac{abtrplmz}{qzxwvtnp} \\geq \\frac{sldkfght}{qzxwvtnp+1}+\\frac{xmvplkqs}{qzxwvtnp+1} .\n\\]\n\nTherefore\n\\[\n\\begin{aligned}\n\\frac{oeirutyw}{hjgrksla} & \\geq \\frac{sldkfght}{hjgrksla+1}+\\frac{pqlxvzsd}{hjgrksla+1} \\geq \\frac{sldkfght}{hjgrksla+1}+\\frac{sldkfght}{hjgrksla+2}+\\frac{urmnsdjk}{hjgrksla+2} \\\\\n& \\geq \\frac{sldkfght}{hjgrksla+1}+\\frac{sldkfght}{hjgrksla+2}+\\frac{sldkfght}{hjgrksla+3}+\\frac{jkgfalsn}{hjgrksla+3} .\n\\end{aligned}\n\\]\n\nBy induction\n\\[\n\\frac{oeirutyw}{hjgrksla} \\geq sldkfght\\left(\\sum_{trgsplok=hjgrksla+1}^{mndfqucz} \\frac{1}{trgsplok}\\right)+\\frac{vhwsdfrq}{mndfqucz}\n\\]\nfor any \\( mndfqucz \\geq hjgrksla \\). Then\n\\[\n\\sum_{trgsplok=hjgrksla+1}^{mndfqucz} \\frac{1}{trgsplok} \\leq \\frac{oeirutyw}{hjgrksla \\, sldkfght} \\text { for } mndfqucz \\geq hjgrksla .\n\\]\n\nBut the harmonic series diverges, so the sums \\( \\sum_{trgsplok=hjgrksla+1}^{mndfqucz} 1 / trgsplok \\) are unbounded. Thus relation (1) cannot hold for all \\( qzxwvtnp \\geq hjgrksla \\), and hence there must be infinitely many integers \\( \\mathbf{qzxwvtnp} \\) for which\n\\[\n\\frac{sldkfght+xmvplkqs}{abtrplmz}>1+\\frac{1}{qzxwvtnp} .\n\\]\n\nThen\n\\[\n\\lim _{qzxwvtnp \\rightarrow \\infty} \\sup \\left(\\frac{sldkfght+xmvplkqs}{abtrplmz}\\right)^{qzxwvtnp} \\geq \\lim _{qzxwvtnp \\rightarrow \\infty}\\left(1+\\frac{1}{qzxwvtnp}\\right)^{qzxwvtnp}=e .\n\\]\n\nRemark. The lower bound \\( e \\) cannot be improved because there is a sequence such that\n\\[\n\\lim \\left(\\frac{sldkfght+xmvplkqs}{abtrplmz}\\right)^{qzxwvtnp}=e .\n\\]\n\nSuch a sequence is given by\n\\[\nsldkfght=1, \\quad abtrplmz=qzxwvtnp \\log qzxwvtnp \\quad \\text { for } qzxwvtnp \\geq 1 .\n\\]\n\nFor this sequence\n\\[\n\\frac{sldkfght+xmvplkqs}{abtrplmz}=1+\\frac{lqmxncpt}{qzxwvtnp}\n\\]\nwhere\n\\[\nlqmxncpt=\\frac{1}{\\log qzxwvtnp}\\left(1+qzxwvtnp \\log \\left(\\frac{qzxwvtnp+1}{qzxwvtnp}\\right)+\\log (qzxwvtnp+1)\\right) .\n\\]\n\nThen\n\\[\n\\left(\\frac{sldkfght+xmvplkqs}{abtrplmz}\\right)^{qzxwvtnp}=\\left(1+\\frac{lqmxncpt}{qzxwvtnp}\\right)^{qzxwvtnp} \\rightarrow e\n\\]\nsince \\( lqmxncpt \\rightarrow 1 \\) as \\( qzxwvtnp \\rightarrow \\infty \\)."
+    },
+    "kernel_variant": {
+      "question": "Let H be an infinite-dimensional separable Hilbert space over \\mathbb{R} or \\mathbb{C}.  \nFor every positive integer n let  \n\n  T_n \\in  B(H)  \n\nbe bounded, self-adjoint and strictly positive (i.e. \\langle T_nx,x\\rangle  > 0 for every non-zero x \\in  H); hence every T_n is invertible.  \nDenote by \\|\\cdot \\| the usual operator norm on B(H).\n\nShow that  \n\n  lim sup_{n\\to \\infty } \\|\\,T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2}\\,\\|^{\\,n}  \\geq  e.",
+      "solution": "Step 0.  Preliminaries.  \nBecause T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2} is self-adjoint and strictly positive, its norm equals its largest spectral value.  For such operators we shall repeatedly use the Rayleigh-quotient formula  \n\n  \\|S\\| = sup_{0\\neq x\\in H} \\langle Sx,x\\rangle  / \\|x\\|^2.                                         (1)\n\nStep 1.  A variational description well suited to the problem.  \nPut  \n\n  S_n := T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2}        (n \\geq  1).\n\nBy (1) we have  \n\n  \\|S_n\\| = sup_{0\\neq x} \\langle (T_1+T_{n+1})x,x\\rangle  / \\langle T_nx,x\\rangle .                (2)\n\n(The equality follows from the change of variable x \\mapsto  T_n^{-1/2}x.)\n\nStep 2.  Choosing one good test vector once and for all.  \nBecause T_1 is bounded and strictly positive, its numerical range\n\n  \\rho (x) := \\langle T_1x,x\\rangle  / \\|x\\|^2       (x \\neq  0)\n\nis contained in (0,\\|T_1\\|].  Fix a unit vector u \\in  H with  \n\n  \\langle T_1u,u\\rangle  = \\lambda  > 0,                                               (3)\n\nwhere \\lambda  can be taken arbitrarily close to \\|T_1\\| (if T_1 has no eigenvectors take u so that \\rho (u) > \\|T_1\\|-\\varepsilon ).\n\nIntroduce the positive scalar sequence  \n\n  a_n := \\langle T_nu,u\\rangle   (n \\geq  1).                                       (4)\n\nBecause T_n is strictly positive and u\\neq 0, every a_n is strictly positive.\n\nStep 3.  Relating \\|S_n\\| to the scalar sequence (a_n).  \nEvaluate the quotient in (2) at the special vector x=u.  We get  \n\n  \\|S_n\\| \\geq  (\\langle (T_1+T_{n+1})u,u\\rangle )/(\\langle T_nu,u\\rangle ) = (\\lambda +a_{n+1})/a_n.     (5)\n\nStep 4.  A purely scalar lemma (classical).  \nFor an arbitrary positive sequence (a_n) and any fixed \\lambda >0,\n\n  lim sup_{n\\to \\infty } ((\\lambda +a_{n+1})/a_n)^{\\,n} \\geq  e.                    (6)\n\nProof of (6) (sketch).  Assume contrariwise that there exists k such that  \n(\\lambda +a_{n+1})/a_n \\leq  1+1/n for all n\\geq k.  Writing this as  \n\n  a_n/n \\geq  \\lambda /(n+1) + a_{n+1}/(n+1)                               (7)\n\nand iterating (7) for n=k,k+1,\\ldots ,p-1 yields  \n\n  a_k/k \\geq  \\lambda \\sum _{j=k+1}^{p} 1/j + a_p/p.                         (8)\n\nLetting p\\to \\infty  contradicts the divergence of the harmonic series.  Hence (7) cannot hold for all large n, so (\\lambda +a_{n+1})/a_n > 1+1/n for infinitely many n; taking limsup and letting n\\to \\infty  gives (6). \\blacksquare \n\nStep 5.  From the scalar estimate back to the operator.  \nCombining (5) and (6) we obtain  \n\n  lim sup_{n\\to \\infty } \\|S_n\\|^{\\,n}\n      \\geq  lim sup_{n\\to \\infty } ((\\lambda +a_{n+1})/a_n)^{\\,n}\n      \\geq  e.                                                        (9)\n\nRecalling the definition of S_n, (9) is precisely the desired inequality  \n\n  lim sup_{n\\to \\infty } \\|T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2}\\|^{\\,n} \\geq  e.   \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.427300",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional structure – we moved from a sequence of numbers to a sequence of bounded positive operators on an infinite-dimensional Hilbert space.\n2. Advanced tools required – the solution needs the spectral theorem,\nthe Rayleigh–Ritz variational principle, and norm identities such as (1);\nnone of these appear in the original scalar problem.\n3. Additional abstraction – operator inversion, operator square roots,\nand manipulation of quadratic forms are necessary.\n4. Non-trivial reduction – the proof must connect the operator inequality to a scalar one via carefully chosen quadratic forms; simple pattern-matching to the original argument no longer suffices.\n5. Infinite-dimensional subtleties – possible absence of eigenvectors is handled through approximate eigenvectors, demanding a deeper functional-analytic insight.\n\nAll these layers make the enhanced variant substantially more technical and conceptually harder than both the original problem and the current kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let H be an infinite-dimensional separable Hilbert space over \\mathbb{R} or \\mathbb{C}.  \nFor every positive integer n let  \n\n  T_n \\in  B(H)  \n\nbe bounded, self-adjoint and strictly positive (i.e. \\langle T_nx,x\\rangle  > 0 for every non-zero x \\in  H); hence every T_n is invertible.  \nDenote by \\|\\cdot \\| the usual operator norm on B(H).\n\nShow that  \n\n  lim sup_{n\\to \\infty } \\|\\,T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2}\\,\\|^{\\,n}  \\geq  e.",
+      "solution": "Step 0.  Preliminaries.  \nBecause T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2} is self-adjoint and strictly positive, its norm equals its largest spectral value.  For such operators we shall repeatedly use the Rayleigh-quotient formula  \n\n  \\|S\\| = sup_{0\\neq x\\in H} \\langle Sx,x\\rangle  / \\|x\\|^2.                                         (1)\n\nStep 1.  A variational description well suited to the problem.  \nPut  \n\n  S_n := T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2}        (n \\geq  1).\n\nBy (1) we have  \n\n  \\|S_n\\| = sup_{0\\neq x} \\langle (T_1+T_{n+1})x,x\\rangle  / \\langle T_nx,x\\rangle .                (2)\n\n(The equality follows from the change of variable x \\mapsto  T_n^{-1/2}x.)\n\nStep 2.  Choosing one good test vector once and for all.  \nBecause T_1 is bounded and strictly positive, its numerical range\n\n  \\rho (x) := \\langle T_1x,x\\rangle  / \\|x\\|^2       (x \\neq  0)\n\nis contained in (0,\\|T_1\\|].  Fix a unit vector u \\in  H with  \n\n  \\langle T_1u,u\\rangle  = \\lambda  > 0,                                               (3)\n\nwhere \\lambda  can be taken arbitrarily close to \\|T_1\\| (if T_1 has no eigenvectors take u so that \\rho (u) > \\|T_1\\|-\\varepsilon ).\n\nIntroduce the positive scalar sequence  \n\n  a_n := \\langle T_nu,u\\rangle   (n \\geq  1).                                       (4)\n\nBecause T_n is strictly positive and u\\neq 0, every a_n is strictly positive.\n\nStep 3.  Relating \\|S_n\\| to the scalar sequence (a_n).  \nEvaluate the quotient in (2) at the special vector x=u.  We get  \n\n  \\|S_n\\| \\geq  (\\langle (T_1+T_{n+1})u,u\\rangle )/(\\langle T_nu,u\\rangle ) = (\\lambda +a_{n+1})/a_n.     (5)\n\nStep 4.  A purely scalar lemma (classical).  \nFor an arbitrary positive sequence (a_n) and any fixed \\lambda >0,\n\n  lim sup_{n\\to \\infty } ((\\lambda +a_{n+1})/a_n)^{\\,n} \\geq  e.                    (6)\n\nProof of (6) (sketch).  Assume contrariwise that there exists k such that  \n(\\lambda +a_{n+1})/a_n \\leq  1+1/n for all n\\geq k.  Writing this as  \n\n  a_n/n \\geq  \\lambda /(n+1) + a_{n+1}/(n+1)                               (7)\n\nand iterating (7) for n=k,k+1,\\ldots ,p-1 yields  \n\n  a_k/k \\geq  \\lambda \\sum _{j=k+1}^{p} 1/j + a_p/p.                         (8)\n\nLetting p\\to \\infty  contradicts the divergence of the harmonic series.  Hence (7) cannot hold for all large n, so (\\lambda +a_{n+1})/a_n > 1+1/n for infinitely many n; taking limsup and letting n\\to \\infty  gives (6). \\blacksquare \n\nStep 5.  From the scalar estimate back to the operator.  \nCombining (5) and (6) we obtain  \n\n  lim sup_{n\\to \\infty } \\|S_n\\|^{\\,n}\n      \\geq  lim sup_{n\\to \\infty } ((\\lambda +a_{n+1})/a_n)^{\\,n}\n      \\geq  e.                                                        (9)\n\nRecalling the definition of S_n, (9) is precisely the desired inequality  \n\n  lim sup_{n\\to \\infty } \\|T_n^{-1/2}(T_1+T_{n+1})T_n^{-1/2}\\|^{\\,n} \\geq  e.   \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.370999",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional structure – we moved from a sequence of numbers to a sequence of bounded positive operators on an infinite-dimensional Hilbert space.\n2. Advanced tools required – the solution needs the spectral theorem,\nthe Rayleigh–Ritz variational principle, and norm identities such as (1);\nnone of these appear in the original scalar problem.\n3. Additional abstraction – operator inversion, operator square roots,\nand manipulation of quadratic forms are necessary.\n4. Non-trivial reduction – the proof must connect the operator inequality to a scalar one via carefully chosen quadratic forms; simple pattern-matching to the original argument no longer suffices.\n5. Infinite-dimensional subtleties – possible absence of eigenvectors is handled through approximate eigenvectors, demanding a deeper functional-analytic insight.\n\nAll these layers make the enhanced variant substantially more technical and conceptually harder than both the original problem and the current kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

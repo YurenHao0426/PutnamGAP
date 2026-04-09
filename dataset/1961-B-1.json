@@ -1,0 +1,122 @@
+{
+  "index": "1961-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Let \\( \\alpha_{1}, \\alpha_{2}, \\alpha_{3}, \\ldots \\) be a sequence of positive real numbers; define \\( s_{n} \\) as \\( \\left(\\alpha_{1}+\\alpha_{2}+\\cdots+\\alpha_{n}\\right) / n \\) and \\( r_{n} \\) as \\( \\left(\\alpha_{1}^{-1}+\\alpha_{2}^{-1}+\\cdots+\\alpha_{n}^{-1}\\right) / n \\). Given that \\( \\lim s_{n} \\) and \\( \\lim r_{n} \\) exist as \\( n \\rightarrow \\infty \\), prove that the product of these limits is not less than 1.",
+  "solution": "Solution. It is clearly sufficient to prove that \\( r_{n} s_{n} \\geq 1 \\) for all \\( n \\). Let \\( \\beta_{i}= \\) \\( \\alpha_{i}^{1 / 2} \\) and \\( \\gamma_{i}=\\alpha_{i}^{-1 / 2} \\). Then by the Cauchy-Schwarz inequality\n\\[\n\\begin{aligned}\nn^{2}=\\left(\\sum_{i=1}^{n} \\beta_{i} \\gamma_{i}\\right)^{2} & \\leq\\left(\\sum_{i=1}^{n} \\beta_{i}^{2}\\right)\\left(\\sum_{i=1}^{n} \\gamma_{i}^{2}\\right) \\\\\n& =\\left(\\sum_{i=1}^{n} \\alpha_{i}\\right)\\left(\\sum_{i=1}^{n} \\alpha_{i}^{-1}\\right) \\\\\n& =\\left(n s_{n}\\right)\\left(n r_{n}\\right)\n\\end{aligned}\n\\]\nand it follows that\n\\[\nr_{n} s_{n} \\geq 1\n\\]",
+  "vars": [
+    "n",
+    "s_n",
+    "r_n",
+    "i",
+    "\\\\alpha_1",
+    "\\\\alpha_2",
+    "\\\\alpha_3",
+    "\\\\alpha_n",
+    "\\\\alpha_i",
+    "\\\\beta_i",
+    "\\\\gamma_i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexsize",
+        "s_n": "arithmean",
+        "r_n": "harmmean",
+        "i": "iterindex",
+        "\\alpha_1": "firstterm",
+        "\\alpha_2": "secondterm",
+        "\\alpha_3": "thirdterm",
+        "\\alpha_n": "generalterm",
+        "\\alpha_i": "itermvalue",
+        "\\beta_i": "itermsqrt",
+        "\\gamma_i": "iterminvsqrt"
+      },
+      "question": "1. Let \\( firstterm, secondterm, thirdterm, \\ldots \\) be a sequence of positive real numbers; define \\( arithmean \\) as \\( \\left(firstterm+secondterm+\\cdots+generalterm\\right) / indexsize \\) and \\( harmmean \\) as \\( \\left(firstterm^{-1}+secondterm^{-1}+\\cdots+generalterm^{-1}\\right) / indexsize \\). Given that \\( \\lim arithmean \\) and \\( \\lim harmmean \\) exist as \\( indexsize \\rightarrow \\infty \\), prove that the product of these limits is not less than 1.",
+      "solution": "Solution. It is clearly sufficient to prove that \\( harmmean\\, arithmean \\geq 1 \\) for all \\( indexsize \\). Let \\( itermsqrt = itermvalue^{1 / 2} \\) and \\( iterminvsqrt = itermvalue^{-1 / 2} \\). Then by the Cauchy-Schwarz inequality\n\\[\n\\begin{aligned}\nindexsize^{2}=\\left(\\sum_{iterindex=1}^{indexsize} itermsqrt\\, iterminvsqrt\\right)^{2} & \\leq\\left(\\sum_{iterindex=1}^{indexsize} itermsqrt^{2}\\right)\\left(\\sum_{iterindex=1}^{indexsize} iterminvsqrt^{2}\\right) \\\\\n& =\\left(\\sum_{iterindex=1}^{indexsize} itermvalue\\right)\\left(\\sum_{iterindex=1}^{indexsize} itermvalue^{-1}\\right) \\\\\n& =\\left(indexsize\\, arithmean\\right)\\left(indexsize\\, harmmean\\right)\n\\end{aligned}\n\\]\nand it follows that\n\\[\nharmmean\\, arithmean \\geq 1\n\\]\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "peppermint",
+        "s_n": "skylarkwing",
+        "r_n": "riverbank",
+        "i": "iciclelit",
+        "\\\\alpha_1": "alderwood",
+        "\\\\alpha_2": "buttercup",
+        "\\\\alpha_3": "chestnut",
+        "\\\\alpha_n": "dragonfly",
+        "\\\\alpha_i": "eldercare",
+        "\\\\beta_i": "fiddlestick",
+        "\\\\gamma_i": "gingerglow"
+      },
+      "question": "1. Let \\( alderwood, buttercup, chestnut, \\ldots \\) be a sequence of positive real numbers; define \\( skylarkwing_{peppermint} \\) as \\( \\left(alderwood+buttercup+\\cdots+dragonfly\\right) / peppermint \\) and \\( riverbank_{peppermint} \\) as \\( \\left(alderwood^{-1}+buttercup^{-1}+\\cdots+dragonfly^{-1}\\right) / peppermint \\). Given that \\( \\lim skylarkwing_{peppermint} \\) and \\( \\lim riverbank_{peppermint} \\) exist as \\( peppermint \\rightarrow \\infty \\), prove that the product of these limits is not less than 1.",
+      "solution": "Solution. It is clearly sufficient to prove that \\( riverbank_{peppermint} \\, skylarkwing_{peppermint} \\geq 1 \\) for all \\( peppermint \\). Let \\( fiddlestick_{iciclelit}= eldercare_{iciclelit}^{1 / 2} \\) and \\( gingerglow_{iciclelit}= eldercare_{iciclelit}^{-1 / 2} \\). Then by the Cauchy--Schwarz inequality\\n\\[\\n\\begin{aligned}\\npeppermint^{2}=\\left(\\sum_{iciclelit=1}^{peppermint} fiddlestick_{iciclelit} \\, gingerglow_{iciclelit}\\right)^{2} & \\leq\\left(\\sum_{iciclelit=1}^{peppermint} fiddlestick_{iciclelit}^{2}\\right)\\left(\\sum_{iciclelit=1}^{peppermint} gingerglow_{iciclelit}^{2}\\right) \\\\ & =\\left(\\sum_{iciclelit=1}^{peppermint} eldercare_{iciclelit}\\right)\\left(\\sum_{iciclelit=1}^{peppermint} eldercare_{iciclelit}^{-1}\\right) \\\\ & =\\left(peppermint \\, skylarkwing_{peppermint}\\right)\\left(peppermint \\, riverbank_{peppermint}\\right)\\n\\end{aligned}\\n\\]\\nand it follows that\\n\\[\\nriverbank_{peppermint} \\, skylarkwing_{peppermint} \\geq 1.\\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "continuum",
+        "s_n": "extremeval",
+        "r_n": "nonrecipro",
+        "i": "aggregate",
+        "\\alpha_1": "negativeone",
+        "\\alpha_2": "negativetwo",
+        "\\alpha_3": "negativethree",
+        "\\alpha_n": "negativenum",
+        "\\alpha_i": "negativeidx",
+        "\\beta_i": "powerindex",
+        "\\gamma_i": "directroot"
+      },
+      "question": "1. Let \\( negativeone, negativetwo, negativethree, \\ldots \\) be a sequence of positive real numbers; define \\( extremeval \\) as \\( \\left(negativeone+negativetwo+\\cdots+negativenum\\right) / continuum \\) and \\( nonrecipro \\) as \\( \\left(negativeone^{-1}+negativetwo^{-1}+\\cdots+negativenum^{-1}\\right) / continuum \\). Given that \\( \\lim extremeval \\) and \\( \\lim nonrecipro \\) exist as \\( continuum \\rightarrow \\infty \\), prove that the product of these limits is not less than 1.",
+      "solution": "Solution. It is clearly sufficient to prove that \\( nonrecipro\\, extremeval \\geq 1 \\) for all continuum. Let \\( powerindex = negativeidx^{1 / 2} \\) and \\( directroot = negativeidx^{-1 / 2} \\). Then by the Cauchy-Schwarz inequality\n\\[\n\\begin{aligned}\ncontinuum^{2}=\\left(\\sum_{aggregate=1}^{continuum} powerindex\\, directroot\\right)^{2} & \\leq\\left(\\sum_{aggregate=1}^{continuum} powerindex^{2}\\right)\\left(\\sum_{aggregate=1}^{continuum} directroot^{2}\\right) \\\\\n& =\\left(\\sum_{aggregate=1}^{continuum} negativeidx\\right)\\left(\\sum_{aggregate=1}^{continuum} negativeidx^{-1}\\right) \\\\\n& =\\left(continuum\\, extremeval\\right)\\left(continuum\\, nonrecipro\\right)\n\\end{aligned}\n\\]\nand it follows that\n\\[\nnonrecipro\\, extremeval \\geq 1\n\\]\n"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "kbqmvusl",
+        "s_n": "zjchtkpa",
+        "r_n": "pvrgmfqd",
+        "i": "xhwsplao",
+        "\\alpha_1": "ucyqmzhe",
+        "\\alpha_2": "afzrnwgo",
+        "\\alpha_3": "jxnhmrtu",
+        "\\alpha_n": "yrtmhgqa",
+        "\\alpha_i": "ogtcrpse",
+        "\\beta_i": "hqdvrmno",
+        "\\gamma_i": "lskwejzu"
+      },
+      "question": "1. Let \\( ucyqmzhe, afzrnwgo, jxnhmrtu, \\ldots \\) be a sequence of positive real numbers; define \\( zjchtkpa \\) as \\( \\left(ucyqmzhe+afzrnwgo+\\cdots+yrtmhgqa\\right) / kbqmvusl \\) and \\( pvrgmfqd \\) as \\( \\left(ucyqmzhe^{-1}+afzrnwgo^{-1}+\\cdots+yrtmhgqa^{-1}\\right) / kbqmvusl \\). Given that \\( \\lim zjchtkpa \\) and \\( \\lim pvrgmfqd \\) exist as \\( kbqmvusl \\rightarrow \\infty \\), prove that the product of these limits is not less than 1.",
+      "solution": "Solution. It is clearly sufficient to prove that \\( pvrgmfqd\\, zjchtkpa \\geq 1 \\) for all \\( kbqmvusl \\). Let \\( hqdvrmno = ogtcrpse^{1 / 2} \\) and \\( lskwejzu = ogtcrpse^{-1 / 2} \\). Then by the Cauchy-Schwarz inequality\n\\[\n\\begin{aligned}\nkbqmvusl^{2}=\\left(\\sum_{xhwsplao=1}^{kbqmvusl} hqdvrmno\\, lskwejzu\\right)^{2} & \\leq \\left(\\sum_{xhwsplao=1}^{kbqmvusl} hqdvrmno^{2}\\right)\\left(\\sum_{xhwsplao=1}^{kbqmvusl} lskwejzu^{2}\\right) \\\\\n& = \\left(\\sum_{xhwsplao=1}^{kbqmvusl} ogtcrpse\\right)\\left(\\sum_{xhwsplao=1}^{kbqmvusl} ogtcrpse^{-1}\\right) \\\\\n& = \\left(kbqmvusl\\, zjchtkpa\\right)\\left(kbqmvusl\\, pvrgmfqd\\right)\n\\end{aligned}\n\\]\nand it follows that\n\\[\npvrgmfqd\\, zjchtkpa \\geq 1\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $(a_k)_{k\\ge 1}$ be a sequence of positive real numbers.  For every integer $n\\ge 1$ put\n\\[\nS_n\\;:=\\;\\frac{a_1+a_2+\\dots +a_n}{n},\\qquad  R_n\\;:=\\;\\frac{a_1^{-1}+a_2^{-1}+\\dots +a_n^{-1}}{n}.\n\\]\nShow that\n\\[\n\\limsup_{n\\to\\infty} S_n\\;\\cdot\\;\\limsup_{n\\to\\infty} R_n\\;\\ge 1.\n\\]\n(The product is taken in the extended real line $[0,+\\infty]$, and we adopt the usual convention that $0\\cdot(+\\infty)=+\\infty$ so that the right-hand side is always well-defined.)",
+      "solution": "Step 1  (A pointwise bound).\nFor $n\\ge 1$ set $b_i:=a_i$ and define $\\beta_i:=\\sqrt{b_i}$ and $\\gamma_i:=1/\\sqrt{b_i}\\;(=b_i^{-1/2})$.  Then $\\beta_i\\gamma_i\\equiv 1$, and by the Cauchy-Schwarz inequality\n\\[\n\\Bigl(\\sum_{i=1}^{n}\\beta_i\\gamma_i\\Bigr)^2\\le\\Bigl(\\sum_{i=1}^{n}\\beta_i^{2}\\Bigr)\\Bigl(\\sum_{i=1}^{n}\\gamma_i^{2}\\Bigr).\n\\]\nBecause the left-hand side equals $n^{2}$, we obtain\n\\[\n n^{2}\\;\\le\\;\\Bigl(\\sum_{i=1}^{n}a_i\\Bigr)\\Bigl(\\sum_{i=1}^{n}a_i^{-1}\\Bigr)\\;=\\;(nS_n)(nR_n),\n\\]\nso for every $n\\ge 1$\n\\[\n S_n\\,R_n\\;\\ge\\;1. \\tag{1}\n\\]\n\nStep 2  (Definition of the two lim sups).\nWrite\n\\[\nL_S:=\\limsup_{n\\to\\infty}S_n\\in[0,+\\infty],\\qquad L_R:=\\limsup_{n\\to\\infty}R_n\\in[0,+\\infty].\n\\]\nWe distinguish three mutually exclusive situations.\n\nCase A: $L_S=+\\infty$.  \nTaking the limit superior in (1) shows $R_n\\ge1/S_n\\to0$ cannot happen; in fact nothing more is needed because $L_S\\cdot L_R=+\\infty\\,(\\ge1)$ by convention.\n\nCase B: $0<L_S<+\\infty$.  \nChoose a subsequence $(n_k)$ with $S_{n_k}\\to L_S$.  Inequality (1) implies $R_{n_k}\\ge1/S_{n_k}$, hence\n\\[\n\\limsup_{n\\to\\infty}R_n\\;\\ge\\;\\lim_{k\\to\\infty}R_{n_k}\\;\\ge\\;\\frac1{L_S}.\n\\]\nTherefore $L_S\\,L_R\\ge1$.\n\nCase C: $L_S=0$.  \nBecause $L_S$ is the limit superior, there exists a subsequence $(n_k)$ with $S_{n_k}\\to0$.  By (1),\n\\[\nR_{n_k}\\;\\ge\\;\\frac1{S_{n_k}}\\;\\longrightarrow\\;+\\infty,\n\\]\nso $L_R=+\\infty$.  Our convention then gives $L_S\\,L_R=0\\cdot(+\\infty)=+\\infty\\ge1$.\n\nIn every possible case one has\n\\[\n\\boxed{\\;\\limsup_{n\\to\\infty} S_n\\;\\cdot\\;\\limsup_{n\\to\\infty} R_n\\;\\ge 1\\;},\n\\]\nwhich completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Reduce goal to proving r_n · s_n ≥ 1 for every n",
+          "Set β_i = √α_i and γ_i = 1/√α_i so that β_i γ_i = 1",
+          "Apply Cauchy–Schwarz: (∑β_i γ_i)^2 ≤ (∑β_i^2)(∑γ_i^2)",
+          "Substitute sums: n² ≤ (n s_n)(n r_n) ⇒ r_n s_n ≥ 1",
+          "Pass to the limit to obtain lim s_n · lim r_n ≥ 1"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Where the indexing of the sequence starts; any fixed initial index works",
+            "original": "i = 1"
+          },
+          "slot2": {
+            "description": "The requirement that both limits exist; one may instead use limsup/liminf, or simply note the inequality holds term-wise",
+            "original": "Assumption that lim s_n and lim r_n exist"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

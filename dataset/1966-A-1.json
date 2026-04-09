@@ -1,0 +1,91 @@
+{
+  "index": "1966-A-1",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "A-1. Let \\( f(n) \\) be the sum of the first \\( n \\) terms of the sequence \\( 0,1,1,2,2,3,3,4, \\cdots \\), where the \\( n \\)th term is given by\n\\[\na_{n}=\\left\\{\\begin{array}{cc}\nn / 2 & \\text { if } n \\text { is even } \\\\\n(n-1) / 2 & \\text { if } n \\text { is odd }\n\\end{array}\\right.\n\\]\n\nShow that if \\( x \\) and \\( y \\) are positive integers and \\( x>y \\) then \\( x y=f(x+y)-f(x-y) \\).",
+  "solution": "A-1 It is easily verified by induction that\n\\[\nf(n)=\\left\\{\\begin{array}{cl}\nn^{2} / 4 & \\text { when } n \\text { is even } \\\\\n\\left(n^{2}-1\\right) / 4 & \\text { when } n \\text { is odd. }\n\\end{array}\\right.\n\\]\n\nTherefore, since \\( x+y \\) and \\( x-y \\) always have the same parity, in any case we must have\n\\[\nf(x+y)-f(x-y)=\\frac{(x+y)^{2}-(x-y)^{2}}{4}=x y .\n\\]",
+  "vars": [
+    "f",
+    "n",
+    "a_n",
+    "x",
+    "y"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "totalsum",
+        "n": "indexvar",
+        "a_n": "sequenceterm",
+        "x": "largerint",
+        "y": "smallerint"
+      },
+      "question": "A-1. Let \\( totalsum(indexvar) \\) be the sum of the first \\( indexvar \\) terms of the sequence \\( 0,1,1,2,2,3,3,4, \\cdots \\), where the \\( indexvar \\)th term is given by\n\\[\nsequenceterm=\\left\\{\\begin{array}{cc}\nindexvar / 2 & \\text { if } indexvar \\text { is even } \\\\\n(indexvar-1) / 2 & \\text { if } indexvar \\text { is odd }\n\\end{array}\\right.\n\\]\n\nShow that if \\( largerint \\) and \\( smallerint \\) are positive integers and \\( largerint>smallerint \\) then \\( largerint \\, smallerint=totalsum(largerint+smallerint)-totalsum(largerint-smallerint) \\).",
+      "solution": "A-1 It is easily verified by induction that\n\\[\ntotalsum(indexvar)=\\left\\{\\begin{array}{cl}\nindexvar^{2} / 4 & \\text { when } indexvar \\text { is even } \\\\\n\\left(indexvar^{2}-1\\right) / 4 & \\text { when } indexvar \\text { is odd. }\n\\end{array}\\right.\n\\]\n\nTherefore, since \\( largerint+smallerint \\) and \\( largerint-smallerint \\) always have the same parity, in any case we must have\n\\[\ntotalsum(largerint+smallerint)-totalsum(largerint-smallerint)=\\frac{(largerint+smallerint)^{2}-(largerint-smallerint)^{2}}{4}=largerint \\, smallerint .\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "honeycomb",
+        "n": "thumbtack",
+        "a_n": "rainforest",
+        "x": "snowflake",
+        "y": "peppercorn"
+      },
+      "question": "A-1. Let \\( honeycomb(thumbtack) \\) be the sum of the first \\( thumbtack \\) terms of the sequence \\( 0,1,1,2,2,3,3,4, \\cdots \\), where the \\( thumbtack \\)th term is given by\n\\[\nrainforest_{thumbtack}=\\left\\{\\begin{array}{cc}\nthumbtack / 2 & \\text { if } thumbtack \\text { is even } \\\\\n(thumbtack-1) / 2 & \\text { if } thumbtack \\text { is odd }\n\\end{array}\\right.\n\\]\n\nShow that if \\( snowflake \\) and \\( peppercorn \\) are positive integers and \\( snowflake>peppercorn \\) then \\( snowflake peppercorn=honeycomb(snowflake+peppercorn)-honeycomb(snowflake-peppercorn) \\).",
+      "solution": "A-1 It is easily verified by induction that\n\\[\nhoneycomb(thumbtack)=\\left\\{\\begin{array}{cl}\nthumbtack^{2} / 4 & \\text { when } thumbtack \\text { is even } \\\\\n\\left(thumbtack^{2}-1\\right) / 4 & \\text { when } thumbtack \\text { is odd. }\n\\end{array}\\right.\n\\]\n\nTherefore, since \\( snowflake+peppercorn \\) and \\( snowflake-peppercorn \\) always have the same parity, in any case we must have\n\\[\nhoneycomb(snowflake+peppercorn)-honeycomb(snowflake-peppercorn)=\\frac{(snowflake+peppercorn)^{2}-(snowflake-peppercorn)^{2}}{4}=snowflake peppercorn .\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "voidtotal",
+        "n": "noncount",
+        "a_n": "collection",
+        "x": "tinyvalue",
+        "y": "hugevalue"
+      },
+      "question": "A-1. Let \\( voidtotal(noncount) \\) be the sum of the first \\( noncount \\) terms of the sequence \\( 0,1,1,2,2,3,3,4, \\cdots \\), where the \\( noncount \\)th term is given by\n\\[\ncollection=\\left\\{\\begin{array}{cc}\nnoncount / 2 & \\text { if } noncount \\text { is even } \\\\\n(noncount-1) / 2 & \\text { if } noncount \\text { is odd }\n\\end{array}\\right.\n\\]\n\nShow that if \\( tinyvalue \\) and \\( hugevalue \\) are positive integers and \\( tinyvalue>hugevalue \\) then \\( tinyvalue\\,hugevalue=voidtotal(tinyvalue+hugevalue)-voidtotal(tinyvalue-hugevalue) \\).",
+      "solution": "A-1 It is easily verified by induction that\n\\[\nvoidtotal(noncount)=\\left\\{\\begin{array}{cl}\nnoncount^{2} / 4 & \\text { when } noncount \\text { is even } \\\\\n\\left(noncount^{2}-1\\right) / 4 & \\text { when } noncount \\text { is odd. }\n\\end{array}\\right.\n\\]\n\nTherefore, since \\( tinyvalue+hugevalue \\) and \\( tinyvalue-hugevalue \\) always have the same parity, in any case we must have\n\\[\nvoidtotal(tinyvalue+hugevalue)-voidtotal(tinyvalue-hugevalue)=\\frac{(tinyvalue+hugevalue)^{2}-(tinyvalue-hugevalue)^{2}}{4}=tinyvalue\\,hugevalue .\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "f": "jskdplqw",
+        "n": "zmpxnght",
+        "a_n": "bdwqjtuv",
+        "x": "qrhtmpas",
+        "y": "ksjdupal"
+      },
+      "question": "A-1. Let \\( jskdplqw(zmpxnght) \\) be the sum of the first \\( zmpxnght \\) terms of the sequence \\( 0,1,1,2,2,3,3,4, \\cdots \\), where the \\( zmpxnght \\)th term is given by\n\\[\nbdwqjtuv_{zmpxnght}=\\left\\{\\begin{array}{cc}\nzmpxnght / 2 & \\text { if } zmpxnght \\text { is even } \\\\\n(zmpxnght-1) / 2 & \\text { if } zmpxnght \\text { is odd }\n\\end{array}\\right.\n\\]\n\nShow that if \\( qrhtmpas \\) and \\( ksjdupal \\) are positive integers and \\( qrhtmpas>ksjdupal \\) then \\( qrhtmpas ksjdupal=jskdplqw(qrhtmpas+ksjdupal)-jskdplqw(qrhtmpas-ksjdupal) \\).",
+      "solution": "A-1 It is easily verified by induction that\n\\[\njskdplqw(zmpxnght)=\\left\\{\\begin{array}{cl}\nzmpxnght^{2} / 4 & \\text { when } zmpxnght \\text { is even } \\\\\n\\left(zmpxnght^{2}-1\\right) / 4 & \\text { when } zmpxnght \\text { is odd. }\n\\end{array}\\right.\n\\]\n\nTherefore, since \\( qrhtmpas+ksjdupal \\) and \\( qrhtmpas-ksjdupal \\) always have the same parity, in any case we must have\n\\[\njskdplqw(qrhtmpas+ksjdupal)-jskdplqw(qrhtmpas-ksjdupal)=\\frac{(qrhtmpas+ksjdupal)^{2}-(qrhtmpas-ksjdupal)^{2}}{4}=qrhtmpas ksjdupal .\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let the sequence \\((b_n)_{n\\ge 1}\\) be given by\n\\[\n   b_n = \\bigl\\lfloor \\tfrac{n-1}{2} \\bigr\\rfloor \\qquad(n=1,2,3,\\dots),\n\\]\nso that the first few terms are \\(0,0,1,1,2,2,3,3,\\dots\\).  For a positive integer \\(N\\) define\n\\[\n   g(N)=\\sum_{k=1}^{N} b_k.\n\\]\nProve that for any non-negative integers \\(a, b\\) with \\(a\\ge b\\) one has\n\\[\n   ab \\,=\\, g\\bigl(a+b+1\\bigr)\\; -\\; g\\bigl(a-b+1\\bigr).\n\\]",
+      "solution": "1.  Closed form for g.  We first derive an explicit expression for g(N).\n   \n      g(N)=\\sum_{k=1}^{N} \\Bigl\\lfloor\\frac{k-1}{2}\\Bigr\\rfloor.\n   \n   Write N=2m or 2m+1.\n   * If N=2m the summands occur in m pairs (0,0),(1,1),\\ldots ,(m-1,m-1); hence\n   \n       g(2m)=2\\sum_{j=0}^{m-1}j= m(m-1)=\\frac{(2m)^2-2\\,(2m)}{4}=\\Bigl\\lfloor\\frac{(2m-1)^2}{4}\\Bigr\\rfloor.\n   * If N=2m+1 there are the same m pairs plus a last term m, so\n   \n       g(2m+1)=m(m-1)+m=m^2=\\frac{(2m)^2}{4}=\\Bigl\\lfloor\\frac{(2m)^2}{4}\\Bigr\\rfloor.\n   Thus in every case\n   \n      \\boxed{\\;g(N)=\\Bigl\\lfloor\\dfrac{(N-1)^2}{4}\\Bigr\\rfloor\\;.}\n\n2.  Parity observation.  For given non-negative integers a\\geq b the numbers\n   A=a+b+1 and B=a-b+1 satisfy A\\equiv B(mod 2) because A-B=2b is even.  Hence the same branch of the piecewise formula for g (even or odd argument) applies to both A and B.\n\n3.  Insert the closed form.  Because A and B have the same parity we may drop the floor symbols when taking the difference:\n   \n      g(A)-g(B)\n      =\\frac{(A-1)^2-(B-1)^2}{4}.\\tag{1}\n   \n4.  Difference of squares.  Expand (1):\n   \\[(A-1)^2-(B-1)^2=((A-1)-(B-1))\\bigl((A-1)+(B-1)\\bigr)= (A-B)(A+B-2).\\]\n   Now substitute A=a+b+1, B=a-b+1:\n   \\[\n      A-B = 2b,\\qquad\n      A+B-2 = (a+b+1)+(a-b+1)-2 = 2a.\n   \\]\n   Therefore\n   \\[(A-1)^2-(B-1)^2 = (2b)(2a)=4ab.\\]\n   Dividing by 4 in (1) gives\n   \\[g(A)-g(B)=ab.\\]\n\n5.  Conclusion.  Since A=a+b+1 and B=a-b+1, we have established\n   \\[\\boxed{\\;ab = g(a+b+1)-g(a-b+1)\\;}\\],\n   as desired for all non-negative integers a\\geq b.",
+      "_meta": {
+        "core_steps": [
+          "Find closed-form f(n)=⌊n²/4⌋ (prove by induction).",
+          "Note x+y and x−y share parity, so same branch of f applies.",
+          "Insert x+y and x−y into the closed form.",
+          "Use (x+y)²−(x−y)² = 4xy to simplify difference.",
+          "Conclude f(x+y)−f(x−y)=xy."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Assumption that x and y are strictly positive; non-negativity suffices for the proof.",
+            "original": "x and y are positive integers"
+          },
+          "slot2": {
+            "description": "Requirement x>y; equality case x=y can be permitted without affecting any step.",
+            "original": "x>y"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,182 @@
+{
+  "index": "1961-B-3",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "3. Consider four points in a plane, no three of which are collinear, and such that the circle through three of them does not pass through the fourth. Prove that one of the four points can be selected having the property that it lies inside the circle determined by the other three.",
+  "solution": "First Solution. We give first a heuristic argument. Start with a large circle surrounding all four points and gradually shrink it, keeping the points on or inside it until it can no longer be reduced without allowing one of the points to escape to the exterior. Then either three of the given points lie on the circumference and the fourth inside, in which case we are through, or two of the given points are opposite on the circle and two are interior points. In this case, consider the one-parameter family of circles that contain the first two points. As we run through this family we come to a first one that contains another of the given points, and that one will have the fourth point in its interior.\n\nThis argument can be formalized as follows: First, the smallest closed disk containing the given points exists by the limit argument given on page 281. Then the appropriate member of the one-parameter family of circles can be found as in our second solution, below.\n\nSecond Solution. We can number the points so that \\( P_{3} \\) and \\( P_{4} \\) are on the same side of the line \\( \\widehat{P_{1} P_{2}} \\). (This can be accomplished by taking \\( P_{1} P_{2} \\) to be an edge of the convex hull of \\( P_{1}, P_{2}, P_{3}, P_{4} \\).) We choose coordinate axes so that \\( P_{1} \\). \\( P \\), are on the, \\( \\boldsymbol{r} \\)-axis and \\( P_{3} \\) and \\( P_{4} \\) have positive \\( x \\)-coordinates.\nLet\n\\[\n\\phi(x . y)=x^{2}+y^{2}+\\alpha x+\\beta y+\\gamma=0\n\\]\nbe the equation of the circle through \\( P_{1}, P_{2} \\), and \\( P_{3} \\). Since the given points are not concyclic. \\( \\phi\\left(P_{4}\\right) \\neq 0 \\). If \\( \\phi\\left(P_{4}\\right)<0 \\), then \\( P_{4} \\) is interior to this circle and we have the desired result.\n\nIf \\( \\phi\\left(P_{4}\\right)>0 \\). then we set\n\\[\n\\psi(x, y)=\\phi(x, y)-\\lambda x\n\\]\nand choose \\( \\lambda \\) so that \\( \\psi\\left(P_{4}\\right)=0 \\). i.e., \\( \\lambda=\\phi\\left(P_{4}\\right) / x\\left(P_{4}\\right) \\). Then \\( \\psi(x, y)=0 \\) is the equation of the circle through \\( P_{1}, P_{2} \\), and \\( P_{4}, P_{3} \\) is interior to this circle since\n\\[\n\\psi\\left(P_{3}\\right)=-\\lambda x\\left(P_{3}\\right)<0, \\quad \\text { since } \\lambda \\text { and } x\\left(P_{3}\\right)\n\\]\nare each positive.\n\nNote. In this argument we are, in effect. considering the one-parameter family of circles that contain \\( P_{1} \\) and \\( P_{2} \\).\n\nThird Solution. Let \\( R \\) be a point on (the surface of) a sphere \\( S \\) in threespace, with \\( R \\) not in the plane of the given points \\( P_{1}, P_{2}, P_{3}, P_{4} \\). By stereographic projection from \\( R \\) we transform the given points into four points \\( Q_{1}, Q_{2}, Q_{3}, Q_{4} \\) of \\( S \\). Since no three \\( P \\) 's are collinear, no three \\( Q \\) 's are coplanar with \\( R \\). Since the \\( P \\) 's are not concyclic, the \\( Q \\) 's are not coplanar. Thus \\( Q_{1}, Q_{2}, Q_{3}, Q_{4}, R \\) are five points on \\( \\delta \\), no four of which are coplanar.\n\nSuppose each of the four planes determined by three \\( Q \\) 's fails to separate \\( R \\) from the fourth \\( Q \\). Then \\( R \\) would be in the interior of the tetrahedron \\( Q_{1} Q_{2} Q_{3} Q_{4} \\). But this is impossible since \\( Q_{1}, Q_{2}, Q_{3}, Q_{4} \\), and \\( R \\) are cospherical. Hence there is a plane \\( \\pi \\) determined by three \\( Q \\) 's, say \\( Q_{1}, Q_{2} \\), \\( Q_{3} \\), which separates \\( R \\) from \\( Q_{4} \\). Then \\( P_{4} \\) is separated from infinity by the stereographic projection on the original plane of \\( \\pi \\cap S \\). But the latter is a circle through \\( P_{1}, P_{2}, P_{3} \\); hence \\( P_{4} \\) is inside the circle determined by \\( P_{1} \\), \\( P_{2}, P_{3} \\).",
+  "vars": [
+    "P",
+    "P_1",
+    "P_2",
+    "P_3",
+    "P_4",
+    "Q",
+    "Q_1",
+    "Q_2",
+    "Q_3",
+    "Q_4",
+    "R",
+    "x",
+    "y"
+  ],
+  "params": [
+    "\\\\phi",
+    "\\\\psi",
+    "\\\\alpha",
+    "\\\\beta",
+    "\\\\gamma",
+    "\\\\lambda",
+    "\\\\pi",
+    "\\\\delta"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P": "pointgeneral",
+        "P_1": "pointone",
+        "P_2": "pointtwo",
+        "P_3": "pointthree",
+        "P_4": "pointfour",
+        "Q": "stereopoint",
+        "Q_1": "stereoqone",
+        "Q_2": "stereoqtwo",
+        "Q_3": "stereoqthree",
+        "Q_4": "stereoqfour",
+        "R": "apexpoint",
+        "x": "abscissa",
+        "y": "ordinate",
+        "\\phi": "circeqphi",
+        "\\psi": "circeqpsi",
+        "\\alpha": "coefalpha",
+        "\\beta": "coefbeta",
+        "\\gamma": "coefgamma",
+        "\\lambda": "paramlambda",
+        "\\delta": "symboldelta"
+      },
+      "question": "3. Consider four points in a plane, no three of which are collinear, and such that the circle through three of them does not pass through the fourth. Prove that one of the four points can be selected having the property that it lies inside the circle determined by the other three.",
+      "solution": "First Solution. We give first a heuristic argument. Start with a large circle surrounding all four points and gradually shrink it, keeping the points on or inside it until it can no longer be reduced without allowing one of the points to escape to the exterior. Then either three of the given points lie on the circumference and the fourth inside, in which case we are through, or two of the given points are opposite on the circle and two are interior points. In this case, consider the one-parameter family of circles that contain the first two points. As we run through this family we come to a first one that contains another of the given points, and that one will have the fourth point in its interior.\n\nThis argument can be formalized as follows: First, the smallest closed disk containing the given points exists by the limit argument given on page 281. Then the appropriate member of the one-parameter family of circles can be found as in our second solution, below.\n\nSecond Solution. We can number the points so that \\( pointthree \\) and \\( pointfour \\) are on the same side of the line \\( \\widehat{pointone\\, pointtwo} \\). (This can be accomplished by taking \\( pointone\\, pointtwo \\) to be an edge of the convex hull of \\( pointone, pointtwo, pointthree, pointfour \\).) We choose coordinate axes so that \\( pointone \\), \\( pointgeneral \\), are on the \\( \\boldsymbol{r} \\)-axis and \\( pointthree \\) and \\( pointfour \\) have positive \\( abscissa \\)-coordinates.\nLet\n\\[\ncirceqphi(abscissa , ordinate)=abscissa^{2}+ordinate^{2}+coefalpha\\, abscissa+coefbeta\\, ordinate+coefgamma=0\n\\]\nbe the equation of the circle through \\( pointone, pointtwo \\), and \\( pointthree \\). Since the given points are not concyclic, \\( circeqphi\\left(pointfour\\right) \\neq 0 \\). If \\( circeqphi\\left(pointfour\\right)<0 \\), then \\( pointfour \\) is interior to this circle and we have the desired result.\n\nIf \\( circeqphi\\left(pointfour\\right)>0 \\), then we set\n\\[\ncirceqpsi(abscissa, ordinate)=circeqphi(abscissa, ordinate)-paramlambda\\, abscissa\n\\]\nand choose \\( paramlambda \\) so that \\( circeqpsi\\left(pointfour\\right)=0 \\); i.e.,\n\\[\nparamlambda=\\frac{circeqphi\\left(pointfour\\right)}{abscissa\\left(pointfour\\right)} .\n\\]\nThen \\( circeqpsi(abscissa, ordinate)=0 \\) is the equation of the circle through \\( pointone, pointtwo \\), and \\( pointfour \\); \\( pointthree \\) is interior to this circle since\n\\[\ncirceqpsi\\left(pointthree\\right)=-paramlambda\\, abscissa\\left(pointthree\\right)<0,\n\\]\nbecause \\( paramlambda \\) and \\( abscissa\\left(pointthree\\right) \\) are each positive.\n\nNote. In this argument we are, in effect, considering the one-parameter family of circles that contain \\( pointone \\) and \\( pointtwo \\).\n\nThird Solution. Let \\( apexpoint \\) be a point on (the surface of) a sphere \\( S \\) in threespace, with \\( apexpoint \\) not in the plane of the given points \\( pointone, pointtwo, pointthree, pointfour \\). By stereographic projection from \\( apexpoint \\) we transform the given points into four points \\( stereoqone, stereoqtwo, stereoqthree, stereoqfour \\) of \\( S \\). Since no three \\( pointgeneral \\)'s are collinear, no three \\( stereopoint \\)'s are coplanar with \\( apexpoint \\). Since the \\( pointgeneral \\)'s are not concyclic, the \\( stereopoint \\)'s are not coplanar. Thus \\( stereoqone, stereoqtwo, stereoqthree, stereoqfour, apexpoint \\) are five points on \\( symboldelta \\), no four of which are coplanar.\n\nSuppose each of the four planes determined by three \\( stereopoint \\)'s fails to separate \\( apexpoint \\) from the fourth \\( stereopoint \\). Then \\( apexpoint \\) would be in the interior of the tetrahedron \\( stereoqone\\, stereoqtwo\\, stereoqthree\\, stereoqfour \\). But this is impossible since \\( stereoqone, stereoqtwo, stereoqthree, stereoqfour \\), and \\( apexpoint \\) are cospherical. Hence there is a plane \\( \\pi \\) determined by three \\( stereopoint \\)'s, say \\( stereoqone, stereoqtwo, stereoqthree \\), which separates \\( apexpoint \\) from \\( stereoqfour \\). Then \\( pointfour \\) is separated from infinity by the stereographic projection on the original plane of \\( \\pi \\cap S \\). But the latter is a circle through \\( pointone, pointtwo, pointthree \\); hence \\( pointfour \\) is inside the circle determined by \\( pointone, pointtwo, pointthree \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P": "orchard",
+        "P_1": "lantern",
+        "P_2": "tapestry",
+        "P_3": "monument",
+        "P_4": "corridor",
+        "Q": "compass",
+        "Q_1": "frontier",
+        "Q_2": "gateway",
+        "Q_3": "horizon",
+        "Q_4": "isotope",
+        "R": "juncture",
+        "x": "kernel",
+        "y": "lattice",
+        "\\phi": "nebulous",
+        "\\psi": "phantasm",
+        "\\alpha": "silhouette",
+        "\\beta": "evergreen",
+        "\\gamma": "semaphore",
+        "\\lambda": "chandelier",
+        "\\delta": "partition"
+      },
+      "question": "3. Consider four points in a plane, no three of which are collinear, and such that the circle through three of them does not pass through the fourth. Prove that one of the four points can be selected having the property that it lies inside the circle determined by the other three.",
+      "solution": "First Solution. We give first a heuristic argument. Start with a large circle surrounding all four points and gradually shrink it, keeping the points on or inside it until it can no longer be reduced without allowing one of the points to escape to the exterior. Then either three of the given points lie on the circumference and the fourth inside, in which case we are through, or two of the given points are opposite on the circle and two are interior points. In this case, consider the one-parameter family of circles that contain the first two points. As we run through this family we come to a first one that contains another of the given points, and that one will have the fourth point in its interior.\n\nThis argument can be formalized as follows: First, the smallest closed disk containing the given points exists by the limit argument given on page 281. Then the appropriate member of the one-parameter family of circles can be found as in our second solution, below.\n\nSecond Solution. We can number the points so that monument and corridor are on the same side of the line \\( \\widehat{lantern tapestry} \\). (This can be accomplished by taking lantern tapestry to be an edge of the convex hull of lantern, tapestry, monument, corridor.) We choose coordinate axes so that lantern. orchard, are on the, \\( \\boldsymbol{r} \\)-axis and monument and corridor have positive kernel-coordinates.\nLet\n\\[\nnebulous(kernel . lattice)=kernel^{2}+lattice^{2}+silhouette kernel+evergreen lattice+semaphore=0\n\\]\nbe the equation of the circle through lantern, tapestry, and monument. Since the given points are not concyclic. \\( nebulous\\left(corridor\\right) \\neq 0 \\). If \\( nebulous\\left(corridor\\right)<0 \\), then corridor is interior to this circle and we have the desired result.\n\nIf \\( nebulous\\left(corridor\\right)>0 \\). then we set\n\\[\nphantasm(kernel, lattice)=nebulous(kernel, lattice)-chandelier kernel\n\\]\nand choose chandelier so that \\( phantasm\\left(corridor\\right)=0 \\). i.e., \\( chandelier=nebulous\\left(corridor\\right) / kernel\\left(corridor\\right) \\). Then \\( phantasm(kernel, lattice)=0 \\) is the equation of the circle through lantern, tapestry, and corridor, monument is interior to this circle since\n\\[\nphantasm\\left(monument\\right)=-chandelier kernel\\left(monument\\right)<0, \\quad \\text { since } chandelier \\text { and } kernel\\left(monument\\right)\n\\]\nare each positive.\n\nNote. In this argument we are, in effect. considering the one-parameter family of circles that contain lantern and tapestry.\n\nThird Solution. Let juncture be a point on (the surface of) a sphere partition in threespace, with juncture not in the plane of the given points lantern, tapestry, monument, corridor. By stereographic projection from juncture we transform the given points into four points frontier, gateway, horizon, isotope of partition. Since no three orchard 's are collinear, no three compass 's are coplanar with juncture. Since the orchard 's are not concyclic, the compass 's are not coplanar. Thus frontier, gateway, horizon, isotope, juncture are five points on \\( \\delta \\), no four of which are coplanar.\n\nSuppose each of the four planes determined by three compass 's fails to separate juncture from the fourth compass. Then juncture would be in the interior of the tetrahedron frontier gateway horizon isotope. But this is impossible since frontier, gateway, horizon, isotope, and juncture are cospherical. Hence there is a plane \\( \\pi \\) determined by three compass 's, say frontier, gateway, horizon, which separates juncture from isotope. Then corridor is separated from infinity by the stereographic projection on the original plane of \\( \\pi \\cap partition \\). But the latter is a circle through lantern, tapestry, monument; hence corridor is inside the circle determined by lantern, tapestry, monument."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P": "emptiness",
+        "P_1": "voidshape",
+        "P_2": "nullshape",
+        "P_3": "gapshape",
+        "P_4": "hollowfig",
+        "Q": "absence",
+        "Q_1": "nothingness",
+        "Q_2": "nonentity",
+        "Q_3": "voidentity",
+        "Q_4": "vacuumobj",
+        "R": "stillness",
+        "x": "chaosaxis",
+        "y": "randomaxis",
+        "\\phi": "\\linearfun",
+        "\\psi": "\\planefunc",
+        "\\alpha": "endvalue",
+        "\\beta": "startval",
+        "\\gamma": "middleval",
+        "\\lambda": "\\fixedterm",
+        "\\delta": "\\squarearea"
+      },
+      "question": "3. Consider four points in a plane, no three of which are collinear, and such that the circle through three of them does not pass through the fourth. Prove that one of the four points can be selected having the property that it lies inside the circle determined by the other three.",
+      "solution": "First Solution. We give first a heuristic argument. Start with a large circle surrounding all four points and gradually shrink it, keeping the points on or inside it until it can no longer be reduced without allowing one of the points to escape to the exterior. Then either three of the given points lie on the circumference and the fourth inside, in which case we are through, or two of the given points are opposite on the circle and two are interior points. In this case, consider the one-parameter family of circles that contain the first two points. As we run through this family we come to a first one that contains another of the given points, and that one will have the fourth point in its interior.\n\nThis argument can be formalized as follows: First, the smallest closed disk containing the given points exists by the limit argument given on page 281. Then the appropriate member of the one-parameter family of circles can be found as in our second solution, below.\n\nSecond Solution. We can number the points so that \\( gapshape \\) and \\( hollowfig \\) are on the same side of the line \\( \\widehat{voidshape\\ nullshape} \\). (This can be accomplished by taking \\( voidshape\\ nullshape \\) to be an edge of the convex hull of \\( voidshape, nullshape, gapshape, hollowfig \\).) We choose coordinate axes so that \\( voidshape \\), \\( emptiness \\), are on the \\( \\boldsymbol{r} \\)-axis and \\( gapshape \\) and \\( hollowfig \\) have positive \\( chaosaxis \\)-coordinates.  Let\n\\[\n\\linearfun(chaosaxis . randomaxis)=chaosaxis^{2}+randomaxis^{2}+endvalue\\, chaosaxis+startval\\, randomaxis+middleval=0\n\\]\nbe the equation of the circle through \\( voidshape, nullshape \\), and \\( gapshape \\). Since the given points are not concyclic, \\( \\linearfun(hollowfig) \\neq 0 \\). If \\( \\linearfun(hollowfig)<0 \\), then \\( hollowfig \\) is interior to this circle and we have the desired result.\n\nIf \\( \\linearfun(hollowfig)>0 \\), then we set\n\\[\n\\planefunc(chaosaxis, randomaxis)=\\linearfun(chaosaxis, randomaxis)-\\fixedterm\\, chaosaxis\n\\]\nand choose \\( \\fixedterm \\) so that \\( \\planefunc(hollowfig)=0 \\), i.e., \\( \\fixedterm=\\linearfun(hollowfig) / chaosaxis(hollowfig) \\). Then \\( \\planefunc(chaosaxis, randomaxis)=0 \\) is the equation of the circle through \\( voidshape, nullshape \\), and \\( hollowfig \\); \\( gapshape \\) is interior to this circle since\n\\[\n\\planefunc(gapshape)=-\\fixedterm\\, chaosaxis(gapshape)<0, \\quad \\text { since } \\fixedterm \\text { and } chaosaxis(gapshape)\n\\]\nare each positive.\n\nNote. In this argument we are, in effect, considering the one-parameter family of circles that contain \\( voidshape \\) and \\( nullshape \\).\n\nThird Solution. Let \\( stillness \\) be a point on (the surface of) a sphere \\( S \\) in threespace, with \\( stillness \\) not in the plane of the given points \\( voidshape, nullshape, gapshape, hollowfig \\). By stereographic projection from \\( stillness \\) we transform the given points into four points \\( nothingness, nonentity, voidentity, vacuumobj \\) of \\( S \\). Since no three \\( emptiness \\) 's are collinear, no three \\( absence \\) 's are coplanar with \\( stillness \\). Since the \\( emptiness \\) 's are not concyclic, the \\( absence \\) 's are not coplanar. Thus \\( nothingness, nonentity, voidentity, vacuumobj, stillness \\) are five points on \\( \\squarearea \\), no four of which are coplanar.\n\nSuppose each of the four planes determined by three \\( absence \\) 's fails to separate \\( stillness \\) from the fourth \\( absence \\). Then \\( stillness \\) would be in the interior of the tetrahedron \\( nothingness\\ nonentity\\ voidentity\\ vacuumobj \\). But this is impossible since \\( nothingness, nonentity, voidentity, vacuumobj \\), and \\( stillness \\) are cospherical. Hence there is a plane \\( \\pi \\) determined by three \\( absence \\) 's, say \\( nothingness, nonentity \\), \\( voidentity \\), which separates \\( stillness \\) from \\( vacuumobj \\). Then \\( hollowfig \\) is separated from infinity by the stereographic projection on the original plane of \\( \\pi \\cap S \\). But the latter is a circle through \\( voidshape, nullshape, gapshape \\); hence \\( hollowfig \\) is inside the circle determined by \\( voidshape \\), \\( nullshape, gapshape \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "P": "kczqvtsm",
+        "P_1": "lejhwytr",
+        "P_2": "qbfpnczm",
+        "P_3": "xmvslqtr",
+        "P_4": "sjgthwkp",
+        "Q": "yzrdmkla",
+        "Q_1": "poidnwka",
+        "Q_2": "udghmbev",
+        "Q_3": "srqpztkl",
+        "Q_4": "gxbrvnoq",
+        "R": "hjqlmsvn",
+        "x": "vlgpseam",
+        "y": "trkysnob",
+        "\\phi": "zmxncqwe",
+        "\\psi": "xlkrdwej",
+        "\\alpha": "bnvgyeqr",
+        "\\beta": "pasehfkl",
+        "\\gamma": "qtylsdpo",
+        "\\lambda": "wjafzotu",
+        "\\pi": "tvekslmd",
+        "\\delta": "gnrcpwve"
+      },
+      "question": "3. Consider four points in a plane, no three of which are collinear, and such that the circle through three of them does not pass through the fourth. Prove that one of the four points can be selected having the property that it lies inside the circle determined by the other three.",
+      "solution": "First Solution. We give first a heuristic argument. Start with a large circle surrounding all four points and gradually shrink it, keeping the points on or inside it until it can no longer be reduced without allowing one of the points to escape to the exterior. Then either three of the given points lie on the circumference and the fourth inside, in which case we are through, or two of the given points are opposite on the circle and two are interior points. In this case, consider the one-parameter family of circles that contain the first two points. As we run through this family we come to a first one that contains another of the given points, and that one will have the fourth point in its interior.\n\nThis argument can be formalized as follows: First, the smallest closed disk containing the given points exists by the limit argument given on page 281. Then the appropriate member of the one-parameter family of circles can be found as in our second solution, below.\n\nSecond Solution. We can number the points so that \\( xmvslqtr \\) and \\( sjgthwkp \\) are on the same side of the line \\( \\widehat{lejhwytr qbfpnczm} \\). (This can be accomplished by taking \\( lejhwytr qbfpnczm \\) to be an edge of the convex hull of \\( lejhwytr, qbfpnczm, xmvslqtr, sjgthwkp \\).) We choose coordinate axes so that \\( lejhwytr \\). \\( kczqvtsm \\), are on the, \\( \\boldsymbol{r} \\)-axis and \\( xmvslqtr \\) and \\( sjgthwkp \\) have positive \\( vlgpseam \\)-coordinates.\nLet\n\\[\nzmxncqwe(vlgpseam . trkysnob)=vlgpseam^{2}+trkysnob^{2}+bnvgyeqr vlgpseam+pasehfkl trkysnob+qtylsdpo=0\n\\]\nbe the equation of the circle through \\( lejhwytr, qbfpnczm \\), and \\( xmvslqtr \\). Since the given points are not concyclic. \\( zmxncqwe\\left(sjgthwkp\\right) \\neq 0 \\). If \\( zmxncqwe\\left(sjgthwkp\\right)<0 \\), then \\( sjgthwkp \\) is interior to this circle and we have the desired result.\n\nIf \\( zmxncqwe\\left(sjgthwkp\\right)>0 \\). then we set\n\\[\nxlkrdwej(vlgpseam, trkysnob)=zmxncqwe(vlgpseam, trkysnob)-wjafzotu vlgpseam\n\\]\nand choose \\( wjafzotu \\) so that \\( xlkrdwej\\left(sjgthwkp\\right)=0 \\). i.e., \\( wjafzotu=zmxncqwe\\left(sjgthwkp\\right) / vlgpseam\\left(sjgthwkp\\right) \\). Then \\( xlkrdwej(vlgpseam, trkysnob)=0 \\) is the equation of the circle through \\( lejhwytr, qbfpnczm \\), and \\( sjgthwkp, xmvslqtr \\) is interior to this circle since\n\\[\nxlkrdwej\\left(xmvslqtr\\right)=-wjafzotu vlgpseam\\left(xmvslqtr\\right)<0, \\quad \\text { since } wjafzotu \\text { and } vlgpseam\\left(xmvslqtr\\right)\n\\]\nare each positive.\n\nNote. In this argument we are, in effect. considering the one-parameter family of circles that contain \\( lejhwytr \\) and \\( qbfpnczm \\).\n\nThird Solution. Let \\( hjqlmsvn \\) be a point on (the surface of) a sphere \\( S \\) in threespace, with \\( hjqlmsvn \\) not in the plane of the given points \\( lejhwytr, qbfpnczm, xmvslqtr, sjgthwkp \\). By stereographic projection from \\( hjqlmsvn \\) we transform the given points into four points \\( poidnwka, udghmbev, srqpztkl, gxbrvnoq \\) of \\( S \\). Since no three \\( kczqvtsm \\) 's are collinear, no three \\( yzrdmkla \\) 's are coplanar with \\( hjqlmsvn \\). Since the \\( kczqvtsm \\) 's are not concyclic, the \\( yzrdmkla \\) 's are not coplanar. Thus \\( poidnwka, udghmbev, srqpztkl, gxbrvnoq, hjqlmsvn \\) are five points on \\( gnrcpwve \\), no four of which are coplanar.\n\nSuppose each of the four planes determined by three \\( yzrdmkla \\) 's fails to separate \\( hjqlmsvn \\) from the fourth \\( yzrdmkla \\). Then \\( hjqlmsvn \\) would be in the interior of the tetrahedron \\( poidnwka udghmbev srqpztkl gxbrvnoq \\). But this is impossible since \\( poidnwka, udghmbev, srqpztkl, gxbrvnoq \\), and \\( hjqlmsvn \\) are cospherical. Hence there is a plane \\( tvekslmd \\) determined by three \\( yzrdmkla \\) 's, say \\( poidnwka, udghmbev \\), \\( srqpztkl \\), which separates \\( hjqlmsvn \\) from \\( gxbrvnoq \\). Then \\( sjgthwkp \\) is separated from infinity by the stereographic projection on the original plane of \\( tvekslmd \\cap S \\). But the latter is a circle through \\( lejhwytr, qbfpnczm, xmvslqtr \\); hence \\( sjgthwkp \\) is inside the circle determined by \\( lejhwytr \\), \\( qbfpnczm, xmvslqtr \\)."
+    },
+    "kernel_variant": {
+      "question": "Let A, B, C, D be four distinct points in the plane that form a convex quadrilateral (so, in particular, no three are collinear) and that are not concyclic.  Prove that one of the four points lies strictly inside the circum-circle of the triangle determined by the other three points.",
+      "solution": "We keep the general strategy of the original proof, but we take proper care of the sign that decides whether a point is inside or outside a circle.\n\nStep 1.  Fix an edge of the convex hull.  Because ABCD is a convex quadrilateral in the listed order, the segment BC is an edge of its convex hull.  Consequently the two remaining vertices A and D lie in the same open half-plane determined by the line BC.\n\nStep 2.  A convenient coordinate system.  Introduce a Cartesian coordinate system such that\n   B = (0,0), C = (1,0), and the half-plane containing A and D is y > 0.\nThus y(A) > 0 and y(D) > 0.\n\nStep 3.  The first circle.  Let\n        \\varphi (x,y) = x^2 + y^2 + \\alpha x + \\beta y + \\gamma             (1)\nbe the (unique) quadratic polynomial whose zero-locus is the circle through B, C and A.  Hence\n        \\varphi (B) = \\varphi (C) = \\varphi (A) = 0.\nBecause the coefficient of x^2 and y^2 equals 1, the equation (1) can be rewritten in completed-square form\n        (x - h)^2 + (y - k)^2 - R^2 = 0,\nwhere R > 0.  Therefore\n        \\varphi (P)  < 0 \\Leftrightarrow  P lies inside the circle,\n        \\varphi (P)  = 0 \\Leftrightarrow  P lies on the circle,\n        \\varphi (P)  > 0 \\Leftrightarrow  P lies outside the circle.       (2)\n\nStep 4.  Two cases depending on the position of D.  Because the four points are not concyclic, \\varphi (D) \\neq  0.\n\nCase (i) \\varphi (D) < 0.  By (2) the point D is inside the circle through B, C, A, so the statement is proved.\n\nCase (ii) \\varphi (D) > 0.  Then D is outside that circle.  We now produce a second circle that passes through B, C, D and show that A is inside it.\n\nStep 5.  A one-parameter family of circles through B and C.  For any real number \\lambda  put\n        \\psi (x,y) = \\varphi (x,y) - \\lambda  y.                       (3)\nSince B and C both satisfy y = 0, (3) guarantees \\psi (B) = \\psi (C) = 0, i.e. every member of the family \\psi  = 0 still goes through B and C.  Choose \\lambda  so that D also lies on \\psi  = 0:\n        \\psi (D) = \\varphi (D) - \\lambda  y(D) = 0   \\Rightarrow    \\lambda  = \\varphi (D) / y(D) > 0,     (4)\nwhere the inequality follows from \\varphi (D) > 0 and y(D) > 0.\nWith this value of \\lambda , equation (3) defines the unique circle through B, C, D.\nBecause subtracting \\lambda y merely changes the linear y-term, \\psi  retains the leading coefficients 1 of x^2 and y^2, hence the sign criterion (2) still applies to \\psi .\n\nStep 6.  Position of A with respect to the new circle.  Using (4),\n        \\psi (A) = \\varphi (A) - \\lambda  y(A) = 0 - (\\varphi (D)/y(D))\\cdot y(A) = -\\varphi (D)\\cdot \\frac{y(A)}{y(D)}.\nAll three factors on the right are positive, so \\psi (A) < 0.  By (2) this tells us that A lies strictly inside the circle through B, C and D.\n\nStep 7.  Conclusion.  In Case (i) the point D is inside the circle through B, C, A; in Case (ii) the point A is inside the circle through B, C, D.  Hence in every situation one of the four given points lies strictly inside the circum-circle of the other three, as was to be shown.",
+      "_meta": {
+        "core_steps": [
+          "Pick an edge of the convex hull (call the endpoints P1,P2) so the other two points lie on the same side of the line P1P2.",
+          "Form the circle through P1, P2 and one of the remaining points (say P3).",
+          "If the fourth point is inside that circle you are done; otherwise it is outside.",
+          "Move inside the one-parameter family of circles that still pass through P1 and P2 until the circle also passes through the fourth point, which forces the previously chosen point to fall inside.",
+          "Declare that interior point as the required one."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which pair of points is selected as the fixed edge of the convex hull that anchors the 1-parameter circle family.",
+            "original": "P1, P2"
+          },
+          "slot2": {
+            "description": "Which of the two off-edge points is used to build the first circle in the argument.",
+            "original": "P3"
+          },
+          "slot3": {
+            "description": "Orientation of the coordinate system that places P1P2 on an axis and forces the other two points to have positive coordinate along that axis.",
+            "original": "x-axis chosen so that P3 and P4 have positive x-coordinates"
+          },
+          "slot4": {
+            "description": "The coordinate (or linear functional) whose coefficient is varied in ψ(x,y)=φ(x,y)−λ•(coordinate) to obtain the second circle.",
+            "original": "the x–coordinate"
+          },
+          "slot5": {
+            "description": "The sign convention that declares a point interior to the circle when φ (or ψ) is negative.",
+            "original": "interior ⇔ value < 0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

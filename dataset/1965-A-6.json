@@ -1,0 +1,125 @@
+{
+  "index": "1965-A-6",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "A-6. In the plane with orthogonal Cartesian coordinates \\( x \\) and \\( y \\), prove that the line whose equation is \\( u x+v y=1 \\) will be tangent to the curve \\( x^{m}+y^{m}=1 \\) (where \\( m>1 \\) ) if and only if \\( u^{n}+v^{n}=1 \\) and \\( m^{-1}+n^{-1}=1 \\).",
+  "solution": "A-6. The problem is not well set being true only under rather heavy restrictions on the \\( x, y, u \\) and \\( v \\). For example, all is in order if they are nonnegative. However, if \\( m \\) is rational with odd numerator and odd denominator there are tangent lines to the curve for which \\( u^{n}+v^{n}>1 \\), while if \\( m \\) is rational with odd numerator and even denominator then \\( n \\) is rational with odd numerator and odd denominator and there are solutions ( \\( u, v \\) ) of \\( u^{n}+v^{n}=1 \\) such that the line \\( u x+v y=1 \\) is not tangent to the curve \\( x^{m}+y^{m}=1 \\).\n\nLet ( \\( x_{0}, y_{0} \\) ) be a point on the curve \\( x^{m}+y^{m}=1 \\). The tangent to this curve is \\( x_{0}^{m-1} x+y_{0}^{m-1} y=1 \\). If this line is \\( u x+v y=1 \\), then \\( u=x_{0}^{m-1} \\) and \\( v=y_{0}^{m-1} \\) with both \\( u \\) and \\( v \\) nonnegative. The relation \\( 1 / m+1 / n=1 \\) gives \\( m /(m-1)=n \\) and we obtain \\( u^{n}+v^{n}=x_{0}^{m}+y_{0}^{m}=1 \\).\n\nConversely, let \\( m^{-1}+n^{-1}=1 \\) and let \\( u \\) and \\( v \\) be nonnegative and such that \\( u^{n}+v^{n}=1 \\). Define \\( x_{0} \\) and \\( y_{0} \\) by the equations \\( x_{0}=u^{n / m} \\) and \\( y_{0}=v^{n / m} \\). Then \\( x_{0} \\) and \\( y_{0} \\) are nonnegative and \\( x_{0}^{m}+y_{0}^{m}=u^{n}+v^{n}=1 \\). Thus, \\( \\left(x_{0}, y_{0}\\right) \\) is on the curve\n\\( x^{m}+y^{m}=1 \\) and the line \\( u x+v y=1 \\) is the tangent to the curve by the calculation above.\n\nIn this solution we use the fact that for nonnegative \\( a \\) and positive \\( r \\) and \\( s \\) \\( \\left(a^{r}\\right)^{s}=a^{r e} \\).",
+  "vars": [
+    "x",
+    "y",
+    "x_0",
+    "y_0"
+  ],
+  "params": [
+    "u",
+    "v",
+    "m",
+    "n",
+    "r",
+    "s",
+    "a",
+    "e"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "x_0": "tangentx",
+        "y_0": "tangenty",
+        "u": "xlinecoef",
+        "v": "ylinecoef",
+        "m": "curveexp",
+        "n": "dualexp",
+        "r": "expfirst",
+        "s": "expsecond",
+        "a": "basenumb",
+        "e": "expextra"
+      },
+      "question": "In the plane with orthogonal Cartesian coordinates \\( abscissa \\) and \\( ordinate \\), prove that the line whose equation is \\( xlinecoef\\, abscissa + ylinecoef\\, ordinate = 1 \\) will be tangent to the curve \\( abscissa^{curveexp} + ordinate^{curveexp} = 1 \\) (where \\( curveexp > 1 \\) ) if and only if \\( xlinecoef^{dualexp} + ylinecoef^{dualexp} = 1 \\) and \\( curveexp^{-1} + dualexp^{-1} = 1 \\).",
+      "solution": "A-6. The problem is not well set being true only under rather heavy restrictions on the \\( abscissa, ordinate, xlinecoef \\) and \\( ylinecoef \\). For example, all is in order if they are nonnegative.\n\nHowever, if \\( curveexp \\) is rational with odd numerator and odd denominator there are tangent lines to the curve for which \\( xlinecoef^{dualexp} + ylinecoef^{dualexp} > 1 \\), while if \\( curveexp \\) is rational with odd numerator and even denominator then \\( dualexp \\) is rational with odd numerator and odd denominator and there are solutions ( \\( xlinecoef, ylinecoef \\) ) of \\( xlinecoef^{dualexp} + ylinecoef^{dualexp} = 1 \\) such that the line \\( xlinecoef\\, abscissa + ylinecoef\\, ordinate = 1 \\) is not tangent to the curve \\( abscissa^{curveexp} + ordinate^{curveexp} = 1 \\).\n\nLet ( \\( tangentx, tangenty \\) ) be a point on the curve \\( abscissa^{curveexp} + ordinate^{curveexp} = 1 \\). The tangent to this curve is \\( tangentx^{\\,curveexp - 1}\\, abscissa + tangenty^{\\,curveexp - 1}\\, ordinate = 1 \\). If this line is \\( xlinecoef\\, abscissa + ylinecoef\\, ordinate = 1 \\), then \\( xlinecoef = tangentx^{\\,curveexp - 1} \\) and \\( ylinecoef = tangenty^{\\,curveexp - 1} \\) with both \\( xlinecoef \\) and \\( ylinecoef \\) nonnegative. The relation \\( 1 / curveexp + 1 / dualexp = 1 \\) gives \\( curveexp /( curveexp - 1) = dualexp \\) and we obtain \\( xlinecoef^{dualexp} + ylinecoef^{dualexp} = tangentx^{\\,curveexp} + tangenty^{\\,curveexp} = 1 \\).\n\nConversely, let \\( curveexp^{-1} + dualexp^{-1} = 1 \\) and let \\( xlinecoef \\) and \\( ylinecoef \\) be nonnegative and such that \\( xlinecoef^{dualexp} + ylinecoef^{dualexp} = 1 \\). Define \\( tangentx \\) and \\( tangenty \\) by the equations \\( tangentx = xlinecoef^{\\, dualexp / curveexp} \\) and \\( tangenty = ylinecoef^{\\, dualexp / curveexp} \\). Then \\( tangentx \\) and \\( tangenty \\) are nonnegative and \\( tangentx^{\\,curveexp} + tangenty^{\\,curveexp} = xlinecoef^{dualexp} + ylinecoef^{dualexp} = 1 \\). Thus, \\( \\left( tangentx, tangenty \\right) \\) is on the curve \\( abscissa^{curveexp} + ordinate^{curveexp} = 1 \\) and the line \\( xlinecoef\\, abscissa + ylinecoef\\, ordinate = 1 \\) is the tangent to the curve by the calculation above.\n\nIn this solution we use the fact that for nonnegative \\( basenumb \\) and positive \\( expfirst \\) and \\( expsecond \\) \\( \\left( basenumb^{expfirst} \\right)^{expsecond} = basenumb^{expfirst\\, expextra} \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "breadcrumb",
+        "y": "paintbrush",
+        "x_0": "scarfline",
+        "y_0": "joystick",
+        "u": "pineforest",
+        "v": "cheesecake",
+        "m": "stalemate",
+        "n": "raincloud",
+        "r": "windchime",
+        "s": "bookshelf",
+        "a": "sunglasses",
+        "e": "e"
+      },
+      "question": "A-6. In the plane with orthogonal Cartesian coordinates \\( breadcrumb \\) and \\( paintbrush \\), prove that the line whose equation is \\( pineforest\\,breadcrumb+cheesecake\\,paintbrush=1 \\) will be tangent to the curve \\( breadcrumb^{stalemate}+paintbrush^{stalemate}=1 \\) (where \\( stalemate>1 \\) ) if and only if \\( pineforest^{raincloud}+cheesecake^{raincloud}=1 \\) and \\( stalemate^{-1}+raincloud^{-1}=1 \\).",
+      "solution": "A-6. The problem is not well set being true only under rather heavy restrictions on the \\( breadcrumb, paintbrush, pineforest \\) and \\( cheesecake \\). For example, all is in order if they are nonnegative. However, if \\( stalemate \\) is rational with odd numerator and odd denominator there are tangent lines to the curve for which \\( pineforest^{raincloud}+cheesecake^{raincloud}>1 \\), while if \\( stalemate \\) is rational with odd numerator and even denominator then \\( raincloud \\) is rational with odd numerator and odd denominator and there are solutions ( \\( pineforest, cheesecake \\) ) of \\( pineforest^{raincloud}+cheesecake^{raincloud}=1 \\) such that the line \\( pineforest\\,breadcrumb+cheesecake\\,paintbrush=1 \\) is not tangent to the curve \\( breadcrumb^{stalemate}+paintbrush^{stalemate}=1 \\).\n\nLet ( \\( scarfline, joystick \\) ) be a point on the curve \\( breadcrumb^{stalemate}+paintbrush^{stalemate}=1 \\). The tangent to this curve is \\( scarfline^{stalemate-1}\\,breadcrumb+joystick^{stalemate-1}\\,paintbrush=1 \\). If this line is \\( pineforest\\,breadcrumb+cheesecake\\,paintbrush=1 \\), then \\( pineforest=scarfline^{stalemate-1} \\) and \\( cheesecake=joystick^{stalemate-1} \\) with both \\( pineforest \\) and \\( cheesecake \\) nonnegative. The relation \\( 1/ stalemate+1/ raincloud=1 \\) gives \\( stalemate/(stalemate-1)=raincloud \\) and we obtain \\( pineforest^{raincloud}+cheesecake^{raincloud}=scarfline^{stalemate}+joystick^{stalemate}=1 \\).\n\nConversely, let \\( stalemate^{-1}+raincloud^{-1}=1 \\) and let \\( pineforest \\) and \\( cheesecake \\) be nonnegative and such that \\( pineforest^{raincloud}+cheesecake^{raincloud}=1 \\). Define \\( scarfline \\) and \\( joystick \\) by the equations \\( scarfline=pineforest^{raincloud / stalemate} \\) and \\( joystick=cheesecake^{raincloud / stalemate} \\). Then \\( scarfline \\) and \\( joystick \\) are nonnegative and \\( scarfline^{stalemate}+joystick^{stalemate}=pineforest^{raincloud}+cheesecake^{raincloud}=1 \\). Thus, \\( \\left(scarfline, joystick\\right) \\) is on the curve \\( breadcrumb^{stalemate}+paintbrush^{stalemate}=1 \\) and the line \\( pineforest\\,breadcrumb+cheesecake\\,paintbrush=1 \\) is the tangent to the curve by the calculation above.\n\nIn this solution we use the fact that for nonnegative \\( sunglasses \\) and positive \\( windchime \\) and \\( bookshelf \\) \\( \\left(sunglasses^{windchime}\\right)^{bookshelf}=sunglasses^{windchime e} \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "noncoordinate",
+        "y": "stationary",
+        "x_0": "movingpoint",
+        "y_0": "dynamicpoint",
+        "u": "curvature",
+        "v": "bendiness",
+        "m": "rootvalue",
+        "n": "logarithm",
+        "r": "basevalue",
+        "s": "mantissa",
+        "a": "exponent"
+      },
+      "question": "A-6. In the plane with orthogonal Cartesian coordinates \\( noncoordinate \\) and \\( stationary \\), prove that the line whose equation is \\( curvature \\, noncoordinate + bendiness \\, stationary = 1 \\) will be tangent to the curve \\( noncoordinate^{rootvalue}+stationary^{rootvalue}=1 \\) (where \\( rootvalue>1 \\) ) if and only if \\( curvature^{logarithm}+bendiness^{logarithm}=1 \\) and \\( rootvalue^{-1}+logarithm^{-1}=1 \\).",
+      "solution": "A-6. The problem is not well set being true only under rather heavy restrictions on the \\( noncoordinate, stationary, curvature \\) and \\( bendiness \\). For example, all is in order if they are nonnegative. However, if \\( rootvalue \\) is rational with odd numerator and odd denominator there are tangent lines to the curve for which \\( curvature^{logarithm}+bendiness^{logarithm}>1 \\), while if \\( rootvalue \\) is rational with odd numerator and even denominator then \\( logarithm \\) is rational with odd numerator and odd denominator and there are solutions ( \\( curvature, bendiness \\) ) of \\( curvature^{logarithm}+bendiness^{logarithm}=1 \\) such that the line \\( curvature \\, noncoordinate + bendiness \\, stationary = 1 \\) is not tangent to the curve \\( noncoordinate^{rootvalue}+stationary^{rootvalue}=1 \\).\n\nLet ( \\( movingpoint, dynamicpoint \\) ) be a point on the curve \\( noncoordinate^{rootvalue}+stationary^{rootvalue}=1 \\). The tangent to this curve is \\( movingpoint^{rootvalue-1} noncoordinate+dynamicpoint^{rootvalue-1} stationary=1 \\). If this line is \\( curvature \\, noncoordinate + bendiness \\, stationary = 1 \\), then \\( curvature= movingpoint^{rootvalue-1} \\) and \\( bendiness= dynamicpoint^{rootvalue-1} \\) with both \\( curvature \\) and \\( bendiness \\) nonnegative. The relation \\( 1 / rootvalue+1 / logarithm=1 \\) gives \\( rootvalue /(rootvalue-1)=logarithm \\) and we obtain \\( curvature^{logarithm}+bendiness^{logarithm}=movingpoint^{rootvalue}+dynamicpoint^{rootvalue}=1 \\).\n\nConversely, let \\( rootvalue^{-1}+logarithm^{-1}=1 \\) and let \\( curvature \\) and \\( bendiness \\) be nonnegative and such that \\( curvature^{logarithm}+bendiness^{logarithm}=1 \\). Define \\( movingpoint \\) and \\( dynamicpoint \\) by the equations \\( movingpoint=curvature^{logarithm / rootvalue} \\) and \\( dynamicpoint=bendiness^{logarithm / rootvalue} \\). Then \\( movingpoint \\) and \\( dynamicpoint \\) are nonnegative and \\( movingpoint^{rootvalue}+dynamicpoint^{rootvalue}=curvature^{logarithm}+bendiness^{logarithm}=1 \\). Thus, \\( \\left(movingpoint, dynamicpoint\\right) \\) is on the curve\n\\( noncoordinate^{rootvalue}+stationary^{rootvalue}=1 \\) and the line \\( curvature \\, noncoordinate + bendiness \\, stationary = 1 \\) is the tangent to the curve by the calculation above.\n\nIn this solution we use the fact that for nonnegative \\( exponent \\) and positive \\( basevalue \\) and \\( mantissa \\) \\( \\left(exponent^{basevalue}\\right)^{mantissa}=exponent^{basevalue e} \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "x_0": "mwrlzgne",
+        "y_0": "pshqvbkd",
+        "u": "zlhgwefn",
+        "v": "tcrjovqm",
+        "m": "fznkchwa",
+        "n": "prdyloxe",
+        "r": "svmghuta",
+        "s": "kfrqizne",
+        "a": "blxevcwp"
+      },
+      "question": "A-6. In the plane with orthogonal Cartesian coordinates \\( qzxwvtnp \\) and \\( hjgrksla \\), prove that the line whose equation is \\( zlhgwefn qzxwvtnp+tcrjovqm hjgrksla=1 \\) will be tangent to the curve \\( qzxwvtnp^{fznkchwa}+hjgrksla^{fznkchwa}=1 \\) (where \\( fznkchwa>1 \\) ) if and only if \\( zlhgwefn^{prdyloxe}+tcrjovqm^{prdyloxe}=1 \\) and \\( fznkchwa^{-1}+prdyloxe^{-1}=1 \\).",
+      "solution": "A-6. The problem is not well set being true only under rather heavy restrictions on the \\( qzxwvtnp, hjgrksla, zlhgwefn \\) and \\( tcrjovqm \\). For example, all is in order if they are nonnegative. However, if \\( fznkchwa \\) is rational with odd numerator and odd denominator there are tangent lines to the curve for which \\( zlhgwefn^{prdyloxe}+tcrjovqm^{prdyloxe}>1 \\), while if \\( fznkchwa \\) is rational with odd numerator and even denominator then \\( prdyloxe \\) is rational with odd numerator and odd denominator and there are solutions ( \\( zlhgwefn, tcrjovqm \\) ) of \\( zlhgwefn^{prdyloxe}+tcrjovqm^{prdyloxe}=1 \\) such that the line \\( zlhgwefn qzxwvtnp+tcrjovqm hjgrksla=1 \\) is not tangent to the curve \\( qzxwvtnp^{fznkchwa}+hjgrksla^{fznkchwa}=1 \\).\n\nLet ( \\( mwrlzgne, pshqvbkd \\) ) be a point on the curve \\( qzxwvtnp^{fznkchwa}+hjgrksla^{fznkchwa}=1 \\). The tangent to this curve is \\( mwrlzgne^{fznkchwa-1} qzxwvtnp+pshqvbkd^{fznkchwa-1} hjgrksla=1 \\). If this line is \\( zlhgwefn qzxwvtnp+tcrjovqm hjgrksla=1 \\), then \\( zlhgwefn= mwrlzgne^{fznkchwa-1} \\) and \\( tcrjovqm= pshqvbkd^{fznkchwa-1} \\) with both \\( zlhgwefn \\) and \\( tcrjovqm \\) nonnegative. The relation \\( 1 / fznkchwa+1 / prdyloxe=1 \\) gives \\( fznkchwa /(fznkchwa-1)=prdyloxe \\) and we obtain \\( zlhgwefn^{prdyloxe}+tcrjovqm^{prdyloxe}=mwrlzgne^{fznkchwa}+pshqvbkd^{fznkchwa}=1 \\).\n\nConversely, let \\( fznkchwa^{-1}+prdyloxe^{-1}=1 \\) and let \\( zlhgwefn \\) and \\( tcrjovqm \\) be nonnegative and such that \\( zlhgwefn^{prdyloxe}+tcrjovqm^{prdyloxe}=1 \\). Define \\( mwrlzgne \\) and \\( pshqvbkd \\) by the equations \\( mwrlzgne=zlhgwefn^{prdyloxe / fznkchwa} \\) and \\( pshqvbkd=tcrjovqm^{prdyloxe / fznkchwa} \\). Then \\( mwrlzgne \\) and \\( pshqvbkd \\) are nonnegative and \\( mwrlzgne^{fznkchwa}+pshqvbkd^{fznkchwa}=zlhgwefn^{prdyloxe}+tcrjovqm^{prdyloxe}=1 \\). Thus, \\( \\left(mwrlzgne, pshqvbkd\\right) \\) is on the curve\n\\( qzxwvtnp^{fznkchwa}+hjgrksla^{fznkchwa}=1 \\) and the line \\( zlhgwefn qzxwvtnp+tcrjovqm hjgrksla=1 \\) is the tangent to the curve by the calculation above.\n\nIn this solution we use the fact that for nonnegative \\( blxevcwp \\) and positive \\( svmghuta \\) and \\( kfrqizne \\) \\( \\left(blxevcwp^{svmghuta}\\right)^{kfrqizne}=blxevcwp^{svmghuta e} \\)."
+    },
+    "kernel_variant": {
+      "question": "Let k>0 be fixed and let m>1 be a real number.  Define the positive number n by\n\n        1/m + 1/n = 1    (equivalently n = m/(m-1)).\n\nWork in the first quadrant only.  That is, consider the branch of the curve\n\n        C :  x^m + y^m = k ,   with x>0 , y>0,\n\nand, for positive real numbers u , v , the straight line\n\n        L :  u x + v y = k .\n\nProve that the line L is tangent to the curve C if and only if\n\n        u^n + v^n = k .",
+      "solution": "Throughout we assume k>0 , m>1 , n=m/(m-1)>0 and that all points lie in the first quadrant.\n\n1.  The tangent line to C.\n   \n   Set F(x,y)=x^m+y^m-k.  On the branch x>0 , y>0 the function F is differentiable and its gradient never vanishes because m>1:\n        \\nabla F(x,y) = ( m x^{m-1} , m y^{m-1} ).\n   Hence C is a smooth curve in the first quadrant.\n\n   Let (x_0 , y_0)\\in C.  The tangent line to C at (x_0 , y_0) is\n        m x_0^{m-1}(x-x_0) + m y_0^{m-1}(y-y_0) = 0\n   \\Leftrightarrow    x_0^{m-1} x + y_0^{m-1} y = x_0^m + y_0^m = k .     (1)\n\n2.  Necessity.  Suppose that L is tangent to C.  Then there is a point (x_0 , y_0)\\in C such that L coincides with the tangent line (1).  Comparing the two equations ux + vy = k and (1) shows\n        u = x_0^{m-1} ,          v = y_0^{m-1} .        (2)\n\n   Because 1/m + 1/n = 1 we have n = m/(m-1), hence\n        (m-1)n = m .\n   Raise the identities in (2) to the power n:\n        u^n = (x_0^{m-1})^n = x_0^{(m-1)n} = x_0^m ,\n        v^n = (y_0^{m-1})^n = y_0^{(m-1)n} = y_0^m .\n   Adding the two equalities and using (x_0 , y_0)\\in C gives\n        u^n + v^n = x_0^m + y_0^m = k .\n   Thus the tangency of L implies u^n + v^n = k.\n\n3.  Sufficiency.  Conversely, assume u>0 , v>0 satisfy u^n + v^n = k.  Define\n        x_0 = u^{n/m} ,      y_0 = v^{n/m} .            (3)\n   These numbers are positive and\n        x_0^m + y_0^m = u^n + v^n = k ,\n   so (x_0 , y_0) belongs to C.\n\n   Compute\n        x_0^{m-1} = (u^{n/m})^{m-1} = u^{n(m-1)/m} = u ,\n        y_0^{m-1} = (v^{n/m})^{m-1} = v^{n(m-1)/m} = v ,\n   where we again used (m-1)n = m.  Substitute these into the general tangent equation (1):\n        x_0^{m-1} x + y_0^{m-1} y = u x + v y = k .\n   Hence the line L is exactly the tangent to C at (x_0 , y_0).\n\n4.  Conclusion.\n   \n   The line u x + v y = k is tangent to x^m + y^m = k in the first quadrant if and only if u^n + v^n = k, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Write the tangent at (x0,y0) on x^m + y^m = 1 as x0^{m-1} x + y0^{m-1} y = 1.",
+          "Match this with ux + vy = 1, giving u = x0^{m-1}, v = y0^{m-1}.",
+          "Use m^{-1} + n^{-1} = 1 ⇒ n = m/(m−1) and compute u^n + v^n = x0^m + y0^m = 1 (forward direction).",
+          "Conversely, from u^n + v^n = 1 define x0 = u^{n/m}, y0 = v^{n/m}; then x0^m + y0^m = 1 and ux + vy = 1 is the tangent (reverse direction)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Right-hand-side constant in both the curve and the line; changing it to any positive c only scales the same computations.",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Requirement that m>1 (any real m with m≠1 and m>0 so that n = m/(m−1) is defined and positive).",
+            "original": "m>1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

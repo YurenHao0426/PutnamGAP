@@ -1,0 +1,120 @@
+{
+  "index": "2007-B-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $k$ be a positive integer. Prove that there exist polynomials\n$P_0(n), P_1(n), \\dots, P_{k-1}(n)$ (which may depend on $k$) such that\nfor any integer $n$,\n\\[\n\\left\\lfloor \\frac{n}{k} \\right\\rfloor^k = P_0(n) + P_1(n) \\left\\lfloor\n\\frac{n}{k} \\right\\rfloor + \\cdots + P_{k-1}(n) \\left\\lfloor \\frac{n}{k}\n\\right\\rfloor^{k-1}.\n\\]\n($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+  "solution": "For $n$ an integer, we have\n$\\left\\lfloor \\frac{n}{k} \\right\\rfloor = \\frac{n-j}{k}$ for $j$\nthe unique integer in $\\{0,\\dots,k-1\\}$ congruent to $n$ modulo $k$;\nhence\n\\[\n\\prod_{j=0}^{k-1} \\left( \\left\\lfloor \\frac{n}{k} \\right\\rfloor - \\frac{n-j}{k}\n\\right) = 0.\n\\]\nBy expanding this out, we obtain\nthe desired polynomials $P_0(n), \\dots, P_{k-1}(n)$.\n\n\\textbf{Remark:} Variants of this solution are possible that\nconstruct the $P_i$\nless explicitly, using Lagrange interpolation or Vandermonde determinants.",
+  "vars": [
+    "k",
+    "n",
+    "j",
+    "i"
+  ],
+  "params": [
+    "P_0",
+    "P_1",
+    "P_k-1",
+    "P_i"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "divisor",
+        "n": "integer",
+        "j": "residue",
+        "i": "indexer",
+        "P_0": "polyzero",
+        "P_1": "polyone",
+        "P_k-1": "polylast",
+        "P_i": "polygen"
+      },
+      "question": "Problem:\n<<<\nLet $divisor$ be a positive integer. Prove that there exist polynomials\n$polyzero(integer), polyone(integer), \\dots, polylast(integer)$ (which may depend on $divisor$) such that\nfor any integer $integer$,\n\\[\n\\left\\lfloor \\frac{integer}{divisor} \\right\\rfloor^{divisor} = polyzero(integer) + polyone(integer) \\left\\lfloor\n\\frac{integer}{divisor} \\right\\rfloor + \\cdots + polylast(integer) \\left\\lfloor \\frac{integer}{divisor}\n\\right\\rfloor^{divisor-1}.\n\\]\n($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)\n>>>",
+      "solution": "Solution:\n<<<\nFor $integer$ an integer, we have\n$\\left\\lfloor \\frac{integer}{divisor} \\right\\rfloor = \\frac{integer-residue}{divisor}$ for $residue$\nthe unique integer in $\\{0,\\dots,divisor-1\\}$ congruent to $integer$ modulo $divisor$;\nhence\n\\[\n\\prod_{residue=0}^{divisor-1} \\left( \\left\\lfloor \\frac{integer}{divisor} \\right\\rfloor - \\frac{integer-residue}{divisor}\n\\right) = 0.\n\\]\nBy expanding this out, we obtain\nthe desired polynomials $polyzero(integer), \\dots, polylast(integer)$.\n\n\\textbf{Remark:} Variants of this solution are possible that\nconstruct the $polygen$\nless explicitly, using Lagrange interpolation or Vandermonde determinants.\n>>>"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "dandelion",
+        "n": "sapphire",
+        "j": "marigold",
+        "i": "pineapple",
+        "P_0": "rainstorm",
+        "P_1": "buttercup",
+        "P_k-1": "sunflower",
+        "P_i": "daffodil"
+      },
+      "question": "Let $dandelion$ be a positive integer. Prove that there exist polynomials\n$rainstorm(sapphire), buttercup(sapphire), \\dots, sunflower(sapphire)$ (which may depend on $dandelion$) such that\nfor any integer $sapphire$,\n\\[\n\\left\\lfloor \\frac{sapphire}{dandelion} \\right\\rfloor^{dandelion} = rainstorm(sapphire) + buttercup(sapphire) \\left\\lfloor\n\\frac{sapphire}{dandelion} \\right\\rfloor + \\cdots + sunflower(sapphire) \\left\\lfloor \\frac{sapphire}{dandelion}\n\\right\\rfloor^{dandelion-1}.\n\\]\n($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+      "solution": "For $sapphire$ an integer, we have\n$\\left\\lfloor \\frac{sapphire}{dandelion} \\right\\rfloor = \\frac{sapphire-marigold}{dandelion}$ for $marigold$\nthe unique integer in $\\{0,\\dots,dandelion-1\\}$ congruent to $sapphire$ modulo $dandelion$;\nhence\n\\[\n\\prod_{marigold=0}^{dandelion-1} \\left( \\left\\lfloor \\frac{sapphire}{dandelion} \\right\\rfloor - \\frac{sapphire-marigold}{dandelion}\n\\right) = 0.\n\\]\nBy expanding this out, we obtain\nthe desired polynomials $rainstorm(sapphire), \\dots, sunflower(sapphire)$.\n\n\\textbf{Remark:} Variants of this solution are possible that\nconstruct the $daffodil$\nless explicitly, using Lagrange interpolation or Vandermonde determinants."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "endlessval",
+        "n": "fractional",
+        "j": "completeval",
+        "i": "contents",
+        "P_0": "antipolynil",
+        "P_1": "antipolyone",
+        "P_k-1": "antipolymax",
+        "P_i": "antipolyidx"
+      },
+      "question": "Let $endlessval$ be a positive integer. Prove that there exist polynomials\nantipolynil(fractional), antipolyone(fractional), \\dots, antipolymax(fractional) (which may depend on $endlessval$) such that\nfor any integer $fractional$,\n\\[\n\\left\\lfloor \\frac{fractional}{endlessval} \\right\\rfloor^{endlessval} = antipolynil(fractional) + antipolyone(fractional) \\left\\lfloor\n\\frac{fractional}{endlessval} \\right\\rfloor + \\cdots + antipolymax(fractional) \\left\\lfloor \\frac{fractional}{endlessval}\n\\right\\rfloor^{endlessval-1}.\n\\]\n($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+      "solution": "For $fractional$ an integer, we have\n$\\left\\lfloor \\frac{fractional}{endlessval} \\right\\rfloor = \\frac{fractional-completeval}{endlessval}$ for $completeval$\nthe unique integer in $\\{0,\\dots,endlessval-1\\}$ congruent to $fractional$ modulo $endlessval$;\nhence\n\\[\n\\prod_{completeval=0}^{endlessval-1} \\left( \\left\\lfloor \\frac{fractional}{endlessval} \\right\\rfloor - \\frac{fractional-completeval}{endlessval}\n\\right) = 0.\n\\]\nBy expanding this out, we obtain\nthe desired polynomials antipolynil(fractional), \\dots, antipolymax(fractional).\n\n\\textbf{Remark:} Variants of this solution are possible that\nconstruct the antipolyidx\nless explicitly, using Lagrange interpolation or Vandermonde determinants."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "qzxwvtnp",
+        "n": "hjgrksla",
+        "j": "mndptqvr",
+        "i": "sckblfaz",
+        "P_0": "blrqxkmd",
+        "P_1": "ntzfjvsa",
+        "P_k-1": "gvsztole",
+        "P_i": "fxbqmrcn"
+      },
+      "question": "Let $qzxwvtnp$ be a positive integer. Prove that there exist polynomials\n$blrqxkmd(hjgrksla), ntzfjvsa(hjgrksla), \\dots, gvsztole(hjgrksla)$ (which may depend on $qzxwvtnp$) such that\nfor any integer $hjgrksla$,\n\\[\n\\left\\lfloor \\frac{hjgrksla}{qzxwvtnp} \\right\\rfloor^{qzxwvtnp} = blrqxkmd(hjgrksla) + ntzfjvsa(hjgrksla) \\left\\lfloor\n\\frac{hjgrksla}{qzxwvtnp} \\right\\rfloor + \\cdots + gvsztole(hjgrksla) \\left\\lfloor \\frac{hjgrksla}{qzxwvtnp}\n\\right\\rfloor^{qzxwvtnp-1}.\n\\]\n($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+      "solution": "For $hjgrksla$ an integer, we have\n$\\left\\lfloor \\frac{hjgrksla}{qzxwvtnp} \\right\\rfloor = \\frac{hjgrksla-mndptqvr}{qzxwvtnp}$ for $mndptqvr$\nthe unique integer in $\\{0,\\dots,qzxwvtnp-1\\}$ congruent to $hjgrksla$ modulo $qzxwvtnp$;\nhence\n\\[\n\\prod_{mndptqvr=0}^{qzxwvtnp-1} \\left( \\left\\lfloor \\frac{hjgrksla}{qzxwvtnp} \\right\\rfloor - \\frac{hjgrksla-mndptqvr}{qzxwvtnp}\n\\right) = 0.\n\\]\nBy expanding this out, we obtain\nthe desired polynomials $blrqxkmd(hjgrksla), \\dots, gvsztole(hjgrksla)$.\n\n\\textbf{Remark:} Variants of this solution are possible that\nconstruct the $fxbqmrcn$\nless explicitly, using Lagrange interpolation or Vandermonde determinants."
+    },
+    "kernel_variant": {
+      "question": "Let m be a fixed positive integer.  For every integer x there is a unique decomposition\n   x = mp + r ,    r \\in  {1,2, \\ldots  , m},\nand we set\n   a\\langle x/m\\rangle  := p = \\lfloor (x-1)/m\\rfloor  .\nProve that there are polynomials\n   Q_1(x), Q_2(x), \\ldots  , Q_m(x) \\in  \\mathbb{Q}[x]\n(depending only on m) such that for every integer x\n   a\\langle x/m\\rangle ^m = Q_1(x) + Q_2(x)\\cdot a\\langle x/m\\rangle  + \\ldots  + Q_m(x)\\cdot a\\langle x/m\\rangle ^{m-1}.\n\n(Warning: in general one cannot arrange for all Q_i to have integer coefficients once m \\geq  2.)",
+      "solution": "Fix a positive integer m.\n\nStep 0.  Existence and uniqueness of p and r with r \\in  {1,\\ldots ,m}\n-------------------------------------------------------------\nGiven x \\in  \\mathbb{Z}, perform ordinary division by m to obtain unique q,s with\n   x = mq + s , 0 \\leq  s \\leq  m-1.\n* If s \\neq  0 set p = q and r = s.  Then r \\in  {1,\\ldots ,m-1} \\subset  {1,\\ldots ,m}.\n* If s = 0 set p = q - 1 and r = m.  Then r \\in  {1,\\ldots ,m} and\n   x = m(q-1) + m = mq = x.\nThus there is a unique pair (p,r) with r in {1,\\ldots ,m}.  Moreover\n   p = \\lfloor (x-1)/m\\rfloor ,  \nso we may write p = a\\langle x/m\\rangle .\n\nStep 1.  A vanishing auxiliary polynomial\n-----------------------------------------\nFor an indeterminate t define\n   F(x,t) := \\prod _{s=1}^{m} ( t - (x-s)/m )\n           = t^m + a_{m-1}(x)t^{m-1} + \\ldots  + a_0(x),\nwhere each coefficient a_k(x) is the k-th elementary symmetric polynomial\nin the m rational numbers (x-1)/m,\\ldots ,(x-m)/m; hence a_k(x) \\in  \\mathbb{Q}[x].\n\nStep 2.  Evaluation at t = a\\langle x/m\\rangle \n--------------------------------\nWrite x = mp + r with r \\in  {1,\\ldots ,m}.  For the factor indexed by s = r we\nhave (x-s)/m = p, so that t - (x-s)/m vanishes at t = p while all other\nfactors are non-zero.  Consequently\n   F(x, a\\langle x/m\\rangle ) = 0    for every integer x.\n\nStep 3.  Solving for a\\langle x/m\\rangle ^m\n------------------------------\nSince F(x,t) is monic in t, the relation F(x,p) = 0 yields\n   p^m + a_{m-1}(x) p^{m-1} + \\ldots  + a_0(x) = 0,\nhence\n   p^m = -a_{m-1}(x) p^{m-1} - \\ldots  - a_0(x).\n\nStep 4.  Defining the required polynomials Q_i\n----------------------------------------------\nFor i = 1,\\ldots ,m put\n   Q_i(x) := -a_{i-1}(x)   (with the convention a_m(x) = 1).\nEach Q_i(x) lies in \\mathbb{Q}[x], and for every integer x we have\n   a\\langle x/m\\rangle ^m = Q_1(x) + Q_2(x)\\cdot a\\langle x/m\\rangle  + \\ldots  + Q_m(x)\\cdot a\\langle x/m\\rangle ^{m-1},\ncompleting the proof.\n\nRemark on integrality of the coefficients\n-----------------------------------------\nMultiplying all Q_i by a common integer clears denominators but also\nmultiplies the right-hand side of the identity, so the equality would no\nlonger hold.  One checks directly that for m \\geq  2 there is no choice of\ninteger-coefficient polynomials satisfying the identity for all integers\nx (the case m = 2 already yields a contradiction for x = 2,3,4).  Thus\nrational coefficients are in general unavoidable.",
+      "_meta": {
+        "core_steps": [
+          "Write n = kq + r, so floor(n/k) = (n − r)/k with r a residue mod k",
+          "Form the polynomial ∏_{r in complete residue set}( floor(n/k) − (n − r)/k )",
+          "Note one factor is zero (r equals actual remainder), hence whole product vanishes for every integer n",
+          "Expand the zero product to express floor(n/k)^k as a linear combination of lower powers with coefficients that are polynomials in n",
+          "Define those coefficients as P_0(n),…,P_{k−1}(n) to obtain the required identity"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Modulus used in the division algorithm (any positive integer symbol)",
+            "original": "k"
+          },
+          "slot2": {
+            "description": "Chosen complete residue system modulo the modulus",
+            "original": "{0,1,…,k−1}"
+          },
+          "slot3": {
+            "description": "Limits/order of the product index over the residue set",
+            "original": "j runs from 0 to k−1"
+          },
+          "slot4": {
+            "description": "Notation for the coefficient polynomials in the final identity",
+            "original": "P_0(n),…,P_{k−1}(n)"
+          },
+          "slot5": {
+            "description": "Symbol for the integer variable being divided",
+            "original": "n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

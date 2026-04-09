@@ -1,0 +1,120 @@
+{
+  "index": "1986-B-6",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Suppose $A,B,C,D$ are $n \\times n$ matrices with entries in a field\n$F$, satisfying the conditions that $AB^T$ and $CD^T$ are symmetric and\n$AD^T - BC^T = I$. Here $I$ is the $n \\times n$ identity matrix, and\nif $M$ is an $n \\times n$ matrix, $M^T$ is its transpose. Prove that\n$A^T D - C^T B = I$.\n\n\\end{itemize}\n\n\\end{document}",
+  "solution": "Solution. The conditions of the problem are\n(1) \\( A B^{t}=\\left(A B^{t}\\right)^{t}=B A^{t} \\),\n(2) \\( C D^{t}=\\left(C D^{t}\\right)^{t}=D C^{t} \\),\n(3) \\( A D^{t}-B C^{t}=I \\).\n\nTaking the transpose of (3) gives \\( D A^{t}-C B^{t}=I \\). These four equations are the entries in the block matrix identity\n\\[\n\\left(\\begin{array}{cc}\nA & B \\\\\nC & D\n\\end{array}\\right)\\left(\\begin{array}{cc}\nD^{t} & -B^{t} \\\\\n-C^{t} & A^{t}\n\\end{array}\\right)=\\left(\\begin{array}{ll}\nI & 0 \\\\\n0 & I\n\\end{array}\\right) .\n\\]\n(Here the matrices should be considered \\( (2 n) \\times(2 n) \\) matrices in the obvious way.) If \\( X, Y \\) are \\( m \\times m \\) matrices with \\( X Y=I_{m} \\), the \\( m \\times m \\) identity matrix, then \\( Y=X^{-1} \\) and \\( Y X=I_{m} \\) too. Applying this to our product with \\( m=2 n \\), we obtain\n\\[\n\\left(\\begin{array}{cc}\nD^{t} & -B^{t} \\\\\n-C^{t} & A^{t}\n\\end{array}\\right)\\left(\\begin{array}{cc}\nA & B \\\\\nC & D\n\\end{array}\\right)=\\left(\\begin{array}{cc}\nI & 0 \\\\\n0 & I\n\\end{array}\\right),\n\\]\nand equating the lower right blocks shows that \\( -C^{t} B+A^{t} D=I \\), as desired.",
+  "vars": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "X",
+    "Y"
+  ],
+  "params": [
+    "n",
+    "m",
+    "F",
+    "I"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "matrixalpha",
+        "B": "matrixbravo",
+        "C": "matrixcharlie",
+        "D": "matrixdelta",
+        "X": "matrixxray",
+        "Y": "matrixyankee",
+        "n": "sizeindex",
+        "m": "blocksize",
+        "F": "basefield",
+        "I": "unitmatrix"
+      },
+      "question": "Suppose $matrixalpha,matrixbravo,matrixcharlie,matrixdelta$ are $sizeindex \\times sizeindex$ matrices with entries in a field\n$basefield$, satisfying the conditions that $matrixalpha matrixbravo^T$ and $matrixcharlie matrixdelta^T$ are symmetric and\n$matrixalpha matrixdelta^T - matrixbravo matrixcharlie^T = unitmatrix$. Here $unitmatrix$ is the $sizeindex \\times sizeindex$ identity matrix, and\nif $M$ is an $sizeindex \\times sizeindex$ matrix, $M^T$ is its transpose. Prove that\n$matrixalpha^T matrixdelta - matrixcharlie^T matrixbravo = unitmatrix$.\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "Solution. The conditions of the problem are\n(1) \\( matrixalpha matrixbravo^{t}=\\left(matrixalpha matrixbravo^{t}\\right)^{t}=matrixbravo matrixalpha^{t} \\),\n(2) \\( matrixcharlie matrixdelta^{t}=\\left(matrixcharlie matrixdelta^{t}\\right)^{t}=matrixdelta matrixcharlie^{t} \\),\n(3) \\( matrixalpha matrixdelta^{t}-matrixbravo matrixcharlie^{t}=unitmatrix \\).\n\nTaking the transpose of (3) gives \\( matrixdelta matrixalpha^{t}-matrixcharlie matrixbravo^{t}=unitmatrix \\). These four equations are the entries in the block matrix identity\n\\[\n\\left(\\begin{array}{cc}\nmatrixalpha & matrixbravo \\\\\nmatrixcharlie & matrixdelta\n\\end{array}\\right)\\left(\\begin{array}{cc}\nmatrixdelta^{t} & -matrixbravo^{t} \\\\\n-matrixcharlie^{t} & matrixalpha^{t}\n\\end{array}\\right)=\\left(\\begin{array}{ll}\nunitmatrix & 0 \\\\\n0 & unitmatrix\n\\end{array}\\right) .\n\\]\n(Here the matrices should be considered \\( (2 sizeindex) \\times(2 sizeindex) \\) matrices in the obvious way.) If \\( matrixxray, matrixyankee \\) are \\( blocksize \\times blocksize \\) matrices with \\( matrixxray matrixyankee=unitmatrix_{blocksize} \\), the \\( blocksize \\times blocksize \\) identity matrix, then \\( matrixyankee=matrixxray^{-1} \\) and \\( matrixyankee matrixxray=unitmatrix_{blocksize} \\) too. Applying this to our product with \\( blocksize=2 sizeindex \\), we obtain\n\\[\n\\left(\\begin{array}{cc}\nmatrixdelta^{t} & -matrixbravo^{t} \\\\\n-matrixcharlie^{t} & matrixalpha^{t}\n\\end{array}\\right)\\left(\\begin{array}{cc}\nmatrixalpha & matrixbravo \\\\\nmatrixcharlie & matrixdelta\n\\end{array}\\right)=\\left(\\begin{array}{cc}\nunitmatrix & 0 \\\\\n0 & unitmatrix\n\\end{array}\\right),\n\\]\nand equating the lower right blocks shows that \\( -matrixcharlie^{t} matrixbravo+matrixalpha^{t} matrixdelta=unitmatrix \\), as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "riverbank",
+        "B": "sunflower",
+        "C": "moonlight",
+        "D": "dragonfly",
+        "X": "lighthouse",
+        "Y": "parchment",
+        "n": "stonework",
+        "m": "narrowest",
+        "F": "bookstack",
+        "I": "starfruit"
+      },
+      "question": "Suppose $riverbank,sunflower,moonlight,dragonfly$ are $stonework \\times stonework$ matrices with entries in a field\n$bookstack$, satisfying the conditions that $riverbank sunflower^T$ and $moonlight dragonfly^T$ are symmetric and\n$riverbank dragonfly^T - sunflower moonlight^T = starfruit$. Here $starfruit$ is the $stonework \\times stonework$ identity matrix, and\nif $M$ is an $stonework \\times stonework$ matrix, $M^T$ is its transpose. Prove that\n$riverbank^T dragonfly - moonlight^T sunflower = starfruit$.",
+      "solution": "Solution. The conditions of the problem are\n(1) \\( riverbank sunflower^{t}=\\left(riverbank sunflower^{t}\\right)^{t}=sunflower riverbank^{t} \\),\n(2) \\( moonlight dragonfly^{t}=\\left(moonlight dragonfly^{t}\\right)^{t}=dragonfly moonlight^{t} \\),\n(3) \\( riverbank dragonfly^{t}-sunflower moonlight^{t}=starfruit \\).\n\nTaking the transpose of (3) gives \\( dragonfly riverbank^{t}-moonlight sunflower^{t}=starfruit \\). These four equations are the entries in the block matrix identity\n\\[\n\\left(\\begin{array}{cc}\nriverbank & sunflower \\\\\nmoonlight & dragonfly\n\\end{array}\\right)\\left(\\begin{array}{cc}\ndragonfly^{t} & -sunflower^{t} \\\\\n-moonlight^{t} & riverbank^{t}\n\\end{array}\\right)=\\left(\\begin{array}{ll}\nstarfruit & 0 \\\\\n0 & starfruit\n\\end{array}\\right) .\n\\]\n(Here the matrices should be considered \\( (2 stonework) \\times(2 stonework) \\) matrices in the obvious way.) If \\( lighthouse, parchment \\) are \\( narrowest \\times narrowest \\) matrices with \\( lighthouse parchment=starfruit_{narrowest} \\), the \\( narrowest \\times narrowest \\) identity matrix, then \\( parchment=lighthouse^{-1} \\) and \\( parchment lighthouse=starfruit_{narrowest} \\) too. Applying this to our product with \\( narrowest=2 stonework \\), we obtain\n\\[\n\\left(\\begin{array}{cc}\ndragonfly^{t} & -sunflower^{t} \\\\\n-moonlight^{t} & riverbank^{t}\n\\end{array}\\right)\\left(\\begin{array}{cc}\nriverbank & sunflower \\\\\nmoonlight & dragonfly\n\\end{array}\\right)=\\left(\\begin{array}{cc}\nstarfruit & 0 \\\\\n0 & starfruit\n\\end{array}\\right),\n\\]\nand equating the lower right blocks shows that \\( -moonlight^{t} sunflower+riverbank^{t} dragonfly=starfruit \\), as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "scalarvoid",
+        "B": "vectorzero",
+        "C": "constantfull",
+        "D": "singularpart",
+        "X": "immutable",
+        "Y": "anchoredval",
+        "n": "infinindex",
+        "m": "zerorange",
+        "F": "integerring",
+        "I": "zeromatrix"
+      },
+      "question": "Suppose $scalarvoid,vectorzero,constantfull,singularpart$ are $infinindex \\times infinindex$ matrices with entries in a field $integerring$, satisfying the conditions that $scalarvoid vectorzero^T$ and $constantfull singularpart^T$ are symmetric and $scalarvoid singularpart^T - vectorzero constantfull^T = zeromatrix$. Here $zeromatrix$ is the $infinindex \\times infinindex$ identity matrix, and if $M$ is an $infinindex \\times infinindex$ matrix, $M^T$ is its transpose. Prove that $scalarvoid^T singularpart - constantfull^T vectorzero = zeromatrix$.",
+      "solution": "Solution. The conditions of the problem are\n(1) \\( scalarvoid vectorzero^{t}=\\left( scalarvoid vectorzero^{t} \\right)^{t}=vectorzero scalarvoid^{t} \\),\n(2) \\( constantfull singularpart^{t}=\\left( constantfull singularpart^{t} \\right)^{t}=singularpart constantfull^{t} \\),\n(3) \\( scalarvoid singularpart^{t}-vectorzero constantfull^{t}=zeromatrix \\).\n\nTaking the transpose of (3) gives \\( singularpart scalarvoid^{t}-constantfull vectorzero^{t}=zeromatrix \\). These four equations are the entries in the block matrix identity\n\\[\n\\left(\\begin{array}{cc}\nscalarvoid & vectorzero \\\\\nconstantfull & singularpart\n\\end{array}\\right)\\left(\\begin{array}{cc}\nsingularpart^{t} & -vectorzero^{t} \\\\\n-constantfull^{t} & scalarvoid^{t}\n\\end{array}\\right)=\\left(\\begin{array}{ll}\nzeromatrix & 0 \\\\\n0 & zeromatrix\n\\end{array}\\right) .\n\\]\n(Here the matrices should be considered \\( (2 infinindex) \\times(2 infinindex) \\) matrices in the obvious way.) If \\( immutable, anchoredval \\) are \\( zerorange \\times zerorange \\) matrices with \\( immutable anchoredval=zeromatrix_{zerorange} \\), the \\( zerorange \\times zerorange \\) identity matrix, then \\( anchoredval=immutable^{-1} \\) and \\( anchoredval immutable=zeromatrix_{zerorange} \\) too. Applying this to our product with \\( zerorange=2 infinindex \\), we obtain\n\\[\n\\left(\\begin{array}{cc}\nsingularpart^{t} & -vectorzero^{t} \\\\\n-constantfull^{t} & scalarvoid^{t}\n\\end{array}\\right)\\left(\\begin{array}{cc}\nscalarvoid & vectorzero \\\\\nconstantfull & singularpart\n\\end{array}\\right)=\\left(\\begin{array}{cc}\nzeromatrix & 0 \\\\\n0 & zeromatrix\n\\end{array}\\right),\n\\]\nand equating the lower right blocks shows that \\( -constantfull^{t} vectorzero+scalarvoid^{t} singularpart=zeromatrix \\), as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "C": "pmcvakoe",
+        "D": "rnbcfszd",
+        "X": "guklmnae",
+        "Y": "vlctzhiq",
+        "n": "zbjgahtr",
+        "m": "kfouybed",
+        "F": "owhxrlgc",
+        "I": "ydnievmp"
+      },
+      "question": "Suppose $qzxwvtnp,hjgrksla,pmcvakoe,rnbcfszd$ are $zbjgahtr \\times zbjgahtr$ matrices with entries in a field owhxrlgc, satisfying the conditions that $qzxwvtnp hjgrksla^T$ and $pmcvakoe rnbcfszd^T$ are symmetric and $qzxwvtnp rnbcfszd^T - hjgrksla pmcvakoe^T = ydnievmp$. Here $ydnievmp$ is the $zbjgahtr \\times zbjgahtr$ identity matrix, and if $M$ is an $zbjgahtr \\times zbjgahtr$ matrix, $M^T$ is its transpose. Prove that $qzxwvtnp^T rnbcfszd - pmcvakoe^T hjgrksla = ydnievmp$.",
+      "solution": "Solution. The conditions of the problem are\n(1) \\( qzxwvtnp hjgrksla^{t}=\\left(qzxwvtnp hjgrksla^{t}\\right)^{t}=hjgrksla qzxwvtnp^{t} \\),\n(2) \\( pmcvakoe rnbcfszd^{t}=\\left(pmcvakoe rnbcfszd^{t}\\right)^{t}=rnbcfszd pmcvakoe^{t} \\),\n(3) \\( qzxwvtnp rnbcfszd^{t}-hjgrksla pmcvakoe^{t}=ydnievmp \\).\n\nTaking the transpose of (3) gives \\( rnbcfszd qzxwvtnp^{t}-pmcvakoe hjgrksla^{t}=ydnievmp \\). These four equations are the entries in the block matrix identity\n\\[\n\\left(\\begin{array}{cc}\nqzxwvtnp & hjgrksla \\\\\npmcvakoe & rnbcfszd\n\\end{array}\\right)\\left(\\begin{array}{cc}\nrnbcfszd^{t} & -hjgrksla^{t} \\\\\n-pmcvakoe^{t} & qzxwvtnp^{t}\n\\end{array}\\right)=\\left(\\begin{array}{ll}\nydnievmp & 0 \\\\\n0 & ydnievmp\n\\end{array}\\right) .\n\\]\n(Here the matrices should be considered \\( (2 zbjgahtr) \\times(2 zbjgahtr) \\) matrices in the obvious way.) If \\( guklmnae, vlctzhiq \\) are \\( kfouybed \\times kfouybed \\) matrices with \\( guklmnae vlctzhiq=ydnievmp_{kfouybed} \\), the \\( kfouybed \\times kfouybed \\) identity matrix, then \\( vlctzhiq=guklmnae^{-1} \\) and \\( vlctzhiq guklmnae=ydnievmp_{kfouybed} \\) too. Applying this to our product with \\( kfouybed=2 zbjgahtr \\), we obtain\n\\[\n\\left(\\begin{array}{cc}\nrnbcfszd^{t} & -hjgrksla^{t} \\\\\n-pmcvakoe^{t} & qzxwvtnp^{t}\n\\end{array}\\right)\\left(\\begin{array}{cc}\nqzxwvtnp & hjgrksla \\\\\npmcvakoe & rnbcfszd\n\\end{array}\\right)=\\left(\\begin{array}{cc}\nydnievmp & 0 \\\\\n0 & ydnievmp\n\\end{array}\\right),\n\\]\nand equating the lower right blocks shows that \\( -pmcvakoe^{t} hjgrksla+qzxwvtnp^{t} rnbcfszd=ydnievmp \\), as desired."
+    },
+    "kernel_variant": {
+      "question": "Let m be a positive integer and let R be a commutative ring with identity 1.  Suppose A,B,C,D \\in  M_m(R) satisfy\n(1) AB^{\\mathsf T} and CD^{\\mathsf T} are symmetric,\n(2) AD^{\\mathsf T}+BC^{\\mathsf T}=I_m,\nwhere M^{\\mathsf T} denotes the transpose of a matrix M.  Prove that\nA^{\\mathsf T}D+C^{\\mathsf T}B = I_m.",
+      "solution": "Step 1.  Translating the hypotheses.\nFrom (1) we have\n  AB^{\\mathsf T}=BA^{\\mathsf T}, CD^{\\mathsf T}=DC^{\\mathsf T}. (1')\nTaking the transpose of (2) gives\n  DA^{\\mathsf T}+CB^{\\mathsf T}=I_m. (2')\n\nStep 2.  Introducing C':=-C.\nPut C':=-C.  Then\n  * AB^{\\mathsf T} is still symmetric.\n  * C'D^{\\mathsf T}=-CD^{\\mathsf T}=-DC^{\\mathsf T}=D(-C^{\\mathsf T})=DC'^{\\mathsf T}, so C'D^{\\mathsf T} is symmetric.\n  * AD^{\\mathsf T}-B C'^{\\mathsf T}=AD^{\\mathsf T}+BC^{\\mathsf T}=I_m.\n  * Taking the transpose yields  DA^{\\mathsf T}-C'B^{\\mathsf T}=I_m.\n\nHence the four equalities\n  AD^{\\mathsf T}-BC'^{\\mathsf T}=I_m, DA^{\\mathsf T}-C'B^{\\mathsf T}=I_m, AB^{\\mathsf T}=BA^{\\mathsf T}, C'D^{\\mathsf T}=DC'^{\\mathsf T}. (*)\n\nStep 3.  Two block matrices.\nDefine\n  M:=\\begin{pmatrix}A&B\\\\C'&D\\end{pmatrix}, N:=\\begin{pmatrix}D^{\\mathsf T}&-B^{\\mathsf T}\\\\-C'^{\\mathsf T}&A^{\\mathsf T}\\end{pmatrix}\\in M_{2m}(R).\nUsing the identities (*) one checks directly, block by block, that\n  MN=I_{2m}. (3)\n\nStep 4.  From a right inverse to a two-sided inverse.\nBecause the ground ring R is commutative, determinant makes sense.  Taking determinants in (3) gives\n  det(M)\\cdot det(N)=det(MN)=1.\nThus det(M) is invertible in R, so M is invertible.  Hence N= M^{-1}, whence also NM=I_{2m}.  (Equivalently, for square matrices over a commutative ring the existence of a right-inverse implies invertibility; one may argue with the adjugate or with Cramer's rule.)\n\nStep 5.  Reading off the desired identity.\nCompute the lower-right m\\times m block of NM:\n  \\bigl(NM\\bigr)_{22}= (-C'^{\\mathsf T})B + A^{\\mathsf T}D.\nSince NM=I_{2m}, this block equals I_m.  Remembering C'=-C we obtain\n  A^{\\mathsf T}D + C^{\\mathsf T}B = I_m,\nwhich completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Translate the two symmetry assumptions and the given identity into the four equalities ABᵀ=BAᵀ, CDᵀ=DCᵀ, ADᵀ−BCᵀ=I, DAᵀ−CBᵀ=I.",
+          "Package those four relations in the 2×2 block-matrix equation  [A B; C D] · [Dᵀ −Bᵀ; −Cᵀ Aᵀ] = I₂ₙ.",
+          "Use the elementary fact X Y = I ⇒ Y X = I to reverse the order of the factors.",
+          "Read off the (2,2) block of the reversed product to obtain AᵀD−CᵀB = I."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Common size of the square blocks (currently ‘n×n’). Any positive integer works.",
+            "original": "n"
+          },
+          "slot2": {
+            "description": "Underlying scalar domain; only needs to be a field (or even a commutative ring with 1).",
+            "original": "field F"
+          },
+          "slot3": {
+            "description": "The simultaneous choice of the minus signs in ADᵀ − BCᵀ = I and in the off-diagonal blocks (−Bᵀ, −Cᵀ). Flipping all three to plus signs leaves the argument intact.",
+            "original": "− sign (minus) before BCᵀ, −Bᵀ, −Cᵀ"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

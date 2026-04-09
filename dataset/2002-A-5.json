@@ -1,0 +1,136 @@
+{
+  "index": "2002-A-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Define a sequence by $a_0=1$, together with the rules\n$a_{2n+1} = a_n$ and $a_{2n+2} = a_n + a_{n+1}$ for each\ninteger $n \\geq 0$. Prove that every positive rational number\nappears in the set\n\\[\n\\left\\{ \\frac{a_{n-1}}{a_n}: n \\geq 1 \\right\\} =\n\\left\\{ \\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{1}{3},\n\\frac{3}{2}, \\dots \\right\\}.\n\\]",
+  "solution": "It suffices to prove that for any relatively prime positive integers\n$r,s$, there exists an integer $n$ with $a_n = r$ and $a_{n+1} = s$.\nWe prove this by induction on $r+s$, the case $r+s=2$ following\nfrom the fact that $a_0=a_1 = 1$. Given $r$ and $s$ not both 1 with\n$\\gcd(r,s) = 1$, we must have $r \\neq s$. If $r>s$, then by\nthe induction hypothesis we have $a_n = r-s$ and $a_{n+1} = s$ for\nsome $n$; then $a_{2n+2} = r$ and $a_{2n+3} = s$. If $r< s$,\nthen we have $a_n = r$ and $a_{n+1} = s-r$ for some $n$; then\n$a_{2n+1} = r$ and $a_{2n+2} = s$.\n\nNote: a related problem is as follows. Starting with the sequence\n\\[\n\\frac{0}{1}, \\frac{1}{0},\n\\]\nrepeat the following operation: insert between each pair\n$\\frac{a}{b}$ and $\\frac{c}{d}$ the pair $\\frac{a+c}{b+d}$.\nProve that each positive rational number eventually appears.\n\nObserve that by induction, if $\\frac{a}{b}$ and $\\frac{c}{d}$\nare consecutive terms in the sequence, then $bc - ad = 1$. The\nsame holds for consecutive terms of the $n$-th \\emph{Farey sequence}, the\nsequence of rational numbers in $[0,1]$ with denominator\n(in lowest terms) at most $n$.",
+  "vars": [
+    "a",
+    "a_0",
+    "a_n",
+    "a_n-1",
+    "a_n+1",
+    "a_2n+1",
+    "a_2n+2",
+    "a_2n+3",
+    "n",
+    "r",
+    "s",
+    "b",
+    "c",
+    "d"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "seqsymbol",
+        "a_0": "initialterm",
+        "a_n": "generalterm",
+        "a_n-1": "prevterm",
+        "a_n+1": "nextterm",
+        "a_2n+1": "oddchild",
+        "a_2n+2": "evenchildone",
+        "a_2n+3": "evenchildtwo",
+        "n": "indexcount",
+        "r": "ratnumer",
+        "s": "ratdenom",
+        "b": "coeffb",
+        "c": "coeffc",
+        "d": "coeffd"
+      },
+      "question": "Define a sequence by $initialterm=1$, together with the rules $oddchild = generalterm$ and $evenchildone = generalterm + nextterm$ for each integer $indexcount \\geq 0$. Prove that every positive rational number appears in the set\n\\[\n\\left\\{ \\frac{prevterm}{generalterm}: indexcount \\geq 1 \\right\\} =\n\\left\\{ \\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{1}{3},\n\\frac{3}{2}, \\dots \\right\\}.\n\\]",
+      "solution": "It suffices to prove that for any relatively prime positive integers $ratnumer,ratdenom$, there exists an integer $indexcount$ with $generalterm = ratnumer$ and $nextterm = ratdenom$. We prove this by induction on $ratnumer+ratdenom$, the case $ratnumer+ratdenom=2$ following from the fact that $initialterm=a_1 = 1$. Given $ratnumer$ and $ratdenom$ not both 1 with $\\gcd(ratnumer,ratdenom) = 1$, we must have $ratnumer \\neq ratdenom$. If $ratnumer>ratdenom$, then by the induction hypothesis we have $generalterm = ratnumer-ratdenom$ and $nextterm = ratdenom$ for some $indexcount$; then $evenchildone = ratnumer$ and $evenchildtwo = ratdenom$. If $ratnumer< ratdenom$, then we have $generalterm = ratnumer$ and $nextterm = ratdenom-ratnumer$ for some $indexcount$; then $oddchild = ratnumer$ and $evenchildone = ratdenom$.\n\nNote: a related problem is as follows. Starting with the sequence\n\\[\n\\frac{0}{1}, \\frac{1}{0},\n\\]\nrepeat the following operation: insert between each pair $\\frac{seqsymbol}{coeffb}$ and $\\frac{coeffc}{coeffd}$ the pair $\\frac{seqsymbol+coeffc}{coeffb+coeffd}$. Prove that each positive rational number eventually appears.\n\nObserve that by induction, if $\\frac{seqsymbol}{coeffb}$ and $\\frac{coeffc}{coeffd}$ are consecutive terms in the sequence, then $coeffb\\,coeffc - seqsymbol\\,coeffd = 1$. The same holds for consecutive terms of the $indexcount$-th \\emph{Farey sequence}, the sequence of rational numbers in $[0,1]$ with denominator (in lowest terms) at most $indexcount$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "harboring",
+        "a_0": "harboringzero",
+        "a_n": "harboringmid",
+        "a_n-1": "harboringprev",
+        "a_n+1": "harboringnext",
+        "a_2n+1": "harboringodd",
+        "a_2n+2": "harboringeven",
+        "a_2n+3": "harboringodder",
+        "n": "lighthouse",
+        "r": "monolith",
+        "s": "cascade",
+        "b": "quartzite",
+        "c": "starlight",
+        "d": "tapestry"
+      },
+      "question": "Define a sequence by $harboringzero=1$, together with the rules\n$harboringodd = harboringmid$ and $harboringeven = harboringmid + harboringnext$ for each\ninteger $lighthouse \\geq 0$. Prove that every positive rational number\nappears in the set\n\\[\n\\left\\{ \\frac{harboringprev}{harboringmid}: lighthouse \\geq 1 \\right\\} =\n\\left\\{ \\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{1}{3},\n\\frac{3}{2}, \\dots \\right\\}.\n\\]",
+      "solution": "It suffices to prove that for any relatively prime positive integers\n$monolith,cascade$, there exists an integer $lighthouse$ with $harboringmid = monolith$ and $harboringnext = cascade$.\nWe prove this by induction on $monolith+cascade$, the case $monolith+cascade=2$ following\nfrom the fact that $harboringzero=a_1 = 1$. Given $monolith$ and $cascade$ not both 1 with\n$\\gcd(monolith,cascade) = 1$, we must have $monolith \\neq cascade$. If $monolith>cascade$, then by\nthe induction hypothesis we have $harboringmid = monolith-cascade$ and $harboringnext = cascade$ for\nsome $lighthouse$; then $harboringeven = monolith$ and $harboringodder = cascade$. If $monolith< cascade$,\nthen we have $harboringmid = monolith$ and $harboringnext = cascade-monolith$ for some $lighthouse$; then\n$harboringodd = monolith$ and $harboringeven = cascade$.\n\nNote: a related problem is as follows. Starting with the sequence\n\\[\n\\frac{0}{1}, \\frac{1}{0},\n\\]\nrepeat the following operation: insert between each pair\n\\frac{harboring}{quartzite} and \\frac{starlight}{tapestry} the pair \\frac{harboring+starlight}{quartzite+tapestry}.\nProve that each positive rational number eventually appears.\n\nObserve that by induction, if \\frac{harboring}{quartzite} and \\frac{starlight}{tapestry}\nare consecutive terms in the sequence, then $quartzite starlight - harboring tapestry = 1$. The\nsame holds for consecutive terms of the $lighthouse$-th \\emph{Farey sequence}, the\nsequence of rational numbers in $[0,1]$ with denominator\n(in lowest terms) at most $lighthouse$.}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "lastletter",
+        "a_0": "finaltermzero",
+        "a_n": "finaltermn",
+        "a_n-1": "finaltermnminusone",
+        "a_n+1": "finaltermnplusone",
+        "a_2n+1": "finaltermdoublenplusone",
+        "a_2n+2": "finaltermdoublenplustwo",
+        "a_2n+3": "finaltermdoublenplusthree",
+        "n": "maximumindex",
+        "r": "irrational",
+        "s": "transcendental",
+        "b": "numerator",
+        "c": "minusvalue",
+        "d": "plusvalue"
+      },
+      "question": "Define a sequence by $finaltermzero=1$, together with the rules\n$finaltermdoublenplusone = finaltermn$ and $finaltermdoublenplustwo = finaltermn + finaltermnplusone$ for each\ninteger $maximumindex \\geq 0$. Prove that every positive rational number\nappears in the set\n\\[\n\\left\\{ \\frac{finaltermnminusone}{finaltermn}: maximumindex \\geq 1 \\right\\} =\n\\left\\{ \\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{1}{3},\n\\frac{3}{2}, \\dots \\right\\}.\n\\]",
+      "solution": "It suffices to prove that for any relatively prime positive integers\n$irrational, transcendental$, there exists an integer $maximumindex$ with $finaltermn = irrational$ and $finaltermnplusone = transcendental$.\nWe prove this by induction on $irrational+transcendental$, the case $irrational+transcendental=2$ following\nfrom the fact that $finaltermzero=a_1 = 1$. Given $irrational$ and $transcendental$ not both 1 with\n$\\gcd(irrational,transcendental) = 1$, we must have $irrational \\neq transcendental$. If $irrational>transcendental$, then by\nthe induction hypothesis we have $finaltermn = irrational-transcendental$ and $finaltermnplusone = transcendental$ for\nsome $maximumindex$; then $finaltermdoublenplustwo = irrational$ and $finaltermdoublenplusthree = transcendental$. If $irrational< transcendental$,\nthen we have $finaltermn = irrational$ and $finaltermnplusone = transcendental-irrational$ for some $maximumindex$; then\n$finaltermdoublenplusone = irrational$ and $finaltermdoublenplustwo = transcendental$.\n\nNote: a related problem is as follows. Starting with the sequence\n\\[\n\\frac{0}{1}, \\frac{1}{0},\n\\]\nrepeat the following operation: insert between each pair\n$\\frac{lastletter}{numerator}$ and $\\frac{minusvalue}{plusvalue}$ the pair $\\frac{lastletter+minusvalue}{numerator+plusvalue}$.\nProve that each positive rational number eventually appears.\n\nObserve that by induction, if $\\frac{lastletter}{numerator}$ and $\\frac{minusvalue}{plusvalue}$\nare consecutive terms in the sequence, then $numeratorminusvalue - lastletterplusvalue = 1$. The\nsame holds for consecutive terms of the $maximumindex$-th \\emph{Farey sequence}, the\nsequence of rational numbers in $[0,1]$ with denominator\n(in lowest terms) at most $maximumindex$. "
+    },
+    "garbled_string": {
+      "map": {
+        "a": "zqtwfskr",
+        "a_0": "plmxngrd",
+        "a_n": "vjksuepf",
+        "a_n-1": "blrqatcz",
+        "a_n+1": "djpwkohe",
+        "a_2n+1": "qwexlomb",
+        "a_2n+2": "imrdasyf",
+        "a_2n+3": "kyvnbhge",
+        "n": "hqplrzto",
+        "r": "swgfdxjm",
+        "s": "tvqzncky",
+        "b": "guafmzpe",
+        "c": "yrhdslwo",
+        "d": "nxbktuei"
+      },
+      "question": "Define a sequence by $plmxngrd=1$, together with the rules\n$qwexlomb = vjksuepf$ and $imrdasyf = vjksuepf + djpwkohe$ for each\ninteger $hqplrzto \\geq 0$. Prove that every positive rational number\nappears in the set\n\\[\n\\left\\{ \\frac{blrqatcz}{vjksuepf}: hqplrzto \\geq 1 \\right\\} =\n\\left\\{ \\frac{1}{1}, \\frac{1}{2}, \\frac{2}{1}, \\frac{1}{3},\n\\frac{3}{2}, \\dots \\right\\}.\n\\]",
+      "solution": ""
+    },
+    "kernel_variant": {
+      "question": "Let $(b_n)_{n\\ge 0}$ be the integer sequence defined by\n\\[\n   b_0=b_1=1,\\qquad\n   b_{2n}=b_n,\\qquad\n   b_{2n+1}=b_n+b_{n+1}\\qquad (n\\ge 1).\n\\]\nProve that every positive rational number occurs in the set of ratios\n\\[\\Bigl\\{\\dfrac{b_n}{b_{n+1}}:n\\ge 0\\Bigr\\}=\\Bigl\\{1,\\tfrac12,2,\\tfrac13,\\tfrac32,\\tfrac23,3,\\dots\\Bigr\\}.\\]",
+      "solution": "We must show: for every pair of coprime positive integers r,s there is an index N with b_N=r and b_{N+1}=s.  We proceed by induction on the sum S=r+s.\n\nBase case (S=2).  Then (r,s)=(1,1), and indeed (b_0,b_1)=(1,1).\n\nInductive step.  Fix S\\geq 3, and suppose the claim is true for all coprime pairs whose sum is <S.  Let r+s=S, gcd(r,s)=1, and r\\neq s.  We split into two cases.\n\nCase 1.  r>s.  Then gcd(r-s,s)=1 and (r-s)+s=r<S, so by induction there is some n with (b_n,b_{n+1})=(r-s,s).  If n=0 then r-s=1 and s=1, so (r,s)=(2,1).  In that special case one checks directly that\n  b_3 = b_{2\\cdot 1+1} = b_1 + b_2 = 1+1 = 2,\n  b_4 = b_{2\\cdot 2}   = b_2       = 1,\nso (b_3,b_4)=(2,1) as desired.  Otherwise n\\geq 1, and we set N=2n+1.  Since n\\geq 1 the defining recurrences give\n  b_N     = b_{2n+1} = b_n + b_{n+1} = (r-s)+s = r,\n  b_{N+1} = b_{2n+2} = b_{n+1}            = s.\nThus (b_N,b_{N+1})=(r,s).\n\nCase 2.  r<s.  Then gcd(r,s-r)=1 and r+(s-r)=s<S, so by induction there is some n with (b_n,b_{n+1})=(r,s-r).  If n=0 then r=1 and s-r=1, so s=2 and (r,s)=(1,2).  In that special case a direct check shows\n  b_2 = b_{2\\cdot 1}   = b_1       = 1,\n  b_3 = b_{2\\cdot 1+1} = b_1 + b_2 = 1+1 = 2,\nso (b_2,b_3)=(1,2).  Otherwise n\\geq 1, and we set N=2n.  Since n\\geq 1 the defining recurrences give\n  b_N     = b_{2n}   = b_n         = r,\n  b_{N+1} = b_{2n+1} = b_n + b_{n+1} = r + (s-r) = s.\nThus again (b_N,b_{N+1})=(r,s).\n\nIn every case we have produced N with (b_N,b_{N+1})=(r,s).  Hence by induction every reduced positive fraction r/s appears as b_N/b_{N+1}, as required.",
+      "_meta": {
+        "core_steps": [
+          "Represent any reduced fraction r/s as two consecutive terms (a_n, a_{n+1}).",
+          "Induct on the sum r+s (Euclidean descent).",
+          "Base case r+s=2 is covered because (a_0,a_1)=(1,1).",
+          "If r>s, replace (r,s) by (r−s,s) and climb back using the rule that forms a_{2n+2}=a_n+a_{n+1}.",
+          "If r<s, replace (r,s) by (r,s−r) and climb back using the rule that gives a_{2n+1}=a_n."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which parity (odd vs. even indices) is assigned to the two recursion rules can be swapped without affecting the inductive argument.",
+            "original": "odd → a_{2n+1}=a_n,  even → a_{2n+2}=a_n+a_{n+1}"
+          },
+          "slot2": {
+            "description": "The fixed offset used when forming the displayed ratios can be shifted (e.g., using a_n/a_{n+1} or a_{n+1}/a_{n+2}) because the proof only needs consecutive terms.",
+            "original": "set of ratios is {a_{n-1}/a_n}"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,179 @@
+{
+  "index": "1964-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "4. Let \\( p_{n}(n=1,2, \\ldots) \\) be a bounded sequence of integers which satisfies the recursion\n\\[\np_{n}=\\frac{p_{n-1}+p_{n-2}+p_{n-3} p_{n-4}}{p_{n-1} p_{n-2}+p_{n-3}+p_{n-4}}\n\\]\n\nShow that the sequence eventually becomes periodic.",
+  "solution": "Solution. It is easy to prove a much more general theorem. Suppose \\( f \\) is any function with \\( k \\) arguments and \\( \\left\\{p_{n}: n=1,2, \\ldots\\right\\} \\) is a bounded sequence of integers satisfying the recursion\n\\[\np_{n+k}=f\\left(p_{n}, p_{n+1}, \\ldots, p_{n+k-1}\\right)\n\\]\nfor all \\( n=1,2, \\ldots \\) Then \\( \\left\\{p_{n}\\right\\} \\) is eventually periodic.\nLet \\( q_{n} \\) stand for the \\( k \\)-tuple ( \\( p_{n}, p_{n+1}, \\ldots, p_{n+k-1} \\) ). Let \\( M=\\sup \\left\\{\\left|p_{n}\\right|\\right\\} \\). Then each \\( p_{n} \\) is one of the \\( 2 M+1 \\) integers \\( -M,-M+1, \\ldots, M \\) and there are at most \\( A=(2 M+1)^{k} \\) possible \\( k \\)-tuples that \\( q_{n} \\) might be. Hence there must be some duplication in the sequence \\( q_{1}, q_{2}, \\ldots, q_{A+1} \\). Suppose then that \\( i<j \\) and \\( q_{i}=q_{i} \\). This implies that \\( p_{i+i}=p_{i+1} \\) for \\( 0 \\leq t<k \\); then the recursion relation shows that this is true for \\( t=k \\) also, and, by induction, for all \\( t \\geq 0 \\). Thus the sequence \\( \\left\\{p_{n}\\right\\} \\) is periodic with period \\( i-i \\) starting with the \\( i \\) th term.",
+  "vars": [
+    "p_n",
+    "p_n-1",
+    "p_n-2",
+    "p_n-3",
+    "p_n-4",
+    "p_n+k",
+    "p_n+1",
+    "p_n+k-1",
+    "p_i+i",
+    "p_i+1",
+    "p_i+t",
+    "p_j+t",
+    "q_n",
+    "q_i",
+    "q_A+1",
+    "n",
+    "i",
+    "j",
+    "t"
+  ],
+  "params": [
+    "f",
+    "k",
+    "M",
+    "A"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "p_n": "seqcurr",
+        "p_n-1": "seqprevone",
+        "p_n-2": "seqprevtwo",
+        "p_n-3": "seqprevthr",
+        "p_n-4": "seqprevfor",
+        "p_n+k": "seqshiftk",
+        "p_n+1": "seqnextone",
+        "p_n+k-1": "seqshiftkm",
+        "p_i+i": "seqindexsum",
+        "p_i+1": "seqindexone",
+        "p_i+t": "seqindext",
+        "p_j+t": "seqjplust",
+        "q_n": "tuplecurr",
+        "q_i": "tupleindex",
+        "q_A+1": "tupleamax",
+        "n": "position",
+        "i": "indexone",
+        "j": "indextwo",
+        "t": "indxtime",
+        "f": "funcmap",
+        "k": "widthsz",
+        "M": "boundmax",
+        "A": "tuplecnt"
+      },
+      "question": "4. Let \\( seqcurr(position=1,2, \\ldots) \\) be a bounded sequence of integers which satisfies the recursion\n\\[\nseqcurr=\\frac{seqprevone+seqprevtwo+seqprevthr seqprevfor}{seqprevone seqprevtwo+seqprevthr+seqprevfor}\n\\]\n\nShow that the sequence eventually becomes periodic.",
+      "solution": "Solution. It is easy to prove a much more general theorem. Suppose \\( funcmap \\) is any function with \\( widthsz \\) arguments and \\( \\left\\{seqcurr: position=1,2, \\ldots\\right\\} \\) is a bounded sequence of integers satisfying the recursion\n\\[\nseqshiftk=funcmap\\left(seqcurr, seqnextone, \\ldots, seqshiftkm\\right)\n\\]\nfor all \\( position=1,2, \\ldots \\) Then \\( \\left\\{seqcurr\\right\\} \\) is eventually periodic.\nLet \\( tuplecurr \\) stand for the \\( widthsz \\)-tuple ( \\( seqcurr, seqnextone, \\ldots, seqshiftkm \\) ). Let \\( boundmax=\\sup \\left\\{\\left|seqcurr\\right|\\right\\} \\). Then each \\( seqcurr \\) is one of the \\( 2 boundmax+1 \\) integers \\( -boundmax,-boundmax+1, \\ldots, boundmax \\) and there are at most \\( tuplecnt=(2 boundmax+1)^{widthsz} \\) possible \\( widthsz \\)-tuples that \\( tuplecurr \\) might be. Hence there must be some duplication in the sequence \\( q_{1}, q_{2}, \\ldots, tupleamax \\). Suppose then that \\( indexone<indextwo \\) and \\( tupleindex=tupleindex \\). This implies that \\( seqindexsum=seqindexone \\) for \\( 0 \\leq indxtime<widthsz \\); then the recursion relation shows that this is true for \\( indxtime=widthsz \\) also, and, by induction, for all \\( indxtime \\geq 0 \\). Thus the sequence \\( \\left\\{seqcurr\\right\\} \\) is periodic with period \\( indexone-indexone \\) starting with the \\( indexone \\) th term."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "p_n": "orangewood_{silverkey}",
+        "p_n-1": "candlewax_{silverkey-1}",
+        "p_n-2": "blueberry_{silverkey-2}",
+        "p_n-3": "stonepath_{silverkey-3}",
+        "p_n-4": "raincloud_{silverkey-4}",
+        "p_n+k": "lavenderb_{silverkey+everglade}",
+        "p_n+1": "silkmothb_{silverkey+1}",
+        "p_n+k-1": "pineforest_{silverkey+everglade-1}",
+        "p_i+i": "sundialxx_{goldenrod+goldenrod}",
+        "p_i+1": "mapleleaf_{goldenrod+1}",
+        "p_i+t": "foggyland_{goldenrod+breezeway}",
+        "p_j+t": "cobblenot_{coralreef+breezeway}",
+        "q_n": "harborview_{silverkey}",
+        "q_i": "meadowlark_{goldenrod}",
+        "q_A+1": "tulipfield_{riversong+1}",
+        "n": "silverkey",
+        "i": "goldenrod",
+        "j": "coralreef",
+        "t": "breezeway",
+        "f": "moonlitug",
+        "k": "everglade",
+        "M": "starlight",
+        "A": "riversong"
+      },
+      "question": "4. Let \\( orangewood_{silverkey}(silverkey=1,2, \\ldots) \\) be a bounded sequence of integers which satisfies the recursion\n\\[\norangewood_{silverkey}=\\frac{candlewax_{silverkey-1}+blueberry_{silverkey-2}+stonepath_{silverkey-3} raincloud_{silverkey-4}}{candlewax_{silverkey-1} blueberry_{silverkey-2}+stonepath_{silverkey-3}+raincloud_{silverkey-4}}\n\\]\n\nShow that the sequence eventually becomes periodic.",
+      "solution": "Solution. It is easy to prove a much more general theorem. Suppose \\( moonlitug \\) is any function with \\( everglade \\) arguments and \\( \\left\\{orangewood_{silverkey}: silverkey=1,2, \\ldots\\right\\} \\) is a bounded sequence of integers satisfying the recursion\n\\[\nlavenderb_{silverkey+everglade}=moonlitug\\left(orangewood_{silverkey}, silkmothb_{silverkey+1}, \\ldots, pineforest_{silverkey+everglade-1}\\right)\n\\]\nfor all \\( silverkey=1,2, \\ldots \\) Then \\( \\left\\{orangewood_{silverkey}\\right\\} \\) is eventually periodic.\nLet \\( harborview_{silverkey} \\) stand for the \\( everglade \\)-tuple ( \\( orangewood_{silverkey}, silkmothb_{silverkey+1}, \\ldots, pineforest_{silverkey+everglade-1} \\) ). Let \\( starlight=\\sup \\left\\{\\left|orangewood_{silverkey}\\right|\\right\\} \\). Then each \\( orangewood_{silverkey} \\) is one of the \\( 2 starlight+1 \\) integers \\( -starlight,-starlight+1, \\ldots, starlight \\) and there are at most \\( riversong=(2 starlight+1)^{everglade} \\) possible \\( everglade \\)-tuples that \\( harborview_{silverkey} \\) might be. Hence there must be some duplication in the sequence \\( harborview_{1}, harborview_{2}, \\ldots, tulipfield_{riversong+1} \\). Suppose then that \\( goldenrod<coralreef \\) and \\( meadowlark_{goldenrod}=meadowlark_{goldenrod} \\). This implies that \\( sundialxx_{goldenrod+goldenrod}=mapleleaf_{goldenrod+1} \\) for \\( 0 \\leq breezeway<everglade \\); then the recursion relation shows that this is true for \\( breezeway=everglade \\) also, and, by induction, for all \\( breezeway \\geq 0 \\). Thus the sequence \\( \\left\\{orangewood_{silverkey}\\right\\} \\) is periodic with period \\( goldenrod-goldenrod \\) starting with the \\( goldenrod \\) th term."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "p_n": "constantvalue",
+        "p_n-1": "futurevalue",
+        "p_n-2": "forthcomingvalue",
+        "p_n-3": "impendingvalue",
+        "p_n-4": "eventualvalue",
+        "p_n+k": "constantvalueplus",
+        "p_n+1": "constantvalueahead",
+        "p_n+k-1": "constantvalueedge",
+        "p_i+i": "constantvaluemore",
+        "p_i+1": "constantvalueskip",
+        "p_i+t": "constantvaluejump",
+        "p_j+t": "constantvaluerun",
+        "q_n": "staticbundle",
+        "q_i": "staticunit",
+        "q_A+1": "staticpackage",
+        "n": "stillness",
+        "i": "haltindex",
+        "j": "freezeidx",
+        "t": "standstill",
+        "f": "constvalue",
+        "k": "singular",
+        "M": "infimumval",
+        "A": "singleton"
+      },
+      "question": "4. Let \\( constantvalue(stillness=1,2, \\ldots) \\) be a bounded sequence of integers which satisfies the recursion\n\\[\nconstantvalue=\\frac{futurevalue+forthcomingvalue+impendingvalue eventualvalue}{futurevalue forthcomingvalue+impendingvalue+eventualvalue}\n\\]\n\nShow that the sequence eventually becomes periodic.",
+      "solution": "Solution. It is easy to prove a much more general theorem. Suppose \\( constvalue \\) is any function with \\( singular \\) arguments and \\( \\{constantvalue: stillness=1,2, \\ldots\\} \\) is a bounded sequence of integers satisfying the recursion\n\\[\nconstantvalueplus=constvalue\\left(constantvalue, constantvalueahead, \\ldots, constantvalueedge\\right)\n\\]\nfor all \\( stillness=1,2, \\ldots \\). Then \\( \\{constantvalue\\} \\) is eventually periodic.\nLet \\( staticbundle \\) stand for the \\( singular \\)-tuple ( \\( constantvalue, constantvalueahead, \\ldots, constantvalueedge \\) ). Let \\( infimumval=\\sup \\{\\left|constantvalue\\right|\\} \\). Then each \\( constantvalue \\) is one of the \\( 2 infimumval+1 \\) integers \\( -infimumval,-infimumval+1, \\ldots, infimumval \\) and there are at most \\( singleton=(2 infimumval+1)^{singular} \\) possible \\( singular \\)-tuples that \\( staticbundle \\) might be. Hence there must be some duplication in the sequence \\( q_{1}, q_{2}, \\ldots, staticpackage \\). Suppose then that \\( haltindex<freezeidx \\) and \\( staticunit=q_{j} \\). This implies that \\( constantvaluejump=constantvaluerun \\) for \\( 0 \\leq standstill<singular \\); then the recursion relation shows that this is true for \\( standstill=singular \\) also, and, by induction, for all \\( standstill \\geq 0 \\). Thus the sequence \\( \\{constantvalue\\} \\) is periodic with period \\( freezeidx-haltindex \\) starting with the \\( haltindex \\) th term."
+    },
+    "garbled_string": {
+      "map": {
+        "p_n": "xjqplmzas",
+        "p_n-1": "nzirvqexa",
+        "p_n-2": "odfytpwen",
+        "p_n-3": "guhyslexm",
+        "p_n-4": "kzqwrivob",
+        "p_n+k": "bsftleqjm",
+        "p_n+1": "hmtyrvkpa",
+        "p_n+k-1": "lcxzmdgua",
+        "p_i+i": "fwqesrdop",
+        "p_i+1": "pfvqhlzsm",
+        "p_i+t": "sjkxdwqre",
+        "p_j+t": "ctphonziv",
+        "q_n": "layvkqdus",
+        "q_i": "rjntszypw",
+        "q_A+1": "ybqsdmoxa",
+        "n": "uopjliwqk",
+        "i": "htdmfrsva",
+        "j": "keplzgwxo",
+        "t": "vqmzshbuc",
+        "f": "mqdeytrsl",
+        "k": "poxhazlwi",
+        "M": "cadxpvtru",
+        "A": "wneblxjvo"
+      },
+      "question": "4. Let \\( xjqplmzas(uopjliwqk=1,2, \\ldots) \\) be a bounded sequence of integers which satisfies the recursion\n\\[\nxjqplmzas=\\frac{nzirvqexa+odfytpwen+guhyslexm kzqwrivob}{nzirvqexa odfytpwen+guhyslexm+kzqwrivob}\n\\]\n\nShow that the sequence eventually becomes periodic.",
+      "solution": "Solution. It is easy to prove a much more general theorem. Suppose \\( mqdeytrsl \\) is any function with \\( poxhazlwi \\) arguments and \\( \\left\\{xjqplmzas: uopjliwqk=1,2, \\ldots\\right\\} \\) is a bounded sequence of integers satisfying the recursion\n\\[\nbsftleqjm=mqdeytrsl\\left(xjqplmzas, hmtyrvkpa, \\ldots, lcxzmdgua\\right)\n\\]\nfor all \\( uopjliwqk=1,2, \\ldots \\) Then \\( \\left\\{xjqplmzas\\right\\} \\) is eventually periodic.\nLet \\( layvkqdus \\) stand for the \\( poxhazlwi \\)-tuple ( \\( xjqplmzas, hmtyrvkpa, \\ldots, lcxzmdgua \\) ). Let \\( cadxpvtru=\\sup \\left\\{\\left|xjqplmzas\\right|\\right\\} \\). Then each \\( xjqplmzas \\) is one of the \\( 2 cadxpvtru+1 \\) integers \\( -cadxpvtru,-cadxpvtru+1, \\ldots, cadxpvtru \\) and there are at most \\( wneblxjvo=(2 cadxpvtru+1)^{poxhazlwi} \\) possible \\( poxhazlwi \\)-tuples that \\( layvkqdus \\) might be. Hence there must be some duplication in the sequence \\( q_{1}, q_{2}, \\ldots, ybqsdmoxa \\). Suppose then that \\( htdmfrsva<keplzgwxo \\) and \\( rjntszypw=rjntszypw \\). This implies that \\( fwqesrdop=pfvqhlzsm \\) for \\( 0 \\leq vqmzshbuc<poxhazlwi \\); then the recursion relation shows that this is true for \\( vqmzshbuc=poxhazlwi \\) also, and, by induction, for all \\( vqmzshbuc \\geq 0 \\). Thus the sequence \\( \\left\\{xjqplmzas\\right\\} \\) is periodic with period \\( htdmfrsva-htdmfrsva \\) starting with the \\( htdmfrsva \\) th term."
+    },
+    "kernel_variant": {
+      "question": "(The statement of the enhanced problem was already mathematically sound; no\nmodifications are required.  It is reproduced here verbatim for\nconvenience.)\n\nFix  \n\n* a prime power q = ps (p prime, s \\geq  1) and write F_q for the field\n  with q elements;\n\n* integers  \n      m \\geq  3   (number of interacting ``tracks''),  \n      k \\geq  2   (memory length),  \n      L \\geq  1   (external clock);\n\n* strictly increasing integers  \n      0 = a_1 < a_2 < \\cdots  < a_k \\leq  k-1.                                   (\\star )\n\n1.  Local rules.  \n    For every residue r\\in {0,\\ldots ,L-1} an affine map\n\n          T_r : F_q^{\\,m(k+1)}  \\longrightarrow   F_q^{\\,m},                     (1)\n\n    given in coordinates by T_r(U)=A_rU+b_r with A_r an\n    m\\times m(k+1) matrix and b_r\\in F_q^{\\,m}, is prescribed.\n\n2.  Initial block.  \n    Choose arbitrarily\n\n          X_0 , \\ldots  , X_{k-1}  \\in  F_q^{\\,m},                         (2)\n\n    where X_n=(x_n^{(1)},\\ldots ,x_n^{(m)}).\n\n3.  First-order differences.  For n \\geq  0 and every track j set\n\n          \\Delta _n^{(j)} := x_{n+1}^{(j)} - x_{n}^{(j)}  \\in  F_q,       (3)\n\n    and abbreviate  \\Delta _n:=(\\Delta _n^{(1)},\\ldots ,\\Delta _n^{(m)})\\in F_q^{\\,m}.        (4)\n\n4.  Mixed-delay recursion.  For every n \\geq  0 define\n\n          X_{n+k}\n          = T_{\\,n mod L} ( X_{n+a_1},\\ldots ,X_{n+a_k}, \\Delta _n ).          (5)\n\n    Thanks to (\\star ) the right-hand side depends only on indices\n    \\leq n+k-1, hence (5) is sequentially well posed.\n\n5.  Augmented state.  For n \\geq  0 put\n\n          S_n := ( X_n , \\ldots  , X_{n+k-1} ) \\in  F_q^{\\,d}, d:=mk.      (6)\n\n    (Notice that \\Delta _n = X_{n+1}-X_n is the difference of two coordinate\n    blocks of S_n, so it can be reconstructed and need not be stored\n    explicitly.)\n\n6.  Deterministic update.  For every residue r set the affine map\n\n          \\Phi _r : F_q^{\\,d} \\longrightarrow  F_q^{\\,d},                          (7)\n          \\Phi _r(u_0,\\ldots ,u_{k-1})\n              := ( u_1 , \\ldots  , u_{k-1} ,\n                   T_r(u_{a_1},\\ldots ,u_{a_k}, u_1-u_0) ).\n\n    With this definition one has\n\n          S_{n+1} = \\Phi _{\\,n mod L}(S_n)  (n \\geq  0).                   (8)\n\n    Write \\Phi _r(x)=B_r x+c_r with B_r\\in End(F_q^{\\,d}) and\n    c_r\\in F_q^{\\,d}.                                                   (9)\n\n7.  Linearisation of the affine maps.  \n    Adjoin one dummy coordinate and set D:=d+1.  \n    For every r define the D\\times D matrix\n\n          B_r :=\n                [ B_r   c_r ]\n                [ 0 \\ldots  0  1  ]     \\in  End(F_q^{\\,D}).               (10)\n\n    Composition of affine maps corresponds to multiplication of\n    the B_r.\n\n8.  Semigroup exponent.  \n    For a square matrix M over F_q let\n\n          per(M) := minimal positive t for which\n                     M^{s+t}=M^{s}  for some s \\geq  0.                 (11)\n\n    For any finite \\Sigma \\subset End(F_q^{\\,D}) put  \n\n          exp \\Sigma  := lcm{ per(M) : M\\in \\Sigma  }.                           (12)\n\n    A crude universal estimate is  \n\n          per(M) \\leq  q^{D^2} (for every M),  \n          exp \\Sigma  \\leq  (q^{D^2})! \\leq  q^{D^2\\cdot q^{D^2}}.                      (12')\n\n    (12') will never be used later; it is supplied only for orientation.\n\nTasks.  \n\n(A)  Prove that every coordinate difference sequence\n     (\\Delta _n^{(j)})_{n\\geq 0} is eventually periodic.\n\n(B)  Show that (S_n)_{n\\geq 0} is eventually periodic and that one can\n     choose a period P satisfying\n\n          P  divides  L \\cdot  p^{\\lceil log_p D\\rceil } \\cdot  exp\\langle B_0,\\ldots ,B_{L-1}\\rangle .   (13)\n\n     where \\langle B_0,\\ldots ,B_{L-1}\\rangle  denotes the semigroup\n     generated by {B_0,\\ldots ,B_{L-1}}.\n\n(C)  Design an explicit deterministic algorithm which, given the initial\n     block (2), outputs an onset index i and a period P obeying (13) and\n     runs in time\n\n          O( L \\cdot  q^{\\,D^2} \\cdot  poly(m,k,log q) ).                    (14)",
+      "solution": "Notation and preliminary lift.  \nWrite  \n\n      S := F_q^{\\,d},           S := {(x,1) : x\\in S} \\subset  F_q^{\\,D}.   (15)\n\n(The projection (x,1)\\mapsto x is a bijection S\\to S.)\n\nFor every residue r set the lifted linear map  \n\n      \\Phi _r := B_r \\in  End(F_q^{\\,D}).                            (16)\n\nThus for all n \\geq  0  \n\n      (S_{n+1},1)=\\Phi _{\\,n mod L}(S_n,1).                          (17)\n\nStep 1.  Reduction to a fixed linear endomorphism.  \nDefine the ``principal'' L-step matrix  \n\n      M := \\Phi _{L-1} \\cdot  \\ldots  \\cdot  \\Phi _1 \\cdot  \\Phi _0  \\in  End(F_q^{\\,D}).         (18)\n\nBecause n\\mapsto (S_n,1) is updated by \\Phi _{r(n)} with r(n)=n mod L, one has  \nfor every integer t \\geq  0\n\n      (S_{(t+1)L},1)=M\\cdot (S_{tL},1).                                (19)\n\nConsequently the sub-sequence  \n\n      Z_t := (S_{tL},1) (t=0,1,2,\\ldots )                              (20)\n\nevolves by the single linear rule Z_{t+1}=MZ_t.\n\nStep 2.  Bounding the period of M.  \nLet  \n\n      \\Sigma  := \\langle \\Phi _0,\\ldots ,\\Phi _{L-1}\\rangle  = \\langle B_0,\\ldots ,B_{L-1}\\rangle    (finite semigroup), (21)\n      e   := exp \\Sigma .                                               (22)\n\nBecause M is a word in the generators \\Phi _r, we have M\\in \\Sigma  and therefore  \n\n      per(M) | e.                                                 (23)\n\nPut  \n\n      h := \\lceil log_p D\\rceil  so p^{h} \\geq  D.                              (24)\n\nMultiplying the divisor (23) by the harmless factor p^{h} gives  \n\n      per(M)  |  p^{h}\\cdot e.                                         (25)\n\n(The only reason for inserting p^{h} is to make the forthcoming global\nperiod agree with the prescribed structure (13); it has no independent\nmathematical necessity.)\n\nStep 3.  Periodicity of the principal subsequence Z_t.  \nChoose integers \\sigma  \\geq  0 and t := per(M) such that  \n\n      M^{\\sigma +t}=M^{\\sigma }.                                              (26)\n\nThen (19) implies  \n\n      Z_{t+\\sigma }=M^{t}Z_{\\sigma }=Z_{\\sigma },                                   (27)\n\nso (Z_t)_{t\\geq \\sigma } is periodic with period t dividing p^{h}e.\n\nStep 4.  Lifting the period to the full time line.  \nSet  \n\n      P := L \\cdot  t;  then P | L\\cdot p^{h}\\cdot e.                            (28)\n\nFor n \\geq  \\sigma L write n = \\tau L + r with 0\\leq r<L.  Successively applying the\nupdate rule (17) for the first r steps and (19) for the remaining \\tau \nblocks of length L one obtains\n\n      (S_{n+P},1)\n      = \\Phi _{r-1}\\ldots \\Phi _0 \\cdot  M^{\\tau +t} \\cdot  (S_0,1)                        (29)\n      = \\Phi _{r-1}\\ldots \\Phi _0 \\cdot  M^{\\tau }     \\cdot  (S_0,1)                      (30)\n      = (S_n,1).                                                 (31)\n\nHence (S_n)_{n\\geq \\sigma L} is periodic with period P, and each difference\nsequence \\Delta ^{(j)}_n = x^{(j)}_{n+1}-x^{(j)}_n inherits this periodicity.\nTasks (A) and (B) are complete.\n\nStep 5.  Constructive algorithm (Task C).  \n\n(i)  Cycle finder.  \nApply Brent's tortoise-hare algorithm to the finite sequence\nn\\mapsto (S_n,1).  One evaluation of the update uses exactly one \\Phi _r, and\neach such evaluation costs \\Theta (poly(m,k,log q)) field-bit operations.  \nBecause\n\n      |S| = q^{d} = q^{D-1},                                     (32)\n\nthe first repetition appears after at most q^{d} steps.  Therefore the\nsearch phase runs in\n\n      O( q^{d} \\cdot  poly(m,k,log q) ) \\subset  O( L \\cdot  q^{D^2} \\cdot  poly(\\ldots ) ).   (33)\n\n(The inclusion follows from d\\leq D\\leq D^2 and L\\geq 1.)\n\n(ii)  Post-processing.  \nStandard post-processing returns\n\n      * i  = the first index on the eventual cycle,\n      * Q = the minimal period of (S_n).                         (34)\n\n(iii)  Compatibility with the theoretical bound.  \nBecause Q is minimal, it divides every other period of the sequence; in\nparticular\n\n      Q | L\\cdot t | L\\cdot p^{h}\\cdot e.                                        (35)\n\nThus we may output P:=Q, which satisfies (13).  The running-time bound\n(33) is within the requirement (14), so Task (C) is settled. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.547766",
+        "was_fixed": false,
+        "difficulty_analysis": "[解析失败]"
+      }
+    },
+    "original_kernel_variant": {
+      "question": "(The statement of the enhanced problem was already mathematically sound; no\nmodifications are required.  It is reproduced here verbatim for\nconvenience.)\n\nFix  \n\n* a prime power q = ps (p prime, s \\geq  1) and write F_q for the field\n  with q elements;\n\n* integers  \n      m \\geq  3   (number of interacting ``tracks''),  \n      k \\geq  2   (memory length),  \n      L \\geq  1   (external clock);\n\n* strictly increasing integers  \n      0 = a_1 < a_2 < \\cdots  < a_k \\leq  k-1.                                   (\\star )\n\n1.  Local rules.  \n    For every residue r\\in {0,\\ldots ,L-1} an affine map\n\n          T_r : F_q^{\\,m(k+1)}  \\longrightarrow   F_q^{\\,m},                     (1)\n\n    given in coordinates by T_r(U)=A_rU+b_r with A_r an\n    m\\times m(k+1) matrix and b_r\\in F_q^{\\,m}, is prescribed.\n\n2.  Initial block.  \n    Choose arbitrarily\n\n          X_0 , \\ldots  , X_{k-1}  \\in  F_q^{\\,m},                         (2)\n\n    where X_n=(x_n^{(1)},\\ldots ,x_n^{(m)}).\n\n3.  First-order differences.  For n \\geq  0 and every track j set\n\n          \\Delta _n^{(j)} := x_{n+1}^{(j)} - x_{n}^{(j)}  \\in  F_q,       (3)\n\n    and abbreviate  \\Delta _n:=(\\Delta _n^{(1)},\\ldots ,\\Delta _n^{(m)})\\in F_q^{\\,m}.        (4)\n\n4.  Mixed-delay recursion.  For every n \\geq  0 define\n\n          X_{n+k}\n          = T_{\\,n mod L} ( X_{n+a_1},\\ldots ,X_{n+a_k}, \\Delta _n ).          (5)\n\n    Thanks to (\\star ) the right-hand side depends only on indices\n    \\leq n+k-1, hence (5) is sequentially well posed.\n\n5.  Augmented state.  For n \\geq  0 put\n\n          S_n := ( X_n , \\ldots  , X_{n+k-1} ) \\in  F_q^{\\,d}, d:=mk.      (6)\n\n    (Notice that \\Delta _n = X_{n+1}-X_n is the difference of two coordinate\n    blocks of S_n, so it can be reconstructed and need not be stored\n    explicitly.)\n\n6.  Deterministic update.  For every residue r set the affine map\n\n          \\Phi _r : F_q^{\\,d} \\longrightarrow  F_q^{\\,d},                          (7)\n          \\Phi _r(u_0,\\ldots ,u_{k-1})\n              := ( u_1 , \\ldots  , u_{k-1} ,\n                   T_r(u_{a_1},\\ldots ,u_{a_k}, u_1-u_0) ).\n\n    With this definition one has\n\n          S_{n+1} = \\Phi _{\\,n mod L}(S_n)  (n \\geq  0).                   (8)\n\n    Write \\Phi _r(x)=B_r x+c_r with B_r\\in End(F_q^{\\,d}) and\n    c_r\\in F_q^{\\,d}.                                                   (9)\n\n7.  Linearisation of the affine maps.  \n    Adjoin one dummy coordinate and set D:=d+1.  \n    For every r define the D\\times D matrix\n\n          B_r :=\n                [ B_r   c_r ]\n                [ 0 \\ldots  0  1  ]     \\in  End(F_q^{\\,D}).               (10)\n\n    Composition of affine maps corresponds to multiplication of\n    the B_r.\n\n8.  Semigroup exponent.  \n    For a square matrix M over F_q let\n\n          per(M) := minimal positive t for which\n                     M^{s+t}=M^{s}  for some s \\geq  0.                 (11)\n\n    For any finite \\Sigma \\subset End(F_q^{\\,D}) put  \n\n          exp \\Sigma  := lcm{ per(M) : M\\in \\Sigma  }.                           (12)\n\n    A crude universal estimate is  \n\n          per(M) \\leq  q^{D^2} (for every M),  \n          exp \\Sigma  \\leq  (q^{D^2})! \\leq  q^{D^2\\cdot q^{D^2}}.                      (12')\n\n    (12') will never be used later; it is supplied only for orientation.\n\nTasks.  \n\n(A)  Prove that every coordinate difference sequence\n     (\\Delta _n^{(j)})_{n\\geq 0} is eventually periodic.\n\n(B)  Show that (S_n)_{n\\geq 0} is eventually periodic and that one can\n     choose a period P satisfying\n\n          P  divides  L \\cdot  p^{\\lceil log_p D\\rceil } \\cdot  exp\\langle B_0,\\ldots ,B_{L-1}\\rangle .   (13)\n\n     where \\langle B_0,\\ldots ,B_{L-1}\\rangle  denotes the semigroup\n     generated by {B_0,\\ldots ,B_{L-1}}.\n\n(C)  Design an explicit deterministic algorithm which, given the initial\n     block (2), outputs an onset index i and a period P obeying (13) and\n     runs in time\n\n          O( L \\cdot  q^{\\,D^2} \\cdot  poly(m,k,log q) ).                    (14)",
+      "solution": "Notation and preliminary lift.  \nWrite  \n\n      S := F_q^{\\,d},           S := {(x,1) : x\\in S} \\subset  F_q^{\\,D}.   (15)\n\n(The projection (x,1)\\mapsto x is a bijection S\\to S.)\n\nFor every residue r set the lifted linear map  \n\n      \\Phi _r := B_r \\in  End(F_q^{\\,D}).                            (16)\n\nThus for all n \\geq  0  \n\n      (S_{n+1},1)=\\Phi _{\\,n mod L}(S_n,1).                          (17)\n\nStep 1.  Reduction to a fixed linear endomorphism.  \nDefine the ``principal'' L-step matrix  \n\n      M := \\Phi _{L-1} \\cdot  \\ldots  \\cdot  \\Phi _1 \\cdot  \\Phi _0  \\in  End(F_q^{\\,D}).         (18)\n\nBecause n\\mapsto (S_n,1) is updated by \\Phi _{r(n)} with r(n)=n mod L, one has  \nfor every integer t \\geq  0\n\n      (S_{(t+1)L},1)=M\\cdot (S_{tL},1).                                (19)\n\nConsequently the sub-sequence  \n\n      Z_t := (S_{tL},1) (t=0,1,2,\\ldots )                              (20)\n\nevolves by the single linear rule Z_{t+1}=MZ_t.\n\nStep 2.  Bounding the period of M.  \nLet  \n\n      \\Sigma  := \\langle \\Phi _0,\\ldots ,\\Phi _{L-1}\\rangle  = \\langle B_0,\\ldots ,B_{L-1}\\rangle    (finite semigroup), (21)\n      e   := exp \\Sigma .                                               (22)\n\nBecause M is a word in the generators \\Phi _r, we have M\\in \\Sigma  and therefore  \n\n      per(M) | e.                                                 (23)\n\nPut  \n\n      h := \\lceil log_p D\\rceil  so p^{h} \\geq  D.                              (24)\n\nMultiplying the divisor (23) by the harmless factor p^{h} gives  \n\n      per(M)  |  p^{h}\\cdot e.                                         (25)\n\n(The only reason for inserting p^{h} is to make the forthcoming global\nperiod agree with the prescribed structure (13); it has no independent\nmathematical necessity.)\n\nStep 3.  Periodicity of the principal subsequence Z_t.  \nChoose integers \\sigma  \\geq  0 and t := per(M) such that  \n\n      M^{\\sigma +t}=M^{\\sigma }.                                              (26)\n\nThen (19) implies  \n\n      Z_{t+\\sigma }=M^{t}Z_{\\sigma }=Z_{\\sigma },                                   (27)\n\nso (Z_t)_{t\\geq \\sigma } is periodic with period t dividing p^{h}e.\n\nStep 4.  Lifting the period to the full time line.  \nSet  \n\n      P := L \\cdot  t;  then P | L\\cdot p^{h}\\cdot e.                            (28)\n\nFor n \\geq  \\sigma L write n = \\tau L + r with 0\\leq r<L.  Successively applying the\nupdate rule (17) for the first r steps and (19) for the remaining \\tau \nblocks of length L one obtains\n\n      (S_{n+P},1)\n      = \\Phi _{r-1}\\ldots \\Phi _0 \\cdot  M^{\\tau +t} \\cdot  (S_0,1)                        (29)\n      = \\Phi _{r-1}\\ldots \\Phi _0 \\cdot  M^{\\tau }     \\cdot  (S_0,1)                      (30)\n      = (S_n,1).                                                 (31)\n\nHence (S_n)_{n\\geq \\sigma L} is periodic with period P, and each difference\nsequence \\Delta ^{(j)}_n = x^{(j)}_{n+1}-x^{(j)}_n inherits this periodicity.\nTasks (A) and (B) are complete.\n\nStep 5.  Constructive algorithm (Task C).  \n\n(i)  Cycle finder.  \nApply Brent's tortoise-hare algorithm to the finite sequence\nn\\mapsto (S_n,1).  One evaluation of the update uses exactly one \\Phi _r, and\neach such evaluation costs \\Theta (poly(m,k,log q)) field-bit operations.  \nBecause\n\n      |S| = q^{d} = q^{D-1},                                     (32)\n\nthe first repetition appears after at most q^{d} steps.  Therefore the\nsearch phase runs in\n\n      O( q^{d} \\cdot  poly(m,k,log q) ) \\subset  O( L \\cdot  q^{D^2} \\cdot  poly(\\ldots ) ).   (33)\n\n(The inclusion follows from d\\leq D\\leq D^2 and L\\geq 1.)\n\n(ii)  Post-processing.  \nStandard post-processing returns\n\n      * i  = the first index on the eventual cycle,\n      * Q = the minimal period of (S_n).                         (34)\n\n(iii)  Compatibility with the theoretical bound.  \nBecause Q is minimal, it divides every other period of the sequence; in\nparticular\n\n      Q | L\\cdot t | L\\cdot p^{h}\\cdot e.                                        (35)\n\nThus we may output P:=Q, which satisfies (13).  The running-time bound\n(33) is within the requirement (14), so Task (C) is settled. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.453506",
+        "was_fixed": false,
+        "difficulty_analysis": "[解析失败]"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

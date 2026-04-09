@@ -1,0 +1,115 @@
+{
+  "index": "2015-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "Let $A$ and $B$ be points on the same branch of the hyperbola $xy=1$. Suppose that $P$ is a point lying between $A$ and $B$ on this hyperbola, such that the area of the triangle $APB$ is as large as possible. Show that the region bounded by the hyperbola and the chord $AP$ has the same area as the region bounded by the hyperbola and the chord $PB$.",
+  "solution": "\\textbf{First solution:}\nWithout loss of generality, assume that $A$ and $B$ lie in the first quadrant with $A = (t_1,1/t_1)$, $B = (t_2,1/t_2)$, and $t_1<t_2$. If $P = (t,1/t)$ with $t_1 \\leq t \\leq t_2$, then the area of triangle $APB$ is\n\\[\n\\frac{1}{2} \\left| \\begin{matrix} 1 & 1 & 1 \\\\ t_1 & t & t_2 \\\\ 1/t_1 & 1/t & 1/t_2 \\end{matrix} \\right| = \\frac{t_2-t_1}{2t_1t_2} (t_1+t_2-t-t_1t_2/t).\n\\]\nWhen $t_1,t_2$ are fixed, this is maximized when $t+t_1t_2/t$ is minimized, which by AM-GM exactly holds when $t = \\sqrt{t_1t_2}$.\n\nThe line $AP$ is given by $y = \\frac{t_1+t-x}{tt_1}$, and so the area of the region bounded by the hyperbola and $AP$ is\n\\[\n\\int_{t_1}^t \\left( \\frac{t_1+t-x}{tt_1} - \\frac{1}{x} \\right) \\,dx = \\frac{t}{2t_1}-\\frac{t_1}{2t}-\\log \\left(\\frac{t}{t_1} \\right),\n\\]\nwhich at $t = \\sqrt{t_1t_2}$ is equal to $\\frac{t_2-t_1}{2\\sqrt{t_1t_2}} - \\log(\\sqrt{t_2/t_1})$. Similarly, the area of the region bounded by the hyperbola and $PB$ is $\\frac{t_2}{2t}-\\frac{t}{2t_2}-\\log \\frac{t_2}{t}$, which at $t = \\sqrt{t_1t_2}$ is also $\\frac{t_2-t_1}{2\\sqrt{t_1t_2}} - \\log(\\sqrt{t_2/t_1})$, as desired.\n\n\\noindent\n\\textbf{Second solution:}\nFor any $\\lambda > 0$, the map $(x,y) \\mapsto (\\lambda x, \\lambda^{-1} y)$ preserves both areas and the hyperbola $xy=1$. We may thus rescale the picture so that\n$A,B$ are symmetric across the line $y=x$, with $A$ above the line. As $P$ moves from $A$ to $B$, the area of $APB$ increases until $P$ passes through the point $(1,1)$, then decreases. Consequently, $P = (1,1)$ achieves the maximum area, and the desired equality is obvious by symmetry.\nAlternatively, since the hyperbola is convex, the maximum is uniquely achieved at the point where the tangent line is parallel to $AB$, and by symmetry that point is $P$.",
+  "vars": [
+    "x",
+    "y",
+    "t"
+  ],
+  "params": [
+    "A",
+    "B",
+    "P",
+    "t_1",
+    "t_2",
+    "\\\\lambda"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "y": "variabley",
+        "t": "paramt",
+        "A": "pointa",
+        "B": "pointb",
+        "P": "pointp",
+        "t_1": "firstpar",
+        "t_2": "secondpar",
+        "\\lambda": "scalefac"
+      },
+      "question": "Let $pointa$ and $pointb$ be points on the same branch of the hyperbola $variablex variabley=1$. Suppose that $pointp$ is a point lying between $pointa$ and $pointb$ on this hyperbola, such that the area of the triangle $pointa pointp pointb$ is as large as possible. Show that the region bounded by the hyperbola and the chord $pointa pointp$ has the same area as the region bounded by the hyperbola and the chord $pointp pointb$.",
+      "solution": "\\textbf{First solution:}\\nWithout loss of generality, assume that $pointa$ and $pointb$ lie in the first quadrant with $pointa = (firstpar,1/firstpar)$, $pointb = (secondpar,1/secondpar)$, and $firstpar<secondpar$. If $pointp = (paramt,1/paramt)$ with $firstpar \\leq paramt \\leq secondpar$, then the area of triangle $pointa pointp pointb$ is\\n\\[\\n\\frac{1}{2} \\left| \\begin{matrix} 1 & 1 & 1 \\\\ firstpar & paramt & secondpar \\\\ 1/firstpar & 1/paramt & 1/secondpar \\end{matrix} \\right| = \\frac{secondpar-firstpar}{2 firstpar secondpar} (firstpar+secondpar-paramt-firstpar secondpar / paramt).\\n\\]\\nWhen $firstpar,secondpar$ are fixed, this is maximized when $paramt+firstpar secondpar/paramt$ is minimized, which by AM-GM exactly holds when $paramt = \\sqrt{firstpar secondpar}$.\\n\\nThe line $pointa pointp$ is given by $variabley = \\frac{firstpar+paramt-variablex}{paramt firstpar}$, and so the area of the region bounded by the hyperbola and $pointa pointp$ is\\n\\[\\n\\int_{firstpar}^{paramt} \\left( \\frac{firstpar+paramt-variablex}{paramt firstpar} - \\frac{1}{variablex} \\right) \\,d variablex = \\frac{paramt}{2 firstpar}-\\frac{firstpar}{2 paramt}-\\log \\left(\\frac{paramt}{firstpar} \\right),\\n\\]\\nwhich at $paramt = \\sqrt{firstpar secondpar}$ is equal to $\\frac{secondpar-firstpar}{2\\sqrt{firstpar secondpar}} - \\log(\\sqrt{secondpar/firstpar})$. Similarly, the area of the region bounded by the hyperbola and $pointp pointb$ is $\\frac{secondpar}{2 paramt}-\\frac{paramt}{2 secondpar}-\\log \\frac{secondpar}{paramt}$, which at $paramt = \\sqrt{firstpar secondpar}$ is also $\\frac{secondpar-firstpar}{2\\sqrt{firstpar secondpar}} - \\log(\\sqrt{secondpar/firstpar})$, as desired.\\n\\n\\noindent\\n\\textbf{Second solution:}\\nFor any $scalefac > 0$, the map $(variablex,variabley) \\mapsto (scalefac\\, variablex, scalefac^{-1} variabley)$ preserves both areas and the hyperbola $variablex variabley=1$. We may thus rescale the picture so that\\n$pointa,pointb$ are symmetric across the line $variabley=variablex$, with $pointa$ above the line. As $pointp$ moves from $pointa$ to $pointb$, the area of $pointa pointp pointb$ increases until $pointp$ passes through the point $(1,1)$, then decreases. Consequently, $pointp = (1,1)$ achieves the maximum area, and the desired equality is obvious by symmetry.\\nAlternatively, since the hyperbola is convex, the maximum is uniquely achieved at the point where the tangent line is parallel to $pointa pointb$, and by symmetry that point is $pointp$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pinecone",
+        "y": "drumroll",
+        "t": "snowflake",
+        "A": "lanterns",
+        "B": "kettledrum",
+        "P": "windstorm",
+        "t_1": "marshland",
+        "t_2": "silverware",
+        "\\lambda": "buttercup"
+      },
+      "question": "Let $lanterns$ and $kettledrum$ be points on the same branch of the hyperbola $pinecone drumroll=1$. Suppose that $windstorm$ is a point lying between $lanterns$ and $kettledrum$ on this hyperbola, such that the area of the triangle $lanterns\\,windstorm\\,kettledrum$ is as large as possible. Show that the region bounded by the hyperbola and the chord $lanterns\\,windstorm$ has the same area as the region bounded by the hyperbola and the chord $windstorm\\,kettledrum$.",
+      "solution": "\\textbf{First solution:}\\\nWithout loss of generality, assume that $lanterns$ and $kettledrum$ lie in the first quadrant with $lanterns=(marshland,1/marshland)$, $kettledrum=(silverware,1/silverware)$, and $marshland<silverware$. If $windstorm=(snowflake,1/snowflake)$ with $marshland\\le snowflake\\le silverware$, then the area of triangle $lanterns\\,windstorm\\,kettledrum$ is\\\n\\[\\frac{1}{2}\\left|\\begin{matrix}1&1&1\\\\marshland&snowflake&silverware\\\\1/marshland&1/snowflake&1/silverware\\end{matrix}\\right|=\\frac{silverware-marshland}{2\\,marshland\\,silverware}\\bigl(marshland+silverware-snowflake-marshland\\,silverware/snowflake\\bigr).\\]\\\nWhen $marshland,silverware$ are fixed, this is maximized when $snowflake+marshland\\,silverware/snowflake$ is minimized, which by AM--GM occurs when $snowflake=\\sqrt{marshland\\,silverware}$.\\\n\\\nThe line $lanterns\\,windstorm$ is given by $drumroll=\\dfrac{marshland+snowflake-pinecone}{snowflake\\,marshland}$, and so the area of the region bounded by the hyperbola and $lanterns\\,windstorm$ is\\\n\\[\\int_{marshland}^{snowflake}\\Bigl(\\frac{marshland+snowflake-pinecone}{snowflake\\,marshland}-\\frac{1}{pinecone}\\Bigr)\\,d pinecone=\\frac{snowflake}{2\\,marshland}-\\frac{marshland}{2\\,snowflake}-\\log\\Bigl(\\frac{snowflake}{marshland}\\Bigr),\\]\\\nwhich at $snowflake=\\sqrt{marshland\\,silverware}$ equals $\\dfrac{silverware-marshland}{2\\sqrt{marshland\\,silverware}}-\\log\\!\\bigl(\\sqrt{silverware/marshland}\\bigr)$. Similarly, the area of the region bounded by the hyperbola and $windstorm\\,kettledrum$ is $\\dfrac{silverware}{2\\,snowflake}-\\dfrac{snowflake}{2\\,silverware}-\\log\\dfrac{silverware}{snowflake}$, which at $snowflake=\\sqrt{marshland\\,silverware}$ is also $\\dfrac{silverware-marshland}{2\\sqrt{marshland\\,silverware}}-\\log\\!\\bigl(\\sqrt{silverware/marshland}\\bigr)$, as desired.\\\n\\\n\\textbf{Second solution:}\\\nFor any $buttercup>0$, the map $(pinecone,drumroll)\\mapsto(buttercup\\,pinecone,\\,buttercup^{-1}drumroll)$ preserves both areas and the hyperbola $pinecone drumroll=1$. Hence we may rescale so that $lanterns,kettledrum$ are symmetric across the line $drumroll=pinecone$, with $lanterns$ above the line. As $windstorm$ moves from $lanterns$ to $kettledrum$, the area of $lanterns\\,windstorm\\,kettledrum$ increases until $windstorm$ passes through $(1,1)$, then decreases. Consequently, $windstorm=(1,1)$ attains the maximum area, and the desired equality follows by symmetry. Alternatively, since the hyperbola is convex, the maximum is uniquely achieved at the point where the tangent is parallel to $lanterns\\,kettledrum$, and by symmetry that point is $windstorm$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalcoordinate",
+        "y": "horizontalcoordinate",
+        "t": "staticparam",
+        "A": "terminallocation",
+        "B": "originlocation",
+        "P": "exteriorlocation",
+        "t_1": "endingparameterone",
+        "t_2": "endingparametertwo",
+        "\\lambda": "fixationfactor"
+      },
+      "question": "Let $terminallocation$ and $originlocation$ be points on the same branch of the hyperbola $verticalcoordinate horizontalcoordinate=1$. Suppose that $exteriorlocation$ is a point lying between $terminallocation$ and $originlocation$ on this hyperbola, such that the area of the triangle $terminallocation exteriorlocation originlocation$ is as large as possible. Show that the region bounded by the hyperbola and the chord $terminallocation exteriorlocation$ has the same area as the region bounded by the hyperbola and the chord $exteriorlocation originlocation$.",
+      "solution": "\\textbf{First solution:}\nWithout loss of generality, assume that $terminallocation$ and $originlocation$ lie in the first quadrant with $terminallocation = (endingparameterone,1/endingparameterone)$, $originlocation = (endingparametertwo,1/endingparametertwo)$, and $endingparameterone<endingparametertwo$. If $exteriorlocation = (staticparam,1/staticparam)$ with $endingparameterone \\le staticparam \\le endingparametertwo$, then the area of triangle $terminallocation exteriorlocation originlocation$ is\n\\[\n\\frac{1}{2} \\left| \\begin{matrix} 1 & 1 & 1 \\\\ endingparameterone & staticparam & endingparametertwo \\\\ 1/endingparameterone & 1/staticparam & 1/endingparametertwo \\end{matrix} \\right| = \\frac{endingparametertwo-endingparameterone}{2endingparameteroneendingparametertwo} (endingparameterone+endingparametertwo-staticparam-endingparameteroneendingparametertwo/staticparam).\n\\]\nWhen $endingparameterone,endingparametertwo$ are fixed, this is maximized when $staticparam+endingparameteroneendingparametertwo/staticparam$ is minimized, which by AM-GM exactly holds when $staticparam = \\sqrt{endingparameteroneendingparametertwo}$.\n\nThe line $terminallocation exteriorlocation$ is given by $horizontalcoordinate = \\frac{endingparameterone+staticparam-verticalcoordinate}{staticparam endingparameterone}$, and so the area of the region bounded by the hyperbola and $terminallocation exteriorlocation$ is\n\\[\n\\int_{endingparameterone}^{staticparam} \\left( \\frac{endingparameterone+staticparam-verticalcoordinate}{staticparam endingparameterone} - \\frac{1}{verticalcoordinate} \\right) \\,dverticalcoordinate = \\frac{staticparam}{2endingparameterone}-\\frac{endingparameterone}{2staticparam}-\\log \\left(\\frac{staticparam}{endingparameterone} \\right),\n\\]\nwhich at $staticparam = \\sqrt{endingparameteroneendingparametertwo}$ is equal to $\\frac{endingparametertwo-endingparameterone}{2\\sqrt{endingparameteroneendingparametertwo}} - \\log(\\sqrt{endingparametertwo/endingparameterone})$. Similarly, the area of the region bounded by the hyperbola and $exteriorlocation originlocation$ is $\\frac{endingparametertwo}{2staticparam}-\\frac{staticparam}{2endingparametertwo}-\\log \\frac{endingparametertwo}{staticparam}$, which at $staticparam = \\sqrt{endingparameteroneendingparametertwo}$ is also $\\frac{endingparametertwo-endingparameterone}{2\\sqrt{endingparameteroneendingparametertwo}} - \\log(\\sqrt{endingparametertwo/endingparameterone})$, as desired.\n\n\\noindent\n\\textbf{Second solution:}\nFor any $fixationfactor > 0$, the map $(verticalcoordinate,horizontalcoordinate) \\mapsto (fixationfactor\\,verticalcoordinate, fixationfactor^{-1} horizontalcoordinate)$ preserves both areas and the hyperbola $verticalcoordinate horizontalcoordinate=1$. We may thus rescale the picture so that $terminallocation,originlocation$ are symmetric across the line $horizontalcoordinate=verticalcoordinate$, with $terminallocation$ above the line. As $exteriorlocation$ moves from $terminallocation$ to $originlocation$, the area of $terminallocation exteriorlocation originlocation$ increases until $exteriorlocation$ passes through the point $(1,1)$, then decreases. Consequently, $exteriorlocation = (1,1)$ achieves the maximum area, and the desired equality is obvious by symmetry.\nAlternatively, since the hyperbola is convex, the maximum is uniquely achieved at the point where the tangent line is parallel to $terminallocation originlocation$, and by symmetry that point is $exteriorlocation$.}",
+      "confidence": "0.18"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "t": "bckvyezn",
+        "A": "lmqsupkd",
+        "B": "rvxandge",
+        "P": "ozhclmta",
+        "t_1": "gpreadnq",
+        "t_2": "noxzlkji",
+        "\\lambda": "diteshmar"
+      },
+      "question": "Let $lmqsupkd$ and $rvxandge$ be points on the same branch of the hyperbola $qzxwvtnp hjgrksla=1$. Suppose that $ozhclmta$ is a point lying between $lmqsupkd$ and $rvxandge$ on this hyperbola, such that the area of the triangle $lmqsupkd ozhclmta rvxandge$ is as large as possible. Show that the region bounded by the hyperbola and the chord $lmqsupkd ozhclmta$ has the same area as the region bounded by the hyperbola and the chord $ozhclmta rvxandge$.",
+      "solution": "\\textbf{First solution:}\nWithout loss of generality, assume that $lmqsupkd$ and $rvxandge$ lie in the first quadrant with $lmqsupkd = (gpreadnq,1/gpreadnq)$, $rvxandge = (noxzlkji,1/noxzlkji)$, and $gpreadnq<noxzlkji$. If $ozhclmta = (bckvyezn,1/bckvyezn)$ with $gpreadnq \\le bckvyezn \\le noxzlkji$, then the area of triangle $lmqsupkd ozhclmta rvxandge$ is\n\\[\n\\frac{1}{2} \\left| \\begin{matrix} 1 & 1 & 1 \\\\ gpreadnq & bckvyezn & noxzlkji \\\\ 1/gpreadnq & 1/bckvyezn & 1/noxzlkji \\end{matrix} \\right| = \\frac{noxzlkji-gpreadnq}{2gpreadnq noxzlkji} \\bigl(gpreadnq+noxzlkji-bckvyezn-\\frac{gpreadnq noxzlkji}{bckvyezn}\\bigr).\n\\]\nWhen $gpreadnq,noxzlkji$ are fixed, this is maximized when $bckvyezn+\\dfrac{gpreadnq noxzlkji}{bckvyezn}$ is minimized, which by AM--GM exactly holds when $bckvyezn = \\sqrt{gpreadnq noxzlkji}$.\n\nThe line $lmqsupkd\\,ozhclmta$ is given by $hjgrksla = \\dfrac{gpreadnq+bckvyezn-qzxwvtnp}{bckvyezn gpreadnq}$, and so the area of the region bounded by the hyperbola and $lmqsupkd\\,ozhclmta$ is\n\\[\n\\int_{gpreadnq}^{bckvyezn} \\left( \\frac{gpreadnq+bckvyezn-qzxwvtnp}{bckvyezn gpreadnq} - \\frac{1}{qzxwvtnp} \\right)\\,dqzxwvtnp\n= \\frac{bckvyezn}{2gpreadnq}-\\frac{gpreadnq}{2bckvyezn}-\\log\\!\\left(\\frac{bckvyezn}{gpreadnq}\\right),\n\\]\nwhich at $bckvyezn = \\sqrt{gpreadnq noxzlkji}$ is equal to $\\dfrac{noxzlkji-gpreadnq}{2\\sqrt{gpreadnq noxzlkji}} - \\log\\!\\bigl(\\sqrt{noxzlkji/gpreadnq}\\bigr)$. Similarly, the area of the region bounded by the hyperbola and $ozhclmta\\,rvxandge$ is $\\dfrac{noxzlkji}{2bckvyezn}-\\dfrac{bckvyezn}{2noxzlkji}-\\log \\dfrac{noxzlkji}{bckvyezn}$, which at $bckvyezn = \\sqrt{gpreadnq noxzlkji}$ is also $\\dfrac{noxzlkji-gpreadnq}{2\\sqrt{gpreadnq noxzlkji}} - \\log\\!\\bigl(\\sqrt{noxzlkji/gpreadnq}\\bigr)$, as desired.\n\n\\noindent\n\\textbf{Second solution:}\nFor any $diteshmar > 0$, the map $(qzxwvtnp,hjgrksla) \\mapsto (diteshmar\\,qzxwvtnp, diteshmar^{-1} hjgrksla)$ preserves both areas and the hyperbola $qzxwvtnp hjgrksla = 1$. We may thus rescale the picture so that\n$lmqsupkd,rvxandge$ are symmetric across the line $hjgrksla=qzxwvtnp$, with $lmqsupkd$ above the line. As $ozhclmta$ moves from $lmqsupkd$ to $rvxandge$, the area of $lmqsupkd ozhclmta rvxandge$ increases until $ozhclmta$ passes through the point $(1,1)$, then decreases. Consequently, $ozhclmta = (1,1)$ achieves the maximum area, and the desired equality is obvious by symmetry.\nAlternatively, since the hyperbola is convex, the maximum is uniquely achieved at the point where the tangent line is parallel to $lmqsupkd rvxandge$, and by symmetry that point is $ozhclmta$.}",
+      "confidence": "0.12"
+    },
+    "kernel_variant": {
+      "question": "Let $H$ be the branch of the hyperbola\n              \n                  xy = 16\n              \nthat lies in the third quadrant ($x<0,\\,y<0$).  Two distinct points $A$ and $B$ are chosen on $H$ (with the $x$-coordinate of $A$ smaller than that of $B$).  A third point $P$ is chosen on the arc $AB$ of $H$ (the endpoints are allowed).\n\n(a)  For which point $P$ is the area of the triangle $\\triangle APB$ maximal?\n\n(b)  Prove that, for that point $P$, the region bounded by the hyperbola and the chord $AP$ has the same area as the region bounded by the hyperbola and the chord $PB$.",
+      "solution": "Throughout we work on the third-quadrant branch $H$ of $xy=16$.\n\n1.  Co-ordinates of $A$ and $B$.\n   Write\n   \n        A=(x_1,y_1),\\qquad B=(x_2,y_2),\\qquad x_1<x_2<0,  \n   so that $y_1=16/x_1$ and $y_2=16/x_2$.\n\n2.  An area-preserving similarity that makes $A$ and $B$ symmetric.\n   For $\\lambda>0$ define the linear map\n   \n        T_{\\lambda}(x,y)=(\\lambda x,\\;y/\\lambda).\n   \n   Because $\\det DT_{\\lambda}=1$, the map $T_{\\lambda}$ preserves (signed) area, and it also preserves the hyperbola because $(\\lambda x)(y/\\lambda)=xy$.\n\n   We choose $\\lambda$ so that the images of $A$ and $B$ are symmetric with respect to the line $y=x$.  Put\n   \n        A' = T_{\\lambda}(A)=(a,b),\\qquad B'=T_{\\lambda}(B)=(b,a).\n   \n   The symmetry conditions together with $xy=16$ give $ab=16$ and\n   \n        \\lambda^2=\\frac{16}{x_1x_2};\n   \n   thus\n   \n        a=\\lambda x_1<0,\\qquad b=16/a<0,\\qquad a<b<0.  (1)\n\n3.  Reduction of part (a) to a one-variable problem.\n   Because $T_{\\lambda}$ preserves area, maximising $[\\triangle APB]$ is the same as maximising $[\\triangle A'P'B']$ where $P'=T_{\\lambda}(P)$ moves along $H$ between $A'$ and $B'$.  Parametrise that arc by\n   \n        P'(t)=(t,16/t),\\qquad t\\in[a,b].  (2)\n\n   Put $d=b-a>0$ and define\n   \n        g(t)=t+\\frac{16}{t},\\qquad f(t):=\\frac{2}{d}[\\triangle A'P'(t)B'].\n   \n   A direct determinant computation gives\n   \n        f(t)=\\bigl\\lvert g(t)-(a+b)\\bigr\\rvert.  (3)\n\n4.  Analytic study of $g$.\n   For $t<0$ we have\n   \n        g'(t)=1-\\frac{16}{t^{2}},\\qquad g''(t)=\\frac{32}{t^{3}}<0,\n   \n   so $g$ is strictly concave on the whole third quadrant.  Moreover\n   \n        g'(t)\\begin{cases}\n          >0, & t<-4,\\\\\n          =0, & t=-4,\\\\\n          <0, & -4<t<0.\n        \\end{cases}\n   \n   Hence $g$ is strictly increasing on $(-\\infty,-4]$ and strictly decreasing on $[-4,0)$.  Because $A',B'$ lie on the hyperbola we have\n   \n        g(a)=a+16/a=a+b=g(b).  (4)\n\n5.  Location of the maximum of $f$.\n   From (1) we know $a<-4<b$, so the point $t=-4$ lies between $a$ and $b$.  Combining the monotonicity of $g$ with (3) and (4) we have\n   \n        f(a)=f(b)=0,\\quad\n        f(t)=g(t)-(a+b)\\text{ for }t\\in[a,b],\n   \n   which increases strictly on $[a,-4]$ and decreases strictly on $[-4,b]$.  Therefore\n   \n        f(t)\\text{ attains its unique maximum at }t=-4.\n   \n   In other words, in the rescaled picture the point maximising the triangular area is\n   \n        P'_0=(-4,-4).\n\n6.  Returning to the original co-ordinates.\n   The inverse similarity is \n   \n        T_{\\lambda}^{-1}(u,v)=\\bigl(u/\\lambda,\\,\\lambda v\\bigr).\n   \n   With $P'_0=(-4,-4)$ and $\\lambda^2=16/(x_1x_2)$ we obtain\n   \n        P = T_{\\lambda}^{-1}(P'_0)=\\Bigl(-\\frac{4}{\\lambda},\\,-4\\lambda\\Bigr)\n          =\\Bigl(-\\sqrt{x_1x_2},\\,-\\frac{16}{\\sqrt{x_1x_2}}\\Bigr).  (5)\n\n   Comparison shows\n   \n        x_1< -\\sqrt{x_1x_2} < x_2,\n   \n   so $P$ indeed lies between $A$ and $B$ on $H$.\n\n   Hence\n   (a)  The triangle $\\triangle APB$ is largest only when\n   \n        P =\\bigl(-\\sqrt{x_1x_2},\\,-16/\\sqrt{x_1x_2}\\bigr).\n\n7.  Proof of part (b).\n   In the symmetric diagram the reflection $\\sigma:(u,v)\\mapsto(v,u)$ fixes the hyperbola and interchanges the chords $A'P'_0$ and $P'_0B'$, hence the two curvilinear regions they cut off have equal area.  Because both $\\sigma$ and $T_{\\lambda}$ are area-preserving, their composition carries one of the corresponding regions in the original picture onto the other without changing area.  Consequently the two regions determined by the chords $AP$ and $PB$ have the same area, establishing part (b).\n\nThis completes the solution.",
+      "_meta": {
+        "core_steps": [
+          "Scale the picture by (x,y)↦(λx,λ⁻¹y) so that AB becomes symmetric with respect to the line y=x.",
+          "Because the mapping preserves both the curve xy=1 and areas, the optimisation task is unchanged.",
+          "Along the convex branch, the area of △APB increases until P reaches the symmetry axis, then decreases; hence the maximum occurs at the symmetric point P=(1,1).",
+          "Reflection across y=x sends chord AP to PB, so the two curvilinear regions are congruent.",
+          "Therefore the two regions have equal area."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The specific constant on the hyperbola equation; any positive value still yields the same symmetry and scaling argument.",
+            "original": "xy = 1"
+          },
+          "slot2": {
+            "description": "Choice of the particular branch/quadrant (e.g., first-quadrant branch); any single convex branch works once A and B are chosen on it.",
+            "original": "first-quadrant branch of the hyperbola"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

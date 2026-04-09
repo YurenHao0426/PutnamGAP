@@ -1,0 +1,127 @@
+{
+  "index": "1972-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "A-3. If for a sequence \\( x_{1}, x_{2}, x_{3}, \\cdots, \\lim _{n \\rightarrow \\infty}\\left(x_{1}+x_{2}+\\cdots+x_{n}\\right) / n \\) exists, call this limit the \\( C \\)-limit of the sequence. A function \\( f(x) \\) from \\( [0,1] \\) to the reals is called a supercontinuous function on the interval \\( [0,1] \\) if the \\( C \\)-limit exists for the sequence \\( f\\left(x_{1}\\right), f\\left(x_{2}\\right), f\\left(x_{3}\\right), \\cdots \\) whenever the \\( C \\)-limit exists for the sequence \\( x_{1}, x_{2}, x_{3} \\cdots \\). Find all supercontinuous functions on [0,1].",
+  "solution": "A-3 A function is \"supercontinuous\" if and only if it is affine, \\( f(x)=A x+B \\). The sufficiency is trivial (and was worth 1 point in the grading). For the necessity: First we note that it is not assumed that \\( f(C \\)-limit) \\( =C \\)-limit \\( (f) \\) (otherwise the solution could be materially simplified). The essential steps are to show, that if \\( f \\) is supercontinuous, then (1) \\( f \\) is continuous, and (2) \\( f((a+b) / 2)=(f(a+f(b)) / 2 \\) for all \\( a, b \\). These two statements imply that \\( f \\) is affine. The proofs of (1) and (2) are similar; we give (2) (which is the harder). Set \\( c=(a+b) / 2 \\), and suppose \\( f(c) \\neq(f(a) \\) \\( +f(b)) / 2 \\). Imagine any sequence of integers \\( N_{i} \\) which 'grows very rapidly'; say let \\( N_{i+1} \\) exceed \\( 2^{i} N^{i} \\). Then construct a sequence of points \\( \\left\\{x_{n}\\right\\} \\) as follows: Break the sequence into blocks, alternating between\nand\n\\[\n\\begin{array}{l}\n\\left\\{x_{n}\\right\\}=a, b, a, b, a, b, \\cdots \\\\\n\\left\\{x_{n}\\right\\}=c, c, c, c, c, c, \\cdots\n\\end{array}\n\\]\nthe \\( a b \\) pattern holding for \\( N_{2,-1} \\leqq n<N_{2 i} \\), and the \\( c \\) pattern holding for \\( N_{2 i} \\leqq n<N_{2 i+1} \\). Then \\( \\left\\{x_{n}\\right\\} \\) has the \\( C \\) limit \\( c \\), but the averages of \\( \\left\\{f\\left(x_{n}\\right)\\right\\} \\) oscillate (because the lengths of the blocks \\( N_{i} \\leqq n<N_{i+1} \\) increase very fast, and \\( f(c) \\neq \\) the average of \\( f(a) \\) and \\( f(b)) \\). Thus the \\( C \\)-limit of \\( \\left\\{f\\left(x_{n}\\right)\\right\\} \\) does not exist, a contradiction.",
+  "vars": [
+    "x",
+    "x_1",
+    "x_2",
+    "x_3",
+    "x_n",
+    "n",
+    "f",
+    "a",
+    "b",
+    "c",
+    "i",
+    "N_i"
+  ],
+  "params": [
+    "A",
+    "B",
+    "C"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "genericx",
+        "x_1": "firstx",
+        "x_2": "secondx",
+        "x_3": "thirdx",
+        "x_n": "nthvar",
+        "n": "counter",
+        "f": "mapfunc",
+        "a": "pointa",
+        "b": "pointb",
+        "c": "midpoint",
+        "i": "smallidx",
+        "N_i": "bigindex",
+        "A": "affinea",
+        "B": "affineb",
+        "C": "limitc"
+      },
+      "question": "A-3. If for a sequence \\( firstx, secondx, thirdx, \\cdots, \\lim _{counter \\rightarrow \\infty}\\left(firstx+secondx+\\cdots+nthvar\\right) / counter \\) exists, call this limit the \\( limitc \\)-limit of the sequence. A function \\( mapfunc(genericx) \\) from \\( [0,1] \\) to the reals is called a supercontinuous function on the interval \\( [0,1] \\) if the \\( limitc \\)-limit exists for the sequence \\( mapfunc\\left(firstx\\right), mapfunc\\left(secondx\\right), mapfunc\\left(thirdx\\right), \\cdots \\) whenever the \\( limitc \\)-limit exists for the sequence \\( firstx, secondx, thirdx \\cdots \\). Find all supercontinuous functions on [0,1].",
+      "solution": "A-3 A function is \"supercontinuous\" if and only if it is affine, \\( mapfunc(genericx)=affinea genericx+affineb \\). The sufficiency is trivial (and was worth 1 point in the grading). For the necessity: First we note that it is not assumed that \\( mapfunc(limitc \\)-limit) \\( =limitc \\)-limit \\( (mapfunc) \\) (otherwise the solution could be materially simplified). The essential steps are to show, that if \\( mapfunc \\) is supercontinuous, then (1) \\( mapfunc \\) is continuous, and (2) \\( mapfunc((pointa+pointb) / 2)=(mapfunc(pointa+mapfunc(pointb)) / 2 \\) for all \\( pointa, pointb \\). These two statements imply that \\( mapfunc \\) is affine. The proofs of (1) and (2) are similar; we give (2) (which is the harder). Set \\( midpoint=(pointa+pointb) / 2 \\), and suppose \\( mapfunc(midpoint) \\neq(mapfunc(pointa) \\) \\( +mapfunc(pointb)) / 2 \\). Imagine any sequence of integers \\( bigindex \\) which 'grows very rapidly'; say let \\( N_{smallidx+1} \\) exceed \\( 2^{smallidx} N^{smallidx} \\). Then construct a sequence of points \\( \\left\\{nthvar\\right\\} \\) as follows: Break the sequence into blocks, alternating between and\n\\[\\begin{array}{l}\n\\left\\{nthvar\\right\\}=pointa, pointb, pointa, pointb, pointa, pointb, \\cdots \\\\\n\\left\\{nthvar\\right\\}=midpoint, midpoint, midpoint, midpoint, midpoint, midpoint, \\cdots\n\\end{array}\\]\nthe \\( pointa pointb \\) pattern holding for \\( N_{2,-1} \\leqq counter<N_{2 smallidx} \\), and the \\( midpoint \\) pattern holding for \\( N_{2 smallidx} \\leqq counter<N_{2 smallidx+1} \\). Then \\( \\left\\{nthvar\\right\\} \\) has the \\( limitc \\) limit \\( midpoint \\), but the averages of \\( \\left\\{mapfunc\\left(nthvar\\right)\\right\\} \\) oscillate (because the lengths of the blocks \\( N_{smallidx} \\leqq counter<N_{smallidx+1} \\) increase very fast, and \\( mapfunc(midpoint) \\neq \\) the average of \\( mapfunc(pointa) \\) and \\( mapfunc(pointb)) \\). Thus the \\( limitc \\)-limit of \\( \\left\\{mapfunc\\left(nthvar\\right)\\right\\} \\) does not exist, a contradiction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "galaxyorb",
+        "x_1": "quartzmist",
+        "x_2": "harborleaf",
+        "x_3": "plazadrift",
+        "x_n": "tundrawave",
+        "n": "summerpine",
+        "f": "embertrail",
+        "a": "crystalvine",
+        "b": "riverlatch",
+        "c": "meadowglen",
+        "i": "ironwisp",
+        "N_i": "marblegate",
+        "A": "candleseed",
+        "B": "nebulafern",
+        "C": "solsticebay"
+      },
+      "question": "A-3. If for a sequence \\( quartzmist, harborleaf, plazadrift, \\cdots, \\lim _{summerpine \\rightarrow \\infty}\\left(quartzmist+harborleaf+\\cdots+tundrawave\\right) / summerpine \\) exists, call this limit the \\( solsticebay \\)-limit of the sequence. A function \\( embertrail(galaxyorb) \\) from \\( [0,1] \\) to the reals is called a supercontinuous function on the interval \\( [0,1] \\) if the \\( solsticebay \\)-limit exists for the sequence \\( embertrail\\left(quartzmist\\right), embertrail\\left(harborleaf\\right), embertrail\\left(plazadrift\\right), \\cdots \\) whenever the \\( solsticebay \\)-limit exists for the sequence \\( quartzmist, harborleaf, plazadrift \\cdots \\). Find all supercontinuous functions on [0,1].",
+      "solution": "A-3 A function is \"supercontinuous\" if and only if it is affine, \\( embertrail(galaxyorb)=candleseed galaxyorb+nebulafern \\). The sufficiency is trivial (and was worth 1 point in the grading). For the necessity: First we note that it is not assumed that \\( embertrail(solsticebay \\)-limit) \\( =solsticebay \\)-limit \\( (embertrail) \\) (otherwise the solution could be materially simplified). The essential steps are to show, that if \\( embertrail \\) is supercontinuous, then (1) \\( embertrail \\) is continuous, and (2) \\( embertrail((crystalvine+riverlatch) / 2)=(embertrail(crystalvine+embertrail(riverlatch)) / 2 \\) for all \\( crystalvine, riverlatch \\). These two statements imply that \\( embertrail \\) is affine. The proofs of (1) and (2) are similar; we give (2) (which is the harder). Set \\( meadowglen=(crystalvine+riverlatch) / 2 \\), and suppose \\( embertrail(meadowglen) \\neq(embertrail(crystalvine) \\) \\( +embertrail(riverlatch)) / 2 \\). Imagine any sequence of integers \\( marblegate_{ironwisp} \\) which 'grows very rapidly'; say let \\( marblegate_{ironwisp+1} \\) exceed \\( 2^{ironwisp} marblegate^{ironwisp} \\). Then construct a sequence of points \\( \\left\\{tundrawave\\right\\} \\) as follows: Break the sequence into blocks, alternating between\nand\n\\[\n\\begin{array}{l}\n\\left\\{tundrawave\\right\\}=crystalvine, riverlatch, crystalvine, riverlatch, crystalvine, riverlatch, \\cdots \\\\\n\\left\\{tundrawave\\right\\}=meadowglen, meadowglen, meadowglen, meadowglen, meadowglen, meadowglen, \\cdots\n\\end{array}\n\\]\nthe \\( crystalvine riverlatch \\) pattern holding for \\( marblegate_{2,-1} \\leqq summerpine<marblegate_{2 ironwisp} \\), and the \\( meadowglen \\) pattern holding for \\( marblegate_{2 ironwisp} \\leqq summerpine<marblegate_{2 ironwisp+1} \\). Then \\( \\left\\{tundrawave\\right\\} \\) has the \\( solsticebay \\) limit \\( meadowglen \\), but the averages of \\( \\left\\{embertrail\\left(tundrawave\\right)\\right\\} \\) oscillate (because the lengths of the blocks \\( marblegate_{ironwisp} \\leqq summerpine<marblegate_{ironwisp+1} \\) increase very fast, and \\( embertrail(meadowglen) \\neq \\) the average of \\( embertrail(crystalvine) \\) and \\( embertrail(riverlatch)) \\). Thus the \\( solsticebay \\)-limit of \\( \\left\\{embertrail\\left(tundrawave\\right)\\right\\} \\) does not exist, a contradiction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "x_1": "finalelement",
+        "x_2": "secondlast",
+        "x_3": "thirdlast",
+        "x_n": "terminalterm",
+        "n": "stationary",
+        "f": "nonfunction",
+        "a": "omegaelement",
+        "b": "maximalpoint",
+        "c": "extremepoint",
+        "i": "steadystate",
+        "N_i": "fractionvalue",
+        "A": "independent",
+        "B": "slopevalue",
+        "C": "divergence"
+      },
+      "question": "A-3. If for a sequence \\( finalelement, secondlast, thirdlast, \\cdots, \\lim _{stationary \\rightarrow \\infty}\\left(finalelement+secondlast+\\cdots+terminalterm\\right) / stationary \\) exists, call this limit the \\( divergence \\)-limit of the sequence. A function \\( nonfunction(constantvalue) \\) from \\( [0,1] \\) to the reals is called a supercontinuous function on the interval \\( [0,1] \\) if the \\( divergence \\)-limit exists for the sequence \\( nonfunction\\left(finalelement\\right), nonfunction\\left(secondlast\\right), nonfunction\\left(thirdlast\\right), \\cdots \\) whenever the \\( divergence \\)-limit exists for the sequence \\( finalelement, secondlast, thirdlast \\cdots \\). Find all supercontinuous functions on [0,1].",
+      "solution": "A-3 A function is \"supercontinuous\" if and only if it is affine, \\( nonfunction(constantvalue)=independent constantvalue+slopevalue \\). The sufficiency is trivial (and was worth 1 point in the grading). For the necessity: First we note that it is not assumed that \\( nonfunction(divergence \\)-limit) \\( =divergence \\)-limit \\( (nonfunction) \\) (otherwise the solution could be materially simplified). The essential steps are to show, that if \\( nonfunction \\) is supercontinuous, then (1) \\( nonfunction \\) is continuous, and (2) \\( nonfunction((omegaelement+maximalpoint) / 2)=(nonfunction(omegaelement)+nonfunction(maximalpoint)) / 2 \\) for all \\( omegaelement, maximalpoint \\). These two statements imply that \\( nonfunction \\) is affine. The proofs of (1) and (2) are similar; we give (2) (which is the harder). Set \\( extremepoint=(omegaelement+maximalpoint) / 2 \\), and suppose \\( nonfunction(extremepoint) \\neq(nonfunction(omegaelement) +nonfunction(maximalpoint)) / 2 \\). Imagine any sequence of integers \\( fractionvalue \\) which 'grows very rapidly'; say let \\( fractionvalue_{steadystate+1} \\) exceed \\( 2^{steadystate} N^{steadystate} \\). Then construct a sequence of points \\( \\left\\{terminalterm\\right\\} \\) as follows: Break the sequence into blocks, alternating between and\n\\[\n\\begin{array}{l}\n\\left\\{terminalterm\\right\\}=omegaelement, maximalpoint, omegaelement, maximalpoint, omegaelement, maximalpoint, \\cdots \\\\\n\\left\\{terminalterm\\right\\}=extremepoint, extremepoint, extremepoint, extremepoint, extremepoint, extremepoint, \\cdots\n\\end{array}\n\\]\nthe \\( omegaelement maximalpoint \\) pattern holding for \\( N_{2,-1} \\leqq stationary<N_{2 steadystate} \\), and the \\( extremepoint \\) pattern holding for \\( N_{2 steadystate} \\leqq stationary<N_{2 steadystate+1} \\). Then \\( \\left\\{terminalterm\\right\\} \\) has the \\( divergence \\) limit \\( extremepoint \\), but the averages of \\( \\left\\{nonfunction\\left(terminalterm\\right)\\right\\} \\) oscillate (because the lengths of the blocks \\( N_{steadystate} \\leqq stationary<N_{steadystate+1} \\) increase very fast, and \\( nonfunction(extremepoint) \\neq \\) the average of \\( nonfunction(omegaelement) \\) and \\( nonfunction(maximalpoint)) \\). Thus the \\( divergence \\)-limit of \\( \\left\\{nonfunction\\left(terminalterm\\right)\\right\\} \\) does not exist, a contradiction."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_1": "hjgrksla",
+        "x_2": "mnotyrqp",
+        "x_3": "vbcxznae",
+        "x_n": "lkjhdssa",
+        "n": "pqufghjk",
+        "f": "rtyuioas",
+        "a": "sdfghjkl",
+        "b": "zxcvbnmm",
+        "c": "poiuytre",
+        "i": "bnmasdfg",
+        "N_i": "lkopghew",
+        "A": "aslkdjwe",
+        "B": "cbvnmqwe",
+        "C": "eruidjsk"
+      },
+      "question": "A-3. If for a sequence \\( hjgrksla, mnotyrqp, vbcxznae, \\cdots, \\lim _{pqufghjk \\rightarrow \\infty}\\left(hjgrksla+mnotyrqp+\\cdots+lkjhdssa\\right) / pqufghjk \\) exists, call this limit the \\( eruidjsk \\)-limit of the sequence. A function \\( rtyuioas(qzxwvtnp) \\) from \\[0,1] to the reals is called a supercontinuous function on the interval \\[0,1] if the \\( eruidjsk \\)-limit exists for the sequence \\( rtyuioas\\left(hjgrksla\\right), rtyuioas\\left(mnotyrqp\\right), rtyuioas\\left(vbcxznae\\right), \\cdots \\) whenever the \\( eruidjsk \\)-limit exists for the sequence \\( hjgrksla, mnotyrqp, vbcxznae \\cdots \\). Find all supercontinuous functions on [0,1].",
+      "solution": "A-3 A function is \"supercontinuous\" if and only if it is affine, \\( rtyuioas(qzxwvtnp)=aslkdjwe qzxwvtnp+cbvnmqwe \\). The sufficiency is trivial (and was worth 1 point in the grading). For the necessity: First we note that it is not assumed that \\( rtyuioas(eruidjsk \\)-limit) \\( =eruidjsk \\)-limit \\( (rtyuioas) \\) (otherwise the solution could be materially simplified). The essential steps are to show, that if \\( rtyuioas \\) is supercontinuous, then (1) \\( rtyuioas \\) is continuous, and (2) \\( rtyuioas((sdfghjkl+zxcvbnmm) / 2)=(rtyuioas(sdfghjkl)+rtyuioas(zxcvbnmm)) / 2 \\) for all \\( sdfghjkl, zxcvbnmm \\). These two statements imply that \\( rtyuioas \\) is affine. The proofs of (1) and (2) are similar; we give (2) (which is the harder). Set \\( poiuytre=(sdfghjkl+zxcvbnmm) / 2 \\), and suppose \\( rtyuioas(poiuytre) \\neq(rtyuioas(sdfghjkl) +rtyuioas(zxcvbnmm)) / 2 \\). Imagine any sequence of integers \\( lkopghew_{bnmasdfg} \\) which 'grows very rapidly'; say let \\( lkopghew_{bnmasdfg+1} \\) exceed \\( 2^{bnmasdfg} N^{bnmasdfg} \\). Then construct a sequence of points \\( \\left\\{lkjhdssa\\right\\} \\) as follows: Break the sequence into blocks, alternating between\nand\n\\[\n\\begin{array}{l}\n\\left\\{lkjhdssa\\right\\}=sdfghjkl, zxcvbnmm, sdfghjkl, zxcvbnmm, sdfghjkl, zxcvbnmm, \\cdots \\\\\n\\left\\{lkjhdssa\\right\\}=poiuytre, poiuytre, poiuytre, poiuytre, poiuytre, poiuytre, \\cdots\n\\end{array}\n\\]\nthe \\( sdfghjkl \\ zxcvbnmm \\) pattern holding for \\( lkopghew_{2 bnmasdfg-1} \\leqq pqufghjk<lkopghew_{2 bnmasdfg} \\), and the \\( poiuytre \\) pattern holding for \\( lkopghew_{2 bnmasdfg} \\leqq pqufghjk<lkopghew_{2 bnmasdfg+1} \\). Then \\( \\left\\{lkjhdssa\\right\\} \\) has the \\( eruidjsk \\) limit \\( poiuytre \\), but the averages of \\( \\left\\{rtyuioas\\left(lkjhdssa\\right)\\right\\} \\) oscillate (because the lengths of the blocks \\( lkopghew_{bnmasdfg} \\leqq pqufghjk<lkopghew_{bnmasdfg+1} \\) increase very fast, and \\( rtyuioas(poiuytre) \\neq \\) the average of \\( rtyuioas(sdfghjkl) \\) and \\( rtyuioas(zxcvbnmm)) \\). Thus the \\( eruidjsk \\)-limit of \\( \\left\\{rtyuioas\\left(lkjhdssa\\right)\\right\\} \\) does not exist, a contradiction."
+    },
+    "kernel_variant": {
+      "question": "Let d \\geq  2 and put K = [-1,2]^d \\subset  \\mathbb{R}^d.  \nFor a vector sequence u_1,u_2,\\ldots \\in \\mathbb{R}^d write  \n\n C-lim u_n := lim_n\\to \\infty  (u_1+\\cdots +u_n)/n             (if the coordinate-wise limit exists).  \n\nCall a function f: K\\to \\mathbb{R} bi-hypercontinuous if, for every sequence (u_n)\\subset K such that both  \n (i) C-lim u_n exists and  \n (ii) C-lim \\|u_n\\|^2 exists,  \nthe Cesaro limit C-lim f(u_n) also exists.  \nDetermine all bi-hypercontinuous functions on K.\n\n",
+      "solution": "(\\approx  240 words)  \n\nAnswer.  A function f:K\\to \\mathbb{R} is bi-hypercontinuous iff it is affine:  \n f(x)=A\\cdot x+B (A\\in \\mathbb{R}^d, B\\in \\mathbb{R}).  \n\nNecessity.  Fix two points p,q\\in K, set r:=(p+2q)/3.  \nAssume f(r)\\neq (f(p)+2f(q))/3.  \nNote that for rapidly growing integers N_0\\ll N_1\\ll \\cdots  with N_{k+1}>k(N_0+\\cdots +N_k) we may splice blocks  \n (p,q,q),(p,q,q),\\ldots  (length 3N_{2k}) and r,r,\\ldots  (length N_{2k+1}).  \nObserve that every 3-term pattern (p,q,q) has barycentre r and the r-block is already constant r, so by design the running Cesaro means of (u_n) converge to r, fulfilling (i).  \nSince \\|p\\|,\\|q\\|,\\|r\\| are bounded, condition (ii) holds automatically.  \nYet the block averages of (f(u_n)) equal alternately (f(p)+2f(q))/3 and f(r); because these numbers differ, the Cesaro means fail to converge, contradicting bi-hypercontinuity.  \nHence  \n\n f((p+2q)/3)=(f(p)+2f(q))/3.                                        (1)  \n\nInterchanging p,q yields the symmetric identity with weights 2/3 and 1/3.  \nBy an obvious 3-adic induction, (1) extends to all rational weights m/3^k, 0\\leq m\\leq 3^k.  \n\nContinuity.  Suppose f were discontinuous at c\\in K; pick \\varepsilon >0 and points v_k\\to c with |f(v_k)-f(c)|\\geq \\varepsilon .  \nAlternating \\varepsilon -blocks of v_k and c, using the same accelerating-length trick as above, we force (i)-(ii) yet obtain oscillating Cesaro images, impossible; therefore f is continuous on the compact K.  \n\nPass to any p,q\\in K and t\\in [0,1].  Approximating t by 3-adic rationals and employing continuity gives  \n\n f((1-t)p+tq)=(1-t)f(p)+t f(q).                                   (2)  \n\nChoosing q as a fixed vertex of K and varying p shows that every coordinate section is affine; since the cube has non-empty interior, (2) implies f is globally affine: f(x)=A\\cdot x+B.  \n\nSufficiency.  Since Cesaro averaging is linear, (Ax+B) preserves limits, and both (i) and (ii) are superfluous.  Thus every affine map is bi-hypercontinuous.  \n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.025847",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,105 @@
+{
+  "index": "1992-B-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "the set of numbers that occur as averages of two distinct elements of\n$S$. For a given $n \\geq 2$, what is the smallest possible number of\nelements in $A_S$?",
+  "solution": "Solution. Let \\( x_{1}<x_{2}<\\cdots<x_{n} \\) represent the elements of \\( S \\). Then\n\\[\n\\frac{x_{1}+x_{2}}{2}<\\frac{x_{1}+x_{3}}{2}<\\cdots<\\frac{x_{1}+x_{n}}{2}<\\frac{x_{2}+x_{n}}{2}<\\frac{x_{3}+x_{n}}{2}<\\cdots<\\frac{x_{n-1}+x_{n}}{2}\n\\]\nrepresent \\( 2 n-3 \\) distinct elements of \\( A_{S} \\), so \\( A_{S} \\) has at least \\( 2 n-3 \\) distinct elements.\nOn the other hand, if we take \\( S=\\{1,2, \\ldots, n\\} \\), the elements of \\( A_{S} \\) are \\( \\frac{3}{2}, \\frac{4}{2}, \\frac{5}{2} \\), \\( \\ldots, \\frac{2 n-1}{2} \\). There are only \\( 2 n-3 \\) such numbers; thus there is a set \\( A_{S} \\) with at most \\( 2 n-3 \\) distinct elements.",
+  "vars": [
+    "x_1",
+    "x_2",
+    "x_3",
+    "x_n-1",
+    "x_n",
+    "S",
+    "A_S"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_1": "elemone",
+        "x_2": "elemtwo",
+        "x_3": "elemthree",
+        "x_n-1": "elempenult",
+        "x_n": "elemfinal",
+        "S": "baselist",
+        "A_S": "averagelist",
+        "n": "elemscount"
+      },
+      "question": "the set of numbers that occur as averages of two distinct elements of $baselist$. For a given $elemscount \\geq 2$, what is the smallest possible number of elements in $averagelist$?",
+      "solution": "Solution. Let \\( elemone<elemtwo<\\cdots<elemfinal \\) represent the elements of \\( baselist \\). Then\n\\[\n\\frac{elemone+elemtwo}{2}<\\frac{elemone+elemthree}{2}<\\cdots<\\frac{elemone+elemfinal}{2}<\\frac{elemtwo+elemfinal}{2}<\\frac{elemthree+elemfinal}{2}<\\cdots<\\frac{elempenult+elemfinal}{2}\n\\]\nrepresent \\( 2\\,elemscount-3 \\) distinct elements of \\( averagelist \\), so \\( averagelist \\) has at least \\( 2\\,elemscount-3 \\) distinct elements.\nOn the other hand, if we take \\( baselist=\\{1,2, \\ldots, elemscount\\} \\), the elements of \\( averagelist \\) are \\( \\frac{3}{2}, \\frac{4}{2}, \\frac{5}{2} \\), \\( \\ldots, \\frac{2\\,elemscount-1}{2} \\). There are only \\( 2\\,elemscount-3 \\) such numbers; thus there is a set \\( averagelist \\) with at most \\( 2\\,elemscount-3 \\) distinct elements."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_1": "pebblestone",
+        "x_2": "marshmallow",
+        "x_3": "gingerbread",
+        "x_{n-1}": "dandelion",
+        "x_n": "butterscotch",
+        "S": "tumbleweed",
+        "A_S": "chandelier",
+        "n": "peppercorn"
+      },
+      "question": "the set of numbers that occur as averages of two distinct elements of\n$tumbleweed$. For a given $peppercorn \\geq 2$, what is the smallest possible number of\nelements in $chandelier$?",
+      "solution": "Solution. Let \\( pebblestone<marshmallow<\\cdots<butterscotch \\) represent the elements of \\( tumbleweed \\). Then\n\\[\n\\frac{pebblestone+marshmallow}{2}<\\frac{pebblestone+gingerbread}{2}<\\cdots<\\frac{pebblestone+butterscotch}{2}<\\frac{marshmallow+butterscotch}{2}<\\frac{gingerbread+butterscotch}{2}<\\cdots<\\frac{dandelion+butterscotch}{2}\n\\]\nrepresent \\( 2 peppercorn-3 \\) distinct elements of \\( chandelier \\), so \\( chandelier \\) has at least \\( 2 peppercorn-3 \\) distinct elements.\nOn the other hand, if we take \\( tumbleweed=\\{1,2, \\ldots, peppercorn\\} \\), the elements of \\( chandelier \\) are \\( \\frac{3}{2}, \\frac{4}{2}, \\frac{5}{2} \\), \\( \\ldots, \\frac{2 peppercorn-1}{2} \\). There are only \\( 2 peppercorn-3 \\) such numbers; thus there is a set \\( chandelier \\) with at most \\( 2 peppercorn-3 \\) distinct elements."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_1": "finalvalue",
+        "x_2": "latervalue",
+        "x_3": "subsequent",
+        "x_n-1": "earlyvalue",
+        "x_n": "initialvalue",
+        "S": "voidcollection",
+        "A_S": "sumcollection",
+        "n": "singularity"
+      },
+      "question": "the set of numbers that occur as averages of two distinct elements of\n$voidcollection$. For a given $singularity \\geq 2$, what is the smallest possible number of\nelements in $sumcollection$?",
+      "solution": "Solution. Let \\( finalvalue<latervalue<\\cdots<initialvalue \\) represent the elements of \\( voidcollection \\). Then\n\\[\n\\frac{finalvalue+latervalue}{2}<\\frac{finalvalue+subsequent}{2}<\\cdots<\\frac{finalvalue+initialvalue}{2}<\\frac{latervalue+initialvalue}{2}<\\frac{subsequent+initialvalue}{2}<\\cdots<\\frac{earlyvalue+initialvalue}{2}\n\\]\nrepresent \\( 2 singularity-3 \\) distinct elements of \\( sumcollection \\), so \\( sumcollection \\) has at least \\( 2 singularity-3 \\) distinct elements.\nOn the other hand, if we take \\( voidcollection=\\{1,2, \\ldots, singularity\\} \\), the elements of \\( sumcollection \\) are \\( \\frac{3}{2}, \\frac{4}{2}, \\frac{5}{2} \\), \\( \\ldots, \\frac{2 singularity-1}{2} \\). There are only \\( 2 singularity-3 \\) such numbers; thus there is a set \\( sumcollection \\) with at most \\( 2 singularity-3 \\) distinct elements."
+    },
+    "garbled_string": {
+      "map": {
+        "x_1": "qzxwvtnp",
+        "x_2": "hjgrksla",
+        "x_3": "mlfdngye",
+        "x_n-1": "bfztsqwe",
+        "x_n": "vrhjkplm",
+        "S": "ctwlmnop",
+        "A_S": "dkrbvxyz",
+        "n": "pldrfqae"
+      },
+      "question": "the set of numbers that occur as averages of two distinct elements of\n$ctwlmnop$. For a given $pldrfqae \\geq 2$, what is the smallest possible number of\nelements in $dkrbvxyz$?",
+      "solution": "Solution. Let \\( qzxwvtnp_{1}<hjgrksla_{2}<\\cdots<vrhjkplm_{pldrfqae} \\) represent the elements of \\( ctwlmnop \\). Then\n\\[\n\\frac{qzxwvtnp_{1}+hjgrksla_{2}}{2}<\\frac{qzxwvtnp_{1}+mlfdngye_{3}}{2}<\\cdots<\\frac{qzxwvtnp_{1}+vrhjkplm_{pldrfqae}}{2}<\\frac{hjgrksla_{2}+vrhjkplm_{pldrfqae}}{2}<\\frac{mlfdngye_{3}+vrhjkplm_{pldrfqae}}{2}<\\cdots<\\frac{bfztsqwe_{pldrfqae-1}+vrhjkplm_{pldrfqae}}{2}\n\\]\nrepresent \\( 2 pldrfqae-3 \\) distinct elements of \\( dkrbvxyz \\), so \\( dkrbvxyz \\) has at least \\( 2 pldrfqae-3 \\) distinct elements.\nOn the other hand, if we take \\( ctwlmnop=\\{1,2, \\ldots, pldrfqae\\} \\), the elements of \\( dkrbvxyz \\) are \\( \\frac{3}{2}, \\frac{4}{2}, \\frac{5}{2} \\), \\( \\ldots, \\frac{2 pldrfqae-1}{2} \\). There are only \\( 2 pldrfqae-3 \\) such numbers; thus there is a set \\( dkrbvxyz \\) with at most \\( 2 pldrfqae-3 \\) distinct elements."
+    },
+    "kernel_variant": {
+      "question": "Let $n\\ge 2$ be an integer.  For a finite set $S$ of $n$ distinct real numbers define\\[M_S=\\Bigl\\{\\frac{s_i+s_j}{2}\\;:\\;s_i,s_j\\in S,\\;i\\ne j\\Bigr\\}\\]to be the collection of all mid-points of unordered pairs of elements of $S$.  Determine, as an explicit function of $n$, the smallest possible value of $|M_S|$.",
+      "solution": "Write the elements of S in increasing order x_1<x_2<\\cdots <x_n. We exhibit 2n-3 distinct midpoints in M_S and then give an example attaining that size.\n\n1. (Lower bound) Consider the ``first block'' of n-1 midpoints  \n   A_i = (x_1 + x_{n-i+1})/2,  i=1,2,\\ldots ,n-1;  \nand the ``second block'' of n-2 midpoints  \n   B_j = (x_{j+1} + x_n)/2,  j=1,2,\\ldots ,n-2.\n\n  * Within the first block, as i increases from 1 to n-1, x_{n-i+1} decreases from x_n down to x_2, so A_1 > A_2 > \\cdots  > A_{n-1}. Thus the A_i are n-1 distinct numbers.\n\n  * Within the second block, as j increases from 1 to n-2, x_{j+1} increases from x_2 up to x_{n-1}, so B_1 < B_2 < \\cdots  < B_{n-2}. Thus the B_j are n-2 distinct numbers.\n\n  * To show no A_i can equal any B_j, compare the largest A (namely A_1=(x_1+x_n)/2) with the smallest B (namely B_1=(x_2+x_n)/2). Since x_1<x_2, we have\n     (x_1 + x_n)/2 < (x_2 + x_n)/2,\n  hence every A_i \\leq  A_1 < B_1 \\leq  every B_j. Therefore the two blocks are disjoint, yielding in all\n     |M_S| \\geq  (n-1)+(n-2) = 2n-3.\n\n2. (Sharpness) Take for instance the arithmetic progression\n   S_0 = {0,3,6,\\ldots ,3(n-1)}.\nAny midpoint of two distinct terms 3a<3b is (3a+3b)/2 = (3/2)(a+b). Since a<b run over pairs in {0,\\ldots ,n-1}, the sum a+b takes exactly the 2n-3 integer values 1,2,\\ldots ,2n-3. Thus M_{S_0} = {(3/2)\\cdot k : k=1,2,\\ldots ,2n-3} has size 2n-3.\n\nCombining the lower bound |M_S|\\geq 2n-3 with this example shows that the minimum possible size of M_S is\n   2n-3.\n\nAnswer: 2n-3.",
+      "_meta": {
+        "core_steps": [
+          "Sort S as x1 < x2 < … < xn.",
+          "Apply monotonicity of averages to extract 2n−3 distinct midpoints: (x1+xi)/2 (i=2..n) and (xi+xn)/2 (i=2..n−1), yielding |AS| ≥ 2n−3.",
+          "Give an explicit example (consecutive integers) whose average–set has exactly 2n−3 elements, so the lower bound is sharp."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Concrete set used to hit the upper bound; any arithmetic progression of length n works equally well.",
+            "original": "{1,2,…,n}"
+          },
+          "slot2": {
+            "description": "Exact list/order of the 2n−3 averages employed in the lower-bound chain; any injective selection of 2n−3 averages based on extreme elements suffices.",
+            "original": "(x1+x2)/2, (x1+x3)/2, …, (x1+xn)/2, (x2+xn)/2, …, (x_{n−1}+xn)/2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

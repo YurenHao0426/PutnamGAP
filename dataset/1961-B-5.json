@@ -1,0 +1,161 @@
+{
+  "index": "1961-B-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "5. Let \\( k \\) be a positive integer, and \\( n \\) a positive integer greater than 2 . Define\n\\[\nf_{1}(n)=n, f_{2}(n)=n^{f_{1}(n)}, \\ldots, f_{j+1}(n)=n^{f_{j}(n)}, \\text { etc. }\n\\]\n\nProve either part of the inequality\n\\[\nf_{k}(n)<n!!!\\cdots!<f_{k+1}(n)\n\\]\nwhere the middle term has \\( k \\) factorial symbols.",
+  "solution": "Solution. Define \\( g_{1}(n)=n!, g_{k+1}(n)=\\left[g_{k}(n)\\right]! \\). Then the required inequalities are\n\\[\nf_{k}(n)<g_{k}(n)<f_{k+1}(n), \\quad n>2 .\n\\]\n\nProof of the lower inequality. If \\( t \\geq 2 n^{2} \\), then\n\\[\nt!>\\left(n^{2}\\right)^{\\prime-n^{2}}=n^{\\prime} \\cdot n^{\\prime-2 n^{2}} \\geq n^{\\prime}\n\\]\n\nAlso, if \\( n=3 \\) or \\( 4, k \\geq 2 \\), then\n\\[\ng_{k}(n) \\geq g_{2}(3)=6!=720>32 \\geq 2 n^{2}\n\\]\nand if \\( n \\geq 5, k \\geq 1 \\),\n\\[\ng_{k}(n) \\geq n!\\geq n(n-1)(n-2)>2 n^{2} .\n\\]\n\nNow obviously \\( f_{1}(n)<g_{1}(n) \\) for any integer \\( n \\geq 3 \\) and \\( f_{2}(3)<f_{2}(4)= \\) \\( 256<720=g_{2}(3)<g_{2}(4) \\). We proceed by induction on \\( n \\). Assume \\( f_{k}(n) \\) \\( <g_{k}(n) \\) where \\( n \\geq 3 \\), and \\( k \\geq 2 \\) if \\( n=3 \\) or 4 . Then \\( g_{k}(n)>2 n^{2} \\), so by (1)\n\\[\nf_{k+1}(n)=n^{f_{k}(n)}<n^{g k(n)}<\\left[g_{k}(n)\\right]!=g_{k+1}(n) .\n\\]\n\nThis completes the inductive proof of the lower inequality.\nProof of the upper inequality. We note first that \\( g_{k+1}(n)=g_{k}(n!) \\) and put \\( g_{0}(n)=n \\).\n\nWe shall prove by induction on \\( k \\) that\n\\[\ng_{0}(n) g_{1}(n) g_{2}(n) \\cdots g_{k}(n)<n^{g_{0}(n) g_{1}(n) g_{2}(n) \\cdots g_{k-1}(n)}\n\\]\nfor \\( k \\geq 1 \\) and \\( n>2 \\).\nFirst, we consider \\( k=1 \\) and \\( n>2 \\). We have\n\\[\nn \\cdot n!=n \\cdot n(n-1) \\cdots 3 \\cdot 2<n \\cdot n \\cdot n \\cdots n \\cdot n=n^{n},\n\\]\ni.e.,\n\\[\ng_{0}(n) g_{1}(n)<n^{g 0(n)} .\n\\]\n\nNow assume that (2) holds for a fixed \\( k \\) and all \\( n>2 \\). Then\n\\[\n\\begin{aligned}\ng_{0}(n) g_{1}(n) g_{2}(n) \\cdots g_{k+1}(n) & =g_{0}(n) g_{0}(n!) g_{1}(n!) \\cdots g_{k}(n!) \\\\\n& <n(n!)^{g_{0}(n!) \\cdots g_{k-1}(n!)} \\\\\n& \\leq n^{g_{1}(n) \\cdots g_{k}(n)} \\cdot(n!)^{g_{1}(n) \\cdots g_{k}(n)} \\\\\n& =(n n!)^{g_{1}(n) \\cdots g_{k}(n)} \\\\\n& <\\left(n^{g_{0}(n) g_{1}(n) \\cdots g_{k}(n)}\\right. \\\\\n& =n^{g_{0}(n) g_{1}(n) \\cdots g_{k}(n)} .\n\\end{aligned}\n\\]\n\nThis completes the proof of (2) by induction on \\( k \\).\nNow we shall prove\n\\[\ng_{0}(n) g_{1}(n) \\cdots g_{k}(n)<f_{k+1}(n)\n\\]\nfor \\( k \\geq 1 \\) and \\( n \\geq 2 \\). (Obviously there is equality for \\( k=0 \\) ). For \\( k=1 \\), this is \\( n \\cdot n!<n^{n} \\), which we have already established. If we assume (3) for a fixed \\( k \\) and use (2) we obtain\n\\[\ng_{0}(n) g_{1}(n) \\cdots g_{k+1}(n)<n^{g_{0}(n) g_{1}(n) \\cdots g_{k}(n)}<n^{f_{k+1}(n)}=f_{k+2}(n),\n\\]\nwhich is (3) for \\( k+1 \\). Hence (3) for all \\( k \\) follows by induction. Obviously (3) implies the required upper inequality\n\\[\ng_{k}(n)<f_{k+1}(n) .\n\\]",
+  "vars": [
+    "n",
+    "t",
+    "j",
+    "f_1",
+    "f_2",
+    "f_j",
+    "f_j+1",
+    "f_k",
+    "f_k+1",
+    "f_k+2",
+    "g_0",
+    "g_1",
+    "g_2",
+    "g_k",
+    "g_k-1",
+    "g_k+1"
+  ],
+  "params": [
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexinteger",
+        "t": "boundinteger",
+        "j": "iteratorindex",
+        "k": "ladderindex",
+        "f_1": "primarytower",
+        "f_2": "secondarytower",
+        "f_j": "generaltower",
+        "f_j+1": "incrementtower",
+        "f_k": "leveltower",
+        "f_k+1": "forthcomingtower",
+        "f_k+2": "subsequenttower",
+        "g_0": "zerofactor",
+        "g_1": "firstfactor",
+        "g_2": "secondfactor",
+        "g_k": "levelfactor",
+        "g_k-1": "previousfactor",
+        "g_k+1": "nextfactor"
+      },
+      "question": "5. Let \\( ladderindex \\) be a positive integer, and \\( indexinteger \\) a positive integer greater than 2. Define\n\\[\nprimarytower(indexinteger)=indexinteger,\\; secondarytower(indexinteger)=indexinteger^{primarytower(indexinteger)},\\; \\ldots,\\; incrementtower(indexinteger)=indexinteger^{generaltower(indexinteger)}, \\text{ etc. }\n\\]\n\nProve either part of the inequality\n\\[\nleveltower(indexinteger)<indexinteger!!!\\cdots!<forthcomingtower(indexinteger)\n\\]\nwhere the middle term has \\( ladderindex \\) factorial symbols.",
+      "solution": "Solution. Define \\( firstfactor(indexinteger)=indexinteger!,\\; nextfactor(indexinteger)=\\left[levelfactor(indexinteger)\\right]! \\). Then the required inequalities are\n\\[\nleveltower(indexinteger)<levelfactor(indexinteger)<forthcomingtower(indexinteger), \\quad indexinteger>2.\n\\]\n\nProof of the lower inequality. If \\( boundinteger \\ge 2\\,indexinteger^{2} \\), then\n\\[\nboundinteger!>\\left(indexinteger^{2}\\right)^{\\prime-indexinteger^{2}}=indexinteger^{\\prime}\\cdot indexinteger^{\\prime-2\\,indexinteger^{2}} \\ge indexinteger^{\\prime}.\n\\]\n\nAlso, if \\( indexinteger=3 \\) or \\( 4, ladderindex \\ge 2 \\), then\n\\[\nlevelfactor(indexinteger) \\ge secondfactor(3)=6!=720>32 \\ge 2\\,indexinteger^{2}\n\\]\nand if \\( indexinteger \\ge 5, ladderindex \\ge 1 \\),\n\\[\nlevelfactor(indexinteger) \\ge indexinteger!\\ge indexinteger(indexinteger-1)(indexinteger-2)>2\\,indexinteger^{2}.\n\\]\n\nObviously \\( primarytower(indexinteger)<firstfactor(indexinteger) \\) for any integer \\( indexinteger \\ge 3 \\) and \\( secondarytower(3)<secondarytower(4)=256<720=secondfactor(3)<secondfactor(4) \\). Proceed by induction on \\( indexinteger \\). Assume \\( leveltower(indexinteger)<levelfactor(indexinteger) \\) where \\( indexinteger \\ge 3 \\) and \\( ladderindex \\ge 2 \\) if \\( indexinteger=3 \\) or 4. Then \\( levelfactor(indexinteger)>2\\,indexinteger^{2} \\), so by (1)\n\\[\nforthcomingtower(indexinteger)=indexinteger^{leveltower(indexinteger)}<indexinteger^{levelfactor(indexinteger)}<\\left[levelfactor(indexinteger)\\right]!=nextfactor(indexinteger).\n\\]\nThis completes the inductive proof of the lower inequality.\n\nProof of the upper inequality. First note that \\( nextfactor(indexinteger)=levelfactor(indexinteger!) \\) and set \\( zerofactor(indexinteger)=indexinteger \\).\n\nWe prove by induction on \\( ladderindex \\) that\n\\[\nzerofactor(indexinteger)\\,firstfactor(indexinteger)\\,secondfactor(indexinteger)\\cdots levelfactor(indexinteger)<indexinteger^{zerofactor(indexinteger)\\,firstfactor(indexinteger)\\,secondfactor(indexinteger)\\cdots previousfactor(indexinteger)}\n\\]\nfor \\( ladderindex \\ge 1 \\) and \\( indexinteger>2 \\).\n\nFor \\( ladderindex=1 \\) and \\( indexinteger>2 \\),\n\\[\nindexinteger\\cdot indexinteger!=indexinteger\\cdot indexinteger(indexinteger-1)\\cdots 3\\cdot 2<indexinteger\\cdot indexinteger\\cdot indexinteger\\cdots indexinteger=indexinteger^{indexinteger},\n\\]\nthat is,\n\\[\nzerofactor(indexinteger)\\,firstfactor(indexinteger)<indexinteger^{zerofactor(indexinteger)}.\n\\]\n\nAssume (2) holds for some fixed \\( ladderindex \\) and all \\( indexinteger>2 \\). Then\n\\[\n\\begin{aligned}\nzerofactor(indexinteger)\\,firstfactor(indexinteger)\\,secondfactor(indexinteger)\\cdots nextfactor(indexinteger)\n&=zerofactor(indexinteger)\\,zerofactor(indexinteger!)\\,firstfactor(indexinteger!)\\cdots levelfactor(indexinteger!)\\\\\n&<indexinteger\\,(indexinteger!)^{zerofactor(indexinteger!)\\cdots previousfactor(indexinteger!)}\\\\\n&\\le indexinteger^{firstfactor(indexinteger)\\cdots levelfactor(indexinteger)}\\,(indexinteger!)^{firstfactor(indexinteger)\\cdots levelfactor(indexinteger)}\\\\\n&=(indexinteger\\,indexinteger!)^{firstfactor(indexinteger)\\cdots levelfactor(indexinteger)}\\\\\n&<indexinteger^{zerofactor(indexinteger)\\,firstfactor(indexinteger)\\cdots levelfactor(indexinteger)}.\n\\end{aligned}\n\\]\nThus (2) holds for \\( ladderindex+1 \\) and hence for all \\( ladderindex \\).\n\nNow we prove\n\\[\nzerofactor(indexinteger)\\,firstfactor(indexinteger)\\cdots levelfactor(indexinteger)<forthcomingtower(indexinteger)\n\\]\nfor \\( ladderindex \\ge 1 \\) and \\( indexinteger \\ge 2 \\). Equality is clear for \\( ladderindex=0 \\). For \\( ladderindex=1 \\), the statement reduces to \\( indexinteger\\cdot indexinteger!<indexinteger^{indexinteger} \\), already shown. Assuming (3) for some \\( ladderindex \\) and using (2), we get\n\\[\nzerofactor(indexinteger)\\,firstfactor(indexinteger)\\cdots nextfactor(indexinteger)<indexinteger^{zerofactor(indexinteger)\\,firstfactor(indexinteger)\\cdots levelfactor(indexinteger)}<indexinteger^{forthcomingtower(indexinteger)}=subsequenttower(indexinteger),\n\\]\nwhich is (3) for \\( ladderindex+1 \\). Hence (3) holds for all \\( ladderindex \\), and in particular it implies\n\\[\nlevelfactor(indexinteger)<forthcomingtower(indexinteger).\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "t": "pinecones",
+        "j": "riverbank",
+        "f_1": "blueberry",
+        "f_2": "buttermilk",
+        "f_j": "stonewall",
+        "f_j+1": "dragonfly",
+        "f_k": "hummingjay",
+        "f_k+1": "marshmallow",
+        "f_k+2": "cheesecake",
+        "g_0": "rattlesnake",
+        "g_1": "alligator",
+        "g_2": "cottonwood",
+        "g_k": "thunderbolt",
+        "g_k-1": "switchblade",
+        "g_k+1": "mastermind",
+        "k": "bluefinch"
+      },
+      "question": "5. Let \\( bluefinch \\) be a positive integer, and \\( sunflower \\) a positive integer greater than 2 . Define\n\\[\nblueberry(sunflower)=sunflower, buttermilk(sunflower)=sunflower^{blueberry(sunflower)}, \\ldots, dragonfly(sunflower)=sunflower^{stonewall(sunflower)}, \\text { etc. }\n\\]\n\nProve either part of the inequality\n\\[\nhummingjay(sunflower)<sunflower!!!\\cdots!<marshmallow(sunflower)\n\\]\nwhere the middle term has \\( bluefinch \\) factorial symbols.",
+      "solution": "Solution. Define \\( alligator(sunflower)=sunflower!, mastermind(sunflower)=\\left[thunderbolt(sunflower)\\right]! \\). Then the required inequalities are\n\\[\nhummingjay(sunflower)<thunderbolt(sunflower)<marshmallow(sunflower), \\quad sunflower>2 .\n\\]\n\nProof of the lower inequality. If \\( pinecones \\geq 2 sunflower^{2} \\), then\n\\[\npinecones!>\\left(sunflower^{2}\\right)^{\\prime-sunflower^{2}}=sunflower^{\\prime} \\cdot sunflower^{\\prime-2 sunflower^{2}} \\geq sunflower^{\\prime}\n\\]\n\nAlso, if \\( sunflower=3 \\) or \\( 4, bluefinch \\geq 2 \\), then\n\\[\nthunderbolt(sunflower) \\geq cottonwood(3)=6!=720>32 \\geq 2 sunflower^{2}\n\\]\nand if \\( sunflower \\geq 5, bluefinch \\geq 1 \\),\n\\[\nthunderbolt(sunflower) \\geq sunflower!\\geq sunflower(sunflower-1)(sunflower-2)>2 sunflower^{2} .\n\\]\n\nNow obviously \\( blueberry(sunflower)<alligator(sunflower) \\) for any integer \\( sunflower \\geq 3 \\) and \\( buttermilk(3)<buttermilk(4)= \\) \\( 256<720=cottonwood(3)<cottonwood(4) \\). We proceed by induction on \\( sunflower \\). Assume \\( hummingjay(sunflower) \\)\n\\( <thunderbolt(sunflower) \\) where \\( sunflower \\geq 3 \\), and \\( bluefinch \\geq 2 \\) if \\( sunflower=3 \\) or 4 . Then \\( thunderbolt(sunflower)>2 sunflower^{2} \\), so by (1)\n\\[\nmarshmallow(sunflower)=sunflower^{hummingjay(sunflower)}<sunflower^{thunderbolt(sunflower)}<\\left[thunderbolt(sunflower)\\right]!=mastermind(sunflower) .\n\\]\n\nThis completes the inductive proof of the lower inequality.\nProof of the upper inequality. We note first that \\( mastermind(sunflower)=thunderbolt(sunflower!) \\) and put \\( rattlesnake(sunflower)=sunflower \\).\n\nWe shall prove by induction on \\( bluefinch \\) that\n\\[\nrattlesnake(sunflower) alligator(sunflower) cottonwood(sunflower) \\cdots thunderbolt(sunflower)<sunflower^{rattlesnake(sunflower) alligator(sunflower) cottonwood(sunflower) \\cdots switchblade(sunflower)}\n\\]\nfor \\( bluefinch \\geq 1 \\) and \\( sunflower>2 \\).\nFirst, we consider \\( bluefinch=1 \\) and \\( sunflower>2 \\). We have\n\\[\nsunflower \\cdot sunflower!=sunflower \\cdot sunflower(sunflower-1) \\cdots 3 \\cdot 2<sunflower \\cdot sunflower \\cdot sunflower \\cdots sunflower \\cdot sunflower=sunflower^{sunflower},\n\\]\ni.e.,\n\\[\nrattlesnake(sunflower) alligator(sunflower)<sunflower^{rattlesnake(sunflower)} .\n\\]\n\nNow assume that (2) holds for a fixed \\( bluefinch \\) and all \\( sunflower>2 \\). Then\n\\[\n\\begin{aligned}\nrattlesnake(sunflower) alligator(sunflower) cottonwood(sunflower) \\cdots mastermind(sunflower) & =rattlesnake(sunflower) rattlesnake(sunflower!) alligator(sunflower!) \\cdots thunderbolt(sunflower!) \\\n& <sunflower(sunflower!)^{rattlesnake(sunflower!) \\cdots switchblade(sunflower!)} \\\\\n& \\leq sunflower^{alligator(sunflower) \\cdots thunderbolt(sunflower)} \\cdot(sunflower!)^{alligator(sunflower) \\cdots thunderbolt(sunflower)} \\\\\n& =(sunflower \\ sunflower!)^{alligator(sunflower) \\cdots thunderbolt(sunflower)} \\\\\n& <\\left(sunflower^{rattlesnake(sunflower) alligator(sunflower) \\cdots thunderbolt(sunflower)}\\right. \\\\\n& =sunflower^{rattlesnake(sunflower) alligator(sunflower) \\cdots thunderbolt(sunflower)} .\n\\end{aligned}\n\\]\n\nThis completes the proof of (2) by induction on \\( bluefinch \\).\nNow we shall prove\n\\[\nrattlesnake(sunflower) alligator(sunflower) \\cdots thunderbolt(sunflower)<marshmallow(sunflower)\n\\]\nfor \\( bluefinch \\geq 1 \\) and \\( sunflower \\geq 2 \\). (Obviously there is equality for \\( bluefinch=0 \\) ). For \\( bluefinch=1 \\), this is \\( sunflower \\cdot sunflower!<sunflower^{sunflower} \\), which we have already established. If we assume (3) for a fixed \\( bluefinch \\) and use (2) we obtain\n\\[\nrattlesnake(sunflower) alligator(sunflower) \\cdots mastermind(sunflower)<sunflower^{rattlesnake(sunflower) alligator(sunflower) \\cdots thunderbolt(sunflower)}<sunflower^{marshmallow(sunflower)}=cheesecake(sunflower),\n\\]\nwhich is (3) for \\( bluefinch+1 \\). Hence (3) for all \\( bluefinch \\) follows by induction. Obviously (3) implies the required upper inequality\n\\[\nthunderbolt(sunflower)<marshmallow(sunflower) .\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "negativefraction",
+        "t": "smallnumber",
+        "j": "endpoint",
+        "f_1": "flatfuncone",
+        "f_2": "flatfunctwo",
+        "f_j": "flatfuncend",
+        "f_j+1": "flatfuncnext",
+        "f_k": "flatfunck",
+        "f_k+1": "flatfuncknext",
+        "f_k+2": "flatfuncktwo",
+        "g_0": "dividezero",
+        "g_1": "divideone",
+        "g_2": "dividetwo",
+        "g_k": "dividekay",
+        "g_k-1": "dividekprev",
+        "g_k+1": "divideknext",
+        "k": "minimums"
+      },
+      "question": "5. Let \\( minimums \\) be a positive integer, and \\( negativefraction \\) a positive integer greater than 2 . Define\n\\[\nflatfuncone(negativefraction)=negativefraction, flatfunctwo(negativefraction)=negativefraction^{flatfuncone(negativefraction)}, \\ldots, flatfuncnext(negativefraction)=negativefraction^{flatfuncend(negativefraction)}, \\text { etc. }\n\\]\n\nProve either part of the inequality\n\\[\nflatfunck(negativefraction)<negativefraction!!!\\cdots!<flatfuncknext(negativefraction)\n\\]\nwhere the middle term has \\( minimums \\) factorial symbols.",
+      "solution": "Solution. Define \\( divideone(negativefraction)=negativefraction!, divideknext(negativefraction)=\\left[dividekay(negativefraction)\\right]! \\). Then the required inequalities are\n\\[\nflatfunck(negativefraction)<dividekay(negativefraction)<flatfuncknext(negativefraction), \\quad negativefraction>2 .\n\\]\n\nProof of the lower inequality. If \\( smallnumber \\geq 2 negativefraction^{2} \\), then\n\\[\nsmallnumber!>\\left(negativefraction^{2}\\right)^{\\prime-negativefraction^{2}}=negativefraction^{\\prime} \\cdot negativefraction^{\\prime-2 negativefraction^{2}} \\geq negativefraction^{\\prime}\n\\]\n\nAlso, if \\( negativefraction=3 \\) or \\( 4, minimums \\geq 2 \\), then\n\\[\ndividekay(negativefraction) \\geq divideone(3)=6!=720>32 \\geq 2 negativefraction^{2}\n\\]\nand if \\( negativefraction \\geq 5, minimums \\geq 1 \\),\n\\[\ndividekay(negativefraction) \\geq negativefraction!\\geq negativefraction(negativefraction-1)(negativefraction-2)>2 negativefraction^{2} .\n\\]\n\nNow obviously \\( flatfuncone(negativefraction)<divideone(negativefraction) \\) for any integer \\( negativefraction \\geq 3 \\) and \\( flatfunctwo(3)<flatfunctwo(4)=256<720=dividetwo(3)<dividetwo(4) \\). We proceed by induction on \\( negativefraction \\). Assume \\( flatfunck(negativefraction) <dividekay(negativefraction) \\) where \\( negativefraction \\geq 3 \\), and \\( minimums \\geq 2 \\) if \\( negativefraction=3 \\) or 4 . Then \\( dividekay(negativefraction)>2 negativefraction^{2} \\), so by (1)\n\\[\nflatfuncknext(negativefraction)=negativefraction^{flatfunck(negativefraction)}<negativefraction^{dividekay(negativefraction)}<\\left[dividekay(negativefraction)\\right]!=divideknext(negativefraction) .\n\\]\n\nThis completes the inductive proof of the lower inequality.\nProof of the upper inequality. We note first that \\( divideknext(negativefraction)=dividekay(negativefraction!) \\) and put \\( dividezero(negativefraction)=negativefraction \\).\n\nWe shall prove by induction on \\( minimums \\) that\n\\[\ndividezero(negativefraction) divideone(negativefraction) dividetwo(negativefraction) \\cdots dividekay(negativefraction)<negativefraction^{dividezero(negativefraction) divideone(negativefraction) dividetwo(negativefraction) \\cdots dividekprev(negativefraction)}\n\\]\nfor \\( minimums \\geq 1 \\) and \\( negativefraction>2 \\).\nFirst, we consider \\( minimums=1 \\) and \\( negativefraction>2 \\). We have\n\\[\nnegativefraction \\cdot negativefraction!=negativefraction \\cdot negativefraction(negativefraction-1) \\cdots 3 \\cdot 2<negativefraction \\cdot negativefraction \\cdot negativefraction \\cdots negativefraction \\cdot negativefraction=negativefraction^{negativefraction},\n\\]\ni.e.,\n\\[\ndividezero(negativefraction) divideone(negativefraction)<negativefraction^{dividezero(negativefraction)} .\n\\]\n\nNow assume that (2) holds for a fixed \\( minimums \\) and all \\( negativefraction>2 \\). Then\n\\[\n\\begin{aligned}\ndividezero(negativefraction) divideone(negativefraction) dividetwo(negativefraction) \\cdots divideknext(negativefraction) & =dividezero(negativefraction) dividezero(negativefraction!) divideone(negativefraction!) \\cdots dividekay(negativefraction!) \\\n& <negativefraction(negativefraction!)^{dividezero(negativefraction!) \\cdots dividekprev(negativefraction!)} \\\n& \\leq negativefraction^{divideone(negativefraction) \\cdots dividekay(negativefraction)} \\cdot(negativefraction!)^{divideone(negativefraction) \\cdots dividekay(negativefraction)} \\\n& =(negativefraction negativefraction!)^{divideone(negativefraction) \\cdots dividekay(negativefraction)} \\\n& <\\left(negativefraction^{dividezero(negativefraction) divideone(negativefraction) \\cdots dividekay(negativefraction)}\\right. \\\n& =negativefraction^{dividezero(negativefraction) divideone(negativefraction) \\cdots dividekay(negativefraction)} .\n\\end{aligned}\n\\]\n\nThis completes the proof of (2) by induction on \\( minimums \\).\nNow we shall prove\n\\[\ndividezero(negativefraction) divideone(negativefraction) \\cdots dividekay(negativefraction)<flatfuncknext(negativefraction)\n\\]\nfor \\( minimums \\geq 1 \\) and \\( negativefraction \\geq 2 \\). (Obviously there is equality for \\( minimums=0 \\) ). For \\( minimums=1 \\), this is \\( negativefraction \\cdot negativefraction!<negativefraction^{negativefraction} \\), which we have already established. If we assume (3) for a fixed \\( minimums \\) and use (2) we obtain\n\\[\ndividezero(negativefraction) divideone(negativefraction) \\cdots divideknext(negativefraction)<negativefraction^{dividezero(negativefraction) divideone(negativefraction) \\cdots dividekay(negativefraction)}<negativefraction^{flatfuncknext(negativefraction)}=flatfuncktwo(negativefraction),\n\\]\nwhich is (3) for \\( minimums+1 \\). Hence (3) for all \\( minimums \\) follows by induction. Obviously (3) implies the required upper inequality\n\\[\ndividekay(negativefraction)<flatfuncknext(negativefraction) .\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "t": "zhykplom",
+        "j": "fsgqneuv",
+        "f_1": "djwknrla",
+        "f_2": "mlsgtqpo",
+        "f_j": "kzvabmxe",
+        "f_j+1": "onzptria",
+        "f_k": "vgbekzny",
+        "f_k+1": "ewbnlmso",
+        "f_k+2": "pqudchxr",
+        "g_0": "lyqsnfte",
+        "g_1": "xkprmwdj",
+        "g_2": "utdzheqa",
+        "g_k": "cvhplogi",
+        "g_k-1": "rtyufbsa",
+        "g_k+1": "bhmcieaw",
+        "k": "asduvtrm"
+      },
+      "question": "5. Let \\( asduvtrm \\) be a positive integer, and \\( qzxwvtnp \\) a positive integer greater than 2 . Define\n\\[\ndjwknrla(qzxwvtnp)=qzxwvtnp, mlsgtqpo(qzxwvtnp)=qzxwvtnp^{djwknrla(qzxwvtnp)}, \\ldots, onzptria(qzxwvtnp)=qzxwvtnp^{kzvabmxe(qzxwvtnp)}, \\text { etc. }\n\\]\n\nProve either part of the inequality\n\\[\nvgbekzny(qzxwvtnp)<qzxwvtnp!!!\\cdots!<ewbnlmso(qzxwvtnp)\n\\]\nwhere the middle term has \\( asduvtrm \\) factorial symbols.",
+      "solution": "Solution. Define \\( xkprmwdj(qzxwvtnp)=qzxwvtnp!, bhmcieaw(qzxwvtnp)=\\left[cvhplogi(qzxwvtnp)\\right]! \\). Then the required inequalities are\n\\[\nvgbekzny(qzxwvtnp)<cvhplogi(qzxwvtnp)<ewbnlmso(qzxwvtnp), \\quad qzxwvtnp>2 .\n\\]\n\nProof of the lower inequality. If \\( zhykplom \\geq 2 qzxwvtnp^{2} \\), then\n\\[\nzhykplom!>\\left(qzxwvtnp^{2}\\right)^{\\prime-qzxwvtnp^{2}}=qzxwvtnp^{\\prime} \\cdot qzxwvtnp^{\\prime-2 qzxwvtnp^{2}} \\geq qzxwvtnp^{\\prime}\n\\]\n\nAlso, if \\( qzxwvtnp=3 \\) or \\( 4, asduvtrm \\geq 2 \\), then\n\\[\ncvhplogi(qzxwvtnp) \\geq utdzheqa(3)=6!=720>32 \\geq 2 qzxwvtnp^{2}\n\\]\nand if \\( qzxwvtnp \\geq 5, asduvtrm \\geq 1 \\),\n\\[\ncvhplogi(qzxwvtnp) \\geq qzxwvtnp!\\geq qzxwvtnp(qzxwvtnp-1)(qzxwvtnp-2)>2 qzxwvtnp^{2} .\n\\]\n\nNow obviously \\( djwknrla(qzxwvtnp)<xkprmwdj(qzxwvtnp) \\) for any integer \\( qzxwvtnp \\geq 3 \\) and \\( mlsgtqpo(3)<mlsgtqpo(4)=256<720=utdzheqa(3)<utdzheqa(4) \\). We proceed by induction on \\( qzxwvtnp \\). Assume \\( vgbekzny(qzxwvtnp)<cvhplogi(qzxwvtnp) \\) where \\( qzxwvtnp \\geq 3 \\), and \\( asduvtrm \\geq 2 \\) if \\( qzxwvtnp=3 \\) or 4 . Then \\( cvhplogi(qzxwvtnp)>2 qzxwvtnp^{2} \\), so by (1)\n\\[\newbnlmso(qzxwvtnp)=qzxwvtnp^{vgbekzny(qzxwvtnp)}<qzxwvtnp^{cvhplogi(qzxwvtnp)}<\\left[cvhplogi(qzxwvtnp)\\right]!=bhmcieaw(qzxwvtnp) .\n\\]\n\nThis completes the inductive proof of the lower inequality.\n\nProof of the upper inequality. We note first that \\( bhmcieaw(qzxwvtnp)=cvhplogi(qzxwvtnp!) \\) and put \\( lyqsnfte(qzxwvtnp)=qzxwvtnp \\).\n\nWe shall prove by induction on \\( asduvtrm \\) that\n\\[\nlyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) utdzheqa(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)<qzxwvtnp^{lyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) utdzheqa(qzxwvtnp) \\cdots rtyufbsa(qzxwvtnp)}\n\\]\nfor \\( asduvtrm \\geq 1 \\) and \\( qzxwvtnp>2 \\).\n\nFirst, we consider \\( asduvtrm=1 \\) and \\( qzxwvtnp>2 \\). We have\n\\[\nqzxwvtnp \\cdot qzxwvtnp!=qzxwvtnp \\cdot qzxwvtnp(qzxwvtnp-1) \\cdots 3 \\cdot 2<qzxwvtnp \\cdot qzxwvtnp \\cdot qzxwvtnp \\cdots qzxwvtnp \\cdot qzxwvtnp=qzxwvtnp^{qzxwvtnp},\n\\]\ni.e.,\n\\[\nlyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp)<qzxwvtnp^{lyqsnfte(qzxwvtnp)} .\n\\]\n\nNow assume that (2) holds for a fixed \\( asduvtrm \\) and all \\( qzxwvtnp>2 \\). Then\n\\[\n\\begin{aligned}\nlyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) utdzheqa(qzxwvtnp) \\cdots bhmcieaw(qzxwvtnp) & =lyqsnfte(qzxwvtnp) lyqsnfte(qzxwvtnp!) xkprmwdj(qzxwvtnp!) \\cdots cvhplogi(qzxwvtnp!) \\\\\n& <qzxwvtnp(qzxwvtnp!)^{lyqsnfte(qzxwvtnp!) \\cdots rtyufbsa(qzxwvtnp!)} \\\\\n& \\leq qzxwvtnp^{xkprmwdj(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)} \\cdot(qzxwvtnp!)^{xkprmwdj(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)} \\\\\n& =(qzxwvtnp \\, qzxwvtnp!)^{xkprmwdj(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)} \\\\\n& <\\left(qzxwvtnp^{lyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)}\\right. \\\\\n& =qzxwvtnp^{lyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)} .\n\\end{aligned}\n\\]\n\nThis completes the proof of (2) by induction on \\( asduvtrm \\).\n\nNow we shall prove\n\\[\nlyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)<ewbnlmso(qzxwvtnp)\n\\]\nfor \\( asduvtrm \\geq 1 \\) and \\( qzxwvtnp \\geq 2 \\). (Obviously there is equality for \\( asduvtrm=0 \\) ). For \\( asduvtrm=1 \\), this is \\( qzxwvtnp \\cdot qzxwvtnp!<qzxwvtnp^{qzxwvtnp} \\), which we have already established. If we assume (3) for a fixed \\( asduvtrm \\) and use (2) we obtain\n\\[\nlyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) \\cdots bhmcieaw(qzxwvtnp)<qzxwvtnp^{lyqsnfte(qzxwvtnp) xkprmwdj(qzxwvtnp) \\cdots cvhplogi(qzxwvtnp)}<qzxwvtnp^{ewbnlmso(qzxwvtnp)}=pqudchxr(qzxwvtnp),\n\\]\nwhich is (3) for \\( asduvtrm+1 \\). Hence (3) for all \\( asduvtrm \\) follows by induction. Obviously (3) implies the required upper inequality\n\\[\ncvhplogi(qzxwvtnp)<ewbnlmso(qzxwvtnp) .\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let k be a positive integer and let n be an integer strictly larger than 3.  Define two sequences by\n\nf_1(n)=n,  f_{j+1}(n)=n^{f_{j}(n)} (j \\geq  1),\n\nh_1(n)=n!,  h_{j+1}(n)=\\bigl(h_{j}(n)\\bigr)! (j \\geq  1).\n\nThus h_k(n)=n!!!\\cdots ! with exactly k factorial signs.  Prove that for every n>3 and every positive integer k one has the strict double inequality\n\n                f_k(n) < h_k(n) < f_{k+1}(n).",
+      "solution": "Throughout the proof we fix an integer n>3 and suppress the argument n, writing simply f_j and h_j (j \\geq  1).\nWe must establish for every k \\geq  1\n(I)  f_k < h_k and (II)  h_k < f_{k+1}.\nThe two inequalities are treated separately.\n\n-------------------------------------------------\n1.  Two auxiliary estimates\n-------------------------------------------------\nLemma 1.  (Factorials eventually dominate exponentials)\nFor every integer n \\geq  3 and every integer t \\geq  2n^2 one has t! > n^t.\n\nProof.  Write t! as the product of the first n^2 factors and the remaining t-n^2 factors:\n\nt! = (1\\cdots n^2) \\cdot  (n^2+1)\\cdots t \\geq  (n^2)! \\cdot  (n^2)^{t-n^2}.             (1)\n\nA standard consequence of Stirling's formula is m! > (m/e)^m for m \\geq  1; taking m=n^2 \\geq  9 gives\n\n        (n^2)! > (n^2/e)^{n^2} \\geq  n^{n^2}                        (2)\n(the last inequality uses n^2/e \\geq  n for n \\geq  3).  Combining (1) and (2) we obtain\n\nt! > n^{n^2} \\cdot  (n^2)^{t-n^2} = n^{n^2}\\cdot n^{2(t-n^2)} = n^{2t-n^2}.\n\nBecause t \\geq  2n^2, the exponent 2t-n^2 is at least t, so t! > n^t.\n\\blacksquare \n\nLemma 2.  (A crude upper bound for a factorial)\nFor every integer m \\geq  2 one has m! < m^{m}.\nIndeed, each factor in m! is at most m.\n\\blacksquare \n\n-------------------------------------------------\n2.  The lower inequality  f_k < h_k\n-------------------------------------------------\nBase step k=1.  Because n>3, f_1 = n < n! = h_1.\n\nInductive step.  Assume f_k < h_k for some k \\geq  1.\n\n*  If h_k \\geq  2n^2, Lemma 1 with t=h_k gives\n  h_{k+1}=h_k! > n^{h_k} > n^{f_k}=f_{k+1},\nso f_{k+1} < h_{k+1}.\n\n*  If h_k < 2n^2 we must have (n,k)=(4,1):\n    - for n \\geq  5 we have n! = h_1 \\geq  n(n-1)(n-2) > 2n^2;\n    - for n = 4, h_1 = 24 < 2\\cdot 4^2 = 32, while h_2 = 24! >> 2\\cdot 4^2.\n  A direct check shows f_2(4)=4^4=256 < 24! = h_2(4).\n\nHence in every case f_{k+1} < h_{k+1}, completing the induction and proving f_k < h_k for all k.\n\\blacksquare \n\n-------------------------------------------------\n3.  A growth-comparison lemma\n-------------------------------------------------\nLemma 3.  Let n \\geq  4.  For every real x \\geq  n one has x\\cdot log_n x < n^{x}.\n\nProof.  Define g(x) = n^{x} - x\\cdot log_n x.  Because g(n)=n^{n}-n>0 it suffices to show g'(x) > 0 for x \\geq  n.\n\n g'(x) = n^{x} ln n - (ln x + 1)/ln n.\n\nFor x \\geq  n \\geq  4 we have ln x + 1 \\leq  x \\leq  n^{x} ln^2n, so the right-hand term is dominated by n^{x} ln n and g'(x) is positive.  Thus g(x) increases and stays positive for x \\geq  n, proving the claim.\n\\blacksquare \n\n-------------------------------------------------\n4.  The upper inequality  h_k < f_{k+1}\n-------------------------------------------------\nWe again argue by induction on k.\n\nBase step k=1.\n  h_1 = n! < n^{n} = f_2 (by Lemma 2).\n\nInductive step.  Assume h_k < f_{k+1}.  Set A = h_k.  Then\n\n(1) h_{k+1} = A! < A^{A} (by Lemma 2).\n\n(2) Because x \\mapsto  x^{x} is increasing for x \\geq  e and A < f_{k+1}, we have\n  A^{A} < f_{k+1}^{f_{k+1}}.\n\n(3) Rewrite the right-hand side with base n:\n  f_{k+1}^{f_{k+1}} = (n^{f_{k+1}})^{f_{k+1}} = n^{f_{k+1}\\cdot log_n f_{k+1}}.\n  By Lemma 3 (with x = f_{k+1} \\geq  n) we get\n  f_{k+1}\\cdot log_n f_{k+1} < n^{f_{k+1}} = f_{k+2}.\n  Hence\n  n^{f_{k+1}\\cdot log_n f_{k+1}} < n^{f_{k+2}} = f_{k+2}.\n\nChaining (1)-(3) yields\n  h_{k+1} < f_{k+2}.\nThus the induction advances and h_k < f_{k+1} holds for all k.\n\\blacksquare \n\n-------------------------------------------------\n5.  Conclusion\n-------------------------------------------------\nThe two independent inductions give, for every integer n>3 and every k \\geq  1,\n  f_k(n) < h_k(n) < f_{k+1}(n).\n\\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Growth-comparison lemma: for sufficiently large t (≥ C·n^α) one has t! > n^t",
+          "Size assurance: prove g_k(n) already exceeds that threshold, via small-n check and/or larger k",
+          "Inductive amplification: f_k(n) < g_k(n) ⇒ f_{k+1}(n) < g_{k+1}(n), giving the lower bound",
+          "Product-vs-exponential lemma: Π_{i=0}^{k} g_i(n) < n^{Π_{i=0}^{k-1} g_i(n)} proved by induction using g_{k+1}(n)=g_k(n!)",
+          "Use the product bound to inductively obtain g_k(n) < f_{k+1}(n), completing the upper bound"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "multiplicative constant in the threshold where factorial overtakes n^t",
+            "original": "2  (as in 2·n^2)"
+          },
+          "slot2": {
+            "description": "power of n used in that threshold",
+            "original": "2  (as in n^2)"
+          },
+          "slot3": {
+            "description": "list of small n that require a higher k to clear the threshold",
+            "original": "{3,4}"
+          },
+          "slot4": {
+            "description": "first n for which the direct estimate n! > threshold is used",
+            "original": "5  (as in n ≥ 5)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

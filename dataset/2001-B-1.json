@@ -1,0 +1,119 @@
+{
+  "index": "2001-B-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $n$ be an even positive integer.  Write the numbers\n$1,2,\\ldots,n^2$ in the squares of an $n\\times n$ grid so that the\n$k$-th row, from left to right, is\n\\[(k-1)n+1,(k-1)n+2,\\ldots, (k-1)n+n.\\]\nColor the squares of the grid so that half of the squares in each\nrow and in each column are red and the other half are black (a\ncheckerboard coloring is one possibility).  Prove that for each\ncoloring, the sum of the numbers on the red squares is equal to\nthe sum of the numbers on the black squares.",
+  "solution": "Let $R$ (resp.\\ $B$) denote the set of red (resp.\\ black) squares in\nsuch a coloring, and for $s\\in R\\cup B$, let $f(s)n+g(s)+1$ denote the\nnumber written in square $s$, where $0\\leq f(s),g(s)\\leq n-1$.\nThen it is clear that the value of $f(s)$ depends only on the row of\n$s$, while the value of $g(s)$ depends only on the column of $s$.  Since\nevery row contains exactly $n/2$ elements of $R$ and $n/2$ elements of $B$,\n\\[ \\sum_{s\\in R} f(s) = \\sum_{s\\in B} f(s) .\\]\nSimilarly, because every column contains exactly $n/2$ elements of $R$ and\n$n/2$ elements of $B$,\n\\[ \\sum_{s\\in R} g(s) = \\sum_{s\\in B} g(s) .\\]\nIt follows that\n\\[\\sum_{s\\in R} f(s)n+g(s)+1 = \\sum_{s\\in B} f(s)n+g(s)+1,\\]\nas desired.\n\nNote: Richard Stanley points out a theorem of Ryser (see Ryser,\n\\textit{Combinatorial Mathematics}, Theorem~3.1) that can also be applied.\nNamely, if $A$ and $B$ are $0-1$ matrices with the same row and column\nsums, then there is a sequence of operations on $2 \\times 2$ matrices\nof the form\n\\[\n\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\to\n\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}\n\\]\nor vice versa, which transforms $A$ into $B$. If we identify 0 and 1 with\nred and black, then the given coloring and the checkerboard coloring\nboth satisfy the sum condition. Since the desired result is clearly\ntrue for the checkerboard coloring, and performing the matrix operations\ndoes not affect this, the desired result follows in general.",
+  "vars": [
+    "k",
+    "s"
+  ],
+  "params": [
+    "n",
+    "R",
+    "B",
+    "f",
+    "g",
+    "A"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "rowind",
+        "s": "squares",
+        "n": "gridsize",
+        "R": "redset",
+        "B": "blackset",
+        "f": "rowfunc",
+        "g": "colfunc",
+        "A": "matrixa"
+      },
+      "question": "Let $gridsize$ be an even positive integer.  Write the numbers\n$1,2,\\ldots,gridsize^2$ in the squares of an $gridsize\\times gridsize$ grid so that the\n$rowind$-th row, from left to right, is\n\\[(rowind-1)gridsize+1,(rowind-1)gridsize+2,\\ldots, (rowind-1)gridsize+gridsize.\\]\nColor the squares of the grid so that half of the squares in each\nrow and in each column are red and the other half are black (a\ncheckerboard coloring is one possibility).  Prove that for each\ncoloring, the sum of the numbers on the red squares is equal to\nthe sum of the numbers on the black squares.",
+      "solution": "Let $redset$ (resp.\\ $blackset$) denote the set of red (resp.\\ black) squares in\nsuch a coloring, and for $squares\\in redset\\cup blackset$, let $rowfunc(squares)gridsize+colfunc(squares)+1$ denote the\nnumber written in square $squares$, where $0\\leq rowfunc(squares),colfunc(squares)\\leq gridsize-1$.\nThen it is clear that the value of $rowfunc(squares)$ depends only on the row of\n$squares$, while the value of $colfunc(squares)$ depends only on the column of $squares$.  Since\nevery row contains exactly $gridsize/2$ elements of $redset$ and $gridsize/2$ elements of $blackset$,\n\\[ \\sum_{squares\\in redset} rowfunc(squares) = \\sum_{squares\\in blackset} rowfunc(squares) .\\]\nSimilarly, because every column contains exactly $gridsize/2$ elements of $redset$ and\n$gridsize/2$ elements of $blackset$,\n\\[ \\sum_{squares\\in redset} colfunc(squares) = \\sum_{squares\\in blackset} colfunc(squares) .\\]\nIt follows that\n\\[\\sum_{squares\\in redset} rowfunc(squares)gridsize+colfunc(squares)+1 = \\sum_{squares\\in blackset} rowfunc(squares)gridsize+colfunc(squares)+1,\\]\nas desired.\n\nNote: Richard Stanley points out a theorem of Ryser (see Ryser,\n\\textit{Combinatorial Mathematics}, Theorem~3.1) that can also be applied.\nNamely, if $matrixa$ and $blackset$ are $0-1$ matrices with the same row and column\nsums, then there is a sequence of operations on $2 \\times 2$ matrices\nof the form\n\\[\n\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\to\n\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}\n\\]\nor vice versa, which transforms $matrixa$ into $blackset$. If we identify 0 and 1 with\nred and black, then the given coloring and the checkerboard coloring\nboth satisfy the sum condition. Since the desired result is clearly\ntrue for the checkerboard coloring, and performing the matrix operations\ndoes not affect this, the desired result follows in general."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "marzipans",
+        "s": "tumblebee",
+        "n": "periwinks",
+        "R": "coppervet",
+        "B": "almondfig",
+        "f": "dandelion",
+        "g": "porcupine",
+        "A": "nectarine"
+      },
+      "question": "Let $periwinks$ be an even positive integer.  Write the numbers\n$1,2,\\ldots,periwinks^2$ in the squares of an $periwinks\\times periwinks$ grid so that the\n$marzipans$-th row, from left to right, is\n\\[(marzipans-1)periwinks+1,(marzipans-1)periwinks+2,\\ldots, (marzipans-1)periwinks+periwinks.\\]\nColor the squares of the grid so that half of the squares in each\nrow and in each column are red and the other half are black (a\ncheckerboard coloring is one possibility).  Prove that for each\ncoloring, the sum of the numbers on the red squares is equal to\nthe sum of the numbers on the black squares.",
+      "solution": "Let $coppervet$ (resp.\\ $almondfig$) denote the set of red (resp.\\ black) squares in\nsuch a coloring, and for $tumblebee\\in coppervet\\cup almondfig$, let $dandelion(tumblebee)periwinks+porcupine(tumblebee)+1$ denote the\nnumber written in square $tumblebee$, where $0\\leq dandelion(tumblebee),porcupine(tumblebee)\\leq periwinks-1$.\nThen it is clear that the value of $dandelion(tumblebee)$ depends only on the row of\n$tumblebee$, while the value of $porcupine(tumblebee)$ depends only on the column of $tumblebee$.  Since\nevery row contains exactly $periwinks/2$ elements of $coppervet$ and $periwinks/2$ elements of $almondfig$,\n\\[ \\sum_{tumblebee\\in coppervet} dandelion(tumblebee) = \\sum_{tumblebee\\in almondfig} dandelion(tumblebee) .\\]\nSimilarly, because every column contains exactly $periwinks/2$ elements of $coppervet$ and\n$periwinks/2$ elements of $almondfig$,\n\\[ \\sum_{tumblebee\\in coppervet} porcupine(tumblebee) = \\sum_{tumblebee\\in almondfig} porcupine(tumblebee) .\\]\nIt follows that\n\\[\\sum_{tumblebee\\in coppervet} dandelion(tumblebee)periwinks+porcupine(tumblebee)+1 = \\sum_{tumblebee\\in almondfig} dandelion(tumblebee)periwinks+porcupine(tumblebee)+1,\\]\nas desired.\n\nNote: Richard Stanley points out a theorem of Ryser (see Ryser,\n\\textit{Combinatorial Mathematics}, Theorem~3.1) that can also be applied.\nNamely, if $nectarine$ and $almondfig$ are $0-1$ matrices with the same row and column\nsums, then there is a sequence of operations on $2 \\times 2$ matrices\nof the form\n\\[\n\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\to\n\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}\n\\]\nor vice versa, which transforms $nectarine$ into $almondfig$. If we identify 0 and 1 with\nred and black, then the given coloring and the checkerboard coloring\nboth satisfy the sum condition. Since the desired result is clearly\ntrue for the checkerboard coloring, and performing the matrix operations\ndoes not affect this, the desired result follows in general."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "columnidx",
+        "s": "circleshape",
+        "n": "oddinteger",
+        "R": "greensquares",
+        "B": "whitesquares",
+        "f": "columnmap",
+        "g": "rowmapping",
+        "A": "vectorfield"
+      },
+      "question": "Let $oddinteger$ be an even positive integer.  Write the numbers\n$1,2,\\ldots,oddinteger^2$ in the squares of an $oddinteger\\times oddinteger$ grid so that the\n$columnidx$-th row, from left to right, is\n\\[(columnidx-1)oddinteger+1,(columnidx-1)oddinteger+2,\\ldots, (columnidx-1)oddinteger+oddinteger.\\]\nColor the squares of the grid so that half of the squares in each\nrow and in each column are red and the other half are black (a\ncheckerboard coloring is one possibility).  Prove that for each\ncoloring, the sum of the numbers on the red squares is equal to\nthe sum of the numbers on the black squares.",
+      "solution": "Let $greensquares$ (resp.\\ $whitesquares$) denote the set of red (resp.\\ black) squares in\nsuch a coloring, and for $circleshape\\in greensquares\\cup whitesquares$, let $columnmap(circleshape)oddinteger+rowmapping(circleshape)+1$ denote the\nnumber written in square $circleshape$, where $0\\leq columnmap(circleshape),rowmapping(circleshape)\\leq oddinteger-1$.\nThen it is clear that the value of $columnmap(circleshape)$ depends only on the row of\n$circleshape$, while the value of $rowmapping(circleshape)$ depends only on the column of $circleshape$.  Since\nevery row contains exactly $oddinteger/2$ elements of $greensquares$ and $oddinteger/2$ elements of $whitesquares$,\n\\[ \\sum_{circleshape\\in greensquares} columnmap(circleshape) = \\sum_{circleshape\\in whitesquares} columnmap(circleshape) .\\]\nSimilarly, because every column contains exactly $oddinteger/2$ elements of $greensquares$ and\n$oddinteger/2$ elements of $whitesquares$,\n\\[ \\sum_{circleshape\\in greensquares} rowmapping(circleshape) = \\sum_{circleshape\\in whitesquares} rowmapping(circleshape) .\\]\nIt follows that\n\\[\\sum_{circleshape\\in greensquares} columnmap(circleshape)oddinteger+rowmapping(circleshape)+1 = \\sum_{circleshape\\in whitesquares} columnmap(circleshape)oddinteger+rowmapping(circleshape)+1,\\]\nas desired.\n\nNote: Richard Stanley points out a theorem of Ryser (see Ryser,\n\\textit{Combinatorial Mathematics}, Theorem~3.1) that can also be applied.\nNamely, if $vectorfield$ and $whitesquares$ are $0-1$ matrices with the same row and column\nsums, then there is a sequence of operations on $2 \\times 2$ matrices\nof the form\n\\[\n\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\to\n\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}\n\\]\nor vice versa, which transforms $vectorfield$ into $whitesquares$. If we identify 0 and 1 with\nred and black, then the given coloring and the checkerboard coloring\nboth satisfy the sum condition. Since the desired result is clearly\ntrue for the checkerboard coloring, and performing the matrix operations\ndoes not affect this, the desired result follows in general."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "xlprmnoq",
+        "s": "dqjsklwe",
+        "n": "zmbvtcqe",
+        "R": "peojxkaw",
+        "B": "mwytrzls",
+        "f": "udbqnoas",
+        "g": "achvrpmt",
+        "A": "vzxulnid"
+      },
+      "question": "Let $zmbvtcqe$ be an even positive integer.  Write the numbers\n$1,2,\\ldots,zmbvtcqe^2$ in the squares of an $zmbvtcqe\\times zmbvtcqe$ grid so that the\n$xlprmnoq$-th row, from left to right, is\n\\[(xlprmnoq-1)zmbvtcqe+1,(xlprmnoq-1)zmbvtcqe+2,\\ldots, (xlprmnoq-1)zmbvtcqe+zmbvtcqe.\\]\nColor the squares of the grid so that half of the squares in each\nrow and in each column are red and the other half are black (a\ncheckerboard coloring is one possibility).  Prove that for each\ncoloring, the sum of the numbers on the red squares is equal to\nthe sum of the numbers on the black squares.",
+      "solution": "Let $peojxkaw$ (resp.\\ $mwytrzls$) denote the set of red (resp.\\ black) squares in\nsuch a coloring, and for $dqjsklwe\\in peojxkaw\\cup mwytrzls$, let $udbqnoas(dqjsklwe)zmbvtcqe+achvrpmt(dqjsklwe)+1$ denote the\nnumber written in square $dqjsklwe$, where $0\\leq udbqnoas(dqjsklwe),achvrpmt(dqjsklwe)\\leq zmbvtcqe-1$.\nThen it is clear that the value of $udbqnoas(dqjsklwe)$ depends only on the row of\n$dqjsklwe$, while the value of $achvrpmt(dqjsklwe)$ depends only on the column of $dqjsklwe$.  Since\nevery row contains exactly $zmbvtcqe/2$ elements of $peojxkaw$ and $zmbvtcqe/2$ elements of $mwytrzls$,\n\\[ \\sum_{dqjsklwe\\in peojxkaw} udbqnoas(dqjsklwe) = \\sum_{dqjsklwe\\in mwytrzls} udbqnoas(dqjsklwe) .\\]\nSimilarly, because every column contains exactly $zmbvtcqe/2$ elements of $peojxkaw$ and\n$zmbvtcqe/2$ elements of $mwytrzls$,\n\\[ \\sum_{dqjsklwe\\in peojxkaw} achvrpmt(dqjsklwe) = \\sum_{dqjsklwe\\in mwytrzls} achvrpmt(dqjsklwe) .\\]\nIt follows that\n\\[\\sum_{dqjsklwe\\in peojxkaw} udbqnoas(dqjsklwe)zmbvtcqe+achvrpmt(dqjsklwe)+1 = \\sum_{dqjsklwe\\in mwytrzls} udbqnoas(dqjsklwe)zmbvtcqe+achvrpmt(dqjsklwe)+1,\\]\nas desired.\n\nNote: Richard Stanley points out a theorem of Ryser (see Ryser,\n\\textit{Combinatorial Mathematics}, Theorem~3.1) that can also be applied.\nNamely, if $vzxulnid$ and $mwytrzls$ are $0-1$ matrices with the same row and column\nsums, then there is a sequence of operations on $2 \\times 2$ matrices\nof the form\n\\[\n\\begin{pmatrix} 0 & 1 \\\\ 1 & 0 \\end{pmatrix} \\to\n\\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\end{pmatrix}\n\\]\nor vice versa, which transforms $vzxulnid$ into $mwytrzls$. If we identify 0 and 1 with\nred and black, then the given coloring and the checkerboard coloring\nboth satisfy the sum condition. Since the desired result is clearly\ntrue for the checkerboard coloring, and performing the matrix operations\ndoes not affect this, the desired result follows in general."
+    },
+    "kernel_variant": {
+      "question": "Let $m$ be a positive integer and set $n=2m$.  In the $n\\times n$ array whose rows are numbered $0,1,\\dots ,n-1$ from top to bottom and whose columns are numbered $0,1,\\dots ,n-1$ from left to right, write the arithmetic progression\\[\n7,\\;12,\\;17,\\;\\dots ,\\;5\\bigl(n^{2}-1\\bigr)+7\n\\]column-by-column, i.e.\n\\[\na_{r,c}=5\\,(cn+r)+7\\qquad(0\\le r,c\\le n-1).\n\\]\nNow color each square either gold or silver in such a way that every row contains exactly $m$ gold squares and every column contains exactly $m$ gold squares (so the remaining squares in each row or column are silver).\n\nProve that, regardless of the particular gold/silver coloring, the sum of the numbers in the gold squares equals the sum of the numbers in the silver squares.",
+      "solution": "Index the array by $(r,c)$ with $0\\le r,c\\le n-1$ and $n=2m$.  The entry in position $(r,c)$ is\n\n$$a_{r,c}=5\\,(cn+r)+7=(5n)c+5r+7.\n$$\n\nLet $G$ and $S$ denote the sets of gold and silver squares, respectively.  Write\n\n$$\\Delta=\\sum_{(r,c)\\in G}a_{r,c}-\\sum_{(r,c)\\in S}a_{r,c}\n$$\n(gold - silver).  Substituting the expression for $a_{r,c}$ gives\n\n$$\\Delta=5n\\Bigl(\\sum_{(r,c)\\in G}c-\\sum_{(r,c)\\in S}c\\Bigr)\n+5\\Bigl(\\sum_{(r,c)\\in G}r-\\sum_{(r,c)\\in S}r\\Bigr)\n+7\\bigl(|G|-|S|\\bigr).\n$$\n\nBecause each row contains exactly $m=n/2$ gold squares and $m$ silver squares, the index $r$ occurs $m$ times in $G$ and $m$ times in $S$, so\n\n$$\\sum_{(r,c)\\in G}r=\\sum_{(r,c)\\in S}r.\n$$\n\nSimilarly, each column contains $m$ gold and $m$ silver squares, giving\n\n$$\\sum_{(r,c)\\in G}c=\\sum_{(r,c)\\in S}c.\n$$\n\nFinally, there are $n^2$ squares total and each of the $n$ rows contributes $m$ gold and $m$ silver, so\n\n$$|G|=|S|=mn=n^2/2.\n$$\n\nHence all three differences in $\\Delta$ vanish, so $\\Delta=0$.  Therefore the sum of the numbers in the gold squares equals the sum of the numbers in the silver squares.",
+      "_meta": {
+        "core_steps": [
+          "Express the entry in square s as  n·row(s) + col(s) + c  (linear in row and column).",
+          "Write the color–sum difference as  n·(Σ_row_indices_red − Σ_row_indices_black) + (Σ_col_indices_red − Σ_col_indices_black).",
+          "Because each row contains the same number of red and black squares, the two color–row sums are equal.",
+          "Because each column contains the same number of red and black squares, the two color–column sums are equal.",
+          "Both gaps are 0 ⇒ the overall red and black sums coincide."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Parity requirement on the grid size (only needed so that ‘half of the squares’ makes sense).  Any specification guaranteeing an equal split in each row/column works.",
+            "original": "n is an even positive integer"
+          },
+          "slot2": {
+            "description": "Additive offset in the labeling formula; may be any constant because it contributes equally to both colors.",
+            "original": "+1"
+          },
+          "slot3": {
+            "description": "Common difference (scaling factor) of the arithmetic progression of labels; any positive integer keeps the proof intact.",
+            "original": "1"
+          },
+          "slot4": {
+            "description": "Direction of the linear labeling (row-major vs column-major); either choice leaves the separation into a row term and a column term unchanged.",
+            "original": "row-major ordering  (number = n·row + col + …)"
+          },
+          "slot5": {
+            "description": "Names of the two classes; any two distinct symbols/colors suffice.",
+            "original": "red / black"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,126 @@
+{
+  "index": "2022-B-3",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Assign to each positive real number a color, either red or blue. Let $D$ be the set of all distances $d > 0$ such that there are two points of the same color at distance $d$ apart. Recolor the positive reals so that the numbers in $D$ are red and the numbers not in $D$ are blue. If we iterate this recoloring process, will we always end up with all the numbers red after a finite number of steps?\n\n\\smallskip",
+  "solution": "The answer is yes. Let $R_0,B_0 \\subset \\mathbb{R}^+$ be the set of red and blue numbers at the start of the process, and let $R_n,B_n$ be the set of red and blue numbers after $n$ steps. We claim that $R_2 = \\mathbb{R}^+$.\n\nWe first note that if $y \\in B_1$, then $y/2 \\in R_1$. Namely, the numbers $y$ and $2y$ must be of opposite colors in the original coloring, and then $3y/2$ must be of the same color as one of $y$ or $2y$. \n\nNow suppose by way of contradiction that $x \\in B_2$. Then of the four numbers $x,2x,3x,4x$, every other number must be in $R_1$ and the other two must be in $B_1$. By the previous observation, $2x$ and $4x$ cannot both be in $B_1$; it follows that $2x,4x \\in R_1$ and $x,3x \\in B_1$. By the previous observation again, $x/2$ and $3x/2$ must both be in $R_1$, but then $x = 3x/2-x/2$ is in $R_2$, contradiction. We conclude that $R_2 = \\mathbb{R}^+$, as desired.",
+  "vars": [
+    "D",
+    "d",
+    "R_0",
+    "B_0",
+    "R_n",
+    "B_n",
+    "R_2",
+    "R_1",
+    "B_1",
+    "y",
+    "x"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "D": "distset",
+        "d": "singledist",
+        "R_0": "initialred",
+        "B_0": "initialblue",
+        "R_n": "nstepred",
+        "B_n": "nstepblue",
+        "R_2": "twostepred",
+        "R_1": "onestepred",
+        "B_1": "onestepblue",
+        "y": "varwhy",
+        "x": "varxray"
+      },
+      "question": "Assign to each positive real number a color, either red or blue. Let $distset$ be the set of all distances $singledist > 0$ such that there are two points of the same color at distance $singledist$ apart. Recolor the positive reals so that the numbers in $distset$ are red and the numbers not in $distset$ are blue. If we iterate this recoloring process, will we always end up with all the numbers red after a finite number of steps?\n\n\\smallskip",
+      "solution": "The answer is yes. Let $initialred,initialblue \\subset \\mathbb{R}^+$ be the set of red and blue numbers at the start of the process, and let $nstepred,nstepblue$ be the set of red and blue numbers after $n$ steps. We claim that $twostepred = \\mathbb{R}^+$.\n\nWe first note that if $varwhy \\in onestepblue$, then $varwhy/2 \\in onestepred$. Namely, the numbers $varwhy$ and $2varwhy$ must be of opposite colors in the original coloring, and then $3varwhy/2$ must be of the same color as one of $varwhy$ or $2varwhy$.\n\nNow suppose by way of contradiction that $varxray \\in B_2$. Then of the four numbers $varxray,2varxray,3varxray,4varxray$, every other number must be in $onestepred$ and the other two must be in $onestepblue$. By the previous observation, $2varxray$ and $4varxray$ cannot both be in $onestepblue$; it follows that $2varxray,4varxray \\in onestepred$ and $varxray,3varxray \\in onestepblue$. By the previous observation again, $varxray/2$ and $3varxray/2$ must both be in $onestepred$, but then $varxray = 3varxray/2-varxray/2$ is in $twostepred$, contradiction. We conclude that $twostepred = \\mathbb{R}^+$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "D": "seashore",
+        "d": "cardamom",
+        "R_0": "turquoise",
+        "B_0": "lemonade",
+        "R_n": "butterfly",
+        "B_n": "staircase",
+        "R_2": "harmonica",
+        "R_1": "snowflake",
+        "B_1": "chandelier",
+        "y": "pinecone",
+        "x": "daffodil"
+      },
+      "question": "Assign to each positive real number a color, either red or blue. Let $seashore$ be the set of all distances $cardamom > 0$ such that there are two points of the same color at distance $cardamom$ apart. Recolor the positive reals so that the numbers in $seashore$ are red and the numbers not in $seashore$ are blue. If we iterate this recoloring process, will we always end up with all the numbers red after a finite number of steps?\n\n\\smallskip",
+      "solution": "The answer is yes. Let $turquoise,lemonade \\subset \\mathbb{R}^+$ be the set of red and blue numbers at the start of the process, and let $butterfly,staircase$ be the set of red and blue numbers after $n$ steps. We claim that $harmonica = \\mathbb{R}^+$. \n\nWe first note that if $pinecone \\in chandelier$, then $pinecone/2 \\in snowflake$. Namely, the numbers $pinecone$ and $2pinecone$ must be of opposite colors in the original coloring, and then $3pinecone/2$ must be of the same color as one of $pinecone$ or $2pinecone$. \n\nNow suppose by way of contradiction that $daffodil \\in B_2$. Then of the four numbers $daffodil,2daffodil,3daffodil,4daffodil$, every other number must be in $snowflake$ and the other two must be in $chandelier$. By the previous observation, $2daffodil$ and $4daffodil$ cannot both be in $chandelier$; it follows that $2daffodil,4daffodil \\in snowflake$ and $daffodil,3daffodil \\in chandelier$. By the previous observation again, $daffodil/2$ and $3daffodil/2$ must both be in $snowflake$, but then $daffodil = 3daffodil/2-daffodil/2$ is in $harmonica$, contradiction. We conclude that $harmonica = \\mathbb{R}^+$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "D": "contactset",
+        "d": "samepoint",
+        "R_0": "initialbluezero",
+        "B_0": "initialredzero",
+        "R_n": "latebluevaried",
+        "B_n": "lateredvaried",
+        "R_2": "latebluetwo",
+        "R_1": "lateblueone",
+        "B_1": "lateredone",
+        "y": "staticval",
+        "x": "fixedval"
+      },
+      "question": "Assign to each positive real number a color, either red or blue. Let $contactset$ be the set of all distances $samepoint > 0$ such that there are two points of the same color at distance $samepoint$ apart. Recolor the positive reals so that the numbers in $contactset$ are red and the numbers not in $contactset$ are blue. If we iterate this recoloring process, will we always end up with all the numbers red after a finite number of steps?\n\n\\smallskip",
+      "solution": "The answer is yes. Let $initialbluezero,initialredzero \\subset \\mathbb{R}^+$ be the set of red and blue numbers at the start of the process, and let $latebluevaried,lateredvaried$ be the set of red and blue numbers after $n$ steps. We claim that $latebluetwo = \\mathbb{R}^+$.\n\nWe first note that if $staticval \\in lateredone$, then $staticval/2 \\in lateblueone$. Namely, the numbers $staticval$ and $2staticval$ must be of opposite colors in the original coloring, and then $3staticval/2$ must be of the same color as one of $staticval$ or $2staticval$.\n\nNow suppose by way of contradiction that $fixedval \\in B_2$. Then of the four numbers $fixedval,2fixedval,3fixedval,4fixedval$, every other number must be in $lateblueone$ and the other two must be in $lateredone$. By the previous observation, $2fixedval$ and $4fixedval$ cannot both be in $lateredone$; it follows that $2fixedval,4fixedval \\in lateblueone$ and $fixedval,3fixedval \\in lateredone$. By the previous observation again, $fixedval/2$ and $3fixedval/2$ must both be in $lateblueone$, but then $fixedval = 3fixedval/2-fixedval/2$ is in $latebluetwo$, contradiction. We conclude that $latebluetwo = \\mathbb{R}^+$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "D": "qzxwvtnp",
+        "d": "hjgrksla",
+        "R_0": "asdfqwer",
+        "B_0": "poiulkjh",
+        "R_n": "mnbvcxzq",
+        "B_n": "lkjhgfds",
+        "R_2": "zxcvbnml",
+        "R_1": "qazwsxed",
+        "B_1": "edcrfvtg",
+        "y": "uioytrew",
+        "x": "plokijuh"
+      },
+      "question": "Assign to each positive real number a color, either red or blue. Let $qzxwvtnp$ be the set of all distances $hjgrksla > 0$ such that there are two points of the same color at distance $hjgrksla$ apart. Recolor the positive reals so that the numbers in $qzxwvtnp$ are red and the numbers not in $qzxwvtnp$ are blue. If we iterate this recoloring process, will we always end up with all the numbers red after a finite number of steps?",
+      "solution": "The answer is yes. Let $asdfqwer,poiulkjh \\subset \\mathbb{R}^+$ be the set of red and blue numbers at the start of the process, and let $mnbvcxzq,lkjhgfds$ be the set of red and blue numbers after $n$ steps. We claim that $zxcvbnml = \\mathbb{R}^+$.\\par\nWe first note that if $uioytrew \\in edcrfvtg$, then $uioytrew/2 \\in qazwsxed$. Namely, the numbers $uioytrew$ and $2uioytrew$ must be of opposite colors in the original coloring, and then $3uioytrew/2$ must be of the same color as one of $uioytrew$ or $2uioytrew$.\\par\nNow suppose by way of contradiction that $plokijuh \\in B_2$. Then of the four numbers $plokijuh,2plokijuh,3plokijuh,4plokijuh$, every other number must be in $qazwsxed$ and the other two must be in $edcrfvtg$. By the previous observation, $2plokijuh$ and $4plokijuh$ cannot both be in $edcrfvtg$; it follows that $2plokijuh,4plokijuh \\in qazwsxed$ and $plokijuh,3plokijuh \\in edcrfvtg$. By the previous observation again, $plokijuh/2$ and $3plokijuh/2$ must both be in qazwsxed, but then $plokijuh = 3plokijuh/2-plokijuh/2$ is in $zxcvbnml$, contradiction. We conclude that $zxcvbnml = \\mathbb{R}^+$, as desired."
+    },
+    "kernel_variant": {
+      "question": "Let \\mathbb{Q}^+ = {q \\in  \\mathbb{Q} : q > 0} be the set of positive rational numbers.  Give each element of \\mathbb{Q}^+ one of two colours, emerald or sapphire.\n\nFor d \\in  \\mathbb{Q}^+ call d witnessed if there exist two rational numbers of the same colour whose absolute difference equals d.  Denote by E_1 the set of all witnessed distances that arise from the initial colouring, and recolour every rational number lying in E_1 emerald while leaving all other rationals sapphire.\n\nInductively, after round n - 1 (n \\geq  2) let E_n be the set of positive rationals that occur as distances between two rationals having the same colour in round n - 1.  Recolour each rational in E_n emerald and every remaining rational sapphire.\n\nProve that, regardless of the initial colouring, after at most two rounds every positive rational number is emerald.",
+      "solution": "Throughout let E_n and S_n (n = 0,1,2, \\ldots ) denote the emerald and sapphire sets after the n-th colouring step; in particular E_0 \\cup  S_0 = \\mathbb{Q}^+ and E_0 \\cap  S_0 = \\emptyset .\n\nLemma.  If y \\in  S_1 then y/2 \\in  E_1.\n\nProof.  Because y is positive it belongs to the domain \\mathbb{Q}^+.  Since y \\in  S_1, the distance y was _not_ witnessed in the initial colouring, so any two points at distance y had opposite colours in round 0.  In particular, the points y and 2y received different colours initially.  Consider the third point 3y/2.  It must share its colour with either y or 2y.  If it matches y, then |3y/2 - y| = y/2 is a distance between two emerald points; if it matches 2y, the same distance occurs between two sapphire points.  In either case the positive rational y/2 is witnessed in round 0, hence y/2 \\in  E_1. \\blacksquare \n\nMain argument.  Suppose, for a contradiction, that some x \\in  S_2.  Then x was _not_ witnessed in round 1, so every pair of points at distance x apart in round 1 must have opposite colours.  Examine the four equally spaced positive rationals\n      x, 2x, 3x, 4x.\nBecause consecutive terms differ by x, their colours must alternate.  Thus exactly one of the two following patterns occurs.\n\n(i)  x \\in  E_1, 2x \\in  S_1, 3x \\in  E_1, 4x \\in  S_1;\n(ii) x \\in  S_1, 2x \\in  E_1, 3x \\in  S_1, 4x \\in  E_1.\n\nElimination of pattern (i).  Here 2x, 4x \\in  S_1, so the lemma applied to y = 2x and y = 4x yields\n      x = (2x)/2 \\in  E_1  and  2x = (4x)/2 \\in  E_1,\na contradiction to 2x \\in  S_1.  Hence only pattern (ii) is possible:\n      2x, 4x \\in  E_1  and  x, 3x \\in  S_1.\n\nApplying the lemma to the two sapphire elements x and 3x gives\n      x/2 \\in  E_1  and  3x/2 \\in  E_1.\nBut then the distance |(3x/2) - (x/2)| = x is witnessed in round 1, so x \\in  E_2, contradicting x \\in  S_2.\n\nTherefore S_2 is empty and E_2 = \\mathbb{Q}^+.  Consequently, regardless of the initial colouring, after at most two rounds every positive rational number is emerald. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Re-interpret each recoloring round with the sets (R_n , B_n) of distances that are red/blue after n steps.",
+          "Key Lemma: if a distance y is blue at step 1, then the halved distance y⁄2 is red (use the points y, 3y⁄2, 2y).",
+          "Assume for contradiction that some distance x is still blue at step 2.",
+          "Analyze the four equally-spaced multiples x, 2x, 3x, 4x; the lemma forces 2x and 4x to be red at step 1 while x and 3x stay blue.",
+          "Apply the lemma once more to x and 3x to show x must in fact be red at step 2, contradiction → all distances are red after the 2nd round."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Names of the two colors can be interchanged.",
+            "original": "red / blue"
+          },
+          "slot2": {
+            "description": "The ambient set can be any subset of ℝ closed under addition and multiplication by 1⁄2 (e.g. ℚ⁺ instead of ℝ⁺); positivity is not essential.",
+            "original": "ℝ⁺ (positive real numbers)"
+          },
+          "slot3": {
+            "description": "Specific color-coding of the final claim can be sharpened from “after a finite number of steps” to the explicit bound proved by the argument.",
+            "original": "“finite number of steps” → actually “at most 2 steps”"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

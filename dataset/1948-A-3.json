@@ -1,0 +1,158 @@
+{
+  "index": "1948-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "3. Let \\( \\left\\{a_{n}\\right\\} \\) be a decreasing sequence of positive numbers with limit 0 such that\n\\[\nb_{n}=a_{n}-2 a_{n+1}+a_{n+2} \\geq 0\n\\]\nfor all \\( n \\). Prove that\n\\[\n\\sum_{n=1}^{\\infty} n b_{n}=a_{1}\n\\]",
+  "solution": "Solution. Since the \\( b \\) 's are the second differences of the \\( a \\) 's, it is convenient to let \\( c_{n}=a_{n}-a_{n+1} \\); then\n\\[\nc_{n}-c_{n+1}=a_{n}-2 a_{n+1}+a_{n+2}=b_{n}\n\\]\n\nSince the \\( a \\) 's decrease to zero, \\( c_{n} \\geq 0 \\) for all \\( n \\), and \\( c_{\\boldsymbol{n}} \\rightarrow 0 \\).\nFor \\( k \\geq m \\), we have \\( \\sum_{i=m}^{k} b_{i}=c_{m}-c_{k+1} \\), and therefore\n\\[\n\\sum_{i=m}^{\\infty} b_{i}=c_{m}=a_{m}-a_{m+1}\n\\]\n\nSimilarly,\n\\[\n\\sum_{m=1}^{k}\\left(a_{m}-a_{m+1}\\right)=a_{1}-a_{k+1}, \\quad \\text { so } \\sum_{m=1}^{\\infty}\\left(a_{m}-a_{m+1}\\right)=a_{1}\n\\]\n\nThus\n\\[\n\\sum_{m=1}^{\\infty}\\left(\\sum_{i=m}^{\\infty} b_{i}\\right)=a_{1}\n\\]\n\nThe \\( b \\) 's are non-negative, and when summing non-negative terms, rearrangement does not affect the value of the sum. For each index \\( n \\), the term \\( b_{n} \\) appears exactly \\( n \\) times in the preceding double sum, once in each of the sums \\( \\sum_{i=m}^{\\infty} b_{i} \\) for \\( m=1,2, \\ldots, n \\). Hence\n\\[\n\\sum_{n=1}^{\\infty} n b_{n}=\\sum_{m=1}^{\\infty}\\left(\\sum_{i=m}^{\\infty} b_{i}\\right)=a_{1}\n\\]",
+  "vars": [
+    "a_1",
+    "a_m",
+    "a_m+1",
+    "a_n",
+    "a_n+1",
+    "a_n+2",
+    "a_k+1",
+    "b_i",
+    "b_n",
+    "c_m",
+    "c_n",
+    "c_n+1",
+    "c_k+1",
+    "i",
+    "k",
+    "m",
+    "n"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1": "initialaterm",
+        "a_m": "lowerindexaterm",
+        "a_m+1": "lowerplusoneaterm",
+        "a_n": "generalaterm",
+        "a_n+1": "generalplusoneaterm",
+        "a_n+2": "generalplustwoaterm",
+        "a_k+1": "upperplusoneaterm",
+        "b_i": "innerbterm",
+        "b_n": "generalbterm",
+        "c_m": "lowercterm",
+        "c_n": "generalcterm",
+        "c_n+1": "generalplusonecterm",
+        "c_k+1": "upperplusonecterm",
+        "i": "innerindex",
+        "k": "upperindex",
+        "m": "lowerindex",
+        "n": "generalindex"
+      },
+      "question": "3. Let \\( \\left\\{generalaterm\\right\\} \\) be a decreasing sequence of positive numbers with limit 0 such that\n\\[\ngeneralbterm = generalaterm - 2\\, generalplusoneaterm + generalplustwoaterm \\geq 0\n\\]\nfor all \\( generalindex \\). Prove that\n\\[\n\\sum_{generalindex=1}^{\\infty} generalindex\\, generalbterm = initialaterm\n\\]",
+      "solution": "Solution. Since the \\( b \\) 's are the second differences of the \\( a \\) 's, it is convenient to let \\( generalcterm = generalaterm - generalplusoneaterm \\); then\n\\[\ngeneralcterm - generalplusonecterm = generalaterm - 2\\, generalplusoneaterm + generalplustwoaterm = generalbterm\n\\]\n\nSince the \\( a \\) 's decrease to zero, \\( generalcterm \\ge 0 \\) for all \\( generalindex \\), and \\( generalcterm \\rightarrow 0 \\).\nFor \\( upperindex \\ge lowerindex \\), we have \\( \\sum_{innerindex=lowerindex}^{upperindex} innerbterm = lowercterm - upperplusonecterm \\), and therefore\n\\[\n\\sum_{innerindex=lowerindex}^{\\infty} innerbterm = lowercterm = lowerindexaterm - lowerplusoneaterm\n\\]\n\nSimilarly,\n\\[\n\\sum_{lowerindex=1}^{upperindex}\\!\\left(lowerindexaterm - lowerplusoneaterm\\right) = initialaterm - upperplusoneaterm, \\quad \\text{so}\\quad \\sum_{lowerindex=1}^{\\infty}\\!\\left(lowerindexaterm - lowerplusoneaterm\\right)= initialaterm\n\\]\n\nThus\n\\[\n\\sum_{lowerindex=1}^{\\infty}\\left(\\sum_{innerindex=lowerindex}^{\\infty} innerbterm\\right)= initialaterm\n\\]\n\nThe \\( b \\) 's are non-negative, and when summing non-negative terms, rearrangement does not affect the value of the sum. For each index \\( generalindex \\), the term \\( generalbterm \\) appears exactly \\( generalindex \\) times in the preceding double sum, once in each of the sums \\( \\sum_{innerindex=lowerindex}^{\\infty} innerbterm \\) for \\( lowerindex=1,2, \\ldots, generalindex \\). Hence\n\\[\n\\sum_{generalindex=1}^{\\infty} generalindex\\, generalbterm = \\sum_{lowerindex=1}^{\\infty}\\left(\\sum_{innerindex=lowerindex}^{\\infty} innerbterm\\right)= initialaterm\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_1": "bluewhale",
+        "a_m": "sunflower",
+        "a_m+1": "marshmallow",
+        "a_n": "goosesquad",
+        "a_n+1": "lemonade",
+        "a_n+2": "raincloud",
+        "a_k+1": "broomstick",
+        "b_i": "dragonfly",
+        "b_n": "hazelnuts",
+        "c_m": "sandstorm",
+        "c_n": "seashells",
+        "c_n+1": "starfruit",
+        "c_k+1": "driftwood",
+        "i": "lighthouse",
+        "k": "watermelon",
+        "m": "paintbrush",
+        "n": "goldfish"
+      },
+      "question": "3. Let \\( \\left\\{goosesquad\\right\\} \\) be a decreasing sequence of positive numbers with limit 0 such that\n\\[\nhazelnuts=goosesquad-2 lemonade+raincloud \\geq 0\n\\]\nfor all \\( goldfish \\). Prove that\n\\[\n\\sum_{goldfish=1}^{\\infty} goldfish\\, hazelnuts=bluewhale\n\\]",
+      "solution": "Solution. Since the \\( b \\) 's are the second differences of the \\( a \\) 's, it is convenient to let \\( seashells=goosesquad-lemonade \\); then\n\\[\nseashells-starfruit=goosesquad-2 lemonade+raincloud=hazelnuts\n\\]\n\nSince the \\( a \\) 's decrease to zero, \\( seashells \\geq 0 \\) for all \\( goldfish \\), and \\( seashells \\rightarrow 0 \\).\nFor \\( watermelon \\geq paintbrush \\), we have \\( \\sum_{lighthouse=paintbrush}^{watermelon} dragonfly=sandstorm-driftwood \\), and therefore\n\\[\n\\sum_{lighthouse=paintbrush}^{\\infty} dragonfly=sandstorm=sunflower-marshmallow\n\\]\n\nSimilarly,\n\\[\n\\sum_{paintbrush=1}^{watermelon}\\left(sunflower-marshmallow\\right)=bluewhale-broomstick, \\quad \\text { so } \\sum_{paintbrush=1}^{\\infty}\\left(sunflower-marshmallow\\right)=bluewhale\n\\]\n\nThus\n\\[\n\\sum_{paintbrush=1}^{\\infty}\\left(\\sum_{lighthouse=paintbrush}^{\\infty} dragonfly\\right)=bluewhale\n\\]\n\nThe \\( b \\)'s are non-negative, and when summing non-negative terms, rearrangement does not affect the value of the sum. For each index \\( goldfish \\), the term \\( hazelnuts \\) appears exactly \\( goldfish \\) times in the preceding double sum, once in each of the sums \\( \\sum_{lighthouse=paintbrush}^{\\infty} dragonfly \\) for \\( paintbrush=1,2, \\ldots, goldfish \\). Hence\n\\[\n\\sum_{goldfish=1}^{\\infty} goldfish\\, hazelnuts=\\sum_{paintbrush=1}^{\\infty}\\left(\\sum_{lighthouse=paintbrush}^{\\infty} dragonfly\\right)=bluewhale\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_1": "ascendingneg_{1}",
+        "a_m": "ascendingneg_{letterout}",
+        "a_m+1": "ascendingneg_{letterout+1}",
+        "a_n": "ascendingneg_{terminalx}",
+        "a_n+1": "ascendingneg_{terminalx+1}",
+        "a_n+2": "ascendingneg_{terminalx+2}",
+        "a_k+1": "ascendingneg_{jumbledup+1}",
+        "b_i": "primarysum_{zenithpos}",
+        "b_n": "primarysum_{terminalx}",
+        "c_m": "aggregate_{letterout}",
+        "c_n": "aggregate_{terminalx}",
+        "c_n+1": "aggregate_{terminalx+1}",
+        "c_k+1": "aggregate_{jumbledup+1}",
+        "i": "zenithpos",
+        "k": "jumbledup",
+        "m": "letterout",
+        "n": "terminalx"
+      },
+      "question": "3. Let \\( \\left\\{ascendingneg_{terminalx}\\right\\} \\) be a decreasing sequence of positive numbers with limit 0 such that\n\\[\nprimarysum_{terminalx}=ascendingneg_{terminalx}-2 ascendingneg_{terminalx+1}+ascendingneg_{terminalx+2} \\geq 0\n\\]\nfor all \\( terminalx \\). Prove that\n\\[\n\\sum_{terminalx=1}^{\\infty} terminalx \\, primarysum_{terminalx}=ascendingneg_{1}\n\\]",
+      "solution": "Solution. Since the \\( primarysum \\) 's are the second differences of the \\( ascendingneg \\) 's, it is convenient to let \\( aggregate_{terminalx}=ascendingneg_{terminalx}-ascendingneg_{terminalx+1} \\); then\n\\[\naggregate_{terminalx}-aggregate_{terminalx+1}=ascendingneg_{terminalx}-2 ascendingneg_{terminalx+1}+ascendingneg_{terminalx+2}=primarysum_{terminalx}\n\\]\n\nSince the \\( ascendingneg \\) 's decrease to zero, \\( aggregate_{terminalx} \\geq 0 \\) for all \\( terminalx \\), and \\( aggregate_{\\boldsymbol{terminalx}} \\rightarrow 0 \\).\nFor \\( jumbledup \\geq letterout \\), we have \\( \\sum_{zenithpos=letterout}^{jumbledup} primarysum_{zenithpos}=aggregate_{letterout}-aggregate_{jumbledup+1} \\), and therefore\n\\[\n\\sum_{zenithpos=letterout}^{\\infty} primarysum_{zenithpos}=aggregate_{letterout}=ascendingneg_{letterout}-ascendingneg_{letterout+1}\n\\]\n\nSimilarly,\n\\[\n\\sum_{letterout=1}^{jumbledup}\\left(ascendingneg_{letterout}-ascendingneg_{letterout+1}\\right)=ascendingneg_{1}-ascendingneg_{jumbledup+1}, \\quad \\text { so } \\sum_{letterout=1}^{\\infty}\\left(ascendingneg_{letterout}-ascendingneg_{letterout+1}\\right)=ascendingneg_{1}\n\\]\n\nThus\n\\[\n\\sum_{letterout=1}^{\\infty}\\left(\\sum_{zenithpos=letterout}^{\\infty} primarysum_{zenithpos}\\right)=ascendingneg_{1}\n\\]\n\nThe \\( primarysum \\) 's are non-negative, and when summing non-negative terms, rearrangement does not affect the value of the sum. For each index \\( terminalx \\), the term \\( primarysum_{terminalx} \\) appears exactly \\( terminalx \\) times in the preceding double sum, once in each of the sums \\( \\sum_{zenithpos=letterout}^{\\infty} primarysum_{zenithpos} \\) for \\( letterout=1,2, \\ldots, terminalx \\). Hence\n\\[\n\\sum_{terminalx=1}^{\\infty} terminalx \\, primarysum_{terminalx}=\\sum_{letterout=1}^{\\infty}\\left(\\sum_{zenithpos=letterout}^{\\infty} primarysum_{zenithpos}\\right)=ascendingneg_{1}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "a_1": "qzxwvtnp",
+        "a_m": "hjgrksla",
+        "a_m+1": "pdqorfen",
+        "a_n": "klmovtzi",
+        "a_n+1": "rgpsfdua",
+        "a_n+2": "mxblqwer",
+        "a_k+1": "czxvtyui",
+        "b_i": "lwokzvbn",
+        "b_n": "prtzxghy",
+        "c_m": "fjsieowq",
+        "c_n": "snardhuf",
+        "c_n+1": "vopqlkji",
+        "c_k+1": "gxyrmctb",
+        "i": "nbvciyuo",
+        "k": "dkltzqpf",
+        "m": "ufjrieow",
+        "n": "piqhdlsa"
+      },
+      "question": "3. Let \\( \\left\\{klmovtzi\\right\\} \\) be a decreasing sequence of positive numbers with limit 0 such that\n\\[\nprtzxghy = klmovtzi - 2 rgpsfdua + mxblqwer \\geq 0\n\\]\nfor all \\(piqhdlsa\\). Prove that\n\\[\n\\sum_{piqhdlsa=1}^{\\infty} piqhdlsa\\,prtzxghy = qzxwvtnp\n\\]",
+      "solution": "Solution. Since the \\( prtzxghy \\)'s are the second differences of the \\( klmovtzi \\)'s, it is convenient to let \\( snardhuf = klmovtzi - rgpsfdua \\); then\n\\[\nsnardhuf - vopqlkji = klmovtzi - 2 rgpsfdua + mxblqwer = prtzxghy\n\\]\n\nSince the \\( klmovtzi \\)'s decrease to zero, \\( snardhuf \\ge 0 \\) for all \\( piqhdlsa \\), and \\( snardhuf \\rightarrow 0 \\). For \\( dkltzqpf \\ge ufjrieow \\), we have \\( \\sum_{nbvciyuo = ufjrieow}^{dkltzqpf} lwokzvbn = fjsieowq - gxyrmctb \\), and therefore\n\\[\n\\sum_{nbvciyuo = ufjrieow}^{\\infty} lwokzvbn = fjsieowq = hjgrksla - pdqorfen\n\\]\n\nSimilarly,\n\\[\n\\sum_{ufjrieow = 1}^{dkltzqpf}\\bigl(hjgrksla - pdqorfen\\bigr) = qzxwvtnp - czxvtyui, \\quad \\text{so } \\sum_{ufjrieow = 1}^{\\infty}\\bigl(hjgrksla - pdqorfen\\bigr)=qzxwvtnp\n\\]\n\nThus\n\\[\n\\sum_{ufjrieow = 1}^{\\infty}\\Bigl(\\sum_{nbvciyuo = ufjrieow}^{\\infty} lwokzvbn\\Bigr)=qzxwvtnp\n\\]\n\nThe \\( prtzxghy \\)'s are non-negative, and when summing non-negative terms, rearrangement does not affect the value of the sum. For each index \\( piqhdlsa \\), the term \\( prtzxghy \\) appears exactly \\( piqhdlsa \\) times in the preceding double sum, once in each of the sums \\( \\sum_{nbvciyuo = ufjrieow}^{\\infty} lwokzvbn \\) for \\( ufjrieow = 1,2, \\ldots, piqhdlsa \\). Hence\n\\[\n\\sum_{piqhdlsa=1}^{\\infty} piqhdlsa\\,prtzxghy = \\sum_{ufjrieow = 1}^{\\infty}\\Bigl(\\sum_{nbvciyuo = ufjrieow}^{\\infty} lwokzvbn\\Bigr)=qzxwvtnp\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $(a_n)_{n\\ge 0}$ be a sequence of real numbers that converges to a finite limit $L$.  For each $n\\ge 0$ set\n\\[\nb_n\\;=\\;a_n-2a_{n+1}+a_{n+2}\\,.\n\\]\nAssume $b_n\\ge 0$ for every $n$.  Prove that the series $\\sum_{n=0}^{\\infty}(n+1)b_n$ converges and that\n\\[\n\\sum_{n=0}^{\\infty}(n+1)b_n\\;=\\;a_0-L.\n\\]",
+      "solution": "Define c_n = a_n - a_{n+1} for n \\geq  0.  Then\n  b_n = a_n - 2a_{n+1} + a_{n+2} = (a_n - a_{n+1}) - (a_{n+1} - a_{n+2}) = c_n - c_{n+1}.\nSince b_n \\geq  0, we have c_n \\geq  c_{n+1}, so (c_n) is nonincreasing.  Moreover\n  lim_{n\\to \\infty } c_n = lim_{n\\to \\infty }(a_n - a_{n+1}) = L - L = 0.\nIf for some N, c_N < 0, then for all n \\geq  N by monotonicity c_n \\leq  c_N < 0, contradicting c_n \\to  0.  Thus each c_n \\geq  0.\n\nFor m \\leq  k,\n  \\sum _{i=m}^k b_i = \\sum _{i=m}^k (c_i - c_{i+1}) = c_m - c_{k+1}.\nLetting k \\to  \\infty  and using c_{k+1} \\to  0 gives\n  \\sum _{i=m}^\\infty  b_i = c_m.                                   (1)\n\nSumming (1) over m = 0,1,2,\\ldots  yields\n  \\sum _{m=0}^\\infty  c_m = \\sum _{m=0}^\\infty  \\sum _{i=m}^\\infty  b_i.\nBut \\sum _{m=0}^\\infty  c_m = \\sum _{m=0}^\\infty  (a_m - a_{m+1}) = a_0 - L by telescoping.\n\nSince b_i \\geq  0, Tonelli's theorem permits us to interchange the order of summation:\n  \\sum _{m=0}^\\infty  \\sum _{i=m}^\\infty  b_i = \\sum _{i=0}^\\infty  \\sum _{m=0}^i b_i = \\sum _{i=0}^\\infty  (i+1)b_i.\n\nTherefore\n  \\sum _{i=0}^\\infty  (i+1)b_i = a_0 - L,\nshowing the series converges and equals a_0 - L.",
+      "_meta": {
+        "core_steps": [
+          "Set c_n = a_n − a_{n+1}; then b_n = c_n − c_{n+1} (second→first difference link).",
+          "Telescoping: Σ_{i=m}^{∞} b_i = c_m and hence Σ_{m=1}^{∞} c_m = a_1 (because a_{k+1}→0).",
+          "Write the double sum Σ_{m=1}^{∞} Σ_{i≥m} b_i = a_1.",
+          "Since b_n ≥ 0, swap the order of summation; each b_n appears exactly n times, giving Σ_{n=1}^{∞} n b_n = a_1."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Monotonicity of the sequence; it need not be decreasing for the proof to work.",
+            "original": "decreasing"
+          },
+          "slot2": {
+            "description": "Positivity of the terms a_n; the argument only uses b_n ≥ 0.",
+            "original": "positive"
+          },
+          "slot3": {
+            "description": "The exact limit value of a_n; any finite limit L just replaces a_1 by a_1 − L in the telescoping identity.",
+            "original": "0"
+          },
+          "slot4": {
+            "description": "Starting index of the sums/sequence; shifting the index (e.g., start at n = 0) merely re-labels terms.",
+            "original": "1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

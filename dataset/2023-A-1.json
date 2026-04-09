@@ -1,0 +1,102 @@
+{
+  "index": "2023-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "For a positive integer $n$, let $f_n(x) = \\cos(x) \\cos(2x) \\cos(3x) \\cdots \\cos(nx)$. Find the smallest $n$ such that $|f_n''(0)| > 2023$.",
+  "solution": "If we use the product rule to calculate $f_n''(x)$, the result is a sum of terms of two types: terms where two distinct factors $\\cos(m_1x)$ and $\\cos(m_2x)$ have each been differentiated once, and terms where a single factor $\\cos(mx)$ has been differentiated twice. When we evaluate at $x=0$, all terms of the first type vanish since $\\sin(0)=0$, while the term of the second type involving $(\\cos(mx))''$ becomes $-m^2$. Thus \n\\[\n|f_n''(0)| = \\left|-\\sum_{m=1}^n m^2\\right| = \\frac{n(n+1)(2n+1)}{6}.\n\\]\nThe function $g(n) = \\frac{n(n+1)(2n+1)}{6}$ is increasing for $n\\in\\mathbb{N}$ and satisfies $g(17)=1785$ and $g(18)=2109$. It follows that the answer is $n=18$.",
+  "vars": [
+    "x"
+  ],
+  "params": [
+    "n",
+    "f_n",
+    "m",
+    "m_1",
+    "m_2",
+    "g"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "n": "integer",
+        "f_n": "productfunc",
+        "m": "indexvar",
+        "m_1": "firstindex",
+        "m_2": "secondindex",
+        "g": "helperf"
+      },
+      "question": "For a positive integer $integer$, let $productfunc(variable)=\\cos(variable)\\cos(2\\,variable)\\cos(3\\,variable)\\cdots\\cos(integer\\,variable)$. Find the smallest $integer$ such that $|productfunc''(0)|>2023$.",
+      "solution": "If we use the product rule to calculate $productfunc''(variable)$, the result is a sum of terms of two types: terms where two distinct factors $\\cos(firstindex\\,variable)$ and $\\cos(secondindex\\,variable)$ have each been differentiated once, and terms where a single factor $\\cos(indexvar\\,variable)$ has been differentiated twice. When we evaluate at $variable=0$, all terms of the first type vanish since $\\sin(0)=0$, while the term of the second type involving $(\\cos(indexvar\\,variable))''$ becomes $-\\,indexvar^2$. Thus \n\\[\n|productfunc''(0)| = \\left|-\\sum_{indexvar=1}^{integer} indexvar^2\\right| = \\frac{integer(integer+1)(2\\cdot integer+1)}{6}.\n\\]\nThe function $helperf(integer) = \\frac{integer(integer+1)(2\\cdot integer+1)}{6}$ is increasing for $integer\\in\\mathbb{N}$ and satisfies $helperf(17)=1785$ and $helperf(18)=2109$. It follows that the answer is $integer=18$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandstorm",
+        "n": "bluegrass",
+        "f_n": "birchgrove",
+        "m": "starlight",
+        "m_1": "lanterns",
+        "m_2": "crocodile",
+        "g": "arrowhead"
+      },
+      "question": "For a positive integer $bluegrass$, let $birchgrove(sandstorm)=\\cos(sandstorm)\\cos(2 sandstorm)\\cos(3 sandstorm)\\cdots\\cos(bluegrass sandstorm)$. Find the smallest $bluegrass$ such that $|birchgrove''(0)|>2023$.",
+      "solution": "If we use the product rule to calculate $birchgrove''(sandstorm)$, the result is a sum of terms of two types: terms where two distinct factors $\\cos(lanterns sandstorm)$ and $\\cos(crocodile sandstorm)$ have each been differentiated once, and terms where a single factor $\\cos(starlight sandstorm)$ has been differentiated twice. When we evaluate at $sandstorm=0$, all terms of the first type vanish since $\\sin(0)=0$, while the term of the second type involving $(\\cos(starlight sandstorm))''$ becomes $-starlight^2$. Thus \n\\[\n|birchgrove''(0)|=\\left|-\\sum_{starlight=1}^{bluegrass} starlight^2\\right|=\\frac{bluegrass(bluegrass+1)(2 bluegrass+1)}{6}.\n\\]\nThe function $arrowhead(bluegrass)=\\frac{bluegrass(bluegrass+1)(2 bluegrass+1)}{6}$ is increasing for $bluegrass\\in\\mathbb{N}$ and satisfies $arrowhead(17)=1785$ and $arrowhead(18)=2109$. It follows that the answer is $bluegrass=18$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "distancevalue",
+        "n": "fractionalnumber",
+        "f_n": "fixedscalar",
+        "m": "totalcount",
+        "m_1": "aggregatedone",
+        "m_2": "aggregatedtwo",
+        "g": "fixedmeasure"
+      },
+      "question": "For a positive integer $fractionalnumber$, let $fixedscalar(distancevalue) = \\cos(distancevalue) \\cos(2distancevalue) \\cos(3distancevalue) \\cdots \\cos(fractionalnumber distancevalue)$. Find the smallest $fractionalnumber$ such that $|fixedscalar''(0)| > 2023$.",
+      "solution": "If we use the product rule to calculate $fixedscalar''(distancevalue)$, the result is a sum of terms of two types: terms where two distinct factors $\\cos(aggregatedone distancevalue)$ and $\\cos(aggregatedtwo distancevalue)$ have each been differentiated once, and terms where a single factor $\\cos(totalcount distancevalue)$ has been differentiated twice. When we evaluate at $distancevalue=0$, all terms of the first type vanish since $\\sin(0)=0$, while the term of the second type involving $(\\cos(totalcount distancevalue))''$ becomes $-totalcount^2$. Thus \n\\[\n|fixedscalar''(0)| = \\left|-\\sum_{totalcount=1}^{fractionalnumber} totalcount^2\\right| = \\frac{fractionalnumber(fractionalnumber+1)(2fractionalnumber+1)}{6}.\n\\]\nThe function $fixedmeasure(fractionalnumber) = \\frac{fractionalnumber(fractionalnumber+1)(2fractionalnumber+1)}{6}$ is increasing for $fractionalnumber\\in\\mathbb{N}$ and satisfies $fixedmeasure(17)=1785$ and $fixedmeasure(18)=2109$. It follows that the answer is $fractionalnumber=18$. "
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zqfwenmp",
+        "n": "hvakdseu",
+        "f_n": "plmjkuio",
+        "m": "xvctbnae",
+        "m_1": "lskdjfhg",
+        "m_2": "pqworeiu",
+        "g": "rtyuioas"
+      },
+      "question": "For a positive integer $hvakdseu$, let $plmjkuio(zqfwenmp) = \\cos(zqfwenmp) \\cos(2 zqfwenmp) \\cos(3 zqfwenmp) \\cdots \\cos(hvakdseu zqfwenmp)$. Find the smallest $hvakdseu$ such that $|plmjkuio''(0)| > 2023$.",
+      "solution": "If we use the product rule to calculate $plmjkuio''(zqfwenmp)$, the result is a sum of terms of two types: terms where two distinct factors $\\cos(lskdjfhg zqfwenmp)$ and $\\cos(pqworeiu zqfwenmp)$ have each been differentiated once, and terms where a single factor $\\cos(xvctbnae zqfwenmp)$ has been differentiated twice. When we evaluate at $zqfwenmp=0$, all terms of the first type vanish since $\\sin(0)=0$, while the term of the second type involving $(\\cos(xvctbnae zqfwenmp))''$ becomes $-xvctbnae^2$. Thus \n\\[\n|plmjkuio''(0)| = \\left| - \\sum_{xvctbnae=1}^{hvakdseu} xvctbnae^2 \\right| = \\frac{hvakdseu(hvakdseu+1)(2hvakdseu+1)}{6}.\n\\]\nThe function $rtyuioas(hvakdseu) = \\frac{hvakdseu(hvakdseu+1)(2hvakdseu+1)}{6}$ is increasing for $hvakdseu\\in\\mathbb{N}$ and satisfies $rtyuioas(17)=1785$ and $rtyuioas(18)=2109$. It follows that the answer is $hvakdseu=18$. "
+    },
+    "kernel_variant": {
+      "question": "For a positive integer $n$, define \n\\[\nF_n(x)=\\cos x\\,\\cos(2x)\\,\\cos(3x)\\cdots\\cos(nx).\n\\]\nFind the smallest $n$ such that \n\\[\n\\bigl|F_n''(2\\pi)\\bigr|>5000.\n\\]",
+      "solution": "Differentiate twice with the product rule.  Each term in the expansion of F_n''(x) is of one of two types: (1) a term in which two distinct factors have been differentiated once, or (2) a term in which one factor has been differentiated twice.\n\nAt x=2\\pi  we have sin(m\\cdot 2\\pi )=0 and cos(m\\cdot 2\\pi )=1 for every positive integer m.  Hence every type-(1) term, which contains a factor sin(m\\cdot 2\\pi ), vanishes.  In each surviving type-(2) term the factor (cos(mx))'' contributes -m^2, while all other cosine factors evaluate to 1.  Therefore\n|F_n''(2\\pi )| = |-\\sum _{m=1}^n m^2| = \\sum _{m=1}^n m^2 = n(n+1)(2n+1)/6.\n\nWe seek the least n for which n(n+1)(2n+1)/6 > 5000.  Checking,\nn=24: 24\\cdot 25\\cdot 49/6 = 4900 < 5000,\nn=25: 25\\cdot 26\\cdot 51/6 = 5525 > 5000.\n\nThus the smallest integer n is 25.",
+      "_meta": {
+        "core_steps": [
+          "Differentiate the product twice with the product rule.",
+          "At x=0 every mixed term vanishes (sin 0 = 0); only the double–derivative of each single factor remains.",
+          "Compute (cos (mx))''(0)=−m² and sum over m=1…n.",
+          "Use Σ m² = n(n+1)(2n+1)/6 to obtain |f_n''(0)|.",
+          "Solve n(n+1)(2n+1)/6 > 2023 and pick the least integer n (18)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Numerical cutoff in the final inequality.",
+            "original": "2023"
+          },
+          "slot2": {
+            "description": "Evaluation point where sin term is 0 and cos term is 1 (e.g. any 2πk).",
+            "original": "0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

@@ -1,0 +1,116 @@
+{
+  "index": "1953-A-3",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "3. If \\( x_{1}, x_{2}, x_{3} \\) are real numbers and the sum of any two is greater than the third, show that\n\\[\n\\frac{2}{3} \\sum_{i=1}^{3} x_{i} \\sum_{i=1}^{3} x_{i}^{2}>\\sum_{i=1}^{3} x_{i}^{3}+x_{1} x_{2} x_{3}\n\\]",
+  "solution": "First Solution. Note that the required inequality is equivalent to\n\\[\n2\\left(\\Sigma x_{i}\\right)\\left(\\sum x_{i}^{2}\\right)>3 \\Sigma x_{i}^{3}+3 x_{1} x_{2} x_{3}\n\\]\n\nPut\n\\[\n2 a=x_{2}+x_{3}-x_{1}, \\quad 2 b=x_{3}+x_{1}-x_{2}, \\quad 2 c=x_{1}+x_{2}-x_{3} .\n\\]\n\nThen\n\\[\nx_{1}=b+c, \\quad x_{2}=c+a, \\quad x_{3}=a+b\n\\]\nand\n\\[\n\\begin{aligned}\n\\Sigma x_{i} & =2 \\Sigma a \\\\\n\\Sigma x_{i}^{2} & =2 \\Sigma a^{2}+2 \\Sigma a b \\\\\n\\Sigma x_{i}^{3} & =2 \\Sigma a^{3}+3 \\Sigma a^{2} b \\\\\nx_{1} x_{2} x_{3} & =\\Sigma a^{2} b+2 a b c\n\\end{aligned}\n\\]\nwhere \\( \\sum a^{2} b \\) stands for\n\\[\na^{2} b+a^{2} c+b^{2} a+b^{2} c+c^{2} a+c^{2} b\n\\]\nwith similar interpretations for the other summations. The left side of (1) is\n\\[\n8(\\Sigma a)\\left(\\Sigma a^{2}+\\Sigma a b\\right)=8\\left(\\Sigma a^{3}+2 \\Sigma a^{2} b+3 a b c\\right)\n\\]\nand the right side of (1) is\n\\[\n6 \\Sigma a^{3}+12 \\Sigma a^{2} b+6 a b c\n\\]\nand it is obvious that (2) exceeds (3) since \\( a, b \\), and \\( c \\) are all positive numbers.\n\nSecond Solution. We first note that \\( x_{1}, x_{2} \\), and \\( x_{3} \\) are all positive since, for example, \\( 2 x_{1}=\\left(x_{1}+x_{2}-x_{3}\\right)+\\left(x_{1}+x_{3}-x_{2}\\right) \\). We also know that\n\\[\n\\begin{aligned}\n0 & <\\left(x_{1}+x_{2}-x_{3}\\right)\\left(x_{2}+x_{3}-x_{1}\\right)\\left(x_{3}+x_{1}-x_{2}\\right) \\\\\n& =\\Sigma x_{i}^{2} x_{j}-\\Sigma x_{i}{ }^{3}-2 x_{1} x_{2} x_{3} .\n\\end{aligned}\n\\]\n\nSince the left member of (1) is\n\\[\n2\\left(\\sum x_{i}{ }^{2} x_{j}+\\sum x_{i}{ }^{3}\\right)\n\\]\nthe required inequality is equivalent to\n\\[\n2 \\Sigma x_{i}{ }^{2} x_{j}>\\sum x_{i}{ }^{3}+3 x_{1} x_{2} x_{3} .\n\\]\n\nBut (5) follows immediately from (4) and\n\\[\n\\sum x_{i}^{2} x_{j}>x_{1} x_{2} x_{3}\n\\]\nwhich is obvious since all terms on the left are positive and if for example, \\( x_{1} \\leq x_{2} \\leq x_{3} \\), then \\( x_{1} x_{2} x_{3} \\leq x_{2}^{2} x_{3} \\). [In fact the much stronger inequality \\( \\frac{1}{6} \\Sigma x_{i}^{2} x_{j} \\geq x_{1} x_{2} x_{3} \\) is valid for positive \\( x_{1}, x_{2}, x_{3} \\), since this asserts that the arithmetic mean of the six numbers \\( x_{i}{ }^{2} x_{j} \\) exceeds their geometric mean.]",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "x_1",
+    "x_2",
+    "x_3",
+    "x_i",
+    "x_j"
+  ],
+  "params": [
+    "i",
+    "j"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "varalpha",
+        "b": "varbeta",
+        "c": "vargamma",
+        "x_1": "firstcoord",
+        "x_2": "secondcoord",
+        "x_3": "thirdcoord",
+        "x_i": "indexcoord",
+        "x_j": "altcoord",
+        "i": "indexparam",
+        "j": "otherparam"
+      },
+      "question": "Problem:\n<<<\n3. If \\( firstcoord, secondcoord, thirdcoord \\) are real numbers and the sum of any two is greater than the third, show that\n\\[\n\\frac{2}{3} \\sum_{indexparam=1}^{3} indexcoord \\sum_{indexparam=1}^{3} indexcoord^{2}>\\sum_{indexparam=1}^{3} indexcoord^{3}+firstcoord secondcoord thirdcoord\n\\]\n>>>",
+      "solution": "First Solution. Note that the required inequality is equivalent to\n\\[\n2\\left(\\Sigma indexcoord\\right)\\left(\\sum indexcoord^{2}\\right)>3 \\Sigma indexcoord^{3}+3 firstcoord secondcoord thirdcoord\n\\]\n\nPut\n\\[\n2 varalpha=secondcoord+thirdcoord-firstcoord, \\quad 2 varbeta=thirdcoord+firstcoord-secondcoord, \\quad 2 vargamma=firstcoord+secondcoord-thirdcoord .\n\\]\n\nThen\n\\[\nfirstcoord=varbeta+vargamma, \\quad secondcoord=vargamma+varalpha, \\quad thirdcoord=varalpha+varbeta\n\\]\nand\n\\[\n\\begin{aligned}\n\\Sigma indexcoord & =2 \\Sigma varalpha \\\\\n\\Sigma indexcoord^{2} & =2 \\Sigma varalpha^{2}+2 \\Sigma varalpha varbeta \\\\\n\\Sigma indexcoord^{3} & =2 \\Sigma varalpha^{3}+3 \\Sigma varalpha^{2} varbeta \\\\\nfirstcoord secondcoord thirdcoord & =\\Sigma varalpha^{2} varbeta+2 varalpha varbeta vargamma\n\\end{aligned}\n\\]\nwhere \\( \\sum varalpha^{2} varbeta \\) stands for\n\\[\nvaralpha^{2} varbeta+varalpha^{2} vargamma+varbeta^{2} varalpha+varbeta^{2} vargamma+vargamma^{2} varalpha+vargamma^{2} varbeta\n\\]\nwith similar interpretations for the other summations. The left side of (1) is\n\\[\n8(\\Sigma varalpha)\\left(\\Sigma varalpha^{2}+\\Sigma varalpha varbeta\\right)=8\\left(\\Sigma varalpha^{3}+2 \\Sigma varalpha^{2} varbeta+3 varalpha varbeta vargamma\\right)\n\\]\nand the right side of (1) is\n\\[\n6 \\Sigma varalpha^{3}+12 \\Sigma varalpha^{2} varbeta+6 varalpha varbeta vargamma\n\\]\nand it is obvious that (2) exceeds (3) since \\( varalpha, varbeta \\), and \\( vargamma \\) are all positive numbers.\n\nSecond Solution. We first note that \\( firstcoord, secondcoord \\), and \\( thirdcoord \\) are all positive since, for example, \\( 2 firstcoord=\\left(firstcoord+secondcoord-thirdcoord\\right)+\\left(firstcoord+thirdcoord-secondcoord\\right) \\). We also know that\n\\[\n\\begin{aligned}\n0 & <\\left(firstcoord+secondcoord-thirdcoord\\right)\\left(secondcoord+thirdcoord-firstcoord\\right)\\left(thirdcoord+firstcoord-secondcoord\\right) \\\\\n& =\\Sigma indexcoord^{2} altcoord-\\Sigma indexcoord{ }^{3}-2 firstcoord secondcoord thirdcoord .\n\\end{aligned}\n\\]\n\nSince the left member of (1) is\n\\[\n2\\left(\\sum indexcoord{ }^{2} altcoord+\\sum indexcoord{ }^{3}\\right)\n\\]\nthe required inequality is equivalent to\n\\[\n2 \\Sigma indexcoord{ }^{2} altcoord>\\sum indexcoord{ }^{3}+3 firstcoord secondcoord thirdcoord .\n\\]\n\nBut (5) follows immediately from (4) and\n\\[\n\\sum indexcoord^{2} altcoord>firstcoord secondcoord thirdcoord\n\\]\nwhich is obvious since all terms on the left are positive and if for example, \\( firstcoord \\leq secondcoord \\leq thirdcoord \\), then \\( firstcoord secondcoord thirdcoord \\leq secondcoord^{2} thirdcoord \\). [In fact the much stronger inequality \\( \\frac{1}{6} \\Sigma indexcoord^{2} altcoord \\geq firstcoord secondcoord thirdcoord \\) is valid for positive \\( firstcoord, secondcoord, thirdcoord \\), since this asserts that the arithmetic mean of the six numbers \\( indexcoord{ }^{2} altcoord \\) exceeds their geometric mean.]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "maplewood",
+        "b": "resinspire",
+        "c": "velvetseed",
+        "x_1": "copperlion",
+        "x_2": "amberhawk",
+        "x_3": "silverbark",
+        "x_i": "bronzefawn",
+        "x_j": "gildedmoth",
+        "i": "radiantdusk",
+        "j": "obsidianray"
+      },
+      "question": "3. If \\( copperlion, amberhawk, silverbark \\) are real numbers and the sum of any two is greater than the third, show that\n\\[\n\\frac{2}{3} \\sum_{radiantdusk=1}^{3} bronzefawn \\sum_{radiantdusk=1}^{3} bronzefawn^{2}>\\sum_{radiantdusk=1}^{3} bronzefawn^{3}+copperlion amberhawk silverbark\n\\]\n",
+      "solution": "First Solution. Note that the required inequality is equivalent to\n\\[\n2\\left(\\Sigma bronzefawn\\right)\\left(\\sum bronzefawn^{2}\\right)>3 \\Sigma bronzefawn^{3}+3 copperlion amberhawk silverbark\n\\]\n\nPut\n\\[\n2 maplewood=amberhawk+silverbark-copperlion, \\quad 2 resinspire=silverbark+copperlion-amberhawk, \\quad 2 velvetseed=copperlion+amberhawk-silverbark .\n\\]\n\nThen\n\\[\ncopperlion=resinspire+velvetseed, \\quad amberhawk=velvetseed+maplewood, \\quad silverbark=maplewood+resinspire\n\\]\nand\n\\[\n\\begin{aligned}\n\\Sigma bronzefawn & =2 \\Sigma maplewood \\\\\n\\Sigma bronzefawn^{2} & =2 \\Sigma maplewood^{2}+2 \\Sigma maplewood resinspire \\\\\n\\Sigma bronzefawn^{3} & =2 \\Sigma maplewood^{3}+3 \\Sigma maplewood^{2} resinspire \\\\\ncopperlion amberhawk silverbark & =\\Sigma maplewood^{2} resinspire+2 maplewood resinspire velvetseed\n\\end{aligned}\n\\]\nwhere \\( \\sum maplewood^{2} resinspire \\) stands for\n\\[\nmaplewood^{2} resinspire+maplewood^{2} velvetseed+resinspire^{2} maplewood+resinspire^{2} velvetseed+velvetseed^{2} maplewood+velvetseed^{2} resinspire\n\\]\nwith similar interpretations for the other summations. The left side of (1) is\n\\[\n8(\\Sigma maplewood)\\left(\\Sigma maplewood^{2}+\\Sigma maplewood resinspire\\right)=8\\left(\\Sigma maplewood^{3}+2 \\Sigma maplewood^{2} resinspire+3 maplewood resinspire velvetseed\\right)\n\\]\nand the right side of (1) is\n\\[\n6 \\Sigma maplewood^{3}+12 \\Sigma maplewood^{2} resinspire+6 maplewood resinspire velvetseed\n\\]\nand it is obvious that (2) exceeds (3) since \\( maplewood, resinspire \\), and \\( velvetseed \\) are all positive numbers.\n\nSecond Solution. We first note that \\( copperlion, amberhawk \\), and \\( silverbark \\) are all positive since, for example, \\( 2 copperlion=\\left(copperlion+amberhawk-silverbark\\right)+\\left(copperlion+silverbark-amberhawk\\right) \\). We also know that\n\\[\n\\begin{aligned}\n0 & <\\left(copperlion+amberhawk-silverbark\\right)\\left(amberhawk+silverbark-copperlion\\right)\\left(silverbark+copperlion-amberhawk\\right) \\\\\n& =\\Sigma bronzefawn^{2} gildedmoth-\\Sigma bronzefawn{ }^{3}-2 copperlion amberhawk silverbark .\n\\end{aligned}\n\\]\n\nSince the left member of (1) is\n\\[\n2\\left(\\sum bronzefawn{ }^{2} gildedmoth+\\sum bronzefawn{ }^{3}\\right)\n\\]\nthe required inequality is equivalent to\n\\[\n2 \\Sigma bronzefawn{ }^{2} gildedmoth>\\sum bronzefawn{ }^{3}+3 copperlion amberhawk silverbark .\n\\]\n\nBut (5) follows immediately from (4) and\n\\[\n\\sum bronzefawn^{2} gildedmoth>copperlion amberhawk silverbark\n\\]\nwhich is obvious since all terms on the left are positive and if for example, \\( copperlion \\leq amberhawk \\leq silverbark \\), then \\( copperlion amberhawk silverbark \\leq amberhawk^{2} silverbark \\). [In fact the much stronger inequality \\( \\frac{1}{6} \\Sigma bronzefawn^{2} gildedmoth \\geq copperlion amberhawk silverbark \\) is valid for positive \\( copperlion, amberhawk, silverbark \\), since this asserts that the arithmetic mean of the six numbers \\( bronzefawn{ }^{2} gildedmoth \\) exceeds their geometric mean.]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "negative",
+        "b": "subtract",
+        "c": "deficiency",
+        "x_1": "constantone",
+        "x_2": "constanttwo",
+        "x_3": "constantthree",
+        "x_i": "fixedvalue",
+        "x_j": "frozenvalue",
+        "i": "constantindex",
+        "j": "steadyindex"
+      },
+      "question": "3. If \\( constantone, constanttwo, constantthree \\) are real numbers and the sum of any two is greater than the third, show that\n\\[\n\\frac{2}{3} \\sum_{constantindex=1}^{3} fixedvalue \\sum_{constantindex=1}^{3} fixedvalue^{2}>\\sum_{constantindex=1}^{3} fixedvalue^{3}+constantone constanttwo constantthree\n\\]",
+      "solution": "First Solution. Note that the required inequality is equivalent to\n\\[\n2\\left(\\Sigma fixedvalue\\right)\\left(\\sum fixedvalue^{2}\\right)>3 \\Sigma fixedvalue^{3}+3 constantone constanttwo constantthree\n\\]\n\nPut\n\\[\n2 negative=constanttwo+constantthree-constantone, \\quad 2 subtract=constantthree+constantone-constanttwo, \\quad 2 deficiency=constantone+constanttwo-constantthree .\n\\]\n\nThen\n\\[\nconstantone=subtract+deficiency, \\quad constanttwo=deficiency+negative, \\quad constantthree=negative+subtract\n\\]\nand\n\\[\n\\begin{aligned}\n\\Sigma fixedvalue & =2 \\Sigma negative \\\\\n\\Sigma fixedvalue^{2} & =2 \\Sigma negative^{2}+2 \\Sigma negative subtract \\\\\n\\Sigma fixedvalue^{3} & =2 \\Sigma negative^{3}+3 \\Sigma negative^{2} subtract \\\\\nconstantone constanttwo constantthree & =\\Sigma negative^{2} subtract+2 negative subtract deficiency\n\\end{aligned}\n\\]\nwhere \\( \\sum negative^{2} subtract \\) stands for\n\\[\nnegative^{2} subtract+negative^{2} deficiency+subtract^{2} negative+subtract^{2} deficiency+deficiency^{2} negative+deficiency^{2} subtract\n\\]\nwith similar interpretations for the other summations. The left side of (1) is\n\\[\n8(\\Sigma negative)\\left(\\Sigma negative^{2}+\\Sigma negative subtract\\right)=8\\left(\\Sigma negative^{3}+2 \\Sigma negative^{2} subtract+3 negative subtract deficiency\\right)\n\\]\nand the right side of (1) is\n\\[\n6 \\Sigma negative^{3}+12 \\Sigma negative^{2} subtract+6 negative subtract deficiency\n\\]\nand it is obvious that (2) exceeds (3) since \\( negative, subtract \\), and \\( deficiency \\) are all positive numbers.\n\nSecond Solution. We first note that \\( constantone, constanttwo \\), and \\( constantthree \\) are all positive since, for example, \\( 2 constantone=\\left(constantone+constanttwo-constantthree\\right)+\\left(constantone+constantthree-constanttwo\\right) \\). We also know that\n\\[\n\\begin{aligned}\n0 & <\\left(constantone+constanttwo-constantthree\\right)\\left(constanttwo+constantthree-constantone\\right)\\left(constantthree+constantone-constanttwo\\right) \\\\\n& =\\Sigma fixedvalue^{2} frozenvalue-\\Sigma fixedvalue{ }^{3}-2 constantone constanttwo constantthree .\n\\end{aligned}\n\\]\n\nSince the left member of (1) is\n\\[\n2\\left(\\sum fixedvalue{ }^{2} frozenvalue+\\sum fixedvalue{ }^{3}\\right)\n\\]\nthe required inequality is equivalent to\n\\[\n2 \\Sigma fixedvalue{ }^{2} frozenvalue>\\sum fixedvalue{ }^{3}+3 constantone constanttwo constantthree .\n\\]\n\nBut (5) follows immediately from (4) and\n\\[\n\\sum fixedvalue^{2} frozenvalue>constantone constanttwo constantthree\n\\]\nwhich is obvious since all terms on the left are positive and if for example, \\( constantone \\leq constanttwo \\leq constantthree \\), then \\( constantone constanttwo constantthree \\leq constanttwo^{2} constantthree \\). [In fact the much stronger inequality \\( \\frac{1}{6} \\Sigma fixedvalue^{2} frozenvalue \\geq constantone constanttwo constantthree \\) is valid for positive \\( constantone, constanttwo, constantthree \\), since this asserts that the arithmetic mean of the six numbers \\( fixedvalue{ }^{2} frozenvalue \\) exceeds their geometric mean.]"
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "mpqesnrz",
+        "x_1": "kdlowjtz",
+        "x_2": "snrpqvmd",
+        "x_3": "tghlpsar",
+        "x_i": "vkwjrtmz",
+        "x_j": "lskvznqe",
+        "i": "oqirnpsd",
+        "j": "zvrashmk"
+      },
+      "question": "3. If \\( kdlowjtz, snrpqvmd, tghlpsar \\) are real numbers and the sum of any two is greater than the third, show that\n\\[\n\\frac{2}{3} \\sum_{oqirnpsd=1}^{3} vkwjrtmz \\sum_{oqirnpsd=1}^{3} vkwjrtmz^{2}>\\sum_{oqirnpsd=1}^{3} vkwjrtmz^{3}+kdlowjtz snrpqvmd tghlpsar\n\\]\n",
+      "solution": "First Solution. Note that the required inequality is equivalent to\n\\[\n2\\left(\\Sigma vkwjrtmz\\right)\\left(\\sum vkwjrtmz^{2}\\right)>3 \\Sigma vkwjrtmz^{3}+3 kdlowjtz snrpqvmd tghlpsar\n\\]\n\nPut\n\\[\n2 qzxwvtnp=snrpqvmd+tghlpsar-kdlowjtz, \\quad 2 hjgrksla=tghlpsar+kdlowjtz-snrpqvmd, \\quad 2 mpqesnrz=kdlowjtz+snrpqvmd-tghlpsar .\n\\]\n\nThen\n\\[\nkdlowjtz=hjgrksla+mpqesnrz, \\quad snrpqvmd=mpqesnrz+qzxwvtnp, \\quad tghlpsar=qzxwvtnp+hjgrksla\n\\]\nand\n\\[\n\\begin{aligned}\n\\Sigma kdlowjtz & =2 \\Sigma qzxwvtnp \\\\\n\\Sigma kdlowjtz^{2} & =2 \\Sigma qzxwvtnp^{2}+2 \\Sigma qzxwvtnp hjgrksla \\\\\n\\Sigma kdlowjtz^{3} & =2 \\Sigma qzxwvtnp^{3}+3 \\Sigma qzxwvtnp^{2} hjgrksla \\\\\nkdlowjtz snrpqvmd tghlpsar & =\\Sigma qzxwvtnp^{2} hjgrksla+2 qzxwvtnp hjgrksla mpqesnrz\n\\end{aligned}\n\\]\nwhere \\( \\sum qzxwvtnp^{2} hjgrksla \\) stands for\n\\[\nqzxwvtnp^{2} hjgrksla+qzxwvtnp^{2} mpqesnrz+hjgrksla^{2} qzxwvtnp+hjgrksla^{2} mpqesnrz+mpqesnrz^{2} qzxwvtnp+mpqesnrz^{2} hjgrksla\n\\]\nwith similar interpretations for the other summations. The left side of (1) is\n\\[\n8(\\Sigma qzxwvtnp)\\left(\\Sigma qzxwvtnp^{2}+\\Sigma qzxwvtnp hjgrksla\\right)=8\\left(\\Sigma qzxwvtnp^{3}+2 \\Sigma qzxwvtnp^{2} hjgrksla+3 qzxwvtnp hjgrksla mpqesnrz\\right)\n\\]\nand the right side of (1) is\n\\[\n6 \\Sigma qzxwvtnp^{3}+12 \\Sigma qzxwvtnp^{2} hjgrksla+6 qzxwvtnp hjgrksla mpqesnrz\n\\]\nand it is obvious that (2) exceeds (3) since \\( qzxwvtnp, hjgrksla \\), and \\( mpqesnrz \\) are all positive numbers.\n\nSecond Solution. We first note that \\( kdlowjtz, snrpqvmd \\), and \\( tghlpsar \\) are all positive since, for example, \\( 2 kdlowjtz=\\left(kdlowjtz+snrpqvmd-tghlpsar\\right)+\\left(kdlowjtz+tghlpsar-snrpqvmd\\right) \\). We also know that\n\\[\n\\begin{aligned}\n0 & <\\left(kdlowjtz+snrpqvmd-tghlpsar\\right)\\left(snrpqvmd+tghlpsar-kdlowjtz\\right)\\left(tghlpsar+kdlowjtz-snrpqvmd\\right) \\\\\n& =\\Sigma kdlowjtz^{2} lskvznqe-\\Sigma kdlowjtz{ }^{3}-2 kdlowjtz snrpqvmd tghlpsar .\n\\end{aligned}\n\\]\n\nSince the left member of (1) is\n\\[\n2\\left(\\sum kdlowjtz{ }^{2} lskvznqe+\\sum kdlowjtz{ }^{3}\\right)\n\\]\nthe required inequality is equivalent to\n\\[\n2 \\Sigma kdlowjtz{ }^{2} lskvznqe>\\sum kdlowjtz{ }^{3}+3 kdlowjtz snrpqvmd tghlpsar .\n\\]\n\nBut (5) follows immediately from (4) and\n\\[\n\\sum kdlowjtz^{2} lskvznqe>kdlowjtz snrpqvmd tghlpsar\n\\]\nwhich is obvious since all terms on the left are positive and if for example, \\( kdlowjtz \\leq snrpqvmd \\leq tghlpsar \\), then \\( kdlowjtz snrpqvmd tghlpsar \\leq snrpqvmd^{2} tghlpsar \\). [In fact the much stronger inequality \\( \\frac{1}{6} \\Sigma kdlowjtz^{2} lskvznqe \\geq kdlowjtz snrpqvmd tghlpsar \\) is valid for positive \\( kdlowjtz, snrpqvmd, tghlpsar \\), since this asserts that the arithmetic mean of the six numbers \\( kdlowjtz{ }^{2} lskvznqe \\) exceeds their geometric mean.]"
+    },
+    "kernel_variant": {
+      "question": "Let $x_1,x_2,x_3$ be real numbers such that each pair sums to more than the remaining term:\n\\[\n x_i+x_j>x_k\\qquad(\\{i,j,k\\}=\\{1,2,3\\}).\n\\]\nProve that\n\\[\n\\frac{5}{8}\\,(x_1+x_2+x_3)\\,(x_1^{2}+x_2^{2}+x_3^{2})\n>\nx_1^{3}+x_2^{3}+x_3^{3}+x_1x_2x_3.\n\\]\n",
+      "solution": "Because the three triangle inequalities hold, write\n\n\\[\n3a=x_2+x_3-x_1,\n\\qquad 3b=x_3+x_1-x_2,\n\\qquad 3c=x_1+x_2-x_3.\n\\]\n\nEach bracket on the right-hand side is positive, hence a,b,c>0.\n\n1. Recover x_1,x_2,x_3:\n   adding two of the defining equalities gives x_3=\\tfrac32(a+b), and cyclically\n\n\\[\n x_1=\\frac32(b+c),\\qquad x_2=\\frac32(c+a),\\qquad x_3=\\frac32(a+b).\n\\]\n\n2. Elementary symmetric rewrites (put \\Sigma a=a+b+c, \\Sigma a^2=a^2+b^2+c^2, \\Sigma ab=ab+bc+ca, and \\Sigma a^2b=a^2b+a^2c+b^2a+b^2c+c^2a+c^2b):\n\n\\[\n\\begin{aligned}\n\\Sigma x_i      &= 3\\Sigma a,\\\\[4pt]\n\\Sigma x_i^2  &= \\tfrac{9}{2}(\\Sigma a^2+\\Sigma ab),\\\\[4pt]\n\\Sigma x_i^3  &= \\tfrac{27}{4}\\Sigma a^3+\\tfrac{81}{8}\\Sigma a^2b,\\\\[4pt]\n x_1x_2x_3       &= \\tfrac{27}{8}\\Sigma a^2b+\\tfrac{27}{4}abc.\n\\end{aligned}\n\\]\n\n(The last two follow from (b+c)^3+(c+a)^3+(a+b)^3=2\\Sigma a^3+3\\Sigma a^2b and (b+c)(c+a)(a+b)=\\Sigma a^2b+2abc.)\n\n3. Expand the inequality.\n   Left-hand side\n\n\\[\n\\frac{5}{8}(3\\Sigma a)\\frac{9}{2}(\\Sigma a^2+\\Sigma ab)\n  = \\frac{135}{16}(\\Sigma a^3+2\\Sigma a^2b+3abc).\n\\]\n   Right-hand side\n\n\\[\n\\Bigl(\\tfrac{27}{4}\\Sigma a^3+\\tfrac{81}{8}\\Sigma a^2b\\Bigr)\n    +\\Bigl(\\tfrac{27}{8}\\Sigma a^2b+\\tfrac{27}{4}abc\\Bigr)\n  = \\tfrac{27}{4}\\Sigma a^3+\\tfrac{27}{2}\\Sigma a^2b+\\tfrac{27}{4}abc.\n\\]\n\n4. Compare coefficients (common denominator 16):\n\n\\[\n\\begin{array}{c|ccc}\n        & \\Sigma a^3 & \\Sigma a^2b & abc\\\\\\hline\n\\mathrm{LHS}&135 & 270 & 405\\\\\n\\mathrm{RHS}&108 & 216 & 108\n\\end{array}\n\\]\n\nEvery coefficient on the left exceeds the corresponding one on the right, and a,b,c>0; therefore the left-hand side is strictly larger.\n\nHence\n\\[\n\\frac{5}{8}(x_1+x_2+x_3)(x_1^2+x_2^2+x_3^2)>x_1^3+x_2^3+x_3^3+x_1x_2x_3,\n\\]\ncompleting the proof.",
+      "_meta": {
+        "core_steps": [
+          "Encode the three triangle inequalities by setting k·a = x₂ + x₃ − x₁, k·b = x₃ + x₁ − x₂, k·c = x₁ + x₂ − x₃ (so a,b,c>0).",
+          "Rewrite x₁,x₂,x₃ and both sides of the target inequality entirely in terms of a,b,c.",
+          "Expand into the elementary symmetric monomials Σa³, Σa²b, and abc.",
+          "Check the numerical coefficients of each monomial; the left–hand coefficients are larger, and with a,b,c>0 this yields the desired strict inequality."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Leading constant in the inequality (now 2/3). Any c>1/2 keeps every coefficient on the left strictly larger after expansion, so the same comparison works.",
+            "original": "2/3"
+          },
+          "slot2": {
+            "description": "Scaling factor used when converting to a,b,c (now the number 2 in ‘2a=…’ etc.). Any positive factor k gives equivalent expressions and cancellations.",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

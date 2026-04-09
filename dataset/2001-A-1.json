@@ -1,0 +1,90 @@
+{
+  "index": "2001-A-1",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Consider a set $S$ and a binary operation $*$, i.e., for each $a,b\\in S$,\n$a*b\\in S$.  Assume $(a*b)*a=b$ for all $a,b\\in S$.  Prove that\n$a*(b*a)=b$ for all $a,b\\in S$.",
+  "solution": "The hypothesis implies $((b*a)*b)*(b*a)=b$ for all $a,b\\in S$\n(by replacing $a$ by $b*a$), and\nhence $a*(b*a)=b$ for all $a,b\\in S$ (using $(b*a)*b = a$).",
+  "vars": [
+    "S",
+    "a",
+    "b"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S": "greatset",
+        "a": "firstitem",
+        "b": "seconditem"
+      },
+      "question": "Consider a set $greatset$ and a binary operation $*$, i.e., for each $firstitem,seconditem\\in greatset$, $firstitem*seconditem\\in greatset$.  Assume $(firstitem*seconditem)*firstitem=seconditem$ for all $firstitem,seconditem\\in greatset$.  Prove that $firstitem*(seconditem*firstitem)=seconditem$ for all $firstitem,seconditem\\in greatset$.",
+      "solution": "The hypothesis implies $((seconditem*firstitem)*seconditem)*(seconditem*firstitem)=seconditem$ for all $firstitem,seconditem\\in greatset$ (by replacing $firstitem$ by $seconditem*firstitem$), and hence $firstitem*(seconditem*firstitem)=seconditem$ for all $firstitem,seconditem\\in greatset$ (using $(seconditem*firstitem)*seconditem = firstitem$)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S": "pineapple",
+        "a": "landscape",
+        "b": "waterfall"
+      },
+      "question": "Consider a set $pineapple$ and a binary operation $*$, i.e., for each $landscape,waterfall\\in pineapple$, $landscape*waterfall\\in pineapple$.  Assume $(landscape*waterfall)*landscape=waterfall$ for all $landscape,waterfall\\in pineapple$.  Prove that $landscape*(waterfall*landscape)=waterfall$ for all $landscape,waterfall\\in pineapple$.",
+      "solution": "The hypothesis implies $((waterfall*landscape)*waterfall)*(waterfall*landscape)=waterfall$ for all $landscape,waterfall\\in pineapple$ (by replacing $landscape$ by $waterfall*landscape$), and hence $landscape*(waterfall*landscape)=waterfall$ for all $landscape,waterfall\\in pineapple$ (using $(waterfall*landscape)*waterfall = landscape$)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S": "emptiness",
+        "a": "nonentity",
+        "b": "voidness"
+      },
+      "question": "Consider a set $emptiness$ and a binary operation $*$, i.e., for each $nonentity,voidness\\in emptiness$,\n$nonentity*voidness\\in emptiness$.  Assume $(nonentity*voidness)*nonentity=voidness$ for all $nonentity,voidness\\in emptiness$.  Prove that\n$nonentity*(voidness*nonentity)=voidness$ for all $nonentity,voidness\\in emptiness$.",
+      "solution": "The hypothesis implies $((voidness*nonentity)*voidness)*(voidness*nonentity)=voidness$ for all $nonentity,voidness\\in emptiness$\n(by replacing $nonentity$ by $voidness*nonentity$), and\nhence $nonentity*(voidness*nonentity)=voidness$ for all $nonentity,voidness\\in emptiness$ (using $(voidness*nonentity)*voidness = nonentity$)."
+    },
+    "garbled_string": {
+      "map": {
+        "S": "qbvdmien",
+        "a": "knfjwuza",
+        "b": "gvxrelmp"
+      },
+      "question": "Consider a set $qbvdmien$ and a binary operation $*$, i.e., for each $knfjwuza,gvxrelmp\\in qbvdmien$, $knfjwuza*gvxrelmp\\in qbvdmien$.  Assume $(knfjwuza*gvxrelmp)*knfjwuza=gvxrelmp$ for all $knfjwuza,gvxrelmp\\in qbvdmien$.  Prove that $knfjwuza*(gvxrelmp*knfjwuza)=gvxrelmp$ for all $knfjwuza,gvxrelmp\\in qbvdmien$.",
+      "solution": "The hypothesis implies $((gvxrelmp*knfjwuza)*gvxrelmp)*(gvxrelmp*knfjwuza)=gvxrelmp$ for all $knfjwuza,gvxrelmp\\in qbvdmien$ (by replacing $knfjwuza$ by $gvxrelmp*knfjwuza$), and hence $knfjwuza*(gvxrelmp*knfjwuza)=gvxrelmp$ for all $knfjwuza,gvxrelmp\\in qbvdmien$ (using $(gvxrelmp*knfjwuza)*gvxrelmp = knfjwuza$)."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\Omega\\) be a non-empty set equipped with a binary operation \\(\\diamond : \\Omega\\times\\Omega\\to\\Omega\\). Assume that for every pair of elements \\(p,q\\in\\Omega\\) the identity\n\\[\n   (p\\diamond q)\\diamond p = q\n\\]\nholds.  Prove that\n\\[\n   p\\diamond(q\\diamond p)=q\n\\]\nfor all \\(p,q\\in\\Omega\\).",
+      "solution": "Because the identity\n\\[(p\\diamond q)\\diamond p=q\\tag{1}\\]\nis valid for every ordered pair \\((p,q)\\), we can make the following deductions.\n\nStep 1 (Substitution).  Replace \\(p\\) in (1) with the composite element \\(q\\diamond p\\).  This is permissible for all \\(p,q\\in\\Omega\\), and it yields\n\\[((q\\diamond p)\\diamond q)\\diamond(q\\diamond p)=q.\\tag{2}\\]\n\nStep 2 (Variable switch).  Interchange the roles of the two variables in (1) by using the pair \\((q,p)\\) in place of \\((p,q)\\).  We obtain\n\\[(q\\diamond p)\\diamond q=p.\\tag{3}\\]\n\nStep 3 (Substitution of the intermediate result).  Insert the value of \\((q\\diamond p)\\diamond q\\) from (3) into equation (2).  Doing so turns (2) into\n\\[p\\diamond(q\\diamond p)=q,\\]\nwhich is exactly the desired conclusion.\n\nTherefore the relation \\(p\\diamond(q\\diamond p)=q\\) holds for all \\(p,q\\in\\Omega\\), completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Substitute a ← (b * a) in (x*y)*x = y to obtain ((b*a)*b)*(b*a) = b",
+          "Swap the roles of a and b in the original identity to get (b*a)*b = a",
+          "Insert (b*a)*b = a into the first equation, yielding a*(b*a) = b"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "label of the underlying set",
+            "original": "S"
+          },
+          "slot2": {
+            "description": "symbol chosen for the binary operation",
+            "original": "*"
+          },
+          "slot3": {
+            "description": "names of the two generic elements",
+            "original": "a, b"
+          },
+          "slot4": {
+            "description": "composite element used in the substitution step",
+            "original": "b*a"
+          },
+          "slot5": {
+            "description": "direction of variable swap when re-applying the identity",
+            "original": "use (x,y) = (b,a) instead of (a,b)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

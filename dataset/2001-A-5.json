@@ -1,0 +1,88 @@
+{
+  "index": "2001-A-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Prove that there are unique positive integers $a$, $n$ such that\n$a^{n+1}-(a+1)^n=2001$.",
+  "solution": "Suppose $a^{n+1} - (a+1)^n = 2001$.\nNotice that $a^{n+1} + [(a+1)^n - 1]$ is a multiple of $a$; thus\n$a$ divides $2002 = 2 \\times 7 \\times 11 \\times 13$.\n\nSince $2001$ is divisible by 3, we must have $a \\equiv 1 \\pmod{3}$,\notherwise one of $a^{n+1}$ and $(a+1)^n$ is a multiple of 3 and the\nother is not, so their difference cannot be divisible by 3. Now\n$a^{n+1} \\equiv 1 \\pmod{3}$, so we must have $(a+1)^n \\equiv 1\n\\pmod{3}$, which forces $n$ to be even, and in particular at least 2.\n\nIf $a$ is even, then $a^{n+1} - (a+1)^n \\equiv -(a+1)^n \\pmod{4}$.\nSince $n$ is even, $-(a+1)^n \\equiv -1 \\pmod{4}$. Since $2001 \\equiv 1\n\\pmod{4}$, this is impossible. Thus $a$ is odd, and so must divide\n$1001 = 7 \\times 11 \\times 13$. Moreover, $a^{n+1} - (a+1)^n \\equiv a\n\\pmod{4}$, so $a \\equiv 1 \\pmod{4}$.\n\nOf the divisors of $7 \\times 11 \\times 13$, those congruent to 1 mod 3\nare precisely those not divisible by 11 (since 7 and 13 are both\ncongruent to 1 mod 3). Thus $a$ divides $7 \\times 13$. Now\n$a \\equiv 1 \\pmod{4}$ is only possible if $a$ divides $13$.\n\nWe cannot have $a=1$, since $1 - 2^n \\neq 2001$ for any $n$. Thus\nthe only possibility is $a = 13$. One easily checks that $a=13, n=2$ is a\nsolution; all that remains is to check that no other $n$ works. In fact,\nif $n > 2$, then $13^{n+1} \\equiv 2001 \\equiv 1 \\pmod{8}$.\nBut $13^{n+1} \\equiv 13 \\pmod{8}$ since $n$ is even, contradiction.\nThus $a=13, n=2$ is the unique solution.\n\nNote: once one has that $n$ is even, one can use that $2002\n=a^{n+1} + 1 - (a+1)^n$ is divisible by $a+1$ to rule out cases.",
+  "vars": [
+    "a",
+    "n"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "baseval",
+        "n": "expterm"
+      },
+      "question": "Prove that there are unique positive integers $baseval$, $expterm$ such that\n$baseval^{expterm+1}-(baseval+1)^{expterm}=2001$.",
+      "solution": "Suppose $baseval^{expterm+1} - (baseval+1)^{expterm} = 2001$.\nNotice that $baseval^{expterm+1} + [(baseval+1)^{expterm} - 1]$ is a multiple of $baseval$; thus\n$baseval$ divides $2002 = 2 \\times 7 \\times 11 \\times 13$.\n\nSince $2001$ is divisible by 3, we must have $baseval \\equiv 1 \\pmod{3}$,\notherwise one of $baseval^{expterm+1}$ and $(baseval+1)^{expterm}$ is a multiple of 3 and the\nother is not, so their difference cannot be divisible by 3. Now\n$baseval^{expterm+1} \\equiv 1 \\pmod{3}$, so we must have $(baseval+1)^{expterm} \\equiv 1\n\\pmod{3}$, which forces $expterm$ to be even, and in particular at least 2.\n\nIf $baseval$ is even, then $baseval^{expterm+1} - (baseval+1)^{expterm} \\equiv -(baseval+1)^{expterm} \\pmod{4}$.\nSince $expterm$ is even, $-(baseval+1)^{expterm} \\equiv -1 \\pmod{4}$. Since $2001 \\equiv 1\n\\pmod{4}$, this is impossible. Thus $baseval$ is odd, and so must divide\n$1001 = 7 \\times 11 \\times 13$. Moreover, $baseval^{expterm+1} - (baseval+1)^{expterm} \\equiv baseval\n\\pmod{4}$, so $baseval \\equiv 1 \\pmod{4}$.\n\nOf the divisors of $7 \\times 11 \\times 13$, those congruent to 1 mod 3\nare precisely those not divisible by 11 (since 7 and 13 are both\ncongruent to 1 mod 3). Thus $baseval$ divides $7 \\times 13$. Now\n$baseval \\equiv 1 \\pmod{4}$ is only possible if $baseval$ divides $13$.\n\nWe cannot have $baseval=1$, since $1 - 2^{expterm} \\neq 2001$ for any $expterm$. Thus\nthe only possibility is $baseval = 13$. One easily checks that $baseval=13, expterm=2$ is a\nsolution; all that remains is to check that no other $expterm$ works. In fact,\nif $expterm > 2$, then $13^{expterm+1} \\equiv 2001 \\equiv 1 \\pmod{8}$.\nBut $13^{expterm+1} \\equiv 13 \\pmod{8}$ since $expterm$ is even, contradiction.\nThus $baseval=13, expterm=2$ is the unique solution.\n\nNote: once one has that $expterm$ is even, one can use that $2002\n=baseval^{expterm+1} + 1 - (baseval+1)^{expterm}$ is divisible by $baseval+1$ to rule out cases."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "lighthouse",
+        "n": "sandcastle"
+      },
+      "question": "Prove that there are unique positive integers $lighthouse$, $sandcastle$ such that\n$lighthouse^{sandcastle+1}-(lighthouse+1)^{sandcastle}=2001$.",
+      "solution": "Suppose $lighthouse^{sandcastle+1} - (lighthouse+1)^{sandcastle} = 2001$.\nNotice that $lighthouse^{sandcastle+1} + [(lighthouse+1)^{sandcastle} - 1]$ is a multiple of $lighthouse$; thus\n$lighthouse$ divides $2002 = 2 \\times 7 \\times 11 \\times 13$.\n\nSince $2001$ is divisible by 3, we must have $lighthouse \\equiv 1 \\pmod{3}$,\notherwise one of $lighthouse^{sandcastle+1}$ and $(lighthouse+1)^{sandcastle}$ is a multiple of 3 and the\nother is not, so their difference cannot be divisible by 3. Now\n$lighthouse^{sandcastle+1} \\equiv 1 \\pmod{3}$, so we must have $(lighthouse+1)^{sandcastle} \\equiv 1\n\\pmod{3}$, which forces $sandcastle$ to be even, and in particular at least 2.\n\nIf $lighthouse$ is even, then $lighthouse^{sandcastle+1} - (lighthouse+1)^{sandcastle} \\equiv -(lighthouse+1)^{sandcastle} \\pmod{4}$.\nSince $sandcastle$ is even, $-(lighthouse+1)^{sandcastle} \\equiv -1 \\pmod{4}$. Since $2001 \\equiv 1\n\\pmod{4}$, this is impossible. Thus $lighthouse$ is odd, and so must divide\n$1001 = 7 \\times 11 \\times 13$. Moreover, $lighthouse^{sandcastle+1} - (lighthouse+1)^{sandcastle} \\equiv lighthouse\n\\pmod{4}$, so $lighthouse \\equiv 1 \\pmod{4}$.\n\nOf the divisors of $7 \\times 11 \\times 13$, those congruent to 1 mod 3\nare precisely those not divisible by 11 (since 7 and 13 are both\ncongruent to 1 mod 3). Thus $lighthouse$ divides $7 \\times 13$. Now\n$lighthouse \\equiv 1 \\pmod{4}$ is only possible if $lighthouse$ divides $13$.\n\nWe cannot have $lighthouse=1$, since $1 - 2^{sandcastle} \\neq 2001$ for any $sandcastle$. Thus\nthe only possibility is $lighthouse = 13$. One easily checks that $lighthouse=13, sandcastle=2$ is a\nsolution; all that remains is to check that no other $sandcastle$ works. In fact,\nif $sandcastle > 2$, then $13^{sandcastle+1} \\equiv 2001 \\equiv 1 \\pmod{8}$.\nBut $13^{sandcastle+1} \\equiv 13 \\pmod{8}$ since $sandcastle$ is even, contradiction.\nThus $lighthouse=13, sandcastle=2$ is the unique solution.\n\nNote: once one has that $sandcastle$ is even, one can use that $2002\n= lighthouse^{sandcastle+1} + 1 - (lighthouse+1)^{sandcastle}$ is divisible by $lighthouse+1$ to rule out cases."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "zeromagnitude",
+        "n": "irrational"
+      },
+      "question": "Prove that there are unique positive integers $zeromagnitude$, $irrational$ such that\n$zeromagnitude^{irrational+1}-(zeromagnitude+1)^{irrational}=2001$.",
+      "solution": "Suppose $zeromagnitude^{irrational+1} - (zeromagnitude+1)^{irrational} = 2001$.\nNotice that $zeromagnitude^{irrational+1} + [(zeromagnitude+1)^{irrational} - 1]$ is a multiple of $zeromagnitude$; thus\nzeromagnitude divides $2002 = 2 \\times 7 \\times 11 \\times 13$.\n\nSince $2001$ is divisible by 3, we must have $zeromagnitude \\equiv 1 \\pmod{3}$,\notherwise one of $zeromagnitude^{irrational+1}$ and $(zeromagnitude+1)^{irrational}$ is a multiple of 3 and the\nother is not, so their difference cannot be divisible by 3. Now\n$zeromagnitude^{irrational+1} \\equiv 1 \\pmod{3}$, so we must have $(zeromagnitude+1)^{irrational} \\equiv 1\n\\pmod{3}$, which forces $irrational$ to be even, and in particular at least 2.\n\nIf $zeromagnitude$ is even, then $zeromagnitude^{irrational+1} - (zeromagnitude+1)^{irrational} \\equiv -(zeromagnitude+1)^{irrational} \\pmod{4}$.\nSince $irrational$ is even, $-(zeromagnitude+1)^{irrational} \\equiv -1 \\pmod{4}$. Since $2001 \\equiv 1\n\\pmod{4}$, this is impossible. Thus $zeromagnitude$ is odd, and so must divide\n$1001 = 7 \\times 11 \\times 13$. Moreover, $zeromagnitude^{irrational+1} - (zeromagnitude+1)^{irrational} \\equiv zeromagnitude\n\\pmod{4}$, so $zeromagnitude \\equiv 1 \\pmod{4}$.\n\nOf the divisors of $7 \\times 11 \\times 13$, those congruent to 1 mod 3\nare precisely those not divisible by 11 (since 7 and 13 are both\ncongruent to 1 mod 3). Thus zeromagnitude divides $7 \\times 13$. Now\n$zeromagnitude \\equiv 1 \\pmod{4}$ is only possible if zeromagnitude divides $13$.\n\nWe cannot have $zeromagnitude=1$, since $1 - 2^{irrational} \\neq 2001$ for any $irrational$. Thus\nthe only possibility is $zeromagnitude = 13$. One easily checks that $zeromagnitude=13, irrational=2$ is a\nsolution; all that remains is to check that no other $irrational$ works. In fact,\nif $irrational > 2$, then $13^{irrational+1} \\equiv 2001 \\equiv 1 \\pmod{8}$.\nBut $13^{irrational+1} \\equiv 13 \\pmod{8}$ since $irrational$ is even, contradiction.\nThus $zeromagnitude=13, irrational=2$ is the unique solution.\n\nNote: once one has that $irrational$ is even, one can use that $2002\n=zeromagnitude^{irrational+1} + 1 - (zeromagnitude+1)^{irrational}$ is divisible by $zeromagnitude+1$ to rule out cases."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "n": "hjgrksla"
+      },
+      "question": "Prove that there are unique positive integers $qzxwvtnp$, $hjgrksla$ such that\n$qzxwvtnp^{hjgrksla+1}-(qzxwvtnp+1)^{hjgrksla}=2001$.",
+      "solution": "Suppose $qzxwvtnp^{hjgrksla+1} - (qzxwvtnp+1)^{hjgrksla} = 2001$.\nNotice that $qzxwvtnp^{hjgrksla+1} + [(qzxwvtnp+1)^{hjgrksla} - 1]$ is a multiple of $qzxwvtnp$; thus\n$qzxwvtnp$ divides $2002 = 2 \\times 7 \\times 11 \\times 13$.\n\nSince $2001$ is divisible by 3, we must have $qzxwvtnp \\equiv 1 \\pmod{3}$,\notherwise one of $qzxwvtnp^{hjgrksla+1}$ and $(qzxwvtnp+1)^{hjgrksla}$ is a multiple of 3 and the\nother is not, so their difference cannot be divisible by 3. Now\n$qzxwvtnp^{hjgrksla+1} \\equiv 1 \\pmod{3}$, so we must have $(qzxwvtnp+1)^{hjgrksla} \\equiv 1\n\\pmod{3}$, which forces $hjgrksla$ to be even, and in particular at least 2.\n\nIf $qzxwvtnp$ is even, then $qzxwvtnp^{hjgrksla+1} - (qzxwvtnp+1)^{hjgrksla} \\equiv -(qzxwvtnp+1)^{hjgrksla} \\pmod{4}$.\nSince $hjgrksla$ is even, $-(qzxwvtnp+1)^{hjgrksla} \\equiv -1 \\pmod{4}$. Since $2001 \\equiv 1\n\\pmod{4}$, this is impossible. Thus $qzxwvtnp$ is odd, and so must divide\n$1001 = 7 \\times 11 \\times 13$. Moreover, $qzxwvtnp^{hjgrksla+1} - (qzxwvtnp+1)^{hjgrksla} \\equiv qzxwvtnp\n\\pmod{4}$, so $qzxwvtnp \\equiv 1 \\pmod{4}$.\n\nOf the divisors of $7 \\times 11 \\times 13$, those congruent to 1 mod 3\nare precisely those not divisible by 11 (since 7 and 13 are both\ncongruent to 1 mod 3). Thus $qzxwvtnp$ divides $7 \\times 13$. Now\n$qzxwvtnp \\equiv 1 \\pmod{4}$ is only possible if $qzxwvtnp$ divides $13$.\n\nWe cannot have $qzxwvtnp=1$, since $1 - 2^{hjgrksla} \\neq 2001$ for any $hjgrksla$. Thus\nthe only possibility is $qzxwvtnp = 13$. One easily checks that $qzxwvtnp=13, hjgrksla=2$ is a\nsolution; all that remains is to check that no other $hjgrksla$ works. In fact,\nif $hjgrksla > 2$, then $13^{hjgrksla+1} \\equiv 2001 \\equiv 1 \\pmod{8}$.\nBut $13^{hjgrksla+1} \\equiv 13 \\pmod{8}$ since $hjgrksla$ is even, contradiction.\nThus $qzxwvtnp=13, hjgrksla=2$ is the unique solution.\n\nNote: once one has that $hjgrksla$ is even, one can use that $2002\n=qzxwvtnp^{hjgrksla+1} + 1 - (qzxwvtnp+1)^{hjgrksla}$ is divisible by $qzxwvtnp+1$ to rule out cases."
+    },
+    "kernel_variant": {
+      "question": "Prove that there exist unique positive integers \\(a\\) and \\(n\\) satisfying\n\\[\na^{\\,n+1}-(a+1)^{\\,n}=223137.\n\\]",
+      "solution": "Step 1.  A first divisibility.\nAdd 1 to both sides:\n\\[\na^{n+1}+1-(a+1)^{n}=223137+1=223138.\n\\]\nBecause the left-hand side is clearly divisible by \\(a\\), we have\n\\[a\\mid223138=2\\cdot31\\cdot59\\cdot61.\\]\n\nStep 2.  Working modulo 3 - forcing \\(a\\equiv1\\pmod3\\) and an even \\(n\\).\nSince \\(223137\\equiv0\\pmod3\\),\n\\[\na^{n+1}-(a+1)^{n}\\equiv0\\pmod3.\n\\]\nNow\n\\[a^{n+1}\\equiv1\\pmod3\\iff a\\equiv1\\pmod3,\\]\nfor otherwise the two terms would differ in divisibility by 3.  Assuming\n\\(a\\equiv1\\pmod3\\), we have \\(a+1\\equiv2\\pmod3\\) so that\n\\((a+1)^{n}\\equiv2^{n}\\pmod3.\\)  For this to equal 1 modulo 3 we must have\n\\(n\\) even.  In particular \\(n\\ge2\\).\n\nStep 3.  Working modulo 4 - ruling out even \\(a\\) and giving \\(a\\equiv1\\pmod4\\).\nBecause \\(223137\\equiv1\\pmod4\\), if \\(a\\) were even we would get\n\\[a^{n+1}\\equiv0\\pmod4,\\qquad (a+1)^{n}\\equiv1\\pmod4\\;(n\\text{ even}),\\]\nso the difference would be \\(-1\\equiv3\\pmod4\\), impossible.  Thus \\(a\\) is odd\nand still divides 223138; consequently\n\\[a\\mid\\tfrac{223138}{2}=111569=31\\cdot59\\cdot61\\quad\\text{and}\\quad a\\equiv1\\pmod4.\\]\n\nStep 4.  Pinning down \\(a\\).\nAmong the odd divisors of 223138 the congruence requirements are\n\\(a\\equiv1\\pmod3\\) and \\(a\\equiv1\\pmod4\\).  Inspecting the prime factors,\n\\[\n31\\equiv1\\pmod3,\\;31\\equiv3\\pmod4;\\quad\n59\\equiv2\\pmod3,\\;59\\equiv3\\pmod4;\\quad\n61\\equiv1\\pmod3,\\;61\\equiv1\\pmod4.\n\\]\nThe only prime factor meeting both conditions is 61, and any other odd\ndivisor contains 31 or 59, spoiling one of the congruences.  Hence \\(a=61\\).\n\nStep 5.  Determining \\(n\\).\nWith \\(a=61\\) (so \\(a\\equiv5\\pmod8\\)) and knowing \\(n\\) is even, compare both\nsides modulo 8.  Because \\(223137\\equiv1\\pmod8\\), we need\n\\[61^{n+1}-(62)^{n}\\equiv1\\pmod8.\\]\nSince \\(62\\equiv6\\pmod8\\), we have\n\\[\n62^{n}=6^{n}\\equiv\n   \\begin{cases}\n   4,&n=2,\\\\\n   0,&n\\ge4\\text{ even,}\n   \\end{cases}\n\\]\nand \\(61\\equiv5\\pmod8\\) so that for odd exponent \\(n+1\\),\n\\[61^{n+1}\\equiv5\\pmod8.\\]\nThus\n\\[\nn=2\\implies5-4\\equiv1\\pmod8\\(\\text{works}),\\quad\nn\\ge4\\text{ even}\\implies5-0\\equiv5\\pmod8\\(\\text{fails}),\n\\]\nand so \\(n=2\\).\n\nVerification.\nFinally,\n\\[61^{3}-62^{2}=226\\,981-3\\,844=223\\,137,\\]\nso \\((a,n)=(61,2)\\) indeed satisfies the original equation.\nUniqueness follows from the modular restrictions above.",
+      "_meta": {
+        "core_steps": [
+          "Add 1 to the given equation to obtain an expression that is divisible by a, hence a | (2001+1).",
+          "Work mod 3 to force a ≡ 1 (mod 3) and deduce n is even.",
+          "Work mod 4 to rule out even a and obtain a ≡ 1 (mod 4); now a must be an odd divisor of (2001+1)/2.",
+          "Combine the congruence conditions with the prime-factorization of 2002 to isolate the single possible value of a.",
+          "Use mod 8 to show that the even exponent n must equal 2, giving the unique pair (a,n)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Right-hand side constant in the original equation.",
+            "original": "2001"
+          },
+          "slot2": {
+            "description": "Prime factorization of that constant plus 1, used to constrain a.",
+            "original": "2002 = 2·7·11·13"
+          },
+          "slot3": {
+            "description": "Small prime modulus that divides the constant and forces a ≡ 1 (mod p) and n even.",
+            "original": "3"
+          },
+          "slot4": {
+            "description": "Parity modulus that excludes even a (needs the constant ≡ 1 (mod 4)).",
+            "original": "4"
+          },
+          "slot5": {
+            "description": "Higher power-of-two modulus that rules out n > 2 once a is fixed.",
+            "original": "8"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

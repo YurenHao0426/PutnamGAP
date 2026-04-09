@@ -1,0 +1,115 @@
+{
+  "index": "2001-B-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $S$ denote the set of rational numbers different from\n$\\{-1,0,1\\}$.  Define $f:S\\rightarrow S$ by $f(x)=x-1/x$.  Prove\nor disprove that\n\\[\\bigcap_{n=1}^\\infty f^{(n)}(S) = \\emptyset,\\]\nwhere $f^{(n)}$ denotes $f$ composed with itself $n$ times.",
+  "solution": "For a rational number $p/q$ expressed in lowest terms, define\nits {\\it height} $H(p/q)$ to be $|p|+|q|$.  Then for any $p/q\\in S$\nexpressed in lowest terms, we have $H(f(p/q))=|q^2-p^2|+|pq|$; since\nby assumption $p$ and $q$ are nonzero integers with $|p|\\neq |q|$,\nwe have\n\\begin{align*}\nH(f(p/q)) - H(p/q) &= |q^2-p^2|+|pq| -|p| -|q| \\\\\n  &\\geq 3+ |pq| -|p| - |q| \\\\\n&= (|p|-1)(|q|-1) + 2 \\geq 2 .\n\\end{align*}\nIt follows that $f^{(n)}(S)$ consists solely of numbers of height\nstrictly larger than $2n+2$, and hence\n\\[\\cap_{n=1}^\\infty f^{(n)}(S) = \\emptyset.\\]\n\nNote: many choices for the height function are possible: one can\ntake $H(p/q) = \\max{|p|, |q|}$, or $H(p/q)$ equal to the total number of\nprime factors of $p$ and $q$, and so on. The key properties of the height\nfunction are that on one hand, there are only finitely many rationals with\nheight below any finite bound, and on the other hand, the height function\nis a sufficiently ``algebraic'' function of its argument that one can\nrelate the heights of $p/q$ and $f(p/q)$.",
+  "vars": [
+    "x",
+    "n",
+    "p",
+    "q"
+  ],
+  "params": [
+    "S",
+    "f",
+    "H"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "rationalvar",
+        "n": "iterateindex",
+        "p": "numerator",
+        "q": "denominator",
+        "S": "rationalsubset",
+        "f": "transform",
+        "H": "heighteval"
+      },
+      "question": "Let $rationalsubset$ denote the set of rational numbers different from $\\{-1,0,1\\}$.  Define $transform: rationalsubset \\rightarrow rationalsubset$ by $transform(rationalvar)=rationalvar-1/rationalvar$.  Prove or disprove that\n\\[\\bigcap_{iterateindex=1}^\\infty transform^{(iterateindex)}(rationalsubset) = \\emptyset,\\]\nwhere $transform^{(iterateindex)}$ denotes $transform$ composed with itself $iterateindex$ times.",
+      "solution": "For a rational number $numerator/denominator$ expressed in lowest terms, define its {\\it height} $heighteval(numerator/denominator)$ to be $|numerator|+|denominator|$.  Then for any $numerator/denominator \\in rationalsubset$ expressed in lowest terms, we have $heighteval(transform(numerator/denominator))=|denominator^2-numerator^2|+|numerator\\,denominator|$; since by assumption $numerator$ and $denominator$ are nonzero integers with $|numerator|\\neq |denominator|$, we have\n\\begin{align*}\nheighteval(transform(numerator/denominator)) - heighteval(numerator/denominator) &= |denominator^2-numerator^2|+|numerator\\,denominator| -|numerator| -|denominator| \\\\\n  &\\geq 3+ |numerator\\,denominator| -|numerator| - |denominator| \\\\\n&= (|numerator|-1)(|denominator|-1) + 2 \\geq 2 .\n\\end{align*}\nIt follows that $transform^{(iterateindex)}(rationalsubset)$ consists solely of numbers of height strictly larger than $2\\,iterateindex+2$, and hence\n\\[\\cap_{iterateindex=1}^\\infty transform^{(iterateindex)}(rationalsubset) = \\emptyset.\\]\n\nNote: many choices for the height function are possible: one can take $heighteval(numerator/denominator) = \\max{|numerator|, |denominator|}$, or $heighteval(numerator/denominator)$ equal to the total number of prime factors of $numerator$ and $denominator$, and so on. The key properties of the height function are that on one hand, there are only finitely many rationals with height below any finite bound, and on the other hand, the height function is a sufficiently ``algebraic'' function of its argument that one can relate the heights of $numerator/denominator$ and $transform(numerator/denominator)$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "butterfly",
+        "n": "rainstorm",
+        "p": "telescope",
+        "q": "pineapple",
+        "S": "marigold",
+        "f": "waterfall",
+        "H": "playground"
+      },
+      "question": "Let $marigold$ denote the set of rational numbers different from\n$\\{-1,0,1\\}$.  Define $waterfall:marigold\\rightarrow marigold$ by $waterfall(butterfly)=butterfly-1/butterfly$.  Prove\nor disprove that\n\\[\\bigcap_{rainstorm=1}^{\\infty} waterfall^{(rainstorm)}(marigold) = \\emptyset,\\]\nwhere $waterfall^{(rainstorm)}$ denotes $waterfall$ composed with itself $rainstorm$ times.",
+      "solution": "For a rational number $telescope/pineapple$ expressed in lowest terms, define\nits {\\it height} $playground(telescope/pineapple)$ to be $|telescope|+|pineapple|$.  Then for any $telescope/pineapple\\in marigold$\nexpressed in lowest terms, we have $playground(waterfall(telescope/pineapple))=|pineapple^2-telescope^2|+|telescope\\,pineapple|$; since\nby assumption $telescope$ and $pineapple$ are nonzero integers with $|telescope|\\neq |pineapple|$, we have\n\\begin{align*}\nplayground(waterfall(telescope/pineapple)) - playground(telescope/pineapple) &= |pineapple^2-telescope^2|+|telescope\\,pineapple| -|telescope| -|pineapple| \\\\\n  &\\geq 3+ |telescope\\,pineapple| -|telescope| - |pineapple| \\\\\n&= (|telescope|-1)(|pineapple|-1) + 2 \\geq 2 .\n\\end{align*}\nIt follows that $waterfall^{(rainstorm)}(marigold)$ consists solely of numbers of height\nstrictly larger than $2rainstorm+2$, and hence\n\\[\\cap_{rainstorm=1}^{\\infty} waterfall^{(rainstorm)}(marigold) = \\emptyset.\\]\n\nNote: many choices for the height function are possible: one can\ntake $playground(telescope/pineapple) = \\max{|telescope|, |pineapple|}$, or $playground(telescope/pineapple)$ equal to the total number of\nprime factors of $telescope$ and $pineapple$, and so on. The key properties of the height\nfunction are that on one hand, there are only finitely many rationals with\nheight below any finite bound, and on the other hand, the height function\nis a sufficiently ``algebraic'' function of its argument that one can\nrelate the heights of $telescope/pineapple$ and $waterfall(telescope/pineapple)$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "n": "decimalfraction",
+        "p": "denominator",
+        "q": "numerator",
+        "S": "irrationalset",
+        "f": "nonfunction",
+        "H": "depthfunc"
+      },
+      "question": "Let $irrationalset$ denote the set of rational numbers different from\n$\\{-1,0,1\\}$.  Define $nonfunction:irrationalset\\rightarrow irrationalset$ by $nonfunction(constantvalue)=constantvalue-1/constantvalue$.  Prove\nor disprove that\n\\[\\bigcap_{decimalfraction=1}^\\infty nonfunction^{(decimalfraction)}(irrationalset) = \\emptyset,\\]\nwhere $nonfunction^{(decimalfraction)}$ denotes $nonfunction$ composed with itself $decimalfraction$ times.",
+      "solution": "For a rational number $denominator/numerator$ expressed in lowest terms, define\nits {\\it height} $depthfunc(denominator/numerator)$ to be $|denominator|+|numerator|$.  Then for any $denominator/numerator\\in irrationalset$\nexpressed in lowest terms, we have $depthfunc(nonfunction(denominator/numerator))=|numerator^2-denominator^2|+|denominator numerator|$; since\nby assumption $denominator$ and $numerator$ are nonzero integers with $|denominator|\\neq |numerator|$, we have\n\\begin{align*}\ndepthfunc(nonfunction(denominator/numerator)) - depthfunc(denominator/numerator) &= |numerator^2-denominator^2|+|denominator numerator| -|denominator| -|numerator| \\\\\n  &\\geq 3+ |denominator numerator| -|denominator| - |numerator| \\\\\n&= (|denominator|-1)(|numerator|-1) + 2 \\geq 2 .\n\\end{align*}\nIt follows that $nonfunction^{(decimalfraction)}(irrationalset)$ consists solely of numbers of height\nstrictly larger than $2decimalfraction+2$, and hence\n\\[\\cap_{decimalfraction=1}^\\infty nonfunction^{(decimalfraction)}(irrationalset) = \\emptyset.\\]\n\nNote: many choices for the height function are possible: one can\ntake $depthfunc(denominator/numerator) = \\max{|denominator|, |numerator|}$, or $depthfunc(denominator/numerator)$ equal to the total number of\nprime factors of $denominator$ and $numerator$, and so on. The key properties of the height\nfunction are that on one hand, there are only finitely many rationals with\nheight below any finite bound, and on the other hand, the height function\nis a sufficiently ``algebraic'' function of its argument that one can\nrelate the heights of $denominator/numerator$ and $nonfunction(denominator/numerator)$. "
+    },
+    "garbled_string": {
+      "map": {
+        "x": "mnbvcxzq",
+        "n": "poiuytre",
+        "p": "lkjhgfdw",
+        "q": "zxcvbnma",
+        "S": "qwertyui",
+        "f": "asdfghjk",
+        "H": "zlkjhgfq"
+      },
+      "question": "Let $qwertyui$ denote the set of rational numbers different from\n$\\{-1,0,1\\}$.  Define $asdfghjk:qwertyui\\rightarrow qwertyui$ by $asdfghjk(mnbvcxzq)=mnbvcxzq-1/mnbvcxzq$.  Prove\nor disprove that\n\\[\\bigcap_{poiuytre=1}^\\infty asdfghjk^{(poiuytre)}(qwertyui) = \\emptyset,\\]\nwhere $asdfghjk^{(poiuytre)}$ denotes $asdfghjk$ composed with itself $poiuytre$ times.",
+      "solution": "For a rational number $lkjhgfdw/zxcvbnma$ expressed in lowest terms, define\nits {\\it height} $zlkjhgfq(lkjhgfdw/zxcvbnma)$ to be $|lkjhgfdw|+|zxcvbnma|$.  Then for any $lkjhgfdw/zxcvbnma\\in qwertyui$\nexpressed in lowest terms, we have $zlkjhgfq(asdfghjk(lkjhgfdw/zxcvbnma))=|zxcvbnma^2-lkjhgfdw^2|+|lkjhgfdw zxcvbnma|$; since\nby assumption $lkjhgfdw$ and $zxcvbnma$ are nonzero integers with $|lkjhgfdw|\\neq |zxcvbnma|$,\nwe have\n\\begin{align*}\nzlkjhgfq(asdfghjk(lkjhgfdw/zxcvbnma)) - zlkjhgfq(lkjhgfdw/zxcvbnma) &= |zxcvbnma^2-lkjhgfdw^2|+|lkjhgfdw zxcvbnma| -|lkjhgfdw| -|zxcvbnma| \\\n  &\\geq 3+ |lkjhgfdw zxcvbnma| -|lkjhgfdw| - |zxcvbnma| \\\\\n&= (|lkjhgfdw|-1)(|zxcvbnma|-1) + 2 \\geq 2 .\n\\end{align*}\nIt follows that $asdfghjk^{(poiuytre)}(qwertyui)$ consists solely of numbers of height\nstrictly larger than $2poiuytre+2$, and hence\n\\[\\cap_{poiuytre=1}^\\infty asdfghjk^{(poiuytre)}(qwertyui) = \\emptyset.\\]\n\nNote: many choices for the height function are possible: one can\ntake $zlkjhgfq(lkjhgfdw/zxcvbnma) = \\max{|lkjhgfdw|, |zxcvbnma|}$, or $zlkjhgfq(lkjhgfdw/zxcvbnma)$ equal to the total number of\nprime factors of $lkjhgfdw$ and $zxcvbnma$, and so on. The key properties of the height\nfunction are that on one hand, there are only finitely many rationals with\nheight below any finite bound, and on the other hand, the height function\nis a sufficiently ``algebraic'' function of its argument that one can\nrelate the heights of $lkjhgfdw/zxcvbnma$ and $asdfghjk(lkjhgfdw/zxcvbnma)$.}",
+      "confidence": 0.11
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\nT\\;:=\\;\\mathbb Q\\setminus\\{-2,-1,0,1,2\\}\n\\]\nand define\n\\[\\;g:T\\longrightarrow T,\\qquad g(x)=x-\\dfrac1x.\\]\nProve that the infinite intersection of all forward images of $T$ under $g$ is empty,\n\\[\n\\bigcap_{n\\ge 1} g^{\\,(n)}(T)=\\varnothing .\n\\]",
+      "solution": "Let\nT=\\mathbb{Q}\\{-2,-1,0,1,2} and define g:T\\to T by g(x)=x-1/x.  One checks easily that g never produces \\pm 2,\\pm 1 or 0, so indeed g(T)\\subset T.  We now introduce a height on rationals and show it grows by at least 6 under each application of g, forcing any orbit to escape to arbitrarily large height and hence prohibiting any element from lying in all forward images.\n\n1. Height.  Write x=p/q in lowest terms, with p,q nonzero coprime integers and |p|\\neq |q|.  Define\n   H(p/q)=|p|+|q|+|p\\cdot q|.\nSince |p|,|q|,|p\\cdot q|\\leq H(p/q), there are only finitely many pairs (p,q) with H(p/q)\\leq B.\n\n2. One step increases H by \\geq 6.  Set a=|p|, b=|q|, and assume a<b (the case a>b is symmetric).  Then\n   g(p/q)=(p^2-q^2)/(p\\cdot q),\nwhich in lowest terms has numerator P=p^2-q^2 of absolute value |P|=(b-a)(a+b) and denominator Q=p\\cdot q of absolute value |Q|=ab.  Hence\n   H(g(p/q))=|P|+|Q|+|P\\cdot Q|=(b-a)(a+b)+ab+(b-a)(a+b)\\cdot ab.\nSubtracting H(p/q)=a+b+ab gives\n   \\Delta =H(g(p/q))-H(p/q)\n     =(a+b)[(b-a)ab+(b-a)-1].\nIf b-a\\geq 2 then (b-a)ab\\geq 2ab and (b-a)-1\\geq 1, so the bracket \\geq 2ab+1\\geq 7, and a+b\\geq 2 gives \\Delta \\geq 14.  If b-a=1 then the bracket=ab and a+b\\geq 3, ab\\geq 2, so \\Delta \\geq 6.  Thus in all cases \\Delta \\geq 6.\n\n3. Iteration.  If x_0\\in T and x_n=g^n(x_0), then by induction\n   H(x_n)\\geq H(x_0)+6n\\geq 5+6n,\nsince the smallest height on T is H(\\pm 1/2)=1+2+2=5.\n\n4. Conclusion.  If y lay in \\bigcap _{n\\geq 1}g^n(T), then for each n there is x_n\\in T with g^n(x_n)=y.  By step 3,\n   H(y)=H(g^n(x_n))\\geq H(x_n)+6n\\geq 5+6n,\nwhich for large n contradicts finiteness of H(y).  Hence \\bigcap _{n\\geq 1}g^n(T)=\\emptyset .\n\nRemark. The key is a height function that is finite-below on T and strictly increases by a fixed amount under g; many variants of H would work equally well.",
+      "_meta": {
+        "core_steps": [
+          "Introduce a height function on reduced rationals that takes only finitely many values below any bound.",
+          "Show the height strictly increases (by ≥ 2) when f(x)=x−1/x is applied once.",
+          "Iterate the inequality to get min-height ≥ initial + 2n for the n-th image f^{(n)}(S).",
+          "Note that each fixed height bound contains only finitely many rationals, so ever-higher bounds empty the intersection.",
+          "Conclude that the infinite intersection ⋂_{n≥1} f^{(n)}(S) is empty."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Finite set removed from ℚ to avoid 0 denominator or equal |p|,|q| cases",
+            "original": "{-1, 0, 1}"
+          },
+          "slot2": {
+            "description": "Specific choice of height function satisfying (i) finiteness below any bound and (ii) computable growth under f",
+            "original": "H(p/q)=|p|+|q|"
+          },
+          "slot3": {
+            "description": "Lower-bound constant coming from |q²−p²| for |p|≠|q|, used in height difference",
+            "original": "3"
+          },
+          "slot4": {
+            "description": "Guaranteed increment in height after one application of f",
+            "original": "2"
+          },
+          "slot5": {
+            "description": "Explicit linear bound on heights inside f^{(n)}(S)",
+            "original": "2n+2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

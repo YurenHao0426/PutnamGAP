@@ -1,0 +1,144 @@
+{
+  "index": "1976-B-3",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "B-3. Suppose that we have \\( n \\) events \\( A_{1}, \\ldots, A_{n} \\), each of which has probability at least \\( 1-a \\) of occurring, where \\( a<1 / 4 \\). Further suppose that \\( A_{1} \\) and \\( A \\), are mutually independent if \\( |i-j|>1 \\), although \\( A_{1} \\) and \\( A_{i+1} \\) may be dependent. Assume as known that the recurrence \\( u_{k+1}=u_{k}-a u_{k-1}, u_{0}=1, u_{1}=1-a \\), defines positive real numbers \\( u_{k} \\) for \\( k=0,1, \\ldots \\). Show that the probability of all of \\( A_{1}, \\ldots, A_{n} \\) occurring is at least \\( u_{n} \\).",
+  "solution": "B-3.\nThe statement to be proved is false for \\( n \\geqq 5 \\) unless the hypothesis is strengthened to state that \\( A_{\\text {, }} \\) is independent of the conjunction of \\( A_{1}, A_{2}, \\ldots, A_{t-2} \\) for \\( 3 \\leqq i \\leqq n \\).\n\nThe following counterexample with \\( n=5 \\) was furnished by Professor David M. Bloom of Brooklyn College. Let \\( h=33 / 37 \\) and \\( k=1 /(64+h) \\). Let \\( P\\left(A_{i}\\right) \\) be the sum of the numbers in the second row of the following table for which \\( A_{i} \\) appears in the heading:\n\\[\n\\left.\\begin{array}{c|c|c|c|c|c|}\nA_{1} A_{2} A_{4} A_{5} & A_{4} & A_{1} A_{3} A_{4} A_{5} & A_{1} A_{2} A_{3} A_{4} A_{5} & A_{1} A_{2} A_{3} A_{4} & A_{2} A_{3} A_{4} A_{5} \\\\\n12 k & 3 k & 6 k & 7 k & 12 k & 6 k\n\\end{array} \\right\\rvert\\,\n\\]\n\nThen each \\( P\\left(A_{i}\\right) \\) is \\( 49 k \\) and \\( P\\left(A_{i} \\wedge A_{i}\\right)=37 k \\) for all \\( i, j \\) with \\( |i-j|>1 \\). Since \\( (49 k)^{2}=37 k \\), the original independence hypothesis holds. Also, \\( P\\left(A_{i}\\right)=1-a \\), where \\( a=(15+h) k<1 / 4 \\). However, for any \\( a \\leqq 1 / 4 \\), we have \\( u_{5} \\geqq 7 / 64 \\) and \\( P\\left(A_{1} \\wedge A_{2} \\wedge A_{3} \\wedge A_{4} \\wedge A_{5}\\right)=7 k<7 / 64 \\).",
+  "vars": [
+    "n",
+    "A_1",
+    "A_n",
+    "A_i",
+    "A_j",
+    "u_k+1",
+    "u_k",
+    "u_k-1",
+    "u_0",
+    "u_1",
+    "i",
+    "j",
+    "k"
+  ],
+  "params": [
+    "a",
+    "h",
+    "P"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "eventcount",
+        "A_1": "eventone",
+        "A_n": "eventlast",
+        "A_i": "eventith",
+        "A_j": "eventjth",
+        "u_k+1": "unextval",
+        "u_k": "ucurrent",
+        "u_k-1": "uprevious",
+        "u_0": "uinitial",
+        "u_1": "ufirst",
+        "i": "indexi",
+        "j": "indexj",
+        "k": "indexk",
+        "a": "deviation",
+        "h": "ratioh",
+        "P": "probability"
+      },
+      "question": "B-3. Suppose that we have \\( eventcount \\) events \\( eventone, \\ldots, eventlast \\), each of which has probability at least \\( 1-deviation \\) of occurring, where \\( deviation<1 / 4 \\). Further suppose that \\( eventone \\) and \\( A \\), are mutually independent if \\( |indexi-indexj|>1 \\), although \\( eventone \\) and \\( A_{indexi+1} \\) may be dependent. Assume as known that the recurrence \\( unextval=ucurrent-deviation uprevious, uinitial=1, ufirst=1-deviation \\), defines positive real numbers \\( ucurrent \\) for \\( indexk=0,1, \\ldots \\). Show that the probability of all of \\( eventone, \\ldots, eventlast \\) occurring is at least \\( u_{eventcount} \\).",
+      "solution": "B-3.\nThe statement to be proved is false for \\( eventcount \\geqq 5 \\) unless the hypothesis is strengthened to state that \\( A_{\\text {, }} \\) is independent of the conjunction of \\( eventone, A_{2}, \\ldots, A_{t-2} \\) for \\( 3 \\leqq indexi \\leqq eventcount \\).\n\nThe following counterexample with \\( eventcount=5 \\) was furnished by Professor David M. Bloom of Brooklyn College. Let \\( ratioh=33 / 37 \\) and \\( indexk=1 /(64+ratioh) \\). Let \\( probability\\left(eventith\\right) \\) be the sum of the numbers in the second row of the following table for which \\( eventith \\) appears in the heading:\n\\[\n\\left.\\begin{array}{c|c|c|c|c|c|}\n eventone A_{2} A_{4} A_{5} & A_{4} & eventone A_{3} A_{4} A_{5} & eventone A_{2} A_{3} A_{4} A_{5} & eventone A_{2} A_{3} A_{4} & A_{2} A_{3} A_{4} A_{5} \\\\\n 12 indexk & 3 indexk & 6 indexk & 7 indexk & 12 indexk & 6 indexk\n\\end{array} \\right\\rvert\\,\n\\]\n\nThen each \\( probability\\left(eventith\\right) \\) is \\( 49 indexk \\) and \\( probability\\left(eventith \\wedge eventith\\right)=37 indexk \\) for all \\( indexi, indexj \\) with \\( |indexi-indexj|>1 \\). Since \\( (49 indexk)^{2}=37 indexk \\), the original independence hypothesis holds. Also, \\( probability\\left(eventith\\right)=1-deviation \\), where \\( deviation=(15+ratioh) indexk<1 / 4 \\). However, for any \\( deviation \\leqq 1 / 4 \\), we have \\( u_{5} \\geqq 7 / 64 \\) and \\( probability\\left(eventone \\wedge A_{2} \\wedge A_{3} \\wedge A_{4} \\wedge A_{5}\\right)=7 indexk<7 / 64 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "coppertwig",
+        "A_1": "sandstone",
+        "A_n": "riverbank",
+        "A_i": "meadowland",
+        "A_j": "thistlepod",
+        "u_k+1": "butterleaf",
+        "u_k": "dandelion",
+        "u_k-1": "dragonvine",
+        "u_0": "moonflower",
+        "u_1": "starluster",
+        "i": "willowstem",
+        "j": "cedargrain",
+        "k": "marigold",
+        "a": "cloudberry",
+        "h": "silverfin",
+        "P": "gildedark"
+      },
+      "question": "B-3. Suppose that we have \\( coppertwig \\) events \\( sandstone, \\ldots, riverbank \\), each of which has probability at least \\( 1-cloudberry \\) of occurring, where \\( cloudberry<1 / 4 \\). Further suppose that \\( sandstone \\) and \\( A \\), are mutually independent if \\( |willowstem-cedargrain|>1 \\), although \\( sandstone \\) and \\( A_{willowstem+1} \\) may be dependent. Assume as known that the recurrence \\( butterleaf=dandelion-cloudberry dragonvine, moonflower=1, starluster=1-cloudberry \\), defines positive real numbers \\( dandelion \\) for \\( marigold=0,1, \\ldots \\). Show that the probability of all of \\( sandstone, \\ldots, riverbank \\) occurring is at least \\( u_{coppertwig} \\).",
+      "solution": "B-3.\nThe statement to be proved is false for \\( coppertwig \\geqq 5 \\) unless the hypothesis is strengthened to state that \\( A_{\\text {, }} \\) is independent of the conjunction of \\( sandstone, A_{2}, \\ldots, A_{t-2} \\) for \\( 3 \\leqq willowstem \\leqq coppertwig \\).\n\nThe following counterexample with \\( coppertwig=5 \\) was furnished by Professor David M. Bloom of Brooklyn College. Let \\( silverfin=33 / 37 \\) and \\( marigold=1 /(64+silverfin) \\). Let \\( gildedark\\left(meadowland\\right) \\) be the sum of the numbers in the second row of the following table for which \\( meadowland \\) appears in the heading:\n\\[\n\\left.\\begin{array}{c|c|c|c|c|c|}\nsandstone A_{2} A_{4} A_{5} & A_{4} & sandstone A_{3} A_{4} A_{5} & sandstone A_{2} A_{3} A_{4} A_{5} & sandstone A_{2} A_{3} A_{4} & A_{2} A_{3} A_{4} A_{5} \\\\\n12 marigold & 3 marigold & 6 marigold & 7 marigold & 12 marigold & 6 marigold\n\\end{array} \\right\\rvert\\,\n\\]\n\nThen each \\( gildedark\\left(meadowland\\right) \\) is \\( 49 marigold \\) and \\( gildedark\\left(meadowland \\wedge meadowland\\right)=37 marigold \\) for all \\( willowstem, cedargrain \\) with \\( |willowstem-cedargrain|>1 \\). Since \\( (49 marigold)^{2}=37 marigold \\), the original independence hypothesis holds. Also, \\( gildedark\\left(meadowland\\right)=1-cloudberry \\), where \\( cloudberry=(15+silverfin) marigold<1 / 4 \\). However, for any \\( cloudberry \\leqq 1 / 4 \\), we have \\( u_{5} \\geqq 7 / 64 \\) and \\( gildedark\\left(sandstone \\wedge A_{2} \\wedge A_{3} \\wedge A_{4} \\wedge A_{5}\\right)=7 marigold<7 / 64 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "nothingnum",
+        "A_1": "nonhappena",
+        "A_n": "nonhappenb",
+        "A_i": "nonhappenc",
+        "A_j": "nonhappend",
+        "u_k+1": "downgoalx",
+        "u_k": "downgoaly",
+        "u_k-1": "downgoalz",
+        "u_0": "downgoalw",
+        "u_1": "downgoalv",
+        "i": "outputabc",
+        "j": "outputdef",
+        "k": "outputghi",
+        "a": "largeramount",
+        "h": "smalleramt",
+        "P": "improbability"
+      },
+      "question": "B-3. Suppose that we have \\( nothingnum \\) events \\( nonhappena, \\ldots, nonhappenb \\), each of which has probability at least \\( 1-largeramount \\) of occurring, where \\( largeramount<1 / 4 \\). Further suppose that \\( nonhappena \\) and \\( A \\), are mutually independent if \\( |outputabc-outputdef|>1 \\), although \\( nonhappena \\) and \\( A_{i+1} \\) may be dependent. Assume as known that the recurrence \\( downgoalx=downgoaly-largeramount downgoalz, downgoalw=1, downgoalv=1-largeramount \\), defines positive real numbers \\( downgoaly \\) for \\( outputghi=0,1, \\ldots \\). Show that the probability of all of \\( nonhappena, \\ldots, nonhappenb \\) occurring is at least \\( u_{n} \\).",
+      "solution": "B-3.\nThe statement to be proved is false for \\( nothingnum \\geqq 5 \\) unless the hypothesis is strengthened to state that \\( A_{\\text {, }} \\) is independent of the conjunction of \\( nonhappena, A_{2}, \\ldots, A_{t-2} \\) for \\( 3 \\leqq outputabc \\leqq nothingnum \\).\n\nThe following counterexample with \\( nothingnum=5 \\) was furnished by Professor David M. Bloom of Brooklyn College. Let \\( smalleramt=33 / 37 \\) and \\( outputghi=1 /(64+smalleramt) \\). Let \\( improbability\\left(nonhappenc\\right) \\) be the sum of the numbers in the second row of the following table for which \\( nonhappenc \\) appears in the heading:\n\\[\n\\left.\\begin{array}{c|c|c|c|c|c|}\nA_{1} A_{2} A_{4} A_{5} & A_{4} & A_{1} A_{3} A_{4} A_{5} & A_{1} A_{2} A_{3} A_{4} A_{5} & A_{1} A_{2} A_{3} A_{4} & A_{2} A_{3} A_{4} A_{5} \\\\\n12 outputghi & 3 outputghi & 6 outputghi & 7 outputghi & 12 outputghi & 6 outputghi\n\\end{array} \\right\\rvert\\,\n\\]\n\nThen each \\( improbability\\left(nonhappenc\\right) \\) is \\( 49 outputghi \\) and \\( improbability\\left(nonhappenc \\wedge nonhappenc\\right)=37 outputghi \\) for all \\( outputabc, outputdef \\) with \\( |outputabc-outputdef|>1 \\). Since \\( (49 outputghi)^{2}=37 outputghi \\), the original independence hypothesis holds. Also, \\( improbability\\left(nonhappenc\\right)=1-largeramount \\), where \\( largeramount=(15+smalleramt) outputghi<1 / 4 \\). However, for any \\( largeramount \\leqq 1 / 4 \\), we have \\( u_{5} \\geqq 7 / 64 \\) and \\( improbability\\left(nonhappena \\wedge A_{2} \\wedge A_{3} \\wedge A_{4} \\wedge A_{5}\\right)=7 outputghi<7 / 64 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "A_1": "hjgrksla",
+        "A_n": "qnvertds",
+        "A_i": "kdfghplm",
+        "A_j": "mrstyclo",
+        "u_k+1": "cbyfutop",
+        "u_k": "owileprt",
+        "u_k-1": "fjxqneus",
+        "u_0": "poylsmna",
+        "u_1": "xgralbei",
+        "i": "vnaktsre",
+        "j": "plomxcza",
+        "k": "rtghyuio",
+        "a": "bczvmpqs",
+        "h": "ydkerpqn",
+        "P": "zaqmtciv"
+      },
+      "question": "B-3. Suppose that we have \\( qzxwvtnp \\) events \\( hjgrksla, \\ldots, qnvertds \\), each of which has probability at least \\( 1-bczvmpqs \\) of occurring, where \\( bczvmpqs<1 / 4 \\). Further suppose that \\( hjgrksla \\) and \\( A \\), are mutually independent if \\( |vnaktsre-plomxcza|>1 \\), although \\( hjgrksla \\) and \\( A_{vnaktsre+1} \\) may be dependent. Assume as known that the recurrence \\( cbyfutop=owileprt-bczvmpqs fjxqneus, poylsmna=1, xgralbei=1-bczvmpqs \\), defines positive real numbers \\( owileprt \\) for \\( rtghyuio=0,1, \\ldots \\). Show that the probability of all of \\( hjgrksla, \\ldots, qnvertds \\) occurring is at least \\( u_{qzxwvtnp} \\).",
+      "solution": "B-3.\nThe statement to be proved is false for \\( qzxwvtnp \\geqq 5 \\) unless the hypothesis is strengthened to state that \\( A_{\\text {, }} \\) is independent of the conjunction of \\( hjgrksla, A_{2}, \\ldots, A_{t-2} \\) for \\( 3 \\leqq vnaktsre \\leqq qzxwvtnp \\).\n\nThe following counterexample with \\( qzxwvtnp=5 \\) was furnished by Professor David M. Bloom of Brooklyn College. Let \\( ydkerpqn=33 / 37 \\) and \\( rtghyuio=1 /(64+ydkerpqn) \\). Let \\( zaqmtciv\\left(kdfghplm\\right) \\) be the sum of the numbers in the second row of the following table for which \\( kdfghplm \\) appears in the heading:\n\\[\n\\left.\\begin{array}{c|c|c|c|c|c|}\nhjgrksla A_{2} A_{4} A_{5} & A_{4} & hjgrksla A_{3} A_{4} A_{5} & hjgrksla A_{2} A_{3} A_{4} A_{5} & hjgrksla A_{2} A_{3} A_{4} & A_{2} A_{3} A_{4} A_{5} \\\\\n12 rtghyuio & 3 rtghyuio & 6 rtghyuio & 7 rtghyuio & 12 rtghyuio & 6 rtghyuio\n\\end{array} \\right\\rvert\\,\n\\]\n\nThen each \\( zaqmtciv\\left(kdfghplm\\right) \\) is \\( 49 rtghyuio \\) and \\( zaqmtciv\\left(kdfghplm \\wedge kdfghplm\\right)=37 rtghyuio \\) for all \\( vnaktsre, plomxcza \\) with \\( |vnaktsre-plomxcza|>1 \\). Since \\( (49 rtghyuio)^{2}=37 rtghyuio \\), the original independence hypothesis holds. Also, \\( zaqmtciv\\left(kdfghplm\\right)=1-bczvmpqs \\), where \\( bczvmpqs=(15+ydkerpqn) rtghyuio<1 / 4 \\). However, for any \\( bczvmpqs \\leqq 1 / 4 \\), we have \\( u_{5} \\geqq 7 / 64 \\) and \\( zaqmtciv\\left(hjgrksla \\wedge A_{2} \\wedge A_{3} \\wedge A_{4} \\wedge A_{5}\\right)=7 rtghyuio<7 / 64 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $r$ be an integer with $r\\ge 1$ and let $a$ be a real number that satisfies  \n\\[\n0<a<\\frac{1}{\\,r+1\\,}.\n\\]\nOn a common probability space consider $n$ events  \n\\[\nA_{1},A_{2},\\dots ,A_{n}\\qquad(n\\ge r+2)\n\\]\nthat fulfil the following two requirements.\n\n(Dep)  (strong $r$-dependence)  \nFor every index $i$ and every subset  \n\\[\nJ\\subseteq\\{1,2,\\dots ,n\\}\\setminus\\{i\\}\\quad\\text{with}\\quad |i-j|>r\\;\\;\\forall j\\in J ,\n\\]\nthe event $A_{i}$ is independent of the event $\\displaystyle\\bigcap_{j\\in J}A_{j}$.\n\n(Prob)  Each single event is highly probable:\n\\[\n\\mathbb{P}(A_{i})\\ge 1-a\\qquad(1\\le i\\le n).\n\\]\n\nDefine the real sequence $(u_{k})_{k\\ge 0}$ by  \n\\[\nu_{0}=1,\\qquad\nu_{k}=1-ka\\;(1\\le k\\le r),\\qquad\nu_{k}=u_{k-1}-a\\,u_{k-r-1}\\quad(k\\ge r+1).\n\\tag{1}\n\\]\n\nProve that for every $n\\ge r+2$\n\\[\n\\boxed{\\;\n\\mathbb{P}\\bigl(A_{1}\\wedge A_{2}\\wedge\\cdots\\wedge A_{n}\\bigr)\\;\\ge\\;u_{n}\\;}\n\\tag{2}\n\\]\n\n(When $u_{n}<0$ the inequality is trivial.  One easily checks that $u_{n}\\ge 0$ whenever $a\\le \\tfrac{1}{4(r+1)}$.)\n\n%--------------------------------------------------------------------",
+      "solution": "Throughout write  \n\\[\nB_{i}:=A_{i}^{c}\\quad\\text{(``failure'' events),}\\qquad\nE_{k}:=\\bigcap_{i=1}^{k}A_{i}\\;(k\\ge 0),\\;E_{0}:=\\Omega .\n\\]\n\nStep 1.  The dependency graph for the family $\\{B_{i}\\}$.\n\nDefine the graph $G_{n}^{(r)}=(V,E)$ by  \n\\[\nV=\\{1,2,\\dots ,n\\},\\qquad\\{i,j\\}\\in E\\;\\Longleftrightarrow\\;0<|i-j|\\le r .\n\\]\nThat is, vertices whose indices differ by at most $r$ are adjacent.\n\nWe claim that $G_{n}^{(r)}$ is a (proper) dependency graph for the family\n$\\{B_{i}\\}_{i=1}^{n}$, i.e. that\n\n\\[\n\\text{if}\\quad J\\subseteq V\\setminus\\{i\\}\\;\\;\\text{satisfies}\\;\\;\n|i-j|>r\\ \\forall j\\in J,\n\\quad\\text{then}\\quad\nB_{i}\\ \\text{is independent of}\\ \\bigcap_{j\\in J}B_{j}.\n\\tag{3}\n\\]\n\nProof of the claim.  \nFix such $i$ and $J$ and put $C:=\\bigcap_{j\\in J}B_{j}$.\nBy definition $C$ and $A_{i}$ concern disjoint ``$r$-neighbour\\-hoods'' of the index line.\nUsing the elementary relation\n$B_{i}=A_{i}^{c}$ we write\n\\[\n\\mathbb{P}(B_{i}\\cap C)=\\mathbb{P}(C)-\\mathbb{P}(A_{i}\\cap C).\n\\tag{4}\n\\]\nFor every subset $T\\subseteq J$ set $A_{T}:=\\bigcap_{j\\in T}A_{j}$.  \nBecause $|i-j|>r$ for all $j\\in J$, the hypothesis (Dep) implies\n$\\mathbb{P}(A_{i}\\cap A_{T})=\\mathbb{P}(A_{i})\\,\\mathbb{P}(A_{T})$ for\nevery $T\\subseteq J$.\nVia inclusion-exclusion we have\n\\[\n\\mathbb{P}(C)=\\sum_{T\\subseteq J}(-1)^{|T|}\\mathbb{P}(A_{T}),\\qquad\n\\mathbb{P}(A_{i}\\cap C)=\\sum_{T\\subseteq J}(-1)^{|T|}\\mathbb{P}(A_{i}\\cap A_{T})\n=\\mathbb{P}(A_{i})\\sum_{T\\subseteq J}(-1)^{|T|}\\mathbb{P}(A_{T})\n=\\mathbb{P}(A_{i})\\mathbb{P}(C).\n\\]\nInsert this identity into (4):\n\\[\n\\mathbb{P}(B_{i}\\cap C)=\\bigl(1-\\mathbb{P}(A_{i})\\bigr)\\mathbb{P}(C)=\\mathbb{P}(B_{i})\\mathbb{P}(C),\n\\]\nwhich is (3).  Hence $G_{n}^{(r)}$ is indeed a dependency graph for the\n$B_{i}$'s.  \\hfill $\\square$\n\nBecause of (Prob) we have\n\\[\n\\mathbb{P}(B_{i})=1-\\mathbb{P}(A_{i})\\le a\\qquad(1\\le i\\le n).\n\\tag{5}\n\\]\n\nStep 2.  Shearer's bound.\n\nLet $I\\subseteq V$ be an independent set in $G_{n}^{(r)}$.\nDenote by $\\Phi_{G}(t)=\\sum_{I\\text{ indep}}t^{|I|}$ the independent-set\npolynomial of a finite graph $G$.\nThe multivariate form of Shearer's theorem (1985) implies that for any\nfamily of events whose dependency graph is $G$ and numbers\n$0\\le p_{v}\\le 1$ with $\\mathbb{P}(B_{v})\\le p_{v}$ we have\n\\[\n\\mathbb{P}\\Bigl(\\bigcap_{v\\in V}\\overline{B_{v}}\\Bigr)\\;\\ge\\;\n\\Phi_{G}(-p_{1},\\dots ,-p_{|V|}).\n\\tag{6}\n\\]\n\nApply (6) with $G=G_{n}^{(r)}$ and $p_{v}\\equiv a$\n(using (5) and Step 1):\n\\[\n\\mathbb{P}(E_{n})=\\mathbb{P}\\Bigl(\\bigcap_{i=1}^{n}\\overline{B_{i}}\\Bigr)\n\\;\\ge\\;\n\\Phi_{G_{n}^{(r)}}(-a).\n\\tag{7}\n\\]\n\nStep 3.  Evaluation of $\\Phi_{G_{k}^{(r)}}(-a)$.\n\nCall a subset $I\\subseteq\\{1,\\dots ,k\\}$ $r$-sparse if\nany two of its elements differ by more than $r$ (equivalently,\n$I$ is independent in $G_{k}^{(r)}$).\nDefine\n\\[\nw_{k}:=\\sum_{I\\text{ $r$-sparse in }\\{1,\\dots ,k\\}}(-a)^{|I|}\n      =\\Phi_{G_{k}^{(r)}}(-a)\\qquad(k\\ge 0).\n\\tag{8}\n\\]\n\nLemma.  $(w_{k})_{k\\ge 0}$ satisfies the recurrence (1) and\n$w_{k}=u_{k}$ for every $k$.\n\nProof.  \nThe initial values $w_{0}=1$ and $w_{k}=1-ka$ for $1\\le k\\le r$\nare immediate.  \nFor $k\\ge r+1$ split each $r$-sparse $I\\subseteq\\{1,\\dots ,k\\}$\naccording to whether $k\\in I$.  \nIf $k\\notin I$ the contribution is $w_{k-1}$.\nIf $k\\in I$ then none of $k-r,\\dots ,k-1$ belongs to $I$ and\n$I\\setminus\\{k\\}$ is an $r$-sparse subset of $\\{1,\\dots ,k-r-1\\}$,\ncontributing $(-a)w_{k-r-1}$.\nThus\n\\[\nw_{k}=w_{k-1}-a\\,w_{k-r-1},\\qquad k\\ge r+1,\n\\]\nwhich is precisely (1).  By induction $w_{k}=u_{k}$ for all $k$. \\hfill $\\square$\n\nStep 4.  Completion.\n\nCombine (7), (8) and the lemma:\n\\[\n\\mathbb{P}(E_{n})\\;\\ge\\;w_{n}=u_{n}.\n\\]\nThis is exactly inequality (2), completing the proof. \\hfill $\\blacksquare$\n\n%--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.626894",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-order dependence.  \n   • The original problem dealt with 1-dependence; here we allow any fixed\n     r ≥ 1.  The dependence graph therefore has bandwidth r instead of 1,\n     forcing us to track the interaction of up to r+1 consecutive events.\n\n2. A longer, variable-order recurrence.  \n   • The lower-bound sequence (u_k) is no longer second-order\n     (Fibonacci-type) but has order r+1.  Handling its positivity and relating\n     it to probabilities requires keeping r previous terms in the induction\n     instead of just one.\n\n3. Sharper probability bookkeeping.  \n   • To control the error term we must isolate a block of exactly r previous\n     events and show that everything earlier is independent of A_k.\n     This demands a careful decomposition (Eq. (4)) that is absent in the\n     original solution.\n\n4. Parameter restrictions and stability.  \n   • Proving that the recurrence remains positive for all k forces the extra\n     technical condition a < 1/(r+2) and brings in simple but non-trivial\n     analytic arguments, while the original statement required only a < 1/4.\n\n5. Conceptual enlargement.  \n   • When r = 1 the statement collapses to the classical\n     u_{k}=u_{k−1}−a u_{k−2} bound; every larger r introduces a genuinely\n     new layer of complexity both in combinatorial dependence and in the\n     algebra of the bounding sequence.\n\nHence the enhanced variant is substantially harder: it generalises the\noriginal path-graph problem to arbitrary dependence range, lengthens the\nrecurrence, and obliges the solver to juggle r+1 interacting probability\nclasses instead of two."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $r$ be an integer with $r\\ge 1$ and let $a$ be a real number that satisfies  \n\\[\n0<a<\\frac{1}{\\,r+1\\,}.\n\\]\nOn a common probability space consider $n$ events  \n\\[\nA_{1},A_{2},\\dots ,A_{n}\\qquad(n\\ge r+2)\n\\]\nthat fulfil the following two requirements.\n\n(Dep)  (strong $r$-dependence)  \nFor every index $i$ and every subset  \n\\[\nJ\\subseteq\\{1,2,\\dots ,n\\}\\setminus\\{i\\}\\quad\\text{with}\\quad |i-j|>r\\;\\;\\forall j\\in J ,\n\\]\nthe event $A_{i}$ is independent of the event $\\displaystyle\\bigcap_{j\\in J}A_{j}$.\n\n(Prob)  Each single event is highly probable:\n\\[\n\\mathbb{P}(A_{i})\\ge 1-a\\qquad(1\\le i\\le n).\n\\]\n\nDefine the real sequence $(u_{k})_{k\\ge 0}$ by  \n\\[\nu_{0}=1,\\qquad\nu_{k}=1-ka\\;(1\\le k\\le r),\\qquad\nu_{k}=u_{k-1}-a\\,u_{k-r-1}\\quad(k\\ge r+1).\n\\tag{1}\n\\]\n\nProve that for every $n\\ge r+2$\n\\[\n\\boxed{\\;\n\\mathbb{P}\\bigl(A_{1}\\wedge A_{2}\\wedge\\cdots\\wedge A_{n}\\bigr)\\;\\ge\\;u_{n}\\;}\n\\tag{2}\n\\]\n\n(When $u_{n}<0$ the inequality is trivial.  One easily checks that $u_{n}\\ge 0$ whenever $a\\le \\tfrac{1}{4(r+1)}$.)\n\n%--------------------------------------------------------------------",
+      "solution": "Throughout write  \n\\[\nB_{i}:=A_{i}^{c}\\quad\\text{(``failure'' events),}\\qquad\nE_{k}:=\\bigcap_{i=1}^{k}A_{i}\\;(k\\ge 0),\\;E_{0}:=\\Omega .\n\\]\n\nStep 1.  The dependency graph for the family $\\{B_{i}\\}$.\n\nDefine the graph $G_{n}^{(r)}=(V,E)$ by  \n\\[\nV=\\{1,2,\\dots ,n\\},\\qquad\\{i,j\\}\\in E\\;\\Longleftrightarrow\\;0<|i-j|\\le r .\n\\]\nThat is, vertices whose indices differ by at most $r$ are adjacent.\n\nWe claim that $G_{n}^{(r)}$ is a (proper) dependency graph for the family\n$\\{B_{i}\\}_{i=1}^{n}$, i.e. that\n\n\\[\n\\text{if}\\quad J\\subseteq V\\setminus\\{i\\}\\;\\;\\text{satisfies}\\;\\;\n|i-j|>r\\ \\forall j\\in J,\n\\quad\\text{then}\\quad\nB_{i}\\ \\text{is independent of}\\ \\bigcap_{j\\in J}B_{j}.\n\\tag{3}\n\\]\n\nProof of the claim.  \nFix such $i$ and $J$ and put $C:=\\bigcap_{j\\in J}B_{j}$.\nBy definition $C$ and $A_{i}$ concern disjoint ``$r$-neighbour\\-hoods'' of the index line.\nUsing the elementary relation\n$B_{i}=A_{i}^{c}$ we write\n\\[\n\\mathbb{P}(B_{i}\\cap C)=\\mathbb{P}(C)-\\mathbb{P}(A_{i}\\cap C).\n\\tag{4}\n\\]\nFor every subset $T\\subseteq J$ set $A_{T}:=\\bigcap_{j\\in T}A_{j}$.  \nBecause $|i-j|>r$ for all $j\\in J$, the hypothesis (Dep) implies\n$\\mathbb{P}(A_{i}\\cap A_{T})=\\mathbb{P}(A_{i})\\,\\mathbb{P}(A_{T})$ for\nevery $T\\subseteq J$.\nVia inclusion-exclusion we have\n\\[\n\\mathbb{P}(C)=\\sum_{T\\subseteq J}(-1)^{|T|}\\mathbb{P}(A_{T}),\\qquad\n\\mathbb{P}(A_{i}\\cap C)=\\sum_{T\\subseteq J}(-1)^{|T|}\\mathbb{P}(A_{i}\\cap A_{T})\n=\\mathbb{P}(A_{i})\\sum_{T\\subseteq J}(-1)^{|T|}\\mathbb{P}(A_{T})\n=\\mathbb{P}(A_{i})\\mathbb{P}(C).\n\\]\nInsert this identity into (4):\n\\[\n\\mathbb{P}(B_{i}\\cap C)=\\bigl(1-\\mathbb{P}(A_{i})\\bigr)\\mathbb{P}(C)=\\mathbb{P}(B_{i})\\mathbb{P}(C),\n\\]\nwhich is (3).  Hence $G_{n}^{(r)}$ is indeed a dependency graph for the\n$B_{i}$'s.  \\hfill $\\square$\n\nBecause of (Prob) we have\n\\[\n\\mathbb{P}(B_{i})=1-\\mathbb{P}(A_{i})\\le a\\qquad(1\\le i\\le n).\n\\tag{5}\n\\]\n\nStep 2.  Shearer's bound.\n\nLet $I\\subseteq V$ be an independent set in $G_{n}^{(r)}$.\nDenote by $\\Phi_{G}(t)=\\sum_{I\\text{ indep}}t^{|I|}$ the independent-set\npolynomial of a finite graph $G$.\nThe multivariate form of Shearer's theorem (1985) implies that for any\nfamily of events whose dependency graph is $G$ and numbers\n$0\\le p_{v}\\le 1$ with $\\mathbb{P}(B_{v})\\le p_{v}$ we have\n\\[\n\\mathbb{P}\\Bigl(\\bigcap_{v\\in V}\\overline{B_{v}}\\Bigr)\\;\\ge\\;\n\\Phi_{G}(-p_{1},\\dots ,-p_{|V|}).\n\\tag{6}\n\\]\n\nApply (6) with $G=G_{n}^{(r)}$ and $p_{v}\\equiv a$\n(using (5) and Step 1):\n\\[\n\\mathbb{P}(E_{n})=\\mathbb{P}\\Bigl(\\bigcap_{i=1}^{n}\\overline{B_{i}}\\Bigr)\n\\;\\ge\\;\n\\Phi_{G_{n}^{(r)}}(-a).\n\\tag{7}\n\\]\n\nStep 3.  Evaluation of $\\Phi_{G_{k}^{(r)}}(-a)$.\n\nCall a subset $I\\subseteq\\{1,\\dots ,k\\}$ $r$-sparse if\nany two of its elements differ by more than $r$ (equivalently,\n$I$ is independent in $G_{k}^{(r)}$).\nDefine\n\\[\nw_{k}:=\\sum_{I\\text{ $r$-sparse in }\\{1,\\dots ,k\\}}(-a)^{|I|}\n      =\\Phi_{G_{k}^{(r)}}(-a)\\qquad(k\\ge 0).\n\\tag{8}\n\\]\n\nLemma.  $(w_{k})_{k\\ge 0}$ satisfies the recurrence (1) and\n$w_{k}=u_{k}$ for every $k$.\n\nProof.  \nThe initial values $w_{0}=1$ and $w_{k}=1-ka$ for $1\\le k\\le r$\nare immediate.  \nFor $k\\ge r+1$ split each $r$-sparse $I\\subseteq\\{1,\\dots ,k\\}$\naccording to whether $k\\in I$.  \nIf $k\\notin I$ the contribution is $w_{k-1}$.\nIf $k\\in I$ then none of $k-r,\\dots ,k-1$ belongs to $I$ and\n$I\\setminus\\{k\\}$ is an $r$-sparse subset of $\\{1,\\dots ,k-r-1\\}$,\ncontributing $(-a)w_{k-r-1}$.\nThus\n\\[\nw_{k}=w_{k-1}-a\\,w_{k-r-1},\\qquad k\\ge r+1,\n\\]\nwhich is precisely (1).  By induction $w_{k}=u_{k}$ for all $k$. \\hfill $\\square$\n\nStep 4.  Completion.\n\nCombine (7), (8) and the lemma:\n\\[\n\\mathbb{P}(E_{n})\\;\\ge\\;w_{n}=u_{n}.\n\\]\nThis is exactly inequality (2), completing the proof. \\hfill $\\blacksquare$\n\n%--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.500564",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-order dependence.  \n   • The original problem dealt with 1-dependence; here we allow any fixed\n     r ≥ 1.  The dependence graph therefore has bandwidth r instead of 1,\n     forcing us to track the interaction of up to r+1 consecutive events.\n\n2. A longer, variable-order recurrence.  \n   • The lower-bound sequence (u_k) is no longer second-order\n     (Fibonacci-type) but has order r+1.  Handling its positivity and relating\n     it to probabilities requires keeping r previous terms in the induction\n     instead of just one.\n\n3. Sharper probability bookkeeping.  \n   • To control the error term we must isolate a block of exactly r previous\n     events and show that everything earlier is independent of A_k.\n     This demands a careful decomposition (Eq. (4)) that is absent in the\n     original solution.\n\n4. Parameter restrictions and stability.  \n   • Proving that the recurrence remains positive for all k forces the extra\n     technical condition a < 1/(r+2) and brings in simple but non-trivial\n     analytic arguments, while the original statement required only a < 1/4.\n\n5. Conceptual enlargement.  \n   • When r = 1 the statement collapses to the classical\n     u_{k}=u_{k−1}−a u_{k−2} bound; every larger r introduces a genuinely\n     new layer of complexity both in combinatorial dependence and in the\n     algebra of the bounding sequence.\n\nHence the enhanced variant is substantially harder: it generalises the\noriginal path-graph problem to arbitrary dependence range, lengthens the\nrecurrence, and obliges the solver to juggle r+1 interacting probability\nclasses instead of two."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

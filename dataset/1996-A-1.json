@@ -1,0 +1,89 @@
+{
+  "index": "1996-A-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find the least number $A$ such that for any two squares of combined\narea 1, a rectangle of area $A$ exists such that the two squares can\nbe packed in the rectangle (without interior overlap). You may assume\nthat the sides of the squares are parallel to the sides of the\nrectangle.",
+  "solution": "If $x$ and $y$ are the sides of two squares with combined area 1, then\n$x^2 + y^2 = 1$. Suppose without loss of generality that $x \\geq y$.\nThen the shorter side of a rectangle containing both squares without\noverlap must be at least $x$, and the longer side must be at least\n$x+y$. Hence the desired value of $A$ is the maximum of $x(x+y)$.\n\nTo find this maximum, we let $x = \\cos \\theta, y = \\sin \\theta$ with\n$\\theta \\in [0, \\pi/4]$. Then we are to maximize\n\\begin{align*}\n\\cos^2 \\theta + \\sin \\theta \\cos \\theta\n&= \\frac 12 (1 + \\cos 2\\theta + \\sin 2\\theta) \\\\\n&= \\frac 12 + \\frac{\\sqrt{2}}{2} \\cos (2\\theta - \\pi/4) \\\\\n&\\leq \\frac{1 + \\sqrt{2}}{2},\n\\end{align*}\nwith equality for $\\theta = \\pi/8$. Hence this value is the desired\nvalue of $A$.",
+  "vars": [
+    "A",
+    "x",
+    "y",
+    "\\\\theta"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "leastrectarea",
+        "x": "longerside",
+        "y": "shorterside",
+        "\\theta": "anglevalue"
+      },
+      "question": "Find the least number $leastrectarea$ such that for any two squares of combined\narea 1, a rectangle of area $leastrectarea$ exists such that the two squares can\nbe packed in the rectangle (without interior overlap). You may assume\nthat the sides of the squares are parallel to the sides of the\nrectangle.",
+      "solution": "If $longerside$ and $shorterside$ are the sides of two squares with combined area 1, then\n$longerside^2 + shorterside^2 = 1$. Suppose without loss of generality that $longerside \\geq shorterside$.\nThen the shorter side of a rectangle containing both squares without\noverlap must be at least $longerside$, and the longer side must be at least\n$longerside+shorterside$. Hence the desired value of $leastrectarea$ is the maximum of $longerside(longerside+shorterside)$.\n\nTo find this maximum, we let $longerside = \\cos anglevalue, shorterside = \\sin anglevalue$ with\n$anglevalue \\in [0, \\pi/4]$. Then we are to maximize\n\\begin{align*}\n\\cos^2 anglevalue + \\sin anglevalue \\cos anglevalue\n&= \\frac 12 (1 + \\cos 2 anglevalue + \\sin 2 anglevalue) \\\\\n&= \\frac 12 + \\frac{\\sqrt{2}}{2} \\cos (2 anglevalue - \\pi/4) \\\\\n&\\leq \\frac{1 + \\sqrt{2}}{2},\n\\end{align*}\nwith equality for $anglevalue = \\pi/8$. Hence this value is the desired\nvalue of $leastrectarea$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "diameter",
+        "x": "cylinder",
+        "y": "monolith",
+        "\\theta": "longitude"
+      },
+      "question": "Find the least number $diameter$ such that for any two squares of combined\narea 1, a rectangle of area $diameter$ exists such that the two squares can\nbe packed in the rectangle (without interior overlap). You may assume\nthat the sides of the squares are parallel to the sides of the\nrectangle.",
+      "solution": "If $cylinder$ and $monolith$ are the sides of two squares with combined area 1, then\n$cylinder^2 + monolith^2 = 1$. Suppose without loss of generality that $cylinder \\geq monolith$.\nThen the shorter side of a rectangle containing both squares without\noverlap must be at least $cylinder$, and the longer side must be at least\n$cylinder+monolith$. Hence the desired value of $diameter$ is the maximum of $cylinder(cylinder+monolith)$.\n\nTo find this maximum, we let $cylinder = \\cos longitude, monolith = \\sin longitude$ with\n$longitude \\in [0, \\pi/4]$. Then we are to maximize\n\\begin{align*}\n\\cos^2 longitude + \\sin longitude \\cos longitude\n&= \\frac 12 (1 + \\cos 2longitude + \\sin 2longitude) \\\\\n&= \\frac 12 + \\frac{\\sqrt{2}}{2} \\cos (2longitude - \\pi/4) \\\\\n&\\leq \\frac{1 + \\sqrt{2}}{2},\n\\end{align*}\nwith equality for $longitude = \\pi/8$. Hence this value is the desired\nvalue of $diameter$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "maximumarea",
+        "x": "outerradius",
+        "y": "innerradius",
+        "\\theta": "straightlen"
+      },
+      "question": "Find the least number $maximumarea$ such that for any two squares of combined\narea 1, a rectangle of area $maximumarea$ exists such that the two squares can\nbe packed in the rectangle (without interior overlap). You may assume\nthat the sides of the squares are parallel to the sides of the\nrectangle.\n",
+      "solution": "If $outerradius$ and $innerradius$ are the sides of two squares with combined area 1, then\n$outerradius^2 + innerradius^2 = 1$. Suppose without loss of generality that $outerradius \\geq innerradius$.\nThen the shorter side of a rectangle containing both squares without\noverlap must be at least $outerradius$, and the longer side must be at least\n$outerradius+innerradius$. Hence the desired value of $maximumarea$ is the maximum of $outerradius(outerradius+innerradius)$.\n\nTo find this maximum, we let $outerradius = \\cos straightlen, innerradius = \\sin straightlen$ with\n$straightlen \\in [0, \\pi/4]$. Then we are to maximize\n\\begin{align*}\n\\cos^2 straightlen + \\sin straightlen \\cos straightlen\n&= \\frac 12 (1 + \\cos 2straightlen + \\sin 2straightlen) \\\\\n&= \\frac 12 + \\frac{\\sqrt{2}}{2} \\cos (2straightlen - \\pi/4) \\\\\n&\\leq \\frac{1 + \\sqrt{2}}{2},\n\\end{align*}\nwith equality for $straightlen = \\pi/8$. Hence this value is the desired\nvalue of $maximumarea$.",
+      "vars": [],
+      "params": []
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "x": "hjgrksla",
+        "y": "mdfplqen",
+        "\\theta": "rskdjnme"
+      },
+      "question": "Find the least number $qzxwvtnp$ such that for any two squares of combined\narea 1, a rectangle of area $qzxwvtnp$ exists such that the two squares can\nbe packed in the rectangle (without interior overlap). You may assume\nthat the sides of the squares are parallel to the sides of the\nrectangle.",
+      "solution": "If $hjgrksla$ and $mdfplqen$ are the sides of two squares with combined area 1, then\n$hjgrksla^2 + mdfplqen^2 = 1$. Suppose without loss of generality that $hjgrksla \\geq mdfplqen$.\nThen the shorter side of a rectangle containing both squares without\noverlap must be at least $hjgrksla$, and the longer side must be at least\n$hjgrksla+mdfplqen$. Hence the desired value of $qzxwvtnp$ is the maximum of $hjgrksla(hjgrksla+mdfplqen)$.\n\nTo find this maximum, we let $hjgrksla = \\cos rskdjnme, mdfplqen = \\sin rskdjnme$ with\n$rskdjnme \\in [0, \\pi/4]$. Then we are to maximize\n\\begin{align*}\n\\cos^2 rskdjnme + \\sin rskdjnme \\cos rskdjnme\n&= \\frac 12 (1 + \\cos 2rskdjnme + \\sin 2rskdjnme) \\\\\n&= \\frac 12 + \\frac{\\sqrt{2}}{2} \\cos (2rskdjnme - \\pi/4) \\\\\n&\\leq \\frac{1 + \\sqrt{2}}{2},\n\\end{align*}\nwith equality for $rskdjnme = \\pi/8$. Hence this value is the desired\nvalue of $qzxwvtnp$. "
+    },
+    "kernel_variant": {
+      "question": "Let two axis-parallel squares have side-lengths x and y ( measured in the same unit ) where x>0 , y>0 and \n\tx^{2}+y^{2}=3.\nAmong all axis-parallel rectangles that can accommodate the two squares without interior overlap, let A be the least possible area.\nDetermine this constant A; that is, find the smallest real number A such that for every pair of squares whose combined area equals 3 one can always place the two squares inside some axis-parallel rectangle whose area does not exceed A.",
+      "solution": "We first show that, whatever the relative position of the two squares, any containing axis-parallel rectangle has area at least\n\ty(x+y)\nwhen y:=max{x,y}.  We then maximise this value under the relation x^{2}+y^{2}=3.\n\nStep 1  A lower bound for any packing\n-----------------------------------\nLet the two squares be S_1 (side x) and S_2 (side y) with x\\leq y.  Denote by w and h the width and height of their axis-parallel bounding rectangle R.\n\nWrite d for the length by which the horizontal projections of the two squares overlap (0\\leq d\\leq x) and t for the length by which their vertical projections overlap (0\\leq t\\leq x).  Because the squares are closed, two of their interiors intersect iff their projections overlap in *both* directions.  Hence, to avoid interior overlap, at least one of the numbers d,t must be 0; in symbols\n\td\\cdot t=0.\n\nThe horizontal span of the union equals the sum of the two individual spans minus the horizontal overlap, so\n\tw = x+y-d.\nAnalogously\n\th = x+y-t.\n\nThere are now two cases.\n\n*  If d=0 (no horizontal overlap) then w = x+y and h = x+y-t \\geq  y, because t\\leq x\\leq y.  Hence\n\tarea(R)=w h = (x+y)(x+y-t) \\geq  (x+y)\\cdot y.\n\n*  If t=0 (no vertical overlap) the roles of w and h are reversed, and we again obtain\n\tarea(R) = (x+y-d)(x+y) \\geq  y(x+y).\n\nThus every feasible rectangle satisfies\n\tarea(R) \\geq  y(x+y)    (1)\nwith equality precisely when one of d or t equals x, i.e. when the two squares are placed flush along a common edge---\"side-by-side\" horizontally or vertically.\nConsequently the smallest possible containing rectangle for given side-lengths is a y-by-(x+y) (or (x+y)-by-y) rectangle whose area is\n\tF(x,y)=y(x+y).\n\nStep 2  Maximising F(x,y) under x^{2}+y^{2}=3\n-------------------------------------------\nBecause the expression is symmetric after exchanging x and y, we may impose x\\leq y without loss of generality.  Parametrise the circle x^{2}+y^{2}=3 by\n\tx=\\sqrt{3}\\cdot sin\\theta ,\n\ty=\\sqrt{3}\\cdot cos\\theta ,   0\\leq \\theta \\leq \\pi /4.\n\nThen\n\tF(\\theta )=y(x+y)=\\sqrt{3} cos\\theta (\\sqrt{3} sin\\theta +\\sqrt{3} cos\\theta )=3\\bigl(\\cos^{2}\\theta +\\sin\\theta \\cos\\theta \\bigr).\n\nUse the double-angle identities\n\tcos^{2}\\theta  = (1+cos2\\theta )/2,\n\t2sin\\theta  cos\\theta  = sin2\\theta ,\nso\n\tcos^{2}\\theta +\\sin\\theta \\cos\\theta  = \\frac{1}{2}(1+cos2\\theta )+\\frac{1}{2} sin2\\theta  = \\frac{1}{2} + (\\sqrt{2}/2)\\cdot cos\\bigl(2\\theta -\\pi /4\\bigr).\nHence\n\tF(\\theta ) \\leq  3\\Bigl(\\frac{1}{2}+\\frac{\\sqrt{2}}{2}\\Bigr) = \\frac{3(1+\\sqrt{2})}{2},\nwith equality when\n\t2\\theta -\\pi /4 = 0  \\Rightarrow   \\theta  = \\pi /8.\n\nAt \\theta  = \\pi /8 we obtain the side-lengths\n\tx = \\sqrt{3}\\cdot sin(\\pi /8), y = \\sqrt{3}\\cdot cos(\\pi /8),\nand the two squares indeed fit snugly into a rectangle of dimensions y by (x+y), attaining the lower bound (1).\n\nStep 3  Conclusion\n-----------------\nThe smallest area that always suffices is therefore\n\tA = \\frac{3(1+\\sqrt{2})}{2}.",
+      "_meta": {
+        "core_steps": [
+          "Let the square sides be x, y with x² + y² fixed (their total area).",
+          "The tightest axis-parallel rectangle must have sides ≥ x and ≥ x + y, so its area is F(x,y)=x(x+y).",
+          "Reduce the problem to maximising F under x² + y² = const; w.l.o.g. assume x ≥ y.",
+          "Parametrise the circle by x=cos θ, y=sin θ and rewrite F(θ).",
+          "Apply the cosine bound to obtain the maximal value and hence A."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The numerical value chosen for the combined area of the two squares (scales the entire problem).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "The arbitrary ordering convention on the two side lengths, which merely restricts θ to a half-interval.",
+            "original": "Assume x ≥ y  ⇒  θ ∈ [0, π/4]"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,151 @@
+{
+  "index": "2006-A-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Let $1, 2, 3, \\dots, 2005, 2006, 2007, 2009, 2012, 2016, \\dots$\nbe a sequence defined by $x_k = k$ for $k=1, 2, \\dots, 2006$ and\n$x_{k+1} = x_k + x_{k-2005}$ for $k \\geq 2006$. Show that the sequence has\n2005 consecutive terms each divisible by 2006.",
+  "solution": "We first observe that given any sequence of integers\n$x_1, x_2, \\dots$ satisfying a recursion\n\\[\nx_k = f(x_{k-1}, \\dots, x_{k-n}) \\qquad (k > n),\n\\]\nwhere $n$ is fixed and $f$ is a fixed polynomial of $n$ variables with\ninteger coefficients, for any positive integer $N$, the sequence modulo $N$\nis eventually periodic. This is simply because there are only finitely many\npossible sequences of $n$ consecutive values modulo $N$, and once such\na sequence is repeated, every subsequent value is repeated as well.\n\nWe next observe that if one can rewrite the same recursion as\n\\[\nx_{k-n} = g(x_{k-n+1}, \\dots, x_k) \\qquad (k > n),\n\\]\nwhere $g$ is also a polynomial with integer coefficients, then\nthe sequence extends uniquely to a doubly infinite sequence $\\dots,\nx_{-1}, x_0, x_1, \\dots$ which is fully periodic modulo any $N$.\nThat is the case in the\nsituation at hand, because we can rewrite the given recursion as\n\\[\nx_{k-2005} = x_{k+1} - x_k.\n\\]\nIt thus suffices to find 2005 consecutive terms divisible by $N$ in the\ndoubly infinite sequence, for any fixed $N$ (so in particular for\n$N = 2006$).\nRunning the recursion backwards, we easily find\n\\begin{gather*}\nx_1 = x_0 = \\cdots = x_{-2004} = 1 \\\\\nx_{-2005} = \\cdots = x_{-4009} = 0,\n\\end{gather*}\nyielding the desired result.",
+  "vars": [
+    "k",
+    "x_k",
+    "x_k+1",
+    "x_k-2005",
+    "x_k-n",
+    "x_k-n+1",
+    "x_-1",
+    "x_0",
+    "x_-2004",
+    "x_-2005",
+    "x_-4009",
+    "x_1",
+    "x_2"
+  ],
+  "params": [
+    "n",
+    "N",
+    "f",
+    "g"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "indexk",
+        "x_k": "termindex",
+        "x_k+1": "termnext",
+        "x_k-2005": "termoffset",
+        "x_k-n": "termminusn",
+        "x_k-n+1": "termminusnplus",
+        "x_-1": "termnegone",
+        "x_0": "termzero",
+        "x_-2004": "termnegmmiv",
+        "x_-2005": "termnegmmv",
+        "x_-4009": "termnegfourthousandnine",
+        "x_1": "termone",
+        "x_2": "termtwo",
+        "n": "spanlen",
+        "N": "modulus",
+        "f": "polyfuncf",
+        "g": "polyfuncg"
+      },
+      "question": "Let $1, 2, 3, \\dots, 2005, 2006, 2007, 2009, 2012, 2016, \\dots$ be a sequence defined by $termindex = indexk$ for $indexk=1, 2, \\dots, 2006$ and $termnext = termindex + termoffset$ for $indexk \\geq 2006$. Show that the sequence has 2005 consecutive terms each divisible by 2006.",
+      "solution": "We first observe that given any sequence of integers termone, termtwo, $\\dots$ satisfying a recursion\\[ termindex = polyfuncf(x_{indexk-1}, \\dots, termminusn) \\qquad (indexk > spanlen), \\]where $spanlen$ is fixed and $polyfuncf$ is a fixed polynomial of $spanlen$ variables with integer coefficients, for any positive integer $modulus$, the sequence modulo $modulus$ is eventually periodic. This is simply because there are only finitely many possible sequences of $spanlen$ consecutive values modulo $modulus$, and once such a sequence is repeated, every subsequent value is repeated as well.\n\nWe next observe that if one can rewrite the same recursion as\\[ termminusn = polyfuncg(termminusnplus, \\dots, termindex) \\qquad (indexk > spanlen), \\]where $polyfuncg$ is also a polynomial with integer coefficients, then the sequence extends uniquely to a doubly infinite sequence $\\dots, termnegone, termzero, termone, \\dots$ which is fully periodic modulo any $modulus$. That is the case in the situation at hand, because we can rewrite the given recursion as\\[ termoffset = termnext - termindex. \\]It thus suffices to find 2005 consecutive terms divisible by $modulus$ in the doubly infinite sequence, for any fixed $modulus$ (so in particular for $modulus = 2006$). Running the recursion backwards, we easily find\\begin{gather*} termone = termzero = \\cdots = termnegmmiv = 1 \\\\ termnegmmv = \\cdots = termnegfourthousandnine = 0, \\end{gather*}yielding the desired result."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "caterpillar",
+        "x_k": "sunflower",
+        "x_k+1": "blueberry",
+        "x_k-2005": "raspberry",
+        "x_k-n": "pineapple",
+        "x_k-n+1": "blackberry",
+        "x_-1": "marigold",
+        "x_0": "butternut",
+        "x_-2004": "elderberry",
+        "x_-2005": "gooseberry",
+        "x_-4009": "huckleberry",
+        "x_1": "persimmon",
+        "x_2": "pomegranate",
+        "n": "sandcastle",
+        "N": "watermelon",
+        "f": "nightshade",
+        "g": "dragonfruit"
+      },
+      "question": "Let $1, 2, 3, \\dots, 2005, 2006, 2007, 2009, 2012, 2016, \\dots$ be a sequence defined by $sunflower = caterpillar$ for $caterpillar=1, 2, \\dots, 2006$ and $blueberry = sunflower + raspberry$ for $caterpillar \\geq 2006$. Show that the sequence has 2005 consecutive terms each divisible by 2006.",
+      "solution": "We first observe that given any sequence of integers $persimmon, pomegranate, \\dots$ satisfying a recursion\n\\[\nsunflower = nightshade(x_{caterpillar-1}, \\dots, pineapple) \\qquad (caterpillar > sandcastle),\n\\]\nwhere $sandcastle$ is fixed and $nightshade$ is a fixed polynomial of $sandcastle$ variables with integer coefficients, for any positive integer $watermelon$, the sequence modulo $watermelon$ is eventually periodic. This is simply because there are only finitely many possible sequences of $sandcastle$ consecutive values modulo $watermelon$, and once such a sequence is repeated, every subsequent value is repeated as well.\n\nWe next observe that if one can rewrite the same recursion as\n\\[\npineapple = dragonfruit(blackberry, \\dots, sunflower) \\qquad (caterpillar > sandcastle),\n\\]\nwhere $dragonfruit$ is also a polynomial with integer coefficients, then the sequence extends uniquely to a doubly infinite sequence $\\dots, marigold, butternut, persimmon, \\dots$ which is fully periodic modulo any $watermelon$. That is the case in the situation at hand, because we can rewrite the given recursion as\n\\[\nraspberry = blueberry - sunflower.\n\\]\nIt thus suffices to find 2005 consecutive terms divisible by $watermelon$ in the doubly infinite sequence, for any fixed $watermelon$ (so in particular for $watermelon = 2006$). Running the recursion backwards, we easily find\n\\begin{gather*}\npersimmon = butternut = \\cdots = elderberry = 1 \\\\\ngooseberry = \\cdots = huckleberry = 0,\n\\end{gather*}\nyielding the desired result."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "constant",
+        "x_k": "steadyelement",
+        "x_k+1": "steadyelementnext",
+        "x_k-2005": "steadyelementshift",
+        "x_k-n": "steadyelementlag",
+        "x_k-n+1": "steadyelementlagplus",
+        "x_-1": "steadyelementnegone",
+        "x_0": "steadyelementzero",
+        "x_-2004": "steadyelementtwothousandfour",
+        "x_-2005": "steadyelementtwothousandfive",
+        "x_-4009": "steadyelementfourthousandnine",
+        "x_1": "steadyelementone",
+        "x_2": "steadyelementtwo",
+        "n": "variable",
+        "N": "infinite",
+        "f": "constantfun",
+        "g": "randomfun"
+      },
+      "question": "Let $1, 2, 3, \\dots, 2005, 2006, 2007, 2009, 2012, 2016, \\dots$\nbe a sequence defined by $steadyelement = constant$ for $constant=1, 2, \\dots, 2006$ and\n$steadyelementnext = steadyelement + steadyelementshift$ for $constant \\geq 2006$. Show that the sequence has\n2005 consecutive terms each divisible by 2006.",
+      "solution": "We first observe that given any sequence of integers\n$steadyelementone, steadyelementtwo, \\dots$ satisfying a recursion\n\\[\nsteadyelement = constantfun(x_{constant-1}, \\dots, steadyelementlag) \\qquad (constant > variable),\n\\]\nwhere $variable$ is fixed and $constantfun$ is a fixed polynomial of $variable$ variables with\ninteger coefficients, for any positive integer $infinite$, the sequence modulo $infinite$\nis eventually periodic. This is simply because there are only finitely many\npossible sequences of $variable$ consecutive values modulo $infinite$, and once such\na sequence is repeated, every subsequent value is repeated as well.\n\nWe next observe that if one can rewrite the same recursion as\n\\[\nsteadyelementlag = randomfun(steadyelementlagplus, \\dots, steadyelement) \\qquad (constant > variable),\n\\]\nwhere $randomfun$ is also a polynomial with integer coefficients, then\nthe sequence extends uniquely to a doubly infinite sequence $\\dots,\nsteadyelementnegone, steadyelementzero, steadyelementone, \\dots$ which is fully periodic modulo any $infinite$.\nThat is the case in the\nsituation at hand, because we can rewrite the given recursion as\n\\[\nsteadyelementshift = steadyelementnext - steadyelement.\n\\]\nIt thus suffices to find 2005 consecutive terms divisible by $infinite$ in the\ndoubly infinite sequence, for any fixed $infinite$ (so in particular for\n$infinite = 2006$).\nRunning the recursion backwards, we easily find\n\\begin{gather*}\nsteadyelementone = steadyelementzero = \\cdots = steadyelementtwothousandfour = 1 \\\\\nsteadyelementtwothousandfive = \\cdots = steadyelementfourthousandnine = 0,\n\\end{gather*}\nyielding the desired result."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "abeciroq",
+        "x_k": "vodabuni",
+        "x_k+1": "fujekaro",
+        "x_k-2005": "melicoro",
+        "x_k-n": "suvanepo",
+        "x_k-n+1": "zomariti",
+        "x_-1": "laduseni",
+        "x_0": "nupatile",
+        "x_-2004": "vekiraso",
+        "x_-2005": "piburane",
+        "x_-4009": "xerulapi",
+        "x_1": "jamodire",
+        "x_2": "volematu",
+        "n": "geropazu",
+        "N": "hikotemu",
+        "f": "qusareni",
+        "g": "lopidwen"
+      },
+      "question": "Let $1, 2, 3, \\dots, 2005, 2006, 2007, 2009, 2012, 2016, \\dots$\nbe a sequence defined by $vodabuni = abeciroq$ for $abeciroq=1, 2, \\dots, 2006$ and\n$fujekaro = vodabuni + melicoro$ for $abeciroq \\geq 2006$. Show that the sequence has\n2005 consecutive terms each divisible by 2006.",
+      "solution": "We first observe that given any sequence of integers\njamodire, volematu, \\dots satisfying a recursion\n\\[\nvodabuni = qusareni(x_{abeciroq-1}, \\dots, suvanepo) \\qquad (abeciroq > geropazu),\n\\]\nwhere $geropazu$ is fixed and $qusareni$ is a fixed polynomial of $geropazu$ variables with\ninteger coefficients, for any positive integer $hikotemu$, the sequence modulo $hikotemu$\nis eventually periodic. This is simply because there are only finitely many\npossible sequences of $geropazu$ consecutive values modulo $hikotemu$, and once such\na sequence is repeated, every subsequent value is repeated as well.\n\nWe next observe that if one can rewrite the same recursion as\n\\[\nsuvanepo = lopidwen(zomariti, \\dots, vodabuni) \\qquad (abeciroq > geropazu),\n\\]\nwhere $lopidwen$ is also a polynomial with integer coefficients, then\nthe sequence extends uniquely to a doubly infinite sequence $\\dots,\nladuseni, nupatile, jamodire, \\dots$ which is fully periodic modulo any $hikotemu$.\nThat is the case in the\nsituation at hand, because we can rewrite the given recursion as\n\\[\nmelicoro = fujekaro - vodabuni.\n\\]\nIt thus suffices to find 2005 consecutive terms divisible by $hikotemu$ in the\ndoubly infinite sequence, for any fixed $hikotemu$ (so in particular for\n$hikotemu = 2006$).\nRunning the recursion backwards, we easily find\n\\begin{gather*}\njamodire = nupatile = \\cdots = vekiraso = 1 \\\\\npiburane = \\cdots = xerulapi = 0,\n\\end{gather*}\nyielding the desired result."
+    },
+    "kernel_variant": {
+      "question": "Let $(x_k)_{k\\ge 1}$ be the integer sequence defined by\n\\[\n  x_k=k\\qquad (k=1,2,\\dots ,2024),\\qquad\\qquad\n  x_{k+1}=x_k+x_{k-2023}\\qquad (k\\ge 2024).\n\\]\nProve that the sequence contains $2023$ consecutive terms, each of which is divisible by $2024$.",
+      "solution": "Throughout write $n=2023$ and $N=2024$.\n\n1.  A finite-state description modulo $N$.\n   ------------------------------------------------\n   Work modulo $N$.  To evaluate the next term we need the block\n   \\((x_{k-n},x_{k-n+1},\\dots ,x_k)\\).  Indeed the recursion gives\n   \\[\n        x_{k+1}\\equiv x_k+x_{k-n}\\pmod N.\n   \\]\n   Conversely the same formula can be solved for the oldest entry:\n   \\[\n        x_{k-n}\\equiv x_{k+1}-x_k\\pmod N.\n   \\]\n   Hence the $(n+1)$-tuple\n   \\[\n       \\mathbf v_k=(x_{k-n},x_{k-n+1},\\dots ,x_k)\\pmod N\n   \\]\n   determines \\emph{both} its successor $\\mathbf v_{k+1}$ and its predecessor\n   $\\mathbf v_{k-1}$.  Reducing modulo $N$ there are only $N^{n+1}$ possible\n   $(n+1)$-tuples, so the map $\\mathbf v_k\\mapsto\\mathbf v_{k+1}$ is a\n   permutation of a finite set.  Therefore the orbit of any initial\n   $(n+1)$-tuple is purely periodic; i.e. there exists a positive integer $T$\n   such that\n   \\[\n        x_{k+T}\\equiv x_k\\pmod N\\qquad\\text{for every integer }k. \\tag{1}\n   \\]\n   In particular the doubly-infinite sequence\n   $$(\\dots ,x_{-1},x_0,x_1,\\dots)$$\n   that we shall construct will be $T$-periodic modulo $N$.\n\n2.  Extending the sequence backwards.\n   ----------------------------------\n   Besides $x_1,\\dots ,x_n$ we are also given $x_{n+1}=N=2024$.  Knowing the\n   $(n+1)$ consecutive values $(x_1,\\dots ,x_{n+1})$ allows us to recover the\n   whole sequence inductively to the left: for $k\\ge n+1$,\n   \\[x_{k-n}=x_{k+1}-x_k.\\]\n   Thus one obtains uniquely defined integers $x_0,x_{-1},\\dots$.\n\n3.  An explicit backward calculation.\n   ----------------------------------\n   Starting with\n   \\[x_{n+1}=2024,\\qquad x_n=2023,\\qquad x_{n-1}=2022,\\;\\dots ,\\;x_1=1,\\]\n   apply $x_{k-n}=x_{k+1}-x_k$ successively:\n   \\[\n      \\begin{aligned}\n          x_0 &= x_{n+1}-x_n       = 2024-2023 = 1,\\\\\n          x_{-1} &= x_n-x_{n-1}        = 2023-2022 = 1,\\\\\n          &\\,\\vdots\\\\\n          x_{-(n-1)} &= x_2-x_1        = 2-1 = 1,\\\\[2mm]\n          x_{-n} &= x_1-x_0          = 1-1 = 0.\n      \\end{aligned}\n   \\]\n   Continuing the same way,\n   \\[\n         x_{-n-1}=x_0-x_{-1}=0,\\;x_{-n-2}=x_{-1}-x_{-2}=0,\\;\\dots ,\\;x_{-2n+1}=0.\n   \\]\n   Hence\n   \\[\n        x_{-n},x_{-n-1},\\dots ,x_{-2n+1}\n   \\]\n   are $n=2023$ consecutive zeros, and therefore each is divisible by $N$.\n\n4.  Transferring the zero block to positive indices.\n   -------------------------------------------------\n   Let $T$ be the period provided by (1).  Pick an integer $m$ large enough so\n   that\n   \\[-2n+1+mT\\;\\ge\\;1.\\]\n   Shifting the previously found block forward by $mT$ indices and using\n   (1) yields\n   \\[x_{-2n+1+mT}=x_{-2n+1}\\equiv 0\\pmod N,\\quad\\dots ,\\quad\n     x_{-n+mT}=x_{-n}\\equiv 0\\pmod N.\\]\n   All these indices are now $\\ge1$, so they belong to the original\n   one-sided sequence $(x_k)_{k\\ge1}$.  Thus the sequence possesses $n=2023$\n   consecutive terms that are multiples of $2024$, as required.",
+      "_meta": {
+        "core_steps": [
+          "Finite-state/Pigeonhole: a fixed-order polynomial recursion is eventually periodic modulo any N.",
+          "Invertibility: because x_{k-n} can be written as x_{k+1}-x_k, the sequence extends uniquely backward, so it becomes doubly-infinite and fully periodic mod N.",
+          "Backward computation from the given seed (x_k=k for k=1,…,n+1) produces n consecutive zero terms; hence those n terms are multiples of N."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Order n of the recursion (gap between indices, also number of consecutive divisible terms to be found).",
+            "original": "2005"
+          },
+          "slot2": {
+            "description": "Modulus N for which divisibility is required.",
+            "original": "2006"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

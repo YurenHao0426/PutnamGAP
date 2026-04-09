@@ -1,0 +1,143 @@
+{
+  "index": "1983-A-5",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem A-5\nProve or disprove that there exists a positive real number \\( u \\) such that \\( \\left[u^{n}\\right]-n \\) is an even integer for all positive integers \\( n \\).\n\nHere \\( [x] \\) denotes the greatest integer less than or equal to \\( x \\).",
+  "solution": "A-5.\nInductively we define a sequence of integers \\( 3=a_{1}, a_{2}, a_{3}, \\ldots \\) and associated intervals \\( I_{n}=\\left[\\left(a_{n}\\right)^{1 / n},\\left(1+a_{n}\\right)^{1 / n}\\right) \\) such that \\( a_{n} \\geqslant 3^{n}, a_{n} \\equiv n(\\bmod 2) \\), the sequence \\( \\left\\{\\left(a_{n}\\right)^{1 / n}\\right\\} \\) is nondecreasing, and \\( I_{n} \\supseteq I_{n+1} \\). When this has been done, \\( \\left\\{\\left(a_{n}\\right)^{1 / n}\\right\\} \\), being nondecreasing and bounded, will have a limit \\( u \\) which is in \\( I_{n} \\) for all \\( n \\). Then \\( \\left(a_{n}\\right)^{1 / n} \\leqslant u<\\left(1+a_{n}\\right)^{1 / n} \\) will imply that \\( a_{n} \\leqslant u^{n}<1+a_{n} \\) and so \\( \\left[u^{n}\\right]=a_{n} \\equiv n(\\bmod 2) \\) for all \\( n \\).\n\nLet \\( a_{1}=3 \\). Then \\( I_{1}=[3,4) \\). Let us assume that we have \\( a_{1}, a_{2}, \\ldots, a_{k} \\) and \\( I_{1}, I_{2}, \\ldots, I_{k} \\) with the desired properties. Let\n\\[\nJ_{k}=\\left[\\left(a_{k}\\right)^{(k+1) / k},\\left(1+a_{k}\\right)^{(k+1) / k}\\right) .\n\\]\n\nThen \\( x \\) is in \\( I_{k} \\) if and only if \\( x^{k+1} \\) is in \\( J_{k} \\). The length of \\( J_{k} \\) is\n\\[\n\\left(1+a_{k}\\right)^{(k+1) / k}-\\left(a_{k}\\right)^{(k+1) / k} \\geqslant\\left(1+a_{k}-a_{k}\\right)\\left(a_{k}\\right)^{1 / k}=a_{k}^{1 / k} \\geqslant\\left(3^{k}\\right)^{1 / k}=3\n\\]\n\nSince the length of \\( J_{k} \\) is at least \\( 3, J_{k} \\) contains an interval \\( L_{k}=\\left[a_{k+1}, 1+a_{k+1}\\right) \\) for some integer \\( a_{k+1} \\) which is congruent to \\( k+1(\\bmod 2) \\). Let\n\\[\nI_{k+1}=\\left[\\left(a_{k+1}\\right)^{1 /(k+1)},\\left(1+a_{k+1}\\right)^{1 /(k+1)}\\right)\n\\]\n\nSince \\( x \\in I_{k} \\) if and only if \\( x^{k+1} \\in J_{k}, x \\in I_{k+1} \\) if and only if \\( x^{k+1} \\in L_{k} \\), and \\( J_{k} \\supseteq L_{k} \\), one sees that \\( I_{k} \\geq I_{k+1} \\). Also\n\\[\na_{k+1} \\geqslant\\left(a_{k}\\right)^{(k+1) / k}=\\left[\\left(a_{k}\\right)^{1 / k}\\right]^{k+1} \\geqslant 3^{k+1}\n\\]\n\nThis completes the inductive step and shows that the desired \\( u \\) exists.",
+  "vars": [
+    "n",
+    "x",
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_n",
+    "a_k",
+    "a_k+1",
+    "k",
+    "I_n",
+    "I_k",
+    "I_k+1",
+    "J_k",
+    "L_k"
+  ],
+  "params": [
+    "u"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "x": "genericreal",
+        "a_1": "baseone",
+        "a_2": "basetwo",
+        "a_3": "basethree",
+        "a_n": "baseindex",
+        "a_k": "basestep",
+        "a_k+1": "basenext",
+        "k": "stepindex",
+        "I_n": "intervalindex",
+        "I_k": "intervalstep",
+        "I_k+1": "intervalnext",
+        "J_k": "rangejstep",
+        "L_k": "lsegment",
+        "u": "limitreal"
+      },
+      "question": "Problem A-5\nProve or disprove that there exists a positive real number limitreal such that \\([limitreal^{indexvar}]-indexvar\\) is an even integer for all positive integers indexvar.\n\nHere \\([genericreal]\\) denotes the greatest integer less than or equal to genericreal.",
+      "solution": "A-5.\nInductively we define a sequence of integers \\( 3=baseone, basetwo, basethree, \\ldots \\) and associated intervals \\( intervalindex=\\left[\\left(baseindex\\right)^{1 / indexvar},\\left(1+baseindex\\right)^{1 / indexvar}\\right) \\) such that \\( baseindex \\geqslant 3^{indexvar}, baseindex \\equiv indexvar(\\bmod 2) \\), the sequence \\( \\left\\{\\left(baseindex\\right)^{1 / indexvar}\\right\\} \\) is nondecreasing, and \\( intervalindex \\supseteq intervalnext \\). When this has been done, \\( \\left\\{\\left(baseindex\\right)^{1 / indexvar}\\right\\} \\), being nondecreasing and bounded, will have a limit limitreal which is in \\( intervalindex \\) for all indexvar. Then \\( \\left(baseindex\\right)^{1 / indexvar} \\leqslant limitreal<\\left(1+baseindex\\right)^{1 / indexvar} \\) will imply that \\( baseindex \\leqslant limitreal^{indexvar}<1+baseindex \\) and so \\( \\left[limitreal^{indexvar}\\right]=baseindex \\equiv indexvar(\\bmod 2) \\) for all indexvar.\n\nLet \\( baseone=3 \\). Then \\( I_{1}=[3,4) \\). Let us assume that we have \\( baseone, basetwo, \\ldots, basestep \\) and \\( I_{1}, I_{2}, \\ldots, intervalstep \\) with the desired properties. Let\n\\[\nrangejstep=\\left[\\left(basestep\\right)^{(stepindex+1) / stepindex},\\left(1+basestep\\right)^{(stepindex+1) / stepindex}\\right] .\n\\]\n\nThen genericreal is in intervalstep if and only if \\( genericreal^{stepindex+1} \\) is in rangejstep. The length of rangejstep is\n\\[\n\\left(1+basestep\\right)^{(stepindex+1) / stepindex}-\\left(basestep\\right)^{(stepindex+1) / stepindex} \\geqslant\\left(1+basestep-basestep\\right)\\left(basestep\\right)^{1 / stepindex}=basestep^{1 / stepindex} \\geqslant\\left(3^{stepindex}\\right)^{1 / stepindex}=3\n\\]\n\nSince the length of rangejstep is at least 3, rangejstep contains an interval \\( lsegment=\\left[basenext, 1+basenext\\right) \\) for some integer basenext which is congruent to stepindex+1(\\bmod 2). Let\n\\[\nintervalnext=\\left[\\left(basenext\\right)^{1 /(stepindex+1)},\\left(1+basenext\\right)^{1 /(stepindex+1)}\\right)\n\\]\n\nSince genericreal \\in intervalstep if and only if genericreal^{stepindex+1} \\in rangejstep, genericreal \\in intervalnext if and only if genericreal^{stepindex+1} \\in lsegment, and rangejstep \\supseteq lsegment, one sees that intervalstep \\geq intervalnext. Also\n\\[\nbasenext \\geqslant\\left(basestep\\right)^{(stepindex+1) / stepindex}=\\left[\\left(basestep\\right)^{1 / stepindex}\\right]^{stepindex+1} \\geqslant 3^{stepindex+1}\n\\]\n\nThis completes the inductive step and shows that the desired limitreal exists."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "pineapple",
+        "x": "harmonica",
+        "a_1": "rhinoceros",
+        "a_2": "marathoner",
+        "a_3": "telescope",
+        "a_n": "revolution",
+        "a_k": "snowflake",
+        "a_k+1": "buttercup",
+        "k": "chocolate",
+        "I_n": "fireplace",
+        "I_k": "windshield",
+        "I_k+1": "playground",
+        "J_k": "milkshake",
+        "L_k": "blueberry",
+        "u": "parachute"
+      },
+      "question": "Problem A-5\nProve or disprove that there exists a positive real number \\( parachute \\) such that \\( \\left[parachute^{pineapple}\\right]-pineapple \\) is an even integer for all positive integers \\( pineapple \\).\n\nHere \\( [harmonica] \\) denotes the greatest integer less than or equal to \\( harmonica \\).",
+      "solution": "A-5.\nInductively we define a sequence of integers \\( 3=rhinoceros, marathoner, telescope, \\ldots \\) and associated intervals \\( fireplace=\\left[\\left(revolution\\right)^{1 / pineapple},\\left(1+revolution\\right)^{1 / pineapple}\\right) \\) such that \\( revolution \\geqslant 3^{pineapple}, revolution \\equiv pineapple(\\bmod 2) \\), the sequence \\( \\left\\{\\left(revolution\\right)^{1 / pineapple}\\right\\} \\) is nondecreasing, and \\( fireplace \\supseteq playground \\). When this has been done, \\( \\left\\{\\left(revolution\\right)^{1 / pineapple}\\right\\} \\), being nondecreasing and bounded, will have a limit \\( parachute \\) which is in \\( fireplace \\) for all \\( pineapple \\). Then \\( \\left(revolution\\right)^{1 / pineapple} \\leqslant parachute<\\left(1+revolution\\right)^{1 / pineapple} \\) will imply that \\( revolution \\leqslant parachute^{pineapple}<1+revolution \\) and so \\( \\left[parachute^{pineapple}\\right]=revolution \\equiv pineapple(\\bmod 2) \\) for all \\( pineapple \\).\n\nLet \\( rhinoceros=3 \\). Then \\( fireplace=[3,4) \\). Let us assume that we have \\( rhinoceros, marathoner, \\ldots, snowflake \\) and \\( fireplace, windshield, \\ldots, windshield \\) with the desired properties. Let\n\\[\nmilkshake=\\left[\\left(snowflake\\right)^{(chocolate+1) / chocolate},\\left(1+snowflake\\right)^{(chocolate+1) / chocolate}\\right) .\n\\]\nThen \\( harmonica \\) is in \\( windshield \\) if and only if \\( harmonica^{chocolate+1} \\) is in \\( milkshake \\). The length of \\( milkshake \\) is\n\\[\n\\left(1+snowflake\\right)^{(chocolate+1) / chocolate}-\\left(snowflake\\right)^{(chocolate+1) / chocolate} \\geqslant\\left(1+snowflake-snowflake\\right)\\left(snowflake\\right)^{1 / chocolate}=snowflake^{1 / chocolate} \\geqslant\\left(3^{chocolate}\\right)^{1 / chocolate}=3\n\\]\nSince the length of \\( milkshake \\) is at least \\( 3, milkshake \\) contains an interval \\( blueberry=\\left[buttercup, 1+buttercup\\right) \\) for some integer \\( buttercup \\) which is congruent to \\( chocolate+1(\\bmod 2) \\). Let\n\\[\nplayground=\\left[\\left(buttercup\\right)^{1 /(chocolate+1)},\\left(1+buttercup\\right)^{1 /(chocolate+1)}\\right)\n\\]\nSince \\( harmonica \\in windshield \\) if and only if \\( harmonica^{chocolate+1} \\in milkshake, harmonica \\in playground \\) if and only if \\( harmonica^{chocolate+1} \\in blueberry \\), and \\( milkshake \\supseteq blueberry \\), one sees that \\( windshield \\geq playground \\). Also\n\\[\nbuttercup \\geqslant\\left(snowflake\\right)^{(chocolate+1) / chocolate}=\\left[\\left(snowflake\\right)^{1 / chocolate}\\right]^{chocolate+1} \\geqslant 3^{chocolate+1}\n\\]\nThis completes the inductive step and shows that the desired \\( parachute \\) exists."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "infiniteindex",
+        "x": "constantvalue",
+        "a_1": "endonevalue",
+        "a_2": "endtwovalue",
+        "a_3": "endthreevalue",
+        "a_n": "endindexvalue",
+        "a_k": "endkayvalue",
+        "a_k+1": "endnextvalue",
+        "k": "fixedindex",
+        "I_n": "falseintervaln",
+        "I_k": "falseintervalk",
+        "I_k+1": "falseintervalnext",
+        "J_k": "phantominterval",
+        "L_k": "illusoryrange",
+        "u": "negativereal"
+      },
+      "question": "Problem A-5\nProve or disprove that there exists a positive real number \\( negativereal \\) such that \\( \\left[negativereal^{infiniteindex}\\right]-infiniteindex \\) is an even integer for all positive integers \\( infiniteindex \\).\n",
+      "solution": "A-5.\nInductively we define a sequence of integers \\( 3=endonevalue, endtwovalue, endthreevalue, \\ldots \\) and associated intervals \\( falseintervaln=\\left[\\left(endindexvalue\\right)^{1 / infiniteindex},\\left(1+endindexvalue\\right)^{1 / infiniteindex}\\right) \\) such that \\( endindexvalue \\geqslant 3^{infiniteindex}, endindexvalue \\equiv infiniteindex(\\bmod 2) \\), the sequence \\( \\left\\{\\left(endindexvalue\\right)^{1 / infiniteindex}\\right\\} \\) is nondecreasing, and \\( falseintervaln \\supseteq falseintervalnext \\). When this has been done, \\( \\left\\{\\left(endindexvalue\\right)^{1 / infiniteindex}\\right\\} \\), being nondecreasing and bounded, will have a limit \\( negativereal \\) which is in \\( falseintervaln \\) for all \\( infiniteindex \\). Then \\( \\left(endindexvalue\\right)^{1 / infiniteindex} \\leqslant negativereal<\\left(1+endindexvalue\\right)^{1 / infiniteindex} \\) will imply that \\( endindexvalue \\leqslant negativereal^{infiniteindex}<1+endindexvalue \\) and so \\( \\left[negativereal^{infiniteindex}\\right]=endindexvalue \\equiv infiniteindex(\\bmod 2) \\) for all \\( infiniteindex \\).\n\nLet \\( endonevalue=3 \\). Then \\( I_{1}=[3,4) \\). Let us assume that we have \\( endonevalue, endtwovalue, \\ldots, endkayvalue \\) and \\( I_{1}, I_{2}, \\ldots, falseintervalk \\) with the desired properties. Let\n\\[\nphantominterval=\\left[\\left(endkayvalue\\right)^{(fixedindex+1) / fixedindex},\\left(1+endkayvalue\\right)^{(fixedindex+1) / fixedindex}\\right] .\n\\]\n\nThen \\( constantvalue \\) is in \\( falseintervalk \\) if and only if \\( constantvalue^{fixedindex+1} \\) is in \\( phantominterval \\). The length of \\( phantominterval \\) is\n\\[\n\\left(1+endkayvalue\\right)^{(fixedindex+1) / fixedindex}-\\left(endkayvalue\\right)^{(fixedindex+1) / fixedindex} \\geqslant\\left(1+endkayvalue-endkayvalue\\right)\\left(endkayvalue\\right)^{1 / fixedindex}=endkayvalue^{1 / fixedindex} \\geqslant\\left(3^{fixedindex}\\right)^{1 / fixedindex}=3\n\\]\n\nSince the length of \\( phantominterval \\) is at least \\( 3, phantominterval \\) contains an interval \\( illusoryrange=\\left[endnextvalue, 1+endnextvalue\\right) \\) for some integer \\( endnextvalue \\) which is congruent to \\( fixedindex+1(\\bmod 2) \\). Let\n\\[\nfalseintervalnext=\\left[\\left(endnextvalue\\right)^{1 /(fixedindex+1)},\\left(1+endnextvalue\\right)^{1 /(fixedindex+1)}\\right)\n\\]\n\nSince \\( constantvalue \\in falseintervalk \\) if and only if \\( constantvalue^{fixedindex+1} \\in phantominterval, constantvalue \\in falseintervalnext \\) if and only if \\( constantvalue^{fixedindex+1} \\in illusoryrange \\), and \\( phantominterval \\supseteq illusoryrange \\), one sees that \\( falseintervalk \\geq falseintervalnext \\). Also\n\\[\nendnextvalue \\geqslant\\left(endkayvalue\\right)^{(fixedindex+1) / fixedindex}=\\left[\\left(endkayvalue\\right)^{1 / fixedindex}\\right]^{fixedindex+1} \\geqslant 3^{fixedindex+1}\n\\]\n\nThis completes the inductive step and shows that the desired \\( negativereal \\) exists.\n"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "x": "hjgrksla",
+        "a_1": "plkuiyas",
+        "a_2": "mfodqswe",
+        "a_3": "zxyawert",
+        "a_n": "cvbnmasd",
+        "a_k": "fghtrwqe",
+        "a_k+1": "poiulkjh",
+        "k": "rtyuiopa",
+        "I_n": "lkjhgfre",
+        "I_k": "qazwsxed",
+        "I_k+1": "wsxqazed",
+        "J_k": "edcvfrtb",
+        "L_k": "nhytgbrf",
+        "u": "yuiokjmn"
+      },
+      "question": "Problem A-5\nProve or disprove that there exists a positive real number \\( yuiokjmn \\) such that \\( \\left[yuiokjmn^{qzxwvtnp}\\right]-qzxwvtnp \\) is an even integer for all positive integers \\( qzxwvtnp \\).\n\nHere \\( [hjgrksla] \\) denotes the greatest integer less than or equal to \\( hjgrksla \\).",
+      "solution": "A-5.\nInductively we define a sequence of integers \\( 3=plkuiyas, mfodqswe, zxyawert, \\ldots \\) and associated intervals \\( lkjhgfre=\\left[\\left(cvbnmasd\\right)^{1 / qzxwvtnp},\\left(1+cvbnmasd\\right)^{1 / qzxwvtnp}\\right) \\) such that \\( cvbnmasd \\geqslant 3^{qzxwvtnp}, cvbnmasd \\equiv qzxwvtnp(\\bmod 2) \\), the sequence \\( \\left\\{\\left(cvbnmasd\\right)^{1 / qzxwvtnp}\\right\\} \\) is nondecreasing, and \\( lkjhgfre \\supseteq I_{n+1} \\). When this has been done, \\( \\left\\{\\left(cvbnmasd\\right)^{1 / qzxwvtnp}\\right\\} \\), being nondecreasing and bounded, will have a limit \\( yuiokjmn \\) which is in \\( lkjhgfre \\) for all \\( qzxwvtnp \\). Then \\( \\left(cvbnmasd\\right)^{1 / qzxwvtnp} \\leqslant yuiokjmn<\\left(1+cvbnmasd\\right)^{1 / qzxwvtnp} \\) will imply that \\( cvbnmasd \\leqslant yuiokjmn^{qzxwvtnp}<1+cvbnmasd \\) and so \\( \\left[yuiokjmn^{qzxwvtnp}\\right]=cvbnmasd \\equiv qzxwvtnp(\\bmod 2) \\) for all \\( qzxwvtnp \\).\n\nLet \\( plkuiyas=3 \\). Then \\( I_{1}=[3,4) \\). Let us assume that we have \\( plkuiyas, mfodqswe, \\ldots, fghtrwqe \\) and \\( I_{1}, I_{2}, \\ldots, qazwsxed \\) with the desired properties. Let\n\\[\nedcvfrtb=\\left[\\left(fghtrwqe\\right)^{(rtyuiopa+1) / rtyuiopa},\\left(1+fghtrwqe\\right)^{(rtyuiopa+1) / rtyuiopa}\\right] .\n\\]\n\nThen \\( hjgrksla \\) is in \\( qazwsxed \\) if and only if \\( hjgrksla^{rtyuiopa+1} \\) is in \\( edcvfrtb \\). The length of \\( edcvfrtb \\) is\n\\[\n\\left(1+fghtrwqe\\right)^{(rtyuiopa+1) / rtyuiopa}-\\left(fghtrwqe\\right)^{(rtyuiopa+1) / rtyuiopa} \\geqslant\\left(1+fghtrwqe-fghtrwqe\\right)\\left(fghtrwqe\\right)^{1 / rtyuiopa}=fghtrwqe^{1 / rtyuiopa} \\geqslant\\left(3^{rtyuiopa}\\right)^{1 / rtyuiopa}=3\n\\]\n\nSince the length of \\( edcvfrtb \\) is at least \\( 3, edcvfrtb \\) contains an interval \\( nhytgbrf=\\left[poiulkjh, 1+poiulkjh\\right) \\) for some integer \\( poiulkjh \\) which is congruent to \\( rtyuiopa+1(\\bmod 2) \\). Let\n\\[\nwsxqazed=\\left[\\left(poiulkjh\\right)^{1 /(rtyuiopa+1)},\\left(1+poiulkjh\\right)^{1 /(rtyuiopa+1)}\\right)\n\\]\n\nSince \\( hjgrksla \\in qazwsxed \\) if and only if \\( hjgrksla^{rtyuiopa+1} \\in edcvfrtb, hjgrksla \\in wsxqazed \\) if and only if \\( hjgrksla^{rtyuiopa+1} \\in nhytgbrf \\), and \\( edcvfrtb \\supseteq nhytgbrf \\), one sees that \\( qazwsxed \\geq wsxqazed \\). Also\n\\[\npoiulkjh \\geqslant\\left(fghtrwqe\\right)^{(rtyuiopa+1) / rtyuiopa}=\\left[\\left(fghtrwqe\\right)^{1 / rtyuiopa}\\right]^{rtyuiopa+1} \\geqslant 3^{rtyuiopa+1}\n\\]\n\nThis completes the inductive step and shows that the desired \\( yuiokjmn \\) exists."
+    },
+    "kernel_variant": {
+      "question": "Does there exist a positive real number\n              u\nsuch that, for every positive integer n,\n              \\lfloor u^n\\rfloor  - n\nis divisible by 5?  Prove that such a number u exists.",
+      "solution": "We write \\lfloor x\\rfloor  for the greatest integer not exceeding x.\n\n--------------------------------------------------\n1.  The first interval.\n   Set\n        a_1 = 6   (so  a_1 \\equiv  1 (mod 5)  and  a_1 \\geq  5^1),\n   and put\n        I_1 = [ a_1^{1/1} , (a_1+1)^{1/1} ) = [6 , 7).\n\n--------------------------------------------------\n2.  The inductive step.\n   Inductively assume that for some k \\geq  1 we have already chosen an integer a_k\n   and an interval\n        I_k = [ a_k^{1/k} , (a_k+1)^{1/k} )\n   such that\n        (i)   a_k \\equiv  k (mod 5),\n        (ii)  a_k \\geq  5^k,\n        (iii) a_1^{1/1} \\leq  a_2^{1/2} \\leq  \\ldots  \\leq  a_k^{1/k},\n        (iv)  I_1 \\supseteq  I_2 \\supseteq  \\ldots  \\supseteq  I_k.\n   We now construct a_{k+1} and I_{k+1} satisfying the same four\n   requirements and, in addition, the new one\n        (v)   R_{k+1} < R_k   where   R_n := (a_n+1)^{1/n}.\n\n   Consider the (k+1)-st powers of the points of I_k:\n        J_k = I_k^{k+1}\n            = [ a_k^{(k+1)/k} , (a_k+1)^{(k+1)/k} ).\n\n   Length of J_k.\n   By the Mean Value Theorem applied to f(t)=t^{(k+1)/k}, with some\n   c\\in (a_k,a_k+1),\n        |J_k| = f(a_k+1) - f(a_k) = (k+1)/k \\cdot  c^{1/k}.\n   The sequence a_j^{1/j} is non-decreasing and its first term equals 6,\n   therefore c^{1/k} \\geq  a_k^{1/k} \\geq  6.  Consequently\n        |J_k| > (k+1)/k \\cdot  6 \\geq  6.            (\\dagger )\n\n   An elementary fact: any interval of length exceeding 6 contains at least six\n   consecutive integers.  (Indeed, if m=\\lceil \\alpha \\rceil  is the first integer in an\n   interval (\\alpha ,\\beta ) with \\beta -\\alpha >6, then m,m+1,\\ldots ,m+5 all lie in the interval.)\n   Thus (\\dagger ) implies that J_k contains six consecutive integers.\n\n   Among five consecutive integers every residue class modulo 5 occurs exactly\n   once.  Take the first five consecutive integers lying in J_k and choose\n   a_{k+1} to be the one that is \\equiv  k+1 (mod 5).  Because there is a sixth\n   consecutive integer following these five, a_{k+1} is **not** the last\n   integer contained in J_k, so\n        a_{k+1}+1 < (a_k+1)^{(k+1)/k}.              (1)\n   We also have\n        a_{k+1} \\in  J_k,\n        a_{k+1} \\equiv  k+1 (mod 5),\n        a_{k+1} \\geq  a_k^{(k+1)/k} \\geq  (5^k)^{(k+1)/k} = 5^{k+1}.\n\n   Define\n        I_{k+1} = [ a_{k+1}^{1/(k+1)} , (a_{k+1}+1)^{1/(k+1)} ).\n\n   Nesting.\n   If x\\in I_{k+1} then x^{k+1}\\in [a_{k+1},a_{k+1}+1)\\subset J_k=I_k^{k+1}, hence x\\in I_k.\n   Thus I_{k+1}\\subset I_k, proving (iv).\n\n   Monotonicity of the left end-points.\n        a_{k+1}^{1/(k+1)} \\geq  (a_k^{(k+1)/k})^{1/(k+1)} = a_k^{1/k},\n   so (iii) is preserved.\n\n   Strict monotonicity of the right end-points (property (v)).\n   Inequality (1) gives\n        R_{k+1} = (a_{k+1}+1)^{1/(k+1)} < ((a_k+1)^{(k+1)/k})^{1/(k+1)}\n                 = (a_k+1)^{1/k} = R_k.\n\n--------------------------------------------------\n3.  Convergence of the end-points.\n   Put L_n := a_n^{1/n} and R_n := (a_n+1)^{1/n}.  Then I_n=[L_n,R_n).\n\n   *  (L_n) is non-decreasing by (iii) and bounded above by 7, so it converges.\n   *  (R_n) is *strictly* decreasing by (v) and bounded below by 6, hence it\n      also converges.\n\n   Length of I_n.\n   As in step 2,\n        |I_n| = R_n - L_n = 1 /(n d^{1-1/n})\n   for some d\\in (a_n,a_n+1).   Since d \\geq  a_n \\geq  5^n,\n        |I_n| \\leq  1 /(n 5^{n-1}) \\to  0    as n\\to \\infty .\n   Therefore L_n and R_n converge to the same limit. Denote\n        u := lim_{n\\to \\infty } L_n = lim_{n\\to \\infty } R_n.\n\n--------------------------------------------------\n4.  The point u lies inside every interval I_n.\n   The closed intervals J_n := [L_n,R_n] are nested and their lengths tend to\n   0, so   \\bigcap _{n\\geq 1} J_n = {u}.  Because the right end-points satisfy R_n>u for\n   all n (strict decrease), we have\n        L_n \\leq  u < R_n   for every n \\geq  1,\n   i.e.   u \\in  I_n   for every n.\n\n--------------------------------------------------\n5.  Verification of the divisibility property.\n   From u \\in  I_n we get\n        a_n \\leq  u^n < a_n + 1  \\Rightarrow   \\lfloor u^n\\rfloor  = a_n.\n   By construction a_n \\equiv  n (mod 5); hence\n        \\lfloor u^n\\rfloor  - n \\equiv  0 (mod 5)\n   for every positive integer n.\n\nConsequently such a positive real number u exists.\n\nRemark.\nExactly the same argument works with 5 replaced by any integer m \\geq  2.  Thus\nfor every m \\geq  2 there is a positive real number u for which   \\lfloor u^n\\rfloor -n   is\nalways divisible by m.",
+      "_meta": {
+        "core_steps": [
+          "Inductively build integers a_n with a_n ≡ n (mod 2) and nested intervals I_n = [a_n^{1/n}, (a_n+1)^{1/n}).",
+          "Relate successive intervals via the map x ↦ x^{k+1}:  x ∈ I_k  ⇔  x^{k+1} ∈ J_k, where J_k = [a_k^{(k+1)/k}, (a_k+1)^{(k+1)/k}).",
+          "Lower-bound the length of J_k (≥ a_k^{1/k}) to guarantee it contains an entire unit interval [a_{k+1}, a_{k+1}+1) with the required parity.",
+          "Define a_{k+1} and I_{k+1} from that unit interval, ensuring monotonicity of a_n^{1/n} and the nesting I_k ⊇ I_{k+1}.",
+          "Intersect all I_n to obtain u; then a_n ≤ u^n < a_n+1 implies ⌊u^n⌋ = a_n ≡ n (mod 2), so ⌊u^n⌋ − n is even."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The modulus controlling the congruence requirement (here parity).  Any integer m ≥ 2 would work provided J_k’s length is forced to be ≥ m so one can pick an integer of the desired residue class.",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "The specific starting integer a_1 and the accompanying constant (3) used to ensure the uniform lower bound on |J_k|.  Any odd integer ≥ 3 (or, for general modulus m, any integer ≥ m) can replace 3 without affecting the argument.",
+            "original": "3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

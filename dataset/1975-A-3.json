@@ -1,0 +1,140 @@
+{
+  "index": "1975-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-3. Let \\( a, b, c \\) be constants with \\( 0<a<b<c \\). At what points of the set\n\\[\n\\left\\{x^{b}+y^{b}+z^{b}=1, x \\geqq 0, y \\geqq 0, z \\geqq 0\\right\\}\n\\]\nin three-dimensional space \\( R^{3} \\) does the function \\( f(x, y, z)=x^{a}+y^{b}+z^{c} \\) assume its maximum and minimum values?",
+  "solution": "A-3.\nLet \\( h(x)=x^{a}-x^{b} \\) and \\( k(z)=z^{c}-z^{b} \\). The desired points also give the maximum and minimum of the function\n\\[\ng(x, z)=\\left(x^{a}+y^{b}+z^{c}\\right)-\\left(x^{b}+y^{b}+z^{b}\\right)=h(x)+k(z)\n\\]\non the domain obtained by projection of the solid domain on the \\( x z \\)-plane. For all points under consideration, both \\( x \\) and \\( z \\) are in \\( [0,1] \\). Examining its derivative, one sees that \\( h(x) \\) increases from 0 at \\( x=0 \\) to a maximum at \\( x_{0}=(a / b)^{1 /(b-a)} \\) and then decreases to 0 at \\( x=1 \\). (This uses the hypothesis \\( 0<a<b \\).) Similarly, \\( k(z) \\) decreases from 0 at \\( z=0 \\) to a minimum at \\( z_{0}=(b / c)^{1 /(c-b)} \\) and then increases to 0 at \\( z=1 \\). Since \\( \\left(1, z_{0}\\right) \\) and \\( \\left(x_{0}, 1\\right) \\) are not in the domain of \\( g(x, z) \\), the function \\( f \\) achieves its maximum only at \\( (x, y, z)=\\left(x_{0},\\left[1-x_{0}^{b}\\right]^{1 / b}, 0\\right) \\) and achieves its minimum only at \\( \\left(0,\\left[1-z_{0}^{b}\\right]^{1 / b}, z_{0}\\right) \\).",
+  "vars": [
+    "f",
+    "g",
+    "h",
+    "k",
+    "x",
+    "x_0",
+    "y",
+    "z",
+    "z_0"
+  ],
+  "params": [
+    "R",
+    "a",
+    "b",
+    "c"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "funcval",
+        "g": "auxfunc",
+        "h": "helperh",
+        "k": "helperk",
+        "x": "varxone",
+        "x_0": "varxzero",
+        "y": "varyone",
+        "z": "varzone",
+        "z_0": "varzzero",
+        "R": "realsset",
+        "a": "parama",
+        "b": "paramb",
+        "c": "paramc"
+      },
+      "question": "A-3. Let \\( parama, paramb, paramc \\) be constants with \\( 0<parama<paramb<paramc \\). At what points of the set\n\\[\n\\left\\{varxone^{paramb}+varyone^{paramb}+varzone^{paramb}=1, varxone \\geqq 0, varyone \\geqq 0, varzone \\geqq 0\\right\\}\n\\]\nin three-dimensional space \\( realsset^{3} \\) does the function \\( funcval(varxone, varyone, varzone)=varxone^{parama}+varyone^{paramb}+varzone^{paramc} \\) assume its maximum and minimum values?",
+      "solution": "A-3.\nLet \\( helperh(varxone)=varxone^{parama}-varxone^{paramb} \\) and \\( helperk(varzone)=varzone^{paramc}-varzone^{paramb} \\). The desired points also give the maximum and minimum of the function\n\\[\nauxfunc(varxone, varzone)=\\left(varxone^{parama}+varyone^{paramb}+varzone^{paramc}\\right)-\\left(varxone^{paramb}+varyone^{paramb}+varzone^{paramb}\\right)=helperh(varxone)+helperk(varzone)\n\\]\non the domain obtained by projection of the solid domain on the \\( varxone varzone \\)-plane. For all points under consideration, both \\( varxone \\) and \\( varzone \\) are in \\( [0,1] \\). Examining its derivative, one sees that \\( helperh(varxone) \\) increases from 0 at \\( varxone=0 \\) to a maximum at \\( varxzero=\\left(parama / paramb\\right)^{1 /\\left(paramb-parama\\right)} \\) and then decreases to 0 at \\( varxone=1 \\). (This uses the hypothesis \\( 0<parama<paramb \\).) Similarly, \\( helperk(varzone) \\) decreases from 0 at \\( varzone=0 \\) to a minimum at \\( varzzero=\\left(paramb / paramc\\right)^{1 /\\left(paramc-paramb\\right)} \\) and then increases to 0 at \\( varzone=1 \\). Since \\( \\left(1, varzzero\\right) \\) and \\( \\left(varxzero, 1\\right) \\) are not in the domain of \\( auxfunc(varxone, varzone) \\), the function \\( funcval \\) achieves its maximum only at \\( (varxone, varyone, varzone)=\\left(varxzero,\\left[1-varxzero^{paramb}\\right]^{1 / paramb}, 0\\right) \\) and achieves its minimum only at \\( \\left(0,\\left[1-varzzero^{paramb}\\right]^{1 / paramb}, varzzero\\right) \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "shoreline",
+        "g": "meadowland",
+        "h": "cloudbank",
+        "k": "sandstone",
+        "x": "lanternlight",
+        "x_0": "lanternroot",
+        "y": "driftwood",
+        "z": "moonflower",
+        "z_0": "moonshadow",
+        "R": "longitude",
+        "a": "starboard",
+        "b": "quayside",
+        "c": "timberline"
+      },
+      "question": "A-3. Let \\( starboard, quayside, timberline \\) be constants with \\( 0<starboard<quayside<timberline \\). At what points of the set\n\\[\n\\left\\{lanternlight^{quayside}+driftwood^{quayside}+moonflower^{quayside}=1, lanternlight \\geqq 0, driftwood \\geqq 0, moonflower \\geqq 0\\right\\}\n\\]\nin three-dimensional space \\( longitude^{3} \\) does the function \\( shoreline(lanternlight, driftwood, moonflower)=lanternlight^{starboard}+driftwood^{quayside}+moonflower^{timberline} \\) assume its maximum and minimum values?",
+      "solution": "A-3.\nLet \\( cloudbank(lanternlight)=lanternlight^{starboard}-lanternlight^{quayside} \\) and \\( sandstone(moonflower)=moonflower^{timberline}-moonflower^{quayside} \\). The desired points also give the maximum and minimum of the function\n\\[\nmeadowland(lanternlight, moonflower)=\\left(lanternlight^{starboard}+driftwood^{quayside}+moonflower^{timberline}\\right)-\\left(lanternlight^{quayside}+driftwood^{quayside}+moonflower^{quayside}\\right)=cloudbank(lanternlight)+sandstone(moonflower)\n\\]\non the domain obtained by projection of the solid domain on the \\( lanternlight moonflower \\)-plane. For all points under consideration, both \\( lanternlight \\) and \\( moonflower \\) are in \\( [0,1] \\). Examining its derivative, one sees that \\( cloudbank(lanternlight) \\) increases from 0 at \\( lanternlight=0 \\) to a maximum at \\( lanternroot=(starboard / quayside)^{1 /(quayside-starboard)} \\) and then decreases to 0 at \\( lanternlight=1 \\). (This uses the hypothesis \\( 0<starboard<quayside \\).) Similarly, \\( sandstone(moonflower) \\) decreases from 0 at \\( moonflower=0 \\) to a minimum at \\( moonshadow=(quayside / timberline)^{1 /(timberline-quayside)} \\) and then increases to 0 at \\( moonflower=1 \\). Since \\( \\left(1, moonshadow\\right) \\) and \\( \\left(lanternroot, 1\\right) \\) are not in the domain of \\( meadowland(lanternlight, moonflower) \\), the function \\( shoreline \\) achieves its maximum only at \\( (lanternlight, driftwood, moonflower)=\\left(lanternroot,\\left[1-lanternroot^{quayside}\\right]^{1 / quayside}, 0\\right) \\) and achieves its minimum only at \\( \\left(0,\\left[1-moonshadow^{quayside}\\right]^{1 / quayside}, moonshadow\\right) \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "malfunction",
+        "g": "disorder",
+        "h": "shallows",
+        "k": "softness",
+        "x": "anywhere",
+        "x_0": "everyplace",
+        "y": "everywhere",
+        "z": "nadirpoint",
+        "z_0": "apexplace",
+        "R": "imaginary",
+        "a": "enormous",
+        "b": "moderate",
+        "c": "minimalist"
+      },
+      "question": "A-3. Let \\( enormous, moderate, minimalist \\) be constants with \\( 0<enormous<moderate<minimalist \\). At what points of the set\n\\[\n\\left\\{anywhere^{moderate}+everywhere^{moderate}+nadirpoint^{moderate}=1, anywhere \\geqq 0, everywhere \\geqq 0, nadirpoint \\geqq 0\\right\\}\n\\]\nin three-dimensional space \\( imaginary^{3} \\) does the function \\( malfunction(anywhere, everywhere, nadirpoint)=anywhere^{enormous}+everywhere^{moderate}+nadirpoint^{minimalist} \\) assume its maximum and minimum values?",
+      "solution": "A-3.\nLet \\( shallows(anywhere)=anywhere^{enormous}-anywhere^{moderate} \\) and \\( softness(nadirpoint)=nadirpoint^{minimalist}-nadirpoint^{moderate} \\). The desired points also give the maximum and minimum of the function\n\\[\ndisorder(anywhere, nadirpoint)=\\left(anywhere^{enormous}+everywhere^{moderate}+nadirpoint^{minimalist}\\right)-\\left(anywhere^{moderate}+everywhere^{moderate}+nadirpoint^{moderate}\\right)=shallows(anywhere)+softness(nadirpoint)\n\\]\non the domain obtained by projection of the solid domain on the \\( anywhere\\,nadirpoint \\)-plane. For all points under consideration, both \\( anywhere \\) and \\( nadirpoint \\) are in \\( [0,1] \\). Examining its derivative, one sees that \\( shallows(anywhere) \\) increases from 0 at \\( anywhere=0 \\) to a maximum at \\( everyplace=(enormous / moderate)^{1 /(moderate-enormous)} \\) and then decreases to 0 at \\( anywhere=1 \\). (This uses the hypothesis \\( 0<enormous<moderate \\).) Similarly, \\( softness(nadirpoint) \\) decreases from 0 at \\( nadirpoint=0 \\) to a minimum at \\( apexplace=(moderate / minimalist)^{1 /(minimalist-moderate)} \\) and then increases to 0 at \\( nadirpoint=1 \\). Since \\( \\left(1, apexplace\\right) \\) and \\( \\left(everyplace, 1\\right) \\) are not in the domain of \\( disorder(anywhere, nadirpoint) \\), the function \\( malfunction \\) achieves its maximum only at \\( (anywhere, everywhere, nadirpoint)=\\left(everyplace,\\left[1-everyplace^{moderate}\\right]^{1 / moderate}, 0\\right) \\) and achieves its minimum only at \\( \\left(0,\\left[1-apexplace^{moderate}\\right]^{1 / moderate}, apexplace\\right) \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "g": "hjgrksla",
+        "h": "mlfdqrvo",
+        "k": "snbqtega",
+        "x": "vczltoap",
+        "x_0": "ksljmdqe",
+        "y": "rgnqvewu",
+        "z": "dmkjtrls",
+        "z_0": "wtrelmqa",
+        "R": "ftnmqzle",
+        "a": "plmsxqna",
+        "b": "hdjvkruc",
+        "c": "qprndygo"
+      },
+      "question": "A-3. Let \\( plmsxqna, hdjvkruc, qprndygo \\) be constants with \\( 0<plmsxqna<hdjvkruc<qprndygo \\). At what points of the set\n\\[\n\\left\\{vczltoap^{hdjvkruc}+rgnqvewu^{hdjvkruc}+dmkjtrls^{hdjvkruc}=1, vczltoap \\geqq 0, rgnqvewu \\geqq 0, dmkjtrls \\geqq 0\\right\\}\n\\]\nin three-dimensional space \\( ftnmqzle^{3} \\) does the function \\( qzxwvtnp(vczltoap, rgnqvewu, dmkjtrls)=vczltoap^{plmsxqna}+rgnqvewu^{hdjvkruc}+dmkjtrls^{qprndygo} \\) assume its maximum and minimum values?",
+      "solution": "A-3.\nLet \\( mlfdqrvo(vczltoap)=vczltoap^{plmsxqna}-vczltoap^{hdjvkruc} \\) and \\( snbqtega(dmkjtrls)=dmkjtrls^{qprndygo}-dmkjtrls^{hdjvkruc} \\). The desired points also give the maximum and minimum of the function\n\\[\nhjgrksla(vczltoap, dmkjtrls)=\\left(vczltoap^{plmsxqna}+rgnqvewu^{hdjvkruc}+dmkjtrls^{qprndygo}\\right)-\\left(vczltoap^{hdjvkruc}+rgnqvewu^{hdjvkruc}+dmkjtrls^{hdjvkruc}\\right)=mlfdqrvo(vczltoap)+snbqtega(dmkjtrls)\n\\]\non the domain obtained by projection of the solid domain on the \\( vczltoap dmkjtrls \\)-plane. For all points under consideration, both \\( vczltoap \\) and \\( dmkjtrls \\) are in \\( [0,1] \\). Examining its derivative, one sees that \\( mlfdqrvo(vczltoap) \\) increases from 0 at \\( vczltoap=0 \\) to a maximum at \\( ksljmdqe=(plmsxqna / hdjvkruc)^{1 /(hdjvkruc-plmsxqna)} \\) and then decreases to 0 at \\( vczltoap=1 \\). (This uses the hypothesis \\( 0<plmsxqna<hdjvkruc \\).) Similarly, \\( snbqtega(dmkjtrls) \\) decreases from 0 at \\( dmkjtrls=0 \\) to a minimum at \\( wtrelmqa=(hdjvkruc / qprndygo)^{1 /(qprndygo-hdjvkruc)} \\) and then increases to 0 at \\( dmkjtrls=1 \\). Since \\( \\left(1, wtrelmqa\\right) \\) and \\( \\left(ksljmdqe, 1\\right) \\) are not in the domain of \\( hjgrksla(vczltoap, dmkjtrls) \\), the function \\( qzxwvtnp \\) achieves its maximum only at \\( (vczltoap, rgnqvewu, dmkjtrls)=\\left(ksljmdqe,\\left[1-ksljmdqe^{hdjvkruc}\\right]^{1 / hdjvkruc}, 0\\right) \\) and achieves its minimum only at \\( \\left(0,\\left[1-wtrelmqa^{hdjvkruc}\\right]^{1 / hdjvkruc}, wtrelmqa\\right) \\)."
+    },
+    "kernel_variant": {
+      "question": "Let real numbers p , q , r satisfy\n  1 < p < q < r .\nConsider the part of the ``q-sphere'' of radius 4^{1/q} that lies in the first octant\n  S = { (u , v , w) \\in  \\mathbb{R}^3 : u \\geq  0 , v \\geq  0 , w \\geq  0 , u^q + v^q + w^q = 4 } .\nFor (u , v , w) \\in  S define\n  F(u , v , w) = u^p + v^q + w^r .\n(a)  Find the point(s) of S at which F attains its maximum value and give the corresponding maximal value.\n(b)  Find the point(s) of S at which F attains its minimum value and give the corresponding minimal value.\n(It is not necessary to write the extremal coordinates in elementary closed form.  It is enough to specify them as the unique solutions of an explicit algebraic equation that depends only on p , q and r.)",
+      "solution": "Throughout we assume 1<p<q<r.\n\n0.  Notation\n    a := p/q  (so 0<a<1), b := r/q  (>1),\n    u_0 := (p/q)^{1/(q-p)},   w_0 := (q/r)^{1/(r-q)} (so 0<u_0 , w_0<1),\n    t  := w_0^{q}  = (q/r)^{q/(r-q)}  (hence 0<t<1).\n    Define  H(u) := u^{p}-u^{q}, K(w) := w^{r}-w^{q}.  \n\n1.  Reduction to two variables\n    Because v^{q}=4-u^{q}-w^{q} on S we can write\n          F(u,v,w)=H(u)+K(w)+4 =: G(u,w).\n    The domain D := {(u,w) : u\\geq 0 , w\\geq 0 , u^{q}+w^{q}\\leq 4} is compact, hence G attains its extrema.\n\n2.  Critical points in the interior of D\n    In the interior (u>0 , w>0 , u^{q}+w^{q}<4)\n        \\partial G/\\partial u = p u^{p-1}-q u^{q-1}, \\partial G/\\partial w = r w^{r-1}-q w^{q-1}.\n    They vanish simultaneously only at (u_0 , w_0).  Since\n        H''(u_0)=p(p-q)u_0^{p-2}<0, K''(w_0)=r(r-q)w_0^{r-2}>0,\n    the point (u_0 , w_0) is a saddle, so no extremum occurs inside D; every extremum lies on \\partial D.\n\n3.  Examination of boundary parts\n\n3.1  Face w = 0.\n     v^{q}=4-u^{q}, G(u,0)=H(u)+4 on 0\\leq u\\leq 4^{1/q}.\n     H'(u)=u^{p-1}(p-q u^{q-p}) has the unique zero u=u_0.\n        maximum \\to  P_1=(u_0 , (4-u_0^{q})^{1/q} , 0),  F(P_1)=4+u_0^{p}-u_0^{q};\n        minimum \\to  P_2=(4^{1/q},0,0),         F(P_2)=4^{a}.\n\n3.2  Face u = 0.\n     v^{q}=4-w^{q}, G(0,w)=4-w^{q}+w^{r}=:L(w) on 0\\leq w\\leq 4^{1/q}.\n     L'(w)=w^{q-1}(-q+r w^{r-q}) vanishes only at w=w_0.\n        minimum \\to  P_3=(0,(4-t)^{1/q},w_0), F(P_3)=4-t+t^{b};\n        maximum \\to  P_4=(0,0,4^{1/q}),   F(P_4)=4^{b}.\n\n3.3  Curved edge v = 0 (u>0 , w>0 , u^{q}+w^{q}=4).\n     Let s:=u^{q} (0<s<4); then w^{q}=4-s and\n         f(s):=F(u,0,w)=s^{a}+(4-s)^{b}.\n     f'(s)=a s^{a-1}-b(4-s)^{b-1};\n     f'(0^{+})=+\\infty , f'(2)<0, f'(4^{-})=a4^{a-1}>0,\n     so f' has exactly two zeros 0<s_1<s_2<4, defined by\n         a s^{a-1}=b(4-s)^{b-1}.  (*)\n     With f''(s_1)<0<f''(s_2),  s_1 gives a local maximum, s_2 a local minimum on the edge.\n        P_5=(s_1^{1/q},0,(4-s_1)^{1/q}), F(P_5)=f(s_1);\n        P_6=(s_2^{1/q},0,(4-s_2)^{1/q}), F(P_6)=f(s_2).\n\n4.  Global minimum\n    Candidates: P_2 (value 4^{a}), P_3 (value 4-t+t^{b}), P_6 (value f(s_2)).\n\n4.1  Comparison P_2 vs P_6.\n     On (s_2,4] we have f' > 0, hence f increases there; therefore\n           f(s_2) < f(4)=4^{a}=F(P_2),  i.e.  F(P_6) < F(P_2).\n\n4.2  Comparison P_3 vs P_6 - filling the previous gap.\n     Define  \\varphi (s):=f(s)-(4-t+t^{b}).  Then \\varphi  shares with f the critical points s_1, s_2 and attains its global minimum on [0,4] at s_2.\n     It suffices to exhibit some s\\in (0,4) with \\varphi (s)<0, for then \\varphi (s_2)\\leq \\varphi (s)<0 and hence F(P_6)=f(s_2)<4-t+t^{b}=F(P_3).\n\n     Take s := 4-t (note that 0<t<1 \\Rightarrow  3<s<4).  For this choice 4-s=t and\n         \\varphi (s) = (4-t)^{a} + t^{b} - (4-t+t^{b}) = (4-t)^{a} - (4-t).\n     Because 4-t>1 and a<1, we have (4-t)^{a} < 4-t; hence \\varphi (s)<0.\n     Therefore \\varphi (s_2) < 0 and consequently F(P_6) < F(P_3).\n\n     Combining 4.1 and 4.2 we obtain\n           F(P_6) < F(P_3) and F(P_6) < F(P_2),\n     so P_6 is the unique global minimum.\n\n5.  Global maximum\n    Possible locations: P_1, P_4, P_5.\n\n5.1  P_4 vs P_5.  f(0)=4^{b}=F(P_4) and f'(0^{+})=+\\infty , hence f increases immediately to the right of 0; therefore f(s_1)=F(P_5)>f(0)=F(P_4).\n\n5.2  P_1 vs P_5.  On the face w=0 we have h(s):=s^{a}+(4-s) (s=u^{q}).  Its maximum is attained at s = a^{1/(1-a)}<1.  Because 4-s\\geq 3, we have (4-s)^{b}>(4-s), hence f(s)>h(s)=F(P_1).  As f attains its maximum on the edge at s_1, F(P_5)=f(s_1)\\geq f(s)>F(P_1).\n\n    Thus F(P_5) exceeds both F(P_4) and F(P_1); P_5 is the unique global maximum.\n\n6.  Final result\n    Let 0<s_1<s_2<4 be the two distinct solutions of the algebraic equation\n           p s^{p/q-1} = r (4-s)^{r/q-1}. (*)\n    Then\n        Maximum (unique):\n             P_max = ( s_1^{1/q} , 0 , (4-s_1)^{1/q} ),\n             F_max =  s_1^{p/q} + (4-s_1)^{r/q}.\n\n        Minimum (unique):\n             P_min = ( s_2^{1/q} , 0 , (4-s_2)^{1/q} ),\n             F_min =  s_2^{p/q} + (4-s_2)^{r/q}.\n\n    Both extremal points are expressed uniquely in terms of p , q and r, as required.",
+      "_meta": {
+        "core_steps": [
+          "Replace f by g = f − (x^b + y^b + z^b) so g = h(x) + k(z) is independent of y.",
+          "Project the constraint x^b + y^b + z^b = 1, x,y,z ≥ 0 onto the xz–plane: 0 ≤ x,z ≤ 1 and x^b + z^b ≤ 1.",
+          "Use derivatives: h(x)=x^a−x^b (a<b) has a single interior maximum at x0=(a/b)^{1/(b−a)}; k(z)=z^c−z^b (b<c) has a single interior minimum at z0=(b/c)^{1/(c−b)}.",
+          "Combine monotonicity of h and k with the feasible set to see g (hence f) is maximized at (x0,(1−x0^b)^{1/b},0) and minimized at (0,(1−z0^b)^{1/b},z0)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Ordered triple of positive exponents that guarantee h has one peak and k one valley.",
+            "original": "0 < a < b < c"
+          },
+          "slot2": {
+            "description": "Common exponent used in the constraint surface; any positive value equal to the ‘middle’ exponent will do.",
+            "original": "b in x^b + y^b + z^b = …"
+          },
+          "slot3": {
+            "description": "Right-hand side of the constraint can be any positive constant (a mere vertical shift for g).",
+            "original": "1"
+          },
+          "slot4": {
+            "description": "Labels and ordering of the variables; x/y/z can be permuted as long as the corresponding exponents and roles follow the same pattern.",
+            "original": "(x, y, z)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,115 @@
+{
+  "index": "2016-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $x_0,x_1,x_2,\\dots$ be the sequence such that $x_0=1$ and for $n \\geq 0$,\n\\[\nx_{n+1} = \\ln(e^{x_n} - x_n)\n\\]\n(as usual, the function $\\ln$ is the natural logarithm). Show that the infinite series\n\\[\nx_0 + x_1 + x_2 + \\cdots\n\\]\nconverges and find its sum.",
+  "solution": "Note that the function $e^x - x$ is strictly increasing for $x>0$ (because its derivative is $e^x - 1$, which is positive because $e^x$ is strictly increasing), and its value at 0 is 1.\nBy induction on $n$, we see that $x_n > 0$ for all $n$.\n\nBy exponentiating the equation defining $x_{n+1}$, we obtain the expression\n\\[\nx_n = e^{x_n} - e^{x_{n+1}}.\n\\]\nWe use this equation repeatedly to acquire increasingly precise information about the sequence $\\{x_n\\}$.\n\\begin{itemize}\n\\item\nSince $x_n > 0$, we have $e^{x_n} > e^{x_{n+1}}$, so $x_n > x_{n+1}$.\n\\item\nSince the sequence $\\{x_n\\}$ is decreasing and bounded below by 0, it converges to some limit $L$.\n\\item\nTaking limits in the equation yields $L = e^L - e^L$, whence $L = 0$.\n\\item\nSince $L = 0$, the sequence $\\{e^{x_n}\\}$ converges to 1.\n\\end{itemize}\n\nWe now have a telescoping sum:\n\\begin{align*}\nx_0 + \\cdots + x_n &= (e^{x_0} - e^{x_1}) + \\cdots + (e^{x_n} - e^{x_{n+1}}) \\\\\n&=e^{x_0} - e^{x_{n+1}} = e - e^{x_{n+1}}.\n\\end{align*}\nBy taking limits, we see that the sum $x_0 + x_1 + \\cdots$ converges to the value\n$e-1$.",
+  "vars": [
+    "x",
+    "x_0",
+    "x_1",
+    "x_2",
+    "x_n",
+    "x_n+1",
+    "n",
+    "L"
+  ],
+  "params": [],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "x_0": "initialt",
+        "x_1": "secondt",
+        "x_2": "thirdtm",
+        "x_n": "generalx",
+        "x_n+1": "nextterm",
+        "n": "counter",
+        "L": "limitvl"
+      },
+      "question": "Let $initialt,secondt,thirdtm,\\dots$ be the sequence such that $initialt=1$ and for $counter \\geq 0$,\\[\nnextterm = \\ln(e^{generalx} - generalx)\n\\](as usual, the function $\\ln$ is the natural logarithm). Show that the infinite series\\[\ninitialt + secondt + thirdtm + \\cdots\n\\]converges and find its sum.",
+      "solution": "Note that the function $e^{variable} - variable$ is strictly increasing for $variable>0$ (because its derivative is $e^{variable} - 1$, which is positive because $e^{variable}$ is strictly increasing), and its value at 0 is 1. By induction on $counter$, we see that $generalx > 0$ for all $counter$.\\\n\\\nBy exponentiating the equation defining $nextterm$, we obtain the expression\\[\ngeneralx = e^{generalx} - e^{nextterm}.\n\\]We use this equation repeatedly to acquire increasingly precise information about the sequence $\\{generalx\\}$.\\\n\\begin{itemize}\n\\item Since $generalx > 0$, we have $e^{generalx} > e^{nextterm}$, so $generalx > nextterm$.\n\\item Since the sequence $\\{generalx\\}$ is decreasing and bounded below by 0, it converges to some limit $limitvl$.\n\\item Taking limits in the equation yields $limitvl = e^{limitvl} - e^{limitvl}$, whence $limitvl = 0$.\n\\item Since $limitvl = 0$, the sequence $\\{e^{generalx}\\}$ converges to 1.\n\\end{itemize}\\\n\\\nWe now have a telescoping sum:\n\\[\n\\begin{aligned}\ninitialt + \\cdots + generalx &= (e^{initialt} - e^{secondt}) + \\cdots + (e^{generalx} - e^{nextterm}) \\\\\n&= e^{initialt} - e^{nextterm} = e - e^{nextterm}.\n\\end{aligned}\n\\]By taking limits, we see that the sum $initialt + secondt + \\cdots$ converges to the value $e-1$.}",
+      "confidence": "0.11"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "blueberry",
+        "x_0": "spiceberry",
+        "x_1": "lemonpeel",
+        "x_2": "hazelnuts",
+        "x_n": "dandelion",
+        "x_{n+1}": "butternut",
+        "n": "porcupine",
+        "L": "marshland"
+      },
+      "question": "Let $spiceberry,lemonpeel,hazelnuts,\\dots$ be the sequence such that $spiceberry=1$ and for $porcupine \\geq 0$,\\[\nbutternut = \\ln(e^{dandelion} - dandelion)\n\\](as usual, the function $\\ln$ is the natural logarithm). Show that the infinite series\\[\nspiceberry + lemonpeel + hazelnuts + \\cdots\n\\]converges and find its sum.",
+      "solution": ""
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownvalue",
+        "x_0": "endpointvalue",
+        "x_1": "lastpoint",
+        "x_2": "middlepoint",
+        "x_n": "constantomega",
+        "x_n+1": "constantbeta",
+        "n": "continuity",
+        "L": "divergence"
+      },
+      "question": "Let $endpointvalue,lastpoint,middlepoint,\\dots$ be the sequence such that $endpointvalue=1$ and for $continuity \\geq 0$,\\[\nconstantbeta = \\ln(e^{constantomega} - constantomega)\n\\](as usual, the function $\\ln$ is the natural logarithm). Show that the infinite series\\[\nendpointvalue + lastpoint + middlepoint + \\cdots\n\\]converges and find its sum.",
+      "solution": "Note that the function $e^{knownvalue} - knownvalue$ is strictly increasing for $knownvalue>0$ (because its derivative is $e^{knownvalue} - 1$, which is positive because $e^{knownvalue}$ is strictly increasing), and its value at 0 is 1.\nBy induction on $continuity$, we see that $constantomega > 0$ for all $continuity$.\n\nBy exponentiating the equation defining $constantbeta$, we obtain the expression\n\\[\nconstantomega = e^{constantomega} - e^{constantbeta}.\n\\]\nWe use this equation repeatedly to acquire increasingly precise information about the sequence $\\{constantomega\\}$.\\begin{itemize}\n\\item\nSince $constantomega > 0$, we have $e^{constantomega} > e^{constantbeta}$, so $constantomega > constantbeta$.\n\\item\nSince the sequence $\\{constantomega\\}$ is decreasing and bounded below by 0, it converges to some limit $divergence$.\n\\item\nTaking limits in the equation yields $divergence = e^{divergence} - e^{divergence}$, whence $divergence = 0$.\n\\item\nSince $divergence = 0$, the sequence $\\{e^{constantomega}\\}$ converges to 1.\n\\end{itemize}\n\nWe now have a telescoping sum:\n\\begin{align*}\nendpointvalue + \\cdots + constantomega &= (e^{endpointvalue} - e^{lastpoint}) + \\cdots + (e^{constantomega} - e^{constantbeta}) \\\\\n&=e^{endpointvalue} - e^{constantbeta} = e - e^{constantbeta}.\n\\end{align*}\nBy taking limits, we see that the sum $endpointvalue + lastpoint + \\cdots$ converges to the value $e-1$.",
+      "confidence": 0.14
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_0": "hvjrtlia",
+        "x_1": "pnsdklem",
+        "x_2": "gbqjztre",
+        "x_n": "kmvlwser",
+        "x_n+1": "jkalvdmq",
+        "n": "rcuzfhoy",
+        "L": "vsatihne"
+      },
+      "question": "Let $hvjrtlia,pnsdklem,gbqjztre,\\dots$ be the sequence such that $hvjrtlia=1$ and for $rcuzfhoy \\geq 0$,\\[\njkalvdmq = \\ln(e^{kmvlwser} - kmvlwser)\\]\n(as usual, the function $\\ln$ is the natural logarithm). Show that the infinite series\\[\nhvjrtlia + pnsdklem + gbqjztre + \\cdots\\]\nconverges and find its sum.",
+      "solution": "Note that the function $e^{qzxwvtnp} - qzxwvtnp$ is strictly increasing for $qzxwvtnp>0$ (because its derivative is $e^{qzxwvtnp} - 1$, which is positive because $e^{qzxwvtnp}$ is strictly increasing), and its value at 0 is 1.\nBy induction on $rcuzfhoy$, we see that $kmvlwser > 0$ for all $rcuzfhoy$.\n\nBy exponentiating the equation defining $jkalvdmq$, we obtain the expression\\[\nkmvlwser = e^{kmvlwser} - e^{jkalvdmq}.\\]\nWe use this equation repeatedly to acquire increasingly precise information about the sequence $\\{kmvlwser\\}$.\\begin{itemize}\n\\item\nSince $kmvlwser > 0$, we have $e^{kmvlwser} > e^{jkalvdmq}$, so $kmvlwser > jkalvdmq$.\n\\item\nSince the sequence $\\{kmvlwser\\}$ is decreasing and bounded below by 0, it converges to some limit $vsatihne$.\n\\item\nTaking limits in the equation yields $vsatihne = e^{vsatihne} - e^{vsatihne}$, whence $vsatihne = 0$.\n\\item\nSince $vsatihne = 0$, the sequence $\\{e^{kmvlwser}\\}$ converges to 1.\n\\end{itemize}\n\nWe now have a telescoping sum:\n\\begin{align*}\nhvjrtlia + \\cdots + kmvlwser &= (e^{hvjrtlia} - e^{pnsdklem}) + \\cdots + (e^{kmvlwser} - e^{jkalvdmq}) \\\n&=e^{hvjrtlia} - e^{jkalvdmq} = e - e^{jkalvdmq}.\n\\end{align*}\nBy taking limits, we see that the sum $hvjrtlia + pnsdklem + \\cdots$ converges to the value\n$e-1$.",
+      "params": []
+    },
+    "kernel_variant": {
+      "question": "Let the sequence $(x_n)_{n\\ge 0}$ be defined by\n\\[\n x_0 = 2, \\qquad x_{n+1}=\\log_{5}\\!\\bigl(5^{x_n}-\\tfrac12\\,x_n\\bigr)\\quad(n\\ge 0).\n\\]\n(The symbol $\\log_{5}$ denotes the logarithm to base $5$.)\nShow that the infinite series\n\\[\n\\sum_{n=0}^{\\infty} x_n\n\\]\nconverges and determine its sum.",
+      "solution": "1. Positivity and monotonicity of the sequence.\n   Define g(x)=5^{x}-\\tfrac12x for x\\geq 0.  Its derivative\n   g'(x)=ln(5)\\cdot 5^{x}-\\tfrac12>ln(5)-\\tfrac12>0\n   is strictly positive, so g is strictly increasing.  Moreover g(0)=1.  Hence for any x_n>0 we have g(x_n)=5^{x_n}-\\tfrac12x_n>1, implying x_{n+1}=log_{5}(g(x_n))>0.  Also,\n     5^{x_{n+1}}=g(x_n)=5^{x_n}-\\tfrac12x_n<5^{x_n},\n   so taking log base 5 shows x_{n+1}<x_n.  Therefore (x_n) is positive and strictly decreasing.\n\n2. Existence and value of the limit.\n   Since (x_n) is bounded below by 0 and decreasing, it converges to some L\\geq 0.  Passing to the limit in\n     5^{x_{n+1}}=5^{x_n}-\\tfrac12x_n\n   gives 5^{L}=5^{L}-\\tfrac12L, so L=0.  Hence x_n\\to 0 and 5^{x_n}\\to 1.\n\n3. A convenient identity.\n   From the defining relation,\n     5^{x_{n+1}}=5^{x_n}-\\tfrac12x_n\n   we get\n     \\tfrac12x_n=5^{x_n}-5^{x_{n+1}},\n   i.e.\n     x_n=2\\bigl(5^{x_n}-5^{x_{n+1}}\\bigr).\n\n4. Telescoping the partial sums.\n   Summing from n=0 to N gives\n     \\sum_{n=0}^{N}x_n=2\\sum_{n=0}^{N}(5^{x_n}-5^{x_{n+1}})\n                      =2\\bigl(5^{x_0}-5^{x_{N+1}}\\bigr).\n   As N\\to \\infty , x_{N+1}\\to 0 so 5^{x_{N+1}}\\to 1.\n\n5. The value of the series.\n   Taking the limit, we obtain\n     \\sum_{n=0}^{\\infty }x_n=2\\bigl(5^{x_0}-1\\bigr)=2(5^2-1)=2\\cdot 24=48.\n   Therefore the series converges and its sum is 48.",
+      "_meta": {
+        "core_steps": [
+          "Show f(x)=e^x−x is strictly increasing ⇒ all x_n stay positive and decrease",
+          "Monotone-bounded sequence ⇒ limit L exists; recurrence gives  L = e^L−e^L ⇒ L=0",
+          "Exponentiate recurrence to obtain identity  x_n = e^{x_n} − e^{x_{n+1}}",
+          "Sum these identities to create a telescoping series",
+          "Let n→∞ to get total sum  e^{x_0} − 1  (equals e−1 when x_0=1)"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "initial value of the sequence (must be positive)",
+            "original": "x_0 = 1"
+          },
+          "slot2": {
+            "description": "multiplicative coefficient of x_n inside the logarithm term, i.e. e^{x_n} − c·x_n with c>0 (kept 1 in the statement)",
+            "original": "c = 1"
+          },
+          "slot3": {
+            "description": "common base of the logarithm/exponential pair (ln, e^x) provided it exceeds e so that a^x−x is increasing",
+            "original": "base e"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

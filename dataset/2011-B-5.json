@@ -1,0 +1,139 @@
+{
+  "index": "2011-B-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "a constant $A$ such that for all $n$,\n\\[\n\\int_{-\\infty}^\\infty \\left( \\sum_{i=1}^n \\frac{1}{1 + (x-a_i)^2} \\right)^2\\,dx \\leq An.\n\\]\nProve there is a constant $B>0$ such that for all $n$,\n\\[\n\\sum_{i,j=1}^n (1 + (a_i - a_j)^2) \\geq Bn^3.\n\\]",
+  "solution": "Define the function\n\\[\nf(y) =\n\\int_{-\\infty}^\\infty \\frac{dx}{(1+x^2)(1+(x+y)^2)}.\n\\]\nFor $y \\geq 0$, in the range $-1 \\leq x \\leq 0$,\nwe have\n\\begin{align*}\n(1+x^2)(1+(x+y)^2) &\\leq (1+1)(1+(1+y)^2) = 2y^2+4y+4 \\\\\n&\\leq 2y^2+4+2(y^2+1) \\leq 6+6y^2.\n\\end{align*}\nWe thus have the lower bound\n\\[\nf(y) \\geq \\frac{1}{6(1+y^2)};\n\\]\nthe same bound is valid for $y \\leq 0$ because $f(y) = f(-y)$.\n\nThe original hypothesis can be written as\n\\[\n\\sum_{i,j=1}^n f(a_i - a_j) \\leq An\n\\]\nand thus\nimplies that\n\\[\n\\sum_{i,j=1}^n \\frac{1}{1 + (a_i-a_j)^2} \\leq 6An.\n\\]\nBy the Cauchy-Schwarz inequality, this implies\n\\[\n\\sum_{i,j=1}^n (1 + (a_i-a_j)^2) \\geq Bn^3\n\\]\nfor $B = 1/(6A)$.\n\n\\textbf{Remark.}\nOne can also compute explicitly (using partial fractions, Fourier transforms, or contour integration)\nthat $f(y) = \\frac{2\\pi}{4 + y^2}$.\n\n\\textbf{Remark.}\nPraveen Venkataramana points out that the lower bound can be improved to $Bn^4$\nas follows. For each $z \\in \\ZZ$, put $Q_{z,n} = \\{i\\in \\{1,\\dots,n\\}: a_i \\in [z, z+1)\\}$ and $q_{z,n} = \\#Q_{z,n}$. Then\n$\\sum_z q_{z,n} = n$ and\n\\[\n6An \\geq \\sum_{i,j=1}^n \\frac{1}{1 + (a_i-a_j)^2} \\geq \\sum_{z \\in \\ZZ} \\frac{1}{2} q_{z,n}^2.\n\\]\nIf exactly $k$ of the $q_{z,n}$ are nonzero, then $\\sum_{z \\in \\ZZ} q_{z,n}^2 \\geq n^2/k$ by Jensen's inequality\n(or various other methods), so we must have $k \\geq n/(6A)$. Then\n\\begin{align*}\n\\sum_{i,j=1}^n (1 + (a_i-a_j)^2) &\\geq\nn^2 + \\sum_{i,j=1}^k \\max\\{0, (|i-j|-1)^2\\} \\\\\n&\\geq\nn^2 + \\frac{k^4}{6}-\\frac{2k^3}{3}+\\frac{5k^2}{6}-\\frac{k}{3}.\n\\end{align*}\nThis is bounded below by $Bn^4$ for some $B>0$.\n\nIn the opposite direction, one can weaken the initial upper bound to $An^{4/3}$ and still\nderive a lower bound of $Bn^3$. The argument is similar.",
+  "vars": [
+    "x",
+    "n",
+    "i",
+    "j",
+    "a_i",
+    "a_j",
+    "y",
+    "z",
+    "k",
+    "f",
+    "Q_z,n",
+    "q_z,n"
+  ],
+  "params": [
+    "A",
+    "B"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "n": "countn",
+        "i": "indexi",
+        "j": "indexj",
+        "a_i": "elementi",
+        "a_j": "elementj",
+        "y": "variabley",
+        "z": "indexz",
+        "k": "indexk",
+        "f": "kernelf",
+        "Q_z,n": "bucketzn",
+        "q_z,n": "countzn",
+        "A": "constanta",
+        "B": "constantb"
+      },
+      "question": "a constant $constanta$ such that for all $countn$,\\[\n\\int_{-\\infty}^{\\infty} \\left( \\sum_{indexi=1}^{countn} \\frac{1}{1 + (variablex-elementi)^2} \\right)^2\\,dvariablex \\leq constanta\\,countn.\\]\nProve there is a constant $constantb>0$ such that for all $countn$,\\[\n\\sum_{indexi,indexj=1}^{countn} (1 + (elementi - elementj)^2) \\geq constantb\\,countn^3.\\]",
+      "solution": "Define the function\\[\nkernelf(variabley) =\n\\int_{-\\infty}^{\\infty} \\frac{dvariablex}{(1+variablex^2)(1+(variablex+variabley)^2)}.\\]\nFor $variabley \\ge 0$, in the range $-1 \\le variablex \\le 0$, we have\n\\begin{align*}\n(1+variablex^2)(1+(variablex+variabley)^2) &\\le (1+1)(1+(1+variabley)^2)=2variabley^2+4variabley+4\\\\\n&\\le 2variabley^2+4+2(variabley^2+1)\\le 6+6variabley^2.\n\\end{align*}\nWe thus have the lower bound\\[\nkernelf(variabley)\\ge \\frac{1}{6(1+variabley^2)};\\]\nthe same bound is valid for $variabley\\le0$ because $kernelf(variabley)=kernelf(-variabley)$.\n\nThe original hypothesis can be written as\\[\n\\sum_{indexi,indexj=1}^{countn} kernelf(elementi-elementj)\\le constanta\\,countn\n\\]and thus implies that\\[\n\\sum_{indexi,indexj=1}^{countn}\\frac{1}{1+(elementi-elementj)^2}\\le 6\\,constanta\\,countn.\n\\]By the Cauchy-Schwarz inequality, this implies\\[\n\\sum_{indexi,indexj=1}^{countn}(1+(elementi-elementj)^2)\\ge constantb\\,countn^3\n\\]for $constantb=1/(6\\,constanta)$.\n\n\\textbf{Remark.}  One can also compute explicitly (using partial fractions, Fourier transforms, or contour integration) that $kernelf(variabley)=\\dfrac{2\\pi}{4+variabley^2}$.\n\n\\textbf{Remark.}  Praveen Venkataramana points out that the lower bound can be improved to $constantb\\,countn^4$ as follows.  For each $indexz\\in\\mathbf Z$, put $bucketzn=\\{indexi\\in\\{1,\\dots,countn\\}:elementi\\in[indexz,indexz+1)\\}$ and $countzn=\\#bucketzn$.  Then $\\sum_{indexz}countzn=countn$ and\\[\n6\\,constanta\\,countn\\ge\\sum_{indexi,indexj=1}^{countn}\\frac{1}{1+(elementi-elementj)^2}\\ge\\sum_{indexz\\in\\mathbf Z}\\frac12\\,countzn^2.\n\\]If exactly $indexk$ of the $countzn$ are non-zero, then $\\sum_{indexz\\in\\mathbf Z}countzn^2\\ge countn^2/indexk$ by Jensen's inequality, so we must have $indexk\\ge countn/(6\\,constanta)$.  Then\n\\begin{align*}\n\\sum_{indexi,indexj=1}^{countn}(1+(elementi-elementj)^2)&\\ge countn^2+\\sum_{indexi,indexj=1}^{indexk}\\max\\{0,(|indexi-indexj|-1)^2\\}\\\\\n&\\ge countn^2+\\frac{indexk^4}{6}-\\frac{2indexk^3}{3}+\\frac{5indexk^2}{6}-\\frac{indexk}{3}.\n\\end{align*}\nThis is bounded below by $constantb\\,countn^4$ for some $constantb>0$.\n\nIn the opposite direction, one can weaken the initial upper bound to $constanta\\,countn^{4/3}$ and still derive a lower bound of $constantb\\,countn^3$.  The argument is similar."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "riverbank",
+        "n": "caterpillar",
+        "i": "nightshade",
+        "j": "labyrinth",
+        "a_i": "sunflower",
+        "a_j": "raincloud",
+        "y": "avalanche",
+        "z": "woodpecker",
+        "k": "marshmallow",
+        "f": "hummingbird",
+        "Q_z,n": "driftwood",
+        "q_z,n": "paperclips",
+        "A": "chandelier",
+        "B": "snowblower"
+      },
+      "question": "a constant $chandelier$ such that for all $caterpillar$,\n\\[\n\\int_{-\\infty}^{\\infty} \\left( \\sum_{nightshade=1}^{caterpillar} \\frac{1}{1 + (riverbank-sunflower)^2} \\right)^2\\,driverbank \\leq chandelier caterpillar.\n\\]\nProve there is a constant $snowblower>0$ such that for all $caterpillar$,\n\\[\n\\sum_{nightshade,labyrinth=1}^{caterpillar} (1 + (sunflower - raincloud)^2) \\geq snowblower caterpillar^3.\n\\]",
+      "solution": "Define the function\n\\[\nhummingbird(avalanche) =\n\\int_{-\\infty}^{\\infty} \\frac{driverbank}{(1+riverbank^2)(1+(riverbank+avalanche)^2)}.\n\\]\nFor $avalanche \\ge 0$, in the range $-1 \\le riverbank \\le 0$, we have\n\\begin{align*}\n(1+riverbank^2)(1+(riverbank+avalanche)^2) &\\le (1+1)(1+(1+avalanche)^2)=2\\,avalanche^2+4\\,avalanche+4\\\\\n&\\le 2\\,avalanche^2+4+2(avalanche^2+1) \\le 6+6\\,avalanche^2.\n\\end{align*}\nWe thus obtain the lower bound\n\\[\nhummingbird(avalanche) \\ge \\frac{1}{6(1+avalanche^2)};\n\\]\nthe same bound is valid for $avalanche \\le 0$ because $hummingbird(avalanche)=hummingbird(-avalanche)$.\n\nThe original hypothesis can be written as\n\\[\n\\sum_{nightshade,labyrinth=1}^{caterpillar} hummingbird(sunflower-raincloud) \\le chandelier caterpillar\n\\]\nand thus implies\n\\[\n\\sum_{nightshade,labyrinth=1}^{caterpillar} \\frac{1}{1+(sunflower-raincloud)^2} \\le 6\\,chandelier\\,caterpillar.\n\\]\nBy the Cauchy-Schwarz inequality, this gives\n\\[\n\\sum_{nightshade,labyrinth=1}^{caterpillar} \\bigl(1+(sunflower-raincloud)^2\\bigr) \\ge snowblower caterpillar^3\n\\]\nfor $snowblower = 1/(6\\,chandelier)$.\n\n\\textbf{Remark.} One can also compute explicitly (using partial fractions, Fourier transforms, or contour integration) that $hummingbird(avalanche)=\\dfrac{2\\pi}{4+avalanche^2}$.\n\n\\textbf{Remark.} Praveen Venkataramana points out that the lower bound can be improved to $snowblower caterpillar^4$ as follows. For each $woodpecker \\in \\ZZ$, put $driftwood = \\{nightshade \\in \\{1,\\dots,caterpillar\\}: sunflower \\in [woodpecker,\\,woodpecker+1)\\}$ and $paperclips = \\#driftwood$. Then $\\sum_{woodpecker} paperclips = caterpillar$ and\n\\[\n6\\,chandelier\\,caterpillar \\ge \\sum_{nightshade,labyrinth=1}^{caterpillar} \\frac{1}{1+(sunflower-raincloud)^2} \\ge \\sum_{woodpecker\\in\\ZZ} \\frac12\\,paperclips^2.\n\\]\nIf exactly $marshmallow$ of the $paperclips$ are non-zero, then $\\sum_{woodpecker\\in\\ZZ} paperclips^2 \\ge caterpillar^2/marshmallow$ by Jensen's inequality, so we must have $marshmallow \\ge caterpillar/(6\\,chandelier)$. Then\n\\begin{align*}\n\\sum_{nightshade,labyrinth=1}^{caterpillar} \\bigl(1+(sunflower-raincloud)^2\\bigr) &\\ge\ncaterpillar^2 + \\sum_{nightshade,labyrinth=1}^{marshmallow} \\max\\{0,(|nightshade-labyrinth|-1)^2\\}\\\\[4pt]\n&\\ge caterpillar^2 + \\frac{marshmallow^4}{6}-\\frac{2\\,marshmallow^3}{3}+\\frac{5\\,marshmallow^2}{6}-\\frac{marshmallow}{3}.\n\\end{align*}\nThis is bounded below by $snowblower caterpillar^4$ for some $snowblower>0$.\n\nIn the opposite direction, one can weaken the initial upper bound to $chandelier caterpillar^{4/3}$ and still derive a lower bound of $snowblower caterpillar^3$. The argument is similar."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "staticval",
+        "n": "boundless",
+        "i": "aggregate",
+        "j": "entirety",
+        "a_i": "collective",
+        "a_j": "solitary",
+        "y": "stillness",
+        "z": "basement",
+        "k": "limitless",
+        "f": "invariant",
+        "Q_z,n": "emptiness",
+        "q_z,n": "zeroness",
+        "A": "uncertain",
+        "B": "shifting"
+      },
+      "question": "a constant $uncertain$ such that for all $boundless$,\n\\[\n\\int_{-\\infty}^{\\infty} \\left( \\sum_{aggregate=1}^{boundless} \\frac{1}{1 + (staticval-collective)^2} \\right)^2\\,dstaticval \\leq uncertain\\,boundless.\n\\]\nProve there is a constant $shifting>0$ such that for all $boundless$,\n\\[\n\\sum_{aggregate,entirety=1}^{boundless} (1 + (collective - solitary)^2) \\geq shifting\\,boundless^3.\n\\]",
+      "solution": "Define the function\n\\[\n\\invariant(stillness) =\n\\int_{-\\infty}^{\\infty} \\frac{dstaticval}{(1+staticval^2)(1+(staticval+stillness)^2)}.\n\\]\nFor $stillness \\geq 0$, in the range $-1 \\leq staticval \\leq 0$, we have\n\\begin{align*}\n(1+staticval^2)(1+(staticval+stillness)^2) &\\leq (1+1)(1+(1+stillness)^2) = 2stillness^2+4stillness+4 \\\\\n&\\leq 2stillness^2+4+2(stillness^2+1) \\leq 6+6stillness^2.\n\\end{align*}\nWe thus have the lower bound\n\\[\n\\invariant(stillness) \\geq \\frac{1}{6(1+stillness^2)};\n\\]\nthe same bound is valid for $stillness \\leq 0$ because $\\invariant(stillness) = \\invariant(-stillness)$.\n\nThe original hypothesis can be written as\n\\[\n\\sum_{aggregate,entirety=1}^{boundless} \\invariant(collective - solitary) \\leq uncertain\\,boundless\n\\]\nand thus implies that\n\\[\n\\sum_{aggregate,entirety=1}^{boundless} \\frac{1}{1 + (collective-solitary)^2} \\leq 6\\,uncertain\\,boundless.\n\\]\nBy the Cauchy-Schwarz inequality, this implies\n\\[\n\\sum_{aggregate,entirety=1}^{boundless} (1 + (collective-solitary)^2) \\geq shifting\\,boundless^3\n\\]\nfor $shifting = 1/(6\\,uncertain)$.\n\n\\textbf{Remark.} One can also compute explicitly (using partial fractions, Fourier transforms, or contour integration) that\n$\\invariant(stillness) = \\frac{2\\pi}{4 + stillness^2}$.\n\n\\textbf{Remark.} Praveen Venkataramana points out that the lower bound can be improved to $shifting\\,boundless^4$ as follows. For each $basement \\in \\ZZ$, put $emptiness = \\{aggregate\\in \\{1,\\dots,boundless\\}: collective \\in [basement, basement+1)\\}$ and $zeroness = \\#emptiness$. Then $\\sum_{basement} zeroness = boundless$ and\n\\[\n6\\,uncertain\\,boundless \\geq \\sum_{aggregate,entirety=1}^{boundless} \\frac{1}{1 + (collective-solitary)^2} \\geq \\sum_{basement \\in \\ZZ} \\frac{1}{2} zeroness^2.\n\\]\nIf exactly $limitless$ of the $zeroness$ are nonzero, then $\\sum_{basement \\in \\ZZ} zeroness^2 \\geq boundless^2/limitless$ by Jensen's inequality, so we must have $limitless \\geq boundless/(6\\,uncertain)$. Then\n\\begin{align*}\n\\sum_{aggregate,entirety=1}^{boundless} (1 + (collective-solitary)^2) &\\geq\nboundless^2 + \\sum_{aggregate,entirety=1}^{limitless} \\max\\{0, (|aggregate-entirety|-1)^2\\} \\\\\n&\\geq\nboundless^2 + \\frac{limitless^4}{6}-\\frac{2limitless^3}{3}+\\frac{5limitless^2}{6}-\\frac{limitless}{3}.\n\\end{align*}\nThis is bounded below by $shifting\\,boundless^4$ for some $shifting>0$.\n\nIn the opposite direction, one can weaken the initial upper bound to $uncertain\\,boundless^{4/3}$ and still derive a lower bound of $shifting\\,boundless^3$. The argument is similar."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "n": "hjgrksla",
+        "i": "pnbvczlk",
+        "j": "mnsdfrwe",
+        "a_i": "znxmbvqa",
+        "a_j": "rtyuiopa",
+        "y": "plmnvcxz",
+        "z": "qwertpls",
+        "k": "asdfghjk",
+        "f": "xcvbnmas",
+        "Q_z,n": "lkjhgfds",
+        "q_z,n": "poiuytre",
+        "A": "qazwsxed",
+        "B": "edcrfvtg"
+      },
+      "question": "a constant $qazwsxed$ such that for all $hjgrksla$,\\[\n\\int_{-\\infty}^{\\infty} \\left( \\sum_{pnbvczlk=1}^{hjgrksla} \\frac{1}{1 + (qzxwvtnp-znxmbvqa)^2} \\right)^2\\,dqzxwvtnp \\leq qazwsxed hjgrksla.\\]\nProve there is a constant $edcrfvtg>0$ such that for all $hjgrksla$,\\[\n\\sum_{pnbvczlk,mnsdfrwe=1}^{hjgrksla} (1 + (znxmbvqa - rtyuiopa)^2) \\geq edcrfvtg hjgrksla^3.\\]",
+      "solution": "Define the function\\[\nxcvbnmas(plmnvcxz) =\n\\int_{-\\infty}^{\\infty} \\frac{dqzxwvtnp}{(1+qzxwvtnp^2)(1+(qzxwvtnp+plmnvcxz)^2)}.\n\\]\nFor $plmnvcxz \\ge 0$, in the range $-1 \\le qzxwvtnp \\le 0$, we have\n\\begin{align*}\n(1+qzxwvtnp^2)(1+(qzxwvtnp+plmnvcxz)^2) &\\le (1+1)(1+(1+plmnvcxz)^2)=2plmnvcxz^2+4plmnvcxz+4\\\\\n&\\le 2plmnvcxz^2+4+2(plmnvcxz^2+1)\\le 6+6plmnvcxz^2.\n\\end{align*}\nWe thus have the lower bound\\[\nxcvbnmas(plmnvcxz) \\ge \\frac1{6(1+plmnvcxz^2)};\n\\]\nthe same bound is valid for $plmnvcxz \\le 0$ because $xcvbnmas(plmnvcxz)=xcvbnmas(-plmnvcxz)$.\n\nThe original hypothesis can be written as\n\\[\\sum_{pnbvczlk,mnsdfrwe=1}^{hjgrksla} xcvbnmas(znxmbvqa-rtyuiopa) \\le qazwsxed hjgrksla\\]\nand thus implies that\n\\[\\sum_{pnbvczlk,mnsdfrwe=1}^{hjgrksla} \\frac1{1+(znxmbvqa-rtyuiopa)^2}\\le 6qazwsxed hjgrksla.\\]\nBy the Cauchy-Schwarz inequality, this implies\n\\[\\sum_{pnbvczlk,mnsdfrwe=1}^{hjgrksla} (1+(znxmbvqa-rtyuiopa)^2) \\ge edcrfvtg hjgrksla^3\\]\nfor $edcrfvtg = 1/(6qazwsxed)$.\n\n\\textbf{Remark.} One can also compute explicitly (using partial fractions, Fourier transforms, or contour integration) that $xcvbnmas(plmnvcxz)=\\dfrac{2\\pi}{4+plmnvcxz^2}$.\n\n\\textbf{Remark.} Praveen Venkataramana points out that the lower bound can be improved to $edcrfvtg hjgrksla^4$ as follows. For each $qwertpls \\in \\ZZ$, put $lkjhgfds=\\{pnbvczlk\\in \\{1,\\dots,hjgrksla\\}:znxmbvqa\\in[qwertpls,qwertpls+1)\\}$ and $poiuytre=\\#lkjhgfds$. Then $\\sum_{qwertpls} poiuytre = hjgrksla$ and\n\\[6qazwsxed hjgrksla \\ge \\sum_{pnbvczlk,mnsdfrwe=1}^{hjgrksla} \\frac1{1+(znxmbvqa-rtyuiopa)^2} \\ge \\sum_{qwertpls\\in\\ZZ} \\frac12 poiuytre^2.\\]\nIf exactly $asdfghjk$ of the $poiuytre$ are non-zero, then $\\sum_{qwertpls\\in\\ZZ} poiuytre^2 \\ge hjgrksla^2/asdfghjk$ by Jensen's inequality (or various other methods), so we must have $asdfghjk \\ge hjgrksla/(6qazwsxed)$. Then\n\\begin{align*}\n\\sum_{pnbvczlk,mnsdfrwe=1}^{hjgrksla} (1+(znxmbvqa-rtyuiopa)^2) &\\ge hjgrksla^2 + \\sum_{pnbvczlk,mnsdfrwe=1}^{asdfghjk} \\max\\{0,(|pnbvczlk-mnsdfrwe|-1)^2\\}\\\\\n&\\ge hjgrksla^2 + \\frac{asdfghjk^4}{6}-\\frac{2asdfghjk^3}{3}+\\frac{5asdfghjk^2}{6}-\\frac{asdfghjk}{3}.\n\\end{align*}\nThis is bounded below by $edcrfvtg hjgrksla^4$ for some $edcrfvtg>0$.\n\nIn the opposite direction, one can weaken the initial upper bound to $qazwsxed hjgrksla^{4/3}$ and still derive a lower bound of $edcrfvtg hjgrksla^3$. The argument is similar."
+    },
+    "kernel_variant": {
+      "question": "Let A>0 be a fixed constant.  For a positive integer n and real numbers a_1,\\dots ,a_n consider the integral\n\n            I(a_1,\\dots ,a_n):= \\int_{-\\infty}^{\\infty}\\Bigl(\\sum_{i=1}^{n}\\frac{1}{1+(x-a_i)^2}\\Bigr)^2\\,dx.\n\nAssume that the n-tuple (a_1,\\dots ,a_n) satisfies the upper bound\n\n            I(a_1,\\dots ,a_n)\\;\\le\\;A\\,n.                                    (1)\n\n(Proviso: the constant A is independent of n; inequality (1) is **not** required to hold for every choice of the a_i, only for the particular n-tuple under consideration.)\n\nProve that there exists a positive constant B = B(A) depending only on A such that every n-tuple that fulfils (1) also satisfies\n\n            \\sum_{i,j=1}^{n}\\bigl(1+(a_i-a_j)^2\\bigr)\\;\\ge\\;B\\,n^{3}.            (2)\n\nThus a good pair-wise dispersion of the points a_i is forced by the smallness of the integral in (1).",
+      "solution": "We work in five short steps.\n\n1.  A convenient kernel.\n   Define the even function\n        f(y):=\\int_{-\\infty}^{\\infty}\\frac{dx}{(1+x^{2})\\,[1+(x+y)^{2}]}\\qquad(y\\in\\mathbb R).\n   Elementary calculus (e.g. partial fractions or the Fourier transform of sech) gives the closed form\n        f(y)=\\frac{2\\pi}{4+y^{2}}.                                           (3)\n   In particular 0<f(y)\\le\\pi/2 for every y, and---crucially---\n        f(y)\\;\\ge\\;\\frac{1}{30\\,(1+y^{2})}\\quad\\text{for all }y\\in\\mathbb R.   (4)\n   (Inequality (4) follows by integrating only over x\\in[1,2] and estimating the denominator by 30(1+y^{2}). The numerical factor 30 is immaterial; any finite universal constant would do.)\n\n2.  Rewriting the hypothesis.\n   Expanding the square in (1) and interchanging the sum and the integral we obtain\n        \\sum_{i,j=1}^{n}f(a_i-a_j)\\;\\le\\;A\\,n.                                (5)\n   We henceforth fix an n-tuple that satisfies (5).\n\n3.  A universal upper bound for the reciprocal distances.\n   Combining (4) and (5) gives\n        \\sum_{i,j=1}^{n}\\frac{1}{1+(a_i-a_j)^2}\\;\\le\\;30A\\,n.                 (6)\n\n4.  A Cauchy-Schwarz estimate.\n   Set\n        u_{ij}:=1+(a_i-a_j)^2, \\qquad v_{ij}:=\\frac{1}{u_{ij}}.\n   The Cauchy-Schwarz inequality applied to the two n^2-vectors (u_{ij}) and (v_{ij}) yields\n        \\Bigl(\\sum_{i,j=1}^{n}1\\Bigr)^2\\;\\le\\;\\Bigl(\\sum_{i,j}u_{ij}\\Bigr)\\Bigl(\\sum_{i,j}v_{ij}\\Bigr),\n   i.e.\n        n^{4}\\;\\le\\;\\Bigl(\\sum_{i,j}u_{ij}\\Bigr)\\Bigl(\\sum_{i,j}v_{ij}\\Bigr).  (7)\n   Using (6) to bound the second factor in (7) we arrive at\n        \\sum_{i,j=1}^{n}\\!(1+(a_i-a_j)^2)\\;\\ge\\;\\frac{n^{4}}{30A\\,n}\\;=\\;\\frac{1}{30A}\\,n^{3}.   (8)\n\n5.  Choosing the constant.\n   Setting\n        B:=\\frac{1}{30A}>0,\n   inequality (8) is exactly (2).  The proof is complete.\n\nRemark 1.\n   The growth rate n^{3} on the right-hand side of (2) is best possible: take a_i=i, 1\\le i\\le n.  Then the left-hand side is of order n^{3}, whereas the integral in (1) stays bounded by a constant multiple of n.\n\nRemark 2.\n   Inequality (1) does not hold for every n-tuple (for instance, it fails when all a_i coincide, where the integral is (\\pi/2)n^{2}).  The theorem states that *whenever* an n-tuple satisfies the small-overlap condition (1), it must also satisfy the dispersion inequality (2).\n\nRemark 3.\n   The frequently quoted bound ``the integrand never exceeds \\pi/2'' is incorrect; what is uniformly bounded by \\pi/2 is the kernel value f(0)=\\int_{-\\infty}^{\\infty}dx/(1+x^{2})^{2}.  This is the quantity that enters after expansion, and not the original squared sum under the integral in (1).",
+      "_meta": {
+        "core_steps": [
+          "Introduce kernel  f(y)=∫_{ℝ}[(1+x²)(1+(x+y)²)]⁻¹ dx",
+          "Establish universal bound  f(y) ≥ c·(1+y²)⁻¹  (c>0, by integrating over a fixed finite x-interval)",
+          "Rewrite hypothesis as  ∑_{i,j} f(a_i−a_j) ≤ An",
+          "Insert lower bound to get  ∑_{i,j}(1+(a_i−a_j)²)⁻¹ ≤ (A/c) n",
+          "Apply Cauchy–Schwarz to deduce  ∑_{i,j}(1+(a_i−a_j)²) ≥ B n³"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "finite x-interval chosen to estimate f(y); any interval of fixed positive length works",
+            "original": "[-1,0]"
+          },
+          "slot2": {
+            "description": "numeric constant coming from the crude bound on f(y) and propagated as 6, 6A, 1/(6A)",
+            "original": "6"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,142 @@
+{
+  "index": "1982-B-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-4\nLet \\( n_{1}, n_{2}, \\ldots, n_{s} \\) be distinct integers such that\n\\[\n\\left(n_{1}+k\\right)\\left(n_{2}+k\\right) \\cdots\\left(n_{5}+k\\right)\n\\]\nis an integral multiple of \\( n_{1} n_{2} \\cdots n_{s} \\) for every integer \\( k \\). For each of the following assertions. give a proof or a counterexample:\n(a) \\( \\left|n_{i}\\right|=1 \\) for some \\( i \\).\n(b) If further all \\( n \\), are positive, then\n\\[\n\\left\\{n_{1}, n_{2}, \\ldots, n_{s}\\right\\}=\\{1,2, \\ldots, s\\} .\n\\]",
+  "solution": "B-4.\nLet \\( P_{k}=\\left(n_{1}+k\\right)\\left(n_{2}+k\\right) \\cdots\\left(n_{s}+k\\right) \\). We are given that \\( P_{0} \\mid P_{k} \\) for all integers \\( k \\).\n(a) \\( P_{0} \\mid P_{-1} \\) and \\( P_{0} \\mid P_{1} \\) together imply \\( P_{0}^{2} \\mid\\left(P_{-1} P_{1}\\right) \\) or \\( \\left(n_{1}^{2} n_{2}^{2} \\cdots n_{s}^{2}\\right) \\|\\left(n_{1}^{2}-1\\right)\\left(n_{2}^{2}-1\\right) \\cdots \\) \\( \\left.\\left(n_{s}^{2}-1\\right)\\right] \\).\nNo \\( n_{1} \\) can be zero since \\( P_{k} \\neq 0 \\) for \\( k \\) sufficiently large. Thus, for each \\( i, n_{i}^{2} \\geqslant 1 \\) and \\( n_{i}^{2}>n_{t}^{2}-1 \\) \\( \\geqslant 0 \\). Hence \\( P_{0}^{2}>P_{-1} P_{1} \\geqslant 0 \\). This and \\( P_{0}^{2} \\mid\\left(P_{,} P_{1}\\right) \\) imply \\( P_{-1} P_{1}=0 \\). Then for some \\( i,\\left|n_{i}\\right|=1 \\).\n(b) \\( P_{k} \\) is a polynomial in \\( k \\) of degree \\( s \\). Since \\( P_{0} \\) divides each \\( P_{1}, P_{0} \\) also divides the \\( n \\)th difference\n\\[\n\\sum_{i=0}^{s}(-1)^{\\prime}\\binom{s}{i} P_{t}=s!.\n\\]\n\nSince \\( P_{0}>0 \\), this means that \\( P_{0} \\leqslant s! \\). As \\( P_{0} \\) is a product of \\( s \\) distinct positive integers, it follows that\n\\[\n\\left\\{n_{1}, n_{2}, \\ldots, n_{s}\\right\\}=\\{1,2, \\ldots, s\\} .\n\\]",
+  "vars": [
+    "k",
+    "i",
+    "t",
+    "n"
+  ],
+  "params": [
+    "n_1",
+    "n_2",
+    "n_s",
+    "n_i",
+    "n_t",
+    "P_k",
+    "P_0",
+    "P_-1",
+    "P_1",
+    "P_t",
+    "s"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "shiftvar",
+        "i": "indexvar",
+        "t": "tempvar",
+        "n": "genericn",
+        "n_1": "firstint",
+        "n_2": "secondint",
+        "n_s": "lastint",
+        "n_i": "indexint",
+        "n_t": "tempint",
+        "P_k": "polyshift",
+        "P_0": "polyzero",
+        "P_-1": "polynegone",
+        "P_1": "polyposone",
+        "P_t": "polytemp",
+        "s": "totals"
+      },
+      "question": "Problem B-4\nLet \\( firstint, secondint, \\ldots, lastint \\) be distinct integers such that\n\\[\n\\left(firstint+shiftvar\\right)\\left(secondint+shiftvar\\right) \\cdots\\left(n_{5}+shiftvar\\right)\n\\]\nis an integral multiple of \\( firstint secondint \\cdots lastint \\) for every integer \\( shiftvar \\). For each of the following assertions. give a proof or a counterexample:\n(a) \\( \\left|indexint\\right|=1 \\) for some \\( indexvar \\).\n(b) If further all genericn , are positive, then\n\\[\n\\left\\{firstint, secondint, \\ldots, lastint\\right\\}=\\{1,2, \\ldots, totals\\} .\n\\]",
+      "solution": "B-4.\nLet \\( polyshift=\\left(firstint+shiftvar\\right)\\left(secondint+shiftvar\\right) \\cdots\\left(lastint+shiftvar\\right) \\). We are given that \\( polyzero \\mid polyshift \\) for all integers \\( shiftvar \\).\n(a) \\( polyzero \\mid polynegone \\) and \\( polyzero \\mid polyposone \\) together imply \\( polyzero^{2} \\mid\\left(polynegone\\, polyposone\\right) \\) or \\( \\left(firstint^{2} secondint^{2} \\cdots lastint^{2}\\right) \\|\\left(firstint^{2}-1\\right)\\left(secondint^{2}-1\\right) \\cdots \\left.\\left(lastint^{2}-1\\right)\\right] \\).\nNo \\( firstint \\) can be zero since \\( polyshift \\neq 0 \\) for \\( shiftvar \\) sufficiently large. Thus, for each \\( indexvar, indexint^{2} \\geqslant 1 \\) and \\( indexint^{2}>tempint^{2}-1 \\) \\( \\geqslant 0 \\). Hence \\( polyzero^{2}>polynegone\\, polyposone \\geqslant 0 \\). This and \\( polyzero^{2} \\mid\\left(polytemp\\, polyposone\\right) \\) imply \\( polynegone\\, polyposone=0 \\). Then for some \\( indexvar,\\left|indexint\\right|=1 \\).\n(b) \\( polyshift \\) is a polynomial in \\( shiftvar \\) of degree \\( totals \\). Since \\( polyzero \\) divides each \\( polyposone, polyzero \\) also divides the genericn th difference\n\\[\n\\sum_{indexvar=0}^{totals}(-1)^{\\prime}\\binom{totals}{indexvar} polytemp=totals!.\n\\]\n\nSince \\( polyzero>0 \\), this means that \\( polyzero \\leqslant totals! \\). As \\( polyzero \\) is a product of \\( totals \\) distinct positive integers, it follows that\n\\[\n\\left\\{firstint, secondint, \\ldots, lastint\\right\\}=\\{1,2, \\ldots, totals\\} .\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "marigolds",
+        "i": "hippocamp",
+        "t": "turnpikes",
+        "n": "foxgloves",
+        "n_1": "quaysides",
+        "n_2": "windchime",
+        "n_s": "afterglow",
+        "n_i": "lachrymal",
+        "n_t": "stringers",
+        "P_k": "brickwork",
+        "P_0": "herdsmen",
+        "P_-1": "flannelry",
+        "P_1": "snowfield",
+        "P_t": "mothballs",
+        "s": "floodgate"
+      },
+      "question": "Problem B-4\nLet \\( quaysides, windchime, \\ldots, afterglow \\) be distinct integers such that\n\\[\n\\left(quaysides+marigolds\\right)\\left(windchime+marigolds\\right) \\cdots\\left(n_{5}+marigolds\\right)\n\\]\nis an integral multiple of \\( quaysides windchime \\cdots afterglow \\) for every integer \\( marigolds \\). For each of the following assertions. give a proof or a counterexample:\n(a) \\( \\left|lachrymal\\right|=1 \\) for some \\( hippocamp \\).\n(b) If further all \\( foxgloves \\), are positive, then\n\\[\n\\left\\{quaysides, windchime, \\ldots, afterglow\\right\\}=\\{1,2, \\ldots, floodgate\\} .\n\\]",
+      "solution": "B-4.\nLet \\( brickwork=\\left(quaysides+marigolds\\right)\\left(windchime+marigolds\\right) \\cdots\\left(afterglow+marigolds\\right) \\). We are given that \\( herdsmen \\mid brickwork \\) for all integers \\( marigolds \\).\n(a) \\( herdsmen \\mid flannelry \\) and \\( herdsmen \\mid snowfield \\) together imply \\( herdsmen^{2} \\mid\\left(flannelry snowfield\\right) \\) or \\( \\left(quaysides^{2} windchime^{2} \\cdots afterglow^{2}\\right) \\|\\left(quaysides^{2}-1\\right)\\left(windchime^{2}-1\\right) \\cdots \\left.\\left(afterglow^{2}-1\\right)\\right] \\).\nNo \\( quaysides \\) can be zero since \\( brickwork \\neq 0 \\) for \\( marigolds \\) sufficiently large. Thus, for each \\( hippocamp, lachrymal^{2} \\geqslant 1 \\) and \\( lachrymal^{2}>stringers^{2}-1 \\geqslant 0 \\). Hence \\( herdsmen^{2}>flannelry snowfield \\geqslant 0 \\). This and \\( herdsmen^{2} \\mid\\left(P_{,} snowfield\\right) \\) imply \\( flannelry snowfield=0 \\). Then for some \\( hippocamp,\\left|lachrymal\\right|=1 \\).\n(b) \\( brickwork \\) is a polynomial in \\( marigolds \\) of degree \\( floodgate \\). Since \\( herdsmen \\) divides each \\( snowfield, herdsmen \\) also divides the \\( foxgloves \\)th difference\n\\[\n\\sum_{hippocamp=0}^{floodgate}(-1)^{\\prime}\\binom{floodgate}{hippocamp} mothballs = floodgate!.\n\\]\n\nSince \\( herdsmen>0 \\), this means that \\( herdsmen \\leqslant floodgate! \\). As \\( herdsmen \\) is a product of \\( floodgate \\) distinct positive integers, it follows that\n\\[\n\\left\\{quaysides, windchime, \\ldots, afterglow\\right\\}=\\{1,2, \\ldots, floodgate\\} .\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "constantval",
+        "i": "aggregate",
+        "t": "totality",
+        "n": "fractional",
+        "n_1": "irrationalfirst",
+        "n_2": "irrationalsecond",
+        "n_s": "irrationallast",
+        "n_i": "irrationalaggregate",
+        "n_t": "irrationaltotality",
+        "P_k": "quotientvar",
+        "P_0": "quotientzero",
+        "P_-1": "quotientminusone",
+        "P_1": "quotientone",
+        "P_t": "quotienttotality",
+        "s": "infinitecount"
+      },
+      "question": "Problem B-4\nLet \\( irrationalfirst, irrationalsecond, \\ldots, irrationallast \\) be distinct integers such that\n\\[\n\\left(irrationalfirst+constantval\\right)\\left(irrationalsecond+constantval\\right) \\cdots\\left(n_{5}+constantval\\right)\n\\]\nis an integral multiple of \\( irrationalfirst  irrationalsecond \\cdots irrationallast \\) for every integer \\( constantval \\). For each of the following assertions. give a proof or a counterexample:\n(a) \\( \\left|irrationalaggregate\\right|=1 \\) for some \\( aggregate \\).\n(b) If further all \\( fractional \\), are positive, then\n\\[\n\\left\\{irrationalfirst, irrationalsecond, \\ldots, irrationallast\\right\\}=\\{1,2, \\ldots, infinitecount\\} .\n\\]",
+      "solution": "B-4.\nLet \\( quotientvar=\\left(irrationalfirst+constantval\\right)\\left(irrationalsecond+constantval\\right) \\cdots\\left(irrationallast+constantval\\right) \\). We are given that \\( quotientzero \\mid quotientvar \\) for all integers \\( constantval \\).\n(a) \\( quotientzero \\mid quotientminusone \\) and \\( quotientzero \\mid quotientone \\) together imply \\( quotientzero^{2} \\mid\\left( quotientminusone quotientone \\right) \\) or \\( \\left(irrationalfirst^{2} irrationalsecond^{2} \\cdots irrationallast^{2}\\right) \\|\\left(irrationalfirst^{2}-1\\right)\\left(irrationalsecond^{2}-1\\right) \\cdots \\) \\( \\left.\\left(irrationallast^{2}-1\\right)\\right] \\).\nNo \\( irrationallast \\) can be zero since \\( quotientvar \\neq 0 \\) for \\( constantval \\) sufficiently large. Thus, for each \\( aggregate, irrationalaggregate^{2} \\geqslant 1 \\) and \\( irrationalaggregate^{2}>irrationaltotality^{2}-1 \\) \\( \\geqslant 0 \\). Hence \\( quotientzero^{2}>quotientminusone quotientone \\geqslant 0 \\). This and \\( quotientzero^{2} \\mid\\left(quotientminusone quotientone\\right) \\) imply \\( quotientminusone quotientone=0 \\). Then for some \\( aggregate,\\left|irrationalaggregate\\right|=1 \\).\n(b) \\( quotientvar \\) is a polynomial in \\( constantval \\) of degree \\( infinitecount \\). Since \\( quotientzero \\) divides each \\( quotientvar, quotientzero \\) also divides the \\( fractional \\)th difference\n\\[\n\\sum_{aggregate=0}^{infinitecount}(-1)^{\\prime}\\binom{infinitecount}{aggregate} quotienttotality=infinitecount!.\n\\]\nSince \\( quotientzero>0 \\), this means that \\( quotientzero \\leqslant infinitecount! \\). As \\( quotientzero \\) is a product of \\( infinitecount \\) distinct positive integers, it follows that\n\\[\n\\left\\{irrationalfirst, irrationalsecond, \\ldots, irrationallast\\right\\}=\\{1,2, \\ldots, infinitecount\\} .\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "k": "bjsmfqre",
+        "i": "mxpdchqa",
+        "t": "plgnvrso",
+        "n": "wqzldvke",
+        "n_1": "xvkjlqne",
+        "n_2": "ublgatjr",
+        "n_s": "fowcmnzd",
+        "n_i": "zsyrtmgh",
+        "n_t": "hdqspkei",
+        "P_k": "euyclnrb",
+        "P_0": "qcfzktod",
+        "P_-1": "dlutwrsp",
+        "P_1": "jyhgzfbm",
+        "P_t": "ovxinlma",
+        "s": "ryvkqzds"
+      },
+      "question": "Problem B-4\nLet \\( xvkjlqne, ublgatjr, \\ldots, fowcmnzd \\) be distinct integers such that\n\\[\n\\left(xvkjlqne+bjsmfqre\\right)\\left(ublgatjr+bjsmfqre\\right) \\cdots\\left(n_{5}+bjsmfqre\\right)\n\\]\nis an integral multiple of \\( xvkjlqne\\, ublgatjr \\cdots fowcmnzd \\) for every integer \\( bjsmfqre \\). For each of the following assertions, give a proof or a counterexample:\n(a) \\( \\left|zsyrtmgh\\right|=1 \\) for some \\( mxpdchqa \\).\n(b) If further all \\( wqzldvke \\) are positive, then\n\\[\n\\left\\{xvkjlqne, ublgatjr, \\ldots, fowcmnzd\\right\\}=\\{1,2, \\ldots, ryvkqzds\\} .\n\\]",
+      "solution": "B-4.\nLet \\( euyclnrb=\\left(xvkjlqne+bjsmfqre\\right)\\left(ublgatjr+bjsmfqre\\right) \\cdots\\left(fowcmnzd+bjsmfqre\\right) \\). We are given that \\( qcfzktod \\mid euyclnrb \\) for all integers \\( bjsmfqre \\).\n(a) \\( qcfzktod \\mid dlutwrsp \\) and \\( qcfzktod \\mid jyhgzfbm \\) together imply \\( qcfzktod^{2} \\mid\\left(dlutwrsp\\, jyhgzfbm\\right) \\) or \\( \\left(xvkjlqne^{2} ublgatjr^{2} \\cdots fowcmnzd^{2}\\right) \\|\\left(xvkjlqne^{2}-1\\right)\\left(ublgatjr^{2}-1\\right) \\cdots\\left.\\left(fowcmnzd^{2}-1\\right)\\right] \\).\nNo \\( xvkjlqne \\) can be zero since \\( euyclnrb \\neq 0 \\) for \\( bjsmfqre \\) sufficiently large. Thus, for each \\( mxpdchqa, zsyrtmgh^{2} \\geqslant 1 \\) and \\( zsyrtmgh^{2}>hdqspkei^{2}-1 \\geqslant 0 \\). Hence \\( qcfzktod^{2}>dlutwrsp\\, jyhgzfbm \\geqslant 0 \\). This and \\( qcfzktod^{2} \\mid\\left(dlutwrsp\\, jyhgzfbm\\right) \\) imply \\( dlutwrsp\\, jyhgzfbm=0 \\). Then for some \\( mxpdchqa,\\left|zsyrtmgh\\right|=1 \\).\n(b) \\( euyclnrb \\) is a polynomial in \\( bjsmfqre \\) of degree \\( ryvkqzds \\). Since \\( qcfzktod \\) divides each \\( jyhgzfbm, qcfzktod \\) also divides the \\( wqzldvke \\)th difference\n\\[\n\\sum_{mxpdchqa=0}^{ryvkqzds}(-1)^{\\prime}\\binom{ryvkqzds}{mxpdchqa} ovxinlma = ryvkqzds!.\n\\]\nSince \\( qcfzktod>0 \\), this means that \\( qcfzktod \\leqslant ryvkqzds! \\). As \\( qcfzktod \\) is a product of \\( ryvkqzds \\) distinct positive integers, it follows that\n\\[\n\\left\\{xvkjlqne, ublgatjr, \\ldots, fowcmnzd\\right\\}=\\{1,2, \\ldots, ryvkqzds\\} .\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let s be a positive integer and let m_{1},m_{2},\\dots ,m_{s} be s distinct integers such that\\n\\n\\[\\qquad \\frac{(m_{1}+k)(m_{2}+k)\\cdots (m_{s}+k)}{m_{1}m_{2}\\cdots m_{s}}\\in\\mathbb Z \\quad \\text{for every } k\\in\\mathbb Z.\\]\\n\\n(a) Prove that |m_{j}|=1 for at least one index j.\\n\\n(b) Show that if, in addition, all m_{j} are positive, then\\n\\[\\{m_{1},m_{2},\\dots ,m_{s}\\}=\\{1,2,\\dots ,s\\}.\\]",
+      "solution": "Set P_{k}=\\prod _{i=1}^{s}(m_{i}+k).  The hypothesis is exactly\n\n  P_{0}\\mid P_{k}  for every integer k.\n\nPart (a).\nBecause P_{0}\\mid P_{-1} and P_{0}\\mid P_{1}, we have P_{0}^{2}\\mid (P_{-1}P_{1}).  But\n  P_{-1}P_{1}=\\prod _{i=1}^{s}(m_{i}^{2}-1).\nIf |m_{i}|\\geq 2 for every i, then m_{i}^{2}-1<m_{i}^{2}, so\n  P_{-1}P_{1}<\\prod _{i=1}^{s}m_{i}^{2}=P_{0}^{2}.\nA nonzero multiple of P_{0}^{2} cannot be strictly less than P_{0}^{2}, so we reach a contradiction unless one factor m_{j}^{2}-1 is zero.  Hence |m_{j}|=1 for some j.\n\nPart (b).\nNow assume m_{1},\\ldots ,m_{s} are positive.  Consider the polynomial P(k)=\\prod _{i=1}^{s}(m_{i}+k), which is monic of degree s in k.  Its s-th forward difference with step -1 at k=2 is\n\n  \\Delta _{-1}^{s}P(2)=\\sum _{j=0}^{s}(-1)^{j}C(s,j)P(2-j)\n\nand by the standard finite-difference formula this equals s!(-1)^{s}.  Since P_{0} divides each term P(2-j), it divides the whole sum, so P_{0}\\mid s!.  But P_{0}=m_{1}\\cdots m_{s}>0, whence\n\n  P_{0}\\leq s!.\n\nOn the other hand, P_{0} is the product of s distinct positive integers.  The only way such a product can be \\leq s! is if those integers are exactly 1,2,\\ldots ,s.  Therefore\n\n  {m_{1},m_{2},\\ldots ,m_{s}}={1,2,\\ldots ,s},\n\nas required.",
+      "_meta": {
+        "core_steps": [
+          "Define P_k = ∏(n_i + k) so that the hypothesis reads P_0 | P_k for every integer k.",
+          "Part (a): Use k = -1 and k = 1 to get P_0^2 | P_{-1} P_1 = ∏(n_i^2 - 1).",
+          "Compare sizes: if every |n_i| ≥ 2 then P_{-1} P_1 < P_0^2, contradicting the divisibility, forcing some |n_i| = 1.",
+          "Part (b): Regard P_k as a degree-s polynomial; its s-th forward difference with step 1 is Δ^s P_0 = s!.",
+          "Because P_0 divides every P_k, it divides s!; but P_0 is the product of s distinct positive integers, so P_0 ≤ s!, whence the only possibility is {n_1,…,n_s} = {1,2,…,s}."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Base point of the finite-difference operator in Step 4 (they used 0, i.e. Δ^s P_0). Any integer starting point t would give the same value s! and keep the argument intact.",
+            "original": "0"
+          },
+          "slot2": {
+            "description": "The step of the forward difference (they fixed it at 1). Using step h=±1 leaves Δ^s P equal to s!·h^s; since h^s=1 for h=±1, the reasoning (P_0 | s!) is unchanged.",
+            "original": "1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,129 @@
+{
+  "index": "1984-B-4",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem B-4\nFind, with proof, all real-valued functions \\( y=g(x) \\) defined and continuous on \\( [0, \\infty) \\), positive on \\( (0, \\infty) \\), such that for all \\( x>0 \\) the \\( y \\)-coordinate of the centroid of the region\n\\[\nR_{\\mathrm{r}}=\\{(s, t) \\mid 0 \\leqslant s \\leqslant x, \\quad 0 \\leqslant t \\leqslant g(s)\\}\n\\]\nis the same as the average value of \\( g \\) on \\( [0, x] \\).",
+  "solution": "B-4.\nSuch a function must satisfy\n\\[\n\\frac{\\int_{0}^{x} \\frac{1}{2} g^{2}(t) d t}{\\int_{0}^{x} g(t) d t}=\\frac{1}{x} \\int_{0}^{x} g(t) d t\n\\]\nor equivalently,\n\\[\n\\int_{0}^{x} \\frac{1}{2} g^{2}(t) d t=\\frac{1}{x}\\left[\\int_{0}^{x} g(t) d t\\right]^{2}\n\\]\n\nLet \\( z(x)=\\int_{0}^{x} g(t) d t \\). Then \\( z^{\\prime}(x)=g(x) \\) and we have\n\\[\n\\int_{0}^{x} \\frac{1}{2}\\left(z^{\\prime}\\right)^{2} d t=\\frac{z^{2}}{x}, \\quad x>0\n\\]\n\nDifferentiating, we have\n\\[\n\\begin{array}{ll}\n\\frac{1}{2}\\left(z^{\\prime}\\right)^{2}=\\frac{x \\cdot 2 z z^{\\prime}-z^{2}}{x^{2}}, & x>0 \\\\\nx^{2}\\left(z^{\\prime}\\right)^{2}-4 x z z^{\\prime}+2 z^{2}=0, & x>0 \\\\\n\\left(x z^{\\prime}-r_{1} z\\right)\\left(x z^{\\prime}-r_{2} z\\right)=0, & x>0\n\\end{array}\n\\]\nwhere \\( r_{1}=2+\\sqrt{2} \\) and \\( r_{2}=2-\\sqrt{2} \\).\nNow \\( x, z^{\\prime} \\), and \\( z \\) are continuous and \\( z>0 \\), so the last equation implies that \\( x z^{\\prime} / z=r \\), where \\( r=r_{1} \\) or \\( r=r_{2} \\). Separating variables, we have \\( z^{\\prime} / z=r / x \\) and it follows that\n\\[\n\\ln z=r \\ln x+C_{0}\n\\]\nor equivalently, \\( z=C_{1} x^{r}, C_{1}>0 \\). Differentiating, we have \\( z^{\\prime}=g(x)=C x^{r-1}, C \\geq 0 \\). But \\( g \\) is continuous on \\( [0, \\infty) \\) and therefore we cannot have \\( r=r_{2} \\) (because \\( r_{2}-1=1-\\sqrt{2}<0 \\) ). Thus\n\\[\ng(x)=C x^{1+\\sqrt{2}}, \\quad C>0\n\\]\nand one can check that such \\( g(x) \\) do satisfy all the conditions of the problem.",
+  "vars": [
+    "x",
+    "s",
+    "t",
+    "y",
+    "z",
+    "g"
+  ],
+  "params": [
+    "C",
+    "C_0",
+    "C_1",
+    "r",
+    "r_1",
+    "r_2",
+    "R_r"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "s": "starter",
+        "t": "temporal",
+        "y": "ordinate",
+        "z": "integral",
+        "g": "function",
+        "C": "constant",
+        "C_0": "constzero",
+        "C_1": "constone",
+        "r": "ratiooo",
+        "r_1": "ratioone",
+        "r_2": "ratiotwo",
+        "R_r": "regionrr"
+      },
+      "question": "Problem B-4\nFind, with proof, all real-valued functions \\( \\ordinate=\\function(\\abscissa) \\) defined and continuous on \\( [0, \\infty) \\), positive on \\( (0, \\infty) \\), such that for all \\( \\abscissa>0 \\) the \\( \\ordinate\\)-coordinate of the centroid of the region\n\\[\n\\regionrr=\\{(\\starter, \\temporal) \\mid 0 \\leqslant \\starter \\leqslant \\abscissa, \\quad 0 \\leqslant \\temporal \\leqslant \\function(\\starter)\\}\n\\]\nis the same as the average value of \\( \\function \\) on \\( [0, \\abscissa] \\).",
+      "solution": "B-4.\nSuch a function must satisfy\n\\[\n\\frac{\\int_{0}^{\\abscissa} \\tfrac12 \\, \\function^{2}(\\temporal) \\, d\\temporal}{\\int_{0}^{\\abscissa} \\function(\\temporal) \\, d\\temporal}=\\frac{1}{\\abscissa}\\int_{0}^{\\abscissa} \\function(\\temporal) \\, d\\temporal\n\\]\nor equivalently,\n\\[\n\\int_{0}^{\\abscissa} \\tfrac12 \\, \\function^{2}(\\temporal) \\, d\\temporal=\\frac{1}{\\abscissa}\\Bigl[\\int_{0}^{\\abscissa} \\function(\\temporal) \\, d\\temporal\\Bigr]^{2}\n\\]\nLet \\( \\integral(\\abscissa)=\\int_{0}^{\\abscissa} \\function(\\temporal) \\, d\\temporal \\). Then \\( \\integral^{\\prime}(\\abscissa)=\\function(\\abscissa) \\) and we have\n\\[\n\\int_{0}^{\\abscissa} \\tfrac12\\bigl(\\integral^{\\prime}\\bigr)^{2} \\, d\\temporal = \\frac{\\integral^{2}}{\\abscissa}, \\quad \\abscissa>0\n\\]\nDifferentiating, we obtain\n\\[\n\\begin{array}{ll}\n\\tfrac12\\bigl(\\integral^{\\prime}\\bigr)^{2}=\\dfrac{\\abscissa \\cdot 2 \\, \\integral \\, \\integral^{\\prime}-\\integral^{2}}{\\abscissa^{2}}, & \\abscissa>0\\\\[4pt]\n\\abscissa^{2}\\bigl(\\integral^{\\prime}\\bigr)^{2}-4\\abscissa\\integral\\integral^{\\prime}+2\\integral^{2}=0, & \\abscissa>0\\\\[4pt]\n\\bigl(\\abscissa\\integral^{\\prime}-\\ratioone\\integral\\bigr)\\bigl(\\abscissa\\integral^{\\prime}-\\ratiotwo\\integral\\bigr)=0, & \\abscissa>0\n\\end{array}\n\\]\nwhere \\( \\ratioone=2+\\sqrt{2} \\) and \\( \\ratiotwo=2-\\sqrt{2} \\).\nBecause \\( \\abscissa,\\integral^{\\prime}, \\integral \\) are continuous and \\( \\integral>0 \\), the last equation forces \\( \\abscissa\\integral^{\\prime}/\\integral=\\ratiooo \\), where \\( \\ratiooo=\\ratioone \\) or \\( \\ratiooo=\\ratiotwo \\). Separating variables gives \\( \\integral^{\\prime}/\\integral=\\ratiooo/\\abscissa \\), and hence\n\\[\n\\ln \\integral = \\ratiooo \\ln \\abscissa + \\constzero\n\\]\nso that \\( \\integral = \\constone \\abscissa^{\\ratiooo},\\; \\constone>0 \\). Differentiating, we find \\( \\integral^{\\prime}=\\function(\\abscissa)=\\constant \\, \\abscissa^{\\ratiooo-1},\\; \\constant\\ge 0 \\). Since \\( \\function \\) is continuous on \\( [0,\\infty) \\), we cannot have \\( \\ratiooo=\\ratiotwo \\) (because \\( \\ratiotwo-1 = 1-\\sqrt{2}<0 \\)). Thus\n\\[\n\\function(\\abscissa)=\\constant \\, \\abscissa^{1+\\sqrt{2}},\\quad \\constant>0\n\\]\nand one readily verifies that these \\( \\function(\\abscissa) \\) indeed satisfy all the conditions of the problem."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandcastle",
+        "s": "earthworm",
+        "t": "toothbrush",
+        "y": "raincloud",
+        "z": "scarecrow",
+        "g": "blueberry",
+        "C": "watermelon",
+        "C_0": "peppermint",
+        "C_1": "cheeseburger",
+        "r": "flashlight",
+        "r_1": "marshmallow",
+        "r_2": "bubblewrap",
+        "R_r": "tangerines"
+      },
+      "question": "Problem B-4\nFind, with proof, all real-valued functions \\( raincloud=blueberry(sandcastle) \\) defined and continuous on \\( [0, \\infty) \\), positive on \\( (0, \\infty) \\), such that for all \\( sandcastle>0 \\) the \\( raincloud \\)-coordinate of the centroid of the region\n\\[\ntangerines=\\{(earthworm, toothbrush) \\mid 0 \\leqslant earthworm \\leqslant sandcastle, \\quad 0 \\leqslant toothbrush \\leqslant blueberry(earthworm)\\}\n\\]\nis the same as the average value of \\( blueberry \\) on \\( [0, sandcastle] \\).",
+      "solution": "B-4.\nSuch a function must satisfy\n\\[\n\\frac{\\int_{0}^{sandcastle} \\frac{1}{2} blueberry^{2}(toothbrush) d toothbrush}{\\int_{0}^{sandcastle} blueberry(toothbrush) d toothbrush}=\\frac{1}{sandcastle} \\int_{0}^{sandcastle} blueberry(toothbrush) d toothbrush\n\\]\nor equivalently,\n\\[\n\\int_{0}^{sandcastle} \\frac{1}{2} blueberry^{2}(toothbrush) d toothbrush=\\frac{1}{sandcastle}\\left[\\int_{0}^{sandcastle} blueberry(toothbrush) d toothbrush\\right]^{2}\n\\]\n\nLet \\( scarecrow(sandcastle)=\\int_{0}^{sandcastle} blueberry(toothbrush) d toothbrush \\). Then \\( scarecrow^{\\prime}(sandcastle)=blueberry(sandcastle) \\) and we have\n\\[\n\\int_{0}^{sandcastle} \\frac{1}{2}\\left(scarecrow^{\\prime}\\right)^{2} d toothbrush=\\frac{scarecrow^{2}}{sandcastle}, \\quad sandcastle>0\n\\]\n\nDifferentiating, we have\n\\[\n\\begin{array}{ll}\n\\frac{1}{2}\\left(scarecrow^{\\prime}\\right)^{2}=\\frac{sandcastle \\cdot 2 scarecrow scarecrow^{\\prime}-scarecrow^{2}}{sandcastle^{2}}, & sandcastle>0 \\\\\nsandcastle^{2}\\left(scarecrow^{\\prime}\\right)^{2}-4 sandcastle scarecrow scarecrow^{\\prime}+2 scarecrow^{2}=0, & sandcastle>0 \\\\\n\\left(sandcastle scarecrow^{\\prime}-marshmallow scarecrow\\right)\\left(sandcastle scarecrow^{\\prime}-bubblewrap scarecrow\\right)=0, & sandcastle>0\n\\end{array}\n\\]\nwhere \\( marshmallow=2+\\sqrt{2} \\) and \\( bubblewrap=2-\\sqrt{2} \\).\nNow \\( sandcastle, scarecrow^{\\prime} \\), and \\( scarecrow \\) are continuous and \\( scarecrow>0 \\), so the last equation implies that \\( sandcastle scarecrow^{\\prime} / scarecrow=flashlight \\), where \\( flashlight=marshmallow \\) or \\( flashlight=bubblewrap \\). Separating variables, we have \\( scarecrow^{\\prime} / scarecrow=flashlight / sandcastle \\) and it follows that\n\\[\n\\ln scarecrow=flashlight \\ln sandcastle+peppermint\n\\]\nor equivalently, \\( scarecrow=cheeseburger sandcastle^{flashlight},\\; cheeseburger>0 \\). Differentiating, we have \\( scarecrow^{\\prime}=blueberry(sandcastle)=watermelon sandcastle^{flashlight-1},\\; watermelon \\geq 0 \\). But \\( blueberry \\) is continuous on \\( [0, \\infty) \\) and therefore we cannot have \\( flashlight=bubblewrap \\) (because \\( bubblewrap-1=1-\\sqrt{2}<0 \\) ). Thus\n\\[\nblueberry(sandcastle)=watermelon sandcastle^{1+\\sqrt{2}}, \\quad watermelon>0\n\\]\nand one can check that such \\( blueberry(sandcastle) \\) do satisfy all the conditions of the problem."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "s": "stillpoint",
+        "t": "frozenlevel",
+        "y": "noncoordinate",
+        "z": "discreteval",
+        "g": "constant",
+        "C": "variablecoef",
+        "C_0": "variablerand",
+        "C_1": "variablebase",
+        "r": "basevalue",
+        "r_1": "smallroot",
+        "r_2": "largeroot",
+        "R_r": "emptysubset"
+      },
+      "question": "Problem B-4\nFind, with proof, all real-valued functions \\( noncoordinate=constant(constantvalue) \\) defined and continuous on \\( [0, \\infty) \\), positive on \\( (0, \\infty) \\), such that for all \\( constantvalue>0 \\) the \\( noncoordinate \\)-coordinate of the centroid of the region\n\\[\nemptysubset=\\{(stillpoint, frozenlevel) \\mid 0 \\leqslant stillpoint \\leqslant constantvalue, \\quad 0 \\leqslant frozenlevel \\leqslant constant(stillpoint)\\}\n\\]\nis the same as the average value of \\( constant \\) on \\( [0, constantvalue] \\).",
+      "solution": "B-4.\nSuch a function must satisfy\n\\[\n\\frac{\\int_{0}^{constantvalue} \\frac{1}{2} constant^{2}(frozenlevel) d frozenlevel}{\\int_{0}^{constantvalue} constant(frozenlevel) d frozenlevel}=\\frac{1}{constantvalue} \\int_{0}^{constantvalue} constant(frozenlevel) d frozenlevel\n\\]\nor equivalently,\n\\[\n\\int_{0}^{constantvalue} \\frac{1}{2} constant^{2}(frozenlevel) d frozenlevel=\\frac{1}{constantvalue}\\left[\\int_{0}^{constantvalue} constant(frozenlevel) d frozenlevel\\right]^{2}\n\\]\n\nLet \\( discreteval(constantvalue)=\\int_{0}^{constantvalue} constant(frozenlevel) d frozenlevel \\). Then \\( discreteval^{\\prime}(constantvalue)=constant(constantvalue) \\) and we have\n\\[\n\\int_{0}^{constantvalue} \\frac{1}{2}\\left(discreteval^{\\prime}\\right)^{2} d frozenlevel=\\frac{discreteval^{2}}{constantvalue}, \\quad constantvalue>0\n\\]\n\nDifferentiating, we have\n\\[\n\\begin{array}{ll}\n\\frac{1}{2}\\left(discreteval^{\\prime}\\right)^{2}=\\frac{constantvalue \\cdot 2 discreteval discreteval^{\\prime}-discreteval^{2}}{constantvalue^{2}}, & constantvalue>0 \\\\\nconstantvalue^{2}\\left(discreteval^{\\prime}\\right)^{2}-4 constantvalue discreteval discreteval^{\\prime}+2 discreteval^{2}=0, & constantvalue>0 \\\\\n\\left(constantvalue discreteval^{\\prime}-smallroot discreteval\\right)\\left(constantvalue discreteval^{\\prime}-largeroot discreteval\\right)=0, & constantvalue>0\n\\end{array}\n\\]\nwhere \\( smallroot=2+\\sqrt{2} \\) and \\( largeroot=2-\\sqrt{2} \\).\nNow \\( constantvalue, discreteval^{\\prime} \\), and \\( discreteval \\) are continuous and \\( discreteval>0 \\), so the last equation implies that \\( constantvalue discreteval^{\\prime} / discreteval=basevalue \\), where \\( basevalue=smallroot \\) or \\( basevalue=largeroot \\). Separating variables, we have \\( discreteval^{\\prime} / discreteval=basevalue / constantvalue \\) and it follows that\n\\[\n\\ln discreteval=basevalue \\ln constantvalue+variablerand\n\\]\nor equivalently, \\( discreteval=variablebase constantvalue^{basevalue}, variablebase>0 \\). Differentiating, we have \\( discreteval^{\\prime}=constant(constantvalue)=variablecoef constantvalue^{basevalue-1}, variablecoef \\geq 0 \\). But \\( constant \\) is continuous on \\( [0, \\infty) \\) and therefore we cannot have \\( basevalue=largeroot \\) (because \\( largeroot-1=1-\\sqrt{2}<0 \\) ). Thus\n\\[\nconstant(constantvalue)=variablecoef constantvalue^{1+\\sqrt{2}}, \\quad variablecoef>0\n\\]\nand one can check that such \\( constant(constantvalue) \\) do satisfy all the conditions of the problem."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "s": "hjgrksla",
+        "t": "opqldmne",
+        "y": "fksuebna",
+        "z": "mvclropt",
+        "g": "wjevrpsy",
+        "C": "bzufnkea",
+        "C_0": "lthmqcvs",
+        "C_1": "gphnxdau",
+        "r": "pqzmlytq",
+        "r_1": "cnvzjhqo",
+        "r_2": "skmwdrub",
+        "R_r": "qzvdnhsa"
+      },
+      "question": "Problem B-4\nFind, with proof, all real-valued functions \\( fksuebna = wjevrpsy(qzxwvtnp) \\) defined and continuous on \\( [0, \\infty) \\), positive on \\( (0, \\infty) \\), such that for all \\( qzxwvtnp>0 \\) the \\( fksuebna \\)-coordinate of the centroid of the region\n\\[\nqzvdnhsa=\\{(hjgrksla, opqldmne) \\mid 0 \\leqslant hjgrksla \\leqslant qzxwvtnp, \\quad 0 \\leqslant opqldmne \\leqslant wjevrpsy(hjgrksla)\\}\n\\]\nis the same as the average value of \\( wjevrpsy \\) on \\( [0, qzxwvtnp] \\).",
+      "solution": "Such a function must satisfy\n\\[\n\\frac{\\int_{0}^{qzxwvtnp} \\frac{1}{2} wjevrpsy^{2}(opqldmne) d opqldmne}{\\int_{0}^{qzxwvtnp} wjevrpsy(opqldmne) d opqldmne}=\\frac{1}{qzxwvtnp} \\int_{0}^{qzxwvtnp} wjevrpsy(opqldmne) d opqldmne\n\\]\nor equivalently,\n\\[\n\\int_{0}^{qzxwvtnp} \\frac{1}{2} wjevrpsy^{2}(opqldmne) d opqldmne=\\frac{1}{qzxwvtnp}\\left[\\int_{0}^{qzxwvtnp} wjevrpsy(opqldmne) d opqldmne\\right]^{2}\n\\]\n\nLet \\( mvclropt(qzxwvtnp)=\\int_{0}^{qzxwvtnp} wjevrpsy(opqldmne) d opqldmne \\). Then \\( mvclropt^{\\prime}(qzxwvtnp)=wjevrpsy(qzxwvtnp) \\) and we have\n\\[\n\\int_{0}^{qzxwvtnp} \\frac{1}{2}\\left(mvclropt^{\\prime}\\right)^{2} d opqldmne=\\frac{mvclropt^{2}}{qzxwvtnp}, \\quad qzxwvtnp>0\n\\]\n\nDifferentiating, we have\n\\[\n\\begin{array}{ll}\n\\frac{1}{2}\\left(mvclropt^{\\prime}\\right)^{2}=\\frac{qzxwvtnp \\cdot 2 mvclropt mvclropt^{\\prime}-mvclropt^{2}}{qzxwvtnp^{2}}, & qzxwvtnp>0 \\\\\nqzxwvtnp^{2}\\left(mvclropt^{\\prime}\\right)^{2}-4 qzxwvtnp mvclropt mvclropt^{\\prime}+2 mvclropt^{2}=0, & qzxwvtnp>0 \\\\\n\\left(qzxwvtnp mvclropt^{\\prime}-cnvzjhqo mvclropt\\right)\\left(qzxwvtnp mvclropt^{\\prime}-skmwdrub mvclropt\\right)=0, & qzxwvtnp>0\n\\end{array}\n\\]\nwhere \\( cnvzjhqo=2+\\sqrt{2} \\) and \\( skmwdrub=2-\\sqrt{2} \\).\nNow \\( qzxwvtnp, mvclropt^{\\prime} \\), and \\( mvclropt \\) are continuous and \\( mvclropt>0 \\), so the last equation implies that \\( qzxwvtnp mvclropt^{\\prime} / mvclropt=pqzmlytq \\), where \\( pqzmlytq=cnvzjhqo \\) or \\( pqzmlytq=skmwdrub \\). Separating variables, we have \\( mvclropt^{\\prime} / mvclropt=pqzmlytq / qzxwvtnp \\) and it follows that\n\\[\n\\ln mvclropt=pqzmlytq \\ln qzxwvtnp+lthmqcvs\n\\]\nor equivalently, \\( mvclropt=gphnxdau qzxwvtnp^{pqzmlytq}, gphnxdau>0 \\). Differentiating, we have \\( mvclropt^{\\prime}=wjevrpsy(qzxwvtnp)=bzufnkea qzxwvtnp^{pqzmlytq-1}, bzufnkea \\geq 0 \\). But \\( wjevrpsy \\) is continuous on \\( [0, \\infty) \\) and therefore we cannot have \\( pqzmlytq=skmwdrub \\) (because \\( skmwdrub-1=1-\\sqrt{2}<0 \\) ). Thus\n\\[\nwjevrpsy(qzxwvtnp)=bzufnkea qzxwvtnp^{1+\\sqrt{2}}, \\quad bzufnkea>0\n\\]\nand one can check that such \\( wjevrpsy(qzxwvtnp) \\) do satisfy all the conditions of the problem."
+    },
+    "kernel_variant": {
+      "question": "Fix an integer $n\\ge 2$.  \nFind, with proof, all real-valued functions  \n\n  $g:[0,\\infty)\\longrightarrow[0,\\infty)$  \n\nthat are continuous on $[0,\\infty)$ and strictly positive on $(0,\\infty)$ and satisfy, for every $x>0$,  \n\n\\[\n\\boxed{\\;\n\\int_{0}^{x}\\frac1{\\,n+1\\,}\\,t^{\\,n-1}\\,g^{2}(t)\\,dt\n\\;=\\;\n\\frac1{x^{\\,n}}\\Bigl(\\,\\int_{0}^{x}t^{\\,n-1}\\,g(t)\\,dt\\Bigr)^{2}\n\\;}\n\\tag{\\star }\n\\]\n\n(When $n=1$ this reduces to the original B-4 identity after the change of variables used in the current kernel variant, but here the weight $t^{\\,n-1}$ corresponds to the $(n\\!+\\!1)$-dimensional solid of revolution whose centroid condition generalises the original one.)",
+      "solution": "Step 1.  A convenient primitive.  \nSet  \n\n\\[\nZ(x)\\;=\\;\\int_{0}^{x} t^{\\,n-1}\\,g(t)\\,dt ,\\qquad x\\ge 0 .\n\\]\n\nThen $Z$ is $C^{1}$ on $(0,\\infty)$ and  \n\n\\[\nZ'(x)\\;=\\;x^{\\,n-1}g(x)\\;>\\;0\\quad (x>0).\n\\]\n\nIn terms of $Z$, identity (\\star ) reads  \n\n\\[\n\\int_{0}^{x}t^{\\,n-1}g^{2}(t)\\,dt\n\\;=\\;\n\\frac{n+1}{x^{\\,n}}\\,Z^{2}(x),\\qquad x>0.\n\\tag{1}\n\\]\n\nStep 2.  Differentiate (1).  \nBecause  \n\n\\[\n\\frac{d}{dx}\\int_{0}^{x}t^{\\,n-1}g^{2}(t)\\,dt\n\\;=\\;x^{\\,n-1}g^{2}(x)\\;=\\;\\frac{Z'^2(x)}{x^{\\,n-1}},\n\\]\n\ndifferentiating (1) and multiplying by $x^{\\,n+1}$ gives  \n\n\\[\nx^{2}Z'^{\\,2}(x)\\;=\\;2(n+1)\\,x\\,Z(x)Z'(x)-n(n+1)\\,Z^{2}(x),\\qquad x>0.\n\\tag{2}\n\\]\n\nStep 3.  A quadratic for the logarithmic derivative.  \nPut  \n\n\\[\ny(x)\\;=\\;\\frac{x\\,Z'(x)}{Z(x)}\\qquad (x>0).\n\\]\n\nBecause $Z>0$ on $(0,\\infty)$, $y$ is continuous.  \nDivide (2) by $Z^{2}(x)$ to obtain  \n\n\\[\ny^{2}(x)\\;-\\;2(n+1)\\,y(x)\\;+\\;n(n+1)\\;=\\;0,\\qquad x>0.\n\\tag{3}\n\\]\n\nStep 4.  $y$ is forced to be constant.  \nEquation (3) has at most two real roots, therefore the continuous function $y$ must be constant.  Denote this constant by $r$.  Solving (3) yields  \n\n\\[\nr\\;=\\;r_{+}\\;:=\\; (n+1)+\\sqrt{\\,n+1\\,}\\quad\\text{or}\\quad\nr\\;=\\;r_{-}\\;:=\\;(n+1)-\\sqrt{\\,n+1\\,}.\n\\tag{4}\n\\]\n\nStep 5.  Determine $Z$.  \nSince $x\\,Z'/Z = r$ is constant,  \n\n\\[\n\\frac{Z'}{Z}\\;=\\;\\frac{r}{x}\\quad\\Longrightarrow\\quad\n\\ln Z(x)\\;=\\;r\\ln x +C_{0},\n\\]\n\nso  \n\n\\[\nZ(x)=C_{1}\\,x^{\\,r},\\qquad C_{1}>0.\n\\tag{5}\n\\]\n\nStep 6.  Recover $g$.  \nFrom $Z'(x)=x^{\\,n-1}g(x)$ and (5),\n\n\\[\ng(x)\\;=\\;\\frac{Z'(x)}{x^{\\,n-1}}\n\\;=\\;C_{1}\\,r\\,x^{\\,r-1-n+1}\n\\;=\\;C\\,x^{\\,r-n},\n\\quad C:=C_{1}r>0.\n\\tag{6}\n\\]\n\nUsing (4), the two possible power exponents are  \n\n\\[\n\\alpha_{+}=r_{+}-n=1+\\sqrt{\\,n+1\\,},\\qquad\n\\alpha_{-}=r_{-}-n=1-\\sqrt{\\,n+1\\,}.\n\\tag{7}\n\\]\n\nStep 7.  Continuity at $0$.  \nBecause $g$ is required to extend continuously to $0$ with a finite value, we must have $\\lim_{x\\to 0^{+}}g(x)<\\infty$.  \nNow $\\alpha_{+}>1$, so $g(x)=Cx^{\\alpha_{+}}$ tends to $0$ as $x\\to 0^{+}$ and is continuous.  \nBut $\\alpha_{-}=1-\\sqrt{n+1}<0$ for every $n\\ge 2$, so $g(x)=Cx^{\\alpha_{-}}$ blows up at $0$ and violates continuity there.  Hence the negative root must be discarded.\n\nStep 8.  Verification.  \nFinally, for  \n\n\\[\n\\boxed{\\;\ng(x)=C\\,x^{\\,1+\\sqrt{\\,n+1\\,}},\\qquad C>0,\n\\;}\n\\]\n\none checks directly (substituting in (\\star ) and using elementary power-integral formulas) that the identity holds for every $x>0$.\n\nTherefore the family in the box comprises all solutions.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.679482",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher-dimensional generalisation:  The weight $t^{\\,n-1}$ reflects the $(n+1)$-dimensional solid of revolution and forces the solver to work in variable dimension $n\\ge 2$, adding a non-trivial parameter to every step.  \n\n• More elaborate algebra:  Differentiating the weighted integral identity gives a quadratic relation (2) whose coefficients depend on $n$, leading to a parameter-dependent quadratic (3) and hence to root analysis containing the square‐root $\\sqrt{n+1}$.  \n\n• Additional continuity considerations:  Unlike the original problem, for $n\\ge 2$ one root creates an essential singularity at $0$, so the solver must examine asymptotic behaviour carefully in order to reject it.  \n\n• Overall complexity:  The presence of the parameter $n$ and of the weight $t^{\\,n-1}$ forces a more sophisticated chain of substitutions and a careful bookkeeping of exponents.  The argument still culminates in identifying power functions, but the algebraic and analytic hurdles are significantly greater than in the one-dimensional original."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix an integer $n\\ge 2$.  \nFind, with proof, all real-valued functions  \n\n  $g:[0,\\infty)\\longrightarrow[0,\\infty)$  \n\nthat are continuous on $[0,\\infty)$ and strictly positive on $(0,\\infty)$ and satisfy, for every $x>0$,  \n\n\\[\n\\boxed{\\;\n\\int_{0}^{x}\\frac1{\\,n+1\\,}\\,t^{\\,n-1}\\,g^{2}(t)\\,dt\n\\;=\\;\n\\frac1{x^{\\,n}}\\Bigl(\\,\\int_{0}^{x}t^{\\,n-1}\\,g(t)\\,dt\\Bigr)^{2}\n\\;}\n\\tag{\\star }\n\\]\n\n(When $n=1$ this reduces to the original B-4 identity after the change of variables used in the current kernel variant, but here the weight $t^{\\,n-1}$ corresponds to the $(n\\!+\\!1)$-dimensional solid of revolution whose centroid condition generalises the original one.)",
+      "solution": "Step 1.  A convenient primitive.  \nSet  \n\n\\[\nZ(x)\\;=\\;\\int_{0}^{x} t^{\\,n-1}\\,g(t)\\,dt ,\\qquad x\\ge 0 .\n\\]\n\nThen $Z$ is $C^{1}$ on $(0,\\infty)$ and  \n\n\\[\nZ'(x)\\;=\\;x^{\\,n-1}g(x)\\;>\\;0\\quad (x>0).\n\\]\n\nIn terms of $Z$, identity (\\star ) reads  \n\n\\[\n\\int_{0}^{x}t^{\\,n-1}g^{2}(t)\\,dt\n\\;=\\;\n\\frac{n+1}{x^{\\,n}}\\,Z^{2}(x),\\qquad x>0.\n\\tag{1}\n\\]\n\nStep 2.  Differentiate (1).  \nBecause  \n\n\\[\n\\frac{d}{dx}\\int_{0}^{x}t^{\\,n-1}g^{2}(t)\\,dt\n\\;=\\;x^{\\,n-1}g^{2}(x)\\;=\\;\\frac{Z'^2(x)}{x^{\\,n-1}},\n\\]\n\ndifferentiating (1) and multiplying by $x^{\\,n+1}$ gives  \n\n\\[\nx^{2}Z'^{\\,2}(x)\\;=\\;2(n+1)\\,x\\,Z(x)Z'(x)-n(n+1)\\,Z^{2}(x),\\qquad x>0.\n\\tag{2}\n\\]\n\nStep 3.  A quadratic for the logarithmic derivative.  \nPut  \n\n\\[\ny(x)\\;=\\;\\frac{x\\,Z'(x)}{Z(x)}\\qquad (x>0).\n\\]\n\nBecause $Z>0$ on $(0,\\infty)$, $y$ is continuous.  \nDivide (2) by $Z^{2}(x)$ to obtain  \n\n\\[\ny^{2}(x)\\;-\\;2(n+1)\\,y(x)\\;+\\;n(n+1)\\;=\\;0,\\qquad x>0.\n\\tag{3}\n\\]\n\nStep 4.  $y$ is forced to be constant.  \nEquation (3) has at most two real roots, therefore the continuous function $y$ must be constant.  Denote this constant by $r$.  Solving (3) yields  \n\n\\[\nr\\;=\\;r_{+}\\;:=\\; (n+1)+\\sqrt{\\,n+1\\,}\\quad\\text{or}\\quad\nr\\;=\\;r_{-}\\;:=\\;(n+1)-\\sqrt{\\,n+1\\,}.\n\\tag{4}\n\\]\n\nStep 5.  Determine $Z$.  \nSince $x\\,Z'/Z = r$ is constant,  \n\n\\[\n\\frac{Z'}{Z}\\;=\\;\\frac{r}{x}\\quad\\Longrightarrow\\quad\n\\ln Z(x)\\;=\\;r\\ln x +C_{0},\n\\]\n\nso  \n\n\\[\nZ(x)=C_{1}\\,x^{\\,r},\\qquad C_{1}>0.\n\\tag{5}\n\\]\n\nStep 6.  Recover $g$.  \nFrom $Z'(x)=x^{\\,n-1}g(x)$ and (5),\n\n\\[\ng(x)\\;=\\;\\frac{Z'(x)}{x^{\\,n-1}}\n\\;=\\;C_{1}\\,r\\,x^{\\,r-1-n+1}\n\\;=\\;C\\,x^{\\,r-n},\n\\quad C:=C_{1}r>0.\n\\tag{6}\n\\]\n\nUsing (4), the two possible power exponents are  \n\n\\[\n\\alpha_{+}=r_{+}-n=1+\\sqrt{\\,n+1\\,},\\qquad\n\\alpha_{-}=r_{-}-n=1-\\sqrt{\\,n+1\\,}.\n\\tag{7}\n\\]\n\nStep 7.  Continuity at $0$.  \nBecause $g$ is required to extend continuously to $0$ with a finite value, we must have $\\lim_{x\\to 0^{+}}g(x)<\\infty$.  \nNow $\\alpha_{+}>1$, so $g(x)=Cx^{\\alpha_{+}}$ tends to $0$ as $x\\to 0^{+}$ and is continuous.  \nBut $\\alpha_{-}=1-\\sqrt{n+1}<0$ for every $n\\ge 2$, so $g(x)=Cx^{\\alpha_{-}}$ blows up at $0$ and violates continuity there.  Hence the negative root must be discarded.\n\nStep 8.  Verification.  \nFinally, for  \n\n\\[\n\\boxed{\\;\ng(x)=C\\,x^{\\,1+\\sqrt{\\,n+1\\,}},\\qquad C>0,\n\\;}\n\\]\n\none checks directly (substituting in (\\star ) and using elementary power-integral formulas) that the identity holds for every $x>0$.\n\nTherefore the family in the box comprises all solutions.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.532682",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher-dimensional generalisation:  The weight $t^{\\,n-1}$ reflects the $(n+1)$-dimensional solid of revolution and forces the solver to work in variable dimension $n\\ge 2$, adding a non-trivial parameter to every step.  \n\n• More elaborate algebra:  Differentiating the weighted integral identity gives a quadratic relation (2) whose coefficients depend on $n$, leading to a parameter-dependent quadratic (3) and hence to root analysis containing the square‐root $\\sqrt{n+1}$.  \n\n• Additional continuity considerations:  Unlike the original problem, for $n\\ge 2$ one root creates an essential singularity at $0$, so the solver must examine asymptotic behaviour carefully in order to reject it.  \n\n• Overall complexity:  The presence of the parameter $n$ and of the weight $t^{\\,n-1}$ forces a more sophisticated chain of substitutions and a careful bookkeeping of exponents.  The argument still culminates in identifying power functions, but the algebraic and analytic hurdles are significantly greater than in the one-dimensional original."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

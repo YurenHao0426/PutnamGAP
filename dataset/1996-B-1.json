@@ -1,0 +1,95 @@
+{
+  "index": "1996-B-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Define a \\textbf{selfish} set to be a set which has its own\ncardinality (number of elements) as an element. Find, with proof, the\nnumber of subsets of $\\{1, 2, \\ldots, n\\}$ which are \\textit{minimal}\nselfish sets, that is, selfish sets none of whose proper subsets is selfish.",
+  "solution": "Let $[n]$ denote the set $\\{1,2,\\ldots,n\\}$, and let $f_n$ denote the\nnumber of minimal selfish subsets of $[n]$.  Then the number of\nminimal selfish subsets of $[n]$ not containing $n$ is equal to\n$f_{n-1}$.  On the other hand, for any minimal selfish subset of $[n]$\ncontaining $n$, by subtracting 1 from each element, and then taking\naway the element $n-1$ from the set, we obtain a minimal selfish\nsubset of $[n-2]$ (since $1$ and $n$ cannot both occur in a selfish\nset).  Conversely, any minimal selfish subset of $[n-2]$ gives rise to\na minimal selfish subset of $[n]$ containing $n$ by the inverse\nprocedure.  Hence the number of minimal selfish subsets of $[n]$\ncontaining $n$ is $f_{n-2}$.  Thus we obtain $f_n=f_{n-1}+f_{n-2}$.\nSince $f_1=f_2=1$, we have $f_n=F_n$, where $F_n$ denotes the $n$th\nterm of the Fibonacci sequence.",
+  "vars": [
+    "f_n",
+    "f_n-1",
+    "f_n-2",
+    "F_n"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f_n": "minimalcount",
+        "f_n-1": "minimalcountprev",
+        "f_n-2": "minimalcountprevprev",
+        "F_n": "fiboterm",
+        "n": "setsize"
+      },
+      "question": "Define a \\textbf{selfish} set to be a set which has its own\ncardinality (number of elements) as an element. Find, with proof, the\nnumber of subsets of $\\{1, 2, \\ldots, setsize\\}$ which are \\textit{minimal}\nselfish sets, that is, selfish sets none of whose proper subsets is selfish.",
+      "solution": "Let $[setsize]$ denote the set $\\{1,2,\\ldots,setsize\\}$, and let minimalcount denote the\nnumber of minimal selfish subsets of $[setsize]$.  Then the number of\nminimal selfish subsets of $[setsize]$ not containing $setsize$ is equal to\nminimalcountprev.  On the other hand, for any minimal selfish subset of $[setsize]$\ncontaining $setsize$, by subtracting 1 from each element, and then taking\naway the element $setsize-1$ from the set, we obtain a minimal selfish\nsubset of $[setsize-2]$ (since $1$ and $setsize$ cannot both occur in a selfish\nset).  Conversely, any minimal selfish subset of $[setsize-2]$ gives rise to\na minimal selfish subset of $[setsize]$ containing $setsize$ by the inverse\nprocedure.  Hence the number of minimal selfish subsets of $[setsize]$\ncontaining $setsize$ is minimalcountprevprev.  Thus we obtain minimalcount=minimalcountprev+minimalcountprevprev.\nSince $f_1=f_2=1$, we have minimalcount=fiboterm, where fiboterm denotes the $setsize$th\nterm of the Fibonacci sequence."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f_n": "tortoise",
+        "f_n-1": "armadillo",
+        "f_n-2": "crocodile",
+        "F_n": "kangaroo",
+        "n": "sandstone"
+      },
+      "question": "Define a \\textbf{selfish} set to be a set which has its own\ncardinality (number of elements) as an element. Find, with proof, the\nnumber of subsets of $\\{1, 2, \\ldots, sandstone\\}$ which are \\textit{minimal}\nselfish sets, that is, selfish sets none of whose proper subsets is selfish.",
+      "solution": "Let $[sandstone]$ denote the set $\\{1,2,\\ldots,sandstone\\}$, and let $tortoise$ denote the\nnumber of minimal selfish subsets of $[sandstone]$.  Then the number of\nminimal selfish subsets of $[sandstone]$ not containing $sandstone$ is equal to\n$armadillo$.  On the other hand, for any minimal selfish subset of $[sandstone]$\ncontaining $sandstone$, by subtracting $1$ from each element, and then taking\naway the element $sandstone-1$ from the set, we obtain a minimal selfish\nsubset of $[sandstone-2]$ (since $1$ and $sandstone$ cannot both occur in a selfish\nset).  Conversely, any minimal selfish subset of $[sandstone-2]$ gives rise to\na minimal selfish subset of $[sandstone]$ containing $sandstone$ by the inverse\nprocedure.  Hence the number of minimal selfish subsets of $[sandstone]$\ncontaining $sandstone$ is $crocodile$.  Thus we obtain $tortoise=armadillo+crocodile$.\nSince $f_1=f_2=1$, we have $tortoise=kangaroo$, where $kangaroo$ denotes the $sandstone$th\nterm of the Fibonacci sequence."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f_n": "altruisticcount",
+        "f_n-1": "unselfishprev",
+        "f_n-2": "unselfishprevtwo",
+        "F_n": "randomsequence",
+        "n": "undefinedindex"
+      },
+      "question": "Define a \\textbf{selfish} set to be a set which has its own\ncardinality (number of elements) as an element. Find, with proof, the\nnumber of subsets of $\\{1, 2, \\ldots, undefinedindex\\}$ which are \\textit{minimal}\nselfish sets, that is, selfish sets none of whose proper subsets is selfish.",
+      "solution": "Let $[undefinedindex]$ denote the set $\\{1,2,\\ldots,undefinedindex\\}$, and let $altruisticcount$ denote the\nnumber of minimal selfish subsets of $[undefinedindex]$.  Then the number of\nminimal selfish subsets of $[undefinedindex]$ not containing $undefinedindex$ is equal to\n$unselfishprev$.  On the other hand, for any minimal selfish subset of $[undefinedindex]$\ncontaining $undefinedindex$, by subtracting 1 from each element, and then taking\naway the element $undefinedindex-1$ from the set, we obtain a minimal selfish\nsubset of $[undefinedindex-2]$ (since $1$ and $undefinedindex$ cannot both occur in a selfish\nset).  Conversely, any minimal selfish subset of $[undefinedindex-2]$ gives rise to\na minimal selfish subset of $[undefinedindex]$ containing $undefinedindex$ by the inverse\nprocedure.  Hence the number of minimal selfish subsets of $[undefinedindex]$\ncontaining $undefinedindex$ is $unselfishprevtwo$.  Thus we obtain $altruisticcount=unselfishprev+unselfishprevtwo$.\nSince $f_1=f_2=1$, we have $altruisticcount=randomsequence$, where $randomsequence$ denotes the $undefinedindex$th\nterm of the Fibonacci sequence."
+    },
+    "garbled_string": {
+      "map": {
+        "f_n": "mheldtuv",
+        "f_n-1": "yahcijfq",
+        "f_n-2": "wzptrokl",
+        "F_n": "blsjdaow",
+        "n": "qzxwvtnp"
+      },
+      "question": "Define a \\textbf{selfish} set to be a set which has its own\ncardinality (number of elements) as an element. Find, with proof, the\nnumber of subsets of $\\{1, 2, \\ldots, qzxwvtnp\\}$ which are \\textit{minimal}\nselfish sets, that is, selfish sets none of whose proper subsets is selfish.",
+      "solution": "Let $[qzxwvtnp]$ denote the set $\\{1,2,\\ldots,qzxwvtnp\\}$, and let $mheldtuv$ denote the\nnumber of minimal selfish subsets of $[qzxwvtnp]$.  Then the number of\nminimal selfish subsets of $[qzxwvtnp]$ not containing $qzxwvtnp$ is equal to\n$yahcijfq$.  On the other hand, for any minimal selfish subset of $[qzxwvtnp]$\ncontaining $qzxwvtnp$, by subtracting 1 from each element, and then taking\naway the element $qzxwvtnp-1$ from the set, we obtain a minimal selfish\nsubset of $[qzxwvtnp-2]$ (since $1$ and $qzxwvtnp$ cannot both occur in a selfish\nset).  Conversely, any minimal selfish subset of $[qzxwvtnp-2]$ gives rise to\na minimal selfish subset of $[qzxwvtnp]$ containing $qzxwvtnp$ by the inverse\nprocedure.  Hence the number of minimal selfish subsets of $[qzxwvtnp]$\ncontaining $qzxwvtnp$ is $wzptrokl$.  Thus we obtain $mheldtuv=yahcijfq+wzptrokl$.\nSince $f_1=f_2=1$, we have $mheldtuv=blsjdaow$, where $blsjdaow$ denotes the $qzxwvtnp$th\nterm of the Fibonacci sequence."
+    },
+    "kernel_variant": {
+      "question": "For a positive integer $n$ let\n$$O_n=\bigl\\{1,3,5,\\ldots,2n-1\\bigr\\}$$\nbe the set of the first $n$ odd positive integers.  Call a subset $S\\subseteq O_n$ \nself-aware if it contains its own cardinality, i.e.\n$|S|\\in S.$\nSuch a set is minimal if none of its proper subsets is self-aware.\nDetermine, with proof, the number $f_n$ of minimal self-aware subsets of $O_n$. ",
+      "solution": "We wish to count, for each positive integer n, the number f_n of minimal self-aware subsets S of\n   O_n={1,3,5,\\ldots ,2n-1},\nwhere ``self-aware'' means |S|\\in S, and ``minimal'' means no proper subset of S is self-aware.\n\n1.  A self-aware S must have size k with k\\in S.  Since S\\subseteq O_n consists of odd integers, k must be odd and satisfy 1\\leq k\\leq n.\n\n2.  Minimality forces S to contain no smaller odd m<k.  Indeed, if m<k and m\\in S, then since |S|=k>m we can pick any other m-1 elements of S to form a proper subset T of S of size m still containing m, so T would be self-aware---a contradiction.  Hence S\\cap {1,3,\\ldots ,k-2}=\\emptyset .\n\n3.  Thus a minimal S of size k must consist of k itself together with k-1 elements chosen from the larger odds\n     {k+2, k+4,\\ldots ,2n-1}.\n\n4.  How many choices are there?  The set {k+2,k+4,\\ldots ,2n-1} has\n     ((2n-1)-(k+2))/2+1 = (2n-k-1)/2 = n - (k+1)/2\n   elements.  We must choose k-1 of these to complete S.  Hence for each odd k\\leq n the number of minimal self-aware S of size k is\n     C(n-(k+1)/2, k-1).\n\n5.  Summing over all odd k gives\n     f_n = \\sum _{1\\leq k\\leq n, k odd} C\\bigl(n-(k+1)/2, k-1\\bigr).\n   Setting k=2j+1 (so j=0,1,\\ldots ,\\lfloor (n-1)/2\\rfloor ) we have (k+1)/2=j+1 and k-1=2j, giving the closed form\n     f_n = \\sum _{j=0}^{\\lfloor (n-1)/2\\rfloor } C(n-(j+1), 2j)\n          = \\sum _{j=0}^{\\lfloor (n-1)/2\\rfloor } C(n-j-1, 2j).\n\n6.  Quick checks:\n   n=1: j=0 only, C(1-0-1,0)=C(0,0)=1;\n   n=2: j=0 only, C(2-0-1,0)=1;\n   n=3: j=0,1 gives 1+0=1;\n   n=4: j=0,1 gives 1+1=2;\n   n=5: 1+3+0=4;\n   etc.\n\nHence the number of minimal self-aware subsets of O_n is\n   f_n = \\sum _{j=0}^{\\lfloor (n-1)/2\\rfloor } C(n-j-1,2j)\n as claimed.",
+      "_meta": {
+        "core_steps": [
+          "Split minimal-selfish subsets of [n] by whether they contain the element n.",
+          "Note: absence of n ⇒ same object is a minimal-selfish subset of [n−1] (count f_{n−1}).",
+          "Presence of n ⇒ via the bijection S ↦ (S−1) \\ {n−1}, relate them to minimal-selfish subsets of [n−2] (count f_{n−2}); this uses that 1 and n cannot coexist.",
+          "Combine the two cases to obtain the recurrence f_n = f_{n−1} + f_{n−2} with bases f_1 = f_2 = 1, yielding Fibonacci numbers."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Which distinguished element is used for the initial case split (currently the maximum element).",
+            "original": "n"
+          },
+          "slot2": {
+            "description": "Indexing of the universal set; any contiguous block of integers of length n would serve the same purpose.",
+            "original": "{1,2,…,n}"
+          },
+          "slot3": {
+            "description": "Exact translation applied in the bijection (presently ‘subtract 1’ and delete the image of n); any fixed shift that removes the pivot element and shortens the universe by 2 keeps the argument intact.",
+            "original": "subtract 1 from every element and delete n−1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

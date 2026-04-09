@@ -1,0 +1,139 @@
+{
+  "index": "2017-B-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $L_1$ and $L_2$ be distinct lines in the plane. Prove that $L_1$ and $L_2$ intersect if and only if, for every\nreal number $\\lambda\\neq 0$ and every point $P$ not on $L_1$ or $L_2$, there exist points $A_1$ on $L_1$ and $A_2$\non $L_2$ such that $\\overrightarrow{PA_2} = \\lambda \\overrightarrow{PA_1}$.",
+  "solution": "Recall that $L_1$ and $L_2$ intersect if and only if they are not parallel. \nIn one direction, suppose that $L_1$ and $L_2$ intersect. Then for any $P$ and $\\lambda$, the dilation (homothety) of the plane by a factor of $\\lambda$ with center $P$ carries $L_1$ to another line parallel to $L_1$ and hence not parallel to $L_2$. Let $A_2$ be the unique intersection of $L_2$ with the image of $L_1$, and let $A_1$ be the point on $L_1$ whose image under the dilation is $A_2$; then $\\overrightarrow{PA_2} = \\lambda \\overrightarrow{PA_1}$.\n\nIn the other direction, suppose that $L_1$ and $L_2$ are parallel. Let $P$ be any point in the region between $L_1$ and $L_2$ and take $\\lambda = 1$. Then for any point $A_1$ on $L_1$ and any point $A_2$ on $L_2$, the vectors \n$\\overrightarrow{PA_1}$ and $\\overrightarrow{PA_2}$ have components perpendicular to $L_1$ pointing in opposite directions; in particular, the two vectors cannot be equal.\n\n\\noindent\n\\textbf{Reinterpretation:}\n(by Karl Mahlburg)\nIn terms of vectors, we may find vectors $\\vec{v}_1, \\vec{v}_2$ and scalars $c_1, c_2$ such that\n$L_i = \\{\\vec{x} \\in \\mathbb{R}^2: \\vec{v}_i \\cdot \\vec{x} = c_i\\}$.\nThe condition in the problem amounts to finding a vector $\\vec{w}$ and a scalar $t$ such that\n$P + \\vec{w} \\in L_1, P + \\lambda w \\in L_2$; this comes down to solving the linear system\n\\begin{align*}\n\\vec{v}_1 \\cdot (P + \\vec{w}) &= c_1 \\\\\n\\vec{v}_2 \\cdot (P + \\lambda \\vec{w}) &= c_2\n\\end{align*}\nwhich is nondegenerate and solvable for all $\\lambda$ if and only if $\\vec{v}_1, \\vec{v}_2$ are linearly independent.",
+  "vars": [
+    "A_1",
+    "A_2",
+    "w",
+    "t",
+    "x"
+  ],
+  "params": [
+    "L_1",
+    "L_2",
+    "P",
+    "\\\\lambda",
+    "v_1",
+    "v_2",
+    "v_i",
+    "c_1",
+    "c_2",
+    "i"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A_1": "pointaone",
+        "A_2": "pointatwo",
+        "w": "shiftvec",
+        "t": "scalarpar",
+        "x": "planevar",
+        "L_1": "lineone",
+        "L_2": "linetwo",
+        "P": "pointref",
+        "\\lambda": "scalalmb",
+        "v_1": "vectorone",
+        "v_2": "vectortwo",
+        "v_i": "vectorind",
+        "c_1": "constone",
+        "c_2": "consttwo"
+      },
+      "question": "Let $lineone$ and $linetwo$ be distinct lines in the plane. Prove that $lineone$ and $linetwo$ intersect if and only if, for every\nreal number $scalalmb\\neq 0$ and every point $pointref$ not on $lineone$ or $linetwo$, there exist points $pointaone$ on $lineone$ and $pointatwo$\non $linetwo$ such that $\\overrightarrow{pointref\\,pointatwo} = scalalmb\\,\\overrightarrow{pointref\\,pointaone}$. ",
+      "solution": "Recall that $lineone$ and $linetwo$ intersect if and only if they are not parallel. \nIn one direction, suppose that $lineone$ and $linetwo$ intersect. Then for any $pointref$ and $scalalmb$, the dilation (homothety) of the plane by a factor of $scalalmb$ with center $pointref$ carries $lineone$ to another line parallel to $lineone$ and hence not parallel to $linetwo$. Let $pointatwo$ be the unique intersection of $linetwo$ with the image of $lineone$, and let $pointaone$ be the point on $lineone$ whose image under the dilation is $pointatwo$; then $\\overrightarrow{pointref\\,pointatwo} = scalalmb\\,\\overrightarrow{pointref\\,pointaone}$. \n\nIn the other direction, suppose that $lineone$ and $linetwo$ are parallel. Let $pointref$ be any point in the region between $lineone$ and $linetwo$ and take $scalalmb = 1$. Then for any point $pointaone$ on $lineone$ and any point $pointatwo$ on $linetwo$, the vectors \n$\\overrightarrow{pointref\\,pointaone}$ and $\\overrightarrow{pointref\\,pointatwo}$ have components perpendicular to $lineone$ pointing in opposite directions; in particular, the two vectors cannot be equal.\n\n\\noindent\n\\textbf{Reinterpretation:}\n(by Karl Mahlburg)\nIn terms of vectors, we may find vectors $\\vec{vectorone}, \\vec{vectortwo}$ and scalars $constone, consttwo$ such that\n$L_i = \\{\\vec{planevar} \\in \\mathbb{R}^2: \\vec{vectorind} \\cdot \\vec{planevar} = c_i\\}$. The condition in the problem amounts to finding a vector $\\vec{shiftvec}$ and a scalar $scalarpar$ such that\n$pointref + \\vec{shiftvec} \\in lineone,\\; pointref + scalalmb\\,\\vec{shiftvec} \\in linetwo$; this comes down to solving the linear system\n\\begin{align*}\n\\vec{vectorone} \\cdot (pointref + \\vec{shiftvec}) &= constone \\\\\n\\vec{vectortwo} \\cdot (pointref + scalalmb\\,\\vec{shiftvec}) &= consttwo\n\\end{align*}\nwhich is nondegenerate and solvable for all $scalalmb$ if and only if $\\vec{vectorone}, \\vec{vectortwo}$ are linearly independent. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A_1": "pineapple",
+        "A_2": "watermelon",
+        "w": "butterfly",
+        "t": "chocolate",
+        "x": "strawberry",
+        "L_1": "lighthouse",
+        "L_2": "basketball",
+        "P": "pinecones",
+        "\\lambda": "vacuuming",
+        "v_1": "tangerine",
+        "v_2": "blackboard",
+        "v_i": "fireflies",
+        "c_1": "bookshelf",
+        "c_2": "playground"
+      },
+      "question": "Let $lighthouse$ and $basketball$ be distinct lines in the plane. Prove that $lighthouse$ and $basketball$ intersect if and only if, for every\nreal number $vacuuming\\neq 0$ and every point $pinecones$ not on $lighthouse$ or $basketball$, there exist points $pineapple$ on $lighthouse$ and $watermelon$\non $basketball$ such that $\\overrightarrow{pineconeswatermelon} = vacuuming \\overrightarrow{pineconespineapple}$.",
+      "solution": "Recall that $lighthouse$ and $basketball$ intersect if and only if they are not parallel. \nIn one direction, suppose that $lighthouse$ and $basketball$ intersect. Then for any $pinecones$ and $vacuuming$, the dilation (homothety) of the plane by a factor of $vacuuming$ with center $pinecones$ carries $lighthouse$ to another line parallel to $lighthouse$ and hence not parallel to $basketball$. Let $watermelon$ be the unique intersection of $basketball$ with the image of $lighthouse$, and let $pineapple$ be the point on $lighthouse$ whose image under the dilation is $watermelon$; then $\\overrightarrow{pineconeswatermelon} = vacuuming \\overrightarrow{pineconespineapple}$. \n\nIn the other direction, suppose that $lighthouse$ and $basketball$ are parallel. Let $pinecones$ be any point in the region between $lighthouse$ and $basketball$ and take $vacuuming = 1$. Then for any point $pineapple$ on $lighthouse$ and any point $watermelon$ on $basketball$, the vectors \n$\\overrightarrow{pineconespineapple}$ and $\\overrightarrow{pineconeswatermelon}$ have components perpendicular to $lighthouse$ pointing in opposite directions; in particular, the two vectors cannot be equal.\n\n\\noindent\n\\textbf{Reinterpretation:}\n(by Karl Mahlburg)\nIn terms of vectors, we may find vectors $\\vec{tangerine}, \\vec{blackboard}$ and scalars $bookshelf, playground$ such that\n$L_i = \\{\\vec{strawberry} \\in \\mathbb{R}^2: \\vec{fireflies} \\cdot \\vec{strawberry} = c_i\\}$. \nThe condition in the problem amounts to finding a vector $\\vec{butterfly}$ and a scalar $chocolate$ such that\n$pinecones + \\vec{butterfly} \\in lighthouse,\\; pinecones + vacuuming\\, butterfly \\in basketball$; this comes down to solving the linear system\n\\begin{align*}\n\\vec{tangerine} \\cdot (pinecones + \\vec{butterfly}) &= bookshelf \\\\\n\\vec{blackboard} \\cdot (pinecones + vacuuming \\vec{butterfly}) &= playground\n\\end{align*}\nwhich is nondegenerate and solvable for all $vacuuming$ if and only if $\\vec{tangerine}, \\vec{blackboard}$ are linearly independent."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A_1": "remoteplace",
+        "A_2": "proximalplace",
+        "w": "staticness",
+        "t": "steadfast",
+        "x": "fixedspot",
+        "L_1": "circleone",
+        "L_2": "circletwo",
+        "P": "straightline",
+        "\\lambda": "zerovalues",
+        "v_1": "tangentone",
+        "v_2": "tangenttwo",
+        "v_i": "tangentany",
+        "c_1": "varyvalueone",
+        "c_2": "varyvaluetwo",
+        "i": "fixedness"
+      },
+      "question": "Let $circleone$ and $circletwo$ be distinct lines in the plane. Prove that $circleone$ and $circletwo$ intersect if and only if, for every\nreal number $zerovalues\\neq 0$ and every point $straightline$ not on $circleone$ or $circletwo$, there exist points $remoteplace$ on $circleone$ and $proximalplace$\non $circletwo$ such that $\\overrightarrow{straightlineproximalplace} = zerovalues \\overrightarrow{straightlineremoteplace}$.",
+      "solution": "Recall that $circleone$ and $circletwo$ intersect if and only if they are not parallel. \nIn one direction, suppose that $circleone$ and $circletwo$ intersect. Then for any $straightline$ and $zerovalues$, the dilation (homothety) of the plane by a factor of $zerovalues$ with center $straightline$ carries $circleone$ to another line parallel to $circleone$ and hence not parallel to $circletwo$. Let $proximalplace$ be the unique intersection of $circletwo$ with the image of $circleone$, and let $remoteplace$ be the point on $circleone$ whose image under the dilation is $proximalplace$; then $\\overrightarrow{straightlineproximalplace} = zerovalues \\overrightarrow{straightlineremoteplace}$. \n\nIn the other direction, suppose that $circleone$ and $circletwo$ are parallel. Let $straightline$ be any point in the region between $circleone$ and $circletwo$ and take $zerovalues = 1$. Then for any point $remoteplace$ on $circleone$ and any point $proximalplace$ on $circletwo$, the vectors \n$\\overrightarrow{straightlineremoteplace}$ and $\\overrightarrow{straightlineproximalplace}$ have components perpendicular to $circleone$ pointing in opposite directions; in particular, the two vectors cannot be equal.\n\n\\noindent\n\\textbf{Reinterpretation:}\n(by Karl Mahlburg)\nIn terms of vectors, we may find vectors $\\vec{tangentone}, \\vec{tangenttwo}$ and scalars $varyvalueone, varyvaluetwo$ such that\n$L_i = \\{\\vec{fixedspot} \\in \\mathbb{R}^2: \\vec{tangentany} \\cdot \\vec{fixedspot} = c_i\\}$.\nThe condition in the problem amounts to finding a vector $\\vec{staticness}$ and a scalar steadfast such that\n$straightline + \\vec{staticness} \\in circleone,\\; straightline + zerovalues \\vec{staticness} \\in circletwo$; this comes down to solving the linear system\n\\begin{align*}\n\\vec{tangentone} \\cdot (straightline + \\vec{staticness}) &= varyvalueone \\\\\n\\vec{tangenttwo} \\cdot (straightline + zerovalues \\vec{staticness}) &= varyvaluetwo\n\\end{align*}\nwhich is nondegenerate and solvable for all $zerovalues$ if and only if $\\vec{tangentone}, \\vec{tangenttwo}$ are linearly independent."
+    },
+    "garbled_string": {
+      "map": {
+        "A_1": "lqzbfrnc",
+        "A_2": "mkjsdptq",
+        "w": "zhrqenbm",
+        "t": "pxfldkva",
+        "x": "rctmhswo",
+        "L_1": "qvxnwder",
+        "L_2": "sfpjkgam",
+        "P": "vgslhqpo",
+        "\\lambda": "\\ptxqzvma",
+        "v_1": "ndwlqzfx",
+        "v_2": "ckjrsmhb",
+        "v_i": "dprgtxlu",
+        "c_1": "hrxbdnqe",
+        "c_2": "jzqlskug",
+        "i": "gfhmlnsa"
+      },
+      "question": "Let $qvxnwder$ and $sfpjkgam$ be distinct lines in the plane. Prove that $qvxnwder$ and $sfpjkgam$ intersect if and only if, for every\nreal number $\\ptxqzvma\\neq 0$ and every point $vgslhqpo$ not on $qvxnwder$ or $sfpjkgam$, there exist points $lqzbfrnc$ on $qvxnwder$ and $mkjsdptq$ on $sfpjkgam$ such that $\\overrightarrow{vgslhqpomkjsdptq} = \\ptxqzvma \\overrightarrow{vgslhqpolqzbfrnc}$.",
+      "solution": "Recall that $qvxnwder$ and $sfpjkgam$ intersect if and only if they are not parallel. \nIn one direction, suppose that $qvxnwder$ and $sfpjkgam$ intersect. Then for any $vgslhqpo$ and $\\ptxqzvma$, the dilation (homothety) of the plane by a factor of $\\ptxqzvma$ with center $vgslhqpo$ carries $qvxnwder$ to another line parallel to $qvxnwder$ and hence not parallel to $sfpjkgam$. Let $mkjsdptq$ be the unique intersection of $sfpjkgam$ with the image of $qvxnwder$, and let $lqzbfrnc$ be the point on $qvxnwder$ whose image under the dilation is $mkjsdptq$; then $\\overrightarrow{vgslhqpomkjsdptq} = \\ptxqzvma \\overrightarrow{vgslhqpolqzbfrnc}$. \n\nIn the other direction, suppose that $qvxnwder$ and $sfpjkgam$ are parallel. Let $vgslhqpo$ be any point in the region between $qvxnwder$ and $sfpjkgam$ and take $\\ptxqzvma = 1$. Then for any point $lqzbfrnc$ on $qvxnwder$ and any point $mkjsdptq$ on $sfpjkgam$, the vectors \n$\\overrightarrow{vgslhqpolqzbfrnc}$ and $\\overrightarrow{vgslhqpomkjsdptq}$ have components perpendicular to $qvxnwder$ pointing in opposite directions; in particular, the two vectors cannot be equal. \n\n\\noindent\n\\textbf{Reinterpretation:}\n(by Karl Mahlburg)\nIn terms of vectors, we may find vectors $\\vec{ndwlqzfx}, \\vec{ckjrsmhb}$ and scalars $hrxbdnqe, jzqlskug$ such that\n$L_{gfhmlnsa} = \\{\\vec{rctmhswo} \\in \\mathbb{R}^2: \\vec{dprgtxlu} \\cdot \\vec{rctmhswo} = c_{gfhmlnsa}\\}$. The condition in the problem amounts to finding a vector $\\vec{zhrqenbm}$ and a scalar $pxfldkva$ such that\n$vgslhqpo + \\vec{zhrqenbm} \\in qvxnwder, \\; vgslhqpo + \\ptxqzvma zhrqenbm \\in sfpjkgam$; this comes down to solving the linear system\n\\begin{align*}\n\\vec{ndwlqzfx} \\cdot (vgslhqpo + \\vec{zhrqenbm}) &= hrxbdnqe \\\\\n\\vec{ckjrsmhb} \\cdot (vgslhqpo + \\ptxqzvma \\vec{zhrqenbm}) &= jzqlskug\n\\end{align*}\nwhich is nondegenerate and solvable for all $\\ptxqzvma$ if and only if $\\vec{ndwlqzfx}, \\vec{ckjrsmhb}$ are linearly independent."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\ell_1\\) and \\(\\ell_2\\) be two distinct lines in the Euclidean plane.  Prove that \\(\\ell_1\\) and \\(\\ell_2\\) intersect if and only if, for every real number \\(\\lambda\\neq 0\\) and every point \\(P\\) that does not lie on either line, there exist points \\(A_1\\in\\ell_1\\) and \\(A_2\\in\\ell_2\\) satisfying\n\\[\n\\overrightarrow{PA_2}=\\lambda\\,\\overrightarrow{PA_1}.\n\\]",
+      "solution": "Proof.  Recall that two distinct lines intersect if and only if they are not parallel.  We prove the given condition holds for all \\lambda \\neq 0 and all P\\notin \\ell _1\\cup \\ell _2 precisely when \\ell _1 and \\ell _2 intersect.  \n\n(\\Rightarrow )  Assume \\ell _1 and \\ell _2 meet at some point Q.  Let P be any point not on either line, and let \\lambda \\neq 0 be any real number.  Consider the dilation (homothety) H with center P and scale factor \\lambda .  Since P\\notin \\ell _1, the image H(\\ell _1) is a line parallel to \\ell _1.  But \\ell _1 and \\ell _2 intersect, so they are not parallel; hence H(\\ell _1) is also not parallel to \\ell _2 and meets \\ell _2 in exactly one point, call it A_2.  Let A_1=H^{-1}(A_2); then A_1 lies on \\ell _1 and by definition of the dilation\n    \n    \n    PA_2 = H(PA_1) = \\lambda \\cdot PA_1,  \n\nso we have found A_1\\in \\ell _1 and A_2\\in \\ell _2 with the required vector equality.  \n\n(\\Leftarrow )  Conversely, suppose \\ell _1\\parallel \\ell _2.  Choose a unit normal vector n perpendicular to both lines.  Then each line \\ell _i has a signed distance d_i>0 from P measured in the direction n when P lies on the same side of both lines.  In particular, for every A_1\\in \\ell _1 we have n\\cdot PA_1=d_1>0, and for every A_2\\in \\ell _2 we have n\\cdot PA_2=d_2>0, where d_1\\neq d_2 but both positive.  Now set \\lambda =-2.  If we had PA_2=\\lambda \\cdot PA_1=-2\\cdot PA_1, then taking the inner product with n gives\n\n    n\\cdot (PA_2) = d_2 > 0,\n    n\\cdot (-2\\cdot PA_1) = -2\\cdot d_1 < 0,\n\na contradiction.  Hence no such A_1,A_2 can exist when \\ell _1\\parallel \\ell _2 and our choice of P,\\lambda .  \n\nTherefore the condition holds for all \\lambda \\neq 0 and all P\\notin \\ell _1\\cup \\ell _2 exactly when \\ell _1 and \\ell _2 are not parallel, i.e. they intersect.  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Non-parallel ⇔ lines intersect (direction vectors independent).",
+          "For intersecting lines: apply homothety with center P and factor λ to carry L₁ to a line parallel to L₁ but not to L₂; their intersection gives A₂, its pre-image gives A₁, yielding 𝑷A₂ = λ·𝑷A₁.",
+          "For parallel lines: pick a convenient point P and fix some non-zero λ; perpendicular components of 𝑷A₁ and 𝑷A₂ cannot align, so equality fails.",
+          "Thus the given vector condition holds for every λ, P iff the lines are not parallel, i.e. they intersect."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Specific non-zero scale chosen in the ‘parallel lines’ counter-example.",
+            "original": "λ = 1"
+          },
+          "slot2": {
+            "description": "Location of the point used in the counter-example (any point that is not on either line, e.g. between the two parallels).",
+            "original": "P taken in the region between L₁ and L₂"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

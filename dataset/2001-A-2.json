@@ -1,0 +1,100 @@
+{
+  "index": "2001-A-2",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "You have coins $C_1,C_2,\\ldots,C_n$.  For each $k$, $C_k$ is biased so\nthat, when tossed, it has probability $1/(2k+1)$ of falling heads.\nIf the $n$ coins are tossed, what is the probability that the number of\nheads is odd?  Express the answer as a rational function of $n$.",
+  "solution": "Let $P_n$ denote the desired probability.  Then $P_1=1/3$, and, for\n$n>1$,\n\\begin{align*}\n P_n &= \\left(\\frac{2n}{2n+1}\\right) P_{n-1}\n        +\\left(\\frac{1}{2n+1}\\right) (1-P_{n-1}) \\\\\n       &= \\left(\\frac{2n-1}{2n+1}\\right)P_{n-1} + \\frac{1}{2n+1}.\n\\end{align*}\nThe recurrence yields $P_2=2/5$, $P_3=3/7$, and by a simple\ninduction, one then checks that for general $n$ one has $P_n=n/(2n+1)$.\n\nNote: Richard Stanley points out the following noninductive argument.\nPut $f(x) = \\prod_{k=1}^n (x+2k)/(2k+1)$; then the coefficient of\n$x^i$ in $f(x)$ is the probability of getting exactly $i$ heads. Thus\nthe desired number is $(f(1) - f(-1))/2$, and both values of $f$ can\nbe computed directly: $f(1) = 1$, and\n\\[\nf(-1) = \\frac{1}{3} \\times \\frac{3}{5} \\times \\cdots \\times \\frac{2n-1}{2n+1}\n= \\frac{1}{2n+1}.\n\\]",
+  "vars": [
+    "C_k",
+    "k",
+    "P_n",
+    "x",
+    "f",
+    "i"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "C_k": "coinbias",
+        "k": "indexk",
+        "P_n": "oddheads",
+        "x": "variablex",
+        "f": "polyprod",
+        "i": "indexi",
+        "n": "totalnum"
+      },
+      "question": "You have coins $C_1,C_2,\\ldots,C_totalnum$.  For each $indexk$, $coinbias$ is biased so\nthat, when tossed, it has probability $1/(2indexk+1)$ of falling heads.\nIf the $totalnum$ coins are tossed, what is the probability that the number of\nheads is odd?  Express the answer as a rational function of $totalnum$.",
+      "solution": "Let $oddheads$ denote the desired probability.  Then $P_1=1/3$, and, for\n$totalnum>1$,\n\\begin{align*}\n oddheads &= \\left(\\frac{2totalnum}{2totalnum+1}\\right) P_{totalnum-1}\n        +\\left(\\frac{1}{2totalnum+1}\\right) (1-P_{totalnum-1}) \\\\\n       &= \\left(\\frac{2totalnum-1}{2totalnum+1}\\right)P_{totalnum-1} + \\frac{1}{2totalnum+1}.\n\\end{align*}\nThe recurrence yields $P_2=2/5$, $P_3=3/7$, and by a simple\ninduction, one then checks that for general $totalnum$ one has $oddheads=totalnum/(2totalnum+1)$.\n\nNote: Richard Stanley points out the following noninductive argument.\nPut $polyprod(variablex) = \\prod_{indexk=1}^{totalnum} (variablex+2indexk)/(2indexk+1)$; then the coefficient of\n$variablex^{indexi}$ in $polyprod(variablex)$ is the probability of getting exactly $indexi$ heads. Thus\nthe desired number is $(polyprod(1) - polyprod(-1))/2$, and both values of $polyprod$ can\nbe computed directly: $polyprod(1) = 1$, and\n\\[\npolyprod(-1) = \\frac{1}{3} \\times \\frac{3}{5} \\times \\cdots \\times \\frac{2totalnum-1}{2totalnum+1}\n= \\frac{1}{2totalnum+1}.\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "C_k": "sunflower",
+        "k": "tornadoes",
+        "P_n": "pineapple",
+        "x": "zeppelin",
+        "f": "buttercup",
+        "i": "galaxyway",
+        "n": "strawberry"
+      },
+      "question": "You have coins $sunflower_1,sunflower_2,\\ldots,sunflower_{strawberry}$.  For each $tornadoes$, $sunflower_{tornadoes}$ is biased so that, when tossed, it has probability $1/(2tornadoes+1)$ of falling heads.  If the $strawberry$ coins are tossed, what is the probability that the number of heads is odd?  Express the answer as a rational function of $strawberry$.",
+      "solution": "Let $pineapple$ denote the desired probability.  Then $pineapple_1=1/3$, and, for $strawberry>1$,\\begin{align*} pineapple &= \\left(\\frac{2strawberry}{2strawberry+1}\\right) pineapple_{strawberry-1} +\\left(\\frac{1}{2strawberry+1}\\right) (1-pineapple_{strawberry-1}) \\\\ &= \\left(\\frac{2strawberry-1}{2strawberry+1}\\right)pineapple_{strawberry-1} + \\frac{1}{2strawberry+1}.\\end{align*}The recurrence yields $pineapple_2=2/5$, $pineapple_3=3/7$, and by a simple induction, one then checks that for general $strawberry$ one has $pineapple=strawberry/(2strawberry+1)$.\\n\\nNote: Richard Stanley points out the following noninductive argument. Put $buttercup(zeppelin) = \\prod_{tornadoes=1}^{strawberry} (zeppelin+2tornadoes)/(2tornadoes+1)$; then the coefficient of $zeppelin^{galaxyway}$ in $buttercup(zeppelin)$ is the probability of getting exactly $galaxyway$ heads. Thus the desired number is $(buttercup(1) - buttercup(-1))/2$, and both values of $buttercup$ can be computed directly: $buttercup(1) = 1$, and\\[ buttercup(-1) = \\frac{1}{3} \\times \\frac{3}{5} \\times \\cdots \\times \\frac{2strawberry-1}{2strawberry+1} = \\frac{1}{2strawberry+1}. \\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "C_k": "paperbill",
+        "k": "aggregate",
+        "P_n": "certainty",
+        "x": "knownvalue",
+        "f": "malfunction",
+        "i": "nonecount",
+        "n": "singular"
+      },
+      "question": "You have coins $paperbill_1,paperbill_2,\\ldots,paperbill_{\\singular}$.  For each $aggregate$, $paperbill_{aggregate}$ is biased so\nthat, when tossed, it has probability $1/(2aggregate+1)$ of falling heads.\nIf the $\\singular$ coins are tossed, what is the probability that the number of\nheads is odd?  Express the answer as a rational function of $\\singular$.",
+      "solution": "Let $certainty_{\\singular}$ denote the desired probability.  Then $certainty_1=1/3$, and, for $\\singular>1$,\n\\begin{align*}\n certainty_{\\singular} &= \\left(\\frac{2\\singular}{2\\singular+1}\\right) certainty_{\\singular-1}\n        +\\left(\\frac{1}{2\\singular+1}\\right) (1-certainty_{\\singular-1}) \\\\\n       &= \\left(\\frac{2\\singular-1}{2\\singular+1}\\right)certainty_{\\singular-1} + \\frac{1}{2\\singular+1}.\n\\end{align*}\nThe recurrence yields $certainty_2=2/5$, $certainty_3=3/7$, and by a simple\ninduction, one then checks that for general $\\singular$ one has $certainty_{\\singular}=\\singular/(2\\singular+1)$.\n\nNote: Richard Stanley points out the following noninductive argument.\nPut $malfunction(knownvalue) = \\prod_{aggregate=1}^{\\singular} (knownvalue+2aggregate)/(2aggregate+1)$; then the coefficient of\n$knownvalue^{nonecount}$ in $malfunction(knownvalue)$ is the probability of getting exactly $nonecount$ heads. Thus\nthe desired number is $(malfunction(1) - malfunction(-1))/2$, and both values of $malfunction$ can\nbe computed directly: $malfunction(1) = 1$, and\n\\[\nmalfunction(-1) = \\frac{1}{3} \\times \\frac{3}{5} \\times \\cdots \\times \\frac{2\\singular-1}{2\\singular+1}\n= \\frac{1}{2\\singular+1}.\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "C_k": "dkmqsevr",
+        "k": "zotnwhpa",
+        "P_n": "gkrsyaql",
+        "x": "foajmdpu",
+        "f": "qlrvznie",
+        "i": "khspweot",
+        "n": "tuvqarmb"
+      },
+      "question": "You have coins $C_1,C_2,\\ldots,C_{tuvqarmb}$.  For each $zotnwhpa$, $dkmqsevr$ is biased so\nthat, when tossed, it has probability $1/(2zotnwhpa+1)$ of falling heads.\nIf the $tuvqarmb$ coins are tossed, what is the probability that the number of\nheads is odd?  Express the answer as a rational function of $tuvqarmb$.",
+      "solution": "Let $gkrsyaql$ denote the desired probability.  Then $P_1=1/3$, and, for\n$tuvqarmb>1$,\n\\begin{align*}\n gkrsyaql &= \\left(\\frac{2tuvqarmb}{2tuvqarmb+1}\\right) P_{tuvqarmb-1}\n        +\\left(\\frac{1}{2tuvqarmb+1}\\right) (1-P_{tuvqarmb-1}) \\\\\n       &= \\left(\\frac{2tuvqarmb-1}{2tuvqarmb+1}\\right)P_{tuvqarmb-1} + \\frac{1}{2tuvqarmb+1}.\n\\end{align*}\nThe recurrence yields $P_2=2/5$, $P_3=3/7$, and by a simple\ninduction, one then checks that for general $tuvqarmb$ one has $gkrsyaql=tuvqarmb/(2tuvqarmb+1)$.\n\nNote: Richard Stanley points out the following noninductive argument.\nPut $qlrvznie(foajmdpu) = \\prod_{zotnwhpa=1}^{tuvqarmb} (foajmdpu+2zotnwhpa)/(2zotnwhpa+1)$; then the coefficient of\n$foajmdpu^{khspweot}$ in $qlrvznie(foajmdpu)$ is the probability of getting exactly $khspweot$ heads. Thus\nthe desired number is $(qlrvznie(1) - qlrvznie(-1))/2$, and both values of $qlrvznie$ can\nbe computed directly: $qlrvznie(1) = 1$, and\n\\[\nqlrvznie(-1) = \\frac{1}{3} \\times \\frac{3}{5} \\times \\cdots \\times \\frac{2tuvqarmb-1}{2tuvqarmb+1}\n= \\frac{1}{2tuvqarmb+1}.\n\\]"
+    },
+    "kernel_variant": {
+      "question": "For every integer k with 1 \\leq  k \\leq  n you are given k indistinguishable biased coins of type k.  \nEach coin of type k shows heads with probability\n\n  p_k = 1 / (k + 2).\n\nThus the total number of coins tossed is  \n\n  N(n) = 1 + 2 + \\cdots  + n = n(n + 1)/2.\n\nAll N(n) coins are tossed simultaneously and independently.  \nDetermine, in closed form, the probability P_n that the total number of heads obtained is even.  (A ``closed-form'' answer in terms of factorials and ordinary powers of n is expected; no reduction to a ratio of two polynomials is required or even possible.)\n\n--------------------------------------------------------------------",
+      "solution": "Step 1.  Reformulate the ``even number of heads'' event.  \nFor independent Bernoulli trials with head-probabilities p_1,p_2,\\ldots ,p_{N} one has the classical identity  \n\n  P(H is even) = \\frac{1}{2} [1 + \\prod _{i=1}^{N}(1 - 2p_i)]. (\\star )\n\nHence it suffices to evaluate \\prod (1 - 2p_i) for the present multiset of coins.\n\n--------------------------------------------------------------------\nStep 2.  Gather equal factors.  \nThere are k coins of type k, each with p_k = 1/(k+2).  For such a coin\n\n  1 - 2p_k = 1 - 2/(k+2) = k/(k+2).\n\nTherefore  \n\n  \\prod _{all coins}(1 - 2p_i)  \n = \\prod _{k=1}^{n} (k/(k+2))^{k}. (1)\n\nDenote the right-hand side by R(n).\n\n--------------------------------------------------------------------\nStep 3.  Evaluate R(n).  \nSeparate numerator and denominator of (1):\n\nNumerator A(n) = \\prod _{k=1}^{n} k^{k},  \nDenominator B(n) = \\prod _{k=1}^{n}(k+2)^{k}.\n\nRe-index B(n) by letting t = k+2:\n\n  B(n) = \\prod _{t=3}^{n+2} t^{\\,t-2}. (2)\n\nHence\n\n  R(n) = A(n)/B(n)  \n   = \\prod _{t=1}^{n}t^{t} / \\prod _{t=3}^{n+2}t^{\\,t-2}. (3)\n\nTrack the net exponent of every integer t:\n\n* t = 1: exponent 1 (numerator only)  \n* t = 2: exponent 2 (numerator only)  \n* 3 \\leq  t \\leq  n: t - (t-2) = 2  \n* t = n+1: 0 - ((n+1)-2) = -(n-1)  \n* t = n+2: 0 - n = -n.\n\nThus  \n\n  R(n) = 2^2\\cdot \\prod _{t=3}^{n}t^2\\cdot (n+1)^{-(n-1)}\\cdot (n+2)^{-n}. (4)\n\nBecause 2^2\\cdot \\prod _{t=3}^{n}t^2 = \\prod _{t=1}^{n}t^2 = (n!)^2, we obtain  \n\n  R(n) = (n!)^2 / [(n+1)^{\\,n-1}(n+2)^{\\,n}]. (5)\n\n--------------------------------------------------------------------\nStep 4.  Insert R(n) in (\\star ).\n\n  P_n = \\frac{1}{2} [1 + R(n)]  \n    = \\frac{1}{2} [1 + (n!)^2 / ((n+1)^{\\,n-1}(n+2)^{\\,n})]. (6)\n\n--------------------------------------------------------------------\nAnswer.  \n\nProbability that the total number of heads is even:\n\n  P_n = \\frac{1}{2} \\cdot  [1 + (n!)^2 / ((n+1)^{\\,n-1}(n+2)^{\\,n})].\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.771628",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Quadratically many coins – The total number of random variables is\n   N(n) = n(n+1)/2, growing quadratically rather than linearly with n.\n   Handling this large, structured family of coins requires systematic\n   organisation of the data.\n\n2. Non-uniform multiplicities – Each head-probability 1/(k+2) appears\n   k times.  One must recognise and exploit this repetition to compress\n   the product ∏(1–2p_i) into the compact form ∏_{k=1}^{n}(k/(k+2))^{k}.\n\n3. Telescoping–with–shift – Turning that compressed product into a\n   closed form demands a non-trivial exponent–counting argument:\n   re-indexing the denominator, comparing exponents for every integer\n   t, and recognising massive cancellations that leave a factorial\n   squared divided by two large power factors.\n\n4. Multiple advanced techniques – The solver needs to know the parity\n   trick (identity ★), manipulate large products, perform clever\n   index–changes, and finally convert the outcome into a single rational\n   function.  None of these steps appears in the original exercise.\n\n5. Greater algebraic complexity – The final expression involves\n   factorials raised to powers and two different polynomial factors,\n   far more intricate than the simple n/(2n+1) answer of the original\n   problem.\n\nFor these reasons the enhanced variant is substantially harder than\nboth the original and the previous kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "For every integer k with 1 \\leq  k \\leq  n you are given k indistinguishable biased coins of type k.  \nEach coin of type k shows heads with probability\n\n  p_k = 1 / (k + 2).\n\nThus the total number of coins tossed is  \n\n  N(n) = 1 + 2 + \\cdots  + n = n(n + 1)/2.\n\nAll N(n) coins are tossed simultaneously and independently.  \nDetermine, in closed form, the probability P_n that the total number of heads obtained is even.  (A ``closed-form'' answer in terms of factorials and ordinary powers of n is expected; no reduction to a ratio of two polynomials is required or even possible.)\n\n--------------------------------------------------------------------",
+      "solution": "Step 1.  Reformulate the ``even number of heads'' event.  \nFor independent Bernoulli trials with head-probabilities p_1,p_2,\\ldots ,p_{N} one has the classical identity  \n\n  P(H is even) = \\frac{1}{2} [1 + \\prod _{i=1}^{N}(1 - 2p_i)]. (\\star )\n\nHence it suffices to evaluate \\prod (1 - 2p_i) for the present multiset of coins.\n\n--------------------------------------------------------------------\nStep 2.  Gather equal factors.  \nThere are k coins of type k, each with p_k = 1/(k+2).  For such a coin\n\n  1 - 2p_k = 1 - 2/(k+2) = k/(k+2).\n\nTherefore  \n\n  \\prod _{all coins}(1 - 2p_i)  \n = \\prod _{k=1}^{n} (k/(k+2))^{k}. (1)\n\nDenote the right-hand side by R(n).\n\n--------------------------------------------------------------------\nStep 3.  Evaluate R(n).  \nSeparate numerator and denominator of (1):\n\nNumerator A(n) = \\prod _{k=1}^{n} k^{k},  \nDenominator B(n) = \\prod _{k=1}^{n}(k+2)^{k}.\n\nRe-index B(n) by letting t = k+2:\n\n  B(n) = \\prod _{t=3}^{n+2} t^{\\,t-2}. (2)\n\nHence\n\n  R(n) = A(n)/B(n)  \n   = \\prod _{t=1}^{n}t^{t} / \\prod _{t=3}^{n+2}t^{\\,t-2}. (3)\n\nTrack the net exponent of every integer t:\n\n* t = 1: exponent 1 (numerator only)  \n* t = 2: exponent 2 (numerator only)  \n* 3 \\leq  t \\leq  n: t - (t-2) = 2  \n* t = n+1: 0 - ((n+1)-2) = -(n-1)  \n* t = n+2: 0 - n = -n.\n\nThus  \n\n  R(n) = 2^2\\cdot \\prod _{t=3}^{n}t^2\\cdot (n+1)^{-(n-1)}\\cdot (n+2)^{-n}. (4)\n\nBecause 2^2\\cdot \\prod _{t=3}^{n}t^2 = \\prod _{t=1}^{n}t^2 = (n!)^2, we obtain  \n\n  R(n) = (n!)^2 / [(n+1)^{\\,n-1}(n+2)^{\\,n}]. (5)\n\n--------------------------------------------------------------------\nStep 4.  Insert R(n) in (\\star ).\n\n  P_n = \\frac{1}{2} [1 + R(n)]  \n    = \\frac{1}{2} [1 + (n!)^2 / ((n+1)^{\\,n-1}(n+2)^{\\,n})]. (6)\n\n--------------------------------------------------------------------\nAnswer.  \n\nProbability that the total number of heads is even:\n\n  P_n = \\frac{1}{2} \\cdot  [1 + (n!)^2 / ((n+1)^{\\,n-1}(n+2)^{\\,n})].\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.591097",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Quadratically many coins – The total number of random variables is\n   N(n) = n(n+1)/2, growing quadratically rather than linearly with n.\n   Handling this large, structured family of coins requires systematic\n   organisation of the data.\n\n2. Non-uniform multiplicities – Each head-probability 1/(k+2) appears\n   k times.  One must recognise and exploit this repetition to compress\n   the product ∏(1–2p_i) into the compact form ∏_{k=1}^{n}(k/(k+2))^{k}.\n\n3. Telescoping–with–shift – Turning that compressed product into a\n   closed form demands a non-trivial exponent–counting argument:\n   re-indexing the denominator, comparing exponents for every integer\n   t, and recognising massive cancellations that leave a factorial\n   squared divided by two large power factors.\n\n4. Multiple advanced techniques – The solver needs to know the parity\n   trick (identity ★), manipulate large products, perform clever\n   index–changes, and finally convert the outcome into a single rational\n   function.  None of these steps appears in the original exercise.\n\n5. Greater algebraic complexity – The final expression involves\n   factorials raised to powers and two different polynomial factors,\n   far more intricate than the simple n/(2n+1) answer of the original\n   problem.\n\nFor these reasons the enhanced variant is substantially harder than\nboth the original and the previous kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

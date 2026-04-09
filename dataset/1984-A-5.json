@@ -1,0 +1,156 @@
+{
+  "index": "1984-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-5\nLet \\( R \\) be the region consisting of all triples ( \\( x, y, z \\) ) of nonnegative real numbers satisfying \\( x+y+z \\leqslant 1 \\). Let \\( w=1-x-y-z \\). Express the value of the triple integral\n\\[\n\\iiint_{R} x^{1} y^{9} z^{8} w^{4} d x d y d z\n\\]\nin the form \\( a!b!c!d!/ n! \\), where \\( a, b, c, d \\), and \\( n \\) are positive integers.",
+  "solution": "A-5.\nFor \\( t>0 \\), let \\( R \\), be the region consisting of all triples \\( (x, y, z) \\) of nonnegative real numbers satisfying \\( x+y+z \\leqslant t \\). Let\n\\[\nI(t)=\\iiint_{R_{t}} x^{1} y^{9} z^{8}(t-x-y-z)^{4} d x d y d z\n\\]\nand make the change of variables \\( x=t u, y=t v, z=t w \\). We see that \\( I(t)=I(1) t^{25} \\).\nLet \\( J=\\int_{0}^{\\infty} I(t) e^{-t} d t \\). Then\n\\[\nJ=\\int_{0}^{\\infty} I(1) t^{25} e^{-t} d t=I(1) \\Gamma(26)=I(1) 25!\n\\]\n\nIt is also the case that\n\\[\nJ=\\int_{t=0}^{\\infty} \\iiint_{R_{t}} e^{-t} x^{1} y^{9} z^{8}(t-x-y-z)^{4} d x d y d z d t\n\\]\n\nLet \\( s=t-x-y-z \\). Then\n\\[\nJ=\\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} e^{-s} e^{-x} e^{-y} e^{-z} x^{1} y^{9} z^{8} s^{4} d x d y d z d s=\\Gamma(2) \\Gamma(10) \\Gamma(9) \\Gamma(5)=1!9!8!4!\n\\]\n\nThe integral we desire is \\( I(1)=J / 25!=1!9!8!4!/ 25! \\).",
+  "vars": [
+    "x",
+    "y",
+    "z",
+    "w",
+    "t",
+    "u",
+    "v",
+    "s"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "n",
+    "R",
+    "I",
+    "J",
+    "R_t",
+    "\\\\Gamma"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xvariable",
+        "y": "yvariable",
+        "z": "zvariable",
+        "w": "wvariable",
+        "t": "timevar",
+        "u": "uvariable",
+        "v": "vvariable",
+        "s": "svariable",
+        "a": "aconstant",
+        "b": "bconstant",
+        "c": "cconstant",
+        "d": "dconstant",
+        "n": "nconstant",
+        "R": "regionid",
+        "I": "integralid",
+        "J": "jvalue",
+        "R_t": "regiontime",
+        "\\\\Gamma": "gammafunc"
+      },
+      "question": "Problem A-5\nLet \\( regionid \\) be the region consisting of all triples ( \\( xvariable, yvariable, zvariable \\) ) of nonnegative real numbers satisfying \\( xvariable+yvariable+zvariable \\leqslant 1 \\). Let \\( wvariable=1-xvariable-yvariable-zvariable \\). Express the value of the triple integral\n\\[\n\\iiint_{regionid} xvariable^{1} yvariable^{9} zvariable^{8} wvariable^{4} d xvariable d yvariable d zvariable\n\\]\nin the form \\( aconstant!bconstant!cconstant!dconstant!/ nconstant! \\), where \\( aconstant, bconstant, cconstant, dconstant \\), and \\( nconstant \\) are positive integers.",
+      "solution": "A-5.\nFor \\( timevar>0 \\), let \\( regionid \\), be the region consisting of all triples \\( (xvariable, yvariable, zvariable) \\) of nonnegative real numbers satisfying \\( xvariable+yvariable+zvariable \\leqslant timevar \\). Let\n\\[\nintegralid(timevar)=\\iiint_{regiontime} xvariable^{1} yvariable^{9} zvariable^{8}(timevar-xvariable-yvariable-zvariable)^{4} d xvariable d yvariable d zvariable\n\\]\nand make the change of variables \\( xvariable=timevar uvariable, yvariable=timevar vvariable, zvariable=timevar wvariable \\). We see that \\( integralid(timevar)=integralid(1) timevar^{25} \\).\nLet \\( jvalue=\\int_{0}^{\\infty} integralid(timevar) e^{-timevar} d timevar \\). Then\n\\[\njvalue=\\int_{0}^{\\infty} integralid(1) timevar^{25} e^{-timevar} d timevar=integralid(1) gammafunc(26)=integralid(1) 25!\n\\]\n\nIt is also the case that\n\\[\njvalue=\\int_{timevar=0}^{\\infty} \\iiint_{regiontime} e^{-timevar} xvariable^{1} yvariable^{9} zvariable^{8}(timevar-xvariable-yvariable-zvariable)^{4} d xvariable d yvariable d zvariable d timevar\n\\]\n\nLet \\( svariable=timevar-xvariable-yvariable-zvariable \\). Then\n\\[\njvalue=\\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} e^{-svariable} e^{-xvariable} e^{-yvariable} e^{-zvariable} xvariable^{1} yvariable^{9} zvariable^{8} svariable^{4} d xvariable d yvariable d zvariable d svariable=gammafunc(2) gammafunc(10) gammafunc(9) gammafunc(5)=1!9!8!4!\n\\]\n\nThe integral we desire is \\( integralid(1)=jvalue / 25!=1!9!8!4!/ 25! \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "ponderous",
+        "y": "treetower",
+        "z": "lighthouse",
+        "w": "snowflake",
+        "t": "grasslands",
+        "u": "brainstorm",
+        "v": "buttercup",
+        "s": "parchment",
+        "a": "sunflower",
+        "b": "hummingbird",
+        "c": "watermelon",
+        "d": "pineapple",
+        "n": "blueberry",
+        "R": "oceanshore",
+        "I": "candlewick",
+        "J": "dragonfly",
+        "R_t": "thunderbolt",
+        "\\\\Gamma": "starlitpath"
+      },
+      "question": "Problem A-5\nLet \\( oceanshore \\) be the region consisting of all triples ( \\( ponderous, treetower, lighthouse \\) ) of nonnegative real numbers satisfying \\( ponderous+treetower+lighthouse \\leqslant 1 \\). Let \\( snowflake=1-ponderous-treetower-lighthouse \\). Express the value of the triple integral\n\\[\n\\iiint_{oceanshore} ponderous^{1} treetower^{9} lighthouse^{8} snowflake^{4} d ponderous d treetower d lighthouse\n\\]\nin the form \\( sunflower!hummingbird!watermelon!pineapple!/ blueberry! \\), where \\( sunflower, hummingbird, watermelon, pineapple, \\) and \\( blueberry \\) are positive integers.",
+      "solution": "A-5.\nFor \\( grasslands>0 \\), let \\( oceanshore \\), be the region consisting of all triples \\( (ponderous, treetower, lighthouse) \\) of nonnegative real numbers satisfying \\( ponderous+treetower+lighthouse \\leqslant grasslands \\). Let\n\\[\ncandlewick(grasslands)=\\iiint_{thunderbolt} ponderous^{1} treetower^{9} lighthouse^{8}(grasslands-ponderous-treetower-lighthouse)^{4} d ponderous d treetower d lighthouse\n\\]\nand make the change of variables \\( ponderous=grasslands brainstorm, treetower=grasslands buttercup, lighthouse=grasslands snowflake \\). We see that \\( candlewick(grasslands)=candlewick(1) grasslands^{25} \\).\nLet \\( dragonfly=\\int_{0}^{\\infty} candlewick(grasslands) e^{-grasslands} d grasslands \\). Then\n\\[\ndragonfly=\\int_{0}^{\\infty} candlewick(1) grasslands^{25} e^{-grasslands} d grasslands=candlewick(1) starlitpath(26)=candlewick(1) 25!\n\\]\n\nIt is also the case that\n\\[\ndragonfly=\\int_{grasslands=0}^{\\infty} \\iiint_{thunderbolt} e^{-grasslands} ponderous^{1} treetower^{9} lighthouse^{8}(grasslands-ponderous-treetower-lighthouse)^{4} d ponderous d treetower d lighthouse d grasslands\n\\]\n\nLet \\( parchment=grasslands-ponderous-treetower-lighthouse \\). Then\n\\[\ndragonfly=\\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} e^{-parchment} e^{-ponderous} e^{-treetower} e^{-lighthouse} ponderous^{1} treetower^{9} lighthouse^{8} parchment^{4} d ponderous d treetower d lighthouse d parchment=starlitpath(2) starlitpath(10) starlitpath(9) starlitpath(5)=1!9!8!4!\n\\]\n\nThe integral we desire is \\( candlewick(1)=dragonfly / 25!=1!9!8!4!/ 25! \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "z": "surfaceaxis",
+        "w": "additionmass",
+        "t": "spacedimension",
+        "u": "gigavalue",
+        "v": "megavalue",
+        "s": "staticvalue",
+        "a": "negativeint",
+        "b": "minusint",
+        "c": "nullnumber",
+        "d": "emptynum",
+        "n": "infvalue",
+        "R": "emptiness",
+        "I": "nonfunction",
+        "J": "junkvalue",
+        "R_t": "emptinesstime",
+        "\\\\Gamma": "nongammafunc"
+      },
+      "question": "Problem A-5\nLet \\( emptiness \\) be the region consisting of all triples ( \\( verticalaxis, horizontalaxis, surfaceaxis \\) ) of nonnegative real numbers satisfying \\( verticalaxis+horizontalaxis+surfaceaxis \\leqslant 1 \\). Let \\( additionmass=1-verticalaxis-horizontalaxis-surfaceaxis \\). Express the value of the triple integral\n\\[\n\\iiint_{emptiness} verticalaxis^{1} horizontalaxis^{9} surfaceaxis^{8} additionmass^{4} emptynum verticalaxis emptynum horizontalaxis emptynum surfaceaxis\n\\]\nin the form \\( negativeint!minusint!nullnumber!emptynum!/ infvalue! \\), where \\( negativeint, minusint, nullnumber, emptynum \\), and \\( infvalue \\) are positive integers.",
+      "solution": "A-5.\nFor \\( spacedimension>0 \\), let \\( emptiness \\), be the region consisting of all triples \\( (verticalaxis, horizontalaxis, surfaceaxis) \\) of nonnegative real numbers satisfying \\( verticalaxis+horizontalaxis+surfaceaxis \\leqslant spacedimension \\). Let\n\\[\nnonfunction(spacedimension)=\\iiint_{emptinesstime} verticalaxis^{1} horizontalaxis^{9} surfaceaxis^{8}(spacedimension-verticalaxis-horizontalaxis-surfaceaxis)^{4} emptynum verticalaxis emptynum horizontalaxis emptynum surfaceaxis\n\\]\nand make the change of variables \\( verticalaxis=spacedimension gigavalue, horizontalaxis=spacedimension megavalue, surfaceaxis=spacedimension staticvalue \\). We see that \\( nonfunction(spacedimension)=nonfunction(1) spacedimension^{25} \\).\nLet \\( junkvalue=\\int_{0}^{\\infty} nonfunction(spacedimension) e^{-spacedimension} emptynum spacedimension \\). Then\n\\[\njunkvalue=\\int_{0}^{\\infty} nonfunction(1) spacedimension^{25} e^{-spacedimension} emptynum spacedimension=nonfunction(1) nongammafunc(26)=nonfunction(1) 25!\n\\]\n\nIt is also the case that\n\\[\njunkvalue=\\int_{spacedimension=0}^{\\infty} \\iiint_{emptinesstime} e^{-spacedimension} verticalaxis^{1} horizontalaxis^{9} surfaceaxis^{8}(spacedimension-verticalaxis-horizontalaxis-surfaceaxis)^{4} emptynum verticalaxis emptynum horizontalaxis emptynum surfaceaxis emptynum spacedimension\n\\]\n\nLet \\( staticvalue=spacedimension-verticalaxis-horizontalaxis-surfaceaxis \\). Then\n\\[\njunkvalue=\\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} e^{-staticvalue} e^{-verticalaxis} e^{-horizontalaxis} e^{-surfaceaxis} verticalaxis^{1} horizontalaxis^{9} surfaceaxis^{8} staticvalue^{4} emptynum verticalaxis emptynum horizontalaxis emptynum surfaceaxis emptynum staticvalue=nongammafunc(2) nongammafunc(10) nongammafunc(9) nongammafunc(5)=1!9!8!4!\n\\]\n\nThe integral we desire is \\( nonfunction(1)=junkvalue / 25!=1!9!8!4!/ 25! \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "z": "mpdfrnqe",
+        "w": "cslbpakm",
+        "t": "vrbtkzoh",
+        "u": "nlskdjqu",
+        "v": "frqmhzla",
+        "s": "gxpatrcl",
+        "a": "xzyplkqn",
+        "b": "gvhdstwe",
+        "c": "lmrnvbqe",
+        "d": "odkfhewa",
+        "n": "pksctwly",
+        "R": "jdkslqwe",
+        "I": "vbpqmxzn",
+        "J": "fsatrzkl",
+        "R_t": "vznqjbfs",
+        "\\Gamma": "\\hpqzlrfg"
+      },
+      "question": "Problem A-5\nLet \\( jdkslqwe \\) be the region consisting of all triples ( \\( qzxwvtnp, hjgrksla, mpdfrnqe \\) ) of nonnegative real numbers satisfying \\( qzxwvtnp+hjgrksla+mpdfrnqe \\leqslant 1 \\). Let \\( cslbpakm=1-qzxwvtnp-hjgrksla-mpdfrnqe \\). Express the value of the triple integral\n\\[\n\\iiint_{jdkslqwe} qzxwvtnp^{1} hjgrksla^{9} mpdfrnqe^{8} cslbpakm^{4} d qzxwvtnp d hjgrksla d mpdfrnqe\n\\]\nin the form \\( xzyplkqn!gvhdstwe!lmrnvbqe!odkfhewa!/ pksctwly! \\), where \\( xzyplkqn, gvhdstwe, lmrnvbqe, odkfhewa \\), and \\( pksctwly \\) are positive integers.",
+      "solution": "A-5.\nFor \\( vrbtkzoh>0 \\), let \\( jdkslqwe \\), be the region consisting of all triples \\( (qzxwvtnp, hjgrksla, mpdfrnqe) \\) of nonnegative real numbers satisfying \\( qzxwvtnp+hjgrksla+mpdfrnqe \\leqslant vrbtkzoh \\). Let\n\\[\nvbpqmxzn(vrbtkzoh)=\\iiint_{vznqjbfs} qzxwvtnp^{1} hjgrksla^{9} mpdfrnqe^{8}(vrbtkzoh-qzxwvtnp-hjgrksla-mpdfrnqe)^{4} d qzxwvtnp d hjgrksla d mpdfrnqe\n\\]\nand make the change of variables \\( qzxwvtnp=vrbtkzoh nlskdjqu, hjgrksla=vrbtkzoh frqmhzla, mpdfrnqe=vrbtkzoh cslbpakm \\). We see that \\( vbpqmxzn(vrbtkzoh)=vbpqmxzn(1) vrbtkzoh^{25} \\).\nLet \\( fsatrzkl=\\int_{0}^{\\infty} vbpqmxzn(vrbtkzoh) e^{-vrbtkzoh} d vrbtkzoh \\). Then\n\\[\nfsatrzkl=\\int_{0}^{\\infty} vbpqmxzn(1) vrbtkzoh^{25} e^{-vrbtkzoh} d vrbtkzoh=vbpqmxzn(1) \\hpqzlrfg(26)=vbpqmxzn(1) 25!\n\\]\n\nIt is also the case that\n\\[\nfsatrzkl=\\int_{vrbtkzoh=0}^{\\infty} \\iiint_{vznqjbfs} e^{-vrbtkzoh} qzxwvtnp^{1} hjgrksla^{9} mpdfrnqe^{8}(vrbtkzoh-qzxwvtnp-hjgrksla-mpdfrnqe)^{4} d qzxwvtnp d hjgrksla d mpdfrnqe d vrbtkzoh\n\\]\n\nLet \\( gxpatrcl=vrbtkzoh-qzxwvtnp-hjgrksla-mpdfrnqe \\). Then\n\\[\nfsatrzkl=\\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} \\int_{0}^{\\infty} e^{-gxpatrcl} e^{-qzxwvtnp} e^{-hjgrksla} e^{-mpdfrnqe} qzxwvtnp^{1} hjgrksla^{9} mpdfrnqe^{8} gxpatrcl^{4} d qzxwvtnp d hjgrksla d mpdfrnqe d gxpatrcl=\\hpqzlrfg(2) \\hpqzlrfg(10) \\hpqzlrfg(9) \\hpqzlrfg(5)=1!9!8!4!\n\\]\n\nThe integral we desire is \\( vbpqmxzn(1)=fsatrzkl / 25!=1!9!8!4!/ 25! \\)."
+    },
+    "kernel_variant": {
+      "question": "Let  \n\\[\nT=\\bigl\\{(x_1,x_2,x_3,x_4,x_5,x_6)\\in\\mathbb R^{6}_{\\ge 0}\\;:\\;\nx_1+x_2+x_3+x_4+x_5+x_6\\le 3\\bigr\\},\n\\qquad \nx_7 = 3-\\bigl(x_1+x_2+x_3+x_4+x_5+x_6\\bigr).\n\\]\n\nEvaluate the six-fold integral  \n\\[\nI=\\idotsint_{T} \nx_1^{2}\\,x_2^{4}\\,x_3^{6}\\,x_4^{8}\\,x_5^{10}\\,x_6^{12}\\,\nx_7^{14}\\,\n\\bigl(x_1x_4+x_2x_5+x_3x_6\\bigr)^{3}\\,\ndx_1\\cdots dx_6 ,\n\\]\n\nand express the answer in the form  \n\\[\nI=\\frac{3^{\\,k}\\,\\bigl(2!\\,4!\\,6!\\,8!\\,10!\\,12!\\,14!\\bigr)\\,C}{n!},\n\\]\ndetermining the integers $k,n$ and the positive integer constant $C$.",
+      "solution": "Step 1.  Homothety to the standard simplex.  \nSet $x_i=3y_i$ for $1\\le i\\le 6$.  Then  \n\\[\nx_7=3\\Bigl(1-\\sum_{i=1}^{6}y_i\\Bigr),\\qquad \nS=\\Bigl\\{(y_1,\\dots,y_6)\\in\\mathbb R^{6}_{\\ge 0}\\;:\\;\n\\sum_{i=1}^{6}y_i\\le 1\\Bigr\\}.\n\\]\n\nThe Jacobian of the change of variables equals $3^{6}$.  \nEach power $x_i^{m}$ contributes a factor $3^{m}$, hence from the monomial  \n$x_1^{2}\\dotsm x_6^{12}x_7^{14}$ we obtain $3^{56}$.  \nBecause  \n\\[\n\\bigl(x_1x_4+x_2x_5+x_3x_6\\bigr)^{3}\n=3^{6}\\bigl(y_1y_4+y_2y_5+y_3y_6\\bigr)^{3},\n\\]\nthere is an additional factor $3^{6}$.  \nTherefore the total multiplicative factor is  \n\\[\n3^{56+6+6}=3^{68}.\n\\]\n\nConsequently  \n\\[\nI=3^{68}\\idotsint_{S}\ny_1^{2}\\,y_2^{4}\\,y_3^{6}\\,y_4^{8}\\,y_5^{10}\\,y_6^{12}\\,\n\\bigl(1-\\!\\!\\sum_{i=1}^{6}y_i\\bigr)^{14}\\,\n\\bigl(y_1y_4+y_2y_5+y_3y_6\\bigr)^{3}\\,\ndy_1\\cdots dy_6.\n\\tag{1}\n\\]\n\nStep 2.  Multinomial expansion.  \nWrite  \n\\[\n\\bigl(y_1y_4+y_2y_5+y_3y_6\\bigr)^{3}\n=\\!\\!\\sum_{a+b+c=3}\\!\\!\\frac{3!}{a!\\,b!\\,c!}\\,\n(y_1y_4)^{a}\\,(y_2y_5)^{b}\\,(y_3y_6)^{c}.\n\\tag{2}\n\\]\n\nStep 3.  Dirichlet integrals.  \nFor each ordered triple $(a,b,c)$ with $a+b+c=3$ define the exponents  \n\\[\nA_1=2+a,\\;A_2=4+b,\\;A_3=6+c,\\;\nA_4=8+a,\\;A_5=10+b,\\;A_6=12+c,\\;\nA_7=14,\n\\]\nso that $\\sum_{i=1}^{7}A_i=62$.  \nThe Dirichlet (multivariate Beta) formula gives, for every such triple,\n\\[\n\\idotsint_{S}\ny_1^{A_1}\\dotsm y_6^{A_6}\n\\bigl(1-\\!\\!\\sum_{i=1}^{6}y_i\\bigr)^{A_7}dy_1\\cdots dy_6\n=\\frac{\\prod_{i=1}^{7}A_i!}{(62+6)!}=\\frac{\\prod_{i=1}^{7}A_i!}{68!}.\n\\tag{3}\n\\]\n\nStep 4.  Summation of the $10$ contributions.  \nIntroduce  \n\\[\nP(a)=(2+a)!\\,(8+a)!,\\quad\nQ(b)=(4+b)!\\,(10+b)!,\\quad\nR(c)=(6+c)!\\,(12+c)!,\n\\]\nand $B=P(0)Q(0)R(0)=2!4!6!8!10!12!$.  \nUsing the ratios  \n\n\\[\n\\begin{aligned}\nP(1)&=27\\,P(0),& P(2)&=1080\\,P(0),& P(3)&=59\\,400\\,P(0),\\\\\nQ(1)&=55\\,Q(0),& Q(2)&=3960\\,Q(0),& Q(3)&=360\\,360\\,Q(0),\\\\\nR(1)&=91\\,R(0),& R(2)&=10\\,192\\,R(0),& R(3)&=1\\,375\\,920\\,R(0),\n\\end{aligned}\n\\]\n\na careful term-by-term evaluation of  \n\\[\n\\sum_{a+b+c=3}\\frac{P(a)Q(b)R(c)}{a!\\,b!\\,c!}\n\\]\ngives  \n\\[\n\\sum_{a+b+c=3}\\frac{P(a)Q(b)R(c)}{a!\\,b!\\,c!}=1\\,164\\,767\\;B.\n\\tag{4}\n\\]\n\nStep 5.  Assembly.  \nCombining (1)-(4) we obtain  \n\\[\nI\n=3^{68}\\cdot 3!\\cdot 14!\\cdot\\frac{1\\,164\\,767\\,B}{68!}\n=3^{68}\\cdot 2!\\,4!\\,6!\\,8!\\,10!\\,12!\\,14!\\,\n\\frac{6\\,988\\,602}{68!}.\n\\]\n\nHence  \n\\[\nk=68,\\qquad n=68,\\qquad C=6\\,988\\,602.\n\\]\n\nTherefore  \n\\[\n\\boxed{\\displaystyle\nI=\\frac{3^{68}\\,2!\\,4!\\,6!\\,8!\\,10!\\,12!\\,14!\\times 6\\,988\\,602}{68!}}\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.675466",
+        "was_fixed": false,
+        "difficulty_analysis": "• Dimensionality jump: the integral lives in 6 (not 3 or 4) dimensions and involves seven mutually-dependent variables.  \n• Highly coupled integrand: besides large individual powers, a third-degree symmetric cross–term generates ten separate multivariate monomials, forcing either an involved multinomial expansion or the systematic use of Dirichlet-moment identities.  \n• Uniform but hidden exponent sum: every term shares the same total exponent, but seeing this requires insight into how the triples (a,b,c) propagate through the powers.  \n• Large-scale arithmetic: factorials up to 14! and a denominator 68! appear, and the integer constant C arises only after a non-trivial combinatorial summation.  \n• Combination of techniques: the solver must recognise (i) homothetic reduction to the standard simplex, (ii) the multinomial expansion, (iii) multivariate Beta integrals, and (iv) symmetry/ratio tricks to keep the arithmetic manageable.\n\nThese layers of complexity make the enhanced variant substantially harder than both the original A-5 problem and the current kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n\\[\nT=\\bigl\\{(x_1,x_2,x_3,x_4,x_5,x_6)\\in\\mathbb R^{6}_{\\ge 0}\\;:\\;\nx_1+x_2+x_3+x_4+x_5+x_6\\le 3\\bigr\\},\n\\qquad \nx_7 = 3-\\bigl(x_1+x_2+x_3+x_4+x_5+x_6\\bigr).\n\\]\n\nEvaluate the six-fold integral  \n\\[\nI=\\idotsint_{T} \nx_1^{2}\\,x_2^{4}\\,x_3^{6}\\,x_4^{8}\\,x_5^{10}\\,x_6^{12}\\,\nx_7^{14}\\,\n\\bigl(x_1x_4+x_2x_5+x_3x_6\\bigr)^{3}\\,\ndx_1\\cdots dx_6 ,\n\\]\n\nand express the answer in the form  \n\\[\nI=\\frac{3^{\\,k}\\,\\bigl(2!\\,4!\\,6!\\,8!\\,10!\\,12!\\,14!\\bigr)\\,C}{n!},\n\\]\ndetermining the integers $k,n$ and the positive integer constant $C$.",
+      "solution": "Step 1.  Homothety to the standard simplex.  \nSet $x_i=3y_i$ for $1\\le i\\le 6$.  Then  \n\\[\nx_7=3\\Bigl(1-\\sum_{i=1}^{6}y_i\\Bigr),\\qquad \nS=\\Bigl\\{(y_1,\\dots,y_6)\\in\\mathbb R^{6}_{\\ge 0}\\;:\\;\n\\sum_{i=1}^{6}y_i\\le 1\\Bigr\\}.\n\\]\n\nThe Jacobian of the change of variables equals $3^{6}$.  \nEach power $x_i^{m}$ contributes a factor $3^{m}$, hence from the monomial  \n$x_1^{2}\\dotsm x_6^{12}x_7^{14}$ we obtain $3^{56}$.  \nBecause  \n\\[\n\\bigl(x_1x_4+x_2x_5+x_3x_6\\bigr)^{3}\n=3^{6}\\bigl(y_1y_4+y_2y_5+y_3y_6\\bigr)^{3},\n\\]\nthere is an additional factor $3^{6}$.  \nTherefore the total multiplicative factor is  \n\\[\n3^{56+6+6}=3^{68}.\n\\]\n\nConsequently  \n\\[\nI=3^{68}\\idotsint_{S}\ny_1^{2}\\,y_2^{4}\\,y_3^{6}\\,y_4^{8}\\,y_5^{10}\\,y_6^{12}\\,\n\\bigl(1-\\!\\!\\sum_{i=1}^{6}y_i\\bigr)^{14}\\,\n\\bigl(y_1y_4+y_2y_5+y_3y_6\\bigr)^{3}\\,\ndy_1\\cdots dy_6.\n\\tag{1}\n\\]\n\nStep 2.  Multinomial expansion.  \nWrite  \n\\[\n\\bigl(y_1y_4+y_2y_5+y_3y_6\\bigr)^{3}\n=\\!\\!\\sum_{a+b+c=3}\\!\\!\\frac{3!}{a!\\,b!\\,c!}\\,\n(y_1y_4)^{a}\\,(y_2y_5)^{b}\\,(y_3y_6)^{c}.\n\\tag{2}\n\\]\n\nStep 3.  Dirichlet integrals.  \nFor each ordered triple $(a,b,c)$ with $a+b+c=3$ define the exponents  \n\\[\nA_1=2+a,\\;A_2=4+b,\\;A_3=6+c,\\;\nA_4=8+a,\\;A_5=10+b,\\;A_6=12+c,\\;\nA_7=14,\n\\]\nso that $\\sum_{i=1}^{7}A_i=62$.  \nThe Dirichlet (multivariate Beta) formula gives, for every such triple,\n\\[\n\\idotsint_{S}\ny_1^{A_1}\\dotsm y_6^{A_6}\n\\bigl(1-\\!\\!\\sum_{i=1}^{6}y_i\\bigr)^{A_7}dy_1\\cdots dy_6\n=\\frac{\\prod_{i=1}^{7}A_i!}{(62+6)!}=\\frac{\\prod_{i=1}^{7}A_i!}{68!}.\n\\tag{3}\n\\]\n\nStep 4.  Summation of the $10$ contributions.  \nIntroduce  \n\\[\nP(a)=(2+a)!\\,(8+a)!,\\quad\nQ(b)=(4+b)!\\,(10+b)!,\\quad\nR(c)=(6+c)!\\,(12+c)!,\n\\]\nand $B=P(0)Q(0)R(0)=2!4!6!8!10!12!$.  \nUsing the ratios  \n\n\\[\n\\begin{aligned}\nP(1)&=27\\,P(0),& P(2)&=1080\\,P(0),& P(3)&=59\\,400\\,P(0),\\\\\nQ(1)&=55\\,Q(0),& Q(2)&=3960\\,Q(0),& Q(3)&=360\\,360\\,Q(0),\\\\\nR(1)&=91\\,R(0),& R(2)&=10\\,192\\,R(0),& R(3)&=1\\,375\\,920\\,R(0),\n\\end{aligned}\n\\]\n\na careful term-by-term evaluation of  \n\\[\n\\sum_{a+b+c=3}\\frac{P(a)Q(b)R(c)}{a!\\,b!\\,c!}\n\\]\ngives  \n\\[\n\\sum_{a+b+c=3}\\frac{P(a)Q(b)R(c)}{a!\\,b!\\,c!}=1\\,164\\,767\\;B.\n\\tag{4}\n\\]\n\nStep 5.  Assembly.  \nCombining (1)-(4) we obtain  \n\\[\nI\n=3^{68}\\cdot 3!\\cdot 14!\\cdot\\frac{1\\,164\\,767\\,B}{68!}\n=3^{68}\\cdot 2!\\,4!\\,6!\\,8!\\,10!\\,12!\\,14!\\,\n\\frac{6\\,988\\,602}{68!}.\n\\]\n\nHence  \n\\[\nk=68,\\qquad n=68,\\qquad C=6\\,988\\,602.\n\\]\n\nTherefore  \n\\[\n\\boxed{\\displaystyle\nI=\\frac{3^{68}\\,2!\\,4!\\,6!\\,8!\\,10!\\,12!\\,14!\\times 6\\,988\\,602}{68!}}\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.529920",
+        "was_fixed": false,
+        "difficulty_analysis": "• Dimensionality jump: the integral lives in 6 (not 3 or 4) dimensions and involves seven mutually-dependent variables.  \n• Highly coupled integrand: besides large individual powers, a third-degree symmetric cross–term generates ten separate multivariate monomials, forcing either an involved multinomial expansion or the systematic use of Dirichlet-moment identities.  \n• Uniform but hidden exponent sum: every term shares the same total exponent, but seeing this requires insight into how the triples (a,b,c) propagate through the powers.  \n• Large-scale arithmetic: factorials up to 14! and a denominator 68! appear, and the integer constant C arises only after a non-trivial combinatorial summation.  \n• Combination of techniques: the solver must recognise (i) homothetic reduction to the standard simplex, (ii) the multinomial expansion, (iii) multivariate Beta integrals, and (iv) symmetry/ratio tricks to keep the arithmetic manageable.\n\nThese layers of complexity make the enhanced variant substantially harder than both the original A-5 problem and the current kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

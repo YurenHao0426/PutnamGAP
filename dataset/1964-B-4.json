@@ -1,0 +1,98 @@
+{
+  "index": "1964-B-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "4. Into how many regions do \\( n \\) great circles (no three concurrent) decompose the surface of the sphere on which they lie?",
+  "solution": "First Solution. Let \\( f(n) \\) be the number of regions on the surface of a sphere formed by \\( n \\) great circles of which no three are concurrent. Clearly \\( f(1)=2, f(2)=4 \\). Suppose \\( n \\) circles have been drawn and an \\( (n+1) \\) st circle is added. The new circle meets each of the old ones in two points, making \\( 2 n \\) points of intersection, and these \\( 2 n \\) points are all different since no three circles are concurrent. The \\( 2 n \\) points divide the new circle into \\( 2 n \\) arcs. Each of these arcs divides one of the old regions into two parts. Thus there are \\( 2 n+f(n) \\) regions formed by the \\( (n+1) \\) circles. Hence we have\n\\[\nf(n+1)=2 n+f(n), \\quad \\text { for } n \\geq 1\n\\]\n\nIt follows easily by induction that\n\\[\nf(n)=n^{2}-n+2 \\quad \\text { for } n \\geq 1\n\\]\n\nObviously, \\( f(0)=1 \\). Note that the argument leading to (1) breaks down if \\( n=0 \\).\n\nSecond Solution. Suppose \\( n \\) is at least two and consider the subdivision of the sphere given by \\( n \\) great circles. Let \\( V \\) be the number of vertices, \\( E \\) the number of edges, and \\( F \\) the number of faces (i.e., regions) in the subdivision. By Euler's formula\n\\[\nV-E+F=2\n\\]\n\nNow there are \\( 2 \\cdot n(n-1) / 2 \\) vertices, since each two great circles cross twice to make two vertices. Since there are four edges terminating at each vertex, \\( 2 E=4 V \\). Hence for \\( n \\geq 2 \\) we have\n\\[\nF=2+E-V=n^{2}-n+2\n\\]\n\nFor \\( n=0 \\) there is just one region, and for \\( n=1 \\), there are two, so (2) holds for \\( n=1 \\), but not for \\( n=0 \\).\n\nEuler's formula for networks on a sphere is valid when the edges are topologically segments and the regions are topologically disks. It fails therefore when \\( n=0 \\), because the one region is not a disk. It fails when \\( n \\) \\( =1 \\), because the edge is not a segment; if we add two vertices on the circle, however, we have \\( V=2, E=2, F=2 \\), and the formula is again valid.",
+  "vars": [
+    "n",
+    "f",
+    "V",
+    "E",
+    "F"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "circlecount",
+        "f": "regioncount",
+        "V": "vertexcount",
+        "E": "edgecount",
+        "F": "facecount"
+      },
+      "question": "4. Into how many regions do \\( circlecount \\) great circles (no three concurrent) decompose the surface of the sphere on which they lie?",
+      "solution": "First Solution. Let \\( regioncount(circlecount) \\) be the number of regions on the surface of a sphere formed by \\( circlecount \\) great circles of which no three are concurrent. Clearly \\( regioncount(1)=2, regioncount(2)=4 \\). Suppose \\( circlecount \\) circles have been drawn and an \\( (circlecount+1) \\) st circle is added. The new circle meets each of the old ones in two points, making \\( 2\\,circlecount \\) points of intersection, and these \\( 2\\,circlecount \\) points are all different since no three circles are concurrent. The \\( 2\\,circlecount \\) points divide the new circle into \\( 2\\,circlecount \\) arcs. Each of these arcs divides one of the old regions into two parts. Thus there are \\( 2\\,circlecount+regioncount(circlecount) \\) regions formed by the \\( (circlecount+1) \\) circles. Hence we have\n\\[\nregioncount(circlecount+1)=2\\,circlecount+regioncount(circlecount), \\quad \\text { for } circlecount \\geq 1\n\\]\n\nIt follows easily by induction that\n\\[\nregioncount(circlecount)=circlecount^{2}-circlecount+2 \\quad \\text { for } circlecount \\geq 1\n\\]\n\nObviously, \\( regioncount(0)=1 \\). Note that the argument leading to (1) breaks down if \\( circlecount=0 \\).\n\nSecond Solution. Suppose \\( circlecount \\) is at least two and consider the subdivision of the sphere given by \\( circlecount \\) great circles. Let \\( vertexcount \\) be the number of vertices, \\( edgecount \\) the number of edges, and \\( facecount \\) the number of faces (i.e., regions) in the subdivision. By Euler's formula\n\\[\nvertexcount-edgecount+facecount=2\n\\]\n\nNow there are \\( 2 \\cdot circlecount(circlecount-1) / 2 \\) vertices, since each two great circles cross twice to make two vertices. Since there are four edges terminating at each vertex, \\( 2\\,edgecount=4\\,vertexcount \\). Hence for \\( circlecount \\geq 2 \\) we have\n\\[\nfacecount=2+edgecount-vertexcount=circlecount^{2}-circlecount+2\n\\]\n\nFor \\( circlecount=0 \\) there is just one region, and for \\( circlecount=1 \\), there are two, so (2) holds for \\( circlecount=1 \\), but not for \\( circlecount=0 \\).\n\nEuler's formula for networks on a sphere is valid when the edges are topologically segments and the regions are topologically disks. It fails therefore when \\( circlecount=0 \\), because the one region is not a disk. It fails when \\( circlecount \\) \\( =1 \\), because the edge is not a segment; if we add two vertices on the circle, however, we have \\( vertexcount=2, edgecount=2, facecount=2 \\), and the formula is again valid."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "lighthouse",
+        "f": "telegraph",
+        "V": "plantation",
+        "E": "squirrel",
+        "F": "semaphore"
+      },
+      "question": "4. Into how many regions do \\( lighthouse \\) great circles (no three concurrent) decompose the surface of the sphere on which they lie?",
+      "solution": "First Solution. Let \\( telegraph(lighthouse) \\) be the number of regions on the surface of a sphere formed by \\( lighthouse \\) great circles of which no three are concurrent. Clearly \\( telegraph(1)=2, telegraph(2)=4 \\). Suppose \\( lighthouse \\) circles have been drawn and an \\( (lighthouse+1) \\) st circle is added. The new circle meets each of the old ones in two points, making \\( 2 lighthouse \\) points of intersection, and these \\( 2 lighthouse \\) points are all different since no three circles are concurrent. The \\( 2 lighthouse \\) points divide the new circle into \\( 2 lighthouse \\) arcs. Each of these arcs divides one of the old regions into two parts. Thus there are \\( 2 lighthouse+telegraph(lighthouse) \\) regions formed by the \\( (lighthouse+1) \\) circles. Hence we have\n\\[\ntelegraph(lighthouse+1)=2 lighthouse+telegraph(lighthouse), \\quad \\text { for } lighthouse \\geq 1\n\\]\n\nIt follows easily by induction that\n\\[\ntelegraph(lighthouse)=lighthouse^{2}-lighthouse+2 \\quad \\text { for } lighthouse \\geq 1\n\\]\n\nObviously, \\( telegraph(0)=1 \\). Note that the argument leading to (1) breaks down if \\( lighthouse=0 \\).\n\nSecond Solution. Suppose \\( lighthouse \\) is at least two and consider the subdivision of the sphere given by \\( lighthouse \\) great circles. Let \\( plantation \\) be the number of vertices, \\( squirrel \\) the number of edges, and \\( semaphore \\) the number of faces (i.e., regions) in the subdivision. By Euler's formula\n\\[\nplantation-squirrel+semaphore=2\n\\]\n\nNow there are \\( 2 \\cdot lighthouse(lighthouse-1) / 2 \\) vertices, since each two great circles cross twice to make two vertices. Since there are four edges terminating at each vertex, \\( 2 squirrel=4 plantation \\). Hence for \\( lighthouse \\geq 2 \\) we have\n\\[\nsemaphore=2+squirrel-plantation=lighthouse^{2}-lighthouse+2\n\\]\n\nFor \\( lighthouse=0 \\) there is just one region, and for \\( lighthouse=1 \\), there are two, so (2) holds for \\( lighthouse=1 \\), but not for \\( lighthouse=0 \\).\n\nEuler's formula for networks on a sphere is valid when the edges are topologically segments and the regions are topologically disks. It fails therefore when \\( lighthouse=0 \\), because the one region is not a disk. It fails when \\( lighthouse \\) \\( =1 \\), because the edge is not a segment; if we add two vertices on the circle, however, we have \\( plantation=2, squirrel=2, semaphore=2 \\), and the formula is again valid."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "uncountable",
+        "f": "malfunction",
+        "V": "smoothness",
+        "E": "boundless",
+        "F": "voidness"
+      },
+      "question": "4. Into how many regions do \\( uncountable \\) great circles (no three concurrent) decompose the surface of the sphere on which they lie?",
+      "solution": "First Solution. Let \\( malfunction(uncountable) \\) be the number of regions on the surface of a sphere formed by \\( uncountable \\) great circles of which no three are concurrent. Clearly \\( malfunction(1)=2, malfunction(2)=4 \\). Suppose \\( uncountable \\) circles have been drawn and an \\( (uncountable+1) \\) st circle is added. The new circle meets each of the old ones in two points, making \\( 2\\,uncountable \\) points of intersection, and these \\( 2\\,uncountable \\) points are all different since no three circles are concurrent. The \\( 2\\,uncountable \\) points divide the new circle into \\( 2\\,uncountable \\) arcs. Each of these arcs divides one of the old regions into two parts. Thus there are \\( 2\\,uncountable+malfunction(uncountable) \\) regions formed by the \\( (uncountable+1) \\) circles. Hence we have\n\\[\nmalfunction(uncountable+1)=2\\,uncountable+malfunction(uncountable), \\quad \\text { for } uncountable \\geq 1\n\\]\n\nIt follows easily by induction that\n\\[\nmalfunction(uncountable)=uncountable^{2}-uncountable+2 \\quad \\text { for } uncountable \\geq 1\n\\]\n\nObviously, \\( malfunction(0)=1 \\). Note that the argument leading to (1) breaks down if \\( uncountable=0 \\).\n\nSecond Solution. Suppose \\( uncountable \\) is at least two and consider the subdivision of the sphere given by \\( uncountable \\) great circles. Let \\( smoothness \\) be the number of vertices, \\( boundless \\) the number of edges, and \\( voidness \\) the number of faces (i.e., regions) in the subdivision. By Euler's formula\n\\[\nsmoothness-boundless+voidness=2\n\\]\n\nNow there are \\( 2 \\cdot uncountable(uncountable-1) / 2 \\) vertices, since each two great circles cross twice to make two vertices. Since there are four edges terminating at each vertex, \\( 2\\,boundless=4\\,smoothness \\). Hence for \\( uncountable \\geq 2 \\) we have\n\\[\nvoidness=2+boundless-smoothness=uncountable^{2}-uncountable+2\n\\]\n\nFor \\( uncountable=0 \\) there is just one region, and for \\( uncountable=1 \\), there are two, so (2) holds for \\( uncountable=1 \\), but not for \\( uncountable=0 \\).\n\nEuler's formula for networks on a sphere is valid when the edges are topologically segments and the regions are topologically disks. It fails therefore when \\( uncountable=0 \\), because the one region is not a disk. It fails when \\( uncountable \\) \\( =1 \\), because the edge is not a segment; if we add two vertices on the circle, however, we have \\( smoothness=2, boundless=2, voidness=2 \\), and the formula is again valid."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "f": "hjgrksla",
+        "V": "asldfjke",
+        "E": "pqowieur",
+        "F": "zmxncbva"
+      },
+      "question": "Into how many regions do \\( qzxwvtnp \\) great circles (no three concurrent) decompose the surface of the sphere on which they lie?",
+      "solution": "First Solution. Let \\( hjgrksla(qzxwvtnp) \\) be the number of regions on the surface of a sphere formed by \\( qzxwvtnp \\) great circles of which no three are concurrent. Clearly \\( hjgrksla(1)=2, hjgrksla(2)=4 \\). Suppose \\( qzxwvtnp \\) circles have been drawn and an \\( (qzxwvtnp+1) \\) st circle is added. The new circle meets each of the old ones in two points, making \\( 2 qzxwvtnp \\) points of intersection, and these \\( 2 qzxwvtnp \\) points are all different since no three circles are concurrent. The \\( 2 qzxwvtnp \\) points divide the new circle into \\( 2 qzxwvtnp \\) arcs. Each of these arcs divides one of the old regions into two parts. Thus there are \\( 2 qzxwvtnp+hjgrksla(qzxwvtnp) \\) regions formed by the \\( (qzxwvtnp+1) \\) circles. Hence we have\n\\[\nhjgrksla(qzxwvtnp+1)=2 qzxwvtnp+hjgrksla(qzxwvtnp), \\quad \\text { for } qzxwvtnp \\geq 1\n\\]\n\nIt follows easily by induction that\n\\[\nhjgrksla(qzxwvtnp)=qzxwvtnp^{2}-qzxwvtnp+2 \\quad \\text { for } qzxwvtnp \\geq 1\n\\]\n\nObviously, \\( hjgrksla(0)=1 \\). Note that the argument leading to (1) breaks down if \\( qzxwvtnp=0 \\).\n\nSecond Solution. Suppose \\( qzxwvtnp \\) is at least two and consider the subdivision of the sphere given by \\( qzxwvtnp \\) great circles. Let \\( asldfjke \\) be the number of vertices, \\( pqowieur \\) the number of edges, and \\( zmxncbva \\) the number of faces (i.e., regions) in the subdivision. By Euler's formula\n\\[\nasldfjke-pqowieur+zmxncbva=2\n\\]\n\nNow there are \\( 2 \\cdot qzxwvtnp(qzxwvtnp-1) / 2 \\) vertices, since each two great circles cross twice to make two vertices. Since there are four edges terminating at each vertex, \\( 2 pqowieur=4 asldfjke \\). Hence for \\( qzxwvtnp \\geq 2 \\) we have\n\\[\nzmxncbva=2+pqowieur-asldfjke=qzxwvtnp^{2}-qzxwvtnp+2\n\\]\n\nFor \\( qzxwvtnp=0 \\) there is just one region, and for \\( qzxwvtnp=1 \\), there are two, so (2) holds for \\( qzxwvtnp=1 \\), but not for \\( qzxwvtnp=0 \\).\n\nEuler's formula for networks on a sphere is valid when the edges are topologically segments and the regions are topologically disks. It fails therefore when \\( qzxwvtnp=0 \\), because the one region is not a disk. It fails when \\( qzxwvtnp=1 \\), because the edge is not a segment; if we add two vertices on the circle, however, we have \\( asldfjke=2, pqowieur=2, zmxncbva=2 \\), and the formula is again valid."
+    },
+    "kernel_variant": {
+      "question": "Let $n\\,(\\ge 1)$ distinct projective lines be drawn in the real projective plane $\\mathbb{RP}^2$, with the condition that no three of the lines are concurrent (i.e.\no three pass through the same point).  Into how many connected regions do these $n$ lines decompose $\\mathbb{RP}^2$?",
+      "solution": "Denote by f(n) the number of regions determined by n projective lines under the stated general-position hypothesis.\n\nStep 1 (Add one more line.)  Suppose n lines have already been drawn and consider introducing an additional line \\ell _{n+1}.  Because any two distinct projective lines meet in exactly one point, \\ell _{n+1} meets each of the n existing lines in precisely one point, and no two of these intersection points coincide (our no-three-concurrent condition).  Hence \\ell _{n+1} acquires n distinct intersection points.\n\nStep 2 (How many arcs?)  A projective line is topologically a circle.  The n points just obtained partition this circle into n arcs.\n\nStep 3 (Effect on regions.)  Traversing any one of these arcs crosses from one existing region of RP^2\\\\bigcup _{i=1}^n \\ell _i to another, thereby splitting that region into two.  Consequently each of the n arcs created adds one new region, giving the linear recurrence\n\n    f(n+1)=f(n)+n   (n\\geq 1).\n\nStep 4 (Base value and solution.)  With a single projective line the plane is split into exactly f(1)=1 region (its complement is a Mobius band, hence connected).  Solving the recurrence:\n\n    f(1)=1, f(2)=1+1=2, f(3)=2+2=4, \\ldots \n\nIn general,\n\n    f(n)=1+\\sum _{k=1}^{n-1}k = 1 + n(n-1)/2.\n\nHence\n\n    f(n)=\\frac{1}{2}n(n-1)+1.\n\nSecond derivation via Euler characteristic.  Let V,E,F be the numbers of vertices, edges, and faces, respectively, in the subdivision of RP^2.  Because each unordered pair of lines meets once,\n\n    V= C(n,2)=n(n-1)/2.\n\nEach crossing is incident with four edge-segments, so 2E=4V \\Rightarrow  E=2V.  The real projective plane has \\chi (RP^2)=1, so\n\n    V-E+F=1 \\Rightarrow  F=1-V+E=1+V,\n\nand substituting V produces the same closed form F = \\frac{1}{2}n(n-1)+1.\n\nTherefore n projective lines in general position divide RP^2 into \\frac{1}{2}n(n-1)+1 regions.",
+      "_meta": {
+        "core_steps": [
+          "Add the (n+1)-st circle and observe it meets each of the n existing ones in exactly 2 distinct points.",
+          "Those 2n points partition the new circle into 2n arcs.",
+          "Each arc splits one pre-existing region, so f(n+1)=f(n)+2n.",
+          "With base value f(1)=2, solve the linear recurrence to get f(n)=n²−n+2."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Constant number of transverse intersection points for every unordered pair of curves.",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "Resulting number of arcs into which the new curve is cut (intersection_count × n).",
+            "original": "2n"
+          },
+          "slot3": {
+            "description": "Euler characteristic of the ambient surface if the Euler-formula proof is used.",
+            "original": "2"
+          },
+          "slot4": {
+            "description": "Base-case region count when exactly one curve is present.",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,117 @@
+{
+  "index": "1983-B-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-6\nLet \\( k \\) be a positive integer, let \\( m=2^{k}+1 \\), and let \\( r \\neq 1 \\) be a complex root of \\( z^{m}-1=0 \\). Prove that there exist polynomials \\( P(z) \\) and \\( Q(z) \\) with integer coefficients such that\n\\[\n(P(r))^{2}+(Q(r))^{2}=-1\n\\]",
+  "solution": "B-6.\nSince \\( r \\neq 1 \\) and \\( r^{m}-1=(r-1)\\left(r^{m-1}+r^{m-2}+\\cdots+1\\right)=0 \\), one has \\( r^{m-1}+r^{m-2} \\) \\( +\\cdots+1=0 \\) and so\n\\[\n\\begin{aligned}\n-1 & =r\\left(1+r+r^{2}+\\cdots+r^{m-2}\\right), \\\\\n-1 & =r(1+r)\\left(1+r^{2}\\right)\\left(1+r^{4}\\right) \\cdots\\left(1+r^{(m-1) / 2}\\right), \\\\\n-1 & =\\left(r+r^{2}\\right)\\left(1+r^{2}\\right)\\left(1+r^{4}\\right) \\cdots\\left(1+r^{(m-1) / 2}\\right) .\n\\end{aligned}\n\\]\n\nSince \\( r+r^{2}=r^{m+1}+r^{2} \\) with \\( m+1=2\\left(2^{k-1}+1\\right) \\), each of the factors in the last expression for -1 is a sum of two squares. Their product can be expressed as a sum of two squares by repeated application of the identity\n\\[\n\\left(a^{2}+b^{2}\\right)\\left(c^{2}+d^{2}\\right)=(a c-b d)^{2}+(a d+b c)^{2} .\n\\]\n\nThis converts -1 into \\( P^{2}+Q^{2} \\) with each of \\( P \\) and \\( Q \\) a polynomial in \\( r \\) with integer coefficients.",
+  "vars": [
+    "r",
+    "z",
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "params": [
+    "k",
+    "m",
+    "P",
+    "Q"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "r": "complexroot",
+        "z": "varindeter",
+        "a": "coefffirst",
+        "b": "coeffsecond",
+        "c": "coeffthird",
+        "d": "coefffourth",
+        "k": "posintk",
+        "m": "twopowplus",
+        "P": "polyfirst",
+        "Q": "polysecond"
+      },
+      "question": "Problem B-6\nLet \\( posintk \\) be a positive integer, let \\( twopowplus =2^{posintk}+1 \\), and let \\( complexroot \\neq 1 \\) be a complex root of \\( varindeter^{twopowplus}-1=0 \\). Prove that there exist polynomials \\( polyfirst(varindeter) \\) and \\( polysecond(varindeter) \\) with integer coefficients such that\n\\[\n(polyfirst(complexroot))^{2}+(polysecond(complexroot))^{2}=-1\n\\]",
+      "solution": "B-6.\nSince \\( complexroot \\neq 1 \\) and \\( complexroot^{twopowplus}-1=(complexroot-1)\\left(complexroot^{twopowplus-1}+complexroot^{twopowplus-2}+\\cdots+1\\right)=0 \\), one has \\( complexroot^{twopowplus-1}+complexroot^{twopowplus-2}+\\cdots+1=0 \\) and so\n\\[\n\\begin{aligned}\n-1 & = complexroot\\left(1+complexroot+complexroot^{2}+\\cdots+complexroot^{twopowplus-2}\\right), \\\\\n-1 & = complexroot(1+complexroot)\\left(1+complexroot^{2}\\right)\\left(1+complexroot^{4}\\right) \\cdots\\left(1+complexroot^{(twopowplus-1) / 2}\\right), \\\\\n-1 & = \\left(complexroot+complexroot^{2}\\right)\\left(1+complexroot^{2}\\right)\\left(1+complexroot^{4}\\right) \\cdots\\left(1+complexroot^{(twopowplus-1) / 2}\\right) .\n\\end{aligned}\n\\]\n\nSince \\( complexroot+complexroot^{2}=complexroot^{twopowplus+1}+complexroot^{2} \\) with \\( twopowplus+1=2\\left(2^{posintk-1}+1\\right) \\), each of the factors in the last expression for -1 is a sum of two squares. Their product can be expressed as a sum of two squares by repeated application of the identity\n\\[\n\\left(coefffirst^{2}+coeffsecond^{2}\\right)\\left(coeffthird^{2}+coefffourth^{2}\\right)=\\left(coefffirst\\,coeffthird-coeffsecond\\,coefffourth\\right)^{2}+\\left(coefffirst\\,coefffourth+coeffsecond\\,coeffthird\\right)^{2} .\n\\]\n\nThis converts -1 into \\( polyfirst^{2}+polysecond^{2} \\) with each of \\( polyfirst \\) and \\( polysecond \\) a polynomial in \\( complexroot \\) with integer coefficients."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "r": "sunflower",
+        "z": "riverbank",
+        "a": "tangerine",
+        "b": "chocolate",
+        "c": "pineapple",
+        "d": "butterfly",
+        "k": "raincloud",
+        "m": "stargazer",
+        "P": "lavender",
+        "Q": "peppermint"
+      },
+      "question": "Problem B-6\nLet \\( raincloud \\) be a positive integer, let \\( stargazer=2^{raincloud}+1 \\), and let \\( sunflower \\neq 1 \\) be a complex root of \\( riverbank^{stargazer}-1=0 \\). Prove that there exist polynomials \\( lavender(riverbank) \\) and \\( peppermint(riverbank) \\) with integer coefficients such that\n\\[\n(lavender(sunflower))^{2}+(peppermint(sunflower))^{2}=-1\n\\]",
+      "solution": "B-6.\nSince \\( sunflower \\neq 1 \\) and \\( sunflower^{stargazer}-1=(sunflower-1)\\left(sunflower^{stargazer-1}+sunflower^{stargazer-2}+\\cdots+1\\right)=0 \\), one has \\( sunflower^{stargazer-1}+sunflower^{stargazer-2}+\\cdots+1=0 \\) and so\n\\[\n\\begin{aligned}\n-1 & = sunflower\\left(1+sunflower+sunflower^{2}+\\cdots+sunflower^{stargazer-2}\\right), \\\\\n-1 & = sunflower(1+sunflower)\\left(1+sunflower^{2}\\right)\\left(1+sunflower^{4}\\right) \\cdots\\left(1+sunflower^{(stargazer-1) / 2}\\right), \\\\\n-1 & = \\left(sunflower+sunflower^{2}\\right)\\left(1+sunflower^{2}\\right)\\left(1+sunflower^{4}\\right) \\cdots\\left(1+sunflower^{(stargazer-1) / 2}\\right) .\n\\end{aligned}\n\\]\n\nSince \\( sunflower+sunflower^{2}=sunflower^{stargazer+1}+sunflower^{2} \\) with \\( stargazer+1=2\\left(2^{raincloud-1}+1\\right) \\), each of the factors in the last expression for -1 is a sum of two squares. Their product can be expressed as a sum of two squares by repeated application of the identity\n\\[\n\\left(tangerine^{2}+chocolate^{2}\\right)\\left(pineapple^{2}+butterfly^{2}\\right)=(tangerine pineapple-chocolate butterfly)^{2}+(tangerine butterfly+chocolate pineapple)^{2} .\n\\]\n\nThis converts -1 into \\( lavender^{2}+peppermint^{2} \\) with each of \\( lavender \\) and \\( peppermint \\) a polynomial in \\( sunflower \\) with integer coefficients."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "r": "nonrootvalue",
+        "z": "fixedconstant",
+        "a": "immaterialpart",
+        "b": "unrelatedpiece",
+        "c": "divergentterm",
+        "d": "nullifiedfactor",
+        "k": "negativeindex",
+        "m": "minusculevalue",
+        "P": "nonpolyfunc",
+        "Q": "counterpoly"
+      },
+      "question": "Problem B-6\nLet \\( negativeindex \\) be a positive integer, let \\( minusculevalue = 2^{negativeindex}+1 \\), and let \\( nonrootvalue \\neq 1 \\) be a complex root of \\( fixedconstant^{minusculevalue}-1=0 \\). Prove that there exist polynomials \\( nonpolyfunc(fixedconstant) \\) and \\( counterpoly(fixedconstant) \\) with integer coefficients such that\n\\[\n(nonpolyfunc(nonrootvalue))^{2}+(counterpoly(nonrootvalue))^{2}=-1\n\\]",
+      "solution": "Since \\( nonrootvalue \\neq 1 \\) and \\( nonrootvalue^{minusculevalue}-1=(nonrootvalue-1)\\left(nonrootvalue^{minusculevalue-1}+nonrootvalue^{minusculevalue-2}+\\cdots+1\\right)=0 \\), one has \\( nonrootvalue^{minusculevalue-1}+nonrootvalue^{minusculevalue-2}+\\cdots+1=0 \\) and so\n\\[\n\\begin{aligned}\n-1 & =nonrootvalue\\left(1+nonrootvalue+nonrootvalue^{2}+\\cdots+nonrootvalue^{minusculevalue-2}\\right), \\\\\n-1 & =nonrootvalue(1+nonrootvalue)\\left(1+nonrootvalue^{2}\\right)\\left(1+nonrootvalue^{4}\\right) \\cdots\\left(1+nonrootvalue^{(minusculevalue-1) / 2}\\right), \\\\\n-1 & =\\left(nonrootvalue+nonrootvalue^{2}\\right)\\left(1+nonrootvalue^{2}\\right)\\left(1+nonrootvalue^{4}\\right) \\cdots\\left(1+nonrootvalue^{(minusculevalue-1) / 2}\\right) .\n\\end{aligned}\n\\]\n\nSince \\( nonrootvalue+nonrootvalue^{2}=nonrootvalue^{minusculevalue+1}+nonrootvalue^{2} \\) with \\( minusculevalue+1=2\\left(2^{negativeindex-1}+1\\right) \\), each of the factors in the last expression for -1 is a sum of two squares. Their product can be expressed as a sum of two squares by repeated application of the identity\n\\[\n\\left(immaterialpart^{2}+unrelatedpiece^{2}\\right)\\left(divergentterm^{2}+nullifiedfactor^{2}\\right)=(immaterialpart\\,divergentterm-unrelatedpiece\\,nullifiedfactor)^{2}+(immaterialpart\\,nullifiedfactor+unrelatedpiece\\,divergentterm)^{2} .\n\\]\n\nThis converts -1 into \\( nonpolyfunc^{2}+counterpoly^{2} \\) with each of \\( nonpolyfunc \\) and \\( counterpoly \\) a polynomial in \\( nonrootvalue \\) with integer coefficients."
+    },
+    "garbled_string": {
+      "map": {
+        "r": "qzxwvtnp",
+        "z": "hjgrksla",
+        "a": "mldcewqr",
+        "b": "kpsdvenu",
+        "c": "gfyrbxla",
+        "d": "zopcntal",
+        "k": "owidhqem",
+        "m": "vstljkba",
+        "P": "tivqmnor",
+        "Q": "eakfslyc"
+      },
+      "question": "Problem B-6\nLet \\( owidhqem \\) be a positive integer, let \\( vstljkba=2^{owidhqem}+1 \\), and let \\( qzxwvtnp \\neq 1 \\) be a complex root of \\( hjgrksla^{vstljkba}-1=0 \\). Prove that there exist polynomials \\( tivqmnor(hjgrksla) \\) and \\( eakfslyc(hjgrksla) \\) with integer coefficients such that\n\\[\n(tivqmnor(qzxwvtnp))^{2}+(eakfslyc(qzxwvtnp))^{2}=-1\n\\]",
+      "solution": "B-6.\nSince \\( qzxwvtnp \\neq 1 \\) and \\( qzxwvtnp^{vstljkba}-1=(qzxwvtnp-1)\\left(qzxwvtnp^{vstljkba-1}+qzxwvtnp^{vstljkba-2}+\\cdots+1\\right)=0 \\), one has \\( qzxwvtnp^{vstljkba-1}+qzxwvtnp^{vstljkba-2}+\\cdots+1=0 \\) and so\n\\[\n\\begin{aligned}\n-1 & = qzxwvtnp\\left(1+qzxwvtnp+qzxwvtnp^{2}+\\cdots+qzxwvtnp^{vstljkba-2}\\right), \\\\\n-1 & = qzxwvtnp(1+qzxwvtnp)\\left(1+qzxwvtnp^{2}\\right)\\left(1+qzxwvtnp^{4}\\right) \\cdots\\left(1+qzxwvtnp^{(vstljkba-1) / 2}\\right), \\\\\n-1 & =\\left(qzxwvtnp+qzxwvtnp^{2}\\right)\\left(1+qzxwvtnp^{2}\\right)\\left(1+qzxwvtnp^{4}\\right) \\cdots\\left(1+qzxwvtnp^{(vstljkba-1) / 2}\\right) .\n\\end{aligned}\n\\]\n\nSince \\( qzxwvtnp+qzxwvtnp^{2}=qzxwvtnp^{vstljkba+1}+qzxwvtnp^{2} \\) with \\( vstljkba+1=2\\left(2^{owidhqem-1}+1\\right) \\), each of the factors in the last expression for \\(-1\\) is a sum of two squares. Their product can be expressed as a sum of two squares by repeated application of the identity\n\\[\n\\left(mldcewqr^{2}+kpsdvenu^{2}\\right)\\left(gfyrbxla^{2}+zopcntal^{2}\\right)=(mldcewqr gfyrbxla-kpsdvenu zopcntal)^{2}+(mldcewqr zopcntal+kpsdvenu gfyrbxla)^{2} .\n\\]\n\nThis converts \\(-1\\) into \\( tivqmnor^{2}+eakfslyc^{2} \\) with each of \\( tivqmnor \\) and \\( eakfslyc \\) a polynomial in \\( qzxwvtnp \\) with integer coefficients."
+    },
+    "kernel_variant": {
+      "question": "Let n>2 be an integer such that n-1 is a power of two.  If \\(\\zeta\\neq 1\\) is a complex root of \\(z^{n}-1=0\\), prove that there exist polynomials \\(A(z),\\,B(z)\\in\\mathbb Z[z]\\) satisfying\n\\[\nA(\\zeta)^{2}+B(\\zeta)^{2}=-1.\n\\]",
+      "solution": "Let n>2 satisfy n-1=2^k with k\\geq 1, and let \\zeta \\neq 1 be a root of \\zeta ^n=1.  Then 1+\\zeta +\\zeta ^2+\\cdots +\\zeta ^{n-1}=0, so\n\n  \\zeta (1+\\zeta +\\zeta ^2+\\cdots +\\zeta ^{n-2}) = -1.\n\nBut\n\n  1+\\zeta +\\cdots +\\zeta ^{n-2} = 1+\\zeta +\\cdots +\\zeta ^{2^k-1} = \\prod _{i=0}^{k-1}(1+\\zeta ^{2^i}),\n\nsince (X-1)(1+X+\\cdots +X^{2^k-1})=X^{2^k}-1=(X-1)\\prod _{i=0}^{k-1}(1+X^{2^i}).  Hence\n\n  -1 = \\zeta \\cdot (1+\\zeta )\\cdot (1+\\zeta ^2)\\cdot (1+\\zeta ^4)\\cdots (1+\\zeta ^{2^{k-1}}).\n\nGroup the first two factors:\n\n  \\zeta (1+\\zeta ) = \\zeta +\\zeta ^2.\n\nThus\n\n  -1 = (\\zeta +\\zeta ^2)(1+\\zeta ^2)(1+\\zeta ^4)\\cdots (1+\\zeta ^{2^{k-1}}).\n\nNow write each factor as a sum of two squares of integer-coefficient monomials in \\zeta :\n\n  \\zeta +\\zeta ^2 = (\\zeta ^{2^{k-1}+1})^2 + (\\zeta )^2,\n\nand for j=1,\\ldots ,k-1,\n\n  1+\\zeta ^{2^j} = 1^2 + (\\zeta ^{2^{j-1}})^2.\n\nFinally, apply the Brahmagupta-Fibonacci identity\n\n  (a^2+b^2)(c^2+d^2) = (ac-bd)^2 + (ad+bc)^2\n\nrepeatedly to combine all these factors into a single representation\n\n  -1 = P(\\zeta )^2 + Q(\\zeta )^2,\n\nwhere P(z),Q(z) are integer-coefficient polynomials.  Renaming P\\to A and Q\\to B gives the desired result\n\n  A(\\zeta )^2 + B(\\zeta )^2 = -1,\n\nwith A,B\\in \\mathbb{Z}[z].",
+      "_meta": {
+        "core_steps": [
+          "Geometric-series argument: from r^m = 1 (r ≠ 1) get −1 = r(1 + r + ⋯ + r^{m−2}).",
+          "Because m − 1 = 2^k, factor the parenthesis as (1 + r)(1 + r^2)…(1 + r^{2^{k−1}}) and rewrite r(1 + r) as r + r^2.",
+          "Notice every factor is a sum of two squares: 1 + r^{2^j} = 1^2 + (r^{2^{j−1}})^2 and r + r^2 = (r^{(m+1)/2})^2 + r^2.",
+          "Iterate the Brahmagupta–Fibonacci identity (a^2 + b^2)(c^2 + d^2) = (ac − bd)^2 + (ad + bc)^2 to turn the whole product into P(r)^2 + Q(r)^2.",
+          "Observe that all coefficients stay integral, yielding polynomials P, Q ∈ ℤ[z]."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Instead of specifying m = 2^k + 1, one may merely assume m − 1 is a power of two (an equivalent but structurally different statement).",
+            "original": "m = 2^{k} + 1"
+          },
+          "slot2": {
+            "description": "The symbols chosen for the final polynomials are inessential; any pair of names works.",
+            "original": "P, Q"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

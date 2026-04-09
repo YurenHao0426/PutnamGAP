@@ -1,0 +1,217 @@
+{
+  "index": "1985-B-6",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $G$ be a finite set of real $n\\times n$ matrices $\\{M_i\\}$, $1\n\\leq i \\leq r$, which form a group under matrix\nmultiplication. Suppose that $\\sum_{i=1}^r \\mathrm{tr}(M_i)=0$, where\n$\\mathrm{tr}(A)$\ndenotes the trace of the matrix $A$. Prove that $\\sum_{i=1}^r M_i$ is\nthe $n \\times n$ zero matrix.\n\n\\end{itemize}\n\n\\end{document}",
+  "solution": "Solution 1. Let \\( S=\\sum_{i=1}^{r} M_{i} \\). For any \\( j \\), the sequence \\( M_{j} M_{1}, M_{j} M_{2}, \\ldots, M_{j} M_{r} \\) is a permutation of the elements of \\( G \\), and summing yields \\( M_{j} S=S \\). Summing this from \\( j=1 \\) to \\( r \\) yields \\( S^{2}=r S \\). Therefore the minimal polynomial of \\( S \\) divides \\( x^{2}-r x \\), and every eigenvalue of \\( S \\) is either 0 or \\( r \\). But the eigenvalues counted with multiplicity sum to \\( \\operatorname{tr}(S)=0 \\), so they are all 0 . At this point, we present three ways to finish the proof that \\( S=0 \\) :\n1. Every eigenvalue of \\( S-r I \\) is \\( -r \\neq 0 \\), so \\( S-r I \\) is invertible. Hence from \\( S(S-r I)=0 \\) we obtain \\( S=0 \\).\n2. The minimal polynomial \\( p(x) \\) of \\( S \\) must be \\( x, x-r \\), or \\( x(x-r) \\). Since every zero of the minimal polynomial is an eigenvalue, the minimal polynomial is \\( x \\). By the Cayley-Hamilton Theorem [Ap2, Theorem 7.8], \\( p(S)=0 \\); that is, \\( S=0 \\).\n3. The Jordan canonical form of \\( S \\) over the complex numbers has 0 's (the eigenvalues) on the main diagonal, possible 1's just above the diagonal, and 0's elsewhere. The condition \\( S^{2}=r S \\) implies that there are no 1's, so the Jordan canonical form of \\( S \\) is 0 . Thus \\( S=0 \\).\n\nLiterature note. See \\( [\\mathrm{Ap} 2, \\mathrm{Ch} .4] \\) for a quick introduction to eigenvalues and eigenvectors.\n\nSolution 2 (based on an idea of Dave Savitt).\nLemma. Let \\( G \\) be a finite group of order \\( r \\). Let \\( \\rho: G \\rightarrow \\operatorname{Aut}(V) \\) be a representation of \\( G \\) on some finite-dimensional complex vector space \\( V \\). Then \\( \\sum_{g \\in G} \\operatorname{tr} \\rho(g) \\) is a nonnegative integer divisible by \\( r \\), and is zero if and only if \\( \\sum_{g \\in G} \\rho(g)=0 \\).\n\nProof. Let \\( \\eta_{1}, \\ldots, \\eta_{s} \\) be the irreducible characters of \\( G \\). Theorem 3 on p. 15 of [Se2] implies that if \\( \\chi=\\sum_{i=1}^{s} a_{i} \\eta_{i} \\) and \\( \\psi=\\sum_{i=1}^{s} b_{i} \\eta_{i} \\) are arbitrary characters, then\n\\[\n\\frac{1}{r} \\sum_{g \\in G} \\chi(g) \\overline{\\psi(g)}=\\sum_{i=1}^{s} a_{i} b_{i} .\n\\]\n\nApplying this to the character of \\( \\rho \\) and the trivial character 1 shows that \\( \\frac{1}{r} \\sum_{g \\in G} \\operatorname{tr} \\rho(g) \\) equals the multiplicity of \\( \\mathbf{1} \\) in \\( \\rho \\), which is a nonnegative integer.\n\nNow suppose that the matrix \\( S=\\sum_{g \\in G} \\rho(g) \\) is nonzero. Choose \\( v \\in V \\) with \\( S v \\neq 0 \\). The relation \\( \\rho(h) S=S \\) shows that \\( S v \\) is fixed by \\( \\rho(h) \\) for all \\( h \\in G \\). In other words, \\( S v \\) spans a trivial subrepresentation of \\( \\rho \\), so the nonnegative integer of the previous paragraph is positive.\n\nWe now return to the problem at hand. Unfortunately the \\( M_{i} \\) do not necessarily define a representation of \\( G \\), since the \\( M_{i} \\) need not be invertible. Instead we need to apply the lemma to the action of \\( G \\) on \\( \\mathbb{C}^{n} / K \\), for some subspace \\( K \\). Given \\( 1 \\leq i, j \\leq r \\), there exists \\( k \\) such that \\( M_{i}=M_{k} M_{j} \\), so \\( \\operatorname{ker} M_{j} \\subseteq \\operatorname{ker} M_{i} \\). This holds for all \\( i \\) and \\( j \\), so the \\( M_{i} \\) have a common kernel, which we call \\( K \\). Then the \\( M_{i} \\) and \\( S \\) also act on \\( \\mathbb{C}^{n} / K \\). If \\( v \\in \\mathbb{C}^{n} \\) maps to an element of \\( \\mathbb{C}^{n} / K \\) in the kernel of \\( M_{i} \\) acting on \\( \\mathbb{C}^{n} / K \\), then \\( M_{i} M_{i} v \\in M_{i}(K)=0 \\), but \\( M_{i} M_{i}=M_{j} \\) for some \\( j \\), so \\( v \\in \\operatorname{ker}\\left(M_{j}\\right)=K \\). Thus the \\( M_{i} \\) act invertibly on \\( \\mathbb{C}^{n} / K \\). We finish by applying the lemma to the representation \\( \\mathbb{C}^{n} / K \\) of \\( G \\), using the observation that \\( \\operatorname{tr} S \\) is the sum of the traces of \\( S \\) acting on \\( \\mathbb{C}^{n} / K \\) and on \\( K \\), with the trace on \\( K \\) being zero.\n\nRemark. One can also give a elementary variant of this solution (which somewhat obscures the connection with representation theory). Namely, we prove by induction on \\( n \\) that \\( \\operatorname{tr} S \\) is a nonnegative integer divisible by \\( r \\), which is nonzero if \\( S \\neq 0 \\). The case \\( n=1 \\) is straightforward; given the result for \\( n-1 \\), choose as above a vector \\( v \\in \\mathbb{C}^{n} \\) with \\( S v \\neq 0 \\), so that each of the matrices preserves \\( v \\). Let \\( V \\) be the span of \\( v \\); then the trace of \\( S \\) is equal to the sum of its trace on \\( V \\) and on the quotient \\( \\mathbb{C}^{n} / V \\). The former is \\( r \\) and the latter is a nonnegative integer divisible by \\( r \\).\n\nLiterature note. See \\( [\\mathrm{Se} 2] \\) for an introduction to representation theory. The relations given by (2) are known as the orthogonality relations for characters.",
+  "vars": [
+    "i",
+    "j",
+    "k",
+    "g",
+    "h",
+    "s",
+    "a_i",
+    "b_i",
+    "v",
+    "x"
+  ],
+  "params": [
+    "G",
+    "n",
+    "M_i",
+    "r",
+    "A",
+    "S",
+    "M_1",
+    "M_2",
+    "M_r",
+    "I",
+    "p",
+    "K",
+    "V",
+    "\\\\rho",
+    "\\\\eta_1",
+    "\\\\eta_s",
+    "\\\\chi",
+    "\\\\psi"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexvar",
+        "j": "iterjvar",
+        "k": "iterkvar",
+        "g": "groupelem",
+        "h": "groupelemh",
+        "s": "counters",
+        "a_i": "coeffaix",
+        "b_i": "coeffbix",
+        "v": "vectorvar",
+        "x": "variablex",
+        "G": "groupmain",
+        "n": "dimsizen",
+        "M_i": "matrixset",
+        "r": "groupsize",
+        "A": "matrixgen",
+        "S": "summatrix",
+        "M_1": "matrixone",
+        "M_2": "matrixtwo",
+        "M_r": "matrixrth",
+        "I": "identity",
+        "p": "polymin",
+        "K": "kernelsp",
+        "V": "vectorsp",
+        "\\\\rho": "representation",
+        "\\\\eta_1": "etafirst",
+        "\\\\eta_s": "etaslast",
+        "\\\\chi": "chivar",
+        "\\\\psi": "psivar"
+      },
+      "question": "Let $groupmain$ be a finite set of real $dimsizen\\times dimsizen$ matrices $\\{matrixset\\}$, $1\\leq indexvar \\leq groupsize$, which form a group under matrix multiplication. Suppose that $\\sum_{indexvar=1}^{groupsize} \\mathrm{tr}(matrixset)=0$, where $\\mathrm{tr}(matrixgen)$ denotes the trace of the matrix $matrixgen$. Prove that $\\sum_{indexvar=1}^{groupsize} matrixset$ is the $dimsizen \\times dimsizen$ zero matrix.",
+      "solution": "Solution 1. Let \\( summatrix=\\sum_{indexvar=1}^{groupsize} matrixset \\). For any \\( iterjvar \\), the sequence \\( matrixset matrixone, matrixset matrixtwo, \\ldots, matrixset matrixrth \\) is a permutation of the elements of \\( groupmain \\), and summing yields \\( matrixset\\, summatrix=summatrix \\). Summing this from \\( iterjvar=1 \\) to \\( groupsize \\) yields \\( summatrix^{2}=groupsize\\, summatrix \\). Therefore the minimal polynomial of \\( summatrix \\) divides \\( variablex^{2}-groupsize\\, variablex \\), and every eigenvalue of \\( summatrix \\) is either 0 or \\( groupsize \\). But the eigenvalues counted with multiplicity sum to \\( \\operatorname{tr}(summatrix)=0 \\), so they are all 0. At this point, we present three ways to finish the proof that \\( summatrix=0 \\):\n1. Every eigenvalue of \\( summatrix-groupsize\\, identity \\) is \\( -groupsize \\neq 0 \\), so \\( summatrix-groupsize\\, identity \\) is invertible. Hence from \\( summatrix(summatrix-groupsize\\, identity)=0 \\) we obtain \\( summatrix=0 \\).\n2. The minimal polynomial \\( polymin(variablex) \\) of \\( summatrix \\) must be \\( variablex, variablex-groupsize \\), or \\( variablex(variablex-groupsize) \\). Since every zero of the minimal polynomial is an eigenvalue, the minimal polynomial is \\( variablex \\). By the Cayley-Hamilton Theorem [Ap2, Theorem 7.8], \\( polymin(summatrix)=0 \\); that is, \\( summatrix=0 \\).\n3. The Jordan canonical form of \\( summatrix \\) over the complex numbers has 0's (the eigenvalues) on the main diagonal, possible 1's just above the diagonal, and 0's elsewhere. The condition \\( summatrix^{2}=groupsize\\, summatrix \\) implies that there are no 1's, so the Jordan canonical form of \\( summatrix \\) is 0. Thus \\( summatrix=0 \\).\n\nLiterature note. See \\( [\\mathrm{Ap} 2, \\mathrm{Ch}.4] \\) for a quick introduction to eigenvalues and eigenvectors.\n\nSolution 2 (based on an idea of Dave Savitt).\nLemma. Let \\( groupmain \\) be a finite group of order \\( groupsize \\). Let \\( representation: groupmain \\rightarrow \\operatorname{Aut}(vectorsp) \\) be a representation of \\( groupmain \\) on some finite-dimensional complex vector space \\( vectorsp \\). Then \\( \\sum_{groupelem \\in groupmain} \\operatorname{tr} representation(groupelem) \\) is a nonnegative integer divisible by \\( groupsize \\), and is zero if and only if \\( \\sum_{groupelem \\in groupmain} representation(groupelem)=0 \\).\n\nProof. Let \\( etafirst, \\ldots, etaslast \\) be the irreducible characters of \\( groupmain \\). Theorem 3 on p. 15 of [Se2] implies that if \\( chivar=\\sum_{indexvar=1}^{counters} coeffaix\\, \\eta_{indexvar} \\) and \\( psivar=\\sum_{indexvar=1}^{counters} coeffbix\\, \\eta_{indexvar} \\) are arbitrary characters, then\n\\[\n\\frac{1}{groupsize} \\sum_{groupelem \\in groupmain} chivar(groupelem)\\, \\overline{psivar(groupelem)}=\\sum_{indexvar=1}^{counters} coeffaix\\, coeffbix .\n\\]\nApplying this to the character of \\( representation \\) and the trivial character \\( 1 \\) shows that \\( \\frac{1}{groupsize} \\sum_{groupelem \\in groupmain} \\operatorname{tr} representation(groupelem) \\) equals the multiplicity of \\( \\mathbf{1} \\) in \\( representation \\), which is a nonnegative integer.\n\nNow suppose that the matrix \\( summatrix=\\sum_{groupelem \\in groupmain} representation(groupelem) \\) is nonzero. Choose \\( vectorvar \\in vectorsp \\) with \\( summatrix\\, vectorvar \\neq 0 \\). The relation \\( representation(groupelemh)\\, summatrix=summatrix \\) shows that \\( summatrix\\, vectorvar \\) is fixed by \\( representation(groupelemh) \\) for all \\( groupelemh \\in groupmain \\). In other words, \\( summatrix\\, vectorvar \\) spans a trivial subrepresentation of \\( representation \\), so the nonnegative integer of the previous paragraph is positive.\n\nWe now return to the problem at hand. Unfortunately the \\( matrixset \\) do not necessarily define a representation of \\( groupmain \\), since the \\( matrixset \\) need not be invertible. Instead we need to apply the lemma to the action of \\( groupmain \\) on \\( \\mathbb{C}^{dimsizen} / kernelsp \\), for some subspace \\( kernelsp \\). Given \\( 1 \\leq indexvar, iterjvar \\leq groupsize \\), there exists \\( iterkvar \\) such that \\( matrixset=matrixset\\, matrixset \\), so \\( \\operatorname{ker} matrixset \\subseteq \\operatorname{ker} matrixset \\). This holds for all \\( indexvar \\) and \\( iterjvar \\), so the \\( matrixset \\) have a common kernel, which we call \\( kernelsp \\). Then the \\( matrixset \\) and \\( summatrix \\) also act on \\( \\mathbb{C}^{dimsizen} / kernelsp \\). If \\( vectorvar \\in \\mathbb{C}^{dimsizen} \\) maps to an element of \\( \\mathbb{C}^{dimsizen} / kernelsp \\) in the kernel of \\( matrixset \\) acting on \\( \\mathbb{C}^{dimsizen} / kernelsp \\), then \\( matrixset matrixset\\, vectorvar \\in matrixset(kernelsp)=0 \\), but \\( matrixset matrixset=matrixset \\) for some \\( iterjvar \\), so \\( vectorvar \\in \\operatorname{ker}(matrixset)=kernelsp \\). Thus the \\( matrixset \\) act invertibly on \\( \\mathbb{C}^{dimsizen} / kernelsp \\). We finish by applying the lemma to the representation \\( \\mathbb{C}^{dimsizen} / kernelsp \\) of \\( groupmain \\), using the observation that \\( \\operatorname{tr} summatrix \\) is the sum of the traces of \\( summatrix \\) acting on \\( \\mathbb{C}^{dimsizen} / kernelsp \\) and on \\( kernelsp \\), with the trace on \\( kernelsp \\) being zero.\n\nRemark. One can also give an elementary variant of this solution (which somewhat obscures the connection with representation theory). Namely, we prove by induction on \\( dimsizen \\) that \\( \\operatorname{tr} summatrix \\) is a nonnegative integer divisible by \\( groupsize \\), which is nonzero if \\( summatrix \\neq 0 \\). The case \\( dimsizen=1 \\) is straightforward; given the result for \\( dimsizen-1 \\), choose as above a vector \\( vectorvar \\in \\mathbb{C}^{dimsizen} \\) with \\( summatrix\\, vectorvar \\neq 0 \\), so that each of the matrices preserves \\( vectorvar \\). Let \\( vectorsp \\) be the span of \\( vectorvar \\); then the trace of \\( summatrix \\) is equal to the sum of its trace on \\( vectorsp \\) and on the quotient \\( \\mathbb{C}^{dimsizen} / vectorsp \\). The former is \\( groupsize \\) and the latter is a nonnegative integer divisible by \\( groupsize \\).\n\nLiterature note. See \\( [\\mathrm{Se} 2] \\) for an introduction to representation theory. The relations given by (2) are known as the orthogonality relations for characters."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "horizonry",
+        "j": "landscape",
+        "k": "riverbank",
+        "g": "moonlight",
+        "h": "thunderclap",
+        "s": "stonewall",
+        "a_i": "suncascade",
+        "b_i": "rainforest",
+        "v": "lakeshore",
+        "x": "starflower",
+        "G": "seabreeze",
+        "M_i": "firestone",
+        "r": "tailwinds",
+        "A": "driftwood",
+        "S": "harborview",
+        "M_1": "waterspout",
+        "M_2": "earthquake",
+        "M_r": "whirlwind",
+        "I": "ironclad",
+        "p": "meadowlark",
+        "K": "kelpforest",
+        "V": "caravanser",
+        "\\rho": "brookstone",
+        "\\eta_1": "cloudburst",
+        "\\eta_s": "snowdrift",
+        "\\chi": "starlitpath",
+        "\\psi": "cobblestone"
+      },
+      "question": "Let $seabreeze$ be a finite set of real $n\\times n$ matrices $\\{firestone\\}$, $1 \\leq horizonry \\leq tailwinds$, which form a group under matrix multiplication. Suppose that $\\sum_{horizonry=1}^{tailwinds} \\mathrm{tr}(firestone)=0$, where $\\mathrm{tr}(driftwood)$ denotes the trace of the matrix $driftwood$. Prove that $\\sum_{horizonry=1}^{tailwinds} firestone$ is the $n \\times n$ zero matrix.",
+      "solution": "Solution 1. Let \\( harborview=\\sum_{horizonry=1}^{tailwinds} firestone \\). For any \\( landscape \\), the sequence \\( M_{landscape} waterspout, M_{landscape} earthquake, \\ldots, M_{landscape} whirlwind \\) is a permutation of the elements of \\( seabreeze \\), and summing yields \\( M_{landscape} harborview=harborview \\). Summing this from \\( landscape=1 \\) to \\( tailwinds \\) yields \\( harborview^{2}=tailwinds\\,harborview \\). Therefore the minimal polynomial of \\( harborview \\) divides \\( starflower^{2}-tailwinds\\,starflower \\), and every eigenvalue of \\( harborview \\) is either 0 or \\( tailwinds \\). But the eigenvalues counted with multiplicity sum to \\( \\operatorname{tr}(harborview)=0 \\), so they are all 0. At this point, we present three ways to finish the proof that \\( harborview=0 \\):\n1. Every eigenvalue of \\( harborview-tailwinds\\, ironclad \\) is \\( -tailwinds \\neq 0 \\), so \\( harborview-tailwinds\\, ironclad \\) is invertible. Hence from \\( harborview(harborview-tailwinds\\, ironclad)=0 \\) we obtain \\( harborview=0 \\).\n2. The minimal polynomial \\( meadowlark(starflower) \\) of \\( harborview \\) must be \\( starflower, starflower-tailwinds \\), or \\( starflower(starflower-tailwinds) \\). Since every zero of the minimal polynomial is an eigenvalue, the minimal polynomial is \\( starflower \\). By the Cayley-Hamilton Theorem [Ap2, Theorem 7.8], \\( meadowlark(harborview)=0 \\); that is, \\( harborview=0 \\).\n3. The Jordan canonical form of \\( harborview \\) over the complex numbers has 0's (the eigenvalues) on the main diagonal, possible 1's just above the diagonal, and 0's elsewhere. The condition \\( harborview^{2}=tailwinds\\,harborview \\) implies that there are no 1's, so the Jordan canonical form of \\( harborview \\) is 0. Thus \\( harborview=0 \\).\n\nLiterature note. See \\( [\\mathrm{Ap} 2, \\mathrm{Ch}.4] \\) for a quick introduction to eigenvalues and eigenvectors.\n\nSolution 2 (based on an idea of Dave Savitt).\n\nLemma. Let \\( seabreeze \\) be a finite group of order \\( tailwinds \\). Let \\( brookstone: seabreeze \\rightarrow \\operatorname{Aut}(caravanser) \\) be a representation of \\( seabreeze \\) on some finite-dimensional complex vector space \\( caravanser \\). Then \\( \\sum_{moonlight \\in seabreeze} \\operatorname{tr} brookstone(moonlight) \\) is a nonnegative integer divisible by \\( tailwinds \\), and is zero if and only if \\( \\sum_{moonlight \\in seabreeze} brookstone(moonlight)=0 \\).\n\nProof. Let \\( cloudburst, \\ldots, snowdrift \\) be the irreducible characters of \\( seabreeze \\). Theorem 3 on p. 15 of [Se2] implies that if \\( starlitpath=\\sum_{horizonry=1}^{stonewall} suncascade\\, \\eta_{horizonry} \\) and \\( cobblestone=\\sum_{horizonry=1}^{stonewall} rainforest\\, \\eta_{horizonry} \\) are arbitrary characters, then\n\\[\n\\frac{1}{tailwinds} \\sum_{moonlight \\in seabreeze} starlitpath(moonlight) \\overline{cobblestone(moonlight)}=\\sum_{horizonry=1}^{stonewall} suncascade\\, rainforest .\n\\]\n\nApplying this to the character of \\( brookstone \\) and the trivial character 1 shows that \\( \\frac{1}{tailwinds} \\sum_{moonlight \\in seabreeze} \\operatorname{tr} brookstone(moonlight) \\) equals the multiplicity of \\( \\mathbf{1} \\) in \\( brookstone \\), which is a nonnegative integer.\n\nNow suppose that the matrix \\( harborview=\\sum_{moonlight \\in seabreeze} brookstone(moonlight) \\) is nonzero. Choose \\( lakeshore \\in caravanser \\) with \\( harborview\\, lakeshore \\neq 0 \\). The relation \\( brookstone(thunderclap)\\, harborview=harborview \\) shows that \\( harborview\\, lakeshore \\) is fixed by \\( brookstone(thunderclap) \\) for all \\( thunderclap \\in seabreeze \\). In other words, \\( harborview\\, lakeshore \\) spans a trivial subrepresentation of \\( brookstone \\), so the nonnegative integer of the previous paragraph is positive.\n\nWe now return to the problem at hand. Unfortunately the \\( M_{horizonry} \\) do not necessarily define a representation of \\( seabreeze \\), since the \\( M_{horizonry} \\) need not be invertible. Instead we need to apply the lemma to the action of \\( seabreeze \\) on \\( \\mathbb{C}^{n} / kelpforest \\), for some subspace \\( kelpforest \\). Given \\( 1 \\leq horizonry, landscape \\leq tailwinds \\), there exists \\( riverbank \\) such that \\( M_{horizonry}=M_{riverbank} M_{landscape} \\), so \\( \\operatorname{ker} M_{landscape} \\subseteq \\operatorname{ker} M_{horizonry} \\). This holds for all \\( horizonry \\) and \\( landscape \\), so the \\( M_{horizonry} \\) have a common kernel, which we call \\( kelpforest \\). Then the \\( M_{horizonry} \\) and \\( harborview \\) also act on \\( \\mathbb{C}^{n} / kelpforest \\). If \\( lakeshore \\in \\mathbb{C}^{n} \\) maps to an element of \\( \\mathbb{C}^{n} / kelpforest \\) in the kernel of \\( M_{horizonry} \\) acting on \\( \\mathbb{C}^{n} / kelpforest \\), then \\( M_{horizonry} M_{horizonry} lakeshore \\in M_{horizonry}(kelpforest)=0 \\), but \\( M_{horizonry} M_{horizonry}=M_{landscape} \\) for some \\( landscape \\), so \\( lakeshore \\in \\operatorname{ker}\\left(M_{landscape}\\right)=kelpforest \\). Thus the \\( M_{horizonry} \\) act invertibly on \\( \\mathbb{C}^{n} / kelpforest \\). We finish by applying the lemma to the representation \\( \\mathbb{C}^{n} / kelpforest \\) of \\( seabreeze \\), using the observation that \\( \\operatorname{tr} harborview \\) is the sum of the traces of \\( harborview \\) acting on \\( \\mathbb{C}^{n} / kelpforest \\) and on \\( kelpforest \\), with the trace on \\( kelpforest \\) being zero.\n\nRemark. One can also give a elementary variant of this solution (which somewhat obscures the connection with representation theory). Namely, we prove by induction on \\( n \\) that \\( \\operatorname{tr} harborview \\) is a nonnegative integer divisible by \\( tailwinds \\), which is nonzero if \\( harborview \\neq 0 \\). The case \\( n=1 \\) is straightforward; given the result for \\( n-1 \\), choose as above a vector \\( lakeshore \\in \\mathbb{C}^{n} \\) with \\( harborview\\, lakeshore \\neq 0 \\), so that each of the matrices preserves \\( lakeshore \\). Let \\( caravanser \\) be the span of \\( lakeshore \\); then the trace of \\( harborview \\) is equal to the sum of its trace on \\( caravanser \\) and on the quotient \\( \\mathbb{C}^{n} / caravanser \\). The former is \\( tailwinds \\) and the latter is a nonnegative integer divisible by \\( tailwinds \\).\n\nLiterature note. See \\( [\\mathrm{Se} 2] \\) for an introduction to representation theory. The relations given by (2) are known as the orthogonality relations for characters."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "noniterator",
+        "j": "fixedpoint",
+        "k": "stationary",
+        "g": "outsider",
+        "h": "unaligned",
+        "s": "uncounted",
+        "a_i": "staticcoef",
+        "b_i": "steadycoef",
+        "v": "scalarval",
+        "x": "constant",
+        "G": "isolatedset",
+        "n": "codimension",
+        "M_i": "scalararray",
+        "r": "infinite",
+        "A": "singularity",
+        "S": "difference",
+        "M_1": "initialscalar",
+        "M_2": "middlescalar",
+        "M_r": "terminalscalar",
+        "I": "anonymity",
+        "p": "monolith",
+        "K": "imagepart",
+        "V": "scalarspace",
+        "\\\\rho": "misrepmap",
+        "\\\\eta_1": "compositeone",
+        "\\\\eta_s": "compositeset",
+        "\\\\chi": "noncharac",
+        "\\\\psi": "nonmirror"
+      },
+      "question": "Let $isolatedset$ be a finite set of real $codimension\\times codimension$ matrices $\\{scalararray\\}$, $1\\leq noniterator \\leq infinite$, which form a group under matrix multiplication. Suppose that $\\sum_{noniterator=1}^{infinite} \\mathrm{tr}(scalararray)=0$, where $\\mathrm{tr}(singularity)$ denotes the trace of the matrix $singularity$. Prove that $\\sum_{noniterator=1}^{infinite} scalararray$ is the $codimension \\times codimension$ zero matrix.",
+      "solution": "Solution 1. Let \\( difference=\\sum_{noniterator=1}^{infinite} scalararray \\). For any \\( fixedpoint \\), the sequence \\( M_{fixedpoint} initialscalar, M_{fixedpoint} middlescalar, \\ldots, M_{fixedpoint} terminalscalar \\) is a permutation of the elements of \\( isolatedset \\), and summing yields \\( M_{fixedpoint} difference=difference \\). Summing this from \\( fixedpoint=1 \\) to \\( infinite \\) yields \\( difference^{2}=infinite\\,difference \\). Therefore the minimal polynomial of \\( difference \\) divides \\( constant^{2}-infinite\\,constant \\), and every eigenvalue of \\( difference \\) is either 0 or \\( infinite \\). But the eigenvalues counted with multiplicity sum to \\( \\operatorname{tr}(difference)=0 \\), so they are all 0. At this point, we present three ways to finish the proof that \\( difference=0 \\):\n1. Every eigenvalue of \\( difference-infinite\\,anonymity \\) is \\( -infinite\\neq0 \\), so \\( difference-infinite\\,anonymity \\) is invertible. Hence from \\( difference(difference-infinite\\,anonymity)=0 \\) we obtain \\( difference=0 \\).\n2. The minimal polynomial \\( monolith(constant) \\) of \\( difference \\) must be \\( constant,\\,constant-infinite \\), or \\( constant(constant-infinite) \\). Since every zero of the minimal polynomial is an eigenvalue, the minimal polynomial is \\( constant \\). By the Cayley-Hamilton Theorem [Ap2, Theorem 7.8], \\( monolith(difference)=0 \\); that is, \\( difference=0 \\).\n3. The Jordan canonical form of \\( difference \\) over the complex numbers has 0's (the eigenvalues) on the main diagonal, possible 1's just above the diagonal, and 0's elsewhere. The condition \\( difference^{2}=infinite\\,difference \\) implies that there are no 1's, so the Jordan canonical form of \\( difference \\) is 0. Thus \\( difference=0 \\).\n\nLiterature note. See \\( [\\mathrm{Ap} 2, \\mathrm{Ch}.4] \\) for a quick introduction to eigenvalues and eigenvectors.\n\nSolution 2 (based on an idea of Dave Savitt).\nLemma. Let \\( isolatedset \\) be a finite group of order \\( infinite \\). Let \\( misrepmap: isolatedset \\rightarrow \\operatorname{Aut}(scalarspace) \\) be a representation of \\( isolatedset \\) on some finite-dimensional complex vector space \\( scalarspace \\). Then \\( \\sum_{outsider \\in isolatedset} \\operatorname{tr} misrepmap(outsider) \\) is a nonnegative integer divisible by \\( infinite \\), and is zero if and only if \\( \\sum_{outsider \\in isolatedset} misrepmap(outsider)=0 \\).\n\nProof. Let \\( compositeone,\\ldots,compositeset \\) be the irreducible characters of \\( isolatedset \\). Theorem 3 on p. 15 of [Se2] implies that if \\( noncharac=\\sum_{i=1}^{s} staticcoef\\,compositeone \\) and \\( nonmirror=\\sum_{i=1}^{s} steadycoef\\,compositeone \\) are arbitrary characters, then\n\\[\n\\frac{1}{infinite}\\sum_{outsider \\in isolatedset} noncharac(outsider)\\,\\overline{nonmirror(outsider)}=\\sum_{i=1}^{s} staticcoef\\,steadycoef.\n\\]\nApplying this to the character of \\( misrepmap \\) and the trivial character 1 shows that \\( \\frac{1}{infinite}\\sum_{outsider \\in isolatedset} \\operatorname{tr} misrepmap(outsider) \\) equals the multiplicity of \\( \\mathbf{1} \\) in \\( misrepmap \\), which is a nonnegative integer.\n\nNow suppose that the matrix \\( difference=\\sum_{outsider \\in isolatedset} misrepmap(outsider) \\) is nonzero. Choose \\( scalarval \\in scalarspace \\) with \\( difference\\,scalarval \\neq 0 \\). The relation \\( misrepmap(unaligned)\\,difference=difference \\) shows that \\( difference\\,scalarval \\) is fixed by \\( misrepmap(unaligned) \\) for all \\( unaligned \\in isolatedset \\). In other words, \\( difference\\,scalarval \\) spans a trivial subrepresentation of \\( misrepmap \\), so the nonnegative integer of the previous paragraph is positive.\n\nWe now return to the problem at hand. Unfortunately the \\( scalararray \\) do not necessarily define a representation of \\( isolatedset \\), since the \\( scalararray \\) need not be invertible. Instead we need to apply the lemma to the action of \\( isolatedset \\) on \\( \\mathbb{C}^{codimension} / imagepart \\), for some subspace \\( imagepart \\). Given \\( 1 \\leq noniterator, fixedpoint \\leq infinite \\), there exists \\( stationary \\) such that \\( scalararray= M_{stationary} M_{fixedpoint} \\), so \\( \\operatorname{ker} M_{fixedpoint} \\subseteq \\operatorname{ker} scalararray \\). This holds for all \\( noniterator \\) and \\( fixedpoint \\), so the \\( scalararray \\) have a common kernel, which we call \\( imagepart \\). Then the \\( scalararray \\) and \\( difference \\) also act on \\( \\mathbb{C}^{codimension} / imagepart \\). If \\( scalarval \\in \\mathbb{C}^{codimension} \\) maps to an element of \\( \\mathbb{C}^{codimension} / imagepart \\) in the kernel of \\( scalararray \\) acting on \\( \\mathbb{C}^{codimension} / imagepart \\), then \\( scalararray\\,scalararray\\,scalarval \\in scalararray(imagepart)=0 \\), but \\( scalararray\\,scalararray=M_{fixedpoint} \\) for some \\( fixedpoint \\), so \\( scalarval \\in \\operatorname{ker}(M_{fixedpoint})=imagepart \\). Thus the \\( scalararray \\) act invertibly on \\( \\mathbb{C}^{codimension} / imagepart \\). We finish by applying the lemma to the representation \\( \\mathbb{C}^{codimension} / imagepart \\) of \\( isolatedset \\), using the observation that \\( \\operatorname{tr} difference \\) is the sum of the traces of \\( difference \\) acting on \\( \\mathbb{C}^{codimension} / imagepart \\) and on \\( imagepart \\), with the trace on \\( imagepart \\) being zero.\n\nRemark. One can also give an elementary variant of this solution (which somewhat obscures the connection with representation theory). Namely, we prove by induction on \\( codimension \\) that \\( \\operatorname{tr} difference \\) is a nonnegative integer divisible by \\( infinite \\), which is nonzero if \\( difference \\neq 0 \\). The case \\( codimension=1 \\) is straightforward; given the result for \\( codimension-1 \\), choose as above a vector \\( scalarval \\in \\mathbb{C}^{codimension} \\) with \\( difference\\,scalarval \\neq 0 \\), so that each of the matrices preserves \\( scalarval \\). Let \\( scalarspace \\) be the span of \\( scalarval \\); then the trace of \\( difference \\) is equal to the sum of its trace on \\( scalarspace \\) and on the quotient \\( \\mathbb{C}^{codimension} / scalarspace \\). The former is \\( infinite \\) and the latter is a nonnegative integer divisible by \\( infinite \\).\n\nLiterature note. See \\( [\\mathrm{Se} 2] \\) for an introduction to representation theory. The relations given by (2) are known as the orthogonality relations for characters."
+    },
+    "garbled_string": {
+      "map": {
+        "i": "qzxwvtnp",
+        "j": "hjgrksla",
+        "k": "dmsqvepn",
+        "g": "vklmzbqe",
+        "h": "nprxwugc",
+        "s": "ytnwzkdo",
+        "a_i": "rfcajmze",
+        "b_i": "lmpxvguo",
+        "v": "pjftrhne",
+        "x": "wqdhmbsr",
+        "G": "zsktpnwe",
+        "n": "jrqvdmli",
+        "M_i": "tlyqpsav",
+        "r": "cvnxgmio",
+        "A": "bafscdpl",
+        "S": "xjfqrvzt",
+        "M_1": "gwzxrtyo",
+        "M_2": "pmqlhneb",
+        "M_r": "kdsowmua",
+        "I": "zhtrpvao",
+        "p": "udsyfvmc",
+        "K": "cvjgplkw",
+        "V": "fanjpywt",
+        "\\rho": "yzobkdse",
+        "\\eta_1": "soiukvnd",
+        "\\eta_s": "gmnylvwa",
+        "\\chi": "qnblsdcv",
+        "\\psi": "tcrxphyj"
+      },
+      "question": "Let $zsktpnwe$ be a finite set of real $jrqvdmli\\times jrqvdmli$ matrices $\\{tlyqpsav\\}$, $1\\leq qzxwvtnp \\leq cvnxgmio$, which form a group under matrix\nmultiplication. Suppose that $\\sum_{qzxwvtnp=1}^{cvnxgmio} \\mathrm{tr}(tlyqpsav)=0$, where $\\mathrm{tr}(bafscdpl)$\ndenotes the trace of the matrix $bafscdpl$. Prove that $\\sum_{qzxwvtnp=1}^{cvnxgmio} tlyqpsav$ is\nthe $jrqvdmli \\times jrqvdmli$ zero matrix.",
+      "solution": "Solution 1. Let \\( xjfqrvzt=\\sum_{qzxwvtnp=1}^{cvnxgmio} tlyqpsav \\). For any \\( hjgrksla \\), the sequence \\( M_{hjgrksla} gwzxrtyo, M_{hjgrksla} pmqlhneb, \\ldots, M_{hjgrksla} kdsowmua \\) is a permutation of the elements of \\( zsktpnwe \\), and summing yields \\( M_{hjgrksla} xjfqrvzt=xjfqrvzt \\). Summing this from \\( hjgrksla=1 \\) to \\( cvnxgmio \\) yields \\( xjfqrvzt^{2}=cvnxgmio xjfqrvzt \\). Therefore the minimal polynomial of \\( xjfqrvzt \\) divides \\( wqdhmbsr^{2}-cvnxgmio wqdhmbsr \\), and every eigenvalue of \\( xjfqrvzt \\) is either 0 or \\( cvnxgmio \\). But the eigenvalues counted with multiplicity sum to \\( \\operatorname{tr}(xjfqrvzt)=0 \\), so they are all 0. At this point, we present three ways to finish the proof that \\( xjfqrvzt=0 \\):\n1. Every eigenvalue of \\( xjfqrvzt-cvnxgmio zhtrpvao \\) is \\( -cvnxgmio \\neq 0 \\), so \\( xjfqrvzt-cvnxgmio zhtrpvao \\) is invertible. Hence from \\( xjfqrvzt(xjfqrvzt-cvnxgmio zhtrpvao)=0 \\) we obtain \\( xjfqrvzt=0 \\).\n2. The minimal polynomial \\( udsyfvmc(wqdhmbsr) \\) of \\( xjfqrvzt \\) must be \\( wqdhmbsr, wqdhmbsr-cvnxgmio \\), or \\( wqdhmbsr(wqdhmbsr-cvnxgmio) \\). Since every zero of the minimal polynomial is an eigenvalue, the minimal polynomial is \\( wqdhmbsr \\). By the Cayley-Hamilton Theorem [Ap2, Theorem 7.8], \\( udsyfvmc(xjfqrvzt)=0 \\); that is, \\( xjfqrvzt=0 \\).\n3. The Jordan canonical form of \\( xjfqrvzt \\) over the complex numbers has 0's (the eigenvalues) on the main diagonal, possible 1's just above the diagonal, and 0's elsewhere. The condition \\( xjfqrvzt^{2}=cvnxgmio xjfqrvzt \\) implies that there are no 1's, so the Jordan canonical form of \\( xjfqrvzt \\) is 0. Thus \\( xjfqrvzt=0 \\).\n\nLiterature note. See \\( [\\mathrm{Ap} 2, \\mathrm{Ch}.4] \\) for a quick introduction to eigenvalues and eigenvectors.\n\nSolution 2 (based on an idea of Dave Savitt).\nLemma. Let \\( zsktpnwe \\) be a finite group of order \\( cvnxgmio \\). Let \\( yzobkdse: zsktpnwe \\rightarrow \\operatorname{Aut}(fanjpywt) \\) be a representation of \\( zsktpnwe \\) on some finite-dimensional complex vector space \\( fanjpywt \\). Then \\( \\sum_{vklmzbqe \\in zsktpnwe} \\operatorname{tr} yzobkdse(vklmzbqe) \\) is a nonnegative integer divisible by \\( cvnxgmio \\), and is zero if and only if \\( \\sum_{vklmzbqe \\in zsktpnwe} yzobkdse(vklmzbqe)=0 \\).\n\nProof. Let \\( soiukvnd, \\ldots, gmnylvwa \\) be the irreducible characters of \\( zsktpnwe \\). Theorem 3 on p. 15 of [Se2] implies that if \\( qnblsdcv=\\sum_{qzxwvtnp=1}^{ytnwzkdo} rfcajmze \\eta_{qzxwvtnp} \\) and \\( tcrxphyj=\\sum_{qzxwvtnp=1}^{ytnwzkdo} lmpxvguo \\eta_{qzxwvtnp} \\) are arbitrary characters, then\n\\[\n\\frac{1}{cvnxgmio} \\sum_{vklmzbqe \\in zsktpnwe} qnblsdcv(vklmzbqe) \\overline{tcrxphyj(vklmzbqe)}=\\sum_{qzxwvtnp=1}^{ytnwzkdo} rfcajmze lmpxvguo .\n\\]\nApplying this to the character of \\( yzobkdse \\) and the trivial character 1 shows that \\( \\frac{1}{cvnxgmio} \\sum_{vklmzbqe \\in zsktpnwe} \\operatorname{tr} yzobkdse(vklmzbqe) \\) equals the multiplicity of \\( \\mathbf{1} \\) in \\( yzobkdse \\), which is a nonnegative integer.\n\nNow suppose that the matrix \\( xjfqrvzt=\\sum_{vklmzbqe \\in zsktpnwe} yzobkdse(vklmzbqe) \\) is nonzero. Choose \\( pjftrhne \\in fanjpywt \\) with \\( xjfqrvzt pjftrhne \\neq 0 \\). The relation \\( yzobkdse(nprxwugc) xjfqrvzt=xjfqrvzt \\) shows that \\( xjfqrvzt pjftrhne \\) is fixed by \\( yzobkdse(nprxwugc) \\) for all \\( nprxwugc \\in zsktpnwe \\). In other words, \\( xjfqrvzt pjftrhne \\) spans a trivial subrepresentation of \\( yzobkdse \\), so the nonnegative integer of the previous paragraph is positive.\n\nWe now return to the problem at hand. Unfortunately the \\( tlyqpsav \\) do not necessarily define a representation of \\( zsktpnwe \\), since the \\( tlyqpsav \\) need not be invertible. Instead we need to apply the lemma to the action of \\( zsktpnwe \\) on \\( \\mathbb{C}^{jrqvdmli} / cvjgplkw \\), for some subspace \\( cvjgplkw \\). Given \\( 1 \\leq qzxwvtnp, hjgrksla \\leq cvnxgmio \\), there exists \\( dmsqvepn \\) such that \\( tlyqpsav=M_{dmsqvepn} M_{hjgrksla} \\), so \\( \\operatorname{ker} M_{hjgrksla} \\subseteq \\operatorname{ker} tlyqpsav \\). This holds for all \\( qzxwvtnp \\) and \\( hjgrksla \\), so the \\( tlyqpsav \\) have a common kernel, which we call \\( cvjgplkw \\). Then the \\( tlyqpsav \\) and \\( xjfqrvzt \\) also act on \\( \\mathbb{C}^{jrqvdmli} / cvjgplkw \\). If \\( pjftrhne \\in \\mathbb{C}^{jrqvdmli} \\) maps to an element of \\( \\mathbb{C}^{jrqvdmli} / cvjgplkw \\) in the kernel of \\( tlyqpsav \\) acting on \\( \\mathbb{C}^{jrqvdmli} / cvjgplkw \\), then \\( tlyqpsav tlyqpsav pjftrhne \\in tlyqpsav(cvjgplkw)=0 \\), but \\( tlyqpsav tlyqpsav=M_{hjgrksla} \\) for some \\( hjgrksla \\), so \\( pjftrhne \\in \\operatorname{ker}(M_{hjgrksla})=cvjgplkw \\). Thus the \\( tlyqpsav \\) act invertibly on \\( \\mathbb{C}^{jrqvdmli} / cvjgplkw \\). We finish by applying the lemma to the representation \\( \\mathbb{C}^{jrqvdmli} / cvjgplkw \\) of \\( zsktpnwe \\), using the observation that \\( \\operatorname{tr} xjfqrvzt \\) is the sum of the traces of \\( xjfqrvzt \\) acting on \\( \\mathbb{C}^{jrqvdmli} / cvjgplkw \\) and on \\( cvjgplkw \\), with the trace on \\( cvjgplkw \\) being zero.\n\nRemark. One can also give an elementary variant of this solution (which somewhat obscures the connection with representation theory). Namely, we prove by induction on \\( jrqvdmli \\) that \\( \\operatorname{tr} xjfqrvzt \\) is a nonnegative integer divisible by \\( cvnxgmio \\), which is nonzero if \\( xjfqrvzt \\neq 0 \\). The case \\( jrqvdmli=1 \\) is straightforward; given the result for \\( jrqvdmli-1 \\), choose as above a vector \\( pjftrhne \\in \\mathbb{C}^{jrqvdmli} \\) with \\( xjfqrvzt pjftrhne \\neq 0 \\), so that each of the matrices preserves \\( pjftrhne \\). Let \\( fanjpywt \\) be the span of \\( pjftrhne \\); then the trace of \\( xjfqrvzt \\) is equal to the sum of its trace on \\( fanjpywt \\) and on the quotient \\( \\mathbb{C}^{jrqvdmli} / fanjpywt \\). The former is \\( cvnxgmio \\) and the latter is a nonnegative integer divisible by \\( cvnxgmio \\).\n\nLiterature note. See \\( [\\mathrm{Se} 2] \\) for an introduction to representation theory. The relations given by (2) are known as the orthogonality relations for characters."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\{A_{\\kappa}\\}_{\\kappa=1}^{m}\\subseteq \\mathrm{GL}_{d}(\\mathbb{C})\\) be a finite subgroup of order \\(m\\).  Prove that if\n\\[\n\\sum_{\\kappa=1}^{m} \\operatorname{tr}(A_{\\kappa}) = 0,\n\\]\nthen\n\\[\n\\sum_{\\kappa=1}^{m} A_{\\kappa}=0_{d\\times d} .\n\\]",
+      "solution": "Set\nS=\\sum _{\\kappa =1}^mA_\\kappa \\in M_d(\\mathbb{C}).\n\n1. (Right-multiplication permutes the group.)  For any fixed \\lambda , the list\n   A_1A_\\lambda ,A_2A_\\lambda ,\\ldots ,A_mA_\\lambda \n   is a permutation of {A_1,\\ldots ,A_m}.  Hence\n   S A_\\lambda =\\sum _{\\kappa =1}^mA_\\kappa A_\\lambda =\\sum _{\\kappa =1}^mA_\\kappa =S.\n\n2. (Quadratic relation.)  Summing S A_\\lambda =S over \\lambda =1,\\ldots ,m gives\n   \\sum _{\\lambda =1}^mS A_\\lambda =S\\sum _{\\lambda =1}^mA_\\lambda =S^2,\n   while the right side is \\sum _{\\lambda =1}^mS=mS.  Therefore\n   S^2=mS.\n\n3. (Spectrum of S.)  The minimal polynomial divides x(x-m), so every eigenvalue of S lies in {0,m}.\n\n4. (Trace consideration.)  By hypothesis\n   tr S=\\sum _{\\kappa =1}^mtr A_\\kappa =0,\n   and tr S is the sum of the eigenvalues of S, each of which is 0 or m.  The only way to get sum zero is that all eigenvalues are 0.\n\n5. (Conclusion.)  Then S-mI has eigenvalues -m\\neq 0, so S-mI is invertible.  From\n   S(S-mI)=S^2-mS=0\n   we right-multiply by (S-mI)^{-1} to obtain S=0.\n\nHence \\sum _{\\kappa =1}^mA_\\kappa =0_{d\\times d}.",
+      "_meta": {
+        "core_steps": [
+          "Set S = Σ_{g∈G} g ; observe left-multiplication by any group element permutes G, giving gS = S and hence S² = rS",
+          "From S² = rS the minimal polynomial divides x(x−r), so every eigenvalue λ of S satisfies λ∈{0,r}",
+          "Because tr(S)=Σ tr(g)=0 equals the sum of the eigenvalues, the only possibility is that every eigenvalue is 0",
+          "With spectrum {0} and S² = rS, deduce S(S−rI)=0 while S−rI is invertible, forcing S = 0"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Scalar field over which the matrices are taken (needs characteristic 0 so that eigen-value/trace arguments work)",
+            "original": "ℝ"
+          },
+          "slot2": {
+            "description": "Matrix size / vector-space dimension",
+            "original": "n"
+          },
+          "slot3": {
+            "description": "Order of the finite matrix group",
+            "original": "r"
+          },
+          "slot4": {
+            "description": "Choice of multiplication side used to permute G (left vs. right)—either gives the same S² = rS identity",
+            "original": "left multiplication (gS = S)"
+          },
+          "slot5": {
+            "description": "Indexing notation for the group elements in the sum (i = 1,…,r, or any other labelling)",
+            "original": "i"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

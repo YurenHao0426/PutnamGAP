@@ -1,0 +1,121 @@
+{
+  "index": "1995-A-6",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "1,2,3 in random order in one column of a $3 \\times n$ matrix, with\nall orders equally likely and with the orders for different columns\nindependent of each other. Let the row sums $a,b,c$ of the resulting\nmatrix be rearranged (if necessary) so that $a \\leq b \\leq c$. Show\nthat for some $n \\geq 1995$, it is at least four times as likely that\nboth $b=a+1$ and $c=a+2$ as that $a=b=c$.",
+  "solution": "View this as a random walk/Markov process with states $(i,j,k)$ the\ntriples of integers with sum 0, corresponding to the difference\nbetween the first, second and third rows with their average (twice\nthe number of columns). Adding a new column adds on a random\npermutation of the vector $(1,0,-1)$. I prefer to identify the\ntriple $(i,j,k)$ with the point $(i-j) + (j-k)\\omega +\n(k-i)\\omega^{2}$ in the plane, where $\\omega$ is a cube root of\nunity. Then adding a new column corresponds to moving to one of the\nsix neighbors of the current position in a triangular lattice.\n\nWhat we'd like to argue is that for large enough $n$, the ratio of\nthe probabilities of being in any two particular states goes to 1.\nThen in fact, we'll see that eventually, about six times as many\nmatrices have $a=b-1,b=c-1$ than $a=b=c$. This is a pain to prove,\nthough, and in fact is way more than we actually need.\n\nLet $C_{n}$ and $A_{n}$ be the probability that we are at the origin,\nor at a particular point adjacent to the origin, respectively. Then\n$C_{n+1} = A_{n}$. (In fact, $C_{n+1}$ is $1/6$ times the sum of the\nprobabilities of being at each neighbor of the origin at time $n$, but\nthese are all $A_{n}$.) So the desired result, which is that\n$C_{n}/A_{n} \\geq 2/3$ for some large $n$, is equivalent to\n$A_{n+1}/A_{n} \\geq 2/3$.\n\nSuppose on the contrary that this is not the case; then $A_{n} < c\n(2/3)^{n}$ for some constant $n$. However, if $n=6m$, the probability\nthat we chose each of the six types of moves $m$ times is already\n$(6m)!/[m!^{6} 6^{6m}]$, which by Stirling's approximation is\nasymptotic to a constant times $m^{-5/2}$. This term alone is bigger\nthan $c (2/3)^{n}$, so we must have $A_{n+1}/A_{n} \\geq 2/3$ for\nsome $n$. (In fact, we must have $A_{n+1}/A_{n} \\geq 1-\\epsilon$ for\nany $\\epsilon>0$.)",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "i",
+    "j",
+    "k",
+    "n",
+    "m",
+    "C_n",
+    "C_n+1",
+    "A_n",
+    "A_n+1",
+    "\\\\omega",
+    "\\\\epsilon"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "rowsumlowest",
+        "b": "rowsummiddle",
+        "c": "rowsumhighest",
+        "i": "deviationone",
+        "j": "deviationtwo",
+        "k": "deviationthree",
+        "n": "columncount",
+        "m": "stepcount",
+        "C_n": "originprob",
+        "C_n+1": "originprobsuccessor",
+        "A_n": "neighborprob",
+        "A_n+1": "neighborprobsuccessor",
+        "\\omega": "cuberootunity",
+        "\\epsilon": "positivetiny"
+      },
+      "question": "1,2,3 in random order in one column of a $3 \\times columncount$ matrix, with\nall orders equally likely and with the orders for different columns\nindependent of each other. Let the row sums $rowsumlowest,rowsummiddle,rowsumhighest$ of the resulting\nmatrix be rearranged (if necessary) so that $rowsumlowest \\leq rowsummiddle \\leq rowsumhighest$. Show\nthat for some $columncount \\geq 1995$, it is at least four times as likely that\nboth $rowsummiddle=rowsumlowest+1$ and $rowsumhighest=rowsumlowest+2$ as that $rowsumlowest=rowsummiddle=rowsumhighest$.",
+      "solution": "View this as a random walk/Markov process with states $(deviationone,deviationtwo,deviationthree)$, the\ntriples of integers with sum 0, corresponding to the difference\nbetween the first, second and third rows with their average (twice\nthe number of columns). Adding a new column adds on a random\npermutation of the vector $(1,0,-1)$. I prefer to identify the\ntriple $(deviationone,deviationtwo,deviationthree)$ with the point $(deviationone-deviationtwo) + (deviationtwo-deviationthree)cuberootunity +\n(deviationthree-deviationone)cuberootunity^{2}$ in the plane, where $cuberootunity$ is a cube root of\nunity. Then adding a new column corresponds to moving to one of the\nsix neighbors of the current position in a triangular lattice.\n\nWhat we'd like to argue is that for large enough $columncount$, the ratio of\nthe probabilities of being in any two particular states goes to 1.\nThen in fact, we'll see that eventually, about six times as many\nmatrices have $rowsumlowest=rowsummiddle-1,rowsummiddle=rowsumhighest-1$ than $rowsumlowest=rowsummiddle=rowsumhighest$. This is a pain to prove,\nthough, and in fact is way more than we actually need.\n\nLet $originprob$ and $neighborprob$ be the probability that we are at the origin,\nor at a particular point adjacent to the origin, respectively. Then\n$originprobsuccessor = neighborprob$. (In fact, $originprobsuccessor$ is $1/6$ times the sum of the\nprobabilities of being at each neighbor of the origin at time $columncount$, but\nthese are all $neighborprob$.) So the desired result, which is that\n$originprob/neighborprob \\geq 2/3$ for some large $columncount$, is equivalent to\n$neighborprobsuccessor/neighborprob \\geq 2/3$.\n\nSuppose on the contrary that this is not the case; then $neighborprob < rowsumhighest\n(2/3)^{columncount}$ for some constant $columncount$. However, if $columncount=6stepcount$, the probability\nthat we chose each of the six types of moves $stepcount$ times is already\n$(6stepcount)!/[stepcount!^{6} 6^{6stepcount}]$, which by Stirling's approximation is\nasymptotic to a constant times $stepcount^{-5/2}$. This term alone is bigger\nthan $rowsumhighest (2/3)^{columncount}$, so we must have $neighborprobsuccessor/neighborprob \\geq 2/3$ for\nsome $columncount$. (In fact, we must have $neighborprobsuccessor/neighborprob \\geq 1-positivetiny$ for\nany $positivetiny>0$.)"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "lighthouse",
+        "b": "riverstone",
+        "c": "meadowlark",
+        "i": "sandcastle",
+        "j": "whirlpool",
+        "k": "afterglow",
+        "n": "raincloud",
+        "m": "stargazer",
+        "C_n": "thunderbolt",
+        "C_n+1": "dragonfly",
+        "A_n": "nightshade",
+        "A_n+1": "moonflower",
+        "\\omega": "crystallite",
+        "\\epsilon": "goldfinch"
+      },
+      "question": "1,2,3 in random order in one column of a $3 \\times raincloud$ matrix, with\nall orders equally likely and with the orders for different columns\nindependent of each other. Let the row sums $lighthouse,riverstone,meadowlark$ of the resulting\nmatrix be rearranged (if necessary) so that $lighthouse \\leq riverstone \\leq meadowlark$. Show\nthat for some $raincloud \\geq 1995$, it is at least four times as likely that\nboth $riverstone=lighthouse+1$ and $meadowlark=lighthouse+2$ as that $lighthouse=riverstone=meadowlark$.",
+      "solution": "View this as a random walk/Markov process with states $(sandcastle,whirlpool,afterglow)$ the\ntriples of integers with sum 0, corresponding to the difference\nbetween the first, second and third rows with their average (twice\nthe number of columns). Adding a new column adds on a random\npermutation of the vector $(1,0,-1)$. I prefer to identify the\ntriple $(sandcastle,whirlpool,afterglow)$ with the point $(sandcastle-whirlpool) + (whirlpool-afterglow)crystallite +\n(afterglow-sandcastle)crystallite^{2}$ in the plane, where $crystallite$ is a cube root of\nunity. Then adding a new column corresponds to moving to one of the\nsix neighbors of the current position in a triangular lattice.\n\nWhat we'd like to argue is that for large enough $raincloud$, the ratio of\nthe probabilities of being in any two particular states goes to 1.\nThen in fact, we'll see that eventually, about six times as many\nmatrices have $lighthouse=riverstone-1,riverstone=meadowlark-1$ than $lighthouse=riverstone=meadowlark$. This is a pain to prove,\nthough, and in fact is way more than we actually need.\n\nLet $thunderbolt$ and $nightshade$ be the probability that we are at the origin,\nor at a particular point adjacent to the origin, respectively. Then\n$dragonfly = nightshade$. (In fact, $dragonfly$ is $1/6$ times the sum of the\nprobabilities of being at each neighbor of the origin at time $raincloud$, but\nthese are all $nightshade$.) So the desired result, which is that\n$thunderbolt/nightshade \\geq 2/3$ for some large $raincloud$, is equivalent to\n$moonflower/nightshade \\geq 2/3$.\n\nSuppose on the contrary that this is not the case; then $nightshade < meadowlark\n(2/3)^{raincloud}$ for some constant $raincloud$. However, if $raincloud=6stargazer$, the probability\nthat we chose each of the six types of moves $stargazer$ times is already\n$(6stargazer)!/[stargazer!^{6} 6^{6stargazer}]$, which by Stirling's approximation is\nasymptotic to a constant times $stargazer^{-5/2}$. This term alone is bigger\nthan $meadowlark (2/3)^{raincloud}$, so we must have $moonflower/nightshade \\geq 2/3$ for\nsome $raincloud$. (In fact, we must have $moonflower/nightshade \\geq 1-goldfinch$ for\nany $goldfinch>0$.)"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "deficitmass",
+        "b": "shortagebulk",
+        "c": "insufficrest",
+        "i": "unionval",
+        "j": "mergeval",
+        "k": "sumvalue",
+        "n": "depthcount",
+        "m": "stillunits",
+        "C_n": "farprobly",
+        "C_n+1": "farprobnext",
+        "A_n": "nearprobly",
+        "A_n+1": "nearprobnext",
+        "\\\\omega": "zerothroot",
+        "\\\\epsilon": "granddelta"
+      },
+      "question": "1,2,3 in random order in one column of a $3 \\times depthcount$ matrix, with\nall orders equally likely and with the orders for different columns\nindependent of each other. Let the row sums $deficitmass,shortagebulk,insufficrest$ of the resulting\nmatrix be rearranged (if necessary) so that $deficitmass \\leq shortagebulk \\leq insufficrest$. Show\nthat for some $depthcount \\geq 1995$, it is at least four times as likely that\nboth $shortagebulk=deficitmass+1$ and $insufficrest=deficitmass+2$ as that $deficitmass=shortagebulk=insufficrest$.",
+      "solution": "View this as a random walk/Markov process with states $(unionval,mergeval,sumvalue)$ the\ntriples of integers with sum 0, corresponding to the difference\nbetween the first, second and third rows with their average (twice\nthe number of columns). Adding a new column adds on a random\npermutation of the vector $(1,0,-1)$. I prefer to identify the\ntriple $(unionval,mergeval,sumvalue)$ with the point $(unionval-mergeval) + (mergeval-sumvalue)zerothroot +\n(sumvalue-unionval)zerothroot^{2}$ in the plane, where $zerothroot$ is a cube root of\nunity. Then adding a new column corresponds to moving to one of the\nsix neighbors of the current position in a triangular lattice.\n\nWhat we'd like to argue is that for large enough $depthcount$, the ratio of\nthe probabilities of being in any two particular states goes to 1.\nThen in fact, we'll see that eventually, about six times as many\nmatrices have $deficitmass=shortagebulk-1,shortagebulk=insufficrest-1$ than\n$deficitmass=shortagebulk=insufficrest$. This is a pain to prove, though, and in fact is way more than we actually need.\n\nLet $farprobly$ and $nearprobly$ be the probability that we are at the origin, or at a particular point adjacent to the origin, respectively. Then $farprobnext = nearprobly$. (In fact, $farprobnext$ is $1/6$ times the sum of the probabilities of being at each neighbor of the origin at time $depthcount$, but these are all $nearprobly$.) So the desired result, which is that\n$farprobly/nearprobly \\geq 2/3$ for some large $depthcount$, is equivalent to\n$nearprobnext/nearprobly \\geq 2/3$.\n\nSuppose on the contrary that this is not the case; then $nearprobly < insufficrest (2/3)^{depthcount}$ for some constant $depthcount$. However, if $depthcount=6stillunits$, the probability that we chose each of the six types of moves $stillunits$ times is already $(6stillunits)!/[stillunits!^{6} 6^{6stillunits}]$, which by Stirling's approximation is asymptotic to a constant times $stillunits^{-5/2}$. This term alone is bigger than $insufficrest (2/3)^{depthcount}$, so we must have $nearprobnext/nearprobly \\geq 2/3$ for some $depthcount$. (In fact, we must have $nearprobnext/nearprobly \\geq 1-granddelta$ for any $granddelta>0$.)"
+    },
+    "garbled_string": {
+      "map": {
+        "a": "flxqzbde",
+        "b": "jrmgatnl",
+        "c": "svphkwcu",
+        "j": "ydnbqros",
+        "k": "hqivmczp",
+        "n": "gtswline",
+        "m": "qreplfaj",
+        "C_n": "ziwmtlbr",
+        "C_n+1": "ebrcxfuy",
+        "A_n": "pdskqvoh",
+        "A_n+1": "wnzgayru",
+        "\\omega": "lkjrdevo",
+        "\\epsilon": "cvothzpa"
+      },
+      "question": "1,2,3 in random order in one column of a $3 \\times gtswline$ matrix, with\nall orders equally likely and with the orders for different columns\nindependent of each other. Let the row sums $flxqzbde,jrmgatnl,svphkwcu$ of the resulting\nmatrix be rearranged (if necessary) so that $flxqzbde \\leq jrmgatnl \\leq svphkwcu$. Show\nthat for some $gtswline \\geq 1995$, it is at least four times as likely that\nboth $jrmgatnl=flxqzbde+1$ and $svphkwcu=flxqzbde+2$ as that $flxqzbde=jrmgatnl=svphkwcu$.",
+      "solution": "View this as a random walk/Markov process with states $(i,ydnbqros,hqivmczp)$ the\ntriples of integers with sum 0, corresponding to the difference\nbetween the first, second and third rows with their average (twice\nthe number of columns). Adding a new column adds on a random\npermutation of the vector $(1,0,-1)$. I prefer to identify the\ntriple $(i,ydnbqros,hqivmczp)$ with the point $(i-ydnbqros) + (ydnbqros-hqivmczp)lkjrdevo +\n(hqivmczp-i)lkjrdevo^{2}$ in the plane, where $lkjrdevo$ is a cube root of\nunity. Then adding a new column corresponds to moving to one of the\nsix neighbors of the current position in a triangular lattice.\n\nWhat we'd like to argue is that for large enough $gtswline$, the ratio of\nthe probabilities of being in any two particular states goes to 1.\nThen in fact, we'll see that eventually, about six times as many\nmatrices have $flxqzbde=jrmgatnl-1,jrmgatnl=svphkwcu-1$ than $flxqzbde=jrmgatnl=svphkwcu$. This is a pain to prove,\nthough, and in fact is way more than we actually need.\n\nLet $ziwmtlbr$ and $pdskqvoh$ be the probability that we are at the origin,\nor at a particular point adjacent to the origin, respectively. Then\n$ebrcxfuy = pdskqvoh$. (In fact, $ebrcxfuy$ is $1/6$ times the sum of the\nprobabilities of being at each neighbor of the origin at time\n$gtswline$, but these are all $pdskqvoh$.) So the desired result, which is that\n$ziwmtlbr/pdskqvoh \\geq 2/3$ for some large $gtswline$, is equivalent to\n$wnzgayru/pdskqvoh \\geq 2/3$.\n\nSuppose on the contrary that this is not the case; then $pdskqvoh < svphkwcu\n(2/3)^{gtswline}$ for some constant $gtswline$. However, if $gtswline=6qreplfaj$, the probability\nthat we chose each of the six types of moves $qreplfaj$ times is already\n$(6qreplfaj)!/[qreplfaj!^{6} 6^{6qreplfaj}]$, which by Stirling's approximation is\nasymptotic to a constant times $qreplfaj^{-5/2}$. This term alone is bigger\nthan $svphkwcu (2/3)^{gtswline}$, so we must have $wnzgayru/pdskqvoh \\geq 2/3$ for\nsome $gtswline$. (In fact, we must have $wnzgayru/pdskqvoh \\geq 1-cvothzpa$ for\nany $cvothzpa>0$.)"
+    },
+    "kernel_variant": {
+      "question": "In every column of a \\(3\\times n\\) array we place the three symbols  \n\\(\\bigcirc ,\\square ,\\triangle\\) in a random order, each of the six orders occurring with probability \\(1/6\\) and independently from column to column.  \nGive the values \\(\\bigcirc =1,\\ \\square =2,\\ \\triangle =3\\) and let  \n\n        \\(p,q,r\\)  be the sums of the first, second and third rows.  \n\nAfter renaming, assume \\(p\\le q\\le r\\).  \n\nProve that there is an integer \\(N\\) such that for every \\(n\\ge N\\)\n\n\\[\n\\Pr\\!\\bigl(q=p+1\\text{ and }r=p+2\\bigr)\\;\\ge\\;5\\,\\Pr\\!\\bigl(p=q=r\\bigr).\n\\]\n\nThus the required inequality holds not just once, but for all sufficiently large sizes of the array.",
+      "solution": "(\\approx 330 words)\n\nStep 1.  Centred walk.  \nWrite  \n\\((a,b,c):=(p-2n,\\;q-2n,\\;r-2n)\\); hence \\(a+b+c=0\\).  \nOne column alters exactly one coordinate by \\(+1\\), one by \\(-1\\) and leaves one fixed, so each step is a permutation of \\((1,0,-1)\\).  \nConsequently \\((a,b,c)\\) performs a nearest-neighbour random walk on the triangular lattice \\(\\Lambda:=\\{(x,y,z):x+y+z=0,\\ x,y,z\\in\\mathbb Z\\}\\).\n\nStep 2.  Two key probabilities.  \nLet  \n\n\\[\nC_n:=\\Pr\\bigl((a,b,c)=(0,0,0)\\bigr),\\qquad\nA_n:=\\Pr\\bigl((a,b,c)=(1,0,-1)\\bigr).\n\\]\n\nBy symmetry all six neighbours of the origin occur with probability \\(A_n\\).  \nNote that  \n\n\\[\n\\Pr(q=p+1,\\;r=p+2)=6A_n,\\qquad \n\\Pr(p=q=r)=C_n.\n\\]\n\nHence the desired inequality is  \n\n\\[\n6A_n\\ \\ge\\ 5C_n.\\tag{\\star }\n\\]\n\nStep 3.  Fundamental recursion.  \nTo be at the origin after \\(n+1\\) steps the walk must be at a neighbour after \\(n\\) steps and then jump back, so  \n\n\\[\nC_{n+1}=A_n.\\tag{1}\n\\]\n\nIt follows that \\(C_n=A_{n-1}\\) for every \\(n\\ge1\\).\n\nStep 4.  Required comparison.  \nWith (1) inequality (\\star ) is equivalent to  \n\n\\[\n\\frac{A_n}{A_{n-1}}\\;\\ge\\;\\frac56.\\tag{2}\n\\]\n\nStep 5.  Contradiction argument.  \nAssume that (2) fails infinitely often; then there is a strictly increasing sequence \\((k_j)\\) with  \n\n\\[\nA_{k_j}\\;<\\;\\bigl(\\tfrac56\\bigr)A_{k_j-1}\\quad(j=1,2,\\dots).\\tag{3}\n\\]\n\nIterating (3) gives for each \\(j\\) and every \\(t\\ge0\\)\n\n\\[\nA_{k_j+t}\\;\\le\\;\\bigl(\\tfrac56\\bigr)^t A_{k_j}.\\tag{4}\n\\]\n\nStep 6.  Lower bound via balanced words.  \nFor \\(m\\ge1\\) consider \\(n=6m\\).  \nChoosing every one of the six step-types exactly \\(m\\) times returns to the origin, and the number of such length-\\(6m\\) words is \\((6m)!/(m!)^{6}\\).  \nHence, as before,\n\n\\[\nC_{6m}\\ \\gg\\ m^{-5/2},\\quad\\text{so}\\quad \nA_{6m-1}=C_{6m}\\ \\gg\\ m^{-5/2}.\\tag{5}\n\\]\n\nStep 7.  Clash of estimates.  \nPick \\(j\\) with \\(k_j\\le 6m-1<k_{j+1}\\).  \nApplying (4) with \\(t=6m-1-k_j\\) gives an upper bound on \\(A_{6m-1}\\) that decays exponentially in \\(m\\), contradicting the polynomial lower bound (5) for all large \\(m\\).  \nThus (3) cannot happen infinitely often; there is an index \\(N\\) beyond which (2) always holds.\n\nStep 8.  Finishing.  \nFor every \\(n\\ge N\\) we have (2), hence by (1)\n\n\\[\n6A_n\\;\\ge\\;5A_{n-1}=5C_n,\n\\]\n\nwhich is exactly (\\star ).  Therefore the stated inequality is valid for all sufficiently large \\(n\\), completing the proof.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.103390",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

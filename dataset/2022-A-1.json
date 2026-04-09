@@ -1,0 +1,143 @@
+{
+  "index": "2022-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Determine all ordered pairs of real numbers $(a,b)$ such that the line $y = ax+b$ intersects the curve $y = \\ln(1+x^2)$ in exactly one point.",
+  "solution": "Write $f(x) = \\ln(1+x^2)$.\nWe show that $y=ax+b$ intersects $y=f(x)$ in exactly one point if and only if $(a,b)$ lies in one of the following groups:\n\\begin{itemize}\n\\item\n$a=b=0$\n\\item\n$|a| \\geq 1$, arbitrary $b$\n\\item\n$0 < |a| < 1$, and $b<\\ln(1-r_-)^2-|a|r_-$ or $b>\\ln(1-r_+)^2-|a|r_+$, where \n\\[\nr_\\pm = \\frac{1\\pm\\sqrt{1-a^2}}{a}.\n\\]\n\\end{itemize}\n\n Since the graph of $y=f(x)$ is symmetric under reflection in the $y$-axis, it suffices to consider the case $a \\geq 0$: $y=ax+b$ and $y=-ax+b$ intersect $y=f(x)$ the same number of times. For $a=0$, by the symmetry of $y=f(x)$ and the fact that $f(x)> 0$ for all $x\\neq 0$ implies that the only line $y=b$ that intersects $y=f(x)$ exactly once is the line $y=0$.\n\nWe next observe that on $[0,\\infty)$, $f'(x) = \\frac{2x}{1+x^2}$ increases on $[0,1]$ from $f'(0)=0$ to a maximum at $f'(1)=1$, and then decreases on $[1,\\infty)$ with $\\lim_{x\\to\\infty} f'(x)=0$. In particular, $f'(x) \\leq 1$ for all $x$ (including $x<0$ since then $f'(x)<0$) and $f'(x)$ achieves each value in $(0,1)$ exactly twice on $[0,\\infty)$.\n\nFor $a \\geq 1$, we claim that any line $y=ax+b$ intersects $y=f(x)$ exactly once. They must intersect at least once by the intermediate value theorem: for $x\\ll 0$, $ax+b<0<f(x)$, while for $x \\gg 0$, $ax+b>f(x)$ since $\\lim_{x\\to\\infty} \\frac{\\ln(1+x^2)}{x} = 0$. On the other hand, they cannot intersect more than once: for $a>1$, this follows from the mean value theorem, since $f'(x)<a$ for all $x$. For $a=1$, suppose that they intersect at two points $(x_0,y_0)$ and $(x_1,y_1)$. Then\n\\[\n1 = \\frac{y_1-y_0}{x_1-x_0} = \\frac{\\int_{x_0}^{x_1} f'(x)\\,dx}{x_1-x_0} < 1\n\\]\nsince $f'(x)$ is continuous and $f'(x) \\leq 1$ with equality only at one point.\n\nFinally we consider $0<a<1$. The equation $f'(x) = a$ has exactly two solutions, at $x=r_-$ and $x=r_+$ for $r_{\\pm}$ as defined above.\nIf we define $g(x) = f(x)-ax$, then $g'(r_\\pm)=0$; $g'$ is strictly decreasing on $(-\\infty,r_-)$, strictly increasing on $(r_-,r_+)$, and strictly decreasing on $(r_+,\\infty)$; and $\\lim_{x\\to-\\infty} g(x) = \\infty$ while $\\lim_{x\\to\\infty} g(x) = -\\infty$. It follows that $g(x)=b$ has exactly one solution for $b<g(r_-)$ or $b>g(r_+)$, exactly three solutions for $g(r_-)<b<g(r_+)$, and exactly two solutions for $b = g(r_\\pm)$. That is, $y=ax+b$ intersects $y=f(x)$ in exactly one point if and only if $b<g(r_-)$ or $b>g(r_+)$.",
+  "vars": [
+    "x",
+    "y",
+    "f",
+    "g",
+    "x_0",
+    "x_1",
+    "y_0",
+    "y_1"
+  ],
+  "params": [
+    "a",
+    "b",
+    "r_-",
+    "r_+",
+    "r_\\\\pm"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "varinput",
+        "y": "varoutput",
+        "f": "funcmain",
+        "g": "funchelp",
+        "x_0": "varinputzero",
+        "x_1": "varinputone",
+        "y_0": "varoutputzero",
+        "y_1": "varoutputone",
+        "a": "slopeparam",
+        "b": "intercept",
+        "r_-": "rootminus",
+        "r_+": "rootplus",
+        "r_\\pm": "rootpm"
+      },
+      "question": "Determine all ordered pairs of real numbers $(slopeparam,intercept)$ such that the line $varoutput = slopeparam varinput+intercept$ intersects the curve $varoutput = \\ln(1+varinput^2)$ in exactly one point.",
+      "solution": "Write $funcmain(varinput) = \\ln(1+varinput^2)$. We show that $varoutput=slopeparam varinput+intercept$ intersects $varoutput=funcmain(varinput)$ in exactly one point if and only if $(slopeparam,intercept)$ lies in one of the following groups:\n\\begin{itemize}\n\\item\n$slopeparam=intercept=0$\n\\item\n$|slopeparam| \\geq 1$, arbitrary $intercept$\n\\item\n$0 < |slopeparam| < 1$, and $intercept<\\ln(1-rootminus)^2-|slopeparam|rootminus$ or $intercept>\\ln(1-rootplus)^2-|slopeparam|rootplus$, where \n\\[\nrootpm = \\frac{1\\pm\\sqrt{1-slopeparam^2}}{slopeparam}.\n\\]\n\\end{itemize}\n\nSince the graph of $varoutput=funcmain(varinput)$ is symmetric under reflection in the $varoutput$-axis, it suffices to consider the case $slopeparam \\geq 0$: $varoutput=slopeparam varinput+intercept$ and $varoutput=-slopeparam varinput+intercept$ intersect $varoutput=funcmain(varinput)$ the same number of times. For $slopeparam=0$, by the symmetry of $varoutput=funcmain(varinput)$ and the fact that $funcmain(varinput)> 0$ for all $varinput\\neq 0$ implies that the only line $varoutput=intercept$ that intersects $varoutput=funcmain(varinput)$ exactly once is the line $varoutput=0$.\n\nWe next observe that on $[0,\\infty)$, $funcmain'(varinput) = \\frac{2varinput}{1+varinput^2}$ increases on $[0,1]$ from $funcmain'(0)=0$ to a maximum at $funcmain'(1)=1$, and then decreases on $[1,\\infty)$ with $\\lim_{varinput\\to\\infty} funcmain'(varinput)=0$. In particular, $funcmain'(varinput) \\leq 1$ for all $varinput$ (including $varinput<0$ since then $funcmain'(varinput)<0$) and $funcmain'(varinput)$ achieves each value in $(0,1)$ exactly twice on $[0,\\infty)$.\n\nFor $slopeparam \\geq 1$, we claim that any line $varoutput=slopeparam varinput+intercept$ intersects $varoutput=funcmain(varinput)$ exactly once. They must intersect at least once by the intermediate value theorem: for $varinput\\ll 0$, $slopeparam varinput+intercept<0<funcmain(varinput)$, while for $varinput \\gg 0$, $slopeparam varinput+intercept>funcmain(varinput)$ since $\\lim_{varinput\\to\\infty} \\frac{\\ln(1+varinput^2)}{varinput} = 0$. On the other hand, they cannot intersect more than once: for $slopeparam>1$, this follows from the mean value theorem, since $funcmain'(varinput)<slopeparam$ for all $varinput$. For $slopeparam=1$, suppose that they intersect at two points $(varinputzero,varoutputzero)$ and $(varinputone,varoutputone)$. Then\n\\[\n1 = \\frac{varoutputone-varoutputzero}{varinputone-varinputzero} = \\frac{\\int_{varinputzero}^{varinputone} funcmain'(varinput)\\,dvarinput}{varinputone-varinputzero} < 1\n\\]\nsince $funcmain'(varinput)$ is continuous and $funcmain'(varinput) \\leq 1$ with equality only at one point.\n\nFinally we consider $0<slopeparam<1$. The equation $funcmain'(varinput) = slopeparam$ has exactly two solutions, at $varinput=rootminus$ and $varinput=rootplus$ for $rootpm$ as defined above. If we define $funchelp(varinput) = funcmain(varinput)-slopeparam varinput$, then $funchelp'(rootpm)=0$; $funchelp'$ is strictly decreasing on $(-\\infty,rootminus)$, strictly increasing on $(rootminus,rootplus)$, and strictly decreasing on $(rootplus,\\infty)$; and $\\lim_{varinput\\to-\\infty} funchelp(varinput) = \\infty$ while $\\lim_{varinput\\to\\infty} funchelp(varinput) = -\\infty$. It follows that $funchelp(varinput)=intercept$ has exactly one solution for $intercept<funchelp(rootminus)$ or $intercept>funchelp(rootplus)$, exactly three solutions for $funchelp(rootminus)<intercept<funchelp(rootplus)$, and exactly two solutions for $intercept = funchelp(rootpm)$. That is, $varoutput=slopeparam varinput+intercept$ intersects $varoutput=funcmain(varinput)$ in exactly one point if and only if $intercept<funchelp(rootminus)$ or $intercept>funchelp(rootplus)$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "compasspoint",
+        "y": "timberline",
+        "f": "grasshopper",
+        "g": "sandcastle",
+        "x_0": "comettrail",
+        "x_1": "rainshadow",
+        "y_0": "driftwood",
+        "y_1": "riverdelta",
+        "a": "paintbrush",
+        "b": "moonflower",
+        "r_-": "cloudburst",
+        "r_+": "starlight",
+        "r_\\\\pm": "unicornhorn"
+      },
+      "question": "Determine all ordered pairs of real numbers $(paintbrush,moonflower)$ such that the line $timberline = paintbrush\\,compasspoint+moonflower$ intersects the curve $timberline = \\ln(1+compasspoint^2)$ in exactly one point.",
+      "solution": "Write $grasshopper(compasspoint) = \\ln(1+compasspoint^2)$. We show that $timberline=paintbrush\\,compasspoint+moonflower$ intersects $timberline=grasshopper(compasspoint)$ in exactly one point if and only if $(paintbrush,moonflower)$ lies in one of the following groups:\n\\begin{itemize}\n\\item\n$paintbrush=moonflower=0$\n\\item\n$|paintbrush| \\geq 1$, arbitrary $moonflower$\n\\item\n$0 < |paintbrush| < 1$, and $moonflower<\\ln(1-cloudburst)^2-|paintbrush|cloudburst$ or $moonflower>\\ln(1-starlight)^2-|paintbrush|starlight$, where \n\\[\nunicornhorn = \\frac{1\\pm\\sqrt{1-paintbrush^2}}{paintbrush}.\n\\]\n\\end{itemize}\n\n Since the graph of $timberline=grasshopper(compasspoint)$ is symmetric under reflection in the $y$-axis, it suffices to consider the case $paintbrush \\geq 0$: $timberline=paintbrush\\,compasspoint+moonflower$ and $timberline=-paintbrush\\,compasspoint+moonflower$ intersect $timberline=grasshopper(compasspoint)$ the same number of times. For $paintbrush=0$, by the symmetry of $timberline=grasshopper(compasspoint)$ and the fact that $grasshopper(compasspoint)> 0$ for all $compasspoint\\neq 0$ implies that the only line $timberline=moonflower$ that intersects $timberline=grasshopper(compasspoint)$ exactly once is the line $timberline=0$.\n\nWe next observe that on $[0,\\infty)$, $grasshopper'(compasspoint) = \\frac{2compasspoint}{1+compasspoint^2}$ increases on $[0,1]$ from $grasshopper'(0)=0$ to a maximum at $grasshopper'(1)=1$, and then decreases on $[1,\\infty)$ with $\\lim_{compasspoint\\to\\infty} grasshopper'(compasspoint)=0$. In particular, $grasshopper'(compasspoint) \\leq 1$ for all $compasspoint$ (including $compasspoint<0$ since then $grasshopper'(compasspoint)<0$) and $grasshopper'(compasspoint)$ achieves each value in $(0,1)$ exactly twice on $[0,\\infty)$.\n\nFor $paintbrush \\geq 1$, we claim that any line $timberline=paintbrush\\,compasspoint+moonflower$ intersects $timberline=grasshopper(compasspoint)$ exactly once. They must intersect at least once by the intermediate value theorem: for $compasspoint\\ll 0$, $paintbrush\\,compasspoint+moonflower<0<grasshopper(compasspoint)$, while for $compasspoint \\gg 0$, $paintbrush\\,compasspoint+moonflower>grasshopper(compasspoint)$ since $\\lim_{compasspoint\\to\\infty} \\frac{\\ln(1+compasspoint^2)}{compasspoint} = 0$. On the other hand, they cannot intersect more than once: for $paintbrush>1$, this follows from the mean value theorem, since $grasshopper'(compasspoint)<paintbrush$ for all $compasspoint$. For $paintbrush=1$, suppose that they intersect at two points $(comettrail,driftwood)$ and $(rainshadow,riverdelta)$. Then\n\\[\n1 = \\frac{riverdelta-driftwood}{rainshadow-comettrail} = \\frac{\\int_{comettrail}^{rainshadow} grasshopper'(compasspoint)\\,d compasspoint}{rainshadow-comettrail} < 1\n\\]\nsince $grasshopper'(compasspoint)$ is continuous and $grasshopper'(compasspoint) \\leq 1$ with equality only at one point.\n\nFinally we consider $0<paintbrush<1$. The equation $grasshopper'(compasspoint) = paintbrush$ has exactly two solutions, at $compasspoint=cloudburst$ and $compasspoint=starlight$ for $unicornhorn$ as defined above.\nIf we define $sandcastle(compasspoint) = grasshopper(compasspoint)-paintbrush\\,compasspoint$, then $sandcastle'(unicornhorn)=0$; $sandcastle'$ is strictly decreasing on $(-\\infty,cloudburst)$, strictly increasing on $(cloudburst,starlight)$, and strictly decreasing on $(starlight,\\infty)$; and $\\lim_{compasspoint\\to-\\infty} sandcastle(compasspoint) = \\infty$ while $\\lim_{compasspoint\\to\\infty} sandcastle(compasspoint) = -\\infty$. It follows that $sandcastle(compasspoint)=moonflower$ has exactly one solution for $moonflower<sandcastle(cloudburst)$ or $moonflower>sandcastle(starlight)$, exactly three solutions for $sandcastle(cloudburst)<moonflower<sandcastle(starlight)$, and exactly two solutions for $moonflower = sandcastle(unicornhorn)$. That is, $timberline=paintbrush\\,compasspoint+moonflower$ intersects $timberline=grasshopper(compasspoint)$ in exactly one point if and only if $moonflower<sandcastle(cloudburst)$ or $moonflower>sandcastle(starlight)$.",
+      "params_processed": true
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "stationary",
+        "y": "baseline",
+        "f": "constantfunction",
+        "g": "steadystate",
+        "x_0": "endpointzero",
+        "x_1": "endpointone",
+        "y_0": "ordinatezero",
+        "y_1": "ordinateone",
+        "a": "levelness",
+        "b": "departure",
+        "r_-": "upperroot",
+        "r_+": "lowerroot",
+        "r_\\pm": "singleroot"
+      },
+      "question": "Determine all ordered pairs of real numbers $(levelness,departure)$ such that the line $baseline = levelness\\,stationary + departure$ intersects the curve $baseline = \\ln(1+stationary^{2})$ in exactly one point.",
+      "solution": "Write $constantfunction(stationary) = \\ln(1+stationary^{2})$.\nWe show that $baseline=levelness\\,stationary+departure$ intersects $baseline=constantfunction(stationary)$ in exactly one point if and only if $(levelness,departure)$ lies in one of the following groups:\n\\begin{itemize}\n\\item\n$levelness=departure=0$\n\\item\n$|levelness| \\geq 1$, arbitrary $departure$\n\\item\n$0 < |levelness| < 1$, and $departure<\\ln(1-upperroot)^{2}-|levelness|\\,upperroot$ or $departure>\\ln(1-lowerroot)^{2}-|levelness|\\,lowerroot$, where \n\\[\nsingleroot = \\frac{1\\pm\\sqrt{1-levelness^{2}}}{levelness}.\n\\]\n\\end{itemize}\n\nSince the graph of $baseline=constantfunction(stationary)$ is symmetric under reflection in the baseline-axis, it suffices to consider the case $levelness \\geq 0$: $baseline=levelness\\,stationary+departure$ and $baseline=-levelness\\,stationary+departure$ intersect $baseline=constantfunction(stationary)$ the same number of times. For $levelness=0$, by the symmetry of $baseline=constantfunction(stationary)$ and the fact that $constantfunction(stationary)>0$ for all $stationary\\neq 0$ implies that the only line $baseline=departure$ that intersects $baseline=constantfunction(stationary)$ exactly once is the line $baseline=0$.\n\nWe next observe that on $[0,\\infty)$, $constantfunction'(stationary) = \\frac{2\\,stationary}{1+stationary^{2}}$ increases on $[0,1]$ from $constantfunction'(0)=0$ to a maximum at $constantfunction'(1)=1$, and then decreases on $[1,\\infty)$ with $\\lim_{stationary\\to\\infty} constantfunction'(stationary)=0$. In particular, $constantfunction'(stationary) \\leq 1$ for all $stationary$ (including $stationary<0$ since then $constantfunction'(stationary)<0$) and $constantfunction'(stationary)$ achieves each value in $(0,1)$ exactly twice on $[0,\\infty)$.\n\nFor $levelness \\geq 1$, we claim that any line $baseline=levelness\\,stationary+departure$ intersects $baseline=constantfunction(stationary)$ exactly once. They must intersect at least once by the intermediate value theorem: for $stationary\\ll 0$, $levelness\\,stationary+departure<0<constantfunction(stationary)$, while for $stationary \\gg 0$, $levelness\\,stationary+departure>constantfunction(stationary)$ since $\\lim_{stationary\\to\\infty} \\frac{\\ln(1+stationary^{2})}{stationary} = 0$. On the other hand, they cannot intersect more than once: for $levelness>1$, this follows from the mean value theorem, since $constantfunction'(stationary)<levelness$ for all $stationary$. For $levelness=1$, suppose that they intersect at two points $(endpointzero,ordinatezero)$ and $(endpointone,ordinateone)$. Then\n\\[\n1 = \\frac{ordinateone-ordinatezero}{endpointone-endpointzero} = \\frac{\\int_{endpointzero}^{endpointone} constantfunction'(stationary)\\,dstationary}{endpointone-endpointzero} < 1\n\\]\nsince $constantfunction'(stationary)$ is continuous and $constantfunction'(stationary) \\leq 1$ with equality only at one point.\n\nFinally we consider $0<levelness<1$. The equation $constantfunction'(stationary) = levelness$ has exactly two solutions, at $stationary=upperroot$ and $stationary=lowerroot$ for $singleroot$ as defined above.\nIf we define $steadystate(stationary) = constantfunction(stationary)-levelness\\,stationary$, then $steadystate'(singleroot)=0$; $steadystate'$ is strictly decreasing on $(-\\infty,upperroot)$, strictly increasing on $(upperroot,lowerroot)$, and strictly decreasing on $(lowerroot,\\infty)$; and $\\lim_{stationary\\to-\\infty} steadystate(stationary) = \\infty$ while $\\lim_{stationary\\to\\infty} steadystate(stationary) = -\\infty$. It follows that $steadystate(stationary)=departure$ has exactly one solution for $departure<steadystate(upperroot)$ or $departure>steadystate(lowerroot)$, exactly three solutions for $steadystate(upperroot)<departure<steadystate(lowerroot)$, and exactly two solutions for $departure = steadystate(singleroot)$. That is, $baseline=levelness\\,stationary+departure$ intersects $baseline=constantfunction(stationary)$ in exactly one point if and only if $departure<steadystate(upperroot)$ or $departure>steadystate(lowerroot)$.",
+      "error": null
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "f": "mnhqweur",
+        "g": "plkstnoy",
+        "x_0": "cvbneiru",
+        "x_1": "kjdsoqwe",
+        "y_0": "asdfyuio",
+        "y_1": "ghjklwer",
+        "a": "lmnoprqs",
+        "b": "tuvxyzab",
+        "r_-": "zxcklmwe",
+        "r_+": "bnvmasdq",
+        "r_\\\\pm": "poiuretw"
+      },
+      "question": "Determine all ordered pairs of real numbers $(lmnoprqs,tuvxyzab)$ such that the line $hjgrksla = lmnoprqs qzxwvtnp + tuvxyzab$ intersects the curve $hjgrksla = \\ln(1+qzxwvtnp^2)$ in exactly one point.",
+      "solution": "Write $mnhqweur(qzxwvtnp)=\\ln(1+qzxwvtnp^2)$.\\par\nWe show that $hjgrksla=lmnoprqs qzxwvtnp+tuvxyzab$ intersects $hjgrksla=mnhqweur(qzxwvtnp)$ in exactly one point if and only if $(lmnoprqs,tuvxyzab)$ lies in one of the following groups:\n\\begin{itemize}\n\\item\n$lmnoprqs=tuvxyzab=0$\n\\item\n$|lmnoprqs| \\ge 1$, arbitrary $tuvxyzab$\n\\item\n$0<|lmnoprqs|<1$, and $tuvxyzab<\\ln(1-zxcklmwe)^2-|lmnoprqs|\\,zxcklmwe$ or $tuvxyzab>\\ln(1-bnvmasdq)^2-|lmnoprqs|\\,bnvmasdq$, where\n\\[\npoiuretw = \\frac{1\\pm\\sqrt{1-lmnoprqs^2}}{lmnoprqs}.\n\\]\n\\end{itemize}\n\nSince the graph of $hjgrksla=mnhqweur(qzxwvtnp)$ is symmetric under reflection in the $hjgrksla$-axis, it suffices to consider the case $lmnoprqs\\ge0$: $hjgrksla=lmnoprqs qzxwvtnp+tuvxyzab$ and $hjgrksla=-lmnoprqs qzxwvtnp+tuvxyzab$ intersect $hjgrksla=mnhqweur(qzxwvtnp)$ the same number of times. For $lmnoprqs=0$, the symmetry of $hjgrksla=mnhqweur(qzxwvtnp)$ and the fact that $mnhqweur(qzxwvtnp)>0$ for all $qzxwvtnp\\neq0$ imply that the only line $hjgrksla=tuvxyzab$ that intersects $hjgrksla=mnhqweur(qzxwvtnp)$ exactly once is $hjgrksla=0$.\n\nOn $[0,\\infty)$, $mnhqweur'(qzxwvtnp)=\\dfrac{2qzxwvtnp}{1+qzxwvtnp^2}$ increases on $[0,1]$ from $mnhqweur'(0)=0$ to a maximum $mnhqweur'(1)=1$, and then decreases on $[1,\\infty)$ with $\\lim_{qzxwvtnp\\to\\infty}mnhqweur'(qzxwvtnp)=0$. In particular, $mnhqweur'(qzxwvtnp)\\le1$ for all $qzxwvtnp$ (including $qzxwvtnp<0$ since then $mnhqweur'(qzxwvtnp)<0$) and $mnhqweur'(qzxwvtnp)$ attains each value in $(0,1)$ exactly twice on $[0,\\infty)$.\n\nFor $lmnoprqs\\ge1$ we claim that any line $hjgrksla=lmnoprqs qzxwvtnp+tuvxyzab$ intersects $hjgrksla=mnhqweur(qzxwvtnp)$ exactly once. They must intersect at least once by the intermediate value theorem: for $qzxwvtnp\\ll0$, $lmnoprqs qzxwvtnp+tuvxyzab<0<mnhqweur(qzxwvtnp)$, while for $qzxwvtnp\\gg0$, $lmnoprqs qzxwvtnp+tuvxyzab>mnhqweur(qzxwvtnp)$ since $\\displaystyle\\lim_{qzxwvtnp\\to\\infty}\\frac{\\ln(1+qzxwvtnp^2)}{qzxwvtnp}=0$. On the other hand, they cannot intersect more than once: for $lmnoprqs>1$ this follows from the mean value theorem, since $mnhqweur'(qzxwvtnp)<lmnoprqs$ for all $qzxwvtnp$. For $lmnoprqs=1$, suppose they intersect at two points $(cvbneiru,asdfyuio)$ and $(kjdsoqwe,ghjklwer)$. Then\n\\[\n1=\\frac{ghjklwer-asdfyuio}{kjdsoqwe-cvbneiru}=\\frac{\\displaystyle\\int_{cvbneiru}^{kjdsoqwe}mnhqweur'(qzxwvtnp)\\,d qzxwvtnp}{kjdsoqwe-cvbneiru}<1,\n\\]\na contradiction, because $mnhqweur'(qzxwvtnp)\\le1$ with equality at only one point.\n\nFinally consider $0<lmnoprqs<1$. The equation $mnhqweur'(qzxwvtnp)=lmnoprqs$ has exactly two solutions, at $qzxwvtnp=zxcklmwe$ and $qzxwvtnp=bnvmasdq$ for $poiuretw$ as defined above. Define $plkstnoy(qzxwvtnp)=mnhqweur(qzxwvtnp)-lmnoprqs qzxwvtnp$. Then $plkstnoy'(zxcklmwe)=plkstnoy'(bnvmasdq)=0$; $plkstnoy'$ is strictly decreasing on $(-\\infty,zxcklmwe)$, strictly increasing on $(zxcklmwe,bnvmasdq)$, and strictly decreasing on $(bnvmasdq,\\infty)$; moreover, $\\displaystyle\\lim_{qzxwvtnp\\to-\\infty}plkstnoy(qzxwvtnp)=\\infty$ while $\\displaystyle\\lim_{qzxwvtnp\\to\\infty}plkstnoy(qzxwvtnp)=-\\infty$. It follows that $plkstnoy(qzxwvtnp)=tuvxyzab$ has exactly one solution for $tuvxyzab<plkstnoy(zxcklmwe)$ or $tuvxyzab>plkstnoy(bnvmasdq)$, exactly three solutions for $plkstnoy(zxcklmwe)<tuvxyzab<plkstnoy(bnvmasdq)$, and exactly two solutions for $tuvxyzab=plkstnoy(zxcklmwe)$ or $tuvxyzab=plkstnoy(bnvmasdq)$. That is, $hjgrksla=lmnoprqs qzxwvtnp+tuvxyzab$ intersects $hjgrksla=mnhqweur(qzxwvtnp)$ in exactly one point precisely when $tuvxyzab<plkstnoy(zxcklmwe)$ or $tuvxyzab>plkstnoy(bnvmasdq)$. Hence the description above is complete."
+    },
+    "kernel_variant": {
+      "question": "Determine all ordered pairs of real numbers \\((a,b)\\) for which the straight line\n\\[\n\\qquad y = ax + b\n\\]\nmeets the curve\n\\[\n\\qquad y = \\log_{2}(4 + x^{4})\n\\]\nin exactly one point.",
+      "solution": "Write\n\\[\n   f(x)=\\log_{2}(4+x^{4}), \\qquad H_{a}(x)=f(x)-ax\\;(a\\in\\mathbb R).\n\\]\nThe points of intersection of the line and the curve are precisely the real solutions of\n\\[\n   H_{a}(x)=b. \\tag{1}\n\\]\nThroughout we denote the natural logarithm of 2 by \\(\\ln 2\\).\n\n1.  A useful bound for the slope of the curve.\n   \\[\n      f'(x)=\\frac{4x^{3}}{(4+x^{4})\\,\\ln2}\\quad (x\\in\\mathbb R).\n   \\]\n   For \\(x>0\\) put \\(g(x)=\\dfrac{4x^{3}}{4+x^{4}}\\).  A short calculation gives\n   \\[\n      g'(x)=\\frac{4x^{2}(12-x^{4})}{(4+x^{4})^{2}},\\qquad g'(x)=0\\Longleftrightarrow x^{4}=12.\n   \\]\n   Hence \\(|f'(x)|\\) attains its global maximum at \\(x=\\pm12^{1/4}\\), and\n   \\[\n      M:=\\max_{x\\in\\mathbb R}|f'(x)|=\\frac{g(12^{1/4})}{\\ln2}=\\frac{12^{3/4}}{4\\ln2}. \\tag{2}\n   \\]\n\n2.  The case \\(a=0\\).\n   Then \\(H_{0}(x)=f(x)\\ge 2\\) with equality only at \\(x=0\\).  Thus (1) has exactly one solution precisely when \\(b=2\\).  Consequently\n   \\[\n      (a,b)=(0,2)\n   \\]\n   gives the desired single intersection.\n\n3.  The case \\(|a|\\ge M\\).\n   By (2) we have \\(|f'(x)|\\le M\\le|a|\\) on \\(\\mathbb R\\).  Therefore\n   \\[\n      H_{a}'(x)=f'(x)-a\\;\n      \\begin{cases}\n        \\le 0 & (a\\ge M),\\\\[2mm]\n        \\ge 0 & (a\\le -M),\n      \\end{cases}\n   \\]\n   with strict inequality except possibly at isolated points when \\(|a|=M\\).  Hence \\(H_{a}\\) is strictly monotone, its image is the whole real line, and (1) has exactly one real root for every \\(b\\).  Thus\n   \\[\n      |a|\\ge M\\;(b\\in\\mathbb R)\\Longrightarrow\\text{ exactly one intersection}. \\tag{3}\n   \\]\n\n4.  The case \\(0<|a|<M\\).\n\n   Because \\(|a|<\\max|f'|\\), equation \\(|f'(x)|=|a|\\) has two positive solutions; denote them by\n   \\[\n      0<r_{-}<r_{+},\\qquad f'(r_{\\pm})=|a|. \\tag{4}\n   \\]\n   (If \\(a>0\\) we interpret (4) as \\(f'(r_{\\pm})=a\\); if \\(a<0\\) as \\(f'(r_{\\pm})=-a\\).)\n\n   4.1  Shape of \\(H_{a}\\) when \\(a>0\\).\n        Because \\(f'\\) is negative on \\((\\!-\\infty,0)\\) and \\(f'(0)=0<a\\),\n        \\[\n           H_{a}'(x)=f'(x)-a<0 \\quad(x<0).\n        \\]\n        On \\((0,\\infty)\\) the derivative changes sign exactly at the points \\(r_{-},r_{+}\\):\n        \\[\n          H_{a}'<0 \\;(0<x<r_{-}),\\; H_{a}'=0 \\;(x=r_{-}),\\; H_{a}'>0 \\;(r_{-}<x<r_{+}),\\; H_{a}'=0 \\;(x=r_{+}),\\; H_{a}'<0 \\;(x>r_{+}).\n        \\]\n        Hence \\(H_{a}\\) is strictly decreasing on \\((\\!-\\infty,r_{-}]\\), strictly increasing on \\([r_{-},r_{+}]\\), and strictly decreasing again on \\([r_{+},\\infty)\\).  Put\n        \\[\n          A:=H_{a}(r_{-})\\quad(\\text{global minimum}),\\qquad B:=H_{a}(r_{+})\\quad(\\text{global maximum}). \\tag{5}\n        \\]\n        The limits\n        \\[\n          \\lim_{x\\to-\\infty}H_{a}(x)=+\\infty,\\qquad \\lim_{x\\to+\\infty}H_{a}(x)=-\\infty\n        \\]\n        follow from the fact that \\(f(x)=\\mathcal O(\\ln|x|)\\) whereas \\(-ax\\to\\pm\\infty\\).\n\n        Putting everything together we obtain the following counts for the number \\(N(b)\\) of real solutions of (1):\n        \\[\n        \\begin{array}{c|c|c|c|c|c}\n           b & b<A & b=A & A<b<B & b=B & b>B \\\\\\hline\n           N(b) & 1 & \\mathbf 2 & 3 & 2 & 1\n        \\end{array}\n        \\]\n        In words, (1) has exactly one real root iff \\(b<A\\) or \\(b>B\\).\n        (When \\(b=A\\) or \\(b=B\\) there are two distinct roots: one of them is a tangential one at \\(x=r_{-}\\) or \\(x=r_{+}\\).)\n\n   4.2  Shape of \\(H_{a}\\) when \\(a<0\\).\n        Replacing \\(x\\) by \\(-x\\) and \\(a\\) by \\(-a>0\\) shows that the picture is the mirror image of the previous one.  Now \\(H_{a}\\) has a global maximum \\(B\\) at \\(x=-r_{-}\\) and a global minimum \\(A\\) at \\(x=-r_{+}\\).  The entirely analogous table is\n        \\[\n          N(b)=1 \\Longleftrightarrow b<A \\text{ or } b>B.\n        \\]\n\n   Combining the two sub-cases we conclude that for \\(0<|a|<M\\)\n   \\[\n      \\text{(1) has exactly one real root}\\;\\Longleftrightarrow\\; b<A \\text{ or } b>B,\n   \\]\n   where \\(A,B\\) are given in (5).\n\n5.  Collecting the results.\n   Recall \\(M=12^{3/4}/(4\\ln2)\\) from (2).  All ordered pairs \\((a,b)\\) yielding exactly one point of intersection are\n   \\[\n      \\boxed{\\,(a,b)=(0,2)\\,},\n   \\]\n   together with\n   \\[\n      \\boxed{\\,|a|\\ge \\dfrac{12^{3/4}}{4\\ln2},\\; b\\in\\mathbb R\\,},\n   \\]\n   and finally\n   \\[\n      \\boxed{\\,0<|a|<\\dfrac{12^{3/4}}{4\\ln2},\\; b< H_{a}(r_{-}) \\text{ or } b> H_{a}(r_{+})\\,},\n   \\]\n   where \\(r_{-}<r_{+}\\) are the two positive solutions of\n   \\[\n      \\frac{4x^{3}}{4+x^{4}}=|a|\\,\\ln2.\n   \\]\n   In particular, for \\(0<|a|<M\\) the ``forbidden strip'' of \\(b\\)-values is the closed interval \\([A,B]=[H_{a}(r_{-}),H_{a}(r_{+})]\\); choosing \\(b\\) outside this interval is both necessary and sufficient for having exactly one intersection.\n\nThis completes the solution.",
+      "_meta": {
+        "core_steps": [
+          "Use even symmetry of f(x)=ln(1+x^2) to work with a≥0 (|a| handled by reflection) and treat the horizontal case a=0 separately.",
+          "Compute f'(x)=2x/(1+x^2); note that |f'(x)|≤1 with global maximum 1 attained once at x=1.",
+          "When a≥max f'(x) (=1), apply the IVT to guarantee ≥1 intersection and the MVT together with |f'(x)|<a to rule out a second one.",
+          "For 0<a<1 solve f'(x)=a (two points r_−<r_+) and study g(x)=f(x)−ax; monotonicity of g on the three intervals shows the exact-one-intersection region is b<g(r_−) or b>g(r_+).",
+          "Combine the three cases (a=0, 0<|a|<1, |a|≥1) to list all (a,b) giving exactly one intersection."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Additive constant inside the logarithm argument (keeps evenness and growth rate)",
+            "original": "1 in ln(1 + x^2)"
+          },
+          "slot2": {
+            "description": "Even power of x inside the logarithm argument (provides symmetry and bounded derivative)",
+            "original": "2 in x^2"
+          },
+          "slot3": {
+            "description": "Choice of logarithm base (overall vertical scaling factor)",
+            "original": "natural logarithm ln"
+          },
+          "slot4": {
+            "description": "Numerical value of the maximal derivative that serves as the critical slope separating cases",
+            "original": "1 (max f'(x))"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,120 @@
+{
+  "index": "2022-B-2",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $\\times$ represent the cross product in $\\mathbb{R}^3$. For what positive integers $n$ does there exist a set $S \\subset \\mathbb{R}^3$ with exactly $n$ elements such that \n\\[\nS = \\{v \\times w: v, w \\in S\\}?\n\\]",
+  "solution": "The possible values of $n$ are 1 and 7.\n\nClearly the set $S = \\{0\\}$ works. Suppose that $S \\neq \\{0\\}$ is a finite set satisfying the given condition; in particular, $S$ does not consist of a collection of collinear vectors, since otherwise $\\{v \\times w: v,w \\in S\\} = \\{0\\}$. We claim that $S$ cannot contain any nonzero vector $v$ with $\\|v\\| \\neq 1$. Suppose otherwise, and let $w \\in S$ be a vector not collinear with $v$. Then $S$ must contain the nonzero vector $u_1 = v\\times w$, as well as the sequence of vectors $u_n$ defined inductively by $u_n = v \\times u_{n-1}$. Since each $u_n$ is orthogonal to $v$ by construction, we have $\\|u_n\\| = \\|v\\| \\|u_{n-1}\\|$ and so $\\|u_n\\| = \\|v\\|^{n-1} \\|u_1\\|$. The sequence $\\|u_n\\|$ consists of all distinct numbers and thus $S$ is infinite, a contradiction. This proves the claim, and so every nonzero vector in $S$ is a unit vector.\n\nNext note that any pair of vectors $v,w \\in S$ must either be collinear or orthogonal: by the claim, $v,w$ are both unit vectors, and if $v,w$ are not collinear then $v\\times w \\in S$ must be a unit vector, whence $v\\perp w$. Now choose any pair of non-collinear vectors $v_1,v_2 \\in S$, and write $v_3 = v_1 \\times v_2$. Then $\\{v_1,v_2,v_3\\}$ is an orthonormal basis of $\\mathbb{R}^3$, and it follows that all of these vectors are in $S$: $0$, $v_1$, $v_2$, $v_3$, $-v_1 = v_3 \\times v_2$, $-v_2 = v_1 \\times v_3$, and $-v_3 = v_2 \\times v_1$. On the other hand, $S$ cannot contain any vector besides these seven, since any other vector $w$ in $S$ would have to be simultaneously orthogonal to all of $v_1,v_2,v_3$.\n\nThus any set $S \\neq \\{0\\}$ satisfying the given condition must be of the form $\\{0,\\pm v_1,\\pm v_2,\\pm v_3\\}$ where $\\{v_1,v_2,v_3\\}$ is an orthonormal basis of $\\mathbb{R}^3$. It is clear that any set of this form does satisfy the given condition. We conclude that the answer is $n=1$ or $n=7$.",
+  "vars": [
+    "S",
+    "v",
+    "w",
+    "u_1",
+    "u_n",
+    "u_n-1",
+    "v_1",
+    "v_2",
+    "v_3"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S": "setvectors",
+        "v": "vectorv",
+        "w": "vectorw",
+        "u_1": "firstseq",
+        "u_n": "seqelem",
+        "u_n-1": "prevseq",
+        "v_1": "basisone",
+        "v_2": "basistwo",
+        "v_3": "basisthree",
+        "n": "intcount"
+      },
+      "question": "Let $\\times$ represent the cross product in $\\mathbb{R}^3$. For what positive integers $intcount$ does there exist a set $setvectors \\subset \\mathbb{R}^3$ with exactly $intcount$ elements such that \n\\[\nsetvectors = \\{vectorv \\times vectorw: vectorv, vectorw \\in setvectors\\}? \n\\]",
+      "solution": "The possible values of $intcount$ are 1 and 7.\n\nClearly the set $setvectors = \\{0\\}$ works. Suppose that $setvectors \\neq \\{0\\}$ is a finite set satisfying the given condition; in particular, $setvectors$ does not consist of a collection of collinear vectors, since otherwise $\\{vectorv \\times vectorw: vectorv,vectorw \\in setvectors\\} = \\{0\\}$. We claim that $setvectors$ cannot contain any nonzero vector $vectorv$ with $\\|vectorv\\| \\neq 1$. Suppose otherwise, and let $vectorw \\in setvectors$ be a vector not collinear with $vectorv$. Then $setvectors$ must contain the nonzero vector $firstseq = vectorv\\times vectorw$, as well as the sequence of vectors $seqelem$ defined inductively by $seqelem = vectorv \\times prevseq$. Since each $seqelem$ is orthogonal to $vectorv$ by construction, we have $\\|seqelem\\| = \\|vectorv\\| \\|prevseq\\|$ and so $\\|seqelem\\| = \\|vectorv\\|^{intcount-1} \\|firstseq\\|$. The sequence $\\|seqelem\\|$ consists of all distinct numbers and thus $setvectors$ is infinite, a contradiction. This proves the claim, and so every nonzero vector in $setvectors$ is a unit vector.\n\nNext note that any pair of vectors $vectorv,vectorw \\in setvectors$ must either be collinear or orthogonal: by the claim, $vectorv,vectorw$ are both unit vectors, and if $vectorv,vectorw$ are not collinear then $vectorv\\times vectorw \\in setvectors$ must be a unit vector, whence $vectorv\\perp vectorw$. Now choose any pair of non-collinear vectors $basisone,basistwo \\in setvectors$, and write $basisthree = basisone \\times basistwo$. Then $\\{basisone,basistwo,basisthree\\}$ is an orthonormal basis of $\\mathbb{R}^3$, and it follows that all of these vectors are in $setvectors$: $0$, $basisone$, $basistwo$, $basisthree$, $-basisone = basisthree \\times basistwo$, $-basistwo = basisone \\times basisthree$, and $-basisthree = basistwo \\times basisone$. On the other hand, $setvectors$ cannot contain any vector besides these seven, since any other vector $vectorw$ in $setvectors$ would have to be simultaneously orthogonal to all of $basisone,basistwo,basisthree$.\n\nThus any set $setvectors \\neq \\{0\\}$ satisfying the given condition must be of the form $\\{0,\\pm basisone,\\pm basistwo,\\pm basisthree\\}$ where $\\{basisone,basistwo,basisthree\\}$ is an orthonormal basis of $\\mathbb{R}^3$. It is clear that any set of this form does satisfy the given condition. We conclude that the answer is $intcount=1$ or $intcount=7$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S": "chiaflower",
+        "v": "sandcastle",
+        "w": "rainshower",
+        "u_1": "marmalade",
+        "u_n": "cheesecake",
+        "u_{n-1}": "paperweight",
+        "v_1": "bluewhale",
+        "v_2": "dragonfruit",
+        "v_3": "brainstorm",
+        "n": "lighthouse"
+      },
+      "question": "Let $\\times$ represent the cross product in $\\mathbb{R}^3$. For what positive integers $lighthouse$ does there exist a set $chiaflower \\subset \\mathbb{R}^3$ with exactly $lighthouse$ elements such that \n\\[\nchiaflower = \\{sandcastle \\times rainshower: sandcastle, rainshower \\in chiaflower\\}?\n\\]",
+      "solution": "The possible values of $lighthouse$ are 1 and 7.\n\nClearly the set $chiaflower = \\{0\\}$ works. Suppose that $chiaflower \\neq \\{0\\}$ is a finite set satisfying the given condition; in particular, $chiaflower$ does not consist of a collection of collinear vectors, since otherwise $\\{sandcastle \\times rainshower: sandcastle,rainshower \\in chiaflower\\} = \\{0\\}$. We claim that $chiaflower$ cannot contain any nonzero vector $sandcastle$ with $\\|sandcastle\\| \\neq 1$. Suppose otherwise, and let $rainshower \\in chiaflower$ be a vector not collinear with $sandcastle$. Then $chiaflower$ must contain the nonzero vector $marmalade = sandcastle\\times rainshower$, as well as the sequence of vectors $cheesecake$ defined inductively by $cheesecake = sandcastle \\times paperweight$. Since each $cheesecake$ is orthogonal to $sandcastle$ by construction, we have $\\|cheesecake\\| = \\|sandcastle\\| \\|paperweight\\|$ and so $\\|cheesecake\\| = \\|sandcastle\\|^{lighthouse-1} \\|marmalade\\|$. The sequence $\\|cheesecake\\|$ consists of all distinct numbers and thus $chiaflower$ is infinite, a contradiction. This proves the claim, and so every nonzero vector in $chiaflower$ is a unit vector.\n\nNext note that any pair of vectors $sandcastle,rainshower \\in chiaflower$ must either be collinear or orthogonal: by the claim, $sandcastle,rainshower$ are both unit vectors, and if $sandcastle,rainshower$ are not collinear then $sandcastle\\times rainshower \\in chiaflower$ must be a unit vector, whence $sandcastle\\perp rainshower$. Now choose any pair of non-collinear vectors $bluewhale,dragonfruit \\in chiaflower$, and write $brainstorm = bluewhale \\times dragonfruit$. Then $\\{bluewhale,dragonfruit,brainstorm\\}$ is an orthonormal basis of $\\mathbb{R}^3$, and it follows that all of these vectors are in $chiaflower$: $0$, $bluewhale$, $dragonfruit$, $brainstorm$, $-bluewhale = brainstorm \\times dragonfruit$, $-dragonfruit = bluewhale \\times brainstorm$, and $-brainstorm = dragonfruit \\times bluewhale$. On the other hand, $chiaflower$ cannot contain any vector besides these seven, since any other vector $rainshower$ in $chiaflower$ would have to be simultaneously orthogonal to all of $bluewhale,dragonfruit,brainstorm$.\n\nThus any set $chiaflower \\neq \\{0\\}$ satisfying the given condition must be of the form $\\{0,\\pm bluewhale,\\pm dragonfruit,\\pm brainstorm\\}$ where $\\{bluewhale,dragonfruit,brainstorm\\}$ is an orthonormal basis of $\\mathbb{R}^3$. It is clear that any set of this form does satisfy the given condition. We conclude that the answer is $lighthouse=1$ or $lighthouse=7$.",
+      "done": true
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S": "emptiness",
+        "v": "scalarval",
+        "w": "fixedpoint",
+        "u_1": "terminalone",
+        "u_n": "initialn",
+        "u_n-1": "initialprev",
+        "v_1": "scalarone",
+        "v_2": "scalartwo",
+        "v_3": "scalarthree",
+        "n": "infinite"
+      },
+      "question": "Let $\\times$ represent the cross product in $\\mathbb{R}^3$. For what positive integers $\\infinite$ does there exist a set $\\emptiness \\subset \\mathbb{R}^3$ with exactly $\\infinite$ elements such that \n\\[\n\\emptiness = \\{\\scalarval \\times \\fixedpoint: \\scalarval, \\fixedpoint \\in \\emptiness\\}? \n\\]",
+      "solution": "The possible values of $\\infinite$ are 1 and 7.\n\nClearly the set $\\emptiness = \\{0\\}$ works. Suppose that $\\emptiness \\neq \\{0\\}$ is a finite set satisfying the given condition; in particular, $\\emptiness$ does not consist of a collection of collinear vectors, since otherwise $\\{\\scalarval \\times \\fixedpoint: \\scalarval,\\fixedpoint \\in \\emptiness\\} = \\{0\\}$. We claim that $\\emptiness$ cannot contain any nonzero vector $\\scalarval$ with $\\|\\scalarval\\| \\neq 1$. Suppose otherwise, and let $\\fixedpoint \\in \\emptiness$ be a vector not collinear with $\\scalarval$. Then $\\emptiness$ must contain the nonzero vector $\\terminalone = \\scalarval\\times \\fixedpoint$, as well as the sequence of vectors $\\initialn$ defined inductively by $\\initialn = \\scalarval \\times \\initialprev$. Since each $\\initialn$ is orthogonal to $\\scalarval$ by construction, we have $\\|\\initialn\\| = \\|\\scalarval\\| \\|\\initialprev\\|$ and so $\\|\\initialn\\| = \\|\\scalarval\\|^{\\infinite-1} \\|\\terminalone\\|$. The sequence $\\|\\initialn\\|$ consists of all distinct numbers and thus $\\emptiness$ is infinite, a contradiction. This proves the claim, and so every nonzero vector in $\\emptiness$ is a unit vector.\n\nNext note that any pair of vectors $\\scalarval,\\fixedpoint \\in \\emptiness$ must either be collinear or orthogonal: by the claim, $\\scalarval,\\fixedpoint$ are both unit vectors, and if $\\scalarval,\\fixedpoint$ are not collinear then $\\scalarval\\times \\fixedpoint \\in \\emptiness$ must be a unit vector, whence $\\scalarval\\perp \\fixedpoint$. Now choose any pair of non-collinear vectors $\\scalarone,\\scalartwo \\in \\emptiness$, and write $\\scalarthree = \\scalarone \\times \\scalartwo$. Then $\\{\\scalarone,\\scalartwo,\\scalarthree\\}$ is an orthonormal basis of $\\mathbb{R}^3$, and it follows that all of these vectors are in $\\emptiness$: $0$, $\\scalarone$, $\\scalartwo$, $\\scalarthree$, $-\\scalarone = \\scalarthree \\times \\scalartwo$, $-\\scalartwo = \\scalarone \\times \\scalarthree$, and $-\\scalarthree = \\scalartwo \\times \\scalarone$. On the other hand, $\\emptiness$ cannot contain any vector besides these seven, since any other vector $\\fixedpoint$ in $\\emptiness$ would have to be simultaneously orthogonal to all of $\\scalarone,\\scalartwo,\\scalarthree$.\n\nThus any set $\\emptiness \\neq \\{0\\}$ satisfying the given condition must be of the form $\\{0,\\pm \\scalarone,\\pm \\scalartwo,\\pm \\scalarthree\\}$ where $\\{\\scalarone,\\scalartwo,\\scalarthree\\}$ is an orthonormal basis of $\\mathbb{R}^3$. It is clear that any set of this form does satisfy the given condition. We conclude that the answer is $\\infinite=1$ or $\\infinite=7$.",
+      "confidence": 0.17
+    },
+    "garbled_string": {
+      "map": {
+        "S": "qzxwvtnpl",
+        "v": "hjgrkslaf",
+        "w": "mbnzxcvty",
+        "u_1": "lofkdasui",
+        "u_n": "werpzxcvb",
+        "u_n-1": "plmoknijb",
+        "u_{n-1}": "xcvbnmqaz",
+        "v_1": "pqowieurk",
+        "v_2": "zmxncbvha",
+        "v_3": "klqwertyu",
+        "n": "asdfghjkl"
+      },
+      "question": "Let $\\times$ represent the cross product in $\\mathbb{R}^3$. For what positive integers $asdfghjkl$ does there exist a set $qzxwvtnpl \\subset \\mathbb{R}^3$ with exactly $asdfghjkl$ elements such that \n\\[\nqzxwvtnpl = \\{hjgrkslaf \\times mbnzxcvty: hjgrkslaf, mbnzxcvty \\in qzxwvtnpl\\}?\n\\]",
+      "solution": "The possible values of $asdfghjkl$ are 1 and 7.\n\nClearly the set $qzxwvtnpl = \\{0\\}$ works. Suppose that $qzxwvtnpl \\neq \\{0\\}$ is a finite set satisfying the given condition; in particular, $qzxwvtnpl$ does not consist of a collection of collinear vectors, since otherwise $\\{hjgrkslaf \\times mbnzxcvty: hjgrkslaf,mbnzxcvty \\in qzxwvtnpl\\} = \\{0\\}$. We claim that $qzxwvtnpl$ cannot contain any nonzero vector $hjgrkslaf$ with $\\|hjgrkslaf\\| \\neq 1$. Suppose otherwise, and let $mbnzxcvty \\in qzxwvtnpl$ be a vector not collinear with $hjgrkslaf$. Then $qzxwvtnpl$ must contain the nonzero vector $lofkdasui = hjgrkslaf\\times mbnzxcvty$, as well as the sequence of vectors $werpzxcvb$ defined inductively by $werpzxcvb = hjgrkslaf \\times xcvbnmqaz$. Since each $werpzxcvb$ is orthogonal to $hjgrkslaf$ by construction, we have $\\|werpzxcvb\\| = \\|hjgrkslaf\\| \\|xcvbnmqaz\\|$ and so $\\|werpzxcvb\\| = \\|hjgrkslaf\\|^{\\asdfghjkl-1} \\|lofkdasui\\|$. The sequence $\\|werpzxcvb\\|$ consists of all distinct numbers and thus $qzxwvtnpl$ is infinite, a contradiction. This proves the claim, and so every nonzero vector in $qzxwvtnpl$ is a unit vector.\n\nNext note that any pair of vectors $hjgrkslaf,mbnzxcvty \\in qzxwvtnpl$ must either be collinear or orthogonal: by the claim, $hjgrkslaf,mbnzxcvty$ are both unit vectors, and if $hjgrkslaf,mbnzxcvty$ are not collinear then $hjgrkslaf\\times mbnzxcvty \\in qzxwvtnpl$ must be a unit vector, whence $hjgrkslaf\\perp mbnzxcvty$. Now choose any pair of non-collinear vectors $pqowieurk,zmxncbvha \\in qzxwvtnpl$, and write $klqwertyu = pqowieurk \\times zmxncbvha$. Then $\\{pqowieurk,zmxncbvha,klqwertyu\\}$ is an orthonormal basis of $\\mathbb{R}^3$, and it follows that all of these vectors are in $qzxwvtnpl$: $0$, $pqowieurk$, $zmxncbvha$, $klqwertyu$, $-pqowieurk = klqwertyu \\times zmxncbvha$, $-zmxncbvha = pqowieurk \\times klqwertyu$, and $-klqwertyu = zmxncbvha \\times pqowieurk$. On the other hand, $qzxwvtnpl$ cannot contain any vector besides these seven, since any other vector $mbnzxcvty$ in $qzxwvtnpl$ would have to be simultaneously orthogonal to all of $pqowieurk,zmxncbvha,klqwertyu$.\n\nThus any set $qzxwvtnpl \\neq \\{0\\}$ satisfying the given condition must be of the form $\\{0,\\pm pqowieurk,\\pm zmxncbvha,\\pm klqwertyu\\}$ where $\\{pqowieurk,zmxncbvha,klqwertyu\\}$ is an orthonormal basis of $\\mathbb{R}^3$. It is clear that any set of this form does satisfy the given condition. We conclude that the answer is $asdfghjkl=1$ or $asdfghjkl=7$.",
+      "confidence": 0.14
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\otimes\\) denote the usual cross product in \\(\\mathbb R^{3}\\).  A finite, non-empty set \\(T\\subset\\mathbb R^{3}\\) will be called cross-closed if\n\\[\nT=\\{u\\otimes v: u,v\\in T\\}.\n\\]\nFor which positive integers \\(k\\) does there exist a cross-closed set \\(T\\) with exactly \\(k\\) elements?",
+      "solution": "Both k=1 and k=7 occur, and no other values are possible.\n\n1.  Example sets.\n   *  The singleton {0} is clearly cross-closed, giving k=1.\n   *  Fix any orthonormal basis {a,b,c} of R^3.  Because a\\times b=c, b\\times c=a, c\\times a=b and reversing the order introduces a minus sign, the set\n     T_0={0,\\pm a,\\pm b,\\pm c}\n     is closed under \\times  and has seven elements.  Thus k=7 is attainable.\n\nHenceforth assume a cross-closed set T\\neq {0} is given; we show |T|=7.\n\n2.  Every nonzero element of T is a unit vector.\n   Choose q\\in T with q\\neq 0 and suppose \\parallel q\\parallel \\neq 1.  Since T\\neq {0}, pick p\\in T not collinear with q.  Set\n     s_1=q\\times p,\n   s_n=q\\times s_{n-1} (n\\geq 2).\n   Each s_n\\in T by cross-closure and is orthogonal to q, so\n     \\parallel s_n\\parallel =\\parallel q\\parallel \\cdot \\parallel s_{n-1}\\parallel  \\Rightarrow  \\parallel s_n\\parallel =\\parallel q\\parallel ^{n-1}\\parallel s_1\\parallel .\n   Since \\parallel q\\parallel \\neq 1 the norms \\parallel s_n\\parallel  are all distinct, forcing T infinite---a contradiction.  Hence every nonzero vector in T has norm 1.\n\n3.  Collinear-or-orthogonal dichotomy.\n   If u,v\\in T are nonzero and not collinear, then u\\times v\\in T is nonzero (hence unit) and orthogonal to u and v.  Thus any two non-collinear members of T are orthogonal.\n\n4.  Constructing an orthonormal triple.\n   Pick non-collinear unit vectors a,b\\in T.  Define c=a\\times b; then c is a unit vector orthogonal to both a and b.  Moreover\n     a\\times c=-b,\n   b\\times c= a,\n   b\\times a=-c,\n   so\n     0,\\pm a,\\pm b,\\pm c \\in  T.\n\n5.  No other vectors can occur.\n   Suppose w\\in T is not among these seven.  Then w\\neq \\pm a,\\pm b,\\pm c, so w is not collinear with any of a,b,c; by the dichotomy it must be orthogonal to each. But a nonzero vector in R^3 cannot be orthogonal to all three basis vectors, so w=0---a contradiction since 0 is already listed.  Thus T={0,\\pm a,\\pm b,\\pm c} and |T|=7.\n\n6.  Conclusion.\n   Every finite non-empty cross-closed set is either {0} or has seven elements of the form above.  Therefore the only possible cardinalities are k=1 and k=7.",
+      "_meta": {
+        "core_steps": [
+          "Unit–length necessity: a non-unit element would generate infinitely many distinct norms via repeated cross products, contradicting finiteness.",
+          "Collinear-or-orthogonal dichotomy: with all vectors unit, non-collinear pairs must be orthogonal because their cross product is still unit.",
+          "Orthonormal triple: any two non-collinear vectors together with their cross product give an orthonormal basis {v₁,v₂,v₃}.",
+          "Closure forces S to be exactly {0,±v₁,±v₂,±v₃}; no other vector can be orthogonal to all three basis vectors.",
+          "The sets {0} and the above 7-element set both work, so the only possible n are 1 and 7."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The particular vector chosen to pair with v when constructing the sequence uₙ; any element of S not collinear with v suffices.",
+            "original": "w in the phrase “let w∈S be a vector not collinear with v.”"
+          },
+          "slot2": {
+            "description": "The labels/order of the orthonormal basis vectors; any permutation or sign convention leads to the same 7-element set up to relabeling.",
+            "original": "the notation v₁, v₂, v₃ and the appearances of ±v₁, ±v₂, ±v₃"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

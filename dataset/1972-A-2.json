@@ -1,0 +1,89 @@
+{
+  "index": "1972-A-2",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-2. Let \\( S \\) be a set and let * be a binary operation on \\( S \\) satisfying the laws\n\\[\n\\begin{array}{l}\nx *(x * y)=y \\text { for all } x, y \\text { in } S, \\\\\n(y * x) * x=y \\text { for all } x, y \\text { in } S .\n\\end{array}\n\\]\n\nShow that * is commutative but not necessarily associative.",
+  "solution": "A-2 Label the given laws (1) and (2), respectively.\nI. We first show that\n\\[\n(x * y) * x=y .\n\\]\n\nThis follows from \\( (x * y) * x=(x * y)[(x * y) * y]=y \\). (First apply (2) with \\( x \\) and \\( y \\) interchanged; then apply (1) with \\( x \\) replaced by \\( x * y \\).)\n\nWe now obtain\n\\[\ny * x=[(x * y) * x] * x=x * y .\n\\]\n(First apply (3); then apply (2) w.th \\( y \\) replaced by \\( x * y \\).) This proves that \\( * \\) is commutat.ve.\nII. Let \\( S \\) be the set of all integers. Define \\( x * y=-x-y \\). Then\n\\[\nx *(y * z)=-x+y+z ;(x * y) * z=x+y-z\n\\]\n\nIt follows from (5) that, in the first place, (1) and (2) hold and, secondly, \\( * \\) fails to be associative: simply choose \\( x \\neq z \\) in (5).\n\nAtternate So'ution, Part I (suggested by Martin Davis):\nWr.te the equation \\( x * y=z \\) as \\( P(x, y, z) \\). Then law (1) may be written \"If \\( x * y=z \\) then \\( x * z=y^{\\prime \\prime} \\) or\n\\[\nP(x, y, z) \\text { implies } P(x, y, z)\n\\]\n\nSimilarly, the law (2) may be written\n\\[\nP(y, x, z) \\text { implies } P(z, x, y) .\n\\]\n\nThese two implications, (6) and (7), show that the permutations (23) and (13) on the location of the variables in \\( P(x, y, z) \\) are permitted. Since (13), (23) generate the symmetric group \\( S_{3} \\), we find (12) is also permitted.\n\nThus, \\( P(x, y, z) \\) implies \\( P(y, x, z \\); or \\( x * y=z \\) implies \\( y * x=z \\), which means \\( x * y=y * x \\).",
+  "vars": [
+    "x",
+    "y",
+    "z"
+  ],
+  "params": [
+    "S",
+    "P"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "elementx",
+        "y": "elementy",
+        "z": "elementz",
+        "S": "universe",
+        "P": "predicate"
+      },
+      "question": "A-2. Let \\( universe \\) be a set and let * be a binary operation on \\( universe \\) satisfying the laws\n\\[\n\\begin{array}{l}\nelementx *(elementx * elementy)=elementy \\text { for all } elementx, elementy \\text { in } universe, \\\\\n(elementy * elementx) * elementx=elementy \\text { for all } elementx, elementy \\text { in } universe .\n\\end{array}\n\\]\n\nShow that * is commutative but not necessarily associative.",
+      "solution": "A-2 Label the given laws (1) and (2), respectively.\nI. We first show that\n\\[\n(elementx * elementy) * elementx=elementy .\n\\]\n\nThis follows from \\( (elementx * elementy) * elementx=(elementx * elementy)[(elementx * elementy) * elementy]=elementy \\). (First apply (2) with \\( elementx \\) and \\( elementy \\) interchanged; then apply (1) with \\( elementx \\) replaced by \\( elementx * elementy \\).)\n\nWe now obtain\n\\[\nelementy * elementx=[(elementx * elementy) * elementx] * elementx=elementx * elementy .\n\\]\n(First apply (3); then apply (2) w.th \\( elementy \\) replaced by \\( elementx * elementy \\).) This proves that \\( * \\) is commutat.ve.\nII. Let \\( universe \\) be the set of all integers. Define \\( elementx * elementy=-elementx-elementy \\). Then\n\\[\nelementx *(elementy * elementz)=-elementx+elementy+elementz ;(elementx * elementy) * elementz=elementx+elementy-elementz\n\\]\n\nIt follows from (5) that, in the first place, (1) and (2) hold and, secondly, \\( * \\) fails to be associative: simply choose \\( elementx \\neq elementz \\) in (5).\n\nAtternate So'ution, Part I (suggested by Martin Davis):\nWr.te the equation \\( elementx * elementy=elementz \\) as \\( predicate(elementx, elementy, elementz) \\). Then law (1) may be written \"If \\( elementx * elementy=elementz \\) then \\( elementx * elementz=elementy^{\\prime \\prime} \\) or\n\\[\npredicate(elementx, elementy, elementz) \\text { implies } predicate(elementx, elementy, elementz)\n\\]\n\nSimilarly, the law (2) may be written\n\\[\npredicate(elementy, elementx, elementz) \\text { implies } predicate(elementz, elementx, elementy) .\n\\]\n\nThese two implications, (6) and (7), show that the permutations (23) and (13) on the location of the variables in \\( predicate(elementx, elementy, elementz) \\) are permitted. Since (13), (23) generate the symmetric group \\( universe_{3} \\), we find (12) is also permitted.\n\nThus, \\( predicate(elementx, elementy, elementz) \\) implies \\( predicate(elementy, elementx, elementz \\); or \\( elementx * elementy=elementz \\) implies \\( elementy * elementx=elementz \\), which means \\( elementx * elementy=elementy * elementx \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "chandelier",
+        "y": "pineapple",
+        "z": "envelope",
+        "S": "blackboard",
+        "P": "teaspoon"
+      },
+      "question": "A-2. Let \\( blackboard \\) be a set and let * be a binary operation on \\( blackboard \\) satisfying the laws\n\\[\n\\begin{array}{l}\nchandelier *(chandelier * pineapple)=pineapple \\text { for all } chandelier, pineapple \\text { in } blackboard, \\\\\n(pineapple * chandelier) * chandelier=pineapple \\text { for all } chandelier, pineapple \\text { in } blackboard .\n\\end{array}\n\\]\n\nShow that * is commutative but not necessarily associative.",
+      "solution": "A-2 Label the given laws (1) and (2), respectively.\nI. We first show that\n\\[\n(chandelier * pineapple) * chandelier=pineapple .\n\\]\n\nThis follows from \\( (chandelier * pineapple) * chandelier=(chandelier * pineapple)[(chandelier * pineapple) * pineapple]=pineapple \\). (First apply (2) with \\( chandelier \\) and \\( pineapple \\) interchanged; then apply (1) with \\( chandelier \\) replaced by \\( chandelier * pineapple \\).)\n\nWe now obtain\n\\[\npineapple * chandelier=[(chandelier * pineapple) * chandelier] * chandelier=chandelier * pineapple .\n\\]\n(First apply (3); then apply (2) with \\( pineapple \\) replaced by \\( chandelier * pineapple \\).) This proves that \\( * \\) is commutative.\nII. Let \\( blackboard \\) be the set of all integers. Define \\( chandelier * pineapple=-chandelier-pineapple \\). Then\n\\[\nchandelier *(pineapple * envelope)=-chandelier+pineapple+envelope ;(chandelier * pineapple) * envelope=chandelier+pineapple-envelope\n\\]\n\nIt follows from (5) that, in the first place, (1) and (2) hold and, secondly, \\( * \\) fails to be associative: simply choose \\( chandelier \\neq envelope \\) in (5).\n\nAlternate Solution, Part I (suggested by Martin Davis):\nWrite the equation \\( chandelier * pineapple=envelope \\) as \\( teaspoon(chandelier, pineapple, envelope) \\). Then law (1) may be written \"If \\( chandelier * pineapple=envelope \\) then \\( chandelier * envelope=pineapple^{\\prime \\prime} \\) or\n\\[\nteaspoon(chandelier, pineapple, envelope) \\text { implies } teaspoon(chandelier, pineapple, envelope)\n\\]\n\nSimilarly, the law (2) may be written\n\\[\nteaspoon(pineapple, chandelier, envelope) \\text { implies } teaspoon(envelope, chandelier, pineapple) .\n\\]\n\nThese two implications, (6) and (7), show that the permutations (23) and (13) on the location of the variables in \\( teaspoon(chandelier, pineapple, envelope) \\) are permitted. Since (13), (23) generate the symmetric group \\( blackboard_{3} \\), we find (12) is also permitted.\n\nThus, \\( teaspoon(chandelier, pineapple, envelope) \\) implies \\( teaspoon(pineapple, chandelier, envelope \\); or \\( chandelier * pineapple=envelope \\) implies \\( pineapple * chandelier=envelope \\), which means \\( chandelier * pineapple=pineapple * chandelier \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "y": "staticnumber",
+        "z": "immutabledigit",
+        "S": "voidcollection",
+        "P": "negationpredicate"
+      },
+      "question": "A-2. Let \\( voidcollection \\) be a set and let * be a binary operation on \\( voidcollection \\) satisfying the laws\n\\[\n\\begin{array}{l}\nconstantvalue *(constantvalue * staticnumber)=staticnumber \\text { for all } constantvalue, staticnumber \\text { in } voidcollection, \\\\\n(staticnumber * constantvalue) * constantvalue=staticnumber \\text { for all } constantvalue, staticnumber \\text { in } voidcollection .\n\\end{array}\n\\]\n\nShow that * is commutative but not necessarily associative.",
+      "solution": "A-2 Label the given laws (1) and (2), respectively.\nI. We first show that\n\\[\n(constantvalue * staticnumber) * constantvalue=staticnumber .\n\\]\n\nThis follows from \\( (constantvalue * staticnumber) * constantvalue=(constantvalue * staticnumber)[(constantvalue * staticnumber) * staticnumber]=staticnumber \\). (First apply (2) with \\( constantvalue \\) and \\( staticnumber \\) interchanged; then apply (1) with \\( constantvalue \\) replaced by \\( constantvalue * staticnumber \\).)\n\nWe now obtain\n\\[\nstaticnumber * constantvalue=[(constantvalue * staticnumber) * constantvalue] * constantvalue=constantvalue * staticnumber .\n\\]\n(First apply (3); then apply (2) w.th \\( staticnumber \\) replaced by \\( constantvalue * staticnumber \\).) This proves that \\( * \\) is commutat.ve.\nII. Let \\( voidcollection \\) be the set of all integers. Define \\( constantvalue * staticnumber=-constantvalue-staticnumber \\). Then\n\\[\nconstantvalue *(staticnumber * immutabledigit)=-constantvalue+staticnumber+immutabledigit ;(constantvalue * staticnumber) * immutabledigit=constantvalue+staticnumber-immutabledigit\n\\]\n\nIt follows from (5) that, in the first place, (1) and (2) hold and, secondly, \\( * \\) fails to be associative: simply choose \\( constantvalue \\neq immutabledigit \\) in (5).\n\nAlternate So'ution, Part I (suggested by Martin Davis):\nWr.te the equation \\( constantvalue * staticnumber=immutabledigit \\) as \\( negationpredicate(constantvalue, staticnumber, immutabledigit) \\). Then law (1) may be written \"If \\( constantvalue * staticnumber=immutabledigit \\) then \\( constantvalue * immutabledigit=staticnumber^{\\prime \\prime} \\) or\n\\[\nnegationpredicate(constantvalue, staticnumber, immutabledigit) \\text { implies } negationpredicate(constantvalue, staticnumber, immutabledigit)\n\\]\n\nSimilarly, the law (2) may be written\n\\[\nnegationpredicate(staticnumber, constantvalue, immutabledigit) \\text { implies } negationpredicate(immutabledigit, constantvalue, staticnumber) .\n\\]\n\nThese two implications, (6) and (7), show that the permutations (23) and (13) on the location of the variables in \\( negationpredicate(constantvalue, staticnumber, immutabledigit) \\) are permitted. Since (13), (23) generate the symmetric group \\( voidcollection_{3} \\), we find (12) is also permitted.\n\nThus, \\( negationpredicate(constantvalue, staticnumber, immutabledigit) \\) implies \\( negationpredicate(staticnumber, constantvalue, immutabledigit \\); or \\( constantvalue * staticnumber=immutabledigit \\) implies \\( staticnumber * constantvalue=immutabledigit \\), which means \\( constantvalue * staticnumber=staticnumber * constantvalue \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "z": "mfldcrye",
+        "S": "btkgnsvo",
+        "P": "xkprlavo"
+      },
+      "question": "A-2. Let \\( btkgnsvo \\) be a set and let * be a binary operation on \\( btkgnsvo \\) satisfying the laws\n\\[\n\\begin{array}{l}\nqzxwvtnp *(qzxwvtnp * hjgrksla)=hjgrksla \\text { for all } qzxwvtnp, hjgrksla \\text { in } btkgnsvo, \\\\\n(hjgrksla * qzxwvtnp) * qzxwvtnp=hjgrksla \\text { for all } qzxwvtnp, hjgrksla \\text { in } btkgnsvo .\n\\end{array}\n\\]\n\nShow that * is commutative but not necessarily associative.",
+      "solution": "A-2 Label the given laws (1) and (2), respectively.\nI. We first show that\n\\[\n(qzxwvtnp * hjgrksla) * qzxwvtnp=hjgrksla .\n\\]\n\nThis follows from \\( (qzxwvtnp * hjgrksla) * qzxwvtnp=(qzxwvtnp * hjgrksla)[(qzxwvtnp * hjgrksla) * hjgrksla]=hjgrksla \\). (First apply (2) with \\( qzxwvtnp \\) and \\( hjgrksla \\) interchanged; then apply (1) with \\( qzxwvtnp \\) replaced by \\( qzxwvtnp * hjgrksla \\).)\n\nWe now obtain\n\\[\nhjgrksla * qzxwvtnp=[(qzxwvtnp * hjgrksla) * qzxwvtnp] * qzxwvtnp=qzxwvtnp * hjgrksla .\n\\]\n(First apply (3); then apply (2) w.th \\( hjgrksla \\) replaced by \\( qzxwvtnp * hjgrksla \\).) This proves that \\( * \\) is commutat.ve.\nII. Let \\( btkgnsvo \\) be the set of all integers. Define \\( qzxwvtnp * hjgrksla=-qzxwvtnp-hjgrksla \\). Then\n\\[\nqzxwvtnp *(hjgrksla * mfldcrye)=-qzxwvtnp+hjgrksla+mfldcrye ;(qzxwvtnp * hjgrksla) * mfldcrye=qzxwvtnp+hjgrksla-mfldcrye\n\\]\n\nIt follows from (5) that, in the first place, (1) and (2) hold and, secondly, \\( * \\) fails to be associative: simply choose \\( qzxwvtnp \\neq mfldcrye \\) in (5).\n\nAtternate So'ution, Part I (suggested by Martin Davis):\nWr.te the equation \\( qzxwvtnp * hjgrksla=mfldcrye \\) as \\( xkprlavo(qzxwvtnp, hjgrksla, mfldcrye) \\). Then law (1) may be written \"If \\( qzxwvtnp * hjgrksla=mfldcrye \\) then \\( qzxwvtnp * mfldcrye=hjgrksla^{\\prime \\prime} \\) or\n\\[\nxkprlavo(qzxwvtnp, hjgrksla, mfldcrye) \\text { implies } xkprlavo(qzxwvtnp, hjgrksla, mfldcrye)\n\\]\n\nSimilarly, the law (2) may be written\n\\[\nxkprlavo(hjgrksla, qzxwvtnp, mfldcrye) \\text { implies } xkprlavo(mfldcrye, qzxwvtnp, hjgrksla) .\n\\]\n\nThese two implications, (6) and (7), show that the permutations (23) and (13) on the location of the variables in \\( xkprlavo(qzxwvtnp, hjgrksla, mfldcrye) \\) are permitted. Since (13), (23) generate the symmetric group \\( btkgnsvo_{3} \\), we find (12) is also permitted.\n\nThus, \\( xkprlavo(qzxwvtnp, hjgrksla, mfldcrye) \\) implies \\( xkprlavo(hjgrksla, qzxwvtnp, mfldcrye \\); or \\( qzxwvtnp * hjgrksla=mfldcrye \\) implies \\( hjgrksla * qzxwvtnp=mfldcrye \\), which means \\( qzxwvtnp * hjgrksla=hjgrksla * qzxwvtnp \\)."
+    },
+    "kernel_variant": {
+      "question": "Let \\(S\\) be a set equipped with a binary operation \\(*\\) that obeys the two identities\n\\[\n\\text{(I)}\\;\\; x*(x*y)=y,\\qquad \\text{(II)}\\;\\; (y*x)*x=y \\qquad\\text{for all }x,y\\in S.\n\\]\n(a) Prove that the operation \\(*\\) is commutative.\n\n(b) Show by a concrete finite example that \\(*\\) need not be associative. (Your example should give an explicit carrier set and a closed formula for \\(x*y\\) on that set.)",
+      "solution": "Solution\n\nLet S be a set equipped with * satisfying for all x,y in S\n\n  (I)   x*(x*y) = y,\n  (II)  (y*x)*x = y.\n\n(a) * is commutative.\n\nWe first show the auxiliary identity\n\n  (III)  (x*y)*x = y.\n\nProof of (III):  \n1.  Swap x\\leftrightarrow y in (II) to get  \n     (x*y)*y = x.       (II')\n2.  Now apply (I) with ``x'' replaced by (x*y) and ``y'' unchanged:  \n     (x*y)[(x*y)*y] = y.\n   But by (II'), (x*y)*y = x, so the left side is (x*y)*x.  Hence  \n     (x*y)*x = y,\n   as claimed.\n\nWith (III) in hand, we derive commutativity:\n\n  y*x = [ (x*y)*x ] * x       (because by (III), (x*y)*x = y)\n       = x*y                 (by applying (II) with y replaced by x*y)\n\nThus y*x = x*y for all x,y, so * is commutative.\n\n(b) * need not be associative.\n\nWe give a concrete finite example.  Let S = Z_7 (integers mod 7) and define\n\n  x * y \\equiv  -x - y   (mod 7).\n\nVerification of (I):\n\n  x*(x*y) = x*[-x-y]\n           \\equiv  -x -(-x-y) = y   (mod 7).\n\nVerification of (II):\n\n  (y*x)*x = [-y-x]*x\n           \\equiv  -(-y-x) - x = y   (mod 7).\n\nThus (I) and (II) hold.  But * fails to be associative.  For example take x=0, y=1, z=2:\n\n  y*z = -1 -2 = -3 \\equiv  4 (mod 7),\n  x*(y*z) = 0*4 = -0 -4 = -4 \\equiv  3 (mod 7),\n\nwhile\n\n  x*y = 0*1 = -0 -1 = -1 \\equiv  6 (mod 7),\n  (x*y)*z = 6*2 = -6 -2 = -8 \\equiv  6 (mod 7).\n\nHence x*(y*z) = 3 \\neq  6 = (x*y)*z, so associativity fails.\n\nConclusion.  The two identities force * to be commutative but do not imply associativity.",
+      "_meta": {
+        "core_steps": [
+          "From laws (1) & (2) derive the key identity (x*y)*x = y.",
+          "Insert that identity into y*x and apply law (2) again to obtain y*x = x*y (commutativity).",
+          "Give an explicit operation (e.g. x*y = −x−y on an additive abelian group) that satisfies the two laws but violates associativity."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The carrier set used for the non-associative example (any additive abelian group works).",
+            "original": "the set of all integers ℤ"
+          },
+          "slot2": {
+            "description": "The concrete definition of * in that example, provided it is the additive inverse of the sum in the chosen group.",
+            "original": "x*y = −x − y"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

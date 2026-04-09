@@ -1,0 +1,104 @@
+{
+  "index": "2015-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $f$ be a three times differentiable function (defined on $\\mathbb{R}$ and real-valued) such that $f$ has at least five distinct real zeros. Prove that $f + 6f' + 12f'' + 8f'''$ has at least two distinct real zeros.",
+  "solution": "Let $g(x) = e^{x/2} f(x)$. Then $g$ has at least $5$ distinct real zeroes,\nand by repeated applications of Rolle's theorem, $g', g'', g'''$ have at least $4,3,2$ distinct real zeroes, respectively. But\n\\[\ng'''(x) = \\frac{1}{8} e^{x/2} (f(x) + 6 f'(x) + 12 f''(x) + 8 f'''(x))\n\\]\nand $e^{x/2}$ is never zero, so we obtain the desired result.",
+  "vars": [
+    "x"
+  ],
+  "params": [
+    "f",
+    "g"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "functionf",
+        "g": "functiong",
+        "x": "variable"
+      },
+      "question": "Let $functionf$ be a three times differentiable function (defined on $\\mathbb{R}$ and real-valued) such that $functionf$ has at least five distinct real zeros. Prove that $functionf + 6functionf' + 12functionf'' + 8functionf'''$ has at least two distinct real zeros.",
+      "solution": "Let $functiong(variable) = e^{variable/2} functionf(variable)$. Then $functiong$ has at least $5$ distinct real zeroes, and by repeated applications of Rolle's theorem, $functiong', functiong'', functiong'''$ have at least $4,3,2$ distinct real zeroes, respectively. But\n\\[\nfunctiong'''(variable) = \\frac{1}{8} e^{variable/2} (functionf(variable) + 6 functionf'(variable) + 12 functionf''(variable) + 8 functionf'''(variable))\n\\]\nand $e^{variable/2}$ is never zero, so we obtain the desired result."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "lantern",
+        "f": "bucket",
+        "g": "harbor"
+      },
+      "question": "Let $bucket$ be a three times differentiable function (defined on $\\mathbb{R}$ and real-valued) such that $bucket$ has at least five distinct real zeros. Prove that $bucket + 6bucket' + 12bucket'' + 8bucket'''$ has at least two distinct real zeros.",
+      "solution": "Let $harbor(lantern) = e^{lantern/2} bucket(lantern)$. Then $harbor$ has at least $5$ distinct real zeroes,\nand by repeated applications of Rolle's theorem, $harbor', harbor'', harbor'''$ have at least $4,3,2$ distinct real zeroes, respectively. But\n\\[\nharbor'''(lantern) = \\frac{1}{8} e^{lantern/2} (bucket(lantern) + 6 bucket'(lantern) + 12 bucket''(lantern) + 8 bucket'''(lantern))\n\\]\nand $e^{lantern/2}$ is never zero, so we obtain the desired result."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedpoint",
+        "f": "nonvarying",
+        "g": "invariable"
+      },
+      "question": "Let $nonvarying$ be a three times differentiable function (defined on $\\mathbb{R}$ and real-valued) such that $nonvarying$ has at least five distinct real zeros. Prove that $nonvarying + 6nonvarying' + 12nonvarying'' + 8nonvarying'''$ has at least two distinct real zeros.",
+      "solution": "Let $invariable(fixedpoint) = e^{fixedpoint/2} nonvarying(fixedpoint)$. Then $invariable$ has at least $5$ distinct real zeroes, and by repeated applications of Rolle's theorem, $invariable', invariable'', invariable'''$ have at least $4,3,2$ distinct real zeroes, respectively. But\n\\[\ninvariable'''(fixedpoint) = \\frac{1}{8} e^{fixedpoint/2} (nonvarying(fixedpoint) + 6 nonvarying'(fixedpoint) + 12 nonvarying''(fixedpoint) + 8 nonvarying'''(fixedpoint))\n\\]\nand $e^{fixedpoint/2}$ is never zero, so we obtain the desired result."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "f": "hjgrksla",
+        "g": "oiwulekp"
+      },
+      "question": "Let $hjgrksla$ be a three times differentiable function (defined on $\\mathbb{R}$ and real-valued) such that $hjgrksla$ has at least five distinct real zeros. Prove that $hjgrksla + 6hjgrksla' + 12hjgrksla'' + 8hjgrksla'''$ has at least two distinct real zeros.",
+      "solution": "Let $oiwulekp(qzxwvtnp) = e^{qzxwvtnp/2} hjgrksla(qzxwvtnp)$. Then $oiwulekp$ has at least $5$ distinct real zeroes,\nand by repeated applications of Rolle's theorem, $oiwulekp', oiwulekp'', oiwulekp'''$ have at least $4,3,2$ distinct real zeroes, respectively. But\n\\[\noiulekp'''(qzxwvtnp) = \\frac{1}{8} e^{qzxwvtnp/2} (hjgrksla(qzxwvtnp) + 6 hjgrksla'(qzxwvtnp) + 12 hjgrksla''(qzxwvtnp) + 8 hjgrksla'''(qzxwvtnp))\n\\]\nand $e^{qzxwvtnp/2}$ is never zero, so we obtain the desired result."
+    },
+    "kernel_variant": {
+      "question": "Let $f:\\mathbb R\\to\\mathbb R$ be a function that is four times differentiable on $\\mathbb R$.  Assume that $f$ possesses at least seven distinct real zeros.  Prove that the fourth-order linear combination\n\\[\nF(x)=f(x)-4f'(x)+6f''(x)-4f'''(x)+f^{(4)}(x)\n\\]\nhas at least three distinct real zeros.",
+      "solution": "Set\n\ng(x)=e^{-x}f(x).\n\n1. Non-vanishing weight.\n   The factor e^{-x} is never zero, hence g has the same real zeros as f.  Consequently g has at least seven distinct real zeros.\n\n2. Successive applications of Rolle's theorem.\n   Starting from the 7 zeros of g, Rolle's theorem yields\n   * at least 6 distinct zeros of g',\n   * at least 5 distinct zeros of g'',\n   * at least 4 distinct zeros of g''',\n   * at least 3 distinct zeros of g^{(4)}.\n\n3. Expressing g^{(4)}.\n   Differentiate g(x)=e^{-x}f(x) four times.  Using the product rule, or observing that (D-1)^4f appears, we obtain\n\n   g^{(4)}(x)=e^{-x}(D-1)^4f(x)\n           =e^{-x}(f-4f'+6f''-4f'''+f^{(4)})(x).\n\n   In particular,\n   g^{(4)}(x)=e^{-x}F(x).\n\n4. Zeros are preserved by the exponential factor.\n   Since e^{-x}\\neq 0 for every real x, the zeros of g^{(4)} coincide exactly with the zeros of F.\n\n5. Conclusion.\n   We already know that g^{(4)} has at least three distinct real zeros; therefore F(x)=f-4f'+6f''-4f'''+f^{(4)} has at least three distinct real zeros as well.  This completes the proof.\n\n(Observe that the special choice of the exponential weight e^{-x} makes g^{(4)} turn into a nonzero constant multiple---here, simply 1---of the required linear combination.)",
+      "_meta": {
+        "core_steps": [
+          "Introduce g(x)=e^{ax}·f(x) so that g^{(3)} becomes a non-vanishing factor times the given linear combination of f and its derivatives.",
+          "Observe that g inherits the ≥5 distinct zeros of f because e^{ax}≠0.",
+          "Apply Rolle’s theorem successively: zeros(g)⇒zeros(g')⇒zeros(g'')⇒zeros(g'''), giving ≥2 zeros of g'''.",
+          "Use the identity g'''(x)=c·e^{ax}(f+6f'+12f''+8f''') with c≠0; since e^{ax} never vanishes, zeros of g''' equal zeros of the target combination.",
+          "Conclude the required number of real zeros for f+6f'+12f''+8f'''."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Order of derivative used in the argument (here third derivative).",
+            "original": 3
+          },
+          "slot2": {
+            "description": "Minimum number of distinct real zeros initially assumed for f (chosen to be 2 more than the order in order to end with ≥2 zeros).",
+            "original": 5
+          },
+          "slot3": {
+            "description": "Exponent coefficient a in the weighting function g(x)=e^{ax}f(x).",
+            "original": 0.5
+          },
+          "slot4": {
+            "description": "Coefficients in the linear combination of f,f',f'',f''' that appear after factoring (here [1,6,12,8]).",
+            "original": [
+              1,
+              6,
+              12,
+              8
+            ]
+          },
+          "slot5": {
+            "description": "Constant prefactor relating g''' to the linear combination (here 1/8).",
+            "original": 0.125
+          },
+          "slot6": {
+            "description": "Number of distinct real zeros guaranteed for the final expression.",
+            "original": 2
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

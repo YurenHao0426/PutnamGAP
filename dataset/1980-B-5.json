@@ -1,0 +1,167 @@
+{
+  "index": "1980-B-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-5\nFor each \\( t \\geqslant 0 \\), let \\( S \\), be the set of all nonnegative, increasing, convex, continuous, real-valued functions \\( f(x) \\) defined on the closed interval \\( [0,1] \\) for which\n\\[\nf(1)-2 f(2 / 3)+f(1 / 3) \\geqslant t[f(2 / 3)-2 f(1 / 3)+f(0)] .\n\\]\n\nDevelop necessary and sufficient conditions on \\( \\boldsymbol{t} \\) for \\( S \\), to be closed under multiplication.\n(This closure means that, if the functions \\( f(x) \\) and \\( g(x) \\) are in \\( S_{t} \\), so is their product \\( f(x) g(x) \\). A function \\( f(x) \\) is convex if and only if \\( f(s u+(1-s) v)<s f(u)+(1-s) f(v) \\) whenever \\( 0<s \\leqslant 1 \\).)",
+  "solution": "B-5.\nThe answer is \\( 1 \\geqslant t \\) (or \\( 0 \\leqslant t \\leqslant 1 \\) ). The product \\( f g \\) of two nonnegative increasing continuous real-valued functions has the same properties. Using the fact that \\( 0 \\leqslant a \\leqslant c \\) and \\( 0 \\leqslant b \\leqslant d \\) imply \\( a d+b c \\leqslant c b+c d \\), one shows that \\( f g \\) is convex when \\( f \\) and \\( g \\) are convex. The function \\( f(x)=x \\) is in \\( S_{t} \\) for all \\( t \\). If \\( S_{t} \\) is closed under multiplication, \\( x^{2} \\) is in \\( S_{t} \\) and so \\( 2 / 9=1-2(4 / 9)+(1 / 9) \\geqslant \\) \\( t[4 / 9-2(1 / 9)]=2 t / 9 \\) or \\( 1 \\geqslant t \\).\nThe following argument proves the converse. Let \\( t \\in[0,1] \\). For a real valued function \\( h \\) defined on \\( [0,1] \\), let \\( E(h)=[h(1)-2 h(2 / 3)+h(1 / 3)]-t[h(2 / 3)-2 h(1 / 3)+h(0)] \\). Suppose that \\( f \\) and \\( g \\) are in \\( S_{t} \\), so \\( E(f) \\geqslant 0 \\) and \\( E(g) \\geqslant 0 \\). Then \\( E(f g)=g(2 / 3) E(f)+f(1 / 3) E(g)+ \\) \\( [f(1)-f(1 / 3)][g(1)-g(2 / 3)]-t[f(1 / 3)-f(0)][g(2 / 3)-g(0)] \\). By convexity, \\( f(1)-f(1 / 3) \\geqslant \\) \\( 2[f(1 / 3)-f(0)] \\), and \\( g(1)-g(2 / 3) \\geqslant \\frac{1}{2}[g(2 / 3)-g(0)] \\). If \\( t \\leqslant 1 \\), this implies \\( E(f g) \\geqslant 0 \\), so \\( f g \\) is in \\( S_{t} \\).",
+  "vars": [
+    "x",
+    "f",
+    "g",
+    "S",
+    "S_t",
+    "h",
+    "E",
+    "a",
+    "b",
+    "c",
+    "d",
+    "s",
+    "u",
+    "v"
+  ],
+  "params": [
+    "t"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "f": "functionf",
+        "g": "functiong",
+        "S": "setfunc",
+        "S_t": "setwitht",
+        "h": "functionh",
+        "E": "exprvalu",
+        "a": "valueaa",
+        "b": "valuebb",
+        "c": "valuecc",
+        "d": "valuedd",
+        "s": "coeffss",
+        "u": "pointuu",
+        "v": "pointvv",
+        "t": "paramtt"
+      },
+      "question": "Problem B-5\nFor each \\( paramtt \\geqslant 0 \\), let \\( setfunc \\), be the set of all nonnegative, increasing, convex, continuous, real-valued functions \\( functionf(variablex) \\) defined on the closed interval \\( [0,1] \\) for which\n\\[\nfunctionf(1)-2\\, functionf(2 / 3)+functionf(1 / 3) \\geqslant paramtt[functionf(2 / 3)-2\\, functionf(1 / 3)+functionf(0)] .\n\\]\n\nDevelop necessary and sufficient conditions on \\( \\boldsymbol{paramtt} \\) for \\( setfunc \\), to be closed under multiplication.\n(This closure means that, if the functions \\( functionf(variablex) \\) and \\( functiong(variablex) \\) are in \\( setwitht \\), so is their product \\( functionf(variablex)\\, functiong(variablex) \\). A function \\( functionf(variablex) \\) is convex if and only if \\( functionf(coeffss\\, pointuu+(1-coeffss)\\, pointvv)<coeffss\\, functionf(pointuu)+(1-coeffss)\\, functionf(pointvv) \\) whenever \\( 0<coeffss \\leqslant 1 \\).)",
+      "solution": "B-5.\nThe answer is \\( 1 \\geqslant paramtt \\) (or \\( 0 \\leqslant paramtt \\leqslant 1 \\) ). The product \\( functionf\\, functiong \\) of two nonnegative increasing continuous real-valued functions has the same properties. Using the fact that \\( 0 \\leqslant valueaa \\leqslant valuecc \\) and \\( 0 \\leqslant valuebb \\leqslant valuedd \\) imply \\( valueaa\\, valuedd+valuebb\\, valuecc \\leqslant valuecc\\, valuebb+valuecc\\, valuedd \\), one shows that \\( functionf\\, functiong \\) is convex when \\( functionf \\) and \\( functiong \\) are convex. The function \\( functionf(variablex)=variablex \\) is in \\( setwitht \\) for all \\( paramtt \\). If \\( setwitht \\) is closed under multiplication, \\( variablex^{2} \\) is in \\( setwitht \\) and so \\( 2 / 9=1-2(4 / 9)+(1 / 9) \\geqslant paramtt[4 / 9-2(1 / 9)]=2\\, paramtt / 9 \\) or \\( 1 \\geqslant paramtt \\).\nThe following argument proves the converse. Let \\( paramtt \\in[0,1] \\). For a real valued function \\( functionh \\) defined on \\( [0,1] \\), let \\( exprvalu(functionh)=[functionh(1)-2\\, functionh(2 / 3)+functionh(1 / 3)]-paramtt[functionh(2 / 3)-2\\, functionh(1 / 3)+functionh(0)] \\). Suppose that \\( functionf \\) and \\( functiong \\) are in \\( setwitht \\), so \\( exprvalu(functionf) \\geqslant 0 \\) and \\( exprvalu(functiong) \\geqslant 0 \\). Then\n\\[\nexprvalu(functionf\\, functiong)=functiong(2 / 3)\\, exprvalu(functionf)+functionf(1 / 3)\\, exprvalu(functiong)+[functionf(1)-functionf(1 / 3)][functiong(1)-functiong(2 / 3)]-paramtt[functionf(1 / 3)-functionf(0)][functiong(2 / 3)-functiong(0)] .\n\\]\nBy convexity, \\( functionf(1)-functionf(1 / 3) \\geqslant 2[functionf(1 / 3)-functionf(0)] \\), and \\( functiong(1)-functiong(2 / 3) \\geqslant \\frac{1}{2}[functiong(2 / 3)-functiong(0)] \\). If \\( paramtt \\leqslant 1 \\), this implies \\( exprvalu(functionf\\, functiong) \\geqslant 0 \\), so \\( functionf\\, functiong \\) is in \\( setwitht \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "cinnamon",
+        "f": "butterfly",
+        "g": "strawberry",
+        "S": "lighthouse",
+        "S_t": "compassrose",
+        "h": "marshmallow",
+        "E": "rainforest",
+        "a": "armadillo",
+        "b": "orangutan",
+        "c": "albatross",
+        "d": "kangaroo",
+        "s": "goldfish",
+        "u": "hedgehog",
+        "v": "porcupine",
+        "t": "crystalline"
+      },
+      "question": "Problem B-5\nFor each \\( crystalline \\geqslant 0 \\), let \\( lighthouse \\), be the set of all nonnegative, increasing, convex, continuous, real-valued functions \\( butterfly(cinnamon) \\) defined on the closed interval \\( [0,1] \\) for which\n\\[\nbutterfly(1)-2 butterfly(2 / 3)+butterfly(1 / 3) \\geqslant crystalline[butterfly(2 / 3)-2 butterfly(1 / 3)+butterfly(0)] .\n\\]\n\nDevelop necessary and sufficient conditions on \\( \\boldsymbol{crystalline} \\) for \\( lighthouse \\), to be closed under multiplication.\n(This closure means that, if the functions \\( butterfly(cinnamon) \\) and \\( strawberry(cinnamon) \\) are in \\( compassrose \\), so is their product \\( butterfly(cinnamon) strawberry(cinnamon) \\). A function \\( butterfly(cinnamon) \\) is convex if and only if \\( butterfly(goldfish hedgehog+(1-goldfish) porcupine)<goldfish butterfly(hedgehog)+(1-goldfish) butterfly(porcupine) \\) whenever \\( 0<goldfish \\leqslant 1 \\).)",
+      "solution": "B-5.\nThe answer is \\( 1 \\geqslant crystalline \\) (or \\( 0 \\leqslant crystalline \\leqslant 1 \\) ). The product \\( butterfly strawberry \\) of two nonnegative increasing continuous real-valued functions has the same properties. Using the fact that \\( 0 \\leqslant armadillo \\leqslant albatross \\) and \\( 0 \\leqslant orangutan \\leqslant kangaroo \\) imply \\( armadillo kangaroo+orangutan albatross \\leqslant albatross orangutan+albatross kangaroo \\), one shows that \\( butterfly strawberry \\) is convex when \\( butterfly \\) and \\( strawberry \\) are convex. The function \\( butterfly(cinnamon)=cinnamon \\) is in \\( compassrose \\) for all \\( crystalline \\). If \\( compassrose \\) is closed under multiplication, \\( cinnamon^{2} \\) is in \\( compassrose \\) and so \\( 2 / 9=1-2(4 / 9)+(1 / 9) \\geqslant crystalline[4 / 9-2(1 / 9)]=2 crystalline / 9 \\) or \\( 1 \\geqslant crystalline \\).\nThe following argument proves the converse. Let \\( crystalline \\in[0,1] \\). For a real valued function \\( marshmallow \\) defined on \\( [0,1] \\), let \\( rainforest(marshmallow)=[marshmallow(1)-2 marshmallow(2 / 3)+marshmallow(1 / 3)]-crystalline[marshmallow(2 / 3)-2 marshmallow(1 / 3)+marshmallow(0)] \\). Suppose that \\( butterfly \\) and \\( strawberry \\) are in \\( compassrose \\), so \\( rainforest(butterfly) \\geqslant 0 \\) and \\( rainforest(strawberry) \\geqslant 0 \\). Then \\( rainforest(butterfly strawberry)=strawberry(2 / 3) rainforest(butterfly)+butterfly(1 / 3) rainforest(strawberry)+ [butterfly(1)-butterfly(1 / 3)][strawberry(1)-strawberry(2 / 3)]-crystalline[butterfly(1 / 3)-butterfly(0)][strawberry(2 / 3)-strawberry(0)] \\). By convexity, \\( butterfly(1)-butterfly(1 / 3) \\geqslant 2[butterfly(1 / 3)-butterfly(0)] \\), and \\( strawberry(1)-strawberry(2 / 3) \\geqslant \\frac{1}{2}[strawberry(2 / 3)-strawberry(0)] \\). If \\( crystalline \\leqslant 1 \\), this implies \\( rainforest(butterfly strawberry) \\geqslant 0 \\), so \\( butterfly strawberry \\) is in \\( compassrose \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "f": "steadyconst",
+        "g": "staticrule",
+        "S": "singularity",
+        "S_t": "emptiness",
+        "h": "unchangeable",
+        "E": "steadiness",
+        "a": "enormous",
+        "b": "humongous",
+        "c": "littlebit",
+        "d": "tinybytes",
+        "s": "largeness",
+        "u": "originpoint",
+        "v": "terminuspt",
+        "t": "flexiblepar"
+      },
+      "question": "Problem B-5\nFor each \\( flexiblepar \\geqslant 0 \\), let \\( singularity \\), be the set of all nonnegative, increasing, convex, continuous, real-valued functions \\( steadyconst(fixedvalue) \\) defined on the closed interval \\( [0,1] \\) for which\n\\[\nsteadyconst(1)-2 steadyconst(2 / 3)+steadyconst(1 / 3) \\geqslant flexiblepar[steadyconst(2 / 3)-2 steadyconst(1 / 3)+steadyconst(0)] .\n\\]\n\nDevelop necessary and sufficient conditions on \\( \\boldsymbol{flexiblepar} \\) for \\( singularity \\), to be closed under multiplication.\n(This closure means that, if the functions \\( steadyconst(fixedvalue) \\) and \\( staticrule(fixedvalue) \\) are in \\( emptiness \\), so is their product \\( steadyconst(fixedvalue) staticrule(fixedvalue) \\). A function \\( steadyconst(fixedvalue) \\) is convex if and only if \\( steadyconst(largeness originpoint+(1-largeness) terminuspt)<largeness steadyconst(originpoint)+(1-largeness) steadyconst(terminuspt) \\) whenever \\( 0<largeness \\leqslant 1 \\).)",
+      "solution": "B-5.\nThe answer is \\( 1 \\geqslant flexiblepar \\) (or \\( 0 \\leqslant flexiblepar \\leqslant 1 \\) ). The product \\( steadyconst staticrule \\) of two nonnegative increasing continuous real-valued functions has the same properties. Using the fact that \\( 0 \\leqslant enormous \\leqslant littlebit \\) and \\( 0 \\leqslant humongous \\leqslant tinybytes \\) imply \\( enormous tinybytes+humongous littlebit \\leqslant littlebit humongous+littlebit tinybytes \\), one shows that \\( steadyconst staticrule \\) is convex when \\( steadyconst \\) and \\( staticrule \\) are convex. The function \\( steadyconst(fixedvalue)=fixedvalue \\) is in \\( emptiness \\) for all \\( flexiblepar \\). If \\( emptiness \\) is closed under multiplication, \\( fixedvalue^{2} \\) is in \\( emptiness \\) and so \\( 2 / 9=1-2(4 / 9)+(1 / 9) \\geqslant flexiblepar[4 / 9-2(1 / 9)]=2 flexiblepar / 9 \\) or \\( 1 \\geqslant flexiblepar \\).\nThe following argument proves the converse. Let \\( flexiblepar \\in[0,1] \\). For a real valued function \\( unchangeable \\) defined on \\( [0,1] \\), let \\( steadiness(unchangeable)=[unchangeable(1)-2 unchangeable(2 / 3)+unchangeable(1 / 3)]-flexiblepar[unchangeable(2 / 3)-2 unchangeable(1 / 3)+unchangeable(0)] \\). Suppose that \\( steadyconst \\) and \\( staticrule \\) are in \\( emptiness \\), so \\( steadiness(steadyconst) \\geqslant 0 \\) and \\( steadiness(staticrule) \\geqslant 0 \\). Then\n\\[\nsteadiness(steadyconst staticrule)=staticrule(2 / 3) \\; steadiness(steadyconst)+steadyconst(1 / 3) \\; steadiness(staticrule)+ [steadyconst(1)-steadyconst(1 / 3)][staticrule(1)-staticrule(2 / 3)]-flexiblepar[steadyconst(1 / 3)-steadyconst(0)][staticrule(2 / 3)-staticrule(0)] .\n\\]\nBy convexity, \\( steadyconst(1)-steadyconst(1 / 3) \\geqslant 2[steadyconst(1 / 3)-steadyconst(0)] \\), and \\( staticrule(1)-staticrule(2 / 3) \\geqslant \\frac{1}{2}[staticrule(2 / 3)-staticrule(0)] \\). If \\( flexiblepar \\leqslant 1 \\), this implies \\( steadiness(steadyconst staticrule) \\geqslant 0 \\), so \\( steadyconst staticrule \\) is in \\( emptiness \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "f": "hjgrksla",
+        "g": "mdbqifze",
+        "S": "twnyplmv",
+        "S_t": "uqxjczom",
+        "h": "yrteskdu",
+        "E": "vxplogai",
+        "a": "szcuqvna",
+        "b": "kpradmeh",
+        "c": "oxdynfjt",
+        "d": "lrwmhevc",
+        "s": "pvbfiwga",
+        "u": "jtzsalih",
+        "v": "nyqkrodh",
+        "t": "flavimco"
+      },
+      "question": "Problem B-5\nFor each \\( flavimco \\geqslant 0 \\), let \\( twnyplmv \\), be the set of all nonnegative, increasing, convex, continuous, real-valued functions \\( hjgrksla(qzxwvtnp) \\) defined on the closed interval \\( [0,1] \\) for which\n\\[\nhjgrksla(1)-2 hjgrksla(2 / 3)+hjgrksla(1 / 3) \\geqslant flavimco[hjgrksla(2 / 3)-2 hjgrksla(1 / 3)+hjgrksla(0)] .\n\\]\n\nDevelop necessary and sufficient conditions on \\( \\boldsymbol{flavimco} \\) for \\( twnyplmv \\), to be closed under multiplication.\n(This closure means that, if the functions \\( hjgrksla(qzxwvtnp) \\) and \\( mdbqifze(qzxwvtnp) \\) are in \\( twnyplmv_{flavimco} \\), so is their product \\( hjgrksla(qzxwvtnp) mdbqifze(qzxwvtnp) \\). A function \\( hjgrksla(qzxwvtnp) \\) is convex if and only if \\( hjgrksla(pvbfiwga jtzsalih+(1-pvbfiwga) nyqkrodh)<pvbfiwga hjgrksla(jtzsalih)+(1-pvbfiwga) hjgrksla(nyqkrodh) \\) whenever \\( 0<pvbfiwga \\leqslant 1 \\).)",
+      "solution": "B-5.\nThe answer is \\( 1 \\geqslant flavimco \\) (or \\( 0 \\leqslant flavimco \\leqslant 1 \\) ). The product \\( hjgrksla mdbqifze \\) of two nonnegative increasing continuous real-valued functions has the same properties. Using the fact that \\( 0 \\leqslant szcuqvna \\leqslant oxdynfjt \\) and \\( 0 \\leqslant kpradmeh \\leqslant lrwmhevc \\) imply \\( szcuqvna lrwmhevc+kpradmeh oxdynfjt \\leqslant oxdynfjt kpradmeh+oxdynfjt lrwmhevc \\), one shows that \\( hjgrksla mdbqifze \\) is convex when \\( hjgrksla \\) and \\( mdbqifze \\) are convex. The function \\( hjgrksla(qzxwvtnp)=qzxwvtnp \\) is in \\( twnyplmv_{flavimco} \\) for all \\( flavimco \\). If \\( twnyplmv_{flavimco} \\) is closed under multiplication, \\( qzxwvtnp^{2} \\) is in \\( twnyplmv_{flavimco} \\) and so \\( 2 / 9=1-2(4 / 9)+(1 / 9) \\geqslant \\) \\( flavimco[4 / 9-2(1 / 9)]=2 flavimco / 9 \\) or \\( 1 \\geqslant flavimco \\).\nThe following argument proves the converse. Let \\( flavimco \\in[0,1] \\). For a real valued function \\( yrteskdu \\) defined on \\( [0,1] \\), let \\( vxplogai(yrteskdu)=[yrteskdu(1)-2 yrteskdu(2 / 3)+yrteskdu(1 / 3)]-flavimco[yrteskdu(2 / 3)-2 yrteskdu(1 / 3)+yrteskdu(0)] \\). Suppose that \\( hjgrksla \\) and \\( mdbqifze \\) are in \\( twnyplmv_{flavimco} \\), so \\( vxplogai(hjgrksla) \\geqslant 0 \\) and \\( vxplogai(mdbqifze) \\geqslant 0 \\). Then\n\\[\nvxplogai(hjgrksla mdbqifze)=mdbqifze(2 / 3) vxplogai(hjgrksla)+hjgrksla(1 / 3) vxplogai(mdbqifze)+[hjgrksla(1)-hjgrksla(1 / 3)][mdbqifze(1)-mdbqifze(2 / 3)]-flavimco[hjgrksla(1 / 3)-hjgrksla(0)][mdbqifze(2 / 3)-mdbqifze(0)] .\n\\]\nBy convexity, \\( hjgrksla(1)-hjgrksla(1 / 3) \\geqslant 2[hjgrksla(1 / 3)-hjgrksla(0)] \\), and \\( mdbqifze(1)-mdbqifze(2 / 3) \\geqslant \\frac{1}{2}[mdbqifze(2 / 3)-mdbqifze(0)] \\). If \\( flavimco \\leqslant 1 \\), this implies \\( vxplogai(hjgrksla mdbqifze) \\geqslant 0 \\), so \\( hjgrksla mdbqifze \\) is in \\( twnyplmv_{flavimco} \\)."
+    },
+    "kernel_variant": {
+      "question": "For every real number t \\geq  0, let S_t be the set of all continuous, non-negative, increasing and convex functions \n              f : [2,5] \\to  \\mathbb{R}\nthat satisfy\n              3 f(5) - 6 f(4) + 3 f(3)  \\geq   t [ 3 f(4) - 6 f(3) + 3 f(2) ].      (*)\nFor which values of t is S_t closed under point-wise multiplication; that is,\n                  f , g \\in  S_t  \\Rightarrow   f g \\in  S_t ?",
+      "solution": "Answer.\nS_t is closed under point-wise multiplication if and only if 0 \\leq  t \\leq  1.\n\nProof.\nWe proceed in three steps.\n\n1.  Basic permanence properties of the product.\n    *  Non-negativity:  f, g \\geq  0  \\Rightarrow   f g \\geq  0.\n    *  Monotonicity:    (f g)' = f' g + f g' \\geq  0 because f', g', f, g are non-negative.\n    *  Convexity.\n      We give a correct argument, replacing the faulty discrete computation of the original draft.\n\n      Claim.  If f and g are non-negative, increasing and convex on an interval I, then their product h = f g is convex on I.\n\n      Proof of the claim for C^2-functions.  When f and g are twice differentiable one has\n                       h'' = f'' g + 2 f' g' + f g''.\n      Because f, g are convex, f'' \\geq  0 and g'' \\geq  0.  Because they are increasing, f', g' \\geq  0, and because they are non-negative, f, g \\geq  0.  Hence every term in the expression for h'' is non-negative, so h'' \\geq  0 and h is convex.\n\n      Passage to the general continuous case.  Any continuous convex function can be uniformly approximated on [2,5] by smooth convex functions (for instance by mollifying an extension of the function beyond [2,5]).  Let (f_n) and (g_n) be C^2, non-negative, increasing, convex functions converging uniformly to f and g, respectively.  By the C^2-case, each h_n = f_n g_n is convex.  Uniform convergence of f_n \\to  f and g_n \\to  g implies uniform convergence h_n \\to  f g.  The point-wise limit of convex functions is convex, so f g is convex.  \\blacksquare \n\n2.  A necessary upper bound for t.\n    The linear function \\ell (x) = x lies in S_t for every t \\geq  0 because both brackets in (*) vanish.  If S_t were closed under multiplication, \\ell ^2(x)=x^2 would also be in S_t.  Substituting f(x)=x^2 in (*) gives\n                 3\\cdot 5^2 - 6\\cdot 4^2 + 3\\cdot 3^2 = 75 - 96 + 27 = 6,\n                 3\\cdot 4^2 - 6\\cdot 3^2 + 3\\cdot 2^2 = 48 - 54 + 12 = 6.\n      Hence 6 \\geq  t\\cdot 6, i.e. t \\leq  1.  Therefore closure under multiplication forces t \\leq  1.\n\n3.  Sufficiency when 0 \\leq  t \\leq  1.\n   Fix t with 0 \\leq  t \\leq  1 and suppose f, g \\in  S_t.  Define the linear functional\n                 E(h) := [3 h(5) - 6 h(4) + 3 h(3)] - t [3 h(4) - 6 h(3) + 3 h(2)].\n      Then h \\in  S_t  \\Leftrightarrow   E(h) \\geq  0.\n\n      A routine but careful expansion gives\n                 E(f g) = g(4) E(f) + f(3) E(g)\n                          + 3 [ (f(5) - f(3))(g(5) - g(4)) - t (f(3) - f(2))(g(4) - g(2)) ].            (1)\n\n      Convexity provides\n                 f(5) - f(3) \\geq  2 [ f(3) - f(2) ],                                    (2)\n                 g(5) - g(4) \\geq  \\frac{1}{2} [ g(4) - g(2) ].                                   (3)\n      Multiplying (2) and (3) yields\n                 (f(5) - f(3))(g(5) - g(4)) \\geq  (f(3) - f(2))(g(4) - g(2)).           (4)\n      Substitute (4) into (1):\n                 E(f g) \\geq  g(4) E(f) + f(3) E(g) + 3(1 - t)(f(3) - f(2))(g(4) - g(2)).\n      Every factor on the right is non-negative when 0 \\leq  t \\leq  1, so E(f g) \\geq  0 and thus f g \\in  S_t.  Therefore S_t is closed under multiplication for 0 \\leq  t \\leq  1.\n\nCombining Steps 2 and 3 and recalling t \\geq  0, we conclude that\n                 S_t is closed under point-wise multiplication  \\Leftrightarrow   0 \\leq  t \\leq  1. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Product rule: the point-wise product of two non-negative, increasing, convex functions is itself non-negative, increasing and convex",
+          "Necessity: note f(x)=x belongs to S_t for every t; closure ⇒ x^2 ∈ S_t; plugging x^2 into the defining inequality forces t≤1",
+          "Define linear functional E(h)= [h(1)-2h(2/3)+h(1/3)] - t[ h(2/3)-2h(1/3)+h(0)]",
+          "Compute E(fg) and express it as g(2/3)E(f)+f(1/3)E(g)+Δ, where Δ is a difference of value–gaps",
+          "Use convexity to bound those gaps (f(1)-f(1/3) ≥ 2[f(1/3)-f(0)], g(1)-g(2/3) ≥ ½[g(2/3)-g(0)]); when t≤1 this makes Δ≥0, hence E(fg)≥0, completing sufficiency (0≤t≤1)"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Left endpoint of the domain interval",
+            "original": 0
+          },
+          "slot2": {
+            "description": "Right endpoint of the domain interval",
+            "original": 1
+          },
+          "slot3": {
+            "description": "Smaller interior evaluation point in the inequality",
+            "original": "1/3"
+          },
+          "slot4": {
+            "description": "Larger interior evaluation point in the inequality",
+            "original": "2/3"
+          },
+          "slot5": {
+            "description": "Magnitude of the coefficient multiplied by interior values (−2 and +2)",
+            "original": 2
+          },
+          "slot6": {
+            "description": "Test function with zero discrepancy used to start necessity argument",
+            "original": "f(x)=x"
+          },
+          "slot7": {
+            "description": "Product function whose discrepancy yields the numerical bound",
+            "original": "f(x)=x^2"
+          },
+          "slot8": {
+            "description": "Numerical upper bound on t obtained (ratio of discrepancies)",
+            "original": 1
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

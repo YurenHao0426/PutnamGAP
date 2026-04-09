@@ -1,0 +1,75 @@
+{
+  "index": "1971-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "A-1. Let there be given nine lattice points (points with integral coordinates) in three dimensional Euclidean space. Show that there is a lattice point on the interior of one of the line segments joining two of these points.",
+  "solution": "A-1 The set of all lattice points can be divided into eight classes according to the parities of the coordinates, namely, (odd, odd, odd), (odd, odd, even), etc. With nine lattice points some two, say \\( P \\) and \\( Q \\), belong to the same class. The midpoint of the segment \\( P Q \\) is a lattice point.",
+  "vars": [
+    "P",
+    "Q"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P": "pointalpha",
+        "Q": "pointbeta"
+      },
+      "question": "A-1. Let there be given nine lattice points (points with integral coordinates) in three dimensional Euclidean space. Show that there is a lattice point on the interior of one of the line segments joining two of these points.",
+      "solution": "A-1 The set of all lattice points can be divided into eight classes according to the parities of the coordinates, namely, (odd, odd, odd), (odd, odd, even), etc. With nine lattice points some two, say \\( pointalpha \\) and \\( pointbeta \\), belong to the same class. The midpoint of the segment \\( pointalpha pointbeta \\) is a lattice point."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P": "yellowtail",
+        "Q": "driftwood"
+      },
+      "question": "A-1. Let there be given nine lattice points (points with integral coordinates) in three dimensional Euclidean space. Show that there is a lattice point on the interior of one of the line segments joining two of these points.",
+      "solution": "A-1 The set of all lattice points can be divided into eight classes according to the parities of the coordinates, namely, (odd, odd, odd), (odd, odd, even), etc. With nine lattice points some two, say \\( yellowtail \\) and \\( driftwood \\), belong to the same class. The midpoint of the segment \\( yellowtail driftwood \\) is a lattice point."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P": "irrationalpoint",
+        "Q": "continuouspoint"
+      },
+      "question": "A-1. Let there be given nine lattice points (points with integral coordinates) in three dimensional Euclidean space. Show that there is a lattice point on the interior of one of the line segments joining two of these points.",
+      "solution": "A-1 The set of all lattice points can be divided into eight classes according to the parities of the coordinates, namely, (odd, odd, odd), (odd, odd, even), etc. With nine lattice points some two, say \\( irrationalpoint \\) and \\( continuouspoint \\), belong to the same class. The midpoint of the segment \\( irrationalpoint continuouspoint \\) is a lattice point."
+    },
+    "garbled_string": {
+      "map": {
+        "P": "qzxwvtnp",
+        "Q": "hjgrksla"
+      },
+      "question": "A-1. Let there be given nine lattice points (points with integral coordinates) in three dimensional Euclidean space. Show that there is a lattice point on the interior of one of the line segments joining two of these points.",
+      "solution": "A-1 The set of all lattice points can be divided into eight classes according to the parities of the coordinates, namely, (odd, odd, odd), (odd, odd, even), etc. With nine lattice points some two, say \\( qzxwvtnp \\) and \\( hjgrksla \\), belong to the same class. The midpoint of the segment \\( qzxwvtnp hjgrksla \\) is a lattice point."
+    },
+    "kernel_variant": {
+      "question": "Let \\(S\\subset\\mathbb{Z}^{4}\\) be a set of 17 distinct lattice points in four-dimensional Euclidean space. Prove that there exist two points of \\(S\\) whose midpoint is itself a lattice point, and hence lies in the interior of the line segment joining them.",
+      "solution": "There are 2^{4}=16 different possibilities for the parity pattern (x_{1}\\bmod 2, x_{2}\\bmod 2, x_{3}\\bmod 2, x_{4}\\bmod 2) of a lattice point (x_{1},x_{2},x_{3},x_{4})\\in\\mathbb{Z}^{4}.  \n\nPartition the 17 given points into these 16 parity classes.  Because 17>16, the pigeonhole principle guarantees that some class contains at least two points, say\n\nP=(a_{1},a_{2},a_{3},a_{4}),  Q=(b_{1},b_{2},b_{3},b_{4}),\n\nwhose corresponding coordinates are either both even or both odd.  \n\nFor each coordinate we therefore have a_{k}\\equiv b_{k}\\pmod{2}\\;(k=1,2,3,4).  Consequently the midpoint\n\nM=( (a_{1}+b_{1})/2, (a_{2}+b_{2})/2, (a_{3}+b_{3})/2, (a_{4}+b_{4})/2 )\n\nhas integral coordinates, i.e. M\\in\\mathbb{Z}^{4}.  \n\nBecause P\\neq Q, the point M is strictly between P and Q on the segment PQ, providing the required interior lattice point.  \n\nThus among any 17 lattice points in \\mathbb{R}^{4} one always finds two whose midpoint is a lattice point lying in the interior of the segment joining them.",
+      "_meta": {
+        "core_steps": [
+          "Partition the given lattice points into 2^n classes by coordinate parities.",
+          "Invoke the pigeonhole principle to guarantee two points in the same parity-class.",
+          "Note that the midpoint of two lattice points that share all coordinate parities is itself a lattice point.",
+          "This midpoint lies in the open segment joining the two original points, giving the required interior lattice point."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Ambient dimension n of the lattice Z^n.",
+            "original": 3
+          },
+          "slot2": {
+            "description": "Number of lattice points supplied; must exceed 2^n to trigger pigeonhole.",
+            "original": 9
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

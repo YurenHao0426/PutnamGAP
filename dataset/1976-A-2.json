@@ -1,0 +1,121 @@
+{
+  "index": "1976-A-2",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-2. Let \\( P(x, y)=x^{2} y+x y^{2} \\) and \\( Q(x, y)=x^{2}+x y+y^{2} \\). For \\( n=1,2,3, \\ldots \\), let \\( F_{n}(x, y)=(x+y)^{n}-x^{n}-y^{n} \\) and \\( G_{n}(x, y)=(x+y)^{n}+x^{n}+y^{n} \\). One observes that \\( G_{2}=2 Q, F_{3}=3 P, G_{4}=2 Q^{2}, F_{5}=5 P Q, G_{6}=2 Q^{3}+3 P^{2} \\). Prove that, in fact, for each \\( n \\) either \\( F_{n} \\) or \\( G_{n} \\) is expressible as a polynomial in \\( P \\) and \\( Q \\) with integer coefficients.",
+  "solution": "A-2.\nOne easily verifies that\n\\[\n\\begin{array}{c}\n(x+y)^{n}=(x+y)^{n-2} Q+(x+y)^{n-3} P, \\\\\nx^{n}+y^{n}=\\left(x^{n-2}+y^{n-2}\\right) Q-\\left(x^{n-3}+y^{n-3}\\right) P .\n\\end{array}\n\\]\n\nSubtracting or adding corresponding sides gives\n\\[\nF_{n}=Q F_{n-2}+P G_{n-3}, G_{n}=Q G_{n-2}+P F_{n-3} .\n\\]\n\nThe desired results now follow by strong mathematical induction using the given results for \\( G_{2}, F_{3} \\), \\( G_{4}, F_{5} \\), and \\( G_{6} \\) and (R).",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "n",
+    "P",
+    "Q",
+    "F_n",
+    "F_n-2",
+    "F_n-3",
+    "G_n",
+    "G_n-2",
+    "G_n-3"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "n": "indexer",
+        "P": "polyfirst",
+        "Q": "polysecond",
+        "F_n": "fsequence",
+        "F_n-2": "fsequencemtwo",
+        "F_n-3": "fsequencemthree",
+        "G_n": "gsequence",
+        "G_n-2": "gsequencemtwo",
+        "G_n-3": "gsequencemthree"
+      },
+      "question": "A-2. Let \\( polyfirst(abscissa, ordinate)=abscissa^{2} \\, ordinate+abscissa \\, ordinate^{2} \\) and \\( polysecond(abscissa, ordinate)=abscissa^{2}+abscissa \\, ordinate+ordinate^{2} \\). For \\( indexer=1,2,3, \\ldots \\), let \\( fsequence(abscissa, ordinate)=(abscissa+ordinate)^{indexer}-abscissa^{indexer}-ordinate^{indexer} \\) and \\( gsequence(abscissa, ordinate)=(abscissa+ordinate)^{indexer}+abscissa^{indexer}+ordinate^{indexer} \\). One observes that \\( G_{2}=2 \\, polysecond, fsequence_{3}=3 \\, polyfirst, G_{4}=2 \\, polysecond^{2}, fsequence_{5}=5 \\, polyfirst \\, polysecond, G_{6}=2 \\, polysecond^{3}+3 \\, polyfirst^{2} \\). Prove that, in fact, for each \\( indexer \\) either \\( fsequence \\) or \\( gsequence \\) is expressible as a polynomial in \\( polyfirst \\) and \\( polysecond \\) with integer coefficients.",
+      "solution": "A-2.\n\nOne easily verifies that\n\\[\n\\begin{array}{c}\n(abscissa+ordinate)^{indexer}=(abscissa+ordinate)^{indexer-2} \\, polysecond+(abscissa+ordinate)^{indexer-3} \\, polyfirst, \\\\\nabscissa^{indexer}+ordinate^{indexer}=\\left(abscissa^{indexer-2}+ordinate^{indexer-2}\\right) \\, polysecond-\\left(abscissa^{indexer-3}+ordinate^{indexer-3}\\right) \\, polyfirst .\n\\end{array}\n\\]\n\nSubtracting or adding corresponding sides gives\n\\[\nfsequence=polysecond \\, fsequencemtwo+polyfirst \\, gsequencemthree, \\quad gsequence=polysecond \\, gsequencemtwo+polyfirst \\, fsequencemthree .\n\\]\n\nThe desired results now follow by strong mathematical induction using the given results for \\( G_{2}, fsequence_{3}, G_{4}, fsequence_{5}, \\) and \\( G_{6} \\) and (R)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marshmallow",
+        "y": "blacksmith",
+        "n": "highwayman",
+        "P": "starling",
+        "Q": "moonlight",
+        "F_n": "dreamcatch",
+        "F_n-2": "dreamcatchprevtwo",
+        "F_n-3": "dreamcatchprevtri",
+        "G_n": "windchaser",
+        "G_n-2": "windchaserprevtwo",
+        "G_n-3": "windchaserprevtri"
+      },
+      "question": "A-2. Let \\( starling(marshmallow, blacksmith)=marshmallow^{2} blacksmith+marshmallow blacksmith^{2} \\) and \\( moonlight(marshmallow, blacksmith)=marshmallow^{2}+marshmallow blacksmith+blacksmith^{2} \\). For \\( highwayman=1,2,3, \\ldots \\), let \\( dreamcatch_{highwayman}(marshmallow, blacksmith)=(marshmallow+blacksmith)^{highwayman}-marshmallow^{highwayman}-blacksmith^{highwayman} \\) and \\( windchaser_{highwayman}(marshmallow, blacksmith)=(marshmallow+blacksmith)^{highwayman}+marshmallow^{highwayman}+blacksmith^{highwayman} \\). One observes that \\( windchaser_{2}=2 moonlight, dreamcatch_{3}=3 starling, windchaser_{4}=2 moonlight^{2}, dreamcatch_{5}=5 starling moonlight, windchaser_{6}=2 moonlight^{3}+3 starling^{2} \\). Prove that, in fact, for each \\( highwayman \\) either \\( dreamcatch_{highwayman} \\) or \\( windchaser_{highwayman} \\) is expressible as a polynomial in \\( starling \\) and \\( moonlight \\) with integer coefficients.",
+      "solution": "A-2.\nOne easily verifies that\n\\[\n\\begin{array}{c}\n(marshmallow+blacksmith)^{highwayman}=(marshmallow+blacksmith)^{highwayman-2} moonlight+(marshmallow+blacksmith)^{highwayman-3} starling, \\\\\nmarshmallow^{highwayman}+blacksmith^{highwayman}=\\left(marshmallow^{highwayman-2}+blacksmith^{highwayman-2}\\right) moonlight-\\left(marshmallow^{highwayman-3}+blacksmith^{highwayman-3}\\right) starling .\n\\end{array}\n\\]\n\nSubtracting or adding corresponding sides gives\n\\[\ndreamcatch_{highwayman}=moonlight\\, dreamcatchprevtwo + starling\\, windchaserprevtri, \\qquad windchaser_{highwayman}=moonlight\\, windchaserprevtwo + starling\\, dreamcatchprevtri .\n\\]\n\nThe desired results now follow by strong mathematical induction using the given results for \\( windchaser_{2}, dreamcatch_{3} \\), \\( windchaser_{4}, dreamcatch_{5} \\), and \\( windchaser_{6} \\) and (R)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "stationary",
+        "y": "immutable",
+        "n": "fractional",
+        "P": "transcend",
+        "Q": "irrational",
+        "F_n": "stillness",
+        "F_n-2": "stillnesslag",
+        "F_n-3": "stillnesslagg",
+        "G_n": "quietude",
+        "G_n-2": "quietudelag",
+        "G_n-3": "quietudelagg"
+      },
+      "question": "A-2. Let \\( transcend(stationary, immutable)=stationary^{2} immutable+stationary immutable^{2} \\) and \\( irrational(stationary, immutable)=stationary^{2}+stationary immutable+immutable^{2} \\). For \\( fractional=1,2,3, \\ldots \\), let \\( stillness(stationary, immutable)=(stationary+immutable)^{fractional}-stationary^{fractional}-immutable^{fractional} \\) and \\( quietude(stationary, immutable)=(stationary+immutable)^{fractional}+stationary^{fractional}+immutable^{fractional} \\). One observes that \\( G_{2}=2 irrational, F_{3}=3 transcend, G_{4}=2 irrational^{2}, F_{5}=5 transcend irrational, G_{6}=2 irrational^{3}+3 transcend^{2} \\). Prove that, in fact, for each \\( fractional \\) either \\( stillness \\) or \\( quietude \\) is expressible as a polynomial in \\( transcend \\) and \\( irrational \\) with integer coefficients.",
+      "solution": "A-2.\nOne easily verifies that\n\\[\n\\begin{array}{c}\n(stationary+immutable)^{fractional}=(stationary+immutable)^{fractional-2} irrational+(stationary+immutable)^{fractional-3} transcend, \\\\\nstationary^{fractional}+immutable^{fractional}=\\left(stationary^{fractional-2}+immutable^{fractional-2}\\right) irrational-\\left(stationary^{fractional-3}+immutable^{fractional-3}\\right) transcend .\n\\end{array}\n\\]\n\nSubtracting or adding corresponding sides gives\n\\[\nstillness=irrational stillnesslag+transcend quietudelagg, \\quad quietude=irrational quietudelag+transcend stillnesslagg .\n\\]\n\nThe desired results now follow by strong mathematical induction using the given results for \\( G_{2}, F_{3} \\), \\( G_{4}, F_{5} \\), and \\( G_{6} \\) and (R)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "n": "lskdjfgh",
+        "P": "mznqptgh",
+        "Q": "rplkshjd",
+        "F_n": "sjkahdlf",
+        "F_n-2": "vbncxzlk",
+        "F_n-3": "gfdsaqwe",
+        "G_n": "oiuytrew",
+        "G_n-2": "nmjhgfds",
+        "G_n-3": "plokijuh"
+      },
+      "question": "A-2. Let \\( mznqptgh(qzxwvtnp, hjgrksla)=qzxwvtnp^{2} hjgrksla+qzxwvtnp hjgrksla^{2} \\) and \\( rplkshjd(qzxwvtnp, hjgrksla)=qzxwvtnp^{2}+qzxwvtnp hjgrksla+hjgrksla^{2} \\). For \\( lskdjfgh=1,2,3, \\ldots \\), let \\( sjkahdlf(qzxwvtnp, hjgrksla)=(qzxwvtnp+hjgrksla)^{lskdjfgh}-qzxwvtnp^{lskdjfgh}-hjgrksla^{lskdjfgh} \\) and \\( oiuytrew(qzxwvtnp, hjgrksla)=(qzxwvtnp+hjgrksla)^{lskdjfgh}+qzxwvtnp^{lskdjfgh}+hjgrksla^{lskdjfgh} \\). One observes that \\( G_{2}=2 rplkshjd, F_{3}=3 mznqptgh, G_{4}=2 rplkshjd^{2}, F_{5}=5 mznqptgh rplkshjd, G_{6}=2 rplkshjd^{3}+3 mznqptgh^{2} \\). Prove that, in fact, for each \\( lskdjfgh \\) either \\( sjkahdlf \\) or \\( oiuytrew \\) is expressible as a polynomial in \\( mznqptgh \\) and \\( rplkshjd \\) with integer coefficients.",
+      "solution": "A-2.\nOne easily verifies that\n\\[\n\\begin{array}{c}\n(qzxwvtnp+hjgrksla)^{lskdjfgh}=(qzxwvtnp+hjgrksla)^{lskdjfgh-2} rplkshjd+(qzxwvtnp+hjgrksla)^{lskdjfgh-3} mznqptgh, \\\\\nqzxwvtnp^{lskdjfgh}+hjgrksla^{lskdjfgh}=\\left(qzxwvtnp^{lskdjfgh-2}+hjgrksla^{lskdjfgh-2}\\right) rplkshjd-\\left(qzxwvtnp^{lskdjfgh-3}+hjgrksla^{lskdjfgh-3}\\right) mznqptgh .\n\\end{array}\n\\]\n\nSubtracting or adding corresponding sides gives\n\\[\nsjkahdlf=rplkshjd vbncxzlk+mznqptgh plokijuh, \\quad oiuytrew=rplkshjd nmjhgfds+mznqptgh gfdsaqwe .\n\\]\n\nThe desired results now follow by strong mathematical induction using the given results for \\( G_{2}, F_{3} \\), \\( G_{4}, F_{5} \\), and \\( G_{6} \\) and (R)."
+    },
+    "kernel_variant": {
+      "question": "Let\n  U(a,b)=a^{2}b+ab^{2},          V(a,b)=a^{2}+ab+b^{2}.\nFor each positive integer n define the symmetric polynomials\n  A_{n}(a,b)=(a+b)^{n}-a^{n}-b^{n},   B_{n}(a,b)=(a+b)^{n}+a^{n}+b^{n}.\n(The first few values are  B_{2}=2V,  A_{3}=3U,  B_{4}=2V^{2},  A_{5}=5UV,  B_{6}=2V^{3}+3U^{2} .)\nProve that for every positive integer n at least one of the two polynomials A_{n}, B_{n} can be written as an integer-coefficient polynomial in the basic symmetric polynomials U and V.",
+      "solution": "Step 1.  Two useful identities.\n\nBecause (a+b)^{3}=a^{3}+3a^{2}b+3ab^{2}+b^{3} we can factor the middle terms and obtain\n   (a+b)^{3}=(a+b)(a^{2}+ab+b^{2})+(a^{2}b+ab^{2})=(a+b)V+U .\nMultiplying by (a+b)^{n-3} (valid for every n\\geq 3) gives\n   (a+b)^{n}=(a+b)^{n-2}V+(a+b)^{n-3}U.                       (1)\n\nUsing the binomial theorem in the same way, but this time for a^{n}+b^{n}, we get\n   a^{n}+b^{n}=(a^{n-2}+b^{n-2})V-(a^{n-3}+b^{n-3})U.          (2)\n\nStep 2.  Recurrences for A_{n} and B_{n}.\nSubtracting (2) from (1) and then adding them we find\n   A_{n}=V A_{n-2}+U B_{n-3},\n   B_{n}=V B_{n-2}+U A_{n-3},                   (R)\nfor every n\\geq 3.\n\nStep 3.  Initial values.\nA_{1}=0,\nB_{2}=2V,\nA_{3}=3U,\nB_{4}=2V^{2},\nA_{5}=5UV,\nB_{6}=2V^{3}+3U^{2},\nso for n=1,\\ldots ,6 the following statement is true:\n   (\\dagger )  if n is odd then A_{n} is a polynomial in U,V,\n        if n is even then B_{n} is a polynomial in U,V.\n\nStep 4.  Strong induction.\nWe prove (\\dagger ) for every n\\geq 1; this clearly implies the problem statement, since in each parity one of the two required polynomials is guaranteed to have the desired form.\n\nInduction hypothesis.  Assume that for every positive integer k<n,   A_{k} is a polynomial in U,V when k is odd and B_{k} is such a polynomial when k is even.\n\nInductive step.\nCase 1: n is odd (n\\geq 5).  Apply the first relation (R):\n      A_{n}=V A_{n-2}+U B_{n-3}.\nHere n-2 is still odd and n-3 is even, hence by the induction hypothesis A_{n-2} and B_{n-3} are both polynomials in U and V.  Multiplying by V and U (which themselves are polynomials in U,V) preserves this property, so A_{n} is a polynomial in U,V.\n\nCase 2: n is even (n\\geq 4).  Apply the second relation (R):\n      B_{n}=V B_{n-2}+U A_{n-3}.\nNow n-2 is even and n-3 is odd; by the hypothesis B_{n-2} and A_{n-3} are polynomials in U,V.  Again the right-hand side is therefore a polynomial in U,V, so B_{n} has the required form.\n\nThus (\\dagger ) holds for n, completing the induction.\n\nBecause in every positive integer exactly one of the two conditions `n odd' and `n even' holds, we conclude that for every n at least one of A_{n},B_{n} is an integer-coefficient polynomial in U and V, as desired. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Write (x+y)^n and x^n+y^n in terms of (x+y)^{n-2}, (x+y)^{n-3}, P and Q",
+          "Add/ subtract the two formulas to obtain the coupled recurrences  F_n = Q·F_{n-2} + P·G_{n-3}  and  G_n = Q·G_{n-2} + P·F_{n-3}",
+          "Verify a finite set of small n for which F_k or G_k is already a polynomial in P,Q (base cases)",
+          "Use strong induction on n with the recurrences to propagate the property to every n ≥ 1"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of concrete base-case indices as long as they let the induction start (any set covering every residue class mod lcm{2,3}=6 will do).",
+            "original": "{G₂, F₃, G₄, F₅, G₆}"
+          },
+          "slot2": {
+            "description": "Purely notational labels (variable names and polynomial symbols) can be altered without affecting the logic.",
+            "original": "variables x,y and symbols F_n,G_n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

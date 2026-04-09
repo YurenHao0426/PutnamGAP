@@ -1,0 +1,147 @@
+{
+  "index": "1978-B-3",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Problem B-3\nThe sequence \\( \\left\\{Q_{n}(x)\\right\\} \\) of polynomials is defined by\n\\[\nQ_{1}(x)=1+x, Q_{2}(x)=1+2 x\n\\]\nand, for \\( m>1 \\), by\n\\[\n\\begin{array}{l}\nQ_{2 m+1}(x)=Q_{2 m}(x)+(m+1) x Q_{2 m-1}(x) \\\\\nQ_{2 m+2}(x)=Q_{2 m+1}(x)+(m+1) x Q_{2 m}(x)\n\\end{array}\n\\]\n\nLet \\( x_{n} \\) be the largest real solution of \\( Q_{n}(x)=0 \\). Prove that \\( \\left\\{x_{n}\\right\\} \\) is an increasing sequence and that \\( \\lim _{n \\rightarrow \\infty} x_{n}=0 \\).",
+  "solution": "B-3.\nClearly, \\( x_{1}=-1, x_{2}=-\\frac{1}{2} \\). An easy induction shows that each \\( Q_{n} \\) is positive for \\( x \\geqslant 0 \\). Hence \\( x_{n}<0 \\), if \\( Q_{n} \\) has zeros.\n\nAssume inductively that \\( x_{1}<x_{2}<\\cdots<x_{2 m-1}<x_{2 m} \\). Then \\( Q_{2 m-1}(x)>0 \\) for \\( x>x_{2 m-1} \\). In particular, \\( Q_{2 m-1}\\left(x_{2 m}\\right)>0 \\). Hence\n\\[\n\\begin{aligned}\nQ_{2 m+1}\\left(x_{2 m}\\right) & =Q_{2 m}\\left(x_{2 m}\\right)+(m+1) x_{2 m} Q_{2 m-1}\\left(x_{2 m}\\right) \\\\\n& =(m+1) x_{2 m} Q_{2 m-1}\\left(x_{2 m}\\right)<0 .\n\\end{aligned}\n\\]\n\nThis implies thai \\( Q_{2 m+1}(x)=0 \\) for some \\( x>x_{2 m} \\), i.e., \\( x_{2 m+1}>x_{2 m} \\). Similarly, one shows that \\( x_{2 m+2}>x_{2 m+1} \\).\n\nLet \\( a=-1 /(m+1) \\). Using the given recursive definition of the \\( Q_{n}(x) \\), one finds that\n\\[\nQ_{2 m+2}(a)=Q_{2 m+1}(a)-Q_{2 m}(a)=-Q_{2 m-1}(a) .\n\\]\n\nHence at least one of \\( Q_{2 m+2}(a) \\) and \\( Q_{2 m-1}(a) \\) is nonpositive. Thus either \\( x_{2 m+2} \\geqslant a \\) or \\( x_{2 m-1} \\geqslant a \\). But each of these implies that both \\( x_{2 m+2} \\geqslant-1 /(m+1) \\) and \\( x_{2 m+3} \\geqslant-1 /(m+1) \\). It follows that \\( -2 / n<x_{n}<0 \\) for all \\( n \\) and then that \\( \\lim _{n \\rightarrow \\infty} x_{n}=0 \\).",
+  "vars": [
+    "Q_n",
+    "Q_1",
+    "Q_2",
+    "Q_2m+1",
+    "Q_2m",
+    "Q_2m-1",
+    "Q_2m+2",
+    "x",
+    "x_n",
+    "x_1",
+    "x_2",
+    "x_2m-1",
+    "x_2m",
+    "x_2m+1",
+    "x_2m+2",
+    "x_2m+3",
+    "m",
+    "n",
+    "a"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "Q_n": "polyindex",
+        "Q_1": "polyfirst",
+        "Q_2": "polysecond",
+        "Q_2m+1": "polyoddplus",
+        "Q_2m": "polyevenmul",
+        "Q_2m-1": "polyoddminus",
+        "Q_2m+2": "polyevenplus",
+        "x": "realinput",
+        "x_n": "rootindex",
+        "x_1": "rootfirst",
+        "x_2": "rootsecond",
+        "x_2m-1": "rootoddminus",
+        "x_2m": "rootevenmul",
+        "x_2m+1": "rootoddplus",
+        "x_2m+2": "rootevenplus",
+        "x_2m+3": "rootplusthree",
+        "m": "indexmul",
+        "n": "indexnval",
+        "a": "auxiliary"
+      },
+      "question": "Problem B-3\nThe sequence \\( \\left\\{polyindex(realinput)\\right\\} \\) of polynomials is defined by\n\\[\npolyfirst(realinput)=1+realinput, polysecond(realinput)=1+2 realinput\n\\]\nand, for \\( indexmul>1 \\), by\n\\[\n\\begin{array}{l}\npolyoddplus(realinput)=polyevenmul(realinput)+(indexmul+1) realinput polyoddminus(realinput) \\\\\npolyevenplus(realinput)=polyoddplus(realinput)+(indexmul+1) realinput polyevenmul(realinput)\n\\end{array}\n\\]\n\nLet \\( rootindex \\) be the largest real solution of \\( polyindex(realinput)=0 \\). Prove that \\( \\left\\{rootindex\\right\\} \\) is an increasing sequence and that \\( \\lim _{indexnval \\rightarrow \\infty} rootindex=0 \\).",
+      "solution": "B-3.\nClearly, \\( rootfirst=-1, rootsecond=-\\frac{1}{2} \\). An easy induction shows that each \\( polyindex \\) is positive for \\( realinput \\geqslant 0 \\). Hence \\( rootindex<0 \\), if \\( polyindex \\) has zeros.\n\nAssume inductively that \\( rootfirst<rootsecond<\\cdots<rootoddminus<rootevenmul \\). Then \\( polyoddminus(realinput)>0 \\) for \\( realinput>rootoddminus \\). In particular, \\( polyoddminus\\left(rootevenmul\\right)>0 \\). Hence\n\\[\n\\begin{aligned}\npolyoddplus\\left(rootevenmul\\right) & =polyevenmul\\left(rootevenmul\\right)+(indexmul+1) rootevenmul polyoddminus\\left(rootevenmul\\right) \\\\\n& =(indexmul+1) rootevenmul polyoddminus\\left(rootevenmul\\right)<0 .\n\\end{aligned}\n\\]\n\nThis implies thai \\( polyoddplus(realinput)=0 \\) for some \\( realinput>rootevenmul \\), i.e., \\( rootoddplus>rootevenmul \\). Similarly, one shows that \\( rootevenplus>rootoddplus \\).\n\nLet \\( auxiliary=-1 /(indexmul+1) \\). Using the given recursive definition of the \\( polyindex(realinput) \\), one finds that\n\\[\npolyevenplus(auxiliary)=polyoddplus(auxiliary)-polyevenmul(auxiliary)=-polyoddminus(auxiliary) .\n\\]\n\nHence at least one of \\( polyevenplus(auxiliary) \\) and \\( polyoddminus(auxiliary) \\) is nonpositive. Thus either \\( rootevenplus \\geqslant auxiliary \\) or \\( rootoddminus \\geqslant auxiliary \\). But each of these implies that both \\( rootevenplus \\geqslant-1 /(indexmul+1) \\) and \\( rootplusthree \\geqslant-1 /(indexmul+1) \\). It follows that \\( -2 / indexnval<rootindex<0 \\) for all \\( indexnval \\) and then that \\( \\lim _{indexnval \\rightarrow \\infty} rootindex=0 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "Q_{n}": "grandfather",
+        "Q_{1}": "tangerine",
+        "Q_{2}": "blackboard",
+        "Q_{2 m+1}": "chandelier",
+        "Q_{2 m}": "snowflake",
+        "Q_{2 m-1}": "parchment",
+        "Q_{2 m+2}": "lighthouse",
+        "x": "watermelon",
+        "x_{n}": "dragonfly",
+        "x_{1}": "marshmallow",
+        "x_{2}": "toothbrush",
+        "x_{2 m-1}": "hairbrush",
+        "x_{2 m}": "paperclips",
+        "x_{2 m+1}": "thumbtacks",
+        "x_{2 m+2}": "copperwire",
+        "x_{2 m+3}": "silverware",
+        "m": "sailboat",
+        "n": "rainstorm",
+        "a": "sunflower"
+      },
+      "question": "Problem B-3\nThe sequence \\( \\left\\{grandfather(watermelon)\\right\\} \\) of polynomials is defined by\n\\[\ntangerine(watermelon)=1+watermelon, blackboard(watermelon)=1+2 watermelon\n\\]\nand, for \\( sailboat>1 \\), by\n\\[\n\\begin{array}{l}\nchandelier(watermelon)=snowflake(watermelon)+(sailboat+1) watermelon parchment(watermelon) \\\\\nlighthouse(watermelon)=chandelier(watermelon)+(sailboat+1) watermelon snowflake(watermelon)\n\\end{array}\n\\]\n\nLet \\( dragonfly \\) be the largest real solution of \\( grandfather(watermelon)=0 \\). Prove that \\( \\left\\{dragonfly\\right\\} \\) is an increasing sequence and that \\( \\lim _{rainstorm \\rightarrow \\infty} dragonfly=0 \\).",
+      "solution": "B-3.\nClearly, \\( marshmallow=-1, toothbrush=-\\frac{1}{2} \\). An easy induction shows that each \\( grandfather \\) is positive for \\( watermelon \\geqslant 0 \\). Hence \\( dragonfly<0 \\), if \\( grandfather \\) has zeros.\n\nAssume inductively that \\( marshmallow<toothbrush<\\cdots<hairbrush<paperclips \\). Then \\( parchment(watermelon)>0 \\) for \\( watermelon>hairbrush \\). In particular, \\( parchment\\left(paperclips\\right)>0 \\). Hence\n\\[\n\\begin{aligned}\nchandelier\\left(paperclips\\right) & =snowflake\\left(paperclips\\right)+(sailboat+1) paperclips parchment\\left(paperclips\\right) \\\\\n& =(sailboat+1) paperclips parchment\\left(paperclips\\right)<0 .\n\\end{aligned}\n\\]\n\nThis implies thai \\( chandelier(watermelon)=0 \\) for some \\( watermelon>paperclips \\), i.e., \\( thumbtacks>paperclips \\). Similarly, one shows that \\( copperwire>thumbtacks \\).\n\nLet \\( sunflower=-1 /(sailboat+1) \\). Using the given recursive definition of the \\( grandfather(watermelon) \\), one finds that\n\\[\nlighthouse(sunflower)=chandelier(sunflower)-snowflake(sunflower)=-parchment(sunflower) .\n\\]\n\nHence at least one of \\( lighthouse(sunflower) \\) and \\( parchment(sunflower) \\) is nonpositive. Thus either \\( copperwire \\geqslant sunflower \\) or \\( hairbrush \\geqslant sunflower \\). But each of these implies that both \\( copperwire \\geqslant-1 /(sailboat+1) \\) and \\( silverware \\geqslant-1 /(sailboat+1) \\). It follows that \\( -2 / rainstorm<dragonfly<0 \\) for all \\( rainstorm \\) and then that \\( \\lim _{rainstorm \\rightarrow \\infty} dragonfly=0 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "Q_n": "constantsequence",
+        "Q_1": "immobileone",
+        "Q_2": "immobletwo",
+        "Q_2m+1": "steadyoddconst",
+        "Q_2m": "steadyevenconst",
+        "Q_2m-1": "unvaryprevconst",
+        "Q_2m+2": "unvarynextconst",
+        "x": "fixedvalue",
+        "x_n": "immutableval",
+        "x_1": "immutableone",
+        "x_2": "immutabletwo",
+        "x_2m-1": "fixedprevval",
+        "x_2m": "fixedevenval",
+        "x_2m+1": "fixedoddval",
+        "x_2m+2": "fixednextval",
+        "x_2m+3": "fixedplusval",
+        "m": "wholesize",
+        "n": "completecount",
+        "a": "positiveanchor"
+      },
+      "question": "Problem B-3\nThe sequence \\( \\left\\{constantsequence(fixedvalue)\\right\\} \\) of polynomials is defined by\n\\[\nimmobileone(fixedvalue)=1+fixedvalue, immobletwo(fixedvalue)=1+2 fixedvalue\n\\]\nand, for \\( wholesize>1 \\), by\n\\[\n\\begin{array}{l}\nsteadyoddconst(fixedvalue)=steadyevenconst(fixedvalue)+(wholesize+1) fixedvalue\\,unvaryprevconst(fixedvalue) \\\\\nunvarynextconst(fixedvalue)=steadyoddconst(fixedvalue)+(wholesize+1) fixedvalue\\,steadyevenconst(fixedvalue)\n\\end{array}\n\\]\n\nLet \\( immutableval \\) be the largest real solution of \\( constantsequence(fixedvalue)=0 \\). Prove that \\( \\left\\{immutableval\\right\\} \\) is an increasing sequence and that \\( \\lim _{completecount \\rightarrow \\infty} immutableval=0 \\).",
+      "solution": "B-3.\nClearly, \\( immutableone=-1, immutabletwo=-\\frac{1}{2} \\). An easy induction shows that each \\( constantsequence \\) is positive for \\( fixedvalue \\geqslant 0 \\). Hence \\( immutableval<0 \\), if \\( constantsequence \\) has zeros.\n\nAssume inductively that \\( immutableone<immutabletwo<\\cdots<fixedprevval<fixedevenval \\). Then \\( unvaryprevconst(fixedvalue)>0 \\) for \\( fixedvalue>fixedprevval \\). In particular, \\( unvaryprevconst\\left(fixedevenval\\right)>0 \\). Hence\n\\[\n\\begin{aligned}\nsteadyoddconst\\left(fixedevenval\\right) & =steadyevenconst\\left(fixedevenval\\right)+(wholesize+1) fixedevenval\\,unvaryprevconst\\left(fixedevenval\\right) \\\\\n& =(wholesize+1) fixedevenval\\,unvaryprevconst\\left(fixedevenval\\right)<0 .\n\\end{aligned}\n\\]\n\nThis implies that \\( steadyoddconst(fixedvalue)=0 \\) for some \\( fixedvalue>fixedevenval \\), i.e., \\( fixedoddval>fixedevenval \\). Similarly, one shows that \\( fixednextval>fixedoddval \\).\n\nLet \\( positiveanchor=-1 /(wholesize+1) \\). Using the given recursive definition of the \\( constantsequence(fixedvalue) \\), one finds that\n\\[\nunvarynextconst(positiveanchor)=steadyoddconst(positiveanchor)-steadyevenconst(positiveanchor)=-\\,unvaryprevconst(positiveanchor) .\n\\]\n\nHence at least one of \\( unvarynextconst(positiveanchor) \\) and \\( unvaryprevconst(positiveanchor) \\) is nonpositive. Thus either \\( fixednextval \\geqslant positiveanchor \\) or \\( fixedprevval \\geqslant positiveanchor \\). But each of these implies that both \\( fixednextval \\geqslant-1 /(wholesize+1) \\) and \\( fixedplusval \\geqslant-1 /(wholesize+1) \\). It follows that \\( -2 / completecount<immutableval<0 \\) for all \\( completecount \\) and then that \\( \\lim _{completecount \\rightarrow \\infty} immutableval=0 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "Q_n": "ruqivcna",
+        "Q_1": "zokmpnha",
+        "Q_2": "btrlwhye",
+        "Q_2m+1": "jgsyczob",
+        "Q_2m": "uwxrdkfi",
+        "Q_2m-1": "ynszptev",
+        "Q_2m+2": "hlctmqwa",
+        "x": "sboafenr",
+        "x_n": "qvdaremu",
+        "x_1": "bsvthnle",
+        "x_2": "fkcjroza",
+        "x_2m-1": "wpikgzsa",
+        "x_2m": "elxvqupg",
+        "x_2m+1": "tfrasoec",
+        "x_2m+2": "vbdynzqi",
+        "x_2m+3": "gnakweyo",
+        "m": "dolzumeh",
+        "n": "hskjpruw",
+        "a": "kwudnise"
+      },
+      "question": "Problem B-3\nThe sequence \\( \\left\\{ruqivcna(sboafenr)\\right\\} \\) of polynomials is defined by\n\\[\nzokmpnha(sboafenr)=1+sboafenr, btrlwhye(sboafenr)=1+2 sboafenr\n\\]\nand, for \\( dolzumeh>1 \\), by\n\\[\n\\begin{array}{l}\njgsyczob(sboafenr)=uwxrdkfi(sboafenr)+(dolzumeh+1) sboafenr ynszptev(sboafenr) \\\\\nhlctmqwa(sboafenr)=jgsyczob(sboafenr)+(dolzumeh+1) sboafenr uwxrdkfi(sboafenr)\n\\end{array}\n\\]\n\nLet \\( qvdaremu \\) be the largest real solution of \\( ruqivcna(sboafenr)=0 \\). Prove that \\( \\left\\{qvdaremu\\right\\} \\) is an increasing sequence and that \\( \\lim _{hskjpruw \\rightarrow \\infty} qvdaremu=0 \\).",
+      "solution": "B-3.\nClearly, \\( bsvthnle=-1, fkcjroza=-\\frac{1}{2} \\). An easy induction shows that each \\( ruqivcna \\) is positive for \\( sboafenr \\geqslant 0 \\). Hence \\( qvdaremu<0 \\), if \\( ruqivcna \\) has zeros.\n\nAssume inductively that \\( bsvthnle<fkcjroza<\\cdots<wpikgzsa<elxvqupg \\). Then \\( ynszptev(sboafenr)>0 \\) for \\( sboafenr>wpikgzsa \\). In particular, \\( ynszptev\\left(elxvqupg\\right)>0 \\). Hence\n\\[\n\\begin{aligned}\njgsyczob\\left(elxvqupg\\right) & =uwxrdkfi\\left(elxvqupg\\right)+(dolzumeh+1) elxvqupg ynszptev\\left(elxvqupg\\right) \\\\\n& =(dolzumeh+1) elxvqupg ynszptev\\left(elxvqupg\\right)<0 .\n\\end{aligned}\n\\]\n\nThis implies that \\( jgsyczob(sboafenr)=0 \\) for some \\( sboafenr>elxvqupg \\), i.e., \\( tfrasoec>elxvqupg \\). Similarly, one shows that \\( vbdynzqi>tfrasoec \\).\n\nLet \\( kwudnise=-1 /(dolzumeh+1) \\). Using the given recursive definition of the \\( ruqivcna(sboafenr) \\), one finds that\n\\[\nhlctmqwa(kwudnise)=jgsyczob(kwudnise)-uwxrdkfi(kwudnise)=-ynszptev(kwudnise) .\n\\]\n\nHence at least one of \\( hlctmqwa(kwudnise) \\) and \\( ynszptev(kwudnise) \\) is nonpositive. Thus either \\( vbdynzqi \\geqslant kwudnise \\) or \\( wpikgzsa \\geqslant kwudnise \\). But each of these implies that both \\( vbdynzqi \\geqslant-1 /(dolzumeh+1) \\) and \\( gnakweyo \\geqslant-1 /(dolzumeh+1) \\). It follows that \\( -2 / hskjpruw<qvdaremu<0 \\) for all \\( hskjpruw \\) and then that \\( \\lim _{hskjpruw \\rightarrow \\infty} qvdaremu=0 \\)."
+    },
+    "kernel_variant": {
+      "question": "Define a sequence of polynomials $\\{R_{n}(x)\\}_{n\\ge1}$ by  \n\\[\nR_{1}(x)=4+6x+x^{2},\\qquad R_{2}(x)=4+8x+2x^{2},\n\\]\nand, for every integer $m\\ge1$,  \n\\[\n\\begin{aligned}\nR_{2m+1}(x)&=R_{2m}(x)+(m+1)(m+2)\\,x(1+x)\\,R_{2m-1}(x),\\\\[2mm]\nR_{2m+2}(x)&=R_{2m+1}(x)+(m+1)(m+2)\\,x(1+x)\\,R_{2m}(x).\n\\end{aligned}\n\\]\nLet $z_{n}$ be the largest real zero of $R_{n}$ (part (a) shows it exists).\n\na) Show that every $R_{n}$ possesses a real zero, that all real zeros are negative, and that the sequence $\\{z_{n}\\}$ is strictly increasing.\n\nb) Prove that $\\displaystyle\\lim_{n\\to\\infty}z_{n}=0$ and, in fact, $|z_{n}|\\le\\frac{2}{n+2}$ for all $n\\ge3$.",
+      "solution": "Step 1. Positivity to the right of the origin.  \nEach recurrence appends $(m+1)(m+2)x(1+x)R_{\\bullet}(x)$, whose coefficients (save the constant term) are non-negative; the inductions $R_{1},R_{2}\\Rightarrow R_{3},R_{4}\\Rightarrow\\dots$ therefore keep every non-constant coefficient positive while the constant term $4$ stays fixed.  Hence $R_{n}(x)>0$ for $x\\ge0$, so every real zero is negative.\n\nStep 2. Existence and monotonicity.  \nFor $n=1,2$ the quadratic formula yields\n\\[\nz_{1}=\\frac{-6-\\sqrt{20}}{2}\\!,\\qquad \nz_{2}=\\frac{-8-\\sqrt{48}}{4},\\quad z_{1}<z_{2}<0.\n\\]\nAssume $z_{1}<\\dots<z_{2m}<0$.  Because $R_{2m-1}(x)>0$ on $(z_{2m-1},\\infty)$,\n\\[\nR_{2m+1}(z_{2m})=(m+1)(m+2)\\,z_{2m}(1+z_{2m})R_{2m-1}(z_{2m})<0.\n\\]\nWith $R_{2m+1}(0)=4>0$, the Intermediate-Value Theorem gives\n$z_{2m}<z_{2m+1}<0$.  Repeating the argument with $(2m+2)$ in place of\n$(2m+1)$ furnishes $z_{2m+2}\\in(z_{2m+1},0)$.  Thus $\\{z_{n}\\}$ is strictly increasing and all $R_{n}$ have a real zero.\n\nStep 3. A uniform bound.  \nFix $m\\ge1$ and set $a=-\\dfrac{2}{2m+3}$.  Since $(m+1)(m+2)a(1+a)=-1$, the recurrences give\n\\[\nR_{2m+2}(a)=R_{2m+1}(a)-R_{2m}(a)=-R_{2m-1}(a).\n\\]\nHence either $R_{2m-1}(a)\\le0$ or $R_{2m+2}(a)\\le0$, so at least one of\n$z_{2m-1},z_{2m+2}$ exceeds $a$.  Monotonicity then yields\n\\[\nz_{n}\\ge -\\frac{2}{n+2}\\qquad(n\\ge3).\n\\]\n\nStep 4. The limit.  \nBecause $\\{z_{n}\\}$ is increasing and bounded above by $0$, it converges to some $L\\le0$.  The inequality of Step 3 forces $|L|\\le\\lim_{n\\to\\infty}\\tfrac{2}{n+2}=0$, hence $L=0$.  Consequently $\\boxed{\\displaystyle\\lim_{n\\to\\infty}z_{n}=0}$ and the stated bound holds.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.126145",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

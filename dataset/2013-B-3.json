@@ -1,0 +1,142 @@
+{
+  "index": "2013-B-3",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $\\mathcal{P}$ be a nonempty collection of subsets of $\\{1,\\dots, n\\}$ such that:\n\\begin{enumerate}\n\\item[(i)]\nif $S, S' \\in \\mathcal{P}$, then $S \\cup S' \\in \\mathcal{P}$ and $S \\cap S' \\in \\mathcal{P}$, and\n\\item[(ii)]\nif $S \\in \\mathcal{P}$ and $S \\neq \\emptyset$, then there is a subset $T \\subset S$\nsuch that $T \\in \\mathcal{P}$ and $T$ contains exactly one fewer element than $S$.\n\\end{enumerate}\nSuppose that $f: \\mathcal{P} \\to \\mathbb{R}$ is a function such that\n$f(\\emptyset) = 0$ and\n\\[\nf(S \\cup S') = f(S) + f(S') - f(S \\cap S') \\mbox{ for all $S,S' \\in \\mathcal{P}$.}\n\\]\nMust there exist real numbers $f_1,\\dots,f_n$ such that\n\\[\nf(S) = \\sum_{i \\in S} f_i\n\\]\nfor every $S \\in \\mathcal{P}$?",
+  "solution": "Yes, such numbers must exist. To define them, we make the following observations.\n\n\\setcounter{lemma}{0}\n\\begin{lemma}\nFor any $i \\in \\{1,\\dots,n\\}$, if there exists any $S \\in P$ containing $i$, then there exist $S,T \\in P$ such that $S$ is the disjoint union of $T$ with $\\{i\\}$.\n\\end{lemma}\n\\begin{proof}\nLet $S$ be an element of $P$ containing $i$ of minimum cardinality.\nBy (ii), there must be a subset $T \\subset S$ containing $P$ with exactly one fewer element than $S$. These sets have the desired form.\n\\end{proof}\n\n\\begin{lemma}\nSuppose $S_1, S_2, T_1, T_2 \\in P$ have the property that for some $i \\in \\{1,\\dots,n\\}$, $S_1$ is the disjoint union of $T_1$ with $\\{i\\}$ and $S_2$ is the disjoint union of $T_2$ with $\\{i\\}$. Then \n\\[\nf(S_1) - f(T_1) = f(S_2) - f(T_2).\n\\]\n\\end{lemma}\n\\begin{proof}\nBy (i) we have\n\\begin{align*}\nf(T_1 \\cup T_2 \\cup \\{i\\}) &= f(S_1) + f(T_2) - f(T_1 \\cap T_2) \\\\\nf(T_1 \\cup T_2 \\cup \\{i\\}) &= f(T_1) + f(S_2) - f(T_1 \\cap T_2),\n\\end{align*}\nfrom which the claim follows immediately.\n\\end{proof}\n\nWe now define $f_1,\\dots,f_n$ as follows. If $i$ does not appear in any element of $P$, we put $f_i = 0$. Otherwise, by Lemma~1, we can find \n$S, T \\in P$ such that $S$ is the disjoint union of $T$ with $\\{i\\}$. We then set $f_i = f(S) - f(T)$; by Lemma~2, this does not depend on the choice of $S,T$.\n\nTo check that $f(S) = \\sum_{i \\in S} f_i$ for $S \\in P$, note first that $\\emptyset \\in P$ by repeated application of (ii) and that $f(\\emptyset) = 0$ by hypothesis. This provides the base case for an induction on the cardinality of $S$; for any nonempty $S \\in P$, we may apply (ii) to find $T \\subset S$ such that $S$ is the disjoint union of $T$ and some singleton set $\\{j\\}$. By construction and the induction hypothesis, we have $f(S) = f(T) + f_j = j + \\sum_{i \\in T} f_i = \\sum_{i \\in S} f_i$ as desired.",
+  "vars": [
+    "P",
+    "S",
+    "T",
+    "S_1",
+    "S_2",
+    "T_1",
+    "T_2",
+    "f",
+    "f_1",
+    "f_n",
+    "f_i",
+    "f_j",
+    "i",
+    "j"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P": "setfamily",
+        "S": "subseta",
+        "T": "subsetb",
+        "S_1": "subsetone",
+        "S_2": "subsettwo",
+        "T_1": "subsetbone",
+        "T_2": "subsetbtwo",
+        "f": "function",
+        "f_1": "functionone",
+        "f_n": "functionend",
+        "f_i": "functionvar",
+        "f_j": "functionaux",
+        "i": "indexone",
+        "j": "indextwo",
+        "n": "setsize"
+      },
+      "question": "Let $setfamily$ be a nonempty collection of subsets of $\\{1,\\dots,setsize\\}$ such that:\n\\begin{enumerate}\n\\item[(i)]\nif $subseta, subseta' \\in setfamily$, then $subseta \\cup subseta' \\in setfamily$ and $subseta \\cap subseta' \\in setfamily$, and\n\\item[(ii)]\nif $subseta \\in setfamily$ and $subseta \\neq \\emptyset$, then there is a subset $subsetb \\subset subseta$ such that $subsetb \\in setfamily$ and $subsetb$ contains exactly one fewer element than $subseta$.\n\\end{enumerate}\nSuppose that $function: setfamily \\to \\mathbb{R}$ is a function such that $function(\\emptyset) = 0$ and\n\\[\nfunction(subseta \\cup subseta') = function(subseta) + function(subseta') - function(subseta \\cap subseta') \\mbox{ for all $subseta, subseta' \\in setfamily$.}\n\\]\nMust there exist real numbers $functionone,\\dots,functionend$ such that\n\\[\nfunction(subseta) = \\sum_{indexone \\in subseta} functionvar\n\\]\nfor every $subseta \\in setfamily$?",
+      "solution": "Yes, such numbers must exist. To define them, we make the following observations.\n\n\\setcounter{lemma}{0}\n\\begin{lemma}\nFor any $indexone \\in \\{1,\\dots,setsize\\}$, if there exists any $subseta \\in setfamily$ containing $indexone$, then there exist $subseta, subsetb \\in setfamily$ such that $subseta$ is the disjoint union of $subsetb$ with $\\{indexone\\}$.\n\\end{lemma}\n\\begin{proof}\nLet $subseta$ be an element of $setfamily$ containing $indexone$ of minimum cardinality. By (ii), there must be a subset $subsetb \\subset subseta$ containing $indexone$ with exactly one fewer element than $subseta$. These sets have the desired form.\n\\end{proof}\n\n\\begin{lemma}\nSuppose $subsetone, subsettwo, subsetbone, subsetbtwo \\in setfamily$ have the property that for some $indexone \\in \\{1,\\dots,setsize\\}$, $subsetone$ is the disjoint union of $subsetbone$ with $\\{indexone\\}$ and $subsettwo$ is the disjoint union of $subsetbtwo$ with $\\{indexone\\}$. Then\n\\[\nfunction(subsetone) - function(subsetbone) = function(subsettwo) - function(subsetbtwo).\n\\]\n\\end{lemma}\n\\begin{proof}\nBy (i) we have\n\\begin{align*}\nfunction(subsetbone \\cup subsetbtwo \\cup \\{indexone\\}) &= function(subsetone) + function(subsetbtwo) - function(subsetbone \\cap subsetbtwo) \\\\\nfunction(subsetbone \\cup subsetbtwo \\cup \\{indexone\\}) &= function(subsetbone) + function(subsettwo) - function(subsetbone \\cap subsetbtwo),\n\\end{align*}\nfrom which the claim follows immediately.\n\\end{proof}\n\nWe now define $functionone,\\dots,functionend$ as follows. If $indexone$ does not appear in any element of $setfamily$, we put $functionvar = 0$. Otherwise, by Lemma~1, we can find $subseta, subsetb \\in setfamily$ such that $subseta$ is the disjoint union of $subsetb$ with $\\{indexone\\}$. We then set $functionvar = function(subseta) - function(subsetb)$; by Lemma~2, this does not depend on the choice of $subseta, subsetb$.\n\nTo check that $function(subseta) = \\sum_{indexone \\in subseta} functionvar$ for $subseta \\in setfamily$, note first that $\\emptyset \\in setfamily$ by repeated application of (ii) and that $function(\\emptyset) = 0$ by hypothesis. This provides the base case for an induction on the cardinality of $subseta$; for any nonempty $subseta \\in setfamily$, we may apply (ii) to find $subsetb \\subset subseta$ such that $subseta$ is the disjoint union of $subsetb$ and some singleton set $\\{indextwo\\}$. By construction and the induction hypothesis, we have\n\\[\nfunction(subseta) = function(subsetb) + functionaux = \\sum_{indexone \\in subsetb} functionvar + functionaux = \\sum_{indexone \\in subseta} functionvar,\n\\]\nas desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P": "lanternfish",
+        "S": "pineapple",
+        "T": "raindrop",
+        "S_1": "snowcastle",
+        "S_2": "cinnamon",
+        "T_1": "marshmallow",
+        "T_2": "dandelion",
+        "f": "storyboard",
+        "f_1": "gemstone",
+        "f_n": "cornfield",
+        "f_i": "sandcastle",
+        "f_j": "lighthouse",
+        "i": "squirrel",
+        "j": "moonlight",
+        "n": "paintbrush"
+      },
+      "question": "Let $\\mathcal{lanternfish}$ be a nonempty collection of subsets of $\\{1,\\dots, paintbrush\\}$ such that:\n\\begin{enumerate}\n\\item[(i)]\nif $pineapple, pineapple' \\in \\mathcal{lanternfish}$, then $pineapple \\cup pineapple' \\in \\mathcal{lanternfish}$ and $pineapple \\cap pineapple' \\in \\mathcal{lanternfish}$, and\n\\item[(ii)]\nif $pineapple \\in \\mathcal{lanternfish}$ and $pineapple \\neq \\emptyset$, then there is a subset $raindrop \\subset pineapple$\nsuch that $raindrop \\in \\mathcal{lanternfish}$ and $raindrop$ contains exactly one fewer element than $pineapple$.\n\\end{enumerate}\nSuppose that $storyboard: \\mathcal{lanternfish} \\to \\mathbb{R}$ is a function such that\n$storyboard(\\emptyset) = 0$ and\n\\[\nstoryboard(pineapple \\cup pineapple') = storyboard(pineapple) + storyboard(pineapple') - storyboard(pineapple \\cap pineapple') \\mbox{ for all $pineapple,pineapple' \\in \\mathcal{lanternfish}$.}\n\\]\nMust there exist real numbers $gemstone,\\dots,cornfield$ such that\n\\[\nstoryboard(pineapple) = \\sum_{squirrel \\in pineapple} sandcastle\n\\]\nfor every $pineapple \\in \\mathcal{lanternfish}$?",
+      "solution": "Yes, such numbers must exist. To define them, we make the following observations.\n\n\\setcounter{lemma}{0}\n\\begin{lemma}\nFor any $squirrel \\in \\{1,\\dots,paintbrush\\}$, if there exists any $pineapple \\in lanternfish$ containing $squirrel$, then there exist $pineapple,raindrop \\in lanternfish$ such that $pineapple$ is the disjoint union of $raindrop$ with $\\{squirrel\\}$.\n\\end{lemma}\n\\begin{proof}\nLet $pineapple$ be an element of $lanternfish$ containing $squirrel$ of minimum cardinality.\nBy (ii), there must be a subset $raindrop \\subset pineapple$ containing $lanternfish$ with exactly one fewer element than $pineapple$. These sets have the desired form.\n\\end{proof}\n\n\\begin{lemma}\nSuppose $snowcastle, cinnamon, marshmallow, dandelion \\in lanternfish$ have the property that for some $squirrel \\in \\{1,\\dots,paintbrush\\}$, $snowcastle$ is the disjoint union of $marshmallow$ with $\\{squirrel\\}$ and $cinnamon$ is the disjoint union of $dandelion$ with $\\{squirrel\\}$. Then \n\\[\nstoryboard(snowcastle) - storyboard(marshmallow) = storyboard(cinnamon) - storyboard(dandelion).\n\\]\n\\end{lemma}\n\\begin{proof}\nBy (i) we have\n\\begin{align*}\nstoryboard(marshmallow \\cup dandelion \\cup \\{squirrel\\}) &= storyboard(snowcastle) + storyboard(dandelion) - storyboard(marshmallow \\cap dandelion) \\\\\nstoryboard(marshmallow \\cup dandelion \\cup \\{squirrel\\}) &= storyboard(marshmallow) + storyboard(cinnamon) - storyboard(marshmallow \\cap dandelion),\n\\end{align*}\nfrom which the claim follows immediately.\n\\end{proof}\n\nWe now define $gemstone,\\dots,cornfield$ as follows. If $squirrel$ does not appear in any element of $lanternfish$, we put $sandcastle = 0$. Otherwise, by Lemma~1, we can find \n$pineapple, raindrop \\in lanternfish$ such that $pineapple$ is the disjoint union of $raindrop$ with $\\{squirrel\\}$. We then set $sandcastle = storyboard(pineapple) - storyboard(raindrop)$; by Lemma~2, this does not depend on the choice of $pineapple,raindrop$.\n\nTo check that $storyboard(pineapple) = \\sum_{squirrel \\in pineapple} sandcastle$ for $pineapple \\in lanternfish$, note first that $\\emptyset \\in lanternfish$ by repeated application of (ii) and that $storyboard(\\emptyset) = 0$ by hypothesis. This provides the base case for an induction on the cardinality of $pineapple$; for any nonempty $pineapple \\in lanternfish$, we may apply (ii) to find $raindrop \\subset pineapple$ such that $pineapple$ is the disjoint union of $raindrop$ and some singleton set $\\{moonlight\\}$. By construction and the induction hypothesis, we have $storyboard(pineapple) = storyboard(raindrop) + lighthouse = moonlight + \\sum_{squirrel \\in raindrop} sandcastle = \\sum_{squirrel \\in pineapple} sandcastle$ as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P": "singularset",
+        "S": "superset",
+        "T": "totalset",
+        "S_1": "supersetone",
+        "S_2": "supersettwo",
+        "T_1": "totalsetone",
+        "T_2": "totalsettwo",
+        "f": "constant",
+        "f_1": "variableone",
+        "f_n": "variablelast",
+        "f_i": "variable",
+        "f_j": "variablealt",
+        "i": "summation",
+        "j": "aggregate",
+        "n": "infinite"
+      },
+      "question": "Let $\\mathcal{singularset}$ be a nonempty collection of subsets of $\\{1,\\dots, infinite\\}$ such that:\n\\begin{enumerate}\n\\item[(i)]\nif $superset, superset' \\in \\mathcal{singularset}$, then $superset \\cup superset' \\in \\mathcal{singularset}$ and $superset \\cap superset' \\in \\mathcal{singularset}$, and\n\\item[(ii)]\nif $superset \\in \\mathcal{singularset}$ and $superset \\neq \\emptyset$, then there is a subset $totalset \\subset superset$\nsuch that $totalset \\in \\mathcal{singularset}$ and $totalset$ contains exactly one fewer element than $superset$.\n\\end{enumerate}\nSuppose that $constant: \\mathcal{singularset} \\to \\mathbb{R}$ is a function such that\n$constant(\\emptyset) = 0$ and\n\\[\nconstant(superset \\cup superset') = constant(superset) + constant(superset') - constant(superset \\cap superset') \\mbox{ for all $superset,superset' \\in \\mathcal{singularset}$.}\n\\]\nMust there exist real numbers $variableone,\\dots,variablelast$ such that\n\\[\nconstant(superset) = \\sum_{summation \\in superset} variable\n\\]\nfor every $superset \\in \\mathcal{singularset}$?",
+      "solution": "Yes, such numbers must exist. To define them, we make the following observations.\n\n\\setcounter{lemma}{0}\n\\begin{lemma}\nFor any $summation \\in \\{1,\\dots,infinite\\}$, if there exists any $superset \\in singularset$ containing $summation$, then there exist $superset,totalset \\in singularset$ such that $superset$ is the disjoint union of $totalset$ with $\\{summation\\}$.\n\\end{lemma}\n\\begin{proof}\nLet $superset$ be an element of $singularset$ containing $summation$ of minimum cardinality.\nBy (ii), there must be a subset $totalset \\subset superset$ containing $singularset$ with exactly one fewer element than $superset$. These sets have the desired form.\n\\end{proof}\n\n\\begin{lemma}\nSuppose $supersetone, supersettwo, totalsetone, totalsettwo \\in singularset$ have the property that for some $summation \\in \\{1,\\dots,infinite\\}$, $supersetone$ is the disjoint union of $totalsetone$ with $\\{summation\\}$ and $supersettwo$ is the disjoint union of $totalsettwo$ with $\\{summation\\}$. Then \n\\[\nconstant(supersetone) - constant(totalsetone) = constant(supersettwo) - constant(totalsettwo).\n\\]\n\\end{lemma}\n\\begin{proof}\nBy (i) we have\n\\begin{align*}\nconstant(totalsetone \\cup totalsettwo \\cup \\{summation\\}) &= constant(supersetone) + constant(totalsettwo) - constant(totalsetone \\cap totalsettwo) \\\\\nconstant(totalsetone \\cup totalsettwo \\cup \\{summation\\}) &= constant(totalsetone) + constant(supersettwo) - constant(totalsetone \\cap totalsettwo),\n\\end{align*}\nfrom which the claim follows immediately.\n\\end{proof}\n\nWe now define $variableone,\\dots,variablelast$ as follows. If $summation$ does not appear in any element of $singularset$, we put $variable = 0$. Otherwise, by Lemma~1, we can find \n$superset, totalset \\in singularset$ such that $superset$ is the disjoint union of $totalset$ with $\\{summation\\}$. We then set $variable = constant(superset) - constant(totalset)$; by Lemma~2, this does not depend on the choice of $superset,totalset$.\n\nTo check that $constant(superset) = \\sum_{summation \\in superset} variable$ for $superset \\in singularset$, note first that $\\emptyset \\in singularset$ by repeated application of (ii) and that $constant(\\emptyset) = 0$ by hypothesis. This provides the base case for an induction on the cardinality of $superset$; for any nonempty $superset \\in singularset$, we may apply (ii) to find $totalset \\subset superset$ such that $superset$ is the disjoint union of $totalset$ and some singleton set $\\{aggregate\\}$. By construction and the induction hypothesis, we have $constant(superset) = constant(totalset) + variablealt = variablealt + \\sum_{summation \\in totalset} variable = \\sum_{summation \\in superset} variable$ as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "P": "kusdqnwz",
+        "S": "qzxwvtnp",
+        "T": "hjgrksla",
+        "S_1": "fghjkwqe",
+        "S_2": "vbnmasdf",
+        "T_1": "poiulkjh",
+        "T_2": "mnbvcxzl",
+        "f": "zxcvbnma",
+        "f_1": "qazwsxed",
+        "f_n": "rfvtgbyh",
+        "f_i": "plmoknji",
+        "f_j": "uytrewqa",
+        "i": "kljhgfds",
+        "j": "asdfghjk",
+        "n": "qwertyui"
+      },
+      "question": "Let $\\mathcal{kusdqnwz}$ be a nonempty collection of subsets of $\\{1,\\dots, qwertyui\\}$ such that:\n\\begin{enumerate}\n\\item[(i)]\nif $qzxwvtnp, qzxwvtnp' \\in \\mathcal{kusdqnwz}$, then $qzxwvtnp \\cup qzxwvtnp' \\in \\mathcal{kusdqnwz}$ and $qzxwvtnp \\cap qzxwvtnp' \\in \\mathcal{kusdqnwz}$, and\n\\item[(ii)]\nif $qzxwvtnp \\in \\mathcal{kusdqnwz}$ and $qzxwvtnp \\neq \\emptyset$, then there is a subset $hjgrksla \\subset qzxwvtnp$\nsuch that $hjgrksla \\in \\mathcal{kusdqnwz}$ and $hjgrksla$ contains exactly one fewer element than $qzxwvtnp$.\n\\end{enumerate}\nSuppose that $zxcvbnma: \\mathcal{kusdqnwz} \\to \\mathbb{R}$ is a function such that\n$zxcvbnma(\\emptyset) = 0$ and\n\\[\nzxcvbnma(qzxwvtnp \\cup qzxwvtnp') = zxcvbnma(qzxwvtnp) + zxcvbnma(qzxwvtnp') - zxcvbnma(qzxwvtnp \\cap qzxwvtnp') \\mbox{ for all $qzxwvtnp,qzxwvtnp' \\in \\mathcal{kusdqnwz}$.}\n\\]\nMust there exist real numbers $qazwsxed,\\dots,rfvtgbyh$ such that\n\\[\nzxcvbnma(qzxwvtnp) = \\sum_{kljhgfds \\in qzxwvtnp} plmoknji\n\\]\nfor every $qzxwvtnp \\in \\mathcal{kusdqnwz}$?",
+      "solution": "Yes, such numbers must exist. To define them, we make the following observations.\n\n\\setcounter{lemma}{0}\n\\begin{lemma}\nFor any $kljhgfds \\in \\{1,\\dots,qwertyui\\}$, if there exists any $qzxwvtnp \\in kusdqnwz$ containing $kljhgfds$, then there exist $qzxwvtnp,hjgrksla \\in kusdqnwz$ such that $qzxwvtnp$ is the disjoint union of $hjgrksla$ with $\\{kljhgfds\\}$.\n\\end{lemma}\n\\begin{proof}\nLet $qzxwvtnp$ be an element of kusdqnwz containing $kljhgfds$ of minimum cardinality.\nBy (ii), there must be a subset $hjgrksla \\subset qzxwvtnp$ containing kusdqnwz with exactly one fewer element than $qzxwvtnp$. These sets have the desired form.\n\\end{proof}\n\n\\begin{lemma}\nSuppose $fghjkwqe, vbnmasdf, poiulkjh, mnbvcxzl \\in kusdqnwz$ have the property that for some $kljhgfds \\in \\{1,\\dots,qwertyui\\}$, $fghjkwqe$ is the disjoint union of $poiulkjh$ with $\\{kljhgfds\\}$ and $vbnmasdf$ is the disjoint union of $mnbvcxzl$ with $\\{kljhgfds\\}$. Then \n\\[\nzxcvbnma(fghjkwqe) - zxcvbnma(poiulkjh) = zxcvbnma(vbnmasdf) - zxcvbnma(mnbvcxzl).\n\\]\n\\end{lemma}\n\\begin{proof}\nBy (i) we have\n\\begin{align*}\nzxcvbnma(poiulkjh \\cup mnbvcxzl \\cup \\{kljhgfds\\}) &= zxcvbnma(fghjkwqe) + zxcvbnma(mnbvcxzl) - zxcvbnma(poiulkjh \\cap mnbvcxzl) \\\\\nzxcvbnma(poiulkjh \\cup mnbvcxzl \\cup \\{kljhgfds\\}) &= zxcvbnma(poiulkjh) + zxcvbnma(vbnmasdf) - zxcvbnma(poiulkjh \\cap mnbvcxzl),\n\\end{align*}\nfrom which the claim follows immediately.\n\\end{proof}\n\nWe now define $qazwsxed,\\dots,rfvtgbyh$ as follows. If $kljhgfds$ does not appear in any element of kusdqnwz, we put $plmoknji = 0$. Otherwise, by Lemma~1, we can find \n$qzxwvtnp, hjgrksla \\in kusdqnwz$ such that $qzxwvtnp$ is the disjoint union of $hjgrksla$ with $\\{kljhgfds\\}$. We then set $plmoknji = zxcvbnma(qzxwvtnp) - zxcvbnma(hjgrksla)$; by Lemma~2, this does not depend on the choice of $qzxwvtnp,hjgrksla$.\n\nTo check that $zxcvbnma(qzxwvtnp) = \\sum_{kljhgfds \\in qzxwvtnp} plmoknji$ for $qzxwvtnp \\in kusdqnwz$, note first that $\\emptyset \\in kusdqnwz$ by repeated application of (ii) and that $zxcvbnma(\\emptyset) = 0$ by hypothesis. This provides the base case for an induction on the cardinality of $qzxwvtnp$; for any nonempty $qzxwvtnp \\in kusdqnwz$, we may apply (ii) to find $hjgrksla \\subset qzxwvtnp$ such that $qzxwvtnp$ is the disjoint union of $hjgrksla$ and some singleton set $\\{asdfghjk\\}$. By construction and the induction hypothesis, we have $zxcvbnma(qzxwvtnp) = zxcvbnma(hjgrksla) + uytrewqa = asdfghjk + \\sum_{kljhgfds \\in hjgrksla} plmoknji = \\sum_{kljhgfds \\in qzxwvtnp} plmoknji$ as desired."
+    },
+    "kernel_variant": {
+      "question": "Let m be a positive integer and put\nV = {v_1 , v_2 , \\dots , v_m} .\nLet \\Pi  be a non-empty family of subsets of V that satisfies\n(i)  (closure) whenever A , B \\in  \\Pi  we also have A \\cup  B \\in  \\Pi  and A \\cap  B \\in  \\Pi  ;\n(ii) (peeling) whenever A \\in  \\Pi  is non-empty there exists B \\subset  A with |B| = |A| - 1 and B \\in  \\Pi  .\nLet\nF : \\Pi  \\to  Q[t]\nbe a map into the additive group of polynomials with rational coefficients such that\nF(\\emptyset ) = 0 and F(A \\cup  B) = F(A) + F(B) - F(A \\cap  B) (for all A , B \\in  \\Pi ).\nShow that there exist polynomials P_1 (t) , \\ldots  , P_m (t) \\in  Q[t] satisfying\nF(A) = \\sum _{v_i \\in  A} P_i (t) for every A \\in  \\Pi  .",
+      "solution": "We prove that suitable polynomials P_1 (t), \\ldots  , P_m (t) always exist.\n\n1.  Two preliminary lemmas\n\nLemma 1 (minimal singleton decomposition).\nFix an index j for which v_j occurs in at least one member of \\Pi .  There are sets S , T \\in  \\Pi  with\nS = T \\cup  {v_j} and T \\cap  {v_j} = \\emptyset  .\nProof.\nChoose S_0 \\in  \\Pi  containing v_j of minimal cardinality.  By (ii) there is a subset T \\subset  S_0 with |T| = |S_0| - 1 and T \\in  \\Pi .  If T still contained v_j the minimality of S_0 would be contradicted, hence S_0 \\ T = {v_j}.  Put S = S_0. \\blacksquare \n\nLemma 2 (difference independence).\nSuppose S_1 , T_1 , S_2 , T_2 \\in  \\Pi  satisfy for some fixed j\nS_1 = T_1 \\cup  {v_j}, T_1 \\cap  {v_j} = \\emptyset , S_2 = T_2 \\cup  {v_j}, T_2 \\cap  {v_j} = \\emptyset .\nThen   F(S_1) - F(T_1) = F(S_2) - F(T_2).\nProof.\nLet U = T_1 \\cup  T_2.  Because v_j \\notin  T_1 \\cup  T_2 we have S_1 \\cap  T_2 = T_1 \\cap  T_2 and T_1 \\cap  S_2 = T_1 \\cap  T_2.  Apply the inclusion-exclusion identity with pairs (S_1 , T_2) and (T_1 , S_2):\nF(S_1 \\cup  T_2) = F(S_1) + F(T_2) - F(T_1 \\cap  T_2),\nF(T_1 \\cup  S_2) = F(T_1) + F(S_2) - F(T_1 \\cap  T_2).\nBut S_1 \\cup  T_2 = T_1 \\cup  S_2 = U \\cup  {v_j}, so the left-hand sides agree.  Cancelling F(T_1 \\cap  T_2) yields the desired equality. \\blacksquare \n\n2.  Definition of the coefficients P_j\nFor each j = 1 , \\ldots  , m define\nP_j (t) =\n  {  F(S) - F(T)   if v_j belongs to some member of \\Pi , where S , T are as in Lemma 1,\n     0               otherwise.\n  }\nLemma 2 shows that the right-hand side is independent of the particular choice of S and T, so P_j is well-defined.\n\n3.  Verification that F(A) decomposes as required\nWe prove by induction on k = |A| that for every A \\in  \\Pi ,\n(*) F(A) = \\sum _{v_i \\in  A} P_i (t).\n\nBase case k = 0.\nProperty (ii) applied repeatedly to any set in \\Pi  shows that \\emptyset  \\in  \\Pi .  The hypothesis gives F(\\emptyset ) = 0 while the sum on the right-hand side is empty, hence 0; so (*) holds.\n\nInduction step.\nAssume (*) holds for all sets in \\Pi  of size strictly smaller than k \\geq  1.  Fix A \\in  \\Pi  with |A| = k.  By (ii) there exists B \\subset  A with |B| = k - 1 and B \\in  \\Pi .  Choose v_j \\in  A \\ B so that A = B \\cup  {v_j}; then B \\cap  {v_j} = \\emptyset .\n\nBecause A and B have exactly the relation required in Lemma 2, that lemma together with the definition of P_j gives\nF(A) - F(B) = P_j (t).\nHence\nF(A) = F(B) + P_j (t).\nBy the induction hypothesis F(B) = \\sum _{v_i \\in  B} P_i (t), so\nF(A) = \\sum _{v_i \\in  B} P_i (t) + P_j (t) = \\sum _{v_i \\in  A} P_i (t).\nThus (*) is true for every A with |A| = k, completing the induction.\n\nConsequently the polynomials P_1 (t), \\ldots  , P_m (t) satisfy F(A) = \\sum _{v_i \\in  A} P_i (t) for all A \\in  \\Pi , as required. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Minimal-element argument: for any i that appears somewhere, find S,T∈𝓟 with S = T ∪ {i} and T∩{i}=∅ (uses property (ii)).",
+          "Difference-independence lemma: show f(S) − f(T) depends only on i, not on the chosen S,T (uses union/intersection closure plus additivity identity).",
+          "Define f_i for each i as that common difference (or 0 if i never occurs).",
+          "Induct on |S|, peeling off one element with property (ii) to prove f(S)=Σ_{i∈S} f_i."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Size and symbols of the ground set; any finite set of cardinality n works.",
+            "original": "{1,…,n} with parameter n"
+          },
+          "slot2": {
+            "description": "Target space of the function; any abelian group supporting + and − suffices.",
+            "original": "ℝ (the real numbers)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

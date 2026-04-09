@@ -1,0 +1,133 @@
+{
+  "index": "1993-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find the smallest positive integer $n$ such that for every integer $m$\nwith $0 < m < 1993$, there exists an integer $k$ for which\n\\[\n\\frac{m}{1993} < \\frac{k}{n} < \\frac{m+1}{1994}.\n\\]",
+  "solution": "Lemma 1. Suppose \\( a, b, c \\), and \\( d \\) are positive numbers, and \\( \\frac{a}{b}<\\frac{c}{d} \\). Then\n\\[\n\\frac{a}{b}<\\frac{a+c}{b+d}<\\frac{c}{d} .\n\\]\n\nThis lemma is sometimes called the mediant property or the regle des nombres moyens [Nel, pp. 60-61]. It appears without proof in the Triparty en la Science des Nombres, which was written by the French physician Nicholas Chuquet in 1484 (although his work went unpublished until 1880). It is not hard to verify this inequality directly, but there is an even easier way of remembering it: If a sports team wins \\( a \\) of \\( b \\) games in the first half of a season, and \\( c \\) of \\( d \\) games in the second half, then its overall record \\( ((a+c) /(b+d)) \\) is between its records in its two halves \\( (a / b \\) and \\( c / d) \\). Alternatively, Figure 24 gives a \"proof without words.\" For three more proofs without words of this result, see [Nel, pp. 60-61].\n\nSolution 1. By Lemma 1,\n\\[\n\\frac{m}{1993}<\\frac{2 m+1}{3987}<\\frac{m+1}{1994} .\n\\]\n\nWe will show that 3987 is best possible. If\n\\[\n\\frac{1992}{1993}<\\frac{k}{n}<\\frac{1993}{1994}\n\\]\nthen\n\\[\n\\frac{1}{1993}>\\frac{n-k}{n}>\\frac{1}{1994}\n\\]\nso\n\\[\n1993<\\frac{n}{n-k}<1994\n\\]\n\nClearly \\( n-k \\neq 1 \\), so \\( n-k \\geq 2 \\). Thus \\( n>1993(n-k) \\geq 3986 \\), and \\( n \\geq 3987 \\).\nSolution 2. Subtracting everything in the desired inequality from 1, and using the change of variables \\( M=1993-m, K=n-k \\), the problem becomes: determine the smallest positive integer \\( n \\) such that for every integer \\( M \\) with \\( 1993>M>0 \\), there exists an integer \\( K \\) for which\n\\[\n\\frac{M}{1993}>\\frac{K}{n}>\\frac{M}{1994}, \\quad \\text { or equivalently, } \\quad 1993 K<n M<1994 K\n\\]\n\nFor \\( M=1, K \\) cannot be 1 and hence is at least 2 , so \\( n>1993 \\cdot 2=3986 \\). Thus \\( n \\geq 3987 \\). On the other hand \\( n=3987 \\) works, since then for each \\( M, K=2 M \\) satisfies the inequalities.\n\nSolution 3 (Naoki Sato).\nLemma 2. Let \\( a, b, c, d, p \\), and \\( q \\) be positive integers such that \\( a / b<p / q<c / d \\), and \\( b c-a d=1 \\). Then \\( p \\geq a+c \\) and \\( q \\geq b+d \\).\n\nProof. Since \\( b p-a q>0, b p-a q \\geq 1 \\). Also, \\( c q-d p>0 \\), so \\( c q-d p \\geq 1 \\). Hence \\( d(b p-a q)+b(c q-d p) \\geq b+d \\), which simplifies to \\( (b c-a d) q \\geq b+d \\). But \\( b c-a d=1 \\), so \\( q \\geq b+d \\). The proof of \\( p \\geq a+c \\) is similar.\n\nNow\n\\[\n\\frac{1992}{1993}<\\frac{k}{n}<\\frac{1993}{1994}\n\\]\nfor some \\( k \\), and \\( 1993 \\cdot 1993-1992 \\cdot 1994=1 \\), so \\( n \\geq 1993+1994=3987 \\). And \\( n=3987 \\) works, by Lemma 1.",
+  "vars": [
+    "n",
+    "m",
+    "k",
+    "a",
+    "b",
+    "c",
+    "d",
+    "M",
+    "K",
+    "p",
+    "q"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "denomvar",
+        "m": "numervar",
+        "k": "mediavar",
+        "a": "firstvar",
+        "b": "secondvar",
+        "c": "thirdvar",
+        "d": "fourthvar",
+        "M": "capnumer",
+        "K": "capmedia",
+        "p": "compvar",
+        "q": "compden"
+      },
+      "question": "Find the smallest positive integer $denomvar$ such that for every integer $numervar$ with $0 < numervar < 1993$, there exists an integer $mediavar$ for which\n\\[\n\\frac{numervar}{1993} < \\frac{mediavar}{denomvar} < \\frac{numervar+1}{1994}.\n\\]",
+      "solution": "Lemma 1. Suppose \\( firstvar, secondvar, thirdvar \\), and \\( fourthvar \\) are positive numbers, and \\( \\frac{firstvar}{secondvar}<\\frac{thirdvar}{fourthvar} \\). Then\n\\[\n\\frac{firstvar}{secondvar}<\\frac{firstvar+thirdvar}{secondvar+fourthvar}<\\frac{thirdvar}{fourthvar} .\n\\]\n\nThis lemma is sometimes called the mediant property or the regle des nombres moyens [Nel, pp. 60-61]. It appears without proof in the Triparty en la Science des Nombres, which was written by the French physician Nicholas Chuquet in 1484 (although his work went unpublished until 1880). It is not hard to verify this inequality directly, but there is an even easier way of remembering it: If a sports team wins \\( firstvar \\) of \\( secondvar \\) games in the first half of a season, and \\( thirdvar \\) of \\( fourthvar \\) games in the second half, then its overall record \\(((firstvar+thirdvar) /(secondvar+fourthvar))\\) is between its records in its two halves \\( (firstvar / secondvar \\) and \\( thirdvar / fourthvar) \\). Alternatively, Figure 24 gives a \"proof without words.\" For three more proofs without words of this result, see [Nel, pp. 60-61].\n\nSolution 1. By Lemma 1,\n\\[\n\\frac{numervar}{1993}<\\frac{2 numervar+1}{3987}<\\frac{numervar+1}{1994} .\n\\]\n\nWe will show that 3987 is best possible. If\n\\[\n\\frac{1992}{1993}<\\frac{mediavar}{denomvar}<\\frac{1993}{1994}\n\\]\nthen\n\\[\n\\frac{1}{1993}>\\frac{denomvar-mediavar}{denomvar}>\\frac{1}{1994}\n\\]\nso\n\\[\n1993<\\frac{denomvar}{denomvar-mediavar}<1994\n\\]\n\nClearly \\( denomvar-mediavar \\neq 1 \\), so \\( denomvar-mediavar \\geq 2 \\). Thus \\( denomvar>1993(denomvar-mediavar) \\geq 3986 \\), and \\( denomvar \\geq 3987 \\).\n\nSolution 2. Subtracting everything in the desired inequality from 1, and using the change of variables \\( capnumer=1993-numervar, capmedia=denomvar-mediavar \\), the problem becomes: determine the smallest positive integer \\( denomvar \\) such that for every integer \\( capnumer \\) with \\( 1993>capnumer>0 \\), there exists an integer \\( capmedia \\) for which\n\\[\n\\frac{capnumer}{1993}>\\frac{capmedia}{denomvar}>\\frac{capnumer}{1994}, \\quad \\text { or equivalently, } \\quad 1993\\, capmedia<denomvar\\, capnumer<1994\\, capmedia\n\\]\n\nFor \\( capnumer=1, capmedia \\) cannot be 1 and hence is at least 2, so \\( denomvar>1993 \\cdot 2=3986 \\). Thus \\( denomvar \\geq 3987 \\). On the other hand \\( denomvar=3987 \\) works, since then for each \\( capnumer, capmedia=2 capnumer \\) satisfies the inequalities.\n\nSolution 3 (Naoki Sato).\nLemma 2. Let \\( firstvar, secondvar, thirdvar, fourthvar, compvar \\), and \\( compden \\) be positive integers such that \\( firstvar / secondvar<compvar / compden<thirdvar / fourthvar \\), and \\( secondvar\\, thirdvar-firstvar\\, fourthvar=1 \\). Then \\( compvar \\geq firstvar+thirdvar \\) and \\( compden \\geq secondvar+fourthvar \\).\n\nProof. Since \\( secondvar\\, compvar-firstvar\\, compden>0, secondvar\\, compvar-firstvar\\, compden \\geq 1 \\). Also, \\( thirdvar\\, compden-fourthvar\\, compvar>0 \\), so \\( thirdvar\\, compden-fourthvar\\, compvar \\geq 1 \\). Hence \\( fourthvar(secondvar\\, compvar-firstvar\\, compden)+secondvar(thirdvar\\, compden-fourthvar\\, compvar) \\geq secondvar+fourthvar \\), which simplifies to \\( (secondvar\\, thirdvar-firstvar\\, fourthvar)\\, compden \\geq secondvar+fourthvar \\). But \\( secondvar\\, thirdvar-firstvar\\, fourthvar=1 \\), so \\( compden \\geq secondvar+fourthvar \\). The proof of \\( compvar \\geq firstvar+thirdvar \\) is similar.\n\nNow\n\\[\n\\frac{1992}{1993}<\\frac{mediavar}{denomvar}<\\frac{1993}{1994}\n\\]\nfor some \\( mediavar \\), and \\( 1993 \\cdot 1993-1992 \\cdot 1994=1 \\), so \\( denomvar \\geq 1993+1994=3987 \\). And \\( denomvar=3987 \\) works, by Lemma 1."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "m": "honeycomb",
+        "k": "raindrop",
+        "a": "wilderness",
+        "b": "chocolate",
+        "c": "pineapple",
+        "d": "marigold",
+        "M": "butterfly",
+        "K": "caterpillar",
+        "p": "lighthouse",
+        "q": "gingerbread"
+      },
+      "question": "Find the smallest positive integer sunflower such that for every integer honeycomb with $0 < honeycomb < 1993$, there exists an integer raindrop for which\n\\[\n\\frac{honeycomb}{1993} < \\frac{raindrop}{sunflower} < \\frac{honeycomb+1}{1994}.\n\\]",
+      "solution": "Lemma 1. Suppose \\( wilderness, chocolate, pineapple, \\) and \\( marigold \\) are positive numbers, and \\( \\frac{wilderness}{chocolate}<\\frac{pineapple}{marigold} \\). Then\n\\[\n\\frac{wilderness}{chocolate}<\\frac{wilderness+pineapple}{chocolate+marigold}<\\frac{pineapple}{marigold} .\n\\]\n\nThis lemma is sometimes called the mediant property or the regle des nombres moyens [Nel, pp. 60-61]. It appears without proof in the Triparty en la Science des Nombres, which was written by the French physician Nicholas Chuquet in 1484 (although his work went unpublished until 1880). It is not hard to verify this inequality directly, but there is an even easier way of remembering it: If a sports team wins \\( wilderness \\) of \\( chocolate \\) games in the first half of a season, and \\( pineapple \\) of \\( marigold \\) games in the second half, then its overall record \\(((wilderness+pineapple) /(chocolate+marigold))\\) is between its records in its two halves \\( (wilderness / chocolate \\) and \\( pineapple / marigold) \\). Alternatively, Figure 24 gives a \"proof without words.\" For three more proofs without words of this result, see [Nel, pp. 60-61].\n\nSolution 1. By Lemma 1,\n\\[\n\\frac{honeycomb}{1993}<\\frac{2 honeycomb+1}{3987}<\\frac{honeycomb+1}{1994} .\n\\]\n\nWe will show that 3987 is best possible. If\n\\[\n\\frac{1992}{1993}<\\frac{raindrop}{sunflower}<\\frac{1993}{1994}\n\\]\nthen\n\\[\n\\frac{1}{1993}>\\frac{sunflower-raindrop}{sunflower}>\\frac{1}{1994}\n\\]\nso\n\\[\n1993<\\frac{sunflower}{sunflower-raindrop}<1994\n\\]\n\nClearly \\( sunflower-raindrop \\neq 1 \\), so \\( sunflower-raindrop \\geq 2 \\). Thus \\( sunflower>1993(sunflower-raindrop) \\geq 3986 \\), and \\( sunflower \\geq 3987 \\).\n\nSolution 2. Subtracting everything in the desired inequality from 1, and using the change of variables \\( butterfly=1993-honeycomb, caterpillar=sunflower-raindrop \\), the problem becomes: determine the smallest positive integer sunflower such that for every integer butterfly with \\( 1993>butterfly>0 \\), there exists an integer caterpillar for which\n\\[\n\\frac{butterfly}{1993}>\\frac{caterpillar}{sunflower}>\\frac{butterfly}{1994}, \\quad \\text { or equivalently, } \\quad 1993\\, caterpillar<sunflower\\, butterfly<1994\\, caterpillar\n\\]\n\nFor \\( butterfly=1, caterpillar \\) cannot be 1 and hence is at least 2 , so \\( sunflower>1993 \\cdot 2=3986 \\). Thus \\( sunflower \\geq 3987 \\). On the other hand \\( sunflower=3987 \\) works, since then for each butterfly, \\( caterpillar=2 butterfly \\) satisfies the inequalities.\n\nSolution 3 (Naoki Sato).\nLemma 2. Let \\( wilderness, chocolate, pineapple, marigold, lighthouse, \\) and \\( gingerbread \\) be positive integers such that \\( wilderness / chocolate<lighthouse / gingerbread<pineapple / marigold \\), and \\( chocolate\\, pineapple-wilderness\\, marigold=1 \\). Then \\( lighthouse \\geq wilderness+pineapple \\) and \\( gingerbread \\geq chocolate+marigold \\).\n\nProof. Since \\( chocolate\\, lighthouse-wilderness\\, gingerbread>0, chocolate\\, lighthouse-wilderness\\, gingerbread \\geq 1 \\). Also, \\( pineapple\\, gingerbread-marigold\\, lighthouse>0 \\), so \\( pineapple\\, gingerbread-marigold\\, lighthouse \\geq 1 \\). Hence \\( marigold(chocolate\\, lighthouse-wilderness\\, gingerbread)+chocolate(pineapple\\, gingerbread-marigold\\, lighthouse) \\geq chocolate+marigold \\), which simplifies to \\( (chocolate\\, pineapple-wilderness\\, marigold)\\, gingerbread \\geq chocolate+marigold \\). But \\( chocolate\\, pineapple-wilderness\\, marigold=1 \\), so \\( gingerbread \\geq chocolate+marigold \\). The proof of \\( lighthouse \\geq wilderness+pineapple \\) is similar.\n\nNow\n\\[\n\\frac{1992}{1993}<\\frac{raindrop}{sunflower}<\\frac{1993}{1994}\n\\]\nfor some \\( raindrop \\), and \\( 1993 \\cdot 1993-1992 \\cdot 1994=1 \\), so \\( sunflower \\geq 1993+1994=3987 \\). And \\( sunflower=3987 \\) works, by Lemma 1."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "enormousvalue",
+        "m": "maximalvalue",
+        "k": "constantval",
+        "a": "negativequant",
+        "b": "numerator",
+        "c": "minimumquant",
+        "d": "topnumerator",
+        "M": "additivepart",
+        "K": "staticnumber",
+        "p": "dormantvalue",
+        "q": "integeronly"
+      },
+      "question": "Find the smallest positive integer $enormousvalue$ such that for every integer $maximalvalue$ with $0 < maximalvalue < 1993$, there exists an integer $constantval$ for which\n\\[\n\\frac{maximalvalue}{1993} < \\frac{constantval}{enormousvalue} < \\frac{maximalvalue+1}{1994}.\n\\]",
+      "solution": "Lemma 1. Suppose \\( negativequant, numerator, minimumquant \\), and \\( topnumerator \\) are positive numbers, and \\( \\frac{negativequant}{numerator}<\\frac{minimumquant}{topnumerator} \\). Then\n\\[\n\\frac{negativequant}{numerator}<\\frac{negativequant+minimumquant}{numerator+topnumerator}<\\frac{minimumquant}{topnumerator} .\n\\]\n\nThis lemma is sometimes called the mediant property or the regle des nombres moyens [Nel, pp. 60-61]. It appears without proof in the Triparty en la Science des Nombres, which was written by the French physician Nicholas Chuquet in 1484 (although his work went unpublished until 1880). It is not hard to verify this inequality directly, but there is an even easier way of remembering it: If a sports team wins \\( negativequant \\) of \\( numerator \\) games in the first half of a season, and \\( minimumquant \\) of \\( topnumerator \\) games in the second half, then its overall record \\( ((negativequant+minimumquant) /(numerator+topnumerator)) \\) is between its records in its two halves \\( (negativequant / numerator \\) and \\( minimumquant / topnumerator) \\). Alternatively, Figure 24 gives a \"proof without words.\" For three more proofs without words of this result, see [Nel, pp. 60-61].\n\nSolution 1. By Lemma 1,\n\\[\n\\frac{maximalvalue}{1993}<\\frac{2 maximalvalue+1}{3987}<\\frac{maximalvalue+1}{1994} .\n\\]\n\nWe will show that 3987 is best possible. If\n\\[\n\\frac{1992}{1993}<\\frac{constantval}{enormousvalue}<\\frac{1993}{1994}\n\\]\nthen\n\\[\n\\frac{1}{1993}>\\frac{enormousvalue-constantval}{enormousvalue}>\\frac{1}{1994}\n\\]\nso\n\\[\n1993<\\frac{enormousvalue}{enormousvalue-constantval}<1994\n\\]\n\nClearly \\( enormousvalue-constantval \\neq 1 \\), so \\( enormousvalue-constantval \\geq 2 \\). Thus \\( enormousvalue>1993(enormousvalue-constantval) \\geq 3986 \\), and \\( enormousvalue \\geq 3987 \\).\n\nSolution 2. Subtracting everything in the desired inequality from 1, and using the change of variables \\( additivepart=1993-maximalvalue, staticnumber=enormousvalue-constantval \\), the problem becomes: determine the smallest positive integer \\( enormousvalue \\) such that for every integer \\( additivepart \\) with \\( 1993>additivepart>0 \\), there exists an integer \\( staticnumber \\) for which\n\\[\n\\frac{additivepart}{1993}>\\frac{staticnumber}{enormousvalue}>\\frac{additivepart}{1994}, \\quad \\text { or equivalently, } \\quad 1993\\,staticnumber<enormousvalue\\,additivepart<1994\\,staticnumber\n\\]\n\nFor \\( additivepart=1, staticnumber \\) cannot be 1 and hence is at least 2, so \\( enormousvalue>1993 \\cdot 2=3986 \\). Thus \\( enormousvalue \\geq 3987 \\). On the other hand \\( enormousvalue=3987 \\) works, since then for each \\( additivepart, staticnumber=2 additivepart \\) satisfies the inequalities.\n\nSolution 3 (Naoki Sato).\nLemma 2. Let \\( negativequant, numerator, minimumquant, topnumerator, dormantvalue \\), and \\( integeronly \\) be positive integers such that \\( negativequant / numerator<dormantvalue / integeronly<minimumquant / topnumerator \\), and \\( numerator minimumquant-negativequant topnumerator=1 \\). Then \\( dormantvalue \\geq negativequant+minimumquant \\) and \\( integeronly \\geq numerator+topnumerator \\).\n\nProof. Since \\( numerator dormantvalue-negativequant integeronly>0, numerator dormantvalue-negativequant integeronly \\geq 1 \\). Also, \\( minimumquant integeronly-topnumerator dormantvalue>0 \\), so \\( minimumquant integeronly-topnumerator dormantvalue \\geq 1 \\). Hence \\( topnumerator(numerator dormantvalue-negativequant integeronly)+numerator(minimumquant integeronly-topnumerator dormantvalue) \\geq numerator+topnumerator \\), which simplifies to \\( (numerator minimumquant-negativequant topnumerator) integeronly \\geq numerator+topnumerator \\). But \\( numerator minimumquant-negativequant topnumerator=1 \\), so \\( integeronly \\geq numerator+topnumerator \\). The proof of \\( dormantvalue \\geq negativequant+minimumquant \\) is similar.\n\nNow\n\\[\n\\frac{1992}{1993}<\\frac{constantval}{enormousvalue}<\\frac{1993}{1994}\n\\]\nfor some \\( constantval \\), and \\( 1993 \\cdot 1993-1992 \\cdot 1994=1 \\), so \\( enormousvalue \\geq 1993+1994=3987 \\). And \\( enormousvalue=3987 \\) works, by Lemma 1."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "hqvtrmns",
+        "m": "bjkzplqr",
+        "k": "dsfwneug",
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "vredfyuj",
+        "d": "plmoknij",
+        "M": "cvbhasre",
+        "K": "lfdtgqpo",
+        "p": "rnsmkegu",
+        "q": "sithdopa"
+      },
+      "question": "Find the smallest positive integer $hqvtrmns$ such that for every integer $bjkzplqr$\nwith $0 < bjkzplqr < 1993$, there exists an integer $dsfwneug$ for which\n\\[\n\\frac{bjkzplqr}{1993} < \\frac{dsfwneug}{hqvtrmns} < \\frac{bjkzplqr+1}{1994}.\n\\]\n",
+      "solution": "Lemma 1. Suppose \\( qzxwvtnp, hjgrksla, vredfyuj \\), and \\( plmoknij \\) are positive numbers, and \\( \\frac{qzxwvtnp}{hjgrksla}<\\frac{vredfyuj}{plmoknij} \\). Then\n\\[\n\\frac{qzxwvtnp}{hjgrksla}<\\frac{qzxwvtnp+vredfyuj}{hjgrksla+plmoknij}<\\frac{vredfyuj}{plmoknij} .\n\\]\n\nThis lemma is sometimes called the mediant property or the regle des nombres moyens [Nel, pp. 60-61]. It appears without proof in the Triparty en la Science des Nombres, which was written by the French physician Nicholas Chuquet in 1484 (although his work went unpublished until 1880). It is not hard to verify this inequality directly, but there is an even easier way of remembering it: If a sports team wins \\( qzxwvtnp \\) of \\( hjgrksla \\) games in the first half of a season, and \\( vredfyuj \\) of \\( plmoknij \\) games in the second half, then its overall record \\( ((qzxwvtnp+vredfyuj) /(hjgrksla+plmoknij)) \\) is between its records in its two halves \\( (qzxwvtnp / hjgrksla \\) and \\( vredfyuj / plmoknij) \\). Alternatively, Figure 24 gives a \"proof without words.\" For three more proofs without words of this result, see [Nel, pp. 60-61].\n\nSolution 1. By Lemma 1,\n\\[\n\\frac{bjkzplqr}{1993}<\\frac{2 bjkzplqr+1}{3987}<\\frac{bjkzplqr+1}{1994} .\n\\]\n\nWe will show that 3987 is best possible. If\n\\[\n\\frac{1992}{1993}<\\frac{dsfwneug}{hqvtrmns}<\\frac{1993}{1994}\n\\]\nthen\n\\[\n\\frac{1}{1993}>\\frac{hqvtrmns-dsfwneug}{hqvtrmns}>\\frac{1}{1994}\n\\]\nso\n\\[\n1993<\\frac{hqvtrmns}{hqvtrmns-dsfwneug}<1994\n\\]\n\nClearly \\( hqvtrmns-dsfwneug \\neq 1 \\), so \\( hqvtrmns-dsfwneug \\geq 2 \\). Thus \\( hqvtrmns>1993(hqvtrmns-dsfwneug) \\geq 3986 \\), and \\( hqvtrmns \\geq 3987 \\).\n\nSolution 2. Subtracting everything in the desired inequality from 1, and using the change of variables \\( cvbhasre=1993-bjkzplqr, lfdtgqpo=hqvtrmns-dsfwneug \\), the problem becomes: determine the smallest positive integer \\( hqvtrmns \\) such that for every integer \\( cvbhasre \\) with \\( 1993>cvbhasre>0 \\), there exists an integer \\( lfdtgqpo \\) for which\n\\[\n\\frac{cvbhasre}{1993}>\\frac{lfdtgqpo}{hqvtrmns}>\\frac{cvbhasre}{1994}, \\quad \\text { or equivalently, } \\quad 1993 lfdtgqpo<hqvtrmns cvbhasre<1994 lfdtgqpo\n\\]\n\nFor \\( cvbhasre=1, lfdtgqpo \\) cannot be 1 and hence is at least 2 , so \\( hqvtrmns>1993 \\cdot 2=3986 \\). Thus \\( hqvtrmns \\geq 3987 \\). On the other hand \\( hqvtrmns=3987 \\) works, since then for each \\( cvbhasre, lfdtgqpo=2 cvbhasre \\) satisfies the inequalities.\n\nSolution 3 (Naoki Sato).\nLemma 2. Let \\( qzxwvtnp, hjgrksla, vredfyuj, plmoknij, rnsmkegu \\), and \\( sithdopa \\) be positive integers such that \\( qzxwvtnp / hjgrksla<rnsmkegu / sithdopa<vredfyuj / plmoknij \\), and \\( hjgrksla vredfyuj-qzxwvtnp plmoknij=1 \\). Then \\( rnsmkegu \\geq qzxwvtnp+vredfyuj \\) and \\( sithdopa \\geq hjgrksla+plmoknij \\).\n\nProof. Since \\( hjgrksla rnsmkegu-qzxwvtnp sithdopa>0, hjgrksla rnsmkegu-qzxwvtnp sithdopa \\geq 1 \\). Also, \\( vredfyuj sithdopa-plmoknij rnsmkegu>0 \\), so \\( vredfyuj sithdopa-plmoknij rnsmkegu \\geq 1 \\). Hence \\( plmoknij(hjgrksla rnsmkegu-qzxwvtnp sithdopa)+hjgrksla(vredfyuj sithdopa-plmoknij rnsmkegu) \\geq hjgrksla+plmoknij \\), which simplifies to \\( (hjgrksla vredfyuj-qzxwvtnp plmoknij) sithdopa \\geq hjgrksla+plmoknij \\). But \\( hjgrksla vredfyuj-qzxwvtnp plmoknij=1 \\), so \\( sithdopa \\geq hjgrksla+plmoknij \\). The proof of \\( rnsmkegu \\geq qzxwvtnp+vredfyuj \\) is similar.\n\nNow\n\\[\n\\frac{1992}{1993}<\\frac{dsfwneug}{hqvtrmns}<\\frac{1993}{1994}\n\\]\nfor some \\( dsfwneug \\), and \\( 1993 \\cdot 1993-1992 \\cdot 1994=1 \\), so \\( hqvtrmns \\geq 1993+1994=3987 \\). And \\( hqvtrmns=3987 \\) works, by Lemma 1.\n"
+    },
+    "kernel_variant": {
+      "question": "Determine the smallest positive integer \\(n\\) such that for every integer \\(m\\) with\n\\[\n0 < m < 3141 ,\n\\]\nthere exists an integer \\(k\\) for which\n\\[\n\\frac{m}{3141} < \\frac{k}{n} < \\frac{m+1}{3142} .\n\\]",
+      "solution": "Let d=3141; thus the two given endpoints are the consecutive fractions m/d and (m+1)/(d+1).\n\n1. (Mediant step) By the mediant property, for any real numbers a/b < c/d one has\n   a/b < (a+c)/(b+d) < c/d.\n   Taking a=m, b=d, c=m+1, d=d+1 we learn that any fraction whose numerator and denominator are obtained by adding the corresponding numerators and denominators of the endpoints will lie strictly between the endpoints.\n\n2. (A convenient choice of k,n) Put\n   k = 2m+1,  n = 2d+1 = 2\\cdot 3141+1 = 6283.\n   Then\n     k/n = (2m+1)/(2d+1) = (m+(m+1))/(d+(d+1)),\n   exactly the mediant of m/d and (m+1)/(d+1).  Consequently\n     m/d < k/n < (m+1)/(d+1),\n   i.e.\n     m/3141 < (2m+1)/6283 < (m+1)/3142\n   for every admissible m.  Hence n=6283 works.\n\n3. (Minimality of 6283) It remains to show that no smaller n can do the job.  Consider the extremal value m=d-1=3140.  Any suitable fraction k/n must then satisfy\n   3140/3141 < k/n < 3141/3142.\nRe-writing this gives\n   1/3141 > (n-k)/n > 1/3142,\nhence\n   3141 < n/(n-k) < 3142.\nBecause n-k is a positive integer, it cannot equal 1; therefore n-k \\geq  2 and\n   n > 3141\\cdot 2 = 6282.\nThus every admissible n must satisfy n \\geq  6283.\n\nSince n=6283 actually works (step 2) and no smaller n can work, the least possible value is\n   6283.",
+      "_meta": {
+        "core_steps": [
+          "Apply the mediant property to consecutive fractions m/d and (m+1)/(d+1).",
+          "Set k = 2m + 1 and n = 2d + 1 to guarantee m/d < k/n < (m+1)/(d+1).",
+          "Verify the above choice works for every admissible m.",
+          "Use the extremal case m = d − 1 to derive an inequality that forces n ≥ 2d + 1.",
+          "Conclude the minimal n equals 2d + 1."
+        ],
+        "mutable_slots": {
+          "slot_denominator_d": {
+            "description": "the initial fixed denominator in the given interval endpoints",
+            "original": 1993
+          },
+          "slot_consecutive_denominator": {
+            "description": "the second denominator, constrained to be d + 1",
+            "original": 1994
+          },
+          "slot_candidate_n": {
+            "description": "constructed minimal n value (2d + 1)",
+            "original": 3987
+          },
+          "slot_k_formula_factor": {
+            "description": "multiplicative factor in k = (factor)·m + 1",
+            "original": 2
+          },
+          "slot_extreme_m": {
+            "description": "m chosen for the lower-bound argument (d − 1)",
+            "original": 1992
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

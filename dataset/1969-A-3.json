@@ -1,0 +1,139 @@
+{
+  "index": "1969-A-3",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "A-3. Let \\( P \\) be a non-self-intersecting closed polygon with \\( n \\) sides. Let its vertices be \\( P_{1} \\), \\( P_{2}, \\cdots, P_{n} \\). Let \\( m \\) other points, \\( Q_{1}, Q_{2}, \\cdots, Q_{m} \\) interior to \\( P \\) be given. Let the figure be triangulated. This means that certain pairs of the \\( (n+m) \\) points \\( P_{1}, \\cdots, Q_{m} \\) are connected by line segments such that (i) the resulting figure consists exclusively of a set \\( T \\) of triangles, (ii) if two different triangles in \\( T \\) have more than a vertex in common then they have exactly a side in common, and (iii) the set of vertices of the triangles in \\( T \\) is precisely the set of ( \\( n+m \\) ) points \\( P_{1}, \\cdots, Q_{m} \\). How many triangles in \\( T \\) ?",
+  "solution": "A-3 Let \\( t \\) be the number of triangles. The sum of all the angles is \\( \\pi t \\) (since it is \\( \\pi \\) for each triangle) and it is also \\( 2 \\pi m+(n-2) \\pi \\).\n\nAlternate Solution: Let \\( t \\) be the number of triangles. In Euler's formula \\( V-E+F=2, F=t+1 \\), and \\( V=n+m \\). Since every edge is on two faces, \\( 2 E \\) \\( =3 t+n \\). Substitution leads directly to the answer \\( t=2 m+n-2 \\).\n\nComment: It should have been stated in the problem that the interior of the polygon is triangulated. If any of the additional line segments are outside of the polygon, the answer is different.",
+  "vars": [
+    "P",
+    "P_1",
+    "P_2",
+    "P_n",
+    "Q",
+    "Q_1",
+    "Q_2",
+    "Q_m",
+    "T",
+    "t",
+    "V",
+    "E",
+    "F"
+  ],
+  "params": [
+    "n",
+    "m"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P": "polygonp",
+        "P_1": "vertexpone",
+        "P_2": "vertexptwo",
+        "P_n": "vertexplast",
+        "Q": "pointqset",
+        "Q_1": "pointqone",
+        "Q_2": "pointqtwo",
+        "Q_m": "pointqlast",
+        "T": "triangleset",
+        "t": "trianglecnt",
+        "V": "vertexcount",
+        "E": "edgecount",
+        "F": "facecount",
+        "n": "sidescount",
+        "m": "interiorpts"
+      },
+      "question": "A-3. Let \\( polygonp \\) be a non-self-intersecting closed polygon with \\( sidescount \\) sides. Let its vertices be \\( vertexpone \\), \\( vertexptwo, \\cdots , vertexplast \\). Let \\( interiorpts \\) other points, \\( pointqone, pointqtwo, \\cdots , pointqlast \\) interior to \\( polygonp \\) be given. Let the figure be triangulated. This means that certain pairs of the \\( (sidescount+interiorpts) \\) points \\( vertexpone, \\cdots , pointqlast \\) are connected by line segments such that (i) the resulting figure consists exclusively of a set \\( triangleset \\) of triangles, (ii) if two different triangles in \\( triangleset \\) have more than a vertex in common then they have exactly a side in common, and (iii) the set of vertices of the triangles in \\( triangleset \\) is precisely the set of \\( (sidescount+interiorpts) \\) points \\( vertexpone, \\cdots , pointqlast \\). How many triangles are in \\( triangleset \\) ?",
+      "solution": "Let \\( trianglecnt \\) be the number of triangles. The sum of all the angles is \\( \\pi\\, trianglecnt \\) (since it is \\( \\pi \\) for each triangle) and it is also \\( 2\\pi \\, interiorpts + (sidescount-2)\\pi \\). \n\nAlternate Solution: Let \\( trianglecnt \\) be the number of triangles. In Euler's formula \\( vertexcount-edgecount+facecount=2,\\; facecount=trianglecnt+1 \\), and \\( vertexcount=sidescount+interiorpts \\). Since every edge is on two faces, \\( 2\\, edgecount = 3\\, trianglecnt + sidescount \\). Substitution leads directly to the answer \\( trianglecnt = 2\\, interiorpts + sidescount - 2 \\).\n\nComment: It should have been stated in the problem that the interior of the polygon is triangulated. If any of the additional line segments are outside of the polygon, the answer is different."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P": "snowflake",
+        "P_1": "turnpike",
+        "P_2": "scarecrow",
+        "P_n": "sideboard",
+        "Q": "daydream",
+        "Q_1": "marshland",
+        "Q_2": "blackbird",
+        "Q_m": "toothpick",
+        "T": "rainstorm",
+        "t": "weeknight",
+        "V": "loudspeaker",
+        "E": "groundwork",
+        "F": "afterglow",
+        "n": "moonlight",
+        "m": "lighthouse"
+      },
+      "question": "A-3. Let \\( snowflake \\) be a non-self-intersecting closed polygon with \\( moonlight \\) sides. Let its vertices be \\( turnpike \\), \\( scarecrow, \\cdots, sideboard \\). Let \\( lighthouse \\) other points, \\( marshland, blackbird, \\cdots, toothpick \\) interior to \\( snowflake \\) be given. Let the figure be triangulated. This means that certain pairs of the \\( (moonlight+lighthouse) \\) points \\( turnpike, \\cdots, toothpick \\) are connected by line segments such that (i) the resulting figure consists exclusively of a set \\( rainstorm \\) of triangles, (ii) if two different triangles in \\( rainstorm \\) have more than a vertex in common then they have exactly a side in common, and (iii) the set of vertices of the triangles in \\( rainstorm \\) is precisely the set of ( \\( moonlight+lighthouse \\) ) points \\( turnpike, \\cdots, toothpick \\). How many triangles in \\( rainstorm \\) ?",
+      "solution": "Let \\( weeknight \\) be the number of triangles. The sum of all the angles is \\( \\pi weeknight \\) (since it is \\( \\pi \\) for each triangle) and it is also \\( 2 \\pi lighthouse+(moonlight-2) \\pi \\).\n\nAlternate Solution: Let \\( weeknight \\) be the number of triangles. In Euler's formula \\( loudspeaker-groundwork+afterglow=2,\\; afterglow=weeknight+1 \\), and \\( loudspeaker=moonlight+lighthouse \\). Since every edge is on two faces, \\( 2 groundwork=3 weeknight+moonlight \\). Substitution leads directly to the answer \\( weeknight=2 lighthouse+moonlight-2 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P": "smoothcurve",
+        "P_1": "outervertexone",
+        "P_2": "outervertextwo",
+        "P_n": "outervertexlast",
+        "Q": "boundarypoint",
+        "Q_1": "boundarypointone",
+        "Q_2": "boundarypointtwo",
+        "Q_m": "boundarypointmany",
+        "T": "quadrilaterals",
+        "t": "quadcount",
+        "V": "voidcount",
+        "E": "emptiness",
+        "F": "solidfaces",
+        "n": "infinitude",
+        "m": "nonecount"
+      },
+      "question": "A-3. Let \\( smoothcurve \\) be a non-self-intersecting closed polygon with \\( infinitude \\) sides. Let its vertices be \\( outervertexone \\), \\( outervertextwo, \\cdots, outervertexlast \\). Let \\( nonecount \\) other points, \\( boundarypointone, boundarypointtwo, \\cdots, boundarypointmany \\) interior to \\( smoothcurve \\) be given. Let the figure be triangulated. This means that certain pairs of the \\( (infinitude+nonecount) \\) points \\( outervertexone, \\cdots, boundarypointmany \\) are connected by line segments such that (i) the resulting figure consists exclusively of a set \\( quadrilaterals \\) of triangles, (ii) if two different triangles in \\( quadrilaterals \\) have more than a vertex in common then they have exactly a side in common, and (iii) the set of vertices of the triangles in \\( quadrilaterals \\) is precisely the set of ( \\( infinitude+nonecount \\) ) points \\( outervertexone, \\cdots, boundarypointmany \\). How many triangles in \\( quadrilaterals \\) ?",
+      "solution": "A-3 Let \\( quadcount \\) be the number of triangles. The sum of all the angles is \\( \\pi quadcount \\) (since it is \\( \\pi \\) for each triangle) and it is also \\( 2 \\pi nonecount+(infinitude-2) \\pi \\).\n\nAlternate Solution: Let \\( quadcount \\) be the number of triangles. In Euler's formula \\( voidcount-emptiness+solidfaces=2, solidfaces=quadcount+1 \\), and \\( voidcount=infinitude+nonecount \\). Since every edge is on two faces, \\( 2 emptiness =3 quadcount+infinitude \\). Substitution leads directly to the answer \\( quadcount=2 nonecount+infinitude-2 \\).\n\nComment: It should have been stated in the problem that the interior of the polygon is triangulated. If any of the additional line segments are outside of the polygon, the answer is different."
+    },
+    "garbled_string": {
+      "map": {
+        "P": "qzxwvtnp",
+        "P_1": "hjgrksla",
+        "P_2": "dfnqwert",
+        "P_n": "bvlcmasd",
+        "Q": "tgerplkc",
+        "Q_1": "mnxqvoba",
+        "Q_2": "wpehjkru",
+        "Q_m": "yasdfghj",
+        "T": "klyuiozx",
+        "t": "avrcewdq",
+        "V": "plmoknij",
+        "E": "xcvzbnma",
+        "F": "qwertyui",
+        "n": "sdfghjkl",
+        "m": "poiuytre"
+      },
+      "question": "A-3. Let \\( qzxwvtnp \\) be a non-self-intersecting closed polygon with \\( sdfghjkl \\) sides. Let its vertices be \\( hjgrksla \\), \\( dfnqwert, \\cdots, bvlcmasd \\). Let \\( poiuytre \\) other points, \\( mnxqvoba, wpehjkru, \\cdots, yasdfghj \\) interior to \\( qzxwvtnp \\) be given. Let the figure be triangulated. This means that certain pairs of the \\( (sdfghjkl+poiuytre) \\) points \\( hjgrksla, \\cdots, yasdfghj \\) are connected by line segments such that (i) the resulting figure consists exclusively of a set \\( klyuiozx \\) of triangles, (ii) if two different triangles in \\( klyuiozx \\) have more than a vertex in common then they have exactly a side in common, and (iii) the set of vertices of the triangles in \\( klyuiozx \\) is precisely the set of ( \\( sdfghjkl+poiuytre \\) ) points \\( hjgrksla, \\cdots, yasdfghj \\). How many triangles in \\( klyuiozx \\) ?",
+      "solution": "A-3 Let \\( avrcewdq \\) be the number of triangles. The sum of all the angles is \\( \\pi avrcewdq \\) (since it is \\( \\pi \\) for each triangle) and it is also \\( 2 \\pi poiuytre+(sdfghjkl-2) \\pi \\).\n\nAlternate Solution: Let \\( avrcewdq \\) be the number of triangles. In Euler's formula \\( plmoknij-xcvzbnma+qwertyui=2,\\; qwertyui=avrcewdq+1 \\), and \\( plmoknij=sdfghjkl+poiuytre \\). Since every edge is on two faces, \\( 2\\,xcvzbnma =3\\,avrcewdq+sdfghjkl \\). Substitution leads directly to the answer \\( avrcewdq=2\\,poiuytre+sdfghjkl-2 \\).\n\nComment: It should have been stated in the problem that the interior of the polygon is triangulated. If any of the additional line segments are outside of the polygon, the answer is different."
+    },
+    "kernel_variant": {
+      "question": "Fix integers  \n\n* g \\geq  0  (genus of the surface),  \n* q \\geq  1  (number of boundary components),  \n* b_1,b_2,\\ldots ,b_q \\geq  3  (number of marked vertices on each boundary component), and  \n* k \\geq  0  (number of additional marked points in the interior).  \n\nLet \\Sigma  be a compact, connected, orientable surface of genus g whose boundary \\partial \\Sigma  is the disjoint union of q components  \n\n C_1 \\sqcup  C_2 \\sqcup  \\cdots  \\sqcup  C_q.  \n\nOn C_i the vertices  \n\n B_{i,1},B_{i,2},\\ldots ,B_{i,b_i}  \n\nare marked in this cyclic order (all distinct), so that \\partial \\Sigma  already consists of b_i directed edges on C_i.  \nInside the open surface \\Sigma ^\\circ lie further marked points  \n\n P_1,P_2,\\ldots ,P_k.  \n\nSet  \n N := (b_1+\\cdots +b_q) + k,  B := b_1+\\cdots +b_q.\n\nA finite collection A of pairwise disjoint open arcs is added that joins certain pairs among the N marked points and satisfies\n\n1. Each arc \\gamma  \\in  A is embedded, its interior lies in \\Sigma ^\\circ (no point of \\gamma , except possibly its endpoints, is on the boundary), and \\gamma  is not contained in \\partial \\Sigma .  \n2. The 0-cells of the resulting figure are exactly the N marked points; no further vertices are created.  \n3. Together, the arcs of A and the boundary edges on \\partial \\Sigma  form a finite CW-decomposition of \\Sigma  in which every 2-cell is a topological triangle.  \n4. Any two distinct triangles either are disjoint, meet in a single vertex, or meet in a single edge (no other overlaps).\n\n(Thus an arc is allowed to join  \n * two boundary vertices (a diagonal),  \n * one boundary and one interior vertex, or  \n * two interior vertices,  \nprovided its interior stays in \\Sigma ^\\circ and does not coincide with a boundary edge.)\n\nLet t denote the number of triangular 2-cells produced by such a triangulation.\n\nDetermine t explicitly in terms of  \n\n g, q, k, and B = b_1+\\cdots +b_q.\n\n------------------------------------------------------",
+      "solution": "Step 1.  Basic counts.  \nLet  \n\n V = number of vertices,  \n E = number of edges,  \n F = number of 2-cells (= triangles) = t.\n\nBy construction the vertex set is precisely {B_{i,j}} \\cup  {P_s}, so  \n\n V = B + k. (1)\n\nSeparate the edges into two types.\n\n* Boundary edges: the b_i original polygon edges that lie on \\partial \\Sigma ; their total number is B.  \n\n* Non-boundary edges (also called interior edges): every edge whose interior is contained in \\Sigma ^\\circ.  \n  Denote their number by I.\n\nConsequently  \n\n E = I + B. (2)\n\nStep 2.  Relating I and t.  \nEach triangle contributes 3 edge-incidences.  \nA boundary edge is incident with exactly one triangle, a non-boundary edge with exactly two.  \nHence  \n\n 3t = 2I + B. (3)\n\nStep 3.  Euler characteristic.  \nThe Euler characteristic of \\Sigma  is  \n\n \\chi (\\Sigma ) = 2 - 2g - q. (4)\n\nFor any finite CW-decomposition we have \\chi  = V - E + F, so using (1), (2) and F = t,\n\n (V) - (E) + (F) = (B+k) - (I+B) + t = k - I + t = 2 - 2g - q. (5)\n\nStep 4.  Eliminate I.  \nInsert (3) into (5):\n\n k - (3t - B)/2 + t = 2 - 2g - q.\n\nMultiply by 2:\n\n 2k - 3t + B + 2t = 4 - 4g - 2q.\n\nSimplify:\n\n 2k - t + B = 4 - 4g - 2q\n\n t = 2k + B - 4 + 4g + 2q. (6)\n\nStep 5.  Final expression.  \nRemembering B = b_1 + \\cdots  + b_q we obtain\n\n t = (b_1 + b_2 + \\cdots  + b_q) + 2k - 4 + 2q + 4g\n\n   = (B - 4) + 2q + 4g + 2k. (7)\n\nEquation (7) gives the exact number of triangles in every triangulation satisfying the stated rules; it depends only on the topological data (g,q) and the number of marked points on and inside the boundary, not on the particular placement of arcs.\n\n------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.583255",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Topological Generalisation.  \n   The original problem concerned a singly-connected planar region (a disc).  \n   The enhanced variant is set on an arbitrary orientable surface of genus g with q boundary components.  The solver must know and use the Euler characteristic  \n   χ = 2 − 2g − q, a substantially deeper topological concept.\n\n2. Multiple Boundary Components.  \n   Handling q disjoint boundary polygons instead of a single outer polygon forces the solver to keep track of several boundary cycles simultaneously and to recognise that each contributes both vertices and Euler-characteristic terms.\n\n3. Additional Algebraic Unknowns.  \n   Introducing interior vs. boundary edges and employing double-counting in the presence of many boundary components increases the algebraic complexity.  The required elimination of variables is longer and more delicate than in the planar disc case.\n\n4. Necessity of Advanced Techniques.  \n   Whereas the original kernel could be dispatched with a routine planar Euler formula, here the solver must combine topology (Euler characteristic for surfaces with boundary), combinatorial counting (edge-incidence relations), and algebraic manipulation.  Simple pattern matching or memorised formulas are insufficient.\n\n5. Consistency Check with Classical Result.  \n   The solver is also expected to verify that the derived expression reduces correctly to the classical formula t = B + 2k − 2 when g = 0 and q = 1, demanding an additional layer of conceptual control."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix integers  \n\n* g \\geq  0  (genus of the surface),  \n* q \\geq  1  (number of boundary components),  \n* b_1,b_2,\\ldots ,b_q \\geq  3  (number of marked vertices on each boundary component), and  \n* k \\geq  0  (number of additional marked points in the interior).  \n\nLet \\Sigma  be a compact, connected, orientable surface of genus g whose boundary \\partial \\Sigma  is the disjoint union of q components  \n\n C_1 \\sqcup  C_2 \\sqcup  \\cdots  \\sqcup  C_q.  \n\nOn C_i the vertices  \n\n B_{i,1},B_{i,2},\\ldots ,B_{i,b_i}  \n\nare marked in this cyclic order (all distinct), so that \\partial \\Sigma  already consists of b_i directed edges on C_i.  \nInside the open surface \\Sigma ^\\circ lie further marked points  \n\n P_1,P_2,\\ldots ,P_k.  \n\nSet  \n N := (b_1+\\cdots +b_q) + k,  B := b_1+\\cdots +b_q.\n\nA finite collection A of pairwise disjoint open arcs is added that joins certain pairs among the N marked points and satisfies\n\n1. Each arc \\gamma  \\in  A is embedded, its interior lies in \\Sigma ^\\circ (no point of \\gamma , except possibly its endpoints, is on the boundary), and \\gamma  is not contained in \\partial \\Sigma .  \n2. The 0-cells of the resulting figure are exactly the N marked points; no further vertices are created.  \n3. Together, the arcs of A and the boundary edges on \\partial \\Sigma  form a finite CW-decomposition of \\Sigma  in which every 2-cell is a topological triangle.  \n4. Any two distinct triangles either are disjoint, meet in a single vertex, or meet in a single edge (no other overlaps).\n\n(Thus an arc is allowed to join  \n * two boundary vertices (a diagonal),  \n * one boundary and one interior vertex, or  \n * two interior vertices,  \nprovided its interior stays in \\Sigma ^\\circ and does not coincide with a boundary edge.)\n\nLet t denote the number of triangular 2-cells produced by such a triangulation.\n\nDetermine t explicitly in terms of  \n\n g, q, k, and B = b_1+\\cdots +b_q.\n\n------------------------------------------------------",
+      "solution": "Step 1.  Basic counts.  \nLet  \n\n V = number of vertices,  \n E = number of edges,  \n F = number of 2-cells (= triangles) = t.\n\nBy construction the vertex set is precisely {B_{i,j}} \\cup  {P_s}, so  \n\n V = B + k. (1)\n\nSeparate the edges into two types.\n\n* Boundary edges: the b_i original polygon edges that lie on \\partial \\Sigma ; their total number is B.  \n\n* Non-boundary edges (also called interior edges): every edge whose interior is contained in \\Sigma ^\\circ.  \n  Denote their number by I.\n\nConsequently  \n\n E = I + B. (2)\n\nStep 2.  Relating I and t.  \nEach triangle contributes 3 edge-incidences.  \nA boundary edge is incident with exactly one triangle, a non-boundary edge with exactly two.  \nHence  \n\n 3t = 2I + B. (3)\n\nStep 3.  Euler characteristic.  \nThe Euler characteristic of \\Sigma  is  \n\n \\chi (\\Sigma ) = 2 - 2g - q. (4)\n\nFor any finite CW-decomposition we have \\chi  = V - E + F, so using (1), (2) and F = t,\n\n (V) - (E) + (F) = (B+k) - (I+B) + t = k - I + t = 2 - 2g - q. (5)\n\nStep 4.  Eliminate I.  \nInsert (3) into (5):\n\n k - (3t - B)/2 + t = 2 - 2g - q.\n\nMultiply by 2:\n\n 2k - 3t + B + 2t = 4 - 4g - 2q.\n\nSimplify:\n\n 2k - t + B = 4 - 4g - 2q\n\n t = 2k + B - 4 + 4g + 2q. (6)\n\nStep 5.  Final expression.  \nRemembering B = b_1 + \\cdots  + b_q we obtain\n\n t = (b_1 + b_2 + \\cdots  + b_q) + 2k - 4 + 2q + 4g\n\n   = (B - 4) + 2q + 4g + 2k. (7)\n\nEquation (7) gives the exact number of triangles in every triangulation satisfying the stated rules; it depends only on the topological data (g,q) and the number of marked points on and inside the boundary, not on the particular placement of arcs.\n\n------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.469833",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Topological Generalisation.  \n   The original problem concerned a singly-connected planar region (a disc).  \n   The enhanced variant is set on an arbitrary orientable surface of genus g with q boundary components.  The solver must know and use the Euler characteristic  \n   χ = 2 − 2g − q, a substantially deeper topological concept.\n\n2. Multiple Boundary Components.  \n   Handling q disjoint boundary polygons instead of a single outer polygon forces the solver to keep track of several boundary cycles simultaneously and to recognise that each contributes both vertices and Euler-characteristic terms.\n\n3. Additional Algebraic Unknowns.  \n   Introducing interior vs. boundary edges and employing double-counting in the presence of many boundary components increases the algebraic complexity.  The required elimination of variables is longer and more delicate than in the planar disc case.\n\n4. Necessity of Advanced Techniques.  \n   Whereas the original kernel could be dispatched with a routine planar Euler formula, here the solver must combine topology (Euler characteristic for surfaces with boundary), combinatorial counting (edge-incidence relations), and algebraic manipulation.  Simple pattern matching or memorised formulas are insufficient.\n\n5. Consistency Check with Classical Result.  \n   The solver is also expected to verify that the derived expression reduces correctly to the classical formula t = B + 2k − 2 when g = 0 and q = 1, demanding an additional layer of conceptual control."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

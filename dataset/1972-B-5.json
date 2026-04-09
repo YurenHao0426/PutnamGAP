@@ -1,0 +1,131 @@
+{
+  "index": "1972-B-5",
+  "type": "GEO",
+  "tag": [
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "B-5. If the opposite angles of a skew (non-planar) quadrilateral are equal in pairs, prove that the opposite sides are equal in pairs.",
+  "solution": "B-5 For the skew quadrilateral \\( A B C D \\), let \\( A B=a, B C=b, C D=c \\), \\( D A=d, A C=x, B D=y \\). None of these lengths can be zero. By the law of cosines:\n\\[\n\\frac{a^{2}+b^{2}-x^{2}}{a b}=\\frac{c^{2}+d^{2}-x^{2}}{c d}\n\\]\nor \\( (a b-c d) x^{2}=(b c-a d)(a c-b d) \\). Similarly, \\( (a d-b c) y^{2}=(c d-a b)(a c-b d) \\).\nCase 1: \\( a b-c d=0 \\).\nThen, \\( a d-b c=0 \\) and \\( a=c, b=d \\).\nCase 2: \\( a b-c d \\neq 0 \\).\nThen, \\( b c-a d \\neq 0, a c-b d \\neq 0 \\) and \\( x^{2} y^{2}=(a c-b d)^{2} \\). Consequently,\n\\[\na c=x y+b d \\text { or } b d=a c+x y .\n\\]\n\nBy Ptolemy's Theorem (in space), \\( A B C D \\) must be concyclic which violates the skew condition.\n\nAlternate Solution: If \\( A C=B C \\) and \\( A D=B D \\), the conclusion that \\( A C=B D \\) and \\( B C=A D \\) is obvious (see Figure 2) so assume \\( A C \\neq B C \\). With this assumption we first show \\( B D=A C \\). If \\( B D \\neq A C \\) there exists a unique point \\( D^{*} \\) in the plane of \\( \\triangle A D B \\) with \\( B D^{*}=A C, A D^{*}=C B . \\angle A D^{*} B=\\angle A C B=\\theta \\). From \\( \\triangle \\) 's \\( A D E \\) and \\( B D^{*} E \\) it follows that \\( \\angle D A E=\\angle D^{*} B E \\).\n\nFig. 2\nFrom the congruent \\( \\triangle \\) 's \\( C D^{*} A \\) and \\( C D^{*} B \\) it follows that \\( \\angle C A D^{*}=\\angle C B D^{*} \\). These angle equalities prove that the trihedral angles \\( A-C D D^{*} \\) and \\( B-C D D^{*} \\) are congruent. Hence the angle which \\( \\overrightarrow{C A} \\) makes with the plane \\( A D D^{*} \\) is equal to the angle \\( \\overrightarrow{C B} \\) makes with the plane \\( B D D^{*} \\) (which is the plane \\( A D D^{*} \\) ). If \\( H \\) is the foot of the altitude from \\( C \\) to this plane the \\( \\triangle \\) 's \\( C H A \\) and \\( C H B \\) are congruent right triangles. That is \\( A C=C B \\). This is a contradiction and \\( B D=A C \\).\n\nInterchanging the roles of \\( B \\) and \\( A \\) in the above shows that \\( A D=B C \\).",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "x",
+    "y",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "H",
+    "\\\\theta"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "sideab",
+        "b": "sidebc",
+        "c": "sidecd",
+        "d": "sideda",
+        "x": "diagac",
+        "y": "diagbd",
+        "A": "vertexa",
+        "B": "vertexb",
+        "C": "vertexc",
+        "D": "vertexd",
+        "E": "vertexe",
+        "H": "vertexh",
+        "\\theta": "angletheta"
+      },
+      "question": "B-5. If the opposite angles of a skew (non-planar) quadrilateral are equal in pairs, prove that the opposite sides are equal in pairs.",
+      "solution": "B-5 For the skew quadrilateral \\( vertexa\\, vertexb\\, vertexc\\, vertexd \\), let \\( vertexa vertexb = sideab,\\; vertexb vertexc = sidebc,\\; vertexc vertexd = sidecd,\\; vertexd vertexa = sideda,\\; vertexa vertexc = diagac,\\; vertexb vertexd = diagbd \\). None of these lengths can be zero.\nBy the law of cosines:\n\\[\n\\frac{sideab^{2}+sidebc^{2}-diagac^{2}}{sideab\\, sidebc}=\\frac{sidecd^{2}+sideda^{2}-diagac^{2}}{sidecd\\, sideda}\n\\]\nor \\( (sideab\\, sidebc-sidecd\\, sideda)\\, diagac^{2}=(sidebc\\, sidecd-sideab\\, sideda)(sideab\\, sidecd-sidebc\\, sideda) \\). Similarly,\n\\( (sideab\\, sideda-sidebc\\, sidecd)\\, diagbd^{2}=(sidecd\\, sideab-sideab\\, sidebc)(sideab\\, sidecd-sidebc\\, sideda) \\).\n\nCase 1: \\( sideab\\, sidebc-sidecd\\, sideda=0 \\).\nThen \\( sideab\\, sideda-sidebc\\, sidecd=0 \\) and \\( sideab=sidecd,\\; sidebc=sideda \\).\n\nCase 2: \\( sideab\\, sidebc-sidecd\\, sideda\\neq0 \\).\nThen \\( sidebc\\, sidecd-sideab\\, sideda\\neq0,\\; sideab\\, sidecd-sidebc\\, sideda\\neq0 \\) and\n\\( diagac^{2} diagbd^{2}=(sideab\\, sidecd-sidebc\\, sideda)^{2} \\). Consequently,\n\\[\nsideab\\, sidecd = diagac\\, diagbd + sidebc\\, sideda \\quad \\text{or} \\quad sidebc\\, sideda = sideab\\, sidecd + diagac\\, diagbd .\n\\]\n\nBy Ptolemy's Theorem (in space), \\( vertexa\\, vertexb\\, vertexc\\, vertexd \\) must be concyclic, which violates the skew condition.\n\nAlternate Solution: If \\( vertexa vertexc = vertexb vertexc \\) and \\( vertexa vertexd = vertexb vertexd \\), the conclusion that \\( vertexa vertexc = vertexb vertexd \\) and \\( vertexb vertexc = vertexa vertexd \\) is obvious (see Figure 2), so assume \\( vertexa vertexc \\neq vertexb vertexc \\). With this assumption we first show \\( vertexb vertexd = vertexa vertexc \\). If \\( vertexb vertexd \\neq vertexa vertexc \\) there exists a unique point \\( vertexd^{*} \\) in the plane of \\( \\triangle vertexa vertexd vertexb \\) with \\( vertexb vertexd^{*}=vertexa vertexc,\\; vertexa vertexd^{*}=vertexc vertexb .\\; \\angle vertexa vertexd^{*} vertexb = \\angle vertexa vertexc vertexb = angletheta \\). From the triangles \\( vertexa vertexd vertexe \\) and \\( vertexb vertexd^{*} vertexe \\) it follows that \\( \\angle vertexd vertexa vertexe = \\angle vertexd^{*} vertexb vertexe \\).\n\nFig. 2\nFrom the congruent triangles \\( vertexc vertexd^{*} vertexa \\) and \\( vertexc vertexd^{*} vertexb \\) it follows that \\( \\angle vertexc vertexa vertexd^{*} = \\angle vertexc vertexb vertexd^{*} \\). These angle equalities prove that the trihedral angles \\( vertexa-vertexc vertexd vertexd^{*} \\) and \\( vertexb-vertexc vertexd vertexd^{*} \\) are congruent. Hence the angle which \\( \\overrightarrow{vertexc vertexa} \\) makes with the plane \\( vertexa vertexd vertexd^{*} \\) is equal to the angle \\( \\overrightarrow{vertexc vertexb} \\) makes with the plane \\( vertexb vertexd vertexd^{*} \\) (which is the plane \\( vertexa vertexd vertexd^{*} \\) ). If \\( vertexh \\) is the foot of the altitude from \\( vertexc \\) to this plane, the triangles \\( vertexc vertexh vertexa \\) and \\( vertexc vertexh vertexb \\) are congruent right triangles. That is, \\( vertexa vertexc = vertexc vertexb \\). This is a contradiction, and \\( vertexb vertexd = vertexa vertexc \\).\n\nInterchanging the roles of \\( vertexb \\) and \\( vertexa \\) in the above shows that \\( vertexa vertexd = vertexb vertexc \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "marigold",
+        "b": "chestnut",
+        "c": "plankton",
+        "d": "silicate",
+        "x": "evergreen",
+        "y": "graphite",
+        "A": "cinnamon",
+        "B": "juniperus",
+        "C": "valencia",
+        "D": "zirconia",
+        "E": "hemlocke",
+        "H": "foxglove",
+        "\\theta": "alabaster"
+      },
+      "question": "B-5. If the opposite angles of a skew (non-planar) quadrilateral are equal in pairs, prove that the opposite sides are equal in pairs.",
+      "solution": "B-5 For the skew quadrilateral \\( cinnamon\\ juniperus\\ valencia\\ zirconia \\), let \\( cinnamon juniperus=marigold, juniperus valencia=chestnut, valencia zirconia=plankton \\), \\( zirconia cinnamon=silicate, cinnamon valencia=evergreen, juniperus zirconia=graphite \\). None of these lengths can be zero. By the law of cosines:\n\\[\n\\frac{marigold^{2}+chestnut^{2}-evergreen^{2}}{marigold\\ chestnut}=\\frac{plankton^{2}+silicate^{2}-evergreen^{2}}{plankton\\ silicate}\n\\]\nor \\( (marigold\\ chestnut-plankton\\ silicate)\\ evergreen^{2}=(chestnut\\ plankton-marigold\\ silicate)(marigold\\ valencia-chestnut\\ zirconia) \\). Similarly, \\( (marigold\\ silicate-chestnut\\ plankton)\\ graphite^{2}=(plankton\\ silicate-marigold\\ chestnut)(marigold\\ valencia-chestnut\\ zirconia) \\).\nCase 1: \\( marigold\\ chestnut-plankton\\ silicate=0 \\).\nThen, \\( marigold\\ silicate-chestnut\\ plankton=0 \\) and \\( marigold=plankton, chestnut=silicate \\).\nCase 2: \\( marigold\\ chestnut-plankton\\ silicate \\neq 0 \\).\nThen, \\( chestnut\\ plankton-marigold\\ silicate \\neq 0, marigold\\ valencia-chestnut\\ zirconia \\neq 0 \\) and \\( evergreen^{2}\\ graphite^{2}=(marigold\\ valencia-chestnut\\ zirconia)^{2} \\). Consequently,\n\\[\nmarigold\\ valencia=evergreen\\ graphite+chestnut\\ zirconia \\text { or } chestnut\\ zirconia=marigold\\ valencia+evergreen\\ graphite .\n\\]\n\nBy Ptolemy's Theorem (in space), \\( cinnamon\\ juniperus\\ valencia\\ zirconia \\) must be concyclic which violates the skew condition.\n\nAlternate Solution: If \\( cinnamon valencia=juniperus valencia \\) and \\( cinnamon zirconia=juniperus zirconia \\), the conclusion that \\( cinnamon valencia=juniperus zirconia \\) and \\( juniperus valencia=cinnamon zirconia \\) is obvious (see Figure 2) so assume \\( cinnamon valencia \\neq juniperus valencia \\). With this assumption we first show \\( juniperus zirconia=cinnamon valencia \\). If \\( juniperus zirconia \\neq cinnamon valencia \\) there exists a unique point \\( zirconia^{*} \\) in the plane of \\( \\triangle cinnamon zirconia juniperus \\) with \\( juniperus zirconia^{*}=cinnamon valencia, cinnamon zirconia^{*}=valencia juniperus . \\angle cinnamon zirconia^{*} juniperus=\\angle cinnamon valencia juniperus=alabaster \\). From \\( \\triangle \\)'s \\( cinnamon zirconia hemlocke \\) and \\( juniperus zirconia^{*} hemlocke \\) it follows that \\( \\angle zirconia cinnamon hemlocke=\\angle zirconia^{*} juniperus hemlocke \\).\n\nFig. 2\nFrom the congruent \\( \\triangle \\)'s \\( valencia zirconia^{*} cinnamon \\) and \\( valencia zirconia^{*} juniperus \\) it follows that \\( \\angle valencia cinnamon zirconia^{*}=\\angle valencia juniperus zirconia^{*} \\). These angle equalities prove that the trihedral angles \\( cinnamon-valencia zirconia zirconia^{*} \\) and \\( juniperus-valencia zirconia zirconia^{*} \\) are congruent. Hence the angle which \\( \\overrightarrow{valencia cinnamon} \\) makes with the plane \\( cinnamon zirconia zirconia^{*} \\) is equal to the angle \\( \\overrightarrow{valencia juniperus} \\) makes with the plane \\( juniperus zirconia zirconia^{*} \\) (which is the plane \\( cinnamon zirconia zirconia^{*} \\) ). If \\( foxglove \\) is the foot of the altitude from \\( valencia \\) to this plane the \\( \\triangle \\)'s \\( valencia foxglove cinnamon \\) and \\( valencia foxglove juniperus \\) are congruent right triangles. That is \\( cinnamon valencia=valencia juniperus \\). This is a contradiction and \\( juniperus zirconia=cinnamon valencia \\).\n\nInterchanging the roles of \\( juniperus \\) and \\( cinnamon \\) in the above shows that \\( cinnamon zirconia=juniperus valencia \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "centerline",
+        "b": "corepath",
+        "c": "inradius",
+        "d": "medianlen",
+        "x": "parallelgap",
+        "y": "collinearbit",
+        "A": "planeface",
+        "B": "surfacept",
+        "C": "areaunit",
+        "D": "volumepix",
+        "E": "linepulse",
+        "H": "voidspace",
+        "\\theta": "straightness"
+      },
+      "question": "B-5. If the opposite angles of a skew (non-planar) quadrilateral are equal in pairs, prove that the opposite sides are equal in pairs.",
+      "solution": "B-5 For the skew quadrilateral \\( planeface surfacept areaunit volumepix \\), let \\( planeface surfacept=centerline, surfacept areaunit=corepath, areaunit volumepix=inradius \\), \\( volumepix planeface=medianlen, planeface areaunit=parallelgap, surfacept volumepix=collinearbit \\). None of these lengths can be zero. By the law of cosines:\n\\[\n\\frac{centerline^{2}+corepath^{2}-parallelgap^{2}}{centerline\\ corepath}=\\frac{inradius^{2}+medianlen^{2}-parallelgap^{2}}{inradius\\ medianlen}\n\\]\nor \\( (centerline\\ corepath-inradius\\ medianlen) parallelgap^{2}=(corepath\\ inradius-centerline\\ medianlen)(centerline\\ inradius-corepath\\ medianlen) \\). Similarly, \\( (centerline\\ medianlen-corepath\\ inradius) collinearbit^{2}=(inradius\\ medianlen-centerline\\ corepath)(centerline\\ inradius-corepath\\ medianlen) \\).\nCase 1: \\( centerline\\ corepath-inradius\\ medianlen=0 \\).\nThen, \\( centerline\\ medianlen-corepath\\ inradius=0 \\) and \\( centerline=inradius, corepath=medianlen \\).\nCase 2: \\( centerline\\ corepath-inradius\\ medianlen \\neq 0 \\).\nThen, \\( corepath\\ inradius-centerline\\ medianlen \\neq 0, centerline\\ inradius-corepath\\ medianlen \\neq 0 \\) and \\( parallelgap^{2} collinearbit^{2}=(centerline\\ inradius-corepath\\ medianlen)^{2} \\). Consequently,\n\\[\ncenterline\\ inradius=parallelgap\\ collinearbit+corepath\\ medianlen \\text { or } corepath\\ medianlen=centerline\\ inradius+parallelgap\\ collinearbit .\n\\]\n\nBy Ptolemy's Theorem (in space), \\( planeface surfacept areaunit volumepix \\) must be concyclic which violates the skew condition.\n\nAlternate Solution: If \\( planeface areaunit=surfacept areaunit \\) and \\( planeface volumepix=surfacept volumepix \\), the conclusion that \\( planeface areaunit=surfacept volumepix \\) and \\( surfacept areaunit=planeface volumepix \\) is obvious (see Figure 2) so assume \\( planeface areaunit \\neq surfacept areaunit \\). With this assumption we first show \\( surfacept volumepix=planeface areaunit \\). If \\( surfacept volumepix \\neq planeface areaunit \\) there exists a unique point \\( volumepix^{*} \\) in the plane of \\( \\triangle planeface volumepix surfacept \\) with \\( surfacept volumepix^{*}=planeface areaunit, planeface volumepix^{*}=areaunit surfacept . \\angle planeface volumepix^{*} surfacept=\\angle planeface areaunit surfacept=straightness \\). From \\( \\triangle \\)'s \\( planeface volumepix linepulse \\) and \\( surfacept volumepix^{*} linepulse \\) it follows that \\( \\angle volumepix planeface linepulse=\\angle volumepix^{*} surfacept linepulse \\).\n\nFig. 2\nFrom the congruent \\( \\triangle \\)'s \\( areaunit volumepix^{*} planeface \\) and \\( areaunit volumepix^{*} surfacept \\) it follows that \\( \\angle areaunit planeface volumepix^{*}=\\angle areaunit surfacept volumepix^{*} \\). These angle equalities prove that the trihedral angles \\( planeface-areaunit volumepix volumepix^{*} \\) and \\( surfacept-areaunit volumepix volumepix^{*} \\) are congruent. Hence the angle which \\( \\overrightarrow{areaunit planeface} \\) makes with the plane \\( planeface volumepix volumepix^{*} \\) is equal to the angle \\( \\overrightarrow{areaunit surfacept} \\) makes with the plane \\( surfacept volumepix volumepix^{*} \\) (which is the plane \\( planeface volumepix volumepix^{*} \\) ). If \\( voidspace \\) is the foot of the altitude from \\( areaunit \\) to this plane the \\( \\triangle \\)'s \\( areaunit voidspace planeface \\) and \\( areaunit voidspace surfacept \\) are congruent right triangles. That is \\( planeface areaunit=areaunit surfacept \\). This is a contradiction and \\( surfacept volumepix=planeface areaunit \\).\n\nInterchanging the roles of \\( surfacept \\) and \\( planeface \\) in the above shows that \\( planeface volumepix=surfacept areaunit \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "vcnljtfz",
+        "b": "qlfkdmre",
+        "c": "zufnwxtc",
+        "d": "hbsgyrkd",
+        "x": "pwaglyse",
+        "y": "caskdrmi",
+        "A": "qzxwvtnp",
+        "B": "ehtnqslg",
+        "C": "vlpeyasi",
+        "D": "udqkrbjo",
+        "E": "jdctafwe",
+        "H": "wgmsvihz",
+        "\\theta": "kzsqafnm"
+      },
+      "question": "B-5. If the opposite angles of a skew (non-planar) quadrilateral are equal in pairs, prove that the opposite sides are equal in pairs.",
+      "solution": "B-5 For the skew quadrilateral \\( qzxwvtnp ehtnqslg vlpeyasi udqkrbjo \\), let \\( qzxwvtnp ehtnqslg=vcnljtfz, ehtnqslg vlpeyasi=qlfkdmre, vlpeyasi udqkrbjo=zufnwxtc \\), \\( udqkrbjo qzxwvtnp=hbsgyrkd, qzxwvtnp vlpeyasi=pwaglyse, ehtnqslg udqkrbjo=caskdrmi \\). None of these lengths can be zero. By the law of cosines:\n\\[\n\\frac{vcnljtfz^{2}+qlfkdmre^{2}-pwaglyse^{2}}{vcnljtfz\\,qlfkdmre}=\\frac{zufnwxtc^{2}+hbsgyrkd^{2}-pwaglyse^{2}}{zufnwxtc\\,hbsgyrkd}\n\\]\nor \\( (vcnljtfz\\,qlfkdmre-zufnwxtc\\,hbsgyrkd)\\,pwaglyse^{2}=(qlfkdmre\\,zufnwxtc-vcnljtfz\\,hbsgyrkd)(vcnljtfz\\,zufnwxtc-qlfkdmre\\,hbsgyrkd) \\). Similarly, \\( (vcnljtfz\\,hbsgyrkd-qlfkdmre\\,zufnwxtc)\\,caskdrmi^{2}=(zufnwxtc\\,hbsgyrkd-vcnljtfz\\,qlfkdmre)(vcnljtfz\\,zufnwxtc-qlfkdmre\\,hbsgyrkd) \\).\nCase 1: \\( vcnljtfz\\,qlfkdmre-zufnwxtc\\,hbsgyrkd=0 \\).\nThen, \\( vcnljtfz\\,hbsgyrkd-qlfkdmre\\,zufnwxtc=0 \\) and \\( vcnljtfz=zufnwxtc,\\; qlfkdmre=hbsgyrkd \\).\nCase 2: \\( vcnljtfz\\,qlfkdmre-zufnwxtc\\,hbsgyrkd\\neq0 \\).\nThen, \\( qlfkdmre\\,zufnwxtc-vcnljtfz\\,hbsgyrkd\\neq0,\\; vcnljtfz\\,zufnwxtc-qlfkdmre\\,hbsgyrkd\\neq0 \\) and \\( pwaglyse^{2}caskdrmi^{2}=(vcnljtfz\\,zufnwxtc-qlfkdmre\\,hbsgyrkd)^{2} \\). Consequently,\n\\[\nvcnljtfz\\,zufnwxtc=pwaglyse\\,caskdrmi+qlfkdmre\\,hbsgyrkd \\text{ or } qlfkdmre\\,hbsgyrkd=vcnljtfz\\,zufnwxtc+pwaglyse\\,caskdrmi .\n\\]\n\nBy Ptolemy's Theorem (in space), \\( qzxwvtnp ehtnqslg vlpeyasi udqkrbjo \\) must be concyclic which violates the skew condition.\n\nAlternate Solution: If \\( qzxwvtnp vlpeyasi=ehtnqslg vlpeyasi \\) and \\( qzxwvtnp udqkrbjo=ehtnqslg udqkrbjo \\), the conclusion that \\( qzxwvtnp vlpeyasi=ehtnqslg udqkrbjo \\) and \\( ehtnqslg vlpeyasi=qzxwvtnp udqkrbjo \\) is obvious (see Figure 2) so assume \\( qzxwvtnp vlpeyasi\\neq ehtnqslg vlpeyasi \\). With this assumption we first show \\( ehtnqslg udqkrbjo=qzxwvtnp vlpeyasi \\). If \\( ehtnqslg udqkrbjo\\neq qzxwvtnp vlpeyasi \\) there exists a unique point \\( udqkrbjo^{*} \\) in the plane of \\( \\triangle qzxwvtnp udqkrbjo ehtnqslg \\) with \\( ehtnqslg udqkrbjo^{*}=qzxwvtnp vlpeyasi,\\; qzxwvtnp udqkrbjo^{*}=vlpeyasi ehtnqslg .\\; \\angle qzxwvtnp udqkrbjo^{*} ehtnqslg=\\angle qzxwvtnp vlpeyasi ehtnqslg=kzsqafnm \\). From \\( \\triangle \\)'s \\( qzxwvtnp udqkrbjo jdctafwe \\) and \\( ehtnqslg udqkrbjo^{*} jdctafwe \\) it follows that \\( \\angle udqkrbjo qzxwvtnp jdctafwe=\\angle udqkrbjo^{*} ehtnqslg jdctafwe \\).\n\nFig. 2\nFrom the congruent \\( \\triangle \\)'s \\( vlpeyasi udqkrbjo^{*} qzxwvtnp \\) and \\( vlpeyasi udqkrbjo^{*} ehtnqslg \\) it follows that \\( \\angle vlpeyasi qzxwvtnp udqkrbjo^{*}=\\angle vlpeyasi ehtnqslg udqkrbjo^{*} \\). These angle equalities prove that the trihedral angles \\( qzxwvtnp-vlpeyasi udqkrbjo udqkrbjo^{*} \\) and \\( ehtnqslg-vlpeyasi udqkrbjo udqkrbjo^{*} \\) are congruent. Hence the angle which \\( \\overrightarrow{vlpeyasi qzxwvtnp} \\) makes with the plane \\( qzxwvtnp udqkrbjo udqkrbjo^{*} \\) is equal to the angle \\( \\overrightarrow{vlpeyasi ehtnqslg} \\) makes with the plane \\( ehtnqslg udqkrbjo udqkrbjo^{*} \\) (which is the plane \\( qzxwvtnp udqkrbjo udqkrbjo^{*} \\) ). If \\( wgmsvihz \\) is the foot of the altitude from \\( vlpeyasi \\) to this plane the \\( \\triangle \\)'s \\( vlpeyasi wgmsvihz qzxwvtnp \\) and \\( vlpeyasi wgmsvihz ehtnqslg \\) are congruent right triangles. That is \\( qzxwvtnp vlpeyasi=vlpeyasi ehtnqslg \\). This is a contradiction and \\( ehtnqslg udqkrbjo=qzxwvtnp vlpeyasi \\).\n\nInterchanging the roles of \\( ehtnqslg \\) and \\( qzxwvtnp \\) in the above shows that \\( qzxwvtnp udqkrbjo=ehtnqslg vlpeyasi \\)."
+    },
+    "kernel_variant": {
+      "question": "Let P, Q, R, S be four points in space, no three of which are collinear and which do not all lie in the same plane; in other words, the quadrilateral P-Q-R-S is skew.  Suppose that the two pairs of opposite angles are equal\n              \\angle PQR = \\angle RSP   and   \\angle QRP = \\angle SPQ.\nProve that the two pairs of opposite sides are equal:\n              PQ = RS   and   QR = SP.",
+      "solution": "Denote the six edge-lengths by\n        PQ = a ,   QR = b ,   RS = c ,   SP = d ,   PR = e ,   QS = f > 0.\n\nThe hypotheses are\n        \\angle PQR = \\angle RSP   and   \\angle QRP = \\angle SPQ.          (1)\n\n1.  Two cosine identities.\n    *  In \\Delta PQR and \\Delta RSP,\n          (a^2 + b^2 - e^2)/(2ab) = (c^2 + d^2 - e^2)/(2cd)\n       \\Rightarrow  cd(a^2 + b^2 - e^2) = ab(c^2 + d^2 - e^2)\n       \\Rightarrow  (ab - cd) e^2 = (bc - ad)(ac - bd).              (2)\n\n    *  In \\Delta QRP and \\Delta SPQ,\n          (b^2 + e^2 - a^2)/(2be) = (d^2 + a^2 - f^2)/(2da)\n       \\Rightarrow  da(b^2 + e^2 - a^2) = be(d^2 + a^2 - f^2)\n       \\Rightarrow  (ad - bc) f^2 = (cd - ab)(ac - bd).              (3)\n\n2.  Two cases.\n\n   CASE 1  ab = cd.\n   ------------------------------------\n   Putting ab = cd into (2) gives (bc - ad)(ac - bd) = 0.  At first sight either\n        (i)  bc = ad    or    (ii)  ac = bd              (4)\n   might hold.  Identity (3) tells us which one is possible: with ab = cd,\n       (3) becomes   (ad - bc) f^2 = 0.\n   Because f > 0, it forces ad - bc = 0, i.e.  bc = ad.  Thus only (i) in (4) can occur; the alternative (ii) is impossible.\n\n   We now have\n          ab = cd   and   bc = ad.                      (5)\n   Dividing the first equality by b\\cdot c and the second by b\\cdot d gives\n          a/c = d/b   and   b/a = d/c.                  (6)\n   Multiply the two equalities in (6):\n          (a/c)(b/a) = (d/b)(d/c)  \\Rightarrow   b/c = d^2/(bc).\n   Multiplying by bc yields   b^2 = d^2  \\Rightarrow   b = d (all lengths are positive).\n   Substituting b = d into ab = cd gives   a = c.\n   Hence\n           PQ = RS   and   QR = SP.                     (7)\n\n   CASE 2  ab \\neq  cd.\n   ------------------------------------\n   In this case none of the three factors ab - cd, ad - bc, ac - bd vanishes, so from (2) and (3) we may divide by them.  Multiplying (2) and (3) gives\n        (ab - cd)(ad - bc)e^2f^2 = (bc - ad)(cd - ab)(ac - bd)^2.\n   Note bc - ad = -(ad - bc) and cd - ab = -(ab - cd); the two factors on the right cancel the two on the left, leaving\n        e^2f^2 = (ac - bd)^2   \\Rightarrow    ef = |ac - bd|.          (8)\n   Exactly one of\n        (i)  ac \\geq  bd  with  ef = ac - bd,   or\n        (ii) ac <  bd  with  ef = bd - ac                (9)\n   can occur.\n\n3.  The spatial Ptolemy inequality.\n   For any four points in \\mathbb{R}^3 (Finsler-Hadwiger inequality)\n        PR\\cdot QS \\leq  PQ\\cdot RS + QR\\cdot SP,\n   with equality iff the four points are coplanar and cyclic.\n   Together with its cyclic permutations we have\n   (P_1)  PR\\cdot QS \\leq  PQ\\cdot RS + QR\\cdot SP,\n   (P_2)  PQ\\cdot RS \\leq  QR\\cdot SP + PR\\cdot QS,\n   (P_3)  QR\\cdot SP \\leq  PQ\\cdot RS + PR\\cdot QS.                         (10)\n\n4.  Elimination of Case 2.\n   *  Sub-case (i):  ac \\geq  bd (so ef = ac - bd).\n       Substitute ef in (P_2):\n           ac \\leq  (ac - bd) + bd = ac.\n       Equality holds, forcing coplanarity of P, Q, R, S - impossible for a skew quadrilateral.\n\n   *  Sub-case (ii):  ac < bd (so ef = bd - ac).\n       Substitute in (P_3):\n           bd \\leq  ac + (bd - ac) = bd,\n       again with equality and the same contradiction.\n\n   Therefore Case 2 cannot happen.\n\n5.  Conclusion.\n   Only Case 1 is possible, and (7) shows that the opposite sides are equal:\n              PQ = RS   and   QR = SP. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Translate the equal-angle conditions into two equalities of cosines via the Law of Cosines in ΔABC, ΔCDA and in ΔBCD, ΔDAB.",
+          "Re-arrange to obtain (ab−cd)x² = (bc−ad)(ac−bd) and (ad−bc)y² = (cd−ab)(ac−bd).",
+          "Case-split: if ab = cd (hence ad = bc) the opposite sides are immediately equal.",
+          "Else deduce x²y² = (ac−bd)², i.e. xy = ac ± bd, which is the equality case of Ptolemy’s inequality in space.",
+          "Equality in Ptolemy forces the four points to be coplanar; this contradicts ‘skew’, so only the first case survives and opposite sides are equal."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Names/labels of the four vertices used to trace the quadrilateral (currently A, B, C, D in order).",
+            "original": "A, B, C, D"
+          },
+          "slot2": {
+            "description": "Symbols chosen for the four side-lengths and the two diagonals; any distinct non-zero positive variables would work.",
+            "original": "a=AB, b=BC, c=CD, d=DA, x=AC, y=BD"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

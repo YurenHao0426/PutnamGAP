@@ -1,0 +1,126 @@
+{
+  "index": "1963-B-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "3. Find every twice-differentiable real-valued function \\( f \\) with domain the set of all real numbers and satisfying the functional equation\n\\[\n(f(x))^{2}-(f(y))^{2}=f(x+y) f(x-y)\n\\]\nfor all real numbers \\( x \\) and \\( y \\).",
+  "solution": "Solution. If we put \\( x=y=0 \\) in the given relation, we find \\( f(0)=0 \\). Then differentiating the given relation, first with respect to \\( x \\) and then with respect to \\( y \\) we get\n\\[\n\\begin{aligned}\n2 f(x) f^{\\prime}(x) & =f^{\\prime}(x+y) f(x-y)+f(x+y) f^{\\prime}(x-y) \\\\\n0 & =f^{\\prime \\prime}(x+y) f(x-y)-f(x+y) f^{\\prime \\prime}(x-y)\n\\end{aligned}\n\\]\n\nNow for any \\( u \\) and \\( v \\) we can choose \\( x=\\frac{1}{2}(u+v), y=\\frac{1}{2}(u-v) \\); then\n\\[\nf^{\\prime \\prime}(u) f(v)=f(u) f^{\\prime \\prime}(v)\n\\]\n\nIf there is a point \\( v_{0} \\) such that \\( f\\left(v_{0}\\right) \\neq 0 \\) and if \\( c=f^{\\prime \\prime}\\left(v_{0}\\right) / f\\left(v_{0}\\right) \\), then we can write (1) as\n\\[\nf^{\\prime \\prime}(u)=c f(u)\n\\]\n\nThis differential equation along with the initial condition \\( f(0)=0 \\) has three types of solutions\n\\[\n\\begin{aligned}\nf(u) & =A \\sinh k u & & \\text { if } c>0, \\quad c=k^{2} \\\\\n& =A u & & \\text { if } c=0 \\\\\n& =A \\sin k u & & \\text { if } c<0, \\quad c=-k^{2}\n\\end{aligned}\n\\]\n\nWe note that the possibility \\( f(v) \\equiv 0 \\) is included in these cases when \\( A=0 \\).\n\nAll three types are indeed solutions of the given functional equation. For example\n\\[\n\\begin{array}{l}\n\\sin x+\\sin y=2 \\sin \\frac{1}{2}(x+y) \\cos \\frac{1}{2}(x-y) \\\\\n\\sin x-\\sin y=2 \\sin \\frac{1}{2}(x-y) \\cos \\frac{1}{2}(x+y)\n\\end{array}\n\\]\nso that\n\\[\n\\begin{aligned}\n(A \\sin x)^{2}-(A \\sin y)^{2}= & \\left(2 A \\sin \\frac{1}{2}(x+y) \\cos \\frac{1}{2}(x+y)\\right) \\\\\n& \\times\\left(2 A \\sin \\frac{1}{2}(x-y) \\cos \\frac{1}{2}(x-y)\\right) \\\\\n= & (A \\sin (x+y))(A \\sin (x-y)) .\n\\end{aligned}\n\\]\n\nThe check for the hyperbolic sine can be carried out similarly, or by noting that it follows by replacing \\( x \\) by \\( i x \\) and \\( y \\) by \\( i y \\) in the sine solution above. The remaining case, \\( f(u)=A u \\). is trivial.",
+  "vars": [
+    "f",
+    "x",
+    "y",
+    "u",
+    "v",
+    "v_0"
+  ],
+  "params": [
+    "A",
+    "c",
+    "k"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "realfunc",
+        "x": "varxpos",
+        "y": "varyaxis",
+        "u": "varudom",
+        "v": "varvdom",
+        "v_0": "varvzero",
+        "A": "ampcoef",
+        "c": "ratcoef",
+        "k": "freqpar"
+      },
+      "question": "3. Find every twice-differentiable real-valued function \\( realfunc \\) with domain the set of all real numbers and satisfying the functional equation\n\\[\n(realfunc(varxpos))^{2}-(realfunc(varyaxis))^{2}=realfunc(varxpos+varyaxis) realfunc(varxpos-varyaxis)\n\\]\nfor all real numbers \\( varxpos \\) and \\( varyaxis \\).",
+      "solution": "Solution. If we put \\( varxpos=varyaxis=0 \\) in the given relation, we find \\( realfunc(0)=0 \\). Then differentiating the given relation, first with respect to \\( varxpos \\) and then with respect to \\( varyaxis \\) we get\n\\[\n\\begin{aligned}\n2\\, realfunc(varxpos)\\, realfunc^{\\prime}(varxpos) & = realfunc^{\\prime}(varxpos+varyaxis)\\, realfunc(varxpos-varyaxis)+realfunc(varxpos+varyaxis)\\, realfunc^{\\prime}(varxpos-varyaxis) \\\\\n0 & = realfunc^{\\prime \\prime}(varxpos+varyaxis)\\, realfunc(varxpos-varyaxis)-realfunc(varxpos+varyaxis)\\, realfunc^{\\prime \\prime}(varxpos-varyaxis)\n\\end{aligned}\n\\]\n\nNow for any \\( varudom \\) and \\( varvdom \\) we can choose \\( varxpos=\\tfrac{1}{2}(varudom+varvdom),\\; varyaxis=\\tfrac{1}{2}(varudom-varvdom) \\); then\n\\[\nrealfunc^{\\prime \\prime}(varudom)\\, realfunc(varvdom)=realfunc(varudom)\\, realfunc^{\\prime \\prime}(varvdom)\n\\]\n\nIf there is a point \\( varvzero \\) such that \\( realfunc\\left(varvzero\\right) \\neq 0 \\) and if \\( ratcoef=realfunc^{\\prime \\prime}\\left(varvzero\\right) / realfunc\\left(varvzero\\right) \\), then we can write (1) as\n\\[\nrealfunc^{\\prime \\prime}(varudom)=ratcoef\\, realfunc(varudom)\n\\]\n\nThis differential equation along with the initial condition \\( realfunc(0)=0 \\) has three types of solutions\n\\[\n\\begin{aligned}\nrealfunc(varudom) & = ampcoef \\, \\sinh (freqpar\\, varudom) & & \\text { if } ratcoef>0, \\quad ratcoef=freqpar^{2} \\\\\n& = ampcoef\\, varudom & & \\text { if } ratcoef=0 \\\\\n& = ampcoef \\, \\sin (freqpar\\, varudom) & & \\text { if } ratcoef<0, \\quad ratcoef=-freqpar^{2}\n\\end{aligned}\n\\]\n\nWe note that the possibility \\( realfunc(varvdom) \\equiv 0 \\) is included in these cases when \\( ampcoef=0 \\).\n\nAll three types are indeed solutions of the given functional equation. For example\n\\[\n\\begin{array}{l}\n\\sin varxpos+\\sin varyaxis=2 \\sin \\tfrac{1}{2}(varxpos+varyaxis) \\cos \\tfrac{1}{2}(varxpos-varyaxis) \\\\\n\\sin varxpos-\\sin varyaxis=2 \\sin \\tfrac{1}{2}(varxpos-varyaxis) \\cos \\tfrac{1}{2}(varxpos+varyaxis)\n\\end{array}\n\\]\nso that\n\\[\n\\begin{aligned}\n(ampcoef \\sin varxpos)^{2}-(ampcoef \\sin varyaxis)^{2}= & \\left(2\\, ampcoef \\sin \\tfrac{1}{2}(varxpos+varyaxis) \\cos \\tfrac{1}{2}(varxpos+varyaxis)\\right) \\\\\n& \\times\\left(2\\, ampcoef \\sin \\tfrac{1}{2}(varxpos-varyaxis) \\cos \\tfrac{1}{2}(varxpos-varyaxis)\\right) \\\\\n= & (ampcoef \\sin (varxpos+varyaxis))(ampcoef \\sin (varxpos-varyaxis)) .\n\\end{aligned}\n\\]\n\nThe check for the hyperbolic sine can be carried out similarly, or by noting that it follows by replacing \\( varxpos \\) by \\( i\\, varxpos \\) and \\( varyaxis \\) by \\( i\\, varyaxis \\) in the sine solution above. The remaining case, \\( realfunc(varudom)=ampcoef\\, varudom \\), is trivial."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "meadowlark",
+        "x": "pinecones",
+        "y": "riverbanks",
+        "u": "cloudberry",
+        "v": "starflower",
+        "v_0": "snowbush",
+        "A": "swallowtail",
+        "c": "toadflaxes",
+        "k": "hazelnuts"
+      },
+      "question": "3. Find every twice-differentiable real-valued function \\( meadowlark \\) with domain the set of all real numbers and satisfying the functional equation\n\\[\n(meadowlark(pinecones))^{2}-(meadowlark(riverbanks))^{2}=meadowlark(pinecones+riverbanks)\\,meadowlark(pinecones-riverbanks)\n\\]\nfor all real numbers \\( pinecones \\) and \\( riverbanks \\).",
+      "solution": "Solution. If we put \\( pinecones=riverbanks=0 \\) in the given relation, we find \\( meadowlark(0)=0 \\). Then differentiating the given relation, first with respect to \\( pinecones \\) and then with respect to \\( riverbanks \\) we get\n\\[\n\\begin{aligned}\n2\\,meadowlark(pinecones)\\,meadowlark^{\\prime}(pinecones)&=meadowlark^{\\prime}(pinecones+riverbanks)\\,meadowlark(pinecones-riverbanks)+meadowlark(pinecones+riverbanks)\\,meadowlark^{\\prime}(pinecones-riverbanks)\\\\\n0&=meadowlark^{\\prime\\prime}(pinecones+riverbanks)\\,meadowlark(pinecones-riverbanks)-meadowlark(pinecones+riverbanks)\\,meadowlark^{\\prime\\prime}(pinecones-riverbanks)\n\\end{aligned}\n\\]\n\nNow for any \\( cloudberry \\) and \\( starflower \\) we can choose \\( pinecones=\\tfrac12(cloudberry+starflower),\\;riverbanks=\\tfrac12(cloudberry-starflower) \\); then\n\\[\nmeadowlark^{\\prime\\prime}(cloudberry)\\,meadowlark(starflower)=meadowlark(cloudberry)\\,meadowlark^{\\prime\\prime}(starflower)\n\\]\n\nIf there is a point \\( snowbush \\) such that \\( meadowlark(snowbush)\\neq0 \\) and if \\( toadflaxes=\\dfrac{meadowlark^{\\prime\\prime}(snowbush)}{meadowlark(snowbush)} \\), then we can write (1) as\n\\[\nmeadowlark^{\\prime\\prime}(cloudberry)=toadflaxes\\,meadowlark(cloudberry)\n\\]\n\nThis differential equation along with the initial condition \\( meadowlark(0)=0 \\) has three types of solutions\n\\[\n\\begin{aligned}\nmeadowlark(cloudberry)&=swallowtail\\,\\sinh(hazelnuts\\,cloudberry)&&\\text{if }toadflaxes>0,\\;toadflaxes=hazelnuts^{2}\\\\\n&=swallowtail\\,cloudberry&&\\text{if }toadflaxes=0\\\\\n&=swallowtail\\,\\sin(hazelnuts\\,cloudberry)&&\\text{if }toadflaxes<0,\\;toadflaxes=-hazelnuts^{2}\n\\end{aligned}\n\\]\n\nWe note that the possibility \\( meadowlark\\equiv0 \\) is included in these cases when \\( swallowtail=0 \\).\n\nAll three types are indeed solutions of the given functional equation. For example\n\\[\n\\begin{array}{l}\n\\sin pinecones+\\sin riverbanks=2\\sin\\frac12(pinecones+riverbanks)\\cos\\frac12(pinecones-riverbanks)\\\\\n\\sin pinecones-\\sin riverbanks=2\\sin\\frac12(pinecones-riverbanks)\\cos\\frac12(pinecones+riverbanks)\n\\end{array}\n\\]\nso that\n\\[\n\\begin{aligned}\n(swallowtail\\,\\sin pinecones)^{2}-(swallowtail\\,\\sin riverbanks)^{2}=&\\bigl(2\\,swallowtail\\,\\sin\\tfrac12(pinecones+riverbanks)\\cos\\tfrac12(pinecones+riverbanks)\\bigr)\\\\\n&\\times\\bigl(2\\,swallowtail\\,\\sin\\tfrac12(pinecones-riverbanks)\\cos\\tfrac12(pinecones-riverbanks)\\bigr)\\\\\n=&\\,(swallowtail\\,\\sin(pinecones+riverbanks))(swallowtail\\,\\sin(pinecones-riverbanks)).\n\\end{aligned}\n\\]\n\nThe check for the hyperbolic sine can be carried out similarly, or by noting that it follows by replacing \\( pinecones \\) by \\( i\\,pinecones \\) and \\( riverbanks \\) by \\( i\\,riverbanks \\) in the sine solution above. The remaining case, \\( meadowlark(cloudberry)=swallowtail\\,cloudberry \\), is trivial."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "malfunction",
+        "x": "knownvalue",
+        "y": "constantval",
+        "u": "fixpoint",
+        "v": "staticvar",
+        "v_0": "unspecificpoint",
+        "A": "nullfactor",
+        "c": "variablec",
+        "k": "nonscale"
+      },
+      "question": "3. Find every twice-differentiable real-valued function \\( malfunction \\) with domain the set of all real numbers and satisfying the functional equation\n\\[\n(malfunction(knownvalue))^{2}-(malfunction(constantval))^{2}=malfunction(knownvalue+constantval) malfunction(knownvalue-constantval)\n\\]\nfor all real numbers \\( knownvalue \\) and \\( constantval \\).",
+      "solution": "Solution. If we put \\( knownvalue=constantval=0 \\) in the given relation, we find \\( malfunction(0)=0 \\). Then differentiating the given relation, first with respect to \\( knownvalue \\) and then with respect to \\( constantval \\) we get\n\\[\n\\begin{aligned}\n2 malfunction(knownvalue) malfunction^{\\prime}(knownvalue) & =malfunction^{\\prime}(knownvalue+constantval) malfunction(knownvalue-constantval)+malfunction(knownvalue+constantval) malfunction^{\\prime}(knownvalue-constantval) \\\\\n0 & =malfunction^{\\prime \\prime}(knownvalue+constantval) malfunction(knownvalue-constantval)-malfunction(knownvalue+constantval) malfunction^{\\prime \\prime}(knownvalue-constantval)\n\\end{aligned}\n\\]\n\nNow for any \\( fixpoint \\) and \\( staticvar \\) we can choose \\( knownvalue=\\frac{1}{2}(fixpoint+staticvar), constantval=\\frac{1}{2}(fixpoint-staticvar) \\); then\n\\[\nmalfunction^{\\prime \\prime}(fixpoint) malfunction(staticvar)=malfunction(fixpoint) malfunction^{\\prime \\prime}(staticvar)\n\\]\n\nIf there is a point \\( unspecificpoint \\) such that \\( malfunction\\left(unspecificpoint\\right) \\neq 0 \\) and if \\( variablec=malfunction^{\\prime \\prime}\\left(unspecificpoint\\right) / malfunction\\left(unspecificpoint\\right) \\), then we can write (1) as\n\\[\nmalfunction^{\\prime \\prime}(fixpoint)=variablec malfunction(fixpoint)\n\\]\n\nThis differential equation along with the initial condition \\( malfunction(0)=0 \\) has three types of solutions\n\\[\n\\begin{aligned}\nmalfunction(fixpoint) & =nullfactor \\sinh nonscale fixpoint & & \\text { if } variablec>0, \\quad variablec=nonscale^{2} \\\\\n& =nullfactor fixpoint & & \\text { if } variablec=0 \\\\\n& =nullfactor \\sin nonscale fixpoint & & \\text { if } variablec<0, \\quad variablec=-nonscale^{2}\n\\end{aligned}\n\\]\n\nWe note that the possibility \\( malfunction(staticvar) \\equiv 0 \\) is included in these cases when \\( nullfactor=0 \\).\n\nAll three types are indeed solutions of the given functional equation. For example\n\\[\n\\begin{array}{l}\n\\sin knownvalue+\\sin constantval=2 \\sin \\frac{1}{2}(knownvalue+constantval) \\cos \\frac{1}{2}(knownvalue-constantval) \\\\\n\\sin knownvalue-\\sin constantval=2 \\sin \\frac{1}{2}(knownvalue-constantval) \\cos \\frac{1}{2}(knownvalue+constantval)\n\\end{array}\n\\]\nso that\n\\[\n\\begin{aligned}\n(nullfactor \\sin knownvalue)^{2}-(nullfactor \\sin constantval)^{2}= & \\left(2 nullfactor \\sin \\frac{1}{2}(knownvalue+constantval) \\cos \\frac{1}{2}(knownvalue+constantval)\\right) \\\\\n& \\times\\left(2 nullfactor \\sin \\frac{1}{2}(knownvalue-constantval) \\cos \\frac{1}{2}(knownvalue-constantval)\\right) \\\\\n= & (nullfactor \\sin (knownvalue+constantval))(nullfactor \\sin (knownvalue-constantval)) .\n\\end{aligned}\n\\]\n\nThe check for the hyperbolic sine can be carried out similarly, or by noting that it follows by replacing \\( knownvalue \\) by \\( i knownvalue \\) and \\( constantval \\) by \\( i constantval \\) in the sine solution above. The remaining case, \\( malfunction(fixpoint)=nullfactor fixpoint \\). is trivial."
+    },
+    "garbled_string": {
+      "map": {
+        "f": "zmbxqtrn",
+        "x": "lkjvnqsp",
+        "y": "qpdhszrm",
+        "u": "tgwfprza",
+        "v": "asdtlpmc",
+        "v_0": "mngtrslv",
+        "A": "grbnslmd",
+        "c": "hpqtfzan",
+        "k": "wyprlmsc"
+      },
+      "question": "3. Find every twice-differentiable real-valued function \\( zmbxqtrn \\) with domain the set of all real numbers and satisfying the functional equation\n\\[\n(zmbxqtrn(lkjvnqsp))^{2}-(zmbxqtrn(qpdhszrm))^{2}=zmbxqtrn(lkjvnqsp+qpdhszrm) zmbxqtrn(lkjvnqsp-qpdhszrm)\n\\]\nfor all real numbers \\( lkjvnqsp \\) and \\( qpdhszrm \\).",
+      "solution": "Solution. If we put \\( lkjvnqsp=qpdhszrm=0 \\) in the given relation, we find \\( zmbxqtrn(0)=0 \\). Then differentiating the given relation, first with respect to \\( lkjvnqsp \\) and then with respect to \\( qpdhszrm \\) we get\n\\[\n\\begin{aligned}\n2 zmbxqtrn(lkjvnqsp) zmbxqtrn^{\\prime}(lkjvnqsp) & = zmbxqtrn^{\\prime}(lkjvnqsp+qpdhszrm) zmbxqtrn(lkjvnqsp-qpdhszrm)+zmbxqtrn(lkjvnqsp+qpdhszrm) zmbxqtrn^{\\prime}(lkjvnqsp-qpdhszrm) \\\\\n0 & = zmbxqtrn^{\\prime \\prime}(lkjvnqsp+qpdhszrm) zmbxqtrn(lkjvnqsp-qpdhszrm)-zmbxqtrn(lkjvnqsp+qpdhszrm) zmbxqtrn^{\\prime \\prime}(lkjvnqsp-qpdhszrm)\n\\end{aligned}\n\\]\n\nNow for any \\( tgwfprza \\) and \\( asdtlpmc \\) we can choose \\( lkjvnqsp=\\frac{1}{2}(tgwfprza+asdtlpmc), qpdhszrm=\\frac{1}{2}(tgwfprza-asdtlpmc) \\); then\n\\[\nzmbxqtrn^{\\prime \\prime}(tgwfprza) zmbxqtrn(asdtlpmc)=zmbxqtrn(tgwfprza) zmbxqtrn^{\\prime \\prime}(asdtlpmc)\n\\]\n\nIf there is a point \\( mngtrslv \\) such that \\( zmbxqtrn\\left(mngtrslv\\right) \\neq 0 \\) and if \\( hpqtfzan=zmbxqtrn^{\\prime \\prime}\\left(mngtrslv\\right) / zmbxqtrn\\left(mngtrslv\\right) \\), then we can write (1) as\n\\[\nzmbxqtrn^{\\prime \\prime}(tgwfprza)=hpqtfzan zmbxqtrn(tgwfprza)\n\\]\n\nThis differential equation along with the initial condition \\( zmbxqtrn(0)=0 \\) has three types of solutions\n\\[\n\\begin{aligned}\nzmbxqtrn(tgwfprza) & =grbnslmd \\sinh wyprlmsc tgwfprza & & \\text { if } hpqtfzan>0, \\quad hpqtfzan=wyprlmsc^{2} \\\\ &=grbnslmd \\, tgwfprza & & \\text { if } hpqtfzan=0 \\\\ &=grbnslmd \\sin wyprlmsc tgwfprza & & \\text { if } hpqtfzan<0, \\quad hpqtfzan=-wyprlmsc^{2}\n\\end{aligned}\n\\]\n\nWe note that the possibility \\( zmbxqtrn(tgwfprza) \\equiv 0 \\) is included in these cases when \\( grbnslmd=0 \\).\n\nAll three types are indeed solutions of the given functional equation. For example\n\\[\n\\begin{array}{l}\n\\sin lkjvnqsp+\\sin qpdhszrm=2 \\sin \\frac{1}{2}(lkjvnqsp+qpdhszrm) \\cos \\frac{1}{2}(lkjvnqsp-qpdhszrm) \\\\\n\\sin lkjvnqsp-\\sin qpdhszrm=2 \\sin \\frac{1}{2}(lkjvnqsp-qpdhszrm) \\cos \\frac{1}{2}(lkjvnqsp+qpdhszrm)\n\\end{array}\n\\]\nso that\n\\[\n\\begin{aligned}\n(grbnslmd \\sin lkjvnqsp)^{2}-(grbnslmd \\sin qpdhszrm)^{2}= & \\left(2 grbnslmd \\sin \\frac{1}{2}(lkjvnqsp+qpdhszrm) \\cos \\frac{1}{2}(lkjvnqsp+qpdhszrm)\\right) \\\\\n& \\times\\left(2 grbnslmd \\sin \\frac{1}{2}(lkjvnqsp-qpdhszrm) \\cos \\frac{1}{2}(lkjvnqsp-qpdhszrm)\\right) \\\\\n= & (grbnslmd \\sin (lkjvnqsp+qpdhszrm))(grbnslmd \\sin (lkjvnqsp-qpdhszrm)) .\n\\end{aligned}\n\\]\n\nThe check for the hyperbolic sine can be carried out similarly, or by noting that it follows by replacing \\( lkjvnqsp \\) by \\( i lkjvnqsp \\) and \\( qpdhszrm \\) by \\( i qpdhszrm \\) in the sine solution above. The remaining case, \\( zmbxqtrn(tgwfprza)=grbnslmd \\, tgwfprza \\). is trivial."
+    },
+    "kernel_variant": {
+      "question": "Let $f:\\mathbb R\\to\\mathbb R$ be twice continuously differentiable and satisfy\n\\[\n (f(x))^{2}-(f(y))^{2}=f(x+y)\\,f(x-y)\\qquad\\text{for all }x,y\\in\\mathbb R.\n\\]\nGiven the normalisation condition $f'(0)=1$, determine all possible functions $f$.",
+      "solution": "We seek all twice-continuously differentiable f:\\mathbb{R}\\to \\mathbb{R} satisfying\n\n  f(x)^2 - f(y)^2  =  f(x+y)\\cdot f(x-y),    \\forall x,y\\in \\mathbb{R},\n\nwith the normalization f'(0)=1.\n\n1.  Show f(0)=0.  Set x=y=0:  f(0)^2-f(0)^2=0= f(0+0)f(0-0)=f(0)^2 \\Rightarrow  f(0)=0.\n\n2.  Differentiate the given identity with respect to x.  The left side is 2 f(x)f'(x); the right side is\n\n    d/dx[f(x+y)f(x-y)]\n      = f'(x+y)\\cdot f(x-y)\n        + f(x+y)\\cdot f'(x-y)\n\n  Hence\n\n    2 f(x)f'(x)  =  f'(x+y)f(x-y)  +  f(x+y)f'(x-y).    (\\dagger )\n\n3.  Differentiate (\\dagger ) with respect to y.  The left side is independent of y, so its derivative is 0.  The right side splits:\n\n   d/dy[f'(x+y)f(x-y)]\n     = f''(x+y)\\cdot 1\\cdot f(x-y)  +  f'(x+y)\\cdot (-1)\\cdot f'(x-y)\n\n   d/dy[f(x+y)f'(x-y)]\n     = f'(x+y)\\cdot 1\\cdot f'(x-y)  +  f(x+y)\\cdot (-1)\\cdot f''(x-y).\n\n  Adding and noting the +f'f' and -f'f' cancel gives\n\n    0 = f''(x+y)f(x-y)  -  f(x+y)f''(x-y).    (\\ddagger )\n\n4.  Re-index by u= x+y, v= x-y.  Then (\\ddagger ) reads\n\n    f''(u)\\cdot f(v)  =  f(u)\\cdot f''(v),  \\forall u,v\\in \\mathbb{R}.\n\n  Since f'(0)=1\\neq 0, f is not identically zero.  Pick any v_0 with f(v_0)\\neq 0.  Then for all u,\n\n    f''(u)/f(u)  =  f''(v_0)/f(v_0)  =: \\lambda   (constant).\n\n  Thus f satisfies the linear ODE\n\n    f''(x) = \\lambda  f(x),  with  f(0)=0,  f'(0)=1.\n\n5.  Solve f''=\\lambda f under f(0)=0, f'(0)=1.\n   * If \\lambda =0:  f''=0 \\Rightarrow  f(x)=Ax+B.  f(0)=0\\Rightarrow B=0; f'(0)=A=1.  \\Rightarrow  f(x)=x.\n   * If \\lambda =\\mu ^2>0:  f(x)=C e^{\\mu x}+D e^{-\\mu x}.  f(0)=0\\Rightarrow C+D=0 \\Rightarrow  D=-C \\Rightarrow  f(x)=2C sinh(\\mu x).\n     Then f'(x)=2C\\mu  cosh(\\mu x) \\Rightarrow  f'(0)=2C\\mu =1 \\Rightarrow  C=1/(2\\mu ).  \\Rightarrow  f(x)=sinh(\\mu x)/\\mu , \\mu >0.\n   * If \\lambda =-\\mu ^2<0: f(x)=C cos(\\mu x)+D sin(\\mu x).  f(0)=0\\Rightarrow C=0 \\Rightarrow  f(x)=D sin(\\mu x).\n     Then f'(x)=D\\mu  cos(\\mu x) \\Rightarrow  f'(0)=D\\mu =1 \\Rightarrow  D=1/\\mu .  \\Rightarrow  f(x)=sin(\\mu x)/\\mu , \\mu >0.\n\n6.  Verification.  Each candidate satisfies f(x)^2-f(y)^2=f(x+y)f(x-y) by the familiar algebraic, trigonometric or hyperbolic identities.\n\nConclusion.  Under the normalization f'(0)=1 the complete list of twice-continuously differentiable solutions is\n\n  f(x) = x,\n  f(x) = sin(\\mu x)/\\mu   (\\mu >0),\n  f(x) = sinh(\\mu x)/\\mu   (\\mu >0).\n\nNo other solutions occur.",
+      "_meta": {
+        "core_steps": [
+          "Plug equal arguments in the functional equation to get f(0)=0 (non-triviality test).",
+          "Differentiate once in x and once in y to create first- and second-derivative identities.",
+          "Re-index variables so that the identities yield f''(u)·f(v)=f(u)·f''(v).",
+          "Use any point where f≠0 to deduce the quotient f''/f is constant (⇒ ODE f''=c f).",
+          "Solve the constant–coefficient ODE, giving the zero, linear, sine, and hyperbolic-sine families."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Specific values substituted to force f(0)=0; any choice with x=y works.",
+            "original": "x=0, y=0"
+          },
+          "slot2": {
+            "description": "Affine change of variables that lets (u,v) span ℝ² when inserted in the differentiated identity.",
+            "original": "x=(u+v)/2, y=(u−v)/2"
+          },
+          "slot3": {
+            "description": "Names and sign–conventions for the constant ratio and its square‐root parameters.",
+            "original": "c (with cases c>0,c=0,c<0) and k where c=±k²"
+          },
+          "slot4": {
+            "description": "Form in which the solutions are written (sin/sinh vs. exponential or cosine forms).",
+            "original": "A·sin(kx), A·sinh(kx), A·x (plus A=0 case)"
+          },
+          "slot5": {
+            "description": "Order in which partial derivatives are taken before combining the two identities.",
+            "original": "differentiate first in x, then in y"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

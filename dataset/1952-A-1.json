@@ -1,0 +1,107 @@
+{
+  "index": "1952-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Let\n\\[\nf(x)=\\sum_{i=0}^{i=n} a_{i} x^{n-i}\n\\]\nbe a polynomial of degree \\( n \\) with integral coefficients. If \\( a_{0}, a_{n} \\), and \\( f(1) \\) are odd, prove that \\( f(x)=0 \\) has no rational roots.",
+  "solution": "Solution. Suppose \\( f(p / q)=0 \\) where \\( p \\) and \\( q \\) are integers having no common factor. Then\n(1) \\( \\quad q^{n} f\\left(\\frac{p}{q}\\right)=a_{0} p^{n}+q a_{1} p^{n-1}+\\cdots+q^{n-1} a_{n-1} p+q^{n} a_{n}=0 \\).\n\nIt follows that \\( q \\) divides \\( a_{0} \\) and \\( p \\) divides \\( a_{n} \\). Therefore \\( p \\) and \\( q \\) are both odd. Hence\n\\[\n\\begin{aligned}\na_{0} p^{n}+q a_{1} p^{n-1}+\\cdots+q^{n-1} a_{n-1} p+q^{n} a_{n} & \\equiv a_{0}+a_{1}+\\cdots+a_{n-1}+a_{n} \\\\\n& =f(1) \\equiv 1(\\bmod 2)\n\\end{aligned}\n\\]\ncontradicting (1).",
+  "vars": [
+    "x",
+    "i",
+    "n",
+    "p",
+    "q"
+  ],
+  "params": [
+    "a_i",
+    "a_0",
+    "a_n",
+    "a_1",
+    "a_n-1",
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "indetvar",
+        "i": "indexer",
+        "n": "degreepar",
+        "p": "numerpart",
+        "q": "denomvar",
+        "a_i": "coeffindx",
+        "a_0": "coeffzero",
+        "a_n": "coefftop",
+        "a_1": "coeffone",
+        "a_{n-1}": "coeffprev",
+        "f": "polyfunc"
+      },
+      "question": "1. Let\n\\[\npolyfunc(indetvar)=\\sum_{indexer=0}^{indexer=degreepar} coeffindx \\, indetvar^{degreepar-indexer}\n\\]\nbe a polynomial of degree \\( degreepar \\) with integral coefficients. If \\( coeffzero, coefftop \\), and \\( polyfunc(1) \\) are odd, prove that \\( polyfunc(indetvar)=0 \\) has no rational roots.",
+      "solution": "Solution. Suppose \\( polyfunc(numerpart / denomvar)=0 \\) where \\( numerpart \\) and \\( denomvar \\) are integers having no common factor. Then\n(1) \\( \\quad denomvar^{degreepar} polyfunc\\left(\\frac{numerpart}{denomvar}\\right)=coeffzero \\, numerpart^{degreepar}+denomvar \\, coeffone \\, numerpart^{degreepar-1}+\\cdots+denomvar^{degreepar-1} \\, coeffprev \\, numerpart+denomvar^{degreepar} \\, coefftop=0 \\).\n\nIt follows that \\( denomvar \\) divides \\( coeffzero \\) and \\( numerpart \\) divides \\( coefftop \\). Therefore \\( numerpart \\) and \\( denomvar \\) are both odd. Hence\n\\[\n\\begin{aligned}\ncoeffzero \\, numerpart^{degreepar}+denomvar \\, coeffone \\, numerpart^{degreepar-1}+\\cdots+denomvar^{degreepar-1} \\, coeffprev \\, numerpart+denomvar^{degreepar} \\, coefftop & \\equiv coeffzero+coeffone+\\cdots+coeffprev+coefftop \\\\\n& =polyfunc(1) \\equiv 1(\\bmod 2)\n\\end{aligned}\n\\]\ncontradicting (1)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "blueberry",
+        "i": "lighthouse",
+        "n": "pendulum",
+        "p": "elephant",
+        "q": "submarine",
+        "a_i": "horizon",
+        "a_0": "teaspoon",
+        "a_n": "waterfall",
+        "a_1": "bicycle",
+        "a_n-1": "sunflower",
+        "f": "perimeter"
+      },
+      "question": "1. Let\n\\[\nperimeter(blueberry)=\\sum_{lighthouse=0}^{lighthouse=pendulum} horizon blueberry^{pendulum-lighthouse}\n\\]\nbe a polynomial of degree \\( pendulum \\) with integral coefficients. If \\( teaspoon, waterfall \\), and \\( perimeter(1) \\) are odd, prove that \\( perimeter(blueberry)=0 \\) has no rational roots.",
+      "solution": "Solution. Suppose \\( perimeter(elephant / submarine)=0 \\) where \\( elephant \\) and \\( submarine \\) are integers having no common factor. Then\n(1) \\( \\quad submarine^{pendulum} perimeter\\left(\\frac{elephant}{submarine}\\right)=teaspoon elephant^{pendulum}+submarine bicycle elephant^{pendulum-1}+\\cdots+submarine^{pendulum-1} sunflower elephant+submarine^{pendulum} waterfall=0 \\).\n\nIt follows that \\( submarine \\) divides \\( teaspoon \\) and \\( elephant \\) divides \\( waterfall \\). Therefore \\( elephant \\) and \\( submarine \\) are both odd. Hence\n\\[\n\\begin{aligned}\nteaspoon elephant^{pendulum}+submarine bicycle elephant^{pendulum-1}+\\cdots+submarine^{pendulum-1} sunflower elephant+submarine^{pendulum} waterfall & \\equiv teaspoon+bicycle+\\cdots+sunflower+waterfall \\\\\n& =perimeter(1) \\equiv 1(\\bmod 2)\n\\end{aligned}\n\\]\ncontradicting (1)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "knownval",
+        "i": "endpoint",
+        "n": "constfix",
+        "p": "denominator",
+        "q": "numerator",
+        "a_{i}": "noncoeff",
+        "a_{0}": "variableterm",
+        "a_{n}": "tailcoeff",
+        "a_{1}": "lastcoef",
+        "a_{n-1}": "rearcoef",
+        "f": "constant"
+      },
+      "question": "1. Let\n\\[\nconstant(knownval)=\\sum_{endpoint=0}^{endpoint=constfix} noncoeff\\, knownval^{constfix-endpoint}\n\\]\nbe a polynomial of degree \\( constfix \\) with integral coefficients. If \\( variableterm, tailcoeff \\), and \\( constant(1) \\) are odd, prove that \\( constant(knownval)=0 \\) has no rational roots.",
+      "solution": "Solution. Suppose \\( constant(denominator / numerator)=0 \\) where \\( denominator \\) and \\( numerator \\) are integers having no common factor. Then\n(1) \\( \\quad numerator^{constfix} constant\\left(\\frac{denominator}{numerator}\\right)=variableterm \\, denominator^{constfix}+numerator \\, lastcoef \\, denominator^{constfix-1}+\\cdots+numerator^{constfix-1} \\, rearcoef \\, denominator+numerator^{constfix} \\, tailcoeff=0 \\).\n\nIt follows that \\( numerator \\) divides \\( variableterm \\) and \\( denominator \\) divides \\( tailcoeff \\). Therefore \\( denominator \\) and \\( numerator \\) are both odd. Hence\n\\[\n\\begin{aligned}\nvariableterm \\, denominator^{constfix}+numerator \\, lastcoef \\, denominator^{constfix-1}+\\cdots+numerator^{constfix-1} \\, rearcoef \\, denominator+numerator^{constfix} \\, tailcoeff & \\equiv variableterm+lastcoef+\\cdots+rearcoef+tailcoeff \\\\\n& =constant(1) \\equiv 1(\\bmod 2)\n\\end{aligned}\n\\]\ncontradicting (1)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "dlkmqprz",
+        "i": "zxbnqmar",
+        "n": "qsvpykth",
+        "p": "cghrwslm",
+        "q": "bvjkfdsa",
+        "a_i": "fhgtrmnc",
+        "a_0": "wxfplqaz",
+        "a_n": "mnsldkqe",
+        "a_1": "rpkldqwe",
+        "a_n-1": "vdjsklem",
+        "f": "hqzrmspl"
+      },
+      "question": "Problem:\n<<<\n1. Let\n\\[\nhqzrmspl(dlkmqprz)=\\sum_{zxbnqmar=0}^{zxbnqmar=qsvpykth} fhgtrmnc dlkmqprz^{qsvpykth-zxbnqmar}\n\\]\nbe a polynomial of degree \\( qsvpykth \\) with integral coefficients. If \\( wxfplqaz, mnsldkqe \\), and \\( hqzrmspl(1) \\) are odd, prove that \\( hqzrmspl(dlkmqprz)=0 \\) has no rational roots.\n>>>",
+      "solution": "Solution:\n<<<\nSolution. Suppose \\( hqzrmspl(cghrwslm / bvjkfdsa)=0 \\) where \\( cghrwslm \\) and \\( bvjkfdsa \\) are integers having no common factor. Then\n(1) \\( \\quad bvjkfdsa^{qsvpykth} hqzrmspl\\left(\\frac{cghrwslm}{bvjkfdsa}\\right)=wxfplqaz cghrwslm^{qsvpykth}+bvjkfdsa rpkldqwe cghrwslm^{qsvpykth-1}+\\cdots+bvjkfdsa^{qsvpykth-1} vdjsklem cghrwslm+bvjkfdsa^{qsvpykth} mnsldkqe=0 \\).\n\nIt follows that \\( bvjkfdsa \\) divides \\( wxfplqaz \\) and \\( cghrwslm \\) divides \\( mnsldkqe \\). Therefore \\( cghrwslm \\) and \\( bvjkfdsa \\) are both odd. Hence\n\\[\n\\begin{aligned}\nwxfplqaz cghrwslm^{qsvpykth}+bvjkfdsa rpkldqwe cghrwslm^{qsvpykth-1}+\\cdots+bvjkfdsa^{qsvpykth-1} vdjsklem cghrwslm+bvjkfdsa^{qsvpykth} mnsldkqe & \\equiv wxfplqaz+rpkldqwe+\\cdots+vdjsklem+mnsldkqe \\\\\n& =hqzrmspl(1) \\equiv 1(\\bmod 2)\n\\end{aligned}\n\\]\ncontradicting (1).\n>>>"
+    },
+    "kernel_variant": {
+      "question": "Let  \n  P(x)=\\sum _{k=0}^{n}b_kx^{k}, b_k\\in \\mathbb{Z}, n\\geq 2.  \nAssume  \n(i) b_0 and b_n are odd;  \n(ii) P(1) and P(3) are odd;  \n(iii) each ``middle'' coefficient b_1,\\ldots ,b_{n-1} is even.  \nProve that P(x)=0 has no rational root.  (In fact, show |P(r)|\\geq 2 for every r\\in \\mathbb{Q}.)",
+      "solution": "Suppose, contrary to (iii), P(p/q)=0 with gcd(p,q)=1.  \nClearing denominators gives  \n b_0q^n+b_1pq^{n-1}+\\ldots +b_{n-1}p^{n-1}q+b_np^n=0. (1)  \nReducing (1) mod p yields b_0q^n\\equiv 0, so p\\mid b_0; reducing mod q gives q\\mid b_n.  \nHence p,q are odd.  Every mixed term in (1) contains an even b_k, so (1) mod 2 collapses to  \n b_0+b_n\\equiv 0.  \nYet b_0+b_n\\equiv P(1)\\equiv 1 (mod 2) by hypothesis, a contradiction.  \nTherefore no rational root exists; with the same parity count, P(r) can never equal \\pm 1, so |P(r)|\\geq 2 for all r\\in \\mathbb{Q}.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.068955",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

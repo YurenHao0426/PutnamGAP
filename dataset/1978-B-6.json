@@ -1,0 +1,115 @@
+{
+  "index": "1978-B-6",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-6\nLet \\( p \\) and \\( n \\) be positive integers. Suppose that the numbers \\( c_{h, k}(h=1,2, \\ldots, n ; k=1,2, \\ldots, p h) \\) satisfy \\( 0<c_{h, k}<1 \\). Prove that\n\\[\n\\left(\\sum \\frac{c_{h, k}}{h}\\right)^{2}<2 p \\sum c_{h, k}\n\\]\nwhere each summation is over all admissible ordered pairs \\( (h, k) \\).",
+  "solution": "B-6.\n\nLet \\( a_{h}=\\left(\\sum_{k=1}^{p h} c_{h, k}\\right) / h \\). Clearly, \\( 0 \\leqslant a_{h} \\leqslant p \\). We now prove that \\( \\left(\\sum_{h-1}^{n} a_{h}\\right)^{2} \\leqslant 2 p \\sum_{h-1}^{n}\\left(h a_{h}\\right) \\), which is equivalent to the assertion of the problem, by induction on \\( n \\).\n\nFor \\( n=1 \\), one has \\( a_{1}^{2} \\leqslant p a_{1} \\leqslant 2 p a_{1} \\) as required. Suppose the inequality established for \\( n=m \\). Then\n\\[\n\\begin{aligned}\n\\left(\\sum_{h=1}^{m+1} a_{h}\\right)^{2} & =\\left(\\sum_{h=1}^{m} a_{h}\\right)^{2}+2 a_{m+1} \\sum_{h=1}^{m} a_{h}+a_{m+1}^{2} \\\\\n& <2 p \\sum_{h=1}^{m}\\left(h a_{h}\\right)+2 a_{m+1} p m+2 p a_{m+1} \\\\\n& <2 p\\left[(m+1) a_{m+1}+\\sum_{h=1}^{m}\\left(h a_{h}\\right)\\right]=2 p \\sum_{h=1}^{m+1}\\left(h a_{h}\\right),\n\\end{aligned}\n\\]\nas desired.",
+  "vars": [
+    "c_h,k",
+    "h",
+    "k",
+    "a_h",
+    "a_1",
+    "a_m+1",
+    "m"
+  ],
+  "params": [
+    "p",
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "c_h,k": "coeffhk",
+        "h": "indexh",
+        "k": "indexk",
+        "a_h": "rowmean",
+        "a_1": "rowmeanone",
+        "a_m+1": "rowmeannext",
+        "m": "upbound",
+        "p": "multpar",
+        "n": "totcount"
+      },
+      "question": "Problem B-6\nLet \\( multpar \\) and \\( totcount \\) be positive integers. Suppose that the numbers \\( coeffhk(indexh=1,2, \\ldots, totcount ; indexk=1,2, \\ldots, multpar\\, indexh) \\) satisfy \\( 0<coeffhk<1 \\). Prove that\n\\[\n\\left(\\sum \\frac{coeffhk}{indexh}\\right)^{2}<2\\,multpar \\sum coeffhk\n\\]\nwhere each summation is over all admissible ordered pairs \\( (indexh, indexk) \\).",
+      "solution": "B-6.\n\nLet \\( rowmean=\\left(\\sum_{indexk=1}^{multpar\\, indexh} coeffhk\\right) / indexh \\). Clearly, \\( 0 \\leqslant rowmean \\leqslant multpar \\). We now prove that\n\\[\n\\left(\\sum_{indexh=1}^{totcount} rowmean\\right)^{2} \\leqslant 2\\,multpar \\sum_{indexh=1}^{totcount}\\bigl(indexh\\, rowmean\\bigr),\n\\]\nwhich is equivalent to the assertion of the problem, by induction on \\( totcount \\).\n\nFor \\( totcount=1 \\), one has \\( rowmeanone^{2} \\leqslant multpar\\, rowmeanone \\leqslant 2\\,multpar\\, rowmeanone \\) as required. Suppose the inequality is established for \\( totcount=upbound \\). Then\n\\[\n\\begin{aligned}\n\\left(\\sum_{indexh=1}^{upbound+1} rowmean\\right)^{2}\n&=\\left(\\sum_{indexh=1}^{upbound} rowmean\\right)^{2}+2\\, rowmeannext \\sum_{indexh=1}^{upbound} rowmean+rowmeannext^{2}\\\\\n&<2\\,multpar \\sum_{indexh=1}^{upbound}\\bigl(indexh\\, rowmean\\bigr)+2\\, rowmeannext\\, multpar\\, upbound+2\\,multpar\\, rowmeannext\\\\\n&<2\\,multpar\\Bigl[(upbound+1)\\, rowmeannext+\\sum_{indexh=1}^{upbound}\\bigl(indexh\\, rowmean\\bigr)\\Bigr]=2\\,multpar \\sum_{indexh=1}^{upbound+1}\\bigl(indexh\\, rowmean\\bigr),\n\\end{aligned}\n\\]\nas desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "c_h,k": "tarantula",
+        "h": "raincloud",
+        "k": "pineapple",
+        "a_h": "buttercup",
+        "a_1": "meadowlark",
+        "a_m+1": "dragonfly",
+        "m": "starlight",
+        "p": "windstorm",
+        "n": "honeycomb"
+      },
+      "question": "Problem B-6\nLet \\( windstorm \\) and \\( honeycomb \\) be positive integers. Suppose that the numbers \\( tarantula_{raincloud, pineapple}(raincloud=1,2, \\ldots, honeycomb ; pineapple=1,2, \\ldots, windstorm\\, raincloud) \\) satisfy \\( 0<tarantula_{raincloud, pineapple}<1 \\). Prove that\n\\[\n\\left(\\sum \\frac{tarantula_{raincloud, pineapple}}{raincloud}\\right)^{2}<2 windstorm \\sum tarantula_{raincloud, pineapple}\n\\]\nwhere each summation is over all admissible ordered pairs \\( (raincloud, pineapple) \\).",
+      "solution": "B-6.\n\nLet \\( buttercup=\\left(\\sum_{pineapple=1}^{windstorm\\, raincloud} tarantula_{raincloud, pineapple}\\right) / raincloud \\). Clearly, \\( 0 \\leqslant buttercup \\leqslant windstorm \\). We now prove that \\( \\left(\\sum_{raincloud-1}^{honeycomb} buttercup\\right)^{2} \\leqslant 2 windstorm \\sum_{raincloud-1}^{honeycomb}\\left(raincloud buttercup\\right) \\), which is equivalent to the assertion of the problem, by induction on \\( honeycomb \\).\n\nFor \\( honeycomb=1 \\), one has \\( meadowlark^{2} \\leqslant windstorm meadowlark \\leqslant 2 windstorm meadowlark \\) as required. Suppose the inequality established for \\( honeycomb=starlight \\). Then\n\\[\n\\begin{aligned}\n\\left(\\sum_{raincloud=1}^{starlight+1} buttercup\\right)^{2} & =\\left(\\sum_{raincloud=1}^{starlight} buttercup\\right)^{2}+2 dragonfly \\sum_{raincloud=1}^{starlight} buttercup+dragonfly^{2} \\\\\n& <2 windstorm \\sum_{raincloud=1}^{starlight}\\left(raincloud buttercup\\right)+2 dragonfly windstorm starlight+2 windstorm dragonfly \\\\\n& <2 windstorm\\left[(starlight+1) dragonfly+\\sum_{raincloud=1}^{starlight}\\left(raincloud buttercup\\right)\\right]=2 windstorm \\sum_{raincloud=1}^{starlight+1}\\left(raincloud buttercup\\right),\n\\end{aligned}\n\\]\nas desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "c_h,k": "fixedscalar",
+        "h": "infiniteindex",
+        "k": "constantindex",
+        "a_h": "outliervalue",
+        "a_1": "outliersingle",
+        "a_m+1": "outliernext",
+        "m": "terminator",
+        "p": "irrational",
+        "n": "nonpositive"
+      },
+      "question": "Problem B-6\nLet \\( irrational \\) and \\( nonpositive \\) be positive integers. Suppose that the numbers \\( fixedscalar_{infiniteindex, constantindex}(infiniteindex=1,2, \\ldots, nonpositive ; constantindex=1,2, \\ldots, irrational\\, infiniteindex) \\) satisfy \\( 0<fixedscalar_{infiniteindex, constantindex}<1 \\). Prove that\n\\[\n\\left(\\sum \\frac{fixedscalar_{infiniteindex, constantindex}}{infiniteindex}\\right)^{2}<2 \\, irrational \\sum fixedscalar_{infiniteindex, constantindex}\n\\]\nwhere each summation is over all admissible ordered pairs \\( (infiniteindex, constantindex) \\).",
+      "solution": "B-6.\n\nLet \\( outliervalue_{infiniteindex}=\\left(\\sum_{constantindex=1}^{irrational \\, infiniteindex} fixedscalar_{infiniteindex, constantindex}\\right) / infiniteindex \\). Clearly, \\( 0 \\leqslant outliervalue_{infiniteindex} \\leqslant irrational \\). We now prove that \\( \\left(\\sum_{infiniteindex-1}^{nonpositive} outliervalue_{infiniteindex}\\right)^{2} \\leqslant 2 \\, irrational \\sum_{infiniteindex-1}^{nonpositive}\\left(infiniteindex \\, outliervalue_{infiniteindex}\\right) \\), which is equivalent to the assertion of the problem, by induction on \\( nonpositive \\).\n\nFor \\( nonpositive=1 \\), one has \\( outliersingle^{2} \\leqslant irrational \\, outliersingle \\leqslant 2 \\, irrational \\, outliersingle \\) as required. Suppose the inequality established for \\( nonpositive=terminator \\). Then\n\\[\n\\begin{aligned}\n\\left(\\sum_{infiniteindex=1}^{terminator+1} outliervalue_{infiniteindex}\\right)^{2} & =\\left(\\sum_{infiniteindex=1}^{terminator} outliervalue_{infiniteindex}\\right)^{2}+2\\, outliernext \\sum_{infiniteindex=1}^{terminator} outliervalue_{infiniteindex}+outliernext^{2} \\\\\n& <2\\, irrational \\sum_{infiniteindex=1}^{terminator}\\left(infiniteindex\\, outliervalue_{infiniteindex}\\right)+2\\, outliernext\\, irrational\\, terminator+2\\, irrational\\, outliernext \\\\\n& <2\\, irrational\\left[(terminator+1)\\, outliernext+\\sum_{infiniteindex=1}^{terminator}\\left(infiniteindex\\, outliervalue_{infiniteindex}\\right)\\right]=2\\, irrational \\sum_{infiniteindex=1}^{terminator+1}\\left(infiniteindex\\, outliervalue_{infiniteindex}\\right),\n\\end{aligned}\n\\]\nas desired."
+    },
+    "garbled_string": {
+      "map": {
+        "c_h,k": "qzxwvtnp",
+        "h": "hjgrksla",
+        "k": "fpinxqwe",
+        "a_h": "owiejfks",
+        "a_1": "sduvnjqm",
+        "a_m+1": "poynrtlz",
+        "m": "kzowpqur",
+        "p": "ghliexmn",
+        "n": "xbskwuda"
+      },
+      "question": "Problem B-6\nLet \\( ghliexmn \\) and \\( xbskwuda \\) be positive integers. Suppose that the numbers \\( qzxwvtnp_{hjgrksla, fpinxqwe}(hjgrksla=1,2, \\ldots, xbskwuda ; fpinxqwe=1,2, \\ldots, ghliexmn hjgrksla) \\) satisfy \\( 0<qzxwvtnp_{hjgrksla, fpinxqwe}<1 \\). Prove that\n\\[\n\\left(\\sum \\frac{qzxwvtnp_{hjgrksla, fpinxqwe}}{hjgrksla}\\right)^{2}<2 ghliexmn \\sum qzxwvtnp_{hjgrksla, fpinxqwe}\n\\]\nwhere each summation is over all admissible ordered pairs \\( (hjgrksla, fpinxqwe) \\).",
+      "solution": "B-6.\n\nLet \\( owiejfks=\\left(\\sum_{fpinxqwe=1}^{ghliexmn hjgrksla} qzxwvtnp_{hjgrksla, fpinxqwe}\\right) / hjgrksla \\). Clearly, \\( 0 \\leqslant owiejfks \\leqslant ghliexmn \\). We now prove that \\( \\left(\\sum_{hjgrksla-1}^{xbskwuda} owiejfks\\right)^{2} \\leqslant 2 ghliexmn \\sum_{hjgrksla-1}^{xbskwuda}\\left(hjgrksla\\, owiejfks\\right) \\), which is equivalent to the assertion of the problem, by induction on \\( xbskwuda \\).\n\nFor \\( xbskwuda=1 \\), one has \\( sduvnjqm^{2} \\leqslant ghliexmn\\, sduvnjqm \\leqslant 2 ghliexmn\\, sduvnjqm \\) as required. Suppose the inequality established for \\( xbskwuda=kzowpqur \\). Then\n\\[\n\\begin{aligned}\n\\left(\\sum_{hjgrksla=1}^{kzowpqur+1} owiejfks\\right)^{2} &=\\left(\\sum_{hjgrksla=1}^{kzowpqur} owiejfks\\right)^{2}+2\\, poynrtlz \\sum_{hjgrksla=1}^{kzowpqur} owiejfks+poynrtlz^{2} \\\\ &<2\\, ghliexmn \\sum_{hjgrksla=1}^{kzowpqur}\\left(hjgrksla\\, owiejfks\\right)+2\\, poynrtlz\\, ghliexmn\\, kzowpqur+2\\, ghliexmn\\, poynrtlz \\\\ &<2\\, ghliexmn\\left[(kzowpqur+1)\\, poynrtlz+\\sum_{hjgrksla=1}^{kzowpqur}\\left(hjgrksla\\, owiejfks\\right)\\right]=2\\, ghliexmn \\sum_{hjgrksla=1}^{kzowpqur+1}\\left(hjgrksla\\, owiejfks\\right),\n\\end{aligned}\n\\]\nas desired."
+    },
+    "kernel_variant": {
+      "question": "Let p and n be positive integers. For 1 \\le h \\le n and 1 \\le k \\le ph let real numbers d_{h,k} satisfy\n\\[\n0< d_{h,k} < 2.\\]\nProve the inequality\n\\[\n\\left( \\sum_{(h,k)} \\frac{d_{h,k}}{h} \\right)^{2}\\;\\le\\; 5p\\sum_{(h,k)} d_{h,k},\n\\]\nwhere every summation is taken over all admissible ordered pairs (h,k).",
+      "solution": "Corrected Solution.\n\nDefine for each integer h with 1\\leq h\\leq n\n  a_h := (1/h) \\sum _{k=1}^{p h} d_{h,k}.\nSince 0<d_{h,k}<2 and there are p h terms, we have\n  0 < a_h < (2\\cdot p h)/h = 2p.\nObserve\n  \\sum _{h,k} d_{h,k} = \\sum _{h=1}^n h a_h,\n  \\sum _{h,k} (d_{h,k}/h) = \\sum _{h=1}^n a_h =: S.\nWe must show\n  S^2 \\leq  5p \\cdot  \\sum _{h=1}^n h a_h.\nIn fact we prove the stronger inequality\n  S^2 \\leq  4p \\cdot  \\sum _{h=1}^n h a_h.\n\nIntroduce scaled variables b_h = a_h/(2p).  Then 0\\leq b_h<1 and\n  S = 2p\\cdot \\sum _{h=1}^n b_h,\n  \\sum _{h=1}^n h a_h = 2p\\cdot \\sum _{h=1}^n h b_h.\nHence\n  S^2 = 4p^2\\cdot (\\sum  b_h)^2\nand it suffices to prove\n  (\\sum _{h=1}^n b_h)^2 \\leq  2 \\cdot  \\sum _{h=1}^n h b_h\nfor any real 0\\leq b_h<1.\n\nProof of (\\sum  b_h)^2 \\leq  2\\sum  h b_h:\nLet T := \\sum _{h=1}^n b_h, and write T = k + t with integer k = \\lfloor T\\rfloor  and t\\in [0,1).  By the rearrangement principle, the minimal value of \\sum  h b_h occurs when the largest b_h are paired with the smallest h.  Thus\n  \\sum _{h=1}^n h b_h \\geq  \\sum _{h=1}^k h + (k+1)\\cdot t = k(k+1)/2 + (k+1)t.\nTherefore\n  (\\sum  b_h)^2 = (k+t)^2\n    \\leq  2\\cdot [k(k+1)/2 + (k+1)t]\n    = (k+1)(k+2t),\nand one checks at once that (k+t)^2 \\leq  (k+1)(k+2t) holds for all 0\\leq t<1.  This completes the proof of the scaling inequality.\n\nSubstituting back,\n  S^2 = 4p^2\\cdot (\\sum  b_h)^2 \\leq  4p^2\\cdot 2\\cdot \\sum  h b_h = 8p^2\\cdot \\sum  h b_h = 4p\\cdot \\sum  h a_h\nand hence\n  (\\sum _{h,k} d_{h,k}/h)^2 = S^2 \\leq  4p\\cdot \\sum _{h,k} d_{h,k} < 5p\\cdot \\sum _{h,k} d_{h,k}.\nThis establishes the claimed inequality for all positive integers p,n.  \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Group the double sum by fixing h: set a_h = (∑_{k=1}^{ph} c_{h,k})/h so that 0 ≤ a_h ≤ p.",
+          "Rewrite the desired inequality as (∑_{h=1}^n a_h)^2 ≤ 2p ∑_{h=1}^n h a_h (equivalent to the original statement).",
+          "Prove the new inequality by induction on n – verify the base case n = 1 directly with a_h ≤ p.",
+          "Inductive step: expand (∑_{h=1}^{m+1} a_h)^2, apply the induction hypothesis to the first term, and bound the remaining terms using a_h ≤ p and ∑_{h=1}^{m} a_h ≤ pm.",
+          "Conclude the inequality holds for all n by induction, completing the proof."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Upper bound on each entry c_{h,k}; only the fact that they are bounded by a constant is used (to deduce a_h ≤ p).",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Use of strict \"<\" versus non-strict \"≤\" in the statement and intermediate inequalities; the argument works identically with non-strict signs.",
+            "original": "<"
+          },
+          "slot3": {
+            "description": "The factor \"2\" appearing in the final inequality coefficient (2p); any larger constant would still make the proof go through unchanged.",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

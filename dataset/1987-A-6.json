@@ -1,0 +1,134 @@
+{
+  "index": "1987-A-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "For each positive integer $n$, let $a(n)$ be the number of zeroes in\nthe base 3 representation of $n$. For which positive real numbers $x$\ndoes the series\n\\[\n\\sum_{n=1}^\\infty \\frac{x^{a(n)}}{n^3}\n\\]\nconverge?",
+  "solution": "Solution. The integer \\( n \\geq 1 \\) has exactly \\( k+1 \\) digits in base 3 if and only if \\( 3^{k} \\leq n<3^{k+1} \\). Define\n\\[\nS_{k}=\\sum_{n=3^{k}}^{3^{k+1}-1} \\frac{x^{a(n)}}{n^{3}}, \\quad \\text { and } \\quad T_{k}=\\sum_{n=3^{k}}^{3^{k+1}-1} x^{a(n)}\n\\]\n\nThe given series \\( \\sum_{n=1}^{\\infty} x^{a(n)} / n^{3} \\) has all terms positive, so it will converge if and only if \\( \\sum_{k=0}^{\\infty} S_{k} \\) converges. For \\( 3^{k} \\leq n<3^{k+1} \\), we have \\( 3^{3 k} \\leq n^{3}<3^{3 k+3} \\), so \\( T_{k} / 3^{3 k+3} \\leq S_{k} \\leq T_{k} / 3^{3 k} \\). Therefore \\( \\sum_{k=0}^{\\infty} S_{k} \\) converges if and only if \\( \\sum_{k=0}^{\\infty} T_{k} / 3^{3 k} \\) converges. The number of \\( n \\) with \\( k+1 \\) digits base 3 and satisfying \\( a(n)=i \\) is \\( \\binom{k}{i} 2^{k+1-i} \\), because there are \\( \\binom{k}{i} \\) possibilities for the set of positions of the \\( i \\) zero digits (since the leading digit cannot be zero), and then \\( 2^{k+1-i} \\) ways to select 1 or 2 as each of the remaining digits. Therefore\n\\[\nT_{k}=\\sum_{i=0}^{k}\\binom{k}{i} 2^{k+1-i} x^{i}=(x+2)^{k} .\n\\]\n\nHence\n\\[\n\\sum_{k=0}^{\\infty} T_{k} / 3^{3 k}=\\sum_{k=0}^{\\infty}\\left(\\frac{x+2}{27}\\right)^{k}\n\\]\nwhich converges if and only if \\( |(x+2) / 27|<1 \\). For positive \\( x \\), this condition is equivalent to \\( 0<x<25 \\).\n\nRemark. More generally, let \\( \\alpha_{k}(n) \\) be the number of zeros in the base \\( k \\) expansion of \\( n \\), and let \\( A_{k}(x)=\\sum_{n=1}^{\\infty} x^{\\alpha_{k}(n)} / n^{k} \\). Then \\( A_{k}(x) \\) converges at a positive real number \\( x \\) if and only if \\( x<k^{k}-k+1 \\).\n\nLiterature note. For more other convergent sums involving digits in base \\( b \\) representations, see [BB]. This article contains exact formulas for certain sums, as well as approximations by \"nice\" numbers that agree to a remarkable number of decimal places.",
+  "vars": [
+    "n",
+    "k",
+    "i",
+    "x"
+  ],
+  "params": [
+    "a",
+    "b",
+    "S_k",
+    "T_k",
+    "A_k",
+    "\\\\alpha_k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "k": "powindex",
+        "i": "zerocount",
+        "x": "posreal",
+        "a": "zerofunc",
+        "b": "basevar",
+        "S_k": "blocksum",
+        "T_k": "blockterm",
+        "A_k": "aggregatesum",
+        "\\\\alpha_k": "alphacount"
+      },
+      "question": "For each positive integer $indexvar$, let $zerofunc(indexvar)$ be the number of zeroes in the base 3 representation of $indexvar$. For which positive real numbers $posreal$ does the series\n\\[\n\\sum_{indexvar=1}^\\infty \\frac{posreal^{zerofunc(indexvar)}}{indexvar^3}\n\\]\nconverge?",
+      "solution": "Solution. The integer \\( indexvar \\geq 1 \\) has exactly \\( powindex+1 \\) digits in base 3 if and only if \\( 3^{powindex} \\leq indexvar < 3^{powindex+1} \\). Define\n\\[\nblocksum=\\sum_{indexvar=3^{powindex}}^{3^{powindex+1}-1} \\frac{posreal^{zerofunc(indexvar)}}{indexvar^{3}}, \\quad\\text{and}\\quad blockterm=\\sum_{indexvar=3^{powindex}}^{3^{powindex+1}-1} posreal^{zerofunc(indexvar)} .\n\\]\n\nThe given series \\( \\sum_{indexvar=1}^{\\infty} posreal^{zerofunc(indexvar)} / indexvar^{3} \\) has all terms positive, so it will converge if and only if \\( \\sum_{powindex=0}^{\\infty} blocksum \\) converges. For \\( 3^{powindex} \\leq indexvar < 3^{powindex+1} \\) we have \\( 3^{3\\,powindex} \\leq indexvar^{3} < 3^{3\\,powindex+3} \\), so\n\\( blockterm / 3^{3\\,powindex+3} \\leq blocksum \\leq blockterm / 3^{3\\,powindex} \\).\nTherefore \\( \\sum_{powindex=0}^{\\infty} blocksum \\) converges if and only if \\( \\sum_{powindex=0}^{\\infty} blockterm / 3^{3\\,powindex} \\) converges. The number of \\( indexvar \\) with \\( powindex+1 \\) digits base 3 and satisfying \\( zerofunc(indexvar)=zerocount \\) is \\( \\binom{powindex}{zerocount} 2^{powindex+1-zerocount} \\), because there are \\( \\binom{powindex}{zerocount} \\) possibilities for the set of positions of the \\( zerocount \\) zero digits (since the leading digit cannot be zero), and then \\( 2^{powindex+1-zerocount} \\) ways to select 1 or 2 as each of the remaining digits. Therefore\n\\[\nblockterm=\\sum_{zerocount=0}^{powindex} \\binom{powindex}{zerocount} 2^{powindex+1-zerocount} posreal^{zerocount} = (posreal+2)^{powindex} .\n\\]\n\nHence\n\\[\n\\sum_{powindex=0}^{\\infty} \\frac{blockterm}{3^{3\\,powindex}} = \\sum_{powindex=0}^{\\infty} \\left(\\frac{posreal+2}{27}\\right)^{powindex},\n\\]\nwhich converges if and only if \\( |(posreal+2)/27|<1 \\). For positive \\( posreal \\), this condition is equivalent to \\( 0<posreal<25 \\).\n\nRemark. More generally, let \\( alphacount(indexvar) \\) be the number of zeros in the base \\( powindex \\) expansion of \\( indexvar \\), and let\n\\[\naggregatesum(posreal)=\\sum_{indexvar=1}^{\\infty} \\frac{posreal^{alphacount(indexvar)}}{indexvar^{powindex}} .\n\\]\nThen \\( aggregatesum(posreal) \\) converges at a positive real number \\( posreal \\) if and only if \\( posreal < powindex^{powindex}-powindex+1 \\).\n\nLiterature note. For more other convergent sums involving digits in base \\( basevar \\) representations, see [BB]. This article contains exact formulas for certain sums, as well as approximations by \"nice\" numbers that agree to a remarkable number of decimal places."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "hummingbird",
+        "k": "rainshadow",
+        "i": "snowflake",
+        "x": "cottonseed",
+        "a": "hazelnuts",
+        "b": "raspberry",
+        "S_k": "buttercup",
+        "T_k": "caterpillar",
+        "A_k": "dragonfly",
+        "\\\\alpha_k": "lavender"
+      },
+      "question": "For each positive integer $hummingbird$, let $hazelnuts(hummingbird)$ be the number of zeroes in the base 3 representation of $hummingbird$. For which positive real numbers $cottonseed$ does the series\n\\[\n\\sum_{hummingbird=1}^\\infty \\frac{cottonseed^{hazelnuts(hummingbird)}}{hummingbird^3}\n\\]\nconverge?",
+      "solution": "Solution. The integer \\( hummingbird \\geq 1 \\) has exactly \\( rainshadow+1 \\) digits in base 3 if and only if \\( 3^{rainshadow} \\leq hummingbird<3^{rainshadow+1} \\). Define\n\\[\nbuttercup=\\sum_{hummingbird=3^{rainshadow}}^{3^{rainshadow+1}-1} \\frac{cottonseed^{hazelnuts(hummingbird)}}{hummingbird^{3}}, \\quad \\text { and } \\quad caterpillar=\\sum_{hummingbird=3^{rainshadow}}^{3^{rainshadow+1}-1} cottonseed^{hazelnuts(hummingbird)}\n\\]\n\nThe given series \\( \\sum_{hummingbird=1}^{\\infty} cottonseed^{hazelnuts(hummingbird)} / hummingbird^{3} \\) has all terms positive, so it will converge if and only if \\( \\sum_{rainshadow=0}^{\\infty} buttercup \\) converges. For \\( 3^{rainshadow} \\leq hummingbird<3^{rainshadow+1} \\), we have \\( 3^{3 rainshadow} \\leq hummingbird^{3}<3^{3 rainshadow+3} \\), so \\( caterpillar / 3^{3 rainshadow+3} \\leq buttercup \\leq caterpillar / 3^{3 rainshadow} \\). Therefore \\( \\sum_{rainshadow=0}^{\\infty} buttercup \\) converges if and only if \\( \\sum_{rainshadow=0}^{\\infty} caterpillar / 3^{3 rainshadow} \\) converges. The number of \\( hummingbird \\) with \\( rainshadow+1 \\) digits base 3 and satisfying \\( hazelnuts(hummingbird)=snowflake \\) is \\( \\binom{rainshadow}{snowflake} 2^{rainshadow+1-snowflake} \\), because there are \\( \\binom{rainshadow}{snowflake} \\) possibilities for the set of positions of the \\( snowflake \\) zero digits (since the leading digit cannot be zero), and then \\( 2^{rainshadow+1-snowflake} \\) ways to select 1 or 2 as each of the remaining digits. Therefore\n\\[\ncaterpillar=\\sum_{snowflake=0}^{rainshadow}\\binom{rainshadow}{snowflake} 2^{rainshadow+1-snowflake} cottonseed^{snowflake}=(cottonseed+2)^{rainshadow} .\n\\]\n\nHence\n\\[\n\\sum_{rainshadow=0}^{\\infty} caterpillar / 3^{3 rainshadow}=\\sum_{rainshadow=0}^{\\infty}\\left(\\frac{cottonseed+2}{27}\\right)^{rainshadow}\n\\]\nwhich converges if and only if \\( |(cottonseed+2) / 27|<1 \\). For positive \\( cottonseed \\), this condition is equivalent to \\( 0<cottonseed<25 \\).\n\nRemark. More generally, let \\( lavender(hummingbird) \\) be the number of zeros in the base \\( rainshadow \\) expansion of \\( hummingbird \\), and let \\( dragonfly(cottonseed)=\\sum_{hummingbird=1}^{\\infty} cottonseed^{lavender(hummingbird)} / hummingbird^{rainshadow} \\). Then \\( dragonfly(cottonseed) \\) converges at a positive real number \\( cottonseed \\) if and only if \\( cottonseed<rainshadow^{rainshadow}-rainshadow+1 \\).\n\nLiterature note. For more other convergent sums involving digits in base \\( raspberry \\) representations, see [BB]. This article contains exact formulas for certain sums, as well as approximations by \"nice\" numbers that agree to a remarkable number of decimal places."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "continuous",
+        "k": "nonindex",
+        "i": "nonzeros",
+        "x": "negativereal",
+        "a": "nonzeroesfunc",
+        "b": "exponent",
+        "S_k": "difference",
+        "T_k": "multiplying",
+        "A_k": "dispersal",
+        "\\\\alpha_k": "omegaindex"
+      },
+      "question": "For each positive integer $continuous$, let $nonzeroesfunc(continuous)$ be the number of zeroes in the base 3 representation of $continuous$. For which positive real numbers $negativereal$ does the series\n\\[\n\\sum_{continuous=1}^\\infty \\frac{negativereal^{nonzeroesfunc(continuous)}}{continuous^3}\n\\]\nconverge?",
+      "solution": "Solution. The integer \\( continuous \\geq 1 \\) has exactly \\( nonindex+1 \\) digits in base 3 if and only if \\( 3^{nonindex} \\leq continuous<3^{nonindex+1} \\). Define\n\\[\ndifference_{nonindex}=\\sum_{continuous=3^{nonindex}}^{3^{nonindex+1}-1} \\frac{negativereal^{nonzeroesfunc(continuous)}}{continuous^{3}}, \\quad \\text { and } \\quad multiplying_{nonindex}=\\sum_{continuous=3^{nonindex}}^{3^{nonindex+1}-1} negativereal^{nonzeroesfunc(continuous)}\n\\]\n\nThe given series \\( \\sum_{continuous=1}^{\\infty} negativereal^{nonzeroesfunc(continuous)} / continuous^{3} \\) has all terms positive, so it will converge if and only if \\( \\sum_{nonindex=0}^{\\infty} difference_{nonindex} \\) converges. For \\( 3^{nonindex} \\leq continuous<3^{nonindex+1} \\), we have \\( 3^{3 \\, nonindex} \\leq continuous^{3}<3^{3 \\,nonindex+3} \\), so \\( multiplying_{nonindex} / 3^{3 \\, nonindex+3} \\leq difference_{nonindex} \\leq multiplying_{nonindex} / 3^{3 \\, nonindex} \\). Therefore \\( \\sum_{nonindex=0}^{\\infty} difference_{nonindex} \\) converges if and only if \\( \\sum_{nonindex=0}^{\\infty} multiplying_{nonindex} / 3^{3 \\, nonindex} \\) converges. The number of \\( continuous \\) with \\( nonindex+1 \\) digits base 3 and satisfying \\( nonzeroesfunc(continuous)=nonzeros \\) is \\( \\binom{nonindex}{nonzeros} 2^{nonindex+1-nonzeros} \\), because there are \\( \\binom{nonindex}{nonzeros} \\) possibilities for the set of positions of the \\( nonzeros \\) zero digits (since the leading digit cannot be zero), and then \\( 2^{nonindex+1-nonzeros} \\) ways to select 1 or 2 as each of the remaining digits. Therefore\n\\[\nmultiplying_{nonindex}=\\sum_{nonzeros=0}^{nonindex}\\binom{nonindex}{nonzeros} 2^{nonindex+1-nonzeros} negativereal^{nonzeros}=(negativereal+2)^{nonindex} .\n\\]\n\nHence\n\\[\n\\sum_{nonindex=0}^{\\infty} multiplying_{nonindex} / 3^{3\\, nonindex}=\\sum_{nonindex=0}^{\\infty}\\left(\\frac{negativereal+2}{27}\\right)^{nonindex}\n\\]\nwhich converges if and only if \\( |(negativereal+2) / 27|<1 \\). For positive \\( negativereal \\), this condition is equivalent to \\( 0<negativereal<25 \\).\n\nRemark. More generally, let \\( omegaindex_{nonindex}(continuous) \\) be the number of zeros in the base \\( nonindex \\) expansion of \\( continuous \\), and let \\( dispersal_{nonindex}(negativereal)=\\sum_{continuous=1}^{\\infty} negativereal^{omegaindex_{nonindex}(continuous)} / continuous^{nonindex} \\). Then \\( dispersal_{nonindex}(negativereal) \\) converges at a positive real number \\( negativereal \\) if and only if \\( negativereal<nonindex^{nonindex}-nonindex+1 \\).\n\nLiterature note. For more other convergent sums involving digits in base \\( exponent \\) representations, see [BB]. This article contains exact formulas for certain sums, as well as approximations by \"nice\" numbers that agree to a remarkable number of decimal places."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "slkdhfmx",
+        "k": "pgjvznor",
+        "i": "wqrpuytn",
+        "x": "cjvzplqa",
+        "a": "xzklmprs",
+        "b": "zqfhvntm",
+        "S_k": "plohwmqs",
+        "T_k": "dwyrcvbn",
+        "A_k": "mrqfshkd",
+        "\\\\alpha_k": "hvyfrpld"
+      },
+      "question": "For each positive integer $slkdhfmx$, let $xzklmprs(slkdhfmx)$ be the number of zeroes in the base 3 representation of $slkdhfmx$. For which positive real numbers $cjvzplqa$ does the series\n\\[\n\\sum_{slkdhfmx=1}^\\infty \\frac{cjvzplqa^{xzklmprs(slkdhfmx)}}{slkdhfmx^3}\n\\]\nconverge?",
+      "solution": "Solution. The integer \\( slkdhfmx \\geq 1 \\) has exactly \\( pgjvznor+1 \\) digits in base 3 if and only if \\( 3^{pgjvznor} \\leq slkdhfmx<3^{pgjvznor+1} \\). Define\n\\[\nplohwmqs_{pgjvznor}=\\sum_{slkdhfmx=3^{pgjvznor}}^{3^{pgjvznor+1}-1} \\frac{cjvzplqa^{xzklmprs(slkdhfmx)}}{slkdhfmx^{3}}, \\quad \\text { and } \\quad dwyrcvbn_{pgjvznor}=\\sum_{slkdhfmx=3^{pgjvznor}}^{3^{pgjvznor+1}-1} cjvzplqa^{xzklmprs(slkdhfmx)}\n\\]\n\nThe given series \\( \\sum_{slkdhfmx=1}^{\\infty} cjvzplqa^{xzklmprs(slkdhfmx)} / slkdhfmx^{3} \\) has all terms positive, so it will converge if and only if \\( \\sum_{pgjvznor=0}^{\\infty} plohwmqs_{pgjvznor} \\) converges. For \\( 3^{pgjvznor} \\leq slkdhfmx<3^{pgjvznor+1} \\), we have \\( 3^{3 pgjvznor} \\leq slkdhfmx^{3}<3^{3 pgjvznor+3} \\), so \\( dwyrcvbn_{pgjvznor} / 3^{3 pgjvznor+3} \\leq plohwmqs_{pgjvznor} \\leq dwyrcvbn_{pgjvznor} / 3^{3 pgjvznor} \\). Therefore \\( \\sum_{pgjvznor=0}^{\\infty} plohwmqs_{pgjvznor} \\) converges if and only if \\( \\sum_{pgjvznor=0}^{\\infty} dwyrcvbn_{pgjvznor} / 3^{3 pgjvznor} \\) converges. The number of \\( slkdhfmx \\) with \\( pgjvznor+1 \\) digits base 3 and satisfying \\( xzklmprs(slkdhfmx)=wqrpuytn \\) is \\( \\binom{pgjvznor}{wqrpuytn} 2^{pgjvznor+1-wqrpuytn} \\), because there are \\( \\binom{pgjvznor}{wqrpuytn} \\) possibilities for the set of positions of the \\( wqrpuytn \\) zero digits (since the leading digit cannot be zero), and then \\( 2^{pgjvznor+1-wqrpuytn} \\) ways to select 1 or 2 as each of the remaining digits. Therefore\n\\[\ndwyrcvbn_{pgjvznor}=\\sum_{wqrpuytn=0}^{pgjvznor}\\binom{pgjvznor}{wqrpuytn} 2^{pgjvznor+1-wqrpuytn} cjvzplqa^{wqrpuytn}=(cjvzplqa+2)^{pgjvznor} .\n\\]\n\nHence\n\\[\n\\sum_{pgjvznor=0}^{\\infty} dwyrcvbn_{pgjvznor} / 3^{3 pgjvznor}=\\sum_{pgjvznor=0}^{\\infty}\\left(\\frac{cjvzplqa+2}{27}\\right)^{pgjvznor}\n\\]\nwhich converges if and only if \\( |(cjvzplqa+2) / 27|<1 \\). For positive \\( cjvzplqa \\), this condition is equivalent to \\( 0<cjvzplqa<25 \\).\n\nRemark. More generally, let \\( hvyfrpld_{pgjvznor}(slkdhfmx) \\) be the number of zeros in the base \\( pgjvznor \\) expansion of \\( slkdhfmx \\), and let \\( mrqfshkd_{pgjvznor}(cjvzplqa)=\\sum_{slkdhfmx=1}^{\\infty} cjvzplqa^{hvyfrpld_{pgjvznor}(slkdhfmx)} / slkdhfmx^{pgjvznor} \\). Then \\( mrqfshkd_{pgjvznor}(cjvzplqa) \\) converges at a positive real number \\( cjvzplqa \\) if and only if \\( cjvzplqa<pgjvznor^{pgjvznor}-pgjvznor+1 \\).\n\nLiterature note. For more other convergent sums involving digits in base \\( zqfhvntm \\) representations, see [BB]. This article contains exact formulas for certain sums, as well as approximations by \"nice\" numbers that agree to a remarkable number of decimal places."
+    },
+    "kernel_variant": {
+      "question": "For every positive integer $n$, let $b(n)$ be the number of occurrences of the digit $3$ in the base-$5$ representation of $n$.  For which positive real numbers $x$ does the series\n\\[\n\\sum_{n=1}^{\\infty}\\frac{x^{\\,b(n)}}{n^{4}}\n\\]\nconverge?",
+      "solution": "Write the sum in blocks of integers having the same length in base 5.\n\n1. Blocking.\n   For k\\geq 0 put\n     S_k = \\sum _{5^k \\leq  n < 5^{k+1}} x^{b(n)}/n^4,    T_k = \\sum _{5^k \\leq  n < 5^{k+1}} x^{b(n)}.\n   The given series converges iff \\sum _k S_k converges.\n\n2. Bounding S_k with T_k.\n   Because 5^k \\leq  n < 5^{k+1} implies 5^{4k} \\leq  n^4 < 5^{4k+4},\n     T_k/5^{4k+4} \\leq  S_k \\leq  T_k/5^{4k}.\n   Hence \\sum _k S_k converges exactly when \\sum _k T_k/5^{4k} converges.\n\n3. Computing T_k.\n   A (k+1)-digit base-5 number has leading digit from {1,2,3,4} and k further digits, each from {0,1,2,3,4}.  Regard x as a weight attached to every digit 3.\n   *  Leading digit: either 3 (weight x, 1 way) or not 3 (weight 1, 3 ways).  Contribution: 3 + x.\n   *  Each of the remaining k positions: digit 3 (weight x, 1 way) or one of the other four digits (weight 1, 4 ways).  Contribution per position: 4 + x.\n   Therefore\n     T_k = (3 + x)(4 + x)^k.\n\n4. A geometric series.\n   Consequently\n     T_k/5^{4k} = (3 + x)((4 + x)/5^4)^k = (3 + x)((x + 4)/625)^k,\n   a geometric series with ratio (x + 4)/625.  Thus \\sum _k T_k/5^{4k}, and hence the original series, converges exactly when\n     |(x + 4)/625| < 1.\n\n5. Positive x.\n   For x > 0 the inequality becomes 0 < x < 625 - 4 = 621.\n\nTherefore the series \\sum _{n\\geq 1} x^{b(n)}/n^4 converges precisely for\n\n0 < x < 621.",
+      "_meta": {
+        "core_steps": [
+          "Block the integers by their length in the chosen base and rewrite the series as ∑ S_k over these blocks.",
+          "Compare each n in the k-th block with the endpoints of the block to bound S_k between constant multiples of T_k / (base^p)^k.",
+          "Compute T_k by counting how many digits in the block equal the chosen digit; this gives T_k = C · (x + (base − 1))^k (C is a harmless constant).",
+          "The resulting series is geometric with ratio (x + (base − 1)) / base^p, so convergence ⇔ |(x + (base − 1)) / base^p| < 1.",
+          "For positive x this becomes 0 < x < base^p − (base − 1), yielding the desired interval."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Numeral base used to write n",
+            "original": 3
+          },
+          "slot2": {
+            "description": "Exponent p in the denominator n^p",
+            "original": 3
+          },
+          "slot3": {
+            "description": "Digit being counted in each expansion",
+            "original": 0
+          },
+          "slot4": {
+            "description": "Number of available choices for a non-counted digit (= base − 1), the constant added to x inside (x + …)",
+            "original": 2
+          },
+          "slot5": {
+            "description": "Common ratio denominator base^p that appears in the geometric series",
+            "original": 27
+          },
+          "slot6": {
+            "description": "Upper bound for x ensuring convergence (base^p − (base − 1))",
+            "original": 25
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

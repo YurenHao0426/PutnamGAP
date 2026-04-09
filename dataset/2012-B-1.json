@@ -1,0 +1,104 @@
+{
+  "index": "2012-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $S$ be a class of functions from $[0, \\infty)$ to $[0, \\infty)$ that satisfies:\n\\begin{itemize}\n\\item[(i)]\nThe functions $f_1(x) = e^x - 1$ and $f_2(x) = \\ln(x+1)$ are in $S$;\n\\item[(ii)]\nIf $f(x)$ and $g(x)$ are in $S$, the functions $f(x) + g(x)$ and $f(g(x))$ are in $S$;\n\\item[(iii)]\nIf $f(x)$ and $g(x)$ are in $S$ and $f(x) \\geq g(x)$ for all $x \\geq 0$, then the function\n$f(x) - g(x)$ is in $S$.\n\\end{itemize}\nProve that if $f(x)$ and $g(x)$ are in $S$, then the function $f(x) g(x)$ is also in $S$.",
+  "solution": "Each of the following functions belongs to $S$ for the reasons indicated.\n\\begin{center}\n\\begin{tabular}{ll}\n$f(x), g(x)$ & given \\\\\n$\\ln(x+1)$ & (i) \\\\\n$\\ln(f(x)+1), \\ln(g(x)+1)$ & (ii) plus two previous lines\\\\\n$\\ln(f(x)+1) + \\ln(g(x)+1)$ & (ii) \\\\\n$e^x - 1$ & (i) \\\\\n$(f(x)+1)(g(x)+1) - 1$ & (ii) plus two previous lines \\\\\n$f(x)g(x) + f(x) + g(x)$ & previous line \\\\\n$f(x) + g(x)$ & (ii) plus first line \\\\\n$f(x) g(x)$ & (iii) plus two previous lines\n\\end{tabular}\n\\end{center}",
+  "vars": [
+    "x",
+    "f",
+    "g"
+  ],
+  "params": [
+    "S",
+    "f_1",
+    "f_2"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "varreal",
+        "f": "funcone",
+        "g": "functwo",
+        "S": "setclass",
+        "f_1": "fnameone",
+        "f_2": "fnametwo"
+      },
+      "question": "Let $setclass$ be a class of functions from $[0, \\infty)$ to $[0, \\infty)$ that satisfies:\n\\begin{itemize}\n\\item[(i)]\nThe functions $fnameone(varreal) = e^{varreal} - 1$ and $fnametwo(varreal) = \\ln(varreal+1)$ are in $setclass$;\n\\item[(ii)]\nIf $funcone(varreal)$ and $functwo(varreal)$ are in $setclass$, the functions $funcone(varreal) + functwo(varreal)$ and $funcone(functwo(varreal))$ are in $setclass$;\n\\item[(iii)]\nIf $funcone(varreal)$ and $functwo(varreal)$ are in $setclass$ and $funcone(varreal) \\geq functwo(varreal)$ for all $varreal \\geq 0$, then the function\n$funcone(varreal) - functwo(varreal)$ is in $setclass$.\n\\end{itemize}\nProve that if $funcone(varreal)$ and $functwo(varreal)$ are in $setclass$, then the function $funcone(varreal) functwo(varreal)$ is also in $setclass$.",
+      "solution": "Each of the following functions belongs to $setclass$ for the reasons indicated.\n\\begin{center}\n\\begin{tabular}{ll}\n$funcone(varreal), functwo(varreal)$ & given \\\\\n$\\ln(varreal+1)$ & (i) \\\\\n$\\ln(funcone(varreal)+1), \\ln(functwo(varreal)+1)$ & (ii) plus two previous lines\\\\\n$\\ln(funcone(varreal)+1) + \\ln(functwo(varreal)+1)$ & (ii) \\\\\n$e^{varreal} - 1$ & (i) \\\\\n$(funcone(varreal)+1)(functwo(varreal)+1) - 1$ & (ii) plus two previous lines \\\\\n$funcone(varreal)functwo(varreal) + funcone(varreal) + functwo(varreal)$ & previous line \\\\\n$funcone(varreal) + functwo(varreal)$ & (ii) plus first line \\\\\n$funcone(varreal) functwo(varreal)$ & (iii) plus two previous lines\n\\end{tabular}\n\\end{center}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "perimeter",
+        "f": "bluebird",
+        "g": "tangerine",
+        "S": "galaxyset",
+        "f_1": "pineapple",
+        "f_2": "caterpillar"
+      },
+      "question": "Let $galaxyset$ be a class of functions from $[0, \\infty)$ to $[0, \\infty)$ that satisfies:\n\\begin{itemize}\n\\item[(i)]\nThe functions $pineapple(perimeter) = e^{perimeter} - 1$ and $caterpillar(perimeter) = \\ln(perimeter+1)$ are in $galaxyset$;\n\\item[(ii)]\nIf $bluebird(perimeter)$ and $tangerine(perimeter)$ are in $galaxyset$, the functions $bluebird(perimeter) + tangerine(perimeter)$ and $bluebird(tangerine(perimeter))$ are in $galaxyset$;\n\\item[(iii)]\nIf $bluebird(perimeter)$ and $tangerine(perimeter)$ are in $galaxyset$ and $bluebird(perimeter) \\geq tangerine(perimeter)$ for all $perimeter \\geq 0$, then the function\n$bluebird(perimeter) - tangerine(perimeter)$ is in $galaxyset$.\n\\end{itemize}\nProve that if $bluebird(perimeter)$ and $tangerine(perimeter)$ are in $galaxyset$, then the function $bluebird(perimeter) tangerine(perimeter)$ is also in $galaxyset$.",
+      "solution": "Each of the following functions belongs to $galaxyset$ for the reasons indicated.\n\\begin{center}\n\\begin{tabular}{ll}\n$bluebird(perimeter), tangerine(perimeter)$ & given \\\\\n$\\ln(perimeter+1)$ & (i) \\\\\n$\\ln(bluebird(perimeter)+1), \\ln(tangerine(perimeter)+1)$ & (ii) plus two previous lines\\\\\n$\\ln(bluebird(perimeter)+1) + \\ln(tangerine(perimeter)+1)$ & (ii) \\\\\n$e^{perimeter} - 1$ & (i) \\\\\n$(bluebird(perimeter)+1)(tangerine(perimeter)+1) - 1$ & (ii) plus two previous lines \\\\\n$bluebird(perimeter)tangerine(perimeter) + bluebird(perimeter) + tangerine(perimeter)$ & previous line \\\\\n$bluebird(perimeter) + tangerine(perimeter)$ & (ii) plus first line \\\\\n$bluebird(perimeter) tangerine(perimeter)$ & (iii) plus two previous lines\n\\end{tabular}\n\\end{center}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "f": "nonfunction",
+        "g": "invariable",
+        "S": "singleton",
+        "f_1": "lastfunction",
+        "f_2": "earlyfunction"
+      },
+      "question": "Let $singleton$ be a class of functions from $[0, \\infty)$ to $[0, \\infty)$ that satisfies:\n\\begin{itemize}\n\\item[(i)]\nThe functions $lastfunction(fixedvalue) = e^{fixedvalue} - 1$ and $earlyfunction(fixedvalue) = \\ln(fixedvalue+1)$ are in $singleton$;\n\\item[(ii)]\nIf $nonfunction(fixedvalue)$ and $invariable(fixedvalue)$ are in $singleton$, the functions $nonfunction(fixedvalue) + invariable(fixedvalue)$ and $nonfunction(invariable(fixedvalue))$ are in $singleton$;\n\\item[(iii)]\nIf $nonfunction(fixedvalue)$ and $invariable(fixedvalue)$ are in $singleton$ and $nonfunction(fixedvalue) \\geq invariable(fixedvalue)$ for all $fixedvalue \\geq 0$, then the function\n$nonfunction(fixedvalue) - invariable(fixedvalue)$ is in $singleton$.\n\\end{itemize}\nProve that if $nonfunction(fixedvalue)$ and $invariable(fixedvalue)$ are in $singleton$, then the function $nonfunction(fixedvalue) invariable(fixedvalue)$ is also in $singleton$.",
+      "solution": "Each of the following functions belongs to $singleton$ for the reasons indicated.\n\\begin{center}\n\\begin{tabular}{ll}\n$nonfunction(fixedvalue), invariable(fixedvalue)$ & given \\\\\n$\\ln(fixedvalue+1)$ & (i) \\\\\n$\\ln(nonfunction(fixedvalue)+1), \\ln(invariable(fixedvalue)+1)$ & (ii) plus two previous lines\\\\\n$\\ln(nonfunction(fixedvalue)+1) + \\ln(invariable(fixedvalue)+1)$ & (ii) \\\\\n$e^{fixedvalue} - 1$ & (i) \\\\\n$(nonfunction(fixedvalue)+1)(invariable(fixedvalue)+1) - 1$ & (ii) plus two previous lines \\\\\n$nonfunction(fixedvalue) invariable(fixedvalue) + nonfunction(fixedvalue) + invariable(fixedvalue)$ & previous line \\\\\n$nonfunction(fixedvalue) + invariable(fixedvalue)$ & (ii) plus first line \\\\\n$nonfunction(fixedvalue) invariable(fixedvalue)$ & (iii) plus two previous lines\n\\end{tabular}\n\\end{center}"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "kdlwmrta",
+        "f": "zpjhqrsn",
+        "g": "btxczmyl",
+        "S": "dnbgvqfe",
+        "f_1": "lskmnvcz",
+        "f_2": "hcdfperg"
+      },
+      "question": "Let $dnbgvqfe$ be a class of functions from $[0, \\infty)$ to $[0, \\infty)$ that satisfies:\n\\begin{itemize}\n\\item[(i)]\nThe functions $lskmnvcz(kdlwmrta) = e^{kdlwmrta} - 1$ and $hcdfperg(kdlwmrta) = \\ln(kdlwmrta+1)$ are in $dnbgvqfe$;\n\\item[(ii)]\nIf $zpjhqrsn(kdlwmrta)$ and $btxczmyl(kdlwmrta)$ are in $dnbgvqfe$, the functions $zpjhqrsn(kdlwmrta) + btxczmyl(kdlwmrta)$ and $zpjhqrsn(btxczmyl(kdlwmrta))$ are in $dnbgvqfe$;\n\\item[(iii)]\nIf $zpjhqrsn(kdlwmrta)$ and $btxczmyl(kdlwmrta)$ are in $dnbgvqfe$ and $zpjhqrsn(kdlwmrta) \\geq btxczmyl(kdlwmrta)$ for all $kdlwmrta \\geq 0$, then the function\n$zpjhqrsn(kdlwmrta) - btxczmyl(kdlwmrta)$ is in $dnbgvqfe$.\n\\end{itemize}\nProve that if $zpjhqrsn(kdlwmrta)$ and $btxczmyl(kdlwmrta)$ are in $dnbgvqfe$, then the function $zpjhqrsn(kdlwmrta) btxczmyl(kdlwmrta)$ is also in $dnbgvqfe$.",
+      "solution": "Each of the following functions belongs to $dnbgvqfe$ for the reasons indicated.\n\\begin{center}\n\\begin{tabular}{ll}\n$zpjhqrsn(kdlwmrta), btxczmyl(kdlwmrta)$ & given \\\\\n$\\ln(kdlwmrta+1)$ & (i) \\\\\n$\\ln(zpjhqrsn(kdlwmrta)+1), \\ln(btxczmyl(kdlwmrta)+1)$ & (ii) plus two previous lines\\\\\n$\\ln(zpjhqrsn(kdlwmrta)+1) + \\ln(btxczmyl(kdlwmrta)+1)$ & (ii) \\\\\n$e^{kdlwmrta} - 1$ & (i) \\\\\n$(zpjhqrsn(kdlwmrta)+1)(btxczmyl(kdlwmrta)+1) - 1$ & (ii) plus two previous lines \\\\\n$zpjhqrsn(kdlwmrta)btxczmyl(kdlwmrta) + zpjhqrsn(kdlwmrta) + btxczmyl(kdlwmrta)$ & previous line \\\\\n$zpjhqrsn(kdlwmrta) + btxczmyl(kdlwmrta)$ & (ii) plus first line \\\\\n$zpjhqrsn(kdlwmrta) btxczmyl(kdlwmrta)$ & (iii) plus two previous lines\n\\end{tabular}\n\\end{center}"
+    },
+    "kernel_variant": {
+      "question": "Let $S$ be a collection of functions\n$$f:[0,\\infty)\\longrightarrow[0,\\infty)$$\nthat satisfies the following three properties.\n\n(i)  The two functions\n\\[ h_1(x)=2^{x}-1\\quad\\text{and}\\quad h_2(x)=\\log_{2}(x+1) \\qquad(x\\ge 0) \\]\nare contained in $S$.\n\n(ii)  If $f,g\\in S$, then the sum $f+g$ and the composition $f\\circ g$ (taken in the usual sense) are also members of $S$.\n\n(iii)  If $f,g\\in S$ and $f(x)\\ge g(x)$ for every $x\\ge 0$, then the difference $f-g$ belongs to $S$.\n\nProve that for every pair of functions $f,g\\in S$, the product $f\\,g$ also lies in $S$.",
+      "solution": "Take arbitrary functions $f,g\\in S$.  We successively manufacture the product $fg$ using only the three closure properties.\n\n1.  First compose each of $f$ and $g$ with $h_{2}(x)=\\log_{2}(x+1)$:\n   \\[\n        A(x)=h_2(f(x))=\\log_2\\bigl(f(x)+1\\bigr)\\in S,\\qquad\n        B(x)=h_2(g(x))=\\log_2\\bigl(g(x)+1\\bigr)\\in S.\n   \\]\n   (Property (ii) is used.)\n\n2.  Add the two new members:\n   \\[\n        C(x)=A(x)+B(x)=\\log_2\\bigl((f(x)+1)(g(x)+1)\\bigr)\\in S.\n   \\]\n   (Property (ii) again.)\n\n3.  Compose $C$ with $h_{1}(x)=2^{x}-1$ to obtain\n   \\[\n        D(x)=h_{1}(C(x))=2^{C(x)}-1=(f(x)+1)(g(x)+1)-1\n        =f(x)g(x)+f(x)+g(x)\\in S.\n   \\]\n   (Another application of (ii).)\n\n4.  Observe that $D(x)\\ge f(x)+g(x)$ for all $x\\ge0$, because\n   \\[\n        D(x)-(f(x)+g(x))=f(x)g(x)\\ge0.\n   \\]\n   Since $f+g\\in S$ by property (ii), we may now invoke property (iii) to subtract $f+g$ from $D$:\n   \\[\n        (D-(f+g))(x)=f(x)g(x)\\in S.\n   \\]\n\nThus $fg$ belongs to $S$, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Compose with ln(·+1) to put ln(f+1), ln(g+1) in S.",
+          "Add the two logs to get ln((f+1)(g+1)) in S.",
+          "Compose with the inverse exp−1 map to obtain (f+1)(g+1)−1 = fg+f+g in S.",
+          "Add f and g to get f+g in S.",
+          "Subtract (fg+f+g)−(f+g) (non-negative) to place fg in S."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Base of the exponential / logarithm pair that are required to belong to S and be mutual inverses up to a fixed shift.",
+            "original": "e in  e^x−1   and   ln(x+1)"
+          },
+          "slot2": {
+            "description": "Fixed shift that keeps the argument of the logarithm positive and disappears after composing the inverse maps.",
+            "original": "+1 in  e^x−1   and   ln(x+1)"
+          },
+          "slot3": {
+            "description": "Lower end-point of the domain (and hence the non-negativity of every function value, needed for the order condition in (iii)).",
+            "original": "0 in the interval [0,∞)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

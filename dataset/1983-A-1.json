@@ -1,0 +1,125 @@
+{
+  "index": "1983-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-1\nHow many positive integers \\( n \\) are there such that \\( n \\) is an exact divisor of at least one of the numbers \\( 10^{40}, 20^{30} \\) ?",
+  "solution": "A-1.\nFor \\( d \\) and \\( m \\) in \\( Z^{+}=\\{1,2,3, \\ldots\\} \\), let \\( d \\mid m \\) denote that \\( d \\) is an integral divisor of \\( m \\). For \\( m \\) in \\( Z^{+} \\), let \\( \\tau(m) \\) be the number of \\( d \\) in \\( Z^{+} \\)such that \\( d \\mid m \\). The number of \\( n \\) in \\( Z^{+} \\)such that \\( n \\mid a \\) or \\( n \\mid b \\) is\n\\[\n\\tau(a)+\\tau(b)-\\tau(\\operatorname{gcd}(a, b))\n\\]\n\nAlso \\( \\tau\\left(p^{s} q^{\\prime}\\right)=(s+1)(t+1) \\) for \\( p, q, s, t \\) in \\( Z^{+} \\)with \\( p \\) and \\( q \\) distinct primes. Thus the desired count is\n\\[\n\\begin{aligned}\n\\tau\\left(2^{40} \\cdot 5^{40}\\right)+\\tau\\left(2^{60} \\cdot 5^{30}\\right)-\\tau\\left(2^{40} \\cdot 5^{30}\\right) & =41^{2}+61 \\cdot 31-41 \\cdot 31 \\\\\n& =1681+620=2301 .\n\\end{aligned}\n\\]",
+  "vars": [
+    "n",
+    "d",
+    "m",
+    "a",
+    "b",
+    "p",
+    "q",
+    "s",
+    "t"
+  ],
+  "params": [
+    "Z"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "integern",
+        "d": "divisor",
+        "m": "integerm",
+        "a": "numbera",
+        "b": "numberb",
+        "p": "primep",
+        "q": "primeq",
+        "s": "exponent",
+        "t": "texponent",
+        "Z": "integers"
+      },
+      "question": "Problem A-1\nHow many positive integers \\( integern \\) are there such that \\( integern \\) is an exact divisor of at least one of the numbers \\( 10^{40}, 20^{30} \\) ?",
+      "solution": "A-1.\nFor \\( divisor \\) and \\( integerm \\) in \\( integers^{+}=\\{1,2,3, \\ldots\\} \\), let \\( divisor \\mid integerm \\) denote that \\( divisor \\) is an integral divisor of \\( integerm \\). For \\( integerm \\) in \\( integers^{+} \\), let \\( \\tau(integerm) \\) be the number of \\( divisor \\) in \\( integers^{+} \\) such that \\( divisor \\mid integerm \\). The number of \\( integern \\) in \\( integers^{+} \\) such that \\( integern \\mid numbera \\) or \\( integern \\mid numberb \\) is\n\\[\n\\tau(numbera)+\\tau(numberb)-\\tau(\\operatorname{gcd}(numbera, numberb))\n\\]\n\nAlso \\( \\tau\\left(primep^{exponent} \\; primeq^{texponent}\\right)=(exponent+1)(texponent+1) \\) for \\( primep, primeq, exponent, texponent \\) in \\( integers^{+} \\) with \\( primep \\) and \\( primeq \\) distinct primes. Thus the desired count is\n\\[\n\\begin{aligned}\n\\tau\\left(2^{40} \\cdot 5^{40}\\right)+\\tau\\left(2^{60} \\cdot 5^{30}\\right)-\\tau\\left(2^{40} \\cdot 5^{30}\\right) & =41^{2}+61 \\cdot 31-41 \\cdot 31 \\\\\n& =1681+620=2301 .\n\\end{aligned}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "evergreen",
+        "d": "snowflake",
+        "m": "raindrop",
+        "a": "tapestry",
+        "b": "nightfall",
+        "p": "cinnamon",
+        "q": "pineapple",
+        "s": "sailboat",
+        "t": "hairbrush",
+        "Z": "bookshelf"
+      },
+      "question": "Problem A-1\nHow many positive integers \\( evergreen \\) are there such that \\( evergreen \\) is an exact divisor of at least one of the numbers \\( 10^{40}, 20^{30} \\) ?",
+      "solution": "A-1.\nFor \\( snowflake \\) and \\( raindrop \\) in \\( bookshelf^{+}=\\{1,2,3, \\ldots\\} \\), let \\( snowflake \\mid raindrop \\) denote that \\( snowflake \\) is an integral divisor of \\( raindrop \\). For \\( raindrop \\) in \\( bookshelf^{+} \\), let \\( \\tau(raindrop) \\) be the number of \\( snowflake \\) in \\( bookshelf^{+} \\) such that \\( snowflake \\mid raindrop \\). The number of \\( evergreen \\) in \\( bookshelf^{+} \\) such that \\( evergreen \\mid tapestry \\) or \\( evergreen \\mid nightfall \\) is\n\\[\n\\tau(tapestry)+\\tau(nightfall)-\\tau(\\operatorname{gcd}(tapestry, nightfall))\n\\]\n\nAlso \\( \\tau\\left(cinnamon^{sailboat} pineapple^{\\prime}\\right)=(sailboat+1)(hairbrush+1) \\) for \\( cinnamon, pineapple, sailboat, hairbrush \\) in \\( bookshelf^{+} \\) with \\( cinnamon \\) and \\( pineapple \\) distinct primes. Thus the desired count is\n\\[\n\\begin{aligned}\n\\tau\\left(2^{40} \\cdot 5^{40}\\right)+\\tau\\left(2^{60} \\cdot 5^{30}\\right)-\\tau\\left(2^{40} \\cdot 5^{30}\\right) & =41^{2}+61 \\cdot 31-41 \\cdot 31 \\\\\n& =1681+620=2301 .\n\\end{aligned}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "negativenum",
+        "d": "multiple",
+        "m": "fraction",
+        "a": "zeroelem",
+        "b": "nullvalue",
+        "p": "composite",
+        "q": "nonprime",
+        "s": "rootvalue",
+        "t": "logarithm",
+        "Z": "irrationalset"
+      },
+      "question": "Problem A-1\nHow many positive integers \\( negativenum \\) are there such that \\( negativenum \\) is an exact divisor of at least one of the numbers \\( 10^{40}, 20^{30} \\) ?",
+      "solution": "A-1.\nFor \\( multiple \\) and \\( fraction \\) in \\( irrationalset^{+}=\\{1,2,3, \\ldots\\} \\), let \\( multiple \\mid fraction \\) denote that \\( multiple \\) is an integral divisor of \\( fraction \\). For \\( fraction \\) in \\( irrationalset^{+} \\), let \\( \\tau(fraction) \\) be the number of \\( multiple \\) in \\( irrationalset^{+} \\)such that \\( multiple \\mid fraction \\). The number of \\( negativenum \\) in \\( irrationalset^{+} \\)such that \\( negativenum \\mid zeroelem \\) or \\( negativenum \\mid nullvalue \\) is\n\\[\n\\tau(zeroelem)+\\tau(nullvalue)-\\tau(\\operatorname{gcd}(zeroelem, nullvalue))\n\\]\n\nAlso \\( \\tau\\left(composite^{rootvalue} nonprime^{\\prime}\\right)=(rootvalue+1)(logarithm+1) \\) for \\( composite, nonprime, rootvalue, logarithm \\) in \\( irrationalset^{+} \\) with \\( composite \\) and \\( nonprime \\) distinct primes. Thus the desired count is\n\\[\n\\begin{aligned}\n\\tau\\left(2^{40} \\cdot 5^{40}\\right)+\\tau\\left(2^{60} \\cdot 5^{30}\\right)-\\tau\\left(2^{40} \\cdot 5^{30}\\right) & =41^{2}+61 \\cdot 31-41 \\cdot 31 \\\\\n& =1681+620=2301 .\n\\end{aligned}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "zvkqplmns",
+        "d": "prbgxmavt",
+        "m": "lxyfndosw",
+        "a": "wqjrtplzk",
+        "b": "hnfsqkdje",
+        "p": "qzvtmnlca",
+        "q": "yvrdpskgu",
+        "s": "rlmfkhboe",
+        "t": "jdqswnezi",
+        "Z": "obkyrdftl"
+      },
+      "question": "Problem A-1\nHow many positive integers \\\\( zvkqplmns \\\\) are there such that \\\\( zvkqplmns \\\\) is an exact divisor of at least one of the numbers \\\\( 10^{40}, 20^{30} \\\\) ?",
+      "solution": "A-1.\nFor \\\\( prbgxmavt \\\\) and \\\\( lxyfndosw \\\\) in \\\\( obkyrdftl^{+}=\\{1,2,3, \\ldots\\} \\\\), let \\\\( prbgxmavt \\mid lxyfndosw \\\\) denote that \\\\( prbgxmavt \\\\) is an integral divisor of \\\\( lxyfndosw \\\\). For \\\\( lxyfndosw \\\\) in \\\\( obkyrdftl^{+} \\\\), let \\\\ \\tau(lxyfndosw) \\\\ be the number of \\\\( prbgxmavt \\\\) in \\\\( obkyrdftl^{+} \\\\) such that \\\\( prbgxmavt \\mid lxyfndosw \\\\). The number of \\\\( zvkqplmns \\\\) in \\\\( obkyrdftl^{+} \\\\) such that \\\\( zvkqplmns \\mid wqjrtplzk \\\\) or \\\\( zvkqplmns \\mid hnfsqkdje \\\\) is\n\\\\[\n\\\\tau(wqjrtplzk)+\\\\tau(hnfsqkdje)-\\\\tau(\\\\operatorname{gcd}(wqjrtplzk, hnfsqkdje))\n\\\\]\n\nAlso \\\\( \\tau\\left(qzvtmnlca^{rlmfkhboe} yvrdpskgu^{\\prime}\\right)=(rlmfkhboe+1)(jdqswnezi+1) \\\\) for \\\\( qzvtmnlca, yvrdpskgu, rlmfkhboe, jdqswnezi \\\\) in \\\\( obkyrdftl^{+} \\\\) with \\\\( qzvtmnlca \\\\) and \\\\( yvrdpskgu \\\\) distinct primes. Thus the desired count is\n\\\\[\n\\\\begin{aligned}\n\\\\tau\\left(2^{40} \\cdot 5^{40}\\right)+\\\\tau\\left(2^{60} \\cdot 5^{30}\\right)-\\\\tau\\left(2^{40} \\cdot 5^{30}\\right) & =41^{2}+61 \\cdot 31-41 \\cdot 31 \\\\\n& =1681+620=2301 .\n\\\\end{aligned}\n\\\\]\n"
+    },
+    "kernel_variant": {
+      "question": "How many positive integers\\; n\\; are divisors of at least one of the numbers\\; 12^{50}\\; or\\; 18^{35}\\;?",
+      "solution": "Write a := 12^{50} and b := 18^{35}.  First note the prime-power decompositions\n12^{50} = (2^{2}\\cdot 3)^{50} = 2^{100}3^{50},\n18^{35} = (2\\cdot 3^{2})^{35} = 2^{35}3^{70}.\nFor any positive integer m with prime-power factorisation m = \\prod  p_i^{e_i}, the number of positive divisors is \\tau (m) = \\prod (e_i + 1).\n\nStep 1 (Inclusion-exclusion).\nThe amount sought is\n#\\{d\\in \\mathbb{Z}_{>0}: d|a or d|b\\} = \\tau (a) + \\tau (b) - \\tau (gcd(a,b)).\n\nStep 2 (Compute each \\tau -value).\n\\tau (a) = (100 + 1)(50 + 1) = 101\\cdot 51 = 5151,\n\\tau (b) = (35 + 1)(70 + 1) = 36\\cdot 71 = 2556.\nThe greatest common divisor is\ngcd(a,b) = 2^{min(100,35)}3^{min(50,70)} = 2^{35}3^{50},\nso\n\\tau (gcd(a,b)) = (35 + 1)(50 + 1) = 36\\cdot 51 = 1836.\n\nStep 3 (Insert in the formula).\n\\tau (a) + \\tau (b) - \\tau (gcd(a,b)) = 5151 + 2556 - 1836 = 5871.\n\nTherefore 5871 positive integers divide at least one of 12^{50} and 18^{35}.",
+      "_meta": {
+        "core_steps": [
+          "Use inclusion–exclusion: |{d: d|a or d|b}| = τ(a)+τ(b)−τ(gcd(a,b))",
+          "Write a, b, gcd(a,b) as products of prime powers",
+          "Apply τ(∏ p_i^{e_i}) = ∏ (e_i+1) to evaluate each τ value",
+          "Insert the computed τ-values into the inclusion–exclusion formula",
+          "Carry out the arithmetic sum/difference to obtain the final count"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Base integer whose power is the first target number (a = base₁^{exp₁})",
+            "original": "10"
+          },
+          "slot2": {
+            "description": "Positive exponent on the first base",
+            "original": "40"
+          },
+          "slot3": {
+            "description": "Base integer whose power is the second target number (b = base₂^{exp₂})",
+            "original": "20"
+          },
+          "slot4": {
+            "description": "Positive exponent on the second base",
+            "original": "30"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

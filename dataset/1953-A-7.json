@@ -1,0 +1,131 @@
+{
+  "index": "1953-A-7",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "7. Assuming that the roots of \\( x^{3}+p x^{2}+q x+r=0 \\) are all real and positive, find the relation between \\( p, q \\), and \\( r \\) which is a necessary and sufficient condition that the roots may be the cosines of the angles of a triangle.",
+  "solution": "Solution. For any triangle \\( A B C \\). we have\n\\[\n\\begin{array}{l}\na=b \\cos C+c \\cos B \\\\\nb=c \\cos A+a \\cos C \\\\\nc=a \\cos B+b \\cos A .\n\\end{array}\n\\]\n\nRegarding these as three homogeneous linear equations for \\( a, b \\), and \\( c \\) having a non-trivial solution we see that\n\\[\n\\operatorname{det}\\left|\\begin{array}{ccc}\n1 & -\\cos C & -\\cos B \\\\\n-\\cos C & 1 & -\\cos A \\\\\n-\\cos B & -\\cos A & 1\n\\end{array}\\right|=0\n\\]\nthat is\n\\[\n\\cos ^{2} A+\\cos ^{2} B+\\cos ^{2} C+2 \\cos A \\cos B \\cos C=1\n\\]\n\nIf the roots of the equation\n\\[\nx^{3}+p x^{2}+q x+r=0\n\\]\nare \\( \\cos A, \\cos B, \\cos C \\), then\n\\[\n\\begin{aligned}\n-p & =\\cos A+\\cos B+\\cos C \\\\\nq & =\\cos A \\cos B+\\cos B \\cos C+\\cos C \\cos A \\\\\n-r & =\\cos A \\cos B \\cos C\n\\end{aligned}\n\\]\nand (1) becomes\n\\[\np^{2}-2 q-2 r=1\n\\]\nwhich is thus a necessary condition.\nNow suppose that (3) holds and that the roots, say \\( x_{1}, x_{2}, x_{3} \\), of (2) are all real and positive. Then\n\\[\nx_{1}^{2}+x_{2}^{2}+x_{3}^{2}+2 x_{1} x_{2} x_{3}=1 .\n\\]\n\nFrom this it is clear that each root lies between 0 and 1 ; hence there are unique acute angles \\( A, B \\), and \\( C \\) such that \\( x_{1}=\\cos A, x_{2}=\\cos B, x_{3}= \\) \\( \\cos C \\).\n\nTo prove that these are the angles of a triangle, it is sufficient to show that \\( A+B+C=\\pi \\). Substituting in (4), we get\n\\[\n\\cos ^{2} C+2 \\cos A \\cos B \\cos C=1-\\cos ^{2} A-\\cos ^{2} B\n\\]\n\nCompleting the square on the left, we obtain\n\\[\n(\\cos C+\\cos A \\cos B)^{2}=\\sin ^{2} A \\sin ^{2} B\n\\]\n\nSince the angles are all acute, taking the positive square root gives\n\\[\n\\cos C+\\cos A \\cos B=\\sin A \\sin B\n\\]\nand therefore\n\\[\n\\begin{aligned}\n\\cos C & =-(\\cos A \\cos B-\\sin A \\sin B) \\\\\n& =-\\cos (A+B)=\\cos (\\pi-A-B)\n\\end{aligned}\n\\]\n\nSince both \\( C \\) and \\( \\pi-A-B \\) are in \\( (0, \\pi) \\), we have \\( C=\\pi-A-B \\), as required.\n\nThus, if the roots of (2) are all real and positive, then (3) is necessary and sufficient that the roots be the cosines of the angles of some triangle.",
+  "vars": [
+    "x",
+    "x_1",
+    "x_2",
+    "x_3",
+    "a",
+    "b",
+    "c",
+    "A",
+    "B",
+    "C"
+  ],
+  "params": [
+    "p",
+    "q",
+    "r"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "x_1": "firstval",
+        "x_2": "secondval",
+        "x_3": "thirdval",
+        "a": "lengtha",
+        "b": "lengthb",
+        "c": "lengthc",
+        "A": "anglea",
+        "B": "angleb",
+        "C": "anglec",
+        "p": "coeffp",
+        "q": "coeffq",
+        "r": "coeffr"
+      },
+      "question": "Assuming that the roots of \\( variablex^{3}+coeffp\\,variablex^{2}+coeffq\\,variablex+coeffr=0 \\) are all real and positive, find the relation between \\( coeffp, coeffq \\), and \\( coeffr \\) which is a necessary and sufficient condition that the roots may be the cosines of the angles of a triangle.",
+      "solution": "Solution. For any triangle \\( anglea\\; angleb\\; anglec \\). we have\n\\[\n\\begin{array}{l}\nlengtha=lengthb \\cos anglec+lengthc \\cos angleb \\\\\nlengthb=lengthc \\cos anglea+lengtha \\cos anglec \\\\\nlengthc=lengtha \\cos angleb+lengthb \\cos anglea .\n\\end{array}\n\\]\n\nRegarding these as three homogeneous linear equations for \\( lengtha, lengthb \\), and \\( lengthc \\) having a non-trivial solution we see that\n\\[\n\\operatorname{det}\\left|\\begin{array}{ccc}\n1 & -\\cos anglec & -\\cos angleb \\\\\n-\\cos anglec & 1 & -\\cos anglea \\\\\n-\\cos angleb & -\\cos anglea & 1\n\\end{array}\\right|=0\n\\]\nthat is\n\\[\n\\cos ^{2} anglea+\\cos ^{2} angleb+\\cos ^{2} anglec+2 \\cos anglea \\cos angleb \\cos anglec=1\n\\]\n\nIf the roots of the equation\n\\[\nvariablex^{3}+coeffp\\,variablex^{2}+coeffq\\,variablex+coeffr=0\n\\]\nare \\( \\cos anglea, \\cos angleb, \\cos anglec \\), then\n\\[\n\\begin{aligned}\n-\\coeffp & =\\cos anglea+\\cos angleb+\\cos anglec \\\\\n\\coeffq & =\\cos anglea \\cos angleb+\\cos angleb \\cos anglec+\\cos anglec \\cos anglea \\\\\n-\\coeffr & =\\cos anglea \\cos angleb \\cos anglec\n\\end{aligned}\n\\]\nand (1) becomes\n\\[\ncoeffp^{2}-2 \\,\\coeffq-2 \\,\\coeffr=1\n\\]\nwhich is thus a necessary condition.\nNow suppose that (3) holds and that the roots, say \\( firstval, secondval, thirdval \\), of (2) are all real and positive. Then\n\\[\nfirstval^{2}+secondval^{2}+thirdval^{2}+2 \\,firstval\\,secondval\\,thirdval=1 .\n\\]\n\nFrom this it is clear that each root lies between 0 and 1 ; hence there are unique acute angles \\( anglea, angleb \\), and \\( anglec \\) such that \\( firstval=\\cos anglea, secondval=\\cos angleb, thirdval=\\cos anglec \\).\n\nTo prove that these are the angles of a triangle, it is sufficient to show that \\( anglea+angleb+anglec=\\pi \\). Substituting in (4), we get\n\\[\n\\cos ^{2} anglec+2 \\cos anglea \\cos angleb \\cos anglec=1-\\cos ^{2} anglea-\\cos ^{2} angleb\n\\]\n\nCompleting the square on the left, we obtain\n\\[\n(\\cos anglec+\\cos anglea \\cos angleb)^{2}=\\sin ^{2} anglea \\sin ^{2} angleb\n\\]\n\nSince the angles are all acute, taking the positive square root gives\n\\[\n\\cos anglec+\\cos anglea \\cos angleb=\\sin anglea \\sin angleb\n\\]\nand therefore\n\\[\n\\begin{aligned}\n\\cos anglec & =-(\\cos anglea \\cos angleb-\\sin anglea \\sin angleb) \\\\\n& =-\\cos (anglea+angleb)=\\cos (\\pi-anglea-angleb)\n\\end{aligned}\n\\]\n\nSince both \\( anglec \\) and \\( \\pi-anglea-angleb \\) are in \\( (0, \\pi) \\), we have \\( anglec=\\pi-anglea-angleb \\), as required.\n\nThus, if the roots of (2) are all real and positive, then (3) is necessary and sufficient that the roots be the cosines of the angles of some triangle."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pendulum",
+        "x_1": "paintbrush",
+        "x_2": "seashells",
+        "x_3": "sailboat",
+        "a": "bookshelf",
+        "b": "crossroad",
+        "c": "pineapple",
+        "A": "avalanche",
+        "B": "butterfly",
+        "C": "chandelier",
+        "p": "sunflower",
+        "q": "toothbrush",
+        "r": "harmonica"
+      },
+      "question": "7. Assuming that the roots of \\( pendulum^{3}+sunflower pendulum^{2}+toothbrush pendulum+harmonica=0 \\) are all real and positive, find the relation between \\( sunflower, toothbrush \\), and \\( harmonica \\) which is a necessary and sufficient condition that the roots may be the cosines of the angles of a triangle.",
+      "solution": "Solution. For any triangle \\( avalanche butterfly chandelier \\). we have\n\\[\n\\begin{array}{l}\nbookshelf=crossroad \\cos chandelier+pineapple \\cos butterfly \\\\\ncrossroad=pineapple \\cos avalanche+bookshelf \\cos chandelier \\\\\npineapple=bookshelf \\cos butterfly+crossroad \\cos avalanche .\n\\end{array}\n\\]\n\nRegarding these as three homogeneous linear equations for \\( bookshelf, crossroad \\), and \\( pineapple \\) having a non-trivial solution we see that\n\\[\n\\operatorname{det}\\left|\\begin{array}{ccc}\n1 & -\\cos chandelier & -\\cos butterfly \\\\\n-\\cos chandelier & 1 & -\\cos avalanche \\\\\n-\\cos butterfly & -\\cos avalanche & 1\n\\end{array}\\right|=0\n\\]\nthat is\n\\[\n\\cos ^{2} avalanche+\\cos ^{2} butterfly+\\cos ^{2} chandelier+2 \\cos avalanche \\cos butterfly \\cos chandelier=1\n\\tag{1}\n\\]\n\nIf the roots of the equation\n\\[\npendulum^{3}+sunflower pendulum^{2}+toothbrush pendulum+harmonica=0\n\\tag{2}\n\\]\nare \\( \\cos avalanche, \\cos butterfly, \\cos chandelier \\), then\n\\[\n\\begin{aligned}\n-sunflower & =\\cos avalanche+\\cos butterfly+\\cos chandelier \\\\\ntoothbrush & =\\cos avalanche \\cos butterfly+\\cos butterfly \\cos chandelier+\\cos chandelier \\cos avalanche \\\\\n-harmonica & =\\cos avalanche \\cos butterfly \\cos chandelier\n\\end{aligned}\n\\]\nand (1) becomes\n\\[\nsunflower^{2}-2\\;toothbrush-2\\;harmonica=1\n\\tag{3}\n\\]\nwhich is thus a necessary condition.\nNow suppose that (3) holds and that the roots, say \\( paintbrush, seashells, sailboat \\), of (2) are all real and positive. Then\n\\[\npaintbrush^{2}+seashells^{2}+sailboat^{2}+2\\,paintbrush\\,seashells\\,sailboat=1 .\n\\tag{4}\n\\]\n\nFrom this it is clear that each root lies between 0 and 1 ; hence there are unique acute angles \\( avalanche, butterfly \\), and \\( chandelier \\) such that \\( paintbrush=\\cos avalanche, seashells=\\cos butterfly, sailboat=\\cos chandelier \\).\n\nTo prove that these are the angles of a triangle, it is sufficient to show that \\( avalanche+butterfly+chandelier=\\pi \\). Substituting in (4), we get\n\\[\n\\cos ^{2} chandelier+2 \\cos avalanche \\cos butterfly \\cos chandelier=1-\\cos ^{2} avalanche-\\cos ^{2} butterfly\n\\]\n\nCompleting the square on the left, we obtain\n\\[\n(\\cos chandelier+\\cos avalanche \\cos butterfly)^{2}=\\sin ^{2} avalanche \\sin ^{2} butterfly\n\\]\n\nSince the angles are all acute, taking the positive square root gives\n\\[\n\\cos chandelier+\\cos avalanche \\cos butterfly=\\sin avalanche \\sin butterfly\n\\]\nand therefore\n\\[\n\\begin{aligned}\n\\cos chandelier & =-(\\cos avalanche \\cos butterfly-\\sin avalanche \\sin butterfly) \\\\\n& =-\\cos (avalanche+butterfly)=\\cos (\\pi-avalanche-butterfly)\n\\end{aligned}\n\\]\n\nSince both \\( chandelier \\) and \\( \\pi-avalanche-butterfly \\) are in \\( (0, \\pi) \\), we have \\( chandelier=\\pi-avalanche-butterfly \\), as required.\n\nThus, if the roots of (2) are all real and positive, then (3) is necessary and sufficient that the roots be the cosines of the angles of some triangle."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "x_1": "negativeone",
+        "x_2": "negativetwo",
+        "x_3": "negativethree",
+        "a": "angleone",
+        "b": "angletwo",
+        "c": "anglethree",
+        "A": "sidelengthone",
+        "B": "sidelengthtwo",
+        "C": "sidelengththree",
+        "p": "rootalpha",
+        "q": "rootbeta",
+        "r": "rootgamma"
+      },
+      "question": "Assuming that the roots of \\( constantval^{3}+rootalpha\\,constantval^{2}+rootbeta\\,constantval+rootgamma=0 \\) are all real and positive, find the relation between \\( rootalpha, rootbeta \\), and \\( rootgamma \\) which is a necessary and sufficient condition that the roots may be the cosines of the angles of a triangle.",
+      "solution": "Solution. For any triangle \\( sidelengthone\\,sidelengthtwo\\,sidelengththree \\). we have\n\\[\n\\begin{array}{l}\nangleone=angletwo \\cos sidelengththree+anglethree \\cos sidelengthtwo \\\\\nangletwo=anglethree \\cos sidelengthone+angleone \\cos sidelengththree \\\\\nanglethree=angleone \\cos sidelengthtwo+angletwo \\cos sidelengthone .\n\\end{array}\n\\]\n\nRegarding these as three homogeneous linear equations for \\( angleone, angletwo \\), and \\( anglethree \\) having a non-trivial solution we see that\n\\[\n\\operatorname{det}\\left|\\begin{array}{ccc}\n1 & -\\cos sidelengththree & -\\cos sidelengthtwo \\\\\n-\\cos sidelengththree & 1 & -\\cos sidelengthone \\\\\n-\\cos sidelengthtwo & -\\cos sidelengthone & 1\n\\end{array}\\right|=0\n\\]\nthat is\n\\[\n\\cos ^{2} sidelengthone+\\cos ^{2} sidelengthtwo+\\cos ^{2} sidelengththree+2 \\cos sidelengthone \\cos sidelengthtwo \\cos sidelengththree=1\n\\]\n\nIf the roots of the equation\n\\[\nconstantval^{3}+rootalpha\\,constantval^{2}+rootbeta\\,constantval+rootgamma=0\n\\]\nare \\( \\cos sidelengthone, \\cos sidelengthtwo, \\cos sidelengththree \\), then\n\\[\n\\begin{aligned}\n-rootalpha & =\\cos sidelengthone+\\cos sidelengthtwo+\\cos sidelengththree \\\\\nrootbeta & =\\cos sidelengthone \\cos sidelengthtwo+\\cos sidelengthtwo \\cos sidelengththree+\\cos sidelengththree \\cos sidelengthone \\\\\n-rootgamma & =\\cos sidelengthone \\cos sidelengthtwo \\cos sidelengththree\n\\end{aligned}\n\\]\nand (1) becomes\n\\[\nrootalpha^{2}-2\\,rootbeta-2\\,rootgamma=1\n\\]\nwhich is thus a necessary condition.\nNow suppose that (3) holds and that the roots, say \\( negativeone, negativetwo, negativethree \\), of (2) are all real and positive. Then\n\\[\nnegativeone^{2}+negativetwo^{2}+negativethree^{2}+2\\,negativeone\\,negativetwo\\,negativethree=1 .\n\\]\n\nFrom this it is clear that each root lies between 0 and 1; hence there are unique acute angles \\( sidelengthone, sidelengthtwo \\), and \\( sidelengththree \\) such that \\( negativeone=\\cos sidelengthone, negativetwo=\\cos sidelengthtwo, negativethree= \\cos sidelengththree \\).\n\nTo prove that these are the angles of a triangle, it is sufficient to show that \\( sidelengthone+sidelengthtwo+sidelengththree=\\pi \\). Substituting in (4), we get\n\\[\n\\cos ^{2} sidelengththree+2 \\cos sidelengthone \\cos sidelengthtwo \\cos sidelengththree=1-\\cos ^{2} sidelengthone-\\cos ^{2} sidelengthtwo\n\\]\n\nCompleting the square on the left, we obtain\n\\[\n(\\cos sidelengththree+\\cos sidelengthone \\cos sidelengthtwo)^{2}=\\sin ^{2} sidelengthone \\sin ^{2} sidelengthtwo\n\\]\n\nSince the angles are all acute, taking the positive square root gives\n\\[\n\\cos sidelengththree+\\cos sidelengthone \\cos sidelengthtwo=\\sin sidelengthone \\sin sidelengthtwo\n\\]\nand therefore\n\\[\n\\begin{aligned}\n\\cos sidelengththree & =-(\\cos sidelengthone \\cos sidelengthtwo-\\sin sidelengthone \\sin sidelengthtwo) \\\\\n& =-\\cos (sidelengthone+sidelengthtwo)=\\cos (\\pi-sidelengthone-sidelengthtwo)\n\\end{aligned}\n\\]\n\nSince both \\( sidelengththree \\) and \\( \\pi-sidelengthone-sidelengthtwo \\) are in \\( (0, \\pi) \\), we have \\( sidelengththree=\\pi-sidelengthone-sidelengthtwo \\), as required.\n\nThus, if the roots of (2) are all real and positive, then (3) is necessary and sufficient that the roots be the cosines of the angles of some triangle."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_1": "hjgrksla",
+        "x_2": "nbvcxmas",
+        "x_3": "plmoknij",
+        "a": "ufghjkwe",
+        "b": "qazsderf",
+        "c": "vbnmlpoe",
+        "A": "yuiotrew",
+        "B": "lkjhgfdq",
+        "C": "mnbvcxzv",
+        "p": "oiuytrew",
+        "q": "asdfghjk",
+        "r": "zxcvbnml"
+      },
+      "question": "7. Assuming that the roots of \\( qzxwvtnp^{3}+oiuytrew qzxwvtnp^{2}+asdfghjk qzxwvtnp+zxcvbnml=0 \\) are all real and positive, find the relation between \\( oiuytrew, asdfghjk \\), and \\( zxcvbnml \\) which is a necessary and sufficient condition that the roots may be the cosines of the angles of a triangle.",
+      "solution": "Solution. For any triangle \\( yuiotrew lkjhgfdq mnbvcxzv \\). we have\n\\[\n\\begin{array}{l}\nufghjkwe=qazsderf \\cos mnbvcxzv+vbnmlpoe \\cos lkjhgfdq \\\\\nqazsderf=vbnmlpoe \\cos yuiotrew+ufghjkwe \\cos mnbvcxzv \\\\\nvbnmlpoe=ufghjkwe \\cos lkjhgfdq+qazsderf \\cos yuiotrew .\n\\end{array}\n\\]\n\nRegarding these as three homogeneous linear equations for \\( ufghjkwe, qazsderf \\), and \\( vbnmlpoe \\) having a non-trivial solution we see that\n\\[\n\\operatorname{det}\\left|\\begin{array}{ccc}\n1 & -\\cos mnbvcxzv & -\\cos lkjhgfdq \\\\\n-\\cos mnbvcxzv & 1 & -\\cos yuiotrew \\\\\n-\\cos lkjhgfdq & -\\cos yuiotrew & 1\n\\end{array}\\right|=0\n\\]\nthat is\n\\[\n\\cos ^{2} yuiotrew+\\cos ^{2} lkjhgfdq+\\cos ^{2} mnbvcxzv+2 \\cos yuiotrew \\cos lkjhgfdq \\cos mnbvcxzv=1\n\\]\n\nIf the roots of the equation\n\\[\nqzxwvtnp^{3}+oiuytrew qzxwvtnp^{2}+asdfghjk qzxwvtnp+zxcvbnml=0\n\\]\nare \\( \\cos yuiotrew, \\cos lkjhgfdq, \\cos mnbvcxzv \\), then\n\\[\n\\begin{aligned}\n-oiuytrew & =\\cos yuiotrew+\\cos lkjhgfdq+\\cos mnbvcxzv \\\\\nasdfghjk & =\\cos yuiotrew \\cos lkjhgfdq+\\cos lkjhgfdq \\cos mnbvcxzv+\\cos mnbvcxzv \\cos yuiotrew \\\\\n-zxcvbnml & =\\cos yuiotrew \\cos lkjhgfdq \\cos mnbvcxzv\n\\end{aligned}\n\\]\nand (1) becomes\n\\[\noiuytrew^{2}-2 asdfghjk-2 zxcvbnml=1\n\\]\nwhich is thus a necessary condition.\nNow suppose that (3) holds and that the roots, say \\( hjgrksla, nbvcxmas, plmoknij \\), of (2) are all real and positive. Then\n\\[\nhjgrksla^{2}+nbvcxmas^{2}+plmoknij^{2}+2 hjgrksla\\; nbvcxmas\\; plmoknij=1 .\n\\]\n\nFrom this it is clear that each root lies between 0 and 1 ; hence there are unique acute angles \\( yuiotrew, lkjhgfdq \\), and \\( mnbvcxzv \\) such that \\( hjgrksla=\\cos yuiotrew, nbvcxmas=\\cos lkjhgfdq, plmoknij= \\) \\( \\cos mnbvcxzv \\).\n\nTo prove that these are the angles of a triangle, it is sufficient to show that \\( yuiotrew+lkjhgfdq+mnbvcxzv=\\pi \\). Substituting in (4), we get\n\\[\n\\cos ^{2} mnbvcxzv+2 \\cos yuiotrew \\cos lkjhgfdq \\cos mnbvcxzv=1-\\cos ^{2} yuiotrew-\\cos ^{2} lkjhgfdq\n\\]\n\nCompleting the square on the left, we obtain\n\\[\n(\\cos mnbvcxzv+\\cos yuiotrew \\cos lkjhgfdq)^{2}=\\sin ^{2} yuiotrew \\sin ^{2} lkjhgfdq\n\\]\n\nSince the angles are all acute, taking the positive square root gives\n\\[\n\\cos mnbvcxzv+\\cos yuiotrew \\cos lkjhgfdq=\\sin yuiotrew \\sin lkjhgfdq\n\\]\nand therefore\n\\[\n\\begin{aligned}\n\\cos mnbvcxzv & =-(\\cos yuiotrew \\cos lkjhgfdq-\\sin yuiotrew \\sin lkjhgfdq) \\\\\n& =-\\cos (yuiotrew+lkjhgfdq)=\\cos (\\pi-yuiotrew-lkjhgfdq)\n\\end{aligned}\n\\]\n\nSince both \\( mnbvcxzv \\) and \\( \\pi-yuiotrew-lkjhgfdq \\) are in \\( (0, \\pi) \\), we have \\( mnbvcxzv=\\pi-yuiotrew-lkjhgfdq \\), as required.\n\nThus, if the roots of (2) are all real and positive, then (3) is necessary and sufficient that the roots be the cosines of the angles of some triangle."
+    },
+    "kernel_variant": {
+      "question": "Let S, P, Q be real numbers such that the cubic equation\n\nt^{3}-S t^{2}+P t-Q = 0 \\qquad (\\ast)\n\nhas three distinct, positive, real roots.  Find a relation among S, P, Q that is both necessary and sufficient for those three roots to be the cosines of the three interior angles of some (Euclidean) triangle.",
+      "solution": "Corrected Solution.  Let the three distinct positive roots of t^3-S t^2+P t-Q=0 be x_1,x_2,x_3.  We shall show that they are the cosines of the angles of some triangle if and only if\n   S^2-2P+2Q=1.\n\n1.  (Necessity.)  If A,B,C are the interior angles of a triangle, the well-known identity (obtainable either by the Law of Cosines or by the vanishing Gram determinant of three unit coplanar vectors) is\n   cos^2A+cos^2B+cos^2C+2 cosA cosB cosC = 1.         (\\star )\nSetting x_1=cosA, x_2=cosB, x_3=cosC, we have by Vieta's formulas\n   S = x_1+x_2+x_3,\n   P = x_1x_2+x_2x_3+x_3x_1,\n   Q = x_1x_2x_3.\nAlso x_1^2+x_2^2+x_3^2 = S^2-2P.  Hence (\\star ) becomes\n   (S^2-2P)+2Q = 1,\nor\n   S^2-2P+2Q = 1.\nThus this relation is necessary.\n\n2.  (Sufficiency.)  Conversely, suppose x_1,x_2,x_3>0 are the roots of t^3-S t^2+P t-Q=0 and that they satisfy\n   S^2-2P+2Q = 1.\nThen from (\\star ) written as x_1^2+x_2^2+x_3^2+2x_1x_2x_3=1, one sees immediately that no x_i can reach 1 (for then the left side would exceed 1), so 0<x_i<1.  Therefore we may define unique angles A,B,C in (0,\\pi /2) by x_1=cosA, x_2=cosB, x_3=cosC.\n\nWe now show A+B+C=\\pi .  Starting from\n   cos^2C+2 cosA cosB cosC = 1-cos^2A-cos^2B = sin^2A+sin^2B,\ncomplete the square:\n   (cosC+cosA cosB)^2 = sin^2A sin^2B.\nSince A,B,C are acute, take positive square roots to get\n   cosC+cosA cosB = sinA sinB\n   \\Rightarrow  cosC = sinA sinB-cosA cosB = -cos(A+B)\nbut C\\in (0,\\pi ) and \\pi -(A+B)\\in (0,\\pi ), so C=\\pi -(A+B).  Hence A+B+C=\\pi .\n\nThus x_1,x_2,x_3 are exactly the cosines of the angles of a triangle if and only if they are positive and satisfy\n   S^2-2P+2Q = 1.\n\nAnswer.  The necessary and sufficient relation is\n   \\blacksquare  S^2 - 2 P + 2 Q = 1,\nwhere S=\\Sigma x_i, P=\\Sigma x_ix_j, Q=x_1x_2x_3 are the elementary symmetric sums of the roots of t^3-S t^2+P t-Q=0.",
+      "_meta": {
+        "core_steps": [
+          "Establish triangle identity  cos²A + cos²B + cos²C + 2 cosA·cosB·cosC = 1 (via Law of Cosines).",
+          "Translate that identity to coefficients with Vieta:  p² − 2q − 2r = 1 (necessary).",
+          "Given p² − 2q − 2r = 1 and positive real roots, show each root lies in (0,1) ⇒ define acute angles with those cosines.",
+          "Manipulate the same identity to obtain  cosC = −cos(A+B) ⇒ A + B + C = π (sufficiency)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The specific route taken to derive the cosine identity (e.g., 3×3 determinant vs. direct Law-of-Cosines algebra).",
+            "original": "Use of the determinant of the linear system  a = b cosC + c cosB, etc., set to 0."
+          },
+          "slot2": {
+            "description": "Sign convention / letter choice for cubic coefficients when applying Vieta’s formulas.",
+            "original": "Cubic written as  x³ + p x² + q x + r = 0, so that −p = Σ roots,  q = Σ pairwise products,  −r = product."
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

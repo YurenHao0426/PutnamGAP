@@ -1,0 +1,156 @@
+{
+  "index": "1989-B-5",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Label the vertices of a trapezoid $T$ (quadrilateral with two parallel sides)\ninscribed in the unit circle as $A,\\,B,\\,C,\\,D$ so that $AB$ is parallel to\n$CD$ and $A,\\,B,\\,C,\\,D$ are in counterclockwise order. Let\n$s_1,\\,s_2$, and $d$ denote the lengths of the line segments\n$AB,\\, CD$, and $OE$, where E  is the point of intersection of the diagonals\nof $T$, and $O$ is the center of the circle. Determine the least upper bound of\n$\\frac{s_1-s_2}{d}$ over all such $T$ for which $d\\ne 0$, and describe all\ncases, if any, in which it is attained.",
+  "solution": "Solution 1. (See Figure 13.) We may assume that \\( A B \\) and \\( C D \\) are horizontal, with \\( A B \\) below \\( C D \\). Then by symmetry, \\( E=(0, e) \\) for some \\( e \\), and \\( d=|e| \\). The diagonal \\( A C \\) has the equation \\( y=m x+e \\) for some slope \\( m>0 \\). Substituting \\( y=m x+e \\) into \\( x^{2}+y^{2}=1 \\) results in the quadratic polynomial\n\\[\nq(x)=x^{2}+(m x+e)^{2}-1=\\left(m^{2}+1\\right) x^{2}+(2 m e) x+\\left(e^{2}-1\\right)\n\\]\nwhose zeros are the \\( x \\)-coordinates of \\( A \\) and \\( C \\), which also equal \\( -s_{1} / 2 \\) and \\( s_{2} / 2 \\), respectively. Hence \\( s_{1}-s_{2} \\) is -2 times the sum of the zeros of \\( q(x) \\), so\n\\[\ns_{1}-s_{2}=-2\\left(\\frac{-2 m e}{m^{2}+1}\\right) .\n\\]\n\nIf \\( d \\neq 0 \\), then\n\\[\n\\frac{s_{1}-s_{2}}{d}=2\\left(\\frac{2 m}{m^{2}+1}\\right) \\operatorname{sgn}(e) .\n\\]\n\nNow \\( (m-1)^{2} \\geq 0 \\) with equality if and only if \\( m=1 \\), so \\( m^{2}+1 \\geq 2 m>0 \\). Thus\n\\[\n\\frac{s_{1}-s_{2}}{d} \\leq 2\n\\]\nwith equality if and only if \\( m=1 \\) and \\( e>0 \\), i.e., if the diagonals \\( B D \\) and \\( A C \\) are perpendicular and \\( s_{1}>s_{2} \\). (The latter is equivalent to \\( e>0 \\) by (1).)\n\nSolution 2. (See Figure 13.) Again assume that \\( A B \\) and \\( C D \\) are horizontal. The \\( x \\)-coordinates of \\( B \\) and \\( D \\) are \\( s_{1} / 2 \\) and \\( -s_{2} / 2 \\), so their midpoint \\( M \\) has \\( x \\)-coordinate \\( \\left(s_{1}-s_{2}\\right) / 4 \\). Since line \\( O M \\) is the perpendicular bisector of \\( \\overline{B D}, \\angle O M E \\) is a right angle, and \\( M \\) lies on the circle with diameter \\( \\overline{O E} \\). For fixed \\( d=O E \\), the \\( x \\)-coordinate \\( \\left(s_{1}-s_{2}\\right) / 4 \\) is maximized when \\( M \\) is at the rightmost point of this circle: then \\( \\left(s_{1}-s_{2}\\right) / 4=d / 2 \\) and \\( \\left(s_{1}-s_{2}\\right) / d=2 \\). This happens if and only if \\( B D \\) has slope -1 and \\( s_{1}>s_{2} \\), or equivalently if and only if the diagonals \\( B D \\) and \\( A C \\) are perpendicular and \\( s_{1}>s_{2} \\).\n\nFIGURE 13.\n\nLiterature note. For further discussion of this problem, including more solutions, see [Lar2, pp. 33-38].",
+  "vars": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "T",
+    "O",
+    "E",
+    "M",
+    "e",
+    "x",
+    "y",
+    "m",
+    "q"
+  ],
+  "params": [
+    "s_1",
+    "s_2",
+    "d"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "vertexa",
+        "B": "vertexb",
+        "C": "vertexc",
+        "D": "vertexd",
+        "T": "trapezoid",
+        "O": "circlecenter",
+        "E": "diaginter",
+        "M": "midpoint",
+        "e": "elevation",
+        "x": "abscissa",
+        "y": "ordinate",
+        "m": "slopeval",
+        "q": "quadpoly",
+        "s_1": "baselong",
+        "s_2": "baseshort",
+        "d": "diagdist"
+      },
+      "question": "Label the vertices of a trapezoid $trapezoid$ (quadrilateral with two parallel sides)\ninscribed in the unit circle as $vertexa,\\,vertexb,\\,vertexc,\\,vertexd$ so that $vertexavertexb$ is parallel to\n$vertexcvertexd$ and $vertexa,\\,vertexb,\\,vertexc,\\,vertexd$ are in counterclockwise order. Let\n$baselong,\\,baseshort$, and $diagdist$ denote the lengths of the line segments\n$vertexavertexb,\\, vertexcvertexd$, and $circlecenterdiaginter$, where diaginter is the point of intersection of the diagonals\nof $trapezoid$, and $circlecenter$ is the center of the circle. Determine the least upper bound of\n$\\frac{baselong-baseshort}{diagdist}$ over all such $trapezoid$ for which $diagdist\\ne 0$, and describe all\ncases, if any, in which it is attained.",
+      "solution": "Solution 1. (See Figure 13.) We may assume that \\( vertexa vertexb \\) and \\( vertexc vertexd \\) are horizontal, with \\( vertexa vertexb \\) below \\( vertexc vertexd \\). Then by symmetry, \\( diaginter=(0, elevation) \\) for some \\( elevation \\), and \\( diagdist=|elevation| \\). The diagonal \\( vertexa vertexc \\) has the equation \\( ordinate=slopeval abscissa+elevation \\) for some slope \\( slopeval>0 \\). Substituting \\( ordinate=slopeval abscissa+elevation \\) into \\( abscissa^{2}+ordinate^{2}=1 \\) results in the quadratic polynomial\n\\[\nquadpoly(abscissa)=abscissa^{2}+(slopeval abscissa+elevation)^{2}-1=\\left(slopeval^{2}+1\\right) abscissa^{2}+(2 slopeval elevation) abscissa+\\left(elevation^{2}-1\\right)\n\\]\nwhose zeros are the \\( abscissa \\)-coordinates of \\( vertexa \\) and \\( vertexc \\), which also equal \\( -baselong / 2 \\) and \\( baseshort / 2 \\), respectively. Hence \\( baselong-baseshort \\) is -2 times the sum of the zeros of \\( quadpoly(abscissa) \\), so\n\\[\nbaselong-baseshort=-2\\left(\\frac{-2 slopeval elevation}{slopeval^{2}+1}\\right) .\n\\]\n\nIf \\( diagdist \\neq 0 \\), then\n\\[\n\\frac{baselong-baseshort}{diagdist}=2\\left(\\frac{2 slopeval}{slopeval^{2}+1}\\right) \\operatorname{sgn}(elevation) .\n\\]\n\nNow \\( (slopeval-1)^{2} \\geq 0 \\) with equality if and only if \\( slopeval=1 \\), so \\( slopeval^{2}+1 \\geq 2 slopeval>0 \\). Thus\n\\[\n\\frac{baselong-baseshort}{diagdist} \\leq 2\n\\]\nwith equality if and only if \\( slopeval=1 \\) and \\( elevation>0 \\), i.e., if the diagonals \\( vertexb vertexd \\) and \\( vertexa vertexc \\) are perpendicular and \\( baselong>baseshort \\). (The latter is equivalent to \\( elevation>0 \\) by (1).)\n\nSolution 2. (See Figure 13.) Again assume that \\( vertexa vertexb \\) and \\( vertexc vertexd \\) are horizontal. The \\( abscissa \\)-coordinates of \\( vertexb \\) and \\( vertexd \\) are \\( baselong / 2 \\) and \\( -baseshort / 2 \\), so their midpoint \\( midpoint \\) has \\( abscissa \\)-coordinate \\( \\left(baselong-baseshort\\right) / 4 \\). Since line \\( circlecenter midpoint \\) is the perpendicular bisector of \\( \\overline{vertexb vertexd} , \\angle circlecenter midpoint diaginter \\) is a right angle, and \\( midpoint \\) lies on the circle with diameter \\( \\overline{circlecenter diaginter} \\). For fixed \\( diagdist=circlecenter diaginter \\), the \\( abscissa \\)-coordinate \\( \\left(baselong-baseshort\\right) / 4 \\) is maximized when \\( midpoint \\) is at the rightmost point of this circle: then \\( \\left(baselong-baseshort\\right) / 4=diagdist / 2 \\) and \\( \\left(baselong-baseshort\\right) / diagdist=2 \\). This happens if and only if \\( vertexb vertexd \\) has slope -1 and \\( baselong>baseshort \\), or equivalently if and only if the diagonals \\( vertexb vertexd \\) and \\( vertexa vertexc \\) are perpendicular and \\( baselong>baseshort \\).\n\nFIGURE 13.\n\nLiterature note. For further discussion of this problem, including more solutions, see [Lar2, pp. 33-38]."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "porcupine",
+        "B": "butterfly",
+        "C": "pineapple",
+        "D": "salamander",
+        "T": "honeycomb",
+        "O": "chocolate",
+        "E": "watermelon",
+        "M": "strawberry",
+        "e": "dragonfly",
+        "x": "pigeonhole",
+        "y": "nightingale",
+        "m": "caterpillar",
+        "q": "jackrabbit",
+        "s_1": "candlestick",
+        "s_2": "waterwheel",
+        "d": "lumberjack"
+      },
+      "question": "Label the vertices of a trapezoid $honeycomb$ (quadrilateral with two parallel sides) inscribed in the unit circle as $porcupine,\\,butterfly,\\,pineapple,\\,salamander$ so that $porcupinebutterfly$ is parallel to $pineapplesalamander$ and $porcupine,\\,butterfly,\\,pineapple,\\,salamander$ are in counterclockwise order. Let $candlestick,\\,waterwheel$, and $lumberjack$ denote the lengths of the line segments $porcupinebutterfly,\\, pineapplesalamander$, and $chocolatewatermelon$, where watermelon is the point of intersection of the diagonals of $honeycomb$, and $chocolate$ is the center of the circle. Determine the least upper bound of $\\frac{candlestick-waterwheel}{lumberjack}$ over all such $honeycomb$ for which $lumberjack\\ne 0$, and describe all cases, if any, in which it is attained.",
+      "solution": "Solution 1. (See Figure 13.) We may assume that \\( porcupine butterfly \\) and \\( pineapple salamander \\) are horizontal, with \\( porcupine butterfly \\) below \\( pineapple salamander \\). Then by symmetry, \\( watermelon=(0, dragonfly) \\) for some \\( dragonfly \\), and \\( lumberjack=|dragonfly| \\). The diagonal \\( porcupine pineapple \\) has the equation \\( nightingale=caterpillar pigeonhole+dragonfly \\) for some slope \\( caterpillar>0 \\). Substituting \\( nightingale=caterpillar pigeonhole+dragonfly \\) into \\( pigeonhole^{2}+nightingale^{2}=1 \\) results in the quadratic polynomial\n\\[\njackrabbit(pigeonhole)=pigeonhole^{2}+(caterpillar pigeonhole+dragonfly)^{2}-1=\\left(caterpillar^{2}+1\\right) pigeonhole^{2}+(2 caterpillar dragonfly) pigeonhole+\\left(dragonfly^{2}-1\\right)\n\\]\nwhose zeros are the \\( pigeonhole \\)-coordinates of \\( porcupine \\) and \\( pineapple \\), which also equal \\( -candlestick / 2 \\) and \\( waterwheel / 2 \\), respectively. Hence \\( candlestick-waterwheel \\) is -2 times the sum of the zeros of \\( jackrabbit(pigeonhole) \\), so\n\\[\ncandlestick-waterwheel=-2\\left(\\frac{-2 caterpillar dragonfly}{caterpillar^{2}+1}\\right) .\n\\]\n\nIf \\( lumberjack \\neq 0 \\), then\n\\[\n\\frac{candlestick-waterwheel}{lumberjack}=2\\left(\\frac{2 caterpillar}{caterpillar^{2}+1}\\right) \\operatorname{sgn}(dragonfly) .\n\\]\n\nNow \\( (caterpillar-1)^{2} \\geq 0 \\) with equality if and only if \\( caterpillar=1 \\), so \\( caterpillar^{2}+1 \\geq 2 caterpillar>0 \\). Thus\n\\[\n\\frac{candlestick-waterwheel}{lumberjack} \\leq 2\n\\]\nwith equality if and only if \\( caterpillar=1 \\) and \\( dragonfly>0 \\), i.e., if the diagonals \\( butterfly salamander \\) and \\( porcupine pineapple \\) are perpendicular and \\( candlestick>waterwheel \\). (The latter is equivalent to \\( dragonfly>0 \\) by (1).)\n\nSolution 2. (See Figure 13.) Again assume that \\( porcupine butterfly \\) and \\( pineapple salamander \\) are horizontal. The \\( pigeonhole \\)-coordinates of \\( butterfly \\) and \\( salamander \\) are \\( candlestick / 2 \\) and \\( -waterwheel / 2 \\), so their midpoint \\( strawberry \\) has \\( pigeonhole \\)-coordinate \\( \\left(candlestick-waterwheel\\right) / 4 \\). Since line \\( chocolate strawberry \\) is the perpendicular bisector of \\( \\overline{butterfly salamander} , \\angle chocolate strawberry watermelon \\) is a right angle, and \\( strawberry \\) lies on the circle with diameter \\( \\overline{chocolate watermelon} \\). For fixed \\( lumberjack=chocolate watermelon \\), the \\( pigeonhole \\)-coordinate \\( \\left(candlestick-waterwheel\\right) / 4 \\) is maximized when \\( strawberry \\) is at the rightmost point of this circle: then \\( \\left(candlestick-waterwheel\\right) / 4=lumberjack / 2 \\) and \\( \\left(candlestick-waterwheel\\right) / lumberjack=2 \\). This happens if and only if \\( butterfly salamander \\) has slope -1 and \\( candlestick>waterwheel \\), or equivalently if and only if the diagonals \\( butterfly salamander \\) and \\( porcupine pineapple \\) are perpendicular and \\( candlestick>waterwheel \\).\n\nFIGURE 13.\n\nLiterature note. For further discussion of this problem, including more solutions, see [Lar2, pp. 33-38]."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "edgepoint",
+        "B": "backpoint",
+        "C": "centerpoint",
+        "D": "innerpoint",
+        "T": "ellipsefig",
+        "O": "offcenter",
+        "E": "separation",
+        "M": "outerpoint",
+        "e": "nullshift",
+        "x": "vertical",
+        "y": "horizontal",
+        "m": "intercept",
+        "q": "linearfun",
+        "s_1": "crampedone",
+        "s_2": "crampedtwo",
+        "d": "approach"
+      },
+      "question": "Label the vertices of a trapezoid $ellipsefig$ (quadrilateral with two parallel sides)\ninscribed in the unit circle as $edgepoint,\\,backpoint,\\,centerpoint,\\,innerpoint$ so that $edgepointbackpoint$ is parallel to\n$centerpointinnerpoint$ and $edgepoint,\\,backpoint,\\,centerpoint,\\,innerpoint$ are in counterclockwise order. Let\n$crampedone,\\,crampedtwo$, and $approach$ denote the lengths of the line segments\n$edgepointbackpoint,\\, centerpointinnerpoint$, and $offcenterseparation$, where separation is the point of intersection of the diagonals\nof $ellipsefig$, and $offcenter$ is the center of the circle. Determine the least upper bound of\n$\\frac{crampedone-crampedtwo}{approach}$ over all such $ellipsefig$ for which $approach\\ne 0$, and describe all\ncases, if any, in which it is attained.",
+      "solution": "Solution 1. (See Figure 13.) We may assume that \\( edgepoint backpoint \\) and \\( centerpoint innerpoint \\) are horizontal, with \\( edgepoint backpoint \\) below \\( centerpoint innerpoint \\). Then by symmetry, \\( separation=(0, nullshift) \\) for some \\( nullshift \\), and \\( approach=|nullshift| \\). The diagonal \\( edgepoint centerpoint \\) has the equation \\( horizontal=intercept\\,vertical+nullshift \\) for some slope \\( intercept>0 \\). Substituting \\( horizontal=intercept\\,vertical+nullshift \\) into \\( vertical^{2}+horizontal^{2}=1 \\) results in the quadratic polynomial\n\\[\nlinearfun(vertical)=vertical^{2}+(intercept\\,vertical+nullshift)^{2}-1=\\left(intercept^{2}+1\\right) vertical^{2}+(2 intercept nullshift) vertical+\\left(nullshift^{2}-1\\right)\n\\]\nwhose zeros are the \\( vertical \\)-coordinates of \\( edgepoint \\) and \\( centerpoint \\), which also equal \\( -crampedone / 2 \\) and \\( crampedtwo / 2 \\), respectively. Hence \\( crampedone-crampedtwo \\) is -2 times the sum of the zeros of \\( linearfun(vertical) \\), so\n\\[\ncrampedone-crampedtwo=-2\\left(\\frac{-2 intercept nullshift}{intercept^{2}+1}\\right) .\n\\]\n\nIf \\( approach \\neq 0 \\), then\n\\[\n\\frac{crampedone-crampedtwo}{approach}=2\\left(\\frac{2 intercept}{intercept^{2}+1}\\right) \\operatorname{sgn}(nullshift) .\n\\]\n\nNow \\( (intercept-1)^{2} \\geq 0 \\) with equality if and only if \\( intercept=1 \\), so \\( intercept^{2}+1 \\geq 2 intercept>0 \\). Thus\n\\[\n\\frac{crampedone-crampedtwo}{approach} \\leq 2\n\\]\nwith equality if and only if \\( intercept=1 \\) and \\( nullshift>0 \\), i.e., if the diagonals \\( backpoint innerpoint \\) and \\( edgepoint centerpoint \\) are perpendicular and \\( crampedone>crampedtwo \\). (The latter is equivalent to \\( nullshift>0 \\) by (1).)\n\nSolution 2. (See Figure 13.) Again assume that \\( edgepoint backpoint \\) and \\( centerpoint innerpoint \\) are horizontal. The \\( vertical \\)-coordinates of \\( backpoint \\) and \\( innerpoint \\) are \\( crampedone / 2 \\) and \\( -crampedtwo / 2 \\), so their midpoint \\( outerpoint \\) has \\( vertical \\)-coordinate \\( \\left(crampedone-crampedtwo\\right) / 4 \\). Since line \\( offcenter outerpoint \\) is the perpendicular bisector of \\( \\overline{backpoint innerpoint}, \\angle offcenter outerpoint separation \\) is a right angle, and \\( outerpoint \\) lies on the circle with diameter \\( \\overline{offcenter separation} \\). For fixed \\( approach=offcenter separation \\), the \\( vertical \\)-coordinate \\( \\left(crampedone-crampedtwo\\right) / 4 \\) is maximized when \\( outerpoint \\) is at the rightmost point of this circle: then \\( \\left(crampedone-crampedtwo\\right) / 4=approach / 2 \\) and \\( \\left(crampedone-crampedtwo\\right) / approach=2 \\). This happens if and only if \\( backpoint innerpoint \\) has slope -1 and \\( crampedone>crampedtwo \\), or equivalently if and only if the diagonals \\( backpoint innerpoint \\) and \\( edgepoint centerpoint \\) are perpendicular and \\( crampedone>crampedtwo \\).\n\nFIGURE 13.\n\nLiterature note. For further discussion of this problem, including more solutions, see [Lar2, pp. 33-38]."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "zcqhmndp",
+        "B": "rksplfva",
+        "C": "gtwzljyo",
+        "D": "bnymqcef",
+        "T": "ljvkdqse",
+        "O": "qxfjhzmo",
+        "E": "nxgpariu",
+        "M": "vktoshan",
+        "e": "jmuhilwr",
+        "x": "pfazkxng",
+        "y": "lwqvjrys",
+        "m": "cszikdbe",
+        "q": "wfhnreco",
+        "s_1": "yzldamqw",
+        "s_2": "ktfrsnix",
+        "d": "pxlourge"
+      },
+      "question": "Label the vertices of a trapezoid $ljvkdqse$ (quadrilateral with two parallel sides)\ninscribed in the unit circle as $zcqhmndp,\\,rksplfva,\\,gtwzljyo,\\,bnymqcef$ so that $zcqhmndp rksplfva$ is parallel to\n$gtwzljyo bnymqcef$ and $zcqhmndp,\\,rksplfva,\\,gtwzljyo,\\,bnymqcef$ are in counterclockwise order. Let\n$yzldamqw,\\,ktfrsnix$, and $pxlourge$ denote the lengths of the line segments\n$zcqhmndp rksplfva,\\, gtwzljyo bnymqcef$, and $qxfjhzmo nxgpariu$, where nxgpariu is the point of intersection of the diagonals\nof $ljvkdqse$, and $qxfjhzmo$ is the center of the circle. Determine the least upper bound of\n$\\frac{yzldamqw-ktfrsnix}{pxlourge}$ over all such $ljvkdqse$ for which $pxlourge\\ne 0$, and describe all\ncases, if any, in which it is attained.",
+      "solution": "Solution 1. (See Figure 13.) We may assume that \\( zcqhmndp rksplfva \\) and \\( gtwzljyo bnymqcef \\) are horizontal, with \\( zcqhmndp rksplfva \\) below \\( gtwzljyo bnymqcef \\). Then by symmetry, \\( nxgpariu=(0, jmuhilwr) \\) for some \\( jmuhilwr \\), and \\( pxlourge=|jmuhilwr| \\). The diagonal \\( zcqhmndp gtwzljyo \\) has the equation \\( lwqvjrys = cszikdbe pfazkxng + jmuhilwr \\) for some slope \\( cszikdbe>0 \\). Substituting \\( lwqvjrys = cszikdbe pfazkxng + jmuhilwr \\) into \\( pfazkxng^{2}+lwqvjrys^{2}=1 \\) results in the quadratic polynomial\n\\[\nwfhnreco(pfazkxng)=pfazkxng^{2}+(cszikdbe pfazkxng+jmuhilwr)^{2}-1=\\left(cszikdbe^{2}+1\\right) pfazkxng^{2}+(2 cszikdbe jmuhilwr) pfazkxng+\\left(jmuhilwr^{2}-1\\right)\n\\]\nwhose zeros are the \\( pfazkxng \\)-coordinates of \\( zcqhmndp \\) and \\( gtwzljyo \\), which also equal \\( -yzldamqw / 2 \\) and \\( ktfrsnix / 2 \\), respectively. Hence \\( yzldamqw-ktfrsnix \\) is -2 times the sum of the zeros of \\( wfhnreco(pfazkxng) \\), so\n\\[\nyzldamqw-ktfrsnix=-2\\left(\\frac{-2 cszikdbe jmuhilwr}{cszikdbe^{2}+1}\\right) .\n\\]\n\nIf \\( pxlourge \\neq 0 \\), then\n\\[\n\\frac{yzldamqw-ktfrsnix}{pxlourge}=2\\left(\\frac{2 cszikdbe}{cszikdbe^{2}+1}\\right) \\operatorname{sgn}(jmuhilwr) .\n\\]\n\nNow \\( (cszikdbe-1)^{2} \\geq 0 \\) with equality if and only if \\( cszikdbe=1 \\), so \\( cszikdbe^{2}+1 \\geq 2 cszikdbe>0 \\). Thus\n\\[\n\\frac{yzldamqw-ktfrsnix}{pxlourge} \\leq 2\n\\]\nwith equality if and only if \\( cszikdbe=1 \\) and \\( jmuhilwr>0 \\), i.e., if the diagonals \\( rksplfva bnymqcef \\) and \\( zcqhmndp gtwzljyo \\) are perpendicular and \\( yzldamqw>ktfrsnix \\). (The latter is equivalent to \\( jmuhilwr>0 \\) by (1).)\n\nSolution 2. (See Figure 13.) Again assume that \\( zcqhmndp rksplfva \\) and \\( gtwzljyo bnymqcef \\) are horizontal. The \\( pfazkxng \\)-coordinates of \\( rksplfva \\) and \\( bnymqcef \\) are \\( yzldamqw / 2 \\) and \\( -ktfrsnix / 2 \\), so their midpoint \\( vktoshan \\) has \\( pfazkxng \\)-coordinate \\( \\left(yzldamqw-ktfrsnix\\right) / 4 \\). Since line \\( qxfjhzmo vktoshan \\) is the perpendicular bisector of \\( \\overline{rksplfva bnymqcef}, \\angle qxfjhzmo vktoshan nxgpariu \\) is a right angle, and \\( vktoshan \\) lies on the circle with diameter \\( \\overline{qxfjhzmo nxgpariu} \\). For fixed \\( pxlourge=qxfjhzmo nxgpariu \\), the \\( pfazkxng \\)-coordinate \\( \\left(yzldamqw-ktfrsnix\\right) / 4 \\) is maximized when \\( vktoshan \\) is at the rightmost point of this circle: then \\( \\left(yzldamqw-ktfrsnix\\right) / 4=pxlourge / 2 \\) and \\( \\left(yzldamqw-ktfrsnix\\right) / pxlourge=2 \\). This happens if and only if \\( rksplfva bnymqcef \\) has slope -1 and \\( yzldamqw>ktfrsnix \\), or equivalently if and only if the diagonals \\( rksplfva bnymqcef \\) and \\( zcqhmndp gtwzljyo \\) are perpendicular and \\( yzldamqw>ktfrsnix \\).\n\nFIGURE 13.\n\nLiterature note. For further discussion of this problem, including more solutions, see [Lar2, pp. 33-38]."
+    },
+    "kernel_variant": {
+      "question": "Let P,Q,R,S be the vertices, listed clockwise, of a trapezoid T inscribed in a circle \\Gamma  of radius 3. Suppose that lines PQ and RS are parallel, and write\nq = |PQ|, p = |RS| (without loss of generality q \\geq  p),\nd = OE, where E is the intersection point of the diagonals PR and QS and O is the centre of \\Gamma  (thus d \\neq  0).\nDetermine the least upper bound of the quantity\n  (q - p)/d\nas T ranges over all such trapezoids, and describe precisely the configurations in which that upper bound is attained.",
+      "solution": "1. Bringing the trapezoid into a convenient position.\nBecause \\Gamma  is a circle, a rigid motion (rotation followed by a translation) preserves all lengths and the value of (q - p)/d. First rotate T so that the two parallel sides become horizontal, and then translate it horizontally until the mid-points of those two sides lie on the y-axis. After these operations the circle \\Gamma  is still the circle x^2 + y^2 = 9 centred at O = (0,0), and we may write\n P = (-q/2 , y_1), Q = ( q/2 , y_1),\n S = (-p/2 , y_2), R = ( p/2 , y_2) with y_1 \\neq  y_2.\nWith the vertices labeled clockwise, the numbers q, p are positive and q \\geq  p.  (If RS happened to be the longer base we would simply interchange the names of the two bases.)\n\n2. Location of the diagonal intersection E and the number d.\nThe diagonals PR and QS intersect on the y-axis, say at E = (0,e); hence d = OE = |e|.  The sign of e distinguishes two mirror-image situations.\n Case A y_1 < y_2 (longer base PQ lies below RS) \\Rightarrow  e > 0.\n Case B y_1 > y_2 (longer base PQ lies above RS) \\Rightarrow  e < 0.\nThe computation that follows works for both cases; we keep the symbol d = |e| > 0.\n\n3. A right-angle argument.\nLet M be the midpoint of QS; then\n M = ( (q-p)/4 , (y_1 + y_2)/2 ).\nIn a circle, the line joining the centre to the midpoint of a chord is perpendicular to that chord.  Thus OM \\perp  QS.  Because E lies on QS as well, we also have OM \\perp  EM, so \\angle OME = 90^\\circ.  Consequently M lies on the circle with diameter OE.\n\nThe circle with diameter OE has centre (0,e/2) and radius |e|/2 = d/2, whence every point (x,y) on it satisfies |x| \\leq  d/2.  Applying this to M yields\n |(q - p)/4| = |x_M| \\leq  d/2 \\Rightarrow  (q - p)/d \\leq  2. (1)\nThus 2 is an upper bound for (q - p)/d.\n\n4. When is the bound attained?\nEquality in (1) forces |x_M| = d/2, i.e. the point M must be the right-most (or left-most) point of the diameter-circle.  Taking the right-most point gives\n (q - p)/4 = d/2 and (y_1 + y_2)/2 = e/2 = \\pm d/2. (2)\n(The sign in the second equation is + for Case A and - for Case B.)\n\nBecause E lies on QS, a standard section-formula calculation gives\n e = y_1 + q (y_2 - y_1)/(p + q).\nCombining this with (2) gives\ny_1 = \\mp p/2, y_2 = \\pm q/2 (the upper sign for Case A, the lower for Case B).\nIn particular the four vertices satisfy\n (q/2)^2 + (\\pm p/2)^2 = 9 and (p/2)^2 + (\\pm q/2)^2 = 9,\nso p^2 + q^2 = 36.\n\nFinally we examine the diagonals.  Using the above coordinates one finds\n slope(PR) = (q/2 \\mp  p/2)/(p/2 + q/2) = 1,\n slope(QS) = (\\pm q/2 \\mp  p/2)/(-p/2 - q/2) = -1,\nso PR \\perp  QS.  Thus the diagonals are perpendicular.\n\nConversely, suppose a trapezoid T satisfies (q - p)/d = 2.  Reversing the above steps shows that M must be the extreme point of the circle with diameter OE, whence equations (2) hold and the same algebra forces p^2 + q^2 = 36 and slopes \\pm 1 for the two diagonals.  Therefore the diagonals are perpendicular and the midpoint of the longer base lies strictly closer to the centre O than does the midpoint of the shorter base.\n\n5. Least upper bound and extremal family.\nWe have proved that (q - p)/d \\leq  2 for every inscribed trapezoid, and that equality occurs exactly when\n * the diagonals are perpendicular, and\n * the midpoint of the longer of the two parallel sides is closer to O than the midpoint of the shorter one (equivalently, the longer base lies between the shorter base and the centre).\nThere are two mirror-image families of such trapezoids, one with the longer base below the shorter (e > 0) and one with it above (e < 0).  In both families the lengths p and q satisfy p^2 + q^2 = 36.\n\nHence the least upper bound of (q - p)/d is 2, and it is attained precisely by all inscribed trapezoids whose diagonals are perpendicular and whose longer base has its midpoint closer to the centre of the circle than the shorter base.",
+      "_meta": {
+        "core_steps": [
+          "Fix coordinates: rotate/refect so the two parallel sides are horizontal, center at (0,0), hence E=(0,e) and d=|e|.",
+          "Let diagonal AC be y = m x + e; intersect with circle x² + y² = 1 to get quadratic whose roots are x-coordinates of A and C.",
+          "Use Vieta: s1 − s2 = −2·(sum of roots) ⇒ (s1−s2)/d = 4m/(m²+1)·sgn(e).",
+          "Apply (m−1)² ≥ 0 to obtain (s1−s2)/d ≤ 2.",
+          "Equality when m = 1 and e > 0, i.e. diagonals are perpendicular and the lower base is longer."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Radius chosen for the circumcircle (uniform scaling of the figure).",
+            "original": 1
+          },
+          "slot2": {
+            "description": "Which pair of opposite sides are stipulated to be parallel in the statement.",
+            "original": "AB ∥ CD"
+          },
+          "slot3": {
+            "description": "Direction in which the vertices are listed around the circle.",
+            "original": "counterclockwise"
+          },
+          "slot4": {
+            "description": "Which of the two parallel sides is called s1 and which is called s2 (and hence the sign in s1−s2).",
+            "original": "s1 = |AB|, s2 = |CD|"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

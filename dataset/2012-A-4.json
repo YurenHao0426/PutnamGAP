@@ -1,0 +1,199 @@
+{
+  "index": "2012-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $q$ and $r$ be integers with $q > 0$, and let $A$ and $B$ be intervals on the real line.\nLet $T$ be the set of all $b+mq$ where $b$ and $m$ are integers with $b$ in $B$,\nand let $S$ be the set of all integers $a$ in $A$ such that $ra$ is in $T$. Show that if the\nproduct of the lengths of $A$ and $B$ is less than $q$, then $S$ is the intersection of $A$\nwith some arithmetic progression.",
+  "solution": "We begin with an easy lemma.\n\\setcounter{lemma}{0}\n\\begin{lemma*}\nLet $S$ be a finite set of integers with the following property: for all $a,b,c \\in S$ with\n$a \\leq b \\leq c$, we also have $a+c-b \\in S$. Then $S$ is an arithmetic progression.\n\\end{lemma*}\n\\begin{proof}\nWe may assume $\\# S \\geq 3$, as otherwise $S$ is trivially an arithmetic progression.\nLet $a_1, a_2$ be the smallest and second-smallest elements of $S$, respectively, and put\n$d = a_2 - a_1$. Let $m$ be the smallest positive integer such that $a_1 + md \\notin S$.\nSuppose that there exists an integer $n$ contained in $S$ but not in\n$\\{a_1, a_1 + d, \\dots, a_1 + (m-1)d\\}$, and choose the least such $n$.\nBy the hypothesis applied with $(a,b,c) = (a_1, a_2, n)$, we see that $n-d$ also has the property,\na contradiction.\n\\end{proof}\n\nWe now return to the original problem.\nBy dividing $B, q, r$ by $\\gcd(q,r)$ if necessary, we may reduce to the case where $\\gcd(q,r) = 1$.\nWe may assume $\\#S \\geq 3$, as otherwise $S$ is trivially an arithmetic progression.\nLet $a_1, a_2, a_3$ be any three distinct elements of $S$, labeled so that $a_1 < a_2 < a_3$,\nand write $ra_i = b_i + m_i q$ with $b_i, m_i \\in \\ZZ$ and $b_i \\in B$. Note that $b_1, b_2, b_3$ must also be distinct, so the differences $b_2 - b_1, b_3 - b_1, b_3 - b_2$ are all nonzero; consequently, two of them have the same sign. If $b_i - b_j$ and $b_k - b_l$ have the same sign, then\nwe must have\n\\[\n(a_i - a_j)(b_k - b_l) =  (b_i - b_j)(a_k - a_l)\n\\]\nbecause both sides are of the same sign, of absolute value less than $q$,\nand congruent to each other modulo $q$. In other words, the points $(a_1, b_1), (a_2, b_2), (a_3, b_3)$\nin $\\RR^2$ are collinear.\nIt follows that $a_4 = a_1 + a_3 - a_2$ also belongs to $S$ (by taking $b_4 = b_1 + b_3 - b_2$),\nso $S$ satisfies the conditions of the lemma. It is therefore an\narithmetic progression.\n\n\\noindent\n\\textbf{Reinterpretations.}\nOne can also interpret this argument geometrically using cross products (suggested by Noam Elkies),\nor directly in terms of congruences (suggested by Karl Mahlburg).\n\n\\noindent\n\\textbf{Remark.} The problem phrasing is somewhat confusing: to say that ``$S$ is the intersection of\n[the interval] $A$ with an arithmetic progression'' is the same thing as saying that ``$S$ is the empty set or an arithmetic progression'' unless it is implied that arithmetic progressions are necessarily infinite.\nUnder that interpretation, however, the problem becomes false; for instance, for\n\\[\nq=5, r=1, A = [1,3], B = [0,2],\n\\]\nwe have\n\\[\nT = \\{\\cdots, 0,1,2,5,6,7,\\dots\\}, S = \\{1,2\\}.\n\\]",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "m",
+    "n",
+    "d",
+    "a_i",
+    "b_i",
+    "m_i",
+    "i",
+    "j",
+    "k",
+    "l",
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_4",
+    "b_1",
+    "b_2",
+    "b_3"
+  ],
+  "params": [
+    "q",
+    "r",
+    "A",
+    "B",
+    "S",
+    "T"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "avalon",
+        "b": "bravoid",
+        "c": "charlie",
+        "m": "muonid",
+        "n": "november",
+        "d": "deltaid",
+        "a_i": "aelement",
+        "b_i": "belement",
+        "m_i": "melement",
+        "i": "indigo",
+        "j": "juliet",
+        "k": "kappax",
+        "l": "lambda",
+        "a_1": "aoneval",
+        "a_2": "atwoval",
+        "a_3": "athreev",
+        "a_4": "afourva",
+        "b_1": "boneval",
+        "b_2": "btwoval",
+        "b_3": "bthreev",
+        "q": "quasar",
+        "r": "radius",
+        "A": "intervala",
+        "B": "intervalb",
+        "S": "setarith",
+        "T": "settarget"
+      },
+      "question": "Let $quasar$ and $radius$ be integers with $quasar > 0$, and let $intervala$ and $intervalb$ be intervals on the real line.\nLet $settarget$ be the set of all $bravoid+muonid quasar$ where $bravoid$ and $muonid$ are integers with $bravoid$ in $intervalb$,\nand let $setarith$ be the set of all integers $avalon$ in $intervala$ such that $radius avalon$ is in $settarget$. Show that if the\nproduct of the lengths of $intervala$ and $intervalb$ is less than $quasar$, then $setarith$ is the intersection of $intervala$\nwith some arithmetic progression.",
+      "solution": "We begin with an easy lemma.\n\\setcounter{lemma}{0}\n\\begin{lemma*}\nLet $setarith$ be a finite set of integers with the following property: for all $avalon, bravoid, charlie \\in setarith$ with\n$avalon \\leq bravoid \\leq charlie$, we also have $avalon+charlie-bravoid \\in setarith$. Then $setarith$ is an arithmetic progression.\n\\end{lemma*}\n\\begin{proof}\nWe may assume \\# setarith \\geq 3, as otherwise setarith is trivially an arithmetic progression.\nLet $aoneval, atwoval$ be the smallest and second-smallest elements of $setarith$, respectively, and put\n$deltaid = atwoval - aoneval$. Let $muonid$ be the smallest positive integer such that $aoneval + muonid deltaid \\notin setarith$.\nSuppose that there exists an integer $november$ contained in $setarith$ but not in\n$\\{aoneval, aoneval + deltaid, \\dots, aoneval + (muonid-1)deltaid\\}$, and choose the least such $november$.\nBy the hypothesis applied with $(avalon, bravoid, charlie) = (aoneval, atwoval, november)$, we see that $november-deltaid$ also has the property,\na contradiction.\n\\end{proof}\n\nWe now return to the original problem.\nBy dividing $intervalb, quasar, radius$ by $\\gcd(quasar,radius)$ if necessary, we may reduce to the case where $\\gcd(quasar,radius) = 1$.\nWe may assume \\#setarith \\geq 3, as otherwise setarith is trivially an arithmetic progression.\nLet $aoneval, atwoval, athreev$ be any three distinct elements of $setarith$, labeled so that $aoneval < atwoval < athreev$,\nand write $radius aelement = belement + melement quasar$ with $belement, melement \\in \\ZZ$ and $belement \\in intervalb$. Note that $boneval, btwoval, bthreev$ must also be distinct, so the differences $btwoval - boneval, bthreev - boneval, bthreev - btwoval$ are all nonzero; consequently, two of them have the same sign. If $belement - belement$ and $belement - belement$ have the same sign, then\nwe must have\n\\[\n(aelement - aelement)(belement - belement) =  (belement - belement)(aelement - aelement)\n\\]\nbecause both sides are of the same sign, of absolute value less than $quasar$,\nand congruent to each other modulo $quasar$. In other words, the points $(aoneval, boneval), (atwoval, btwoval), (athreev, bthreev)$\nin $\\RR^2$ are collinear.\nIt follows that $afourva = aoneval + athreev - atwoval$ also belongs to $setarith$ (by taking $b_4 = boneval + bthreev - btwoval$),\nso $setarith$ satisfies the conditions of the lemma. It is therefore an\narithmetic progression.\n\n\\noindent\n\\textbf{Reinterpretations.}\nOne can also interpret this argument geometrically using cross products (suggested by Noam Elkies),\nor directly in terms of congruences (suggested by Karl Mahlburg).\n\n\\noindent\n\\textbf{Remark.} The problem phrasing is somewhat confusing: to say that ``$setarith$ is the intersection of\n[the interval] $intervala$ with an arithmetic progression'' is the same thing as saying that ``$setarith$ is the empty set or an arithmetic progression'' unless it is implied that arithmetic progressions are necessarily infinite.\nUnder that interpretation, however, the problem becomes false; for instance, for\n\\[\nquasar=5, \\; radius=1, \\; intervala = [1,3], \\; intervalb = [0,2],\n\\]\nwe have\n\\[\nsettarget = \\{\\cdots, 0,1,2,5,6,7,\\dots\\}, \\quad setarith = \\{1,2\\}.\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "sunflower",
+        "b": "shipwreck",
+        "c": "tortoise",
+        "m": "snowflake",
+        "n": "raspberry",
+        "d": "lighthouse",
+        "a_i": "teapotlid",
+        "b_i": "windstorm",
+        "m_i": "scarecrow",
+        "i": "paintball",
+        "j": "marshland",
+        "k": "toothbrush",
+        "l": "horsewhip",
+        "a_1": "heliotrope",
+        "a_2": "thumbtack",
+        "a_3": "goldcrest",
+        "a_4": "parchment",
+        "b_1": "raincloud",
+        "b_2": "starlight",
+        "b_3": "moonbeams",
+        "q": "dreamland",
+        "r": "blacksmith",
+        "A": "riverbank",
+        "B": "farmhouse",
+        "S": "cornfield",
+        "T": "driftwood"
+      },
+      "question": "Let $dreamland$ and $blacksmith$ be integers with $dreamland > 0$, and let $riverbank$ and $farmhouse$ be intervals on the real line.\nLet $driftwood$ be the set of all $shipwreck+snowflake dreamland$ where $shipwreck$ and $snowflake$ are integers with $shipwreck$ in $farmhouse$,\nand let $cornfield$ be the set of all integers $sunflower$ in $riverbank$ such that $blacksmith sunflower$ is in $driftwood$. Show that if the\nproduct of the lengths of $riverbank$ and $farmhouse$ is less than $dreamland$, then $cornfield$ is the intersection of $riverbank$\nwith some arithmetic progression.",
+      "solution": "We begin with an easy lemma.\n\\setcounter{lemma}{0}\n\\begin{lemma*}\nLet $cornfield$ be a finite set of integers with the following property: for all $sunflower,shipwreck,tortoise \\in cornfield$ with\n$sunflower \\leq shipwreck \\leq tortoise$, we also have $sunflower+tortoise-shipwreck \\in cornfield$. Then $cornfield$ is an arithmetic progression.\n\\end{lemma*}\n\\begin{proof}\nWe may assume $\\# cornfield \\geq 3$, as otherwise $cornfield$ is trivially an arithmetic progression.\nLet $heliotrope, thumbtack$ be the smallest and second-smallest elements of $cornfield$, respectively, and put\n$lighthouse = thumbtack - heliotrope$. Let $snowflake$ be the smallest positive integer such that $heliotrope + snowflake lighthouse \\notin cornfield$.\nSuppose that there exists an integer $raspberry$ contained in $cornfield$ but not in\n$\\{heliotrope, heliotrope + lighthouse, \\dots, heliotrope + (snowflake-1)lighthouse\\}$, and choose the least such $raspberry$.\nBy the hypothesis applied with $(sunflower,shipwreck,tortoise) = (heliotrope, thumbtack, raspberry)$, we see that $raspberry-lighthouse$ also has the property,\na contradiction.\n\\end{proof}\n\nWe now return to the original problem.\nBy dividing $farmhouse, dreamland, blacksmith$ by $\\gcd(dreamland,blacksmith)$ if necessary, we may reduce to the case where $\\gcd(dreamland,blacksmith) = 1$.\nWe may assume $\\#cornfield \\geq 3$, as otherwise $cornfield$ is trivially an arithmetic progression.\nLet $heliotrope, thumbtack, goldcrest$ be any three distinct elements of $cornfield$, labeled so that $heliotrope < thumbtack < goldcrest$,\nand write $blacksmith\\,teapotlid = windstorm + scarecrow\\,dreamland$ with $windstorm, scarecrow \\in \\ZZ$ and $windstorm \\in farmhouse$. Note that $raincloud, starlight, moonbeams$ must also be distinct, so the differences $starlight - raincloud, moonbeams - raincloud, moonbeams - starlight$ are all nonzero; consequently, two of them have the same sign. If $windstorm - b_j$ and $b_k - b_l$ have the same sign, then\nwe must have\n\\[\n(teapotlid - a_j)(b_k - b_l) =  (windstorm - b_j)(a_k - a_l)\n\\]\nbecause both sides are of the same sign, of absolute value less than $dreamland$,\nand congruent to each other modulo $dreamland$. In other words, the points $(heliotrope, raincloud), (thumbtack, starlight), (goldcrest, moonbeams)$\nin $\\RR^2$ are collinear.\nIt follows that $parchment = heliotrope + goldcrest - thumbtack$ also belongs to $cornfield$ (by taking $b_4 = raincloud + moonbeams - starlight$),\nso $cornfield$ satisfies the conditions of the lemma. It is therefore an\narithmetic progression.\n\n\\noindent\n\\textbf{Reinterpretations.}\nOne can also interpret this argument geometrically using cross products (suggested by Noam Elkies),\nor directly in terms of congruences (suggested by Karl Mahlburg).\n\n\\noindent\n\\textbf{Remark.} The problem phrasing is somewhat confusing: to say that ``$cornfield$ is the intersection of\n[the interval] $riverbank$ with an arithmetic progression'' is the same thing as saying that ``$cornfield$ is the empty set or an arithmetic progression'' unless it is implied that arithmetic progressions are necessarily infinite.\nUnder that interpretation, however, the problem becomes false; for instance, for\n\\[\ndreamland=5, blacksmith=1, riverbank = [1,3], farmhouse = [0,2],\n\\]\nwe have\n\\[\ndriftwood = \\{\\cdots, 0,1,2,5,6,7,\\dots\\}, cornfield = \\{1,2\\}.\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "q": "infinitum",
+        "r": "noninteger",
+        "A": "singleton",
+        "B": "singular",
+        "S": "continuum",
+        "T": "emptiness",
+        "a": "irrational",
+        "b": "externalval",
+        "c": "decimalval",
+        "m": "divisorval",
+        "n": "continuous",
+        "d": "summative",
+        "a_i": "aggregate",
+        "b_i": "outervalue",
+        "m_i": "staticindex",
+        "i": "fixedindex",
+        "j": "steadyindex",
+        "k": "rigidindex",
+        "l": "firmindex",
+        "a_1": "terminusone",
+        "a_2": "terminustwo",
+        "a_3": "terminusthree",
+        "a_4": "terminusfour",
+        "b_1": "outerone",
+        "b_2": "outertwo",
+        "b_3": "outerthree"
+      },
+      "question": "Let $infinitum$ and $noninteger$ be integers with $infinitum > 0$, and let $singleton$ and $singular$ be intervals on the real line.\nLet $emptiness$ be the set of all $externalval+divisorval\\,infinitum$ where $externalval$ and $divisorval$ are integers with $externalval$ in $singular$, and let $continuum$ be the set of all integers $irrational$ in $singleton$ such that $noninteger\\,irrational$ is in $emptiness$. Show that if the product of the lengths of $singleton$ and $singular$ is less than $infinitum$, then $continuum$ is the intersection of $singleton$ with some arithmetic progression.",
+      "solution": "We begin with an easy lemma.\n\\setcounter{lemma}{0}\n\\begin{lemma*}\nLet $continuum$ be a finite set of integers with the following property: for all $irrational,externalval,decimalval \\in continuum$ with $irrational \\leq externalval \\leq decimalval$, we also have $irrational+decimalval-externalval \\in continuum$. Then $continuum$ is an arithmetic progression.\n\\end{lemma*}\n\\begin{proof}\nWe may assume $\\# continuum \\geq 3$, as otherwise $continuum$ is trivially an arithmetic progression.\nLet $terminusone, terminustwo$ be the smallest and second-smallest elements of $continuum$, respectively, and put $summative = terminustwo - terminusone$. Let $divisorval$ be the smallest positive integer such that $terminusone + divisorval\\,summative \\notin continuum$.\nSuppose that there exists an integer $continuous$ contained in $continuum$ but not in $\\{terminusone, terminusone + summative, \\dots, terminusone + (divisorval-1)summative\\}$, and choose the least such $continuous$. By the hypothesis applied with $(irrational,externalval,decimalval) = (terminusone, terminustwo, continuous)$, we see that $continuous-summative$ also has the property, a contradiction.\n\\end{proof}\n\nWe now return to the original problem. By dividing $singular, infinitum, noninteger$ by $\\gcd(infinitum,noninteger)$ if necessary, we may reduce to the case where $\\gcd(infinitum,noninteger) = 1$.\nWe may assume $\\#continuum \\geq 3$, as otherwise $continuum$ is trivially an arithmetic progression.\nLet $terminusone, terminustwo, terminusthree$ be any three distinct elements of $continuum$, labeled so that $terminusone < terminustwo < terminusthree$, and write $noninteger\\,aggregate = outervalue + staticindex\\,infinitum$ with $outervalue, staticindex \\in \\ZZ$ and $outervalue \\in singular$.\nNote that $outerone, outertwo, outerthree$ must also be distinct, so the differences $outertwo - outerone, outerthree - outerone, outerthree - outertwo$ are all nonzero; consequently, two of them have the same sign.\nIf $outervalue - outervalue$ and $outervalue - outervalue$ have the same sign, then\n\\[\n(aggregate - aggregate)(outervalue - outervalue) =  (outervalue - outervalue)(aggregate - aggregate)\n\\]\nbecause both sides are of the same sign, of absolute value less than $infinitum$, and congruent to each other modulo $infinitum$.\nIn other words, the points $(terminusone, outerone), (terminustwo, outertwo), (terminusthree, outerthree)$ in $\\RR^2$ are collinear.\nIt follows that $terminusfour = terminusone + terminusthree - terminustwo$ also belongs to $continuum$ (by taking $b_4 = outerone + outerthree - outertwo$), so $continuum$ satisfies the conditions of the lemma. It is therefore an arithmetic progression.\n\n\\noindent\\textbf{Reinterpretations.} One can also interpret this argument geometrically using cross products (suggested by Noam Elkies), or directly in terms of congruences (suggested by Karl Mahlburg).\n\n\\noindent\\textbf{Remark.} The problem phrasing is somewhat confusing: to say that ``$continuum$ is the intersection of [the interval] $singleton$ with an arithmetic progression'' is the same thing as saying that ``$continuum$ is the empty set or an arithmetic progression'' unless it is implied that arithmetic progressions are necessarily infinite. Under that interpretation, however, the problem becomes false; for instance, for\n\\[\ninfinitum=5, noninteger=1, singleton = [1,3], singular = [0,2],\n\\]\nwe have\n\\[\nemptiness = \\{\\cdots, 0,1,2,5,6,7,\\dots\\}, \\; continuum = \\{1,2\\}.\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "mfldqvro",
+        "m": "srbpjuta",
+        "n": "vekldspi",
+        "d": "plxtrnqy",
+        "a_i": "xzmpfela",
+        "b_i": "gkrohvye",
+        "m_i": "zvqntdsa",
+        "i": "wljkpsen",
+        "j": "rscvqmha",
+        "k": "ntryewop",
+        "l": "pldvsxmi",
+        "a_1": "yjgcfqwa",
+        "a_2": "qermlvds",
+        "a_3": "bhzaikng",
+        "a_4": "uitrxsop",
+        "b_1": "kwfetajz",
+        "b_2": "vqsnrwly",
+        "b_3": "mdsqpkhg",
+        "q": "pznemuka",
+        "r": "ktovxird",
+        "A": "bsukojzm",
+        "B": "ezrgalyp",
+        "S": "dhvyxqpl",
+        "T": "lqenkatz"
+      },
+      "question": "Let $pznemuka$ and $ktovxird$ be integers with $pznemuka > 0$, and let $bsukojzm$ and $ezrgalyp$ be intervals on the real line.\nLet $lqenkatz$ be the set of all $hjgrksla+srbpjutapznemuka$ where $hjgrksla$ and $srbpjuta$ are integers with $hjgrksla$ in $ezrgalyp$,\nand let $dhvyxqpl$ be the set of all integers $qzxwvtnp$ in $bsukojzm$ such that $ktovxirdqzxwvtnp$ is in $lqenkatz$. Show that if the\nproduct of the lengths of $bsukojzm$ and $ezrgalyp$ is less than $pznemuka$, then $dhvyxqpl$ is the intersection of $bsukojzm$\nwith some arithmetic progression.",
+      "solution": "We begin with an easy lemma.\n\\setcounter{lemma}{0}\n\\begin{lemma*}\nLet $dhvyxqpl$ be a finite set of integers with the following property: for all $qzxwvtnp,hjgrksla,mfldqvro \\in dhvyxqpl$ with\n$qzxwvtnp \\leq hjgrksla \\leq mfldqvro$, we also have $qzxwvtnp+mfldqvro-hjgrksla \\in dhvyxqpl$. Then $dhvyxqpl$ is an arithmetic progression.\n\\end{lemma*}\n\\begin{proof}\nWe may assume $\\# dhvyxqpl \\geq 3$, as otherwise $dhvyxqpl$ is trivially an arithmetic progression.\nLet $yjgcfqwa, qermlvds$ be the smallest and second-smallest elements of $dhvyxqpl$, respectively, and put\n$plxtrnqy = qermlvds - yjgcfqwa$. Let $srbpjuta$ be the smallest positive integer such that $yjgcfqwa + srbpjutaplxtrnqy \\notin dhvyxqpl$.\nSuppose that there exists an integer $vekldspi$ contained in $dhvyxqpl$ but not in\n$\\{yjgcfqwa, yjgcfqwa + plxtrnqy, \\dots, yjgcfqwa + (srbpjuta-1)plxtrnqy\\}$, and choose the least such $vekldspi$.\nBy the hypothesis applied with $(qzxwvtnp,hjgrksla,mfldqvro) = (yjgcfqwa, qermlvds, vekldspi)$, we see that $vekldspi-plxtrnqy$ also has the property,\na contradiction.\n\\end{proof}\n\nWe now return to the original problem.\nBy dividing $ezrgalyp, pznemuka, ktovxird$ by $\\gcd(pznemuka,ktovxird)$ if necessary, we may reduce to the case where $\\gcd(pznemuka,ktovxird) = 1$.\nWe may assume $\\#dhvyxqpl \\geq 3$, as otherwise $dhvyxqpl$ is trivially an arithmetic progression.\nLet $yjgcfqwa, qermlvds, bhzaikng$ be any three distinct elements of $dhvyxqpl$, labeled so that $yjgcfqwa < qermlvds < bhzaikng$,\nand write $ktovxird xzmpfela = gkrohvye + zvqntdsapznemuka$ with $gkrohvye, zvqntdsa \\in \\ZZ$ and $gkrohvye \\in ezrgalyp$. Note that $kwfetajz, vqsnrwly, mdsqpkhg$ must also be distinct, so the differences $vqsnrwly - kwfetajz, mdsqpkhg - kwfetajz, mdsqpkhg - vqsnrwly$ are all nonzero; consequently, two of them have the same sign. If $gkrohvye - gkrohvye$ and $gkrohvye - gkrohvye$ have the same sign, then\n\\[\n(xzmpfela - xzmpfela)(gkrohvye - gkrohvye) =  (gkrohvye - gkrohvye)(xzmpfela - xzmpfela)\n\\]\nbecause both sides are of the same sign, of absolute value less than $pznemuka$,\nand congruent to each other modulo $pznemuka$. In other words, the points $(yjgcfqwa, kwfetajz), (qermlvds, vqsnrwly), (bhzaikng, mdsqpkhg)$\nin $\\RR^2$ are collinear.\nIt follows that $uitrxsop = yjgcfqwa + bhzaikng - qermlvds$ also belongs to $dhvyxqpl$ (by taking $b_4 = kwfetajz + mdsqpkhg - vqsnrwly$),\nso $dhvyxqpl$ satisfies the conditions of the lemma. It is therefore an\narithmetic progression.\n\n\\noindent\n\\textbf{Reinterpretations.}\nOne can also interpret this argument geometrically using cross products (suggested by Noam Elkies),\nor directly in terms of congruences (suggested by Karl Mahlburg).\n\n\\noindent\n\\textbf{Remark.} The problem phrasing is somewhat confusing: to say that ``$dhvyxqpl$ is the intersection of\n[the interval] $bsukojzm$ with an arithmetic progression'' is the same thing as saying that ``$dhvyxqpl$ is the empty set or an arithmetic progression'' unless it is implied that arithmetic progressions are necessarily infinite.\nUnder that interpretation, however, the problem becomes false; for instance, for\n\\[\npznemuka=5, ktovxird=1, bsukojzm = [1,3], ezrgalyp = [0,2],\n\\]\nwe have\n\\[\nlqenkatz = \\{\\cdots, 0,1,2,5,6,7,\\dots\\}, dhvyxqpl = \\{1,2\\}.\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let p and s be positive integers and let\n  I = (\\alpha , \\alpha  + L] and J = [\\beta , \\beta  + M)\nbe two half-open real intervals whose (positive) lengths L and M satisfy\n    L\\cdot M < p .\nDefine\n  U = { j + k p : j \\in  \\mathbb{Z} \\cap  J , k \\in  \\mathbb{Z} },   R = { n \\in  \\mathbb{Z} \\cap  I : s n \\in  U } .\nProve that R is the intersection of I with an arithmetic progression; that is, show that there exist integers n_0 and d \\geq  0 such that\n    R = I \\cap  { n_0 + k d : k \\in  \\mathbb{Z} } .\n(When d = 0 the progression consists of the single point n_0; in particular, if that single point lies outside I then the intersection - and hence R - is empty.)",
+      "solution": "Throughout, ``interval'' means a subset of \\mathbb{R}, while ``arithmetic progression'' means a subset of \\mathbb{Z} (finite when d = 0, infinite when d > 0).\n\n\n0.  A preparatory reduction\nPut g = gcd(p, s) and set p' = p/g, s' = s/g.  For integers n, j we have\n  s n \\equiv  j (mod p) \\Leftrightarrow  s' n \\equiv  j/g (mod p').\nHence the congruence is solvable only when g | j.  Define\n  J' = { x/g : x \\in  J },  U' = { j' + k p' : j' \\in  \\mathbb{Z} \\cap  J' , k \\in  \\mathbb{Z} } .\nThen\n  R = { n \\in  \\mathbb{Z} \\cap  I : s' n \\in  U' }.                                (1)\nBecause L\\cdot (M/g) = L\\cdot M' < p', it suffices to prove the required statement in the coprime case gcd(p, s) = 1.  Henceforth we assume\n  gcd(p, s) = 1 and L\\cdot M < p .\n\n\n1.  A combinatorial lemma\nLemma.  Let S \\subset  \\mathbb{Z} be finite and satisfy\n (\\star ) for all a \\leq  b \\leq  c in S we have a + c - b \\in  S.\nThen S is an arithmetic progression.\n\nProof.  If |S| \\leq  2 the claim is obvious.  Otherwise list the elements in increasing order\n  a_1 < a_2 < \\cdots  < a_m  (m \\geq  3)\nand put d := a_2 - a_1.  Choose the least k (1 \\leq  k \\leq  m - 1) with a_1 + k d \\notin  S and put n := a_1 + k d.  Let a_j be the least element of S that is \\geq  n.  Applying (\\star ) with (a,b,c) = (a_1,a_j,n) gives n - d \\in  S, contradicting minimality of k.  Hence no such k exists and S = {a_1 + t d : 0 \\leq  t \\leq  m - 1}.  \\square \n\n\n2.  First easy cases\nIf \\mathbb{Z} \\cap  J = \\emptyset  then U = \\emptyset , hence R = \\emptyset .  Choosing any integer n_0 outside I and taking d = 0 gives I \\cap  {n_0} = \\emptyset  = R, so the theorem holds.\n\nNext suppose \\mathbb{Z} \\cap  J contains exactly one integer, say j_0.  Then every n \\in  R satisfies s n \\equiv  j_0 (mod p).  Because gcd(s,p)=1 this is equivalent to n \\equiv  n_0 (mod p), where n_0 is the unique residue with s n_0 \\equiv  j_0 (mod p).  Thus\n  R = I \\cap  { n_0 + k p : k \\in  \\mathbb{Z} },\nand the theorem is proved.  Henceforth we assume\n  |\\mathbb{Z} \\cap  J| \\geq  2 .                                                (2)\n\n\n3.  Three elements of R and some bounds\nChoose three distinct elements n_0 < n_1 < n_2 of R.  Write\n  s n_i = b_i + m_i p  with b_i \\in  \\mathbb{Z} \\cap  J,  m_i \\in  \\mathbb{Z}.            (3)\nBecause (2) and gcd(s,p)=1 imply L < p (indeed, M \\geq  1 so L\\cdot M < p \\Rightarrow  L < p), the congruences (3) show that two equal residues b_i would force n_i = n_j; therefore\n  b_0, b_1, b_2 are pairwise distinct.                            (4)\nFor any i \\neq  j we have |n_i - n_j| < L and |b_i - b_j| < M, hence\n  |(n_i - n_j)(b_k - b_\\ell )| < L\\cdot M < p.                         (5)\n\n\n4.  A determinant which is a multiple of p\nFor distinct indices i,j,k set\n  \\Delta _{ijk} = (n_i - n_j)(b_k - b_j) - (b_i - b_j)(n_k - n_j).\nBecause s is invertible modulo p, (3) gives\n  \\Delta _{ijk} \\equiv  0  (mod p).                                      (6)\nBounding |\\Delta _{ijk}|.  Since the three n's lie in an interval of length L and the three b's in an interval of length M, the triangle with vertices (n_i, b_i) is contained in an axis-parallel rectangle of width L and height M, so\n  |\\Delta _{ijk}| = 2\\cdot (area of that triangle) < L\\cdot M < p.            (7)\nCombining (6) and (7) we get \\Delta _{ijk} = 0.\n\n\n5.  A reference line containing ALL points of R\nThe vanishing of \\Delta _{012} shows that (n_0, b_0), (n_1, b_1), (n_2, b_2) are collinear.  Denote by \\ell  this line.  We next show that every point (n,b) arising from an element n \\in  R also lies on \\ell .\n\nFix the two indices 0 and 1.  For an arbitrary n \\in  R write s n = b + m p with b \\in  \\mathbb{Z} \\cap  J.  Form\n  \\Delta (n) := (n_0 - n_1)(b - b_1) - (b_0 - b_1)(n - n_1).\nExactly as in Section 4, the two factors on the left are < L and < M in absolute value, so |\\Delta (n)| < L\\cdot M < p, while\n  \\Delta (n) \\equiv  (s n_0 - s n_1)(s^{-1} b - s^{-1} b_1) - (b_0 - b_1)(n - n_1) \\equiv  0 (mod p),\nusing that s is invertible modulo p.  Hence \\Delta (n) = 0, which means (n,b) lies on \\ell .\n\nConsequently, for every three elements a \\leq  b \\leq  c of R the corresponding points are collinear, and so the midpoint reflection a + c - b in that line produces yet another integer point of \\ell .  Because the b-coordinate of that point is \\beta ' = (b_a + b_c - b_b) which still lies in J (J has length M and the three b's are contained in it), we have a + c - b \\in  R.  Thus R satisfies property (\\star ).\n\n\n6.  Finishing the argument\nSince I is bounded, R is a finite set of integers.  If |R| \\leq  2 we are done.  Otherwise R is finite and satisfies (\\star ); by the lemma of Section 1 it is an arithmetic progression.  Because every element of that progression lying in I belongs to R (by construction of R), we finally have\n  R = I \\cap  { n_0 + k d : k \\in  \\mathbb{Z} }\nfor suitable integers n_0 and d \\geq  0, completing the proof. \\square ",
+      "_meta": {
+        "core_steps": [
+          "Lemma: a finite integer set closed under a+c−b is an arithmetic progression.",
+          "Make r and q coprime (divide by gcd); assume |S| ≥ 3.",
+          "For any three a_i∈S, write r a_i = b_i (mod q) with b_i∈B; small interval lengths give |a_i−a_j||b_k−b_l| < q.",
+          "That bound plus the congruence forces (a_i−a_j)(b_k−b_l) ≡ (b_i−b_j)(a_k−a_l) (mod q) ⇒ collinearity ⇒ a₁+a₃−a₂ ∈ S.",
+          "Apply the lemma to conclude S is the intersection of A with an arithmetic progression."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Topological type of the intervals (open, closed, half-open) and their exact positions on the real line; only their lengths enter the argument.",
+            "original": "A and B are (unspecified) intervals on ℝ"
+          },
+          "slot2": {
+            "description": "The particular triple of distinct elements chosen from S to invoke collinearity; any three distinct elements would work.",
+            "original": "Selection of a₁<a₂<a₃ in S"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

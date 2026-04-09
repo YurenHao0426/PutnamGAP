@@ -1,0 +1,100 @@
+{
+  "index": "1938-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "5. Evaluate the following limits:\n(i) \\( \\lim _{n \\rightarrow \\infty} \\frac{n^{2}}{e^{n}} \\).\n(ii) \\( \\lim _{x \\rightarrow 0} \\frac{1}{x} \\int_{0}^{x}(1+\\sin 2 t)^{1 / t} d t \\).",
+  "solution": "Solution. (i) It follows from L'Hospital's rule that\n\\[\n\\lim _{x \\rightarrow \\infty} \\frac{x^{2}}{e^{x}}=\\lim _{x \\rightarrow \\infty} \\frac{2 x}{e^{x}}=\\lim _{x \\rightarrow \\infty} \\frac{2}{e^{x}}=0,\n\\]\nwhence the desired limit is zero.\nAlternatively, one could use the fact that for \\( x>0 \\),\n\\[\ne^{x}=\\sum_{n=0}^{\\infty} \\frac{x^{n}}{n!}>\\frac{x^{3}}{6}, \\quad \\text { whence } 0<\\frac{x^{2}}{e^{x}}<\\frac{6}{x}\n\\]\nand, as \\( x \\rightarrow \\infty, \\lim _{x \\rightarrow \\infty} 6 / x=0 \\), whence the desired limit is zero.\n(ii) By L'Hospital's rule,\n\\[\n\\lim _{x \\rightarrow 0} \\frac{1}{x} \\int_{0}^{x}(1+\\sin 2 t)^{1 / t} d t=\\lim _{x \\rightarrow 0}(1+\\sin 2 x)^{1 / x},\n\\]\nprovided the latter limit exists. Let \\( \\phi(x)=(1+\\sin 2 x)^{1 / x} \\). Then\n\\[\n\\log \\phi(x)=\\frac{\\log (1+\\sin 2 x)}{x} .\n\\]\n\nAgain using L'Hospital's rule,\n\\[\n\\lim _{x \\rightarrow 0} \\log \\phi(x)=\\lim _{x \\rightarrow 0} \\frac{2 \\cos 2 x}{1+\\sin 2 x}=2\n\\]\n\nSince the exponential function is continuous,\n\\[\n\\lim _{x \\rightarrow 0} \\phi(x)=e^{2} .\n\\]\n\nTherefore,\n\\[\n\\lim _{x \\rightarrow 0} \\frac{1}{x} \\int_{0}^{x}(1+\\sin 2 t)^{1 / \\prime} d t=e^{2} .\n\\]",
+  "vars": [
+    "n",
+    "x",
+    "t",
+    "\\\\phi"
+  ],
+  "params": [],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "x": "inputvar",
+        "t": "timevar",
+        "\\phi": "phifunc"
+      },
+      "question": "5. Evaluate the following limits:\n(i) \\( \\lim _{indexvar \\rightarrow \\infty} \\frac{indexvar^{2}}{e^{indexvar}} \\).\n(ii) \\( \\lim _{inputvar \\rightarrow 0} \\frac{1}{inputvar} \\int_{0}^{inputvar}(1+\\sin 2 timevar)^{1 / timevar} d timevar \\).",
+      "solution": "Solution. (i) It follows from L'Hospital's rule that\n\\[\n\\lim _{inputvar \\rightarrow \\infty} \\frac{inputvar^{2}}{e^{inputvar}}=\\lim _{inputvar \\rightarrow \\infty} \\frac{2 inputvar}{e^{inputvar}}=\\lim _{inputvar \\rightarrow \\infty} \\frac{2}{e^{inputvar}}=0,\n\\]\nwhence the desired limit is zero.\nAlternatively, one could use the fact that for \\( inputvar>0 \\),\n\\[\n e^{inputvar}=\\sum_{indexvar=0}^{\\infty} \\frac{inputvar^{indexvar}}{indexvar!}>\\frac{inputvar^{3}}{6}, \\quad \\text { whence } 0<\\frac{inputvar^{2}}{e^{inputvar}}<\\frac{6}{inputvar}\n\\]\nand, as \\( inputvar \\rightarrow \\infty, \\lim _{inputvar \\rightarrow \\infty} 6 / inputvar=0 \\), whence the desired limit is zero.\n(ii) By L'Hospital's rule,\n\\[\n\\lim _{inputvar \\rightarrow 0} \\frac{1}{inputvar} \\int_{0}^{inputvar}(1+\\sin 2 timevar)^{1 / timevar} d timevar=\\lim _{inputvar \\rightarrow 0}(1+\\sin 2 inputvar)^{1 / inputvar},\n\\]\nprovided the latter limit exists. Let \\( phifunc(inputvar)=(1+\\sin 2 inputvar)^{1 / inputvar} \\). Then\n\\[\n\\log phifunc(inputvar)=\\frac{\\log (1+\\sin 2 inputvar)}{inputvar} .\n\\]\n\nAgain using L'Hospital's rule,\n\\[\n\\lim _{inputvar \\rightarrow 0} \\log phifunc(inputvar)=\\lim _{inputvar \\rightarrow 0} \\frac{2 \\cos 2 inputvar}{1+\\sin 2 inputvar}=2\n\\]\n\nSince the exponential function is continuous,\n\\[\n\\lim _{inputvar \\rightarrow 0} phifunc(inputvar)=e^{2} .\n\\]\n\nTherefore,\n\\[\n\\lim _{inputvar \\rightarrow 0} \\frac{1}{inputvar} \\int_{0}^{inputvar}(1+\\sin 2 timevar)^{1 / \\prime} d timevar=e^{2} .\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "daylighth",
+        "x": "parakeets",
+        "t": "snowflake",
+        "\\phi": "starlight"
+      },
+      "question": "5. Evaluate the following limits:\n(i) \\( \\lim _{daylighth \\rightarrow \\infty} \\frac{daylighth^{2}}{e^{daylighth}} \\).\n(ii) \\( \\lim _{parakeets \\rightarrow 0} \\frac{1}{parakeets} \\int_{0}^{parakeets}(1+\\sin 2 snowflake)^{1 / snowflake} d snowflake \\).",
+      "solution": "Solution. (i) It follows from L'Hospital's rule that\n\\[\n\\lim _{parakeets \\rightarrow \\infty} \\frac{parakeets^{2}}{e^{parakeets}}=\\lim _{parakeets \\rightarrow \\infty} \\frac{2 parakeets}{e^{parakeets}}=\\lim _{parakeets \\rightarrow \\infty} \\frac{2}{e^{parakeets}}=0,\n\\]\nwhence the desired limit is zero.\nAlternatively, one could use the fact that for \\( parakeets>0 \\),\n\\[\n e^{parakeets}=\\sum_{daylighth=0}^{\\infty} \\frac{parakeets^{daylighth}}{daylighth!}>\\frac{parakeets^{3}}{6}, \\quad \\text { whence } 0<\\frac{parakeets^{2}}{e^{parakeets}}<\\frac{6}{parakeets}\n\\]\nand, as \\( parakeets \\rightarrow \\infty, \\lim _{parakeets \\rightarrow \\infty} 6 / parakeets=0 \\), whence the desired limit is zero.\n(ii) By L'Hospital's rule,\n\\[\n\\lim _{parakeets \\rightarrow 0} \\frac{1}{parakeets} \\int_{0}^{parakeets}(1+\\sin 2 snowflake)^{1 / snowflake} d snowflake=\\lim _{parakeets \\rightarrow 0}(1+\\sin 2 parakeets)^{1 / parakeets},\n\\]\nprovided the latter limit exists. Let \\( starlight(parakeets)=(1+\\sin 2 parakeets)^{1 / parakeets} \\). Then\n\\[\n\\log starlight(parakeets)=\\frac{\\log (1+\\sin 2 parakeets)}{parakeets} .\n\\]\nAgain using L'Hospital's rule,\n\\[\n\\lim _{parakeets \\rightarrow 0} \\log starlight(parakeets)=\\lim _{parakeets \\rightarrow 0} \\frac{2 \\cos 2 parakeets}{1+\\sin 2 parakeets}=2\n\\]\nSince the exponential function is continuous,\n\\[\n\\lim _{parakeets \\rightarrow 0} starlight(parakeets)=e^{2} .\n\\]\nTherefore,\n\\[\n\\lim _{parakeets \\rightarrow 0} \\frac{1}{parakeets} \\int_{0}^{parakeets}(1+\\sin 2 snowflake)^{1 / \\prime} d snowflake=e^{2} .\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "microscopic",
+        "x": "fixedvalue",
+        "t": "steadytime",
+        "\\phi": "\\nonvaryfunc"
+      },
+      "question": "Problem:\n<<<\n5. Evaluate the following limits:\n(i) \\( \\lim _{microscopic \\rightarrow \\infty} \\frac{microscopic^{2}}{e^{microscopic}} \\).\n(ii) \\( \\lim _{fixedvalue \\rightarrow 0} \\frac{1}{fixedvalue} \\int_{0}^{fixedvalue}(1+\\sin 2 steadytime)^{1 / steadytime} d steadytime \\).\n>>>",
+      "solution": "Solution:\n<<<\nSolution. (i) It follows from L'Hospital's rule that\n\\[\n\\lim _{fixedvalue \\rightarrow \\infty} \\frac{fixedvalue^{2}}{e^{fixedvalue}}=\\lim _{fixedvalue \\rightarrow \\infty} \\frac{2 fixedvalue}{e^{fixedvalue}}=\\lim _{fixedvalue \\rightarrow \\infty} \\frac{2}{e^{fixedvalue}}=0,\n\\]\nwhence the desired limit is zero.\nAlternatively, one could use the fact that for \\( fixedvalue>0 \\),\n\\[\n e^{fixedvalue}=\\sum_{microscopic=0}^{\\infty} \\frac{fixedvalue^{microscopic}}{microscopic!}>\\frac{fixedvalue^{3}}{6}, \\quad \\text { whence } 0<\\frac{fixedvalue^{2}}{e^{fixedvalue}}<\\frac{6}{fixedvalue}\n\\]\nand, as \\( fixedvalue \\rightarrow \\infty, \\lim _{fixedvalue \\rightarrow \\infty} 6 / fixedvalue=0 \\), whence the desired limit is zero.\n(ii) By L'Hospital's rule,\n\\[\n\\lim _{fixedvalue \\rightarrow 0} \\frac{1}{fixedvalue} \\int_{0}^{fixedvalue}(1+\\sin 2 steadytime)^{1 / steadytime} d steadytime=\\lim _{fixedvalue \\rightarrow 0}(1+\\sin 2 fixedvalue)^{1 / fixedvalue},\n\\]\nprovided the latter limit exists. Let \\( \\nonvaryfunc(fixedvalue)=(1+\\sin 2 fixedvalue)^{1 / fixedvalue} \\). Then\n\\[\n\\log \\nonvaryfunc(fixedvalue)=\\frac{\\log (1+\\sin 2 fixedvalue)}{fixedvalue} .\n\\]\n\nAgain using L'Hospital's rule,\n\\[\n\\lim _{fixedvalue \\rightarrow 0} \\log \\nonvaryfunc(fixedvalue)=\\lim _{fixedvalue \\rightarrow 0} \\frac{2 \\cos 2 fixedvalue}{1+\\sin 2 fixedvalue}=2\n\\]\n\nSince the exponential function is continuous,\n\\[\n\\lim _{fixedvalue \\rightarrow 0} \\nonvaryfunc(fixedvalue)=e^{2} .\n\\]\n\nTherefore,\n\\[\n\\lim _{fixedvalue \\rightarrow 0} \\frac{1}{fixedvalue} \\int_{0}^{fixedvalue}(1+\\sin 2 steadytime)^{1 / \\prime} d steadytime=e^{2} .\n\\]\n>>>"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "x": "hjgmrslk",
+        "t": "lkjhadfg",
+        "\\phi": "ervmndol"
+      },
+      "question": "5. Evaluate the following limits:\n(i) \\( \\lim _{qzxwvtnp \\rightarrow \\infty} \\frac{qzxwvtnp^{2}}{e^{qzxwvtnp}} \\).\n(ii) \\( \\lim _{hjgmrslk \\rightarrow 0} \\frac{1}{hjgmrslk} \\int_{0}^{hjgmrslk}(1+\\sin 2 lkjhadfg)^{1 / lkjhadfg} d lkjhadfg \\).",
+      "solution": "Solution. (i) It follows from L'Hospital's rule that\n\\[\n\\lim _{hjgmrslk \\rightarrow \\infty} \\frac{hjgmrslk^{2}}{e^{hjgmrslk}}=\\lim _{hjgmrslk \\rightarrow \\infty} \\frac{2 hjgmrslk}{e^{hjgmrslk}}=\\lim _{hjgmrslk \\rightarrow \\infty} \\frac{2}{e^{hjgmrslk}}=0,\n\\]\nwhence the desired limit is zero.\nAlternatively, one could use the fact that for \\( hjgmrslk>0 \\),\n\\[\ne^{hjgmrslk}=\\sum_{qzxwvtnp=0}^{\\infty} \\frac{hjgmrslk^{qzxwvtnp}}{qzxwvtnp!}>\\frac{hjgmrslk^{3}}{6}, \\quad \\text { whence } 0<\\frac{hjgmrslk^{2}}{e^{hjgmrslk}}<\\frac{6}{hjgmrslk}\n\\]\nand, as \\( hjgmrslk \\rightarrow \\infty, \\lim _{hjgmrslk \\rightarrow \\infty} 6 / hjgmrslk=0 \\), whence the desired limit is zero.\n(ii) By L'Hospital's rule,\n\\[\n\\lim _{hjgmrslk \\rightarrow 0} \\frac{1}{hjgmrslk} \\int_{0}^{hjgmrslk}(1+\\sin 2 lkjhadfg)^{1 / lkjhadfg} d lkjhadfg=\\lim _{hjgmrslk \\rightarrow 0}(1+\\sin 2 hjgmrslk)^{1 / hjgmrslk},\n\\]\nprovided the latter limit exists. Let \\( ervmndol(hjgmrslk)=(1+\\sin 2 hjgmrslk)^{1 / hjgmrslk} \\). Then\n\\[\n\\log ervmndol(hjgmrslk)=\\frac{\\log (1+\\sin 2 hjgmrslk)}{hjgmrslk} .\n\\]\n\nAgain using L'Hospital's rule,\n\\[\n\\lim _{hjgmrslk \\rightarrow 0} \\log ervmndol(hjgmrslk)=\\lim _{hjgmrslk \\rightarrow 0} \\frac{2 \\cos 2 hjgmrslk}{1+\\sin 2 hjgmrslk}=2\n\\]\n\nSince the exponential function is continuous,\n\\[\n\\lim _{hjgmrslk \\rightarrow 0} ervmndol(hjgmrslk)=e^{2} .\n\\]\n\nTherefore,\n\\[\n\\lim _{hjgmrslk \\rightarrow 0} \\frac{1}{hjgmrslk} \\int_{0}^{hjgmrslk}(1+\\sin 2 lkjhadfg)^{1 / \\prime} d lkjhadfg=e^{2} .\n\\]"
+    },
+    "kernel_variant": {
+      "question": "5. Evaluate the limits:\n\n(i) \\(\\displaystyle \\lim_{n\\to\\infty}\\frac{n^{5}}{3^{n}}.\\)\n\n(ii) \\(\\displaystyle \\lim_{x\\to 0}\\;\\frac{1}{x}\\int_{0}^{x}\\left(\\frac{2+\\sin 7t}{2}\\right)^{\\!\\frac{3}{t}}\\,dt.\\)",
+      "solution": "Corrected solution\n\n(i) Let f(x)=x^{5}/3^{x}, x>0. Apply L'Hopital's rule repeatedly:\n    lim_{x\\to \\infty } x^{5}/3^{x} = lim_{x\\to \\infty } (5x^{4})/(3^{x}ln3)\n                          = lim_{x\\to \\infty } (20x^{3})/(3^{x}(ln3)^{2})\n                          = \\ldots  = lim_{x\\to \\infty } (5!)/((ln3)^{5}3^{x}) = 0.\nHence  lim_{n\\to \\infty } n^{5}/3^{n} = 0.\n\n(ii) Define F(t)=((2+sin7t)/2)^{3/t} for t\\neq 0.  First find L=lim_{t\\to 0}F(t).  Take logarithms:\n    ln F(t)= (3/t)[ln(2+sin7t)-ln2].\nThis is a 0/0 form, so by L'Hopital's rule,\n    lim_{t\\to 0} ln F(t)= 3\\cdot lim_{t\\to 0} (7cos7t)/(2+sin7t) = 3\\cdot (7/2) = 21/2.\nHence L = e^{21/2}.\n\nNow set G(x)=(1/x)\\int _{0}^{x}F(t)\n    dt.  Since F(t)\\to L as t\\to 0, the average value G(x)\\to L as x\\to 0.  Equivalently, by L'Hopital's rule,\n    lim_{x\\to 0}G(x)= lim_{x\\to 0}F(x)= e^{21/2}.\n\nFinal answers\n(i) 0\n(ii) e^{21/2}",
+      "_meta": {
+        "core_steps": [
+          "Use that an exponential grows faster than any fixed-degree polynomial (e.g. via repeated L’Hospital).",
+          "Convert the average-value limit  (1/x)∫₀ˣ F(t)dt  into  lim_{x→0} F(x)  by L’Hospital.",
+          "Take logarithms so a power of the form F(x)^{1/x} becomes a quotient  ln F(x)/x.",
+          "Apply L’Hospital to this 0/0 quotient to obtain a finite constant C = F'(0)/F(0).",
+          "Exponentiate to get the final limit e^{C}."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Degree of the polynomial in the first limit",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "Base of the exponential in the first limit (any constant >1 works)",
+            "original": "e"
+          },
+          "slot3": {
+            "description": "Coefficient inside the sine argument, i.e. sin(k t)",
+            "original": "2"
+          },
+          "slot4": {
+            "description": "Additive constant that makes the base near 1, i.e. A + sin(k t)",
+            "original": "1"
+          },
+          "slot5": {
+            "description": "Numerator of the exponent in F(t)^{c/t}",
+            "original": "1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

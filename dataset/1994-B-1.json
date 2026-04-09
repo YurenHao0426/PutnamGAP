@@ -1,0 +1,81 @@
+{
+  "index": "1994-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find all positive integers $n$ that are within 250 of exactly 15 perfect\nsquares.",
+  "solution": "Solution. The squares within 250 of a positive integer \\( N \\) form a set of consecutive squares. If \\( N \\) is such that there are 15 such squares, then they are \\( m^{2},(m+1)^{2}, \\ldots \\), \\( (m+14)^{2} \\) for some \\( m \\geq 0 \\). If \\( m=0 \\), then \\( 14^{2} \\leq N+250<15^{2} \\), contradicting \\( N>0 \\).\n\nNow, given \\( N, m>0 \\), the following two conditions are necessary and sufficient for \\( m^{2},(m+1)^{2}, \\ldots,(m+14)^{2} \\) to be the squares within 250 of \\( N \\) :\n\\[\n\\begin{array}{c}\n(m+14)^{2} \\leq N+250 \\leq(m+15)^{2}-1 \\\\\nm^{2} \\geq N-250 \\geq(m-1)^{2}+1\n\\end{array}\n\\]\n\nSubtraction shows that these imply\n\\[\n28 m+196 \\leq 500 \\leq 32 m+222,\n\\]\nwhich implies \\( m=9 \\) or 10 .\nIf \\( m=9 \\), the two conditions \\( 23^{2} \\leq N+250 \\leq 24^{2}-1,9^{2} \\geq N-250 \\geq 8^{2}+1 \\) are equivalent to \\( 315 \\leq N \\leq 325 \\). If \\( m=10 \\), the two conditions \\( 24^{2} \\leq N+250 \\leq 25^{2}-1 \\), \\( 10^{2} \\geq N-250 \\geq 9^{2}+1 \\) are equivalent to \\( 332 \\leq N \\leq 350 \\).",
+  "vars": [
+    "n",
+    "N",
+    "m"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "targetinteger",
+        "N": "currentvalue",
+        "m": "startindex"
+      },
+      "question": "Find all positive integers $targetinteger$ that are within 250 of exactly 15 perfect\nsquares.",
+      "solution": "Solution. The squares within 250 of a positive integer \\( currentvalue \\) form a set of consecutive squares. If \\( currentvalue \\) is such that there are 15 such squares, then they are \\( startindex^{2},(startindex+1)^{2}, \\ldots \\), \\( (startindex+14)^{2} \\) for some \\( startindex \\geq 0 \\). If \\( startindex=0 \\), then \\( 14^{2} \\leq currentvalue+250<15^{2} \\), contradicting \\( currentvalue>0 \\).\n\nNow, given \\( currentvalue, startindex>0 \\), the following two conditions are necessary and sufficient for \\( startindex^{2},(startindex+1)^{2}, \\ldots,(startindex+14)^{2} \\) to be the squares within 250 of \\( currentvalue \\) :\n\\[\n\\begin{array}{c}\n(startindex+14)^{2} \\leq currentvalue+250 \\leq(startindex+15)^{2}-1 \\\\\nstartindex^{2} \\geq currentvalue-250 \\geq(startindex-1)^{2}+1\n\\end{array}\n\\]\n\nSubtraction shows that these imply\n\\[\n28 startindex+196 \\leq 500 \\leq 32 startindex+222,\n\\]\nwhich implies \\( startindex=9 \\) or 10 .\nIf \\( startindex=9 \\), the two conditions \\( 23^{2} \\leq currentvalue+250 \\leq 24^{2}-1,9^{2} \\geq currentvalue-250 \\geq 8^{2}+1 \\) are equivalent to \\( 315 \\leq currentvalue \\leq 325 \\). If \\( startindex=10 \\), the two conditions \\( 24^{2} \\leq currentvalue+250 \\leq 25^{2}-1 \\), \\( 10^{2} \\geq currentvalue-250 \\geq 9^{2}+1 \\) are equivalent to \\( 332 \\leq currentvalue \\leq 350 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sunflower",
+        "N": "chocolate",
+        "m": "backpack"
+      },
+      "question": "Find all positive integers $sunflower$ that are within 250 of exactly 15 perfect squares.",
+      "solution": "Solution. The squares within 250 of a positive integer \\( chocolate \\) form a set of consecutive squares. If \\( chocolate \\) is such that there are 15 such squares, then they are \\( backpack^{2},(backpack+1)^{2}, \\ldots \\), \\( (backpack+14)^{2} \\) for some \\( backpack \\geq 0 \\). If \\( backpack=0 \\), then \\( 14^{2} \\leq chocolate+250<15^{2} \\), contradicting \\( chocolate>0 \\).\n\nNow, given \\( chocolate, backpack>0 \\), the following two conditions are necessary and sufficient for \\( backpack^{2},(backpack+1)^{2}, \\ldots,(backpack+14)^{2} \\) to be the squares within 250 of \\( chocolate \\) :\n\\[\n\\begin{array}{c}\n(backpack+14)^{2} \\leq chocolate+250 \\leq(backpack+15)^{2}-1 \\\\\nbackpack^{2} \\geq chocolate-250 \\geq(backpack-1)^{2}+1\n\\end{array}\n\\]\n\nSubtraction shows that these imply\n\\[\n28 backpack+196 \\leq 500 \\leq 32 backpack+222,\n\\]\nwhich implies \\( backpack=9 \\) or 10.\nIf \\( backpack=9 \\), the two conditions \\( 23^{2} \\leq chocolate+250 \\leq 24^{2}-1,9^{2} \\geq chocolate-250 \\geq 8^{2}+1 \\) are equivalent to \\( 315 \\leq chocolate \\leq 325 \\). If \\( backpack=10 \\), the two conditions \\( 24^{2} \\leq chocolate+250 \\leq 25^{2}-1 \\), \\( 10^{2} \\geq chocolate-250 \\geq 9^{2}+1 \\) are equivalent to \\( 332 \\leq chocolate \\leq 350 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "negativeinteger",
+        "N": "fractionalnumber",
+        "m": "maximumvalue"
+      },
+      "question": "Find all positive integers $negativeinteger$ that are within 250 of exactly 15 perfect\nsquares.",
+      "solution": "Solution. The squares within 250 of a positive integer \\( fractionalnumber \\) form a set of consecutive squares. If \\( fractionalnumber \\) is such that there are 15 such squares, then they are \\( maximumvalue^{2},(maximumvalue+1)^{2}, \\ldots \\), \\( (maximumvalue+14)^{2} \\) for some \\( maximumvalue \\geq 0 \\). If \\( maximumvalue=0 \\), then \\( 14^{2} \\leq fractionalnumber+250<15^{2} \\), contradicting \\( fractionalnumber>0 \\).\n\nNow, given \\( fractionalnumber, maximumvalue>0 \\), the following two conditions are necessary and sufficient for \\( maximumvalue^{2},(maximumvalue+1)^{2}, \\ldots,(maximumvalue+14)^{2} \\) to be the squares within 250 of \\( fractionalnumber \\) :\n\\[\n\\begin{array}{c}\n(maximumvalue+14)^{2} \\leq fractionalnumber+250 \\leq(maximumvalue+15)^{2}-1 \\\\\nmaximumvalue^{2} \\geq fractionalnumber-250 \\geq(maximumvalue-1)^{2}+1\n\\end{array}\n\\]\n\nSubtraction shows that these imply\n\\[\n28 maximumvalue+196 \\leq 500 \\leq 32 maximumvalue+222,\n\\]\nwhich implies \\( maximumvalue=9 \\) or 10 .\nIf \\( maximumvalue=9 \\), the two conditions \\( 23^{2} \\leq fractionalnumber+250 \\leq 24^{2}-1,9^{2} \\geq fractionalnumber-250 \\geq 8^{2}+1 \\) are equivalent to \\( 315 \\leq fractionalnumber \\leq 325 \\). If \\( maximumvalue=10 \\), the two conditions \\( 24^{2} \\leq fractionalnumber+250 \\leq 25^{2}-1 \\), \\( 10^{2} \\geq fractionalnumber-250 \\geq 9^{2}+1 \\) are equivalent to \\( 332 \\leq fractionalnumber \\leq 350 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "N": "hjgrkslaf",
+        "m": "pldkqrmnz"
+      },
+      "question": "Find all positive integers $qzxwvtnp$ that are within 250 of exactly 15 perfect squares.",
+      "solution": "Solution. The squares within 250 of a positive integer \\( hjgrkslaf \\) form a set of consecutive squares. If \\( hjgrkslaf \\) is such that there are 15 such squares, then they are \\( pldkqrmnz^{2},(pldkqrmnz+1)^{2}, \\ldots \\), \\( (pldkqrmnz+14)^{2} \\) for some \\( pldkqrmnz \\geq 0 \\). If \\( pldkqrmnz=0 \\), then \\( 14^{2} \\leq hjgrkslaf+250<15^{2} \\), contradicting \\( hjgrkslaf>0 \\).\n\nNow, given \\( hjgrkslaf, pldkqrmnz>0 \\), the following two conditions are necessary and sufficient for \\( pldkqrmnz^{2},(pldkqrmnz+1)^{2}, \\ldots,(pldkqrmnz+14)^{2} \\) to be the squares within 250 of \\( hjgrkslaf \\) :\n\\[\n\\begin{array}{c}\n(pldkqrmnz+14)^{2} \\leq hjgrkslaf+250 \\leq(pldkqrmnz+15)^{2}-1 \\\\\npldkqrmnz^{2} \\geq hjgrkslaf-250 \\geq(pldkqrmnz-1)^{2}+1\n\\end{array}\n\\]\nSubtraction shows that these imply\n\\[\n28\\,pldkqrmnz+196 \\leq 500 \\leq 32\\,pldkqrmnz+222,\n\\]\nwhich implies \\( pldkqrmnz=9 \\) or 10.\nIf \\( pldkqrmnz=9 \\), the two conditions \\( 23^{2} \\leq hjgrkslaf+250 \\leq 24^{2}-1,9^{2} \\geq hjgrkslaf-250 \\geq 8^{2}+1 \\) are equivalent to \\( 315 \\leq hjgrkslaf \\leq 325 \\). If \\( pldkqrmnz=10 \\), the two conditions \\( 24^{2} \\leq hjgrkslaf+250 \\leq 25^{2}-1 \\), \\( 10^{2} \\geq hjgrkslaf-250 \\geq 9^{2}+1 \\) are equivalent to \\( 332 \\leq hjgrkslaf \\leq 350 \\)."
+    },
+    "kernel_variant": {
+      "question": "Find all positive integers $N$ such that the set\\[\\{s^{2}\\mid |N-s^{2}|\\le 180\\}\\]contains exactly $12$ perfect squares.",
+      "solution": "Let D=180 and k=12.  We seek all positive integers N for which exactly k squares lie in the interval [N-D,N+D].\n\n1. Consecutiveness.  If s^2 and t^2 lie in [N-D,N+D] with s<t, then every intermediate square u^2 (s<u<t) also lies in that interval.  Hence the k squares are consecutive: m^2,(m+1)^2,\\ldots ,(m+11)^2 for some integer m\\geq 0.\n\n2. Inclusion-Exclusion conditions.  We must have\n  (m+11)^2 \\leq  N+D < (m+12)^2        (to include up through (m+11)^2 but exclude (m+12)^2)\n  (m-1)^2 < N-D \\leq  m^2              (to exclude (m-1)^2 but include m^2).\nEquivalently,\n  N \\geq  (m+11)^2-D,\n  N <  (m+12)^2-D,\n  N >  (m-1)^2+D,\n  N \\leq  m^2+D.\nThus N must lie between the lower bound LB and upper bound UB where\n  LB = max((m+11)^2-D, (m-1)^2+D+1),\n  UB = min(m^2+D, (m+12)^2-D-1).\n\n3. Derive bounds on m by requiring LB \\leq  UB.  Compute:\n    (m+11)^2 - D = m^2+22m+121 -180 = m^2+22m - 59,\n    (m-1)^2 + D +1 = m^2-2m+1 +180 +1 = m^2-2m +182,\n    m^2 + D       = m^2+180,\n    (m+12)^2 - D -1 = m^2+24m+144 -180 -1 = m^2+24m -37.\nWe need\n    m^2+22m-59 \\leq  m^2+180    \\Rightarrow  m \\leq 10,\n    m^2-2m+182 \\leq  m^2+180    \\Rightarrow  m \\geq 1,\n    m^2-2m+182 \\leq  m^2+24m-37 \\Rightarrow  m \\geq 9.\nHence 9 \\leq  m \\leq 10.  We check m=9 and m=10.\n\n4. Case m=9:\n  LB = max(81+198-59, 81-18+182) = max(220,245) = 245,\n  UB = min(81+180, 81+216-37) = min(261,260) = 260,\n  so N\\in [245,260].\n\n5. Case m=10:\n  LB = max(100+220-59, 100-20+182) = max(261,262) = 262,\n  UB = min(100+180, 100+240-37) = min(280,303) = 280,\n  so N\\in [262,280].\n\nConclusion.  All positive integers N with 245 \\leq  N \\leq  260 or 262 \\leq  N \\leq  280 satisfy that exactly 12 perfect squares lie within 180 of N, and no others do.",
+      "_meta": {
+        "core_steps": [
+          "Observe that all squares lying within the given distance of N must be consecutive.",
+          "Label those k consecutive squares m², … , (m+k−1)² and translate the distance condition into two double inequalities for N.",
+          "Subtract the two inequalities to obtain a pair of linear bounds in m involving only k and the distance D.",
+          "Solve this linear pair to pinpoint the one or two admissible integer values of m.",
+          "Substitute each admissible m back into the original inequalities to obtain the complete interval(s) of N."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Half-width of the neighborhood around N in which squares are counted",
+            "original": 250
+          },
+          "slot2": {
+            "description": "Required number k of perfect squares that must lie in that neighborhood",
+            "original": 15
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

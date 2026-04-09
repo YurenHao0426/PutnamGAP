@@ -1,0 +1,108 @@
+{
+  "index": "2009-A-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $S$ be a set of rational numbers such that\n\\begin{enumerate}\n\\item[(a)] $0 \\in S$;\n\\item[(b)] If $x \\in S$ then $x+1\\in S$ and $x-1\\in S$; and\n\\item[(c)] If $x\\in S$ and $x\\not\\in\\{0,1\\}$, then $\\frac{1}{x(x-1)}\\in S$.\n\\end{enumerate}\nMust $S$ contain all rational numbers?",
+  "solution": "The answer is no; indeed, $S = \\mathbb{Q} \\setminus \\{n+2/5 \\,|\\,\nn\\in\\mathbb{Z}\\}$ satisfies the given conditions. Clearly $S$ satisfies\n(a) and (b); we need only check that it satisfies (c). It suffices to\nshow that if $x = p/q$ is a fraction with $(p,q)=1$ and $p>0$, then we\ncannot have $1/(x(x-1)) = n+2/5$ for an integer $n$. Suppose otherwise; then\n\\[\n(5n+2)p(p-q) = 5q^2.\n\\]\nSince $p$ and $q$ are relatively prime, and $p$ divides $5q^2$, we must\nhave $p\\,|\\,5$, so $p=1$ or $p=5$. On the other hand, $p-q$ and $q$ are\nalso relatively prime, so $p-q$ divides $5$ as well, and $p-q$ must be\n$\\pm 1$ or $\\pm 5$. This leads to eight possibilities for $(p,q)$:\n$(1,0)$,  $(5,0)$,  $(5,10)$, $(1,-4)$, $(1,2)$, $(1,6)$, $(5,4)$,\n$(5,6)$. The first three are impossible, while the final five lead to\n$5n+2 = 16,-20,-36,16,-36$ respectively, none of which holds for\nintegral $n$.\n\n\\textbf{Remark.} More generally, no rational number of the form $m/n$,\nwhere $m,n$ are relatively prime and neither of $\\pm m$ is a quadratic\nresidue mod $n$, need be in $S$. If $x=p/q$ is in lowest terms and\n$1/(x(x-1)) = m/n+k$ for some integer $k$, then $p(p-q)$ is relatively\nprime to $q^2$; $q^2/(p(p-q)) = (m+kn)/n$ then implies that $m+kn = \\pm\nq^2$ and so $\\pm m$ must be a quadratic residue mod $n$.",
+  "vars": [
+    "S",
+    "x",
+    "n",
+    "p",
+    "q",
+    "m",
+    "k",
+    "Q"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S": "rationalset",
+        "x": "variablex",
+        "n": "intindex",
+        "p": "numerator",
+        "q": "denominator",
+        "m": "othernum",
+        "k": "shiftint",
+        "Q": "rationals"
+      },
+      "question": "Let $rationalset$ be a set of rational numbers such that\n\\begin{enumerate}\n\\item[(a)] $0 \\in rationalset$;\n\\item[(b)] If $variablex \\in rationalset$ then $variablex+1\\in rationalset$ and $variablex-1\\in rationalset$; and\n\\item[(c)] If $variablex\\in rationalset$ and $variablex\\not\\in\\{0,1\\}$, then $\\frac{1}{variablex(variablex-1)}\\in rationalset$.\n\\end{enumerate}\nMust $rationalset$ contain all rational numbers?",
+      "solution": "The answer is no; indeed, $rationalset = \\mathbb{rationals} \\setminus \\{\\,intindex+2/5 \\;|\\; intindex\\in\\mathbb{Z}\\}$ satisfies the given conditions. Clearly $rationalset$ satisfies (a) and (b); we need only check that it satisfies (c). It suffices to show that if $variablex = numerator/denominator$ is a fraction with $(numerator,denominator)=1$ and $numerator>0$, then we cannot have $1/(variablex(variablex-1)) = intindex+2/5$ for an integer $intindex$. Suppose otherwise; then\n\\[\n(5\\,intindex+2)\\,numerator\\,(numerator-denominator) = 5\\,denominator^{2}.\n\\]\nSince $numerator$ and $denominator$ are relatively prime, and $numerator$ divides $5\\,denominator^{2}$, we must have $numerator\\mid5$, so $numerator=1$ or $numerator=5$. On the other hand, $numerator-denominator$ and $denominator$ are also relatively prime, so $numerator-denominator$ divides $5$ as well, and $numerator-denominator$ must be $\\pm1$ or $\\pm5$. This leads to eight possibilities for $(numerator,denominator)$: $(1,0)$, $(5,0)$, $(5,10)$, $(1,-4)$, $(1,2)$, $(1,6)$, $(5,4)$, $(5,6)$. The first three are impossible, while the final five lead to $5\\,intindex+2 = 16,-20,-36,16,-36$ respectively, none of which holds for integral $intindex$.\n\n\\textbf{Remark.} More generally, no rational number of the form $othernum/intindex$, where $othernum,intindex$ are relatively prime and neither of $\\pm othernum$ is a quadratic residue mod $intindex$, need be in $rationalset$. If $variablex=numerator/denominator$ is in lowest terms and $1/(variablex(variablex-1)) = othernum/intindex+shiftint$ for some integer $shiftint$, then $numerator(numerator-denominator)$ is relatively prime to $denominator^{2}$; $denominator^{2}/(numerator(numerator-denominator)) = (othernum+shiftint\\,intindex)/intindex$ then implies that $othernum+shiftint\\,intindex = \\pm\\,denominator^{2}$ and so $\\pm othernum$ must be a quadratic residue mod $intindex$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S": "orangepool",
+        "x": "hummingbird",
+        "n": "buttercup",
+        "p": "dragonfly",
+        "q": "marshmallow",
+        "m": "tangerine",
+        "k": "snowflake",
+        "Q": "cinnamonroll"
+      },
+      "question": "Let $orangepool$ be a set of rational numbers such that\n\\begin{enumerate}\n\\item[(a)] $0 \\in orangepool$;\n\\item[(b)] If $hummingbird \\in orangepool$ then $hummingbird+1\\in orangepool$ and $hummingbird-1\\in orangepool$; and\n\\item[(c)] If $hummingbird\\in orangepool$ and $hummingbird\\not\\in\\{0,1\\}$, then $\\frac{1}{hummingbird(hummingbird-1)}\\in orangepool$.\n\\end{enumerate}\nMust $orangepool$ contain all rational numbers?",
+      "solution": "The answer is no; indeed, $orangepool = \\mathbb{Q} \\setminus \\{buttercup+2/5 \\,|\\, buttercup\\in\\mathbb{Z}\\}$ satisfies the given conditions. Clearly $orangepool$ satisfies (a) and (b); we need only check that it satisfies (c). It suffices to show that if $hummingbird = dragonfly/marshmallow$ is a fraction with $(dragonfly,marshmallow)=1$ and $dragonfly>0$, then we cannot have $1/(hummingbird(hummingbird-1)) = buttercup+2/5$ for an integer $buttercup$. Suppose otherwise; then\n\\[\n(5\\,buttercup+2)\\,dragonfly(dragonfly-marshmallow) = 5\\,marshmallow^2.\n\\]\nSince $dragonfly$ and $marshmallow$ are relatively prime, and $dragonfly$ divides $5\\,marshmallow^2$, we must have $dragonfly\\,|\\,5$, so $dragonfly=1$ or $dragonfly=5$. On the other hand, $dragonfly-marshmallow$ and $marshmallow$ are also relatively prime, so $dragonfly-marshmallow$ divides $5$ as well, and $dragonfly-marshmallow$ must be $\\pm 1$ or $\\pm 5$. This leads to eight possibilities for $(dragonfly,marshmallow)$: $(1,0)$,  $(5,0)$,  $(5,10)$, $(1,-4)$, $(1,2)$, $(1,6)$, $(5,4)$, $(5,6)$. The first three are impossible, while the final five lead to $5\\,buttercup+2 = 16,-20,-36,16,-36$ respectively, none of which holds for integral $buttercup$.\n\n\\textbf{Remark.} More generally, no rational number of the form $tangerine/buttercup$, where $tangerine,buttercup$ are relatively prime and neither of $\\pm tangerine$ is a quadratic residue mod $buttercup$, need be in $orangepool$. If $hummingbird=dragonfly/marshmallow$ is in lowest terms and $1/(hummingbird(hummingbird-1)) = tangerine/buttercup+snowflake$ for some integer $snowflake$, then $dragonfly(dragonfly-marshmallow)$ is relatively prime to $marshmallow^2$; $marshmallow^2/(dragonfly(dragonfly-marshmallow)) = (tangerine+snowflake\\,buttercup)/buttercup$ then implies that $tangerine+snowflake\\,buttercup = \\pm marshmallow^2$ and so $\\pm tangerine$ must be a quadratic residue mod $buttercup$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S": "emptiness",
+        "x": "fixedvalue",
+        "n": "continuum",
+        "p": "denominator",
+        "q": "numerator",
+        "m": "irrational",
+        "k": "realnumber",
+        "Q": "irrationalset"
+      },
+      "question": "Let $emptiness$ be a set of rational numbers such that\n\\begin{enumerate}\n\\item[(a)] $0 \\in emptiness$;\n\\item[(b)] If $fixedvalue \\in emptiness$ then $fixedvalue+1\\in emptiness$ and $fixedvalue-1\\in emptiness$; and\n\\item[(c)] If $fixedvalue\\in emptiness$ and $fixedvalue\\not\\in\\{0,1\\}$, then $\\frac{1}{fixedvalue(fixedvalue-1)}\\in emptiness$.\n\\end{enumerate}\nMust $emptiness$ contain all rational numbers?",
+      "solution": "The answer is no; indeed, $emptiness = \\mathbb{irrationalset} \\setminus \\{continuum+2/5 \\,|\\,\ncontinuum\\in\\mathbb{Z}\\}$ satisfies the given conditions. Clearly $emptiness$ satisfies\n(a) and (b); we need only check that it satisfies (c). It suffices to\nshow that if $fixedvalue = denominator/numerator$ is a fraction with $(denominator,numerator)=1$ and $denominator>0$, then we\ncannot have $1/(fixedvalue(fixedvalue-1)) = continuum+2/5$ for an integer $continuum$. Suppose otherwise; then\n\\[\n(5continuum+2)denominator(denominator-numerator) = 5numerator^2.\n\\]\nSince $denominator$ and $numerator$ are relatively prime, and $denominator$ divides $5numerator^2$, we must\nhave $denominator\\,|\\,5$, so $denominator=1$ or $denominator=5$. On the other hand, $denominator-numerator$ and $numerator$ are\nalso relatively prime, so $denominator-numerator$ divides $5$ as well, and $denominator-numerator$ must be\n$\\pm 1$ or $\\pm 5$. This leads to eight possibilities for $(denominator,numerator)$:\n$(1,0)$,  $(5,0)$,  $(5,10)$, $(1,-4)$, $(1,2)$, $(1,6)$, $(5,4)$,\n$(5,6)$. The first three are impossible, while the final five lead to\n$5continuum+2 = 16,-20,-36,16,-36$ respectively, none of which holds for\nintegral $continuum$.\n\n\\textbf{Remark.} More generally, no rational number of the form $irrational/numerator$,\nwhere $irrational,numerator$ are relatively prime and neither of $\\pm irrational$ is a quadratic\nresidue mod $numerator$, need be in $emptiness$. If $fixedvalue=denominator/numerator$ is in lowest terms and\n$1/(fixedvalue(fixedvalue-1)) = irrational/numerator+realnumber$ for some integer $realnumber$, then $denominator(denominator-numerator)$ is relatively\nprime to $numerator^2$; $numerator^2/(denominator(denominator-numerator)) = (irrational+realnumber numerator)/numerator$ then implies that $irrational+realnumber numerator = \\pm\nnumerator^2$ and so $\\pm irrational$ must be a quadratic residue mod $numerator$. }",
+      "params": []
+    },
+    "garbled_string": {
+      "map": {
+        "S": "qzxwvtnp",
+        "x": "hjgrksla",
+        "n": "xmvbpeqo",
+        "p": "ldktrvse",
+        "q": "fnihybrc",
+        "m": "swcrenbo",
+        "k": "zpjcfkud",
+        "Q": "blsqpvma"
+      },
+      "question": "Let $qzxwvtnp$ be a set of rational numbers such that\n\\begin{enumerate}\n\\item[(a)] $0 \\in qzxwvtnp$;\n\\item[(b)] If $hjgrksla \\in qzxwvtnp$ then $hjgrksla+1\\in qzxwvtnp$ and $hjgrksla-1\\in qzxwvtnp$; and\n\\item[(c)] If $hjgrksla\\in qzxwvtnp$ and $hjgrksla\\not\\in\\{0,1\\}$, then $\\frac{1}{hjgrksla(hjgrksla-1)}\\in qzxwvtnp$.\n\\end{enumerate}\nMust $qzxwvtnp$ contain all rational numbers?",
+      "solution": "The answer is no; indeed, $qzxwvtnp = \\mathbb{Q} \\setminus \\{xmvbpeqo+2/5 \\,|\\, xmvbpeqo\\in\\mathbb{Z}\\}$ satisfies the given conditions. Clearly $qzxwvtnp$ satisfies\n(a) and (b); we need only check that it satisfies (c). It suffices to\nshow that if $hjgrksla = ldktrvse/fnihybrc$ is a fraction with $(ldktrvse,fnihybrc)=1$ and $ldktrvse>0$, then we\ncannot have $1/(hjgrksla(hjgrksla-1)) = xmvbpeqo+2/5$ for an integer $xmvbpeqo$. Suppose otherwise; then\n\\[\n(5xmvbpeqo+2)ldktrvse(ldktrvse-fnihybrc) = 5fnihybrc^2.\n\\]\nSince $ldktrvse$ and $fnihybrc$ are relatively prime, and $ldktrvse$ divides $5fnihybrc^2$, we must\nhave $ldktrvse\\,|\\,5$, so $ldktrvse=1$ or $ldktrvse=5$. On the other hand, $ldktrvse-fnihybrc$ and $fnihybrc$ are\nalso relatively prime, so $ldktrvse-fnihybrc$ divides $5$ as well, and $ldktrvse-fnihybrc$ must be\n$\\pm 1$ or $\\pm 5$. This leads to eight possibilities for $(ldktrvse,fnihybrc)$:\n$(1,0)$,  $(5,0)$,  $(5,10)$, $(1,-4)$, $(1,2)$, $(1,6)$, $(5,4)$,\n$(5,6)$. The first three are impossible, while the final five lead to\n$5xmvbpeqo+2 = 16,-20,-36,16,-36$ respectively, none of which holds for\nintegral $xmvbpeqo$.\n\n\\textbf{Remark.} More generally, no rational number of the form $swcrenbo/xmvbpeqo$,\nwhere $swcrenbo,xmvbpeqo$ are relatively prime and neither of $\\pm swcrenbo$ is a quadratic\nresidue mod $xmvbpeqo$, need be in $qzxwvtnp$. If $hjgrksla=ldktrvse/fnihybrc$ is in lowest terms and\n$1/(hjgrksla(hjgrksla-1)) = swcrenbo/xmvbpeqo+zpjcfkud$ for some integer $zpjcfkud$, then $ldktrvse(ldktrvse-fnihybrc)$ is relatively\nprime to $fnihybrc^2$; $fnihybrc^2/(ldktrvse(ldktrvse-fnihybrc)) = (swcrenbo+zpjcfkud xmvbpeqo)/xmvbpeqo$ then implies that $swcrenbo+zpjcfkud xmvbpeqo = \\pm\nfnihybrc^2$ and so $\\pm swcrenbo$ must be a quadratic residue mod $xmvbpeqo$. "
+    },
+    "kernel_variant": {
+      "question": "Let S be a subset of the rational numbers such that\n(a) 0\\in S;\n(b) x\\in S  \\Rightarrow   x+1\\in S and x-1\\in S;\n(c) x\\in S and x\\notin {0,1}  \\Rightarrow   1/[x(x-1)]\\in S.\n\nIs it necessary that S contain every rational number?  Justify your answer.",
+      "solution": "Answer: No.\n\nTake\n   S := \\mathbb{Q} \\ { n + 2/5  :  n \\in  \\mathbb{Z} } ,\nthe set of all rational numbers except the single coset 2/5 + \\mathbb{Z}.\nWe show that S satisfies (a)-(c) but is not all of \\mathbb{Q}.\n\n(a) 0 \\in  S.\nIndeed 0 = n + 2/5 would give 2/5 \\in  \\mathbb{Z}, impossible.\n\n(b) If x\\in S then neither x+1 nor x-1 is of the form n+2/5,\nbecause adding an integer leaves the coset 2/5+\\mathbb{Z} unchanged.\nHence x\\pm 1\\in S.\n\n(c)  Closure under x \\mapsto  1/[x(x-1)].  \nLet x\\in S\\{0,1}.  Write x=p/q in lowest terms with q\\neq 0 and p>0.\nAssume towards a contradiction that\n     1/[x(x-1)] = n + 2/5  for some n\\in \\mathbb{Z}.             (1)\nSubstituting x = p/q and clearing denominators gives\n     5 q^2 = (5n+2) p(p-q).                              (2)\nBecause gcd(p,q)=1, the factors p and q are coprime; similarly\n gcd(p-q,q)=1.  From (2):\n * p | 5q^2, and gcd(p,q^2)=1 \\Rightarrow  p | 5 \\Rightarrow  p\\in {1,5}.       (3)\n * p-q | 5q^2, and gcd(p-q,q^2)=1 \\Rightarrow  p-q | 5 \\Rightarrow  p-q\\in {\\pm 1,\\pm 5}. (4)\nThis leaves finitely many possibilities.\n\nCase p = 1.\n   From (4) we have 1-q = \\pm 1 or \\pm 5, giving q \\in  {0,2,-4,6}.\n   The choice q=0 is impossible; the three remaining pairs (p,q)\n   are (1,2), (1,-4), (1,6).\n\nCase p = 5.\n   Then 5-q = \\pm 1 or \\pm 5, so q \\in  {4,6,0,10}.\n   Discard q=0, and because the fraction must be in lowest terms\n   discard (5,10).  The admissible pairs are (5,4) and (5,6).\n\nWe now check (2) for each remaining pair:\n\n(1,2):  left  = 5\\cdot 4  = 20;   right = (5n+2)\\cdot (1)(-1) = -(5n+2)\n         \\Rightarrow  5n+2 = -20 \\Rightarrow  n = -22/5  \\notin  \\mathbb{Z}.\n\n(1,-4): left  = 5\\cdot 16 = 80;  right = (5n+2)\\cdot (1)(5)  = 5(5n+2)\n         \\Rightarrow  5n+2 = 16  \\Rightarrow  n = 14/5  \\notin  \\mathbb{Z}.\n\n(1,6):  left  = 5\\cdot 36 = 180; right = (5n+2)\\cdot (1)(-5)= -5(5n+2)\n         \\Rightarrow  5n+2 = -36 \\Rightarrow  n = -38/5 \\notin  \\mathbb{Z}.\n\n(5,4):  left  = 5\\cdot 16 = 80;  right = (5n+2)\\cdot 5\\cdot 1  = 5(5n+2)\n         \\Rightarrow  5n+2 = 16  \\Rightarrow  n = 14/5  \\notin  \\mathbb{Z}.\n\n(5,6):  left  = 5\\cdot 36 = 180; right = (5n+2)\\cdot 5\\cdot (-1)= -5(5n+2)\n         \\Rightarrow  5n+2 = -36 \\Rightarrow  n = -38/5 \\notin  \\mathbb{Z}.\n\nIn no case is n an integer, contradicting (1).  Thus\n1/[x(x-1)]\\notin 2/5+\\mathbb{Z}, so it belongs to S.  Property (c) holds.\n\nSince 2/5\\notin S, we have S\\neq \\mathbb{Q}; therefore a set S meeting (a)-(c) need not\ncontain every rational number.",
+      "_meta": {
+        "core_steps": [
+          "Exclude from ℚ one full integer–coset  (all numbers of the form k + m⁄d).",
+          "Observe that 0 is still in the set and ±1–translation keeps the coset structure, so (a) and (b) are automatic.",
+          "Assume toward (c) that some x = p⁄q (in lowest terms) is mapped to the forbidden coset: 1/[x(x−1)] = k + m⁄d.",
+          "Clear denominators to get (dm + dk) · p(p−q) = d q² and use coprimality ⇒  p | d  and  p−q | d.",
+          "Because d has only finitely many divisors, list the few (p,q) possibilities and check none satisfy the equation, completing the proof."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "denominator of the forbidden coset (must have few divisors and make ±m a quadratic non-residue modulo it)",
+            "original": "5"
+          },
+          "slot2": {
+            "description": "numerator/offset of the forbidden coset (any integer coprime to d with ±m a non-residue mod d)",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

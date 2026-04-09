@@ -1,0 +1,93 @@
+{
+  "index": "2000-A-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Prove that there exist infinitely many integers $n$ such that\n$n,n+1,n+2$ are each the sum of the squares of two integers.\n[Example: $0=0^2+0^2$, $1=0^2+1^2$, $2=1^2+1^2$.]",
+  "solution": "First solution:\nLet $a$ be an even integer such that $a^2+1$ is not prime. (For example,\nchoose $a \\equiv 2 \\pmod{5}$, so that $a^2+1$ is divisible by 5.)\nThen we can write $a^2+1$ as a difference of squares $x^2-b^2$,\nby factoring $a^2+1$ as $rs$ with $r \\geq s > 1$, and setting $x\n= (r+s)/2$, $b = (r-s)/2$.\nFinally, put $n=x^2-1$, so that $n=a^2+b^2$, $n+1 = x^2$, $n+2 = x^2+1$.\n\nSecond solution:\nIt is well-known that the equation $x^2-2y^2=1$ has infinitely\nmany solutions (the so-called ``Pell'' equation).  Thus setting\n$n=2y^2$ (so that $n=y^2+y^2$, $n+1=x^2+0^2$, $n+2=x^2+1^2$)\nyields infinitely many $n$ with the desired property.\n\nThird solution:\nAs in the first solution, it suffices to exhibit $x$ such that $x^2-1$\nis the sum of two squares. We will take $x=3^{2^n}$, and show that $x^2-1$\nis the sum of two squares by induction on $n$: if $3^{2^n}-1 = a^2+b^2$,\nthen\n\\begin{align*}\n(3^{2^{n+1}}-1) &= (3^{2^n} - 1)(3^{2^n}+1) \\\\\n&= (3^{2^{n-1}}a+b)^2 + (a-3^{2^{n-1}}b)^2.\n\\end{align*}\n\nFourth solution (by Jonathan Weinstein):\nLet $n=4k^4+4k^2=(2k^2)^2+(2k)^2$ for any integer $k$. Then $n+1=(2k^2+1)^2+0^2$ and $n+2=(2k^2+1)^2+1^2$.",
+  "vars": [
+    "n"
+  ],
+  "params": [
+    "a",
+    "r",
+    "s",
+    "x",
+    "b",
+    "y",
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "targetint",
+        "a": "evenvalue",
+        "r": "largerfact",
+        "s": "smallerfact",
+        "x": "halfsumval",
+        "b": "halfdiffval",
+        "y": "pellparam",
+        "k": "fourthparm"
+      },
+      "question": "Prove that there exist infinitely many integers $targetint$ such that\n$targetint,targetint+1,targetint+2$ are each the sum of the squares of two integers.\n[Example: $0=0^2+0^2$, $1=0^2+1^2$, $2=1^2+1^2$.]",
+      "solution": "First solution:\nLet $evenvalue$ be an even integer such that $evenvalue^2+1$ is not prime. (For example,\nchoose $evenvalue \\equiv 2 \\pmod{5}$, so that $evenvalue^2+1$ is divisible by 5.)\nThen we can write $evenvalue^2+1$ as a difference of squares $halfsumval^2-halfdiffval^2$,\nby factoring $evenvalue^2+1$ as $largerfact smallerfact$ with $largerfact \\geq smallerfact > 1$, and setting $halfsumval\n= (largerfact+smallerfact)/2$, $halfdiffval = (largerfact-smallerfact)/2$.\nFinally, put $targetint=halfsumval^2-1$, so that $targetint=evenvalue^2+halfdiffval^2$, $targetint+1 = halfsumval^2$, $targetint+2 = halfsumval^2+1$.\n\nSecond solution:\nIt is well-known that the equation $halfsumval^2-2pellparam^2=1$ has infinitely\nmany solutions (the so-called ``Pell'' equation).  Thus setting\n$targetint=2pellparam^2$ (so that $targetint=pellparam^2+pellparam^2$, $targetint+1=halfsumval^2+0^2$, $targetint+2=halfsumval^2+1^2$)\nyields infinitely many $targetint$ with the desired property.\n\nThird solution:\nAs in the first solution, it suffices to exhibit $halfsumval$ such that $halfsumval^2-1$\nis the sum of two squares. We will take $halfsumval=3^{2^{targetint}}$, and show that $halfsumval^2-1$\nis the sum of two squares by induction on $targetint$: if $3^{2^{targetint}}-1 = evenvalue^2+halfdiffval^2$,\nthen\n\\begin{align*}\n(3^{2^{targetint+1}}-1) &= (3^{2^{targetint}} - 1)(3^{2^{targetint}}+1) \\\\\n&= (3^{2^{targetint-1}}evenvalue+halfdiffval)^2 + (evenvalue-3^{2^{targetint-1}}halfdiffval)^2.\n\\end{align*}\n\nFourth solution (by Jonathan Weinstein):\nLet $targetint=4fourthparm^4+4fourthparm^2=(2fourthparm^2)^2+(2fourthparm)^2$ for any integer $fourthparm$. Then $targetint+1=(2fourthparm^2+1)^2+0^2$ and $targetint+2=(2fourthparm^2+1)^2+1^2$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "butterfly",
+        "a": "tangerine",
+        "r": "porcupine",
+        "s": "watermelon",
+        "x": "whistlebox",
+        "b": "salamander",
+        "y": "raincloud",
+        "k": "lumberjack"
+      },
+      "question": "Problem:\n<<<\nProve that there exist infinitely many integers $butterfly$ such that\n$butterfly,butterfly+1,butterfly+2$ are each the sum of the squares of two integers.\n[Example: $0=0^2+0^2$, $1=0^2+1^2$, $2=1^2+1^2$.]\n>>>\n",
+      "solution": "Solution:\n<<<\nFirst solution:\nLet $tangerine$ be an even integer such that $tangerine^2+1$ is not prime. (For example,\nchoose $tangerine \\equiv 2 \\pmod{5}$, so that $tangerine^2+1$ is divisible by 5.)\nThen we can write $tangerine^2+1$ as a difference of squares $whistlebox^2-salamander^2$,\nby factoring $tangerine^2+1$ as $porcupine\\,watermelon$ with $porcupine \\geq watermelon > 1$, and setting $whistlebox\n= (porcupine+watermelon)/2$, $salamander = (porcupine-watermelon)/2$.\nFinally, put $butterfly=whistlebox^2-1$, so that $butterfly=tangerine^2+salamander^2$, $butterfly+1 = whistlebox^2$, $butterfly+2 = whistlebox^2+1$.\n\nSecond solution:\nIt is well-known that the equation $whistlebox^2-2raincloud^2=1$ has infinitely\nmany solutions (the so-called ``Pell'' equation).  Thus setting\n$butterfly=2raincloud^2$ (so that $butterfly=raincloud^2+raincloud^2$, $butterfly+1=whistlebox^2+0^2$, $butterfly+2=whistlebox^2+1^2$)\nyields infinitely many $butterfly$ with the desired property.\n\nThird solution:\nAs in the first solution, it suffices to exhibit $whistlebox$ such that $whistlebox^2-1$\nis the sum of two squares. We will take $whistlebox=3^{2^{butterfly}}$, and show that $whistlebox^2-1$\nis the sum of two squares by induction on $butterfly$: if $3^{2^{butterfly}}-1 = tangerine^2+salamander^2$,\nthen\n\\begin{align*}\n(3^{2^{butterfly+1}}-1) &= (3^{2^{butterfly}} - 1)(3^{2^{butterfly}}+1) \\\\\n&= (3^{2^{butterfly-1}} tangerine+salamander)^2 + (tangerine-3^{2^{butterfly-1}}salamander)^2.\n\\end{align*}\n\nFourth solution (by Jonathan Weinstein):\nLet $butterfly=4lumberjack^4+4lumberjack^2=(2lumberjack^2)^2+(2lumberjack)^2$ for any integer $lumberjack$. Then $butterfly+1=(2lumberjack^2+1)^2+0^2$ and $butterfly+2=(2lumberjack^2+1)^2+1^2$.\n>>>\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "irrational",
+        "a": "oddinteger",
+        "r": "multipleone",
+        "s": "multipletwo",
+        "x": "nonsquare",
+        "b": "sumvalue",
+        "y": "negativenum",
+        "k": "constant"
+      },
+      "question": "Prove that there exist infinitely many integers $irrational$ such that\n$irrational,irrational+1,irrational+2$ are each the sum of the squares of two integers.\n[Example: $0=0^2+0^2$, $1=0^2+1^2$, $2=1^2+1^2$.]",
+      "solution": "First solution:\nLet $oddinteger$ be an even integer such that $oddinteger^2+1$ is not prime. (For example,\nchoose $oddinteger \\equiv 2 \\pmod{5}$, so that $oddinteger^2+1$ is divisible by 5.)\nThen we can write $oddinteger^2+1$ as a difference of squares $nonsquare^2-sumvalue^2$,\nby factoring $oddinteger^2+1$ as $multipleone multipletwo$ with $multipleone \\geq multipletwo > 1$, and setting $nonsquare\n= (multipleone+multipletwo)/2$, $sumvalue = (multipleone-multipletwo)/2$.\nFinally, put $irrational=nonsquare^2-1$, so that $irrational=oddinteger^2+sumvalue^2$, $irrational+1 = nonsquare^2$, $irrational+2 = nonsquare^2+1$.\n\nSecond solution:\nIt is well-known that the equation $nonsquare^2-2negativenum^2=1$ has infinitely\nmany solutions (the so-called ``Pell'' equation).  Thus setting\n$irrational=2negativenum^2$ (so that $irrational=negativenum^2+negativenum^2$, $irrational+1=nonsquare^2+0^2$, $irrational+2=nonsquare^2+1^2$)\nyields infinitely many $irrational$ with the desired property.\n\nThird solution:\nAs in the first solution, it suffices to exhibit $nonsquare$ such that $nonsquare^2-1$\nis the sum of two squares. We will take $nonsquare=3^{2^{irrational}}$, and show that $nonsquare^2-1$\nis the sum of two squares by induction on $irrational$: if $3^{2^{irrational}}-1 = oddinteger^2+sumvalue^2$,\nthen\n\\begin{align*}\n(3^{2^{irrational+1}}-1) &= (3^{2^{irrational}} - 1)(3^{2^{irrational}}+1) \\\\\n&= (3^{2^{irrational-1}}oddinteger+sumvalue)^2 + (oddinteger-3^{2^{irrational-1}}sumvalue)^2.\n\\end{align*}\n\nFourth solution (by Jonathan Weinstein):\nLet $irrational=4constant^4+4constant^2=(2constant^2)^2+(2constant)^2$ for any integer $constant$. Then $irrational+1=(2constant^2+1)^2+0^2$ and $irrational+2=(2constant^2+1)^2+1^2$. } "
+    },
+    "garbled_string": {
+      "map": {
+        "n": "zoluwipq",
+        "a": "jexirvob",
+        "r": "qemadoly",
+        "s": "tivorxal",
+        "x": "muptezwu",
+        "b": "nacofyre",
+        "y": "hurganex",
+        "k": "sovireta"
+      },
+      "question": "Prove that there exist infinitely many integers $zoluwipq$ such that\n$zoluwipq,zoluwipq+1,zoluwipq+2$ are each the sum of the squares of two integers.\n[Example: $0=0^2+0^2$, $1=0^2+1^2$, $2=1^2+1^2$.]",
+      "solution": "First solution:\nLet $jexirvob$ be an even integer such that $jexirvob^2+1$ is not prime. (For example,\nchoose $jexirvob \\equiv 2 \\pmod{5}$, so that $jexirvob^2+1$ is divisible by 5.)\nThen we can write $jexirvob^2+1$ as a difference of squares $muptezwu^2-nacofyre^2$,\nby factoring $jexirvob^2+1$ as $qemadoly tivorxal$ with $qemadoly \\geq tivorxal > 1$, and setting $muptezwu\n= (qemadoly+tivorxal)/2$, $nacofyre = (qemadoly-tivorxal)/2$.\nFinally, put $zoluwipq=muptezwu^2-1$, so that $zoluwipq=jexirvob^2+nacofyre^2$, $zoluwipq+1 = muptezwu^2$, $zoluwipq+2 = muptezwu^2+1$.\n\nSecond solution:\nIt is well-known that the equation $muptezwu^2-2hurganex^2=1$ has infinitely\nmany solutions (the so-called ``Pell'' equation).  Thus setting\n$zoluwipq=2hurganex^2$ (so that $zoluwipq=hurganex^2+hurganex^2$, $zoluwipq+1=muptezwu^2+0^2$, $zoluwipq+2=muptezwu^2+1^2$)\nyields infinitely many $zoluwipq$ with the desired property.\n\nThird solution:\nAs in the first solution, it suffices to exhibit $muptezwu$ such that $muptezwu^2-1$\nis the sum of two squares. We will take $muptezwu=3^{2^{zoluwipq}}$, and show that $muptezwu^2-1$\nis the sum of two squares by induction on $zoluwipq$: if $3^{2^{zoluwipq}}-1 = jexirvob^2+nacofyre^2$,\nthen\n\\begin{align*}\n(3^{2^{zoluwipq+1}}-1) &= (3^{2^{zoluwipq}} - 1)(3^{2^{zoluwipq}}+1) \\\\\n&= (3^{2^{zoluwipq-1}}jexirvob+nacofyre)^2 + (jexirvob-3^{2^{zoluwipq-1}}nacofyre)^2.\n\\end{align*}\n\nFourth solution (by Jonathan Weinstein):\nLet $zoluwipq=4sovireta^4+4sovireta^2=(2sovireta^2)^2+(2sovireta)^2$ for any integer $sovireta$. Then $zoluwipq+1=(2sovireta^2+1)^2+0^2$ and $zoluwipq+2=(2sovireta^2+1)^2+1^2$. "
+    },
+    "kernel_variant": {
+      "question": "Prove that there exist infinitely many integers n such that\n\n  n = a_1^2+b_1^2 = a_2^2+b_2^2  (with {a_1,b_1}\\neq {\\pm a_2,\\pm b_2}),  \n  n+1 = x^2,  \n  n+2 = x^2+1 = c_1^2+d_1^2 = c_2^2+d_2^2  (with {c_1,d_1}\\neq {\\pm c_2,\\pm d_2}).\n\nThus each of the three consecutive numbers n,n+1,n+2 is a sum of two squares, n+1 is a perfect square, and both n and n+2 admit at least two essentially different decompositions into two squares.",
+      "solution": "(\\approx 190 words)\n\nStep 0.  Two convenient primes.  \nTake p_1=5, p_2=13 (both \\equiv 1 mod 4).  Since -1 is a quadratic residue modulo p_i, pick u_1=2 (2^2\\equiv -1 mod 5) and u_2=5 (5^2\\equiv -1 mod 13).\n\nStep 1.  Choosing a.  \nImpose the simultaneous congruences  \n\n a\\equiv 0 (mod 4), a\\equiv u_1 (mod 5), a\\equiv u_2 (mod 13).     (1)  \n\nBecause gcd(4,5\\cdot 13)=1, the Chinese Remainder Theorem supplies infinitely many even integers\n a=  260+  260t (t\\in \\mathbb{Z}).\n\nFrom (1) we get a^2+1\\equiv 0 (mod 65); hence 65\\mid (a^2+1) and a^2+1 is an odd composite divisible by two distinct primes 5 and 13.\n\nStep 2.  Exploiting two different factorizations.  \nWrite  \n\n a^2+1=5\\cdot M=13\\cdot N, with odd M,N>1.     (2)  \n\nApply the classical identity r s=(x^2-b^2) obtained from r=(x+b), s=(x-b).  \nFirst use (r,s)=(5,M), then (r,s)=(13,N); (2) guarantees r\\geq s and identical parity, so both pairs produce integers (x_1,b_1) and (x_2,b_2) satisfying  \n\n x_i^2-b_i^2=a^2+1 (i=1,2).     (3)\n\nStep 3.  Defining n.  \nSet  \n\n n=x_1^2-1=x_2^2-1.     (4)\n\nThen from (3)-(4)  \n\n n = a^2+b_1^2 = a^2+b_2^2 (two distinct splits),  \n n+1 = x_1^2 = x_2^2,  \n n+2 = x_1^2+1 = x_2^2+1.     (5)\n\nStep 4.  Double representation of n+2.  \nBecause x_i^2+1 = (x_i)^2+1^2, and the Euler identity  \n (x_1^2+1)(x_2^2+1)=(x_1x_2-1)^2+(x_1+x_2)^2  \ngives a second expression, both x_1^2+1 and hence n+2 possess two different representations as sums of two squares.\n\nStep 5.  Infinitude.  \nThe arithmetic progression (1) provides infinitely many a, so the construction yields infinitely many n fulfilling all requirements.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.152067",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

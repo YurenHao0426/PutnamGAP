@@ -1,0 +1,101 @@
+{
+  "index": "1967-B-5",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "B-5. Show that the sum of the first \\( n \\) terms in the binomial expansion of \\( (2-1)^{-n} \\) is \\( \\frac{1}{2} \\), where \\( n \\) is a positive integer.",
+  "solution": "B-5\nLet \\( A_{n} \\) be the sum of the first \\( n \\) terms in the binomial expansion of \\( (2-1)^{-n} \\).\n\\[\n\\begin{aligned}\nA_{n} & =\\sum_{i=0}^{n-1}\\binom{n+i-1}{i} 2^{-n-i}=2^{-n}+\\sum_{i=1}^{n-1}\\left\\{\\binom{n+i-2}{i}+\\binom{n+i-2}{i-1}\\right\\} 2^{-n-i} \\\\\n& =2^{-n}+\\left\\{\\sum_{i=0}^{n-2}\\binom{n+i-2}{i} 2^{-n-i}+\\binom{2 n-3}{n-1} 2^{-2 n+1}-2^{-n}\\right\\}+\\sum_{j=0}^{n-2}\\binom{n+j-1}{j} 2^{-n-j-1} \\\\\n& =2^{-n}+\\frac{1}{2} A_{n-1}+\\binom{2 n-3}{n-1} 2^{-2 n+1}-2^{-n}+\\frac{1}{2} A_{n}-\\binom{2 n-2}{n-1} 2^{-2 n} \\\\\n& =\\frac{1}{2} A_{n-1}+\\frac{1}{2} A_{n}+2^{-2 n}\\left\\{2\\binom{2 n-3}{n-1}-\\binom{2 n-3}{n-1}-\\binom{2 n-3}{n-2}\\right\\}=\\frac{1}{2} A_{n-1}+\\frac{1}{2} A_{n}\n\\end{aligned}\n\\]\n\nThus \\( A_{n}=A_{n-1} \\), but \\( A_{1}=2^{-1}=\\frac{1}{2} \\) and so \\( A_{n}=\\frac{1}{2} \\) for all positive integers \\( n \\).\nAlternate solution: Consider a random walk starting at ( 0,0 ), such that if one is at \\( (x, y) \\) the probability of moving to \\( (x+1, y) \\) is \\( \\frac{1}{2} \\) and the probability of moving to \\( (x, y+1) \\) is \\( \\frac{1}{2} \\). Let \\( S_{n} \\) be the square with vertices at \\( (0,0),(n, 0) \\), \\( (n, n),(0, n) \\). By symmetry, the probability \\( R_{i}(n) \\) of first touching \\( S_{n} \\) at \\( (n, i) \\), \\( 0 \\leqq i<n \\), equals the probability \\( T_{i}(n) \\) of first touching \\( S_{n} \\) at \\( (i, n), 0 \\leqq i<n \\), and hence \\( \\sum_{i=0}^{n-1} R_{i}(n)=\\sum_{i=0}^{n-1} T_{i}(n)=\\frac{1}{2} \\). Furthermore, \\( R_{i}(n)=\\binom{n+i-1}{i}\\left(\\frac{1}{2}\\right)^{n+i} \\).",
+  "vars": [
+    "n",
+    "A_n",
+    "i",
+    "j",
+    "A_n-1",
+    "x",
+    "y",
+    "S_n",
+    "R_i",
+    "T_i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "numterm",
+        "A_n": "sumfirst",
+        "i": "indexone",
+        "j": "indextwo",
+        "A_n-1": "sumprev",
+        "x": "xlabelco",
+        "y": "ylabelco",
+        "S_n": "squarebd",
+        "R_i": "rightprob",
+        "T_i": "topprob"
+      },
+      "question": "B-5. Show that the sum of the first \\( numterm \\) terms in the binomial expansion of \\( (2-1)^{-numterm} \\) is \\( \\frac{1}{2} \\), where \\( numterm \\) is a positive integer.",
+      "solution": "B-5\nLet \\( sumfirst \\) be the sum of the first \\( numterm \\) terms in the binomial expansion of \\( (2-1)^{-numterm} \\).\n\\[\n\\begin{aligned}\nsumfirst & =\\sum_{indexone=0}^{numterm-1}\\binom{numterm+indexone-1}{indexone} 2^{-numterm-indexone}=2^{-numterm}+\\sum_{indexone=1}^{numterm-1}\\left\\{\\binom{numterm+indexone-2}{indexone}+\\binom{numterm+indexone-2}{indexone-1}\\right\\} 2^{-numterm-indexone} \\\n& =2^{-numterm}+\\left\\{\\sum_{indexone=0}^{numterm-2}\\binom{numterm+indexone-2}{indexone} 2^{-numterm-indexone}+\\binom{2 numterm-3}{numterm-1} 2^{-2 numterm+1}-2^{-numterm}\\right\\}+\\sum_{indextwo=0}^{numterm-2}\\binom{numterm+indextwo-1}{indextwo} 2^{-numterm-indextwo-1} \\\\\n& =2^{-numterm}+\\frac{1}{2} sumprev+\\binom{2 numterm-3}{numterm-1} 2^{-2 numterm+1}-2^{-numterm}+\\frac{1}{2} sumfirst-\\binom{2 numterm-2}{numterm-1} 2^{-2 numterm} \\\\\n& =\\frac{1}{2} sumprev+\\frac{1}{2} sumfirst+2^{-2 numterm}\\left\\{2\\binom{2 numterm-3}{numterm-1}-\\binom{2 numterm-3}{numterm-1}-\\binom{2 numterm-3}{numterm-2}\\right\\}=\\frac{1}{2} sumprev+\\frac{1}{2} sumfirst\n\\end{aligned}\n\\]\n\nThus \\( sumfirst=sumprev \\), but \\( sumfirst \\) when \\( numterm=1 \\) equals \\( 2^{-1}=\\frac{1}{2} \\) and so \\( sumfirst=\\frac{1}{2} \\) for all positive integers \\( numterm \\).\n\nAlternate solution: Consider a random walk starting at ( 0,0 ), such that if one is at \\( (xlabelco, ylabelco) \\) the probability of moving to \\( (xlabelco+1, ylabelco) \\) is \\( \\frac{1}{2} \\) and the probability of moving to \\( (xlabelco, ylabelco+1) \\) is \\( \\frac{1}{2} \\). Let \\( squarebd \\) be the square with vertices at \\( (0,0), (numterm, 0), (numterm, numterm), (0, numterm) \\). By symmetry, the probability \\( rightprob_{indexone}(numterm) \\) of first touching \\( squarebd \\) at \\( (numterm, indexone) \\), \\( 0 \\leqq indexone<numterm \\), equals the probability \\( topprob_{indexone}(numterm) \\) of first touching \\( squarebd \\) at \\( (indexone, numterm), 0 \\leqq indexone<numterm \\), and hence \\( \\sum_{indexone=0}^{numterm-1} rightprob_{indexone}(numterm)=\\sum_{indexone=0}^{numterm-1} topprob_{indexone}(numterm)=\\frac{1}{2} \\). Furthermore, \\( rightprob_{indexone}(numterm)=\\binom{numterm+indexone-1}{indexone}\\left(\\frac{1}{2}\\right)^{numterm+indexone} \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "bricklayer",
+        "A_n": "nightingale",
+        "i": "toothbrush",
+        "j": "waterfall",
+        "A_n-1": "nightingaleprior",
+        "x": "peppermint",
+        "y": "marshmallow",
+        "S_n": "thunderbolt",
+        "R_i": "chandelier",
+        "T_i": "harmonica"
+      },
+      "question": "B-5. Show that the sum of the first \\( bricklayer \\) terms in the binomial expansion of \\( (2-1)^{-bricklayer} \\) is \\( \\frac{1}{2} \\), where \\( bricklayer \\) is a positive integer.",
+      "solution": "B-5\nLet \\( nightingale \\) be the sum of the first \\( bricklayer \\) terms in the binomial expansion of \\( (2-1)^{-bricklayer} \\).\n\\[\n\\begin{aligned}\nnightingale & =\\sum_{toothbrush=0}^{bricklayer-1}\\binom{bricklayer+toothbrush-1}{toothbrush} 2^{-bricklayer-toothbrush}=2^{-bricklayer}+\\sum_{toothbrush=1}^{bricklayer-1}\\left\\{\\binom{bricklayer+toothbrush-2}{toothbrush}+\\binom{bricklayer+toothbrush-2}{toothbrush-1}\\right\\} 2^{-bricklayer-toothbrush} \\\\\n& =2^{-bricklayer}+\\left\\{\\sum_{toothbrush=0}^{bricklayer-2}\\binom{bricklayer+toothbrush-2}{toothbrush} 2^{-bricklayer-toothbrush}+\\binom{2 bricklayer-3}{bricklayer-1} 2^{-2 bricklayer+1}-2^{-bricklayer}\\right\\}+\\sum_{waterfall=0}^{bricklayer-2}\\binom{bricklayer+waterfall-1}{waterfall} 2^{-bricklayer-waterfall-1} \\\\\n& =2^{-bricklayer}+\\frac{1}{2} nightingaleprior+\\binom{2 bricklayer-3}{bricklayer-1} 2^{-2 bricklayer+1}-2^{-bricklayer}+\\frac{1}{2} nightingale-\\binom{2 bricklayer-2}{bricklayer-1} 2^{-2 bricklayer} \\\\\n& =\\frac{1}{2} nightingaleprior+\\frac{1}{2} nightingale+2^{-2 bricklayer}\\left\\{2\\binom{2 bricklayer-3}{bricklayer-1}-\\binom{2 bricklayer-3}{bricklayer-1}-\\binom{2 bricklayer-3}{bricklayer-2}\\right\\}=\\frac{1}{2} nightingaleprior+\\frac{1}{2} nightingale\n\\end{aligned}\n\\]\n\nThus \\( nightingale=nightingaleprior \\), but \\( nightingale=2^{-1}=\\frac{1}{2} \\) and so \\( nightingale=\\frac{1}{2} \\) for all positive integers \\( bricklayer \\).\n\nAlternate solution: Consider a random walk starting at ( 0,0 ), such that if one is at \\( (peppermint, marshmallow) \\) the probability of moving to \\( (peppermint+1, marshmallow) \\) is \\( \\frac{1}{2} \\) and the probability of moving to \\( (peppermint, marshmallow+1) \\) is \\( \\frac{1}{2} \\). Let \\( thunderbolt \\) be the square with vertices at \\( (0,0),(bricklayer, 0) \\), \\( (bricklayer, bricklayer),(0, bricklayer) \\). By symmetry, the probability \\( chandelier_{toothbrush}(bricklayer) \\) of first touching \\( thunderbolt \\) at \\( (bricklayer, toothbrush) \\), \\( 0 \\leqq toothbrush<bricklayer \\), equals the probability \\( harmonica_{toothbrush}(bricklayer) \\) of first touching \\( thunderbolt \\) at \\( (toothbrush, bricklayer), 0 \\leqq toothbrush<bricklayer \\), and hence \\( \\sum_{toothbrush=0}^{bricklayer-1} chandelier_{toothbrush}(bricklayer)=\\sum_{toothbrush=0}^{bricklayer-1} harmonica_{toothbrush}(bricklayer)=\\frac{1}{2} \\). Furthermore, \\( chandelier_{toothbrush}(bricklayer)=\\binom{bricklayer+toothbrush-1}{toothbrush}\\left(\\frac{1}{2}\\right)^{bricklayer+toothbrush} \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "negativeindex",
+        "A_n": "differencevalue",
+        "i": "massivecounter",
+        "j": "giganticindex",
+        "A_n-1": "futurevalue",
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "S_n": "circleregion",
+        "R_i": "lasttouchprob",
+        "T_i": "latetouchprob"
+      },
+      "question": "B-5. Show that the sum of the first \\( negativeindex \\) terms in the binomial expansion of \\( (2-1)^{-negativeindex} \\) is \\( \\frac{1}{2} \\), where \\( negativeindex \\) is a positive integer.",
+      "solution": "B-5\nLet \\( differencevalue \\) be the sum of the first \\( negativeindex \\) terms in the binomial expansion of \\( (2-1)^{-negativeindex} \\).\n\\[\n\\begin{aligned}\ndifferencevalue & =\\sum_{massivecounter=0}^{negativeindex-1}\\binom{negativeindex+massivecounter-1}{massivecounter} 2^{-negativeindex-massivecounter}=2^{-negativeindex}+\\sum_{massivecounter=1}^{negativeindex-1}\\left\\{\\binom{negativeindex+massivecounter-2}{massivecounter}+\\binom{negativeindex+massivecounter-2}{massivecounter-1}\\right\\} 2^{-negativeindex-massivecounter} \\\\\n& =2^{-negativeindex}+\\left\\{\\sum_{massivecounter=0}^{negativeindex-2}\\binom{negativeindex+massivecounter-2}{massivecounter} 2^{-negativeindex-massivecounter}+\\binom{2 negativeindex-3}{negativeindex-1} 2^{-2 negativeindex+1}-2^{-negativeindex}\\right\\}+\\sum_{giganticindex=0}^{negativeindex-2}\\binom{negativeindex+giganticindex-1}{giganticindex} 2^{-negativeindex-giganticindex-1} \\\\\n& =2^{-negativeindex}+\\frac{1}{2} futurevalue+\\binom{2 negativeindex-3}{negativeindex-1} 2^{-2 negativeindex+1}-2^{-negativeindex}+\\frac{1}{2} differencevalue-\\binom{2 negativeindex-2}{negativeindex-1} 2^{-2 negativeindex} \\\\\n& =\\frac{1}{2} futurevalue+\\frac{1}{2} differencevalue+2^{-2 negativeindex}\\left\\{2\\binom{2 negativeindex-3}{negativeindex-1}-\\binom{2 negativeindex-3}{negativeindex-1}-\\binom{2 negativeindex-3}{negativeindex-2}\\right\\}=\\frac{1}{2} futurevalue+\\frac{1}{2} differencevalue\n\\end{aligned}\n\\]\n\nThus \\( differencevalue=futurevalue \\), but \\( A_{1}=2^{-1}=\\frac{1}{2} \\) and so \\( differencevalue=\\frac{1}{2} \\) for all positive integers \\( negativeindex \\).\nAlternate solution: Consider a random walk starting at ( 0,0 ), such that if one is at \\( (verticalaxis, horizontalaxis) \\) the probability of moving to \\( (verticalaxis+1, horizontalaxis) \\) is \\( \\frac{1}{2} \\) and the probability of moving to \\( (verticalaxis, horizontalaxis+1) \\) is \\( \\frac{1}{2} \\). Let \\( circleregion \\) be the square with vertices at \\( (0,0),(negativeindex, 0) \\), \\( (negativeindex, negativeindex),(0, negativeindex) \\). By symmetry, the probability \\( lasttouchprob_{massivecounter}(negativeindex) \\) of first touching \\( circleregion \\) at \\( (negativeindex, massivecounter) \\), \\( 0 \\leqq massivecounter<negativeindex \\), equals the probability \\( latetouchprob_{massivecounter}(negativeindex) \\) of first touching \\( circleregion \\) at \\( (massivecounter, negativeindex), 0 \\leqq massivecounter<negativeindex \\), and hence \\( \\sum_{massivecounter=0}^{negativeindex-1} lasttouchprob_{massivecounter}(negativeindex)=\\sum_{massivecounter=0}^{negativeindex-1} latetouchprob_{massivecounter}(negativeindex)=\\frac{1}{2} \\). Furthermore, \\( lasttouchprob_{massivecounter}(negativeindex)=\\binom{negativeindex+massivecounter-1}{massivecounter}\\left(\\frac{1}{2}\\right)^{negativeindex+massivecounter} \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "skdfjwer",
+        "A_n": "vbnmzxqw",
+        "i": "haldkgjo",
+        "j": "poqwieur",
+        "A_n-1": "wertyuio",
+        "x": "zmxncbvl",
+        "y": "qplmokjn",
+        "S_n": "rtyuioas",
+        "R_i": "ghjklqwe",
+        "T_i": "asdfghjk"
+      },
+      "question": "B-5. Show that the sum of the first \\( skdfjwer \\) terms in the binomial expansion of \\( (2-1)^{-skdfjwer} \\) is \\( \\frac{1}{2} \\), where \\( skdfjwer \\) is a positive integer.",
+      "solution": "B-5\nLet \\( vbnmzxqw \\) be the sum of the first \\( skdfjwer \\) terms in the binomial expansion of \\( (2-1)^{-skdfjwer} \\).\n\\[\n\\begin{aligned}\nvbnmzxqw & =\\sum_{haldkgjo=0}^{skdfjwer-1}\\binom{skdfjwer+haldkgjo-1}{haldkgjo} 2^{-skdfjwer-haldkgjo}=2^{-skdfjwer}+\\sum_{haldkgjo=1}^{skdfjwer-1}\\left\\{\\binom{skdfjwer+haldkgjo-2}{haldkgjo}+\\binom{skdfjwer+haldkgjo-2}{haldkgjo-1}\\right\\} 2^{-skdfjwer-haldkgjo} \\\n& =2^{-skdfjwer}+\\left\\{\\sum_{haldkgjo=0}^{skdfjwer-2}\\binom{skdfjwer+haldkgjo-2}{haldkgjo} 2^{-skdfjwer-haldkgjo}+\\binom{2 skdfjwer-3}{skdfjwer-1} 2^{-2 skdfjwer+1}-2^{-skdfjwer}\\right\\}+\\sum_{poqwieur=0}^{skdfjwer-2}\\binom{skdfjwer+poqwieur-1}{poqwieur} 2^{-skdfjwer-poqwieur-1} \\\n& =2^{-skdfjwer}+\\frac{1}{2} wertyuio+\\binom{2 skdfjwer-3}{skdfjwer-1} 2^{-2 skdfjwer+1}-2^{-skdfjwer}+\\frac{1}{2} vbnmzxqw-\\binom{2 skdfjwer-2}{skdfjwer-1} 2^{-2 skdfjwer} \\\n& =\\frac{1}{2} wertyuio+\\frac{1}{2} vbnmzxqw+2^{-2 skdfjwer}\\left\\{2\\binom{2 skdfjwer-3}{skdfjwer-1}-\\binom{2 skdfjwer-3}{skdfjwer-1}-\\binom{2 skdfjwer-3}{skdfjwer-2}\\right\\}=\\frac{1}{2} wertyuio+\\frac{1}{2} vbnmzxqw\n\\end{aligned}\n\\]\n\nThus \\( vbnmzxqw=wertyuio \\), but \\( vbnmzxqw=2^{-1}=\\frac{1}{2} \\) and so \\( vbnmzxqw=\\frac{1}{2} \\) for all positive integers \\( skdfjwer \\).\nAlternate solution: Consider a random walk starting at ( 0,0 ), such that if one is at \\( (zmxncbvl, qplmokjn) \\) the probability of moving to \\( (zmxncbvl+1, qplmokjn) \\) is \\( \\frac{1}{2} \\) and the probability of moving to \\( (zmxncbvl, qplmokjn+1) \\) is \\( \\frac{1}{2} \\). Let \\( rtyuioas \\) be the square with vertices at \\( (0,0),(skdfjwer, 0) \\), \\( (skdfjwer, skdfjwer),(0, skdfjwer) \\). By symmetry, the probability \\( ghjklqwe(skdfjwer) \\) of first touching \\( rtyuioas \\) at \\( (skdfjwer, haldkgjo) \\), \\( 0 \\leqq haldkgjo<skdfjwer \\), equals the probability \\( asdfghjk(skdfjwer) \\) of first touching \\( rtyuioas \\) at \\( (haldkgjo, skdfjwer), 0 \\leqq haldkgjo<skdfjwer \\), and hence \\( \\sum_{haldkgjo=0}^{skdfjwer-1} ghjklqwe(skdfjwer)=\\sum_{haldkgjo=0}^{skdfjwer-1} asdfghjk(skdfjwer)=\\frac{1}{2} \\). Furthermore, \\( ghjklqwe(skdfjwer)=\\binom{skdfjwer+haldkgjo-1}{haldkgjo}\\left(\\frac{1}{2}\\right)^{skdfjwer+haldkgjo} \\)."
+    },
+    "kernel_variant": {
+      "question": "For a positive integer n set  \n\n  S_n = \\sum _{r=0}^{n-1} binom{n+r-1}{r} 2^{-n-r},    \n  U_n = \\sum _{r=0}^{n-1} r\\cdot binom{n+r-1}{r} 2^{-n-r}.  \n\n(a) Show that S_n = \\frac{1}{2}.  \n(b) Show that U_n = n/2.  \n(c) Interpret S_n and U_n in the ``north-or-east'' random walk that starts at (0,0) and stops when it first meets the square x=n or y=n, and compute  \n  Var(R_n)=E[r^2]-(E r)^2   with r the ordinate of the first point (n,r) hit on the right side.  \n\n---------------------------------------------------------------------",
+      "solution": "(168 words)  \n\nStep 1.  Recurrence for S_n.  \nWrite S_n=\\Sigma _{r=0}^{n-1}C_{n,r} with C_{n,r}=binom{n+r-1}{r}2^{-n-r}.  Peel off r=n-1 and apply Pascal:  \n C_{n,r}=C_{n-1,r}\\cdot \\frac{1}{2}+C_{n,r-1}\\cdot \\frac{1}{2}.  \nA telescoping rearrangement identical to the kernel proof yields S_n=\\frac{1}{2}S_n+\\frac{1}{2}S_{n-1}, whence S_n=S_{n-1}.  \nSince S_1=\\frac{1}{2}, part (a) follows.  \n\nStep 2.  Recurrence for U_n.  \nDifferentiate the generating series (1-\\frac{1}{2})^{-n}=\\Sigma _{r\\geq 0}C_{n,r} with respect to the dummy variable z in (1-z)^{-n} and set z=\\frac{1}{2}.  One finds  \n U_n+ n S_n = 2 U_n, so U_n = n S_n = n/2, proving (b).  \n\nStep 3.  Probabilistic meaning.  \nLet R_n(r)=C_{n,r}/\\frac{1}{2} be the conditional probability of first hitting (n,r) given that the walk exits on the right.  Then  \n\n E r = \\Sigma  r R_n(r) = U_n/S_n = n/2,  \n\nand similarly  \n\n E r^2 = \\Sigma  r^2 R_n(r) = n(n+1)/2.  \n\nHence Var(R_n)=n(n+1)/2 - (n/2)^2 = n(n-1)/4, completing (c).  \n\n---------------------------------------------------------------------",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.032335",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

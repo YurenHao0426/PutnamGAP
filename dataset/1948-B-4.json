@@ -1,0 +1,117 @@
+{
+  "index": "1948-B-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "4. Let \\( \\min (x, y) \\) denote the smaller of the numbers \\( x \\) and \\( y \\). For what \\( \\lambda \\) 's does the equation\n\\[\n\\int_{0}^{1} \\min (x, y) f(y) d y=\\lambda f(x)\n\\]\nhave continuous solutions which do not vanish identically in \\( (0,1) \\) ? What are these solutions?",
+  "solution": "Solution. The given equation can be written as\n\\[\n\\lambda f(x)=\\int_{0}^{x} y f(y) d y+x \\int_{x}^{1} f(y) d y\n\\]\nfrom which it is clear that, if \\( \\lambda \\neq 0, f \\) is differentiable and hence\n\\[\n\\lambda f^{\\prime}(x)=x f(x)-x f(x)+\\int_{x}^{1} f(y) d y=\\int_{x}^{1} f(y) d y .\n\\]\n\nThus \\( f^{\\prime} \\) is also differentiable and\n\\[\n\\lambda f^{\\prime \\prime}(x)=-f(x) .\n\\]\n\nIf \\( \\lambda=0 \\), the same steps lead to the equation \\( 0=-f(x) \\). Since we are only interested in functions not identically zero, we shall assume \\( \\lambda \\neq 0 \\) from now on.\n\nThe general solution of (3) is\n\\[\nf(x)=A \\cos \\mu x+B \\sin \\mu x,\n\\]\nwhere \\( \\mu=\\lambda^{-1 / 2} \\) if \\( \\lambda>0 \\), or\n\\[\nf(x)=A \\cosh \\nu x+B \\sinh \\nu x,\n\\]\nwhere \\( \\nu=(-\\lambda)^{-1 / 2} \\) if \\( \\lambda<0 \\).\nIt is evident from (1) that \\( \\lim _{x \\rightarrow 0} f(x)=0 \\), so \\( A=0 \\) whether \\( \\lambda \\) is positive or negative. From (2) it follows that \\( \\lim _{x \\rightarrow 1} f^{\\prime}(x)=0 \\), giving respectively\n\\[\nB \\mu \\cos \\mu=0\n\\]\nor\n\\[\nB \\nu \\cosh \\nu=0 \\text {. }\n\\]\n\nThe last equation can hold only for \\( B=0 \\) and hence \\( f=0 \\); so we conclude that (1) has no non-zero solutions if \\( \\lambda<0 \\).\n\nFor \\( \\lambda>0 \\), a non-trivial solution is possible only if \\( \\cos \\mu=0 \\), that is, \\( \\mu \\) is an odd multiple of \\( \\pi / 2 \\). In fact\n\\[\nf(x)=B \\sin (2 k+1) \\frac{\\pi}{2} x\n\\]\nis readily checked to be a solution with\n\\[\n\\lambda=\\mu^{-2}=\\frac{4}{(2 k+1)^{2} \\pi^{2}},\n\\]\nwhere \\( k \\) is any integer and \\( B \\) is arbitrary. Here we need only consider \\( k=0,1,2, \\ldots \\), since negative values of \\( k \\) produce the same solutions.\n\nRemark. In the language of linear algebra, we have shown that the linear operator \\( T: C(0,1) \\rightarrow C(0,1) \\) defined by\n\\[\n(T f)(x)=\\int_{0}^{1} \\min (x, y) f(y) d y\n\\]\nhas eigenvalues \\( 4 /\\left[(2 k+1)^{2} \\pi^{2}\\right] \\) for \\( k=0,1,2, \\ldots \\), and corresponding to each eigenvalue there is a one-dimensional family of eigenvectors given by (4).",
+  "vars": [
+    "x",
+    "y",
+    "f"
+  ],
+  "params": [
+    "\\\\lambda",
+    "\\\\mu",
+    "\\\\nu",
+    "A",
+    "B",
+    "k",
+    "T"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "f": "funcval",
+        "\\lambda": "lambdaparam",
+        "\\mu": "muparam",
+        "\\nu": "nuparam",
+        "A": "coefalpha",
+        "B": "coefbeta",
+        "k": "indexvar",
+        "T": "operator"
+      },
+      "question": "4. Let \\( \\min (abscissa, ordinate) \\) denote the smaller of the numbers \\( abscissa \\) and \\( ordinate \\). For what \\( lambdaparam \\) 's does the equation\n\\[\n\\int_{0}^{1} \\min (abscissa, ordinate) funcval(ordinate) d ordinate = lambdaparam funcval(abscissa)\n\\]\nhave continuous solutions which do not vanish identically in \\( (0,1) \\) ? What are these solutions?",
+      "solution": "Solution. The given equation can be written as\n\\[\nlambdaparam funcval(abscissa)=\\int_{0}^{abscissa} ordinate\\ funcval(ordinate) d ordinate + abscissa \\int_{abscissa}^{1} funcval(ordinate) d ordinate\n\\]\nfrom which it is clear that, if \\( lambdaparam \\neq 0, funcval \\) is differentiable and hence\n\\[\nlambdaparam funcval^{\\prime}(abscissa)=abscissa funcval(abscissa)-abscissa funcval(abscissa)+\\int_{abscissa}^{1} funcval(ordinate) d ordinate=\\int_{abscissa}^{1} funcval(ordinate) d ordinate .\n\\]\n\nThus \\( funcval^{\\prime} \\) is also differentiable and\n\\[\nlambdaparam funcval^{\\prime \\prime}(abscissa)=-funcval(abscissa) .\n\\]\n\nIf \\( lambdaparam =0 \\), the same steps lead to the equation \\( 0=-funcval(abscissa) \\). Since we are only interested in functions not identically zero, we shall assume \\( lambdaparam \\neq 0 \\) from now on.\n\nThe general solution of (3) is\n\\[\nfuncval(abscissa)=coefalpha \\cos muparam\\ abscissa + coefbeta \\sin muparam\\ abscissa,\n\\]\nwhere \\( muparam = lambdaparam^{-1 / 2} \\) if \\( lambdaparam > 0 \\), or\n\\[\nfuncval(abscissa)=coefalpha \\cosh nuparam\\ abscissa + coefbeta \\sinh nuparam\\ abscissa,\n\\]\nwhere \\( nuparam = (-lambdaparam)^{-1 / 2} \\) if \\( lambdaparam < 0 \\).\nIt is evident from (1) that \\( \\lim _{abscissa \\rightarrow 0} funcval(abscissa)=0 \\), so \\( coefalpha =0 \\) whether \\( lambdaparam \\) is positive or negative. From (2) it follows that \\( \\lim _{abscissa \\rightarrow 1} funcval^{\\prime}(abscissa)=0 \\), giving respectively\n\\[\ncoefbeta\\ muparam\\ \\cos muparam =0\n\\]\nor\n\\[\ncoefbeta\\ nuparam\\ \\cosh nuparam =0 \\text { . }\n\\]\n\nThe last equation can hold only for \\( coefbeta =0 \\) and hence \\( funcval =0 \\); so we conclude that (1) has no non-zero solutions if \\( lambdaparam < 0 \\).\n\nFor \\( lambdaparam > 0 \\), a non-trivial solution is possible only if \\( \\cos muparam =0 \\), that is, \\( muparam \\) is an odd multiple of \\( \\pi / 2 \\). In fact\n\\[\nfuncval(abscissa)=coefbeta \\sin (2\\ indexvar +1) \\frac{\\pi}{2} abscissa\n\\]\nis readily checked to be a solution with\n\\[\nlambdaparam = muparam^{-2} = \\frac{4}{(2\\ indexvar +1)^{2} \\pi^{2}},\n\\]\nwhere \\( indexvar \\) is any integer and \\( coefbeta \\) is arbitrary. Here we need only consider \\( indexvar =0,1,2, \\ldots \\), since negative values of \\( indexvar \\) produce the same solutions.\n\nRemark. In the language of linear algebra, we have shown that the linear operator \\( operator: C(0,1) \\rightarrow C(0,1) \\) defined by\n\\[\n(operator\\ funcval)(abscissa)=\\int_{0}^{1} \\min (abscissa, ordinate) funcval(ordinate) d ordinate\n\\]\nhas eigenvalues \\( 4 /\\left[(2\\ indexvar +1)^{2} \\pi^{2}\\right] \\) for \\( indexvar =0,1,2, \\ldots \\), and corresponding to each eigenvalue there is a one-dimensional family of eigenvectors given by (4)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marshmallow",
+        "y": "thunderbolt",
+        "f": "caterpillar",
+        "\\lambda": "toothbrush",
+        "\\mu": "lighthouse",
+        "\\nu": "peppermint",
+        "A": "hydrangea",
+        "B": "tortoise",
+        "k": "sandcastle",
+        "T": "raincloud"
+      },
+      "question": "4. Let \\( \\min (marshmallow, thunderbolt) \\) denote the smaller of the numbers \\( marshmallow \\) and \\( thunderbolt \\). For what \\( toothbrush \\) 's does the equation\n\\[\n\\int_{0}^{1} \\min (marshmallow, thunderbolt) caterpillar(thunderbolt) d thunderbolt=toothbrush caterpillar(marshmallow)\n\\]\nhave continuous solutions which do not vanish identically in \\( (0,1) \\) ? What are these solutions?",
+      "solution": "Solution. The given equation can be written as\n\\[\ntoothbrush\\ caterpillar(marshmallow)=\\int_{0}^{marshmallow} thunderbolt\\ caterpillar(thunderbolt) d thunderbolt+marshmallow \\int_{marshmallow}^{1} caterpillar(thunderbolt) d thunderbolt\n\\]\nfrom which it is clear that, if \\( toothbrush \\neq 0, caterpillar \\) is differentiable and hence\n\\[\ntoothbrush\\ caterpillar^{\\prime}(marshmallow)=marshmallow\\ caterpillar(marshmallow)-marshmallow\\ caterpillar(marshmallow)+\\int_{marshmallow}^{1} caterpillar(thunderbolt) d thunderbolt=\\int_{marshmallow}^{1} caterpillar(thunderbolt) d thunderbolt .\n\\]\n\nThus \\( caterpillar^{\\prime} \\) is also differentiable and\n\\[\ntoothbrush\\ caterpillar^{\\prime\\prime}(marshmallow)=-caterpillar(marshmallow) .\n\\]\n\nIf \\( toothbrush=0 \\), the same steps lead to the equation \\( 0=-caterpillar(marshmallow) \\). Since we are only interested in functions not identically zero, we shall assume \\( toothbrush \\neq 0 \\) from now on.\n\nThe general solution of (3) is\n\\[\ncaterpillar(marshmallow)=hydrangea \\cos lighthouse\\ marshmallow+tortoise \\sin lighthouse\\ marshmallow,\n\\]\nwhere \\( lighthouse=toothbrush^{-1/2} \\) if \\( toothbrush>0 \\), or\n\\[\ncaterpillar(marshmallow)=hydrangea \\cosh peppermint\\ marshmallow+tortoise \\sinh peppermint\\ marshmallow,\n\\]\nwhere \\( peppermint=(-toothbrush)^{-1/2} \\) if \\( toothbrush<0 \\).\nIt is evident from (1) that \\( \\lim _{marshmallow \\rightarrow 0} caterpillar(marshmallow)=0 \\), so \\( hydrangea=0 \\) whether \\( toothbrush \\) is positive or negative. From (2) it follows that \\( \\lim _{marshmallow \\rightarrow 1} caterpillar^{\\prime}(marshmallow)=0 \\), giving respectively\n\\[\ntortoise lighthouse \\cos lighthouse=0\n\\]\nor\n\\[\ntortoise peppermint \\cosh peppermint=0 \\text{.}\n\\]\n\nThe last equation can hold only for \\( tortoise=0 \\) and hence \\( caterpillar=0 \\); so we conclude that (1) has no non-zero solutions if \\( toothbrush<0 \\).\n\nFor \\( toothbrush>0 \\), a non-trivial solution is possible only if \\( \\cos lighthouse=0 \\), that is, \\( lighthouse \\) is an odd multiple of \\( \\pi/2 \\). In fact\n\\[\ncaterpillar(marshmallow)=tortoise \\sin (2 sandcastle+1) \\frac{\\pi}{2} marshmallow\n\\]\nis readily checked to be a solution with\n\\[\ntoothbrush=lighthouse^{-2}=\\frac{4}{(2 sandcastle+1)^{2} \\pi^{2}},\n\\]\nwhere \\( sandcastle \\) is any integer and \\( tortoise \\) is arbitrary. Here we need only consider \\( sandcastle=0,1,2, \\ldots \\), since negative values of \\( sandcastle \\) produce the same solutions.\n\nRemark. In the language of linear algebra, we have shown that the linear operator \\( raincloud: C(0,1) \\rightarrow C(0,1) \\) defined by\n\\[\n(raincloud\\ caterpillar)(marshmallow)=\\int_{0}^{1} \\min (marshmallow, thunderbolt) caterpillar(thunderbolt) d thunderbolt\n\\]\nhas eigenvalues \\( 4/\\left[(2 sandcastle+1)^{2} \\pi^{2}\\right] \\) for \\( sandcastle=0,1,2, \\ldots \\), and corresponding to each eigenvalue there is a one-dimensional family of eigenvectors given by (4)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "outerspot",
+        "y": "insideval",
+        "f": "steadyvalue",
+        "\\lambda": "boundless",
+        "\\mu": "diffuser",
+        "\\nu": "collector",
+        "A": "variable",
+        "B": "changeable",
+        "k": "fractional",
+        "T": "scalarity"
+      },
+      "question": "4. Let \\( \\min (outerspot, insideval) \\) denote the smaller of the numbers \\( outerspot \\) and \\( insideval \\). For what \\( boundless \\) 's does the equation\n\\[\n\\int_{0}^{1} \\min (outerspot, insideval) steadyvalue(insideval) d insideval=boundless steadyvalue(outerspot)\n\\]\nhave continuous solutions which do not vanish identically in \\( (0,1) \\) ? What are these solutions?",
+      "solution": "Solution. The given equation can be written as\n\\[\nboundless steadyvalue(outerspot)=\\int_{0}^{outerspot} insideval steadyvalue(insideval) d insideval+outerspot \\int_{outerspot}^{1} steadyvalue(insideval) d insideval\n\\]\nfrom which it is clear that, if \\( boundless \\neq 0, steadyvalue \\) is differentiable and hence\n\\[\nboundless steadyvalue^{\\prime}(outerspot)=outerspot steadyvalue(outerspot)-outerspot steadyvalue(outerspot)+\\int_{outerspot}^{1} steadyvalue(insideval) d insideval=\\int_{outerspot}^{1} steadyvalue(insideval) d insideval .\n\\]\n\nThus \\( steadyvalue^{\\prime} \\) is also differentiable and\n\\[\nboundless steadyvalue^{\\prime \\prime}(outerspot)=-steadyvalue(outerspot) .\n\\]\n\nIf \\( boundless=0 \\), the same steps lead to the equation \\( 0=-steadyvalue(outerspot) \\). Since we are only interested in functions not identically zero, we shall assume \\( boundless \\neq 0 \\) from now on.\n\nThe general solution of (3) is\n\\[\nsteadyvalue(outerspot)=variable \\cos diffuser\\,outerspot+changeable \\sin diffuser\\,outerspot,\n\\]\nwhere \\( diffuser=boundless^{-1 / 2} \\) if \\( boundless>0 \\), or\n\\[\nsteadyvalue(outerspot)=variable \\cosh collector\\,outerspot+changeable \\sinh collector\\,outerspot,\n\\]\nwhere \\( collector=(-boundless)^{-1 / 2} \\) if \\( boundless<0 \\).\nIt is evident from (1) that \\( \\lim _{outerspot \\rightarrow 0} steadyvalue(outerspot)=0 \\), so \\( variable=0 \\) whether \\( boundless \\) is positive or negative. From (2) it follows that \\( \\lim _{outerspot \\rightarrow 1} steadyvalue^{\\prime}(outerspot)=0 \\), giving respectively\n\\[\nchangeable\\,diffuser \\cos diffuser=0\n\\]\nor\n\\[\nchangeable\\,collector \\cosh collector=0 \\text{ . }\n\\]\n\nThe last equation can hold only for \\( changeable=0 \\) and hence \\( steadyvalue=0 \\); so we conclude that (1) has no non-zero solutions if \\( boundless<0 \\).\n\nFor \\( boundless>0 \\), a non-trivial solution is possible only if \\( \\cos diffuser=0 \\), that is, \\( diffuser \\) is an odd multiple of \\( \\pi / 2 \\). In fact\n\\[\nsteadyvalue(outerspot)=changeable \\sin (2 fractional+1) \\frac{\\pi}{2} outerspot\n\\]\nis readily checked to be a solution with\n\\[\nboundless=diffuser^{-2}=\\frac{4}{(2 fractional+1)^{2} \\pi^{2}},\n\\]\nwhere \\( fractional \\) is any integer and \\( changeable \\) is arbitrary. Here we need only consider \\( fractional=0,1,2, \\ldots \\), since negative values of \\( fractional \\) produce the same solutions.\n\nRemark. In the language of linear algebra, we have shown that the linear operator \\( scalarity: C(0,1) \\rightarrow C(0,1) \\) defined by\n\\[\n(scalarity\\,steadyvalue)(outerspot)=\\int_{0}^{1} \\min (outerspot, insideval) steadyvalue(insideval) d insideval\n\\]\nhas eigenvalues \\( 4 /\\left[(2 fractional+1)^{2} \\pi^{2}\\right] \\) for \\( fractional=0,1,2, \\ldots \\), and corresponding to each eigenvalue there is a one-dimensional family of eigenvectors given by (4)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "f": "mcnpqrsz",
+        "\\\\lambda": "vbchmktr",
+        "\\\\mu": "lskdjfgh",
+        "\\\\nu": "zptxcrlm",
+        "A": "nmtrqslp",
+        "B": "fjdkslqw",
+        "k": "vbnrtyui",
+        "T": "yqplmzks"
+      },
+      "question": "4. Let \\( \\min (qzxwvtnp, hjgrksla) \\) denote the smaller of the numbers \\( qzxwvtnp \\) and \\( hjgrksla \\). For what \\( vbchmktr \\)'s does the equation\n\\[\n\\int_{0}^{1} \\min (qzxwvtnp, hjgrksla) mcnpqrsz(hjgrksla) d hjgrksla=vbchmktr mcnpqrsz(qzxwvtnp)\n\\]\nhave continuous solutions which do not vanish identically in \\( (0,1) \\) ? What are these solutions?",
+      "solution": "Solution. The given equation can be written as\n\\[\nvbchmktr mcnpqrsz(qzxwvtnp)=\\int_{0}^{qzxwvtnp} hjgrksla mcnpqrsz(hjgrksla) d hjgrksla+qzxwvtnp \\int_{qzxwvtnp}^{1} mcnpqrsz(hjgrksla) d hjgrksla\n\\]\nfrom which it is clear that, if \\( vbchmktr \\neq 0, mcnpqrsz \\) is differentiable and hence\n\\[\nvbchmktr mcnpqrsz^{\\prime}(qzxwvtnp)=qzxwvtnp mcnpqrsz(qzxwvtnp)-qzxwvtnp mcnpqrsz(qzxwvtnp)+\\int_{qzxwvtnp}^{1} mcnpqrsz(hjgrksla) d hjgrksla=\\int_{qzxwvtnp}^{1} mcnpqrsz(hjgrksla) d hjgrksla .\n\\]\n\nThus \\( mcnpqrsz^{\\prime} \\) is also differentiable and\n\\[\nvbchmktr mcnpqrsz^{\\prime \\prime}(qzxwvtnp)=-mcnpqrsz(qzxwvtnp) .\n\\]\n\nIf \\( vbchmktr=0 \\), the same steps lead to the equation \\( 0=-mcnpqrsz(qzxwvtnp) \\). Since we are only interested in functions not identically zero, we shall assume \\( vbchmktr \\neq 0 \\) from now on.\n\nThe general solution of (3) is\n\\[\nmcnpqrsz(qzxwvtnp)=nmtrqslp \\cos lskdjfgh qzxwvtnp+fjdkslqw \\sin lskdjfgh qzxwvtnp,\n\\]\nwhere \\( lskdjfgh=vbchmktr^{-1 / 2} \\) if \\( vbchmktr>0 \\), or\n\\[\nmcnpqrsz(qzxwvtnp)=nmtrqslp \\cosh zptxcrlm qzxwvtnp+fjdkslqw \\sinh zptxcrlm qzxwvtnp,\n\\]\nwhere \\( zptxcrlm=(-vbchmktr)^{-1 / 2} \\) if \\( vbchmktr<0 \\).\nIt is evident from (1) that \\( \\lim _{qzxwvtnp \\rightarrow 0} mcnpqrsz(qzxwvtnp)=0 \\), so \\( nmtrqslp=0 \\) whether \\( vbchmktr \\) is positive or negative. From (2) it follows that \\( \\lim _{qzxwvtnp \\rightarrow 1} mcnpqrsz^{\\prime}(qzxwvtnp)=0 \\), giving respectively\n\\[\nfjdkslqw lskdjfgh \\cos lskdjfgh=0\n\\]\nor\n\\[\nfjdkslqw zptxcrlm \\cosh zptxcrlm=0 \\text {. }\n\\]\n\nThe last equation can hold only for \\( fjdkslqw=0 \\) and hence \\( mcnpqrsz=0 \\); so we conclude that (1) has no non-zero solutions if \\( vbchmktr<0 \\).\n\nFor \\( vbchmktr>0 \\), a non-trivial solution is possible only if \\( \\cos lskdjfgh=0 \\), that is, \\( lskdjfgh \\) is an odd multiple of \\( \\pi / 2 \\). In fact\n\\[\nmcnpqrsz(qzxwvtnp)=fjdkslqw \\sin (2 vbnrtyui+1) \\frac{\\pi}{2} qzxwvtnp\n\\]\nis readily checked to be a solution with\n\\[\nvbchmktr=lskdjfgh^{-2}=\\frac{4}{(2 vbnrtyui+1)^{2} \\pi^{2}},\n\\]\nwhere \\( vbnrtyui \\) is any integer and \\( fjdkslqw \\) is arbitrary. Here we need only consider \\( vbnrtyui=0,1,2, \\ldots \\), since negative values of \\( vbnrtyui \\) produce the same solutions.\n\nRemark. In the language of linear algebra, we have shown that the linear operator \\( yqplmzks: C(0,1) \\rightarrow C(0,1) \\) defined by\n\\[\n(yqplmzks mcnpqrsz)(qzxwvtnp)=\\int_{0}^{1} \\min (qzxwvtnp, hjgrksla) mcnpqrsz(hjgrksla) d hjgrksla\n\\]\nhas eigenvalues \\( 4 /\\left[(2 vbnrtyui+1)^{2} \\pi^{2}\\right] \\) for \\( vbnrtyui=0,1,2, \\ldots \\), and corresponding to each eigenvalue there is a one-dimensional family of eigenvectors given by (4)."
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\n(Tf)(x)=\\int_{0}^{2}\\min (x,y)\\,f(y)\\,dy\\qquad (0\\le x\\le 2).\n\\]\nFor which real numbers \\(\\lambda\\) does the integral equation\n\\[\n(Tf)(x)=\\lambda f(x)\\tag{\\*}\n\\]\npossess a twice-continuously-differentiable function \\(f\\not\\equiv 0\\) on \\([0,2]\\)?  Describe every such eigen-pair \\((\\lambda,f)\\).",
+      "solution": "Let     (Tf)(x)=\\int _0^2 min(x,y) f(y) dy        (0\\leq x\\leq 2).\nSeek twice continuously differentiable eigenfunctions f\\not\\equiv 0 satisfying\n        Tf=\\lambda f   on [0,2].\n\n1.  Split the kernel\n        min(x,y)=y  (y\\leq x)  and  =x  (y\\geq x),\nwhich gives\n        \\lambda f(x)=\\int _0x y f(y) dy + x \\int _x^2 f(y) dy.              (0\\leq x\\leq 2)   (A)\n\n2.  First differentiation (\\lambda \\neq 0).  Differentiate (A):\n        \\lambda  f'(x)=x f(x)+[\\int _x^2 f(y) dy - x f(x)] = \\int _x^2 f(y) dy.   (B)\n(The Leibniz rule is used on the second term.)  Hence f' is C^1.\n\n3.  Second differentiation.  Differentiate (B):\n        \\lambda  f''(x)=-f(x)            (0<x<2).              (C)\n\n4.  Boundary conditions.\n   (i)  Put x=0 in (A):   \\lambda  f(0)=0 \\Rightarrow  f(0)=0 (since \\lambda \\neq 0).\n  (ii)  Let x\\to 2^- in (B):  \\lambda  f'(2)=0 \\Rightarrow  f'(2)=0.\nThus\n        f(0)=0,     f'(2)=0.                           (BC)\n\n5.  Solve the ODE (C) subject to (BC).\n\n   (a) \\lambda <0.  Write \\lambda =-\\nu ^{-2} (\\nu >0); then f''=\\nu ^2 f with solution f=A cosh(\\nu x)+B sinh(\\nu x).\n       From f(0)=0 we get A=0; from f'(2)=B \\nu  cosh(2\\nu )=0 we obtain B=0.\n       Only the trivial solution exists, so no negative eigenvalues occur.\n\n   (b) \\lambda >0.  Write \\lambda =\\mu ^{-2} (\\mu >0); then f''=-\\mu ^2 f with solution f=A cos(\\mu x)+B sin(\\mu x).\n       The condition f(0)=0 gives A=0, so f(x)=B sin(\\mu x).\n       Now f'(2)=B \\mu  cos(2\\mu )=0.  For B\\neq 0 we need cos(2\\mu )=0, i.e.\n           2\\mu  = (2k+1)\\pi /2  (k\\in \\mathbb{Z}).\n       Taking k=0,1,2,\\ldots  (since \\mu >0) yields\n           \\mu _k = (2k+1)\\pi /4,  hence  \\lambda _k = \\mu _k^{-2} = 16/[(2k+1)^2 \\pi ^2].\n       Each eigenspace is one-dimensional, spanned by\n           f_k(x)=sin((2k+1)\\pi  x / 4).\n\n6.  \\lambda =0.  Setting \\lambda =0 in (A) gives 0=\\int _0x y f(y) dy + x \\int _x^2 f(y) dy for every x.\n    Differentiating twice (as in steps 2-3) yields -f(x)=0, so f\\equiv 0.\n    Thus \\lambda =0 is not an eigenvalue.\n\n7.  Result.  The integral operator T on C^2[0,2] possesses the discrete positive spectrum\n        \\lambda _k = 16/((2k+1)^2 \\pi ^2),       k=0,1,2,\\ldots \nwith associated (twice continuously differentiable) eigenfunctions\n        f_k(x) = B\\cdot sin((2k+1)\\pi  x / 4),   B\\neq 0.\nNo non-trivial solution exists for any other real \\lambda .",
+      "_meta": {
+        "core_steps": [
+          "Split ∫₀¹ min(x,y)f(y)dy into ∫₀ˣ y f(y)dy + x∫ˣ¹ f(y)dy",
+          "Differentiate once; the x f(x) terms cancel, giving λ f′(x)=∫ˣ¹ f(y)dy",
+          "Differentiate again to obtain the ODE λ f″(x) = –f(x)",
+          "Use limits f(0)=0 and f′(1)=0 (coming from the integral form) as boundary conditions",
+          "Solve the ODE; boundary conditions force cos μ=0 ⇒ μ=(2k+1)π/2, yielding λ=4/[(2k+1)²π²] and f(x)=B sin(μx)"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Upper end-point of the interval of integration",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Required regularity of the solutions (currently ‘continuous’)",
+            "original": "continuous"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

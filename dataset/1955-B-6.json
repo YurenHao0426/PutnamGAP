@@ -1,0 +1,106 @@
+{
+  "index": "1955-B-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "6. Prove: If \\( f(x)>0 \\) for all \\( x \\) and \\( f(x) \\rightarrow 0 \\) as \\( x \\rightarrow \\infty \\), then there exists at most a finite number of solutions of\n\\[\nf(m)+f(n)+f(p)=1\n\\]\nin positive integers \\( m, n \\), and \\( p \\).",
+  "solution": "Solution. We consider first solutions of (1) that satisfy also\n\\[\nf(m) \\geq f(n) \\geq f(p) .\n\\]\n\nSince \\( f \\) takes only positive values, for any such solution we have\n\\[\n\\frac{1}{3} \\leq f(m)<1,\n\\]\n\\[\n\\frac{1}{2}(1-f(m)) \\leq f(n)<1-f(m)\n\\]\nand\n\\[\nf(p)=1-f(m)-f(n)\n\\]\n\nSince \\( f(x) \\rightarrow 0 \\) as \\( x \\rightarrow \\infty \\), there are only finitely many integers \\( m \\) that satisfy (3); for each such \\( m \\) there are only finitely many integers \\( n \\) that satisfy (4); and for each such pair \\( m, n \\) there are only finitely many integers \\( p \\) that satisfy (5).\n\nThus there are only finitely many integral solutions of (1) that satisfy (2). But all other integer solutions of (1) are obtained from these by permuting \\( m, n \\), and \\( p \\). Hence (1) has only finitely many solutions in positive integers.\n\nRemarks. The proof obviously generalizes to show that for any integer \\( k \\) and number \\( \\alpha \\), the equation\n\\[\nf\\left(m_{1}\\right)+f\\left(m_{2}\\right)+\\cdots+f\\left(m_{k}\\right)=\\alpha\n\\]\nhas only a finite number of integral solutions.\nProblem A.M. 6 of the Twelfth Competition involves a special case of this result. There it was necessary to show that the equation\n\\[\nm n p=2(m-2)(n-2)(p-2)\n\\]\nhas only a finite number of solutions in positive integers. Since this equation can be rewritten as\n\\[\n\\log \\frac{m}{m-2}+\\log \\frac{n}{n-2}+\\log \\frac{p}{p-2}=\\log 2\n\\]",
+  "vars": [
+    "m",
+    "n",
+    "p",
+    "m_1",
+    "x"
+  ],
+  "params": [
+    "f",
+    "k",
+    "\\\\alpha"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "m": "firstindex",
+        "n": "secondindex",
+        "p": "thirdindex",
+        "m_1": "firstmember",
+        "x": "inputvar",
+        "f": "positivefunc",
+        "k": "termcount",
+        "\\alpha": "targetsum"
+      },
+      "question": "6. Prove: If \\( positivefunc(inputvar)>0 \\) for all \\( inputvar \\) and \\( positivefunc(inputvar) \\rightarrow 0 \\) as \\( inputvar \\rightarrow \\infty \\), then there exists at most a finite number of solutions of\n\\[\npositivefunc(firstindex)+positivefunc(secondindex)+positivefunc(thirdindex)=1\n\\]\nin positive integers \\( firstindex, secondindex \\), and \\( thirdindex \\).",
+      "solution": "Solution. We consider first solutions of (1) that satisfy also\n\\[\npositivefunc(firstindex) \\geq positivefunc(secondindex) \\geq positivefunc(thirdindex) .\n\\]\n\nSince \\( positivefunc \\) takes only positive values, for any such solution we have\n\\[\n\\frac{1}{3} \\leq positivefunc(firstindex)<1,\n\\]\n\\[\n\\frac{1}{2}(1-positivefunc(firstindex)) \\leq positivefunc(secondindex)<1-positivefunc(firstindex)\n\\]\nand\n\\[\npositivefunc(thirdindex)=1-positivefunc(firstindex)-positivefunc(secondindex)\n\\]\n\nSince \\( positivefunc(inputvar) \\rightarrow 0 \\) as \\( inputvar \\rightarrow \\infty \\), there are only finitely many integers \\( firstindex \\) that satisfy (3); for each such \\( firstindex \\) there are only finitely many integers \\( secondindex \\) that satisfy (4); and for each such pair \\( firstindex, secondindex \\) there are only finitely many integers \\( thirdindex \\) that satisfy (5).\n\nThus there are only finitely many integral solutions of (1) that satisfy (2). But all other integer solutions of (1) are obtained from these by permuting \\( firstindex, secondindex \\), and \\( thirdindex \\). Hence (1) has only finitely many solutions in positive integers.\n\nRemarks. The proof obviously generalizes to show that for any integer \\( termcount \\) and number \\( targetsum \\), the equation\n\\[\npositivefunc\\left(firstmember\\right)+positivefunc\\left(m_{2}\\right)+\\cdots+positivefunc\\left(m_{termcount}\\right)=targetsum\n\\]\nhas only a finite number of integral solutions.\nProblem A.M. 6 of the Twelfth Competition involves a special case of this result. There it was necessary to show that the equation\n\\[\nfirstindex secondindex thirdindex=2(firstindex-2)(secondindex-2)(thirdindex-2)\n\\]\nhas only a finite number of solutions in positive integers. Since this equation can be rewritten as\n\\[\n\\log \\frac{firstindex}{firstindex-2}+\\log \\frac{secondindex}{secondindex-2}+\\log \\frac{thirdindex}{thirdindex-2}=\\log 2\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "m": "lemonade",
+        "n": "butterfly",
+        "p": "pineapple",
+        "m_1": "spaghetti",
+        "x": "honeycomb",
+        "f": "windmill",
+        "k": "galaxycar",
+        "\\\\alpha": "tangerine"
+      },
+      "question": "6. Prove: If \\( windmill(honeycomb)>0 \\) for all \\( honeycomb \\) and \\( windmill(honeycomb) \\rightarrow 0 \\) as \\( honeycomb \\rightarrow \\infty \\), then there exists at most a finite number of solutions of\n\\[\nwindmill(lemonade)+windmill(butterfly)+windmill(pineapple)=1\n\\]\nin positive integers \\( lemonade, butterfly \\), and \\( pineapple \\).",
+      "solution": "Solution. We consider first solutions of (1) that satisfy also\n\\[\nwindmill(lemonade) \\geq windmill(butterfly) \\geq windmill(pineapple) .\n\\]\n\nSince windmill takes only positive values, for any such solution we have\n\\[\n\\frac{1}{3} \\leq windmill(lemonade)<1,\n\\]\n\\[\n\\frac{1}{2}(1-windmill(lemonade)) \\leq windmill(butterfly)<1-windmill(lemonade)\n\\]\nand\n\\[\nwindmill(pineapple)=1-windmill(lemonade)-windmill(butterfly)\n\\]\n\nSince \\( windmill(honeycomb) \\rightarrow 0 \\) as \\( honeycomb \\rightarrow \\infty \\), there are only finitely many integers \\( lemonade \\) that satisfy (3); for each such \\( lemonade \\) there are only finitely many integers \\( butterfly \\) that satisfy (4); and for each such pair \\( lemonade, butterfly \\) there are only finitely many integers \\( pineapple \\) that satisfy (5).\n\nThus there are only finitely many integral solutions of (1) that satisfy (2). But all other integer solutions of (1) are obtained from these by permuting \\( lemonade, butterfly \\), and \\( pineapple \\). Hence (1) has only finitely many solutions in positive integers.\n\nRemarks. The proof obviously generalizes to show that for any integer \\( galaxycar \\) and number \\( tangerine \\), the equation\n\\[\nwindmill\\left(spaghetti\\right)+windmill\\left(lemonade_{2}\\right)+\\cdots+windmill\\left(lemonade_{galaxycar}\\right)=tangerine\n\\]\nhas only a finite number of integral solutions.\nProblem A.M. 6 of the Twelfth Competition involves a special case of this result. There it was necessary to show that the equation\n\\[\nlemonade\\, butterfly\\, pineapple=2(lemonade-2)(butterfly-2)(pineapple-2)\n\\]\nhas only a finite number of solutions in positive integers. Since this equation can be rewritten as\n\\[\n\\log \\frac{lemonade}{lemonade-2}+\\log \\frac{butterfly}{butterfly-2}+\\log \\frac{pineapple}{pineapple-2}=\\log 2\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "m": "infiniteindex",
+        "n": "zeroindex",
+        "p": "negativeindex",
+        "m_1": "lastindex",
+        "x": "constantvalue",
+        "f": "negativity",
+        "k": "fractional",
+        "\\alpha": "omegavalue"
+      },
+      "question": "6. Prove: If \\( negativity(constantvalue)>0 \\) for all \\( constantvalue \\) and \\( negativity(constantvalue) \\rightarrow 0 \\) as \\( constantvalue \\rightarrow \\infty \\), then there exists at most a finite number of solutions of\n\\[\nnegativity(infiniteindex)+negativity(zeroindex)+negativity(negativeindex)=1\n\\]\nin positive integers \\( infiniteindex, zeroindex \\), and \\( negativeindex \\).",
+      "solution": "Solution. We consider first solutions of (1) that satisfy also\n\\[\nnegativity(infiniteindex) \\geq negativity(zeroindex) \\geq negativity(negativeindex) .\n\\]\n\nSince \\( negativity \\) takes only positive values, for any such solution we have\n\\[\n\\frac{1}{3} \\leq negativity(infiniteindex)<1,\n\\]\n\\[\n\\frac{1}{2}(1-negativity(infiniteindex)) \\leq negativity(zeroindex)<1-negativity(infiniteindex)\n\\]\nand\n\\[\nnegativity(negativeindex)=1-negativity(infiniteindex)-negativity(zeroindex)\n\\]\n\nSince \\( negativity(constantvalue) \\rightarrow 0 \\) as \\( constantvalue \\rightarrow \\infty \\), there are only finitely many integers \\( infiniteindex \\) that satisfy (3); for each such \\( infiniteindex \\) there are only finitely many integers \\( zeroindex \\) that satisfy (4); and for each such pair \\( infiniteindex, zeroindex \\) there are only finitely many integers \\( negativeindex \\) that satisfy (5).\n\nThus there are only finitely many integral solutions of (1) that satisfy (2). But all other integer solutions of (1) are obtained from these by permuting \\( infiniteindex, zeroindex \\), and \\( negativeindex \\). Hence (1) has only finitely many solutions in positive integers.\n\nRemarks. The proof obviously generalizes to show that for any integer \\( fractional \\) and number \\( omegavalue \\), the equation\n\\[\nnegativity\\left(lastindex\\right)+negativity\\left(m_{2}\\right)+\\cdots+negativity\\left(m_{fractional}\\right)=omegavalue\n\\]\nhas only a finite number of integral solutions.\nProblem A.M. 6 of the Twelfth Competition involves a special case of this result. There it was necessary to show that the equation\n\\[\ninfiniteindex\\ zeroindex\\ negativeindex=2(infiniteindex-2)(zeroindex-2)(negativeindex-2)\n\\]\nhas only a finite number of solutions in positive integers. Since this equation can be rewritten as\n\\[\n\\log \\frac{infiniteindex}{infiniteindex-2}+\\log \\frac{zeroindex}{zeroindex-2}+\\log \\frac{negativeindex}{negativeindex-2}=\\log 2\n\\]\n"
+    },
+    "garbled_string": {
+      "map": {
+        "m": "qzxwvtnp",
+        "n": "hjgrksla",
+        "p": "cfdtbqye",
+        "m_1": "srjktnvq",
+        "x": "glkhdpwe",
+        "f": "vbczmnas",
+        "k": "wprlxydf",
+        "\\\\alpha": "\\\\mdclxvgh"
+      },
+      "question": "6. Prove: If \\( vbczmnas(glkhdpwe)>0 \\) for all \\( glkhdpwe \\) and \\( vbczmnas(glkhdpwe) \\rightarrow 0 \\) as \\( glkhdpwe \\rightarrow \\infty \\), then there exists at most a finite number of solutions of\n\\[\nvbczmnas(qzxwvtnp)+vbczmnas(hjgrksla)+vbczmnas(cfdtbqye)=1\n\\]\nin positive integers \\( qzxwvtnp, hjgrksla \\), and \\( cfdtbqye \\).",
+      "solution": "Solution. We consider first solutions of (1) that satisfy also\n\\[\nvbczmnas(qzxwvtnp) \\geq vbczmnas(hjgrksla) \\geq vbczmnas(cfdtbqye) .\n\\]\n\nSince \\( vbczmnas \\) takes only positive values, for any such solution we have\n\\[\n\\frac{1}{3} \\leq vbczmnas(qzxwvtnp)<1,\n\\]\n\\[\n\\frac{1}{2}(1-vbczmnas(qzxwvtnp)) \\leq vbczmnas(hjgrksla)<1-vbczmnas(qzxwvtnp)\n\\]\nand\n\\[\nvbczmnas(cfdtbqye)=1-vbczmnas(qzxwvtnp)-vbczmnas(hjgrksla)\n\\]\n\nSince \\( vbczmnas(glkhdpwe) \\rightarrow 0 \\) as \\( glkhdpwe \\rightarrow \\infty \\), there are only finitely many integers \\( qzxwvtnp \\) that satisfy (3); for each such \\( qzxwvtnp \\) there are only finitely many integers \\( hjgrksla \\) that satisfy (4); and for each such pair \\( qzxwvtnp, hjgrksla \\) there are only finitely many integers \\( cfdtbqye \\) that satisfy (5).\n\nThus there are only finitely many integral solutions of (1) that satisfy (2). But all other integer solutions of (1) are obtained from these by permuting \\( qzxwvtnp, hjgrksla \\), and \\( cfdtbqye \\). Hence (1) has only finitely many solutions in positive integers.\n\nRemarks. The proof obviously generalizes to show that for any integer \\( wprlxydf \\) and number \\( mdclxvgh \\), the equation\n\\[\nvbczmnas\\left(srjktnvq_{1}\\right)+vbczmnas\\left(srjktnvq_{2}\\right)+\\cdots+vbczmnas\\left(srjktnvq_{wprlxydf}\\right)=mdclxvgh\n\\]\nhas only a finite number of integral solutions.\nProblem A.M. 6 of the Twelfth Competition involves a special case of this result. There it was necessary to show that the equation\n\\[\nqzxwvtnp hjgrksla cfdtbqye=2(qzxwvtnp-2)(hjgrksla-2)(cfdtbqye-2)\n\\]\nhas only a finite number of solutions in positive integers. Since this equation can be rewritten as\n\\[\n\\log \\frac{qzxwvtnp}{qzxwvtnp-2}+\\log \\frac{hjgrksla}{hjgrksla-2}+\\log \\frac{cfdtbqye}{cfdtbqye-2}=\\log 2\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let \\(f:\\mathbb N\\to(0,\\infty)\\) be a function satisfying \\(\\displaystyle\\lim_{x\\to\\infty}f(x)=0\\).  Prove that the Diophantine equation\n\\[\nf(a)+f(b)+f(c)+f(d)=2\n\\]\nhas only finitely many solutions in positive integers \\(a,b,c,d\\).",
+      "solution": "Step 1 - Ordering the variables.\nFor every solution (a,b,c,d) we may re-label the indices so that\n\\[\nf(a)\\ge f(b)\\ge f(c)\\ge f(d).\n\\]\nWe shall count only the solutions that respect this order and then multiply by the number of permutations (4!) at the end.\n\nStep 2 - A first uniform lower bound.\nBecause the four terms are positive and add up to 2,\n\\[\n4f(a)\\ge f(a)+f(b)+f(c)+f(d)=2\\quad\\Longrightarrow\\quad f(a)\\ge\\tfrac12.\n\\]\nIn particular, f(a)\\in [1/2,2).\n\nStep 3 - A lower bound for the second term.\nRemove the largest term:\n\\[\nf(b)+f(c)+f(d)=2-f(a).\n\\]\nSince f(b) is the largest of the remaining three,\n\\[\n3f(b)\\ge 2-f(a)\\quad\\Longrightarrow\\quad f(b)\\ge\\frac{2-f(a)}3>0.\n\\]\n\nStep 4 - A lower bound for the third term.\nSubtract the two largest terms:\n\\[\nf(c)+f(d)=2-f(a)-f(b),\n\\]\nso, because f(c)\\geq f(d),\n\\[\n2f(c)\\ge 2-f(a)-f(b)\\quad\\Longrightarrow\\quad f(c)\\ge\\frac{2-f(a)-f(b)}2>0.\n\\]\n\nStep 5 - Expressing the fourth term exactly.\nFinally\n\\[\nf(d)=2-f(a)-f(b)-f(c)>0.\n\\]\n\nStep 6 - Finiteness of the index sets.\nBecause f(x)\\to 0 as x\\to \\infty , any positive lower bound on f(x) confines x to a finite set.\n\n* By (1) there are only finitely many integers a with f(a)\\geq 1/2.\n\n* Fix such an a. Inequality (2) gives a positive lower bound for f(b); hence there are only finitely many possible b for that a.\n\n* Fix a,b. Inequality (3) gives a positive lower bound for f(c); therefore only finitely many c are possible.\n\n* Finally, for each fixed triple (a,b,c), equation (4) prescribes a positive lower bound for f(d); hence only finitely many d occur.\n\nThus the set of ordered quadruples satisfying the imposed order is finite. Multiplying by 4! to account for all possible permutations, we conclude that the original equation admits only finitely many solutions in positive integers. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Impose an order on the variables so that the function values are non-increasing (e.g. f(m) ≥ f(n) ≥ f(p)).",
+          "Use positivity and the fixed total to obtain lower bounds for the ordered function values (e.g. f(m) ≥ constant, f(n) ≥ constant).",
+          "Because f(x) → 0 as x → ∞, each such lower bound confines the corresponding integer to a finite set.",
+          "The Cartesian product of finitely many finite sets is finite; multiplying by the number of permutations covers all solutions, so only finitely many exist."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Number of summands on the left-hand side of the equation",
+            "original": 3
+          },
+          "slot2": {
+            "description": "Constant on the right-hand side of the equation",
+            "original": 1
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

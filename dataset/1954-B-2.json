@@ -1,0 +1,123 @@
+{
+  "index": "1954-B-2",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "2. Assume as known the (true) fact that the alternating harmonic series\n(1) \\( \\quad 1-1 / 2+1 / 3-1 / 4+1 / 5-1 / 6+1 / 7-1 / 8+\\cdots \\) is convergent, and denote its sum by \\( s \\). Rearrange the series (1) as follows:\n\\[\n1+1 / 3-1 / 2+1 / 5+1 / 7-1 / 4+1 / 9+1 / 11-1 / 6+\\cdots\n\\]\n\nAssume as known the (true) fact that the series (2) is also convergent, and denote its sum by \\( S \\). Denote by \\( s_{k}, S_{k} \\) the \\( k \\) th partial sum of the series (1) and (2) respectively. Prove the following statements.\n(i) \\( \\quad S_{3 n}=s_{4 n}+\\frac{1}{2} s_{2 n} \\),\n(ii) \\( \\quad S \\neq s \\).",
+  "solution": "Solution. (i) We have\n\\[\n\\begin{array}{c}\ns_{4 n}=1-\\frac{1}{2}+\\frac{1}{3}-\\frac{1}{4}+\\frac{1}{5}-\\frac{1}{6}+\\cdots+\\frac{1}{4 n-1}-\\frac{1}{4 n} \\\\\n\\frac{1}{2} s_{2 n}=\\frac{1}{2}-\\frac{1}{4}+\\frac{1}{6}+\\cdots-\\frac{1}{4 n} .\n\\end{array}\n\\]\n\nAdding, we obtain\n\\[\n\\begin{aligned}\ns_{4 n}+\\frac{1}{2} s_{2 n} & =1+\\frac{1}{3}-\\frac{1}{2}+\\frac{1}{5}+\\frac{1}{7}-\\frac{1}{4} \\\\\n& +\\cdots+\\frac{1}{4 n-3}+\\frac{1}{4 n-1}-\\frac{1}{2 n} \\\\\n& =S_{3 n .} .\n\\end{aligned}\n\\]\n(ii) Since (1) is an alternating series with terms that decrease to zero, \\( \\lim _{n \\rightarrow \\infty} s_{n}=s \\) exists. Moreover, \\( s>1-\\frac{1}{2}=\\frac{1}{2} \\), so \\( s \\neq 0 \\). Therefore\n\\[\nS=\\lim _{n \\rightarrow \\infty} S_{3 n}=\\frac{3}{2} s \\neq s\n\\]\n\nRemark. It is well known that \\( s=\\log _{\\text {r }} 2 \\).",
+  "vars": [
+    "s",
+    "S",
+    "n",
+    "k",
+    "s_k",
+    "S_k",
+    "s_4n",
+    "s_2n",
+    "S_3n",
+    "s_n",
+    "s_4n-1",
+    "s_4n-3"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "s": "origsum",
+        "S": "rearsum",
+        "n": "indexvar",
+        "k": "loopidx",
+        "s_k": "partialorig",
+        "S_k": "partialrearr",
+        "s_4n": "partialorigquad",
+        "s_2n": "partialorigdual",
+        "S_3n": "partialrearrtri",
+        "s_n": "partialorigsing",
+        "s_4n-1": "partialorigquadminusone",
+        "s_4n-3": "partialorigquadminusthree"
+      },
+      "question": "2. Assume as known the (true) fact that the alternating harmonic series\n(1) \\( \\quad 1-1 / 2+1 / 3-1 / 4+1 / 5-1 / 6+1 / 7-1 / 8+\\cdots \\) is convergent, and denote its sum by \\( origsum \\). Rearrange the series (1) as follows:\n\\[\n1+1 / 3-1 / 2+1 / 5+1 / 7-1 / 4+1 / 9+1 / 11-1 / 6+\\cdots\n\\]\n\nAssume as known the (true) fact that the series (2) is also convergent, and denote its sum by \\( rearsum \\). Denote by \\( partialorig , partialrearr \\) the \\( loopidx \\) th partial sum of the series (1) and (2) respectively. Prove the following statements.\n(i) \\( \\quad partialrearrtri = partialorigquad + \\frac{1}{2} partialorigdual \\),\n(ii) \\( \\quad rearsum \\neq origsum \\).",
+      "solution": "Solution. (i) We have\n\\[\n\\begin{array}{c}\npartialorigquad = 1-\\frac{1}{2}+\\frac{1}{3}-\\frac{1}{4}+\\frac{1}{5}-\\frac{1}{6}+\\cdots+\\frac{1}{4 indexvar-1}-\\frac{1}{4 indexvar} \\\\\n\\frac{1}{2}\\,partialorigdual = \\frac{1}{2}-\\frac{1}{4}+\\frac{1}{6}+\\cdots-\\frac{1}{4 indexvar} .\n\\end{array}\n\\]\n\nAdding, we obtain\n\\[\n\\begin{aligned}\npartialorigquad + \\frac{1}{2} partialorigdual & = 1+\\frac{1}{3}-\\frac{1}{2}+\\frac{1}{5}+\\frac{1}{7}-\\frac{1}{4} \\\\\n& +\\cdots+\\frac{1}{4 indexvar-3}+\\frac{1}{4 indexvar-1}-\\frac{1}{2 indexvar} \\\\\n& = partialrearrtri .\n\\end{aligned}\n\\]\n(ii) Since (1) is an alternating series with terms that decrease to zero, \\( \\lim _{indexvar \\rightarrow \\infty} partialorigsing = origsum \\) exists. Moreover, \\( origsum > 1-\\frac{1}{2}=\\frac{1}{2} \\), so \\( origsum \\neq 0 \\). Therefore\n\\[\nrearsum = \\lim _{indexvar \\rightarrow \\infty} partialrearrtri = \\frac{3}{2} origsum \\neq origsum\n\\]\n\nRemark. It is well known that \\( origsum = \\log _{\\text {r }} 2 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "s": "miragekey",
+        "S": "cobrahorn",
+        "n": "plumebond",
+        "k": "hazelwing",
+        "s_k": "timberlace",
+        "S_k": "emberglint",
+        "s_4n": "shadowreed",
+        "s_2n": "quartzleaf",
+        "S_3n": "opalwhisper",
+        "s_n": "silkyridge",
+        "s_4n-1": "crimsonvale",
+        "s_4n-3": "ivorymeadow"
+      },
+      "question": "2. Assume as known the (true) fact that the alternating harmonic series\n(1) \\( \\quad 1-1 / 2+1 / 3-1 / 4+1 / 5-1 / 6+1 / 7-1 / 8+\\cdots \\) is convergent, and denote its sum by \\( miragekey \\). Rearrange the series (1) as follows:\n\\[\n1+1 / 3-1 / 2+1 / 5+1 / 7-1 / 4+1 / 9+1 / 11-1 / 6+\\cdots\n\\]\n\nAssume as known the (true) fact that the series (2) is also convergent, and denote its sum by \\( cobrahorn \\). Denote by \\( timberlace, emberglint \\) the \\( hazelwing \\) th partial sum of the series (1) and (2) respectively. Prove the following statements.\n(i) \\( \\quad opalwhisper = shadowreed +\\frac{1}{2} quartzleaf \\),\n(ii) \\( \\quad cobrahorn \\neq miragekey \\).",
+      "solution": "Solution. (i) We have\n\\[\n\\begin{array}{c}\nshadowreed =1-\\frac{1}{2}+\\frac{1}{3}-\\frac{1}{4}+\\frac{1}{5}-\\frac{1}{6}+\\cdots+\\frac{1}{4 plumebond-1}-\\frac{1}{4 plumebond} \\\\\n\\frac{1}{2} quartzleaf =\\frac{1}{2}-\\frac{1}{4}+\\frac{1}{6}+\\cdots-\\frac{1}{4 plumebond} .\n\\end{array}\n\\]\n\nAdding, we obtain\n\\[\n\\begin{aligned}\nshadowreed +\\frac{1}{2} quartzleaf & =1+\\frac{1}{3}-\\frac{1}{2}+\\frac{1}{5}+\\frac{1}{7}-\\frac{1}{4} \\\\\n& +\\cdots+\\frac{1}{4 plumebond-3}+\\frac{1}{4 plumebond-1}-\\frac{1}{2 plumebond} \\\\\n& =opalwhisper .\n\\end{aligned}\n\\]\n(ii) Since (1) is an alternating series with terms that decrease to zero, \\( \\lim _{plumebond \\rightarrow \\infty} silkyridge = miragekey \\) exists. Moreover, \\( miragekey >1-\\frac{1}{2}=\\frac{1}{2} \\), so \\( miragekey \\neq 0 \\). Therefore\n\\[\ncobrahorn =\\lim _{plumebond \\rightarrow \\infty} opalwhisper =\\frac{3}{2} miragekey \\neq miragekey\n\\]\n\nRemark. It is well known that \\( miragekey =\\log _{\\text {r }} 2 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "s": "differencevalue",
+        "S": "zerovalue",
+        "n": "endingindex",
+        "k": "startindex",
+        "s_k": "wholeproduct",
+        "S_k": "nullproduct",
+        "s_4n": "minorproduct",
+        "s_2n": "majorproduct",
+        "S_3n": "voidproduct",
+        "s_n": "tinyproduct",
+        "s_4n-1": "penultimateproduct",
+        "s_4n-3": "antepenultimateproduct"
+      },
+      "question": "2. Assume as known the (true) fact that the alternating harmonic series\n(1) \\( \\quad 1-1 / 2+1 / 3-1 / 4+1 / 5-1 / 6+1 / 7-1 / 8+\\cdots \\) is convergent, and denote its sum by \\( differencevalue \\). Rearrange the series (1) as follows:\n\\[\n1+1 / 3-1 / 2+1 / 5+1 / 7-1 / 4+1 / 9+1 / 11-1 / 6+\\cdots\n\\]\n\nAssume as known the (true) fact that the series (2) is also convergent, and denote its sum by \\( zerovalue \\). Denote by \\( wholeproduct, nullproduct \\) the \\( startindex \\) th partial sum of the series (1) and (2) respectively. Prove the following statements.\n(i) \\( \\quad voidproduct=minorproduct+\\frac{1}{2} majorproduct \\),\n(ii) \\( \\quad zerovalue \\neq differencevalue \\).",
+      "solution": "Solution. (i) We have\n\\[\n\\begin{array}{c}\nminorproduct=1-\\frac{1}{2}+\\frac{1}{3}-\\frac{1}{4}+\\frac{1}{5}-\\frac{1}{6}+\\cdots+\\frac{1}{4 endingindex-1}-\\frac{1}{4 endingindex} \\\\\n\\frac{1}{2} majorproduct=\\frac{1}{2}-\\frac{1}{4}+\\frac{1}{6}+\\cdots-\\frac{1}{4 endingindex} .\n\\end{array}\n\\]\n\nAdding, we obtain\n\\[\n\\begin{aligned}\nminorproduct+\\frac{1}{2} majorproduct & =1+\\frac{1}{3}-\\frac{1}{2}+\\frac{1}{5}+\\frac{1}{7}-\\frac{1}{4} \\\\\n& +\\cdots+\\frac{1}{4 endingindex-3}+\\frac{1}{4 endingindex-1}-\\frac{1}{2 endingindex} \\\\\n& =voidproduct .\n\\end{aligned}\n\\]\n(ii) Since (1) is an alternating series with terms that decrease to zero, \\( \\lim _{endingindex \\rightarrow \\infty} tinyproduct=differencevalue \\) exists. Moreover, \\( differencevalue>1-\\frac{1}{2}=\\frac{1}{2} \\), so \\( differencevalue \\neq 0 \\). Therefore\n\\[\nzerovalue=\\lim _{endingindex \\rightarrow \\infty} voidproduct=\\frac{3}{2} differencevalue \\neq differencevalue\n\\]\n\nRemark. It is well known that \\( differencevalue=\\log _{\\text {r }} 2 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "s": "qzxwvtnp",
+        "S": "hjgrksla",
+        "n": "bcdlrmqe",
+        "k": "rtpsnvof",
+        "s_k": "zmpxqyla",
+        "S_k": "fwhgderc",
+        "s_4n": "vycslkjo",
+        "s_2n": "gabncxre",
+        "S_3n": "opteiqmz",
+        "s_n": "uykhdnsa",
+        "s_4n-1": "ldvhopqe",
+        "s_4n-3": "jbmxnwer"
+      },
+      "question": "2. Assume as known the (true) fact that the alternating harmonic series\n(1) \\( \\quad 1-1 / 2+1 / 3-1 / 4+1 / 5-1 / 6+1 / 7-1 / 8+\\cdots \\) is convergent, and denote its sum by \\( qzxwvtnp \\). Rearrange the series (1) as follows:\n\\[\n1+1 / 3-1 / 2+1 / 5+1 / 7-1 / 4+1 / 9+1 / 11-1 / 6+\\cdots\n\\]\n\nAssume as known the (true) fact that the series (2) is also convergent, and denote its sum by \\( hjgrksla \\). Denote by \\( zmpxqyla, fwhgderc \\) the \\( rtpsnvof \\) th partial sum of the series (1) and (2) respectively. Prove the following statements.\n(i) \\( \\quad opteiqmz = vycslkjo+\\frac{1}{2} gabncxre \\),\n(ii) \\( \\quad hjgrksla \\neq qzxwvtnp \\).",
+      "solution": "Solution. (i) We have\n\\[\n\\begin{array}{c}\nvycslkjo=1-\\frac{1}{2}+\\frac{1}{3}-\\frac{1}{4}+\\frac{1}{5}-\\frac{1}{6}+\\cdots+\\frac{1}{4 bcdlrmqe-1}-\\frac{1}{4 bcdlrmqe} \\\\\n\\frac{1}{2} gabncxre=\\frac{1}{2}-\\frac{1}{4}+\\frac{1}{6}+\\cdots-\\frac{1}{4 bcdlrmqe} .\n\\end{array}\n\\]\n\nAdding, we obtain\n\\[\n\\begin{aligned}\nvycslkjo+\\frac{1}{2} gabncxre & =1+\\frac{1}{3}-\\frac{1}{2}+\\frac{1}{5}+\\frac{1}{7}-\\frac{1}{4} \\\\\n& +\\cdots+\\frac{1}{4 bcdlrmqe-3}+\\frac{1}{4 bcdlrmqe-1}-\\frac{1}{2 bcdlrmqe} \\\\\n& =opteiqmz .\n\\end{aligned}\n\\]\n(ii) Since (1) is an alternating series with terms that decrease to zero, \\( \\lim _{bcdlrmqe \\rightarrow \\infty} uykhdnsa=qzxwvtnp \\) exists. Moreover, \\( qzxwvtnp>1-\\frac{1}{2}=\\frac{1}{2} \\), so \\( qzxwvtnp \\neq 0 \\). Therefore\n\\[\nhjgrksla=\\lim _{bcdlrmqe \\rightarrow \\infty} opteiqmz=\\frac{3}{2} qzxwvtnp \\neq qzxwvtnp\n\\]\n\nRemark. It is well known that \\( qzxwvtnp=\\log _{\\text {r }} 2 \\)."
+    },
+    "kernel_variant": {
+      "question": "Fix two positive integers r \\geq  1 and m \\geq  1.  \nFrom the ordered lists  \n\n O = (1, 3, 5, 7, \\ldots ) (the odd positive integers) , E = (2, 4, 6, 8, \\ldots ) (the even positive integers)  \n\nform successive blocks  \n\n B_k : + 1/o_{k,1}+\\cdot \\cdot \\cdot +1/o_{k,r} - 1/e_{k,1}-\\cdot \\cdot \\cdot -1/e_{k,m},  k = 1,2,\\ldots   \n\nwhere  \n\n o_{k,j}=2[(k-1)r+j]-1,  e_{k,j}=2[(k-1)m+j].\n\nThus each block B_k contains r positive odd reciprocals followed by m negative even reciprocals.  \nConcatenate the blocks to obtain the rearranged series  \n\n V = \\Sigma _{k=1}^{\\infty } ( \\Sigma _{j=1}^{r} 1/(2[(k-1)r+j]-1) - \\Sigma _{j=1}^{m} 1/(2[(k-1)m+j]) ).  (*)\n\nFor N \\geq  1 put  \n\n V_N := \\Sigma _{k=1}^{N} B_k,  \n\nso V_N is the partial sum after the first N complete blocks, hence after (r+m)N individual terms.\n\nWrite H_q = 1+\\frac{1}{2}+\\cdot \\cdot \\cdot +1/q for the q-th harmonic number and  \n\n s_k = \\Sigma _{j=1}^{k}(-1)^{j+1}/j,  s = lim_{k\\to \\infty } s_k = ln 2  \n\nfor the alternating harmonic partial sums and their limit.\n\n(i)  Prove that, for every N \\geq  1,  \n\n  V_N = s_{2rN} + \\frac{1}{2}( H_{rN} - H_{mN} ).  (1)\n\nDeduce from (1) that the sequence (V_N)_N is convergent.\n\n(ii)  Show that the series (*) converges and that its sum equals  \n\n  V = ln 2 + \\frac{1}{2} ln(r/m) = ln(2\\sqrt{r/m}).  (2)\n\n(iii)  Express V_N in closed form by means of the digamma function \\psi  and, using the duplication formula  \n\n  \\psi (2z) = \\frac{1}{2}[\\psi (z)+\\psi (z+\\frac{1}{2})] + ln 2,  \n\nderive (2) again without employing an asymptotic estimate for harmonic numbers.\n\n(iv)  Determine for which integer pairs (r,m) the rearrangement preserves the original sum, i.e. V = s.  \nShow that this occurs if and only if r = m (hence every ``balanced'' pattern with r = m, including the classical case r = m = 1, keeps the value).\n\n---------------------------------------------------------------",
+      "solution": "Throughout we fix positive integers r \\geq  1, m \\geq  1.\n\nStep 1.  A closed form for V_N.  \nPut  \n\n S_1(K)=\\Sigma _{j=1}^{K}1/(2j-1) (first K odd reciprocals),  \n S_2(K)=\\Sigma _{j=1}^{K}1/(2j)  (first K even reciprocals).\n\nSplitting the harmonic number H_{2K} into odd and even parts gives  \n\n S_1(K)=H_{2K}-\\frac{1}{2}H_K,  S_2(K)=\\frac{1}{2}H_K.  (3)\n\nAfter N blocks we have consumed Nr odd numbers and Nm even numbers, hence  \n\n V_N = S_1(Nr) - S_2(Nm)  \n   = [H_{2Nr} - \\frac{1}{2}H_{Nr}] - \\frac{1}{2}H_{Nm}.  (4)\n\nStep 2.  Connection with alternating partial sums.  \nFor any q \\geq  1,  \n\n s_{2q}=H_{2q}-H_q.  (5)\n\nIndeed  \n\n s_{2q}=\\Sigma _{j=1}^{q}(1/(2j-1)-1/(2j))=S_1(q)-S_2(q)  \n    = (H_{2q}-\\frac{1}{2}H_q)-\\frac{1}{2}H_q.\n\nApply (5) with q = rN and insert in (4):\n\n V_N = s_{2rN} + \\frac{1}{2}( H_{rN} - H_{mN} ),  (6)\n\ni.e. formula (1).\n\nStep 3.  Convergence of (V_N).  \nBecause s_k converges and H_k = ln k+\\gamma +o(1),  \n\n H_{rN}-H_{mN}=ln(rN)-ln(mN)+o(1)=ln(r/m)+o(1).  (7)\n\nHence  \n\n lim_{N\\to \\infty } V_N = ln 2 + \\frac{1}{2} ln(r/m) exists.  (8)\n\nTo pass from block endpoints to arbitrary partial sums, notice that every term in the (N+1)-st block is dominated by  \n\n 1/(2\\cdot min{r,m}\\cdot N+2).  \n\nConsequently any ``internal'' partial sum differs from V_N by at most  \n\n (r+m)/(2 min{r,m} N+2) \\to  0,  \n\nso the complete sequence of partial sums converges to the same limit (8).  \nTherefore the series (*) converges, settling (i) and existence in (ii).\n\nStep 4.  Evaluation of the limit (elementary route).  \nPassing N\\to \\infty  in (6) and using (7) yields  \n\n V = ln 2 + \\frac{1}{2} ln(r/m) = ln(2\\sqrt{r/m}),  (9)\n\nestablishing (2).\n\nStep 5.  Exact evaluation via the digamma function (part iii).  \nRecall H_q = \\psi (q+1)+\\gamma , where \\gamma  is Euler's constant.  \nEquation (4) becomes  \n\n V_N = \\psi (2Nr+1) - \\frac{1}{2}\\psi (Nr+1) - \\frac{1}{2}\\psi (Nm+1).  (10)\n\nApply the duplication formula with z = Nr+\\frac{1}{2}:\n\n \\psi (2Nr+1)=\\frac{1}{2}\\psi (Nr+\\frac{1}{2})+\\frac{1}{2}\\psi (Nr+1)+ln 2.  (11)\n\nInsert (11) into (10):\n\n V_N = ln 2 + \\frac{1}{2}[\\psi (Nr+\\frac{1}{2}) - \\psi (Nm+1)].  (12)\n\nFormula (12) is exact. Using \\psi (x)=ln x-1/(2x)+O(1/x^2) one gets  \n\n \\psi (Nr+\\frac{1}{2})-\\psi (Nm+1)=ln(r/m)+o(1),  \n\nso (12) converges to ln 2+\\frac{1}{2} ln(r/m), recovering (2) without appealing to (7).\n\nStep 6.  When does the sum remain unchanged? (part iv)  \nEquation (2) shows V = s = ln 2 precisely when ln(r/m)=0, i.e. r=m.  \nThus the rearrangement preserves the value exactly for the balanced pairs (r,m)=(n,n) with n \\in  \\mathbb{N}, including the classical pattern n=1.\n\n---------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.470337",
+        "was_fixed": false,
+        "difficulty_analysis": "The new variant is harder than both the original and the previous kernel version because\n\n• Two independent parameters (r and m) replace the single parameter r, so one must track two interacting subsequences (odds and evens) of different lengths in every block.  \n• The identification of the block–partial sums demands simultaneous manipulation of three harmonic numbers instead of two.  \n• Determining the limit involves comparing growth rates of H_{rn} and H_{mn}, forcing either a careful asymptotic expansion or the use of the digamma function and its duplication formula (a significantly deeper analytic tool).  \n• Part (iii) explicitly requires fluency with special-function identities (ψ duplication) to produce an exact, non–asymptotic derivation.  \n• Part (iv) adds a classification problem, asking for all parameter pairs that preserve the original sum, something not present in the earlier versions.\n\nTogether these features lengthen the argument, introduce advanced analytic techniques, and require a broader conceptual grasp, thus satisfying the mandate for a substantially more challenging kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix two positive integers r \\geq  1 and m \\geq  1.  \nFrom the ordered lists  \n\n O = (1, 3, 5, 7, \\ldots ) (the odd positive integers) , E = (2, 4, 6, 8, \\ldots ) (the even positive integers)  \n\nform successive blocks  \n\n B_k : + 1/o_{k,1}+\\cdot \\cdot \\cdot +1/o_{k,r} - 1/e_{k,1}-\\cdot \\cdot \\cdot -1/e_{k,m},  k = 1,2,\\ldots   \n\nwhere  \n\n o_{k,j}=2[(k-1)r+j]-1,  e_{k,j}=2[(k-1)m+j].\n\nThus each block B_k contains r positive odd reciprocals followed by m negative even reciprocals.  \nConcatenate the blocks to obtain the rearranged series  \n\n V = \\Sigma _{k=1}^{\\infty } ( \\Sigma _{j=1}^{r} 1/(2[(k-1)r+j]-1) - \\Sigma _{j=1}^{m} 1/(2[(k-1)m+j]) ).  (*)\n\nFor N \\geq  1 put  \n\n V_N := \\Sigma _{k=1}^{N} B_k,  \n\nso V_N is the partial sum after the first N complete blocks, hence after (r+m)N individual terms.\n\nWrite H_q = 1+\\frac{1}{2}+\\cdot \\cdot \\cdot +1/q for the q-th harmonic number and  \n\n s_k = \\Sigma _{j=1}^{k}(-1)^{j+1}/j,  s = lim_{k\\to \\infty } s_k = ln 2  \n\nfor the alternating harmonic partial sums and their limit.\n\n(i)  Prove that, for every N \\geq  1,  \n\n  V_N = s_{2rN} + \\frac{1}{2}( H_{rN} - H_{mN} ).  (1)\n\nDeduce from (1) that the sequence (V_N)_N is convergent.\n\n(ii)  Show that the series (*) converges and that its sum equals  \n\n  V = ln 2 + \\frac{1}{2} ln(r/m) = ln(2\\sqrt{r/m}).  (2)\n\n(iii)  Express V_N in closed form by means of the digamma function \\psi  and, using the duplication formula  \n\n  \\psi (2z) = \\frac{1}{2}[\\psi (z)+\\psi (z+\\frac{1}{2})] + ln 2,  \n\nderive (2) again without employing an asymptotic estimate for harmonic numbers.\n\n(iv)  Determine for which integer pairs (r,m) the rearrangement preserves the original sum, i.e. V = s.  \nShow that this occurs if and only if r = m (hence every ``balanced'' pattern with r = m, including the classical case r = m = 1, keeps the value).\n\n---------------------------------------------------------------",
+      "solution": "Throughout we fix positive integers r \\geq  1, m \\geq  1.\n\nStep 1.  A closed form for V_N.  \nPut  \n\n S_1(K)=\\Sigma _{j=1}^{K}1/(2j-1) (first K odd reciprocals),  \n S_2(K)=\\Sigma _{j=1}^{K}1/(2j)  (first K even reciprocals).\n\nSplitting the harmonic number H_{2K} into odd and even parts gives  \n\n S_1(K)=H_{2K}-\\frac{1}{2}H_K,  S_2(K)=\\frac{1}{2}H_K.  (3)\n\nAfter N blocks we have consumed Nr odd numbers and Nm even numbers, hence  \n\n V_N = S_1(Nr) - S_2(Nm)  \n   = [H_{2Nr} - \\frac{1}{2}H_{Nr}] - \\frac{1}{2}H_{Nm}.  (4)\n\nStep 2.  Connection with alternating partial sums.  \nFor any q \\geq  1,  \n\n s_{2q}=H_{2q}-H_q.  (5)\n\nIndeed  \n\n s_{2q}=\\Sigma _{j=1}^{q}(1/(2j-1)-1/(2j))=S_1(q)-S_2(q)  \n    = (H_{2q}-\\frac{1}{2}H_q)-\\frac{1}{2}H_q.\n\nApply (5) with q = rN and insert in (4):\n\n V_N = s_{2rN} + \\frac{1}{2}( H_{rN} - H_{mN} ),  (6)\n\ni.e. formula (1).\n\nStep 3.  Convergence of (V_N).  \nBecause s_k converges and H_k = ln k+\\gamma +o(1),  \n\n H_{rN}-H_{mN}=ln(rN)-ln(mN)+o(1)=ln(r/m)+o(1).  (7)\n\nHence  \n\n lim_{N\\to \\infty } V_N = ln 2 + \\frac{1}{2} ln(r/m) exists.  (8)\n\nTo pass from block endpoints to arbitrary partial sums, notice that every term in the (N+1)-st block is dominated by  \n\n 1/(2\\cdot min{r,m}\\cdot N+2).  \n\nConsequently any ``internal'' partial sum differs from V_N by at most  \n\n (r+m)/(2 min{r,m} N+2) \\to  0,  \n\nso the complete sequence of partial sums converges to the same limit (8).  \nTherefore the series (*) converges, settling (i) and existence in (ii).\n\nStep 4.  Evaluation of the limit (elementary route).  \nPassing N\\to \\infty  in (6) and using (7) yields  \n\n V = ln 2 + \\frac{1}{2} ln(r/m) = ln(2\\sqrt{r/m}),  (9)\n\nestablishing (2).\n\nStep 5.  Exact evaluation via the digamma function (part iii).  \nRecall H_q = \\psi (q+1)+\\gamma , where \\gamma  is Euler's constant.  \nEquation (4) becomes  \n\n V_N = \\psi (2Nr+1) - \\frac{1}{2}\\psi (Nr+1) - \\frac{1}{2}\\psi (Nm+1).  (10)\n\nApply the duplication formula with z = Nr+\\frac{1}{2}:\n\n \\psi (2Nr+1)=\\frac{1}{2}\\psi (Nr+\\frac{1}{2})+\\frac{1}{2}\\psi (Nr+1)+ln 2.  (11)\n\nInsert (11) into (10):\n\n V_N = ln 2 + \\frac{1}{2}[\\psi (Nr+\\frac{1}{2}) - \\psi (Nm+1)].  (12)\n\nFormula (12) is exact. Using \\psi (x)=ln x-1/(2x)+O(1/x^2) one gets  \n\n \\psi (Nr+\\frac{1}{2})-\\psi (Nm+1)=ln(r/m)+o(1),  \n\nso (12) converges to ln 2+\\frac{1}{2} ln(r/m), recovering (2) without appealing to (7).\n\nStep 6.  When does the sum remain unchanged? (part iv)  \nEquation (2) shows V = s = ln 2 precisely when ln(r/m)=0, i.e. r=m.  \nThus the rearrangement preserves the value exactly for the balanced pairs (r,m)=(n,n) with n \\in  \\mathbb{N}, including the classical pattern n=1.\n\n---------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.394879",
+        "was_fixed": false,
+        "difficulty_analysis": "The new variant is harder than both the original and the previous kernel version because\n\n• Two independent parameters (r and m) replace the single parameter r, so one must track two interacting subsequences (odds and evens) of different lengths in every block.  \n• The identification of the block–partial sums demands simultaneous manipulation of three harmonic numbers instead of two.  \n• Determining the limit involves comparing growth rates of H_{rn} and H_{mn}, forcing either a careful asymptotic expansion or the use of the digamma function and its duplication formula (a significantly deeper analytic tool).  \n• Part (iii) explicitly requires fluency with special-function identities (ψ duplication) to produce an exact, non–asymptotic derivation.  \n• Part (iv) adds a classification problem, asking for all parameter pairs that preserve the original sum, something not present in the earlier versions.\n\nTogether these features lengthen the argument, introduce advanced analytic techniques, and require a broader conceptual grasp, thus satisfying the mandate for a substantially more challenging kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

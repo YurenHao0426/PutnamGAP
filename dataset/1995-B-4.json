@@ -1,0 +1,101 @@
+{
+  "index": "1995-B-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "\\[\n\\sqrt[8]{2207 - \\frac{1}{2207-\\frac{1}{2207-\\dots}}}.\n\\]\nExpress your answer in the form $\\frac{a+b\\sqrt{c}}{d}$, where\n$a,b,c,d$ are integers.",
+  "solution": "The infinite continued fraction is defined as the limit of the\nsequence $L_{0} = 2207, L_{n+1} = 2207-1/L_{n}$. Notice that the\nsequence is strictly decreasing (by induction) and thus indeed has a\nlimit $L$, which satisfies $L = 2207 - 1/L$, or rewriting, $L^{2} -\n2207L + 1 = 0$. Moreover, we want the greater of the two roots.\n\nNow how to compute the eighth root of $L$? Notice that if $x$\nsatisfies the quadratic $x^{2} - ax + 1 = 0$, then we have\n\\begin{align*}\n0 &= (x^{2} - ax + 1)(x^{2} + ax + 1) \\\\\n&= x^{4} - (a^{2} - 2)x^{2} + 1.\n\\end{align*}\nClearly, then, the positive square roots of the quadratic $x^{2} -\nbx + 1$ satisfy the quadratic $x^{2} - (b^{2}+2)^{1/2}x + 1 = 0$. Thus\nwe compute that $L^{1/2}$ is the greater root of $x^{2} - 47x + 1 =\n0$, $L^{1/4}$ is the greater root of $x^{2} - 7x+ 1 =0$, and\n$L^{1/8}$ is the greater root of $x^{2} - 3x + 1 = 0$, otherwise\nknown as $(3 + \\sqrt{5})/2$.",
+  "vars": [
+    "L_0",
+    "L_n+1",
+    "L_n",
+    "L",
+    "x"
+  ],
+  "params": [
+    "a",
+    "b"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "L_0": "initlimit",
+        "L_n+1": "nextlimit",
+        "L_n": "currentlimit",
+        "L": "finallimit",
+        "x": "variable",
+        "a": "coeffalpha",
+        "b": "coeffbeta"
+      },
+      "question": "\\[\n\\sqrt[8]{2207 - \\frac{1}{2207-\\frac{1}{2207-\\dots}}}.\n\\]\nExpress your answer in the form $\\frac{\\mathrm{coeffalpha}+\\mathrm{coeffbeta}\\sqrt{c}}{d}$, where\n$\\mathrm{coeffalpha},\\mathrm{coeffbeta},c,d$ are integers.",
+      "solution": "The infinite continued fraction is defined as the limit of the\nsequence $\\mathrm{initlimit} = 2207, \\mathrm{nextlimit} = 2207-1/\\mathrm{currentlimit}$. Notice that the\nsequence is strictly decreasing (by induction) and thus indeed has a\nlimit $\\mathrm{finallimit}$, which satisfies $\\mathrm{finallimit}^{2} -\n2207\\mathrm{finallimit} + 1 = 0$. Moreover, we want the greater of the two roots.\n\nNow how to compute the eighth root of $\\mathrm{finallimit}$? Notice that if $\\mathrm{variable}$\nsatisfies the quadratic $\\mathrm{variable}^{2} - \\mathrm{coeffalpha}\\mathrm{variable} + 1 = 0$, then we have\n\\begin{align*}\n0 &= (\\mathrm{variable}^{2} - \\mathrm{coeffalpha}\\mathrm{variable} + 1)(\\mathrm{variable}^{2} + \\mathrm{coeffalpha}\\mathrm{variable} + 1) \\\\\n&= \\mathrm{variable}^{4} - (\\mathrm{coeffalpha}^{2} - 2)\\mathrm{variable}^{2} + 1.\n\\end{align*}\nClearly, then, the positive square roots of the quadratic $\\mathrm{variable}^{2} -\n\\mathrm{coeffbeta}\\mathrm{variable} + 1$ satisfy the quadratic $\\mathrm{variable}^{2} - (\\mathrm{coeffbeta}^{2}+2)^{1/2}\\mathrm{variable} + 1 = 0$. Thus\nwe compute that $\\mathrm{finallimit}^{1/2}$ is the greater root of $\\mathrm{variable}^{2} - 47\\mathrm{variable} + 1 =\n0$, $\\mathrm{finallimit}^{1/4}$ is the greater root of $\\mathrm{variable}^{2} - 7\\mathrm{variable}+ 1 =0$, and\n$\\mathrm{finallimit}^{1/8}$ is the greater root of $\\mathrm{variable}^{2} - 3\\mathrm{variable} + 1 = 0$, otherwise\nknown as $(3 + \\sqrt{5})/2$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "L_0": "candlewax",
+        "L_n+1": "gingerroot",
+        "L_n": "lanternfly",
+        "L": "scarecrow",
+        "x": "hummingbd",
+        "a": "moonstone",
+        "b": "riverbank"
+      },
+      "question": "\\[\n\\sqrt[8]{2207 - \\frac{1}{2207-\\frac{1}{2207-\\dots}}}.\n\\]\nExpress your answer in the form $\\frac{a+b\\sqrt{c}}{d}$, where\n$a,b,c,d$ are integers.",
+      "solution": "The infinite continued fraction is defined as the limit of the\nsequence $candlewax = 2207,\\; gingerroot = 2207-1/lanternfly$. Notice that the\nsequence is strictly decreasing (by induction) and thus indeed has a\nlimit $scarecrow$, which satisfies $scarecrow = 2207 - 1/scarecrow$, or rewriting,\n$scarecrow^{2} - 2207scarecrow + 1 = 0$. Moreover, we want the greater of the\ntwo roots.\n\nNow how to compute the eighth root of $scarecrow$? Notice that if\n$hummingbd$ satisfies the quadratic $hummingbd^{2} - moonstone\\,hummingbd + 1 = 0$, then we have\n\\begin{align*}\n0 &= (hummingbd^{2} - moonstone\\,hummingbd + 1)(hummingbd^{2} + moonstone\\,hummingbd + 1) \\\\\n  &= hummingbd^{4} - (moonstone^{2} - 2)hummingbd^{2} + 1.\n\\end{align*}\nClearly, then, the positive square roots of the quadratic $hummingbd^{2} -\nriverbank\\,hummingbd + 1$ satisfy the quadratic $hummingbd^{2} - (riverbank^{2}+2)^{1/2}hummingbd + 1 = 0$. Thus we compute that\n$scarecrow^{1/2}$ is the greater root of $hummingbd^{2} - 47hummingbd + 1 = 0$,\n$scarecrow^{1/4}$ is the greater root of $hummingbd^{2} - 7hummingbd + 1 = 0$, and\n$scarecrow^{1/8}$ is the greater root of $hummingbd^{2} - 3hummingbd + 1 = 0$, otherwise known as $(3 + \\sqrt{5})/2$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "L_0": "terminalzero",
+        "L_n+1": "priorterm",
+        "L_n": "futureterm",
+        "L": "variable",
+        "x": "constant",
+        "a": "unknownid",
+        "b": "certainid"
+      },
+      "question": "\\[\n\\sqrt[8]{2207 - \\frac{1}{2207-\\frac{1}{2207-\\dots}}}.\n\\]\nExpress your answer in the form $\\frac{a+b\\sqrt{c}}{d}$, where\n$a,b,c,d$ are integers.",
+      "solution": "The infinite continued fraction is defined as the limit of the\nsequence $terminalzero = 2207, priorterm = 2207-1/futureterm$. Notice that the\nsequence is strictly decreasing (by induction) and thus indeed has a\nlimit $variable$, which satisfies $variable = 2207 - 1/variable$, or rewriting, $variable^{2} -\n2207variable + 1 = 0$. Moreover, we want the greater of the two roots.\n\nNow how to compute the eighth root of $variable$? Notice that if $constant$\nsatisfies the quadratic $constant^{2} - unknownid constant + 1 = 0$, then we have\n\\begin{align*}\n0 &= (constant^{2} - unknownid constant + 1)(constant^{2} + unknownid constant + 1) \\\\\n&= constant^{4} - (unknownid^{2} - 2)constant^{2} + 1.\n\\end{align*}\nClearly, then, the positive square roots of the quadratic $constant^{2} -\ncertainid constant + 1$ satisfy the quadratic $constant^{2} - (certainid^{2}+2)^{1/2}constant + 1 = 0$. Thus\nwe compute that $variable^{1/2}$ is the greater root of $constant^{2} - 47constant + 1 =\n0$, $variable^{1/4}$ is the greater root of $constant^{2} - 7constant+ 1 =0$, and\n$variable^{1/8}$ is the greater root of $constant^{2} - 3constant + 1 = 0$, otherwise\nknown as $(3 + \\sqrt{5})/2$. "
+    },
+    "garbled_string": {
+      "map": {
+        "L_0": "qzxwvtnp",
+        "L_n+1": "hjgrksla",
+        "L_n": "zmbvckla",
+        "L": "rpkqsvna",
+        "x": "vfjhtmna",
+        "a": "pqlwsndm",
+        "b": "cvjkhrsa"
+      },
+      "question": "\\[\n\\sqrt[8]{2207 - \\frac{1}{2207-\\frac{1}{2207-\\dots}}}.\n\\]\nExpress your answer in the form $\\frac{pqlwsndm+cvjkhrsa\\sqrt{c}}{d}$, where\n$pqlwsndm,cvjkhrsa,c,d$ are integers.",
+      "solution": "The infinite continued fraction is defined as the limit of the\nsequence $qzxwvtnp = 2207,\\; hjgrksla = 2207-1/zmbvckla$. Notice that the\nsequence is strictly decreasing (by induction) and thus indeed has a\nlimit $rpkqsvna$, which satisfies $rpkqsvna = 2207 - 1/rpkqsvna$, or\nrewriting, $rpkqsvna^{2} - 2207 rpkqsvna + 1 = 0$. Moreover, we want the\ngreater of the two roots.\n\nNow how to compute the eighth root of $rpkqsvna$? Notice that if\n$vfjhtmna$ satisfies the quadratic $vfjhtmna^{2} - pqlwsndm vfjhtmna + 1 = 0$, then we have\n\\begin{align*}\n0 &= (vfjhtmna^{2} - pqlwsndm vfjhtmna + 1)(vfjhtmna^{2} + pqlwsndm vfjhtmna + 1) \\\n  &= vfjhtmna^{4} - (pqlwsndm^{2} - 2)vfjhtmna^{2} + 1.\n\\end{align*}\nClearly, then, the positive square roots of the quadratic\n$vfjhtmna^{2} - cvjkhrsa vfjhtmna + 1$ satisfy the quadratic\n$vfjhtmna^{2} - (cvjkhrsa^{2}+2)^{1/2} vfjhtmna + 1 = 0$. Thus we compute\nthat $rpkqsvna^{1/2}$ is the greater root of $vfjhtmna^{2} - 47 vfjhtmna + 1 = 0$, $rpkqsvna^{1/4}$ is the greater root of $vfjhtmna^{2} - 7 vfjhtmna + 1 = 0$, and\n$rpkqsvna^{1/8}$ is the greater root of $vfjhtmna^{2} - 3 vfjhtmna + 1 = 0$, otherwise\nknown as $(3 + \\sqrt{5})/2$.",
+      "error": ""
+    },
+    "kernel_variant": {
+      "question": "Evaluate  \n\\[\n\\sqrt[64]{\\;23\\,725\\,150\\,497\\,407 \\;-\\;\n          \\cfrac{1}{\\displaystyle 23\\,725\\,150\\,497\\,407 \\;-\\;\n          \\cfrac{1}{\\displaystyle 23\\,725\\,150\\,497\\,407 \\;-\\;\n          \\cfrac{1}{\\displaystyle 23\\,725\\,150\\,497\\,407-\\ddots}}}}\\; .\n\\]\nExpress the value in the form  \n\\[\n\\dfrac{a+b\\sqrt{c}}{d},\n\\qquad a,b,c,d\\in\\Bbb Z .\n\\]",
+      "solution": "1.  Convergence and basic algebraic equation  \n    Let  \n    \\[\n    L \\;=\\; 23\\,725\\,150\\,497\\,407 \\;-\\;\n            \\frac{1}{23\\,725\\,150\\,497\\,407-\\frac{1}{23\\,725\\,150\\,497\\,407-\\ddots}}\n    \\]\n    denote the (positive) limit of the continued fraction.  Since each\n    iterated denominator is larger than \\(23\\,725\\,150\\,497\\,406\\),\n    the approximants form a decreasing, bounded below sequence; hence\n    the limit exists and is positive.  By self-similarity,\n    \\[\n    L \\;=\\; 23\\,725\\,150\\,497\\,407-\\frac{1}{L}\n      \\quad\\Longrightarrow\\quad\n      L^{2}-23\\,725\\,150\\,497\\,407\\,L+1=0. \\tag{1}\n    \\]\n\n2.  A useful square-root lemma  \n    If a positive number \\(x\\) satisfies \\(x^{2}-ax+1=0\\) with\n    \\(a>2\\), then \\(y=\\sqrt{x}\\) satisfies  \n    \\[\n    y^{2}-\\sqrt{a+2}\\,y+1=0. \\tag{2}\n    \\]\n    Proof.  From \\(x+1/x=a\\) and \\(x=y^{2}\\) we get\n    \\[\n        (y+\\frac1y)^2 \\;=\\; y^{2}+2+\\frac1{y^{2}}\n        \\;=\\; x+\\frac1x +2 \\;=\\; a+2 ,\n    \\]\n    so \\(y+\\dfrac1y=\\sqrt{a+2}\\).  Multiplying by \\(y\\) yields (2).\n\n    Identity (2) can be interpreted as the action of the Chebyshev\n    homomorphism \\(f(a):=2\\cosh^{-1}(a/2)\\longmapsto\n    2\\cosh^{-1}(\\sqrt{a+2}/2)\\); repeated square roots correspond to\n    iterating this map.\n\n3.  Six successive square roots  \n    Write \\(a_{0}=23\\,725\\,150\\,497\\,407\\).  \n    Recursively define \\(a_{k+1}=\\sqrt{a_{k}+2}\\,(k\\ge0)\\).\n    After \\(k\\) square-root extractions the quantity \\(L^{2^{-k}}\\)\n    satisfies a quadratic with coefficient \\(a_{k}\\).\n\n    A striking feature of the chosen parameter is that, despite its\n    thirteen digits, every\n    \\(a_{k}\\) up to \\(k=5\\) is an integer:\n\n    * \\(k=1:\\;a_{1}=\\sqrt{23\\,725\\,150\\,497\\,409}=4\\,870\\,847\\)  \n    * \\(k=2:\\;a_{2}=\\sqrt{4\\,870\\,847+2}= \\sqrt{4\\,870\\,849}=2\\,207\\)  \n    * \\(k=3:\\;a_{3}=\\sqrt{2\\,207+2}= \\sqrt{2\\,209}=47\\)  \n    * \\(k=4:\\;a_{4}=\\sqrt{47+2}= \\sqrt{49}=7\\)  \n    * \\(k=5:\\;a_{5}=\\sqrt{7+2}= \\sqrt{9}=3\\)\n\n    One more extraction ceases to be integral:\n\n    * \\(k=6:\\;a_{6}=\\sqrt{3+2}= \\sqrt{5}\\).\n\n    Consequently\n    \\[\n        z:=L^{1/64}\n        \\quad\\text{satisfies}\\quad\n        z^{2}-\\sqrt5\\,z+1=0. \\tag{3}\n    \\]\n\n4.  Solving the final quadratic  \n    Equation (3) has the positive root\n    \\[\n        z=\\frac{\\sqrt{5}+\\sqrt{(\\sqrt5)^{2}-4}}{2}\n          =\\frac{\\,\\sqrt{5}+1\\,}{2}.\n    \\]\n\n    Hence\n    \\[\n      \\boxed{\\displaystyle\n      \\sqrt[64]{\\;23\\,725\\,150\\,497\\,407\n      -\\frac{1}{23\\,725\\,150\\,497\\,407-\\frac1{\\ddots}}}\n      \\;=\\;\\frac{1+\\sqrt{5}}{2}}\n    \\]\n    so \\(a=1,\\;b=1,\\;c=5,\\;d=2\\).",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.745034",
+        "was_fixed": false,
+        "difficulty_analysis": "•  The constant \\(4\\,870\\,847\\) is almost two million times larger than in the original kernel variant and is **not** recognisable from simple inspection; it is the square of 2 207 minus 2, tying the problem to a hidden four-step Pell-type descent.  \n•  The root to be extracted is the 16-th root (vs. an 8-th or 4-th root), forcing four successive applications of the quadratic-reduction lemma; missing any step leaves one with an unwieldy 65-digit discriminant.  \n•  Each step demands the insight that “taking a square root” translates the quadratic \\(x^{2}-ax+1=0\\) into another quadratic whose coefficient is \\(\\sqrt{a+2}\\).  Tracing this chain four times is substantially more laborious than the single or double iteration required in the original versions.  \n•  Although the final answer is compact, uncovering it requires recognising a telescoping sequence of nested radicals within nested continued fractions—two distinct infinite processes interacting across multiple levels.  Simple pattern matching or direct numeric approximation is insufficient; one must deploy a structured, multi-stage algebraic strategy."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Evaluate  \n\\[\n\\sqrt[64]{\\;23\\,725\\,150\\,497\\,407 \\;-\\;\n          \\cfrac{1}{\\displaystyle 23\\,725\\,150\\,497\\,407 \\;-\\;\n          \\cfrac{1}{\\displaystyle 23\\,725\\,150\\,497\\,407 \\;-\\;\n          \\cfrac{1}{\\displaystyle 23\\,725\\,150\\,497\\,407-\\ddots}}}}\\; .\n\\]\nExpress the value in the form  \n\\[\n\\dfrac{a+b\\sqrt{c}}{d},\n\\qquad a,b,c,d\\in\\Bbb Z .\n\\]",
+      "solution": "1.  Convergence and basic algebraic equation  \n    Let  \n    \\[\n    L \\;=\\; 23\\,725\\,150\\,497\\,407 \\;-\\;\n            \\frac{1}{23\\,725\\,150\\,497\\,407-\\frac{1}{23\\,725\\,150\\,497\\,407-\\ddots}}\n    \\]\n    denote the (positive) limit of the continued fraction.  Since each\n    iterated denominator is larger than \\(23\\,725\\,150\\,497\\,406\\),\n    the approximants form a decreasing, bounded below sequence; hence\n    the limit exists and is positive.  By self-similarity,\n    \\[\n    L \\;=\\; 23\\,725\\,150\\,497\\,407-\\frac{1}{L}\n      \\quad\\Longrightarrow\\quad\n      L^{2}-23\\,725\\,150\\,497\\,407\\,L+1=0. \\tag{1}\n    \\]\n\n2.  A useful square-root lemma  \n    If a positive number \\(x\\) satisfies \\(x^{2}-ax+1=0\\) with\n    \\(a>2\\), then \\(y=\\sqrt{x}\\) satisfies  \n    \\[\n    y^{2}-\\sqrt{a+2}\\,y+1=0. \\tag{2}\n    \\]\n    Proof.  From \\(x+1/x=a\\) and \\(x=y^{2}\\) we get\n    \\[\n        (y+\\frac1y)^2 \\;=\\; y^{2}+2+\\frac1{y^{2}}\n        \\;=\\; x+\\frac1x +2 \\;=\\; a+2 ,\n    \\]\n    so \\(y+\\dfrac1y=\\sqrt{a+2}\\).  Multiplying by \\(y\\) yields (2).\n\n    Identity (2) can be interpreted as the action of the Chebyshev\n    homomorphism \\(f(a):=2\\cosh^{-1}(a/2)\\longmapsto\n    2\\cosh^{-1}(\\sqrt{a+2}/2)\\); repeated square roots correspond to\n    iterating this map.\n\n3.  Six successive square roots  \n    Write \\(a_{0}=23\\,725\\,150\\,497\\,407\\).  \n    Recursively define \\(a_{k+1}=\\sqrt{a_{k}+2}\\,(k\\ge0)\\).\n    After \\(k\\) square-root extractions the quantity \\(L^{2^{-k}}\\)\n    satisfies a quadratic with coefficient \\(a_{k}\\).\n\n    A striking feature of the chosen parameter is that, despite its\n    thirteen digits, every\n    \\(a_{k}\\) up to \\(k=5\\) is an integer:\n\n    * \\(k=1:\\;a_{1}=\\sqrt{23\\,725\\,150\\,497\\,409}=4\\,870\\,847\\)  \n    * \\(k=2:\\;a_{2}=\\sqrt{4\\,870\\,847+2}= \\sqrt{4\\,870\\,849}=2\\,207\\)  \n    * \\(k=3:\\;a_{3}=\\sqrt{2\\,207+2}= \\sqrt{2\\,209}=47\\)  \n    * \\(k=4:\\;a_{4}=\\sqrt{47+2}= \\sqrt{49}=7\\)  \n    * \\(k=5:\\;a_{5}=\\sqrt{7+2}= \\sqrt{9}=3\\)\n\n    One more extraction ceases to be integral:\n\n    * \\(k=6:\\;a_{6}=\\sqrt{3+2}= \\sqrt{5}\\).\n\n    Consequently\n    \\[\n        z:=L^{1/64}\n        \\quad\\text{satisfies}\\quad\n        z^{2}-\\sqrt5\\,z+1=0. \\tag{3}\n    \\]\n\n4.  Solving the final quadratic  \n    Equation (3) has the positive root\n    \\[\n        z=\\frac{\\sqrt{5}+\\sqrt{(\\sqrt5)^{2}-4}}{2}\n          =\\frac{\\,\\sqrt{5}+1\\,}{2}.\n    \\]\n\n    Hence\n    \\[\n      \\boxed{\\displaystyle\n      \\sqrt[64]{\\;23\\,725\\,150\\,497\\,407\n      -\\frac{1}{23\\,725\\,150\\,497\\,407-\\frac1{\\ddots}}}\n      \\;=\\;\\frac{1+\\sqrt{5}}{2}}\n    \\]\n    so \\(a=1,\\;b=1,\\;c=5,\\;d=2\\).",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.575388",
+        "was_fixed": false,
+        "difficulty_analysis": "•  The constant \\(4\\,870\\,847\\) is almost two million times larger than in the original kernel variant and is **not** recognisable from simple inspection; it is the square of 2 207 minus 2, tying the problem to a hidden four-step Pell-type descent.  \n•  The root to be extracted is the 16-th root (vs. an 8-th or 4-th root), forcing four successive applications of the quadratic-reduction lemma; missing any step leaves one with an unwieldy 65-digit discriminant.  \n•  Each step demands the insight that “taking a square root” translates the quadratic \\(x^{2}-ax+1=0\\) into another quadratic whose coefficient is \\(\\sqrt{a+2}\\).  Tracing this chain four times is substantially more laborious than the single or double iteration required in the original versions.  \n•  Although the final answer is compact, uncovering it requires recognising a telescoping sequence of nested radicals within nested continued fractions—two distinct infinite processes interacting across multiple levels.  Simple pattern matching or direct numeric approximation is insufficient; one must deploy a structured, multi-stage algebraic strategy."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

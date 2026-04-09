@@ -1,0 +1,161 @@
+{
+  "index": "2022-A-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $p$ be a prime number greater than 5. Let $f(p)$ denote the number of infinite sequences $a_1, a_2, a_3, \\dots$ such that\n$a_n \\in \\{1, 2, \\dots, p-1\\}$ and $a_n a_{n+2} \\equiv 1 + a_{n+1} \\pmod{p}$ for all $n \\geq 1$. Prove that $f(p)$ is congruent to 0 or 2 $\\pmod{5}$.",
+  "solution": "\\textbf{First solution.}\nWe view the sequence $a_1,a_2,\\ldots$ as lying in $\\mathbb{F}_p^\\times \\subset \\mathbb{F}_p$.  Then the sequence is determined by the values of $a_1$ and $a_2$, via the recurrence $a_{n+2}=(1+a_{n+1})/a_n$.  Using this recurrence, we compute\n\\begin{gather*}\na_3=\\frac{1 + a_2}{a_1}, \\, a_4 = \\frac{1 + a_1 + a_2}{a_1 a_2}, \\\\\na_5=\\frac{1 + a_1}{a_2}, \\, a_6 = a_1, \\, a_7 = a_2 \n\\end{gather*}\nand thus the sequence is periodic with period 5.  The values for $a_1$ and $a_2$ may thus be any values in $\\mathbb{F}_p^\\times$ provided that $a_1\\neq p-1$, $a_2\\neq p-1$, and $a_1+a_2\\neq p-1$.  The number of choices for $a_1,a_2\\in\\{1,\\ldots,p-2\\}$ such that $a_1+a_2\\neq p-1$ is thus $(p-2)^2 - (p-2)= (p-2)(p-3)$.\n\nSince $p$ is not a multiple of 5, $(p-2)(p-3)$ is a product of two consecutive integers $a,a+1$, where $a\\not\\equiv 2 \\pmod{5}$. Now $0\\cdot 1\\equiv 0$, $1\\cdot 2 \\equiv 2$, $3\\cdot 4\\equiv 2$, and $4\\cdot 0 \\equiv 0$ (mod 5).  Thus the number of possible sequences $a_1,a_2,\\ldots$ is 0 or 2 (mod 5), as desired. \n\n\\noindent\n\\textbf{Second solution.}\nSay that a sequence is \\textit{admissible} if it satisfies the given conditions. As in the first solution, any admissible sequence is 5-periodic.\n\nNow consider the collection $S$ of possible $5$-tuples of numbers mod $p$ given by $(a_1,a_2,a_3,a_4,a_5)$ for admissible sequences $\\{a_n\\}$. Each of these $5$-tuples in $S$ comes from a unique admissible sequence, and there is a $5$-periodic action on $S$ given by cyclic permutation: $(a,b,c,d,e) \\rightarrow (b,c,d,e,a)$. This action divides $S$ into finitely many orbits, and each orbit either consists of $5$ distinct tuples (if $a,b,c,d,e$ are not all the same) or $1$ tuple $(a,a,a,a,a)$. It follows that the number of admissible sequences is a multiple of $5$ plus the number of constant admissible sequences.\n\nConstant admissible sequences correspond to nonzero numbers $a \\pmod{p}$ such that $a^2 \\equiv 1+a \\pmod{p}$.\nSince the quadratic $x^2-x-1$ has discriminant 5, for $p > 5$ it has either 2 roots (if the discriminant is a quadratic residue mod $p$) or 0 roots mod $p$.",
+  "vars": [
+    "n",
+    "a",
+    "a_n",
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_4",
+    "a_5",
+    "a_6",
+    "a_7",
+    "b",
+    "c",
+    "d",
+    "x"
+  ],
+  "params": [
+    "p",
+    "f",
+    "F_p",
+    "S"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "a": "elemvalue",
+        "a_n": "seqindex",
+        "a_1": "firstelem",
+        "a_2": "secondelem",
+        "a_3": "thirdelem",
+        "a_4": "fourthelem",
+        "a_5": "fifthelem",
+        "a_6": "sixthelem",
+        "a_7": "seventhelem",
+        "b": "secondvar",
+        "c": "thirdvar",
+        "d": "fourthvar",
+        "x": "unknownvar",
+        "p": "primenumber",
+        "f": "sequencecount",
+        "F_p": "primefield",
+        "S": "settuples"
+      },
+      "question": "Let $primenumber$ be a prime number greater than 5. Let $sequencecount(primenumber)$ denote the number of infinite sequences $firstelem,\\;secondelem,\\;thirdelem,\\,\\dots$ such that\n$elemvalue_{indexvar}\\in\\{1,2,\\dots,primenumber-1\\}$ and $elemvalue_{indexvar}\\,elemvalue_{indexvar+2}\\equiv1+elemvalue_{indexvar+1}\\pmod{primenumber}$ for all $indexvar\\ge1$. Prove that $sequencecount(primenumber)$ is congruent to 0 or 2 $\\pmod{5}$. ",
+      "solution": "\\textbf{First solution.}\nWe view the sequence $firstelem,\\;secondelem,\\ldots$ as lying in $\\mathbb{F}_{primenumber}^{\\times}\\subset\\mathbb{F}_{primenumber}$. Then the sequence is determined by the values of $firstelem$ and $secondelem$, via the recurrence\n\\[\n elemvalue_{indexvar+2}=\\frac{1+elemvalue_{indexvar+1}}{elemvalue_{indexvar}}.\n\\]\nUsing this recurrence, we compute\n\\begin{gather*}\nthirdelem=\\frac{1+secondelem}{firstelem},\\qquad fourthelem=\\frac{1+firstelem+secondelem}{firstelem\\,secondelem},\\\\\nfifthelem=\\frac{1+firstelem}{secondelem},\\qquad sixthelem=firstelem,\\qquad seventhelem=secondelem.\n\\end{gather*}\nThus the sequence is periodic with period $5$. The values for $firstelem$ and $secondelem$ may therefore be any elements of $\\mathbb{F}_{primenumber}^{\\times}$ provided that $firstelem\\neq primenumber-1$, $secondelem\\neq primenumber-1$, and $firstelem+secondelem\\neq primenumber-1$.  The number of choices for $firstelem,\\,secondelem\\in\\{1,\\ldots,primenumber-2\\}$ satisfying $firstelem+secondelem\\neq primenumber-1$ is\n\\[\n(primenumber-2)^2-(primenumber-2)=(primenumber-2)(primenumber-3).\n\\]\nBecause $primenumber$ is not a multiple of $5$, the product $(primenumber-2)(primenumber-3)$ can be written as two consecutive integers $elemvalue,\\,elemvalue+1$ with $elemvalue\\not\\equiv2\\pmod{5}$.  Now\n\\[0\\cdot1\\equiv0,\\;1\\cdot2\\equiv2,\\;3\\cdot4\\equiv2,\\;4\\cdot0\\equiv0\\pmod{5},\\]\nso the number of admissible sequences $firstelem,\\,secondelem,\\ldots$ is $0$ or $2\\pmod{5}$, as desired.\n\n\\textbf{Second solution.}\nCall a sequence \\emph{admissible} if it satisfies the given conditions. As above, every admissible sequence is $5$-periodic.\n\nConsider the collection $settuples$ of all $5$-tuples of residues mod $primenumber$ that occur as $(firstelem,\\,secondelem,\\,thirdelem,\\,fourthelem,\\,fifthelem)$ for some admissible sequence $\\{\\,elemvalue_{indexvar}\\,\\}$.  Each element of $settuples$ comes from a unique admissible sequence, and there is a natural $5$-periodic action on $settuples$ given by cyclic permutation:\n\\[\n(elemvalue,secondvar,thirdvar,fourthvar,e)\\longrightarrow(secondvar,thirdvar,fourthvar,e,elemvalue).\n\\]\nThis action partitions $settuples$ into finitely many orbits.  Each orbit either contains $5$ distinct tuples (when not all of $elemvalue,secondvar,thirdvar,fourthvar,e$ coincide) or is a singleton of the form $(elemvalue,elemvalue,elemvalue,elemvalue,elemvalue)$. Hence the total number of admissible sequences equals a multiple of $5$ plus the number of constant admissible sequences.\n\nA constant admissible sequence corresponds to a non-zero residue $elemvalue\\pmod{primenumber}$ satisfying\n\\[elemvalue^{2}\\equiv1+elemvalue\\pmod{primenumber}.\n\\]\nThe quadratic $unknownvar^{2}-unknownvar-1$ has discriminant $5$, so for $primenumber>5$ it has either $2$ roots (if $5$ is a quadratic residue mod $primenumber$) or $0$ roots.  Consequently the total number of admissible sequences is congruent to $0$ or $2\\pmod{5}$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "waterfall",
+        "a": "rainbow",
+        "a_n": "sequenceval",
+        "a_1": "sequenceone",
+        "a_2": "sequencetwo",
+        "a_3": "sequencethree",
+        "a_4": "sequencefour",
+        "a_5": "sequencefive",
+        "a_6": "sequencesix",
+        "a_7": "sequenceseven",
+        "b": "thunderbolt",
+        "c": "avalanche",
+        "d": "hurricane",
+        "x": "nemesis",
+        "p": "sunflower",
+        "f": "crescent",
+        "F_p": "cosmosfield",
+        "S": "starlake"
+      },
+      "question": "Let $sunflower$ be a prime number greater than 5. Let $crescent(sunflower)$ denote the number of infinite sequences $sequenceone, sequencetwo, sequencethree, \\dots$ such that\n$sequenceval \\in \\{1, 2, \\dots, sunflower-1\\}$ and $sequenceval\\, rainbow_{waterfall+2} \\equiv 1 + rainbow_{waterfall+1} \\pmod{sunflower}$ for all $waterfall \\ge 1$. Prove that $crescent(sunflower)$ is congruent to 0 or 2 $\\pmod{5}$.",
+      "solution": "\\textbf{First solution.}\nWe view the sequence $sequenceone,sequencetwo,\\ldots$ as lying in $\\mathbb{cosmosfield}^\\times \\subset \\mathbb{cosmosfield}$.  Then the sequence is determined by the values of $sequenceone$ and $sequencetwo$, via the recurrence $rainbow_{waterfall+2}=(1+rainbow_{waterfall+1})/sequenceval$.  Using this recurrence, we compute\n\\begin{gather*}\nsequencethree=\\frac{1 + sequencetwo}{sequenceone}, \\; sequencefour = \\frac{1 + sequenceone + sequencetwo}{sequenceone\\,sequencetwo}, \\\\\nsequencefive=\\frac{1 + sequenceone}{sequencetwo}, \\; sequencesix = sequenceone, \\; sequenceseven = sequencetwo\n\\end{gather*}\nand thus the sequence is periodic with period 5.  The values for $sequenceone$ and $sequencetwo$ may thus be any values in $\\mathbb{cosmosfield}^\\times$ provided that $sequenceone\\neq sunflower-1$, $sequencetwo\\neq sunflower-1$, and $sequenceone+sequencetwo\\neq sunflower-1$.  The number of choices for $sequenceone,\\,\\sequencetwo\\in\\{1,\\ldots,sunflower-2\\}$ such that $sequenceone+sequencetwo\\neq sunflower-1$ is thus $(sunflower-2)^2 - (sunflower-2)= (sunflower-2)(sunflower-3)$.\n\nSince $sunflower$ is not a multiple of 5, $(sunflower-2)(sunflower-3)$ is a product of two consecutive integers $rainbow,rainbow+1$, where $rainbow\\not\\equiv 2 \\pmod{5}$. Now $0\\cdot 1\\equiv 0$, $1\\cdot 2 \\equiv 2$, $3\\cdot 4\\equiv 2$, and $4\\cdot 0 \\equiv 0$ (mod 5).  Thus the number of possible sequences $sequenceone,sequencetwo,\\ldots$ is 0 or 2 (mod 5), as desired. \n\n\\noindent\n\\textbf{Second solution.}\nSay that a sequence is \\textit{admissible} if it satisfies the given conditions. As in the first solution, any admissible sequence is 5-periodic.\n\nNow consider the collection $starlake$ of possible $5$-tuples of numbers mod $sunflower$ given by $(sequenceone,sequencetwo,sequencethree,sequencefour,sequencefive)$ for admissible sequences $\\{rainbow_{waterfall}\\}$. Each of these $5$-tuples in $starlake$ comes from a unique admissible sequence, and there is a $5$-periodic action on $starlake$ given by cyclic permutation: $(rainbow,thunderbolt,avalanche,hurricane,e) \\rightarrow (thunderbolt,avalanche,hurricane,e,rainbow)$. This action divides $starlake$ into finitely many orbits, and each orbit either consists of $5$ distinct tuples (if $rainbow,thunderbolt,avalanche,hurricane,e$ are not all the same) or $1$ tuple $(rainbow,rainbow,rainbow,rainbow,rainbow)$. It follows that the number of admissible sequences is a multiple of $5$ plus the number of constant admissible sequences.\n\nConstant admissible sequences correspond to nonzero numbers $rainbow \\pmod{sunflower}$ such that $rainbow^2 \\equiv 1+rainbow \\pmod{sunflower}$.  Since the quadratic $nemesis^2-nemesis-1$ has discriminant 5, for $sunflower > 5$ it has either 2 roots (if the discriminant is a quadratic residue mod $sunflower$) or 0 roots mod $sunflower$.  "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "endpoint",
+        "a": "emptiness",
+        "a_n": "nullvalue",
+        "a_1": "nullunit",
+        "a_2": "nullpair",
+        "a_3": "nulltrio",
+        "a_4": "nullquad",
+        "a_5": "nullpent",
+        "a_6": "nullhexa",
+        "a_7": "nullhept",
+        "b": "contraryb",
+        "c": "contraryc",
+        "d": "contraryd",
+        "x": "constancy",
+        "p": "composite",
+        "f": "dysfunction",
+        "F_p": "infinitefield",
+        "S": "emptinessset"
+      },
+      "question": "Let $composite$ be a prime number greater than 5. Let $dysfunction(composite)$ denote the number of infinite sequences $nullunit, nullpair, nulltrio, \\dots$ such that\n$nullvalue \\in \\{1, 2, \\dots, composite-1\\}$ and $nullvalue\\, emptiness_{endpoint+2} \\equiv 1 + emptiness_{endpoint+1} \\pmod{composite}$ for all $endpoint \\geq 1$. Prove that $dysfunction(composite)$ is congruent to 0 or 2 $\\pmod{5}$.",
+      "solution": "\\textbf{First solution.}\nWe view the sequence $nullunit,nullpair,\\ldots$ as lying in $\\mathbb{infinitefield}^\\times \\subset \\mathbb{infinitefield}$.  Then the sequence is determined by the values of $nullunit$ and $nullpair$, via the recurrence $emptiness_{endpoint+2}=(1+emptiness_{endpoint+1})/nullvalue$.  Using this recurrence, we compute\n\\begin{gather*}\nnulltrio=\\frac{1 + nullpair}{nullunit}, \\, nullquad = \\frac{1 + nullunit + nullpair}{nullunit\\,nullpair}, \\\\\nnullpent=\\frac{1 + nullunit}{nullpair}, \\, nullhexa = nullunit, \\, nullhept = nullpair \n\\end{gather*}\nand thus the sequence is periodic with period 5.  The values for $nullunit$ and $nullpair$ may thus be any values in $\\mathbb{infinitefield}^\\times$ provided that $nullunit\\neq composite-1$, $nullpair\\neq composite-1$, and $nullunit+nullpair\\neq composite-1$.  The number of choices for $nullunit,nullpair\\in\\{1,\\ldots,composite-2\\}$ such that $nullunit+nullpair\\neq composite-1$ is thus $(composite-2)^2 - (composite-2)= (composite-2)(composite-3)$.\n\nSince $composite$ is not a multiple of 5, $(composite-2)(composite-3)$ is a product of two consecutive integers emptiness,emptiness+1, where $emptiness\\not\\equiv 2 \\pmod{5}$. Now $0\\cdot 1\\equiv 0$, $1\\cdot 2 \\equiv 2$, $3\\cdot 4\\equiv 2$, and $4\\cdot 0 \\equiv 0$ (mod 5).  Thus the number of possible sequences $nullunit,nullpair,\\ldots$ is 0 or 2 (mod 5), as desired. \n\n\\noindent\n\\textbf{Second solution.}\nSay that a sequence is \\textit{admissible} if it satisfies the given conditions. As in the first solution, any admissible sequence is 5-periodic.\n\nNow consider the collection $emptinessset$ of possible $5$-tuples of numbers mod $composite$ given by $(nullunit,nullpair,nulltrio,nullquad,nullpent)$ for admissible sequences $\\{nullvalue\\}$. Each of these $5$-tuples in $emptinessset$ comes from a unique admissible sequence, and there is a $5$-periodic action on $emptinessset$ given by cyclic permutation: $(emptiness,contraryb,contraryc,contraryd,e) \\rightarrow (contraryb,contraryc,contraryd,e,emptiness)$. This action divides $emptinessset$ into finitely many orbits, and each orbit either consists of $5$ distinct tuples (if $emptiness,contraryb,contraryc,contraryd,e$ are not all the same) or $1$ tuple $(emptiness,emptiness,emptiness,emptiness,emptiness)$. It follows that the number of admissible sequences is a multiple of $5$ plus the number of constant admissible sequences.\n\nConstant admissible sequences correspond to nonzero numbers $emptiness \\pmod{composite}$ such that $emptiness^2 \\equiv 1+emptiness \\pmod{composite}$.\nSince the quadratic $constancy^2-constancy-1$ has discriminant 5, for $composite > 5$ it has either 2 roots (if the discriminant is a quadratic residue mod $composite$) or 0 roots mod $composite$.  "
+    },
+    "garbled_string": {
+      "map": {
+        "n": "zfhlqtby",
+        "a": "ymncrvds",
+        "a_n": "wkeflsqr",
+        "a_1": "kqjslmet",
+        "a_2": "wfnvpgar",
+        "a_3": "drveqpls",
+        "a_4": "zmxofyle",
+        "a_5": "qwytnurb",
+        "a_6": "mlkrszvo",
+        "a_7": "bsifyqoa",
+        "b": "tazvuqpl",
+        "c": "xdfobnjw",
+        "d": "rcewlxgy",
+        "x": "npxkqwga",
+        "p": "gsvplktr",
+        "f": "lodjmqse",
+        "F_p": "chltwepq",
+        "S": "cxbirjno"
+      },
+      "question": "Let $gsvplktr$ be a prime number greater than 5. Let $lodjmqse(gsvplktr)$ denote the number of infinite sequences $kqjslmet, wfnvpgar, drveqpls, \\dots$ such that\n$wkeflsqr \\in \\{1, 2, \\dots, gsvplktr-1\\}$ and $ymncrvds_{zfhlqtby}\\,ymncrvds_{zfhlqtby+2} \\equiv 1 + ymncrvds_{zfhlqtby+1} \\pmod{gsvplktr}$ for all $zfhlqtby \\geq 1$. Prove that $lodjmqse(gsvplktr)$ is congruent to 0 or 2 $\\pmod{5}$.",
+      "solution": "\\textbf{First solution.}\nWe view the sequence $kqjslmet,wfnvpgar,\\ldots$ as lying in $\\mathbb{F}_{gsvplktr}^\\times \\subset \\mathbb{F}_{gsvplktr}$.  Then the sequence is determined by the values of $kqjslmet$ and $wfnvpgar$, via the recurrence $ymncrvds_{zfhlqtby+2}=(1+ymncrvds_{zfhlqtby+1})/ymncrvds_{zfhlqtby}$.  Using this recurrence, we compute\n\\begin{gather*}\ndrveqpls=\\frac{1 + wfnvpgar}{kqjslmet}, \\; zmxofyle = \\frac{1 + kqjslmet + wfnvpgar}{kqjslmet\\, wfnvpgar}, \\\\\nqwytnurb=\\frac{1 + kqjslmet}{wfnvpgar}, \\; mlkrszvo = kqjslmet, \\; bsifyqoa = wfnvpgar\n\\end{gather*}\nand thus the sequence is periodic with period 5.  The values for $kqjslmet$ and $wfnvpgar$ may thus be any values in $\\mathbb{F}_{gsvplktr}^\\times$ provided that $kqjslmet\\neq gsvplktr-1$, $wfnvpgar\\neq gsvplktr-1$, and $kqjslmet+wfnvpgar\\neq gsvplktr-1$.  The number of choices for $kqjslmet,wfnvpgar\\in\\{1,\\ldots,gsvplktr-2\\}$ such that $kqjslmet+wfnvpgar\\neq gsvplktr-1$ is thus $(gsvplktr-2)^2 - (gsvplktr-2)= (gsvplktr-2)(gsvplktr-3)$.\n\nSince $gsvplktr$ is not a multiple of 5, $(gsvplktr-2)(gsvplktr-3)$ is a product of two consecutive integers $ymncrvds,ymncrvds+1$, where $ymncrvds\\not\\equiv 2 \\pmod{5}$. Now $0\\cdot 1\\equiv 0$, $1\\cdot 2 \\equiv 2$, $3\\cdot 4\\equiv 2$, and $4\\cdot 0 \\equiv 0$ (mod 5).  Thus the number of possible sequences $kqjslmet,wfnvpgar,\\ldots$ is 0 or 2 (mod 5), as desired. \n\n\\noindent\n\\textbf{Second solution.}\nSay that a sequence is \\textit{admissible} if it satisfies the given conditions. As in the first solution, any admissible sequence is 5-periodic.\n\nNow consider the collection $cxbirjno$ of possible $5$-tuples of numbers mod $gsvplktr$ given by $(kqjslmet,wfnvpgar,drveqpls,zmxofyle,qwytnurb)$ for admissible sequences $\\{wkeflsqr\\}$. Each of these $5$-tuples in $cxbirjno$ comes from a unique admissible sequence, and there is a $5$-periodic action on $cxbirjno$ given by cyclic permutation: $(ymncrvds,tazvuqpl,xdfobnjw,rcewlxgy,e) \\rightarrow (tazvuqpl,xdfobnjw,rcewlxgy,e,ymncrvds)$. This action divides $cxbirjno$ into finitely many orbits, and each orbit either consists of $5$ distinct tuples (if $ymncrvds,tazvuqpl,xdfobnjw,rcewlxgy,e$ are not all the same) or $1$ tuple $(ymncrvds,ymncrvds,ymncrvds,ymncrvds,ymncrvds)$. It follows that the number of admissible sequences is a multiple of $5$ plus the number of constant admissible sequences.\n\nConstant admissible sequences correspond to nonzero numbers $ymncrvds \\pmod{gsvplktr}$ such that $ymncrvds^2 \\equiv 1+ymncrvds \\pmod{gsvplktr}$.\nSince the quadratic $npxkqwga^2-npxkqwga-1$ has discriminant 5, for $gsvplktr > 5$ it has either 2 roots (if the discriminant is a quadratic residue mod $gsvplktr$) or 0 roots mod $gsvplktr$.}",
+      "confidence": "0.08"
+    },
+    "kernel_variant": {
+      "question": "Let q be a prime number different from 5.  A sequence \\((b_1,b_2,b_3,\\dots)\\) with terms in the multiplicative group \\(\\mathbb F_q^{\\times}\\) is called admissible if it satisfies\n\\[\n   b_{n}\\,b_{n+2}=1+b_{n+1}\\qquad\\text{for every }n\\ge 1.\n\\]\nLet \\(N(q)\\) be the number of admissible sequences.  Prove that\n\\[\n   N(q)\\equiv 0\\text{ or }2\\pmod 5.\n\\]",
+      "solution": "Corrected solution:\n\nStep 1. (Period 5)  In F_q^\\times  define the map\n  \\Phi :(x,y) \\mapsto  ( y, (1+y)/x ).\nBy the recurrence b_{n+2}=(1+b_{n+1})/b_n we have (b_{n+1},b_{n+2}) = \\Phi (b_n,b_{n+1}).  A direct computation shows \\Phi ^5(x,y)=(x,y), so every admissible sequence in F_q^\\times  is periodic of period dividing 5, and in particular is determined by (b_1,b_2).\n\nStep 2. (Admissible initial pairs)  Given (b_1,b_2)\\in (F_q^\\times )^2 we set\n  b_3=(1+b_2)/b_1,\n  b_4=(1+b_1+b_2)/(b_1b_2),\n  b_5=(1+b_1)/b_2,\n  b_6=b_1.\nFor these to lie in F_q^\\times  we need exactly\n  b_1 \\neq  -1,\n  b_2 \\neq  -1,\n  1+b_1+b_2 \\neq  0  \\Leftrightarrow  b_1+b_2 \\neq  -1.\nThus the admissible infinite sequences correspond bijectively to those (b_1,b_2)\\in (F_q^\\times )^2 satisfying these three inequations.\n\nStep 3. (Counting by inclusion-exclusion)  There are (q-1)^2 total pairs.  Let A={b_1=-1}, B={b_2=-1}, C={b_1+b_2=-1}.  Then\n  |A|=q-1,\n  |B|=q-1,\n  |C|=q-2  (since b_1\\in F_q^\\times \\setminus {-1} determines b_2=-1-b_1\\neq 0),\n  |A\\cap B|=1 (the single pair (-1,-1)),\n  A\\cap C = B\\cap C = \\emptyset .\nBy inclusion-exclusion, the total number of ``bad'' pairs is\n  |A\\cup B\\cup C| = (q-1)+(q-1)+(q-2) -1 = 3q-5.\nTherefore\n  N(q) = (q-1)^2 - (3q-5) = q^2 -5q +6 = (q-2)(q-3).\n\nStep 4. (Conclusion mod 5)  Since q\\neq 0 mod 5, write q-2\\equiv a+1, q-3\\equiv a.  Thus\n  N(q) = (q-2)(q-3) \\equiv  a(a+1) mod 5,\nwhere a\\equiv q-3 mod 5 and a\\neq 2 mod 5.  Checking the four allowed residues for a shows a(a+1)\\equiv 0 or 2 mod 5.  Hence N(q)\\equiv 0 or 2 mod 5, as required.",
+      "_meta": {
+        "core_steps": [
+          "Show that the map (a_n , a_{n+1}) ↦ (a_{n+1}, (1+a_{n+1})/a_n) has order 5, so every admissible sequence is 5-periodic.",
+          "An admissible 5-periodic sequence is determined by (a_1,a_2)∈F_p^× with the exclusions a_1≠−1, a_2≠−1, a_1+a_2≠−1.",
+          "Counting these pairs gives f(p)=(p−2)^2−(p−2)=(p−2)(p−3).",
+          "Rewrite (p−2)(p−3)=a(a+1) with a≡p−3 (mod 5); since a≠2 (mod 5), a(a+1)≡0 or 2 (mod 5).",
+          "Hence f(p)≡0 or 2 (mod 5)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The only property of p used is p≠5 (to avoid division by 0 and to work modulo 5). The stated bound 'greater than 5' could be replaced by 'prime different from 5'.",
+            "original": "p > 5"
+          },
+          "slot2": {
+            "description": "The set for each term may be written as F_p^× instead of the concrete list {1,2,…,p−1}; this wording change does not affect the argument.",
+            "original": "{1, 2, …, p−1}"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

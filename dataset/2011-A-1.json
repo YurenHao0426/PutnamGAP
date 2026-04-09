@@ -1,0 +1,169 @@
+{
+  "index": "2011-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "GEO",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "of points with integer coordinates $P_0 = (0,0), P_1, \\dots, P_n$ such\nthat $n \\geq 2$ and:\n\\begin{itemize}\n\\item the directed line segments $P_0 P_1, P_1 P_2, \\dots, P_{n-1} P_n$\nare in the successive coordinate directions east (for $P_0 P_1$), north,\nwest, south, east, etc.;\n\\item the lengths of these line segments are positive and strictly\nincreasing.\n\\end{itemize} [Picture omitted.]  How many of the points $(x,y)$ with\ninteger coordinates $0\\leq x\\leq 2011, 0\\leq y\\leq 2011$ \\emph{cannot}\nbe the last point, $P_n$ of any growing spiral?",
+  "solution": "y\\leq 2011$ that cannot be the last point of a growing spiral are as follows:\n$(0,y)$ for $0\\leq y\\leq 2011$; $(x,0)$ and $(x,1)$ for $1\\leq x\\leq 2011$;\n$(x,2)$ for $2\\leq x\\leq 2011$; and $(x,3)$ for $3\\leq x\\leq 2011$. This\ngives a total of\n\\[\n2012 + 2011 + 2011 + 2010 + 2009 = 10053\n\\]\nexcluded points.\n\nThe complement of this set is the set of $(x,y)$ with $0<x<y$, along with\n$(x,y)$ with $x \\geq y \\geq 4$. Clearly the former set is achievable as\n$P_2$ in a growing spiral, while a point $(x,y)$ in the latter set is $P_6$\nin a growing spiral with successive lengths $1$, $2$, $3$, $x+1$, $x+2$,\nand $x+y-1$.\n\nWe now need to rule out the other cases. Write $x_1<y_1<x_2<y_2<\\ldots$\nfor the lengths of the line segments in the spiral in order, so that $P_1 =\n(x_1,0)$, $P_2 = (x_1,y_1)$, $P_3 = (x_1-x_2,y_1)$, and so forth. Any point\nbeyond $P_0$ has $x$-coordinate of the form $x_1-x_2+\\cdots+(-1)^{n-1}\nx_n$ for $n\\geq 1$; if $n$ is odd, we can write this as $x_1 + (-x_2+x_3)\n+ \\cdots + (-x_{n-1}+x_n) > 0$, while if $n$ is even, we can write this as\n$(x_1-x_2) + \\cdots + (x_{n-1}-x_n) < 0$. Thus no point beyond $P_0$ can have\n$x$-coordinate $0$, and we have ruled out $(0,y)$ for $0\\leq y\\leq 2011$.\n\nNext we claim that any point beyond $P_3$ must have $y$-coordinate either\nnegative or $\\geq 4$. Indeed, each such point has $y$-coordinate of the\nform $y_1-y_2+\\cdots+(-1)^{n-1} y_n$ for $n \\geq 2$, which we can write\nas $(y_1-y_2) + \\cdots + (y_{n-1}-y_n) < 0$ if $n$ is even, and\n\\[\ny_1 +(-y_2+y_3) + \\cdots + (-y_{n-1}+y_n) \\geq y_1 + 2 \\geq 4\n\\]\nif $n \\geq 3$\nis odd. Thus to rule out the rest of the forbidden points, it suffices to\ncheck that they cannot be $P_2$ or $P_3$ for any growing spiral. But none\nof them can be $P_3 = (x_1-x_2,y_1)$ since $x_1-x_2<0$, and none of them\ncan be $P_2 = (x_1,y_1)$ since they all have $y$-coordinate at most equal\nto their $x$-coordinate.",
+  "vars": [
+    "x",
+    "y",
+    "n",
+    "P_0",
+    "P_1",
+    "P_2",
+    "P_3",
+    "P_6",
+    "P_n",
+    "P_n-1",
+    "x_1",
+    "y_1",
+    "x_2",
+    "y_2",
+    "x_n",
+    "y_n",
+    "x_n-1",
+    "y_n-1"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xcoord",
+        "y": "ycoord",
+        "n": "segcount",
+        "P_0": "startpt",
+        "P_1": "pointone",
+        "P_2": "pointtwo",
+        "P_3": "pointthr",
+        "P_6": "pointsix",
+        "P_n": "lastpt",
+        "P_n-1": "prevlast",
+        "P_{n-1}": "prevlast",
+        "x_1": "firstlenx",
+        "y_1": "firstleny",
+        "x_2": "secondlx",
+        "y_2": "secondly",
+        "x_n": "lastlenx",
+        "y_n": "lastleny",
+        "x_n-1": "prevlenx",
+        "x_{n-1}": "prevlenx",
+        "y_n-1": "prevleny",
+        "y_{n-1}": "prevleny"
+      },
+      "question": "of points with integer coordinates $startpt = (0,0), pointone, \\dots, lastpt$ such\nthat $segcount \\geq 2$ and:\n\\begin{itemize}\n\\item the directed line segments $startpt\\,pointone,\\ pointone\\,pointtwo, \\dots, prevlast\\,lastpt$\nare in the successive coordinate directions east (for $startpt\\,pointone$), north,\nwest, south, east, etc.;\n\\item the lengths of these line segments are positive and strictly\nincreasing.\n\\end{itemize} [Picture omitted.]  How many of the points $(xcoord,ycoord)$ with\ninteger coordinates $0\\leq xcoord\\leq 2011, 0\\leq ycoord\\leq 2011$ \\emph{cannot}\nbe the last point, $lastpt$ of any growing spiral?",
+      "solution": "ycoord\\leq 2011$ that cannot be the last point of a growing spiral are as follows:\n$(0,ycoord)$ for $0\\leq ycoord\\leq 2011$; $(xcoord,0)$ and $(xcoord,1)$ for $1\\leq xcoord\\leq 2011$;\n$(xcoord,2)$ for $2\\leq xcoord\\leq 2011$; and $(xcoord,3)$ for $3\\leq xcoord\\leq 2011$. This\ngives a total of\n\\[\n2012 + 2011 + 2011 + 2010 + 2009 = 10053\n\\]\nexcluded points.\n\nThe complement of this set is the set of $(xcoord,ycoord)$ with $0< xcoord < ycoord$, along with\n$(xcoord,ycoord)$ with $xcoord \\geq ycoord \\geq 4$. Clearly the former set is achievable as\n$pointtwo$ in a growing spiral, while a point $(xcoord,ycoord)$ in the latter set is $pointsix$\nin a growing spiral with successive lengths $1$, $2$, $3$, $xcoord+1$, $xcoord+2$,\nand $xcoord+ycoord-1$.\n\nWe now need to rule out the other cases. Write $firstlenx<firstleny<secondlx<secondly<\\ldots$\nfor the lengths of the line segments in the spiral in order, so that $pointone =\n(firstlenx,0)$, $pointtwo = (firstlenx,firstleny)$, $pointthr = (firstlenx-secondlx,firstleny)$, and so forth. Any point\nbeyond $startpt$ has $x$-coordinate of the form $firstlenx-secondlx+\\cdots+(-1)^{segcount-1}\nlastlenx$ for $segcount\\geq 1$; if $segcount$ is odd, we can write this as $firstlenx + (-secondlx+x_3)\n+ \\cdots + (-prevlenx+lastlenx) > 0$, while if $segcount$ is even, we can write this as\n$(firstlenx-secondlx) + \\cdots + (prevlenx-lastlenx) < 0$. Thus no point beyond $startpt$ can have\n$x$-coordinate $0$, and we have ruled out $(0,ycoord)$ for $0\\leq ycoord\\leq 2011$.\n\nNext we claim that any point beyond $pointthr$ must have $y$-coordinate either\nnegative or $\\geq 4$. Indeed, each such point has $y$-coordinate of the\nform $firstleny-secondly+\\cdots+(-1)^{segcount-1} lastleny$ for $segcount \\geq 2$, which we can write\nas $(firstleny-secondly) + \\cdots + (prevleny-lastleny) < 0$ if $segcount$ is even, and\n\\[\nfirstleny +(-secondly+y_3) + \\cdots + (-prevleny+lastleny) \\geq firstleny + 2 \\geq 4\n\\]\nif $segcount \\geq 3$\nis odd. Thus to rule out the rest of the forbidden points, it suffices to\ncheck that they cannot be $pointtwo$ or $pointthr$ for any growing spiral. But none\nof them can be $pointthr = (firstlenx-secondlx,firstleny)$ since $firstlenx-secondlx<0$, and none of them\ncan be $pointtwo = (firstlenx,firstleny)$ since they all have $y$-coordinate at most equal\nto their $x$-coordinate."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "y": "pendulum",
+        "n": "squirrel",
+        "P_0": "sandstone",
+        "P_1": "blueprint",
+        "P_2": "labyrinth",
+        "P_3": "nachosmile",
+        "P_6": "grandpiano",
+        "P_n": "bricklayer",
+        "P_n-1": "buttercup",
+        "x_1": "cucumber",
+        "y_1": "windchime",
+        "x_2": "toasteroven",
+        "y_2": "gallivant",
+        "x_n": "honeycomb",
+        "y_n": "floodlight",
+        "x_n-1": "raincloud",
+        "y_n-1": "dandelion"
+      },
+      "question": "of points with integer coordinates $sandstone = (0,0), blueprint, \\dots, bricklayer$ such\nthat $squirrel \\geq 2$ and:\n\\begin{itemize}\n\\item the directed line segments $sandstone blueprint, blueprint labyrinth, \\dots, buttercup bricklayer$\nare in the successive coordinate directions east (for $sandstone blueprint$), north,\nwest, south, east, etc.;\n\\item the lengths of these line segments are positive and strictly\nincreasing.\n\\end{itemize} [Picture omitted.]  How many of the points $(marigold,pendulum)$ with\ninteger coordinates $0\\leq marigold\\leq 2011, 0\\leq pendulum\\leq 2011$ \\emph{cannot}\nbe the last point, $bricklayer$ of any growing spiral?",
+      "solution": "pendulum\\leq 2011$ that cannot be the last point of a growing spiral are as follows:\n$(0,pendulum)$ for $0\\leq pendulum\\leq 2011$; $(marigold,0)$ and $(marigold,1)$ for $1\\leq marigold\\leq 2011$;\n$(marigold,2)$ for $2\\leq marigold\\leq 2011$; and $(marigold,3)$ for $3\\leq marigold\\leq 2011$. This\ngives a total of\n\\[\n2012 + 2011 + 2011 + 2010 + 2009 = 10053\n\\]\nexcluded points.\n\nThe complement of this set is the set of $(marigold,pendulum)$ with $0<marigold<pendulum$, along with\n$(marigold,pendulum)$ with $marigold \\geq pendulum \\geq 4$. Clearly the former set is achievable as\nlabyrinth in a growing spiral, while a point $(marigold,pendulum)$ in the latter set is grandpiano\nin a growing spiral with successive lengths $1$, $2$, $3$, $marigold+1$, $marigold+2$,\nand $marigold+pendulum-1$.\n\nWe now need to rule out the other cases. Write $cucumber<windchime<toasteroven<gallivant<\\ldots$\nfor the lengths of the line segments in the spiral in order, so that blueprint =\n$(cucumber,0)$, labyrinth = $(cucumber,windchime)$, nachosmile = $(cucumber-toasteroven,windchime)$, and so forth. Any point\nbeyond sandstone has $marigold$-coordinate of the form $cucumber-toasteroven+\\cdots+(-1)^{squirrel-1}\nhoneycomb$ for $squirrel\\geq 1$; if $squirrel$ is odd, we can write this as $cucumber + (-toasteroven+x_3)\n+ \\cdots + (-raincloud+honeycomb) > 0$, while if $squirrel$ is even, we can write this as\n$(cucumber-toasteroven) + \\cdots + (raincloud-honeycomb) < 0$. Thus no point beyond sandstone can have\n$marigold$-coordinate $0$, and we have ruled out $(0,pendulum)$ for $0\\leq pendulum\\leq 2011$.\n\nNext we claim that any point beyond nachosmile must have pendulum-coordinate either\nnegative or $\\geq 4$. Indeed, each such point has pendulum-coordinate of the\nform $windchime-gallivant+\\cdots+(-1)^{squirrel-1} floodlight$ for $squirrel \\geq 2$, which we can write\nas $(windchime-gallivant) + \\cdots + (dandelion-floodlight) < 0$ if $squirrel$ is even, and\n\\[\nwindchime +(-gallivant+y_3) + \\cdots + (-dandelion+floodlight) \\geq windchime + 2 \\geq 4\n\\]\nif $squirrel \\geq 3$\nis odd. Thus to rule out the rest of the forbidden points, it suffices to\ncheck that they cannot be labyrinth or nachosmile for any growing spiral. But none\nof them can be nachosmile = $(cucumber-toasteroven,windchime)$ since $cucumber-toasteroven<0$, and none of them\ncan be labyrinth = $(cucumber,windchime)$ since they all have pendulum-coordinate at most equal\nto their marigold-coordinate."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "n": "terminalcount",
+        "P_0": "finalpoint",
+        "P_1": "backpoint",
+        "P_2": "retreatpoint",
+        "P_3": "reversepoint",
+        "P_6": "contradictorypoint",
+        "P_n": "unknownpoint",
+        "P_{n-1}": "followingpoint",
+        "x_1": "verticalone",
+        "y_1": "horizontalone",
+        "x_2": "verticaltwo",
+        "y_2": "horizontaltwo",
+        "x_n": "verticalfinal",
+        "y_n": "horizontalfinal",
+        "x_{n-1}": "verticalnext",
+        "y_{n-1}": "horizontalnext"
+      },
+      "question": "of points with integer coordinates $finalpoint = (0,0), backpoint, \\dots, unknownpoint$ such\nthat $terminalcount \\geq 2$ and:\n\\begin{itemize}\n\\item the directed line segments $finalpoint backpoint, backpoint retreatpoint, \\dots, followingpoint unknownpoint$\nare in the successive coordinate directions east (for $finalpoint backpoint$), north,\nwest, south, east, etc.;\n\\item the lengths of these line segments are positive and strictly\nincreasing.\n\\end{itemize} [Picture omitted.]  How many of the points $(verticalaxis,horizontalaxis)$ with\ninteger coordinates $0\\leq verticalaxis\\leq 2011, 0\\leq horizontalaxis\\leq 2011$ \\emph{cannot}\nbe the last point, $unknownpoint$ of any growing spiral?",
+      "solution": "horizontalaxis\\leq 2011$ that cannot be the last point of a growing spiral are as follows:\n$(0,horizontalaxis)$ for $0\\leq horizontalaxis\\leq 2011$; $(verticalaxis,0)$ and $(verticalaxis,1)$ for $1\\leq verticalaxis\\leq 2011$;\n$(verticalaxis,2)$ for $2\\leq verticalaxis\\leq 2011$; and $(verticalaxis,3)$ for $3\\leq verticalaxis\\leq 2011$. This\ngives a total of\n\\[\n2012 + 2011 + 2011 + 2010 + 2009 = 10053\n\\]\nexcluded points.\n\nThe complement of this set is the set of $(verticalaxis,horizontalaxis)$ with $0<verticalaxis<horizontalaxis$, along with\n$(verticalaxis,horizontalaxis)$ with $verticalaxis \\geq horizontalaxis \\geq 4$. Clearly the former set is achievable as\nretreatpoint in a growing spiral, while a point $(verticalaxis,horizontalaxis)$ in the latter set is contradictorypoint\nin a growing spiral with successive lengths $1$, $2$, $3$, $verticalaxis+1$, $verticalaxis+2$,\nand $verticalaxis+horizontalaxis-1$.\n\nWe now need to rule out the other cases. Write $verticalone<horizontalone<verticaltwo<horizontaltwo<\\ldots$\nfor the lengths of the line segments in the spiral in order, so that backpoint =\n$(verticalone,0)$, retreatpoint = $(verticalone,horizontalone)$, reversepoint = $(verticalone-verticaltwo,horizontalone)$, and so forth. Any point\nbeyond finalpoint has $verticalaxis$-coordinate of the form $verticalone-verticaltwo+\\cdots+(-1)^{terminalcount-1}\nverticalfinal$ for $terminalcount\\geq 1$; if $terminalcount$ is odd, we can write this as $verticalone + (-verticaltwo+x_3)\n+ \\cdots + (-verticalnext+verticalfinal) > 0$, while if $terminalcount$ is even, we can write this as\n$(verticalone-verticaltwo) + \\cdots + (verticalnext-verticalfinal) < 0$. Thus no point beyond finalpoint can have\n$verticalaxis$-coordinate $0$, and we have ruled out $(0,horizontalaxis)$ for $0\\leq horizontalaxis\\leq 2011$.\n\nNext we claim that any point beyond reversepoint must have $horizontalaxis$-coordinate either\nnegative or $\\geq 4$. Indeed, each such point has $horizontalaxis$-coordinate of the\nform $horizontalone-horizontaltwo+\\cdots+(-1)^{terminalcount-1} horizontalfinal$ for $terminalcount \\geq 2$, which we can write\nas $(horizontalone-horizontaltwo) + \\cdots + (horizontalnext-horizontalfinal) < 0$ if $terminalcount$ is even, and\n\\[\nhorizontalone +(-horizontaltwo+y_3) + \\cdots + (-horizontalnext+horizontalfinal) \\geq horizontalone + 2 \\geq 4\n\\]\nif $terminalcount \\geq 3$\nis odd. Thus to rule out the rest of the forbidden points, it suffices to\ncheck that they cannot be retreatpoint or reversepoint for any growing spiral. But none\nof them can be reversepoint = $(verticalone-verticaltwo,horizontalone)$ since $verticalone-verticaltwo<0$, and none of them\ncan be retreatpoint = $(verticalone,horizontalone)$ since they all have $horizontalaxis$-coordinate at most equal\nto their $verticalaxis$-coordinate."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "n": "bmvqxzie",
+        "P_0": "ckthwrfj",
+        "P_1": "nlvmsqar",
+        "P_2": "pjezdhok",
+        "P_3": "srqvplue",
+        "P_6": "yxzevdab",
+        "P_n": "vmrtqowc",
+        "P_n-1": "kpsfldni",
+        "x_1": "zrbkylam",
+        "y_1": "dsvngxju",
+        "x_2": "hvpwquier",
+        "y_2": "mcfrzpla",
+        "x_n": "ljqedsth",
+        "y_n": "nwyhklga",
+        "x_n-1": "gxtvsoer",
+        "y_n-1": "qbwalcmi"
+      },
+      "question": "of points with integer coordinates $ckthwrfj = (0,0), nlvmsqar, \\dots, vmrtqowc$ such\nthat $bmvqxzie \\geq 2$ and:\n\\begin{itemize}\n\\item the directed line segments $ckthwrfj nlvmsqar, nlvmsqar pjezdhok, \\dots, P_{bmvqxzie-1} vmrtqowc$\nare in the successive coordinate directions east (for $ckthwrfj nlvmsqar$), north,\nwest, south, east, etc.;\n\\item the lengths of these line segments are positive and strictly\nincreasing.\n\\end{itemize} [Picture omitted.]  How many of the points $(qzxwvtnp,hjgrksla)$ with\ninteger coordinates $0\\leq qzxwvtnp\\leq 2011, 0\\leq hjgrksla\\leq 2011$ \\emph{cannot}\nbe the last point, $vmrtqowc$ of any growing spiral?",
+      "solution": "hjgrksla\\leq 2011$ that cannot be the last point of a growing spiral are as follows:\n$(0,hjgrksla)$ for $0\\leq hjgrksla\\leq 2011$; $(qzxwvtnp,0)$ and $(qzxwvtnp,1)$ for $1\\leq qzxwvtnp\\leq 2011$;\n$(qzxwvtnp,2)$ for $2\\leq qzxwvtnp\\leq 2011$; and $(qzxwvtnp,3)$ for $3\\leq qzxwvtnp\\leq 2011$. This\ngives a total of\n\\[\n2012 + 2011 + 2011 + 2010 + 2009 = 10053\n\\]\nexcluded points.\n\nThe complement of this set is the set of $(qzxwvtnp,hjgrksla)$ with $0<qzxwvtnp<hjgrksla$, along with\n$(qzxwvtnp,hjgrksla)$ with $qzxwvtnp \\geq hjgrksla \\geq 4$. Clearly the former set is achievable as\n$pjezdhok$ in a growing spiral, while a point $(qzxwvtnp,hjgrksla)$ in the latter set is $yxzevdab$\nin a growing spiral with successive lengths $1$, $2$, $3$, $qzxwvtnp+1$, $qzxwvtnp+2$,\nand $qzxwvtnp+hjgrksla-1$.\n\nWe now need to rule out the other cases. Write $zrbkylam<dsvngxju<hvpwquier<mcfrzpla<\\ldots$\nfor the lengths of the line segments in the spiral in order, so that $nlvmsqar =\n(zrbkylam,0)$, $pjezdhok = (zrbkylam,dsvngxju)$, $srqvplue = (zrbkylam-hvpwquier,dsvngxju)$, and so forth. Any point\nbeyond $ckthwrfj$ has $qzxwvtnp$-coordinate of the form $zrbkylam-hvpwquier+\\cdots+(-1)^{bmvqxzie-1}\nljqedsth$ for $bmvqxzie\\geq 1$; if $bmvqxzie$ is odd, we can write this as $zrbkylam + (-hvpwquier+x_3)\n+ \\cdots + (-x_{bmvqxzie-1}+ljqedsth) > 0$, while if $bmvqxzie$ is even, we can write this as\n$(zrbkylam-hvpwquier) + \\cdots + (x_{bmvqxzie-1}-ljqedsth) < 0$. Thus no point beyond $ckthwrfj$ can have\n$qzxwvtnp$-coordinate $0$, and we have ruled out $(0,hjgrksla)$ for $0\\leq hjgrksla\\leq 2011$.\n\nNext we claim that any point beyond $srqvplue$ must have $hjgrksla$-coordinate either\nnegative or $\\geq 4$. Indeed, each such point has $hjgrksla$-coordinate of the\nform $dsvngxju-mcfrzpla+\\cdots+(-1)^{bmvqxzie-1} nwyhklga$ for $bmvqxzie \\geq 2$, which we can write\nas $(dsvngxju-mcfrzpla) + \\cdots + (y_{bmvqxzie-1}-nwyhklga) < 0$ if $bmvqxzie$ is even, and\n\\[\ndsvngxju +(-mcfrzpla+y_3) + \\cdots + (-y_{bmvqxzie-1}+nwyhklga) \\geq dsvngxju + 2 \\geq 4\n\\]\nif $bmvqxzie \\geq 3$\nis odd. Thus to rule out the rest of the forbidden points, it suffices to\ncheck that they cannot be $pjezdhok$ or $srqvplue$ for any growing spiral. But none\nof them can be $srqvplue = (zrbkylam-hvpwquier,dsvngxju)$ since $zrbkylam-hvpwquier<0$, and none of them\ncan be $pjezdhok = (zrbkylam,dsvngxju)$ since they all have $hjgrksla$-coordinate at most equal\nto their $qzxwvtnp$-coordinate."
+    },
+    "kernel_variant": {
+      "question": "Growing spirals\n\nA finite sequence of lattice points\n        P_0 = (0,0), P_1 , \\ldots  , P_n    (n \\geq  2)\nis called a growing spiral if it satisfies both conditions below.\n1.  (Direction pattern)\n    The directed segments make successive quarter-turns clockwise :\n        P_0P_1 points north,   P_1P_2 east,   P_2P_3 south,   P_3P_4 west,   P_4P_5 north, \\ldots \n2.  (Lengths)  The lengths of the segments\n        |P_0P_1| , |P_1P_2| , \\ldots  , |P_{n-1}P_n|\n    are positive integers that are strictly increasing.\n\nFor how many ordered integer pairs (x , y) with\n        0 \\leq  x \\leq  2023   and   0 \\leq  y \\leq  2023\nis it impossible to occur as the last point P_n of a growing spiral?",
+      "solution": "Let the (strictly increasing) lengths of the steps be \n        \\ell _1, \\ell _2, \\ldots  , \\ell _n   with   \\ell _1<\\ell _2<\\cdots <\\ell _n .\nBecause the directions follow the cycle N,E,S,W, \\ldots  we obtain\n\n(1) X_n = \\Sigma _{j=1}^{\\lfloor n/2\\rfloor } (-1)^{j+1} \\ell _{2j},  Y_n = \\Sigma _{j=0}^{\\lfloor (n-1)/2\\rfloor } (-1)^{j} \\ell _{2j+1}. \n\nHere X_n and Y_n denote the coordinates of the end-point P_n.\n\n\n1.  The spiral never meets either coordinate axis (apart from P_0).\n\nLemma.  For positive integers a_1<\\cdots <a_m set\n        S_m = a_1 - a_2 + a_3 - a_4 + \\cdots  + (-1)^{m+1} a_m .\nThen S_m > 0 for m odd and S_m < 0 for m even; in particular S_m \\neq  0.\n\nProof.  By induction on m.\n*  m = 1:  S_1 = a_1 > 0.\n*  Induction step.  Suppose S_{m-1} has the required sign.  Because\n   a_m > a_{m-1}, we have\n      S_m = S_{m-1} + (-1)^{m+1} a_m\n   which necessarily flips the sign of S_{m-1}.  \\square \n\nIn (1) the numbers appearing are strictly increasing.  Hence each of X_n\nand Y_n is a non-zero alternating sum and therefore\n        X_n \\neq  0, Y_n \\neq  0 (n \\geq  1).\nConsequently after the origin the spiral never meets either axis.  This\nrules out the points\n  *  (0 , y) (0 \\leq  y \\leq  2023)  2024 points,\n  *  (x , 0) (1 \\leq  x \\leq  2023)  2023 points.\n\n\n2.  Small positive x-coordinates.\n\nPut m = \\lfloor n/2\\rfloor  (the number of even-indexed steps).\n\nThe first time the x-coordinate can be positive is after two steps:\nP_2 = (\\ell _2 , \\ell _1) with \\ell _2 \\geq  2.\n\n*  n = 2 (m = 1).  The value X_2 = \\ell _2 can be any integer \\geq  2.\n*  n \\geq  4.  Then m \\geq  2.  From (1):\n        X_n = \\ell _2 - \\ell _4 + \\ell _6 - \\cdots  + (-1)^{m+1} \\ell _{2m}.\n   If m is even, the lemma gives X_n < 0.\n   If m \\geq  3 is odd, use the smallest admissible even lengths\n        \\ell _2 = 2, \\ell _4 = 4, \\ell _6 = 6, \\ldots \n   to obtain the sharp lower bound\n        X_n \\geq  2 - 4 + 6 = 4,\n   and every additional pair (-\\ell _{2j}+\\ell _{2j+2}) adds at least 2, so\n        X_n \\geq  4.\n\n(a)  x = 1.  Impossible for n = 2 (since \\ell _2 \\geq  2) and for n \\geq  4 by the\n     preceding discussion. \\to  2023 points.\n\n(b)  x = 2.  Achievable only with n = 2 and (\\ell _1,\\ell _2) = (1,2), giving\n     P_2 = (2,1).  Thus (2 , y) with y \\geq  2 are impossible. \\to  2022 points.\n\n(c)  x = 3.  For n = 2 we can take (\\ell _1,\\ell _2) = (1,3) or (2,3) and obtain\n     (3,1) or (3,2).  For n \\geq  4 we have either X_n < 0 (m even) or\n     X_n \\geq  4 (m odd); hence no further point with x = 3 occurs.\n     So (3 , y) with y \\geq  3 are impossible. \\to  2021 points.\n\n\n3.  Realising all remaining lattice points.\n\n(a)  Points with 0 < y < x \\leq  2023.  Choose n = 2 and the lengths\n     (\\ell _1,\\ell _2) = (y , x); then P_2 = (x , y).\n\n(b)  Points with x \\geq  4 and y \\geq  3 (in either order).  Six steps work:\n          \\ell _1 = 1, \\ell _2 = 2, \\ell _3 = 3,\n          \\ell _4 = y + 1, \\ell _5 = y + 2, \\ell _6 = x + y - 1.\n     These are strictly increasing because x \\geq  4 and y \\geq  3.\n     Directly from (1):\n          X_6 = 2 - (y+1) + (x+y-1) = x,\n          Y_6 = 1 - 3 + (y+2)           = y,\n     so every such point is attainable.\n\n(c)  The three small first-quadrant points (2,1), (3,1), (3,2) were\n     realised in 2(b) and 2(c).\n\nThus every lattice point inside the 2023\\times 2023 square that has not been\nruled out in Sections 1-2 \nreally is the end-point of a growing spiral.\n\n\n4.  Counting the impossible points.\n        (0 , y)          : 2024 points (0 \\leq  y \\leq  2023)\n        (x , 0)          : 2023 points (1 \\leq  x \\leq  2023)\n        (1 , y)          : 2023 points (1 \\leq  y \\leq  2023)\n        (2 , y) , y \\geq  2  : 2022 points\n        (3 , y) , y \\geq  3  : 2021 points\nThese sets are disjoint, so the total number of impossible pairs is\n        2024 + 2023 + 2023 + 2022 + 2021 = 10113.\n\nAnswer: 10113.",
+      "_meta": {
+        "core_steps": [
+          "Write x- and y-coordinates of P_n as alternating sums of successive edge-lengths.",
+          "Parity of n forces x(P_n) ≠ 0, eliminating the entire y-axis (except the origin).",
+          "For n ≥ 4 the same alternation shows y(P_n) < 0 or y(P_n) ≥ 4, so lattice points with 0 ≤ y ≤ 3 are reachable only (if at all) at n = 2 or 3.",
+          "Directly check n = 2,3 to rule out the remaining low-y candidates; construct explicit length sequences (e.g. 1,2,3,x+1,x+2,x+y−1) to realize every other lattice point.",
+          "Count the points ruled out by the two inequalities inside the chosen square to obtain the final answer."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Side length of the square in which P_n is to lie.",
+            "original": "2011"
+          },
+          "slot2": {
+            "description": "Orientation of the very first step (currently east); a uniform rotation of all four step directions leaves the argument intact up to the same rotation of the forbidden stripes.",
+            "original": "east"
+          },
+          "slot3": {
+            "description": "Lower bound from which y-coordinates become attainable again (comes from minimal possible y_1 + 2).",
+            "original": "4"
+          },
+          "slot4": {
+            "description": "Numerical totals arising only from the chosen square size (e.g., 2012, 2011, 10053).",
+            "original": "10053"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

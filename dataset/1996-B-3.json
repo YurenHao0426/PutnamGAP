@@ -1,0 +1,173 @@
+{
+  "index": "1996-B-3",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Given that $\\{x_1, x_2, \\ldots, x_n\\} = \\{1, 2, \\ldots, n\\}$, find,\nwith proof, the largest possible value, as a function of $n$ (with $n\n\\geq 2$), of\n\\[\nx_1x_2 + x_2x_3 + \\cdots + x_{n-1}x_n + x_nx_1.\n\\]",
+  "solution": "View $x_1, \\dots, x_n$ as an arrangement of the numbers $1, 2, \\dots,\nn$ on a circle.\nWe prove that the optimal arrangement is\n\\[\n\\dots, n-4, n-2, n, n-1, n-3, \\dots\n\\]\nTo show this, note that if\n$a, b$ is a pair of adjacent numbers and $c,d$ is another pair (read\nin the same order around the circle) with $a < d$ and $b > c$, then\nthe segment from $b$ to $c$ can be reversed, increasing the sum by\n\\[\nac + bd - ab - cd = (d-a)(b-c) > 0.\n\\]\nNow relabel the numbers so they appear in order as follows:\n\\[\n\\dots, a_{n-4}, a_{n-2}, a_n = n, a_{n-1}, a_{n-3}, \\dots\n\\]\nwhere without loss of generality we assume $a_{n-1} > a_{n-2}$. By\nconsidering the pairs $a_{n-2}, a_n$ and $a_{n-1}, a_{n-3}$ and using\nthe trivial fact $a_n > a_{n-1}$, we deduce $a_{n-2} > a_{n-3}$. We\nthen compare the pairs $a_{n-4}, a_{n-2}$ and $a_{n-1}, a_{n-3}$, and\nusing that $a_{n-1} > a_{n-2}$, we deduce $a_{n-3} > a_{n-4}$.\nContinuing in this\nfashion, we prove that $a_n > a_{n-1} > \\dots > a_1$ and\nso $a_k = k$ for $k = 1, 2, \\dots, n$, i.e.\\ that the optimal\narrangement is as claimed. In particular, the maximum value of the sum\nis\n\\begin{multline*}\n1 \\cdot 2 + (n-1)\\cdot n + 1 \\cdot 3 + 2 \\cdot 4 + \\cdots + (n-2)\\cdot n \\\\\n\\begin{aligned}\n&= 2 + n^2 - n + (1^2 - 1) + \\cdots + [(n-1)^2 - 1] \\\\\n&= n^2 - n + 2 - (n-1) + \\frac{(n-1)n(2n-1)}{6} \\\\\n&= \\frac{2n^3 + 3n^2 - 11n + 18}{6}.\n\\end{aligned}\n\\end{multline*}\n\nAlternate solution: We prove by induction that the value given above\nis an upper bound; it is clearly a lower bound because of the\narrangement given above. Assume this is the case for $n-1$. The optimal\narrangement for $n$ is obtained from some arrangement for $n-1$ by\ninserting $n$ between some pair $x, y$ of adjacent terms. This\noperation increases the sum by $nx + ny - xy = n^2 - (n-x)(n-y)$,\nwhich is an increasing function of both $x$ and $y$. In particular,\nthis difference is maximal when $x$ and $y$ equal $n-1$ and $n-2$.\nFortunately, this yields precisely the difference between the claimed\nupper bound for $n$ and the assumed upper bound for $n-1$, completing\nthe induction.",
+  "vars": [
+    "x_1",
+    "x_2",
+    "x_n",
+    "x_n-1",
+    "x_n-2",
+    "x_n-4",
+    "x",
+    "y",
+    "a",
+    "a_n-4",
+    "a_n-2",
+    "a_n",
+    "a_n-1",
+    "a_n-3",
+    "a_1",
+    "a_k",
+    "b",
+    "c",
+    "d",
+    "k"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_1": "firstmember",
+        "x_2": "secondmember",
+        "x_n": "terminalmember",
+        "x_n-1": "penultmember",
+        "x_n-2": "antepenultmember",
+        "x_n-4": "prequadmember",
+        "x": "insertleft",
+        "y": "insertright",
+        "a": "genericadjacent",
+        "a_n-4": "labelnminusfour",
+        "a_n-2": "labelnminustwo",
+        "a_n": "labeln",
+        "a_n-1": "labelnminusone",
+        "a_n-3": "labelnminusthree",
+        "a_1": "labelone",
+        "a_k": "labelk",
+        "b": "secondadjacent",
+        "c": "thirdadjacent",
+        "d": "fourthadjacent",
+        "k": "iterateindex",
+        "n": "totalcount"
+      },
+      "question": "Given that $\\{firstmember, secondmember, \\ldots, terminalmember\\} = \\{1, 2, \\ldots, totalcount\\}$, find,\nwith proof, the largest possible value, as a function of $totalcount$ (with $totalcount \\geq 2$), of\n\\[\nfirstmember\\cdot secondmember + secondmember\\cdot x_3 + \\cdots + penultmember\\cdot terminalmember + terminalmember\\cdot firstmember.\n\\]",
+      "solution": "View firstmember, \\dots, terminalmember as an arrangement of the numbers $1, 2, \\dots, totalcount$ on a circle.\nWe prove that the optimal arrangement is\n\\[\n\\dots, totalcount-4, totalcount-2, totalcount, totalcount-1, totalcount-3, \\dots\n\\]\nTo show this, note that if genericadjacent, secondadjacent is a pair of adjacent numbers and thirdadjacent, fourthadjacent is another pair (read in the same order around the circle) with genericadjacent < fourthadjacent and secondadjacent > thirdadjacent, then the segment from secondadjacent to thirdadjacent can be reversed, increasing the sum by\n\\[\ngenericadjacent\\cdot thirdadjacent + secondadjacent\\cdot fourthadjacent - genericadjacent\\cdot secondadjacent - thirdadjacent\\cdot fourthadjacent = (fourthadjacent-genericadjacent)(secondadjacent-thirdadjacent) > 0.\n\\]\nNow relabel the numbers so they appear in order as follows:\n\\[\n\\dots, labelnminusfour, labelnminustwo, labeln = totalcount, labelnminusone, labelnminusthree, \\dots\n\\]\nwhere without loss of generality we assume labelnminusone > labelnminustwo. By considering the pairs labelnminustwo, labeln and labelnminusone, labelnminusthree and using the trivial fact labeln > labelnminusone, we deduce labelnminustwo > labelnminusthree. We then compare the pairs labelnminusfour, labelnminustwo and labelnminusone, labelnminusthree, and using that labelnminusone > labelnminustwo, we deduce labelnminusthree > labelnminusfour.\nContinuing in this fashion, we prove that labeln > labelnminusone > \\dots > labelone and so labelk = iterateindex for iterateindex = 1, 2, \\dots, totalcount, i.e.\\ that the optimal arrangement is as claimed. In particular, the maximum value of the sum is\n\\begin{multline*}\n1 \\cdot 2 + (totalcount-1)\\cdot totalcount + 1 \\cdot 3 + 2 \\cdot 4 + \\cdots + (totalcount-2)\\cdot totalcount \\\\\n\\begin{aligned}\n&= 2 + totalcount^2 - totalcount + (1^2 - 1) + \\cdots + [(totalcount-1)^2 - 1] \\\\\n&= totalcount^2 - totalcount + 2 - (totalcount-1) + \\frac{(totalcount-1) totalcount(2 totalcount-1)}{6} \\\\\n&= \\frac{2 totalcount^3 + 3 totalcount^2 - 11 totalcount + 18}{6}.\n\\end{aligned}\n\\end{multline*}\n\nAlternate solution: We prove by induction that the value given above is an upper bound; it is clearly a lower bound because of the arrangement given above. Assume this is the case for totalcount-1. The optimal arrangement for totalcount is obtained from some arrangement for totalcount-1 by inserting totalcount between some pair insertleft, insertright of adjacent terms. This operation increases the sum by $totalcount\\cdot insertleft + totalcount\\cdot insertright - insertleft\\cdot insertright = totalcount^2 - (totalcount-insertleft)(totalcount-insertright)$, which is an increasing function of both insertleft and insertright. In particular, this difference is maximal when insertleft and insertright equal totalcount-1 and totalcount-2. Fortunately, this yields precisely the difference between the claimed upper bound for totalcount and the assumed upper bound for totalcount-1, completing the induction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_1": "pineapple",
+        "x_2": "caterpillar",
+        "x_n": "marshmallow",
+        "x_n-1": "waterfowler",
+        "x_n-2": "dragonfruit",
+        "x_n-4": "hippopotami",
+        "x": "quartzite",
+        "y": "lighthouse",
+        "a": "buttercup",
+        "a_n-4": "raincloud",
+        "a_n-2": "honeysuckle",
+        "a_n": "blackbird",
+        "a_n-1": "huckleberry",
+        "a_n-3": "thunderbolt",
+        "a_1": "silhouette",
+        "a_k": "windchime",
+        "b": "sailcloth",
+        "c": "stargazer",
+        "d": "moonstone",
+        "k": "whirlpool",
+        "n": "constellation"
+      },
+      "question": "Given that $\\{pineapple, caterpillar, \\ldots, marshmallow\\} = \\{1, 2, \\ldots, constellation\\}$, find,\nwith proof, the largest possible value, as a function of constellation (with constellation\n\\geq 2), of\n\\[\npineapplecaterpillar + caterpillar x_3 + \\cdots + waterfowlermarshmallow + marshmallowpineapple.\n\\]",
+      "solution": "View pineapple, \\dots, marshmallow as an arrangement of the numbers $1, 2, \\dots,\nconstellation$ on a circle.\nWe prove that the optimal arrangement is\n\\[\n\\dots, constellation-4, constellation-2, constellation, constellation-1, constellation-3, \\dots\n\\]\nTo show this, note that if\nbuttercup, sailcloth is a pair of adjacent numbers and stargazer,moonstone is another pair (read\nin the same order around the circle) with buttercup < moonstone and sailcloth > stargazer, then\nthe segment from sailcloth to stargazer can be reversed, increasing the sum by\n\\[\nbuttercup stargazer + sailcloth moonstone - buttercup sailcloth - stargazer moonstone = (moonstone-buttercup)(sailcloth-stargazer) > 0.\n\\]\nNow relabel the numbers so they appear in order as follows:\n\\[\n\\dots, raincloud, honeysuckle, blackbird = constellation, huckleberry, thunderbolt, \\dots\n\\]\nwhere without loss of generality we assume huckleberry > honeysuckle. By\nconsidering the pairs honeysuckle, blackbird and huckleberry, thunderbolt and using\nthe trivial fact blackbird > huckleberry, we deduce honeysuckle > thunderbolt. We\nthen compare the pairs raincloud, honeysuckle and huckleberry, thunderbolt, and\nusing that huckleberry > honeysuckle, we deduce thunderbolt > raincloud.\nContinuing in this\nfashion, we prove that blackbird > huckleberry > \\dots > silhouette and\nso windchime = whirlpool for whirlpool = 1, 2, \\dots, constellation, i.e.\\ that the optimal\narrangement is as claimed. In particular, the maximum value of the sum\nis\n\\begin{multline*}\n1 \\cdot 2 + (constellation-1)\\cdot constellation + 1 \\cdot 3 + 2 \\cdot 4 + \\cdots + (constellation-2)\\cdot constellation \\\\\n\\begin{aligned}\n&= 2 + constellation^2 - constellation + (1^2 - 1) + \\cdots + [(constellation-1)^2 - 1] \\\\\n&= constellation^2 - constellation + 2 - (constellation-1) + \\frac{(constellation-1)\\,constellation(2\\,constellation-1)}{6} \\\\\n&= \\frac{2\\,constellation^3 + 3\\,constellation^2 - 11\\,constellation + 18}{6}.\n\\end{aligned}\n\\end{multline*}\n\nAlternate solution: We prove by induction that the value given above\nis an upper bound; it is clearly a lower bound because of the\narrangement given above. Assume this is the case for constellation-1. The optimal\narrangement for constellation is obtained from some arrangement for constellation-1 by\ninserting constellation between some pair quartzite, lighthouse of adjacent terms. This\noperation increases the sum by constellationquartzite + constellationlighthouse - quartzitelighthouse = constellation^2 - (constellation-quartzite)(constellation-lighthouse),\nwhich is an increasing function of both quartzite and lighthouse. In particular,\nthis difference is maximal when quartzite and lighthouse equal constellation-1 and constellation-2.\nFortunately, this yields precisely the difference between the claimed\nupper bound for constellation and the assumed upper bound for constellation-1, completing\nthe induction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_1": "invariantone",
+        "x_2": "invarianttwo",
+        "x_n": "invariantn",
+        "x_n-1": "invariantnminusone",
+        "x_n-2": "invariantnminustwo",
+        "x_n-4": "invariantnminusfour",
+        "x": "steadyvar",
+        "y": "solidvar",
+        "a": "fixedvar",
+        "a_n-4": "fixednminusfour",
+        "a_n-2": "fixednminustwo",
+        "a_n": "fixednvalue",
+        "a_n-1": "fixednminusone",
+        "a_n-3": "fixednminusthree",
+        "a_1": "fixedone",
+        "a_k": "fixedkayvalue",
+        "b": "rigidbvalue",
+        "c": "rigidcvalue",
+        "d": "rigiddvalue",
+        "k": "immutabledigitk",
+        "n": "emptysize"
+      },
+      "question": "Given that $\\{invariantone, invarianttwo, \\ldots, invariantn\\} = \\{1, 2, \\ldots, emptysize\\}$, find,\nwith proof, the largest possible value, as a function of $emptysize$ (with $emptysize\n\\geq 2$), of\n\\[\ninvariantone invarianttwo + invarianttwo x_3 + \\cdots + invariantnminusone invariantn + invariantn invariantone.\n\\]",
+      "solution": "View $invariantone, \\dots, invariantn$ as an arrangement of the numbers $1, 2, \\dots,\nemptysize$ on a circle.\nWe prove that the optimal arrangement is\n\\[\n\\dots, emptysize-4, emptysize-2, emptysize, emptysize-1, emptysize-3, \\dots\n\\]\nTo show this, note that if\n$fixedvar, rigidbvalue$ is a pair of adjacent numbers and $rigidcvalue, rigiddvalue$ is another pair (read\nin the same order around the circle) with $fixedvar < rigiddvalue$ and $rigidbvalue > rigidcvalue$, then\nthe segment from $rigidbvalue$ to $rigidcvalue$ can be reversed, increasing the sum by\n\\[\nfixedvar rigidcvalue + rigidbvalue rigiddvalue - fixedvar rigidbvalue - rigidcvalue rigiddvalue = (rigiddvalue-fixedvar)(rigidbvalue-rigidcvalue) > 0.\n\\]\nNow relabel the numbers so they appear in order as follows:\n\\[\n\\dots, fixednminusfour, fixednminustwo, fixednvalue = emptysize, fixednminusone, fixednminusthree, \\dots\n\\]\nwhere without loss of generality we assume $fixednminusone > fixednminustwo$. By\nconsidering the pairs $fixednminustwo, fixednvalue$ and $fixednminusone, fixednminusthree$ and using\nthe trivial fact $fixednvalue > fixednminusone$, we deduce $fixednminustwo > fixednminusthree$. We\nthen compare the pairs $fixednminusfour, fixednminustwo$ and $fixednminusone, fixednminusthree$, and\nusing that $fixednminusone > fixednminustwo$, we deduce $fixednminusthree > fixednminusfour$.\nContinuing in this\nfashion, we prove that $fixednvalue > fixednminusone > \\dots > fixedone$ and\nso $fixedkayvalue = \\immutabledigitk$ for $\\immutabledigitk = 1, 2, \\dots, emptysize$, i.e.\\ that the optimal\narrangement is as claimed. In particular, the maximum value of the sum\nis\n\\begin{multline*}\n1 \\cdot 2 + (emptysize-1)\\cdot emptysize + 1 \\cdot 3 + 2 \\cdot 4 + \\cdots + (emptysize-2)\\cdot emptysize \\\\\n\\begin{aligned}\n&= 2 + emptysize^2 - emptysize + (1^2 - 1) + \\cdots + [(emptysize-1)^2 - 1] \\\\\n&= emptysize^2 - emptysize + 2 - (emptysize-1) + \\frac{(emptysize-1)emptysize(2emptysize-1)}{6} \\\\\n&= \\frac{2emptysize^3 + 3emptysize^2 - 11emptysize + 18}{6}.\n\\end{aligned}\n\\end{multline*}\n\nAlternate solution: We prove by induction that the value given above\nis an upper bound; it is clearly a lower bound because of the\narrangement given above. Assume this is the case for $emptysize-1$. The optimal\narrangement for $emptysize$ is obtained from some arrangement for $emptysize-1$ by\ninserting $emptysize$ between some pair $steadyvar, solidvar$ of adjacent terms. This\noperation increases the sum by $emptysize steadyvar + emptysize solidvar - steadyvar solidvar = emptysize^2 - (emptysize-steadyvar)(emptysize-solidvar)$,\nwhich is an increasing function of both $steadyvar$ and $solidvar$. In particular,\nthis difference is maximal when $steadyvar$ and $solidvar$ equal $emptysize-1$ and $emptysize-2$.\nFortunately, this yields precisely the difference between the claimed\nupper bound for $emptysize$ and the assumed upper bound for $emptysize-1$, completing\nthe induction."
+    },
+    "garbled_string": {
+      "map": {
+        "x_1": "qzxwvtnp",
+        "x_2": "plkokymn",
+        "x_n": "djxvhaet",
+        "x_n-1": "ksuhbrpq",
+        "x_n-2": "mrtqgzel",
+        "x_n-4": "hfpiavyo",
+        "x": "lwzbkqve",
+        "y": "ujacrnfs",
+        "a": "govidhqx",
+        "a_n-4": "vtmpazqc",
+        "a_n-2": "dmxosfei",
+        "a_n": "yhrklbcp",
+        "a_n-1": "zqtewfon",
+        "a_n-3": "sbrunhiy",
+        "a_1": "knecaotd",
+        "a_k": "wnvlsjqg",
+        "b": "cxdetuom",
+        "c": "fpzelkrs",
+        "d": "hqtvjysw",
+        "k": "rbnqlyxp",
+        "n": "kqzmrfla"
+      },
+      "question": "Given that $\\{qzxwvtnp, plkokymn, \\ldots, djxvhaet\\} = \\{1, 2, \\ldots, kqzmrfla\\}$, find,\nwith proof, the largest possible value, as a function of $kqzmrfla$ (with $kqzmrfla\n\\geq 2$), of\n\\[\nqzxwvtnp\\,plkokymn + plkokymn x_3 + \\cdots + ksuhbrpq\\,djxvhaet + djxvhaet\\,qzxwvtnp.\n\\]",
+      "solution": "View $qzxwvtnp, \\dots, djxvhaet$ as an arrangement of the numbers $1, 2, \\dots,\nkqzmrfla$ on a circle.\nWe prove that the optimal arrangement is\n\\[\n\\dots, kqzmrfla-4, kqzmrfla-2, kqzmrfla, kqzmrfla-1, kqzmrfla-3, \\dots\n\\]\nTo show this, note that if\n$govidhqx, cxdetuom$ is a pair of adjacent numbers and $fpzelkrs,hqtvjysw$ is another pair (read\nin the same order around the circle) with $govidhqx < hqtvjysw$ and $cxdetuom > fpzelkrs$, then\nthe segment from $cxdetuom$ to $fpzelkrs$ can be reversed, increasing the sum by\n\\[\ngovidhqx\\,fpzelkrs + cxdetuom\\,hqtvjysw - govidhqx\\,cxdetuom - fpzelkrs\\,hqtvjysw = (hqtvjysw-govidhqx)(cxdetuom-fpzelkrs) > 0.\n\\]\nNow relabel the numbers so they appear in order as follows:\n\\[\n\\dots, vtmpazqc, dmxosfei, yhrklbcp = kqzmrfla, zqtewfon, sbrunhiy, \\dots\n\\]\nwhere without loss of generality we assume $zqtewfon > dmxosfei$. By\nconsidering the pairs $dmxosfei, yhrklbcp$ and $zqtewfon, sbrunhiy$ and using\nthe trivial fact $yhrklbcp > zqtewfon$, we deduce $dmxosfei > sbrunhiy$. We\nthen compare the pairs $vtmpazqc, dmxosfei$ and $zqtewfon, sbrunhiy$, and\nusing that $zqtewfon > dmxosfei$, we deduce $sbrunhiy > vtmpazqc$.\nContinuing in this\nfashion, we prove that $yhrklbcp > zqtewfon > \\dots > knecaotd$ and\nso $wnvlsjqg = rbnqlyxp$ for $rbnqlyxp = 1, 2, \\dots, kqzmrfla$, i.e.\\ that the optimal\narrangement is as claimed. In particular, the maximum value of the sum\nis\n\\begin{multline*}\n1 \\cdot 2 + (kqzmrfla-1)\\cdot kqzmrfla + 1 \\cdot 3 + 2 \\cdot 4 + \\cdots + (kqzmrfla-2)\\cdot kqzmrfla \\\\\n\\begin{aligned}\n&= 2 + kqzmrfla^2 - kqzmrfla + (1^2 - 1) + \\cdots + [(kqzmrfla-1)^2 - 1] \\\\\n&= kqzmrfla^2 - kqzmrfla + 2 - (kqzmrfla-1) + \\frac{(kqzmrfla-1)kqzmrfla(2kqzmrfla-1)}{6} \\\\\n&= \\frac{2kqzmrfla^3 + 3kqzmrfla^2 - 11kqzmrfla + 18}{6}.\n\\end{aligned}\n\\end{multline*}\n\nAlternate solution: We prove by induction that the value given above\nis an upper bound; it is clearly a lower bound because of the\narrangement given above. Assume this is the case for $kqzmrfla-1$. The optimal\narrangement for $kqzmrfla$ is obtained from some arrangement for $kqzmrfla-1$ by\ninserting $kqzmrfla$ between some pair $lwzbkqve, ujacrnfs$ of adjacent terms. This\noperation increases the sum by $kqzmrfla\\,lwzbkqve + kqzmrfla\\,ujacrnfs - lwzbkqve\\,ujacrnfs = kqzmrfla^2 - (kqzmrfla-lwzbkqve)(kqzmrfla-ujacrnfs)$,\nwhich is an increasing function of both $lwzbkqve$ and $ujacrnfs$. In particular,\nthis difference is maximal when $lwzbkqve$ and $ujacrnfs$ equal $kqzmrfla-1$ and $kqzmrfla-2$.\nFortunately, this yields precisely the difference between the claimed\nupper bound for $kqzmrfla$ and the assumed upper bound for $kqzmrfla-1$, completing\nthe induction."
+    },
+    "kernel_variant": {
+      "question": "Let n \\ge 2 be an integer. Arrange the n odd positive integers\n\n1,\\,3,\\,5,\\ldots ,\\,2n-1\n\naround a circle in some order and denote the consecutive entries by\nx_1,x_2,\\dots ,x_n (indices are read modulo n, so x_{n+1}=x_1).\nDetermine, as an explicit function of n, the largest possible value of the sum\n\nS_n\\;=\\;x_1x_2+x_2x_3+\\dots +x_{n-1}x_n+x_nx_1 .",
+      "solution": "Throughout we fix an integer n \\ge 2 and read all indices modulo n.\nWe proceed in five steps.\n\n--------------------------------------------------\n1.  A local-improvement lemma\n--------------------------------------------------\nLet (a,b) and (c,d) be two consecutive ordered pairs that occur in this\norder as we walk counter-clockwise around the circle:\n\n\\[ \\dots ,a,\\,b,\\,\\dots ,c,\\,d,\\dots \\]\n\nIf a<d and b>c, then reversing the circular arc from b to c replaces\nthe two products ab+cd by ac+bd.  The gain is\n\n(ac+bd)-(ab+cd)=(d-a)(b-c)>0.\n\nHence any arrangement that maximises S_n must satisfy the following\nnecessary condition.\n\n(*)  Whenever we meet two adjacent pairs (a,b),(c,d) in this order, we\n     cannot have a<d and b>c simultaneously.\n\n--------------------------------------------------\n2.  Constructing a candidate arrangement\n--------------------------------------------------\nWe now build inductively an arrangement P_n of the numbers\n1,3,\\dots ,2n-1.\n*  Base n=2: the only circle is (1,3), giving S_2=6.\n*  Inductive step: assume P_k (k\\ge 2) is known.  To obtain P_{k+1},\n   insert the new largest number 2(k+1)-1 between the two currently\n   largest entries 2k-1 and 2k-3.  (If they appear as 2k-3,2k-1 we\n   again insert between them.)\n\nUnwinding the construction one obtains the explicit description\n\nP_n : 1,3,7,11,\\dots ,(4\\lfloor n/2\\rfloor-1),\\;\\;(4\\lfloor n/2\\rfloor-3),\\dots ,5,\n\ni.e. the numbers that are \\equiv 3 (mod 4) appear first in increasing\norder, followed by those \\equiv 1 (mod 4) in decreasing order.\n\n--------------------------------------------------\n3.  Computing S_n for P_n\n--------------------------------------------------\nWrite n=2m or n=2m+1.\n\n(i)  n=2m (even).  The circle reads\n1,3,7,\\dots ,4m-1,\\;4m-3,4m-7,\\dots ,5.\nThe successive products are\n\n1\\cdot 3,\n(4i-1)(4i+3)   for 1\\le i\\le m-1,\n(4m-1)(4m-3),\n(4j+1)(4j-3)   for 1\\le j\\le m-1.\n\nA direct summation yields\n\nS_{2m}(P_{2m}) = \\frac{4(2m)^3-25(2m)+36}{3}=\\frac{4n^3-25n+36}{3}.\n\n(ii)  n=2m+1 (odd).  Compared with the previous case one more product\n(4m-1)(4m+1)=16m^2-1 appears, while the last sum extends to j=m.  The\nresult is once more\n\nS_{2m+1}(P_{2m+1}) = \\frac{4(2m+1)^3-25(2m+1)+36}{3}\n                  = \\frac{4n^3-25n+36}{3}.\n\nThus\n\n(1)  S_n(P_n)=M_n:=\\dfrac{4n^3-25n+36}{3}\\qquad(\\forall\\,n\\ge 2).\n\n--------------------------------------------------\n4.  A matching upper bound (induction on n)\n--------------------------------------------------\nWe prove that every arrangement satisfies S_n\\le M_n, with equality\nonly for P_n (up to rotation and reflection).\n\nBase n=2 is immediate.  Assume the claim for n-1 (n\\ge 3) and consider\nan optimal arrangement of the n numbers.  Let\n\nL=2n-1   (the largest label),   and   x,y   its two neighbours.\n\nDelete L together with the two products involving it; the remaining\nn-1 labelled circle contributes some value T, so\n\n(2)      S_n = T + L(x+y) - xy.\n\nBy the induction hypothesis T\\le M_{n-1}.  Define\n\nf(x,y):=L(x+y)-xy.\n\nBecause f is symmetric and strictly increasing in each variable, its\nmaximum over the set {1,3,\\dots ,L-2} occurs at x=L-2, y=L-4, giving\n\nf_{\\max}=L[(L-2)+(L-4)]-(L-2)(L-4)=4n^2-4n-7.\n\nBut\n\nM_n-M_{n-1}=4n^2-4n-7=f_{\\max},\n\nhence (2) implies S_n\\le M_n.  Equality can hold only if\n(a) T=M_{n-1}, i.e. the reduced circle is optimal for n-1 numbers, and\n(b) {x,y}={L-2,L-4}.\n\n--------------------------------------------------\n5.  Completing the induction - existence and uniqueness of P_n\n--------------------------------------------------\nBy the induction hypothesis the reduced circle equals P_{n-1}\n(up to rotation/reflection).  In P_{n-1} the two largest entries are\nL-2 and L-4 and they are adjacent, so inserting L between them yields\nexactly the construction of Section 2, i.e. P_n.\nConversely, inserting L elsewhere---or keeping either neighbour smaller\nthan L-4---would strictly decrease f(x,y) and hence S_n.\nThus every optimal arrangement is obtained from P_{n-1} in the\nprescribed way, proving that, modulo a global reversal of the circle,\nP_n is the unique maximiser.\n\n--------------------------------------------------\n6.  Final result\n--------------------------------------------------\nFor every integer n \\ge 2 the maximum value of\n\nx_1x_2+x_2x_3+\\dots +x_{n-1}x_n+x_nx_1\n\nover all circular permutations of the odd numbers 1,3,\\dots ,2n-1 is\n\nS_n^{\\max}=\\boxed{\\dfrac{4n^3-25n+36}{3}}.\n\nDivisibility by 3 is guaranteed because\n4\\equiv 1\\; (\\mathrm{mod}\\,3) and 25\\equiv 1\\; (\\mathrm{mod}\\,3), so\n\n4n^3-25n+36 \\equiv n^3-n \\equiv n(n-1)(n+1) \\equiv 0 \\pmod 3,\n\nas the product of three consecutive integers is always divisible by\n3.\nThe extremal arrangement is the (essentially unique) P_n described in\nSection 2.",
+      "_meta": {
+        "core_steps": [
+          "Place the permutation on a circle (cyclic adjacency).",
+          "If two consecutive pairs (a,b) , (c,d) satisfy a<d and b>c, reversing the intermediate arc raises the sum by (d−a)(b−c)>0.",
+          "Hence an optimal arrangement cannot contain such ‘crossings’; the labels must occur in one monotone direction around the circle.",
+          "Rotate so the largest label comes first; this forces the order n,n−1,…,1 (unique up to rotation).",
+          "Evaluate the corresponding cyclic sum and simplify to (2n³+3n²−11n+18)/6."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The concrete values of the labels; only their relative order is used in the argument.",
+            "original": "{1,2,…,n}"
+          },
+          "slot2": {
+            "description": "Choice of where to start/which direction we read the circle when naming aₙ=n, aₙ₋₁, … .",
+            "original": "Clockwise order starting with aₙ=n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

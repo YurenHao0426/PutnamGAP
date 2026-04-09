@@ -1,0 +1,112 @@
+{
+  "index": "2008-B-2",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $F_0(x) = \\ln x$. For $n \\geq 0$ and $x > 0$, let\n$F_{n+1}(x) = \\int_0^x F_n(t)\\,dt$. Evaluate\n\\[\n\\lim_{n \\to \\infty} \\frac{n! F_n(1)}{\\ln n}.\n\\]",
+  "solution": "We claim that $F_n(x) = (\\ln x-a_n)x^n/n!$, where $a_n = \\sum_{k=1}^n 1/k$. Indeed, temporarily write $G_n(x) = (\\ln x-a_n)x^n/n!$ for $x>0$ and $n\\geq 1$; then $\\lim_{x\\to 0} G_n(x) = 0$ and $G_n'(x) = (\\ln x-a_n+1/n) x^{n-1}/(n-1)! = G_{n-1}(x)$, and the claim follows by the Fundamental Theorem of Calculus and induction on $n$.\n\nGiven the claim, we have $F_n(1) = -a_n/n!$ and so we need to evaluate $-\\lim_{n\\to\\infty} \\frac{a_n}{\\ln n}$. But since the function $1/x$ is strictly decreasing for $x$ positive, $\\sum_{k=2}^n 1/k = a_n-1$ is bounded below by $\\int_2^n dx/x = \\ln n-\\ln 2$ and above by $\\int_1^n dx/x=\\ln n$. It follows that $\\lim_{n\\to\\infty} \\frac{a_n}{\\ln n} = 1$, and the desired limit is $-1$.",
+  "vars": [
+    "x",
+    "t",
+    "n",
+    "k",
+    "a_n",
+    "F_0",
+    "F_n",
+    "F_n+1",
+    "G_n",
+    "G_n-1"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "t": "variablet",
+        "n": "indexvar",
+        "k": "dummyidx",
+        "a_n": "harmonicn",
+        "F_0": "basefunc",
+        "F_n": "nthfunc",
+        "F_n+1": "succfunc",
+        "G_n": "tempfunc",
+        "G_n-1": "prevfunc"
+      },
+      "question": "Let $basefunc(variablex) = \\ln variablex$. For $indexvar \\geq 0$ and $variablex > 0$, let\n$succfunc(variablex) = \\int_0^{variablex} nthfunc(variablet)\\,dvariablet$. Evaluate\n\\[\n\\lim_{indexvar \\to \\infty} \\frac{indexvar! \\, nthfunc(1)}{\\ln indexvar}.\n\\]",
+      "solution": "We claim that $nthfunc(variablex) = (\\ln variablex-harmonicn)variablex^{indexvar}/indexvar!$, where $harmonicn = \\sum_{dummyidx=1}^{indexvar} 1/dummyidx$. Indeed, temporarily write $tempfunc(variablex) = (\\ln variablex-harmonicn)variablex^{indexvar}/indexvar!$ for $variablex>0$ and $indexvar\\geq 1$; then $\\lim_{variablex\\to 0} tempfunc(variablex) = 0$ and $tempfunc'(variablex) = (\\ln variablex-harmonicn+1/indexvar) variablex^{indexvar-1}/(indexvar-1)! = prevfunc(variablex)$, and the claim follows by the Fundamental Theorem of Calculus and induction on $indexvar$.\n\nGiven the claim, we have $nthfunc(1) = -harmonicn/indexvar!$ and so we need to evaluate $-\\lim_{indexvar\\to\\infty} \\frac{harmonicn}{\\ln indexvar}$. But since the function $1/variablex$ is strictly decreasing for $variablex$ positive, $\\sum_{dummyidx=2}^{indexvar} 1/dummyidx = harmonicn-1$ is bounded below by $\\int_2^{indexvar} dvariablex/variablex = \\ln indexvar-\\ln 2$ and above by $\\int_1^{indexvar} dvariablex/variablex=\\ln indexvar$. It follows that $\\lim_{indexvar\\to\\infty} \\frac{harmonicn}{\\ln indexvar} = 1$, and the desired limit is $-1$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "t": "watermelon",
+        "n": "chandelier",
+        "k": "paintbrush",
+        "a_n": "toothbrush",
+        "F_0": "blacksmith",
+        "F_n": "snowflake",
+        "F_n+1": "teaspoon",
+        "G_n": "rainstorm",
+        "G_n-1": "rainstormprev"
+      },
+      "question": "Let $blacksmith(marigold) = \\ln marigold$. For $chandelier \\geq 0$ and $marigold > 0$, let\n$teaspoon(marigold) = \\int_0^{marigold} snowflake(watermelon)\\,dwatermelon$. Evaluate\n\\[\n\\lim_{chandelier \\to \\infty} \\frac{chandelier! snowflake(1)}{\\ln chandelier}.\n\\]",
+      "solution": "We claim that $snowflake(marigold) = (\\ln marigold-toothbrush)marigold^{chandelier}/chandelier!$, where $toothbrush = \\sum_{paintbrush=1}^{chandelier} 1/paintbrush$. Indeed, temporarily write $rainstorm(marigold) = (\\ln marigold-toothbrush)marigold^{chandelier}/chandelier!$ for $marigold>0$ and $chandelier\\geq 1$; then $\\lim_{marigold\\to 0} rainstorm(marigold) = 0$ and $rainstorm'(marigold) = (\\ln marigold-toothbrush+1/chandelier) marigold^{chandelier-1}/(chandelier-1)! = rainstormprev(marigold)$, and the claim follows by the Fundamental Theorem of Calculus and induction on $chandelier$.\n\nGiven the claim, we have $snowflake(1) = -toothbrush/chandelier!$ and so we need to evaluate $-\\lim_{chandelier\\to\\infty} \\frac{toothbrush}{\\ln chandelier}$. But since the function $1/marigold$ is strictly decreasing for $marigold$ positive, $\\sum_{paintbrush=2}^{chandelier} 1/paintbrush = toothbrush-1$ is bounded below by $\\int_2^{chandelier} dmarigold/marigold = \\ln chandelier-\\ln 2$ and above by $\\int_1^{chandelier} dmarigold/marigold=\\ln chandelier$. It follows that $\\lim_{chandelier\\to\\infty} \\frac{toothbrush}{\\ln chandelier} = 1$, and the desired limit is $-1$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "t": "permanent",
+        "n": "floating",
+        "k": "totality",
+        "a_n": "multiplicterm",
+        "F_0": "finalfunc",
+        "F_n": "staticfunc",
+        "F_n+1": "staticminus",
+        "G_n": "illusionfunc",
+        "G_n-1": "illusionplus"
+      },
+      "question": "Let $finalfunc(constantval) = \\ln constantval$. For $floating \\geq 0$ and $constantval > 0$, let\n$staticminus(constantval) = \\int_0^{constantval} staticfunc(permanent)\\,dpermanent$. Evaluate\n\\[\n\\lim_{floating \\to \\infty} \\frac{floating!\\, staticfunc(1)}{\\ln floating}.\n\\]",
+      "solution": "We claim that $staticfunc(constantval) = (\\ln constantval - multiplicterm) constantval^{floating}/floating!$, where $multiplicterm = \\sum_{totality=1}^{floating} 1/totality$. Indeed, temporarily write $illusionfunc(constantval) = (\\ln constantval - multiplicterm) constantval^{floating}/floating!$ for $constantval>0$ and $floating\\geq 1$; then $\\lim_{constantval\\to 0} illusionfunc(constantval) = 0$ and $illusionfunc'(constantval) = (\\ln constantval - multiplicterm + 1/floating) constantval^{floating-1}/(floating-1)! = illusionplus(constantval)$, and the claim follows by the Fundamental Theorem of Calculus and induction on $floating$.\n\nGiven the claim, we have $staticfunc(1) = -multiplicterm/floating!$ and so we need to evaluate $-\\lim_{floating\\to\\infty} \\frac{multiplicterm}{\\ln floating}$. But since the function $1/constantval$ is strictly decreasing for $constantval$ positive, $\\sum_{totality=2}^{floating} 1/totality = multiplicterm - 1$ is bounded below by $\\int_2^{floating} dconstantval/constantval = \\ln floating - \\ln 2$ and above by $\\int_1^{floating} dconstantval/constantval = \\ln floating$. It follows that $\\lim_{floating\\to\\infty} \\frac{multiplicterm}{\\ln floating} = 1$, and the desired limit is $-1$. "
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnpla",
+        "t": "hjgrkslabo",
+        "n": "fvytesrkla",
+        "k": "mdbquorxye",
+        "a_n": "zpoxnidcar",
+        "F_0": "udkalmrezo",
+        "F_n": "vyqestrupo",
+        "F_n+1": "pqdrafkemo",
+        "G_n": "lpsdrukvaw",
+        "G_n-1": "brwoxqenid"
+      },
+      "question": "Let $udkalmrezo(qzxwvtnpla) = \\ln qzxwvtnpla$. For $fvytesrkla \\geq 0$ and $qzxwvtnpla > 0$, let\n$pqdrafkemo(qzxwvtnpla) = \\int_0^{qzxwvtnpla} vyqestrupo(hjgrkslabo)\\,dhjgrkslabo$. Evaluate\n\\[\n\\lim_{fvytesrkla \\to \\infty} \\frac{fvytesrkla! \\, vyqestrupo(1)}{\\ln fvytesrkla}.\n\\]",
+      "solution": "We claim that $vyqestrupo(qzxwvtnpla) = (\\ln qzxwvtnpla- zpoxnidcar) qzxwvtnpla^{fvytesrkla}/fvytesrkla!$, where $zpoxnidcar = \\sum_{mdbquorxye=1}^{fvytesrkla} 1/mdbquorxye$. Indeed, temporarily write $lpsdrukvaw(qzxwvtnpla) = (\\ln qzxwvtnpla- zpoxnidcar) qzxwvtnpla^{fvytesrkla}/fvytesrkla!$ for $qzxwvtnpla>0$ and $fvytesrkla\\geq 1$; then $\\lim_{qzxwvtnpla\\to 0} lpsdrukvaw(qzxwvtnpla) = 0$ and $lpsdrukvaw'(qzxwvtnpla) = (\\ln qzxwvtnpla- zpoxnidcar+1/fvytesrkla) qzxwvtnpla^{fvytesrkla-1}/(fvytesrkla-1)! = brwoxqenid(qzxwvtnpla)$, and the claim follows by the Fundamental Theorem of Calculus and induction on $fvytesrkla$.\n\nGiven the claim, we have $vyqestrupo(1) = - zpoxnidcar/fvytesrkla!$ and so we need to evaluate $-\\lim_{fvytesrkla\\to\\infty} \\frac{zpoxnidcar}{\\ln fvytesrkla}$. But since the function $1/qzxwvtnpla$ is strictly decreasing for $qzxwvtnpla$ positive, $\\sum_{mdbquorxye=2}^{fvytesrkla} 1/mdbquorxye = zpoxnidcar-1$ is bounded below by $\\int_2^{fvytesrkla} dqzxwvtnpla/qzxwvtnpla = \\ln fvytesrkla-\\ln 2$ and above by $\\int_1^{fvytesrkla} dqzxwvtnpla/qzxwvtnpla=\\ln fvytesrkla$. It follows that $\\lim_{fvytesrkla\\to\\infty} \\frac{zpoxnidcar}{\\ln fvytesrkla} = 1$, and the desired limit is $-1$.}"
+    },
+    "kernel_variant": {
+      "question": "Fix an integer $d\\ge 2$.  For $(x_{1},\\dots ,x_{d})\\in(0,\\infty)^{d}$ put\n  $F_{0}(x_{1},\\dots ,x_{d})=\\log (x_{1}+\\dots +x_{d})$  \nand for every integer $n\\ge 0$ define\n\\[\nF_{n+1}(x_{1},\\dots ,x_{d})\n=\\int_{0}^{x_{1}}\\!\\!\\!\\int_{0}^{x_{2}}\\!\\!\\!\\cdots\\!\\!\\!\\int_{0}^{x_{d}}\nF_{n}(t_{1},\\dots ,t_{d})\\,dt_{d}\\cdots dt_{1}.\n\\]\nEvaluate the limit\n\\[\n\\boxed{L_{d}=\\,\\lim_{n\\to\\infty}\\;\n\\frac{(n!)^{d}\\,F_{n}(1,1,\\dots ,1)}{\\log n}}.\n\\]\nDecide explicitly whether $L_{d}$ depends on the dimension $d$.\n\n------------------------------------------------------------------------------------------------------",
+      "solution": "Notation.  Let $\\mathbf 1=(1,\\dots ,1)\\in\\mathbb R^{d}$ and  \n$I_{i}$ be the one-variable operator  \n\\[\n(I_{i}f)(x_{1},\\dots ,x_{d})\n=\\int_{0}^{x_{i}}f(x_{1},\\dots ,x_{i-1},t_{i},x_{i+1},\\dots ,x_{d})\\,dt_{i}.\n\\]\nWith this notation\n\\[\nF_{n+1}= (I_{1}I_{2}\\cdots I_{d})\\,F_{n},\\qquad\nF_{n}=(I_{1}I_{2}\\cdots I_{d})^{n}F_{0}.\n\\tag{1}\n\\]\n\nStep 1.  A kernel representation for $F_{n}(\\mathbf 1)$.  \nBecause the $I_{i}$ commute, $(I_{1}\\cdots I_{d})^{n}=I_{1}^{n}\\cdots I_{d}^{n}$.  \nIn one variable the classical identity\n\\[\nI^{\\,n}f(1)=\\frac1{(n-1)!}\\int_{0}^{1}(1-t)^{\\,n-1}f(t)\\,dt\n\\qquad(n\\ge 1)\n\\tag{2}\n\\]\nholds; apply (2) to each coordinate separately.  Writing\n\\[\nK_{n}(t)=\\frac{(1-t)^{\\,n-1}}{(n-1)!}\\quad(0\\le t\\le 1),\n\\]\nwe obtain for every $n\\ge 1$\n\\[\n\\boxed{F_{n}(\\mathbf 1)=\n\\int_{[0,1]^{d}}\n\\Bigl(\\prod_{i=1}^{d} K_{n}(t_{i})\\Bigr)\\;\n\\log(t_{1}+\\dots +t_{d})\\;d\\mathbf t}.\n\\tag{3}\n\\]\n\nStep 2.  A convenient normalisation.  \nPut\n\\[\nI_{n}:=\\int_{[0,1]^{d}}\n\\Bigl(\\prod_{i=1}^{d}(1-t_{i})^{\\,n-1}\\Bigr)\n\\,\\log(t_{1}+\\dots +t_{d})\\,d\\mathbf t\n\\qquad(n\\ge 1).\n\\]\nBecause $K_{n}(t_{i})=(n-1)!^{-1}(1-t_{i})^{n-1}$, (3) rewrites as\n\\[\nF_{n}(\\mathbf 1)=\\frac{I_{n}}{[(n-1)!]^{d}},\\qquad\n(n!)^{d}F_{n}(\\mathbf 1)=n^{d}\\,I_{n}.\n\\tag{4}\n\\]\n\nStep 3.  Laplace-type asymptotics for $I_{n}$.  \nThe weight $\\prod_{i}(1-t_{i})^{n-1}$ forces each $t_{i}$ to be of size $\\mathcal O(1/n)$, so we scale\n\\[\nt_{i}=\\frac{y_{i}}{n}\\quad(y_{i}\\ge 0),\\qquad\nd\\mathbf t=n^{-d}\\,d\\mathbf y.\n\\]\nFor fixed $R>0$ define the box $B_{R}:=[0,R]^{d}$ and split the integral:\n\\[\nI_{n}=n^{-d}\\!\\!\\!\n\\int_{B_{R}}\\!\\!\\!\\!\n\\bigl(1-\\tfrac{y_{1}}{n}\\bigr)^{n-1}\\!\\!\\cdots\\!\n\\bigl(1-\\tfrac{y_{d}}{n}\\bigr)^{n-1}\n\\log\\!\\Bigl(\\tfrac{y_{1}+\\dots +y_{d}}{n}\\Bigr)d\\mathbf y\n+\\;R_{n}(R).\n\\tag{5}\n\\]\n(A)  Main part on $B_{R}$.  \nAs $n\\to\\infty$, for every fixed $\\mathbf y$ we have\n$(1-\\tfrac{y_{i}}{n})^{n-1}\\to e^{-y_{i}}$; moreover\n$|(1-\\tfrac{y_{i}}{n})^{n-1}|\\le e^{-y_{i}/2}$ once $n\\ge 2R$.\nBy dominated convergence,\n\\[\n\\int_{B_{R}}\\!\\!\\!\\!\\cdots\\,d\\mathbf y\n=-n^{-d}\\log n\n\\int_{B_{R}}e^{-\\sum y_{i}}d\\mathbf y\n+n^{-d}C_{d}(R)+o(n^{-d}),\n\\tag{6}\n\\]\nwhere\n$C_{d}(R)=\\int_{B_{R}}e^{-\\sum y_{i}}\\log(\\,y_{1}+\\dots +y_{d}\\!)\\,d\\mathbf y$.\n\n(B)  Tail estimate outside $B_{R}$.  \nBecause $\\log(\\sum t_{i})\\ge -\\infty$ and\n$(1-t_{i})^{n-1}\\le e^{-(n-1)t_{i}}$,\n\\[\n|R_{n}(R)|\\le\nn^{-d}\\!\\!\\int_{\\mathbf y\\notin B_{R}}e^{-\\sum y_{i}}|\\,\\log(y_{1}+\\dots +y_{d})|\\,d\\mathbf y\n\\le n^{-d}\\,e^{-R}.\n\\tag{7}\n\\]\nChoosing $R=\\tfrac12\\log n$ makes the tail $O(n^{-d-1/2})$.\n\n(C)  Collecting (5)-(7) and letting $R\\uparrow\\infty$ gives\n\\[\nI_{n} = n^{-d}\\Bigl(-\\log n + \\Gamma_{d} + o(1)\\Bigr),\n\\qquad\n\\Gamma_{d}:=\\int_{[0,\\infty)^{d}} e^{-\\sum y_{i}}\\log(\\,y_{1}+\\dots +y_{d}\\!)\\,d\\mathbf y.\n\\tag{8}\n\\]\n\nStep 4.  Finishing the limit.  \nInsert (8) into (4):\n\\[\n(n!)^{d}F_{n}(\\mathbf 1)\n= n^{d}\\,I_{n}\n= -\\log n + \\Gamma_{d}+o(1).\n\\]\nTherefore\n\\[\n\\frac{(n!)^{d}F_{n}(\\mathbf 1)}{\\log n}\\xrightarrow[n\\to\\infty]{}-1.\n\\]\nConsequently\n\\[\n\\boxed{L_{d}=-1\\qquad\\text{for every integer }d\\ge 2.}\n\\]\n\nRemark.  The constant $\\Gamma_{d}$ depends on $d$ (and is hard to\nevaluate explicitly), but it disappears when the expression is divided by\n$\\log n$; hence the limit itself is dimension-independent.\n\n------------------------------------------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.810087",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional setting:  The problem generalises the original single-variable\nrecursion to an $m$-fold (here $d$-fold) iterated integral on $(0,\\infty)^d$, forcing the solver\nto juggle partial derivatives and symmetric arguments rather than a single derivative.\n\n2. Non-trivial inductive proof:  Verifying the closed form now involves\nmanipulating mixed partial derivatives and keeping track of $d$ separate\n$1/(dn+k)$ contributions, a step that is entirely absent (and unnecessary) in\none dimension.\n\n3. Harmonic numbers with variable step:\n   The appearance of $H_{dn}$ (instead of $H_n$) requires recognising and\n   exploiting the telescoping identity\n   $H_{dn}=H_{d(n+1)}-\\sum_{k=1}^{d}\\frac1{dn+k}$, another layer of\n   bookkeeping beyond the original problem.\n\n4. Asymptotic analysis in several parameters:\n   One has to combine the asymptotics of $H_{dn}$ with the\n   multi-factorial growth $(n!)^{\\,d}$, taking care that the dimension parameter enters—and ultimately cancels out—in a subtle way.\n\n5. Conceptual leap:\n   While the final numerical answer happens to coincide with the one-dimensional\n   case ($-1$), reaching it in higher dimensions\n   requires deeper structural insight rather than routine extension of the first solution, thereby satisfying the requirement that the new variant be\n   “significantly harder” yet still solvable."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix an integer $d\\ge 2$.  For $(x_{1},\\dots ,x_{d})\\in(0,\\infty)^{d}$ put\n  $F_{0}(x_{1},\\dots ,x_{d})=\\log (x_{1}+\\dots +x_{d})$  \nand for every integer $n\\ge 0$ define\n\\[\nF_{n+1}(x_{1},\\dots ,x_{d})\n=\\int_{0}^{x_{1}}\\!\\!\\!\\int_{0}^{x_{2}}\\!\\!\\!\\cdots\\!\\!\\!\\int_{0}^{x_{d}}\nF_{n}(t_{1},\\dots ,t_{d})\\,dt_{d}\\cdots dt_{1}.\n\\]\nEvaluate the limit\n\\[\n\\boxed{L_{d}=\\,\\lim_{n\\to\\infty}\\;\n\\frac{(n!)^{d}\\,F_{n}(1,1,\\dots ,1)}{\\log n}}.\n\\]\nDecide explicitly whether $L_{d}$ depends on the dimension $d$.\n\n------------------------------------------------------------------------------------------------------",
+      "solution": "Notation.  Let $\\mathbf 1=(1,\\dots ,1)\\in\\mathbb R^{d}$ and  \n$I_{i}$ be the one-variable operator  \n\\[\n(I_{i}f)(x_{1},\\dots ,x_{d})\n=\\int_{0}^{x_{i}}f(x_{1},\\dots ,x_{i-1},t_{i},x_{i+1},\\dots ,x_{d})\\,dt_{i}.\n\\]\nWith this notation\n\\[\nF_{n+1}= (I_{1}I_{2}\\cdots I_{d})\\,F_{n},\\qquad\nF_{n}=(I_{1}I_{2}\\cdots I_{d})^{n}F_{0}.\n\\tag{1}\n\\]\n\nStep 1.  A kernel representation for $F_{n}(\\mathbf 1)$.  \nBecause the $I_{i}$ commute, $(I_{1}\\cdots I_{d})^{n}=I_{1}^{n}\\cdots I_{d}^{n}$.  \nIn one variable the classical identity\n\\[\nI^{\\,n}f(1)=\\frac1{(n-1)!}\\int_{0}^{1}(1-t)^{\\,n-1}f(t)\\,dt\n\\qquad(n\\ge 1)\n\\tag{2}\n\\]\nholds; apply (2) to each coordinate separately.  Writing\n\\[\nK_{n}(t)=\\frac{(1-t)^{\\,n-1}}{(n-1)!}\\quad(0\\le t\\le 1),\n\\]\nwe obtain for every $n\\ge 1$\n\\[\n\\boxed{F_{n}(\\mathbf 1)=\n\\int_{[0,1]^{d}}\n\\Bigl(\\prod_{i=1}^{d} K_{n}(t_{i})\\Bigr)\\;\n\\log(t_{1}+\\dots +t_{d})\\;d\\mathbf t}.\n\\tag{3}\n\\]\n\nStep 2.  A convenient normalisation.  \nPut\n\\[\nI_{n}:=\\int_{[0,1]^{d}}\n\\Bigl(\\prod_{i=1}^{d}(1-t_{i})^{\\,n-1}\\Bigr)\n\\,\\log(t_{1}+\\dots +t_{d})\\,d\\mathbf t\n\\qquad(n\\ge 1).\n\\]\nBecause $K_{n}(t_{i})=(n-1)!^{-1}(1-t_{i})^{n-1}$, (3) rewrites as\n\\[\nF_{n}(\\mathbf 1)=\\frac{I_{n}}{[(n-1)!]^{d}},\\qquad\n(n!)^{d}F_{n}(\\mathbf 1)=n^{d}\\,I_{n}.\n\\tag{4}\n\\]\n\nStep 3.  Laplace-type asymptotics for $I_{n}$.  \nThe weight $\\prod_{i}(1-t_{i})^{n-1}$ forces each $t_{i}$ to be of size $\\mathcal O(1/n)$, so we scale\n\\[\nt_{i}=\\frac{y_{i}}{n}\\quad(y_{i}\\ge 0),\\qquad\nd\\mathbf t=n^{-d}\\,d\\mathbf y.\n\\]\nFor fixed $R>0$ define the box $B_{R}:=[0,R]^{d}$ and split the integral:\n\\[\nI_{n}=n^{-d}\\!\\!\\!\n\\int_{B_{R}}\\!\\!\\!\\!\n\\bigl(1-\\tfrac{y_{1}}{n}\\bigr)^{n-1}\\!\\!\\cdots\\!\n\\bigl(1-\\tfrac{y_{d}}{n}\\bigr)^{n-1}\n\\log\\!\\Bigl(\\tfrac{y_{1}+\\dots +y_{d}}{n}\\Bigr)d\\mathbf y\n+\\;R_{n}(R).\n\\tag{5}\n\\]\n(A)  Main part on $B_{R}$.  \nAs $n\\to\\infty$, for every fixed $\\mathbf y$ we have\n$(1-\\tfrac{y_{i}}{n})^{n-1}\\to e^{-y_{i}}$; moreover\n$|(1-\\tfrac{y_{i}}{n})^{n-1}|\\le e^{-y_{i}/2}$ once $n\\ge 2R$.\nBy dominated convergence,\n\\[\n\\int_{B_{R}}\\!\\!\\!\\!\\cdots\\,d\\mathbf y\n=-n^{-d}\\log n\n\\int_{B_{R}}e^{-\\sum y_{i}}d\\mathbf y\n+n^{-d}C_{d}(R)+o(n^{-d}),\n\\tag{6}\n\\]\nwhere\n$C_{d}(R)=\\int_{B_{R}}e^{-\\sum y_{i}}\\log(\\,y_{1}+\\dots +y_{d}\\!)\\,d\\mathbf y$.\n\n(B)  Tail estimate outside $B_{R}$.  \nBecause $\\log(\\sum t_{i})\\ge -\\infty$ and\n$(1-t_{i})^{n-1}\\le e^{-(n-1)t_{i}}$,\n\\[\n|R_{n}(R)|\\le\nn^{-d}\\!\\!\\int_{\\mathbf y\\notin B_{R}}e^{-\\sum y_{i}}|\\,\\log(y_{1}+\\dots +y_{d})|\\,d\\mathbf y\n\\le n^{-d}\\,e^{-R}.\n\\tag{7}\n\\]\nChoosing $R=\\tfrac12\\log n$ makes the tail $O(n^{-d-1/2})$.\n\n(C)  Collecting (5)-(7) and letting $R\\uparrow\\infty$ gives\n\\[\nI_{n} = n^{-d}\\Bigl(-\\log n + \\Gamma_{d} + o(1)\\Bigr),\n\\qquad\n\\Gamma_{d}:=\\int_{[0,\\infty)^{d}} e^{-\\sum y_{i}}\\log(\\,y_{1}+\\dots +y_{d}\\!)\\,d\\mathbf y.\n\\tag{8}\n\\]\n\nStep 4.  Finishing the limit.  \nInsert (8) into (4):\n\\[\n(n!)^{d}F_{n}(\\mathbf 1)\n= n^{d}\\,I_{n}\n= -\\log n + \\Gamma_{d}+o(1).\n\\]\nTherefore\n\\[\n\\frac{(n!)^{d}F_{n}(\\mathbf 1)}{\\log n}\\xrightarrow[n\\to\\infty]{}-1.\n\\]\nConsequently\n\\[\n\\boxed{L_{d}=-1\\qquad\\text{for every integer }d\\ge 2.}\n\\]\n\nRemark.  The constant $\\Gamma_{d}$ depends on $d$ (and is hard to\nevaluate explicitly), but it disappears when the expression is divided by\n$\\log n$; hence the limit itself is dimension-independent.\n\n------------------------------------------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.619142",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional setting:  The problem generalises the original single-variable\nrecursion to an $m$-fold (here $d$-fold) iterated integral on $(0,\\infty)^d$, forcing the solver\nto juggle partial derivatives and symmetric arguments rather than a single derivative.\n\n2. Non-trivial inductive proof:  Verifying the closed form now involves\nmanipulating mixed partial derivatives and keeping track of $d$ separate\n$1/(dn+k)$ contributions, a step that is entirely absent (and unnecessary) in\none dimension.\n\n3. Harmonic numbers with variable step:\n   The appearance of $H_{dn}$ (instead of $H_n$) requires recognising and\n   exploiting the telescoping identity\n   $H_{dn}=H_{d(n+1)}-\\sum_{k=1}^{d}\\frac1{dn+k}$, another layer of\n   bookkeeping beyond the original problem.\n\n4. Asymptotic analysis in several parameters:\n   One has to combine the asymptotics of $H_{dn}$ with the\n   multi-factorial growth $(n!)^{\\,d}$, taking care that the dimension parameter enters—and ultimately cancels out—in a subtle way.\n\n5. Conceptual leap:\n   While the final numerical answer happens to coincide with the one-dimensional\n   case ($-1$), reaching it in higher dimensions\n   requires deeper structural insight rather than routine extension of the first solution, thereby satisfying the requirement that the new variant be\n   “significantly harder” yet still solvable."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

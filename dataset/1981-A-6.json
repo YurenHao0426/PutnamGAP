@@ -1,0 +1,142 @@
+{
+  "index": "1981-A-6",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Problem A-6\nSuppose that each of the vertices of \\( \\triangle A B C \\) is a lattice point in the \\( (x, y) \\)-plane and that there is exactly one lattice point \\( P \\) in the interior of the triangle. The line \\( A P \\) is extended to meet \\( B C \\) at \\( E \\). Determine the largest possible value for the ratio of lengths of segments\n\\[\n\\frac{|A P|}{|P E|}\n\\]\n[A lattice point is a point whose coordinates \\( x \\) and \\( y \\) are integers.]",
+  "solution": "A-6.\nTreating each point \\( X \\) of the plane as the vector \\( \\overrightarrow{A X} \\) with initial point at \\( A \\) and final point at \\( X \\), let\n\\[\nL=(B+C) / 2, M=C / 2, \\text { and } \\quad N=B / 2\n\\]\n(be the midpoints of sides \\( B C, A C \\), and \\( A B \\) ). Also let\n\\[\n\\begin{aligned}\nS & =(2 L+M) / 3=(B+C+M) / 3, T=(2 L+N) / 3 \\\\\n& =(B+C+N) / 3, Q=2 P-B, \\quad \\text { and } \\quad R=3 P-B-C .\n\\end{aligned}\n\\]\n\nClearly \\( Q \\) and \\( R \\) are lattice points. Also \\( Q \\neq P \\) and \\( R \\neq P \\) since \\( Q=P \\) implies \\( P=B \\) and \\( R=P \\) implies that \\( P \\) is the point \\( L \\) on side \\( B C \\). Hence \\( Q \\) is not inside \\( \\triangle A B C \\) and this implies that \\( P \\) is not inside \\( \\triangle N B L \\) since the linear transformation \\( f \\) with \\( f(X)=2 X-B \\) translates a doubled \\( \\triangle N B L \\) (and its inside) onto \\( \\triangle A B C \\) (and its inside). Similarly, \\( P \\) is not inside \\( \\triangle M C L \\). Using the mapping \\( g(X)=3 X-B-C \\) and the fact that \\( R \\) is not inside \\( \\triangle L M N \\), one finds that \\( P \\) is not inside \\( \\Delta L S T \\). Since the distance from \\( A \\) to line \\( S T \\) is 5 times the distance between lines \\( S T \\) and \\( B C \\), it follows that \\( |A P| /|P E| \\leq 5 \\). This upper bound 5 is seen to be the maximum by considering the example with \\( A=(0,0), B=(0,2) \\), and \\( C=(3,0) \\) in which \\( P=(1,1)=T \\) is the only lattice point inside \\( \\triangle A B C \\) and \\( |A T| /|T E|=5 \\).",
+  "vars": [
+    "A",
+    "B",
+    "C",
+    "E",
+    "L",
+    "M",
+    "N",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "X",
+    "f",
+    "g"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "vertexalpha",
+        "B": "vertexbravo",
+        "C": "vertexcharlie",
+        "E": "boundaryecho",
+        "L": "midpointlima",
+        "M": "midpointmike",
+        "N": "midpointnovember",
+        "P": "innerpapa",
+        "Q": "latticequebec",
+        "R": "latticeromeo",
+        "S": "latticesierra",
+        "T": "latticetango",
+        "X": "genericxray",
+        "f": "mappingfoxtrot",
+        "g": "mappinggolf"
+      },
+      "question": "Problem A-6\nSuppose that each of the vertices of \\( \\triangle vertexalpha vertexbravo vertexcharlie \\) is a lattice point in the \\( (x, y) \\)-plane and that there is exactly one lattice point \\( innerpapa \\) in the interior of the triangle. The line \\( vertexalpha innerpapa \\) is extended to meet \\( vertexbravo vertexcharlie \\) at \\( boundaryecho \\). Determine the largest possible value for the ratio of lengths of segments\n\\[\n\\frac{|vertexalpha innerpapa|}{|innerpapa boundaryecho|}\n\\]\n[A lattice point is a point whose coordinates \\( x \\) and \\( y \\) are integers.]",
+      "solution": "A-6.\nTreating each point \\( genericxray \\) of the plane as the vector \\( \\overrightarrow{vertexalpha genericxray} \\) with initial point at \\( vertexalpha \\) and final point at \\( genericxray \\), let\n\\[\nmidpointlima=(vertexbravo+vertexcharlie)/2,\\quad midpointmike=vertexcharlie/2,\\text{ and }\\quad midpointnovember=vertexbravo/2\n\\]\n(be the midpoints of sides \\( vertexbravo vertexcharlie, vertexalpha vertexcharlie, \\) and \\( vertexalpha vertexbravo \\) ). Also let\n\\[\n\\begin{aligned}\nlatticesierra & =(2\\,midpointlima+midpointmike)/3=(vertexbravo+vertexcharlie+midpointmike)/3,\\\\\nlatticetango & =(2\\,midpointlima+midpointnovember)/3=(vertexbravo+vertexcharlie+midpointnovember)/3,\\\\\nlatticequebec &= 2\\,innerpapa-vertexbravo,\\quad\\text{and}\\quad latticeromeo=3\\,innerpapa-vertexbravo-vertexcharlie .\n\\end{aligned}\n\\]\n\nClearly \\( latticequebec \\) and \\( latticeromeo \\) are lattice points. Also \\( latticequebec \\neq innerpapa \\) and \\( latticeromeo \\neq innerpapa \\) since \\( latticequebec=innerpapa \\) implies \\( innerpapa=vertexbravo \\) and \\( latticeromeo=innerpapa \\) implies that \\( innerpapa \\) is the point \\( midpointlima \\) on side \\( vertexbravo vertexcharlie \\). Hence \\( latticequebec \\) is not inside \\( \\triangle vertexalpha vertexbravo vertexcharlie \\) and this implies that \\( innerpapa \\) is not inside \\( \\triangle midpointnovember vertexbravo midpointlima \\) since the linear transformation \\( mappingfoxtrot \\) with \\( mappingfoxtrot(genericxray)=2\\,genericxray-vertexbravo \\) translates a doubled \\( \\triangle midpointnovember vertexbravo midpointlima \\) (and its inside) onto \\( \\triangle vertexalpha vertexbravo vertexcharlie \\) (and its inside). Similarly, \\( innerpapa \\) is not inside \\( \\triangle midpointmike vertexcharlie midpointlima \\). Using the mapping \\( mappinggolf(genericxray)=3\\,genericxray-vertexbravo-vertexcharlie \\) and the fact that \\( latticeromeo \\) is not inside \\( \\triangle midpointlima midpointmike midpointnovember \\), one finds that \\( innerpapa \\) is not inside \\( \\triangle midpointlima latticesierra latticetango \\). Since the distance from \\( vertexalpha \\) to line \\( latticesierra latticetango \\) is 5 times the distance between lines \\( latticesierra latticetango \\) and \\( vertexbravo vertexcharlie \\), it follows that\n\\[\n|vertexalpha innerpapa|/|innerpapa boundaryecho| \\le 5 .\n\\]\nThis upper bound 5 is seen to be the maximum by considering the example with \\( vertexalpha=(0,0),\\; vertexbravo=(0,2),\\; \\) and \\( vertexcharlie=(3,0) \\) in which \\( innerpapa=(1,1)=latticetango \\) is the only lattice point inside \\( \\triangle vertexalpha vertexbravo vertexcharlie \\) and\n\\[\n|vertexalpha latticetango|/|latticetango boundaryecho|=5 .\n\\]\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "peppermint",
+        "B": "chandelier",
+        "C": "sailcloth",
+        "E": "raincloud",
+        "L": "gemstone",
+        "M": "toothbrush",
+        "N": "pineapple",
+        "P": "bookshelf",
+        "Q": "jellyfish",
+        "R": "lighthouse",
+        "S": "paintbrush",
+        "T": "snowflake",
+        "X": "driftwood",
+        "f": "windstorm",
+        "g": "firesprite"
+      },
+      "question": "Problem:\n<<<\nProblem A-6\nSuppose that each of the vertices of \\( \\triangle peppermint chandelier sailcloth \\) is a lattice point in the \\( (x, y) \\)-plane and that there is exactly one lattice point \\( bookshelf \\) in the interior of the triangle. The line \\( peppermint bookshelf \\) is extended to meet \\( chandelier sailcloth \\) at \\( raincloud \\). Determine the largest possible value for the ratio of lengths of segments\n\\[\n\\frac{|peppermint bookshelf|}{|bookshelf raincloud|}\n\\]\n[A lattice point is a point whose coordinates \\( x \\) and \\( y \\) are integers.]\n>>>",
+      "solution": "Solution:\n<<<\nA-6.\nTreating each point \\( driftwood \\) of the plane as the vector \\( \\overrightarrow{peppermint driftwood} \\) with initial point at \\( peppermint \\) and final point at \\( driftwood \\), let\n\\[\ngemstone=(chandelier+sailcloth) / 2, toothbrush=sailcloth / 2, \\text { and } \\quad pineapple=chandelier / 2\n\\]\n(be the midpoints of sides \\( chandelier sailcloth, peppermint sailcloth \\), and \\( peppermint chandelier \\) ). Also let\n\\[\n\\begin{aligned}\npaintbrush & =(2 gemstone+toothbrush) / 3=(chandelier+sailcloth+toothbrush) / 3, snowflake=(2 gemstone+pineapple) / 3 \\\\\n& =(chandelier+sailcloth+pineapple) / 3, jellyfish=2 bookshelf-chandelier, \\quad \\text { and } \\quad lighthouse=3 bookshelf-chandelier-sailcloth .\n\\end{aligned}\n\\]\n\nClearly \\( jellyfish \\) and \\( lighthouse \\) are lattice points. Also \\( jellyfish \\neq bookshelf \\) and \\( lighthouse \\neq bookshelf \\) since \\( jellyfish=bookshelf \\) implies \\( bookshelf=chandelier \\) and \\( lighthouse=bookshelf \\) implies that \\( bookshelf \\) is the point \\( gemstone \\) on side \\( chandelier sailcloth \\). Hence \\( jellyfish \\) is not inside \\( \\triangle peppermint chandelier sailcloth \\) and this implies that \\( bookshelf \\) is not inside \\( \\triangle pineapple chandelier gemstone \\) since the linear transformation \\( windstorm \\) with \\( windstorm(driftwood)=2 driftwood-chandelier \\) translates a doubled \\( \\triangle pineapple chandelier gemstone \\) (and its inside) onto \\( \\triangle peppermint chandelier sailcloth \\) (and its inside). Similarly, \\( bookshelf \\) is not inside \\( \\triangle toothbrush sailcloth gemstone \\). Using the mapping \\( firesprite(driftwood)=3 driftwood-chandelier-sailcloth \\) and the fact that \\( lighthouse \\) is not inside \\( \\triangle gemstone toothbrush pineapple \\), one finds that \\( bookshelf \\) is not inside \\( \\Delta gemstone paintbrush snowflake \\). Since the distance from \\( peppermint \\) to line \\( paintbrush snowflake \\) is 5 times the distance between lines \\( paintbrush snowflake \\) and \\( chandelier sailcloth \\), it follows that \\( |peppermint bookshelf| /|bookshelf raincloud| \\leq 5 \\). This upper bound 5 is seen to be the maximum by considering the example with \\( peppermint=(0,0), chandelier=(0,2) \\), and \\( sailcloth=(3,0) \\) in which \\( bookshelf=(1,1)=snowflake \\) is the only lattice point inside \\( \\triangle peppermint chandelier sailcloth \\) and \\( |peppermint snowflake| /|snowflake raincloud|=5 \\).\n>>>"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "centerpoint",
+        "B": "midpoint",
+        "C": "centroidal",
+        "E": "insidept",
+        "L": "endpointx",
+        "M": "edgepoint",
+        "N": "extremity",
+        "P": "boundary",
+        "Q": "stationary",
+        "R": "fixedpoint",
+        "S": "distantpt",
+        "T": "farawaypt",
+        "X": "specificpt",
+        "f": "constantmap",
+        "g": "steadyfunc"
+      },
+      "question": "Problem A-6\nSuppose that each of the vertices of \\( \\triangle centerpoint midpoint centroidal \\) is a lattice point in the \\( (x, y) \\)-plane and that there is exactly one lattice point \\( boundary \\) in the interior of the triangle. The line \\( centerpoint boundary \\) is extended to meet \\( midpoint centroidal \\) at \\( insidept \\). Determine the largest possible value for the ratio of lengths of segments\n\\[\n\\frac{|centerpoint boundary|}{|boundary insidept|}\n\\]\n[A lattice point is a point whose coordinates \\( x \\) and \\( y \\) are integers.]",
+      "solution": "A-6.\nTreating each point \\( specificpt \\) of the plane as the vector \\( \\overrightarrow{centerpoint specificpt} \\) with initial point at \\( centerpoint \\) and final point at \\( specificpt \\), let\n\\[\nendpointx=(midpoint+centroidal) / 2, edgepoint=centroidal / 2, \\text { and } \\quad extremity=midpoint / 2\n\\]\n(be the midpoints of sides \\( midpoint centroidal, centerpoint centroidal \\), and \\( centerpoint midpoint \\) ). Also let\n\\[\n\\begin{aligned}\ndistantpt & =(2 endpointx+edgepoint) / 3=(midpoint+centroidal+edgepoint) / 3, farawaypt=(2 endpointx+extremity) / 3 \\\\\n& =(midpoint+centroidal+extremity) / 3, stationary=2 boundary-midpoint, \\quad \\text { and } \\quad fixedpoint=3 boundary-midpoint-centroidal .\n\\end{aligned}\n\\]\n\nClearly \\( stationary \\) and \\( fixedpoint \\) are lattice points. Also \\( stationary \\neq boundary \\) and \\( fixedpoint \\neq boundary \\) since \\( stationary=boundary \\) implies \\( boundary=midpoint \\) and \\( fixedpoint=boundary \\) implies that \\( boundary \\) is the point \\( endpointx \\) on side \\( midpoint centroidal \\). Hence \\( stationary \\) is not inside \\( \\triangle centerpoint midpoint centroidal \\) and this implies that \\( boundary \\) is not inside \\( \\triangle extremity midpoint endpointx \\) since the linear transformation \\( constantmap \\) with \\( constantmap(specificpt)=2 specificpt-midpoint \\) translates a doubled \\( \\triangle extremity midpoint endpointx \\) (and its inside) onto \\( \\triangle centerpoint midpoint centroidal \\) (and its inside). Similarly, \\( boundary \\) is not inside \\( \\triangle edgepoint centroidal endpointx \\). Using the mapping \\( steadyfunc(specificpt)=3 specificpt-midpoint-centroidal \\) and the fact that \\( fixedpoint \\) is not inside \\( \\triangle endpointx edgepoint extremity \\), one finds that \\( boundary \\) is not inside \\( \\Delta endpointx distantpt farawaypt \\). Since the distance from \\( centerpoint \\) to line \\( distantpt farawaypt \\) is 5 times the distance between lines \\( distantpt farawaypt \\) and \\( midpoint centroidal \\), it follows that \\( |centerpoint boundary| /|boundary insidept| \\leq 5 \\). This upper bound 5 is seen to be the maximum by considering the example with \\( centerpoint=(0,0), midpoint=(0,2) \\), and \\( centroidal=(3,0) \\) in which \\( boundary=(1,1)=farawaypt \\) is the only lattice point inside \\( \\triangle centerpoint midpoint centroidal \\) and \\( |centerpoint farawaypt| /|farawaypt insidept|=5 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "B": "hjgrksla",
+        "C": "vbdkqmne",
+        "E": "rfqplhga",
+        "L": "mbxdceor",
+        "M": "ugwrzxvc",
+        "N": "sotpliae",
+        "P": "ircnvsah",
+        "Q": "oqlpydtm",
+        "R": "lexdworm",
+        "S": "tzyahfqn",
+        "T": "enwrxgkm",
+        "X": "wmykuqhj",
+        "f": "kyouhdbs",
+        "g": "zmwqvrlc"
+      },
+      "question": "Problem A-6\nSuppose that each of the vertices of \\( \\triangle qzxwvtnp hjgrksla vbdkqmne \\) is a lattice point in the \\( (x, y) \\)-plane and that there is exactly one lattice point \\( ircnvsah \\) in the interior of the triangle. The line \\( qzxwvtnp ircnvsah \\) is extended to meet \\( hjgrksla vbdkqmne \\) at \\( rfqplhga \\). Determine the largest possible value for the ratio of lengths of segments\n\\[\n\\frac{|qzxwvtnp ircnvsah|}{|ircnvsah rfqplhga|}\n\\]\n[A lattice point is a point whose coordinates \\( x \\) and \\( y \\) are integers.]",
+      "solution": "A-6.\nTreating each point \\( wmykuqhj \\) of the plane as the vector \\( \\overrightarrow{qzxwvtnp wmykuqhj} \\) with initial point at \\( qzxwvtnp \\) and final point at \\( wmykuqhj \\), let\n\\[\nmbxdceor=(hjgrksla+vbdkqmne) / 2, ugwrzxvc=vbdkqmne / 2, \\text { and } \\quad sotpliae=hjgrksla / 2\n\\]\n(be the midpoints of sides \\( hjgrksla vbdkqmne, qzxwvtnp vbdkqmne \\), and \\( qzxwvtnp hjgrksla \\) ). Also let\n\\[\n\\begin{aligned}\ntzyahfqn & =(2 mbxdceor+ugwrzxvc) / 3=(hjgrksla+vbdkqmne+ugwrzxvc) / 3, enwrxgkm=(2 mbxdceor+sotpliae) / 3 \\\\\n& =(hjgrksla+vbdkqmne+sotpliae) / 3, oqlpydtm=2 ircnvsah-hjgrksla, \\quad \\text { and } \\quad lexdworm=3 ircnvsah-hjgrksla-vbdkqmne .\n\\end{aligned}\n\\]\n\nClearly \\( oqlpydtm \\) and \\( lexdworm \\) are lattice points. Also \\( oqlpydtm \\neq ircnvsah \\) and \\( lexdworm \\neq ircnvsah \\) since \\( oqlpydtm=ircnvsah \\) implies \\( ircnvsah=hjgrksla \\) and \\( lexdworm=ircnvsah \\) implies that \\( ircnvsah \\) is the point \\( mbxdceor \\) on side \\( hjgrksla vbdkqmne \\). Hence \\( oqlpydtm \\) is not inside \\( \\triangle qzxwvtnp hjgrksla vbdkqmne \\) and this implies that \\( ircnvsah \\) is not inside \\( \\triangle sotpliae hjgrksla mbxdceor \\) since the linear transformation \\( kyouhdbs \\) with \\( kyouhdbs(wmykuqhj)=2 wmykuqhj-hjgrksla \\) translates a doubled \\( \\triangle sotpliae hjgrksla mbxdceor \\) (and its inside) onto \\( \\triangle qzxwvtnp hjgrksla vbdkqmne \\) (and its inside). Similarly, \\( ircnvsah \\) is not inside \\( \\triangle ugwrzxvc vbdkqmne mbxdceor \\). Using the mapping \\( zmwqvrlc(wmykuqhj)=3 wmykuqhj-hjgrksla-vbdkqmne \\) and the fact that \\( lexdworm \\) is not inside \\( \\triangle mbxdceor ugwrzxvc sotpliae \\), one finds that \\( ircnvsah \\) is not inside \\( \\Delta mbxdceor tzyahfqn enwrxgkm \\). Since the distance from \\( qzxwvtnp \\) to line \\( tzyahfqn enwrxgkm \\) is 5 times the distance between lines \\( tzyahfqn enwrxgkm \\) and \\( hjgrksla vbdkqmne \\), it follows that \\( |qzxwvtnp ircnvsah| /|ircnvsah rfqplhga| \\leq 5 \\). This upper bound 5 is seen to be the maximum by considering the example with \\( qzxwvtnp=(0,0), hjgrksla=(0,2) \\), and \\( vbdkqmne=(3,0) \\) in which \\( ircnvsah=(1,1)=enwrxgkm \\) is the only lattice point inside \\( \\triangle qzxwvtnp hjgrksla vbdkqmne \\) and \\( |qzxwvtnp enwrxgkm| /|enwrxgkm rfqplhga|=5 ."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\triangle ABC\\) be a non-degenerate triangle whose three vertices are lattice points in the plane.  Assume that the interior of the triangle contains exactly one lattice point, denoted by \\(P\\).  The line through \\(A\\) and \\(P\\) meets the side \\(BC\\) again at \\(E\\).  Determine the largest possible value of the ratio\n\\[\n\\frac{|AP|}{|PE|}.\n\\]",
+      "solution": "Throughout we translate the coordinate system so that the origin is at \\(A\\).  Thus every point \\(X\\) is identified with the vector \\(\\vec{AX}\\), and\n\\[\nB,C\\in\\mathbb Z^{2},\\qquad P\\in\\mathbb Z^{2}.\n\\]\n\n1.  Three lattice-preserving homotheties.\n------------------------------------------------\nDefine the mid-points\n\\[\nL=\\frac{B+C}{2},\\; M=\\frac{C}{2},\\; N=\\frac{B}{2},\n\\]\nand the homotheties\n\\[\n\\begin{aligned}\n  f_B(X)&=2X-B            &&(\\text{center }B,\\; \\text{ratio }2),\\\\\n  f_C(X)&=2X-C            &&(\\text{center }C,\\; \\text{ratio }2),\\\\\n  g     (X)&=3X-B-C       &&(\\text{center }L,\\; \\text{ratio }3).\n\\end{aligned}\n\\]\nBecause the maps have integral linear parts and integral translations, they send lattice points to lattice points.\n\nPut\n\\[Q=f_B(P)=2P-B,\\qquad R=g(P)=3P-B-C.\\]\nIf one of \\(Q,R\\) coincided with \\(P\\) we would obtain the impossible equalities \\(P=B\\), \\(P=C\\) or \\(P=L\\); hence \\(Q\\neq P\\) and \\(R\\neq P\\).  Consequently neither \\(Q\\) nor \\(R\\) lies in the interior of \\(\\triangle ABC\\), since the triangle is known to contain exactly one interior lattice point.\n\n2.  Where can \\(P\\) be?\n-------------------------\nThe map \\(g\\) fixes \\(L\\) and sends\n\\[g(S)=M,\\qquad g(T)=N,\\]\nwhere\n\\[S=\\frac{2L+M}{3},\\qquad T=\\frac{2L+N}{3}.\\]\nThus \\(g\\) maps the triangle \\(\\triangle LST\\) onto the medial triangle \\(\\triangle LMN\\), which is strictly contained in \\(\\triangle ABC\\).  Since the image \\(R=g(P)\\) is *not* inside \\(\\triangle ABC\\), we deduce\n\\[P\\notin \\triangle LST.\\tag{1}\\]\n\nBecause \\(ST\\parallel BC\\), the interior of \\(\\triangle ABC\\) is split by the line \\(ST\\) into two open regions\n\\[\n\\begin{aligned}\n \\mathcal R_1 &= \\{\\text{points on the same side of }ST\\text{ as }A\\},\\\\\n \\mathcal R_2 &= \\{\\text{points between }ST\\text{ and }BC\\}.\\end{aligned}\n\\]\nHence either\n\\[P\\in \\mathcal R_1\\setminus\\triangle LST, \\quad P\\in \\mathcal R_2, \\quad \\text{or }P\\in ST.\\tag{2}\\]\n\n2a.  \\(P\\) cannot lie in \\(\\mathcal R_2\\).\n--------------------------------------------\nWrite the barycentric coordinates\n\\[P=(1-u-v)A+uB+vC,\\qquad u,v>0,\\;u+v<1.\\]\nA point is on \\(ST\\) exactly when\n\\[u+v=\\tfrac56.\\tag{3}\\]\nThus \\(P\\in\\mathcal R_2 \\iff u+v>\\tfrac56.\\)\n\nAssume \\(u+v>5/6\\). Three cases occur.\n\n(i)  \\(u>1/2\\) (the case \\(v>1/2\\) is symmetrical).  Then\n\\[Q=f_B(P)=2(1-u-v)A+(2u-1)B+2vC\\]\nreceives non-negative barycentric coefficients that sum to 1, with the coefficient of \\(B\\) positive.  Hence \\(Q\\) is strictly inside \\(\\triangle ABC\\) - contradiction.\n\n(ii) \\(u=1/2\\), so \\(v>1/3\\).  Now\n\\[R=g(P)=3(1-u-v)A+(3u-1)B+(3v-1)C\\]\nhas all three coefficients positive, so \\(R\\) is another interior lattice point - contradiction.\n\n(iii)  Both \\(u<1/2\\) and \\(v<1/2\\).  Because \\(u+v>5/6\\), we get \\(u,v>1/3\\).  The same computation as in (ii) makes \\(R\\) an interior lattice point - contradiction.\n\nThus\n\\[P\\notin\\mathcal R_2.\\tag{4}\\]\n\nCombining (1), (2) and (4) we have established only that\n\\[\nP\\in(\\mathcal R_1\\setminus\\triangle LST)\\;\\cup\\;ST.\\qquad(\\text{In particular, }P\\text{ lies on the same side of }ST\\text{ as }A.)\n\\]\nWe *do not* need a more precise description of the location of \\(P\\) to finish the problem.\n\n3.  Bounding the ratio.\n-----------------------\nLet \\(d(X)\\) denote the perpendicular distance from a point (or line) \\(X\\) to the line \\(BC\\).  Because \\(ST\\parallel BC\\) and \\(A\\) and \\(P\\) lie on the *same* side of \\(ST\\), we have\n\\[d(P)\\ge d(ST).\\tag{5}\\]\n(Indeed, if \\(P\\) were closer to \\(BC\\) than \\(ST\\) is, it would lie in \\(\\mathcal R_2\\), which has just been ruled out.)\n\nBy similar triangles\n\\[\n\\frac{|AP|}{|PE|}=\\frac{d(A)}{d(P)}-1.\\tag{6}\n\\]\nWe therefore want an upper bound for the fraction \\(d(A)/d(P)\\).  Inequality (5) gives\n\\[\\frac{d(A)}{d(P)}\\le\\frac{d(A)}{d(ST)}.\\]\n\nIt remains to compute the ratio \\(d(A)/d(ST)\\).  Let \\(\\vec v=C-B\\) be a direction vector of \\(BC\\).  The usual area formula yields\n\\[\n\\begin{aligned}\nd(ST)&=\\frac{|(S-B)\\times\\vec v|}{|\\vec v|}=\\tfrac16\\,\\frac{|B\\times C|}{|\\vec v|},\\\\[4pt]\nd(A)  &=\\frac{|A\\times\\vec v|}{|\\vec v|}=\\frac{|B\\times C|}{|\\vec v|}.\n\\end{aligned}\n\\]\nHence\n\\[\\frac{d(A)}{d(ST)}=\\frac{1}{1/6}=6.\\]\nSubstituting into (6) gives\n\\[\n\\frac{|AP|}{|PE|}\\le 6-1=5.\\tag{7}\n\\]\n\n4.  Sharpness of the bound.\n---------------------------\nEquality in (7) occurs precisely when \\(d(P)=d(ST)\\), i.e. when \\(P\\) lies on the line \\(ST\\).  The concrete example\n\\[A=(0,0),\\;B=(0,2),\\;C=(3,0),\\qquad P=(1,1)=T\\]\nsatisfies all hypotheses: \\(P\\) is the only interior lattice point of \\(\\triangle ABC\\) and a direct computation shows \\(|AP|/|PE|=5\\).  Therefore the bound 5 is attainable.\n\nBecause the ratio is never larger than 5 and an example achieves 5, the largest possible value is\n\\[\\boxed{5}.\\]",
+      "_meta": {
+        "core_steps": [
+          "Introduce midpoints on the three sides and write every point as an affine (vector) combination with A as origin.",
+          "Apply lattice-preserving dilations f(X)=2X−B and g(X)=3X−B−C to the triangle; uniqueness of the interior lattice point forces the images Q, R ≠ P, hence P cannot lie in the images’ pre-images (certain sub-triangles).",
+          "Conclude that P is excluded from a smaller triangle LST adjacent to BC.",
+          "Compare similar triangles A-ST-BC to get the distance ratio |AP|/|PE| ≤ 5.",
+          "Display an explicit lattice triangle with a single interior lattice point that attains the upper bound, proving maximality."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Specific coordinates chosen for the extremal example; any affinely equivalent lattice triangle with one interior lattice point and giving ratio 5 works.",
+            "original": "A=(0,0), B=(0,2), C=(3,0)"
+          },
+          "slot2": {
+            "description": "Choice of vertex used as the vector origin for expressing all points (the argument could start from B or C instead of A).",
+            "original": "Origin taken at vertex A"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

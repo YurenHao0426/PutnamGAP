@@ -1,0 +1,201 @@
+{
+  "index": "2008-B-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "What is the maximum number of rational points that can lie on a circle\nin $\\mathbb{R}^2$ whose center is not a rational point? (A \\emph{rational\npoint} is a point both of whose coordinates are rational numbers.)",
+  "solution": "There are at most two such points. For example,\nthe points $(0,0)$ and $(1,0)$ lie on a circle with center\n$(1/2, x)$ for any real number $x$, not necessarily rational.\n\nOn the other hand, suppose $P = (a,b), Q = (c,d), R = (e,f)$\nare three rational points that lie\non a circle. The midpoint $M$ of the side $PQ$ is\n$((a+c)/2, (b+d)/2)$, which is again rational. Moreover, the slope\nof the line $PQ$ is $(d-b)/(c-a)$, so the slope of the line through\n$M$ perpendicular to $PQ$ is $(a-c)/(b-d)$, which is rational or infinite.\n\nSimilarly, if $N$ is the midpoint of $QR$, then $N$ is a rational point\nand the line through $N$ perpendicular to $QR$ has rational slope.\nThe center of the circle lies on both of these lines, so its\ncoordinates $(g,h)$ satisfy two linear equations with rational\ncoefficients, say $Ag + Bh = C$ and $Dg + Eh = F$. Moreover,\nthese equations have a unique solution. That solution must then be\n\\begin{align*}\ng &= (CE - BD)/(AE - BD) \\\\\nh &= (AF - BC)/(AE - BD)\n\\end{align*}\n(by elementary algebra, or Cramer's rule),\nso the center of the circle is rational. This proves the desired result.\n\n\\textbf{Remark:} The above solution is deliberately more verbose\nthan is really necessary. A shorter way to say this is that any two distinct\nrational points determine a \\emph{rational line}\n(a line of the form $ax + by + c = 0$ with $a,b,c$ rational),\nwhile any two nonparallel rational lines intersect at a rational point.\nA similar statement holds with the rational numbers replaced by any\nfield.\n\n\\textbf{Remark:} A more explicit argument is to show that the equation of\nthe circle through the rational points $(x_1, y_1), (x_2, y_2), (x_3, y_3)$ is\n\\[\n0 = \\det \\begin{pmatrix}\nx_1^2 + y_1^2 & x_1 & y_1 & 1 \\\\\nx_2^2 + y_2^2 & x_2 & y_2 & 1 \\\\\nx_3^2 + y_3^2 & x_3 & y_3 & 1 \\\\\nx^2 + y^2 & x & y & 1 \\\\\n\\end{pmatrix}\n\\]\nwhich has the form $a(x^2+y^2) + dx + ey + f = 0$ for $a,d,e,f$ rational.\nThe center of this circle is $(-d/(2a), -e/(2a))$, which is again a rational\npoint.",
+  "vars": [
+    "x",
+    "y",
+    "g",
+    "h",
+    "x_1",
+    "y_1",
+    "x_2",
+    "y_2",
+    "x_3",
+    "y_3"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "P",
+    "Q",
+    "R",
+    "M",
+    "N",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xposvar",
+        "y": "yposvar",
+        "g": "geocent",
+        "h": "heightc",
+        "x_1": "xposone",
+        "y_1": "yposone",
+        "x_2": "xpstwo",
+        "y_2": "ypstwo",
+        "x_3": "xpsthree",
+        "y_3": "ypsthree",
+        "a": "alphavar",
+        "b": "betavar",
+        "c": "charlie",
+        "d": "deltavar",
+        "e": "echovar",
+        "f": "foxtrot",
+        "P": "pointpee",
+        "Q": "pointcue",
+        "R": "pointrho",
+        "M": "midpointm",
+        "N": "midpointn",
+        "A": "coeffalpha",
+        "B": "coeffbeta",
+        "C": "coeffchar",
+        "D": "coeffdelta",
+        "E": "coeffecho",
+        "F": "coefffoxt"
+      },
+      "question": "What is the maximum number of rational points that can lie on a circle in $\\mathbb{R}^2$ whose center is not a rational point? (A \\emph{rational point} is a point both of whose coordinates are rational numbers.)",
+      "solution": "There are at most two such points. For example, the points $(0,0)$ and $(1,0)$ lie on a circle with center $(1/2, xposvar)$ for any real number $xposvar$, not necessarily rational.\n\nOn the other hand, suppose $pointpee = (alphavar, betavar),\\; pointcue = (charlie, deltavar),\\; pointrho = (echovar, foxtrot)$ are three rational points that lie on a circle. The midpoint $midpointm$ of the side $pointpee pointcue$ is $((alphavar+charlie)/2,\\,(betavar+deltavar)/2)$, which is again rational. Moreover, the slope of the line $pointpee pointcue$ is $(deltavar-betavar)/(charlie-alphavar)$, so the slope of the line through $midpointm$ perpendicular to $pointpee pointcue$ is $(alphavar-charlie)/(betavar-deltavar)$, which is rational or infinite.\n\nSimilarly, if $midpointn$ is the midpoint of $pointcue pointrho$, then $midpointn$ is a rational point and the line through $midpointn$ perpendicular to $pointcue pointrho$ has rational slope. The center of the circle lies on both of these lines, so its coordinates $(geocent, heightc)$ satisfy two linear equations with rational coefficients, say $coeffalpha geocent + coeffbeta heightc = coeffchar$ and $coeffdelta geocent + coeffecho heightc = coefffoxt$. Moreover, these equations have a unique solution. That solution must then be\n\\begin{align*}\ngeocent &= (coeffchar\\,coeffecho - coeffbeta\\,coeffdelta)/(coeffalpha\\,coeffecho - coeffbeta\\,coeffdelta) \\\\\nheightc &= (coeffalpha\\,coefffoxt - coeffchar\\,coeffdelta)/(coeffalpha\\,coeffecho - coeffbeta\\,coeffdelta)\n\\end{align*}\n(by elementary algebra, or Cramer\\'s rule), so the center of the circle is rational. This proves the desired result.\n\n\\textbf{Remark:} The above solution is deliberately more verbose than is really necessary. A shorter way to say this is that any two distinct rational points determine a \\emph{rational line} (a line of the form $alphavar xposvar + betavar yposvar + charlie = 0$ with $alphavar, betavar, charlie$ rational), while any two nonparallel rational lines intersect at a rational point. A similar statement holds with the rational numbers replaced by any field.\n\n\\textbf{Remark:} A more explicit argument is to show that the equation of the circle through the rational points $(xposone, yposone),\\,(xpstwo, ypstwo),\\,(xpsthree, ypstheree)$ is\n\\[\n0 = \\det \\begin{pmatrix}\n xposone^{2} + yposone^{2} & xposone & yposone & 1 \\\\\n xpstwo^{2} + ypstwo^{2} & xpstwo & ypstwo & 1 \\\\\n xpsthree^{2} + ypstheree^{2} & xpsthree & ypstheree & 1 \\\\\n xposvar^{2} + yposvar^{2} & xposvar & yposvar & 1 \\\\\n\\end{pmatrix}\n\\]\nwhich has the form $alphavar(xposvar^{2}+yposvar^{2}) + deltavar xposvar + echovar yposvar + foxtrot = 0$ for $alphavar, deltavar, echovar, foxtrot$ rational. The center of this circle is $(-deltavar/(2\\,alphavar),\\,-echovar/(2\\,alphavar))$, which is again a rational point."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandstone",
+        "y": "driftwood",
+        "g": "mapleleaf",
+        "h": "cloudshade",
+        "x_1": "pebbleton",
+        "y_1": "moonfrost",
+        "x_2": "brightswan",
+        "y_2": "duskflower",
+        "x_3": "emberquake",
+        "y_3": "silkwillow",
+        "a": "riverstone",
+        "b": "hazelgrove",
+        "c": "windrider",
+        "d": "thornfield",
+        "f": "silverpine",
+        "P": "ivorygate",
+        "Q": "ambertrail",
+        "R": "coralhaven",
+        "M": "valehollow",
+        "N": "nightsky",
+        "A": "hollowmist",
+        "B": "goldencoast",
+        "C": "frostvalley",
+        "D": "sunlancer",
+        "E": "mistybrook",
+        "F": "shadowmere"
+      },
+      "question": "What is the maximum number of rational points that can lie on a circle\nin \\(\\mathbb{R}^2\\) whose center is not a rational point? (A \\emph{rational\npoint} is a point both of whose coordinates are rational numbers.)",
+      "solution": "There are at most two such points. For example,\nthe points $(0,0)$ and $(1,0)$ lie on a circle with center\n$(1/2, sandstone)$ for any real number sandstone, not necessarily rational.\n\nOn the other hand, suppose ivorygate = (riverstone,hazelgrove), ambertrail = (windrider,thornfield), coralhaven = (e,silverpine) are three rational points that lie\non a circle. The midpoint valehollow of the side ivorygate ambertrail is\n$((riverstone+windrider)/2, (hazelgrove+thornfield)/2)$, which is again rational. Moreover, the slope\nof the line ivorygate ambertrail is $(thornfield-hazelgrove)/(windrider-riverstone)$, so the slope of the line through\nvalehollow perpendicular to ivorygate ambertrail is $(riverstone-windrider)/(hazelgrove-thornfield)$, which is rational or infinite.\n\nSimilarly, if nightsky is the midpoint of ambertrail coralhaven, then nightsky is a rational point\nand the line through nightsky perpendicular to ambertrail coralhaven has rational slope.\nThe center of the circle lies on both of these lines, so its\ncoordinates $(mapleleaf,cloudshade)$ satisfy two linear equations with rational\ncoefficients, say hollowmist mapleleaf + goldencoast cloudshade = frostvalley and sunlancer mapleleaf + mistybrook cloudshade = shadowmere. Moreover,\nthese equations have a unique solution. That solution must then be\n\\begin{align*}\nmapleleaf &= (frostvalley mistybrook - goldencoast sunlancer)/(hollowmist mistybrook - goldencoast sunlancer) \\\\\ncloudshade &= (hollowmist shadowmere - frostvalley goldencoast)/(hollowmist mistybrook - goldencoast sunlancer)\n\\end{align*}\n(by elementary algebra, or Cramer's rule),\nso the center of the circle is rational. This proves the desired result.\n\n\\textbf{Remark:} The above solution is deliberately more verbose\nthan is really necessary. A shorter way to say this is that any two distinct\nrational points determine a \\emph{rational line}\n(a line of the form $riverstone sandstone + hazelgrove driftwood + windrider = 0$ with $riverstone,\\hazelgrove,\\windrider$ rational),\nwhile any two nonparallel rational lines intersect at a rational point.\nA similar statement holds with the rational numbers replaced by any\nfield.\n\n\\textbf{Remark:} A more explicit argument is to show that the equation of\nthe circle through the rational points $(pebbleton, moonfrost), (brightswan, duskflower), (emberquake, silkwillow)$ is\n\\[\n0 = \\det \\begin{pmatrix}\npebbleton^2 + moonfrost^2 & pebbleton & moonfrost & 1 \\\\\nbrightswan^2 + duskflower^2 & brightswan & duskflower & 1 \\\\\nemberquake^2 + silkwillow^2 & emberquake & silkwillow & 1 \\\\\nsandstone^2 + driftwood^2 & sandstone & driftwood & 1 \\\\\n\\end{pmatrix}\n\\]\nwhich has the form $riverstone(sandstone^2+driftwood^2) + thornfield sandstone + e driftwood + silverpine = 0$ for $riverstone,thornfield,e,silverpine$ rational.\nThe center of this circle is $(-thornfield/(2 riverstone), - e/(2 riverstone))$, which is again a rational\npoint."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "g": "offcentercoord",
+        "h": "skewcoord",
+        "x_1": "unrelatedone",
+        "y_1": "unrelatedtwo",
+        "x_2": "unrelatedthree",
+        "y_2": "unrelatedfour",
+        "x_3": "unrelatedfive",
+        "y_3": "unrelatedsix",
+        "a": "variablealpha",
+        "b": "variablebravo",
+        "c": "variablecharlie",
+        "d": "variabledelta",
+        "e": "variableechoo",
+        "f": "variablefoxtrot",
+        "P": "antipointone",
+        "Q": "antipointtwo",
+        "R": "antipointtri",
+        "M": "antipointmid",
+        "N": "antipointnex",
+        "A": "anticofone",
+        "B": "anticoftwo",
+        "C": "anticofthr",
+        "D": "anticoffor",
+        "E": "anticoffiv",
+        "F": "anticofive"
+      },
+      "question": "What is the maximum number of rational points that can lie on a circle\nin $\\mathbb{R}^2$ whose center is not a rational point? (A \\emph{rational\npoint} is a point both of whose coordinates are rational numbers.)",
+      "solution": "There are at most two such points. For example,\nthe points $(0,0)$ and $(1,0)$ lie on a circle with center\n$(1/2, verticalaxis)$ for any real number $verticalaxis$, not necessarily rational.\n\nOn the other hand, suppose $antipointone = (variablealpha,variablebravo), antipointtwo = (variablecharlie,variabledelta), antipointtri = (variableechoo,variablefoxtrot)$\nare three rational points that lie\non a circle. The midpoint $antipointmid$ of the side $antipointone antipointtwo$ is\n$((variablealpha+variablecharlie)/2, (variablebravo+variabledelta)/2)$, which is again rational. Moreover, the slope\nof the line $antipointone antipointtwo$ is $(variabledelta-variablebravo)/(variablecharlie-variablealpha)$, so the slope of the line through\n$antipointmid$ perpendicular to $antipointone antipointtwo$ is $(variablealpha-variablecharlie)/(variablebravo-variabledelta)$, which is rational or infinite.\n\nSimilarly, if $antipointnex$ is the midpoint of $antipointtwo antipointtri$, then $antipointnex$ is a rational point\nand the line through $antipointnex$ perpendicular to $antipointtwo antipointtri$ has rational slope.\nThe center of the circle lies on both of these lines, so its\ncoordinates $(offcentercoord,skewcoord)$ satisfy two linear equations with rational\ncoefficients, say $anticofone offcentercoord + anticoftwo skewcoord = anticofthr$ and $anticoffor offcentercoord + anticoffiv skewcoord = anticofive$. Moreover,\nthese equations have a unique solution. That solution must then be\n\\begin{align*}\noffcentercoord &= (anticofthr\\,anticoffiv - anticoftwo\\,anticoffor)/(anticofone\\,anticoffiv - anticoffor\\,anticoftwo) \\\\\nskewcoord &= (anticofone\\,anticofive - anticofthr\\,anticofone)/(anticofone\\,anticoffiv - anticoffor\\,anticoftwo)\n\\end{align*}\n(by elementary algebra, or Cramer's rule),\nso the center of the circle is rational. This proves the desired result.\n\n\\textbf{Remark:} The above solution is deliberately more verbose\nthan is really necessary. A shorter way to say this is that any two distinct\nrational points determine a \\emph{rational line}\n(a line of the form $variablealpha verticalaxis + variablebravo horizontalaxis + variablecharlie = 0$ with $variablealpha,variablebravo,variablecharlie$ rational),\nwhile any two nonparallel rational lines intersect at a rational point.\nA similar statement holds with the rational numbers replaced by any\nfield.\n\n\\textbf{Remark:} A more explicit argument is to show that the equation of\nthe circle through the rational points $(unrelatedone, unrelatedtwo), (unrelatedthree, unrelatedfour), (unrelatedfive, unrelatedsix)$ is\n\\[\n0 = \\det \\begin{pmatrix}\nunrelatedone^2 + unrelatedtwo^2 & unrelatedone & unrelatedtwo & 1 \\\\\nunrelatedthree^2 + unrelatedfour^2 & unrelatedthree & unrelatedfour & 1 \\\\\nunrelatedfive^2 + unrelatedsix^2 & unrelatedfive & unrelatedsix & 1 \\\\\nverticalaxis^2 + horizontalaxis^2 & verticalaxis & horizontalaxis & 1 \\\\\n\\end{pmatrix}\n\\]\nwhich has the form $variablealpha(verticalaxis^2+horizontalaxis^2) + variabledelta verticalaxis + variableechoo horizontalaxis + variablefoxtrot = 0$ for $variablealpha,variabledelta,variableechoo,variablefoxtrot$ rational.\nThe center of this circle is $(-variabledelta/(2variablealpha), -variableechoo/(2variablealpha))$, which is again a rational\npoint."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "g": "vmbcqeod",
+        "h": "lupkdgyf",
+        "x_1": "zrmkphxa",
+        "y_1": "akqsvrde",
+        "x_2": "ftxehrmz",
+        "y_2": "gsoptdkq",
+        "x_3": "ipywrdnl",
+        "y_3": "wscznfou",
+        "a": "bjnlcrte",
+        "b": "tqvsympl",
+        "c": "mfxdgrho",
+        "d": "ywabskzi",
+        "e": "otqgapvr",
+        "f": "clxpdmeu",
+        "P": "vdreanht",
+        "Q": "kqlmszpw",
+        "R": "sbxogrfi",
+        "M": "hnzcrvye",
+        "N": "ydgfhwus",
+        "A": "lomvjekq",
+        "B": "qpdzyhxw",
+        "C": "rujenfsa",
+        "D": "hcytbkdl",
+        "E": "gmtrsvpa",
+        "F": "vpoeulrn"
+      },
+      "question": "What is the maximum number of rational points that can lie on a circle\nin $\\mathbb{R}^2$ whose center is not a rational point? (A \\emph{rational\npoint} is a point both of whose coordinates are rational numbers.)",
+      "solution": "There are at most two such points. For example,\nthe points $(0,0)$ and $(1,0)$ lie on a circle with center\n$(1/2, qzxwvtnp)$ for any real number $qzxwvtnp$, not necessarily rational.\n\nOn the other hand, suppose $vdreanht = (bjnlcrte,tqvsympl),\\ kqlmszpw = (mfxdgrho,ywabskzi),\\ sbxogrfi = (otqgapvr,clxpdmeu)$\nare three rational points that lie\non a circle. The midpoint $hnzcrvye$ of the side $vdreanht kqlmszpw$ is\n$((bjnlcrte+mfxdgrho)/2, (tqvsympl+ywabskzi)/2)$, which is again rational. Moreover, the slope\nof the line $vdreanht kqlmszpw$ is $(ywabskzi-tqvsympl)/(mfxdgrho-bjnlcrte)$, so the slope of the line through\n$hnzcrvye$ perpendicular to $vdreanht kqlmszpw$ is $(bjnlcrte-mfxdgrho)/(tqvsympl-ywabskzi)$, which is rational or infinite.\n\nSimilarly, if $ydgfhwus$ is the midpoint of $kqlmszpw sbxogrfi$, then $ydgfhwus$ is a rational point\nand the line through $ydgfhwus$ perpendicular to $kqlmszpw sbxogrfi$ has rational slope.\nThe center of the circle lies on both of these lines, so its\ncoordinates $(vmbcqeod,lupkdgyf)$ satisfy two linear equations with rational\ncoefficients, say $lomvjekq vmbcqeod + qpdzyhxw lupkdgyf = rujenfsa$ and $hcytbkdl vmbcqeod + gmtrsvpa lupkdgyf = vpoeulrn$. Moreover,\nthese equations have a unique solution. That solution must then be\n\\begin{align*}\nvmbcqeod &= (rujenfsa gmtrsvpa - qpdzyhxw hcytbkdl)/(lomvjekq gmtrsvpa - qpdzyhxw hcytbkdl) \\\\\nlupkdgyf &= (lomvjekq vpoeulrn - qpdzyhxw rujenfsa)/(lomvjekq gmtrsvpa - qpdzyhxw hcytbkdl)\n\\end{align*}\n(by elementary algebra, or Cramer's rule),\nso the center of the circle is rational. This proves the desired result.\n\n\\textbf{Remark:} The above solution is deliberately more verbose\nthan is really necessary. A shorter way to say this is that any two distinct\nrational points determine a \\emph{rational line}\n(a line of the form $bjnlcrte qzxwvtnp + tqvsympl hjgrksla + mfxdgrho = 0$ with $bjnlcrte,tqvsympl,mfxdgrho$ rational),\nwhile any two nonparallel rational lines intersect at a rational point.\nA similar statement holds with the rational numbers replaced by any\nfield.\n\n\\textbf{Remark:} A more explicit argument is to show that the equation of\nthe circle through the rational points $(zrmkphxa, akqsvrde), (ftxehrmz, gsoptdkq), (ipywrdnl, wscznfou)$ is\n\\[\n0 = \\det \\begin{pmatrix}\nzrmkphxa^2 + akqsvrde^2 & zrmkphxa & akqsvrde & 1 \\\\\nftxehrmz^2 + gsoptdkq^2 & ftxehrmz & gsoptdkq & 1 \\\\\nipywrdnl^2 + wscznfou^2 & ipywrdnl & wscznfou & 1 \\\\\nqzxwvtnp^2 + hjgrksla^2 & qzxwvtnp & hjgrksla & 1 \\\\\n\\end{pmatrix}\n\\]\nwhich has the form $bjnlcrte(qzxwvtnp^2+hjgrksla^2) + ywabskzi qzxwvtnp + otqgapvr hjgrksla + clxpdmeu = 0$ for $bjnlcrte,ywabskzi,otqgapvr,clxpdmeu$ rational.\nThe center of this circle is $(-ywabskzi/(2 bjnlcrte), -otqgapvr/(2 bjnlcrte))$, which is again a rational\npoint."
+    },
+    "kernel_variant": {
+      "question": "Fix the real field $K = \\mathbb{Q}(\\sqrt{3})$.  A \\emph{$K$-point} is a point of $\\mathbb{R}^2$ whose two coordinates lie in $K$.  Determine the largest possible number of $K$-points that can lie on a circle in $\\mathbb{R}^2$ whose center is \\\\emph{not} a $K$-point, and justify your answer.",
+      "solution": "Answer: at most two, and this bound is sharp.\n\nSharpness. Take the two K-points A=(0,0) and B=(\\sqrt{3},0). For any real number t \\notin  K, the circle with center C=(\\sqrt{3}/2, t) and radius \\sqrt{(\u0001SQRT\u00013/2)^2 + t^2} passes through A and B, while C \\notin  K^2 because its second coordinate t is not in K. Thus a circle whose center is not a K-point can indeed contain two K-points.\n\nUpper bound. Suppose instead that a circle contains three distinct K-points\nP_1=(x_1,y_1), P_2=(x_2,y_2), P_3=(x_3,y_3),   x_i,y_i \\in  K.\nLet M_{12} be the midpoint of the segment P_1P_2. Because\nM_{12} = ((x_1+x_2)/2, (y_1+y_2)/2),\nboth coordinates of M_{12} belong to K, so M_{12} is a K-point. The slope of P_1P_2 is (y_2-y_1)/(x_2-x_1) \\in  K \\cup  {\\infty }, hence the slope of the perpendicular bisector of P_1P_2 is its negative reciprocal and is still in K \\cup  {\\infty }. Consequently that perpendicular bisector is a K-line---an affine line whose equation has coefficients in K.\n\nPerforming the same construction with the pair P_2,P_3 gives another K-line. The two perpendicular bisectors are distinct (the three points are non-collinear) and not parallel, so they intersect in a unique point, namely the center O of the circle. Because the intersection of two non-parallel K-lines is a K-point (solve a 2\\times 2 linear system with coefficients in K), it follows that O is a K-point.\n\nWe have reached a contradiction: we assumed the circle's center was not a K-point. Therefore a circle whose center is not a K-point cannot contain three K-points; the maximum is two.\n\nCombining the example with the bound, the largest possible number of K-points on such a circle is exactly 2.",
+      "_meta": {
+        "core_steps": [
+          "Midpoint of a segment joining two F-rational points is F-rational (closure under + and /2).",
+          "Slope of the chord PQ is F-rational ⇒ its perpendicular bisector is a rational line (coefficients in F).",
+          "Construct two such perpendicular bisectors from two independent chords among three rational points.",
+          "Intersection of two non-parallel rational lines is an F-rational point ⇒ circle’s center would be rational.",
+          "Therefore an irrational-center circle can contain at most two F-rational points."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Underlying number field used for the notion of ‘rational’. Any subfield F⊂ℝ (or, more generally, any field inside a larger one) works, because the proof needs only closure under the basic field operations.",
+            "original": "the rational numbers ℚ"
+          },
+          "slot2": {
+            "description": "Concrete pair of F-rational points exhibited to show that the bound 2 is attainable; any two distinct F-points work.",
+            "original": "(0,0) and (1,0)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

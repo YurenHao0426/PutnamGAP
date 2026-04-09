@@ -1,0 +1,144 @@
+{
+  "index": "2023-A-5",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "For a nonnegative integer $k$, let $f(k)$ be the number of ones in the base 3 representation of $k$. Find all complex numbers $z$ such that\n\\[\n\\sum_{k=0}^{3^{1010}-1} (-2)^{f(k)} (z+k)^{2023} = 0.\n\\]",
+  "solution": "The complex numbers $z$ with this property are\n\\[\n-\\frac{3^{1010}-1}{2} \\text{ and } -\\frac{3^{1010}-1}{2}\\pm\\frac{\\sqrt{9^{1010}-1}}{4}\\,i.\n\\]\n\nWe begin by noting that for $n \\geq 1$, we have the following equality of polynomials in a parameter $x$:\n\\[\n\\sum_{k=0}^{3^n-1} (-2)^{f(k)} x^k = \\prod_{j=0}^{n-1} (x^{2\\cdot 3^j}-2x^{3^j}+1).\n\\]\nThis is readily shown by induction on $n$, using the fact that for $0\\leq k\\leq 3^{n-1}-1$, $f(3^{n-1}+k)=f(k)+1$ and $f(2\\cdot 3^{n-1}+k)=f(k)$.\n\nNow define a ``shift'' operator $S$ on polynomials in $z$ by $S(p(z))=p(z+1)$; then we can define $S^m$ for all $m\\in\\mathbb{Z}$ by $S^m(p(z))$, and in particular $S^0=I$ is the identity map. Write\n\\[\np_n(z) := \\sum_{k=0}^{3^n-1}(-2)^{f(k)}(z+k)^{2n+3}\n\\]\nfor $n \\geq 1$; it follows that \n\\begin{align*}\np_n(z) &= \\prod_{j=0}^{n-1}(S^{2\\cdot 3^j}-2S^{3^j}+I) z^{2n+3}\n\\\\\n&= S^{(3^n-1)/2} \\prod_{j=0}^{n-1}(S^{3^j}-2I+S^{-3^j}) z^{2n+3}.\n\\end{align*}\nNext observe that for any $\\ell$, the operator $S^\\ell-2I+S^{-\\ell}$ acts on polynomials in $z$ in a way that decreases degree by $2$. More precisely, for $m\\geq 0$, we have\n\\begin{align*}\n(S^\\ell-2I+S^{-\\ell})z^m &= (z+\\ell)^m-2z^m+(z-\\ell)^m \\\\\n&= 2{m\\choose 2}\\ell^2z^{m-2}+2{m\\choose 4}\\ell^4z^{m-4}+O(z^{m-6}).\n\\end{align*}\nWe use this general calculation to establish the following: for any $1\\leq i\\leq n$, there is a nonzero constant $C_i$ (depending on $n$ and $i$ but not $z$) such that\n\\begin{gather}\n\\nonumber\n\\prod_{j=1}^{i} (S^{3^{n-j}}-2I+S^{-3^{n-j}}) z^{2n+3} \\\\\n\\nonumber\n= C_i\\left(z^{2n+3-2i}+\\textstyle{\\frac{(2n+3-2i)(n+1-i)}{6}}(\\sum_{j=1}^i 9^{n-j})z^{2n+1-2i}\\right) \\\\\n+O(z^{2n-1-2i}).\n\\label{eq:product}\n\\end{gather}\nProving \\eqref{eq:product} is a straightforward induction on $i$: the induction step applies $S^{3^{n-i-1}}-2I+S^{-3^{n-i-1}}$ to the right hand side of \\eqref{eq:product}, using the general formula for $(S^\\ell-2I+S^{-\\ell})z^m$.\n\nNow setting $i=n$ in \\eqref{eq:product}, we find that for some $C_n$,\n\\[\n\\prod_{j=0}^{n-1}(S^{3^j}-2I+S^{-3^j}) z^{2n+3} = C_n\\left(z^3+\\frac{9^n-1}{16}z\\right).\n\\]\nThe roots of this polynomial are $0$ and $\\pm \\frac{\\sqrt{9^n-1}}{4} i$, and it follows that the roots of $p_n(z)$ are these three numbers minus $\\frac{3^n-1}{2}$. In particular, when $n=1010$, we find that the roots of $p_{1010}(z)$ are as indicated above.",
+  "vars": [
+    "k",
+    "z"
+  ],
+  "params": [
+    "f",
+    "n",
+    "x",
+    "j",
+    "m",
+    "S",
+    "I",
+    "p_n",
+    "C_i",
+    "C_n",
+    "\\\\ell",
+    "O"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "indexvar",
+        "z": "complexvar",
+        "f": "digitcount",
+        "n": "exponentindex",
+        "x": "dummybase",
+        "j": "loopindex",
+        "m": "degreeshift",
+        "S": "shiftoper",
+        "I": "identity",
+        "p_n": "polyseq",
+        "C_i": "constci",
+        "C_n": "constcn",
+        "\\ell": "offset",
+        "O": "orderof"
+      },
+      "question": "For a nonnegative integer $indexvar$, let $digitcount(indexvar)$ be the number of ones in the base 3 representation of $indexvar$. Find all complex numbers $complexvar$ such that\n\\[\n\\sum_{indexvar=0}^{3^{1010}-1} (-2)^{digitcount(indexvar)} (complexvar+indexvar)^{2023} = 0.\n\\]\n",
+      "solution": "The complex numbers $complexvar$ with this property are\n\\[\n-\\frac{3^{1010}-1}{2} \\text{ and } -\\frac{3^{1010}-1}{2}\\pm\\frac{\\sqrt{9^{1010}-1}}{4}\\,i.\n\\]\n\nWe begin by noting that for $exponentindex \\geq 1$, we have the following equality of polynomials in a parameter $dummybase$:\n\\[\n\\sum_{indexvar=0}^{3^{exponentindex}-1} (-2)^{digitcount(indexvar)} dummybase^{indexvar} = \\prod_{loopindex=0}^{exponentindex-1} (dummybase^{2\\cdot 3^{loopindex}}-2dummybase^{3^{loopindex}}+1).\n\\]\nThis is readily shown by induction on $exponentindex$, using the fact that for $0\\leq indexvar\\leq 3^{exponentindex-1}-1$, $digitcount(3^{exponentindex-1}+indexvar)=digitcount(indexvar)+1$ and $digitcount(2\\cdot 3^{exponentindex-1}+indexvar)=digitcount(indexvar)$.\n\nNow define a ``shift'' operator $shiftoper$ on polynomials in $complexvar$ by $shiftoper(p(complexvar))=p(complexvar+1)$; then we can define $shiftoper^{degreeshift}$ for all $degreeshift\\in\\mathbb{Z}$ by $shiftoper^{degreeshift}(p(complexvar))$, and in particular $shiftoper^0=identity$ is the identity map. Write\n\\[\npolyseq(complexvar) := \\sum_{indexvar=0}^{3^{exponentindex}-1}(-2)^{digitcount(indexvar)}(complexvar+indexvar)^{2exponentindex+3}\n\\]\nfor $exponentindex \\geq 1$; it follows that\n\\begin{align*}\npolyseq(complexvar) &= \\prod_{loopindex=0}^{exponentindex-1}(shiftoper^{2\\cdot 3^{loopindex}}-2shiftoper^{3^{loopindex}}+identity) \\, complexvar^{2exponentindex+3}\\\\\n&= shiftoper^{(3^{exponentindex}-1)/2} \\prod_{loopindex=0}^{exponentindex-1}(shiftoper^{3^{loopindex}}-2identity+shiftoper^{-3^{loopindex}}) \\, complexvar^{2exponentindex+3}.\n\\end{align*}\n\nNext observe that for any $offset$, the operator $shiftoper^{offset}-2identity+shiftoper^{-offset}$ acts on polynomials in $complexvar$ in a way that decreases degree by $2$. More precisely, for $degreeshift\\geq 0$, we have\n\\begin{align*}\n(shiftoper^{offset}-2identity+shiftoper^{-offset})complexvar^{degreeshift} &= (complexvar+offset)^{degreeshift}-2complexvar^{degreeshift}+(complexvar-offset)^{degreeshift} \\\\\n&= 2{{degreeshift}\\choose 2}offset^2complexvar^{degreeshift-2}+2{{degreeshift}\\choose 4}offset^4complexvar^{degreeshift-4}+orderof(complexvar^{degreeshift-6}).\n\\end{align*}\nWe use this general calculation to establish the following: for any $1\\leq i\\leq exponentindex$, there is a nonzero constant constci (depending on exponentindex and $i$ but not $complexvar$) such that\n\\begin{gather}\n\\nonumber\n\\prod_{loopindex=1}^{i} (shiftoper^{3^{exponentindex-loopindex}}-2identity+shiftoper^{-3^{exponentindex-loopindex}}) \\, complexvar^{2exponentindex+3} \\\\\n\\nonumber\n= constci\\left(complexvar^{2exponentindex+3-2i}+\\textstyle{\\frac{(2exponentindex+3-2i)(exponentindex+1-i)}{6}}\\left(\\sum_{loopindex=1}^i 9^{exponentindex-loopindex}\\right)complexvar^{2exponentindex+1-2i}\\right) \\\\\n+orderof(complexvar^{2exponentindex-1-2i}).\n\\label{eq:product}\n\\end{gather}\nProving \\eqref{eq:product} is a straightforward induction on $i$: the induction step applies $shiftoper^{3^{exponentindex-i-1}}-2identity+shiftoper^{-3^{exponentindex-i-1}}$ to the right hand side of \\eqref{eq:product}, using the general formula for $(shiftoper^{offset}-2identity+shiftoper^{-offset})complexvar^{degreeshift}$.\n\nNow setting $i=exponentindex$ in \\eqref{eq:product}, we find that for some constcn,\n\\[\n\\prod_{loopindex=0}^{exponentindex-1}(shiftoper^{3^{loopindex}}-2identity+shiftoper^{-3^{loopindex}}) \\, complexvar^{2exponentindex+3} = constcn\\left(complexvar^3+\\frac{9^{exponentindex}-1}{16}complexvar\\right).\n\\]\nThe roots of this polynomial are $0$ and $\\pm \\frac{\\sqrt{9^{exponentindex}-1}}{4} i$, and it follows that the roots of $polyseq(complexvar)$ are these three numbers minus $\\frac{3^{exponentindex}-1}{2}$. In particular, when $exponentindex=1010$, we find that the roots of $polyseq_{1010}(complexvar)$ are as indicated above."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "lighthouse",
+        "z": "pineapple",
+        "f": "raincloud",
+        "n": "blueberry",
+        "x": "snowflake",
+        "j": "paintbrush",
+        "m": "sandcastle",
+        "S": "watermelon",
+        "I": "headphone",
+        "p_n": "marshmallow",
+        "C_i": "peppermint",
+        "C_n": "chocolate",
+        "\\\\ell": "hummingbird",
+        "O": "dragonfruit"
+      },
+      "question": "For a nonnegative integer $lighthouse$, let $raincloud(lighthouse)$ be the number of ones in the base 3 representation of $lighthouse$. Find all complex numbers $pineapple$ such that\n\\[\n\\sum_{lighthouse=0}^{3^{1010}-1} (-2)^{raincloud(lighthouse)} (pineapple+lighthouse)^{2023} = 0.\n\\]",
+      "solution": "The complex numbers $pineapple$ with this property are\n\\[\n-\\frac{3^{1010}-1}{2} \\text{ and } -\\frac{3^{1010}-1}{2}\\pm\\frac{\\sqrt{9^{1010}-1}}{4}\\,i.\n\\]\n\nWe begin by noting that for $blueberry \\geq 1$, we have the following equality of polynomials in a parameter $snowflake$:\n\\[\n\\sum_{lighthouse=0}^{3^{blueberry}-1} (-2)^{raincloud(lighthouse)} snowflake^{lighthouse} = \\prod_{paintbrush=0}^{blueberry-1} (snowflake^{2\\cdot 3^{paintbrush}}-2snowflake^{3^{paintbrush}}+1).\n\\]\nThis is readily shown by induction on $blueberry$, using the fact that for $0\\leq lighthouse\\leq 3^{blueberry-1}-1$, $raincloud(3^{blueberry-1}+lighthouse)=raincloud(lighthouse)+1$ and $raincloud(2\\cdot 3^{blueberry-1}+lighthouse)=raincloud(lighthouse)$.\n\nNow define a ``shift'' operator $watermelon$ on polynomials in $pineapple$ by $watermelon(p(pineapple))=p(pineapple+1)$; then we can define $watermelon^{sandcastle}$ for all $sandcastle\\in\\mathbb{Z}$ by $watermelon^{sandcastle}(p(pineapple))$, and in particular $watermelon^0=headphone$ is the identity map. Write\n\\[\nmarshmallow(pineapple) := \\sum_{lighthouse=0}^{3^{blueberry}-1}(-2)^{raincloud(lighthouse)}(pineapple+lighthouse)^{2blueberry+3}\n\\]\nfor $blueberry \\geq 1$; it follows that \n\\begin{align*}\nmarshmallow(pineapple) &= \\prod_{paintbrush=0}^{blueberry-1}(watermelon^{2\\cdot 3^{paintbrush}}-2watermelon^{3^{paintbrush}}+headphone) \\, pineapple^{2blueberry+3}\\\\\n&= watermelon^{(3^{blueberry}-1)/2} \\prod_{paintbrush=0}^{blueberry-1}(watermelon^{3^{paintbrush}}-2headphone+watermelon^{-3^{paintbrush}}) \\, pineapple^{2blueberry+3}.\n\\end{align*}\nNext observe that for any $hummingbird$, the operator $watermelon^{hummingbird}-2headphone+watermelon^{-hummingbird}$ acts on polynomials in $pineapple$ in a way that decreases degree by $2$. More precisely, for $sandcastle\\geq 0$, we have\n\\begin{align*}\n(watermelon^{hummingbird}-2headphone+watermelon^{-hummingbird})\\,pineapple^{sandcastle} &= (pineapple+hummingbird)^{sandcastle}-2\\,pineapple^{sandcastle}+(pineapple-hummingbird)^{sandcastle} \\\\\n&= 2{sandcastle\\choose 2}hummingbird^{2}pineapple^{sandcastle-2}+2{sandcastle\\choose 4}hummingbird^{4}pineapple^{sandcastle-4}+dragonfruit(pineapple^{sandcastle-6}).\n\\end{align*}\nWe use this general calculation to establish the following: for any $1\\leq i\\leq blueberry$, there is a nonzero constant $peppermint$ (depending on $blueberry$ and $i$ but not $pineapple$) such that\n\\begin{gather}\n\\nonumber\n\\prod_{paintbrush=1}^{i} (watermelon^{3^{blueberry-paintbrush}}-2headphone+watermelon^{-3^{blueberry-paintbrush}}) \\, pineapple^{2blueberry+3} \\\\\n\\nonumber\n= peppermint\\Bigl(pineapple^{2blueberry+3-2i}+\\textstyle{\\frac{(2blueberry+3-2i)(blueberry+1-i)}{6}}(\\sum_{paintbrush=1}^{i} 9^{blueberry-paintbrush})\\,pineapple^{2blueberry+1-2i}\\Bigr) \\\\\n+dragonfruit(pineapple^{2blueberry-1-2i}).\n\\label{eq:product}\n\\end{gather}\nProving \\eqref{eq:product} is a straightforward induction on $i$: the induction step applies $watermelon^{3^{blueberry-i-1}}-2headphone+watermelon^{-3^{blueberry-i-1}}$ to the right hand side of \\eqref{eq:product}, using the general formula for $(watermelon^{hummingbird}-2headphone+watermelon^{-hummingbird})\\,pineapple^{sandcastle}$.\n\nNow setting $i=blueberry$ in \\eqref{eq:product}, we find that for some $chocolate$,\n\\[\n\\prod_{paintbrush=0}^{blueberry-1}(watermelon^{3^{paintbrush}}-2headphone+watermelon^{-3^{paintbrush}}) \\, pineapple^{2blueberry+3} = chocolate\\Bigl(pineapple^{3}+\\frac{9^{blueberry}-1}{16}pineapple\\Bigr).\n\\]\nThe roots of this polynomial are $0$ and $\\pm \\frac{\\sqrt{9^{blueberry}-1}}{4} i$, and it follows that the roots of $marshmallow(pineapple)$ are these three numbers minus $\\frac{3^{blueberry}-1}{2}$. In particular, when $blueberry=1010$, we find that the roots of $marshmallow_{1010}(pineapple)$ are as indicated above."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "aggregate",
+        "z": "realnumber",
+        "f": "constantvalue",
+        "n": "zeroquantity",
+        "x": "outputval",
+        "j": "collective",
+        "m": "totality",
+        "S": "fixoperator",
+        "I": "alteration",
+        "p_n": "steadyfunc",
+        "C_i": "variablevalue",
+        "C_n": "mutatingvalue",
+        "\\\\ell": "macroindex",
+        "O": "preciseamount"
+      },
+      "question": "For a nonnegative integer $aggregate$, let $constantvalue(aggregate)$ be the number of ones in the base 3 representation of $aggregate$. Find all complex numbers $realnumber$ such that\n\\[\n\\sum_{aggregate=0}^{3^{1010}-1} (-2)^{constantvalue(aggregate)} (realnumber+aggregate)^{2023} = 0.\n\\]",
+      "solution": "The complex numbers $realnumber$ with this property are\n\\[\n-\\frac{3^{1010}-1}{2} \\text{ and } -\\frac{3^{1010}-1}{2}\\pm\\frac{\\sqrt{9^{1010}-1}}{4}\\,i.\n\\]\n\nWe begin by noting that for $zeroquantity \\geq 1$, we have the following equality of polynomials in a parameter $outputval$:\n\\[\n\\sum_{aggregate=0}^{3^{zeroquantity}-1} (-2)^{constantvalue(aggregate)} outputval^{aggregate} = \\prod_{collective=0}^{zeroquantity-1} (outputval^{2\\cdot 3^{collective}}-2outputval^{3^{collective}}+1).\n\\]\nThis is readily shown by induction on $zeroquantity$, using the fact that for $0\\leq aggregate\\leq 3^{zeroquantity-1}-1$, $constantvalue(3^{zeroquantity-1}+aggregate)=constantvalue(aggregate)+1$ and $constantvalue(2\\cdot 3^{zeroquantity-1}+aggregate)=constantvalue(aggregate)$.\n\nNow define a ``shift'' operator $fixoperator$ on polynomials in $realnumber$ by $fixoperator(p(realnumber))=p(realnumber+1)$; then we can define $fixoperator^{totality}$ for all $totality\\in\\mathbb{Z}$ by $fixoperator^{totality}(p(realnumber))$, and in particular $fixoperator^0=alteration$ is the identity map. Write\n\\[\nsteadyfunc(realnumber) := \\sum_{aggregate=0}^{3^{zeroquantity}-1}(-2)^{constantvalue(aggregate)}(realnumber+aggregate)^{2zeroquantity+3}\n\\]\nfor $zeroquantity \\geq 1$; it follows that \n\\begin{align*}\nsteadyfunc(realnumber) &= \\prod_{collective=0}^{zeroquantity-1}(fixoperator^{2\\cdot 3^{collective}}-2fixoperator^{3^{collective}}+alteration) realnumber^{2zeroquantity+3}\\\\\n&= fixoperator^{(3^{zeroquantity}-1)/2} \\prod_{collective=0}^{zeroquantity-1}(fixoperator^{3^{collective}}-2alteration+fixoperator^{-3^{collective}}) realnumber^{2zeroquantity+3}.\n\\end{align*}\nNext observe that for any $macroindex$, the operator $fixoperator^{macroindex}-2alteration+fixoperator^{-macroindex}$ acts on polynomials in $realnumber$ in a way that decreases degree by $2$. More precisely, for $totality\\geq 0$, we have\n\\begin{align*}\n(fixoperator^{macroindex}-2alteration+fixoperator^{-macroindex})realnumber^{totality} &= (realnumber+macroindex)^{totality}-2realnumber^{totality}+(realnumber-macroindex)^{totality} \\\\\n&= 2{totality\\choose 2}macroindex^2realnumber^{totality-2}+2{totality\\choose 4}macroindex^4realnumber^{totality-4}+preciseamount(realnumber^{totality-6}).\n\\end{align*}\nWe use this general calculation to establish the following: for any $1\\leq i\\leq zeroquantity$, there is a nonzero constant $variablevalue$ (depending on $zeroquantity$ and $i$ but not $realnumber$) such that\n\\begin{gather}\n\\nonumber\n\\prod_{collective=1}^{i} (fixoperator^{3^{zeroquantity-collective}}-2alteration+fixoperator^{-3^{zeroquantity-collective}}) realnumber^{2zeroquantity+3} \\\\\n\\nonumber\n= variablevalue\\left(realnumber^{2zeroquantity+3-2i}+\\textstyle{\\frac{(2zeroquantity+3-2i)(zeroquantity+1-i)}{6}}(\\sum_{collective=1}^i 9^{zeroquantity-collective})realnumber^{2zeroquantity+1-2i}\\right) \\\\\n+preciseamount(realnumber^{2zeroquantity-1-2i}).\n\\end{gather}\nProving this formula is a straightforward induction on $i$: the induction step applies $fixoperator^{3^{zeroquantity-i-1}}-2alteration+fixoperator^{-3^{zeroquantity-i-1}}$ to the right hand side of the displayed equation, using the general formula for $(fixoperator^{macroindex}-2alteration+fixoperator^{-macroindex})realnumber^{totality}$.\n\nNow setting $i=zeroquantity$ in the above, we find that for some $mutatingvalue$,\n\\[\n\\prod_{collective=0}^{zeroquantity-1}(fixoperator^{3^{collective}}-2alteration+fixoperator^{-3^{collective}}) realnumber^{2zeroquantity+3} = mutatingvalue\\left(realnumber^3+\\frac{9^{zeroquantity}-1}{16}realnumber\\right).\n\\]\nThe roots of this polynomial are $0$ and $\\pm \\frac{\\sqrt{9^{zeroquantity}-1}}{4} i$, and it follows that the roots of $steadyfunc(realnumber)$ are these three numbers minus $\\frac{3^{zeroquantity}-1}{2}$. In particular, when $zeroquantity=1010$, we find that the roots of $steadyfunc_{1010}(realnumber)$ are as indicated above."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "xmslyrtq",
+        "z": "qrpnufye",
+        "f": "abczqwer",
+        "n": "kjlwfpst",
+        "x": "vbdmchqa",
+        "j": "rltocnuz",
+        "m": "nhswqfpe",
+        "S": "twkhmnva",
+        "I": "zgxdrpla",
+        "p_n": "hlyqrcve",
+        "C_i": "oapjfsmb",
+        "C_n": "dkcgtbwu",
+        "\\\\ell": "qusprmvi",
+        "O": "yjvdnexh"
+      },
+      "question": "For a nonnegative integer $xmslyrtq$, let $abczqwer(xmslyrtq)$ be the number of ones in the base 3 representation of $xmslyrtq$. Find all complex numbers $qrpnufye$ such that\n\\[\n\\sum_{xmslyrtq=0}^{3^{1010}-1} (-2)^{abczqwer(xmslyrtq)} (qrpnufye+xmslyrtq)^{2023} = 0.\n\\]",
+      "solution": "The complex numbers $qrpnufye$ with this property are\n\\[\n-\\frac{3^{1010}-1}{2} \\text{ and } -\\frac{3^{1010}-1}{2}\\pm\\frac{\\sqrt{9^{1010}-1}}{4}\\,i.\n\\]\n\nWe begin by noting that for $kjlwfpst \\ge 1$, we have the following equality of polynomials in a parameter $vbdmchqa$:\n\\[\n\\sum_{xmslyrtq=0}^{3^{kjlwfpst}-1} (-2)^{abczqwer(xmslyrtq)} vbdmchqa^{xmslyrtq} = \\prod_{rltocnuz=0}^{kjlwfpst-1} (vbdmchqa^{2\\cdot 3^{rltocnuz}}-2vbdmchqa^{3^{rltocnuz}}+1).\n\\]\nThis is readily shown by induction on $kjlwfpst$, using the fact that for $0\\le xmslyrtq\\le 3^{kjlwfpst-1}-1$, $abczqwer(3^{kjlwfpst-1}+xmslyrtq)=abczqwer(xmslyrtq)+1$ and $abczqwer(2\\cdot 3^{kjlwfpst-1}+xmslyrtq)=abczqwer(xmslyrtq)$.\n\nNow define a ``shift'' operator $twkhmnva$ on polynomials in $qrpnufye$ by $twkhmnva(p(qrpnufye))=p(qrpnufye+1)$; then we can define $twkhmnva^{nhswqfpe}$ for all $nhswqfpe\\in\\mathbb{Z}$ by $twkhmnva^{nhswqfpe}(p(qrpnufye))$, and in particular $twkhmnva^0=zgxdrpla$ is the identity map. Write\n\\[\nhlyqrcve(qrpnufye) := \\sum_{xmslyrtq=0}^{3^{kjlwfpst}-1}(-2)^{abczqwer(xmslyrtq)}(qrpnufye+xmslyrtq)^{2kjlwfpst+3}\n\\]\nfor $kjlwfpst \\ge 1$; it follows that \n\\begin{align*}\nhlyqrcve(qrpnufye) &= \\prod_{rltocnuz=0}^{kjlwfpst-1}(twkhmnva^{2\\cdot 3^{rltocnuz}}-2twkhmnva^{3^{rltocnuz}}+zgxdrpla) qrpnufye^{2kjlwfpst+3}\\\\\n&= twkhmnva^{(3^{kjlwfpst}-1)/2} \\prod_{rltocnuz=0}^{kjlwfpst-1}(twkhmnva^{3^{rltocnuz}}-2zgxdrpla+twkhmnva^{-3^{rltocnuz}}) qrpnufye^{2kjlwfpst+3}.\n\\end{align*}\nNext observe that for any $qusprmvi$, the operator $twkhmnva^{qusprmvi}-2zgxdrpla+twkhmnva^{-qusprmvi}$ acts on polynomials in $qrpnufye$ in a way that decreases degree by $2$. More precisely, for $nhswqfpe\\ge 0$, we have\n\\begin{align*}\n(twkhmnva^{qusprmvi}-2zgxdrpla+twkhmnva^{-qusprmvi})qrpnufye^{nhswqfpe} &= (qrpnufye+qusprmvi)^{nhswqfpe}-2qrpnufye^{nhswqfpe}+(qrpnufye-qusprmvi)^{nhswqfpe} \\\\\n&= 2{nhswqfpe\\choose 2}qusprmvi^2qrpnufye^{nhswqfpe-2}+2{nhswqfpe\\choose 4}qusprmvi^4qrpnufye^{nhswqfpe-4}+yjvdnexh(qrpnufye^{nhswqfpe-6}).\n\\end{align*}\nWe use this general calculation to establish the following: for any $1\\leq i\\leq kjlwfpst$, there is a nonzero constant $oapjfsmb$ (depending on $kjlwfpst$ and $i$ but not $qrpnufye$) such that\n\\begin{gather}\n\\nonumber\n\\prod_{rltocnuz=1}^{i} (twkhmnva^{3^{kjlwfpst-rltocnuz}}-2zgxdrpla+twkhmnva^{-3^{kjlwfpst-rltocnuz}}) qrpnufye^{2kjlwfpst+3} \\\\\n\\nonumber\n= oapjfsmb\\left(qrpnufye^{2kjlwfpst+3-2i}+\\textstyle{\\frac{(2kjlwfpst+3-2i)(kjlwfpst+1-i)}{6}}(\\sum_{rltocnuz=1}^i 9^{kjlwfpst-rltocnuz})qrpnufye^{2kjlwfpst+1-2i}\\right) \\\\\n+yjvdnexh(qrpnufye^{2kjlwfpst-1-2i}).\n\\end{gather}\nProving this is a straightforward induction on $i$: the induction step applies $twkhmnva^{3^{kjlwfpst-i-1}}-2zgxdrpla+twkhmnva^{-3^{kjlwfpst-i-1}}$ to the right hand side, using the general formula for $(twkhmnva^{qusprmvi}-2zgxdrpla+twkhmnva^{-qusprmvi})qrpnufye^{nhswqfpe}$.\n\nNow setting $i=kjlwfpst$ in the previous display, we find that for some $dkcgtbwu$,\n\\[\n\\prod_{rltocnuz=0}^{kjlwfpst-1}(twkhmnva^{3^{rltocnuz}}-2zgxdrpla+twkhmnva^{-3^{rltocnuz}}) qrpnufye^{2kjlwfpst+3} = dkcgtbwu\\left(qrpnufye^3+\\frac{9^{kjlwfpst}-1}{16}qrpnufye\\right).\n\\]\nThe roots of this polynomial are $0$ and $\\pm \\frac{\\sqrt{9^{kjlwfpst}-1}}{4} i$, and it follows that the roots of $hlyqrcve(qrpnufye)$ are these three numbers minus $\\frac{3^{kjlwfpst}-1}{2}$. In particular, when $kjlwfpst=1010$, we find that the roots of $hlyqrcve(qrpnufye)$ are as indicated above."
+    },
+    "kernel_variant": {
+      "question": "For a non-negative integer $k$, let $g(k)$ denote the number of digits equal to $2$ in the base-$5$ representation of $k$.  Determine all complex numbers $z$ for which\n\\[\n\\sum_{k=0}^{5^{888}-1} (-4)^{g(k)}\\,(z+k)^{1779}=0.\n\\]",
+      "solution": "Let n=888 and set m=2n+3=1779.  For each k with 0\\leq k<5^n let g(k) be the number of base-5 digits of k equal to 2, and consider\n\n  p_n(z)=\\sum _{k=0}^{5^n-1}(-4)^{g(k)}(z+k)^m.\n\n1.  Generating-polynomial factorization.  A standard digit-by-digit argument shows\n\n  \\sum _{k=0}^{5^n-1}(-4)^{g(k)}x^k\n  =\\prod _{j=0}^{n-1}(1 + x^{5^j} -4x^{2\\cdot 5^j} + x^{3\\cdot 5^j} + x^{4\\cdot 5^j}).\n\n2.  Shift operator.  Let S be the operator S(p)(z)=p(z+1).  Then x^k corresponds to S^k, and hence\n\n  p_n(z)\n  =\\sum (-4)^{g(k)}S^k(z^m)\n  =[\\prod _{j=0}^{n-1}(S^{4\\cdot 5^j}+S^{3\\cdot 5^j}-4S^{2\\cdot 5^j}+S^{5^j}+I)]z^m.\n\nEach factor factors further as\n\n  S^{4\\ell }+S^{3\\ell }-4S^{2\\ell }+S^\\ell +I= S^{2\\ell }(S^{2\\ell }+S^\\ell -4I+S^{-\\ell }+S^{-2\\ell }),\n\nwith \\ell =5^j.  Since \\sum _{j=0}^{n-1}2\\cdot 5^j=(5^n-1)/2, we get\n\n  p_n(z)=S^K[\\prod _{j=0}^{n-1}T_{5^j}]z^m,\n  where K=(5^n-1)/2,\n  and T_\\ell = S^{2\\ell }+S^\\ell -4I+S^{-\\ell }+S^{-2\\ell }.\n\n3.  Degree-drop lemma.  One checks by the binomial theorem that for any integer m and any \\ell ,\n\n  T_\\ell (z^m)\n  =(z+2\\ell )^m+(z+\\ell )^m-4z^m+(z-\\ell )^m+(z-2\\ell )^m\n  =10(m choose 2)\\ell ^2z^{m-2}+34(m choose 4)\\ell ^4z^{m-4}+O(z^{m-6}).\n\nIn particular each T_\\ell  lowers degree by exactly 2.  Hence\n\n  Q(z)=\\prod _{j=0}^{n-1}T_{5^j}(z^m)\n  =C(z^3+Az)\n\nfor some nonzero constant C and some A.  Since p_n(z)=Q(z+K), the equation p_n(z)=0 has exactly the three roots\n\n  z+K=0,\n  z+K=\\pm i\\sqrt{A},\n\nor\n\n  z=-K,\n  z=-K\\pm i\\sqrt{A.}\n\n4.  Computation of A by telescoping.  Set Q_0(z)=z^m, and for i=0,\\ldots ,n-1 define\n\n  Q_{i+1}(z)=T_{5^{n-1-i}}(Q_i(z)).\n\nThus Q_n(z)=Q(z).  Expand inductively\n\n  Q_i(z)=C_i(z^{m_i}+A_i z^{m_i-2}+\\ldots ),\n  m_i=m-2i,\n  A_0=0.\n\nA routine application of the degree-drop lemma shows\n\n  A_{i+1}\n  =(17/60)(m_i-2)(m_i-3)5^{2(n-i-1)}\n   +((m_i-2)(m_i-3)/(m_i(m_i-1)))A_i.\n\nSince m_{i+1}=m_i-2, one checks by telescoping that\n\n  A_n=17/10 \\sum _{j=0}^{n-1}5^{2j}\n      =17/10\\cdot (25^n-1)/24\n      =17(25^n-1)/240.\n\n5.  Conclusion.  Here K=(5^n-1)/2 and A=A_n above, so the three solutions of\n\n  \\sum _{k=0}^{5^n-1}(-4)^{g(k)}(z+k)^m=0\n\nare\n\n  z=-(5^n-1)/2,\n  z=-(5^n-1)/2\\pm i\\sqrt{17(25^n-1)/240}.\n\nSubstituting n=888 gives the desired three complex numbers.",
+      "_meta": {
+        "core_steps": [
+          "Digit–factorization:  Σ(-2)^{f(k)}x^k  = ∏(x^{2·3^j} − 2x^{3^j} + 1) by reading base-3 digits independently.",
+          "Shift-operator reformulation:  write the target sum as  S^{(3^n−1)/2}·∏_{j}(S^{3^j} − 2I + S^{-3^j})  acting on z^{2n+3}.",
+          "Degree-drop lemma:  (S^ℓ − 2I + S^{−ℓ}) sends z^m to a polynomial whose leading term is 2·C(m,2)ℓ² z^{m−2}.",
+          "Inductive application of the degree-drop: after n factors the product is C_n ( z^3 + (9^n − 1)/16 · z ).",
+          "Solve the cubic and undo the global shift by −(3^n−1)/2 to get the three required roots."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Base of the numeral system in which k is expanded; only the fact that the digit set has symmetry 0,…,b−1 with a special digit matters.",
+            "original": 3
+          },
+          "slot2": {
+            "description": "The ‘length’ n of the expansion (so upper limit b^n−1) which also controls the number of operator factors.",
+            "original": 1010
+          },
+          "slot3": {
+            "description": "The coefficient that is attached to each occurrence of the special digit (digit 1 here) in the weight (−2)^{f(k)}; it becomes the middle coefficient in each quadratic factor.",
+            "original": -2
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

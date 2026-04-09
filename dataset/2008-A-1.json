@@ -1,0 +1,95 @@
+{
+  "index": "2008-A-1",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $f: \\mathbb{R}^2 \\to \\mathbb{R}$ be a function such that $f(x,y) + f(y,z)\n+ f(z,x) = 0$ for all real numbers $x$, $y$, and $z$. Prove that there exists\na function $g: \\mathbb{R} \\to \\mathbb{R}$ such that $f(x,y) = g(x) - g(y)$\nfor all real numbers $x$ and $y$.",
+  "solution": "The function $g(x) = f(x,0)$ works. Substituting $(x,y,z) = (0,0,0)$ into the given functional equation yields $f(0,0) = 0$, whence substituting $(x,y,z) = (x,0,0)$ yields $f(x,0)+f(0,x)=0$. Finally, substituting $(x,y,z) = (x,y,0)$ yields $f(x,y) = -f(y,0)-f(0,x) = g(x)-g(y)$.\n\n\\textbf{Remark:} A similar argument shows that the possible functions $g$\nare precisely those of the form  $f(x,0) + c$ for some $c$.",
+  "vars": [
+    "f",
+    "g",
+    "x",
+    "y",
+    "z"
+  ],
+  "params": [
+    "c"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "bifunction",
+        "g": "unifunction",
+        "x": "firstvar",
+        "y": "secondvar",
+        "z": "thirdvar",
+        "c": "constant"
+      },
+      "question": "Let $bifunction: \\mathbb{R}^2 \\to \\mathbb{R}$ be a function such that $bifunction(firstvar,secondvar) + bifunction(secondvar,thirdvar)\n+ bifunction(thirdvar,firstvar) = 0$ for all real numbers $firstvar$, $secondvar$, and $thirdvar$. Prove that there exists\na function $unifunction: \\mathbb{R} \\to \\mathbb{R}$ such that $bifunction(firstvar,secondvar) = unifunction(firstvar) - unifunction(secondvar)$\nfor all real numbers $firstvar$ and $secondvar$.",
+      "solution": "The function $unifunction(firstvar) = bifunction(firstvar,0)$ works. Substituting $(firstvar,secondvar,thirdvar) = (0,0,0)$ into the given functional equation yields $bifunction(0,0) = 0$, whence substituting $(firstvar,secondvar,thirdvar) = (firstvar,0,0)$ yields $bifunction(firstvar,0)+bifunction(0,firstvar)=0$. Finally, substituting $(firstvar,secondvar,thirdvar) = (firstvar,secondvar,0)$ yields $bifunction(firstvar,secondvar) = -bifunction(secondvar,0)-bifunction(0,firstvar) = unifunction(firstvar)-unifunction(secondvar)$.\n\n\\textbf{Remark:} A similar argument shows that the possible functions $unifunction$\nare precisely those of the form  $bifunction(firstvar,0) + constant$ for some $constant$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "sunflower",
+        "g": "corridor",
+        "x": "waterfall",
+        "y": "marblecup",
+        "z": "parchment",
+        "c": "pineapple"
+      },
+      "question": "Let $\\sunflower: \\mathbb{R}^2 \\to \\mathbb{R}$ be a function such that $\\sunflower(\\waterfall,\\marblecup) + \\sunflower(\\marblecup,\\parchment)\n+ \\sunflower(\\parchment,\\waterfall) = 0$ for all real numbers $\\waterfall$, $\\marblecup$, and $\\parchment$. Prove that there exists\na function $\\corridor: \\mathbb{R} \\to \\mathbb{R}$ such that $\\sunflower(\\waterfall,\\marblecup) = \\corridor(\\waterfall) - \\corridor(\\marblecup)$\nfor all real numbers $\\waterfall$ and $\\marblecup$.",
+      "solution": "The function $\\corridor(\\waterfall) = \\sunflower(\\waterfall,0)$ works. Substituting $(\\waterfall,\\marblecup,\\parchment) = (0,0,0)$ into the given functional equation yields $\\sunflower(0,0) = 0$, whence substituting $(\\waterfall,\\marblecup,\\parchment) = (\\waterfall,0,0)$ yields $\\sunflower(\\waterfall,0)+\\sunflower(0,\\waterfall)=0$. Finally, substituting $(\\waterfall,\\marblecup,\\parchment) = (\\waterfall,\\marblecup,0)$ yields $\\sunflower(\\waterfall,\\marblecup) = -\\sunflower(\\marblecup,0)-\\sunflower(0,\\waterfall) = \\corridor(\\waterfall)-\\corridor(\\marblecup)$.\n\n\\textbf{Remark:} A similar argument shows that the possible functions $\\corridor$\nare precisely those of the form  $\\sunflower(\\waterfall,0) + \\pineapple$ for some $\\pineapple$.}\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "constantmap",
+        "g": "pairfunction",
+        "x": "complexnum",
+        "y": "fixedvalue",
+        "z": "constantval",
+        "c": "variable"
+      },
+      "question": "Let $constantmap: \\mathbb{R}^2 \\to \\mathbb{R}$ be a function such that $constantmap(complexnum,fixedvalue) + constantmap(fixedvalue,constantval)\n+ constantmap(constantval,complexnum) = 0$ for all real numbers $complexnum$, $fixedvalue$, and $constantval$. Prove that there exists\na function $pairfunction: \\mathbb{R} \\to \\mathbb{R}$ such that $constantmap(complexnum,fixedvalue) = pairfunction(complexnum) - pairfunction(fixedvalue)$\nfor all real numbers $complexnum$ and $fixedvalue$.",
+      "solution": "The function $pairfunction(complexnum) = constantmap(complexnum,0)$ works. Substituting $(complexnum,fixedvalue,constantval) = (0,0,0)$ into the given functional equation yields $constantmap(0,0) = 0$, whence substituting $(complexnum,fixedvalue,constantval) = (complexnum,0,0)$ yields $constantmap(complexnum,0)+constantmap(0,complexnum)=0$. Finally, substituting $(complexnum,fixedvalue,constantval) = (complexnum,fixedvalue,0)$ yields $constantmap(complexnum,fixedvalue) = -constantmap(fixedvalue,0)-constantmap(0,complexnum) = pairfunction(complexnum)-pairfunction(fixedvalue)$.\n\n\\textbf{Remark:} A similar argument shows that the possible functions $pairfunction$\nare precisely those of the form  $constantmap(complexnum,0) + variable$ for some $variable$. "
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "g": "mnbvcxzy",
+        "x": "lkjhgfda",
+        "y": "poiuytre",
+        "z": "asdfghjk",
+        "c": "rtyuiope"
+      },
+      "question": "Let $qzxwvtnp: \\mathbb{R}^2 \\to \\mathbb{R}$ be a function such that $qzxwvtnp(lkjhgfda,poiuytre) + qzxwvtnp(poiuytre,asdfghjk)\n+ qzxwvtnp(asdfghjk,lkjhgfda) = 0$ for all real numbers $lkjhgfda$, $poiuytre$, and $asdfghjk$. Prove that there exists\na function $mnbvcxzy: \\mathbb{R} \\to \\mathbb{R}$ such that $qzxwvtnp(lkjhgfda,poiuytre) = mnbvcxzy(lkjhgfda) - mnbvcxzy(poiuytre)$\nfor all real numbers $lkjhgfda$ and $poiuytre$.",
+      "solution": "The function $mnbvcxzy(lkjhgfda) = qzxwvtnp(lkjhgfda,0)$ works. Substituting $(lkjhgfda,poiuytre,asdfghjk) = (0,0,0)$ into the given functional equation yields $qzxwvtnp(0,0) = 0$, whence substituting $(lkjhgfda,poiuytre,asdfghjk) = (lkjhgfda,0,0)$ yields $qzxwvtnp(lkjhgfda,0)+qzxwvtnp(0,lkjhgfda)=0$. Finally, substituting $(lkjhgfda,poiuytre,asdfghjk) = (lkjhgfda,poiuytre,0)$ yields $qzxwvtnp(lkjhgfda,poiuytre) = -qzxwvtnp(poiuytre,0)-qzxwvtnp(0,lkjhgfda) = mnbvcxzy(lkjhgfda)-mnbvcxzy(poiuytre)$.\n\n\\textbf{Remark:} A similar argument shows that the possible functions $mnbvcxzy$\nare precisely those of the form  $qzxwvtnp(lkjhgfda,0) + rtyuiope$ for some $rtyuiope$. "
+    },
+    "kernel_variant": {
+      "question": "Let $f:\\mathbb R^{2}\\to\\mathbb R$ be a function that satisfies\n\\[\n  f(x,y)+f(y,z)+f(z,x)=0\\qquad\\text{for all }x,y,z\\in\\mathbb R.\n\\]\nShow that for every prescribed real constant $C$ there exists a function $g:\\mathbb R\\to\\mathbb R$ with $g(1)=C$ such that\n\\[\n   f(x,y)=g(x)-g(y)\\qquad\\text{for all }x,y\\in\\mathbb R.\n\\]",
+      "solution": "Fix an arbitrary real constant C and define\ng(x)=f(x,1)+C  (x\\in \\mathbb{R}).\n\nWe will prove that this g fulfils both g(1)=C and f(x,y)=g(x)-g(y) for all real x,y.\n\nSTEP 1 (Evaluate at (1,1,1)).\nPutting x=y=z=1 gives\n    f(1,1)+f(1,1)+f(1,1)=0 \\Rightarrow  f(1,1)=0.\nConsequently g(1)=f(1,1)+C=C, so the prescribed condition g(1)=C is satisfied.\n\nSTEP 2 (Evaluate at (x,1,1) and relate f(1,x) to g).\nWith (x,y,z)=(x,1,1) the identity becomes\n    f(x,1)+f(1,1)+f(1,x)=0 \\Rightarrow  f(1,x)=-f(x,1).\nSince g(x)=f(x,1)+C, we have f(x,1)=g(x)-C and hence\n    f(1,x)=-(g(x)-C)=C-g(x).\n\nSTEP 3 (Evaluate at (x,y,1) and solve for f(x,y)).\nSubstituting (x,y,z)=(x,y,1) gives\n    f(x,y)+f(y,1)+f(1,x)=0.\nUsing f(y,1)=g(y)-C and f(1,x)=C-g(x) yields\n    f(x,y)+(g(y)-C)+(C-g(x))=0 \\Rightarrow  f(x,y)=g(x)-g(y).\n\nThis identity holds for all real x and y, completing the proof.\n\nRemark.\nThe choice of the additive constant C was arbitrary; therefore the representation of f by g(x)-g(y) is unique up to adding a constant to g, as asserted in the problem statement.",
+      "_meta": {
+        "core_steps": [
+          "Evaluate the functional equation at (0,0,0) to get f(0,0)=0",
+          "Define g(x)=f(x,0) (fix one argument at a constant)",
+          "Evaluate at (x,0,0) to obtain f(0,x)=-g(x)",
+          "Evaluate at (x,y,0) and substitute the previous identity to yield f(x,y)=g(x)-g(y)"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The particular constant chosen as the fixed third argument (0) throughout the substitutions and in the definition of g.",
+            "original": "0"
+          },
+          "slot2": {
+            "description": "Adding an arbitrary overall constant to the chosen g without affecting f(x,y)=g(x)-g(y).",
+            "original": "g(x)=f(x,0)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,129 @@
+{
+  "index": "1990-B-3",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "entries $a_{ij}$ (1) are all squares of integers and, (2) satisfy $a_{ij}\n\\leq 200$. Show that if $S$ has more than 50387 ($= 15^4 - 15^2 - 15 +\n2$) elements, then it has two elements that commute.",
+  "solution": "Solution. Let \\( U \\) be the set of \\( 2 \\times 2 \\) matrices satisfying (1) and (2). Let \\( D \\) be the set of diagonal matrices in \\( U \\), and let \\( J \\) be the set of multiples of \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 1 & 1\\end{array}\\right) \\) in \\( U \\). The numbers less than or equal to 200 that are squares of integers are the 15 numbers \\( 0^{2} \\), \\( 1^{2}, \\ldots, 14^{2} \\), so \\( |U|=15^{4},|D|=15^{2} \\), and \\( |J|=15 \\). Now\n(i) any two matrices from \\( D \\) commute,\n(ii) any two matrices from \\( J \\) commute, and\n(iii) \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 0 & 1\\end{array}\\right) \\) and \\( \\left(\\begin{array}{ll}1 & 4 \\\\ 0 & 1\\end{array}\\right) \\) commute.\n\nSuppose that no two elements of \\( S \\) commute. Write\n\\[\nS=(S \\cap(D \\cup J)) \\cup\\left(S \\cap(D \\cup J)^{c}\\right) .\n\\]\n(Here \\( X^{c} \\) denotes the complement of \\( X \\).) By (i) and (ii), \\( S \\) can contain at most one element of \\( D \\) and at most one element of \\( J \\), so \\( |S \\cap(D \\cup J)| \\leq 2 \\). By (iii),\n\\[\n\\begin{aligned}\n\\left|S \\cap(D \\cup J)^{c}\\right| & <\\left|U \\cap(D \\cup J)^{c}\\right| \\\\\n& =|U|-|D|-|J|+|D \\cap J| \\\\\n& =15^{4}-15^{2}-15+1 .\n\\end{aligned}\n\\]\n\nHence \\( |S| \\leq 2+\\left(15^{4}-15^{2}-15\\right)=50387 \\).",
+  "vars": [
+    "a_ij",
+    "i",
+    "j",
+    "S",
+    "X",
+    "c"
+  ],
+  "params": [
+    "U",
+    "D",
+    "J"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_ij": "entrysq",
+        "i": "rowind",
+        "j": "colind",
+        "S": "bigset",
+        "X": "genset",
+        "c": "complem",
+        "U": "matrixset",
+        "D": "diagset",
+        "J": "allonesmat"
+      },
+      "question": "entries $entrysq$ (1) are all squares of integers and, (2) satisfy $entrysq\n\\leq 200$. Show that if $bigset$ has more than 50387 ($= 15^4 - 15^2 - 15 +\n2$) elements, then it has two elements that commute.",
+      "solution": "Solution. Let \\( matrixset \\) be the set of \\( 2 \\times 2 \\) matrices satisfying (1) and (2). Let \\( diagset \\) be the set of diagonal matrices in \\( matrixset \\), and let \\( allonesmat \\) be the set of multiples of \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 1 & 1\\end{array}\\right) \\) in \\( matrixset \\). The numbers less than or equal to 200 that are squares of integers are the 15 numbers \\( 0^{2} \\), \\( 1^{2}, \\ldots, 14^{2} \\), so \\( |matrixset|=15^{4},|diagset|=15^{2} \\), and \\( |allonesmat|=15 \\). Now\n(i) any two matrices from \\( diagset \\) commute,\n(ii) any two matrices from \\( allonesmat \\) commute, and\n(iii) \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 0 & 1\\end{array}\\right) \\) and \\( \\left(\\begin{array}{ll}1 & 4 \\\\ 0 & 1\\end{array}\\right) \\) commute.\n\nSuppose that no two elements of \\( bigset \\) commute. Write\n\\[\nbigset=(bigset \\cap(diagset \\cup allonesmat)) \\cup\\left(bigset \\cap(diagset \\cup allonesmat)^{complem}\\right) .\n\\]\n(Here \\( genset^{complem} \\) denotes the complement of \\( genset \\).) By (i) and (ii), \\( bigset \\) can contain at most one element of \\( diagset \\) and at most one element of \\( allonesmat \\), so \\( |bigset \\cap(diagset \\cup allonesmat)| \\leq 2 \\). By (iii),\n\\[\n\\begin{aligned}\n\\left|bigset \\cap(diagset \\cup allonesmat)^{complem}\\right| & <\\left|matrixset \\cap(diagset \\cup allonesmat)^{complem}\\right| \\\\\n& =|matrixset|-|diagset|-|allonesmat|+|diagset \\cap allonesmat| \\\\\n& =15^{4}-15^{2}-15+1 .\n\\end{aligned}\n\\]\n\nHence \\( |bigset| \\leq 2+\\left(15^{4}-15^{2}-15\\right)=50387 ."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_ij": "lanternfish",
+        "i": "spoonbill",
+        "j": "grapevine",
+        "S": "woodpecker",
+        "X": "aftershock",
+        "c": "breadcrumb",
+        "U": "marshmallow",
+        "D": "thunderclap",
+        "J": "buttercream"
+      },
+      "question": "entries $lanternfish$ (1) are all squares of integers and, (2) satisfy $lanternfish\n\\leq 200$. Show that if $woodpecker$ has more than 50387 ($= 15^4 - 15^2 - 15 +\n2$) elements, then it has two elements that commute.",
+      "solution": "Solution. Let \\( marshmallow \\) be the set of \\( 2 \\times 2 \\) matrices satisfying (1) and (2). Let \\( thunderclap \\) be the set of diagonal matrices in \\( marshmallow \\), and let \\( buttercream \\) be the set of multiples of \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 1 & 1\\end{array}\\right) \\) in \\( marshmallow \\). The numbers less than or equal to 200 that are squares of integers are the 15 numbers \\( 0^{2} \\), \\( 1^{2}, \\ldots, 14^{2} \\), so \\( |marshmallow|=15^{4},|thunderclap|=15^{2} \\), and \\( |buttercream|=15 \\). Now\n(i) any two matrices from \\( thunderclap \\) commute,\n(ii) any two matrices from \\( buttercream \\) commute, and\n(iii) \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 0 & 1\\end{array}\\right) \\) and \\( \\left(\\begin{array}{ll}1 & 4 \\\\ 0 & 1\\end{array}\\right) \\) commute.\n\nSuppose that no two elements of \\( woodpecker \\) commute. Write\n\\[\nwoodpecker=(woodpecker \\cap(thunderclap \\cup buttercream)) \\cup\\left(woodpecker \\cap(thunderclap \\cup buttercream)^{breadcrumb}\\right) .\n\\]\n(Here \\( aftershock^{breadcrumb} \\) denotes the complement of \\( aftershock \\).) By (i) and (ii), \\( woodpecker \\) can contain at most one element of \\( thunderclap \\) and at most one element of \\( buttercream \\), so \\( |woodpecker \\cap(thunderclap \\cup buttercream)| \\leq 2 \\). By (iii),\n\\[\n\\begin{aligned}\n\\left|woodpecker \\cap(thunderclap \\cup buttercream)^{breadcrumb}\\right| & <\\left|marshmallow \\cap(thunderclap \\cup buttercream)^{breadcrumb}\\right| \\\\\n& =|marshmallow|-|thunderclap|-|buttercream|+|thunderclap \\cap buttercream| \\\\\n& =15^{4}-15^{2}-15+1 .\n\\end{aligned}\n\\]\n\nHence \\( |woodpecker| \\leq 2+\\left(15^{4}-15^{2}-15\\right)=50387 ."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_ij": "wholevalue",
+        "i": "endpoint",
+        "j": "originpoint",
+        "S": "sequence",
+        "X": "singleton",
+        "c": "properset",
+        "U": "voidspace",
+        "D": "offdiagonal",
+        "J": "skewmatrix"
+      },
+      "question": "entries $wholevalue$ (1) are all squares of integers and, (2) satisfy $wholevalue \\leq 200$. Show that if $sequence$ has more than 50387 ($= 15^4 - 15^2 - 15 + 2$) elements, then it has two elements that commute.",
+      "solution": "Solution. Let \\( voidspace \\) be the set of \\( 2 \\times 2 \\) matrices satisfying (1) and (2). Let \\( offdiagonal \\) be the set of diagonal matrices in \\( voidspace \\), and let \\( skewmatrix \\) be the set of multiples of \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 1 & 1\\end{array}\\right) \\) in \\( voidspace \\). The numbers less than or equal to 200 that are squares of integers are the 15 numbers \\( 0^{2} \\), \\( 1^{2}, \\ldots, 14^{2} \\), so \\( |voidspace|=15^{4},|offdiagonal|=15^{2} \\), and \\( |skewmatrix|=15 \\). Now\n(i) any two matrices from \\( offdiagonal \\) commute,\n(ii) any two matrices from \\( skewmatrix \\) commute, and\n(iii) \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 0 & 1\\end{array}\\right) \\) and \\( \\left(\\begin{array}{ll}1 & 4 \\\\ 0 & 1\\end{array}\\right) \\) commute.\n\nSuppose that no two elements of \\( sequence \\) commute. Write\n\\[\nsequence=(sequence \\cap(offdiagonal \\cup skewmatrix)) \\cup\\left(sequence \\cap(offdiagonal \\cup skewmatrix)^{properset}\\right) .\n\\]\n(Here \\( singleton^{properset} \\) denotes the complement of \\( singleton \\).) By (i) and (ii), \\( sequence \\) can contain at most one element of \\( offdiagonal \\) and at most one element of \\( skewmatrix \\), so \\( |sequence \\cap(offdiagonal \\cup skewmatrix)| \\leq 2 \\). By (iii),\n\\[\n\\begin{aligned}\n\\left|sequence \\cap(offdiagonal \\cup skewmatrix)^{properset}\\right| & <\\left|voidspace \\cap(offdiagonal \\cup skewmatrix)^{properset}\\right| \\\\\n& =|voidspace|-|offdiagonal|-|skewmatrix|+|offdiagonal \\cap skewmatrix| \\\\\n& =15^{4}-15^{2}-15+1 .\n\\end{aligned}\n\\]\n\nHence \\( |sequence| \\leq 2+\\left(15^{4}-15^{2}-15\\right)=50387 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "a_ij": "qxmptrsl",
+        "i": "znbqkltf",
+        "j": "hvfzrwpm",
+        "S": "gcrlhxop",
+        "X": "ntzkwevl",
+        "c": "bdsqjymr",
+        "U": "kfhnwzla",
+        "D": "jrmqvgso",
+        "J": "plxndtce"
+      },
+      "question": "entries $qxmptrsl$ (1) are all squares of integers and, (2) satisfy $qxmptrsl\n\\leq 200$. Show that if $gcrlhxop$ has more than 50387 ($= 15^4 - 15^2 - 15 +\n2$) elements, then it has two elements that commute.",
+      "solution": "Solution. Let \\( kfhnwzla \\) be the set of \\( 2 \\times 2 \\) matrices satisfying (1) and (2). Let \\( jrmqvgso \\) be the set of diagonal matrices in \\( kfhnwzla \\), and let \\( plxndtce \\) be the set of multiples of \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 1 & 1\\end{array}\\right) \\) in \\( kfhnwzla \\). The numbers less than or equal to 200 that are squares of integers are the 15 numbers \\( 0^{2} \\), \\( 1^{2}, \\ldots, 14^{2} \\), so \\( |kfhnwzla|=15^{4},|jrmqvgso|=15^{2} \\), and \\( |plxndtce|=15 \\). Now\n(i) any two matrices from \\( jrmqvgso \\) commute,\n(ii) any two matrices from \\( plxndtce \\) commute, and\n(iii) \\( \\left(\\begin{array}{ll}1 & 1 \\\\ 0 & 1\\end{array}\\right) \\) and \\( \\left(\\begin{array}{ll}1 & 4 \\\\ 0 & 1\\end{array}\\right) \\) commute.\n\nSuppose that no two elements of \\( gcrlhxop \\) commute. Write\n\\[\ngcrlhxop=(gcrlhxop \\cap(jrmqvgso \\cup plxndtce)) \\cup\\left(gcrlhxop \\cap(jrmqvgso \\cup plxndtce)^{bdsqjymr}\\right) .\n\\]\n(Here \\( ntzkwevl^{bdsqjymr} \\) denotes the complement of \\( ntzkwevl \\).) By (i) and (ii), \\( gcrlhxop \\) can contain at most one element of \\( jrmqvgso \\) and at most one element of \\( plxndtce \\), so \\( |gcrlhxop \\cap(jrmqvgso \\cup plxndtce)| \\leq 2 \\). By (iii),\n\\[\n\\begin{aligned}\n\\left|gcrlhxop \\cap(jrmqvgso \\cup plxndtce)^{bdsqjymr}\\right| & <\\left|kfhnwzla \\cap(jrmqvgso \\cup plxndtce)^{bdsqjymr}\\right| \\\\\n& =|kfhnwzla|-|jrmqvgso|-|plxndtce|+|jrmqvgso \\cap plxndtce| \\\\\n& =15^{4}-15^{2}-15+1 .\n\\end{aligned}\n\\]\n\nHence \\( |gcrlhxop| \\leq 2+\\left(15^{4}-15^{2}-15\\right)=50387 ."
+    },
+    "kernel_variant": {
+      "question": "Let S be a collection of 3\\times 3 real matrices whose entries  \nare squares of integers not exceeding 600.  \nProve that if\n\\[|S|>3\\,814\\,697\\,249\\,977,\\]\nthen S must contain two matrices that commute.",
+      "solution": "Denote by U the set of all 3\\times 3 matrices whose entries are squares of integers \\leq  600.\n\n1. (How many matrices?)\n   The squares \\leq  600 are 0^2, 1^2, 2^2, \\ldots , 24^2; thus m = 25 different values are possible for each entry. Hence\n     |U| = m^{3^2} = 25^9 = 3 814 697 265 625.\n\n2. (Two specially structured subsets.)\n   * D = {diagonal matrices in U}. Each of the three diagonal entries can be any of the m squares, so |D| = m^3 = 25^3 = 15 625.\n   * Choose the fixed non-scalar matrix J_0 = 1_3, the 3\\times 3 matrix all of whose entries are 1. Let\n       J = { c J_0 : c is one of the m squares }.\n     Because c ranges over the same m possibilities, |J| = m = 25.\n\n   Every pair of matrices in D commutes, and every pair in J commutes.  Moreover D \\cap  J = {0}.\n\n3. (A commuting pair outside D \\cup  J.)\n   Put E = E_{1,2}, the elementary matrix with a single 1 in the (1,2) position.  For the squares a = 25 and b = 49 (both \\leq  600) set\n     A = I_3 + aE,   B = I_3 + bE.\n   Since E^2 = 0, we have AB = BA, so A and B commute.\n   Neither A nor B lies in D (they are not diagonal) or in J (their entries are not all equal), hence {A,B} \\subset  U \\setminus  (D \\cup  J).\n\n4. (Bounding a completely non-commuting set.)\n   Suppose S \\subset  U contains no commuting pair.  Then\n     S = (S \\cap  (D \\cup  J)) \\cup  (S \\cap  (D \\cup  J)^c).\n   By step 2, S can include at most one element of D and at most one element of J, so |S \\cap  (D \\cup  J)| \\leq  2.\n   In U \\setminus  (D \\cup  J) the commuting pair {A,B} forces S to miss at least one of A, B; hence\n     |S \\cap  (D \\cup  J)^c| \\leq  |U| - |D| - |J| + |D \\cap  J| - 1.\n   Since |D \\cap  J| = 1, we get\n     |S| \\leq  2 + (25^9 - 25^3 - 25 + 1 - 1) = 3 814 697 249 977.\n\n5. (Conclusion.) Any S with more than 3 814 697 249 977 elements must therefore contain two commuting matrices, as desired.",
+      "_meta": {
+        "core_steps": [
+          "Count U (all matrices), D (diagonals), and J (multiples of a fixed matrix).",
+          "Note D and J are pairwise-commuting sets, so a non-commuting S can take ≤1 element from each.",
+          "Exhibit one explicit commuting pair lying in U \\ (D ∪ J).",
+          "Therefore S must omit at least one element of that complement in addition to the ≤1 from each of D and J.",
+          "Add the counts to obtain the maximal possible |S|; any larger S must contain a commuting pair."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Upper bound on the squared entries (determines how many integer squares are allowed).",
+            "original": "200"
+          },
+          "slot2": {
+            "description": "Number m of integer squares ≤ slot1 (used as 15 here).",
+            "original": "15"
+          },
+          "slot3": {
+            "description": "Matrix dimension (currently 2×2, affecting sizes |U| = m^{n^2}, |D| = m^{n}, etc.).",
+            "original": "2"
+          },
+          "slot4": {
+            "description": "Fixed non-scalar matrix whose multiples form J.",
+            "original": "[[1,1],[1,1]]"
+          },
+          "slot5": {
+            "description": "The explicit commuting pair chosen outside D ∪ J (any two distinct upper-triangular unipotent matrices would work).",
+            "original": "[[1,1],[0,1]] and [[1,4],[0,1]]"
+          },
+          "slot6": {
+            "description": "Final numeric bound |S| ≤ m^{n^2} − m^{n} − m + 2 (here 50387).",
+            "original": "50387"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

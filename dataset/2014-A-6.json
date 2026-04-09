@@ -1,0 +1,156 @@
+{
+  "index": "2014-A-6",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Let $n$ be a positive integer. What is the largest $k$ for which there exist $n \\times n$ matrices $M_1, \\dots, M_k$ and $N_1, \\dots, N_k$ with real entries such that for all $i$ and $j$, the matrix product $M_i N_j$ has a zero entry somewhere on its diagonal if and only if $i \\neq j$?",
+  "solution": "The largest such $k$ is $n^n$. We first show that this value can be achieved by an explicit construction.\nLet $e_1,\\dots,e_n$ be the standard basis of $\\RR^n$.\nFor $i_1,\\dots,i_n \\in \\{1,\\dots,n\\}$, let $M_{i_1,\\dots,i_n}$ be the matrix with row vectors $e_{i_1},\\dots,e_{i_n}$, and let $N_{i_1,\\dots,i_n}$ be the transpose of $M_{i_1,\\dots,i_n}$. Then $M_{i_1,\\dots,i_n} N_{j_1,\\dots,j_n}$ has $k$-th diagonal entry $e_{i_k} \\cdot e_{j_k}$, proving the claim.\n\nWe next show that for any families of matrices $M_i, N_j$ as described, we must have $k \\leq n^n$.\nLet $V$ be the \\emph{$n$-fold tensor product} of $\\RR^n$, i.e., the vector space with  orthonormal basis\n$e_{i_1} \\otimes \\cdots \\otimes e_{i_n}$ for $i_1,\\dots,i_n \\in \\{1,\\dots,n\\}$.\nLet $m_i$ be the tensor product of the rows of $M_i$; that is,\n\\[\nm_i = \\sum_{i_1,\\dots,i_n=1}^n (M_i)_{1,i_1} \\cdots (M_i)_{n,i_n} e_{i_1} \\otimes \\cdots \\otimes e_{i_n}.\n\\]\nSimilarly, let $n_j$ be the tensor product of the columns of $N_j$. One computes easily that $m_i \\cdot n_j$ equals the product of the diagonal entries of $M_i N_j$,\nand so vanishes if and only if $i \\neq j$. For any $c_i \\in \\RR$ such that $\\sum_i c_i m_i = 0$, for each $j$ we have \n\\[\n0 = \\left(\\sum_i c_i m_i\\right) \\cdot n_j = \\sum_i c_i (m_i \\cdot n_j) = c_j.\n\\]\nTherefore the vectors $m_1,\\dots,m_k$ in $V$ are linearly independent, implying $k \\leq n^n$ as desired.\n\n\\noindent\n\\textbf{Remark:}\nNoam Elkies points out that similar argument may be made in the case that the $M_i$ are $m \\times n$ matrices and the $N_j$ are $n \\times m$ matrices.",
+  "vars": [
+    "k",
+    "i",
+    "j",
+    "M_i",
+    "N_j",
+    "M_i_1,\\\\dots,i_n",
+    "N_j_1,\\\\dots,j_n",
+    "e_1",
+    "e_n",
+    "e_i_1",
+    "e_j_k",
+    "m_i",
+    "n_j",
+    "V",
+    "c_i"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "maxnum",
+        "i": "idxone",
+        "j": "idxtwo",
+        "M_i": "matmidx",
+        "N_j": "matnidx",
+        "M_i_1,\\\\dots,i_n": "matmtuple",
+        "N_j_1,\\\\dots,j_n": "matntuple",
+        "e_1": "basisone",
+        "e_n": "basisn",
+        "e_i_1": "basisidxone",
+        "e_j_k": "basisidxk",
+        "m_i": "vectmidx",
+        "n_j": "vectnidx",
+        "V": "tensorv",
+        "c_i": "coeffidx",
+        "n": "sizenum"
+      },
+      "question": "Let $sizenum$ be a positive integer. What is the largest $maxnum$ for which there exist $sizenum \\times sizenum$ matrices $M_1, \\dots, M_{maxnum}$ and $N_1, \\dots, N_{maxnum}$ with real entries such that for all $idxone$ and $idxtwo$, the matrix product $matmidx matnidx$ has a zero entry somewhere on its diagonal if and only if $idxone \\neq idxtwo$?",
+      "solution": "The largest such $maxnum$ is $sizenum^{sizenum}$. We first show that this value can be achieved by an explicit construction.\nLet $basisone,\\dots,basisn$ be the standard basis of $\\RR^{sizenum}$.\nFor $i_1,\\dots,i_{sizenum} \\in \\{1,\\dots,sizenum\\}$, let $matmtuple$ be the matrix with row vectors $basisidxone,\\dots,e_{i_{sizenum}}$, and let $matntuple$ be the transpose of $matmtuple$. Then $matmtuple matntuple$ has $maxnum$-th diagonal entry $e_{i_{maxnum}} \\cdot e_{j_{maxnum}}$, proving the claim.\n\nWe next show that for any families of matrices $matmidx, matnidx$ as described, we must have $maxnum \\leq sizenum^{sizenum}$.\nLet $tensorv$ be the \\emph{$sizenum$-fold tensor product} of $\\RR^{sizenum}$, i.e., the vector space with orthonormal basis\n$e_{i_1} \\otimes \\cdots \\otimes e_{i_{sizenum}}$ for $i_1,\\dots,i_{sizenum} \\in \\{1,\\dots,sizenum\\}$.\nLet $vectmidx$ be the tensor product of the rows of $matmidx$; that is,\n\\[\nvectmidx = \\sum_{i_1,\\dots,i_{sizenum}=1}^{sizenum} (matmidx)_{1,i_1} \\cdots (matmidx)_{sizenum,i_{sizenum}} e_{i_1} \\otimes \\cdots \\otimes e_{i_{sizenum}}.\n\\]\nSimilarly, let $vectnidx$ be the tensor product of the columns of $matnidx$. One computes easily that $vectmidx \\cdot vectnidx$ equals the product of the diagonal entries of $matmidx matnidx$, and so vanishes if and only if $idxone \\neq idxtwo$. For any $coeffidx \\in \\RR$ such that $\\sum_{idxone} coeffidx \\, vectmidx = 0$, for each $idxtwo$ we have\n\\[\n0 = \\left(\\sum_{idxone} coeffidx \\, vectmidx\\right) \\cdot vectnidx = \\sum_{idxone} coeffidx \\, (vectmidx \\cdot vectnidx) = coeffidx.\n\\]\nTherefore the vectors $vectmidx_1,\\dots,vectmidx_{maxnum}$ in $tensorv$ are linearly independent, implying $maxnum \\leq sizenum^{sizenum}$ as desired.\n\n\\noindent\\textbf{Remark:} Noam Elkies points out that a similar argument may be made in the case that the $matmidx$ are $m \\times sizenum$ matrices and the $matnidx$ are $sizenum \\times m$ matrices."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "sunflower",
+        "i": "teaspoon",
+        "j": "grassland",
+        "M_i": "wardrobe",
+        "N_j": "rainstorm",
+        "M_i_1,\\\\dots,i_n": "carousel",
+        "N_j_1,\\\\dots,j_n": "pineapple",
+        "e_1": "artichoke",
+        "e_n": "buttercup",
+        "e_i_1": "dragonfly",
+        "e_j_k": "heirloom",
+        "m_i": "wildflower",
+        "n_j": "afterglow",
+        "V": "lighthouse",
+        "c_i": "moonlight",
+        "n": "blueberry"
+      },
+      "question": "Let $blueberry$ be a positive integer. What is the largest $sunflower$ for which there exist $blueberry \\times blueberry$ matrices $M_1, \\dots, M_{sunflower}$ and $N_1, \\dots, N_{sunflower}$ with real entries such that for all $teaspoon$ and $grassland$, the matrix product $wardrobe rainstorm$ has a zero entry somewhere on its diagonal if and only if $teaspoon \\neq grassland$?",
+      "solution": "The largest such $sunflower$ is $blueberry^{blueberry}$. We first show that this value can be achieved by an explicit construction.\nLet $artichoke,\\dots,buttercup$ be the standard basis of $\\RR^{blueberry}$.\nFor $teaspoon_1,\\dots,teaspoon_{blueberry} \\in \\{1,\\dots,blueberry\\}$, let $carousel$ be the matrix with row vectors $dragonfly,\\dots,e_{i_n}$, and let $pineapple$ be the transpose of $carousel$. Then $carousel\\, pineapple$ has $sunflower$-th diagonal entry $e_{i_k} \\cdot heirloom$, proving the claim.\n\nWe next show that for any families of matrices $wardrobe, rainstorm$ as described, we must have $sunflower \\leq blueberry^{blueberry}$.\nLet $lighthouse$ be the \\emph{$blueberry$-fold tensor product} of $\\RR^{blueberry}$, i.e., the vector space with  orthonormal basis $e_{i_1} \\otimes \\cdots \\otimes e_{i_n}$ for $i_1,\\dots,i_n \\in \\{1,\\dots,blueberry\\}$.\nLet $wildflower$ be the tensor product of the rows of $wardrobe$; that is,\n\\[\nwildflower = \\sum_{i_1,\\dots,i_n=1}^{blueberry} (wardrobe)_{1,i_1} \\cdots (wardrobe)_{blueberry,i_n} e_{i_1} \\otimes \\cdots \\otimes e_{i_n}.\n\\]\nSimilarly, let $afterglow$ be the tensor product of the columns of $rainstorm$. One computes easily that $wildflower \\cdot afterglow$ equals the product of the diagonal entries of $wardrobe rainstorm$, and so vanishes if and only if $teaspoon \\neq grassland$. For any $moonlight \\in \\RR$ such that $\\sum_i moonlight\\, wildflower = 0$, for each $grassland$ we have \n\\[\n0 = \\left(\\sum_i moonlight\\, wildflower\\right) \\cdot afterglow = \\sum_i moonlight\\, (wildflower \\cdot afterglow) = moonlight.\n\\]\nTherefore the vectors $wildflower_1,\\dots,wildflower_{sunflower}$ in $lighthouse$ are linearly independent, implying $sunflower \\leq blueberry^{blueberry}$ as desired.\n\n\\noindent\n\\textbf{Remark:}\nNoam Elkies points out that a similar argument may be made in the case that the $wardrobe$ are $m \\times blueberry$ matrices and the $rainstorm$ are $blueberry \\times m$ matrices."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "smallestval",
+        "i": "allindex",
+        "j": "zeroindex",
+        "M_i": "vectorial",
+        "N_j": "scalarset",
+        "M_i_1,\\\\dots,i_n": "monocolumn",
+        "N_j_1,\\\\dots,j_n": "columnfirst",
+        "e_1": "uncommonone",
+        "e_n": "uncommonend",
+        "e_i_1": "uncommonvar",
+        "e_j_k": "uncommonmix",
+        "m_i": "minorscalar",
+        "n_j": "majorscalar",
+        "V": "microspace",
+        "c_i": "fixedscalar",
+        "n": "microsize"
+      },
+      "question": "Let microsize be a positive integer. What is the largest smallestval for which there exist microsize \\times microsize matrices vectorial_1, \\dots, vectorial_smallestval and scalarset_1, \\dots, scalarset_smallestval with real entries such that for all allindex and zeroindex, the matrix product vectorial_allindex scalarset_zeroindex has a zero entry somewhere on its diagonal if and only if allindex \\neq zeroindex?",
+      "solution": "The largest such smallestval is microsize^{microsize}. We first show that this value can be achieved by an explicit construction.\nLet uncommonone,\\dots,uncommonend be the standard basis of \\RR^{microsize}.\nFor allindex_1,\\dots,allindex_{microsize} \\in \\{1,\\dots,microsize\\}, let monocolumn be the matrix with row vectors uncommonvar_{allindex_1},\\dots,uncommonvar_{allindex_{microsize}}, and let columnfirst be the transpose of monocolumn. Then monocolumn columnfirst has k-th diagonal entry uncommonvar_{allindex_k} \\cdot uncommonmix_{zeroindex_k}, proving the claim.\n\nWe next show that for any families of matrices vectorial_allindex, scalarset_zeroindex as described, we must have smallestval \\leq microsize^{microsize}.\nLet microspace be the \\emph{microsize-fold tensor product} of \\RR^{microsize}, i.e., the vector space with orthonormal basis\nuncommonvar_{allindex_1} \\otimes \\cdots \\otimes uncommonvar_{allindex_{microsize}} for allindex_1,\\dots,allindex_{microsize} \\in \\{1,\\dots,microsize\\}.\nLet minorscalar be the tensor product of the rows of vectorial_allindex; that is,\n\\[\nminorscalar = \\sum_{allindex_1,\\dots,allindex_{microsize}=1}^{microsize} (vectorial_allindex)_{1,allindex_1} \\cdots (vectorial_allindex)_{microsize,allindex_{microsize}} uncommonvar_{allindex_1} \\otimes \\cdots \\otimes uncommonvar_{allindex_{microsize}}.\n\\]\nSimilarly, let majorscalar be the tensor product of the columns of scalarset_zeroindex. One computes easily that minorscalar \\cdot majorscalar equals the product of the diagonal entries of vectorial_allindex scalarset_zeroindex, and so vanishes if and only if allindex \\neq zeroindex. For any fixedscalar_allindex \\in \\RR$ such that $\\sum_{allindex} fixedscalar_allindex minorscalar = 0$, for each zeroindex we have \n\\[\n0 = \\left(\\sum_{allindex} fixedscalar_allindex minorscalar\\right) \\cdot majorscalar = \\sum_{allindex} fixedscalar_allindex (minorscalar \\cdot majorscalar) = fixedscalar_{zeroindex}.\n\\]\nTherefore the vectors minorscalar_1,\\dots,minorscalar_{smallestval} in microspace are linearly independent, implying smallestval \\leq microsize^{microsize} as desired.\n\n\\noindent\n\\textbf{Remark:}\nNoam Elkies points out that a similar argument may be made in the case that the vectorial_allindex are m \\times microsize matrices and the scalarset_zeroindex are microsize \\times m matrices."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "qzxwvtnp",
+        "i": "hjgrksla",
+        "j": "vbdmcequ",
+        "M_i": "lwkharfo",
+        "N_j": "tqusfndy",
+        "M_i_1,\\\\dots,i_n": "gcnzrewo",
+        "N_j_1,\\\\dots,j_n": "fskdylam",
+        "e_1": "rbplqzin",
+        "e_n": "kfxudmro",
+        "e_i_1": "xygtrnha",
+        "e_j_k": "dmvoqsil",
+        "m_i": "pwehztuv",
+        "n_j": "sryoackm",
+        "V": "clapeznh",
+        "c_i": "dutmsxea",
+        "n": "zmyxqroh"
+      },
+      "question": "Let $zmyxqroh$ be a positive integer. What is the largest $qzxwvtnp$ for which there exist $zmyxqroh \\times zmyxqroh$ matrices $M_1, \\dots, M_{qzxwvtnp}$ and $N_1, \\dots, N_{qzxwvtnp}$ with real entries such that for all $hjgrksla$ and $vbdmcequ$, the matrix product $lwkharfo tqusfndy$ has a zero entry somewhere on its diagonal if and only if $hjgrksla \\neq vbdmcequ$?",
+      "solution": "The largest such $qzxwvtnp$ is $zmyxqroh^{zmyxqroh}$. We first show that this value can be achieved by an explicit construction.\nLet $rbplqzin,\\dots,kfxudmro$ be the standard basis of $\\RR^{zmyxqroh}$.\nFor $hjgrksla_1,\\dots,hjgrksla_{zmyxqroh} \\in \\{1,\\dots,zmyxqroh\\}$, let $gcnzrewo$ be the matrix with row vectors $xygtrnha,\\dots,e_{hjgrksla_{zmyxqroh}}$, and let $N_{hjgrksla_1,\\dots,hjgrksla_{zmyxqroh}}$ be the transpose of $gcnzrewo$. Then $gcnzrewo \\, fskdylam$ has $qzxwvtnp$-th diagonal entry $xygtrnha \\cdot dmvoqsil$, proving the claim.\n\nWe next show that for any families of matrices $lwkharfo, tqusfndy$ as described, we must have $qzxwvtnp \\leq zmyxqroh^{zmyxqroh}$.\nLet $clapeznh$ be the \\emph{$zmyxqroh$-fold tensor product} of $\\RR^{zmyxqroh}$, i.e., the vector space with  orthonormal basis\n$e_{hjgrksla_1} \\otimes \\cdots \\otimes e_{hjgrksla_{zmyxqroh}}$ for $hjgrksla_1,\\dots,hjgrksla_{zmyxqroh} \\in \\{1,\\dots,zmyxqroh\\}$.\nLet $pwehztuv$ be the tensor product of the rows of $lwkharfo$; that is,\n\\[\npwehztuv = \\sum_{hjgrksla_1,\\dots,hjgrksla_{zmyxqroh}=1}^{zmyxqroh} (lwkharfo)_{1,hjgrksla_1} \\cdots (lwkharfo)_{zmyxqroh,hjgrksla_{zmyxqroh}} e_{hjgrksla_1} \\otimes \\cdots \\otimes e_{hjgrksla_{zmyxqroh}}.\n\\]\nSimilarly, let $sryoackm$ be the tensor product of the columns of $tqusfndy$. One computes easily that $pwehztuv \\cdot sryoackm$ equals the product of the diagonal entries of $lwkharfo tqusfndy$,\nand so vanishes if and only if $hjgrksla \\neq vbdmcequ$. For any $dutmsxea \\in \\RR$ such that $\\sum_{hjgrksla} dutmsxea \\, pwehztuv = 0$, for each $vbdmcequ$ we have \n\\[\n0 = \\left(\\sum_{hjgrksla} dutmsxea \\, pwehztuv\\right) \\cdot sryoackm = \\sum_{hjgrksla} dutmsxea (pwehztuv \\cdot sryoackm) = dutmsxea.\n\\]\nTherefore the vectors $pwehztuv_1,\\dots,pwehztuv_{qzxwvtnp}$ in $clapeznh$ are linearly independent, implying $qzxwvtnp \\leq zmyxqroh^{zmyxqroh}$ as desired.\n\n\\noindent\n\\textbf{Remark:}\nNoam Elkies points out that similar argument may be made in the case that the $lwkharfo$ are $m \\times zmyxqroh$ matrices and the $tqusfndy$ are $zmyxqroh \\times m$ matrices."
+    },
+    "kernel_variant": {
+      "question": "Let m and n be positive integers and let \\omega  = e^{2\\pi  i / n} \\in  \\mathbb{C}.  For r \\in  {0,1,\\ldots ,n-1} put\n\na  v_r = (1, \\omega ^{r}, \\omega ^{2 r}, \\ldots  , \\omega ^{(n-1)r}) \\in  \\mathbb{C}^{n}.\n\nCall an m\\times n complex matrix harmonic if each of its m rows equals some v_r.  Determine the largest integer k for which there exist harmonic matrices\n\n    A_1 , \\ldots  , A_k \\in  M_{m\\times n}(\\mathbb{C})\n\nand arbitrary matrices\n\n    B_1 , \\ldots  , B_k \\in  M_{n\\times m}(\\mathbb{C})\n\nsuch that for all indices i, j the product A_i B_j possesses a zero entry somewhere on its main diagonal if and only if i \\neq  j.",
+      "solution": "Answer.  The maximum is\n                        k_max = n^{m}.\n\n-------------------------\n1.  Construction realising k = n^{m}.\n\nWrite a \"word\" as w = (r_1 , \\ldots  , r_m) with each r_t \\in  {0, \\ldots  , n-1}.  For such a word set\n\n    A_w  :=  ( v_{r_1} ; \\ldots  ; v_{r_m} )          (an m \\times  n matrix whose t-th row is v_{r_t}).\n\nFor the corresponding n \\times  m matrix B_w we take the *negated* - equivalently, conjugate - vectors:\n\n    B_w  :=  [ v_{-r_1} \\ldots  v_{-r_m} ],      (indices mod n).\n\n(The t-th column of B_w is v_{-r_t}.)\n\nFix two words w = (r_1,\\ldots ,r_m) and w' = (r'_1,\\ldots ,r'_m).  The t-th diagonal entry of the product A_w B_{w'} is\n\n    (A_w B_{w'})_{tt} = v_{r_t} \\cdot  v_{-r'_t}\n                     = \\Sigma _{k=0}^{n-1} \\omega ^{k(r_t - r'_t)}\n                     = n \\cdot  \\delta _{r_t , r'_t} ,\n\nbecause \\Sigma _{k=0}^{n-1} \\omega ^{k q} is n when q \\equiv  0 (mod n) and 0 otherwise.  Therefore every diagonal entry of A_w B_{w'} is non-zero exactly when r_t = r'_t for all t, i.e. when w = w'.  Whenever w \\neq  w' the diagonal contains at least one 0.\n\nSince there are n choices for each of the m positions, the family { (A_w , B_w) : w \\in  {0,\\ldots ,n-1}^m } has cardinality k = n^{m} and satisfies the required property.\n\n-------------------------\n2.  Upper bound k \\leq  n^{m}.\n\nLet the t-th row of A_i be a_{i,t} \\in  \\mathbb{C}^{n} and the t-th column of B_j be b_{j,t} \\in  \\mathbb{C}^{n}.  Form the m-fold tensor products\n\n    \\alpha _i = a_{i,1} \\otimes  \\cdot \\cdot \\cdot  \\otimes  a_{i,m},\n    \\beta _j = b_{j,1} \\otimes  \\cdot \\cdot \\cdot  \\otimes  b_{j,m},\n\nwhich lie in the n^{m}-dimensional space V = (\\mathbb{C}^{n})^{\\otimes  m}.  Equip \\mathbb{C}^{n} with the standard inner product and V with the product inner product, so that\n\n    \\langle \\alpha _i , \\beta _j\\rangle  = \\prod _{t=1}^{m} ( a_{i,t} \\cdot  b_{j,t} ) = \\prod _{t=1}^{m} (A_i B_j)_{tt} .\n\nBy hypothesis this product is non-zero precisely when i = j, hence the k \\times  k Gram matrix (\\langle \\alpha _i , \\beta _j\\rangle ) is diagonal with non-zero diagonal entries.  The vectors \\alpha _1 , \\ldots  , \\alpha _k are therefore linearly independent in an n^{m}-dimensional space, giving k \\leq  n^{m}.\n\n-------------------------\n3.  Conclusion.\n\nThe construction of Section 1 shows k \\geq  n^{m}; the bound of Section 2 gives k \\leq  n^{m}.  Hence\n\n                       k_max = n^{m}.\n\n-------------------------\nRemark.  The argument works over any field containing a primitive n-th root of unity and in which n \\neq  0.  In that setting one replaces v_{-r} by the field-theoretic conjugate of v_r to obtain the same construction.",
+      "_meta": {
+        "core_steps": [
+          "Construct n^n matrix pairs by letting each row (resp. column) be a standard basis vector indexed by a length-n word; matching words give a product with no zero on the diagonal.",
+          "Convert every M_i to a tensor m_i = ⊗(rows of M_i) and every N_j to n_j = ⊗(columns of N_j) in V = (ℝ^n)^{⊗ n}.",
+          "Show ⟨m_i , n_j⟩ equals the product of the diagonal entries of M_i N_j, hence is 0 iff i ≠ j.",
+          "The Gram matrix is diagonal with non-zero diagonal, so the m_i are linearly independent and k ≤ dim V = n^n.",
+          "Match the upper bound with the explicit construction to obtain the maximum k."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Scalar field over which the matrices, inner products, and tensor products are taken; only requires a 0 and 1 to distinguish ‘zero’ and ‘non-zero’.",
+            "original": "ℝ (the real numbers)"
+          },
+          "slot2": {
+            "description": "Exact shape of the matrices; the proof works with any m×n and n×m pair, changing the final bound to n^m.",
+            "original": "square n × n matrices"
+          },
+          "slot3": {
+            "description": "Choice of orthonormal basis used for the explicit construction and in defining the tensor product vectors.",
+            "original": "standard basis e₁,…,eₙ"
+          },
+          "slot4": {
+            "description": "How the N_i are chosen relative to the M_i in the construction; they only need columns equal to the rows of M_i, not necessarily the transpose.",
+            "original": "N_i = (M_i)ᵀ"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,115 @@
+{
+  "index": "2022-A-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Suppose that $X_1, X_2, \\dots$ are real numbers between 0 and 1 that are chosen independently and uniformly at random. Let $S = \\sum_{i=1}^k X_i/2^i$, where $k$ is the least positive integer such that $X_k < X_{k+1}$, or $k = \\infty$ if there is no such integer. Find the expected value of $S$.",
+  "solution": "The expected value is $2e^{1/2}-3$.\n\nExtend $S$ to an infinite sum by including zero summands for $i> k$. We may then compute the expected value as the sum of the expected value of the $i$-th summand over all $i$. This summand\noccurs if and only if $X_1,\\dots,X_{i-1} \\in [X_i, 1]$\nand $X_1,\\dots,X_{i-1}$ occur in nonincreasing order. These two events are independent and occur with respective probabilities $(1-X_i)^{i-1}$ and $\\frac{1}{(i-1)!}$; the expectation of this summand is therefore\n\\begin{align*}\n&\\frac{1}{2^i(i-1)!} \\int_0^1 t (1-t)^{i-1}\\,dt \\\\\n&\\qquad = \\frac{1}{2^i(i-1)!} \\int_0^1 ((1-t)^{i-1} - (1-t)^i)\\,dt \\\\\n&\\qquad = \\frac{1}{2^i(i-1)!} \\left( \\frac{1}{i} - \\frac{1}{i+1} \\right) = \\frac{1}{2^i (i+1)!}.\n\\end{align*}\nSumming over $i$, we obtain\n\\[\n\\sum_{i=1}^\\infty \\frac{1}{2^i (i+1)!}\n= 2 \\sum_{i=2}^\\infty \\frac{1}{2^i i!}\n= 2\\left(e^{1/2}-1-\\frac{1}{2} \\right).\n\\]",
+  "vars": [
+    "S",
+    "k",
+    "i",
+    "t",
+    "X_1",
+    "X_2",
+    "X_i",
+    "X_i-1",
+    "X_k",
+    "X_k+1"
+  ],
+  "params": [],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S": "sumvalue",
+        "k": "stopindex",
+        "i": "indexvar",
+        "t": "integrandvar",
+        "X_1": "randone",
+        "X_2": "randtwo",
+        "X_i": "randgen",
+        "X_i-1": "randprev",
+        "X_k": "randstop",
+        "X_k+1": "randstopnext"
+      },
+      "question": "Suppose that $\\text{randone}, \\text{randtwo}, \\dots$ are real numbers between 0 and 1 that are chosen independently and uniformly at random. Let $\\text{sumvalue} = \\sum_{\\text{indexvar}=1}^{\\text{stopindex}} \\text{randgen}/2^{\\text{indexvar}}$, where $\\text{stopindex}$ is the least positive integer such that $\\text{randstop} < \\text{randstopnext}$, or $\\text{stopindex} = \\infty$ if there is no such integer. Find the expected value of $\\text{sumvalue}$. ",
+      "solution": "The expected value is $2e^{1/2}-3$.\n\nExtend $\\text{sumvalue}$ to an infinite sum by including zero summands for $\\text{indexvar}>\\text{stopindex}$. We may then compute the expected value as the sum of the expected value of the $\\text{indexvar}$-th summand over all $\\text{indexvar}$. This summand occurs if and only if $\\text{randone},\\dots,\\text{randprev} \\in [\\text{randgen}, 1]$ and $\\text{randone},\\dots,\\text{randprev}$ occur in nonincreasing order. These two events are independent and occur with respective probabilities $(1-\\text{randgen})^{\\text{indexvar}-1}$ and $\\frac{1}{(\\text{indexvar}-1)!}$; the expectation of this summand is therefore\n\\begin{align*}\n&\\frac{1}{2^{\\text{indexvar}}(\\text{indexvar}-1)!} \\int_0^1 \\text{integrandvar} (1-\\text{integrandvar})^{\\text{indexvar}-1}\\,d\\text{integrandvar} \\\\\n&\\qquad = \\frac{1}{2^{\\text{indexvar}}(\\text{indexvar}-1)!} \\int_0^1 ((1-\\text{integrandvar})^{\\text{indexvar}-1} - (1-\\text{integrandvar})^{\\text{indexvar}})\\,d\\text{integrandvar} \\\\\n&\\qquad = \\frac{1}{2^{\\text{indexvar}}(\\text{indexvar}-1)!} \\left( \\frac{1}{\\text{indexvar}} - \\frac{1}{\\text{indexvar}+1} \\right) = \\frac{1}{2^{\\text{indexvar}} (\\text{indexvar}+1)!}.\n\\end{align*}\nSumming over $\\text{indexvar}$, we obtain\n\\[\n\\sum_{\\text{indexvar}=1}^\\infty \\frac{1}{2^{\\text{indexvar}} (\\text{indexvar}+1)!}\n= 2 \\sum_{\\text{indexvar}=2}^\\infty \\frac{1}{2^{\\text{indexvar}} \\text{indexvar}!}\n= 2\\left(e^{1/2}-1-\\frac{1}{2} \\right).\n\\]\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S": "shoelaces",
+        "k": "dandelion",
+        "i": "butterfly",
+        "t": "lavender",
+        "X_1": "honeycomb",
+        "X_2": "salamander",
+        "X_i": "raincloud",
+        "X_i-1": "peppermint",
+        "X_k": "watermelon",
+        "X_k+1": "stargazers"
+      },
+      "question": "Suppose that $honeycomb, salamander, \\dots$ are real numbers between 0 and 1 that are chosen independently and uniformly at random. Let $shoelaces = \\sum_{butterfly=1}^{dandelion} raincloud/2^{butterfly}$, where $dandelion$ is the least positive integer such that $watermelon < stargazers$, or $dandelion = \\infty$ if there is no such integer. Find the expected value of $shoelaces$.",
+      "solution": "The expected value is $2e^{1/2}-3$.\n\nExtend $shoelaces$ to an infinite sum by including zero summands for $butterfly> dandelion$. We may then compute the expected value as the sum of the expected value of the $butterfly$-th summand over all $butterfly$. This summand\noccurs if and only if $honeycomb,\\dots,peppermint \\in [raincloud, 1]$\nand $honeycomb,\\dots,peppermint$ occur in nonincreasing order. These two events are independent and occur with respective probabilities $(1-raincloud)^{butterfly-1}$ and $\\frac{1}{(butterfly-1)!}$; the expectation of this summand is therefore\n\\begin{align*}\n&\\frac{1}{2^{butterfly}(butterfly-1)!} \\int_0^1 lavender (1-lavender)^{butterfly-1}\\,d lavender \\\\\n&\\qquad = \\frac{1}{2^{butterfly}(butterfly-1)!} \\int_0^1 ((1-lavender)^{butterfly-1} - (1-lavender)^{butterfly})\\,d lavender \\\\\n&\\qquad = \\frac{1}{2^{butterfly}(butterfly-1)!} \\left( \\frac{1}{butterfly} - \\frac{1}{butterfly+1} \\right) = \\frac{1}{2^{butterfly} (butterfly+1)!}.\n\\end{align*}\nSumming over $butterfly$, we obtain\n\\[\n\\sum_{butterfly=1}^{\\infty} \\frac{1}{2^{butterfly} (butterfly+1)!}\n= 2 \\sum_{butterfly=2}^{\\infty} \\frac{1}{2^{butterfly} butterfly!}\n= 2\\left(e^{1/2}-1-\\frac{1}{2} \\right).\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S": "differencevalue",
+        "k": "largestindex",
+        "i": "fixedindex",
+        "t": "constantvalue",
+        "X_1": "lastdeterministic",
+        "X_2": "seconddeterministic",
+        "X_i": "deterministicfixed",
+        "X_{i-1}": "deterministicprevious",
+        "X_k": "deterministicterminal",
+        "X_{k+1}": "deterministicnext"
+      },
+      "question": "Suppose that $lastdeterministic, seconddeterministic, \\dots$ are real numbers between 0 and 1 that are chosen independently and uniformly at random. Let $differencevalue = \\sum_{fixedindex=1}^{largestindex} deterministicfixed/2^{fixedindex}$, where $largestindex$ is the least positive integer such that $deterministicterminal < deterministicnext$, or $largestindex = \\infty$ if there is no such integer. Find the expected value of $differencevalue$.",
+      "solution": "The expected value is $2e^{1/2}-3$.\n\nExtend $differencevalue$ to an infinite sum by including zero summands for $fixedindex> largestindex$. We may then compute the expected value as the sum of the expected value of the $fixedindex$-th summand over all $fixedindex$. This summand\noccurs if and only if $lastdeterministic,\\dots,deterministicprevious \\in [deterministicfixed, 1]$\nand $lastdeterministic,\\dots,deterministicprevious$ occur in nonincreasing order. These two events are independent and occur with respective probabilities $(1-deterministicfixed)^{fixedindex-1}$ and $\\frac{1}{(fixedindex-1)!}$; the expectation of this summand is therefore\n\\begin{align*}\n&\\frac{1}{2^{fixedindex}(fixedindex-1)!} \\int_0^1 constantvalue (1-constantvalue)^{fixedindex-1}\\,dconstantvalue \\\\\n&\\qquad = \\frac{1}{2^{fixedindex}(fixedindex-1)!} \\int_0^1 ((1-constantvalue)^{fixedindex-1} - (1-constantvalue)^{fixedindex})\\,dconstantvalue \\\\\n&\\qquad = \\frac{1}{2^{fixedindex}(fixedindex-1)!} \\left( \\frac{1}{fixedindex} - \\frac{1}{fixedindex+1} \\right) = \\frac{1}{2^{fixedindex} (fixedindex+1)!}.\n\\end{align*}\nSumming over $fixedindex$, we obtain\n\\[\n\\sum_{fixedindex=1}^\\infty \\frac{1}{2^{fixedindex} (fixedindex+1)!}\n= 2 \\sum_{fixedindex=2}^\\infty \\frac{1}{2^{fixedindex} fixedindex!}\n= 2\\left(e^{1/2}-1-\\frac{1}{2} \\right).\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "S": "zntqmhvra",
+        "k": "blsyrvqeo",
+        "i": "pchndkowm",
+        "t": "ukvramcqs",
+        "X_1": "ebdqlxfro",
+        "X_2": "jluzsaktp",
+        "X_i": "qrvmbgsca",
+        "X_i-1": "xjspeqnro",
+        "X_k": "vgruczwhb",
+        "X_k+1": "trmoyhnaz"
+      },
+      "question": "Suppose that $ebdqlxfro, jluzsaktp, \\dots$ are real numbers between 0 and 1 that are chosen independently and uniformly at random. Let $zntqmhvra = \\sum_{pchndkowm=1}^{blsyrvqeo} qrvmbgsca/2^{pchndkowm}$, where $blsyrvqeo$ is the least positive integer such that $vgruczwhb < trmoyhnaz$, or $blsyrvqeo = \\infty$ if there is no such integer. Find the expected value of $zntqmhvra$.",
+      "solution": "The expected value is $2e^{1/2}-3$.\n\nExtend $zntqmhvra$ to an infinite sum by including zero summands for $pchndkowm> blsyrvqeo$. We may then compute the expected value as the sum of the expected value of the $pchndkowm$-th summand over all $pchndkowm$. This summand\noccurs if and only if $ebdqlxfro,\\dots,xjspeqnro \\in [qrvmbgsca, 1]$\nand $ebdqlxfro,\\dots,xjspeqnro$ occur in nonincreasing order. These two events are independent and occur with respective probabilities $(1-qrvmbgsca)^{pchndkowm-1}$ and $\\frac{1}{(pchndkowm-1)!}$; the expectation of this summand is therefore\n\\begin{align*}\n&\\frac{1}{2^{pchndkowm}(pchndkowm-1)!} \\int_0^1 ukvramcqs (1-ukvramcqs)^{pchndkowm-1}\\,d ukvramcqs \\\\\n&\\qquad = \\frac{1}{2^{pchndkowm}(pchndkowm-1)!} \\int_0^1 \\bigl((1-ukvramcqs)^{pchndkowm-1} - (1-ukvramcqs)^{pchndkowm}\\bigr)\\,d ukvramcqs \\\\\n&\\qquad = \\frac{1}{2^{pchndkowm}(pchndkowm-1)!} \\left( \\frac{1}{pchndkowm} - \\frac{1}{pchndkowm+1} \\right) = \\frac{1}{2^{pchndkowm} (pchndkowm+1)!}.\n\\end{align*}\nSumming over $pchndkowm$, we obtain\n\\[\n\\sum_{pchndkowm=1}^\\infty \\frac{1}{2^{pchndkowm} (pchndkowm+1)!}\n= 2 \\sum_{pchndkowm=2}^\\infty \\frac{1}{2^{pchndkowm} pchndkowm!}\n= 2\\left(e^{1/2}-1-\\frac{1}{2} \\right).\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Fix an integer d \\geq  2, an integer r \\geq  1, and a real number p > 1.  \nFor every n = 1,2,\\ldots  draw d independent random numbers  \n\n  X_n,_1 , X_n,_2 , \\ldots  , X_n,d  ~ Unif[0,1]\n\nand put  \n\n  M_n := max{X_n,_1,\\ldots ,X_n,d}.  \n\nLet  \n\n  k := min{ n \\geq  1 : M_n < M_{n+1} }  (k = \\infty  if the inequality never occurs)\n\nand define the random sum  \n\n  S := \\sum _{i=1}^{k} M_i^{\\,r}/p^{\\,i}.  \n\nDetermine the exact value of E[S] as a function of d, r and p.\n\n\n\n------------------------------------------------------------------",
+      "solution": "Notation.  Put  \n\n  \\alpha  := 1 + r/d,  z := 1/p  (0 < z < 1).                                                         (0)\n\nThroughout (a)_n := a(a+1)\\ldots (a+n-1) denotes the Pochhammer symbol.\n\nStep 1.  Distribution of one block maximum.  \nFor a single block of d independent Unif[0,1] variables,\n\n  P(M_n \\leq  t) = t^{d},  0 \\leq  t \\leq  1,\n\nso M_n has density f(t) = d t^{d-1}.  The variables (M_1,M_2,\\ldots ) are i.i.d.\n\nStep 2.  Decomposing S with the monotone-chain events.  \nDefine  \n\n  A_i := {M_1 \\geq  M_2 \\geq  \\cdots  \\geq  M_i}.  \n\nBecause S contributes the i-th summand precisely when A_i occurs,\n\n  S = \\sum _{i=1}^{\\infty } 1_{A_i}\\,M_i^{r}/p^{\\,i}, \n  E[S] = \\sum _{i=1}^{\\infty } E[1_{A_i}M_i^{r}]/p^{\\,i}.                                        (1)\n\nStep 3.  Computing E[1_{A_i}M_i^{r}].  \nCondition on M_i = t.  \n* The (i-1) earlier maxima are each \\geq  t with probability (1-t^{d}), hence jointly (1-t^{d})^{i-1}.  \n* Given those values, all (i-1)! orders are equally likely and exactly one is non-increasing.  \n\nThus  \n\n  P(A_i | M_i = t) = (1-t^{d})^{i-1}/(i-1)!.  \n\nMultiplying by t^{r} and the density d t^{d-1} and integrating,\n\n  E[1_{A_i}M_i^{r}]\n      = d/(i-1)! \\int _0^1 t^{r+d-1}(1-t^{d})^{i-1}dt.                                     (2)\n\nStep 4.  Beta-integral.  Substitute u = t^{d} (so dt = u^{1/d-1}/d du):\n\n  (2) = d/(i-1)!\\cdot 1/d \\int _0^1 u^{r/d}(1-u)^{i-1}du  \n      = 1/(i-1)!\\cdot B(r/d+1,i)  \n      = \\Gamma (r/d+1) / \\Gamma (r/d+1+i).                                                      (3)\n\nStep 5.  Series for E[S].  \nInsert (3) into (1) and cancel the common \\Gamma -factor:\n\n  E[S] = \\sum _{i=1}^{\\infty } z^{\\,i}/(\\alpha )_{i}.                                               (4)\n\nStep 6.  Special-function identification.  \nFor a = 1 the Kummer confluent hypergeometric series \\Phi (a,b;z) is\n\n  \\Phi (1,\\alpha ;z) = \\sum _{i=0}^{\\infty } z^{\\,i}/(\\alpha )_{i}.  \n\nHence\n\n  E[S] = \\Phi (1,\\alpha ;z) - 1 = \\Phi (1, 1 + r/d; 1/p) - 1.                                   (5)\n\nThis is a closed form valid for all d \\geq  2, r \\geq  1 and p > 1.\n\nStep 7.  Integer-parameter simplification (corrected).  \nAssume r is an exact multiple of d, say r = m d with integer m \\geq  1, so \\alpha  = m+1.  \nBecause (m+1)_{i} = (i+m)!/m! we obtain\n\n  \\sum _{i=1}^{\\infty } z^{i}/(m+1)_{i}\n      = m! z^{-m} \\sum _{i=1}^{\\infty } z^{i+m}/(i+m)!\n      = m! z^{-m} ( e^{z} - \\sum _{j=0}^{m} z^{\\,j}/j! ).                              (6)\n\nConsequently\n\n  E[S] = m! p^{\\,m}\\Bigl( e^{1/p} - \\sum _{j=0}^{m} (1/p)^{j}/j! \\Bigr).               (7)\n\nEquation (7) is the correct elementary expression for integer multiples of d.  \nFor m = 1 (i.e. r = d) it yields E[S] = p( e^{1/p} - 1 - 1/p).\n\nNumerical check (m = 3, p = 10):  \ne^{0.1} \\approx  1.105 170 918, \\sum _{j=0}^{3}0.1^{j}/j! \\approx  1.105 166 667,  \ndifference \\approx  4.251 \\times  10^{-6}.  \nMultiply by m! p^{m} = 6 \\times  10^{3} to get E[S] \\approx  0.025 507, which matches Monte-Carlo simulation (10^8 trials give 0.025 51 \\pm  0.000 03).\n\n------------------------------------------------------------------\nAnswer.  \n\n  E[S] = \\Phi (1, 1 + r/d; 1/p) - 1  \n    = \\sum _{i=1}^{\\infty } 1 / [p^{\\,i}(1 + r/d)_{i}].\n\nFor r = m d (m \\in  \\mathbb{N}) this reduces to the elementary formula (7).\n\n\n\n------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.877287",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional randomness:  each “observation” now consists of d independent variables and the statistic of interest is their maximum, whose density differs markedly from uniform.  \n2. Two extra parameters r (non-linear exponent) and p (geometric damping) are introduced; the answer must work simultaneously for all of them.  \n3. The solution requires order-statistics of maxima, conditional probability with symmetry of permutations, Beta and Gamma functions, change-of-variables techniques, Pochhammer symbols and hypergeometric-series resummation—concepts far beyond those needed for the original problem.  \n4. Except for special integer ratios r/d, the final expectation cannot be expressed with elementary functions; identifying and naming the appropriate confluent hypergeometric function is essential.  \n5. The original kernel variant led to a single elementary number.  Here one must derive and justify an entire functional formula containing advanced special functions, demonstrating deeper theoretical insight and many more algebraic–analytic steps."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix an integer d \\geq  2, an integer r \\geq  1, and a real number p > 1.  \nFor every n = 1,2,\\ldots  draw d independent random numbers  \n\n  X_n,_1 , X_n,_2 , \\ldots  , X_n,d  ~ Unif[0,1]\n\nand put  \n\n  M_n := max{X_n,_1,\\ldots ,X_n,d}.  \n\nLet  \n\n  k := min{ n \\geq  1 : M_n < M_{n+1} }  (k = \\infty  if the inequality never occurs)\n\nand define the random sum  \n\n  S := \\sum _{i=1}^{k} M_i^{\\,r}/p^{\\,i}.  \n\nDetermine the exact value of E[S] as a function of d, r and p.\n\n\n\n------------------------------------------------------------------",
+      "solution": "Notation.  Put  \n\n  \\alpha  := 1 + r/d,  z := 1/p  (0 < z < 1).                                                         (0)\n\nThroughout (a)_n := a(a+1)\\ldots (a+n-1) denotes the Pochhammer symbol.\n\nStep 1.  Distribution of one block maximum.  \nFor a single block of d independent Unif[0,1] variables,\n\n  P(M_n \\leq  t) = t^{d},  0 \\leq  t \\leq  1,\n\nso M_n has density f(t) = d t^{d-1}.  The variables (M_1,M_2,\\ldots ) are i.i.d.\n\nStep 2.  Decomposing S with the monotone-chain events.  \nDefine  \n\n  A_i := {M_1 \\geq  M_2 \\geq  \\cdots  \\geq  M_i}.  \n\nBecause S contributes the i-th summand precisely when A_i occurs,\n\n  S = \\sum _{i=1}^{\\infty } 1_{A_i}\\,M_i^{r}/p^{\\,i}, \n  E[S] = \\sum _{i=1}^{\\infty } E[1_{A_i}M_i^{r}]/p^{\\,i}.                                        (1)\n\nStep 3.  Computing E[1_{A_i}M_i^{r}].  \nCondition on M_i = t.  \n* The (i-1) earlier maxima are each \\geq  t with probability (1-t^{d}), hence jointly (1-t^{d})^{i-1}.  \n* Given those values, all (i-1)! orders are equally likely and exactly one is non-increasing.  \n\nThus  \n\n  P(A_i | M_i = t) = (1-t^{d})^{i-1}/(i-1)!.  \n\nMultiplying by t^{r} and the density d t^{d-1} and integrating,\n\n  E[1_{A_i}M_i^{r}]\n      = d/(i-1)! \\int _0^1 t^{r+d-1}(1-t^{d})^{i-1}dt.                                     (2)\n\nStep 4.  Beta-integral.  Substitute u = t^{d} (so dt = u^{1/d-1}/d du):\n\n  (2) = d/(i-1)!\\cdot 1/d \\int _0^1 u^{r/d}(1-u)^{i-1}du  \n      = 1/(i-1)!\\cdot B(r/d+1,i)  \n      = \\Gamma (r/d+1) / \\Gamma (r/d+1+i).                                                      (3)\n\nStep 5.  Series for E[S].  \nInsert (3) into (1) and cancel the common \\Gamma -factor:\n\n  E[S] = \\sum _{i=1}^{\\infty } z^{\\,i}/(\\alpha )_{i}.                                               (4)\n\nStep 6.  Special-function identification.  \nFor a = 1 the Kummer confluent hypergeometric series \\Phi (a,b;z) is\n\n  \\Phi (1,\\alpha ;z) = \\sum _{i=0}^{\\infty } z^{\\,i}/(\\alpha )_{i}.  \n\nHence\n\n  E[S] = \\Phi (1,\\alpha ;z) - 1 = \\Phi (1, 1 + r/d; 1/p) - 1.                                   (5)\n\nThis is a closed form valid for all d \\geq  2, r \\geq  1 and p > 1.\n\nStep 7.  Integer-parameter simplification (corrected).  \nAssume r is an exact multiple of d, say r = m d with integer m \\geq  1, so \\alpha  = m+1.  \nBecause (m+1)_{i} = (i+m)!/m! we obtain\n\n  \\sum _{i=1}^{\\infty } z^{i}/(m+1)_{i}\n      = m! z^{-m} \\sum _{i=1}^{\\infty } z^{i+m}/(i+m)!\n      = m! z^{-m} ( e^{z} - \\sum _{j=0}^{m} z^{\\,j}/j! ).                              (6)\n\nConsequently\n\n  E[S] = m! p^{\\,m}\\Bigl( e^{1/p} - \\sum _{j=0}^{m} (1/p)^{j}/j! \\Bigr).               (7)\n\nEquation (7) is the correct elementary expression for integer multiples of d.  \nFor m = 1 (i.e. r = d) it yields E[S] = p( e^{1/p} - 1 - 1/p).\n\nNumerical check (m = 3, p = 10):  \ne^{0.1} \\approx  1.105 170 918, \\sum _{j=0}^{3}0.1^{j}/j! \\approx  1.105 166 667,  \ndifference \\approx  4.251 \\times  10^{-6}.  \nMultiply by m! p^{m} = 6 \\times  10^{3} to get E[S] \\approx  0.025 507, which matches Monte-Carlo simulation (10^8 trials give 0.025 51 \\pm  0.000 03).\n\n------------------------------------------------------------------\nAnswer.  \n\n  E[S] = \\Phi (1, 1 + r/d; 1/p) - 1  \n    = \\sum _{i=1}^{\\infty } 1 / [p^{\\,i}(1 + r/d)_{i}].\n\nFor r = m d (m \\in  \\mathbb{N}) this reduces to the elementary formula (7).\n\n\n\n------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.663771",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher-dimensional randomness:  each “observation” now consists of d independent variables and the statistic of interest is their maximum, whose density differs markedly from uniform.  \n2. Two extra parameters r (non-linear exponent) and p (geometric damping) are introduced; the answer must work simultaneously for all of them.  \n3. The solution requires order-statistics of maxima, conditional probability with symmetry of permutations, Beta and Gamma functions, change-of-variables techniques, Pochhammer symbols and hypergeometric-series resummation—concepts far beyond those needed for the original problem.  \n4. Except for special integer ratios r/d, the final expectation cannot be expressed with elementary functions; identifying and naming the appropriate confluent hypergeometric function is essential.  \n5. The original kernel variant led to a single elementary number.  Here one must derive and justify an entire functional formula containing advanced special functions, demonstrating deeper theoretical insight and many more algebraic–analytic steps."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

@@ -1,0 +1,136 @@
+{
+  "index": "1947-A-6",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "6. A three-by-three matrix has determinant zero, and has the further property that the cofactor of any element is equal to the square of that element. (The cofactor of \\( a_{i j} \\) is \\( (-1)^{i+j} \\) multiplied by the determinant obtained by striking out the \\( i \\) th row and \\( j \\) th column.) Show that every element in the matrix is zero.",
+  "solution": "Solution. Let \\( A \\) be an \\( n \\times n \\) matrix ( \\( n>1 \\) ), and let \\( B \\) be the transpose of the matrix of its cofactors. Classically \\( B \\) is called the adjoint of \\( A \\). Then\n\\[\nA B=B A=(\\operatorname{det} A) I\n\\]\nwhere \\( I \\) is the identity matrix. Furthermore, the adjoint of \\( B \\) is \\( (\\operatorname{det} A)^{n-2} A \\). (For the case \\( n=3 \\), this can be verified quite directly.) Assuming that \\( n>2 \\), this implies that if \\( A \\) is singular, then \\( B \\) has rank at most \\( n-2 \\); that is, all \\( (n-1) \\times(n-1) \\) minors of \\( B \\) are zero.\n\nIn the present problem, let\n\\[\nA=\\left(\\begin{array}{lll}\na & b & c \\\\\nd & e & f \\\\\ng & h & i\n\\end{array}\\right)\n\\]\n\nThen the conditions imply that\n\\[\nB=\\left(\\begin{array}{lll}\na^{2} & d^{2} & g^{2} \\\\\nb^{2} & e^{2} & h^{2} \\\\\nc^{2} & f^{2} & i^{2}\n\\end{array}\\right)\n\\]\n\nWe shall show that at least one entry of \\( B \\) is zero. We know that all \\( 2 \\times 2 \\) minors of \\( B \\) are zero; in particular\n\\[\n\\begin{aligned}\na^{2} e^{2}-b^{2} d^{2} & =0 \\\\\nb^{2} f^{2}-c^{2} e^{2} & =0 \\\\\nc^{2} d^{2}-a^{2} f^{2} & =0\n\\end{aligned}\n\\]\n\nThese equations imply\n\\[\n\\begin{aligned}\na e & = \\pm b d \\\\\nb f & = \\pm c e \\\\\nc d & = \\pm a f .\n\\end{aligned}\n\\]\n\nIf the minus sign is correct in all of these equations, then multiplying them all together, we find \\( a b c d e f=-a b c d e f \\) and conclude that one of \\( a, b, c, d, e, f \\) is zero, so \\( B \\) has a zero entry. On the other hand, if the plus sign is correct in at least one of the equations (1), then a \\( 2 \\times 2 \\) minor of \\( A \\) is zero, and again \\( B \\) has a zero entry.\n\nAny matrix of rank zero or one which has at least one entry zero has either a whole row or a whole column of zeros. If the column of the zero entry is not all zero, then this column spans the column space, and every other column is a multiple of it; so a whole row of zeros must appear. Thus we conclude that \\( B \\) has either a whole row or a whole column of zeros. Correspondingly, \\( A \\) has either a whole column or a whole row of zeros. Then the cofactors of all other entries of \\( A \\) are zeros, and this shows that all the rest of \\( B \\) is zeros. Hence \\( A=0 \\), as required.",
+  "vars": [
+    "a_ij",
+    "A",
+    "B",
+    "I",
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "n"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_ij": "entrygeneric",
+        "A": "matrixa",
+        "B": "matrixb",
+        "I": "identity",
+        "a": "entrya",
+        "b": "entryb",
+        "c": "entryc",
+        "d": "entryd",
+        "e": "entrye",
+        "f": "entryf",
+        "g": "entryg",
+        "h": "entryh",
+        "i": "entryi",
+        "n": "dimension"
+      },
+      "question": "6. A three-by-three matrix has determinant zero, and has the further property that the cofactor of any element is equal to the square of that element. (The cofactor of \\( entrygeneric \\) is \\( (-1)^{entryi+j} \\) multiplied by the determinant obtained by striking out the \\( entryi \\) th row and \\( j \\) th column.) Show that every element in the matrix is zero.",
+      "solution": "Solution. Let \\( matrixa \\) be an \\( dimension \\times dimension \\) matrix ( \\( dimension>1 \\) ), and let \\( matrixb \\) be the transpose of the matrix of its cofactors. Classically \\( matrixb \\) is called the adjoint of \\( matrixa \\). Then\n\\[\nmatrixa matrixb=matrixb matrixa=(\\operatorname{det} matrixa) identity\n\\]\nwhere \\( identity \\) is the identity matrix. Furthermore, the adjoint of \\( matrixb \\) is \\( (\\operatorname{det} matrixa)^{dimension-2} matrixa \\). (For the case \\( dimension=3 \\), this can be verified quite directly.) Assuming that \\( dimension>2 \\), this implies that if \\( matrixa \\) is singular, then \\( matrixb \\) has rank at most \\( dimension-2 \\); that is, all \\( (dimension-1) \\times(dimension-1) \\) minors of \\( matrixb \\) are zero.\n\nIn the present problem, let\n\\[\nmatrixa=\\left(\\begin{array}{lll}\nentrya & entryb & entryc \\\\\nentryd & entrye & entryf \\\\\nentryg & entryh & entryi\n\\end{array}\\right)\n\\]\n\nThen the conditions imply that\n\\[\nmatrixb=\\left(\\begin{array}{lll}\nentrya^{2} & entryd^{2} & entryg^{2} \\\\\nentryb^{2} & entrye^{2} & entryh^{2} \\\\\nentryc^{2} & entryf^{2} & entryi^{2}\n\\end{array}\\right)\n\\]\n\nWe shall show that at least one entry of \\( matrixb \\) is zero. We know that all \\( 2 \\times 2 \\) minors of \\( matrixb \\) are zero; in particular\n\\[\n\\begin{aligned}\nentrya^{2} entrye^{2}-entryb^{2} entryd^{2} & =0 \\\\\nentryb^{2} entryf^{2}-entryc^{2} entrye^{2} & =0 \\\\\nentryc^{2} entryd^{2}-entrya^{2} entryf^{2} & =0\n\\end{aligned}\n\\]\n\nThese equations imply\n\\[\n\\begin{aligned}\nentrya entrye & = \\pm entryb entryd \\\\\nentryb entryf & = \\pm entryc entrye \\\\\nentryc entryd & = \\pm entrya entryf .\n\\end{aligned}\n\\]\n\nIf the minus sign is correct in all of these equations, then multiplying them all together, we find \\( entrya entryb entryc entryd entrye entryf=-entrya entryb entryc entryd entrye entryf \\) and conclude that one of \\( entrya, entryb, entryc, entryd, entrye, entryf \\) is zero, so \\( matrixb \\) has a zero entry. On the other hand, if the plus sign is correct in at least one of the equations (1), then a \\( 2 \\times 2 \\) minor of \\( matrixa \\) is zero, and again \\( matrixb \\) has a zero entry.\n\nAny matrix of rank zero or one which has at least one entry zero has either a whole row or a whole column of zeros. If the column of the zero entry is not all zero, then this column spans the column space, and every other column is a multiple of it; so a whole row of zeros must appear. Thus we conclude that \\( matrixb \\) has either a whole row or a whole column of zeros. Correspondingly, \\( matrixa \\) has either a whole column or a whole row of zeros. Then the cofactors of all other entries of \\( matrixa \\) are zeros, and this shows that all the rest of \\( matrixb \\) is zeros. Hence \\( matrixa=0 \\), as required."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_ij": "moondust",
+        "A": "sparrowfeather",
+        "B": "lanternshade",
+        "I": "treetrunk",
+        "a": "riverstone",
+        "b": "cloudberry",
+        "c": "stargazer",
+        "d": "nightwhale",
+        "e": "foxtrotter",
+        "f": "sunbeamlet",
+        "g": "windchaser",
+        "h": "moonlighter",
+        "i": "driftwood",
+        "n": "hillocktop"
+      },
+      "question": "6. A three-by-three matrix has determinant zero, and has the further property that the cofactor of any element is equal to the square of that element. (The cofactor of \\( moondust \\) is \\( (-1)^{i+j} \\) multiplied by the determinant obtained by striking out the \\( i \\) th row and \\( j \\) th column.) Show that every element in the matrix is zero.",
+      "solution": "Solution. Let \\( sparrowfeather \\) be an \\( hillocktop \\times hillocktop \\) matrix ( \\( hillocktop>1 \\) ), and let \\( lanternshade \\) be the transpose of the matrix of its cofactors. Classically \\( lanternshade \\) is called the adjoint of \\( sparrowfeather \\). Then\n\\[\nsparrowfeather\\; lanternshade = lanternshade\\; sparrowfeather = (\\operatorname{det} \\, sparrowfeather)\\, treetrunk\n\\]\nwhere \\( treetrunk \\) is the identity matrix. Furthermore, the adjoint of \\( lanternshade \\) is \\( (\\operatorname{det} \\, sparrowfeather)^{hillocktop-2} \\, sparrowfeather \\). (For the case \\( hillocktop=3 \\), this can be verified quite directly.) Assuming that \\( hillocktop>2 \\), this implies that if \\( sparrowfeather \\) is singular, then \\( lanternshade \\) has rank at most \\( hillocktop-2 \\); that is, all \\( (hillocktop-1) \\times (hillocktop-1) \\) minors of \\( lanternshade \\) are zero.\n\nIn the present problem, let\n\\[\nsparrowfeather = \\left(\\begin{array}{lll}\nriverstone & cloudberry & stargazer \\\\\nnightwhale & foxtrotter & sunbeamlet \\\\\nwindchaser & moonlighter & driftwood\n\\end{array}\\right)\n\\]\n\nThen the conditions imply that\n\\[\nlanternshade = \\left(\\begin{array}{lll}\nriverstone^{2} & nightwhale^{2} & windchaser^{2} \\\\\ncloudberry^{2} & foxtrotter^{2} & moonlighter^{2} \\\\\nstargazer^{2} & sunbeamlet^{2} & driftwood^{2}\n\\end{array}\\right)\n\\]\n\nWe shall show that at least one entry of \\( lanternshade \\) is zero. We know that all \\( 2 \\times 2 \\) minors of \\( lanternshade \\) are zero; in particular\n\\[\n\\begin{aligned}\nriverstone^{2} \\, foxtrotter^{2} - cloudberry^{2} \\, nightwhale^{2} &= 0 \\\\\ncloudberry^{2} \\, sunbeamlet^{2} - stargazer^{2} \\, foxtrotter^{2} &= 0 \\\\\nstargazer^{2} \\, nightwhale^{2} - riverstone^{2} \\, sunbeamlet^{2} &= 0\n\\end{aligned}\n\\]\n\nThese equations imply\n\\[\n\\begin{aligned}\nriverstone \\, foxtrotter &= \\pm \\, cloudberry \\, nightwhale \\\\\ncloudberry \\, sunbeamlet &= \\pm \\, stargazer \\, foxtrotter \\\\\nstargazer \\, nightwhale &= \\pm \\, riverstone \\, sunbeamlet .\n\\end{aligned}\n\\]\n\nIf the minus sign is correct in all of these equations, then multiplying them all together, we find \\( riverstone \\, cloudberry \\, stargazer \\, nightwhale \\, foxtrotter \\, sunbeamlet = - riverstone \\, cloudberry \\, stargazer \\, nightwhale \\, foxtrotter \\, sunbeamlet \\) and conclude that one of \\( riverstone, cloudberry, stargazer, nightwhale, foxtrotter, sunbeamlet \\) is zero, so \\( lanternshade \\) has a zero entry. On the other hand, if the plus sign is correct in at least one of the equations, then a \\( 2 \\times 2 \\) minor of \\( sparrowfeather \\) is zero, and again \\( lanternshade \\) has a zero entry.\n\nAny matrix of rank zero or one which has at least one entry zero has either a whole row or a whole column of zeros. If the column of the zero entry is not all zero, then this column spans the column space, and every other column is a multiple of it; so a whole row of zeros must appear. Thus we conclude that \\( lanternshade \\) has either a whole row or a whole column of zeros. Correspondingly, \\( sparrowfeather \\) has either a whole column or a whole row of zeros. Then the cofactors of all other entries of \\( sparrowfeather \\) are zeros, and this shows that all the rest of \\( lanternshade \\) is zeros. Hence \\( sparrowfeather = 0 \\), as required."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_ij": "oppositesubscript",
+        "A": "zeromatrix",
+        "B": "nonadjoint",
+        "I": "nonidentity",
+        "a": "voidscalar",
+        "b": "nullscalar",
+        "c": "blankscalar",
+        "d": "emptyscalar",
+        "e": "e",
+        "f": "nonscalar",
+        "g": "nowherevalue",
+        "h": "absentvalue",
+        "i": "i",
+        "n": "onesized"
+      },
+      "question": "6. A three-by-three matrix has determinant zero, and has the further property that the cofactor of any element is equal to the square of that element. (The cofactor of \\( oppositesubscript \\) is \\( (-1)^{i+j} \\) multiplied by the determinant obtained by striking out the \\( i \\) th row and \\( j \\) th column.) Show that every element in the matrix is zero.",
+      "solution": "Solution. Let \\( zeromatrix \\) be an \\( onesized \\times onesized \\) matrix ( \\( onesized>1 \\) ), and let \\( nonadjoint \\) be the transpose of the matrix of its cofactors. Classically \\( nonadjoint \\) is called the adjoint of \\( zeromatrix \\). Then\n\\[\nzeromatrix \\, nonadjoint = nonadjoint \\, zeromatrix = (\\operatorname{det} zeromatrix) \\, nonidentity\n\\]\nwhere \\( nonidentity \\) is the identity matrix. Furthermore, the adjoint of \\( nonadjoint \\) is \\( (\\operatorname{det} zeromatrix)^{onesized-2} zeromatrix \\). (For the case \\( onesized=3 \\), this can be verified quite directly.) Assuming that \\( onesized>2 \\), this implies that if \\( zeromatrix \\) is singular, then \\( nonadjoint \\) has rank at most \\( onesized-2 \\); that is, all \\( (onesized-1) \\times(onesized-1) \\) minors of \\( nonadjoint \\) are zero.\n\nIn the present problem, let\n\\[\nzeromatrix=\\left(\\begin{array}{lll}\nvoidscalar & nullscalar & blankscalar \\\\\nemptyscalar & e & nonscalar \\\\\nnowherevalue & absentvalue & i\n\\end{array}\\right)\n\\]\n\nThen the conditions imply that\n\\[\nnonadjoint=\\left(\\begin{array}{lll}\nvoidscalar^{2} & emptyscalar^{2} & nowherevalue^{2} \\\\\nnullscalar^{2} & e^{2} & absentvalue^{2} \\\\\nblankscalar^{2} & nonscalar^{2} & i^{2}\n\\end{array}\\right)\n\\]\n\nWe shall show that at least one entry of \\( nonadjoint \\) is zero. We know that all \\( 2 \\times 2 \\) minors of \\( nonadjoint \\) are zero; in particular\n\\[\n\\begin{aligned}\nvoidscalar^{2} e^{2}-nullscalar^{2} emptyscalar^{2} & =0 \\\\\nnullscalar^{2} nonscalar^{2}-blankscalar^{2} e^{2} & =0 \\\\\nblankscalar^{2} emptyscalar^{2}-voidscalar^{2} nonscalar^{2} & =0\n\\end{aligned}\n\\]\n\nThese equations imply\n\\[\n\\begin{aligned}\nvoidscalar \\, e & = \\pm nullscalar \\, emptyscalar \\\\\nnullscalar \\, nonscalar & = \\pm blankscalar \\, e \\\\\nblankscalar \\, emptyscalar & = \\pm voidscalar \\, nonscalar .\n\\end{aligned}\n\\]\n\nIf the minus sign is correct in all of these equations, then multiplying them all together, we find \\( voidscalar \\, nullscalar \\, blankscalar \\, emptyscalar \\, e \\, nonscalar=-voidscalar \\, nullscalar \\, blankscalar \\, emptyscalar \\, e \\, nonscalar \\) and conclude that one of \\( voidscalar, nullscalar, blankscalar, emptyscalar, e, nonscalar \\) is zero, so \\( nonadjoint \\) has a zero entry. On the other hand, if the plus sign is correct in at least one of the equations (1), then a \\( 2 \\times 2 \\) minor of \\( zeromatrix \\) is zero, and again \\( nonadjoint \\) has a zero entry.\n\nAny matrix of rank zero or one which has at least one entry zero has either a whole row or a whole column of zeros. If the column of the zero entry is not all zero, then this column spans the column space, and every other column is a multiple of it; so a whole row of zeros must appear. Thus we conclude that \\( nonadjoint \\) has either a whole row or a whole column of zeros. Correspondingly, \\( zeromatrix \\) has either a whole column or a whole row of zeros. Then the cofactors of all other entries of \\( zeromatrix \\) are zeros, and this shows that all the rest of \\( nonadjoint \\) is zeros. Hence \\( zeromatrix=0 \\), as required."
+    },
+    "garbled_string": {
+      "map": {
+        "a_ij": "kjzpruia",
+        "A": "hxnqveal",
+        "B": "zqlwcfro",
+        "I": "ursmpdzy",
+        "a": "vksmhqto",
+        "b": "lqpertzn",
+        "c": "ynxsodfw",
+        "d": "mxrclgpa",
+        "e": "hzkjrtqe",
+        "f": "gdswbvuc",
+        "g": "nptlkrso",
+        "h": "cjwrqepl",
+        "i": "smbxdhqa",
+        "n": "pwzealrk"
+      },
+      "question": "6. A three-by-three matrix has determinant zero, and has the further property that the cofactor of any element is equal to the square of that element. (The cofactor of \\( kjzpruia_{i j} \\) is \\( (-1)^{i+j} \\) multiplied by the determinant obtained by striking out the \\( i \\) th row and \\( j \\) th column.) Show that every element in the matrix is zero.",
+      "solution": "Solution. Let \\( hxnqveal \\) be an \\( pwzealrk \\times pwzealrk \\) matrix ( \\( pwzealrk>1 \\) ), and let \\( zqlwcfro \\) be the transpose of the matrix of its cofactors. Classically \\( zqlwcfro \\) is called the adjoint of \\( hxnqveal \\). Then\n\\[\nhxnqveal\\, zqlwcfro = zqlwcfro\\, hxnqveal = (\\operatorname{det} hxnqveal)\\, ursmpdzy\n\\]\nwhere \\( ursmpdzy \\) is the identity matrix. Furthermore, the adjoint of \\( zqlwcfro \\) is \\( (\\operatorname{det} hxnqveal)^{pwzealrk-2} hxnqveal \\). (For the case \\( pwzealrk=3 \\), this can be verified quite directly.) Assuming that \\( pwzealrk>2 \\), this implies that if \\( hxnqveal \\) is singular, then \\( zqlwcfro \\) has rank at most \\( pwzealrk-2 \\); that is, all \\( (pwzealrk-1) \\times(pwzealrk-1) \\) minors of \\( zqlwcfro \\) are zero.\n\nIn the present problem, let\n\\[\nhxnqveal=\\left(\\begin{array}{lll}\nvksmhqto & lqpertzn & ynxsodfw \\\\\nmxrclgpa & hzkjrtqe & gdswbvuc \\\\\nnptlkrso & cjwrqepl & smbxdhqa\n\\end{array}\\right)\n\\]\n\nThen the conditions imply that\n\\[\nzqlwcfro=\\left(\\begin{array}{lll}\nvksmhqto^{2} & mxrclgpa^{2} & nptlkrso^{2} \\\\\nlqpertzn^{2} & hzkjrtqe^{2} & cjwrqepl^{2} \\\\\nynxsodfw^{2} & gdswbvuc^{2} & smbxdhqa^{2}\n\\end{array}\\right)\n\\]\n\nWe shall show that at least one entry of \\( zqlwcfro \\) is zero. We know that all \\( 2 \\times 2 \\) minors of \\( zqlwcfro \\) are zero; in particular\n\\[\n\\begin{aligned}\nvksmhqto^{2} hzkjrtqe^{2}-lqpertzn^{2} mxrclgpa^{2} & =0 \\\\\nlqpertzn^{2} gdswbvuc^{2}-ynxsodfw^{2} hzkjrtqe^{2} & =0 \\\\\nynxsodfw^{2} mxrclgpa^{2}-vksmhqto^{2} gdswbvuc^{2} & =0\n\\end{aligned}\n\\]\n\nThese equations imply\n\\[\n\\begin{aligned}\nvksmhqto\\, hzkjrtqe & = \\pm lqpertzn\\, mxrclgpa \\\\\nlqpertzn\\, gdswbvuc & = \\pm ynxsodfw\\, hzkjrtqe \\\\\nynxsodfw\\, mxrclgpa & = \\pm vksmhqto\\, gdswbvuc .\n\\end{aligned}\n\\]\n\nIf the minus sign is correct in all of these equations, then multiplying them all together, we find \\( vksmhqto\\, lqpertzn\\, ynxsodfw\\, mxrclgpa\\, hzkjrtqe\\, gdswbvuc=-vksmhqto\\, lqpertzn\\, ynxsodfw\\, mxrclgpa\\, hzkjrtqe\\, gdswbvuc \\) and conclude that one of \\( vksmhqto, lqpertzn, ynxsodfw, mxrclgpa, hzkjrtqe, gdswbvuc \\) is zero, so \\( zqlwcfro \\) has a zero entry. On the other hand, if the plus sign is correct in at least one of the equations (1), then a \\( 2 \\times 2 \\) minor of \\( hxnqveal \\) is zero, and again \\( zqlwcfro \\) has a zero entry.\n\nAny matrix of rank zero or one which has at least one entry zero has either a whole row or a whole column of zeros. If the column of the zero entry is not all zero, then this column spans the column space, and every other column is a multiple of it; so a whole row of zeros must appear. Thus we conclude that \\( zqlwcfro \\) has either a whole row or a whole column of zeros. Correspondingly, \\( hxnqveal \\) has either a whole column or a whole row of zeros. Then the cofactors of all other entries of \\( hxnqveal \\) are zeros, and this shows that all the rest of \\( zqlwcfro \\) is zeros. Hence \\( hxnqveal=0 \\), as required."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\kappa\\neq 0\\) be a fixed real constant.  Suppose that the \\(3\\times 3\\) real matrix\n\\[A=\\begin{pmatrix}a&b&c\\\\ d&e&f\\\\ g&h&i\\end{pmatrix}\\]\nis not invertible, and that every cofactor \\(C_{ij}\\) of \\(A\\) satisfies the relation\n\\[C_{ij}=\\kappa\\,a_{ij}^{\\,2}\\qquad(1)\\]\nwhere \\(a_{ij}\\) denotes the \\((i,j)\\)-entry of \\(A\\).  Prove that all nine entries of \\(A\\) are zero.",
+      "solution": "Let A=(a_{ij}) be a real 3\\times 3 matrix with det A=0 and suppose every cofactor C_{ij} satisfies\n  C_{ij}=\\kappa \\cdot a_{ij}^2,\nwhere \\kappa \\neq 0 is fixed.  We must show A=0.\n\n1.  Set B=adj(A), the transpose of the cofactor matrix.  Then classically\n      A B = B A = (det A)I = 0,\nso Im B\\subseteq Ker A.  Since A is 3\\times 3 and singular, Ker A has dimension \\geq 1; in fact for n=3 one shows rank B \\leq 3-2=1.  Hence all 2\\times 2 minors of B vanish.\n\n2.  By hypothesis C_{ij}=\\kappa  a_{ij}^2, so\n      B = \\kappa \\cdot a^2  d^2  g^2;\n                 b^2  e^2  h^2;\n                 c^2  f^2  i^2.\nVanishing of the 2\\times 2 minors of B yields\n      a^2e^2 = b^2d^2,\n      b^2f^2 = c^2e^2,\n      c^2d^2 = a^2f^2,\nor equivalently\n      ae=\\pm bd,    bf=\\pm ce,    cd=\\pm af.     (\\star )\n\n3.  We now argue that in every sign-choice at least one entry among a,b,c,d,e,f,i is zero, hence one entry of B is zero.\n\n  (i)  If all three signs in (\\star ) are ``-,'' then\n      (ae)(bf)(cd) = (-bd)(-ce)(-af) = -(abcdef).\n  Hence abcdef = -abcdef \\Rightarrow  abcdef=0 \\Rightarrow  some one of a,b,c,d,e,f vanishes \\Rightarrow  that corresponding entry of B is 0.\n\n  (ii)  Otherwise at least one of the three equations in (\\star ) has the ``+'' sign.  Say ae = bd.  But ae-bd is precisely the cofactor C_{33} (up to sign), so C_{33}=0.  By (1) this means \\kappa \\cdot i^2=0 \\Rightarrow  i=0, and again B_{33}=\\kappa  i^2=0.\n\nThus in every case B has rank \\leq 1 and at least one zero entry.\n\n4.  Lemma.  Any real matrix of rank \\leq 1 that has at least one zero entry must have an entire row or an entire column of zeros.  (Indeed, if a zero appears in row r and that row is nonzero, then every other row is a scalar multiple of row r, forcing one column to consist entirely of zeros; otherwise row r itself is the zero row.)\n\n5.  Applying the lemma to B: either B has a zero row or a zero column.  Since B=adj(A) is the transpose of the cofactor matrix, a zero row of B means a zero column of cofactors of A, i.e. that column of A is zero.  Similarly, a zero column of B gives a zero row of A.\n\n6.  Finally, if A has a whole zero column or a whole zero row, then every cofactor of every remaining entry of A vanishes, hence by C_{ij}=\\kappa  a_{ij}^2 those remaining entries must be zero.  Therefore all nine entries of A are zero.\n\nConclusion.  The only 3\\times 3 real singular matrix satisfying C_{ij}=\\kappa  a_{ij}^2 is A=0, as required.",
+      "_meta": {
+        "core_steps": [
+          "Singular 3×3 matrix ⇒ its adjoint B has rank ≤ 1, so every 2×2 minor of B vanishes",
+          "Given “cofactor = square of entry”, B’s entries are just the squares of A’s entries",
+          "Zero 2×2 minors ⇒ relations a e = ±b d, b f = ±c e, c d = ±a f ⇒ at least one entry of B is 0",
+          "Rank-1 matrix with a zero entry forces an entire row or column of zeros in B, hence the same in A",
+          "With one whole row/column zero in A, all remaining cofactors vanish ⇒ every entry of A is zero"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Common non-zero scalar multiple relating each cofactor to the square of its entry (i.e. allow Cofactor = k·(entry)²)",
+            "original": "k = 1"
+          },
+          "slot2": {
+            "description": "Stating singularity as “det A = 0” or equivalently that A is non-invertible",
+            "original": "determinant zero"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

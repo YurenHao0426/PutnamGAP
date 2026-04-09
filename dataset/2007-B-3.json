@@ -1,0 +1,165 @@
+{
+  "index": "2007-B-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $x_0 = 1$ and for $n \\geq 0$, let $x_{n+1} = 3x_n + \\lfloor x_n\n\\sqrt{5} \\rfloor$. In particular, $x_1 = 5$, $x_2 = 26$, $x_3 = 136$,\n$x_4 = 712$. Find a closed-form expression for $x_{2007}$. ($\\lfloor a\n\\rfloor$ means the largest integer $\\leq a$.)",
+  "solution": "\\textbf{First solution:}\nObserving that $x_2/2 = 13$, $x_3/4=34$, $x_4/8=89$, we\nguess that $x_n = 2^{n-1} F_{2n+3}$, where $F_k$ is the $k$-th\nFibonacci number. Thus we claim that $x_n = \\frac{2^{n-1}}{\\sqrt{5}}\n(\\alpha^{2n+3}-\\alpha^{-(2n+3)})$, where $\\alpha =\n\\frac{1+\\sqrt{5}}{2}$, to make the answer $x_{2007} =\n\\frac{2^{2006}}{\\sqrt{5}}(\\alpha^{3997}-\\alpha^{-3997})$.\n\nWe prove the claim by induction; the base case $x_0 = 1$ is true, and\nso it suffices to show that the recursion $x_{n+1} = 3x_n + \\lfloor\nx_n \\sqrt{5} \\rfloor$ is satisfied for our formula for $x_n$. Indeed,\nsince $\\alpha^2 = \\frac{3+\\sqrt{5}}{2}$, we have\n\\begin{align*}\nx_{n+1}-(3+\\sqrt{5})x_n &= \\frac{2^{n-1}}{\\sqrt{5}}\n(2(\\alpha^{2n+5}-\\alpha^{-(2n+5)}) \\\\\n&\\quad-(3+\\sqrt{5})(\\alpha^{2n+3}-\\alpha^{-(2n+3)})) \\\\\n&= 2^n \\alpha^{-(2n+3)}.\n\\end{align*}\nNow $2^n \\alpha^{-(2n+3)} =\n(\\frac{1-\\sqrt{5}}{2})^3 (3-\\sqrt{5})^n$ is between $-1$ and $0$; the\nrecursion follows since $x_n,x_{n+1}$ are integers.\n\n\\textbf{Second solution:}\n(by Catalin Zara)\nSince $x_n$ is rational, we have $0 < x_n \\sqrt{5} - \\lfloor x_n \\sqrt{5}\n\\rfloor < 1$. We now have the inequalities\n\\begin{gather*}\nx_{n+1}-3x_n < x_n \\sqrt{5} < x_{n+1} -3x_n+1 \\\\\n(3+\\sqrt{5})x_n - 1 < x_{n+1} < (3+\\sqrt{5})x_n \\\\\n4x_n - (3-\\sqrt{5}) < (3-\\sqrt{5})x_{n+1} < 4x_n \\\\\n3x_{n+1} - 4x_n < x_{n+1} \\sqrt{5} < 3x_{n+1}-4x_n + (3-\\sqrt{5}).\n\\end{gather*}\nSince $0 < 3-\\sqrt{5} < 1$, this yields $\\lfloor x_{n+1} \\sqrt{5}\n\\rfloor = 3x_{n+1} - 4x_n$, so we can rewrite the recursion as\n$x_{n+1} = 6x_n - 4x_{n-1}$ for $n \\geq 2$. It is routine to solve\nthis recursion to obtain the same solution as above.\n\n\\textbf{Remark:}\nWith an initial 1 prepended,\nthis becomes\nsequence A018903 in Sloane's On-Line Encyclopedia of Integer Sequences:\n(\\texttt{http://www.research.att.com/\\~{}njas/ sequences/}).\nTherein, the sequence is described as the case $S(1,5)$ of the sequence\n$S(a_0, a_1)$ in which $a_{n+2}$ is the least integer for which\n$a_{n+2}/a_{n+1}>a_{n+1}/a_n$. Sloane cites\n D. W. Boyd, Linear recurrence relations for some generalized Pisot sequences,\n\\textit{Advances in Number Theory (Kingston, ON, 1991)}, Oxford Univ.\nPress, New York, 1993, p.\\ 333--340.",
+  "vars": [
+    "x_0",
+    "x_n+1",
+    "x_n",
+    "x_1",
+    "x_2",
+    "x_3",
+    "x_4",
+    "x_2007",
+    "x_n-1",
+    "n",
+    "k",
+    "a_n+2",
+    "a_n+1",
+    "a_n",
+    "a_0",
+    "a_1"
+  ],
+  "params": [
+    "F_2n+3",
+    "F_k",
+    "S",
+    "\\\\alpha"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_0": "seedinit",
+        "x_n+1": "futurex",
+        "x_n": "genericx",
+        "x_1": "firstx",
+        "x_2": "secondx",
+        "x_3": "thirdx",
+        "x_4": "fourthx",
+        "x_2007": "specificx",
+        "x_n-1": "prevx",
+        "n": "indexvar",
+        "k": "fibindex",
+        "a_n+2": "futurea",
+        "a_n+1": "nexta",
+        "a_n": "generala",
+        "a_0": "basea",
+        "a_1": "firsta",
+        "F_2n+3": "fibspec",
+        "F_k": "fibgeneral",
+        "S": "seqsymbol",
+        "\\alpha": "greekalpha"
+      },
+      "question": "Let $seedinit = 1$ and for $indexvar \\geq 0$, let $futurex = 3genericx + \\lfloor genericx\n\\sqrt{5} \\rfloor$. In particular, $firstx = 5$, $secondx = 26$, $thirdx = 136$,\n$fourthx = 712$. Find a closed-form expression for $specificx$. ($\\lfloor a\n\\rfloor$ means the largest integer $\\leq a$.)",
+      "solution": "\\textbf{First solution:}\nObserving that $secondx/2 = 13$, $thirdx/4=34$, $fourthx/8=89$, we\nguess that $genericx = 2^{indexvar-1} fibspec$, where $fibgeneral$ is the $fibindex$-th\nFibonacci number. Thus we claim that $genericx = \\frac{2^{indexvar-1}}{\\sqrt{5}}\n(greekalpha^{2indexvar+3}-greekalpha^{-(2indexvar+3)})$, where $greekalpha =\n\\frac{1+\\sqrt{5}}{2}$, to make the answer $specificx =\n\\frac{2^{2006}}{\\sqrt{5}}(greekalpha^{3997}-greekalpha^{-3997})$.\n\nWe prove the claim by induction; the base case $seedinit = 1$ is true, and\nso it suffices to show that the recursion $futurex = 3genericx + \\lfloor\ngenericx \\sqrt{5} \\rfloor$ is satisfied for our formula for $genericx$. Indeed,\nsince $greekalpha^2 = \\frac{3+\\sqrt{5}}{2}$, we have\n\\begin{align*}\nfuturex-(3+\\sqrt{5})genericx &= \\frac{2^{indexvar-1}}{\\sqrt{5}}\n(2(greekalpha^{2indexvar+5}-greekalpha^{-(2indexvar+5)}) \\\\\n&\\quad-(3+\\sqrt{5})(greekalpha^{2indexvar+3}-greekalpha^{-(2indexvar+3)})) \\\\\n&= 2^{indexvar} greekalpha^{-(2indexvar+3)}.\n\\end{align*}\nNow $2^{indexvar} greekalpha^{-(2indexvar+3)} =\n(\\frac{1-\\sqrt{5}}{2})^3 (3-\\sqrt{5})^{indexvar}$ is between $-1$ and $0$; the\nrecursion follows since $genericx,futurex$ are integers.\n\n\\textbf{Second solution:}\n(by Catalin Zara)\nSince $genericx$ is rational, we have $0 < genericx \\sqrt{5} - \\lfloor genericx \\sqrt{5}\n\\rfloor < 1$. We now have the inequalities\n\\begin{gather*}\nfuturex-3genericx < genericx \\sqrt{5} < futurex -3genericx+1 \\\\\n(3+\\sqrt{5})genericx - 1 < futurex < (3+\\sqrt{5})genericx \\\\\n4genericx - (3-\\sqrt{5}) < (3-\\sqrt{5})futurex < 4genericx \\\\\n3futurex - 4genericx < futurex \\sqrt{5} < 3futurex-4genericx + (3-\\sqrt{5}).\n\\end{gather*}\nSince $0 < 3-\\sqrt{5} < 1$, this yields $\\lfloor futurex \\sqrt{5}\n\\rfloor = 3futurex - 4genericx$, so we can rewrite the recursion as\n$futurex = 6genericx - 4prevx$ for $indexvar \\geq 2$. It is routine to solve\nthis recursion to obtain the same solution as above.\n\n\\textbf{Remark:}\nWith an initial 1 prepended,\nthis becomes\nsequence A018903 in Sloane's On-Line Encyclopedia of Integer Sequences:\n(\\texttt{http://www.research.att.com/\\~{}njas/ sequences/}).\nTherein, the sequence is described as the case $seqsymbol(1,5)$ of the sequence\n$seqsymbol(basea, firsta)$ in which $futurea$ is the least integer for which\n$futurea/nexta>nexta/generala$. Sloane cites\n D. W. Boyd, Linear recurrence relations for some generalized Pisot sequences,\n\\textit{Advances in Number Theory (Kingston, ON, 1991)}, Oxford Univ.\nPress, New York, 1993, p.\\ 333--340."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_0": "caterpillar",
+        "x_n+1": "butterscotch",
+        "x_n": "dragonfly",
+        "x_1": "hummingbird",
+        "x_2": "rhinoceros",
+        "x_3": "stegosaurus",
+        "x_4": "velociraptor",
+        "x_2007": "platypus",
+        "x_n-1": "pomegranate",
+        "n": "watermelon",
+        "k": "blacksmith",
+        "a_n+2": "chrysanthemum",
+        "a_n+1": "honeysuckle",
+        "a_n": "dandelion",
+        "a_0": "sunflower",
+        "a_1": "buttercup",
+        "F_2n+3": "marshmallow",
+        "F_k": "peppermint",
+        "S": "gingerbread",
+        "\\\\alpha": "moonlight"
+      },
+      "question": "Let $caterpillar = 1$ and for $watermelon \\geq 0$, let $butterscotch = 3\\,dragonfly + \\lfloor dragonfly \\sqrt{5} \\rfloor$. In particular, $hummingbird = 5$, $rhinoceros = 26$, $stegosaurus = 136$, $velociraptor = 712$. Find a closed-form expression for $platypus$. ($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+      "solution": "\\textbf{First solution:}\nObserving that $rhinoceros/2 = 13$, $stegosaurus/4 = 34$, $velociraptor/8 = 89$, we\nguess that $dragonfly = 2^{watermelon-1}\\,marshmallow$, where peppermint is the $blacksmith$-th\nFibonacci number. Thus we claim that $dragonfly = \\dfrac{2^{watermelon-1}}{\\sqrt{5}}\\bigl(moonlight^{2\\,watermelon+3}-moonlight^{-(2\\,watermelon+3)}\\bigr)$, where $moonlight = \\dfrac{1+\\sqrt{5}}{2}$, giving the answer\n$platypus = \\dfrac{2^{2006}}{\\sqrt{5}}\\bigl(moonlight^{3997}-moonlight^{-3997}\\bigr)$.\n\nWe prove the claim by induction; the base case $caterpillar = 1$ is true, and\nso it suffices to show that the recursion $butterscotch = 3\\,dragonfly + \\lfloor dragonfly \\sqrt{5} \\rfloor$ is satisfied for our formula for $dragonfly$. Indeed,\nsince $moonlight^{2} = \\dfrac{3+\\sqrt{5}}{2}$, we have\n\\begin{align*}\nbutterscotch -(3+\\sqrt{5})\\,dragonfly &= \\frac{2^{watermelon-1}}{\\sqrt{5}}\n\\Bigl(2\\bigl(moonlight^{2\\,watermelon+5}-moonlight^{-(2\\,watermelon+5)}\\bigr) \\\n&\\quad-(3+\\sqrt{5})\\bigl(moonlight^{2\\,watermelon+3}-moonlight^{-(2\\,watermelon+3)}\\bigr)\\Bigr) \\\\\n&= 2^{watermelon}\\, moonlight^{-(2\\,watermelon+3)}.\n\\end{align*}\nNow $2^{watermelon} moonlight^{-(2\\,watermelon+3)} =\\left(\\dfrac{1-\\sqrt{5}}{2}\\right)^{3}(3-\\sqrt{5})^{watermelon}$ is between $-1$ and $0$; the\nrecursion follows since $dragonfly$ and $butterscotch$ are integers.\n\n\\textbf{Second solution:}\n(by Catalin Zara)\nSince $dragonfly$ is rational, we have $0 < dragonfly \\sqrt{5} - \\lfloor dragonfly \\sqrt{5}\n\\rfloor < 1$. We now have the inequalities\n\\begin{gather*}\nbutterscotch - 3\\,dragonfly < dragonfly \\sqrt{5} < butterscotch - 3\\,dragonfly + 1 \\\\\n(3+\\sqrt{5})\\,dragonfly - 1 < butterscotch < (3+\\sqrt{5})\\,dragonfly \\\\\n4\\,dragonfly - (3-\\sqrt{5}) < (3-\\sqrt{5})\\,butterscotch < 4\\,dragonfly \\\\\n3\\,butterscotch - 4\\,dragonfly < butterscotch \\sqrt{5} < 3\\,butterscotch-4\\,dragonfly + (3-\\sqrt{5}).\n\\end{gather*}\nSince $0 < 3-\\sqrt{5} < 1$, this yields $\\lfloor butterscotch \\sqrt{5}\n\\rfloor = 3\\,butterscotch - 4\\,dragonfly$, so we can rewrite the recursion as\n$butterscotch = 6\\,dragonfly - 4\\,pomegranate$ for $watermelon \\geq 2$. It is routine to solve\nthis recursion to obtain the same solution as above.\n\n\\textbf{Remark:}\nWith an initial 1 prepended,\nthis becomes\nsequence A018903 in Sloane's On-Line Encyclopedia of Integer Sequences:\n(\\texttt{http://www.research.att.com/~njas/ sequences/}).\nTherein, the sequence is described as the case $gingerbread(1,5)$ of the sequence\n$gingerbread(sunflower,buttercup)$ in which $chrysanthemum$ is the least integer for which\n$chrysanthemum/ honeysuckle > honeysuckle/ dandelion$. Sloane cites\n D. W. Boyd, Linear recurrence relations for some generalized Pisot sequences,\n\\textit{Advances in Number Theory (Kingston, ON, 1991)}, Oxford Univ.\nPress, New York, 1993, p.~333--340."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_0": "immovablezero",
+        "x_n+1": "stagnantnext",
+        "x_n": "staticindex",
+        "x_1": "constantone",
+        "x_2": "constanttwo",
+        "x_3": "constantthree",
+        "x_4": "constantfour",
+        "x_2007": "constanttwothousandseven",
+        "x_n-1": "staticprevious",
+        "n": "boundless",
+        "k": "unbounded",
+        "a_n+2": "terminaltwoafter",
+        "a_n+1": "terminalnext",
+        "a_n": "terminalnow",
+        "a_0": "terminalzero",
+        "a_1": "terminalone",
+        "F_2n+3": "antifibonacci",
+        "F_k": "antifibonacciindex",
+        "S": "chaosness",
+        "\\\\alpha": "omegaparam"
+      },
+      "question": "Let $immovablezero = 1$ and for $boundless \\geq 0$, let $stagnantnext = 3staticindex + \\lfloor staticindex\n\\sqrt{5} \\rfloor$. In particular, $constantone = 5$, $constanttwo = 26$, $constantthree = 136$,\n$constantfour = 712$. Find a closed-form expression for $constanttwothousandseven$. ($\\lfloor a\n\\rfloor$ means the largest integer $\\leq a$.)",
+      "solution": "\\textbf{First solution:}\nObserving that $constanttwo/2 = 13$, $constantthree/4=34$, $constantfour/8=89$, we\nguess that $staticindex = 2^{boundless-1} antifibonacci$, where $antifibonacciindex$ is the $unbounded$-th\nFibonacci number. Thus we claim that $staticindex = \\frac{2^{boundless-1}}{\\sqrt{5}}\n(\\omegaparam^{2boundless+3}-\\omegaparam^{-(2boundless+3)})$, where $\\omegaparam =\n\\frac{1+\\sqrt{5}}{2}$, to make the answer $constanttwothousandseven =\n\\frac{2^{2006}}{\\sqrt{5}}(\\omegaparam^{3997}-\\omegaparam^{-3997})$.\n\nWe prove the claim by induction; the base case $immovablezero = 1$ is true, and\nso it suffices to show that the recursion $stagnantnext = 3staticindex + \\lfloor\nstaticindex \\sqrt{5} \\rfloor$ is satisfied for our formula for $staticindex$. Indeed,\nsince $\\omegaparam^2 = \\frac{3+\\sqrt{5}}{2}$, we have\n\\begin{align*}\nstagnantnext-(3+\\sqrt{5})staticindex &= \\frac{2^{boundless-1}}{\\sqrt{5}}\\\\\n(2(\\omegaparam^{2boundless+5}-\\omegaparam^{-(2boundless+5)}) \\\\\n&\\quad-(3+\\sqrt{5})(\\omegaparam^{2boundless+3}-\\omegaparam^{-(2boundless+3)})) \\\\\n&= 2^{boundless} \\omegaparam^{-(2boundless+3)}.\n\\end{align*}\nNow $2^{boundless} \\omegaparam^{-(2boundless+3)} =\n(\\frac{1-\\sqrt{5}}{2})^3 (3-\\sqrt{5})^{boundless}$ is between $-1$ and $0$; the\nrecursion follows since $staticindex,stagnantnext$ are integers.\n\n\\textbf{Second solution:}\n(by Catalin Zara)\nSince $staticindex$ is rational, we have $0 < staticindex \\sqrt{5} - \\lfloor staticindex \\sqrt{5}\n\\rfloor < 1$. We now have the inequalities\n\\begin{gather*}\nstagnantnext-3staticindex < staticindex \\sqrt{5} < stagnantnext -3staticindex+1 \\\\\n(3+\\sqrt{5})staticindex - 1 < stagnantnext < (3+\\sqrt{5})staticindex \\\\\n4staticindex - (3-\\sqrt{5}) < (3-\\sqrt{5})stagnantnext < 4staticindex \\\\\n3stagnantnext - 4staticindex < stagnantnext \\sqrt{5} < 3stagnantnext-4staticindex + (3-\\sqrt{5}).\n\\end{gather*}\nSince $0 < 3-\\sqrt{5} < 1$, this yields $\\lfloor stagnantnext \\sqrt{5}\n\\rfloor = 3stagnantnext - 4staticindex$, so we can rewrite the recursion as\n$stagnantnext = 6staticindex - 4staticprevious$ for $boundless \\geq 2$. It is routine to solve\nthis recursion to obtain the same solution as above.\n\n\\textbf{Remark:}\nWith an initial 1 prepended,\nthis becomes\nsequence A018903 in Sloane's On-Line Encyclopedia of Integer Sequences:\n(\\texttt{http://www.research.att.com/\\~{}njas/ sequences/}).\nTherein, the sequence is described as the case $chaosness(1,5)$ of the sequence\n$chaosness(terminalzero, terminalone)$ in which $terminaltwoafter$ is the least integer for which\n$terminaltwoafter/terminalnext>terminalnext/terminalnow$. Sloane cites\n D. W. Boyd, Linear recurrence relations for some generalized Pisot sequences,\n\\textit{Advances in Number Theory (Kingston, ON, 1991)}, Oxford Univ.\nPress, New York, 1993, p.\\ 333--340."
+    },
+    "garbled_string": {
+      "map": {
+        "x_0": "bzqrlmnt",
+        "x_n+1": "gnqxldvj",
+        "x_n": "hjkslmna",
+        "x_1": "pqowieur",
+        "x_2": "wernbvtk",
+        "x_3": "ldjskfgh",
+        "x_4": "mbcvxzpl",
+        "x_2007": "ytrplmnb",
+        "x_n-1": "cjkqtwuv",
+        "n": "asdfghjk",
+        "k": "qwertyui",
+        "a_n+2": "pkjhgfdl",
+        "a_n+1": "lkjhgfdp",
+        "a_n": "poiuytre",
+        "a_0": "vbnmsdfa",
+        "a_1": "aslkdjfh",
+        "F_2n+3": "zxmvbnqw",
+        "F_k": "cvbnmzas",
+        "S": "qplmokij",
+        "\\alpha": "mnbvcxza"
+      },
+      "question": "Let $bzqrlmnt = 1$ and for $asdfghjk \\geq 0$, let $gnqxldvj = 3hjkslmna + \\lfloor hjkslmna \\sqrt{5} \\rfloor$. In particular, $pqowieur = 5$, $wernbvtk = 26$, $ldjskfgh = 136$, $mbcvxzpl = 712$. Find a closed-form expression for $ytrplmnb$. ($\\lfloor a \\rfloor$ means the largest integer $\\leq a$.)",
+      "solution": "\\textbf{First solution:}\\nObserving that $wernbvtk/2 = 13$, $ldjskfgh/4=34$, $mbcvxzpl/8=89$, we\\nguess that $hjkslmna = 2^{asdfghjk-1} zxmvbnqw$, where $cvbnmzas$ is the $qwertyui$-th\\nFibonacci number. Thus we claim that $hjkslmna = \\frac{2^{asdfghjk-1}}{\\sqrt{5}}\\n(mnbvcxza^{2asdfghjk+3}-mnbvcxza^{-(2asdfghjk+3)})$, where $mnbvcxza =\\n\\frac{1+\\sqrt{5}}{2}$, to make the answer $ytrplmnb =\\n\\frac{2^{2006}}{\\sqrt{5}}(mnbvcxza^{3997}-mnbvcxza^{-3997})$.\\n\\nWe prove the claim by induction; the base case $bzqrlmnt = 1$ is true, and\\nso it suffices to show that the recursion $gnqxldvj = 3hjkslmna + \\lfloor\\nhjkslmna \\sqrt{5} \\rfloor$ is satisfied for our formula for $hjkslmna$. Indeed,\\nsince $mnbvcxza^2 = \\frac{3+\\sqrt{5}}{2}$, we have\\n\\begin{align*}\\ngnqxldvj-(3+\\sqrt{5})hjkslmna &= \\frac{2^{asdfghjk-1}}{\\sqrt{5}}\\\\\\n&\\quad(2(mnbvcxza^{2asdfghjk+5}-mnbvcxza^{-(2asdfghjk+5)}) \\\\&\\quad-(3+\\sqrt{5})(mnbvcxza^{2asdfghjk+3}-mnbvcxza^{-(2asdfghjk+3)})) \\\\&= 2^{asdfghjk} mnbvcxza^{-(2asdfghjk+3)}.\\n\\end{align*}\\nNow $2^{asdfghjk} mnbvcxza^{-(2asdfghjk+3)} =\\n(\\frac{1-\\sqrt{5}}{2})^3 (3-\\sqrt{5})^{asdfghjk}$ is between $-1$ and $0$; the\\nrecursion follows since $hjkslmna,gnqxldvj$ are integers.\\n\\n\\textbf{Second solution:}\\n(by Catalin Zara)\\nSince $hjkslmna$ is rational, we have $0 < hjkslmna \\sqrt{5} - \\lfloor hjkslmna \\sqrt{5}\\n\\rfloor < 1$. We now have the inequalities\\n\\begin{gather*}\\ngnqxldvj-3hjkslmna < hjkslmna \\sqrt{5} < gnqxldvj -3hjkslmna+1 \\\\\\n(3+\\sqrt{5})hjkslmna - 1 < gnqxldvj < (3+\\sqrt{5})hjkslmna \\\\\\n4hjkslmna - (3-\\sqrt{5}) < (3-\\sqrt{5})gnqxldvj < 4hjkslmna \\\\\\n3gnqxldvj - 4hjkslmna < gnqxldvj \\sqrt{5} < 3gnqxldvj-4hjkslmna + (3-\\sqrt{5}).\\n\\end{gather*}\\nSince $0 < 3-\\sqrt{5} < 1$, this yields $\\lfloor gnqxldvj \\sqrt{5}\\n\\rfloor = 3gnqxldvj - 4hjkslmna$, so we can rewrite the recursion as\\ngnqxldvj = 6hjkslmna - 4cjkqtwuv for $asdfghjk \\geq 2$. It is routine to solve\\nthis recursion to obtain the same solution as above.\\n\\n\\textbf{Remark:}\\nWith an initial 1 prepended,\\nthis becomes\\nsequence A018903 in Sloane's On-Line Encyclopedia of Integer Sequences:\\n(\\texttt{http://www.research.att.com/\\~{}njas/ sequences/}).\\nTherein, the sequence is described as the case $qplmokij(1,5)$ of the sequence\\n$qplmokij(vbnmsdfa, aslkdjfh)$ in which $pkjhgfdl$ is the least integer for which\\n$pkjhgfdl/lkjhgfdp>lkjhgfdp/poiuytre$. Sloane cites\\n D. W. Boyd, Linear recurrence relations for some generalized Pisot sequences,\\n\\textit{Advances in Number Theory (Kingston, ON, 1991)}, Oxford Univ.\\nPress, New York, 1993, p.\\ 333--340."
+    },
+    "kernel_variant": {
+      "question": "Two integer sequences (x_n)_n\\geq 0 and (y_n)_n\\geq 0 are defined by  \n\n  x_0 = 1,  y_0 = 0,\n\n  x_{n+1} = 3x_n + \\lfloor x_n\\sqrt{5}\\rfloor ,         (1)  \n  y_{n+1} = 2y_n + x_n,             (2)  \n\nfor every n \\geq  0.  The first few pairs are  \n\n (x_0 , y_0) = (1 , 0), (x_1 , y_1) = (5 , 1), (x_2 , y_2) = (26 , 7), (x_3 , y_3) = (136 , 40), (x_4 , y_4) = (712 , 216).\n\n(a) Find a closed-form expression for x_n in terms of n.  \n(b) Using (a), obtain a closed-form expression for y_n.  \n(c) Determine y_{2024} explicitly in closed form.\n\nYour answer may involve the golden ratio \\varphi  = (1+\\sqrt{5})/2, its conjugate \\psi  = (1-\\sqrt{5})/2, and the Fibonacci numbers F_k, where F_0 = 0, F_1 = 1 and F_{k+2}=F_{k+1}+F_k.",
+      "solution": "Throughout we set  \n \\varphi  = (1+\\sqrt{5})/2, \\psi  = (1-\\sqrt{5})/2, F_0 = 0, F_1 = 1, F_{k+2}=F_{k+1}+F_k.\n\n-------------------------------------------------\nPart (a).  A closed form for (x_n)\n-------------------------------------------------\nStep 1.  Removing the floor.\n\nWrite x_n\\sqrt{5} = d_n + r_n with d_n = \\lfloor x_n\\sqrt{5}\\rfloor  (an integer) and 0 < r_n < 1.\nEquation (1) gives  \n x_{n+1}=3x_n+d_n. (3)\n\nWe show that  \n\n  \\lfloor x_{n+1}\\sqrt{5}\\rfloor  = 3x_{n+1} - 4x_n     (n \\geq  0). (4)\n\nIndeed,\n\nx_{n+1}\\sqrt{5} - (3x_{n+1} - 4x_n)\n = (3x_n + d_n)\\sqrt{5} - 3(3x_n + d_n) + 4x_n          (by (3))\n = x_n(3\\sqrt{5} - 5) + d_n(\\sqrt{5} - 3).                      (5)\n\nBecause d_n = x_n\\sqrt{5} - r_n, (5) equals  \n\n x_n(3\\sqrt{5} - 5) + (x_n\\sqrt{5} - r_n)(\\sqrt{5} -3)  \n = x_n[(3\\sqrt{5} - 5) + \\sqrt{5}(\\sqrt{5} -3)] - r_n(\\sqrt{5} -3)  \n = x_n[3\\sqrt{5} - 5 + 5 - 3\\sqrt{5}] - r_n(\\sqrt{5} -3) = (3-\\sqrt{5}) r_n. (6)\n\nSince 0 < r_n < 1 and 0 < 3-\\sqrt{5} < 1, we have 0 < (3-\\sqrt{5})r_n < 1.  \nHence the real number x_{n+1}\\sqrt{5} lies strictly between the consecutive\nintegers 3x_{n+1} - 4x_n and 3x_{n+1} - 4x_n + 1, so its floor is the\nsmaller one, proving (4).\n\nStep 2.  A homogeneous second-order recurrence.\n\nSubstituting (4) into (1) with n \\mapsto  n+1 gives  \n\nx_{n+2}=3x_{n+1}+3x_{n+1}-4x_n = 6x_{n+1}-4x_n  (n \\geq  0). (7)\n\nTogether with x_0 = 1, x_1 = 5, (7) completely determines (x_n).\n\nStep 3.  Solving the recurrence.\n\nThe characteristic polynomial \\lambda ^2-6\\lambda +4 = 0 has distinct roots  \n\n\\lambda _1 = 3+\\sqrt{5} = 2\\varphi ^2, \\lambda _2 = 3-\\sqrt{5} = 2\\psi ^2.\n\nHence  \n\nx_n = C(3+\\sqrt{5})^{\\,n} + D(3-\\sqrt{5})^{\\,n}. (8)\n\nUsing x_0 = 1, x_1 = 5,\n\nC + D = 1, C(3+\\sqrt{5})+D(3-\\sqrt{5})=5 \\Rightarrow   \nC = 1/\\sqrt{5} + 1/2, D = 1/2 - 1/\\sqrt{5.} (9)\n\nThus  \n\nx_n = (1/\\sqrt{5}+1/2)(3+\\sqrt{5})^{\\,n} + (1/2-1/\\sqrt{5})(3-\\sqrt{5})^{\\,n}. (10)\n\nStep 4.  Converting to Fibonacci notation.\n\nBecause 3+\\sqrt{5} = 2\\varphi ^2 and 3-\\sqrt{5} = 2\\psi ^2, (10) can be rewritten\n\nx_n = 2^{\\,n-1}\\cdot (\\varphi ^{2n+3} - \\psi ^{2n+3})/\\sqrt{5} = 2^{\\,n-1}F_{2n+3}. (11)\n\nHence  \n\nboxed{ x_n = 2^{\\,n-1}F_{2n+3}\\quad(n \\geq  0). }\n\n-------------------------------------------------\nPart (b).  A closed form for (y_n)\n-------------------------------------------------\nRewrite (2) as  \n\ny_{n+1} - 2y_n = x_n. (12)\n\nIterating (12) gives, for n \\geq  1,\n\ny_n = 2^{\\,n-1}y_1 + \\Sigma _{k=0}^{n-2} 2^{\\,n-2-k}x_{k+1}. (13)\n\nBecause y_1 = 1 and x_0 = 1, (13) becomes  \n\ny_n = 2^{\\,n-1} + \\Sigma _{k=1}^{n-1} 2^{\\,n-1-k}x_k. (14)\n\nInsert (11):\n\n2^{\\,n-1-k}x_k = 2^{\\,n-1-k}\\cdot 2^{\\,k-1}F_{2k+3}=2^{\\,n-2}F_{2k+3}. (15)\n\nHence  \n\ny_n = 2^{\\,n-1} + 2^{\\,n-2} \\Sigma _{k=1}^{n-1}F_{2k+3}. (16)\n\nA Fibonacci sum identity.\n\nClaim.  For every m \\geq  1, \\Sigma _{k=1}^{m} F_{2k+3}=F_{2m+4}-3.  \nProof by induction (m=1 is immediate; the step uses F_{t+1}=F_t+F_{t-1}). \\square \n\nPutting m = n-1 in the claim and substituting into (16):\n\ny_n = 2^{\\,n-1} + 2^{\\,n-2}(F_{2n+2} - 3)\n   = 2^{\\,n-2}(F_{2n+2} - 1)  (n \\geq  1). (17)\n\nThus  \n\nboxed{ y_n = 2^{\\,n-2}\\bigl(F_{2n+2} - 1\\bigr)\\quad(n \\geq  1), y_0 = 0. }\n\n-------------------------------------------------\nPart (c).  Evaluation of y_{2024}\n-------------------------------------------------\nWith n = 2024 in (17):\n\ny_{2024} = 2^{2022}\\bigl(F_{4050} - 1\\bigr)\n      = 2^{2022}\\!\\left(\\dfrac{\\varphi ^{4050} - \\psi ^{4050}}{\\sqrt{5}} - 1\\right). (18)\n\nThis satisfies all initial values (including y_4 = 216) and completes the problem.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.807720",
+        "was_fixed": false,
+        "difficulty_analysis": "• Two intertwined sequences replace the single sequence of the original problem, raising the dimension of the system.  \n• Solving the second sequence demands a convolution of the first with a geometric progression; this is a non-homogeneous linear recurrence of higher order.  \n• The answer requires summing a long subsequence of Fibonacci numbers with even indices – an identity (7) that is itself non-trivial and rarely memorised – before the powers-of-two factor is restored.  \n• Altogether the solution mixes four distinct techniques: the original Pisot-number/Fibonacci argument, linear–recurrence convolution, a telescoping Fibonacci sum, and Binet-formula manipulation for the final closed form.  \nHence the variant is markedly more intricate and multi-layered than both the original Olympiad question and the current kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Two integer sequences (x_n)_n\\geq 0 and (y_n)_n\\geq 0 are defined by  \n\n  x_0 = 1,  y_0 = 0,\n\n  x_{n+1} = 3x_n + \\lfloor x_n\\sqrt{5}\\rfloor ,         (1)  \n  y_{n+1} = 2y_n + x_n,             (2)  \n\nfor every n \\geq  0.  The first few pairs are  \n\n (x_0 , y_0) = (1 , 0), (x_1 , y_1) = (5 , 1), (x_2 , y_2) = (26 , 7), (x_3 , y_3) = (136 , 40), (x_4 , y_4) = (712 , 216).\n\n(a) Find a closed-form expression for x_n in terms of n.  \n(b) Using (a), obtain a closed-form expression for y_n.  \n(c) Determine y_{2024} explicitly in closed form.\n\nYour answer may involve the golden ratio \\varphi  = (1+\\sqrt{5})/2, its conjugate \\psi  = (1-\\sqrt{5})/2, and the Fibonacci numbers F_k, where F_0 = 0, F_1 = 1 and F_{k+2}=F_{k+1}+F_k.",
+      "solution": "Throughout we set  \n \\varphi  = (1+\\sqrt{5})/2, \\psi  = (1-\\sqrt{5})/2, F_0 = 0, F_1 = 1, F_{k+2}=F_{k+1}+F_k.\n\n-------------------------------------------------\nPart (a).  A closed form for (x_n)\n-------------------------------------------------\nStep 1.  Removing the floor.\n\nWrite x_n\\sqrt{5} = d_n + r_n with d_n = \\lfloor x_n\\sqrt{5}\\rfloor  (an integer) and 0 < r_n < 1.\nEquation (1) gives  \n x_{n+1}=3x_n+d_n. (3)\n\nWe show that  \n\n  \\lfloor x_{n+1}\\sqrt{5}\\rfloor  = 3x_{n+1} - 4x_n     (n \\geq  0). (4)\n\nIndeed,\n\nx_{n+1}\\sqrt{5} - (3x_{n+1} - 4x_n)\n = (3x_n + d_n)\\sqrt{5} - 3(3x_n + d_n) + 4x_n          (by (3))\n = x_n(3\\sqrt{5} - 5) + d_n(\\sqrt{5} - 3).                      (5)\n\nBecause d_n = x_n\\sqrt{5} - r_n, (5) equals  \n\n x_n(3\\sqrt{5} - 5) + (x_n\\sqrt{5} - r_n)(\\sqrt{5} -3)  \n = x_n[(3\\sqrt{5} - 5) + \\sqrt{5}(\\sqrt{5} -3)] - r_n(\\sqrt{5} -3)  \n = x_n[3\\sqrt{5} - 5 + 5 - 3\\sqrt{5}] - r_n(\\sqrt{5} -3) = (3-\\sqrt{5}) r_n. (6)\n\nSince 0 < r_n < 1 and 0 < 3-\\sqrt{5} < 1, we have 0 < (3-\\sqrt{5})r_n < 1.  \nHence the real number x_{n+1}\\sqrt{5} lies strictly between the consecutive\nintegers 3x_{n+1} - 4x_n and 3x_{n+1} - 4x_n + 1, so its floor is the\nsmaller one, proving (4).\n\nStep 2.  A homogeneous second-order recurrence.\n\nSubstituting (4) into (1) with n \\mapsto  n+1 gives  \n\nx_{n+2}=3x_{n+1}+3x_{n+1}-4x_n = 6x_{n+1}-4x_n  (n \\geq  0). (7)\n\nTogether with x_0 = 1, x_1 = 5, (7) completely determines (x_n).\n\nStep 3.  Solving the recurrence.\n\nThe characteristic polynomial \\lambda ^2-6\\lambda +4 = 0 has distinct roots  \n\n\\lambda _1 = 3+\\sqrt{5} = 2\\varphi ^2, \\lambda _2 = 3-\\sqrt{5} = 2\\psi ^2.\n\nHence  \n\nx_n = C(3+\\sqrt{5})^{\\,n} + D(3-\\sqrt{5})^{\\,n}. (8)\n\nUsing x_0 = 1, x_1 = 5,\n\nC + D = 1, C(3+\\sqrt{5})+D(3-\\sqrt{5})=5 \\Rightarrow   \nC = 1/\\sqrt{5} + 1/2, D = 1/2 - 1/\\sqrt{5.} (9)\n\nThus  \n\nx_n = (1/\\sqrt{5}+1/2)(3+\\sqrt{5})^{\\,n} + (1/2-1/\\sqrt{5})(3-\\sqrt{5})^{\\,n}. (10)\n\nStep 4.  Converting to Fibonacci notation.\n\nBecause 3+\\sqrt{5} = 2\\varphi ^2 and 3-\\sqrt{5} = 2\\psi ^2, (10) can be rewritten\n\nx_n = 2^{\\,n-1}\\cdot (\\varphi ^{2n+3} - \\psi ^{2n+3})/\\sqrt{5} = 2^{\\,n-1}F_{2n+3}. (11)\n\nHence  \n\nboxed{ x_n = 2^{\\,n-1}F_{2n+3}\\quad(n \\geq  0). }\n\n-------------------------------------------------\nPart (b).  A closed form for (y_n)\n-------------------------------------------------\nRewrite (2) as  \n\ny_{n+1} - 2y_n = x_n. (12)\n\nIterating (12) gives, for n \\geq  1,\n\ny_n = 2^{\\,n-1}y_1 + \\Sigma _{k=0}^{n-2} 2^{\\,n-2-k}x_{k+1}. (13)\n\nBecause y_1 = 1 and x_0 = 1, (13) becomes  \n\ny_n = 2^{\\,n-1} + \\Sigma _{k=1}^{n-1} 2^{\\,n-1-k}x_k. (14)\n\nInsert (11):\n\n2^{\\,n-1-k}x_k = 2^{\\,n-1-k}\\cdot 2^{\\,k-1}F_{2k+3}=2^{\\,n-2}F_{2k+3}. (15)\n\nHence  \n\ny_n = 2^{\\,n-1} + 2^{\\,n-2} \\Sigma _{k=1}^{n-1}F_{2k+3}. (16)\n\nA Fibonacci sum identity.\n\nClaim.  For every m \\geq  1, \\Sigma _{k=1}^{m} F_{2k+3}=F_{2m+4}-3.  \nProof by induction (m=1 is immediate; the step uses F_{t+1}=F_t+F_{t-1}). \\square \n\nPutting m = n-1 in the claim and substituting into (16):\n\ny_n = 2^{\\,n-1} + 2^{\\,n-2}(F_{2n+2} - 3)\n   = 2^{\\,n-2}(F_{2n+2} - 1)  (n \\geq  1). (17)\n\nThus  \n\nboxed{ y_n = 2^{\\,n-2}\\bigl(F_{2n+2} - 1\\bigr)\\quad(n \\geq  1), y_0 = 0. }\n\n-------------------------------------------------\nPart (c).  Evaluation of y_{2024}\n-------------------------------------------------\nWith n = 2024 in (17):\n\ny_{2024} = 2^{2022}\\bigl(F_{4050} - 1\\bigr)\n      = 2^{2022}\\!\\left(\\dfrac{\\varphi ^{4050} - \\psi ^{4050}}{\\sqrt{5}} - 1\\right). (18)\n\nThis satisfies all initial values (including y_4 = 216) and completes the problem.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.617346",
+        "was_fixed": false,
+        "difficulty_analysis": "• Two intertwined sequences replace the single sequence of the original problem, raising the dimension of the system.  \n• Solving the second sequence demands a convolution of the first with a geometric progression; this is a non-homogeneous linear recurrence of higher order.  \n• The answer requires summing a long subsequence of Fibonacci numbers with even indices – an identity (7) that is itself non-trivial and rarely memorised – before the powers-of-two factor is restored.  \n• Altogether the solution mixes four distinct techniques: the original Pisot-number/Fibonacci argument, linear–recurrence convolution, a telescoping Fibonacci sum, and Binet-formula manipulation for the final closed form.  \nHence the variant is markedly more intricate and multi-layered than both the original Olympiad question and the current kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

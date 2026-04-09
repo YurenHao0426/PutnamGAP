@@ -1,0 +1,105 @@
+{
+  "index": "1980-A-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Problem A-2\nLet \\( r \\) and \\( s \\) be positive integers. Derive a formula for the number of ordered quadruples \\( (a, b, c, d) \\) of positive integers such that\n\\[\n3^{r} \\cdot 7^{s}=\\operatorname{lcm}[a, b, c]=\\operatorname{lcm}[a, b, d]=\\operatorname{lcm}[a, c, d]=\\operatorname{lcm}[b, c, d]\n\\]\n\nThe answer should be a function of \\( r \\) and \\( s \\).\n(Note that \\( 1 \\mathrm{~cm}[x, y, z] \\) denotes the least common multiple of \\( x, y, z \\). )",
+  "solution": "A-2.\nWe show that the number is \\( \\left(1+4 r+6 r^{2}\\right)\\left(1+4 s+6 s^{2}\\right) \\). Each of \\( a, b, c, d \\) must be of the form \\( 3^{m} 7^{n} \\) with \\( m \\) in \\( \\{0,1, \\ldots, r\\} \\) and \\( n \\) in \\( \\{0,1, \\ldots, s\\} \\). Also \\( m \\) must be \\( r \\) for at least two of the four numbers, and \\( n \\) must be \\( s \\) for at least two of the four numbers. There is one way to have \\( m=r \\) for all four numbers, \\( 4 r \\) ways to have one \\( m \\) in \\( \\{0,1, \\ldots, r-1\\} \\) and the other three equal to \\( r \\), and \\( \\binom{4}{2} r^{2}=6 r^{2} \\) ways to have two of the \\( m \\) 's in \\( \\{0,1, \\ldots, r-1\\} \\) and the other two equal to \\( r \\). Thus there are \\( 1+4 r+6 r^{2} \\) choices of allowable \\( m \\) 's and, similarly, \\( 1+4 s+6 s^{2} \\) choices of allowable \\( n \\) 's.",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "m",
+    "n"
+  ],
+  "params": [
+    "r",
+    "s"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "firstnum",
+        "b": "secondnum",
+        "c": "thirdnum",
+        "d": "fourthnum",
+        "m": "threeexp",
+        "n": "sevenexp",
+        "r": "threelimit",
+        "s": "sevenlimit"
+      },
+      "question": "Problem A-2\nLet threelimit and sevenlimit be positive integers. Derive a formula for the number of ordered quadruples (firstnum, secondnum, thirdnum, fourthnum) of positive integers such that\n\\[\n3^{threelimit} \\cdot 7^{sevenlimit}=\\operatorname{lcm}[firstnum, secondnum, thirdnum]=\\operatorname{lcm}[firstnum, secondnum, fourthnum]=\\operatorname{lcm}[firstnum, thirdnum, fourthnum]=\\operatorname{lcm}[secondnum, thirdnum, fourthnum]\n\\]\nThe answer should be a function of threelimit and sevenlimit.\n(Note that \\(\\operatorname{lcm}[x, y, z]\\) denotes the least common multiple of \\(x, y, z\\). )",
+      "solution": "A-2.\nWe show that the number is \\( (1+4\\,threelimit+6\\,threelimit^{2})(1+4\\,sevenlimit+6\\,sevenlimit^{2}) \\). Each of firstnum, secondnum, thirdnum, fourthnum must be of the form \\( 3^{threeexp} 7^{sevenexp} \\) with threeexp in \\( \\{0,1, \\ldots, threelimit\\} \\) and sevenexp in \\( \\{0,1, \\ldots, sevenlimit\\} \\). Also threeexp must be \\( threelimit \\) for at least two of the four numbers, and sevenexp must be \\( sevenlimit \\) for at least two of the four numbers.\nThere is one way to have \\( threeexp=threelimit \\) for all four numbers, \\( 4\\,threelimit \\) ways to have one threeexp in \\( \\{0,1, \\ldots, threelimit-1\\} \\) and the other three equal to \\( threelimit \\), and \\( \\binom{4}{2}\\,threelimit^{2}=6\\,threelimit^{2} \\) ways to have two of the threeexp's in \\( \\{0,1, \\ldots, threelimit-1\\} \\) and the other two equal to \\( threelimit \\). Thus there are \\( 1+4\\,threelimit+6\\,threelimit^{2} \\) choices of allowable threeexp's and, similarly, \\( 1+4\\,sevenlimit+6\\,sevenlimit^{2} \\) choices of allowable sevenexp's."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "pineapple",
+        "b": "windchime",
+        "c": "sailcloth",
+        "d": "riverstone",
+        "m": "bluegrass",
+        "n": "drumstick",
+        "r": "applecore",
+        "s": "moonlight"
+      },
+      "question": "Problem:\n<<<\nProblem A-2\nLet \\( applecore \\) and \\( moonlight \\) be positive integers. Derive a formula for the number of ordered quadruples \\( (pineapple, windchime, sailcloth, riverstone) \\) of positive integers such that\n\\[\n3^{applecore} \\cdot 7^{moonlight}=\\operatorname{lcm}[pineapple, windchime, sailcloth]=\\operatorname{lcm}[pineapple, windchime, riverstone]=\\operatorname{lcm}[pineapple, sailcloth, riverstone]=\\operatorname{lcm}[windchime, sailcloth, riverstone]\n\\]\n\nThe answer should be a function of \\( applecore \\) and \\( moonlight \\).\n(Note that \\( 1 \\mathrm{~cm}[x, y, z] \\) denotes the least common multiple of \\( x, y, z \\). )\n>>>",
+      "solution": "Solution:\n<<<\nA-2.\nWe show that the number is \\( \\left(1+4 applecore+6 applecore^{2}\\right)\\left(1+4 moonlight+6 moonlight^{2}\\right) \\). Each of \\( pineapple, windchime, sailcloth, riverstone \\) must be of the form \\( 3^{bluegrass} 7^{drumstick} \\) with \\( bluegrass \\) in \\( \\{0,1, \\ldots, applecore\\} \\) and \\( drumstick \\) in \\( \\{0,1, \\ldots, moonlight\\} \\). Also \\( bluegrass \\) must be \\( applecore \\) for at least two of the four numbers, and \\( drumstick \\) must be \\( moonlight \\) for at least two of the four numbers. There is one way to have \\( bluegrass=applecore \\) for all four numbers, \\( 4 applecore \\) ways to have one \\( bluegrass \\) in \\( \\{0,1, \\ldots, applecore-1\\} \\) and the other three equal to \\( applecore \\), and \\( \\binom{4}{2} applecore^{2}=6 applecore^{2} \\) ways to have two of the \\( bluegrass \\)'s in \\( \\{0,1, \\ldots, applecore-1\\} \\) and the other two equal to \\( applecore \\). Thus there are \\( 1+4 applecore+6 applecore^{2} \\) choices of allowable \\( bluegrass \\)'s and, similarly, \\( 1+4 moonlight+6 moonlight^{2} \\) choices of allowable \\( drumstick \\)'s.\n>>>"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "negativeint",
+        "b": "zerovalue",
+        "c": "voidnumber",
+        "d": "nullscalar",
+        "m": "baseindex",
+        "n": "rootcount",
+        "r": "smallindex",
+        "s": "tinyfactor"
+      },
+      "question": "Problem A-2\nLet \\( smallindex \\) and \\( tinyfactor \\) be positive integers. Derive a formula for the number of ordered quadruples \\( (negativeint, zerovalue, voidnumber, nullscalar) \\) of positive integers such that\n\\[\n3^{smallindex} \\cdot 7^{tinyfactor}=\\operatorname{lcm}[negativeint, zerovalue, voidnumber]=\\operatorname{lcm}[negativeint, zerovalue, nullscalar]=\\operatorname{lcm}[negativeint, voidnumber, nullscalar]=\\operatorname{lcm}[zerovalue, voidnumber, nullscalar]\n\\]\n\nThe answer should be a function of \\( smallindex \\) and \\( tinyfactor \\).\n(Note that \\( 1 \\mathrm{~cm}[x, y, z] \\) denotes the least common multiple of \\( x, y, z \\). )",
+      "solution": "A-2.\nWe show that the number is \\( \\left(1+4 smallindex+6 smallindex^{2}\\right)\\left(1+4 tinyfactor+6 tinyfactor^{2}\\right) \\). Each of \\( negativeint, zerovalue, voidnumber, nullscalar \\) must be of the form \\( 3^{baseindex} 7^{rootcount} \\) with \\( baseindex \\) in \\( \\{0,1, \\ldots, smallindex\\} \\) and \\( rootcount \\) in \\( \\{0,1, \\ldots, tinyfactor\\} \\). Also \\( baseindex \\) must be \\( smallindex \\) for at least two of the four numbers, and \\( rootcount \\) must be \\( tinyfactor \\) for at least two of the four numbers. There is one way to have \\( baseindex=smallindex \\) for all four numbers, \\( 4 smallindex \\) ways to have one \\( baseindex \\) in \\( \\{0,1, \\ldots, smallindex-1\\} \\) and the other three equal to \\( smallindex \\), and \\( \\binom{4}{2} smallindex^{2}=6 smallindex^{2} \\) ways to have two of the \\( baseindex \\) 's in \\( \\{0,1, \\ldots, smallindex-1\\} \\) and the other two equal to \\( smallindex \\). Thus there are \\( 1+4 smallindex+6 smallindex^{2} \\) choices of allowable \\( baseindex \\) 's and, similarly, \\( 1+4 tinyfactor+6 tinyfactor^{2} \\) choices of allowable \\( rootcount \\) 's."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "pldmfrqe",
+        "d": "nkwslvbc",
+        "m": "zorhftiu",
+        "n": "wqneopsd",
+        "r": "vbatmlze",
+        "s": "ykrgouci"
+      },
+      "question": "Problem A-2\nLet \\( vbatmlze \\) and \\( ykrgouci \\) be positive integers. Derive a formula for the number of ordered quadruples \\( (qzxwvtnp, hjgrksla, pldmfrqe, nkwslvbc) \\) of positive integers such that\n\\[\n3^{vbatmlze} \\cdot 7^{ykrgouci}=\\operatorname{lcm}[qzxwvtnp, hjgrksla, pldmfrqe]=\\operatorname{lcm}[qzxwvtnp, hjgrksla, nkwslvbc]=\\operatorname{lcm}[qzxwvtnp, pldmfrqe, nkwslvbc]=\\operatorname{lcm}[hjgrksla, pldmfrqe, nkwslvbc]\n\\]\n\nThe answer should be a function of \\( vbatmlze \\) and \\( ykrgouci \\).\n(Note that \\( 1 \\mathrm{~cm}[x, y, z] \\) denotes the least common multiple of \\( x, y, z \\). )",
+      "solution": "A-2.\nWe show that the number is \\( \\left(1+4 vbatmlze+6 vbatmlze^{2}\\right)\\left(1+4 ykrgouci+6 ykrgouci^{2}\\right) \\). Each of \\( qzxwvtnp, hjgrksla, pldmfrqe, nkwslvbc \\) must be of the form \\( 3^{zorhftiu} 7^{wqneopsd} \\) with \\( zorhftiu \\) in \\( \\{0,1, \\ldots, vbatmlze\\} \\) and \\( wqneopsd \\) in \\( \\{0,1, \\ldots, ykrgouci\\} \\). Also \\( zorhftiu \\) must be \\( vbatmlze \\) for at least two of the four numbers, and \\( wqneopsd \\) must be \\( ykrgouci \\) for at least two of the four numbers. There is one way to have \\( zorhftiu=vbatmlze \\) for all four numbers, \\( 4 vbatmlze \\) ways to have one \\( zorhftiu \\) in \\( \\{0,1, \\ldots, vbatmlze-1\\} \\) and the other three equal to \\( vbatmlze \\), and \\( \\binom{4}{2} vbatmlze^{2}=6 vbatmlze^{2} \\) ways to have two of the \\( zorhftiu \\)'s in \\( \\{0,1, \\ldots, vbatmlze-1\\} \\) and the other two equal to \\( vbatmlze \\). Thus there are \\( 1+4 vbatmlze+6 vbatmlze^{2} \\) choices of allowable \\( zorhftiu \\)'s and, similarly, \\( 1+4 ykrgouci+6 ykrgouci^{2} \\) choices of allowable \\( wqneopsd \\)'s."
+    },
+    "kernel_variant": {
+      "question": "Let r, s, t and u be positive integers.  How many ordered septuples of positive integers  \n\n (a_1,a_2,a_3,a_4,a_5,a_6,a_7)  \n\nsatisfy  \n\n lcm[a_{i_1},a_{i_2},a_{i_3},a_{i_4}] = 2^{\\,r}\\cdot 3^{\\,s}\\cdot 5^{\\,t}\\cdot 11^{\\,u}  \n\nfor every 4-element subset {i_1,i_2,i_3,i_4} of {1,2,3,4,5,6,7}?   \n\nExpress the answer explicitly as a function of r, s, t, u.",
+      "solution": "Because 2, 3, 5 and 11 are distinct primes, the conditions for different primes are independent; we can treat each prime separately and multiply the counts obtained.\n\nFix one prime p with prescribed top exponent R (for p = 2,3,5,11 we have R = r,s,t,u respectively).  \nWrite each a_j as p^{e_j}\\cdot (number coprime to p), and concentrate on the seven exponents  \n\n E = (e_1,e_2,e_3,e_4,e_5,e_6,e_7), 0 \\leq  e_j \\leq  R.             (\\star )\n\n``lcm of every four of the seven numbers equals p^{R}'' is equivalent to  \n\n For every 4-element subset of indices, max {e_j : j in that subset} = R.             (1)\n\nWe must count the 7-tuples E satisfying (\\star ) and (1).\n\nStep 1.  Reformulate condition (1).  \nLet Z = {j | e_j < R} be the set of indices whose exponent is strictly below the top value R.  \nA 4-element subset of {1,\\ldots ,7} can avoid every exponent R precisely when it is completely contained in Z.  \nCondition (1) therefore says ``no 4-subset is contained in Z'', i.e.  \n\n |Z| \\leq  3.                                                                     (2)\n\nConversely, if |Z| \\leq  3, every 4-subset contains at least one index outside Z, so its maximal exponent is indeed R.  Hence (2) is both necessary and sufficient.\n\nStep 2.  Counting admissible exponent 7-tuples.  \nChoose j = |Z| with 0 \\leq  j \\leq  3.\n\n* Choose the j indices that belong to Z: C(7,j).  \n* On each of those j indices pick any exponent in {0,1,\\ldots ,R-1} (R choices).  \n* All remaining 7-j indices must carry the exponent R.\n\nHence the number of allowed exponent patterns for the prime p is  \n\n N_p(R) = \\sum _{j=0}^{3} C(7,j) R^{\\,j}  \n     = 1 + 7R + 21R^2 + 35R^3.                                           (3)\n\nStep 3.  Combine the four primes.  \nThe choices for the four primes are independent, so the total number of ordered septuples is the product of the four individual counts:\n\nTotal(r,s,t,u)  \n= N_2(r) \\cdot  N_3(s) \\cdot  N_5(t) \\cdot  N_{11}(u)  \n= (1 + 7r + 21r^2 + 35r^3)\\cdot (1 + 7s + 21s^2 + 35s^3)\\cdot (1 + 7t + 21t^2 + 35t^3)\\cdot (1 + 7u + 21u^2 + 35u^3).\n\nThat explicit polynomial is the desired answer.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.644944",
+        "was_fixed": false,
+        "difficulty_analysis": "1. More variables and higher dimension  \n • The original problem had 4 variables; the current kernel variant had 5.  \n • The enhanced version involves 7 variables, vastly enlarging the combinatorial space.\n\n2. Additional primes  \n • Instead of two primes in the original (3 and 7) or two in the kernel (5 and 11), four distinct primes appear simultaneously, forcing a product of four non-trivial enumerations.\n\n3. Deeper combinatorial condition  \n • The requirement is placed on every 4-subset of the 7 numbers (35 separate LCM conditions), not merely on complements of single elements.  \n • Translating this into the “no 4-subset of small exponents” condition and proving its equivalence demands a precise combinatorial argument.\n\n4. Higher-degree enumerative polynomial  \n • The counting polynomial for each prime jumps from quadratic (in the original, degree 2) to cubic (degree 3) with large binomial coefficients.  \n • The final answer is a product of four such cubic polynomials, yielding degree 12 overall.\n\n5. Solution length and sophistication  \n • One must abstract the problem prime-by-prime, reformulate the subset condition, perform an inclusion-exclusion-style count, and finally assemble the result—clearly more steps and subtler reasoning than the earlier variants.\n\nConsequently the enhanced kernel variant is significantly harder, demanding broader combinatorial insight and heavier algebraic manipulation before the compact final formula emerges."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let r, s, t and u be positive integers.  How many ordered septuples of positive integers  \n\n (a_1,a_2,a_3,a_4,a_5,a_6,a_7)  \n\nsatisfy  \n\n lcm[a_{i_1},a_{i_2},a_{i_3},a_{i_4}] = 2^{\\,r}\\cdot 3^{\\,s}\\cdot 5^{\\,t}\\cdot 11^{\\,u}  \n\nfor every 4-element subset {i_1,i_2,i_3,i_4} of {1,2,3,4,5,6,7}?   \n\nExpress the answer explicitly as a function of r, s, t, u.",
+      "solution": "Because 2, 3, 5 and 11 are distinct primes, the conditions for different primes are independent; we can treat each prime separately and multiply the counts obtained.\n\nFix one prime p with prescribed top exponent R (for p = 2,3,5,11 we have R = r,s,t,u respectively).  \nWrite each a_j as p^{e_j}\\cdot (number coprime to p), and concentrate on the seven exponents  \n\n E = (e_1,e_2,e_3,e_4,e_5,e_6,e_7), 0 \\leq  e_j \\leq  R.             (\\star )\n\n``lcm of every four of the seven numbers equals p^{R}'' is equivalent to  \n\n For every 4-element subset of indices, max {e_j : j in that subset} = R.             (1)\n\nWe must count the 7-tuples E satisfying (\\star ) and (1).\n\nStep 1.  Reformulate condition (1).  \nLet Z = {j | e_j < R} be the set of indices whose exponent is strictly below the top value R.  \nA 4-element subset of {1,\\ldots ,7} can avoid every exponent R precisely when it is completely contained in Z.  \nCondition (1) therefore says ``no 4-subset is contained in Z'', i.e.  \n\n |Z| \\leq  3.                                                                     (2)\n\nConversely, if |Z| \\leq  3, every 4-subset contains at least one index outside Z, so its maximal exponent is indeed R.  Hence (2) is both necessary and sufficient.\n\nStep 2.  Counting admissible exponent 7-tuples.  \nChoose j = |Z| with 0 \\leq  j \\leq  3.\n\n* Choose the j indices that belong to Z: C(7,j).  \n* On each of those j indices pick any exponent in {0,1,\\ldots ,R-1} (R choices).  \n* All remaining 7-j indices must carry the exponent R.\n\nHence the number of allowed exponent patterns for the prime p is  \n\n N_p(R) = \\sum _{j=0}^{3} C(7,j) R^{\\,j}  \n     = 1 + 7R + 21R^2 + 35R^3.                                           (3)\n\nStep 3.  Combine the four primes.  \nThe choices for the four primes are independent, so the total number of ordered septuples is the product of the four individual counts:\n\nTotal(r,s,t,u)  \n= N_2(r) \\cdot  N_3(s) \\cdot  N_5(t) \\cdot  N_{11}(u)  \n= (1 + 7r + 21r^2 + 35r^3)\\cdot (1 + 7s + 21s^2 + 35s^3)\\cdot (1 + 7t + 21t^2 + 35t^3)\\cdot (1 + 7u + 21u^2 + 35u^3).\n\nThat explicit polynomial is the desired answer.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.512704",
+        "was_fixed": false,
+        "difficulty_analysis": "1. More variables and higher dimension  \n • The original problem had 4 variables; the current kernel variant had 5.  \n • The enhanced version involves 7 variables, vastly enlarging the combinatorial space.\n\n2. Additional primes  \n • Instead of two primes in the original (3 and 7) or two in the kernel (5 and 11), four distinct primes appear simultaneously, forcing a product of four non-trivial enumerations.\n\n3. Deeper combinatorial condition  \n • The requirement is placed on every 4-subset of the 7 numbers (35 separate LCM conditions), not merely on complements of single elements.  \n • Translating this into the “no 4-subset of small exponents” condition and proving its equivalence demands a precise combinatorial argument.\n\n4. Higher-degree enumerative polynomial  \n • The counting polynomial for each prime jumps from quadratic (in the original, degree 2) to cubic (degree 3) with large binomial coefficients.  \n • The final answer is a product of four such cubic polynomials, yielding degree 12 overall.\n\n5. Solution length and sophistication  \n • One must abstract the problem prime-by-prime, reformulate the subset condition, perform an inclusion-exclusion-style count, and finally assemble the result—clearly more steps and subtler reasoning than the earlier variants.\n\nConsequently the enhanced kernel variant is significantly harder, demanding broader combinatorial insight and heavier algebraic manipulation before the compact final formula emerges."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

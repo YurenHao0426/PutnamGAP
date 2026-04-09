@@ -1,0 +1,102 @@
+{
+  "index": "1941-A-1",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "1. Prove that the polynomial\n\\[\n(a-x)^{6}-3 a(a-x)^{5}+\\frac{5}{2} a^{2}(a-x)^{4}-\\frac{1}{2} a^{4}(a-x)^{2}\n\\]\ntakes only negative values for \\( 0<x<a \\).",
+  "solution": "Solution. Make the substitution \\( x=a(1-y) \\). Then the given polynomial becomes\n\\[\na^{6} y^{2}\\left(y^{4}-3 y^{3}+\\frac{5}{2} y^{2}-\\frac{1}{2}\\right) .\n\\]\n\nSince \\( a^{6} \\boldsymbol{y}^{2} \\) is surely positive, it suffices to prove that\n\\[\ng(y)=y^{4}-3 y^{3}+\\frac{5}{2} y^{2}-\\frac{1}{2}<0\n\\]\nfor \\( 0<y<1 \\).\nSince \\( g^{\\prime}(y)=4 y^{3}-9 y^{2}+5 y=y(y-1)(4 y-5) \\), the critical values for \\( g \\) are \\( 0,1,5 / 4 \\). Between consecutive critical values \\( g \\) is strictly monotonic. Therefore, since \\( g(0)=-\\frac{1}{2} \\) and \\( g(1)=0 \\), we have\n\\[\n-\\frac{1}{2}<g(y)<0\n\\]\nfor \\( 0<y<1 \\).",
+  "vars": [
+    "x",
+    "y",
+    "g"
+  ],
+  "params": [
+    "a"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "y": "variabley",
+        "g": "polyfunc",
+        "a": "parametera"
+      },
+      "question": "1. Prove that the polynomial\n\\[\n(parametera-variablex)^{6}-3 parametera(parametera-variablex)^{5}+\\frac{5}{2} parametera^{2}(parametera-variablex)^{4}-\\frac{1}{2} parametera^{4}(parametera-variablex)^{2}\n\\]\ntakes only negative values for \\( 0<variablex<parametera \\).",
+      "solution": "Solution. Make the substitution \\( variablex=parametera(1-variabley) \\). Then the given polynomial becomes\n\\[\nparametera^{6} variabley^{2}\\left(variabley^{4}-3 variabley^{3}+\\frac{5}{2} variabley^{2}-\\frac{1}{2}\\right) .\n\\]\n\nSince \\( parametera^{6} \\boldsymbol{variabley}^{2} \\) is surely positive, it suffices to prove that\n\\[\npolyfunc(variabley)=variabley^{4}-3 variabley^{3}+\\frac{5}{2} variabley^{2}-\\frac{1}{2}<0\n\\]\nfor \\( 0<variabley<1 \\).\nSince \\( polyfunc^{\\prime}(variabley)=4 variabley^{3}-9 variabley^{2}+5 variabley=variabley(variabley-1)(4 variabley-5) \\), the critical values for \\( polyfunc \\) are \\( 0,1,5 / 4 \\). Between consecutive critical values \\( polyfunc \\) is strictly monotonic. Therefore, since \\( polyfunc(0)=-\\frac{1}{2} \\) and \\( polyfunc(1)=0 \\), we have\n\\[\n-\\frac{1}{2}<polyfunc(variabley)<0\n\\]\nfor \\( 0<variabley<1 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pendulum",
+        "y": "lighthouse",
+        "g": "pineapple",
+        "a": "harmonica"
+      },
+      "question": "1. Prove that the polynomial\n\\[\n(harmonica-pendulum)^{6}-3 harmonica(harmonica-pendulum)^{5}+\\frac{5}{2} harmonica^{2}(harmonica-pendulum)^{4}-\\frac{1}{2} harmonica^{4}(harmonica-pendulum)^{2}\n\\]\ntakes only negative values for \\( 0<pendulum<harmonica \\).",
+      "solution": "Solution. Make the substitution \\( pendulum=harmonica(1-lighthouse) \\). Then the given polynomial becomes\n\\[\nharmonica^{6} lighthouse^{2}\\left(lighthouse^{4}-3 lighthouse^{3}+\\frac{5}{2} lighthouse^{2}-\\frac{1}{2}\\right) .\n\\]\n\nSince \\( harmonica^{6} \\boldsymbol{lighthouse}^{2} \\) is surely positive, it suffices to prove that\n\\[\npineapple(lighthouse)=lighthouse^{4}-3 lighthouse^{3}+\\frac{5}{2} lighthouse^{2}-\\frac{1}{2}<0\n\\]\nfor \\( 0<lighthouse<1 \\).\nSince \\( pineapple^{\\prime}(lighthouse)=4 lighthouse^{3}-9 lighthouse^{2}+5 lighthouse=lighthouse(lighthouse-1)(4 lighthouse-5) \\), the critical values for \\( pineapple \\) are \\( 0,1,5 / 4 \\). Between consecutive critical values \\( pineapple \\) is strictly monotonic. Therefore, since \\( pineapple(0)=-\\frac{1}{2} \\) and \\( pineapple(1)=0 \\), we have\n\\[\n-\\frac{1}{2}<pineapple(lighthouse)<0\n\\]\nfor \\( 0<lighthouse<1 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "y": "fixedscalar",
+        "g": "invariant",
+        "a": "variablepara"
+      },
+      "question": "1. Prove that the polynomial\n\\[\n(variablepara-constantvalue)^{6}-3 variablepara(variablepara-constantvalue)^{5}+\\frac{5}{2} variablepara^{2}(variablepara-constantvalue)^{4}-\\frac{1}{2} variablepara^{4}(variablepara-constantvalue)^{2}\n\\]\ntakes only negative values for \\( 0<constantvalue<variablepara \\).",
+      "solution": "Solution. Make the substitution \\( constantvalue=variablepara(1-fixedscalar) \\). Then the given polynomial becomes\n\\[\nvariablepara^{6} fixedscalar^{2}\\left(fixedscalar^{4}-3 fixedscalar^{3}+\\frac{5}{2} fixedscalar^{2}-\\frac{1}{2}\\right) .\n\\]\n\nSince \\( variablepara^{6} \\boldsymbol{fixedscalar}^{2} \\) is surely positive, it suffices to prove that\n\\[\ninvariant(fixedscalar)=fixedscalar^{4}-3 fixedscalar^{3}+\\frac{5}{2} fixedscalar^{2}-\\frac{1}{2}<0\n\\]\nfor \\( 0<fixedscalar<1 \\).\nSince \\( invariant^{\\prime}(fixedscalar)=4 fixedscalar^{3}-9 fixedscalar^{2}+5 fixedscalar=fixedscalar(fixedscalar-1)(4 fixedscalar-5) \\), the critical values for \\( invariant \\) are \\( 0,1,5 / 4 \\). Between consecutive critical values \\( invariant \\) is strictly monotonic. Therefore, since \\( invariant(0)=-\\frac{1}{2} \\) and \\( invariant(1)=0 \\), we have\n\\[\n-\\frac{1}{2}<invariant(fixedscalar)<0\n\\]\nfor \\( 0<fixedscalar<1 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "x": "hjgrksla",
+        "y": "mdfqvzse",
+        "g": "lterbnyc"
+      },
+      "question": "1. Prove that the polynomial\n\\[\n(qzxwvtnp-hjgrksla)^{6}-3 qzxwvtnp(qzxwvtnp-hjgrksla)^{5}+\\frac{5}{2} qzxwvtnp^{2}(qzxwvtnp-hjgrksla)^{4}-\\frac{1}{2} qzxwvtnp^{4}(qzxwvtnp-hjgrksla)^{2}\n\\]\ntakes only negative values for \\( 0<hjgrksla<qzxwvtnp \\).",
+      "solution": "Solution. Make the substitution \\( hjgrksla=qzxwvtnp(1-mdfqvzse) \\). Then the given polynomial becomes\n\\[\nqzxwvtnp^{6} mdfqvzse^{2}\\left(mdfqvzse^{4}-3 mdfqvzse^{3}+\\frac{5}{2} mdfqvzse^{2}-\\frac{1}{2}\\right) .\n\\]\n\nSince \\( qzxwvtnp^{6} \\boldsymbol{mdfqvzse}^{2} \\) is surely positive, it suffices to prove that\n\\[\nlterbnyc(mdfqvzse)=mdfqvzse^{4}-3 mdfqvzse^{3}+\\frac{5}{2} mdfqvzse^{2}-\\frac{1}{2}<0\n\\]\nfor \\( 0<mdfqvzse<1 \\).\nSince \\( lterbnyc^{\\prime}(mdfqvzse)=4 mdfqvzse^{3}-9 mdfqvzse^{2}+5 mdfqvzse=mdfqvzse(mdfqvzse-1)(4 mdfqvzse-5) \\), the critical values for \\( lterbnyc \\) are \\( 0,1,5 / 4 \\). Between consecutive critical values \\( lterbnyc \\) is strictly monotonic. Therefore, since \\( lterbnyc(0)=-\\frac{1}{2} \\) and \\( lterbnyc(1)=0 \\), we have\n\\[\n-\\frac{1}{2}<lterbnyc(mdfqvzse)<0\n\\]\nfor \\( 0<mdfqvzse<1 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let a>0 be fixed.  Show that the polynomial\n\\[\nP(x)=a^{2}(a-x)^{6}-4a^{3}(a-x)^{5}+4a^{4}(a-x)^{4}-a^{6}(a-x)^{2}\n\\]\nis negative for every x satisfying \\(0<x<a\\).",
+      "solution": "Let a>0 and\n P(x)=a^{2}(a-x)^{6}-4a^{3}(a-x)^{5}+4a^{4}(a-x)^{4}-a^{6}(a-x)^{2}.\nWe show that P(x)<0 for every 0<x<a.\n\n1.  Substitute x=a(1-y) with 0<y<1.  Then a-x=ay and\n    P(x)=a^{2}(ay)^{6}-4a^{3}(ay)^{5}+4a^{4}(ay)^{4}-a^{6}(ay)^{2}\n        =a^{8}y^{2}(y^{4}-4y^{3}+4y^{2}-1).\n    Because a^{8}y^{2}>0 on (0,1), the sign of P equals the sign of\n    g(y)=y^{4}-4y^{3}+4y^{2}-1.\n\n2.  Differentiate:\n        g'(y)=4y^{3}-12y^{2}+8y=4y(y-1)(y-2).\n    Hence the critical points are y=0,1,2.  For 0<y<1 we have\n        y>0,\n        y-1<0,\n        y-2<0,\n    so the product is positive and g'(y)>0.  Therefore g is strictly\n    increasing on (0,1).\n\n3.  Evaluate the endpoints:\n        g(0)=-1<0,\n        g(1)=0.\n    Since g rises monotonically from -1 to 0 on (0,1), we have\n        g(y)<0  for every 0<y<1.\n\n4.  Translating back, 0<y<1 is exactly 0<x<a.  On this interval\n        P(x)=a^{8}y^{2}g(y)\n    is the product of a positive factor and a negative factor, whence\n        P(x)<0.\n\nThus the polynomial attains only negative values for 0<x<a, as was to be proved.",
+      "_meta": {
+        "core_steps": [
+          "Substitute  x = a(1 − y),  turning each (a−x)^k into a^k y^k.",
+          "Factor out the always–positive term  a^6 y^2,  reducing the sign–question to a quartic g(y).",
+          "Compute g′(y); its factorization y(y−1)(4y−5) shows the only critical points are 0, 1 and 5/4.",
+          "Note g is strictly increasing on (0,1) (because g′>0 there).",
+          "Use endpoint values g(0) < 0 < g(1) to conclude g(y) < 0 (hence the original polynomial is negative) for 0<y<1."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Highest even power in the first term (and hence in the overall factor a^{…})",
+            "original": 6
+          },
+          "slot2": {
+            "description": "Coefficient of the (a−x)^5 term, affecting the −9y^2 piece of g′(y)",
+            "original": -3
+          },
+          "slot3": {
+            "description": "Coefficient of the (a−x)^4 term, affecting the +5y part of g′(y)",
+            "original": 5.0
+          },
+          "slot4": {
+            "description": "Coefficient of the (a−x)^2 term, contributes the constant term of g(y)",
+            "original": -0.5
+          },
+          "slot5": {
+            "description": "Linear factor of g′(y) whose root lies to the right of 1; it appears as (4y−5)",
+            "original": {
+              "slope": 4,
+              "intercept": -5
+            }
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

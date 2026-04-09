@@ -1,0 +1,113 @@
+{
+  "index": "2021-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A grasshopper starts at the origin in the coordinate plane and makes a sequence of hops.\nEach hop has length $5$, and after each hop the grasshopper is at a point whose coordinates are both integers; thus, there are $12$ possible locations for the grasshopper after the first hop.\nWhat is the smallest number of hops needed for the grasshopper to reach the point $(2021, 2021)$?",
+  "solution": "The answer is $578$. \n\nEach hop corresponds to adding one of the $12$ vectors $(0,\\pm 5)$, $(\\pm 5,0)$, $(\\pm 3,\\pm 4)$, $(\\pm 4,\\pm 3)$ to the position of the grasshopper. Since $(2021,2021) = 288(3,4)+288(4,3)+(0,5)+(5,0)$, the grasshopper can reach $(2021,2021)$ in $288+288+1+1=578$ hops.\n\nOn the other hand, let $z=x+y$ denote the sum of the $x$ and $y$ coordinates of the grasshopper, so that it starts at $z=0$ and ends at $z=4042$. Each hop changes the sum of the $x$ and $y$ coordinates of the grasshopper by at most $7$, and $4042 > 577 \\times 7$; it follows immediately that the grasshopper must take more than $577$ hops to get from $(0,0)$ to $(2021,2021)$.\n\n\\noindent\n\\textbf{Remark.}\nThis solution implicitly uses the distance function \n\\[\nd((x_1, y_1), (x_2, y_2)) = |x_1 - x_2| + |y_1 - y_2|\n\\]\non the plane, variously called the \\emph{taxicab metric}, the \\emph{Manhattan metric}, or the \\emph{$L^1$-norm} (or $\\ell_1$-norm).",
+  "vars": [
+    "x",
+    "y",
+    "z",
+    "d",
+    "x_1",
+    "y_1",
+    "x_2",
+    "y_2"
+  ],
+  "params": [
+    "\\\\ell_1"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizcoord",
+        "y": "vertcoord",
+        "z": "sumcoords",
+        "d": "taxicabdist",
+        "x_1": "firsthoriz",
+        "y_1": "firstvert",
+        "x_2": "secondhoriz",
+        "y_2": "secondvert",
+        "\\ell_1": "ellonenorm"
+      },
+      "question": "A grasshopper starts at the origin in the coordinate plane and makes a sequence of hops.\nEach hop has length $5$, and after each hop the grasshopper is at a point whose coordinates are both integers; thus, there are $12$ possible locations for the grasshopper after the first hop.\nWhat is the smallest number of hops needed for the grasshopper to reach the point $(2021, 2021)$?",
+      "solution": "The answer is $578$. \n\nEach hop corresponds to adding one of the $12$ vectors $(0,\\pm 5)$, $(\\pm 5,0)$, $(\\pm 3,\\pm 4)$, $(\\pm 4,\\pm 3)$ to the position of the grasshopper. Since $(2021,2021) = 288(3,4)+288(4,3)+(0,5)+(5,0)$, the grasshopper can reach $(2021,2021)$ in $288+288+1+1=578$ hops.\n\nOn the other hand, let $\\sumcoords=\\horizcoord+\\vertcoord$ denote the sum of the $\\horizcoord$ and $\\vertcoord$ coordinates of the grasshopper, so that it starts at $\\sumcoords=0$ and ends at $\\sumcoords=4042$. Each hop changes the sum of the $\\horizcoord$ and $\\vertcoord$ coordinates of the grasshopper by at most $7$, and $4042 > 577 \\times 7$; it follows immediately that the grasshopper must take more than $577$ hops to get from $(0,0)$ to $(2021,2021)$.\n\n\\noindent\n\\textbf{Remark.}\nThis solution implicitly uses the distance function \n\\[\n\\taxicabdist((\\firsthoriz, \\firstvert), (\\secondhoriz, \\secondvert)) = |\\firsthoriz - \\secondhoriz| + |\\firstvert - \\secondvert|\n\\]\non the plane, variously called the \\emph{taxicab metric}, the \\emph{Manhattan metric}, or the \\emph{$L^1$-norm} (or $\\ellonenorm$-norm)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "lantern",
+        "y": "quartzite",
+        "z": "foxgloves",
+        "d": "meadowlark",
+        "x_1": "lanternone",
+        "y_1": "quartzione",
+        "x_2": "lanterntwo",
+        "y_2": "quartzitwo",
+        "\\ell_1": "hummingbird"
+      },
+      "question": "A grasshopper starts at the origin in the coordinate plane and makes a sequence of hops.\nEach hop has length $5$, and after each hop the grasshopper is at a point whose coordinates are both integers; thus, there are $12$ possible locations for the grasshopper after the first hop.\nWhat is the smallest number of hops needed for the grasshopper to reach the point $(2021, 2021)$?",
+      "solution": "The answer is $578$. \n\nEach hop corresponds to adding one of the $12$ vectors $(0,\\pm 5)$, $(\\pm 5,0)$, $(\\pm 3,\\pm 4)$, $(\\pm 4,\\pm 3)$ to the position of the grasshopper. Since $(2021,2021) = 288(3,4)+288(4,3)+(0,5)+(5,0)$, the grasshopper can reach $(2021,2021)$ in $288+288+1+1=578$ hops.\n\nOn the other hand, let $foxgloves = lantern + quartzite$ denote the sum of the $lantern$ and $quartzite$ coordinates of the grasshopper, so that it starts at $foxgloves = 0$ and ends at $foxgloves = 4042$. Each hop changes the sum of the $lantern$ and $quartzite$ coordinates of the grasshopper by at most $7$, and $4042 > 577 \\times 7$; it follows immediately that the grasshopper must take more than $577$ hops to get from $(0,0)$ to $(2021,2021)$.\n\n\\noindent\n\\textbf{Remark.}\nThis solution implicitly uses the distance function \n\\[\nmeadowlark((lanternone, quartzione), (lanterntwo, quartzitwo)) = |lanternone - lanterntwo| + |quartzione - quartzitwo|\n\\]\non the plane, variously called the \\emph{taxicab metric}, the \\emph{Manhattan metric}, or the \\emph{$L^1$-norm} (or $hummingbird$-norm)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "z": "differencevalue",
+        "d": "closenessvalue",
+        "x_1": "verticalaxisone",
+        "y_1": "horizontalaxisone",
+        "x_2": "verticalaxistwo",
+        "y_2": "horizontalaxistwo",
+        "\\ell_1": "infinitynorm"
+      },
+      "question": "A grasshopper starts at the origin in the coordinate plane and makes a sequence of hops.\nEach hop has length $5$, and after each hop the grasshopper is at a point whose coordinates are both integers; thus, there are $12$ possible locations for the grasshopper after the first hop.\nWhat is the smallest number of hops needed for the grasshopper to reach the point $(2021, 2021)$?",
+      "solution": "The answer is $578$. \n\nEach hop corresponds to adding one of the $12$ vectors $(0,\\pm 5)$, $(\\pm 5,0)$, $(\\pm 3,\\pm 4)$, $(\\pm 4,\\pm 3)$ to the position of the grasshopper. Since $(2021,2021) = 288(3,4)+288(4,3)+(0,5)+(5,0)$, the grasshopper can reach $(2021,2021)$ in $288+288+1+1=578$ hops.\n\nOn the other hand, let $differencevalue=verticalaxis+horizontalaxis$ denote the sum of the $verticalaxis$ and $horizontalaxis$ coordinates of the grasshopper, so that it starts at $differencevalue=0$ and ends at $differencevalue=4042$. Each hop changes the sum of the $verticalaxis$ and $horizontalaxis$ coordinates of the grasshopper by at most $7$, and $4042 > 577 \\times 7$; it follows immediately that the grasshopper must take more than $577$ hops to get from $(0,0)$ to $(2021,2021)$.\n\n\\noindent\n\\textbf{Remark.}\nThis solution implicitly uses the distance function \n\\[\nclosenessvalue((verticalaxisone, horizontalaxisone), (verticalaxistwo, horizontalaxistwo)) = |verticalaxisone - verticalaxistwo| + |horizontalaxisone - horizontalaxistwo|\n\\]\non the plane, variously called the \\emph{taxicab metric}, the \\emph{Manhattan metric}, or the \\emph{$L^1$-norm} (or $infinitynorm$-norm)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "z": "vbctmwid",
+        "d": "lpzrfqun",
+        "x_1": "rkdomcsa",
+        "y_1": "vbskwjqd",
+        "x_2": "lgnarwhf",
+        "y_2": "cnvzsmla",
+        "\\ell_1": "npxfgrth"
+      },
+      "question": "A grasshopper starts at the origin in the coordinate plane and makes a sequence of hops.\nEach hop has length $5$, and after each hop the grasshopper is at a point whose coordinates are both integers; thus, there are $12$ possible locations for the grasshopper after the first hop.\nWhat is the smallest number of hops needed for the grasshopper to reach the point $(2021, 2021)$?",
+      "solution": "The answer is $578$. \n\nEach hop corresponds to adding one of the $12$ vectors $(0,\\pm 5)$, $(\\pm 5,0)$, $(\\pm 3,\\pm 4)$, $(\\pm 4,\\pm 3)$ to the position of the grasshopper. Since $(2021,2021) = 288(3,4)+288(4,3)+(0,5)+(5,0)$, the grasshopper can reach $(2021,2021)$ in $288+288+1+1=578$ hops.\n\nOn the other hand, let $vbctmwid=qzxwvtnp+hjgrksla$ denote the sum of the $qzxwvtnp$ and $hjgrksla$ coordinates of the grasshopper, so that it starts at $vbctmwid=0$ and ends at $vbctmwid=4042$. Each hop changes the sum of the $qzxwvtnp$ and $hjgrksla$ coordinates of the grasshopper by at most $7$, and $4042 > 577 \\times 7$; it follows immediately that the grasshopper must take more than $577$ hops to get from $(0,0)$ to $(2021,2021)$.\n\n\\noindent\n\\textbf{Remark.}\nThis solution implicitly uses the distance function \n\\[\nlpzrfqun((rkdomcsa, vbskwjqd), (lgnarwhf, cnvzsmla)) = |rkdomcsa - lgnarwhf| + |vbskwjqd - cnvzsmla|\n\\]\non the plane, variously called the \\emph{taxicab metric}, the \\emph{Manhattan metric}, or the \\emph{$L^1$-norm} (or $npxfgrth$-norm)."
+    },
+    "kernel_variant": {
+      "question": "A grasshopper starts at the origin in the coordinate plane and makes a sequence of hops.  Each hop has Euclidean length $13$, and after every hop the grasshopper is at a point whose coordinates are both integers; thus there are $12$ possible landing points after the first hop.  What is the smallest number of hops the grasshopper must make in order to reach the lattice point $(2023,2023)$?",
+      "solution": "The admissible step-vectors are all integer pairs of (Euclidean) length 13:\n[(\\pm 13,0), (0,\\pm 13), (\\pm 5,\\pm 12), (\\pm 12,\\pm 5)].\nThere are 12 in all.\n\n1. List of step-vectors. The set just displayed contains every lattice vector of length 13.\n\n2. Construct an explicit path. Observe that\n\n    (2023,2023) = 119\\cdot (12,5) + 119\\cdot (5,12).\n\nHence 238 hops---119 of type (12,5) and 119 of type (5,12)---carry the grasshopper to (2023,2023). Thus an upper bound is H_up = 238.\n\n3. Bounding the increment of x+y. For every allowed vector (u,v) we have |u|+|v| \\leq  17 (the maximum 12+5 = 17 occurs for (\\pm 12,\\pm 5) and (\\pm 5,\\pm 12)). Consequently a single hop changes z = x + y by at most M = 17.\n\n4. Lower bound on the number of hops. The grasshopper starts with z = 0 and must finish with z = 2023 + 2023 = 4046. Therefore the number k of hops satisfies\n\n    17k \\geq  4046  \\Rightarrow   k \\geq  \\lceil 4046/17\\rceil  = 238 = H_low.\n\n5. Optimality. Because the constructive upper bound H_up equals the lower bound H_low, the common value 238 is minimal.\n\nAnswer: 238.",
+      "_meta": {
+        "core_steps": [
+          "List all lattice vectors of the given step-length (here 5): (±5,0),(0,±5),(±3,±4),(±4,±3).",
+          "Construct an explicit decomposition of the target point as a non-negative integer combination of these vectors; this gives an attainable hop-count H_up.",
+          "Observe that each allowed vector changes x+y by at most a fixed number M (here M=7).",
+          "Compare the required total change of x+y with M⋅k to obtain a lower bound H_low = ⌈(x+y)/M⌉.",
+          "Since H_up = H_low, conclude that this common value is the minimal number of hops."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Target coordinates of the destination lattice point (chosen symmetric in the solution). Any (n,n) that allows a representation in Step 2 will work and only rescales counts in Steps 2–4.",
+            "original": "(2021, 2021)"
+          },
+          "slot2": {
+            "description": "Fixed hop-length that admits more than one primitive lattice direction (e.g. other Pythagorean lengths such as 13); this determines the vector list in Step 1 and the maximal sum-increment M in Step 3.",
+            "original": "5"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

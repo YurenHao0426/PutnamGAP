@@ -1,0 +1,109 @@
+{
+  "index": "1967-B-3",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "B-3. If \\( f \\) and \\( g \\) are continuous and periodic functions with period 1 on the real line, then \\( \\lim _{n \\rightarrow \\infty} \\int_{0}^{1} f(x) g(n x) d x=\\left(\\int_{0}^{1} f(x) d x\\right)\\left(\\int_{0}^{1} g(x) d x\\right) \\).",
+  "solution": "B-3 Since \\( f \\) is uniformly continuous, for any \\( \\epsilon>0 \\) there is an integer \\( n \\) such that \\( |x-y|<1 / n \\) implies \\( |f(x)-f(y)|<\\epsilon \\).\n\\[\n\\begin{aligned}\n\\int_{0}^{1} f(x) g(n x) d x= & \\sum_{m=0}^{n-1} \\int_{m / n}^{m+1 / n} f(x) g(n x) d x=\\sum_{m=0}^{n-1} \\int_{m / n}^{m+1 / n} f(m / n) g(n x) d x \\\\\n& +\\sum_{m=0}^{n-1} \\int_{m / n}^{m+1 / n}(f(x)-f(m / n)) g(n x) d x\n\\end{aligned}\n\\]\n\nThe first term equals \\( \\sum_{m=0}^{n-1}(1 / n) f(m / n) \\int_{0}^{1} g(t) d t \\) and becomes \\( \\left(\\int_{0}^{1} f(x) d x\\right)\\left(\\int_{0}^{1} g(x) d x\\right) \\) as \\( n \\rightarrow \\infty \\). Furthermore,\n\\[\n\\begin{aligned}\n\\left|\\int_{m / n}^{m+1 / n}\\{f(x)-f(m / n)\\} g(n x) d x\\right| & <\\int_{m / n}^{m+1 / n}|f(x)-f(m / n)| \\cdot|g(n x)| d x \\\\\n& <\\int_{m / n}^{m+1 / n} \\epsilon|g(n x)| d x<\\epsilon / n \\int_{0}^{1}|g(t)| d t\n\\end{aligned}\n\\]\n\nThus the absolute value of the second term is less than or equal to \\( \\epsilon \\int_{0}^{1}|g(t)| d t \\) which becomes 0 as \\( \\epsilon \\rightarrow 0 \\).",
+  "vars": [
+    "x",
+    "y",
+    "t"
+  ],
+  "params": [
+    "f",
+    "g",
+    "n",
+    "m"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "realvarx",
+        "y": "realvary",
+        "t": "timevar",
+        "f": "functionf",
+        "g": "functiong",
+        "n": "indexnum",
+        "m": "indexsec"
+      },
+      "question": "B-3. If \\( functionf \\) and \\( functiong \\) are continuous and periodic functions with period 1 on the real line, then \\( \\lim _{indexnum \\rightarrow \\infty} \\int_{0}^{1} functionf(realvarx) functiong(indexnum\\, realvarx) d realvarx=\\left(\\int_{0}^{1} functionf(realvarx) d realvarx\\right)\\left(\\int_{0}^{1} functiong(realvarx) d realvarx\\right) \\).",
+      "solution": "B-3 Since \\( functionf \\) is uniformly continuous, for any \\( \\epsilon>0 \\) there is an integer \\( indexnum \\) such that \\( |realvarx-realvary|<1 / indexnum \\) implies \\( |functionf(realvarx)-functionf(realvary)|<\\epsilon \\).\n\\[\n\\begin{aligned}\n\\int_{0}^{1} functionf(realvarx) functiong(indexnum\\, realvarx) d realvarx=& \\sum_{indexsec=0}^{indexnum-1} \\int_{indexsec / indexnum}^{indexsec+1 / indexnum} functionf(realvarx) functiong(indexnum\\, realvarx) d realvarx\\\\\n=&\\sum_{indexsec=0}^{indexnum-1} \\int_{indexsec / indexnum}^{indexsec+1 / indexnum} functionf(indexsec / indexnum) functiong(indexnum\\, realvarx) d realvarx\\\\\n&+\\sum_{indexsec=0}^{indexnum-1} \\int_{indexsec / indexnum}^{indexsec+1 / indexnum}(functionf(realvarx)-functionf(indexsec / indexnum)) functiong(indexnum\\, realvarx) d realvarx\n\\end{aligned}\n\\]\n\nThe first term equals \\( \\sum_{indexsec=0}^{indexnum-1}(1 / indexnum) functionf(indexsec / indexnum) \\int_{0}^{1} functiong(timevar) d timevar \\) and becomes \\( \\left(\\int_{0}^{1} functionf(realvarx) d realvarx\\right)\\left(\\int_{0}^{1} functiong(realvarx) d realvarx\\right) \\) as \\( indexnum \\rightarrow \\infty \\). Furthermore,\n\\[\n\\begin{aligned}\n\\left|\\int_{indexsec / indexnum}^{indexsec+1 / indexnum}\\{functionf(realvarx)-functionf(indexsec / indexnum)\\} functiong(indexnum\\, realvarx) d realvarx\\right|&<\\int_{indexsec / indexnum}^{indexsec+1 / indexnum}|functionf(realvarx)-functionf(indexsec / indexnum)| \\cdot|functiong(indexnum\\, realvarx)| d realvarx\\\\\n&<\\int_{indexsec / indexnum}^{indexsec+1 / indexnum} \\epsilon|functiong(indexnum\\, realvarx)| d realvarx<\\epsilon / indexnum \\int_{0}^{1}|functiong(timevar)| d timevar\n\\end{aligned}\n\\]\n\nThus the absolute value of the second term is less than or equal to \\( \\epsilon \\int_{0}^{1}|functiong(timevar)| d timevar \\) which becomes 0 as \\( \\epsilon \\rightarrow 0 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "blueberry",
+        "y": "sailcloth",
+        "t": "marigold",
+        "f": "pendulum",
+        "g": "labyrinth",
+        "n": "waterfall",
+        "m": "pinecone"
+      },
+      "question": "B-3. If \\( pendulum \\) and \\( labyrinth \\) are continuous and periodic functions with period 1 on the real line, then \\( \\lim _{waterfall \\rightarrow \\infty} \\int_{0}^{1} pendulum(blueberry) labyrinth(waterfall blueberry) d blueberry=\\left(\\int_{0}^{1} pendulum(blueberry) d blueberry\\right)\\left(\\int_{0}^{1} labyrinth(blueberry) d blueberry\\right) \\).",
+      "solution": "B-3 Since \\( pendulum \\) is uniformly continuous, for any \\( \\epsilon>0 \\) there is an integer \\( waterfall \\) such that \\( |blueberry-sailcloth|<1 / waterfall \\) implies \\( |pendulum(blueberry)-pendulum(sailcloth)|<\\epsilon \\).\n\\[\n\\begin{aligned}\n\\int_{0}^{1} pendulum(blueberry) labyrinth(waterfall blueberry) d blueberry= & \\sum_{pinecone=0}^{waterfall-1} \\int_{pinecone / waterfall}^{pinecone+1 / waterfall} pendulum(blueberry) labyrinth(waterfall blueberry) d blueberry=\\sum_{pinecone=0}^{waterfall-1} \\int_{pinecone / waterfall}^{pinecone+1 / waterfall} pendulum(pinecone / waterfall) labyrinth(waterfall blueberry) d blueberry \\\\\n& +\\sum_{pinecone=0}^{waterfall-1} \\int_{pinecone / waterfall}^{pinecone+1 / waterfall}(pendulum(blueberry)-pendulum(pinecone / waterfall)) labyrinth(waterfall blueberry) d blueberry\n\\end{aligned}\n\\]\n\nThe first term equals \\( \\sum_{pinecone=0}^{waterfall-1}(1 / waterfall) pendulum(pinecone / waterfall) \\int_{0}^{1} labyrinth(marigold) d marigold \\) and becomes \\( \\left(\\int_{0}^{1} pendulum(blueberry) d blueberry\\right)\\left(\\int_{0}^{1} labyrinth(blueberry) d blueberry\\right) \\) as \\( waterfall \\rightarrow \\infty \\). Furthermore,\n\\[\n\\begin{aligned}\n\\left|\\int_{pinecone / waterfall}^{pinecone+1 / waterfall}\\{pendulum(blueberry)-pendulum(pinecone / waterfall)\\} labyrinth(waterfall blueberry) d blueberry\\right| & <\\int_{pinecone / waterfall}^{pinecone+1 / waterfall}|pendulum(blueberry)-pendulum(pinecone / waterfall)| \\cdot|labyrinth(waterfall blueberry)| d blueberry \\\\\n& <\\int_{pinecone / waterfall}^{pinecone+1 / waterfall} \\epsilon|labyrinth(waterfall blueberry)| d blueberry<\\epsilon / waterfall \\int_{0}^{1}|labyrinth(marigold)| d marigold\n\\end{aligned}\n\\]\n\nThus the absolute value of the second term is less than or equal to \\( \\epsilon \\int_{0}^{1}|labyrinth(marigold)| d marigold \\) which becomes 0 as \\( \\epsilon \\rightarrow 0 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "steadfast",
+        "y": "unswerving",
+        "t": "timeless",
+        "f": "permanent",
+        "g": "unchanging",
+        "n": "finiteval",
+        "m": "continuum"
+      },
+      "question": "B-3. If \\( permanent \\) and \\( unchanging \\) are continuous and periodic functions with period 1 on the real line, then \\( \\lim _{finiteval \\rightarrow \\infty} \\int_{0}^{1} permanent(steadfast) unchanging(finiteval steadfast) d steadfast=\\left(\\int_{0}^{1} permanent(steadfast) d steadfast\\right)\\left(\\int_{0}^{1} unchanging(steadfast) d steadfast\\right) \\).",
+      "solution": "B-3 Since \\( permanent \\) is uniformly continuous, for any \\( \\epsilon>0 \\) there is an integer \\( finiteval \\) such that \\( |steadfast-unswerving|<1 / finiteval \\) implies \\( |permanent(steadfast)-permanent(unswerving)|<\\epsilon \\).\n\\[\n\\begin{aligned}\n\\int_{0}^{1} permanent(steadfast) unchanging(finiteval steadfast) d steadfast= & \\sum_{continuum=0}^{finiteval-1} \\int_{continuum / finiteval}^{continuum+1 / finiteval} permanent(steadfast) unchanging(finiteval steadfast) d steadfast=\\sum_{continuum=0}^{finiteval-1} \\int_{continuum / finiteval}^{continuum+1 / finiteval} permanent(continuum / finiteval) unchanging(finiteval steadfast) d steadfast \\\\\n& +\\sum_{continuum=0}^{finiteval-1} \\int_{continuum / finiteval}^{continuum+1 / finiteval}(permanent(steadfast)-permanent(continuum / finiteval)) unchanging(finiteval steadfast) d steadfast\n\\end{aligned}\n\\]\n\nThe first term equals \\( \\sum_{continuum=0}^{finiteval-1}(1 / finiteval) permanent(continuum / finiteval) \\int_{0}^{1} unchanging(timeless) d timeless \\) and becomes \\( \\left(\\int_{0}^{1} permanent(steadfast) d steadfast\\right)\\left(\\int_{0}^{1} unchanging(steadfast) d steadfast\\right) \\) as \\( finiteval \\rightarrow \\infty \\). Furthermore,\n\\[\n\\begin{aligned}\n\\left|\\int_{continuum / finiteval}^{continuum+1 / finiteval}\\{permanent(steadfast)-permanent(continuum / finiteval)\\} unchanging(finiteval steadfast) d steadfast\\right| & <\\int_{continuum / finiteval}^{continuum+1 / finiteval}|permanent(steadfast)-permanent(continuum / finiteval)| \\cdot|unchanging(finiteval steadfast)| d steadfast \\\\\n& <\\int_{continuum / finiteval}^{continuum+1 / finiteval} \\epsilon|unchanging(finiteval steadfast)| d steadfast<\\epsilon / finiteval \\int_{0}^{1}|unchanging(timeless)| d timeless\n\\end{aligned}\n\\]\n\nThus the absolute value of the second term is less than or equal to \\( \\epsilon \\int_{0}^{1}|unchanging(timeless)| d timeless \\) which becomes 0 as \\( \\epsilon \\rightarrow 0 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "t": "mndkslre",
+        "f": "qlpkfntz",
+        "g": "xcrtyhls",
+        "n": "zmbqswle",
+        "m": "kpdrtbah"
+      },
+      "question": "B-3. If \\( qlpkfntz \\) and \\( xcrtyhls \\) are continuous and periodic functions with period 1 on the real line, then \\( \\lim _{zmbqswle \\rightarrow \\infty} \\int_{0}^{1} qlpkfntz(qzxwvtnp) xcrtyhls(zmbqswle qzxwvtnp) d qzxwvtnp=\\left(\\int_{0}^{1} qlpkfntz(qzxwvtnp) d qzxwvtnp\\right)\\left(\\int_{0}^{1} xcrtyhls(qzxwvtnp) d qzxwvtnp\\right) \\).",
+      "solution": "B-3 Since \\( qlpkfntz \\) is uniformly continuous, for any \\( \\epsilon>0 \\) there is an integer \\( zmbqswle \\) such that \\( |qzxwvtnp-hjgrksla|<1 / zmbqswle \\) implies \\( |qlpkfntz(qzxwvtnp)-qlpkfntz(hjgrksla)|<\\epsilon \\).\n\\[\n\\begin{aligned}\n\\int_{0}^{1} qlpkfntz(qzxwvtnp) xcrtyhls(zmbqswle qzxwvtnp) d qzxwvtnp= & \\sum_{kpdrtbah=0}^{zmbqswle-1} \\int_{kpdrtbah / zmbqswle}^{kpdrtbah+1 / zmbqswle} qlpkfntz(qzxwvtnp) xcrtyhls(zmbqswle qzxwvtnp) d qzxwvtnp=\\sum_{kpdrtbah=0}^{zmbqswle-1} \\int_{kpdrtbah / zmbqswle}^{kpdrtbah+1 / zmbqswle} qlpkfntz(kpdrtbah / zmbqswle) xcrtyhls(zmbqswle qzxwvtnp) d qzxwvtnp \\\\\n& +\\sum_{kpdrtbah=0}^{zmbqswle-1} \\int_{kpdrtbah / zmbqswle}^{kpdrtbah+1 / zmbqswle}(qlpkfntz(qzxwvtnp)-qlpkfntz(kpdrtbah / zmbqswle)) xcrtyhls(zmbqswle qzxwvtnp) d qzxwvtnp\n\\end{aligned}\n\\]\n\nThe first term equals \\( \\sum_{kpdrtbah=0}^{zmbqswle-1}(1 / zmbqswle) qlpkfntz(kpdrtbah / zmbqswle) \\int_{0}^{1} xcrtyhls(mndkslre) d mndkslre \\) and becomes \\( \\left(\\int_{0}^{1} qlpkfntz(qzxwvtnp) d qzxwvtnp\\right)\\left(\\int_{0}^{1} xcrtyhls(qzxwvtnp) d qzxwvtnp\\right) \\) as \\( zmbqswle \\rightarrow \\infty \\). Furthermore,\n\\[\n\\begin{aligned}\n\\left|\\int_{kpdrtbah / zmbqswle}^{kpdrtbah+1 / zmbqswle}\\{qlpkfntz(qzxwvtnp)-qlpkfntz(kpdrtbah / zmbqswle)\\} xcrtyhls(zmbqswle qzxwvtnp) d qzxwvtnp\\right| & <\\int_{kpdrtbah / zmbqswle}^{kpdrtbah+1 / zmbqswle}|qlpkfntz(qzxwvtnp)-qlpkfntz(kpdrtbah / zmbqswle)| \\cdot|xcrtyhls(zmbqswle qzxwvtnp)| d qzxwvtnp \\\\\n& <\\int_{kpdrtbah / zmbqswle}^{kpdrtbah+1 / zmbqswle} \\epsilon|xcrtyhls(zmbqswle qzxwvtnp)| d qzxwvtnp<\\epsilon / zmbqswle \\int_{0}^{1}|xcrtyhls(mndkslre)| d mndkslre\n\\end{aligned}\n\\]\n\nThus the absolute value of the second term is less than or equal to \\( \\epsilon \\int_{0}^{1}|xcrtyhls(mndkslre)| d mndkslre \\) which becomes 0 as \\( \\epsilon \\rightarrow 0 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $f$ and $g$ be continuous real-valued functions on $\\mathbb R$, each having period $2\\pi$.  Prove that\n\\[\n\\lim_{n\\to\\infty}\\int_{-\\pi}^{\\pi} f(x)\\,g(nx)\\,dx \n   = \\frac{1}{2\\pi}\\Bigl(\\int_{-\\pi}^{\\pi} f(x)\\,dx\\Bigr)\n     \\Bigl(\\int_{-\\pi}^{\\pi} g(x)\\,dx\\Bigr).\n\\]",
+      "solution": "1.  Uniform continuity.\nBecause f is continuous on the compact set [-\\pi ,\\pi ] and 2\\pi -periodic, it is uniformly continuous on \\mathbb{R}.  Fix \\varepsilon >0 and choose an integer N so large that\n     |x-y|<2\\pi /N  \\Rightarrow   |f(x)-f(y)|<\\varepsilon .\n\n2.  Partition of one period.\nSet \\Delta =2\\pi /N and let\n     I_m=[-\\pi +m\\Delta ,\n           -\\pi +(m+1)\\Delta ]   (0\\leq m\\leq N-1).\nThen\n     \\int _{-\\pi }^{\\pi } f(x)g(Nx)\n       dx  =  \\sum _{m=0}^{N-1} \\int _{I_m} f(x)g(Nx)\n       dx.\n\n3.  Freeze f on each subinterval.\nWrite the integral as a main term plus an error term:\n     \\sum _{m=0}^{N-1} \\int _{I_m} f(a_m)g(Nx)\n       dx\n   + \\sum _{m=0}^{N-1} \\int _{I_m} [f(x)-f(a_m)] g(Nx)\n       dx,\nwhere a_m=-\\pi +m\\Delta .  Call these M_N and E_N, respectively.\n\n4.  Evaluate the main term M_N.\nFor x\\in I_m set t= N x; then dx=dt/N and t runs over an interval of length N\\Delta =2\\pi , i.e.\none full period of g:\n     \\int _{I_m} g(Nx)\n       dx  =  (1/N) \\int _{-\\pi }^{\\pi } g(t)\n       dt.\nHence\n     M_N  =  (1/N)\n               (\\int _{-\\pi }^{\\pi } g)\n              \\sum _{m=0}^{N-1} f(a_m)\n           =  (\\int _{-\\pi }^{\\pi } g)/(2\\pi )\n              \\sum _{m=0}^{N-1} f(a_m) \\Delta .\nThe sum \\sum f(a_m)\\Delta  is a Riemann sum for \\int _{-\\pi }^{\\pi }f, so\n     lim_{N\\to \\infty } M_N\n       = (1/2\\pi )(\\int _{-\\pi }^{\\pi }f)(\\int _{-\\pi }^{\\pi }g).\n\n5.  Bound the error term E_N.\nSet M:=sup_x |g(x)|<\\infty .  If x\\in I_m then |x-a_m|\\leq \\Delta , so |f(x)-f(a_m)|<\\varepsilon .  Therefore\n     |E_N|\n       \\leq  \\sum _{m=0}^{N-1} \\int _{I_m} \\varepsilon |g(Nx)|\n       dx\n       \\leq  \\varepsilon  M \\sum _{m=0}^{N-1} \\int _{I_m} dx\n       = \\varepsilon  M (2\\pi ).\nSince \\varepsilon >0 was arbitrary, E_N\\to 0 as N\\to \\infty .\n\n6.  Conclusion.\nCombining the limits of M_N and E_N gives\n     lim_{n\\to \\infty } \\int _{-\\pi }^{\\pi } f(x)g(nx)\n       dx\n       = (1/2\\pi )(\\int _{-\\pi }^{\\pi }f(x)dx)(\\int _{-\\pi }^{\\pi }g(x)dx),\nas required.",
+      "_meta": {
+        "core_steps": [
+          "Invoke uniform continuity of f to control its variation on sufficiently small intervals.",
+          "Partition one full period of integration into n equal subintervals and write the integral as a sum over them.",
+          "Freeze f at a representative point on each subinterval, splitting the integral into a main term and an error term.",
+          "Recognize the main term as a Riemann sum that converges to (∫f)(∫g).",
+          "Bound the error term by ε via the uniform-continuity estimate, letting ε→0 to make it vanish."
+        ],
+        "mutable_slots": {
+          "slot_period_length": {
+            "description": "Length of the common period assumed for both functions.",
+            "original": 1
+          },
+          "slot_integration_interval": {
+            "description": "Specific interval of one full period over which the integral is taken.",
+            "original": "[0,1]"
+          },
+          "slot_subinterval_length": {
+            "description": "Width of each partition subinterval used to exploit uniform continuity.",
+            "original": "1/n"
+          },
+          "slot_g_norm_constant": {
+            "description": "Constant used to bound the error term (any finite bound on g would work).",
+            "original": "∫_0^1 |g(t)| dt"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

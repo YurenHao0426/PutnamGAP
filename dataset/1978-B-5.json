@@ -1,0 +1,155 @@
+{
+  "index": "1978-B-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-5\nFind the largest \\( A \\) for which there exists a polynomial\n\\[\nP(x)=A x^{4}+B x^{3}+C x^{2}+D x+E\n\\]\nwith real coefficients, which satisfies\n\\[\n0<P(x)<1 \\quad \\text { for } \\quad-1<x<1 .\n\\]",
+  "solution": "B-5.\nThe solution is very easy if one knows that the Chebyshev polynomial \\( C(x)=8 x^{4}-8 x^{2}+1= \\) \\( \\cos (4 \\operatorname{Arccos} x) \\) has the largest leading coefficient of all fourth degree polynomials \\( f(x) \\) satisfying \\( -1<f(x)<1 \\) for \\( -1<x<1 \\); then one lets \\( P(x)=[C(x)+1] / 2 \\) and has 4 as the largest \\( A \\).\n\nWithout this information, one can use various substitutions to change the problem into equivalent ones of maximizing \\( A \\) in simpler functions satisfying conditions over intervals. With \\( Q(x)=[P(x)+P(-x)] / 2 \\), the condition becomes\n\\[\n0<Q(x)=A x^{4}+C x^{2}+E \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant x \\leqslant 1 .\n\\]\n\nLetting \\( x^{2}=y \\), this becomes\n\\[\n0<R(y)=A y^{2}+C y+E<1 \\quad \\text { over } \\quad 0 \\leqslant y \\leqslant 1 .\n\\]\n\nLetting \\( y=(z+1) / 2 \\) and \\( S(z)=R[(z+1) / 2] \\), one has\n\\[\n0 \\leqslant S(z)=(A / 4) z^{2}+F z+G \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant z \\leqslant 1 .\n\\]\n\nWith \\( T(z)=[S(z)+S(-z)] / 2 \\), one obtains\n\\[\n0 \\leqslant(A / 4) z^{2}+G<1 \\quad \\text { over } \\quad-1<z \\leqslant 1 .\n\\]\n\nFinally, letting \\( z^{2}=w \\), it becomes\n\\[\n0<(A / 4) W+G<1 \\text { over } 0<w<1 .\n\\]\n\nNow it is clear that the maximum \\( A \\) is 4 and that this maximum is achieved with \\( G=0 \\), i.e., with\n\\[\nT(z)=z^{2}, \\quad R(y)=(2 y-1)^{2}, \\quad Q(x)=4 x^{4}-4 x^{2}+1\n\\]",
+  "vars": [
+    "x",
+    "y",
+    "z",
+    "w",
+    "W"
+  ],
+  "params": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "y": "variabley",
+        "z": "variablez",
+        "w": "variablew",
+        "W": "capitalw",
+        "A": "coeffa",
+        "B": "coeffb",
+        "C": "coeffc",
+        "D": "coeffd",
+        "E": "coeffe",
+        "F": "coefff",
+        "G": "coeffg",
+        "P": "polyone",
+        "Q": "polytwo",
+        "R": "polythr",
+        "S": "polyfor",
+        "T": "polyfiv",
+        "f": "funcsix"
+      },
+      "question": "Problem B-5\nFind the largest \\( coeffa \\) for which there exists a polynomial\n\\[\npolyone(variablex)=coeffa variablex^{4}+coeffb variablex^{3}+coeffc variablex^{2}+coeffd variablex+coeffe\n\\]\nwith real coefficients, which satisfies\n\\[\n0<polyone(variablex)<1 \\quad \\text { for } \\quad-1<variablex<1 .\n\\]",
+      "solution": "B-5.\nThe solution is very easy if one knows that the Chebyshev polynomial \\( coeffc(variablex)=8 variablex^{4}-8 variablex^{2}+1= \\) \\( \\cos (4 \\operatorname{Arccos} variablex) \\) has the largest leading coefficient of all fourth degree polynomials \\( funcsix(variablex) \\) satisfying \\( -1<funcsix(variablex)<1 \\) for \\( -1<variablex<1 \\); then one lets \\( polyone(variablex)=[coeffc(variablex)+1] / 2 \\) and has 4 as the largest \\( coeffa \\).\n\nWithout this information, one can use various substitutions to change the problem into equivalent ones of maximizing \\( coeffa \\) in simpler functions satisfying conditions over intervals. With \\( polytwo(variablex)=[polyone(variablex)+polyone(-variablex)] / 2 \\), the condition becomes\n\\[\n0<polytwo(variablex)=coeffa variablex^{4}+coeffc variablex^{2}+coeffe \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant variablex \\leqslant 1 .\n\\]\n\nLetting \\( variablex^{2}=variabley \\), this becomes\n\\[\n0<polythr(variabley)=coeffa variabley^{2}+coeffc variabley+coeffe<1 \\quad \\text { over } \\quad 0 \\leqslant variabley \\leqslant 1 .\n\\]\n\nLetting \\( variabley=(variablez+1) / 2 \\) and \\( polyfor(variablez)=polythr[(variablez+1) / 2] \\), one has\n\\[\n0 \\leqslant polyfor(variablez)=(coeffa / 4) variablez^{2}+coefff variablez+coeffg \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant variablez \\leqslant 1 .\n\\]\n\nWith \\( polyfiv(variablez)=[polyfor(variablez)+polyfor(-variablez)] / 2 \\), one obtains\n\\[\n0 \\leqslant(coeffa / 4) variablez^{2}+coeffg<1 \\quad \\text { over } \\quad-1<variablez \\leqslant 1 .\n\\]\n\nFinally, letting \\( variablez^{2}=variablew \\), it becomes\n\\[\n0<(coeffa / 4) capitalw+coeffg<1 \\text { over } 0<variablew<1 .\n\\]\n\nNow it is clear that the maximum \\( coeffa \\) is 4 and that this maximum is achieved with \\( coeffg=0 \\), i.e., with\n\\[\npolyfiv(variablez)=variablez^{2}, \\quad polythr(variabley)=(2 variabley-1)^{2}, \\quad polytwo(variablex)=4 variablex^{4}-4 variablex^{2}+1\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "peppermint",
+        "B": "aftershock",
+        "C": "windchime",
+        "D": "starflower",
+        "E": "breadcrumb",
+        "F": "sailmaker",
+        "G": "dreamcatch",
+        "P": "hollyhock",
+        "Q": "lanternfly",
+        "R": "moonstone",
+        "S": "riverbank",
+        "T": "applecrate",
+        "f": "bloodhound",
+        "x": "marshland",
+        "y": "limestone",
+        "z": "driftwood",
+        "w": "carriage",
+        "W": "sailcloth"
+      },
+      "question": "Problem B-5\nFind the largest peppermint for which there exists a polynomial\n\\[\nhollyhock(marshland)=peppermint marshland^{4}+aftershock marshland^{3}+windchime marshland^{2}+starflower marshland+breadcrumb\n\\]\nwith real coefficients, which satisfies\n\\[\n0<hollyhock(marshland)<1 \\quad \\text { for } \\quad-1<marshland<1 .\n\\]",
+      "solution": "B-5.\nThe solution is very easy if one knows that the Chebyshev polynomial \\( windchime(marshland)=8 marshland^{4}-8 marshland^{2}+1= \\) \\( \\cos (4 \\operatorname{Arccos} marshland) \\) has the largest leading coefficient of all fourth degree polynomials \\( bloodhound(marshland) \\) satisfying \\( -1<bloodhound(marshland)<1 \\) for \\( -1<marshland<1 \\); then one lets \\( hollyhock(marshland)=[windchime(marshland)+1] / 2 \\) and has 4 as the largest \\( peppermint \\).\n\nWithout this information, one can use various substitutions to change the problem into equivalent ones of maximizing \\( peppermint \\) in simpler functions satisfying conditions over intervals. With \\( lanternfly(marshland)=[hollyhock(marshland)+hollyhock(-marshland)] / 2 \\), the condition becomes\n\\[\n0<lanternfly(marshland)=peppermint marshland^{4}+windchime marshland^{2}+breadcrumb \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant marshland \\leqslant 1 .\n\\]\n\nLetting \\( marshland^{2}=limestone \\), this becomes\n\\[\n0<moonstone(limestone)=peppermint limestone^{2}+windchime limestone+breadcrumb<1 \\quad \\text { over } \\quad 0 \\leqslant limestone \\leqslant 1 .\n\\]\n\nLetting \\( limestone=(driftwood+1) / 2 \\) and \\( riverbank(driftwood)=moonstone[(driftwood+1) / 2] \\), one has\n\\[\n0 \\leqslant riverbank(driftwood)=(peppermint / 4) driftwood^{2}+sailmaker driftwood+dreamcatch \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant driftwood \\leqslant 1 .\n\\]\n\nWith \\( applecrate(driftwood)=[riverbank(driftwood)+riverbank(-driftwood)] / 2 \\), one obtains\n\\[\n0 \\leqslant(peppermint / 4) driftwood^{2}+dreamcatch<1 \\quad \\text { over } \\quad-1<driftwood \\leqslant 1 .\n\\]\n\nFinally, letting \\( driftwood^{2}=carriage \\), it becomes\n\\[\n0<(peppermint / 4) sailcloth+dreamcatch<1 \\text { over } 0<carriage<1 .\n\\]\n\nNow it is clear that the maximum \\( peppermint \\) is 4 and that this maximum is achieved with \\( dreamcatch=0 \\), i.e., with\n\\[\napplecrate(driftwood)=driftwood^{2}, \\quad moonstone(limestone)=(2 limestone-1)^{2}, \\quad lanternfly(marshland)=4 marshland^{4}-4 marshland^{2}+1\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "y": "staticnum",
+        "z": "steadyfig",
+        "w": "immutable",
+        "W": "unchanged",
+        "A": "trailing",
+        "B": "endingcoef",
+        "C": "lessercoef",
+        "D": "terminalcoef",
+        "E": "variable",
+        "F": "unstable",
+        "G": "changing",
+        "P": "constantfun",
+        "Q": "linearfun",
+        "R": "flatfunc",
+        "S": "steadyfunc",
+        "T": "levelfunc",
+        "f": "nonpolyfn"
+      },
+      "question": "Problem B-5\nFind the largest \\( trailing \\) for which there exists a polynomial\n\\[\nconstantfun(fixedvalue)=trailing \\, fixedvalue^{4}+endingcoef \\, fixedvalue^{3}+lessercoef \\, fixedvalue^{2}+terminalcoef \\, fixedvalue+variable\n\\]\nwith real coefficients, which satisfies\n\\[\n0<constantfun(fixedvalue)<1 \\quad \\text { for } \\quad-1<fixedvalue<1 .\n\\]",
+      "solution": "B-5.\nThe solution is very easy if one knows that the Chebyshev polynomial \\( lessercoef(fixedvalue)=8 fixedvalue^{4}-8 fixedvalue^{2}+1= \\) \\( \\cos (4 \\operatorname{Arccos} fixedvalue) \\) has the largest leading coefficient of all fourth degree polynomials \\( nonpolyfn(fixedvalue) \\) satisfying \\( -1<nonpolyfn(fixedvalue)<1 \\) for \\( -1<fixedvalue<1 \\); then one lets \\( constantfun(fixedvalue)=[lessercoef(fixedvalue)+1] / 2 \\) and has 4 as the largest \\( trailing \\).\n\nWithout this information, one can use various substitutions to change the problem into equivalent ones of maximizing \\( trailing \\) in simpler functions satisfying conditions over intervals. With \\( linearfun(fixedvalue)=[constantfun(fixedvalue)+constantfun(-fixedvalue)] / 2 \\), the condition becomes\n\\[\n0<linearfun(fixedvalue)=trailing \\, fixedvalue^{4}+lessercoef \\, fixedvalue^{2}+variable \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant fixedvalue \\leqslant 1 .\n\\]\n\nLetting \\( fixedvalue^{2}=staticnum \\), this becomes\n\\[\n0<flatfunc(staticnum)=trailing \\, staticnum^{2}+lessercoef \\, staticnum+variable<1 \\quad \\text { over } \\quad 0 \\leqslant staticnum \\leqslant 1 .\n\\]\n\nLetting \\( staticnum=(steadyfig+1) / 2 \\) and \\( steadyfunc(steadyfig)=flatfunc[(steadyfig+1) / 2] \\), one has\n\\[\n0 \\leqslant steadyfunc(steadyfig)=(trailing / 4) \\, steadyfig^{2}+unstable \\, steadyfig+changing \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant steadyfig \\leqslant 1 .\n\\]\n\nWith \\( levelfunc(steadyfig)=[steadyfunc(steadyfig)+steadyfunc(-steadyfig)] / 2 \\), one obtains\n\\[\n0 \\leqslant(trailing / 4) \\, steadyfig^{2}+changing<1 \\quad \\text { over } \\quad-1<steadyfig \\leqslant 1 .\n\\]\n\nFinally, letting \\( steadyfig^{2}=immutable \\), it becomes\n\\[\n0<(trailing / 4) \\, unchanged+changing<1 \\text { over } 0<immutable<1 .\n\\]\n\nNow it is clear that the maximum \\( trailing \\) is 4 and that this maximum is achieved with \\( changing=0 \\), i.e., with\n\\[\nlevelfunc(steadyfig)=steadyfig^{2}, \\quad flatfunc(staticnum)=(2 \\, staticnum-1)^{2}, \\quad linearfun(fixedvalue)=4 \\, fixedvalue^{4}-4 \\, fixedvalue^{2}+1\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "kldfvwza",
+        "y": "pqxmsrne",
+        "z": "hqtrvmka",
+        "w": "uzjeobcn",
+        "W": "yplscrta",
+        "A": "qzxwvtnp",
+        "B": "rycndjfo",
+        "C": "mhklveas",
+        "D": "bfzqmtne",
+        "E": "jswqarcd",
+        "F": "xpkalhgu",
+        "G": "odrnyeql",
+        "P": "gnxwefmr",
+        "Q": "baprhicz",
+        "R": "tlemqdoy",
+        "S": "jkfzrepm",
+        "T": "vcfouxnl",
+        "f": "hjgrksla"
+      },
+      "question": "Problem B-5\nFind the largest \\( qzxwvtnp \\) for which there exists a polynomial\n\\[\ngnxwefmr(kldfvwza)=qzxwvtnp kldfvwza^{4}+rycndjfo kldfvwza^{3}+mhklveas kldfvwza^{2}+bfzqmtne kldfvwza+jswqarcd\n\\]\nwith real coefficients, which satisfies\n\\[\n0<gnxwefmr(kldfvwza)<1 \\quad \\text { for } \\quad-1<kldfvwza<1 .\n\\]",
+      "solution": "B-5.\nThe solution is very easy if one knows that the Chebyshev polynomial \\( mhklveas(kldfvwza)=8 kldfvwza^{4}-8 kldfvwza^{2}+1= \\) \\( \\cos (4 \\operatorname{Arccos} kldfvwza) \\) has the largest leading coefficient of all fourth degree polynomials \\( hjgrksla(kldfvwza) \\) satisfying \\( -1<hjgrksla(kldfvwza)<1 \\) for \\( -1<kldfvwza<1 \\); then one lets \\( gnxwefmr(kldfvwza)=[mhklveas(kldfvwza)+1] / 2 \\) and has 4 as the largest \\( qzxwvtnp \\).\n\nWithout this information, one can use various substitutions to change the problem into equivalent ones of maximizing \\( qzxwvtnp \\) in simpler functions satisfying conditions over intervals. With \\( baprhicz(kldfvwza)=[gnxwefmr(kldfvwza)+gnxwefmr(-kldfvwza)] / 2 \\), the condition becomes\n\\[\n0<baprhicz(kldfvwza)=qzxwvtnp kldfvwza^{4}+mhklveas kldfvwza^{2}+jswqarcd \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant kldfvwza \\leqslant 1 .\n\\]\n\nLetting \\( kldfvwza^{2}=pqxmsrne \\), this becomes\n\\[\n0<tlemqdoy(pqxmsrne)=qzxwvtnp pqxmsrne^{2}+mhklveas pqxmsrne+jswqarcd<1 \\quad \\text { over } \\quad 0 \\leqslant pqxmsrne \\leqslant 1 .\n\\]\n\nLetting \\( pqxmsrne=(hqtrvmka+1) / 2 \\) and \\( jkfzrepm(hqtrvmka)=tlemqdoy[(hqtrvmka+1) / 2] \\), one has\n\\[\n0 \\leqslant jkfzrepm(hqtrvmka)=(qzxwvtnp / 4) hqtrvmka^{2}+xpkalhgu hqtrvmka+odrnyeql \\leqslant 1 \\quad \\text { over } \\quad-1 \\leqslant hqtrvmka \\leqslant 1 .\n\\]\n\nWith \\( vcfouxnl(hqtrvmka)=[jkfzrepm(hqtrvmka)+jkfzrepm(-hqtrvmka)] / 2 \\), one obtains\n\\[\n0 \\leqslant(qzxwvtnp / 4) hqtrvmka^{2}+odrnyeql<1 \\quad \\text { over } \\quad-1<hqtrvmka \\leqslant 1 .\n\\]\n\nFinally, letting \\( hqtrvmka^{2}=uzjeobcn \\), it becomes\n\\[\n0<(qzxwvtnp / 4) yplscrta+odrnyeql<1 \\text { over } 0<uzjeobcn<1 .\n\\]\n\nNow it is clear that the maximum \\( qzxwvtnp \\) is 4 and that this maximum is achieved with \\( odrnyeql=0 \\), i.e., with\n\\[\nvcfouxnl(hqtrvmka)=hqtrvmka^{2}, \\quad tlemqdoy(pqxmsrne)=(2 pqxmsrne-1)^{2}, \\quad baprhicz(kldfvwza)=4 kldfvwza^{4}-4 kldfvwza^{2}+1\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let  \n\\[\nP(x)=A x^{4}+B x^{3}+C x^{2}+D x+E ,\n\\qquad A,B,C,D,E\\in\\mathbb R ,\n\\]\nbe a real quartic polynomial.  Define  \n\\[\nS:=\\Bigl\\{\\,A\\in\\mathbb R\\;\\Bigm|\\;\\exists\\,B,C,D,E\\in\\mathbb R\\text{ such that }\n\\begin{cases}\n2<P(x)<5,\\\\[2mm]\n\\lvert P'(x)\\rvert\\le 9,\n\\end{cases}\\;\n\\forall\\,x\\in(-1,1)\\Bigr\\}.\n\\]\nDetermine  \n\\[\n\\displaystyle\\sup S .\n\\]\n(Because of continuity one may replace $(-1,1)$ with $[-1,1]$.)",
+      "solution": "Throughout let  \n\\[\n\\lVert f\\rVert_{\\infty}:=\\max_{x\\in[-1,1]}\\lvert f(x)\\rvert .\n\\]\n\n\\textbf{Step 1.  Centralisation.}  \nPut $Q(x):=P(x)-\\tfrac72$.  Then  \n\\[\n\\lvert Q(x)\\rvert<\\tfrac32 ,\\qquad\n\\lvert Q'(x)\\rvert\\le 9 ,\\qquad\n\\forall\\,x\\in[-1,1],\n\\tag{1}\n\\]\nand $\\operatorname{lc}(Q)=A$.  We work with $Q$ henceforth.\n\n\\textbf{Step 2.  Even part and the sign of the quadratic term.}\n\n(a)  \\emph{Even symmetrisation.}  \nReplace $Q$ by  \n\\[\nQ_{\\mathrm{ev}}(x):=\\frac{Q(x)+Q(-x)}{2}.\n\\]\nBecause $\\lVert Q_{\\mathrm{ev}}\\rVert_{\\infty}\\le\\lVert Q\\rVert_{\\infty}$ and\n$\\lVert Q_{\\mathrm{ev}}'\\rVert_{\\infty}\\le\\lVert Q'\\rVert_{\\infty}$,\ninequalities (1) persist while the leading coefficient stays $A$.  Thus we may assume\n\\[\nQ(x)=A x^{4}+C x^{2}+E. \\tag{2}\n\\]\n\n(b)  \\emph{Normalising the quadratic coefficient.}  \nPut $q:=\\lvert C\\rvert$ and consider  \n\\[\nQ_{\\pm}(x):=A x^{4}\\pm q x^{2}+E.\n\\]\nOnly the \\emph{ratio} $t:=q/A\\,( \\ge0)$ matters, because scaling the polynomial by a positive constant scales $\\lVert Q\\rVert_{\\infty}$ and $\\lVert Q'\\rVert_{\\infty}$ simultaneously.  Divide by $A>0$ and write\n\\[\n\\widetilde Q_{\\pm}(x):=x^{4}\\pm t x^{2}+\\eta ,\\qquad \\eta:=E/A.\n\\]\nFor fixed $(t,\\pm)$ we can choose $\\eta$ minimising $\\lVert\\widetilde Q_{\\pm}\\rVert_{\\infty}$ and rescale.  A direct minimax computation (see Step 3) shows that making the quadratic coefficient negative never enlarges either norm, hence the optimal polynomial has $C\\le0$, i.e. $C=-A t$ with $t\\ge0$.\n\nWith $y:=x^{2}\\in[0,1]$ write\n\\[\nQ(x)=A\\bigl(y^{2}-t y\\bigr)+E\n      \\;=\\;A\\,f_{t}(y)+E ,\n\\qquad f_{t}(y):=y^{2}-t\\,y. \\tag{3}\n\\]\n\n\\textbf{Step 3.  Optimal vertical shift.}  \nFor each $t$ put\n\\[\nm(t):=\\min_{y\\in[0,1]}f_{t}(y),\\qquad\nM(t):=\\max_{y\\in[0,1]}f_{t}(y),\n\\qquad\n\\omega(t):=\\frac{M(t)-m(t)}{2}.\n\\]\nChoosing $E=-A\\frac{M(t)+m(t)}{2}$ yields\n\\[\n\\|Q\\|_{\\infty}=A\\,\\omega(t). \\tag{4}\n\\]\n\nA routine analysis of the convex quadratic $f_{t}$ gives\n\\[\n\\omega(t)=\n\\begin{cases}\n\\dfrac{1-t+t^{2}/4}{2}, & 0\\le t\\le 1,\\\\[3mm]\n\\dfrac{t^{2}}{8}, & 1\\le t\\le 2,\\\\[3mm]\n\\dfrac{t-1}{2}, & t\\ge 2 .\n\\end{cases}\\tag{5}\n\\]\n\n\\textbf{Step 4.  The derivative constraint.}  \nFrom (3)\n\\[\nQ'(x)=2A\\,x\\,(2x^{2}-t).\n\\]\nFor $x\\ge0$ put\n\\[\ng_{t}(x):=x\\,\\lvert 2x^{2}-t\\rvert,\\qquad 0\\le x\\le1.\n\\]\nWe distinguish two regimes.\n\n\\emph{(i) $0\\le t\\le 2$.}  \nThen $2x^{2}-t$ changes sign at $x=\\sqrt{t/2}$, so the maximum of $g_{t}$ on $[0,1]$ is $\\max\\{2-t,\\;2t^{3/2}/(3\\sqrt 6)\\}$.\n\n\\emph{(ii) $t\\ge 2$.}  \nNow $2x^{2}-t\\le 0$ for every $x\\in[0,1]$, hence  \n\\[\ng_{t}(x)=x\\,(t-2x^{2}).\n\\]\nThe critical point $x_{c}=\\sqrt{t/6}$ lies in $[0,1]$ exactly when $t\\le6$.\nThus\n\\[\n\\max_{x\\in[0,1]}g_{t}(x)=\n\\begin{cases}\n\\max\\{\\,2-t,\\;\\dfrac{2t^{3/2}}{3\\sqrt 6}\\}, & 2\\le t\\le 6,\\\\[4mm]\nt-2, & t\\ge 6 .\n\\end{cases}\n\\]\n\nCombining the two regimes, for all $t\\ge0$\n\\[\n\\Lambda(t):=\\max_{x\\in[0,1]}g_{t}(x)=\n\\begin{cases}\n\\max\\!\\bigl\\{\\,2-t,\\;\\dfrac{2t^{3/2}}{3\\sqrt 6}\\bigr\\}, & 0\\le t\\le 6,\\\\[4mm]\nt-2, & t\\ge 6 .\n\\end{cases}\\tag{6}\n\\]\n\nFrom (1) we therefore require\n\\[\n2A\\,\\Lambda(t)\\le 9. \\tag{7}\n\\]\n\n\\textbf{Step 5.  Two universal bounds for $A$.}  \nUsing (4), (5) and (7) we obtain the \\emph{necessary} conditions\n\\[\nA< F_{1}(t):=\\frac{3/2}{\\omega(t)},\\qquad\nA\\le F_{2}(t):=\\frac{9}{2\\Lambda(t)} ,\n\\]\nand hence every admissible pair $(A,t)$ satisfies\n\\[\nA< F(t):=\\min\\!\\bigl\\{F_{1}(t),F_{2}(t)\\bigr\\}. \\tag{8}\n\\]\n(The strict inequality in $F_{1}$ reflects $\\lVert Q\\rVert_{\\infty}<\\tfrac32$;\nfor the supremum this distinction is irrelevant but is noted for accuracy.)\n\n\\textbf{Step 6.  Maximising $F(t)$.}  \nA piecewise calculation exactly as in the original argument shows\n\\[\nA_{\\max}:=\\sup_{t\\ge0}F(t)=\\frac{27}{4}. \\tag{9}\n\\]\n\n\\textbf{Step 7.  Near-extremal polynomials (sharpness).}  \nFix $0<\\varepsilon<1$ and set\n\\[\nA_{\\varepsilon}:=(1-\\varepsilon)\\frac{27}{4},\\qquad\nt:=\\frac43 .\n\\]\nDefine\n\\[\nQ_{\\varepsilon}(x):=A_{\\varepsilon}\\bigl(x^{4}-t\\,x^{2}\\bigr)\n+A_{\\varepsilon}\\,\\frac{t^{2}}{8},\n\\qquad\nP_{\\varepsilon}(x):=\\frac72+Q_{\\varepsilon}(x). \\tag{10}\n\\]\nBecause $1<t<2$, (4)-(6) give\n\\[\n\\lVert Q_{\\varepsilon}\\rVert_{\\infty}=A_{\\varepsilon}\\,\\frac{t^{2}}{8}\n=(1-\\varepsilon)\\frac{3}{2}<\\frac{3}{2},\\qquad\n\\lVert Q'_{\\varepsilon}\\rVert_{\\infty}=2A_{\\varepsilon}\\,\\frac23\n=(1-\\varepsilon)9<9 .\n\\]\nHence $P_{\\varepsilon}$ satisfies all defining conditions of $S$ and\n$\\lim_{\\varepsilon\\to0^{+}}A_{\\varepsilon}=\\dfrac{27}{4}$.\n\n\\textbf{Step 8.  Conclusion.}  \nBy (8)-(9) and Step 7,\n\\[\n\\boxed{\\displaystyle\\sup S=\\frac{27}{4}=6.75}.\n\\]\nThe value is not attained, but it is approached by the family\n$P_{\\varepsilon}$ in \\textup{(10)} as $\\varepsilon\\to0^{+}$.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.637551",
+        "was_fixed": false,
+        "difficulty_analysis": "• Two simultaneous constraints are imposed: a uniform bound on the\npolynomial itself AND a uniform bound on its derivative.  \n  – The derivative restriction forces the use of the Markov\n  inequality, a result from approximation theory that did\n  not appear in the original problem.  \n  – One must blend Markov’s inequality with the extremal property of\n  Chebyshev polynomials to obtain tight, simultaneous bounds.\n\n• The optimisation is no longer a single-parameter scaling; the two\nconstraints interact, so one has to\ndetermine which of them is active at the optimum (the derivative\nbound turns out to be decisive).\n\n• Because equality must be tracked in both inequalities, the solver\nneeds to characterise all cases of equality in Markov’s theorem and\nshow that they coincide with equality cases in the Chebyshev\nextremal property, a non-trivial theoretical point.\n\n• The construction of an extremal polynomial now requires verifying\nboth the range and derivative conditions numerically, adding another\nlayer of technical checking.\n\nAll of these features make the enhanced variant significantly more\ncomplex than the original, demanding knowledge of\napproximation theory (Chebyshev & Markov), careful inequality\nmanagement, and a deeper understanding of extremal polynomials."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n\\[\nP(x)=A x^{4}+B x^{3}+C x^{2}+D x+E ,\n\\qquad A,B,C,D,E\\in\\mathbb R ,\n\\]\nbe a real quartic polynomial.  Define  \n\\[\nS:=\\Bigl\\{\\,A\\in\\mathbb R\\;\\Bigm|\\;\\exists\\,B,C,D,E\\in\\mathbb R\\text{ such that }\n\\begin{cases}\n2<P(x)<5,\\\\[2mm]\n\\lvert P'(x)\\rvert\\le 9,\n\\end{cases}\\;\n\\forall\\,x\\in(-1,1)\\Bigr\\}.\n\\]\nDetermine  \n\\[\n\\displaystyle\\sup S .\n\\]\n(Because of continuity one may replace $(-1,1)$ with $[-1,1]$.)",
+      "solution": "Throughout let  \n\\[\n\\lVert f\\rVert_{\\infty}:=\\max_{x\\in[-1,1]}\\lvert f(x)\\rvert .\n\\]\n\n\\textbf{Step 1.  Centralisation.}  \nPut $Q(x):=P(x)-\\tfrac72$.  Then  \n\\[\n\\lvert Q(x)\\rvert<\\tfrac32 ,\\qquad\n\\lvert Q'(x)\\rvert\\le 9 ,\\qquad\n\\forall\\,x\\in[-1,1],\n\\tag{1}\n\\]\nand $\\operatorname{lc}(Q)=A$.  We work with $Q$ henceforth.\n\n\\textbf{Step 2.  Even part and the sign of the quadratic term.}\n\n(a)  \\emph{Even symmetrisation.}  \nReplace $Q$ by  \n\\[\nQ_{\\mathrm{ev}}(x):=\\frac{Q(x)+Q(-x)}{2}.\n\\]\nBecause $\\lVert Q_{\\mathrm{ev}}\\rVert_{\\infty}\\le\\lVert Q\\rVert_{\\infty}$ and\n$\\lVert Q_{\\mathrm{ev}}'\\rVert_{\\infty}\\le\\lVert Q'\\rVert_{\\infty}$,\ninequalities (1) persist while the leading coefficient stays $A$.  Thus we may assume\n\\[\nQ(x)=A x^{4}+C x^{2}+E. \\tag{2}\n\\]\n\n(b)  \\emph{Normalising the quadratic coefficient.}  \nPut $q:=\\lvert C\\rvert$ and consider  \n\\[\nQ_{\\pm}(x):=A x^{4}\\pm q x^{2}+E.\n\\]\nOnly the \\emph{ratio} $t:=q/A\\,( \\ge0)$ matters, because scaling the polynomial by a positive constant scales $\\lVert Q\\rVert_{\\infty}$ and $\\lVert Q'\\rVert_{\\infty}$ simultaneously.  Divide by $A>0$ and write\n\\[\n\\widetilde Q_{\\pm}(x):=x^{4}\\pm t x^{2}+\\eta ,\\qquad \\eta:=E/A.\n\\]\nFor fixed $(t,\\pm)$ we can choose $\\eta$ minimising $\\lVert\\widetilde Q_{\\pm}\\rVert_{\\infty}$ and rescale.  A direct minimax computation (see Step 3) shows that making the quadratic coefficient negative never enlarges either norm, hence the optimal polynomial has $C\\le0$, i.e. $C=-A t$ with $t\\ge0$.\n\nWith $y:=x^{2}\\in[0,1]$ write\n\\[\nQ(x)=A\\bigl(y^{2}-t y\\bigr)+E\n      \\;=\\;A\\,f_{t}(y)+E ,\n\\qquad f_{t}(y):=y^{2}-t\\,y. \\tag{3}\n\\]\n\n\\textbf{Step 3.  Optimal vertical shift.}  \nFor each $t$ put\n\\[\nm(t):=\\min_{y\\in[0,1]}f_{t}(y),\\qquad\nM(t):=\\max_{y\\in[0,1]}f_{t}(y),\n\\qquad\n\\omega(t):=\\frac{M(t)-m(t)}{2}.\n\\]\nChoosing $E=-A\\frac{M(t)+m(t)}{2}$ yields\n\\[\n\\|Q\\|_{\\infty}=A\\,\\omega(t). \\tag{4}\n\\]\n\nA routine analysis of the convex quadratic $f_{t}$ gives\n\\[\n\\omega(t)=\n\\begin{cases}\n\\dfrac{1-t+t^{2}/4}{2}, & 0\\le t\\le 1,\\\\[3mm]\n\\dfrac{t^{2}}{8}, & 1\\le t\\le 2,\\\\[3mm]\n\\dfrac{t-1}{2}, & t\\ge 2 .\n\\end{cases}\\tag{5}\n\\]\n\n\\textbf{Step 4.  The derivative constraint.}  \nFrom (3)\n\\[\nQ'(x)=2A\\,x\\,(2x^{2}-t).\n\\]\nFor $x\\ge0$ put\n\\[\ng_{t}(x):=x\\,\\lvert 2x^{2}-t\\rvert,\\qquad 0\\le x\\le1.\n\\]\nWe distinguish two regimes.\n\n\\emph{(i) $0\\le t\\le 2$.}  \nThen $2x^{2}-t$ changes sign at $x=\\sqrt{t/2}$, so the maximum of $g_{t}$ on $[0,1]$ is $\\max\\{2-t,\\;2t^{3/2}/(3\\sqrt 6)\\}$.\n\n\\emph{(ii) $t\\ge 2$.}  \nNow $2x^{2}-t\\le 0$ for every $x\\in[0,1]$, hence  \n\\[\ng_{t}(x)=x\\,(t-2x^{2}).\n\\]\nThe critical point $x_{c}=\\sqrt{t/6}$ lies in $[0,1]$ exactly when $t\\le6$.\nThus\n\\[\n\\max_{x\\in[0,1]}g_{t}(x)=\n\\begin{cases}\n\\max\\{\\,2-t,\\;\\dfrac{2t^{3/2}}{3\\sqrt 6}\\}, & 2\\le t\\le 6,\\\\[4mm]\nt-2, & t\\ge 6 .\n\\end{cases}\n\\]\n\nCombining the two regimes, for all $t\\ge0$\n\\[\n\\Lambda(t):=\\max_{x\\in[0,1]}g_{t}(x)=\n\\begin{cases}\n\\max\\!\\bigl\\{\\,2-t,\\;\\dfrac{2t^{3/2}}{3\\sqrt 6}\\bigr\\}, & 0\\le t\\le 6,\\\\[4mm]\nt-2, & t\\ge 6 .\n\\end{cases}\\tag{6}\n\\]\n\nFrom (1) we therefore require\n\\[\n2A\\,\\Lambda(t)\\le 9. \\tag{7}\n\\]\n\n\\textbf{Step 5.  Two universal bounds for $A$.}  \nUsing (4), (5) and (7) we obtain the \\emph{necessary} conditions\n\\[\nA< F_{1}(t):=\\frac{3/2}{\\omega(t)},\\qquad\nA\\le F_{2}(t):=\\frac{9}{2\\Lambda(t)} ,\n\\]\nand hence every admissible pair $(A,t)$ satisfies\n\\[\nA< F(t):=\\min\\!\\bigl\\{F_{1}(t),F_{2}(t)\\bigr\\}. \\tag{8}\n\\]\n(The strict inequality in $F_{1}$ reflects $\\lVert Q\\rVert_{\\infty}<\\tfrac32$;\nfor the supremum this distinction is irrelevant but is noted for accuracy.)\n\n\\textbf{Step 6.  Maximising $F(t)$.}  \nA piecewise calculation exactly as in the original argument shows\n\\[\nA_{\\max}:=\\sup_{t\\ge0}F(t)=\\frac{27}{4}. \\tag{9}\n\\]\n\n\\textbf{Step 7.  Near-extremal polynomials (sharpness).}  \nFix $0<\\varepsilon<1$ and set\n\\[\nA_{\\varepsilon}:=(1-\\varepsilon)\\frac{27}{4},\\qquad\nt:=\\frac43 .\n\\]\nDefine\n\\[\nQ_{\\varepsilon}(x):=A_{\\varepsilon}\\bigl(x^{4}-t\\,x^{2}\\bigr)\n+A_{\\varepsilon}\\,\\frac{t^{2}}{8},\n\\qquad\nP_{\\varepsilon}(x):=\\frac72+Q_{\\varepsilon}(x). \\tag{10}\n\\]\nBecause $1<t<2$, (4)-(6) give\n\\[\n\\lVert Q_{\\varepsilon}\\rVert_{\\infty}=A_{\\varepsilon}\\,\\frac{t^{2}}{8}\n=(1-\\varepsilon)\\frac{3}{2}<\\frac{3}{2},\\qquad\n\\lVert Q'_{\\varepsilon}\\rVert_{\\infty}=2A_{\\varepsilon}\\,\\frac23\n=(1-\\varepsilon)9<9 .\n\\]\nHence $P_{\\varepsilon}$ satisfies all defining conditions of $S$ and\n$\\lim_{\\varepsilon\\to0^{+}}A_{\\varepsilon}=\\dfrac{27}{4}$.\n\n\\textbf{Step 8.  Conclusion.}  \nBy (8)-(9) and Step 7,\n\\[\n\\boxed{\\displaystyle\\sup S=\\frac{27}{4}=6.75}.\n\\]\nThe value is not attained, but it is approached by the family\n$P_{\\varepsilon}$ in \\textup{(10)} as $\\varepsilon\\to0^{+}$.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.506955",
+        "was_fixed": false,
+        "difficulty_analysis": "• Two simultaneous constraints are imposed: a uniform bound on the\npolynomial itself AND a uniform bound on its derivative.  \n  – The derivative restriction forces the use of the Markov\n  inequality, a result from approximation theory that did\n  not appear in the original problem.  \n  – One must blend Markov’s inequality with the extremal property of\n  Chebyshev polynomials to obtain tight, simultaneous bounds.\n\n• The optimisation is no longer a single-parameter scaling; the two\nconstraints interact, so one has to\ndetermine which of them is active at the optimum (the derivative\nbound turns out to be decisive).\n\n• Because equality must be tracked in both inequalities, the solver\nneeds to characterise all cases of equality in Markov’s theorem and\nshow that they coincide with equality cases in the Chebyshev\nextremal property, a non-trivial theoretical point.\n\n• The construction of an extremal polynomial now requires verifying\nboth the range and derivative conditions numerically, adding another\nlayer of technical checking.\n\nAll of these features make the enhanced variant significantly more\ncomplex than the original, demanding knowledge of\napproximation theory (Chebyshev & Markov), careful inequality\nmanagement, and a deeper understanding of extremal polynomials."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

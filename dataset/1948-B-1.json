@@ -1,0 +1,129 @@
+{
+  "index": "1948-B-1",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Let \\( f(x) \\) be a cubic polynomial with roots \\( x_{1}, x_{2} \\), and \\( x_{3} \\). Assume that \\( f(2 x) \\) is divisible by \\( f^{\\prime}(x) \\) and compute the ratios \\( x_{1}: x_{2}: x_{3} \\).",
+  "solution": "Solution. Let \\( f(x)=x^{3}+a x^{2}+b x+c \\). Since \\( f(2 x) \\) is divisible by \\( f^{\\prime}(x) \\), we have\n\\[\n8 x^{3}+4 a x^{2}+2 b x+c=\\left(3 x^{2}+2 a x+b\\right)(p x+q)\n\\]\nfor some \\( p \\) and \\( q \\). Comparing coefficients we find\n\\[\n\\begin{array}{l}\n3 p=8, \\quad 2 a p+3 q=4 a \\\\\nb p+2 a q=2 b, \\quad q b=c\n\\end{array}\n\\]\nfrom which it follows that\n\\[\np=8 / 3, \\quad q=-4 a / 9, \\quad b=4 a^{2} / 3, \\quad \\text { and } \\quad c=-16 a^{3} / 27\n\\]\n\nHence\n\\[\nf(x)=x^{3}+a x^{2}+\\frac{4}{3} a^{2} x-\\frac{16}{27} a^{3}\n\\]\n\nNow if \\( a=0 \\), all the roots of \\( f(x)=0 \\) are zero and their ratios are undefined; so we assume from now on that \\( a \\neq 0 \\). Set \\( w=3 x / a \\) and consider\n\\[\n\\begin{aligned}\nF(w) & =27 f(x)=27 f\\left(\\frac{a w}{3}\\right)=a^{3}\\left(w^{3}+3 w^{2}+12 w-16\\right) \\\\\n& =a^{3}(w-1)\\left(w^{2}+4 w+16\\right) .\n\\end{aligned}\n\\]\n\nThe roots of \\( F(w)=0 \\) are \\( 1,-2 \\pm 2 \\sqrt{3} i \\). The roots of \\( f(x)=0 \\) have the same ratios as the roots of \\( F(w)=0 \\), so with suitable numbering we have\n\\[\nx_{1}: x_{2}: x_{3}=1:(-2+2 \\sqrt{3} i):(-2-2 \\sqrt{3} i)\n\\]",
+  "vars": [
+    "x",
+    "w",
+    "x_1",
+    "x_2",
+    "x_3",
+    "f",
+    "F"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "p",
+    "q"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variablex",
+        "w": "auxiliaryw",
+        "x_1": "rootone",
+        "x_2": "roottwo",
+        "x_3": "rootthree",
+        "f": "cubicfun",
+        "F": "scaledfun",
+        "a": "coeffa",
+        "b": "coeffb",
+        "c": "coeffc",
+        "p": "factorp",
+        "q": "factorq"
+      },
+      "question": "1. Let \\( cubicfun(variablex) \\) be a cubic polynomial with roots \\( rootone, roottwo \\), and \\( rootthree \\). Assume that \\( cubicfun(2 variablex) \\) is divisible by \\( cubicfun^{\\prime}(variablex) \\) and compute the ratios \\( rootone: roottwo: rootthree \\).",
+      "solution": "Solution. Let \\( cubicfun(variablex)=variablex^{3}+coeffa\\,variablex^{2}+coeffb\\,variablex+coeffc \\). Since \\( cubicfun(2 variablex) \\) is divisible by \\( cubicfun^{\\prime}(variablex) \\), we have\n\\[\n8\\,variablex^{3}+4\\,coeffa\\,variablex^{2}+2\\,coeffb\\,variablex+coeffc=\\left(3\\,variablex^{2}+2\\,coeffa\\,variablex+coeffb\\right)(factorp\\,variablex+factorq)\n\\]\nfor some \\( factorp \\) and \\( factorq \\). Comparing coefficients we find\n\\[\n\\begin{array}{l}\n3\\,factorp=8, \\quad 2\\,coeffa\\,factorp+3\\,factorq=4\\,coeffa \\\\\ncoeffb\\,factorp+2\\,coeffa\\,factorq=2\\,coeffb, \\quad factorq\\,coeffb=coeffc\n\\end{array}\n\\]\nfrom which it follows that\n\\[\nfactorp=\\frac{8}{3}, \\quad factorq=-\\frac{4\\,coeffa}{9}, \\quad coeffb=\\frac{4\\,coeffa^{2}}{3}, \\quad \\text { and } \\quad coeffc=-\\frac{16\\,coeffa^{3}}{27}\n\\]\n\nHence\n\\[\ncubicfun(variablex)=variablex^{3}+coeffa\\,variablex^{2}+\\frac{4}{3}\\,coeffa^{2}\\,variablex-\\frac{16}{27}\\,coeffa^{3}\n\\]\n\nNow if \\( coeffa=0 \\), all the roots of \\( cubicfun(variablex)=0 \\) are zero and their ratios are undefined; so we assume from now on that \\( coeffa \\neq 0 \\). Set \\( auxiliaryw=3\\,variablex / coeffa \\) and consider\n\\[\n\\begin{aligned}\nscaledfun(auxiliaryw) & =27\\,cubicfun(variablex)=27\\,cubicfun\\left(\\frac{coeffa\\,auxiliaryw}{3}\\right)=coeffa^{3}\\left(auxiliaryw^{3}+3\\,auxiliaryw^{2}+12\\,auxiliaryw-16\\right) \\\\\n& =coeffa^{3}(auxiliaryw-1)\\left(auxiliaryw^{2}+4\\,auxiliaryw+16\\right) .\n\\end{aligned}\n\\]\n\nThe roots of \\( scaledfun(auxiliaryw)=0 \\) are \\( 1,-2 \\pm 2 \\sqrt{3} i \\). The roots of \\( cubicfun(variablex)=0 \\) have the same ratios as the roots of \\( scaledfun(auxiliaryw)=0 \\), so with suitable numbering we have\n\\[\nrootone: roottwo: rootthree = 1 : (-2+2 \\sqrt{3} i) : (-2-2 \\sqrt{3} i)\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandstone",
+        "w": "caravansary",
+        "x_1": "marigold",
+        "x_2": "peppermint",
+        "x_3": "chandelier",
+        "f": "lighthouse",
+        "F": "applecart",
+        "a": "porpoise",
+        "b": "sunflower",
+        "c": "raincloud",
+        "p": "harmonica",
+        "q": "blackbird"
+      },
+      "question": "Problem:\n<<<\n1. Let \\( lighthouse(sandstone) \\) be a cubic polynomial with roots \\( marigold, peppermint \\), and \\( chandelier \\). Assume that \\( lighthouse(2 sandstone) \\) is divisible by \\( lighthouse^{\\prime}(sandstone) \\) and compute the ratios \\( marigold: peppermint: chandelier \\).\n>>>",
+      "solution": "Solution:\n<<<\nSolution. Let \\( lighthouse(sandstone)=sandstone^{3}+porpoise sandstone^{2}+sunflower sandstone+raincloud \\). Since \\( lighthouse(2 sandstone) \\) is divisible by \\( lighthouse^{\\prime}(sandstone) \\), we have\n\\[\n8 sandstone^{3}+4 porpoise sandstone^{2}+2 sunflower sandstone+raincloud=\\left(3 sandstone^{2}+2 porpoise sandstone+sunflower\\right)(harmonica sandstone+blackbird)\n\\]\nfor some \\( harmonica \\) and \\( blackbird \\). Comparing coefficients we find\n\\[\n\\begin{array}{l}\n3 harmonica=8, \\quad 2 porpoise harmonica+3 blackbird=4 porpoise \\\\\nsunflower harmonica+2 porpoise blackbird=2 sunflower, \\quad blackbird sunflower=raincloud\n\\end{array}\n\\]\nfrom which it follows that\n\\[\nharmonica=8 / 3, \\quad blackbird=-4 porpoise / 9, \\quad sunflower=4 porpoise^{2} / 3, \\quad \\text { and } \\quad raincloud=-16 porpoise^{3} / 27\n\\]\n\nHence\n\\[\nlighthouse(sandstone)=sandstone^{3}+porpoise sandstone^{2}+\\frac{4}{3} porpoise^{2} sandstone-\\frac{16}{27} porpoise^{3}\n\\]\n\nNow if \\( porpoise=0 \\), all the roots of \\( lighthouse(sandstone)=0 \\) are zero and their ratios are undefined; so we assume from now on that \\( porpoise \\neq 0 \\). Set \\( caravansary=3 sandstone / porpoise \\) and consider\n\\[\n\\begin{aligned}\napplecart(caravansary) & =27 lighthouse(sandstone)=27 lighthouse\\left(\\frac{porpoise caravansary}{3}\\right)=porpoise^{3}\\left(caravansary^{3}+3 caravansary^{2}+12 caravansary-16\\right) \\\\\n& =porpoise^{3}(caravansary-1)\\left(caravansary^{2}+4 caravansary+16\\right) .\n\\end{aligned}\n\\]\n\nThe roots of \\( applecart(caravansary)=0 \\) are \\( 1,-2 \\pm 2 \\sqrt{3} i \\). The roots of \\( lighthouse(sandstone)=0 \\) have the same ratios as the roots of \\( applecart(caravansary)=0 \\), so with suitable numbering we have\n\\[\nmarigold: peppermint: chandelier=1:(-2+2 \\sqrt{3} i):(-2-2 \\sqrt{3} i)\n\\]\n>>>"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "w": "stillvalue",
+        "x_1": "lastpoint",
+        "x_2": "middlepoint",
+        "x_3": "firstpoint",
+        "f": "constantfunc",
+        "F": "steadyfunc",
+        "a": "variable",
+        "b": "shiftingnum",
+        "c": "fixednum",
+        "p": "unknownvalue",
+        "q": "knownvalue"
+      },
+      "question": "1. Let \\( constantfunc(fixedvalue) \\) be a cubic polynomial with roots \\( lastpoint, middlepoint \\), and \\( firstpoint \\). Assume that \\( constantfunc(2 fixedvalue) \\) is divisible by \\( constantfunc^{\\prime}(fixedvalue) \\) and compute the ratios \\( lastpoint: middlepoint: firstpoint \\).",
+      "solution": "Solution. Let \\( constantfunc(fixedvalue)=fixedvalue^{3}+variable fixedvalue^{2}+shiftingnum fixedvalue+fixednum \\). Since \\( constantfunc(2 fixedvalue) \\) is divisible by \\( constantfunc^{\\prime}(fixedvalue) \\), we have\n\\[\n8 fixedvalue^{3}+4 variable fixedvalue^{2}+2 shiftingnum fixedvalue+fixednum=\\left(3 fixedvalue^{2}+2 variable fixedvalue+shiftingnum\\right)(unknownvalue fixedvalue+knownvalue)\n\\]\nfor some \\( unknownvalue \\) and \\( knownvalue \\). Comparing coefficients we find\n\\[\n\\begin{array}{l}\n3\\,unknownvalue=8, \\quad 2\\,variable\\,unknownvalue+3\\,knownvalue=4\\,variable \\\\\nshiftingnum\\,unknownvalue+2\\,variable\\,knownvalue=2\\,shiftingnum, \\quad knownvalue\\,shiftingnum=fixednum\n\\end{array}\n\\]\nfrom which it follows that\n\\[\nunknownvalue=8/3, \\quad knownvalue=-4\\,variable/9, \\quad shiftingnum=4\\,variable^{2}/3, \\quad \\text { and } \\quad fixednum=-16\\,variable^{3}/27\n\\]\n\nHence\n\\[\nconstantfunc(fixedvalue)=fixedvalue^{3}+variable fixedvalue^{2}+\\frac{4}{3} variable^{2} fixedvalue-\\frac{16}{27} variable^{3}\n\\]\n\nNow if \\( variable=0 \\), all the roots of \\( constantfunc(fixedvalue)=0 \\) are zero and their ratios are undefined; so we assume from now on that \\( variable \\neq 0 \\). Set \\( stillvalue=3 fixedvalue/variable \\) and consider\n\\[\n\\begin{aligned}\nsteadyfunc(stillvalue) & =27\\,constantfunc(fixedvalue)=27\\,constantfunc\\left(\\frac{variable\\,stillvalue}{3}\\right)=variable^{3}\\left(stillvalue^{3}+3\\,stillvalue^{2}+12\\,stillvalue-16\\right) \\\\\n& =variable^{3}(stillvalue-1)\\left(stillvalue^{2}+4\\,stillvalue+16\\right).\n\\end{aligned}\n\\]\n\nThe roots of \\( steadyfunc(stillvalue)=0 \\) are \\( 1,-2 \\pm 2 \\sqrt{3} i \\). The roots of \\( constantfunc(fixedvalue)=0 \\) have the same ratios as the roots of \\( steadyfunc(stillvalue)=0 \\), so with suitable numbering we have\n\\[\nlastpoint: middlepoint: firstpoint=1:(-2+2 \\sqrt{3} i):(-2-2 \\sqrt{3} i)\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "w": "hjgrksla",
+        "x_1": "pqnrcvmd",
+        "x_2": "lzkhfedu",
+        "x_3": "smtgakvf",
+        "f": "dgnrplse",
+        "F": "trbqhxui",
+        "a": "vkwsiejd",
+        "b": "fjlqprza",
+        "c": "umrycvao",
+        "p": "gcznfeas",
+        "q": "oxtewklm"
+      },
+      "question": "1. Let \\( dgnrplse(qzxwvtnp) \\) be a cubic polynomial with roots \\( pqnrcvmd, lzkhfedu \\), and \\( smtgakvf \\). Assume that \\( dgnrplse(2 qzxwvtnp) \\) is divisible by \\( dgnrplse^{\\prime}(qzxwvtnp) \\) and compute the ratios \\( pqnrcvmd: lzkhfedu: smtgakvf \\).",
+      "solution": "Solution. Let \\( dgnrplse(qzxwvtnp)=qzxwvtnp^{3}+vkwsiejd qzxwvtnp^{2}+fjlqprza qzxwvtnp+umrycvao \\). Since \\( dgnrplse(2 qzxwvtnp) \\) is divisible by \\( dgnrplse^{\\prime}(qzxwvtnp) \\), we have\n\\[\n8 qzxwvtnp^{3}+4 vkwsiejd qzxwvtnp^{2}+2 fjlqprza qzxwvtnp+umrycvao=\\left(3 qzxwvtnp^{2}+2 vkwsiejd qzxwvtnp+fjlqprza\\right)(gcznfeas qzxwvtnp+oxtewklm)\n\\]\nfor some \\( gcznfeas \\) and \\( oxtewklm \\). Comparing coefficients we find\n\\[\n\\begin{array}{l}\n3 gcznfeas=8, \\quad 2 vkwsiejd gcznfeas+3 oxtewklm=4 vkwsiejd \\\\\nfjlqprza gcznfeas+2 vkwsiejd oxtewklm=2 fjlqprza, \\quad oxtewklm fjlqprza=umrycvao\n\\end{array}\n\\]\nfrom which it follows that\n\\[\ngcznfeas=8 / 3, \\quad oxtewklm=-4 vkwsiejd / 9, \\quad fjlqprza=4 vkwsiejd^{2} / 3, \\quad \\text { and } \\quad umrycvao=-16 vkwsiejd^{3} / 27\n\\]\nHence\n\\[\ndgnrplse(qzxwvtnp)=qzxwvtnp^{3}+vkwsiejd qzxwvtnp^{2}+\\frac{4}{3} vkwsiejd^{2} qzxwvtnp-\\frac{16}{27} vkwsiejd^{3}\n\\]\nNow if \\( vkwsiejd=0 \\), all the roots of \\( dgnrplse(qzxwvtnp)=0 \\) are zero and their ratios are undefined; so we assume from now on that \\( vkwsiejd \\neq 0 \\). Set \\( hjgrksla=3 qzxwvtnp / vkwsiejd \\) and consider\n\\[\n\\begin{aligned}\ntrbqhxui(hjgrksla) & =27 dgnrplse(qzxwvtnp)=27 dgnrplse\\left(\\frac{vkwsiejd hjgrksla}{3}\\right)=vkwsiejd^{3}\\left(hjgrksla^{3}+3 hjgrksla^{2}+12 hjgrksla-16\\right) \\\\\n& =vkwsiejd^{3}(hjgrksla-1)\\left(hjgrksla^{2}+4 hjgrksla+16\\right) .\n\\end{aligned}\n\\]\nThe roots of \\( trbqhxui(hjgrksla)=0 \\) are \\( 1,-2 \\pm 2 \\sqrt{3} i \\). The roots of \\( dgnrplse(qzxwvtnp)=0 \\) have the same ratios as the roots of \\( trbqhxui(hjgrksla)=0 \\), so with suitable numbering we have\n\\[\npqnrcvmd: lzkhfedu: smtgakvf=1:(-2+2 \\sqrt{3} i):(-2-2 \\sqrt{3} i)\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let f(x) be a cubic polynomial with leading coefficient 4 whose three roots x_1 , x_2 , x_3 are not all equal to 0.  Suppose that f(3x) is divisible by the derivative f '(x).  Determine the ratio of the roots x_1 : x_2 : x_3 (up to a common non-zero factor).",
+      "solution": "Because the leading coefficient is 4 we may write\n  f(x)=4x^{3}+ax^{2}+bx+c,          a,b,c \\in \\mathbb C.\nConsequently\n  f'(x)=12x^{2}+2ax+b.\n\n1.  Impose the divisibility condition.\n    If f(3x) is divisible by f'(x) there exist constants p,q such that\n        f(3x)=(px+q)\\,f'(x).\n    Compute both sides:\n        f(3x)=4(3x)^{3}+a(3x)^{2}+b(3x)+c\n              =108x^{3}+9ax^{2}+3bx+c,\n        (px+q)f'(x)=(px+q)(12x^{2}+2ax+b)\n              =12p x^{3}+(12q+2ap)x^{2}+(2aq+bp)x+bq.\n    Match the coefficients of equal powers of x:\n        12p   =108,                                   (1)\n        12q+2ap= 9a,                                   (2)\n        2aq+bp = 3b,                                   (3)\n        bq     = c.                                    (4)\n\n2.  Solve for p,q,b,c in terms of a.\n        From (1)  p=108/12=9.\n        From (2)  12q+18a=9a  \\Rightarrow q=-\\tfrac34 a.\n        Insert p,q into (3):\n            2a(-\\tfrac34 a)+9b=3b\n            -\\tfrac32 a^{2}+9b=3b \\Rightarrow 6b=\\tfrac32 a^{2}\n            \\Rightarrow b=\\tfrac14 a^{2}.\n        From (4)  c=bq=\\tfrac14 a^{2}\\bigl(-\\tfrac34 a\\bigr)=-\\tfrac{3}{16}a^{3}.\n\n    Hence every cubic that fulfils the requirement (apart from the yet-to-be-considered case a=0) is\n        f(x)=4x^{3}+ax^{2}+\\tfrac14 a^{2}x-\\tfrac{3}{16}a^{3}.          (5)\n\n3.  Find the roots of (5).\n    Put  w=\\dfrac{4x}{a}\\;(a\\neq0) \\;\\Rightarrow\\; x=\\dfrac{a}{4}w.  Substituting in (5),\n        f\\!\\left(\\dfrac{a}{4}w\\right)=\\dfrac{a^{3}}{16}\\bigl(w^{3}+w^{2}+w-3\\bigr).\n    Thus the roots of f are in the same ratio as the roots of\n        g(w)=w^{3}+w^{2}+w-3.\n    Factor g:\n        g(w)=(w-1)(w^{2}+2w+3).\n    Therefore\n        w_{1}= 1,\n        w_{2}=-1+\\mathrm i\\sqrt2,\n        w_{3}=-1-\\mathrm i\\sqrt2.\n\n    Because x=\\dfrac{a}{4}w, the three roots of f are proportional to w_{1},w_{2},w_{3}.  Hence\n        x_{1}:x_{2}:x_{3}=1:(-1+\\mathrm i\\sqrt2):(-1-\\mathrm i\\sqrt2).\n\n4.  The excluded degenerate case.\n    If a=0, then equations (2)-(4) force b=c=0, so f(x)=4x^{3}.  All three roots are 0 and their ratio is indeterminate.  This situation is ruled out by the assumption that not all roots are 0, so the ratio obtained in step 3 is the unique answer.\n\nAnswer.\n  x_1 : x_2 : x_3 = 1 : (-1 + i\\sqrt{2}) : (-1 - i\\sqrt{2}).",
+      "_meta": {
+        "core_steps": [
+          "Write general monic cubic f(x)=x^3+ax^2+bx+c and express divisibility f(2x)=f'(x)(px+q).",
+          "Compare coefficients to solve for p, q, b, c in terms of a (up to an overall scale).",
+          "Use a linear change of variable to clear fractions and simplify the cubic.",
+          "Factor the simplified cubic and read off its three roots.",
+          "State the proportionality (ratios) of the original roots from the factored form."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Constant by which the argument of f is magnified in the divisibility condition.",
+            "original": "2 in  f(2x)"
+          },
+          "slot2": {
+            "description": "Normalization choice that the leading coefficient of f(x) is 1 (monic cubic).",
+            "original": "implicit factor 1 on x^3 term"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

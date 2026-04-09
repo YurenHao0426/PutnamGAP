@@ -1,0 +1,109 @@
+{
+  "index": "1983-B-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-4\nLet \\( f(n)=n+[\\sqrt{n}] \\) where \\( [x] \\) is the largest integer less than or equal to \\( x \\). Prove that, for every positive integer \\( m \\), the sequence\n\\[\nm, f(m), f(f(m)), f(f(f(m))), \\ldots\n\\]\ncontains at least one square of an integer.",
+  "solution": "B-4.\nWe can let \\( m=k^{2}+j \\), where \\( k \\) and \\( j \\) are integers with \\( 0 \\leqslant j \\leqslant 2 k \\), since the next square after \\( k^{2} \\) is \\( k^{2}+2 k+1 \\); let this \\( j \\) be the excess for \\( m \\). We note that \\( [\\sqrt{m}]=k \\) and \\( f(m)= \\) \\( k^{2}+j+k \\). If the excess \\( j \\) is \\( 0, m \\) is already a square. Let \\( A \\) consist of the \\( m \\) 's with excess \\( j \\) satisfying \\( 0 \\leqslant j \\leqslant k \\) and \\( B \\) consist of the \\( m \\) 's with \\( k<j \\leqslant 2 k \\). If \\( m \\) is in \\( B \\),\n\\[\nf(m)=k^{2}+j+k=(k+1)^{2}+(j-k-1)\n\\]\nwith the excess \\( j-k-1 \\) for \\( f(m) \\) satisfying \\( 0 \\leqslant j-k-1 \\leqslant k+1 \\), and hence \\( f(m) \\) is either a square or is in \\( A \\). Thus it suffices to deal with the case in which \\( m \\) is in \\( A \\). Then \\( [\\sqrt{m+k}]=k \\) and\n\\[\nf^{2}(m)=f(f(m))=f(m+k)=m+2 k=(k+1)^{2}+(j-1)\n\\]\n\nHence \\( f^{2}(m) \\) is either a square or an integer in \\( A \\) with excess smaller than that of \\( m \\). Continuing, one sees that \\( f^{\\prime}(m) \\) is a square for some \\( r \\) with \\( 0 \\leqslant r \\leqslant 2 j \\).",
+  "vars": [
+    "f",
+    "n",
+    "m",
+    "k",
+    "j",
+    "r"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "funcseq",
+        "n": "indexvar",
+        "m": "startnum",
+        "k": "baseroot",
+        "j": "excesspt",
+        "r": "iterstep"
+      },
+      "question": "Problem B-4\nLet \\( funcseq(indexvar)=indexvar+[\\sqrt{indexvar}] \\) where \\( [x] \\) is the largest integer less than or equal to \\( x \\). Prove that, for every positive integer \\( startnum \\), the sequence\n\\[\nstartnum, funcseq(startnum), funcseq(funcseq(startnum)), funcseq(funcseq(funcseq(startnum))), \\ldots\n\\]\ncontains at least one square of an integer.",
+      "solution": "B-4.\nWe can let \\( startnum=baseroot^{2}+excesspt \\), where \\( baseroot \\) and \\( excesspt \\) are integers with \\( 0 \\leqslant excesspt \\leqslant 2 baseroot \\), since the next square after \\( baseroot^{2} \\) is \\( baseroot^{2}+2 baseroot+1 \\); let this \\( excesspt \\) be the excess for \\( startnum \\). We note that \\( [\\sqrt{startnum}]=baseroot \\) and \\( funcseq(startnum)= \\) \\( baseroot^{2}+excesspt+baseroot \\). If the excess \\( excesspt \\) is \\( 0, startnum \\) is already a square. Let \\( A \\) consist of the \\( startnum \\)'s with excess \\( excesspt \\) satisfying \\( 0 \\leqslant excesspt \\leqslant baseroot \\) and \\( B \\) consist of the \\( startnum \\)'s with \\( baseroot<excesspt \\leqslant 2 baseroot \\). If \\( startnum \\) is in \\( B \\),\n\\[\nfuncseq(startnum)=baseroot^{2}+excesspt+baseroot=(baseroot+1)^{2}+(excesspt-baseroot-1)\n\\]\nwith the excess \\( excesspt-baseroot-1 \\) for \\( funcseq(startnum) \\) satisfying \\( 0 \\leqslant excesspt-baseroot-1 \\leqslant baseroot+1 \\), and hence \\( funcseq(startnum) \\) is either a square or is in \\( A \\). Thus it suffices to deal with the case in which \\( startnum \\) is in \\( A \\). Then \\( [\\sqrt{startnum+baseroot}]=baseroot \\) and\n\\[\nfuncseq^{2}(startnum)=funcseq(funcseq(startnum))=funcseq(startnum+baseroot)=startnum+2 baseroot=(baseroot+1)^{2}+(excesspt-1)\n\\]\nHence \\( funcseq^{2}(startnum) \\) is either a square or an integer in \\( A \\) with excess smaller than that of \\( startnum \\). Continuing, one sees that \\( funcseq^{\\prime}(startnum) \\) is a square for some \\( iterstep \\) with \\( 0 \\leqslant iterstep \\leqslant 2 excesspt \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "marmalade",
+        "n": "periwinkle",
+        "m": "chandelier",
+        "k": "blackboard",
+        "j": "tablespoon",
+        "r": "saxophone"
+      },
+      "question": "Problem B-4\nLet \\( marmalade(periwinkle)=periwinkle+[\\sqrt{periwinkle}] \\) where \\( [x] \\) is the largest integer less than or equal to \\( x \\). Prove that, for every positive integer \\( chandelier \\), the sequence\n\\[\nchandelier, marmalade(chandelier), marmalade(marmalade(chandelier)), marmalade(marmalade(marmalade(chandelier))), \\ldots\n\\]\ncontains at least one square of an integer.",
+      "solution": "B-4.\nWe can let \\( chandelier=blackboard^{2}+tablespoon \\), where \\( blackboard \\) and \\( tablespoon \\) are integers with \\( 0 \\leqslant tablespoon \\leqslant 2 blackboard \\), since the next square after \\( blackboard^{2} \\) is \\( blackboard^{2}+2 blackboard+1 \\); let this \\( tablespoon \\) be the excess for \\( chandelier \\). We note that \\( [\\sqrt{chandelier}]=blackboard \\) and \\( marmalade(chandelier)= \\) \\( blackboard^{2}+tablespoon+blackboard \\). If the excess \\( tablespoon \\) is \\( 0, chandelier \\) is already a square. Let \\( A \\) consist of the \\( chandelier \\)'s with excess \\( tablespoon \\) satisfying \\( 0 \\leqslant tablespoon \\leqslant blackboard \\) and \\( B \\) consist of the \\( chandelier \\)'s with \\( blackboard<tablespoon \\leqslant 2 blackboard \\). If \\( chandelier \\) is in \\( B \\),\n\\[\nmarmalade(chandelier)=blackboard^{2}+tablespoon+blackboard=(blackboard+1)^{2}+(tablespoon-blackboard-1)\n\\]\nwith the excess \\( tablespoon-blackboard-1 \\) for \\( marmalade(chandelier) \\) satisfying \\( 0 \\leqslant tablespoon-blackboard-1 \\leqslant blackboard+1 \\), and hence \\( marmalade(chandelier) \\) is either a square or is in \\( A \\). Thus it suffices to deal with the case in which \\( chandelier \\) is in \\( A \\). Then \\( [\\sqrt{chandelier+blackboard}]=blackboard \\) and\n\\[\nmarmalade^{2}(chandelier)=marmalade(marmalade(chandelier))=marmalade(chandelier+blackboard)=chandelier+2 blackboard=(blackboard+1)^{2}+(tablespoon-1)\n\\]\nHence \\( marmalade^{2}(chandelier) \\) is either a square or an integer in \\( A \\) with excess smaller than that of \\( chandelier \\). Continuing, one sees that \\( marmalade^{\\prime}(chandelier) \\) is a square for some \\( saxophone \\) with \\( 0 \\leqslant saxophone \\leqslant 2 tablespoon \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "dysfunction",
+        "n": "fractional",
+        "m": "negative",
+        "k": "nonsquare",
+        "j": "deficiency",
+        "r": "stagnation"
+      },
+      "question": "Problem B-4\nLet \\( dysfunction(fractional)=fractional+[\\sqrt{fractional}] \\) where \\( [x] \\) is the largest integer less than or equal to \\( x \\). Prove that, for every positive integer \\( negative \\), the sequence\n\\[\nnegative, dysfunction(negative), dysfunction(dysfunction(negative)), dysfunction(dysfunction(dysfunction(negative))), \\ldots\n\\]\ncontains at least one square of an integer.",
+      "solution": "B-4.\nWe can let \\( negative=nonsquare^{2}+deficiency \\), where \\( nonsquare \\) and \\( deficiency \\) are integers with \\( 0 \\leqslant deficiency \\leqslant 2 nonsquare \\), since the next square after \\( nonsquare^{2} \\) is \\( nonsquare^{2}+2 nonsquare+1 \\); let this \\( deficiency \\) be the excess for \\( negative \\). We note that \\( [\\sqrt{negative}]=nonsquare \\) and \\( dysfunction(negative)= \\) \\( nonsquare^{2}+deficiency+nonsquare \\). If the excess \\( deficiency \\) is \\( 0, negative \\) is already a square. Let \\( A \\) consist of the \\( negative \\) 's with excess \\( deficiency \\) satisfying \\( 0 \\leqslant deficiency \\leqslant nonsquare \\) and \\( B \\) consist of the \\( negative \\) 's with \\( nonsquare<deficiency \\leqslant 2 nonsquare \\). If \\( negative \\) is in \\( B \\),\n\\[\ndysfunction(negative)=nonsquare^{2}+deficiency+nonsquare=(nonsquare+1)^{2}+(deficiency-nonsquare-1)\n\\]\nwith the excess \\( deficiency-nonsquare-1 \\) for \\( dysfunction(negative) \\) satisfying \\( 0 \\leqslant deficiency-nonsquare-1 \\leqslant nonsquare+1 \\), and hence \\( dysfunction(negative) \\) is either a square or is in \\( A \\). Thus it suffices to deal with the case in which \\( negative \\) is in \\( A \\). Then \\( [\\sqrt{negative+nonsquare}]=nonsquare \\) and\n\\[\ndysfunction^{2}(negative)=dysfunction(dysfunction(negative))=dysfunction(negative+nonsquare)=negative+2 nonsquare=(nonsquare+1)^{2}+(deficiency-1)\n\\]\n\nHence \\( dysfunction^{2}(negative) \\) is either a square or an integer in \\( A \\) with excess smaller than that of \\( negative \\). Continuing, one sees that \\( dysfunction^{\\prime}(negative) \\) is a square for some \\( stagnation \\) with \\( 0 \\leqslant stagnation \\leqslant 2 deficiency \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "n": "hjgrksla",
+        "m": "blftqrzs",
+        "k": "wjdnbzpl",
+        "j": "vsmqtrna",
+        "r": "pkhjldwe"
+      },
+      "question": "Problem B-4\nLet \\( qzxwvtnp(hjgrksla)=hjgrksla+[\\sqrt{hjgrksla}] \\) where \\( [x] \\) is the largest integer less than or equal to \\( x \\). Prove that, for every positive integer \\( blftqrzs \\), the sequence\n\\[\nblftqrzs, qzxwvtnp(blftqrzs), qzxwvtnp(qzxwvtnp(blftqrzs)), qzxwvtnp(qzxwvtnp(qzxwvtnp(blftqrzs))), \\ldots\n\\]\ncontains at least one square of an integer.",
+      "solution": "B-4.\nWe can let \\( blftqrzs=wjdnbzpl^{2}+vsmqtrna \\), where \\( wjdnbzpl \\) and \\( vsmqtrna \\) are integers with \\( 0 \\leqslant vsmqtrna \\leqslant 2 wjdnbzpl \\), since the next square after \\( wjdnbzpl^{2} \\) is \\( wjdnbzpl^{2}+2 wjdnbzpl+1 \\); let this \\( vsmqtrna \\) be the excess for \\( blftqrzs \\). We note that \\( [\\sqrt{blftqrzs}]=wjdnbzpl \\) and \\( qzxwvtnp(blftqrzs)= \\) \\( wjdnbzpl^{2}+vsmqtrna+wjdnbzpl \\). If the excess \\( vsmqtrna \\) is \\( 0, blftqrzs \\) is already a square. Let \\( A \\) consist of the \\( blftqrzs \\) 's with excess \\( vsmqtrna \\) satisfying \\( 0 \\leqslant vsmqtrna \\leqslant wjdnbzpl \\) and \\( B \\) consist of the \\( blftqrzs \\) 's with \\( wjdnbzpl<vsmqtrna \\leqslant 2 wjdnbzpl \\). If \\( blftqrzs \\) is in \\( B \\),\n\\[\nqzxwvtnp(blftqrzs)=wjdnbzpl^{2}+vsmqtrna+wjdnbzpl=(wjdnbzpl+1)^{2}+(vsmqtrna-wjdnbzpl-1)\n\\]\nwith the excess \\( vsmqtrna-wjdnbzpl-1 \\) for \\( qzxwvtnp(blftqrzs) \\) satisfying \\( 0 \\leqslant vsmqtrna-wjdnbzpl-1 \\leqslant wjdnbzpl+1 \\), and hence \\( qzxwvtnp(blftqrzs) \\) is either a square or is in \\( A \\). Thus it suffices to deal with the case in which \\( blftqrzs \\) is in \\( A \\). Then \\( [\\sqrt{blftqrzs+wjdnbzpl}]=wjdnbzpl \\) and\n\\[\nqzxwvtnp^{2}(blftqrzs)=qzxwvtnp(qzxwvtnp(blftqrzs))=qzxwvtnp(blftqrzs+wjdnbzpl)=blftqrzs+2 wjdnbzpl=(wjdnbzpl+1)^{2}+(vsmqtrna-1)\n\\]\nHence \\( qzxwvtnp^{2}(blftqrzs) \\) is either a square or an integer in \\( A \\) with excess smaller than that of \\( blftqrzs \\). Continuing, one sees that \\( qzxwvtnp^{\\prime}(blftqrzs) \\) is a square for some \\( pkhjldwe \\) with \\( 0 \\leqslant pkhjldwe \\leqslant 2 vsmqtrna \\)."
+    },
+    "kernel_variant": {
+      "question": "Putnam-style problem.\n\nFor every positive integer n define\n    g(n)=n+\\lfloor\\sqrt{n}\\rfloor .\nFor a given positive integer N put a_0=N and a_{k+1}=g(a_k) for k\\geq 0.\n\n(a)  Prove that the infinite sequence (a_k)_{k\\geq 0} contains at least one perfect square.\n\n(b)  Write N in the form N=s^2+t with integers s\\geq 0 and 0\\leq t\\leq 2s (this is always possible because the two consecutive squares surrounding N are s^2 and (s+1)^2=s^2+2s+1).  Show that there is an index \\ell  with 0\\leq \\ell \\leq 3t for which a_\\ell  is a perfect square.",
+      "solution": "Throughout, for any positive integer x we denote\n      q(x)=\\lfloor \\sqrt{x}\\rfloor    (the ``base'' of x),\n      r(x)=x-q(x)^2   (the ``excess'' of x).\nThus every x can be written uniquely as x=q^2+r with 0\\leq r\\leq 2q.\nClearly x is a square exactly when r(x)=0.\n\nA crucial observation.\n\nLemma 1.  Let x=q^2+r with 0\\leq r\\leq 2q.\n(a) If r>q (the excess is large) then\n        g(x)=(q+1)^2+(r-q-1)                 (1)\n    and 0\\leq r-q-1\\leq q-1 < q+1, so the new excess is smaller than its new base.\n(b) If r\\leq q (the excess is small) then\n        g(g(x))=(q+1)^2+(r-1).               (2)\n    In other words, two successive applications of g increase the base by 1 and decrease the excess by 1.\n\nProof.\nWrite x=q^2+r.\nBecause \\lfloor \\sqrt{x}\\rfloor =q, we have g(x)=x+q=q^2+q+r.\n\n(a)  If r>q, subtract (q+1)^2=q^2+2q+1 from g(x):\n        g(x)-(q+1)^2 = (q^2+q+r)-(q^2+2q+1)=r-q-1.\nThe inequalities on r imply 0\\leq r-q-1\\leq q-1<q+1.  Hence (1) holds and the new excess is at most q-1.\n\n(b)  Assume 0\\leq r\\leq q.  Then q^2+q+r<q^2+2q+1=(q+1)^2, so q(g(x)) is still q.\nApplying g once more yields\n        g(g(x)) = g(x)+q = (q^2+q+r)+q = q^2+2q+r = (q+1)^2+(r-1),\nwhich is (2).\n\\blacksquare \n\nPart (a)  (existence of a square).\n\nStart with a_0=N.  If a_k is already a square we are done, so assume r(a_k)>0.\nIf r(a_k)>q(a_k) we may use (1) to obtain a_{k+1} with strictly smaller excess; if r(a_k)\\leq q(a_k) we may use (2) and obtain a_{k+2} whose excess is smaller by 1.  Because the excess is a non-negative integer, it cannot decrease indefinitely without eventually becoming 0.  Hence some term of the sequence is a perfect square, proving (a).\n\nPart (b)  (quantitative bound).\n\nWrite N=s^2+t with 0\\leq t\\leq 2s as required.\nTwo cases will be treated separately.\n\nCase 1.  0\\leq t\\leq s  (small excess).\nWe start in the situation of Lemma 1(b) with q=s and r=t.  Each pair of steps (2) decreases the excess by 1 while never increasing it.  After at most 2t steps the excess becomes 0, so\n        \\ell \\leq 2t\\leq 3t.\n\nCase 2.  s<t\\leq 2s  (large excess).\nA single application of (1) produces\n        a_1=(s+1)^2+(t-s-1).\nSet t'=t-s-1.  Because t\\leq 2s we have 0\\leq t'\\leq s-1 < s+1; hence a_1 now lies in the small-excess regime dealt with in Case 1.  Starting from a_1 we therefore need at most 2t' further steps to reach a square.  Altogether\n        \\ell \\leq 1+2t' = 1+2(t-s-1) = 2t-2s-1.\nSince t\\leq 2s, we have 2s\\geq t and hence\n        \\ell \\leq 2t-t-1 = t-1 < 3t.\n\nCombining Cases 1 and 2, in every situation a perfect square appears after at most 3t steps, establishing statement (b).\n\nRemark.  The argument actually gives the better bound \\ell \\leq 2t (and even \\ell \\leq 2t-1 when t>s), but the problem only asks for the weaker estimate \\ell \\leq 3t.",
+      "_meta": {
+        "core_steps": [
+          "Write m as k² + j with 0 ≤ j ≤ 2k (distance from the lower square).",
+          "Compute f(m) = k² + j + k and rewrite it relative to (k+1)²; record new excess.",
+          "Split into two cases (small vs. large excess).  If excess is large, one application of f moves the number to the small-excess case or directly to a square.",
+          "In the small-excess case, two applications of f decrease the excess by exactly 1.",
+          "Iterate the previous step until the excess becomes 0, so some iterate is a perfect square."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Names chosen for the quotient and remainder when writing m = k² + j",
+            "original": "k, j"
+          },
+          "slot2": {
+            "description": "Labels assigned to the two excess-classes",
+            "original": "A, B"
+          },
+          "slot3": {
+            "description": "Exact cut-off between the two classes (currently ‘j ≤ k’ vs. ‘j > k’); any equivalent split that still sends the ‘large’ class into the ‘small’ one after one iteration works",
+            "original": "k"
+          },
+          "slot4": {
+            "description": "Stated upper bound on the number of iterates needed (now ‘≤ 2j’); any larger explicit bound leaves the argument intact",
+            "original": "2j"
+          },
+          "slot5": {
+            "description": "Symbol used for that iteration count",
+            "original": "r"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

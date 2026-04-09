@@ -1,0 +1,148 @@
+{
+  "index": "1938-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "6. A swimmer stands at one corner of a square swimming pool and wishes to reach the diagonally opposite corner. If \\( w \\) is his walking speed and \\( s \\) is his swimming speed \\( (s<w) \\), find his path for shortest time. [Consider two cases: (i) \\( w / s<\\sqrt{2} \\), and (ii) \\( w / s>\\sqrt{2} \\).]",
+  "solution": "Solution. Let the square pool be denoted by \\( A B C D \\), with the swimmer initially at \\( A \\) and desirous of reaching \\( C \\). The path of least time can evidently be described as follows. The swimmer walks from \\( A \\) to \\( E \\) (a point on side \\( A B \\) ), swims from \\( E \\) to \\( F \\) where \\( F \\) is on \\( B C \\), and then walks from \\( F \\) to \\( C \\). Note that a path like \\( A G H C \\) is time equivalent to a path of the type described with \\( F=C \\).\n\nLet \\( \\overline{A E}=x, \\overline{E F}=y, \\overline{F C}=z \\). Then the time \\( T \\) is given by \\( T= \\) \\( (x+z) / w+(y / s) \\). If the \\( \\operatorname{sum} x+z \\) is fixed, then the sum \\( y \\sin \\alpha+ \\) \\( y \\cos \\alpha \\) is also fixed, and \\( y \\) is minimal when \\( (\\sin \\alpha+\\cos \\alpha) \\) is maximal. This maximum is attained for \\( \\alpha=45^{\\circ} \\).\n\nThus for a minimal time path, \\( x=z \\) and \\( y=\\sqrt{2}(l-x) \\), where \\( l \\) is the length of a side of the pool. Accordingly, we have to minimize \\( T= \\) \\( (2 x / w)+\\sqrt{2}(l-x) / s \\) for \\( 0 \\leq x \\leq l \\).\n\nBut \\( T \\) is a linear function of \\( x \\), so its maximum occurs at an endpoint of the interval. If \\( x=0, T=\\sqrt{2 l} / s \\), and if \\( x=l, T=2 l / w \\).\n\nIf \\( \\sqrt{2} l / s<2 l / w \\) then \\( w / s<\\sqrt{2} \\), and conversely. Hence, if \\( w / s<\\sqrt{2} \\) the minimal path is unique and the swimmer should swim diagonally across the pool from \\( A \\) to \\( C \\). If \\( w / s>\\sqrt{2} \\), he should walk from \\( A \\) to \\( B \\) to \\( C \\). Finally, if \\( w / s=\\sqrt{2}, T \\) is independent of \\( x \\) and there are infinitely many minimizing paths, in fact any path \\( A E F C \\) for which \\( \\alpha=45^{\\circ} \\).",
+  "vars": [
+    "x",
+    "y",
+    "z",
+    "\\\\alpha",
+    "T"
+  ],
+  "params": [
+    "w",
+    "s",
+    "l",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizwalk",
+        "y": "swimlength",
+        "z": "finalwalk",
+        "\\alpha": "cornerangle",
+        "T": "totaltime",
+        "w": "walkspeed",
+        "s": "swimspeed",
+        "l": "sidelength",
+        "A": "vertexa",
+        "B": "vertexb",
+        "C": "vertexc",
+        "D": "vertexd",
+        "E": "vertexe",
+        "F": "vertexf",
+        "G": "vertexg",
+        "H": "vertexh"
+      },
+      "question": "6. A swimmer stands at one corner of a square swimming pool and wishes to reach the diagonally opposite corner. If \\( walkspeed \\) is his walking speed and \\( swimspeed \\) is his swimming speed \\( (swimspeed<walkspeed) \\), find his path for shortest time. [Consider two cases: (i) \\( walkspeed / swimspeed<\\sqrt{2} \\), and (ii) \\( walkspeed / swimspeed>\\sqrt{2} \\).]",
+      "solution": "Solution. Let the square pool be denoted by \\( vertexa vertexb vertexc vertexd \\), with the swimmer initially at \\( vertexa \\) and desirous of reaching \\( vertexc \\). The path of least time can evidently be described as follows. The swimmer walks from \\( vertexa \\) to \\( vertexe \\) (a point on side \\( vertexa vertexb \\) ), swims from \\( vertexe \\) to \\( vertexf \\) where \\( vertexf \\) is on \\( vertexb vertexc \\), and then walks from \\( vertexf \\) to \\( vertexc \\). Note that a path like \\( vertexa vertexg vertexh vertexc \\) is time equivalent to a path of the type described with \\( vertexf=vertexc \\).\n\nLet \\( \\overline{vertexa vertexe}=horizwalk, \\overline{vertexe vertexf}=swimlength, \\overline{vertexf vertexc}=finalwalk \\). Then the time \\( totaltime \\) is given by \\( totaltime=(horizwalk+finalwalk)/walkspeed+(swimlength/swimspeed) \\). If the \\operatorname{sum} \\( horizwalk+finalwalk \\) is fixed, then the sum \\( swimlength \\sin cornerangle+ swimlength \\cos cornerangle \\) is also fixed, and \\( swimlength \\) is minimal when \\( (\\sin cornerangle+\\cos cornerangle) \\) is maximal. This maximum is attained for \\( cornerangle=45^{\\circ} \\).\n\nThus for a minimal time path, \\( horizwalk=finalwalk \\) and \\( swimlength=\\sqrt{2}(sidelength-horizwalk) \\), where \\( sidelength \\) is the length of a side of the pool. Accordingly, we have to minimize \\( totaltime=(2\\,horizwalk/walkspeed)+\\sqrt{2}(sidelength-horizwalk)/swimspeed \\) for \\( 0 \\leq horizwalk \\leq sidelength \\).\n\nBut \\( totaltime \\) is a linear function of \\( horizwalk \\), so its maximum occurs at an endpoint of the interval. If \\( horizwalk=0, totaltime=\\sqrt{2\\,sidelength}/swimspeed \\), and if \\( horizwalk=sidelength, totaltime=2\\,sidelength/walkspeed \\).\n\nIf \\( \\sqrt{2}\\,sidelength/swimspeed<2\\,sidelength/walkspeed \\) then \\( walkspeed / swimspeed<\\sqrt{2} \\), and conversely. Hence, if \\( walkspeed / swimspeed<\\sqrt{2} \\) the minimal path is unique and the swimmer should swim diagonally across the pool from \\( vertexa \\) to \\( vertexc \\). If \\( walkspeed / swimspeed>\\sqrt{2} \\), he should walk from \\( vertexa \\) to \\( vertexb \\) to \\( vertexc \\). Finally, if \\( walkspeed / swimspeed=\\sqrt{2}, totaltime \\) is independent of \\( horizwalk \\) and there are infinitely many minimizing paths, in fact any path \\( vertexa vertexe vertexf vertexc \\) for which \\( cornerangle=45^{\\circ} \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "ponderosa",
+        "y": "trapezoid",
+        "z": "starfruit",
+        "\\alpha": "chandelier",
+        "T": "lemurking",
+        "w": "sandstone",
+        "s": "hummingbird",
+        "l": "peppercorn",
+        "A": "tournament",
+        "B": "marshmallow",
+        "C": "floodplain",
+        "D": "raincloud",
+        "E": "buttercup",
+        "F": "peppermint",
+        "G": "swordfish",
+        "H": "afterglow"
+      },
+      "question": "6. A swimmer stands at one corner of a square swimming pool and wishes to reach the diagonally opposite corner. If \\( sandstone \\) is his walking speed and \\( hummingbird \\) is his swimming speed \\( (hummingbird<sandstone) \\), find his path for shortest time. [Consider two cases: (i) \\( sandstone / hummingbird<\\sqrt{2} \\), and (ii) \\( sandstone / hummingbird>\\sqrt{2} \\).]",
+      "solution": "Solution. Let the square pool be denoted by \\( tournament\\ marshmallow\\ floodplain\\ raincloud \\), with the swimmer initially at \\( tournament \\) and desirous of reaching \\( floodplain \\). The path of least time can evidently be described as follows. The swimmer walks from \\( tournament \\) to \\( buttercup \\) (a point on side \\( tournament\\ marshmallow \\) ), swims from \\( buttercup \\) to \\( peppermint \\) where \\( peppermint \\) is on \\( marshmallow\\ floodplain \\), and then walks from \\( peppermint \\) to \\( floodplain \\). Note that a path like \\( tournament\\ swordfish\\ afterglow\\ floodplain \\) is time equivalent to a path of the type described with \\( peppermint=floodplain \\).\n\nLet \\( \\overline{tournament\\ buttercup}=ponderosa, \\overline{buttercup\\ peppermint}=trapezoid, \\overline{peppermint\\ floodplain}=starfruit \\). Then the time \\( lemurking \\) is given by \\( lemurking= \\) \\( (ponderosa+starfruit) / sandstone+(trapezoid / hummingbird) \\). If the \\operatorname{sum} ponderosa+starfruit is fixed, then the sum \\( trapezoid \\sin chandelier+ \\) \\( trapezoid \\cos chandelier \\) is also fixed, and \\( trapezoid \\) is minimal when \\( (\\sin chandelier+\\cos chandelier) \\) is maximal. This maximum is attained for \\( chandelier=45^{\\circ} \\).\n\nThus for a minimal time path, \\( ponderosa=starfruit \\) and \\( trapezoid=\\sqrt{2}(peppercorn-ponderosa) \\), where \\( peppercorn \\) is the length of a side of the pool. Accordingly, we have to minimize \\( lemurking= \\) \\( (2 ponderosa / sandstone)+\\sqrt{2}(peppercorn-ponderosa) / hummingbird \\) for \\( 0 \\leq ponderosa \\leq peppercorn \\).\n\nBut \\( lemurking \\) is a linear function of \\( ponderosa \\), so its maximum occurs at an endpoint of the interval. If \\( ponderosa=0, lemurking=\\sqrt{2 peppercorn} / hummingbird \\), and if \\( ponderosa=peppercorn, lemurking=2 peppercorn / sandstone \\).\n\nIf \\( \\sqrt{2} peppercorn / hummingbird<2 peppercorn / sandstone \\) then \\( sandstone / hummingbird<\\sqrt{2} \\), and conversely. Hence, if \\( sandstone / hummingbird<\\sqrt{2} \\) the minimal path is unique and the swimmer should swim diagonally across the pool from \\( tournament \\) to \\( floodplain \\). If \\( sandstone / hummingbird>\\sqrt{2} \\), he should walk from \\( tournament \\) to \\( marshmallow \\) to \\( floodplain \\). Finally, if \\( sandstone / hummingbird=\\sqrt{2}, lemurking \\) is independent of \\( ponderosa \\) and there are infinitely many minimizing paths, in fact any path \\( tournament\\ buttercup\\ peppermint\\ floodplain \\) for which \\( chandelier=45^{\\circ} \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "closeness",
+        "y": "aridness",
+        "z": "immediacy",
+        "\\alpha": "straightness",
+        "T": "timelessness",
+        "w": "stillness",
+        "s": "stagnation",
+        "l": "thinness",
+        "A": "endpoint",
+        "B": "detached",
+        "C": "departure",
+        "D": "centerpoint",
+        "E": "extremity",
+        "F": "vastness",
+        "G": "voidness",
+        "H": "fullness"
+      },
+      "question": "6. A swimmer stands at one corner of a square swimming pool and wishes to reach the diagonally opposite corner. If \\( stillness \\) is his walking speed and \\( stagnation \\) is his swimming speed \\( (stagnation<stillness) \\), find his path for shortest time. [Consider two cases: (i) \\( stillness / stagnation<\\sqrt{2} \\), and (ii) \\( stillness / stagnation>\\sqrt{2} \\).]",
+      "solution": "Solution. Let the square pool be denoted by \\( endpoint detached departure centerpoint \\), with the swimmer initially at \\( endpoint \\) and desirous of reaching \\( departure \\). The path of least time can evidently be described as follows. The swimmer walks from \\( endpoint \\) to \\( extremity \\) (a point on side \\( endpoint detached \\) ), swims from \\( extremity \\) to \\( vastness \\) where \\( vastness \\) is on \\( detached departure \\), and then walks from \\( vastness \\) to \\( departure \\). Note that a path like \\( endpoint voidness fullness departure \\) is time equivalent to a path of the type described with \\( vastness=departure \\).\n\nLet \\( \\overline{endpoint\\ extremity}=closeness, \\overline{extremity\\ vastness}=aridness, \\overline{vastness\\ departure}=immediacy \\). Then the time \\( timelessness \\) is given by \\( timelessness = (closeness+immediacy) / stillness + (aridness / stagnation) \\). If the \\( \\operatorname{sum} closeness+immediacy \\) is fixed, then the sum \\( aridness \\sin straightness + aridness \\cos straightness \\) is also fixed, and \\( aridness \\) is minimal when \\( (\\sin straightness + \\cos straightness) \\) is maximal. This maximum is attained for \\( straightness = 45^{\\circ} \\).\n\nThus for a minimal time path, \\( closeness = immediacy \\) and \\( aridness = \\sqrt{2}(thinness - closeness) \\), where \\( thinness \\) is the length of a side of the pool. Accordingly, we have to minimize \\( timelessness = (2\\,closeness / stillness) + \\sqrt{2}(thinness - closeness) / stagnation \\) for \\( 0 \\leq closeness \\leq thinness \\).\n\nBut \\( timelessness \\) is a linear function of \\( closeness \\), so its maximum occurs at an endpoint of the interval. If \\( closeness = 0, \\; timelessness = \\sqrt{2\\, thinness} / stagnation \\), and if \\( closeness = thinness, \\; timelessness = 2\\, thinness / stillness \\).\n\nIf \\( \\sqrt{2}\\, thinness / stagnation < 2\\, thinness / stillness \\) then \\( stillness / stagnation < \\sqrt{2} \\), and conversely. Hence, if \\( stillness / stagnation < \\sqrt{2} \\) the minimal path is unique and the swimmer should swim diagonally across the pool from \\( endpoint \\) to \\( departure \\). If \\( stillness / stagnation > \\sqrt{2} \\), he should walk from \\( endpoint \\) to \\( detached \\) to \\( departure \\). Finally, if \\( stillness / stagnation = \\sqrt{2}, \\; timelessness \\) is independent of \\( closeness \\) and there are infinitely many minimizing paths, in fact any path \\( endpoint extremity vastness departure \\) for which \\( straightness = 45^{\\circ} \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "z": "mncbvfds",
+        "\\\\alpha": "vtrsplkh",
+        "T": "flpqsndr",
+        "w": "kzmdvhfr",
+        "s": "tfjnckla",
+        "l": "prqmvbze",
+        "A": "snlgvpta",
+        "B": "rdkhcwne",
+        "C": "bvhqxrmi",
+        "D": "lfztskwa",
+        "E": "ghrsdjpm",
+        "F": "ptdmcqza",
+        "G": "jlwrxsyf",
+        "H": "fxzdgbom"
+      },
+      "question": "6. A swimmer stands at one corner of a square swimming pool and wishes to reach the diagonally opposite corner. If \\( kzmdvhfr \\) is his walking speed and \\( tfjnckla \\) is his swimming speed \\( (tfjnckla<kzmdvhfr) \\), find his path for shortest time. [Consider two cases: (i) \\( kzmdvhfr / tfjnckla<\\sqrt{2} \\), and (ii) \\( kzmdvhfr / tfjnckla>\\sqrt{2} \\).]",
+      "solution": "Solution. Let the square pool be denoted by \\( snlgvpta rdkhcwne bvhqxrmi lfztskwa \\), with the swimmer initially at \\( snlgvpta \\) and desirous of reaching \\( bvhqxrmi \\). The path of least time can evidently be described as follows. The swimmer walks from \\( snlgvpta \\) to \\( ghrsdjpm \\) (a point on side \\( snlgvpta rdkhcwne \\) ), swims from \\( ghrsdjpm \\) to \\( ptdmcqza \\) where \\( ptdmcqza \\) is on \\( rdkhcwne bvhqxrmi \\), and then walks from \\( ptdmcqza \\) to \\( bvhqxrmi \\). Note that a path like \\( snlgvpta jlwrxsyf fxzdgbom bvhqxrmi \\) is time equivalent to a path of the type described with \\( ptdmcqza=bvhqxrmi \\).\n\nLet \\( \\overline{snlgvpta ghrsdjpm}=qzxwvtnp, \\overline{ghrsdjpm ptdmcqza}=hjgrksla, \\overline{ptdmcqza bvhqxrmi}=mncbvfds \\). Then the time \\( flpqsndr \\) is given by \\( flpqsndr= \\) \\( (qzxwvtnp+mncbvfds) / kzmdvhfr+(hjgrksla / tfjnckla) \\). If the \\( \\operatorname{sum} qzxwvtnp+mncbvfds \\) is fixed, then the sum \\( hjgrksla \\sin vtrsplkh+ \\) \\( hjgrksla \\cos vtrsplkh \\) is also fixed, and \\( hjgrksla \\) is minimal when \\( (\\sin vtrsplkh+\\cos vtrsplkh) \\) is maximal. This maximum is attained for \\( vtrsplkh=45^{\\circ} \\).\n\nThus for a minimal time path, \\( qzxwvtnp=mncbvfds \\) and \\( hjgrksla=\\sqrt{2}(prqmvbze-qzxwvtnp) \\), where \\( prqmvbze \\) is the length of a side of the pool. Accordingly, we have to minimize \\( flpqsndr= \\) \\( (2 qzxwvtnp / kzmdvhfr)+\\sqrt{2}(prqmvbze-qzxwvtnp) / tfjnckla \\) for \\( 0 \\leq qzxwvtnp \\leq prqmvbze \\).\n\nBut \\( flpqsndr \\) is a linear function of \\( qzxwvtnp \\), so its maximum occurs at an endpoint of the interval. If \\( qzxwvtnp=0, flpqsndr=\\sqrt{2 prqmvbze} / tfjnckla \\), and if \\( qzxwvtnp=prqmvbze, flpqsndr=2 prqmvbze / kzmdvhfr \\).\n\nIf \\( \\sqrt{2} prqmvbze / tfjnckla<2 prqmvbze / kzmdvhfr \\) then \\( kzmdvhfr / tfjnckla<\\sqrt{2} \\), and conversely. Hence, if \\( kzmdvhfr / tfjnckla<\\sqrt{2} \\) the minimal path is unique and the swimmer should swim diagonally across the pool from \\( snlgvpta \\) to \\( bvhqxrmi \\). If \\( kzmdvhfr / tfjnckla>\\sqrt{2} \\), he should walk from \\( snlgvpta \\) to \\( rdkhcwne \\) to \\( bvhqxrmi \\). Finally, if \\( kzmdvhfr / tfjnckla=\\sqrt{2}, flpqsndr \\) is independent of \\( qzxwvtnp \\) and there are infinitely many minimizing paths, in fact any path \\( snlgvpta ghrsdjpm ptdmcqza bvhqxrmi \\) for which \\( vtrsplkh=45^{\\circ} \\)."
+    },
+    "kernel_variant": {
+      "question": "A messenger starts from the vertex P of a square courtyard P Q R S of side-length a > 0.  He can run along the paved boundary with speed v, whereas on the grass in the interior he can only jog with the lower speed u (assume 0<u<v).  By suitably combining the two kinds of motion he wants to reach the diagonally opposite vertex R in the least possible time.\n\nDescribe an optimal (time-minimising) route for the three parameter ranges\n(i) v / u < \\sqrt{2}, (ii) v / u > \\sqrt{2}, (iii) v / u = \\sqrt{2},\nand give the corresponding minimum travelling time in each case.",
+      "solution": "Place Cartesian axes with origin at P and let the square be\nP(0,0), Q(a,0), R(a,a), S(0,a).\n\n1 Restricting the class of admissible paths\n------------------------------------------\nAny time-minimal path may be assumed to contain at most one grass segment; two adjacent grass pieces could always be replaced by the straight segment joining their end-points, which is shorter and is still traversed at speed u.\n\nHence we may confine attention to paths of the form\n  P \\to  T \\to  U \\to  R, (0 \\leq  x,c \\leq  a)\nwhere\n T = (x,0) is reached from P by running along side P Q,\n U = (a,c) is reached from T by jogging straight across the lawn,\n R = (a,a) is then reached from U by running along side U R.\n\nThe lengths of the three pieces are\n PT = x, TU = y = \\sqrt{(a-x)^2 + c^2}, UR = a-c.\nTherefore the total travel time is\n T(x,c) = (x + a - c)/v + y/u,   (1)\nwith (x,c) ranging over the closed square 0 \\leq  x,c \\leq  a.\n\n2 Stationary points in the open square\n--------------------------------------\nFor (x,c) in (0,a) \\times  (0,a)\n \\partial T/\\partial x = 1/v - (a-x)/(u y),  \\partial T/\\partial c = -1/v + c/(u y).\nSetting both derivatives equal to 0 gives\n a-x = c and y = \\sqrt{2} c, whence v = u\\sqrt{2.}\nThus an interior critical point exists only for v/u = \\sqrt{2} (see Section 5).\n\n3 Boundary analysis when v/u \\neq  \\sqrt{2}\n----------------------------------\nIf v/u \\neq  \\sqrt{2} the minimum occurs on the boundary of the square domain.\n\n(a) Edge x = 0 (no initial running)\n     T(0,c) = (a - c)/v + \\sqrt{a^2 + c^2}/u, 0 \\leq  c \\leq  a.\n     dT/dc = -1/v + c/[u \\sqrt{a^2 + c^2}].\n     A critical point appears when c^2 = u^2 a^2/(v^2 - u^2), which is real precisely when v/u \\geq  \\sqrt{2.}  For v/u > \\sqrt{2} the point\n  c_0 = a / \\sqrt{(v/u)^2 - 1}    (2)\n     lies strictly between 0 and a.  Substituting (2) in (1) gives\n  T(0,c_0) = (a/v)\bigl(1 + \\sqrt{(v/u)^2 - 1} \bigr).  (3)\n     Because \\sqrt{(v/u)^2 - 1} > 1 whenever v/u > \\sqrt{2}, equation (3) shows that this time exceeds 2a/v; cf. part (c).\n\n(b) Edge c = 0 (the jog ends at Q)\n     T(x,0) = (x + a)/v + (a - x)/u, 0 \\leq  x \\leq  a.\n     Since u < v, dT/dx = 1/v - 1/u < 0; T is strictly decreasing, so the minimum is attained at x = a:\n  T(a,0) = 2a/v.                                           (4)\n\n(c) Edge x = a (run first all the way to Q)\n     T(a,c) = (2a - c)/v + c/u, 0 \\leq  c \\leq  a.\n     Here dT/dc = -1/v + 1/u > 0, so the minimum occurs at c = 0, i.e. again the point (a,0) with the same value (4).\n\n(d) Edge c = a (symmetric geometry)\n     T(x,a) = x/v + \\sqrt{(a-x)^2 + a^2}/u, 0 \\leq  x \\leq  a.\n     Differentiate:\n  dT/dx = 1/v + (x-a)/[u \\sqrt{(a-x)^2 + a^2}].\n     At x = 0 the derivative equals 1/v - 1/(u\\sqrt{2}).  Thus\n     * If v/u < \\sqrt{2} the derivative is positive everywhere on [0,a], so T is strictly increasing and the minimum is at x = 0, i.e. at (0,a), with value\n   T(0,a) = \\sqrt{2} a / u.                                  (5)\n     * If v/u > \\sqrt{2} the derivative changes sign once; the critical point, obtained from dT/dx = 0, occurs at\n   s := a-x = a / \\sqrt{(v/u)^2 - 1}    (6)\n     and gives a time larger than (4) (one finds T(a-s,a) - 2a/v > 0), so it is not globally minimal.\n\n4 Global comparison for v/u \\neq  \\sqrt{2}\n---------------------------------\nCollecting the candidate boundary minima we have\n * (0,a)   with time \\sqrt{2} a/u (only relevant when v/u < \\sqrt{2}),\n * (a,0)   with time 2a/v,\n * (0,c_0)  with time given by (3) (present only when v/u > \\sqrt{2}).\n\nNow\n \\sqrt{2} a/u < 2a/v  iff  v/u < \\sqrt{2},\nso that case gives the diagonal grass run.\nConversely 2a/v is smaller than any of the other candidate times when v/u > \\sqrt{2.}  Hence\n * If v/u < \\sqrt{2} \\to  path P R straight across the lawn is optimal.\n * If v/u > \\sqrt{2} \\to  path P Q R along the two sides is optimal.\n\n5 Borderline case v/u = \\sqrt{2}\n---------------------------\nWhen v/u = \\sqrt{2} the one-parameter family of interior critical points found in Section 2 becomes admissible.  Every path satisfying a-x = c (so that the grass segment TU meets the sides under 45^\\circ) has the same total time\n T = (x + a - c)/v + \\sqrt{2} c/u = 2a/v = \\sqrt{2} a/u.\nThis equals the times achieved by the corner competitors, so there are infinitely many optimal routes: run from P to any point T on P Q, jog across the lawn at 45^\\circ to U on Q R with PT = UR, then run to R.\n\n6 Summary of optimal paths and minimum times\n--------------------------------------------\n(i) v/u < \\sqrt{2}  \\to  Jog straight across the diagonal P R.\n  Minimum time T_min = \\sqrt{2} a / u.\n\n(ii) v/u > \\sqrt{2} \\to  Run along sides P Q and Q R.\n  Minimum time T_min = 2 a / v.\n\n(iii) v/u = \\sqrt{2} \\to  Any path P T U R with PT = UR and the grass leg TU inclined at 45^\\circ is optimal.\n  Minimum time T_min = 2 a / v = \\sqrt{2} a / u.",
+      "_meta": {
+        "core_steps": [
+          "Limit attention to paths that consist of two edge-walks and one straight swim segment (convexity/symmetry argument).",
+          "Let the two walk lengths sum to a constant; for that sum, minimize the swim length y by maximizing sinα+cosα, attained when the swim makes a 45° angle, forcing equal edge-walks (x = z).",
+          "Express total time T = 2x/w + √2(l − x)/s; observe that T is linear in x on 0 ≤ x ≤ l.",
+          "A linear function attains its minimum at an endpoint, giving x = 0 (all swim) or x = l (all walk).",
+          "Compare the two endpoint times to obtain the threshold w/s = √2 and the three corresponding optimal-path regimes."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Actual side length of the square pool; only its symbol/size matters, not its value",
+            "original": "l"
+          },
+          "slot2": {
+            "description": "Specific pair of opposite corners used as start and finish; any diagonal pair works identically",
+            "original": "A and C"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

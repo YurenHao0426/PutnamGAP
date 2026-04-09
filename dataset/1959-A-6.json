@@ -1,0 +1,142 @@
+{
+  "index": "1959-A-6",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "6. Let \\( m \\) and \\( n \\) be integers greater than 1 , and \\( a_{1}, \\ldots, a_{m+1} \\) real numbers. Prove that there exist real \\( n \\) by \\( n \\) matrices \\( A_{1}, \\ldots, A_{m} \\) such that (i) \\( \\operatorname{Det}\\left(A_{j}\\right)=a_{j} \\) for \\( j=1, \\ldots, m \\), and (ii) \\( \\operatorname{Det}\\left(A_{1}+\\cdots+A_{m}\\right)=a_{m+1} \\).",
+  "solution": "Solution. Let\n\\[\n\\begin{array}{l}\nA_{i}=\\left[\\begin{array}{cccc}\na_{i} & & & \\\\\n& & & \\\\\n& & & 0 \\\\\n& & 1 & \\\\\n& 0 & \\ddots & \\\\\n& & & 1\n\\end{array}\\right], i=3,4, \\ldots, m,\n\\end{array}\n\\]\nwhere \\( b \\) is to be determined. Evidently, \\( \\operatorname{det}\\left(A_{j}\\right)=a_{j} \\) for \\( j=1, \\ldots, m \\). Then\n\\[\nA_{1}+A_{2}+\\cdots+A_{m}=\\left(\\begin{array}{llll}\ns & b & & \\\\\n1 & m & & 0 \\\\\n& & m & \\\\\n& 0 & & \\\\\n& & & m\n\\end{array}\\right]\n\\]\nwhere \\( s=a_{1}+a_{2}+\\cdots+a_{m} \\).\nWe have\n\\[\n\\operatorname{det}\\left(A_{1}+A_{2}+\\cdots+A_{m}\\right)=(s m-b) m^{n-2} .\n\\]\n\nHence we set \\( b=s m-a_{m+1} m^{-n+2} \\) to get the desired value \\( a_{m+1} \\).\nRemark. There are many other possibilities. The difficulty of the prob lem is due largely to its highly underdetermined character.",
+  "vars": [
+    "A_1",
+    "A_2",
+    "A_3",
+    "A_4",
+    "A_m",
+    "A_j",
+    "A_i",
+    "s",
+    "b",
+    "i",
+    "j"
+  ],
+  "params": [
+    "m",
+    "n",
+    "a_1",
+    "a_2",
+    "a_m",
+    "a_m+1",
+    "a_j"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A_1": "firstmatrix",
+        "A_2": "secondmatrix",
+        "A_3": "thirdmatrix",
+        "A_4": "fourthmatrix",
+        "A_m": "lastmatrix",
+        "A_j": "genericmatrix",
+        "A_i": "indexmatrix",
+        "s": "sumvalue",
+        "b": "adjuster",
+        "i": "loopindex",
+        "j": "iterindex",
+        "m": "matrixcount",
+        "n": "dimension",
+        "a_1": "firstdetvalue",
+        "a_2": "seconddetvalue",
+        "a_m": "lastdetvalue",
+        "a_m+1": "nextdetvalue",
+        "a_j": "genericdetvalue"
+      },
+      "question": "6. Let \\( matrixcount \\) and \\( dimension \\) be integers greater than 1 , and \\( firstdetvalue, \\ldots, nextdetvalue \\) real numbers. Prove that there exist real \\( dimension \\) by \\( dimension \\) matrices \\( firstmatrix, \\ldots, lastmatrix \\) such that (i) \\( \\operatorname{Det}\\left(genericmatrix\\right)=genericdetvalue \\) for \\( iterindex=1, \\ldots, matrixcount \\), and (ii) \\( \\operatorname{Det}\\left(firstmatrix+\\cdots+lastmatrix\\right)=nextdetvalue \\).",
+      "solution": "Solution. Let\n\\[\n\\begin{array}{l}\nindexmatrix=\\left[\\begin{array}{cccc}\ngenericdetvalue & & & \\\\\n& & & \\\\\n& & & 0 \\\\\n& & 1 & \\\\\n& 0 & \\ddots & \\\\\n& & & 1\n\\end{array}\\right], \\; loopindex=3,4, \\ldots, matrixcount,\n\\end{array}\n\\]\nwhere \\( adjuster \\) is to be determined. Evidently, \\( \\operatorname{det}\\left(genericmatrix\\right)=genericdetvalue \\) for \\( iterindex=1, \\ldots, matrixcount \\). Then\n\\[\nfirstmatrix+secondmatrix+\\cdots+lastmatrix=\\left(\\begin{array}{llll}\nsumvalue & adjuster & & \\\\\n1 & matrixcount & & 0 \\\\\n& & matrixcount & \\\\\n& 0 & & \\\\\n& & & matrixcount\n\\end{array}\\right]\n\\]\nwhere \\( sumvalue=firstdetvalue+seconddetvalue+\\cdots+lastdetvalue \\).\nWe have\n\\[\n\\operatorname{det}\\left(firstmatrix+secondmatrix+\\cdots+lastmatrix\\right)=(sumvalue\\, matrixcount-adjuster)\\, matrixcount^{dimension-2} .\n\\]\n\nHence we set \\( adjuster=sumvalue\\, matrixcount-nextdetvalue\\, matrixcount^{-dimension+2} \\) to get the desired value \\( nextdetvalue \\).\nRemark. There are many other possibilities. The difficulty of the problem is due largely to its highly underdetermined character."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A_1": "echoflakes",
+        "A_2": "amberbridge",
+        "A_3": "mossyvalley",
+        "A_4": "velvetmeadow",
+        "A_m": "cedarhorizon",
+        "A_j": "larkspurcrest",
+        "A_i": "hazelmontane",
+        "s": "driftwood",
+        "b": "moonlitbay",
+        "i": "windglider",
+        "j": "pebblebrook",
+        "m": "starlinggate",
+        "n": "riverbirch",
+        "a_1": "thistledown",
+        "a_2": "granitecove",
+        "a_m": "ivoryharbor",
+        "a_m+1": "maplecrystal",
+        "a_j": "briarwhisper"
+      },
+      "question": "6. Let \\( starlinggate \\) and \\( riverbirch \\) be integers greater than 1 , and \\( thistledown, \\ldots, maplecrystal \\) real numbers. Prove that there exist real \\( riverbirch \\) by \\( riverbirch \\) matrices \\( echoflakes, \\ldots, cedarhorizon \\) such that (i) \\( \\operatorname{Det}\\left(larkspurcrest\\right)=briarwhisper \\) for \\( pebblebrook=1, \\ldots, starlinggate \\), and (ii) \\( \\operatorname{Det}\\left(echoflakes+\\cdots+cedarhorizon\\right)=maplecrystal \\).",
+      "solution": "Solution. Let\n\\[\n\\begin{array}{l}\nhazelmontane=\\left[\\begin{array}{cccc}\na_{i} & & & \\\\\n& & & \\\\\n& & & 0 \\\\\n& & 1 & \\\\\n& 0 & \\ddots & \\\\\n& & & 1\n\\end{array}\\right], windglider=3,4, \\ldots, starlinggate,\n\\end{array}\n\\]\nwhere \\( moonlitbay \\) is to be determined. Evidently, \\( \\operatorname{det}\\left(larkspurcrest\\right)=briarwhisper \\) for \\( pebblebrook=1, \\ldots, starlinggate \\). Then\n\\[\nechoflakes+amberbridge+\\cdots+cedarhorizon=\\left(\\begin{array}{llll}\ndriftwood & moonlitbay & & \\\\\n1 & starlinggate & & 0 \\\\\n& & starlinggate & \\\\\n& 0 & & \\\\\n& & & starlinggate\n\\end{array}\\right]\n\\]\nwhere \\( driftwood=thistledown+granitecove+\\cdots+ivoryharbor \\).\nWe have\n\\[\n\\operatorname{det}\\left(echoflakes+amberbridge+\\cdots+cedarhorizon\\right)=(driftwood \\, starlinggate-moonlitbay) \\, starlinggate^{riverbirch-2} .\n\\]\n\nHence we set \\( moonlitbay=driftwood \\, starlinggate-maplecrystal \\, starlinggate^{-riverbirch+2} \\) to get the desired value \\( maplecrystal \\).\nRemark. There are many other possibilities. The difficulty of the prob lem is due largely to its highly underdetermined character."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A_1": "scalarone",
+        "A_2": "scalartwo",
+        "A_3": "scalarthree",
+        "A_4": "scalarfour",
+        "A_m": "scalarlimit",
+        "A_j": "scalarindex",
+        "A_i": "scalaritem",
+        "s": "difference",
+        "b": "constant",
+        "i": "wholeitem",
+        "j": "partunit",
+        "m": "fractional",
+        "n": "continuous",
+        "a_1": "imaginaryone",
+        "a_2": "imaginarytwo",
+        "a_m": "imaginarylimit",
+        "a_m+1": "imaginarybeyond",
+        "a_j": "imaginaryindex"
+      },
+      "question": "6. Let \\( fractional \\) and \\( continuous \\) be integers greater than 1 , and \\( imaginaryone, \\ldots, imaginarybeyond \\) real numbers. Prove that there exist real \\( continuous \\) by \\( continuous \\) matrices \\( scalarone, \\ldots, scalarlimit \\) such that (i) \\( \\operatorname{Det}\\left(scalarindex\\right)=imaginaryindex \\) for \\( partunit=1, \\ldots, fractional \\), and (ii) \\( \\operatorname{Det}\\left(scalarone+\\cdots+scalarlimit\\right)=imaginarybeyond \\).",
+      "solution": "Solution. Let\n\\[\n\\begin{array}{l}\nscalaritem=\\left[\\begin{array}{cccc}\nimaginaryindex & & & \\\\\n& & & \\\\\n& & & 0 \\\\\n& & 1 & \\\\\n& 0 & \\ddots & \\\\\n& & & 1\n\\end{array}\\right], wholeitem=3,4, \\ldots, fractional,\n\\end{array}\n\\]\nwhere \\( constant \\) is to be determined. Evidently, \\( \\operatorname{det}\\left(scalarindex\\right)=imaginaryindex \\) for \\( partunit=1, \\ldots, fractional \\). Then\n\\[\nscalarone+scalartwo+\\cdots+scalarlimit=\\left(\\begin{array}{llll}\ndifference & constant & & \\\\\n1 & fractional & & 0 \\\\\n& & fractional & \\\\\n& 0 & & \\\\\n& & & fractional\n\\end{array}\\right]\n\\]\nwhere \\( difference=imaginaryone+imaginarytwo+\\cdots+imaginarylimit \\).\nWe have\n\\[\n\\operatorname{det}\\left(scalarone+scalartwo+\\cdots+scalarlimit\\right)=(difference\\, fractional-constant) fractional^{continuous-2} .\n\\]\n\nHence we set \\( constant=difference\\, fractional-imaginarybeyond\\, fractional^{-continuous+2} \\) to get the desired value \\( imaginarybeyond \\).\nRemark. There are many other possibilities. The difficulty of the prob lem is due largely to its highly underdetermined character."
+    },
+    "garbled_string": {
+      "map": {
+        "A_1": "pykalmve",
+        "A_2": "woknjbsi",
+        "A_3": "zcovflrh",
+        "A_4": "qbdserku",
+        "A_m": "ldguhzxo",
+        "A_j": "tsqphkne",
+        "A_i": "omfnlyag",
+        "s": "riphxgma",
+        "b": "keqsnivp",
+        "j": "bnwcygta",
+        "m": "zqtvlrga",
+        "n": "hsnocldb",
+        "a_1": "ptshurlm",
+        "a_2": "kydoxenq",
+        "a_m": "hzrwentb",
+        "a_m+1": "vandjkrz",
+        "a_{m+1}": "vandjkrz",
+        "a_j": "rfeintka"
+      },
+      "question": "6. Let \\( zqtvlrga \\) and \\( hsnocldb \\) be integers greater than 1 , and \\( ptshurlm, \\ldots, vandjkrz \\) real numbers. Prove that there exist real \\( hsnocldb \\) by \\( hsnocldb \\) matrices \\( pykalmve, \\ldots, ldguhzxo \\) such that (i) \\( \\operatorname{Det}\\left(tsqphkne\\right)=rfeintka \\) for \\( bnwcygta=1, \\ldots, zqtvlrga \\), and (ii) \\( \\operatorname{Det}\\left(pykalmve+\\cdots+ldguhzxo\\right)=vandjkrz \\).",
+      "solution": "Solution. Let\n\\[\n\\begin{array}{l}\nomfnlyag=\\left[\\begin{array}{cccc}\na_{i} & & & \\\\\n& & & \\\\\n& & & 0 \\\\\n& & 1 & \\\\\n& 0 & \\ddots & \\\\\n& & & 1\n\\end{array}\\right], i=3,4, \\ldots, zqtvlrga,\n\\end{array}\n\\]\nwhere \\( keqsnivp \\) is to be determined. Evidently, \\( \\operatorname{det}\\left(tsqphkne\\right)=rfeintka \\) for \\( bnwcygta=1, \\ldots, zqtvlrga \\). Then\n\\[\npykalmve+woknjbsi+\\cdots+ldguhzxo=\\left(\\begin{array}{llll}\nriphxgma & keqsnivp & & \\\\\n1 & zqtvlrga & & 0 \\\\\n& & zqtvlrga & \\\\\n& 0 & & \\\\\n& & & zqtvlrga\n\\end{array}\\right]\n\\]\nwhere \\( riphxgma=ptshurlm+kydoxenq+\\cdots+hzrwentb \\).\nWe have\n\\[\n\\operatorname{det}\\left(pykalmve+woknjbsi+\\cdots+ldguhzxo\\right)=\\left(riphxgma zqtvlrga-keqsnivp\\right) zqtvlrga^{hsnocldb-2} .\n\\]\n\nHence we set \\( keqsnivp=riphxgma zqtvlrga-vandjkrz zqtvlrga^{-hsnocldb+2} \\) to get the desired value \\( vandjkrz \\).\nRemark. There are many other possibilities. The difficulty of the problem is due largely to its highly underdetermined character."
+    },
+    "kernel_variant": {
+      "question": "Let m,n \\geq  2 and prescribe real numbers   \nr_1,\\ldots ,r_{m+1} and a common trace value \\tau .  \n\nFor real parameters c,b define the ``canonical'' n \\times  n matrix  \n\n  C(c,b)= c 0 \\cdots  0 b   \n       1 6 \\cdots  0 0   \n       0 1 6 \\cdots  0   \n          \\ddots   \n       0 \\cdots  1 6   \n       0 \\cdots  0 1 ,  \n\ni.e. ones on the sub-diagonal, 6 on every inner diagonal entry, 1 in the last diagonal position, and a single ``wrap-around'' entry b in position (1,n).\n\n(a) Prove det C(c,b)=c\\cdot 6^{\\,n-2}-b.  \n(b) Given canonical matrices C_1,\\ldots ,C_m with first-row data (c_j,b_j), set S=C_1+\\cdots +C_m and show  \n  det S=6^{\\,n-2}(\\Sigma  c_j)-\\Sigma  b_j.  \n(c) Find necessary and sufficient conditions on r_1,\\ldots ,r_{m+1},\\tau  for the existence of canonical matrices C_j satisfying simultaneously  \n  (i) det C_j=r_j (1\\leq j\\leq m), (ii) det S=r_{m+1}, (iii) tr C_j=\\tau .  \n(d) Construct such matrices whenever the conditions hold.\n\n------------------------------------------------------",
+      "solution": "(~ 91 words)  \n\nLemma 1. Since C_j equals diag(c_j,6,\\ldots ,6,1) except for the corner entry b_j at (1,n), expanding along the first row yields  \n det C_j=c_j\\cdot 6^{\\,n-2}-b_j.  \n\nLemma 2. The sum S:=\\Sigma  C_j has (1,1)-entry \\Sigma  c_j and corner \\Sigma  b_j, so det S=6^{\\,n-2}(\\Sigma  c_j)-\\Sigma  b_j by the same expansion.  \n\nExistence. Pick any \\beta  and set c_j:=(r_j+\\beta )/6^{\\,n-2}, b_j:=\\beta . Then det C_j=r_j. Condition det S=r_{m+1} becomes  \n r_{m+1}=\\Sigma  r_j+(m-1)\\beta .  \nIf this compatibility holds choose \\beta  accordingly; conversely the equation is necessary by Lemma 2. Finally, to force tr C_j=\\tau , add (\\tau -c_j-6(n-2)-1)E_{11}, which does not change any determinant. Construction complete.\n\n------------------------------------------------------",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.108093",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,145 @@
+{
+  "index": "1997-B-6",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "The dissection of the 3--4--5 triangle shown below (into four\ncongruent right triangles similar to the original)\nhas diameter $5/2$.\nFind the least diameter of a dissection of this triangle into four parts.\n(The diameter of a dissection is the least upper bound of the distances\nbetween pairs of points belonging to the same part.)\n\n\\end{itemize}\n\n\\end{document}",
+  "solution": "The answer is $25/13$.  Place the triangle on the cartesian plane so\nthat its vertices are at $C=(0,0), A=(0,3), B=(4,0)$.  Define also the points \n$D=(20/13,24/13),$ and $E=(27/13,0)$. We then compute that\n\\begin{align*}\n\\frac{25}{13} &= AD=BE=DE\\\\\n\\frac{27}{13} &= BC - CE = BE < BC \\\\\n\\frac{39}{13} &= AC < \\sqrt{AC^2 + CE^2} = AE \\\\\n\\frac{40}{13} &= AB - AD = BD < AB\n\\end{align*}\nand that $AD < CD$. In any dissection of the triangle into four parts, some two of $A,B,C,D,E$ must belong to the same part, forcing the least diameter to be at least $25/13$.\n\nWe now exhibit a dissection with least diameter $25/13$. (Some\nvariations of this dissection are possible.) Put $F = (15/13, 19/13)$,\n$G = (15/13, 0)$, $H = (0, 19/13)$, $J = (32/15, 15/13)$,\nand divide $ABC$ into the convex polygonal regions $ADFH$, $BEJ$, $CGFH$,\n$DFGEJ$. \nTo check that this dissection has least diameter $25/13$, it suffices (by the following remark) to check that the distances\n\\begin{gather*}\nAD, AF, AH, BE, BJ, DE, CF, CG, CH, \\\\\nDF, DG, DH, DJ, EF, EG, EJ, FG, FH, FJ, GJ\n\\end{gather*}\nare all at most $25/13$. This can be checked by a long numerical calculation, which we omit in favor of some shortcuts: note that $ADFH$ and $BEJ$ are contained in\ncircular sectors centered at $A$ and $B$, respectively, of radius\n$25/13$ and angle less than $\\pi/3$, while $CGFH$ is a rectangle with diameter $CF < 25/13$.\n\n\\noindent\n\\textbf{Remark.} The preceding argument uses implicitly the fact that for $P$ a simple closed polygon in the plane, if we let $S$ denote the set of points on or within $P$, then  the maximum distance between two points of $S$ occurs between some pair of vertices of $P$.\nThis is an immediate consequence of the compactness of $S$ (which guarantees the existence of a maximum) and the convexity of the function taking $(x,y) \\in S \\times S$ to the squared distance between $x$ and $y$ (which is obvious in terms of Cartesian coordinates).\n\n\\end{itemize}\n\\end{document}",
+  "vars": [
+    "x",
+    "y"
+  ],
+  "params": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "J",
+    "P",
+    "S"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "coordxvar",
+        "y": "coordyvar",
+        "A": "vertexalpha",
+        "B": "vertexbeta",
+        "C": "vertexgamma",
+        "D": "vertexdelta",
+        "E": "vertexepsilon",
+        "F": "vertexzeta",
+        "G": "vertexeta",
+        "H": "vertextheta",
+        "J": "vertexiota",
+        "P": "polygonlabel",
+        "S": "interiorset"
+      },
+      "question": "The dissection of the 3--4--5 triangle shown below (into four\ncongruent right triangles similar to the original)\nhas diameter $5/2$.\nFind the least diameter of a dissection of this triangle into four parts.\n(The diameter of a dissection is the least upper bound of the distances\nbetween pairs of points belonging to the same part.)\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "The answer is $25/13$.  Place the triangle on the cartesian plane so\nthat its vertices are at $vertexgamma=(0,0), vertexalpha=(0,3), vertexbeta=(4,0)$.  Define also the points \n$vertexdelta=(20/13,24/13),$ and $vertexepsilon=(27/13,0)$. We then compute that\n\\begin{align*}\n\\frac{25}{13} &= vertexalphavertexdelta=vertexbetavertexepsilon=vertexdeltavertexepsilon\\\\\n\\frac{27}{13} &= vertexbetavertexgamma - vertexgammavertexepsilon = vertexbetavertexepsilon < vertexbetavertexgamma \\\\\n\\frac{39}{13} &= vertexalphavertexgamma < \\sqrt{vertexalphavertexgamma^2 + vertexgammavertexepsilon^2} = vertexalphavertexepsilon \\\\\n\\frac{40}{13} &= vertexalphavertexbeta - vertexalphavertexdelta = vertexbetavertexdelta < vertexalphavertexbeta\n\\end{align*}\nand that $vertexalphavertexdelta < vertexgammavertexdelta$. In any dissection of the triangle into four parts, some two of $vertexalpha,vertexbeta,vertexgamma,vertexdelta,vertexepsilon$ must belong to the same part, forcing the least diameter to be at least $25/13$.\n\nWe now exhibit a dissection with least diameter $25/13$. (Some\nvariations of this dissection are possible.) Put $vertexzeta = (15/13, 19/13)$,\n$vertexeta = (15/13, 0)$, $vertextheta = (0, 19/13)$, $vertexiota = (32/15, 15/13)$,\nand divide $vertexalphavertexbetavertexgamma$ into the convex polygonal regions $vertexalphavertexdeltavertexzetavertextheta$, $vertexbetavertexepsilonvertexiota$, $vertexgammavertexetavertexzetavertextheta$,\n$vertexdeltavertexzetavertexetavertexepsilonvertexiota$. \nTo check that this dissection has least diameter $25/13$, it suffices (by the following remark) to check that the distances\n\\begin{gather*}\nvertexalphavertexdelta, vertexalphavertexzeta, vertexalphavertextheta, vertexbetavertexepsilon, vertexbetavertexiota, vertexdeltavertexepsilon, vertexgammavertexzeta, vertexgammavertexeta, vertexgammavertextheta, \\\\\nvertexdeltavertexzeta, vertexdeltavertexeta, vertexdeltavertextheta, vertexdeltavertexiota, vertexepsilonvertexzeta, vertexepsilonvertexeta, vertexepsilonvertexiota, vertexzetavertexeta, vertexzetavertextheta, vertexzetavertexiota, vertexetavertexiota\n\\end{gather*}\nare all at most $25/13$. This can be checked by a long numerical calculation, which we omit in favor of some shortcuts: note that $vertexalphavertexdeltavertexzetavertextheta$ and $vertexbetavertexepsilonvertexiota$ are contained in\ncircular sectors centered at $vertexalpha$ and $vertexbeta$, respectively, of radius\n$25/13$ and angle less than $\\pi/3$, while $vertexgammavertexetavertexzetavertextheta$ is a rectangle with diameter $vertexgammavertexzeta < 25/13$.\n\n\\noindent\n\\textbf{Remark.} The preceding argument uses implicitly the fact that for $polygonlabel$ a simple closed polygon in the plane, if we let $interiorset$ denote the set of points on or within $polygonlabel$, then  the maximum distance between two points of $interiorset$ occurs between some pair of vertices of $polygonlabel$.\nThis is an immediate consequence of the compactness of $interiorset$ (which guarantees the existence of a maximum) and the convexity of the function taking $(coordxvar,coordyvar) \\in interiorset \\times interiorset$ to the squared distance between $coordxvar$ and $coordyvar$ (which is obvious in terms of Cartesian coordinates).\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "raindrop",
+        "y": "sunshine",
+        "A": "waterfall",
+        "B": "landscape",
+        "C": "butterfly",
+        "D": "sandstone",
+        "E": "evergreen",
+        "F": "moonlight",
+        "G": "riverside",
+        "H": "cloudbank",
+        "J": "arrowhead",
+        "P": "stormwind",
+        "S": "mistletoe"
+      },
+      "question": "The dissection of the 3--4--5 triangle shown below (into four\ncongruent right triangles similar to the original)\nhas diameter $5/2$.\nFind the least diameter of a dissection of this triangle into four parts.\n(The diameter of a dissection is the least upper bound of the distances\nbetween pairs of points belonging to the same part.)\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "The answer is $25/13$.  Place the triangle on the cartesian plane so\nthat its vertices are at $butterfly=(0,0), waterfall=(0,3), landscape=(4,0)$.  Define also the points \n$sandstone=(20/13,24/13),$ and $evergreen=(27/13,0)$. We then compute that\n\\begin{align*}\n\\frac{25}{13} &= waterfallsandstone=landscapeevergreen=evergreensandstone\\\\\n\\frac{27}{13} &= butterflylandscape - butterflyevergreen = landscapeevergreen < butterflylandscape \\\\\n\\frac{39}{13} &= waterfallbutterfly < \\sqrt{waterfallbutterfly^2 + butterflyevergreen^2} = waterfallevergreen \\\\\n\\frac{40}{13} &= waterfalllandscape - waterfallsandstone = landscapesandstone < waterfalllandscape\n\\end{align*}\nand that waterfallsandstone < butterflysandstone. In any dissection of the triangle into four parts, some two of $waterfall,landscape,butterfly,sandstone,evergreen$ must belong to the same part, forcing the least diameter to be at least $25/13$.\n\nWe now exhibit a dissection with least diameter $25/13$. (Some\nvariations of this dissection are possible.) Put $moonlight = (15/13, 19/13)$,\n$riverside = (15/13, 0)$, $cloudbank = (0, 19/13)$, $arrowhead = (32/15, 15/13)$,\nand divide $waterfalllandscapebutterfly$ into the convex polygonal regions $waterfallsandstonemoonlightcloudbank$, $landscapeevergreenarrowhead$, $butterflymoonlightriversidecloudbank$,\n$sandstonemoonlightriversideevergreenarrowhead$. \nTo check that this dissection has least diameter $25/13$, it suffices (by the following remark) to check that the distances\n\\begin{gather*}\nwaterfallsandstone, waterfallmoonlight, waterfallcloudbank, landscapeevergreen, landscapearrowhead, evergreensandstone, butterflymoonlight, butterflyriverside, butterflycloudbank, \\\\\nsandstonemoonlight, sandstoneriverside, sandstonecloudbank, sandstonearrowhead, evergreensandstone, evergreeneriverside, evergreenarrowhead, moonlightriverside, moonlightcloudbank, moonlightarrowhead, riversidearrowhead\n\\end{gather*}\nare all at most $25/13$. This can be checked by a long numerical calculation, which we omit in favor of some shortcuts: note that $waterfallsandstonemoonlightcloudbank$ and $landscapeevergreenarrowhead$ are contained in\ncircular sectors centered at $waterfall$ and $landscape$, respectively, of radius\n$25/13$ and angle less than $\\pi/3$, while $butterflymoonlightriversidecloudbank$ is a rectangle with diameter $butterflymoonlight < 25/13$.\n\n\\noindent\n\\textbf{Remark.} The preceding argument uses implicitly the fact that for $stormwind$ a simple closed polygon in the plane, if we let $mistletoe$ denote the set of points on or within $stormwind$, then  the maximum distance between two points of $mistletoe$ occurs between some pair of vertices of $stormwind$.\nThis is an immediate consequence of the compactness of $mistletoe$ (which guarantees the existence of a maximum) and the convexity of the function taking $(raindrop,sunshine) \\in mistletoe \\times mistletoe$ to the squared distance between $raindrop$ and $sunshine$ (which is obvious in terms of Cartesian coordinates).\n\n\\end{itemize}\n\\end{document}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "staticvar",
+        "y": "steadfastval",
+        "A": "noncorner",
+        "B": "flatplane",
+        "C": "midregion",
+        "D": "outervoid",
+        "E": "centerspot",
+        "F": "marginspot",
+        "G": "centralhub",
+        "H": "innerzone",
+        "J": "boundarypt",
+        "P": "everywhere",
+        "S": "wholemass"
+      },
+      "question": "The dissection of the 3--4--5 triangle shown below (into four\ncongruent right triangles similar to the original)\nhas diameter $5/2$.\nFind the least diameter of a dissection of this triangle into four parts.\n(The diameter of a dissection is the least upper bound of the distances\nbetween pairs of points belonging to the same part.)\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "The answer is $25/13$.  Place the triangle on the cartesian plane so\nthat its vertices are at $midregion=(0,0), noncorner=(0,3), flatplane=(4,0)$.  Define also the points \n$outervoid=(20/13,24/13),$ and $centerspot=(27/13,0)$. We then compute that\n\\begin{align*}\n\\frac{25}{13} &= noncorneroutervoid=flatplanecenterspot=outervoidcenterspot\\\\\n\\frac{27}{13} &= flatplanemidregion - midregioncenterspot = flatplanecenterspot < flatplanemidregion \\\\\n\\frac{39}{13} &= noncornermidregion < \\sqrt{noncornermidregion^2 + midregioncenterspot^2} = noncornercenterspot \\\\\n\\frac{40}{13} &= noncornerflatplane - noncorneroutervoid = flatplaneoutervoid < noncornerflatplane\n\\end{align*}\nand that $noncorneroutervoid < midregionoutervoid$. In any dissection of the triangle into four parts, some two of $noncorner,flatplane,midregion,outervoid,centerspot$ must belong to the same part, forcing the least diameter to be at least $25/13$.\n\nWe now exhibit a dissection with least diameter $25/13$. (Some\nvariations of this dissection are possible.) Put $marginspot = (15/13, 19/13)$,\n$centralhub = (15/13, 0)$, $innerzone = (0, 19/13)$, $boundarypt = (32/15, 15/13)$,\nand divide $noncornerflatplanemidregion$ into the convex polygonal regions $noncorneroutervoidmarginspotinnerzone$, $flatplanecenterspotboundarypt$, $midregioncentralhubmarginspotinnerzone$,\n$outervoidmarginspotcentralhubcenterspotboundarypt$. \nTo check that this dissection has least diameter $25/13$, it suffices (by the following remark) to check that the distances\n\\begin{gather*}\nnoncorneroutervoid, noncornermarginspot, noncornerinnerzone, flatplanecenterspot, flatplaneboundarypt, outervoidcenterspot, midregionmarginspot, midregioncentralhub, midregioninnerzone, \\\\\noutervoidmarginspot, outervoidcentralhub, outervoidinnerzone, outervoidboundarypt, centerspotmarginspot, centerspotcentralhub, centerspotboundarypt, marginspotcentralhub, marginspotinnerzone, marginspotboundarypt, centralhubboundarypt\n\\end{gather*}\nare all at most $25/13$. This can be checked by a long numerical calculation, which we omit in favor of some shortcuts: note that $noncorneroutervoidmarginspotinnerzone$ and $flatplanecenterspotboundarypt$ are contained in\ncircular sectors centered at $noncorner$ and $flatplane$, respectively, of radius\n$25/13$ and angle less than $\\pi/3$, while $midregioncentralhubmarginspotinnerzone$ is a rectangle with diameter $midregionmarginspot < 25/13$.\n\n\\noindent\n\\textbf{Remark.} The preceding argument uses implicitly the fact that for $everywhere$ a simple closed polygon in the plane, if we let $wholemass$ denote the set of points on or within $everywhere$, then  the maximum distance between two points of $wholemass$ occurs between some pair of vertices of $everywhere$.\nThis is an immediate consequence of the compactness of $wholemass$ (which guarantees the existence of a maximum) and the convexity of the function taking $(staticvar,steadfastval) \\in wholemass \\times wholemass$ to the squared distance between $staticvar$ and $steadfastval$ (which is obvious in terms of Cartesian coordinates).\n\n\\end{itemize}\n\\end{document}"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "A": "blksvdmq",
+        "B": "nzptfwhg",
+        "C": "rkfhdcyl",
+        "D": "smplqjzr",
+        "E": "vmnkrdxs",
+        "F": "lghwxzpo",
+        "G": "sfqbjrlt",
+        "H": "dpvlwzke",
+        "J": "tbqzmcsy",
+        "P": "wgrnfvda",
+        "S": "jczmkrwe"
+      },
+      "question": "The dissection of the 3--4--5 triangle shown below (into four\ncongruent right triangles similar to the original)\nhas diameter $5/2$.\nFind the least diameter of a dissection of this triangle into four parts.\n(The diameter of a dissection is the least upper bound of the distances\nbetween pairs of points belonging to the same part.)\n",
+      "solution": "The answer is $25/13$.  Place the triangle on the cartesian plane so\nthat its vertices are at $rkfhdcyl=(0,0), blksvdmq=(0,3), nzptfwhg=(4,0)$.  Define also the points \n$smplqjzr=(20/13,24/13),$ and $vmnkrdxs=(27/13,0)$. We then compute that\n\\begin{align*}\n\\frac{25}{13} &= blksvdmq smplqjzr=nzptfwhg vmnkrdxs=smplqjzr vmnkrdxs\\\\\n\\frac{27}{13} &= nzptfwhg rkfhdcyl - rkfhdcyl vmnkrdxs = nzptfwhg vmnkrdxs < nzptfwhg rkfhdcyl \\\\\n\\frac{39}{13} &= blksvdmq rkfhdcyl < \\sqrt{(blksvdmq rkfhdcyl)^2 + (rkfhdcyl vmnkrdxs)^2} = blksvdmq vmnkrdxs \\\\\n\\frac{40}{13} &= blksvdmq nzptfwhg - blksvdmq smplqjzr = nzptfwhg smplqjzr < blksvdmq nzptfwhg\n\\end{align*}\nand that $blksvdmq smplqjzr < rkfhdcyl smplqjzr$. In any dissection of the triangle into four parts, some two of $blksvdmq,nzptfwhg,rkfhdcyl,smplqjzr,vmnkrdxs$ must belong to the same part, forcing the least diameter to be at least $25/13$.\n\nWe now exhibit a dissection with least diameter $25/13$. (Some\nvariations of this dissection are possible.) Put $lghwxzpo = (15/13, 19/13)$,\n$sfqbjrlt = (15/13, 0)$, $dpvlwzke = (0, 19/13)$, $tbqzmcsy = (32/15, 15/13)$,\nand divide $blksvdmq nzptfwhg rkfhdcyl$ into the convex polygonal regions $blksvdmq smplqjzr lghwxzpo dpvlwzke$, $nzptfwhg vmnkrdxs tbqzmcsy$, $rkfhdcyl sfqbjrlt lghwxzpo dpvlwzke$, $smplqjzr lghwxzpo sfqbjrlt vmnkrdxs tbqzmcsy$. \nTo check that this dissection has least diameter $25/13$, it suffices (by the following remark) to check that the distances\n\\begin{gather*}\nblksvdmq smplqjzr, blksvdmq lghwxzpo, blksvdmq dpvlwzke, nzptfwhg vmnkrdxs, nzptfwhg tbqzmcsy, smplqjzr vmnkrdxs, rkfhdcyl lghwxzpo, rkfhdcyl sfqbjrlt, rkfhdcyl dpvlwzke, \\\\\nsmplqjzr lghwxzpo, smplqjzr sfqbjrlt, smplqjzr dpvlwzke, smplqjzr tbqzmcsy, vmnkrdxs lghwxzpo, vmnkrdxs sfqbjrlt, vmnkrdxs tbqzmcsy, lghwxzpo sfqbjrlt, lghwxzpo dpvlwzke, lghwxzpo tbqzmcsy, sfqbjrlt tbqzmcsy\n\\end{gather*}\nare all at most $25/13$. This can be checked by a long numerical calculation, which we omit in favor of some shortcuts: note that $blksvdmq smplqjzr lghwxzpo dpvlwzke$ and $nzptfwhg vmnkrdxs tbqzmcsy$ are contained in\ncircular sectors centered at $blksvdmq$ and $nzptfwhg$, respectively, of radius\n$25/13$ and angle less than $\\pi/3$, while $rkfhdcyl sfqbjrlt lghwxzpo dpvlwzke$ is a rectangle with diameter $rkfhdcyl lghwxzpo < 25/13$.\n\n\\noindent\n\\textbf{Remark.} The preceding argument uses implicitly the fact that for $wgrnfvda$ a simple closed polygon in the plane, if we let $jczmkrwe$ denote the set of points on or within $wgrnfvda$, then the maximum distance between two points of $jczmkrwe$ occurs between some pair of vertices of $wgrnfvda$.\nThis is an immediate consequence of the compactness of $jczmkrwe$ (which guarantees the existence of a maximum) and the convexity of the function taking $(qzxwvtnp,hjgrksla) \\in jczmkrwe \\times jczmkrwe$ to the squared distance between $qzxwvtnp$ and $hjgrksla$ (which is obvious in terms of Cartesian coordinates).\n"
+    },
+    "kernel_variant": {
+      "question": "Let T be a right-angled triangle whose legs have length 6 and 8 (so the hypotenuse is 10).\n\nA well-known dissection of T into four congruent right triangles similar to T has diameter 5.\n\nWhat is the smallest possible diameter of a dissection of T into four (not necessarily congruent) parts?\n\n(For any set S the diameter diam(S) is the greatest distance between two points of S.   The diameter of a dissection is the maximum of the diameters of its parts.)",
+      "solution": "Answer.  50/13.\n\nThroughout we work in the plane with Cartesian co-ordinates.  Put the right triangle\n   C=(0,0),  A=(0,6),  B=(8,0).          (1)\n\n1.  A lower bound\n-----------------\nIntroduce the additional points\n   D=(40/13,48/13),    E=(54/13,0).          (2)\n\nA short computation gives\n   AD = BE = DE = 50/13,                         (3)\nwhile every other distance among the five points A,B,C,D,E is **larger** than 50/13 (e.g. AC=6, AB=10, CD=\\sqrt{3904}/13\\approx 4.81, \\ldots ).\n\nAny dissection of the triangle into four parts places these five points into four boxes.  By the pigeon-hole principle two of them occupy the same part, and the distance between that pair is at least 50/13 by (3).  Hence\n   least possible diameter  \\geq   50/13.          (4)\n\n2.  A dissection that attains 50/13\n-----------------------------------\nWe now construct a concrete four-part dissection whose diameter is 50/13, proving that (4) is best possible.\nBesides (1)-(2) we use\n   F=(30/13,38/13),   G=(30/13,0),   H=(0,38/13),   J=(64/13,30/13).          (5)\n(All six auxiliary points lie on the boundary or in the interior of the original triangle; in particular D and J lie on AB, E and G on BC, H on AC, and F is interior.)\nConnect the points with straight segments as indicated in the picture below (not supplied):\n\n   -   Draw AD, AH, DF, FH, FG, GE, EJ.\n\nThese segments subdivide the triangle ABC into the following four closed polygonal regions.\n\n   R_1 = quadrilateral ADHF,\n   R_2 = triangle   BEJ,\n   R_3 = rectangle  CGFH,\n   R_4 = pentagon   DFGEJ.                        (6)\n\nTheir interiors are pairwise disjoint and their union is exactly \\triangle ABC, so they constitute a dissection.\n\n3.  The diameters of the four parts\n-----------------------------------\nBecause each region in (6) is a convex polygon, the greatest distance between two of its points is realised by some pair of its vertices.  It therefore suffices to examine the distances between the vertices listed for every region.\n\nRegion R_1   (vertices A,D,H,F).\n  AD = AF = 50/13            (from (3) and AF^2=(30^2+40^2)/13^2=2500/169),\n  the other four mutual distances are smaller: AH=40/13, DF=\\sqrt{200}/13, DH=\\sqrt{1700}/13, FH=30/13.\n  Hence diam(R_1)=50/13.\n\nRegion R_2   (vertices B,E,J).\n  BE = BJ = 50/13        (BJ^2=(40^2+30^2)/13^2=2500/169),\n  EJ = \\sqrt{1000}/13 < 50/13.  Thus diam(R_2)=50/13.\n\nRegion R_3   (vertices C,G,F,H).\n  Its diameter is the diagonal CF:\n      CF^2 = (30^2+38^2)/13^2 = 2344/169  \\Rightarrow   CF \\approx  48.41/13 < 50/13.\n  Hence diam(R_3) < 50/13.\n\nRegion R_4   (vertices D,F,G,E,J).\n  The largest separation here is DE = 50/13 (see (3)); every other vertex-pair is closer than this (for instance DJ = 30/13, EG = 24/13, JG = \\sqrt{2056}/13, etc.).  Consequently diam(R_4)=50/13.\n\n4.  Conclusion\n--------------\nAll four pieces obtained in (6) have diameter at most 50/13 and at least one of them actually attains this value.  Thus the dissection has diameter 50/13.  Combining this with the lower bound (4) we obtain\n\n   minimum possible diameter = 50/13   \\approx  3.846.\n\nTherefore the answer is 50/13.\n\n\\square ",
+      "_meta": {
+        "core_steps": [
+          "Fix coordinates for the 3–4–5 triangle and introduce 2 extra points so that the least distance among the 5 points equals some value d.",
+          "Compute all inter-point distances to show that every distance is ≥ d, with equality attained at least once.",
+          "Apply the pigeon-hole principle: 5 points split into 4 pieces ⇒ some two lie in the same piece, forcing diameter ≥ d (here d = 25/13).",
+          "Describe an explicit 4-piece dissection and place each piece inside a region whose diameter is ≤ d.",
+          "Use the fact that a polygonal set attains its diameter at two of its vertices to check the bound for every piece."
+        ],
+        "mutable_slots": {
+          "slot_triangle_placement": {
+            "description": "Choice of Cartesian placement (rotation/translation/reflection) of the 3–4–5 triangle.",
+            "original": "A=(0,3), B=(4,0), C=(0,0)"
+          },
+          "slot_aux_points_DE": {
+            "description": "Exact positions of the two auxiliary points that make the minimal pairwise distance d; any other pair realizing the same property works.",
+            "original": "D=(20/13,24/13), E=(27/13,0)"
+          },
+          "slot_value_d": {
+            "description": "Target minimal distance produced by the chosen auxiliary points; must coincide with the lower-bound diameter and be matched by the construction.",
+            "original": "d = 25/13"
+          },
+          "slot_piece_vertices_FGHJ": {
+            "description": "Specific auxiliary vertices used to outline the four regions in the construction phase.",
+            "original": "F=(15/13,19/13), G=(15/13,0), H=(0,19/13), J=(32/15,15/13)"
+          },
+          "slot_bounding_shapes": {
+            "description": "Geometric shapes employed to bound each piece (circular sectors, rectangle, etc.); any shapes guaranteeing diameter ≤ d are acceptable.",
+            "original": "sectors centered at A and B, rectangle CGFH"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

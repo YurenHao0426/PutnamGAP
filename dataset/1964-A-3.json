@@ -1,0 +1,112 @@
+{
+  "index": "1964-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "3. Let \\( P_{1}, P_{2}, \\ldots \\) be a sequence of distinct points which is dense in the interval \\( (0,1) \\). The points \\( P_{1}, P_{2}, \\ldots, P_{n-1} \\) decompose the interval into \\( n \\) parts, and \\( P_{n} \\) decomposes one of these into two parts. Let \\( a_{n} \\) and \\( b_{n} \\) be the lengths of these two intervals. Prove that\n\\[\n\\sum_{n=1}^{\\infty} a_{n} b_{n}\\left(a_{n}+b_{n}\\right)=1 / 3\n\\]\n(A sequence of points in an interval is said to be dense when every subinterval contains at least one point of the sequence.)",
+  "solution": "Solution. Let \\( S_{n} \\) be the sum of the cubes of the lengths of the segments formed by the points \\( P_{1}, P_{2}, \\ldots, P_{n-1}, P_{n} \\). Take \\( S_{0}=1 \\). We can obtain \\( S_{n} \\) from \\( S_{n, 1} \\) by removing the term \\( \\left(a_{n}+b_{n}\\right)^{3} \\) and replacing it by \\( a_{n}{ }^{3}+b_{n}{ }^{3} \\). leaving all other terms fixed.\n\nHence\n\\[\n\\begin{aligned}\nS_{n \\cdot 1}-S_{n} & =\\left(a_{n}+b_{n}\\right)^{3}-a_{n}{ }^{3}-b_{n}{ }^{3} \\\\\n& =3 a_{n} b_{n}\\left(a_{n}+b_{n}\\right) .\n\\end{aligned}\n\\]\n\nTherefore\n\\[\n1-S_{k}=S_{0}-S_{k}=\\sum_{n=1}^{k} 3 a_{n} b_{n}\\left(a_{n}+b_{n}\\right) .\n\\]\n\nSince, as we shall prove below. \\( \\lim _{k-\\infty} S_{k}=0 \\).\n\\[\n\\sum_{n=1}^{\\infty} 3 a_{n} b_{n}\\left(a_{n}+b_{n}\\right)=1 .\n\\]\nand the required result follows immediately.\nWe now show that \\( \\lim _{k-\\infty} S_{k}=0 \\). Let \\( t \\) be a positive integer. Because the set \\( \\left\\{P_{1}\\right\\} \\) is dense, we can choose an integer \\( q \\) so large that \\( \\left\\{P_{1}, P_{2}\\right. \\), \\( \\left.\\ldots . P_{y}\\right\\} \\) meets eaclr of the intervals\n\\[\n\\left.\\left.\\left\\lvert\\, 0 . \\frac{1}{t}\\right.\\right\\rceil \\left.\\cdot\\left|\\frac{1}{t}, \\frac{2}{t}\\right| \\ldots \\ldots \\right\\rvert\\, \\frac{t-1}{t}, 1\\right\\rceil .\n\\]\n\nSuppose \\( k \\geq q \\). and let \\( l_{0} . l_{1}, \\ldots, l_{k} \\) be the lengths of the intervals determined by the division points \\( P_{1}, P_{2}, \\ldots, P_{k} \\). Then each of these intervals has length at most \\( 2 / t \\). so\n\\[\nS_{k}=\\sum_{i=0}^{k} I_{1}^{3} \\leq\\left(\\frac{2}{t}\\right)^{2} \\sum_{0}^{k} l_{1}=\\frac{4}{t^{2}} .\n\\]\n\nSince \\( t \\) was arbitrary, this proves\n\\[\n\\lim S_{k}=0 .\n\\]",
+  "vars": [
+    "n",
+    "k",
+    "i",
+    "q",
+    "t",
+    "y",
+    "P_n",
+    "a_n",
+    "b_n",
+    "S_n",
+    "l_i"
+  ],
+  "params": [
+    "S_0"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "k": "truncate",
+        "i": "iterate",
+        "q": "chooseq",
+        "t": "segment",
+        "y": "dummyvar",
+        "P_n": "genericpoint",
+        "a_n": "leftlen",
+        "b_n": "rightlen",
+        "S_n": "cubicsum",
+        "l_i": "segmentlen",
+        "S_0": "initialsum"
+      },
+      "question": "3. Let \\( P_{1}, P_{2}, \\ldots \\) be a sequence of distinct points which is dense in the interval \\( (0,1) \\). The points \\( P_{1}, P_{2}, \\ldots, P_{\\text{indexvar}-1} \\) decompose the interval into \\( \\text{indexvar} \\) parts, and \\( \\text{genericpoint} \\) decomposes one of these into two parts. Let \\( \\text{leftlen} \\) and \\( \\text{rightlen} \\) be the lengths of these two intervals. Prove that\n\\[\n\\sum_{\\text{indexvar}=1}^{\\infty} \\text{leftlen}\\,\\text{rightlen}\\left(\\text{leftlen}+\\text{rightlen}\\right)=1 / 3\n\\]\n(A sequence of points in an interval is said to be dense when every subinterval contains at least one point of the sequence.)",
+      "solution": "Solution. Let \\( \\text{cubicsum} \\) be the sum of the cubes of the lengths of the segments formed by the points \\( P_{1}, P_{2}, \\ldots, P_{\\text{indexvar}-1}, \\text{genericpoint} \\). Take \\( \\text{initialsum}=1 \\). We can obtain \\( \\text{cubicsum} \\) from \\( S_{\\text{indexvar}, 1} \\) by removing the term \\( \\left(\\text{leftlen}+\\text{rightlen}\\right)^{3} \\) and replacing it by \\( \\text{leftlen}^{3}+\\text{rightlen}^{3} \\), leaving all other terms fixed.\n\nHence\n\\[\n\\begin{aligned}\nS_{\\text{indexvar} \\cdot 1}-\\text{cubicsum} & =\\left(\\text{leftlen}+\\text{rightlen}\\right)^{3}-\\text{leftlen}^{3}-\\text{rightlen}^{3} \\\\\n& =3 \\text{leftlen}\\,\\text{rightlen}\\left(\\text{leftlen}+\\text{rightlen}\\right) .\n\\end{aligned}\n\\]\n\nTherefore\n\\[\n1-S_{\\text{truncate}}=\\text{initialsum}-S_{\\text{truncate}}=\\sum_{\\text{indexvar}=1}^{\\text{truncate}} 3\\,\\text{leftlen}\\,\\text{rightlen}\\left(\\text{leftlen}+\\text{rightlen}\\right) .\n\\]\n\nSince, as we shall prove below, \\( \\lim _{\\text{truncate}\\to\\infty} S_{\\text{truncate}}=0 \\),\n\\[\n\\sum_{\\text{indexvar}=1}^{\\infty} 3\\,\\text{leftlen}\\,\\text{rightlen}\\left(\\text{leftlen}+\\text{rightlen}\\right)=1 .\n\\]\nand the required result follows immediately.\n\nWe now show that \\( \\lim _{\\text{truncate}\\to\\infty} S_{\\text{truncate}}=0 \\). Let \\( \\text{segment} \\) be a positive integer. Because the set \\( \\{P_{1}\\} \\) is dense, we can choose an integer \\( \\text{chooseq} \\) so large that \\( \\{P_{1}, P_{2},\\ldots , P_{\\text{dummyvar}}\\} \\) meets each of the intervals\n\\[\n\\left\\lvert\\, 0 ,\\frac{1}{\\text{segment}}\\right\\rceil ,\\left\\lvert\\,\\frac{1}{\\text{segment}}, \\frac{2}{\\text{segment}}\\right\\rvert ,\\ldots ,\\left\\lvert\\, \\frac{\\text{segment}-1}{\\text{segment}}, 1\\right\\rceil .\n\\]\n\nSuppose \\( \\text{truncate} \\geq \\text{chooseq} \\), and let \\( l_{0}, l_{1}, \\ldots, l_{\\text{truncate}} \\) be the lengths of the intervals determined by the division points \\( P_{1}, P_{2}, \\ldots, P_{\\text{truncate}} \\). Then each of these intervals has length at most \\( 2 / \\text{segment} \\), so\n\\[\nS_{\\text{truncate}}=\\sum_{\\text{iterate}=0}^{\\text{truncate}} I_{1}^{3} \\leq\\left(\\frac{2}{\\text{segment}}\\right)^{2} \\sum_{0}^{\\text{truncate}} l_{1}=\\frac{4}{\\text{segment}^{2}} .\n\\]\n\nSince \\( \\text{segment} \\) was arbitrary, this proves\n\\[\n\\lim S_{\\text{truncate}}=0 .\n\\]\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "stargazer",
+        "k": "buttercup",
+        "i": "dragonfly",
+        "q": "riverstone",
+        "t": "moonlight",
+        "y": "dreamfish",
+        "P_n": "lighthouse",
+        "a_n": "blueberry",
+        "b_n": "cinnamon",
+        "S_n": "wildfire",
+        "l_i": "sandstone",
+        "S_0": "oceanwave"
+      },
+      "question": "3. Let \\( lighthouse_{1}, lighthouse_{2}, \\ldots \\) be a sequence of distinct points which is dense in the interval \\( (0,1) \\). The points \\( lighthouse_{1}, lighthouse_{2}, \\ldots, lighthouse_{stargazer-1} \\) decompose the interval into \\( stargazer \\) parts, and \\( lighthouse_{stargazer} \\) decomposes one of these into two parts. Let \\( blueberry_{stargazer} \\) and \\( cinnamon_{stargazer} \\) be the lengths of these two intervals. Prove that\n\\[\n\\sum_{stargazer=1}^{\\infty} blueberry_{stargazer} \\, cinnamon_{stargazer}\\left(blueberry_{stargazer}+cinnamon_{stargazer}\\right)=1 / 3\n\\]\n(A sequence of points in an interval is said to be dense when every subinterval contains at least one point of the sequence.)",
+      "solution": "Solution. Let \\( wildfire_{stargazer} \\) be the sum of the cubes of the lengths of the segments formed by the points \\( lighthouse_{1}, lighthouse_{2}, \\ldots, lighthouse_{stargazer-1}, lighthouse_{stargazer} \\). Take \\( oceanwave=1 \\). We can obtain \\( wildfire_{stargazer} \\) from \\( wildfire_{stargazer, 1} \\) by removing the term \\( \\left(blueberry_{stargazer}+cinnamon_{stargazer}\\right)^{3} \\) and replacing it by \\( blueberry_{stargazer}^{3}+cinnamon_{stargazer}^{3} \\), leaving all other terms fixed.\n\nHence\n\\[\n\\begin{aligned}\nwildfire_{stargazer \\cdot 1}-wildfire_{stargazer} & =\\left(blueberry_{stargazer}+cinnamon_{stargazer}\\right)^{3}-blueberry_{stargazer}^{3}-cinnamon_{stargazer}^{3} \\\\\n& =3\\, blueberry_{stargazer}\\, cinnamon_{stargazer}\\left(blueberry_{stargazer}+cinnamon_{stargazer}\\right) .\n\\end{aligned}\n\\]\n\nTherefore\n\\[\n1-wildfire_{buttercup}=oceanwave-wildfire_{buttercup}=\\sum_{stargazer=1}^{buttercup} 3\\, blueberry_{stargazer}\\, cinnamon_{stargazer}\\left(blueberry_{stargazer}+cinnamon_{stargazer}\\right) .\n\\]\n\nSince, as we shall prove below, \\( \\lim _{buttercup\\to\\infty} wildfire_{buttercup}=0 \\),\n\\[\n\\sum_{stargazer=1}^{\\infty} 3\\, blueberry_{stargazer}\\, cinnamon_{stargazer}\\left(blueberry_{stargazer}+cinnamon_{stargazer}\\right)=1 .\n\\]\nand the required result follows immediately.\n\nWe now show that \\( \\lim _{buttercup\\to\\infty} wildfire_{buttercup}=0 \\). Let \\( moonlight \\) be a positive integer. Because the set \\( \\{lighthouse_{1}\\} \\) is dense, we can choose an integer \\( riverstone \\) so large that \\( \\{lighthouse_{1}, lighthouse_{2}, \\ldots , lighthouse_{dreamfish}\\} \\) meets each of the intervals\n\\[\n\\left.\\left.\\left\\lvert\\, 0 ,\\frac{1}{moonlight}\\right.\\right\\rceil \\left.\\cdot\\left|\\frac{1}{moonlight}, \\frac{2}{moonlight}\\right| \\ldots \\ldots \\right\\rvert\\, \\frac{moonlight-1}{moonlight}, 1\\right\\rceil .\n\\]\n\nSuppose \\( buttercup \\geq riverstone \\), and let \\( sandstone_{0}, sandstone_{1}, \\ldots, sandstone_{buttercup} \\) be the lengths of the intervals determined by the division points \\( lighthouse_{1}, lighthouse_{2}, \\ldots, lighthouse_{buttercup} \\). Then each of these intervals has length at most \\( 2 / moonlight \\), so\n\\[\nwildfire_{buttercup}=\\sum_{dragonfly=0}^{buttercup} sandstone_{dragonfly}^{3} \\leq\\left(\\frac{2}{moonlight}\\right)^{2} \\sum_{dragonfly=0}^{buttercup} sandstone_{dragonfly}=\\frac{4}{moonlight^{2}} .\n\\]\n\nSince \\( moonlight \\) was arbitrary, this proves\n\\[\n\\lim _{buttercup\\to\\infty} wildfire_{buttercup}=0 .\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "staticval",
+        "k": "initialval",
+        "i": "coarseval",
+        "q": "sparseval",
+        "t": "negativeval",
+        "y": "nullvalue",
+        "P_n": "planearea",
+        "a_n": "breadthval",
+        "b_n": "thickness",
+        "S_n": "gapvalue",
+        "l_i": "areavalue",
+        "S_0": "gapstart"
+      },
+      "question": "3. Let \\( planearea_{1}, planearea_{2}, \\ldots \\) be a sequence of distinct points which is dense in the interval \\( (0,1) \\). The points \\( planearea_{1}, planearea_{2}, \\ldots, planearea_{staticval-1} \\) decompose the interval into \\( staticval \\) parts, and \\( planearea \\) decomposes one of these into two parts. Let \\( breadthval \\) and \\( thickness \\) be the lengths of these two intervals. Prove that\n\\[\n\\sum_{staticval=1}^{\\infty} breadthval\\, thickness\\left(breadthval+thickness\\right)=1 / 3\n\\]\n(A sequence of points in an interval is said to be dense when every subinterval contains at least one point of the sequence.)",
+      "solution": "Solution. Let \\( gapvalue \\) be the sum of the cubes of the lengths of the segments formed by the points \\( planearea_{1}, planearea_{2}, \\ldots, planearea_{staticval-1}, planearea \\). Take \\( gapstart=1 \\). We can obtain \\( gapvalue \\) from \\( gapvalue_{staticval,1} \\) by removing the term \\( \\left(breadthval+thickness\\right)^{3} \\) and replacing it by \\( breadthval^{3}+thickness^{3} \\), leaving all other terms fixed.\n\nHence\n\\[\n\\begin{aligned}\ngapvalue_{staticval \\cdot 1}-gapvalue &=\\left(breadthval+thickness\\right)^{3}-breadthval^{3}-thickness^{3} \\\\\n&=3\\, breadthval\\, thickness\\left(breadthval+thickness\\right) .\n\\end{aligned}\n\\]\n\nTherefore\n\\[\n1-gapvalue_{initialval}=gapstart-gapvalue_{initialval}=\\sum_{staticval=1}^{initialval} 3\\, breadthval\\, thickness\\left(breadthval+thickness\\right) .\n\\]\n\nSince, as we shall prove below, \\( \\lim _{initialval-\\infty} gapvalue_{initialval}=0 \\),\n\\[\n\\sum_{staticval=1}^{\\infty} 3\\, breadthval\\, thickness\\left(breadthval+thickness\\right)=1 .\n\\]\nand the required result follows immediately.\n\nWe now show that \\( \\lim _{initialval-\\infty} gapvalue_{initialval}=0 \\). Let \\( negativeval \\) be a positive integer. Because the set \\( \\{planearea_{1}\\} \\) is dense, we can choose an integer \\( sparseval \\) so large that \\( \\{planearea_{1}, planearea_{2}, \\ldots , planearea_{nullvalue}\\} \\) meets eaclr of the intervals\n\\[\n\\left.\\left.\\left\\lvert\\, 0 . \\frac{1}{negativeval}\\right.\\right\\rceil \\left.\\cdot\\left|\\frac{1}{negativeval}, \\frac{2}{negativeval}\\right| \\ldots  \\right\\rvert\\, \\frac{negativeval-1}{negativeval}, 1\\right\\rceil .\n\\]\n\nSuppose \\( initialval \\geq sparseval \\), and let \\( areavalue_{0} , areavalue_{1}, \\ldots, areavalue_{initialval} \\) be the lengths of the intervals determined by the division points \\( planearea_{1}, planearea_{2}, \\ldots, planearea_{initialval} \\). Then each of these intervals has length at most \\( 2 / negativeval \\), so\n\\[\ngapvalue_{initialval}=\\sum_{coarseval=0}^{initialval} areavalue_{coarseval}^{3} \\leq\\left(\\frac{2}{negativeval}\\right)^{2} \\sum_{coarseval=0}^{initialval} areavalue_{coarseval}=\\frac{4}{negativeval^{2}} .\n\\]\n\nSince \\( negativeval \\) was arbitrary, this proves\n\\[\n\\lim gapvalue_{initialval}=0 .\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "n": "xvkqplmz",
+        "k": "jgnrtdhp",
+        "i": "bafsklqe",
+        "q": "mpvlzroa",
+        "t": "cjrusbke",
+        "y": "hgfldqne",
+        "P_n": "qzxwvtnp",
+        "a_n": "hjgrksla",
+        "b_n": "spmqzrtu",
+        "S_n": "ocmxbvsa",
+        "l_i": "kvnwhdpr",
+        "S_0": "uatzrjlc"
+      },
+      "question": "3. Let \\( P_{1}, P_{2}, \\ldots \\) be a sequence of distinct points which is dense in the interval \\( (0,1) \\). The points \\( P_{1}, P_{2}, \\ldots, P_{xvkqplmz-1} \\) decompose the interval into \\( xvkqplmz \\) parts, and \\( qzxwvtnp \\) decomposes one of these into two parts. Let \\( hjgrksla \\) and \\( spmqzrtu \\) be the lengths of these two intervals. Prove that\n\\[\n\\sum_{xvkqplmz=1}^{\\infty} hjgrksla\\, spmqzrtu\\left(hjgrksla+spmqzrtu\\right)=1 / 3\n\\]\n(A sequence of points in an interval is said to be dense when every subinterval contains at least one point of the sequence.)",
+      "solution": "Solution. Let \\( ocmxbvsa \\) be the sum of the cubes of the lengths of the segments formed by the points \\( P_{1}, P_{2}, \\ldots, P_{xvkqplmz-1}, qzxwvtnp \\). Take \\( uatzrjlc=1 \\). We can obtain \\( ocmxbvsa \\) from \\( S_{xvkqplmz, 1} \\) by removing the term \\( \\left(hjgrksla+spmqzrtu\\right)^{3} \\) and replacing it by \\( hjgrksla^{3}+spmqzrtu^{3} \\), leaving all other terms fixed.\n\nHence\n\\[\n\\begin{aligned}\nS_{xvkqplmz \\cdot 1}-ocmxbvsa & =\\left(hjgrksla+spmqzrtu\\right)^{3}-hjgrksla^{3}-spmqzrtu^{3} \\\\\n& =3 \\, hjgrksla\\, spmqzrtu\\left(hjgrksla+spmqzrtu\\right) .\n\\end{aligned}\n\\]\n\nTherefore\n\\[\n1-S_{jgnrtdhp}=uatzrjlc-S_{jgnrtdhp}=\\sum_{xvkqplmz=1}^{jgnrtdhp} 3 \\, hjgrksla\\, spmqzrtu\\left(hjgrksla+spmqzrtu\\right) .\n\\]\n\nSince, as we shall prove below, \\( \\lim _{jgnrtdhp\\to\\infty} S_{jgnrtdhp}=0 \\),\n\\[\n\\sum_{xvkqplmz=1}^{\\infty} 3 \\, hjgrksla\\, spmqzrtu\\left(hjgrksla+spmqzrtu\\right)=1 .\n\\]\nand the required result follows immediately.\n\nWe now show that \\( \\lim _{jgnrtdhp\\to\\infty} S_{jgnrtdhp}=0 \\). Let \\( cjrusbke \\) be a positive integer. Because the set \\( \\{P_{1}\\} \\) is dense, we can choose an integer \\( mpvlzroa \\) so large that \\( \\{P_{1}, P_{2},\\ldots , P_{hgfldqne}\\} \\) meets each of the intervals\n\\[\n\\left.\\left.\\left\\lvert\\, 0 ,\\frac{1}{cjrusbke}\\right.\\right\\rceil \\left.\\cdot\\left|\\frac{1}{cjrusbke}, \\frac{2}{cjrusbke}\\right| \\ldots \\ldots \\right\\rvert\\, \\frac{cjrusbke-1}{cjrusbke}, 1\\right\\rceil .\n\\]\n\nSuppose \\( jgnrtdhp \\geq mpvlzroa \\), and let \\( kvnwhdpr_{0}, kvnwhdpr_{1}, \\ldots, kvnwhdpr_{jgnrtdhp} \\) be the lengths of the intervals determined by the division points \\( P_{1}, P_{2}, \\ldots, P_{jgnrtdhp} \\). Then each of these intervals has length at most \\( 2 / cjrusbke \\), so\n\\[\nS_{jgnrtdhp}=\\sum_{bafsklqe=0}^{jgnrtdhp} kvnwhdpr_{bafsklqe}^{3} \\leq\\left(\\frac{2}{cjrusbke}\\right)^{2} \\sum_{0}^{jgnrtdhp} kvnwhdpr_{1}=\\frac{4}{cjrusbke^{2}} .\n\\]\n\nSince \\( cjrusbke \\) was arbitrary, this proves\n\\[\n\\lim S_{jgnrtdhp}=0 .\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Fix an integer m \\geq  4.  Let Q_1,Q_2,\\ldots  be distinct points that are dense in the open interval (0,3).  After Q_1,\\ldots ,Q_{n-1} have been placed the interval (0,3) is cut into n sub-intervals; when Q_n is inserted it falls inside one of those pieces and splits it into two new pieces whose lengths we call c_n and d_n.  Prove that  \n\n  \\sum _{n=1}^{\\infty } c_n d_n (c_n^{m-2}+c_n^{m-3}d_n+\\cdots +d_n^{m-2}) = 3^{m}/m,  \n\nwhere the parentheses contain exactly m-1 terms.\n\n",
+      "solution": "Step 1 - Power inventory.  \nFor k \\geq  0 let  \n T_k = \\Sigma (length)^{m}  \nbe the sum of the m-th powers of all sub-interval lengths after Q_1,\\ldots ,Q_k are in place.  Initially only the whole interval (0,3) is present, so T_0 = 3^{m}.  \n\nStep 2 - What one insertion does.  \nPlacing Q_k replaces one segment of length c_k+d_k by two segments c_k and d_k.  Hence  \n\n T_{k-1}-T_k = (c_k+d_k)^{m} - c_k^{m} - d_k^{m}.  \n\nUsing the factorisation (a+b)^{m}-a^{m}-b^{m}=mab(a^{m-2}+a^{m-3}b+\\cdots +b^{m-2}), we obtain  \n\n T_{k-1}-T_k = m c_k d_k (c_k^{m-2}+c_k^{m-3}d_k+\\cdots +d_k^{m-2}). (\\star )\n\nStep 3 - Telescoping.  \nSumming (\\star ) for k=1,\\ldots ,N gives  \n\n 3^{m}-T_N = m \\Sigma _{k=1}^{N} c_k d_k(c_k^{m-2}+\\cdots +d_k^{m-2}). (1)\n\nStep 4 - Showing T_N\\to 0.  \nFix an integer t\\geq 1.  Because {Q_j} is dense we can choose r such that Q_1,\\ldots ,Q_r meets each sub-interval (3j/t,3(j+1)/t), j=0,\\ldots ,t-1.  \nFor N\\geq r every segment of the partition after Q_N lies in at most two adjacent of those intervals, so its length is \\leq 6/t.  Therefore  \n\n T_N = \\Sigma  \\ell ^{m} \\leq  (6/t)^{m-2} \\Sigma  \\ell ^{2} \\leq  (6/t)^{m-2}\\cdot 3\\cdot (6/t)^{2} = 3\\cdot 6^{m}/t^{m}.  \n\nSince t was arbitrary, T_N\\to 0.  \n\nStep 5 - Finishing.  \nLetting N\\to \\infty  in (1) and dividing by m yields the desired identity  \n\n \\Sigma _{n=1}^{\\infty } c_n d_n(c_n^{m-2}+\\cdots +d_n^{m-2}) = 3^{m}/m. \\blacksquare \n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.132618",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

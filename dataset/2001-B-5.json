@@ -1,0 +1,139 @@
+{
+  "index": "2001-B-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $a$ and $b$ be real numbers in the interval $(0,1/2)$, and\nlet $g$ be a continuous real-valued function such that\n$g(g(x))= ag(x)+bx$ for all real $x$.  Prove that\n$g(x)=cx$ for some constant $c$.",
+  "solution": "Note that $g(x) = g(y)$ implies that $g(g(x)) = g(g(y))$ and hence\n$x = y$ from the given equation. That is, $g$ is injective. Since $g$\nis also continuous, $g$ is either strictly increasing or strictly\ndecreasing. Moreover, $g$ cannot tend to a finite limit $L$ as $x \\to\n+\\infty$, or else we'd have $g(g(x)) - ag(x) = bx$, with the left side\nbounded and the right side unbounded. Similarly, $g$ cannot tend to\na finite limit as $x \\to -\\infty$. Together with monotonicity, this\nyields that $g$ is also surjective.\n\nPick $x_0$ arbitrary, and define $x_n$ for all $n \\in \\ZZ$ recursively\nby $x_{n+1} = g(x_n)$ for $n > 0$, and $x_{n-1} = g^{-1}(x_n)$ for $n<0$.\nLet $r_1 = (a + \\sqrt{a^2+4b})/2$ and $r_2 = (a - \\sqrt{a^2+4b})/2$ and\n$r_2$ be the roots of $x^2 - ax-b = 0$, so that $r_1 > 0 >\nr_2$ and $1 > |r_1| > |r_2|$. Then there exist $c_1, c_2 \\in \\RR$ such that\n$x_n = c_1 r_1^n + c_2 r_2^n$ for all $n \\in \\ZZ$.\n\nSuppose $g$ is strictly increasing. If $c_2 \\neq 0$ for some choice of\n$x_0$, then $x_n$ is dominated by $r_2^n$ for $n$ sufficiently\nnegative. But taking $x_n$ and $x_{n+2}$ for $n$ sufficiently negative of the\nright parity, we get $0 < x_n < x_{n+2}$ but $g(x_n) > g(x_{n+2})$,\ncontradiction. Thus $c_2 = 0$; since $x_0 = c_1$\nand $x_1 = c_1 r_1$, we have $g(x) = r_1 x$ for all $x$.\nAnalogously, if $g$ is strictly decreasing, then $c_2 = 0$ or else\n$x_n$ is dominated by $r_1^n$ for $n$ sufficiently positive. But taking\n$x_n$ and $x_{n+2}$ for $n$ sufficiently positive of the right parity,\nwe get $0 < x_{n+2} <x_n$ but $g(x_{n+2}) < g(x_n)$, contradiction.\nThus in that case, $g(x) = r_2 x$ for all $x$.",
+  "vars": [
+    "g",
+    "x",
+    "y",
+    "n",
+    "x_0",
+    "x_n"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "L",
+    "r_1",
+    "r_2",
+    "c_1",
+    "c_2"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "g": "mapping",
+        "x": "variable",
+        "y": "another",
+        "n": "counter",
+        "x_0": "initial",
+        "x_n": "sequence",
+        "a": "consta",
+        "b": "constb",
+        "c": "scalar",
+        "L": "limitl",
+        "r_1": "rootone",
+        "r_2": "roottwo",
+        "c_1": "coeffone",
+        "c_2": "coefftwo"
+      },
+      "question": "Let $consta$ and $constb$ be real numbers in the interval $(0,1/2)$, and\nlet $mapping$ be a continuous real-valued function such that\n$mapping(mapping(variable))= consta\\,mapping(variable)+constb\\,variable$ for all real $variable$.  Prove that\n$mapping(variable)=scalar\\,variable$ for some constant $scalar$.",
+      "solution": "Note that $mapping(variable) = mapping(another)$ implies that $mapping(mapping(variable)) = mapping(mapping(another))$ and hence\n$variable = another$ from the given equation. That is, $mapping$ is injective. Since $mapping$\nis also continuous, $mapping$ is either strictly increasing or strictly\ndecreasing. Moreover, $mapping$ cannot tend to a finite limit $limitl$ as $variable \\to\n+\\infty$, or else we'd have $mapping(mapping(variable)) - consta\\,mapping(variable) = constb\\,variable$, with the left side\nbounded and the right side unbounded. Similarly, $mapping$ cannot tend to\na finite limit as $variable \\to -\\infty$. Together with monotonicity, this\nyields that $mapping$ is also surjective.\n\nPick $initial$ arbitrary, and define $sequence$ for all $counter \\in \\ZZ$ recursively\nby $variable_{counter+1} = mapping(variable_{counter})$ for $counter > 0$, and $variable_{counter-1} = mapping^{-1}(variable_{counter})$ for $counter<0$.\nLet $rootone = (consta + \\sqrt{consta^2+4\\,constb})/2$ and $roottwo = (consta - \\sqrt{consta^2+4\\,constb})/2$ and\n$roottwo$ be the roots of $variable^2 - consta\\,variable-constb = 0$, so that $rootone > 0 >\nroottwo$ and $1 > |rootone| > |roottwo|$. Then there exist $coeffone, coefftwo \\in \\RR$ such that\n$sequence = coeffone\\,rootone^{counter} + coefftwo\\,roottwo^{counter}$ for all $counter \\in \\ZZ$.\n\nSuppose $mapping$ is strictly increasing. If $coefftwo \\neq 0$ for some choice of\n$initial$, then $sequence$ is dominated by $roottwo^{counter}$ for $counter$ sufficiently\nnegative. But taking $sequence$ and $variable_{counter+2}$ for $counter$ sufficiently negative of the\nright parity, we get $0 < sequence < variable_{counter+2}$ but $mapping(sequence) > mapping(variable_{counter+2})$,\ncontradiction. Thus $coefftwo = 0$; since $initial = coeffone$\nand $variable_1 = coeffone\\,rootone$, we have $mapping(variable) = rootone\\,variable$ for all $variable$.\nAnalogously, if $mapping$ is strictly decreasing, then $coefftwo = 0$ or else\n$sequence$ is dominated by $rootone^{counter}$ for $counter$ sufficiently positive. But taking\n$sequence$ and $variable_{counter+2}$ for $counter$ sufficiently positive of the right parity,\nwe get $0 < variable_{counter+2} < sequence$ but $mapping(variable_{counter+2}) < mapping(sequence)$, contradiction.\nThus in that case, $mapping(variable) = roottwo\\,variable$ for all $variable$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "g": "marshmallow",
+        "x": "raincloud",
+        "y": "sunflower",
+        "n": "crocodile",
+        "x_0": "raincloudzero",
+        "x_n": "raincloudn",
+        "a": "lighthouse",
+        "b": "paintbrush",
+        "c": "snowcastle",
+        "L": "jellybeans",
+        "r_1": "peppermint",
+        "r_2": "butterscotch",
+        "c_1": "marigold",
+        "c_2": "chandelier"
+      },
+      "question": "Let $lighthouse$ and $paintbrush$ be real numbers in the interval $(0,1/2)$, and\nlet $marshmallow$ be a continuous real-valued function such that\n$marshmallow(marshmallow(raincloud))= lighthousemarshmallow(raincloud)+paintbrushraincloud$ for all real $raincloud$.  Prove that\n$marshmallow(raincloud)= snowcastleraincloud$ for some constant $snowcastle$.",
+      "solution": "Note that $marshmallow(raincloud) = marshmallow(sunflower)$ implies that $marshmallow(marshmallow(raincloud)) = marshmallow(marshmallow(sunflower))$ and hence\n$raincloud = sunflower$ from the given equation. That is, $marshmallow$ is injective. Since $marshmallow$\nis also continuous, $marshmallow$ is either strictly increasing or strictly\ndecreasing. Moreover, $marshmallow$ cannot tend to a finite limit $jellybeans$ as $raincloud \\to\n+\\infty$, or else we'd have $marshmallow(marshmallow(raincloud)) - lighthousemarshmallow(raincloud) = paintbrushraincloud$, with the left side\nbounded and the right side unbounded. Similarly, $marshmallow$ cannot tend to\na finite limit as $raincloud \\to -\\infty$. Together with monotonicity, this\nyields that $marshmallow$ is also surjective.\n\nPick $raincloudzero$ arbitrary, and define $raincloudn$ for all $crocodile \\in \\ZZ$ recursively\nby $raincloud_{crocodile+1} = marshmallow(raincloudn)$ for $crocodile > 0$, and $raincloud_{crocodile-1} = marshmallow^{-1}(raincloudn)$ for $crocodile<0$.\nLet $peppermint = (lighthouse + \\sqrt{lighthouse^2+4paintbrush})/2$ and $butterscotch = (lighthouse - \\sqrt{lighthouse^2+4paintbrush})/2$ and\n$butterscotch$ be the roots of $raincloud^2 - lighthouseraincloud-paintbrush = 0$, so that $peppermint > 0 >\nbutterscotch$ and $1 > |peppermint| > |butterscotch|$. Then there exist $marigold, chandelier \\in \\RR$ such that\n$raincloudn = marigold\\,peppermint^{crocodile} + chandelier\\,butterscotch^{crocodile}$ for all $crocodile \\in \\ZZ$.\n\nSuppose $marshmallow$ is strictly increasing. If $chandelier \\neq 0$ for some choice of\n$raincloudzero$, then $raincloudn$ is dominated by $butterscotch^{crocodile}$ for $crocodile$ sufficiently\nnegative. But taking $raincloudn$ and $raincloud_{crocodile+2}$ for $crocodile$ sufficiently negative of the\nright parity, we get $0 < raincloudn < raincloud_{crocodile+2}$ but $marshmallow(raincloudn) > marshmallow(raincloud_{crocodile+2})$,\ncontradiction. Thus $chandelier = 0$; since $raincloudzero = marigold$\nand $raincloud_1 = marigold\\peppermint$, we have $marshmallow(raincloud) = \\peppermint raincloud$ for all $raincloud$.\nAnalogously, if $marshmallow$ is strictly decreasing, then $chandelier = 0$ or else\n$raincloudn$ is dominated by $peppermint^{crocodile}$ for $crocodile$ sufficiently positive. But taking\n$raincloudn$ and $raincloud_{crocodile+2}$ for $crocodile$ sufficiently positive of the right parity,\nwe get $0 < raincloud_{crocodile+2} < raincloudn$ but $marshmallow(raincloud_{crocodile+2}) < marshmallow(raincloudn)$, contradiction.\nThus in that case, $marshmallow(raincloud) = butterscotch raincloud$ for all $raincloud$.}",
+      "confidence": "0.08"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "g": "constantmap",
+        "x": "knownvalue",
+        "y": "fixedvalue",
+        "n": "continuumindex",
+        "x_0": "finalpoint",
+        "x_n": "uniformvalue",
+        "a": "hugevalue",
+        "b": "giantvalue",
+        "c": "variableconst",
+        "L": "boundless",
+        "r_1": "leafvalueone",
+        "r_2": "leafvaluetwo",
+        "c_1": "unknownone",
+        "c_2": "unknowntwo"
+      },
+      "question": "Let $hugevalue$ and $giantvalue$ be real numbers in the interval $(0,1/2)$, and\nlet $constantmap$ be a continuous real-valued function such that\n$constantmap(constantmap(knownvalue))= hugevalue constantmap(knownvalue)+giantvalue knownvalue$ for all real $knownvalue$.  Prove that\n$constantmap(knownvalue)=variableconst knownvalue$ for some constant $variableconst$.",
+      "solution": "Note that $constantmap(knownvalue) = constantmap(fixedvalue)$ implies that $constantmap(constantmap(knownvalue)) = constantmap(constantmap(fixedvalue))$ and hence\n$knownvalue = fixedvalue$ from the given equation. That is, $constantmap$ is injective. Since $constantmap$\nis also continuous, $constantmap$ is either strictly increasing or strictly\ndecreasing. Moreover, $constantmap$ cannot tend to a finite limit $boundless$ as $knownvalue \\to\n+\\infty$, or else we'd have $constantmap(constantmap(knownvalue)) - hugevalue\\,constantmap(knownvalue) = giantvalue\\,knownvalue$, with the left side\nbounded and the right side unbounded. Similarly, $constantmap$ cannot tend to\na finite limit as $knownvalue \\to -\\infty$. Together with monotonicity, this\nyields that $constantmap$ is also surjective.\n\nPick $finalpoint$ arbitrary, and define $uniformvalue$ for all $continuumindex \\in \\ZZ$ recursively\nby $uniformvalue_{\\,continuumindex+1} = constantmap(uniformvalue_{\\,continuumindex})$ for $continuumindex > 0$, and $uniformvalue_{\\,continuumindex-1} = constantmap^{-1}(uniformvalue_{\\,continuumindex})$ for $continuumindex<0$.\nLet $leafvalueone = (hugevalue + \\sqrt{hugevalue^{2}+4\\,giantvalue})/2$ and $leafvaluetwo = (hugevalue - \\sqrt{hugevalue^{2}+4\\,giantvalue})/2$ be the roots of $knownvalue^{2} - hugevalue\\,knownvalue-giantvalue = 0$, so that $leafvalueone > 0 >\nleafvaluetwo$ and $1 > |leafvalueone| > |leafvaluetwo|$. Then there exist $unknownone, unknowntwo \\in \\RR$ such that\n$uniformvalue = unknownone\\, leafvalueone^{\\continuumindex} + unknowntwo\\, leafvaluetwo^{\\continuumindex}$ for all $continuumindex \\in \\ZZ$.\n\nSuppose $constantmap$ is strictly increasing. If $unknowntwo \\neq 0$ for some choice of\n$finalpoint$, then $uniformvalue$ is dominated by $leafvaluetwo^{\\continuumindex}$ for $\\continuumindex$ sufficiently\nnegative. But taking $uniformvalue$ and $uniformvalue_{\\,\\continuumindex+2}$ for $\\continuumindex$ sufficiently negative of the\nright parity, we get $0 < uniformvalue < uniformvalue_{\\,\\continuumindex+2}$ but $constantmap(uniformvalue) > constantmap(uniformvalue_{\\,\\continuumindex+2})$,\ncontradiction. Thus $unknowntwo = 0$; since $finalpoint = unknownone$\nand $uniformvalue_{1} = unknownone\\, leafvalueone$, we have $constantmap(knownvalue) = leafvalueone\\, knownvalue$ for all $knownvalue$.\nAnalogously, if $constantmap$ is strictly decreasing, then $unknowntwo = 0$ or else\n$uniformvalue$ is dominated by $leafvalueone^{\\continuumindex}$ for $\\continuumindex$ sufficiently positive. But taking\n$uniformvalue$ and $uniformvalue_{\\,\\continuumindex+2}$ for $\\continuumindex$ sufficiently positive of the right parity,\nwe get $0 < uniformvalue_{\\,\\continuumindex+2} < uniformvalue$ but $constantmap(uniformvalue_{\\,\\continuumindex+2}) < constantmap(uniformvalue)$, contradiction.\nThus in that case, $constantmap(knownvalue) = leafvaluetwo\\, knownvalue$ for all $knownvalue$. }"
+    },
+    "garbled_string": {
+      "map": {
+        "g": "zqrvuwnm",
+        "x": "ptlshgfa",
+        "y": "nbkduqes",
+        "n": "hjmwrvca",
+        "x_0": "orvaxmnl",
+        "x_n": "bqedsplk",
+        "a": "ujkntrap",
+        "b": "flovregi",
+        "c": "snirwopq",
+        "L": "gmitzsoe",
+        "r_1": "klydseqv",
+        "r_2": "qopnrzxa",
+        "c_1": "dvmxheku",
+        "c_2": "mtrsejga"
+      },
+      "question": "Let $ujkntrap$ and $flovregi$ be real numbers in the interval $(0,1/2)$, and\nlet $zqrvuwnm$ be a continuous real-valued function such that\n$zqrvuwnm(zqrvuwnm(ptlshgfa))= ujkntrap zqrvuwnm(ptlshgfa)+ flovregi ptlshgfa$ for all real $ptlshgfa$.  Prove that\n$zqrvuwnm(ptlshgfa)= snirwopq ptlshgfa$ for some constant $snirwopq$.",
+      "solution": "Note that $zqrvuwnm(ptlshgfa) = zqrvuwnm(nbkduqes)$ implies that $zqrvuwnm(zqrvuwnm(ptlshgfa)) = zqrvuwnm(zqrvuwnm(nbkduqes))$ and hence\n$ptlshgfa = nbkduqes$ from the given equation. That is, $zqrvuwnm$ is injective. Since $zqrvuwnm$\nis also continuous, $zqrvuwnm$ is either strictly increasing or strictly\ndecreasing. Moreover, $zqrvuwnm$ cannot tend to a finite limit $gmitzsoe$ as $ptlshgfa \\to\n+\\infty$, or else we'd have $zqrvuwnm(zqrvuwnm(ptlshgfa)) - ujkntrap zqrvuwnm(ptlshgfa) = flovregi ptlshgfa$, with the left side\nbounded and the right side unbounded. Similarly, $zqrvuwnm$ cannot tend to\na finite limit as $ptlshgfa \\to -\\infty$. Together with monotonicity, this\nyields that $zqrvuwnm$ is also surjective.\n\nPick $orvaxmnl$ arbitrary, and define $bqedsplk$ for all $hjmwrvca \\in \\ZZ$ recursively\nby $ptlshgfa_{hjmwrvca+1} = zqrvuwnm(bqedsplk)$ for $hjmwrvca > 0$, and $ptlshgfa_{hjmwrvca-1} = zqrvuwnm^{-1}(bqedsplk)$ for $hjmwrvca<0$.\nLet $klydseqv = (ujkntrap + \\sqrt{ujkntrap^2+4flovregi})/2$ and $qopnrzxa = (ujkntrap - \\sqrt{ujkntrap^2+4flovregi})/2$ and\n$qopnrzxa$ be the roots of $ptlshgfa^2 - ujkntrap ptlshgfa-flovregi = 0$, so that $klydseqv > 0 >\nqopnrzxa$ and $1 > |klydseqv| > |qopnrzxa|$. Then there exist $dvmxheku, mtrsejga \\in \\RR$ such that\n$bqedsplk = dvmxheku klydseqv^{hjmwrvca} + mtrsejga qopnrzxa^{hjmwrvca}$ for all $hjmwrvca \\in \\ZZ$.\n\nSuppose $zqrvuwnm$ is strictly increasing. If $mtrsejga \\neq 0$ for some choice of\n$orvaxmnl$, then $bqedsplk$ is dominated by $qopnrzxa^{hjmwrvca}$ for $hjmwrvca$ sufficiently\nnegative. But taking $bqedsplk$ and $ptlshgfa_{hjmwrvca+2}$ for $hjmwrvca$ sufficiently negative of the\nright parity, we get $0 < bqedsplk < ptlshgfa_{hjmwrvca+2}$ but $zqrvuwnm(bqedsplk) > zqrvuwnm(ptlshgfa_{hjmwrvca+2})$,\ncontradiction. Thus $mtrsejga = 0$; since $orvaxmnl = dvmxheku$\nand $ptlshgfa_1 = dvmxheku klydseqv$, we have $zqrvuwnm(ptlshgfa) = klydseqv\\, ptlshgfa$ for all $ptlshgfa$.\nAnalogously, if $zqrvuwnm$ is strictly decreasing, then $mtrsejga = 0$ or else\n$bqedsplk$ is dominated by $klydseqv^{hjmwrvca}$ for $hjmwrvca$ sufficiently positive. But taking\n$bqedsplk$ and $ptlshgfa_{hjmwrvca+2}$ for $hjmwrvca$ sufficiently positive of the right parity,\nwe get $0 < ptlshgfa_{hjmwrvca+2} < bqedsplk$ but $zqrvuwnm(ptlshgfa_{hjmwrvca+2}) < zqrvuwnm(bqedsplk)$, contradiction.\nThus in that case, $zqrvuwnm(ptlshgfa) = qopnrzxa\\, ptlshgfa$ for all $ptlshgfa$.  "
+    },
+    "kernel_variant": {
+      "question": "Let real numbers a,b satisfy\n   1/3 < a < 3/4 ,  1/2 < b < 4/5 ,  a + b \\neq 1.\n\nLet f : \\mathbb R \\to \\mathbb R be a continuous function that obeys the functional equation\n   f(f(x)) = a \\,f(x) + b \\,x \\qquad(\\forall x \\in \\mathbb R).\n\nProve that there exists a real constant c - depending only on a and b - such that\n   f(x)= c \\,x \\qquad(\\forall x \\in \\mathbb R).",
+      "solution": "Throughout the proof we put\n        r_1:=\\frac{a+\\sqrt{a^{2}+4b}}{2},\\qquad r_2:=\\frac{a-\\sqrt{a^{2}+4b}}{2},\nso that r_1,r_2 are the (real) roots of  t^{2}-a t-b=0.\n\nSTEP 1 - position of the roots.\nBecause b>0 we have r_1>r_2 and r_1 r_2=-b<0, hence r_1>0>r_2.\n\n(1a)  The inequality |r_2|<1.\nWe have |r_2|=(\\sqrt{a^{2}+4b}-a)/2.  Since |r_2|<1 is equivalent to\n        \\sqrt{a^{2}+4b} < a+2  \\iff  4b < 4a+4  \\iff  b < a+1.\nThe last inequality is true because b<4/5 and a>1/3 imply b<a+1.\nThus |r_2|<1.\n\n(1b)  The value r_1 is different from 1.\nIndeed r_1=1 would give r_2=a-1 and hence a+b=1, contradicting the hypothesis.\nConsequently either 0<r_1<1 or r_1>1 may occur.\n\nSTEP 2 - injectivity, monotonicity, surjectivity of f.\n\nInjectivity.  If f(x)=f(y) then\n   b(x-y)=f(f(x))-af(x)-\\bigl(f(f(y))-af(y)\\bigr)=0\\;\\;\\Rightarrow\\;\\;x=y,\nso f is injective.\n\nMonotonicity.  A continuous injective map is strictly monotone, hence f is either strictly increasing or strictly decreasing.\n\nNo finite horizontal asymptote.  Suppose for definiteness that \\lim_{x\\to+\\infty}f(x)=L\\in \\mathbb R.  Then the left-hand side of\n   f(f(x))-af(x)=bx\nis bounded while the right-hand side tends to +\\infty - impossible.  The same argument at -\\infty rules out a finite limit there.\n\nSurjectivity.  Let us assume f is strictly increasing (the decreasing case is identical) and set K:=f(\\mathbb R).  K is an interval, and because f has no finite limit at either end we have \\sup K=+\\infty and \\inf K=-\\infty; hence K=\\mathbb R and f is surjective.  The same conclusion holds when f is decreasing.\n\nSTEP 3 - a linear recurrence along every orbit.\nFix x_0 and define x_{n+1}=f(x_n)   (n\\in \\mathbb Z).  Because f is bijective the sequence can be indexed over all integers.  Substituting x_n in the functional equation yields\n        x_{n+2}=a\\,x_{n+1}+b\\,x_{n}\\qquad(n\\in\\mathbb Z).   (1)\nSince r_1\\neq r_2 the general solution of (1) is\n        x_n=C_1 r_1^{\\,n}+C_2 r_2^{\\,n}\\qquad(n\\in\\mathbb Z),   (2)\nwhere C_1,C_2 depend on the chosen orbit.\n\nFrom now on we treat separately the cases `f increasing' and `f decreasing'.\n\nSTEP 4 - f is strictly increasing.\nAssume C_2\\neq0 for some orbit.  As n\\to-\\infty the term C_2 r_2^{\\,n} dominates in (2) because |r_2|<1 and r_2<0; consequently the sign of x_{n+2}-x_n alternates infinitely often.  Picking n very negative with x_n<x_{n+2} but x_{n+1}>x_{n+3} contradicts the monotonicity of f.  Hence every orbit has C_2=0, so x_{n+1}=r_1 x_n for all n and therefore\n        f(x)=r_1x  (x\\in\\mathbb R).\n\nSTEP 5 - f is strictly decreasing.\nPut\n        c:=r_2(<0), \\qquad g(x):=f(x)-c x.\nBecause c^{2}=ac+b, a short calculation gives\n        g(f(x))=(a-c)g(x)=r_1 g(x).      (3)\nTwo sub-cases arise according to the value of r_1.\n\n5.1  Sub-case r_1>1.\nSuppose C_1\\neq0 for some orbit (x_n).  Because r_1>1, the term C_1 r_1^{\\,n} dominates (2) for large positive n.  Choose N so large that\n        |C_2|\\,|r_2|^{N}<\\frac12 |C_1| r_1^{N}.     (4)\nThen for all n\\ge N we have\n        x_n=C_1 r_1^{n}(1+\\varepsilon_n), \\quad |\\varepsilon_n|<\\tfrac12.   (5)\nFirst difference.  From (2),\n        x_{n+2}-x_n=C_1 r_1^{n}(r_1^{2}-1)+O(r_2^{n}),\nand by (4) the error term is smaller than half the main term, so the sign of x_{n+2}-x_n is \\operatorname{sgn}(C_1).  Because r_1^{2}-1>0, we have\n        \\operatorname{sgn}(x_{n+2}-x_n)=\\operatorname{sgn}(C_1).     (6)\nSince f is decreasing, the next iterates satisfy the opposite inequality:\n        \\operatorname{sgn}(x_{n+3}-x_{n+1})=-\\operatorname{sgn}(x_{n+2}-x_n)=-\\operatorname{sgn}(C_1).  (7)\nSecond difference.  Again from (2),\n        x_{n+3}-x_{n+1}=C_1 r_1^{n+1}(r_1^{2}-1)+O(r_2^{n+1}),\nwhose sign, by the same domination estimate, is \\operatorname{sgn}(C_1).     (8)\nBut (7) and (8) together give opposite signs for x_{n+3}-x_{n+1}, a contradiction.  Therefore C_1=0 along every orbit; hence x_{n+1}=r_2 x_n and f(x)=r_2 x.\n\n5.2  Sub-case 0<r_1<1.\nThe argument is analogous but carried out for large negative indices, as in Step 4.  Assume C_1\\neq0 and pick N\\ll0 so negative that\n        |C_2|\\,|r_2|^{N+3}<\\tfrac12|C_1| r_1^{N+3}.\nNow (5)-(8) remain valid with n\\ge N replaced by n\\le N and r_1^{2}-1<0, producing again a contradiction.  Hence C_1=0 on every orbit and f(x)=r_2 x.\n\nSTEP 6 - conclusion.\n\nIf f is increasing we obtained f(x)=r_1x; if f is decreasing we obtained f(x)=r_2x.  In every case there exists a real constant\n        c\\in\\{r_1,r_2\\}\ndepending solely on a and b such that  f(x)=c x  for all real x, as required.",
+      "_meta": {
+        "core_steps": [
+          "Injectivity: g(x)=g(y) ⇒ b(x−y)=0 ⇒ x=y (because b≠0).",
+          "Continuity + injectivity ⇒ g is strictly monotone (hence surjective onto ℝ).",
+          "Iterates x_{n+2}=a x_{n+1}+b x_n follow from defining x_{n+1}=g(x_n) and the functional equation.",
+          "Solve linear recurrence: x_n = c_1 r_1^n + c_2 r_2^n where r_1,r_2 are roots of t^2−a t−b=0.",
+          "Monotonicity forces one coefficient 0, giving g(x)=c x with c=r_1 (increasing) or c=r_2 (decreasing)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Numerical upper bound 1/2 for parameters a and b; any bounds that still guarantee b≠0, real distinct roots r1>0, r2<0, and |r1|>|r2|<1 would work.",
+            "original": "(0,1/2)"
+          },
+          "slot2": {
+            "description": "Choice of the initial seed x_0 used to generate the bi-infinite sequence (x_n); any real x_0 is acceptable.",
+            "original": "arbitrary x_0 ∈ ℝ"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

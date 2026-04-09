@@ -1,0 +1,160 @@
+{
+  "index": "1950-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "3. The sequence \\( x_{0}, x_{1}, x_{2}, \\ldots \\) is defined by the conditions\n\\[\nx_{0}=a, x_{1}=b, x_{n+1}=\\frac{x_{n-1}+(2 n-1) x_{n}}{2 n} \\quad \\text { for } n \\geq 1,\n\\]\nwhere \\( a \\) and \\( b \\) are given numbers. Express \\( \\lim _{n-\\infty} x_{n} \\) concisely in terms of \\( a \\) and \\( b \\).",
+  "solution": "Solution. The recursion can be rearranged as\n\\[\nx_{n+1}-x_{n}=-\\frac{1}{2 n}\\left(x_{n}-x_{n} \\quad 1\\right)\n\\]\nwhence it follows that\n\\[\nx_{n+1}-x_{n}=\\left(-\\frac{1}{2}\\right)^{n} \\frac{1}{n!}\\left(x_{1}-x_{0}\\right)=\\left(-\\frac{1}{2}\\right)^{n} \\frac{1}{n!}(b-a) .\n\\]\n\nBut\n\\[\nx_{n+1}=x_{0}+\\sum_{i=0}^{n}\\left(x_{i+1}-x_{i}\\right)=a+(b-a) \\sum_{i=0}^{n}\\left(-\\frac{1}{2}\\right)^{i} \\frac{1}{i!}\n\\]\n\nThe sum on the right is the partial sum of the power series for \\( e^{-1 / 2} \\). Therefore\n\\[\n\\lim _{n \\rightarrow \\infty} x_{n}=a+(b-a) e^{-1 / 2} .\n\\]\n\nRemark. There is a close analogy between linear difference equations and linear differential equations. To bring out this analogy we write the given recursion relation in terms of the difference operator \\( \\Delta \\) (defined by \\( \\Delta x_{n}=x_{n+1}-x_{n} \\), whence \\( \\left.\\Delta^{2} x_{n}=x_{n+2}-2 x_{n+1}+x_{n}\\right) \\). We find\n\\[\n(2 n+2) \\Delta^{2} x_{n}+(2 n+3) \\Delta x_{n}=0 .\n\\]\n\nBecause it contains no term in \\( x_{n} \\), (1) becomes a first-order difference equation for \\( v_{n}=\\Delta x_{n} \\),\n\\[\n(2 n+2) \\Delta v_{n}+(2 n+3) v_{n}=0 .\n\\]\n\nWe can solve this directly since\n\\[\n\\begin{aligned}\nv_{n+1} & =\\frac{-1}{2(n+1)} v_{n} \\\\\n& =\\frac{-1}{2(n+1)} \\cdot \\frac{-1}{2 n} \\cdot v_{n-1}=\\cdots \\\\\n& =\\left(\\frac{-1}{2}\\right)^{n+1} \\frac{1}{(n+1)!} v_{0} .\n\\end{aligned}\n\\]\n\nIn terms of the original variables \\( \\left\\{x_{n}\\right\\} \\) this becomes\n\\[\n\\Delta x_{n}=\\left(-\\frac{1}{2}\\right)^{n} \\frac{1}{n!} \\Delta x_{0}\n\\]\nwhence\n\\[\n\\begin{aligned}\nx_{n} & =x_{0}+\\sum_{i=0}^{n-1} \\Delta x_{i} \\\\\n& =x_{0}+\\Delta x_{0} \\sum_{i=0}^{n-1}\\left(-\\frac{1}{2}\\right)^{i} \\frac{1}{i!}\n\\end{aligned}\n\\]\nand\n\\[\n\\lim x_{n}=x_{0}+\\Delta x_{0} \\sum_{i=0}^{\\infty}\\left(-\\frac{1}{2}\\right)^{i} \\frac{1}{i!} .\n\\]\n\nThe force of the analogy is quite striking if we now solve the following problem:\n\nA function \\( y=y(t) \\) is defined on \\( [0, \\infty) \\) by the differential equation\n\\[\n(2 t+2) y^{\\prime \\prime}+(2 t+3) y^{\\prime}=0\n\\]\n(suggested by (1)) and the initial conditions \\( y(0)=a, y^{\\prime}(0)=b-a \\). Find \\( \\lim _{t-\\infty} y(t) \\).",
+  "vars": [
+    "x_0",
+    "x_1",
+    "x_2",
+    "x_n",
+    "x_n+1",
+    "x_n-1",
+    "x_n+2",
+    "x_i",
+    "x_i+1",
+    "n",
+    "i",
+    "v_n",
+    "v_n+1",
+    "v_n-1",
+    "t",
+    "y",
+    "\\\\Delta"
+  ],
+  "params": [
+    "a",
+    "b"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x_0": "xzeroid",
+        "x_1": "xoneval",
+        "x_2": "xtwoval",
+        "x_n": "xgeneral",
+        "x_n+1": "xnextgen",
+        "x_n-1": "xprevgen",
+        "x_n+2": "xnexttwo",
+        "x_i": "xithterm",
+        "x_i+1": "xiplusone",
+        "n": "indexn",
+        "i": "indexi",
+        "v_n": "vgeneral",
+        "v_n+1": "vnextgen",
+        "v_n-1": "vprevgen",
+        "t": "timevar",
+        "y": "yfunction",
+        "\\Delta": "difference",
+        "a": "constalpha",
+        "b": "constbeta"
+      },
+      "question": "3. The sequence \\( xzeroid, xoneval, xtwoval, \\ldots \\) is defined by the conditions\n\\[\nxzeroid = constalpha, \\quad xoneval = constbeta, \\quad xnextgen = \\frac{xprevgen + (2\\, indexn - 1)\\, xgeneral}{2\\, indexn} \\quad \\text{ for } indexn \\geq 1,\n\\]\nwhere \\( constalpha \\) and \\( constbeta \\) are given numbers. Express \\( \\lim_{indexn \\to \\infty} xgeneral \\) concisely in terms of \\( constalpha \\) and \\( constbeta \\).",
+      "solution": "Solution. The recursion can be rearranged as\n\\[\nxnextgen - xgeneral = -\\frac{1}{2\\, indexn}\\left(xgeneral - xgeneral \\quad 1\\right)\n\\]\nwhence it follows that\n\\[\nxnextgen - xgeneral = \\left(-\\tfrac12\\right)^{indexn}\\frac{1}{indexn!}\\left(xoneval - xzeroid\\right) = \\left(-\\tfrac12\\right)^{indexn}\\frac{1}{indexn!}(constbeta - constalpha).\n\\]\n\nBut\n\\[\nxnextgen = xzeroid + \\sum_{indexi=0}^{indexn}\\left(xiplusone - xithterm\\right)\n           = constalpha + (constbeta - constalpha)\\sum_{indexi=0}^{indexn}\\left(-\\tfrac12\\right)^{indexi}\\frac{1}{indexi!}.\n\\]\n\nThe sum on the right is the partial sum of the power series for \\( e^{-1/2} \\). Therefore\n\\[\n\\lim_{indexn \\to \\infty} xgeneral = constalpha + (constbeta - constalpha) e^{-1/2}.\n\\]\n\nRemark. There is a close analogy between linear difference equations and linear differential equations. To bring out this analogy we write the given recursion relation in terms of the difference operator \\( difference \\) (defined by \\( difference\\, xgeneral = xnextgen - xgeneral \\), whence \\( difference^{2} xgeneral = xnexttwo - 2 xnextgen + xgeneral \\)). We find\n\\[\n(2\\, indexn + 2)\\, difference^{2} xgeneral + (2\\, indexn + 3)\\, difference\\, xgeneral = 0.\n\\]\n\nBecause it contains no term in \\( xgeneral \\), (1) becomes a first-order difference equation for \\( vgeneral = difference\\, xgeneral \\),\n\\[\n(2\\, indexn + 2)\\, difference\\, vgeneral + (2\\, indexn + 3)\\, vgeneral = 0.\n\\]\n\nWe can solve this directly since\n\\[\n\\begin{aligned}\nvnextgen &= \\frac{-1}{2(indexn + 1)} vgeneral \\\\\n         &= \\frac{-1}{2(indexn + 1)} \\cdot \\frac{-1}{2\\, indexn} \\cdot vprevgen = \\cdots \\\\\n         &= \\left(-\\tfrac12\\right)^{indexn + 1}\\frac{1}{(indexn + 1)!}\\, v_{0}.\n\\end{aligned}\n\\]\n\nIn terms of the original variables \\( \\{xgeneral\\} \\) this becomes\n\\[\ndifference\\, xgeneral = \\left(-\\tfrac12\\right)^{indexn}\\frac{1}{indexn!}\\, difference\\, xzeroid\n\\]\nwhence\n\\[\n\\begin{aligned}\nxgeneral &= xzeroid + \\sum_{indexi=0}^{indexn-1} difference\\, xithterm \\\\\n         &= xzeroid + difference\\, xzeroid \\sum_{indexi=0}^{indexn-1}\\left(-\\tfrac12\\right)^{indexi}\\frac{1}{indexi!},\n\\end{aligned}\n\\]\nand\n\\[\n\\lim xgeneral = xzeroid + difference\\, xzeroid \\sum_{indexi=0}^{\\infty}\\left(-\\tfrac12\\right)^{indexi}\\frac{1}{indexi!}.\n\\]\n\nThe force of the analogy is quite striking if we now solve the following problem:\n\nA function \\( yfunction = yfunction(timevar) \\) is defined on \\( [0,\\infty) \\) by the differential equation\n\\[\n(2\\, timevar + 2)\\, yfunction^{\\prime\\prime} + (2\\, timevar + 3)\\, yfunction^{\\prime} = 0\n\\]\n(suggested by (1)) and the initial conditions \\( yfunction(0) = constalpha, \\; yfunction^{\\prime}(0) = constbeta - constalpha \\). Find \\( \\lim_{timevar \\to \\infty} yfunction(timevar) \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x_0": "bookshelf",
+        "x_1": "raincloud",
+        "x_2": "sandpaper",
+        "x_n": "quagmire",
+        "x_n+1": "blackbird",
+        "x_n-1": "toadstool",
+        "x_n+2": "gingerale",
+        "x_i": "floodgate",
+        "x_i+1": "horseshoe",
+        "n": "driftwood",
+        "i": "silkworm",
+        "v_n": "seashell",
+        "v_n+1": "snowflake",
+        "v_n-1": "broomstick",
+        "t": "riverbank",
+        "y": "skateboard",
+        "\\\\Delta": "lemonade",
+        "a": "marigolds",
+        "b": "pendulum"
+      },
+      "question": "3. The sequence \\( bookshelf, raincloud, sandpaper, \\ldots \\) is defined by the conditions\n\\[\nbookshelf=marigolds, raincloud=pendulum, blackbird=\\frac{toadstool+(2 driftwood-1) quagmire}{2 driftwood} \\quad \\text { for } driftwood \\geq 1,\n\\]\nwhere \\( marigolds \\) and \\( pendulum \\) are given numbers. Express \\( \\lim _{driftwood-\\infty} quagmire \\) concisely in terms of \\( marigolds \\) and \\( pendulum \\).",
+      "solution": "Solution. The recursion can be rearranged as\n\\[\nblackbird-quagmire=-\\frac{1}{2 driftwood}\\left(quagmire-quagmire \\quad 1\\right)\n\\]\nwhence it follows that\n\\[\nblackbird-quagmire=\\left(-\\frac{1}{2}\\right)^{driftwood} \\frac{1}{driftwood!}\\left(raincloud-bookshelf\\right)=\\left(-\\frac{1}{2}\\right)^{driftwood} \\frac{1}{driftwood!}(pendulum-marigolds) .\n\\]\n\nBut\n\\[\nblackbird=bookshelf+\\sum_{silkworm=0}^{driftwood}\\left(horseshoe-floodgate\\right)=marigolds+(pendulum-marigolds) \\sum_{silkworm=0}^{driftwood}\\left(-\\frac{1}{2}\\right)^{silkworm} \\frac{1}{silkworm!}\n\\]\n\nThe sum on the right is the partial sum of the power series for \\( e^{-1 / 2} \\). Therefore\n\\[\n\\lim _{driftwood \\rightarrow \\infty} quagmire=marigolds+(pendulum-marigolds) e^{-1 / 2} .\n\\]\n\nRemark. There is a close analogy between linear difference equations and linear differential equations. To bring out this analogy we write the given recursion relation in terms of the difference operator \\( lemonade \\) (defined by \\( lemonade quagmire=blackbird-quagmire \\), whence \\( \\left.lemonade^{2} quagmire= gingerale-2 blackbird+quagmire\\right) \\). We find\n\\[\n(2 driftwood+2) lemonade^{2} quagmire+(2 driftwood+3) lemonade quagmire=0 .\n\\]\n\nBecause it contains no term in \\( quagmire \\), (1) becomes a first-order difference equation for \\( seashell=lemonade quagmire \\),\n\\[\n(2 driftwood+2) lemonade seashell+(2 driftwood+3) seashell=0 .\n\\]\n\nWe can solve this directly since\n\\[\n\\begin{aligned}\nsnowflake & =\\frac{-1}{2(driftwood+1)} seashell \\\\\n& =\\frac{-1}{2(driftwood+1)} \\cdot \\frac{-1}{2 driftwood} \\cdot broomstick=\\cdots \\\\\n& =\\left(\\frac{-1}{2}\\right)^{driftwood+1} \\frac{1}{(driftwood+1)!} seashell_{0} .\n\\end{aligned}\n\\]\n\nIn terms of the original variables \\( \\left\\{quagmire\\right\\} \\) this becomes\n\\[\nlemonade quagmire=\\left(-\\frac{1}{2}\\right)^{driftwood} \\frac{1}{driftwood!} lemonade bookshelf\n\\]\nwhence\n\\[\n\\begin{aligned}\nquagmire & =bookshelf+\\sum_{silkworm=0}^{driftwood-1} lemonade floodgate \\\\\n& =bookshelf+lemonade bookshelf \\sum_{silkworm=0}^{driftwood-1}\\left(-\\frac{1}{2}\\right)^{silkworm} \\frac{1}{silkworm!}\n\\end{aligned}\n\\]\nand\n\\[\n\\lim quagmire=bookshelf+lemonade bookshelf \\sum_{silkworm=0}^{\\infty}\\left(-\\frac{1}{2}\\right)^{silkworm} \\frac{1}{silkworm!} .\n\\]\n\nThe force of the analogy is quite striking if we now solve the following problem:\n\nA function \\( skateboard=skateboard(riverbank) \\) is defined on \\( [0, \\infty) \\) by the differential equation\n\\[\n(2 riverbank+2) skateboard^{\\prime \\prime}+(2 riverbank+3) skateboard^{\\prime}=0\n\\]\n(suggested by (1)) and the initial conditions \\( skateboard(0)=marigolds, skateboard^{\\prime}(0)=pendulum-marigolds \\). Find \\( \\lim _{riverbank-\\infty} skateboard(riverbank) \\).\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x_0": "finalzero",
+        "x_1": "finalone",
+        "x_2": "finaltwo",
+        "x_n": "finalindex",
+        "x_n+1": "finalnext",
+        "x_n-1": "finalprev",
+        "x_n+2": "finalsecond",
+        "x_i": "finalgeneral",
+        "x_i+1": "finalgenernext",
+        "n": "endpoint",
+        "i": "aggregate",
+        "v_n": "immobilevalue",
+        "v_n+1": "immobilevalueplus",
+        "v_n-1": "immobilevalueminus",
+        "t": "standstill",
+        "y": "nothingness",
+        "\\Delta": "integraloperator",
+        "a": "endingvalue",
+        "b": "startingvalue"
+      },
+      "question": "3. The sequence \\( finalzero, finalone, finaltwo, \\ldots \\) is defined by the conditions\n\\[\nfinalzero = endingvalue, finalone = startingvalue, finalnext = \\frac{finalprev + (2 endpoint -1) finalindex}{2 endpoint} \\quad \\text { for } endpoint \\geq 1,\n\\]\nwhere \\( endingvalue \\) and \\( startingvalue \\) are given numbers. Express \\( \\lim _{endpoint-\\infty} finalindex \\) concisely in terms of \\( endingvalue \\) and \\( startingvalue \\).",
+      "solution": "Solution. The recursion can be rearranged as\n\\[\nfinalnext - finalindex = -\\frac{1}{2 endpoint}\\left(finalindex - finalindex \\quad 1\\right)\n\\]\nwhence it follows that\n\\[\nfinalnext - finalindex = \\left(-\\frac{1}{2}\\right)^{endpoint} \\frac{1}{endpoint!}\\left(finalone - finalzero\\right)=\\left(-\\frac{1}{2}\\right)^{endpoint} \\frac{1}{endpoint!}(startingvalue - endingvalue) .\n\\]\n\nBut\n\\[\nfinalnext = finalzero + \\sum_{aggregate=0}^{endpoint}\\left(finalgenernext - finalgeneral\\right)=endingvalue + (startingvalue - endingvalue) \\sum_{aggregate=0}^{endpoint}\\left(-\\frac{1}{2}\\right)^{aggregate} \\frac{1}{aggregate!}\n\\]\n\nThe sum on the right is the partial sum of the power series for \\( e^{-1 / 2} \\). Therefore\n\\[\n\\lim _{endpoint \\rightarrow \\infty} finalindex = endingvalue + (startingvalue - endingvalue) e^{-1 / 2} .\n\\]\n\nRemark. There is a close analogy between linear difference equations and linear differential equations. To bring out this analogy we write the given recursion relation in terms of the difference operator \\( integraloperator \\) (defined by \\( integraloperator finalindex = finalnext - finalindex \\), whence \\( \\left. integraloperator^{2} finalindex = finalsecond - 2 finalnext + finalindex \\right) \\). We find\n\\[\n(2 endpoint + 2) integraloperator^{2} finalindex + (2 endpoint + 3) integraloperator finalindex = 0 .\n\\]\n\nBecause it contains no term in \\( finalindex \\), (1) becomes a first-order difference equation for \\( immobilevalue = integraloperator finalindex \\),\n\\[\n(2 endpoint + 2) integraloperator immobilevalue + (2 endpoint + 3) immobilevalue = 0 .\n\\]\n\nWe can solve this directly since\n\\[\n\\begin{aligned}\nimmobilevalueplus & = \\frac{-1}{2(endpoint+1)} immobilevalue \\\\\n& = \\frac{-1}{2(endpoint+1)} \\cdot \\frac{-1}{2 endpoint} \\cdot immobilevalueminus = \\cdots \\\\\n& = \\left( \\frac{-1}{2} \\right)^{endpoint+1} \\frac{1}{(endpoint+1)!} v_{0} .\n\\end{aligned}\n\\]\n\nIn terms of the original variables \\( \\left\\{ finalindex \\right\\} \\) this becomes\n\\[\nintegraloperator finalindex = \\left(-\\frac{1}{2}\\right)^{endpoint} \\frac{1}{endpoint!} integraloperator finalzero\n\\]\nwhence\n\\[\n\\begin{aligned}\nfinalindex & = finalzero + \\sum_{aggregate=0}^{endpoint-1} integraloperator finalgeneral \\\\\n& = finalzero + integraloperator finalzero \\sum_{aggregate=0}^{endpoint-1}\\left(-\\frac{1}{2}\\right)^{aggregate} \\frac{1}{aggregate!}\n\\end{aligned}\n\\]\nand\n\\[\n\\lim finalindex = finalzero + integraloperator finalzero \\sum_{aggregate=0}^{\\infty}\\left(-\\frac{1}{2}\\right)^{aggregate} \\frac{1}{aggregate!} .\n\\]\n\nThe force of the analogy is quite striking if we now solve the following problem:\n\nA function \\( nothingness = nothingness(standstill) \\) is defined on \\( [0, \\infty) \\) by the differential equation\n\\[\n(2 standstill + 2) nothingness^{\\prime \\prime} + (2 standstill + 3) nothingness^{\\prime} = 0\n\\]\n(suggested by (1)) and the initial conditions \\( nothingness(0) = endingvalue, nothingness^{\\prime}(0) = startingvalue - endingvalue \\). Find \\( \\lim _{standstill-\\infty} nothingness(standstill) \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x_0": "qzxwvtnp",
+        "x_1": "hjgrksla",
+        "x_2": "mnlpqzkt",
+        "x_n": "frucdely",
+        "x_n+1": "sibfowke",
+        "x_n-1": "gtwvepoz",
+        "x_n+2": "jkvhqzmn",
+        "x_i": "lwdkspae",
+        "x_i+1": "pbmfqzdr",
+        "n": "rsazonth",
+        "v_n": "kyzepmra",
+        "v_n+1": "wglnoqpf",
+        "v_n-1": "ztbrxsqc",
+        "t": "ymuelnka",
+        "y": "dpsobrix",
+        "\\\\Delta": "atrgfsnl",
+        "a": "xorvujki",
+        "b": "cmtiopae"
+      },
+      "question": "3. The sequence \\( qzxwvtnp, hjgrksla, mnlpqzkt, \\ldots \\) is defined by the conditions\n\\[\nqzxwvtnp=xorvujki, \\; hjgrksla=cmtiopae, \\; sibfowke=\\frac{gtwvepoz+(2 rsazonth-1) frucdely}{2 rsazonth} \\quad \\text { for } rsazonth \\geq 1,\n\\]\nwhere \\( xorvujki \\) and \\( cmtiopae \\) are given numbers. Express \\( \\lim _{rsazonth-\\infty} frucdely \\) concisely in terms of \\( xorvujki \\) and \\( cmtiopae \\).",
+      "solution": "Solution. The recursion can be rearranged as\n\\[\nsibfowke-frucdely=-\\frac{1}{2 rsazonth}\\left(frucdely-frucdely \\quad 1\\right)\n\\]\nwhence it follows that\n\\[\nsibfowke-frucdely=\\left(-\\frac{1}{2}\\right)^{rsazonth} \\frac{1}{rsazonth!}\\left(hjgrksla-qzxwvtnp\\right)=\\left(-\\frac{1}{2}\\right)^{rsazonth} \\frac{1}{rsazonth!}(cmtiopae-xorvujki) .\n\\]\n\nBut\n\\[\nsibfowke=qzxwvtnp+\\sum_{i=0}^{rsazonth}\\left(pbmfqzdr-lwdkspae\\right)=xorvujki+(cmtiopae-xorvujki) \\sum_{i=0}^{rsazonth}\\left(-\\frac{1}{2}\\right)^{i} \\frac{1}{i!}\n\\]\n\nThe sum on the right is the partial sum of the power series for \\( e^{-1 / 2} \\). Therefore\n\\[\n\\lim _{rsazonth \\rightarrow \\infty} frucdely=xorvujki+(cmtiopae-xorvujki) e^{-1 / 2} .\n\\]\n\nRemark. There is a close analogy between linear difference equations and linear differential equations. To bring out this analogy we write the given recursion relation in terms of the difference operator \\( atrgfsnl \\) (defined by \\( atrgfsnl frucdely=sibfowke-frucdely \\), whence \\( \\left.atrgfsnl^{2} frucdely=jkvhqzmn-2 sibfowke+frucdely\\right) \\). We find\n\\[\n(2 rsazonth+2) atrgfsnl^{2} frucdely+(2 rsazonth+3) atrgfsnl frucdely=0 .\n\\]\n\nBecause it contains no term in \\( frucdely \\), (1) becomes a first-order difference equation for \\( kyzepmra=atrgfsnl frucdely \\),\n\\[\n(2 rsazonth+2) atrgfsnl kyzepmra+(2 rsazonth+3) kyzepmra=0 .\n\\]\n\nWe can solve this directly since\n\\[\n\\begin{aligned}\nwglnoqpf & =\\frac{-1}{2(rsazonth+1)} kyzepmra \\\\\n& =\\frac{-1}{2(rsazonth+1)} \\cdot \\frac{-1}{2 rsazonth} \\cdot ztbrxsqc=\\cdots \\\\\n& =\\left(\\frac{-1}{2}\\right)^{rsazonth+1} \\frac{1}{(rsazonth+1)!} v_{0} .\n\\end{aligned}\n\\]\n\nIn terms of the original variables \\( \\left\\{frucdely\\right\\} \\) this becomes\n\\[\natrgfsnl frucdely=\\left(-\\frac{1}{2}\\right)^{rsazonth} \\frac{1}{rsazonth!} atrgfsnl qzxwvtnp\n\\]\nwhence\n\\[\n\\begin{aligned}\nfrucdely & =qzxwvtnp+\\sum_{i=0}^{rsazonth-1} atrgfsnl lwdkspae \\\\\n& =qzxwvtnp+atrgfsnl qzxwvtnp \\sum_{i=0}^{rsazonth-1}\\left(-\\frac{1}{2}\\right)^{i} \\frac{1}{i!}\n\\end{aligned}\n\\]\nand\n\\[\n\\lim frucdely=qzxwvtnp+atrgfsnl qzxwvtnp \\sum_{i=0}^{\\infty}\\left(-\\frac{1}{2}\\right)^{i} \\frac{1}{i!} .\n\\]\n\nThe force of the analogy is quite striking if we now solve the following problem:\n\nA function \\( dpsobrix=dpsobrix(ymuelnka) \\) is defined on \\( [0, \\infty) \\) by the differential equation\n\\[\n(2 ymuelnka+2) dpsobrix^{\\prime \\prime}+(2 ymuelnka+3) dpsobrix^{\\prime}=0\n\\]\n(suggested by (1)) and the initial conditions \\( dpsobrix(0)=xorvujki, dpsobrix^{\\prime}(0)=cmtiopae-xorvujki \\). Find \\( \\lim _{ymuelnka-\\infty} dpsobrix(ymuelnka) \\)."
+    },
+    "kernel_variant": {
+      "question": "Fix an integer m \\geq  1 and real numbers c,d.  Define the sequence { x_n }_n\\geq 0 by  \n\n  x_0 = c, x_1 = d, and,  for every n \\geq  1,\n  x_{n+1} =  \\dfrac{x_{\\,n-1} +\\bigl(n(n+m)-1\\bigr)\\,x_{\\,n}}{\\,n(n+m)\\,}.  (\\star )\n\n(a)  Prove that the limit  \n  L = lim_{n\\to \\infty } x_n  \nexists.\n\n(b)  Show that this limit can be written in closed form as  \n\n  L = c + (d-c)\\;m!\\;J_{m}(2),\n\nwhere J_{m}(\\cdot ) is the Bessel function of the first kind of integer order m.",
+      "solution": "Step 1.  Rewrite the recurrence as a first-order equation for the forward difference.  \nLet  \n  \\Delta x_n = x_{n+1}-x_{n}.  \nFrom (\\star ):\n\n x_{n+1}-x_{n}\n = \\dfrac{x_{\\,n-1}-x_{\\,n}}{n(n+m)}\n = -\\dfrac{\\Delta x_{\\,n-1}}{n(n+m)}.                                (1)\n\nThus the (first-order) sequence v_n := \\Delta x_n satisfies  \n\n  v_n = -\\dfrac{v_{\\,n-1}}{n(n+m)},  n \\geq  1,  v_0 = d-c.       (2)\n\nStep 2.  Solve (2) explicitly.  \nIterating,\n\n v_n\n  = (-1)^n \\dfrac{v_0}{\\prod_{k=1}^{n} k(k+m)}\n  = (-1)^n (d-c)\\;\n    \\frac{m!}{n!\\,(m+1)_{\\,n}},                                (3)\n\nwhere (a)_{n}=a(a+1)\\ldots (a+n-1) denotes the rising factorial and we used  \n\n  \\prod _{k=1}^{n} k = n!,  \\prod _{k=1}^{n}(k+m) = (m+1)_{n} = \\dfrac{(m+n)!}{m!}.\n\nStep 3.  Express x_n as a telescopic sum.  \nBecause x_n = x_0 + \\Sigma _{i=0}^{n-1} v_i, we obtain  \n\n x_n\n  = c + (d-c)\\;m!\\;\\sum_{i=0}^{n-1} (-1)^i\\;\n    \\frac{1}{i!\\,(m+i)!}.                                       (4)\n\nStep 4.  Convergence of the series.  \nFor fixed m the general term behaves like  \n |(-1)^i/(i!(m+i)!)| \\approx  1/(i!)^2,  \nso the series is absolutely convergent by the ratio test.  \nHence the limit\n\n L := c + (d-c)\\;m!\\;\\sum_{i=0}^{\\infty} (-1)^i\\;\n                                        \\frac{1}{i!\\,(m+i)!}     (5)\n\nexists, which establishes part (a).\n\nStep 5.  Identification of the infinite sum.  \nRecall the series representation of the Bessel function of the first kind of integer order m:\n\n  J_{m}(z) = \\sum_{i=0}^{\\infty}(-1)^i\n              \\frac{(z/2)^{2i+m}}{i!\\,(m+i)!}.                (6)\n\nSet z = 2 in (6).  Then (z/2)^{2i+m} = 1^{2i+m} = 1, and\n\n J_{m}(2) = \\sum_{i=0}^{\\infty}(-1)^i\\frac{1}{i!\\,(m+i)!}.   (7)\n\nComparing (7) with the series in (5) we obtain  \n\n  \\sum _{i=0}^{\\infty}(-1)^i/(i!\\,(m+i)!) = J_{m}(2).           (8)\n\nStep 6.  Closed-form limit.  \nInsert (8) into (5):\n\n L = c + (d-c)\\;m!\\;J_{m}(2).                                 (9)\n\nThis proves part (b) and completes the solution. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.429152",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher-degree coefficients:  The new recursion involves quadratic growth n(n+m) instead of linear growth 2n or 3n, producing factorial *and* rising-factorial products in the solution.\n\n• Parameter dependence:  An arbitrary positive integer m introduces an extra layer of abstraction; all steps must be carried out symbolically in m.\n\n• Special-function connection:  Unlike the original problem, whose limit reduces to an elementary exponential, the present limit is expressed through the Bessel function J_{m}.  Recognising and proving this identification forces the solver to connect hypergeometric series with Bessel functions.\n\n• Technical steps:  The solver must\n  1. Reformulate a second-order variable-coefficient recurrence as a first-order one,\n  2. Handle products of quadratic factors,\n  3. Show absolute convergence of a non-elementary series,\n  4. Detect and invoke the classical identity (6) relating _0F₁–hypergeometric series to Bessel functions.\n\nThese additional layers of algebraic manipulation, series recognition, and special-function theory make the enhanced variant substantially more sophisticated—and therefore significantly harder—than both the original problem and the current kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix an integer m \\geq  1 and real numbers c,d.  Define the sequence { x_n }_n\\geq 0 by  \n\n  x_0 = c, x_1 = d, and,  for every n \\geq  1,\n  x_{n+1} =  \\dfrac{x_{\\,n-1} +\\bigl(n(n+m)-1\\bigr)\\,x_{\\,n}}{\\,n(n+m)\\,}.  (\\star )\n\n(a)  Prove that the limit  \n  L = lim_{n\\to \\infty } x_n  \nexists.\n\n(b)  Show that this limit can be written in closed form as  \n\n  L = c + (d-c)\\;m!\\;J_{m}(2),\n\nwhere J_{m}(\\cdot ) is the Bessel function of the first kind of integer order m.",
+      "solution": "Step 1.  Rewrite the recurrence as a first-order equation for the forward difference.  \nLet  \n  \\Delta x_n = x_{n+1}-x_{n}.  \nFrom (\\star ):\n\n x_{n+1}-x_{n}\n = \\dfrac{x_{\\,n-1}-x_{\\,n}}{n(n+m)}\n = -\\dfrac{\\Delta x_{\\,n-1}}{n(n+m)}.                                (1)\n\nThus the (first-order) sequence v_n := \\Delta x_n satisfies  \n\n  v_n = -\\dfrac{v_{\\,n-1}}{n(n+m)},  n \\geq  1,  v_0 = d-c.       (2)\n\nStep 2.  Solve (2) explicitly.  \nIterating,\n\n v_n\n  = (-1)^n \\dfrac{v_0}{\\prod_{k=1}^{n} k(k+m)}\n  = (-1)^n (d-c)\\;\n    \\frac{m!}{n!\\,(m+1)_{\\,n}},                                (3)\n\nwhere (a)_{n}=a(a+1)\\ldots (a+n-1) denotes the rising factorial and we used  \n\n  \\prod _{k=1}^{n} k = n!,  \\prod _{k=1}^{n}(k+m) = (m+1)_{n} = \\dfrac{(m+n)!}{m!}.\n\nStep 3.  Express x_n as a telescopic sum.  \nBecause x_n = x_0 + \\Sigma _{i=0}^{n-1} v_i, we obtain  \n\n x_n\n  = c + (d-c)\\;m!\\;\\sum_{i=0}^{n-1} (-1)^i\\;\n    \\frac{1}{i!\\,(m+i)!}.                                       (4)\n\nStep 4.  Convergence of the series.  \nFor fixed m the general term behaves like  \n |(-1)^i/(i!(m+i)!)| \\approx  1/(i!)^2,  \nso the series is absolutely convergent by the ratio test.  \nHence the limit\n\n L := c + (d-c)\\;m!\\;\\sum_{i=0}^{\\infty} (-1)^i\\;\n                                        \\frac{1}{i!\\,(m+i)!}     (5)\n\nexists, which establishes part (a).\n\nStep 5.  Identification of the infinite sum.  \nRecall the series representation of the Bessel function of the first kind of integer order m:\n\n  J_{m}(z) = \\sum_{i=0}^{\\infty}(-1)^i\n              \\frac{(z/2)^{2i+m}}{i!\\,(m+i)!}.                (6)\n\nSet z = 2 in (6).  Then (z/2)^{2i+m} = 1^{2i+m} = 1, and\n\n J_{m}(2) = \\sum_{i=0}^{\\infty}(-1)^i\\frac{1}{i!\\,(m+i)!}.   (7)\n\nComparing (7) with the series in (5) we obtain  \n\n  \\sum _{i=0}^{\\infty}(-1)^i/(i!\\,(m+i)!) = J_{m}(2).           (8)\n\nStep 6.  Closed-form limit.  \nInsert (8) into (5):\n\n L = c + (d-c)\\;m!\\;J_{m}(2).                                 (9)\n\nThis proves part (b) and completes the solution. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.372212",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher-degree coefficients:  The new recursion involves quadratic growth n(n+m) instead of linear growth 2n or 3n, producing factorial *and* rising-factorial products in the solution.\n\n• Parameter dependence:  An arbitrary positive integer m introduces an extra layer of abstraction; all steps must be carried out symbolically in m.\n\n• Special-function connection:  Unlike the original problem, whose limit reduces to an elementary exponential, the present limit is expressed through the Bessel function J_{m}.  Recognising and proving this identification forces the solver to connect hypergeometric series with Bessel functions.\n\n• Technical steps:  The solver must\n  1. Reformulate a second-order variable-coefficient recurrence as a first-order one,\n  2. Handle products of quadratic factors,\n  3. Show absolute convergence of a non-elementary series,\n  4. Detect and invoke the classical identity (6) relating _0F₁–hypergeometric series to Bessel functions.\n\nThese additional layers of algebraic manipulation, series recognition, and special-function theory make the enhanced variant substantially more sophisticated—and therefore significantly harder—than both the original problem and the current kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

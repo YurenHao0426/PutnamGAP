@@ -1,0 +1,106 @@
+{
+  "index": "1997-A-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A rectangle, $HOMF$, has sides $HO=11$ and $OM=5$.  A triangle\n$ABC$ has $H$ as the intersection of the altitudes, $O$ the center of\nthe circumscribed circle, $M$ the midpoint of $BC$, and $F$ the foot of the\naltitude from $A$.  What is the length of $BC$?",
+  "solution": "The centroid $G$ of the triangle is collinear with $H$ and $O$\n(Euler line), and the centroid lies two-thirds of the way from $A$ to\n$M$. Therefore $H$ is also two-thirds of the way from $A$ to $F$, so\n$AF = 15$. Since the triangles $BFH$ and $AFC$ are similar (they're\nright triangles and\n\\[\n\\angle HBC = \\pi/2 - \\angle C = \\angle CAF),\n\\]\nwe have\n\\[\nBF/FH = AF/FC\n\\]\nor\n\\[\nBF \\cdot FC = FH \\cdot AF = 75.\n\\]\nNow\n\\[\nBC^2 = (BF + FC)^2 = (BF - FC)^2 + 4 BF \\cdot FC,\n\\]\nbut\n\\[\nBF - FC = BM+MF-(MC-MF) = 2MF = 22,\n\\]\nso\n\\[\nBC = \\sqrt{22^2 + 4 \\cdot 75} = \\sqrt{784} = 28.\n\\]",
+  "vars": [
+    "H",
+    "O",
+    "M",
+    "F",
+    "A",
+    "B",
+    "C",
+    "G"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "H": "orthocenter",
+        "O": "circumcenter",
+        "M": "midpoint",
+        "F": "footalt",
+        "A": "vertexa",
+        "B": "vertexb",
+        "C": "vertexc",
+        "G": "centroid"
+      },
+      "question": "A rectangle, $orthocentercircumcentermidpointfootalt$, has sides $orthocentercircumcenter=11$ and $circumcentermidpoint=5$.  A triangle $vertexavertexbvertexc$ has $orthocenter$ as the intersection of the altitudes, $circumcenter$ the center of the circumscribed circle, $midpoint$ the midpoint of $vertexbvertexc$, and $footalt$ the foot of the altitude from $vertexa$.  What is the length of $vertexbvertexc$?",
+      "solution": "The centroid $centroid$ of the triangle is collinear with $orthocenter$ and $circumcenter$ (Euler line), and the centroid lies two-thirds of the way from $vertexa$ to $midpoint$. Therefore $orthocenter$ is also two-thirds of the way from $vertexa$ to $footalt$, so $vertexafootalt = 15$.  \n\nSince the triangles $vertexbfootaltorthocenter$ and $vertexafootaltvertexc$ are similar (they're right triangles and\n\\[\n\\angle orthocentervertexbvertexc = \\pi/2 - \\angle vertexc = \\angle vertexcvertexafootalt),\n\\]\nwe have\n\\[\nvertexbfootalt/footaltorthocenter = vertexafootalt/footaltvertexc\n\\]\nor\n\\[\nvertexbfootalt \\cdot footaltvertexc = footaltorthocenter \\cdot vertexafootalt = 75.\n\\]\nNow\n\\[\nvertexbvertexc^2 = (vertexbfootalt + footaltvertexc)^2 = (vertexbfootalt - footaltvertexc)^2 + 4\\, vertexbfootalt \\cdot footaltvertexc,\n\\]\nbut\n\\[\nvertexbfootalt - footaltvertexc = vertexbmidpoint+midpointfootalt-(midpointvertexc-midpointfootalt) = 2midpointfootalt = 22,\n\\]\nso\n\\[\nvertexbvertexc = \\sqrt{22^2 + 4 \\cdot 75} = \\sqrt{784} = 28.\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "H": "headwater",
+        "O": "undertone",
+        "M": "lighthouse",
+        "F": "cornfield",
+        "A": "pendulum",
+        "B": "roadblock",
+        "C": "drumstick",
+        "G": "pineapple"
+      },
+      "question": "A rectangle, $headwaterundertonelighthousecornfield$, has sides $headwaterundertone=11$ and $undertonelighthouse=5$.  A triangle $pendulumroadblockdrumstick$ has $headwater$ as the intersection of the altitudes, $undertone$ the center of the circumscribed circle, $lighthouse$ the midpoint of $roadblockdrumstick$, and $cornfield$ the foot of the altitude from $pendulum$.  What is the length of $roadblockdrumstick$?",
+      "solution": "The centroid $pineapple$ of the triangle is collinear with $headwater$ and $undertone$ (Euler line), and the centroid lies two-thirds of the way from $pendulum$ to $lighthouse$. Therefore $headwater$ is also two-thirds of the way from $pendulum$ to $cornfield$, so $pendulumcornfield = 15$. Since the triangles $roadblockcornfieldheadwater$ and $pendulumcornfielddrumstick$ are similar (they're right triangles and\n\\[\n\\angle headwaterroadblockdrumstick = \\pi/2 - \\angle drumstick = \\angle pendulumcornfielddrumstick),\n\\]\nwe have\n\\[\nroadblockcornfield/cornfieldheadwater = pendulumcornfield/cornfielddrumstick\n\\]\nor\n\\[\nroadblockcornfield \\cdot cornfielddrumstick = cornfieldheadwater \\cdot pendulumcornfield = 75.\n\\]\nNow\n\\[\nroadblockdrumstick^2 = (roadblockcornfield + cornfielddrumstick)^2 = (roadblockcornfield - cornfielddrumstick)^2 + 4\\, roadblockcornfield \\cdot cornfielddrumstick,\n\\]\nbut\n\\[\nroadblockcornfield - cornfielddrumstick = roadblocklighthouse + lighthousescornfield - (lighthousedrumstick - lighthousescornfield) = 2 lighthousescornfield = 22,\n\\]\nso\n\\[\nroadblockdrumstick = \\sqrt{22^2 + 4 \\cdot 75} = \\sqrt{784} = 28.\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "H": "peripheral",
+        "O": "fringepoint",
+        "M": "endpoint",
+        "F": "headside",
+        "A": "flatpoint",
+        "B": "voidpoint",
+        "C": "nullpoint",
+        "G": "eccentric"
+      },
+      "question": "A rectangle, $peripheralfringepointendpointheadside$, has sides $peripheralfringepoint=11$ and $fringepointendpoint=5$.  A triangle $flatpointvoidpointnullpoint$ has $peripheral$ as the intersection of the altitudes, $fringepoint$ the center of the circumscribed circle, $endpoint$ the midpoint of $voidpointnullpoint$, and $headside$ the foot of the altitude from $flatpoint$.  What is the length of $voidpointnullpoint$?",
+      "solution": "The centroid $eccentric$ of the triangle is collinear with $peripheral$ and $fringepoint$ (Euler line), and the centroid lies two-thirds of the way from $flatpoint$ to $endpoint$. Therefore $peripheral$ is also two-thirds of the way from $flatpoint$ to $headside$, so $flatpointheadside = 15$. Since the triangles $voidpointheadsideperipheral$ and $flatpointheadsidenullpoint$ are similar (they're right triangles and\n\\[\n\\angle peripheralvoidpointnullpoint = \\pi/2 - \\angle nullpoint = \\angle nullpointflatpointheadside),\n\\]\nwe have\n\\[\nvoidpointheadside/headsideperipheral = flatpointheadside/headsidenullpoint\n\\]\nor\n\\[\nvoidpointheadside \\cdot headsidenullpoint = headsideperipheral \\cdot flatpointheadside = 75.\n\\]\nNow\n\\[\nvoidpointnullpoint^2 = (voidpointheadside + headsidenullpoint)^2 = (voidpointheadside - headsidenullpoint)^2 + 4 \\, voidpointheadside \\cdot headsidenullpoint,\n\\]\nbut\n\\[\nvoidpointheadside - headsidenullpoint = voidpointendpoint+endpointheadside-(endpointnullpoint-endpointheadside) = 2\\,endpointheadside = 22,\n\\]\nso\n\\[\nvoidpointnullpoint = \\sqrt{22^2 + 4 \\cdot 75} = \\sqrt{784} = 28.\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "H": "qzxwvtnp",
+        "O": "hjgrksla",
+        "M": "vbdkseuw",
+        "F": "pmrcgioa",
+        "A": "lneqtcsy",
+        "B": "gwmpxadk",
+        "C": "rhvoljzi",
+        "G": "xuknydqe"
+      },
+      "question": "A rectangle, $qzxwvtnphjgrkslavbdkseuwpmrcgioa$, has sides $qzxwvtnphjgrksla=11$ and $hjgrkslavbdkseuw=5$.  A triangle\n$lneqtcsygwmpxadkrhvoljzi$ has $qzxwvtnp$ as the intersection of the altitudes, $hjgrksla$ the center of\nthe circumscribed circle, $vbdkseuw$ the midpoint of $gwmpxadkrhvoljzi$, and $pmrcgioa$ the foot of the\naltitude from $lneqtcsy$.  What is the length of $gwmpxadkrhvoljzi$?",
+      "solution": "The centroid $xuknydqe$ of the triangle is collinear with $qzxwvtnp$ and $hjgrksla$\n(Euler line), and the centroid lies two-thirds of the way from $lneqtcsy$ to\n$vbdkseuw$. Therefore $qzxwvtnp$ is also two-thirds of the way from $lneqtcsy$ to $pmrcgioa$, so\n$lneqtcsypmrcgioa = 15$. Since the triangles $gwmpxadkpmrcgioaqzxwvtnp$ and $lneqtcsypmrcgioarhvoljzi$ are similar (they're\nright triangles and\n\\[\n\\angle qzxwvtnpgwmpxadkrhvoljzi = \\pi/2 - \\angle rhvoljzi = \\angle rhvoljzilneqtcsypmrcgioa),\n\\]\nwe have\n\\[\ngwmpxadkpmrcgioa/pmrcgioaqzxwvtnp = lneqtcsypmrcgioa/pmrcgioarhvoljzi\n\\]\nor\n\\[\ngwmpxadkpmrcgioa \\cdot pmrcgioarhvoljzi = pmrcgioaqzxwvtnp \\cdot lneqtcsypmrcgioa = 75.\n\\]\nNow\n\\[\ngwmpxadkrhvoljzi^2 = (gwmpxadkpmrcgioa + pmrcgioarhvoljzi)^2 = (gwmpxadkpmrcgioa - pmrcgioarhvoljzi)^2 + 4 gwmpxadkpmrcgioa \\cdot pmrcgioarhvoljzi,\n\\]\nbut\n\\[\ngwmpxadkpmrcgioa - pmrcgioarhvoljzi = gwmpxadkvbdkseuw+vbdkseuwpmrcgioa-(vbdkseuwrhvoljzi-vbdkseuwpmrcgioa) = 2vbdkseuwpmrcgioa = 22,\n\\]\nso\n\\[\ngwmpxadkrhvoljzi = \\sqrt{22^2 + 4 \\cdot 75} = \\sqrt{784} = 28.\n\\]"
+    },
+    "kernel_variant": {
+      "question": "In a rectangle $HOMF$ the adjacent sides satisfy $HO = 23$ and $OM = 7$.  In a triangle $ABC$ the points\n* $H$ is the orthocenter,\n* $O$ is the circumcenter,\n* $M$ is the midpoint of side $BC$, and\n* $F$ is the foot of the altitude from $A$ to $BC$.\nAssuming that the four special points of the triangle coincide with the four vertices of the rectangle in the indicated order, determine the length of side $BC$.",
+      "solution": "We label the rectangle so that H-O-M-F go around in order, with HO=23, OM=7, HO\\bot OM, and HO\\parallel MF, OM\\parallel HF.  Place coordinates:\n  H=(0,7),\n  O=(23,7),\n  M=(23,0),\n  F=(0,0).\nSince BC is horizontal with midpoint M=(23,0), write B=(23-d,0) and C=(23+d,0), so BC=2d.  The foot F=(0,0) of the altitude from A lies on BC, so A=(0,a) for some positive a.\n\n1.  Orthocenter check.  In triangle ABC the altitude from A is the vertical line x=0, and the altitude from B is the line through B perpendicular to AC.  The slope of AC is (0-a)/(23+d-0)=-a/(23+d), so the B-altitude has slope (23+d)/a and passes through B=(23-d,0).  Its intersection with x=0 gives the y-coordinate\n     y_H = (23+d)/a \\cdot  (0-(23-d)) = (23+d)/a \\cdot  (d-23).\nBut H must be (0,7), so 7 = (23+d)(d-23)/a = (d^2-529)/a, hence\n     a = (d^2-529)/7.                                (1)\n\n2.  Circumcenter check.  O=(23,7) is the circumcenter of ABC, so OA=OB.  Compute\n     OA^2 = (23-0)^2 + (7-a)^2 = 529 + (a-7)^2,\n     OB^2 = (23-(23-d))^2 + (7-0)^2 = d^2 + 49.\nEquate: 529 + (a-7)^2 = d^2 + 49  \\Rightarrow   (a-7)^2 + 480 = d^2.\nExpand (a-7)^2 = a^2-14a+49, so a^2-14a+529 = d^2.      (2)\n\n3.  Combine (1) and (2).  From (1) d^2 = 7a+529.  Substitute into (2):\n     a^2-14a+529 = 7a+529  \\Rightarrow   a^2-21a = 0  \\Rightarrow   a=21 (reject a=0).\nThen from (1) d^2 = 7\\cdot 21 + 529 = 147 + 529 = 676, so d=26.\n\n4.  Conclusion.  BC = 2d = 52.  Hence the required side length is 52.",
+      "_meta": {
+        "core_steps": [
+          "Euler-line and median facts put the centroid G on both HO and AM, implying H divides AF in the fixed 2:1 ratio, so AF = 3·HF",
+          "Rectangle property gives HF = OM and MF = HO (opposite sides equal), turning AF into a concrete length",
+          "Right-triangle similarity BFH ~ AFC yields the product relation BF·FC = FH·AF",
+          "Algebraic identity BC² = (BF−FC)² + 4·BF·FC with BF−FC = 2·MF converts the product into BC²",
+          "Numerical substitution of HF, MF and AF gives BC"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Length of rectangle side HO (also MF)",
+            "original": "11"
+          },
+          "slot2": {
+            "description": "Length of rectangle side OM (also HF)",
+            "original": "5"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

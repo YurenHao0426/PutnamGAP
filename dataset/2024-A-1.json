@@ -1,0 +1,93 @@
+{
+  "index": "2024-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Determine all positive integers $n$ for which there exist positive integers $a$, $b$, and $c$ satisfying\n\\[\n2a^n + 3b^n = 4c^n.\n\\]",
+  "solution": "The answer is $n=1$. When $n=1$, $(a,b,c) = (1,2,2)$ is a solution to the given equation. We claim that there are no solutions when $n \\geq 2$.\n\nFor $n = 2$, suppose that we have a solution to $2a^2+3b^2=4c^2$ with $a,b,c\\in\\mathbb{N}$. By dividing each of $a,b,c$ by $\\gcd(a,b,c)$, we obtain another solution; thus we can assume that $\\gcd(a,b,c) = 1$. Note that we have $a^2+c^2 \\equiv 0 \\pmod{3}$, and that only $0$ and $1$ are perfect squares mod $3$; thus we must have $a^2 \\equiv c^2 \\equiv 0 \\pmod{3}$. But then $a,c$ are both multiples of $3$; it follows from $b^2 = 12(c/3)^2-6(a/3)^2$ that $b$ is a multiple of $3$ as well, contradicting our assumption that $\\gcd(a,b,c)=1$.\n\nFor $n \\geq 3$, suppose that $2a^n+3b^n=4c^n$. As in the previous case, we can assume $\\gcd(a,b,c)=1$. Since $3b^n=4c^n-2a^n$, $b$ must be even. \nWe can then write $a^n+2^{n-1}\\cdot 3(b/2)^n = 2 c^n$, and so $a$ must be even. Then $2^{n-1}(a/2)^n+2^{n-2} \\cdot 3(b/2)^n = c^n$, and $c$ must be even as well. This contradicts our assumption that $\\gcd(a,b,c)=1$.",
+  "vars": [
+    "n",
+    "a",
+    "b",
+    "c"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "exponent",
+        "a": "firstnum",
+        "b": "secondnum",
+        "c": "thirdnum"
+      },
+      "question": "Determine all positive integers $exponent$ for which there exist positive integers $firstnum$, $secondnum$, and $thirdnum$ satisfying\n\\[\n2{firstnum}^{exponent} + 3{secondnum}^{exponent} = 4{thirdnum}^{exponent}.\n\\]\n",
+      "solution": "The answer is $exponent=1$. When $exponent=1$, $(firstnum,secondnum,thirdnum) = (1,2,2)$ is a solution to the given equation. We claim that there are no solutions when $exponent \\ge 2$.\n\nFor $exponent = 2$, suppose that we have a solution to $2{firstnum}^2+3{secondnum}^2=4{thirdnum}^2$ with $firstnum,secondnum,thirdnum\\in\\mathbb{N}$. By dividing each of $firstnum,secondnum,thirdnum$ by $\\gcd(firstnum,secondnum,thirdnum)$, we obtain another solution; thus we can assume that $\\gcd(firstnum,secondnum,thirdnum) = 1$. Note that we have ${firstnum}^2+${thirdnum}^2 \\equiv 0 \\pmod{3}$, and that only $0$ and $1$ are perfect squares mod $3$; thus we must have ${firstnum}^2 \\equiv ${thirdnum}^2 \\equiv 0 \\pmod{3}$. But then $firstnum,thirdnum$ are both multiples of $3$; it follows from ${secondnum}^2 = 12(${thirdnum}/3)^2-6(${firstnum}/3)^2$ that $secondnum$ is a multiple of $3$ as well, contradicting our assumption that $\\gcd(firstnum,secondnum,thirdnum)=1$.\n\nFor $exponent \\ge 3$, suppose that $2{firstnum}^{exponent}+3{secondnum}^{exponent}=4{thirdnum}^{exponent}$. As in the previous case, we can assume $\\gcd(firstnum,secondnum,thirdnum)=1$. Since $3{secondnum}^{exponent}=4{thirdnum}^{exponent}-2{firstnum}^{exponent}$, $secondnum$ must be even.\nWe can then write ${firstnum}^{exponent}+2^{exponent-1}\\cdot 3(${secondnum}/2)^{exponent} = 2{thirdnum}^{exponent}$, and so $firstnum$ must be even. Then $2^{exponent-1}(${firstnum}/2)^{exponent}+2^{exponent-2}\\cdot 3(${secondnum}/2)^{exponent} = {thirdnum}^{exponent}$, and $thirdnum$ must be even as well. This contradicts our assumption that $\\gcd(firstnum,secondnum,thirdnum)=1$.\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "moonlight",
+        "a": "butterfly",
+        "b": "strawhat",
+        "c": "riverbank"
+      },
+      "question": "Determine all positive integers $moonlight$ for which there exist positive integers $butterfly$, $strawhat$, and $riverbank$ satisfying\n\\[\n2{butterfly}^{moonlight} + 3{strawhat}^{moonlight} = 4{riverbank}^{moonlight}.\n\\]\n",
+      "solution": "The answer is $moonlight=1$. When $moonlight=1$, $(butterfly,strawhat,riverbank) = (1,2,2)$ is a solution to the given equation. We claim that there are no solutions when $moonlight \\geq 2$.\n\nFor $moonlight = 2$, suppose that we have a solution to $2{butterfly}^2+3{strawhat}^2=4{riverbank}^2$ with $butterfly,strawhat,riverbank\\in\\mathbb{N}$. By dividing each of $butterfly,strawhat,riverbank$ by $\\gcd(butterfly,strawhat,riverbank)$, we obtain another solution; thus we can assume that $\\gcd(butterfly,strawhat,riverbank) = 1$. Note that we have ${butterfly}^2+{riverbank}^2 \\equiv 0 \\pmod{3}$, and that only $0$ and $1$ are perfect squares mod $3$; thus we must have ${butterfly}^2 \\equiv {riverbank}^2 \\equiv 0 \\pmod{3}$. But then $butterfly,riverbank$ are both multiples of $3$; it follows from ${strawhat}^2 = 12(riverbank/3)^2-6(butterfly/3)^2$ that $strawhat$ is a multiple of $3$ as well, contradicting our assumption that $\\gcd(butterfly,strawhat,riverbank)=1$.\n\nFor $moonlight \\geq 3$, suppose that $2{butterfly}^{moonlight}+3{strawhat}^{moonlight}=4{riverbank}^{moonlight}$. As in the previous case, we can assume $\\gcd(butterfly,strawhat,riverbank)=1$. Since $3{strawhat}^{moonlight}=4{riverbank}^{moonlight}-2{butterfly}^{moonlight}$, $strawhat$ must be even. \nWe can then write ${butterfly}^{moonlight}+2^{moonlight-1}\\cdot 3(strawhat/2)^{moonlight} = 2 {riverbank}^{moonlight}$, and so $butterfly$ must be even. Then $2^{moonlight-1}(butterfly/2)^{moonlight}+2^{moonlight-2} \\cdot 3(strawhat/2)^{moonlight} = {riverbank}^{moonlight}$, and $riverbank$ must be even as well. This contradicts our assumption that $\\gcd(butterfly,strawhat,riverbank)=1$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "irrational",
+        "a": "negative",
+        "b": "voidness",
+        "c": "imaginary"
+      },
+      "question": "Determine all positive integers $irrational$ for which there exist positive integers $negative$, $voidness$, and $imaginary$ satisfying\n\\[\n2negative^{irrational} + 3voidness^{irrational} = 4imaginary^{irrational}.\n\\]",
+      "solution": "The answer is $irrational = 1$. When $irrational = 1$, $(negative,voidness,imaginary) = (1,2,2)$ is a solution to the given equation. We claim that there are no solutions when $irrational \\ge 2$.\n\nFor $irrational = 2$, suppose that we have a solution to $2negative^2 + 3voidness^2 = 4imaginary^2$ with $negative,voidness,imaginary \\in \\mathbb{N}$. By dividing each of $negative,voidness,imaginary$ by $\\gcd(negative,voidness,imaginary)$, we obtain another solution; thus we can assume that $\\gcd(negative,voidness,imaginary) = 1$. Note that we have $negative^2 + imaginary^2 \\equiv 0 \\pmod{3}$, and that only $0$ and $1$ are perfect squares mod $3$; thus we must have $negative^2 \\equiv imaginary^2 \\equiv 0 \\pmod{3}$. But then $negative,imaginary$ are both multiples of $3$; it follows from $voidness^2 = 12(imaginary/3)^2 - 6(negative/3)^2$ that $voidness$ is a multiple of $3$ as well, contradicting our assumption that $\\gcd(negative,voidness,imaginary)=1$.\n\nFor $irrational \\ge 3$, suppose that $2negative^{irrational} + 3voidness^{irrational} = 4imaginary^{irrational}$. As in the previous case, we can assume $\\gcd(negative,voidness,imaginary)=1$. Since $3voidness^{irrational} = 4imaginary^{irrational} - 2negative^{irrational}$, $voidness$ must be even.\nWe can then write $negative^{irrational} + 2^{irrational-1}\\cdot 3(voidness/2)^{irrational} = 2 \\, imaginary^{irrational}$, and so $negative$ must be even. Then $2^{irrational-1}(negative/2)^{irrational} + 2^{irrational-2} \\cdot 3(voidness/2)^{irrational} = imaginary^{irrational}$, and $imaginary$ must be even as well. This contradicts our assumption that $\\gcd(negative,voidness,imaginary)=1$. Hence no solutions exist for $irrational \\ge 2$. Thus the only possible value is $irrational = 1$. "
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "a": "hjgrksla",
+        "b": "mxpqvble",
+        "c": "tfrjedoc"
+      },
+      "question": "Determine all positive integers qzxwvtnp for which there exist positive integers hjgrksla, mxpqvble, and tfrjedoc satisfying\n\\[\n2hjgrksla^{qzxwvtnp} + 3mxpqvble^{qzxwvtnp} = 4tfrjedoc^{qzxwvtnp}.\n\\]",
+      "solution": "The answer is qzxwvtnp=1. When qzxwvtnp=1, (hjgrksla,mxpqvble,tfrjedoc) = (1,2,2) is a solution to the given equation. We claim that there are no solutions when qzxwvtnp \\geq 2.\n\nFor qzxwvtnp = 2, suppose that we have a solution to 2hjgrksla^2+3mxpqvble^2=4tfrjedoc^2 with hjgrksla,mxpqvble,tfrjedoc\\in\\mathbb{N}. By dividing each of hjgrksla,mxpqvble,tfrjedoc by \\gcd(hjgrksla,mxpqvble,tfrjedoc), we obtain another solution; thus we can assume that \\gcd(hjgrksla,mxpqvble,tfrjedoc) = 1. Note that we have hjgrksla^2+tfrjedoc^2 \\equiv 0 \\pmod{3}, and that only 0 and 1 are perfect squares mod 3; thus we must have hjgrksla^2 \\equiv tfrjedoc^2 \\equiv 0 \\pmod{3}. But then hjgrksla,tfrjedoc are both multiples of 3; it follows from mxpqvble^2 = 12(tfrjedoc/3)^2-6(hjgrksla/3)^2 that mxpqvble is a multiple of 3 as well, contradicting our assumption that \\gcd(hjgrksla,mxpqvble,tfrjedoc)=1.\n\nFor qzxwvtnp \\geq 3, suppose that 2hjgrksla^{qzxwvtnp}+3mxpqvble^{qzxwvtnp}=4tfrjedoc^{qzxwvtnp}. As in the previous case, we can assume \\gcd(hjgrksla,mxpqvble,tfrjedoc)=1. Since 3mxpqvble^{qzxwvtnp}=4tfrjedoc^{qzxwvtnp}-2hjgrksla^{qzxwvtnp}, mxpqvble must be even. \nWe can then write hjgrksla^{qzxwvtnp}+2^{qzxwvtnp-1}\\cdot 3(mxpqvble/2)^{qzxwvtnp} = 2 tfrjedoc^{qzxwvtnp}, and so hjgrksla must be even. Then 2^{qzxwvtnp-1}(hjgrksla/2)^{qzxwvtnp}+2^{qzxwvtnp-2} \\cdot 3(mxpqvble/2)^{qzxwvtnp} = tfrjedoc^{qzxwvtnp}, and tfrjedoc must be even as well. This contradicts our assumption that \\gcd(hjgrksla,mxpqvble,tfrjedoc)=1."
+    },
+    "kernel_variant": {
+      "question": "Determine all positive integers $n$ for which there exist positive integers $a, b, c$ such that\n\\[\n14\\,a^{n}+15\\,b^{n}=28\\,c^{n}.\n\\]",
+      "solution": "Answer: n = 1.\n\nStep 1 (Existence for n = 1).\nTake (a,b,c) = (1,14,8).  Then\n  14\\cdot 1 + 15\\cdot 14 = 14 + 210 = 224 = 28\\cdot 8,\nso n = 1 admits a solution.\n\nStep 2 (No solution for n = 2: a 3-adic obstruction).\nAssume 14a^2 + 15b^2 = 28c^2 with gcd(a,b,c)=1.  Reducing mod 3 gives\n  14\\equiv 2, 15\\equiv 0, 28\\equiv 1  (mod 3),\nso 2a^2 \\equiv  c^2 (mod 3).  Since the only squares mod 3 are 0 or 1, 2a^2\\equiv c^2 forces a^2\\equiv 0 and c^2\\equiv 0 (mod 3).  Hence 3|a and 3|c.  Writing a=3A, c=3C yields\n  14\\cdot 9A^2 + 15b^2 = 28\\cdot 9C^2\n  \\Rightarrow 126A^2 + 15b^2 = 252C^2\n  \\Rightarrow 42A^2 + 5b^2 = 84C^2\n  \\Rightarrow 5b^2 = 42(2C^2 - A^2).\nThe right-hand side is divisible by 3, so 3|5b^2 \\Rightarrow  3|b, contradicting gcd(a,b,c)=1.  Therefore no solution for n = 2.\n\nStep 3 (No solution for n \\geq  3: a parity cascade).\nAssume 14a^n + 15b^n = 28c^n with n \\geq  3 and gcd(a,b,c)=1.\n1.  Reduce mod 2: 14a^n \\equiv  0, 28c^n \\equiv  0, so 15b^n \\equiv  0 (mod 2) \\Rightarrow  b is even.  Write b=2B.\n2.  Substitute and divide by 2:\n     7a^n + 15\\cdot 2^{n-1}B^n = 14c^n.\n   Since n-1 \\geq  2, 2^{n-1} is even, so 7a^n must be even \\Rightarrow  a is even.  Write a=2A.\n3.  Substitute a=2A, b=2B in the original equation:\n     14\\cdot 2^nA^n + 15\\cdot 2^nB^n = 28c^n\n     \\Rightarrow 2^n(14A^n + 15B^n) = 28c^n\n     \\Rightarrow 2^{n-2}(14A^n + 15B^n) = 7c^n.\n   For n \\geq  3 the factor 2^{n-2} is even, so 7c^n is even \\Rightarrow  c is even.\n\nHence a,b,c are all even, contradicting gcd(a,b,c)=1.  No solutions for n \\geq  3.\n\nConclusion: The only positive integer n admitting a solution is n = 1.",
+      "_meta": {
+        "core_steps": [
+          "Exhibit a concrete solution for n = 1.",
+          "Make the solution primitive by dividing out gcd(a,b,c).",
+          "For n = 2, work mod 3: squares are 0 or 1, forcing a ≡ c ≡ 0 (mod 3) and hence b ≡ 0, contradicting primitiveness.",
+          "For n ≥ 3, parity: 3b^n equals the difference of two even terms, so b is even; rewriting shows a and then c must also be even, contradicting primitiveness."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The particular triple that witnesses a solution when n = 1",
+            "original": "(1,2,2)"
+          },
+          "slot2": {
+            "description": "Even coefficient on a^n, congruent to 2 mod 3 (key to both parity and mod-3 steps)",
+            "original": "2"
+          },
+          "slot3": {
+            "description": "Even coefficient on c^n, congruent to 1 mod 3 (key to both parity and mod-3 steps)",
+            "original": "4"
+          },
+          "slot4": {
+            "description": "Odd coefficient on b^n, divisible by 3 (makes the mod-3 reduction trivial and keeps parity argument valid)",
+            "original": "3"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

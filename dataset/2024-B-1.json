@@ -1,0 +1,105 @@
+{
+  "index": "2024-B-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $n$ and $k$ be positive integers. The square in the $i$th row and $j$th column of an $n$-by-$n$ grid contains the number $i+j-k$. For which $n$ and $k$ is it possible to select $n$ squares from the grid, no two in the same row or column, such that the numbers contained in the selected squares are exactly $1,2,\\dots,n$?",
+  "solution": "This is possible if and only if $n$ is odd and $k = (n+1)/2$.\n\nWe first check that these conditions are necessary. If the pairs $(a_1,b_1),\\dots,(a_n,b_n)$\nindex squares of the grid with no two in the same row or column,\nthen each of the two sequences $a_1,\\dots,a_n$\nand $b_1,\\dots,b_n$ is a permutation of $\\{1,\\dots,n\\}$, and so in particular has sum $1 + \\cdots +n = \\frac{n(n+1)}{2}$. In particular, if the selected numbers are $1,2,\\dots,n$ in some order, then\n\\begin{align*}\n\\frac{n(n+1)}{2} &= \\sum_{i=1}^n (a_i+b_i-k) \\\\\n&= \\sum_{i=1}^n a_i + \\sum_{i=1}^n b_i - \\sum_{i=1}^n k \\\\\n&= \\frac{n(n+1)}{2} + \\frac{n(n+1)}{2} - nk\n\\end{align*}\nwhich simplifies to $k = (n+1)/2$.\n\nWe next check that these conditions are sufficient. For this, it suffices to observe that\nthe sequence\n\\begin{gather*}\n\\left(1, \\frac{n+1}{2}\\right), \\left(2, \\frac{n+3}{2}\\right), \\dots,\n\\left(\\frac{n+1}{2}, n\\right), \\\\\n\\left(\\frac{n+3}{2}, 1\\right), \\dots, \\left(n, \\frac{n-1}{2}\\right)\n\\end{gather*}\nof grid entries equals\n\\[\n1, 3, \\dots, n, 2, \\dots, n-1.\n\\]\nWe illustrate this for the case $n=5, k=3$ below; the selected entries are parenthesized.\n\\[\n\\begin{pmatrix}\n-1 & 0 & (1) & 2 & 3 \\\\\n0 & 1 & 2 & (3) & 4 \\\\\n1 & 2 & 3 & 4 & (5) \\\\\n(2) & 3 & 4 & 5 & 6 \\\\\n3 & (4) & 5 & 6 & 7\n\\end{pmatrix}\n\\]",
+  "vars": [
+    "i",
+    "j",
+    "a",
+    "a_i",
+    "b",
+    "b_i"
+  ],
+  "params": [
+    "n",
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "rowindex",
+        "j": "colindex",
+        "a": "rowselect",
+        "a_i": "rowselectitem",
+        "b": "colselect",
+        "b_i": "colselectitem",
+        "n": "gridsize",
+        "k": "shiftconst"
+      },
+      "question": "Let $gridsize$ and $shiftconst$ be positive integers. The square in the $rowindex$th row and $colindex$th column of an $gridsize$-by-$gridsize$ grid contains the number $rowindex+colindex-shiftconst$. For which $gridsize$ and $shiftconst$ is it possible to select $gridsize$ squares from the grid, no two in the same row or column, such that the numbers contained in the selected squares are exactly $1,2,\\dots,gridsize$?",
+      "solution": "This is possible if and only if $gridsize$ is odd and $shiftconst = (gridsize+1)/2$.\n\nWe first check that these conditions are necessary. If the pairs $(rowselect_1,colselect_1),\\dots,(rowselect_{gridsize},colselect_{gridsize})$ index squares of the grid with no two in the same row or column, then each of the two sequences $rowselect_1,\\dots,rowselect_{gridsize}$ and $colselect_1,\\dots,colselect_{gridsize}$ is a permutation of $\\{1,\\dots,gridsize\\}$, and so in particular has sum $1 + \\cdots +gridsize = \\frac{gridsize(gridsize+1)}{2}$. In particular, if the selected numbers are $1,2,\\dots,gridsize$ in some order, then\n\\begin{align*}\n\\frac{gridsize(gridsize+1)}{2} &= \\sum_{rowindex=1}^{gridsize} (rowselectitem+colselectitem-shiftconst) \\\\\n&= \\sum_{rowindex=1}^{gridsize} rowselectitem + \\sum_{rowindex=1}^{gridsize} colselectitem - \\sum_{rowindex=1}^{gridsize} shiftconst \\\\\n&= \\frac{gridsize(gridsize+1)}{2} + \\frac{gridsize(gridsize+1)}{2} - gridsize\\,shiftconst\n\\end{align*}\nwhich simplifies to $shiftconst = (gridsize+1)/2$.\n\nWe next check that these conditions are sufficient. For this, it suffices to observe that the sequence\n\\begin{gather*}\n\\left(1, \\frac{gridsize+1}{2}\\right), \\left(2, \\frac{gridsize+3}{2}\\right), \\dots, \\left(\\frac{gridsize+1}{2}, gridsize\\right), \\\\\n\\left(\\frac{gridsize+3}{2}, 1\\right), \\dots, \\left(gridsize, \\frac{gridsize-1}{2}\\right)\n\\end{gather*}\nof grid entries equals\n\\[\n1, 3, \\dots, gridsize, 2, \\dots, gridsize-1.\n\\]\nWe illustrate this for the case $gridsize=5, shiftconst=3$ below; the selected entries are parenthesized.\n\\[\n\\begin{pmatrix}\n-1 & 0 & (1) & 2 & 3 \\\\\n0 & 1 & 2 & (3) & 4 \\\\\n1 & 2 & 3 & 4 & (5) \\\\\n(2) & 3 & 4 & 5 & 6 \\\\\n3 & (4) & 5 & 6 & 7\n\\end{pmatrix}\n\\]\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "latitudes",
+        "j": "longtails",
+        "a": "penguinry",
+        "a_i": "penguinrow",
+        "b": "seafarers",
+        "b_i": "seafaring",
+        "n": "compasses",
+        "k": "marigolds"
+      },
+      "question": "Let $compasses$ and $marigolds$ be positive integers. The square in the $latitudes$th row and $longtails$th column of an $compasses$-by-$compasses$ grid contains the number $latitudes+longtails-marigolds$. For which $compasses$ and $marigolds$ is it possible to select $compasses$ squares from the grid, no two in the same row or column, such that the numbers contained in the selected squares are exactly $1,2,\\dots,compasses$?",
+      "solution": "This is possible if and only if $compasses$ is odd and $marigolds = (compasses+1)/2$.\n\nWe first check that these conditions are necessary. If the pairs $(penguinry_1,seafarers_1),\\dots,(penguinry_{compasses},seafarers_{compasses})$\nindex squares of the grid with no two in the same row or column,\nthen each of the two sequences $penguinry_1,\\dots,penguinry_{compasses}$\nand $seafarers_1,\\dots,seafarers_{compasses}$ is a permutation of $\\{1,\\dots,compasses\\}$, and so in particular has sum $1 + \\cdots +compasses = \\frac{compasses(compasses+1)}{2}$. In particular, if the selected numbers are $1,2,\\dots,compasses$ in some order, then\n\\begin{align*}\n\\frac{compasses(compasses+1)}{2} &= \\sum_{latitudes=1}^{compasses} (penguinrow + seafaring - marigolds) \\\\\n&= \\sum_{latitudes=1}^{compasses} penguinrow + \\sum_{latitudes=1}^{compasses} seafaring - \\sum_{latitudes=1}^{compasses} marigolds \\\\\n&= \\frac{compasses(compasses+1)}{2} + \\frac{compasses(compasses+1)}{2} - compasses\\,marigolds\n\\end{align*}\nwhich simplifies to $marigolds = (compasses+1)/2$.\n\nWe next check that these conditions are sufficient. For this, it suffices to observe that\nthe sequence\n\\begin{gather*}\n\\left(1, \\frac{compasses+1}{2}\\right), \\left(2, \\frac{compasses+3}{2}\\right), \\dots,\n\\left(\\frac{compasses+1}{2}, compasses\\right), \\\\\n\\left(\\frac{compasses+3}{2}, 1\\right), \\dots, \\left(compasses, \\frac{compasses-1}{2}\\right)\n\\end{gather*}\nof grid entries equals\n\\[\n1, 3, \\dots, compasses, 2, \\dots, compasses-1.\n\\]\nWe illustrate this for the case $compasses=5, marigolds=3$ below; the selected entries are parenthesized.\n\\[\n\\begin{pmatrix}\n-1 & 0 & (1) & 2 & 3 \\\\\n0 & 1 & 2 & (3) & 4 \\\\\n1 & 2 & 3 & 4 & (5) \\\\\n(2) & 3 & 4 & 5 & 6 \\\\\n3 & (4) & 5 & 6 & 7\n\\end{pmatrix}\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "contentnum",
+        "j": "entrymark",
+        "a": "stableval",
+        "a_i": "fixedvalue",
+        "b": "staticval",
+        "b_i": "settledval",
+        "n": "infinity",
+        "k": "variable"
+      },
+      "question": "Let $infinity$ and $variable$ be positive integers. The square in the $contentnum$th row and $entrymark$th column of an $infinity$-by-$infinity$ grid contains the number $contentnum+entrymark-variable$. For which $infinity$ and $variable$ is it possible to select $infinity$ squares from the grid, no two in the same row or column, such that the numbers contained in the selected squares are exactly $1,2,\\dots,infinity$?",
+      "solution": "This is possible if and only if $infinity$ is odd and $variable = (infinity+1)/2$.\n\nWe first check that these conditions are necessary. If the pairs $(stableval_1,staticval_1),\\dots,(stableval_infinity,staticval_infinity)$\nindex squares of the grid with no two in the same row or column,\nthen each of the two sequences $stableval_1,\\dots,stableval_infinity$\nand $staticval_1,\\dots,staticval_infinity$ is a permutation of $\\{1,\\dots,infinity\\}$, and so in particular has sum $1 + \\cdots +infinity = \\frac{infinity(infinity+1)}{2}$. In particular, if the selected numbers are $1,2,\\dots,infinity$ in some order, then\n\\begin{align*}\n\\frac{infinity(infinity+1)}{2} &= \\sum_{contentnum=1}^{infinity} (fixedvalue+settledval-variable) \\\\\n&= \\sum_{contentnum=1}^{infinity} fixedvalue + \\sum_{contentnum=1}^{infinity} settledval - \\sum_{contentnum=1}^{infinity} variable \\\\\n&= \\frac{infinity(infinity+1)}{2} + \\frac{infinity(infinity+1)}{2} - infinity\\,variable\n\\end{align*}\nwhich simplifies to $variable = (infinity+1)/2$.\n\nWe next check that these conditions are sufficient. For this, it suffices to observe that\nthe sequence\n\\begin{gather*}\n\\left(1, \\frac{infinity+1}{2}\\right), \\left(2, \\frac{infinity+3}{2}\\right), \\dots,\n\\left(\\frac{infinity+1}{2}, infinity\\right), \\\\\n\\left(\\frac{infinity+3}{2}, 1\\right), \\dots, \\left(infinity, \\frac{infinity-1}{2}\\right)\n\\end{gather*}\nof grid entries equals\n\\[\n1, 3, \\dots, infinity, 2, \\dots, infinity-1.\n\\]\nWe illustrate this for the case $infinity=5, variable=3$ below; the selected entries are parenthesized.\n\\[\n\\begin{pmatrix}\n-1 & 0 & (1) & 2 & 3 \\\\\n0 & 1 & 2 & (3) & 4 \\\\\n1 & 2 & 3 & 4 & (5) \\\\\n(2) & 3 & 4 & 5 & 6 \\\\\n3 & (4) & 5 & 6 & 7\n\\end{pmatrix}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "i": "qzxwvtnp",
+        "j": "hjgrksla",
+        "a": "kldrmvse",
+        "a_i": "pxgurldf",
+        "b": "xyqwepzn",
+        "b_i": "rvbksoma",
+        "n": "wprocnsj",
+        "k": "blxdseqa"
+      },
+      "question": "Let $wprocnsj$ and $blxdseqa$ be positive integers. The square in the $qzxwvtnp$th row and $hjgrksla$th column of an $wprocnsj$-by-$wprocnsj$ grid contains the number $qzxwvtnp+hjgrksla-blxdseqa$. For which $wprocnsj$ and $blxdseqa$ is it possible to select $wprocnsj$ squares from the grid, no two in the same row or column, such that the numbers contained in the selected squares are exactly $1,2,\\dots,wprocnsj$?",
+      "solution": "This is possible if and only if $wprocnsj$ is odd and $blxdseqa = (wprocnsj+1)/2$.\n\nWe first check that these conditions are necessary. If the pairs $(kldrmvse_1,xyqwepzn_1),\\dots,(kldrmvse_{wprocnsj},xyqwepzn_{wprocnsj})$\nindex squares of the grid with no two in the same row or column,\nthen each of the two sequences $kldrmvse_1,\\dots,kldrmvse_{wprocnsj}$\nand $xyqwepzn_1,\\dots,xyqwepzn_{wprocnsj}$ is a permutation of $\\{1,\\dots,wprocnsj\\}$, and so in particular has sum $1 + \\cdots + wprocnsj = \\frac{wprocnsj(wprocnsj+1)}{2}$. In particular, if the selected numbers are $1,2,\\dots,wprocnsj$ in some order, then\n\\begin{align*}\n\\frac{wprocnsj(wprocnsj+1)}{2} &= \\sum_{qzxwvtnp=1}^{wprocnsj} (pxgurldf+rvbksoma-blxdseqa) \\\\\n&= \\sum_{qzxwvtnp=1}^{wprocnsj} kldrmvse_{qzxwvtnp} + \\sum_{qzxwvtnp=1}^{wprocnsj} xyqwepzn_{qzxwvtnp} - \\sum_{qzxwvtnp=1}^{wprocnsj} blxdseqa \\\\\n&= \\frac{wprocnsj(wprocnsj+1)}{2} + \\frac{wprocnsj(wprocnsj+1)}{2} - wprocnsj blxdseqa\n\\end{align*}\nwhich simplifies to $blxdseqa = (wprocnsj+1)/2$.\n\nWe next check that these conditions are sufficient. For this, it suffices to observe that\nthe sequence\n\\begin{gather*}\n\\left(1, \\frac{wprocnsj+1}{2}\\right), \\left(2, \\frac{wprocnsj+3}{2}\\right), \\dots,\n\\left(\\frac{wprocnsj+1}{2}, wprocnsj\\right), \\\\\n\\left(\\frac{wprocnsj+3}{2}, 1\\right), \\dots, \\left(wprocnsj, \\frac{wprocnsj-1}{2}\\right)\n\\end{gather*}\nof grid entries equals\n\\[\n1, 3, \\dots, wprocnsj, 2, \\dots, wprocnsj-1.\n\\]\nWe illustrate this for the case $wprocnsj=5, blxdseqa=3$ below; the selected entries are parenthesized.\n\\[\n\\begin{pmatrix}\n-1 & 0 & (1) & 2 & 3 \\\\\n0 & 1 & 2 & (3) & 4 \\\\\n1 & 2 & 3 & 4 & (5) \\\\\n(2) & 3 & 4 & 5 & 6 \\\\\n3 & (4) & 5 & 6 & 7\n\\end{pmatrix}\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $n$ and $p$ be positive integers. Every square in the $i$-th row and $j$-th column of an $n\\times n$ board is filled with the number\n\\[\n\\,\\,\\,\\,\\,\\,\\,\\,\\boxed{\\,i+j-p+1\\,}.\n\\]\nFor which pairs $(n,p)$ is it possible to choose $n$ squares, no two in the same row or column, whose entries are exactly the consecutive integers\n\\[\n2,3,\\dots ,n+1?\n\\]",
+      "solution": "Necessity.  Suppose the desired $n$ squares are indexed by distinct pairs $(a_1,b_1),\\,\nDots,(a_n,b_n)$ with the $a_i$'s all different and the $b_i$'s all different.  Hence each of the two lists $(a_1,\\dots,a_n)$ and $(b_1,\\dots,b_n)$ is a permutation of $\\{1,\\dots,n\\}$, so\n\n\\[\n\\sum_{i=1}^{n}a_i=\\sum_{i=1}^{n}b_i=1+2+\\cdots+n=\\frac{n(n+1)}2.\n\\]\nThe numbers written in the chosen squares are\n\n\\[\n(a_1+b_1-p+1),\\dots,(a_n+b_n-p+1),\n\\]\nwhose total therefore equals\n\n\\[\n\\sum_{i=1}^{n}(a_i+b_i-p+1)=\\frac{n(n+1)}2+\\frac{n(n+1)}2-np+n=n(n+1)-np+n.\n\\]\nOn the other hand, the required multiset of entries is $\\{2,3,\\dots,n+1\\}$, whose sum is\n\n\\[\n2+3+\\cdots+(n+1)=\\frac{(n+1)(n+2)}2-1.\n\\]\nEquating gives\n\n\\[\nn(n+1)-np+n=\\frac{(n+1)(n+2)}2-1\n\\]\nand hence\n\n\\[\np=\\frac{n+1}2.\n\\]\nThus $n+1$ must be even, so $n$ is odd, and necessarily\n\n\\[\np=\\frac{n+1}2.\n\\]\n\nSufficiency.  Conversely, assume $n$ is odd and put $p=(n+1)/2$.  Write $m=(n+1)/2$, so $n=2m-1$.  Consider the following $n$ ordered pairs of indices:\n\n\\[\n(1,m),(2,m+1),\\dots,(m,2m-1),\\,(m+1,1),(m+2,2),\\dots,(2m-1,m-1).\n\\]\nEach first coordinate is different and each second coordinate is different, so no two of these squares share a row or column.  For the first block (the first $m$ pairs) we have, for $r=1,\\dots,m$,\n\n\\[\n\\text{entry} \n= r+(m+r-1)-p+1=(2r+m-1)-m+1=2r,\n\\]\nwhich are the even integers $2,4,\\dots,2m=n+1$.  For the second block, i.e.\nfor $r=m+1,\\dots,2m-1$, we obtain\n\n\\[\n\\text{entry}\n=r+(r-m)-p+1=(2r-m)-m+1=2r-(2m-1),\n\\]\nwhich, as $r$ runs from $m+1$ to $2m-1$, produces the odd integers\n$3,5,\\dots,n$.  Altogether the selected squares contain exactly the set\n$\\{2,3,\\dots,n+1\\}$, as required.\n\nTherefore such a selection is possible precisely when\n\n\\[\nn\\text{ is odd and }p=\\frac{n+1}2.\n\\]",
+      "_meta": {
+        "core_steps": [
+          "Row- and column-indices of the n chosen squares are permutations of {1,…,n}.",
+          "Compare the sum of the required n numbers with Σ(i+j−k) over the chosen squares to obtain k = (n+1)/2, hence n is odd.",
+          "For odd n with k = (n+1)/2, give an explicit permutation of the columns (cyclic half-shift) that produces the desired numbers, proving sufficiency."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The constant that is added/subtracted in every grid entry; any fixed integer could be used without affecting the argument based on total sums.",
+            "original": "−k  (i.e. the grid entry is i + j − k)"
+          },
+          "slot2": {
+            "description": "The precise set of target values; replacing {1,2,…,n} by any n distinct integers whose total is known would leave the proof structure (permutation + sum comparison + constructive half-shift) intact.",
+            "original": "{1,2,…,n}"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

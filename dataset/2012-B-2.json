@@ -1,0 +1,104 @@
+{
+  "index": "2012-B-2",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $P$ be a given (non-degenerate) polyhedron. Prove that there is a constant $c(P) > 0$\nwith the following property: If a collection of $n$ balls whose volumes sum to $V$ contains\nthe entire surface of $P$, then $n > c(P) / V^2$.",
+  "solution": "Fix a face $F$ of the polyhedron with area $A$. Suppose $F$ is completely covered by balls of radii\n$r_1, \\dots, r_n$ whose volumes sum to $V$. Then on one hand,\n\\[\n\\sum_{i=1}^n \\frac{4}{3} \\pi r_i^3 = V.\n\\]\nOn the other hand, the intersection of a ball of radius $r$ with the plane containing $F$ is a\ndisc of radius at most $r$, which covers a piece of $F$ of area at most $\\pi r^2$; therefore\n\\[\n\\sum_{i=1}^n \\pi r_i^2 \\geq A.\n\\]\nBy writing $n$ as $\\sum_{i=1}^n 1$ and applying H\\\"older's inequality,\nwe obtain\n\\[\nn V^2 \\geq \\left( \\sum_{i=1}^n \\left( \\frac{4}{3} \\pi r_i^3 \\right)^{2/3} \\right)^3\n\\geq \\frac{16}{9\\pi} A^3.\n\\]\nConsequently, any value of $c(P)$ less than $\\frac{16}{9\\pi} A^3$ works.",
+  "vars": [
+    "n",
+    "V",
+    "r_i",
+    "r"
+  ],
+  "params": [
+    "P",
+    "c",
+    "F",
+    "A"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "ballcount",
+        "V": "totalvol",
+        "r_i": "indivrad",
+        "r": "singlerad",
+        "P": "polyhedr",
+        "c": "coverconst",
+        "F": "selectface",
+        "A": "facearea"
+      },
+      "question": "Let $polyhedr$ be a given (non-degenerate) polyhedron. Prove that there is a constant $coverconst(polyhedr) > 0$ with the following property: If a collection of $ballcount$ balls whose volumes sum to $totalvol$ contains the entire surface of $polyhedr$, then $ballcount > coverconst(polyhedr) / totalvol^2$.",
+      "solution": "Fix a face $selectface$ of the polyhedron with area $facearea$. Suppose $selectface$ is completely covered by balls of radii $singlerad_1, \\dots, singlerad_{ballcount}$ whose volumes sum to $totalvol$. Then on one hand,\n\\[\n\\sum_{i=1}^{ballcount} \\frac{4}{3} \\pi indivrad^3 = totalvol.\n\\]\nOn the other hand, the intersection of a ball of radius $singlerad$ with the plane containing $selectface$ is a disc of radius at most $singlerad$, which covers a piece of $selectface$ of area at most $\\pi singlerad^2$; therefore\n\\[\n\\sum_{i=1}^{ballcount} \\pi indivrad^2 \\geq facearea.\n\\]\nBy writing $ballcount$ as $\\sum_{i=1}^{ballcount} 1$ and applying H\"older's inequality, we obtain\n\\[\nballcount\\, totalvol^2 \\geq \\left( \\sum_{i=1}^{ballcount} \\left( \\frac{4}{3} \\pi indivrad^3 \\right)^{2/3} \\right)^3 \\geq \\frac{16}{9\\pi} facearea^3.\n\\]\nConsequently, any value of $coverconst(polyhedr)$ less than $\\frac{16}{9\\pi} facearea^3$ works."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "lanterns",
+        "V": "shoreline",
+        "r_i": "pinecones_{i}",
+        "r": "buttercup",
+        "P": "lighthouse",
+        "c": "meadowland",
+        "F": "tapestry",
+        "A": "moonlight"
+      },
+      "question": "Let $lighthouse$ be a given (non-degenerate) polyhedron. Prove that there is a constant $meadowland(lighthouse) > 0$ with the following property: If a collection of $lanterns$ balls whose volumes sum to $shoreline$ contains the entire surface of $lighthouse$, then $lanterns > meadowland(lighthouse) / shoreline^2$.",
+      "solution": "Fix a face $tapestry$ of the polyhedron with area $moonlight$. Suppose $tapestry$ is completely covered by balls of radii $pinecones_{1}, \\dots, pinecones_{lanterns}$ whose volumes sum to $shoreline$. Then on one hand,\n\\[\n\\sum_{i=1}^{lanterns} \\frac{4}{3} \\pi pinecones_{i}^3 = shoreline.\n\\]\nOn the other hand, the intersection of a ball of radius $buttercup$ with the plane containing $tapestry$ is a disc of radius at most $buttercup$, which covers a piece of $tapestry$ of area at most $\\pi buttercup^2$; therefore\n\\[\n\\sum_{i=1}^{lanterns} \\pi pinecones_{i}^2 \\geq moonlight.\n\\]\nBy writing $lanterns$ as $\\sum_{i=1}^{lanterns} 1$ and applying H\\\"older's inequality, we obtain\n\\[\nlanterns\\, shoreline^2 \\geq \\left( \\sum_{i=1}^{lanterns} \\left( \\frac{4}{3} \\pi pinecones_{i}^3 \\right)^{2/3} \\right)^3 \\geq \\frac{16}{9\\pi} moonlight^3.\n\\]\nConsequently, any value of $meadowland(lighthouse)$ less than $\\frac{16}{9\\pi} moonlight^3$ works."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "zerocount",
+        "V": "flatness",
+        "r_i": "angleedge",
+        "r": "perimeter",
+        "P": "smoothsphere",
+        "c": "variable",
+        "F": "interior",
+        "A": "lengthval"
+      },
+      "question": "Let $smoothsphere$ be a given (non-degenerate) polyhedron. Prove that there is a constant $variable(smoothsphere) > 0$\nwith the following property: If a collection of $zerocount$ balls whose volumes sum to $flatness$ contains\nthe entire surface of $smoothsphere$, then $zerocount > variable(smoothsphere) / flatness^2$.",
+      "solution": "Fix a face $interior$ of the polyhedron with area $lengthval$. Suppose $interior$ is completely covered by balls of radii\n$perimeter_1, \\dots, perimeter_{zerocount}$ whose volumes sum to $flatness$. Then on one hand,\n\\[\n\\sum_{i=1}^{zerocount} \\frac{4}{3} \\pi angleedge_i^3 = flatness.\n\\]\nOn the other hand, the intersection of a ball of radius $perimeter$ with the plane containing $interior$ is a\ndisc of radius at most $perimeter$, which covers a piece of $interior$ of area at most $\\pi perimeter^2$; therefore\n\\[\n\\sum_{i=1}^{zerocount} \\pi angleedge_i^2 \\geq lengthval.\n\\]\nBy writing $zerocount$ as $\\sum_{i=1}^{zerocount} 1$ and applying H\"older's inequality,\nwe obtain\n\\[\nzerocount flatness^2 \\geq \\left( \\sum_{i=1}^{zerocount} \\left( \\frac{4}{3} \\pi angleedge_i^3 \\right)^{2/3} \\right)^3\n\\geq \\frac{16}{9\\pi} lengthval^3.\n\\]\nConsequently, any value of $variable(smoothsphere)$ less than $\\frac{16}{9\\pi} lengthval^3$ works."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "V": "hjgrksla",
+        "r_i": "dplkmnot",
+        "r": "xzcvbals",
+        "P": "vjdyqwer",
+        "c": "fnvtrakm",
+        "F": "glpwrdds",
+        "A": "mcsbqkeu"
+      },
+      "question": "Let $vjdyqwer$ be a given (non-degenerate) polyhedron. Prove that there is a constant $fnvtrakm(vjdyqwer) > 0$\nwith the following property: If a collection of $qzxwvtnp$ balls whose volumes sum to $hjgrksla$ contains\nthe entire surface of $vjdyqwer$, then $qzxwvtnp > fnvtrakm(vjdyqwer) / hjgrksla^2$.",
+      "solution": "Fix a face $glpwrdds$ of the polyhedron with area $mcsbqkeu$. Suppose $glpwrdds$ is completely covered by balls of radii\n$dplkmnot_1, \\dots, dplkmnot_{qzxwvtnp}$ whose volumes sum to $hjgrksla$. Then on one hand,\n\\[\n\\sum_{i=1}^{qzxwvtnp} \\frac{4}{3} \\pi dplkmnot_i^3 = hjgrksla.\n\\]\nOn the other hand, the intersection of a ball of radius $xzcvbals$ with the plane containing $glpwrdds$ is a\ndisc of radius at most $xzcvbals$, which covers a piece of $glpwrdds$ of area at most $\\pi xzcvbals^2$; therefore\n\\[\n\\sum_{i=1}^{qzxwvtnp} \\pi dplkmnot_i^2 \\geq mcsbqkeu.\n\\]\nBy writing $qzxwvtnp$ as $\\sum_{i=1}^{qzxwvtnp} 1$ and applying H\"older's inequality,\nwe obtain\n\\[\nqzxwvtnp \\, hjgrksla^2 \\geq \\left( \\sum_{i=1}^{qzxwvtnp} \\left( \\frac{4}{3} \\pi dplkmnot_i^3 \\right)^{2/3} \\right)^3\n\\geq \\frac{16}{9\\pi} mcsbqkeu^3.\n\\]\nConsequently, any value of $fnvtrakm(vjdyqwer)$ less than $\\frac{16}{9\\pi} mcsbqkeu^3$ works."
+    },
+    "kernel_variant": {
+      "question": "Let d \\geq  4 and let P \\subset  \\mathbb{R}^d be a fixed non-degenerate convex polytope.  \nIts facets F_1,\\ldots ,F_m lie in the supporting hyperplanes \\Pi _1,\\ldots ,\\Pi _m.\n\nFix an aperture 0 < \\theta  \\leq  \\pi /2 and an integer k \\geq  1.  \nFor a centre a \\in  \\mathbb{R}^d, radius r > 0 and unit vector u, put  \n\n S(a,u,r,\\theta )= {x\\in \\mathbb{R}^d : |x-a|\\leq r  and  (x-a)\\cdot u \\geq  |x-a| cos \\theta }.  \n\n(Thus S(a,u,r,\\theta ) is the intersection of the closed ball B(a,r) with the solid cone of apex a,\naxis u and opening angle 2\\theta .)\n\nSuppose a finite family of \\theta -spherical sectors  \n\n S = {S_i = S(a_i,u_i,r_i,\\theta )}_{i=1}^{n}\n\nsatisfies the k-fold covering condition  \n\n every point of the boundary \\partial P is contained in at least k distinct members of S.\n\nDenote the total d-volume  \n\n W := \\Sigma _{i=1}^{n} Vol_d(S_i).\n\nProve that there exists an explicit constant c(P,\\theta ) > 0 - depending only on d, \\theta \nand the geometry of P - such that  \n\n   n  >  k^{\\,d} \\cdot  c(P,\\theta ) / W^{\\,d-1}.   (\\star )\n\nA concrete admissible choice is  \n\n c(P,\\theta ) := A_{\\max}^{\\,d} \\cdot  (\\beta _{d,\\theta })^{\\,d-1} / (\\gamma _{d})^{\\,d},   (*)\n\nwhere  \n\n A_{\\max}=max_{1\\leq j\\leq m} Vol_{d-1}(F_j),    (maximal facet (d-1)-volume)\n\n \\gamma _{d}=\\omega _{d-1}=\\pi ^{(d-1)/2}/\\Gamma ((d+1)/2),  (the (d-1)-volume of the unit (d-1)-ball)\n\n \\beta _{d,\\theta }= (1/d)\\cdot S_{d-2}\\cdot \\int _{0}^{\\theta } sin^{\\,d-2}\\varphi  d\\varphi , (the d-volume of the unit \\theta -sector)\n\nwith S_{m}=2\\pi ^{(m+1)/2}/\\Gamma ((m+1)/2) denoting the surface area of the unit m-sphere.\n(In particular S_{d-2}=2\\pi ^{(d-1)/2}/\\Gamma ((d-1)/2).)\n\nShow that the bound (\\star ) holds with the fully explicit constant (*).",
+      "solution": "Throughout let \\omega _{m}=\\pi ^{m/2}/\\Gamma (m/2+1) be the (m+1)-dimensional unit ball volume\nand S_{m}=m+1 \\omega _{m+1} its boundary (m)-sphere area.\n\nStep 1.  A uniform (d-1)-dimensional section bound  \nFix an index i and abbreviate r=r_i.  \nFor an arbitrary hyperplane \\Pi  one has S_i\\subset B(a_i,r); therefore\n\n Vol_{d-1}(S_i\\cap \\Pi ) \\leq  Vol_{d-1}(B(a_i,r)\\cap \\Pi ) = \\omega _{d-1} r^{d-1} =: \\gamma _{d} r^{d-1}. (1)\n\nThe constant \\gamma _{d}=\\omega _{d-1} depends only on d and is independent of \\theta .\n\nStep 2.  Selecting a favourable facet  \nChoose a facet F_* of maximal (d-1)-volume A_{\\max}.  \nBecause every point of F_* is covered by at least k sectors, summing (1)\nover the sectors whose cones meet \\Pi _* (the hyperplane containing F_*) yields\n\n k A_{\\max} \\leq  \\Sigma _{i=1}^{n} Vol_{d-1}(S_i \\cap  \\Pi _*) \\leq  \\gamma _{d} \\Sigma _{i=1}^{n} r_i^{d-1}. (2)\n\nStep 3.  Eliminating the radii via the exact sector volume  \nFor any i,\n\n Vol_d(S_i) = \\int _{0}^{r_i} t^{d-1} dt \\cdot  \\Sigma _{d,\\theta }\n       = (r_i^{d}/d)\\cdot S_{d-2}\\cdot \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi \n       = \\beta _{d,\\theta } \\cdot  r_i^{d}, (3)\n\nwhere  \n \\beta _{d,\\theta } := (1/d)\\cdot S_{d-2}\\cdot \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi .                      (4)\n\nHence r_i^{\\,d-1} = (w_i/\\beta _{d,\\theta })^{(d-1)/d} with w_i:=Vol_d(S_i).     (5)\n\nInsert (5) into (2):\n\n k A_{\\max} \\leq  \\gamma _{d} \\beta _{d,\\theta }^{-(d-1)/d} \\Sigma _{i=1}^{n} w_i^{(d-1)/d}. (6)\n\nStep 4.  Holder's inequality  \nWith exponents p=d/(d-1) and q=d (1/p+1/q=1),\n\n (\\Sigma _{i=1}^{n} w_i^{(d-1)/d})^{d} \\leq  n\\cdot (\\Sigma _{i=1}^{n} w_i)^{d-1}\n                = n W^{\\,d-1}. (7)\n\nStep 5.  Combining the estimates  \nRaise (6) to the d-th power and apply (7):\n\n (k A_{\\max})^{d}\n  \\leq  \\gamma _{d}^{\\,d} \\beta _{d,\\theta }^{-(d-1)} (\\Sigma  w_i^{(d-1)/d})^{d}\n  \\leq  \\gamma _{d}^{\\,d} \\beta _{d,\\theta }^{-(d-1)} n W^{\\,d-1}. (8)\n\nSolving for n gives\n\n n \\geq  k^{\\,d}\\cdot A_{\\max}^{\\,d}\\cdot \\beta _{d,\\theta }^{\\,d-1} / \\gamma _{d}^{\\,d} \\cdot  1/W^{\\,d-1}, (9)\n\nwhich is exactly inequality (\\star ) with c(P,\\theta ) as in (*).\n\nStep 6.  Explicit evaluation of \\beta _{d,\\theta }  \nBecause S_{d-2}=2\\pi ^{(d-1)/2}/\\Gamma ((d-1)/2),\n\n \\beta _{d,\\theta }= (1/d)\\cdot 2\\pi ^{(d-1)/2}/\\Gamma ((d-1)/2)\\cdot \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi .   (10)\n\nFor numerical work one may write\n\n \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi \n  = \\frac{1}{2} B(\\frac{1}{2}, (d-1)/2)\\cdot I_{sin^2\\theta }(\\frac{1}{2}, (d-1)/2),\n\nwhere B denotes the Euler beta-function and I the regularised incomplete beta-function.\nAll constants in (*) are therefore explicit, completing the proof. \\square ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.823409",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension: The problem is set in arbitrary dimension d ≥ 4, as opposed to d=3 in both earlier versions.  \n2. More variables & parameters: Besides the radii, each covering set now involves an axis vector u, an angle θ and an integer multiplicity k, all of which appear in the final bound.  \n3. Sophisticated geometry:  The covering bodies are θ–spherical sectors – significantly more intricate than balls or hemispheres – forcing a careful analysis of both their d–volume and their (d−1)-dimensional cross-sections.  \n4. Deeper analysis:  The proof requires   \n   • exact computation of sector volumes via beta-integrals,   \n   • a d-fold form of Hölder’s inequality rather than the familiar two-factor case,   \n   • management of a k-fold covering condition, introducing an extra power of k in (★).  \n5. Explicit constant:  The constant c(P,θ) is given in closed analytic form involving ω_{d−1}, beta-functions and the maximal facet area of P, far subtler than the simple numerical constant in the original.  \n\nThese layers of added dimensionality, parameters, and analytic detail make the enhanced kernel variant substantially harder than both the original ball-covering problem and the previous hemisphere variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let d \\geq  4 and let P \\subset  \\mathbb{R}^d be a fixed non-degenerate convex polytope.  \nIts facets F_1,\\ldots ,F_m lie in the supporting hyperplanes \\Pi _1,\\ldots ,\\Pi _m.\n\nFix an aperture 0 < \\theta  \\leq  \\pi /2 and an integer k \\geq  1.  \nFor a centre a \\in  \\mathbb{R}^d, radius r > 0 and unit vector u, put  \n\n S(a,u,r,\\theta )= {x\\in \\mathbb{R}^d : |x-a|\\leq r  and  (x-a)\\cdot u \\geq  |x-a| cos \\theta }.  \n\n(Thus S(a,u,r,\\theta ) is the intersection of the closed ball B(a,r) with the solid cone of apex a,\naxis u and opening angle 2\\theta .)\n\nSuppose a finite family of \\theta -spherical sectors  \n\n S = {S_i = S(a_i,u_i,r_i,\\theta )}_{i=1}^{n}\n\nsatisfies the k-fold covering condition  \n\n every point of the boundary \\partial P is contained in at least k distinct members of S.\n\nDenote the total d-volume  \n\n W := \\Sigma _{i=1}^{n} Vol_d(S_i).\n\nProve that there exists an explicit constant c(P,\\theta ) > 0 - depending only on d, \\theta \nand the geometry of P - such that  \n\n   n  >  k^{\\,d} \\cdot  c(P,\\theta ) / W^{\\,d-1}.   (\\star )\n\nA concrete admissible choice is  \n\n c(P,\\theta ) := A_{\\max}^{\\,d} \\cdot  (\\beta _{d,\\theta })^{\\,d-1} / (\\gamma _{d})^{\\,d},   (*)\n\nwhere  \n\n A_{\\max}=max_{1\\leq j\\leq m} Vol_{d-1}(F_j),    (maximal facet (d-1)-volume)\n\n \\gamma _{d}=\\omega _{d-1}=\\pi ^{(d-1)/2}/\\Gamma ((d+1)/2),  (the (d-1)-volume of the unit (d-1)-ball)\n\n \\beta _{d,\\theta }= (1/d)\\cdot S_{d-2}\\cdot \\int _{0}^{\\theta } sin^{\\,d-2}\\varphi  d\\varphi , (the d-volume of the unit \\theta -sector)\n\nwith S_{m}=2\\pi ^{(m+1)/2}/\\Gamma ((m+1)/2) denoting the surface area of the unit m-sphere.\n(In particular S_{d-2}=2\\pi ^{(d-1)/2}/\\Gamma ((d-1)/2).)\n\nShow that the bound (\\star ) holds with the fully explicit constant (*).",
+      "solution": "Throughout let \\omega _{m}=\\pi ^{m/2}/\\Gamma (m/2+1) be the (m+1)-dimensional unit ball volume\nand S_{m}=m+1 \\omega _{m+1} its boundary (m)-sphere area.\n\nStep 1.  A uniform (d-1)-dimensional section bound  \nFix an index i and abbreviate r=r_i.  \nFor an arbitrary hyperplane \\Pi  one has S_i\\subset B(a_i,r); therefore\n\n Vol_{d-1}(S_i\\cap \\Pi ) \\leq  Vol_{d-1}(B(a_i,r)\\cap \\Pi ) = \\omega _{d-1} r^{d-1} =: \\gamma _{d} r^{d-1}. (1)\n\nThe constant \\gamma _{d}=\\omega _{d-1} depends only on d and is independent of \\theta .\n\nStep 2.  Selecting a favourable facet  \nChoose a facet F_* of maximal (d-1)-volume A_{\\max}.  \nBecause every point of F_* is covered by at least k sectors, summing (1)\nover the sectors whose cones meet \\Pi _* (the hyperplane containing F_*) yields\n\n k A_{\\max} \\leq  \\Sigma _{i=1}^{n} Vol_{d-1}(S_i \\cap  \\Pi _*) \\leq  \\gamma _{d} \\Sigma _{i=1}^{n} r_i^{d-1}. (2)\n\nStep 3.  Eliminating the radii via the exact sector volume  \nFor any i,\n\n Vol_d(S_i) = \\int _{0}^{r_i} t^{d-1} dt \\cdot  \\Sigma _{d,\\theta }\n       = (r_i^{d}/d)\\cdot S_{d-2}\\cdot \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi \n       = \\beta _{d,\\theta } \\cdot  r_i^{d}, (3)\n\nwhere  \n \\beta _{d,\\theta } := (1/d)\\cdot S_{d-2}\\cdot \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi .                      (4)\n\nHence r_i^{\\,d-1} = (w_i/\\beta _{d,\\theta })^{(d-1)/d} with w_i:=Vol_d(S_i).     (5)\n\nInsert (5) into (2):\n\n k A_{\\max} \\leq  \\gamma _{d} \\beta _{d,\\theta }^{-(d-1)/d} \\Sigma _{i=1}^{n} w_i^{(d-1)/d}. (6)\n\nStep 4.  Holder's inequality  \nWith exponents p=d/(d-1) and q=d (1/p+1/q=1),\n\n (\\Sigma _{i=1}^{n} w_i^{(d-1)/d})^{d} \\leq  n\\cdot (\\Sigma _{i=1}^{n} w_i)^{d-1}\n                = n W^{\\,d-1}. (7)\n\nStep 5.  Combining the estimates  \nRaise (6) to the d-th power and apply (7):\n\n (k A_{\\max})^{d}\n  \\leq  \\gamma _{d}^{\\,d} \\beta _{d,\\theta }^{-(d-1)} (\\Sigma  w_i^{(d-1)/d})^{d}\n  \\leq  \\gamma _{d}^{\\,d} \\beta _{d,\\theta }^{-(d-1)} n W^{\\,d-1}. (8)\n\nSolving for n gives\n\n n \\geq  k^{\\,d}\\cdot A_{\\max}^{\\,d}\\cdot \\beta _{d,\\theta }^{\\,d-1} / \\gamma _{d}^{\\,d} \\cdot  1/W^{\\,d-1}, (9)\n\nwhich is exactly inequality (\\star ) with c(P,\\theta ) as in (*).\n\nStep 6.  Explicit evaluation of \\beta _{d,\\theta }  \nBecause S_{d-2}=2\\pi ^{(d-1)/2}/\\Gamma ((d-1)/2),\n\n \\beta _{d,\\theta }= (1/d)\\cdot 2\\pi ^{(d-1)/2}/\\Gamma ((d-1)/2)\\cdot \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi .   (10)\n\nFor numerical work one may write\n\n \\int _{0}^{\\theta } sin^{d-2}\\varphi  d\\varphi \n  = \\frac{1}{2} B(\\frac{1}{2}, (d-1)/2)\\cdot I_{sin^2\\theta }(\\frac{1}{2}, (d-1)/2),\n\nwhere B denotes the Euler beta-function and I the regularised incomplete beta-function.\nAll constants in (*) are therefore explicit, completing the proof. \\square ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.629831",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension: The problem is set in arbitrary dimension d ≥ 4, as opposed to d=3 in both earlier versions.  \n2. More variables & parameters: Besides the radii, each covering set now involves an axis vector u, an angle θ and an integer multiplicity k, all of which appear in the final bound.  \n3. Sophisticated geometry:  The covering bodies are θ–spherical sectors – significantly more intricate than balls or hemispheres – forcing a careful analysis of both their d–volume and their (d−1)-dimensional cross-sections.  \n4. Deeper analysis:  The proof requires   \n   • exact computation of sector volumes via beta-integrals,   \n   • a d-fold form of Hölder’s inequality rather than the familiar two-factor case,   \n   • management of a k-fold covering condition, introducing an extra power of k in (★).  \n5. Explicit constant:  The constant c(P,θ) is given in closed analytic form involving ω_{d−1}, beta-functions and the maximal facet area of P, far subtler than the simple numerical constant in the original.  \n\nThese layers of added dimensionality, parameters, and analytic detail make the enhanced kernel variant substantially harder than both the original ball-covering problem and the previous hemisphere variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

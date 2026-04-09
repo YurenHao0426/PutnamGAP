@@ -1,0 +1,145 @@
+{
+  "index": "2008-A-5",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $n \\geq 3$ be an integer. Let $f(x)$ and $g(x)$ be polynomials\nwith real coefficients such that the points\n$(f(1), g(1)), (f(2), g(2)), \\dots, (f(n), g(n))$\nin $\\mathbb{R}^2$ are the vertices of a regular $n$-gon in\ncounterclockwise order. Prove that at least one of $f(x)$\nand $g(x)$ has degree greater than or equal to $n-1$.",
+  "solution": "Form the polynomial $P(z) = f(z) + i g(z)$ with complex coefficients.\nIt suffices to prove that $P$ has degree at least $n-1$, as then one\nof $f, g$ must have degree at least $n-1$.\n\nBy replacing $P(z)$ with $a P(z) + b$ for suitable $a,b \\in \\CC$,\nwe can force the regular $n$-gon to have vertices\n$\\zeta_n, \\zeta_n^2, \\dots, \\zeta_n^n$ for\n$\\zeta_n = \\exp(2 \\pi i/n)$. It thus suffices to check that\nthere cannot exist a polynomial $P(z)$ of degree at most $n-2$\nsuch that $P(i) = \\zeta_n^i$ for $i=1,\\dots,n$.\n\nWe will prove more generally that for any complex number\n$t \\notin \\{0,1\\}$, and any integer $m \\geq 1$,\nany polynomial $Q(z)$ for which\n$Q(i) = t^i$ for $i=1,\\dots,m$ has degree at least $m-1$.\nThere are several ways to do this.\n\n\\textbf{First solution:}\nIf $Q(z)$ has degree $d$ and leading coefficient $c$,\nthen $R(z) = Q(z+1) - t Q(z)$ has degree $d$ and leading coefficient $(1-t)c$.\nHowever, by hypothesis, $R(z)$ has the distinct roots\n$1,2,\\dots,m-1$, so we must have $d \\geq m-1$.\n\n\\textbf{Second solution:}\nWe proceed by induction on $m$.\nFor the base case $m=1$, we have $Q(1) = t^1 \\neq 0$,\nso $Q$ must be nonzero, and so its degree is at least $0$.\nGiven the assertion for $m-1$, if $Q(i) = t^i$ for $i=1,\\dots,m$,\nthen the polynomial $R(z) = (t-1)^{-1} (Q(z+1) - Q(z))$ has degree\none less than that of $Q$,\nand satisfies $R(i) = t^i$ for $i=1,\\dots,m-1$. Since $R$ must have\ndegree at least $m-2$ by the induction hypothesis, $Q$ must have\ndegree at least $m-1$.\n\n\\textbf{Third solution:}\nWe use the method of \\emph{finite differences} (as in the second\nsolution) but without induction. Namely,\nthe $(m-1)$-st finite difference\nof $P$ evaluated at 1 equals\n\\[\n\\sum_{j=0}^{m-1} (-1)^j \\binom{m-1}{j} Q(m-j)\n= t(1 - t)^{m-1} \\neq 0,\n\\]\nwhich is impossible if $Q$ has degree less than $m-1$.\n\n\\textbf{Remark:} One can also establish the claim by computing\na Vandermonde-type determinant, or by using the Lagrange interpolation\nformula to compute the leading coefficient of $Q$.",
+  "vars": [
+    "x",
+    "z",
+    "f",
+    "g",
+    "P",
+    "Q",
+    "R"
+  ],
+  "params": [
+    "n",
+    "m",
+    "a",
+    "b",
+    "c",
+    "d",
+    "t",
+    "\\\\zeta_n"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "scalarx",
+        "z": "scalarz",
+        "f": "firstpoly",
+        "g": "secondpoly",
+        "P": "complexpoly",
+        "Q": "auxilpoly",
+        "R": "diffpoly",
+        "n": "sidescount",
+        "m": "indexlimit",
+        "a": "scalara",
+        "b": "scalarb",
+        "c": "scalarc",
+        "d": "scalard",
+        "t": "baseterm",
+        "\\\\zeta_n": "unityroot"
+      },
+      "question": "Let $sidescount \\geq 3$ be an integer. Let $firstpoly(scalarx)$ and $secondpoly(scalarx)$ be polynomials\nwith real coefficients such that the points\n$(firstpoly(1), secondpoly(1)), (firstpoly(2), secondpoly(2)), \\dots, (firstpoly(sidescount), secondpoly(sidescount))$\nin $\\mathbb{R}^2$ are the vertices of a regular $sidescount$-gon in\ncounterclockwise order. Prove that at least one of $firstpoly(scalarx)$\nand $secondpoly(scalarx)$ has degree greater than or equal to $sidescount-1$.",
+      "solution": "Form the polynomial $complexpoly(scalarz) = firstpoly(scalarz) + i\\, secondpoly(scalarz)$ with complex coefficients.\nIt suffices to prove that $complexpoly$ has degree at least $sidescount-1$, as then one\nof $firstpoly, secondpoly$ must have degree at least $sidescount-1$.\n\nBy replacing $complexpoly(scalarz)$ with $scalara\\, complexpoly(scalarz) + scalarb$ for suitable $scalara, scalarb \\in \\CC$,\nwe can force the regular $sidescount$-gon to have vertices\n$unityroot, unityroot^2, \\dots, unityroot^{sidescount}$ for\n$unityroot = \\exp(2 \\pi i/sidescount)$. It thus suffices to check that\nthere cannot exist a polynomial $complexpoly(scalarz)$ of degree at most $sidescount-2$\nsuch that $complexpoly(i) = unityroot^i$ for $i=1,\\dots,sidescount$.\n\nWe will prove more generally that for any complex number\n$baseterm \\notin \\{0,1\\}$, and any integer $indexlimit \\geq 1$,\nany polynomial $auxilpoly(scalarz)$ for which\n$auxilpoly(i) = baseterm^i$ for $i=1,\\dots,indexlimit$ has degree at least $indexlimit-1$.\nThere are several ways to do this.\n\n\\textbf{First solution:}\nIf $auxilpoly(scalarz)$ has degree $scalard$ and leading coefficient $scalarc$,\nthen $diffpoly(scalarz) = auxilpoly(scalarz+1) - baseterm\\, auxilpoly(scalarz)$ has degree $scalard$ and leading coefficient $(1-baseterm)scalarc$.\nHowever, by hypothesis, $diffpoly(scalarz)$ has the distinct roots\n$1,2,\\dots,indexlimit-1$, so we must have $scalard \\geq indexlimit-1$.\n\n\\textbf{Second solution:}\nWe proceed by induction on $indexlimit$.\nFor the base case $indexlimit=1$, we have $auxilpoly(1) = baseterm^1 \\neq 0$,\nso $auxilpoly$ must be nonzero, and so its degree is at least $0$.\nGiven the assertion for $indexlimit-1$, if $auxilpoly(i) = baseterm^i$ for $i=1,\\dots,indexlimit$,\nthen the polynomial $diffpoly(scalarz) = (baseterm-1)^{-1} (auxilpoly(scalarz+1) - auxilpoly(scalarz))$ has degree\none less than that of $auxilpoly$,\nand satisfies $diffpoly(i) = baseterm^i$ for $i=1,\\dots,indexlimit-1$. Since $diffpoly$ must have\ndegree at least $indexlimit-2$ by the induction hypothesis, $auxilpoly$ must have\ndegree at least $indexlimit-1$.\n\n\\textbf{Third solution:}\nWe use the method of finite differences (as in the second\nsolution) but without induction. Namely,\nthe $(indexlimit-1)$-st finite difference\nof $auxilpoly$ evaluated at $1$ equals\n\\[\n\\sum_{j=0}^{indexlimit-1} (-1)^j \\binom{indexlimit-1}{j} auxilpoly(indexlimit-j)\n= baseterm(1 - baseterm)^{indexlimit-1} \\neq 0,\n\\]\nwhich is impossible if $auxilpoly$ has degree less than $indexlimit-1$.\n\n\\textbf{Remark:} One can also establish the claim by computing\na Vandermonde-type determinant, or by using the Lagrange interpolation\nformula to compute the leading coefficient of $auxilpoly$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "trellisleaf",
+        "z": "sundialroot",
+        "f": "lanternmist",
+        "g": "orchardveil",
+        "P": "tapestrywave",
+        "Q": "compassstone",
+        "R": "horizonbloom",
+        "n": "quillbranch",
+        "m": "timberflare",
+        "a": "rivuletshade",
+        "b": "marigoldcraft",
+        "c": "opalstrider",
+        "d": "silkwindherb",
+        "t": "emberglade",
+        "\\zeta_n": "yondercrest"
+      },
+      "question": "Let $quillbranch \\geq 3$ be an integer. Let $lanternmist(trellisleaf)$ and $orchardveil(trellisleaf)$ be polynomials with real coefficients such that the points $(lanternmist(1), orchardveil(1)), (lanternmist(2), orchardveil(2)), \\dots, (lanternmist(quillbranch), orchardveil(quillbranch))$ in $\\mathbb{R}^2$ are the vertices of a regular $quillbranch$-gon in counterclockwise order. Prove that at least one of $lanternmist(trellisleaf)$ and $orchardveil(trellisleaf)$ has degree greater than or equal to $quillbranch-1$.",
+      "solution": "Form the polynomial $tapestrywave(sundialroot)=lanternmist(sundialroot)+i\\,orchardveil(sundialroot)$ with complex coefficients. It suffices to prove that $tapestrywave$ has degree at least $quillbranch-1$, as then one of $lanternmist,\\,orchardveil$ must have degree at least $quillbranch-1$.\n\nBy replacing $tapestrywave(sundialroot)$ with $rivuletshade\\,tapestrywave(sundialroot)+marigoldcraft$ for suitable $rivuletshade,marigoldcraft\\in\\CC$, we can force the regular $quillbranch$-gon to have vertices $yondercrest, yondercrest^2, \\dots, yondercrest^{quillbranch}$ for $yondercrest=\\exp(2\\pi i/quillbranch)$. It thus suffices to check that there cannot exist a polynomial $tapestrywave(sundialroot)$ of degree at most $quillbranch-2$ such that $tapestrywave(i)=yondercrest^i$ for $i=1,\\dots,quillbranch$.\n\nWe will prove more generally that for any complex number $emberglade\\notin\\{0,1\\}$, and any integer $timberflare\\ge 1$, any polynomial $compassstone(sundialroot)$ for which $compassstone(i)=emberglade^i$ for $i=1,\\dots,timberflare$ has degree at least $timberflare-1$. There are several ways to do this.\n\n\\textbf{First solution:} If $compassstone(sundialroot)$ has degree $silkwindherb$ and leading coefficient $opalstrider$, then $horizonbloom(sundialroot)=compassstone(sundialroot+1)-emberglade\\,compassstone(sundialroot)$ has degree $silkwindherb$ and leading coefficient $(1-emberglade)\\,opalstrider$. However, by hypothesis, $horizonbloom(sundialroot)$ has the distinct roots $1,2,\\dots,timberflare-1$, so we must have $silkwindherb\\ge timberflare-1$.\n\n\\textbf{Second solution:} We proceed by induction on $timberflare$. For the base case $timberflare=1$, we have $compassstone(1)=emberglade^1\\neq 0$, so $compassstone$ must be non-zero, and so its degree is at least $0$. Given the assertion for $timberflare-1$, if $compassstone(i)=emberglade^i$ for $i=1,\\dots,timberflare$, then the polynomial $horizonbloom(sundialroot)=(emberglade-1)^{-1}\\bigl(compassstone(sundialroot+1)-compassstone(sundialroot)\\bigr)$ has degree one less than that of $compassstone$, and satisfies $horizonbloom(i)=emberglade^i$ for $i=1,\\dots,timberflare-1$. Since $horizonbloom$ must have degree at least $timberflare-2$ by the induction hypothesis, $compassstone$ must have degree at least $timberflare-1$.\n\n\\textbf{Third solution:} We use the method of \\emph{finite differences} (as in the second solution) but without induction. Namely, the $(timberflare-1)$-st finite difference of $tapestrywave$ evaluated at $1$ equals\n\\[\\sum_{j=0}^{timberflare-1}(-1)^j\\binom{timberflare-1}{j}compassstone(timberflare-j)=emberglade(1-emberglade)^{timberflare-1}\\neq0,\\]\nwhich is impossible if $compassstone$ has degree less than $timberflare-1$.\n\n\\textbf{Remark:} One can also establish the claim by computing a Vandermonde-type determinant, or by using the Lagrange interpolation formula to compute the leading coefficient of $compassstone$.",
+      "vocab_check": ""
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "z": "realconstant",
+        "f": "nonmapping",
+        "g": "staticscalar",
+        "P": "antipolynomial",
+        "Q": "undefinedmap",
+        "R": "summation",
+        "n": "continuum",
+        "m": "fractional",
+        "a": "nullfactor",
+        "b": "nonshift",
+        "c": "tailcoeff",
+        "d": "orderless",
+        "t": "unityzero",
+        "\\zeta_n": "nonunityroot"
+      },
+      "question": "Let $continuum \\geq 3$ be an integer. Let $nonmapping(constantvalue)$ and $staticscalar(constantvalue)$ be polynomials with real coefficients such that the points $(nonmapping(1), staticscalar(1)), (nonmapping(2), staticscalar(2)), \\dots, (nonmapping(continuum), staticscalar(continuum))$ in $\\mathbb{R}^2$ are the vertices of a regular $continuum$-gon in counterclockwise order. Prove that at least one of $nonmapping(constantvalue)$ and $staticscalar(constantvalue)$ has degree greater than or equal to $continuum-1$.",
+      "solution": "Form the polynomial $antipolynomial(realconstant) = nonmapping(realconstant) + i\\,staticscalar(realconstant)$ with complex coefficients. It suffices to prove that $antipolynomial$ has degree at least $continuum-1$, as then one of $nonmapping,\\,staticscalar$ must have degree at least $continuum-1$.\n\nBy replacing $antipolynomial(realconstant)$ with $nullfactor\\,antipolynomial(realconstant) + nonshift$ for suitable $nullfactor, nonshift \\in \\CC$, we can force the regular $continuum$-gon to have vertices $nonunityroot, nonunityroot^2, \\dots, nonunityroot^{continuum}$ for $nonunityroot = \\exp(2 \\pi i/continuum)$. It thus suffices to check that there cannot exist a polynomial $antipolynomial$ of degree at most $continuum-2$ such that $antipolynomial(i) = nonunityroot^i$ for $i = 1, \\dots, continuum$.\n\nWe will prove more generally that for any complex number $unityzero \\notin \\{0,1\\}$, and any integer $fractional \\geq 1$, any polynomial $undefinedmap(realconstant)$ for which $undefinedmap(i) = unityzero^i$ for $i = 1, \\dots, fractional$ has degree at least $fractional-1$. There are several ways to do this.\n\n\\textbf{First solution:} If $undefinedmap(realconstant)$ has degree $orderless$ and leading coefficient $tailcoeff$, then\n$$summation(realconstant) = undefinedmap(realconstant+1) - unityzero\\,undefinedmap(realconstant)$$\nhas degree $orderless$ and leading coefficient $(1 - unityzero)\\,tailcoeff$. However, by hypothesis, $summation(realconstant)$ has the distinct roots $1,2,\\dots,fractional-1$, so we must have $orderless \\geq fractional-1$.\n\n\\textbf{Second solution:} We proceed by induction on $fractional$. For the base case $fractional = 1$, we have $undefinedmap(1) = unityzero^1 \\neq 0$, so $undefinedmap$ must be non-zero, and so its degree is at least $0$. Given the assertion for $fractional-1$, if $undefinedmap(i) = unityzero^i$ for $i = 1, \\dots, fractional$, then the polynomial\n$$summation(realconstant) = (unityzero-1)^{-1}\\bigl(undefinedmap(realconstant+1) - undefinedmap(realconstant)\\bigr)$$\nhas degree one less than that of $undefinedmap$ and satisfies $summation(i) = unityzero^i$ for $i = 1, \\dots, fractional-1$. Since $summation$ must have degree at least $fractional-2$ by the induction hypothesis, $undefinedmap$ must have degree at least $fractional-1$.\n\n\\textbf{Third solution:} We use the method of \\emph{finite differences} (as in the second solution) but without induction. Namely, the $(fractional-1)$-st finite difference of $antipolynomial$ evaluated at $1$ equals\n\\[\\sum_{j=0}^{fractional-1} (-1)^j \\binom{fractional-1}{j} undefinedmap(fractional-j) = unityzero\\,(1 - unityzero)^{fractional-1} \\neq 0,\\]\nwhich is impossible if $undefinedmap$ has degree less than $fractional-1$.\n\n\\textbf{Remark:} One can also establish the claim by computing a Vandermonde-type determinant, or by using the Lagrange interpolation formula to compute the leading coefficient of $undefinedmap$.}"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "z": "hjgrksla",
+        "f": "mldkqzpe",
+        "g": "twsbrcya",
+        "P": "xytbzvlo",
+        "Q": "rpnchdke",
+        "R": "sbqvlgam",
+        "n": "pqhxsnzo",
+        "m": "vrklajwe",
+        "a": "gwmsoqpn",
+        "b": "kztlucve",
+        "c": "njdhsqri",
+        "d": "favlqrum",
+        "t": "hsxqmpre",
+        "\\zeta_n": "qprzfykl"
+      },
+      "question": "Let $pqhxsnzo \\geq 3$ be an integer. Let $mldkqzpe(qzxwvtnp)$ and $twsbrcya(qzxwvtnp)$ be polynomials\nwith real coefficients such that the points\n$(mldkqzpe(1), twsbrcya(1)), (mldkqzpe(2), twsbrcya(2)), \\dots, (mldkqzpe(pqhxsnzo), twsbrcya(pqhxsnzo))$\nin $\\mathbb{R}^2$ are the vertices of a regular $pqhxsnzo$-gon in\ncounterclockwise order. Prove that at least one of $mldkqzpe(qzxwvtnp)$\nand $twsbrcya(qzxwvtnp)$ has degree greater than or equal to $pqhxsnzo-1$.",
+      "solution": "Form the polynomial $xytbzvlo(hjgrksla) = mldkqzpe(hjgrksla) + i twsbrcya(hjgrksla)$ with complex coefficients.\nIt suffices to prove that $xytbzvlo$ has degree at least $pqhxsnzo-1$, as then one\nof $mldkqzpe, twsbrcya$ must have degree at least $pqhxsnzo-1$.\n\nBy replacing $xytbzvlo(hjgrksla)$ with $gwmsoqpn xytbzvlo(hjgrksla) + kztlucve$ for suitable $gwmsoqpn,kztlucve \\in \\CC$,\nwe can force the regular $pqhxsnzo$-gon to have vertices\n$qprzfykl, qprzfykl^2, \\dots, qprzfykl^{pqhxsnzo}$ for\n$qprzfykl = \\exp(2 \\pi i/pqhxsnzo)$. It thus suffices to check that\nthere cannot exist a polynomial $xytbzvlo(hjgrksla)$ of degree at most $pqhxsnzo-2$\nsuch that $xytbzvlo(i) = qprzfykl^i$ for $i=1,\\dots,pqhxsnzo$.\n\nWe will prove more generally that for any complex number\nhsxqmpre $\\notin \\{0,1\\}$, and any integer $vrklajwe \\geq 1$,\nany polynomial $rpnchdke(hjgrksla)$ for which\n$rpnchdke(i) = hsxqmpre^i$ for $i=1,\\dots,vrklajwe$ has degree at least $vrklajwe-1$.\nThere are several ways to do this.\n\n\\textbf{First solution:}\nIf $rpnchdke(hjgrksla)$ has degree $favlqrum$ and leading coefficient $njdhsqri$,\nthen $sbqvlgam(hjgrksla) = rpnchdke(hjgrksla+1) - hsxqmpre\\, rpnchdke(hjgrksla)$ has degree $favlqrum$ and leading coefficient $(1-hsxqmpre)njdhsqri$.\nHowever, by hypothesis, $sbqvlgam(hjgrksla)$ has the distinct roots\n$1,2,\\dots,vrklajwe-1$, so we must have $favlqrum \\geq vrklajwe-1$.\n\n\\textbf{Second solution:}\nWe proceed by induction on $vrklajwe$.\nFor the base case $vrklajwe=1$, we have $rpnchdke(1) = hsxqmpre^1 \\neq 0$,\nso $rpnchdke$ must be nonzero, and so its degree is at least $0$.\nGiven the assertion for $vrklajwe-1$, if $rpnchdke(i) = hsxqmpre^i$ for $i=1,\\dots,vrklajwe$,\nthen the polynomial $sbqvlgam(hjgrksla) = (hsxqmpre-1)^{-1} \\!\\bigl(rpnchdke(hjgrksla+1) - rpnchdke(hjgrksla)\\bigr)$ has degree\none less than that of $rpnchdke$,\nand satisfies $sbqvlgam(i) = hsxqmpre^i$ for $i=1,\\dots,vrklajwe-1$. Since $sbqvlgam$ must have\ndegree at least $vrklajwe-2$ by the induction hypothesis, $rpnchdke$ must have\ndegree at least $vrklajwe-1$.\n\n\\textbf{Third solution:}\nWe use the method of \\emph{finite differences} (as in the second\nsolution) but without induction. Namely,\nthe $(vrklajwe-1)$-st finite difference\nof $xytbzvlo$ evaluated at 1 equals\n\\[\n\\sum_{j=0}^{vrklajwe-1} (-1)^j \\binom{vrklajwe-1}{j} rpnchdke(vrklajwe-j)\n= hsxqmpre(1 - hsxqmpre)^{vrklajwe-1} \\neq 0,\n\\]\nwhich is impossible if $rpnchdke$ has degree less than $vrklajwe-1$.\n\n\\textbf{Remark:} One can also establish the claim by computing\na Vandermonde-type determinant, or by using the Lagrange interpolation\nformula to compute the leading coefficient of $rpnchdke$."
+    },
+    "kernel_variant": {
+      "question": "Let $n\\ge 3$ be an integer.  Suppose $f(x),g(x)\\in\\mathbb R[x]$ satisfy that the $n$ points \n\\[\n\\bigl(f(2),g(2)\\bigr),\\bigl(f(4),g(4)\\bigr),\\dots ,\\bigl(f(2n),g(2n)\\bigr)\n\\]\nlisted in this order are the consecutive vertices of a counter-clockwise regular $n$-gon in the plane.  Prove that at least one of $f$ and $g$ has degree at least $n-1$.",
+      "solution": "We prove that at least one of f,g has degree \\geq n-1.  Set\n  P(z)=f(z)+i g(z),\nso deg P=max(deg f,deg g).  Then the given points (f(2k),g(2k)) for k=1,\\ldots ,n are exactly the complex numbers P(2),P(4),\\ldots ,P(2n), and these lie in counterclockwise order on a regular n-gon in the plane.\n\nStep 1 (Normalize to roots of unity).  A similarity (rotation+scaling+translation) of the plane is z\\mapsto a z+b with a\\in \\mathbb{C}^*, b\\in \\mathbb{C}; it preserves convex regular polygons and does not change deg P.  By choosing a,b appropriately we may assume that\n  P(2k)=\\zeta ^k,    k=1,2,\\ldots ,n,\nwhere \\zeta =e^{2\\pi i/n} is a primitive n-th root of unity.  Note \\zeta \\neq 0,\\zeta \\neq 1.\n\nStep 2 (Rescale the argument).  Define the polynomial\n  Q(z)=P(2z).\nThen deg Q=deg P, and for k=1,\\ldots ,n we have\n  Q(k)=P(2k)=\\zeta ^k.\n\nStep 3 (The shift-difference trick).  Suppose, contrary to the claim, that deg Q\\leq n-2.  Set\n  R(z)=Q(z+1)-\\zeta  Q(z).\nIf deg Q=d then the leading term of Q is c z^d so that the leading term of R is c [(z+1)^d-\\zeta  z^d]; since \\zeta \\neq 1 this leading coefficient is nonzero and deg R=d.  But for each k=1,\\ldots ,n-1 we have\n  R(k)=Q(k+1)-\\zeta  Q(k)=\\zeta ^{k+1}-\\zeta \\cdot \\zeta ^k=0.\nHence R has the n-1 distinct roots 1,2,\\ldots ,n-1, forcing d=deg R\\geq n-1.  This contradicts d\\leq n-2.\n\nStep 4 (Conclusion).  The contradiction shows deg Q=deg P\\geq n-1, so max(deg f,deg g)=deg P\\geq n-1, as required.",
+      "_meta": {
+        "core_steps": [
+          "Encode (f(k),g(k)) as a single complex value P(k)=f(k)+ig(k).",
+          "Apply an affine change of variables so that P(1),…,P(n) become successive powers of one complex number t (choose t=ζ_n).",
+          "Assume deg P≤n−2 and set Q(z)=P(z); use the identity R(z)=Q(z+1)−tQ(z), which shares those n−1 distinct integer roots, to force deg Q≥n−1 (finite-difference/shift argument).",
+          "Hence deg P≥n−1, implying at least one of f or g has degree ≥n−1."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The specific complex ratio whose powers label the regular polygon vertices; it only needs to be ≠0,1.",
+            "original": "ζ_n = exp(2πi/n)"
+          },
+          "slot2": {
+            "description": "The consecutive integer inputs where the polynomial is prescribed; any length-n arithmetic progression works.",
+            "original": "1,2,…,n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

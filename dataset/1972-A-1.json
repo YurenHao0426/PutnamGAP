@@ -1,0 +1,80 @@
+{
+  "index": "1972-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-1. Show that there are no four consecutive binomial coefficients \\( \\binom{n}{r},\\left(\\begin{array}{r}\\boldsymbol{n}+1\\end{array}\\right),\\binom{\\boldsymbol{n}}{\\underset{+2}{n}},\\binom{\\boldsymbol{n}}{+\\mathbf{n}} \\) ( \\( n, r \\) integers \\( >0 \\) and \\( r+3 \\leqq n \\) ) which are in arithmetic progression.",
+  "solution": "A-1 For a given \\( n \\) and \\( r \\), in order for the first three binomial coefficients to be in arithmetic progression, we must have\n\\[\n2\\binom{n}{r+1}=\\binom{n}{r}+\\binom{n}{r+2}\n\\]\nor equivalently\n\\[\n2=\\frac{r+1}{n-r}+\\frac{n-r-1}{r+2} .\n\\]\n\nThe condition that the last three given binomial coefficients are in arithmetic progression is found from (1) by replacing \\( r \\) by \\( r+1 \\). Consequently both \\( r \\) and \\( r+1 \\) must satisfy equation (2) if all four terms are in arithmetic progression.\n\nNote that the two terms in equation (2) are interchanged it \\( r \\) is replaced by \\( n-r-2 \\). Thus the quadratic equation (2) has roots\n\\[\nr, r+1 ; n-r-3, n-r-2\n\\]\n\nSince (2) can have only two roots, \\( r=n-r-3 \\) and \\( n=2 r+3 \\). The four binomial coefficients must be\n\\[\n\\binom{2 r+3}{r},\\binom{2 r+3}{r+1},\\binom{2 r+3}{r+2},\\binom{2 r+3}{r+3}\n\\]\nwhich are the four middle terms. They cannot be in arithmetic prog ession since binomial coefficients increase to the middle term(s) and then decrease.",
+  "vars": [
+    "n",
+    "r"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "totalcount",
+        "r": "selectedindex"
+      },
+      "question": "A-1. Show that there are no four consecutive binomial coefficients \\( \\binom{totalcount}{selectedindex},\\binom{totalcount}{selectedindex+1},\\binom{totalcount}{selectedindex+2},\\binom{totalcount}{selectedindex+3} \\) ( \\( totalcount, selectedindex \\) integers \\( >0 \\) and \\( selectedindex+3 \\leqq totalcount \\) ) which are in arithmetic progression.",
+      "solution": "A-1 For a given \\( totalcount \\) and \\( selectedindex \\), in order for the first three binomial coefficients to be in arithmetic progression, we must have\n\\[\n2\\binom{totalcount}{selectedindex+1}=\\binom{totalcount}{selectedindex}+\\binom{totalcount}{selectedindex+2}\n\\]\nor equivalently\n\\[\n2=\\frac{selectedindex+1}{totalcount-selectedindex}+\\frac{totalcount-selectedindex-1}{selectedindex+2} .\n\\]\n\nThe condition that the last three given binomial coefficients are in arithmetic progression is found from (1) by replacing \\( selectedindex \\) by \\( selectedindex+1 \\). Consequently both \\( selectedindex \\) and \\( selectedindex+1 \\) must satisfy equation (2) if all four terms are in arithmetic progression.\n\nNote that the two terms in equation (2) are interchanged if \\( selectedindex \\) is replaced by \\( totalcount-selectedindex-2 \\). Thus the quadratic equation (2) has roots\n\\[\nselectedindex,\\; selectedindex+1;\\; totalcount-selectedindex-3,\\; totalcount-selectedindex-2\n\\]\n\nSince (2) can have only two roots, \\( selectedindex=totalcount-selectedindex-3 \\) and \\( totalcount=2\\,selectedindex+3 \\). The four binomial coefficients must be\n\\[\n\\binom{2\\,selectedindex+3}{selectedindex},\\;\\binom{2\\,selectedindex+3}{selectedindex+1},\\;\\binom{2\\,selectedindex+3}{selectedindex+2},\\;\\binom{2\\,selectedindex+3}{selectedindex+3}\n\\]\nwhich are the four middle terms. They cannot be in arithmetic progression since binomial coefficients increase to the middle term(s) and then decrease."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "sandstone",
+        "r": "marigold"
+      },
+      "question": "A-1. Show that there are no four consecutive binomial coefficients \\( \\binom{sandstone}{marigold},\\left(\\begin{array}{r}\\boldsymbol{sandstone}+1\\end{array}\\right),\\binom{\\boldsymbol{sandstone}}{\\underset{+2}{sandstone}},\\binom{\\boldsymbol{sandstone}}{+\\mathbf{sandstone}} \\) ( \\( sandstone, marigold \\) integers \\( >0 \\) and \\( marigold+3 \\leqq sandstone \\) ) which are in arithmetic progression.",
+      "solution": "A-1 For a given \\( sandstone \\) and \\( marigold \\), in order for the first three binomial coefficients to be in arithmetic progression, we must have\n\\[\n2\\binom{sandstone}{marigold+1}=\\binom{sandstone}{marigold}+\\binom{sandstone}{marigold+2}\n\\]\nor equivalently\n\\[\n2=\\frac{marigold+1}{sandstone-marigold}+\\frac{sandstone-marigold-1}{marigold+2} .\n\\]\n\nThe condition that the last three given binomial coefficients are in arithmetic progression is found from (1) by replacing \\( marigold \\) by \\( marigold+1 \\). Consequently both \\( marigold \\) and \\( marigold+1 \\) must satisfy equation (2) if all four terms are in arithmetic progression.\n\nNote that the two terms in equation (2) are interchanged it \\( marigold \\) is replaced by \\( sandstone-marigold-2 \\). Thus the quadratic equation (2) has roots\n\\[\nmarigold, marigold+1 ; sandstone-marigold-3, sandstone-marigold-2\n\\]\n\nSince (2) can have only two roots, \\( marigold=sandstone-marigold-3 \\) and \\( sandstone=2 marigold+3 \\). The four binomial coefficients must be\n\\[\n\\binom{2 marigold+3}{marigold},\\binom{2 marigold+3}{marigold+1},\\binom{2 marigold+3}{marigold+2},\\binom{2 marigold+3}{marigold+3}\n\\]\nwhich are the four middle terms. They cannot be in arithmetic prog ession since binomial coefficients increase to the middle term(s) and then decrease."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "scarcity",
+        "r": "disorder"
+      },
+      "question": "A-1. Show that there are no four consecutive binomial coefficients \\( \\binom{scarcity}{disorder},\\left(\\begin{array}{r}\\boldsymbol{scarcity}+1\\end{array}\\right),\\binom{\\boldsymbol{scarcity}}{\\underset{+2}{scarcity}},\\binom{\\boldsymbol{scarcity}}{+\\mathbf{scarcity}} \\) ( \\( scarcity, disorder \\) integers \\( >0 \\) and \\( disorder+3 \\leqq scarcity \\) ) which are in arithmetic progression.",
+      "solution": "A-1 For a given \\( scarcity \\) and \\( disorder \\), in order for the first three binomial coefficients to be in arithmetic progression, we must have\n\\[\n2\\binom{scarcity}{disorder+1}=\\binom{scarcity}{disorder}+\\binom{scarcity}{disorder+2}\n\\]\nor equivalently\n\\[\n2=\\frac{disorder+1}{scarcity-disorder}+\\frac{scarcity-disorder-1}{disorder+2} .\n\\]\n\nThe condition that the last three given binomial coefficients are in arithmetic progression is found from (1) by replacing \\( disorder \\) by \\( disorder+1 \\). Consequently both \\( disorder \\) and \\( disorder+1 \\) must satisfy equation (2) if all four terms are in arithmetic progression.\n\nNote that the two terms in equation (2) are interchanged it \\( disorder \\) is replaced by \\( scarcity-disorder-2 \\). Thus the quadratic equation (2) has roots\n\\[\ndisorder, disorder+1 ; scarcity-disorder-3, scarcity-disorder-2\n\\]\n\nSince (2) can have only two roots, \\( disorder=scarcity-disorder-3 \\) and \\( scarcity=2\\ disorder+3 \\). The four binomial coefficients must be\n\\[\n\\binom{2\\ disorder+3}{disorder},\\binom{2\\ disorder+3}{disorder+1},\\binom{2\\ disorder+3}{disorder+2},\\binom{2\\ disorder+3}{disorder+3}\n\\]\nwhich are the four middle terms. They cannot be in arithmetic prog ession since binomial coefficients increase to the middle term(s) and then decrease."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "r": "hjgrksla"
+      },
+      "question": "A-1. Show that there are no four consecutive binomial coefficients \\( \\binom{qzxwvtnp}{hjgrksla},\\left(\\begin{array}{r}\\boldsymbol{qzxwvtnp}+1\\end{array}\\right),\\binom{\\boldsymbol{qzxwvtnp}}{\\underset{+2}{qzxwvtnp}},\\binom{\\boldsymbol{qzxwvtnp}}{+\\mathbf{qzxwvtnp}} \\) ( \\( qzxwvtnp, hjgrksla \\) integers \\( >0 \\) and \\( hjgrksla+3 \\leqq qzxwvtnp \\) ) which are in arithmetic progression.",
+      "solution": "A-1 For a given \\( qzxwvtnp \\) and \\( hjgrksla \\), in order for the first three binomial coefficients to be in arithmetic progression, we must have\n\\[\n2\\binom{qzxwvtnp}{hjgrksla+1}=\\binom{qzxwvtnp}{hjgrksla}+\\binom{qzxwvtnp}{hjgrksla+2}\n\\]\nor equivalently\n\\[\n2=\\frac{hjgrksla+1}{qzxwvtnp-hjgrksla}+\\frac{qzxwvtnp-hjgrksla-1}{hjgrksla+2} .\n\\]\n\nThe condition that the last three given binomial coefficients are in arithmetic progression is found from (1) by replacing \\( hjgrksla \\) by \\( hjgrksla+1 \\). Consequently both \\( hjgrksla \\) and \\( hjgrksla+1 \\) must satisfy equation (2) if all four terms are in arithmetic progression.\n\nNote that the two terms in equation (2) are interchanged if \\( hjgrksla \\) is replaced by \\( qzxwvtnp-hjgrksla-2 \\). Thus the quadratic equation (2) has roots\n\\[\nhjgrksla, hjgrksla+1 ; qzxwvtnp-hjgrksla-3, qzxwvtnp-hjgrksla-2\n\\]\n\nSince (2) can have only two roots, \\( hjgrksla=qzxwvtnp-hjgrksla-3 \\) and \\( qzxwvtnp=2 hjgrksla+3 \\). The four binomial coefficients must be\n\\[\n\\binom{2 hjgrksla+3}{hjgrksla},\\binom{2 hjgrksla+3}{hjgrksla+1},\\binom{2 hjgrksla+3}{hjgrksla+2},\\binom{2 hjgrksla+3}{hjgrksla+3}\n\\]\nwhich are the four middle terms. They cannot be in arithmetic progression since binomial coefficients increase to the middle term(s) and then decrease."
+    },
+    "kernel_variant": {
+      "question": "Let M and s be integers with M \\ge 3 and 0 \\le s \\le M-3.  Show that the four consecutive binomial coefficients\n\\[\n\\binom{M}{s},\\;\\binom{M}{s+1},\\;\\binom{M}{s+2},\\;\\binom{M}{s+3}\n\\]\ncan never form an arithmetic progression.",
+      "solution": "Assume, for the sake of contradiction, that the four displayed numbers are in arithmetic progression.\n\n1. Translating the condition on the first three terms gives\n   2\\binom{M}{s+1}=\\binom{M}{s}+\\binom{M}{s+2},\n   equivalently\n   2=\\frac{s+1}{M-s}+\\frac{M-s-1}{s+2}.  (1)\n\n   Indeed, dividing the identity\n   2\\binom{M}{s+1}=\\binom{M}{s}+\\binom{M}{s+2}\n   by \\binom{M}{s+1} yields exactly (1).\n\n2. Because the last three of the four coefficients must also be in arithmetic progression, the same argument with s replaced by s+1 shows that s and s+1 are both roots of the quadratic in s obtained from (1).\n\n3. Using the symmetry \\binom{M}{k}=\\binom{M}{M-k}, replacing s by M-s-2 interchanges the two fractions in (1) and leaves the equation unchanged.  Hence the other two roots of the same quadratic are M-s-3 and M-s-2.  A quadratic has only two roots, so\n   {s,s+1}={M-s-3,M-s-2},  whence M=2s+3.  (2)\n\n4. Relation (2) says that the four supposed terms are the four middle coefficients\n   \\binom{2s+3}{s},\\;\\binom{2s+3}{s+1},\\;\\binom{2s+3}{s+2},\\;\\binom{2s+3}{s+3}\n   of row 2s+3 of Pascal's triangle.  Binomial coefficients are unimodal: they increase up to the middle term(s) and then decrease.  Consequently these four consecutive numbers cannot lie in an arithmetic progression (if they were in AP one would need all four equal, which they are not), contradicting our assumption.\n\nTherefore no choice of integers M\\geq 3 and 0\\leq s\\leq M-3 makes the four consecutive binomial coefficients form an arithmetic progression.",
+      "_meta": {
+        "core_steps": [
+          "Translate “first three consecutive binomial coefficients are in arithmetic progression” into the equation 2·C(n,r+1)=C(n,r)+C(n,r+2), which simplifies to a quadratic condition in r and n.",
+          "Because the last three of the four terms must also be in arithmetic progression, the same quadratic must be satisfied by both r and r+1, so they are both roots of that quadratic.",
+          "Use the symmetry C(n,k)=C(n,n−k) to show that if r satisfies the quadratic then so do n−r−3 and n−r−2; thus the quadratic’s only two roots must be {r,r+1}={n−r−3,n−r−2}, giving n=2r+3.",
+          "Observe that the resulting four coefficients are the four middle terms of row n, and unimodality of binomial coefficients (they rise to the middle then fall) rules out an arithmetic progression.",
+          "Hence no four consecutive binomial coefficients can form an arithmetic progression."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of symbols for the row and entry indices.",
+            "original": "n (row size), r (starting index)"
+          },
+          "slot2": {
+            "description": "The way ‘positive integers’ is phrased; any equivalent non-negativity requirement works.",
+            "original": "“n, r integers > 0”"
+          },
+          "slot3": {
+            "description": "Using a non-strict vs. strict inequality to ensure four coefficients exist.",
+            "original": "r + 3 ≤ n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

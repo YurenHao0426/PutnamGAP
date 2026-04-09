@@ -1,0 +1,126 @@
+{
+  "index": "1981-A-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-1\nLet \\( E(n) \\) denote the largest integer \\( k \\) such that \\( 5^{k} \\) is an integral divisor of the product \\( 1^{1} 2^{2} 3^{3} \\cdots n^{n} \\). Calculate \\( \\lim _{n \\rightarrow \\infty} \\frac{E(n)}{n^{2}} \\).",
+  "solution": "A-1.\nWe show that the limit is \\( 1 / 8 \\). Let \\( T(m)=1+2+\\cdots+m=m(m+1) / 2,[x] \\) denote the greatest integer in \\( x, h=\\left[\\log _{5} n\\right] \\), and \\( e \\), be the fractional part \\( \\left(n / 5^{\\prime}\\right)-\\left[n / 5^{i}\\right] \\) for \\( 1 \\leq i \\leq h \\).\nThen\n\\[\n\\begin{aligned}\nE(n)= & 5 T([n / 5])+5^{2} T\\left(\\left[n / 5^{2}\\right]\\right)+\\cdots+5^{h} T\\left(\\left[n / 5^{h}\\right]\\right) \\\\\n2 E(n)= & 5\\left([n / 5]^{2}+[n / 5]\\right)+5^{2}\\left(\\left[n / 5^{2}\\right]^{2}+\\left[n / 5^{2}\\right]\\right)+\\cdots+5^{h}\\left(\\left[n / 5^{h}\\right]^{2}+\\left[n / 5^{h}\\right]\\right) \\\\\n& =5\\left(\\frac{n^{2}}{5^{2}}-\\frac{2 e_{1} n}{5}+e_{1}^{2}+\\frac{n}{5}-e_{1}\\right)+\\cdots+5^{h}\\left(\\frac{n^{2}}{5^{2 h}}-\\frac{2 e_{h} n}{5^{h}}+e_{h}^{2}+\\frac{n}{5^{h}}-e_{h}\\right) \\\\\n\\frac{E(n)}{n^{2}}= & \\frac{1}{2}\\left(\\frac{1}{5}+\\frac{1}{5^{2}}+\\cdots+\\frac{1}{5^{h}}\\right)+\\frac{h}{2 n}-\\frac{e_{1}+e_{2}+\\cdots+e_{h}}{n} \\\\\n& +\\frac{5\\left(e_{1}^{2}-e_{1}\\right)+\\cdots+5^{h}\\left(e_{h}^{2}-e_{h}\\right)}{2 n^{2}}\n\\end{aligned}\n\\]\n\nSince \\( 5^{h} \\leq n<5^{h+1} \\) and \\( 0 \\leq e_{1}<1 \\), one sees that \\( h / n \\rightarrow 0 \\) and \\( E(n) / n^{2} \\rightarrow 1 / 8 \\) as \\( n \\rightarrow \\infty \\).",
+  "vars": [
+    "E",
+    "n",
+    "k",
+    "T",
+    "m",
+    "x",
+    "h",
+    "e",
+    "e_1",
+    "e_2",
+    "e_h",
+    "i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "E": "fivepowerexponent",
+        "n": "inputinteger",
+        "k": "exponentindex",
+        "T": "triangularsum",
+        "m": "upperbound",
+        "x": "realvalue",
+        "h": "logpower",
+        "e": "fracpart",
+        "e_1": "fracpartone",
+        "e_2": "fracparttwo",
+        "e_h": "fracparth",
+        "i": "loopindex"
+      },
+      "question": "Problem A-1\nLet \\( fivepowerexponent(inputinteger) \\) denote the largest integer \\( exponentindex \\) such that \\( 5^{exponentindex} \\) is an integral divisor of the product \\( 1^{1} 2^{2} 3^{3} \\cdots inputinteger^{inputinteger} \\). Calculate \\( \\lim _{inputinteger \\rightarrow \\infty} \\frac{fivepowerexponent(inputinteger)}{inputinteger^{2}} \\).",
+      "solution": "A-1.\nWe show that the limit is \\( 1 / 8 \\). Let \\( triangularsum(upperbound)=1+2+\\cdots+upperbound=upperbound(upperbound+1) / 2,[realvalue] \\) denote the greatest integer in \\( realvalue, logpower=\\left[\\log _{5} inputinteger\\right] \\), and \\( fracpart \\), be the fractional part \\( \\left(inputinteger / 5^{\\prime}\\right)-\\left[inputinteger / 5^{loopindex}\\right] \\) for \\( 1 \\leq loopindex \\leq logpower \\).\nThen\n\\[\n\\begin{aligned}\nfivepowerexponent(inputinteger)= & 5\\, triangularsum([inputinteger / 5])+5^{2}\\, triangularsum\\left(\\left[inputinteger / 5^{2}\\right]\\right)+\\cdots+5^{logpower}\\, triangularsum\\left(\\left[inputinteger / 5^{logpower}\\right]\\right) \\\\\n2\\, fivepowerexponent(inputinteger)= & 5\\left([inputinteger / 5]^{2}+[inputinteger / 5]\\right)+5^{2}\\left(\\left[inputinteger / 5^{2}\\right]^{2}+\\left[inputinteger / 5^{2}\\right]\\right)+\\cdots+5^{logpower}\\left(\\left[inputinteger / 5^{logpower}\\right]^{2}+\\left[inputinteger / 5^{logpower}\\right]\\right) \\\\\n& =5\\left(\\frac{inputinteger^{2}}{5^{2}}-\\frac{2\\, fracpartone\\, inputinteger}{5}+fracpartone^{2}+\\frac{inputinteger}{5}-fracpartone\\right)+\\cdots+5^{logpower}\\left(\\frac{inputinteger^{2}}{5^{2\\, logpower}}-\\frac{2\\, fracparth\\, inputinteger}{5^{logpower}}+fracparth^{2}+\\frac{inputinteger}{5^{logpower}}-fracparth\\right) \\\\\n\\frac{fivepowerexponent(inputinteger)}{inputinteger^{2}}= & \\frac{1}{2}\\left(\\frac{1}{5}+\\frac{1}{5^{2}}+\\cdots+\\frac{1}{5^{logpower}}\\right)+\\frac{logpower}{2\\, inputinteger}-\\frac{fracpartone+fracparttwo+\\cdots+fracparth}{inputinteger} \\\\\n& +\\frac{5\\left(fracpartone^{2}-fracpartone\\right)+\\cdots+5^{logpower}\\left(fracparth^{2}-fracparth\\right)}{2\\, inputinteger^{2}}\n\\end{aligned}\n\\]\n\nSince \\( 5^{logpower} \\leq inputinteger<5^{logpower+1} \\) and \\( 0 \\leq fracpartone<1 \\), one sees that \\( logpower / inputinteger \\rightarrow 0 \\) and \\( fivepowerexponent(inputinteger) / inputinteger^{2} \\rightarrow 1 / 8 \\) as \\( inputinteger \\rightarrow \\infty \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "E": "marshmallow",
+        "n": "tangerine",
+        "k": "semaphore",
+        "T": "lighthouse",
+        "m": "gingerbread",
+        "x": "polaroid",
+        "h": "cinnamon",
+        "e": "buttercup",
+        "e_1": "buttercupfir",
+        "e_2": "buttercupsec",
+        "e_h": "buttercuplat",
+        "i": "threadbare"
+      },
+      "question": "Problem A-1\nLet \\( marshmallow(tangerine) \\) denote the largest integer \\( semaphore \\) such that \\( 5^{semaphore} \\) is an integral divisor of the product \\( 1^{1} 2^{2} 3^{3} \\cdots tangerine^{tangerine} \\). Calculate \\( \\lim _{tangerine \\rightarrow \\infty} \\frac{marshmallow(tangerine)}{tangerine^{2}} \\).",
+      "solution": "A-1.\nWe show that the limit is \\( 1 / 8 \\). Let \\( lighthouse(gingerbread)=1+2+\\cdots+gingerbread=gingerbread(gingerbread+1) / 2,[polaroid] \\) denote the greatest integer in \\( polaroid, cinnamon=\\left[\\log _{5} tangerine\\right] \\), and \\( buttercup \\), be the fractional part \\( \\left(tangerine / 5^{\\prime}\\right)-\\left[tangerine / 5^{threadbare}\\right] \\) for \\( 1 \\leq threadbare \\leq cinnamon \\).\nThen\n\\[\n\\begin{aligned}\nmarshmallow(tangerine)= & 5 lighthouse([tangerine / 5])+5^{2} lighthouse\\left(\\left[tangerine / 5^{2}\\right]\\right)+\\cdots+5^{cinnamon} lighthouse\\left(\\left[tangerine / 5^{cinnamon}\\right]\\right) \\\\\n2 marshmallow(tangerine)= & 5\\left([tangerine / 5]^{2}+[tangerine / 5]\\right)+5^{2}\\left(\\left[tangerine / 5^{2}\\right]^{2}+\\left[tangerine / 5^{2}\\right]\\right)+\\cdots+5^{cinnamon}\\left(\\left[tangerine / 5^{cinnamon}\\right]^{2}+\\left[tangerine / 5^{cinnamon}\\right]\\right) \\\\\n& =5\\left(\\frac{tangerine^{2}}{5^{2}}-\\frac{2 buttercupfir tangerine}{5}+buttercupfir^{2}+\\frac{tangerine}{5}-buttercupfir\\right)+\\cdots+5^{cinnamon}\\left(\\frac{tangerine^{2}}{5^{2 cinnamon}}-\\frac{2 buttercuplat tangerine}{5^{cinnamon}}+buttercuplat^{2}+\\frac{tangerine}{5^{cinnamon}}-buttercuplat\\right) \\\\\n\\frac{marshmallow(tangerine)}{tangerine^{2}}= & \\frac{1}{2}\\left(\\frac{1}{5}+\\frac{1}{5^{2}}+\\cdots+\\frac{1}{5^{cinnamon}}\\right)+\\frac{cinnamon}{2 tangerine}-\\frac{buttercupfir+buttercupsec+\\cdots+buttercuplat}{tangerine} \\\\\n& +\\frac{5\\left(buttercupfir^{2}-buttercupfir\\right)+\\cdots+5^{cinnamon}\\left(buttercuplat^{2}-buttercuplat\\right)}{2 tangerine^{2}}\n\\end{aligned}\n\\]\n\nSince \\( 5^{cinnamon} \\leq tangerine<5^{cinnamon+1} \\) and \\( 0 \\leq buttercupfir<1 \\), one sees that \\( cinnamon / tangerine \\rightarrow 0 \\) and \\( marshmallow(tangerine) / tangerine^{2} \\rightarrow 1 / 8 \\) as \\( tangerine \\rightarrow \\infty \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "E": "triviality",
+        "n": "boundlessness",
+        "k": "smallness",
+        "T": "dispersal",
+        "m": "baseness",
+        "x": "voidness",
+        "h": "depthness",
+        "e": "wholevalue",
+        "e_1": "wholevalueone",
+        "e_2": "wholevaluetwo",
+        "e_h": "wholevaluedepthness",
+        "i": "stillness"
+      },
+      "question": "Problem A-1\nLet \\( triviality(boundlessness) \\) denote the largest integer \\( smallness \\) such that \\( 5^{smallness} \\) is an integral divisor of the product \\( 1^{1} 2^{2} 3^{3} \\cdots boundlessness^{boundlessness} \\). Calculate \\( \\lim _{boundlessness \\rightarrow \\infty} \\frac{triviality(boundlessness)}{boundlessness^{2}} \\).",
+      "solution": "A-1.\nWe show that the limit is \\( 1 / 8 \\). Let \\( dispersal(baseness)=1+2+\\cdots+baseness=baseness(baseness+1) / 2,[voidness] \\) denote the greatest integer in \\( voidness, depthness=\\left[\\log _{5} boundlessness\\right] \\), and \\( wholevalue \\), be the fractional part \\( \\left(boundlessness / 5^{\\prime}\\right)-\\left[boundlessness / 5^{stillness}\\right] \\) for \\( 1 \\leq stillness \\leq depthness \\).\nThen\n\\[\n\\begin{aligned}\ntriviality(boundlessness)= & 5 dispersal([boundlessness / 5])+5^{2} dispersal\\left(\\left[boundlessness / 5^{2}\\right]\\right)+\\cdots+5^{depthness} dispersal\\left(\\left[boundlessness / 5^{depthness}\\right]\\right) \\\\\n2 triviality(boundlessness)= & 5\\left([boundlessness / 5]^{2}+[boundlessness / 5]\\right)+5^{2}\\left(\\left[boundlessness / 5^{2}\\right]^{2}+\\left[boundlessness / 5^{2}\\right]\\right)+\\cdots+5^{depthness}\\left(\\left[boundlessness / 5^{depthness}\\right]^{2}+\\left[boundlessness / 5^{depthness}\\right]\\right) \\\\\n& =5\\left(\\frac{boundlessness^{2}}{5^{2}}-\\frac{2 wholevalueone boundlessness}{5}+wholevalueone^{2}+\\frac{boundlessness}{5}-wholevalueone\\right)+\\cdots+5^{depthness}\\left(\\frac{boundlessness^{2}}{5^{2 depthness}}-\\frac{2 wholevaluedepthness boundlessness}{5^{depthness}}+wholevaluedepthness^{2}+\\frac{boundlessness}{5^{depthness}}-wholevaluedepthness\\right) \\\\\n\\frac{triviality(boundlessness)}{boundlessness^{2}}= & \\frac{1}{2}\\left(\\frac{1}{5}+\\frac{1}{5^{2}}+\\cdots+\\frac{1}{5^{depthness}}\\right)+\\frac{depthness}{2 boundlessness}-\\frac{wholevalueone+wholevaluetwo+\\cdots+wholevaluedepthness}{boundlessness} \\\\\n& +\\frac{5\\left(wholevalueone^{2}-wholevalueone\\right)+\\cdots+5^{depthness}\\left(wholevaluedepthness^{2}-wholevaluedepthness\\right)}{2 boundlessness^{2}}\n\\end{aligned}\n\\]\n\nSince \\( 5^{depthness} \\leq boundlessness<5^{depthness+1} \\) and \\( 0 \\leq wholevalueone<1 \\), one sees that \\( depthness / boundlessness \\rightarrow 0 \\) and \\( triviality(boundlessness) / boundlessness^{2} \\rightarrow 1 / 8 \\) as \\( boundlessness \\rightarrow \\infty \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "E": "vtjqdfrn",
+        "n": "qplzvrse",
+        "k": "odhsgfmi",
+        "T": "bkzpahul",
+        "m": "jxcvofna",
+        "x": "gqtrbmal",
+        "h": "zvwsokir",
+        "e": "rfychlpe",
+        "e_1": "azhwdpqi",
+        "e_2": "lvdmgxre",
+        "e_h": "tyqsenob",
+        "i": "kcflorpt"
+      },
+      "question": "Problem A-1\nLet \\( vtjqdfrn(qplzvrse) \\) denote the largest integer \\( odhsgfmi \\) such that \\( 5^{odhsgfmi} \\) is an integral divisor of the product \\( 1^{1} 2^{2} 3^{3} \\cdots qplzvrse^{qplzvrse} \\). Calculate \\( \\lim _{qplzvrse \\rightarrow \\infty} \\frac{vtjqdfrn(qplzvrse)}{qplzvrse^{2}} \\).",
+      "solution": "A-1.\nWe show that the limit is \\( 1 / 8 \\). Let \\( bkzpahul(jxcvofna)=1+2+\\cdots+jxcvofna=jxcvofna(jxcvofna+1) / 2,[gqtrbmal] \\) denote the greatest integer in \\( gqtrbmal, zvwsokir=\\left[\\log _{5} qplzvrse\\right] \\), and \\( rfychlpe \\), be the fractional part \\( \\left(qplzvrse / 5^{\\prime}\\right)-\\left[qplzvrse / 5^{kcflorpt}\\right] \\) for \\( 1 \\leq kcflorpt \\leq zvwsokir \\).\nThen\n\\[\n\\begin{aligned}\nvtjqdfrn(qplzvrse)= & 5 bkzpahul([qplzvrse / 5])+5^{2} bkzpahul\\left(\\left[qplzvrse / 5^{2}\\right]\\right)+\\cdots+5^{zvwsokir} bkzpahul\\left(\\left[qplzvrse / 5^{zvwsokir}\\right]\\right) \\\\\n2 vtjqdfrn(qplzvrse)= & 5\\left([qplzvrse / 5]^{2}+[qplzvrse / 5]\\right)+5^{2}\\left(\\left[qplzvrse / 5^{2}\\right]^{2}+\\left[qplzvrse / 5^{2}\\right]\\right)+\\cdots+5^{zvwsokir}\\left(\\left[qplzvrse / 5^{zvwsokir}\\right]^{2}+\\left[qplzvrse / 5^{zvwsokir}\\right]\\right) \\\\\n& =5\\left(\\frac{qplzvrse^{2}}{5^{2}}-\\frac{2 azhwdpqi qplzvrse}{5}+azhwdpqi^{2}+\\frac{qplzvrse}{5}-azhwdpqi\\right)+\\cdots+5^{zvwsokir}\\left(\\frac{qplzvrse^{2}}{5^{2 zvwsokir}}-\\frac{2 tyqsenob qplzvrse}{5^{zvwsokir}}+tyqsenob^{2}+\\frac{qplzvrse}{5^{zvwsokir}}-tyqsenob\\right) \\\\\n\\frac{vtjqdfrn(qplzvrse)}{qplzvrse^{2}}= & \\frac{1}{2}\\left(\\frac{1}{5}+\\frac{1}{5^{2}}+\\cdots+\\frac{1}{5^{zvwsokir}}\\right)+\\frac{zvwsokir}{2 qplzvrse}-\\frac{azhwdpqi+lvdmgxre+\\cdots+tyqsenob}{qplzvrse} \\\\\n& +\\frac{5\\left(azhwdpqi^{2}-azhwdpqi\\right)+\\cdots+5^{zvwsokir}\\left(tyqsenob^{2}-tyqsenob\\right)}{2 qplzvrse^{2}}\n\\end{aligned}\n\\]\n\nSince \\( 5^{zvwsokir} \\leq qplzvrse<5^{zvwsokir+1} \\) and \\( 0 \\leq azhwdpqi<1 \\), one sees that \\( zvwsokir / qplzvrse \\rightarrow 0 \\) and \\( vtjqdfrn(qplzvrse) / qplzvrse^{2} \\rightarrow 1 / 8 \\) as \\( qplzvrse \\rightarrow \\infty \\)."
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\nE(n)=\\max\\{k\\in\\mathbb Z_{\\ge 0}:7^{\\,k}\\mid 1^{1}\\,2^{2}\\,3^{3}\\cdots n^{n}\\}\n\\]\nbe the exponent of the prime $7$ in the product $\\prod_{m=1}^{n}m^{m}$.  Evaluate the limit\n\\[\n\\lim_{n\\to\\infty}\\frac{E(n)}{n^{2}}\\,.\n\\]",
+      "solution": "Write T(m)=1+2+\\ldots +m=m(m+1)/2 and let h=\\lfloor log_7n\\rfloor .  For i=1,2,\\ldots ,h put e_i=n/7^i-\\lfloor n/7^i\\rfloor  (0\\leq e_i<1).  Then the exponent of 7 in \\prod _{m=1}^n m^m is\nE(n)=\\sum _{i=1}^h 7^i T(\\lfloor n/7^i\\rfloor ).\nSince 2T(m)=m^2+m, we have\n2E(n)=\\sum _{i=1}^h 7^i(\\lfloor n/7^i\\rfloor ^2+\\lfloor n/7^i\\rfloor ).\nSubstitute \\lfloor n/7^i\\rfloor =n/7^i-e_i to get\n2E(n)=\\sum _{i=1}^h7^i( n^2/7^{2i}-2e_i n/7^i+e_i^2 + n/7^i-e_i ).\nDivide by n^2:\nE(n)/n^2=\\frac{1}{2}\\sum _{i=1}^h1/7^i + h/(2n) - (e_1+\\ldots +e_h)/n + [\\sum _{i=1}^h7^i(e_i^2-e_i)]/(2n^2).\nAs n\\to \\infty , h/n\\to 0, (e_1+\\ldots +e_h)/n\\to 0 and the last term\\to 0, leaving\nlim_{n\\to \\infty }E(n)/n^2 = \\frac{1}{2}\\sum _{i=1}^\\infty 1/7^i = \\frac{1}{2}\\cdot ((1/7)/(1-1/7)) = 1/12.",
+      "_meta": {
+        "core_steps": [
+          "Translate the 5-adic exponent in 1^1 2^2 … n^n into the sum Σ 5^i·T(⌊n/5^i⌋) with T(m)=m(m+1)/2",
+          "Replace each ⌊n/5^i⌋ by n/5^i minus its fractional part to split main term and error",
+          "Sum the main n^2-terms, a geometric series, giving (1/2)·Σ 1/5^i = 1/8",
+          "Bound the linear and constant error terms to show they are o(n²)",
+          "Conclude lim E(n)/n² equals the main coefficient"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Prime base whose powers are counted (currently 5)",
+            "original": "5"
+          },
+          "slot2": {
+            "description": "Resulting limit 1/[2·(base−1)] coming from the geometric series (currently 1/8)",
+            "original": "1/8"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

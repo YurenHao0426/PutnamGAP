@@ -1,0 +1,101 @@
+{
+  "index": "1985-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $d$ be a real number. For each integer $m \\geq 0$, define a\nsequence $\\{a_m(j)\\}$, $j=0,1,2,\\dots$ by the condition\n\\begin{align*}\na_m(0) &= d/2^m, \\\\\na_m(j+1) &= (a_m(j))^2 + 2a_m(j), \\qquad j \\geq 0.\n\\end{align*}\nEvaluate $\\lim_{n \\to \\infty} a_n(n)$.",
+  "solution": "Solution. We have \\( a_{m}(j+1)+1=\\left(a_{m}(j)+1\\right)^{2} \\), so by induction on \\( j \\),\n\\[\na_{m}(j)+1=\\left(a_{m}(0)+1\\right)^{2^{j}} .\n\\]\n\nHence\n\\[\n\\lim _{n \\rightarrow \\infty} a_{n}(n)=\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{d}{2^{n}}\\right)^{2^{n}}-1\n\\]\n\nIf \\( f(x)=\\ln (1+d x) \\), then \\( f^{\\prime}(x)=d /(1+d x) \\), and in particular\n\\[\n\\lim _{x \\rightarrow 0} \\frac{\\ln (1+d x)}{x}=f^{\\prime}(0)=d\n\\]\n\nApplying the continuous function \\( e^{x} \\) yields\n\\[\n\\lim _{x \\rightarrow 0}(1+d x)^{1 / x}=e^{d}\n\\]\nand taking the sequence \\( x_{n}=1 / 2^{n} \\) yields\n\\[\n\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{d}{2^{n}}\\right)^{2^{n}}=e^{d}\n\\]\nso \\( \\lim _{n \\rightarrow \\infty} a_{n}(n)=e^{d}-1 \\).",
+  "vars": [
+    "m",
+    "j",
+    "a_m",
+    "a_n",
+    "f",
+    "x"
+  ],
+  "params": [
+    "d"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "m": "indexlevel",
+        "j": "iteration",
+        "a_m": "sequencelevel",
+        "a_n": "sequencelimit",
+        "f": "logfunction",
+        "x": "variable",
+        "d": "realparam"
+      },
+      "question": "Let $realparam$ be a real number. For each integer $indexlevel \\geq 0$, define a\nsequence $\\{sequencelevel(iteration)\\}$, $iteration=0,1,2,\\dots$ by the condition\n\\begin{align*}\nsequencelevel(0) &= realparam/2^{indexlevel}, \\\\\nsequencelevel(iteration+1) &= (sequencelevel(iteration))^2 + 2sequencelevel(iteration), \\qquad iteration \\geq 0.\n\\end{align*}\nEvaluate $\\lim_{n \\to \\infty} sequencelimit(n)$.",
+      "solution": "Solution. We have \\( sequencelevel(iteration+1)+1=\\left(sequencelevel(iteration)+1\\right)^{2} \\), so by induction on \\( iteration \\),\n\\[\nsequencelevel(iteration)+1=\\left(sequencelevel(0)+1\\right)^{2^{iteration}} .\n\\]\n\nHence\n\\[\n\\lim _{n \\rightarrow \\infty} sequencelimit(n)=\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{realparam}{2^{n}}\\right)^{2^{n}}-1\n\\]\n\nIf \\( logfunction(variable)=\\ln (1+realparam\\ variable) \\), then \\( logfunction^{\\prime}(variable)=realparam /(1+realparam\\ variable) \\), and in particular\n\\[\n\\lim _{variable \\rightarrow 0} \\frac{\\ln (1+realparam\\ variable)}{variable}=logfunction^{\\prime}(0)=realparam\n\\]\n\nApplying the continuous function \\( e^{variable} \\) yields\n\\[\n\\lim _{variable \\rightarrow 0}(1+realparam\\ variable)^{1 / variable}=e^{realparam}\n\\]\nand taking the sequence \\( variable_{n}=1 / 2^{n} \\) yields\n\\[\n\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{realparam}{2^{n}}\\right)^{2^{n}}=e^{realparam}\n\\]\nso \\( \\lim _{n \\rightarrow \\infty} sequencelimit(n)=e^{realparam}-1 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "m": "lighthouse",
+        "j": "windchime",
+        "a_m": "pendulum",
+        "a_n": "periscope",
+        "f": "quagmire",
+        "x": "bottleneck",
+        "d": "seesawing"
+      },
+      "question": "Let $seesawing$ be a real number. For each integer $lighthouse \\geq 0$, define a\nsequence $\\{pendulum(windchime)\\}$, $windchime=0,1,2,\\dots$ by the condition\n\\begin{align*}\npendulum(0) &= seesawing/2^{lighthouse}, \\\\\npendulum(windchime+1) &= (pendulum(windchime))^2 + 2pendulum(windchime), \\qquad windchime \\geq 0.\n\\end{align*}\nEvaluate $\\lim_{n \\to \\infty} periscope(n)$.",
+      "solution": "Solution. We have \\( pendulum(windchime+1)+1=\\left(pendulum(windchime)+1\\right)^{2} \\), so by induction on \\( windchime \\),\n\\[\npendulum(windchime)+1=\\left(pendulum(0)+1\\right)^{2^{windchime}} .\n\\]\n\nHence\n\\[\n\\lim _{n \\rightarrow \\infty} periscope(n)=\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{seesawing}{2^{n}}\\right)^{2^{n}}-1\n\\]\n\nIf \\( quagmire(bottleneck)=\\ln (1+seesawing\\, bottleneck) \\), then \\( quagmire^{\\prime}(bottleneck)=seesawing /(1+seesawing\\, bottleneck) \\), and in particular\n\\[\n\\lim _{bottleneck \\rightarrow 0} \\frac{\\ln (1+seesawing\\, bottleneck)}{bottleneck}=quagmire^{\\prime}(0)=seesawing\n\\]\n\nApplying the continuous function \\( e^{bottleneck} \\) yields\n\\[\n\\lim _{bottleneck \\rightarrow 0}(1+seesawing\\, bottleneck)^{1 / bottleneck}=e^{seesawing}\n\\]\nand taking the sequence \\( bottleneck_{n}=1 / 2^{n} \\) yields\n\\[\n\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{seesawing}{2^{n}}\\right)^{2^{n}}=e^{seesawing}\n\\]\nso \\( \\lim _{n \\rightarrow \\infty} periscope(n)=e^{seesawing}-1 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "m": "continuum",
+        "j": "staticity",
+        "a_m": "giganticconstant",
+        "a_n": "minusculevariable",
+        "f": "nonfunction",
+        "x": "unknownless",
+        "d": "variability"
+      },
+      "question": "Let $variability$ be a real number. For each integer $continuum \\geq 0$, define a\nsequence $\\{giganticconstant_{continuum}(staticity)\\}$, $staticity=0,1,2,\\dots$ by the condition\n\\begin{align*}\ngiganticconstant_{continuum}(0) &= variability/2^{continuum}, \\\\\ngiganticconstant_{continuum}(staticity+1) &= (giganticconstant_{continuum}(staticity))^2 + 2giganticconstant_{continuum}(staticity), \\qquad staticity \\geq 0.\n\\end{align*}\nEvaluate $\\lim_{n \\to \\infty} minusculevariable_{n}(n)$.",
+      "solution": "Solution. We have \\( giganticconstant_{\\continuum}(staticity+1)+1=\\left(giganticconstant_{\\continuum}(staticity)+1\\right)^{2} \\), so by induction on \\( staticity \\),\n\\[\ngiganticconstant_{\\continuum}(staticity)+1=\\left(giganticconstant_{\\continuum}(0)+1\\right)^{2^{staticity}} .\n\\]\n\nHence\n\\[\n\\lim _{n \\rightarrow \\infty} minusculevariable_{n}(n)=\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{variability}{2^{n}}\\right)^{2^{n}}-1\n\\]\n\nIf \\( nonfunction(unknownless)=\\ln (1+variability\\, unknownless) \\), then \\( nonfunction^{\\prime}(unknownless)=variability /(1+variability\\, unknownless) \\), and in particular\n\\[\n\\lim _{unknownless \\rightarrow 0} \\frac{\\ln (1+variability\\, unknownless)}{unknownless}=nonfunction^{\\prime}(0)=variability\n\\]\n\nApplying the continuous function \\( e^{unknownless} \\) yields\n\\[\n\\lim _{unknownless \\rightarrow 0}(1+variability\\, unknownless)^{1 / unknownless}=e^{variability}\n\\]\nand taking the sequence \\( unknownless_{n}=1 / 2^{n} \\) yields\n\\[\n\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{variability}{2^{n}}\\right)^{2^{n}}=e^{variability}\n\\]\nso \\( \\lim _{n \\rightarrow \\infty} minusculevariable_{n}(n)=e^{variability}-1 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "m": "qzxwvtnp",
+        "j": "hjgrksla",
+        "a_m": "flkseowq",
+        "a_n": "nsdijcka",
+        "f": "prtwyvqm",
+        "x": "udmnpyla",
+        "d": "cgevfrat"
+      },
+      "question": "Let $cgevfrat$ be a real number. For each integer $qzxwvtnp \\geq 0$, define a\nsequence $\\{flkseowq(hjgrksla)\\}$, $hjgrksla=0,1,2,\\dots$ by the condition\n\\begin{align*}\nflkseowq(0) &= cgevfrat/2^{qzxwvtnp}, \\\\\nflkseowq(hjgrksla+1) &= (flkseowq(hjgrksla))^2 + 2flkseowq(hjgrksla), \\qquad hjgrksla \\geq 0.\n\\end{align*}\nEvaluate $\\lim_{n \\to \\infty} nsdijcka(n)$.",
+      "solution": "Solution. We have \\( flkseowq(hjgrksla+1)+1=\\left(flkseowq(hjgrksla)+1\\right)^{2} \\), so by induction on \\( hjgrksla \\),\n\\[\nflkseowq(hjgrksla)+1=\\left(flkseowq(0)+1\\right)^{2^{hjgrksla}} .\n\\]\n\nHence\n\\[\n\\lim _{n \\rightarrow \\infty} nsdijcka(n)=\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{cgevfrat}{2^{n}}\\right)^{2^{n}}-1\n\\]\n\nIf \\( prtwyvqm(udmnpyla)=\\ln (1+cgevfrat \\, udmnpyla) \\), then \\( prtwyvqm^{\\prime}(udmnpyla)=cgevfrat /(1+cgevfrat \\, udmnpyla) \\), and in particular\n\\[\n\\lim _{udmnpyla \\rightarrow 0} \\frac{\\ln (1+cgevfrat \\, udmnpyla)}{udmnpyla}=prtwyvqm^{\\prime}(0)=cgevfrat\n\\]\n\nApplying the continuous function \\( e^{udmnpyla} \\) yields\n\\[\n\\lim _{udmnpyla \\rightarrow 0}(1+cgevfrat \\, udmnpyla)^{1 / udmnpyla}=e^{cgevfrat}\n\\]\nand taking the sequence \\( udmnpyla_{n}=1 / 2^{n} \\) yields\n\\[\n\\lim _{n \\rightarrow \\infty}\\left(1+\\frac{cgevfrat}{2^{n}}\\right)^{2^{n}}=e^{cgevfrat}\n\\]\nso \\( \\lim _{n \\rightarrow \\infty} nsdijcka(n)=e^{cgevfrat}-1 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let d be a real number.  \nFor every integer m \\geq  1 define a sequence {a_m(j)}_{j=0}^{\\infty } recursively by  \n\n a_m(0) = d / m!,  \n\n a_m(j+1) = (a_m(j))^{\\,j+1} + (j+1)(a_m(j))^{\\,j} + C(j+1,2)(a_m(j))^{\\,j-1} + \\ldots  + (j+1)a_m(j), (j \\geq  0),  \n\nwhere C(j+1,k) denotes the usual binomial coefficients.  \n\n(Equivalently, a_m(j+1) = (1 + a_m(j))^{\\,j+1} - 1.)  \n\nCompute simultaneously  \n\n(A) L = lim_{n\\to \\infty } a_n(n),  \n\n(B) lim_{n\\to \\infty } n! \\cdot  (a_n(n) - L).",
+      "solution": "Step 1. A convenient substitution.  \nPut b_m(j) := a_m(j)+1.  \nThe recurrence becomes\n b_m(j+1) = b_m(j)^{\\,j+1}, b_m(0) = 1 + d/m!.\n\nStep 2. Closed form for b_m(j).  \nWe claim b_m(j) = (1 + d/m!)^{j!}.  \nProof by induction on j.  \n- Base j = 0: b_m(0) = 1 + d/m! = (1 + d/m!)^{0!}.  \n- Inductive step: assume b_m(j) = (1 + d/m!)^{j!}.  \nThen  \n b_m(j+1) = b_m(j)^{\\,j+1} = (1 + d/m!)^{j!(j+1)} = (1 + d/m!)^{(j+1)!},  \ncompleting the induction.\n\nHence  \n a_m(j) = b_m(j) - 1 = (1 + d/m!)^{j!} - 1.\n\nStep 3. Exact expression for the quantity of interest.  \nWith j = m we get  \n a_m(m) = (1 + d/m!)^{m!} - 1.              (\\star )\n\nPart (A). Limit of a_n(n).  \nWrite y_n = d/n!.  Then (\\star ) reads a_n(n) = (1 + y_n)^{1/y_n\\cdot d} - 1 with y_n \\to  0.  \nBecause  \n lim_{x\\to 0} (1+x)^{1/x} = e,  \nwe obtain  \n lim_{n\\to \\infty } a_n(n) = e^{d} - 1.  \nTherefore  \n L = e^{d} - 1.\n\nPart (B). First-order asymptotics around the limit.  \nWe need n!\\cdot (a_n(n) - (e^{d} - 1)).  \nStart again from (\\star ):\n\nln(1 + a_n(n)) = n!\\cdot ln(1 + d/n!)                         (1)\n\nExpand ln(1 + z) for small z: ln(1 + z) = z - z^2/2 + z^3/3 - \\ldots   \nInsert z = d/n!:\n\nln(1 + a_n(n)) = n!\\cdot ( d/n! - d^2/(2 n!^2) + O(1/n!^3) )\n              = d - d^2/(2 n!) + O(1/n!^2).             (2)\n\nExponentiating (2):\n\n1 + a_n(n) = exp(d - d^2/(2 n!) + O(1/n!^2))\n          = e^{d}\\cdot exp(-d^2/(2 n!) + O(1/n!^2))\n          = e^{d}\\cdot (1 - d^2/(2 n!) + O(1/n!^2)).          (3)\n\nThus\n\na_n(n) = e^{d} - 1 - e^{d}\\cdot d^2/(2 n!) + O(1/n!^2).        (4)\n\nMultiplying by n! gives\n\nn!\\cdot (a_n(n) - (e^{d} - 1)) = -e^{d}\\cdot d^2/2 + O(1/n!).      (5)\n\nTaking the limit n\\to \\infty  we obtain the exact constant\n\nlim_{n\\to \\infty } n!\\cdot (a_n(n) - L) = -\\frac{1}{2} d^2 e^{d}.                (Answer to B)",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.681347",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original problem (and the current kernel variant), this enhanced version is substantially harder for several reasons:\n\n1. Variable-degree iteration: the exponent in each step is j+1, so after m steps a factorial exponent m! appears. Tracking this quickly-growing, non-constant exponent requires a careful inductive argument and is no longer visible from a single pattern.\n\n2. Factorial-scale starting value: the initial term d/m! is delicately tuned to the factorial growth of the exponent; recognising this tuning and its consequences demands deeper insight (and familiarity with limits of the form (1+x)^{x^{-1}}).\n\n3. Two-part limit: besides finding the main limit (analogous to the original task), one must extract the first-order error term. This forces the solver to employ a second-order Taylor expansion of ln(1+x) and to control the error terms precisely—techniques completely absent from the original solution.\n\n4. Asymptotic analysis with factorials: the presence of n! in both base and exponent obliges the solver to manipulate logarithmic expansions and exponential re-expansions at factorial scales, far beyond the elementary “substitute 1/2^{n}” step in the original.\n\n5. Sign determination and constant identification: the exact constant −½ d² e^{d} in Part (B) cannot be guessed; it emerges only after a meticulous asymptotic computation.\n\nTogether, these additions raise the technical level from a single-observation exercise to a multi-stage argument involving induction, limit theorems, Taylor expansions, and asymptotic control."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let d be a real number.  \nFor every integer m \\geq  1 define a sequence {a_m(j)}_{j=0}^{\\infty } recursively by  \n\n a_m(0) = d / m!,  \n\n a_m(j+1) = (a_m(j))^{\\,j+1} + (j+1)(a_m(j))^{\\,j} + C(j+1,2)(a_m(j))^{\\,j-1} + \\ldots  + (j+1)a_m(j), (j \\geq  0),  \n\nwhere C(j+1,k) denotes the usual binomial coefficients.  \n\n(Equivalently, a_m(j+1) = (1 + a_m(j))^{\\,j+1} - 1.)  \n\nCompute simultaneously  \n\n(A) L = lim_{n\\to \\infty } a_n(n),  \n\n(B) lim_{n\\to \\infty } n! \\cdot  (a_n(n) - L).",
+      "solution": "Step 1. A convenient substitution.  \nPut b_m(j) := a_m(j)+1.  \nThe recurrence becomes\n b_m(j+1) = b_m(j)^{\\,j+1}, b_m(0) = 1 + d/m!.\n\nStep 2. Closed form for b_m(j).  \nWe claim b_m(j) = (1 + d/m!)^{j!}.  \nProof by induction on j.  \n- Base j = 0: b_m(0) = 1 + d/m! = (1 + d/m!)^{0!}.  \n- Inductive step: assume b_m(j) = (1 + d/m!)^{j!}.  \nThen  \n b_m(j+1) = b_m(j)^{\\,j+1} = (1 + d/m!)^{j!(j+1)} = (1 + d/m!)^{(j+1)!},  \ncompleting the induction.\n\nHence  \n a_m(j) = b_m(j) - 1 = (1 + d/m!)^{j!} - 1.\n\nStep 3. Exact expression for the quantity of interest.  \nWith j = m we get  \n a_m(m) = (1 + d/m!)^{m!} - 1.              (\\star )\n\nPart (A). Limit of a_n(n).  \nWrite y_n = d/n!.  Then (\\star ) reads a_n(n) = (1 + y_n)^{1/y_n\\cdot d} - 1 with y_n \\to  0.  \nBecause  \n lim_{x\\to 0} (1+x)^{1/x} = e,  \nwe obtain  \n lim_{n\\to \\infty } a_n(n) = e^{d} - 1.  \nTherefore  \n L = e^{d} - 1.\n\nPart (B). First-order asymptotics around the limit.  \nWe need n!\\cdot (a_n(n) - (e^{d} - 1)).  \nStart again from (\\star ):\n\nln(1 + a_n(n)) = n!\\cdot ln(1 + d/n!)                         (1)\n\nExpand ln(1 + z) for small z: ln(1 + z) = z - z^2/2 + z^3/3 - \\ldots   \nInsert z = d/n!:\n\nln(1 + a_n(n)) = n!\\cdot ( d/n! - d^2/(2 n!^2) + O(1/n!^3) )\n              = d - d^2/(2 n!) + O(1/n!^2).             (2)\n\nExponentiating (2):\n\n1 + a_n(n) = exp(d - d^2/(2 n!) + O(1/n!^2))\n          = e^{d}\\cdot exp(-d^2/(2 n!) + O(1/n!^2))\n          = e^{d}\\cdot (1 - d^2/(2 n!) + O(1/n!^2)).          (3)\n\nThus\n\na_n(n) = e^{d} - 1 - e^{d}\\cdot d^2/(2 n!) + O(1/n!^2).        (4)\n\nMultiplying by n! gives\n\nn!\\cdot (a_n(n) - (e^{d} - 1)) = -e^{d}\\cdot d^2/2 + O(1/n!).      (5)\n\nTaking the limit n\\to \\infty  we obtain the exact constant\n\nlim_{n\\to \\infty } n!\\cdot (a_n(n) - L) = -\\frac{1}{2} d^2 e^{d}.                (Answer to B)",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.534343",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original problem (and the current kernel variant), this enhanced version is substantially harder for several reasons:\n\n1. Variable-degree iteration: the exponent in each step is j+1, so after m steps a factorial exponent m! appears. Tracking this quickly-growing, non-constant exponent requires a careful inductive argument and is no longer visible from a single pattern.\n\n2. Factorial-scale starting value: the initial term d/m! is delicately tuned to the factorial growth of the exponent; recognising this tuning and its consequences demands deeper insight (and familiarity with limits of the form (1+x)^{x^{-1}}).\n\n3. Two-part limit: besides finding the main limit (analogous to the original task), one must extract the first-order error term. This forces the solver to employ a second-order Taylor expansion of ln(1+x) and to control the error terms precisely—techniques completely absent from the original solution.\n\n4. Asymptotic analysis with factorials: the presence of n! in both base and exponent obliges the solver to manipulate logarithmic expansions and exponential re-expansions at factorial scales, far beyond the elementary “substitute 1/2^{n}” step in the original.\n\n5. Sign determination and constant identification: the exact constant −½ d² e^{d} in Part (B) cannot be guessed; it emerges only after a meticulous asymptotic computation.\n\nTogether, these additions raise the technical level from a single-observation exercise to a multi-stage argument involving induction, limit theorems, Taylor expansions, and asymptotic control."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

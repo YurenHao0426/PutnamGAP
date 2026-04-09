@@ -1,0 +1,144 @@
+{
+  "index": "1980-B-2",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-2\nLet \\( S \\) be the solid in three-dimensional space consisting of all points ( \\( x, y, z \\) ) satisfying the following system of six simultaneous conditions:\n\\[\n\\begin{array}{l}\nx \\geqslant 0, \\quad y \\geqslant 0, \\quad z \\geqslant 0 \\\\\nx+y+z \\leqslant 11, \\\\\n2 x+4 y+3 z \\leqslant 36 \\\\\n2 x+3 z \\leqslant 24 .\n\\end{array}\n\\]\n(a) Determine the number \\( v \\) of vertices of \\( S \\).\n(b) Determine the number \\( e \\) of edges of \\( S \\).\n(c) Sketch in the \\( b c \\)-plane the set of points \\( (b, c) \\) such that \\( (2,5,4) \\) is one of the points \\( (x, y, z) \\) at which the linear function \\( b x+c y+z \\) assumes its maximum value on \\( S \\).",
+  "solution": "B-2.\n(a) \\( v=7 \\). The seven vertices are \\( V_{0}=(0,0,0), V_{1}=(11,0,0), V_{2}=(0,9,0), V_{3}=(0,0,8), V_{4}= \\) \\( (0,3,8), V_{5}=(9,0,2) \\), and \\( V_{6}=(4,7,0) \\).\n(b) \\( e=11 \\). The eleven edges are \\( V_{0} V_{1}, V_{0} V_{2}, V_{0} V_{3}, V_{1} V_{5}, V_{1} V_{6}, V_{2} V_{4}, V_{2} V_{6}, V_{3} V_{4}, V_{3} V_{5}, V_{4} V_{5} \\), and \\( V_{4} V_{6} \\).\n(c) The desired ( \\( b, c \\) ) are those with \\( b+c=2 \\) and \\( 2 / 3 \\leqslant b \\leqslant 1 \\). Let \\( L(x, y, z)=b x+c y+z \\). Since \\( L \\) is linear and \\( (2,5,4) \\) is on edge \\( V_{4} V_{6} \\), the maximum of \\( L \\) on \\( S \\) must be assumed at \\( V_{4} \\) and at \\( V_{6} \\) and the conditions on \\( b \\) and \\( c \\) are obtained from \\( L(0,3,8)=L(4,7,0) \\geqslant L(x, y, z) \\), with \\( (x, y, z) \\) ranging over the other five vertices.",
+  "vars": [
+    "b",
+    "c",
+    "x",
+    "y",
+    "z"
+  ],
+  "params": [
+    "L",
+    "S",
+    "V_0",
+    "V_1",
+    "V_2",
+    "V_3",
+    "V_4",
+    "V_5",
+    "V_6",
+    "e",
+    "v"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "b": "coeffb",
+        "c": "coeffc",
+        "x": "coordx",
+        "y": "coordy",
+        "z": "coordz",
+        "L": "linfunc",
+        "S": "solidset",
+        "V_0": "vertexzero",
+        "V_1": "vertexone",
+        "V_2": "vertextwo",
+        "V_3": "vertexthree",
+        "V_4": "vertexfour",
+        "V_5": "vertexfive",
+        "V_6": "vertexsix",
+        "e": "edgecount",
+        "v": "vertexcount"
+      },
+      "question": "Problem B-2\nLet \\( solidset \\) be the solid in three-dimensional space consisting of all points ( \\( coordx, coordy, coordz \\) ) satisfying the following system of six simultaneous conditions:\n\\[\n\\begin{array}{l}\ncoordx \\geqslant 0, \\quad coordy \\geqslant 0, \\quad coordz \\geqslant 0 \\\\\ncoordx+coordy+coordz \\leqslant 11, \\\\\n2 coordx+4 coordy+3 coordz \\leqslant 36 \\\\\n2 coordx+3 coordz \\leqslant 24 .\n\\end{array}\n\\]\n(a) Determine the number \\( vertexcount \\) of vertices of \\( solidset \\).\n(b) Determine the number \\( edgecount \\) of edges of \\( solidset \\).\n(c) Sketch in the \\( coeffb coeffc \\)-plane the set of points \\( (coeffb, coeffc) \\) such that \\( (2,5,4) \\) is one of the points \\( (coordx, coordy, coordz) \\) at which the linear function \\( coeffb coordx+coeffc coordy+coordz \\) assumes its maximum value on \\( solidset \\).",
+      "solution": "B-2.\n(a) \\( vertexcount=7 \\). The seven vertices are \\( vertexzero=(0,0,0), vertexone=(11,0,0), vertextwo=(0,9,0), vertexthree=(0,0,8), vertexfour=(0,3,8), vertexfive=(9,0,2) \\), and \\( vertexsix=(4,7,0) \\).\n(b) \\( edgecount=11 \\). The eleven edges are \\( vertexzero vertexone, vertexzero vertextwo, vertexzero vertexthree, vertexone vertexfive, vertexone vertexsix, vertextwo vertexfour, vertextwo vertexsix, vertexthree vertexfour, vertexthree vertexfive, vertexfour vertexfive \\), and \\( vertexfour vertexsix \\).\n(c) The desired \\( ( coeffb, coeffc ) \\) are those with \\( coeffb+coeffc=2 \\) and \\( 2 / 3 \\leqslant coeffb \\leqslant 1 \\). Let \\( linfunc(coordx, coordy, coordz)=coeffb coordx+coeffc coordy+coordz \\). Since \\( linfunc \\) is linear and \\( (2,5,4) \\) is on edge \\( vertexfour vertexsix \\), the maximum of \\( linfunc \\) on \\( solidset \\) must be assumed at \\( vertexfour \\) and at \\( vertexsix \\) and the conditions on \\( coeffb \\) and \\( coeffc \\) are obtained from \\( linfunc(0,3,8)=linfunc(4,7,0) \\geqslant linfunc(coordx, coordy, coordz) \\), with \\( (coordx, coordy, coordz) \\) ranging over the other five vertices."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "b": "lighthouse",
+        "c": "sunflower",
+        "x": "pineapple",
+        "y": "blueberry",
+        "z": "marshmallow",
+        "L": "teaspoon",
+        "S": "rainstorm",
+        "V_0": "telescope",
+        "V_1": "bookshelf",
+        "V_2": "strawhat",
+        "V_3": "paintbrush",
+        "V_4": "skateboard",
+        "V_5": "paperclip",
+        "V_6": "doorframe",
+        "e": "waterfall",
+        "v": "countryside"
+      },
+      "question": "Problem B-2\nLet \\( rainstorm \\) be the solid in three-dimensional space consisting of all points ( \\( pineapple, blueberry, marshmallow \\) ) satisfying the following system of six simultaneous conditions:\n\\[\n\\begin{array}{l}\npineapple \\geqslant 0, \\quad blueberry \\geqslant 0, \\quad marshmallow \\geqslant 0 \\\\\npineapple+blueberry+marshmallow \\leqslant 11, \\\\\n2 pineapple+4 blueberry+3 marshmallow \\leqslant 36 \\\\\n2 pineapple+3 marshmallow \\leqslant 24 .\n\\end{array}\n\\]\n(a) Determine the number \\( countryside \\) of vertices of \\( rainstorm \\).\n(b) Determine the number \\( waterfall \\) of edges of \\( rainstorm \\).\n(c) Sketch in the \\( lighthouse sunflower \\)-plane the set of points \\( (lighthouse, sunflower) \\) such that \\( (2,5,4) \\) is one of the points \\( (pineapple, blueberry, marshmallow) \\) at which the linear function \\( lighthouse pineapple+sunflower blueberry+marshmallow \\) assumes its maximum value on \\( rainstorm \\).",
+      "solution": "B-2.\n(a) \\( countryside=7 \\). The seven vertices are \\( telescope=(0,0,0), bookshelf=(11,0,0), strawhat=(0,9,0), paintbrush=(0,0,8), skateboard= (0,3,8), paperclip=(9,0,2) \\), and \\( doorframe=(4,7,0) \\).\n(b) \\( waterfall=11 \\). The eleven edges are \\( telescope bookshelf, telescope strawhat, telescope paintbrush, bookshelf paperclip, bookshelf doorframe, strawhat skateboard, strawhat doorframe, paintbrush skateboard, paintbrush paperclip, skateboard paperclip \\), and \\( skateboard doorframe \\).\n(c) The desired ( \\( lighthouse, sunflower \\) ) are those with \\( lighthouse+sunflower=2 \\) and \\( 2 / 3 \\leqslant lighthouse \\leqslant 1 \\). Let \\( teaspoon(pineapple, blueberry, marshmallow)=lighthouse pineapple+sunflower blueberry+marshmallow \\). Since \\( teaspoon \\) is linear and \\( (2,5,4) \\) is on edge \\( skateboard doorframe \\), the maximum of \\( teaspoon \\) on \\( rainstorm \\) must be assumed at \\( skateboard \\) and at \\( doorframe \\) and the conditions on \\( lighthouse \\) and \\( sunflower \\) are obtained from \\( teaspoon(0,3,8)=teaspoon(4,7,0) \\geqslant teaspoon(pineapple, blueberry, marshmallow) \\), with \\( (pineapple, blueberry, marshmallow) \\) ranging over the other five vertices."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "b": "steadycoef",
+        "c": "fixedcoef",
+        "x": "verticalco",
+        "y": "horizontal",
+        "z": "depthcoord",
+        "L": "nonlinear",
+        "S": "voidspace",
+        "V_0": "centerzero",
+        "V_1": "centeronee",
+        "V_2": "centertwoo",
+        "V_3": "centerthree",
+        "V_4": "centerfourr",
+        "V_5": "centerfivee",
+        "V_6": "centersixxx",
+        "e": "facesnum",
+        "v": "edgesnumx"
+      },
+      "question": "Problem B-2\nLet \\( voidspace \\) be the solid in three-dimensional space consisting of all points ( \\( verticalco, horizontal, depthcoord \\) ) satisfying the following system of six simultaneous conditions:\n\\[\n\\begin{array}{l}\nverticalco \\geqslant 0, \\quad horizontal \\geqslant 0, \\quad depthcoord \\geqslant 0 \\\\\nverticalco+horizontal+depthcoord \\leqslant 11, \\\\\n2 verticalco+4 horizontal+3 depthcoord \\leqslant 36 \\\\\n2 verticalco+3 depthcoord \\leqslant 24 .\n\\end{array}\n\\]\n(a) Determine the number \\( edgesnumx \\) of vertices of \\( voidspace \\).\n(b) Determine the number \\( facesnum \\) of edges of \\( voidspace \\).\n(c) Sketch in the \\( steadycoef fixedcoef \\)-plane the set of points \\( (steadycoef, fixedcoef) \\) such that \\( (2,5,4) \\) is one of the points \\( (verticalco, horizontal, depthcoord) \\) at which the linear function \\( steadycoef\\, verticalco+fixedcoef\\, horizontal+depthcoord \\) assumes its maximum value on \\( voidspace \\).",
+      "solution": "B-2.\n(a) \\( edgesnumx=7 \\). The seven vertices are \\( centerzero=(0,0,0), centeronee=(11,0,0), centertwoo=(0,9,0), centerthree=(0,0,8), centerfourr=(0,3,8), centerfivee=(9,0,2) \\), and \\( centersixxx=(4,7,0) \\).\n(b) \\( facesnum=11 \\). The eleven edges are \\( centerzero\\, centeronee, centerzero\\, centertwoo, centerzero\\, centerthree, centeronee\\, centerfivee, centeronee\\, centersixxx, centertwoo\\, centerfourr, centertwoo\\, centersixxx, centerthree\\, centerfourr, centerthree\\, centerfivee, centerfourr\\, centerfivee \\), and \\( centerfourr\\, centersixxx \\).\n(c) The desired ( \\( steadycoef, fixedcoef \\) ) are those with \\( steadycoef+fixedcoef=2 \\) and \\( 2 / 3 \\leqslant steadycoef \\leqslant 1 \\). Let \\( nonlinear(verticalco, horizontal, depthcoord)=steadycoef\\, verticalco+fixedcoef\\, horizontal+depthcoord \\). Since \\( nonlinear \\) is linear and \\( (2,5,4) \\) is on edge \\( centerfourr\\, centersixxx \\), the maximum of \\( nonlinear \\) on \\( voidspace \\) must be assumed at \\( centerfourr \\) and at \\( centersixxx \\) and the conditions on \\( steadycoef \\) and \\( fixedcoef \\) are obtained from \\( nonlinear(0,3,8)=nonlinear(4,7,0) \\geqslant nonlinear(verticalco, horizontal, depthcoord) \\), with \\( (verticalco, horizontal, depthcoord) \\) ranging over the other five vertices."
+    },
+    "garbled_string": {
+      "map": {
+        "b": "qzxwvtnp",
+        "c": "hjgrksla",
+        "x": "plmnbytu",
+        "y": "rqwksjdo",
+        "z": "mclprnad",
+        "L": "fkdjshwe",
+        "S": "jtyhcnvd",
+        "V_0": "lakwornm",
+        "V_1": "pqowieur",
+        "V_2": "zmxncbve",
+        "V_3": "weirnshd",
+        "V_4": "lakshdie",
+        "V_5": "mmzpqwoe",
+        "V_6": "apskdjfh",
+        "e": "wyqnsedl",
+        "v": "jurnsdke"
+      },
+      "question": "Problem B-2\nLet \\( jtyhcnvd \\) be the solid in three-dimensional space consisting of all points ( \\( plmnbytu, rqwksjdo, mclprnad \\) ) satisfying the following system of six simultaneous conditions:\n\\[\n\\begin{array}{l}\nplmnbytu \\geqslant 0, \\quad rqwksjdo \\geqslant 0, \\quad mclprnad \\geqslant 0 \\\\\nplmnbytu+rqwksjdo+mclprnad \\leqslant 11, \\\\\n2 plmnbytu+4 rqwksjdo+3 mclprnad \\leqslant 36 \\\\\n2 plmnbytu+3 mclprnad \\leqslant 24 .\n\\end{array}\n\\]\n(a) Determine the number \\( jurnsdke \\) of vertices of \\( jtyhcnvd \\).\n(b) Determine the number \\( wyqnsedl \\) of edges of \\( jtyhcnvd \\).\n(c) Sketch in the \\( qzxwvtnp hjgrksla \\)-plane the set of points \\( (qzxwvtnp, hjgrksla) \\) such that \\( (2,5,4) \\) is one of the points \\( (plmnbytu, rqwksjdo, mclprnad) \\) at which the linear function \\( qzxwvtnp plmnbytu+hjgrksla rqwksjdo+mclprnad \\) assumes its maximum value on \\( jtyhcnvd \\).",
+      "solution": "B-2.\n(a) \\( jurnsdke=7 \\). The seven vertices are \\( lakwornm=(0,0,0), pqowieur=(11,0,0), zmxncbve=(0,9,0), weirnshd=(0,0,8), lakshdie= \\) \\( (0,3,8), mmzpqwoe=(9,0,2) \\), and \\( apskdjfh=(4,7,0) \\).\n(b) \\( wyqnsedl=11 \\). The eleven edges are \\( lakwornm pqowieur, lakwornm zmxncbve, lakwornm weirnshd, pqowieur mmzpqwoe, pqowieur apskdjfh, zmxncbve lakshdie, zmxncbve apskdjfh, weirnshd lakshdie, weirnshd mmzpqwoe, lakshdie mmzpqwoe \\), and \\( lakshdie apskdjfh \\).\n(c) The desired ( \\( qzxwvtnp, hjgrksla \\) ) are those with \\( qzxwvtnp+hjgrksla=2 \\) and \\( 2 / 3 \\leqslant qzxwvtnp \\leqslant 1 \\). Let \\( fkdjshwe(plmnbytu, rqwksjdo, mclprnad)=qzxwvtnp plmnbytu+hjgrksla rqwksjdo+mclprnad \\). Since \\( fkdjshwe \\) is linear and \\( (2,5,4) \\) is on edge \\( lakshdie apskdjfh \\), the maximum of \\( fkdjshwe \\) on \\( jtyhcnvd \\) must be assumed at \\( lakshdie \\) and at \\( apskdjfh \\) and the conditions on \\( qzxwvtnp \\) and \\( hjgrksla \\) are obtained from \\( fkdjshwe(0,3,8)=fkdjshwe(4,7,0) \\geqslant fkdjshwe(plmnbytu, rqwksjdo, mclprnad) \\), with \\( (plmnbytu, rqwksjdo, mclprnad) \\) ranging over the other five vertices."
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\nS=\\Bigl\\{(x,y,z,w)\\in\\mathbb R^{4}\\;:\\;\n\\begin{aligned}\n&x\\ge 0,\\;y\\ge 0,\\;z\\ge 0,\\;w\\ge 0,\\\\\n&(2)\\;2x+y+z+w\\le 10,\\\\\n&(3)\\;x+2y+z+w\\le 10,\\\\\n&(4)\\;x+y+2z+w\\le 10,\\\\\n&(5)\\;x+y+z+2w\\le 10\n\\end{aligned}\\Bigr\\}.\n\\]\n\n(The inequality $x+y+z+w\\le 10$ that appeared in a previous draft is redundant, because adding (2)-(5) yields $5(x+y+z+w)\\le 40$ and hence $x+y+z+w\\le 8<10$ automatically.)\n\nThus $S$ is the compact convex polytope bounded by the eight facet-hyperplanes\n\\[\nx=0,\\;y=0,\\;z=0,\\;w=0,\\;(2),\\;(3),\\;(4),\\;(5).\n\\]\n\n(a) Determine the number $v$ of vertices of $S$.\n\n(b) Determine the number $e$ of edges of $S$.\n\n(c) Fix the vertex\n\\[\nP=\\Bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\Bigr).\n\\]\nFor which real pairs $(a,b)$ does the linear form\n\\[\nL(x,y,z,w)=ax+by+2z+3w\n\\]\nattain a maximum value over $S$ at $P$ (that is, $P$ is among the maximisers of $L$ on $S$)?\nDescribe and {\\it sketch} this set in the $ab$-plane.",
+      "solution": "Throughout denote the standard basis by\n\\[\ne_x=(1,0,0,0),\\quad e_y=(0,1,0,0),\\quad\ne_z=(0,0,1,0),\\quad e_w=(0,0,0,1),\n\\]\nand the outer normals of the \\emph{active} bounding inequalities by\n\\[\nn_2=(2,1,1,1),\\;\nn_3=(1,2,1,1),\\;\nn_4=(1,1,2,1),\\;\nn_5=(1,1,1,2).\n\\]\n\n--------------------------------------------------------------------\n(a)  Enumeration of the vertices\n--------------------------------------------------------------------\nThe system is completely symmetric in $x,y,z,w$.  \nA vertex is obtained by imposing four linearly independent\nfacet-equations that are active (that is, satisfied with equality).\nGrouping the possibilities by the number $k$ of zero coordinates\nyields\n\n$\\underline{k=4}: (0,0,0,0)$.\n\n$\\underline{k=3}: (5,0,0,0)$ and its three permutations.\n\n$\\underline{k=2}: \\bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\bigr)$\nand the five further permutations.\n\n$\\underline{k=1}: \\bigl(\\tfrac52,\\tfrac52,\\tfrac52,0\\bigr)$\nand the three further permutations.\n\n$\\underline{k=0}: (2,2,2,2)$.\n\nAltogether\n\\[\nv=1+4+6+4+1=16.\n\\]\n\n--------------------------------------------------------------------\n(b)  The number of edges\n--------------------------------------------------------------------\n\\emph{Claim.} $S$ is \\emph{simple} (exactly four independent facets meet at every vertex).\n\n\\emph{Proof of the claim.}  \nAny vertex has at least four active facets, because four variables/inequalities must be forced to equalities to pin down a single point in $\\mathbb R^{4}$.  \nConversely, the description above shows that no vertex ever lies on five independent inequality-hyperplanes: in each case at most four of the eight facet equations are satisfied with equality.  \nHence every vertex has precisely four active facets, so the claim follows. $\\square$\n\nBecause $S$ is simple, every vertex lies on exactly four edges.  The hand-shaking lemma therefore gives\n\\[\ne=\\frac{v\\cdot 4}{2}=32.\n\\]\n\n--------------------------------------------------------------------\n(c)  Description of all gradients maximised at\n$P=\\bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\bigr)$\n--------------------------------------------------------------------\n{\\bf Step 1 - the normal cone at $P$.}\n\nThe active facet-inequalities at $P$ are\n\\[\nz\\ge 0,\\qquad w\\ge 0,\\qquad\n2x+y+z+w\\le 10,\\qquad x+2y+z+w\\le 10.\n\\]\nHence the \\emph{outer} normals of the active facets are\n\\[\n-e_z,\\quad -e_w,\\quad n_2,\\quad n_3.\n\\]\nThe outer normal cone at $P$ is therefore\n\\[\nC=\\operatorname{pos}\\{-e_z,\\,-e_w,\\,n_2,\\,n_3\\}\\subset\\mathbb R^{4}.\n\\]\n\n{\\bf Step 2 - comparison vector of the linear form.}\n\nThe gradient of\n\\(\nL(x,y,z,w)=ax+by+2z+3w\n\\)\nis the vector $(a,b,2,3)$.\nFor $P$ to be a maximiser of $L$ on $S$ we must have\n\\[\n(a,b,2,3)\\in C .\n\\]\nWrite\n\\[\n(a,b,2,3)=\n\\lambda_1(-e_z)+\\lambda_2(-e_w)+\n\\lambda_3 n_2+\\lambda_4 n_3,\\qquad\n\\lambda_i\\ge 0.\n\\]\nEquating coordinates gives the linear system\n\\[\n\\begin{aligned}\na&=2\\lambda_3+\\lambda_4,\\\\\nb&=\\lambda_3+2\\lambda_4,\\\\\n2&=-\\lambda_1+\\lambda_3+\\lambda_4,\\\\\n3&=-\\lambda_2+\\lambda_3+\\lambda_4.\n\\end{aligned}\n\\tag{1}\n\\]\n\n{\\bf Step 3 - elimination of the Lagrange multipliers.}\n\nSolving the first two equations of (1) gives\n\\[\n\\lambda_3=\\frac{2a-b}{3},\\qquad\n\\lambda_4=\\frac{-a+2b}{3}.\n\\]\nImposing $\\lambda_3\\ge 0$ and $\\lambda_4\\ge 0$ yields the two\n\\emph{slope inequalities}\n\\[\nb\\le 2a,\\qquad a\\le 2b.\n\\tag{2}\n\\]\n\nFrom the third and fourth equations of (1) we obtain\n\\[\n\\lambda_1=\\lambda_3+\\lambda_4-2,\\qquad\n\\lambda_2=\\lambda_3+\\lambda_4-3.\n\\]\nBecause $\\lambda_1,\\lambda_2\\ge 0$ we need\n\\[\n\\lambda_3+\\lambda_4\\ge 3\n\\;\\Longleftrightarrow\\;\n\\frac{a+b}{3}\\ge 3\n\\;\\Longleftrightarrow\\;\na+b\\ge 9 .\n\\tag{3}\n\\]\n\nFinally, (2) and (3) together imply $a\\ge 3$ and $b\\ge 3$: indeed,\nif $a<3$ then $a+b<3+2a<9$, contradicting (3), and similarly for\n$b<3$.\n\n{\\bf Step 4 - necessity and sufficiency.}\n\nConversely, if the three inequalities\n\\[\n0\\le a\\le 2b,\\quad 0\\le b\\le 2a,\\quad a+b\\ge 9\n\\tag{4}\n\\]\nhold, then $\\lambda_3,\\lambda_4\\ge 0$ by (2), and\n$\\lambda_3+\\lambda_4\\ge 3$ by (3), so that the $\\lambda_i$ defined\nin (1) are all non-negative.  Thus $(a,b,2,3)\\in C$ and $P$\nmaximises $L$ on $S$.\n\nHence (4) is necessary and sufficient.\n\n{\\bf Step 5 - geometry in the $ab$-plane.}\n\nThe conditions (4) describe an \\emph{unbounded} convex wedge with the\nfollowing geometric features:\n\n$\\bullet$  The segment\n\\[\n(3,6)\\;\\text{-}\\;(6,3)\n\\]\nsits on the line $a+b=9$ and satisfies the slope bounds.\n\n$\\bullet$  Through $(3,6)$ runs the ray $b=2a\\;(a\\ge 3)$, and through\n$(6,3)$ runs the ray $a=2b\\;(b\\ge 3)$.  Moving outward along either\nray preserves all three inequalities.\n\nConsequently the feasible set is the infinite ``V''-shaped wedge whose\nfinite edge is the segment on $a+b=9$ between $(3,6)$ and\n$(6,3)$.\n\n--------------------------------------------------------------------\nAnswer to (c)\n\nThe linear form $L(x,y,z,w)=ax+by+2z+3w$ attains a maximum over $S$\nat\n\\(\nP=\\bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\bigr)\n\\)\n\\emph{iff} the pair $(a,b)$ satisfies\n\\[\n\\boxed{\\;\na\\ge 3,\\quad b\\ge 3,\\quad a+b\\ge 9,\\quad a\\le 2b,\\quad b\\le 2a\n\\;}.\n\\]\nIn the $ab$-plane this is the unbounded wedge with\nbase-segment $(3,6)$-$(6,3)$ on the line $a+b=9$ opening into the\nfirst quadrant with slopes $2$ and $\\tfrac12$.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.651312",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher dimension – The problem has been lifted from ℝ³ to ℝ⁴, so every combinatorial object (vertex, edge, facet) lives one dimension higher.  \n• More constraints – Five additional non-parallel supporting hyperplanes are imposed; the polytope now has nine facets instead of six.  \n• Polytope theory – The solution explicitly uses the notion of simple 4-polytopes, vertex-figures, and the edge-count formula e = 4v⁄2, concepts absent from the original problem.  \n• Heavier computation – Vertex enumeration requires solving several 4 × 4 systems; part (c) demands comparing a linear form at all sixteen vertices and distilling the normal cone at P, yielding a system of ten independent linear inequalities in the parameters (a,b).  \n• Parameter set in 2-space – Instead of a single line segment in the (b,c)-plane, the maximizer region is now a five-sided unbounded polygon in the a b-plane, forcing a more intricate sketch.\n\nThese additions raise both the conceptual and computational load well beyond that of the original problem and of the current kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let\n\\[\nS=\\Bigl\\{(x,y,z,w)\\in\\mathbb R^{4}\\;:\\;\n\\begin{aligned}\n&x\\ge 0,\\;y\\ge 0,\\;z\\ge 0,\\;w\\ge 0,\\\\\n&(2)\\;2x+y+z+w\\le 10,\\\\\n&(3)\\;x+2y+z+w\\le 10,\\\\\n&(4)\\;x+y+2z+w\\le 10,\\\\\n&(5)\\;x+y+z+2w\\le 10\n\\end{aligned}\\Bigr\\}.\n\\]\n\n(The inequality $x+y+z+w\\le 10$ that appeared in a previous draft is redundant, because adding (2)-(5) yields $5(x+y+z+w)\\le 40$ and hence $x+y+z+w\\le 8<10$ automatically.)\n\nThus $S$ is the compact convex polytope bounded by the eight facet-hyperplanes\n\\[\nx=0,\\;y=0,\\;z=0,\\;w=0,\\;(2),\\;(3),\\;(4),\\;(5).\n\\]\n\n(a) Determine the number $v$ of vertices of $S$.\n\n(b) Determine the number $e$ of edges of $S$.\n\n(c) Fix the vertex\n\\[\nP=\\Bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\Bigr).\n\\]\nFor which real pairs $(a,b)$ does the linear form\n\\[\nL(x,y,z,w)=ax+by+2z+3w\n\\]\nattain a maximum value over $S$ at $P$ (that is, $P$ is among the maximisers of $L$ on $S$)?\nDescribe and {\\it sketch} this set in the $ab$-plane.",
+      "solution": "Throughout denote the standard basis by\n\\[\ne_x=(1,0,0,0),\\quad e_y=(0,1,0,0),\\quad\ne_z=(0,0,1,0),\\quad e_w=(0,0,0,1),\n\\]\nand the outer normals of the \\emph{active} bounding inequalities by\n\\[\nn_2=(2,1,1,1),\\;\nn_3=(1,2,1,1),\\;\nn_4=(1,1,2,1),\\;\nn_5=(1,1,1,2).\n\\]\n\n--------------------------------------------------------------------\n(a)  Enumeration of the vertices\n--------------------------------------------------------------------\nThe system is completely symmetric in $x,y,z,w$.  \nA vertex is obtained by imposing four linearly independent\nfacet-equations that are active (that is, satisfied with equality).\nGrouping the possibilities by the number $k$ of zero coordinates\nyields\n\n$\\underline{k=4}: (0,0,0,0)$.\n\n$\\underline{k=3}: (5,0,0,0)$ and its three permutations.\n\n$\\underline{k=2}: \\bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\bigr)$\nand the five further permutations.\n\n$\\underline{k=1}: \\bigl(\\tfrac52,\\tfrac52,\\tfrac52,0\\bigr)$\nand the three further permutations.\n\n$\\underline{k=0}: (2,2,2,2)$.\n\nAltogether\n\\[\nv=1+4+6+4+1=16.\n\\]\n\n--------------------------------------------------------------------\n(b)  The number of edges\n--------------------------------------------------------------------\n\\emph{Claim.} $S$ is \\emph{simple} (exactly four independent facets meet at every vertex).\n\n\\emph{Proof of the claim.}  \nAny vertex has at least four active facets, because four variables/inequalities must be forced to equalities to pin down a single point in $\\mathbb R^{4}$.  \nConversely, the description above shows that no vertex ever lies on five independent inequality-hyperplanes: in each case at most four of the eight facet equations are satisfied with equality.  \nHence every vertex has precisely four active facets, so the claim follows. $\\square$\n\nBecause $S$ is simple, every vertex lies on exactly four edges.  The hand-shaking lemma therefore gives\n\\[\ne=\\frac{v\\cdot 4}{2}=32.\n\\]\n\n--------------------------------------------------------------------\n(c)  Description of all gradients maximised at\n$P=\\bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\bigr)$\n--------------------------------------------------------------------\n{\\bf Step 1 - the normal cone at $P$.}\n\nThe active facet-inequalities at $P$ are\n\\[\nz\\ge 0,\\qquad w\\ge 0,\\qquad\n2x+y+z+w\\le 10,\\qquad x+2y+z+w\\le 10.\n\\]\nHence the \\emph{outer} normals of the active facets are\n\\[\n-e_z,\\quad -e_w,\\quad n_2,\\quad n_3.\n\\]\nThe outer normal cone at $P$ is therefore\n\\[\nC=\\operatorname{pos}\\{-e_z,\\,-e_w,\\,n_2,\\,n_3\\}\\subset\\mathbb R^{4}.\n\\]\n\n{\\bf Step 2 - comparison vector of the linear form.}\n\nThe gradient of\n\\(\nL(x,y,z,w)=ax+by+2z+3w\n\\)\nis the vector $(a,b,2,3)$.\nFor $P$ to be a maximiser of $L$ on $S$ we must have\n\\[\n(a,b,2,3)\\in C .\n\\]\nWrite\n\\[\n(a,b,2,3)=\n\\lambda_1(-e_z)+\\lambda_2(-e_w)+\n\\lambda_3 n_2+\\lambda_4 n_3,\\qquad\n\\lambda_i\\ge 0.\n\\]\nEquating coordinates gives the linear system\n\\[\n\\begin{aligned}\na&=2\\lambda_3+\\lambda_4,\\\\\nb&=\\lambda_3+2\\lambda_4,\\\\\n2&=-\\lambda_1+\\lambda_3+\\lambda_4,\\\\\n3&=-\\lambda_2+\\lambda_3+\\lambda_4.\n\\end{aligned}\n\\tag{1}\n\\]\n\n{\\bf Step 3 - elimination of the Lagrange multipliers.}\n\nSolving the first two equations of (1) gives\n\\[\n\\lambda_3=\\frac{2a-b}{3},\\qquad\n\\lambda_4=\\frac{-a+2b}{3}.\n\\]\nImposing $\\lambda_3\\ge 0$ and $\\lambda_4\\ge 0$ yields the two\n\\emph{slope inequalities}\n\\[\nb\\le 2a,\\qquad a\\le 2b.\n\\tag{2}\n\\]\n\nFrom the third and fourth equations of (1) we obtain\n\\[\n\\lambda_1=\\lambda_3+\\lambda_4-2,\\qquad\n\\lambda_2=\\lambda_3+\\lambda_4-3.\n\\]\nBecause $\\lambda_1,\\lambda_2\\ge 0$ we need\n\\[\n\\lambda_3+\\lambda_4\\ge 3\n\\;\\Longleftrightarrow\\;\n\\frac{a+b}{3}\\ge 3\n\\;\\Longleftrightarrow\\;\na+b\\ge 9 .\n\\tag{3}\n\\]\n\nFinally, (2) and (3) together imply $a\\ge 3$ and $b\\ge 3$: indeed,\nif $a<3$ then $a+b<3+2a<9$, contradicting (3), and similarly for\n$b<3$.\n\n{\\bf Step 4 - necessity and sufficiency.}\n\nConversely, if the three inequalities\n\\[\n0\\le a\\le 2b,\\quad 0\\le b\\le 2a,\\quad a+b\\ge 9\n\\tag{4}\n\\]\nhold, then $\\lambda_3,\\lambda_4\\ge 0$ by (2), and\n$\\lambda_3+\\lambda_4\\ge 3$ by (3), so that the $\\lambda_i$ defined\nin (1) are all non-negative.  Thus $(a,b,2,3)\\in C$ and $P$\nmaximises $L$ on $S$.\n\nHence (4) is necessary and sufficient.\n\n{\\bf Step 5 - geometry in the $ab$-plane.}\n\nThe conditions (4) describe an \\emph{unbounded} convex wedge with the\nfollowing geometric features:\n\n$\\bullet$  The segment\n\\[\n(3,6)\\;\\text{-}\\;(6,3)\n\\]\nsits on the line $a+b=9$ and satisfies the slope bounds.\n\n$\\bullet$  Through $(3,6)$ runs the ray $b=2a\\;(a\\ge 3)$, and through\n$(6,3)$ runs the ray $a=2b\\;(b\\ge 3)$.  Moving outward along either\nray preserves all three inequalities.\n\nConsequently the feasible set is the infinite ``V''-shaped wedge whose\nfinite edge is the segment on $a+b=9$ between $(3,6)$ and\n$(6,3)$.\n\n--------------------------------------------------------------------\nAnswer to (c)\n\nThe linear form $L(x,y,z,w)=ax+by+2z+3w$ attains a maximum over $S$\nat\n\\(\nP=\\bigl(\\tfrac{10}{3},\\tfrac{10}{3},0,0\\bigr)\n\\)\n\\emph{iff} the pair $(a,b)$ satisfies\n\\[\n\\boxed{\\;\na\\ge 3,\\quad b\\ge 3,\\quad a+b\\ge 9,\\quad a\\le 2b,\\quad b\\le 2a\n\\;}.\n\\]\nIn the $ab$-plane this is the unbounded wedge with\nbase-segment $(3,6)$-$(6,3)$ on the line $a+b=9$ opening into the\nfirst quadrant with slopes $2$ and $\\tfrac12$.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.515689",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher dimension – The problem has been lifted from ℝ³ to ℝ⁴, so every combinatorial object (vertex, edge, facet) lives one dimension higher.  \n• More constraints – Five additional non-parallel supporting hyperplanes are imposed; the polytope now has nine facets instead of six.  \n• Polytope theory – The solution explicitly uses the notion of simple 4-polytopes, vertex-figures, and the edge-count formula e = 4v⁄2, concepts absent from the original problem.  \n• Heavier computation – Vertex enumeration requires solving several 4 × 4 systems; part (c) demands comparing a linear form at all sixteen vertices and distilling the normal cone at P, yielding a system of ten independent linear inequalities in the parameters (a,b).  \n• Parameter set in 2-space – Instead of a single line segment in the (b,c)-plane, the maximizer region is now a five-sided unbounded polygon in the a b-plane, forcing a more intricate sketch.\n\nThese additions raise both the conceptual and computational load well beyond that of the original problem and of the current kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

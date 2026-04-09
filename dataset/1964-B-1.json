@@ -1,0 +1,116 @@
+{
+  "index": "1964-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "1. Let \\( u_{k}(k=1,2, \\ldots) \\) be a sequence of integers, and let \\( V_{n} \\) be the number of those which are less than or equal to \\( n \\). Show that if\n\\[\n\\sum_{k=1}^{\\infty} 1 / u_{k}<\\infty\n\\]\nthen\n\\[\n\\lim _{n \\rightarrow \\infty} V_{n} / n=0\n\\]",
+  "solution": "Solution. It must have been intended that the \\( u \\) 's be positive, since otherwise we could have \\( \\Sigma 1 / u_{k} \\) convergent but all the \\( V \\) s infinite. Hence we assume that \\( \\Sigma 1 / u_{k} \\) is a convergent series of positive terms. Then \\( u_{k} \\rightarrow \\) \\( \\infty \\), and the \\( V \\) 's are finite. Since the convergence of a series of positive terms is not affected by rearrangement, we can assume that \\( u_{1} \\leq u_{2} \\leq u_{3} \\) \\( \\leq \\cdots \\). Then, for a fixed \\( p \\) and any \\( n \\) so large that \\( V_{n}>p \\) we have\n\\[\n\\sum_{k=p+1}^{V_{n}} 1 / u_{k} \\geq \\frac{V_{n}-p}{n}\n\\]\nbecause there are \\( V_{n}-p \\) terms in the sum and each is at least \\( 1 / n \\).\nTherefore\n\\[\n\\limsup _{n \\rightarrow \\infty} \\frac{V_{n}}{n} \\leq \\sum_{k=p+1}^{\\infty} 1 / u_{k}\n\\]\n\nSince this is true for any \\( p \\) we have\n\\[\n\\lim _{n \\rightarrow \\infty} \\frac{V_{n}}{n} \\leq \\lim _{p \\rightarrow \\infty} \\sum_{k=p+1}^{\\infty} 1 / u_{k}=0\n\\]\n\nBut \\( V_{n} / n \\geq 0 \\) for all \\( n \\), and therefore \\( \\lim _{n \\rightarrow \\infty} V_{n} / n=0 \\).\nRemarks. We need not assume the \\( u \\) 's are integers.\nWe might consider \\( u \\) 's of mixed sign and let \\( V_{n} \\) be the number of indices \\( j \\) for which \\( \\left|u_{j}\\right| \\leq n \\), but the convergence of \\( \\Sigma 1 / u_{k} \\) does not then imply that \\( V_{n} / n \\rightarrow 0 \\), as we see by considering \\( u_{k}=(-1)^{k} k \\).",
+  "vars": [
+    "u_k",
+    "V_n",
+    "n",
+    "k",
+    "p",
+    "u_1",
+    "u_2",
+    "u_3",
+    "j",
+    "u_j"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "u_k": "sequenceitem",
+        "V_n": "lessthanamount",
+        "n": "boundindex",
+        "k": "runningindex",
+        "p": "fixedindex",
+        "u_1": "firstelement",
+        "u_2": "secondelement",
+        "u_3": "thirdelement",
+        "j": "genericindex",
+        "u_j": "elementgeneric"
+      },
+      "question": "1. Let \\( sequenceitem(runningindex=1,2,\\ldots) \\) be a sequence of integers, and let \\( lessthanamount \\) be the number of those which are less than or equal to \\( boundindex \\). Show that if\n\\[\n\\sum_{runningindex=1}^{\\infty} \\frac{1}{sequenceitem}<\\infty\n\\]\nthen\n\\[\n\\lim_{boundindex \\rightarrow \\infty} \\frac{lessthanamount}{boundindex}=0\n\\]",
+      "solution": "Solution. It must have been intended that the \\( u \\) 's be positive, since otherwise we could have \\( \\Sigma \\frac{1}{sequenceitem} \\) convergent but all the \\( V \\) s infinite. Hence we assume that \\( \\Sigma \\frac{1}{sequenceitem} \\) is a convergent series of positive terms. Then \\( sequenceitem \\rightarrow \\infty \\), and the \\( V \\) 's are finite. Since the convergence of a series of positive terms is not affected by rearrangement, we can assume that \\( firstelement \\leq secondelement \\leq thirdelement \\leq \\cdots \\). Then, for a fixed \\( fixedindex \\) and any \\( boundindex \\) so large that \\( lessthanamount>fixedindex \\) we have\n\\[\n\\sum_{runningindex=fixedindex+1}^{lessthanamount} \\frac{1}{sequenceitem} \\geq \\frac{lessthanamount-fixedindex}{boundindex}\n\\]\nbecause there are \\( lessthanamount-fixedindex \\) terms in the sum and each is at least \\( \\frac{1}{boundindex} \\).\nTherefore\n\\[\n\\limsup_{boundindex \\rightarrow \\infty} \\frac{lessthanamount}{boundindex} \\leq \\sum_{runningindex=fixedindex+1}^{\\infty} \\frac{1}{sequenceitem}\n\\]\nSince this is true for any \\( fixedindex \\) we have\n\\[\n\\lim_{boundindex \\rightarrow \\infty} \\frac{lessthanamount}{boundindex} \\leq \\lim_{fixedindex \\rightarrow \\infty} \\sum_{runningindex=fixedindex+1}^{\\infty} \\frac{1}{sequenceitem}=0\n\\]\nBut \\( \\frac{lessthanamount}{boundindex} \\geq 0 \\) for all \\( boundindex \\), and therefore \\( \\lim_{boundindex \\rightarrow \\infty} \\frac{lessthanamount}{boundindex}=0 \\).\n\nRemarks. We need not assume the \\( u \\) 's are integers.\nWe might consider \\( u \\) 's of mixed sign and let \\( lessthanamount \\) be the number of indices \\( genericindex \\) for which \\( \\left|elementgeneric\\right| \\leq boundindex \\), but the convergence of \\( \\Sigma \\frac{1}{sequenceitem} \\) does not then imply that \\( \\frac{lessthanamount}{boundindex} \\rightarrow 0 \\), as we see by considering \\( sequenceitem = (-1)^{runningindex} runningindex \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "u_k": "copperleaf",
+        "V_n": "amberstone",
+        "n": "flutebird",
+        "k": "ivybranch",
+        "p": "damaskowl",
+        "u_1": "silverglow",
+        "u_2": "crimsondew",
+        "u_3": "jaspermist",
+        "j": "hazelwood",
+        "u_j": "opalgrace"
+      },
+      "question": "1. Let \\( copperleaf(ivybranch=1,2, \\ldots) \\) be a sequence of integers, and let \\( amberstone \\) be the number of those which are less than or equal to \\( flutebird \\). Show that if\n\\[\n\\sum_{ivybranch=1}^{\\infty} 1 / copperleaf<\\infty\n\\]\nthen\n\\[\n\\lim _{flutebird \\rightarrow \\infty} amberstone / flutebird=0\n\\]",
+      "solution": "Solution. It must have been intended that the \\( u \\) 's be positive, since otherwise we could have \\( \\Sigma 1 / copperleaf \\) convergent but all the V s infinite. Hence we assume that \\( \\Sigma 1 / copperleaf \\) is a convergent series of positive terms. Then \\( copperleaf \\rightarrow \\) \\( \\infty \\), and the V 's are finite. Since the convergence of a series of positive terms is not affected by rearrangement, we can assume that \\( silverglow \\leq crimsondew \\leq jaspermist \\) \\( \\leq \\cdots \\). Then, for a fixed \\( damaskowl \\) and any \\( flutebird \\) so large that \\( amberstone>damaskowl \\) we have\n\\[\n\\sum_{ivybranch=damaskowl+1}^{amberstone} 1 / copperleaf \\geq \\frac{amberstone-damaskowl}{flutebird}\n\\]\nbecause there are \\( amberstone-damaskowl \\) terms in the sum and each is at least \\( 1 / flutebird \\).\nTherefore\n\\[\n\\limsup _{flutebird \\rightarrow \\infty} \\frac{amberstone}{flutebird} \\leq \\sum_{ivybranch=damaskowl+1}^{\\infty} 1 / copperleaf\n\\]\n\nSince this is true for any \\( damaskowl \\) we have\n\\[\n\\lim _{flutebird \\rightarrow \\infty} \\frac{amberstone}{flutebird} \\leq \\lim _{damaskowl \\rightarrow \\infty} \\sum_{ivybranch=damaskowl+1}^{\\infty} 1 / copperleaf=0\n\\]\n\nBut \\( amberstone / flutebird \\geq 0 \\) for all \\( flutebird \\), and therefore \\( \\lim _{flutebird \\rightarrow \\infty} amberstone / flutebird=0 \\).\nRemarks. We need not assume the \\( u \\) 's are integers.\nWe might consider \\( u \\) 's of mixed sign and let \\( amberstone \\) be the number of indices \\( hazelwood \\) for which \\( \\left|opalgrace\\right| \\leq flutebird \\), but the convergence of \\( \\Sigma 1 / copperleaf \\) does not then imply that \\( amberstone / flutebird \\rightarrow 0 \\), as we see by considering \\( copperleaf=(-1)^{ivybranch} ivybranch \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "u_k": "fixedvalue",
+        "V_n": "limitless",
+        "n": "zeroindex",
+        "k": "omegaindex",
+        "p": "finiteone",
+        "u_1": "lastentry",
+        "u_2": "lastsecond",
+        "u_3": "lastthird",
+        "j": "terminal",
+        "u_j": "fixedterminal"
+      },
+      "question": "1. Let \\( fixedvalue(\\omegaindex=1,2, \\ldots) \\) be a sequence of integers, and let \\( limitless \\) be the number of those which are less than or equal to \\( zeroindex \\). Show that if\n\\[\n\\sum_{\\omegaindex=1}^{\\infty} 1 / fixedvalue<\\infty\n\\]\nthen\n\\[\n\\lim _{zeroindex \\rightarrow \\infty} limitless / zeroindex=0\n\\]",
+      "solution": "Solution. It must have been intended that the \\( u \\) 's be positive, since otherwise we could have \\( \\Sigma 1 / fixedvalue \\) convergent but all the \\( V \\) s infinite. Hence we assume that \\( \\Sigma 1 / fixedvalue \\) is a convergent series of positive terms. Then \\( fixedvalue \\rightarrow \\infty \\), and the \\( V \\) 's are finite. Since the convergence of a series of positive terms is not affected by rearrangement, we can assume that \\( lastentry \\leq lastsecond \\leq lastthird \\leq \\cdots \\). Then, for a fixed \\( finiteone \\) and any \\( zeroindex \\) so large that \\( limitless>finiteone \\) we have\n\\[\n\\sum_{\\omegaindex=finiteone+1}^{limitless} 1 / fixedvalue \\geq \\frac{limitless-finiteone}{zeroindex}\n\\]\nbecause there are \\( limitless-finiteone \\) terms in the sum and each is at least \\( 1 / zeroindex \\).\nTherefore\n\\[\n\\limsup _{zeroindex \\rightarrow \\infty} \\frac{limitless}{zeroindex} \\leq \\sum_{\\omegaindex=finiteone+1}^{\\infty} 1 / fixedvalue\n\\]\nSince this is true for any \\( finiteone \\) we have\n\\[\n\\lim _{zeroindex \\rightarrow \\infty} \\frac{limitless}{zeroindex} \\leq \\lim _{finiteone \\rightarrow \\infty} \\sum_{\\omegaindex=finiteone+1}^{\\infty} 1 / fixedvalue=0\n\\]\nBut \\( limitless / zeroindex \\geq 0 \\) for all \\( zeroindex \\), and therefore \\( \\lim _{zeroindex \\rightarrow \\infty} limitless / zeroindex=0 \\).\nRemarks. We need not assume the \\( u \\) 's are integers.\nWe might consider \\( u \\) 's of mixed sign and let \\( limitless \\) be the number of indices \\( terminal \\) for which \\( \\left|fixedterminal\\right| \\leq zeroindex \\), but the convergence of \\( \\Sigma 1 / fixedvalue \\) does not then imply that \\( limitless / zeroindex \\rightarrow 0 \\), as we see by considering \\( fixedvalue=(-1)^{\\omegaindex} \\, \\omegaindex \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "u_k": "qzxwvtnp",
+        "V_n": "hjgrksla",
+        "n": "fopitrgh",
+        "k": "bclmwaze",
+        "p": "sduqenrv",
+        "u_1": "mnjdaksq",
+        "u_2": "flkserty",
+        "u_3": "cprandop",
+        "j": "tewqplmz",
+        "u_j": "yibrcsao"
+      },
+      "question": "1. Let \\( qzxwvtnp(bclmwaze=1,2, \\ldots) \\) be a sequence of integers, and let \\( hjgrksla \\) be the number of those which are less than or equal to \\( fopitrgh \\). Show that if\n\\[\n\\sum_{bclmwaze=1}^{\\infty} 1 / qzxwvtnp<\\infty\n\\]\nthen\n\\[\n\\lim _{fopitrgh \\rightarrow \\infty} hjgrksla / fopitrgh=0\n\\]",
+      "solution": "Solution. It must have been intended that the \\( u \\) 's be positive, since otherwise we could have \\( \\Sigma 1 / qzxwvtnp \\) convergent but all the \\( V \\) s infinite. Hence we assume that \\( \\Sigma 1 / qzxwvtnp \\) is a convergent series of positive terms. Then \\( qzxwvtnp \\rightarrow \\infty \\), and the \\( V \\) 's are finite. Since the convergence of a series of positive terms is not affected by rearrangement, we can assume that \\( mnjdaksq \\leq flkserty \\leq cprandop \\leq \\cdots \\). Then, for a fixed \\( sduqenrv \\) and any \\( fopitrgh \\) so large that \\( hjgrksla>sduqenrv \\) we have\n\\[\n\\sum_{bclmwaze=sduqenrv+1}^{hjgrksla} 1 / qzxwvtnp \\geq \\frac{hjgrksla-sduqenrv}{fopitrgh}\n\\]\nbecause there are \\( hjgrksla-sduqenrv \\) terms in the sum and each is at least \\( 1 / fopitrgh \\).\nTherefore\n\\[\n\\limsup _{fopitrgh \\rightarrow \\infty} \\frac{hjgrksla}{fopitrgh} \\leq \\sum_{bclmwaze=sduqenrv+1}^{\\infty} 1 / qzxwvtnp\n\\]\n\nSince this is true for any \\( sduqenrv \\) we have\n\\[\n\\lim _{fopitrgh \\rightarrow \\infty} \\frac{hjgrksla}{fopitrgh} \\leq \\lim _{sduqenrv \\rightarrow \\infty} \\sum_{bclmwaze=sduqenrv+1}^{\\infty} 1 / qzxwvtnp=0\n\\]\n\nBut \\( hjgrksla / fopitrgh \\geq 0 \\) for all \\( fopitrgh \\), and therefore \\( \\lim _{fopitrgh \\rightarrow \\infty} hjgrksla / fopitrgh=0 \\).\nRemarks. We need not assume the \\( u \\) 's are integers.\nWe might consider \\( u \\) 's of mixed sign and let \\( hjgrksla \\) be the number of indices \\( tewqplmz \\) for which \\( \\left|yibrcsao\\right| \\leq fopitrgh \\), but the convergence of \\( \\Sigma 1 / qzxwvtnp \\) does not then imply that \\( hjgrksla / fopitrgh \\rightarrow 0 \\), as we see by considering \\( qzxwvtnp=(-1)^{bclmwaze} bclmwaze \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $(u_k)_{k\\ge 1}$ be a sequence of positive real numbers and, for each integer $n\\ge 1$, let\n\\[V_n = \\#\\{k : u_k \\le n\\}\\, .\\]\nAssume that the series\n\\[\\sum_{k=1}^{\\infty}\\frac{1}{u_k^{\\,2}}\\]\nconverges.  Prove that\n\\[\\lim_{n\\to\\infty}\\frac{V_n}{n^{2}} = 0 .\\]",
+      "solution": "Because the summand is positive, the convergence of \\sum 1/u_k^2 is not affected by any rearrangement, so we may reorder the sequence so that it is non-decreasing:\n\nu_1 \\leq  u_2 \\leq  u_3 \\leq  \\cdot \\cdot \\cdot  (>0).\n\nFix an integer p \\geq  1.  For any n with V_n > p we have\n\nu_{p+1}, \\ldots , u_{V_n} \\leq  n,\n\nso every one of the V_n-p terms u_k indexed from k = p+1 to k = V_n satisfies u_k^2 \\leq  n^2, hence\n\n1/u_k^2 \\geq  1/n^2  (k = p+1, \\ldots , V_n).\n\nTherefore\n\n\\sum _{k=p+1}^{V_n} 1/u_k^2 \\geq  (V_n - p)/n^2.\n\nSince the left-hand side does not exceed the tail of the full series, we obtain\n\n(V_n - p)/n^2 \\leq  \\sum _{k=p+1}^\\infty  1/u_k^2.\n\nTaking the upper limit as n\\to \\infty  gives\n\nlim sup_{n\\to \\infty } V_n/n^2 \\leq  \\sum _{k=p+1}^\\infty  1/u_k^2.\n\nBecause this bound holds for every fixed p, letting p\\to \\infty  drives the right-hand side to zero (the series converges).  Hence\n\nlim sup_{n\\to \\infty } V_n/n^2 = 0.\n\nSince V_n/n^2 \\geq  0, lim sup zero forces the entire limit to be zero.  Thus\n\nlim_{n\\to \\infty } V_n/n^2 = 0.\n\n(The same proof works with any exponent \\alpha >1 in place of 2.)",
+      "_meta": {
+        "core_steps": [
+          "Assume the terms are positive and reorder the sequence non-decreasingly.",
+          "Observe that u_k ≤ n ⇒ (current series-term) ≥ 1/n, giving a lower bound on the tail ∑_{p+1}^{V_n}.",
+          "Translate that bound into (V_n − p)/n ≤ tail-sum.",
+          "Take limsup as n→∞ and then let p→∞, forcing the limsup to vanish.",
+          "Use non-negativity to turn limsup = 0 into the full limit."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Nature of the sequence elements (need only be positive, not necessarily integral).",
+            "original": "u_k are integers"
+          },
+          "slot2": {
+            "description": "Exact power in the summand; any convergent p-series 1/u_k^α with α>1 keeps the comparison 1/u_k^α ≥ 1/n^α when u_k ≤ n.",
+            "original": "1/u_k (i.e., exponent α = 1)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

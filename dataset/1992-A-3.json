@@ -1,0 +1,97 @@
+{
+  "index": "1992-A-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "of positive integers, with $n$ relatively prime to $m$, which satisfy\n\\[\n(x^2 + y^2)^m = (xy)^n.\n\\]",
+  "solution": "Solution. Note that \\( x^{2}+y^{2}>x y \\), so \\( n>m \\). Let \\( d=\\operatorname{gcd}(x, y) \\), so \\( x=a d \\) and \\( y=b d \\) where \\( \\operatorname{gcd}(a, b)=1 \\). Then \\( \\left(a^{2}+b^{2}\\right)^{m}=d^{2(n-m)}(a b)^{n} \\). If \\( p \\) is a prime factor of \\( a \\), then \\( p \\) divides the right side of this equation, but not the left. Hence \\( a=1 \\), and similarly \\( b=1 \\). Thus \\( 2^{m}=d^{2(n-m)} \\). Now \\( m \\) must be even, so say \\( m=2 k \\), from which \\( 2^{k}=d^{n-2 k} \\), so \\( n-2 k \\) divides \\( k \\). Since \\( \\operatorname{gcd}(m, n)=1 \\), we have \\( n-2 k=\\operatorname{gcd}(n-2 k, k)=\\operatorname{gcd}(n, k)=1 \\), so \\( n=2 k+1 \\). Thus \\( d=x=y=2^{k} \\), and the solutions are as claimed.",
+  "vars": [
+    "x",
+    "y",
+    "m",
+    "n"
+  ],
+  "params": [
+    "d",
+    "a",
+    "b",
+    "p",
+    "k"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "firstvar",
+        "y": "secondvar",
+        "m": "powerm",
+        "n": "powern",
+        "d": "gcdscale",
+        "a": "coprimea",
+        "b": "coprimeb",
+        "p": "primefac",
+        "k": "halfpower"
+      },
+      "question": "of positive integers, with $powern$ relatively prime to $powerm$, which satisfy\n\\[\n(firstvar^{2} + secondvar^{2})^{powerm} = (firstvar\\,secondvar)^{powern}.\n\\]",
+      "solution": "Solution. Note that \\( firstvar^{2}+secondvar^{2}>firstvar\\,secondvar \\), so \\( powern>powerm \\). Let \\( gcdscale=\\operatorname{gcd}(firstvar, secondvar) \\), so \\( firstvar=coprimea\\,gcdscale \\) and \\( secondvar=coprimeb\\,gcdscale \\) where \\( \\operatorname{gcd}(coprimea, coprimeb)=1 \\). Then \\( \\left(coprimea^{2}+coprimeb^{2}\\right)^{powerm}=gcdscale^{2(powern-powerm)}(coprimea\\,coprimeb)^{powern} \\). If \\( primefac \\) is a prime factor of \\( coprimea \\), then \\( primefac \\) divides the right side of this equation, but not the left. Hence \\( coprimea=1 \\), and similarly \\( coprimeb=1 \\). Thus \\( 2^{powerm}=gcdscale^{2(powern-powerm)} \\). Now \\( powerm \\) must be even, so say \\( powerm=2\\,halfpower \\), from which \\( 2^{halfpower}=gcdscale^{powern-2\\,halfpower} \\), so \\( powern-2\\,halfpower \\) divides \\( halfpower \\). Since \\( \\operatorname{gcd}(powerm, powern)=1 \\), we have \\( powern-2\\,halfpower=\\operatorname{gcd}(powern-2\\,halfpower, halfpower)=\\operatorname{gcd}(powern, halfpower)=1 \\), so \\( powern=2\\,halfpower+1 \\). Thus \\( gcdscale=firstvar=secondvar=2^{halfpower} \\), and the solutions are as claimed."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sailboats",
+        "y": "pinecones",
+        "m": "fireflies",
+        "n": "doorbells",
+        "d": "raincloud",
+        "a": "moonlight",
+        "b": "snowflake",
+        "p": "riverbank",
+        "k": "sunflower"
+      },
+      "question": "of positive integers, with $doorbells$ relatively prime to $fireflies$, which satisfy\n\\[\n(sailboats^2 + pinecones^2)^{fireflies} = (sailboats pinecones)^{doorbells}.\n\\]",
+      "solution": "Solution. Note that \\( sailboats^{2}+pinecones^{2}>sailboats pinecones \\), so \\( doorbells>fireflies \\). Let \\( raincloud=\\operatorname{gcd}(sailboats, pinecones) \\), so \\( sailboats=moonlight raincloud \\) and \\( pinecones=snowflake raincloud \\) where \\( \\operatorname{gcd}(moonlight, snowflake)=1 \\). Then \\( \\left(moonlight^{2}+snowflake^{2}\\right)^{fireflies}=raincloud^{2(doorbells-fireflies)}(moonlight snowflake)^{doorbells} \\). If \\( riverbank \\) is a prime factor of \\( moonlight \\), then \\( riverbank \\) divides the right side of this equation, but not the left. Hence \\( moonlight=1 \\), and similarly \\( snowflake=1 \\). Thus \\( 2^{fireflies}=raincloud^{2(doorbells-fireflies)} \\). Now \\( fireflies \\) must be even, so say \\( fireflies=2 sunflower \\), from which \\( 2^{sunflower}=raincloud^{doorbells-2 sunflower} \\), so \\( doorbells-2 sunflower \\) divides \\( sunflower \\). Since \\( \\operatorname{gcd}(fireflies, doorbells)=1 \\), we have \\( doorbells-2 sunflower=\\operatorname{gcd}(doorbells-2 sunflower, sunflower)=\\operatorname{gcd}(doorbells, sunflower)=1 \\), so \\( doorbells=2 sunflower+1 \\). Thus \\( raincloud=sailboats=pinecones=2^{sunflower} \\), and the solutions are as claimed."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "y": "constantterm",
+        "m": "compositenum",
+        "n": "noncoprime",
+        "d": "leastcommon",
+        "a": "multipleval",
+        "b": "sharedfactor",
+        "p": "compositefactor",
+        "k": "doubleindex"
+      },
+      "question": "of positive integers, with $noncoprime$ relatively prime to $compositenum$, which satisfy\n\\[\n(fixedvalue^2 + constantterm^2)^{compositenum} = (fixedvalue constantterm)^{noncoprime}.\n\\]",
+      "solution": "Solution. Note that \\( fixedvalue^{2}+constantterm^{2}>fixedvalue\\, constantterm \\), so \\( noncoprime>compositenum \\). Let \\( leastcommon=\\operatorname{gcd}(fixedvalue, constantterm) \\), so \\( fixedvalue=multipleval\\, leastcommon \\) and \\( constantterm=sharedfactor\\, leastcommon \\) where \\( \\operatorname{gcd}(multipleval, sharedfactor)=1 \\). Then \\( \\left(multipleval^{2}+sharedfactor^{2}\\right)^{compositenum}=leastcommon^{2(noncoprime-compositenum)}(multipleval\\, sharedfactor)^{noncoprime} \\). If \\( compositefactor \\) is a prime factor of \\( multipleval \\), then \\( compositefactor \\) divides the right side of this equation, but not the left. Hence \\( multipleval=1 \\), and similarly \\( sharedfactor=1 \\). Thus \\( 2^{compositenum}=leastcommon^{2(noncoprime-compositenum)} \\). Now \\( compositenum \\) must be even, so say \\( compositenum=2\\, doubleindex \\), from which \\( 2^{doubleindex}=leastcommon^{noncoprime-2\\, doubleindex} \\), so \\( noncoprime-2\\, doubleindex \\) divides \\( doubleindex \\). Since \\( \\operatorname{gcd}(compositenum, noncoprime)=1 \\), we have \\( noncoprime-2\\, doubleindex=\\operatorname{gcd}(noncoprime-2\\, doubleindex, doubleindex)=\\operatorname{gcd}(noncoprime, doubleindex)=1 \\), so \\( noncoprime=2\\, doubleindex+1 \\). Thus \\( leastcommon=fixedvalue=constantterm=2^{doubleindex} \\), and the solutions are as claimed."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "m": "lfdasbqe",
+        "n": "pzmnrtcq",
+        "d": "wernfgvt",
+        "a": "zxcvmnlt",
+        "b": "ploqikjh",
+        "p": "tyuvasdf",
+        "k": "oiuylkjn"
+      },
+      "question": "of positive integers, with $pzmnrtcq$ relatively prime to $lfdasbqe$, which satisfy\n\\[\n(qzxwvtnp^2 + hjgrksla^2)^{lfdasbqe} = (qzxwvtnp hjgrksla)^{pzmnrtcq}.\n\\]",
+      "solution": "Solution. Note that \\( qzxwvtnp^{2}+hjgrksla^{2}>qzxwvtnp hjgrksla \\), so \\( pzmnrtcq>lfdasbqe \\). Let \\( wernfgvt=\\operatorname{gcd}(qzxwvtnp, hjgrksla) \\), so \\( qzxwvtnp=zxcvmnlt\\,wernfgvt \\) and \\( hjgrksla=ploqikjh\\,wernfgvt \\) where \\( \\operatorname{gcd}(zxcvmnlt, ploqikjh)=1 \\). Then \\( \\left(zxcvmnlt^{2}+ploqikjh^{2}\\right)^{lfdasbqe}=wernfgvt^{2(pzmnrtcq-lfdasbqe)}(zxcvmnlt\\,ploqikjh)^{pzmnrtcq} \\). If \\( tyuvasdf \\) is a prime factor of \\( zxcvmnlt \\), then \\( tyuvasdf \\) divides the right side of this equation, but not the left. Hence \\( zxcvmnlt=1 \\), and similarly \\( ploqikjh=1 \\). Thus \\( 2^{lfdasbqe}=wernfgvt^{2(pzmnrtcq-lfdasbqe)} \\). Now \\( lfdasbqe \\) must be even, so say \\( lfdasbqe=2\\,oiuylkjn \\), from which \\( 2^{oiuylkjn}=wernfgvt^{pzmnrtcq-2\\,oiuylkjn} \\), so \\( pzmnrtcq-2\\,oiuylkjn \\) divides \\( oiuylkjn \\). Since \\( \\operatorname{gcd}(lfdasbqe, pzmnrtcq)=1 \\), we have \\( pzmnrtcq-2\\,oiuylkjn=\\operatorname{gcd}(pzmnrtcq-2\\,oiuylkjn, oiuylkjn)=\\operatorname{gcd}(pzmnrtcq, oiuylkjn)=1 \\), so \\( pzmnrtcq=2\\,oiuylkjn+1 \\). Thus \\( wernfgvt=qzxwvtnp=hjgrksla=2^{oiuylkjn} \\), and the solutions are as claimed."
+    },
+    "kernel_variant": {
+      "question": "Fix an integer r \\geq  2. Find all positive integers (x, y, m, n) with gcd(m,n)=1 that satisfy  \n  (x^{2r}+y^{2r})^{\\,m} = (x^{r}y^{r})^{\\,n}.",
+      "solution": "Note that x^{2r}+y^{2r}>x^{r}y^{r}, so n > m.  \nPut d=gcd(x,y) and write x=ad, y=bd with gcd(a,b)=1.  Then  \n\n (a^{2r}+b^{2r})^{m}=d^{\\,r(2(n-m))}(ab)^{\\,rn}.  \n\nIf a prime p | a, it divides the right-hand side but not the left, contradiction; hence a=1, and likewise b=1.  \nThus  \n\n 2^{m}=d^{\\,r(2(n-m))}.  \n\nWrite d=2^{t}.  Because the right-hand side is an r-th power, r|m; put m=2rk (k\\geq 1).  The equality becomes  \n\n 2rk=tr(2(n-2rk)) \\Rightarrow  k=t(n-2rk).  \n\nSince gcd(m,n)=1 gives gcd(k,n)=1, we must have n-2rk=1; hence  \n\n n=2rk+1, t=k, x=y=2^{k}.  \n\nConversely, every quadruple  \n\n (x,y,m,n)=(2^{k},2^{k},2rk,2rk+1), k\\in \\mathbb{N},  \n\nindeed satisfies the equation.  These are all solutions.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.084854",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

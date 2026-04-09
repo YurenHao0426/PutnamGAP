@@ -1,0 +1,89 @@
+{
+  "index": "1980-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem A-5\nLet \\( P(t) \\) be a nonconstant polynomial with real coefficients. Prove that the system of simultaneous equations\n\\[\n0=\\int_{0}^{x} P(t) \\sin t d t=\\int_{0}^{x} P(t) \\cos t d t\n\\]\nhas only finitely many real solutions \\( x \\).",
+  "solution": "A-5.\nLet \\( Q=P-P^{\\prime \\prime}+P^{1 v}-\\cdots \\). Using repeated integrations by parts, the equations of the given system become\n\\[\n\\begin{array}{l}\n\\int_{0}^{x} P(t) \\sin t d t=-Q(x) \\cos x+Q^{\\prime}(x) \\sin x+Q(0)=0 \\\\\n\\int_{0}^{x} P(t) \\cos t d t=Q(x) \\sin x+Q^{\\prime}(x) \\cos x-Q^{\\prime}(0)=0\n\\end{array}\n\\]\n\nThese imply that\n\\[\nQ(x)=Q^{\\prime}(0) \\sin x+Q(0) \\cos x\n\\]\n\nSince \\( P \\) and, hence, \\( Q \\) are polynomials of positive degree and the right side of \\( (E) \\) is bounded, equation \\( (E) \\) has all of its solutions in some interval \\( |x| \\leqslant M \\). In such an interval, \\( P(x) \\sin x \\) has only finitely many zeros and \\( \\int_{0}^{x} P(t) \\sin t d t=0 \\) has at most one more zero by Rolle's Theorem.\nQ.E.D.",
+  "vars": [
+    "t",
+    "x"
+  ],
+  "params": [
+    "P",
+    "Q",
+    "M"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "t": "indvar",
+        "x": "realvar",
+        "P": "polyfun",
+        "Q": "auxpoly",
+        "M": "bounder"
+      },
+      "question": "Problem A-5\nLet \\( polyfun(indvar) \\) be a nonconstant polynomial with real coefficients. Prove that the system of simultaneous equations\n\\[\n0=\\int_{0}^{realvar} polyfun(indvar) \\sin indvar d indvar=\\int_{0}^{realvar} polyfun(indvar) \\cos indvar d indvar\n\\]\nhas only finitely many real solutions \\( realvar \\).",
+      "solution": "A-5.\nLet \\( auxpoly=polyfun-polyfun^{\\prime \\prime}+polyfun^{1 v}-\\cdots \\). Using repeated integrations by parts, the equations of the given system become\n\\[\n\\begin{array}{l}\n\\int_{0}^{realvar} polyfun(indvar) \\sin indvar d indvar=-auxpoly(realvar) \\cos realvar+auxpoly^{\\prime}(realvar) \\sin realvar+auxpoly(0)=0 \\\\\n\\int_{0}^{realvar} polyfun(indvar) \\cos indvar d indvar=auxpoly(realvar) \\sin realvar+auxpoly^{\\prime}(realvar) \\cos realvar-auxpoly^{\\prime}(0)=0\n\\end{array}\n\\]\n\nThese imply that\n\\[\nauxpoly(realvar)=auxpoly^{\\prime}(0) \\sin realvar+auxpoly(0) \\cos realvar\n\\]\n\nSince \\( polyfun \\) and, hence, \\( auxpoly \\) are polynomials of positive degree and the right side of \\( (E) \\) is bounded, equation \\( (E) \\) has all of its solutions in some interval \\( |realvar| \\leqslant bounder \\). In such an interval, \\( polyfun(realvar) \\sin realvar \\) has only finitely many zeros and \\( \\int_{0}^{realvar} polyfun(indvar) \\sin indvar d indvar=0 \\) has at most one more zero by Rolle's Theorem.\nQ.E.D."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "t": "lantern",
+        "x": "meadowland",
+        "P": "horizonline",
+        "Q": "sandcastle",
+        "M": "blueberries"
+      },
+      "question": "Problem A-5\nLet \\( horizonline(lantern) \\) be a nonconstant polynomial with real coefficients. Prove that the system of simultaneous equations\n\\[\n0=\\int_{0}^{meadowland} horizonline(lantern) \\sin lantern d lantern=\\int_{0}^{meadowland} horizonline(lantern) \\cos lantern d lantern\n\\]\nhas only finitely many real solutions \\( meadowland \\).",
+      "solution": "A-5.\nLet \\( sandcastle=horizonline-horizonline^{\\prime \\prime}+horizonline^{1 v}-\\cdots \\). Using repeated integrations by parts, the equations of the given system become\n\\[\n\\begin{array}{l}\n\\int_{0}^{meadowland} horizonline(lantern) \\sin lantern d lantern=-sandcastle(meadowland) \\cos meadowland+sandcastle^{\\prime}(meadowland) \\sin meadowland+sandcastle(0)=0 \\\\\n\\int_{0}^{meadowland} horizonline(lantern) \\cos lantern d lantern=sandcastle(meadowland) \\sin meadowland+sandcastle^{\\prime}(meadowland) \\cos meadowland-sandcastle^{\\prime}(0)=0\n\\end{array}\n\\]\n\nThese imply that\n\\[\nsandcastle(meadowland)=sandcastle^{\\prime}(0) \\sin meadowland+sandcastle(0) \\cos meadowland\n\\]\n\nSince \\( horizonline \\) and, hence, \\( sandcastle \\) are polynomials of positive degree and the right side of \\( (E) \\) is bounded, equation \\( (E) \\) has all of its solutions in some interval \\( |meadowland| \\leqslant blueberries \\). In such an interval, \\( horizonline(meadowland) \\sin meadowland \\) has only finitely many zeros and \\( \\int_{0}^{meadowland} horizonline(lantern) \\sin lantern d lantern=0 \\) has at most one more zero by Rolle's Theorem.\nQ.E.D."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "t": "timeless",
+        "x": "knownvalue",
+        "P": "constant",
+        "Q": "motionless",
+        "M": "unbounded"
+      },
+      "question": "Problem A-5\nLet \\( constant(timeless) \\) be a nonconstant polynomial with real coefficients. Prove that the system of simultaneous equations\n\\[\n0=\\int_{0}^{knownvalue} constant(timeless) \\sin timeless d timeless=\\int_{0}^{knownvalue} constant(timeless) \\cos timeless d timeless\n\\]\nhas only finitely many real solutions \\( knownvalue \\).",
+      "solution": "A-5.\nLet \\( motionless=constant-constant^{\\prime \\prime}+constant^{1 v}-\\cdots \\). Using repeated integrations by parts, the equations of the given system become\n\\[\n\\begin{array}{l}\n\\int_{0}^{knownvalue} constant(timeless) \\sin timeless d timeless=-motionless(knownvalue) \\cos knownvalue+motionless^{\\prime}(knownvalue) \\sin knownvalue+motionless(0)=0 \\\\\n\\int_{0}^{knownvalue} constant(timeless) \\cos timeless d timeless=motionless(knownvalue) \\sin knownvalue+motionless^{\\prime}(knownvalue) \\cos knownvalue-motionless^{\\prime}(0)=0\n\\end{array}\n\\]\n\nThese imply that\n\\[\nmotionless(knownvalue)=motionless^{\\prime}(0) \\sin knownvalue+motionless(0) \\cos knownvalue\n\\]\n\nSince \\( constant \\) and, hence, \\( motionless \\) are polynomials of positive degree and the right side of \\( (E) \\) is bounded, equation \\( (E) \\) has all of its solutions in some interval \\( |knownvalue| \\leqslant unbounded \\). In such an interval, \\( constant(knownvalue) \\sin knownvalue \\) has only finitely many zeros and \\( \\int_{0}^{knownvalue} constant(timeless) \\sin timeless d timeless=0 \\) has at most one more zero by Rolle's Theorem.\nQ.E.D."
+    },
+    "garbled_string": {
+      "map": {
+        "t": "qzxwvtnp",
+        "x": "hjgrksla",
+        "P": "mnbvcxzas",
+        "Q": "plokijuhy",
+        "M": "qazwsxedc"
+      },
+      "question": "Problem A-5\nLet \\( mnbvcxzas(hjgrksla) \\) be a nonconstant polynomial with real coefficients. Prove that the system of simultaneous equations\n\\[\n0=\\int_{0}^{hjgrksla} mnbvcxzas(qzxwvtnp) \\sin qzxwvtnp d qzxwvtnp=\\int_{0}^{hjgrksla} mnbvcxzas(qzxwvtnp) \\cos qzxwvtnp d qzxwvtnp\n\\]\nhas only finitely many real solutions \\( hjgrksla \\).",
+      "solution": "A-5.\nLet \\( plokijuhy=mnbvcxzas-mnbvcxzas^{\\prime \\prime}+mnbvcxzas^{1 v}-\\cdots \\). Using repeated integrations by parts, the equations of the given system become\n\\[\n\\begin{array}{l}\n\\int_{0}^{hjgrksla} mnbvcxzas(qzxwvtnp) \\sin qzxwvtnp d qzxwvtnp=-plokijuhy(hjgrksla) \\cos hjgrksla+plokijuhy^{\\prime}(hjgrksla) \\sin hjgrksla+plokijuhy(0)=0 \\\\\n\\int_{0}^{hjgrksla} mnbvcxzas(qzxwvtnp) \\cos qzxwvtnp d qzxwvtnp=plokijuhy(hjgrksla) \\sin hjgrksla+plokijuhy^{\\prime}(hjgrksla) \\cos hjgrksla-plokijuhy^{\\prime}(0)=0\n\\end{array}\n\\]\n\nThese imply that\n\\[\nplokijuhy(hjgrksla)=plokijuhy^{\\prime}(0) \\sin hjgrksla+plokijuhy(0) \\cos hjgrksla\n\\]\n\nSince \\( mnbvcxzas \\) and, hence, \\( plokijuhy \\) are polynomials of positive degree and the right side of \\( (E) \\) is bounded, equation \\( (E) \\) has all of its solutions in some interval \\( |hjgrksla| \\leqslant qazwsxedc \\). In such an interval, \\( mnbvcxzas(hjgrksla) \\sin hjgrksla \\) has only finitely many zeros and \\( \\int_{0}^{hjgrksla} mnbvcxzas(qzxwvtnp) \\sin qzxwvtnp d qzxwvtnp=0 \\) has at most one more zero by Rolle's Theorem.\nQ.E.D."
+    },
+    "kernel_variant": {
+      "question": "Let m \\geq  2 and r \\geq  1 be fixed integers and let k_1,\\ldots ,k_m be pairwise-distinct positive integers.  \nFor a non-constant real polynomial P(t) define, for every j = 1,\\ldots ,m,\n\n  S_j(x) = \\int _{\\pi }^{x} t^{\\,r} P(t) sin(k_j t) dt,    \n  C_j(x) = \\int _{\\pi }^{x} t^{\\,r} P(t) cos(k_j t) dt     (x \\in  \\mathbb{R}).\n\nProve that the simultaneous system  \n\n  S_j(x) = 0 and C_j(x) = 0 for all j = 1,\\ldots ,m               (\\star )\n\nhas only finitely many real solutions x.",
+      "solution": "Step 1.  Passage to a single complex equation  \nPut f(t) = t^{\\,r} P(t)   (deg f \\geq  1).  For k > 0 define  \n\n  I_k(x) = \\int _{\\pi }^{x} f(t) e^{ik t} dt    (x \\in  \\mathbb{R}).  \n\nThen, for every k > 0,\n\n  Re I_k(x) = C_k(x), Im I_k(x) = S_k(x),\n\nwhere C_k(x) = \\int _{\\pi }^{x} f(t) cos(kt) dt and S_k(x) = \\int _{\\pi }^{x} f(t) sin(kt) dt.  \nHence (\\star ) is equivalent to  \n\n  I_{k_j}(x) = 0  (j = 1,\\ldots ,m).                                          (1)\n\n\n\nStep 2.  Closed form for I_k  \nFix k > 0 and seek a polynomial Q_k satisfying  \n\n  Q_k'(x) + ik Q_k(x) = f(x).                                           (2)\n\nWriting Q_k(x) = \\Sigma _{j=0}^{d} a_j x^{j} (d = deg f) and comparing coefficients gives a unique polynomial solution Q_k of degree d (adding a homogeneous term Ce^{-ikx} never yields another polynomial).  Then  \n\n  d/dx [e^{ikx} Q_k(x)] = e^{ikx} (Q_k' + ik Q_k) = e^{ikx} f(x),\n\nso integrating from \\pi  to x yields  \n\n  I_k(x) = e^{ikx} Q_k(x) - e^{ik\\pi } Q_k(\\pi ).                            (3)\n\n\n\nStep 3.  Consequences of I_k(x) = 0  \nIf x solves I_k(x)=0, (3) gives  \n\n  e^{ikx} Q_k(x) = e^{ik\\pi } Q_k(\\pi ) \\Rightarrow  Q_k(x) = e^{-ik(x-\\pi )} Q_k(\\pi ).    (4)\n\nHence  \n\n  |Q_k(x)| = |Q_k(\\pi )|,                                          (5)\n\na fixed non-negative constant that may be 0.  Define the sub-level set  \n\n  E_k = { x \\in  \\mathbb{R} : |Q_k(x)| \\leq  |Q_k(\\pi )| }.                               (6)\n\nBecause Q_k is a non-constant polynomial, |Q_k(x)| \\to  \\infty  as |x| \\to  \\infty , so E_k is bounded.  Indeed, if |Q_k(\\pi )| = 0, then E_k = { x : Q_k(x) = 0 }, a finite set; otherwise E_k is contained in some closed interval [-M_k, M_k] with M_k > 0.\n\n\n\nStep 4.  A common compact enclosure  \nPut M = max{M_{k_1}, \\ldots , M_{k_m}}, where each M_{k_j} is chosen so that E_{k_j} \\subset  [-M_{k_j}, M_{k_j}].  \nEvery x satisfying (1) lies in E_{k_j} for every j, hence in [-M, M].\n\n\n\nStep 5.  Finiteness of the zero sets  \nFor each fixed k, formula (3) shows that I_k is real-analytic and not identically zero (f \\not\\equiv  0).  Therefore its real zeros are isolated.  On the compact interval [-M, M] the set  \n\n  Z_j = { x \\in  [-M, M] : I_{k_j}(x) = 0 }\n\nis finite.  The solution set of (1) is Z_1 \\cap  \\ldots  \\cap  Z_m, an intersection of finitely many finite sets, hence itself finite.\n\n\n\nConclusion.  The system (\\star ) admits only finitely many real solutions. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.648658",
+        "was_fixed": false,
+        "difficulty_analysis": "• Multiple interacting frequencies k₁,…,kₘ introduce m pairs of transcendental constraints instead of one, forcing the solver to handle a family of equations simultaneously.  \n• A polynomial weight t^{r}P(t) (with r ≥ 1) raises the integrand’s degree and requires repeated integration-by-parts or the solution of a linear ODE; ordinary one-step arguments no longer suffice.  \n• The shift of the lower limit from 0 to π removes symmetry that simplified the original, and the constant term acquired in (2) must now be tracked carefully.  \n• The solution demands the construction of a polynomial satisfying a differential equation, an argument with complex exponentials, modulus considerations, and an analytic-function zero-set argument—several advanced techniques that were unnecessary in the original problem.  \n• Simultaneously bounding all solutions through individual polynomial envelopes and then appealing to analyticity is a more intricate strategy than the single-frequency, single-equation approach of the original. Overall, the added parameters, the higher-degree weight, and the need to coordinate multiple analytic conditions make this variant substantially more complex."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let m \\geq  2 and r \\geq  1 be fixed integers and let k_1,\\ldots ,k_m be pairwise-distinct positive integers.  \nFor a non-constant real polynomial P(t) define, for every j = 1,\\ldots ,m,\n\n  S_j(x) = \\int _{\\pi }^{x} t^{\\,r} P(t) sin(k_j t) dt,    \n  C_j(x) = \\int _{\\pi }^{x} t^{\\,r} P(t) cos(k_j t) dt     (x \\in  \\mathbb{R}).\n\nProve that the simultaneous system  \n\n  S_j(x) = 0 and C_j(x) = 0 for all j = 1,\\ldots ,m               (\\star )\n\nhas only finitely many real solutions x.",
+      "solution": "Step 1.  Passage to a single complex equation  \nPut f(t) = t^{\\,r} P(t)   (deg f \\geq  1).  For k > 0 define  \n\n  I_k(x) = \\int _{\\pi }^{x} f(t) e^{ik t} dt    (x \\in  \\mathbb{R}).  \n\nThen, for every k > 0,\n\n  Re I_k(x) = C_k(x), Im I_k(x) = S_k(x),\n\nwhere C_k(x) = \\int _{\\pi }^{x} f(t) cos(kt) dt and S_k(x) = \\int _{\\pi }^{x} f(t) sin(kt) dt.  \nHence (\\star ) is equivalent to  \n\n  I_{k_j}(x) = 0  (j = 1,\\ldots ,m).                                          (1)\n\n\n\nStep 2.  Closed form for I_k  \nFix k > 0 and seek a polynomial Q_k satisfying  \n\n  Q_k'(x) + ik Q_k(x) = f(x).                                           (2)\n\nWriting Q_k(x) = \\Sigma _{j=0}^{d} a_j x^{j} (d = deg f) and comparing coefficients gives a unique polynomial solution Q_k of degree d (adding a homogeneous term Ce^{-ikx} never yields another polynomial).  Then  \n\n  d/dx [e^{ikx} Q_k(x)] = e^{ikx} (Q_k' + ik Q_k) = e^{ikx} f(x),\n\nso integrating from \\pi  to x yields  \n\n  I_k(x) = e^{ikx} Q_k(x) - e^{ik\\pi } Q_k(\\pi ).                            (3)\n\n\n\nStep 3.  Consequences of I_k(x) = 0  \nIf x solves I_k(x)=0, (3) gives  \n\n  e^{ikx} Q_k(x) = e^{ik\\pi } Q_k(\\pi ) \\Rightarrow  Q_k(x) = e^{-ik(x-\\pi )} Q_k(\\pi ).    (4)\n\nHence  \n\n  |Q_k(x)| = |Q_k(\\pi )|,                                          (5)\n\na fixed non-negative constant that may be 0.  Define the sub-level set  \n\n  E_k = { x \\in  \\mathbb{R} : |Q_k(x)| \\leq  |Q_k(\\pi )| }.                               (6)\n\nBecause Q_k is a non-constant polynomial, |Q_k(x)| \\to  \\infty  as |x| \\to  \\infty , so E_k is bounded.  Indeed, if |Q_k(\\pi )| = 0, then E_k = { x : Q_k(x) = 0 }, a finite set; otherwise E_k is contained in some closed interval [-M_k, M_k] with M_k > 0.\n\n\n\nStep 4.  A common compact enclosure  \nPut M = max{M_{k_1}, \\ldots , M_{k_m}}, where each M_{k_j} is chosen so that E_{k_j} \\subset  [-M_{k_j}, M_{k_j}].  \nEvery x satisfying (1) lies in E_{k_j} for every j, hence in [-M, M].\n\n\n\nStep 5.  Finiteness of the zero sets  \nFor each fixed k, formula (3) shows that I_k is real-analytic and not identically zero (f \\not\\equiv  0).  Therefore its real zeros are isolated.  On the compact interval [-M, M] the set  \n\n  Z_j = { x \\in  [-M, M] : I_{k_j}(x) = 0 }\n\nis finite.  The solution set of (1) is Z_1 \\cap  \\ldots  \\cap  Z_m, an intersection of finitely many finite sets, hence itself finite.\n\n\n\nConclusion.  The system (\\star ) admits only finitely many real solutions. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.514481",
+        "was_fixed": false,
+        "difficulty_analysis": "• Multiple interacting frequencies k₁,…,kₘ introduce m pairs of transcendental constraints instead of one, forcing the solver to handle a family of equations simultaneously.  \n• A polynomial weight t^{r}P(t) (with r ≥ 1) raises the integrand’s degree and requires repeated integration-by-parts or the solution of a linear ODE; ordinary one-step arguments no longer suffice.  \n• The shift of the lower limit from 0 to π removes symmetry that simplified the original, and the constant term acquired in (2) must now be tracked carefully.  \n• The solution demands the construction of a polynomial satisfying a differential equation, an argument with complex exponentials, modulus considerations, and an analytic-function zero-set argument—several advanced techniques that were unnecessary in the original problem.  \n• Simultaneously bounding all solutions through individual polynomial envelopes and then appealing to analyticity is a more intricate strategy than the single-frequency, single-equation approach of the original. Overall, the added parameters, the higher-degree weight, and the need to coordinate multiple analytic conditions make this variant substantially more complex."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

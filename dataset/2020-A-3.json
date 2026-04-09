@@ -1,0 +1,102 @@
+{
+  "index": "2020-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $a_0 = \\pi/2$, and let $a_n = \\sin(a_{n-1})$ for $n \\geq 1$. Determine whether\n\\[\n\\sum_{n=1}^\\infty a_n^2\n\\]\nconverges.",
+  "solution": "The series diverges. First note that since $\\sin (x)<x$ for all $x>0$, the sequence $\\{a_n\\}$ is positive and decreasing, with $a_1=1$. Next, we observe that for $x \\in [0,1]$, $\\sin(x) \\geq x-x^3/6$: this follows from Taylor's theorem with remainder, since $\\sin(x) = x- x^3/6+(\\sin c)x^4/24$ for some $c$ between $0$ and $x$.\n\nWe now claim that $a_n \\geq 1/\\sqrt{n}$ for all $n \\geq 1$; it follows that $\\sum a_n^2$ diverges since $\\sum 1/n$ diverges. To prove the claim, we induct on $n$, with $n=1$ being trivial. Suppose that $a_n \\geq 1/\\sqrt{n}$. To prove $\\sin(a_n) \\geq 1/\\sqrt{n+1}$, note that since $\\sin(a_n) \\geq \\sin(1/\\sqrt{n})$, it suffices to prove that $x-x^3/6 \\geq (n+1)^{-1/2}$ where $x=1/\\sqrt{n}$. Squaring both sides and clearing denominators, we find that this is equivalent to $(n+1)(6n-1)^2 \\geq 36n^3$, or $24n^2-11n+1 \\geq 0$. But this last inequality is true since $24n^2-11n+1 = (3n-1)(8n-1)$, and the induction is complete.",
+  "vars": [
+    "a_0",
+    "a_n",
+    "a_n-1",
+    "a_1",
+    "n",
+    "x",
+    "c"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_0": "firstterm",
+        "a_n": "seqterm",
+        "a_n-1": "prevterm",
+        "a_1": "seedterm",
+        "n": "indexer",
+        "x": "realvar",
+        "c": "midpoint"
+      },
+      "question": "Let $firstterm = \\pi/2$, and let $seqterm = \\sin(prevterm)$ for $indexer \\geq 1$. Determine whether\n\\[\n\\sum_{indexer=1}^\\infty seqterm^2\n\\]\nconverges.",
+      "solution": "The series diverges. First note that since $\\sin (realvar)<realvar$ for all $realvar>0$, the sequence $\\{seqterm\\}$ is positive and decreasing, with $seedterm=1$. Next, we observe that for $realvar \\in [0,1]$, $\\sin(realvar) \\geq realvar-realvar^3/6$: this follows from Taylor's theorem with remainder, since $\\sin(realvar) = realvar- realvar^3/6+(\\sin midpoint)realvar^4/24$ for some $midpoint$ between $0$ and $realvar$.\n\nWe now claim that $seqterm \\geq 1/\\sqrt{indexer}$ for all $indexer \\geq 1$; it follows that $\\sum seqterm^2$ diverges since $\\sum 1/indexer$ diverges. To prove the claim, we induct on $indexer$, with $indexer=1$ being trivial. Suppose that $seqterm \\geq 1/\\sqrt{indexer}$. To prove $\\sin(seqterm) \\geq 1/\\sqrt{indexer+1}$, note that since $\\sin(seqterm) \\geq \\sin(1/\\sqrt{indexer})$, it suffices to prove that $realvar-realvar^3/6 \\geq (indexer+1)^{-1/2}$ where $realvar=1/\\sqrt{indexer}$. Squaring both sides and clearing denominators, we find that this is equivalent to $(indexer+1)(6indexer-1)^2 \\geq 36indexer^3$, or $24indexer^2-11indexer+1 \\geq 0$. But this last inequality is true since $24indexer^2-11indexer+1 = (3indexer-1)(8indexer-1)$, and the induction is complete."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_0": "orangepath",
+        "a_n": "tableplant",
+        "a_n-1": "cloudyhill",
+        "a_1": "silverlake",
+        "n": "kangaroos",
+        "x": "blueberry",
+        "c": "starflower"
+      },
+      "question": "Let $orangepath = \\pi/2$, and let $tableplant = \\sin(cloudyhill)$ for $kangaroos \\geq 1$. Determine whether\n\\[\n\\sum_{kangaroos=1}^\\infty tableplant^2\n\\]\nconverges.",
+      "solution": "The series diverges. First note that since $\\sin (blueberry)<blueberry$ for all $blueberry>0$, the sequence $\\{tableplant\\}$ is positive and decreasing, with $silverlake=1$. Next, we observe that for $blueberry \\in [0,1]$, $\\sin(blueberry) \\geq blueberry-blueberry^3/6$: this follows from Taylor's theorem with remainder, since $\\sin(blueberry) = blueberry- blueberry^3/6+(\\sin starflower)blueberry^4/24$ for some $starflower$ between $0$ and $blueberry$.\n\nWe now claim that $tableplant \\geq 1/\\sqrt{kangaroos}$ for all $kangaroos \\geq 1$; it follows that $\\sum tableplant^2$ diverges since $\\sum 1/kangaroos$ diverges. To prove the claim, we induct on $kangaroos$, with $kangaroos=1$ being trivial. Suppose that $tableplant \\geq 1/\\sqrt{kangaroos}$. To prove $\\sin(tableplant) \\geq 1/\\sqrt{kangaroos+1}$, note that since $\\sin(tableplant) \\geq \\sin(1/\\sqrt{kangaroos})$, it suffices to prove that $blueberry-blueberry^3/6 \\geq (kangaroos+1)^{-1/2}$ where $blueberry=1/\\sqrt{kangaroos}$. Squaring both sides and clearing denominators, we find that this is equivalent to $(kangaroos+1)(6kangaroos-1)^2 \\geq 36kangaroos^3$, or $24kangaroos^2-11kangaroos+1 \\geq 0$. But this last inequality is true since $24kangaroos^2-11kangaroos+1 = (3kangaroos-1)(8kangaroos-1)$, and the induction is complete."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_0": "endingvalue",
+        "a_n": "staticconstant",
+        "a_n-1": "futurevalue",
+        "a_1": "lastterm",
+        "n": "limitvalue",
+        "x": "fixedvalue",
+        "c": "variablepoint"
+      },
+      "question": "Let $endingvalue = \\pi/2$, and let $staticconstant = \\sin(futurevalue)$ for $limitvalue \\geq 1$. Determine whether\n\\[\n\\sum_{limitvalue=1}^\\infty staticconstant^2\n\\]\nconverges.",
+      "solution": "The series diverges. First note that since $\\sin (fixedvalue)<fixedvalue$ for all $fixedvalue>0$, the sequence $\\{staticconstant\\}$ is positive and decreasing, with $lastterm=1$. Next, we observe that for $fixedvalue \\in [0,1]$, $\\sin(fixedvalue) \\geq fixedvalue-fixedvalue^3/6$: this follows from Taylor's theorem with remainder, since $\\sin(fixedvalue) = fixedvalue- fixedvalue^3/6+(\\sin variablepoint)fixedvalue^4/24$ for some $variablepoint$ between $0$ and $fixedvalue$.\n\nWe now claim that $staticconstant \\geq 1/\\sqrt{limitvalue}$ for all $limitvalue \\geq 1$; it follows that $\\sum staticconstant^2$ diverges since $\\sum 1/limitvalue$ diverges. To prove the claim, we induct on $limitvalue$, with $limitvalue=1$ being trivial. Suppose that $staticconstant \\geq 1/\\sqrt{limitvalue}$. To prove $\\sin(staticconstant) \\geq 1/\\sqrt{limitvalue+1}$, note that since $\\sin(staticconstant) \\geq \\sin(1/\\sqrt{limitvalue})$, it suffices to prove that $fixedvalue-fixedvalue^3/6 \\geq (limitvalue+1)^{-1/2}$ where $fixedvalue=1/\\sqrt{limitvalue}$. Squaring both sides and clearing denominators, we find that this is equivalent to $(limitvalue+1)(6limitvalue-1)^2 \\geq 36limitvalue^3$, or $24limitvalue^2-11limitvalue+1 \\geq 0$. But this last inequality is true since $24limitvalue^2-11limitvalue+1 = (3limitvalue-1)(8limitvalue-1)$, and the induction is complete."
+    },
+    "garbled_string": {
+      "map": {
+        "a_0": "qzxwvtnp",
+        "a_n": "hjgrksla",
+        "a_n-1": "vksdjfgh",
+        "a_{n-1}": "vksdjfgh",
+        "a_1": "lmnoprstu",
+        "n": "xcvbnmzpq",
+        "x": "kjhgfdsal",
+        "c": "asdfghjkl"
+      },
+      "question": "Let $qzxwvtnp = \\pi/2$, and let $hjgrksla = \\sin(vksdjfgh)$ for $xcvbnmzpq \\geq 1$. Determine whether\n\\[\n\\sum_{xcvbnmzpq=1}^\\infty hjgrksla^2\n\\]\nconverges.",
+      "solution": "The series diverges. First note that since $\\sin (kjhgfdsal)<kjhgfdsal$ for all $kjhgfdsal>0$, the sequence $\\{hjgrksla\\}$ is positive and decreasing, with $lmnoprstu=1$. Next, we observe that for $kjhgfdsal \\in [0,1]$, $\\sin(kjhgfdsal) \\geq kjhgfdsal-kjhgfdsal^3/6$: this follows from Taylor's theorem with remainder, since $\\sin(kjhgfdsal) = kjhgfdsal- kjhgfdsal^3/6+(\\sin asdfghjkl)kjhgfdsal^4/24$ for some $asdfghjkl$ between $0$ and $kjhgfdsal$.\n\nWe now claim that $hjgrksla \\geq 1/\\sqrt{xcvbnmzpq}$ for all $xcvbnmzpq \\geq 1$; it follows that $\\sum hjgrksla^2$ diverges since $\\sum 1/xcvbnmzpq$ diverges. To prove the claim, we induct on $xcvbnmzpq$, with $xcvbnmzpq=1$ being trivial. Suppose that $hjgrksla \\geq 1/\\sqrt{xcvbnmzpq}$. To prove $\\sin(hjgrksla) \\geq 1/\\sqrt{xcvbnmzpq+1}$, note that since $\\sin(hjgrksla) \\geq \\sin(1/\\sqrt{xcvbnmzpq})$, it suffices to prove that $kjhgfdsal-kjhgfdsal^3/6 \\geq (xcvbnmzpq+1)^{-1/2}$ where $kjhgfdsal=1/\\sqrt{xcvbnmzpq}$. Squaring both sides and clearing denominators, we find that this is equivalent to $(xcvbnmzpq+1)(6xcvbnmzpq-1)^2 \\geq 36xcvbnmzpq^3$, or $24xcvbnmzpq^2-11xcvbnmzpq+1 \\geq 0$. But this last inequality is true since $24xcvbnmzpq^2-11xcvbnmzpq+1 = (3xcvbnmzpq-1)(8xcvbnmzpq-1)$, and the induction is complete."
+    },
+    "kernel_variant": {
+      "question": "Let b_{0}=\\dfrac{5\\pi}{2} \\;(=\\,\\pi/2+2\\pi) and define recursively\n\\[\n b_{n}=\\sin b_{n-1}\\qquad (n\\ge 1).\n\\]\nDecide whether the series\n\\[\n\\sum_{n=1}^{\\infty} b_{n}^{\\,2}\n\\]\nconverges or diverges.",
+      "solution": "We prove that \\sum _{n=1}^\\infty  b_n^2 diverges by showing b_n \\geq  1/\\sqrt{n} for every n \\geq  1, so that b_n^2 \\geq  1/n and \\sum 1/n diverges.\n\n1. Positivity and monotonicity\nSince b_0=5\\pi /2 and sin x<x for all x>0, we get b_1=sin(5\\pi /2)=1, and for n\\geq 1,\n  b_n=sin(b_{n-1})<b_{n-1}.\nThus 0<b_n\\leq 1 and (b_n) is strictly decreasing on n\\geq 1.\n\n2. A lower bound for sin x on [0,1]\nDefine f(x)=sin x-(x-x^3/6). Then f(0)=0 and\n  f'(x)=cos x-1+\\frac{1}{2}x^2\\geq (1-x^2/2)-1+\\frac{1}{2}x^2=0.\nHence f is nondecreasing on [0,1], so sin x\\geq x-x^3/6 for 0\\leq x\\leq 1.\n\n3. Inductive proof that b_n\\geq 1/\\sqrt{n}\nBase case n=1: b_1=1=1/\\sqrt{1.}\nAssume b_n\\geq 1/\\sqrt{n.} Then\n  b_{n+1}=sin(b_n)\\geq sin(1/\\sqrt{n})\\geq 1/\\sqrt{n}-(1/6)(1/\\sqrt{n})^3=(6n-1)/(6n\\sqrt{n}).\nWe must show (6n-1)/(6n\\sqrt{n})\\geq 1/\\sqrt{n+1}, i.e.\n  (6n-1)^2(n+1)\\geq 36n^3.\nExpand:\n  (6n-1)^2(n+1)=(36n^2-12n+1)(n+1)\n    =36n^3+24n^2-11n+1 \\geq 36n^3\n\\Leftrightarrow 24n^2-11n+1=(3n-1)(8n-1)\\geq 0 for n\\geq 1.\nThus b_{n+1}\\geq 1/\\sqrt{n+1}.\n\n4. Conclusion\nSince b_n^2\\geq 1/n, the series \\sum _{n=1}^\\infty b_n^2\\geq \\sum _{n=1}^\\infty 1/n diverges. Therefore \\sum b_n^2 diverges.",
+      "_meta": {
+        "core_steps": [
+          "Monotonicity: sin x < x ⇒ (a_n) positive, decreasing, within (0,1]",
+          "Taylor bound on [0,1]: sin x ≥ x − (1/6)x³",
+          "Induction: from a_1=1 show a_n ≥ 1/√n for every n",
+          "Comparison test: a_n² ≥ 1/n; harmonic series diverges",
+          "Conclude Σ a_n² diverges"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of the seed angle so that a_1 = sin(a_0) = 1 (e.g., π/2 + 2πk, k∈ℤ)",
+            "original": "π/2"
+          },
+          "slot2": {
+            "description": "Coefficient in the cubic term of the Taylor lower bound; any c ≥ 1/6 keeps sin x ≥ x − c x³ and the proof unchanged",
+            "original": "1/6"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

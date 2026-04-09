@@ -1,0 +1,159 @@
+{
+  "index": "2014-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Suppose $X$ is a random variable that takes on only nonnegative integer values,\nwith $E\\left[ X \\right] = 1$, $E\\left[ X^2 \\right] = 2$, and $E \\left[ X^3 \\right] = 5$.\n(Here $E\\left[ y \\right]$ denotes the expectation of the random variable $Y$.)\nDetermine the smallest possible value of the probability of the event $X=0$.",
+  "solution": "The answer is $\\frac{1}{3}$.\n\n\\textbf{First solution:}\nLet $a_n = P(X=n)$; we want the minimum value for $a_0$. If we write \n$S_k = \\sum_{n=1}^\\infty n^k a_n$, then the given expectation values \nimply that $S_1 = 1$, $S_2 = 2$, $S_3 = 5$. Now\ndefine $f(n) = 11n-6n^2+n^3$, and note that $f(0) = 0$, $f(1)=f(2)=f(3)=6$, and \n$f(n)>6$ for $n\\geq 4$; thus\n$4 = 11S_1-6S_2+S_3 = \\sum_{n=1}^\\infty f(n)a_n \\geq 6 \\sum_{n=1}^{\\infty} a_n$. \nSince $\\sum_{n=0}^\\infty a_n = 1$, it \nfollows that $a_0 \\geq \\frac{1}{3}$. Equality is achieved \nwhen $a_0=\\frac{1}{3}$, $a_1=\\frac{1}{2}$, $a_3=\\frac{1}{6}$, and $a_n = 0$ for all other $n$, \nand so the answer is $\\frac{1}{3}$.\n\n\\textbf{Second solution:}\n(by Tony Qiao)\nDefine the \\emph{probability generating function} of $P$ as the power series\n\\[\nG(z) = \\sum_{n=0}^\\infty P(x = n) z^n.\n\\]\nWe compute that $G(1) = G'(1) = G''(1) = G'''(1) = 1$. By Taylor's theorem with remainder,\nfor any $x \\in [0,1]$, there exists $c \\in [x,1]$ such that\n\\[\nG(x) = 1 + (x-1) + \\frac{(x-1)^2}{2!} + \\frac{(x-1)^3}{3!} + \\frac{G''''(c)}{4!} (x-1)^4.\n\\]\nIn particular, $G(0) = \\frac{1}{3} + \\frac{1}{24} G''''(c)$ for some $c \\in [0,1]$.\nHowever, since $G$ has nonnegative coefficients and $c \\geq 0$, we must have $G''''(c) \\geq 0$,\nand so $G(0) \\geq \\frac{1}{3}$. As in the first solution, we see that this bound is best possible.",
+  "vars": [
+    "X",
+    "Y",
+    "n",
+    "k",
+    "x",
+    "z",
+    "c",
+    "a_n",
+    "a_0",
+    "a_1",
+    "a_3",
+    "S_k",
+    "S_1",
+    "S_2",
+    "S_3",
+    "f"
+  ],
+  "params": [
+    "P",
+    "G",
+    "E"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "X": "randomvar",
+        "Y": "auxrandom",
+        "n": "intindex",
+        "k": "powerindex",
+        "x": "evalpoint",
+        "z": "genvaria",
+        "c": "remainder",
+        "a_n": "coeffiseries",
+        "a_0": "coeffizero",
+        "a_1": "coeffione",
+        "a_3": "coeffithree",
+        "S_k": "sumsindex",
+        "S_1": "sumsone",
+        "S_2": "sumstwo",
+        "S_3": "sumsthree",
+        "f": "testfunc",
+        "P": "probmeas",
+        "G": "genfunct",
+        "E": "expectop"
+      },
+      "question": "Suppose $randomvar$ is a random variable that takes on only nonnegative integer values,\nwith $expectop\\left[ randomvar \\right] = 1$, $expectop\\left[ randomvar^2 \\right] = 2$, and $expectop \\left[ randomvar^3 \\right] = 5$.\n(Here $expectop\\left[ y \\right]$ denotes the expectation of the random variable $auxrandom$.)\nDetermine the smallest possible value of the probability of the event $randomvar=0$.",
+      "solution": "The answer is $\\frac{1}{3}$. \n\n\\textbf{First solution:}\nLet $coeffiseries = probmeas(randomvar=intindex)$; we want the minimum value for $coeffizero$. If we write \n$sumsindex = \\sum_{intindex=1}^{\\infty} intindex^{powerindex} \\, coeffiseries$, then the given expectation values \nimply that $sumsone = 1$, $sumstwo = 2$, $sumsthree = 5$. Now\ndefine $testfunc(intindex) = 11 intindex - 6 intindex^2 + intindex^3$, and note that $testfunc(0) = 0$, $testfunc(1)=testfunc(2)=testfunc(3)=6$, and \n$testfunc(intindex)>6$ for $intindex\\geq 4$; thus\n$4 = 11\\,sumsone-6\\,sumstwo+sumsthree = \\sum_{intindex=1}^{\\infty} testfunc(intindex)\\,coeffiseries \\geq 6 \\sum_{intindex=1}^{\\infty} coeffiseries$. \nSince $\\sum_{intindex=0}^{\\infty} coeffiseries = 1$, it \nfollows that $coeffizero \\geq \\frac{1}{3}$. Equality is achieved \nwhen $coeffizero=\\frac{1}{3}$, $coeffione=\\frac{1}{2}$, $coeffithree=\\frac{1}{6}$, and $coeffiseries = 0$ for all other $intindex$, \nand so the answer is $\\frac{1}{3}$. \n\n\\textbf{Second solution:}\n(by Tony Qiao)\nDefine the \\emph{probability generating function} of $probmeas$ as the power series\n\\[\ngenfunct(genvaria) = \\sum_{intindex=0}^{\\infty} probmeas(evalpoint = intindex)\\,genvaria^{intindex}.\n\\]\nWe compute that $genfunct(1) = genfunct'(1) = genfunct''(1) = genfunct'''(1) = 1$. By Taylor's theorem with remainder,\nfor any $evalpoint \\in [0,1]$, there exists $remainder \\in [evalpoint,1]$ such that\n\\[\ngenfunct(evalpoint) = 1 + (evalpoint-1) + \\frac{(evalpoint-1)^2}{2!} + \\frac{(evalpoint-1)^3}{3!} + \\frac{genfunct''''(remainder)}{4!} (evalpoint-1)^4.\n\\]\nIn particular, $genfunct(0) = \\frac{1}{3} + \\frac{1}{24}\\,genfunct''''(remainder)$ for some $remainder \\in [0,1]$.\nHowever, since $genfunct$ has nonnegative coefficients and $remainder \\geq 0$, we must have $genfunct''''(remainder) \\geq 0$,\nand so $genfunct(0) \\geq \\frac{1}{3}$. As in the first solution, we see that this bound is best possible."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "X": "lighthouse",
+        "Y": "bluewhale",
+        "n": "sandstone",
+        "k": "silkworm",
+        "x": "lemonade",
+        "z": "marigold",
+        "c": "driftwood",
+        "a_n": "butterscotch",
+        "a_0": "raincloud",
+        "a_1": "moonlight",
+        "a_3": "peppercorn",
+        "S_k": "treeline",
+        "S_1": "dandelion",
+        "S_2": "alligator",
+        "S_3": "chameleon",
+        "f": "windchime",
+        "P": "starlight",
+        "G": "honeycomb",
+        "E": "firetruck"
+      },
+      "question": "Suppose $lighthouse$ is a random variable that takes on only nonnegative integer values,\nwith $firetruck\\left[ lighthouse \\right] = 1$, $firetruck\\left[ lighthouse^2 \\right] = 2$, and $firetruck \\left[ lighthouse^3 \\right] = 5$.\n(Here $firetruck\\left[ y \\right]$ denotes the expectation of the random variable $bluewhale$.)\nDetermine the smallest possible value of the probability of the event $lighthouse=0$.",
+      "solution": "The answer is $\\frac{1}{3}$.\n\n\\textbf{First solution:}\nLet $butterscotch = starlight(lighthouse=sandstone)$; we want the minimum value for $raincloud$. If we write \n$treeline = \\sum_{sandstone=1}^\\infty sandstone^{silkworm} butterscotch$, then the given expectation values \nimply that $dandelion = 1$, $alligator = 2$, $chameleon = 5$. Now\ndefine $windchime(sandstone) = 11sandstone-6sandstone^2+sandstone^3$, and note that $windchime(0) = 0$, $windchime(1)=windchime(2)=windchime(3)=6$, and \n$windchime(sandstone)>6$ for $sandstone\\geq 4$; thus\n$4 = 11dandelion-6alligator+chameleon = \\sum_{sandstone=1}^\\infty windchime(sandstone)butterscotch \\geq 6 \\sum_{sandstone=1}^{\\infty} butterscotch$. \nSince $\\sum_{sandstone=0}^\\infty butterscotch = 1$, it \nfollows that $raincloud \\geq \\frac{1}{3}$. Equality is achieved \nwhen $raincloud=\\frac{1}{3}$, $moonlight=\\frac{1}{2}$, $peppercorn=\\frac{1}{6}$, and $butterscotch = 0$ for all other $sandstone$, \nand so the answer is $\\frac{1}{3}$.\n\n\\textbf{Second solution:}\n(by Tony Qiao)\nDefine the \\emph{probability generating function} of $starlight$ as the power series\n\\[\nhoneycomb(marigold) = \\sum_{sandstone=0}^\\infty starlight(lemonade = sandstone) marigold^{sandstone}.\n\\]\nWe compute that $honeycomb(1) = honeycomb'(1) = honeycomb''(1) = honeycomb'''(1) = 1$. By Taylor's theorem with remainder,\nfor any $lemonade \\in [0,1]$, there exists $driftwood \\in [lemonade,1]$ such that\n\\[\nhoneycomb(lemonade) = 1 + (lemonade-1) + \\frac{(lemonade-1)^2}{2!} + \\frac{(lemonade-1)^3}{3!} + \\frac{honeycomb''''(driftwood)}{4!} (lemonade-1)^4.\n\\]\nIn particular, $honeycomb(0) = \\frac{1}{3} + \\frac{1}{24} honeycomb''''(driftwood)$ for some $driftwood \\in [0,1]$.\nHowever, since $honeycomb$ has nonnegative coefficients and $driftwood \\geq 0$, we must have $honeycomb''''(driftwood) \\geq 0$,\nand so $honeycomb(0) \\geq \\frac{1}{3}$. As in the first solution, we see that this bound is best possible."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "X": "deterministicvariable",
+        "Y": "constantvariable",
+        "n": "continuousvalue",
+        "k": "rootdegree",
+        "x": "fixedvalue",
+        "z": "constantinput",
+        "c": "stablepoint",
+        "a_n": "certaintyvalue",
+        "a_0": "certaintyzero",
+        "a_1": "certaintyone",
+        "a_3": "certaintythree",
+        "S_k": "productroot",
+        "S_1": "productone",
+        "S_2": "producttwo",
+        "S_3": "productthree",
+        "f": "steadystate",
+        "P": "impossibility",
+        "G": "degenerating",
+        "E": "surprise"
+      },
+      "question": "Suppose $deterministicvariable$ is a random variable that takes on only nonnegative integer values, with $surprise\\left[ deterministicvariable \\right] = 1$, $surprise\\left[ deterministicvariable^2 \\right] = 2$, and $surprise \\left[ deterministicvariable^3 \\right] = 5$. (Here $surprise\\left[ constantvariable \\right]$ denotes the expectation of the random variable $constantvariable$.) Determine the smallest possible value of the probability of the event $deterministicvariable=0$.",
+      "solution": "The answer is $\\frac{1}{3}$.\\n\\n\\textbf{First solution:}\\nLet $certaintyvalue = impossibility(deterministicvariable=continuousvalue)$; we want the minimum value for $certaintyzero$. If we write \\n$productroot = \\sum_{continuousvalue=1}^\\infty continuousvalue^{rootdegree} certaintyvalue$, then the given expectation values imply that $productone = 1$, $producttwo = 2$, $productthree = 5$. Now define $steadystate(continuousvalue) = 11continuousvalue-6continuousvalue^2+continuousvalue^3$, and note that $steadystate(0) = 0$, $steadystate(1)=steadystate(2)=steadystate(3)=6$, and $steadystate(continuousvalue)>6$ for $continuousvalue\\geq 4$; thus\\n$4 = 11productone-6producttwo+productthree = \\sum_{continuousvalue=1}^\\infty steadystate(continuousvalue)certaintyvalue \\geq 6 \\sum_{continuousvalue=1}^{\\infty} certaintyvalue$.\\nSince $\\sum_{continuousvalue=0}^\\infty certaintyvalue = 1$, it follows that $certaintyzero \\geq \\frac{1}{3}$. Equality is achieved when $certaintyzero=\\frac{1}{3}$, $certaintyone=\\frac{1}{2}$, $certaintythree=\\frac{1}{6}$, and $certaintyvalue = 0$ for all other $continuousvalue$, and so the answer is $\\frac{1}{3}$.\\n\\n\\textbf{Second solution:}\\n(by Tony Qiao)\\nDefine the \\emph{probability generating function} of $impossibility$ as the power series\\n\\[\\ndegenerating(constantinput) = \\sum_{continuousvalue=0}^\\infty impossibility(fixedvalue = continuousvalue) constantinput^{continuousvalue}.\\n\\]\\nWe compute that $degenerating(1) = degenerating'(1) = degenerating''(1) = degenerating'''(1) = 1$. By Taylor's theorem with remainder, for any $fixedvalue \\in [0,1]$, there exists $stablepoint \\in [fixedvalue,1]$ such that\\n\\[\\ndegenerating(fixedvalue) = 1 + (fixedvalue-1) + \\frac{(fixedvalue-1)^2}{2!} + \\frac{(fixedvalue-1)^3}{3!} + \\frac{degenerating''''(stablepoint)}{4!} (fixedvalue-1)^4.\\n\\]\\nIn particular, $degenerating(0) = \\frac{1}{3} + \\frac{1}{24} degenerating''''(stablepoint)$ for some $stablepoint \\in [0,1]$. However, since $degenerating$ has nonnegative coefficients and $stablepoint \\geq 0$, we must have $degenerating''''(stablepoint) \\geq 0$, and so $degenerating(0) \\geq \\frac{1}{3}$. As in the first solution, we see that this bound is best possible."
+    },
+    "garbled_string": {
+      "map": {
+        "X": "nplkqjfd",
+        "Y": "rmtgsavc",
+        "n": "wvyczrba",
+        "k": "mpshatld",
+        "x": "hevbqoni",
+        "z": "tplorwse",
+        "c": "jedumkzi",
+        "a_n": "qmrwevlo",
+        "a_0": "djluscfa",
+        "a_1": "gvspoumd",
+        "a_3": "xcnqsjyo",
+        "S_k": "mnjtzvqa",
+        "S_1": "oethgkrl",
+        "S_2": "vfdhpaqs",
+        "S_3": "prnlgywe",
+        "f": "xzvbdupi",
+        "P": "uzxirelw",
+        "G": "kbwocvha",
+        "E": "fvlpsxme"
+      },
+      "question": "Suppose $nplkqjfd$ is a random variable that takes on only nonnegative integer values,\nwith $fvlpsxme\\left[ nplkqjfd \\right] = 1$, $fvlpsxme\\left[ nplkqjfd^2 \\right] = 2$, and $fvlpsxme \\left[ nplkqjfd^3 \\right] = 5$.\n(Here $fvlpsxme\\left[ y \\right]$ denotes the expectation of the random variable $rmtgsavc$.)\nDetermine the smallest possible value of the probability of the event $nplkqjfd=0$.",
+      "solution": "The answer is $\\frac{1}{3}$. \n\n\\textbf{First solution:}\nLet $qmrwevlo = uzxirelw(nplkqjfd=wvyczrba)$; we want the minimum value for $djluscfa$. If we write \n$mnjtzvqa = \\sum_{wvyczrba=1}^\\infty wvyczrba^{mpshatld} qmrwevlo$, then the given expectation values \nimply that $oethgkrl = 1$, $vfdhpaqs = 2$, $prnlgywe = 5$. Now\ndefine $xzvbdupi(wvyczrba) = 11wvyczrba-6wvyczrba^2+wvyczrba^3$, and note that $xzvbdupi(0) = 0$, $xzvbdupi(1)=xzvbdupi(2)=xzvbdupi(3)=6$, and \n$xzvbdupi(wvyczrba)>6$ for $wvyczrba\\geq 4$; thus\n$4 = 11oethgkrl-6vfdhpaqs+prnlgywe = \\sum_{wvyczrba=1}^\\infty xzvbdupi(wvyczrba)qmrwevlo \\geq 6 \\sum_{wvyczrba=1}^{\\infty} qmrwevlo$. \nSince $\\sum_{wvyczrba=0}^\\infty qmrwevlo = 1$, it \nfollows that $djluscfa \\geq \\frac{1}{3}$. Equality is achieved \nwhen $djluscfa=\\frac{1}{3}$, $gvspoumd=\\frac{1}{2}$, $xcnqsjyo=\\frac{1}{6}$, and $qmrwevlo = 0$ for all other $wvyczrba$, \nand so the answer is $\\frac{1}{3}$. \n\n\\textbf{Second solution:}\n(by Tony Qiao)\nDefine the \\emph{probability generating function} of $uzxirelw$ as the power series\n\\[\nkbwocvha(tplorwse) = \\sum_{wvyczrba=0}^\\infty uzxirelw(hevbqoni = wvyczrba) tplorwse^{wvyczrba}.\n\\]\nWe compute that $kbwocvha(1) = kbwocvha'(1) = kbwocvha''(1) = kbwocvha'''(1) = 1$. By Taylor's theorem with remainder,\nfor any $hevbqoni \\in [0,1]$, there exists $jedumkzi \\in [hevbqoni,1]$ such that\n\\[\nkbwocvha(hevbqoni) = 1 + (hevbqoni-1) + \\frac{(hevbqoni-1)^2}{2!} + \\frac{(hevbqoni-1)^3}{3!} + \\frac{kbwocvha''''(jedumkzi)}{4!} (hevbqoni-1)^4.\n\\]\nIn particular, $kbwocvha(0) = \\frac{1}{3} + \\frac{1}{24} kbwocvha''''(jedumkzi)$ for some $jedumkzi \\in [0,1]$.\nHowever, since $kbwocvha$ has nonnegative coefficients and $jedumkzi \\geq 0$, we must have $kbwocvha''''(jedumkzi) \\geq 0$,\nand so $kbwocvha(0) \\geq \\frac{1}{3}$. As in the first solution, we see that this bound is best possible."
+    },
+    "kernel_variant": {
+      "question": "Let $X$ be a random variable that assumes only non-negative integer values and whose first five moments are prescribed as  \n\\[\nE[X]=2 ,\\qquad \nE[X^{2}]=\\frac{37}{5} ,\\qquad \nE[X^{3}]=\\frac{169}{5},\\qquad \nE[X^{4}]=\\frac{859}{5},\\qquad \nE[X^{5}]=929 .\n\\]\nDetermine the smallest possible value of the probability  \n\\[\n\\Pr(X=0).\n\\]\n(All expectations are taken with respect to the distribution of $X$.)\n\n--------------------------------------------------------------------",
+      "solution": "Write  \n\\[\np_n=\\Pr(X=n)\\qquad(n\\ge 0),\\qquad   \nm_k=E[X^{k}]\\quad(1\\le k\\le 5).\n\\]\nBesides the normalising relation $\\sum_{n\\ge 0}p_n=1$ we have the five\nmoment constraints  \n\\[\n\\sum_{n\\ge 0} n^{k}p_n=m_k \\qquad (k=1,2,3,4,5).\n\\]\nOur task is to minimise the linear functional $p_0$ under these six linear\nequalities.\n\n--------------------------------------------------------------------\n1.  A feasible distribution  \n\nThe vector $(m_1,\\dots ,m_5)$ is attainable; for instance  \n\\[\n\\boxed{\\\n\\Pr(X=0)=\\frac15,\\;\n\\Pr(X=1)=\\frac25,\\;\n\\Pr(X=3)=\\frac15,\\;\n\\Pr(X=4)=\\frac1{10},\\;\n\\Pr(X=6)=\\frac1{10}}\n\\tag{1}\n\\]\nsatisfies all five moment conditions (routine verification).  Hence the\nfeasibility region\n\\[\n\\mathcal F=\n\\Bigl\\{(p_n)_{n\\ge 0}\\in\\ell^{1}: p_n\\ge 0,\\;A p=b\\Bigr\\}\n\\]\nis non-empty.\n\n--------------------------------------------------------------------\n2.  Extreme-point reduction (Caratheodory)  \n\nThe vectors $(1,n,n^{2},n^{3},n^{4},n^{5})\\in\\mathbf R^{6}$ span a\n$6$-dimensional space.  By Caratheodory's theorem every extreme point of\n$\\mathcal F$ is supported on at most $6+1=7$ integers.  Because $p_0$\nappears explicitly in the objective, an extreme minimiser may be assumed to\nbe supported on  \n\\[\n\\{\\,0<n_1<n_2<n_3<n_4<n_5<n_6\\}\\subset\\mathbf N,\n\\]\nthat is, on \\emph{at most six} positive integers in addition to $0$.\n\n--------------------------------------------------------------------\n3.  A dual quintic polynomial  \n\nIntroduce the quintic\n\\[\n\\psi(t)=(t-1)(t-3)(t-4)(t-6)(t-7)\n      =t^{5}-21t^{4}+165t^{3}-595t^{2}+954t-504 .\n\\]\nIts values at the first few integers are\n\n\\[\n\\begin{array}{c|ccccccccccc}\nt & 0&1&2&3&4&5&6&7&8\\\\ \\hline\n\\psi(t)&-504&0&  72&0&0&180&0&0&504\n\\end{array}\n\\]\nand $\\psi(t)>0$ for every $t\\ge 2$ that is not a root.\n\nUsing the given moments we compute  \n\\[\n\\begin{aligned}\nE[\\psi(X)]\n&=m_{5}-21m_{4}+165m_{3}-595m_{2}+954m_{1}-504\\\\[2pt]\n&=929-21\\cdot\\frac{859}{5}+165\\cdot\\frac{169}{5}\n      -595\\cdot\\frac{37}{5}+954\\cdot 2-504\\\\[2pt]\n&=-\\frac{504}{5}.\n\\end{aligned}\n\\tag{2}\n\\]\n\n--------------------------------------------------------------------\n4.  A lower bound for $p_{0}$  \n\nDecomposing the expectation according to the sign table gives  \n\\[\n-\\frac{504}{5}=E[\\psi(X)]\n             =\\psi(0)\\,p_0\n              +\\sum_{\\substack{n\\ge 2\\\\\\psi(n)>0}}\\psi(n)\\,p_n ,\n\\]\nbecause $\\psi(1)=\\psi(3)=\\psi(4)=\\psi(6)=\\psi(7)=0$.  As $\\psi(0)=-504$\nand $\\psi(n)\\ge 72$ for every term in the sum, we obtain  \n\\[\n-\\,\\frac{504}{5}\n\\;\\ge\\;\n-504\\,p_0 \n\\qquad\\Longrightarrow\\qquad\n504\\,p_0\n\\;\\ge\\;\n\\frac{504}{5}.\n\\]\nHence  \n\\[\n\\boxed{\\;p_0\\ge\\frac15\\;}.\n\\tag{3}\n\\]\n\n--------------------------------------------------------------------\n5.  The equality case  \n\nEquality in (3) forces each positive summand in the decomposition to\nvanish, that is,\n\\[\n\\psi(n)>0\\;\\Longrightarrow\\;p_n=0.\n\\]\nConsequently every extremal minimiser is supported on the \\emph{six}\nintegers  \n\\[\n\\{0,1,3,4,6,7\\}.\n\\]\n\nWrite  \n\\[\np_0=x,\\;p_1=y,\\;p_3=z,\\;p_4=u,\\;p_6=v,\\;p_7=w\n      \\qquad(x,y,z,u,v,w\\ge 0).\n\\]\nThe six linear constraints are\n\n\\[\n\\begin{array}{rcl}\nx+y+z+u+v+w &=& 1,\\\\[4pt]\n y+3z+4u+6v+7w &=& 2,\\\\[4pt]\n y+ 9z+16u+36v+49w &=& \\dfrac{37}{5},\\\\[4pt]\n y+27z+64u+216v+343w &=& \\dfrac{169}{5},\\\\[4pt]\n y+81z+256u+1296v+2401w &=& \\dfrac{859}{5},\\\\[4pt]\n y+243z+1024u+7776v+16807w &=& 929 .\n\\end{array}\n\\tag{4}\n\\]\n\nSubtracting consecutive equations eliminates $y$ and gradually reduces\n(4) to the three relations  \n\n\\[\n\\begin{aligned}\nz+2u+5v+7w &=& \\dfrac{9}{10},\\\\[4pt]\n2u+15v+28w &=& \\dfrac{17}{10},\\\\[4pt]\n10v+28w &=& 1.\n\\end{aligned}\n\\tag{5}\n\\]\n\nSolving (5) gives  \n\\[\nw=0,\\qquad v=\\frac1{10},\\qquad \nu=\\frac1{10},\\qquad z=\\frac15 .\n\\]\nBack-substituting into (4) yields  \n\\[\ny=\\frac25,\\qquad x=\\frac15 .\n\\]\nTherefore the unique distribution that attains the lower bound (3) is\nprecisely the one exhibited in (1).  In particular  \n\n\\[\n\\min_{\\mathcal F}\\Pr(X=0)=\\boxed{\\dfrac15 }.\n\\]\n\n--------------------------------------------------------------------\n6.  Optimality  \n\nStep 4 establishes the universal inequality $p_0\\ge\\dfrac15$, while\nStep&nbsp;5 produces (and proves the uniqueness of) a feasible\ndistribution with $p_0=\\dfrac15$.  Hence the bound is tight, and the\nproblem is solved.\n\n--------------------------------------------------------------------\nAnswer: $\\displaystyle \\min\\Pr(X=0)=\\dfrac15$.\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.833082",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Extra moment constraint: the fourth raw moment is imposed in addition to the first three, increasing the number of independent linear conditions from 3 to 4.  \n2. Extreme-point argument: the solution demands knowledge of convex-geometry facts (Carathéodory / Krein–Milman) to restrict attention to small supports.  \n3. Non-trivial polynomial filter: a carefully chosen cubic \\(\\psi(t)\\) is used to eliminate all probability mass beyond \\(n=4\\); this is subtler than the quadratic/cubic filters that suffice for the original problem.  \n4. Over-determined linear system: after Step 2 the remaining three-point support still has to satisfy **four** independent moment equations, forcing uniqueness and showing optimality – a significant algebraic complication compared with the single-equation verification in the original task.  \n5. The chain of reasoning requires blending linear programming, moment theory, and clever polynomial inequalities, rather than the single elementary inequality that solved the basic kernel problem."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let \\(X\\) be a random variable that assumes only non-negative integer values and satisfies  \n\n\\[\nE[X]=\\frac32,\\qquad \nE[X^{2}]=\\frac92,\\qquad \nE[X^{3}]=\\frac{33}{2},\\qquad \nE[X^{4}]=\\frac{129}{2}.\n\\]\n\nDetermine the smallest possible value of the probability  \n\n\\[\n\\Pr (X=0).\n\\]\n\n(All expectations are taken with respect to the distribution of \\(X\\).)\n\n--------------------------------------------------------------------",
+      "solution": "Throughout write \\(p_n=\\Pr(X=n)\\;(n\\ge0)\\).  The normalising relation together with the four prescribed moments give five linear conditions  \n\n\\[\n\\sum_{n\\ge0} p_n = 1,\\qquad\n\\sum_{n\\ge0} n^k p_n = m_k\\;(k=1,2,3,4),\n\\]\nwhere  \n\\(m_1=\\dfrac32,\\;m_2=\\dfrac92,\\;m_3=\\dfrac{33}{2},\\;m_4=\\dfrac{129}{2}\\).\n\nOur goal is to minimise the linear functional \\(p_0\\) under these constraints.\n\n--------------------------------------------------------------------\nStep 1.  Extreme-point reduction  \n\nThe feasible set  \n\n\\[\n\\mathcal F=\\Bigl\\{(p_n)_{n\\ge0}\\in\\ell^1:\\;p_n\\ge0,\\;A p=b\\Bigr\\},\n\\]\nwhere the \\(5\\times\\infty\\) matrix \\(A\\) encodes the five equalities above,\nis a convex polytope (infinite-dimensional simplex intersected with an affine\nsubspace).  By Caratheodory's theorem every extreme point of \\(\\mathcal F\\)\nis supported on at most five integers.  Because \\(p_0\\) itself appears in the\nobjective function, such an extreme point can be taken to have the form  \n\n\\[\n\\{0<n_1<n_2<n_3<n_4\\}\\subset\\Bbb N,\n\\]\ni.e. at most four positive support points in addition to the mandatory point\n0.\n\n--------------------------------------------------------------------\nStep 2.  A dual polynomial inequality  \n\nConsider the cubic polynomial  \n\n\\[\n\\psi(t)=(t-1)(t-4)(t-5)=t^{3}-10t^{2}+29t-20.\n\\]\n\nIts values at small integers are  \n\n\\[\n\\begin{array}{c|cccccccc}\nt & 0&1&2&3&4&5&6&7\\\\ \\hline\n\\psi(t) &-20&0&6&4&0&0&10&36\n\\end{array}\n\\]\n\nand \\(\\psi(t)>0\\) for every \\(t\\ge6\\).\nUsing the prescribed moments,\n\n\\[\nE[\\psi(X)]\n   =m_{3}-10m_{2}+29m_{1}-20\n   =\\frac{33}{2}-10\\cdot\\frac92+29\\cdot\\frac32-20\n   =-5.\n\\tag{1}\n\\]\n\nDecomposing the expectation according to the sign table gives  \n\n\\[\n-5\n =E[\\psi(X)]\n =-20p_0+6p_2+4p_3+\\sum_{n\\ge6}\\psi(n)p_n.\n\\]\n\nBecause \\(\\psi(n)\\ge10\\) for \\(n\\ge6\\), we obtain  \n\n\\[\n-5\\;\\ge\\;-20p_0+6p_2+4p_3+10\\sum_{n\\ge6}p_n\n    \\;\\Longrightarrow\\;\n20p_0\\;\\ge\\;6p_2+4p_3+10\\sum_{n\\ge6}p_n+5.\n\\]\n\nSince the right-hand side is at least \\(5\\),  \n\n\\[\np_0\\;\\ge\\;\\frac14.\n\\tag{2}\n\\]\n\n--------------------------------------------------------------------\nStep 3.  Structure when equality holds  \n\nEquality in (2) forces  \n\n\\[\np_2=p_3=0,\\qquad\\sum_{n\\ge6} p_n=0,\n\\]\nso every extremal minimiser is supported on  \n\n\\[\n\\{0,1,4,5\\}.\n\\]\n\nWrite  \n\n\\[\np_0=x,\\quad p_1=y,\\quad p_4=z,\\quad p_5=w\\qquad(x,y,z,w\\ge0).\n\\]\n\nThe five linear constraints become  \n\n\\[\n\\begin{array}{rcl}\nx+y+z+w &=& 1,\\\\[2pt]\ny+4z+5w &=& \\dfrac32,\\\\[2pt]\ny+16z+25w &=& \\dfrac92,\\\\[2pt]\ny+64z+125w &=& \\dfrac{33}{2},\\\\[2pt]\ny+256z+625w &=& \\dfrac{129}{2}.\n\\end{array}\n\\tag{3}\n\\]\n\nSubtract the second equation from the third and fourth to eliminate \\(y\\):\n\n\\[\n\\begin{aligned}\n(3)\\_2\\;:\\;&12z+20w = 3,\\\\\n(3)\\_3\\;:\\;&60z+120w = 15.\n\\end{aligned}\n\\]\n\nMultiply the first of these by \\(5\\) to get \\(60z+100w=15\\).  Subtracting\nthis from the second yields \\(20w=0\\), so  \n\n\\[\nw=0,\\qquad z=\\frac{3}{12}=\\frac14.\n\\]\n\nThen the second equation of (3) gives \\(y+1=\\dfrac32\\), i.e. \\(y=\\dfrac12\\),\nand finally \\(x=1-y-z=\\dfrac14\\).\n\nHence the **unique** distribution achieving equality in (2) is  \n\n\\[\n\\Pr(X=0)=\\frac14,\\;\\;\n\\Pr(X=1)=\\frac12,\\;\\;\n\\Pr(X=4)=\\frac14,\n\\]\nwith all other probabilities zero.  \nOne checks directly that this distribution also satisfies the fourth-moment\ncondition, so it is indeed feasible.\n\n--------------------------------------------------------------------\nStep 4.  Optimality  \n\nInequality (2) shows that no feasible distribution can have\n\\(\\Pr(X=0)<\\dfrac14\\); Step 3 proves that the bound \\(\\dfrac14\\) is attainable,\nand that the attaining distribution is unique (and extremal).\n\n--------------------------------------------------------------------\nAnswer.  \n\n\\[\n\\boxed{\\displaystyle\\min\\Pr(X=0)=\\frac14.}\n\\]\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.636265",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Extra moment constraint: the fourth raw moment is imposed in addition to the first three, increasing the number of independent linear conditions from 3 to 4.  \n2. Extreme-point argument: the solution demands knowledge of convex-geometry facts (Carathéodory / Krein–Milman) to restrict attention to small supports.  \n3. Non-trivial polynomial filter: a carefully chosen cubic \\(\\psi(t)\\) is used to eliminate all probability mass beyond \\(n=4\\); this is subtler than the quadratic/cubic filters that suffice for the original problem.  \n4. Over-determined linear system: after Step 2 the remaining three-point support still has to satisfy **four** independent moment equations, forcing uniqueness and showing optimality – a significant algebraic complication compared with the single-equation verification in the original task.  \n5. The chain of reasoning requires blending linear programming, moment theory, and clever polynomial inequalities, rather than the single elementary inequality that solved the basic kernel problem."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

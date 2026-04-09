@@ -1,0 +1,181 @@
+{
+  "index": "1957-A-7",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "7. Each member of a set of circles in the \\( x y \\) plane is tangent to the \\( x \\) axis and no two of the circles intersect. Show that:\n(i) the points of tangency can include all the rational points on the axis, but\n(ii) the points of tangency cannot include all the irrational points.",
+  "solution": "First Solution. (i) Suppose \\( p, q, r \\), and \\( s \\) are integers such that \\( p / q \\neq \\) \\( r / s \\). Choose \\( k>2 \\). Consider the two circles with centers at \\( \\left\\langle p / q, 1 / \\boldsymbol{k q}^{2}\\right\\rangle \\) and \\( \\left\\langle r / s, 1 / k s^{2}\\right\\rangle \\) and tangent to the \\( x \\)-axis. We claim these circles do not intersect. If they did, the distance between their centers would not exceed the sum of their radii; squaring, we would have\n\\[\n\\left(\\frac{p}{q}-\\frac{r}{s}\\right)^{2}+\\left(\\frac{1}{k q^{2}}-\\frac{1}{k s^{2}}\\right)^{2} \\leq\\left(\\frac{1}{k q^{2}}+\\frac{1}{k s^{2}}\\right)^{2}\n\\]\nwhich implies\n\\[\n(p s-r q)^{2} \\leq 4 / k^{2}\n\\]\n\nBut this is impossible since \\( k>2 \\) and \\( (p s-r q)^{2} \\) is a positive integer. This establishes our claim.\n\nNow, given a rational number \\( r \\), write it in its lowest terms as a quotient of two integers, \\( r=p / q \\), and let \\( C_{r} \\) be the circle with center \\( \\left\\langle p / q, 1 / k q^{2}\\right\\rangle \\) and radius \\( 1 / k q^{2} \\). Then \\( C_{r} \\) is tangent to the \\( x \\)-axis at \\( \\langle r, 0\\rangle \\), and, as we showed above, \\( C_{r} \\) and \\( C_{s} \\) do not intersect if \\( r \\neq s \\). Hence \\( \\left\\{C_{r}: r\\right. \\) rational \\( \\} \\) is a set of circles each of which is tangent to the \\( x \\)-axis, for which the points of tangency include all rational points on the \\( x \\)-axis, and no two of which intersect.\n(ii) Since any circular region contains a point both of whose coordinates are rational, and since the number of such points is countable, it is impossible to have an uncountable family of circles in the plane whose interiors are disjoint. Any two disjoint circles having a common tangent have also disjoint interiors, so it is impossible that uncountably many disjoint circles should all be tangent to the \\( x \\)-axis. Since the set of irrational points on the \\( x \\)-axis is uncountable, (ii) follows.\n\nSecond Solution. (i) We can construct a set of circles as required in (i) by induction. Let the rational numbers be enumerated \\( r_{1}, r_{2}, \\ldots \\). Let \\( C_{1} \\) be a circle tangent to the \\( x \\)-axis at the point \\( \\left\\langle r_{1}, 0\\right\\rangle \\) with radius 1 . Suppose disjoint circles \\( C_{1}, C_{2}, \\ldots, C_{n} \\) have been constructed so that \\( C_{i} \\) is tangent to the \\( x \\)-axis at \\( \\left\\langle r_{i}, 0\\right\\rangle \\) for \\( i=1,2, \\ldots, n \\). Since \\( \\left\\langle r_{n+1}, 0\\right\\rangle \\) is outside all of these circles, it is at positive distance, say \\( \\delta \\), from their union. Let \\( C_{n+1} \\) be a circle of radius \\( \\delta / 3 \\) tangent to the \\( x \\)-axis at \\( \\left\\langle r_{n+1}, 0\\right\\rangle \\). Then \\( C_{n+1} \\) is disjoint from \\( C_{1}, C_{2}, \\ldots, C_{n} \\). We obtain in this way a sequence of circles that includes one tangent to the \\( x \\)-axis at each rational point.\n(ii) Let \\( \\mathcal{C} \\) be a set of disjoint circles in the plane all tangent to the \\( x \\)-axis. For each positive number \\( \\alpha \\) let \\( \\mathfrak{C}_{\\alpha} \\) be the set of circles in \\( \\mathfrak{C} \\) having radius \\( \\geq \\alpha \\). For a fixed \\( \\alpha \\), two members of \\( \\mathfrak{C}_{\\alpha} \\) that fall on the same side of the \\( x \\)-axis have points of tangency separated by at least \\( 2 \\alpha \\). Hence there are at most countably many such circles. Thus, \\( \\mathfrak{C}_{\\alpha} \\) is the union of two countable sets, so it is countable. Now the union of countably many countable sets is countable, and \\( \\mathcal{C}=\\cup_{n, 1}^{\\infty} \\mathfrak{C}_{1} \\), , so \\( \\mathcal{C} \\) is countable. The set of points at which members of \\( \\mathfrak{C} \\) are tangent to the \\( x \\)-axis is therefore countable, so it cannot include all irrational points.\n\nRemark. See L. R. Ford, \"Fractions,\" American Mathematical Monthly, vol. 45 (1938), pages 586-601, for more information concerning the family of circles constructed in our first solution.",
+  "vars": [
+    "x",
+    "y",
+    "p",
+    "q",
+    "r",
+    "s",
+    "n",
+    "i",
+    "C",
+    "C_r",
+    "C_s",
+    "C_1",
+    "C_i",
+    "C_n+1",
+    "r_1",
+    "r_2",
+    "r_i",
+    "r_n+1",
+    "\\\\delta"
+  ],
+  "params": [
+    "k",
+    "\\\\alpha"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xcoord",
+        "y": "ycoord",
+        "p": "intpval",
+        "q": "intqval",
+        "r": "ratnum",
+        "s": "intsval",
+        "n": "indexn",
+        "i": "indexi",
+        "C": "circlec",
+        "C_r": "circler",
+        "C_s": "circles",
+        "C_1": "circleone",
+        "C_i": "circlei",
+        "C_n+1": "circlenplus",
+        "r_1": "ratone",
+        "r_2": "rattwo",
+        "r_i": "ratindex",
+        "r_n+1": "ratnext",
+        "\\delta": "deltaval",
+        "k": "paramkappa",
+        "\\alpha": "paramalpha"
+      },
+      "question": "7. Each member of a set of circles in the \\( xcoord ycoord \\) plane is tangent to the \\( xcoord \\) axis and no two of the circles intersect. Show that:\n(i) the points of tangency can include all the rational points on the axis, but\n(ii) the points of tangency cannot include all the irrational points.",
+      "solution": "First Solution. (i) Suppose \\( intpval, intqval, ratnum \\), and \\( intsval \\) are integers such that \\( intpval / intqval \\neq \\) \\( ratnum / intsval \\). Choose \\( paramkappa>2 \\). Consider the two circles with centers at \\( \\langle intpval / intqval, 1 / \\boldsymbol{paramkappa intqval}^{2}\\rangle \\) and \\( \\langle ratnum / intsval, 1 / paramkappa intsval^{2}\\rangle \\) and tangent to the \\( xcoord \\)-axis. We claim these circles do not intersect. If they did, the distance between their centers would not exceed the sum of their radii; squaring, we would have\n\\[\n\\left(\\frac{intpval}{intqval}-\\frac{ratnum}{intsval}\\right)^{2}+\\left(\\frac{1}{paramkappa intqval^{2}}-\\frac{1}{paramkappa intsval^{2}}\\right)^{2} \\leq\\left(\\frac{1}{paramkappa intqval^{2}}+\\frac{1}{paramkappa intsval^{2}}\\right)^{2}\n\\]\nwhich implies\n\\[\n(intpval\\,intsval-ratnum\\,intqval)^{2} \\leq 4 / paramkappa^{2}\n\\]\nBut this is impossible since \\( paramkappa>2 \\) and \\( (intpval\\,intsval-ratnum\\,intqval)^{2} \\) is a positive integer. This establishes our claim.\n\nNow, given a rational number \\( ratnum \\), write it in its lowest terms as a quotient of two integers, \\( ratnum=intpval / intqval \\), and let \\( circler \\) be the circle with center \\( \\langle intpval / intqval, 1 / paramkappa intqval^{2}\\rangle \\) and radius \\( 1 / paramkappa intqval^{2} \\). Then \\( circler \\) is tangent to the \\( xcoord \\)-axis at \\( \\langle ratnum, 0\\rangle \\), and, as we showed above, \\( circler \\) and \\( circles \\) do not intersect if \\( ratnum \\neq intsval \\). Hence \\( \\{circler: ratnum \\text{ rational}\\} \\) is a set of circles each of which is tangent to the \\( xcoord \\)-axis, for which the points of tangency include all rational points on the \\( xcoord \\)-axis, and no two of which intersect.\n\n(ii) Since any circular region contains a point both of whose coordinates are rational, and since the number of such points is countable, it is impossible to have an uncountable family of circles in the plane whose interiors are disjoint. Any two disjoint circles having a common tangent have also disjoint interiors, so it is impossible that uncountably many disjoint circles should all be tangent to the \\( xcoord \\)-axis. Since the set of irrational points on the \\( xcoord \\)-axis is uncountable, (ii) follows.\n\nSecond Solution. (i) We can construct a set of circles as required in (i) by induction. Let the rational numbers be enumerated \\( ratone, rattwo, \\ldots \\). Let \\( circleone \\) be a circle tangent to the \\( xcoord \\)-axis at the point \\( \\langle ratone, 0\\rangle \\) with radius 1. Suppose disjoint circles \\( circleone, circlec_{2}, \\ldots, circlec_{indexn} \\) have been constructed so that \\( circlei \\) is tangent to the \\( xcoord \\)-axis at \\( \\langle ratindex, 0\\rangle \\) for \\( indexi=1,2, \\ldots, indexn \\). Since \\( \\langle ratnext, 0\\rangle \\) is outside all of these circles, it is at positive distance, say \\( deltaval \\), from their union. Let \\( circlenplus \\) be a circle of radius \\( deltaval / 3 \\) tangent to the \\( xcoord \\)-axis at \\( \\langle ratnext, 0\\rangle \\). Then \\( circlenplus \\) is disjoint from \\( circleone, circlec_{2}, \\ldots, circlec_{indexn} \\). We obtain in this way a sequence of circles that includes one tangent to the \\( xcoord \\)-axis at each rational point.\n\n(ii) Let \\( \\mathcal{circlec} \\) be a set of disjoint circles in the plane all tangent to the \\( xcoord \\)-axis. For each positive number \\( paramalpha \\) let \\( \\mathfrak{circlec}_{paramalpha} \\) be the set of circles in \\( \\mathfrak{circlec} \\) having radius \\( \\geq paramalpha \\). For a fixed \\( paramalpha \\), two members of \\( \\mathfrak{circlec}_{paramalpha} \\) that fall on the same side of the \\( xcoord \\)-axis have points of tangency separated by at least \\( 2 paramalpha \\). Hence there are at most countably many such circles. Thus, \\( \\mathfrak{circlec}_{paramalpha} \\) is the union of two countable sets, so it is countable. Now the union of countably many countable sets is countable, and \\( \\mathcal{circlec}=\\cup_{indexn, 1}^{\\infty} \\mathfrak{circlec}_{1} \\), so \\( \\mathcal{circlec} \\) is countable. The set of points at which members of \\( \\mathfrak{circlec} \\) are tangent to the \\( xcoord \\)-axis is therefore countable, so it cannot include all irrational points.\n\nRemark. See L. R. Ford, \"Fractions,\" American Mathematical Monthly, vol. 45 (1938), pages 586-601, for more information concerning the family of circles constructed in our first solution."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "lanternfish",
+        "y": "pineconer",
+        "p": "redwooden",
+        "q": "shipyard",
+        "r": "marigold",
+        "s": "cinnamon",
+        "n": "backgammon",
+        "i": "hummingb",
+        "C": "paintbrush",
+        "C_r": "paintpetal",
+        "C_s": "paintspice",
+        "C_1": "paintoasis",
+        "C_i": "paintfeather",
+        "C_n+1": "paintbeacon",
+        "r_1": "marigaleaf",
+        "r_2": "marigatwo",
+        "r_i": "marigannum",
+        "r_n+1": "marigaplus",
+        "\\\\delta": "snowflake",
+        "k": "lemonade",
+        "\\\\alpha": "telescope"
+      },
+      "question": "7. Each member of a set of circles in the \\( lanternfish pineconer \\) plane is tangent to the \\( lanternfish \\) axis and no two of the circles intersect. Show that:\n(i) the points of tangency can include all the rational points on the axis, but\n(ii) the points of tangency cannot include all the irrational points.",
+      "solution": "First Solution. (i) Suppose \\( redwooden, shipyard, marigold \\), and \\( cinnamon \\) are integers such that \\( redwooden / shipyard \\neq marigold / cinnamon \\). Choose \\( lemonade>2 \\). Consider the two circles with centers at \\( \\left\\langle redwooden / shipyard, 1 / \\boldsymbol{lemonade shipyard}^{2}\\right\\rangle \\) and \\( \\left\\langle marigold / cinnamon, 1 / lemonade cinnamon^{2}\\right\\rangle \\) and tangent to the \\( lanternfish \\)-axis. We claim these circles do not intersect. If they did, the distance between their centers would not exceed the sum of their radii; squaring, we would have\n\\[\n\\left(\\frac{redwooden}{shipyard}-\\frac{marigold}{cinnamon}\\right)^{2}+\\left(\\frac{1}{lemonade shipyard^{2}}-\\frac{1}{lemonade cinnamon^{2}}\\right)^{2} \\leq\\left(\\frac{1}{lemonade shipyard^{2}}+\\frac{1}{lemonade cinnamon^{2}}\\right)^{2}\n\\]\nwhich implies\n\\[\n(redwooden cinnamon-marigold shipyard)^{2} \\leq 4 / lemonade^{2}\n\\]\n\nBut this is impossible since \\( lemonade>2 \\) and \\( (redwooden cinnamon-marigold shipyard)^{2} \\) is a positive integer. This establishes our claim.\n\nNow, given a rational number \\( marigold \\), write it in its lowest terms as a quotient of two integers, \\( marigold=redwooden / shipyard \\), and let \\( paintpetal \\) be the circle with center \\( \\left\\langle redwooden / shipyard, 1 / lemonade shipyard^{2}\\right\\rangle \\) and radius \\( 1 / lemonade shipyard^{2} \\). Then \\( paintpetal \\) is tangent to the \\( lanternfish \\)-axis at \\( \\langle marigold, 0\\rangle \\), and, as we showed above, \\( paintpetal \\) and \\( paintspice \\) do not intersect if \\( marigold \\neq s \\). Hence \\( \\left\\{paintpetal: marigold\\right. \\) rational \\( \\} \\) is a set of circles each of which is tangent to the \\( lanternfish \\)-axis, for which the points of tangency include all rational points on the \\( lanternfish \\)-axis, and no two of which intersect.\n(ii) Since any circular region contains a point both of whose coordinates are rational, and since the number of such points is countable, it is impossible to have an uncountable family of circles in the plane whose interiors are disjoint. Any two disjoint circles having a common tangent have also disjoint interiors, so it is impossible that uncountably many disjoint circles should all be tangent to the \\( lanternfish \\)-axis. Since the set of irrational points on the \\( lanternfish \\)-axis is uncountable, (ii) follows.\n\nSecond Solution. (i) We can construct a set of circles as required in (i) by induction. Let the rational numbers be enumerated \\( marigaleaf, marigatwo, \\ldots \\). Let \\( paintoasis \\) be a circle tangent to the \\( lanternfish \\)-axis at the point \\( \\left\\langle marigaleaf, 0\\right\\rangle \\) with radius 1 . Suppose disjoint circles \\( paintoasis, C_{2}, \\ldots, C_{backgammon} \\) have been constructed so that \\( C_{hummingb} \\) is tangent to the \\( lanternfish \\)-axis at \\( \\left\\langle marigannum, 0\\right\\rangle \\) for \\( hummingb=1,2, \\ldots, backgammon \\). Since \\( \\left\\langle marigaplus, 0\\right\\rangle \\) is outside all of these circles, it is at positive distance, say \\( snowflake \\), from their union. Let \\( paintbeacon \\) be a circle of radius \\( snowflake / 3 \\) tangent to the \\( lanternfish \\)-axis at \\( \\left\\langle marigaplus, 0\\right\\rangle \\). Then \\( paintbeacon \\) is disjoint from \\( paintoasis, C_{2}, \\ldots, C_{backgammon} \\). We obtain in this way a sequence of circles that includes one tangent to the \\( lanternfish \\)-axis at each rational point.\n(ii) Let \\( \\mathcal{C} \\) be a set of disjoint circles in the plane all tangent to the \\( lanternfish \\)-axis. For each positive number \\( telescope \\) let \\( \\mathfrak{C}_{telescope} \\) be the set of circles in \\( \\mathfrak{C} \\) having radius \\( \\geq telescope \\). For a fixed \\( telescope \\), two members of \\( \\mathfrak{C}_{telescope} \\) that fall on the same side of the \\( lanternfish \\)-axis have points of tangency separated by at least \\( 2 telescope \\). Hence there are at most countably many such circles. Thus, \\( \\mathfrak{C}_{telescope} \\) is the union of two countable sets, so it is countable. Now the union of countably many countable sets is countable, and \\( \\mathcal{C}=\\cup_{backgammon, 1}^{\\infty} \\mathfrak{C}_{1} \\), , so \\( \\mathcal{C} \\) is countable. The set of points at which members of \\( \\mathfrak{C} \\) are tangent to the \\( lanternfish \\)-axis is therefore countable, so it cannot include all irrational points.\n\nRemark. See L. R. Ford, \"Fractions,\" American Mathematical Monthly, vol. 45 (1938), pages 586-601, for more information concerning the family of circles constructed in our first solution."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "p": "denominatorvalue",
+        "q": "numeratorvalue",
+        "r": "irrationalvalue",
+        "s": "continuousvalue",
+        "n": "infinitevalue",
+        "i": "terminalindex",
+        "C": "squarecollection",
+        "C_r": "trianglegathering",
+        "C_s": "pentagonassembly",
+        "C_1": "hexagoncluster",
+        "C_i": "heptagonbundle",
+        "C_n+1": "octagonpackage",
+        "r_1": "fractionalpha",
+        "r_2": "fractionbeta",
+        "r_i": "fractiongamma",
+        "r_n+1": "fractiondelta",
+        "\\delta": "epsilonvalue",
+        "k": "giantparam",
+        "\\alpha": "omegaparam"
+      },
+      "question": "7. Each member of a set of circles in the \\( verticalaxis horizontalaxis \\) plane is tangent to the \\( verticalaxis \\) axis and no two of the circles intersect. Show that:\n(i) the points of tangency can include all the rational points on the axis, but\n(ii) the points of tangency cannot include all the irrational points.",
+      "solution": "First Solution. (i) Suppose \\( denominatorvalue, numeratorvalue, irrationalvalue \\), and \\( continuousvalue \\) are integers such that \\( denominatorvalue / numeratorvalue \\neq irrationalvalue / continuousvalue \\). Choose \\( giantparam>2 \\). Consider the two circles with centers at \\( \\langle denominatorvalue / numeratorvalue, 1 / \\boldsymbol{giantparam \\, numeratorvalue}^{2}\\rangle \\) and \\( \\langle irrationalvalue / continuousvalue, 1 / giantparam \\, continuousvalue^{2}\\rangle \\) and tangent to the \\( verticalaxis \\)-axis. We claim these circles do not intersect. If they did, the distance between their centers would not exceed the sum of their radii; squaring, we would have\n\\[\n\\left(\\frac{denominatorvalue}{numeratorvalue}-\\frac{irrationalvalue}{continuousvalue}\\right)^{2}+\\left(\\frac{1}{giantparam \\, numeratorvalue^{2}}-\\frac{1}{giantparam \\, continuousvalue^{2}}\\right)^{2}\\leq\\left(\\frac{1}{giantparam \\, numeratorvalue^{2}}+\\frac{1}{giantparam \\, continuousvalue^{2}}\\right)^{2}\n\\]\nwhich implies\n\\[\n(denominatorvalue\\, continuousvalue-irrationalvalue\\, numeratorvalue)^{2}\\leq4/giantparam^{2}\n\\]\nBut this is impossible since \\( giantparam>2 \\) and \\( (denominatorvalue\\, continuousvalue-irrationalvalue\\, numeratorvalue)^{2} \\) is a positive integer. This establishes our claim.\n\nNow, given a rational number \\( irrationalvalue \\), write it in its lowest terms as a quotient of two integers, \\( irrationalvalue=denominatorvalue / numeratorvalue \\), and let \\( trianglegathering \\) be the circle with center \\( \\langle denominatorvalue / numeratorvalue, 1 / giantparam \\, numeratorvalue^{2}\\rangle \\) and radius \\( 1 / giantparam \\, numeratorvalue^{2} \\). Then \\( trianglegathering \\) is tangent to the \\( verticalaxis \\)-axis at \\( \\langle irrationalvalue,0\\rangle \\), and, as we showed above, \\( trianglegathering \\) and \\( pentagonassembly \\) do not intersect if \\( irrationalvalue\\neq continuousvalue \\). Hence \\( \\{trianglegathering:irrationalvalue \\text{ rational}\\} \\) is a set of circles each of which is tangent to the \\( verticalaxis \\)-axis, whose points of tangency include all rational points on that axis, and no two of which intersect.\n\n(ii) Since any circular region contains a point both of whose coordinates are rational, and since the number of such points is countable, it is impossible to have an uncountable family of circles in the plane whose interiors are disjoint. Any two disjoint circles having a common tangent have also disjoint interiors, so it is impossible that uncountably many disjoint circles should all be tangent to the \\( verticalaxis \\)-axis. Since the set of irrational points on the \\( verticalaxis \\)-axis is uncountable, (ii) follows.\n\nSecond Solution. (i) We can construct a set of circles as required in (i) by induction. Let the rational numbers be enumerated \\( fractionalpha, fractionbeta, \\ldots \\). Let \\( hexagoncluster \\) be a circle tangent to the \\( verticalaxis \\)-axis at the point \\( \\langle fractionalpha,0\\rangle \\) with radius 1. Suppose disjoint circles \\( hexagoncluster, C_{2}, \\ldots, C_{infinitevalue} \\) have been constructed so that \\( heptagonbundle \\) is tangent to the \\( verticalaxis \\)-axis at \\( \\langle fractiongamma,0\\rangle \\) for \\( terminalindex=1,2,\\ldots,infinitevalue \\). Since \\( \\langle fractiondelta,0\\rangle \\) is outside all of these circles, it is at positive distance, say \\( epsilonvalue \\), from their union. Let \\( octagonpackage \\) be a circle of radius \\( epsilonvalue/3 \\) tangent to the \\( verticalaxis \\)-axis at \\( \\langle fractiondelta,0\\rangle \\). Then \\( octagonpackage \\) is disjoint from \\( hexagoncluster,C_{2},\\ldots,C_{infinitevalue} \\). We obtain in this way a sequence of circles that includes one tangent to the \\( verticalaxis \\)-axis at each rational point.\n\n(ii) Let \\( \\mathcal{C} \\) be a set of disjoint circles in the plane all tangent to the \\( verticalaxis \\)-axis. For each positive number \\( omegaparam \\) let \\( \\mathfrak{C}_{omegaparam} \\) be the set of circles in \\( \\mathfrak{C} \\) having radius \\( \\geq omegaparam \\). For a fixed \\( omegaparam \\), two members of \\( \\mathfrak{C}_{omegaparam} \\) that fall on the same side of the \\( verticalaxis \\)-axis have points of tangency separated by at least \\( 2\\,omegaparam \\). Hence there are at most countably many such circles. Thus, \\( \\mathfrak{C}_{omegaparam} \\) is the union of two countable sets, so it is countable. Now the union of countably many countable sets is countable, and \\( \\mathcal{C}=\\cup_{infinitevalue,1}^{\\infty}\\mathfrak{C}_{1} \\), so \\( \\mathcal{C} \\) is countable. The set of points at which members of \\( \\mathfrak{C} \\) are tangent to the \\( verticalaxis \\)-axis is therefore countable, so it cannot include all irrational points.\n\nRemark. See L. R. Ford, \"Fractions,\" American Mathematical Monthly, vol. 45 (1938), pages 586-601, for more information concerning the family of circles constructed in our first solution."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "p": "mnecbxqy",
+        "q": "ksorplid",
+        "r": "faguvmis",
+        "s": "ztldhcen",
+        "n": "wjypadke",
+        "i": "abtmxofr",
+        "C": "pylqswer",
+        "C_r": "gupefady",
+        "C_s": "tnyhmsov",
+        "C_1": "laynwhrc",
+        "C_i": "ohztrpma",
+        "C_n+1": "vkhsezda",
+        "r_1": "bqxzunph",
+        "r_2": "sclmtuva",
+        "r_i": "gijovsek",
+        "r_n+1": "wursbkai",
+        "\\delta": "leptisaf",
+        "k": "uleqmnor",
+        "\\alpha": "droyfgle"
+      },
+      "question": "7. Each member of a set of circles in the \\( qzxwvtnp hjgrksla \\) plane is tangent to the \\( qzxwvtnp \\) axis and no two of the circles intersect. Show that:\n(i) the points of tangency can include all the rational points on the axis, but\n(ii) the points of tangency cannot include all the irrational points.",
+      "solution": "First Solution. (i) Suppose \\( mnecbxqy, ksorplid, faguvmis \\), and \\( ztldhcen \\) are integers such that \\( mnecbxqy / ksorplid \\neq faguvmis / ztldhcen \\). Choose \\( uleqmnor>2 \\). Consider the two circles with centers at \\( \\left\\langle mnecbxqy / ksorplid, 1 / \\boldsymbol{uleqmnor ksorplid}^{2}\\right\\rangle \\) and \\( \\left\\langle faguvmis / ztldhcen, 1 / uleqmnor ztldhcen^{2}\\right\\rangle \\) and tangent to the \\( qzxwvtnp \\)-axis. We claim these circles do not intersect. If they did, the distance between their centers would not exceed the sum of their radii; squaring, we would have\n\\[\n\\left(\\frac{mnecbxqy}{ksorplid}-\\frac{faguvmis}{ztldhcen}\\right)^{2}+\\left(\\frac{1}{uleqmnor ksorplid^{2}}-\\frac{1}{uleqmnor ztldhcen^{2}}\\right)^{2} \\leq\\left(\\frac{1}{uleqmnor ksorplid^{2}}+\\frac{1}{uleqmnor ztldhcen^{2}}\\right)^{2}\n\\]\nwhich implies\n\\[\n(mnecbxqy ztldhcen-faguvmis ksorplid)^{2} \\leq 4 / uleqmnor^{2}\n\\]\n\nBut this is impossible since \\( uleqmnor>2 \\) and \\( (mnecbxqy ztldhcen-faguvmis ksorplid)^{2} \\) is a positive integer. This establishes our claim.\n\nNow, given a rational number \\( faguvmis \\), write it in its lowest terms as a quotient of two integers, \\( faguvmis=mnecbxqy / ksorplid \\), and let \\( gupefady \\) be the circle with center \\( \\left\\langle mnecbxqy / ksorplid, 1 / uleqmnor ksorplid^{2}\\right\\rangle \\) and radius \\( 1 / uleqmnor ksorplid^{2} \\). Then \\( gupefady \\) is tangent to the \\( qzxwvtnp \\)-axis at \\( \\langle faguvmis, 0\\rangle \\), and, as we showed above, \\( gupefady \\) and \\( tnyhmsov \\) do not intersect if \\( faguvmis \\neq ztldhcen \\). Hence \\( \\{gupefady: faguvmis \\text{ rational}\\} \\) is a set of circles each of which is tangent to the \\( qzxwvtnp \\)-axis, for which the points of tangency include all rational points on the \\( qzxwvtnp \\)-axis, and no two of which intersect.\n\n(ii) Since any circular region contains a point both of whose coordinates are rational, and since the number of such points is countable, it is impossible to have an uncountable family of circles in the plane whose interiors are disjoint. Any two disjoint circles having a common tangent have also disjoint interiors, so it is impossible that uncountably many disjoint circles should all be tangent to the \\( qzxwvtnp \\)-axis. Since the set of irrational points on the \\( qzxwvtnp \\)-axis is uncountable, (ii) follows.\n\nSecond Solution. (i) We can construct a set of circles as required in (i) by induction. Let the rational numbers be enumerated \\( bqxzunph, sclmtuva, \\ldots \\). Let \\( laynwhrc \\) be a circle tangent to the \\( qzxwvtnp \\)-axis at the point \\( \\left\\langle bqxzunph, 0\\right\\rangle \\) with radius 1. Suppose disjoint circles \\( laynwhrc, pylqswer_{2}, \\ldots, pylqswer_{wjypadke} \\) have been constructed so that \\( ohztrpma \\) is tangent to the \\( qzxwvtnp \\)-axis at \\( \\left\\langle gijovsek, 0\\right\\rangle \\) for \\( abtmxofr=1,2, \\ldots, wjypadke \\). Since \\( \\left\\langle wursbkai, 0\\right\\rangle \\) is outside all of these circles, it is at positive distance, say \\( leptisaf \\), from their union. Let \\( vkhsezda \\) be a circle of radius \\( leptisaf / 3 \\) tangent to the \\( qzxwvtnp \\)-axis at \\( \\left\\langle wursbkai, 0\\right\\rangle \\). Then \\( vkhsezda \\) is disjoint from \\( laynwhrc, pylqswer_{2}, \\ldots, pylqswer_{wjypadke} \\). We obtain in this way a sequence of circles that includes one tangent to the \\( qzxwvtnp \\)-axis at each rational point.\n\n(ii) Let \\( \\mathcal{pylqswer} \\) be a set of disjoint circles in the plane all tangent to the \\( qzxwvtnp \\)-axis. For each positive number \\( droyfgle \\) let \\( \\mathfrak{pylqswer}_{droyfgle} \\) be the set of circles in \\( \\mathfrak{pylqswer} \\) having radius \\( \\ge droyfgle \\). For a fixed \\( droyfgle \\), two members of \\( \\mathfrak{pylqswer}_{droyfgle} \\) that fall on the same side of the \\( qzxwvtnp \\)-axis have points of tangency separated by at least \\( 2 droyfgle \\). Hence there are at most countably many such circles. Thus, \\( \\mathfrak{pylqswer}_{droyfgle} \\) is the union of two countable sets, so it is countable. Now the union of countably many countable sets is countable, and \\( \\mathcal{pylqswer}=\\cup_{wjypadke, 1}^{\\infty} \\mathfrak{pylqswer}_{1} \\), so \\( \\mathcal{pylqswer} \\) is countable. The set of points at which members of \\( \\mathfrak{pylqswer} \\) are tangent to the \\( qzxwvtnp \\)-axis is therefore countable, so it cannot include all irrational points.\n\nRemark. See L. R. Ford, \"Fractions,\" American Mathematical Monthly, vol. 45 (1938), pages 586-601, for more information concerning the family of circles constructed in our first solution."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\ell\\colon y=1\\) be the horizontal line one unit above the \\(x\\)-axis.  A family \\(\\mathcal C\\) of circles is said to \"sit above\" \\(\\ell\\) if every circle of \\(\\mathcal C\\) lies entirely in the half-plane \\(y>1\\) and is tangent to \\(\\ell\\).\n\n(a)  Prove that there exists a family \\(\\mathcal C\\) of pairwise disjoint circles sitting above \\(\\ell\\) whose points of tangency with \\(\\ell\\) are exactly the points \\((r,1)\\) with rational abscissa \\(r\\in\\mathbb Q\\).\n\n(b)  Show, on the other hand, that if \\(\\mathcal C\\) is any family of pairwise disjoint circles sitting above \\(\\ell\\), then the set of abscissas of the tangency points of \\(\\mathcal C\\) is countable.  Consequently, no such family can be tangent to \\(\\ell\\) at every irrational point.",
+      "solution": "Part (a).  Write each rational number in lowest terms as r=p/q with q\\geq 1.  Fix the constants\nm=3  and  c=1/3.\nFor every rational r=p/q define a circle C_r by\n   centre (r,1 + c/q^m),    radius = c/q^m = 1/(3q^3).\nBecause the radius equals the centre's vertical displacement above \\ell , the circle is tangent to \\ell  at the point (r,1).\n\nTo see that two distinct circles C_{p/q} and C_{r/s} do not meet, assume to the contrary that they intersect.  Then the distance between their centres does not exceed the sum of their radii, so\n  (p/q-r/s)^2 + (c/q^3 - c/s^3)^2 \\leq  (c/q^3 + c/s^3)^2.\nSubtracting the vertical term from both sides gives\n  (p/q-r/s)^2 \\leq  (c/q^3 + c/s^3)^2 - (c/q^3 - c/s^3)^2\n                  = 4c^2/(q^3 s^3).\nSince p/q - r/s = (ps-rq)/(qs), this becomes\n  (ps-rq)^2 \\leq  4c^2/(qs) \\leq  4c^2 = 4/9 < 1.\nBut (ps-rq)^2 is a positive integer, impossible.  Hence the circles are pairwise disjoint.  The family {C_r : r\\in Q} therefore satisfies the requirements of part (a).\n\nPart (b).  Let C be any family of pairwise disjoint circles sitting above \\ell .  Consider the countable dense set\n  D = { (a+b\\sqrt{2}, c+d\\sqrt{2}) \\in  R^2 : a,b,c,d \\in  Q }.\nEvery open disk in the plane contains a point of D, so choose, for each circle C\\in C, the first point of D (in some fixed enumeration of D) that lies in the interior of C.  This rule gives an injection C \\hookrightarrow  D; hence C is at most countable.\n\nBecause tangency points are in one-to-one correspondence with the circles themselves, the set of abscissas at which circles of C touch \\ell  is also countable.  The set of irrational numbers is uncountable, so no family of disjoint circles tangent to \\ell  can include every irrational abscissa.  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Associate to each rational p/q a circle centred at (p/q, c/q^m) with radius c/q^m.",
+          "Pick constants m≥2 and c small enough (e.g., c=1/k with k>2) so that distance-between-centres > sum-of-radii ⇒ circles are pairwise disjoint.",
+          "Thus the family of circles is tangent to the chosen line at every rational point.",
+          "Each open disk contains a point from a fixed countable dense set (e.g., ℚ×ℚ), giving an injective map ‘circle ↦ dense-set-point’.",
+          "Hence any disjoint family of such circles is countable, so its tangency set can’t cover the uncountable irrationals."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Exponent controlling how fast radii shrink with denominator (must be ≥2).",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "Scale factor making circles small enough for the key inequality (any positive c<1/2 of minimal horizontal gap).",
+            "original": "c = 1/k with k>2"
+          },
+          "slot3": {
+            "description": "Choice of countable dense set used to prove countability of circle family.",
+            "original": "rational lattice points (ℚ×ℚ)"
+          },
+          "slot4": {
+            "description": "Reference line to which all circles are tangent; any fixed straight line works.",
+            "original": "x-axis (y = 0)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

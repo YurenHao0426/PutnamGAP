@@ -1,0 +1,115 @@
+{
+  "index": "2000-B-5",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $S_0$ be a finite set of positive integers.  We define finite\nsets\n$S_1,S_2,\\ldots$ of positive integers as follows:\nthe integer $a$ is in $S_{n+1}$ if and only if exactly one of $a-1$ or $a$ is\nin\n$S_n$.\nShow that there exist infinitely many integers $N$ for which\n$S_N=S_0\\cup\\{N+a: a\\in S_0\\}$.",
+  "solution": "We claim that all integers $N$ of the form $2^k$, with $k$ a positive\ninteger and $N>\\max\\{S_0\\}$, satisfy the desired conditions.\n\nIt follows from the definition of $S_n$, and induction on $n$, that\n\\begin{align*}\n\\sum_{j \\in S_n} x^j &\\equiv (1+x) \\sum_{j \\in S_{n-1}} x^j \\\\\n&\\equiv (1+x)^n \\sum_{j \\in S_0} x^j \\pmod{2}.\n\\end{align*}\nFrom the identity $(x+y)^2 \\equiv x^2+y^2 \\pmod{2}$ and induction\non $n$, we have $(x+y)^{2^n} \\equiv x^{2^n} + y^{2^n} \\pmod{2}$.\nHence if we choose $N$ to be a power of 2 greater than $\\max\\{S_0\\}$, then\n\\[\n\\sum_{j \\in S_n} \\equiv (1+x^N) \\sum_{j \\in S_0} x^j\n\\]\nand $S_N=S_0\\cup\\{N+a: a\\in S_0\\}$, as desired.",
+  "vars": [
+    "a",
+    "j",
+    "k",
+    "n",
+    "x",
+    "y",
+    "S_n",
+    "S_n-1"
+  ],
+  "params": [
+    "S_0",
+    "N"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "elemint",
+        "j": "loopvar",
+        "k": "powindex",
+        "n": "stepnum",
+        "x": "indetvar",
+        "y": "auxvar",
+        "S_n": "stepset",
+        "S_n-1": "prevset",
+        "S_0": "initialset",
+        "N": "largenum"
+      },
+      "question": "Let $initialset$ be a finite set of positive integers.  We define finite\nsets\n$S_1,S_2,\\ldots$ of positive integers as follows:\nthe integer $elemint$ is in $S_{stepnum+1}$ if and only if exactly one of $elemint-1$ or $elemint$ is\nin\n$stepset$.\nShow that there exist infinitely many integers $largenum$ for which\n$S_{largenum}=initialset\\cup\\{largenum+elemint: elemint\\in initialset\\}$.",
+      "solution": "We claim that all integers $largenum$ of the form $2^{powindex}$, with $powindex$ a positive\ninteger and $largenum>\\max\\{initialset\\}$, satisfy the desired conditions.\n\nIt follows from the definition of $stepset$, and induction on $stepnum$, that\n\\begin{align*}\n\\sum_{loopvar \\in stepset} indetvar^{loopvar} &\\equiv (1+indetvar) \\sum_{loopvar \\in prevset} indetvar^{loopvar} \\\\\n&\\equiv (1+indetvar)^{stepnum} \\sum_{loopvar \\in initialset} indetvar^{loopvar} \\pmod{2}.\n\\end{align*}\nFrom the identity $(indetvar+auxvar)^2 \\equiv indetvar^2+auxvar^2 \\pmod{2}$ and induction\non $stepnum$, we have $(indetvar+auxvar)^{2^{stepnum}} \\equiv indetvar^{2^{stepnum}} + auxvar^{2^{stepnum}} \\pmod{2}$.\nHence if we choose $largenum$ to be a power of 2 greater than $\\max\\{initialset\\}$, then\n\\[\n\\sum_{loopvar \\in stepset} indetvar^{loopvar} \\equiv (1+indetvar^{largenum}) \\sum_{loopvar \\in initialset} indetvar^{loopvar}\n\\]\nand $S_{largenum}=initialset\\cup\\{largenum+elemint: elemint\\in initialset\\}$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "lighthouse",
+        "j": "marigold",
+        "k": "pineapple",
+        "n": "sailboat",
+        "x": "macaroon",
+        "y": "goldfinch",
+        "S_n": "raincloud",
+        "S_n-1": "strawberry",
+        "S_0": "butterfly",
+        "N": "blacksmith"
+      },
+      "question": "Let $butterfly$ be a finite set of positive integers.  We define finite\nsets\n$S_1,S_2,\\ldots$ of positive integers as follows:\nthe integer $lighthouse$ is in $S_{sailboat+1}$ if and only if exactly one of $lighthouse-1$ or $lighthouse$ is\nin\n$raincloud$.\nShow that there exist infinitely many integers $blacksmith$ for which\n$S_{blacksmith}=butterfly\\cup\\{blacksmith+lighthouse: lighthouse\\in butterfly\\}$.",
+      "solution": "We claim that all integers $blacksmith$ of the form $2^{pineapple}$, with $pineapple$ a positive\ninteger and $blacksmith>\\max\\{butterfly\\}$, satisfy the desired conditions.\n\nIt follows from the definition of $raincloud$, and induction on $sailboat$, that\n\\begin{align*}\n\\sum_{marigold \\in raincloud} macaroon^{marigold} &\\equiv (1+macaroon) \\sum_{marigold \\in S_{sailboat-1}} macaroon^{marigold} \\\\\n&\\equiv (1+macaroon)^{sailboat} \\sum_{marigold \\in butterfly} macaroon^{marigold} \\pmod{2}.\n\\end{align*}\nFrom the identity $(macaroon+goldfinch)^2 \\equiv macaroon^2+goldfinch^2 \\pmod{2}$ and induction\non $sailboat$, we have $(macaroon+goldfinch)^{2^{sailboat}} \\equiv macaroon^{2^{sailboat}} + goldfinch^{2^{sailboat}} \\pmod{2}$.\nHence if we choose $blacksmith$ to be a power of 2 greater than $\\max\\{butterfly\\}$, then\n\\[\n\\sum_{marigold \\in raincloud} \\equiv (1+macaroon^{blacksmith}) \\sum_{marigold \\in butterfly} macaroon^{marigold}\n\\]\nand $S_{blacksmith}=butterfly\\cup\\{blacksmith+lighthouse: lighthouse\\in butterfly\\}$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "omegaindex",
+        "j": "outsider",
+        "k": "groundfloor",
+        "n": "constantless",
+        "x": "knownvalue",
+        "y": "horizontal",
+        "S_n": "emptygroup",
+        "S_n-1": "fullsetprev",
+        "S_0": "terminalset",
+        "N": "minvalue"
+      },
+      "question": "Let $terminalset$ be a finite set of positive integers.  We define finite\nsets\n$S_1,S_2,\\ldots$ of positive integers as follows:\nthe integer $\\omegaindex$ is in $S_{constantless+1}$ if and only if exactly one of $\\omegaindex-1$ or $\\omegaindex$ is\nin\n$emptygroup$.\nShow that there exist infinitely many integers $\\minvalue$ for which\n$S_{\\minvalue}=terminalset\\cup\\{\\minvalue+\\omegaindex: \\omegaindex\\in terminalset\\}$.",
+      "solution": "We claim that all integers $\\minvalue$ of the form $2^{groundfloor}$, with $groundfloor$ a positive\ninteger and $\\minvalue>\\max\\{terminalset\\}$, satisfy the desired conditions.\n\nIt follows from the definition of $emptygroup$, and induction on $constantless$, that\n\\begin{align*}\n\\sum_{outsider \\in emptygroup} knownvalue^{outsider} &\\equiv (1+knownvalue) \\sum_{outsider \\in fullsetprev} knownvalue^{outsider} \\\\&\\equiv (1+knownvalue)^{constantless} \\sum_{outsider \\in terminalset} knownvalue^{outsider} \\pmod{2}.\n\\end{align*}\nFrom the identity $(knownvalue+horizontal)^2 \\equiv knownvalue^2+horizontal^2 \\pmod{2}$ and induction\non $constantless$, we have $(knownvalue+horizontal)^{2^{constantless}} \\equiv knownvalue^{2^{constantless}} + horizontal^{2^{constantless}} \\pmod{2}$.\nHence if we choose $\\minvalue$ to be a power of 2 greater than $\\max\\{terminalset\\}$, then\n\\[\\sum_{outsider \\in emptygroup} \\equiv (1+knownvalue^{\\minvalue}) \\sum_{outsider \\in terminalset} knownvalue^{outsider}\\]\nand $S_{\\minvalue}=terminalset\\cup\\{\\minvalue+\\omegaindex: \\omegaindex\\in terminalset\\}$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "j": "hjgrksla",
+        "k": "mndfplqe",
+        "n": "vchztbru",
+        "x": "sbclwrmd",
+        "y": "ptkrvngx",
+        "S_n": "uzldamfs",
+        "S_n-1": "rcnwtopg",
+        "S_0": "wsfvbkjo",
+        "N": "dzkqrhpe"
+      },
+      "question": "<<<\nLet $wsfvbkjo$ be a finite set of positive integers.  We define finite\nsets\n$S_1,S_2,\\ldots$ of positive integers as follows:\nthe integer $qzxwvtnp$ is in $S_{vchztbru+1}$ if and only if exactly one of $qzxwvtnp-1$ or $qzxwvtnp$ is\nin\n$uzldamfs$.\nShow that there exist infinitely many integers $dzkqrhpe$ for which\n$S_{dzkqrhpe}=wsfvbkjo\\cup\\{dzkqrhpe+qzxwvtnp: qzxwvtnp\\in wsfvbkjo\\}$.\n>>>",
+      "solution": "<<<\nWe claim that all integers $dzkqrhpe$ of the form $2^{mndfplqe}$, with $mndfplqe$ a positive\ninteger and $dzkqrhpe>\\max\\{wsfvbkjo\\}$, satisfy the desired conditions.\n\nIt follows from the definition of $uzldamfs$, and induction on $vchztbru$, that\n\\begin{align*}\n\\sum_{hjgrksla \\in uzldamfs} sbclwrmd^{hjgrksla} &\\equiv (1+sbclwrmd) \\sum_{hjgrksla \\in rcnwtopg} sbclwrmd^{hjgrksla} \\\\\n&\\equiv (1+sbclwrmd)^{vchztbru} \\sum_{hjgrksla \\in wsfvbkjo} sbclwrmd^{hjgrksla} \\pmod{2}.\n\\end{align*}\nFrom the identity $(sbclwrmd+ptkrvngx)^2 \\equiv sbclwrmd^2+ptkrvngx^2 \\pmod{2}$ and induction\non $vchztbru$, we have $(sbclwrmd+ptkrvngx)^{2^{vchztbru}} \\equiv sbclwrmd^{2^{vchztbru}} + ptkrvngx^{2^{vchztbru}} \\pmod{2}$.\nHence if we choose $dzkqrhpe$ to be a power of 2 greater than $\\max\\{wsfvbkjo\\}$, then\n\\[\n\\sum_{hjgrksla \\in uzldamfs} sbclwrmd^{hjgrksla} \\equiv (1+sbclwrmd^{dzkqrhpe}) \\sum_{hjgrksla \\in wsfvbkjo} sbclwrmd^{hjgrksla}\n\\]\nand $S_{dzkqrhpe}=wsfvbkjo\\cup\\{dzkqrhpe+qzxwvtnp: qzxwvtnp\\in wsfvbkjo\\}$, as desired.\n>>>"
+    },
+    "kernel_variant": {
+      "question": "Fix an integer m \\geq  2 and a positive integer d.  \nFor every point v = (v_1,\\ldots ,v_m) with positive integer coordinates denote by e_i the i-th unit vector, so v - d e_i is obtained from v by subtracting d from the i-th coordinate.\n\nLet S_0 be a finite subset of \\mathbb{Z}_{>0}^m.  \nFor n \\geq  0 define S_{n+1} \\subset  \\mathbb{Z}_{>0}^m by the rule\n\n v \\in  S_{n+1} \\Leftrightarrow    | { v } \\cup  { v - d e_i : 1\\leq i\\leq m } \\cap  S_n |  is odd. (\\star )\n\n(If a point occurring in (\\star ) has a non-positive coordinate, it is interpreted as not belonging to S_n.)\n\nProve that there are infinitely many positive integers N such that\n\n S_N  =  S_0  \\cup   \\bigcup _{i=1}^m { v + dN e_i : v \\in  S_0 }.  ()\n\nEquivalently, show that for every k with d\\cdot 2^k  >  max{ coordinate of any point of S_0 } one has\n\n S_{2^k}  =  S_0  \\cup   \\bigcup _{i=1}^m { v + d\\cdot 2^k e_i : v \\in  S_0 }.  (')",
+      "solution": "Step 1 - Encoding sets by multivariate polynomials over F_2.  \nFor a finite set T \\subset  \\mathbb{Z}_{>0}^m define its generating polynomial\n\n P_T(X_1,\\ldots ,X_m)  =  \\sum _{(a_1,\\ldots ,a_m)\\in T}  X_1^{a_1}\\cdot \\cdot \\cdot X_m^{a_m}  \\in  F_2[X_1,\\ldots ,X_m].\n\nWrite P_n for P_{S_n}.  We work throughout in the polynomial ring R := F_2[X_1,\\ldots ,X_m], where all identities are taken modulo 2.\n\nStep 2 - Translating the evolution rule.  \nFix L(X_1,\\ldots ,X_m) := 1 + X_1^{d} + \\cdots  + X_m^{d} \\in  R.  \nWe claim:\n\n P_{n+1}  =  L \\cdot  P_n  for every n \\geq  0. (1)\n\nIndeed, let v = (a_1,\\ldots ,a_m) with all a_j > 0.  \nIn P_n the monomials whose product with L contribute to the coefficient of X_1^{a_1}\\ldots X_m^{a_m} are\n\n* X_1^{a_1}\\ldots X_m^{a_m}  (corresponding to v itself),  \n* X_1^{a_1-d} X_2^{a_2}\\ldots X_m^{a_m}  (corresponding to v - d e_1),  \n  \\ldots    \n* X_1^{a_1}\\ldots X_{m-1}^{a_{m-1}} X_m^{a_m-d}  (corresponding to v - d e_m).\n\nHence the coefficient of that monomial in L\\cdot P_n is precisely the parity described in (\\star ); (1) follows.\n\nStep 3 - Iterating the operator.  \nBy (1),\n\n P_n  =  L^n \\cdot  P_0. (2)\n\nBecause we work in characteristic 2, the Frobenius endomorphism gives\n\n ( A + B )^{2}  =  A^{2} + B^{2},  and by induction  \n ( A + B_1 + \\cdots  + B_t )^{2^k}  =  A^{2^k} + B_1^{2^k} + \\cdots  + B_t^{2^k}. (3)\n\nApplying (3) with A = 1 and B_i = X_i^{d} we obtain\n\n L^{2^k}  =  (1 + X_1^{d} + \\cdots  + X_m^{d})^{2^k}\n     =  1 + X_1^{d\\cdot 2^k} + \\cdots  + X_m^{d\\cdot 2^k}. (4)\n\nStep 4 - Description of S_{2^k}.  \nInsert (4) into (2):\n\n P_{2^k}  =  (1 + X_1^{d\\cdot 2^k} + \\cdots  + X_m^{d\\cdot 2^k}) \\cdot  P_0\n     =  P_0 + \\sum _{i=1}^{m} X_i^{d\\cdot 2^k} P_0. (5)\n\nInterpretation of each term:\n\n* P_0 corresponds to S_0;  \n* X_i^{d\\cdot 2^k} P_0 is obtained by multiplying every monomial of P_0 by X_i^{d\\cdot 2^k}, i.e. by adding d\\cdot 2^k to the i-th coordinate of each point of S_0.  Consequently\n\n X_i^{d\\cdot 2^k} P_0 \\leftrightarrow  { v + d\\cdot 2^k e_i : v \\in  S_0 }.\n\nThus (5) states exactly that S_{2^k} is the union described in (').\n\nStep 5 - Ensuring disjointness and positivity.  \nBecause d\\cdot 2^k exceeds every coordinate appearing in S_0, all shifted copies in (') lie outside S_0 and outside one another, and all coordinates remain positive.  Hence (') holds as an equality of sets.\n\nStep 6 - Infinitely many suitable N.  \nThe inequality d\\cdot 2^k > max coordinate of S_0 holds for every k greater than some fixed k_0, giving infinitely many powers N = 2^k that satisfy ().  \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.770966",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension / more variables:  \n   The problem now takes place in ℤ_{>0}^m with an arbitrary dimension m ≥ 2 instead of the original one–dimensional setting.  The state of each point depends simultaneously on m+1 neighbouring points, vastly increasing the combinatorial complexity.\n\n2. Additional shifts and interactions:  \n   The update rule couples the current point with m different d-shifts, creating m+1 interacting “directions’’ rather than a single one.  The final pattern (♣) contains m+1 distinct, pairwise disjoint copies of the initial configuration, not merely one.\n\n3. More sophisticated mathematics:  \n   Solving the problem demands working in the multivariate polynomial ring 𝔽₂[X₁,…,X_m] and exploiting the Frobenius endomorphism in characteristic 2.  Handling several commuting variables simultaneously and interpreting their exponents as m-dimensional translations is substantially subtler than the univariate case.\n\n4. Deeper theoretical insight:  \n   One must recognise that the operator L = 1 + Σ X_i^{d} encodes the cellular-automaton rule, observe that iterates of L at powers of 2 “linearise’’ via the Frobenius map, and translate polynomial multiplications back into geometric statements about lattice sets.  This blend of algebra, combinatorics, and geometry goes beyond the elementary manipulations sufficient for the original problem.\n\n5. Increased proof length and number of steps:  \n   The solution requires six logically distinct steps (encoding, translation, iteration, Frobenius analysis, geometric interpretation, infinitude argument), each introducing non-trivial ideas.  In the original one-variable situation, two or three steps suffice.\n\nFor these reasons the enhanced kernel variant is significantly harder than both the original problem and the given kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Fix an integer m \\geq  2 and a positive integer d.  \nFor every point v = (v_1,\\ldots ,v_m) with positive integer coordinates denote by e_i the i-th unit vector, so v - d e_i is obtained from v by subtracting d from the i-th coordinate.\n\nLet S_0 be a finite subset of \\mathbb{Z}_{>0}^m.  \nFor n \\geq  0 define S_{n+1} \\subset  \\mathbb{Z}_{>0}^m by the rule\n\n v \\in  S_{n+1} \\Leftrightarrow    | { v } \\cup  { v - d e_i : 1\\leq i\\leq m } \\cap  S_n |  is odd. (\\star )\n\n(If a point occurring in (\\star ) has a non-positive coordinate, it is interpreted as not belonging to S_n.)\n\nProve that there are infinitely many positive integers N such that\n\n S_N  =  S_0  \\cup   \\bigcup _{i=1}^m { v + dN e_i : v \\in  S_0 }.  ()\n\nEquivalently, show that for every k with d\\cdot 2^k  >  max{ coordinate of any point of S_0 } one has\n\n S_{2^k}  =  S_0  \\cup   \\bigcup _{i=1}^m { v + d\\cdot 2^k e_i : v \\in  S_0 }.  (')",
+      "solution": "Step 1 - Encoding sets by multivariate polynomials over F_2.  \nFor a finite set T \\subset  \\mathbb{Z}_{>0}^m define its generating polynomial\n\n P_T(X_1,\\ldots ,X_m)  =  \\sum _{(a_1,\\ldots ,a_m)\\in T}  X_1^{a_1}\\cdot \\cdot \\cdot X_m^{a_m}  \\in  F_2[X_1,\\ldots ,X_m].\n\nWrite P_n for P_{S_n}.  We work throughout in the polynomial ring R := F_2[X_1,\\ldots ,X_m], where all identities are taken modulo 2.\n\nStep 2 - Translating the evolution rule.  \nFix L(X_1,\\ldots ,X_m) := 1 + X_1^{d} + \\cdots  + X_m^{d} \\in  R.  \nWe claim:\n\n P_{n+1}  =  L \\cdot  P_n  for every n \\geq  0. (1)\n\nIndeed, let v = (a_1,\\ldots ,a_m) with all a_j > 0.  \nIn P_n the monomials whose product with L contribute to the coefficient of X_1^{a_1}\\ldots X_m^{a_m} are\n\n* X_1^{a_1}\\ldots X_m^{a_m}  (corresponding to v itself),  \n* X_1^{a_1-d} X_2^{a_2}\\ldots X_m^{a_m}  (corresponding to v - d e_1),  \n  \\ldots    \n* X_1^{a_1}\\ldots X_{m-1}^{a_{m-1}} X_m^{a_m-d}  (corresponding to v - d e_m).\n\nHence the coefficient of that monomial in L\\cdot P_n is precisely the parity described in (\\star ); (1) follows.\n\nStep 3 - Iterating the operator.  \nBy (1),\n\n P_n  =  L^n \\cdot  P_0. (2)\n\nBecause we work in characteristic 2, the Frobenius endomorphism gives\n\n ( A + B )^{2}  =  A^{2} + B^{2},  and by induction  \n ( A + B_1 + \\cdots  + B_t )^{2^k}  =  A^{2^k} + B_1^{2^k} + \\cdots  + B_t^{2^k}. (3)\n\nApplying (3) with A = 1 and B_i = X_i^{d} we obtain\n\n L^{2^k}  =  (1 + X_1^{d} + \\cdots  + X_m^{d})^{2^k}\n     =  1 + X_1^{d\\cdot 2^k} + \\cdots  + X_m^{d\\cdot 2^k}. (4)\n\nStep 4 - Description of S_{2^k}.  \nInsert (4) into (2):\n\n P_{2^k}  =  (1 + X_1^{d\\cdot 2^k} + \\cdots  + X_m^{d\\cdot 2^k}) \\cdot  P_0\n     =  P_0 + \\sum _{i=1}^{m} X_i^{d\\cdot 2^k} P_0. (5)\n\nInterpretation of each term:\n\n* P_0 corresponds to S_0;  \n* X_i^{d\\cdot 2^k} P_0 is obtained by multiplying every monomial of P_0 by X_i^{d\\cdot 2^k}, i.e. by adding d\\cdot 2^k to the i-th coordinate of each point of S_0.  Consequently\n\n X_i^{d\\cdot 2^k} P_0 \\leftrightarrow  { v + d\\cdot 2^k e_i : v \\in  S_0 }.\n\nThus (5) states exactly that S_{2^k} is the union described in (').\n\nStep 5 - Ensuring disjointness and positivity.  \nBecause d\\cdot 2^k exceeds every coordinate appearing in S_0, all shifted copies in (') lie outside S_0 and outside one another, and all coordinates remain positive.  Hence (') holds as an equality of sets.\n\nStep 6 - Infinitely many suitable N.  \nThe inequality d\\cdot 2^k > max coordinate of S_0 holds for every k greater than some fixed k_0, giving infinitely many powers N = 2^k that satisfy ().  \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.590602",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher dimension / more variables:  \n   The problem now takes place in ℤ_{>0}^m with an arbitrary dimension m ≥ 2 instead of the original one–dimensional setting.  The state of each point depends simultaneously on m+1 neighbouring points, vastly increasing the combinatorial complexity.\n\n2. Additional shifts and interactions:  \n   The update rule couples the current point with m different d-shifts, creating m+1 interacting “directions’’ rather than a single one.  The final pattern (♣) contains m+1 distinct, pairwise disjoint copies of the initial configuration, not merely one.\n\n3. More sophisticated mathematics:  \n   Solving the problem demands working in the multivariate polynomial ring 𝔽₂[X₁,…,X_m] and exploiting the Frobenius endomorphism in characteristic 2.  Handling several commuting variables simultaneously and interpreting their exponents as m-dimensional translations is substantially subtler than the univariate case.\n\n4. Deeper theoretical insight:  \n   One must recognise that the operator L = 1 + Σ X_i^{d} encodes the cellular-automaton rule, observe that iterates of L at powers of 2 “linearise’’ via the Frobenius map, and translate polynomial multiplications back into geometric statements about lattice sets.  This blend of algebra, combinatorics, and geometry goes beyond the elementary manipulations sufficient for the original problem.\n\n5. Increased proof length and number of steps:  \n   The solution requires six logically distinct steps (encoding, translation, iteration, Frobenius analysis, geometric interpretation, infinitude argument), each introducing non-trivial ideas.  In the original one-variable situation, two or three steps suffice.\n\nFor these reasons the enhanced kernel variant is significantly harder than both the original problem and the given kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

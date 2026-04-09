@@ -1,0 +1,92 @@
+{
+  "index": "2012-A-3",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $f: [-1, 1] \\to \\RR$ be a continuous function such that\n\\begin{itemize}\n\\item[(i)]\n$f(x) = \\frac{2-x^2}{2} f \\left( \\frac{x^2}{2-x^2} \\right)$ for every $x$ in $[-1, 1]$,\n\\item[(ii)]\n$f(0) = 1$, and\n\\item[(iii)]\n$\\lim_{x \\to 1^-} \\frac{f(x)}{\\sqrt{1-x}}$ exists and is finite.\n\\end{itemize}\nProve that $f$ is unique, and express $f(x)$ in closed form.",
+  "solution": "We will prove that $f(x) = \\sqrt{1-x^2}$ for all $x \\in [-1,1]$. Define\n$g :\\thinspace (-1,1) \\to \\mathbb{R}$ by\n$g(x) = f(x)/\\sqrt{1-x^2}$. Plugging $f(x) = g(x)\\sqrt{1-x^2}$ into\nequation (i) and simplifying yields\n\\begin{equation} \\label{eq:g}\ng(x) = g\\left(\\frac{x^2}{2-x^2}\\right)\n\\end{equation}\n  for all $x \\in (-1,1)$. Now fix $x \\in (-1,1)$ and define a sequence\n$\\{a_n\\}_{n=1}^\\infty$ by $a_1=x$ and $a_{n+1} = \\frac{a_n^2}{2-a_n^2}$.\nThen\n  $a_n \\in (-1,1)$ and thus $|a_{n+1}| \\leq |a_n|^2$ for all $n$. It\nfollows that $\\{|a_n|\\}$ is a decreasing sequence with $|a_n| \\leq\n|x|^n$ for all $n$, and so $\\lim_{n\\to\\infty} a_n = 0$. Since $g(a_n) =\ng(x)$ for all $n$ by \\eqref{eq:g} and $g$ is continuous at $0$, we\nconclude that $g(x) = g(0) = f(0) = 1$. This holds for all $x \\in\n(-1,1)$ and thus for $x=\\pm 1$ as well by continuity. The result follows.\n\n\\noindent\n\\textbf{Remark.} As pointed out by Noam Elkies, condition (iii) is unnecessary.\nHowever, one can use it to derive a slightly different solution by running the recursion\nin the opposite direction.",
+  "vars": [
+    "x",
+    "a_n",
+    "n"
+  ],
+  "params": [
+    "f",
+    "g"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "varpoint",
+        "a_n": "seqterm",
+        "n": "indexvar",
+        "f": "funcmain",
+        "g": "funcauxi"
+      },
+      "question": "Let $funcmain: [-1, 1] \\to \\RR$ be a continuous function such that\n\\begin{itemize}\n\\item[(i)]\n$funcmain(varpoint) = \\frac{2-varpoint^2}{2} \\, funcmain \\left( \\frac{varpoint^2}{2-varpoint^2} \\right)$ for every $varpoint$ in $[-1, 1]$,\n\\item[(ii)]\n$funcmain(0) = 1$, and\n\\item[(iii)]\n$\\lim_{varpoint \\to 1^-} \\frac{funcmain(varpoint)}{\\sqrt{1-varpoint}}$ exists and is finite.\n\\end{itemize}\nProve that $funcmain$ is unique, and express $funcmain(varpoint)$ in closed form.",
+      "solution": "We will prove that $funcmain(varpoint) = \\sqrt{1-varpoint^2}$ for all $varpoint \\in [-1,1]$. Define\n$funcauxi :\\thinspace (-1,1) \\to \\mathbb{R}$ by\n$funcauxi(varpoint) = funcmain(varpoint)/\\sqrt{1-varpoint^2}$. Plugging $funcmain(varpoint) = funcauxi(varpoint)\\sqrt{1-varpoint^2}$ into\nequation (i) and simplifying yields\n\\begin{equation} \\label{eq:g}\nfuncauxi(varpoint) = funcauxi\\left(\\frac{varpoint^2}{2-varpoint^2}\\right)\n\\end{equation}\nfor all $varpoint \\in (-1,1)$. Now fix $varpoint \\in (-1,1)$ and define a sequence\n$\\{seqterm\\}_{indexvar=1}^{\\infty}$ by $a_1 = varpoint$ and $a_{indexvar+1} = \\frac{seqterm^2}{2-seqterm^2}$. Then\n$seqterm \\in (-1,1)$ and thus $|a_{indexvar+1}| \\le |seqterm|^2$ for all $indexvar$. It\nfollows that $\\{|seqterm|\\}$ is a decreasing sequence with $|seqterm| \\le |varpoint|^{indexvar}$ for all $indexvar$, and so $\\lim_{indexvar\\to\\infty} seqterm = 0$. Since $funcauxi(seqterm) = funcauxi(varpoint)$ for all $indexvar$ by \\eqref{eq:g} and $funcauxi$ is continuous at $0$, we\nconclude that $funcauxi(varpoint) = funcauxi(0) = funcmain(0) = 1$. This holds for all $varpoint \\in (-1,1)$ and thus for $varpoint = \\pm 1$ as well by continuity. The result follows.\n\n\\noindent\n\\textbf{Remark.} As pointed out by Noam Elkies, condition (iii) is unnecessary.\nHowever, one can use it to derive a slightly different solution by running the recursion\nin the opposite direction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "blueberry",
+        "a_n": "compassrose",
+        "n": "sunflower",
+        "f": "avalanche",
+        "g": "raincloud"
+      },
+      "question": "Let $avalanche: [-1, 1] \\to \\RR$ be a continuous function such that\n\\begin{itemize}\n\\item[(i)]\n$avalanche(blueberry) = \\frac{2-blueberry^2}{2} avalanche \\left( \\frac{blueberry^2}{2-blueberry^2} \\right)$ for every $blueberry$ in $[-1, 1]$,\n\\item[(ii)]\n$avalanche(0) = 1$, and\n\\item[(iii)]\n$\\lim_{blueberry \\to 1^-} \\frac{avalanche(blueberry)}{\\sqrt{1-blueberry}}$ exists and is finite.\n\\end{itemize}\nProve that $avalanche$ is unique, and express $avalanche(blueberry)$ in closed form.",
+      "solution": "We will prove that $avalanche(blueberry) = \\sqrt{1-blueberry^2}$ for all $blueberry \\in [-1,1]$. Define\n$raincloud :\\thinspace (-1,1) \\to \\mathbb{R}$ by\n$raincloud(blueberry) = avalanche(blueberry)/\\sqrt{1-blueberry^2}$. Plugging $avalanche(blueberry) = raincloud(blueberry)\\sqrt{1-blueberry^2}$ into\nequation (i) and simplifying yields\n\\begin{equation} \\label{eq:g}\nraincloud(blueberry) = raincloud\\left(\\frac{blueberry^2}{2-blueberry^2}\\right)\n\\end{equation}\n  for all $blueberry \\in (-1,1)$. Now fix $blueberry \\in (-1,1)$ and define a sequence\n$\\{compassrose_{sunflower}\\}_{sunflower=1}^\\infty$ by $compassrose_1=blueberry$ and $compassrose_{sunflower+1} = \\frac{compassrose_{sunflower}^2}{2-compassrose_{sunflower}^2}$.\nThen\n  $compassrose_{sunflower} \\in (-1,1)$ and thus $|compassrose_{sunflower+1}| \\leq |compassrose_{sunflower}|^2$ for all $sunflower$. It\nfollows that $\\{|compassrose_{sunflower}|\\}$ is a decreasing sequence with $|compassrose_{sunflower}| \\leq\n|blueberry|^{sunflower}$ for all $sunflower$, and so $\\lim_{sunflower\\to\\infty} compassrose_{sunflower} = 0$. Since $raincloud(compassrose_{sunflower}) =\nraincloud(blueberry)$ for all $sunflower$ by \\eqref{eq:g} and $raincloud$ is continuous at $0$, we\nconclude that $raincloud(blueberry) = raincloud(0) = avalanche(0) = 1$. This holds for all $blueberry \\in\n(-1,1)$ and thus for $blueberry=\\pm 1$ as well by continuity. The result follows.\n\n\\noindent\n\\textbf{Remark.} As pointed out by Noam Elkies, condition (iii) is unnecessary.\nHowever, one can use it to derive a slightly different solution by running the recursion\nin the opposite direction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "a_n": "staticseries",
+        "n": "terminalcounter",
+        "f": "immobilescalar",
+        "g": "stagnantvalue"
+      },
+      "question": "Let $immobilescalar: [-1, 1] \\to \\RR$ be a continuous function such that\n\\begin{itemize}\n\\item[(i)]\n$immobilescalar(constantvalue) = \\frac{2-constantvalue^2}{2} immobilescalar \\left( \\frac{constantvalue^2}{2-constantvalue^2} \\right)$ for every $constantvalue$ in $[-1, 1]$,\\\n\\item[(ii)]\n$immobilescalar(0) = 1$, and\\\n\\item[(iii)]\n$\\lim_{constantvalue \\to 1^-} \\frac{immobilescalar(constantvalue)}{\\sqrt{1-constantvalue}}$ exists and is finite.\n\\end{itemize}\nProve that $immobilescalar$ is unique, and express $immobilescalar(constantvalue)$ in closed form.",
+      "solution": "We will prove that $immobilescalar(constantvalue) = \\sqrt{1-constantvalue^2}$ for all $constantvalue \\in [-1,1]$. Define\n$stagnantvalue :\\thinspace (-1,1) \\to \\mathbb{R}$ by\n$stagnantvalue(constantvalue) = immobilescalar(constantvalue)/\\sqrt{1-constantvalue^2}$. Plugging $immobilescalar(constantvalue) = stagnantvalue(constantvalue)\\sqrt{1-constantvalue^2}$ into\nequation (i) and simplifying yields\n\\begin{equation} \\label{eq:g}\nstagnantvalue(constantvalue) = stagnantvalue\\left(\\frac{constantvalue^2}{2-constantvalue^2}\\right)\n\\end{equation}\n  for all $constantvalue \\in (-1,1)$. Now fix $constantvalue \\in (-1,1)$ and define a sequence\n$\\{staticseries_{terminalcounter}\\}_{terminalcounter=1}^\\infty$ by $staticseries_1=constantvalue$ and $staticseries_{terminalcounter+1} = \\frac{staticseries_{terminalcounter}^2}{2-staticseries_{terminalcounter}^2}$.\nThen\n  $staticseries_{terminalcounter} \\in (-1,1)$ and thus $|staticseries_{terminalcounter+1}| \\leq |staticseries_{terminalcounter}|^2$ for all $terminalcounter$. It\nfollows that $\\{|staticseries_{terminalcounter}|\\}$ is a decreasing sequence with $|staticseries_{terminalcounter}| \\leq\n|constantvalue|^{terminalcounter}$ for all $terminalcounter$, and so $\\lim_{terminalcounter\\to\\infty} staticseries_{terminalcounter} = 0$. Since $stagnantvalue(staticseries_{terminalcounter}) =\nstagnantvalue(constantvalue)$ for all $terminalcounter$ by \\eqref{eq:g} and $stagnantvalue$ is continuous at $0$, we\nconclude that $stagnantvalue(constantvalue) = stagnantvalue(0) = immobilescalar(0) = 1$. This holds for all $constantvalue \\in\n(-1,1)$ and thus for $constantvalue=\\pm 1$ as well by continuity. The result follows.\n\n\\noindent\n\\textbf{Remark.} As pointed out by Noam Elkies, condition (iii) is unnecessary.\nHowever, one can use it to derive a slightly different solution by running the recursion\nin the opposite direction."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "mznkgwhv",
+        "a_n": "qzxwvtnp",
+        "n": "vhpcflqs",
+        "f": "gthpslma",
+        "g": "hdnmzcao"
+      },
+      "question": "Let $gthpslma: [-1, 1] \\to \\RR$ be a continuous function such that\n\\begin{itemize}\n\\item[(i)]\n$gthpslma(mznkgwhv) = \\frac{2-mznkgwhv^2}{2} gthpslma \\left( \\frac{mznkgwhv^2}{2-mznkgwhv^2} \\right)$ for every $mznkgwhv$ in $[-1, 1]$,\n\\item[(ii)]\n$gthpslma(0) = 1$, and\n\\item[(iii)]\n$\\lim_{mznkgwhv \\to 1^-} \\frac{gthpslma(mznkgwhv)}{\\sqrt{1-mznkgwhv}}$ exists and is finite.\n\\end{itemize}\nProve that $gthpslma$ is unique, and express $gthpslma(mznkgwhv)$ in closed form.",
+      "solution": "We will prove that $gthpslma(mznkgwhv) = \\sqrt{1-mznkgwhv^2}$ for all $mznkgwhv \\in [-1,1]$. Define\n$hdnmzcao :\\thinspace (-1,1) \\to \\mathbb{R}$ by\n$hdnmzcao(mznkgwhv) = gthpslma(mznkgwhv)/\\sqrt{1-mznkgwhv^2}$. Plugging $gthpslma(mznkgwhv) = hdnmzcao(mznkgwhv)\\sqrt{1-mznkgwhv^2}$ into\nequation (i) and simplifying yields\n\\begin{equation} \\label{eq:g}\nhdnmzcao(mznkgwhv) = hdnmzcao\\left(\\frac{mznkgwhv^2}{2-mznkgwhv^2}\\right)\n\\end{equation}\n  for all $mznkgwhv \\in (-1,1)$. Now fix $mznkgwhv \\in (-1,1)$ and define a sequence\n$\\{qzxwvtnp_{vhpcflqs}\\}_{vhpcflqs=1}^\\infty$ by $qzxwvtnp_1=mznkgwhv$ and $qzxwvtnp_{vhpcflqs+1} = \\frac{qzxwvtnp_{vhpcflqs}^2}{2-qzxwvtnp_{vhpcflqs}^2}$.\nThen\n  $qzxwvtnp_{vhpcflqs} \\in (-1,1)$ and thus $|qzxwvtnp_{vhpcflqs+1}| \\leq |qzxwvtnp_{vhpcflqs}|^2$ for all $vhpcflqs$. It\nfollows that $\\{|qzxwvtnp_{vhpcflqs}|\\}$ is a decreasing sequence with $|qzxwvtnp_{vhpcflqs}| \\leq\n|mznkgwhv|^{vhpcflqs}$ for all $vhpcflqs$, and so $\\lim_{vhpcflqs\\to\\infty} qzxwvtnp_{vhpcflqs} = 0$. Since $hdnmzcao(qzxwvtnp_{vhpcflqs}) =\nhdnmzcao(mznkgwhv)$ for all $vhpcflqs$ by \\eqref{eq:g} and $hdnmzcao$ is continuous at $0$, we\nconclude that $hdnmzcao(mznkgwhv) = hdnmzcao(0) = gthpslma(0) = 1$. This holds for all $mznkgwhv \\in\n(-1,1)$ and thus for $mznkgwhv=\\pm 1$ as well by continuity. The result follows.\n\n\\noindent\n\\textbf{Remark.} As pointed out by Noam Elkies, condition (iii) is unnecessary.\nHowever, one can use it to derive a slightly different solution by running the recursion\nin the opposite direction."
+    },
+    "kernel_variant": {
+      "question": "Let  \\(f:[-1,1] \\longrightarrow \\mathbb{R}\\) be a continuous function that satisfies \n\ni)  \\[ f(x)=\\frac{2-x^{2}}{2}\\,f\\!\\left(\\frac{x^{2}}{2-x^{2}}\\right) \\qquad (x\\in[-1,1]), \\]\n\nii) \\[f(0)=3.\\]\n\nProve that such a function is unique and determine its explicit formula.",
+      "solution": "We show that the only continuous function satisfying (i)-(ii) is\n\\[\\boxed{f(x)=3\\,\\sqrt{1-x^{2}}}\\qquad(x\\in[-1,1]).\\]\n\nStep 1.  A convenient normalisation.\nDefine \\(g:(-1,1)\\to\\mathbb{R}\\) by\n\\[g(x)=\\frac{f(x)}{\\sqrt{1-x^{2}}}.\\]\nBecause \\(f\\) and the square-root factor are continuous on \\((-1,1)\\), so is \\(g\\).  Substituting\n\\(f(x)=g(x)\\sqrt{1-x^{2}}\\) in (i) gives\n\\[g(x)\\sqrt{1-x^{2}} = \\frac{2-x^{2}}{2}\n          \\,g\\!\\left(\\frac{x^{2}}{2-x^{2}}\\right)\n          \\sqrt{1-\\Bigl(\\tfrac{x^{2}}{2-x^{2}}\\Bigr)^{2}}.\\]\nSince\n\\[1-\\Bigl(\\tfrac{x^{2}}{2-x^{2}}\\Bigr)^{2}=\\frac{(2-x^{2})^{2}-x^{4}}{(2-x^{2})^{2}}=\n          \\frac{4(1-x^{2})}{(2-x^{2})^{2}},\\]\nwe have\n\\[\\sqrt{1-\\Bigl(\\tfrac{x^{2}}{2-x^{2}}\\Bigr)^{2}}=\\frac{2\\sqrt{1-x^{2}}}{2-x^{2}}.\\]\nCancelling \\(\\sqrt{1-x^{2}}\\) and the common factor \\(\\tfrac{2-x^{2}}{2}\\) on both sides yields\n\\[g(x)=g\\!\\left(\\frac{x^{2}}{2-x^{2}}\\right) \\quad (x\\in(-1,1)).\\]\n\nStep 2.  An iteration argument.\nSet \\(T(x)=\\tfrac{x^{2}}{2-x^{2}}\\) on \\((-1,1)\\).  For a fixed \\(x\\in(-1,1)\\) define a sequence\n\\(a_{1}=x,\\; a_{n+1}=T(a_{n})\\).  Because \\(|a_{n+1}|=|a_{n}|^{2}/(2-a_{n}^{2})<|a_{n}|^{2},\\)\nwe obtain \\(|a_{n}|\\to 0\\), hence \\(a_{n}\\to 0\\).  The functional equation gives\n\\(g(a_{n+1})=g(a_{n})\\) for every \\(n\\), so all terms equal \\(g(x)\\).  By continuity of \\(g\\) at 0,\n\\[g(x)=\\lim_{n\\to\\infty}g(a_{n})=g(0).\n\\]\nThus \\(g\\) is constant on \\((-1,1)\\).\n\nStep 3.  Determining the constant.\nUsing (ii),\n\\[g(0)=\\frac{f(0)}{\\sqrt{1-0^{2}}}=3,\\]\nso \\(g(x)\\equiv 3\\) on \\((-1,1)\\).\n\nStep 4.  Recovering \\(f\\).\nHence for every \\(x\\in(-1,1)\\),\n\\[f(x)=g(x)\\sqrt{1-x^{2}}=3\\sqrt{1-x^{2}}.\\]\nBecause both sides extend continuously to \\(x=\\pm1\\), the same formula holds on the closed interval \\([-1,1]\\).\n\nStep 5.  Uniqueness.\nIf \\(f_{1}\\) and \\(f_{2}\\) are two continuous solutions of (i)-(ii), their difference \\(h=f_{1}-f_{2}\\) also satisfies (i) with the right-hand side 0 at \\(x=0\\).  Repeating the above argument with \\(h\\) shows \\(h\\equiv0\\), thus the solution found is unique.",
+      "_meta": {
+        "core_steps": [
+          "Normalize: set g(x) = f(x) / √(1−x²) so the functional equation becomes g(x) = g(T(x)) with T(x)=x²/(2−x²).",
+          "Iterate: define a₁=x, a_{n+1}=T(a_n); then |a_{n+1}| ≤ |a_n|² ⇒ a_n → 0 for every x∈(−1,1).",
+          "Constancy: continuity of g at 0 plus g(a_n)=g(x) forces g(x)=g(0) for all x.",
+          "Recover f: hence f(x)=g(0)√(1−x²); uniqueness follows because every admissible f must coincide with this expression."
+        ],
+        "mutable_slots": {
+          "slot_f0_value": {
+            "description": "The prescribed value of f at the fixed point 0; the proof still works for any finite constant c, giving f(x)=c√(1−x²).",
+            "original": "f(0)=1"
+          },
+          "slot_condition_iii": {
+            "description": "The extra limit condition near x=1; it is never used in the argument and can be omitted entirely.",
+            "original": "Condition (iii):  lim_{x→1⁻} f(x)/√(1−x) exists and is finite"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

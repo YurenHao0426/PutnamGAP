@@ -1,0 +1,160 @@
+{
+  "index": "2001-B-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Assume that $(a_n)_{n\\geq 1}$ is an increasing sequence of\npositive real numbers such that\n$\\lim a_n/n=0$.  Must there exist infinitely many positive integers\n$n$ such that $a_{n-i}+a_{n+i}<2a_n$ for $i=1,2,\\ldots,n-1$?\n\n\\end{itemize}\n\\end{document}",
+  "solution": "Yes, there must exist infinitely many such $n$.\nLet $S$ be the convex hull of the set of points $(n,\na_n)$ for $n \\geq 0$. Geometrically, $S$ is the intersection of\nall convex sets (or even all halfplanes) containing the points\n$(n, a_n)$; algebraically, $S$ is the set of points $(x,y)$\nwhich can be written as $c_1(n_1, a_{n_1}) + \\cdots + c_k(n_k, a_{n_k})$\nfor some $c_1, \\dots, c_k$ which are nonnegative of sum 1.\n\nWe prove that for infinitely many $n$, $(n, a_n)$ is a vertex on the upper\nboundary of $S$, and that these $n$ satisfy the given\ncondition. The condition that $(n, a_n)$ is a vertex on the upper\nboundary of $S$ is equivalent to the existence of a line passing through\n$(n, a_n)$ with all other points of $S$ below it.\nThat is, there should exist $m>0$ such that\n\\begin{equation} \\label{eq1}\na_k < a_n + m(k-n) \\qquad \\forall k \\geq 1.\n\\end{equation}\n\nWe first show that $n=1$ satisfies (\\ref{eq1}). The condition\n$a_k/k \\to 0$ as $k \\to \\infty$\nimplies that $(a_k - a_1)/(k-1) \\to 0$ as well. Thus the\nset $\\{(a_k-a_1)/(k-1)\\}$ has an upper bound $m$, and now\n$a_k \\leq a_1 + m(k-1)$, as desired.\n\nNext, we show that given one $n$ satisfying (\\ref{eq1}), there exists a\nlarger one also satisfying (\\ref{eq1}). Again, the condition\n$a_k/k \\to 0$ as $k \\to \\infty$ implies that $(a_k-a_n)/(k-n) \\to 0$ as\n$k \\to \\infty$. Thus the sequence $\\{(a_k-a_n)/(k-n)\\}_{k>n}$ has a\nmaximum element; suppose $k = r$ is the largest value that\nachieves this maximum, and put\n$m = (a_r -a_n)/(r-n)$. Then the line through\n$(r, a_r)$ of slope $m$ lies strictly above $(k, a_k)$ for $k > r$\nand passes through or lies above $(k, a_k)$ for $k< r$.\nThus (\\ref{eq1})\nholds for $n=r$ with $m$ replaced by $m-\\epsilon$ for suitably small\n$\\epsilon > 0$.\n\nBy induction, we have that (\\ref{eq1}) holds for infinitely many $n$.\nFor any such $n$ there exists $m>0$ such that for $i=1, \\dots, n-1$, the\npoints $(n-i, a_{n-i})$ and $(n+i, a_{n+i})$ lie below the line through\n$(n, a_n)$ of slope $m$. That means $a_{n+i} < a_n + mi$\nand $a_{n-i} < a_n - mi$; adding these together gives\n$a_{n-i} + a_{n+i} < 2a_n$, as desired.\n\n\\end{itemize}\n\n\\end{document}",
+  "vars": [
+    "a_n",
+    "n",
+    "i",
+    "k",
+    "S",
+    "m",
+    "a_n-i",
+    "a_n+i",
+    "x",
+    "y",
+    "c_1",
+    "n_1",
+    "c_k",
+    "r",
+    "a_k",
+    "a_1",
+    "a_r",
+    "\\\\epsilon"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_n": "seqelem",
+        "n": "indexvar",
+        "i": "shiftix",
+        "k": "genericindex",
+        "S": "convexhull",
+        "m": "slopeval",
+        "a_n-i": "elemminus",
+        "a_n+i": "elemplus",
+        "x": "coordx",
+        "y": "coordy",
+        "c_1": "coeffone",
+        "n_1": "indexone",
+        "c_k": "coeffgen",
+        "r": "maxindex",
+        "a_k": "elemfork",
+        "a_1": "firstelem",
+        "a_r": "elemforr",
+        "\\\\epsilon": "smallerror"
+      },
+      "question": "Assume that $(seqelem)_{indexvar\\geq 1}$ is an increasing sequence of\npositive real numbers such that\n$\\lim seqelem/indexvar=0$.  Must there exist infinitely many positive integers\n$indexvar$ such that $elemminus+elemplus<2\\,seqelem$ for $shiftix=1,2,\\ldots,indexvar-1$?",
+      "solution": "Yes, there must exist infinitely many such $indexvar$.\nLet $convexhull$ be the convex hull of the set of points $(indexvar,\nseqelem)$ for $indexvar \\geq 0$. Geometrically, $convexhull$ is the intersection of\nall convex sets (or even all halfplanes) containing the points\n$(indexvar, seqelem)$; algebraically, $convexhull$ is the set of points $(coordx,coordy)$\nwhich can be written as $coeffone(indexone, a_{indexone}) + \\cdots + coeffgen(n_k, a_{n_k})$\nfor some $coeffone, \\dots, coeffgen$ which are nonnegative of sum 1.\n\nWe prove that for infinitely many $indexvar$, $(indexvar, seqelem)$ is a vertex on the upper\nboundary of $convexhull$, and that these $indexvar$ satisfy the given\ncondition. The condition that $(indexvar, seqelem)$ is a vertex on the upper\nboundary of $convexhull$ is equivalent to the existence of a line passing through\n$(indexvar, seqelem)$ with all other points of $convexhull$ below it.\nThat is, there should exist $slopeval>0$ such that\n\\begin{equation} \\label{eq1}\nelemfork < seqelem + slopeval(genericindex-indexvar) \\qquad \\forall genericindex \\geq 1.\n\\end{equation}\n\nWe first show that $indexvar=1$ satisfies (\\ref{eq1}). The condition\n$elemfork/genericindex \\to 0$ as $genericindex \\to \\infty$\nimplies that $(elemfork - firstelem)/(genericindex-1) \\to 0$ as well. Thus the\nset $\\{(elemfork-firstelem)/(genericindex-1)\\}$ has an upper bound $slopeval$, and now\n$elemfork \\leq firstelem + slopeval(genericindex-1)$, as desired.\n\nNext, we show that given one $indexvar$ satisfying (\\ref{eq1}), there exists a\nlarger one also satisfying (\\ref{eq1}). Again, the condition\n$elemfork/genericindex \\to 0$ as $genericindex \\to \\infty$ implies that $(elemfork-seqelem)/(genericindex-indexvar) \\to 0$ as\n$genericindex \\to \\infty$. Thus the sequence $\\{(elemfork-seqelem)/(genericindex-indexvar)\\}_{genericindex>indexvar}$ has a\nmaximum element; suppose $genericindex = maxindex$ is the largest value that\nachieves this maximum, and put\n$slopeval = (elemforr -seqelem)/(maxindex-indexvar)$. Then the line through\n$(maxindex, elemforr)$ of slope $slopeval$ lies strictly above $(genericindex, elemfork)$ for $genericindex > maxindex$\nand passes through or lies above $(genericindex, elemfork)$ for $genericindex< maxindex$.\nThus (\\ref{eq1})\nholds for $indexvar=maxindex$ with $slopeval$ replaced by $slopeval - smallerror$ for suitably small\n$smallerror > 0$.\n\nBy induction, we have that (\\ref{eq1}) holds for infinitely many $indexvar$.\nFor any such $indexvar$ there exists $slopeval>0$ such that for $shiftix=1, \\dots, indexvar-1$, the\npoints $(indexvar-shiftix, elemminus)$ and $(indexvar+shiftix, elemplus)$ lie below the line through\n$(indexvar, seqelem)$ of slope $slopeval$. That means $elemplus < seqelem + slopeval\\,shiftix$\nand $elemminus < seqelem - slopeval\\,shiftix$; adding these together gives\n$elemminus + elemplus < 2seqelem$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_n": "sandcastle",
+        "n": "riverbend",
+        "i": "bookshelf",
+        "k": "moonstone",
+        "S": "willowtree",
+        "m": "cloudburst",
+        "a_n-i": "rainshadow",
+        "a_n+i": "driftwood",
+        "x": "dreamcatch",
+        "y": "stargazer",
+        "c_1": "fireflyes",
+        "n_1": "marshmallow",
+        "c_k": "thunderclap",
+        "r": "stonehorse",
+        "a_k": "waterfall",
+        "a_1": "snowflower",
+        "a_r": "echochamber",
+        "\\\\epsilon": "dawnchorus"
+      },
+      "question": "Assume that $(sandcastle)_{riverbend\\geq 1}$ is an increasing sequence of\npositive real numbers such that\n$\\lim sandcastle/riverbend=0$.  Must there exist infinitely many positive integers\n$riverbend$ such that $rainshadow+driftwood<2sandcastle$ for $bookshelf=1,2,\\ldots,riverbend-1$?\n\n\\end{itemize}\n\\end{document}",
+      "solution": "Yes, there must exist infinitely many such $riverbend$.\nLet $willowtree$ be the convex hull of the set of points $(riverbend,\nsandcastle)$ for $riverbend \\geq 0$. Geometrically, $willowtree$ is the intersection of\nall convex sets (or even all halfplanes) containing the points\n$(riverbend, sandcastle)$; algebraically, $willowtree$ is the set of points $(dreamcatch,stargazer)$\nwhich can be written as $fireflyes(marshmallow, a_{n_1}) + \\cdots + thunderclap(n_k, a_{n_k})$\nfor some $fireflyes, \\dots, thunderclap$ which are nonnegative of sum 1.\n\nWe prove that for infinitely many $riverbend$, $(riverbend, sandcastle)$ is a vertex on the upper\nboundary of $willowtree$, and that these $riverbend$ satisfy the given\ncondition. The condition that $(riverbend, sandcastle)$ is a vertex on the upper\nboundary of $willowtree$ is equivalent to the existence of a line passing through\n$(riverbend, sandcastle)$ with all other points of $willowtree$ below it.\nThat is, there should exist $cloudburst>0$ such that\n\\begin{equation} \\label{eq1}\nwaterfall < sandcastle + cloudburst(moonstone-riverbend) \\qquad \\forall moonstone \\geq 1.\n\\end{equation}\n\nWe first show that $riverbend=1$ satisfies (\\ref{eq1}). The condition\n$waterfall/moonstone \\to 0$ as $moonstone \\to \\infty$\nimplies that $(waterfall - snowflower)/(moonstone-1) \\to 0$ as well. Thus the\nset $\\{(waterfall-snowflower)/(moonstone-1)\\}$ has an upper bound $cloudburst$, and now\n$waterfall \\leq snowflower + cloudburst(moonstone-1)$, as desired.\n\nNext, we show that given one $riverbend$ satisfying (\\ref{eq1}), there exists a\nlarger one also satisfying (\\ref{eq1}). Again, the condition\n$waterfall/moonstone \\to 0$ as $moonstone \\to \\infty$ implies that $(waterfall-sandcastle)/(moonstone-riverbend) \\to 0$ as\n$moonstone \\to \\infty$. Thus the sequence $\\{(waterfall-sandcastle)/(moonstone-riverbend)\\}_{moonstone>riverbend}$ has a\nmaximum element; suppose $moonstone = stonehorse$ is the largest value that\nachieves this maximum, and put\n$cloudburst = (echochamber -sandcastle)/(stonehorse-riverbend)$. Then the line through\n$(stonehorse, echochamber)$ of slope $cloudburst$ lies strictly above $(moonstone, waterfall)$ for $moonstone > stonehorse$\nand passes through or lies above $(moonstone, waterfall)$ for $moonstone< stonehorse$.\nThus (\\ref{eq1})\nholds for $riverbend=stonehorse$ with $cloudburst$ replaced by $cloudburst-dawnchorus$ for suitably small\n$dawnchorus > 0$.\n\nBy induction, we have that (\\ref{eq1}) holds for infinitely many $riverbend$.\nFor any such $riverbend$ there exists $cloudburst>0$ such that for $bookshelf=1, \\dots, riverbend-1$, the\npoints $(riverbend-bookshelf, rainshadow)$ and $(riverbend+bookshelf, driftwood)$ lie below the line through\n$(riverbend, sandcastle)$ of slope $cloudburst$. That means $driftwood < sandcastle + cloudburst\\,bookshelf$\nand $rainshadow < sandcastle - cloudburst\\,bookshelf$; adding these together gives\n$rainshadow + driftwood < 2sandcastle$, as desired.\n\n\\end{itemize}\n\n\\end{document}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_n": "decreasingvoid",
+        "n": "unbounded",
+        "i": "totality",
+        "k": "immutable",
+        "S": "concavegap",
+        "m": "flatness",
+        "a_n-i": "leftvacuum",
+        "a_n+i": "rightvacuum",
+        "x": "verticality",
+        "y": "horizontalism",
+        "c_1": "variableone",
+        "n_1": "unboundedone",
+        "c_k": "variablemany",
+        "r": "smallest",
+        "a_k": "decreasingelement",
+        "a_1": "decreasingstart",
+        "a_r": "decreasingpeak",
+        "\\\\epsilon": "largedelta"
+      },
+      "question": "Assume that $(decreasingvoid)_{unbounded\\geq 1}$ is an increasing sequence of\npositive real numbers such that\n$\\lim decreasingvoid/unbounded=0$.  Must there exist infinitely many positive integers\n$unbounded$ such that $leftvacuum+rightvacuum<2decreasingvoid$ for $totality=1,2,\\ldots,unbounded-1$?\n\n\\end{itemize}\n\\end{document}",
+      "solution": "Yes, there must exist infinitely many such $unbounded$.\nLet $concavegap$ be the convex hull of the set of points $(unbounded,\ndecreasingvoid)$ for $unbounded \\geq 0$. Geometrically, $concavegap$ is the intersection of\nall convex sets (or even all halfplanes) containing the points\n$(unbounded, decreasingvoid)$; algebraically, $concavegap$ is the set of points $(verticality,horizontalism)$\nwhich can be written as $variableone(unboundedone, decreasingstart) + \\cdots + variablemany(immutable, decreasingelement)$\nfor some $variableone, \\dots, variablemany$ which are nonnegative of sum 1.\n\nWe prove that for infinitely many $unbounded$, $(unbounded, decreasingvoid)$ is a vertex on the upper\nboundary of $concavegap$, and that these $unbounded$ satisfy the given\ncondition. The condition that $(unbounded, decreasingvoid)$ is a vertex on the upper\nboundary of $concavegap$ is equivalent to the existence of a line passing through\n$(unbounded, decreasingvoid)$ with all other points of $concavegap$ below it.\nThat is, there should exist $flatness>0$ such that\n\\begin{equation} \\label{eq1}\ndecreasingelement < decreasingvoid + flatness(immutable-unbounded) \\qquad \\forall immutable \\geq 1.\n\\end{equation}\n\nWe first show that $unbounded=1$ satisfies (\\ref{eq1}). The condition\ndecreasingelement/immutable \\to 0$ as $immutable \\to \\infty$\nimplies that $(decreasingelement - decreasingstart)/(immutable-1) \\to 0$ as well. Thus the\nset $\\{(decreasingelement-decreasingstart)/(immutable-1)\\}$ has an upper bound $flatness$, and now\ndecreasingelement \\leq decreasingstart + flatness(immutable-1)$, as desired.\n\nNext, we show that given one $unbounded$ satisfying (\\ref{eq1}), there exists a\nlarger one also satisfying (\\ref{eq1}). Again, the condition\ndecreasingelement/immutable \\to 0$ as $immutable \\to \\infty$ implies that $(decreasingelement-decreasingvoid)/(immutable-unbounded) \\to 0$ as\n$immutable \\to \\infty$. Thus the sequence $\\{(decreasingelement-decreasingvoid)/(immutable-unbounded)\\}_{immutable>unbounded}$ has a\nmaximum element; suppose $immutable = smallest$ is the largest value that\nachieves this maximum, and put\n$flatness = (decreasingpeak -decreasingvoid)/(smallest-unbounded)$. Then the line through\n$(smallest, decreasingpeak)$ of slope $flatness$ lies strictly above $(immutable, decreasingelement)$ for $immutable > smallest$\nand passes through or lies above $(immutable, decreasingelement)$ for $immutable< smallest$.\nThus (\\ref{eq1})\nholds for $unbounded=smallest$ with $flatness$ replaced by $flatness-largedelta$ for suitably small\n$largedelta > 0$.\n\nBy induction, we have that (\\ref{eq1}) holds for infinitely many $unbounded$.\nFor any such $unbounded$ there exists $flatness>0$ such that for $totality=1, \\dots, unbounded-1$, the\npoints $(unbounded-totality, decreasingvoid)$ and $(unbounded+totality, decreasingvoid)$ lie below the line through\n$(unbounded, decreasingvoid)$ of slope $flatness$. That means $decreasingvoid < decreasingvoid + flatness totality$\nand $decreasingvoid < decreasingvoid - flatness totality$; adding these together gives\n$leftvacuum + rightvacuum < 2decreasingvoid$, as desired.\n\n\\end{itemize}\n\\end{document}"
+    },
+    "garbled_string": {
+      "map": {
+        "a_n": "qzxwvtnp",
+        "n": "hjgrksla",
+        "i": "bvnkserp",
+        "k": "pldjqwne",
+        "S": "sfyqemlc",
+        "m": "vznphqtc",
+        "a_n-i": "rtewymqs",
+        "a_n+i": "uzkpcbva",
+        "x": "oynfrdwe",
+        "y": "jgouvkal",
+        "c_1": "ncbpyzwo",
+        "n_1": "kdragpum",
+        "c_k": "tlvwqzse",
+        "r": "wqibzhad",
+        "a_k": "ydmlfsqe",
+        "a_1": "hvkzrpnt",
+        "a_r": "fsetvmob",
+        "\\\\epsilon": "gqrnldcx"
+      },
+      "question": "Assume that $(qzxwvtnp)_{hjgrksla\\geq 1}$ is an increasing sequence of\npositive real numbers such that\n$\\lim qzxwvtnp/hjgrksla=0$.  Must there exist infinitely many positive integers\n$hjgrksla$ such that $rtewymqs+uzkpcbva<2qzxwvtnp$ for $bvnkserp=1,2,\\ldots,hjgrksla-1$?",
+      "solution": "Yes, there must exist infinitely many such $hjgrksla$.\nLet $sfyqemlc$ be the convex hull of the set of points $(hjgrksla,\nqzxwvtnp)$ for $hjgrksla \\geq 0$. Geometrically, $sfyqemlc$ is the intersection of\nall convex sets (or even all halfplanes) containing the points\n$(hjgrksla, qzxwvtnp)$; algebraically, $sfyqemlc$ is the set of points $(oynfrdwe,jgouvkal)$\nwhich can be written as $ncbpyzwo(kdragpum, a_{kdragpum}) + \\cdots + tlvwqzse(n_k, a_{n_k})$\nfor some $ncbpyzwo, \\dots, tlvwqzse$ which are nonnegative of sum 1.\n\nWe prove that for infinitely many $hjgrksla$, $(hjgrksla, qzxwvtnp)$ is a vertex on the upper\nboundary of $sfyqemlc$, and that these $hjgrksla$ satisfy the given\ncondition. The condition that $(hjgrksla, qzxwvtnp)$ is a vertex on the upper\nboundary of $sfyqemlc$ is equivalent to the existence of a line passing through\n$(hjgrksla, qzxwvtnp)$ with all other points of $sfyqemlc$ below it.\nThat is, there should exist $vznphqtc>0$ such that\n\\begin{equation} \\label{eq1}\nydmlfsqe < qzxwvtnp + vznphqtc(pldjqwne-hjgrksla) \\qquad \\forall pldjqwne \\geq 1.\n\\end{equation}\n\nWe first show that $hjgrksla=1$ satisfies (\\ref{eq1}). The condition\n$ydmlfsqe/pldjqwne \\to 0$ as $pldjqwne \\to \\infty$\nimplies that $(ydmlfsqe - hvkzrpnt)/(pldjqwne-1) \\to 0$ as well. Thus the\nset $\\{(ydmlfsqe-hvkzrpnt)/(pldjqwne-1)\\}$ has an upper bound $vznphqtc$, and now\n$ydmlfsqe \\leq hvkzrpnt + vznphqtc(pldjqwne-1)$, as desired.\n\nNext, we show that given one $hjgrksla$ satisfying (\\ref{eq1}), there exists a\nlarger one also satisfying (\\ref{eq1}). Again, the condition\n$ydmlfsqe/pldjqwne \\to 0$ as $pldjqwne \\to \\infty$ implies that $(ydmlfsqe-qzxwvtnp)/(pldjqwne-hjgrksla) \\to 0$ as\n$pldjqwne \\to \\infty$. Thus the sequence $\\{(ydmlfsqe-qzxwvtnp)/(pldjqwne-hjgrksla)\\}_{pldjqwne>hjgrksla}$ has a\nmaximum element; suppose $pldjqwne = wqibzhad$ is the largest value that\nachieves this maximum, and put\n$vznphqtc = (fsetvmob -qzxwvtnp)/(wqibzhad-hjgrksla)$. Then the line through\n$(wqibzhad, fsetvmob)$ of slope $vznphqtc$ lies strictly above $(pldjqwne, ydmlfsqe)$ for $pldjqwne > wqibzhad$\nand passes through or lies above $(pldjqwne, ydmlfsqe)$ for $pldjqwne< wqibzhad$.\nThus (\\ref{eq1})\nholds for $hjgrksla=wqibzhad$ with $vznphqtc$ replaced by $vznphqtc-gqrnldcx$ for suitably small\n$gqrnldcx > 0$.\n\nBy induction, we have that (\\ref{eq1}) holds for infinitely many $hjgrksla$.\nFor any such $hjgrksla$ there exists $vznphqtc>0$ such that for $bvnkserp=1, \\dots, hjgrksla-1$, the\npoints $(hjgrksla-bvnkserp, rtewymqs)$ and $(hjgrksla+bvnkserp, uzkpcbva)$ lie below the line through\n$(hjgrksla, qzxwvtnp)$ of slope $vznphqtc$. That means $uzkpcbva < qzxwvtnp + vznphqtc bvnkserp$\nand $rtewymqs < qzxwvtnp - vznphqtc bvnkserp$; adding these together gives\n$rtewymqs + uzkpcbva < 2qzxwvtnp$, as desired."
+    },
+    "kernel_variant": {
+      "question": "Let $(b_n)_{n\\ge 0}$ be a strictly increasing sequence of real numbers satisfying\n\\[\n \\lim_{n\\to\\infty}\\frac{b_n}{n}=0.\n\\]\nShow that there exist infinitely many positive integers $n$ such that the simultaneous `mid-point' inequalities\n\\[\n b_{n-j}+b_{n+j}<2b_n\\qquad(j=1,2,\\dots ,n)\n\\]\nare satisfied.",
+      "solution": "Throughout we regard the index $k\\,(\\ge 0)$ as the point \nP_k:=(k,b_k)\\in\\mathbb R^2.  A line of positive slope passing through P_n and leaving all other points P_k strictly below it will be called a supporting line at P_n; in that case P_n is referred to as an (upper) vertex.  Our aim is to prove that there are infinitely many vertices; every such vertex $n$ will then immediately deliver the desired inequalities.\n\nStep 1.  P_0 is a vertex.\n---------------------------------\nBecause $b_k/k\\to0$, the set $\\{(b_k-b_0)/k:k\\ge1\\}$ is bounded.  Pick a real number $M$ strictly larger than its supremum.  Then $b_k<b_0+Mk$ for every $k\\ge1$, so all the points $P_k\\;(k\\ge1)$ lie strictly below the line $y=b_0+Mx$ through $P_0$.  Hence P_0 is a vertex.\n\nStep 2.  From one vertex we construct a larger one.\n--------------------------------------------------\nAssume P_n is a vertex and let $\\ell_n$ be a supporting line through P_n with slope $m_n>0$.  For $k>n$ define\n\\[\n \\varphi(k):=\\frac{b_k-b_n}{k-n}>0.\n\\]\nBecause $b_k/k\\to0$ we have $\\varphi(k)\\to0$ as $k\\to\\infty$, so the finite maximum\n\\[\n m:=\\max_{k>n}\\varphi(k)\n\\]\nexists.  Choose the **largest** index $r>n$ for which $\\varphi(r)=m$ and set P_r:=(r,b_r).\n\nClaim 2.1   P_r is a vertex.\n\nProof.  Fix $\\varepsilon>0$ with\n\\[\n 0<\\varepsilon<\\frac{m_n-m}{2}\\qquad(\\text{possible since }m<m_n).\n\\]\nConsider the line\n\\[\n L(x):=b_r+(m+\\varepsilon)(x-r),\\qquad x\\in\\mathbb R.\n\\]\nWe show that every point P_k, $k\\neq r$, lies strictly below this line.\n\n(a)  k>r.  Then\n\\[\n  L(k)-b_k=(m+\\varepsilon)(k-r)-(b_k-b_r)\\ge(m+\\varepsilon)(k-r)-m(k-r)=\\varepsilon(k-r)>0.\n\\]\n\n(b)  n<k<r.  From the definition of $m$ one has $b_k-b_n\\le m(k-n)$, whence\n\\[\n  b_k-b_r\\le m(k-n)-m(r-n)=m(k-r).\n\\]\nTherefore\n\\[\n  L(k)-b_k\\ge m(r-n)+(m+\\varepsilon)(k-r)-m(k-n)=\\varepsilon(k-r)>0.\n\\]\n\n(c)  k\\le n.  Since $\\ell_n$ is supporting,\n\\[\n b_k<b_n+m_n(k-n). \n\\]\nUsing $b_r=b_n+m(r-n)$ one obtains\n\\[\n \\begin{aligned}\n  L(k)-b_k&=b_r+(m+\\varepsilon)(k-r)-b_k\\\\\n          &=b_n+m(r-n)+(m+\\varepsilon)(k-r)-b_k\\\\\n          &=\\bigl(b_n+m_n(k-n)-b_k\\bigr)\n             +\\bigl(m-m_n+\\varepsilon\\bigr)(k-n).\n \\end{aligned}\n\\]\nThe first bracket is positive, while $k-n\\le0$ and \n$m-m_n+\\varepsilon<-(m_n-m)+\\varepsilon<0$, so the second bracket is non-negative.  Hence $L(k)-b_k>0$.\n\nThus every point P_k ($k\\neq r$) lies strictly below L, so P_r is a vertex.\n\nStep 3.  There are infinitely many vertices.\n-------------------------------------------\nStart with the already-established vertex $n_0:=0$ and repeatedly apply Step 2.  This yields a strictly increasing sequence of indices\n\\[\n 0=n_0<n_1<n_2<\\dotsm\\longrightarrow\\infty,\n\\]\nshowing that the set of vertices is infinite.\n\nStep 4.  A vertex produces the required inequalities.\n----------------------------------------------------\nLet $n$ be any vertex (other than $0$) and let $y=b_n+m(x-n)$ be one of its supporting lines ($m>0$).  Because every other point of the form P_{n\\pm j} ($1\\le j\\le n$) lies strictly below this line, we have\n\\[\n  b_{n+j}<b_n+mj, \\qquad b_{n-j}<b_n-mj\\quad(1\\le j\\le n).\n\\]\nAdding the two inequalities gives\n\\[\n  b_{n-j}+b_{n+j}<2b_n\\qquad(j=1,2,\\dots ,n).\n\\]\nSince, by Step 3, there are infinitely many such vertices $n$, the inequalities are satisfied for infinitely many positive integers $n$, as required.\\hfill$\\square$",
+      "_meta": {
+        "core_steps": [
+          "Embed the points (n, a_n) in the plane and study the upper convex hull S of these points.",
+          "Use lim (a_n / n) = 0 to show that the first point (1, a_1) is an exposed upper vertex (a supporting line exists with all other points below).",
+          "Given any upper vertex index n, take the largest k>n that maximizes the slope (a_k−a_n)/(k−n); its supporting line proves k is a new vertex, so the vertex set is infinite by induction.",
+          "For each vertex n, the supporting line inequalities a_{n+i} < a_n + mi and a_{n−i} < a_n − mi (1≤i≤n−1) add up to a_{n−i}+a_{n+i} < 2a_n, giving the required condition."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The requirement that a_n be positive can be relaxed to ‘real-valued’; positivity is never used in the convex-hull or slope arguments.",
+            "original": "positive real numbers"
+          },
+          "slot2": {
+            "description": "‘Increasing’ can be weakened to ‘non-decreasing’; the proof only needs slopes (a_k−a_n)/(k−n) to be ≥0.",
+            "original": "increasing sequence"
+          },
+          "slot3": {
+            "description": "The indexing could start at 0, 2, etc.; any fixed finite shift leaves the convex-hull argument unchanged.",
+            "original": "n ≥ 1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

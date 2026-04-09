@@ -1,0 +1,117 @@
+{
+  "index": "1960-A-2",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "2. Show that if three points are inside a closed square of unit side, then some pair of them are within \\( \\sqrt{6}-\\sqrt{2} \\) units apart.",
+  "solution": "Solution. If three points are in a closed square region, it is possible to translate them together so that one becomes a corner while the others remain inside the given square. (There is a smallest rectangle \\( R \\) (possibly degenerate) that contains the given points and has sides parallel to those of the square. Each side of \\( R \\) contains at least one of the given points,\nso one of the given points must fall on two sides of \\( R \\), i.e., it is a vertex of \\( R \\). Then all of \\( R \\) can be translated inside the square so that this vertex becomes a corner.) The translation does not affect the mutual distances between the three points, so we may assume that one of the three given points is \\( O \\) in the square \\( O A B C \\). We choose axes as shown.\n\nAssume that the three points \\( O, P, Q \\) are all separated by more than \\( \\alpha=\\sqrt{ } 6-\\sqrt{ } 2 \\). Then \\( P \\) and \\( Q \\) lie outside the circle \\( x^{2}+y^{2}=\\alpha^{2} \\). This circle crosses \\( A B \\) and \\( B C \\) at \\( D=\\left\\langle 1, \\sqrt{\\alpha^{2}-1}\\right\\rangle \\) and \\( E=\\left\\langle\\sqrt{\\alpha^{2}-1}, 1\\right\\rangle \\), respectively. Now \\( P \\) and \\( Q \\), being in the right triangle \\( D B E \\), are no farther apart than \\( D \\) and \\( E \\). But\n\\[\n\\begin{aligned}\n|D E|^{2} & =2\\left(1-\\sqrt{\\alpha^{2}-1}\\right)^{2} \\\\\n& =2(1-\\sqrt{7-4 \\sqrt{ } 3})^{2}=2(1-(2-\\sqrt{ } 3))^{2} \\\\\n& =2(\\sqrt{3}-1)^{2}=(\\sqrt{6}-\\sqrt{2})^{2}=\\alpha^{2}\n\\end{aligned}\n\\]\n\nSo \\( |P Q| \\leq \\alpha \\), a contradiction.\nThis proves that, of any three points in a closed unit square, some two are no farther than \\( \\alpha \\) apart. If the three points are strictly inside the square, they are also inside a square of side \\( s<1 \\), and hence some two of them are at distance at most \\( \\alpha s<\\alpha \\); that is, some two are less than \\( \\alpha \\) apart.\n\nRemarks. An interesting discussion of this and related problems, together with some history and bibliography, appears in an article by Benjamin L. Schwartz, \"Separating Points in a Rectangle,\" Mathematics Magazine. vol. 46 (1973), pages 62-70.",
+  "vars": [
+    "O",
+    "P",
+    "Q",
+    "x",
+    "y",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "R",
+    "s"
+  ],
+  "params": [
+    "\\\\alpha"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "O": "originpt",
+        "P": "firstpt",
+        "Q": "secondpt",
+        "x": "abscis",
+        "y": "ordinate",
+        "A": "cornera",
+        "B": "cornerb",
+        "C": "cornerc",
+        "D": "pointd",
+        "E": "pointe",
+        "R": "smallrect",
+        "s": "scalef",
+        "\\alpha": "distlim"
+      },
+      "question": "2. Show that if three points are inside a closed square of unit side, then some pair of them are within \\( \\sqrt{6}-\\sqrt{2} \\) units apart.",
+      "solution": "Solution. If three points are in a closed square region, it is possible to translate them together so that one becomes a corner while the others remain inside the given square. (There is a smallest rectangle \\( smallrect \\) (possibly degenerate) that contains the given points and has sides parallel to those of the square. Each side of \\( smallrect \\) contains at least one of the given points,\nso one of the given points must fall on two sides of \\( smallrect \\), i.e., it is a vertex of \\( smallrect \\). Then all of \\( smallrect \\) can be translated inside the square so that this vertex becomes a corner.) The translation does not affect the mutual distances between the three points, so we may assume that one of the three given points is \\( originpt \\) in the square \\( originpt cornera cornerb cornerc \\). We choose axes as shown.\n\nAssume that the three points \\( originpt, firstpt, secondpt \\) are all separated by more than \\( distlim=\\sqrt{ } 6-\\sqrt{ } 2 \\). Then \\( firstpt \\) and \\( secondpt \\) lie outside the circle \\( abscis^{2}+ordinate^{2}=distlim^{2} \\). This circle crosses \\( cornera cornerb \\) and \\( cornerb cornerc \\) at \\( pointd=\\left\\langle 1, \\sqrt{distlim^{2}-1}\\right\\rangle \\) and \\( pointe=\\left\\langle\\sqrt{distlim^{2}-1}, 1\\right\\rangle \\), respectively. Now \\( firstpt \\) and \\( secondpt \\), being in the right triangle \\( pointd cornerb pointe \\), are no farther apart than \\( pointd \\) and \\( pointe \\). But\n\\[\n\\begin{aligned}\n|pointd pointe|^{2} & =2\\left(1-\\sqrt{distlim^{2}-1}\\right)^{2} \\\\\n& =2(1-\\sqrt{7-4 \\sqrt{ } 3})^{2}=2(1-(2-\\sqrt{ } 3))^{2} \\\\\n& =2(\\sqrt{3}-1)^{2}=(\\sqrt{6}-\\sqrt{2})^{2}=distlim^{2}\n\\end{aligned}\n\\]\n\nSo \\( |firstpt secondpt| \\leq distlim \\), a contradiction.\nThis proves that, of any three points in a closed unit square, some two are no farther than \\( distlim \\) apart. If the three points are strictly inside the square, they are also inside a square of side \\( scalef<1 \\), and hence some two of them are at distance at most \\( distlim scalef<distlim \\); that is, some two are less than \\( distlim \\) apart.\n\nRemarks. An interesting discussion of this and related problems, together with some history and bibliography, appears in an article by Benjamin L. Schwartz, \"Separating Points in a Rectangle,\" Mathematics Magazine. vol. 46 (1973), pages 62-70."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "O": "magnolia",
+        "P": "sapphire",
+        "Q": "tangerine",
+        "x": "dalmatian",
+        "y": "porcupine",
+        "A": "butterfly",
+        "B": "crocodile",
+        "C": "elephant",
+        "D": "kangaroo",
+        "E": "chipmunk",
+        "R": "hummingbird",
+        "s": "platypus",
+        "\\alpha": "rainforest"
+      },
+      "question": "2. Show that if three points are inside a closed square of unit side, then some pair of them are within \\( \\sqrt{6}-\\sqrt{2} \\) units apart.",
+      "solution": "Solution. If three points are in a closed square region, it is possible to translate them together so that one becomes a corner while the others remain inside the given square. (There is a smallest rectangle \\( hummingbird \\) (possibly degenerate) that contains the given points and has sides parallel to those of the square. Each side of \\( hummingbird \\) contains at least one of the given points,\nso one of the given points must fall on two sides of \\( hummingbird \\), i.e., it is a vertex of \\( hummingbird \\). Then all of \\( hummingbird \\) can be translated inside the square so that this vertex becomes a corner.) The translation does not affect the mutual distances between the three points, so we may assume that one of the three given points is \\( magnolia \\) in the square \\( magnolia butterfly crocodile elephant \\). We choose axes as shown.\n\nAssume that the three points \\( magnolia, sapphire, tangerine \\) are all separated by more than \\( rainforest=\\sqrt{ } 6-\\sqrt{ } 2 \\). Then \\( sapphire \\) and \\( tangerine \\) lie outside the circle \\( dalmatian^{2}+porcupine^{2}=rainforest^{2} \\). This circle crosses \\( butterfly crocodile \\) and \\( crocodile elephant \\) at \\( kangaroo=\\left\\langle 1, \\sqrt{rainforest^{2}-1}\\right\\rangle \\) and \\( chipmunk=\\left\\langle\\sqrt{rainforest^{2}-1}, 1\\right\\rangle \\), respectively. Now \\( sapphire \\) and \\( tangerine \\), being in the right triangle \\( kangaroo crocodile chipmunk \\), are no farther apart than \\( kangaroo \\) and \\( chipmunk \\). But\n\\[\n\\begin{aligned}\n|kangaroo chipmunk|^{2} & =2\\left(1-\\sqrt{rainforest^{2}-1}\\right)^{2} \\\\\n& =2(1-\\sqrt{7-4 \\sqrt{ } 3})^{2}=2(1-(2-\\sqrt{ } 3))^{2} \\\\\n& =2(\\sqrt{3}-1)^{2}=(\\sqrt{6}-\\sqrt{2})^{2}=rainforest^{2}\n\\end{aligned}\n\\]\n\nSo \\( |sapphire tangerine| \\leq rainforest \\), a contradiction.\nThis proves that, of any three points in a closed unit square, some two are no farther than \\( rainforest \\) apart. If the three points are strictly inside the square, they are also inside a square of side \\( platypus<1 \\), and hence some two of them are at distance at most \\( rainforest platypus<rainforest \\); that is, some two are less than \\( rainforest \\) apart.\n\nRemarks. An interesting discussion of this and related problems, together with some history and bibliography, appears in an article by Benjamin L. Schwartz, \"Separating Points in a Rectangle,\" Mathematics Magazine. vol. 46 (1973), pages 62-70."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "O": "destination",
+        "P": "nonentity",
+        "Q": "nowherept",
+        "x": "vertical",
+        "y": "horizontal",
+        "A": "centered",
+        "B": "midpoint",
+        "C": "interior",
+        "D": "internal",
+        "E": "external",
+        "R": "circular",
+        "s": "diameter",
+        "\\alpha": "omegalast"
+      },
+      "question": "2. Show that if three points are inside a closed square of unit side, then some pair of them are within \\( \\sqrt{6}-\\sqrt{2} \\) units apart.",
+      "solution": "Solution. If three points are in a closed square region, it is possible to translate them together so that one becomes a corner while the others remain inside the given square. (There is a smallest rectangle \\( circular \\) (possibly degenerate) that contains the given points and has sides parallel to those of the square. Each side of \\( circular \\) contains at least one of the given points,\nso one of the given points must fall on two sides of \\( circular \\), i.e., it is a vertex of \\( circular \\). Then all of \\( circular \\) can be translated inside the square so that this vertex becomes a corner.) The translation does not affect the mutual distances between the three points, so we may assume that one of the three given points is \\( destination \\) in the square \\( destination\\ centered\\ midpoint\\ interior \\). We choose axes as shown.\n\nAssume that the three points \\( destination, nonentity, nowherept \\) are all separated by more than \\( omegalast=\\sqrt{ } 6-\\sqrt{ } 2 \\). Then \\( nonentity \\) and \\( nowherept \\) lie outside the circle \\( vertical^{2}+horizontal^{2}=omegalast^{2} \\). This circle crosses \\( centered\\ midpoint \\) and \\( midpoint\\ interior \\) at \\( internal=\\left\\langle 1, \\sqrt{omegalast^{2}-1}\\right\\rangle \\) and \\( external=\\left\\langle\\sqrt{omegalast^{2}-1}, 1\\right\\rangle \\), respectively. Now \\( nonentity \\) and \\( nowherept \\), being in the right triangle \\( internal\\ midpoint\\ external \\), are no farther apart than \\( internal \\) and \\( external \\). But\n\\[\n\\begin{aligned}\n|internal\\ external|^{2} & =2\\left(1-\\sqrt{omegalast^{2}-1}\\right)^{2} \\\\\n& =2(1-\\sqrt{7-4 \\sqrt{ } 3})^{2}=2(1-(2-\\sqrt{ } 3))^{2} \\\\\n& =2(\\sqrt{3}-1)^{2}=(\\sqrt{6}-\\sqrt{2})^{2}=omegalast^{2}\n\\end{aligned}\n\\]\n\nSo \\( |nonentity\\ nowherept| \\leq omegalast \\), a contradiction.\nThis proves that, of any three points in a closed unit square, some two are no farther than \\( omegalast \\) apart. If the three points are strictly inside the square, they are also inside a square of side \\( diameter<1 \\), and hence some two of them are at distance at most \\( omegalast\\ diameter<omegalast \\); that is, some two are less than \\( omegalast \\) apart."
+    },
+    "garbled_string": {
+      "map": {
+        "O": "qzxwvtnp",
+        "P": "hjgrksla",
+        "Q": "mnbvcxzd",
+        "x": "plmokijn",
+        "y": "ujmnhygt",
+        "A": "asdfghjk",
+        "B": "zxcvbnml",
+        "C": "qwertyui",
+        "D": "lkjhgfdsa",
+        "E": "poiulkjh",
+        "R": "mkoijnbh",
+        "s": "vfrtgbhu",
+        "\\alpha": "bvcxzlkj"
+      },
+      "question": "2. Show that if three points are inside a closed square of unit side, then some pair of them are within \\( \\sqrt{6}-\\sqrt{2} \\) units apart.",
+      "solution": "Solution. If three points are in a closed square region, it is possible to translate them together so that one becomes a corner while the others remain inside the given square. (There is a smallest rectangle mkoijnbh (possibly degenerate) that contains the given points and has sides parallel to those of the square. Each side of mkoijnbh contains at least one of the given points,\nso one of the given points must fall on two sides of mkoijnbh, i.e., it is a vertex of mkoijnbh. Then all of mkoijnbh can be translated inside the square so that this vertex becomes a corner.) The translation does not affect the mutual distances between the three points, so we may assume that one of the three given points is qzxwvtnp in the square qzxwvtnp asdfghjk zxcvbnml qwertyui. We choose axes as shown.\n\nAssume that the three points \\( qzxwvtnp, hjgrksla, mnbvcxzd \\) are all separated by more than \\( bvcxzlkj=\\sqrt{ } 6-\\sqrt{ } 2 \\). Then \\( hjgrksla \\) and \\( mnbvcxzd \\) lie outside the circle \\( plmokijn^{2}+ujmnhygt^{2}=bvcxzlkj^{2} \\). This circle crosses \\( asdfghjk zxcvbnml \\) and \\( zxcvbnml qwertyui \\) at \\( lkjhgfdsa=\\left\\langle 1, \\sqrt{bvcxzlkj^{2}-1}\\right\\rangle \\) and \\( poiulkjh=\\left\\langle\\sqrt{bvcxzlkj^{2}-1}, 1\\right\\rangle \\), respectively. Now \\( hjgrksla \\) and \\( mnbvcxzd \\), being in the right triangle \\( lkjhgfdsa zxcvbnml poiulkjh \\), are no farther apart than \\( lkjhgfdsa \\) and \\( poiulkjh \\). But\n\\[\n\\begin{aligned}\n|lkjhgfdsa poiulkjh|^{2} & =2\\left(1-\\sqrt{bvcxzlkj^{2}-1}\\right)^{2} \\\\\n& =2(1-\\sqrt{7-4 \\sqrt{ } 3})^{2}=2(1-(2-\\sqrt{ } 3))^{2} \\\\\n& =2(\\sqrt{3}-1)^{2}=(\\sqrt{6}-\\sqrt{2})^{2}=bvcxzlkj^{2}\n\\end{aligned}\n\\]\n\nSo \\( |hjgrksla mnbvcxzd| \\leq bvcxzlkj \\), a contradiction.\nThis proves that, of any three points in a closed unit square, some two are no farther than \\( bvcxzlkj \\) apart. If the three points are strictly inside the square, they are also inside a square of side \\( vfrtgbhu<1 \\), and hence some two of them are at distance at most \\( bvcxzlkj vfrtgbhu<bvcxzlkj \\); that is, some two are less than \\( bvcxzlkj \\) apart.\n\nRemarks. An interesting discussion of this and related problems, together with some history and bibliography, appears in an article by Benjamin L. Schwartz, \"Separating Points in a Rectangle,\" Mathematics Magazine. vol. 46 (1973), pages 62-70."
+    },
+    "kernel_variant": {
+      "question": "Let \\alpha  = \\sqrt{6} - \\sqrt{2.} Show that among any seven points situated in, or on the boundary of, the cube  \n      C = [0,2] \\times  [0,2] \\times  [0,2]  \nthere must be two whose Euclidean distance does not exceed 2\\alpha . (If all seven points lie strictly inside C, the inequality may be taken as ``< 2\\alpha ''.)\n\n------------------------------------------------------",
+      "solution": "(\\approx  330 words)  \n\nAssume, for contradiction, that seven points of C are placed so that every pair is more than 2\\alpha  apart.  Pick any four of them and call them P_0,P_1,P_2,P_3.  \n\nStep 1 (put a point at a corner).  \nLet R be the smallest axis-parallel rectangular box containing P_0,P_1,P_2,P_3.  Some Pi is a vertex of R; relabel so that P_0 is that vertex.  Translating the whole configuration so that P_0 moves to the origin  \n      O = (0,0,0)  \nkeeps every mutual distance unchanged and keeps all four points inside the fixed cube C.  Hence we may suppose\n\n  |OPi| > 2\\alpha  (i = 1,2,3).                     (1)\n\nStep 2 (describe the forbidden ball).  \nLet S be the sphere of radius 2\\alpha  centred at O:\n\n  S : x^2 + y^2 + z^2 = (2\\alpha )^2 = 4\\alpha ^2.\n\nBecause of (1) the points P_1,P_2,P_3 lie outside S.  Compute\n\n  \\alpha ^2 = (\\sqrt{6} - \\sqrt{2})^2 = 8 - 4\\sqrt{3},  \n  \\alpha ^2 - 1 = 7 - 4\\sqrt{3} = (2 - \\sqrt{3})^2,  \n  \\beta  := 2\\sqrt{\\alpha ^2 - 1} = 4 - 2\\sqrt{3} \\approx  0.536.\n\nOn the face x = 2 the sphere meets the cube in the circle y^2 + z^2 = 4\\alpha ^2 - 4, whose radius is \\beta .  Analogous circles occur on the faces y = 2 and z = 2.  Therefore the portion of C that lies outside S is contained in the tetrahedron\n\n  T = conv{B, D_1, D_2, D_3},\n\nwhere  \n  B = (2,2,2),  \n  D_1 = (2,\\beta ,\\beta ),   D_2 = (\\beta ,2,\\beta ),   D_3 = (\\beta ,\\beta ,2).\n\nConsequently P_1,P_2,P_3\\in T.\n\nStep 3 (the diameter of T).  \nNote that 2 - \\beta  = 2(1-\\sqrt{\\alpha ^2-1}) = 2(\\sqrt{3}-1).  Hence\n\n |D_1D_2|^2 = (2-\\beta )^2 + (\\beta -2)^2 = 2(2-\\beta )^2  \n            = 8(1-\\sqrt{\\alpha ^2-1})^2  \n            = 8(\\sqrt{3}-1)^2  \n            = 32 - 16\\sqrt{3}  \n            = 4\\alpha ^2,\n\nso |D_1D_2| = 2\\alpha .  The same calculation shows that every edge of T has length at most 2\\alpha , and B is exactly 2\\alpha  from each Di.  Thus\n\n  diam (T) = 2\\alpha .                                   (2)\n\nStep 4 (contradiction).  \nBecause P_1,P_2,P_3 lie inside T, (2) implies that at least one of the three pairwise distances {|P_1P_2|,|P_1P_3|,|P_2P_3|} is \\leq 2\\alpha , contradicting our assumption that all distances exceed 2\\alpha .  Hence our assumption is impossible, and any seven points in C contain a pair no farther than 2\\alpha  apart.\n\nStep 5 (strict interior).  \nIf the seven points are strictly interior, they lie in a smaller homothetic cube of side 2s with 0<s<1.  Re-running the argument with the scale factor s yields a strict inequality |PQ|<2\\alpha .\n\n------------------------------------------------------",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.054978",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,87 @@
+{
+  "index": "1996-B-4",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "For any square matrix $A$, we can define $\\sin A$ by the usual power\nseries:\n\\[\n\\sin A = \\sum_{n=0}^\\infty \\frac{(-1)^n}{(2n+1)!} A^{2n+1}.\n\\]\nProve or disprove: there exists a $2 \\times 2$ matrix $A$ with real\nentries such that\n\\[\n\\sin A = \\left( \\begin{array}{cc} 1 & 1996 \\\\ 0 & 1 \\end{array} \\right).\n\\]",
+  "solution": "Suppose such a matrix $A$ exists.  If the eigenvalues of $A$ (over\nthe complex numbers) are distinct, then there exists a complex\nmatrix $C$ such that $B=CAC^{-1}$ is diagonal.  Consequently,\n$\\sin B$ is diagonal.  But then $\\sin A=C^{-1}(\\sin B)C$ must\nbe diagonalizable, a contradiction.  Hence the eigenvalues of $A$\nare the same, and $A$ has a conjugate $B=CAC^{-1}$ over\nthe complex numbers of the form\n\\[\n\\left(\n\\begin{array}{cc}\nx & y\\\\\n0 & x\n\\end{array}\n\\right).\n\\]\nA direct computation shows that\n\\[\n\\sin B = \\left(\n\\begin{array}{cc}\n\\sin x & y\\cdot \\cos x\\\\\n0 & \\sin x\n\\end{array}\n\\right).\n\\]\nSince $\\sin A$ and $\\sin B$ are conjugate, their eigenvalues\nmust be the same, and so we must have $\\sin x=1$.  This implies\n$\\cos x=0$, so that $\\sin B$ is the identity matrix, as must be $\\sin\nA$, a contradiction.\nThus $A$ cannot exist.\n\nAlternate solution (due to Craig Helfgott and Alex Popa):\nDefine both $\\sin A$ and $\\cos A$ by the usual power series.\nSince $A$ commutes with itself, the power series identity\n\\[\n\\sin^2 A+\\cos^2 A = I\n\\]\nholds.  But if $\\sin A$ is the given matrix, then by the\nabove identity, $\\cos^2 A$ must equal\n$\\left(\n\\begin{array}{cc}\n0 & -2\\cdot 1996\\\\\n0 & 0\n\\end{array}\n\\right)$\nwhich is a nilpotent matrix.  Thus $\\cos A$ is also nilpotent.\nHowever, the square of any $2\\times 2$ nilpotent matrix must be zero\n(e.g., by the Cayley-Hamilton theorem).  This is a contradiction.",
+  "vars": [
+    "A",
+    "n",
+    "B",
+    "C",
+    "x",
+    "y"
+  ],
+  "params": [
+    "I"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "matrixalpha",
+        "n": "indexvar",
+        "B": "matrixbeta",
+        "C": "matrixgamma",
+        "x": "scalarx",
+        "y": "scalary",
+        "I": "identitymatrix"
+      },
+      "question": "For any square matrix $matrixalpha$, we can define $\\sin matrixalpha$ by the usual power\nseries:\n\\[\n\\sin matrixalpha = \\sum_{indexvar=0}^{\\infty} \\frac{(-1)^{indexvar}}{(2indexvar+1)!} \nmatrixalpha^{2indexvar+1}.\n\\]\nProve or disprove: there exists a $2 \\times 2$ matrix $matrixalpha$ with real\nentries such that\n\\[\n\\sin matrixalpha = \\left( \\begin{array}{cc} 1 & 1996 \\\\ 0 & 1 \\end{array} \\right).\n\\]",
+      "solution": "Suppose such a matrix $matrixalpha$ exists.  If the eigenvalues of $matrixalpha$ (over\nthe complex numbers) are distinct, then there exists a complex\nmatrix $matrixgamma$ such that $matrixbeta=matrixgamma \nmatrixalpha \nmatrixgamma^{-1}$ is diagonal.  Consequently,\n$\\sin matrixbeta$ is diagonal.  But then $\\sin matrixalpha=matrixgamma^{-1}(\\sin matrixbeta)matrixgamma$ must\nbe diagonalizable, a contradiction.  Hence the eigenvalues of $matrixalpha$\nare the same, and $matrixalpha$ has a conjugate $matrixbeta=matrixgamma \nmatrixalpha \nmatrixgamma^{-1}$ over\nthe complex numbers of the form\n\\[\n\\left(\n\\begin{array}{cc}\nscalarx & scalary\\\\\n0 & scalarx\n\\end{array}\n\\right).\n\\]\nA direct computation shows that\n\\[\n\\sin matrixbeta = \\left(\n\\begin{array}{cc}\n\\sin scalarx & scalary\\cdot \\cos scalarx\\\\\n0 & \\sin scalarx\n\\end{array}\n\\right).\n\\]\nSince $\\sin matrixalpha$ and $\\sin matrixbeta$ are conjugate, their eigenvalues\nmust be the same, and so we must have $\\sin scalarx=1$.  This implies\n$\\cos scalarx=0$, so that $\\sin matrixbeta$ is the identity matrix, as must be $\\sin\nmatrixalpha$, a contradiction.\nThus $matrixalpha$ cannot exist.\n\nAlternate solution (due to Craig Helfgott and Alex Popa):\nDefine both $\\sin matrixalpha$ and $\\cos matrixalpha$ by the usual power series.\nSince $matrixalpha$ commutes with itself, the power series identity\n\\[\n\\sin^2 matrixalpha+\\cos^2 matrixalpha = identitymatrix\n\\]\nholds.  But if $\\sin matrixalpha$ is the given matrix, then by the\nabove identity, $\\cos^2 matrixalpha$ must equal\n$\\left(\n\\begin{array}{cc}\n0 & -2\\cdot 1996\\\\\n0 & 0\n\\end{array}\n\\right)$\nwhich is a nilpotent matrix.  Thus $\\cos matrixalpha$ is also nilpotent.\nHowever, the square of any $2\\times 2$ nilpotent matrix must be zero\n(e.g., by the Cayley-Hamilton theorem).  This is a contradiction."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "pineapple",
+        "n": "hazelnuts",
+        "B": "raincloud",
+        "C": "doorknobs",
+        "x": "teacupset",
+        "y": "snowflakes",
+        "I": "whirlwind"
+      },
+      "question": "For any square matrix $pineapple$, we can define $\\sin pineapple$ by the usual power\nseries:\n\\[\n\\sin pineapple = \\sum_{hazelnuts=0}^\\infty \\frac{(-1)^{hazelnuts}}{(2hazelnuts+1)!} pineapple^{2hazelnuts+1}.\n\\]\nProve or disprove: there exists a $2 \\times 2$ matrix $pineapple$ with real\nentries such that\n\\[\n\\sin pineapple = \\left( \\begin{array}{cc} 1 & 1996 \\\\ 0 & 1 \\end{array} \\right).\n\\]",
+      "solution": "Suppose such a matrix $pineapple$ exists.  If the eigenvalues of $pineapple$ (over\nthe complex numbers) are distinct, then there exists a complex\nmatrix $doorknobs$ such that $raincloud=doorknobs pineapple doorknobs^{-1}$ is diagonal.  Consequently,\n$\\sin raincloud$ is diagonal.  But then $\\sin pineapple=doorknobs^{-1}(\\sin raincloud)doorknobs$ must\nbe diagonalizable, a contradiction.  Hence the eigenvalues of $pineapple$\nare the same, and $pineapple$ has a conjugate $raincloud=doorknobs pineapple doorknobs^{-1}$ over\nthe complex numbers of the form\n\\[\n\\left(\n\\begin{array}{cc}\nteacupset & snowflakes\\\\\n0 & teacupset\n\\end{array}\n\\right).\n\\]\nA direct computation shows that\n\\[\n\\sin raincloud = \\left(\n\\begin{array}{cc}\n\\sin teacupset & snowflakes\\cdot \\cos teacupset\\\\\n0 & \\sin teacupset\n\\end{array}\n\\right).\n\\]\nSince $\\sin pineapple$ and $\\sin raincloud$ are conjugate, their eigenvalues\nmust be the same, and so we must have $\\sin teacupset=1$.  This implies\n$\\cos teacupset=0$, so that $\\sin raincloud$ is the identity matrix, as must be $\\sin\npineapple$, a contradiction.\nThus $pineapple$ cannot exist.\n\nAlternate solution (due to Craig Helfgott and Alex Popa):\nDefine both $\\sin pineapple$ and $\\cos pineapple$ by the usual power series.\nSince $pineapple$ commutes with itself, the power series identity\n\\[\n\\sin^2 pineapple+\\cos^2 pineapple = whirlwind\n\\]\nholds.  But if $\\sin pineapple$ is the given matrix, then by the\nabove identity, $\\cos^2 pineapple$ must equal\n$\\left(\n\\begin{array}{cc}\n0 & -2\\cdot 1996\\\\\n0 & 0\n\\end{array}\n\\right)$\nwhich is a nilpotent matrix.  Thus $\\cos pineapple$ is also nilpotent.\nHowever, the square of any $2\\times 2$ nilpotent matrix must be zero\n(e.g., by the Cayley-Hamilton theorem).  This is a contradiction."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "scalarvalue",
+        "n": "continuum",
+        "B": "vectorarray",
+        "C": "singularmap",
+        "x": "offdiagonal",
+        "y": "diagonalshift",
+        "I": "zeromatrix"
+      },
+      "question": "For any square matrix $scalarvalue$, we can define $\\sin scalarvalue$ by the usual power\nseries:\n\\[\n\\sin scalarvalue = \\sum_{continuum=0}^\\infty \\frac{(-1)^{continuum}}{(2continuum+1)!} scalarvalue^{2continuum+1}.\n\\]\nProve or disprove: there exists a $2 \\times 2$ matrix $scalarvalue$ with real\nentries such that\n\\[\n\\sin scalarvalue = \\left( \\begin{array}{cc} 1 & 1996 \\\\ 0 & 1 \\end{array} \\right).\n\\]",
+      "solution": "Suppose such a matrix $scalarvalue$ exists.  If the eigenvalues of $scalarvalue$ (over\nthe complex numbers) are distinct, then there exists a complex\nmatrix $singularmap$ such that $vectorarray=singularmap scalarvalue singularmap^{-1}$ is diagonal.  Consequently,\n$\\sin vectorarray$ is diagonal.  But then $\\sin scalarvalue=singularmap^{-1}(\\sin vectorarray)singularmap$ must\nbe diagonalizable, a contradiction.  Hence the eigenvalues of $scalarvalue$\nare the same, and $scalarvalue$ has a conjugate $vectorarray=singularmap scalarvalue singularmap^{-1}$ over\nthe complex numbers of the form\n\\[\n\\left(\n\\begin{array}{cc}\noffdiagonal & diagonalshift\\\\\n0 & offdiagonal\n\\end{array}\n\\right).\n\\]\nA direct computation shows that\n\\[\n\\sin vectorarray = \\left(\n\\begin{array}{cc}\n\\sin offdiagonal & diagonalshift\\cdot \\cos offdiagonal\\\\\n0 & \\sin offdiagonal\n\\end{array}\n\\right).\n\\]\nSince $\\sin scalarvalue$ and $\\sin vectorarray$ are conjugate, their eigenvalues\nmust be the same, and so we must have $\\sin offdiagonal=1$.  This implies\n$\\cos offdiagonal=0$, so that $\\sin vectorarray$ is the identity matrix, as must be $\\sin\nscalarvalue$, a contradiction.\nThus $scalarvalue$ cannot exist.\n\nAlternate solution (due to Craig Helfgott and Alex Popa):\nDefine both $\\sin scalarvalue$ and $\\cos scalarvalue$ by the usual power series.\nSince $scalarvalue$ commutes with itself, the power series identity\n\\[\n\\sin^2 scalarvalue+\\cos^2 scalarvalue = zeromatrix\n\\]\nholds.  But if $\\sin scalarvalue$ is the given matrix, then by the\nabove identity, $\\cos^2 scalarvalue$ must equal\n$\\left(\n\\begin{array}{cc}\n0 & -2\\cdot 1996\\\\\n0 & 0\n\\end{array}\n\\right)$\nwhich is a nilpotent matrix.  Thus $\\cos scalarvalue$ is also nilpotent.\nHowever, the square of any $2\\times 2$ nilpotent matrix must be zero\n(e.g., by the Cayley-Hamilton theorem).  This is a contradiction."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "n": "hjgrksla",
+        "B": "pkdmsrze",
+        "C": "rcnltaow",
+        "x": "mgpfheku",
+        "y": "zedkqfha",
+        "I": "snvgdprm"
+      },
+      "question": "For any square matrix $qzxwvtnp$, we can define $\\sin qzxwvtnp$ by the usual power\nseries:\n\\[\n\\sin qzxwvtnp = \\sum_{hjgrksla=0}^\\infty \\frac{(-1)^{hjgrksla}}{(2hjgrksla+1)!} qzxwvtnp^{2hjgrksla+1}.\n\\]\nProve or disprove: there exists a $2 \\times 2$ matrix $qzxwvtnp$ with real\nentries such that\n\\[\n\\sin qzxwvtnp = \\left( \\begin{array}{cc} 1 & 1996 \\\\ 0 & 1 \\end{array} \\right).\n\\]",
+      "solution": "Suppose such a matrix $qzxwvtnp$ exists.  If the eigenvalues of $qzxwvtnp$ (over\nthe complex numbers) are distinct, then there exists a complex\nmatrix $rcnltaow$ such that $pkdmsrze=rcnltaow qzxwvtnp rcnltaow^{-1}$ is diagonal.  Consequently,\n$\\sin pkdmsrze$ is diagonal.  But then $\\sin qzxwvtnp=rcnltaow^{-1}(\\sin pkdmsrze)rcnltaow$ must\nbe diagonalizable, a contradiction.  Hence the eigenvalues of $qzxwvtnp$\nare the same, and $qzxwvtnp$ has a conjugate $pkdmsrze=rcnltaow qzxwvtnp rcnltaow^{-1}$ over\nthe complex numbers of the form\n\\[\n\\left(\n\\begin{array}{cc}\nmgpfheku & zedkqfha\\\\\n0 & mgpfheku\n\\end{array}\n\\right).\n\\]\nA direct computation shows that\n\\[\n\\sin pkdmsrze = \\left(\n\\begin{array}{cc}\n\\sin mgpfheku & zedkqfha\\cdot \\cos mgpfheku\\\\\n0 & \\sin mgpfheku\n\\end{array}\n\\right).\n\\]\nSince $\\sin qzxwvtnp$ and $\\sin pkdmsrze$ are conjugate, their eigenvalues\nmust be the same, and so we must have $\\sin mgpfheku=1$.  This implies\n$\\cos mgpfheku=0$, so that $\\sin pkdmsrze$ is the identity matrix, as must be $\\sin\nqzxwvtnp$, a contradiction.\nThus $qzxwvtnp$ cannot exist.\n\nAlternate solution (due to Craig Helfgott and Alex Popa):\nDefine both $\\sin qzxwvtnp$ and $\\cos qzxwvtnp$ by the usual power series.\nSince $qzxwvtnp$ commutes with itself, the power series identity\n\\[\n\\sin^2 qzxwvtnp+\\cos^2 qzxwvtnp = snvgdprm\n\\]\nholds.  But if $\\sin qzxwvtnp$ is the given matrix, then by the\nabove identity, $\\cos^2 qzxwvtnp$ must equal\n$\\left(\n\\begin{array}{cc}\n0 & -2\\cdot 1996\\\\\n0 & 0\n\\end{array}\n\\right)$\nwhich is a nilpotent matrix.  Thus $\\cos qzxwvtnp$ is also nilpotent.\nHowever, the square of any $2\\times 2$ nilpotent matrix must be zero\n(e.g., by the Cayley-Hamilton theorem).  This is a contradiction."
+    },
+    "kernel_variant": {
+      "question": "For any square matrix A we set  \n  sin A := \\sum _{n=0}^{\\infty } (-1)^n A^{2n+1}/(2n+1)!.  \nDoes there exist a 3 \\times  3 complex matrix A whose sine equals  \n  sin A =  1 2024 0  0 1   7  0 0   1  ?",
+      "solution": "(\\approx  220 words)  \nAssume, for contradiction, that such an A exists.\n\nStep 1.  Spectral information.  \nThe displayed matrix is not diagonalizable, so A is not diagonalizable either; its three complex eigenvalues therefore coincide.  Hence A is similar to a single Jordan block  \n  B := C A C^{-1} = xI_3 + N, N^3 = 0, N^2 \\neq  0.  \nWrite N=(n_{ij}), rank N = 2.\n\nStep 2.  Truncated power series.  \nBecause N^3=0, only the first three terms of the sine series survive:  \n sin B = sin (xI+N)  \n    = sin x\\cdot I + cos x\\cdot N - sin x\\cdot N^2/2!.             (\\star )\n\nStep 3.  Comparing eigenvalues.  \nSince sin A and sin B are similar, they share eigenvalues; the given sine matrix has eigenvalue 1 repeated thrice, so sin x=1.  Consequently cos x=0.\n\nWith sin x=1 and cos x=0, (\\star ) reduces to  \n  sin B = I - N^2/2.                                 (\\dagger )\n\nStep 4.  Annihilation of the first super-diagonal.  \nIn (\\dagger ) the coefficient of N is 0, hence every entry contributed by N itself vanishes.  In particular the (1,2)- and (2,3)-entries of sin B must be zero.  However, the target matrix has (1,2)-entry 2024 and (2,3)-entry 7, a contradiction.\n\nTherefore no 3 \\times  3 complex matrix can satisfy the stated condition, and the assumed A cannot exist. \\blacksquare ",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.078190",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

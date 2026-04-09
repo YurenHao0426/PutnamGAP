@@ -1,0 +1,146 @@
+{
+  "index": "1940-A-2",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "2. Let \\( A \\) and \\( B \\) be two fixed points on the curve \\( y=f(x) \\), where \\( f(x) \\) is continuous and has a continuous derivative, and the \\( \\operatorname{arc} A B \\) is concave to the chord \\( A B \\). If \\( P \\) is a point of the \\( \\operatorname{arc} A B \\) for which \\( A P+P B \\) is a maximum, prove that \\( P A \\) and \\( P B \\) are equally inclined to the tangent to the curve \\( y= \\) \\( f(x) \\) at the point \\( P \\).",
+  "solution": "Solution. The theorem of the problem is a corollary to the following lemma which proves much more.\n\nLemma. Suppose \\( S \\) is a subset of a plane \\( \\pi \\), and \\( A \\) and \\( B \\) are points of \\( \\pi \\). Let \\( P \\) be a point of \\( S \\) such that\n\\[\nA P+P B \\geq A X+X B\n\\]\nfor all \\( X \\) in \\( S \\). Then the line \\( t \\) through \\( P \\) perpendicular to the bisector of \\( \\angle A P B \\) is a support line of \\( S \\) (i.e., \\( S \\) is contained in one of the closed halfplanes with edge \\( t \\) ). Moreover, if \\( P \\) is not on the segment \\( A B, P \\) is the only point of \\( S \\cap t \\).\n\nProof. Suppose \\( P \\) is not on the segment \\( A B \\). Then \\( A \\) and \\( B \\) are on ths same side of the line \\( t \\). Let \\( B^{\\prime} \\) be the reflection of \\( B \\) in the line \\( t \\). Ther \\( A, P, B^{\\prime} \\) are collinear.\n\nLet \\( Q \\) be any point in the open half-plane containing \\( B^{\\prime} \\). Then \\( Q B>Q B^{\\prime} \\) and we have\n\\[\nA Q+Q B>A Q+Q B^{\\prime} \\geq A B^{\\prime}=A P+P B^{\\prime}=A P+P B\n\\]\nso \\( Q \\notin S \\). If \\( Q \\) is a point of \\( t \\) other than \\( P \\), we have\n\\[\nA Q+Q B=A Q+Q B^{\\prime}>A B^{\\prime}=A P+P B\n\\]\nso again \\( Q \\notin S \\). Thus, except for the point \\( P \\) itself, \\( S \\) lies in the other oper half-plane.\n\nIf \\( P \\) is on the segment \\( A B \\), it is clear that all of \\( S \\) lies on \\( A B \\) and hence in both of the closed half-planes with edge \\( t \\).\n\nApplying this result to the problem at hand, we see that \\( P A \\) and \\( P E \\) are equally inclined to a line of support of the arc \\( A B \\) of the differentiable curve \\( y=f(x) \\). But if a differentiable arc has a line of support at a point \\( P \\) other than an endpoint-it is clear that \\( P \\) is not \\( A \\) or \\( B \\)-then that linc is the tangent line at \\( P \\).\n\nThe last statement is clear, but details can be supplied as follows. It the equation of the line of support is \\( y=m x+b \\) (it cannot be vertical and \\( P=\\left(x_{0}, y_{0}\\right) \\), then the differentiable function\n\\[\ng(x)=f(x)-m x-b\n\\]\nhas either a maximum or a minimum at \\( x_{0} \\), so \\( g^{\\prime}\\left(x_{0}\\right)=0 \\). Hence \\( f^{\\prime}\\left(x_{0}{ }^{\\prime}\\right. \\). \\( =m \\) and the tangent to the curve is \\( y=m x+b \\).",
+  "vars": [
+    "x",
+    "y",
+    "x_0",
+    "y_0",
+    "P",
+    "X",
+    "Q",
+    "g",
+    "f"
+  ],
+  "params": [
+    "A",
+    "B",
+    "S",
+    "t",
+    "m",
+    "b",
+    "\\\\pi"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizcoord",
+        "y": "vertcoord",
+        "x_0": "basehoriz",
+        "y_0": "basevert",
+        "P": "optipnt",
+        "X": "genericpt",
+        "Q": "testpt",
+        "g": "auxifunc",
+        "f": "origfunc",
+        "A": "fixeda",
+        "B": "fixedb",
+        "S": "subset",
+        "t": "supportline",
+        "m": "slopesym",
+        "b": "intercept"
+      },
+      "question": "2. Let \\( fixeda \\) and \\( fixedb \\) be two fixed points on the curve \\( vertcoord = origfunc(horizcoord) \\), where \\( origfunc(horizcoord) \\) is continuous and has a continuous derivative, and the \\( \\operatorname{arc} fixeda fixedb \\) is concave to the chord \\( fixeda fixedb \\). If \\( optipnt \\) is a point of the \\( \\operatorname{arc} fixeda fixedb \\) for which \\( fixeda optipnt + optipnt fixedb \\) is a maximum, prove that \\( optipnt fixeda \\) and \\( optipnt fixedb \\) are equally inclined to the tangent to the curve \\( vertcoord = origfunc(horizcoord) \\) at the point \\( optipnt \\).",
+      "solution": "Solution. The theorem of the problem is a corollary to the following lemma which proves much more.\n\nLemma. Suppose \\( subset \\) is a subset of a plane \\( \\pi \\), and \\( fixeda \\) and \\( fixedb \\) are points of \\( \\pi \\). Let \\( optipnt \\) be a point of \\( subset \\) such that\n\\[\nfixeda\\, optipnt + optipnt\\, fixedb \\geq fixeda\\, genericpt + genericpt\\, fixedb\n\\]\nfor all \\( genericpt \\) in \\( subset \\). Then the line \\( supportline \\) through \\( optipnt \\) perpendicular to the bisector of \\( \\angle fixeda\\, optipnt\\, fixedb \\) is a support line of \\( subset \\) (i.e., \\( subset \\) is contained in one of the closed halfplanes with edge \\( supportline \\) ). Moreover, if \\( optipnt \\) is not on the segment \\( fixeda fixedb \\), \\( optipnt \\) is the only point of \\( subset \\cap supportline \\).\n\nProof. Suppose \\( optipnt \\) is not on the segment \\( fixeda fixedb \\). Then \\( fixeda \\) and \\( fixedb \\) are on ths same side of the line \\( supportline \\). Let \\( fixedb^{\\prime} \\) be the reflection of \\( fixedb \\) in the line \\( supportline \\). Ther \\( fixeda, optipnt, fixedb^{\\prime} \\) are collinear.\n\nLet \\( testpt \\) be any point in the open half-plane containing \\( fixedb^{\\prime} \\). Then \\( testpt fixedb > testpt fixedb^{\\prime} \\) and we have\n\\[\nfixeda\\, testpt + testpt\\, fixedb > fixeda\\, testpt + testpt\\, fixedb^{\\prime} \\geq fixeda\\, fixedb^{\\prime} = fixeda\\, optipnt + optipnt\\, fixedb^{\\prime} = fixeda\\, optipnt + optipnt\\, fixedb\n\\]\nso \\( testpt \\notin subset \\). If \\( testpt \\) is a point of \\( supportline \\) other than \\( optipnt \\), we have\n\\[\nfixeda\\, testpt + testpt\\, fixedb = fixeda\\, testpt + testpt\\, fixedb^{\\prime} > fixeda\\, fixedb^{\\prime} = fixeda\\, optipnt + optipnt\\, fixedb\n\\]\nso again \\( testpt \\notin subset \\). Thus, except for the point \\( optipnt \\) itself, \\( subset \\) lies in the other oper half-plane.\n\nIf \\( optipnt \\) is on the segment \\( fixeda fixedb \\), it is clear that all of \\( subset \\) lies on \\( fixeda fixedb \\) and hence in both of the closed half-planes with edge \\( supportline \\).\n\nApplying this result to the problem at hand, we see that \\( optipnt fixeda \\) and \\( optipnt E \\) are equally inclined to a line of support of the arc \\( fixeda fixedb \\) of the differentiable curve \\( vertcoord = origfunc(horizcoord) \\). But if a differentiable arc has a line of support at a point \\( optipnt \\) other than an endpoint-it is clear that \\( optipnt \\) is not \\( fixeda \\) or \\( fixedb \\)-then that linc is the tangent line at \\( optipnt \\).\n\nThe last statement is clear, but details can be supplied as follows. It the equation of the line of support is \\( vertcoord = slopesym\\, horizcoord + intercept \\) (it cannot be vertical and \\( optipnt = \\left(basehoriz , basevert\\right) \\), then the differentiable function\n\\[\nauxifunc(horizcoord) = origfunc(horizcoord) - slopesym\\, horizcoord - intercept\n\\]\nhas either a maximum or a minimum at \\( basehoriz \\), so \\( auxifunc^{\\prime}\\left(basehoriz\\right) = 0 \\). Hence \\( origfunc^{\\prime}\\left(basehoriz\\right) = slopesym \\) and the tangent to the curve is \\( vertcoord = slopesym\\, horizcoord + intercept \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sandstone",
+        "y": "blueberry",
+        "x_0": "hummingbird",
+        "y_0": "marshmallow",
+        "P": "dictionary",
+        "X": "umbrella",
+        "Q": "strawberry",
+        "g": "pineapple",
+        "f": "kangaroo",
+        "A": "elephant",
+        "B": "chocolate",
+        "S": "trapezoid",
+        "t": "rectangle",
+        "m": "harmonica",
+        "b": "raspberry"
+      },
+      "question": "2. Let \\( elephant \\) and \\( chocolate \\) be two fixed points on the curve \\( blueberry = kangaroo(sandstone) \\), where \\( kangaroo(sandstone) \\) is continuous and has a continuous derivative, and the \\( \\operatorname{arc} elephant chocolate \\) is concave to the chord \\( elephant chocolate \\). If \\( dictionary \\) is a point of the \\( \\operatorname{arc} elephant chocolate \\) for which \\( elephant dictionary + dictionary chocolate \\) is a maximum, prove that \\( dictionary elephant \\) and \\( dictionary chocolate \\) are equally inclined to the tangent to the curve \\( blueberry = \\) \\( kangaroo(sandstone) \\) at the point \\( dictionary \\).",
+      "solution": "Solution. The theorem of the problem is a corollary to the following lemma which proves much more.\n\nLemma. Suppose \\( trapezoid \\) is a subset of a plane \\( \\pi \\), and \\( elephant \\) and \\( chocolate \\) are points of \\( \\pi \\). Let \\( dictionary \\) be a point of \\( trapezoid \\) such that\n\\[\nelephant dictionary + dictionary chocolate \\geq elephant umbrella + umbrella chocolate\n\\]\nfor all \\( umbrella \\) in \\( trapezoid \\). Then the line \\( rectangle \\) through \\( dictionary \\) perpendicular to the bisector of \\( \\angle elephant dictionary chocolate \\) is a support line of \\( trapezoid \\) (i.e., \\( trapezoid \\) is contained in one of the closed halfplanes with edge \\( rectangle \\) ). Moreover, if \\( dictionary \\) is not on the segment \\( elephant chocolate, dictionary \\) is the only point of \\( trapezoid \\cap rectangle \\).\n\nProof. Suppose \\( dictionary \\) is not on the segment \\( elephant chocolate \\). Then \\( elephant \\) and \\( chocolate \\) are on ths same side of the line \\( rectangle \\). Let \\( chocolate^{\\prime} \\) be the reflection of \\( chocolate \\) in the line \\( rectangle \\). Ther \\( elephant, dictionary, chocolate^{\\prime} \\) are collinear.\n\nLet \\( strawberry \\) be any point in the open half-plane containing \\( chocolate^{\\prime} \\). Then \\( strawberry chocolate>strawberry chocolate^{\\prime} \\) and we have\n\\[\nelephant strawberry + strawberry chocolate>elephant strawberry + strawberry chocolate^{\\prime} \\geq elephant chocolate^{\\prime}=elephant dictionary + dictionary chocolate^{\\prime}=elephant dictionary + dictionary chocolate\n\\]\nso \\( strawberry \\notin trapezoid \\). If \\( strawberry \\) is a point of \\( rectangle \\) other than \\( dictionary \\), we have\n\\[\nelephant strawberry + strawberry chocolate=elephant strawberry + strawberry chocolate^{\\prime}>elephant chocolate^{\\prime}=elephant dictionary + dictionary chocolate\n\\]\nso again \\( strawberry \\notin trapezoid \\). Thus, except for the point \\( dictionary \\) itself, \\( trapezoid \\) lies in the other oper half-plane.\n\nIf \\( dictionary \\) is on the segment \\( elephant chocolate \\), it is clear that all of \\( trapezoid \\) lies on \\( elephant chocolate \\) and hence in both of the closed half-planes with edge \\( rectangle \\).\n\nApplying this result to the problem at hand, we see that \\( dictionary elephant \\) and \\( dictionary E \\) are equally inclined to a line of support of the arc \\( elephant chocolate \\) of the differentiable curve \\( blueberry = kangaroo(sandstone) \\). But if a differentiable arc has a line of support at a point \\( dictionary \\) other than an endpoint-it is clear that \\( dictionary \\) is not \\( elephant \\) or \\( chocolate \\)-then that linc is the tangent line at \\( dictionary \\).\n\nThe last statement is clear, but details can be supplied as follows. It the equation of the line of support is \\( blueberry = harmonica sandstone + raspberry \\) (it cannot be vertical and \\( dictionary=\\left(hummingbird, marshmallow\\right) \\), then the differentiable function\n\\[\npineapple(sandstone)=kangaroo(sandstone)-harmonica sandstone-raspberry\n\\]\nhas either a maximum or a minimum at \\( hummingbird \\), so \\( pineapple^{\\prime}\\left(hummingbird\\right)=0 \\). Hence \\( kangaroo^{\\prime}\\left(hummingbird^{\\prime}\\right. \\). \\( =harmonica \\) and the tangent to the curve is \\( blueberry = harmonica sandstone + raspberry \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "y": "constantout",
+        "x_0": "shiftingzero",
+        "y_0": "floatingzero",
+        "P": "vacantpos",
+        "X": "fixedpoint",
+        "Q": "steadypt",
+        "g": "flatfunc",
+        "f": "straightfunc",
+        "A": "movingplace",
+        "B": "wanderingpt",
+        "S": "superset",
+        "t": "voidline",
+        "m": "levelrate",
+        "b": "offsetless"
+      },
+      "question": "2. Let \\( movingplace \\) and \\( wanderingpt \\) be two fixed points on the curve \\( constantout=straightfunc(constantval) \\), where \\( straightfunc(constantval) \\) is continuous and has a continuous derivative, and the \\( \\operatorname{arc} movingplace wanderingpt \\) is concave to the chord \\( movingplace wanderingpt \\). If \\( vacantpos \\) is a point of the \\( \\operatorname{arc} movingplace wanderingpt \\) for which \\( movingplace vacantpos+vacantpos wanderingpt \\) is a maximum, prove that \\( vacantpos movingplace \\) and \\( vacantpos wanderingpt \\) are equally inclined to the tangent to the curve \\( constantout=straightfunc(constantval) \\) at the point \\( vacantpos \\).",
+      "solution": "Solution. The theorem of the problem is a corollary to the following lemma which proves much more.\n\nLemma. Suppose \\( superset \\) is a subset of a plane \\( \\pi \\), and \\( movingplace \\) and \\( wanderingpt \\) are points of \\( \\pi \\). Let \\( vacantpos \\) be a point of \\( superset \\) such that\n\\[\nmovingplace vacantpos+vacantpos wanderingpt \\geq movingplace fixedpoint+fixedpoint wanderingpt\n\\]\nfor all \\( fixedpoint \\) in \\( superset \\). Then the line \\( voidline \\) through \\( vacantpos \\) perpendicular to the bisector of \\( \\angle movingplace vacantpos wanderingpt \\) is a support line of \\( superset \\) (i.e., \\( superset \\) is contained in one of the closed halfplanes with edge \\( voidline \\) ). Moreover, if \\( vacantpos \\) is not on the segment \\( movingplace wanderingpt, vacantpos \\) is the only point of \\( superset \\cap voidline \\).\n\nProof. Suppose \\( vacantpos \\) is not on the segment \\( movingplace wanderingpt \\). Then \\( movingplace \\) and \\( wanderingpt \\) are on ths same side of the line \\( voidline \\). Let \\( wanderingpt^{\\prime} \\) be the reflection of \\( wanderingpt \\) in the line \\( voidline \\). Ther \\( movingplace, vacantpos, wanderingpt^{\\prime} \\) are collinear.\n\nLet \\( steadypt \\) be any point in the open half-plane containing \\( wanderingpt^{\\prime} \\). Then \\( steadypt wanderingpt>steadypt wanderingpt^{\\prime} \\) and we have\n\\[\nmovingplace steadypt+steadypt wanderingpt>movingplace steadypt+steadypt wanderingpt^{\\prime} \\geq movingplace wanderingpt^{\\prime}=movingplace vacantpos+vacantpos wanderingpt^{\\prime}=movingplace vacantpos+vacantpos wanderingpt\n\\]\nso \\( steadypt \\notin superset \\). If \\( steadypt \\) is a point of \\( voidline \\) other than \\( vacantpos \\), we have\n\\[\nmovingplace steadypt+steadypt wanderingpt=movingplace steadypt+steadypt wanderingpt^{\\prime}>movingplace wanderingpt^{\\prime}=movingplace vacantpos+vacantpos wanderingpt\n\\]\nso again \\( steadypt \\notin superset \\). Thus, except for the point \\( vacantpos \\) itself, \\( superset \\) lies in the other oper half-plane.\n\nIf \\( vacantpos \\) is on the segment \\( movingplace wanderingpt \\), it is clear that all of \\( superset \\) lies on \\( movingplace wanderingpt \\) and hence in both of the closed half-planes with edge \\( voidline \\).\n\nApplying this result to the problem at hand, we see that \\( vacantpos movingplace \\) and \\( vacantpos E \\) are equally inclined to a line of support of the arc \\( movingplace wanderingpt \\) of the differentiable curve \\( constantout=straightfunc(constantval) \\). But if a differentiable arc has a line of support at a point \\( vacantpos \\) other than an endpoint-it is clear that \\( vacantpos \\) is not \\( movingplace \\) or \\( wanderingpt \\)-then that linc is the tangent line at \\( vacantpos \\).\n\nThe last statement is clear, but details can be supplied as follows. It the equation of the line of support is \\( constantout=levelrate constantval+offsetless \\) (it cannot be vertical and \\( vacantpos=\\left(shiftingzero, floatingzero\\right) \\), then the differentiable function\n\\[\nflatfunc(constantval)=straightfunc(constantval)-levelrate constantval-offsetless\n\\]\nhas either a maximum or a minimum at \\( shiftingzero \\), so \\( flatfunc^{\\prime}\\left(shiftingzero\\right)=0 \\). Hence \\( straightfunc^{\\prime}\\left(shiftingzero { }^{\\prime}\\right. \\). \\( =levelrate \\) and the tangent to the curve is \\( constantout=levelrate constantval+offsetless \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "zbeuwljq",
+        "y": "kaxrhdum",
+        "x_0": "caxmrjtd",
+        "y_0": "lmsqwidp",
+        "P": "vnqslkrt",
+        "X": "ybcjtdre",
+        "Q": "nphxsfeu",
+        "g": "rqpvhtlz",
+        "f": "jokymncb",
+        "A": "ugarcvhz",
+        "B": "bszwnejd",
+        "S": "vhtqzmla",
+        "t": "wvxokrjm",
+        "m": "qshkdzpa",
+        "b": "psldwufg"
+      },
+      "question": "2. Let \\( ugarcvhz \\) and \\( bszwnejd \\) be two fixed points on the curve \\( kaxrhdum=jokymncb(zbeuwljq) \\), where \\( jokymncb(zbeuwljq) \\) is continuous and has a continuous derivative, and the \\( \\operatorname{arc} ugarcvhz bszwnejd \\) is concave to the chord \\( ugarcvhz bszwnejd \\). If \\( vnqslkrt \\) is a point of the \\( \\operatorname{arc} ugarcvhz bszwnejd \\) for which \\( ugarcvhz vnqslkrt+vnqslkrt bszwnejd \\) is a maximum, prove that \\( vnqslkrt ugarcvhz \\) and \\( vnqslkrt bszwnejd \\) are equally inclined to the tangent to the curve \\( kaxrhdum= \\) \\( jokymncb(zbeuwljq) \\) at the point \\( vnqslkrt \\).",
+      "solution": "Solution. The theorem of the problem is a corollary to the following lemma which proves much more.\n\nLemma. Suppose \\( vhtqzmla \\) is a subset of a plane \\( \\pi \\), and \\( ugarcvhz \\) and \\( bszwnejd \\) are points of \\( \\pi \\). Let \\( vnqslkrt \\) be a point of \\( vhtqzmla \\) such that\n\\[\nugarcvhz\\, vnqslkrt+vnqslkrt\\, bszwnejd \\geq ugarcvhz\\, ybcjtdre+ybcjtdre\\, bszwnejd\n\\]\nfor all \\( ybcjtdre \\) in \\( vhtqzmla \\). Then the line \\( wvxokrjm \\) through \\( vnqslkrt \\) perpendicular to the bisector of \\( \\angle ugarcvhz\\, vnqslkrt\\, bszwnejd \\) is a support line of \\( vhtqzmla \\) (i.e., \\( vhtqzmla \\) is contained in one of the closed halfplanes with edge \\( wvxokrjm \\)). Moreover, if \\( vnqslkrt \\) is not on the segment \\( ugarcvhz bszwnejd, vnqslkrt \\) is the only point of \\( vhtqzmla \\cap wvxokrjm \\).\n\nProof. Suppose \\( vnqslkrt \\) is not on the segment \\( ugarcvhz bszwnejd \\). Then \\( ugarcvhz \\) and \\( bszwnejd \\) are on ths same side of the line \\( wvxokrjm \\). Let \\( bszwnejd^{\\prime} \\) be the reflection of \\( bszwnejd \\) in the line \\( wvxokrjm \\). Ther \\( ugarcvhz, vnqslkrt, bszwnejd^{\\prime} \\) are collinear.\n\nLet \\( nphxsfeu \\) be any point in the open half-plane containing \\( bszwnejd^{\\prime} \\). Then \\( nphxsfeu\\, bszwnejd>nphxsfeu\\, bszwnejd^{\\prime} \\) and we have\n\\[\nugarcvhz\\, nphxsfeu+nphxsfeu\\, bszwnejd>ugarcvhz\\, nphxsfeu+ nphxsfeu\\, bszwnejd^{\\prime} \\geq ugarcvhz\\, bszwnejd^{\\prime}=ugarcvhz\\, vnqslkrt+vnqslkrt\\, bszwnejd^{\\prime}=ugarcvhz\\, vnqslkrt+vnqslkrt\\, bszwnejd\n\\]\nso \\( nphxsfeu \\notin vhtqzmla \\). If \\( nphxsfeu \\) is a point of \\( wvxokrjm \\) other than \\( vnqslkrt \\), we have\n\\[\nugarcvhz\\, nphxsfeu+nphxsfeu\\, bszwnejd=ugarcvhz\\, nphxsfeu+nphxsfeu\\, bszwnejd^{\\prime}>ugarcvhz\\, bszwnejd^{\\prime}=ugarcvhz\\, vnqslkrt+vnqslkrt\\, bszwnejd\n\\]\nso again \\( nphxsfeu \\notin vhtqzmla \\). Thus, except for the point \\( vnqslkrt \\) itself, \\( vhtqzmla \\) lies in the other oper half-plane.\n\nIf \\( vnqslkrt \\) is on the segment \\( ugarcvhz bszwnejd \\), it is clear that all of \\( vhtqzmla \\) lies on \\( ugarcvhz bszwnejd \\) and hence in both of the closed half-planes with edge \\( wvxokrjm \\).\n\nApplying this result to the problem at hand, we see that \\( vnqslkrt ugarcvhz \\) and \\( vnqslkrt E \\) are equally inclined to a line of support of the arc \\( ugarcvhz bszwnejd \\) of the differentiable curve \\( kaxrhdum=jokymncb(zbeuwljq) \\). But if a differentiable arc has a line of support at a point \\( vnqslkrt \\) other than an endpoint-it is clear that \\( vnqslkrt \\) is not \\( ugarcvhz \\) or \\( bszwnejd \\)-then that linc is the tangent line at \\( vnqslkrt \\).\n\nThe last statement is clear, but details can be supplied as follows. If the equation of the line of support is \\( kaxrhdum=qshkdzpa\\, zbeuwljq+psldwufg \\) (it cannot be vertical) and \\( vnqslkrt=\\left(caxmrjtd, lmsqwidp\\right) \\), then the differentiable function\n\\[\nrqpvhtlz(zbeuwljq)=jokymncb(zbeuwljq)-qshkdzpa\\, zbeuwljq-psldwufg\n\\]\nhas either a maximum or a minimum at \\( caxmrjtd \\), so \\( rqpvhtlz^{\\prime}\\left(caxmrjtd\\right)=0 \\). Hence \\( jokymncb^{\\prime}\\left(caxmrjtd\\right)=qshkdzpa \\) and the tangent to the curve is \\( kaxrhdum=qshkdzpa\\, zbeuwljq+psldwufg \\)."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\gamma:[0,1]\\to\\mathbb R^{2}\\) be a \\(C^{1}\\)-mapping that is injective (so the trace \\(\\Gamma:=\\gamma([0,1])\\) is a simple \\(C^{1}\\)-arc).  Put \\(A:=\\gamma(0)\\) and \\(B:=\\gamma(1)\\).  Assume\n1.  \\(\\Gamma\\) is contained in the closed half-plane determined by the line \\(AB\\) that also contains the segment \\(AB\\);\n2.  \\(\\Gamma\\) is not contained in the line \\(AB\\) (i.e. there is at least one point of \\(\\Gamma\\) off that line).\n\nFor \\(X\\in\\Gamma\\) define the length-sum\n\\[\nF(X):=|AX|+|XB| .\n\\]\n\nSuppose that \\(F\\) attains its maximum at an interior point\n\\[P:=\\gamma(t_{0}),\\qquad 0<t_{0}<1,\\qquad \\gamma'(t_{0})\\neq0.\\]\n\nProve that the tangent line to \\(\\Gamma\\) at \\(P\\) makes equal angles with the segments \\(PA\\) and \\(PB\\); equivalently, the tangent is perpendicular to the internal bisector of the angle \\(\\angle APB\\).",
+      "solution": "We keep the hypotheses and notations of the problem and prove the statement in several steps.\n\n------------------------------------------------------------\nStep 0.  The maximiser \\(P\\) is not collinear with \\(A\\) and \\(B\\).\n\nFirst, assume that \\(P\\in AB\\) (the closed segment).  Then by the triangle equality\n\\[|AP|+|PB|=|AB|.\\]\nBecause \\(\\Gamma\\) contains a point \\(X_{0}\\notin AB\\), the strict triangle inequality gives\n\\[|AX_{0}|+|X_{0}B|>|AB|=|AP|+|PB|,\\]\ncontradicting the maximality of \\(P\\). Hence \\(P\\notin AB\\).\n\nAssume now that \\(P\\) lies on the line \\(AB\\) but outside the segment (say, on the ray that starts at \\(B\\) and passes through \\(A\\); the other case is analogous).\n\nLet \\(H\\) be the closed half-plane that contains \\(\\Gamma\\) and whose boundary is the line \\(AB\\); orient a unit normal vector \\(n\\) so that it points **into** the interior \\(H^{\\circ}\\).  Because the tangent vector\n\\[v:=\\gamma'(t_{0})\\neq0\\]\nis obtained as a limit of secants whose points remain in \\(H\\), one has \\(n\\!\\cdot\\! v>0\\).  In particular, \\(v\\) is not directed outside \\(H\\).\n\nThe gradient of the function \\(F\\) is\n\\[\\nabla F(X)=\\frac{X-A}{\\|X-A\\|}+\\frac{X-B}{\\|X-B\\|}.\\]\nFor our collinear point \\(P\\) we have \\(P-A,\\,P-B\\) parallel to \\(AB\\); letting \\(u\\) be the unit vector from \\(A\\) to \\(B\\),\n\\[\\nabla F(P)=2u.\\]\nBecause \\(F\\) attains a (local) maximum at \\(t_{0}\\), one has\n\\[0=F'(t_{0})=\\nabla F(P)\\cdot v=2(u\\!\\cdot\\! v).\\]\nThus \\(v\\perp u\\), i.e. \\(v\\) is **perpendicular** to the line \\(AB\\).  Since the only perpendicular direction allowed by \\(n\\!\\cdot\\! v>0\\) points inside \\(H^{\\circ}\\), we conclude that for every sufficiently small positive \\(s\\)\n\\[Q_{s}:=\\gamma(t_{0}+s)=P+s v+o(s)\\in H^{\\circ}.\\]\n\nTake such an \\(s>0\\).  Then\n\\[\n|A Q_{s}|=\\sqrt{|AP|^{2}+s^{2}\\|v\\|^{2}}> |AP|,\\qquad\n|Q_{s}B|=\\sqrt{|PB|^{2}+s^{2}\\|v\\|^{2}}> |PB|,\n\\]\nwhence\n\\[F(Q_{s})>|AP|+|PB|=F(P),\\]\ncontradicting again the maximality of \\(P\\).  Therefore **no** point where \\(F\\) attains its maximum can lie on the line \\(AB\\); in particular the angle \\(\\angle APB\\) is well defined.\n\n------------------------------------------------------------\nStep 1.  Construction of a supporting line through \\(P\\).\n\nLet \\(\\ell\\) be the line through \\(P\\) that is perpendicular to the internal bisector of the (non-degenerate) angle \\(\\angle APB\\).  Reflect the point \\(B\\) in \\(\\ell\\); denote the image by \\(B'\\).  By elementary properties of reflections\n\\[A,\\;P,\\;B'\\ \\text{are collinear},\\qquad |PB'|=|PB|.\\]\n\nSuppose a point \\(Q\\) of the plane lies in the open half-plane bounded by \\(\\ell\\) that contains \\(B'\\).  Because every point in that half-plane is strictly closer to \\(B'\\) than to \\(B\\), we have\n\\[|AQ|+|QB|>|AQ|+|QB'|\\ge |AB'|=|AP|+|PB|,\\]\ncontradicting the maximality of \\(P\\).  A similar inequality is obtained for every point \\(Q\\in\\ell\\setminus\\{P\\}\\).  Consequently\n\\[\n\\Gamma\\setminus\\{P\\}\\subseteq\\text{the closed half-plane bounded by }\\ell\\text{ that does not contain }B',\\qquad \\ell\\cap\\Gamma=\\{P\\}.\\tag{1}\n\\]\nThus \\(\\ell\\) is a **support line** of \\(\\Gamma\\) at \\(P\\).\n\n------------------------------------------------------------\nStep 2.  The support line is the tangent line.\n\nLet \\(v\\) be the unit vector **perpendicular to** \\(\\ell\\) and pointing toward the half-plane described in (1).  For \\(t\\) near \\(t_{0}\\) define the signed distance\n\\[d(t):=(\\gamma(t)-P)\\!\\cdot\\! v.\\]\nBy (1) we have \\(d(t)\\ge 0\\) for all \\(t\\) sufficiently close to \\(t_{0}\\), and \\(d(t_{0})=0\\).  Hence \\(t_{0}\\) is a local minimum of \\(d\\) and therefore\n\\[d'(t_{0})=\\gamma'(t_{0})\\!\\cdot\\! v=0.\\]\nBecause \\(v\\neq0\\) and \\(\\gamma'(t_{0})\\neq0\\), the vanishing dot product implies that \\(\\gamma'(t_{0})\\) is **orthogonal to** \\(v\\), i.e. \\(\\gamma'(t_{0})\\) is parallel to \\(\\ell\\).  Consequently \\(\\ell\\) is exactly the tangent line to \\(\\Gamma\\) at \\(P\\).\n\n------------------------------------------------------------\nStep 3.  Equality of the two angles.\n\nBy construction, \\(\\ell\\) is perpendicular to the internal bisector of \\(\\angle APB\\); hence it makes equal acute angles with the rays \\(PA\\) and \\(PB\\).  This is precisely the desired conclusion.\n\nThe proof is complete.",
+      "_meta": {
+        "core_steps": [
+          "Extremal condition AP+PB ≥ AX+XB ⇒ line ⟂ angle-bisector at P is a support line of the set (reflection argument).",
+          "For a differentiable curve, any support line at an interior point coincides with the tangent (first-derivative test).",
+          "Since that support/tangent is perpendicular to the angle bisector, PA and PB are symmetric with respect to it ⇒ equal inclination."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Global smoothness requirement on the curve; only differentiability at P is actually used.",
+            "original": "f(x) is continuous and has a continuous derivative on the arc AB"
+          },
+          "slot2": {
+            "description": "Coordinate form of the curve; the argument is purely planar.",
+            "original": "curve is given specifically as y = f(x)"
+          },
+          "slot3": {
+            "description": "Concavity assumption ensures P is not an endpoint but is not invoked in the geometric lemma.",
+            "original": "arc AB is concave to the chord AB"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

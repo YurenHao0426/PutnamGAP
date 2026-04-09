@@ -1,0 +1,165 @@
+{
+  "index": "1968-A-3",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-3. Prove that a list can be made of all the subsets of a finite set in such a way that (i) the empty set is first in the list, (ii) each subset occurs exactly once, (iii) each subset in the list is obtained either by adding one element to the preceding subset or by deleting one element of the preceding subset.",
+  "solution": "A-3 The proof is by induction. For a singleton set \\( \\{1\\} \\) the list is \\( \\varnothing \\), \\( \\{1\\} \\). Thus the result is true for singleton sets. Suppose the result is true for all sets with \\( n-1 \\) members. Let \\( S=\\{1,2,3, \\cdots, n\\} \\) and \\( T=\\{1,2,3, \\cdots, n-1\\} \\). Let \\( T_{0}, T_{1}, \\cdots, T_{t}\\left(t=2^{n-1}-1\\right) \\) be the list of subsets of \\( T \\) satisfying the requirements. Then the desired list of subsets of \\( S \\) are \\( S_{0}, S_{1}, \\cdots, S_{s}\\left(s=2^{n-1}\\right) \\) where \\( S_{i}=T_{i} \\), for \\( 0 \\leqq i<t \\), and \\( S_{t}=T_{t} \\cup\\{n\\}, S_{t+1}=T_{t-1} \\cup\\{n\\}, \\cdots, S=\\{n\\} \\).\n\nComments: This problem is equivalent to finding a Hamiltonian circuit on an \\( n \\)-cube.",
+  "vars": [
+    "S",
+    "T",
+    "t",
+    "s",
+    "i",
+    "S_0",
+    "S_1",
+    "S_s",
+    "S_i",
+    "S_t",
+    "S_t+1",
+    "T_0",
+    "T_1",
+    "T_t",
+    "T_i",
+    "T_t-1"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S": "fullset",
+        "T": "partialset",
+        "t": "maxindex",
+        "s": "listcount",
+        "i": "indexvar",
+        "S_0": "subsetzero",
+        "S_1": "subsetone",
+        "S_s": "subsetfinal",
+        "S_i": "subsetindex",
+        "S_t": "subsetmax",
+        "S_t+1": "subsetaftermax",
+        "T_0": "partialzero",
+        "T_1": "partialone",
+        "T_t": "partialmax",
+        "T_i": "partialindex",
+        "T_t-1": "partialbeforemax",
+        "n": "setsize"
+      },
+      "question": "A-3. Prove that a list can be made of all the subsets of a finite set in such a way that (i) the empty set is first in the list, (ii) each subset occurs exactly once, (iii) each subset in the list is obtained either by adding one element to the preceding subset or by deleting one element of the preceding subset.",
+      "solution": "A-3 The proof is by induction. For a singleton set \\( \\{1\\} \\) the list is \\( \\varnothing \\), \\( \\{1\\} \\). Thus the result is true for singleton sets. Suppose the result is true for all sets with \\( setsize-1 \\) members. Let \\( fullset=\\{1,2,3, \\cdots, setsize\\} \\) and \\( partialset=\\{1,2,3, \\cdots, setsize-1\\} \\). Let \\( partialzero, partialone, \\cdots, partialmax\\left(maxindex=2^{setsize-1}-1\\right) \\) be the list of subsets of \\( partialset \\) satisfying the requirements. Then the desired list of subsets of \\( fullset \\) are \\( subsetzero, subsetone, \\cdots, subsetfinal\\left(listcount=2^{setsize-1}\\right) \\) where \\( subsetindex=partialindex \\), for \\( 0 \\leqq indexvar<maxindex \\), and \\( subsetmax=partialmax \\cup\\{setsize\\}, subsetaftermax=partialbeforemax \\cup\\{setsize\\}, \\cdots, fullset=\\{setsize\\} \\).\n\nComments: This problem is equivalent to finding a Hamiltonian circuit on an \\( setsize \\)-cube."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S": "butterfly",
+        "T": "pinecone",
+        "t": "rainstorm",
+        "s": "farmhouse",
+        "i": "sandpaper",
+        "S_0": "buttercup",
+        "S_1": "dragonfly",
+        "S_s": "polaroids",
+        "S_i": "fireflies",
+        "S_t": "wildcards",
+        "S_t+1": "starlings",
+        "T_0": "barrelful",
+        "T_1": "redstream",
+        "T_t": "cloudlets",
+        "T_i": "springbok",
+        "T_t-1": "earthworm",
+        "n": "moonlight"
+      },
+      "question": "A-3. Prove that a list can be made of all the subsets of a finite set in such a way that (i) the empty set is first in the list, (ii) each subset occurs exactly once, (iii) each subset in the list is obtained either by adding one element to the preceding subset or by deleting one element of the preceding subset.",
+      "solution": "A-3 The proof is by induction. For a singleton set \\( \\{1\\} \\) the list is \\( \\varnothing \\), \\( \\{1\\} \\). Thus the result is true for singleton sets. Suppose the result is true for all sets with \\( moonlight-1 \\) members. Let \\( butterfly=\\{1,2,3, \\cdots, moonlight\\} \\) and \\( pinecone=\\{1,2,3, \\cdots, moonlight-1\\} \\). Let \\( barrelful, redstream, \\cdots, cloudlets\\left(rainstorm=2^{moonlight-1}-1\\right) \\) be the list of subsets of \\( pinecone \\) satisfying the requirements. Then the desired list of subsets of \\( butterfly \\) are \\( buttercup, dragonfly, \\cdots, polaroids\\left(farmhouse=2^{moonlight-1}\\right) \\) where \\( fireflies=springbok \\), for \\( 0 \\leqq sandpaper<rainstorm \\), and \\( wildcards=cloudlets \\cup\\{moonlight\\}, starlings=earthworm \\cup\\{moonlight\\}, \\cdots, butterfly=\\{moonlight\\} \\).\n\nComments: This problem is equivalent to finding a Hamiltonian circuit on an \\( moonlight \\)-cube."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S": "nothingness",
+        "T": "superset",
+        "t": "zerovalue",
+        "s": "nullcount",
+        "i": "finalspot",
+        "S_0": "lastsubset",
+        "S_1": "secondlast",
+        "S_s": "firstsubset",
+        "S_i": "unindexed",
+        "S_t": "beginpoint",
+        "S_t+1": "precedestate",
+        "T_0": "lastcomponent",
+        "T_1": "penultimate",
+        "T_t": "firstcomponent",
+        "T_i": "ungeneric",
+        "T_t-1": "secondcomponent",
+        "n": "infinity"
+      },
+      "question": "A-3. Prove that a list can be made of all the subsets of a finite set in such a way that (i) the empty set is first in the list, (ii) each subset occurs exactly once, (iii) each subset in the list is obtained either by adding one element to the preceding subset or by deleting one element of the preceding subset.",
+      "solution": "A-3 The proof is by induction. For a singleton set \\( \\{1\\} \\) the list is \\( \\varnothing \\), \\( \\{1\\} \\). Thus the result is true for singleton sets. Suppose the result is true for all sets with \\( infinity-1 \\) members. Let \\( nothingness=\\{1,2,3, \\cdots, infinity\\} \\) and \\( superset=\\{1,2,3, \\cdots, infinity-1\\} \\). Let \\( lastcomponent, penultimate, \\cdots, firstcomponent\\left(zerovalue=2^{infinity-1}-1\\right) \\) be the list of subsets of \\( superset \\) satisfying the requirements. Then the desired list of subsets of \\( nothingness \\) are \\( lastsubset, secondlast, \\cdots, firstsubset\\left(nullcount=2^{infinity-1}\\right) \\) where \\( unindexed = ungeneric \\), for \\( 0 \\leqq finalspot<zerovalue \\), and \\( beginpoint=firstcomponent \\cup\\{infinity\\}, precedestate=secondcomponent \\cup\\{infinity\\}, \\cdots, nothingness=\\{infinity\\} \\).\n\nComments: This problem is equivalent to finding a Hamiltonian circuit on an \\( infinity \\)-cube."
+    },
+    "garbled_string": {
+      "map": {
+        "S": "qzxwvtnp",
+        "T": "hjgrksla",
+        "t": "fnshgqwe",
+        "s": "plkqzxcv",
+        "i": "mnbvcewr",
+        "S_0": "xclwqutb",
+        "S_1": "vrghptmq",
+        "S_s": "rtyplndk",
+        "S_i": "bvcxmkwe",
+        "S_t": "qeruidjx",
+        "S_t+1": "ghsldpoy",
+        "T_0": "hionbvtc",
+        "T_1": "uvwqplzs",
+        "T_t": "asdfkjwe",
+        "T_i": "opqwezxc",
+        "T_t-1": "lkjhgfre",
+        "n": "qazwsxed"
+      },
+      "question": "A-3. Prove that a list can be made of all the subsets of a finite set in such a way that (i) the empty set is first in the list, (ii) each subset occurs exactly once, (iii) each subset in the list is obtained either by adding one element to the preceding subset or by deleting one element of the preceding subset.",
+      "solution": "A-3 The proof is by induction. For a singleton set \\( \\{1\\} \\) the list is \\( \\varnothing \\), \\( \\{1\\} \\). Thus the result is true for singleton sets. Suppose the result is true for all sets with \\( qazwsxed-1 \\) members. Let \\( qzxwvtnp=\\{1,2,3, \\cdots, qazwsxed\\} \\) and \\( hjgrksla=\\{1,2,3, \\cdots, qazwsxed-1\\} \\). Let \\( hjgrksla_{0}, hjgrksla_{1}, \\cdots, hjgrksla_{fnshgqwe}\\left(fnshgqwe=2^{qazwsxed-1}-1\\right) \\) be the list of subsets of \\( hjgrksla \\) satisfying the requirements. Then the desired list of subsets of \\( qzxwvtnp \\) are \\( qzxwvtnp_{0}, qzxwvtnp_{1}, \\cdots, qzxwvtnp_{plkqzxcv}\\left(plkqzxcv=2^{qazwsxed-1}\\right) \\) where \\( qzxwvtnp_{mnbvcewr}=hjgrksla_{mnbvcewr} \\), for \\( 0 \\leqq mnbvcewr<fnshgqwe \\), and \\( qzxwvtnp_{fnshgqwe}=hjgrksla_{fnshgqwe} \\cup\\{qazwsxed\\}, qzxwvtnp_{fnshgqwe+1}=hjgrksla_{fnshgqwe-1} \\cup\\{qazwsxed\\}, \\cdots, qzxwvtnp=\\{qazwsxed\\} \\).\n\nComments: This problem is equivalent to finding a Hamiltonian circuit on an \\( qazwsxed \\)-cube."
+    },
+    "kernel_variant": {
+      "question": "Let m \\geq  2 be an integer and put Y_m = {1 , 2 , \\ldots  , m}.\n\n(1)  Prove that when m is even it is impossible to arrange the 2^m subsets of Y_m in a list\n        A_0 , A_1 , \\ldots  , A_{2^m-1}\n     such that\n        A_0 = Y_m , A_{2^m-1}= \\emptyset  , and |A_i \\triangle  A_{i+1}| = 1 (0 \\leq  i < 2^m-1).\n\n(2)  Show that such a list does exist when m is odd.\n\nEquivalently, in the m-dimensional hyper-cube Q_m a Hamilton path that starts at the vertex 1^m (all 1's) and ends at 0^m (all 0's) exists precisely when m is odd.",
+      "solution": "We identify every subset of Y_m with its 0-1 characteristic vector of length m, i.e. with a vertex of the hyper-cube Q_m.  A required list is therefore the sequence of vertices of a Hamilton path P of Q_m that starts at 1^m and ends at 0^m.\n\n1.  Impossibility when m is even\n   -----------------------------\nQ_m is bipartite: its two colour classes consist of the vertices of even, respectively odd, Hamming weight (number of 1's).  Any path of odd length in a bipartite graph starts and ends in opposite colour classes.  A Hamilton path of Q_m has length 2^m-1, which is odd.  When m is even we have\n   wt(1^m)=m (even)  and  wt(0^m)=0 (even),\nso 1^m and 0^m belong to the same colour class and therefore cannot be linked by a path of odd length.  Hence the desired list is impossible for even m.\n\n2.  Existence when m is odd\n   ------------------------\nWe prove the stronger statement\n\n  (H_k)  For every integer k \\geq  1 and for every two vertices u,v of Q_k that lie in opposite colour classes there is a Hamilton path of Q_k from u to v.\n\nBecause 1^m and 0^m are of opposite parity when m is odd, (H_m) gives the required list.\n\nBase cases k = 1 and k = 2\n---------------------------\n* k = 1.  The single edge 1-0 is a Hamilton path.\n\n* k = 2.  Q_2 is the square 00,01,11,10.  Each pair of opposite-parity vertices is connected by a Hamilton path, e.g.\n      00 \\to  10 \\to  11 \\to  01   (from 00 to 01),\n      00 \\to  01 \\to  11 \\to  10   (from 00 to 10).\nThus (H_2) holds.\n\nInduction step:  assume k \\geq  3 and (H_{k-1}) true\n------------------------------------------------\nLet u and v be opposite-parity vertices of Q_k.  Choose a coordinate d (1 \\leq  d \\leq  k) on which u and v differ; such a coordinate exists because u \\neq  v.  By renaming the k coordinates, if necessary, we may suppose that d = 1.  Hence we may write\n      u = (0 , u') ,  v = (1 , v') ,\nwith u',v' \\in  Q_{k-1}.  Observe that u' and v' have the same parity, because the first coordinates 0 and 1 contribute different parities to u and v.\n\nSince k-1 \\geq  2, Q_{k-1} contains vertices of both parities.  Choose any vertex x' of Q_{k-1} whose parity is opposite to that of u' (and therefore of v').  By the induction hypothesis (H_{k-1}) there exist Hamilton paths\n      P_0 in the sub-cube {0}\\times Q_{k-1}   from u=(0,u') to (0,x'), and\n      P_1 in the sub-cube {1}\\times Q_{k-1}   from (1,x') to v=(1,v').\n\nConcatenating P_0, the single edge that flips the first coordinate of (0,x'), and P_1 produces a Hamilton path of Q_k from u to v: every vertex of {0}\\times Q_{k-1} is met in P_0, every vertex of {1}\\times Q_{k-1} in P_1, and the two paths intersect only at their common end-vertex (0,x')/(1,x') which is bridged by the middle edge.  Hence (H_k) is proved.\n\nBecause the induction starts at k = 1 and 2 and the induction step is valid for all k \\geq  3, (H_k) holds for every k \\geq  1.  In particular, when m is odd there is a Hamilton path of Q_m from 1^m to 0^m.\n\n3.  Conclusion\n   -----------\nFor odd m there is a Hamilton path of Q_m from 1^m to 0^m and therefore a listing of all subsets of Y_m starting with Y_m, ending with \\emptyset , and changing exactly one element at each step.  Together with part 1 we have shown that such a list exists precisely when m is odd.",
+      "_meta": {
+        "core_steps": [
+          "Base case: for a 1-element set list (∅ , {1}).",
+          "Inductive hypothesis: assume a valid ordering exists for any (n−1)-element set.",
+          "Inductive construction: start with that ordering, then append the same ordering in reverse with the new element n adjoined to every subset.",
+          "Bridge check: the middle pair and all inherited pairs differ by exactly one element, so the whole sequence meets the adjacency rule.",
+          "Therefore, by induction, every finite set admits such an ordering."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Size chosen for the base case of induction",
+            "original": "1"
+          },
+          "slot2": {
+            "description": "Symbol used for the element added in the inductive step",
+            "original": "n"
+          },
+          "slot3": {
+            "description": "Direction in which the second half of the list is read (reflection choice)",
+            "original": "reverse order of the first half"
+          },
+          "slot4": {
+            "description": "Position of the empty set in the final list",
+            "original": "first"
+          },
+          "slot5": {
+            "description": "Explicit indexing values t=2^{n−1}−1 and s=2^{n}−1; any consistent indexing works",
+            "original": "t = 2^{n-1}-1 , s = 2^{n}-1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

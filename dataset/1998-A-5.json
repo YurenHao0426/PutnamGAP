@@ -1,0 +1,149 @@
+{
+  "index": "1998-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "GEO"
+  ],
+  "difficulty": "",
+  "question": "Let $\\mathcal F$ be a finite collection of open discs in $\\mathbb R^2$\nwhose union contains a set $E\\subseteq \\mathbb R^2$.  Show that there\nis a pairwise disjoint subcollection $D_1,\\ldots, D_n$ in $\\mathcal F$\nsuch that\n\\[E\\subseteq \\cup_{j=1}^n 3D_j.\\]\nHere, if $D$ is the disc of radius $r$ and center $P$, then $3D$ is the\ndisc of radius $3r$ and center $P$.",
+  "solution": "Define the sequence $D_i$ by the following greedy algorithm:\nlet $D_1$ be the disc of largest radius (breaking ties arbitrarily),\nlet $D_2$ be the disc of largest radius not meeting $D_1$, let\n$D_3$ be the disc of largest radius not meeting $D_1$ or $D_2$,\nand so on, up to some final disc $D_n$.\nTo see that $E \\subseteq \\cup_{j=1}^n 3D_j$, consider\na point in $E$; if it lies in one of the $D_i$, we are done. Otherwise,\nit lies in a disc $D$ of radius $r$, which meets one of the $D_i$ having\nradius $s \\geq r$ (this is the only reason a disc can be skipped in\nour algorithm). Thus\nthe centers lie at a distance $t < s+r$, and so every point at distance\nless than $r$ from the center of $D$ lies at distance at most\n$r + t < 3s$ from the center of the corresponding $D_i$.",
+  "vars": [
+    "F",
+    "E",
+    "D",
+    "D_1",
+    "D_2",
+    "D_3",
+    "D_i",
+    "D_j",
+    "D_n",
+    "P",
+    "r",
+    "s",
+    "t",
+    "i",
+    "j",
+    "n",
+    "R"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "F": "discfamily",
+        "E": "targetset",
+        "D": "genericdisc",
+        "D_1": "firstdisc",
+        "D_2": "seconddisc",
+        "D_3": "thirddisc",
+        "D_i": "indexdisc",
+        "D_j": "iterdisc",
+        "D_n": "finaldisc",
+        "P": "centerpt",
+        "r": "radsmall",
+        "s": "radlarge",
+        "t": "centerdist",
+        "i": "indexi",
+        "j": "indexj",
+        "n": "disccount",
+        "R": "realnum"
+      },
+      "question": "Let $\\mathcal discfamily$ be a finite collection of open discs in $\\mathbb realnum^2$ whose union contains a set $targetset\\subseteq \\mathbb realnum^2$.  Show that there is a pairwise disjoint subcollection $firstdisc,\\ldots, finaldisc$ in $\\mathcal discfamily$ such that\n\\[targetset\\subseteq \\cup_{indexj=1}^{disccount} 3\\iterdisc.\\]\nHere, if $genericdisc$ is the disc of radius $radsmall$ and center $centerpt$, then $3genericdisc$ is the disc of radius $3radsmall$ and center $centerpt$.",
+      "solution": "Define the sequence $indexdisc$ by the following greedy algorithm: let $firstdisc$ be the disc of largest radius (breaking ties arbitrarily), let $seconddisc$ be the disc of largest radius not meeting $firstdisc$, let $thirddisc$ be the disc of largest radius not meeting $firstdisc$ or $seconddisc$, and so on, up to some final disc $finaldisc$.\nTo see that $targetset \\subseteq \\cup_{indexj=1}^{disccount} 3\\iterdisc$, consider a point in $targetset$; if it lies in one of the $indexdisc$, we are done. Otherwise, it lies in a disc $genericdisc$ of radius $radsmall$, which meets one of the $indexdisc$ having radius $radlarge \\geq radsmall$ (this is the only reason a disc can be skipped in our algorithm). Thus the centers lie at a distance $centerdist < radlarge+radsmall$, and so every point at distance less than $radsmall$ from the center of $genericdisc$ lies at distance at most $radsmall + centerdist < 3radlarge$ from the center of the corresponding $indexdisc$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "F": "lanterns",
+        "E": "buttercup",
+        "D": "carnation",
+        "D_1": "carnationuno",
+        "D_2": "carnationdos",
+        "D_3": "carnationtres",
+        "D_i": "carnationith",
+        "D_j": "carnationjay",
+        "D_n": "carnationenn",
+        "P": "buckwheat",
+        "r": "glowworm",
+        "s": "nightfall",
+        "t": "silhouette",
+        "i": "hawthorn",
+        "j": "larkspur",
+        "n": "marigolds",
+        "R": "foxgloves"
+      },
+      "question": "Let $\\mathcal lanterns$ be a finite collection of open discs in $\\mathbb foxgloves^2$\nwhose union contains a set $buttercup\\subseteq \\mathbb foxgloves^2$.  Show that there\nis a pairwise disjoint subcollection $carnationuno,\\ldots, carnationenn$ in $\\mathcal lanterns$\nsuch that\n\\[buttercup\\subseteq \\cup_{larkspur=1}^{marigolds} 3carnationjay.\\]\nHere, if $carnation$ is the disc of radius $glowworm$ and center $buckwheat$, then $3carnation$ is the\ndisc of radius $3glowworm$ and center $buckwheat$.",
+      "solution": "Define the sequence $carnationith$ by the following greedy algorithm:\nlet $carnationuno$ be the disc of largest radius (breaking ties arbitrarily),\nlet $carnationdos$ be the disc of largest radius not meeting $carnationuno$, let\n$carnationtres$ be the disc of largest radius not meeting $carnationuno$ or $carnationdos$,\nand so on, up to some final disc $carnationenn$.\nTo see that $buttercup \\subseteq \\cup_{larkspur=1}^{marigolds} 3carnationjay$, consider\na point in $buttercup$; if it lies in one of the $carnationith$, we are done. Otherwise,\nit lies in a disc $carnation$ of radius $glowworm$, which meets one of the $carnationith$ having\nradius $nightfall \\geq glowworm$ (this is the only reason a disc can be skipped in\nour algorithm). Thus\nthe centers lie at a distance $silhouette < nightfall+glowworm$, and so every point at distance\nless than $glowworm$ from the center of $carnation$ lies at distance at most\n$glowworm + silhouette < 3nightfall$ from the center of the corresponding $carnationith$.",
+      "error": ""
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "F": "infiniteplanes",
+        "E": "wholeplane",
+        "D": "squarezone",
+        "D_1": "squarezoneone",
+        "D_2": "squarezonetwo",
+        "D_3": "squarezonethree",
+        "D_i": "squarezonevar",
+        "D_j": "squarezoneind",
+        "D_n": "squarezonelast",
+        "P": "vertexpoint",
+        "r": "sidelength",
+        "s": "edgelength",
+        "t": "contactness",
+        "i": "omegaindx",
+        "j": "betaindx",
+        "n": "zerocount",
+        "R": "widthness"
+      },
+      "question": "Let $\\mathcal infiniteplanes$ be a finite collection of open discs in $\\mathbb R^2$\nwhose union contains a set $wholeplane\\subseteq \\mathbb R^2$.  Show that there\nis a pairwise disjoint subcollection $squarezoneone,\\ldots, squarezonelast$ in $\\mathcal infiniteplanes$\nsuch that\n\\[wholeplane\\subseteq \\cup_{betaindx=1}^{zerocount} 3squarezoneind.\\]\nHere, if $squarezone$ is the disc of radius $sidelength$ and center $vertexpoint$, then $3squarezone$ is the\ndisc of radius $3sidelength$ and center $vertexpoint$.",
+      "solution": "Define the sequence $squarezonevar$ by the following greedy algorithm:\nlet $squarezoneone$ be the disc of largest radius (breaking ties arbitrarily),\nlet $squarezonetwo$ be the disc of largest radius not meeting $squarezoneone$, let\n$squarezonethree$ be the disc of largest radius not meeting $squarezoneone$ or $squarezonetwo$,\nand so on, up to some final disc $squarezonelast$.\nTo see that $wholeplane \\subseteq \\cup_{betaindx=1}^{zerocount} 3squarezoneind$, consider\na point in $wholeplane$; if it lies in one of the squarezonevar, we are done. Otherwise,\nit lies in a disc $squarezone$ of radius $sidelength$, which meets one of the squarezonevar having\nradius $edgelength \\geq sidelength$ (this is the only reason a disc can be skipped in\nour algorithm). Thus\nthe centers lie at a distance $contactness < edgelength+sidelength$, and so every point at distance\nless than $sidelength$ from the center of $squarezone$ lies at distance at most\n$sidelength + contactness < 3edgelength$ from the center of the corresponding squarezonevar."
+    },
+    "garbled_string": {
+      "map": {
+        "F": "hqmwzlcy",
+        "E": "yrknvduo",
+        "D": "lsyzvgta",
+        "D_1": "pjdksmza",
+        "D_2": "cjzarqlo",
+        "D_3": "pkvnehts",
+        "D_i": "habqsjum",
+        "D_j": "xydmbcen",
+        "D_n": "qagvutfj",
+        "P": "ermtxocn",
+        "r": "ofnqezsh",
+        "s": "mdwrlaik",
+        "t": "wrlpxtja",
+        "i": "nzkeivgs",
+        "j": "pcfuvmhb",
+        "n": "qdbrlezs",
+        "R": "vlmxcoar"
+      },
+      "question": "Let $\\mathcal hqmwzlcy$ be a finite collection of open discs in $\\mathbb vlmxcoar^2$\nwhose union contains a set $yrknvduo\\subseteq \\mathbb vlmxcoar^2$.  Show that there\nis a pairwise disjoint subcollection pjdksmza,\\ldots, qagvutfj in $\\mathcal hqmwzlcy$\nsuch that\n\\[\nyrknvduo\\subseteq \\cup_{pcfuvmhb=1}^{qdbrlezs} 3xydmbcen.\\]\nHere, if $lsyzvgta$ is the disc of radius $ofnqezsh$ and center $ermtxocn$, then $3lsyzvgta$ is the\ndisc of radius $3ofnqezsh$ and center $ermtxocn$.",
+      "solution": "Define the sequence $habqsjum$ by the following greedy algorithm:\nlet $pjdksmza$ be the disc of largest radius (breaking ties arbitrarily),\nlet $cjzarqlo$ be the disc of largest radius not meeting $pjdksmza$, let\n$pkvnehts$ be the disc of largest radius not meeting $pjdksmza$ or $cjzarqlo$,\nand so on, up to some final disc $qagvutfj$.\nTo see that $yrknvduo \\subseteq \\cup_{pcfuvmhb=1}^{qdbrlezs} 3xydmbcen$, consider\na point in $yrknvduo$; if it lies in one of the $habqsjum$, we are done. Otherwise,\nit lies in a disc $lsyzvgta$ of radius $ofnqezsh$, which meets one of the $habqsjum$ having\nradius $mdwrlaik \\geq ofnqezsh$ (this is the only reason a disc can be skipped in\nour algorithm). Thus\nthe centers lie at a distance $wrlpxtja < mdwrlaik+ofnqezsh$, and so every point at distance\nless than $ofnqezsh$ from the center of $lsyzvgta$ lies at distance at most\n$ofnqezsh + wrlpxtja < 3mdwrlaik$ from the center of the corresponding $habqsjum$.}"
+    },
+    "kernel_variant": {
+      "question": "Let $\\bigl(M^{n},g\\bigr)$ be a connected, complete $n$-dimensional Riemannian manifold whose Ricci curvature satisfies  \n\\[\n\\operatorname{Ric}_{(M,g)}\\;\\ge\\;-(n-1)\\,\\kappa\\,g ,\\qquad \\kappa\\ge 0 .\n\\tag{R}\n\\]\n\nFix any finite positive number  \n\\[\n0<r_{0}<\\infty ,\n\\]\nand let  \n\\[\n\\mathcal F=\\bigl\\{\\,B(x_{i},r_{i})\\bigr\\}_{i=1}^{N},\\qquad 0<r_{i}\\le r_{0},\n\\]\nbe a finite family of \\emph{closed geodesic balls} whose union covers a Borel set $E\\subseteq M$.\n\n(a) (Metric Vitali-type lemma)  \nProve that there exists a pairwise disjoint subcollection  \n\\[\nB_{1},\\ldots ,B_{m}\\in\\mathcal F\n\\]\nsuch that  \n\\[\nE\\subseteq\\bigcup_{j=1}^{m}3B_{j},\n\\tag{A}\n\\]\nwhere $3B_{j}=B\\!\\bigl(\\operatorname{ctr}(B_{j}),3\\,r(B_{j})\\bigr)$.  \n\\emph{(The radii $3r(B_{j})\\le 3r_{0}$ may exceed the injectivity radius of $M$; this causes no problem.)}\n\n(b) (Curvature-dependent volume bound)  \nShow the quantitative estimate  \n\\[\n\\operatorname{Vol}_{g}(E)\n\\le\nC(n,\\kappa,r_{0})\\,\n\\sum_{j=1}^{m}\\operatorname{Vol}_{g}(B_{j}),\n\\tag{B}\n\\]\nwhere one can take  \n\\[\nC(n,\\kappa,r_{0})=\n\\sup_{0<r\\le r_{0}}\n\\frac{V_{-\\kappa}(3r)}{V_{-\\kappa}(r)},\\qquad\nV_{-\\kappa}(r)=\n\\begin{cases}\n\\omega_{n}\\,r^{n}, &\\kappa=0,\\\\[6pt]\n\\displaystyle\n\\int_{0}^{r}n\\,\\omega_{n-1}\\bigl(\\sinh(\\sqrt{\\kappa}\\,s)\\bigr)^{\\,n-1}\\!ds,\n&\\kappa>0,\n\\end{cases}\n\\]\nand $\\omega_{n}$ denotes the Euclidean volume of the unit $n$-ball.  \n(Hint: use the Bishop-Gromov inequality and show that, when $\\kappa>0$, the map\n$r\\longmapsto V_{-\\kappa}(\\lambda r)/V_{-\\kappa}(r)$ is non-decreasing for every fixed $\\lambda>1$.)\n\n(c) (Near-optimality of the dilation factor)  \nProve that the multiplicative constant $3$ in {\\rm(A)} cannot, in general, be replaced by any number strictly smaller than $2$: for every $\\varepsilon>0$ construct a manifold $M_{\\varepsilon}$ satisfying {\\rm(R)} for the \\emph{same} $\\kappa$ together with a set $E_{\\varepsilon}\\subseteq M_{\\varepsilon}$ and a finite family $\\mathcal F_{\\varepsilon}$ of geodesic balls of radii $\\le r_{0}$ such that \\emph{no} pairwise disjoint subcollection of $\\mathcal F_{\\varepsilon}$ fulfils\n\\[\nE_{\\varepsilon}\\subseteq\\bigcup_{j}(2-\\varepsilon)B_{j}.\n\\tag{C}\n\\]",
+      "solution": "\\textbf{Step 0.  (Notation).}  \nFor a geodesic ball $B=B(p,r)$ write $\\operatorname{ctr}(B)=p$ and $r(B)=r$. All distances are taken with respect to the metric $g$.\n\n\\bigskip\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\\textbf{Part (a) - A metric Vitali covering with factor $3$.}\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n\\emph{1.  Greedy selection.}  \nRe-order the balls so that $r_{1}\\ge r_{2}\\ge\\dots\\ge r_{N}$.  Build inductively a sequence $B_{1},\\dots ,B_{m}$ by taking at the $k$-th step the first ball in the list that is disjoint from the previously chosen ones. When no further choice is possible the procedure stops; the selected balls are pairwise disjoint by construction.\n\n\\emph{2.  Verification of the covering property.}  \nLet $y\\in E$.  If $y$ already lies in $\\bigcup_{j=1}^{m}B_{j}$ we are done; otherwise $y$ belongs to some ball $B=B(x,r)\\in\\mathcal F\\setminus\\{B_{j}\\}$.  Since $B$ was skipped, it meets a previously selected ball, say $B_{j}=B(x_{j},R)$ with $R\\ge r$.  Thus $d_{g}(x,x_{j})<r+R$.  For any $z\\in B$ we have $d_{g}(x,z)\\le r$, hence\n\\[\nd_{g}(x_{j},z)\n\\le d_{g}(x_{j},x)+d_{g}(x,z)\n<(r+R)+r\\le 3R ,\n\\]\ni.e.\\ $z\\in 3B_{j}$.  Taking the union over all $B\\in\\mathcal F$ gives (A).\n\n\\bigskip\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\\textbf{Part (b) - Volume estimate via Bishop-Gromov comparison.}\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n\\emph{3.  Bishop-Gromov inequality.}  \nUnder (R) we have for every $p\\in M$ and $0<r\\le R$\n\\[\n\\frac{\\operatorname{Vol}_{g}\\!\\bigl(B(p,R)\\bigr)}\n     {\\operatorname{Vol}_{g}\\!\\bigl(B(p,r)\\bigr)}\n\\le\n\\frac{V_{-\\kappa}(R)}{V_{-\\kappa}(r)} .\n\\tag{BG}\n\\]\n\n\\emph{4.  Monotonicity of model ratios.}  \nFix $\\lambda>1$.  For the model space of constant curvature $-\\kappa$ one checks\n\\[\n\\frac{d}{dr}\\Bigl(\\frac{V_{-\\kappa}(\\lambda r)}{V_{-\\kappa}(r)}\\Bigr)\\;\\ge\\;0\n\\quad\\text{for }r>0 .\n\\]\nIndeed, for $\\kappa=0$ the ratio equals $\\lambda^{n}$.  When $\\kappa>0$, write $V_{-\\kappa}(r)=\\omega_{n}\\int_{0}^{r}\\bigl(\\sinh(\\sqrt{\\kappa}s)/\\sqrt{\\kappa}\\bigr)^{n-1}n\\,ds$ and differentiate; positivity of $\\sinh$ and basic hyperbolic identities give the claim.\n\nConsequently\n\\[\n\\frac{\\operatorname{Vol}_{g}(B(p,3r_{j}))}{\\operatorname{Vol}_{g}(B(p,r_{j}))}\n\\le\n\\sup_{0<r\\le r_{j}}\\frac{V_{-\\kappa}(3r)}{V_{-\\kappa}(r)}\n\\le\n\\sup_{0<r\\le r_{0}}\\frac{V_{-\\kappa}(3r)}{V_{-\\kappa}(r)} .\n\\tag{M}\n\\]\n\n\\emph{5.  Bounding $\\operatorname{Vol}_{g}(E)$.}  \nUsing (A) and (BG) together with (M) we get\n\\[\n\\operatorname{Vol}_{g}(E)\n\\le\n\\sum_{j=1}^{m}\\operatorname{Vol}_{g}(3B_{j})\n\\le\n\\Bigl(\\sup_{0<r\\le r_{0}}\\frac{V_{-\\kappa}(3r)}{V_{-\\kappa}(r)}\\Bigr)\n\\sum_{j=1}^{m}\\operatorname{Vol}_{g}(B_{j}),\n\\]\nwhich is precisely (B).\n\n\\bigskip\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\\textbf{Part (c) - Sharpness up to the constant $2$.}\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\n\\emph{6.  Ambient manifold.}  \nRegardless of the value of $\\kappa\\ge 0$, the Euclidean space $\\bigl(\\mathbb R^{n},g_{0}\\bigr)$ with the standard metric satisfies $\\operatorname{Ric}_{g_{0}}=0\\ge -(n-1)\\kappa g_{0}$.  Hence we may set $M_{\\varepsilon}:=(\\mathbb R^{n},g_{0})$ for every $\\varepsilon>0$.\n\n\\emph{7.  Construction of the covering family.}  \nFix $\\varepsilon\\in(0,1)$ and set $r:=\\tfrac12\\,r_{0}$.  Define three points on the first coordinate axis,\n\\[\np_{1}:=(-2r,0,\\dots ,0),\\qquad\np_{2}:=( 0 ,0,\\dots ,0),\\qquad\np_{3}:=( 2r,0,\\dots ,0),\n\\]\nand the corresponding closed balls\n\\[\nB_{j}:=B_{g_{0}}\\!\\bigl(p_{j},r\\bigr)\\quad (j=1,2,3).\n\\]\nAll three balls have radius $r\\le r_{0}$.  Put\n\\[\n\\mathcal F_{\\varepsilon}:=\\{B_{1},B_{2},B_{3}\\},\\qquad\nE_{\\varepsilon}:=B_{1}\\cup B_{2}\\cup B_{3}.\n\\]\n\nGeometric relations:  \n(i) $B_{1}\\cap B_{3}=\\varnothing$ because $\\lvert p_{1}p_{3}\\rvert=4r>2r$.  \n(ii) $B_{2}$ meets each of $B_{1},B_{3}$ exactly in one boundary point since $\\lvert p_{1}p_{2}\\rvert=\\lvert p_{2}p_{3}\\rvert=2r=r+r$.\n\nConsequently every pairwise disjoint subcollection of $\\mathcal F_{\\varepsilon}$ is either\n\\[\n\\{B_{1},B_{3}\\},\\qquad\\text{or one of the singletons}\\quad\n\\{B_{1}\\},\\ \\{B_{2}\\},\\ \\{B_{3}\\}.\n\\]\n\n\\emph{8.  Failure of the $(2-\\varepsilon)$-dilations.}\n\n$\\bullet$ \\emph{Subcollection $\\{B_{1},B_{3}\\}$.}  \nThe centre $p_{2}$ satisfies\n\\[\nd_{g_{0}}(p_{2},p_{1})=d_{g_{0}}(p_{2},p_{3})=2r>(2-\\varepsilon)r,\n\\]\nhence\n\\[\np_{2}\\notin (2-\\varepsilon)B_{1}\\cup(2-\\varepsilon)B_{3}.\n\\]\nTherefore\n\\[\nE_{\\varepsilon}\\not\\subseteq(2-\\varepsilon)B_{1}\\cup(2-\\varepsilon)B_{3}.\n\\]\n\n$\\bullet$ \\emph{Single-ball subcollections.}  \nIf the chosen ball is $B_{2}$, then $p_{1}\\notin(2-\\varepsilon)B_{2}$ because $d_{g_{0}}(p_{1},p_{2})=2r>(2-\\varepsilon)r$.  Thus $B_{1}\\subseteq E_{\\varepsilon}$ is not covered.  \nIf the chosen ball is $B_{1}$ (the case $B_{3}$ is symmetric), then again the point $p_{2}$ is uncovered, hence so is $E_{\\varepsilon}$.\n\nIn all admissible pairwise disjoint subcollections the covering property (C) fails.  Hence the dilation factor $3$ in (A) cannot, in general, be lowered below $2$.\n\n\\bigskip\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n\\textbf{Conclusion.}  \nParts (a)-(c) are proved, and the constant $3$ is therefore optimal up to the threshold value $2$.\n\n\\bigskip",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.759752",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher mathematical setting – From flat \\(\\mathbb R^{2}\\) / \\(\\mathbb R^{4}\\) we moved to an arbitrary complete Riemannian manifold with two–sided sectional-curvature bounds; geodesic rather than Euclidean balls must be handled.\n\n2. Additional quantitative requirement – Besides finding a covering we must establish the \\emph{volume inequality} (2), forcing the solver to invoke the Bishop–Gromov comparison theorem and to compute an explicit universal constant \\(C(n,\\kappa,r_{0})\\).\n\n3. Optimality component – Part (c) compels the contestant to devise a counter-example proving that the enlargement factor cannot drop below \\(2\\), introducing a constructive extremal argument.\n\n4. Multiple advanced techniques – The full solution blends (i) greedy/Besicovitch-type selection, (ii) Riemannian triangle inequalities, (iii) curvature comparison geometry, and (iv) extremal constructions, each non-trivial on its own.\n\n5. Increased length and depth – Compared with the original disc-covering exercise, the enhanced variant demands mastery of Riemannian geometry, measure comparison theorems, and sharpness arguments, vastly expanding both the conceptual and computational workload."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let \\((M^{n},g)\\) be a connected, complete \\(n\\)-dimensional Riemannian manifold whose Ricci curvature satisfies  \n\\[\n\\operatorname{Ric}_{(M,g)}\\;\\ge\\;-(n-1)\\,\\kappa\\,g ,\\qquad \\kappa\\ge 0 .\n\\tag{R}\n\\]\n\nChoose a number  \n\\[\n0<r_{0}<\\begin{cases}\n\\infty , & \\kappa=0,\\\\[4pt]\n\\displaystyle\\frac12\\operatorname{inj}(M,g), &\\kappa>0,\n\\end{cases}\n\\]\nand let   \n\\[\n\\mathcal F=\\bigl\\{\\,B(x_{i},r_{i})\\bigr\\}_{i=1}^{N},\\qquad 0<r_{i}\\le r_{0},\n\\]\nbe a finite family of \\textit{closed geodesic balls} whose union covers a Borel set \\(E\\subseteq M\\).\n\n(a)  (Metric Vitali-type lemma)  \nProve that there exists a pairwise disjoint subcollection  \n\\[\nB_{1},\\ldots ,B_{m}\\in\\mathcal F\n\\]\nsuch that  \n\\[\nE\\subseteq\\bigcup_{j=1}^{m}3B_{j},\n\\tag{A}\n\\]\nwhere \\(3B_{j}=B\\!\\bigl(\\operatorname{ctr}(B_{j}),3\\,r(B_{j})\\bigr)\\).\n\n(b)  (Curvature-dependent volume bound)  \nShow the quantitative estimate  \n\\[\n\\operatorname{Vol}_{g}(E)\n\\le\nC(n,\\kappa,r_{0})\\,\n\\sum_{j=1}^{m}\\operatorname{Vol}_{g}(B_{j}),\n\\tag{B}\n\\]\nwhere one can take  \n\\[\nC(n,\\kappa,r_{0})=\n\\sup_{0<r\\le r_{0}}\n\\frac{V_{-\\kappa}(3r)}{V_{-\\kappa}(r)},\\qquad\nV_{-\\kappa}(r)=\n\\begin{cases}\n\\omega_{n}\\,r^{n}, &\\kappa=0,\\\\[6pt]\n\\displaystyle\n\\int_{0}^{r}\\!n\\omega_{n-1}\\bigl(\\sinh(\\sqrt{\\kappa}\\,s)\\bigr)^{n-1}\\!ds,\n&\\kappa>0,\n\\end{cases}\n\\]\nand \\(\\omega_{n}\\) denotes the Euclidean volume of the unit \\(n\\)-ball.  \n\n(c)  (Near-optimality of the dilation factor)  \nProve that the multiplicative constant \\(3\\) in (A) cannot, in general, be\nreplaced by any number strictly smaller than \\(2\\):  \nfor every \\(\\varepsilon>0\\) construct a manifold \\(M_{\\varepsilon}\\) satisfying (R) for the \\emph{same} \\(\\kappa\\) together with a set \\(E_{\\varepsilon}\\subseteq M_{\\varepsilon}\\) and a finite family \\(\\mathcal F_{\\varepsilon}\\) of geodesic balls of radii \\(\\le r_{0}\\) such that \\emph{no} pairwise disjoint subcollection of \\(\\mathcal F_{\\varepsilon}\\) fulfils\n\\[\nE_{\\varepsilon}\\subseteq\\bigcup_{j}(2-\\varepsilon)B_{j}.\n\\tag{C}\n\\]",
+      "solution": "Step 0.  (Notation)  \nFor a geodesic ball \\(B=B(p,r)\\) write \\(\\operatorname{ctr}(B)=p\\) and \\(r(B)=r\\).\nAll distances are taken with respect to \\(g\\).\n\n  \nPart (a) - A metric Vitali covering with factor \\(3\\)  \n  \n\n1.  Greedy selection.  \n   Order the balls so that \\(r_{1}\\ge r_{2}\\ge\\dots\\ge r_{N}\\).\n   Build inductively a sequence \\(B_{1},\\dots ,B_{m}\\) by taking at the\n   \\(k\\)-th step the first ball in the list that is disjoint from the\n   previously chosen ones.  When no further choice is possible the procedure\n   stops; the selected balls are pairwise disjoint by construction.\n\n2.  Verification of the covering property.  \n   Let \\(y\\in E\\).  If \\(y\\in\\bigcup_{j=1}^{m}B_{j}\\) we are done; otherwise\n   \\(y\\in B=B(x,r)\\in\\mathcal F\\setminus\\{B_{j}\\}\\).\n   Since \\(B\\) was skipped, it meets a previously selected ball,\n   say \\(B_{j}=B(x_{j},R)\\) with \\(R\\ge r\\).\n   Thus \\(d_{g}(x,x_{j})<r+R\\).\n   For any \\(z\\in B\\) we have \\(d_{g}(x,z)\\le r\\), hence\n   \\[\n   d_{g}(x_{j},z)\n   \\le d_{g}(x_{j},x)+d_{g}(x,z)\n   <(r+R)+r\\le 3R ,\n   \\]\n   i.e. \\(z\\in 3B_{j}\\).  Taking the union over all\n   \\(B\\in\\mathcal F\\) gives (A).\n\n  \nPart (b) - Volume estimate via Bishop-Gromov comparison  \n  \n\n3.  Bishop-Gromov inequality.  \n   Under (R) we have for every \\(p\\in M\\) and \\(0<r\\le R\\)  \n   \\[\n   \\frac{\\operatorname{Vol}_{g}\\bigl(B(p,R)\\bigr)}\n        {\\operatorname{Vol}_{g}\\bigl(B(p,r)\\bigr)}\n   \\le\n   \\frac{V_{-\\kappa}(R)}{V_{-\\kappa}(r)} .\n   \\tag{BG}\n   \\]\n\n4.  Bounding \\(\\operatorname{Vol}_{g}(E)\\).  \n   Using (A) and (BG) with \\(R=3r_{j}\\), \\(r=r_{j}\\) we arrive at\n   \\[\n   \\operatorname{Vol}_{g}(E)\n   \\le\n   \\sum_{j=1}^{m}\\operatorname{Vol}_{g}(3B_{j})\n   \\le\n   \\Bigl(\\sup_{0<r\\le r_{0}}\\frac{V_{-\\kappa}(3r)}{V_{-\\kappa}(r)}\\Bigr)\n   \\sum_{j=1}^{m}\\operatorname{Vol}_{g}(B_{j}),\n   \\]\n   which is exactly (B).\n\n  \nPart (c) - Sharpness up to the constant \\(2\\)  \n  \n\n5.  Ambient manifold.  \n   Regardless of the value of \\(\\kappa\\ge 0\\), the Euclidean space\n   \\(\\mathbb R^{n}\\) endowed with its standard metric \\(g_{0}\\) satisfies\n   \\(\\operatorname{Ric}_{g_{0}}=0\\ge -(n-1)\\kappa g_{0}\\).\n   Hence we set \\(M_{\\varepsilon}:=(\\mathbb R^{n},g_{0})\\).\n\n6.  Construction of the covering family.  \n   Fix \\(\\varepsilon\\in(0,1)\\) and put \\(r:=\\tfrac12\\,r_{0}\\).\n   Define three points on the first coordinate axis,\n   \\[\n   p_{1}:=(-2r,0,\\dots ,0),\\qquad\n   p_{2}:=( 0 ,0,\\dots ,0),\\qquad\n   p_{3}:=( 2r,0,\\dots ,0),\n   \\]\n   and the corresponding closed balls\n   \\[\n   B_{j}:=B_{g_{0}}\\!(p_{j},r)\\quad (j=1,2,3).\n   \\]\n   All three balls have radius \\(r\\le r_{0}\\).  Put\n   \\[\n   \\mathcal F_{\\varepsilon}:=\\{B_{1},B_{2},B_{3}\\},\\qquad\n   E_{\\varepsilon}:=B_{1}\\cup B_{2}\\cup B_{3}.\n   \\]\n\n   Geometric relations:\n   -  \\(B_{1}\\cap B_{3}=\\varnothing\\) because\n      \\(\\lvert p_{1}p_{3}\\rvert=4r>2r\\).  \n   -  \\(B_{2}\\) meets each of \\(B_{1},B_{3}\\) exactly in one boundary\n      point since \\(\\lvert p_{1}p_{2}\\rvert=\\lvert p_{2}p_{3}\\rvert=2r=r+r\\).\n\n   Consequently every pairwise disjoint subcollection of\n   \\(\\mathcal F_{\\varepsilon}\\) is either\n   \\[\n        \\{B_{1},B_{3}\\}\n        \\quad\\text{or}\\quad\n        \\{B_{1}\\},\\{B_{2}\\},\\{B_{3}\\}.\n   \\]\n\n7.  Failure of the \\((2-\\varepsilon)\\)-dilations.  \n\n   *  Subcollection \\(\\{B_{1},B_{3}\\}\\).  \n      The centre \\(p_{2}\\) of the middle ball satisfies  \n      \\[\n      d_{g_{0}}(p_{2},p_{1})=d_{g_{0}}(p_{2},p_{3})=2r>(2-\\varepsilon)r,\n      \\]\n      hence \\(p_{2}\\notin (2-\\varepsilon)B_{1}\\cup(2-\\varepsilon)B_{3}\\).\n      Since \\(p_{2}\\) is the centre of \\(B_{2}\\),\n      the entire ball \\(B_{2}\\) is missed, so (C) fails.\n\n   *  Subcollection consisting of a single ball \\(B_{j}\\).  \n      If \\(j=2\\), then  \n      \\(d_{g_{0}}(p_{1},p_{2})=2r>(2-\\varepsilon)r\\), so \\(B_{1}\\) is missed.  \n      If \\(j=1\\) or \\(3\\), the argument above with the point \\(p_{2}\\)\n      shows \\(B_{2}\\) is missed.  \n      Thus (C) fails in every single-ball case as well.\n\n   Consequently \\emph{no} pairwise disjoint subcollection of\n   \\(\\mathcal F_{\\varepsilon}\\) fulfils (C), establishing that the factor\n   \\(3\\) in (A) cannot, in general, be lowered below \\(2\\).\n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.583847",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher mathematical setting – From flat \\(\\mathbb R^{2}\\) / \\(\\mathbb R^{4}\\) we moved to an arbitrary complete Riemannian manifold with two–sided sectional-curvature bounds; geodesic rather than Euclidean balls must be handled.\n\n2. Additional quantitative requirement – Besides finding a covering we must establish the \\emph{volume inequality} (2), forcing the solver to invoke the Bishop–Gromov comparison theorem and to compute an explicit universal constant \\(C(n,\\kappa,r_{0})\\).\n\n3. Optimality component – Part (c) compels the contestant to devise a counter-example proving that the enlargement factor cannot drop below \\(2\\), introducing a constructive extremal argument.\n\n4. Multiple advanced techniques – The full solution blends (i) greedy/Besicovitch-type selection, (ii) Riemannian triangle inequalities, (iii) curvature comparison geometry, and (iv) extremal constructions, each non-trivial on its own.\n\n5. Increased length and depth – Compared with the original disc-covering exercise, the enhanced variant demands mastery of Riemannian geometry, measure comparison theorems, and sharpness arguments, vastly expanding both the conceptual and computational workload."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

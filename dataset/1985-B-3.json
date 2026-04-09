@@ -1,0 +1,151 @@
+{
+  "index": "1985-B-3",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let\n\\[\n\\begin{array}{cccc} a_{1,1} & a_{1,2} & a_{1,3} & \\dots \\\\\na_{2,1} & a_{2,2} & a_{2,3} & \\dots \\\\\na_{3,1} & a_{3,2} & a_{3,3} & \\dots \\\\\n\\vdots & \\vdots & \\vdots & \\ddots\n\\end{array}\n\\]\nbe a doubly infinite array of positive integers, and suppose each\npositive integer appears exactly eight times in the array. Prove that\n$a_{m,n} > mn$ for some pair of positive integers $(m,n)$.",
+  "solution": "Solution. Suppose not; i.e., suppose that \\( a_{m, n} \\leq m n \\) for all \\( m, n \\geq 1 \\). Let\n\\[\nR(k)=\\left\\{(i, j): a_{i, j} \\leq k\\right\\} .\n\\]\n\nBy hypothesis, \\( \\# R(k) \\leq 8 k \\). On the other hand, \\( R(k) \\) contains all pairs \\( (i, j) \\) with \\( i j \\leq k \\), and there are\n\\[\n\\left\\lfloor\\frac{k}{1}\\right\\rfloor+\\left\\lfloor\\frac{k}{2}\\right\\rfloor+\\cdots+\\left\\lfloor\\frac{k}{k}\\right\\rfloor>\\left(\\frac{k}{1}-1\\right)+\\left(\\frac{k}{2}-1\\right)+\\cdots+\\left(\\frac{k}{k}-1\\right)>k(\\ln k-1)\n\\]\nsuch pairs, since\n\\[\n\\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{k}>\\int_{1}^{k} \\frac{1}{x} d x=\\ln k .\n\\]\n\nHence \\( 8 k>k(\\ln k-1) \\), which is a contradiction for \\( k>e^{9} \\approx 8103.08 \\).\nRemark. To solve the problem, the explicit lower bound on the rate of growth of \\( \\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{k} \\) as \\( k \\rightarrow \\infty \\) is not really needed: it suffices to know that this sum tends to \\( \\infty \\), i.e., that the harmonic series diverges.",
+  "vars": [
+    "a_1,1",
+    "a_1,2",
+    "a_1,3",
+    "a_2,1",
+    "a_2,2",
+    "a_2,3",
+    "a_3,1",
+    "a_3,2",
+    "a_3,3",
+    "a_m,n",
+    "a_i,j",
+    "i",
+    "j",
+    "m",
+    "n",
+    "k",
+    "x"
+  ],
+  "params": [],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1,1": "entryoneone",
+        "a_1,2": "entryonetwo",
+        "a_1,3": "entryonethree",
+        "a_2,1": "entrytwoone",
+        "a_2,2": "entrytwotwo",
+        "a_2,3": "entrytwothree",
+        "a_3,1": "entrythreeone",
+        "a_3,2": "entrythreetwo",
+        "a_3,3": "entrythreethree",
+        "a_m,n": "entrygeneric",
+        "a_i,j": "entryvariable",
+        "i": "rowindex",
+        "j": "colindex",
+        "m": "rowmarker",
+        "n": "colmarker",
+        "k": "threshold",
+        "x": "integvar"
+      },
+      "question": "Let\n\\[\n\\begin{array}{cccc} entryoneone & entryonetwo & entryonethree & \\dots \\\\\nentrytwoone & entrytwotwo & entrytwothree & \\dots \\\\\nentrythreeone & entrythreetwo & entrythreethree & \\dots \\\\\n\\vdots & \\vdots & \\vdots & \\ddots\n\\end{array}\n\\]\nbe a doubly infinite array of positive integers, and suppose each\npositive integer appears exactly eight times in the array. Prove that\n$entrygeneric > rowmarker colmarker$ for some pair of positive integers $(rowmarker,colmarker)$.",
+      "solution": "Solution. Suppose not; i.e., suppose that \\( entrygeneric \\leq rowmarker colmarker \\) for all \\( rowmarker, colmarker \\geq 1 \\). Let\n\\[\nR(threshold)=\\left\\{(rowindex, colindex): entryvariable \\leq threshold\\right\\} .\n\\]\n\nBy hypothesis, \\( \\# R(threshold) \\leq 8\\,threshold \\). On the other hand, \\( R(threshold) \\) contains all pairs \\( (rowindex, colindex) \\) with \\( rowindex\\,colindex \\leq threshold \\), and there are\n\\[\n\\left\\lfloor\\frac{threshold}{1}\\right\\rfloor+\\left\\lfloor\\frac{threshold}{2}\\right\\rfloor+\\cdots+\\left\\lfloor\\frac{threshold}{threshold}\\right\\rfloor>\\left(\\frac{threshold}{1}-1\\right)+\\left(\\frac{threshold}{2}-1\\right)+\\cdots+\\left(\\frac{threshold}{threshold}-1\\right)>threshold(\\ln threshold-1)\n\\]\nsuch pairs, since\n\\[\n\\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{threshold}>\\int_{1}^{threshold} \\frac{1}{integvar} d integvar=\\ln threshold .\n\\]\n\nHence \\( 8\\,threshold>threshold(\\ln threshold-1) \\), which is a contradiction for \\( threshold>e^{9} \\approx 8103.08 \\).\nRemark. To solve the problem, the explicit lower bound on the rate of growth of \\( \\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{threshold} \\) as \\( threshold \\rightarrow \\infty \\) is not really needed: it suffices to know that this sum tends to \\( \\infty \\), i.e., that the harmonic series diverges."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_1,1": "silverfish",
+        "a_1,2": "dragonfly",
+        "a_1,3": "hummingbird",
+        "a_2,1": "lemongrass",
+        "a_2,2": "strawberry",
+        "a_2,3": "alligator",
+        "a_3,1": "porcupine",
+        "a_3,2": "salamander",
+        "a_3,3": "woodpecker",
+        "a_m,n": "dandelion",
+        "a_i,j": "watercress",
+        "i": "raindrop",
+        "j": "snowflake",
+        "m": "buttercup",
+        "n": "starflower",
+        "k": "cloudberry",
+        "x": "dragonfruit"
+      },
+      "question": "Let\n\\[\n\\begin{array}{cccc} silverfish & dragonfly & hummingbird & \\dots \\\\\nlemongrass & strawberry & alligator & \\dots \\\\\nporcupine & salamander & woodpecker & \\dots \\\\\n\\vdots & \\vdots & \\vdots & \\ddots\n\\end{array}\n\\]\nbe a doubly infinite array of positive integers, and suppose each\npositive integer appears exactly eight times in the array. Prove that\n$dandelion > buttercup starflower$ for some pair of positive integers $(buttercup,starflower)$.",
+      "solution": "Solution. Suppose not; i.e., suppose that \\( dandelion \\leq buttercup starflower \\) for all \\( buttercup, starflower \\geq 1 \\). Let\n\\[\nR(cloudberry)=\\left\\{(raindrop, snowflake): watercress \\leq cloudberry\\right\\} .\n\\]\n\nBy hypothesis, \\( \\# R(cloudberry) \\leq 8\\,cloudberry \\). On the other hand, \\( R(cloudberry) \\) contains all pairs \\( (raindrop, snowflake) \\) with \\( raindrop\\,snowflake \\leq cloudberry \\), and there are\n\\[\n\\left\\lfloor\\frac{cloudberry}{1}\\right\\rfloor+\\left\\lfloor\\frac{cloudberry}{2}\\right\\rfloor+\\cdots+\\left\\lfloor\\frac{cloudberry}{cloudberry}\\right\\rfloor>\\left(\\frac{cloudberry}{1}-1\\right)+\\left(\\frac{cloudberry}{2}-1\\right)+\\cdots+\\left(\\frac{cloudberry}{cloudberry}-1\\right)>cloudberry(\\ln cloudberry-1)\n\\]\nsuch pairs, since\n\\[\n\\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{cloudberry}>\\int_{1}^{cloudberry} \\frac{1}{dragonfruit} d\\,dragonfruit=\\ln cloudberry .\n\\]\n\nHence \\( 8\\,cloudberry>cloudberry(\\ln cloudberry-1) \\), which is a contradiction for \\( cloudberry>e^{9} \\approx 8103.08 \\).\n\nRemark. To solve the problem, the explicit lower bound on the rate of growth of \\( \\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{cloudberry} \\) as \\( cloudberry \\rightarrow \\infty \\) is not really needed: it suffices to know that this sum tends to \\( \\infty \\), i.e., that the harmonic series diverges."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_1,1": "negativedelta",
+        "a_1,2": "oppositelambda",
+        "a_1,3": "invertedgamma",
+        "a_2,1": "contraryalpha",
+        "a_2,2": "negativenu",
+        "a_2,3": "reversekappa",
+        "a_3,1": "opposingtheta",
+        "a_3,2": "antiomicron",
+        "a_3,3": "unlikezeta",
+        "a_m,n": "distrustvalue",
+        "a_i,j": "contraryentry",
+        "i": "runoutindex",
+        "j": "gonecounter",
+        "m": "rowterminus",
+        "n": "columnfinal",
+        "k": "boundupper",
+        "x": "abscissavalue"
+      },
+      "question": "Let\n\\[\n\\begin{array}{cccc} negativedelta & oppositelambda & invertedgamma & \\dots \\\\\ncontraryalpha & negativenu & reversekappa & \\dots \\\\\nopposingtheta & antiomicron & unlikezeta & \\dots \\\\\n\\vdots & \\vdots & \\vdots & \\ddots\n\\end{array}\n\\]\nbe a doubly infinite array of positive integers, and suppose each\npositive integer appears exactly eight times in the array. Prove that\ndistrustvalue > rowterminuscolumnfinal for some pair of positive integers (rowterminus,columnfinal).",
+      "solution": "Solution. Suppose not; i.e., suppose that \\( distrustvalue \\leq rowterminus columnfinal \\) for all \\( rowterminus, columnfinal \\geq 1 \\). Let\n\\[\nR(boundupper)=\\left\\{(runoutindex, gonecounter): contraryentry \\leq boundupper\\right\\} .\n\\]\n\nBy hypothesis, \\( \\# R(boundupper) \\leq 8 boundupper \\). On the other hand, \\( R(boundupper) \\) contains all pairs \\( (runoutindex, gonecounter) \\) with \\( runoutindex gonecounter \\leq boundupper \\), and there are\n\\[\n\\left\\lfloor\\frac{boundupper}{1}\\right\\rfloor+\\left\\lfloor\\frac{boundupper}{2}\\right\\rfloor+\\cdots+\\left\\lfloor\\frac{boundupper}{boundupper}\\right\\rfloor>\\left(\\frac{boundupper}{1}-1\\right)+\\left(\\frac{boundupper}{2}-1\\right)+\\cdots+\\left(\\frac{boundupper}{boundupper}-1\\right)>boundupper(\\ln boundupper-1)\n\\]\nsuch pairs, since\n\\[\n\\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{boundupper}>\\int_{1}^{boundupper} \\frac{1}{abscissavalue} d abscissavalue=\\ln boundupper .\n\\]\n\nHence \\( 8 boundupper>boundupper(\\ln boundupper-1) \\), which is a contradiction for \\( boundupper>e^{9} \\approx 8103.08 \\).\n\nRemark. To solve the problem, the explicit lower bound on the rate of growth of \\( \\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{boundupper} \\) as \\( boundupper \\rightarrow \\infty \\) is not really needed: it suffices to know that this sum tends to \\( \\infty \\), i.e., that the harmonic series diverges."
+    },
+    "garbled_string": {
+      "map": {
+        "a_1,1": "qzxwvtnp",
+        "a_1,2": "hjgrksla",
+        "a_1,3": "nbvcxmlu",
+        "a_2,1": "fplmokij",
+        "a_2,2": "sdrtyugh",
+        "a_2,3": "weoplkjh",
+        "a_3,1": "vbnmswer",
+        "a_3,2": "ghtyrewq",
+        "a_3,3": "zxcvbnml",
+        "a_m,n": "plmoknij",
+        "a_i,j": "qazwsxed",
+        "i": "ujmnhygt",
+        "j": "ikolpraw",
+        "m": "edcrfvtg",
+        "n": "yhbgtvfr",
+        "k": "tgbvfred",
+        "x": "olikujmy"
+      },
+      "question": "Let\n\\[\n\\begin{array}{cccc} qzxwvtnp & hjgrksla & nbvcxmlu & \\dots \\\\ fplmokij & sdrtyugh & weoplkjh & \\dots \\\\ vbnmswer & ghtyrewq & zxcvbnml & \\dots \\\\ \\vdots & \\vdots & \\vdots & \\ddots\n\\end{array}\n\\]\nbe a doubly infinite array of positive integers, and suppose each\npositive integer appears exactly eight times in the array. Prove that\nplmoknij > edcrfvtgyhbgtvfr for some pair of positive integers $(edcrfvtg,yhbgtvfr)$.",
+      "solution": "Solution. Suppose not; i.e., suppose that \\( plmoknij \\leq edcrfvtgyhbgtvfr \\) for all \\( edcrfvtg, yhbgtvfr \\geq 1 \\). Let\n\\[\nR(tgbvfred)=\\left\\{(ujmnhygt, ikolpraw): qazwsxed \\leq tgbvfred\\right\\} .\n\\]\n\nBy hypothesis, \\( \\# R(tgbvfred) \\leq 8 tgbvfred \\). On the other hand, \\( R(tgbvfred) \\) contains all pairs \\( (ujmnhygt, ikolpraw) \\) with \\( ujmnhygt ikolpraw \\leq tgbvfred \\), and there are\n\\[\n\\left\\lfloor\\frac{tgbvfred}{1}\\right\\rfloor+\\left\\lfloor\\frac{tgbvfred}{2}\\right\\rfloor+\\cdots+\\left\\lfloor\\frac{tgbvfred}{tgbvfred}\\right\\rfloor>\\left(\\frac{tgbvfred}{1}-1\\right)+\\left(\\frac{tgbvfred}{2}-1\\right)+\\cdots+\\left(\\frac{tgbvfred}{tgbvfred}-1\\right)>tgbvfred(\\ln tgbvfred-1)\n\\]\nsuch pairs, since\n\\[\n\\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{tgbvfred}>\\int_{1}^{tgbvfred} \\frac{1}{olikujmy} d \\,olikujmy=\\ln tgbvfred .\n\\]\n\nHence \\( 8 tgbvfred>tgbvfred(\\ln tgbvfred-1) \\), which is a contradiction for \\( tgbvfred>e^{9} \\approx 8103.08 \\).\nRemark. To solve the problem, the explicit lower bound on the rate of growth of \\( \\frac{1}{1}+\\frac{1}{2}+\\cdots+\\frac{1}{tgbvfred} \\) as \\( tgbvfred \\rightarrow \\infty \\) is not really needed: it suffices to know that this sum tends to \\( \\infty \\), i.e., that the harmonic series diverges."
+    },
+    "kernel_variant": {
+      "question": "Let  \n\n  A = (a_{(i},_j,_{k)})_{(i},_j,_k \\geq  1_)  \n\nbe a triply-infinite array of positive integers indexed by ordered triples (i,j,k)\\in \\mathbb{N}^3.  \nAssume the following two conditions.\n\n1.  (Uniform multiplicity)  Every positive integer appears in A **exactly ten times**.  \n\n2.  (Strong sub-polynomial bound)  For every (i,j,k) one has  \n  a_{(i},_j,_{k)} \\leq  \\lfloor  (ijk)^{2/3} / log(ijk+1) \\rfloor .  (\\star )\n\nProve that these two requirements are incompatible; that is, show that there exists a triple (m,n,p) for which  \n\n  a_{(m},_n,_{p)} > (mnp)^{2/3} / log(mnp+1).\n\n(The logarithm is natural, but the base is irrelevant as long as it is fixed and greater than 1.)\n\n------------------------------------------------------------------------------------------------------------",
+      "solution": "We argue by contradiction.  Suppose an array A satisfies (1) and (2).\n\nStep 1.  A bookkeeping set.  \nFor N\\in \\mathbb{N} define  \n\n  R(N) := {(i,j,k)\\in \\mathbb{N}^3 : a_{(i},_j,_{k)} \\leq  N}.      (1)  \n\nBecause each positive integer \\leq  N occurs **exactly** ten times,  \n\n  |R(N)| = 10 N.              (2)\n\nStep 2.  A large subset of R(N).  \nPut  \n\n  X(N) := (N log N)^{3/2},    N \\geq  4,   (3)  \n  S(N) := {(i,j,k)\\in \\mathbb{N}^3 : i j k \\leq  X(N)}.   (4)\n\nWe show that for every sufficiently large N one has S(N) \\subseteq  R(N).  \nDefine  \n\n  f(t) := t^{2/3}/log(t+1)  (t>0).    (5)\n\nClaim.  For all N \\geq  16 and all 0 < t \\leq  X(N) we have f(t) \\leq  N.\n\nProof of the claim.  \n(a) The interval (0,7].  A direct calculation gives  \n\n  max_{0<t\\leq 7} f(t)=f(7)\\approx 5.13<16\\leq N.   (6)\n\n(b) The interval [7, X(N)].  We verify that f is strictly increasing on [7,\\infty ).  \nDifferentiating correctly,\n\n  f'(t)=t^{-1/3}(log(t+1))^{-2} [(2/3) log(t+1)-t/(t+1)]. (7)\n\nFor t \\geq  7 we have log(t+1) \\geq  log 8 > 2, so  \n\n  (2/3) log(t+1) \\geq  (2/3)\\cdot 2 = 4/3 > 1 \\geq  t/(t+1),  \n\nwhence the bracket in (7) is positive and therefore f is increasing on [7,\\infty ).\n\nConsequently the maximum of f on [7,X(N)] is f(X(N)), and  \n\n  f(X(N)) = X(N)^{2/3}/log(X(N)+1)  \n      = N log N / log((N log N)^{3/2}+1).  (8)\n\nSince log((N log N)^{3/2}+1) \\geq  (3/2) log N for N \\geq  4,  \n\n  f(X(N)) \\leq  N log N / ((3/2) log N) = (2/3)N < N. (9)\n\nCombining (6) and (9) yields f(t) \\leq  N for all 0<t\\leq X(N), so by (\\star ) we indeed have  \n\n  S(N) \\subseteq  R(N).             (10)\n\nStep 3.  Counting triples with bounded product.  \nDenote  \n\n  T(X) := |{(i,j,k)\\in \\mathbb{N}^3 : i j k \\leq  X}|.  \n\nWrite n = i j k.  Then T(X)=\\sum _{n\\leq X} d_3(n), where d_3(n) is the number of ordered factorizations of n into three positive integers.  \nA three-dimensional Dirichlet hyperbola method (see e.g. Graham-Kolesnik, *Van der Corput's Method of Exponential Sums*, Thm. 1.9) gives  \n\n  T(X)=\\frac{1}{2} X (log X)^2 + O(X log X).    (11)\n\nHence there exist constants c>0 and X_0 such that  \n\n  T(X) \\geq  c X (log X)^2  for all X \\geq  X_0. (12)\n\nWith X=X(N) from (3) and N large,\n\n  |S(N)| = T(X(N)) \\geq  c (N log N)^{3/2}(log N)^2  \n          = c N^{3/2}(log N)^{7/2}.  (13)\n\nStep 4.  Contradiction.  \nCombine (2), (10) and (13):\n\n  10 N = |R(N)| \\geq  |S(N)| \\geq  c N^{3/2}(log N)^{7/2}. (14)\n\nDivide by N:\n\n  10 \\geq  c N^{1/2}(log N)^{7/2}.        (15)\n\nThe right-hand side tends to \\infty  as N\\to \\infty , contradicting (15) once  \n\n  N > max{16, X_0, (10/c)^2}.        (16)\n\nTherefore no array can satisfy both (1) and (2).  Consequently there exists a triple (m,n,p) with  \n\n  a_{(m},_n,_{p)} > (m n p)^{2/3} / log(m n p+1),\n\nas required. \\blacksquare \n\n------------------------------------------------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.686273",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher dimension: The problem escalates from a 2-dimensional array to a 3-dimensional one, enlarging the combinatorial enumeration from pairs to triples.  \n• Sub-polynomial bound: The exponent 2⁄3 forces consideration of products ijk ≤ N^{3⁄2}, introducing non-linear rescaling absent in the original.  \n• Asymptotic enumeration: Unlike the harmonic-series argument of the original, the proof now requires estimating the growth of T(X), the count of integer triples with bounded product.  This demands either the multi-dimensional Dirichlet hyperbola method or known bounds on summatory divisor functions – techniques beyond elementary series divergence.  \n• Additional monotonicity constraint: Condition (3) intertwines the indices, necessitating an order-ideal argument to show that S(N) ⊆ R(N) and ensuring the lower bound used in (4).  \n• Resulting complexity: Combining these elements yields growth of order X(log X)², leading to a contradiction only after careful analytic estimates, substantially deepening the theoretical framework compared with the original harmonic-series proof."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n\n  A = (a_{(i},_j,_{k)})_{(i},_j,_k \\geq  1_)  \n\nbe a triply-infinite array of positive integers indexed by ordered triples (i,j,k)\\in \\mathbb{N}^3.  \nAssume the following two conditions.\n\n1.  (Uniform multiplicity)  Every positive integer appears in A **exactly ten times**.  \n\n2.  (Strong sub-polynomial bound)  For every (i,j,k) one has  \n  a_{(i},_j,_{k)} \\leq  \\lfloor  (ijk)^{2/3} / log(ijk+1) \\rfloor .  (\\star )\n\nProve that these two requirements are incompatible; that is, show that there exists a triple (m,n,p) for which  \n\n  a_{(m},_n,_{p)} > (mnp)^{2/3} / log(mnp+1).\n\n(The logarithm is natural, but the base is irrelevant as long as it is fixed and greater than 1.)\n\n------------------------------------------------------------------------------------------------------------",
+      "solution": "We argue by contradiction.  Suppose an array A satisfies (1) and (2).\n\nStep 1.  A bookkeeping set.  \nFor N\\in \\mathbb{N} define  \n\n  R(N) := {(i,j,k)\\in \\mathbb{N}^3 : a_{(i},_j,_{k)} \\leq  N}.      (1)  \n\nBecause each positive integer \\leq  N occurs **exactly** ten times,  \n\n  |R(N)| = 10 N.              (2)\n\nStep 2.  A large subset of R(N).  \nPut  \n\n  X(N) := (N log N)^{3/2},    N \\geq  4,   (3)  \n  S(N) := {(i,j,k)\\in \\mathbb{N}^3 : i j k \\leq  X(N)}.   (4)\n\nWe show that for every sufficiently large N one has S(N) \\subseteq  R(N).  \nDefine  \n\n  f(t) := t^{2/3}/log(t+1)  (t>0).    (5)\n\nClaim.  For all N \\geq  16 and all 0 < t \\leq  X(N) we have f(t) \\leq  N.\n\nProof of the claim.  \n(a) The interval (0,7].  A direct calculation gives  \n\n  max_{0<t\\leq 7} f(t)=f(7)\\approx 5.13<16\\leq N.   (6)\n\n(b) The interval [7, X(N)].  We verify that f is strictly increasing on [7,\\infty ).  \nDifferentiating correctly,\n\n  f'(t)=t^{-1/3}(log(t+1))^{-2} [(2/3) log(t+1)-t/(t+1)]. (7)\n\nFor t \\geq  7 we have log(t+1) \\geq  log 8 > 2, so  \n\n  (2/3) log(t+1) \\geq  (2/3)\\cdot 2 = 4/3 > 1 \\geq  t/(t+1),  \n\nwhence the bracket in (7) is positive and therefore f is increasing on [7,\\infty ).\n\nConsequently the maximum of f on [7,X(N)] is f(X(N)), and  \n\n  f(X(N)) = X(N)^{2/3}/log(X(N)+1)  \n      = N log N / log((N log N)^{3/2}+1).  (8)\n\nSince log((N log N)^{3/2}+1) \\geq  (3/2) log N for N \\geq  4,  \n\n  f(X(N)) \\leq  N log N / ((3/2) log N) = (2/3)N < N. (9)\n\nCombining (6) and (9) yields f(t) \\leq  N for all 0<t\\leq X(N), so by (\\star ) we indeed have  \n\n  S(N) \\subseteq  R(N).             (10)\n\nStep 3.  Counting triples with bounded product.  \nDenote  \n\n  T(X) := |{(i,j,k)\\in \\mathbb{N}^3 : i j k \\leq  X}|.  \n\nWrite n = i j k.  Then T(X)=\\sum _{n\\leq X} d_3(n), where d_3(n) is the number of ordered factorizations of n into three positive integers.  \nA three-dimensional Dirichlet hyperbola method (see e.g. Graham-Kolesnik, *Van der Corput's Method of Exponential Sums*, Thm. 1.9) gives  \n\n  T(X)=\\frac{1}{2} X (log X)^2 + O(X log X).    (11)\n\nHence there exist constants c>0 and X_0 such that  \n\n  T(X) \\geq  c X (log X)^2  for all X \\geq  X_0. (12)\n\nWith X=X(N) from (3) and N large,\n\n  |S(N)| = T(X(N)) \\geq  c (N log N)^{3/2}(log N)^2  \n          = c N^{3/2}(log N)^{7/2}.  (13)\n\nStep 4.  Contradiction.  \nCombine (2), (10) and (13):\n\n  10 N = |R(N)| \\geq  |S(N)| \\geq  c N^{3/2}(log N)^{7/2}. (14)\n\nDivide by N:\n\n  10 \\geq  c N^{1/2}(log N)^{7/2}.        (15)\n\nThe right-hand side tends to \\infty  as N\\to \\infty , contradicting (15) once  \n\n  N > max{16, X_0, (10/c)^2}.        (16)\n\nTherefore no array can satisfy both (1) and (2).  Consequently there exists a triple (m,n,p) with  \n\n  a_{(m},_n,_{p)} > (m n p)^{2/3} / log(m n p+1),\n\nas required. \\blacksquare \n\n------------------------------------------------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.538006",
+        "was_fixed": false,
+        "difficulty_analysis": "• Higher dimension: The problem escalates from a 2-dimensional array to a 3-dimensional one, enlarging the combinatorial enumeration from pairs to triples.  \n• Sub-polynomial bound: The exponent 2⁄3 forces consideration of products ijk ≤ N^{3⁄2}, introducing non-linear rescaling absent in the original.  \n• Asymptotic enumeration: Unlike the harmonic-series argument of the original, the proof now requires estimating the growth of T(X), the count of integer triples with bounded product.  This demands either the multi-dimensional Dirichlet hyperbola method or known bounds on summatory divisor functions – techniques beyond elementary series divergence.  \n• Additional monotonicity constraint: Condition (3) intertwines the indices, necessitating an order-ideal argument to show that S(N) ⊆ R(N) and ensuring the lower bound used in (4).  \n• Resulting complexity: Combining these elements yields growth of order X(log X)², leading to a contradiction only after careful analytic estimates, substantially deepening the theoretical framework compared with the original harmonic-series proof."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

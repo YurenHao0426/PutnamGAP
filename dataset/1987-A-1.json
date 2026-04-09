@@ -1,0 +1,129 @@
+{
+  "index": "1987-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Curves $A,B,C$ and $D$ are defined in the plane as follows:\n\\begin{align*}\nA &= \\left\\{ (x,y): x^2-y^2 = \\frac{x}{x^2+y^2} \\right\\}, \\\\\nB &= \\left\\{ (x,y): 2xy + \\frac{y}{x^2+y^2} = 3 \\right\\}, \\\\\nC &= \\left\\{ (x,y): x^3-3xy^2+3y=1 \\right\\}, \\\\\nD &= \\left\\{ (x,y): 3x^2 y - 3x - y^3 = 0\\right\\}.\n\\end{align*}\nProve that $A \\cap B = C \\cap D$.",
+  "solution": "Solution 1. Let \\( z=x+i y \\). The equations defining \\( A \\) and \\( B \\) are the real and imaginary parts of the equation \\( z^{2}=z^{-1}+3 i \\), and similarly the equations defining \\( C \\) and \\( D \\) are the real and imaginary parts of \\( z^{3}-3 i z=1 \\). Hence for all real \\( x \\) and \\( y \\), we have\n\\[\n(x, y) \\in A \\cap B \\Longleftrightarrow z^{2}=z^{-1}+3 i \\Longleftrightarrow z^{3}-3 i z=1 \\Longleftrightarrow(x, y) \\in C \\cap D\n\\]\n\nThus \\( A \\cap B=C \\cap D \\).\nSolution 2. Let \\( F=x^{2}-y^{2}-\\frac{x}{x^{2}+y^{2}}, G=2 x y+\\frac{y}{x^{2}+y^{2}}-3, H=x^{3}-3 x y^{2}+3 y-1 \\), and \\( J=3 x^{2} y-3 x-y^{3} \\) be the rational functions whose sets of zeros are \\( A, B, C \\), and \\( D \\), respectively. The identity\n\\[\n\\left(\\begin{array}{cc}\nx & -y \\\\\ny & x\n\\end{array}\\right)\\binom{F}{G}=\\binom{H}{J}\n\\]\nshows immediately that \\( F=G=0 \\) implies \\( H=J=0 \\). Conversely if \\( H=J=0 \\) at \\( (x, y) \\), then \\( (x, y) \\neq(0,0) \\), so \\( \\operatorname{det}\\left(\\begin{array}{cc}x & -y \\\\ y & x\\end{array}\\right)=x^{2}+y^{2} \\) is nonzero, so (1) implies \\( F=G=0 \\) at \\( (x, y) \\).\n\nRemark. Solution 1 multiplies \\( z^{2}-z^{-1}-3 i \\) by \\( z \\) to obtain \\( z^{3}-3 i z-1 \\). Solution 2 is simply doing this key step in terms of real and imaginary parts, so it is really the same solution, less elegantly written.",
+  "vars": [
+    "x",
+    "y",
+    "z"
+  ],
+  "params": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "F",
+    "G",
+    "H",
+    "J"
+  ],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizcoord",
+        "y": "vertcoord",
+        "z": "complexz",
+        "A": "curvea",
+        "B": "curveb",
+        "C": "curvec",
+        "D": "curved",
+        "F": "functionf",
+        "G": "functiong",
+        "H": "functionh",
+        "J": "functionj"
+      },
+      "question": "Curves $curvea,curveb,curvec$ and $curved$ are defined in the plane as follows:\n\\begin{align*}\ncurvea &= \\left\\{ (horizcoord,vertcoord): horizcoord^2-vertcoord^2 = \\frac{horizcoord}{horizcoord^2+vertcoord^2} \\right\\}, \\\\\ncurveb &= \\left\\{ (horizcoord,vertcoord): 2horizcoord vertcoord + \\frac{vertcoord}{horizcoord^2+vertcoord^2} = 3 \\right\\}, \\\\\ncurvec &= \\left\\{ (horizcoord,vertcoord): horizcoord^3-3horizcoord vertcoord^2+3vertcoord=1 \\right\\}, \\\\\ncurved &= \\left\\{ (horizcoord,vertcoord): 3horizcoord^2 vertcoord - 3horizcoord - vertcoord^3 = 0\\right\\}.\n\\end{align*}\nProve that $curvea \\cap curveb = curvec \\cap curved$.",
+      "solution": "Solution 1. Let \\( complexz=horizcoord+i vertcoord \\). The equations defining \\( curvea \\) and \\( curveb \\) are the real and imaginary parts of the equation \\( complexz^{2}=complexz^{-1}+3 i \\), and similarly the equations defining \\( curvec \\) and \\( curved \\) are the real and imaginary parts of \\( complexz^{3}-3 i complexz=1 \\). Hence for all real \\( horizcoord \\) and \\( vertcoord \\), we have\n\\[\n(horizcoord, vertcoord) \\in curvea \\cap curveb \\Longleftrightarrow complexz^{2}=complexz^{-1}+3 i \\Longleftrightarrow complexz^{3}-3 i complexz=1 \\Longleftrightarrow(horizcoord, vertcoord) \\in curvec \\cap curved\n\\]\n\nThus \\( curvea \\cap curveb=curvec \\cap curved \\).\n\nSolution 2. Let \\( functionf=horizcoord^{2}-vertcoord^{2}-\\frac{horizcoord}{horizcoord^{2}+vertcoord^{2}},\\; functiong=2 horizcoord vertcoord+\\frac{vertcoord}{horizcoord^{2}+vertcoord^{2}}-3,\\; functionh=horizcoord^{3}-3 horizcoord vertcoord^{2}+3 vertcoord-1 \\), and \\( functionj=3 horizcoord^{2} vertcoord-3 horizcoord-vertcoord^{3} \\) be the rational functions whose sets of zeros are \\( curvea, curveb, curvec \\), and \\( curved \\), respectively. The identity\n\\[\n\\left(\\begin{array}{cc}\nhorizcoord & -vertcoord \\\\\nvertcoord & horizcoord\n\\end{array}\\right)\\binom{functionf}{functiong}=\\binom{functionh}{functionj}\n\\]\nshows immediately that \\( functionf=functiong=0 \\) implies \\( functionh=functionj=0 \\). Conversely if \\( functionh=functionj=0 \\) at \\( (horizcoord, vertcoord) \\), then \\( (horizcoord, vertcoord) \\neq(0,0) \\), so \\( \\operatorname{det}\\left(\\begin{array}{cc}horizcoord & -vertcoord \\\\ vertcoord & horizcoord\\end{array}\\right)=horizcoord^{2}+vertcoord^{2} \\) is nonzero, so (1) implies \\( functionf=functiong=0 \\) at \\( (horizcoord, vertcoord) \\).\n\nRemark. Solution 1 multiplies \\( complexz^{2}-complexz^{-1}-3 i \\) by \\( complexz \\) to obtain \\( complexz^{3}-3 i complexz-1 \\). Solution 2 is simply doing this key step in terms of real and imaginary parts, so it is really the same solution, less elegantly written."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "y": "sapphire",
+        "z": "peregrine",
+        "A": "lamplight",
+        "B": "starwheel",
+        "C": "umbrella",
+        "D": "ridgepass",
+        "F": "topazstone",
+        "G": "quillshade",
+        "H": "berrybrook",
+        "J": "duskpetal"
+      },
+      "question": "Curves $lamplight,starwheel,umbrella$ and $ridgepass$ are defined in the plane as follows:\n\\begin{align*}\nlamplight &= \\left\\{ (marigold,sapphire): marigold^{2}-sapphire^{2} = \\frac{marigold}{marigold^{2}+sapphire^{2}} \\right\\}, \\\\\nstarwheel &= \\left\\{ (marigold,sapphire): 2 marigold sapphire + \\frac{sapphire}{marigold^{2}+sapphire^{2}} = 3 \\right\\}, \\\\\numbrella &= \\left\\{ (marigold,sapphire): marigold^{3}-3 marigold sapphire^{2}+3 sapphire=1 \\right\\}, \\\\\nridgepass &= \\left\\{ (marigold,sapphire): 3 marigold^{2} sapphire - 3 marigold - sapphire^{3} = 0\\right\\}.\n\\end{align*}\nProve that $lamplight \\cap starwheel = umbrella \\cap ridgepass$.",
+      "solution": "Solution 1. Let \\( peregrine=marigold+i sapphire \\). The equations defining \\( lamplight \\) and \\( starwheel \\) are the real and imaginary parts of the equation \\( peregrine^{2}=peregrine^{-1}+3 i \\), and similarly the equations defining \\( umbrella \\) and \\( ridgepass \\) are the real and imaginary parts of \\( peregrine^{3}-3 i peregrine=1 \\). Hence for all real marigold and sapphire, we have\n\\[\n(marigold, sapphire) \\in lamplight \\cap starwheel \\Longleftrightarrow peregrine^{2}=peregrine^{-1}+3 i \\Longleftrightarrow peregrine^{3}-3 i peregrine=1 \\Longleftrightarrow(marigold, sapphire) \\in umbrella \\cap ridgepass\n\\]\n\nThus \\( lamplight \\cap starwheel=umbrella \\cap ridgepass \\).\nSolution 2. Let \\( topazstone=marigold^{2}-sapphire^{2}-\\frac{marigold}{marigold^{2}+sapphire^{2}}, quillshade=2 marigold sapphire+\\frac{sapphire}{marigold^{2}+sapphire^{2}}-3, berrybrook=marigold^{3}-3 marigold sapphire^{2}+3 sapphire-1 \\), and \\( duskpetal=3 marigold^{2} sapphire-3 marigold-sapphire^{3} \\) be the rational functions whose sets of zeros are \\( lamplight, starwheel, umbrella \\), and \\( ridgepass \\), respectively. The identity\n\\[\n\\left(\\begin{array}{cc}\nmarigold & -sapphire \\\\\nsapphire & marigold\n\\end{array}\\right)\\binom{topazstone}{quillshade}=\\binom{berrybrook}{duskpetal}\n\\]\nshows immediately that \\( topazstone=quillshade=0 \\) implies \\( berrybrook=duskpetal=0 \\). Conversely if \\( berrybrook=duskpetal=0 \\) at \\( (marigold, sapphire) \\), then \\( (marigold, sapphire) \\neq(0,0) \\), so \\( \\operatorname{det}\\left(\\begin{array}{cc}marigold & -sapphire \\\\ sapphire & marigold\\end{array}\\right)=marigold^{2}+sapphire^{2} \\) is nonzero, so (1) implies \\( topazstone=quillshade=0 \\) at \\( (marigold, sapphire) \\).\n\nRemark. Solution 1 multiplies \\( peregrine^{2}-peregrine^{-1}-3 i \\) by \\( peregrine \\) to obtain \\( peregrine^{3}-3 i peregrine-1 \\). Solution 2 is simply doing this key step in terms of real and imaginary parts, so it is really the same solution, less elegantly written."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvertical",
+        "y": "knownhorizontal",
+        "z": "realcoordinate",
+        "A": "noncurveone",
+        "B": "noncurvetwo",
+        "C": "noncurvethree",
+        "D": "noncurvefour",
+        "F": "nonfunctionone",
+        "G": "nonfunctiontwo",
+        "H": "nonfunctionthree",
+        "J": "nonfunctionfour"
+      },
+      "question": "Curves $noncurveone,noncurvetwo,noncurvethree$ and $noncurvefour$ are defined in the plane as follows:\n\\begin{align*}\nnoncurveone &= \\left\\{ (fixedvertical,knownhorizontal): fixedvertical^2-knownhorizontal^2 = \\frac{fixedvertical}{fixedvertical^2+knownhorizontal^2} \\right\\}, \\\\\nnoncurvetwo &= \\left\\{ (fixedvertical,knownhorizontal): 2 fixedvertical knownhorizontal + \\frac{knownhorizontal}{fixedvertical^2+knownhorizontal^2} = 3 \\right\\}, \\\\\nnoncurvethree &= \\left\\{ (fixedvertical,knownhorizontal): fixedvertical^3-3 fixedvertical knownhorizontal^2+3 knownhorizontal=1 \\right\\}, \\\\\nnoncurvefour &= \\left\\{ (fixedvertical,knownhorizontal): 3 fixedvertical^2 knownhorizontal - 3 fixedvertical - knownhorizontal^3 = 0\\right\\}.\n\\end{align*}\nProve that $noncurveone \\cap noncurvetwo = noncurvethree \\cap noncurvefour$.",
+      "solution": "Solution 1. Let \\( realcoordinate=fixedvertical+i knownhorizontal \\). The equations defining \\( noncurveone \\) and \\( noncurvetwo \\) are the real and imaginary parts of the equation \\( realcoordinate^{2}=realcoordinate^{-1}+3 i \\), and similarly the equations defining \\( noncurvethree \\) and \\( noncurvefour \\) are the real and imaginary parts of \\( realcoordinate^{3}-3 i realcoordinate=1 \\). Hence for all real \\( fixedvertical \\) and \\( knownhorizontal \\), we have\n\\[\n(fixedvertical, knownhorizontal) \\in noncurveone \\cap noncurvetwo \\Longleftrightarrow realcoordinate^{2}=realcoordinate^{-1}+3 i \\Longleftrightarrow realcoordinate^{3}-3 i realcoordinate=1 \\Longleftrightarrow(fixedvertical, knownhorizontal) \\in noncurvethree \\cap noncurvefour\n\\]\n\nThus \\( noncurveone \\cap noncurvetwo = noncurvethree \\cap noncurvefour \\).\n\nSolution 2. Let \\( nonfunctionone=fixedvertical^{2}-knownhorizontal^{2}-\\frac{fixedvertical}{fixedvertical^{2}+knownhorizontal^{2}}, nonfunctiontwo=2 fixedvertical knownhorizontal+\\frac{knownhorizontal}{fixedvertical^{2}+knownhorizontal^{2}}-3, nonfunctionthree=fixedvertical^{3}-3 fixedvertical knownhorizontal^{2}+3 knownhorizontal-1 \\), and \\( nonfunctionfour=3 fixedvertical^{2} knownhorizontal-3 fixedvertical-knownhorizontal^{3} \\) be the rational functions whose sets of zeros are \\( noncurveone, noncurvetwo, noncurvethree \\), and \\( noncurvefour \\), respectively. The identity\n\\[\n\\left(\\begin{array}{cc}\nfixedvertical & -knownhorizontal \\\\\nknownhorizontal & fixedvertical\n\\end{array}\\right)\\binom{nonfunctionone}{nonfunctiontwo}=\\binom{nonfunctionthree}{nonfunctionfour}\n\\]\nshows immediately that \\( nonfunctionone=nonfunctiontwo=0 \\) implies \\( nonfunctionthree=nonfunctionfour=0 \\). Conversely if \\( nonfunctionthree=nonfunctionfour=0 \\) at \\( (fixedvertical, knownhorizontal) \\), then \\( (fixedvertical, knownhorizontal) \\neq(0,0) \\), so \\( \\operatorname{det}\\left(\\begin{array}{cc}fixedvertical & -knownhorizontal \\\\ knownhorizontal & fixedvertical\\end{array}\\right)=fixedvertical^{2}+knownhorizontal^{2} \\) is nonzero, so (1) implies \\( nonfunctionone=nonfunctiontwo=0 \\) at \\( (fixedvertical, knownhorizontal) \\).\n\nRemark. Solution 1 multiplies \\( realcoordinate^{2}-realcoordinate^{-1}-3 i \\) by \\( realcoordinate \\) to obtain \\( realcoordinate^{3}-3 i realcoordinate-1 \\). Solution 2 is simply doing this key step in terms of real and imaginary parts, so it is really the same solution, less elegantly written."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "z": "mnbvcxqw",
+        "A": "poilkjhg",
+        "B": "asdfghjk",
+        "C": "zxcvbnml",
+        "D": "qwertyui",
+        "F": "lkjhgfdp",
+        "G": "poiuytre",
+        "H": "mnbhgfdx",
+        "J": "qazwsxed"
+      },
+      "question": "Problem:\n<<<\nCurves $poilkjhg,asdfghjk,zxcvbnml$ and $qwertyui$ are defined in the plane as follows:\n\\begin{align*}\npoilkjhg &= \\left\\{ (qzxwvtnp,hjgrksla): qzxwvtnp^2-hjgrksla^2 = \\frac{qzxwvtnp}{qzxwvtnp^2+hjgrksla^2} \\right\\}, \\\\\nasdfghjk &= \\left\\{ (qzxwvtnp,hjgrksla): 2qzxwvtnp hjgrksla + \\frac{hjgrksla}{qzxwvtnp^2+hjgrksla^2} = 3 \\right\\}, \\\\\nzxcvbnml &= \\left\\{ (qzxwvtnp,hjgrksla): qzxwvtnp^3-3qzxwvtnp hjgrksla^2+3hjgrksla=1 \\right\\}, \\\\\nqwertyui &= \\left\\{ (qzxwvtnp,hjgrksla): 3qzxwvtnp^2 hjgrksla - 3qzxwvtnp - hjgrksla^3 = 0\\right\\}.\n\\end{align*}\nProve that $poilkjhg \\cap asdfghjk = zxcvbnml \\cap qwertyui$.\n>>>\n",
+      "solution": "Solution 1. Let \\( mnbvcxqw=qzxwvtnp+i hjgrksla \\). The equations defining \\( poilkjhg \\) and \\( asdfghjk \\) are the real and imaginary parts of the equation \\( mnbvcxqw^{2}=mnbvcxqw^{-1}+3 i \\), and similarly the equations defining \\( zxcvbnml \\) and \\( qwertyui \\) are the real and imaginary parts of \\( mnbvcxqw^{3}-3 i mnbvcxqw=1 \\). Hence for all real \\( qzxwvtnp \\) and \\( hjgrksla \\), we have\n\\[\n(qzxwvtnp, hjgrksla) \\in poilkjhg \\cap asdfghjk \\Longleftrightarrow mnbvcxqw^{2}=mnbvcxqw^{-1}+3 i \\Longleftrightarrow mnbvcxqw^{3}-3 i mnbvcxqw=1 \\Longleftrightarrow(qzxwvtnp, hjgrksla) \\in zxcvbnml \\cap qwertyui\n\\]\n\nThus \\( poilkjhg \\cap asdfghjk=zxcvbnml \\cap qwertyui \\).\nSolution 2. Let \\( lkjhgfdp=qzxwvtnp^{2}-hjgrksla^{2}-\\frac{qzxwvtnp}{qzxwvtnp^{2}+hjgrksla^{2}}, poiuytre=2 qzxwvtnp hjgrksla+\\frac{hjgrksla}{qzxwvtnp^{2}+hjgrksla^{2}}-3, mnbhgfdx=qzxwvtnp^{3}-3 qzxwvtnp hjgrksla^{2}+3 hjgrksla-1 \\), and \\( qazwsxed=3 qzxwvtnp^{2} hjgrksla-3 qzxwvtnp-hjgrksla^{3} \\) be the rational functions whose sets of zeros are \\( poilkjhg, asdfghjk, zxcvbnml \\), and \\( qwertyui \\), respectively. The identity\n\\[\n\\left(\\begin{array}{cc}\nqzxwvtnp & -hjgrksla \\\\\nhjgrksla & qzxwvtnp\n\\end{array}\\right)\\binom{lkjhgfdp}{poiuytre}=\\binom{mnbhgfdx}{qazwsxed}\n\\]\nshows immediately that \\( lkjhgfdp=poiuytre=0 \\) implies \\( mnbhgfdx=qazwsxed=0 \\). Conversely if \\( mnbhgfdx=qazwsxed=0 \\) at \\( (qzxwvtnp, hjgrksla) \\), then \\( (qzxwvtnp, hjgrksla) \\neq(0,0) \\), so \\( \\operatorname{det}\\left(\\begin{array}{cc}qzxwvtnp & -hjgrksla \\\\ hjgrksla & qzxwvtnp\\end{array}\\right)=qzxwvtnp^{2}+hjgrksla^{2} \\) is nonzero, so (1) implies \\( lkjhgfdp=poiuytre=0 \\) at \\( (qzxwvtnp, hjgrksla) \\).\n\nRemark. Solution 1 multiplies \\( mnbvcxqw^{2}-mnbvcxqw^{-1}-3 i \\) by \\( mnbvcxqw \\) to obtain \\( mnbvcxqw^{3}-3 i mnbvcxqw-1 \\). Solution 2 is simply doing this key step in terms of real and imaginary parts, so it is really the same solution, less elegantly written."
+    },
+    "kernel_variant": {
+      "question": "Let\n\nz = x + i y, \\qquad (x,y) \\in \\mathbb R^{2}.\n\nDefine four real curves by\n\nA = \\bigl\\{(x,y):\\;x^{4}-6x^{2}y^{2}+y^{4}=\\dfrac{2x}{x^{2}+y^{2}}\\bigr\\},\n\nB = \\bigl\\{(x,y):\\;4xy\\,(x^{2}-y^{2})+\\dfrac{2y}{x^{2}+y^{2}}=5\\bigr\\},\n\nC = \\bigl\\{(x,y):\\;x^{5}-10x^{3}y^{2}+5xy^{4}+5y=2\\bigr\\},\n\nD = \\bigl\\{(x,y):\\;5x^{4}y-10x^{2}y^{3}+y^{5}-5x=0\\bigr\\}.\n\n(Proviso: the point (x,y) = (0,0) is excluded from the definitions of A and B so that the denominators are well defined.)\n\nProve that\n\n                    A \\cap B\\;=\\;C \\cap D.",
+      "solution": "Write z = x + i y with (x,y) \\neq (0,0).\n\nStep 1 -  Curves A and B arise from a single complex equation.\n-------------------------------------------------------------\nCompute the fourth power of z and the number 2\\,/z + 5 i.\n\n  z^{4} = (x + i y)^{4} = (x^{4} - 6 x^{2} y^{2} + y^{4})\n                         \\, + \\, i\\,[4 x y (x^{2} - y^{2})],\n\n  2/z + 5 i = \\dfrac{2(x - i y)}{x^{2}+y^{2}} + 5 i\n            = \\dfrac{2x}{x^{2}+y^{2}}\n              \\, + \\, i\\Bigl(5 - \\dfrac{2y}{x^{2}+y^{2}}\\Bigr).\n\nTherefore z^{4} = 2/z + 5 i if and only if the real and imaginary\nparts are equal, i.e.\n\n   x^{4} - 6 x^{2} y^{2} + y^{4}        = \\dfrac{2x}{x^{2}+y^{2}}  \\;(\\!*\\!)\n   4 x y (x^{2} - y^{2}) + \\dfrac{2y}{x^{2}+y^{2}} = 5          \\;(\\!*\\!*).\n\nConditions (\\!*\\!) and (\\!*\\!*) are exactly the equations that\ndefine the curves A and B, respectively.  Hence\n\n           (x,y) \\in A \\cap B    \\Longleftrightarrow   z^{4} = 2/z + 5 i.   (1)\n\nStep 2 -  Eliminate the fraction.\n---------------------------------\nBecause z \\neq 0, multiplying (1) by z gives\n\n           z^{5} - 5 i z = 2.                                         (2)\n\nStep 3 -  Expand (2) into real and imaginary parts.\n---------------------------------------------------\nFirst expand z^{5}:\n\n  z^{5} = (x + i y)^{5}\n        = (x^{5} - 10 x^{3} y^{2} + 5 x y^{4})\n          \\, + \\, i\\,[5 x^{4} y - 10 x^{2} y^{3} + y^{5}].\n\nNext,  - 5 i z = 5 y \\; - \\; 5 i x.\n\nHence\n\n  z^{5} - 5 i z\n  = \\bigl[x^{5} - 10 x^{3} y^{2} + 5 x y^{4} + 5 y\\bigr]\n    \\, + \\, i\\bigl[5 x^{4} y - 10 x^{2} y^{3} + y^{5} - 5 x\\bigr].\n\nEquation (2) says that this complex number equals 2 (whose real part is 2 and whose imaginary part is 0).  Therefore\n\n   x^{5} - 10 x^{3} y^{2} + 5 x y^{4} + 5 y = 2,                 (3)\n   5 x^{4} y - 10 x^{2} y^{3} + y^{5} - 5 x = 0.                 (4)\n\nEquation (3) is the defining relation for curve C, and (4) is the\ndefining relation for the (corrected) curve D.  Consequently\n\n           (x,y) \\in C \\cap D    \\Longleftrightarrow   z^{5} - 5 i z = 2.   (5)\n\nStep 4 -  Equate the descriptions.\n----------------------------------\nFrom (1), (2) and (5) we have the chain of equivalences\n\n   (x,y) \\in A \\cap B\\; \\Longleftrightarrow \\;z^{4} = 2/z + 5 i\n                      \\Longleftrightarrow \\;z^{5} - 5 i z = 2\n                      \\Longleftrightarrow \\;(x,y) \\in C \\cap D.\n\nTherefore A \\cap B = C \\cap D, as claimed. \\hfill \\Box",
+      "_meta": {
+        "core_steps": [
+          "Encode the point (x, y) as the complex number z = x + i y.",
+          "Observe that the equations for A and B are respectively the real and imaginary parts of a single complex relation E₁ :  z² = z⁻¹ + 3 i.",
+          "Because z ≠ 0, multiply E₁ by z to get the equivalent relation E₂ :  z³ − 3 i z = 1.",
+          "Note that the equations for C and D are exactly the real and imaginary parts of E₂, hence the solution sets of the two systems coincide: A ∩ B = C ∩ D."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The coefficient of the purely imaginary term (3 in 3 i) that appears in both complex equations and in curves B and D; any non-zero real constant would work.",
+            "original": "3"
+          },
+          "slot2": {
+            "description": "The coefficient of z⁻¹ (1) which becomes the constant term on the right of the second complex equation and shows up in curves A and C; any non-zero real constant would work.",
+            "original": "1"
+          },
+          "slot3": {
+            "description": "The exponent 2 in z² (and consequently the exponent 3 in z³ after multiplying by z); any integer n≥1, with the second exponent n+1, preserves the argument.",
+            "original": "2 (→3 after multiplication)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

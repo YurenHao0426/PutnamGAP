@@ -1,0 +1,88 @@
+{
+  "index": "1984-B-3",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-3\nProve or disprove the following statement: If \\( F \\) is a finite set with two or more elements, then there exists a binary operation * on \\( F \\) such that for all \\( x, y, z \\) in \\( F \\).\n(i) \\( x * z=y * z \\) implies \\( x=y \\) (right cancellation holds). and\n(ii) \\( x *(y * z) \\neq(x * y) * z \\) (no case of associativity holds).",
+  "solution": "B-3.\nThe statement is true. Let \\( \\phi \\) be any bijection on \\( F \\) with no fixed points, and set \\( x * y=\\phi(x) \\).",
+  "vars": [
+    "x",
+    "y",
+    "z"
+  ],
+  "params": [
+    "F",
+    "\\\\phi"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "elementalpha",
+        "y": "elementbeta",
+        "z": "elementgamma",
+        "F": "setfinite",
+        "\\phi": "bijection"
+      },
+      "question": "Problem B-3\nProve or disprove the following statement: If \\( setfinite \\) is a finite set with two or more elements, then there exists a binary operation * on \\( setfinite \\) such that for all \\( elementalpha, elementbeta, elementgamma \\) in \\( setfinite \\).\n(i) \\( elementalpha * elementgamma=elementbeta * elementgamma \\) implies \\( elementalpha=elementbeta \\) (right cancellation holds). and\n(ii) \\( elementalpha *(elementbeta * elementgamma) \\neq(elementalpha * elementbeta) * elementgamma \\) (no case of associativity holds).",
+      "solution": "B-3.\nThe statement is true. Let \\( bijection \\) be any bijection on \\( setfinite \\) with no fixed points, and set \\( elementalpha * elementbeta=bijection(elementalpha) \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pinestake",
+        "y": "driftbloom",
+        "z": "cragbridge",
+        "F": "snowglade",
+        "\\phi": "windharbor"
+      },
+      "question": "Problem B-3\nProve or disprove the following statement: If \\( snowglade \\) is a finite set with two or more elements, then there exists a binary operation * on \\( snowglade \\) such that for all \\( pinestake, driftbloom, cragbridge \\) in \\( snowglade \\).\n(i) \\( pinestake * cragbridge=driftbloom * cragbridge \\) implies \\( pinestake=driftbloom \\) (right cancellation holds). and\n(ii) \\( pinestake *(driftbloom * cragbridge) \\neq(pinestake * driftbloom) * cragbridge \\) (no case of associativity holds).",
+      "solution": "B-3.\nThe statement is true. Let \\( windharbor \\) be any bijection on \\( snowglade \\) with no fixed points, and set \\( pinestake * driftbloom=windharbor(pinestake) \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "y": "constantvalue",
+        "z": "stationaryval",
+        "F": "infiniteset",
+        "\\phi": "identitymap"
+      },
+      "question": "Problem B-3\nProve or disprove the following statement: If \\( infiniteset \\) is a finite set with two or more elements, then there exists a binary operation * on \\( infiniteset \\) such that for all \\( fixedvalue, constantvalue, stationaryval \\) in \\( infiniteset \\).\n(i) \\( fixedvalue * stationaryval = constantvalue * stationaryval \\) implies \\( fixedvalue = constantvalue \\) (right cancellation holds). and\n(ii) \\( fixedvalue *(constantvalue * stationaryval) \\neq(fixedvalue * constantvalue) * stationaryval \\) (no case of associativity holds).",
+      "solution": "B-3.\nThe statement is true. Let \\( identitymap \\) be any bijection on \\( infiniteset \\) with no fixed points, and set \\( fixedvalue * constantvalue = identitymap(fixedvalue) \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "F": "qzxwvtnp",
+        "\\phi": "hjgrksla",
+        "x": "mnlopqrs",
+        "y": "tuvwxabc",
+        "z": "ghijklst"
+      },
+      "question": "Problem B-3\nProve or disprove the following statement: If \\( qzxwvtnp \\) is a finite set with two or more elements, then there exists a binary operation * on \\( qzxwvtnp \\) such that for all \\( mnlopqrs, tuvwxabc, ghijklst \\) in \\( qzxwvtnp \\).\n(i) \\( mnlopqrs * ghijklst=tuvwxabc * ghijklst \\) implies \\( mnlopqrs=tuvwxabc \\) (right cancellation holds). and\n(ii) \\( mnlopqrs *(tuvwxabc * ghijklst) \\neq(mnlopqrs * tuvwxabc) * ghijklst \\) (no case of associativity holds).",
+      "solution": "B-3.\nThe statement is true. Let \\( hjgrksla \\) be any bijection on \\( qzxwvtnp \\) with no fixed points, and set \\( mnlopqrs * tuvwxabc=hjgrksla(mnlopqrs) \\)."
+    },
+    "kernel_variant": {
+      "question": "Let $F=\\mathbb{N}= \\{0,1,2,\\ldots\\}$.  \nFor $n\\ge 1$ an \\emph{$n$-fold $\\ast$-expression} is a formal word\n\\[\nx_{1}\\ast x_{2}\\ast\\cdots\\ast x_{n},\n\\]\ntogether with a choice of binary parenthesisation (there are\n\\[\nC_{\\,n-1}\\;=\\;\\frac{1}{n}\\binom{2n-2}{\\,n-1\\,}\n\\]\nsuch choices, the $(n-1)$-st Catalan number).\n\nConstruct an explicit binary operation\n\\[\n\\ast \\; :\\; F\\times F \\;\\longrightarrow\\; F\n\\]\nhaving all three properties below.\n\n1.\\; (two-sided cancellation)  \n   $\\;x\\ast y = x\\ast z \\;\\Longrightarrow\\; y=z$\n   and  \n   $y\\ast x = z\\ast x \\;\\Longrightarrow\\; y=z$\n   for every $x,y,z\\in F$;\n\n2.\\; (total non-associativity)  \n   For every integer $n\\ge 3$ and every $n$-tuple\n   $(x_{1},\\dots ,x_{n})$ of elements of $F$, the\n   $C_{\\,n-1}$ different parenthesised values of the word\n   $x_{1}\\ast\\cdots\\ast x_{n}$ are \\emph{pairwise distinct};\n   equivalently, no two distinct binary terms of length $\\ge 3$\n   coincide under any simultaneous substitution of the variables\n   by elements of $F$;\n\n3.\\; $F$ contains  \n\n   (i)  no one-sided identity for $\\ast$,  \n\n   (ii) no two-sided identity for $\\ast$,  \n\n   (iii) no idempotent element for $\\ast$.\n\nGive a complete proof that your construction satisfies all three requirements.",
+      "solution": "Throughout, let $F=\\mathbb{N}$.  Define the encoding\n\\[\n\\pi : \\mathbb{N}\\times\\mathbb{N}\\;\\longrightarrow\\;\\mathbb{N},\n\\qquad\n\\pi(a,b)=2^{a}\\,3^{b}.\n\\tag{1}\n\\]\nSet\n\\[\na\\ast b \\;:=\\; \\pi(a,b)=2^{a}\\,3^{b},\n\\qquad a,b\\in\\mathbb{N}.\n\\tag{2}\n\\]\n\n\\medskip\n\\textbf{Step 1.  Two-sided cancellation.}  \nUnique prime factorisation implies that $\\pi$ is injective in each coordinate:\nif $2^{x}\\,3^{y}=2^{x}\\,3^{z}$ then $y=z$, and if\n$2^{x}\\,3^{y}=2^{z}\\,3^{y}$ then $x=z$.\nHence\n\\[\na\\ast b=a\\ast c \\Longrightarrow 2^{a}\\,3^{b}=2^{a}\\,3^{c}\\Longrightarrow b=c,\n\\]\nand analogously $b\\ast a=c\\ast a\\Longrightarrow b=c$.  Thus both left and\nright cancellation hold.\n\n\\medskip\n\\textbf{Step 2.  Total non-associativity.}  \nRepresent each binary parenthesisation of\n$x_{1}\\ast\\cdots\\ast x_{n}$ by a rooted, ordered binary tree whose\nleaves are, from left to right, $x_{1},\\ldots ,x_{n}$.\nDenote the set of such trees by $\\mathcal{T}$.\nDefine recursively a valuation\n\\[\n\\varphi:\\mathcal{T}\\longrightarrow\\mathbb{N}\n\\]\nby\n\\[\n\\varphi(\\text{leaf labelled }x_{i})=x_{i},\\qquad\n\\varphi(T_{1}\\circ T_{2})=\n\\varphi(T_{1})\\ast\\varphi(T_{2})=\n2^{\\varphi(T_{1})}\\,3^{\\varphi(T_{2})},\n\\]\nwhere $T_{1}\\circ T_{2}$ is a tree whose root has left\nsub-tree $T_{1}$ and right sub-tree $T_{2}$.\n\n\\smallskip\n\\emph{Claim:} $\\varphi$ is injective.\n\n\\smallskip\n\\emph{Proof by induction on the number of internal nodes.}\n\nBase case (one leaf): trivial.\n\nInduction step: let $T,S\\in\\mathcal{T}$ have at least one internal node and\nassume $\\varphi(T)=\\varphi(S)$.  Write\n$T=T_{1}\\circ T_{2}$ and $S=S_{1}\\circ S_{2}$.\nThen\n\\[\n2^{\\varphi(T_{1})}\\,3^{\\varphi(T_{2})}\n=\n2^{\\varphi(S_{1})}\\,3^{\\varphi(S_{2})}.\n\\]\nUniqueness of prime factorisation yields\n$\\varphi(T_{1})=\\varphi(S_{1})$ and\n$\\varphi(T_{2})=\\varphi(S_{2})$.\nBy the induction hypothesis $T_{1}=S_{1}$ and $T_{2}=S_{2}$, whence $T=S$.\n\\hfill $\\square$\n\n\\smallskip\nThus different trees, i.e.\\ different parenthesisations,\nalways give different numerical values, and\nnon-associativity is complete: already for $n=3$\n\\[\nx\\ast(y\\ast z)=2^{x}\\,3^{2^{y}3^{z}}\n\\neq\n2^{2^{x}3^{y}}\\,3^{z}=(x\\ast y)\\ast z,\n\\]\nand no collisions occur for longer expressions.\n\n\\medskip\n\\textbf{Step 3.  Absence of identities and idempotents.}\n\n\\smallskip\n(i) \\emph{No right identity.}  \nSuppose $e$ satisfied $x\\ast e=x$ for every $x\\in F$.\nThen $2^{x}\\,3^{e}=x$ for all $x$.\nTaking $x=0$ gives $3^{e}=0$, impossible in $\\mathbb{N}$.\n\n\\smallskip\n(ii) \\emph{No left identity.}  \nIf $e\\ast x=x$ for every $x$, then $2^{e}\\,3^{x}=x$ for all $x$.\nPutting $x=0$ yields $2^{e}=0$, again impossible.\n\n\\smallskip\n(iii) \\emph{No idempotent.}  \nAn idempotent $a$ would satisfy $a\\ast a=a$, i.e.\n\\[\n2^{a}\\,3^{a}=a \\quad\\Longrightarrow\\quad 6^{a}=a.\n\\]\nBut $6^{a}\\ge 6>a$ for every $a\\ge 1$, while $a=0$ gives $1\\neq 0$.\nHence no solution exists.\n\n\\medskip\n\\textbf{Conclusion.}  \nThe operation \\eqref{2} satisfies two-sided cancellation,\nis totally non-associative, and admits neither one- nor two-sided identities\nnor idempotents.  All three requirements of the corrected problem are met.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.678714",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original problem and its kernel variant, the present task\ndemands several major additional layers of sophistication.\n\n• Two–sided cancellation replaces one–sided cancellation, forcing the\n  constructor to invent an operation that can be inverted in both arguments.\n\n• “Total non-associativity’’ is vastly stronger than merely exhibiting a\n  single triple violating associativity; one must guarantee that no binary\n  identity of any length (indeed, none of the Cₙ₋₁ parenthesisations) can\n  coincide.  This needs an injective encoding of full binary-tree structure,\n  far subtler than the brief argument of the original.\n\n• Extra algebraic restrictions (no identities, no idempotents) exclude a host\n  of cheap constructions that might accidentally introduce units or fixed\n  points; the constructor must therefore control additional arithmetic\n  properties of the operation.\n\n• The proof now relies on unique prime factorisation, recursion on binary\n  trees and Catalan-number counting—techniques absent from the original\n  problem—raising both the conceptual and computational load needed for a\n  complete solution.\n\nTogether these enhancements make the new variant significantly more\nchallenging and mathematically richer than either previous version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $F=\\mathbb{N}= \\{0,1,2,\\ldots\\}$.  \nFor $n\\ge 1$ an \\emph{$n$-fold $\\ast$-expression} is a formal word\n\\[\nx_{1}\\ast x_{2}\\ast\\cdots\\ast x_{n},\n\\]\ntogether with a choice of binary parenthesisation (there are\n\\[\nC_{\\,n-1}\\;=\\;\\frac{1}{n}\\binom{2n-2}{\\,n-1\\,}\n\\]\nsuch choices, the $(n-1)$-st Catalan number).\n\nConstruct an explicit binary operation\n\\[\n\\ast \\; :\\; F\\times F \\;\\longrightarrow\\; F\n\\]\nhaving all three properties below.\n\n1.\\; (two-sided cancellation)  \n   $\\;x\\ast y = x\\ast z \\;\\Longrightarrow\\; y=z$\n   and  \n   $y\\ast x = z\\ast x \\;\\Longrightarrow\\; y=z$\n   for every $x,y,z\\in F$;\n\n2.\\; (total non-associativity)  \n   For every integer $n\\ge 3$ and every $n$-tuple\n   $(x_{1},\\dots ,x_{n})$ of elements of $F$, the\n   $C_{\\,n-1}$ different parenthesised values of the word\n   $x_{1}\\ast\\cdots\\ast x_{n}$ are \\emph{pairwise distinct};\n   equivalently, no two distinct binary terms of length $\\ge 3$\n   coincide under any simultaneous substitution of the variables\n   by elements of $F$;\n\n3.\\; $F$ contains  \n\n   (i)  no one-sided identity for $\\ast$,  \n\n   (ii) no two-sided identity for $\\ast$,  \n\n   (iii) no idempotent element for $\\ast$.\n\nGive a complete proof that your construction satisfies all three requirements.",
+      "solution": "Throughout, let $F=\\mathbb{N}$.  Define the encoding\n\\[\n\\pi : \\mathbb{N}\\times\\mathbb{N}\\;\\longrightarrow\\;\\mathbb{N},\n\\qquad\n\\pi(a,b)=2^{a}\\,3^{b}.\n\\tag{1}\n\\]\nSet\n\\[\na\\ast b \\;:=\\; \\pi(a,b)=2^{a}\\,3^{b},\n\\qquad a,b\\in\\mathbb{N}.\n\\tag{2}\n\\]\n\n\\medskip\n\\textbf{Step 1.  Two-sided cancellation.}  \nUnique prime factorisation implies that $\\pi$ is injective in each coordinate:\nif $2^{x}\\,3^{y}=2^{x}\\,3^{z}$ then $y=z$, and if\n$2^{x}\\,3^{y}=2^{z}\\,3^{y}$ then $x=z$.\nHence\n\\[\na\\ast b=a\\ast c \\Longrightarrow 2^{a}\\,3^{b}=2^{a}\\,3^{c}\\Longrightarrow b=c,\n\\]\nand analogously $b\\ast a=c\\ast a\\Longrightarrow b=c$.  Thus both left and\nright cancellation hold.\n\n\\medskip\n\\textbf{Step 2.  Total non-associativity.}  \nRepresent each binary parenthesisation of\n$x_{1}\\ast\\cdots\\ast x_{n}$ by a rooted, ordered binary tree whose\nleaves are, from left to right, $x_{1},\\ldots ,x_{n}$.\nDenote the set of such trees by $\\mathcal{T}$.\nDefine recursively a valuation\n\\[\n\\varphi:\\mathcal{T}\\longrightarrow\\mathbb{N}\n\\]\nby\n\\[\n\\varphi(\\text{leaf labelled }x_{i})=x_{i},\\qquad\n\\varphi(T_{1}\\circ T_{2})=\n\\varphi(T_{1})\\ast\\varphi(T_{2})=\n2^{\\varphi(T_{1})}\\,3^{\\varphi(T_{2})},\n\\]\nwhere $T_{1}\\circ T_{2}$ is a tree whose root has left\nsub-tree $T_{1}$ and right sub-tree $T_{2}$.\n\n\\smallskip\n\\emph{Claim:} $\\varphi$ is injective.\n\n\\smallskip\n\\emph{Proof by induction on the number of internal nodes.}\n\nBase case (one leaf): trivial.\n\nInduction step: let $T,S\\in\\mathcal{T}$ have at least one internal node and\nassume $\\varphi(T)=\\varphi(S)$.  Write\n$T=T_{1}\\circ T_{2}$ and $S=S_{1}\\circ S_{2}$.\nThen\n\\[\n2^{\\varphi(T_{1})}\\,3^{\\varphi(T_{2})}\n=\n2^{\\varphi(S_{1})}\\,3^{\\varphi(S_{2})}.\n\\]\nUniqueness of prime factorisation yields\n$\\varphi(T_{1})=\\varphi(S_{1})$ and\n$\\varphi(T_{2})=\\varphi(S_{2})$.\nBy the induction hypothesis $T_{1}=S_{1}$ and $T_{2}=S_{2}$, whence $T=S$.\n\\hfill $\\square$\n\n\\smallskip\nThus different trees, i.e.\\ different parenthesisations,\nalways give different numerical values, and\nnon-associativity is complete: already for $n=3$\n\\[\nx\\ast(y\\ast z)=2^{x}\\,3^{2^{y}3^{z}}\n\\neq\n2^{2^{x}3^{y}}\\,3^{z}=(x\\ast y)\\ast z,\n\\]\nand no collisions occur for longer expressions.\n\n\\medskip\n\\textbf{Step 3.  Absence of identities and idempotents.}\n\n\\smallskip\n(i) \\emph{No right identity.}  \nSuppose $e$ satisfied $x\\ast e=x$ for every $x\\in F$.\nThen $2^{x}\\,3^{e}=x$ for all $x$.\nTaking $x=0$ gives $3^{e}=0$, impossible in $\\mathbb{N}$.\n\n\\smallskip\n(ii) \\emph{No left identity.}  \nIf $e\\ast x=x$ for every $x$, then $2^{e}\\,3^{x}=x$ for all $x$.\nPutting $x=0$ yields $2^{e}=0$, again impossible.\n\n\\smallskip\n(iii) \\emph{No idempotent.}  \nAn idempotent $a$ would satisfy $a\\ast a=a$, i.e.\n\\[\n2^{a}\\,3^{a}=a \\quad\\Longrightarrow\\quad 6^{a}=a.\n\\]\nBut $6^{a}\\ge 6>a$ for every $a\\ge 1$, while $a=0$ gives $1\\neq 0$.\nHence no solution exists.\n\n\\medskip\n\\textbf{Conclusion.}  \nThe operation \\eqref{2} satisfies two-sided cancellation,\nis totally non-associative, and admits neither one- nor two-sided identities\nnor idempotents.  All three requirements of the corrected problem are met.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.531839",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original problem and its kernel variant, the present task\ndemands several major additional layers of sophistication.\n\n• Two–sided cancellation replaces one–sided cancellation, forcing the\n  constructor to invent an operation that can be inverted in both arguments.\n\n• “Total non-associativity’’ is vastly stronger than merely exhibiting a\n  single triple violating associativity; one must guarantee that no binary\n  identity of any length (indeed, none of the Cₙ₋₁ parenthesisations) can\n  coincide.  This needs an injective encoding of full binary-tree structure,\n  far subtler than the brief argument of the original.\n\n• Extra algebraic restrictions (no identities, no idempotents) exclude a host\n  of cheap constructions that might accidentally introduce units or fixed\n  points; the constructor must therefore control additional arithmetic\n  properties of the operation.\n\n• The proof now relies on unique prime factorisation, recursion on binary\n  trees and Catalan-number counting—techniques absent from the original\n  problem—raising both the conceptual and computational load needed for a\n  complete solution.\n\nTogether these enhancements make the new variant significantly more\nchallenging and mathematically richer than either previous version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

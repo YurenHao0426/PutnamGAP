@@ -1,0 +1,145 @@
+{
+  "index": "2012-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "interval $(1, 12)$. Show that there exist distinct indices $i, j, k$\nsuch that $d_i, d_j, d_k$ are the side lengths of an acute triangle.",
+  "solution": "Without loss of generality, assume $d_1\\leq d_2\\leq \\cdots \\leq d_{12}$.\nIf $d_{i+2}^2 < d_i^2+d_{i+1}^2$ for some $i\\leq 10$, then\n$d_i,d_{i+1},d_{i+2}$ are the side lengths of an acute triangle, since\nin this case $d_i^2 < d_{i+1}^2+d_{i+2}^2$ and $d_{i+1}^2 <\nd_i^2+d_{i+2}^2$ as well. Thus we may assume $d_{i+2}^2 \\geq d_i^2 +\nd_{i+1}^2$ for all $i$. But then by induction, $d_i^2 \\geq F_i d_1^2$\nfor all $i$, where $F_i$ is the $i$-th Fibonacci number (with\n$F_1=F_2=1$): $i=1$ is clear, $i=2$ follows from $d_2\\geq d_1$, and the\ninduction step follows from the assumed inequality. Setting $i=12$ now\ngives $d_{12}^2 \\geq 144 d_1^2$, contradicting $d_1>1$ and $d_{12}<12$.\n\n\\noindent\n\\textbf{Remark.} A materially equivalent problem appeared on the 2012\nUSA Mathematical Olympiad and USA Junior Mathematical Olympiad.",
+  "vars": [
+    "i",
+    "j",
+    "k",
+    "d_i",
+    "d_j",
+    "d_k",
+    "d_i+1",
+    "d_i+2",
+    "d_12",
+    "d_1",
+    "d_2"
+  ],
+  "params": [
+    "F_i",
+    "F_1",
+    "F_2"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexone",
+        "j": "indextwo",
+        "k": "indexthree",
+        "d_i": "distancei",
+        "d_j": "distancej",
+        "d_k": "distancek",
+        "d_i+1": "distanceiplusone",
+        "d_i+2": "distanceiplustwo",
+        "d_12": "distancetwelve",
+        "d_1": "distanceone",
+        "d_2": "distancetwo",
+        "F_i": "fibonindex",
+        "F_1": "fibonone",
+        "F_2": "fibontwo"
+      },
+      "question": "interval $(1, 12)$. Show that there exist distinct indices $indexone, indextwo, indexthree$ such that $distancei, distancej, distancek$ are the side lengths of an acute triangle.",
+      "solution": "Without loss of generality, assume $distanceone\\leq distancetwo\\leq \\cdots \\leq distancetwelve$.\nIf $distanceiplustwo^2 < distancei^2+distanceiplusone^2$ for some $indexone\\leq 10$, then\n$distancei, distanceiplusone, distanceiplustwo$ are the side lengths of an acute triangle, since\nin this case $distancei^2 < distanceiplusone^2+distanceiplustwo^2$ and $distanceiplusone^2 <\ndistancei^2+distanceiplustwo^2$ as well. Thus we may assume $distanceiplustwo^2 \\geq distancei^2 +\ndistanceiplusone^2$ for all $indexone$. But then by induction, $distancei^2 \\geq fibonindex distanceone^2$\nfor all $indexone$, where $fibonindex$ is the $indexone$-th Fibonacci number (with\n$fibonone=fibontwo=1$): $indexone=1$ is clear, $indexone=2$ follows from $distancetwo\\geq distanceone$, and the\ninduction step follows from the assumed inequality. Setting $indexone=12$ now\ngives $distancetwelve^2 \\geq 144 distanceone^2$, contradicting $distanceone>1$ and $distancetwelve<12$.\n\n\\noindent\n\\textbf{Remark.} A materially equivalent problem appeared on the 2012\nUSA Mathematical Olympiad and USA Junior Mathematical Olympiad."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "seashell",
+        "j": "woodpeck",
+        "k": "lighthouse",
+        "d_i": "marshmallow",
+        "d_j": "tortoise",
+        "d_k": "pinecones",
+        "d_i+1": "sandstone",
+        "d_i+2": "strawhats",
+        "d_12": "paintbrush",
+        "d_1": "blacksmith",
+        "d_2": "foxgloves",
+        "F_i": "marblecake",
+        "F_1": "rainstorm",
+        "F_2": "gadabouts"
+      },
+      "question": "interval $(1, 12)$. Show that there exist distinct indices $seashell, woodpeck, lighthouse$\nsuch that $marshmallow, tortoise, pinecones$ are the side lengths of an acute triangle.",
+      "solution": "Without loss of generality, assume $blacksmith\\leq foxgloves\\leq \\cdots \\leq paintbrush$.\nIf $strawhats^2 < marshmallow^2+sandstone^2$ for some $seashell\\leq 10$, then\n$marshmallow,sandstone,strawhats$ are the side lengths of an acute triangle, since\nin this case $marshmallow^2 < sandstone^2+strawhats^2$ and $sandstone^2 <\nmarshmallow^2+strawhats^2$ as well. Thus we may assume $strawhats^2 \\geq marshmallow^2 +\nsandstone^2$ for all $seashell$. But then by induction, $marshmallow^2 \\geq marblecake_{seashell} blacksmith^2$\nfor all $seashell$, where $marblecake_{seashell}$ is the $seashell$-th Fibonacci number (with\n$rainstorm=gadabouts=1$): $seashell=1$ is clear, $seashell=2$ follows from $foxgloves\\geq blacksmith$, and the\ninduction step follows from the assumed inequality. Setting $seashell=12$ now\ngives $paintbrush^2 \\geq 144 blacksmith^2$, contradicting $blacksmith>1$ and $paintbrush<12$.\n\n\\noindent\n\\textbf{Remark.} A materially equivalent problem appeared on the 2012\nUSA Mathematical Olympiad and USA Junior Mathematical Olympiad."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "steadfast",
+        "j": "anchored",
+        "k": "immobile",
+        "d_i": "tinywidth",
+        "d_j": "narrowspan",
+        "d_k": "slimextent",
+        "d_i+1": "tinywidthnext",
+        "d_i+2": "tinywidthafter",
+        "d_12": "tinywidthdozen",
+        "d_1": "tinywidthfirst",
+        "d_2": "tinywidthsecond",
+        "F_i": "nonfibonacci",
+        "F_1": "nonfibfirst",
+        "F_2": "nonfibsecond"
+      },
+      "question": "Problem:\n<<<\ninterval $(1, 12)$. Show that there exist distinct indices $steadfast, anchored, immobile$\nsuch that $tinywidth, narrowspan, slimextent$ are the side lengths of an acute triangle.\n>>>\n",
+      "solution": "Solution:\n<<<\nWithout loss of generality, assume $tinywidthfirst\\leq tinywidthsecond\\leq \\cdots \\leq tinywidthdozen$.\nIf $tinywidthafter^2 < tinywidth^2+tinywidthnext^2$ for some $steadfast\\leq 10$, then\n$tinywidth,tinywidthnext,tinywidthafter$ are the side lengths of an acute triangle, since\nin this case $tinywidth^2 < tinywidthnext^2+tinywidthafter^2$ and $tinywidthnext^2 <\ntinywidth^2+tinywidthafter^2$ as well. Thus we may assume $tinywidthafter^2 \\geq tinywidth^2 +\ntinywidthnext^2$ for all $steadfast$. But then by induction, $tinywidth^2 \\geq nonfibonacci\\;tinywidthfirst^2$\nfor all $steadfast$, where $nonfibonacci$ is the $steadfast$-th Fibonacci number (with\n$nonfibfirst=nonfibsecond=1$): $steadfast=1$ is clear, $steadfast=2$ follows from $tinywidthsecond\\geq tinywidthfirst$, and the\ninduction step follows from the assumed inequality. Setting $steadfast=12$ now\ngives $tinywidthdozen^2 \\geq 144\\, tinywidthfirst^2$, contradicting $tinywidthfirst>1$ and $tinywidthdozen<12$.\n\n\\noindent\n\\textbf{Remark.} A materially equivalent problem appeared on the 2012\nUSA Mathematical Olympiad and USA Junior Mathematical Olympiad.\n>>>\n"
+    },
+    "garbled_string": {
+      "map": {
+        "i": "qzxwvtnp",
+        "j": "hjgrksla",
+        "k": "mxncbvtr",
+        "d_i": "asdfghjk",
+        "d_j": "lkjhgfds",
+        "d_k": "poiuytre",
+        "d_i+1": "qazxswed",
+        "d_i+2": "rfvtgbyh",
+        "d_12": "yhnujmki",
+        "d_1": "ikmjnhbg",
+        "d_2": "ujmnhbgv",
+        "F_i": "plokijuh",
+        "F_1": "mnbvcxzq",
+        "F_2": "zxcvbnml"
+      },
+      "question": "interval $(1, 12)$. Show that there exist distinct indices $qzxwvtnp, hjgrksla, mxncbvtr$ such that $asdfghjk, lkjhgfds, poiuytre$ are the side lengths of an acute triangle.",
+      "solution": "Without loss of generality, assume $ikmjnhbg\\leq ujmnhbgv\\leq \\cdots \\leq yhnujmki$. If $rfvtgbyh^2 < asdfghjk^2+qazxswed^2$ for some $qzxwvtnp\\leq 10$, then $asdfghjk,qazxswed,rfvtgbyh$ are the side lengths of an acute triangle, since in this case $asdfghjk^2 < qazxswed^2+rfvtgbyh^2$ and $qazxswed^2 < asdfghjk^2+rfvtgbyh^2$ as well. Thus we may assume $rfvtgbyh^2 \\geq asdfghjk^2 + qazxswed^2$ for all $qzxwvtnp$. But then by induction, $asdfghjk^2 \\geq plokijuh ikmjnhbg^2$ for all $qzxwvtnp$, where $plokijuh$ is the $qzxwvtnp$-th Fibonacci number (with $mnbvcxzq=zxcvbnml=1$): $qzxwvtnp=1$ is clear, $qzxwvtnp=2$ follows from $ujmnhbgv\\geq ikmjnhbg$, and the induction step follows from the assumed inequality. Setting $qzxwvtnp=12$ now gives $yhnujmki^2 \\geq 144 ikmjnhbg^2$, contradicting $ikmjnhbg>1$ and $yhnujmki<12$.\\n\\n\\noindent\\textbf{Remark.} A materially equivalent problem appeared on the 2012 USA Mathematical Olympiad and USA Junior Mathematical Olympiad."
+    },
+    "kernel_variant": {
+      "question": "Let $d_1,d_2,\\dots ,d_{15}$ be fifteen distinct positive real numbers, each lying strictly between $3$ and $40$. Prove that there exist three of them which can serve as the side lengths of an acute triangle.",
+      "solution": "First, relabel the numbers so that\nd_1\\le d_2\\le\\dots\\le d_{15}.\n\n1. (Local test for an acute triple)\nFor every i in {1,2, \\ldots ,13} compare d_{i+2}^2 with d_i^2 + d_{i+1}^2. If for some i we have\n\nd_{i+2}^2 < d_i^2 + d_{i+1}^2,\n\nthen, because of the ordering, the largest side condition for an acute triangle is met (and hence the other two acute-angle inequalities and the triangle inequality follow), so d_i, d_{i+1}, d_{i+2} are the side lengths of an acute triangle and we are done.\n\n2. (Fibonacci growth if all local tests fail)\nAssume, to the contrary, that for all i=1,\\ldots ,13,\n\nd_{i+2}^2 \\ge d_i^2 + d_{i+1}^2.  (1)\n\nDefine F_1=F_2=1 and F_{n+2}=F_{n+1}+F_n (the Fibonacci numbers).  We prove by induction that\n\nd_i^2 \\ge F_i\\,d_1^2  for 1\\le i\\le15.  (2)\n\n*  i=1 is equality, and i=2 follows from d_2\\geq d_1.  \n*  If (2) holds up to i+1, then from (1)\n\nd_{i+2}^2 \\ge d_{i+1}^2 + d_i^2 \\ge F_{i+1}d_1^2 + F_i d_1^2 = F_{i+2}d_1^2,\n\nproving the induction step.\n\n3. (Contradiction with the given interval)\nPutting i=15 in (2) gives\n\nd_{15}^2 \\ge F_{15}\\,d_1^2 = 610\\,d_1^2.\n\nBut each d_i lies in (3,40), so\nd_{15}^2 < 40^2 = 1600,  d_1^2 > 3^2 = 9.\nHence\nd_{15}^2 \\ge 610\\cdot 9 = 5490 > 1600,\n\na contradiction.\n\n4. (Conclusion)\nThe contradiction shows that assumption (1) cannot hold for every i. Therefore some index i satisfies d_{i+2}^2 < d_i^2 + d_{i+1}^2, and the triple (d_i,d_{i+1},d_{i+2}) indeed forms the sides of an acute triangle.\n\nThus, among any fifteen distinct real numbers in the interval (3,40), one can always find three that are the side lengths of an acute triangle.",
+      "_meta": {
+        "core_steps": [
+          "Sort the numbers non-decreasingly (d1 ≤ d2 ≤ …).",
+          "If for some i the inequality d_{i+2}^2 < d_i^2 + d_{i+1}^2 holds, the triple (d_i,d_{i+1},d_{i+2}) is already an acute triangle.",
+          "Otherwise the complementary inequality d_{i+2}^2 ≥ d_i^2 + d_{i+1}^2 holds for every i, yielding the Fibonacci-type growth d_i^2 ≥ F_i·d_1^2.",
+          "Apply this bound to the last entry d_N and compare with the prescribed interval’s upper limit; the bound overshoots, producing a contradiction.",
+          "Hence the initial assumption is impossible, so an acute-triangle triple must exist."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Total count N of numbers supplied (length of the sequence).",
+            "original": 12
+          },
+          "slot2": {
+            "description": "Lower endpoint of the interval in which all d_i lie.",
+            "original": 1
+          },
+          "slot3": {
+            "description": "Upper endpoint of the interval in which all d_i lie.",
+            "original": 12
+          },
+          "slot4": {
+            "description": "Fibonacci value F_N that appears in the final contradiction (depends only on N).",
+            "original": 144
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

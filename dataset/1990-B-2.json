@@ -1,0 +1,109 @@
+{
+  "index": "1990-B-2",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "\\[\n1 + \\sum_{j=1}^\\infty (1 + x^j)P_j = 0,\n\\]\nwhere $P_j$ is\n\\[\n\\frac{(1 - z)(1 - zx)(1 - zx^2) \\cdots (1 - zx^{j-1})}\n{(z - x)(z - x^2)(z - x^3) \\cdots (z - x^j)}.\n\\]",
+  "solution": "Solution. Let \\( S_{0}=1 \\), and for \\( n \\geq 1 \\), let\n\\[\nS_{n}=1+\\sum_{j=1}^{n}\\left(1+x^{j}\\right) \\frac{(1-z)(1-z x)\\left(1-z x^{2}\\right) \\cdots\\left(1-z x^{j-1}\\right)}{(z-x)\\left(z-x^{2}\\right)\\left(z-x^{3}\\right) \\cdots\\left(z-x^{j}\\right)}\n\\]\n\nSince \\( S_{1}=(1-z x) /(z-x) \\) and \\( S_{2}=(1-z x)\\left(1-z x^{2}\\right) /(z-x)\\left(z-x^{2}\\right) \\), we suspect that\n\\[\nS_{n}=\\frac{(1-z x)\\left(1-z x^{2}\\right) \\cdots\\left(1-z x^{n}\\right)}{(z-x)\\left(z-x^{2}\\right)\\left(z-x^{3}\\right) \\cdots\\left(z-x^{n}\\right)},\n\\]\nwhich is easily proved by induction.\nIt remains to prove that \\( \\lim _{n \\rightarrow \\infty} S_{n}=0 \\). If \\( S_{n}=0 \\) for some \\( n \\), then \\( S_{N}=0 \\) for all \\( N \\geq n \\), so \\( \\lim _{n \\rightarrow \\infty} S_{n}=0 \\). Otherwise\n\\[\n\\frac{S_{n+1}}{S_{n}}=\\frac{1-z x^{n+1}}{z-x^{n+1}} \\rightarrow \\frac{1}{z}\n\\]\nas \\( n \\rightarrow \\infty \\), since \\( x^{n+1} \\rightarrow 0 \\). By the Ratio Test, \\( \\lim _{n \\rightarrow \\infty} S_{n}=0 \\).",
+  "vars": [
+    "j",
+    "n",
+    "N",
+    "S_0",
+    "S_1",
+    "S_2",
+    "S_n",
+    "S_N",
+    "P_j"
+  ],
+  "params": [
+    "x",
+    "z"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "j": "loopindex",
+        "n": "iterindex",
+        "N": "bigindex",
+        "S_0": "serieszero",
+        "S_1": "seriesone",
+        "S_2": "seriestwo",
+        "S_n": "seriesgeneral",
+        "S_N": "serieslarge",
+        "P_j": "prodfunction",
+        "x": "baseparam",
+        "z": "shiftparam"
+      },
+      "question": "\\[\n1 + \\sum_{loopindex=1}^\\infty (1 + baseparam^{loopindex}) prodfunction = 0,\n\\],\nwhere $prodfunction$ is\n\\[\n\\frac{(1 - shiftparam)(1 - shiftparam baseparam)(1 - shiftparam baseparam^{2}) \\cdots (1 - shiftparam baseparam^{loopindex-1})}\n{(shiftparam - baseparam)(shiftparam - baseparam^{2})(shiftparam - baseparam^{3}) \\cdots (shiftparam - baseparam^{loopindex})}.\n\\]",
+      "solution": "Solution. Let \\( serieszero = 1 \\), and for \\( iterindex \\geq 1 \\), let\n\\[\nseriesgeneral = 1 + \\sum_{loopindex=1}^{iterindex} \\left(1 + baseparam^{loopindex}\\right) \\frac{(1 - shiftparam)(1 - shiftparam baseparam)\\left(1 - shiftparam baseparam^{2}\\right) \\cdots \\left(1 - shiftparam baseparam^{loopindex-1}\\right)}{(shiftparam - baseparam)\\left(shiftparam - baseparam^{2}\\right)\\left(shiftparam - baseparam^{3}\\right) \\cdots \\left(shiftparam - baseparam^{loopindex}\\right)}\n\\]\n\nSince \\( seriesone = (1 - shiftparam baseparam) /(shiftparam - baseparam) \\) and \\( seriestwo = (1 - shiftparam baseparam)\\left(1 - shiftparam baseparam^{2}\\right) /(shiftparam - baseparam)\\left(shiftparam - baseparam^{2}\\right) \\), we suspect that\n\\[\nseriesgeneral = \\frac{(1 - shiftparam baseparam)\\left(1 - shiftparam baseparam^{2}\\right) \\cdots \\left(1 - shiftparam baseparam^{iterindex}\\right)}{(shiftparam - baseparam)\\left(shiftparam - baseparam^{2}\\right)\\left(shiftparam - baseparam^{3}\\right) \\cdots \\left(shiftparam - baseparam^{iterindex}\\right)},\n\\]\nwhich is easily proved by induction.\nIt remains to prove that \\( \\lim_{iterindex \\rightarrow \\infty} seriesgeneral = 0 \\). If \\( seriesgeneral = 0 \\) for some \\( iterindex \\), then \\( serieslarge = 0 \\) for all \\( bigindex \\geq iterindex \\), so \\( \\lim_{iterindex \\rightarrow \\infty} seriesgeneral = 0 \\). Otherwise\n\\[\n\\frac{S_{iterindex+1}}{seriesgeneral} = \\frac{1 - shiftparam baseparam^{iterindex+1}}{shiftparam - baseparam^{iterindex+1}} \\rightarrow \\frac{1}{shiftparam}\n\\]\nas \\( iterindex \\rightarrow \\infty \\), since \\( baseparam^{iterindex+1} \\rightarrow 0 \\). By the Ratio Test, \\( \\lim_{iterindex \\rightarrow \\infty} seriesgeneral = 0 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "j": "candlestick",
+        "n": "sunflower",
+        "N": "watermelon",
+        "S_0": "raincloud",
+        "S_1": "peppermint",
+        "S_2": "snowflake",
+        "S_n": "marshmallow",
+        "S_N": "broomstick",
+        "P_j": "dragonfruit",
+        "x": "limestone",
+        "z": "sailboard"
+      },
+      "question": "\\[\n1 + \\sum_{candlestick=1}^\\infty (1 + limestone^{candlestick})dragonfruit = 0,\n\\]\nwhere $dragonfruit$ is\n\\[\n\\frac{(1 - sailboard)(1 - sailboard limestone)(1 - sailboard limestone^{2}) \\cdots (1 - sailboard limestone^{candlestick-1})}\n{(sailboard - limestone)(sailboard - limestone^{2})(sailboard - limestone^{3}) \\cdots (sailboard - limestone^{candlestick})}.\n\\]",
+      "solution": "Solution. Let \\( raincloud = 1 \\), and for \\( sunflower \\geq 1 \\), let\n\\[\nmarshmallow = 1+\\sum_{candlestick=1}^{sunflower}\\left(1+limestone^{candlestick}\\right) \\frac{(1-sailboard)(1-sailboard limestone)\\left(1-sailboard limestone^{2}\\right) \\cdots\\left(1-sailboard limestone^{candlestick-1}\\right)}{(sailboard-limestone)\\left(sailboard-limestone^{2}\\right)\\left(sailboard-limestone^{3}\\right) \\cdots\\left(sailboard-limestone^{candlestick}\\right)}\n\\]\n\nSince \\( peppermint =(1-sailboard limestone)/(sailboard-limestone) \\) and \\( snowflake =(1-sailboard limestone)\\left(1-sailboard limestone^{2}\\right)/(sailboard-limestone)\\left(sailboard-limestone^{2}\\right) \\), we suspect that\n\\[\nmarshmallow =\\frac{(1-sailboard limestone)\\left(1-sailboard limestone^{2}\\right) \\cdots\\left(1-sailboard limestone^{sunflower}\\right)}{(sailboard-limestone)\\left(sailboard-limestone^{2}\\right)\\left(sailboard-limestone^{3}\\right) \\cdots\\left(sailboard-limestone^{sunflower}\\right)},\n\\]\nwhich is easily proved by induction.\nIt remains to prove that \\( \\lim _{sunflower \\rightarrow \\infty} marshmallow = 0 \\). If \\( marshmallow = 0 \\) for some \\( sunflower \\), then \\( broomstick = 0 \\) for all \\( watermelon \\geq sunflower \\), so \\( \\lim _{sunflower \\rightarrow \\infty} marshmallow = 0 \\). Otherwise\n\\[\n\\frac{S_{sunflower+1}}{marshmallow}=\\frac{1-sailboard limestone^{sunflower+1}}{sailboard-limestone^{sunflower+1}} \\rightarrow \\frac{1}{sailboard}\n\\]\nas \\( sunflower \\rightarrow \\infty \\), since \\( limestone^{sunflower+1} \\rightarrow 0 \\). By the Ratio Test, \\( \\lim _{sunflower \\rightarrow \\infty} marshmallow = 0 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "j": "lastitem",
+        "n": "steadyval",
+        "N": "minimalval",
+        "S_0": "endtotal",
+        "S_1": "laterterm",
+        "S_2": "furtheron",
+        "S_n": "totality",
+        "S_N": "completer",
+        "P_j": "summingup",
+        "x": "antiparam",
+        "z": "grounded"
+      },
+      "question": "\\[\n1 + \\sum_{lastitem=1}^\\infty (1 + antiparam^{lastitem})summingup_{lastitem} = 0,\n\\]\nwhere $summingup_{lastitem}$ is\n\\[\n\\frac{(1 - grounded)(1 - grounded\\,antiparam)(1 - grounded\\,antiparam^{2}) \\cdots (1 - grounded\\,antiparam^{lastitem-1})}\n{(grounded - antiparam)(grounded - antiparam^{2})(grounded - antiparam^{3}) \\cdots (grounded - antiparam^{lastitem})}.\n\\]",
+      "solution": "Solution. Let \\( endtotal=1 \\), and for \\( steadyval \\geq 1 \\), let\n\\[\ntotality =1+\\sum_{lastitem=1}^{steadyval}\\left(1+antiparam^{lastitem}\\right) \\frac{(1-grounded)(1-grounded\\,antiparam)\\left(1-grounded\\,antiparam^{2}\\right) \\cdots\\left(1-grounded\\,antiparam^{lastitem-1}\\right)}{(grounded-antiparam)\\left(grounded-antiparam^{2}\\right)\\left(grounded-antiparam^{3}\\right) \\cdots\\left(grounded-antiparam^{lastitem}\\right)}\n\\]\n\nSince \\( laterterm=(1-grounded\\,antiparam) /(grounded-antiparam) \\) and \\( furtheron=(1-grounded\\,antiparam)(1-grounded\\,antiparam^{2}) /(grounded-antiparam)(grounded-antiparam^{2}) \\), we suspect that\n\\[\ntotality=\\frac{(1-grounded\\,antiparam)(1-grounded\\,antiparam^{2}) \\cdots(1-grounded\\,antiparam^{steadyval})}{(grounded-antiparam)(grounded-antiparam^{2})(grounded-antiparam^{3}) \\cdots(grounded-antiparam^{steadyval})},\n\\]\nwhich is easily proved by induction.\nIt remains to prove that \\( \\lim _{steadyval \\rightarrow \\infty} totality=0 \\). If \\( totality=0 \\) for some \\( steadyval \\), then \\( completer=0 \\) for all \\( minimalval \\geq steadyval \\), so \\( \\lim _{steadyval \\rightarrow \\infty} totality=0 \\). Otherwise\n\\[\n\\frac{totality}{totality}=\\frac{1-grounded\\,antiparam^{steadyval+1}}{grounded-antiparam^{steadyval+1}} \\rightarrow \\frac{1}{grounded}\n\\]\nas \\( steadyval \\rightarrow \\infty \\), since \\( antiparam^{steadyval+1} \\rightarrow 0 \\). By the Ratio Test, \\( \\lim _{steadyval \\rightarrow \\infty} totality=0 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "j": "plokmdnq",
+        "n": "sqtivhjy",
+        "N": "vbcarmxz",
+        "S_0": "qzxwvtnp",
+        "S_1": "hjgrksla",
+        "S_2": "udmfczke",
+        "S_n": "lunvmcqa",
+        "S_N": "rhbiowys",
+        "P_j": "fteagqhp",
+        "x": "gplesvka",
+        "z": "wyodkrfu",
+        "S_{n+1}": "pxidurlw"
+      },
+      "question": "\\[\n1 + \\sum_{plokmdnq=1}^\\infty (1 + gplesvka^{plokmdnq}) fteagqhp = 0,\n\\]\nwhere $fteagqhp$ is\n\\[\n\\frac{(1 - wyodkrfu)(1 - wyodkrfu gplesvka)(1 - wyodkrfu gplesvka^{2}) \\cdots (1 - wyodkrfu gplesvka^{plokmdnq-1})}\n{(wyodkrfu - gplesvka)(wyodkrfu - gplesvka^{2})(wyodkrfu - gplesvka^{3}) \\cdots (wyodkrfu - gplesvka^{plokmdnq})}.\n\\]",
+      "solution": "Solution. Let \\( qzxwvtnp=1 \\), and for \\( sqtivhjy \\geq 1 \\), let\n\\[\nlunvmcqa=1+\\sum_{plokmdnq=1}^{sqtivhjy}\\left(1+gplesvka^{plokmdnq}\\right) \\frac{(1-wyodkrfu)(1-wyodkrfu gplesvka)\\left(1-wyodkrfu gplesvka^{2}\\right) \\cdots\\left(1-wyodkrfu gplesvka^{plokmdnq-1}\\right)}{(wyodkrfu-gplesvka)\\left(wyodkrfu-gplesvka^{2}\\right)\\left(wyodkrfu-gplesvka^{3}\\right) \\cdots\\left(wyodkrfu-gplesvka^{plokmdnq}\\right)}\n\\]\n\nSince \\( hjgrksla=(1-wyodkrfu gplesvka) /(wyodkrfu-gplesvka) \\) and \\( udmfczke=(1-wyodkrfu gplesvka)\\left(1-wyodkrfu gplesvka^{2}\\right) /(wyodkrfu-gplesvka)\\left(wyodkrfu-gplesvka^{2}\\right) \\), we suspect that\n\\[\nlunvmcqa=\\frac{(1-wyodkrfu gplesvka)\\left(1-wyodkrfu gplesvka^{2}\\right) \\cdots\\left(1-wyodkrfu gplesvka^{sqtivhjy}\\right)}{(wyodkrfu-gplesvka)\\left(wyodkrfu-gplesvka^{2}\\right)\\left(wyodkrfu-gplesvka^{3}\\right) \\cdots\\left(wyodkrfu-gplesvka^{sqtivhjy}\\right)},\n\\]\nwhich is easily proved by induction.\nIt remains to prove that \\( \\lim _{sqtivhjy \\rightarrow \\infty} lunvmcqa=0 \\). If \\( lunvmcqa=0 \\) for some \\( sqtivhjy \\), then \\( rhbiowys=0 \\) for all \\( vbcarmxz \\geq sqtivhjy \\), so \\( \\lim _{sqtivhjy \\rightarrow \\infty} lunvmcqa=0 \\). Otherwise\n\\[\n\\frac{pxidurlw}{lunvmcqa}=\\frac{1-wyodkrfu gplesvka^{sqtivhjy+1}}{wyodkrfu-gplesvka^{sqtivhjy+1}} \\rightarrow \\frac{1}{wyodkrfu}\n\\]\nas \\( sqtivhjy \\rightarrow \\infty \\), since \\( gplesvka^{sqtivhjy+1} \\rightarrow 0 \\). By the Ratio Test, \\( \\lim _{sqtivhjy \\rightarrow \\infty} lunvmcqa=0 \\)."
+    },
+    "kernel_variant": {
+      "question": "Fix an integer r \\geq  1.  Let complex numbers t, y satisfy |t|<1<|y| and y\\neq t^{m} for every positive integer m.  Prove  \n  1 + \\sum _{k=0}^{\\infty }(1+t^{k+1}+t^{2(k+1)}+\\cdots +t^{r(k+1)}) \\cdot  \\prod _{m=0}^{k}\\Bigl(\\dfrac{1-yt^{m}}{\\,y-t^{m+1}\\,}\\Bigr)^{r}=0.",
+      "solution": "Define P_k:=\\prod _{m=0}^{k}\\bigl((1-yt^{m})/(y-t^{m+1})\\bigr)^{r} and S_n:=1+\\sum _{k=0}^{n}(1+t^{k+1}+\\cdots +t^{r(k+1)})P_k.  Claim: S_n=\\prod _{m=1}^{n+1}\\bigl((1-yt^{m})/(y-t^{m})\\bigr)^{r}.  The case n=0 is routine.  Assuming it for n, observe P_{n+1}=((1-y)/(y-t^{n+2}))^{r}S_n and note 1+t^{k+1}+\\cdots +t^{r(k+1)}=(1-t^{r(k+2)})/(1-t).  Note that the telescoping nature is preserved despite the exponent r, because each new factor cancels all but one copy of the previous numerator and denominator.  A short calculation now gives S_{n+1}=S_n((1-yt^{n+2})/(y-t^{n+2}))^{r}, completing the induction.  \n\nIf 1-yt^{m}=0 for some m, then S_m=0 and the series terminates, proving the claim.  Otherwise S_n\\neq 0 and |S_{n+1}/S_n|\\to |1/y|^{r}<1 because |t|<1; observe that this bound is independent of n and furnishes geometric decay.  Therefore the ratio test yields S_n\\to 0, and consequently  \n  1+\\sum _{k=0}^{\\infty }(1+t^{k+1}+\\cdots +t^{r(k+1)})P_k=0.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.039985",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

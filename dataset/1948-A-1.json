@@ -1,0 +1,80 @@
+{
+  "index": "1948-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "1. What is the maximum of \\( \\left|z^{3}-z+2\\right| \\); where \\( z \\) is a complex number with \\( |z|=1 ? \\)",
+  "solution": "Solution. Let \\( f(z)=z^{3}-z+2 \\). We may as well maximize \\( |f(z)|^{2} \\). If \\( |z|=1 \\), then \\( z=x+i y \\), where \\( y^{2}=1-x^{2} \\) and \\( -1 \\leq x \\leq 1 \\), so\n\\[\n\\begin{aligned}\n|f(z)|^{2} & =\\left|(x+i y)^{3}-(x+i y)+2\\right|^{2} \\\\\n& =\\left|x^{3}-3 x\\left(1-x^{2}\\right)-x+2+i y\\left(3 x^{2}-\\left(1-x^{2}\\right)-1\\right)\\right|^{2} \\\\\n& =\\left(4 x^{3}-4 x+2\\right)^{2}+\\left(1-x^{2}\\right)\\left(4 x^{2}-2\\right)^{2} \\\\\n& =16 x^{3}-4 x^{2}-16 x+8=L(x) .\n\\end{aligned}\n\\]\n\nHence we seek \\( \\max _{-1 \\leq x \\leq 1} L(x) \\). This maximum must be attained either at a critical point or at an endpoint. The critical points, obtained by solving \\( L^{\\prime}(x)=48 x^{2}-8 x-16=0 \\), are \\( x=-\\frac{1}{2}, \\frac{2}{3} \\). Since\n\\[\nL(-1)=4, \\quad L\\left(-\\frac{1}{2}\\right)=13, \\quad L\\left(\\frac{2}{3}\\right)=\\frac{8}{27}, \\quad L(1)=4,\n\\]\nthe maximum value of \\( L \\) is 13 , attained for \\( x=-\\frac{1}{2} \\). Hence the maximum value of \\( |f(z)| \\) on the unit circle is \\( \\sqrt{13} \\), attained when \\( \\operatorname{Re} z=-\\frac{1}{2} \\), i.e., when \\( z=(-1 \\pm i \\sqrt{3}) / 2 \\).",
+  "vars": [
+    "z",
+    "x",
+    "y",
+    "f",
+    "L"
+  ],
+  "params": [],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "z": "complexz",
+        "x": "realxval",
+        "y": "realyval",
+        "f": "cubicfn",
+        "L": "helperl"
+      },
+      "question": "1. What is the maximum of \\( \\left|complexz^{3}-complexz+2\\right| \\); where \\( complexz \\) is a complex number with \\( |complexz|=1 ? \\)",
+      "solution": "Solution. Let \\( cubicfn(complexz)=complexz^{3}-complexz+2 \\). We may as well maximize \\( |cubicfn(complexz)|^{2} \\). If \\( |complexz|=1 \\), then \\( complexz=realxval+i\\,realyval \\), where \\( realyval^{2}=1-realxval^{2} \\) and \\( -1 \\leq realxval \\leq 1 \\), so\n\\[\n\\begin{aligned}\n|cubicfn(complexz)|^{2} & =\\left|(realxval+i\\,realyval)^{3}-(realxval+i\\,realyval)+2\\right|^{2} \\\\\n& =\\left|realxval^{3}-3\\,realxval\\left(1-realxval^{2}\\right)-realxval+2+i\\,realyval\\left(3\\,realxval^{2}-\\left(1-realxval^{2}\\right)-1\\right)\\right|^{2} \\\\\n& =\\left(4\\,realxval^{3}-4\\,realxval+2\\right)^{2}+\\left(1-realxval^{2}\\right)\\left(4\\,realxval^{2}-2\\right)^{2} \\\\\n& =16\\,realxval^{3}-4\\,realxval^{2}-16\\,realxval+8=helperl(realxval) .\n\\end{aligned}\n\\]\n\nHence we seek \\( \\max_{-1 \\leq realxval \\leq 1} helperl(realxval) \\). This maximum must be attained either at a critical point or at an endpoint. The critical points, obtained by solving \\( helperl^{\\prime}(realxval)=48\\,realxval^{2}-8\\,realxval-16=0 \\), are \\( realxval=-\\frac{1}{2},\\,\\frac{2}{3} \\). Since\n\\[\nhelperl(-1)=4, \\quad helperl\\left(-\\frac{1}{2}\\right)=13, \\quad helperl\\left(\\frac{2}{3}\\right)=\\frac{8}{27}, \\quad helperl(1)=4,\n\\]\nthe maximum value of \\( helperl \\) is 13, attained for \\( realxval=-\\frac{1}{2} \\). Hence the maximum value of \\( |cubicfn(complexz)| \\) on the unit circle is \\( \\sqrt{13} \\), attained when \\( \\operatorname{Re} complexz=-\\frac{1}{2} \\), i.e., when \\( complexz=(-1 \\pm i \\sqrt{3})/2 \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "z": "sandstone",
+        "x": "telescope",
+        "y": "bootlace",
+        "f": "cardboard",
+        "L": "sunflower"
+      },
+      "question": "1. What is the maximum of \\( \\left|sandstone^{3}-sandstone+2\\right| \\); where \\( sandstone \\) is a complex number with \\( |sandstone|=1 ? \\)",
+      "solution": "Solution. Let \\( cardboard(sandstone)=sandstone^{3}-sandstone+2 \\). We may as well maximize \\( |cardboard(sandstone)|^{2} \\). If \\( |sandstone|=1 \\), then \\( sandstone=telescope+i bootlace \\), where \\( bootlace^{2}=1-telescope^{2} \\) and \\( -1 \\leq telescope \\leq 1 \\), so\n\\[\n\\begin{aligned}\n|cardboard(sandstone)|^{2} & =\\left|(telescope+i bootlace)^{3}-(telescope+i bootlace)+2\\right|^{2} \\\\\n& =\\left|telescope^{3}-3 telescope\\left(1-telescope^{2}\\right)-telescope+2+i bootlace\\left(3 telescope^{2}-\\left(1-telescope^{2}\\right)-1\\right)\\right|^{2} \\\\\n& =\\left(4 telescope^{3}-4 telescope+2\\right)^{2}+\\left(1-telescope^{2}\\right)\\left(4 telescope^{2}-2\\right)^{2} \\\\\n& =16 telescope^{3}-4 telescope^{2}-16 telescope+8=sunflower(telescope) .\n\\end{aligned}\n\\]\n\nHence we seek \\( \\max _{-1 \\leq telescope \\leq 1} sunflower(telescope) \\). This maximum must be attained either at a critical point or at an endpoint. The critical points, obtained by solving \\( sunflower^{\\prime}(telescope)=48 telescope^{2}-8 telescope-16=0 \\), are \\( telescope=-\\frac{1}{2}, \\frac{2}{3} \\). Since\n\\[\nsunflower(-1)=4, \\quad sunflower\\left(-\\frac{1}{2}\\right)=13, \\quad sunflower\\left(\\frac{2}{3}\\right)=\\frac{8}{27}, \\quad sunflower(1)=4,\n\\]\nthe maximum value of \\( sunflower \\) is 13 , attained for \\( telescope=-\\frac{1}{2} \\). Hence the maximum value of \\(|cardboard(sandstone)|\\) on the unit circle is \\( \\sqrt{13} \\), attained when \\( \\operatorname{Re} sandstone=-\\frac{1}{2} \\), i.e., when \\( sandstone=(-1 \\pm i \\sqrt{3}) / 2 \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "z": "realconstant",
+        "x": "imaginaryaxis",
+        "y": "realcoordinate",
+        "f": "staticvalue",
+        "L": "variablestate"
+      },
+      "question": "1. What is the maximum of \\( \\left|realconstant^{3}-realconstant+2\\right| \\); where \\( realconstant \\) is a complex number with \\( |realconstant|=1 ? \\)",
+      "solution": "Solution. Let \\( staticvalue(realconstant)=realconstant^{3}-realconstant+2 \\). We may as well maximize \\( |staticvalue(realconstant)|^{2} \\). If \\( |realconstant|=1 \\), then \\( realconstant=imaginaryaxis+i realcoordinate \\), where \\( realcoordinate^{2}=1-imaginaryaxis^{2} \\) and \\( -1 \\leq imaginaryaxis \\leq 1 \\), so\n\\[\n\\begin{aligned}\n|staticvalue(realconstant)|^{2} & =\\left|(imaginaryaxis+i realcoordinate)^{3}-(imaginaryaxis+i realcoordinate)+2\\right|^{2} \\\n& =\\left|imaginaryaxis^{3}-3 imaginaryaxis\\left(1-imaginaryaxis^{2}\\right)-imaginaryaxis+2+i realcoordinate\\left(3 imaginaryaxis^{2}-\\left(1-imaginaryaxis^{2}\\right)-1\\right)\\right|^{2} \\\n& =\\left(4 imaginaryaxis^{3}-4 imaginaryaxis+2\\right)^{2}+\\left(1-imaginaryaxis^{2}\\right)\\left(4 imaginaryaxis^{2}-2\\right)^{2} \\\n& =16 imaginaryaxis^{3}-4 imaginaryaxis^{2}-16 imaginaryaxis+8=variablestate(imaginaryaxis) .\n\\end{aligned}\n\\]\n\nHence we seek \\( \\max _{-1 \\leq imaginaryaxis \\leq 1} variablestate(imaginaryaxis) \\). This maximum must be attained either at a critical point or at an endpoint. The critical points, obtained by solving \\( variablestate^{\\prime}(imaginaryaxis)=48 imaginaryaxis^{2}-8 imaginaryaxis-16=0 \\), are \\( imaginaryaxis=-\\frac{1}{2}, \\frac{2}{3} \\). Since\n\\[\nvariablestate(-1)=4, \\quad variablestate\\left(-\\frac{1}{2}\\right)=13, \\quad variablestate\\left(\\frac{2}{3}\\right)=\\frac{8}{27}, \\quad variablestate(1)=4,\n\\]\nthe maximum value of \\( variablestate \\) is 13 , attained for \\( imaginaryaxis=-\\frac{1}{2} \\). Hence the maximum value of \\( |staticvalue(realconstant)| \\) on the unit circle is \\( \\sqrt{13} \\), attained when \\( \\operatorname{Re} realconstant=-\\frac{1}{2} \\), i.e., when \\( realconstant=(-1 \\pm i \\sqrt{3}) / 2 \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "z": "qzxwvtnp",
+        "x": "hjgrksla",
+        "y": "pmctgour",
+        "f": "sbnvkeqr",
+        "L": "xfumthco"
+      },
+      "question": "1. What is the maximum of \\( \\left|qzxwvtnp^{3}-qzxwvtnp+2\\right| \\); where \\( qzxwvtnp \\) is a complex number with \\( |qzxwvtnp|=1 ? \\)",
+      "solution": "Solution. Let \\( sbnvkeqr(qzxwvtnp)=qzxwvtnp^{3}-qzxwvtnp+2 \\). We may as well maximize \\( |sbnvkeqr(qzxwvtnp)|^{2} \\). If \\( |qzxwvtnp|=1 \\), then \\( qzxwvtnp=hjgrksla+i pmctgour \\), where \\( pmctgour^{2}=1-hjgrksla^{2} \\) and \\( -1 \\leq hjgrksla \\leq 1 \\), so\n\\[\n\\begin{aligned}\n|sbnvkeqr(qzxwvtnp)|^{2} & =\\left|(hjgrksla+i pmctgour)^{3}-(hjgrksla+i pmctgour)+2\\right|^{2} \\\\\n& =\\left|hjgrksla^{3}-3 hjgrksla\\left(1-hjgrksla^{2}\\right)-hjgrksla+2+i pmctgour\\left(3 hjgrksla^{2}-\\left(1-hjgrksla^{2}\\right)-1\\right)\\right|^{2} \\\\\n& =\\left(4 hjgrksla^{3}-4 hjgrksla+2\\right)^{2}+\\left(1-hjgrksla^{2}\\right)\\left(4 hjgrksla^{2}-2\\right)^{2} \\\\\n& =16 hjgrksla^{3}-4 hjgrksla^{2}-16 hjgrksla+8=xfumthco(hjgrksla) .\n\\end{aligned}\n\\]\n\nHence we seek \\( \\max _{-1 \\leq hjgrksla \\leq 1} xfumthco(hjgrksla) \\). This maximum must be attained either at a critical point or at an endpoint. The critical points, obtained by solving \\( xfumthco^{\\prime}(hjgrksla)=48 hjgrksla^{2}-8 hjgrksla-16=0 \\), are \\( hjgrksla=-\\frac{1}{2}, \\frac{2}{3} \\). Since\n\\[\nxfumthco(-1)=4, \\quad xfumthco\\left(-\\frac{1}{2}\\right)=13, \\quad xfumthco\\left(\\frac{2}{3}\\right)=\\frac{8}{27}, \\quad xfumthco(1)=4,\n\\]\n the maximum value of \\( xfumthco \\) is 13 , attained for \\( hjgrksla=-\\frac{1}{2} \\). Hence the maximum value of \\( |sbnvkeqr(qzxwvtnp)| \\) on the unit circle is \\( \\sqrt{13} \\), attained when \\( \\operatorname{Re} qzxwvtnp=-\\frac{1}{2} \\), i.e., when \\( qzxwvtnp=(-1 \\pm i \\sqrt{3}) / 2 \\)."
+    },
+    "kernel_variant": {
+      "question": "Let  \n  f(z)=z^6-4z^3+48.  \nDetermine the maximum value of |f(z)| when the complex number z lies on the circle |z|=2, and list every point on that circle at which the maximum is attained.",
+      "solution": "Write z in polar form z=2e^{i\\theta } (-\\pi \\leq \\theta <\\pi ).  Then  \n  z^3=8e^{3i\\theta }, z^6=64e^{6i\\theta },  \nso  \n  f(z)=64e^{6i\\theta }-32e^{3i\\theta }+48.                                     (1)\n\nIntroduce t=e^{3i\\theta }; then |t|=1 and e^{6i\\theta }=t^2.  From (1)  \n  f(z)=16(4t^2-2t+3).                                                 (2)\n\nPut t=x+iy with x^2+y^2=1.  From (2)  \n\n Re f=16[4(x^2-y^2)-2x+3]=16(8x^2-2x-1),  \n Im f=16\\cdot y(8x-2).\n\nHence  \n |f(z)|^2=16^2[(8x^2-2x-1)^2+(8x-2)^2(1-x^2)].                           (3)\n\nA direct expansion of the bracket in (3) gives  \n\n (8x^2-2x-1)^2+(8x-2)^2(1-x^2)=48x^2-28x+5.                             (4)\n\nSince 48x^2-28x+5 is an upward-opening quadratic on [-1,1], its maximum occurs at an end-point.  \n For x=1: 48-28+5=25.  \n For x=-1: 48+28+5=81 (larger).\n\nSubstituting the larger value into (3):  \n |f(z)|_{\\max}=16\\cdot \\sqrt{81}=16\\cdot 9=144.                                     (5)\n\nThe maximum arises when x=Re t=-1, i.e. t=-1=e^{i\\pi }.  Because t=e^{3i\\theta }, we need 3\\theta \\equiv \\pi  (mod 2\\pi ); hence \\theta =\\pi /3, \\pi , 5\\pi /3.  Consequently  \n\n z=2e^{i\\pi /3}=1+i\\sqrt{3}, z=-2, z=2e^{i5\\pi /3}=1-i\\sqrt{3.}                    (6)\n\nTherefore |f(z)| attains its maximum value 144 exactly at the three points z=-2, 1+i\\sqrt{3}, and 1-i\\sqrt{3} on the circle |z|=2.",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.107393",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation",
+  "iteratively_fixed": true
+}

@@ -1,0 +1,142 @@
+{
+  "index": "2011-A-2",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "real numbers such that $a_1 = b_1 = 1$ and $b_n = b_{n-1} a_n - 2$ for\n$n=2,3,\\dots$. Assume that the sequence $(b_j)$ is bounded. Prove that\n\\[\nS = \\sum_{n=1}^\\infty \\frac{1}{a_1...a_n}\n\\]\nconverges, and evaluate $S$.",
+  "solution": "For $m\\geq 1$, write\n\\[\nS_m = \\frac{3}{2}\\left(1 - \\frac{b_1\\cdots b_m}{(b_1+2)\\cdots(b_m+2)}\\right).\n \\]\nThen $S_1 = 1 = 1/a_1$ and a quick calculation yields\n\\[\nS_m-S_{m-1} = \\frac{b_1\\cdots b_{m-1}}{(b_2+2)\\cdots(b_m+2)} = \\frac{1}{a_1\\cdots a_m}\n\\]\nfor $m\\geq 2$, since $a_j = (b_j+2)/b_{j-1}$ for $j \\geq 2$. It follows\nthat $S_m = \\sum_{n=1}^m 1/(a_1\\cdots a_n)$.\n\nNow if $(b_j)$ is bounded above by $B$, then $\\frac{b_j}{b_j+2}\n\\leq \\frac{B}{B+2}$ for all $j$, and so $3/2 > S_m \\geq\n3/2(1-(\\frac{B}{B+2})^m)$. Since $\\frac{B}{B+2} < 1$, it follows that the\nsequence $(S_m)$ converges to $S = 3/2$.",
+  "vars": [
+    "a_1",
+    "a_n",
+    "a_j",
+    "b_1",
+    "b_n",
+    "b_n-1",
+    "b_j",
+    "S",
+    "S_m",
+    "n",
+    "m",
+    "j"
+  ],
+  "params": [
+    "B"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_1": "initiala",
+        "a_n": "nthavalue",
+        "a_j": "jthavalue",
+        "b_1": "initialb",
+        "b_n": "nthbvalue",
+        "b_n-1": "prevbvalue",
+        "b_j": "jthbvalue",
+        "S": "totalsummation",
+        "S_m": "partialsum",
+        "n": "generalindex",
+        "m": "interimindex",
+        "j": "auxindex",
+        "B": "maxbound"
+      },
+      "question": "real numbers such that $initiala = initialb = 1$ and $nthbvalue = b_{generalindex-1} \\, nthavalue - 2$ for\n$generalindex=2,3,\\dots$. Assume that the sequence $(jthbvalue)$ is bounded. Prove that\n\\[\ntotalsummation = \\sum_{generalindex=1}^{\\infty} \\frac{1}{initiala\\cdots nthavalue}\n\\]\nconverges, and evaluate $totalsummation$.",
+      "solution": "For $interimindex\\geq 1$, write\n\\[\npartialsum = \\frac{3}{2}\\left(1 - \\frac{initialb\\cdots b_{interimindex}}{(initialb+2)\\cdots(b_{interimindex}+2)}\\right).\n\\]\nThen $totalsummation_{1} = 1 = 1/initiala$ and a quick calculation yields\n\\[\npartialsum - totalsummation_{interimindex-1} = \\frac{initialb\\cdots b_{interimindex-1}}{(b_2+2)\\cdots(b_{interimindex}+2)} = \\frac{1}{initiala\\cdots a_{interimindex}}\n\\]\nfor $interimindex\\geq 2$, since $jthavalue = (jthbvalue+2)/b_{auxindex-1}$ for $auxindex \\geq 2$. It follows that\n\\[\npartialsum = \\sum_{generalindex=1}^{interimindex} \\frac{1}{initiala\\cdots nthavalue}.\n\\]\nNow if $(jthbvalue)$ is bounded above by $maxbound$, then\n\\[\n\\frac{jthbvalue}{jthbvalue+2} \\leq \\frac{maxbound}{maxbound+2}\n\\]\nfor all $auxindex$, and so\n\\[\n\\frac{3}{2} > partialsum \\geq \\frac{3}{2}\\left(1-\\left(\\frac{maxbound}{maxbound+2}\\right)^{interimindex}\\right).\n\\]\nSince $\\frac{maxbound}{maxbound+2} < 1$, it follows that the sequence $(partialsum)$ converges to $totalsummation = \\frac{3}{2}$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_1": "blueberry",
+        "a_n": "windchime",
+        "a_j": "teacupset",
+        "b_1": "mushroom",
+        "b_n": "silkmoth",
+        "b_n-1": "raincloud",
+        "b_j": "poplarwood",
+        "S": "cathedral",
+        "S_m": "crocodile",
+        "n": "teaspoon",
+        "m": "marshmallow",
+        "j": "buttercup",
+        "B": "paperclip"
+      },
+      "question": "real numbers such that $blueberry = mushroom = 1$ and $silkmoth = raincloud windchime - 2$ for\n$teaspoon=2,3,\\dots$. Assume that the sequence $(poplarwood)$ is bounded. Prove that\n\\[\ncathedral = \\sum_{teaspoon=1}^\\infty \\frac{1}{blueberry...windchime}\n\\]\nconverges, and evaluate $cathedral$.",
+      "solution": "For $marshmallow\\geq 1$, write\n\\[\ncrocodile = \\frac{3}{2}\\left(1 - \\frac{mushroom\\cdots b_{marshmallow}}{(mushroom+2)\\cdots(b_{marshmallow}+2)}\\right).\n \\]\nThen $S_1 = 1 = 1/blueberry$ and a quick calculation yields\n\\[\ncrocodile-S_{marshmallow-1} = \\frac{mushroom\\cdots b_{marshmallow-1}}{(b_2+2)\\cdots(b_{marshmallow}+2)} = \\frac{1}{blueberry\\cdots a_{marshmallow}}\n\\]\nfor $marshmallow\\geq 2$, since $teacupset = (poplarwood+2)/b_{buttercup-1}$ for $buttercup \\geq 2$. It follows\nthat $crocodile = \\sum_{teaspoon=1}^{marshmallow} 1/(blueberry\\cdots windchime)$.\n\nNow if $(poplarwood)$ is bounded above by $paperclip$, then $\\frac{poplarwood}{poplarwood+2}\n\\leq \\frac{paperclip}{paperclip+2}$ for all $buttercup$, and so $3/2 > crocodile \\geq\n3/2(1-(\\frac{paperclip}{paperclip+2})^{marshmallow})$. Since $\\frac{paperclip}{paperclip+2} < 1$, it follows that the\nsequence $(crocodile)$ converges to $cathedral = 3/2$.}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_1": "lastelement",
+        "a_n": "fixedscalar",
+        "a_j": "steadyterm",
+        "b_1": "finalcomponent",
+        "b_n": "stablecolumn",
+        "b_n-1": "followingcell",
+        "b_j": "rigidentry",
+        "S": "gapmeasure",
+        "S_m": "totalproduct",
+        "n": "constant",
+        "m": "immutable",
+        "j": "motionless",
+        "B": "unbounded"
+      },
+      "question": "real numbers such that $lastelement = finalcomponent = 1$ and $stablecolumn = followingcell fixedscalar - 2$ for\n$constant=2,3,\\dots$. Assume that the sequence $(rigidentry)$ is bounded. Prove that\n\\[\ngapmeasure = \\sum_{constant=1}^\\infty \\frac{1}{lastelement...fixedscalar}\n\\]\nconverges, and evaluate $gapmeasure$.",
+      "solution": "For $immutable\\geq 1$, write\n\\[\ntotalproduct = \\frac{3}{2}\\left(1 - \\frac{finalcomponent\\cdots b_m}{(b_1+2)\\cdots(b_m+2)}\\right).\n \\]\nThen $S_1 = 1 = 1/lastelement$ and a quick calculation yields\n\\[\ntotalproduct-S_{m-1} = \\frac{b_1\\cdots b_{m-1}}{(b_2+2)\\cdots(b_m+2)} = \\frac{1}{lastelement\\cdots a_m}\n\\]\nfor $immutable\\geq 2$, since $steadyterm = (b_j+2)/b_{j-1}$ for $motionless \\geq 2$. It follows\nthat $totalproduct = \\sum_{constant=1}^{m} 1/(lastelement\\cdots a_n)$.\n\nNow if $(rigidentry)$ is bounded above by $unbounded$, then $\\frac{b_j}{b_j+2}\n\\leq \\frac{unbounded}{unbounded+2}$ for all $motionless$, and so $3/2 > totalproduct \\geq\n3/2(1-(\\frac{unbounded}{unbounded+2})^m)$. Since $\\frac{unbounded}{unbounded+2} < 1$, it follows that the\nsequence $(S_m)$ converges to $gapmeasure = 3/2$.",
+      "errors": null
+    },
+    "garbled_string": {
+      "map": {
+        "a_1": "qzxwvtnp",
+        "a_n": "hjgrksla",
+        "a_j": "mnvrkoei",
+        "b_1": "ouasdlef",
+        "b_n": "pqjenkci",
+        "b_n-1": "rslqtwop",
+        "b_j": "vcrlabsm",
+        "S": "iwudkjen",
+        "S_m": "lgrstpme",
+        "n": "zodfukah",
+        "m": "kjxrelop",
+        "j": "tebglsza",
+        "B": "yiurnvop"
+      },
+      "question": "real numbers such that $qzxwvtnp = ouasdlef = 1$ and $pqjenkci = rslqtwop hjgrksla - 2$ for\n$zodfukah=2,3,\\dots$. Assume that the sequence $(vcrlabsm)$ is bounded. Prove that\n\\[\niwudkjen = \\sum_{zodfukah=1}^\\infty \\frac{1}{qzxwvtnp...hjgrksla}\n\\]\nconverges, and evaluate $iwudkjen$.",
+      "solution": "For $kjxrelop\\geq 1$, write\n\\[\nlgrstpme = \\frac{3}{2}\\left(1 - \\frac{ouasdlef\\cdots b_m}{(ouasdlef+2)\\cdots(b_m+2)}\\right).\n \\]\nThen $S_1 = 1 = 1/qzxwvtnp$ and a quick calculation yields\n\\[\nlgrstpme-S_{kjxrelop-1} = \\frac{ouasdlef\\cdots b_{m-1}}{(b_2+2)\\cdots(b_m+2)} = \\frac{1}{qzxwvtnp\\cdots a_m}\n\\]\nfor $kjxrelop\\geq 2$, since $mnvrkoei = (vcrlabsm+2)/b_{j-1}$ for $tebglsza \\geq 2$. It follows\nthat $lgrstpme = \\sum_{zodfukah=1}^{kjxrelop} 1/(qzxwvtnp\\cdots hjgrksla)$.\n\nNow if $(vcrlabsm)$ is bounded above by $yiurnvop$, then $\\frac{vcrlabsm}{vcrlabsm+2}\n\\leq \\frac{yiurnvop}{yiurnvop+2}$ for all $tebglsza$, and so $3/2 > lgrstpme \\geq\n3/2(1-(\\frac{yiurnvop}{yiurnvop+2})^{kjxrelop})$. Since $\\frac{yiurnvop}{yiurnvop+2} < 1$, it follows that the\nsequence $(lgrstpme)$ converges to $iwudkjen = 3/2$. "
+    },
+    "kernel_variant": {
+      "question": "Let (a_n)_{n\\ge 1} and (b_n)_{n\\ge 1} be real sequences that satisfy\n\na_1 = 3,\\qquad b_1 = 4,\\qquad b_n = b_{n-1} a_n - 5\\quad (n \\ge 2).\n\nAssume further that\n\n(i) the sequence (b_n) is bounded;\n(ii) for every n \\ge 1 we have b_n \\neq 0 and b_n \\neq -5;  (so all quotients that appear below are well defined);\n(iii) b_n > 0 for every n.\n\nProve that the infinite series\n\nS = \\sum_{n=1}^{\\infty} \\frac{1}{a_1 a_2 \\cdots a_n}\n\nconverges and determine its value.",
+      "solution": "Step 1.  Express a_n through the b-sequence.\n------------------------------------------\nBecause b_{n-1}\\neq 0 and b_n+5\\neq 0 by (ii), we may divide in the recurrence relation\n  b_n = b_{n-1} a_n - 5 \\quad(n\\ge 2)\nto get\n  a_n = \\frac{b_n+5}{b_{n-1}} \\quad(n\\ge 2).            (1)\nConsequently every a_n is non-zero, so all partial products a_1a_2\\dots a_n are well defined.\n\nStep 2.  Introduce an auxiliary product and a candidate for the partial sums.\n-----------------------------------------------------------------------------\nFor m\\ge 1 set\n  P_m := \\prod_{j=1}^{m} \\frac{b_j}{b_j+5}.\nBecause of (iii) each factor satisfies 0 < b_j/(b_j+5) < 1.\nDefine the constant\n  K := \\frac{b_1+5}{5a_1} = \\frac{4+5}{5\\cdot3} = \\frac{3}{5},\nand put\n  S_m := K\\,(1-P_m).                                      (2)\nWe will show that S_m equals the m-th partial sum of the given series:\n  S_m = \\sum_{n=1}^{m} \\frac{1}{a_1a_2\\cdots a_n}.      (3)\n\nStep 3.  Proof of (3) by induction on m.\n----------------------------------------\nBase case m=1.\n  S_1 = K\\bigl(1-\\tfrac{b_1}{b_1+5}\\bigr)\n      = \\frac{3}{5}\\bigl(1-\\tfrac{4}{9}\\bigr)\n      = \\frac{3}{5}\\cdot\\frac{5}{9} = \\frac{1}{3} = \\frac{1}{a_1}.\nThus (3) holds for m=1.\n\nInduction step.  Assume (3) is true for m-1 (with m\\ge 2).  Using (2),\n  S_m - S_{m-1} = K(P_{m-1}-P_m)\n                = KP_{m-1}\\Bigl(1-\\frac{b_m}{b_m+5}\\Bigr)\n                = KP_{m-1}\\cdot\\frac{5}{b_m+5}\n                = \\frac{b_1+5}{a_1}\\;\\frac{P_{m-1}}{b_m+5}.      (4)\n\nNext evaluate 1/(a_1\\dots a_m) with the aid of (1):\n  a_1a_2\\dots a_m\n     = a_1 \\prod_{k=2}^{m}\\frac{b_k+5}{b_{k-1}}\n     = a_1\\,\\frac{\\prod_{k=1}^{m}(b_k+5)}{(b_1+5)\\prod_{k=1}^{m-1}b_k},\nso\n  \\frac{1}{a_1\\dots a_m}\n     = \\frac{b_1+5}{a_1}\\;\\frac{\\prod_{k=1}^{m-1}b_k}{\\prod_{k=1}^{m}(b_k+5)}\n     = \\frac{b_1+5}{a_1}\\;\\frac{P_{m-1}}{b_m+5}.          (5)\nComparing (4) and (5) yields S_m-S_{m-1}=1/(a_1\\dots a_m), whence by telescoping (3) holds for all m.\n\nStep 4.  Convergence of the sequence (S_m).\n------------------------------------------\nBecause (b_n) is bounded, pick B>0 with 0<b_n\\le B for every n.  Then for every j\n  0 < \\frac{b_j}{b_j+5} \\le \\frac{B}{B+5} =: q < 1.            (6)\nHence |P_m| = P_m \\le q^m \\xrightarrow[m\\to\\infty]{} 0.\nFrom (2) we obtain S_m = K(1-P_m) \\to K = 3/5.\nThus (S_m) converges, and by (3) its limit equals the sum of the series.\n\nStep 5.  Conclusion.\n--------------------\nThe given series converges and\n  S = \\sum_{n=1}^{\\infty} \\frac{1}{a_1a_2\\cdots a_n} = \\frac{3}{5}.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite the recurrence to get a_n = (b_n + 2)/b_{n-1}.",
+          "Define S_m = K·(1 − ∏_{j=1}^{m} b_j/(b_j+2)), choosing K so that S_1 = 1/a_1.",
+          "Show S_m − S_{m−1} = 1/(a_1⋯a_m); hence S_m equals the m-th partial sum of the target series.",
+          "Use the boundedness b_j ≤ B to bound the product by (B/(B+2))^m < 1, guaranteeing convergence.",
+          "Take the limit m→∞; the product tends to 0, leaving S = K (3/2 for the given data)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The constant '2' in the recurrence b_n = b_{n-1} a_n − 2 and in each factor (b_j+2).",
+            "original": 2
+          },
+          "slot2": {
+            "description": "The initial value a_1 used to normalise K.",
+            "original": 1
+          },
+          "slot3": {
+            "description": "The initial value b_1 appearing in K and in the first factor (b_1+2).",
+            "original": 1
+          },
+          "slot4": {
+            "description": "The prefactor 3/2 chosen for S_m (equal to (b_1+2)/(2a_1) with the given data).",
+            "original": 1.5
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

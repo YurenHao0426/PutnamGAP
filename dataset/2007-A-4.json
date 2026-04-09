@@ -1,0 +1,144 @@
+{
+  "index": "2007-A-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "A \\emph{repunit} is a positive integer whose digits in base 10 are\nall ones. Find all polynomials $f$ with real coefficients such that if\n$n$ is a repunit, then so is $f(n)$.",
+  "solution": "Note that $n$ is a repunit if and only if $9n+1 = 10^m$ for some power of\n10 greater than 1. Consequently, if we put\n\\[\ng(n) = 9f\\left( \\frac{n-1}{9} \\right) + 1,\n\\]\nthen $f$ takes repunits to repunits if and only if $g$ takes powers of 10\ngreater than 1 to powers of 10 greater than 1. We will show that the only\nsuch functions $g$ are those of the form $g(n) = 10^c n^d$ for $d \\geq 0$,\n$c \\geq 1-d$ (all of which clearly work),\nwhich will mean that the desired polynomials $f$ are those of the form\n\\[\nf(n) = \\frac{1}{9}(10^c (9n+1)^d - 1)\n\\]\nfor the same $c,d$.\n\nIt is convenient to allow ``powers of 10'' to be of the form\n$10^k$ for any integer $k$. With this convention, it suffices to check that\nthe polynomials $g$ taking powers of 10 greater than 1 to powers of 10\nare of the form $10^c n^d$ for any integers $c,d$ with $d \\geq 0$.\n\n\\textbf{First solution:}\nSuppose that the leading term of $g(x)$ is $ax^d$, and note that\n$a>0$. As $x \\to \\infty$, we have $g(x)/x^d \\to a$; however, for $x$\na power of 10 greater than 1, $g(x)/x^d$ is a power of 10.\nThe set of powers of 10 has no positive limit point, so $g(x)/x^d$\nmust be equal to $a$ for $x = 10^k$ with $k$ sufficiently large,\nand we must have $a = 10^c$ for some $c$.\nThe polynomial $g(x) - 10^c x^d$ has infinitely many roots, so\nmust be identically zero.\n\n\\textbf{Second solution:}\nWe proceed by induction on $d = \\deg(g)$.\nIf $d=0$, we have $g(n) = 10^c$ for some $c$. Otherwise,\n$g$ has rational coefficients by Lagrange's interpolation formula (this\napplies to any polynomial of degree $d$ taking at least $d+1$\ndifferent rational numbers to rational numbers), so $g(0) = t$ is rational.\nMoreover, $g$ takes each value only finitely many times, so the sequence\n$g(10^0), g(10^1), \\dots$ includes arbitrarily large powers of 10.\nSuppose that $t \\neq 0$; then we can choose a positive integer $h$ such that\nthe numerator of $t$ is not divisible by $10^h$.\nBut for $c$ large enough, $g(10^c) - t$ has numerator divisible by\n$10^b$ for some $b>h$, contradiction.\n\nConsequently, $t=0$, and we may apply the induction hypothesis to $g(n)/n$\nto deduce the claim.\n\n\\textbf{Remark:} The second solution amounts to the fact that $g$, being\na polynomial with rational coefficients, is continuous for the $2$-adic\nand $5$-adic topologies on $\\mathbb{Q}$. By contrast, the first solution\nuses the ``$\\infty$-adic'' topology, i.e., the usual real topology.",
+  "vars": [
+    "n",
+    "x",
+    "m",
+    "k"
+  ],
+  "params": [
+    "f",
+    "g",
+    "a",
+    "d",
+    "c",
+    "t",
+    "h",
+    "b",
+    "Q"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "repunit",
+        "x": "variable",
+        "m": "exponent",
+        "k": "indexer",
+        "f": "polyfun",
+        "g": "auxpoly",
+        "a": "leadcoef",
+        "d": "degreet",
+        "c": "shiftcof",
+        "t": "constant",
+        "h": "helperh",
+        "b": "counterb",
+        "Q": "ratfield"
+      },
+      "question": "A repunit is a positive integer whose digits in base 10 are all ones. Find all polynomials $polyfun$ with real coefficients such that if $repunit$ is a repunit, then so is $polyfun(repunit)$. ",
+      "solution": "Note that $repunit$ is a repunit if and only if $9repunit+1 = 10^{exponent}$ for some power of 10 greater than 1. Consequently, if we put\n\\[\nauxpoly(repunit) = 9polyfun\\left( \\frac{repunit-1}{9} \\right) + 1,\n\\]\nthen $polyfun$ takes repunits to repunits if and only if $auxpoly$ takes powers of 10\ngreater than 1 to powers of 10 greater than 1. We will show that the only\nsuch functions $auxpoly$ are those of the form $auxpoly(repunit) = 10^{shiftcof} repunit^{degreet}$ for $degreet \\geq 0$,\n$shiftcof \\geq 1-degreet$ (all of which clearly work),\nwhich will mean that the desired polynomials $polyfun$ are those of the form\n\\[\npolyfun(repunit) = \\frac{1}{9}(10^{shiftcof} (9repunit+1)^{degreet} - 1)\n\\]\nfor the same $shiftcof,degreet$.\n\nIt is convenient to allow ``powers of 10'' to be of the form\n$10^{indexer}$ for any integer $indexer$. With this convention, it suffices to check that\nthe polynomials $auxpoly$ taking powers of 10 greater than 1 to powers of 10\nare of the form $10^{shiftcof} repunit^{degreet}$ for any integers $shiftcof,degreet$ with $degreet \\geq 0$.\n\n\\textbf{First solution:}\nSuppose that the leading term of $auxpoly(variable)$ is $leadcoef variable^{degreet}$, and note that\n$leadcoef>0$. As $variable \\to \\infty$, we have $auxpoly(variable)/variable^{degreet} \\to leadcoef$; however, for $variable$\na power of 10 greater than 1, $auxpoly(variable)/variable^{degreet}$ is a power of 10.\nThe set of powers of 10 has no positive limit point, so $auxpoly(variable)/variable^{degreet}$\nmust be equal to $leadcoef$ for $variable = 10^{indexer}$ with $indexer$ sufficiently large,\nand we must have $leadcoef = 10^{shiftcof}$ for some $shiftcof$.\nThe polynomial $auxpoly(variable) - 10^{shiftcof} variable^{degreet}$ has infinitely many roots, so\nmust be identically zero.\n\n\\textbf{Second solution:}\nWe proceed by induction on $degreet = \\deg(auxpoly)$.\nIf $degreet=0$, we have $auxpoly(repunit) = 10^{shiftcof}$ for some $shiftcof$. Otherwise,\n$auxpoly$ has rational coefficients by Lagrange's interpolation formula (this\napplies to any polynomial of degree $degreet$ taking at least $degreet+1$\ndifferent rational numbers to rational numbers), so $auxpoly(0) = constant$ is rational.\nMoreover, $auxpoly$ takes each value only finitely many times, so the sequence\n$auxpoly(10^0), auxpoly(10^1), \\dots$ includes arbitrarily large powers of 10.\nSuppose that $constant \\neq 0$; then we can choose a positive integer $helperh$ such that\nthe numerator of $constant$ is not divisible by $10^{helperh}$.\nBut for $shiftcof$ large enough, $auxpoly(10^{shiftcof}) - constant$ has numerator divisible by\n$10^{counterb}$ for some $counterb>helperh$, contradiction.\n\nConsequently, $constant=0$, and we may apply the induction hypothesis to $auxpoly(repunit)/repunit$\nto deduce the claim.\n\n\\textbf{Remark:} The second solution amounts to the fact that $auxpoly$, being\na polynomial with rational coefficients, is continuous for the $2$-adic\nand $5$-adic topologies on $\\mathbb{ratfield}$. By contrast, the first solution\nuses the ``$\\infty$-adic'' topology, i.e., the usual real topology."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "backpack",
+        "x": "lanterns",
+        "m": "playwright",
+        "k": "doorstep",
+        "f": "umbrella",
+        "g": "sailboat",
+        "a": "sunflower",
+        "d": "marigolds",
+        "c": "raincloud",
+        "t": "sandstone",
+        "h": "pancakes",
+        "b": "necklace",
+        "Q": "lemonade"
+      },
+      "question": "A \\emph{repunit} is a positive integer whose digits in base 10 are\nall ones. Find all polynomials $umbrella$ with real coefficients such that if\n$backpack$ is a repunit, then so is $umbrella(backpack)$.",
+      "solution": "Note that $backpack$ is a repunit if and only if $9backpack+1 = 10^{playwright}$ for some power of\n10 greater than 1. Consequently, if we put\n\\[\nsailboat(backpack) = 9umbrella\\left( \\frac{backpack-1}{9} \\right) + 1,\n\\]\nthen $umbrella$ takes repunits to repunits if and only if $sailboat$ takes powers of 10\ngreater than 1 to powers of 10 greater than 1. We will show that the only\nsuch functions $sailboat$ are those of the form $sailboat(backpack) = 10^{raincloud} backpack^{marigolds}$ for $marigolds \\geq 0$,\n$raincloud \\geq 1-marigolds$ (all of which clearly work),\nwhich will mean that the desired polynomials $umbrella$ are those of the form\n\\[\numbrella(backpack) = \\frac{1}{9}(10^{raincloud} (9backpack+1)^{marigolds} - 1)\n\\]\nfor the same $raincloud,marigolds$.\n\nIt is convenient to allow ``powers of 10'' to be of the form\n$10^{doorstep}$ for any integer $doorstep$. With this convention, it suffices to check that\nthe polynomials $sailboat$ taking powers of 10 greater than 1 to powers of 10\nare of the form $10^{raincloud} backpack^{marigolds}$ for any integers $raincloud,marigolds$ with $marigolds \\geq 0$.\n\n\\textbf{First solution:}\nSuppose that the leading term of $sailboat(lanterns)$ is $sunflower lanterns^{marigolds}$, and note that\n$sunflower>0$. As $lanterns \\to \\infty$, we have $sailboat(lanterns)/lanterns^{marigolds} \\to sunflower$; however, for $lanterns$\na power of 10 greater than 1, $sailboat(lanterns)/lanterns^{marigolds}$ is a power of 10.\nThe set of powers of 10 has no positive limit point, so $sailboat(lanterns)/lanterns^{marigolds}$\nmust be equal to $sunflower$ for $lanterns = 10^{doorstep}$ with $doorstep$ sufficiently large,\nand we must have $sunflower = 10^{raincloud}$ for some $raincloud$.\nThe polynomial $sailboat(lanterns) - 10^{raincloud} lanterns^{marigolds}$ has infinitely many roots, so\nmust be identically zero.\n\n\\textbf{Second solution:}\nWe proceed by induction on $marigolds = \\deg(sailboat)$.\nIf $marigolds=0$, we have $sailboat(backpack) = 10^{raincloud}$ for some $raincloud$. Otherwise,\n$sailboat$ has rational coefficients by Lagrange's interpolation formula (this\napplies to any polynomial of degree $marigolds$ taking at least $marigolds+1$\ndifferent rational numbers to rational numbers), so $sailboat(0) = sandstone$ is rational.\nMoreover, $sailboat$ takes each value only finitely many times, so the sequence\n$sailboat(10^0), sailboat(10^1), \\dots$ includes arbitrarily large powers of 10.\nSuppose that $sandstone \\neq 0$; then we can choose a positive integer $pancakes$ such that\nthe numerator of $sandstone$ is not divisible by $10^{pancakes}$.\nBut for $raincloud$ large enough, $sailboat(10^{raincloud}) - sandstone$ has numerator divisible by\n$10^{necklace}$ for some $necklace>pancakes$, contradiction.\n\nConsequently, $sandstone=0$, and we may apply the induction hypothesis to $sailboat(backpack)/backpack$\nto deduce the claim.\n\n\\textbf{Remark:} The second solution amounts to the fact that $sailboat$, being\na polynomial with rational coefficients, is continuous for the $2$-adic\nand $5$-adic topologies on $\\mathbb{lemonade}$. By contrast, the first solution\nuses the ``$\\infty$-adic'' topology, i.e., the usual real topology."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "nonrepunit",
+        "x": "constantvalue",
+        "m": "fractionalindex",
+        "k": "nonintegerindex",
+        "f": "constantfunction",
+        "g": "randommapping",
+        "a": "trailingcoef",
+        "d": "nodegree",
+        "c": "mantissavalue",
+        "t": "irrationalvalue",
+        "h": "nonpositiveindex",
+        "b": "tinyindex",
+        "Q": "irrationals"
+      },
+      "question": "A \\emph{repunit} is a positive integer whose digits in base 10 are\nall ones. Find all polynomials $constantfunction$ with real coefficients such that if\n$nonrepunit$ is a repunit, then so is $constantfunction(nonrepunit)$.",
+      "solution": "Note that $nonrepunit$ is a repunit if and only if $9nonrepunit+1 = 10^{fractionalindex}$ for some power of\n10 greater than 1. Consequently, if we put\n\\[\nrandommapping(nonrepunit) = 9constantfunction\\left( \\frac{nonrepunit-1}{9} \\right) + 1,\n\\]\nthen $constantfunction$ takes repunits to repunits if and only if $randommapping$ takes powers of 10\ngreater than 1 to powers of 10 greater than 1. We will show that the only\nsuch functions $randommapping$ are those of the form $randommapping(nonrepunit) = 10^{mantissavalue} nonrepunit^{nodegree}$ for $nodegree \\geq 0$,\n$mantissavalue \\geq 1-nodegree$ (all of which clearly work),\nwhich will mean that the desired polynomials $constantfunction$ are those of the form\n\\[\nconstantfunction(nonrepunit) = \\frac{1}{9}(10^{mantissavalue} (9nonrepunit+1)^{nodegree} - 1)\n\\]\nfor the same $mantissavalue,nodegree$.\n\nIt is convenient to allow ``powers of 10'' to be of the form\n$10^{nonintegerindex}$ for any integer $nonintegerindex$. With this convention, it suffices to check that\nthe polynomials $randommapping$ taking powers of 10 greater than 1 to powers of 10\nare of the form $10^{mantissavalue} nonrepunit^{nodegree}$ for any integers $mantissavalue,nodegree$ with $nodegree \\geq 0$.\n\n\\textbf{First solution:}\nSuppose that the leading term of $randommapping(constantvalue)$ is $trailingcoef constantvalue^{nodegree}$, and note that\n$trailingcoef>0$. As $constantvalue \\to \\infty$, we have $randommapping(constantvalue)/constantvalue^{nodegree} \\to trailingcoef$; however, for $constantvalue$\na power of 10 greater than 1, $randommapping(constantvalue)/constantvalue^{nodegree}$ is a power of 10.\nThe set of powers of 10 has no positive limit point, so $randommapping(constantvalue)/constantvalue^{nodegree}$\nmust be equal to $trailingcoef$ for $constantvalue = 10^{nonintegerindex}$ with $nonintegerindex$ sufficiently large,\nand we must have $trailingcoef = 10^{mantissavalue}$ for some $mantissavalue$.\nThe polynomial $randommapping(constantvalue) - 10^{mantissavalue} constantvalue^{nodegree}$ has infinitely many roots, so\nmust be identically zero.\n\n\\textbf{Second solution:}\nWe proceed by induction on $nodegree = \\deg(randommapping)$.\nIf $nodegree=0$, we have $randommapping(nonrepunit) = 10^{mantissavalue}$ for some $mantissavalue$. Otherwise,\n$randommapping$ has rational coefficients by Lagrange's interpolation formula (this\napplies to any polynomial of degree $nodegree$ taking at least $nodegree+1$\ndifferent rational numbers to rational numbers), so $randommapping(0) = irrationalvalue$ is rational.\nMoreover, $randommapping$ takes each value only finitely many times, so the sequence\n$randommapping(10^0), randommapping(10^1), \\dots$ includes arbitrarily large powers of 10.\nSuppose that $irrationalvalue \\neq 0$; then we can choose a positive integer $nonpositiveindex$ such that\nthe numerator of $irrationalvalue$ is not divisible by $10^{nonpositiveindex}$.\nBut for $mantissavalue$ large enough, $randommapping(10^{mantissavalue}) - irrationalvalue$ has numerator divisible by\n$10^{tinyindex}$ for some $tinyindex>nonpositiveindex$, contradiction.\n\nConsequently, $irrationalvalue=0$, and we may apply the induction hypothesis to $randommapping(nonrepunit)/nonrepunit$\nto deduce the claim.\n\n\\textbf{Remark:} The second solution amounts to the fact that $randommapping$, being\na polynomial with rational coefficients, is continuous for the $2$-adic\nand $5$-adic topologies on $\\mathbb{irrationals}$. By contrast, the first solution\nuses the ``$\\infty$-adic'' topology, i.e., the usual real topology."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "x": "hjgrksla",
+        "m": "rntcvzqb",
+        "k": "dpslqjkr",
+        "f": "lktbqmds",
+        "g": "wvcfzhgo",
+        "a": "srmpdqlt",
+        "d": "xzbrkphs",
+        "c": "pgmlvhza",
+        "t": "vchlqtsm",
+        "h": "yzjwndvo",
+        "b": "fkpslgjh",
+        "Q": "lsphqjdm"
+      },
+      "question": "A \\emph{repunit} is a positive integer whose digits in base 10 are all ones. Find all polynomials $lktbqmds$ with real coefficients such that if $qzxwvtnp$ is a repunit, then so is $lktbqmds(qzxwvtnp)$.",
+      "solution": "Note that $qzxwvtnp$ is a repunit if and only if $9qzxwvtnp+1 = 10^{rntcvzqb}$ for some power of 10 greater than 1. Consequently, if we put\n\\[\nwvcfzhgo(qzxwvtnp) = 9lktbqmds\\left( \\frac{qzxwvtnp-1}{9} \\right) + 1,\n\\]\nthen $lktbqmds$ takes repunits to repunits if and only if $wvcfzhgo$ takes powers of 10 greater than 1 to powers of 10 greater than 1. We will show that the only such functions $wvcfzhgo$ are those of the form $wvcfzhgo(qzxwvtnp) = 10^{pgmlvhza} qzxwvtnp^{xzbrkphs}$ for $xzbrkphs \\geq 0$, $pgmlvhza \\geq 1 - xzbrkphs$ (all of which clearly work), which will mean that the desired polynomials $lktbqmds$ are those of the form\n\\[\nlktbqmds(qzxwvtnp) = \\frac{1}{9}(10^{pgmlvhza} (9qzxwvtnp+1)^{xzbrkphs} - 1)\n\\]\nfor the same $pgmlvhza,xzbrkphs$.\n\nIt is convenient to allow ``powers of 10'' to be of the form $10^{dpslqjkr}$ for any integer $dpslqjkr$. With this convention, it suffices to check that the polynomials $wvcfzhgo$ taking powers of 10 greater than 1 to powers of 10 are of the form $10^{pgmlvhza} qzxwvtnp^{xzbrkphs}$ for any integers $pgmlvhza,xzbrkphs$ with $xzbrkphs \\geq 0$.\n\n\\textbf{First solution:}\nSuppose that the leading term of $wvcfzhgo(hjgrksla)$ is $srmpdqlt hjgrksla^{xzbrkphs}$, and note that $srmpdqlt>0$. As $hjgrksla \\to \\infty$, we have $wvcfzhgo(hjgrksla)/hjgrksla^{xzbrkphs} \\to srmpdqlt$; however, for $hjgrksla$ a power of 10 greater than 1, $wvcfzhgo(hjgrksla)/hjgrksla^{xzbrkphs}$ is a power of 10. The set of powers of 10 has no positive limit point, so $wvcfzhgo(hjgrksla)/hjgrksla^{xzbrkphs}$ must be equal to $srmpdqlt$ for $hjgrksla = 10^{dpslqjkr}$ with $dpslqjkr$ sufficiently large, and we must have $srmpdqlt = 10^{pgmlvhza}$ for some $pgmlvhza$. The polynomial $wvcfzhgo(hjgrksla) - 10^{pgmlvhza} hjgrksla^{xzbrkphs}$ has infinitely many roots, so must be identically zero.\n\n\\textbf{Second solution:}\nWe proceed by induction on $xzbrkphs = \\deg(wvcfzhgo)$. If $xzbrkphs = 0$, we have $wvcfzhgo(qzxwvtnp) = 10^{pgmlvhza}$ for some $pgmlvhza$. Otherwise, $wvcfzhgo$ has rational coefficients by Lagrange's interpolation formula (this applies to any polynomial of degree $xzbrkphs$ taking at least $xzbrkphs+1$ different rational numbers to rational numbers), so $wvcfzhgo(0) = vchlqtsm$ is rational. Moreover, $wvcfzhgo$ takes each value only finitely many times, so the sequence $wvcfzhgo(10^0), wvcfzhgo(10^1), \\dots$ includes arbitrarily large powers of 10.\n\nSuppose that $vchlqtsm \\neq 0$; then we can choose a positive integer $yzjwndvo$ such that the numerator of $vchlqtsm$ is not divisible by $10^{yzjwndvo}$. But for $pgmlvhza$ large enough, $wvcfzhgo(10^{pgmlvhza}) - vchlqtsm$ has numerator divisible by $10^{fkpslgjh}$ for some $fkpslgjh > yzjwndvo$, contradiction.\n\nConsequently, $vchlqtsm = 0$, and we may apply the induction hypothesis to $wvcfzhgo(qzxwvtnp)/qzxwvtnp$ to deduce the claim.\n\n\\textbf{Remark:} The second solution amounts to the fact that $wvcfzhgo$, being a polynomial with rational coefficients, is continuous for the $2$-adic and $5$-adic topologies on $\\mathbb{lsphqjdm}$. By contrast, the first solution uses the ``$\\infty$-adic'' topology, i.e., the usual real topology."
+    },
+    "kernel_variant": {
+      "question": "Call a positive integer an \\emph{octal repunit} if its representation in base $8$ consists entirely of the digit $1$.  (Thus the first few octal repunits are $1,\\;9,\\;73,\\;585,\\dots$ in ordinary decimal notation.)\n\nDetermine all polynomials $f\\!:\\!\\mathbb Q\\to\\mathbb Q$ such that whenever $n$ is an octal repunit, $f(n)$ is again an octal repunit.",
+      "solution": "Write b=8.  A positive integer n is an octal repunit with m\\geq 1 digits exactly when\n\n  7n+1 = b^m.\n\nIf f \\in  Q[x] carries every octal repunit to an octal repunit, define\n\n  g(x) = 7\\cdot f((x-1)/7) + 1.\n\nThen for every m \\geq  1,\n\n  x = b^m \\Rightarrow  g(x) = b^k  for some k \\geq  1,\n\nso g maps the infinite geometric sequence {b^m} to itself.  Let deg g = d and write\n\n  g(x) = a x^d + (lower terms).\n\nThen for x = b^m,\n\n  g(b^m)/b^{m d} = a + o(1)\n\nmust lie in the discrete set {\\ldots , b^{-1}, 1, b, b^2, \\ldots }, so for large m it stabilizes at a = b^c with c \\in  Z.  Hence\n\n  g(x) - b^c x^d\n\nhas infinitely many roots b^m and is identically zero, giving\n\n  g(x) = b^c x^d.\n\nSubstitute back:\n\n  7\\cdot f((x-1)/7) + 1 = b^c x^d,\n\nso with x = 7x' + 1,\n\n  f(x') = (1/7)(b^c (7x' + 1)^d - 1).\n\nThe requirement that g(b^m) = b^{c + m d} have exponent \\geq  1 for all m \\geq  1 forces\n\n  c + d \\geq  1,\n\ni.e.\n\n  d \\in  Z_{\\geq 0},   c \\in  Z,   c \\geq  1 - d.\n\nConversely, any such c,d make f \\in  Q[x], and for n = (b^m - 1)/7 one checks 7f(n)+1 = b^{c+md}, so f(n) is an octal repunit.  Hence the complete solution is\n\n  f(x) = (1/7)(8^c (7x + 1)^d - 1),\n\nwhere d \\geq  0, c \\geq  1 - d, and c,d \\in  Z.",
+      "_meta": {
+        "core_steps": [
+          "Repunit ⇔ linear transformation to a power of the base:  (base−1)n+1 = base^m",
+          "Introduce g so that g maps (base-)powers to (base-)powers",
+          "Compare g(x)/x^d on an unbounded geometric sequence; lack of accumulation ⇒ ratio stabilises to base^c",
+          "Infinite coincidence points force g(x) ≡ base^c·x^d",
+          "Undo the linear change of variables to obtain f"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of numeral base in which the repunit is expressed",
+            "original": "10"
+          },
+          "slot2": {
+            "description": "Factor (base−1) appearing in the identity (base−1)n+1 = base^m and in the definition of g",
+            "original": "9"
+          },
+          "slot3": {
+            "description": "Geometric set that g is required to permute (powers of the chosen base)",
+            "original": "powers of 10"
+          },
+          "slot4": {
+            "description": "Lower bound on the exponents considered (e.g. ‘greater than 1’); any finite cutoff works",
+            "original": "greater than 1"
+          },
+          "slot5": {
+            "description": "Allowed coefficient field for the polynomial (needs to sit inside ℝ so limits make sense)",
+            "original": "real coefficients"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

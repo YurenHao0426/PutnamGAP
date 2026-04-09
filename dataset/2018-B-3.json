@@ -1,0 +1,86 @@
+{
+  "index": "2018-B-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Find all positive integers $n < 10^{100}$ for which simultaneously $n$ divides $2^n$, $n-1$ divides $2^n-1$,\nand $n-2$ divides $2^n - 2$.",
+  "solution": "The values of $n$ with this property are $2^{2^\\ell}$ for $\\ell = 1,2,4,8$.\nFirst, note that $n$ divides $2^n$ if and only if $n$ is itself a power of 2; we may thus write $n = 2^m$ and note that\nif $n<10^{100}$, then\n\\[\n2^m = n < 10^{100} < (10^3)^{34} < (2^{10})^{34} = 2^{340}.\n\\]\nMoreover, the case $m=0$ does not lead to a solution because for $n=1$, $n-1 = 0$ does not divide $2^n-1 = 1$; we \nmay thus assume $1 \\leq m \\leq 340$.\n\nNext, note that modulo $n-1 = 2^m-1$, the powers of $2$ cycle with period $m$ (the terms\n$2^0, \\dots, 2^{m-1}$ remain the same upon reduction, and then the next term repeats the initial 1); consequently,\n$n-1$ divides $2^n-1$ if and only if $m$ divides $n$, which happens if and only if $m$ is a power of 2.\nWrite $m = 2^\\ell$ and note that $2^\\ell < 340 < 512$, so $\\ell < 9$. The case $\\ell=0$ does not lead to a solution because for $n=2$, $n-2 =0$ does not divide $2^n-2 = 2$; we may thus assume $1 \\leq \\ell \\leq 8$.\n\nFinally, note that $n-2 = 2^m-2$ divides $2^n-2$ if and only if $2^{m-1} - 1$ divides $2^{n-1} - 1$.\nBy the same logic as the previous paragraph, this happens if and only if $m-1$ divides $n-1$,\nthat is, if $2^\\ell - 1$ divides $2^m-1$. This in turn happens if and only if $\\ell$ divides $m = 2^\\ell$,\nwhich happens if and only if $\\ell$ is a power of 2. The values allowed by the bound $\\ell < 9$ are\n$\\ell = 1,2,4,8$; for these values, $m \\leq 2^8 = 256$ and\n\\[\nn = 2^m \\leq 2^{256} \\leq (2^3)^{86} < 10^{86} < 10^{100},\n\\]\nso the solutions listed do satisfy the original inequality.",
+  "vars": [
+    "n",
+    "m",
+    "\\\\ell"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "positvnum",
+        "m": "exponent",
+        "\\ell": "powertwo"
+      },
+      "question": "Find all positive integers $positvnum < 10^{100}$ for which simultaneously $positvnum$ divides $2^{positvnum}$, $positvnum-1$ divides $2^{positvnum}-1$, and $positvnum-2$ divides $2^{positvnum} - 2$.",
+      "solution": "The values of $positvnum$ with this property are $2^{2^{powertwo}}$ for $powertwo = 1,2,4,8$.\nFirst, note that $positvnum$ divides $2^{positvnum}$ if and only if $positvnum$ is itself a power of 2; we may thus write $positvnum = 2^{exponent}$ and note that\nif $positvnum<10^{100}$, then\n\\[\n2^{exponent} = positvnum < 10^{100} < (10^3)^{34} < (2^{10})^{34} = 2^{340}.\n\\]\nMoreover, the case $exponent=0$ does not lead to a solution because for $positvnum=1$, $positvnum-1 = 0$ does not divide $2^{positvnum}-1 = 1$; we \nmay thus assume $1 \\leq exponent \\leq 340$.\n\nNext, note that modulo $positvnum-1 = 2^{exponent}-1$, the powers of $2$ cycle with period $exponent$ (the terms\n$2^0, \\dots, 2^{exponent-1}$ remain the same upon reduction, and then the next term repeats the initial 1); consequently,\n$positvnum-1$ divides $2^{positvnum}-1$ if and only if $exponent$ divides $positvnum$, which happens if and only if $exponent$ is a power of 2.\nWrite $exponent = 2^{powertwo}$ and note that $2^{powertwo} < 340 < 512$, so $powertwo < 9$. The case $powertwo=0$ does not lead to a solution because for $positvnum=2$, $positvnum-2 =0$ does not divide $2^{positvnum}-2 = 2$; we may thus assume $1 \\leq powertwo \\leq 8$.\n\nFinally, note that $positvnum-2 = 2^{exponent}-2$ divides $2^{positvnum}-2$ if and only if $2^{exponent-1} - 1$ divides $2^{positvnum-1} - 1$.\nBy the same logic as the previous paragraph, this happens if and only if $exponent-1$ divides $positvnum-1$,\nthat is, if $2^{powertwo} - 1$ divides $2^{exponent}-1$. This in turn happens if and only if $powertwo$ divides $exponent = 2^{powertwo}$,\nwhich happens if and only if $powertwo$ is a power of 2. The values allowed by the bound $powertwo < 9$ are\n$powertwo = 1,2,4,8$; for these values, $exponent \\leq 2^8 = 256$ and\n\\[\npositvnum = 2^{exponent} \\leq 2^{256} \\leq (2^3)^{86} < 10^{86} < 10^{100},\n\\]\nso the solutions listed do satisfy the original inequality."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "windmill",
+        "m": "butterfly",
+        "\\ell": "schooner"
+      },
+      "question": "Find all positive integers $windmill < 10^{100}$ for which simultaneously $windmill$ divides $2^{windmill}$, $windmill-1$ divides $2^{windmill}-1$, and $windmill-2$ divides $2^{windmill} - 2$.",
+      "solution": "The values of $windmill$ with this property are $2^{2^{schooner}}$ for $schooner = 1,2,4,8$.\n\nFirst, note that $windmill$ divides $2^{windmill}$ if and only if $windmill$ is itself a power of 2; we may thus write $windmill = 2^{butterfly}$ and note that\nif $windmill<10^{100}$, then\n\\[\n2^{butterfly} = windmill < 10^{100} < (10^3)^{34} < (2^{10})^{34} = 2^{340}.\n\\]\nMoreover, the case $butterfly=0$ does not lead to a solution because for $windmill=1$, $windmill-1 = 0$ does not divide $2^{windmill}-1 = 1$; we \nmay thus assume $1 \\leq butterfly \\leq 340$.\n\nNext, note that modulo $windmill-1 = 2^{butterfly}-1$, the powers of $2$ cycle with period $butterfly$ (the terms\n$2^0, \\dots, 2^{butterfly-1}$ remain the same upon reduction, and then the next term repeats the initial $1$); consequently,\n$windmill-1$ divides $2^{windmill}-1$ if and only if $butterfly$ divides $windmill$, which happens if and only if $butterfly$ is a power of 2.\nWrite $butterfly = 2^{schooner}$ and note that $2^{schooner} < 340 < 512$, so $schooner < 9$. The case $schooner=0$ does not lead to a solution because for $windmill=2$, $windmill-2 =0$ does not divide $2^{windmill}-2 = 2$; we may thus assume $1 \\leq schooner \\leq 8$.\n\nFinally, note that $windmill-2 = 2^{butterfly}-2$ divides $2^{windmill}-2$ if and only if $2^{butterfly-1} - 1$ divides $2^{windmill-1} - 1$.\nBy the same logic as the previous paragraph, this happens if and only if $butterfly-1$ divides $windmill-1$,\nthat is, if $2^{schooner} - 1$ divides $2^{butterfly}-1$. This in turn happens if and only if $schooner$ divides $butterfly = 2^{schooner}$,\nwhich happens if and only if $schooner$ is a power of 2. The values allowed by the bound $schooner < 9$ are\n$schooner = 1,2,4,8$; for these values, $butterfly \\leq 2^8 = 256$ and\n\\[\nwindmill = 2^{butterfly} \\leq 2^{256} \\leq (2^3)^{86} < 10^{86} < 10^{100},\n\\]\nso the solutions listed do satisfy the original inequality."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "noninteger",
+        "m": "rootvalue",
+        "\\\\ell": "flatline"
+      },
+      "question": "Find all positive integers $noninteger < 10^{100}$ for which simultaneously $noninteger$ divides $2^{noninteger}$, $noninteger-1$ divides $2^{noninteger}-1$, and $noninteger-2$ divides $2^{noninteger} - 2$.",
+      "solution": "The values of $noninteger$ with this property are $2^{2^{flatline}}$ for $flatline = 1,2,4,8$.\nFirst, note that $noninteger$ divides $2^{noninteger}$ if and only if $noninteger$ is itself a power of 2; we may thus write $noninteger = 2^{rootvalue}$ and note that\nif $noninteger<10^{100}$, then\n\\[\n2^{rootvalue} = noninteger < 10^{100} < (10^3)^{34} < (2^{10})^{34} = 2^{340}.\n\\]\nMoreover, the case $rootvalue=0$ does not lead to a solution because for $noninteger=1$, $noninteger-1 = 0$ does not divide $2^{noninteger}-1 = 1$; we may thus assume $1 \\leq rootvalue \\leq 340$.\n\nNext, note that modulo $noninteger-1 = 2^{rootvalue}-1$, the powers of $2$ cycle with period $rootvalue$ (the terms $2^0, \\dots, 2^{rootvalue-1}$ remain the same upon reduction, and then the next term repeats the initial 1); consequently, $noninteger-1$ divides $2^{noninteger}-1$ if and only if $rootvalue$ divides $noninteger$, which happens if and only if $rootvalue$ is a power of 2.\nWrite $rootvalue = 2^{flatline}$ and note that $2^{flatline} < 340 < 512$, so $flatline < 9$. The case $flatline=0$ does not lead to a solution because for $noninteger=2$, $noninteger-2 =0$ does not divide $2^{noninteger}-2 = 2$; we may thus assume $1 \\leq flatline \\leq 8$.\n\nFinally, note that $noninteger-2 = 2^{rootvalue}-2$ divides $2^{noninteger}-2$ if and only if $2^{rootvalue-1} - 1$ divides $2^{noninteger-1} - 1$. By the same logic as the previous paragraph, this happens if and only if $rootvalue-1$ divides $noninteger-1$, that is, if $2^{flatline} - 1$ divides $2^{rootvalue}-1$. This in turn happens if and only if $flatline$ divides $rootvalue = 2^{flatline}$, which happens if and only if $flatline$ is a power of 2. The values allowed by the bound $flatline < 9$ are $flatline = 1,2,4,8$; for these values, $rootvalue \\leq 2^8 = 256$ and\n\\[\nnoninteger = 2^{rootvalue} \\leq 2^{256} \\leq (2^3)^{86} < 10^{86} < 10^{100},\n\\]\nso the solutions listed do satisfy the original inequality."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "m": "hjgrksla",
+        "\\ell": "fydornuc"
+      },
+      "question": "<<<\nFind all positive integers $qzxwvtnp < 10^{100}$ for which simultaneously $qzxwvtnp$ divides $2^{qzxwvtnp}$, $qzxwvtnp-1$ divides $2^{qzxwvtnp}-1$,\nand $qzxwvtnp-2$ divides $2^{qzxwvtnp} - 2$.\n>>>",
+      "solution": "<<<\nThe values of $qzxwvtnp$ with this property are $2^{2^{fydornuc}}$ for $fydornuc = 1,2,4,8$.\nFirst, note that $qzxwvtnp$ divides $2^{qzxwvtnp}$ if and only if $qzxwvtnp$ is itself a power of 2; we may thus write $qzxwvtnp = 2^{hjgrksla}$ and note that\nif $qzxwvtnp<10^{100}$, then\n\\[\n2^{hjgrksla} = qzxwvtnp < 10^{100} < (10^3)^{34} < (2^{10})^{34} = 2^{340}.\n\\]\nMoreover, the case $hjgrksla=0$ does not lead to a solution because for $qzxwvtnp=1$, $qzxwvtnp-1 = 0$ does not divide $2^{qzxwvtnp}-1 = 1$; we \nmay thus assume $1 \\leq hjgrksla \\leq 340$.\n\nNext, note that modulo $qzxwvtnp-1 = 2^{hjgrksla}-1$, the powers of $2$ cycle with period $hjgrksla$ (the terms\n$2^0, \\dots, 2^{hjgrksla-1}$ remain the same upon reduction, and then the next term repeats the initial 1); consequently,\n$qzxwvtnp-1$ divides $2^{qzxwvtnp}-1$ if and only if $hjgrksla$ divides $qzxwvtnp$, which happens if and only if $hjgrksla$ is a power of 2.\nWrite $hjgrksla = 2^{fydornuc}$ and note that $2^{fydornuc} < 340 < 512$, so $fydornuc < 9$. The case $fydornuc=0$ does not lead to a solution because for $qzxwvtnp=2$, $qzxwvtnp-2 =0$ does not divide $2^{qzxwvtnp}-2 = 2$; we may thus assume $1 \\leq fydornuc \\leq 8$.\n\nFinally, note that $qzxwvtnp-2 = 2^{hjgrksla}-2$ divides $2^{qzxwvtnp}-2$ if and only if $2^{hjgrksla-1} - 1$ divides $2^{qzxwvtnp-1} - 1$.\nBy the same logic as the previous paragraph, this happens if and only if $hjgrksla-1$ divides $qzxwvtnp-1$,\nthat is, if $2^{fydornuc} - 1$ divides $2^{hjgrksla}-1$. This in turn happens if and only if $fydornuc$ divides $hjgrksla = 2^{fydornuc}$,\nwhich happens if and only if $fydornuc$ is a power of 2. The values allowed by the bound $fydornuc < 9$ are\n$fydornuc = 1,2,4,8$; for these values, $hjgrksla \\leq 2^8 = 256$ and\n\\[\nqzxwvtnp = 2^{hjgrksla} \\leq 2^{256} \\leq (2^3)^{86} < 10^{86} < 10^{100},\n\\]\nso the solutions listed do satisfy the original inequality.\n>>>"
+    },
+    "kernel_variant": {
+      "question": "Find all positive integers n < 3^{200} such that simultaneously\n\n n \\mid 3^{\\,n},\\qquad n-1 \\mid 3^{\\,n}-1,\\qquad\\text{and}\\qquad n-3 \\mid 3^{\\,n}-3.",
+      "solution": "Throughout \"a divides b\" (written a\\mid b) means a\\neq 0 and b is a multiple of a.\n\n1.  The condition n\\mid 3^{\\,n}.\n   Because 3^{\\,n} has only the prime 3 in its prime-factorisation, every prime divisor of n must be 3.  Hence\n        n = 3^{m}\\qquad(m\\ge 0).\n   The bound n < 3^{200} becomes 0\\le m\\le 199.  We must now study the additional two divisibility conditions.\n\n2.  The condition n-1\\mid 3^{\\,n}-1.\n   Substitute n = 3^{m}:\n        3^{m}-1 \\mid 3^{\\,3^{m}}-1.                           (2.1)\n   Recall that the multiplicative order of 3 modulo 3^{m}-1 is exactly m:\n        3^{m} \\equiv 1 \\pmod{3^{m}-1},\n        3^{t} \\not\\equiv 1 \\pmod{3^{m}-1}\\quad(0<t<m),\n   because 1 < 3^{t} < 3^{m}-1 when t<m.\n   Therefore (2.1) holds iff the exponent 3^{m} is a multiple of that order m, that is,\n        m \\mid 3^{m}.                                       (2.2)\n   Condition (2.2) forces every prime divisor of m to be 3, so\n        m = 3^{\\ell}\\qquad(\\ell\\ge 0).\n   Together with m\\le 199 we have 3^{\\ell}\\le 199, hence 0\\le \\ell\\le 4.\n\n3.  The condition n-3\\mid 3^{\\,n}-3.\n   Again substitute n=3^{m} and factor a common 3:\n        3^{m}-3 = 3\\bigl(3^{m-1}-1\\bigr),\n        3^{\\,3^{m}}-3 = 3\\bigl(3^{3^{m}-1}-1\\bigr).\n   Because 3 is already a common factor, the divisibility required is\n        3^{m-1}-1 \\mid 3^{3^{m}-1}-1.                         (3.1)\n   Provided m\\ge 1 (i.e. n\\ge 3), the number 3^{m-1}-1 is positive and we may speak about its multiplicative order.  Its order of 3 is m-1, so (3.1) is equivalent to\n        m-1 \\mid 3^{m}-1.                                     (3.2)\n   Insert m = 3^{\\ell} from Step 2:\n        3^{\\ell}-1 \\mid 3^{3^{\\ell}}-1 \\Longleftrightarrow \\ell \\mid 3^{\\ell}.  (3.3)\n   The same argument as before shows that (3.3) holds iff every prime divisor of \\ell is 3, i.e. \\ell is a power of 3:\n        \\ell = 3^{k}\\qquad(k\\ge 0).\n   With 0\\le \\ell \\le 4 only k = 0 or k = 1 are possible, giving\n        \\ell = 1  \\;\\text{or}\\; 3.\n\n4.  Collecting the possibilities.\n   *  \\ell = 1  \\Rightarrow  m = 3^{\\ell} = 3  \\Rightarrow  n = 3^{m} = 3^{3} = 27.\n   *  \\ell = 3  \\Rightarrow  m = 3^{\\ell} = 27 \\Rightarrow n = 3^{27}.\n\n5.  The missing case m = 1.\n   In Step 2 we allowed \\ell = 0, which corresponds to m = 3^{0}=1 and therefore n = 3.  However, for n = 3 the third divisor n-3 equals 0, and divisibility by 0 is undefined.  Consequently n = 3 is not a valid solution and must be discarded.\n\n6.  Verification.\n   A direct check confirms that for n=27 and n = 3^{27} all three divisibility conditions hold, and both numbers are less than 3^{200}.\n\nHence the complete set of positive integers satisfying the three conditions is\n        {\\,27,\\;3^{27}\\,}.",
+      "_meta": {
+        "core_steps": [
+          "n | 2^n ⇒ n = 2^m (n must be a pure power of the base).",
+          "Size bound converts n < 10^{100} into an explicit upper bound on m.",
+          "n−1 | 2^n−1 ⇒ order-argument gives m | n, forcing m itself to be a power of 2 (m = 2^ℓ).",
+          "n−2 | 2^n−2 ⇒ rewrite to 2^{m−1}−1 | 2^{n−1}−1, yielding ℓ | m, hence ℓ is a power of 2.",
+          "Apply the size bound to the small powers of 2 to list the resulting n = 2^{2^ℓ}."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Global upper bound on n used only to make the search finite; any sufficiently large bound keeps the logic unchanged.",
+            "original": "10^{100}"
+          },
+          "slot2": {
+            "description": "The exponential base; replacing 2 by any prime p keeps every step (powers, order arguments, factorizations) intact.",
+            "original": "2"
+          },
+          "slot3": {
+            "description": "The third subtractor equals the base in the last divisibility condition (n−2 | 2^n−2); if the base is changed to p, this becomes n−p | p^n−p without affecting the reasoning.",
+            "original": "2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

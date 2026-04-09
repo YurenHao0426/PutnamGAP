@@ -1,0 +1,126 @@
+{
+  "index": "2011-B-4",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "multiplayer game. Every game is played by all 2011 players together and\nends with each of the players either winning or losing. The standings\nare kept in two $2011 \\times 2011$ matrices, $T = (T_{hk})$ and $W =\n(W_{hk})$. Initially, $T=W=0$. After every game, for every $(h,k)$ (including\nfor $h=k$), if players $h$ and $k$ tied (that is, both won or both lost),\nthe entry $T_{hk}$ is increased by 1, while if player $h$ won and player $k$\nlost, the entry $W_{hk}$ is increased by 1 and $W_{kh}$ is decreased by 1.\n\nProve that at the end of the tournament, $\\det(T+iW)$ is a non-negative\ninteger divisible by $2^{2010}$.",
+  "solution": "Number the games $1,\\ldots,2011$, and let $A = (a_{jk})$ be the $2011 \\times 2011$ matrix whose $jk$ entry is $1$ if player $k$ wins game $j$ and $i = \\sqrt{-1}$ if player $k$ loses game $j$. Then $\\overline{a_{hj}}a_{jk}$ is $1$ if players $h$ and $k$ tie in game $j$; $i$ if player $h$ wins and player $k$ loses in game $j$; and $-i$ if $h$ loses and $k$ wins. It follows that $T + i W = \\overline{A}^T A$.\n\nNow the determinant of $A$ is unchanged if we subtract the first row of $A$ from each of the other rows, producing a matrix whose rows, besides the first one, are $(1-i)$ times a row of integers. Thus we can write $\\det A = (1-i)^{2010}(a+bi)$ for some integers $a,b$. But then\n$\\det(T+iW) = \\det(\\overline{A}^T A) = 2^{2010}(a^2+b^2)$ is a nonnegative integer multiple of $2^{2010}$, as desired.",
+  "vars": [
+    "A",
+    "T",
+    "T_hk",
+    "W",
+    "W_hk",
+    "a",
+    "a_hj",
+    "a_jk",
+    "b",
+    "h",
+    "j",
+    "k"
+  ],
+  "params": [],
+  "sci_consts": [
+    "i"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "matchmatrix",
+        "T": "tiecounter",
+        "T_hk": "tieentry",
+        "W": "winmatrix",
+        "W_hk": "windiffentry",
+        "a": "coeffa",
+        "a_hj": "coeffhj",
+        "a_jk": "coeffjk",
+        "b": "coeffb",
+        "h": "playerh",
+        "j": "gameindex",
+        "k": "playerk"
+      },
+      "question": "multiplayer game. Every game is played by all 2011 players together and\nends with each of the players either winning or losing. The standings\nare kept in two $2011 \\times 2011$ matrices, $tiecounter = (tieentry)$ and $winmatrix =\n(windiffentry)$. Initially, $tiecounter=winmatrix=0$. After every game, for every $(playerh,playerk)$ (including\nfor $playerh=playerk$), if players $playerh$ and $playerk$ tied (that is, both won or both lost),\nthe entry $tieentry$ is increased by 1, while if player $playerh$ won and player $playerk$\nlost, the entry $windiffentry$ is increased by 1 and $winmatrix_{playerk playerh}$ is decreased by 1.\n\nProve that at the end of the tournament, $\\det(tiecounter + i\\,winmatrix)$ is a non-negative\ninteger divisible by $2^{2010}$.",
+      "solution": "Number the games $1,\\ldots,2011$, and let $matchmatrix = (coeffjk)$ be the $2011 \\times 2011$ matrix whose $jk$ entry is $1$ if player $playerk$ wins game $gameindex$ and $i = \\sqrt{-1}$ if player $playerk$ loses game $gameindex$. Then $\\overline{coeffhj}coeffjk$ is $1$ if players $playerh$ and $playerk$ tie in game $gameindex$; $i$ if player $playerh$ wins and player $playerk$ loses in game $gameindex$; and $-i$ if $playerh$ loses and $playerk$ wins. It follows that $tiecounter + i\\,winmatrix = \\overline{matchmatrix}^{tiecounter} matchmatrix$.\n\nNow the determinant of $matchmatrix$ is unchanged if we subtract the first row of $matchmatrix$ from each of the other rows, producing a matrix whose rows, besides the first one, are $(1-i)$ times a row of integers. Thus we can write $\\det matchmatrix = (1-i)^{2010}(coeffa+coeffb i)$ for some integers $coeffa,coeffb$. But then\n$\\det(tiecounter + i\\,winmatrix) = \\det(\\overline{matchmatrix}^{tiecounter} matchmatrix) = 2^{2010}(coeffa^2+coeffb^2)$ is a nonnegative integer multiple of $2^{2010}$, as desired."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A": "sandstorm",
+        "T": "whirlwind",
+        "T_hk": "thunderous",
+        "W": "raincloud",
+        "W_hk": "raindrop",
+        "a": "pebblestone",
+        "a_hj": "stalemate",
+        "a_jk": "blueberry",
+        "b": "driftwood",
+        "h": "lanterns",
+        "j": "quagmire",
+        "k": "nightfall"
+      },
+      "question": "multiplayer game. Every game is played by all 2011 players together and\nends with each of the players either winning or losing. The standings\nare kept in two $2011 \\times 2011$ matrices, $whirlwind = (thunderous)$ and $raincloud =\n(raindrop)$. Initially, $whirlwind=raincloud=0$. After every game, for every $(lanterns,nightfall)$ (including\nfor $lanterns=nightfall$), if players $lanterns$ and $nightfall$ tied (that is, both won or both lost),\nthe entry $thunderous$ is increased by 1, while if player $lanterns$ won and player $nightfall$ lost, the entry $raindrop$ is increased by 1 and $W_{kh}$ is decreased by 1.\n\nProve that at the end of the tournament, $\\det(whirlwind+i raincloud)$ is a non-negative\ninteger divisible by $2^{2010}$.",
+      "solution": "Number the games $1,\\ldots,2011$, and let $sandstorm = (blueberry)$ be the $2011 \\times 2011$ matrix whose $quagmire nightfall$ entry is $1$ if player $nightfall$ wins game $quagmire$ and $i = \\sqrt{-1}$ if player $nightfall$ loses game $quagmire$. Then $\\overline{stalemate} blueberry$ is $1$ if players $lanterns$ and $nightfall$ tie in game $quagmire$; $i$ if player $lanterns$ wins and player $nightfall$ loses in game $quagmire$; and $-i$ if $lanterns$ loses and $nightfall$ wins. It follows that $whirlwind + i raincloud = \\overline{sandstorm}^T sandstorm$.\n\nNow the determinant of $sandstorm$ is unchanged if we subtract the first row of $sandstorm$ from each of the other rows, producing a matrix whose rows, besides the first one, are $(1-i)$ times a row of integers. Thus we can write $\\det sandstorm = (1-i)^{2010}(pebblestone+driftwood i)$ for some integers $pebblestone, driftwood$. But then\n$\\det(whirlwind+i raincloud) = \\det(\\overline{sandstorm}^T sandstorm) = 2^{2010}(pebblestone^2+driftwood^2)$ is a nonnegative integer multiple of $2^{2010}$, as desired."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A": "vacantarray",
+        "T": "disjointmatrix",
+        "T_hk": "disjointentry",
+        "W": "surrendermatrix",
+        "W_hk": "surrenderentry",
+        "a": "voidscalar",
+        "a_hj": "emptyslot",
+        "a_jk": "emptyslotjk",
+        "b": "fillscalar",
+        "h": "spectator",
+        "j": "intermission",
+        "k": "benchwarmer"
+      },
+      "question": "multiplayer game. Every game is played by all 2011 players together and\nends with each of the players either winning or losing. The standings\nare kept in two $2011 \\times 2011$ matrices, $disjointmatrix = (disjointmatrix_{spectator benchwarmer})$ and $surrendermatrix =\n(surrendermatrix_{spectator benchwarmer})$. Initially, $disjointmatrix=surrendermatrix=0$. After every game, for every $(spectator,benchwarmer)$ (including\nfor $spectator=benchwarmer$), if players $spectator$ and $benchwarmer$ tied (that is, both won or both lost),\nthe entry $disjointmatrix_{spectator benchwarmer}$ is increased by 1, while if player $spectator$ won and player $benchwarmer$\nlost, the entry $surrendermatrix_{spectator benchwarmer}$ is increased by 1 and $surrendermatrix_{benchwarmer spectator}$ is decreased by 1.\n\nProve that at the end of the tournament, $\\det(disjointmatrix+i\\,surrendermatrix)$ is a non-negative\ninteger divisible by $2^{2010}$.",
+      "solution": "Number the games $1,\\ldots,2011$, and let $vacantarray = (emptyslotjk)$ be the $2011 \\times 2011$ matrix whose $\\intermission\\,\\benchwarmer$ entry is $1$ if player $\\benchwarmer$ wins game $\\intermission$ and $i = \\sqrt{-1}$ if player $\\benchwarmer$ loses game $\\intermission$. Then $\\overline{emptyslot}\\,emptyslotjk$ is $1$ if players $spectator$ and $\\benchwarmer$ tie in game $\\intermission$; $i$ if player $spectator$ wins and player $\\benchwarmer$ loses in game $\\intermission$; and $-i$ if $spectator$ loses and $\\benchwarmer$ wins. It follows that $disjointmatrix + i\\,surrendermatrix = \\overline{vacantarray}^T vacantarray$.\n\nNow the determinant of $vacantarray$ is unchanged if we subtract the first row of $vacantarray$ from each of the other rows, producing a matrix whose rows, besides the first one, are $(1-i)$ times a row of integers. Thus we can write $\\det vacantarray = (1-i)^{2010}(voidscalar+fillscalar i)$ for some integers $voidscalar,fillscalar$. But then\n$\\det(disjointmatrix+i\\,surrendermatrix) = \\det(\\overline{vacantarray}^T vacantarray) = 2^{2010}(voidscalar^2+fillscalar^2)$ is a nonnegative integer multiple of $2^{2010}$, as desired."
+    },
+    "garbled_string": {
+      "map": {
+        "A": "qzxwvtnp",
+        "T": "hjgrksla",
+        "T_hk": "plmbszen",
+        "W": "gvhpqkrt",
+        "W_hk": "mcdlryuf",
+        "a": "dxqjplam",
+        "a_hj": "yrptlscx",
+        "a_jk": "nfhwzqvo",
+        "b": "ikswdrqe",
+        "h": "oslqnmfr",
+        "j": "wexdplut",
+        "k": "vyrcsakg"
+      },
+      "question": "multiplayer game. Every game is played by all 2011 players together and\nends with each of the players either winning or losing. The standings\nare kept in two $2011 \\times 2011$ matrices, $hjgrksla = (plmbszen)$ and $gvhpqkrt =\n(mcdlryuf)$. Initially, $hjgrksla=gvhpqkrt=0$. After every game, for every $(oslqnmfr,vyrcsakg)$ (including\nfor $oslqnmfr=vyrcsakg$), if players $oslqnmfr$ and $vyrcsakg$ tied (that is, both won or both lost),\nthe entry $plmbszen$ is increased by 1, while if player $oslqnmfr$ won and player $vyrcsakg$\nlost, the entry $mcdlryuf$ is increased by 1 and $gvhpqkrt_{vyrcsakgoslqnmfr}$ is decreased by 1.\n\nProve that at the end of the tournament, $\\det(hjgrksla+i gvhpqkrt)$ is a non-negative\ninteger divisible by $2^{2010}$.",
+      "solution": "Number the games $1,\\ldots,2011$, and let $qzxwvtnp = (nfhwzqvo)$ be the $2011 \\times 2011$ matrix whose $wexdplutvyrcsakg$ entry is $1$ if player $vyrcsakg$ wins game $wexdplut$ and $i = \\sqrt{-1}$ if player $vyrcsakg$ loses game $wexdplut$. Then $\\overline{yrptlscx}nfhwzqvo$ is $1$ if players $oslqnmfr$ and $vyrcsakg$ tie in game $wexdplut$; $i$ if player $oslqnmfr$ wins and player $vyrcsakg$ loses in game $wexdplut$; and $-i$ if $oslqnmfr$ loses and $vyrcsakg$ wins. It follows that $hjgrksla + i gvhpqkrt = \\overline{qzxwvtnp}^{hjgrksla} qzxwvtnp$.\n\nNow the determinant of $qzxwvtnp$ is unchanged if we subtract the first row of $qzxwvtnp$ from each of the other rows, producing a matrix whose rows, besides the first one, are $(1-i)$ times a row of integers. Thus we can write $\\det qzxwvtnp = (1-i)^{2010}(dxqjplam+ikswdrqei)$ for some integers $dxqjplam,ikswdrqe$. But then\n$\\det(hjgrksla+i gvhpqkrt) = \\det(\\overline{qzxwvtnp}^{hjgrksla} qzxwvtnp) = 2^{2010}(dxqjplam^2+ikswdrqe^2)$ is a nonnegative integer multiple of $2^{2010}$, as desired."
+    },
+    "kernel_variant": {
+      "question": "In a very peculiar ``three-level'' multiplayer tournament the same 2025 players take part in exactly 2025 games.  \nIn every game each player is placed in precisely one of the three categories  \n\n  0  = ``top'', 1 = ``middle'', 2 = ``bottom'',  \n\nso that no other result is possible.\n\nThree real 2025 \\times  2025 matrices  \n\n  T=(T_{hk}), U=(U_{hk}), V=(V_{hk})  (1 \\leq  h,k \\leq  2025)\n\nare maintained, all starting with every entry equal to 0.  \nAfter every game they are updated simultaneously for every ordered pair (h,k) (the case h=k included) according to the rule, where s_{h} and s_{k} denote the categories obtained in that game by players h and k respectively:\n\n* If s_{h}=s_{k} (the two players finish in the same category) increase T_{hk} by 1.  \n* If (s_{k}-s_{h})\\equiv 1 (mod 3) (player k is one step further in the cycle  \n  0 \\to  1 \\to  2 \\to  0) increase U_{hk} by 1.  \n* If (s_{k}-s_{h})\\equiv 2 (mod 3) (player k is two steps further, i.e. one step earlier, in the cycle) increase V_{hk} by 1.\n\n(Thus every game adds exactly 1 to each of the 2025 diagonal entries of T and adds exactly one 1 to precisely one of the matrices U or V in every off-diagonal position.)\n\nLet  \n\n  \\omega  = e^{2\\pi i/3}= -\\frac{1}{2} + i\\sqrt{3}/2, so that 1+\\omega +\\omega ^2 = 0 and \\omega ^3 = 1.  \n\nProve that after the 2025-th game\n\n  det ( T + \\omega  U + \\omega ^2 V )\n\nis a non-negative integer divisible by 3^{2024}.",
+      "solution": "Step 1.  Encoding one game with third roots of unity.  \nFor the j-th game (1 \\leq  j \\leq  2025) write s_{jk} \\in  {0,1,2} for the category obtained by player k and define  \n\n  A_{jk} := \\omega ^{s_{jk}}.  (1)\n\nLet A be the 2025 \\times  2025 matrix whose (j,k)-entry is A_{jk}.  \nBecause \\omega ^{0}=1, \\omega ^{1}=\\omega , \\omega ^{2}=\\omega ^2, every entry of A is a third root of unity.\n\nStep 2.  Expressing the bookkeeping matrices through A.  \nFix players h and k.  In game j  \n\n  \\overline{A_{jh}}\\,A_{jk}=\\omega ^{-s_{jh}}\\omega ^{s_{jk}}=\\omega ^{s_{jk}-s_{jh}}.  (2)\n\nFor this game exactly one of the three possibilities occurs:\n\n  * s_{jh}=s_{jk} \\Rightarrow  \\omega ^{s_{jk}-s_{jh}} = 1,  \n  * s_{jk}-s_{jh}\\equiv 1 (mod 3) \\Rightarrow  \\omega ^{s_{jk}-s_{jh}} = \\omega ,  \n  * s_{jk}-s_{jh}\\equiv 2 (mod 3) \\Rightarrow  \\omega ^{s_{jk}-s_{jh}} = \\omega ^2.\n\nBecause the update rule adds 1 to T_{hk}, U_{hk} or V_{hk}, respectively, in exactly these three situations, after all 2025 games we obtain  \n\n  ( T + \\omega  U + \\omega ^2 V )_{hk} = \\sum _{j=1}^{2025}\\overline{A_{jh}}\\,A_{jk}.  (3)\n\nThe right-hand side is precisely the (h,k)-entry of the Hermitian Gram product  \n\n  M := T + \\omega  U + \\omega ^2 V = \\overline{A}^{\\,T}A.  (4)\n\nStep 3.  The determinant of M.  \nSince M = \\overline{A}^{\\,T}A,  \n\n  det M = det( \\overline{A}^{\\,T}A ) = |\\,det A\\,|^{2} \\geq  0.  (5)\n\nThus det M is real and non-negative.  It remains to prove that det M is an integer and that 3^{2024} | det M.\n\nStep 4.  A divisibility statement in the Eisenstein integers.  \nLet E = \\mathbb{Z}[\\omega ] be the ring of Eisenstein integers.  \nSubtract the first row of A from each of the remaining 2024 rows; this row operation does not change det A.  Denote the resulting matrix by A'.  \nFor j \\geq  2 and any k,\n\n  A'_{jk}=A_{jk}-A_{1k}=\\omega ^{s_{jk}}-\\omega ^{s_{1k}}                       (6)\n\n= \\omega ^{s_{1k}}\\bigl(\\omega ^{s_{jk}-s_{1k}}-1\\bigr).\n\nBecause \\omega  is a primitive third root of unity, \\omega ^{t}-1 is always divisible by  \n\n  \\pi  := \\omega -1 \\in  E,                                            (7)\n\nhence every entry of the last 2024 rows of A' is divisible by \\pi .  \nConsequently\n\n  det A = det A' \\in  \\pi ^{2024}E.                                   (8)\n\nStep 5.  Passing to norms.  \nThe (field) norm N(z) = z \\overline{z} maps E into \\mathbb{Z} and is multiplicative.  \nSince |\\pi |^{2}=|\\omega -1|^{2}=3, (8) yields\n\n  N(det A) = |det A|^{2} is divisible by 3^{2024}.               (9)\n\nBut by (5) N(det A)=det M; therefore\n\n  det M \\equiv  0 (mod 3^{2024}).                                   (10)\n\nStep 6.  Integrality of det M.  \ndet A lies in E, so its norm det M is an integer.  \nCombining (5), (9) and (10) we conclude\n\n  det ( T + \\omega  U + \\omega ^2 V ) is a non-negative integer multiple of 3^{2024}. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.821817",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Additional outcome level:  The original problem had a binary outcome (win/lose); the variant introduces a ternary outcome (top/middle/bottom).  This forces the use of the complex cube root of unity ω and the full ring of Eisenstein integers ℤ[ω], requiring familiarity with algebraic number theory beyond Gaussian integers.\n\n2. Three interacting matrices instead of two:  The bookkeeping now involves three simultaneously updated matrices T,U,V with a cyclic antisymmetry between U and V, as opposed to a single symmetric matrix T and one skew-symmetric matrix W in the original.\n\n3. More advanced algebraic tools:  Proving the divisibility by 3^{2024} demands knowledge of ideals, factorisation and norms in ℤ[ω]; the simple integer arithmetic with (1−i) in ℤ[i] no longer suffices.\n\n4. Larger dimension and exponent:  With 2025 players the relevant power in the final divisibility is 3^{2024}, increasing both the combinatorial bookkeeping and the algebraic exponent compared to 2^{2023} in the kernel variant.\n\n5. Hermitian product in a non-real setting:  The proof must manipulate the Hermitian product over the Eisenstein integers and justify that its determinant is real and non-negative, combining linear–algebra and number-theoretic arguments.\n\nThese extra conceptual layers make the enhanced variant substantially harder than both the original problem and the existing kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "In a very peculiar ``three-level'' multiplayer tournament the same 2025 players take part in exactly 2025 games.  \nIn every game each player is placed in precisely one of the three categories  \n\n  0  = ``top'', 1 = ``middle'', 2 = ``bottom'',  \n\nso that no other result is possible.\n\nThree real 2025 \\times  2025 matrices  \n\n  T=(T_{hk}), U=(U_{hk}), V=(V_{hk})  (1 \\leq  h,k \\leq  2025)\n\nare maintained, all starting with every entry equal to 0.  \nAfter every game they are updated simultaneously for every ordered pair (h,k) (the case h=k included) according to the rule, where s_{h} and s_{k} denote the categories obtained in that game by players h and k respectively:\n\n* If s_{h}=s_{k} (the two players finish in the same category) increase T_{hk} by 1.  \n* If (s_{k}-s_{h})\\equiv 1 (mod 3) (player k is one step further in the cycle  \n  0 \\to  1 \\to  2 \\to  0) increase U_{hk} by 1.  \n* If (s_{k}-s_{h})\\equiv 2 (mod 3) (player k is two steps further, i.e. one step earlier, in the cycle) increase V_{hk} by 1.\n\n(Thus every game adds exactly 1 to each of the 2025 diagonal entries of T and adds exactly one 1 to precisely one of the matrices U or V in every off-diagonal position.)\n\nLet  \n\n  \\omega  = e^{2\\pi i/3}= -\\frac{1}{2} + i\\sqrt{3}/2, so that 1+\\omega +\\omega ^2 = 0 and \\omega ^3 = 1.  \n\nProve that after the 2025-th game\n\n  det ( T + \\omega  U + \\omega ^2 V )\n\nis a non-negative integer divisible by 3^{2024}.",
+      "solution": "Step 1.  Encoding one game with third roots of unity.  \nFor the j-th game (1 \\leq  j \\leq  2025) write s_{jk} \\in  {0,1,2} for the category obtained by player k and define  \n\n  A_{jk} := \\omega ^{s_{jk}}.  (1)\n\nLet A be the 2025 \\times  2025 matrix whose (j,k)-entry is A_{jk}.  \nBecause \\omega ^{0}=1, \\omega ^{1}=\\omega , \\omega ^{2}=\\omega ^2, every entry of A is a third root of unity.\n\nStep 2.  Expressing the bookkeeping matrices through A.  \nFix players h and k.  In game j  \n\n  \\overline{A_{jh}}\\,A_{jk}=\\omega ^{-s_{jh}}\\omega ^{s_{jk}}=\\omega ^{s_{jk}-s_{jh}}.  (2)\n\nFor this game exactly one of the three possibilities occurs:\n\n  * s_{jh}=s_{jk} \\Rightarrow  \\omega ^{s_{jk}-s_{jh}} = 1,  \n  * s_{jk}-s_{jh}\\equiv 1 (mod 3) \\Rightarrow  \\omega ^{s_{jk}-s_{jh}} = \\omega ,  \n  * s_{jk}-s_{jh}\\equiv 2 (mod 3) \\Rightarrow  \\omega ^{s_{jk}-s_{jh}} = \\omega ^2.\n\nBecause the update rule adds 1 to T_{hk}, U_{hk} or V_{hk}, respectively, in exactly these three situations, after all 2025 games we obtain  \n\n  ( T + \\omega  U + \\omega ^2 V )_{hk} = \\sum _{j=1}^{2025}\\overline{A_{jh}}\\,A_{jk}.  (3)\n\nThe right-hand side is precisely the (h,k)-entry of the Hermitian Gram product  \n\n  M := T + \\omega  U + \\omega ^2 V = \\overline{A}^{\\,T}A.  (4)\n\nStep 3.  The determinant of M.  \nSince M = \\overline{A}^{\\,T}A,  \n\n  det M = det( \\overline{A}^{\\,T}A ) = |\\,det A\\,|^{2} \\geq  0.  (5)\n\nThus det M is real and non-negative.  It remains to prove that det M is an integer and that 3^{2024} | det M.\n\nStep 4.  A divisibility statement in the Eisenstein integers.  \nLet E = \\mathbb{Z}[\\omega ] be the ring of Eisenstein integers.  \nSubtract the first row of A from each of the remaining 2024 rows; this row operation does not change det A.  Denote the resulting matrix by A'.  \nFor j \\geq  2 and any k,\n\n  A'_{jk}=A_{jk}-A_{1k}=\\omega ^{s_{jk}}-\\omega ^{s_{1k}}                       (6)\n\n= \\omega ^{s_{1k}}\\bigl(\\omega ^{s_{jk}-s_{1k}}-1\\bigr).\n\nBecause \\omega  is a primitive third root of unity, \\omega ^{t}-1 is always divisible by  \n\n  \\pi  := \\omega -1 \\in  E,                                            (7)\n\nhence every entry of the last 2024 rows of A' is divisible by \\pi .  \nConsequently\n\n  det A = det A' \\in  \\pi ^{2024}E.                                   (8)\n\nStep 5.  Passing to norms.  \nThe (field) norm N(z) = z \\overline{z} maps E into \\mathbb{Z} and is multiplicative.  \nSince |\\pi |^{2}=|\\omega -1|^{2}=3, (8) yields\n\n  N(det A) = |det A|^{2} is divisible by 3^{2024}.               (9)\n\nBut by (5) N(det A)=det M; therefore\n\n  det M \\equiv  0 (mod 3^{2024}).                                   (10)\n\nStep 6.  Integrality of det M.  \ndet A lies in E, so its norm det M is an integer.  \nCombining (5), (9) and (10) we conclude\n\n  det ( T + \\omega  U + \\omega ^2 V ) is a non-negative integer multiple of 3^{2024}. \\blacksquare ",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.628775",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Additional outcome level:  The original problem had a binary outcome (win/lose); the variant introduces a ternary outcome (top/middle/bottom).  This forces the use of the complex cube root of unity ω and the full ring of Eisenstein integers ℤ[ω], requiring familiarity with algebraic number theory beyond Gaussian integers.\n\n2. Three interacting matrices instead of two:  The bookkeeping now involves three simultaneously updated matrices T,U,V with a cyclic antisymmetry between U and V, as opposed to a single symmetric matrix T and one skew-symmetric matrix W in the original.\n\n3. More advanced algebraic tools:  Proving the divisibility by 3^{2024} demands knowledge of ideals, factorisation and norms in ℤ[ω]; the simple integer arithmetic with (1−i) in ℤ[i] no longer suffices.\n\n4. Larger dimension and exponent:  With 2025 players the relevant power in the final divisibility is 3^{2024}, increasing both the combinatorial bookkeeping and the algebraic exponent compared to 2^{2023} in the kernel variant.\n\n5. Hermitian product in a non-real setting:  The proof must manipulate the Hermitian product over the Eisenstein integers and justify that its determinant is real and non-negative, combining linear–algebra and number-theoretic arguments.\n\nThese extra conceptual layers make the enhanced variant substantially harder than both the original problem and the existing kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

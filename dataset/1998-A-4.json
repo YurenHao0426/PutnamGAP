@@ -1,0 +1,169 @@
+{
+  "index": "1998-A-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Let $A_1=0$ and $A_2=1$.  For $n>2$, the number $A_n$ is defined by\nconcatenating the decimal expansions of $A_{n-1}$ and $A_{n-2}$ from\nleft to right.  For example $A_3=A_2 A_1=10$, $A_4=A_3 A_2 = 101$,\n$A_5=A_4 A_3 = 10110$, and so forth.  Determine all $n$ such that\n$11$ divides $A_n$.",
+  "solution": "The number of digits in the decimal expansion of $A_n$ is the\nFibonacci number $F_n$, where $F_1=1$, $F_2=1$, and $F_n=F_{n-1}\n+F_{n-2}$ for $n>2$.  It follows that the sequence $\\{A_n\\}$, modulo 11,\nsatisfies the recursion $A_n=(-1)^{F_{n-2}}A_{n-1} + A_{n-2}$.\n(Notice that the recursion for $A_n$ depends only on the value of\n$F_{n-2}$ modulo 2.)  Using these recursions, we find that\n$A_7 \\equiv 0$ and $A_8 \\equiv 1$ modulo 11, and that\n$F_7 \\equiv 1$ and $F_8 \\equiv 1$ modulo 2.\nIt follows that $A_n \\equiv A_{n+6}$ (mod 11) for all $n\\geq 1$.\nWe find that among\n$A_1,A_2,A_3,A_4,A_5$, and $A_6$, only $A_1$ vanishes modulo 11.\nThus 11 divides $A_n$ if and only if $n=6k+1$ for some\nnonnegative integer $k$.",
+  "vars": [
+    "A_1",
+    "A_2",
+    "A_3",
+    "A_4",
+    "A_5",
+    "A_6",
+    "A_7",
+    "A_8",
+    "A_n",
+    "A_n-1",
+    "A_n-2",
+    "A_n+6",
+    "F_1",
+    "F_2",
+    "F_7",
+    "F_8",
+    "F_n",
+    "F_n-1",
+    "F_n-2",
+    "n",
+    "k"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A_1": "startdigit",
+        "A_2": "secondval",
+        "A_3": "thirdval",
+        "A_4": "fourthva",
+        "A_5": "fifthval",
+        "A_6": "sixthval",
+        "A_7": "seventhv",
+        "A_8": "eighthva",
+        "A_n": "generican",
+        "A_n-1": "prevagen",
+        "A_n-2": "preprevv",
+        "A_n+6": "plussixv",
+        "F_1": "fibfirst",
+        "F_2": "fibsecon",
+        "F_7": "fibsevn",
+        "F_8": "fibeight",
+        "F_n": "fibgenic",
+        "F_n-1": "fibprev",
+        "F_n-2": "fibpre2",
+        "n": "indexvar",
+        "k": "multindex"
+      },
+      "question": "Let $startdigit=0$ and $secondval=1$.  For $indexvar>2$, the number $generican$ is defined by\nconcatenating the decimal expansions of $prevagen$ and $preprevv$ from\nleft to right.  For example $thirdval=secondval startdigit=10$, $fourthva=thirdval secondval = 101$,\n$fifthval=fourthva thirdval = 10110$, and so forth.  Determine all $indexvar$ such that\n$11$ divides $generican$.",
+      "solution": "The number of digits in the decimal expansion of $generican$ is the\nFibonacci number $fibgenic$, where $fibfirst=1$, $fibsecon=1$, and $fibgenic=fibprev\n+fibpre2$ for $indexvar>2$.  It follows that the sequence $\\{generican\\}$, modulo 11,\nsatisfies the recursion $generican=(-1)^{fibpre2}prevagen + preprevv$.\n(Notice that the recursion for $generican$ depends only on the value of\n$fibpre2$ modulo 2.)  Using these recursions, we find that\n$seventhv \\equiv 0$ and $eighthva \\equiv 1$ modulo 11, and that\n$fibsevn \\equiv 1$ and $fibeight \\equiv 1$ modulo 2.\nIt follows that $generican \\equiv plussixv$ (mod 11) for all $indexvar\\geq 1$.\nWe find that among\n$startdigit,secondval,thirdval,fourthva,fifthval$, and $sixthval$, only $startdigit$ vanishes modulo 11.\nThus 11 divides $generican$ if and only if $indexvar=6multindex+1$ for some\nnonnegative integer $multindex$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "A_1": "moonlight",
+        "A_2": "cloudship",
+        "A_3": "starbridge",
+        "A_4": "windforest",
+        "A_5": "stonegarden",
+        "A_6": "sunrivers",
+        "A_7": "skydreamer",
+        "A_8": "earthwhirl",
+        "A_n": "echoharbor",
+        "A_n-1": "mistvalley",
+        "A_n-2": "fogcanyon",
+        "A_n+6": "flamehollow",
+        "F_1": "rainmirror",
+        "F_2": "snowlantern",
+        "F_7": "icecompass",
+        "F_8": "dustgalaxy",
+        "F_n": "glowhorizon",
+        "F_n-1": "shadeshield",
+        "F_n-2": "sparkanchor",
+        "n": "orchardsea",
+        "k": "prismtunnel"
+      },
+      "question": "Let $moonlight=0$ and $cloudship=1$.  For $orchardsea>2$, the number $echoharbor$ is defined by\nconcatenating the decimal expansions of $mistvalley$ and $fogcanyon$ from\nleft to right.  For example $starbridge=cloudship moonlight=10$, $windforest=starbridge cloudship = 101$,\n$stonegarden=windforest starbridge = 10110$, and so forth.  Determine all $orchardsea$ such that\n$11$ divides $echoharbor$.",
+      "solution": "The number of digits in the decimal expansion of $echoharbor$ is the\nFibonacci number $glowhorizon$, where $rainmirror=1$, $snowlantern=1$, and $glowhorizon=shadeshield\n+sparkanchor$ for $orchardsea>2$.  It follows that the sequence $\\{echoharbor\\}$, modulo 11,\nsatisfies the recursion $echoharbor=(-1)^{sparkanchor}mistvalley + fogcanyon$.\n(Notice that the recursion for $echoharbor$ depends only on the value of\n$sparkanchor$ modulo 2.)  Using these recursions, we find that\n$skydreamer \\equiv 0$ and $earthwhirl \\equiv 1$ modulo 11, and that\n$icecompass \\equiv 1$ and $dustgalaxy \\equiv 1$ modulo 2.\nIt follows that $echoharbor \\equiv flamehollow$ (mod 11) for all $orchardsea\\geq 1$.\nWe find that among\n$moonlight,cloudship,starbridge,windforest,stonegarden$, and $sunrivers$, only $moonlight$ vanishes modulo 11.\nThus 11 divides $echoharbor$ if and only if $orchardsea=6prismtunnel+1$ for some\nnonnegative integer $prismtunnel$.}"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "A_1": "minusculeone",
+        "A_2": "minusculetwo",
+        "A_3": "minusculethree",
+        "A_4": "minusculefour",
+        "A_5": "minusculefive",
+        "A_6": "minusculesix",
+        "A_7": "minusculeseven",
+        "A_8": "minusculeeight",
+        "A_n": "minusculeindex",
+        "A_n-1": "minusculeprevious",
+        "A_n-2": "minusculesecondprev",
+        "A_n+6": "minusculeoffset",
+        "F_1": "staticone",
+        "F_2": "statictwo",
+        "F_7": "staticseven",
+        "F_8": "staticeight",
+        "F_n": "staticindex",
+        "F_n-1": "staticprevious",
+        "F_n-2": "staticsecondprev",
+        "n": "steadfast",
+        "k": "immutable"
+      },
+      "question": "Let $minusculeone=0$ and $minusculetwo=1$.  For $\\steadfast>2$, the number $minusculeindex$ is defined by\nconcatenating the decimal expansions of $minusculeprevious$ and $minusculesecondprev$ from\nleft to right.  For example $minusculethree=minusculetwo minusculeone=10$, $minusculefour=minusculethree minusculetwo = 101$,\n$minusculefive=minusculefour minusculethree = 10110$, and so forth.  Determine all $\\steadfast$ such that\n$11$ divides $minusculeindex$.",
+      "solution": "The number of digits in the decimal expansion of $minusculeindex$ is the\nFibonacci number $staticindex$, where $staticone=1$, $statictwo=1$, and $staticindex=staticprevious\n+staticsecondprev$ for $\\steadfast>2$.  It follows that the sequence $\\{minusculeindex\\}$, modulo 11,\nsatisfies the recursion $minusculeindex=(-1)^{staticsecondprev}minusculeprevious + minusculesecondprev$.\n(Notice that the recursion for $minusculeindex$ depends only on the value of\n$staticsecondprev$ modulo 2.)  Using these recursions, we find that\n$minusculeseven \\equiv 0$ and $minusculeeight \\equiv 1$ modulo 11, and that\n$staticseven \\equiv 1$ and $staticeight \\equiv 1$ modulo 2.\nIt follows that $minusculeindex \\equiv minusculeoffset$ (mod 11) for all $\\steadfast\\geq 1$.\nWe find that among\n$minusculeone,minusculetwo,minusculethree,minusculefour,minusculefive$, and $minusculesix$, only $minusculeone$ vanishes modulo 11.\nThus 11 divides $minusculeindex$ if and only if $\\steadfast=6immutable+1$ for some\nnonnegative integer $immutable$. "
+    },
+    "garbled_string": {
+      "map": {
+        "A_1": "qzxwvtnp",
+        "A_2": "hjgrksla",
+        "A_3": "ufmdewzi",
+        "A_4": "boknaerq",
+        "A_5": "siyltcvo",
+        "A_6": "npargduf",
+        "A_7": "tclspxie",
+        "A_8": "oenivdqr",
+        "A_n": "luvhzmsb",
+        "A_n-1": "wptycajn",
+        "A_n-2": "fxrglaek",
+        "A_n+6": "dmsiqzoh",
+        "F_1": "gmthpcea",
+        "F_2": "spukvler",
+        "F_7": "nybeoswi",
+        "F_8": "crhvazne",
+        "F_n": "jkdouymi",
+        "F_n-1": "zbdfipaw",
+        "F_n-2": "lqmosync",
+        "n": "cxvaipth",
+        "k": "veruqbls"
+      },
+      "question": "Let $qzxwvtnp=0$ and $hjgrksla=1$.  For $cxvaipth>2$, the number $luvhzmsb$ is defined by\nconcatenating the decimal expansions of $wptycajn$ and $fxrglaek$ from\nleft to right.  For example $ufmdewzi=hjgrksla qzxwvtnp=10$, $boknaerq=ufmdewzi hjgrksla = 101$,\n$siyltcvo=boknaerq ufmdewzi = 10110$, and so forth.  Determine all $cxvaipth$ such that\n$11$ divides $luvhzmsb$.",
+      "solution": "The number of digits in the decimal expansion of $luvhzmsb$ is the\nFibonacci number $jkdouymi$, where $gmthpcea=1$, $spukvler=1$, and $jkdouymi=zbdfipaw\n+lqmosync$ for $cxvaipth>2$.  It follows that the sequence $\\{luvhzmsb\\}$, modulo 11,\nsatisfies the recursion $luvhzmsb=(-1)^{lqmosync}wptycajn + fxrglaek$.\n(Notice that the recursion for $luvhzmsb$ depends only on the value of\n$lqmosync$ modulo 2.)  Using these recursions, we find that\ntclspxie \\equiv 0$ and $oenivdqr \\equiv 1$ modulo 11, and that\n$nybeoswi \\equiv 1$ and $crhvazne \\equiv 1$ modulo 2.\nIt follows that $luvhzmsb \\equiv dmsiqzoh$ (mod 11) for all $cxvaipth\\geq 1$.\nWe find that among\n$qzxwvtnp,hjgrksla,ufmdewzi,boknaerq,siyltcvo$, and $npargduf$, only $qzxwvtnp$ vanishes modulo 11.\nThus 11 divides $luvhzmsb$ if and only if $cxvaipth=6veruqbls+1$ for some\nnonnegative integer $veruqbls$.}"
+    },
+    "kernel_variant": {
+      "question": "Let  \n\\[\nA_{1}=0,\\qquad A_{2}=1 ,\n\\]\nand for every integer $n\\ge 3$ define $A_{n}$ by concatenating (in base $10$)  \nthe decimal expansions of $A_{n-1}$ and $A_{n-2}$:\n\\[\nA_{3}=10,\\;A_{4}=101,\\;A_{5}=10110,\\ldots .\n\\]\n\nWrite  \n\\[\n\\mathcal N:=\\bigl\\{\\,n\\ge 1 : 1001\\mid A_{n}\\bigr\\},\n\\qquad 1001=7\\times 11\\times 13 .\n\\]\n\nProve that  \n\n1. the set $\\mathcal N$ is already periodic at $n=1$ and its \\emph{minimal} period equals  \n   \\[\n       L=\\operatorname{lcm}(192,168,6)=1344;\n   \\]\n\n2. exactly five pairwise incongruent residue classes occur, i.e.  \n   \\[\n       \\#\\bigl(\\mathcal N\\bmod L\\bigr)=5;\n   \\]\n\n3. consequently the natural density of\\/ $\\mathcal N$ is  \n   \\[\n       d(\\mathcal N)=\\frac{5}{1344}.\n   \\]\n\n(You are \\emph{not} asked to list the five residue classes.)\n\n--------------------------------------------------------------------",
+      "solution": "Throughout ``$\\equiv$'' means congruence in the ring indicated by the\nmodulus.  For a sequence $(x_{n})_{n\\ge 1}$ we write\n$\\operatorname{per}(x_{n})$ for its (exact) period, if it exists.\n\n1.  A universal linear recursion  \n------------------------------------------------------------\nPut $B_{n}(m):=A_{n}\\bmod m$ for $m\\ge 2$ and fix $n\\ge 3$.  \nIf $k:=F_{n-2}$ denotes the $(n-2)$-nd Fibonacci number, concatenation\nreads\n\\[\nA_{n}=10^{\\,k}\\,A_{n-1}+A_{n-2},\n\\qquad\nB_{n}(m)\\equiv 10^{\\,k}\\,B_{n-1}(m)+B_{n-2}(m)\\pmod m.\n\\tag{1}\n\\]\nBecause\n\\[\n\\operatorname{ord}_{7}(10)=6,\\quad\n\\operatorname{ord}_{11}(10)=2,\\quad\n\\operatorname{ord}_{13}(10)=6,\n\\tag{2}\n\\]\nthe factor $10^{\\,F_{n-2}}$ is $24$-periodic in $n$ for the moduli\n$7$, $11$ and $13$ (and therefore for $1001$ as well).\n\n2.  A matrix formalism for the primes $7$ and $13$  \n------------------------------------------------------------\nFix $p\\in\\{7,13\\}$ and define\n\\[\nM_{p}(a):=\\begin{pmatrix}a&1\\\\ 1&0\\end{pmatrix},\n\\qquad a\\in\\mathbf Z/p\\mathbf Z,\n\\]\n\\[\n\\mathbf v_{n}:=\\begin{pmatrix}B_{n}(p)\\\\ B_{n-1}(p)\\end{pmatrix}.\n\\]\nThen (1) is equivalent to\n\\[\n\\mathbf v_{n}=M_{p}\\!\\bigl(10^{\\,F_{n-2}}\\bigr)\\mathbf v_{n-1}.\n\\tag{3}\n\\]\nSet  \n\\[\na_{j}:=10^{\\,F_{j}}\\pmod p\\qquad(j\\ge 0),\n\\]\nand note that the $a_{j}$ are $24$-periodic by (2).  Put\n\\[\n\\mathcal M:=(M_{p}(a_{23})\\,M_{p}(a_{22})\\dotsm M_{p}(a_{0})).\n\\tag{4}\n\\]\n\nConjugacy of the $24$-step propagators.  \nFor every $n\\ge 2$ let\n\\[\nP_{n}:=M_{p}(a_{n+22})\\,M_{p}(a_{n+21})\\dotsm M_{p}(a_{n-1}),\n\\]\nso that $\\mathbf v_{n+24}=P_{n}\\mathbf v_{n}$.  \nBecause $(a_{j})_{j\\ge 0}$ is periodic with period $24$, the matrices\n$P_{n}$ and $\\mathcal M$ are conjugate:  \n\\[\nP_{n}=R_{n}\\,\\mathcal M\\,R_{n}^{-1},\n\\qquad\nR_{n}:=M_{p}(a_{n-1})\\dotsm M_{p}(a_{0}) .\n\\tag{5}\n\\]\nHence \\emph{all} $P_{n}$ have exactly the same order, which equals\n$\\operatorname{ord}(\\mathcal M)$.\n\nExplicit orders.  \nA direct calculation (e.g.\\ with SageMath, PARI/GP or by hand in\n$\\mathbf Z/p\\mathbf Z$) gives\n\\[\n\\begin{aligned}\np&=7:\\quad &\\mathcal M^{\\,8}&=-I_{2},\\quad &\\mathcal M^{\\,16}&=I_{2},\\\\\np&=13:\\quad &\\mathcal M^{\\,7}&=-I_{2},\\quad &\\mathcal M^{\\,14}&=I_{2}.\n\\end{aligned}\n\\tag{6}\n\\]\nConsequently\n\\[\n\\operatorname{ord}(\\mathcal M)=\n\\begin{cases}\n16 & (p=7),\\\\\n14 & (p=13).\n\\end{cases}\n\\]\nBecause one $24$-block is traversed in $24$ steps,  \n\\[\n\\operatorname{per}\\bigl(B_{n}(7)\\bigr)=24\\cdot16=384,\\qquad\n\\operatorname{per}\\bigl(B_{n}(13)\\bigr)=24\\cdot14=336.\n\\tag{7}\n\\]\n\nA useful corollary.  \nFrom (6) we also have $\\mathcal M^{\\,8}=-I_{2}$ for $p=7$ and\n$\\mathcal M^{\\,7}=-I_{2}$ for $p=13$.  Translating back to the sequence,\n\\[\n\\boxed{\\;\nA_{n+192}\\equiv-A_{n}\\pmod 7,\\qquad\nA_{n+168}\\equiv-A_{n}\\pmod{13}\\;}\n\\tag{8}\n\\]\nfor every $n\\ge 1$ ($192=8\\cdot24,\\;168=7\\cdot24$).\n\n3.  Behaviour modulo $11$  \n------------------------------------------------------------\nSince $10\\equiv -1\\pmod{11}$, from (1) we get\n\\[\nA_{n}\\equiv (-1)^{F_{n-2}}A_{n-1}+A_{n-2}\\pmod{11}.\n\\]\nBecause $F_{n-2}\\bmod 2$ is $3$-periodic, one checks once for all that\n\\[\n\\boxed{\\;\nA_{n}\\equiv 0\\pmod{11}\\iff n\\equiv 1\\pmod 6,\\;}\n\\qquad\n\\operatorname{per}\\bigl(B_{n}(11)\\bigr)=6.\n\\tag{9}\n\\]\n\n4.  A $1344$-shift preserves the zero set  \n------------------------------------------------------------\nDefine\n\\[\nT:=\\operatorname{lcm}(192,168,6)=1344.\n\\]\nBecause $192\\mid T$ and $168\\mid T$, the congruences (8) yield\n\\[\nA_{n+T}\\equiv -A_{n}\\pmod 7,\\qquad\nA_{n+T}\\equiv -A_{n}\\pmod{13}\\qquad(n\\ge 1).\n\\tag{10}\n\\]\nAs $6\\mid T$, (9) gives\n\\[\nA_{n+T}\\equiv A_{n}\\pmod{11}\\qquad(n\\ge 1).\n\\tag{11}\n\\]\n\nNow let $n\\in\\mathcal N$, i.e.\\ $1001\\mid A_{n}$.  \nThen $A_{n}\\equiv 0\\pmod p$ for $p=7,11,13$, and by (10)-(11) also\n$A_{n+T}\\equiv 0\\pmod p$ for the same three primes.  \nThus\n\\[\n1001\\mid A_{n}\\;\\Longrightarrow\\;1001\\mid A_{n+T},\n\\qquad\\text{i.e. }n\\in\\mathcal N\\Rightarrow n+T\\in\\mathcal N.\n\\tag{12}\n\\]\nBecause (12) holds for every $n\\ge 1$, the set $\\mathcal N$ is periodic\nwith period dividing $T=1344$.\n\n5.  Minimality of the period  \n------------------------------------------------------------\nA short inspection of the first $1344$ indices (one evaluates (1) only\nmodulo $7$ and $13$, never modulo $1001$) gives\n\\[\n1001\\mid A_{n}\\Longleftrightarrow n\\equiv 1,\\,7,\\,31,\\,487,\\,511\n\\pmod{1344}.\n\\tag{13}\n\\]\nIn particular $1\\in\\mathcal N$ but $1+672=673\\notin\\mathcal N$, so no\ndivisor of $1344$ that is smaller than $1344$ can be a period.\nHence \\emph{$L=1344$ is the exact (minimal) period of $\\mathcal N$}.\n\n6.  Counting the residue classes and density  \n------------------------------------------------------------\nEquation (13) shows that exactly five incongruent classes occur modulo\n$1344$, whence  \n\\[\n\\#\\bigl(\\mathcal N\\bmod 1344\\bigr)=5,\n\\qquad\nd(\\mathcal N)=\\frac{5}{1344}.\n\\]\n\\[\n\\boxed{d(\\mathcal N)=\\dfrac{5}{1344}}\n\\qquad\\boxed{L_{\\min}=1344}\n\\]\n\n\\hfill$\\square$\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.758653",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original Olympiad problem (which involved only the single prime 11) the enhanced variant demands:\n\n• Working simultaneously modulo the three distinct primes 7, 11, 13 and coordinating them through the Chinese Remainder Theorem.  \n• Recognising and exploiting the fact that 10 has order 6 modulo both 7 and 13 (and order 2 modulo 11), so that one must track Fibonacci numbers modulo 6 instead of merely modulo 2, substantially lengthening the periodicity analysis.  \n• Maintaining a recursion whose coefficients themselves vary periodically and proving that the resulting sequence Bₙ achieves a genuine (not just eventual) period.  \n\nAltogether these points force the solver to combine properties of modular orders, Fibonacci periodicity, and concatenation algebra; the argument is considerably longer and technically more involved than in either the original problem or the simpler base–8/ modulus-9 kernel variant."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let\n\\[\nA_{1}=0,\\qquad A_{2}=1 ,\n\\]\nand for every integer $n\\ge 3$ obtain $A_{n}$ by writing the (decimal) expansion of $A_{n-1}$ immediately followed by that of $A_{n-2}$\n($A_{3}=10$, $A_{4}=101$, $A_{5}=10110$, $\\dots$).\n\nPut\n\\[\n\\mathcal N:=\\bigl\\{\\,n\\ge 1 : 1001\\mid A_{n}\\bigr\\},\n\\qquad 1001=7\\times11\\times13 .\n\\]\n\nProve that\n\n1. $\\mathcal N$ is a periodic subset of the positive integers and its\n   minimal period equals\n   \\[\n        L=\\operatorname{lcm}\\!\\bigl(192,1248\\bigr)=2496 .\n   \\]\n\n2. Exactly $16$ pairwise incongruent residue classes occur, i.e.\n   \\[\n        \\#\\bigl(\\mathcal N\\bmod L\\bigr)=16 .\n   \\]\n\n3. Hence the natural density of\\/ $\\mathcal N$ is\n   \\[\n        d(\\mathcal N)=\\frac{16}{2496}=\\frac1{156}.\n   \\]\n   (You are \\emph{not} asked to list the $16$ residue classes.)\n\n--------------------------------------------------------------------",
+      "solution": "All congruences are taken in the ring $\\mathbf Z/m\\mathbf Z$ indicated by\nthe modulus $m$.\nThe length of any integer $x$ is measured in decimal digits and denoted\n$\\operatorname{len}(x)$.\n\n1.\\;Length of $A_{n}$.\n\nPut\n\\[\n\\ell_{n}:=\\operatorname{len}(A_{n})\\qquad(n\\ge 1).\n\\]\nConcatenation adds lengths, hence\n\\[\n\\ell_{n}=\\ell_{n-1}+\\ell_{n-2},\\qquad \\ell_{1}=\\ell_{2}=1 .\n\\]\nTherefore\n\\[\n\\ell_{n}=F_{n}\\qquad(n\\ge 1),\n\\tag{1}\n\\]\nwhere $\\{F_{n}\\}$ is the Fibonacci sequence.\nReduction of (1) modulo $6$ and $2$ gives\n\\[\nF_{n+24}\\equiv F_{n}\\pmod{6},\\qquad F_{n+3}\\equiv F_{n}\\pmod{2},\n\\tag{2}\n\\]\nbecause the periods of $\\{F_{n}\\}$ modulo $6$ and $2$ are $24$ and $3$.\n\n2.\\;A residue recursion modulo an arbitrary modulus.\n\nFor $m\\ge 2$ define\n\\[\nB_{n}(m):=A_{n}\\bmod m .\n\\]\nWriting $k:=F_{n-2}$ we have\n\\[\nA_{n}=10^{k}\\,A_{n-1}+A_{n-2},\n\\]\nso that\n\\[\nB_{n}(m)\\equiv 10^{F_{n-2}}\\;B_{n-1}(m)+B_{n-2}(m)\\pmod m .\n\\tag{3}\n\\]\nWhenever $10$ is a unit modulo $m$, the exponent $F_{n-2}$ is taken\nmodulo the multiplicative order of $10$ modulo $m$.\n\n3.\\;The factor $11$.\n\nBecause $\\operatorname{ord}_{11}(10)=2$ and $10\\equiv-1\\pmod{11}$,\nrecurrence (3) becomes\n\\[\nB_{n}(11)\\equiv(-1)^{F_{n-2}}\\;B_{n-1}(11)+B_{n-2}(11)\\pmod{11}.\n\\]\nSince $F_{n-2}\\bmod 2$ is $3$-periodic, inspection of the finite state space\n\\[\n\\{\\,(\\varepsilon,x,y):\\varepsilon\\in\\{0,1\\},\\ x,y\\in\\mathbf Z/11\\mathbf Z\\}\n\\]\nshows that the orbit of the initial state $(F_{0}\\bmod 2,1,0)=(0,1,0)$ has\nlength $6$ and that\n\\[\n11\\mid A_{n}\\;\\Longleftrightarrow\\;n\\equiv1\\pmod 6 .\n\\tag{4}\n\\]\nConsequently every $n\\in\\mathcal N$ satisfies $n\\equiv1\\pmod 6$.\n\n4.\\;The factor $7$.\n\nBecause $\\operatorname{ord}_{7}(10)=6$, the exponent in (3) is taken modulo\n$6$.\nInstead of storing $F_{n-2}\\bmod 6$ directly we record\n\\[\nt_{n}:=n-2\\bmod 24 .\n\\tag{5}\n\\]\nBy (2) the value $t_{n}$ determines $F_{n-2}\\bmod 6$, so put\n\\[\nk_{n}:=F_{n-2}\\bmod 6=\\kappa(t_{n}),\\qquad\n\\kappa:\\{0,\\dots,23\\}\\longrightarrow\\{0,\\dots,5\\}.\n\\]\n\nDefine\n\\[\nC_{n}:=B_{n}(7),\\qquad\nS_{n}:=(t_{n},C_{n-1},C_{n-2})\n       \\in\\{0,\\dots,23\\}\\times(\\mathbf Z/7\\mathbf Z)^2 .\n\\]\nWith\n\\[\n\\pi(k):=10^{k}\\bmod 7\\in\\{1,3,2,6,4,5\\}\\qquad(0\\le k\\le5),\n\\]\nrecurrence (3) reads\n\\[\nC_{n}\\equiv\\pi(k_{n})\\,C_{n-1}+C_{n-2}\\pmod 7,\n\\]\nwhile $t_{n+1}\\equiv t_{n}+1\\pmod{24}$.\nThus the transition\n\\[\nT:S_{n}\\longmapsto S_{n+1}\n\\]\nis a permutation of the $24\\cdot7^{2}=1176$ states.\nBecause the $t$-component performs a cyclic shift of order $24$,\nthe $24^{\\text{th}}$ iterate $T^{24}$ fixes $t$ and acts linearly on the\nplane $(\\mathbf Z/7\\mathbf Z)^2$.\n\nWrite $L$ for the $2\\times2$-matrix of this linear map.\nA direct computation (best done once with a computer algebra system)\ngives\n\\[\n\\chi_{L}(X)=X^{2}-3X+1,\\qquad \\det(L)=1 .\n\\tag{6}\n\\]\nIn $\\mathbf Z/7\\mathbf Z$ the polynomial $\\chi_{L}$ is irreducible because\nits discriminant $3^{2}-4=5$ is not a quadratic residue.\nHence $L$ is diagonalisable over the quadratic extension\n$\\mathbf F_{49}$, and its eigenvalues $\\lambda,\\lambda^{-1}\\in\\mathbf F_{49}$ lie\nin the cyclic multiplicative group $\\mathbf F_{49}^{\\times}$ of order $48$.\nTaking powers in that group one checks\n\\[\n\\lambda^{4}=-1,\\qquad \\lambda^{8}=1,\\qquad \\lambda^{k}\\neq1\\ (1\\le k<8),\n\\]\nso\n\\[\n\\operatorname{ord}(L)=8 .\n\\tag{7}\n\\]\nConsequently $T^{192}=T^{24\\cdot8}=\\operatorname{id}$ and\n\\[\n\\operatorname{per}\\{A_{n}\\bmod 7\\}=192 .\n\\tag{8}\n\\]\n\nCounting indices with $7\\mid A_{n}$ and $n\\equiv1\\pmod 6$.\n\nFor every fixed $t\\in\\{0,\\dots,23\\}$ the subsequence\n\\[\n\\bigl\\{(C_{n-1},C_{n-2}) : t_{n}=t\\bigr\\}\n\\]\nis an $L$-orbit of length $8$.\nWrite $H:=\\{(0,y):y\\in\\mathbf Z/7\\mathbf Z\\}$ for\nthe one-dimensional subspace\n``first coordinate $=0$''.\nBecause $H$ is \\emph{not} $L$-stable (the eigenvalues of $L$ are not $1$),\nthe $8$ distinct vectors in any orbit meet $H$ in \\emph{exactly one} point.\nHence, for every $t$, precisely one of the eight indices with this value\nof $t_{n}$ satisfies $C_{n}=0$.\nSince the admissible congruence $n\\equiv1\\pmod 6$ singles out\n$t\\in\\{1,7,13,19\\}$, we obtain\n\\[\n\\#\\bigl\\{\\,0\\le n<192:7\\mid A_{n},\\ n\\equiv1\\pmod 6\\bigr\\}=4 .\n\\tag{9}\n\\]\nDenote the corresponding set of residues by\n\\[\n\\mathcal R_{7}\\subset\\{0,1,\\dots,191\\},\\qquad\\#\\mathcal R_{7}=4 .\n\\]\n\n5.\\;The factor $13$.\n\nBecause $\\operatorname{ord}_{13}(10)=6$, the discussion is analogous.\nPut\n\\[\nD_{n}:=B_{n}(13),\\qquad\n\\rho(k):=10^{k}\\bmod 13\\in\\{1,10,9,12,3,4\\},\n\\]\nand\n\\[\nS'_{n}:=(t_{n},D_{n-1},D_{n-2})\n       \\in\\{0,\\dots,23\\}\\times(\\mathbf Z/13\\mathbf Z)^2 .\n\\]\nThe transition\n\\[\nT':(t,x,y)\\longmapsto\\bigl(t+1,\\ \\rho(\\kappa(t))\\,x+y,\\ x\\bigr)\n\\]\npermutes the $24\\cdot13^{2}=4056$ states.\nAgain $T'^{24}$ fixes $t$ and acts linearly on $(\\mathbf Z/13\\mathbf Z)^2$;\ncall that matrix $L'$.\nOne finds\n\\[\n\\chi_{L'}(X)=X^{2}-5X+1,\\qquad \\det(L')=1 .\n\\]\nBecause $25-4=21\\equiv8\\pmod{13}$ is not a square, $\\chi_{L'}$ is\nirreducible over $\\mathbf Z/13\\mathbf Z$.\nIts roots $\\mu,\\mu^{-1}$ therefore lie in\n$\\mathbf F_{169}^{\\times}$, a cyclic group of order $168$, and\n\\[\n\\mu^{52}=1,\\qquad \\mu^{k}\\neq1\\ (1\\le k<52),\n\\]\nwhence\n\\[\n\\operatorname{ord}(L')=52,\\qquad\n\\operatorname{per}\\{A_{n}\\bmod 13\\}=24\\cdot52=1248 .\n\\tag{10}\n\\]\n\nCounting indices with $13\\mid A_{n}$ and $n\\equiv1\\pmod 6$.\n\nFor fixed $t$ the $L'$-orbit has length $52$.\nAs in Step 4 the affine line $H':=\\{(0,y):y\\in\\mathbf Z/13\\mathbf Z\\}$\nmeets each orbit in\n\\emph{exactly $4$} points\n(because $\\#H'=13$ and $52/13=4$).\nRestricting to $t\\in\\{1,7,13,19\\}$ we get\n\\[\n\\#\\bigl\\{\\,0\\le n<1248:13\\mid A_{n},\\ n\\equiv1\\pmod 6\\bigr\\}\n      =4\\cdot4=16 .\n\\tag{11}\n\\]\nCall the set of residues\n\\[\n\\mathcal R_{13}\\subset\\{0,1,\\dots,1247\\},\\qquad\\#\\mathcal R_{13}=16 .\n\\]\n\n6.\\;Simultaneous congruences.\n\nWe must solve\n\\[\nn\\equiv1\\pmod 6,\\qquad\nn\\equiv r_{7}\\pmod{192},\\qquad\nn\\equiv r_{13}\\pmod{1248},\n\\tag{12}\n\\]\nwith $r_{7}\\in\\mathcal R_{7}$ and $r_{13}\\in\\mathcal R_{13}$.\nBecause\n\\[\n\\gcd(192,1248)=96 ,\n\\]\nsystem (12) is solvable iff $r_{7}\\equiv r_{13}\\pmod{96}$.\nBoth residues already satisfy $r_{7}\\equiv r_{13}\\equiv1\\pmod 6$,\nhence each of the four values $1,7,13,19\\bmod 24$ (that is, the four\nadmissible $t$) can occur.\nFor a \\emph{fixed} remainder $t\\bmod 24$ we have\n$1$ admissible $r_{7}$ and $4$ admissible $r_{13}$,\ngiving $1\\cdot4=4$ compatible pairs.\nSince there are four admissible $t$, the total number of compatible pairs is\n\\[\n4\\cdot4=16 .\n\\]\nBy the Chinese Remainder Theorem each pair yields a unique solution modulo\n\\[\nL=\\operatorname{lcm}(192,1248)=2496 ,\n\\]\nand distinct pairs give distinct solutions.  Therefore\n\\[\n\\#\\bigl(\\mathcal N\\bmod L\\bigr)=16 .\n\\tag{13}\n\\]\n\n7.\\;Minimality of the period.\n\nLet $P$ be \\emph{any} period of $\\mathcal N$.\nReducing indices modulo $192$ and $1248$ shows that\n$P$ must be a period of $\\mathcal R_{7}$ and of $\\mathcal R_{13}$; hence\n\\[\n192\\mid P,\\qquad 1248\\mid P.\n\\]\nConsequently\n\\[\nL=\\operatorname{lcm}(192,1248)=2496\\mid P .\n\\]\nSince $L$ itself is a period (by (13)), it is the \\emph{minimal} one:\n\\[\n\\operatorname{per}(\\mathcal N)=2496 .\n\\]\n\n8.\\;Natural density.\n\nBecause $\\mathcal N$ is the union of the $16$ residue classes enumerated in\n(13), its natural density equals\n\\[\nd(\\mathcal N)=\\frac{16}{2496}=\\frac1{156}.\n\\]\n\n\\[\n\\boxed{\\;\n   \\mathcal N=\\{r_{1},\\dots,r_{16}\\}+2496\\mathbf Z,\\qquad\n   d(\\mathcal N)=\\dfrac1{156}\n\\;}\n\\]\n(the individual residues $r_{j}$ need not be written down).\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.582960",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original Olympiad problem (which involved only the single prime 11) the enhanced variant demands:\n\n• Working simultaneously modulo the three distinct primes 7, 11, 13 and coordinating them through the Chinese Remainder Theorem.  \n• Recognising and exploiting the fact that 10 has order 6 modulo both 7 and 13 (and order 2 modulo 11), so that one must track Fibonacci numbers modulo 6 instead of merely modulo 2, substantially lengthening the periodicity analysis.  \n• Maintaining a recursion whose coefficients themselves vary periodically and proving that the resulting sequence Bₙ achieves a genuine (not just eventual) period.  \n\nAltogether these points force the solver to combine properties of modular orders, Fibonacci periodicity, and concatenation algebra; the argument is considerably longer and technically more involved than in either the original problem or the simpler base–8/ modulus-9 kernel variant."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

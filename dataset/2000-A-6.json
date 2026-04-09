@@ -1,0 +1,197 @@
+{
+  "index": "2000-A-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $f(x)$ be a polynomial with integer coefficients.  Define a\nsequence $a_0,a_1,\\ldots$ of integers such that $a_0=0$ and\n$a_{n+1}=f(a_n)$\nfor all $n\\geq 0$.  Prove that if there exists a positive integer $m$ for\nwhich $a_m=0$ then either $a_1=0$ or $a_2=0$.",
+  "solution": "Recall that if $f(x)$ is a polynomial with integer coefficients,\nthen $m-n$ divides $f(m)-f(n)$ for any integers $m$ and $n$. In particular,\nif we put $b_n = a_{n+1} - a_n$, then $b_n$ divides $b_{n+1}$ for all $n$.\nOn the other hand, we are given that $a_0=a_m=0$, which implies that\n$a_1=a_{m+1}$ and so $b_0=b_m$. If $b_0=0$, then $a_0=a_1=\\cdots=a_m$\nand we are done. Otherwise, $|b_0| = |b_1| = |b_2| = \\cdots$, so\n$b_n = \\pm b_0$ for all $n$.\n\nNow $b_0 + \\cdots + b_{m-1} = a_m - a_0 = 0$, so half of the integers $b_0,\n\\dots, b_{m-1}$ are positive and half are negative. In particular, there\nexists an integer $0<k<m$ such that $b_{k-1} = -b_k$, which is to say,\n$a_{k-1} = a_{k+1}$. From this it follows that $a_n = a_{n+2}$ for all\n$n \\geq k-1$; in particular, for $m=n$, we have\n\\[\na_0 = a_m = a_{m+2} = f(f(a_0))\n= a_2.\n\\]",
+  "vars": [
+    "x",
+    "a_0",
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_m",
+    "a_n+1",
+    "a_m+1",
+    "a_k-1",
+    "a_k+1",
+    "a_n+2",
+    "a_m+2",
+    "b_n",
+    "b_0",
+    "b_1",
+    "b_2",
+    "b_m",
+    "b_m-1",
+    "b_k-1",
+    "b_k",
+    "n",
+    "m",
+    "k"
+  ],
+  "params": [
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "unknownx",
+        "a_0": "starta",
+        "a_1": "firstav",
+        "a_2": "seconda",
+        "a_n": "termnval",
+        "a_{n+1}": "termnplusone",
+        "a_n+1": "termnplusone",
+        "a_m": "termmval",
+        "a_{m+1}": "termmplusone",
+        "a_m+1": "termmplusone",
+        "a_{k-1}": "termkminusone",
+        "a_k-1": "termkminusone",
+        "a_{k+1}": "termkplusone",
+        "a_k+1": "termkplusone",
+        "a_{n+2}": "termnplustwo",
+        "a_n+2": "termnplustwo",
+        "a_{m+2}": "termmplustwo",
+        "a_m+2": "termmplustwo",
+        "b_n": "diffnval",
+        "b_{n+1}": "diffnplusone",
+        "b_n+1": "diffnplusone",
+        "b_0": "diffzero",
+        "b_1": "difffirst",
+        "b_2": "diffsecond",
+        "b_m": "diffmval",
+        "b_{m-1}": "diffmminusone",
+        "b_m-1": "diffmminusone",
+        "b_{k-1}": "diffkminusone",
+        "b_k-1": "diffkminusone",
+        "b_k": "diffkval",
+        "n": "indexn",
+        "m": "indexm",
+        "k": "indexk",
+        "f": "polyfun"
+      },
+      "question": "Let $polyfun(unknownx)$ be a polynomial with integer coefficients.  Define a\nsequence $starta,firstav,\\ldots$ of integers such that $starta=0$ and\n$termnplusone=polyfun(termnval)$\nfor all $indexn\\geq 0$.  Prove that if there exists a positive integer $indexm$ for\nwhich $termmval=0$ then either $firstav=0$ or $seconda=0$.",
+      "solution": "Recall that if $polyfun(unknownx)$ is a polynomial with integer coefficients,\nthen $indexm-indexn$ divides $polyfun(indexm)-polyfun(indexn)$ for any integers $indexm$ and $indexn$. In particular,\nif we put $diffnval = termnplusone - termnval$, then $diffnval$ divides $diffnplusone$ for all $indexn$.\nOn the other hand, we are given that $starta=termmval=0$, which implies that\n$firstav=termmplusone$ and so $diffzero=diffmval$. If $diffzero=0$, then $starta=firstav=\\cdots=termmval$\nand we are done. Otherwise, $|diffzero| = |difffirst| = |diffsecond| = \\cdots$, so\n$diffnval = \\pm diffzero$ for all $indexn$.\n\nNow $diffzero + \\cdots + diffmminusone = termmval - starta = 0$, so half of the integers $diffzero,\n\\dots, diffmminusone$ are positive and half are negative. In particular, there\nexists an integer $0<indexk<indexm$ such that $diffkminusone = -diffkval$, which is to say,\n$termkminusone = termkplusone$. From this it follows that $termnval = termnplustwo$ for all\n$indexn \\geq indexk-1$; in particular, for $indexm=indexn$, we have\n\\[\nstarta = termmval = termmplustwo = polyfun(polyfun(starta))\n= seconda.\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "radiance",
+        "a_0": "tangerine",
+        "a_1": "sunflower",
+        "a_2": "buttercup",
+        "a_n": "pineapple",
+        "a_m": "crocodile",
+        "a_n+1": "moonlight",
+        "a_m+1": "salmonella",
+        "a_k-1": "windchime",
+        "a_k+1": "magnolia",
+        "a_n+2": "stalemate",
+        "a_m+2": "blueberry",
+        "b_n": "honeycomb",
+        "b_0": "marzipane",
+        "b_1": "gladiolus",
+        "b_2": "peppermint",
+        "b_m": "shoelaces",
+        "b_m-1": "campfire",
+        "b_k-1": "lullabies",
+        "b_k": "aardvarks",
+        "n": "umbrella",
+        "m": "aardwolf",
+        "k": "saxophone",
+        "f": "rainstorm"
+      },
+      "question": "Let $rainstorm(radiance)$ be a polynomial with integer coefficients.  Define a\nsequence $tangerine,sunflower,\\ldots$ of integers such that $tangerine=0$ and\n$moonlight=rainstorm(pineapple)$\nfor all $umbrella\\geq 0$.  Prove that if there exists a positive integer $aardwolf$ for\nwhich $crocodile=0$ then either $sunflower=0$ or $buttercup=0$.",
+      "solution": "Recall that if $rainstorm(radiance)$ is a polynomial with integer coefficients,\nthen $aardwolf-umbrella$ divides $rainstorm(aardwolf)-rainstorm(umbrella)$ for any integers $aardwolf$ and $umbrella$. In particular,\nif we put $honeycomb = moonlight - pineapple$, then $honeycomb$ divides $b_{\\umbrella+1}$ for all $umbrella$.\nOn the other hand, we are given that $tangerine=crocodile=0$, which implies that\n$sunflower=salmonella$ and so $marzipane=shoelaces$. If $marzipane=0$, then $tangerine=sunflower=\\cdots=crocodile$\nand we are done. Otherwise, $|marzipane| = |gladiolus| = |peppermint| = \\cdots$, so\n$honeycomb = \\pm marzipane$ for all $umbrella$.\n\nNow $marzipane + \\cdots + campfire = crocodile - tangerine = 0$, so half of the integers $marzipane,\n\\dots, campfire$ are positive and half are negative. In particular, there\nexists an integer $0<saxophone<aardwolf$ such that $lullabies = -aardvarks$, which is to say,\n$windchime = magnolia$. From this it follows that $pineapple = stalemate$ for all\n$umbrella \\geq saxophone-1$; in particular, for $aardwolf=umbrella$, we have\n\\[\ntangerine = crocodile = blueberry = rainstorm(rainstorm(tangerine))\n= buttercup.\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantval",
+        "a_0": "terminalseed",
+        "a_1": "precedentone",
+        "a_2": "antecedenttwo",
+        "a_n": "specificelem",
+        "a_m": "randomelem",
+        "a_n+1": "previousitem",
+        "a_m+1": "beforeelement",
+        "a_k-1": "afterpiece",
+        "a_k+1": "priorpiece",
+        "a_n+2": "doubleprior",
+        "a_m+2": "earlyelement",
+        "b_n": "sumsignal",
+        "b_0": "finalsummand",
+        "b_1": "lastsummand",
+        "b_2": "edgesummand",
+        "b_m": "constantgap",
+        "b_m-1": "stablegap",
+        "b_k-1": "postmeasure",
+        "b_k": "premeasure",
+        "n": "staticindex",
+        "m": "fluidindex",
+        "k": "rigidindex",
+        "f": "constantmap"
+      },
+      "question": "Let $constantmap(constantval)$ be a polynomial with integer coefficients.  Define a\nsequence $terminalseed,precedentone,\\ldots$ of integers such that $terminalseed=0$ and\n$a_{n+1}=constantmap(specificelem)$\nfor all $staticindex\\geq 0$.  Prove that if there exists a positive integer $fluidindex$ for\nwhich $randomelem=0$ then either $precedentone=0$ or $antecedenttwo=0$.",
+      "solution": "Recall that if $constantmap(constantval)$ is a polynomial with integer coefficients,\nthen $fluidindex-staticindex$ divides $constantmap(fluidindex)-constantmap(staticindex)$ for any integers $fluidindex$ and $staticindex$. In particular,\nif we put $sumsignal = a_{n+1} - specificelem$, then $sumsignal$ divides $b_{n+1}$ for all $staticindex$.\nOn the other hand, we are given that $terminalseed=randomelem=0$, which implies that\n$precedentone=a_{m+1}$ and so $finalsummand=constantgap$. If $finalsummand=0$, then $terminalseed=precedentone=\\cdots=randomelem$\nand we are done. Otherwise, $|finalsummand| = |lastsummand| = |edgesummand| = \\cdots$, so\n$sumsignal = \\pm finalsummand$ for all $staticindex$.\n\nNow $finalsummand + \\cdots + b_{m-1} = randomelem - terminalseed = 0$, so half of the integers $finalsummand,\n\\dots, b_{m-1}$ are positive and half are negative. In particular, there\nexists an integer $0<rigidindex<fluidindex$ such that $postmeasure = -premeasure$, which is to say,\n$afterpiece = priorpiece$. From this it follows that $specificelem = a_{n+2}$ for all\n$staticindex \\geq rigidindex-1$; in particular, for $fluidindex=staticindex$, we have\n\\[\nterminalseed = randomelem = a_{m+2} = constantmap(constantmap(terminalseed))\n= antecedenttwo.\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "a_0": "hjgrksla",
+        "a_1": "plmqwzke",
+        "a_2": "vbncxmle",
+        "a_n": "sdfghjkl",
+        "a_m": "rtyuiope",
+        "a_n+1": "zxcvbnma",
+        "a_m+1": "poiulkjh",
+        "a_k-1": "mnbvcxzq",
+        "a_k+1": "lkjhgfdx",
+        "a_n+2": "asdfghqw",
+        "a_m+2": "qwertyop",
+        "b_n": "cvbnmzas",
+        "b_0": "rewqlkas",
+        "b_1": "yuiopghj",
+        "b_2": "hjketlzx",
+        "b_m": "sodifjwe",
+        "b_m-1": "vmxncqwe",
+        "b_k-1": "tijfoqwe",
+        "b_k": "pweorjlc",
+        "n": "lzmxnvcb",
+        "m": "qpowieur",
+        "k": "hnfgtrew",
+        "f": "abcdezxy"
+      },
+      "question": "Let $abcdezxy(qzxwvtnp)$ be a polynomial with integer coefficients.  Define a sequence $hjgrksla,plmqwzke,\\ldots$ of integers such that $hjgrksla=0$ and $zxcvbnma=abcdezxy(sdfghjkl)$ for all $lzmxnvcb\\geq 0$.  Prove that if there exists a positive integer $qpowieur$ for which $rtyuiope=0$ then either $plmqwzke=0$ or $vbncxmle=0$.",
+      "solution": "Recall that if $abcdezxy(qzxwvtnp)$ is a polynomial with integer coefficients, then $qpowieur-lzmxnvcb$ divides $abcdezxy(qpowieur)-abcdezxy(lzmxnvcb)$ for any integers $qpowieur$ and $lzmxnvcb$. In particular, if we put $cvbnmzas = zxcvbnma - sdfghjkl$, then $cvbnmzas$ divides $cvbnmzas$ for all $lzmxnvcb$. On the other hand, we are given that $hjgrksla=rtyuiope=0$, which implies that $plmqwzke=poiulkjh$ and so $rewqlkas=sodifjwe$. If $rewqlkas=0$, then $hjgrksla=plmqwzke=\\cdots=rtyuiope$ and we are done. Otherwise, $|rewqlkas| = |yuiopghj| = |hjketlzx| = \\cdots$, so $cvbnmzas = \\pm rewqlkas$ for all $lzmxnvcb$.\\n\\nNow $rewqlkas + \\cdots + vmxncqwe = rtyuiope - hjgrksla = 0$, so half of the integers $rewqlkas, \\dots, vmxncqwe$ are positive and half are negative. In particular, there exists an integer $0<hnfgtrew<qpowieur$ such that $tijfoqwe = -pweorjlc$, which is to say, $mnbvcxzq = lkjhgfdx$. From this it follows that $sdfghjkl = asdfghqw$ for all $lzmxnvcb \\geq hnfgtrew-1$; in particular, for $qpowieur=lzmxnvcb$, we have\\n\\[\\nhjgrksla = rtyuiope = qwertyop = abcdezxy(abcdezxy(hjgrksla))\\n= vbncxmle.\\n\\]"
+    },
+    "kernel_variant": {
+      "question": "Let $f(x)\\in\\mathbb Z[x]$ be a polynomial with integer coefficients and let $q\\neq 0$ be a fixed integer.  Construct a sequence $b_0,b_1,\\dots$ of integers by\n\\[ b_0=q, \\qquad b_{n+1}=f(b_n) \\quad (n\\ge 0). \\]\nAssume that for some positive integer $\\ell$ one has $b_{\\ell}=q$.  Prove that at least one of the equalities $b_1=q$ or $b_2=q$ holds.",
+      "solution": "Set d_n=b_{n+1}-b_n (n\\geq 0).\n\n1. (Divisibility) For any integers s,t we have s-t divides f(s)-f(t) because f has integer coefficients.  Taking s=b_{n+1} and t=b_n gives d_n\\mid d_{n+1} for every n\\geq 0.\n\n2. (Equality of two successive differences) Since b_0=b_\\ell =q, we also have b_1=f(b_0)=f(b_\\ell )=b_{\\ell +1}, so\n   d_0=b_1-b_0=b_{\\ell +1}-b_\\ell =d_\\ell .\n\n3. If d_0=0 then b_1=b_0=q and we are done.  Otherwise |d_0|\\neq 0, and the divisibility chain\n   d_0\\mid d_1\\mid \\ldots \\mid d_\\ell =d_0\nforces |d_0|=|d_1|=|d_2|=\\ldots  .  Hence every d_n is either d_0 or -d_0.\n\n4. The telescoping sum\n   d_0+\\ldots +d_{\\ell -1}=b_\\ell -b_0=0\nshows that among the first \\ell  differences there are as many d_0's as -d_0's.  Consequently there exists an index 1\\leq k<\\ell  with\n   d_{k-1}=-d_k,\n i.e.\n   b_{k-1}=b_{k+1}.\nOnce b_{k-1}=b_{k+1}, applying f to both sides yields b_k=b_{k+2}, and repeating inductively gives the two-periodicity b_n=b_{n+2} for all n\\geq k-1.\n\n5. Taking n=\\ell  in this eventual periodicity gives\n   q=b_\\ell =b_{\\ell +2}=f(f(b_\\ell ))=f(f(q))=b_2.\nThus b_2=q.  Together with the case d_0=0 handled earlier, we obtain the desired conclusion: either b_1=q or b_2=q. \\square ",
+      "_meta": {
+        "core_steps": [
+          "Use m−n | f(m)−f(n) for integer-coefficient polynomials to get divisibility among successive differences.",
+          "Set b_n = a_{n+1}−a_n; then b_n divides b_{n+1}.",
+          "Compare a_0 with a_m (=a_0) to obtain b_0 = b_m; conclude either b_0 = 0 (constant sequence) or every |b_n| is the same non-zero value.",
+          "Sum of b_0,…,b_{m−1} is 0 ⇒ some adjacent b’s are opposite in sign ⇒ a_{k−1}=a_{k+1}, giving eventual period 2.",
+          "Period-2 equality forces a_2 = a_0; since a_0 is the given fixed value, either a_1 = a_0 or a_2 = a_0."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Chosen ‘anchor’ value at which the sequence starts and later returns; everywhere the argument uses 0 only as this anchor.",
+            "original": "0"
+          },
+          "slot2": {
+            "description": "Index symbol for the first return to the anchor (called m in the statement). Any positive integer label would work.",
+            "original": "m"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

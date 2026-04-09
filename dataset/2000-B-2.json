@@ -1,0 +1,76 @@
+{
+  "index": "2000-B-2",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Prove that the expression\n\\[ \\frac{gcd(m,n)}{n}\\binom{n}{m} \\]\nis an integer for all pairs of integers $n\\geq m\\geq 1$.",
+  "solution": "Since $\\gcd(m,n)$ is an integer linear combination of $m$ and $n$,\nit follows that\n\\[\\frac{gcd(m,n)}{n}\\binom{n}{m}\\]\nis an integer linear combination of the integers\n\\[\\frac{m}{n}\\binom{n}{m}=\\binom{n-1}{m-1} \\mbox{ and }\n\\frac{n}{n}\\binom{n}{m}=\\binom{n}{m} \\]\nand hence is itself an integer.",
+  "vars": [
+    "m",
+    "n"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "m": "intsmall",
+        "n": "intlarge"
+      },
+      "question": "Prove that the expression\n\\[ \\frac{gcd(intsmall,intlarge)}{intlarge}\\binom{intlarge}{intsmall} \\]\nis an integer for all pairs of integers $intlarge\\geq intsmall\\geq 1$.",
+      "solution": "Since $\\gcd(intsmall,intlarge)$ is an integer linear combination of $intsmall$ and $intlarge$,\nit follows that\n\\[\\frac{gcd(intsmall,intlarge)}{intlarge}\\binom{intlarge}{intsmall}\\]\nis an integer linear combination of the integers\n\\[\\frac{intsmall}{intlarge}\\binom{intlarge}{intsmall}=\\binom{intlarge-1}{intsmall-1} \\mbox{ and }\n\\frac{intlarge}{intlarge}\\binom{intlarge}{intsmall}=\\binom{intlarge}{intsmall} \\]\nand hence is itself an integer."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "m": "sapphire",
+        "n": "pineapple"
+      },
+      "question": "Prove that the expression\n\\[ \\frac{gcd(sapphire,pineapple)}{pineapple}\\binom{pineapple}{sapphire} \\]\nis an integer for all pairs of integers $pineapple\\geq sapphire\\geq 1$.",
+      "solution": "Since $\\gcd(sapphire,pineapple)$ is an integer linear combination of $sapphire$ and $pineapple$, it follows that\n\\[\\frac{gcd(sapphire,pineapple)}{pineapple}\\binom{pineapple}{sapphire}\\]\nis an integer linear combination of the integers\n\\[\\frac{sapphire}{pineapple}\\binom{pineapple}{sapphire}=\\binom{pineapple-1}{sapphire-1} \\mbox{ and } \\frac{pineapple}{pineapple}\\binom{pineapple}{sapphire}=\\binom{pineapple}{sapphire} \\]\nand hence is itself an integer."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "m": "knownvalue",
+        "n": "fixednumber"
+      },
+      "question": "Prove that the expression\n\\[ \\frac{gcd(knownvalue,fixednumber)}{fixednumber}\\binom{fixednumber}{knownvalue} \\]\nis an integer for all pairs of integers $fixednumber\\geq knownvalue\\geq 1$.",
+      "solution": "Since $\\gcd(knownvalue,fixednumber)$ is an integer linear combination of $knownvalue$ and $fixednumber$, it follows that\n\\[\\frac{gcd(knownvalue,fixednumber)}{fixednumber}\\binom{fixednumber}{knownvalue}\\]\nis an integer linear combination of the integers\n\\[\\frac{knownvalue}{fixednumber}\\binom{fixednumber}{knownvalue}=\\binom{fixednumber-1}{knownvalue-1} \\mbox{ and } \\frac{fixednumber}{fixednumber}\\binom{fixednumber}{knownvalue}=\\binom{fixednumber}{knownvalue} \\]\nand hence is itself an integer."
+    },
+    "garbled_string": {
+      "map": {
+        "m": "qzxwvtnp",
+        "n": "hjgrksla"
+      },
+      "question": "Prove that the expression\n\\[ \\frac{gcd(qzxwvtnp,hjgrksla)}{hjgrksla}\\binom{hjgrksla}{qzxwvtnp} \\]\nis an integer for all pairs of integers $hjgrksla\\geq qzxwvtnp\\geq 1$.",
+      "solution": "Since $\\gcd(qzxwvtnp,hjgrksla)$ is an integer linear combination of $qzxwvtnp$ and $hjgrksla$,\nit follows that\n\\[\\frac{gcd(qzxwvtnp,hjgrksla)}{hjgrksla}\\binom{hjgrksla}{qzxwvtnp}\\]\nis an integer linear combination of the integers\n\\[\\frac{qzxwvtnp}{hjgrksla}\\binom{hjgrksla}{qzxwvtnp}=\\binom{hjgrksla-1}{qzxwvtnp-1} \\mbox{ and }\n\\frac{hjgrksla}{hjgrksla}\\binom{hjgrksla}{qzxwvtnp}=\\binom{hjgrksla}{qzxwvtnp} \\]\nand hence is itself an integer."
+    },
+    "kernel_variant": {
+      "question": "Let b and a be integers satisfying b \\geq  a \\geq  0 and b > 0.  Prove that\n\n           gcd(a,b)\n   ----------------------- \\cdot  C(b , a)\n                 b\n\nis always an integer (here C(b , a)=\\binom{b}{a} denotes the usual binomial coefficient).",
+      "solution": "We have to show that \n         gcd(a,b)\n  ------------------- \\cdot  \\binom{b}{a}\n             b\nis an integer for every pair of integers b \\geq  a \\geq  0 with b > 0.\n\nStep 1 - The easy case a = 0.\nIf a = 0 then\n  (gcd(0,b)/b)\\cdot \\binom{b}{0} = b/b \\cdot  1 = 1, \nwhich is an integer.  Hence it suffices to treat a \\geq  1 below.\n\nStep 2 - Write gcd(a,b) as an integer combination of a and b.\nBy Bezout's identity there exist integers \\alpha  and \\beta  such that\n      gcd(a,b) = \\alpha \\cdot a + \\beta \\cdot b.\n\nStep 3 - Multiply by the binomial coefficient and divide by b.\n          gcd(a,b)          \\alpha a        \\beta b\n  --------------------- = ----- \\cdot  \\binom{b}{a} + ---- \\cdot  \\binom{b}{a}\n            b               b          b\n                        = \\alpha  \\cdot  (a/b)\\binom{b}{a} + \\beta  \\cdot  \\binom{b}{a}.\n\nStep 4 - Recognise the first factor as another binomial coefficient.\nFor a \\geq  1 the identity\n        a        b!\n (a/b)\\cdot -- = -------------- = \\binom{b-1}{a-1}\n        b   a!(b-a)!          \nshows that\n      (a/b)\\cdot \\binom{b}{a} = \\binom{b-1}{a-1} \\in  \\mathbb{Z}.\n\nStep 5 - Conclude integrality.\nBoth summands\n   \\alpha \\cdot \\binom{b-1}{a-1}  and  \\beta \\cdot \\binom{b}{a}\nare integers, so their sum---and hence the original expression---is an integer.\n\nTherefore the quantity (gcd(a,b)/b)\\cdot \\binom{b}{a} belongs to \\mathbb{Z} for every b \\geq  a \\geq  0 with b > 0. \\square ",
+      "_meta": {
+        "core_steps": [
+          "Apply Bézout: gcd(m,n)=αm+βn for some integers α,β",
+          "Rewrite the target fraction as α·(m/n)·C(n,m)+β·C(n,m)",
+          "Use the identity (m/n)·C(n,m)=C(n-1,m-1) (an integer)",
+          "Both summands are integers, so their linear combination is integer"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Lower bound on m (allows m=0 without affecting proof)",
+            "original": "n ≥ m ≥ 1"
+          },
+          "slot2": {
+            "description": "Names of the two integer parameters",
+            "original": "m, n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

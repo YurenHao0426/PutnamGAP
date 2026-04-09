@@ -1,0 +1,112 @@
+{
+  "index": "1957-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "6. \\( S_{1}=\\ln a \\) and \\( S_{n}=\\sum_{i=1}^{n-1} \\ln \\left(a-S_{i}\\right), n>1 \\).\n\nShow that\n\\[\n\\lim _{n \\rightarrow \\infty} S_{n}=a-1\n\\]",
+  "solution": "Solution. The given recursion can be written\n\\[\nS_{n+1}=S_{n}+\\ln \\left(a-S_{n}\\right)\n\\]\n\nThe polygonal representation of this recursion is shown in the figure [see p. 223]. It is clear that, with any choice of \\( S_{1}<a \\), we have\n\\[\nS_{2} \\leq S_{3} \\leq S_{4} \\leq \\cdots \\leq a-1\n\\]\nand that the sequence converges to \\( a-1 \\).\nTo prove this analytically, we let\n\\[\nf(x)=x+\\ln (a-x)\n\\]\nfor \\( x<a \\). Then \\( f^{\\prime}(x)=1-1 /(a-x) \\), which is positive for \\( x<a-1 \\) and negative for \\( x>a-1 \\). Since \\( f(a-1)=a-1 \\), it follows that \\( f(x) \\leq a-1 \\) for all \\( x<a \\). Also, if \\( x \\leq a-1 \\), then \\( \\ln (a-x) \\geq 0 \\), so \\( f(x) \\geq x \\). Then (1) follows immediately, so the sequence \\( \\left\\{S_{n}\\right\\} \\) has a limit, say \\( T \\). Clearly, \\( T \\leq a-1 \\), so \\( T \\) is a point of continuity for \\( f \\). Hence\n\\[\nf(T)=f\\left(\\lim S_{n}\\right)=\\lim f\\left(S_{n}\\right)=\\lim S_{n+1}=T\n\\]\n\nThis gives \\( \\ln (a-T)=0 \\), and therefore \\( T=a-1 \\).\nWe have proved \\( \\lim S_{n}=a-1 \\), as required.",
+  "vars": [
+    "S_1",
+    "S_n",
+    "S_2",
+    "S_3",
+    "S_4",
+    "S_n+1",
+    "i",
+    "n",
+    "x",
+    "f",
+    "T"
+  ],
+  "params": [
+    "a"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "S_1": "firstsum",
+        "S_n": "nthsum",
+        "S_2": "secondsum",
+        "S_3": "thirdsum",
+        "S_4": "fourthsum",
+        "S_n+1": "nextsum",
+        "i": "i",
+        "n": "iterindex",
+        "x": "variable",
+        "f": "function",
+        "T": "limitvalue",
+        "a": "constant"
+      },
+      "question": "6. \\( firstsum = \\ln constant \\) and \\( nthsum = \\sum_{i=1}^{iterindex-1} \\ln \\left( constant - S_{i} \\right),\\; iterindex>1 \\).\n\nShow that\n\\[\n\\lim _{iterindex \\rightarrow \\infty} nthsum = constant-1\n\\]",
+      "solution": "Solution. The given recursion can be written\n\\[\nnextsum = nthsum + \\ln \\left( constant - nthsum \\right)\n\\]\n\nThe polygonal representation of this recursion is shown in the figure [see p. 223]. It is clear that, with any choice of \\( firstsum < constant \\), we have\n\\[\nsecondsum \\leq thirdsum \\leq fourthsum \\leq \\cdots \\leq constant-1\n\\]\nand that the sequence converges to \\( constant-1 \\).\nTo prove this analytically, we let\n\\[\nfunction(variable)=variable+\\ln (constant-variable)\n\\]\nfor \\( variable < constant \\). Then \\( function^{\\prime}(variable)=1-1 /(constant-variable) \\), which is positive for \\( variable < constant-1 \\) and negative for \\( variable > constant-1 \\). Since \\( function(constant-1)=constant-1 \\), it follows that \\( function(variable) \\leq constant-1 \\) for all \\( variable < constant \\). Also, if \\( variable \\leq constant-1 \\), then \\( \\ln (constant-variable) \\geq 0 \\), so \\( function(variable) \\geq variable \\). Then (1) follows immediately, so the sequence \\( \\left\\{ nthsum \\right\\} \\) has a limit, say \\( limitvalue \\). Clearly, \\( limitvalue \\leq constant-1 \\), so \\( limitvalue \\) is a point of continuity for \\( function \\). Hence\n\\[\nfunction(limitvalue)=function\\left(\\lim nthsum\\right)=\\lim function\\left(nthsum\\right)=\\lim nextsum=limitvalue\n\\]\n\nThis gives \\( \\ln (constant-limitvalue)=0 \\), and therefore \\( limitvalue = constant-1 \\).\nWe have proved \\( \\lim nthsum = constant-1 \\), as required."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "S_1": "blueprint",
+        "S_n": "shoreline",
+        "S_2": "daydream",
+        "S_3": "frostbite",
+        "S_4": "blackbird",
+        "S_n+1": "limestone",
+        "i": "lanterns",
+        "n": "sailboat",
+        "x": "hedgehog",
+        "f": "windchime",
+        "T": "campfire",
+        "a": "waterfall"
+      },
+      "question": "6. \\( blueprint=\\ln waterfall \\) and \\( shoreline=\\sum_{lanterns=1}^{sailboat-1} \\ln \\left(waterfall-S_{lanterns}\\right),\\ sailboat>1 \\).\n\nShow that\n\\[\n\\lim _{sailboat \\rightarrow \\infty} shoreline=waterfall-1\n\\]",
+      "solution": "Solution. The given recursion can be written\n\\[\nlimestone=shoreline+\\ln \\left(waterfall-shoreline\\right)\n\\]\n\nThe polygonal representation of this recursion is shown in the figure [see p. 223]. It is clear that, with any choice of \\( blueprint<waterfall \\), we have\n\\[\ndaydream \\leq frostbite \\leq blackbird \\leq \\cdots \\leq waterfall-1\n\\]\nand that the sequence converges to \\( waterfall-1 \\).\nTo prove this analytically, we let\n\\[\nwindchime(hedgehog)=hedgehog+\\ln (waterfall-hedgehog)\n\\]\nfor \\( hedgehog<waterfall \\). Then \\( windchime^{\\prime}(hedgehog)=1-1 /(waterfall-hedgehog) \\), which is positive for \\( hedgehog<waterfall-1 \\) and negative for \\( hedgehog>waterfall-1 \\). Since \\( windchime(waterfall-1)=waterfall-1 \\), it follows that \\( windchime(hedgehog) \\leq waterfall-1 \\) for all \\( hedgehog<waterfall \\). Also, if \\( hedgehog \\leq waterfall-1 \\), then \\( \\ln (waterfall-hedgehog) \\geq 0 \\), so \\( windchime(hedgehog) \\geq hedgehog \\). Then (1) follows immediately, so the sequence \\( \\left\\{shoreline\\right\\} \\) has a limit, say \\( campfire \\). Clearly, \\( campfire \\leq waterfall-1 \\), so \\( campfire \\) is a point of continuity for \\( windchime \\). Hence\n\\[\nwindchime(campfire)=windchime\\left(\\lim shoreline\\right)=\\lim windchime\\left(shoreline\\right)=\\lim limestone=campfire\n\\]\n\nThis gives \\( \\ln (waterfall-campfire)=0 \\), and therefore \\( campfire=waterfall-1 \\).\nWe have proved \\( \\lim shoreline=waterfall-1 \\), as required."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "S_1": "differenceone",
+        "S_n": "differencegeneral",
+        "S_2": "differencetwo",
+        "S_3": "differencethree",
+        "S_4": "differencefour",
+        "S_n+1": "differenceplusone",
+        "i": "outlander",
+        "n": "specific",
+        "x": "constant",
+        "f": "nonfunction",
+        "T": "startpoint",
+        "a": "variable"
+      },
+      "question": "6. \\( differenceone=\\ln variable \\) and \\( differencegeneral=\\sum_{outlander=1}^{specific-1} \\ln \\left(variable-S_{outlander}\\right), specific>1 \\).\n\nShow that\n\\[\n\\lim _{specific \\rightarrow \\infty} differencegeneral=variable-1\n\\]",
+      "solution": "Solution. The given recursion can be written\n\\[\ndifferenceplusone=differencegeneral+\\ln \\left(variable-differencegeneral\\right)\n\\]\n\nThe polygonal representation of this recursion is shown in the figure [see p. 223]. It is clear that, with any choice of \\( differenceone<variable \\), we have\n\\[\ndifferencetwo \\leq differencethree \\leq differencefour \\leq \\cdots \\leq variable-1\n\\]\nand that the sequence converges to \\( variable-1 \\).\nTo prove this analytically, we let\n\\[\nnonfunction(constant)=constant+\\ln (variable-constant)\n\\]\nfor \\( constant<variable \\). Then \\( nonfunction^{\\prime}(constant)=1-1 /(variable-constant) \\), which is positive for \\( constant<variable-1 \\) and negative for \\( constant>variable-1 \\). Since \\( nonfunction(variable-1)=variable-1 \\), it follows that \\( nonfunction(constant) \\leq variable-1 \\) for all \\( constant<variable \\). Also, if \\( constant \\leq variable-1 \\), then \\( \\ln (variable-constant) \\geq 0 \\), so \\( nonfunction(constant) \\geq constant \\). Then (1) follows immediately, so the sequence \\( \\left\\{differencegeneral\\right\\} \\) has a limit, say \\( startpoint \\). Clearly, \\( startpoint \\leq variable-1 \\), so \\( startpoint \\) is a point of continuity for \\( nonfunction \\). Hence\n\\[\nnonfunction(startpoint)=nonfunction\\left(\\lim differencegeneral\\right)=\\lim nonfunction\\left(differencegeneral\\right)=\\lim differenceplusone=startpoint\n\\]\n\nThis gives \\( \\ln (variable-startpoint)=0 \\), and therefore \\( startpoint=variable-1 \\).\nWe have proved \\( \\lim differencegeneral=variable-1 \\), as required."
+    },
+    "garbled_string": {
+      "map": {
+        "S_1": "zqmnplsk",
+        "S_n": "xvytrmjq",
+        "S_2": "ljkherop",
+        "S_3": "wndqslvo",
+        "S_4": "gpmzkehu",
+        "S_n+1": "rhqtsvyd",
+        "i": "vfdlrzwo",
+        "n": "jzmqktua",
+        "x": "hzyplmvn",
+        "f": "snrqmgav",
+        "T": "cklwodij",
+        "a": "tpvzhrma"
+      },
+      "question": "6. \\( zqmnplsk=\\ln tpvzhrma \\) and \\( xvytrmjq=\\sum_{vfdlrzwo=1}^{jzmqktua-1} \\ln \\left(tpvzhrma-S_{vfdlrzwo}\\right), jzmqktua>1 \\).\n\nShow that\n\\[\n\\lim _{jzmqktua \\rightarrow \\infty} xvytrmjq=tpvzhrma-1\n\\]",
+      "solution": "Solution. The given recursion can be written\n\\[\nrhqtsvyd=xvytrmjq+\\ln \\left(tpvzhrma-xvytrmjq\\right)\n\\]\n\nThe polygonal representation of this recursion is shown in the figure [see p. 223]. It is clear that, with any choice of \\( zqmnplsk<tpvzhrma \\), we have\n\\[\nljkherop \\leq wndqslvo \\leq gpmzkehu \\leq \\cdots \\leq tpvzhrma-1\n\\]\nand that the sequence converges to \\( tpvzhrma-1 \\).\nTo prove this analytically, we let\n\\[\nsnrqmgav(hzyplmvn)=hzyplmvn+\\ln (tpvzhrma-hzyplmvn)\n\\]\nfor \\( hzyplmvn<tpvzhrma \\). Then \\( snrqmgav^{\\prime}(hzyplmvn)=1-1 /(tpvzhrma-hzyplmvn) \\), which is positive for \\( hzyplmvn<tpvzhrma-1 \\) and negative for \\( hzyplmvn>tpvzhrma-1 \\). Since \\( snrqmgav(tpvzhrma-1)=tpvzhrma-1 \\), it follows that \\( snrqmgav(hzyplmvn) \\leq tpvzhrma-1 \\) for all \\( hzyplmvn<tpvzhrma \\). Also, if \\( hzyplmvn \\leq tpvzhrma-1 \\), then \\( \\ln (tpvzhrma-hzyplmvn) \\geq 0 \\), so \\( snrqmgav(hzyplmvn) \\geq hzyplmvn \\). Then (1) follows immediately, so the sequence \\( \\left\\{xvytrmjq\\right\\} \\) has a limit, say \\( cklwodij \\). Clearly, \\( cklwodij \\leq tpvzhrma-1 \\), so \\( cklwodij \\) is a point of continuity for \\( snrqmgav \\). Hence\n\\[\nsnrqmgav(cklwodij)=snrqmgav\\left(\\lim xvytrmjq\\right)=\\lim snrqmgav\\left(xvytrmjq\\right)=\\lim rhqtsvyd=cklwodij\n\\]\n\nThis gives \\( \\ln (tpvzhrma-cklwodij)=0 \\), and therefore \\( cklwodij=tpvzhrma-1 \\).\nWe have proved \\( \\lim xvytrmjq=tpvzhrma-1 \\), as required."
+    },
+    "kernel_variant": {
+      "question": "Let c>d>0 with c-d>2.  Define  \n S_1 = log_2(c/d), and for n \\geq  1  \n  S_{n+1}= S_n + (ln 2)\\cdot [log_2(c-S_n) - log_2(d+S_n)].  \nProve that the sequence (S_n) converges and determine  \n lim_{n\\to \\infty } S_n.\n\n",
+      "solution": "1. Fixed-point form.  \nSince (ln 2)\\cdot log_2x = ln x, write\n\n S_{n+1}=f(S_n), f(x)=x+ln[(c-x)/(d+x)], -d<x<c.\n\n2. Shape of f.  \nDifferentiating gives f'(x)=1-1/(c-x)-1/(d+x).  \nThe equation f'(x)=0 yields the unique critical point\n\n x_0=(c-d)/2.\n\nBecause f'>0 for x<x_0 and f'<0 for x>x_0, f rises until x_0 and then falls, so\n\n f(x)\\leq f(x_0)=x_0.\n\n3. Bounding the orbit.  \nSince c-d>2 we have c/d\\geq 2, hence S_1=log_2(c/d)\\leq 1\\leq x_0.  \nAssume S_n\\leq x_0.  Then (c-S_n)/(d+S_n)\\geq 1, so ln[(c-S_n)/(d+S_n)]\\geq 0 and f(S_n)\\geq S_n; monotonicity on (-\\infty ,x_0] also gives f(S_n)\\leq x_0.  Thus\n\n S_n \\uparrow   and  S_n\\leq x_0 for every n.\n\nTherefore (S_n) is increasing and bounded, hence convergent; write T:=lim S_n.\n\n4. Identification of the limit.  \nBy continuity of f,\n\n T=f(T) \\Rightarrow  ln[(c-T)/(d+T)]=0 \\Rightarrow  c-T=d+T \\Rightarrow  T=(c-d)/2.\n\n5. Result.  \nConsequently lim_{n\\to \\infty } S_n = (c-d)/2.\n\n",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.022989",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,127 @@
+{
+  "index": "2010-B-6",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $A$ be an $n \\times n$ matrix of real numbers for some $n \\geq 1$.\nFor each positive integer $k$, let $A^{[k]}$ be the matrix obtained by raising each entry to the $k$th\npower. Show that if $A^k = A^{[k]}$ for $k=1,2,\\dots,n+1$, then $A^k = A^{[k]}$ for all $k \\geq 1$.\n\n\\end{itemize}\n\n\\end{document}",
+  "solution": "For any polynomial $p(x)$, let $[p(x)]A$ denote the $n\\times n$ matrix obtained by replacing each entry $A_{ij}$ of $A$ by $p(A_{ij})$; thus $A^{[k]} = [x^k]A$. Let $P(x) = x^n + a_{n-1}x^{n-1} + \\cdots + a_0$ denote the characteristic polynomial of $A$. By the Cayley-Hamilton theorem,\n\\begin{align*}\n0 &= A \\cdot P(A) \\\\\n&= A^{n+1} + a_{n-1}A^n+\\cdots+a_0 A \\\\\n&= A^{[n+1]}+a_{n-1}A^{[n]}+\\cdots + a_0 A^{[1]} \\\\\n&=[xp(x)]A.\n\\end{align*}\nThus each entry of $A$ is a root of the polynomial $xp(x)$.\n\nNow suppose $m \\geq n+1$. Then\n\\begin{align*}\n0 &= [x^{m+1-n}P(x)]A  \\\\\n&= A^{[m+1]} + a_{n-1} A^{[m]} + \\cdots + a_0 A^{[m+1-n]}\n\\end{align*}\nsince each entry of $A$ is a root of $x^{m+1-n}P(x)$. On the other hand,\n\\begin{align*}\n0 &= A^{m+1-n} \\cdot P(A) \\\\\n&= A^{m+1} + a_{n-1} A^m + \\cdots + a_0 A^{m+1-n}.\n\\end{align*}\nTherefore if $A^k = A^{[k]}$ for $m+1-n \\leq k \\leq m$, then $A^{m+1} = A^{[m+1]}$. The desired result follows by induction on $m$.\n\n\\textbf{Remark.}\nDavid Feldman points out that the result is best possible in the following sense: there exist\nexamples of $n \\times n$ matrices $A$ for which $A^k = A^{[k]}$ for $k=1,\\dots,n$ but $A^{n+1} \\neq A^{[n+1]}$.\n\n\\end{itemize}\n\\end{document}",
+  "vars": [
+    "k",
+    "m",
+    "x",
+    "i",
+    "j"
+  ],
+  "params": [
+    "A",
+    "A_ij",
+    "n",
+    "p",
+    "P",
+    "a_n-1",
+    "a_0"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "powerindex",
+        "m": "largeindex",
+        "x": "varinput",
+        "i": "rowindex",
+        "j": "colindex",
+        "A": "basematrix",
+        "A_ij": "matrixentry",
+        "n": "dimension",
+        "p": "polyfunc",
+        "P": "charpoly",
+        "a_n-1": "coeffhigh",
+        "a_0": "coeffconst"
+      },
+      "question": "Let $basematrix$ be an $dimension \\times dimension$ matrix of real numbers for some $dimension \\geq 1$. For each positive integer $powerindex$, let $basematrix^{[powerindex]}$ be the matrix obtained by raising each entry to the $powerindex$th power. Show that if $basematrix^{powerindex} = basematrix^{[powerindex]}$ for $powerindex=1,2,\\dots,dimension+1$, then $basematrix^{powerindex} = basematrix^{[powerindex]}$ for all $powerindex \\geq 1$.",
+      "solution": "For any polynomial $polyfunc(varinput)$, let $[polyfunc(varinput)]basematrix$ denote the $dimension\\times dimension$ matrix obtained by replacing each entry $matrixentry$ of $basematrix$ by $polyfunc(matrixentry)$; thus $basematrix^{[powerindex]} = [varinput^{powerindex}]basematrix$. Let $charpoly(varinput) = varinput^{dimension} + coeffhigh varinput^{dimension-1} + \\cdots + coeffconst$ denote the characteristic polynomial of $basematrix$. By the Cayley--Hamilton theorem,\n\\begin{align*}\n0 &= basematrix \\cdot charpoly(basematrix) \\\\\n&= basematrix^{dimension+1} + coeffhigh basematrix^{dimension}+\\cdots+coeffconst basematrix \\\\\n&= basematrix^{[dimension+1]}+coeffhigh basematrix^{[dimension]}+\\cdots + coeffconst basematrix^{[1]} \\\\\n&=[varinput charpoly(varinput)]basematrix.\n\\end{align*}\nThus each entry of $basematrix$ is a root of the polynomial $varinput charpoly(varinput)$.\n\nNow suppose $largeindex \\geq dimension+1$. Then\n\\begin{align*}\n0 &= [varinput^{largeindex+1-dimension}charpoly(varinput)]basematrix  \\\\\n&= basematrix^{[largeindex+1]} + coeffhigh basematrix^{[largeindex]} + \\cdots + coeffconst basematrix^{[largeindex+1-dimension]}\n\\end{align*}\nsince each entry of $basematrix$ is a root of $varinput^{largeindex+1-dimension}charpoly(varinput)$. On the other hand,\n\\begin{align*}\n0 &= basematrix^{largeindex+1-dimension} \\cdot charpoly(basematrix) \\\\\n&= basematrix^{largeindex+1} + coeffhigh basematrix^{largeindex} + \\cdots + coeffconst basematrix^{largeindex+1-dimension}.\n\\end{align*}\nTherefore if $basematrix^{powerindex} = basematrix^{[powerindex]}$ for $largeindex+1-dimension \\leq powerindex \\leq largeindex$, then $basematrix^{largeindex+1} = basematrix^{[largeindex+1]}$. The desired result follows by induction on $largeindex$.\n\n\\textbf{Remark.}\nDavid Feldman points out that the result is best possible in the following sense: there exist examples of $dimension \\times dimension$ matrices $basematrix$ for which $basematrix^{powerindex} = basematrix^{[powerindex]}$ for $powerindex=1,\\dots,dimension$ but $basematrix^{dimension+1} \\neq basematrix^{[dimension+1]}$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "pineapple",
+        "m": "dandelion",
+        "x": "crocodile",
+        "i": "lighthouse",
+        "j": "butterfly",
+        "A": "galaxycar",
+        "A_{ij}": "galaxycarijentry",
+        "n": "tangerine",
+        "p": "rainforest",
+        "P": "watermelon",
+        "a_{n-1}": "cheesecake",
+        "a_0": "whirlwind"
+      },
+      "question": "Let $galaxycar$ be an $tangerine \\times tangerine$ matrix of real numbers for some $tangerine \\geq 1$.\nFor each positive integer $pineapple$, let $galaxycar^{[pineapple]}$ be the matrix obtained by raising each entry to the $pineapple$th\npower. Show that if $galaxycar^{pineapple} = galaxycar^{[pineapple]}$ for $pineapple=1,2,\\dots,tangerine+1$, then $galaxycar^{pineapple} = galaxycar^{[pineapple]}$ for all $pineapple \\geq 1$.",
+      "solution": "For any polynomial $rainforest(crocodile)$, let $[rainforest(crocodile)]galaxycar$ denote the $tangerine\\times tangerine$ matrix obtained by replacing each entry $galaxycarijentry$ of $galaxycar$ by $rainforest(galaxycarijentry)$; thus $galaxycar^{[pineapple]} = [crocodile^{pineapple}]galaxycar$. Let $watermelon(crocodile) = crocodile^{tangerine} + cheesecake crocodile^{tangerine-1} + \\cdots + whirlwind$ denote the characteristic polynomial of $galaxycar$. By the Cayley--Hamilton theorem,\n\\begin{align*}\n0 &= galaxycar \\cdot watermelon(galaxycar) \\\n  &= galaxycar^{tangerine+1} + cheesecake galaxycar^{tangerine}+\\cdots+whirlwind galaxycar \\\\\n  &= galaxycar^{[tangerine+1]}+cheesecake galaxycar^{[tangerine]}+\\cdots + whirlwind galaxycar^{[1]} \\\\\n  &=[crocodile rainforest(crocodile)]galaxycar.\n\\end{align*}\nThus each entry of $galaxycar$ is a root of the polynomial $crocodile rainforest(crocodile)$.\n\nNow suppose $dandelion \\geq tangerine+1$. Then\n\\begin{align*}\n0 &= [crocodile^{dandelion+1-tangerine}watermelon(crocodile)]galaxycar  \\\\\n  &= galaxycar^{[dandelion+1]} + cheesecake galaxycar^{[dandelion]} + \\cdots + whirlwind galaxycar^{[dandelion+1-tangerine]}.\n\\end{align*}\nOn the other hand,\n\\begin{align*}\n0 &= galaxycar^{dandelion+1-tangerine} \\cdot watermelon(galaxycar) \\\\\n  &= galaxycar^{dandelion+1} + cheesecake galaxycar^{dandelion} + \\cdots + whirlwind galaxycar^{dandelion+1-tangerine}.\n\\end{align*}\nTherefore if $galaxycar^{pineapple} = galaxycar^{[pineapple]}$ for $dandelion+1-tangerine \\leq pineapple \\leq dandelion$, then $galaxycar^{dandelion+1} = galaxycar^{[dandelion+1]}$. The desired result follows by induction on $dandelion$.\n\n\\textbf{Remark.}\nDavid Feldman points out that the result is best possible in the following sense: there exist\nexamples of $tangerine \\times tangerine$ matrices $galaxycar$ for which $galaxycar^{pineapple} = galaxycar^{[pineapple]}$ for $pineapple=1,\\dots,tangerine$ but $galaxycar^{tangerine+1} \\neq galaxycar^{[tangerine+1]}$.",
+      "end": ""
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "basevalue",
+        "m": "rootpower",
+        "x": "constantco",
+        "i": "entirety",
+        "j": "rowcount",
+        "A": "scalarform",
+        "A_ij": "aggregate",
+        "n": "infinity",
+        "p": "staticval",
+        "P": "randomizer",
+        "a_n-1": "variablex",
+        "a_0": "variabley"
+      },
+      "question": "<<<\nLet $scalarform$ be an $infinity \\times infinity$ matrix of real numbers for some $infinity \\geq 1$.\nFor each positive integer $basevalue$, let $scalarform^{[basevalue]}$ be the matrix obtained by raising each entry to the $basevalue$th\npower. Show that if $scalarform^{basevalue} = scalarform^{[basevalue]}$ for $basevalue=1,2,\\dots,infinity+1$, then $scalarform^{basevalue} = scalarform^{[basevalue]}$ for all $basevalue \\geq 1$.\n\n\\end{itemize}\n\n\\end{document}\n>>>",
+      "solution": "<<<\nFor any polynomial $staticval(constantco)$, let $[staticval(constantco)]scalarform$ denote the $infinity\\times infinity$ matrix obtained by replacing each entry $aggregate$ of $scalarform$ by $staticval(aggregate)$; thus $scalarform^{[basevalue]} = [constantco^{basevalue}]scalarform$. Let $randomizer(constantco) = constantco^{infinity} + variablex constantco^{infinity-1} + \\cdots + variabley$ denote the characteristic polynomial of $scalarform$. By the Cayley-Hamilton theorem,\n\\begin{align*}\n0 &= scalarform \\cdot randomizer(scalarform) \\\\\n&= scalarform^{infinity+1} + variablex scalarform^{infinity}+\\cdots+variabley scalarform \\\\\n&= scalarform^{[infinity+1]}+variablex scalarform^{[infinity]}+\\cdots + variabley scalarform^{[1]} \\\\\n&=[constantco staticval(constantco)]scalarform.\n\\end{align*}\nThus each entry of $scalarform$ is a root of the polynomial $constantco staticval(constantco)$.\n\nNow suppose $rootpower \\geq infinity+1$. Then\n\\begin{align*}\n0 &= [constantco^{rootpower+1-infinity}randomizer(constantco)]scalarform  \\\\\n&= scalarform^{[rootpower+1]} + variablex scalarform^{[rootpower]} + \\cdots + variabley scalarform^{[rootpower+1-infinity]}\n\\end{align*}\nsince each entry of $scalarform$ is a root of $constantco^{rootpower+1-infinity}randomizer(constantco)$. On the other hand,\n\\begin{align*}\n0 &= scalarform^{rootpower+1-infinity} \\cdot randomizer(scalarform) \\\\\n&= scalarform^{rootpower+1} + variablex scalarform^{rootpower} + \\cdots + variabley scalarform^{rootpower+1-infinity}.\n\\end{align*}\nTherefore if $scalarform^{basevalue} = scalarform^{[basevalue]}$ for $rootpower+1-infinity \\leq basevalue \\leq rootpower$, then $scalarform^{rootpower+1} = scalarform^{[rootpower+1]}$. The desired result follows by induction on $rootpower$.\n\n\\textbf{Remark.}\nDavid Feldman points out that the result is best possible in the following sense: there exist\nexamples of $infinity \\times infinity$ matrices $scalarform$ for which $scalarform^{basevalue} = scalarform^{[basevalue]}$ for $basevalue=1,\\dots,infinity$ but $scalarform^{infinity+1} \\neq scalarform^{[infinity+1]}$.\n\n\\end{itemize}\n\\end{document}\n>>>"
+    },
+    "garbled_string": {
+      "map": {
+        "k": "zyxtpsrl",
+        "m": "ghsdzqpl",
+        "x": "wcdfjvkr",
+        "i": "bnxlrgoq",
+        "j": "vzqtpmeh",
+        "A": "qzxwvtnp",
+        "A_ij": "mckrlyfj",
+        "n": "lptgrxsw",
+        "p": "sdjkfrue",
+        "P": "xiungvba",
+        "a_n-1": "tavrlpqe",
+        "a_0": "hmqznsig"
+      },
+      "question": "Let $qzxwvtnp$ be an $lptgrxsw \\times lptgrxsw$ matrix of real numbers for some $lptgrxsw \\geq 1$.\nFor each positive integer $zyxtpsrl$, let $qzxwvtnp^{[zyxtpsrl]}$ be the matrix obtained by raising each entry to the $zyxtpsrl$th\npower. Show that if $qzxwvtnp^{zyxtpsrl} = qzxwvtnp^{[zyxtpsrl]}$ for $zyxtpsrl=1,2,\\dots,lptgrxsw+1$, then $qzxwvtnp^{zyxtpsrl} = qzxwvtnp^{[zyxtpsrl]}$ for all $zyxtpsrl \\geq 1$.\n\n\\end{itemize}\n\n\\end{document}",
+      "solution": "For any polynomial $sdjkfrue(wcdfjvkr)$, let $[sdjkfrue(wcdfjvkr)]qzxwvtnp$ denote the $lptgrxsw\\times lptgrxsw$ matrix obtained by replacing each entry $mckrlyfj$ of $qzxwvtnp$ by $sdjkfrue(mckrlyfj)$; thus $qzxwvtnp^{[zyxtpsrl]} = [wcdfjvkr^{zyxtpsrl}]qzxwvtnp$. Let $xiungvba(wcdfjvkr) = wcdfjvkr^{lptgrxsw} + tavrlpqe wcdfjvkr^{lptgrxsw-1} + \\cdots + hmqznsig$ denote the characteristic polynomial of $qzxwvtnp$. By the Cayley-Hamilton theorem,\n\\begin{align*}\n0 &= qzxwvtnp \\cdot xiungvba(qzxwvtnp) \\\\\n&= qzxwvtnp^{lptgrxsw+1} + tavrlpqe qzxwvtnp^{lptgrxsw}+\\cdots+hmqznsig qzxwvtnp \\\\\n&= qzxwvtnp^{[lptgrxsw+1]}+tavrlpqe qzxwvtnp^{[lptgrxsw]}+\\cdots + hmqznsig qzxwvtnp^{[1]} \\\\\n&=[wcdfjvkr sdjkfrue(wcdfjvkr)]qzxwvtnp.\n\\end{align*}\nThus each entry of $qzxwvtnp$ is a root of the polynomial $wcdfjvkr sdjkfrue(wcdfjvkr)$.\n\nNow suppose $ghsdzqpl \\geq lptgrxsw+1$. Then\n\\begin{align*}\n0 &= [wcdfjvkr^{ghsdzqpl+1-lptgrxsw}xiungvba(wcdfjvkr)]qzxwvtnp  \\\\\n&= qzxwvtnp^{[ghsdzqpl+1]} + tavrlpqe qzxwvtnp^{[ghsdzqpl]} + \\cdots + hmqznsig qzxwvtnp^{[ghsdzqpl+1-lptgrxsw]}\n\\end{align*}\nsince each entry of $qzxwvtnp$ is a root of $wcdfjvkr^{ghsdzqpl+1-lptgrxsw}xiungvba(wcdfjvkr)$. On the other hand,\n\\begin{align*}\n0 &= qzxwvtnp^{ghsdzqpl+1-lptgrxsw} \\cdot xiungvba(qzxwvtnp) \\\\\n&= qzxwvtnp^{ghsdzqpl+1} + tavrlpqe qzxwvtnp^{ghsdzqpl} + \\cdots + hmqznsig qzxwvtnp^{ghsdzqpl+1-lptgrxsw}.\n\\end{align*}\nTherefore if $qzxwvtnp^{zyxtpsrl} = qzxwvtnp^{[zyxtpsrl]}$ for $ghsdzqpl+1-lptgrxsw \\leq zyxtpsrl \\leq ghsdzqpl$, then $qzxwvtnp^{ghsdzqpl+1} = qzxwvtnp^{[ghsdzqpl+1]}$. The desired result follows by induction on $ghsdzqpl$.\n\n\\textbf{Remark.}\nDavid Feldman points out that the result is best possible in the following sense: there exist\nexamples of $lptgrxsw \\times lptgrxsw$ matrices $qzxwvtnp$ for which $qzxwvtnp^{zyxtpsrl} = qzxwvtnp^{[zyxtpsrl]}$ for $zyxtpsrl=1,\\dots,lptgrxsw$ but $qzxwvtnp^{lptgrxsw+1} \\neq qzxwvtnp^{[lptgrxsw+1]}$.\n\n\\end{itemize}\n\\end{document}"
+    },
+    "kernel_variant": {
+      "question": "Let $n\\ge 1$ be an integer and let $A$ be an $n\\times n$ matrix whose entries lie in the field $\\mathbb C$ of complex numbers.  \nFor every positive integer $k$ define\n\\[\nA^{\\langle k\\rangle}=\\bigl(A_{ij}^k\\bigr)_{1\\le i,j\\le n},\n\\]\nthat is, $A^{\\langle k\\rangle}$ is obtained from $A$ by raising each entry to the $k$-th power.  \nAssume that the ordinary and entry-wise powers coincide for the first $2n$ exponents:\n\\[\nA^{k}=A^{\\langle k\\rangle}\\qquad (k=1,2,\\dots,2n).\n\\]\nProve that $A^{k}=A^{\\langle k\\rangle}$ for every positive integer $k$.",
+      "solution": "1. (Entry-wise operator notation) For a polynomial q(x)=\\sum _{r\\geq 0}c_r x^r write\n   [q(x)]A := (q(A_{ij}))_{1\\leq i,j\\leq n}.\n   In particular, [x^k]A = A^{\\langle k\\rangle }.\n\n2. (Cayley-Hamilton for A) Let the characteristic polynomial of A be\n   P(x)=x^n + a_{n-1}x^{n-1} + \\ldots  + a_0 in C[x].\n   By the Cayley-Hamilton theorem, P(A)=0, so\n     0 = A\\cdot P(A) = A^{n+1} + a_{n-1}A^n + \\ldots  + a_0A.            (2.1)\n\n3. (Every entry of A is a root of xP(x)) Since A^k=A^{\\langle k\\rangle } for k\\leq n+1 by hypothesis, each term in (2.1) may be replaced by its entry-wise analogue, giving\n     0 = [xP(x)]A = A^{\\langle n+1\\rangle } + a_{n-1}A^{\\langle n\\rangle } + \\ldots  + a_0A^{\\langle 1\\rangle }.\n   Hence each entry A_{ij} satisfies xP(x)=0, i.e.\n   A_{ij} is a root of xP(x).\n\n4. (Linking the two kinds of powers for large exponents) Let m\\geq n+1.  Since each entry of A is a root of x^{m+1-n}P(x), we have the entry-wise identity\n     0 = [x^{m+1-n}P(x)]A = A^{\\langle m+1\\rangle } + a_{n-1}A^{\\langle m\\rangle } + \\ldots  + a_0A^{\\langle m+1-n\\rangle }.   (4.1)\n   On the other hand, multiplying P(A)=0 on the left by A^{m+1-n} gives\n     0 = A^{m+1-n}P(A) = A^{m+1} + a_{n-1}A^m + \\ldots  + a_0A^{m+1-n}.   (4.2)\n\n5. (Induction) Assume inductively that A^k=A^{\\langle k\\rangle } for all k\\leq m with m\\geq 2n.  Then m+1-n\\geq n+1, so the hypothesis furnishes equality for k=m+1-n,\\ldots ,m.  Substituting these equalities into (4.1) and (4.2) shows every term except the first is identical, forcing\n     A^{m+1} = A^{\\langle m+1\\rangle }.\n   Since the statement is true for all k\\leq 2n by assumption, induction on m yields A^k=A^{\\langle k\\rangle } for every k\\geq 1, as desired.",
+      "_meta": {
+        "core_steps": [
+          "Encode entry-wise powers via the operator  [p(x)]A  so that  A^{[k]}=[x^k]A.",
+          "Apply Cayley–Hamilton:  A·P(A)=0  for the characteristic polynomial  P(x).",
+          "Replace the powers (k≤n+1) by entry-wise powers to obtain  [xP(x)]A=0, hence every entry of A is a root of  xP(x).",
+          "For m≥n+1 compare the matrix identity  A^{m+1-n}P(A)=0  with the entry-wise identity  [x^{m+1-n}P(x)]A=0; using the inductive hypothesis all but the highest terms cancel, forcing  A^{m+1}=A^{[m+1]}.",
+          "Induct on m to propagate  A^{k}=A^{[k]}  to all k≥1."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Underlying scalar set; only needs to be a field (or commutative ring) where Cayley–Hamilton holds and integer powers are defined.",
+            "original": "real numbers"
+          },
+          "slot2": {
+            "description": "How many initial exponents are assumed equal; any list that contains {1,…,n+1} (e.g. 1,…,n+r with r≥1) works without affecting the argument.",
+            "original": "k = 1,2,…,n+1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

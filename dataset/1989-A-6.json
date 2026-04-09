@@ -1,0 +1,148 @@
+{
+  "index": "1989-A-6",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $\\alpha=1+a_1x+a_2x^2+\\cdots$ be a formal power series with coefficients\nin the field of two elements. Let\n\\[\na_n =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $n$\nhas an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $a_{36}=1$ because $36=100100_2$ and $a_{20}=0$ because\n$20=10100_2.$)\nProve that $\\alpha^3+x\\alpha+1=0.$",
+  "solution": "Solution. It suffices to prove that \\( \\alpha^{4}+x \\alpha^{2}+\\alpha=0 \\), since the ring of formal power series over any field is an integral domain (a commutative ring with no nonzero zerodivisors), and \\( \\alpha \\neq 0 \\). Since \\( a_{i}^{2}=a_{i} \\) for all \\( i \\), and since cross terms drop out when we square in characteristic 2 , we have\n\\[\n\\begin{aligned}\n\\alpha^{2} & =\\sum_{n=0}^{\\infty} a_{n} x^{2 n} \\\\\n\\alpha^{4} & =\\sum_{n=0}^{\\infty} a_{n} x^{4 n}, \\text { and } \\\\\nx \\alpha^{2} & =\\sum_{n=0}^{\\infty} a_{n} x^{2 n+1} .\n\\end{aligned}\n\\]\n\nLet \\( b_{n} \\) be the coefficient of \\( x^{n} \\) in \\( \\alpha^{4}+x \\alpha^{2}+\\alpha \\). If \\( n \\) is odd, then the binary expansion of \\( n \\) is obtained from that of \\( (n-1) / 2 \\) by appending a \\( 1, a_{n}=a_{(n-1) / 2} \\), and \\( b_{n}=a_{(n-1) / 2}+a_{n}=0 \\). If \\( n \\) is divisible by 2 but not 4 , then \\( b_{n}=a_{n}=0 \\), since \\( n \\) ends with a block of one zero. If \\( n \\) is divisible by 4 , then the binary expansion of \\( n \\) is obtained from that of \\( n / 4 \\) by appending two zeros, which does not change the evenness of the block lengths, so \\( a_{n / 4}=a_{n} \\), and \\( b_{n}=a_{n / 4}+a_{n}=0 \\). Thus \\( b_{n}=0 \\) for all \\( n \\geq 0 \\), as desired.\n\nRemark. The fact that the coefficients of the algebraic power series \\( \\alpha \\) have a simple description is a special case of a much more general result of Christol. Let \\( \\mathbb{F}_{q}[[x]] \\) denote the ring of formal power series over the finite field \\( \\mathbb{F}_{q} \\) with \\( q \\) elements. Christol gives an automata-theoretic condition on a series \\( \\beta \\in \\mathbb{F}_{q}[[x]] \\) that holds if and only if \\( \\beta \\) satisfies an algebraic equation with coefficients in \\( \\mathbb{F}_{q}[x] \\) : see \\( [\\mathrm{C}] \\) and \\( [\\mathrm{CKMR}] \\). For another application of Christol's result, and a problem similar to this one, see the remark following 1992A5. See Problem 1990A5 for a problem related to automata.",
+  "vars": [
+    "\\\\alpha",
+    "\\\\beta",
+    "x",
+    "n",
+    "i",
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_36",
+    "a_20",
+    "a_i",
+    "a_(n-1)/2",
+    "a_n/4",
+    "b_n"
+  ],
+  "params": [
+    "q",
+    "F_q"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "\\alpha": "alphaseries",
+        "\\beta": "betaseries",
+        "x": "varindeterminate",
+        "n": "generalindex",
+        "a_1": "coeffone",
+        "a_2": "coefftwo",
+        "a_n": "coeffn",
+        "a_36": "coeffthirtysix",
+        "a_20": "coefftwenty",
+        "a_i": "coeffindexi",
+        "a_(n-1)/2": "coeffhalfprev",
+        "a_n/4": "coeffquarter",
+        "b_n": "bcoeffn",
+        "q": "fieldsize",
+        "F_q": "finitefield"
+      },
+      "question": "Let $\\alphaseries=1+\\coeffone\\varindeterminate+\\coefftwo\\varindeterminate^2+\\cdots$ be a formal power series with coefficients\nin the field of two elements. Let\n\\[\n\\coeffn =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $\\generalindex$\nhas an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $\\coeffthirtysix=1$ because $36=100100_2$ and $\\coefftwenty=0$ because\n$20=10100_2.$)\nProve that $\\alphaseries^3+\\varindeterminate\\alphaseries+1=0.$",
+      "solution": "Solution. It suffices to prove that \\( \\alphaseries^{4}+\\varindeterminate \\alphaseries^{2}+\\alphaseries=0 \\), since the ring of formal power series over any field is an integral domain (a commutative ring with no nonzero zerodivisors), and \\( \\alphaseries \\neq 0 \\). Since \\( \\coeffindexi^{2}=\\coeffindexi \\) for all \\( i \\), and since cross terms drop out when we square in characteristic 2, we have\n\\[\n\\begin{aligned}\n\\alphaseries^{2} & =\\sum_{\\generalindex=0}^{\\infty} \\coeffn \\varindeterminate^{2 \\generalindex} \\\\\n\\alphaseries^{4} & =\\sum_{\\generalindex=0}^{\\infty} \\coeffn \\varindeterminate^{4 \\generalindex}, \\text { and } \\\\\n\\varindeterminate \\alphaseries^{2} & =\\sum_{\\generalindex=0}^{\\infty} \\coeffn \\varindeterminate^{2 \\generalindex+1} .\n\\end{aligned}\n\\]\n\nLet \\( \\bcoeffn \\) be the coefficient of \\( \\varindeterminate^{\\generalindex} \\) in \\( \\alphaseries^{4}+\\varindeterminate \\alphaseries^{2}+\\alphaseries \\). If \\( \\generalindex \\) is odd, then the binary expansion of \\( \\generalindex \\) is obtained from that of \\( (\\generalindex-1) / 2 \\) by appending a \\( 1, \\coeffn=\\coeffhalfprev \\), and \\( \\bcoeffn=\\coeffhalfprev+\\coeffn=0 \\). If \\( \\generalindex \\) is divisible by 2 but not 4 , then \\( \\bcoeffn=\\coeffn=0 \\), since \\( \\generalindex \\) ends with a block of one zero. If \\( \\generalindex \\) is divisible by 4 , then the binary expansion of \\( \\generalindex \\) is obtained from that of \\( \\generalindex / 4 \\) by appending two zeros, which does not change the evenness of the block lengths, so \\( \\coeffquarter=\\coeffn \\), and \\( \\bcoeffn=\\coeffquarter+\\coeffn=0 \\). Thus \\( \\bcoeffn=0 \\) for all \\( \\generalindex \\geq 0 \\), as desired.\n\nRemark. The fact that the coefficients of the algebraic power series \\( \\alphaseries \\) have a simple description is a special case of a much more general result of Christol. Let \\( \\mathbb{F}_{fieldsize}[[\\varindeterminate]] \\) denote the ring of formal power series over the finite field \\( \\mathbb{F}_{fieldsize} \\) with \\( fieldsize \\) elements. Christol gives an automata-theoretic condition on a series \\( \\betaseries \\in \\mathbb{F}_{fieldsize}[[\\varindeterminate]] \\) that holds if and only if \\( \\betaseries \\) satisfies an algebraic equation with coefficients in \\( \\mathbb{F}_{fieldsize}[\\varindeterminate] \\) : see \\( [\\mathrm{C}] \\) and \\( [\\mathrm{CKMR}] \\). For another application of Christol's result, and a problem similar to this one, see the remark following 1992A5. See Problem 1990A5 for a problem related to automata."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "\\\\alpha": "copperleaf",
+        "\\\\beta": "silveroak",
+        "x": "riverstone",
+        "n": "thunderbay",
+        "i": "lemoncraft",
+        "a_1": "pioneerone",
+        "a_2": "pioneertwo",
+        "a_n": "pioneerzen",
+        "a_36": "pioneersea",
+        "a_20": "pioneertoe",
+        "a_i": "pioneerink",
+        "a_(n-1)/2": "pioneertan",
+        "a_n/4": "pioneerice",
+        "b_n": "harborwind",
+        "q": "quasarblue",
+        "F_q": "fieldquest"
+      },
+      "question": "Let $copperleaf=1+pioneerone riverstone+pioneertwo riverstone^{2}+\\cdots$ be a formal power series with coefficients\nin the field of two elements. Let\n\\[\npioneerzen =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $thunderbay$\nhas an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $pioneersea=1$ because $36=100100_2$ and $pioneertoe=0$ because\n$20=10100_2.$)\nProve that $copperleaf^{3}+riverstone copperleaf+1=0.$",
+      "solution": "Solution. It suffices to prove that \\( copperleaf^{4}+riverstone\\,copperleaf^{2}+copperleaf=0 \\), since the ring of formal power series over any field is an integral domain (a commutative ring with no nonzero zerodivisors), and \\( copperleaf \\neq 0 \\). Since \\( pioneerink^{2}=pioneerink \\) for all \\( lemoncraft \\), and since cross terms drop out when we square in characteristic 2, we have\n\\[\n\\begin{aligned}\ncopperleaf^{2} & = \\sum_{thunderbay=0}^{\\infty} pioneerzen\\, riverstone^{2\\,thunderbay} \\\\\ncopperleaf^{4} & = \\sum_{thunderbay=0}^{\\infty} pioneerzen\\, riverstone^{4\\,thunderbay}, \\text{ and } \\\\\nriverstone\\,copperleaf^{2} & = \\sum_{thunderbay=0}^{\\infty} pioneerzen\\, riverstone^{2\\,thunderbay+1} .\n\\end{aligned}\n\\]\n\nLet \\( harborwind \\) be the coefficient of \\( riverstone^{thunderbay} \\) in \\( copperleaf^{4}+riverstone\\,copperleaf^{2}+copperleaf \\). If \\( thunderbay \\) is odd, then the binary expansion of \\( thunderbay \\) is obtained from that of \\( (thunderbay-1)/2 \\) by appending a 1, \\( pioneertan=pioneerzen \\), and \\( harborwind=pioneertan+pioneerzen=0 \\). If \\( thunderbay \\) is divisible by 2 but not 4, then \\( harborwind=pioneerzen=0 \\), since \\( thunderbay \\) ends with a block of one zero. If \\( thunderbay \\) is divisible by 4, then the binary expansion of \\( thunderbay \\) is obtained from that of \\( thunderbay/4 \\) by appending two zeros, which does not change the evenness of the block lengths, so \\( pioneerice=pioneerzen \\), and \\( harborwind=pioneerice+pioneerzen=0 \\). Thus \\( harborwind=0 \\) for all \\( thunderbay \\ge 0 \\), as desired.\n\nRemark. The fact that the coefficients of the algebraic power series \\( copperleaf \\) have a simple description is a special case of a much more general result of Christol. Let \\( \\mathbb{fieldquest}[[riverstone]] \\) denote the ring of formal power series over the finite field \\( \\mathbb{fieldquest} \\) with \\( quasarblue \\) elements. Christol gives an automata-theoretic condition on a series \\( silveroak \\in \\mathbb{fieldquest}[[riverstone]] \\) that holds if and only if \\( silveroak \\) satisfies an algebraic equation with coefficients in \\( \\mathbb{fieldquest}[riverstone] \\): see \\( [\\mathrm{C}] \\) and \\( [\\mathrm{CKMR}] \\). For another application of Christol's result, and a problem similar to this one, see the remark following 1992A5. See Problem 1990A5 for a problem related to automata."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "\\alpha": "omegafinal",
+        "\\beta": "alphabegin",
+        "x": "immutable",
+        "n": "constantval",
+        "i": "outsider",
+        "a_1": "boredone",
+        "a_2": "boredtwo",
+        "a_n": "boredvar",
+        "a_36": "boredthirtysix",
+        "a_20": "boredtwenty",
+        "a_i": "boredindex",
+        "a_(n-1)/2": "boredhalfshift",
+        "a_n/4": "boredquarter",
+        "b_n": "calmdown",
+        "q": "hugeinfty",
+        "F_q": "infinitefield"
+      },
+      "question": "Let $omegafinal=1+boredone\\,immutable+boredtwo\\,immutable^{2}+\\cdots$ be a formal power series with coefficients in the field of two elements. Let\n\\[\nboredvar =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $constantval$ has an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $boredthirtysix=1$ because $36=100100_2$ and $boredtwenty=0$ because $20=10100_2.$)\nProve that $omegafinal^{3}+immutable\\,omegafinal+1=0.$",
+      "solution": "Solution. It suffices to prove that \\( omegafinal^{4}+immutable\\,omegafinal^{2}+omegafinal=0 \\), since the ring of formal power series over any field is an integral domain (a commutative ring with no nonzero zerodivisors), and \\( omegafinal \\neq 0 \\). Since \\( boredindex^{2}=boredindex \\) for all \\( outsider \\), and since cross terms drop out when we square in characteristic 2, we have\n\\[\n\\begin{aligned}\nomegafinal^{2} &= \\sum_{constantval=0}^{\\infty} boredvar\\,immutable^{2\\,constantval} \\\\\nomegafinal^{4} &= \\sum_{constantval=0}^{\\infty} boredvar\\,immutable^{4\\,constantval}, \\text{ and } \\\\\nimmutable\\,omegafinal^{2} &= \\sum_{constantval=0}^{\\infty} boredvar\\,immutable^{2\\,constantval+1} .\n\\end{aligned}\n\\]\nLet \\( calmdown \\) be the coefficient of \\( immutable^{constantval} \\) in \\( omegafinal^{4}+immutable\\,omegafinal^{2}+omegafinal \\). If \\( constantval \\) is odd, then the binary expansion of \\( constantval \\) is obtained from that of \\( (constantval-1)/2 \\) by appending a 1, so $boredvar=boredhalfshift$ and $calmdown=boredhalfshift+boredvar=0$. If \\( constantval \\) is divisible by 2 but not 4, then $calmdown=boredvar=0$, since \\( constantval \\) ends with a block of one zero. If \\( constantval \\) is divisible by 4, then the binary expansion of \\( constantval \\) is obtained from that of \\( constantval/4 \\) by appending two zeros, which does not change the evenness of the block lengths, so $boredquarter=boredvar$ and $calmdown=boredquarter+boredvar=0$. Thus $calmdown=0$ for all $constantval\\ge0$, as desired.\n\nRemark. The fact that the coefficients of the algebraic power series \\( omegafinal \\) have a simple description is a special case of a much more general result of Christol. Let \\( \\mathbb{infinitefield}_{hugeinfty}[[immutable]] \\) denote the ring of formal power series over the finite field \\( \\mathbb{infinitefield}_{hugeinfty} \\) with \\( hugeinfty \\) elements. Christol gives an automata-theoretic condition on a series \\( alphabegin \\in \\mathbb{infinitefield}_{hugeinfty}[[immutable]] \\) that holds if and only if \\( alphabegin \\) satisfies an algebraic equation with coefficients in \\( \\mathbb{infinitefield}_{hugeinfty}[immutable] \\); see [C] and [CKMR]. For another application of Christol's result, and a problem similar to this one, see the remark following 1992A5. See Problem 1990A5 for a problem related to automata."
+    },
+    "garbled_string": {
+      "map": {
+        "\\\\alpha": "qzxwvtnp",
+        "\\\\beta": "hjgrksla",
+        "x": "mncpdyls",
+        "n": "bqtrfmpu",
+        "i": "vscthajm",
+        "a_1": "lksjnqwe",
+        "a_2": "prxbdmva",
+        "a_n": "cqfhzolt",
+        "a_36": "mvskdepr",
+        "a_20": "wjnhglaz",
+        "a_i": "yprdskle",
+        "a_(n-1)/2": "uffbkzro",
+        "a_n/4": "zrmxghpl",
+        "b_n": "tjqwsxre",
+        "q": "vxmglthb",
+        "F_q": "kpzvdroa"
+      },
+      "question": "Let $qzxwvtnp=1+lksjnqwe mncpdyls+prxbdmva mncpdyls^2+\\cdots$ be a formal power series with coefficients\nin the field of two elements. Let\n\\[\ncqfhzolt =\n\\begin{cases}\n1 & \\parbox{2in}{if every block of zeros in the binary expansion of $bqtrfmpu$\nhas an even number of zeros in the block} \\\\[.3in]\n0 & \\text{otherwise.}\n\\end{cases}\n\\]\n(For example, $mvskdepr=1$ because $36=100100_2$ and $wjnhglaz=0$ because\n$20=10100_2.$)\nProve that $qzxwvtnp^3+mncpdyls qzxwvtnp+1=0.$",
+      "solution": "Solution. It suffices to prove that \\( qzxwvtnp^{4}+mncpdyls qzxwvtnp^{2}+qzxwvtnp=0 \\), since the ring of formal power series over any field is an integral domain (a commutative ring with no nonzero zerodivisors), and \\( qzxwvtnp \\neq 0 \\). Since \\( yprdskle^{2}=yprdskle \\) for all \\( vscthajm \\), and since cross terms drop out when we square in characteristic 2, we have\n\\[\n\\begin{aligned}\nqzxwvtnp^{2} & =\\sum_{bqtrfmpu=0}^{\\infty} cqfhzolt \\, mncpdyls^{2 bqtrfmpu} \\\\\nqzxwvtnp^{4} & =\\sum_{bqtrfmpu=0}^{\\infty} cqfhzolt \\, mncpdyls^{4 bqtrfmpu}, \\text { and } \\\\\nmncpdyls \\, qzxwvtnp^{2} & =\\sum_{bqtrfmpu=0}^{\\infty} cqfhzolt \\, mncpdyls^{2 bqtrfmpu+1} .\n\\end{aligned}\n\\]\n\nLet \\( tjqwsxre \\) be the coefficient of \\( mncpdyls^{bqtrfmpu} \\) in \\( qzxwvtnp^{4}+mncpdyls qzxwvtnp^{2}+qzxwvtnp \\). If \\( bqtrfmpu \\) is odd, then the binary expansion of \\( (bqtrfmpu-1)/2 \\) is obtained by appending a 1, so \\( cqfhzolt=uffbkzro \\), and \\( tjqwsxre=uffbkzro+cqfhzolt=0 \\). If \\( bqtrfmpu \\) is divisible by 2 but not 4, then \\( tjqwsxre=cqfhzolt=0 \\), since \\( bqtrfmpu \\) ends with a block of one zero. If \\( bqtrfmpu \\) is divisible by 4, then the binary expansion of \\( bqtrfmpu/4 \\) is obtained from that of \\( bqtrfmpu/4 \\) by appending two zeros, which does not change the evenness of the block lengths, so \\( zrmxghpl=cqfhzolt \\), and \\( tjqwsxre=zrmxghpl+cqfhzolt=0 \\). Thus \\( tjqwsxre=0 \\) for all \\( bqtrfmpu \\ge 0 \\), as desired.\n\nRemark. The fact that the coefficients of the algebraic power series \\( qzxwvtnp \\) have a simple description is a special case of a much more general result of Christol. Let \\( \\mathbb{kpzvdroa}[[mncpdyls]] \\) denote the ring of formal power series over the finite field \\( \\mathbb{kpzvdroa} \\) with \\( vxmglthb \\) elements. Christol gives an automata-theoretic condition on a series \\( hjgrksla \\in \\mathbb{kpzvdroa}[[mncpdyls]] \\) that holds if and only if \\( hjgrksla \\) satisfies an algebraic equation with coefficients in \\( \\mathbb{kpzvdroa}[mncpdyls] \\): see \\( [\\mathrm{C}] \\) and \\( [\\mathrm{CKMR}] \\). For another application of Christol's result, and a problem similar to this one, see the remark following 1992A5. See Problem 1990A5 for a problem related to automata."
+    },
+    "kernel_variant": {
+      "question": "Let k \\geq  1 be an integer and let F_{2^{k}} be the finite field with 2^{k} elements.  Consider the formal power series\n\na   = 1 + a_1x + a_2x^2 + a_3x^3 + \\cdot \\cdot \\cdot   \\in  F_{2^{k}}[[x]].\n\nFor every integer n \\geq  0 write its binary expansion (without leading zeros)\n\n            n = (b_r \\ldots  b_1 b_0)_2   (b_r = 1),\n\nwith the following convention for n = 0: its binary expansion is taken to be the empty word.  Define the coefficients a_n (n \\geq  0) by\n\n           a_n = 1   if every maximal block of consecutive zeros in the\n                     binary expansion of n has even length,\n           a_n = 0   otherwise.\n\n(Thus a_0 = 1 because the empty word contains no zero-blocks, 36 = 100100_2 has two blocks 00 of even length, so a_{36} = 1, whereas 20 = 10100_2 ends with a single zero-block of length 1, so a_{20} = 0.)\n\nProve that the series a satisfies the algebraic relation\n\n                 a^3 + x\\cdot a = 1     in  F_{2^{k}}[[x]].",
+      "solution": "Because F_{2^{k}} has characteristic 2, the ring F_{2^{k}}[[x]] is an integral domain, and a \\neq  0.  It therefore suffices to establish the quartic identity obtained by multiplying the desired cubic by a and moving every term to the left-hand side:\n\n                a^4 + x\\cdot a^2 + a = 0.           (1)\n\nOnce (1) is known, division by the non-zero element a gives the required cubic a^3 + x\\cdot a = 1.\n\nStep 1.  Frobenius squares.\nThe map \\varphi  : F_{2^{k}}[[x]] \\to  F_{2^{k}}[[x]],  \\varphi (f) = f(x^2), is an injective ring endomorphism (not an automorphism) because the coefficient field has characteristic 2.  Moreover, every coefficient a_i satisfies a_i^2 = a_i.  Hence\n\n      a^2 = \\Sigma _{n\\geq 0} a_n x^{2n},              (2)\n      a^4 = (a^2)^2 = \\Sigma _{n\\geq 0} a_n x^{4n},      (3)\n   x\\cdot a^2 = \\Sigma _{n\\geq 0} a_n x^{2n+1}.             (4)\n\n(The constant term 1 appears in both (2) and (3) because a_0 = 1.)\n\nStep 2.  Extracting coefficients.\nLet b_n denote the coefficient of x^n in a^4 + x\\cdot a^2 + a.  Using (2)-(4) we obtain\n\n      b_n =  a_{(n-1)/2} + a_n ,  if n is odd,\n              a_n ,                 if n \\equiv  2 (mod 4),\n              a_{n/4} + a_n ,       if n \\equiv  0 (mod 4).        (5)\n\nStep 3.  Relations among the a_n.\nFrom the definition of the coefficients one reads off three simple rules.\n\n( i )  n odd.  Appending a final 1 to the binary expansion of (n-1)/2 produces that of n without altering any block of zeros, so\n\n             a_n = a_{(n-1)/2}.                     (6)\n\n( ii )  n \\equiv  2 (mod 4).  Here the binary form of n ends in exactly one zero, which is an odd-length block; hence\n\n             a_n = 0.                               (7)\n\n( iii ) n \\equiv  0 (mod 4).  The binary expansion of n is obtained from that of n/4 by appending two zeros; this preserves the parity of every zero-block length, so\n\n             a_n = a_{n/4}.                         (8)\n\nStep 4.  Vanishing of every b_n.\nInsert (6)-(8) into the corresponding cases of (5):\n\n - n odd:          b_n = a_{(n-1)/2}+a_n = a_n + a_n = 0.\n - n \\equiv  2 (mod 4):  b_n = a_n = 0 by (7).\n - n \\equiv  0 (mod 4):  b_n = a_{n/4}+a_n = a_n + a_n = 0.\n\nThus b_n = 0 for all n \\geq  0, proving (1).\n\nStep 5.  Recovering the cubic.\nSince F_{2^{k}}[[x]] is an integral domain and a \\neq  0,\n\n             a^4 + x\\cdot a^2 + a = 0  \\Rightarrow   a^3 + x\\cdot a = 1.\n\nTherefore the formal power series a indeed satisfies the announced algebraic relation a^3 + x\\cdot a = 1 in F_{2^{k}}[[x]].",
+      "_meta": {
+        "core_steps": [
+          "Replace the cubic by the equivalent quartic identity α⁴ + x α² + α = 0 (since α ≠ 0 in an integral domain).",
+          "Use Frobenius in characteristic 2: (∑ a_i x^i)² = ∑ a_i x^{2i}; thus express α², α⁴, x α² in shifted copies of the sequence (a_n).",
+          "Compare coefficients: let b_n be the coefficient of x^n in α⁴ + x α² + α.",
+          "Partition n into cases (n odd; n ≡ 2 mod 4; n ≡ 0 mod 4) and translate each case into appending 1 or 2 zeros to the binary expansion.",
+          "Use the definition of a_n to relate a_n to a_{(n−1)/2} or a_{n/4}; in every case b_n = 0, proving the identity."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The coefficient field only needs characteristic 2; its cardinality can be any power of 2.",
+            "original": "the field of two elements 𝔽₂"
+          },
+          "slot2": {
+            "description": "The problem statement could ask directly for the quartic identity, which is equivalent in an integral domain.",
+            "original": "target equation α³ + x α + 1 = 0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

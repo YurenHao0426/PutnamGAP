@@ -1,0 +1,119 @@
+{
+  "index": "1995-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "labeled with an integer and the sum of all these labels is $n-1$.\nProve that we can cut the necklace to form a string whose\nconsecutive labels $x_{1},x_{2},\\dots,x_{n}$ satisfy\n\\[\n\\sum_{i=1}^{k} x_{i} \\leq k-1 \\qquad \\mbox{for} \\quad k=1,2,\\dots,n.\n\\]",
+  "solution": "Let $s_{k} = x_{1} + \\cdots + x_{k} - k(n-1)/n$, so that $s_{n} =\ns_{0} = 0$. These form a cyclic sequence that doesn't change when you\nrotate the necklace, except that the entire sequence gets translated\nby a constant. In particular, it makes sense to choose $x_{i}$ for\nwhich $s_{i}$ is maximum and make that one $x_{n}$; this way $s_{i}\n\\leq 0$ for all $i$, which gives $x_{1} + \\cdots + x_{i} \\leq\ni(n-1)/n$, but the right side may be replaced by $i-1$ since the left\nside is an integer.",
+  "vars": [
+    "k",
+    "i",
+    "x_1",
+    "x_2",
+    "x_n",
+    "x_i",
+    "s_k",
+    "s_n",
+    "s_0",
+    "s_i"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "segment",
+        "i": "counter",
+        "x_1": "firstlabel",
+        "x_2": "secondlabel",
+        "x_n": "lastlabel",
+        "x_i": "varlabel",
+        "s_k": "partialsumk",
+        "s_n": "partialsumn",
+        "s_0": "partialsumzero",
+        "s_i": "partialsumi",
+        "n": "beadcount"
+      },
+      "question": "labeled with an integer and the sum of all these labels is $beadcount-1$.\nProve that we can cut the necklace to form a string whose\nconsecutive labels $firstlabel,secondlabel,\\dots,lastlabel$ satisfy\n\\[\n\\sum_{counter=1}^{segment} varlabel \\leq segment-1 \\qquad \\mbox{for} \\quad segment=1,2,\\dots,beadcount.\n\\]",
+      "solution": "Let $partialsumk = firstlabel + \\cdots + x_{segment} - segment(beadcount-1)/beadcount$, so that $partialsumn =\npartialsumzero = 0$. These form a cyclic sequence that doesn't change when you\nrotate the necklace, except that the entire sequence gets translated\nby a constant. In particular, it makes sense to choose varlabel for\nwhich partialsumi is maximum and make that one lastlabel; this way partialsumi\n\\leq 0 for all counter, which gives firstlabel + \\cdots + varlabel \\leq\ncounter(beadcount-1)/beadcount, but the right side may be replaced by counter-1 since the left\nside is an integer."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "lighthouse",
+        "i": "sailorman",
+        "x_1": "treasurer",
+        "x_2": "wanderlust",
+        "x_n": "foreshadow",
+        "x_i": "papertrail",
+        "s_k": "blackboard",
+        "s_n": "horseshoe",
+        "s_0": "racehorse",
+        "s_i": "aftershock",
+        "n": "pomegranate"
+      },
+      "question": "labeled with an integer and the sum of all these labels is $pomegranate-1$.\nProve that we can cut the necklace to form a string whose\nconsecutive labels $treasurer,wanderlust,\\dots,foreshadow$ satisfy\n\\[\n\\sum_{\\sailorman=1}^{\\lighthouse} papertrail \\leq \\lighthouse-1 \\qquad \\mbox{for} \\quad \\lighthouse=1,2,\\dots,pomegranate.\n\\]",
+      "solution": "Let $blackboard = treasurer + \\cdots + x_{k} - lighthouse(pomegranate-1)/pomegranate$, so that $horseshoe =\nracehorse = 0$. These form a cyclic sequence that doesn't change when you\nrotate the necklace, except that the entire sequence gets translated\nby a constant. In particular, it makes sense to choose $papertrail$ for\nwhich $aftershock$ is maximum and make that one $foreshadow$; this way $aftershock\n\\leq 0$ for all $\\sailorman$, which gives $treasurer + \\cdots + papertrail \\leq\n\\sailorman(pomegranate-1)/pomegranate$, but the right side may be replaced by $\\sailorman-1$ since the left\nside is an integer."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "immutable",
+        "i": "totality",
+        "x_1": "lastvalue",
+        "x_2": "terminal",
+        "x_n": "initialval",
+        "x_i": "globalvalue",
+        "s_k": "production",
+        "s_n": "quotient",
+        "s_0": "infinite",
+        "s_i": "remainder",
+        "n": "fluctuant"
+      },
+      "question": "labeled with an integer and the sum of all these labels is $fluctuant-1$.\nProve that we can cut the necklace to form a string whose\nconsecutive labels $lastvalue,terminal,\\dots,initialval$ satisfy\n\\[\n\\sum_{\\totality=1}^{immutable} globalvalue \\leq immutable-1 \\qquad \\mbox{for} \\quad immutable=1,2,\\dots,fluctuant.\n\\]",
+      "solution": "Let $production = lastvalue + \\cdots + x_{k} - immutable(fluctuant-1)/fluctuant$, so that $quotient =\ninfinite = 0$. These form a cyclic sequence that doesn't change when you\nrotate the necklace, except that the entire sequence gets translated\nby a constant. In particular, it makes sense to choose globalvalue for\nwhich remainder is maximum and make that one initialval; this way remainder\n$\\leq 0$ for all $totality$, which gives $lastvalue + \\cdots + globalvalue \\leq\n totality(fluctuant-1)/fluctuant$, but the right side may be replaced by $totality-1$ since the left\nside is an integer."
+    },
+    "garbled_string": {
+      "map": {
+        "k": "rjvqpdme",
+        "i": "fgzlxwhu",
+        "x_1": "qzxwvtnp",
+        "x_2": "hjgrksla",
+        "x_n": "mbycqzle",
+        "x_i": "dtprhsvo",
+        "s_k": "vlrnqwjo",
+        "s_n": "owazjtxe",
+        "s_0": "cduyefgr",
+        "s_i": "klmpnsod",
+        "n": "sbctaufz"
+      },
+      "question": "labeled with an integer and the sum of all these labels is $sbctaufz-1$.\nProve that we can cut the necklace to form a string whose\nconsecutive labels $qzxwvtnp,hjgrksla,\\dots,mbycqzle$ satisfy\n\\[\n\\sum_{fgzlxwhu=1}^{rjvqpdme} dtprhsvo \\leq rjvqpdme-1 \\qquad \\mbox{for} \\quad rjvqpdme=1,2,\\dots,sbctaufz.\n\\]",
+      "solution": "Let $vlrnqwjo = qzxwvtnp + \\cdots + x_{rjvqpdme} - rjvqpdme(sbctaufz-1)/sbctaufz$, so that $owazjtxe =\n cduyefgr = 0$. These form a cyclic sequence that doesn't change when you\n rotate the necklace, except that the entire sequence gets translated\n by a constant. In particular, it makes sense to choose $dtprhsvo$ for\n which $klmpnsod$ is maximum and make that one $mbycqzle$; this way $klmpnsod\n \\leq 0$ for all $fgzlxwhu$, which gives $qzxwvtnp + \\cdots + dtprhsvo \\leq\n fgzlxwhu(sbctaufz-1)/sbctaufz$, but the right side may be replaced by $fgzlxwhu-1$ since the left\n side is an integer."
+    },
+    "kernel_variant": {
+      "question": "Let $n\\ge 2$ be a fixed integer.  \nFor each bead $i\\,(1\\le i\\le n)$ of a circular necklace we are given  \n\n* a positive integer weight $w_i$,  \n* a non-negative integer label $y_i$.  \n\nPut  \n\\[\nW:=\\sum_{i=1}^{n}w_i ,\\qquad  \nT:=\\sum_{i=1}^{n}w_i y_i .\n\\]\n\nFix integers $A\\ge 1$ and $B$ with  \n\\[\n1\\le B\\le AW-1 ,\n\\qquad\\qquad\\qquad\nT=AW-B.\n\\]\n\nShow that the necklace can be cut at some place and straightened into a\nlinear string whose successive beads preserve their weights and labels,\nsay  \n\\[\n(w_{r+1},x_1),(w_{r+2},x_2),\\dots ,(w_{r+n},x_n)\n\\quad(\\text{indices taken mod }n),\n\\]\nin such a way that for every\n\\[\nk=1,2,\\dots ,n\n\\]\nthe weighted partial sums obey  \n\\[\n\\boxed{\\;\n\\sum_{i=1}^{k} w_{r+i}\\,x_i\n\\;\\le\\;\nA\\sum_{i=1}^{k} w_{r+i}\\;-\\;\n\\Bigl\\lceil \\dfrac{B}{W}\\,\n\\sum_{i=1}^{k} w_{r+i}\\Bigr\\rceil\n\\;} \\tag{$\\star$}\n\\]\n\n(The classical case is recovered by taking every $w_i=1$, so that\n$W=n$ and condition ($\\star$) reduces to the inequality treated in the\noriginal problem.)\n\n--------------------------------------------------------------------",
+      "solution": "Throughout the indices $i$ and $k$ are taken modulo $n$ and\n$W_0:=0$.\n\nStep 1.  Weighted cumulative sums and deviations.  \nDefine\n\\[\nW_k:=\\sum_{i=1}^{k} w_i ,\\qquad\nS_k:=\\sum_{i=1}^{k} w_i y_i\n\\quad(0\\le k\\le n).\n\\]\nBecause $\\sum_{i=1}^{n} w_i y_i=AW-B$ it is natural to introduce\n\\[\n\\tau:=A-\\dfrac{B}{W}\\, .\n\\]\nPut\n\\[\ns_k:=S_k-\\tau W_k\n\\qquad(0\\le k\\le n).\n\\]\nThen $s_0=s_n=0$, so the real\nsequence $(s_0,s_1,\\dots ,s_n)$ is cyclic.\n\nStep 2.  Choosing the cutting point.  \nLet\n\\[\nM:=\\max_{0\\le k\\le n}s_k,\n\\quad\nr:=\\min\\{k\\mid s_k=M\\}.\n\\]\nCut the necklace immediately before bead $r+1$; after straightening we\nobtain the order described in the statement and for that order set\n\\[\nW'_k:=\\sum_{i=1}^{k}w_{r+i},\\qquad\nS'_k:=\\sum_{i=1}^{k}w_{r+i}\\,x_i,\n\\qquad\ns'_k:=S'_k-\\tau W'_k\n\\quad(0\\le k\\le n).\n\\]\nA direct verification gives\n\\[\ns'_k=s_{r+k}-s_r\\le 0\n\\qquad(0\\le k\\le n), \\tag{1}\n\\]\nbecause $s_r$ is a (first) global maximum of the original deviation\nsequence.\n\nStep 3.  A basic inequality.  \nFrom $s'_k\\le 0$ we get\n\\[\nS'_k\\le \\tau W'_k\n\\qquad(0\\le k\\le n). \\tag{2}\n\\]\n\nStep 4.  Restoring integer bounds.  \nSince $\\tau=A-B/W$, inequality (2) reads\n\\[\nS'_k\\le A W'_k-\\frac{B}{W}\\,W'_k .\n\\]\nThe left-hand side is an integer, so taking integral parts preserves\nthe inequality:\n\\[\nS'_k\n\\le\n\\Bigl\\lfloor A W'_k-\\frac{B}{W}\\,W'_k\\Bigr\\rfloor .\n\\]\nBecause $A W'_k$ is integral we may use the elementary identity\n$\\lfloor N-x\\rfloor=N-\\lceil x\\rceil$ (valid when $N$ is an integer) to\nobtain\n\\[\nS'_k\n\\le\nA W'_k-\n\\Bigl\\lceil \\frac{B}{W}\\,W'_k\\Bigr\\rceil ,\n\\]\nwhich is exactly the required inequality ($\\star$).\n\nThus the chosen cut produces a string that fulfills the desired\nweighted version of the chain of inequalities, and the proof is\ncomplete. $\\qquad\\square$\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.741654",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Two new integral parameters (A and B) are introduced; the original and kernel problems are recovered only for the particular pairs (A,B) = (1,1) and (2,1).  \n•  The target bound now depends simultaneously on k, A, B and n and contains a ceiling function, demanding careful treatment of fractions rather than mere integers.  \n•  The proof must control non–integer averages τ and translate real inequalities into sharp integral bounds via the interplay between floor and ceiling functions.  \n•  Contestants must recognise and exploit the identity  \n\n  ⌊A k – x⌋ = A k – ⌈x⌉  \n\nwhen A k is integral, a non-obvious step absent from the original problem.  \n•  Although the core cyclic-maximum idea is preserved, additional layers of number–theoretic reasoning and precise handling of rational quantities substantially deepen the argument, making the variant significantly harder than both earlier versions."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let $n\\ge 2$ be a fixed integer.  \nFor each bead $i\\,(1\\le i\\le n)$ of a circular necklace we are given  \n\n* a positive integer weight $w_i$,  \n* a non-negative integer label $y_i$.  \n\nPut  \n\\[\nW:=\\sum_{i=1}^{n}w_i ,\\qquad  \nT:=\\sum_{i=1}^{n}w_i y_i .\n\\]\n\nFix integers $A\\ge 1$ and $B$ with  \n\\[\n1\\le B\\le AW-1 ,\n\\qquad\\qquad\\qquad\nT=AW-B.\n\\]\n\nShow that the necklace can be cut at some place and straightened into a\nlinear string whose successive beads preserve their weights and labels,\nsay  \n\\[\n(w_{r+1},x_1),(w_{r+2},x_2),\\dots ,(w_{r+n},x_n)\n\\quad(\\text{indices taken mod }n),\n\\]\nin such a way that for every\n\\[\nk=1,2,\\dots ,n\n\\]\nthe weighted partial sums obey  \n\\[\n\\boxed{\\;\n\\sum_{i=1}^{k} w_{r+i}\\,x_i\n\\;\\le\\;\nA\\sum_{i=1}^{k} w_{r+i}\\;-\\;\n\\Bigl\\lceil \\dfrac{B}{W}\\,\n\\sum_{i=1}^{k} w_{r+i}\\Bigr\\rceil\n\\;} \\tag{$\\star$}\n\\]\n\n(The classical case is recovered by taking every $w_i=1$, so that\n$W=n$ and condition ($\\star$) reduces to the inequality treated in the\noriginal problem.)\n\n--------------------------------------------------------------------",
+      "solution": "Throughout the indices $i$ and $k$ are taken modulo $n$ and\n$W_0:=0$.\n\nStep 1.  Weighted cumulative sums and deviations.  \nDefine\n\\[\nW_k:=\\sum_{i=1}^{k} w_i ,\\qquad\nS_k:=\\sum_{i=1}^{k} w_i y_i\n\\quad(0\\le k\\le n).\n\\]\nBecause $\\sum_{i=1}^{n} w_i y_i=AW-B$ it is natural to introduce\n\\[\n\\tau:=A-\\dfrac{B}{W}\\, .\n\\]\nPut\n\\[\ns_k:=S_k-\\tau W_k\n\\qquad(0\\le k\\le n).\n\\]\nThen $s_0=s_n=0$, so the real\nsequence $(s_0,s_1,\\dots ,s_n)$ is cyclic.\n\nStep 2.  Choosing the cutting point.  \nLet\n\\[\nM:=\\max_{0\\le k\\le n}s_k,\n\\quad\nr:=\\min\\{k\\mid s_k=M\\}.\n\\]\nCut the necklace immediately before bead $r+1$; after straightening we\nobtain the order described in the statement and for that order set\n\\[\nW'_k:=\\sum_{i=1}^{k}w_{r+i},\\qquad\nS'_k:=\\sum_{i=1}^{k}w_{r+i}\\,x_i,\n\\qquad\ns'_k:=S'_k-\\tau W'_k\n\\quad(0\\le k\\le n).\n\\]\nA direct verification gives\n\\[\ns'_k=s_{r+k}-s_r\\le 0\n\\qquad(0\\le k\\le n), \\tag{1}\n\\]\nbecause $s_r$ is a (first) global maximum of the original deviation\nsequence.\n\nStep 3.  A basic inequality.  \nFrom $s'_k\\le 0$ we get\n\\[\nS'_k\\le \\tau W'_k\n\\qquad(0\\le k\\le n). \\tag{2}\n\\]\n\nStep 4.  Restoring integer bounds.  \nSince $\\tau=A-B/W$, inequality (2) reads\n\\[\nS'_k\\le A W'_k-\\frac{B}{W}\\,W'_k .\n\\]\nThe left-hand side is an integer, so taking integral parts preserves\nthe inequality:\n\\[\nS'_k\n\\le\n\\Bigl\\lfloor A W'_k-\\frac{B}{W}\\,W'_k\\Bigr\\rfloor .\n\\]\nBecause $A W'_k$ is integral we may use the elementary identity\n$\\lfloor N-x\\rfloor=N-\\lceil x\\rceil$ (valid when $N$ is an integer) to\nobtain\n\\[\nS'_k\n\\le\nA W'_k-\n\\Bigl\\lceil \\frac{B}{W}\\,W'_k\\Bigr\\rceil ,\n\\]\nwhich is exactly the required inequality ($\\star$).\n\nThus the chosen cut produces a string that fulfills the desired\nweighted version of the chain of inequalities, and the proof is\ncomplete. $\\qquad\\square$\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.573286",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Two new integral parameters (A and B) are introduced; the original and kernel problems are recovered only for the particular pairs (A,B) = (1,1) and (2,1).  \n•  The target bound now depends simultaneously on k, A, B and n and contains a ceiling function, demanding careful treatment of fractions rather than mere integers.  \n•  The proof must control non–integer averages τ and translate real inequalities into sharp integral bounds via the interplay between floor and ceiling functions.  \n•  Contestants must recognise and exploit the identity  \n\n  ⌊A k – x⌋ = A k – ⌈x⌉  \n\nwhen A k is integral, a non-obvious step absent from the original problem.  \n•  Although the core cyclic-maximum idea is preserved, additional layers of number–theoretic reasoning and precise handling of rational quantities substantially deepen the argument, making the variant significantly harder than both earlier versions."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

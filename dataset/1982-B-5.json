@@ -1,0 +1,164 @@
+{
+  "index": "1982-B-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-5\nFor edch \\( x>e^{e} \\) define a sequence \\( S_{\\mathrm{r}}=u_{0}, u_{1}, u_{2}, \\ldots \\) recursively as follows: \\( u_{0}=e \\), while for \\( n \\geqslant 0, u_{n-1} \\) is the logarithm of \\( x \\) to the base \\( u_{n} \\). Prove that \\( S_{\\gamma} \\) converges to a number \\( g(x) \\) and that the function \\( g \\) defined in this way is continuous for \\( r>e^{e} \\).",
+  "solution": "B-5.\nSince the cerivative of \\( x^{1 / x} \\) is negative for \\( x>e \\),\n\\[\na^{b}>b^{a} \\text { when } e \\leqslant a<b .\n\\]\n\nThe \\( u \\) 's are defined so that \\( u_{0}=e \\) and\n\\[\nx=\\left(u_{0}\\right)^{u_{1}}=\\left(u_{1}\\right)^{u_{2}}=\\left(u_{2}\\right)^{u_{3}}=\\cdots .\n\\]\n\nHence\n\\[\nu_{n+1}=\\left(u_{n} \\ln u_{n-1}\\right) / \\ln u_{n} .\n\\]\n\nAs \\( x>e^{e}, u_{1}=\\ln x>e=u_{0} \\). Now \\( u_{1}>u_{0} \\) implies \\( \\ln u_{1}>\\ln u_{0} \\) and then (3) with \\( n=1 \\) implies \\( u_{2}<u_{1} \\). Also, (2) and (1) imply \\( \\left(u_{1}\\right)^{u_{2}}=\\left(u_{0}\\right)^{u_{1}}>\\left(u_{1}\\right)^{u_{0}} \\), which gives us \\( u_{2}>u_{0} \\). Now \\( u_{2}<u_{1} \\) and (3) with \\( n=2 \\) imply \\( u_{3}>u_{2} \\). Also (2) and (1) imply \\( \\left(u_{2}\\right)^{u_{3}}=\\left(u_{1}\\right)^{u_{2}}<\\left(u_{2}\\right)^{u_{1}} \\) and hence \\( u_{3}<u_{1} \\). Similarly, \\( u_{2}<u_{4}<u_{3} \\). Then an easy induction shows that\n\\[\ne<u_{2 n}<u_{2 n+2}<u_{2 n+1}<u_{2 n-1} \\text { for } n=1,2, \\ldots .\n\\]\n\nThus the monotonic bounded sequences \\( u_{0}, u_{2}, u_{4}, \\ldots \\) and \\( u_{1}, u_{3}, u_{5}, \\ldots \\) have limits \\( a \\) and \\( b \\), respectively, with \\( e<a \\leqslant b \\). Also\n\\[\na^{b}=\\lim _{n \\rightarrow \\infty}\\left(u_{2 n}\\right)^{u_{2 n-1}}=x=\\lim _{n \\rightarrow \\infty}\\left(u_{2 n-1}\\right)^{u_{2 n}}=b^{a} .\n\\]\n\nThen \\( a^{b}=b^{u}, e \\leqslant a \\leqslant b \\), and (1) imply \\( a=b \\). Hence \\( \\lim _{n \\rightarrow \\infty} u_{n} \\) exists and is the unique real number \\( g=g(x) \\) with \\( g>e \\) and \\( g^{g}=x \\). Since \\( f(y)=y^{y} \\) is continuous and strictly increasing for \\( y \\geqslant e \\), its inverse function \\( g(x) \\) is also continuous.",
+  "vars": [
+    "x",
+    "u_0",
+    "u_1",
+    "u_2",
+    "u_n",
+    "u_n-1",
+    "u_n+1",
+    "u_2n",
+    "u_2n-1",
+    "u_2n+1",
+    "u_2n+2",
+    "n",
+    "y",
+    "g",
+    "S_r",
+    "S_\\\\gamma"
+  ],
+  "params": [
+    "a",
+    "b",
+    "r"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "mainvar",
+        "u_0": "firstterm",
+        "u_1": "secondterm",
+        "u_2": "thirdelm",
+        "u_n": "generalu",
+        "u_n-1": "previous",
+        "u_n+1": "nextone",
+        "u_2n": "evenindex",
+        "u_2n-1": "oddbefore",
+        "u_2n+1": "oddafter",
+        "u_2n+2": "evenafter",
+        "n": "indexer",
+        "y": "tempvar",
+        "g": "limitval",
+        "S_r": "seqparam",
+        "S_\\\\gamma": "seqgamma",
+        "a": "limitlow",
+        "b": "limithigh",
+        "r": "parametr"
+      },
+      "question": "Problem B-5\nFor edch \\( mainvar>e^{e} \\) define a sequence \\( seqparam = firstterm, secondterm, thirdelm, \\ldots \\) recursively as follows: \\( firstterm = e \\), while for \\( indexer \\geqslant 0, previous \\) is the logarithm of \\( mainvar \\) to the base \\( generalu \\). Prove that \\( seqgamma \\) converges to a number \\( limitval(mainvar) \\) and that the function \\( limitval \\) defined in this way is continuous for \\( parametr>e^{e} \\).",
+      "solution": "B-5.\nSince the cerivative of \\( mainvar^{1 / mainvar} \\) is negative for \\( mainvar>e \\),\n\\[\nlimitlow^{limithigh}>limithigh^{limitlow} \\text { when } e \\leqslant limitlow<limithigh .\n\\]\n\nThe \\( u \\) 's are defined so that \\( firstterm = e \\) and\n\\[\nmainvar=\\left(firstterm\\right)^{secondterm}=\\left(secondterm\\right)^{thirdelm}=\\left(thirdelm\\right)^{u_{3}}=\\cdots .\n\\]\n\nHence\n\\[\nnextone=\\left(generalu \\ln previous\\right) / \\ln generalu .\n\\]\n\nAs \\( mainvar>e^{e}, secondterm=\\ln mainvar>e=firstterm \\). Now \\( secondterm>firstterm \\) implies \\( \\ln secondterm>\\ln firstterm \\) and then (3) with \\( indexer=1 \\) implies \\( thirdelm<secondterm \\). Also, (2) and (1) imply \\( \\left(secondterm\\right)^{thirdelm}=\\left(firstterm\\right)^{secondterm}>\\left(secondterm\\right)^{firstterm} \\), which gives us \\( thirdelm>firstterm \\). Now \\( thirdelm<secondterm \\) and (3) with \\( indexer=2 \\) imply \\( u_{3}>thirdelm \\). Also (2) and (1) imply \\( \\left(thirdelm\\right)^{u_{3}}=\\left(secondterm\\right)^{thirdelm}<\\left(thirdelm\\right)^{secondterm} \\) and hence \\( u_{3}<secondterm \\). Similarly, \\( thirdelm<u_{4}<u_{3} \\). Then an easy induction shows that\n\\[\ne<evenindex<evenafter<oddafter<oddbefore \\text { for } indexer=1,2, \\ldots .\n\\]\n\nThus the monotonic bounded sequences \\( firstterm, thirdelm, u_{4}, \\ldots \\) and \\( secondterm, u_{3}, u_{5}, \\ldots \\) have limits \\( limitlow \\) and \\( limithigh \\), respectively, with \\( e<limitlow \\leqslant limithigh \\). Also\n\\[\nlimitlow^{limithigh}=\\lim _{indexer \\rightarrow \\infty}\\left(evenindex\\right)^{oddbefore}=mainvar=\\lim _{indexer \\rightarrow \\infty}\\left(oddbefore\\right)^{evenindex}=limithigh^{limitlow} .\n\\]\n\nThen \\( limitlow^{limithigh}=limithigh^{u}, e \\leqslant limitlow \\leqslant limithigh \\), and (1) imply \\( limitlow=limithigh \\). Hence \\( \\lim _{indexer \\rightarrow \\infty} generalu \\) exists and is the unique real number \\( limitval=limitval(mainvar) \\) with \\( limitval>e \\) and \\( limitval^{limitval}=mainvar \\). Since \\( f(tempvar)=tempvar^{tempvar} \\) is continuous and strictly increasing for \\( tempvar \\geqslant e \\), its inverse function \\( limitval(mainvar) \\) is also continuous."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "chandelier",
+        "u_0": "fountain",
+        "u_1": "windchime",
+        "u_2": "sunflower",
+        "u_n": "locomotive",
+        "u_n-1": "peppermill",
+        "u_n+1": "grasshopper",
+        "u_2n": "marshmallow",
+        "u_2n-1": "tortoise",
+        "u_2n+1": "hippogriff",
+        "u_2n+2": "strawberry",
+        "n": "roadblock",
+        "y": "teaspoon",
+        "g": "butterfly",
+        "S_r": "shipyard",
+        "S_\\\\gamma": "clockwork",
+        "a": "rainstorm",
+        "b": "moonlight",
+        "r": "blackbird"
+      },
+      "question": "Problem B-5\nFor edch \\( chandelier>e^{e} \\) define a sequence \\( shipyard=fountain, windchime, sunflower, \\ldots \\) recursively as follows: \\( fountain=e \\), while for \\( roadblock \\geqslant 0, peppermill \\) is the logarithm of \\( chandelier \\) to the base \\( locomotive \\). Prove that \\( clockwork \\) converges to a number \\( butterfly(chandelier) \\) and that the function \\( butterfly \\) defined in this way is continuous for \\( blackbird>e^{e} \\).",
+      "solution": "B-5.\nSince the cerivative of \\( chandelier^{1 / chandelier} \\) is negative for \\( chandelier>e \\),\n\\[\nrainstorm^{moonlight}>moonlight^{rainstorm} \\text { when } e \\leqslant rainstorm<moonlight .\n\\]\n\nThe \\( u \\) 's are defined so that \\( fountain=e \\) and\n\\[\nchandelier=\\left(fountain\\right)^{windchime}=\\left(windchime\\right)^{sunflower}=\\left(sunflower\\right)^{u_{3}}=\\cdots .\n\\]\n\nHence\n\\[\ngrasshopper=\\left(locomotive \\ln peppermill\\right) / \\ln locomotive .\n\\]\n\nAs \\( chandelier>e^{e}, windchime=\\ln chandelier>e=fountain \\). Now \\( windchime>fountain \\) implies \\( \\ln windchime>\\ln fountain \\) and then (3) with \\( roadblock=1 \\) implies \\( sunflower<windchime \\). Also, (2) and (1) imply \\( \\left(windchime\\right)^{sunflower}=\\left(fountain\\right)^{windchime}>\\left(windchime\\right)^{fountain} \\), which gives us \\( sunflower>fountain \\). Now \\( sunflower<windchime \\) and (3) with \\( roadblock=2 \\) imply \\( u_{3}>sunflower \\). Also (2) and (1) imply \\( \\left(sunflower\\right)^{u_{3}}=\\left(windchime\\right)^{sunflower}<\\left(sunflower\\right)^{windchime} \\) and hence \\( u_{3}<windchime \\). Similarly, \\( sunflower<u_{4}<u_{3} \\). Then an easy induction shows that\n\\[\ne<marshmallow<strawberry<hippogriff<tortoise \\text { for } roadblock=1,2, \\ldots .\n\\]\n\nThus the monotonic bounded sequences \\( fountain, sunflower, u_{4}, \\ldots \\) and \\( windchime, u_{3}, u_{5}, \\ldots \\) have limits \\( rainstorm \\) and \\( moonlight \\), respectively, with \\( e<rainstorm \\leqslant moonlight \\). Also\n\\[\nrainstorm^{moonlight}=\\lim _{roadblock \\rightarrow \\infty}\\left(marshmallow\\right)^{tortoise}=chandelier=\\lim _{roadblock \\rightarrow \\infty}\\left(tortoise\\right)^{marshmallow}=moonlight^{rainstorm} .\n\\]\n\nThen \\( rainstorm^{moonlight}=moonlight^{u}, e \\leqslant rainstorm \\leqslant moonlight \\), and (1) imply \\( rainstorm=moonlight \\). Hence \\( \\lim _{roadblock \\rightarrow \\infty} locomotive \\) exists and is the unique real number \\( butterfly=butterfly(chandelier) \\) with \\( butterfly>e \\) and \\( butterfly^{butterfly}=chandelier \\). Since \\( f(teaspoon)=teaspoon^{teaspoon} \\) is continuous and strictly increasing for \\( teaspoon \\geqslant e \\), its inverse function \\( butterfly(chandelier) \\) is also continuous."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedscalar",
+        "u_0": "terminalzero",
+        "u_1": "terminalone",
+        "u_2": "terminaltwo",
+        "u_n": "terminalseq",
+        "u_n-1": "successor",
+        "u_n+1": "ancestor",
+        "u_2n": "oddseries",
+        "u_2n-1": "evenmember",
+        "u_2n+1": "evenaddone",
+        "u_2n+2": "oddaddtwo",
+        "n": "constant",
+        "y": "knownqty",
+        "g": "divergent",
+        "S_r": "singleton",
+        "S_\\gamma": "solitude",
+        "a": "endpoint",
+        "b": "startpoint",
+        "r": "steadyval"
+      },
+      "question": "Problem B-5\nFor edch \\( fixedscalar>e^{e} \\) define a sequence \\( singleton_{\\mathrm{steadyval}}=terminalzero, terminalone, terminaltwo, \\ldots \\) recursively as follows: \\( terminalzero=e \\), while for \\( constant \\geqslant 0, successor \\) is the logarithm of \\( fixedscalar \\) to the base \\( terminalseq \\). Prove that \\( solitude_{\\gamma} \\) converges to a number \\( divergent(fixedscalar) \\) and that the function \\( divergent \\) defined in this way is continuous for \\( steadyval>e^{e} \\).",
+      "solution": "B-5.\nSince the cerivative of \\( fixedscalar^{1 / fixedscalar} \\) is negative for \\( fixedscalar>e \\),\n\\[\nendpoint^{startpoint}>startpoint^{endpoint} \\text { when } e \\leqslant endpoint<startpoint .\n\\]\n\nThe \\( terminalseq \\) 's are defined so that \\( terminalzero=e \\) and\n\\[\nfixedscalar=\\left(terminalzero\\right)^{terminalone}=\\left(terminalone\\right)^{terminaltwo}=\\left(terminaltwo\\right)^{u_{3}}=\\cdots .\n\\]\n\nHence\n\\[\nancestor=\\left(terminalseq \\ln successor\\right) / \\ln terminalseq .\n\\]\n\nAs \\( fixedscalar>e^{e}, terminalone=\\ln fixedscalar>e=terminalzero \\). Now \\( terminalone>terminalzero \\) implies \\( \\ln terminalone>\\ln terminalzero \\) and then (3) with \\( constant=1 \\) implies \\( terminaltwo<terminalone \\). Also, (2) and (1) imply \\( \\left(terminalone\\right)^{terminaltwo}=\\left(terminalzero\\right)^{terminalone}>\\left(terminalone\\right)^{terminalzero} \\), which gives us \\( terminaltwo>terminalzero \\). Now \\( terminaltwo<terminalone \\) and (3) with \\( constant=2 \\) imply \\( u_{3}>terminaltwo \\). Also (2) and (1) imply \\( \\left(terminaltwo\\right)^{u_{3}}=\\left(terminalone\\right)^{terminaltwo}<\\left(terminaltwo\\right)^{terminalone} \\) and hence \\( u_{3}<terminalone \\). Similarly, \\( terminaltwo<u_{4}<u_{3} \\). Then an easy induction shows that\n\\[\ne<oddseries<oddaddtwo<evenaddone<evenmember \\text { for } constant=1,2, \\ldots .\n\\]\n\nThus the monotonic bounded sequences \\( terminalzero, terminaltwo, u_{4}, \\ldots \\) and \\( terminalone, u_{3}, u_{5}, \\ldots \\) have limits \\( endpoint \\) and \\( startpoint \\), respectively, with \\( e<endpoint \\leqslant startpoint \\). Also\n\\[\nendpoint^{startpoint}=\\lim _{constant \\rightarrow \\infty}\\left(oddseries\\right)^{evenmember}=fixedscalar=\\lim _{constant \\rightarrow \\infty}\\left(evenmember\\right)^{oddseries}=startpoint^{endpoint} .\n\\]\n\nThen \\( endpoint^{startpoint}=startpoint^{u}, e \\leqslant endpoint \\leqslant startpoint \\), and (1) imply \\( endpoint=startpoint \\). Hence \\( \\lim _{constant \\rightarrow \\infty} terminalseq \\) exists and is the unique real number \\( divergent=divergent(fixedscalar) \\) with \\( divergent>e \\) and \\( divergent^{divergent}=fixedscalar \\). Since \\( f(knownqty)=knownqty^{knownqty} \\) is continuous and strictly increasing for \\( knownqty \\geqslant e \\), its inverse function \\( divergent(fixedscalar) \\) is also continuous."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "u_0": "hjgrksla",
+        "u_1": "fndpweor",
+        "u_2": "mcvbtrel",
+        "u_n": "sldkqwer",
+        "u_n-1": "prqmxnco",
+        "u_n+1": "vjlsteqo",
+        "u_2n": "ktzmpqwa",
+        "u_2n-1": "xnvbdesw",
+        "u_2n+1": "rlczgpha",
+        "u_2n+2": "tbyhlwqe",
+        "n": "wertyuiop",
+        "y": "asdfghjkl",
+        "g": "zxcvbnmas",
+        "S_r": "poiulkjha",
+        "S_\\gamma": "lkjhgfdsq",
+        "a": "qweruiopz",
+        "b": "asdfhjklq",
+        "r": "zxcvasdfg"
+      },
+      "question": "Problem B-5\nFor edch \\( qzxwvtnp>e^{e} \\) define a sequence \\( poiulkjha=hjgrksla, fndpweor, mcvbtrel, \\ldots \\) recursively as follows: \\( hjgrksla=e \\), while for \\( wertyuiop \\geqslant 0, prqmxnco \\) is the logarithm of \\( qzxwvtnp \\) to the base \\( sldkqwer \\). Prove that \\( lkjhgfdsq \\) converges to a number \\( zxcvbnmas(qzxwvtnp) \\) and that the function \\( zxcvbnmas \\) defined in this way is continuous for \\( zxcvasdfg>e^{e} \\).",
+      "solution": "B-5.\nSince the cerivative of \\( qzxwvtnp^{1 / qzxwvtnp} \\) is negative for \\( qzxwvtnp>e \\),\n\\[\nqweruiopz^{asdfhjklq}>asdfhjklq^{qweruiopz} \\text { when } e \\leqslant qweruiopz<asdfhjklq .\n\\]\n\nThe \\( u \\) 's are defined so that \\( hjgrksla=e \\) and\n\\[\nqzxwvtnp=\\left(hjgrksla\\right)^{fndpweor}=\\left(fndpweor\\right)^{mcvbtrel}=\\left(mcvbtrel\\right)^{u_{3}}=\\cdots .\n\\]\n\nHence\n\\[\nvjlsteqo=\\left(sldkqwer \\ln prqmxnco\\right) / \\ln sldkqwer .\n\\]\n\nAs \\( qzxwvtnp>e^{e}, fndpweor=\\ln qzxwvtnp>e=hjgrksla \\). Now \\( fndpweor>hjgrksla \\) implies \\( \\ln fndpweor>\\ln hjgrksla \\) and then (3) with \\( wertyuiop=1 \\) implies \\( mcvbtrel<fndpweor \\). Also, (2) and (1) imply \\( \\left(fndpweor\\right)^{mcvbtrel}=\\left(hjgrksla\\right)^{fndpweor}>\\left(fndpweor\\right)^{hjgrksla} \\), which gives us \\( mcvbtrel>hjgrksla \\). Now \\( mcvbtrel<fndpweor \\) and (3) with \\( wertyuiop=2 \\) imply \\( u_{3}>mcvbtrel \\). Also (2) and (1) imply \\( \\left(mcvbtrel\\right)^{u_{3}}=\\left(fndpweor\\right)^{mcvbtrel}<\\left(mcvbtrel\\right)^{fndpweor} \\) and hence \\( u_{3}<fndpweor \\). Similarly, \\( mcvbtrel<u_{4}<u_{3} \\). Then an easy induction shows that\n\\[\ne<ktzmpqwa<tbyhlwqe<rlczgpha<xnvbdesw \\text { for } wertyuiop=1,2, \\ldots .\n\\]\n\nThus the monotonic bounded sequences \\( hjgrksla, mcvbtrel, u_{4}, \\ldots \\) and \\( fndpweor, u_{3}, u_{5}, \\ldots \\) have limits \\( qweruiopz \\) and \\( asdfhjklq \\), respectively, with \\( e<qweruiopz \\leqslant asdfhjklq \\). Also\n\\[\nqweruiopz^{asdfhjklq}=\\lim _{wertyuiop \\rightarrow \\infty}\\left(ktzmpqwa\\right)^{xnvbdesw}=qzxwvtnp=\\lim _{wertyuiop \\rightarrow \\infty}\\left(xnvbdesw\\right)^{ktzmpqwa}=asdfhjklq^{qweruiopz} .\n\\]\n\nThen \\( qweruiopz^{asdfhjklq}=asdfhjklq^{u}, e \\leqslant qweruiopz \\leqslant asdfhjklq \\), and (1) imply \\( qweruiopz=asdfhjklq \\). Hence \\( \\lim _{wertyuiop \\rightarrow \\infty} sldkqwer \\) exists and is the unique real number \\( zxcvbnmas=zxcvbnmas(qzxwvtnp) \\) with \\( zxcvbnmas>e \\) and \\( zxcvbnmas^{zxcvbnmas}=qzxwvtnp \\). Since \\( f(asdfghjkl)=asdfghjkl^{asdfghjkl} \\) is continuous and strictly increasing for \\( asdfghjkl \\geqslant e \\), its inverse function \\( zxcvbnmas(qzxwvtnp) \\) is also continuous."
+    },
+    "kernel_variant": {
+      "question": "Let $\\pi\\approx 3.14$ be the usual circular constant, and fix\n$$x>\\pi^{\\pi}.$$\nDefine a sequence $(u_n)_{n\\ge 0}$ by\n\\[\\boxed{\\;u_0=\\pi,\\qquad x=u_{n}^{\\,u_{n+1}}\\;\\;(n\\ge 0).}\\]\n\n(a) Prove that $(u_n)$ converges to a limit $g(x)>\\pi$.\n\n(b) Show that this limit is characterised by $g^{\\,g}=x$ and that the\nfunction $g:(\\pi^{\\pi},\\infty)\\to(\\pi,\\infty),\\;x\\mapsto g(x)$ is continuous.",
+      "solution": "1. Key inequality.\n   For y>e the function y^{1/y} has negative derivative, so y\\mapsto y^{1/y} is strictly decreasing.  Hence for e\\leq a<b we have\n   a^b>b^a.  (\\star )\n\n2. Explicit recurrence.\n   From x=u_{n-1}^{u_n}=u_n^{u_{n+1}} we get\n   ln x=u_n ln u_{n-1}=u_{n+1} ln u_n,\n   and for n\\geq 1\n   u_{n+1}=(u_n ln u_{n-1})/(ln u_n).  (\\dagger )\n\n3. First comparisons.\n   Since x>\\pi ^\\pi  and u_0=\\pi , we have\n   u_1=\\log_{u_0}x=ln x/ln \\pi >ln(\\pi ^\\pi )/ln \\pi =\\pi =u_0,\n   so u_1>u_0.\n   Then by (\\dagger ) at n=1,\n   u_2=(u_1 ln \\pi )/(ln u_1)<u_1,\n   while from x=u_0^{u_1}=u_1^{u_2} and (\\star ) (with a=u_0, b=u_1) we get\n   u_2>u_0.\n   Hence\n   u_0<u_2<u_1.\n\n   Repeating inductively shows\n   u_{2n}<u_{2n+2}<u_{2n+1}<u_{2n-1}\n   for all n\\geq 1.\n   Therefore (u_{2n}) is strictly increasing and bounded above by u_1,\n   while (u_{2n+1}) is strictly decreasing and bounded below by u_2>\\pi .\n\n4. Existence of subsequential limits.\n   By monotone convergence there are limits\n   a=lim_{n\\to \\infty }u_{2n},  b=lim_{n\\to \\infty }u_{2n+1},\n   with \\pi <a\\leq b.\n\n5. Identifying the two limits.\n   Passing to the limit in x=u_{2n}^{u_{2n+1}} and x=u_{2n+1}^{u_{2n+2}} gives\n   a^b=x=b^a.\n   If a<b, then by (\\star ) a^b>b^a, absurd.  Hence a=b=:g(x), so the whole sequence converges:\n   lim_{n\\to \\infty }u_n=g(x)>\\pi .\n\n6. Characterisation of the limit.\n   Taking limits in x=u_n^{u_{n+1}} yields x=g^g.  Since y\\mapsto y^y is strictly increasing for y\\geq e (hence for y>\\pi ), the equation y^y=x has the unique solution y=g(x)>\\pi .\n\n7. Continuity of g.\n   The function f(y)=y^y is continuous and strictly increasing on [\\pi ,\\infty ), hence invertible there.  Since g=f^{-1} on (\\pi ^\\pi ,\\infty ), it is continuous.  \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Monotonicity: y^{1/y} is strictly decreasing for y>e ⇒ a^b > b^a when e≤a<b",
+          "Relation x = u_{n-1}^{u_n} yields the explicit recurrence and allows comparison of successive terms",
+          "Alternating-order argument: even subsequence increases, odd subsequence decreases, both bounded ⇒ each converges",
+          "Limit identity a^b = b^a together with strict inequality forces a = b ⇒ whole sequence converges",
+          "Continuity of y↦y^y (y≥e) gives continuity of its inverse g(x)"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Chosen starting value u_0 (provided it is ≥e so that the key inequality applies)",
+            "original": "e"
+          },
+          "slot2": {
+            "description": "Corresponding lower bound on x that guarantees u_1>u_0 (namely u_0^{u_0})",
+            "original": "e^e"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

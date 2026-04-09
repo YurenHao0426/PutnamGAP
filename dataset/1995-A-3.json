@@ -1,0 +1,138 @@
+{
+  "index": "1995-A-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "necessarily distinct) decimal digits. The number $e_{1}e_{2}\\dots\ne_{9}$ is such that each of the nine 9-digit numbers formed by\nreplacing just one of the digits $d_{i}$ is $d_{1}d_{2}\\dots d_{9}$\nby the corresponding digit $e_{i}$ ($1 \\leq i \\leq 9$) is divisible\nby 7. The number $f_{1}f_{2}\\dots f_{9}$ is related to\n$e_{1}e_{2}\\dots e_{9}$ is the same way: that is, each of the nine\nnumbers formed by replacing one of the $e_{i}$ by the corresponding\n$f_{i}$ is divisible by 7. Show that, for each $i$, $d_{i}-f_{i}$ is\ndivisible by 7. [For example, if $d_{1}d_{2}\\dots d_{9} = 199501996$,\nthen $e_{6}$ may be 2 or 9, since $199502996$ and $199509996$ are\nmultiples of 7.]",
+  "solution": "Let $D$ and $E$ be the numbers $d_{1}\\dots d_{9}$ and $e_{1}\\dots\ne_{9}$, respectively. We are given that $(e_{i} - d_{i})10^{9-i} + D\n\\equiv 0 \\pmod 7$ and $(f_{i} - e_{i})10^{9-i} + E \\equiv 0 \\pmod 7$\nfor $i=1, \\dots, 9$. Sum the first relation over $i=1,\\dots,9$ and we\nget $E - D + 9D \\equiv 0 \\pmod 7$, or $E + D \\equiv 0 \\pmod 7$. Now\nadd the first and second relations for any particular value of $i$\nand we get $(f_{i} - d_{i})10^{9-i} + E + D \\equiv 0 \\pmod 7$. But we\nknow $E+D$ is divisible by 7, and 10 is coprime to 7, so $d_{i} -\nf_{i} \\equiv 0 \\pmod 7$.",
+  "vars": [
+    "e_1",
+    "e_2",
+    "e_9",
+    "e_i",
+    "d_1",
+    "d_2",
+    "d_9",
+    "d_i",
+    "f_1",
+    "f_2",
+    "f_9",
+    "f_i",
+    "D",
+    "E",
+    "i"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "e_1": "edigitone",
+        "e_2": "edigittwo",
+        "e_9": "edigitnine",
+        "e_i": "edigitvar",
+        "d_1": "ddigitone",
+        "d_2": "ddigittwo",
+        "d_9": "ddigitnine",
+        "d_i": "ddigitvar",
+        "f_1": "fdigitone",
+        "f_2": "fdigittwo",
+        "f_9": "fdigitnine",
+        "f_i": "fdigitvar",
+        "D": "dwholenum",
+        "E": "ewholenum",
+        "i": "indexvar"
+      },
+      "question": "necessarily distinct) decimal digits. The number $edigitoneedigittwo\\dots edigitnine$ is such that each of the nine 9-digit numbers formed by replacing just one of the digits $ddigitvar$ is $ddigitoneddigittwo\\dots ddigitnine$ by the corresponding digit $edigitvar$ ($1 \\leq indexvar \\leq 9$) is divisible by 7. The number $fdigitonefdigittwo\\dots fdigitnine$ is related to $edigitoneedigittwo\\dots edigitnine$ is the same way: that is, each of the nine numbers formed by replacing one of the $edigitvar$ by the corresponding $fdigitvar$ is divisible by 7. Show that, for each indexvar, $ddigitvar-fdigitvar$ is divisible by 7. [For example, if $ddigitoneddigittwo\\dots ddigitnine = 199501996$, then $e_{6}$ may be 2 or 9, since $199502996$ and $199509996$ are multiples of 7.]",
+      "solution": "Let $dwholenum$ and $ewholenum$ be the numbers $ddigitoneddigittwo\\dots ddigitnine$ and $edigitoneedigittwo\\dots edigitnine$, respectively. We are given that $(edigitvar - ddigitvar)10^{9-indexvar} + dwholenum \\equiv 0 \\pmod 7$ and $(fdigitvar - edigitvar)10^{9-indexvar} + ewholenum \\equiv 0 \\pmod 7$ for $indexvar=1, \\dots, 9$. Sum the first relation over $indexvar=1,\\dots,9$ and we get $ewholenum - dwholenum + 9dwholenum \\equiv 0 \\pmod 7$, or $ewholenum + dwholenum \\equiv 0 \\pmod 7$. Now add the first and second relations for any particular value of $indexvar$ and we get $(fdigitvar - ddigitvar)10^{9-indexvar} + ewholenum + dwholenum \\equiv 0 \\pmod 7$. But we know $ewholenum+dwholenum$ is divisible by 7, and 10 is coprime to 7, so $ddigitvar - fdigitvar \\equiv 0 \\pmod 7$. "
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "e_1": "gingerroot",
+        "e_2": "butterscot",
+        "e_9": "kingfisher",
+        "e_i": "aftershock",
+        "d_1": "thumbtack",
+        "d_2": "raincloud",
+        "d_9": "blackberry",
+        "d_i": "paddleboat",
+        "f_1": "peppermint",
+        "f_2": "carpetweed",
+        "f_9": "dragonfly",
+        "f_i": "cheesecake",
+        "D": "mackerel",
+        "E": "partridge",
+        "i": "snowstorm"
+      },
+      "question": "necessarily distinct) decimal digits. The number $gingerroot butterscot\\dots kingfisher$ is such that each of the nine 9-digit numbers formed by replacing just one of the digits $paddleboat$ is $thumbtack raincloud\\dots blackberry$ by the corresponding digit $aftershock$ ($1 \\leq snowstorm \\leq 9$) is divisible by 7. The number $peppermint carpetweed\\dots dragonfly$ is related to $gingerroot butterscot\\dots kingfisher$ is the same way: that is, each of the nine numbers formed by replacing one of the $aftershock$ by the corresponding $cheesecake$ is divisible by 7. Show that, for each $snowstorm$, $paddleboat-\\,cheesecake$ is divisible by 7. [For example, if $thumbtack raincloud\\dots blackberry = 199501996$, then $e_{6}$ may be 2 or 9, since $199502996$ and $199509996$ are multiples of 7.]",
+      "solution": "Let $mackerel$ and $partridge$ be the numbers $thumbtack\\dots blackberry$ and $gingerroot\\dots kingfisher$, respectively. We are given that $(aftershock - paddleboat)10^{9-snowstorm} + mackerel \\equiv 0 \\pmod 7$ and $(cheesecake - aftershock)10^{9-snowstorm} + partridge \\equiv 0 \\pmod 7$ for $snowstorm = 1, \\dots, 9$. Sum the first relation over $snowstorm = 1,\\dots,9$ and we get $partridge - mackerel + 9mackerel \\equiv 0 \\pmod 7$, or $partridge + mackerel \\equiv 0 \\pmod 7$. Now add the first and second relations for any particular value of $snowstorm$ and we get $(cheesecake - paddleboat)10^{9-snowstorm} + partridge + mackerel \\equiv 0 \\pmod 7$. But we know $partridge+mackerel$ is divisible by 7, and 10 is coprime to 7, so $paddleboat - cheesecake \\equiv 0 \\pmod 7$.  "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "e_1": "letterone",
+        "e_2": "lettertwo",
+        "e_9": "letternine",
+        "e_i": "letterindex",
+        "d_1": "blankone",
+        "d_2": "blanktwo",
+        "d_9": "blanknine",
+        "d_i": "blankindex",
+        "f_1": "spaceone",
+        "f_2": "spacetwo",
+        "f_9": "spacenine",
+        "f_i": "spaceindex",
+        "D": "emptiness",
+        "E": "fullness",
+        "i": "stopindex"
+      },
+      "question": "necessarily distinct) decimal digits. The number $letteronelettertwo\\dots letternine$ is such that each of the nine 9-digit numbers formed by replacing just one of the digits $blankindex$ is $blankoneblanktwo\\dots blanknine$ by the corresponding digit $letterindex$ ($1 \\leq stopindex \\leq 9$) is divisible by 7. The number $spaceonespacetwo\\dots spacenine$ is related to $letteronelettertwo\\dots letternine$ is the same way: that is, each of the nine numbers formed by replacing one of the $letterindex$ by the corresponding $spaceindex$ is divisible by 7. Show that, for each $stopindex$, $blankindex-spaceindex$ is divisible by 7. [For example, if $blankoneblanktwo\\dots blanknine = 199501996$, then $letter_{6}$ may be 2 or 9, since $199502996$ and $199509996$ are multiples of 7.]",
+      "solution": "Let $emptiness$ and $fullness$ be the numbers $blankone\\dots blanknine$ and $letterone\\dots letternine$, respectively. We are given that $(letterindex - blankindex)10^{9-stopindex} + emptiness \\equiv 0 \\pmod 7$ and $(spaceindex - letterindex)10^{9-stopindex} + fullness \\equiv 0 \\pmod 7$ for $stopindex=1, \\dots, 9$. Sum the first relation over $stopindex=1,\\dots,9$ and we get $fullness - emptiness + 9emptiness \\equiv 0 \\pmod 7$, or $fullness + emptiness \\equiv 0 \\pmod 7$. Now add the first and second relations for any particular value of $stopindex$ and we get $(spaceindex - blankindex)10^{9-stopindex} + fullness + emptiness \\equiv 0 \\pmod 7$. But we know $fullness+emptiness$ is divisible by 7, and 10 is coprime to 7, so $blankindex - spaceindex \\equiv 0 \\pmod 7$. Hence each $blankindex-spaceindex$ is divisible by 7."
+    },
+    "garbled_string": {
+      "map": {
+        "e_1": "qzxwvtnp",
+        "e_2": "hjgrksla",
+        "e_9": "plmnorvw",
+        "e_i": "cbvtyxqp",
+        "d_1": "sdfghjkl",
+        "d_2": "mnbvcxzq",
+        "d_9": "lkjhgfdp",
+        "d_i": "zxcvbnmq",
+        "f_1": "rtyuioas",
+        "f_2": "gfdsaqwe",
+        "f_9": "poiuytre",
+        "f_i": "wertyuio",
+        "D": "asdfghjk",
+        "E": "qwertyui",
+        "i": "zvbnmasd"
+      },
+      "question": "necessarily distinct) decimal digits. The number $qzxwvtnphjgrksla\\dots\nplmnorvw$ is such that each of the nine 9-digit numbers formed by\nreplacing just one of the digits $zxcvbnmq$ is $sdfghjklmnbvcxzq\\dots lkjhgfdp$\nby the corresponding digit $cbvtyxqp$ ($1 \\leq zvbnmasd \\leq 9$) is divisible\nby 7. The number $rtyuioasgfdsaqwe\\dots poiuytre$ is related to\n$qzxwvtnphjgrksla\\dots plmnorvw$ is the same way: that is, each of the nine\nnumbers formed by replacing one of the $cbvtyxqp$ by the corresponding\n$wertyuio$ is divisible by 7. Show that, for each $zvbnmasd$, $zxcvbnmq-wertyuio$ is\ndivisible by 7. [For example, if $sdfghjklmnbvcxzq\\dots lkjhgfdp = 199501996$,\nthen $e_{6}$ may be 2 or 9, since $199502996$ and $199509996$ are\nmultiples of 7.]",
+      "solution": "Let $asdfghjk$ and $qwertyui$ be the numbers $sdfghjkl\\dots\nlkjhgfdp$ and $qzxwvtnphjgrksla\\dots plmnorvw$, respectively. We are given that $(cbvtyxqp - zxcvbnmq)10^{9-zvbnmasd} + asdfghjk \n\\equiv 0 \\pmod 7$ and $(wertyuio - cbvtyxqp)10^{9-zvbnmasd} + qwertyui \\equiv 0 \\pmod 7$\nfor $zvbnmasd=1, \\dots, 9$. Sum the first relation over $zvbnmasd=1,\\dots,9$ and we\nget $qwertyui - asdfghjk + 9asdfghjk \\equiv 0 \\pmod 7$, or\n$qwertyui + asdfghjk \\equiv 0 \\pmod 7$. Now add the first and second relations for any particular value of $zvbnmasd$\nand we get $(wertyuio - zxcvbnmq)10^{9-zvbnmasd} + qwertyui + asdfghjk \\equiv 0 \\pmod 7$. But we\nknow $qwertyui+asdfghjk$ is divisible by 7, and 10 is coprime to 7, so $zxcvbnmq -\nwertyuio \\equiv 0 \\pmod 7$. "
+    },
+    "kernel_variant": {
+      "question": "Let  \n\\[\np:=11,\\qquad b:=p+1=12,\\qquad n:=p+2=13,\\qquad \nk_i:=n-i\\quad(1\\le i\\le n).\n\\]\n\nFor integers \\(d_i,e_i,f_i\\;(1\\le i\\le n)\\) put  \n\\[\nD=\\sum_{i=1}^{n} d_i\\,b^{\\,k_i},\\qquad \nE=\\sum_{i=1}^{n} e_i\\,b^{\\,k_i},\\qquad \nF=\\sum_{i=1}^{n} f_i\\,b^{\\,k_i}.\n\\]\n\nFor every non-empty subset \\(S\\subseteq\\{1,\\dots ,n\\}\\) define the\nsingle-step digit-replacement numbers  \n\\[\nD[S\\!\\to\\!E]\\;:=\\;\nD+\\sum_{i\\in S}(e_i-d_i)\\,b^{\\,k_i},\\qquad\nE[i\\!\\to\\!F]\\;:=\\;\nE+(f_i-e_i)\\,b^{\\,k_i}\\quad(1\\le i\\le n).\n\\]\n\nAssume  \n\nA)  For every non-empty \\(S\\subseteq\\{1,\\dots ,n\\}\\) with\n   \\(\\lvert S\\rvert\\le 3\\) one has  \n   \\[\n      p^{\\lvert S\\rvert}\\;\\mid\\; D[S\\!\\to\\!E].\n   \\]\n\nB)  For every index \\(i\\;(1\\le i\\le n)\\) one has  \n   \\[\n      p^{4}\\;\\mid\\; E[i\\!\\to\\!F].\n   \\]\n\nProve that, for every \\(i\\),  \n\\[\np^{2}\\ \\mid\\ (d_i-f_i).\n\\]\n\n--------------------------------------------------------------------",
+      "solution": "Throughout the proof let \\(v_p(\\,\\cdot\\,)\\) denote the\n\\(p\\)-adic valuation.  \nFor every non-negative integer \\(k\\) we use the truncated binomial\nexpansion\n\\[\nb^{k}=(1+p)^{k}=1+k\\,p+\\dfrac{k(k-1)}{2}\\,p^{2}\n             \\pmod{p^{3}}. \\tag{E}\n\\]\n\nIntroduce the differences  \n\\[\nx_i:=e_i-d_i,\\qquad y_i:=f_i-e_i\\qquad(1\\le i\\le n).\n\\]\n\nPart I - proving \\(p^{2}\\mid x_i\\).  \n-----------------------------------\n\nSTEP 1.  (Congruence modulo \\(p\\)).  \nFor the single-element set \\(S=\\{i\\}\\) condition (A) gives\n\\[\np\\mid D+x_i b^{\\,k_i}.\n\\]\nBecause \\(b^{k_i}\\equiv 1\\pmod p\\), we have\n\\[\nD+x_i\\equiv 0\\pmod p\\qquad(1\\le i\\le n).\n\\]\nHence the residues \\(x_i\\bmod p\\) are all equal; write\n\\[\nx_i\\equiv c\\pmod p,\\qquad \nD\\equiv -c\\pmod p\\qquad\\bigl(c\\in\\mathbf Z\\bigr). \\tag{1}\n\\]\n\nSTEP 2.  (Using a double replacement to show \\(p\\mid c\\)).  \nPut  \n\\[\nx_i=c+p s_i,\\qquad D=-c+pD_1\\qquad(s_i,D_1\\in\\mathbf Z).   \\tag{2}\n\\]\nChoose a two-element subset \\(S=\\{i,j\\}\\) and apply (A):\n\\[\np^{2}\\mid D+x_i b^{\\,k_i}+x_j b^{\\,k_j}. \\tag{3}\n\\]\nUsing (E) and (2) we expand the expression inside the divisibility in\n(3) modulo \\(p^{2}\\):\n\\[\n\\begin{aligned}\nD&+x_i b^{\\,k_i}+x_j b^{\\,k_j}\\\\\n&\\equiv (-c+pD_1)\n        +(c+ps_i)(1+k_i p)\n        +(c+ps_j)(1+k_j p)\\pmod{p^{2}}\\\\\n&\\equiv\\underbrace{\\bigl(-c+c+c\\bigr)}_{=\\,c}\n      +p\\bigl(D_1+s_i+s_j+c(k_i+k_j)\\bigr)\\pmod{p^{2}}. \\tag{4}\n\\end{aligned}\n\\]\nBecause (3) says that (4) is actually divisible by \\(p^{2}\\), its\nconstant term modulo \\(p\\) must vanish; hence\n\\[\nc\\equiv 0\\pmod p. \\tag{5}\n\\]\nThus \\(p\\mid c\\).  Write  \n\\[\nc=p t\\qquad(t\\in\\mathbf Z). \\tag{6}\n\\]\n\nSTEP 3.  (Renormalising the parameters).  \nSubstituting (6) into (2) gives\n\\[\nx_i=p(t+s_i)=:p s_i',\\qquad\nD=p(D_1-t)=:pA \\qquad\\bigl(s_i',A\\in\\mathbf Z\\bigr). \\tag{7}\n\\]\nHence all \\(x_i\\) are already multiples of \\(p\\); we now prove that\nthey are multiples of \\(p^{2}\\).\n\nSTEP 4.  (Back to \\(|S|=2\\)).  \nRewrite (4) in terms of the new parameters in (7).\nBecause \\(p\\mid c\\), the constant term has disappeared, and keeping\nonly terms up to \\(p^{2}\\) we obtain\n\\[\np\\bigl(A+s_i'+s_j'\\bigr)\\equiv 0\\pmod{p^{2}}\n\\Longrightarrow\nA+s_i'+s_j'\\equiv 0\\pmod p\\quad\\text{for all }i\\ne j. \\tag{8}\n\\]\n\nSTEP 5.  (Using \\(|S|=3\\)).  \nChoose three distinct indices \\(i,j,k\\) and invoke (A) for\n\\(S=\\{i,j,k\\}\\):\n\\[\np^{3}\\mid D+x_i b^{\\,k_i}+x_j b^{\\,k_j}+x_k b^{\\,k_k}. \\tag{9}\n\\]\nDivide (9) by \\(p\\) (possible by (7)) and reduce modulo \\(p^{2}\\).\nWith \\(x_\\ell=p s_\\ell'\\) and (E) we get\n\\[\nA+s_i'+s_j'+s_k'\\equiv 0\\pmod p. \\tag{10}\n\\]\n\nSTEP 6.  (Solving the linear system).  \nSubtract (8) from (10):\n\\[\n\\bigl(A+s_i'+s_j'+s_k'\\bigr)-\\bigl(A+s_i'+s_j'\\bigr)\\equiv s_k'\\equiv\n0\\pmod p.\n\\]\nHence \\(p\\mid s_k'\\) for every \\(k\\).  Write\n\\[\ns_k'=p u_k,\\qquad u_k\\in\\mathbf Z, \\tag{11}\n\\]\nand deduce from (7) that\n\\[\nx_k=p^{2}u_k\\qquad(1\\le k\\le n). \\tag{12}\n\\]\n\nPart II - proving \\(p^{2}\\mid y_i\\).  \n------------------------------------\n\nSTEP 7.  (The number \\(E\\)).  \nInsert (12) into\n\\[\nE=D+\\sum_{k=1}^{n} x_k\\,b^{\\,k_k}.\n\\]\nBecause \\(x_k\\) already carries the factor \\(p^{2}\\) and\n\\(b^{\\,k_k}\\equiv 1+k_k p\\pmod{p^{2}}\\), every summand\n\\(x_k\\,b^{\\,k_k}\\) is a multiple of \\(p^{2}\\).\nSince \\(D=pA\\) with \\(p\\mid A\\) by (8) and (11),\n\\[\nE=p^{2}S\\quad(S\\in\\mathbf Z). \\tag{13}\n\\]\n\nSTEP 8.  (Condition (B)).  \nCondition (B) states\n\\[\np^{4}\\mid E+y_i\\,b^{\\,k_i}=p^{2}S+y_i\\,b^{\\,k_i}.\n\\]\nSuppose \\(y_i=p^{t}w\\) with \\(t=v_p(y_i)\\) and \\(p\\nmid w\\).\nUsing (E) we expand\n\\[\nE+y_i\\,b^{\\,k_i}\n=p^{2}S+p^{t}w\\bigl(1+k_i p\\bigr)+\\text{ higher powers of }p.\n\\]\n\n* If \\(t=0\\) the first term not divisible by \\(p\\) is\n\\(w\\not\\equiv 0\\pmod p\\); divisibility by \\(p^{4}\\) is impossible.  \n\n* If \\(t=1\\) the least-power contribution is\n\\(p w\\not\\equiv 0\\pmod{p^{2}}\\); again impossible.  \n\nConsequently \\(t\\ge 2\\), i.e.\n\\[\np^{2}\\mid y_i\\qquad(1\\le i\\le n). \\tag{14}\n\\]\n\nPart III - conclusion.  \n-----------------------\n\nCombining (12) and (14) we have\n\\[\nd_i-f_i=-(x_i+y_i)=-p^{2}\\bigl(u_i+w_i\\bigr),\\qquad\nu_i,w_i\\in\\mathbf Z,\n\\]\nso\n\\[\np^{2}=11^{2}\\ \\mid\\ (d_i-f_i)\\quad\\text{for every }i=1,2,\\dots ,13.\n\\quad\\square\n\\]\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.740705",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher-order replacements.  \n   The problem demands divisibility not only for single-digit\n   substitutions but for every simultaneous substitution of up to THREE\n   digits, producing $\\binom{13}{1}+\\binom{13}{2}+\\binom{13}{3}= 455$\n   separate congruence conditions instead of the 13 conditions in the\n   original and kernel versions.\n\n2.  Non-trivial interaction of constraints.  \n   The proof must show that the three-digit conditions force the common\n   first-level difference c to be zero; with only the single-digit\n   conditions c could be an arbitrary residue.  Detecting that the\n   three-digit information kills the last degree of freedom is the main\n   extra insight.\n\n3.  Delicate use of the base.  \n   Choosing base 12 together with modulus 11 (so that 12≡1) turns powers\n   of the base into 1, drastically simplifying every positional weight\n   and allowing the argument with triple substitutions to close.  The\n   solver has to spot and exploit this arithmetic accident.\n\n4.  Two-stage argument.  \n   Even after the first chain (D→E) is mastered, one must restart the\n   analysis for the second chain (E→F) and dovetail the two, observing\n   that the vanishing of the first common difference forces E to be\n   divisible by 11 and therefore annihilates the second common\n   difference as well.\n\n5.  Size and bookkeeping.  \n   Keeping track of indices, subsets, and congruences across 13 digits,\n   455 substituted numbers, and two successive replacement chains pushes\n   the solver into heavier algebraic bookkeeping than either the\n   original problem (9 digits, 9 conditions) or the former kernel\n   variant (13 digits, 26 conditions).\n\nThese additional layers of combinatorial and arithmetic complexity make\nthe enhanced variant substantially harder and a genuine step up in\ncompetition-level challenge."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n\\[\np:=11,\\qquad b:=p+1=12,\\qquad n:=p+2=13,\\qquad \nk_i:=n-i\\quad(1\\le i\\le n).\n\\]\n\nFor integers \\(d_i,e_i,f_i\\;(1\\le i\\le n)\\) put  \n\\[\nD=\\sum_{i=1}^{n} d_i\\,b^{\\,k_i},\\qquad \nE=\\sum_{i=1}^{n} e_i\\,b^{\\,k_i},\\qquad \nF=\\sum_{i=1}^{n} f_i\\,b^{\\,k_i}.\n\\]\n\nFor every non-empty subset \\(S\\subseteq\\{1,\\dots ,n\\}\\) define the\nsingle-step digit-replacement numbers  \n\\[\nD[S\\!\\to\\!E]\\;:=\\;\nD+\\sum_{i\\in S}(e_i-d_i)\\,b^{\\,k_i},\\qquad\nE[i\\!\\to\\!F]\\;:=\\;\nE+(f_i-e_i)\\,b^{\\,k_i}\\quad(1\\le i\\le n).\n\\]\n\nAssume  \n\nA)  For every non-empty \\(S\\subseteq\\{1,\\dots ,n\\}\\) with\n   \\(\\lvert S\\rvert\\le 3\\) one has  \n   \\[\n      p^{\\lvert S\\rvert}\\;\\mid\\; D[S\\!\\to\\!E].\n   \\]\n\nB)  For every index \\(i\\;(1\\le i\\le n)\\) one has  \n   \\[\n      p^{4}\\;\\mid\\; E[i\\!\\to\\!F].\n   \\]\n\nProve that, for every \\(i\\),  \n\\[\np^{2}\\ \\mid\\ (d_i-f_i).\n\\]\n\n--------------------------------------------------------------------",
+      "solution": "Throughout the proof let \\(v_p(\\,\\cdot\\,)\\) denote the\n\\(p\\)-adic valuation.  \nFor every non-negative integer \\(k\\) we use the truncated binomial\nexpansion\n\\[\nb^{k}=(1+p)^{k}=1+k\\,p+\\dfrac{k(k-1)}{2}\\,p^{2}\n             \\pmod{p^{3}}. \\tag{E}\n\\]\n\nIntroduce the differences  \n\\[\nx_i:=e_i-d_i,\\qquad y_i:=f_i-e_i\\qquad(1\\le i\\le n).\n\\]\n\nPart I - proving \\(p^{2}\\mid x_i\\).  \n-----------------------------------\n\nSTEP 1.  (Congruence modulo \\(p\\)).  \nFor the single-element set \\(S=\\{i\\}\\) condition (A) gives\n\\[\np\\mid D+x_i b^{\\,k_i}.\n\\]\nBecause \\(b^{k_i}\\equiv 1\\pmod p\\), we have\n\\[\nD+x_i\\equiv 0\\pmod p\\qquad(1\\le i\\le n).\n\\]\nHence the residues \\(x_i\\bmod p\\) are all equal; write\n\\[\nx_i\\equiv c\\pmod p,\\qquad \nD\\equiv -c\\pmod p\\qquad\\bigl(c\\in\\mathbf Z\\bigr). \\tag{1}\n\\]\n\nSTEP 2.  (Using a double replacement to show \\(p\\mid c\\)).  \nPut  \n\\[\nx_i=c+p s_i,\\qquad D=-c+pD_1\\qquad(s_i,D_1\\in\\mathbf Z).   \\tag{2}\n\\]\nChoose a two-element subset \\(S=\\{i,j\\}\\) and apply (A):\n\\[\np^{2}\\mid D+x_i b^{\\,k_i}+x_j b^{\\,k_j}. \\tag{3}\n\\]\nUsing (E) and (2) we expand the expression inside the divisibility in\n(3) modulo \\(p^{2}\\):\n\\[\n\\begin{aligned}\nD&+x_i b^{\\,k_i}+x_j b^{\\,k_j}\\\\\n&\\equiv (-c+pD_1)\n        +(c+ps_i)(1+k_i p)\n        +(c+ps_j)(1+k_j p)\\pmod{p^{2}}\\\\\n&\\equiv\\underbrace{\\bigl(-c+c+c\\bigr)}_{=\\,c}\n      +p\\bigl(D_1+s_i+s_j+c(k_i+k_j)\\bigr)\\pmod{p^{2}}. \\tag{4}\n\\end{aligned}\n\\]\nBecause (3) says that (4) is actually divisible by \\(p^{2}\\), its\nconstant term modulo \\(p\\) must vanish; hence\n\\[\nc\\equiv 0\\pmod p. \\tag{5}\n\\]\nThus \\(p\\mid c\\).  Write  \n\\[\nc=p t\\qquad(t\\in\\mathbf Z). \\tag{6}\n\\]\n\nSTEP 3.  (Renormalising the parameters).  \nSubstituting (6) into (2) gives\n\\[\nx_i=p(t+s_i)=:p s_i',\\qquad\nD=p(D_1-t)=:pA \\qquad\\bigl(s_i',A\\in\\mathbf Z\\bigr). \\tag{7}\n\\]\nHence all \\(x_i\\) are already multiples of \\(p\\); we now prove that\nthey are multiples of \\(p^{2}\\).\n\nSTEP 4.  (Back to \\(|S|=2\\)).  \nRewrite (4) in terms of the new parameters in (7).\nBecause \\(p\\mid c\\), the constant term has disappeared, and keeping\nonly terms up to \\(p^{2}\\) we obtain\n\\[\np\\bigl(A+s_i'+s_j'\\bigr)\\equiv 0\\pmod{p^{2}}\n\\Longrightarrow\nA+s_i'+s_j'\\equiv 0\\pmod p\\quad\\text{for all }i\\ne j. \\tag{8}\n\\]\n\nSTEP 5.  (Using \\(|S|=3\\)).  \nChoose three distinct indices \\(i,j,k\\) and invoke (A) for\n\\(S=\\{i,j,k\\}\\):\n\\[\np^{3}\\mid D+x_i b^{\\,k_i}+x_j b^{\\,k_j}+x_k b^{\\,k_k}. \\tag{9}\n\\]\nDivide (9) by \\(p\\) (possible by (7)) and reduce modulo \\(p^{2}\\).\nWith \\(x_\\ell=p s_\\ell'\\) and (E) we get\n\\[\nA+s_i'+s_j'+s_k'\\equiv 0\\pmod p. \\tag{10}\n\\]\n\nSTEP 6.  (Solving the linear system).  \nSubtract (8) from (10):\n\\[\n\\bigl(A+s_i'+s_j'+s_k'\\bigr)-\\bigl(A+s_i'+s_j'\\bigr)\\equiv s_k'\\equiv\n0\\pmod p.\n\\]\nHence \\(p\\mid s_k'\\) for every \\(k\\).  Write\n\\[\ns_k'=p u_k,\\qquad u_k\\in\\mathbf Z, \\tag{11}\n\\]\nand deduce from (7) that\n\\[\nx_k=p^{2}u_k\\qquad(1\\le k\\le n). \\tag{12}\n\\]\n\nPart II - proving \\(p^{2}\\mid y_i\\).  \n------------------------------------\n\nSTEP 7.  (The number \\(E\\)).  \nInsert (12) into\n\\[\nE=D+\\sum_{k=1}^{n} x_k\\,b^{\\,k_k}.\n\\]\nBecause \\(x_k\\) already carries the factor \\(p^{2}\\) and\n\\(b^{\\,k_k}\\equiv 1+k_k p\\pmod{p^{2}}\\), every summand\n\\(x_k\\,b^{\\,k_k}\\) is a multiple of \\(p^{2}\\).\nSince \\(D=pA\\) with \\(p\\mid A\\) by (8) and (11),\n\\[\nE=p^{2}S\\quad(S\\in\\mathbf Z). \\tag{13}\n\\]\n\nSTEP 8.  (Condition (B)).  \nCondition (B) states\n\\[\np^{4}\\mid E+y_i\\,b^{\\,k_i}=p^{2}S+y_i\\,b^{\\,k_i}.\n\\]\nSuppose \\(y_i=p^{t}w\\) with \\(t=v_p(y_i)\\) and \\(p\\nmid w\\).\nUsing (E) we expand\n\\[\nE+y_i\\,b^{\\,k_i}\n=p^{2}S+p^{t}w\\bigl(1+k_i p\\bigr)+\\text{ higher powers of }p.\n\\]\n\n* If \\(t=0\\) the first term not divisible by \\(p\\) is\n\\(w\\not\\equiv 0\\pmod p\\); divisibility by \\(p^{4}\\) is impossible.  \n\n* If \\(t=1\\) the least-power contribution is\n\\(p w\\not\\equiv 0\\pmod{p^{2}}\\); again impossible.  \n\nConsequently \\(t\\ge 2\\), i.e.\n\\[\np^{2}\\mid y_i\\qquad(1\\le i\\le n). \\tag{14}\n\\]\n\nPart III - conclusion.  \n-----------------------\n\nCombining (12) and (14) we have\n\\[\nd_i-f_i=-(x_i+y_i)=-p^{2}\\bigl(u_i+w_i\\bigr),\\qquad\nu_i,w_i\\in\\mathbf Z,\n\\]\nso\n\\[\np^{2}=11^{2}\\ \\mid\\ (d_i-f_i)\\quad\\text{for every }i=1,2,\\dots ,13.\n\\quad\\square\n\\]\n\n--------------------------------------------------------------------",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.572802",
+        "was_fixed": false,
+        "difficulty_analysis": "1.  Higher-order replacements.  \n   The problem demands divisibility not only for single-digit\n   substitutions but for every simultaneous substitution of up to THREE\n   digits, producing $\\binom{13}{1}+\\binom{13}{2}+\\binom{13}{3}= 455$\n   separate congruence conditions instead of the 13 conditions in the\n   original and kernel versions.\n\n2.  Non-trivial interaction of constraints.  \n   The proof must show that the three-digit conditions force the common\n   first-level difference c to be zero; with only the single-digit\n   conditions c could be an arbitrary residue.  Detecting that the\n   three-digit information kills the last degree of freedom is the main\n   extra insight.\n\n3.  Delicate use of the base.  \n   Choosing base 12 together with modulus 11 (so that 12≡1) turns powers\n   of the base into 1, drastically simplifying every positional weight\n   and allowing the argument with triple substitutions to close.  The\n   solver has to spot and exploit this arithmetic accident.\n\n4.  Two-stage argument.  \n   Even after the first chain (D→E) is mastered, one must restart the\n   analysis for the second chain (E→F) and dovetail the two, observing\n   that the vanishing of the first common difference forces E to be\n   divisible by 11 and therefore annihilates the second common\n   difference as well.\n\n5.  Size and bookkeeping.  \n   Keeping track of indices, subsets, and congruences across 13 digits,\n   455 substituted numbers, and two successive replacement chains pushes\n   the solver into heavier algebraic bookkeeping than either the\n   original problem (9 digits, 9 conditions) or the former kernel\n   variant (13 digits, 26 conditions).\n\nThese additional layers of combinatorial and arithmetic complexity make\nthe enhanced variant substantially harder and a genuine step up in\ncompetition-level challenge."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

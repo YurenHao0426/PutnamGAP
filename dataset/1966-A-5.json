@@ -1,0 +1,127 @@
+{
+  "index": "1966-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "A-5. Let \\( C \\) denote the family of continuous functions on the real axis. Let \\( T \\) be a mapping of \\( C \\) into \\( C \\) which has the following properties:\n1. \\( T \\) is linear, i.e. \\( T\\left(c_{1} \\psi_{1}+c_{2} \\psi_{2}\\right)=c_{1} T \\psi_{1}+c_{2} T \\psi_{2} \\), for \\( c_{1} \\) and \\( c_{2} \\) real and \\( \\psi_{1} \\) and \\( \\psi_{2} \\) in \\( C \\).\n2. \\( T \\) is local, i.e. if \\( \\psi_{1} \\equiv \\psi_{2} \\) in some interval \\( I \\) then also \\( T \\psi_{1} \\equiv T \\psi_{2} \\) holds in \\( I \\).\n\nShow that \\( T \\) must necessarily be of the form \\( T \\psi(x)=f(x) \\psi(x) \\) where \\( f(x) \\) is a suitable continuous function.",
+  "solution": "A-5 We shall show that \\( T \\psi(x)=f(x) \\psi(x) \\) for all \\( \\psi \\in C \\), where \\( f \\) is the image under \\( T \\) of the function 1 which sends \\( x \\) into 1 . For each \\( x_{0} \\) and \\( \\psi \\), define \\( \\psi^{\\prime} \\) by\n\\[\n\\psi^{\\prime}(x)=\\left\\{\\begin{array}{ll}\n\\psi(x) & \\text { if } x \\leqq x_{0} \\\\\n\\psi\\left(x_{0}\\right) & \\text { if } x>x_{0}\n\\end{array}\\right.\n\\]\n\nSince \\( T \\) is local we must have \\( T \\psi^{\\prime}(x)=T \\psi(x) \\) for all \\( x \\leqq x_{0} \\). On the other hand, for \\( x>x_{0}, T \\psi^{\\prime}(x)=\\psi\\left(x_{0}\\right) T 1(x)=\\psi\\left(x_{0}\\right) \\cdot f(x) \\). By continuity of \\( T \\psi^{\\prime}, T \\psi\\left(x_{0}\\right)=\\psi\\left(x_{0}\\right) \\) \\( \\cdot f\\left(x_{0}\\right) \\).\n\nComment: The condition (1) is needed only in the case where \\( c_{2}=0 \\). Also the interval \\( I \\) in condition (2) should be required to have positive measures since the problem is trivial if \\( I \\) can be taken as a point.",
+  "vars": [
+    "x",
+    "x_0",
+    "\\\\psi",
+    "\\\\psi_1",
+    "\\\\psi_2"
+  ],
+  "params": [
+    "C",
+    "T",
+    "c_1",
+    "c_2",
+    "I",
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "variable",
+        "x_0": "pivotpt",
+        "\\psi": "genfunc",
+        "\\psi_1": "firstfunc",
+        "\\psi_2": "secondfunc",
+        "C": "contifamily",
+        "T": "operator",
+        "c_1": "coeffone",
+        "c_2": "coefftwo",
+        "I": "interval",
+        "f": "weightfun"
+      },
+      "question": "A-5. Let \\( contifamily \\) denote the family of continuous functions on the real axis. Let \\( operator \\) be a mapping of \\( contifamily \\) into \\( contifamily \\) which has the following properties:\n1. \\( operator \\) is linear, i.e. \\( operator\\left(coeffone firstfunc+coefftwo secondfunc\\right)=coeffone operator firstfunc+coefftwo operator secondfunc \\), for \\( coeffone \\) and \\( coefftwo \\) real and \\( firstfunc \\) and \\( secondfunc \\) in \\( contifamily \\).\n2. \\( operator \\) is local, i.e. if \\( firstfunc \\equiv secondfunc \\) in some interval \\( interval \\) then also \\( operator firstfunc \\equiv operator secondfunc \\) holds in \\( interval \\).\n\nShow that \\( operator \\) must necessarily be of the form \\( operator genfunc(variable)=weightfun(variable) genfunc(variable) \\) where \\( weightfun(variable) \\) is a suitable continuous function.",
+      "solution": "A-5 We shall show that \\( operator genfunc(variable)=weightfun(variable) genfunc(variable) \\) for all \\( genfunc \\in contifamily \\), where \\( weightfun \\) is the image under \\( operator \\) of the function 1 which sends \\( variable \\) into 1 . For each \\( pivotpt \\) and \\( genfunc \\), define \\( genfunc^{\\prime} \\) by\n\\[\ngenfunc^{\\prime}(variable)=\\left\\{\\begin{array}{ll}\ngenfunc(variable) & \\text { if } variable \\leqq pivotpt \\\\\ngenfunc\\left(pivotpt\\right) & \\text { if } variable>pivotpt\n\\end{array}\\right.\n\\]\n\nSince \\( operator \\) is local we must have \\( operator genfunc^{\\prime}(variable)=operator genfunc(variable) \\) for all \\( variable \\leqq pivotpt \\). On the other hand, for \\( variable>pivotpt, operator genfunc^{\\prime}(variable)=genfunc\\left(pivotpt\\right) operator 1(variable)=genfunc\\left(pivotpt\\right) \\cdot weightfun(variable) \\). By continuity of \\( operator genfunc^{\\prime}, operator genfunc\\left(pivotpt\\right)=genfunc\\left(pivotpt\\right) \\) \\( \\cdot weightfun\\left(pivotpt\\right) \\).\n\nComment: The condition (1) is needed only in the case where \\( coefftwo=0 \\). Also the interval \\( interval \\) in condition (2) should be required to have positive measures since the problem is trivial if \\( interval \\) can be taken as a point."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "marigold",
+        "x_0": "hyacinths",
+        "\\\\psi": "sailboat",
+        "\\\\psi_1": "seashores",
+        "\\\\psi_2": "driftwood",
+        "C": "lanterns",
+        "T": "windchime",
+        "c_1": "moonlight",
+        "c_2": "starlight",
+        "I": "sandcastle",
+        "f": "raincloud"
+      },
+      "question": "A-5. Let \\( lanterns \\) denote the family of continuous functions on the real axis. Let \\( windchime \\) be a mapping of \\( lanterns \\) into \\( lanterns \\) which has the following properties:\n1. \\( windchime \\) is linear, i.e. \\( windchime\\left(moonlight seashores+starlight driftwood\\right)=moonlight windchime seashores+starlight windchime driftwood \\), for \\( moonlight \\) and \\( starlight \\) real and \\( seashores \\) and \\( driftwood \\) in \\( lanterns \\).\n2. \\( windchime \\) is local, i.e. if \\( seashores \\equiv driftwood \\) in some interval \\( sandcastle \\) then also \\( windchime seashores \\equiv windchime driftwood \\) holds in \\( sandcastle \\).\n\nShow that \\( windchime \\) must necessarily be of the form \\( windchime sailboat(marigold)=raincloud(marigold) sailboat(marigold) \\) where \\( raincloud(marigold) \\) is a suitable continuous function.",
+      "solution": "A-5 We shall show that \\( windchime sailboat(marigold)=raincloud(marigold) sailboat(marigold) \\) for all \\( sailboat \\in lanterns \\), where \\( raincloud \\) is the image under \\( windchime \\) of the function 1 which sends \\( marigold \\) into 1 . For each \\( hyacinths \\) and \\( sailboat \\), define \\( sailboat^{\\prime} \\) by\n\\[\nsailboat^{\\prime}(marigold)=\\left\\{\\begin{array}{ll}\nsailboat(marigold) & \\text { if } marigold \\leqq hyacinths \\\\\nsailboat\\left(hyacinths\\right) & \\text { if } marigold>hyacinths\n\\end{array}\\right.\n\\]\n\nSince \\( windchime \\) is local we must have \\( windchime sailboat^{\\prime}(marigold)=windchime sailboat(marigold) \\) for all \\( marigold \\leqq hyacinths \\). On the other hand, for \\( marigold>hyacinths, windchime sailboat^{\\prime}(marigold)=sailboat\\left(hyacinths\\right) windchime 1(marigold)=sailboat\\left(hyacinths\\right) \\cdot raincloud(marigold) \\). By continuity of \\( windchime sailboat^{\\prime}, windchime sailboat\\left(hyacinths\\right)=sailboat\\left(hyacinths\\right) \\cdot raincloud\\left(hyacinths\\right) \\).\n\nComment: The condition (1) is needed only in the case where \\( starlight=0 \\). Also the interval \\( sandcastle \\) in condition (2) should be required to have positive measures since the problem is trivial if \\( sandcastle \\) can be taken as a point."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedvalue",
+        "x_0": "movingpoint",
+        "\\psi": "nonfunction",
+        "\\psi_1": "nonfunctionone",
+        "\\psi_2": "nonfunctiontwo",
+        "C": "discretefamily",
+        "T": "stagnation",
+        "c_1": "variableone",
+        "c_2": "variabletwo",
+        "I": "singleton",
+        "f": "antiimage"
+      },
+      "question": "A-5. Let \\( discretefamily \\) denote the family of continuous functions on the real axis. Let \\( stagnation \\) be a mapping of \\( discretefamily \\) into \\( discretefamily \\) which has the following properties:\n1. \\( stagnation\\left(variableone nonfunctionone+variabletwo nonfunctiontwo\\right)=variableone stagnation nonfunctionone+variabletwo stagnation nonfunctiontwo \\), for \\( variableone \\) and \\( variabletwo \\) real and \\( nonfunctionone \\) and \\( nonfunctiontwo \\) in \\( discretefamily \\).\n2. \\( stagnation \\) is local, i.e. if \\( nonfunctionone \\equiv nonfunctiontwo \\) in some interval \\( singleton \\) then also \\( stagnation nonfunctionone \\equiv stagnation nonfunctiontwo \\) holds in \\( singleton \\).\n\nShow that \\( stagnation nonfunction(fixedvalue)=antiimage(fixedvalue) nonfunction(fixedvalue) \\) where \\( antiimage(fixedvalue) \\) is a suitable continuous function.",
+      "solution": "A-5 We shall show that \\( stagnation nonfunction(fixedvalue)=antiimage(fixedvalue) nonfunction(fixedvalue) \\) for all \\( nonfunction \\in discretefamily \\), where \\( antiimage \\) is the image under \\( stagnation \\) of the function 1 which sends \\( fixedvalue \\) into 1 . For each \\( movingpoint \\) and \\( nonfunction \\), define \\( nonfunction^{\\prime} \\) by\n\\[\nnonfunction^{\\prime}(fixedvalue)=\\left\\{\\begin{array}{ll}\nnonfunction(fixedvalue) & \\text { if } fixedvalue \\leqq movingpoint \\\\\nnonfunction\\left(movingpoint\\right) & \\text { if } fixedvalue>movingpoint\n\\end{array}\\right.\n\\]\n\nSince \\( stagnation \\) is local we must have \\( stagnation nonfunction^{\\prime}(fixedvalue)=stagnation nonfunction(fixedvalue) \\) for all \\( fixedvalue \\leqq movingpoint \\). On the other hand, for \\( fixedvalue>movingpoint, stagnation nonfunction^{\\prime}(fixedvalue)=nonfunction\\left(movingpoint\\right) stagnation 1(fixedvalue)=nonfunction\\left(movingpoint\\right) \\cdot antiimage(fixedvalue) \\). By continuity of \\( stagnation nonfunction^{\\prime}, stagnation nonfunction\\left(movingpoint\\right)=nonfunction\\left(movingpoint\\right) \\) \\( \\cdot antiimage\\left(movingpoint\\right) \\).\n\nComment: The condition (1) is needed only in the case where \\( variabletwo=0 \\). Also the interval \\( singleton \\) in condition (2) should be required to have positive measures since the problem is trivial if \\( singleton \\) can be taken as a point."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "x_0": "hjgrksla",
+        "\\\\psi": "rkdpfqmg",
+        "\\\\psi_1": "svlqwnbx",
+        "\\\\psi_2": "mbktzdre",
+        "C": "zcxdnphj",
+        "T": "plmshgvr",
+        "c_1": "wfqsnlzd",
+        "c_2": "ytmrdhpk",
+        "I": "nvbqslke",
+        "f": "gzxrfpqu"
+      },
+      "question": "A-5. Let \\( zcxdnphj \\) denote the family of continuous functions on the real axis. Let \\( plmshgvr \\) be a mapping of \\( zcxdnphj \\) into \\( zcxdnphj \\) which has the following properties:\n1. \\( plmshgvr \\) is linear, i.e. \\( plmshgvr\\left(wfqsnlzd svlqwnbx+ ytmrdhpk mbktzdre\\right)=wfqsnlzd plmshgvr svlqwnbx+ ytmrdhpk plmshgvr mbktzdre \\), for \\( wfqsnlzd \\) and \\( ytmrdhpk \\) real and \\( svlqwnbx \\) and \\( mbktzdre \\) in \\( zcxdnphj \\).\n2. \\( plmshgvr \\) is local, i.e. if \\( svlqwnbx \\equiv mbktzdre \\) in some interval \\( nvbqslke \\) then also \\( plmshgvr svlqwnbx \\equiv plmshgvr mbktzdre \\) holds in \\( nvbqslke \\).\n\nShow that \\( plmshgvr \\) must necessarily be of the form \\( plmshgvr rkdpfqmg(qzxwvtnp)=gzxrfpqu(qzxwvtnp) rkdpfqmg(qzxwvtnp) \\) where \\( gzxrfpqu(qzxwvtnp) \\) is a suitable continuous function.",
+      "solution": "A-5 We shall show that \\( plmshgvr rkdpfqmg(qzxwvtnp)=gzxrfpqu(qzxwvtnp) rkdpfqmg(qzxwvtnp) \\) for all \\( rkdpfqmg \\in zcxdnphj \\), where \\( gzxrfpqu \\) is the image under \\( plmshgvr \\) of the function 1 which sends \\( qzxwvtnp \\) into 1 . For each \\( hjgrksla \\) and \\( rkdpfqmg \\), define \\( rkdpfqmg^{\\prime} \\) by\n\\[\nrkdpfqmg^{\\prime}(qzxwvtnp)=\\left\\{\\begin{array}{ll}\nrkdpfqmg(qzxwvtnp) & \\text { if } qzxwvtnp \\leqq hjgrksla \\\\\nrkdpfqmg\\left(hjgrksla\\right) & \\text { if } qzxwvtnp>hjgrksla\n\\end{array}\\right.\n\\]\n\nSince \\( plmshgvr \\) is local we must have \\( plmshgvr rkdpfqmg^{\\prime}(qzxwvtnp)=plmshgvr rkdpfqmg(qzxwvtnp) \\) for all \\( qzxwvtnp \\leqq hjgrksla \\). On the other hand, for \\( qzxwvtnp>hjgrksla, plmshgvr rkdpfqmg^{\\prime}(qzxwvtnp)=rkdpfqmg\\left(hjgrksla\\right) plmshgvr 1(qzxwvtnp)=rkdpfqmg\\left(hjgrksla\\right) \\cdot gzxrfpqu(qzxwvtnp) \\). By continuity of \\( plmshgvr rkdpfqmg^{\\prime}, plmshgvr rkdpfqmg\\left(hjgrksla\\right)=rkdpfqmg\\left(hjgrksla\\right) \\cdot gzxrfpqu\\left(hjgrksla\\right) \\).\n\nComment: The condition (1) is needed only in the case where \\( ytmrdhpk=0 \\). Also the interval \\( nvbqslke \\) in condition (2) should be required to have positive measures since the problem is trivial if \\( nvbqslke \\) can be taken as a point."
+    },
+    "kernel_variant": {
+      "question": "Let\n    S^{1}=\\{e^{i\\theta}:\\,\\theta\\in[0,2\\pi)\\}\nbe the unit circle endowed with the sub-space topology that it inherits from \\(\\mathbb C\\).  Denote by \\(\\mathcal C(S^{1})\\) the real vector space of all real-valued continuous functions on that circle.\n\nFor a mapping  \\(T: \\mathcal C(S^{1})\\longrightarrow \\mathcal C(S^{1})\\) we say that\n\n(i)  \\(T\\) is linear if\n        \\[T(c_{1}\\psi_{1}+c_{2}\\psi_{2})=c_{1}T\\psi_{1}+c_{2}T\\psi_{2}\\qquad \\bigl(c_{1},c_{2}\\in\\mathbb R,\\,\\psi_{1},\\psi_{2}\\in\\mathcal C(S^{1})\\bigr).\\]\n\n(ii)  \\(T\\) is local if, whenever two functions \\(\\psi_{1},\\psi_{2}\\in\\mathcal C(S^{1})\\) coincide on a non-empty open arc  \\(I\\subset S^{1}\\), their images also coincide on that arc:\n        \\[\\psi_{1}\\equiv\\psi_{2}\\text{ on }I\\;\\Longrightarrow\\;T\\psi_{1}\\equiv T\\psi_{2}\\text{ on }I.\\]\n\nProve that there exists a (necessarily unique) continuous function \\(g\\colon S^{1}\\to\\mathbb R\\), depending only on \\(T\\), such that for every \\(\\psi\\in\\mathcal C(S^{1})\\) and every \\(\\zeta\\in S^{1}\\)\n        \\[T\\psi(\\zeta)=g(\\zeta)\\,\\psi(\\zeta).\\]\nIn other words, every linear and local operator on \\(\\mathcal C(S^{1})\\) is given by point-wise multiplication by a continuous function.",
+      "solution": "Step 0 -  A convenient model of the circle.\nWrite the circle as the quotient \\(\\mathbb R/2\\pi\\mathbb Z\\) and, for a 2\\(\\pi\\)-periodic continuous function \\(f\\colon\\mathbb R\\to\\mathbb R\\), put\n    \\[f^{\\flat}(e^{it}):=f(t),\\qquad t\\in\\mathbb R.\\]\nThe correspondence \\(f\\longmapsto f^{\\flat}\\) is a linear isomorphism between\n    \\[C_{\\mathrm{per}}:=\\{f\\in C(\\mathbb R):f(t+2\\pi)=f(t)\\ \\forall t\\}\\]\nand \\(\\mathcal C(S^{1})\\).\n\nDefine\n    \\[(\\widetilde T f)(t):=T(f^{\\flat})(e^{it}),\\qquad t\\in\\mathbb R.\\tag{0}\\]\nThen \\(\\widetilde T\\colon C_{\\mathrm{per}}\\to C_{\\mathrm{per}}\\) is linear and local in the following sense:\nif two 2\\(\\pi\\)-periodic functions coincide on an open interval of \\(\\mathbb R\\), so do their images under \\(\\widetilde T\\).  Our aim is to show that \\(\\widetilde T\\) is point-wise multiplication by a continuous 2\\(\\pi\\)-periodic function.  Once this is done, we will lift the result back to the circle via (0).\n\nStep 1 -  The multiplier on the constant function.\nLet \\(\\mathbf 1\\) be the constant function \\(1\\) on \\(\\mathbb R\\) and put\n    \\[h:=\\widetilde T\\mathbf 1\\in C_{\\mathrm{per}}.\\tag{1}\\]\nOur goal is to prove\n    \\[(\\widetilde T f)(x)=h(x)f(x)\\qquad\\bigl(f\\in C_{\\mathrm{per}},\\,x\\in\\mathbb R\\bigr).\\tag{2}\\]\n\nStep 2 -  A pair of auxiliary cut-off functions.\nFix \\(x_{0}\\in\\mathbb R\\) and \\(f\\in C_{\\mathrm{per}}\\).  Choose a number \\(\\varepsilon\\in(0,\\pi)\\) and construct two continuous 2\\(\\pi\\)-periodic cut-off functions\n\\(\\chi_{-}=\\chi_{-,\\varepsilon,x_{0}}\\) and \\(\\chi_{+}=\\chi_{+,\\varepsilon,x_{0}}\\) with the following properties (all equalities are understood modulo \\(2\\pi\\)):\n\n(a)  \\(\\chi_{-}(t)=0\\) for \\(t\\in[x_{0},x_{0}+\\varepsilon]\\) and \\(\\chi_{-}(t)=1\\) for \\(t\\in[x_{0}+\\varepsilon, x_{0}+2\\pi-\\varepsilon]\\).\n\n(b)  \\(\\chi_{+}(t)=0\\) for \\(t\\in[x_{0}-\\varepsilon,x_{0}]\\) and \\(\\chi_{+}(t)=1\\) for \\(t\\in[x_{0}+\\varepsilon, x_{0}+2\\pi-\\varepsilon]\\).\n\nIntuitively, \\(\\chi_{-}\\) cuts out a small arc immediately to the *right* of \\(x_{0}\\), whereas \\(\\chi_{+}\\) cuts out a small arc immediately to the *left* of \\(x_{0}\\).\n\nNow define two modified functions of \\(f\\):\n\\[\\begin{aligned}\n    f^{-}_{x_{0}}(t)&:=\\chi_{-}(t)\\,f(t)+\\bigl(1-\\chi_{-}(t)\\bigr)f(x_{0}),\\\\[2mm]\n    f^{+}_{x_{0}}(t)&:=\\chi_{+}(t)\\,f(t)+\\bigl(1-\\chi_{+}(t)\\bigr)f(x_{0}).\n\\end{aligned}\\]\nBoth belong to \\(C_{\\mathrm{per}}\\).  Their behaviour is summarised below.\n\n*  On the long open interval \\((x_{0}+\\varepsilon,x_{0}+2\\pi-\\varepsilon)\\) we have\n   \\(f^{-}_{x_{0}}\\equiv f^{+}_{x_{0}}\\equiv f.\\)\n\n*  On the short closed interval \\([x_{0},x_{0}+\\varepsilon]\\) we have\n   \\(f^{-}_{x_{0}}\\equiv f(x_{0}).\\)\n\n*  On the short closed interval \\([x_{0}-\\varepsilon,x_{0}]\\) we have\n   \\(f^{+}_{x_{0}}\\equiv f(x_{0}).\\)\n\nStep 3 -  Images of the cut-off functions.\nBy locality of \\(\\widetilde T\\) we obtain\n\\[\\begin{aligned}\n    (\\widetilde T f^{-}_{x_{0}})(t)&=\\begin{cases}\n        (\\widetilde T f)(t) &\\text{ for }t\\in(x_{0}+\\varepsilon,x_{0}+2\\pi-\\varepsilon),\\\\[4pt]\n        f(x_{0})\\,h(t)      &\\text{ for }t\\in[x_{0},x_{0}+\\varepsilon],\n    \\end{cases}\\\\[6pt]\n    (\\widetilde T f^{+}_{x_{0}})(t)&=\\begin{cases}\n        (\\widetilde T f)(t) &\\text{ for }t\\in(x_{0}+\\varepsilon,x_{0}+2\\pi-\\varepsilon),\\\\[4pt]\n        f(x_{0})\\,h(t)      &\\text{ for }t\\in[x_{0}-\\varepsilon,x_{0}].\n    \\end{cases}\n\\end{aligned}\\tag{3}\\]\n\nStep 4 -  Two directional limits of \\(\\widetilde T f\\) at \\(x_{0}\\).\nBecause \\(\\widetilde T f^{-}_{x_{0}}\\) and \\(\\widetilde T f^{+}_{x_{0}}\\) are continuous functions, taking limits in (3) gives\n\\[\\begin{aligned}\n    \\lim_{t\\to x_{0}^{+}} (\\widetilde T f)(t)&=\\lim_{t\\to x_{0}^{+}} (\\widetilde T f^{-}_{x_{0}})(t)=f(x_{0})\\,h(x_{0}),\\\\[4pt]\n    \\lim_{t\\to x_{0}^{-}} (\\widetilde T f)(t)&=\\lim_{t\\to x_{0}^{-}} (\\widetilde T f^{+}_{x_{0}})(t)=f(x_{0})\\,h(x_{0}).\n\\end{aligned}\\tag{4}\\]\n\nStep 5 -  The actual value of \\((\\widetilde T f)(x_{0})\\).\nThe function \\(\\widetilde T f\\) itself is continuous, so its one-sided limits in (4) must equal its value at the point:\n    \\[(\\widetilde T f)(x_{0})=f(x_{0})\\,h(x_{0}).\\tag{5}\\]\nSince neither \\(x_{0}\\) nor \\(f\\) was special, (5) holds for every \\(x\\in\\mathbb R\\) and every \\(f\\in C_{\\mathrm{per}}\\).  This proves (2):\n    \\[(\\widetilde T f)(x)=h(x)\\,f(x)\\qquad(f\\in C_{\\mathrm{per}},\\,x\\in\\mathbb R).\\]\nThus \\(\\widetilde T\\) is point-wise multiplication by the continuous 2\\(\\pi\\)-periodic function \\(h\\).\n\nStep 6 -  Returning to the circle.\nDefine \\(g\\in\\mathcal C(S^{1})\\) by\n    \\[g(e^{it}):=h(t),\\qquad t\\in\\mathbb R.\\]\nBecause \\(h\\) is continuous and 2\\(\\pi\\)-periodic, \\(g\\) is well-defined and continuous on \\(S^{1}\\).  For any \\(\\psi\\in\\mathcal C(S^{1})\\) choose the lift \\(f\\in C_{\\mathrm{per}}\\) with \\(f^{\\flat}=\\psi\\).  Using (0) and (2) we obtain, for every \\(t\\in\\mathbb R\\),\n    \\[T\\psi(e^{it})=(\\widetilde T f)(t)=h(t)\\,f(t)=g(e^{it})\\,\\psi(e^{it}).\\]\nSince every point \\(\\zeta\\in S^{1}\\) has the form \\(e^{it}\\), we have proved\n    \\[T\\psi(\\zeta)=g(\\zeta)\\,\\psi(\\zeta)\\qquad\\bigl(\\psi\\in\\mathcal C(S^{1}),\\,\\zeta\\in S^{1}\\bigr).\\tag{6}\\]\n\nStep 7 -  Uniqueness of the multiplier.\nIf \\(g_{1},g_{2}\\in\\mathcal C(S^{1})\\) both satisfy (6), then \\((g_{1}-g_{2})\\psi\\equiv0\\) for every \\(\\psi\\).  Taking \\(\\psi\\equiv1\\) we obtain \\(g_{1}\\equiv g_{2}\\).  Hence the multiplier is unique and the proof is complete.",
+      "_meta": {
+        "core_steps": [
+          "Define f := T(1).",
+          "For any ψ and point x0, build ψ′ that equals ψ on one side of x0 and the constant ψ(x0) on the other side.",
+          "Use locality to get Tψ′ = Tψ on the unchanged side and linearity to write Tψ′ = ψ(x0)·f on the constant side.",
+          "Invoke continuity at x0 to equate the two one-sided limits: Tψ(x0) = ψ(x0)·f(x0).",
+          "Since x0 and ψ were arbitrary, conclude Tψ = f·ψ for every ψ."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Underlying set on which the functions are defined (only needs to be a connected 1-D topological domain).",
+            "original": "real axis"
+          },
+          "slot2": {
+            "description": "Constant function chosen to define the multiplier f.",
+            "original": "1"
+          },
+          "slot3": {
+            "description": "Side of x0 on which ψ is replaced by the constant value when constructing ψ′.",
+            "original": "x > x0"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

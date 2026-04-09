@@ -1,0 +1,122 @@
+{
+  "index": "1976-B-4",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "B-4. For a point \\( P \\) on an ellipse, let \\( d \\) be the distance from the center of the ellipse to the line tangent to the ellipse at \\( P \\). Prove that \\( \\left(P F_{1}\\right)\\left(P F_{2}\\right) d^{2} \\) is constant as \\( P \\) varies on the ellipse, where \\( P F_{1} \\) and \\( P F_{2} \\) are the distances from \\( P \\) to the foci \\( F_{1} \\) and \\( F_{2} \\) of the ellipse.",
+  "solution": "B-4.\nWe let \\( P=(x, y) \\) and the ellipse have the equation \\( b^{2} x^{2}+a^{2} y^{2}=a^{2} b^{2} \\), with \\( a>b>0 \\). Then \\( F_{1}=(-c, 0) \\) and \\( F_{2}=(c, 0) \\) with \\( c^{2}=a^{2}-b^{2} \\). Let \\( r_{1}=P F_{1} \\) and \\( r_{2}=P F_{2} \\). Then \\( r_{1}+r_{2}=2 a \\) and\n\\[\n\\begin{aligned}\nr_{1} r_{2} & =\\left(\\frac{1}{2}\\right)\\left[\\left(r_{1}+r_{2}\\right)^{2}-r_{1}^{2}-r_{2}^{2}\\right] \\\\\n& =\\left(\\frac{1}{2}\\right)\\left[4 a^{2}-(x+c)^{2}-y^{2}-(x-c)^{2}-y^{2}\\right] \\\\\n& =2 a^{2}-x^{2}-y^{2}-c^{2}=a^{2}+b^{2}-x^{2}-y^{2} .\n\\end{aligned}\n\\]\n\nA point \\( (u, v) \\) on the tangent to the ellipse at \\( P \\) satisfies\n\\[\n\\frac{x u}{a^{2}}+\\frac{y v}{b^{2}}=1 .\n\\]\n\nPutting this in the form \\( u \\cos \\theta+v \\sin \\theta=d \\), one finds that\n\\[\nd^{2}=\\frac{1}{\\left(x / a^{2}\\right)^{2}+\\left(y / b^{2}\\right)^{2}}=\\frac{a^{4} b^{4}}{b^{4} x^{2}+a^{4} y^{2}} .\n\\]\n\nBut \\( \\quad b^{4} x^{2}+a^{4} y^{2}=b^{2}\\left(a^{2} b^{2}-a^{2} y^{2}\\right)+a^{2}\\left(a^{2} b^{2}-b^{2} x^{2}\\right)=a^{2} b^{2}\\left(a^{2}+b^{2}-x^{2}-y^{2}\\right)=a^{2} b^{2} r_{1} r_{2} \\). Hence \\( d^{2} r_{1} r_{2}=a^{4} b^{4} r_{1} r_{2} / a^{2} b^{2} r_{1} r_{2}=a^{2} b^{2} \\), a constant.",
+  "vars": [
+    "x",
+    "y",
+    "u",
+    "v",
+    "d",
+    "P",
+    "r_1",
+    "r_2",
+    "\\\\theta"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "F_1",
+    "F_2"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "xcoordi",
+        "y": "ycoordi",
+        "u": "ucoordi",
+        "v": "vcoordi",
+        "d": "tandist",
+        "P": "ellippoint",
+        "r_1": "distfocone",
+        "r_2": "distfoctwo",
+        "\\theta": "anglethe",
+        "a": "semimaj",
+        "b": "semimin",
+        "c": "focaldis",
+        "F_1": "focusone",
+        "F_2": "focustwo"
+      },
+      "question": "B-4. For a point \\( ellippoint \\) on an ellipse, let \\( tandist \\) be the distance from the center of the ellipse to the line tangent to the ellipse at \\( ellippoint \\). Prove that \\( \\left(ellippoint focusone\\right)\\left(ellippoint focustwo\\right) tandist^{2} \\) is constant as \\( ellippoint \\) varies on the ellipse, where \\( ellippoint focusone \\) and \\( ellippoint focustwo \\) are the distances from \\( ellippoint \\) to the foci \\( focusone \\) and \\( focustwo \\) of the ellipse.",
+      "solution": "B-4.\nWe let \\( ellippoint=(xcoordi, ycoordi) \\) and the ellipse have the equation \\( semimin^{2} xcoordi^{2}+semimaj^{2} ycoordi^{2}=semimaj^{2} semimin^{2} \\), with \\( semimaj>semimin>0 \\). Then \\( focusone=(-focaldis, 0) \\) and \\( focustwo=(focaldis, 0) \\) with \\( focaldis^{2}=semimaj^{2}-semimin^{2} \\). Let \\( distfocone=ellippoint focusone \\) and \\( distfoctwo=ellippoint focustwo \\). Then \\( distfocone+distfoctwo=2 semimaj \\) and\n\\[\n\\begin{aligned}\ndistfocone \\, distfoctwo &= \\left(\\frac{1}{2}\\right)\\left[\\left(distfocone+distfoctwo\\right)^{2}-distfocone^{2}-distfoctwo^{2}\\right] \\\\\n&= \\left(\\frac{1}{2}\\right)\\left[4 semimaj^{2}-(xcoordi+focaldis)^{2}-ycoordi^{2}-(xcoordi-focaldis)^{2}-ycoordi^{2}\\right] \\\\\n&= 2 semimaj^{2}-xcoordi^{2}-ycoordi^{2}-focaldis^{2}=semimaj^{2}+semimin^{2}-xcoordi^{2}-ycoordi^{2}.\n\\end{aligned}\n\\]\n\nA point \\( (ucoordi, vcoordi) \\) on the tangent to the ellipse at \\( ellippoint \\) satisfies\n\\[\n\\frac{xcoordi\\, ucoordi}{semimaj^{2}}+\\frac{ycoordi\\, vcoordi}{semimin^{2}}=1 .\n\\]\n\nPutting this in the form \\( ucoordi \\cos anglethe+vcoordi \\sin anglethe=tandist \\), one finds that\n\\[\ntandist^{2}=\\frac{1}{\\left(xcoordi / semimaj^{2}\\right)^{2}+\\left(ycoordi / semimin^{2}\\right)^{2}}=\\frac{semimaj^{4} semimin^{4}}{semimin^{4} xcoordi^{2}+semimaj^{4} ycoordi^{2}} .\n\\]\n\nBut \\( \\quad semimin^{4} xcoordi^{2}+semimaj^{4} ycoordi^{2}=semimin^{2}\\left(semimaj^{2} semimin^{2}-semimaj^{2} ycoordi^{2}\\right)+semimaj^{2}\\left(semimaj^{2} semimin^{2}-semimin^{2} xcoordi^{2}\\right)=semimaj^{2} semimin^{2}\\left(semimaj^{2}+semimin^{2}-xcoordi^{2}-ycoordi^{2}\\right)=semimaj^{2} semimin^{2} distfocone \\, distfoctwo \\). Hence \\( tandist^{2} distfocone distfoctwo=semimaj^{4} semimin^{4} distfocone distfoctwo / semimaj^{2} semimin^{2} distfocone distfoctwo=semimaj^{2} semimin^{2} \\), a constant."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "sunflower",
+        "y": "helicopter",
+        "u": "wardrobe",
+        "v": "teaspoon",
+        "d": "mandolin",
+        "P": "avalanche",
+        "r_1": "marathon",
+        "r_2": "saxophone",
+        "\\theta": "pineapple",
+        "a": "diamond",
+        "b": "molecule",
+        "c": "landscape",
+        "F_1": "cathedral",
+        "F_2": "waterfall"
+      },
+      "question": "B-4. For a point \\( avalanche \\) on an ellipse, let \\( mandolin \\) be the distance from the center of the ellipse to the line tangent to the ellipse at \\( avalanche \\). Prove that \\( \\left(avalanche cathedral\\right)\\left(avalanche waterfall\\right) mandolin^{2} \\) is constant as \\( avalanche \\) varies on the ellipse, where \\( avalanche cathedral \\) and \\( avalanche waterfall \\) are the distances from \\( avalanche \\) to the foci \\( cathedral \\) and \\( waterfall \\) of the ellipse.",
+      "solution": "B-4.\nWe let \\( avalanche=(sunflower, helicopter) \\) and the ellipse have the equation \\( molecule^{2} sunflower^{2}+diamond^{2} helicopter^{2}=diamond^{2} molecule^{2} \\), with \\( diamond>molecule>0 \\). Then \\( cathedral=(-landscape, 0) \\) and \\( waterfall=(landscape, 0) \\) with \\( landscape^{2}=diamond^{2}-molecule^{2} \\). Let \\( marathon=avalanche cathedral \\) and \\( saxophone=avalanche waterfall \\). Then \\( marathon+saxophone=2 diamond \\) and\n\\[\n\\begin{aligned}\nmarathon\\, saxophone & =\\left(\\frac{1}{2}\\right)\\left[\\left(marathon+saxophone\\right)^{2}-marathon^{2}-saxophone^{2}\\right] \\\\ & =\\left(\\frac{1}{2}\\right)\\left[4 diamond^{2}-(sunflower+landscape)^{2}-helicopter^{2}-(sunflower-landscape)^{2}-helicopter^{2}\\right] \\\\ & =2 diamond^{2}-sunflower^{2}-helicopter^{2}-landscape^{2}=diamond^{2}+molecule^{2}-sunflower^{2}-helicopter^{2} .\n\\end{aligned}\n\\]\n\nA point \\( (wardrobe, teaspoon) \\) on the tangent to the ellipse at \\( avalanche \\) satisfies\n\\[\n\\frac{sunflower\\, wardrobe}{diamond^{2}}+\\frac{helicopter\\, teaspoon}{molecule^{2}}=1 .\n\\]\n\nPutting this in the form \\( wardrobe \\cos pineapple+teaspoon \\sin pineapple=mandolin \\), one finds that\n\\[\nmandolin^{2}=\\frac{1}{\\left(sunflower / diamond^{2}\\right)^{2}+\\left(helicopter / molecule^{2}\\right)^{2}}=\\frac{diamond^{4} molecule^{4}}{molecule^{4} sunflower^{2}+diamond^{4} helicopter^{2}} .\n\\]\n\nBut\n\\[\nmolecule^{4} sunflower^{2}+diamond^{4} helicopter^{2}=molecule^{2}\\left(diamond^{2} molecule^{2}-diamond^{2} helicopter^{2}\\right)+diamond^{2}\\left(diamond^{2} molecule^{2}-molecule^{2} sunflower^{2}\\right)=diamond^{2} molecule^{2}\\left(diamond^{2}+molecule^{2}-sunflower^{2}-helicopter^{2}\\right)=diamond^{2} molecule^{2} marathon\\, saxophone .\n\\]\nHence \\( mandolin^{2} marathon\\, saxophone=diamond^{4} molecule^{4} marathon\\, saxophone / diamond^{2} molecule^{2} marathon\\, saxophone=diamond^{2} molecule^{2} \\), a constant."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "u": "stationary",
+        "v": "stillness",
+        "d": "closeness",
+        "P": "centerpoint",
+        "r_1": "proximityone",
+        "r_2": "proximitytwo",
+        "\\theta": "straightangle",
+        "a": "minorsemi",
+        "b": "majorsemi",
+        "c": "centerdistance",
+        "F_1": "secondvertex",
+        "F_2": "firstvertex"
+      },
+      "question": "B-4. For a point \\( centerpoint \\) on an ellipse, let \\( closeness \\) be the distance from the center of the ellipse to the line tangent to the ellipse at \\( centerpoint \\). Prove that \\( \\left(centerpoint secondvertex\\right)\\left(centerpoint firstvertex\\right) closeness^{2} \\) is constant as \\( centerpoint \\) varies on the ellipse, where \\( centerpoint secondvertex \\) and \\( centerpoint firstvertex \\) are the distances from \\( centerpoint \\) to the foci \\( secondvertex \\) and \\( firstvertex \\) of the ellipse.",
+      "solution": "B-4.\nWe let \\( centerpoint=(verticalaxis, horizontalaxis) \\) and the ellipse have the equation \\( majorsemi^{2} verticalaxis^{2}+minorsemi^{2} horizontalaxis^{2}=minorsemi^{2} majorsemi^{2} \\), with \\( minorsemi>majorsemi>0 \\). Then \\( secondvertex=(-centerdistance, 0) \\) and \\( firstvertex=(centerdistance, 0) \\) with \\( centerdistance^{2}=minorsemi^{2}-majorsemi^{2} \\). Let \\( proximityone=centerpoint secondvertex \\) and \\( proximitytwo=centerpoint firstvertex \\). Then \\( proximityone+proximitytwo=2 minorsemi \\) and\n\\[\n\\begin{aligned}\nproximityone proximitytwo & =\\left(\\frac{1}{2}\\right)\\left[\\left(proximityone+proximitytwo\\right)^{2}-proximityone^{2}-proximitytwo^{2}\\right] \\\\\n& =\\left(\\frac{1}{2}\\right)\\left[4 minorsemi^{2}-(verticalaxis+centerdistance)^{2}-horizontalaxis^{2}-(verticalaxis-centerdistance)^{2}-horizontalaxis^{2}\\right] \\\\\n& =2 minorsemi^{2}-verticalaxis^{2}-horizontalaxis^{2}-centerdistance^{2}=minorsemi^{2}+majorsemi^{2}-verticalaxis^{2}-horizontalaxis^{2} .\n\\end{aligned}\n\\]\n\nA point \\( (stationary, stillness) \\) on the tangent to the ellipse at \\( centerpoint \\) satisfies\n\\[\n\\frac{verticalaxis\\,stationary}{minorsemi^{2}}+\\frac{horizontalaxis\\,stillness}{majorsemi^{2}}=1 .\n\\]\n\nPutting this in the form \\( stationary \\cos straightangle+stillness \\sin straightangle=closeness \\), one finds that\n\\[\ncloseness^{2}=\\frac{1}{\\left(verticalaxis / minorsemi^{2}\\right)^{2}+\\left(horizontalaxis / majorsemi^{2}\\right)^{2}}=\\frac{minorsemi^{4} majorsemi^{4}}{majorsemi^{4} verticalaxis^{2}+minorsemi^{4} horizontalaxis^{2}} .\n\\]\n\nBut \\( \\quad majorsemi^{4} verticalaxis^{2}+minorsemi^{4} horizontalaxis^{2}=majorsemi^{2}\\left(minorsemi^{2} majorsemi^{2}-minorsemi^{2} horizontalaxis^{2}\\right)+minorsemi^{2}\\left(minorsemi^{2} majorsemi^{2}-majorsemi^{2} verticalaxis^{2}\\right)=minorsemi^{2} majorsemi^{2}\\left(minorsemi^{2}+majorsemi^{2}-verticalaxis^{2}-horizontalaxis^{2}\\right)=minorsemi^{2} majorsemi^{2} proximityone proximitytwo \\). Hence \\( closeness^{2} proximityone proximitytwo=minorsemi^{4} majorsemi^{4} proximityone proximitytwo / minorsemi^{2} majorsemi^{2} proximityone proximitytwo=minorsemi^{2} majorsemi^{2} \\), a constant."
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "u": "fnvrixoc",
+        "v": "tmlqspra",
+        "d": "wkcjzmve",
+        "P": "nldfskui",
+        "r_1": "ehvtrmbo",
+        "r_2": "pkxjdasw",
+        "\\theta": "gbsfplmn",
+        "a": "zljquyem",
+        "b": "pdkvosha",
+        "c": "roidhcjq",
+        "F_1": "lznpqwer",
+        "F_2": "aqmfzvtd"
+      },
+      "question": "B-4. For a point \\( nldfskui \\) on an ellipse, let \\( wkcjzmve \\) be the distance from the center of the ellipse to the line tangent to the ellipse at \\( nldfskui \\). Prove that \\( \\left(nldfskui lznpqwer\\right)\\left(nldfskui aqmfzvtd\\right) wkcjzmve^{2} \\) is constant as \\( nldfskui \\) varies on the ellipse, where \\( nldfskui lznpqwer \\) and \\( nldfskui aqmfzvtd \\) are the distances from \\( nldfskui \\) to the foci \\( lznpqwer \\) and \\( aqmfzvtd \\) of the ellipse.",
+      "solution": "B-4.\nWe let \\( nldfskui=(qzxwvtnp, hjgrksla) \\) and the ellipse have the equation \\( pdkvosha^{2} qzxwvtnp^{2}+zljquyem^{2} hjgrksla^{2}=zljquyem^{2} pdkvosha^{2} \\), with \\( zljquyem>pdkvosha>0 \\). Then \\( lznpqwer=(-roidhcjq, 0) \\) and \\( aqmfzvtd=(roidhcjq, 0) \\) with \\( roidhcjq^{2}=zljquyem^{2}-pdkvosha^{2} \\). Let \\( ehvtrmbo=nldfskui lznpqwer \\) and \\( pkxjdasw=nldfskui aqmfzvtd \\). Then \\( ehvtrmbo+pkxjdasw=2 zljquyem \\) and\n\\[\n\\begin{aligned}\nehvtrmbo \\, pkxjdasw & =\\left(\\frac{1}{2}\\right)\\left[\\left(ehvtrmbo+pkxjdasw\\right)^{2}-ehvtrmbo^{2}-pkxjdasw^{2}\\right] \\\\\n& =\\left(\\frac{1}{2}\\right)\\left[4 zljquyem^{2}-(qzxwvtnp+roidhcjq)^{2}-hjgrksla^{2}-(qzxwvtnp-roidhcjq)^{2}-hjgrksla^{2}\\right] \\\\\n& =2 zljquyem^{2}-qzxwvtnp^{2}-hjgrksla^{2}-roidhcjq^{2}=zljquyem^{2}+pdkvosha^{2}-qzxwvtnp^{2}-hjgrksla^{2} .\n\\end{aligned}\n\\]\n\nA point \\( (fnvrixoc, tmlqspra) \\) on the tangent to the ellipse at \\( nldfskui \\) satisfies\n\\[\n\\frac{qzxwvtnp \\, fnvrixoc}{zljquyem^{2}}+\\frac{hjgrksla \\, tmlqspra}{pdkvosha^{2}}=1 .\n\\]\n\nPutting this in the form \\( fnvrixoc \\cos gbsfplmn+tmlqspra \\sin gbsfplmn=wkcjzmve \\), one finds that\n\\[\nwkcjzmve^{2}=\\frac{1}{\\left(qzxwvtnp / zljquyem^{2}\\right)^{2}+\\left(hjgrksla / pdkvosha^{2}\\right)^{2}}=\\frac{zljquyem^{4} pdkvosha^{4}}{pdkvosha^{4} qzxwvtnp^{2}+zljquyem^{4} hjgrksla^{2}} .\n\\]\n\nBut \\( \\quad pdkvosha^{4} qzxwvtnp^{2}+zljquyem^{4} hjgrksla^{2}=pdkvosha^{2}\\left(zljquyem^{2} pdkvosha^{2}-zljquyem^{2} hjgrksla^{2}\\right)+zljquyem^{2}\\left(zljquyem^{2} pdkvosha^{2}-pdkvosha^{2} qzxwvtnp^{2}\\right)=zljquyem^{2} pdkvosha^{2}\\left(zljquyem^{2}+pdkvosha^{2}-qzxwvtnp^{2}-hjgrksla^{2}\\right)=zljquyem^{2} pdkvosha^{2} \\, ehvtrmbo \\, pkxjdasw \\). Hence \\( wkcjzmve^{2} \\, ehvtrmbo \\, pkxjdasw=zljquyem^{4} pdkvosha^{4} \\, ehvtrmbo \\, pkxjdasw / zljquyem^{2} pdkvosha^{2} \\, ehvtrmbo \\, pkxjdasw=zljquyem^{2} pdkvosha^{2} \\), a constant."
+    },
+    "kernel_variant": {
+      "question": "Let m > n > 0 and consider the prolate spheroid  \n  n^2(x^2 + y^2) + m^2z^2 = m^2n^2,  (*)  \nwhose axis of revolution is the z-axis.  \nIts two foci are  \n  F_1 = (0,0,-\\sqrt{m^2-n^2}), F_2 = (0,0, \\sqrt{m^2-n^2}).  \nFor a point P on (*) let \\pi  be the tangent plane at P and let d be the perpendicular distance from the origin to \\pi .  \nProve that the quantity  \n  (PF_1)(PF_2) d^2  \nis the same for every point P on the spheroid.",
+      "solution": "Write P = (x,y,z).  Put f^2 = m^2-n^2 and denote r_1 = PF_1, r_2 = PF_2.  \nBecause each meridian section is the ellipse whose major axis is 2m, we have  \n r_1 + r_2 = 2m.  \n\n1. Compute r_1r_2.  \n r_1^2 + r_2^2 = 2(x^2 + y^2 + z^2 + f^2), whence  \n r_1r_2 = [(r_1 + r_2)^2 - (r_1^2 + r_2^2)]/2  \n    = m^2 + n^2 - (x^2 + y^2 + z^2). (1)\n\n2. Tangent plane.  For  \n G(x,y,z)=n^2(x^2+y^2)+m^2z^2-m^2n^2  \nwe have \\nabla G(P)=(2n^2x, 2n^2y, 2m^2z); hence \\pi  is  \n n^2x u + n^2y v + m^2z w = m^2n^2. (2)\n\n3. Distance from the origin.  From (2)  \n d^2=(m^2n^2)^2/[n^4(x^2+y^2)+m^4z^2]. (3)\n\n4. Relate the denominator.  Using (*) we find  \n n^4(x^2+y^2)+m^4z^2  \n  = n^2(m^2n^2-m^2z^2)+m^2(m^2n^2-n^2(x^2+y^2))  \n  = m^2n^2[m^2+n^2-(x^2+y^2+z^2)]  \n  = m^2n^2 r_1r_2. (4)\n\n5. Insert (4) into (3): d^2 = m^2n^2/(r_1r_2).  \nTherefore (PF_1)(PF_2)d^2 = r_1r_2 d^2 = m^2n^2, a constant independent of P. \\blacksquare ",
+      "_replacement_note": {
+        "replaced_at": "2025-07-05T22:17:12.109647",
+        "reason": "Original kernel variant was too easy compared to the original problem"
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

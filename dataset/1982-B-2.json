@@ -1,0 +1,122 @@
+{
+  "index": "1982-B-2",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-2\nLet \\( A(x, y) \\) denote the number of points \\( (m, n) \\) in the plane with integer coordinates \\( m \\) and \\( n \\) satisfying \\( m^{2}+n^{2} \\leqslant x^{2}+y^{2} \\). Let \\( g=\\sum_{k=0}^{\\infty} e^{-k^{2}} \\). Express\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} A(x, y) e^{-x^{2}-1^{2}} d x d y\n\\]\nas a polynomial in \\( g \\).",
+  "solution": "B-2.\nLet \\( r=\\sqrt{x^{2}+y^{2}}, R(m, n)=\\left\\{(x, y): m^{2}+n^{2} \\leqslant x^{2}+y^{2}\\right\\} \\), and\n\\[\nI=\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} A(x, y) e^{-x^{2}-y^{2}} d x d y\n\\]\n\nLet \\( \\Sigma \\) and \\( \\Sigma^{\\prime} \\) denote sums over all integers \\( m \\) and over all integers \\( n \\), respectively. Then\n\\[\n\\begin{aligned}\nI & =\\sum \\sum \\prime \\iint_{R(m, n)} e^{-x^{2}-y^{2}} d x d y \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\int_{\\sqrt{m^{2}+n^{2}}}^{\\infty} e^{-r^{2}} r d r d \\theta \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi}\\left[-\\frac{1}{2} e^{-r^{2}}\\right]_{\\sqrt{m^{2}+n^{2}}}^{\\infty} d \\theta \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\frac{1}{2} e^{-m^{2}-n^{2}} d \\theta \\\\\n& =\\sum \\sum \\sum^{\\prime} \\pi e^{-m^{2}-n^{2}}=\\pi\\left(\\sum e^{-m^{2}}\\right)\\left(\\sum^{\\prime} e^{-n^{2}}\\right)=\\pi(2 g-1)^{2}\n\\end{aligned}\n\\]",
+  "vars": [
+    "x",
+    "y",
+    "m",
+    "n",
+    "k",
+    "r",
+    "\\\\theta"
+  ],
+  "params": [
+    "A",
+    "g",
+    "R",
+    "I"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "horizcoor",
+        "y": "vertcoor",
+        "m": "latticehoriz",
+        "n": "latticevert",
+        "k": "seriesindex",
+        "r": "polaradius",
+        "\\theta": "polangle",
+        "A": "countfunc",
+        "g": "gaussiansum",
+        "R": "regionfunc",
+        "I": "integralval"
+      },
+      "question": "Problem B-2\nLet \\( countfunc(horizcoor, vertcoor) \\) denote the number of points \\( (latticehoriz, latticevert) \\) in the plane with integer coordinates \\( latticehoriz \\) and \\( latticevert \\) satisfying \\( latticehoriz^{2}+latticevert^{2} \\leqslant horizcoor^{2}+vertcoor^{2} \\). Let \\( gaussiansum=\\sum_{seriesindex=0}^{\\infty} e^{-seriesindex^{2}} \\). Express\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} countfunc(horizcoor, vertcoor) e^{-horizcoor^{2}-1^{2}} d horizcoor d vertcoor\n\\]\nas a polynomial in \\( gaussiansum \\).",
+      "solution": "B-2.\nLet \\( polaradius=\\sqrt{horizcoor^{2}+vertcoor^{2}}, regionfunc(latticehoriz, latticevert)=\\left\\{(horizcoor, vertcoor): latticehoriz^{2}+latticevert^{2} \\leqslant horizcoor^{2}+vertcoor^{2}\\right\\} \\), and\n\\[\nintegralval=\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} countfunc(horizcoor, vertcoor) e^{-horizcoor^{2}-vertcoor^{2}} d horizcoor d vertcoor\n\\]\n\nLet \\( \\Sigma \\) and \\( \\Sigma^{\\prime} \\) denote sums over all integers \\( latticehoriz \\) and over all integers \\( latticevert \\), respectively. Then\n\\[\n\\begin{aligned}\nintegralval & =\\sum \\sum \\prime \\iint_{regionfunc(latticehoriz, latticevert)} e^{-horizcoor^{2}-vertcoor^{2}} d horizcoor d vertcoor \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\int_{\\sqrt{latticehoriz^{2}+latticevert^{2}}}^{\\infty} e^{-polaradius^{2}} polaradius d polaradius d polangle \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi}\\left[-\\frac{1}{2} e^{-polaradius^{2}}\\right]_{\\sqrt{latticehoriz^{2}+latticevert^{2}}}^{\\infty} d polangle \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\frac{1}{2} e^{-latticehoriz^{2}-latticevert^{2}} d polangle \\\\\n& =\\sum \\sum \\sum^{\\prime} \\pi e^{-latticehoriz^{2}-latticevert^{2}}=\\pi\\left(\\sum e^{-latticehoriz^{2}}\\right)\\left(\\sum^{\\prime} e^{-latticevert^{2}}\\right)=\\pi(2 gaussiansum-1)^{2}\n\\end{aligned}\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "hollyhock",
+        "y": "buttercup",
+        "m": "dandelion",
+        "n": "elderberry",
+        "k": "marigold",
+        "r": "snowdrops",
+        "\\theta": "lilacbush",
+        "A": "windflower",
+        "g": "spiderwort",
+        "R": "harebell",
+        "I": "foxglove"
+      },
+      "question": "Problem B-2\nLet \\( windflower(hollyhock, buttercup) \\) denote the number of points \\( (dandelion, elderberry) \\) in the plane with integer coordinates \\( dandelion \\) and \\( elderberry \\) satisfying \\( dandelion^{2}+elderberry^{2} \\leqslant hollyhock^{2}+buttercup^{2} \\). Let \\( spiderwort=\\sum_{marigold=0}^{\\infty} e^{-marigold^{2}} \\). Express\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} windflower(hollyhock, buttercup) e^{-hollyhock^{2}-1^{2}} d hollyhock d buttercup\n\\]\nas a polynomial in \\( spiderwort \\).",
+      "solution": "B-2.\nLet \\( snowdrops=\\sqrt{hollyhock^{2}+buttercup^{2}}, harebell(dandelion, elderberry)=\\left\\{(hollyhock, buttercup): dandelion^{2}+elderberry^{2} \\leqslant hollyhock^{2}+buttercup^{2}\\right\\} \\), and\n\\[\nfoxglove=\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} windflower(hollyhock, buttercup) e^{-hollyhock^{2}-buttercup^{2}} d hollyhock d buttercup\n\\]\n\nLet \\( \\Sigma \\) and \\( \\Sigma^{\\prime} \\) denote sums over all integers \\( dandelion \\) and over all integers \\( elderberry \\), respectively. Then\n\\[\n\\begin{aligned}\nfoxglove & =\\sum \\sum \\prime \\iint_{harebell(dandelion, elderberry)} e^{-hollyhock^{2}-buttercup^{2}} d hollyhock d buttercup \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\int_{\\sqrt{dandelion^{2}+elderberry^{2}}}^{\\infty} e^{-snowdrops^{2}} snowdrops d snowdrops d lilacbush \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi}\\left[-\\frac{1}{2} e^{-snowdrops^{2}}\\right]_{\\sqrt{dandelion^{2}+elderberry^{2}}}^{\\infty} d lilacbush \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\frac{1}{2} e^{-dandelion^{2}-elderberry^{2}} d lilacbush \\\\\n& =\\sum \\sum \\sum^{\\prime} \\pi e^{-dandelion^{2}-elderberry^{2}}=\\pi\\left(\\sum e^{-dandelion^{2}}\\right)\\left(\\sum^{\\prime} e^{-elderberry^{2}}\\right)=\\pi(2 spiderwort-1)^{2}\n\\end{aligned}\n\\]\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "verticalaxis",
+        "y": "horizontalaxis",
+        "m": "continuousvar",
+        "n": "realvariable",
+        "k": "singleton",
+        "r": "nonradial",
+        "\\theta": "lengthmeasure",
+        "A": "densityfunc",
+        "g": "difference",
+        "R": "singletonset",
+        "I": "summation"
+      },
+      "question": "Problem B-2\nLet \\( densityfunc(verticalaxis, horizontalaxis) \\) denote the number of points \\( (continuousvar, realvariable) \\) in the plane with integer coordinates \\( continuousvar \\) and \\( realvariable \\) satisfying \\( continuousvar^{2}+realvariable^{2} \\leqslant verticalaxis^{2}+horizontalaxis^{2} \\). Let \\( difference=\\sum_{singleton=0}^{\\infty} e^{-singleton^{2}} \\). Express\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} densityfunc(verticalaxis, horizontalaxis) e^{-verticalaxis^{2}-1^{2}} d verticalaxis d horizontalaxis\n\\]\nas a polynomial in \\( difference \\).",
+      "solution": "B-2.\nLet \\( nonradial=\\sqrt{verticalaxis^{2}+horizontalaxis^{2}}, singletonset(continuousvar, realvariable)=\\left\\{(verticalaxis, horizontalaxis): continuousvar^{2}+realvariable^{2} \\leqslant verticalaxis^{2}+horizontalaxis^{2}\\right\\} \\), and\n\\[\nsummation=\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} densityfunc(verticalaxis, horizontalaxis) e^{-verticalaxis^{2}-horizontalaxis^{2}} d verticalaxis d horizontalaxis\n\\]\n\nLet \\( \\Sigma \\) and \\( \\Sigma^{\\prime} \\) denote sums over all integers \\( continuousvar \\) and over all integers \\( realvariable \\), respectively. Then\n\\[\n\\begin{aligned}\nsummation & =\\sum \\sum \\prime \\iint_{singletonset(continuousvar, realvariable)} e^{-verticalaxis^{2}-horizontalaxis^{2}} d verticalaxis d horizontalaxis \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\int_{\\sqrt{continuousvar^{2}+realvariable^{2}}}^{\\infty} e^{-nonradial^{2}} nonradial d nonradial d lengthmeasure \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi}\\left[-\\frac{1}{2} e^{-nonradial^{2}}\\right]_{\\sqrt{continuousvar^{2}+realvariable^{2}}}^{\\infty} d lengthmeasure \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\frac{1}{2} e^{-continuousvar^{2}-realvariable^{2}} d lengthmeasure \\\\\n& =\\sum \\sum \\sum^{\\prime} \\pi e^{-continuousvar^{2}-realvariable^{2}}=\\pi\\left(\\sum e^{-continuousvar^{2}}\\right)\\left(\\sum^{\\prime} e^{-realvariable^{2}}\\right)=\\pi(2 difference-1)^{2}\n\\end{aligned}\n\\]"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "y": "hjgrksla",
+        "m": "brtclvxi",
+        "n": "sdmqpfuz",
+        "k": "vnyhgeoa",
+        "r": "pkezmoqs",
+        "\\theta": "lqwpznrk",
+        "A": "fjxearmv",
+        "g": "knyrsvqd",
+        "R": "uyoadnzc",
+        "I": "wprvouks"
+      },
+      "question": "Problem B-2\nLet \\( fjxearmv(qzxwvtnp, hjgrksla) \\) denote the number of points \\( (brtclvxi, sdmqpfuz) \\) in the plane with integer coordinates \\( brtclvxi \\) and \\( sdmqpfuz \\) satisfying \\( brtclvxi^{2}+sdmqpfuz^{2} \\leqslant qzxwvtnp^{2}+hjgrksla^{2} \\). Let \\( knyrsvqd=\\sum_{vnyhgeoa=0}^{\\infty} e^{-vnyhgeoa^{2}} \\). Express\n\\[\n\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} fjxearmv(qzxwvtnp, hjgrksla) e^{-qzxwvtnp^{2}-1^{2}} d qzxwvtnp d hjgrksla\n\\]\nas a polynomial in \\( knyrsvqd \\).",
+      "solution": "B-2.\nLet \\( pkezmoqs=\\sqrt{qzxwvtnp^{2}+hjgrksla^{2}},\\ uyoadnzc(brtclvxi, sdmqpfuz)=\\left\\{(qzxwvtnp, hjgrksla): brtclvxi^{2}+sdmqpfuz^{2} \\leqslant qzxwvtnp^{2}+hjgrksla^{2}\\right\\} \\), and\n\\[\nwprvouks=\\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} fjxearmv(qzxwvtnp, hjgrksla) e^{-qzxwvtnp^{2}-hjgrksla^{2}} d qzxwvtnp d hjgrksla\n\\]\n\nLet \\( \\Sigma \\) and \\( \\Sigma^{\\prime} \\) denote sums over all integers \\( brtclvxi \\) and over all integers \\( sdmqpfuz \\), respectively. Then\n\\[\n\\begin{aligned}\nwprvouks & =\\sum \\sum \\prime \\iint_{uyoadnzc(brtclvxi, sdmqpfuz)} e^{-qzxwvtnp^{2}-hjgrksla^{2}} d qzxwvtnp d hjgrksla \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\int_{\\sqrt{brtclvxi^{2}+sdmqpfuz^{2}}}^{\\infty} e^{-pkezmoqs^{2}} pkezmoqs d pkezmoqs d lqwpznrk \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi}\\left[-\\frac{1}{2} e^{-pkezmoqs^{2}}\\right]_{\\sqrt{brtclvxi^{2}+sdmqpfuz^{2}}}^{\\infty} d lqwpznrk \\\\\n& =\\sum \\sum^{\\prime} \\int_{0}^{2 \\pi} \\frac{1}{2} e^{-brtclvxi^{2}-sdmqpfuz^{2}} d lqwpznrk \\\\\n& =\\sum \\sum \\sum^{\\prime} \\pi e^{-brtclvxi^{2}-sdmqpfuz^{2}}=\\pi\\left(\\sum e^{-brtclvxi^{2}}\\right)\\left(\\sum^{\\prime} e^{-sdmqpfuz^{2}}\\right)=\\pi(2 knyrsvqd-1)^{2}\n\\end{aligned}\n\\]\n"
+    },
+    "kernel_variant": {
+      "question": "Let  \n  \\omega  = e^{2\\pi  i /3}  (the primitive 3-rd root of 1).  \nFor every point (x , y) \\in  \\mathbb{R}^2 define  \n\n  C(x , y) = #{ (m , n) \\in  \\mathbb{Z}^2 : m^2 + n^2 < x^2 + y^2 and m + 2n \\equiv  0 (mod 3) }.  \n\nIntroduce the three theta-type series  \n\n  \\theta _0 = \\Sigma _{k=-\\infty }^{\\infty } e^{-3k^2},  \\theta _1 = \\Sigma _{k=-\\infty }^{\\infty } \\omega ^{k} e^{-3k^2},  \\theta _2 = \\Sigma _{k=-\\infty }^{\\infty } \\omega ^{2k} e^{-3k^2}   (so \\theta _2 = \\theta _1).\n\nEvaluate, in terms of \\theta _0 , \\theta _1 , \\theta _2, the integral  \n\n  J = \\iint _{\\mathbb{R}^2} C(x , y) \\cdot  e^{-3(x^2 + y^2)} dx dy.",
+      "solution": "Step 1 - Replacing the congruence by a root-of-unity filter.  \nFor any integers m , n  \n  1_{m+2n\\equiv 0 (mod 3)} = (1/3) \\Sigma _{t=0}^{2} \\omega ^{t(m+2n)}.  \nHence  \n  C(x , y) = (1/3) \\Sigma _{t=0}^{2} \\Sigma _{(m , n)\\in \\mathbb{Z}^2} \\omega ^{t(m+2n)} \\cdot  1_{m^2+n^2 < x^2+y^2}.       (1)\n\nStep 2 - Interchanging sum and integral.  \nBecause all sums converge absolutely (Gaussian factor), Fubini's theorem allows  \n\n  J = (1/3) \\Sigma _{t=0}^{2} \\Sigma _{(m , n)\\in \\mathbb{Z}^2} \\omega ^{t(m+2n)}  \\iint _{m^2+n^2 < x^2+y^2} e^{-3(x^2+y^2)} dx dy.     (2)\n\nStep 3 - Evaluating the inner integral (radial computation).  \nPut r = \\sqrt{x^2 + y^2}, r_0 = \\sqrt{m^2 + n^2}.  In polar coordinates\n\n  \\iint _{r>r_0} e^{-3r^2} dx dy = 2\\pi  \\int _{r_0}^{\\infty } r e^{-3r^2} dr\n               = 2\\pi  \\cdot  (1/6) e^{-3r_0^2} = (\\pi /3) e^{-3(m^2 + n^2)}.     (3)\n\nSubstituting (3) into (2) gives  \n\n  J = (\\pi /9) \\Sigma _{t=0}^{2} \\Sigma _{(m , n)\\in \\mathbb{Z}^2} \\omega ^{t(m+2n)} e^{-3(m^2+n^2)}.     (4)\n\nStep 4 - Separating the double sum.  \nBecause \\omega ^{t(m+2n)} = (\\omega ^{t})^{m} (\\omega ^{2t})^{n}, the double sum factorises:\n\n  \\Sigma _{(m , n)} \\omega ^{t(m+2n)} e^{-3(m^2+n^2)}\n         = (\\Sigma _{m} (\\omega ^{t})^{m} e^{-3m^2}) \\cdot  (\\Sigma _{n} (\\omega ^{2t})^{n} e^{-3n^2})\n         := \\theta _t \\cdot  \\theta _{2t}.     (5)\n\n(Here we agree that indices are reduced mod 3, so (t , 2t) equals (0,0), (1,2), or (2,1).)\n\nStep 5 - Putting everything together.  \nInsert (5) into (4):\n\n  J = (\\pi /9) [ \\theta _0\\cdot \\theta _0 + \\theta _1\\cdot \\theta _2 + \\theta _2\\cdot \\theta _1 ]\n    = (\\pi /9) ( \\theta _0^2 + 2 \\theta _1 \\theta _2 ).     (6)\n\nSince \\theta _2 = \\theta _1, the answer is real, as expected.\n\nTherefore  \n\n  J = (\\pi /9) (\\theta _0^2 + 2 \\theta _1\\theta _2).",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.665547",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher analytical layer – The original task required no arithmetic restriction on lattice points; here a congruence condition m + 2n ≡ 0 (mod 3) is imposed.  Handling it forces the solver to introduce a root-of-unity filter and work with complex-valued exponential sums.\n\n2. Multiple interacting series – Instead of a single Gaussian sum g, three different theta–type series (θ₀ , θ₁ , θ₂) appear, and the final answer involves quadratic combinations of them.\n\n3. Deeper algebraic insight – Recognising that the congruence condition factorises into θ_t θ_{2t} after the root-of-unity expansion requires familiarity with characters and orthogonality relations, concepts absent from the original problem.\n\n4. Same geometric kernel, more intricate weight – The Gaussian weight uses the factor 3, so the radial integral has to be recomputed carefully (producing π/3 rather than π).  Although this looks innocuous, missing it leads to a wrong constant factor.\n\n5. Strict inequality – Retaining the ‘<’ (instead of ‘≤’) keeps track of the origin correctly; overlooking this would again change the constant term.\n\nBecause of these extra arithmetic, algebraic, and analytical layers, the new variant is substantially harder than both the original problem and the previous kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let  \n  \\omega  = e^{2\\pi  i /3}  (the primitive 3-rd root of 1).  \nFor every point (x , y) \\in  \\mathbb{R}^2 define  \n\n  C(x , y) = #{ (m , n) \\in  \\mathbb{Z}^2 : m^2 + n^2 < x^2 + y^2 and m + 2n \\equiv  0 (mod 3) }.  \n\nIntroduce the three theta-type series  \n\n  \\theta _0 = \\Sigma _{k=-\\infty }^{\\infty } e^{-3k^2},  \\theta _1 = \\Sigma _{k=-\\infty }^{\\infty } \\omega ^{k} e^{-3k^2},  \\theta _2 = \\Sigma _{k=-\\infty }^{\\infty } \\omega ^{2k} e^{-3k^2}   (so \\theta _2 = \\theta _1).\n\nEvaluate, in terms of \\theta _0 , \\theta _1 , \\theta _2, the integral  \n\n  J = \\iint _{\\mathbb{R}^2} C(x , y) \\cdot  e^{-3(x^2 + y^2)} dx dy.",
+      "solution": "Step 1 - Replacing the congruence by a root-of-unity filter.  \nFor any integers m , n  \n  1_{m+2n\\equiv 0 (mod 3)} = (1/3) \\Sigma _{t=0}^{2} \\omega ^{t(m+2n)}.  \nHence  \n  C(x , y) = (1/3) \\Sigma _{t=0}^{2} \\Sigma _{(m , n)\\in \\mathbb{Z}^2} \\omega ^{t(m+2n)} \\cdot  1_{m^2+n^2 < x^2+y^2}.       (1)\n\nStep 2 - Interchanging sum and integral.  \nBecause all sums converge absolutely (Gaussian factor), Fubini's theorem allows  \n\n  J = (1/3) \\Sigma _{t=0}^{2} \\Sigma _{(m , n)\\in \\mathbb{Z}^2} \\omega ^{t(m+2n)}  \\iint _{m^2+n^2 < x^2+y^2} e^{-3(x^2+y^2)} dx dy.     (2)\n\nStep 3 - Evaluating the inner integral (radial computation).  \nPut r = \\sqrt{x^2 + y^2}, r_0 = \\sqrt{m^2 + n^2}.  In polar coordinates\n\n  \\iint _{r>r_0} e^{-3r^2} dx dy = 2\\pi  \\int _{r_0}^{\\infty } r e^{-3r^2} dr\n               = 2\\pi  \\cdot  (1/6) e^{-3r_0^2} = (\\pi /3) e^{-3(m^2 + n^2)}.     (3)\n\nSubstituting (3) into (2) gives  \n\n  J = (\\pi /9) \\Sigma _{t=0}^{2} \\Sigma _{(m , n)\\in \\mathbb{Z}^2} \\omega ^{t(m+2n)} e^{-3(m^2+n^2)}.     (4)\n\nStep 4 - Separating the double sum.  \nBecause \\omega ^{t(m+2n)} = (\\omega ^{t})^{m} (\\omega ^{2t})^{n}, the double sum factorises:\n\n  \\Sigma _{(m , n)} \\omega ^{t(m+2n)} e^{-3(m^2+n^2)}\n         = (\\Sigma _{m} (\\omega ^{t})^{m} e^{-3m^2}) \\cdot  (\\Sigma _{n} (\\omega ^{2t})^{n} e^{-3n^2})\n         := \\theta _t \\cdot  \\theta _{2t}.     (5)\n\n(Here we agree that indices are reduced mod 3, so (t , 2t) equals (0,0), (1,2), or (2,1).)\n\nStep 5 - Putting everything together.  \nInsert (5) into (4):\n\n  J = (\\pi /9) [ \\theta _0\\cdot \\theta _0 + \\theta _1\\cdot \\theta _2 + \\theta _2\\cdot \\theta _1 ]\n    = (\\pi /9) ( \\theta _0^2 + 2 \\theta _1 \\theta _2 ).     (6)\n\nSince \\theta _2 = \\theta _1, the answer is real, as expected.\n\nTherefore  \n\n  J = (\\pi /9) (\\theta _0^2 + 2 \\theta _1\\theta _2).",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.522109",
+        "was_fixed": false,
+        "difficulty_analysis": "1. Higher analytical layer – The original task required no arithmetic restriction on lattice points; here a congruence condition m + 2n ≡ 0 (mod 3) is imposed.  Handling it forces the solver to introduce a root-of-unity filter and work with complex-valued exponential sums.\n\n2. Multiple interacting series – Instead of a single Gaussian sum g, three different theta–type series (θ₀ , θ₁ , θ₂) appear, and the final answer involves quadratic combinations of them.\n\n3. Deeper algebraic insight – Recognising that the congruence condition factorises into θ_t θ_{2t} after the root-of-unity expansion requires familiarity with characters and orthogonality relations, concepts absent from the original problem.\n\n4. Same geometric kernel, more intricate weight – The Gaussian weight uses the factor 3, so the radial integral has to be recomputed carefully (producing π/3 rather than π).  Although this looks innocuous, missing it leads to a wrong constant factor.\n\n5. Strict inequality – Retaining the ‘<’ (instead of ‘≤’) keeps track of the origin correctly; overlooking this would again change the constant term.\n\nBecause of these extra arithmetic, algebraic, and analytical layers, the new variant is substantially harder than both the original problem and the previous kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

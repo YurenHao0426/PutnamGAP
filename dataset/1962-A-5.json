@@ -1,0 +1,89 @@
+{
+  "index": "1962-A-5",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "5. Evaluate in closed form\n\\[\n\\sum_{k=1}^{n}\\binom{n}{k} k^{2}\n\\]\n(page 560)\n\nNote:\n\\[\n\\binom{n}{k}=\\frac{n(n-1) \\cdots(n-k+1)}{1 \\cdot 2 \\cdots k}\n\\]",
+  "solution": "First Solution.\n\\[\n\\begin{aligned}\n\\sum_{k=1}^{n}\\binom{n}{k} k^{2}= & \\sum_{k=1}^{n} \\frac{n!}{(n-k)!k!}[k(k-1)+k] \\\\\n= & \\sum_{k=2}^{n} \\frac{n(n-1)(n-2)!}{(n-k)!(k-2)!}+\\sum_{k=1}^{n} \\frac{n(n-1)!}{(n-k)!(k-1)!} \\\\\n& =n(n-1)^{\\prime \\prime} \\sum_{0}^{2}\\binom{n-2}{j}+n \\sum_{i-1}^{\\prime \\prime \\Sigma^{\\prime}}\\binom{n-1}{j} \\\\\n& =n(n-1) 2^{\\prime \\prime} 2^{2}+n 2^{\\prime \\prime} \\quad 1=n(n+1) 2^{\\prime \\prime 2} .\n\\end{aligned}\n\\]\n\nSecond Solution. If we apply the operator \\( x(d / d x) \\) to\n\\[\n(1+x)^{n}=\\sum_{k=0}^{n}\\binom{n}{k} x^{k},\n\\]\nwe obtain the identity\n\\[\nn x(1+x)^{n-1}=\\sum_{k=1}^{n}\\binom{n}{k} k x^{k} .\n\\]\n\nApplying it again, we find\n\\[\nn(n-1) x^{2}(1+x)^{n-2}+n x(1+x)^{n-1}=\\sum_{k=1}^{n}\\binom{n}{k} k^{2} x^{k}\n\\]\n\nPut \\( x=1 \\) and we have\n\\[\n\\sum_{k=1}^{n}\\binom{n}{k} k^{2}=n(n-1) 2^{n-2}+n 2^{n-1}=n(n+1) 2^{n-2} .\n\\]",
+  "vars": [
+    "k",
+    "j",
+    "i",
+    "x"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "k": "indexk",
+        "j": "indexj",
+        "i": "indexi",
+        "x": "variablex",
+        "n": "paramn"
+      },
+      "question": "5. Evaluate in closed form\n\\[\n\\sum_{indexk=1}^{paramn}\\binom{paramn}{indexk} indexk^{2}\n\\]\n(page 560)\n\nNote:\n\\[\n\\binom{paramn}{indexk}=\\frac{paramn(paramn-1) \\cdots(paramn-indexk+1)}{1 \\cdot 2 \\cdots indexk}\n\\]",
+      "solution": "First Solution.\n\\[\n\\begin{aligned}\n\\sum_{indexk=1}^{paramn}\\binom{paramn}{indexk} indexk^{2}= & \\sum_{indexk=1}^{paramn} \\frac{paramn!}{(paramn-indexk)!indexk!}[indexk(indexk-1)+indexk] \\\\\n= & \\sum_{indexk=2}^{paramn} \\frac{paramn(paramn-1)(paramn-2)!}{(paramn-indexk)!(indexk-2)!}+\\sum_{indexk=1}^{paramn} \\frac{paramn(paramn-1)!}{(paramn-indexk)!(indexk-1)!} \\\\\n& =paramn(paramn-1)^{\\prime \\prime} \\sum_{0}^{2}\\binom{paramn-2}{indexj}+paramn \\sum_{indexi-1}^{\\prime \\prime \\Sigma^{\\prime}}\\binom{paramn-1}{indexj} \\\\\n& =paramn(paramn-1) 2^{\\prime \\prime} 2^{2}+paramn 2^{\\prime \\prime} \\quad 1=paramn(paramn+1) 2^{\\prime \\prime 2} .\n\\end{aligned}\n\\]\n\nSecond Solution. If we apply the operator \\( \\variablex(d / d \\variablex) \\) to\n\\[\n(1+\\variablex)^{paramn}=\\sum_{indexk=0}^{paramn}\\binom{paramn}{indexk} \\variablex^{indexk},\n\\]\nwe obtain the identity\n\\[\nparamn \\variablex(1+\\variablex)^{paramn-1}=\\sum_{indexk=1}^{paramn}\\binom{paramn}{indexk} indexk \\variablex^{indexk} .\n\\]\n\nApplying it again, we find\n\\[\nparamn(paramn-1) \\variablex^{2}(1+\\variablex)^{paramn-2}+paramn \\variablex(1+\\variablex)^{paramn-1}=\\sum_{indexk=1}^{paramn}\\binom{paramn}{indexk} indexk^{2} \\variablex^{indexk}\n\\]\n\nPut \\( \\variablex=1 \\) and we have\n\\[\n\\sum_{indexk=1}^{paramn}\\binom{paramn}{indexk} indexk^{2}=paramn(paramn-1) 2^{paramn-2}+paramn 2^{paramn-1}=paramn(paramn+1) 2^{paramn-2} .\n\\]"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "k": "sandstone",
+        "j": "footprint",
+        "i": "lightning",
+        "x": "blueberry",
+        "n": "windswept"
+      },
+      "question": "5. Evaluate in closed form\n\\[\n\\sum_{sandstone=1}^{windswept}\\binom{windswept}{sandstone} sandstone^{2}\n\\]\n(page 560)\n\nNote:\n\\[\n\\binom{windswept}{sandstone}=\\frac{windswept(windswept-1) \\cdots(windswept-sandstone+1)}{1 \\cdot 2 \\cdots sandstone}\n\\]",
+      "solution": "First Solution.\n\\[\n\\begin{aligned}\n\\sum_{sandstone=1}^{windswept}\\binom{windswept}{sandstone} sandstone^{2}= & \\sum_{sandstone=1}^{windswept} \\frac{windswept!}{(windswept-sandstone)!sandstone!}[sandstone(sandstone-1)+sandstone] \\\\\n= & \\sum_{sandstone=2}^{windswept} \\frac{windswept(windswept-1)(windswept-2)!}{(windswept-sandstone)!(sandstone-2)!}+\\sum_{sandstone=1}^{windswept} \\frac{windswept(windswept-1)!}{(windswept-sandstone)!(sandstone-1)!} \\\\\n& =windswept(windswept-1)^{\\prime \\prime} \\sum_{0}^{2}\\binom{windswept-2}{footprint}+windswept \\sum_{lightning-1}^{\\prime \\prime \\Sigma^{\\prime}}\\binom{windswept-1}{footprint} \\\\\n& =windswept(windswept-1) 2^{\\prime \\prime} 2^{2}+windswept 2^{\\prime \\prime} \\quad 1=windswept(windswept+1) 2^{\\prime \\prime 2} .\n\\end{aligned}\n\\]\n\nSecond Solution. If we apply the operator \\( blueberry(d / d blueberry) \\) to\n\\[\n(1+blueberry)^{windswept}=\\sum_{sandstone=0}^{windswept}\\binom{windswept}{sandstone} blueberry^{sandstone},\n\\]\nwe obtain the identity\n\\[\nwindswept \\, blueberry(1+blueberry)^{windswept-1}=\\sum_{sandstone=1}^{windswept}\\binom{windswept}{sandstone} sandstone \\, blueberry^{sandstone} .\n\\]\n\nApplying it again, we find\n\\[\nwindswept(windswept-1) \\, blueberry^{2}(1+blueberry)^{windswept-2}+windswept \\, blueberry(1+blueberry)^{windswept-1}=\\sum_{sandstone=1}^{windswept}\\binom{windswept}{sandstone} sandstone^{2} blueberry^{sandstone}\n\\]\n\nPut \\( blueberry=1 \\) and we have\n\\[\n\\sum_{sandstone=1}^{windswept}\\binom{windswept}{sandstone} sandstone^{2}=windswept(windswept-1) 2^{windswept-2}+windswept 2^{windswept-1}=windswept(windswept+1) 2^{windswept-2} .\n\\]"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "k": "staticindex",
+        "j": "stillcounter",
+        "i": "fixedunit",
+        "x": "verticalaxis",
+        "n": "unboundedsize"
+      },
+      "question": "Problem:\n<<<\n5. Evaluate in closed form\n\\[\n\\sum_{staticindex=1}^{unboundedsize}\\binom{unboundedsize}{staticindex} staticindex^{2}\n\\]\n(page 560)\n\nNote:\n\\[\n\\binom{unboundedsize}{staticindex}=\\frac{unboundedsize(unboundedsize-1) \\cdots(unboundedsize-staticindex+1)}{1 \\cdot 2 \\cdots staticindex}\n\\]\n>>>",
+      "solution": "First Solution.\n\\[\n\\begin{aligned}\n\\sum_{staticindex=1}^{unboundedsize}\\binom{unboundedsize}{staticindex} staticindex^{2}= & \\sum_{staticindex=1}^{unboundedsize} \\frac{unboundedsize!}{(unboundedsize-staticindex)!staticindex!}[staticindex(staticindex-1)+staticindex] \\\\\n= & \\sum_{staticindex=2}^{unboundedsize} \\frac{unboundedsize(unboundedsize-1)(unboundedsize-2)!}{(unboundedsize-staticindex)!(staticindex-2)!}+\\sum_{staticindex=1}^{unboundedsize} \\frac{unboundedsize(unboundedsize-1)!}{(unboundedsize-staticindex)!(staticindex-1)!} \\\\\n& =unboundedsize(unboundedsize-1)^{\\prime \\prime} \\sum_{0}^{2}\\binom{unboundedsize-2}{stillcounter}+unboundedsize \\sum_{fixedunit-1}^{\\prime \\prime \\Sigma^{\\prime}}\\binom{unboundedsize-1}{stillcounter} \\\\\n& =unboundedsize(unboundedsize-1) 2^{\\prime \\prime} 2^{2}+unboundedsize 2^{\\prime \\prime} \\quad 1=unboundedsize(unboundedsize+1) 2^{\\prime \\prime 2} .\n\\end{aligned}\n\\]\n\nSecond Solution. If we apply the operator \\( verticalaxis(d / d verticalaxis) \\) to\n\\[\n(1+verticalaxis)^{unboundedsize}=\\sum_{staticindex=0}^{unboundedsize}\\binom{unboundedsize}{staticindex} verticalaxis^{staticindex},\n\\]\nwe obtain the identity\n\\[\nunboundedsize verticalaxis(1+verticalaxis)^{unboundedsize-1}=\\sum_{staticindex=1}^{unboundedsize}\\binom{unboundedsize}{staticindex} staticindex verticalaxis^{staticindex} .\n\\]\n\nApplying it again, we find\n\\[\nunboundedsize(unboundedsize-1) verticalaxis^{2}(1+verticalaxis)^{unboundedsize-2}+unboundedsize verticalaxis(1+verticalaxis)^{unboundedsize-1}=\\sum_{staticindex=1}^{unboundedsize}\\binom{unboundedsize}{staticindex} staticindex^{2} verticalaxis^{staticindex}\n\\]\n\nPut \\( verticalaxis=1 \\) and we have\n\\[\n\\sum_{staticindex=1}^{unboundedsize}\\binom{unboundedsize}{staticindex} staticindex^{2}=unboundedsize(unboundedsize-1) 2^{unboundedsize-2}+unboundedsize 2^{unboundedsize-1}=unboundedsize(unboundedsize+1) 2^{unboundedsize-2} .\n\\]\n"
+    },
+    "garbled_string": {
+      "map": {
+        "k": "zuwyqnpl",
+        "j": "vbtrsqmf",
+        "i": "lkjmdghr",
+        "x": "pqowmczn",
+        "n": "yzvxqbel"
+      },
+      "question": "5. Evaluate in closed form\n\\[\n\\sum_{zuwyqnpl=1}^{yzvxqbel}\\binom{yzvxqbel}{zuwyqnpl} zuwyqnpl^{2}\n\\]\n(page 560)\n\nNote:\n\\[\n\\binom{yzvxqbel}{zuwyqnpl}=\\frac{yzvxqbel(yzvxqbel-1) \\cdots(yzvxqbel-zuwyqnpl+1)}{1 \\cdot 2 \\cdots zuwyqnpl}\n\\]",
+      "solution": "First Solution.\n\\[\n\\begin{aligned}\n\\sum_{zuwyqnpl=1}^{yzvxqbel}\\binom{yzvxqbel}{zuwyqnpl} zuwyqnpl^{2}= & \\sum_{zuwyqnpl=1}^{yzvxqbel} \\frac{yzvxqbel!}{(yzvxqbel-zuwyqnpl)!zuwyqnpl!}[zuwyqnpl(zuwyqnpl-1)+zuwyqnpl] \\\\\n= & \\sum_{zuwyqnpl=2}^{yzvxqbel} \\frac{yzvxqbel(yzvxqbel-1)(yzvxqbel-2)!}{(yzvxqbel-zuwyqnpl)!(zuwyqnpl-2)!}+\\sum_{zuwyqnpl=1}^{yzvxqbel} \\frac{yzvxqbel(yzvxqbel-1)!}{(yzvxqbel-zuwyqnpl)!(zuwyqnpl-1)!} \\\\\n& =yzvxqbel(yzvxqbel-1)^{\\prime \\prime} \\sum_{0}^{2}\\binom{yzvxqbel-2}{vbtrsqmf}+yzvxqbel \\sum_{lkjmdghr-1}^{\\prime \\prime \\Sigma^{\\prime}}\\binom{yzvxqbel-1}{vbtrsqmf} \\\\\n& =yzvxqbel(yzvxqbel-1) 2^{\\prime \\prime} 2^{2}+yzvxqbel 2^{\\prime \\prime} \\quad 1=yzvxqbel(yzvxqbel+1) 2^{\\prime \\prime 2} .\n\\end{aligned}\n\\]\n\nSecond Solution. If we apply the operator \\( pqowmczn(d / d pqowmczn) \\) to\n\\[\n(1+pqowmczn)^{yzvxqbel}=\\sum_{zuwyqnpl=0}^{yzvxqbel}\\binom{yzvxqbel}{zuwyqnpl} pqowmczn^{zuwyqnpl},\n\\]\nwe obtain the identity\n\\[\nyzvxqbel pqowmczn(1+pqowmczn)^{yzvxqbel-1}=\\sum_{zuwyqnpl=1}^{yzvxqbel}\\binom{yzvxqbel}{zuwyqnpl} zuwyqnpl pqowmczn^{zuwyqnpl} .\n\\]\n\nApplying it again, we find\n\\[\nyzvxqbel(yzvxqbel-1) pqowmczn^{2}(1+pqowmczn)^{yzvxqbel-2}+yzvxqbel pqowmczn(1+pqowmczn)^{yzvxqbel-1}=\\sum_{zuwyqnpl=1}^{yzvxqbel}\\binom{yzvxqbel}{zuwyqnpl} zuwyqnpl^{2} pqowmczn^{zuwyqnpl}\n\\]\n\nPut \\( pqowmczn=1 \\) and we have\n\\[\n\\sum_{zuwyqnpl=1}^{yzvxqbel}\\binom{yzvxqbel}{zuwyqnpl} zuwyqnpl^{2}=yzvxqbel(yzvxqbel-1) 2^{yzvxqbel-2}+yzvxqbel 2^{yzvxqbel-1}=yzvxqbel(yzvxqbel+1) 2^{yzvxqbel-2} .\n\\]"
+    },
+    "kernel_variant": {
+      "question": "For every positive integer n determine a closed-form expression for  \n\\[\nT_n=\\sum_{k=0}^{n}\\binom{n}{k}\\,k^{4}\\,2^{\\,k}\\,3^{\\,n-k}.\n\\]",
+      "solution": "1.  A suitable generating function  \n    \\[\n    F(t):=(3+2t)^{n}=\\sum_{k=0}^{n}\\binom{n}{k}3^{\\,n-k}(2t)^{k}\n            =\\sum_{k=0}^{n}\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\,t^{k}\n    \\]\n    carries at \\(t^{k}\\) exactly the summand \\(\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\).\n\n2.  The r-th derivative satisfies  \n    \\[\n      F^{(r)}(t)=\\sum_{k=r}^{n}\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\,k^{\\underline{r}}\\,t^{\\,k-r},\n    \\]\n    whence at \\(t=1\\)\n    \\[\n      F^{(r)}(1)=\\sum_{k=0}^{n}\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\,k^{\\underline{r}},\n      \\qquad k^{\\underline{r}}:=k(k-1)\\cdots(k-r+1).\n    \\]\n\n3.  Explicit derivatives of \\(F(t)=(3+2t)^{n}\\):\n    \\[\n    \\begin{aligned}\n      F'(t)   &= 2n(3+2t)^{n-1}, \\\\\n      F''(t)  &= 4n(n-1)(3+2t)^{n-2},\\\\\n      F'''(t) &= 8n(n-1)(n-2)(3+2t)^{n-3},\\\\\n      F''''(t)&=16n(n-1)(n-2)(n-3)(3+2t)^{n-4}.\n    \\end{aligned}\n    \\]\n    Evaluated at \\(t=1\\):\n    \\[\n    \\begin{aligned}\n      F'(1)   &= 2n\\;5^{\\,n-1},\\\\\n      F''(1)  &= 4n(n-1)\\;5^{\\,n-2},\\\\\n      F'''(1) &= 8n(n-1)(n-2)\\;5^{\\,n-3},\\\\\n      F''''(1)&=16n(n-1)(n-2)(n-3)\\;5^{\\,n-4}.\n    \\end{aligned}\n    \\]\n\n4.  Expressing an ordinary power through falling factorials\n    \\[\n      k^{4}=k^{\\underline{4}}+6k^{\\underline{3}}+7k^{\\underline{2}}+k^{\\underline{1}},\n    \\]\n    we convert the required sum to\n    \\[\n      T_n=F''''(1)+6F'''(1)+7F''(1)+F'(1).\n    \\]\n\n5.  Insert the values from step 3:\n    \\[\n    \\begin{aligned}\n      T_n={}&16n(n-1)(n-2)(n-3)5^{n-4}\n            +6\\cdot8n(n-1)(n-2)5^{n-3}\\\\\n           &+7\\cdot4n(n-1)5^{n-2}\n            +2n5^{n-1}.\n    \\end{aligned}\n    \\]\n\n6.  Factor \\(2n5^{\\,n-4}\\) and simplify:\n    \\[\n    \\begin{aligned}\n       T_n\n       &=2n5^{\\,n-4}\\Bigl[8(n-1)(n-2)(n-3)\n                         +120(n-1)(n-2)\n                         +350(n-1)\n                         +125\\Bigr] \\\\\n       &=2n5^{\\,n-4}\\bigl(8n^{3}+72n^{2}+78n-33\\bigr).\n    \\end{aligned}\n    \\]\n\nHence the closed form is  \n\\[\n\\boxed{\\,T_n = 2n\\,(8n^{3}+72n^{2}+78n-33)\\;5^{\\,n-4}\\,}.\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.537575",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher-order moment: the exponent of k is raised from 2 (original) and 3 (kernel) to 4, forcing manipulation of fourth-order falling factorials.  \n•  Mixed bases: the weight \\(2^{k}3^{\\,n-k}\\) destroys the usual symmetry and demands a two-parameter generating function; simple substitutions \\(x=1\\) no longer work.  \n•  Advanced tools: the solution relies on (i) generating functions, (ii) repeated differentiation, (iii) conversion between ordinary and falling powers, and (iv) heavy polynomial algebra.  \n•  Volume of work: four derivatives must be computed and combined, versus at most two in the original.  \nThese additions collectively make the enhanced variant significantly more intricate and conceptually demanding than both the original problem and the current kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "For every positive integer n determine a closed-form expression for  \n\\[\nT_n=\\sum_{k=0}^{n}\\binom{n}{k}\\,k^{4}\\,2^{\\,k}\\,3^{\\,n-k}.\n\\]",
+      "solution": "1.  A suitable generating function  \n    \\[\n    F(t):=(3+2t)^{n}=\\sum_{k=0}^{n}\\binom{n}{k}3^{\\,n-k}(2t)^{k}\n            =\\sum_{k=0}^{n}\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\,t^{k}\n    \\]\n    carries at \\(t^{k}\\) exactly the summand \\(\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\).\n\n2.  The r-th derivative satisfies  \n    \\[\n      F^{(r)}(t)=\\sum_{k=r}^{n}\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\,k^{\\underline{r}}\\,t^{\\,k-r},\n    \\]\n    whence at \\(t=1\\)\n    \\[\n      F^{(r)}(1)=\\sum_{k=0}^{n}\\binom{n}{k}3^{\\,n-k}2^{\\,k}\\,k^{\\underline{r}},\n      \\qquad k^{\\underline{r}}:=k(k-1)\\cdots(k-r+1).\n    \\]\n\n3.  Explicit derivatives of \\(F(t)=(3+2t)^{n}\\):\n    \\[\n    \\begin{aligned}\n      F'(t)   &= 2n(3+2t)^{n-1}, \\\\\n      F''(t)  &= 4n(n-1)(3+2t)^{n-2},\\\\\n      F'''(t) &= 8n(n-1)(n-2)(3+2t)^{n-3},\\\\\n      F''''(t)&=16n(n-1)(n-2)(n-3)(3+2t)^{n-4}.\n    \\end{aligned}\n    \\]\n    Evaluated at \\(t=1\\):\n    \\[\n    \\begin{aligned}\n      F'(1)   &= 2n\\;5^{\\,n-1},\\\\\n      F''(1)  &= 4n(n-1)\\;5^{\\,n-2},\\\\\n      F'''(1) &= 8n(n-1)(n-2)\\;5^{\\,n-3},\\\\\n      F''''(1)&=16n(n-1)(n-2)(n-3)\\;5^{\\,n-4}.\n    \\end{aligned}\n    \\]\n\n4.  Expressing an ordinary power through falling factorials\n    \\[\n      k^{4}=k^{\\underline{4}}+6k^{\\underline{3}}+7k^{\\underline{2}}+k^{\\underline{1}},\n    \\]\n    we convert the required sum to\n    \\[\n      T_n=F''''(1)+6F'''(1)+7F''(1)+F'(1).\n    \\]\n\n5.  Insert the values from step 3:\n    \\[\n    \\begin{aligned}\n      T_n={}&16n(n-1)(n-2)(n-3)5^{n-4}\n            +6\\cdot8n(n-1)(n-2)5^{n-3}\\\\\n           &+7\\cdot4n(n-1)5^{n-2}\n            +2n5^{n-1}.\n    \\end{aligned}\n    \\]\n\n6.  Factor \\(2n5^{\\,n-4}\\) and simplify:\n    \\[\n    \\begin{aligned}\n       T_n\n       &=2n5^{\\,n-4}\\Bigl[8(n-1)(n-2)(n-3)\n                         +120(n-1)(n-2)\n                         +350(n-1)\n                         +125\\Bigr] \\\\\n       &=2n5^{\\,n-4}\\bigl(8n^{3}+72n^{2}+78n-33\\bigr).\n    \\end{aligned}\n    \\]\n\nHence the closed form is  \n\\[\n\\boxed{\\,T_n = 2n\\,(8n^{3}+72n^{2}+78n-33)\\;5^{\\,n-4}\\,}.\n\\]",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.447247",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Higher-order moment: the exponent of k is raised from 2 (original) and 3 (kernel) to 4, forcing manipulation of fourth-order falling factorials.  \n•  Mixed bases: the weight \\(2^{k}3^{\\,n-k}\\) destroys the usual symmetry and demands a two-parameter generating function; simple substitutions \\(x=1\\) no longer work.  \n•  Advanced tools: the solution relies on (i) generating functions, (ii) repeated differentiation, (iii) conversion between ordinary and falling powers, and (iv) heavy polynomial algebra.  \n•  Volume of work: four derivatives must be computed and combined, versus at most two in the original.  \nThese additions collectively make the enhanced variant significantly more intricate and conceptually demanding than both the original problem and the current kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

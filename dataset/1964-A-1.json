@@ -1,0 +1,141 @@
+{
+  "index": "1964-A-1",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "1. Given a set of 6 points in the plane, prove that the ratio of the longest distance between any pair to the shortest is at least \\( \\sqrt{3} \\).",
+  "solution": "Solution. Suppose three of the points, say \\( A, B, C \\), are collinear in that order. Then either \\( |A C| \\geq 2|B C| \\) or \\( |A C| \\geq 2|A B| \\). Hence a ratio of at least two occurs in this case, so we assume from now on that no three of the given points are collinear.\n\nNext we prove that some three of the points form a triangle with one angle at least \\( 120^{\\circ} \\).\n\nIf the convex hull of the given points is a hexagon, then the angle sum is \\( 720^{\\circ} \\), and one of the angles must be at least \\( 120^{\\circ} \\), so some three consecutive vertices of the hexagon form the required triangle.\n\nIf the convex hull of the given points has fewer than six vertices, then one of the points, say \\( P \\), is in the interior of the convex hull of the others. \\( P \\) must be in the interior of a triangle spanned by some other three of the given points (since we have disposed of the case where three points are collinear). Say \\( P \\) lies inside the triangle \\( Q R S \\), where \\( Q, R, S \\) are among the given points. Then one of the angles \\( Q P R, R P S, S P Q \\) must be at least \\( 120^{\\circ} \\), since their sum is \\( 360^{\\circ} \\).\n\nFinally, we show that in a triangle in which one angle is at least \\( 120^{\\circ} \\), the ratio of the longest side to the shortest side is at least \\( \\sqrt{3} \\). Let \\( A B C \\) be a triangle with \\( \\angle A \\geq 120^{\\circ} \\). Then \\( -\\cos A \\geq \\frac{1}{2} \\). Suppose \\( b \\geq c \\).\n\nBy the law of cosines\n\\[\na^{2}=b^{2}+c^{2}-2 b c \\cos A \\geq b^{2}+c^{2}+b c \\geq 3 c^{2},\n\\]\nso \\( a \\geq \\sqrt{3} c \\), as claimed.\nRemarks. This is not the best possible result. It can be shown that for six points in the plane the minimum ratio of longest distance to shortest is \\( 2 \\sin 72^{\\circ}-1.902 \\), which is attained by the vertices of a regular pentagon and its center.\n\nThe minimum ratio of longest distance to shortest for sets of a fixed size in a specified space has been called the critical ratio. Thus we claim that the critical ratio for sextuples in the plane is \\( 2 \\sin 72^{\\circ} \\).\n\nFor sets of \\( n+2 \\) points in \\( E^{n} \\) the critical ratio has been determined and all sets attaining this ratio are known to be similar. (See J. J. Seidel, \"Quasi-regular Distance Sets,\" Nederl. Akad. Wetensch. Proc. Ser. A, 72 = Indag. Math. 31 (1969), pp. 64-70.)\n\nA somewhat related question is considered in Problem E 2193, American Mathematical Monthly, vol. 77 (1970), page 770: \"For A, B and C, three points in the Euclidean plane, define \\( B \\) to be 'weakly between' \\( A \\) and \\( C \\) if and only if angle \\( A B C \\geq 120^{\\circ} \\). Determine the minimal number of points required to insure the existence of at least one such weak-betweenness relation.\" The solution there shows that this minimal number is six, and the proof parallels the proof given above.",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "n"
+  ],
+  "params": [
+    "A",
+    "B",
+    "C",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "E"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "longside",
+        "b": "mediumside",
+        "c": "shortside",
+        "n": "spacesize",
+        "A": "pointalpha",
+        "B": "pointbeta",
+        "C": "pointgamma",
+        "P": "pointdelta",
+        "Q": "pointepsilon",
+        "R": "pointzeta",
+        "S": "pointeta",
+        "E": "euclidspace"
+      },
+      "question": "1. Given a set of 6 points in the plane, prove that the ratio of the longest distance between any pair to the shortest is at least \\( \\sqrt{3} \\).",
+      "solution": "Solution. Suppose three of the points, say \\( pointalpha, pointbeta, pointgamma \\), are collinear in that order. Then either \\( |pointalpha pointgamma| \\geq 2|pointbeta pointgamma| \\) or \\( |pointalpha pointgamma| \\geq 2|pointalpha pointbeta| \\). Hence a ratio of at least two occurs in this case, so we assume from now on that no three of the given points are collinear.\n\nNext we prove that some three of the points form a triangle with one angle at least \\( 120^{\\circ} \\).\n\nIf the convex hull of the given points is a hexagon, then the angle sum is \\( 720^{\\circ} \\), and one of the angles must be at least \\( 120^{\\circ} \\), so some three consecutive vertices of the hexagon form the required triangle.\n\nIf the convex hull of the given points has fewer than six vertices, then one of the points, say \\( pointdelta \\), is in the interior of the convex hull of the others. \\( pointdelta \\) must be in the interior of a triangle spanned by some other three of the given points (since we have disposed of the case where three points are collinear). Say \\( pointdelta \\) lies inside the triangle \\( pointepsilon\\ pointzeta\\ pointeta \\), where \\( pointepsilon, pointzeta, pointeta \\) are among the given points. Then one of the angles \\( pointepsilon\\ pointdelta\\ pointzeta, pointzeta\\ pointdelta\\ pointeta, pointeta\\ pointdelta\\ pointepsilon \\) must be at least \\( 120^{\\circ} \\), since their sum is \\( 360^{\\circ} \\).\n\nFinally, we show that in a triangle in which one angle is at least \\( 120^{\\circ} \\), the ratio of the longest side to the shortest side is at least \\( \\sqrt{3} \\). Let \\( pointalpha\\ pointbeta\\ pointgamma \\) be a triangle with \\( \\angle pointalpha \\geq 120^{\\circ} \\). Then \\( -\\cos pointalpha \\geq \\frac{1}{2} \\). Suppose \\( mediumside \\geq shortside \\).\n\nBy the law of cosines\n\\[\nlongside^{2}=mediumside^{2}+shortside^{2}-2\\, mediumside\\, shortside \\cos pointalpha \\geq mediumside^{2}+shortside^{2}+mediumside\\, shortside \\geq 3\\, shortside^{2},\n\\]\nso \\( longside \\geq \\sqrt{3}\\, shortside \\), as claimed.\n\nRemarks. This is not the best possible result. It can be shown that for six points in the plane the minimum ratio of longest distance to shortest is \\( 2 \\sin 72^{\\circ}-1.902 \\), which is attained by the vertices of a regular pentagon and its center.\n\nThe minimum ratio of longest distance to shortest for sets of a fixed size in a specified space has been called the critical ratio. Thus we claim that the critical ratio for sextuples in the plane is \\( 2 \\sin 72^{\\circ} \\).\n\nFor sets of \\( spacesize+2 \\) points in \\( euclidspace^{spacesize} \\) the critical ratio has been determined and all sets attaining this ratio are known to be similar. (See J. J. Seidel, \"Quasi-regular Distance Sets,\" Nederl. Akad. Wetensch. Proc. Ser. A, 72 = Indag. Math. 31 (1969), pp. 64-70.)\n\nA somewhat related question is considered in Problem euclidspace 2193, American Mathematical Monthly, vol. 77 (1970), page 770: \"For pointalpha, pointbeta and pointgamma, three points in the Euclidean plane, define \\( pointbeta \\) to be 'weakly between' \\( pointalpha \\) and \\( pointgamma \\) if and only if angle \\( pointalpha pointbeta pointgamma \\geq 120^{\\circ} \\). Determine the minimal number of points required to insure the existence of at least one such weak-betweenness relation.\" The solution there shows that this minimal number is six, and the proof parallels the proof given above."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "mushroom",
+        "b": "sunflower",
+        "c": "waterfall",
+        "n": "lighthouse",
+        "A": "parchment",
+        "B": "telescope",
+        "C": "horseshoe",
+        "P": "rucksack",
+        "Q": "drumstick",
+        "R": "pinecone",
+        "S": "goldsmith",
+        "E": "sandstorm"
+      },
+      "question": "1. Given a set of 6 points in the plane, prove that the ratio of the longest distance between any pair to the shortest is at least \\( \\sqrt{3} \\).",
+      "solution": "Solution. Suppose three of the points, say \\( parchment, telescope, horseshoe \\), are collinear in that order. Then either \\( |parchment\\, horseshoe| \\geq 2|telescope\\, horseshoe| \\) or \\( |parchment\\, horseshoe| \\geq 2|parchment\\, telescope| \\). Hence a ratio of at least two occurs in this case, so we assume from now on that no three of the given points are collinear.\n\nNext we prove that some three of the points form a triangle with one angle at least \\( 120^{\\circ} \\).\n\nIf the convex hull of the given points is a hexagon, then the angle sum is \\( 720^{\\circ} \\), and one of the angles must be at least \\( 120^{\\circ} \\), so some three consecutive vertices of the hexagon form the required triangle.\n\nIf the convex hull of the given points has fewer than six vertices, then one of the points, say \\( rucksack \\), is in the interior of the convex hull of the others. \\( rucksack \\) must be in the interior of a triangle spanned by some other three of the given points (since we have disposed of the case where three points are collinear). Say \\( rucksack \\) lies inside the triangle \\( drumstick\\, pinecone\\, goldsmith \\), where \\( drumstick, pinecone, goldsmith \\) are among the given points. Then one of the angles \\( drumstick\\, rucksack\\, pinecone, pinecone\\, rucksack\\, goldsmith, goldsmith\\, rucksack\\, drumstick \\) must be at least \\( 120^{\\circ} \\), since their sum is \\( 360^{\\circ} \\).\n\nFinally, we show that in a triangle in which one angle is at least \\( 120^{\\circ} \\), the ratio of the longest side to the shortest side is at least \\( \\sqrt{3} \\). Let \\( parchment\\, telescope\\, horseshoe \\) be a triangle with \\( \\angle parchment \\geq 120^{\\circ} \\). Then \\( -\\cos parchment \\geq \\frac{1}{2} \\). Suppose \\( sunflower \\geq waterfall \\).\n\nBy the law of cosines\n\\[\nmushroom^{2}=sunflower^{2}+waterfall^{2}-2\\, sunflower\\, waterfall \\cos parchment \\geq sunflower^{2}+waterfall^{2}+sunflower\\, waterfall \\geq 3\\, waterfall^{2},\n\\]\nso \\( mushroom \\geq \\sqrt{3}\\, waterfall \\), as claimed.\n\nRemarks. This is not the best possible result. It can be shown that for six points in the plane the minimum ratio of longest distance to shortest is \\( 2 \\sin 72^{\\circ}-1.902 \\), which is attained by the vertices of a regular pentagon and its center.\n\nThe minimum ratio of longest distance to shortest for sets of a fixed size in a specified space has been called the critical ratio. Thus we claim that the critical ratio for sextuples in the plane is \\( 2 \\sin 72^{\\circ} \\).\n\nFor sets of \\( lighthouse+2 \\) points in \\( sandstorm^{lighthouse} \\) the critical ratio has been determined and all sets attaining this ratio are known to be similar. (See J. J. Seidel, \"Quasi-regular Distance Sets,\" Nederl. Akad. Wetensch. Proc. Ser. A, 72 = Indag. Math. 31 (1969), pp. 64-70.)\n\nA somewhat related question is considered in Problem sandstorm 2193, American Mathematical Monthly, vol. 77 (1970), page 770: \"For parchment, telescope and horseshoe, three points in the Euclidean plane, define \\( telescope \\) to be 'weakly between' \\( parchment \\) and \\( horseshoe \\) if and only if angle \\( parchment\\, telescope\\, horseshoe \\geq 120^{\\circ} \\). Determine the minimal number of points required to insure the existence of at least one such weak-betweenness relation.\" The solution there shows that this minimal number is six, and the proof parallels the proof given above."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "minuscule",
+        "b": "colossal",
+        "c": "enormous",
+        "n": "infinitee",
+        "A": "nonpoint",
+        "B": "nonvertex",
+        "C": "noncorner",
+        "P": "haziness",
+        "Q": "vastness",
+        "R": "regionwide",
+        "S": "sprawling",
+        "E": "nonspace"
+      },
+      "question": "1. Given a set of 6 points in the plane, prove that the ratio of the longest distance between any pair to the shortest is at least \\( \\sqrt{3} \\).",
+      "solution": "Solution. Suppose three of the points, say \\( nonpoint, nonvertex, noncorner \\), are collinear in that order. Then either \\( |nonpoint noncorner| \\geq 2|nonvertex noncorner| \\) or \\( |nonpoint noncorner| \\geq 2|nonpoint nonvertex| \\). Hence a ratio of at least two occurs in this case, so we assume from now on that no three of the given points are collinear.\n\nNext we prove that some three of the points form a triangle with one angle at least \\( 120^{\\circ} \\).\n\nIf the convex hull of the given points is a hexagon, then the angle sum is \\( 720^{\\circ} \\), and one of the angles must be at least \\( 120^{\\circ} \\), so some three consecutive vertices of the hexagon form the required triangle.\n\nIf the convex hull of the given points has fewer than six vertices, then one of the points, say \\( haziness \\), is in the interior of the convex hull of the others. \\( haziness \\) must be in the interior of a triangle spanned by some other three of the given points (since we have disposed of the case where three points are collinear). Say \\( haziness \\) lies inside the triangle \\( vastness\\, regionwide\\, sprawling \\), where \\( vastness, regionwide, sprawling \\) are among the given points. Then one of the angles \\( vastness\\, haziness\\, regionwide, regionwide\\, haziness\\, sprawling, sprawling\\, haziness\\, vastness \\) must be at least \\( 120^{\\circ} \\), since their sum is \\( 360^{\\circ} \\).\n\nFinally, we show that in a triangle in which one angle is at least \\( 120^{\\circ} \\), the ratio of the longest side to the shortest side is at least \\( \\sqrt{3} \\). Let \\( nonpoint\\, nonvertex\\, noncorner \\) be a triangle with \\( \\angle nonpoint \\geq 120^{\\circ} \\). Then \\( -\\cos nonpoint \\geq \\frac{1}{2} \\). Suppose \\( colossal \\geq enormous \\).\n\nBy the law of cosines\n\\[\nminuscule^{2}=colossal^{2}+enormous^{2}-2\\,colossal\\,enormous \\cos nonpoint \\geq colossal^{2}+enormous^{2}+colossal\\,enormous \\geq 3\\,enormous^{2},\n\\]\nso \\( minuscule \\geq \\sqrt{3}\\,enormous \\), as claimed.\n\nRemarks. This is not the best possible result. It can be shown that for six points in the plane the minimum ratio of longest distance to shortest is \\( 2 \\sin 72^{\\circ}-1.902 \\), which is attained by the vertices of a regular pentagon and its center.\n\nThe minimum ratio of longest distance to shortest for sets of a fixed size in a specified space has been called the critical ratio. Thus we claim that the critical ratio for sextuples in the plane is \\( 2 \\sin 72^{\\circ} \\).\n\nFor sets of \\( infinitee+2 \\) points in \\( nonspace^{infinitee} \\) the critical ratio has been determined and all sets attaining this ratio are known to be similar. (See J. J. Seidel, \"Quasi-regular Distance Sets,\" Nederl. Akad. Wetensch. Proc. Ser. A, 72 = Indag. Math. 31 (1969), pp. 64-70.)\n\nA somewhat related question is considered in Problem E 2193, American Mathematical Monthly, vol. 77 (1970), page 770: \"For nonpoint, nonvertex and noncorner, three points in the Euclidean plane, define \\( nonvertex \\) to be 'weakly between' \\( nonpoint \\) and \\( noncorner \\) if and only if angle \\( nonpoint\\, nonvertex\\, noncorner \\geq 120^{\\circ} \\). Determine the minimal number of points required to insure the existence of at least one such weak-betweenness relation.\" The solution there shows that this minimal number is six, and the proof parallels the proof given above."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "mfldqser",
+        "n": "vytkpwgh",
+        "A": "pnaklwre",
+        "B": "drfjbgma",
+        "C": "lqmwztec",
+        "P": "snerqvud",
+        "Q": "vybtdkwo",
+        "R": "zplxgrmi",
+        "S": "twfhcabn",
+        "E": "jukdspoe"
+      },
+      "question": "1. Given a set of 6 points in the plane, prove that the ratio of the longest distance between any pair to the shortest is at least \\( \\sqrt{3} \\).",
+      "solution": "Solution. Suppose three of the points, say pnaklwre, drfjbgma, lqmwztec, are collinear in that order. Then either \\( |pnaklwre lqmwztec| \\geq 2|drfjbgma lqmwztec| \\) or \\( |pnaklwre lqmwztec| \\geq 2|pnaklwre drfjbgma| \\). Hence a ratio of at least two occurs in this case, so we assume from now on that no three of the given points are collinear.\n\nNext we prove that some three of the points form a triangle with one angle at least \\( 120^{\\circ} \\).\n\nIf the convex hull of the given points is a hexagon, then the angle sum is \\( 720^{\\circ} \\), and one of the angles must be at least \\( 120^{\\circ} \\), so some three consecutive vertices of the hexagon form the required triangle.\n\nIf the convex hull of the given points has fewer than six vertices, then one of the points, say snerqvud, is in the interior of the convex hull of the others. snerqvud must be in the interior of a triangle spanned by some other three of the given points (since we have disposed of the case where three points are collinear). Say snerqvud lies inside the triangle vybtdkwo zplxgrmi twfhcabn, where vybtdkwo, zplxgrmi, twfhcabn are among the given points. Then one of the angles vybtdkwo snerqvud zplxgrmi, zplxgrmi snerqvud twfhcabn, twfhcabn snerqvud vybtdkwo must be at least \\( 120^{\\circ} \\), since their sum is \\( 360^{\\circ} \\).\n\nFinally, we show that in a triangle in which one angle is at least \\( 120^{\\circ} \\), the ratio of the longest side to the shortest side is at least \\( \\sqrt{3} \\). Let pnaklwre drfjbgma lqmwztec be a triangle with \\( \\angle pnaklwre \\geq 120^{\\circ} \\). Then \\( -\\cos pnaklwre \\geq \\frac{1}{2} \\). Suppose hjgrksla \\geq mfldqser.\n\nBy the law of cosines\n\\[\nqzxwvtnp^{2}=hjgrksla^{2}+mfldqser^{2}-2 hjgrksla mfldqser \\cos pnaklwre \\geq hjgrksla^{2}+mfldqser^{2}+hjgrksla mfldqser \\geq 3 mfldqser^{2},\n\\]\nso \\( qzxwvtnp \\geq \\sqrt{3} mfldqser \\), as claimed.\n\nRemarks. This is not the best possible result. It can be shown that for six points in the plane the minimum ratio of longest distance to shortest is \\( 2 \\sin 72^{\\circ}-1.902 \\), which is attained by the vertices of a regular pentagon and its center.\n\nThe minimum ratio of longest distance to shortest for sets of a fixed size in a specified space has been called the critical ratio. Thus we claim that the critical ratio for sextuples in the plane is \\( 2 \\sin 72^{\\circ} \\).\n\nFor sets of \\( vytkpwgh+2 \\) points in \\( jukdspoe^{vytkpwgh} \\) the critical ratio has been determined and all sets attaining this ratio are known to be similar. (See J. J. Seidel, \"Quasi-regular Distance Sets,\" Nederl. Akad. Wetensch. Proc. Ser. A, 72 = Indag. Math. 31 (1969), pp. 64-70.)\n\nA somewhat related question is considered in Problem jukdspoe 2193, American Mathematical Monthly, vol. 77 (1970), page 770: \"For pnaklwre, drfjbgma and lqmwztec, three points in the Euclidean plane, define drfjbgma to be 'weakly between' pnaklwre and lqmwztec if and only if angle pnaklwre drfjbgma lqmwztec \\geq 120^{\\circ}. Determine the minimal number of points required to insure the existence of at least one such weak-betweenness relation.\" The solution there shows that this minimal number is six, and the proof parallels the proof given above."
+    },
+    "kernel_variant": {
+      "question": "Let $S$ be a set of seven distinct points in the Euclidean plane.  Show that the ratio\n\\[\n\\frac{\\max_{P,Q\\in S}|PQ|}{\\min_{P,Q\\in S}|PQ|}\n\\ge  \\varphi,\\qquad \\text{where }\\;\\varphi = \\frac{1+\\sqrt5}{2}\\;(\\text{the golden ratio}).\n\\]",
+      "solution": "Write L and l for the longest and the shortest of the {7\\choose2}=21 pairwise distances.\n\nStep 1. Three collinear points.\nIf some three points A,B,C lie on a line in that order, then\n  |AC| \\geq  |AB| + |BC| \\geq  2\\cdot min{|AB|,|BC|},\nso L/l \\geq  2 > \\sqrt{3} > \\phi .  Hence the inequality holds in this case.  We may therefore assume that no three points are collinear.\n\nStep 2. Producing a large angle.\nWith no three collinear, the convex hull of the seven points is a convex polygon whose vertices lie in S.\n\n* If the hull has 7 vertices, it is a convex heptagon with interior-angle sum 900^\\circ, so some interior angle \\geq  900^\\circ/7 > 128^\\circ > 108^\\circ.  Three consecutive vertices span a triangle with an angle \\geq 128^\\circ.\n\n* If the hull has fewer than 7 vertices, then some point P\\in S lies strictly inside the hull.  Triangulate the convex hull by diagonals joining hull vertices (all in S).  Then P lies in some triangle QRS whose vertices lie in S.  The angles \\angle QPR+\\angle RPS+\\angle SPQ sum to 360^\\circ, so one angle \\geq 120^\\circ > 108^\\circ.\n\nIn either case, we locate three points A,B,C forming a triangle with \\angle A \\geq  108^\\circ.\n\nStep 3. A side-length ratio in a triangle with \\angle A \\geq  108^\\circ.\nLabel the triangle so that sides are a = |BC|, b = |CA|, c = |AB| with b \\geq  c.  By the Law of Cosines,\n\n  a^2 = b^2 + c^2 - 2bc cos A.\n\nSince A \\geq  108^\\circ, cos A \\leq  cos 108^\\circ = -cos 72^\\circ = -(\\sqrt{5}-1)/4, hence\n\n  -2bc cos A \\geq  2bc\\cdot (\\sqrt{5}-1)/4 = (\\sqrt{5}-1)/2\\cdot bc \\approx  0.618 bc.\n\nThus\n\n  a^2 \\geq  b^2 + c^2 + 0.618 bc.\n\nFor fixed c, this expression is increasing in b, so it attains its minimum when b=c, giving\n\n  a^2 \\geq  2c^2 + 0.618c^2 = 2.618 c^2 = \\phi ^2 c^2,\n\nand therefore a \\geq  \\phi  c.  Hence the longest side of \\triangle ABC is at least \\phi  times its shortest side.\n\nStep 4. Finishing the argument for S.\nThe global shortest distance among the 21 distances is \\leq  c, while the global longest is \\geq  a, so\n\n  L/l \\geq  a/c \\geq  \\phi .\n\nCombined with Step 1, this covers every configuration of seven points and proves\n\n  (max_p,Q\\in S|PQ|)/(min_p,Q\\in S|PQ|) \\geq  \\phi .",
+      "_meta": {
+        "core_steps": [
+          "If three points are collinear, the middle-point argument already forces a (≥ 2) distance ratio.",
+          "Assume no three collinear; among the six points some triangle must contain an angle ≥ 120° (convex-hull or interior-point pigeonhole).",
+          "In any triangle with an angle ≥ 120°, the law of cosines gives longest / shortest ≥ √3."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Total number of given points; needs to be at least 6 so that the average convex-hull angle reaches 120°.",
+            "original": 6
+          },
+          "slot2": {
+            "description": "Specific large angle guaranteed inside some triangle; tied to the average interior angle of the convex hull.",
+            "original": "120°"
+          },
+          "slot3": {
+            "description": "Lower bound for the distance ratio deduced from slot2 via the law of cosines ( here √3 = √(3) ).",
+            "original": "√3"
+          },
+          "slot4": {
+            "description": "Distance ratio obtained in the collinear case; it just has to exceed slot3.",
+            "original": 2
+          },
+          "slot5": {
+            "description": "Name/size of the convex-hull polygon when all points are vertices; determined by slot1 (hexagon for 6 points).",
+            "original": "hexagon"
+          },
+          "slot6": {
+            "description": "Interior-angle sum used for the convex-hull argument ((k-2)·180°); equals 720° for k=6.",
+            "original": "720°"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,137 @@
+{
+  "index": "1981-B-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Problem B-I\nFind\n\\[\n\\lim _{n \\rightarrow \\infty}\\left[\\frac{1}{n^{5}} \\sum_{n=1}^{n} \\sum_{k=1}^{n}\\left(5 h^{4}-18 h^{2} k^{2}+5 k^{4}\\right)\\right] .\n\\]",
+  "solution": "B-1.\nLet \\( S_{k}(n)=1^{k}+2^{k}+\\cdots+n^{k} \\). Using standard methods of calculus texts one finds that\n\\[\nS_{2}(n)=\\left(n^{3} / 3\\right)+\\left(n^{2} / 2\\right)+a n\n\\]\nand\n\\[\nS_{4}(n)=\\left(n^{5} / 5\\right)+\\left(n^{4} / 2\\right)+b n^{3}+c n^{2}+d n\n\\]\nwith \\( a, b, c, d \\) constants. Then the double sum is\n\\[\n10 n S_{4}(n)-18\\left[S_{2}(n)\\right]^{2}=\\left(2 n^{6}+5 n^{5}+\\cdots\\right)-\\left(2 n^{6}+6 n^{5}+\\cdots\\right)=-n^{5}+\\cdots\n\\]\nand the desired limit is -1 .",
+  "vars": [
+    "n",
+    "k",
+    "h",
+    "S_k",
+    "S_2",
+    "S_4"
+  ],
+  "params": [
+    "a",
+    "b",
+    "c",
+    "d"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "indexvar",
+        "k": "loopvar",
+        "h": "stepvar",
+        "S_k": "powersumvar",
+        "S_2": "powersumtwo",
+        "S_4": "powersumfour",
+        "a": "coeffone",
+        "b": "coefftwo",
+        "c": "coeffthree",
+        "d": "coefffour"
+      },
+      "question": "Problem B-I\nFind\n\\[\n\\lim _{indexvar \\rightarrow \\infty}\\left[\\frac{1}{indexvar^{5}} \\sum_{indexvar=1}^{indexvar} \\sum_{loopvar=1}^{indexvar}\\left(5 stepvar^{4}-18 stepvar^{2} loopvar^{2}+5 loopvar^{4}\\right)\\right] .\n\\]",
+      "solution": "B-1.\nLet \\( powersumvar(indexvar)=1^{loopvar}+2^{loopvar}+\\cdots+indexvar^{loopvar} \\). Using standard methods of calculus texts one finds that\n\\[\npowersumtwo(indexvar)=\\left(indexvar^{3} / 3\\right)+\\left(indexvar^{2} / 2\\right)+ coeffone\\, indexvar\n\\]\nand\n\\[\npowersumfour(indexvar)=\\left(indexvar^{5} / 5\\right)+\\left(indexvar^{4} / 2\\right)+ coefftwo\\, indexvar^{3}+ coeffthree\\, indexvar^{2}+ coefffour\\, indexvar\n\\]\nwith \\( coeffone, coefftwo, coeffthree, coefffour \\) constants. Then the double sum is\n\\[\n10\\, indexvar\\, powersumfour(indexvar)-18\\left[powersumtwo(indexvar)\\right]^{2}=\\left(2 indexvar^{6}+5 indexvar^{5}+\\cdots\\right)-\\left(2 indexvar^{6}+6 indexvar^{5}+\\cdots\\right)=-indexvar^{5}+\\cdots\n\\]\nand the desired limit is -1 ."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "vineyard",
+        "k": "sailboat",
+        "h": "drumstick",
+        "S_k": "snowflake",
+        "S_2": "toothpaste",
+        "S_4": "rainstorm",
+        "a": "handgrip",
+        "b": "wetsuits",
+        "c": "marshland",
+        "d": "paperback"
+      },
+      "question": "Problem B-I\nFind\n\\[\n\\lim _{vineyard \\rightarrow \\infty}\\left[\\frac{1}{vineyard^{5}} \\sum_{vineyard=1}^{vineyard} \\sum_{sailboat=1}^{vineyard}\\left(5 drumstick^{4}-18 drumstick^{2} sailboat^{2}+5 sailboat^{4}\\right)\\right] .\n\\]",
+      "solution": "B-1.\nLet \\( snowflake(vineyard)=1^{sailboat}+2^{sailboat}+\\cdots+vineyard^{sailboat} \\). Using standard methods of calculus texts one finds that\n\\[\ntoothpaste(vineyard)=\\left(vineyard^{3} / 3\\right)+\\left(vineyard^{2} / 2\\right)+handgrip vineyard\n\\]\nand\n\\[\nrainstorm(vineyard)=\\left(vineyard^{5} / 5\\right)+\\left(vineyard^{4} / 2\\right)+wetsuits vineyard^{3}+marshland vineyard^{2}+paperback vineyard\n\\]\nwith \\( handgrip, wetsuits, marshland, paperback \\) constants. Then the double sum is\n\\[\n10 vineyard rainstorm(vineyard)-18\\left[toothpaste(vineyard)\\right]^{2}=\\left(2 vineyard^{6}+5 vineyard^{5}+\\cdots\\right)-\\left(2 vineyard^{6}+6 vineyard^{5}+\\cdots\\right)=-vineyard^{5}+\\cdots\n\\]\nand the desired limit is -1 ."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "endlesscount",
+        "k": "fixedindex",
+        "h": "staticsymbol",
+        "S_k": "differencek",
+        "S_2": "differencetwo",
+        "S_4": "differencefour",
+        "a": "variableone",
+        "b": "variabletwo",
+        "c": "variablethree",
+        "d": "variablefour"
+      },
+      "question": "Problem B-I\nFind\n\\[\n\\lim _{endlesscount \\rightarrow \\infty}\\left[\\frac{1}{endlesscount^{5}} \\sum_{endlesscount=1}^{endlesscount} \\sum_{fixedindex=1}^{endlesscount}\\left(5 staticsymbol^{4}-18 staticsymbol^{2} fixedindex^{2}+5 fixedindex^{4}\\right)\\right] .\n\\]",
+      "solution": "B-1.\nLet \\( differencek(endlesscount)=1^{fixedindex}+2^{fixedindex}+\\cdots+endlesscount^{fixedindex} \\). Using standard methods of calculus texts one finds that\n\\[\ndifferencetwo(endlesscount)=\\left(endlesscount^{3} / 3\\right)+\\left(endlesscount^{2} / 2\\right)+variableone\\, endlesscount\n\\]\nand\n\\[\ndifferencefour(endlesscount)=\\left(endlesscount^{5} / 5\\right)+\\left(endlesscount^{4} / 2\\right)+variabletwo\\, endlesscount^{3}+variablethree\\, endlesscount^{2}+variablefour\\, endlesscount\n\\]\nwith \\( variableone, variabletwo, variablethree, variablefour \\) constants. Then the double sum is\n\\[\n10\\, endlesscount\\, differencefour(endlesscount)-18\\left[differencetwo(endlesscount)\\right]^{2}=\\left(2 endlesscount^{6}+5 endlesscount^{5}+\\cdots\\right)-\\left(2 endlesscount^{6}+6 endlesscount^{5}+\\cdots\\right)=-endlesscount^{5}+\\cdots\n\\]\nand the desired limit is -1 ."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "wqxvuhtr",
+        "k": "hdysmpqa",
+        "h": "ukgvlecz",
+        "S_k": "zprsagwy",
+        "S_2": "dcxbnvoj",
+        "S_4": "lejmhzid",
+        "a": "wtfoesiq",
+        "b": "glrahxcu",
+        "c": "vuktebjo",
+        "d": "lyswqamp"
+      },
+      "question": "Problem B-I\nFind\n\\[\n\\lim _{wqxvuhtr \\rightarrow \\infty}\\left[\\frac{1}{wqxvuhtr^{5}} \\sum_{wqxvuhtr=1}^{wqxvuhtr} \\sum_{hdysmpqa=1}^{wqxvuhtr}\\left(5 ukgvlecz^{4}-18 ukgvlecz^{2} hdysmpqa^{2}+5 hdysmpqa^{4}\\right)\\right] .\n\\]",
+      "solution": "B-1.\nLet \\( zprsagwy(wqxvuhtr)=1^{hdysmpqa}+2^{hdysmpqa}+\\cdots+wqxvuhtr^{hdysmpqa} \\). Using standard methods of calculus texts one finds that\n\n\\[\ndcxbnvoj(wqxvuhtr)=\\left(wqxvuhtr^{3} / 3\\right)+\\left(wqxvuhtr^{2} / 2\\right)+wtfoesiq \\, wqxvuhtr\n\\]\n\nand\n\\[\nlejmhzid(wqxvuhtr)=\\left(wqxvuhtr^{5} / 5\\right)+\\left(wqxvuhtr^{4} / 2\\right)+glrahxcu \\, wqxvuhtr^{3}+vuktebjo \\, wqxvuhtr^{2}+lyswqamp \\, wqxvuhtr\n\\]\nwith \\( wtfoesiq, glrahxcu, vuktebjo, lyswqamp \\) constants. Then the double sum is\n\\[\n10 wqxvuhtr \\, lejmhzid(wqxvuhtr)-18\\left[dcxbnvoj(wqxvuhtr)\\right]^{2}=\\left(2 wqxvuhtr^{6}+5 wqxvuhtr^{5}+\\cdots\\right)-\\left(2 wqxvuhtr^{6}+6 wqxvuhtr^{5}+\\cdots\\right)=-wqxvuhtr^{5}+\\cdots\n\\]\nand the desired limit is -1 ."
+    },
+    "kernel_variant": {
+      "question": "Let\n\\[\nT_n\\;=\\;\\frac1{n^{7}}\\sum_{h=1}^{n}\\sum_{k=1}^{n}\\left(7h^{6}-32h^{3}k^{3}+7k^{6}\\right).\n\\]\nEvaluate \\(\\displaystyle\\lim_{n\\to\\infty}T_n\\).",
+      "solution": "Write the power-sums\nS_r(n)=\\sum _{m=1}^n m^r   (r\\in \\mathbb{N}).\n\n1.  Rewrite the double sum.\n   Because the summand is symmetric in h and k,\n   \\sum _{h,k}(7h^6 - 32h^3k^3 + 7k^6)\n     =7nS_6(n) + 7nS_6(n) - 32[ S_3(n) ]^2\n     =14nS_6(n) - 32[ S_3(n) ]^2.   (1)\n\n2.  Insert Faulhaber expansions (e.g. via Euler-Maclaurin):\n   S_6(n)=n^7/7 + n^6/2 + O(n^5),    S_3(n)=n^4/4 + n^3/2 + O(n^2).   (2)\n\n3.  Keep two highest orders and note the leading cancellation.\n   Using (2) in (1),\n   14nS_6(n) = 14n( n^7/7 + n^6/2 + O(n^5) ) = 2n^8 + 7n^7 + O(n^6),\n   -32[ S_3(n) ]^2 = -32( n^8/16 + n^7/4 + O(n^6) ) = -2n^8 - 8n^7 + O(n^6).\n   The 2n^8 terms cancel, leaving -n^7 + O(n^6).\n\n4.  Divide by n^7:\n   T_n = (-n^7 + O(n^6)) / n^7 = -1 + O(1/n).\n\n5.  Letting n\\to \\infty  gives\n   lim_n\\to \\infty  T_n = -1.\n\nTherefore, the limit is -1.",
+      "_meta": {
+        "core_steps": [
+          "Rewrite the double sum with power–sums  S_r(n)=∑_{m=1}^n m^r",
+          "Apply Faulhaber (asymptotic) formulas for the needed S_r(n)",
+          "Keep the two highest orders, observe cancellation of the top order",
+          "Divide the result by n^5 to isolate the surviving coefficient",
+          "Take n→∞ to obtain the constant limit"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "coefficient of the h^4 term in the summand",
+            "original": 5
+          },
+          "slot2": {
+            "description": "coefficient of the k^4 term in the summand",
+            "original": 5
+          },
+          "slot3": {
+            "description": "coefficient of the h^2 k^2 cross term in the summand",
+            "original": -18
+          },
+          "slot4": {
+            "description": "exponent on h in the first (pure-h) power, h^{…}",
+            "original": 4
+          },
+          "slot5": {
+            "description": "exponent on k in the last (pure-k) power, k^{…}",
+            "original": 4
+          },
+          "slot6": {
+            "description": "exponent on both variables in the cross term, h^{…}k^{…}",
+            "original": 2
+          },
+          "slot7": {
+            "description": "power of n in the normalizing factor 1/n^{…}",
+            "original": 5
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

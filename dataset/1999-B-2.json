@@ -1,0 +1,145 @@
+{
+  "index": "1999-B-2",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "Let $P(x)$ be a polynomial of degree $n$ such that $P(x)=Q(x)P''(x)$,\nwhere $Q(x)$ is a quadratic polynomial and $P''(x)$ is the second\nderivative of $P(x)$.  Show that if $P(x)$ has at least two distinct\nroots then it must have $n$ distinct roots.",
+  "solution": "First solution:\nSuppose that $P$ does not have $n$ distinct roots; then it has\na root of multiplicity at least $2$, which we may assume is $x=0$\nwithout loss of generality.  Let $x^k$ be the greatest power of $x$\ndividing $P(x)$, so that $P(x) = x^k R(x)$ with $R(0) \\neq 0$;\na simple computation yields\n\\[\nP''(x) = (k^2-k)x^{k-2} R(x) + 2kx^{k-1} R'(x) + x^k R''(x).\n\\]\nSince $R(0) \\neq 0$ and $k\\geq 2$, we conclude that the greatest power of $x$\ndividing $P''(x)$ is $x^{k-2}$.  But $P(x) = Q(x) P''(x)$, and so\n$x^2$ divides $Q(x)$.\nWe deduce (since $Q$ is quadratic)\nthat $Q(x)$ is a constant $C$ times $x^2$; in fact, $C=1/(n(n-1))$ by\ninspection of the leading-degree terms of $P(x)$ and $P''(x)$.\n\nNow if $P(x) = \\sum_{j=0}^n a_j x^j$, then the relation\n$P(x) = Cx^2 P''(x)$ implies that $a_j = Cj(j-1)a_j$ for all $j$;\nhence $a_j = 0$ for $j \\leq n-1$, and we conclude that $P(x) = a_n x^n$,\nwhich has all identical roots.\n\nSecond solution (by Greg Kuperberg): Let $f(x) = P''(x)/P(x) = 1/Q(x)$. By\nhypothesis, $f$ has at most two poles (counting multiplicity).\n\nRecall that for any complex polynomial $P$, the roots of $P'$ lie within the convex\nhull of $P$. To show this, it suffices to show that if the roots of $P$ lie on one\nside of a line, say on the positive side of the imaginary axis, then $P'$ has no\nroots on the other side. That follows because if $r_1, \\dots, r_n$ are the roots of $P$,\n\\[\n\\frac{P'(z)}{P(z)} = \\sum_{i=1}^n \\frac{1}{z-r_i}\n\\]\nand if $z$ has negative real part, so does $1/(z-r_i)$ for $i=1, \\dots, n$,\nso the sum is nonzero.\n\nThe above argument also carries through if $z$ lies on the\nimaginary axis, provided that $z$ is not equal to a root of $P$. Thus we also have that\nno roots of $P'$ lie on the sides of the convex hull of $P$, unless they are also\nroots of $P$.\n\nFrom this we conclude that if $r$ is a root of $P$ which is a vertex of the convex hull\nof the roots, and\nwhich is not also a root of $P'$,\nthen $f$ has a single pole at $r$ (as $r$ cannot be a root of $P''$).\nOn the other hand, if $r$ is a root of $P$ which is also a root of $P'$, it\nis a multiple root, and then $f$ has a double pole at $r$.\n\nIf $P$ has roots not all equal, the convex hull of its roots has at least two\nvertices.",
+  "vars": [
+    "P",
+    "Q",
+    "R",
+    "f",
+    "x",
+    "z",
+    "r",
+    "r_i",
+    "a_j"
+  ],
+  "params": [
+    "n",
+    "k",
+    "C",
+    "i",
+    "j"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "P": "polyfunc",
+        "Q": "quadpoly",
+        "R": "residual",
+        "f": "ratiofnc",
+        "x": "indepvar",
+        "z": "complexz",
+        "r": "rootvar",
+        "r_i": "rootindex",
+        "a_j": "coeffindex",
+        "n": "degreeval",
+        "k": "multipower",
+        "C": "constval",
+        "j": "indexvar"
+      },
+      "question": "Let $polyfunc(indepvar)$ be a polynomial of degree $degreeval$ such that $polyfunc(indepvar)=quadpoly(indepvar)polyfunc''(indepvar)$, where $quadpoly(indepvar)$ is a quadratic polynomial and $polyfunc''(indepvar)$ is the second derivative of $polyfunc(indepvar)$.  Show that if $polyfunc(indepvar)$ has at least two distinct roots then it must have $degreeval$ distinct roots.",
+      "solution": "First solution:\nSuppose that $polyfunc$ does not have $degreeval$ distinct roots; then it has a root of multiplicity at least $2$, which we may assume is $indepvar=0$ without loss of generality.  Let $indepvar^{multipower}$ be the greatest power of $indepvar$ dividing $polyfunc(indepvar)$, so that $polyfunc(indepvar)=indepvar^{multipower}residual(indepvar)$ with $residual(0)\\neq0$; a simple computation yields\n\\[\npolyfunc''(indepvar)=(multipower^2-multipower)indepvar^{multipower-2}residual(indepvar)+2multipower\\,indepvar^{multipower-1}residual'(indepvar)+indepvar^{multipower}residual''(indepvar).\n\\]\nSince $residual(0)\\neq0$ and $multipower\\ge2$, we conclude that the greatest power of $indepvar$ dividing $polyfunc''(indepvar)$ is $indepvar^{multipower-2}$.  But $polyfunc(indepvar)=quadpoly(indepvar)polyfunc''(indepvar)$, and so $indepvar^{2}$ divides $quadpoly(indepvar)$.  We deduce (since $quadpoly$ is quadratic) that $quadpoly(indepvar)$ is a constant $constval$ times $indepvar^{2}$; in fact, $constval=1/(degreeval(degreeval-1))$ by inspection of the leading-degree terms of $polyfunc(indepvar)$ and $polyfunc''(indepvar)$.\n\nNow if $polyfunc(indepvar)=\\displaystyle\\sum_{indexvar=0}^{degreeval}coeffindex\\,indepvar^{indexvar}$, then the relation $polyfunc(indepvar)=constval\\,indepvar^{2}polyfunc''(indepvar)$ implies that $coeffindex=constval\\,indexvar(indexvar-1)coeffindex$ for all $indexvar$; hence $coeffindex=0$ for $indexvar\\le degreeval-1$, and we conclude that $polyfunc(indepvar)=a_{degreeval}\\,indepvar^{degreeval}$, which has all identical roots.\n\nSecond solution (due to Greg Kuperberg):  Let\n\\[\nratiofnc(indepvar)=\\frac{polyfunc''(indepvar)}{polyfunc(indepvar)}=\\frac{1}{quadpoly(indepvar)}.\n\\]\nBy hypothesis, $ratiofnc$ has at most two poles (counting multiplicity).\n\nRecall that for any complex polynomial $polyfunc$, the roots of $polyfunc'$ lie within the convex hull of $polyfunc$.  To show this, it suffices to show that if the roots of $polyfunc$ lie on one side of a line, say on the positive side of the imaginary axis, then $polyfunc'$ has no roots on the other side.  That follows because if $rootvar_{1},\\dots,rootvar_{degreeval}$ are the roots of $polyfunc$,\\[\n\\frac{polyfunc'(complexz)}{polyfunc(complexz)}=\\sum_{i=1}^{degreeval}\\frac{1}{complexz-rootindex}\n\\]and if $complexz$ has negative real part, so does $1/(complexz-rootindex)$ for $i=1,\\dots,degreeval$, so the sum is nonzero.\n\nThe above argument also carries through if $complexz$ lies on the imaginary axis, provided that $complexz$ is not equal to a root of $polyfunc$.  Thus we also have that no roots of $polyfunc'$ lie on the sides of the convex hull of $polyfunc$, unless they are also roots of $polyfunc$.\n\nFrom this we conclude that if $rootvar$ is a root of $polyfunc$ which is a vertex of the convex hull of the roots and which is not also a root of $polyfunc'$, then $ratiofnc$ has a single pole at $rootvar$ (as $rootvar$ cannot be a root of $polyfunc''$).  On the other hand, if $rootvar$ is a root of $polyfunc$ which is also a root of $polyfunc'$, it is a multiple root, and then $ratiofnc$ has a double pole at $rootvar$.\n\nIf $polyfunc$ has roots not all equal, the convex hull of its roots has at least two vertices."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "P": "dandelion",
+        "Q": "harmonica",
+        "R": "blueberry",
+        "f": "porcupine",
+        "x": "saxophone",
+        "z": "xylophone",
+        "r": "quartzite",
+        "r_i": "megapixel",
+        "a_j": "huckleberry",
+        "n": "tangerine",
+        "k": "buttercup",
+        "C": "watermelon",
+        "i": "marigold",
+        "j": "caterpillar"
+      },
+      "question": "Let $dandelion(saxophone)$ be a polynomial of degree $tangerine$ such that $dandelion(saxophone)=harmonica(saxophone)dandelion''(saxophone)$,\nwhere $harmonica(saxophone)$ is a quadratic polynomial and $dandelion''(saxophone)$ is the second\nderivative of $dandelion(saxophone)$.  Show that if $dandelion(saxophone)$ has at least two distinct\nroots then it must have $tangerine$ distinct roots.",
+      "solution": "First solution:\nSuppose that $dandelion$ does not have $tangerine$ distinct roots; then it has\na root of multiplicity at least $2$, which we may assume is $saxophone=0$\nwithout loss of generality.  Let $saxophone^{buttercup}$ be the greatest power of $saxophone$\ndividing $dandelion(saxophone)$, so that $dandelion(saxophone) = saxophone^{buttercup} blueberry(saxophone)$ with $blueberry(0) \\neq 0$;\na simple computation yields\n\\[\ndandelion''(saxophone) = (buttercup^2-buttercup)saxophone^{buttercup-2} blueberry(saxophone) + 2buttercup saxophone^{buttercup-1} blueberry'(saxophone) + saxophone^{buttercup} blueberry''(saxophone).\n\\]\nSince $blueberry(0) \\neq 0$ and $buttercup\\geq 2$, we conclude that the greatest power of $saxophone$\ndividing $dandelion''(saxophone)$ is $saxophone^{buttercup-2}$.  But $dandelion(saxophone) = harmonica(saxophone) dandelion''(saxophone)$, and so\n$saxophone^2$ divides $harmonica(saxophone)$.\nWe deduce (since $harmonica$ is quadratic)\nthat $harmonica(saxophone)$ is a constant $watermelon$ times $saxophone^2$; in fact, $watermelon=1/(tangerine(tangerine-1))$ by\ninspection of the leading-degree terms of $dandelion(saxophone)$ and $dandelion''(saxophone)$.\n\nNow if $dandelion(saxophone) = \\sum_{caterpillar=0}^{tangerine} huckleberry saxophone^{caterpillar}$, then the relation\n$dandelion(saxophone) = watermelon\\,saxophone^2 dandelion''(saxophone)$ implies that $huckleberry = watermelon \\, caterpillar(caterpillar-1) \\, huckleberry$ for all $caterpillar$;\nhence $huckleberry = 0$ for $caterpillar \\leq tangerine-1$, and we conclude that $dandelion(saxophone) = huckleberry saxophone^{tangerine}$,\nwhich has all identical roots.\n\nSecond solution (by Greg Kuperberg): Let $porcupine(saxophone) = dandelion''(saxophone)/dandelion(saxophone) = 1/harmonica(saxophone)$. By\nhypothesis, $porcupine$ has at most two poles (counting multiplicity).\n\nRecall that for any complex polynomial $dandelion$, the roots of $dandelion'$ lie within the convex\nhull of $dandelion$. To show this, it suffices to show that if the roots of $dandelion$ lie on one\nside of a line, say on the positive side of the imaginary axis, then $dandelion'$ has no\nroots on the other side. That follows because if $quartzite_1, \\dots, quartzite_{tangerine}$ are the roots of $dandelion$,\n\\[\n\\frac{dandelion'(xylophone)}{dandelion(xylophone)} = \\sum_{marigold=1}^{tangerine} \\frac{1}{xylophone-megapixel}\n\\]\nand if $xylophone$ has negative real part, so does $1/(xylophone-megapixel)$ for $marigold=1, \\dots, tangerine$,\nso the sum is nonzero.\n\nThe above argument also carries through if $xylophone$ lies on the\nimaginary axis, provided that $xylophone$ is not equal to a root of $dandelion$. Thus we also have that\nno roots of $dandelion'$ lie on the sides of the convex hull of $dandelion$, unless they are also\nroots of $dandelion$.\n\nFrom this we conclude that if $quartzite$ is a root of $dandelion$ which is a vertex of the convex hull\nof the roots, and\nwhich is not also a root of $dandelion'$, then $porcupine$ has a single pole at $quartzite$ (as $quartzite$ cannot be a root of $dandelion''$).\nOn the other hand, if $quartzite$ is a root of $dandelion$ which is also a root of $dandelion'$, it\nis a multiple root, and then $porcupine$ has a double pole at $quartzite$.\n\nIf $dandelion$ has roots not all equal, the convex hull of its roots has at least two\nvertices."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "P": "flatline",
+        "Q": "nonquadra",
+        "R": "wholesum",
+        "f": "wholeproduct",
+        "x": "constant",
+        "z": "realonly",
+        "r": "leafnode",
+        "r_i": "leafsprout",
+        "a_j": "conclusj",
+        "n": "baseline",
+        "k": "flatness",
+        "C": "variable",
+        "i": "endpoint",
+        "j": "startpos"
+      },
+      "question": "Let $flatline(constant)$ be a polynomial of degree $baseline$ such that $flatline(constant)=nonquadra(constant)flatline''(constant)$,\nwhere $nonquadra(constant)$ is a quadratic polynomial and $flatline''(constant)$ is the second\nderivative of $flatline(constant)$.  Show that if $flatline(constant)$ has at least two distinct\nroots then it must have $baseline$ distinct roots.",
+      "solution": "First solution:\nSuppose that $flatline$ does not have $baseline$ distinct roots; then it has\na root of multiplicity at least $2$, which we may assume is $constant=0$\nwithout loss of generality.  Let $constant^{flatness}$ be the greatest power of $constant$\ndividing $flatline(constant)$, so that $flatline(constant) = constant^{flatness} wholesum(constant)$ with $wholesum(0) \\neq 0$;\na simple computation yields\n\\[\nflatline''(constant) = (flatness^2-flatness)constant^{flatness-2} wholesum(constant) + 2flatness constant^{flatness-1} wholesum'(constant) + constant^{flatness} wholesum''(constant).\n\\]\nSince $wholesum(0) \\neq 0$ and $flatness\\geq 2$, we conclude that the greatest power of $constant$\ndividing $flatline''(constant)$ is $constant^{flatness-2}$.  But $flatline(constant) = nonquadra(constant) flatline''(constant)$, and so\n$constant^2$ divides $nonquadra(constant)$.\nWe deduce (since $nonquadra$ is quadratic)\nthat $nonquadra(constant)$ is a constant $variable$ times $constant^2$; in fact, $variable=1/(baseline(baseline-1))$ by\ninspection of the leading-degree terms of $flatline(constant)$ and $flatline''(constant)$.\n\nNow if $flatline(constant) = \\sum_{startpos=0}^{baseline} conclusj constant^{startpos}$, then the relation\n$flatline(constant) = variable constant^2 flatline''(constant)$ implies that $conclusj = variable startpos(startpos-1) conclusj$ for all $startpos$;\nhence $conclusj = 0$ for $startpos \\leq baseline-1$, and we conclude that $flatline(constant) = a_{baseline} constant^{baseline}$,\nwhich has all identical roots.\n\nSecond solution (by Greg Kuperberg): Let $wholeproduct(constant) = flatline''(constant)/flatline(constant) = 1/nonquadra(constant)$. By\nhypothesis, $wholeproduct$ has at most two poles (counting multiplicity).\n\nRecall that for any complex polynomial $flatline$, the roots of $flatline'$ lie within the convex\nhull of $flatline$. To show this, it suffices to show that if the roots of $flatline$ lie on one\nside of a line, say on the positive side of the imaginary axis, then $flatline'$ has no\nroots on the other side. That follows because if $leafnode_1, \\dots, leafnode_{baseline}$ are the roots of $flatline$,\n\\[\n\\frac{flatline'(realonly)}{flatline(realonly)} = \\sum_{endpoint=1}^{baseline} \\frac{1}{realonly-leafsprout}\n\\]\nand if $realonly$ has negative real part, so does $1/(realonly-leafsprout)$ for $endpoint=1, \\dots, baseline$,\nso the sum is nonzero.\n\nThe above argument also carries through if $realonly$ lies on the\nimaginary axis, provided that $realonly$ is not equal to a root of $flatline$. Thus we also have that\nno roots of $flatline'$ lie on the sides of the convex hull of $flatline$, unless they are also\nroots of $flatline$.\n\nFrom this we conclude that if $leafnode$ is a root of $flatline$ which is a vertex of the convex hull\nof the roots, and\nwhich is not also a root of $flatline'$,\\\nthen $wholeproduct$ has a single pole at $leafnode$ (as $leafnode$ cannot be a root of $flatline''$).\nOn the other hand, if $leafnode$ is a root of $flatline$ which is also a root of $flatline'$, it\nis a multiple root, and then $wholeproduct$ has a double pole at $leafnode$.\n\nIf $flatline$ has roots not all equal, the convex hull of its roots has at least two\nvertices."
+    },
+    "garbled_string": {
+      "map": {
+        "P": "qzxwvtnp",
+        "Q": "hjgrksla",
+        "R": "mfgplqsn",
+        "f": "zdvtkwra",
+        "x": "tbrnydce",
+        "z": "gokmsrha",
+        "r": "lmvczdpu",
+        "r_i": "vnqestob",
+        "a_j": "paymcrle",
+        "n": "ksufdari",
+        "k": "buvtolri",
+        "C": "wroxnqib",
+        "i": "jdqtrmsa",
+        "j": "hljmpfse"
+      },
+      "question": "Let $qzxwvtnp(tbrnydce)$ be a polynomial of degree $ksufdari$ such that $qzxwvtnp(tbrnydce)=hjgrksla(tbrnydce)qzxwvtnp''(tbrnydce)$,\nwhere $hjgrksla(tbrnydce)$ is a quadratic polynomial and $qzxwvtnp''(tbrnydce)$ is the second\nderivative of $qzxwvtnp(tbrnydce)$.  Show that if $qzxwvtnp(tbrnydce)$ has at least two distinct\nroots then it must have $ksufdari$ distinct roots.",
+      "solution": "First solution:\nSuppose that $qzxwvtnp$ does not have $ksufdari$ distinct roots; then it has\na root of multiplicity at least $2$, which we may assume is $tbrnydce=0$\nwithout loss of generality.  Let $tbrnydce^{buvtolri}$ be the greatest power of $tbrnydce$\ndividing $qzxwvtnp(tbrnydce)$, so that $qzxwvtnp(tbrnydce) = tbrnydce^{buvtolri} mfgplqsn(tbrnydce)$ with $mfgplqsn(0) \\neq 0$;\na simple computation yields\n\\[\nqzxwvtnp''(tbrnydce) = (buvtolri^2-buvtolri)tbrnydce^{buvtolri-2} mfgplqsn(tbrnydce) + 2buvtolri tbrnydce^{buvtolri-1} mfgplqsn'(tbrnydce) + tbrnydce^{buvtolri} mfgplqsn''(tbrnydce).\n\\]\nSince $mfgplqsn(0) \\neq 0$ and $buvtolri\\geq 2$, we conclude that the greatest power of $tbrnydce$\ndividing $qzxwvtnp''(tbrnydce)$ is $tbrnydce^{buvtolri-2}$.  But $qzxwvtnp(tbrnydce) = hjgrksla(tbrnydce) qzxwvtnp''(tbrnydce)$, and so\n$tbrnydce^2$ divides $hjgrksla(tbrnydce)$.\nWe deduce (since $hjgrksla$ is quadratic)\nthat $hjgrksla(tbrnydce)$ is a constant $wroxnqib$ times $tbrnydce^2$; in fact, $wroxnqib=1/(ksufdari(ksufdari-1))$ by\ninspection of the leading-degree terms of $qzxwvtnp(tbrnydce)$ and $qzxwvtnp''(tbrnydce)$.\n\nNow if $qzxwvtnp(tbrnydce) = \\sum_{hljmpfse=0}^{ksufdari} paymcrle tbrnydce^{hljmpfse}$, then the relation\n$qzxwvtnp(tbrnydce) = wroxnqib tbrnydce^2 qzxwvtnp''(tbrnydce)$ implies that $paymcrle = wroxnqib\\,hljmpfse(hljmpfse-1)paymcrle$ for all $hljmpfse$;\nhence $paymcrle = 0$ for $hljmpfse \\leq ksufdari-1$, and we conclude that $qzxwvtnp(tbrnydce) = a_{ksufdari} tbrnydce^{ksufdari}$,\nwhich has all identical roots.\n\nSecond solution (by Greg Kuperberg): Let $zdvtkwra(tbrnydce) = qzxwvtnp''(tbrnydce)/qzxwvtnp(tbrnydce) = 1/hjgrksla(tbrnydce)$. By\nhypothesis, $zdvtkwra$ has at most two poles (counting multiplicity).\n\nRecall that for any complex polynomial $qzxwvtnp$, the roots of $qzxwvtnp'$ lie within the convex\nhull of $qzxwvtnp$. To show this, it suffices to show that if the roots of $qzxwvtnp$ lie on one\nside of a line, say on the positive side of the imaginary axis, then $qzxwvtnp'$ has no\nroots on the other side. That follows because if $lmvczdpu_1, \\dots, lmvczdpu_{ksufdari}$ are the roots of $qzxwvtnp$,\n\\[\n\\frac{qzxwvtnp'(gokmsrha)}{qzxwvtnp(gokmsrha)} = \\sum_{jdqtrmsa=1}^{ksufdari} \\frac{1}{gokmsrha-vnqestob}\n\\]\nand if $gokmsrha$ has negative real part, so does $1/(gokmsrha-vnqestob)$ for $jdqtrmsa=1, \\dots, ksufdari$,\nso the sum is nonzero.\n\nThe above argument also carries through if $gokmsrha$ lies on the\nimaginary axis, provided that $gokmsrha$ is not equal to a root of $qzxwvtnp$. Thus we also have that\nno roots of $qzxwvtnp'$ lie on the sides of the convex hull of $qzxwvtnp$, unless they are also\nroots of $qzxwvtnp$.\n\nFrom this we conclude that if $lmvczdpu$ is a root of $qzxwvtnp$ which is a vertex of the convex hull\nof the roots, and\nwhich is not also a root of $qzxwvtnp'$, then $zdvtkwra$ has a single pole at $lmvczdpu$ (as $lmvczdpu$ cannot be a root of $qzxwvtnp''$).\nOn the other hand, if $lmvczdpu$ is a root of $qzxwvtnp$ which is also a root of $qzxwvtnp'$, it\nis a multiple root, and then $zdvtkwra$ has a double pole at $lmvczdpu$.\n\nIf $qzxwvtnp$ has roots not all equal, the convex hull of its roots has at least two\nvertices."
+    },
+    "kernel_variant": {
+      "question": "Let n \\geq  3 be an integer and let P \\in  \\mathbb{C}[x] be a non-constant polynomial of degree n that fulfils  \n          P(x) = Q(x)\\cdot P^{(3)}(x)       (\\star )\nwith Q a cubic polynomial and P^{(3)} the third derivative of P.\n\nPut f(x):=P^{(3)}(x)/P(x).  For a zero a of P we call a\n* active if f has a pole at a (equivalently ord_a f < 0), and\n* passive otherwise (ord_a f \\geq  0).\n\nDescribe the possible multiplicities of the zeros of P and prove that exactly one of the following two and only two alternatives occurs.\n\n(I) P has only one zero.  In this case P(x)=c (x-a)^n with c\\neq 0.\n\n(II) P has at least two distinct zeros.  Then every zero has multiplicity 1 or 2.  Moreover\n * at most three zeros are active;\n * write S for the number of active simple zeros and D_2, D_1 for the numbers of active double zeros that satisfy respectively ord_a P^{(3)} = 0 (so f has a double pole) and ord_a P^{(3)} = 1 (so f has a simple pole).  Then\n               S + D_1 + 2D_2 = 3.    (\\dagger )\n\nAll remaining zeros (if any) are passive simple zeros (multiplicity 1 and P^{(3)}(a)=0) or passive double zeros (multiplicity 2 and ord_a P^{(3)} = 2); they are not restricted in number.\n\nExample.  P(x)=x^{2}(1+x^{3}) (degree 5) fulfils (\\star ) with Q(x)= (1+x^{3})/60.  Its zero pattern (2,1,1,1) satisfies (\\dagger ) with S=3, D_1=D_2=0.",
+      "solution": "Throughout ord_a(\\cdot ) denotes the order of a meromorphic function at a, and for any meromorphic g we set s(a):=-ord_a g (so s(a) is the pole order of g, equal to 0 if g is holomorphic at a).\n\n1.  The quotient f := P^{(3)}/P.\n   Identity (\\star ) gives f = 1/Q.  Hence f is a meromorphic function on the Riemann sphere having exactly three poles when multiplicities are counted; consequently\n           \\sum _{a\\in \\mathbb{C}} s(a) = 3.     (0)\n\n2.  Local behaviour at a zero of P.\n   Let a be a zero of multiplicity k \\geq  1, so P(x) = (x-a)^k R(x) with R(a) \\neq  0.  A Taylor expansion yields\n  P^{(3)}(x) = (x-a)^{k-3}\\cdot A + (x-a)^{k-2}\\cdot B + (x-a)^{k-1}\\cdot C + (x-a)^k\\cdot D,\n   where A = k(k-1)(k-2)R(a).  Hence\n  k \\geq  3 \\Rightarrow  s(a)=3,\n  k = 2 \\Rightarrow  s(a)=2,1 or 0,\n  k = 1 \\Rightarrow  s(a)=1 or 0.              (1)\n   A zero is called active iff s(a)>0.\n\n3.  Global pole count.\n   Denote\n S  = number of active simple zeros (k=1, s=1),\n D_2 = number of active double zeros with s=2  (k=2, ord_a P^{(3)} = 0),\n D_1 = number of active double zeros with s=1  (k=2, ord_a P^{(3)} = 1),\n M  = number of zeros with multiplicity \\geq 3 (necessarily s=3 by (1)).\n   Adding the pole orders and using (0) gives the single Diophantine relation\n          S + D_1 + 2D_2 + 3M = 3.    (2)\n\n4.  Analysing (2).\n   All variables are non-negative integers.\n   *  M = 1 \\Rightarrow  S = D_1 = D_2 = 0.      (Case A)\n   *  M = 0.\n    - D_2 = 1 \\Rightarrow  S + D_1 = 1.    (Case B)\n    - D_2 = 0 \\Rightarrow  S + D_1 = 3.    (Case C)\n   No other possibilities occur.\n\n5.  Case A (M = 1): P possesses a zero of multiplicity \\geq 3.\n   Let a be this root.  Translate a to 0 so that P(x) = x^k R(x) with k \\geq  3 and R(0) \\neq  0.\n\n   (i) ord_0 P = k and ord_0 P^{(3)} = k-3, hence ord_0 Q = 3.  As deg Q = 3 one gets\n         Q(x) = c x^3    (c \\neq  0).   (3)\n\n   (ii) Inserting P = x^k R and (3) in (\\star ) yields x^3 P^{(3)} = c^{-1} P.  Expanding P(x)=\\sum _{t=0}^n b_t x^t gives for each t\n   b_t t(t-1)(t-2) = c^{-1} b_t.      (4)\n   The cubic t(t-1)(t-2) is strictly increasing for t \\geq  2, so (4) forces all non-zero b_t to have the same index.  Thus\n        P(x)=b_n x^{n},\n   i.e. P has a single zero of multiplicity n.  Undoing the translation gives alternative (I).\n\n6.  Cases B and C: M = 0, so every zero has multiplicity \\leq 2.\n   Hence P has at least two distinct zeros and every one is simple or double.\n\n   * Case B (D_2 = 1, S + D_1 = 1).  Exactly two active zeros occur:\n      - either one simple active and one double active with s = 2 (multiplicities 1 and 2), or\n      - two double active zeros, one with s = 2 and one with s = 1 (multiplicities 2 and 2).\n     Any further zeros are passive and therefore simple or double with s = 0.\n\n   * Case C (D_2 = 0, S + D_1 = 3).  There are exactly three active zeros, each either simple (s = 1) or double with s = 1.  All remaining zeros, if any, are passive with multiplicity 1 or 2.\n\n   In both sub-cases relation (\\dagger ) is precisely (2) with M = 0, proving alternative (II).\n\n7.  Passive zeros.\n   A simple zero is passive iff P^{(3)}(a) = 0; a double zero is passive iff ord_a P^{(3)} = 2 (equivalently P^{(3)}(a) = 0 and P^{(4)}(a) \\neq  0).  Their number is unrestricted except by the degree n.\n\n8.  Examples.\n   * P(x)=x^{2}(1+x^{3}) : passive double zero at 0 and three active simple zeros at the cube roots of -1 (S = 3, D_1 = D_2 = 0).\n   * P(x)=x^{2}(x-1)^{2}(1+x^{3}) : here D_2 = 1 (root 0), S = 1 (root -1), passive simple zeros at the other two cube roots of -1.\n\nThe two alternatives (I) and (II) are mutually exclusive and exhaustive, completing the classification.",
+      "_meta": {
+        "core_steps": [
+          "Assume a multiple root and translate so that it is at 0; write P(x)=x^k R(x) with R(0)≠0, k≥2",
+          "Differentiate twice to find ord₀(P'') = k−2, hence x^{k−2}∣P''(x)",
+          "Use the relation P = Q·P'' to deduce x² ∣ Q, so the quadratic must be Q(x)=C·x²",
+          "Match leading terms to get a_j = C·j(j−1)·a_j for every j, forcing a_j = 0 for j < n",
+          "Conclude P(x)=a_n x^n (all roots equal), contradicting the assumed mixture of simple and multiple roots; therefore every root of P is simple"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Location of the chosen multiple root (a linear shift of the variable)",
+            "original": "x = 0"
+          },
+          "slot2": {
+            "description": "Order of differentiation equals the degree of Q; both could be replaced by any positive integer m",
+            "original": "second derivative / quadratic (degree 2)"
+          },
+          "slot3": {
+            "description": "Explicit scalar C obtained from leading-term comparison",
+            "original": "C = 1/(n(n−1))"
+          },
+          "slot4": {
+            "description": "Statement that P has at least two distinct roots (any wording guaranteeing ‘not all roots equal’ suffices)",
+            "original": "“at least two distinct roots”"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

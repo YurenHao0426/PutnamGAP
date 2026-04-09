@@ -1,0 +1,112 @@
+{
+  "index": "2008-B-4",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $p$ be a prime number. Let $h(x)$ be a polynomial with integer coefficients\nsuch that $h(0), h(1), \\dots, h(p^2-1)$ are distinct modulo $p^2$.\nShow that $h(0), h(1), \\dots, h(p^3-1)$ are distinct modulo $p^3$.",
+  "solution": "We use the identity given by Taylor's theorem:\n\\[\nh(x+y) = \\sum_{i=0}^{\\deg(h)} \\frac{h^{(i)}(x)}{i!} y^i.\n\\]\nIn this expression, $h^{(i)}(x)/i!$ is a polynomial in $x$\nwith integer coefficients, so its value at an integer $x$ is an\ninteger.\n\nFor $x = 0,\\dots,p-1$, we deduce that\n\\[\nh(x+p) \\equiv h(x) + p h'(x) \\pmod{p^2}.\n\\]\n(This can also be deduced more directly using the binomial theorem.)\nSince we assumed $h(x)$ and $h(x+p)$ are distinct modulo $p^2$,\nwe conclude that $h'(x) \\not\\equiv 0 \\pmod{p}$. Since $h'$\nis a polynomial with integer coefficients, we have\n$h'(x) \\equiv h'(x + mp) \\pmod{p}$ for any integer $m$,\nand so $h'(x) \\not\\equiv 0 \\pmod{p}$ for \\emph{all} integers $x$.\n\nNow for $x= 0,\\dots,p^2-1$ and $y=0,\\dots,p-1$, we write\n\\[\nh(x + y p^2) \\equiv h(x) + p^2 y h'(x) \\pmod{p^3}.\n\\]\nThus $h(x), h(x+p^2),\\dots,h(x+(p-1)p^2)$ run over all of the residue\nclasses modulo $p^3$ congruent to $h(x)$ modulo $p^2$.\nSince the $h(x)$ themselves cover all the residue classes modulo $p^2$,\nthis proves that $h(0), \\dots, h(p^3-1)$ are distinct modulo $p^3$.\n\n\\textbf{Remark:}\nMore generally, the same proof shows that for any integers $d,e > 1$,\n$h$ permutes the residue classes modulo $p^d$ if and only if it permutes\nthe residue classes modulo $p^e$. The argument used in the proof is related\nto a general result in number theory known as\n\\emph{Hensel's lemma}.",
+  "vars": [
+    "d",
+    "e",
+    "i",
+    "m",
+    "x",
+    "y"
+  ],
+  "params": [
+    "h",
+    "p"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "d": "powerexponent",
+        "e": "secondexp",
+        "i": "seriesindex",
+        "m": "shiftindex",
+        "x": "inputvar",
+        "y": "offsetvar",
+        "h": "polyfunc",
+        "p": "primebase"
+      },
+      "question": "Let $primebase$ be a prime number. Let $\\operatorname{polyfunc}(inputvar)$ be a polynomial with integer coefficients such that $\\operatorname{polyfunc}(0), \\operatorname{polyfunc}(1), \\dots, \\operatorname{polyfunc}(primebase^2-1)$ are distinct modulo $primebase^2$. Show that $\\operatorname{polyfunc}(0), \\operatorname{polyfunc}(1), \\dots, \\operatorname{polyfunc}(primebase^3-1)$ are distinct modulo $primebase^3$.",
+      "solution": "We use the identity given by Taylor's theorem:\n\\[\n\\operatorname{polyfunc}(inputvar+offsetvar) \\,=\\,\n\\sum_{seriesindex=0}^{\\deg(\\operatorname{polyfunc})}\n  \\frac{\\operatorname{polyfunc}^{(seriesindex)}(inputvar)}{seriesindex!}\n  \\, offsetvar^{seriesindex}.\n\\]\nIn this expression, $\\operatorname{polyfunc}^{(seriesindex)}(inputvar)/seriesindex!$ is a polynomial in $inputvar$ with integer coefficients, so its value at an integer $inputvar$ is an integer.\n\nFor $inputvar = 0,\\dots,primebase-1$, we deduce that\n\\[\n\\operatorname{polyfunc}(inputvar+primebase) \\equiv \\operatorname{polyfunc}(inputvar) + primebase\\,\\operatorname{polyfunc}'(inputvar) \\pmod{primebase^2}.\n\\]\n(This can also be deduced more directly using the binomial theorem.) Since we assumed $\\operatorname{polyfunc}(inputvar)$ and $\\operatorname{polyfunc}(inputvar+primebase)$ are distinct modulo $primebase^2$, we conclude that $\\operatorname{polyfunc}'(inputvar) \\not\\equiv 0 \\pmod{primebase}$. Since $\\operatorname{polyfunc}'$ is a polynomial with integer coefficients, we have\n\\[\n\\operatorname{polyfunc}'(inputvar) \\equiv \\operatorname{polyfunc}'(inputvar + shiftindex\\,primebase) \\pmod{primebase}\n\\]\nfor any integer $shiftindex$, and so $\\operatorname{polyfunc}'(inputvar) \\not\\equiv 0 \\pmod{primebase}$ for \\emph{all} integers $inputvar$.\n\nNow for $inputvar = 0,\\dots,primebase^2-1$ and $offsetvar = 0,\\dots,primebase-1$, we write\n\\[\n\\operatorname{polyfunc}(inputvar + offsetvar\\,primebase^2) \\equiv \\operatorname{polyfunc}(inputvar) + primebase^2\\, offsetvar \\,\\operatorname{polyfunc}'(inputvar) \\pmod{primebase^3}.\n\\]\nThus $\\operatorname{polyfunc}(inputvar), \\operatorname{polyfunc}(inputvar+primebase^2),\\dots,\\operatorname{polyfunc}(inputvar+(primebase-1)primebase^2)$ run over all of the residue classes modulo $primebase^3$ congruent to $\\operatorname{polyfunc}(inputvar)$ modulo $primebase^2$. Since the $\\operatorname{polyfunc}(inputvar)$ themselves cover all the residue classes modulo $primebase^2$, this proves that $\\operatorname{polyfunc}(0), \\dots, \\operatorname{polyfunc}(primebase^3-1)$ are distinct modulo $primebase^3$.\n\n\\textbf{Remark:} More generally, the same proof shows that for any integers $powerexponent,secondexp > 1$, $\\operatorname{polyfunc}$ permutes the residue classes modulo $primebase^{powerexponent}$ if and only if it permutes the residue classes modulo $primebase^{secondexp}$. The argument used in the proof is related to a general result in number theory known as \\emph{Hensel's lemma}."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "d": "marigolds",
+        "e": "bluewhale",
+        "i": "peppercorn",
+        "m": "driftwood",
+        "x": "waterfall",
+        "y": "hummingbird",
+        "h": "raincloud",
+        "p": "stardust"
+      },
+      "question": "Let $stardust$ be a prime number. Let $raincloud(waterfall)$ be a polynomial with integer coefficients\nsuch that $raincloud(0), raincloud(1), \\dots, raincloud(stardust^2-1)$ are distinct modulo $stardust^2$.\nShow that $raincloud(0), raincloud(1), \\dots, raincloud(stardust^3-1)$ are distinct modulo $stardust^3$.",
+      "solution": "We use the identity given by Taylor's theorem:\n\\[\nraincloud(waterfall+hummingbird) = \\sum_{\\peppercorn=0}^{\\deg(raincloud)} \\frac{raincloud^{(\\peppercorn)}(waterfall)}{\\peppercorn!} hummingbird^{\\peppercorn}.\n\\]\nIn this expression, $raincloud^{(\\peppercorn)}(waterfall)/\\peppercorn!$ is a polynomial in $waterfall$\nwith integer coefficients, so its value at an integer $waterfall$ is an\ninteger.\n\nFor $waterfall = 0,\\dots,stardust-1$, we deduce that\n\\[\nraincloud(waterfall+stardust) \\equiv raincloud(waterfall) + stardust\\, raincloud'(waterfall) \\pmod{stardust^2}.\n\\]\n(This can also be deduced more directly using the binomial theorem.)\nSince we assumed $raincloud(waterfall)$ and $raincloud(waterfall+stardust)$ are distinct modulo $stardust^2$,\nwe conclude that $raincloud'(waterfall) \\not\\equiv 0 \\pmod{stardust}$. Since $raincloud'$\nis a polynomial with integer coefficients, we have\n$raincloud'(waterfall) \\equiv raincloud'(waterfall + driftwood\\, stardust) \\pmod{stardust}$ for any integer $driftwood$,\nand so $raincloud'(waterfall) \\not\\equiv 0 \\pmod{stardust}$ for \\emph{all} integers $waterfall$.\n\nNow for $waterfall= 0,\\dots,stardust^2-1$ and $hummingbird=0,\\dots,stardust-1$, we write\n\\[\nraincloud(waterfall + hummingbird\\, stardust^2) \\equiv raincloud(waterfall) + stardust^2\\, hummingbird\\, raincloud'(waterfall) \\pmod{stardust^3}.\n\\]\nThus $raincloud(waterfall), raincloud(waterfall+stardust^2),\\dots,raincloud(waterfall+(stardust-1)stardust^2)$ run over all of the residue\nclasses modulo $stardust^3$ congruent to $raincloud(waterfall)$ modulo $stardust^2$.\nSince the $raincloud(waterfall)$ themselves cover all the residue classes modulo $stardust^2$,\nthis proves that $raincloud(0), \\dots, raincloud(stardust^3-1)$ are distinct modulo $stardust^3$.\n\n\\textbf{Remark:}\nMore generally, the same proof shows that for any integers $marigolds,bluewhale > 1$,\n$raincloud$ permutes the residue classes modulo $stardust^{marigolds}$ if and only if it permutes\nthe residue classes modulo $stardust^{bluewhale}$. The argument used in the proof is related\nto a general result in number theory known as\n\\emph{Hensel's lemma}. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "d": "fractional",
+        "e": "subscript",
+        "i": "stagnant",
+        "m": "fixedpoint",
+        "x": "constantval",
+        "y": "stationary",
+        "h": "constantfunc",
+        "p": "compositenumber"
+      },
+      "question": "Let $compositenumber$ be a prime number. Let $constantfunc(constantval)$ be a polynomial with integer coefficients\nsuch that $constantfunc(0),\\, constantfunc(1),\\, \\dots,\\, constantfunc(compositenumber^2-1)$ are distinct modulo $compositenumber^2$.\nShow that $constantfunc(0),\\, constantfunc(1),\\, \\dots,\\, constantfunc(compositenumber^3-1)$ are distinct modulo $compositenumber^3$.",
+      "solution": "We use the identity given by Taylor's theorem:\n\\[\nconstantfunc(constantval+stationary) = \\sum_{stagnant=0}^{\\deg(constantfunc)} \\frac{constantfunc^{(stagnant)}(constantval)}{stagnant!}\\, stationary^{stagnant}.\n\\]\nIn this expression, $constantfunc^{(stagnant)}(constantval)/stagnant!$ is a polynomial in $constantval$\nwith integer coefficients, so its value at an integer $constantval$ is an\ninteger.\n\nFor $constantval = 0,\\dots,compositenumber-1$, we deduce that\n\\[\nconstantfunc(constantval+compositenumber) \\equiv constantfunc(constantval) + compositenumber\\, constantfunc'(constantval) \\pmod{compositenumber^2}.\n\\]\n(This can also be deduced more directly using the binomial theorem.)\nSince we assumed $constantfunc(constantval)$ and $constantfunc(constantval+compositenumber)$ are distinct modulo $compositenumber^2$,\nwe conclude that $constantfunc'(constantval) \\not\\equiv 0 \\pmod{compositenumber}$. Since $constantfunc'$ is a polynomial with integer coefficients, we have\n$constantfunc'(constantval) \\equiv constantfunc'(constantval + fixedpoint\\, compositenumber) \\pmod{compositenumber}$ for any integer $fixedpoint$,\nand so $constantfunc'(constantval) \\not\\equiv 0 \\pmod{compositenumber}$ for \\emph{all} integers $constantval$.\n\nNow for $constantval = 0,\\dots,compositenumber^2-1$ and $stationary = 0,\\dots,compositenumber-1$, we write\n\\[\nconstantfunc(constantval + stationary\\, compositenumber^2) \\equiv constantfunc(constantval) + compositenumber^2\\, stationary\\, constantfunc'(constantval) \\pmod{compositenumber^3}.\n\\]\nThus $constantfunc(constantval),\\, constantfunc(constantval+compositenumber^2),\\dots,constantfunc(constantval+(compositenumber-1)compositenumber^2)$ run over all of the residue\nclasses modulo $compositenumber^3$ congruent to $constantfunc(constantval)$ modulo $compositenumber^2$.\nSince the $constantfunc(constantval)$ themselves cover all the residue classes modulo $compositenumber^2$,\nthis proves that $constantfunc(0),\\, \\dots,\\, constantfunc(compositenumber^3-1)$ are distinct modulo $compositenumber^3$.\n\n\\textbf{Remark:}\nMore generally, the same proof shows that for any integers $fractional,subscript > 1$,\n$constantfunc$ permutes the residue classes modulo $compositenumber^{fractional}$ if and only if it permutes\nthe residue classes modulo $compositenumber^{subscript}$. The argument used in the proof is related\nto a general result in number theory known as \\emph{Hensel's lemma}."
+    },
+    "garbled_string": {
+      "map": {
+        "d": "qzxwvtnp",
+        "e": "hjgrksla",
+        "i": "mnbvcxzl",
+        "m": "plokibnj",
+        "x": "asdfghjk",
+        "y": "qwertyui",
+        "h": "zxcvbnmq",
+        "p": "lkjhgfdsa"
+      },
+      "question": "Let $lkjhgfdsa$ be a prime number. Let $zxcvbnmq(asdfghjk)$ be a polynomial with integer coefficients\nsuch that $zxcvbnmq(0), zxcvbnmq(1), \\dots, zxcvbnmq(lkjhgfdsa^2-1)$ are distinct modulo $lkjhgfdsa^2$.\nShow that $zxcvbnmq(0), zxcvbnmq(1), \\dots, zxcvbnmq(lkjhgfdsa^3-1)$ are distinct modulo $lkjhgfdsa^3$.",
+      "solution": "We use the identity given by Taylor's theorem:\n\\[\nzxcvbnmq(asdfghjk+qwertyui) = \\sum_{mnbvcxzl=0}^{\\deg(zxcvbnmq)} \\frac{zxcvbnmq^{(mnbvcxzl)}(asdfghjk)}{mnbvcxzl!} qwertyui^{mnbvcxzl}.\n\\]\nIn this expression, $zxcvbnmq^{(mnbvcxzl)}(asdfghjk)/mnbvcxzl!$ is a polynomial in $asdfghjk$\nwith integer coefficients, so its value at an integer $asdfghjk$ is an\ninteger.\n\nFor $asdfghjk = 0,\\dots,lkjhgfdsa-1$, we deduce that\n\\[\nzxcvbnmq(asdfghjk+lkjhgfdsa) \\equiv zxcvbnmq(asdfghjk) + lkjhgfdsa\\, zxcvbnmq'(asdfghjk) \\pmod{lkjhgfdsa^2}.\n\\]\n(This can also be deduced more directly using the binomial theorem.)\nSince we assumed $zxcvbnmq(asdfghjk)$ and $zxcvbnmq(asdfghjk+lkjhgfdsa)$ are distinct modulo $lkjhgfdsa^2$,\nwe conclude that $zxcvbnmq'(asdfghjk) \\not\\equiv 0 \\pmod{lkjhgfdsa}$. Since $zxcvbnmq'$\nis a polynomial with integer coefficients, we have\n$zxcvbnmq'(asdfghjk) \\equiv zxcvbnmq'(asdfghjk + plokibnj\\, lkjhgfdsa) \\pmod{lkjhgfdsa}$ for any integer $plokibnj$,\nand so $zxcvbnmq'(asdfghjk) \\not\\equiv 0 \\pmod{lkjhgfdsa}$ for \\emph{all} integers $asdfghjk$.\n\nNow for $asdfghjk= 0,\\dots,lkjhgfdsa^2-1$ and $qwertyui=0,\\dots,lkjhgfdsa-1$, we write\n\\[\nzxcvbnmq(asdfghjk + qwertyui\\, lkjhgfdsa^2) \\equiv zxcvbnmq(asdfghjk) + lkjhgfdsa^2\\, qwertyui\\, zxcvbnmq'(asdfghjk) \\pmod{lkjhgfdsa^3}.\n\\]\nThus $zxcvbnmq(asdfghjk), zxcvbnmq(asdfghjk+lkjhgfdsa^2),\\dots,zxcvbnmq(asdfghjk+(lkjhgfdsa-1)lkjhgfdsa^2)$ run over all of the residue\nclasses modulo $lkjhgfdsa^3$ congruent to $zxcvbnmq(asdfghjk)$ modulo $lkjhgfdsa^2$.\nSince the $zxcvbnmq(asdfghjk)$ themselves cover all the residue classes modulo $lkjhgfdsa^2$,\nthis proves that $zxcvbnmq(0), \\dots, zxcvbnmq(lkjhgfdsa^3-1)$ are distinct modulo $lkjhgfdsa^3$.\n\n\\textbf{Remark:}\nMore generally, the same proof shows that for any integers $qzxwvtnp,hjgrksla > 1$,\n$zxcvbnmq$ permutes the residue classes modulo $lkjhgfdsa^{qzxwvtnp}$ if and only if it permutes\nthe residue classes modulo $lkjhgfdsa^{hjgrksla}$. The argument used in the proof is related\nto a general result in number theory known as\n\\emph{Hensel's lemma}. "
+    },
+    "kernel_variant": {
+      "question": "Let p be a prime and let f(x) \\in  \\mathbb{Z}[x].  Assume that the p^4 integers\n\nf(0), f(1), \\ldots  , f(p^4-1)\n\nare pair-wise incongruent modulo p^4 (equivalently, the polynomial f induces a permutation of the ring \\mathbb{Z} / p^4\\mathbb{Z}).  Prove that the p^5 integers\n\nf(0), f(1), \\ldots  , f(p^5-1)\n\nare pair-wise incongruent modulo p^5.",
+      "solution": "We write \\equiv  for congruence modulo powers of the fixed prime p.\n\nStep 1.  A first-order Taylor expansion.\nFor every pair of integers x , h we have the usual identity\n   f(x + h) = \\Sigma _{i \\geq  0} f^{(i)}(x) h^{i} / i! ,\nwhere each coefficient f^{(i)}(x) / i! is an integer.  Specialising to a\nstep of size p^3 gives, for every integer x,\n   f(x + p^3) \\equiv  f(x) + p^3 f'(x)   (mod p^4) ,            (1)\nbecause the next term contains the factor (p^3)^2 = p^6 which is divisible by\np^4.\n\nStep 2.  The derivative cannot vanish modulo p.\nSuppose, for a contradiction, that there is an integer z with\n   f'(z) \\equiv  0  (mod p).\nInsert x = z in (1):\n   f(z + p^3) \\equiv  f(z)   (mod p^4).\nBut z and z + p^3 are distinct modulo p^4 (since 0 < p^3 < p^4), while the\nhypothesis says that the values of f at different arguments are distinct\nmodulo p^4.  The obtained congruence therefore violates the assumption of\ninjectivity.  Hence\n   f'(x) \\not\\equiv  0   (mod p)   for every integer x.      (2)\n\nStep 3.  Periodicity of the derivative (optional).\nBecause f' has integral coefficients, we have\n   f'(x + mp) \\equiv  f'(x)   (mod p)   (m \\in  \\mathbb{Z}),\nso (2) really holds for every residue class mod p.  We shall only need the\nfact that f'(x) is invertible modulo p for every integer x.\n\nStep 4.  Lifting one power higher.\nWrite an arbitrary integer n with 0 \\leq  n \\leq  p^5 - 1 in the form\n        n = x + y p^4,      0 \\leq  x \\leq  p^4 - 1 ,   0 \\leq  y \\leq  p - 1.\nApplying Taylor's formula with step h = y p^4 we obtain\n   f(x + y p^4)  = f(x) + p^4 y f'(x) + (y p^4)^2 \\cdot  ( \\ldots  )\n               \\equiv  f(x) + p^4 y f'(x)      (mod p^5),       (3)\nbecause (y p^4)^2 = y^2 p^8 is a multiple of p^5.\nSince f'(x) is not divisible by p, it is invertible modulo p, so as y runs\nthrough 0,\\ldots ,p-1 the right-hand side of (3) produces p distinct residues\nmodulo p^5, all of them lying above the single residue f(x) modulo p^4.\n\nStep 5.  Injectivity modulo p^5.\nBy hypothesis the p^4 numbers f(0), \\ldots  , f(p^4 - 1) are pair-wise distinct\nmod p^4, and therefore they represent all p^4 residue classes modulo p^4.\nFor each of these residue classes step 4 furnishes exactly p different lifts\nmodulo p^5, pair-wise distinct among themselves and distinct from the lifts\ncoming from any other base class.  Consequently the p^4 \\cdot  p = p^5 numbers\n\n   f(0), f(1), \\ldots  , f(p^5 - 1)\n\nare pair-wise incongruent modulo p^5, completing the proof.",
+      "_meta": {
+        "core_steps": [
+          "Use Taylor/binomial expansion to express h(x+p) mod p² and h(x+yp²) mod p³.",
+          "Distinctness of h(x) and h(x+p) mod p² ⇒ h′(x) ≠ 0 mod p (invertibility criterion).",
+          "Periodicity h′(x) ≡ h′(x+mp) mod p extends h′(x) ≠ 0 mod p to every integer x.",
+          "For each residue class x mod p², the map y ↦ h(x+yp²) sweeps all lifts mod p³.",
+          "Since the p² classes are all distinct, their lifts are distinct ⇒ injectivity mod p³."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "lower power of p at which injectivity is assumed",
+            "original": "2"
+          },
+          "slot2": {
+            "description": "higher consecutive power of p to which injectivity is lifted",
+            "original": "3"
+          },
+          "slot3": {
+            "description": "index ranges tied to the two powers (0…p²−1 and 0…p³−1)",
+            "original": "p² and p³"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

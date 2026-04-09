@@ -1,0 +1,166 @@
+{
+  "index": "1991-B-3",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Does there exist a real number $L$ such that, if $m$ and $n$ are integers\ngreater than $L$, then an $m \\times n$ rectangle may be expressed as a\nunion of $4 \\times 6$ and $5 \\times 7$ rectangles, any two of which\nintersect at most along their boundaries?",
+  "solution": "Theorem 1. If \\( a \\) and \\( b \\) are positive integers, then there exists a number \\( g \\) such tha every multiple of \\( \\operatorname{gcd}(a, b) \\) greater than \\( g \\) may be written in the form \\( r a+s b \\), where 1 and \\( s \\) are nonnegative integers.\n\nThis is sometimes called the \"Postage Stamp Theorem\" because if \\( \\operatorname{gcd}(a, b)=1 \\) then every amount of postage greater than \\( g \\) cents can be paid for with \\( a \\)-cent anc \\( b \\)-cent stamps. In this case, \\( g \\) may be taken to be \\( a b-a-b \\), but no smaller: \\( a b-a-l \\) is not of the form \\( r a+s b \\) with \\( r, s \\geq 0 \\). For further discussion, see [NZM, Section 5.1] the theorem appears as Problem 16.\n\nProof. Suppose first that \\( \\operatorname{gcd}(a, b)=1 \\). Then \\( 0, a, 2 a, \\ldots,(b-1) a \\) is a complet set of residues modulo \\( b \\). Thus, for any integer \\( k \\) greater than \\( (b-1) a-1, k-q b=j c \\) for some \\( q \\geq 0, j=0,1,2, \\ldots, b-1 \\), hence the claim for this special case.\n\nFor general \\( a \\) and \\( b \\), write \\( a=d a_{0} \\) and \\( b=d b_{0} \\), where \\( d=\\operatorname{gcd}(a, b) \\) anc \\( \\operatorname{gcd}\\left(a_{0}, b_{0}\\right)=1 \\). We showed that all sufficiently positive integers are expressible as \\( r a_{0}+s b_{0} \\). Multiplying by \\( d \\), we find that all sufficiently positive multiples of \\( d \\) art expressible as \\( r a+s b \\).\n\nSolution. We begin by forming \\( 20 \\times 6 \\) and \\( 20 \\times 7 \\) rectangles. From Theorem 1 , we may form \\( 20 \\times n \\) rectangles for \\( n \\) sufficiently large. We may also form \\( 35 \\times 5 \\) and \\( 35 \\times 7 \\) rectangles, hence \\( 35 \\times n \\) rectangles for \\( n \\) sufficiently large. We may further form \\( 42 \\times 4 \\) and \\( 42 \\times 5 \\) rectangles, hence \\( 42 \\times n \\) rectangles for \\( n \\) sufficiently large.\n\nSince \\( \\operatorname{gcd}(20,35)=5 \\), there exists a multiple \\( m_{0} \\) of 5 , relatively prime to 42 and independent of \\( n \\), for which we may form an \\( m_{0} \\times n \\) rectangle. Finally, since \\( \\operatorname{gcd}\\left(m_{0}, 42\\right)=1 \\), we may use \\( m_{0} \\times n \\) and \\( 42 \\times n \\) rectangles to form \\( m \\times n \\) rectangles for all \\( m \\) and \\( n \\) sufficiently large.",
+  "vars": [
+    "m",
+    "n",
+    "k",
+    "q",
+    "j",
+    "r",
+    "s",
+    "a",
+    "b",
+    "d",
+    "c",
+    "a_0",
+    "b_0",
+    "m_0"
+  ],
+  "params": [
+    "L",
+    "g"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "m": "widthdim",
+        "n": "heightdim",
+        "k": "auxiliary",
+        "q": "quotient",
+        "j": "residue",
+        "r": "multiplier",
+        "s": "addend",
+        "a": "firststep",
+        "b": "secondstep",
+        "d": "gcdvalue",
+        "a_0": "coprimea",
+        "b_0": "coprimeb",
+        "m_0": "initialmult",
+        "L": "threshold",
+        "g": "postagelimit"
+      },
+      "question": "Does there exist a real number $threshold$ such that, if $widthdim$ and $heightdim$ are integers\ngreater than $threshold$, then a $widthdim \\times heightdim$ rectangle may be expressed as a\nunion of $4 \\times 6$ and $5 \\times 7$ rectangles, any two of which\nintersect at most along their boundaries?",
+      "solution": "Theorem 1. If \\( firststep \\) and \\( secondstep \\) are positive integers, then there exists a number \\( postagelimit \\) such that every multiple of \\( \\operatorname{gcd}(firststep, secondstep) \\) greater than \\( postagelimit \\) may be written in the form \\( multiplier\\, firststep + addend\\, secondstep \\), where \\( multiplier \\) and \\( addend \\) are nonnegative integers.\n\nThis is sometimes called the \"Postage Stamp Theorem\" because if \\( \\operatorname{gcd}(firststep, secondstep)=1 \\) then every amount of postage greater than \\( postagelimit \\) cents can be paid for with \\( firststep \\)-cent and \\( secondstep \\)-cent stamps. In this case, \\( postagelimit \\) may be taken to be \\( firststep\\,secondstep-firststep-secondstep \\), but no smaller: \\( firststep\\,secondstep-firststep-secondstep \\) is not of the form \\( multiplier\\, firststep + addend\\, secondstep \\) with \\( multiplier, addend \\ge 0 \\). For further discussion, see [NZM, Section 5.1]; the theorem appears as Problem 16.\n\nProof. Suppose first that \\( \\operatorname{gcd}(firststep, secondstep)=1 \\). Then \\( 0, firststep, 2\\,firststep, \\ldots,(secondstep-1)\\,firststep \\) is a complete set of residues modulo \\( secondstep \\). Thus, for any integer \\( auxiliary \\) greater than \\( (secondstep-1)\\,firststep-1 \\), \\( auxiliary-quotient\\, secondstep = residue\\, c \\) for some \\( quotient \\ge 0, \\; residue =0,1,2,\\ldots, secondstep-1 \\), hence the claim for this special case.\n\nFor general \\( firststep \\) and \\( secondstep \\), write \\( firststep = gcdvalue\\, coprimea \\) and \\( secondstep = gcdvalue\\, coprimeb \\), where \\( gcdvalue = \\operatorname{gcd}(firststep, secondstep) \\) and \\( \\operatorname{gcd}(coprimea, coprimeb)=1 \\). We showed that all sufficiently positive integers are expressible as \\( multiplier\\, coprimea + addend\\, coprimeb \\). Multiplying by \\( gcdvalue \\), we find that all sufficiently positive multiples of \\( gcdvalue \\) are expressible as \\( multiplier\\, firststep + addend\\, secondstep \\).\n\nSolution. We begin by forming \\( 20 \\times 6 \\) and \\( 20 \\times 7 \\) rectangles. From Theorem 1, we may form \\( 20 \\times heightdim \\) rectangles for \\( heightdim \\) sufficiently large. We may also form \\( 35 \\times 5 \\) and \\( 35 \\times 7 \\) rectangles, hence \\( 35 \\times heightdim \\) rectangles for \\( heightdim \\) sufficiently large. We may further form \\( 42 \\times 4 \\) and \\( 42 \\times 5 \\) rectangles, hence \\( 42 \\times heightdim \\) rectangles for \\( heightdim \\) sufficiently large.\n\nSince \\( \\operatorname{gcd}(20,35)=5 \\), there exists a multiple \\( initialmult \\) of 5, relatively prime to 42 and independent of \\( heightdim \\), for which we may form an \\( initialmult \\times heightdim \\) rectangle. Finally, since \\( \\operatorname{gcd}(initialmult, 42)=1 \\), we may use \\( initialmult \\times heightdim \\) and \\( 42 \\times heightdim \\) rectangles to form \\( widthdim \\times heightdim \\) rectangles for all \\( widthdim \\) and \\( heightdim \\) sufficiently large."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "m": "marshland",
+        "n": "nevermore",
+        "k": "kingmaker",
+        "q": "quartzite",
+        "j": "jubilance",
+        "r": "riverside",
+        "s": "sandstorm",
+        "a": "albatross",
+        "b": "buttercup",
+        "d": "driftwood",
+        "c": "cornfield",
+        "a_0": "arrowroot",
+        "b_0": "blueberry",
+        "m_0": "moonlight",
+        "L": "labyrinth",
+        "g": "gingerbread"
+      },
+      "question": "Does there exist a real number $labyrinth$ such that, if $marshland$ and $nevermore$ are integers\ngreater than $labyrinth$, then an $marshland \\times nevermore$ rectangle may be expressed as a\nunion of $4 \\times 6$ and $5 \\times 7$ rectangles, any two of which\nintersect at most along their boundaries?",
+      "solution": "Theorem 1. If \\( albatross \\) and \\( buttercup \\) are positive integers, then there exists a number \\( gingerbread \\) such tha every multiple of \\( \\operatorname{gcd}(albatross, buttercup) \\) greater than \\( gingerbread \\) may be written in the form \\( riverside albatross+sandstorm buttercup \\), where 1 and \\( sandstorm \\) are nonnegative integers.\n\nThis is sometimes called the \"Postage Stamp Theorem\" because if \\( \\operatorname{gcd}(albatross, buttercup)=1 \\) then every amount of postage greater than \\( gingerbread \\) cents can be paid for with \\( albatross \\)-cent anc \\( buttercup \\)-cent stamps. In this case, \\( gingerbread \\) may be taken to be \\( albatross buttercup-albatross-buttercup \\), but no smaller: \\( albatross buttercup-albatross-labyrinth \\) is not of the form \\( riverside albatross+sandstorm buttercup \\) with \\( riverside, sandstorm \\geq 0 \\). For further discussion, see [NZM, Section 5.1] the theorem appears as Problem 16.\n\nProof. Suppose first that \\( \\operatorname{gcd}(albatross, buttercup)=1 \\). Then \\( 0, albatross, 2 albatross, \\ldots,(buttercup-1) albatross \\) is a complet set of residues modulo \\( buttercup \\). Thus, for any integer \\( kingmaker \\) greater than \\( (buttercup-1) albatross-1, kingmaker-quartzite buttercup=jubilance cornfield \\) for some \\( quartzite \\geq 0, jubilance=0,1,2, \\ldots, buttercup-1 \\), hence the claim for this special case.\n\nFor general \\( albatross \\) and \\( buttercup \\), write \\( albatross=driftwood arrowroot \\) and \\( buttercup=driftwood blueberry \\), where \\( driftwood=\\operatorname{gcd}(albatross, buttercup) \\) anc \\( \\operatorname{gcd}\\left(arrowroot, blueberry\\right)=1 \\). We showed that all sufficiently positive integers are expressible as \\( riverside arrowroot+sandstorm blueberry \\). Multiplying by \\( driftwood \\), we find that all sufficiently positive multiples of \\( driftwood \\) art expressible as \\( riverside albatross+sandstorm buttercup \\).\n\nSolution. We begin by forming \\( 20 \\times 6 \\) and \\( 20 \\times 7 \\) rectangles. From Theorem 1 , we may form \\( 20 \\times nevermore \\) rectangles for \\( nevermore \\) sufficiently large. We may also form \\( 35 \\times 5 \\) and \\( 35 \\times 7 \\) rectangles, hence \\( 35 \\times nevermore \\) rectangles for \\( nevermore \\) sufficiently large. We may further form \\( 42 \\times 4 \\) and \\( 42 \\times 5 \\) rectangles, hence \\( 42 \\times nevermore \\) rectangles for \\( nevermore \\) sufficiently large.\n\nSince \\( \\operatorname{gcd}(20,35)=5 \\), there exists a multiple \\( marshland_{0} \\) of 5 , relatively prime to 42 and independent of \\( nevermore \\), for which we may form an \\( moonlight \\times nevermore \\) rectangle. Finally, since \\( \\operatorname{gcd}\\left(moonlight, 42\\right)=1 \\), we may use \\( moonlight \\times nevermore \\) and \\( 42 \\times nevermore \\) rectangles to form \\( marshland \\times nevermore \\) rectangles for all \\( marshland \\) and \\( nevermore \\) sufficiently large."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "m": "minilength",
+        "n": "tinybreadth",
+        "k": "fractional",
+        "q": "irrational",
+        "j": "decimalpart",
+        "r": "negative",
+        "s": "negativeone",
+        "a": "negativewidth",
+        "b": "negativeheight",
+        "d": "lcmvalue",
+        "c": "zeroelement",
+        "a_0": "infinitesize",
+        "b_0": "endlesssize",
+        "m_0": "minimalwidth",
+        "L": "minvalue",
+        "g": "startpoint"
+      },
+      "question": "Does there exist a real number $minvalue$ such that, if $minilength$ and $tinybreadth$ are integers\ngreater than $minvalue$, then an $minilength \\times tinybreadth$ rectangle may be expressed as a\nunion of $4 \\times 6$ and $5 \\times 7$ rectangles, any two of which\nintersect at most along their boundaries?",
+      "solution": "Theorem 1. If \\( negativewidth \\) and \\( negativeheight \\) are positive integers, then there exists a number \\( startpoint \\) such tha every multiple of \\( \\operatorname{gcd}(negativewidth, negativeheight) \\) greater than \\( startpoint \\) may be written in the form \\( negative \\, negativewidth+negativeone \\, negativeheight \\), where 1 and \\( negativeone \\) are nonnegative integers.\n\nThis is sometimes called the \"Postage Stamp Theorem\" because if \\( \\operatorname{gcd}(negativewidth, negativeheight)=1 \\) then every amount of postage greater than \\( startpoint \\) cents can be paid for with \\( negativewidth \\)-cent anc \\( negativeheight \\)-cent stamps. In this case, \\( startpoint \\) may be taken to be \\( negativewidth negativeheight-negativewidth-negativeheight \\), but no smaller: \\( negativewidth negativeheight-negativewidth-l \\) is not of the form \\( negative \\, negativewidth+negativeone \\, negativeheight \\) with \\( negative, negativeone \\geq 0 \\). For further discussion, see [NZM, Section 5.1] the theorem appears as Problem 16.\n\nProof. Suppose first that \\( \\operatorname{gcd}(negativewidth, negativeheight)=1 \\). Then \\( 0, negativewidth, 2 negativewidth, \\ldots,(negativeheight-1) negativewidth \\) is a complet set of residues modulo \\( negativeheight \\). Thus, for any integer \\( fractional \\) greater than \\( (negativeheight-1) negativewidth-1, fractional-irrational negativeheight=decimalpart \\, zeroelement \\) for some \\( irrational \\geq 0, decimalpart=0,1,2, \\ldots, negativeheight-1 \\), hence the claim for this special case.\n\nFor general \\( negativewidth \\) and \\( negativeheight \\), write \\( negativewidth=lcmvalue infinitesize \\) and \\( negativeheight=lcmvalue endlesssize \\), where \\( lcmvalue=\\operatorname{gcd}(negativewidth, negativeheight) \\) anc \\( \\operatorname{gcd}\\left(infinitesize, endlesssize\\right)=1 \\). We showed that all sufficiently positive integers are expressible as \\( negative \\, infinitesize+negativeone \\, endlesssize \\). Multiplying by \\( lcmvalue \\), we find that all sufficiently positive multiples of \\( lcmvalue \\) art expressible as \\( negative \\, negativewidth+negativeone \\, negativeheight \\).\n\nSolution. We begin by forming \\( 20 \\times 6 \\) and \\( 20 \\times 7 \\) rectangles. From Theorem 1 , we may form \\( 20 \\times tinybreadth \\) rectangles for \\( tinybreadth \\) sufficiently large. We may also form \\( 35 \\times 5 \\) and \\( 35 \\times 7 \\) rectangles, hence \\( 35 \\times tinybreadth \\) rectangles for \\( tinybreadth \\) sufficiently large. We may further form \\( 42 \\times 4 \\) and \\( 42 \\times 5 \\) rectangles, hence \\( 42 \\times tinybreadth \\) rectangles for \\( tinybreadth \\) sufficiently large.\n\nSince \\( \\operatorname{gcd}(20,35)=5 \\), there exists a multiple \\( minimalwidth \\) of 5 , relatively prime to 42 and independent of \\( tinybreadth \\), for which we may form an \\( minimalwidth \\times tinybreadth \\) rectangle. Finally, since \\( \\operatorname{gcd}\\left(minimalwidth, 42\\right)=1 \\), we may use \\( minimalwidth \\times tinybreadth \\) and \\( 42 \\times tinybreadth \\) rectangles to form \\( minilength \\times tinybreadth \\) rectangles for all \\( minilength \\) and \\( tinybreadth \\) sufficiently large."
+    },
+    "garbled_string": {
+      "map": {
+        "m": "qzxwvtnp",
+        "n": "hjgrksla",
+        "k": "pstfovkid",
+        "q": "mldaejrq",
+        "j": "xzrblvyo",
+        "r": "vlqspemo",
+        "s": "budfrytc",
+        "a": "wjicpahn",
+        "b": "gfordlex",
+        "d": "lkubsemt",
+        "c": "navydqro",
+        "a_0": "zqxlymab",
+        "b_0": "dsornkep",
+        "m_0": "imzcvhqa",
+        "L": "yktrewan",
+        "g": "pbqslvne"
+      },
+      "question": "Does there exist a real number $yktrewan$ such that, if $qzxwvtnp$ and $hjgrksla$ are integers\ngreater than $yktrewan$, then an $qzxwvtnp \\times hjgrksla$ rectangle may be expressed as a\nunion of $4 \\times 6$ and $5 \\times 7$ rectangles, any two of which\nintersect at most along their boundaries?",
+      "solution": "Theorem 1. If \\( wjicpahn \\) and \\( gfordlex \\) are positive integers, then there exists a number \\( pbqslvne \\) such tha every multiple of \\( \\operatorname{gcd}(wjicpahn, gfordlex) \\) greater than \\( pbqslvne \\) may be written in the form \\( vlqspemo wjicpahn+budfrytc gfordlex \\), where 1 and \\( budfrytc \\) are nonnegative integers.\n\nThis is sometimes called the \"Postage Stamp Theorem\" because if \\( \\operatorname{gcd}(wjicpahn, gfordlex)=1 \\) then every amount of postage greater than \\( pbqslvne \\) cents can be paid for with \\( wjicpahn \\)-cent anc \\( gfordlex \\)-cent stamps. In this case, \\( pbqslvne \\) may be taken to be \\( wjicpahn gfordlex-wjicpahn-gfordlex \\), but no smaller: \\( wjicpahn gfordlex-wjicpahn-l \\) is not of the form \\( vlqspemo wjicpahn+budfrytc gfordlex \\) with \\( vlqspemo, budfrytc \\geq 0 \\). For further discussion, see [NZM, Section 5.1] the theorem appears as Problem 16.\n\nProof. Suppose first that \\( \\operatorname{gcd}(wjicpahn, gfordlex)=1 \\). Then \\( 0, wjicpahn, 2 wjicpahn, \\ldots,(gfordlex-1) wjicpahn \\) is a complet set of residues modulo \\( gfordlex \\). Thus, for any integer \\( pstfovkid \\) greater than \\( (gfordlex-1) wjicpahn-1, pstfovkid-mldaejrq gfordlex=xzrblvyo navydqro \\) for some \\( mldaejrq \\geq 0, xzrblvyo=0,1,2, \\ldots, gfordlex-1 \\), hence the claim for this special case.\n\nFor general \\( wjicpahn \\) and \\( gfordlex \\), write \\( wjicpahn=lkubsemt zqxlymab \\) and \\( gfordlex=lkubsemt dsornkep \\), where \\( lkubsemt=\\operatorname{gcd}(wjicpahn, gfordlex) \\) anc \\( \\operatorname{gcd}\\left(zqxlymab, dsornkep\\right)=1 \\). We showed that all sufficiently positive integers are expressible as \\( vlqspemo zqxlymab+budfrytc dsornkep \\). Multiplying by \\( lkubsemt \\), we find that all sufficiently positive multiples of \\( lkubsemt \\) art expressible as \\( vlqspemo wjicpahn+budfrytc gfordlex \\).\n\nSolution. We begin by forming \\( 20 \\times 6 \\) and \\( 20 \\times 7 \\) rectangles. From Theorem 1 , we may form \\( 20 \\times hjgrksla \\) rectangles for \\( hjgrksla \\) sufficiently large. We may also form \\( 35 \\times 5 \\) and \\( 35 \\times 7 \\) rectangles, hence \\( 35 \\times hjgrksla \\) rectangles for \\( hjgrksla \\) sufficiently large. We may further form \\( 42 \\times 4 \\) and \\( 42 \\times 5 \\) rectangles, hence \\( 42 \\times hjgrksla \\) rectangles for \\( hjgrksla \\) sufficiently large.\n\nSince \\( \\operatorname{gcd}(20,35)=5 \\), there exists a multiple \\( imzcvhqa \\) of 5 , relatively prime to 42 and independent of \\( hjgrksla \\), for which we may form an \\( imzcvhqa \\times hjgrksla \\) rectangle. Finally, since \\( \\operatorname{gcd}\\left(imzcvhqa, 42\\right)=1 \\), we may use \\( imzcvhqa \\times hjgrksla \\) and \\( 42 \\times hjgrksla \\) rectangles to form \\( qzxwvtnp \\times hjgrksla \\) rectangles for all \\( qzxwvtnp \\) and \\( hjgrksla \\) sufficiently large."
+    },
+    "kernel_variant": {
+      "question": "Does there exist an absolute constant $L$ such that, whenever $m$ and $n$ are integers greater than $L$, the $m\\times n$ rectangle can be decomposed into finitely many $8\\times 12$ and $11\\times 13$ rectangles (each allowed to be rotated), any two of which intersect only along their boundaries?",
+      "solution": "Yes.  We employ the standard three-stage ``strip-and-stack'' method together with the Frobenius theorem (``postage-stamp lemma'').\n\nPostage-Stamp Lemma.  If a,b>0 and d=gcd(a,b), then there is a number g(a,b)=d\\cdot g(a/d,b/d) so that every multiple of d exceeding g(a,b) can be written ra+sb with r,s\\geq 0.  In particular, if gcd(a,b)=1 then g(a,b)=ab-a-b.\n\n1. Fixed height h_1=LCM(8,11)=88.\n   * Eleven 8\\times 12's with their 8-edges vertical give an 88\\times 12 strip.  \n   * Eight 11\\times 13's with their 11-edges vertical give an 88\\times 13 strip.  \nSince gcd(12,13)=1 and g(12,13)=12\\cdot 13-12-13=131, every n>131 is 12r+13s, so the 88\\times n strip is tileable for all n>131.\n\n2. Fixed height h_2=LCM(11,13)=143.\n   * Thirteen 11\\times 13's with their 11-edges vertical give a 143\\times 13 strip.  \n   * Eleven 11\\times 13's with their 13-edges vertical give a 143\\times 11 strip.  \nSince gcd(11,13)=1 and g(11,13)=11\\cdot 13-11-13=119, every n>119 is 11r+13s, so the 143\\times n strip is tileable for all n>119.\n\n3. Fixed height h_3=LCM(12,13)=156.\n   * Thirteen 8\\times 12's with their 12-edges vertical give a 156\\times 8 strip.  \n   * Twelve 11\\times 13's with their 13-edges vertical give a 156\\times 11 strip.  \nSince gcd(8,11)=1 and g(8,11)=8\\cdot 11-8-11=69, every n>69 is 8r+11s, so the 156\\times n strip is tileable for all n>69.\n\n4. Combining heights 88 and 143.\n   gcd(88,143)=11.  The Frobenius bound is g(88,143)=11\\cdot g(8,13)=11\\cdot (8\\cdot 13-8-13)=11\\cdot 83=913, so every multiple of 11 exceeding 913 can be written 88r+143s.  Choose the least such multiple m_0>913 with gcd(m_0,156)=1; one checks m_0=935 works.  Hence for each n>max(131,119)=131 we tile the 935\\times n rectangle by stacking r copies of the 88\\times n strip and s copies of the 143\\times n strip.\n\n5. Reaching every large height.\n   Since gcd(935,156)=1, the Frobenius lemma for (935,156) gives G=935\\cdot 156-935-156=144769 so that every m>G is u\\cdot 935+v\\cdot 156.  For n>max(131,119,69)=131 we then assemble the m\\times n rectangle by u strips of height 935 and v strips of height 156 (all of width n), each strip already tileable as above.\n\n6. Universal bound.\n   Take L=max(G,131,119,69)=144769.  Then for all integers m,n>L the m\\times n rectangle admits a decomposition into 8\\times 12 and 11\\times 13 rectangles meeting only along edges.  This proves the existence of the desired absolute constant L.",
+      "_meta": {
+        "core_steps": [
+          "Apply Frobenius/Postage-Stamp theorem to any two stripe-widths that are coprime to make one fixed-height × n rectangles for all large n.",
+          "Create three such fixed heights using lcm’s of the pairs (4,5), (5,7) and (6,7) so that the resulting heights 20, 35, 42 share useful gcd’s.",
+          "Observe gcd(20,35)=5, choose an m₀ that is a multiple of 5 but coprime to 42, giving simultaneously available heights m₀ and 42.",
+          "Use coprime heights m₀ and 42 together with the Postage-Stamp theorem again to reach every sufficiently large height m.",
+          "Combine the two orthogonal applications (heights and widths) to tile any m×n rectangle once both dimensions exceed some universal bound L."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "first allowed rectangle dimensions",
+            "original": "4 × 6"
+          },
+          "slot2": {
+            "description": "second allowed rectangle dimensions",
+            "original": "5 × 7"
+          },
+          "slot3": {
+            "description": "lcm of one side from each rectangle giving first stripe height",
+            "original": "20"
+          },
+          "slot4": {
+            "description": "lcm of the two sides of the second rectangle giving second stripe height",
+            "original": "35"
+          },
+          "slot5": {
+            "description": "lcm of the remaining two sides (6 and 7) giving third stripe height",
+            "original": "42"
+          },
+          "slot6": {
+            "description": "gcd of the first two stripe heights used to pick m₀",
+            "original": "5"
+          },
+          "slot7": {
+            "description": "large threshold beyond which every m,n are tileable",
+            "original": "L (unspecified positive bound)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

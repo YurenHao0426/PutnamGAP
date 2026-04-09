@@ -1,0 +1,75 @@
+{
+  "index": "1954-A-1",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. Let \\( n \\) be an odd integer greater than 1 . Let \\( A \\) be an \\( n \\) by \\( n \\) symmetric matrix such that each row and each column of \\( A \\) consists of some permutation of the integers \\( 1, \\ldots, n \\). Show that each one of the integers \\( 1, \\ldots, n \\) must appear in the main diagonal of \\( A \\).",
+  "solution": "Solution. Each integer of the given set must appear exactly \\( n \\) times in the matrix \\( A \\). The off-diagonal appearances occur in pairs because of the symmetry of \\( A \\). Since \\( n \\) is odd, therefore, each integer must appear at least once on the main diagonal.",
+  "vars": [
+    "n",
+    "A"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "n": "oddsize",
+        "A": "symmatrix"
+      },
+      "question": "1. Let \\( oddsize \\) be an odd integer greater than 1 . Let \\( symmatrix \\) be an \\( oddsize \\) by \\( oddsize \\) symmetric matrix such that each row and each column of \\( symmatrix \\) consists of some permutation of the integers \\( 1, \\ldots, oddsize \\). Show that each one of the integers \\( 1, \\ldots, oddsize \\) must appear in the main diagonal of \\( symmatrix \\).",
+      "solution": "Solution. Each integer of the given set must appear exactly \\( oddsize \\) times in the matrix \\( symmatrix \\). The off-diagonal appearances occur in pairs because of the symmetry of \\( symmatrix \\). Since \\( oddsize \\) is odd, therefore, each integer must appear at least once on the main diagonal."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "compassrose",
+        "A": "tumbleweed"
+      },
+      "question": "1. Let \\( compassrose \\) be an odd integer greater than 1 . Let \\( tumbleweed \\) be an \\( compassrose \\) by \\( compassrose \\) symmetric matrix such that each row and each column of \\( tumbleweed \\) consists of some permutation of the integers \\( 1, \\ldots, compassrose \\). Show that each one of the integers \\( 1, \\ldots, compassrose \\) must appear in the main diagonal of \\( tumbleweed \\).",
+      "solution": "Solution. Each integer of the given set must appear exactly \\( compassrose \\) times in the matrix \\( tumbleweed \\). The off-diagonal appearances occur in pairs because of the symmetry of \\( tumbleweed \\). Since \\( compassrose \\) is odd, therefore, each integer must appear at least once on the main diagonal."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "evenfraction",
+        "A": "antisymmetricvector"
+      },
+      "question": "1. Let \\( evenfraction \\) be an odd integer greater than 1 . Let \\( antisymmetricvector \\) be an \\( evenfraction \\) by \\( evenfraction \\) symmetric matrix such that each row and each column of \\( antisymmetricvector \\) consists of some permutation of the integers \\( 1, \\ldots, evenfraction \\). Show that each one of the integers \\( 1, \\ldots, evenfraction \\) must appear in the main diagonal of \\( antisymmetricvector \\).",
+      "solution": "Solution. Each integer of the given set must appear exactly \\( evenfraction \\) times in the matrix \\( antisymmetricvector \\). The off-diagonal appearances occur in pairs because of the symmetry of \\( antisymmetricvector \\). Since \\( evenfraction \\) is odd, therefore, each integer must appear at least once on the main diagonal."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "qzxwvtnp",
+        "A": "hjgrksla"
+      },
+      "question": "1. Let \\( qzxwvtnp \\) be an odd integer greater than 1 . Let \\( hjgrksla \\) be an \\( qzxwvtnp \\) by \\( qzxwvtnp \\) symmetric matrix such that each row and each column of \\( hjgrksla \\) consists of some permutation of the integers \\( 1, \\ldots, qzxwvtnp \\). Show that each one of the integers \\( 1, \\ldots, qzxwvtnp \\) must appear in the main diagonal of \\( hjgrksla \\).",
+      "solution": "Solution. Each integer of the given set must appear exactly \\( qzxwvtnp \\) times in the matrix \\( hjgrksla \\). The off-diagonal appearances occur in pairs because of the symmetry of \\( hjgrksla \\). Since \\( qzxwvtnp \\) is odd, therefore, each integer must appear at least once on the main diagonal."
+    },
+    "kernel_variant": {
+      "question": "Let n \\ge 3 be an odd positive integer.  Fix n distinct colours \\(\\mathcal C=\\{\\mathrm{red},\\mathrm{blue},\\ldots\\,\\mathrm{colour}_n\\}\\).  An n\\times n matrix B is said to be \\emph{rainbow-Latin} if (i) B is symmetric, and (ii) every row and every column is a permutation of the n colours in \\(\\mathcal C\\).  Prove that in any rainbow-Latin matrix each colour from \\(\\mathcal C\\) must appear at least once on the main diagonal.",
+      "solution": "Because every row (hence every column) is a permutation of the colour set C, each colour occurs exactly n times in the whole matrix. Consider one fixed colour \\kappa \\in C. Whenever \\kappa  appears in an off-diagonal position (i,j) with i\\neq j, the symmetry of B forces the same colour to appear in the mirror position (j,i). Thus the off-diagonal occurrences of \\kappa  come in disjoint pairs, contributing an even number of appearances. Since the total number of appearances of \\kappa  is n, which is odd, at least one occurrence remains unpaired; it must therefore lie on the main diagonal. The argument is valid for every colour, so every colour of C is represented on the diagonal of B.",
+      "_meta": {
+        "core_steps": [
+          "Permutation rows/columns ⇒ each symbol appears exactly n times in the whole matrix.",
+          "Symmetry (A_ij = A_ji) pairs every off-diagonal occurrence with its mirror.",
+          "Thus each symbol’s off-diagonal count is even.",
+          "Odd total n minus an even number ⇒ at least one diagonal appearance for every symbol."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Nature of the entries; they only need to be n distinct labels so they can be ‘counted’.",
+            "original": "the integers 1,…,n"
+          },
+          "slot2": {
+            "description": "The condition that n exceed 1; any odd positive n (n≥1) keeps the argument intact.",
+            "original": "“greater than 1”"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

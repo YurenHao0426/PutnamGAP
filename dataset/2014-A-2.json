@@ -1,0 +1,148 @@
+{
+  "index": "2014-A-2",
+  "type": "ALG",
+  "tag": [
+    "ALG",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Let $A$ be the $n \\times n$ matrix whose entry in the $i$-th row and $j$-th column is\n\\[\n\\frac{1}{\\min(i,j)}\n\\]\nfor $1 \\leq i,j \\leq n$. Compute $\\det(A)$.",
+  "solution": "Let $v_1,\\ldots,v_n$ denote the rows of $A$. The determinant is \nunchanged if we replace $v_n$ by $v_n-v_{n-1}$, and then $v_{n-1}$ by \n$v_{n-1}-v_{n-2}$, and so forth, eventually replacing $v_k$ by \n$v_k-v_{k-1}$ for $k\\geq 2$. Since $v_{k-1}$ and $v_k$ agree in their \nfirst $k-1$ entries, and the $k$-th entry of $v_k-v_{k-1}$ is \n$\\frac{1}{k} - \\frac{1}{k-1}$, the result of these row operations is an upper triangular \nmatrix with diagonal entries $1,\\frac{1}{2}-1,\\frac{1}{3}-\\frac{1}{2},\\ldots,\\frac{1}{n}-\\frac{1}{n-1}$. The \ndeterminant is then\n\\begin{align*}\n\\prod_{k=2}^n \\left( \\frac{1}{k} - \\frac{1}{k-1}\\right) &= \\prod_{k=2}^n \\left(\\frac{-1}{k(k-1)} \\right) \\\\\n&= \n\\frac{(-1)^{n-1}}{(n-1)!n!}.\n\\end{align*}\nNote that a similar calculation can be made whenever $A$ has the form $A_{ij} = \\min\\{a_i, a_j\\}$ for any monotone sequence $a_1,\\dots,a_n$. Note also that the standard Gaussian elimination algorithm leads to the same upper triangular matrix, but the nonstandard order of operations used here makes the computations somewhat easier.\n\n\\noindent\n\\textbf{Remark:}\nThe inverse of $A$ can be identified explicitly: for $n \\geq 2$, it is the matrix $B$ given by\n\\[\nB_{ij} = \\begin{cases} -1 & i=j=1 \\\\\n-2i^2 & 1 < i=j< n \\\\\n-(n-1)n & i=j=n \\\\\nij & |i-j|=1 \\\\\n0 & \\mbox{otherwise.} \\end{cases}\n\\]\nFor example, for $n=5$,\n\\[\nB = \\begin{pmatrix}\n-1 & 2 & 0 & 0 & 0 \\\\\n2 & -8 & 6 & 0 & 0 \\\\\n0 & 6 & -18 & 12 & 0 \\\\\n0 & 0 & 12 & -32 & 20 \\\\\n0 & 0 & 0 & 20 & -20\n\\end{pmatrix}.\n\\]\nLet $C$ denote the matrix obtained from $B$ by replacing the bottom-right entry with $-2n^2$ (for consistency with the rest of the diagonal).\nExpanding in minors along the bottom row produces a second-order recursion for $\\det(C)$ solving to $\\det(C) = (-1)^n (n!)^2$; a similar expansion then yields $\\det(B) = (-1)^{n-1} n! (n-1)!$.\n\n\\noindent\n\\textbf{Remark:}\nThis problem and solution are due to one of us (Kedlaya). The statement appears in the comments on sequence A010790 (i.e., the sequence $(n-1)! n!$)\nin the On-Line Encyclopedia of Integer Sequences (\\url{http://oeis.org}),\nattributed to Benoit Cloitre in 2002.",
+  "vars": [
+    "n",
+    "i",
+    "j",
+    "k",
+    "v_1",
+    "v_n",
+    "v_n-1",
+    "v_k-1",
+    "v_k",
+    "a_i",
+    "a_j"
+  ],
+  "params": [
+    "A",
+    "A_ij",
+    "B",
+    "B_ij",
+    "C"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "A": "matrixa",
+        "A_ij": "matrixaentry",
+        "B": "matrixb",
+        "B_ij": "matrixbentry",
+        "C": "matrixc",
+        "n": "sizeparam",
+        "i": "indexi",
+        "j": "indexj",
+        "k": "indexk",
+        "v_1": "rowvecone",
+        "v_n": "rowvecn",
+        "v_n-1": "rowvecnminusone",
+        "v_k-1": "rowveckminusone",
+        "v_k": "rowveck",
+        "a_i": "elemseqi",
+        "a_j": "elemseqj"
+      },
+      "question": "Let $matrixa$ be the $sizeparam \\times sizeparam$ matrix whose entry in the $indexi$-th row and $indexj$-th column is\n\\[\n\\frac{1}{\\min(indexi,indexj)}\n\\]\nfor $1 \\leq indexi,indexj \\leq sizeparam$. Compute $\\det(matrixa)$.",
+      "solution": "Let $rowvecone,\\ldots,rowvecn$ denote the rows of $matrixa$. The determinant is \nunchanged if we replace $rowvecn$ by $rowvecn-rowvecnminusone$, and then $rowvecnminusone$ by \n$rowvecnminusone-v_{sizeparam-2}$, and so forth, eventually replacing $rowveck$ by \n$rowveck-rowveckminusone$ for $indexk\\geq 2$. Since $rowveckminusone$ and $rowveck$ agree in their \nfirst $indexk-1$ entries, and the $indexk$-th entry of $rowveck-rowveckminusone$ is \n$\\frac{1}{indexk} - \\frac{1}{indexk-1}$, the result of these row operations is an upper triangular \nmatrix with diagonal entries $1,\\frac{1}{2}-1,\\frac{1}{3}-\\frac{1}{2},\\ldots,\\frac{1}{sizeparam}-\\frac{1}{sizeparam-1}$. The \ndeterminant is then\n\\begin{align*}\n\\prod_{indexk=2}^{sizeparam} \\left( \\frac{1}{indexk} - \\frac{1}{indexk-1}\\right) &= \\prod_{indexk=2}^{sizeparam} \\left(\\frac{-1}{indexk(indexk-1)} \\right) \\\\\n&= \\frac{(-1)^{sizeparam-1}}{(sizeparam-1)!sizeparam!}.\n\\end{align*}\nNote that a similar calculation can be made whenever $matrixa$ has the form $matrixaentry = \\min\\{\\elemseqi, \\elemseqj\\}$ for any monotone sequence $a_1,\\dots,a_{sizeparam}$. Note also that the standard Gaussian elimination algorithm leads to the same upper triangular matrix, but the nonstandard order of operations used here makes the computations somewhat easier.\n\n\\noindent\n\\textbf{Remark:}\nThe inverse of $matrixa$ can be identified explicitly: for $sizeparam \\geq 2$, it is the matrix $matrixb$ given by\n\\[\nmatrixbentry = \\begin{cases} -1 & indexi=indexj=1 \\\\\n-2\\,indexi^2 & 1 < indexi=indexj< sizeparam \\\\\n-(sizeparam-1)sizeparam & indexi=indexj=sizeparam \\\\\nindexi\\,indexj & |indexi-indexj|=1 \\\\\n0 & \\mbox{otherwise.} \\end{cases}\n\\]\nFor example, for $sizeparam=5$,\n\\[\nmatrixb = \\begin{pmatrix}\n-1 & 2 & 0 & 0 & 0 \\\\\n2 & -8 & 6 & 0 & 0 \\\\\n0 & 6 & -18 & 12 & 0 \\\\\n0 & 0 & 12 & -32 & 20 \\\\\n0 & 0 & 0 & 20 & -20\n\\end{pmatrix}.\n\\]\nLet $matrixc$ denote the matrix obtained from $matrixb$ by replacing the bottom-right entry with $-2\\,sizeparam^2$ (for consistency with the rest of the diagonal).\nExpanding in minors along the bottom row produces a second-order recursion for $\\det(matrixc)$ solving to $\\det(matrixc) = (-1)^{sizeparam} (sizeparam!)^2$; a similar expansion then yields $\\det(matrixb) = (-1)^{sizeparam-1} sizeparam! (sizeparam-1)!$.\n\n\\noindent\n\\textbf{Remark:}\nThis problem and solution are due to one of us (Kedlaya). The statement appears in the comments on sequence A010790 (that is, the sequence $(sizeparam-1)! sizeparam!$)\nin the On-Line Encyclopedia of Integer Sequences (\\url{http://oeis.org}),\nattributed to Benoit Cloitre in 2002."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "n": "evergreen",
+        "i": "lighthouse",
+        "j": "horseshoe",
+        "k": "dragonfly",
+        "v_1": "blueberry",
+        "v_n": "blacksmith",
+        "v_n-1": "bricklayer",
+        "v_k-1": "butterfly",
+        "v_k": "brainstorm",
+        "a_i": "goldfinch",
+        "a_j": "kingfisher",
+        "A": "starflower",
+        "A_ij": "riverstone",
+        "B": "meadowlark",
+        "B_ij": "thunderbolt",
+        "C": "cloudberry"
+      },
+      "question": "Let $starflower$ be the $evergreen \\times evergreen$ matrix whose entry in the $lighthouse$-th row and $horseshoe$-th column is\n\\[\n\\frac{1}{\\min(lighthouse,horseshoe)}\n\\]\nfor $1 \\leq lighthouse,horseshoe \\leq evergreen$. Compute $\\det(starflower)$.",
+      "solution": "Let $blueberry,\\ldots,blacksmith$ denote the rows of $starflower$. The determinant is \nunchanged if we replace $blacksmith$ by $blacksmith-bricklayer$, and then $bricklayer$ by \n$bricklayer-v_{evergreen-2}$, and so forth, eventually replacing $brainstorm$ by \n$brainstorm-but terfly$ for $dragonfly\\geq 2$. Since butterfly and brainstorm agree in their \nfirst $dragonfly-1$ entries, and the $dragonfly$-th entry of $brainstorm-but terfly$ is \n$\\frac{1}{dragonfly} - \\frac{1}{dragonfly-1}$, the result of these row operations is an upper triangular \nmatrix with diagonal entries $1,\\frac{1}{2}-1,\\frac{1}{3}-\\frac{1}{2},\\ldots,\\frac{1}{evergreen}-\\frac{1}{evergreen-1}$. The \ndeterminant is then\n\\begin{align*}\n\\prod_{dragonfly=2}^{evergreen} \\left( \\frac{1}{dragonfly} - \\frac{1}{dragonfly-1}\\right) &= \\prod_{dragonfly=2}^{evergreen} \\left(\\frac{-1}{dragonfly(dragonfly-1)} \\right) \\\\\n&= \n\\frac{(-1)^{evergreen-1}}{(evergreen-1)!evergreen!}.\n\\end{align*}\nNote that a similar calculation can be made whenever $starflower$ has the form $riverstone = \\min\\{goldfinch, kingfisher\\}$ for any monotone sequence $a_1,\\dots,a_{evergreen}$. Note also that the standard Gaussian elimination algorithm leads to the same upper triangular matrix, but the nonstandard order of operations used here makes the computations somewhat easier.\n\n\\noindent\n\\textbf{Remark:}\nThe inverse of $starflower$ can be identified explicitly: for $evergreen \\geq 2$, it is the matrix $meadowlark$ given by\n\\[\nthunderbolt = \\begin{cases} -1 & lighthouse=horseshoe=1 \\\\\n-2lighthouse^2 & 1 < lighthouse=horseshoe< evergreen \\\\\n-(evergreen-1)evergreen & lighthouse=horseshoe=evergreen \\\\\nlighthouse horseshoe & |lighthouse-horseshoe|=1 \\\\\n0 & \\mbox{otherwise.} \\end{cases}\n\\]\nFor example, for $evergreen=5$,\n\\[\nmeadowlark = \\begin{pmatrix}\n-1 & 2 & 0 & 0 & 0 \\\\\n2 & -8 & 6 & 0 & 0 \\\\\n0 & 6 & -18 & 12 & 0 \\\\\n0 & 0 & 12 & -32 & 20 \\\\\n0 & 0 & 0 & 20 & -20\n\\end{pmatrix}.\n\\]\nLet $cloudberry$ denote the matrix obtained from $meadowlark$ by replacing the bottom-right entry with $-2evergreen^2$ (for consistency with the rest of the diagonal).\nExpanding in minors along the bottom row produces a second-order recursion for $\\det(cloudberry)$ solving to $\\det(cloudberry) = (-1)^{evergreen} (evergreen!)^2$; a similar expansion then yields $\\det(meadowlark) = (-1)^{evergreen-1} evergreen! (evergreen-1)!$.\n\n\\noindent\n\\textbf{Remark:}\nThis problem and solution are due to one of us (Kedlaya). The statement appears in the comments on sequence A010790 (i.e., the sequence $(evergreen-1)! evergreen!$)\nin the On-Line Encyclopedia of Integer Sequences (\\url{http://oeis.org}),\nattributed to Benoit Cloitre in 2002."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "n": "trivialsize",
+        "i": "aggregate",
+        "j": "fragment",
+        "k": "completed",
+        "v_1": "scalarsolo",
+        "v_n": "vectorend",
+        "v_n-1": "vectoralmost",
+        "v_{n-1}": "vectoralmost",
+        "v_k-1": "vectorprev",
+        "v_{k-1}": "vectorprev",
+        "v_k": "vectorcurrent",
+        "a_i": "steadyitem",
+        "a_j": "steadyindex",
+        "A": "emptymatrix",
+        "A_ij": "voidentry",
+        "A_{ij}": "voidentry",
+        "B": "forwardmatrix",
+        "B_ij": "forwardentry",
+        "B_{ij}": "forwardentry",
+        "C": "ordermatrix"
+      },
+      "question": "Let $emptymatrix$ be the $trivialsize \\times trivialsize$ matrix whose entry in the $aggregate$-th row and $fragment$-th column is\n\\[\n\\frac{1}{\\min(aggregate,fragment)}\n\\]\nfor $1 \\leq aggregate,fragment \\leq trivialsize$. Compute $\\det(emptymatrix)$.",
+      "solution": "Let $scalarsolo,\\ldots,vectorend$ denote the rows of $emptymatrix$. The determinant is \nunchanged if we replace $vectorend$ by $vectorend-vectoralmost$, and then $vectoralmost$ by \n$vectoralmost-v_{n-2}$, and so forth, eventually replacing $vectorcurrent$ by \n$vectorcurrent-vectorprev$ for $completed\\geq 2$. Since $vectorprev$ and $vectorcurrent$ agree in their \nfirst $completed-1$ entries, and the $completed$-th entry of $vectorcurrent-vectorprev$ is \n$\\frac{1}{completed} - \\frac{1}{completed-1}$, the result of these row operations is an upper triangular \nmatrix with diagonal entries $1,\\frac{1}{2}-1,\\frac{1}{3}-\\frac{1}{2},\\ldots,\\frac{1}{trivialsize}-\\frac{1}{trivialsize-1}$. The \ndeterminant is then\n\\begin{align*}\n\\prod_{completed=2}^{trivialsize} \\left( \\frac{1}{completed} - \\frac{1}{completed-1}\\right) &= \\prod_{completed=2}^{trivialsize} \\left(\\frac{-1}{completed(completed-1)} \\right) \\\n&= \n\\frac{(-1)^{trivialsize-1}}{(trivialsize-1)!trivialsize!}.\n\\end{align*}\nNote that a similar calculation can be made whenever $emptymatrix$ has the form $voidentry = \\min\\{steadyitem, steadyindex\\}$ for any monotone sequence $steadyitem_1,\\dots,steadyitem_{trivialsize}$. Note also that the standard Gaussian elimination algorithm leads to the same upper triangular matrix, but the nonstandard order of operations used here makes the computations somewhat easier.\n\n\\noindent\n\\textbf{Remark:}\nThe inverse of $emptymatrix$ can be identified explicitly: for $trivialsize \\geq 2$, it is the matrix $forwardmatrix$ given by\n\\[\nforwardentry = \\begin{cases} -1 & aggregate=fragment=1 \\\n-2aggregate^2 & 1 < aggregate=fragment< trivialsize \\\n-(trivialsize-1)trivialsize & aggregate=fragment=trivialsize \\\naggregate fragment & |aggregate-fragment|=1 \\\n0 & \\mbox{otherwise.} \\end{cases}\n\\]\nFor example, for $trivialsize=5$,\n\\[\nforwardmatrix = \\begin{pmatrix}\n-1 & 2 & 0 & 0 & 0 \\\\\n2 & -8 & 6 & 0 & 0 \\\\\n0 & 6 & -18 & 12 & 0 \\\\\n0 & 0 & 12 & -32 & 20 \\\\\n0 & 0 & 0 & 20 & -20\n\\end{pmatrix}.\n\\]\nLet $ordermatrix$ denote the matrix obtained from $forwardmatrix$ by replacing the bottom-right entry with $-2trivialsize^2$ (for consistency with the rest of the diagonal).\nExpanding in minors along the bottom row produces a second-order recursion for $\\det(ordermatrix)$ solving to $\\det(ordermatrix) = (-1)^{trivialsize} (trivialsize!)^2$; a similar expansion then yields $\\det(forwardmatrix) = (-1)^{trivialsize-1} trivialsize! (trivialsize-1)!$.\n\n\\noindent\n\\textbf{Remark:}\nThis problem and solution are due to one of us (Kedlaya). The statement appears in the comments on sequence A010790 (i.e., the sequence $(trivialsize-1)! trivialsize!$)\nin the On-Line Encyclopedia of Integer Sequences (\\url{http://oeis.org}),\nattributed to Benoit Cloitre in 2002."
+    },
+    "garbled_string": {
+      "map": {
+        "n": "lqdfxsnm",
+        "i": "dbxesrgo",
+        "j": "umqkzyle",
+        "k": "cfngirhv",
+        "v_1": "tzhwmnqd",
+        "v_n": "hksrvadz",
+        "v_n-1": "bwxaymuc",
+        "v_k-1": "rjogafkt",
+        "v_k": "qlopvtsa",
+        "a_i": "gnzlkcwi",
+        "a_j": "xchtavre",
+        "A": "ldaepryt",
+        "A_ij": "zjbxtqhe",
+        "B": "oqsvdwmn",
+        "B_ij": "ycnpfsar",
+        "C": "kvourazi"
+      },
+      "question": "Let $ldaepryt$ be the $lqdfxsnm \\times lqdfxsnm$ matrix whose entry in the $dbxesrgo$-th row and $umqkzyle$-th column is\n\\[\n\\frac{1}{\\min(dbxesrgo,umqkzyle)}\n\\]\nfor $1 \\leq dbxesrgo,umqkzyle \\leq lqdfxsnm$. Compute $\\det(ldaepryt)$.",
+      "solution": "Let $tzhwmnqd,\\ldots,hksrvadz$ denote the rows of $ldaepryt$. The determinant is \nunchanged if we replace $hksrvadz$ by $hksrvadz-bwxaymuc$, and then $bwxaymuc$ by \n$bwxaymuc-v_{n-2}$, and so forth, eventually replacing $qlopvtsa$ by \n$qlopvtsa-rjogafkt$ for $cfngirhv\\geq 2$. Since $rjogafkt$ and $qlopvtsa$ agree in their \nfirst $cfngirhv-1$ entries, and the $cfngirhv$-th entry of $qlopvtsa-rjogafkt$ is \n$\\frac{1}{cfngirhv} - \\frac{1}{cfngirhv-1}$, the result of these row operations is an upper triangular \nmatrix with diagonal entries $1,\\frac{1}{2}-1,\\frac{1}{3}-\\frac{1}{2},\\ldots,\\frac{1}{lqdfxsnm}-\\frac{1}{lqdfxsnm-1}$. The \ndeterminant is then\n\\begin{align*}\n\\prod_{cfngirhv=2}^{lqdfxsnm} \\left( \\frac{1}{cfngirhv} - \\frac{1}{cfngirhv-1}\\right) &= \\prod_{cfngirhv=2}^{lqdfxsnm} \\left(\\frac{-1}{cfngirhv(cfngirhv-1)} \\right) \\\\\n&= \\frac{(-1)^{lqdfxsnm-1}}{(lqdfxsnm-1)!lqdfxsnm!}.\n\\end{align*}\nNote that a similar calculation can be made whenever $ldaepryt$ has the form $zjbxtqhe = \\min\\{gnzlkcwi, xchtavre\\}$ for any monotone sequence $a_1,\\dots,a_{lqdfxsnm}$. Note also that the standard Gaussian elimination algorithm leads to the same upper triangular matrix, but the nonstandard order of operations used here makes the computations somewhat easier.\n\n\\noindent\n\\textbf{Remark:}\nThe inverse of $ldaepryt$ can be identified explicitly: for $lqdfxsnm \\geq 2$, it is the matrix $oqsvdwmn$ given by\n\\[\nycnpfsar = \\begin{cases} -1 & dbxesrgo=umqkzyle=1 \\\\\n-2dbxesrgo^2 & 1 < dbxesrgo=umqkzyle< lqdfxsnm \\\\\n-(lqdfxsnm-1)lqdfxsnm & dbxesrgo=umqkzyle=lqdfxsnm \\\\\ndbxesrgoumqkzyle & |dbxesrgo-umqkzyle|=1 \\\\\n0 & \\mbox{otherwise.} \\end{cases}\n\\]\nFor example, for $lqdfxsnm=5$,\n\\[\noqsvdwmn = \\begin{pmatrix}\n-1 & 2 & 0 & 0 & 0 \\\\\n2 & -8 & 6 & 0 & 0 \\\\\n0 & 6 & -18 & 12 & 0 \\\\\n0 & 0 & 12 & -32 & 20 \\\\\n0 & 0 & 0 & 20 & -20\n\\end{pmatrix}.\n\\]\nLet $kvourazi$ denote the matrix obtained from $oqsvdwmn$ by replacing the bottom-right entry with $-2lqdfxsnm^2$ (for consistency with the rest of the diagonal).\nExpanding in minors along the bottom row produces a second-order recursion for $\\det(kvourazi)$ solving to $\\det(kvourazi) = (-1)^{lqdfxsnm} (lqdfxsnm!)^2$; a similar expansion then yields $\\det(oqsvdwmn) = (-1)^{lqdfxsnm-1} lqdfxsnm! (lqdfxsnm-1)!$.\n\n\\noindent\n\\textbf{Remark:}\nThis problem and solution are due to one of us (Kedlaya). The statement appears in the comments on sequence A010790 (i.e., the sequence $(n-1)! n!$)\nin the On-Line Encyclopedia of Integer Sequences (\\url{http://oeis.org}),\nattributed to Benoit Cloitre in 2002."
+    },
+    "kernel_variant": {
+      "question": "Let n be a positive integer and put m = 2n.  \nForm the m \\times  m symmetric matrix  \n\n  C = (c_{ij})_{1\\leq i,j\\leq m},  c_{ij} = min{i^2, j^2}.  \n\nFor the vector u = (1,2,\\ldots ,m)^T and a scalar parameter \\lambda  \\in  \\mathbb{C} consider the rank-one perturbation  \n\n  A = C + \\lambda  uu^T.  \n\n(a)  Show that A is singular for exactly one value of \\lambda , call it \\lambda _n, and that A is invertible for every \\lambda  \\neq  \\lambda _n.  \n(b)  Compute det A in closed form as a function of n and \\lambda .  \n(c)  By normalising with det C, prove that det A / det C is an affine polynomial in \\lambda  and determine its leading (hence signed) coefficient explicitly.",
+      "solution": "Step 0 Notation  \nThroughout put  \n\n  m = 2n  (n \\geq  1),  H_k = 1 + \\frac{1}{2} + \\ldots  + 1/k (k-th harmonic number),  \n\nand define  \n\n  S_m := \\Sigma _{k=1}^{m} 1/(2k-1) = H_{2m} - \\frac{1}{2} H_m.  (1)\n\nThis last identity follows by splitting H_{2m} into the sum over odd and even indices.\n\n\nStep 1 A structural factorisation of C  \n\nWrite L for the unit lower-triangular matrix  \n\n  \\ell _{ik} = 1   (if k \\leq  i) ,  0  otherwise  (1 \\leq  k,i \\leq  m),\n\nand P for the diagonal matrix  \n\n  P = diag(2\\cdot 1-1, 2\\cdot 2-1, \\ldots  , 2m-1) = diag(1,3,5,\\ldots ,2m-1).\n\nBecause i^2 = \\Sigma _{k=1}^{i}(2k-1), we have for every 1 \\leq  i,j \\leq  m  \n\n c_{ij} = min{i,j}^2 = \\Sigma _{k=1}^{min{i,j}} (2k-1)\n    = \\Sigma _{k=1}^{m} (2k-1)\\cdot 1_{k\\leq i}\\cdot 1_{k\\leq j}\n    = (L P L^T)_{ij}.  \n\nHence  \n\n  C = L P L^T.  (2)\n\nBoth L and P are nonsingular, so C is positive-definite.\n\n\nStep 2 The unperturbed determinant  \n\nBecause det L = 1 (unit triangular) and det L^T = 1, we obtain  \n\n  det C = det P = \\prod _{k=1}^{m} (2k-1).  (3)\n\nUsing \\prod _{k=1}^{m} (2k) = 2^{m} m!,\n\n  det C = (2m)! / (2^{m} m!) = (4n)! / (2^{2n}(2n)!).  (4)\n\nFor n=1 this gives det C = 3, agreeing with direct computation\ndet[[1,1],[1,4]] = 3.\n\n\nStep 3 An explicit inverse of C  \n\nFrom (2) we have C^{-1} = L^{-^T} P^{-1} L^{-1}.  \nBecause L is the matrix of cumulative sums, its inverse is the first-difference matrix:\n\n  (L^{-1})_{ik} = {  1  if i = k,\n                  -1 if i = k+1,\n                   0 otherwise }  (5)\n\n(i ranges vertically, k horizontally).  Consequently L^{-1}u is very simple:\n\n  (L^{-1}u)_1 = u_1 = 1, and (L^{-1}u)_i = u_i - u_{i-1} = 1 (2 \\leq  i \\leq  m),\n\nso  \n  w := L^{-1}u = (1,1,\\ldots ,1)^T.  (6)\n\n\nStep 4 The quadratic form u^TC^{-1}u  \n\nUsing (6) and C^{-1} = L^{-^T} P^{-1} L^{-1},\n\n u^TC^{-1}u = w^T P^{-1} w\n      = \\Sigma _{k=1}^{m} 1\\cdot 1 / (2k-1)\n      = S_m.  (by (1))  (7)\n\nSince every summand is positive, S_m > 0 for all m.\n\n\nStep 5 The rank-one update  \n\nFor any invertible matrix C and vectors u,v the matrix-determinant lemma gives  \n  det(C + \\lambda  u v^T) = det C \\cdot  (1 + \\lambda  v^TC^{-1}u).  \nTaking v = u and using (7),\n\n  det A = det C \\cdot  (1 + \\lambda  S_m).  (8)\n\n(a)  The parenthesis vanishes exactly when  \n\n  \\lambda  = \\lambda _n := -1/S_m.  (9)\n\nHence A is singular precisely for this single value and nonsingular otherwise.\n\n(b)  Equations (4) and (8) yield  \n\n  det A = (4n)! / [2^{2n}(2n)!] \\cdot  (1 + \\lambda  S_{2n}).  (10)\n\n(c)  Dividing (10) by det C from (4) removes the factorial factor:\n\n  det A / det C = 1 + \\lambda  S_{2n},  linear in \\lambda ,  (11)\nwhose leading coefficient is  \n\n  S_{2n} = H_{4n} - \\frac{1}{2} H_{2n} > 0.  (12)\n\nThat coefficient grows like (\\frac{1}{2}) log 2n + (\\gamma /2) + log 2 as n\\to \\infty , so the\nmatrix becomes gradually more sensitive to the perturbation.\n\n\nStep 6 Numerical check (n=1)  \n\nm = 2 \\Rightarrow  det C = 3, S_2 = 1 + 1/3 = 4/3, \\lambda _1 = -\\frac{3}{4}.  \nFormula (10) gives det A = 3(1 + 4\\lambda /3), which indeed vanishes at \\lambda  = -\\frac{3}{4}.\n\nHence every part is verified.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.831295",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Additional parameter λ forces the solver to recognise and exploit the matrix-determinant lemma; the original problems required no perturbative analysis.  \n•  Success now hinges on having the exact inverse of C, so the solver must either reproduce or import the banded inverse (tri-diagonal with quadratic entries) from the earlier remark and then evaluate a non-trivial quadratic form; this is substantially more work than the telescoping product in the original.  \n•  Locating λₙ in part (a) introduces a divisor-of-zero phenomenon entirely absent from the previous statements.  \n•  The algebraic manipulation of fourth–degree and second–degree power sums pushes the combinatorial side further than before, while rank-one updates bring linear-algebraic identities (determinant lemma, Sherman–Morrison) into play.  \n•  Hence the problem demands familiarity with several distinct techniques—explicit inverses of special kernels, rank-one determinant updates, and power-sum evaluations—whereas the original task rested on a single clever row-operation cascade."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Let n be a positive integer and put m = 2n.  \nForm the m \\times  m symmetric matrix  \n\n  C = (c_{ij})_{1\\leq i,j\\leq m},  c_{ij} = min{i^2, j^2}.  \n\nFor the vector u = (1,2,\\ldots ,m)^T and a scalar parameter \\lambda  \\in  \\mathbb{C} consider the rank-one perturbation  \n\n  A = C + \\lambda  uu^T.  \n\n(a)  Show that A is singular for exactly one value of \\lambda , call it \\lambda _n, and that A is invertible for every \\lambda  \\neq  \\lambda _n.  \n(b)  Compute det A in closed form as a function of n and \\lambda .  \n(c)  By normalising with det C, prove that det A / det C is an affine polynomial in \\lambda  and determine its leading (hence signed) coefficient explicitly.",
+      "solution": "Step 0 Notation  \nThroughout put  \n\n  m = 2n  (n \\geq  1),  H_k = 1 + \\frac{1}{2} + \\ldots  + 1/k (k-th harmonic number),  \n\nand define  \n\n  S_m := \\Sigma _{k=1}^{m} 1/(2k-1) = H_{2m} - \\frac{1}{2} H_m.  (1)\n\nThis last identity follows by splitting H_{2m} into the sum over odd and even indices.\n\n\nStep 1 A structural factorisation of C  \n\nWrite L for the unit lower-triangular matrix  \n\n  \\ell _{ik} = 1   (if k \\leq  i) ,  0  otherwise  (1 \\leq  k,i \\leq  m),\n\nand P for the diagonal matrix  \n\n  P = diag(2\\cdot 1-1, 2\\cdot 2-1, \\ldots  , 2m-1) = diag(1,3,5,\\ldots ,2m-1).\n\nBecause i^2 = \\Sigma _{k=1}^{i}(2k-1), we have for every 1 \\leq  i,j \\leq  m  \n\n c_{ij} = min{i,j}^2 = \\Sigma _{k=1}^{min{i,j}} (2k-1)\n    = \\Sigma _{k=1}^{m} (2k-1)\\cdot 1_{k\\leq i}\\cdot 1_{k\\leq j}\n    = (L P L^T)_{ij}.  \n\nHence  \n\n  C = L P L^T.  (2)\n\nBoth L and P are nonsingular, so C is positive-definite.\n\n\nStep 2 The unperturbed determinant  \n\nBecause det L = 1 (unit triangular) and det L^T = 1, we obtain  \n\n  det C = det P = \\prod _{k=1}^{m} (2k-1).  (3)\n\nUsing \\prod _{k=1}^{m} (2k) = 2^{m} m!,\n\n  det C = (2m)! / (2^{m} m!) = (4n)! / (2^{2n}(2n)!).  (4)\n\nFor n=1 this gives det C = 3, agreeing with direct computation\ndet[[1,1],[1,4]] = 3.\n\n\nStep 3 An explicit inverse of C  \n\nFrom (2) we have C^{-1} = L^{-^T} P^{-1} L^{-1}.  \nBecause L is the matrix of cumulative sums, its inverse is the first-difference matrix:\n\n  (L^{-1})_{ik} = {  1  if i = k,\n                  -1 if i = k+1,\n                   0 otherwise }  (5)\n\n(i ranges vertically, k horizontally).  Consequently L^{-1}u is very simple:\n\n  (L^{-1}u)_1 = u_1 = 1, and (L^{-1}u)_i = u_i - u_{i-1} = 1 (2 \\leq  i \\leq  m),\n\nso  \n  w := L^{-1}u = (1,1,\\ldots ,1)^T.  (6)\n\n\nStep 4 The quadratic form u^TC^{-1}u  \n\nUsing (6) and C^{-1} = L^{-^T} P^{-1} L^{-1},\n\n u^TC^{-1}u = w^T P^{-1} w\n      = \\Sigma _{k=1}^{m} 1\\cdot 1 / (2k-1)\n      = S_m.  (by (1))  (7)\n\nSince every summand is positive, S_m > 0 for all m.\n\n\nStep 5 The rank-one update  \n\nFor any invertible matrix C and vectors u,v the matrix-determinant lemma gives  \n  det(C + \\lambda  u v^T) = det C \\cdot  (1 + \\lambda  v^TC^{-1}u).  \nTaking v = u and using (7),\n\n  det A = det C \\cdot  (1 + \\lambda  S_m).  (8)\n\n(a)  The parenthesis vanishes exactly when  \n\n  \\lambda  = \\lambda _n := -1/S_m.  (9)\n\nHence A is singular precisely for this single value and nonsingular otherwise.\n\n(b)  Equations (4) and (8) yield  \n\n  det A = (4n)! / [2^{2n}(2n)!] \\cdot  (1 + \\lambda  S_{2n}).  (10)\n\n(c)  Dividing (10) by det C from (4) removes the factorial factor:\n\n  det A / det C = 1 + \\lambda  S_{2n},  linear in \\lambda ,  (11)\nwhose leading coefficient is  \n\n  S_{2n} = H_{4n} - \\frac{1}{2} H_{2n} > 0.  (12)\n\nThat coefficient grows like (\\frac{1}{2}) log 2n + (\\gamma /2) + log 2 as n\\to \\infty , so the\nmatrix becomes gradually more sensitive to the perturbation.\n\n\nStep 6 Numerical check (n=1)  \n\nm = 2 \\Rightarrow  det C = 3, S_2 = 1 + 1/3 = 4/3, \\lambda _1 = -\\frac{3}{4}.  \nFormula (10) gives det A = 3(1 + 4\\lambda /3), which indeed vanishes at \\lambda  = -\\frac{3}{4}.\n\nHence every part is verified.",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.635130",
+        "was_fixed": false,
+        "difficulty_analysis": "•  Additional parameter λ forces the solver to recognise and exploit the matrix-determinant lemma; the original problems required no perturbative analysis.  \n•  Success now hinges on having the exact inverse of C, so the solver must either reproduce or import the banded inverse (tri-diagonal with quadratic entries) from the earlier remark and then evaluate a non-trivial quadratic form; this is substantially more work than the telescoping product in the original.  \n•  Locating λₙ in part (a) introduces a divisor-of-zero phenomenon entirely absent from the previous statements.  \n•  The algebraic manipulation of fourth–degree and second–degree power sums pushes the combinatorial side further than before, while rank-one updates bring linear-algebraic identities (determinant lemma, Sherman–Morrison) into play.  \n•  Hence the problem demands familiarity with several distinct techniques—explicit inverses of special kernels, rank-one determinant updates, and power-sum evaluations—whereas the original task rested on a single clever row-operation cascade."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

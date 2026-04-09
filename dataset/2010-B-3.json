@@ -1,0 +1,120 @@
+{
+  "index": "2010-B-3",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "There are 2010 boxes labeled $B_1, B_2, \\dots, B_{2010}$, and $2010n$ balls have been distributed\namong them, for some positive integer $n$. You may redistribute the balls by a sequence of moves,\neach of which consists of choosing an $i$ and moving \\emph{exactly} $i$ balls from box $B_i$ into any\none other box. For which values of $n$ is it possible to reach the distribution with exactly $n$ balls\nin each box, regardless of the initial distribution of balls?\n\\medskip",
+  "solution": "It is possible if and only if $n \\geq 1005$.\nSince\n\\[\n1 + \\cdots + 2009 = \\frac{2009 \\times 2010}{2} = 2010 \\times 1004.5,\n\\]\nfor $n \\leq 1004$, we can start with an initial distribution in which each box\n$B_i$ starts with at most $i-1$ balls (so in particular $B_1$ is empty).\nFrom such a distribution, no moves are possible, so\nwe cannot reach the desired final distribution.\n\nSuppose now that $n \\geq 1005$.\nBy the pigeonhole principle, at any time, there exists at least one index $i$ for which the box $B_i$\ncontains at least $i$ balls. We will describe any such index as being \\emph{eligible}.\nThe following sequence of operations then has the desired effect.\n\\begin{itemize}\n\\item[(a)]\nFind the largest eligible index $i$.\nIf $i=1$, proceed to (b).\nOtherwise, move $i$ balls from $B_i$ to $B_1$, then repeat (a).\n\\item[(b)]\nAt this point, only the index $i=1$ can be eligible (so it must be).\nFind the largest index $j$ for which $B_j$ is nonempty.\nIf $j=1$, proceed to (c).\nOtherwise, move 1 ball from $B_1$ to $B_j$; in case this makes $j$ eligible,\nmove $j$ balls from $B_j$ to $B_1$. Then repeat (b).\n\\item[(c)]\nAt this point, all of the balls are in $B_1$. For $i=2,\\dots,2010$,\nmove one ball from $B_1$ to $B_i$ $n$ times.\n\\end{itemize}\nAfter these operations, we have the desired distribution.",
+  "vars": [
+    "i",
+    "j",
+    "B_i",
+    "B_j"
+  ],
+  "params": [
+    "n",
+    "B_1",
+    "B_2",
+    "B_2010"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "i": "indexvar",
+        "j": "secondvar",
+        "B_i": "boxfori",
+        "B_j": "boxforj",
+        "n": "perboxcount",
+        "B_1": "boxone",
+        "B_2": "boxtwo",
+        "B_2010": "boxtwothousandten"
+      },
+      "question": "There are 2010 boxes labeled $boxone, boxtwo, \\dots, boxtwothousandten$, and $2010perboxcount$ balls have been distributed among them, for some positive integer $perboxcount$. You may redistribute the balls by a sequence of moves, each of which consists of choosing an $indexvar$ and moving \\emph{exactly} $indexvar$ balls from box $boxfori$ into any one other box. For which values of $perboxcount$ is it possible to reach the distribution with exactly $perboxcount$ balls in each box, regardless of the initial distribution of balls? \\medskip",
+      "solution": "It is possible if and only if $perboxcount \\geq 1005$.\\nSince\\n\\[\\n1 + \\cdots + 2009 = \\frac{2009 \\times 2010}{2} = 2010 \\times 1004.5,\\n\\]\\nfor $perboxcount \\leq 1004$, we can start with an initial distribution in which each box\\n$boxfori$ starts with at most $indexvar-1$ balls (so in particular $boxone$ is empty).\\nFrom such a distribution, no moves are possible, so\\nwe cannot reach the desired final distribution.\\n\\nSuppose now that $perboxcount \\geq 1005$.\\nBy the pigeonhole principle, at any time, there exists at least one index $indexvar$ for which the box $boxfori$\\ncontains at least $indexvar$ balls. We will describe any such index as being \\emph{eligible}.\\nThe following sequence of operations then has the desired effect.\\n\\begin{itemize}\\n\\item[(a)]\\nFind the largest eligible index $indexvar$.\\nIf $indexvar=1$, proceed to (b).\\nOtherwise, move $indexvar$ balls from $boxfori$ to $boxone$, then repeat (a).\\n\\item[(b)]\\nAt this point, only the index $indexvar=1$ can be eligible (so it must be).\\nFind the largest index $secondvar$ for which $boxforj$ is nonempty.\\nIf $secondvar=1$, proceed to (c).\\nOtherwise, move 1 ball from $boxone$ to $boxforj$; in case this makes $secondvar$ eligible,\\nmove $secondvar$ balls from $boxforj$ to $boxone$. Then repeat (b).\\n\\item[(c)]\\nAt this point, all of the balls are in $boxone$. For $indexvar=2,\\dots,2010$,\\nmove one ball from $boxone$ to $boxfori$ $perboxcount$ times.\\n\\end{itemize}\\nAfter these operations, we have the desired distribution."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "i": "tangerine",
+        "j": "marzipan",
+        "B_i": "buttercup",
+        "B_j": "dandelion",
+        "n": "windchime",
+        "B_1": "labyrinth",
+        "B_2": "silhouette",
+        "B_2010": "gemstone"
+      },
+      "question": "There are 2010 boxes labeled $labyrinth, silhouette, \\dots, gemstone$, and $2010windchime$ balls have been distributed\namong them, for some positive integer $windchime$. You may redistribute the balls by a sequence of moves,\neach of which consists of choosing an $tangerine$ and moving \\emph{exactly} $tangerine$ balls from box $buttercup$ into any\none other box. For which values of $windchime$ is it possible to reach the distribution with exactly $windchime$ balls\nin each box, regardless of the initial distribution of balls?",
+      "solution": "It is possible if and only if $windchime \\geq 1005$.\nSince\n\\[\n1 + \\cdots + 2009 = \\frac{2009 \\times 2010}{2} = 2010 \\times 1004.5,\n\\]\nfor $windchime \\leq 1004$, we can start with an initial distribution in which each box\n$buttercup$ starts with at most $tangerine-1$ balls (so in particular $labyrinth$ is empty).\nFrom such a distribution, no moves are possible, so\nwe cannot reach the desired final distribution.\n\nSuppose now that $windchime \\geq 1005$.\nBy the pigeonhole principle, at any time, there exists at least one index $tangerine$ for which the box $buttercup$\ncontains at least $tangerine$ balls. We will describe any such index as being \\emph{eligible}.\nThe following sequence of operations then has the desired effect.\n\\begin{itemize}\n\\item[(a)]\nFind the largest eligible index $tangerine$.\nIf $tangerine=1$, proceed to (b).\nOtherwise, move $tangerine$ balls from $buttercup$ to $labyrinth$, then repeat (a).\n\\item[(b)]\nAt this point, only the index $tangerine=1$ can be eligible (so it must be).\nFind the largest index $marzipan$ for which $dandelion$ is nonempty.\nIf $marzipan=1$, proceed to (c).\nOtherwise, move 1 ball from $labyrinth$ to $dandelion$; in case this makes $marzipan$ eligible,\nmove $marzipan$ balls from $dandelion$ to $labyrinth$. Then repeat (b).\n\\item[(c)]\nAt this point, all of the balls are in $labyrinth$. For $tangerine=2,\\dots,2010$,\nmove one ball from $labyrinth$ to $buttercup$ $windchime$ times.\n\\end{itemize}\nAfter these operations, we have the desired distribution."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "i": "entirety",
+        "j": "wholeness",
+        "B_i": "emptiness",
+        "B_j": "fullness",
+        "n": "scarcity",
+        "B_1": "boundless",
+        "B_2": "limitless",
+        "B_2010": "unbounded"
+      },
+      "question": "There are 2010 boxes labeled $boundless, limitless, \\dots, unbounded$, and $2010scarcity$ balls have been distributed\namong them, for some positive integer $scarcity$. You may redistribute the balls by a sequence of moves,\neach of which consists of choosing an $entirety$ and moving \\emph{exactly} $entirety$ balls from box $emptiness$ into any\none other box. For which values of $scarcity$ is it possible to reach the distribution with exactly $scarcity$ balls\nin each box, regardless of the initial distribution of balls?",
+      "solution": "It is possible if and only if $scarcity \\geq 1005$.\nSince\n\\[\n1 + \\cdots + 2009 = \\frac{2009 \\times 2010}{2} = 2010 \\times 1004.5,\n\\]\nfor $scarcity \\leq 1004$, we can start with an initial distribution in which each box\n$emptiness$ starts with at most $entirety-1$ balls (so in particular $boundless$ is empty).\nFrom such a distribution, no moves are possible, so\nwe cannot reach the desired final distribution.\n\nSuppose now that $scarcity \\geq 1005$.\nBy the pigeonhole principle, at any time, there exists at least one index $entirety$ for which the box $emptiness$\ncontains at least $entirety$ balls. We will describe any such index as being \\emph{eligible}.\nThe following sequence of operations then has the desired effect.\n\\begin{itemize}\n\\item[(a)]\nFind the largest eligible index $entirety$.\nIf $entirety=1$, proceed to (b).\nOtherwise, move $entirety$ balls from $emptiness$ to $boundless$, then repeat (a).\n\\item[(b)]\nAt this point, only the index $entirety=1$ can be eligible (so it must be).\nFind the largest index $wholeness$ for which $fullness$ is nonempty.\nIf $wholeness=1$, proceed to (c).\nOtherwise, move 1 ball from $boundless$ to $fullness$; in case this makes $wholeness$ eligible,\nmove $wholeness$ balls from $fullness$ to $boundless$. Then repeat (b).\n\\item[(c)]\nAt this point, all of the balls are in $boundless$. For $entirety=2,\\dots,2010$,\nmove one ball from $boundless$ to $emptiness$ $scarcity$ times.\n\\end{itemize}\nAfter these operations, we have the desired distribution."
+    },
+    "garbled_string": {
+      "map": {
+        "i": "qzxwvtnp",
+        "j": "hjgrksla",
+        "B_i": "mnpqrsuvw",
+        "B_j": "lkjhgfdsa",
+        "n": "asdfghjk",
+        "B_1": "qwertyui",
+        "B_2": "zxcvbnml",
+        "B_2010": "poiuytre"
+      },
+      "question": "There are 2010 boxes labeled $qwertyui, zxcvbnml, \\dots, poiuytre$, and $2010asdfghjk$ balls have been distributed\namong them, for some positive integer $asdfghjk$. You may redistribute the balls by a sequence of moves,\neach of which consists of choosing an $qzxwvtnp$ and moving \\emph{exactly} $qzxwvtnp$ balls from box $mnpqrsuvw$ into any\none other box. For which values of $asdfghjk$ is it possible to reach the distribution with exactly $asdfghjk$ balls\nin each box, regardless of the initial distribution of balls?\n\\medskip",
+      "solution": "It is possible if and only if $asdfghjk \\geq 1005$.\nSince\n\\[\n1 + \\cdots + 2009 = \\frac{2009 \\times 2010}{2} = 2010 \\times 1004.5,\n\\]\nfor $asdfghjk \\leq 1004$, we can start with an initial distribution in which each box $mnpqrsuvw$ starts with at most $qzxwvtnp-1$ balls (so in particular $qwertyui$ is empty).\nFrom such a distribution, no moves are possible, so\nwe cannot reach the desired final distribution.\n\nSuppose now that $asdfghjk \\geq 1005$.\nBy the pigeonhole principle, at any time, there exists at least one index $qzxwvtnp$ for which the box $mnpqrsuvw$\ncontains at least $qzxwvtnp$ balls. We will describe any such index as being \\emph{eligible}.\nThe following sequence of operations then has the desired effect.\n\\begin{itemize}\n\\item[(a)]\nFind the largest eligible index $qzxwvtnp$.\nIf $qzxwvtnp=1$, proceed to (b).\nOtherwise, move $qzxwvtnp$ balls from $mnpqrsuvw$ to $qwertyui$, then repeat (a).\n\\item[(b)]\nAt this point, only the index $qzxwvtnp=1$ can be eligible (so it must be).\nFind the largest index $hjgrksla$ for which $lkjhgfdsa$ is nonempty.\nIf $hjgrksla=1$, proceed to (c).\nOtherwise, move 1 ball from $qwertyui$ to $lkjhgfdsa$; in case this makes $hjgrksla$ eligible,\nmove $hjgrksla$ balls from $lkjhgfdsa$ to $qwertyui$. Then repeat (b).\n\\item[(c)]\nAt this point, all of the balls are in $qwertyui$. For $qzxwvtnp=2,\\dots,2010$,\nmove one ball from $qwertyui$ to $mnpqrsuvw$ $asdfghjk$ times.\n\\end{itemize}\nAfter these operations, we have the desired distribution."
+    },
+    "kernel_variant": {
+      "question": "Let m = 2023.  There are 2023 boxes labelled B_1, B_2, \\ldots  , B_{2023} and a total of 2023 n balls has been distributed among them, where n is a positive integer.  A legal move consists of choosing an index i (1 \\leq  i \\leq  2023) and moving exactly i balls from box B_i to some single *different* box.  For which values of n is it guaranteed that, regardless of the initial distribution of the 2023 n balls, one can reach the configuration in which every box contains exactly n balls?",
+      "solution": "Answer.\nIt is possible to reach the uniform configuration (n, n, \\ldots  , n) from every starting position if and only if n \\geq  1012.\n\n------------------------------------------------------------\n1.  Necessity: failure for n \\leq  1011.\n\nPut S = 2023 n.  Let k be the largest integer for which k(k - 1)/2 \\leq  S.  (Equivalently, k is the largest triangular number not exceeding S.)  When n \\leq  1011 we have\n   2023 \\geq  k \\geq  1,\nand in fact k = 2023 exactly when n = 1011 (because 2023\\cdot 2022/2 = 2023\\cdot 1011 = S).\n\nWrite S = k(k - 1)/2 + r with 0 \\leq  r < k.  Define an initial distribution as follows.\n   * For i = 1, 2, \\ldots  , k set B_i = i - 1.\n   * If k < 2023 (this happens when n \\leq  1010) put the remaining r balls into B_{k+1}; if k = 2023 (so r = 0) no extra box is needed.\n   * All other boxes (if any) are left empty.\n\nClearly \\Sigma B_i = S.  Moreover, every occupied box satisfies B_i \\leq  i - 1 < i, so *no* box is eligible for a legal move.  Consequently no moves at all are possible and the uniform distribution cannot be reached.  Hence the task is impossible whenever n \\leq  1011.\n\n------------------------------------------------------------\n2.  Sufficiency: success for n \\geq  1012.\n\nWe describe a constructive algorithm that always terminates in the desired state.\n\nPhase I - Collect surplus in B_1.\nCall a box *eligible* if it contains at least as many balls as its index.  While there exists an eligible box with index i > 1, choose the *largest* such i and move i balls from B_i to B_1.  The move is legal, preserves the total number of balls, and strictly lowers B_i, so the process stops after finitely many steps.\n\nWhen it stops, every box with index \\geq  2 satisfies B_i \\leq  i - 1, whence\n      \\Sigma _{i=2}^{2023} B_i \\leq  1 + 2 + \\cdots  + 2022 = 2023\\cdot 1011.\nBecause n \\geq  1012, the total 2023 n exceeds this bound, so B_1 = 2023 n - \\Sigma _{i>1}B_i \\geq  2023 \\geq  1.  Thus B_1 itself is eligible.\n\nPhase II - Empty the other boxes.\nFor j = 2, 3, \\ldots  , 2023 perform the following loop until B_j = 0.\n   * Move one ball from B_1 to B_j (legal because B_1 \\geq  1).\n   * If this makes B_j = j, immediately move j balls from B_j back to B_1 (legal because B_j now equals its index).  After that B_j returns to 0.\nThroughout this phase B_1 never falls below 1, so every step is legal.  When the loop has run for every j \\geq  2, *all* balls reside in B_1.\n\nPhase III - Redistribute evenly.\nFor k = 2, 3, \\ldots  , 2023 repeat the legal move ``transfer 1 ball from B_1 to B_k'' exactly n times.  In total 2022 n balls leave B_1, so B_1 is left with 2023 n - 2022 n = n balls, and each B_k (k \\geq  2) also ends with n balls.  The uniform distribution has been reached.\n\n------------------------------------------------------------\nSince sufficiency holds for n \\geq  1012 and we proved impossibility for n \\leq  1011, the desired condition is\n                            n \\geq  1012 .",
+      "_meta": {
+        "core_steps": [
+          "Compute Σ(i−1) over all boxes; if n ≤ (m−1)/2 an initial state with at most i−1 balls in B_i is immovable, so n must exceed this bound.",
+          "For n > (m−1)/2, the pigeonhole principle guarantees an 'eligible' box (some i with at least i balls) at every stage.",
+          "Repeatedly move i balls from the largest eligible box to a chosen collector box (taken as B₁) until B₁ is the only eligible one.",
+          "From B₁, send one ball at a time to the largest remaining non-empty box until it becomes eligible, then pull its i balls back to B₁; repeat until all balls are in B₁.",
+          "Distribute one ball from B₁ to every other box exactly n times, giving n balls per box."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Total number of boxes, m (labels run B₁,…,B_m).",
+            "original": "2010"
+          },
+          "slot2": {
+            "description": "Impossibility threshold  floor((m−1)/2)  for n; equality/less gives failure example.",
+            "original": "1004"
+          },
+          "slot3": {
+            "description": "Minimal n that makes redistribution always possible: floor((m−1)/2)+1.",
+            "original": "1005"
+          },
+          "slot4": {
+            "description": "Value m−1 that appears in the sum 1+…+(m−1).",
+            "original": "2009"
+          },
+          "slot5": {
+            "description": "Index of the designated collector box used in the algorithm.",
+            "original": "1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

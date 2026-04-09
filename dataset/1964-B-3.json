@@ -1,0 +1,166 @@
+{
+  "index": "1964-B-3",
+  "type": "ANA",
+  "tag": [
+    "ANA"
+  ],
+  "difficulty": "",
+  "question": "3. Let \\( f(x) \\) be a real continuous function defined for all real \\( x \\). Assume that for every \\( \\epsilon>0 \\)\n\\[\n\\lim _{n \\rightarrow \\infty} f(n \\epsilon)=0, \\quad \\text { (where } n \\text { is a positive integer) }\n\\]\n\nProve that\n\\[\n\\lim _{x \\rightarrow \\infty} f(x)=0\n\\]",
+  "solution": "Solution. We begin by proving the following fact.\nLemma. If \\( 0<a<b \\) and \\( k \\) is any positive integer, then\n\\[\n\\bigcup_{n=k}^{\\infty}[n a, n b]\n\\]\ncontains the ray \\( [c, \\infty) \\) for some \\( c \\).\nProof. Suppose \\( t \\) is an integer such that \\( t \\geq k, t \\geq a /(b-a) \\). If \\( n \\geq t \\), then \\( n(b-a) \\geq a \\) so \\( n b \\geq(n+1) a \\). Hence the intervals \\( [n a, n b] \\) and \\( [(n+1) a,(n+1) b] \\) overlap. Therefore\n\\[\n\\bigcup_{n=k}^{\\infty}[n a, n b] \\supseteq[t a, \\infty) .\n\\]\n\nWe return to the problem. Let \\( \\alpha>0 \\) be given. Define\n\\[\nF_{n}=\\{x:|f(n x)| \\leq \\alpha\\}\n\\]\nand\n\\[\nE_{k}=\\{x:(\\forall n \\geq k)|f(n x)| \\leq \\alpha\\} .\n\\]\n\nThen \\( E_{k}=\\bigcap_{n>k} F_{n} \\). Because \\( f \\) is continuous, each \\( F_{n} \\) is closed, and therefore each \\( E_{k} \\) is closed. If \\( y \\in(0, \\infty) \\), then \\( \\lim _{n-\\infty} f(n y)=0 \\); hence for some \\( k \\) and all \\( n \\geq k,|f(n y)| \\leq \\alpha \\); that is, \\( y \\in E_{k} \\). Thus \\( (0, \\infty) \\subseteq \\cup E_{k} \\). By the Baire category theorem (proof below) one of the \\( E \\) 's, say \\( E_{m} \\), contains an interval \\( [a . b\\rceil \\). This means\n\\[\n(\\forall x \\in[a . b])(\\forall n \\geq m)|f(n x)| \\leq \\alpha .\n\\]\n\nTherefore\n\\[\n\\left(\\forall y \\in \\bigcup_{n=m}^{\\infty}[n a, n b]\\right)|f(y)| \\leq \\alpha\n\\]\n\nChoose \\( c \\) so that \\( \\bigcup_{n=m}^{\\infty}[n a . n b] \\supseteq[c, \\infty) \\). Then\n\\[\n(\\forall y \\geq c)|f(y)| \\leq \\alpha\n\\]\n\nSince \\( \\alpha \\) was arbitrary, this proves that \\( \\lim _{v \\rightarrow \\infty} f(y)=0 \\), as required.\nBaire Category Theorem. Suppose \\( \\left\\{E_{k}\\right\\} \\) is a sequence of closed subsets of \\( \\mathbf{R} \\) such that \\( \\cup_{k=1}^{\\infty} E_{k} \\) contains an interval. Then at least one of the sets \\( E_{k} \\) contains an interval.\n\nProof. Let \\( I_{0} \\) be a bounded closed interval in \\( \\cup_{k=1}^{\\infty} E_{k} \\). Assuming that the conclusion of the theorem is false, we shall construct inductively a decreasing sequence of closed intervals \\( I_{0}, I_{1}, I_{2}, \\ldots \\) such that \\( (\\forall n>1) \\), \\( I_{n} \\cap E_{n}=\\emptyset \\).\n\nSince \\( I_{0} \\nsubseteq E_{1} \\), there is a point \\( x_{1} \\in I_{0}-E_{1} \\). Since \\( E_{1} \\) is closed, there is an interval about \\( x_{1} \\) which does not meet \\( E_{1} \\) and in this interval we can choose a closed interval \\( I_{1} \\subseteq I_{0} \\). Continuing inductively, if we have chosen \\( I_{n-1} \\), there is a point \\( x_{n} \\in I_{n-1}-E_{n} \\), and we can find a closed interval \\( I_{n} \\subseteq I_{n-1} \\) such that \\( I_{n} \\cap E_{n}=\\emptyset \\).\n\nNow the intersection of a nested sequence of bounded closed intervals cannot be void, so there exists a point \\( x \\) such that \\( x \\in \\bigcap_{n=0}^{\\infty} I_{n} \\). Then \\( x \\in I_{0} \\) but \\( x \\notin \\cup_{k=1}^{\\infty} E_{k} \\), and this contradicts the fact that \\( \\cup_{k=1}^{\\infty} E_{k} \\supseteq I_{0} \\).\n\nNote: The Baire Category Theorem is usually stated in the more general context of complete metric spaces, for example: Suppose \\( \\left\\{E_{k}\\right\\} \\) is a sequence of closed subsets of a complete metric space such that \\( \\cup_{k=1}^{\\infty} E_{k} \\) contains a non-void open set \\( \\boldsymbol{G} \\). Then at least one of the sets \\( E_{k} \\) contains a non-void open subset of \\( \\boldsymbol{G} \\).",
+  "vars": [
+    "x",
+    "y",
+    "n"
+  ],
+  "params": [
+    "f",
+    "\\\\epsilon",
+    "a",
+    "b",
+    "k",
+    "t",
+    "\\\\alpha",
+    "c",
+    "F_n",
+    "E_k",
+    "m",
+    "I_0",
+    "I_1",
+    "I_n",
+    "I_n-1",
+    "x_1",
+    "x_n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "realvarx",
+        "y": "realvary",
+        "n": "indexvar",
+        "f": "contfunc",
+        "\\epsilon": "smalleps",
+        "a": "intervala",
+        "b": "intervalb",
+        "k": "indexkk",
+        "t": "indextee",
+        "\\alpha": "alphaval",
+        "c": "boundccc",
+        "F_n": "setfindex",
+        "E_k": "seteindex",
+        "m": "indexmm",
+        "I_0": "intervalz",
+        "I_1": "intervalo",
+        "I_n": "intervaln",
+        "I_n-1": "intervalm",
+        "x_1": "pointone",
+        "x_n": "pointenn"
+      },
+      "question": "3. Let \\( contfunc(realvarx) \\) be a real continuous function defined for all real \\( realvarx \\). Assume that for every \\( smalleps>0 \\)\n\\[\n\\lim _{indexvar \\rightarrow \\infty} contfunc(indexvar\\, smalleps)=0, \\quad \\text { (where } indexvar \\text { is a positive integer) }\n\\]\n\nProve that\n\\[\n\\lim _{realvarx \\rightarrow \\infty} contfunc(realvarx)=0\n\\]",
+      "solution": "Solution. We begin by proving the following fact.\nLemma. If \\( 0<intervala<intervalb \\) and \\( indexkk \\) is any positive integer, then\n\\[\n\\bigcup_{indexvar=indexkk}^{\\infty}[indexvar\\, intervala,\\, indexvar\\, intervalb]\n\\]\ncontains the ray \\( [boundccc, \\infty) \\) for some \\( boundccc \\).\n\nProof. Suppose \\( indextee \\) is an integer such that \\( indextee \\geq indexkk,\\, indextee \\geq intervala /(intervalb-intervala) \\). If \\( indexvar \\geq indextee \\), then \\( indexvar(intervalb-intervala) \\geq intervala \\) so \\( indexvar intervalb \\geq(indexvar+1) intervala \\). Hence the intervals \\( [indexvar\\, intervala,\\, indexvar\\, intervalb] \\) and \\( [(indexvar+1) intervala,(indexvar+1) intervalb] \\) overlap. Therefore\n\\[\n\\bigcup_{indexvar=indexkk}^{\\infty}[indexvar\\, intervala,\\, indexvar\\, intervalb] \\supseteq[indextee\\, intervala, \\infty) .\n\\]\n\nWe return to the problem. Let \\( alphaval>0 \\) be given. Define\n\\[\nsetfindex=\\{realvarx:\\,|contfunc(indexvar\\, realvarx)| \\leq alphaval\\}\n\\]\nand\n\\[\nseteindex=\\{realvarx:(\\forall indexvar \\geq indexkk)|contfunc(indexvar\\, realvarx)| \\leq alphaval\\} .\n\\]\n\nThen \\( seteindex=\\bigcap_{indexvar>indexkk} setfindex \\). Because \\( contfunc \\) is continuous, each \\( setfindex \\) is closed, and therefore each \\( seteindex \\) is closed. If \\( realvary \\in(0, \\infty) \\), then \\( \\lim _{indexvar\\rightarrow \\infty} contfunc(indexvar\\, realvary)=0 \\); hence for some \\( indexkk \\) and all \\( indexvar \\geq indexkk,|contfunc(indexvar\\, realvary)| \\leq alphaval \\); that is, \\( realvary \\in seteindex \\). Thus \\( (0, \\infty) \\subseteq \\cup seteindex \\). By the Baire category theorem (proof below) one of the \\( E \\)'s, say \\( E_{indexmm} \\), contains an interval \\( [intervala , intervalb] \\). This means\n\\[\n(\\forall realvarx \\in[intervala , intervalb])(\\forall indexvar \\geq indexmm)|contfunc(indexvar\\, realvarx)| \\leq alphaval .\n\\]\n\nTherefore\n\\[\n\\left(\\forall realvary \\in \\bigcup_{indexvar=indexmm}^{\\infty}[indexvar\\, intervala,\\, indexvar\\, intervalb]\\right)|contfunc(realvary)| \\leq alphaval\n\\]\n\nChoose \\( boundccc \\) so that \\( \\bigcup_{indexvar=indexmm}^{\\infty}[indexvar\\, intervala , indexvar\\, intervalb] \\supseteq[boundccc, \\infty) \\). Then\n\\[\n(\\forall realvary \\geq boundccc)|contfunc(realvary)| \\leq alphaval\n\\]\n\nSince \\( alphaval \\) was arbitrary, this proves that \\( \\lim _{realvary \\rightarrow \\infty} contfunc(realvary)=0 \\), as required.\n\nBaire Category Theorem. Suppose \\( \\{E_{indexkk}\\} \\) is a sequence of closed subsets of \\( \\mathbf{R} \\) such that \\( \\cup_{indexkk=1}^{\\infty} E_{indexkk} \\) contains an interval. Then at least one of the sets \\( E_{indexkk} \\) contains an interval.\n\nProof. Let \\( intervalz \\) be a bounded closed interval in \\( \\cup_{indexkk=1}^{\\infty} E_{indexkk} \\). Assuming that the conclusion of the theorem is false, we shall construct inductively a decreasing sequence of closed intervals \\( intervalz, intervalo, intervaln, \\ldots \\) such that \\( (\\forall indexvar>1) \\), \\( intervaln \\cap E_{indexvar}=\\emptyset \\).\n\nSince \\( intervalz \\nsubseteq E_{1} \\), there is a point \\( pointone \\in intervalz-E_{1} \\). Since \\( E_{1} \\) is closed, there is an interval about \\( pointone \\) which does not meet \\( E_{1} \\) and in this interval we can choose a closed interval \\( intervalo \\subseteq intervalz \\). Continuing inductively, if we have chosen \\( intervalm \\), there is a point \\( pointenn \\in intervalm-E_{indexvar} \\), and we can find a closed interval \\( intervaln \\subseteq intervalm \\) such that \\( intervaln \\cap E_{indexvar}=\\emptyset \\).\n\nNow the intersection of a nested sequence of bounded closed intervals cannot be void, so there exists a point \\( realvarx \\) such that \\( realvarx \\in \\bigcap_{indexvar=0}^{\\infty} intervaln \\). Then \\( realvarx \\in intervalz \\) but \\( realvarx \\notin \\cup_{indexkk=1}^{\\infty} E_{indexkk} \\), and this contradicts the fact that \\( \\cup_{indexkk=1}^{\\infty} E_{indexkk} \\supseteq intervalz \\).\n\nNote: The Baire Category Theorem is usually stated in the more general context of complete metric spaces, for example: Suppose \\( \\{E_{indexkk}\\} \\) is a sequence of closed subsets of a complete metric space such that \\( \\cup_{indexkk=1}^{\\infty} E_{indexkk} \\) contains a non-void open set \\( \\boldsymbol{G} \\). Then at least one of the sets \\( E_{indexkk} \\) contains a non-void open subset of \\( \\boldsymbol{G} \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "riverbank",
+        "y": "stargazer",
+        "n": "lighthouse",
+        "f": "buttercup",
+        "\\epsilon": "mousetail",
+        "a": "windchime",
+        "b": "raincloud",
+        "k": "tangerine",
+        "t": "goldfinch",
+        "\\alpha": "shipwreck",
+        "c": "moonstone",
+        "F_n": "blackberry",
+        "E_k": "dragonfly",
+        "m": "honeycomb",
+        "I_0": "pineapple",
+        "I_1": "watermelon",
+        "I_n": "cranberry",
+        "I_n-1": "bluebottle",
+        "x_1": "marigold",
+        "x_n": "woodpecker"
+      },
+      "question": "3. Let \\( buttercup(riverbank) \\) be a real continuous function defined for all real \\( riverbank \\). Assume that for every \\( mousetail>0 \\)\n\\[\n\\lim _{lighthouse \\rightarrow \\infty} buttercup(lighthouse mousetail)=0, \\quad \\text { (where } lighthouse \\text { is a positive integer) }\n\\]\n\nProve that\n\\[\n\\lim _{riverbank \\rightarrow \\infty} buttercup(riverbank)=0\n\\]\n",
+      "solution": "Solution. We begin by proving the following fact.\nLemma. If \\( 0<windchime<raincloud \\) and \\( tangerine \\) is any positive integer, then\n\\[\n\\bigcup_{lighthouse=tangerine}^{\\infty}[lighthouse windchime, lighthouse raincloud]\n\\]\ncontains the ray \\( [moonstone, \\infty) \\) for some \\( moonstone \\).\nProof. Suppose \\( goldfinch \\) is an integer such that \\( goldfinch \\geq tangerine, goldfinch \\geq windchime /(raincloud-windchime) \\). If \\( lighthouse \\geq goldfinch \\), then \\( lighthouse(raincloud-windchime) \\geq windchime \\) so \\( lighthouse raincloud \\geq(lighthouse+1) windchime \\). Hence the intervals \\( [lighthouse windchime, lighthouse raincloud] \\) and \\( [(lighthouse+1) windchime,(lighthouse+1) raincloud] \\) overlap. Therefore\n\\[\n\\bigcup_{lighthouse=tangerine}^{\\infty}[lighthouse windchime, lighthouse raincloud] \\supseteq[goldfinch windchime, \\infty) .\n\\]\n\nWe return to the problem. Let \\( shipwreck>0 \\) be given. Define\n\\[\nblackberry=\\{riverbank:|buttercup(lighthouse riverbank)| \\leq shipwreck\\}\n\\]\nand\n\\[\ndragonfly=\\{riverbank:(\\forall lighthouse \\geq tangerine)|buttercup(lighthouse riverbank)| \\leq shipwreck\\} .\n\\]\n\nThen \\( dragonfly=\\bigcap_{lighthouse>tangerine} blackberry \\). Because \\( buttercup \\) is continuous, each \\( blackberry \\) is closed, and therefore each \\( dragonfly \\) is closed. If \\( stargazer \\in(0, \\infty) \\), then \\( \\lim _{lighthouse-\\infty} buttercup(lighthouse stargazer)=0 \\); hence for some \\( tangerine \\) and all \\( lighthouse \\geq tangerine,|buttercup(lighthouse stargazer)| \\leq shipwreck \\); that is, \\( stargazer \\in dragonfly \\). Thus \\( (0, \\infty) \\subseteq \\cup dragonfly \\). By the Baire category theorem (proof below) one of the \\( E \\)'s, say \\( E_{honeycomb} \\), contains an interval \\( [windchime . raincloud\\rceil \\). This means\n\\[\n(\\forall riverbank \\in[windchime . raincloud])(\\forall lighthouse \\geq honeycomb)|buttercup(lighthouse riverbank)| \\leq shipwreck .\n\\]\n\nTherefore\n\\[\n\\left(\\forall stargazer \\in \\bigcup_{lighthouse=honeycomb}^{\\infty}[lighthouse windchime, lighthouse raincloud]\\right)|buttercup(stargazer)| \\leq shipwreck\n\\]\n\nChoose \\( moonstone \\) so that \\( \\bigcup_{lighthouse=honeycomb}^{\\infty}[lighthouse windchime . lighthouse raincloud] \\supseteq[moonstone, \\infty) \\). Then\n\\[\n(\\forall stargazer \\geq moonstone)|buttercup(stargazer)| \\leq shipwreck\n\\]\n\nSince \\( shipwreck \\) was arbitrary, this proves that \\( \\lim _{v \\rightarrow \\infty} buttercup(stargazer)=0 \\), as required.\nBaire Category Theorem. Suppose \\( \\left\\{dragonfly\\right\\} \\) is a sequence of closed subsets of \\( \\mathbf{R} \\) such that \\( \\cup_{tangerine=1}^{\\infty} dragonfly \\) contains an interval. Then at least one of the sets \\( dragonfly \\) contains an interval.\n\nProof. Let \\( pineapple \\) be a bounded closed interval in \\( \\cup_{tangerine=1}^{\\infty} dragonfly \\). Assuming that the conclusion of the theorem is false, we shall construct inductively a decreasing sequence of closed intervals \\( pineapple, watermelon, I_{2}, \\ldots \\) such that \\( (\\forall lighthouse>1) \\), \\( cranberry \\cap E_{lighthouse}=\\emptyset \\).\n\nSince \\( pineapple \\nsubseteq E_{1} \\), there is a point \\( marigold \\in pineapple-E_{1} \\). Since \\( E_{1} \\) is closed, there is an interval about \\( marigold \\) which does not meet \\( E_{1} \\) and in this interval we can choose a closed interval \\( watermelon \\subseteq pineapple \\). Continuing inductively, if we have chosen \\( bluebottle \\), there is a point \\( woodpecker \\in bluebottle-E_{lighthouse} \\), and we can find a closed interval \\( cranberry \\subseteq bluebottle \\) such that \\( cranberry \\cap E_{lighthouse}=\\emptyset \\).\n\nNow the intersection of a nested sequence of bounded closed intervals cannot be void, so there exists a point \\( riverbank \\) such that \\( riverbank \\in \\bigcap_{lighthouse=0}^{\\infty} cranberry \\). Then \\( riverbank \\in pineapple \\) but \\( riverbank \\notin \\cup_{tangerine=1}^{\\infty} dragonfly \\), and this contradicts the fact that \\( \\cup_{tangerine=1}^{\\infty} dragonfly \\supseteq pineapple \\).\n\nNote: The Baire Category Theorem is usually stated in the more general context of complete metric spaces, for example: Suppose \\( \\left\\{dragonfly\\right\\} \\) is a sequence of closed subsets of a complete metric space such that \\( \\cup_{tangerine=1}^{\\infty} dragonfly \\) contains a non-void open set \\( \\boldsymbol{G} \\). Then at least one of the sets \\( dragonfly \\) contains a non-void open subset of \\( \\boldsymbol{G} \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "constantvalue",
+        "y": "fixedscalar",
+        "n": "noninteger",
+        "f": "staticconstant",
+        "\\epsilon": "giganticmargin",
+        "a": "endlimit",
+        "b": "startlimit",
+        "k": "infiniteindex",
+        "t": "fractional",
+        "\\alpha": "omegabound",
+        "c": "originpoint",
+        "F_n": "emptysubset",
+        "E_k": "abundanceset",
+        "m": "zerovalue",
+        "I_0": "segmentzero",
+        "I_1": "segmentone",
+        "I_n": "segmentvar",
+        "I_n-1": "segmentprev",
+        "x_1": "pointfirst",
+        "x_n": "pointmany"
+      },
+      "question": "Problem:\n<<<\n3. Let \\( staticconstant(constantvalue) \\) be a real continuous function defined for all real \\( constantvalue \\). Assume that for every \\( giganticmargin>0 \\)\n\\[\n\\lim _{noninteger \\rightarrow \\infty} staticconstant(noninteger giganticmargin)=0, \\quad \\text { (where } noninteger \\text { is a positive integer) }\n\\]\n\nProve that\n\\[\n\\lim _{constantvalue \\rightarrow \\infty} staticconstant(constantvalue)=0\n\\]\n>>>\n",
+      "solution": "Solution:\n<<<\nSolution. We begin by proving the following fact.\nLemma. If \\( 0<endlimit<startlimit \\) and \\( infiniteindex \\) is any positive integer, then\n\\[\n\\bigcup_{noninteger=infiniteindex}^{\\infty}[noninteger endlimit, noninteger startlimit]\n\\]\ncontains the ray \\( [originpoint, \\infty) \\) for some \\( originpoint \\).\nProof. Suppose \\( fractional \\) is an integer such that \\( fractional \\geq infiniteindex, fractional \\geq endlimit /(startlimit-endlimit) \\). If \\( noninteger \\geq fractional \\), then \\( noninteger(startlimit-endlimit) \\geq endlimit \\) so \\( noninteger startlimit \\geq(noninteger+1) endlimit \\). Hence the intervals \\( [noninteger endlimit, noninteger startlimit] \\) and \\( [(noninteger+1) endlimit,(noninteger+1) startlimit] \\) overlap. Therefore\n\\[\n\\bigcup_{noninteger=infiniteindex}^{\\infty}[noninteger endlimit, noninteger startlimit] \\supseteq[fractional endlimit, \\infty) .\n\\]\n\nWe return to the problem. Let \\( omegabound>0 \\) be given. Define\n\\[\nemptysubset=\\{constantvalue:|staticconstant(noninteger constantvalue)| \\leq omegabound\\}\n\\]\nand\n\\[\nabundanceset=\\{constantvalue:(\\forall noninteger \\geq infiniteindex)|staticconstant(noninteger constantvalue)| \\leq omegabound\\} .\n\\]\n\nThen \\( abundanceset=\\bigcap_{noninteger>infiniteindex} emptysubset \\). Because \\( staticconstant \\) is continuous, each \\( emptysubset \\) is closed, and therefore each \\( abundanceset \\) is closed. If \\( fixedscalar \\in(0, \\infty) \\), then \\( \\lim _{noninteger-\\infty} staticconstant(noninteger fixedscalar)=0 \\); hence for some \\( infiniteindex \\) and all \\( noninteger \\geq infiniteindex,|staticconstant(noninteger fixedscalar)| \\leq omegabound \\); that is, \\( fixedscalar \\in abundanceset \\). Thus \\( (0, \\infty) \\subseteq \\cup abundanceset \\). By the Baire category theorem (proof below) one of the \\( E \\) 's, say \\( abundanceset \\) with index \\( zerovalue \\), contains an interval \\( [endlimit . startlimit\\rceil \\). This means\n\\[\n(\\forall constantvalue \\in[endlimit . startlimit])(\\forall noninteger \\geq zerovalue)|staticconstant(noninteger constantvalue)| \\leq omegabound .\n\\]\n\nTherefore\n\\[\n\\left(\\forall fixedscalar \\in \\bigcup_{noninteger=zerovalue}^{\\infty}[noninteger endlimit, noninteger startlimit]\\right)|staticconstant(fixedscalar)| \\leq omegabound\n\\]\n\nChoose \\( originpoint \\) so that \\( \\bigcup_{noninteger=zerovalue}^{\\infty}[noninteger endlimit . noninteger startlimit] \\supseteq[originpoint, \\infty) \\). Then\n\\[\n(\\forall fixedscalar \\geq originpoint)|staticconstant(fixedscalar)| \\leq omegabound\n\\]\n\nSince \\( omegabound \\) was arbitrary, this proves that \\( \\lim _{v \\rightarrow \\infty} staticconstant(fixedscalar)=0 \\), as required.\nBaire Category Theorem. Suppose \\( \\left\\{abundanceset\\right\\} \\) is a sequence of closed subsets of \\( \\mathbf{R} \\) such that \\( \\cup_{noninteger=1}^{\\infty} abundanceset \\) contains an interval. Then at least one of the sets \\( abundanceset \\) contains an interval.\n\nProof. Let \\( segmentzero \\) be a bounded closed interval in \\( \\cup_{noninteger=1}^{\\infty} abundanceset \\). Assuming that the conclusion of the theorem is false, we shall construct inductively a decreasing sequence of closed intervals \\( segmentzero, segmentone, segmentvar, \\ldots \\) such that \\( (\\forall noninteger>1) \\), \\( segmentvar \\cap abundanceset=\\emptyset \\).\n\nSince \\( segmentzero \\nsubseteq abundanceset \\), there is a point \\( pointfirst \\in segmentzero-abundanceset \\). Since \\( abundanceset \\) is closed, there is an interval about \\( pointfirst \\) which does not meet \\( abundanceset \\) and in this interval we can choose a closed interval \\( segmentone \\subseteq segmentzero \\). Continuing inductively, if we have chosen \\( segmentprev \\), there is a point \\( pointmany \\in segmentprev-abundanceset \\), and we can find a closed interval \\( segmentvar \\subseteq segmentprev \\) such that \\( segmentvar \\cap abundanceset=\\emptyset \\).\n\nNow the intersection of a nested sequence of bounded closed intervals cannot be void, so there exists a point \\( constantvalue \\) such that \\( constantvalue \\in \\bigcap_{noninteger=0}^{\\infty} segmentvar \\). Then \\( constantvalue \\in segmentzero \\) but \\( constantvalue \\notin \\cup_{noninteger=1}^{\\infty} abundanceset \\), and this contradicts the fact that \\( \\cup_{noninteger=1}^{\\infty} abundanceset \\supseteq segmentzero \\).\n\nNote: The Baire Category Theorem is usually stated in the more general context of complete metric spaces, for example: Suppose \\( \\left\\{abundanceset\\right\\} \\) is a sequence of closed subsets of a complete metric space such that \\( \\cup_{noninteger=1}^{\\infty} abundanceset \\) contains a non-void open set \\( \\boldsymbol{G} \\). Then at least one of the sets \\( abundanceset \\) contains a non-void open subset of \\( \\boldsymbol{G} \\).\n>>>\n"
+    },
+    "garbled_string": {
+      "map": {
+        "x": "lqrvbtsm",
+        "y": "qjznspra",
+        "n": "vkshczqa",
+        "f": "whzgkpne",
+        "\\epsilon": "qvzjfdra",
+        "a": "chxaflbu",
+        "b": "odfztqen",
+        "k": "hdemczar",
+        "t": "vcmswqop",
+        "\\alpha": "mxpweuoj",
+        "c": "njgralxd",
+        "F_n": "zptrkahn",
+        "E_k": "wpslvkcf",
+        "m": "xskrzpua",
+        "I_0": "oyqtrhcd",
+        "I_1": "rhfqpzws",
+        "I_n": "vkdlxacn",
+        "I_n-1": "gvpmslzd",
+        "x_1": "pkqslvfr",
+        "x_n": "qbxtlsaw"
+      },
+      "question": "3. Let \\( whzgkpne(lqrvbtsm) \\) be a real continuous function defined for all real \\( lqrvbtsm \\). Assume that for every \\( qvzjfdra>0 \\)\n\\[\n\\lim _{vkshczqa \\rightarrow \\infty} whzgkpne(vkshczqa qvzjfdra)=0, \\quad \\text { (where } vkshczqa \\text { is a positive integer) }\n\\]\n\nProve that\n\\[\n\\lim _{lqrvbtsm \\rightarrow \\infty} whzgkpne(lqrvbtsm)=0\n\\]",
+      "solution": "Solution. We begin by proving the following fact.\nLemma. If \\( 0<chxaflbu<odfztqen \\) and \\( hdemczar \\) is any positive integer, then\n\\[\n\\bigcup_{vkshczqa=hdemczar}^{\\infty}[vkshczqa chxaflbu, vkshczqa odfztqen]\n\\]\ncontains the ray \\( [njgralxd, \\infty) \\) for some \\( njgralxd \\).\nProof. Suppose \\( vcmswqop \\) is an integer such that \\( vcmswqop \\geq hdemczar, vcmswqop \\geq chxaflbu /(odfztqen-chxaflbu) \\). If \\( vkshczqa \\geq vcmswqop \\), then \\( vkshczqa(odfztqen-chxaflbu) \\geq chxaflbu \\) so \\( vkshczqa odfztqen \\geq(vkshczqa+1) chxaflbu \\). Hence the intervals \\( [vkshczqa chxaflbu, vkshczqa odfztqen] \\) and \\( [(vkshczqa+1) chxaflbu,(vkshczqa+1) odfztqen] \\) overlap. Therefore\n\\[\n\\bigcup_{vkshczqa=hdemczar}^{\\infty}[vkshczqa chxaflbu, vkshczqa odfztqen] \\supseteq[vcmswqop chxaflbu, \\infty) .\n\\]\n\nWe return to the problem. Let \\( mxpweuoj>0 \\) be given. Define\n\\[\nzptrkahn=\\{lqrvbtsm:|whzgkpne(vkshczqa lqrvbtsm)| \\leq mxpweuoj\\}\n\\]\nand\n\\[\nwpslvkcf=\\{lqrvbtsm:(\\forall vkshczqa \\geq hdemczar)|whzgkpne(vkshczqa lqrvbtsm)| \\leq mxpweuoj\\} .\n\\]\n\nThen \\( wpslvkcf=\\bigcap_{vkshczqa>hdemczar} zptrkahn \\). Because \\( whzgkpne \\) is continuous, each \\( zptrkahn \\) is closed, and therefore each \\( wpslvkcf \\) is closed. If \\( qjznspra \\in(0, \\infty) \\), then \\( \\lim _{vkshczqa-\\infty} whzgkpne(vkshczqa qjznspra)=0 \\); hence for some \\( hdemczar \\) and all \\( vkshczqa \\geq hdemczar,|whzgkpne(vkshczqa qjznspra)| \\leq mxpweuoj \\); that is, \\( qjznspra \\in wpslvkcf \\). Thus \\( (0, \\infty) \\subseteq \\cup wpslvkcf \\). By the Baire category theorem (proof below) one of the \\( E \\)'s, say \\( E_{xskrzpua} \\), contains an interval \\( [chxaflbu . odfztqen\\rceil \\). This means\n\\[\n(\\forall lqrvbtsm \\in[chxaflbu . odfztqen])(\\forall vkshczqa \\geq xskrzpua)|whzgkpne(vkshczqa lqrvbtsm)| \\leq mxpweuoj .\n\\]\n\nTherefore\n\\[\n\\left(\\forall qjznspra \\in \\bigcup_{vkshczqa=xskrzpua}^{\\infty}[vkshczqa chxaflbu, vkshczqa odfztqen]\\right)|whzgkpne(qjznspra)| \\leq mxpweuoj\n\\]\n\nChoose \\( njgralxd \\) so that \\( \\bigcup_{vkshczqa=xskrzpua}^{\\infty}[vkshczqa chxaflbu . vkshczqa odfztqen] \\supseteq[njgralxd, \\infty) \\). Then\n\\[\n(\\forall qjznspra \\geq njgralxd)|whzgkpne(qjznspra)| \\leq mxpweuoj\n\\]\n\nSince \\( mxpweuoj \\) was arbitrary, this proves that \\( \\lim _{qjznspra \\rightarrow \\infty} whzgkpne(qjznspra)=0 \\), as required.\n\nBaire Category Theorem. Suppose \\( \\left\\{wpslvkcf\\right\\} \\) is a sequence of closed subsets of \\( \\mathbf{R} \\) such that \\( \\cup_{hdemczar=1}^{\\infty} E_{hdemczar} \\) contains an interval. Then at least one of the sets \\( E_{hdemczar} \\) contains an interval.\n\nProof. Let \\( oyqtrhcd \\) be a bounded closed interval in \\( \\cup_{hdemczar=1}^{\\infty} E_{hdemczar} \\). Assuming that the conclusion of the theorem is false, we shall construct inductively a decreasing sequence of closed intervals \\( oyqtrhcd, rhfqpzws, vkdlxacn, \\ldots \\) such that \\( (\\forall vkshczqa>1) \\), \\( vkdlxacn \\cap E_{vkshczqa}=\\emptyset \\).\n\nSince \\( oyqtrhcd \\nsubseteq E_{1} \\), there is a point \\( pkqslvfr \\in oyqtrhcd-E_{1} \\). Since \\( E_{1} \\) is closed, there is an interval about \\( pkqslvfr \\) which does not meet \\( E_{1} \\) and in this interval we can choose a closed interval \\( rhfqpzws \\subseteq oyqtrhcd \\). Continuing inductively, if we have chosen \\( gvpmslzd \\), there is a point \\( qbxtlsaw \\in gvpmslzd-E_{vkshczqa} \\), and we can find a closed interval \\( vkdlxacn \\subseteq gvpmslzd \\) such that \\( vkdlxacn \\cap E_{vkshczqa}=\\emptyset \\).\n\nNow the intersection of a nested sequence of bounded closed intervals cannot be void, so there exists a point \\( lqrvbtsm \\) such that \\( lqrvbtsm \\in \\bigcap_{vkshczqa=0}^{\\infty} vkdlxacn \\). Then \\( lqrvbtsm \\in oyqtrhcd \\) but \\( lqrvbtsm \\notin \\cup_{hdemczar=1}^{\\infty} E_{hdemczar} \\), and this contradicts the fact that \\( \\cup_{hdemczar=1}^{\\infty} E_{hdemczar} \\supseteq oyqtrhcd \\).\n\nNote: The Baire Category Theorem is usually stated in the more general context of complete metric spaces, for example: Suppose \\( \\left\\{wpslvkcf\\right\\} \\) is a sequence of closed subsets of a complete metric space such that \\( \\cup_{hdemczar=1}^{\\infty} E_{hdemczar} \\) contains a non-void open set \\( \\boldsymbol{G} \\). Then at least one of the sets \\( E_{hdemczar} \\) contains a non-void open subset of \\( \\boldsymbol{G} \\)."
+    },
+    "kernel_variant": {
+      "question": "Let f : \\mathbb{R} \\to  \\mathbb{R} be a continuous function. Assume that for every negative real number \\varepsilon  < 0 we have\n\n              lim_{n\\to \\infty } f(n \\varepsilon ) = 0   (n \\in  \\mathbb{Z}_{>0}).\n\nProve that\n\n              lim_{x\\to -\\infty } f(x) = 0.",
+      "solution": "Fix an arbitrary number \\beta  > 0.  \n\nStep 1.  Construction of the closed sets.\n------------------------------------------------\nChoose a convenient distance away from the origin, say \\delta  = 1.  (Any \\delta  > 0 will do.)  On the closed, hence complete, metric sub-space X := (-\\infty , -\\delta ] we define\n\n              F_n = { x \\in  X : |f(n x)| \\leq  \\beta  }  (n = 1,2,3, \\ldots ).\n\nBecause x \\mapsto  n x and f are continuous, the pre-image {x : |f(n x)| \\leq  \\beta } is closed in \\mathbb{R}; intersecting it with the closed set X leaves it closed in X.  Hence every F_n is closed in the complete metric space X.\n\nNow set\n\n              E_k = \\cap _{n\\geq k} F_n  (k = 1,2,3, \\ldots ).\n\nEach E_k is an intersection of closed sets in X, so E_k is closed in X.\n\nStep 2.  Covering of X by the E_k.\n-----------------------------------\nLet y \\in  X.  Since y < 0, the hypothesis gives lim_{n\\to \\infty } f(n y) = 0.  Therefore there exists k such that for all n \\geq  k, |f(n y)| \\leq  \\beta ; i.e. y \\in  E_k.  Thus\n\n              X = \\bigcup _{k=1}^{\\infty } E_k.\n\nStep 3.  Application of the Baire Category Theorem.\n--------------------------------------------------\nX is complete, and we have written it as a countable union of closed sets.  By Baire's theorem at least one of these closed sets, say E_m, has non-empty interior in X; consequently E_m contains a non-degenerate closed interval [a, b] with\n\n              -\\infty  < a < b \\leq  -\\delta  = -1.            (1)\n\nStep 4.  Producing a long interval on which f is small.\n------------------------------------------------------\nPut A = -b > 0 and B = -a > A.  Because of (1) we have A \\geq  1.  Choose an integer N_0 such that\n\n              N_0 > A / (B - A).\n\nFor every n \\geq  N_0 the two intervals\n\n              I_n = [n a, n b]   and   I_{n+1} = [(n+1) a, (n+1) b]\n\noverlap.  Indeed, n(b - a) \\geq  n(B - A) \\geq  A implies n b \\geq  (n+1) a.  Consequently the union \\bigcup _{n\\geq N} I_n is a single interval of the form (-\\infty , N b] once N := max{m, N_0}.\n\nStep 5.  Bounding f on that long interval.\n-----------------------------------------\nBecause [a, b] \\subseteq  E_m, for every x \\in  [a, b] and all n \\geq  m we have |f(n x)| \\leq  \\beta .  In particular, for every y in the ray (-\\infty , N b] we find an integer n \\geq  N with y \\in  I_n, so y = n x for some x \\in  [a, b]; therefore |f(y)| = |f(n x)| \\leq  \\beta .\n\nHence there exists a negative number M := N b such that\n\n              |f(y)| \\leq  \\beta    for all y \\leq  M.            (2)\n\nStep 6.  Letting \\beta  \\to  0.\n------------------------\nThe bound (2) has been obtained for an arbitrary \\beta  > 0.  Taking \\beta  \\to  0 shows that for every \\varepsilon  > 0 there exists M (depending on \\varepsilon ) such that |f(y)| < \\varepsilon  whenever y \\leq  M.  This is exactly\n\n              lim_{x\\to -\\infty } f(x) = 0.\n\nThe proof is complete.",
+      "_meta": {
+        "core_steps": [
+          "Fix α>0 and form the closed sets F_n={x:|f(nx)|≤α}, then E_k=∩_{n≥k}F_n so that ⋃_{k}E_k⊇(0,∞).",
+          "Invoke the Baire Category Theorem to conclude that some E_m contains a non-degenerate interval [a,b].",
+          "Use the elementary ‘overlapping-interval’ lemma: ⋃_{n≥m}[na,nb] eventually covers a whole ray [c,∞).",
+          "Hence |f(y)|≤α for every y≥c; since α was arbitrary this forces lim_{x→∞}f(x)=0."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Positive bound used in the definition of the sets F_n and E_k.",
+            "original": "α>0"
+          },
+          "slot2": {
+            "description": "Location of the half-line whose points are known to satisfy the hypothesis (now (0,∞)).",
+            "original": "(0, ∞)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

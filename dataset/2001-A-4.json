@@ -1,0 +1,154 @@
+{
+  "index": "2001-A-4",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Triangle $ABC$ has an area 1.  Points $E,F,G$ lie, respectively,\non sides $BC$, $CA$, $AB$ such that $AE$ bisects $BF$ at point $R$,\n$BF$ bisects $CG$ at point $S$, and $CG$ bisects $AE$ at point $T$.\nFind the area of the triangle $RST$.",
+  "solution": "Choose $r,s,t$ so that $EC = rBC, FA = sCA, GB = tCB$, and let\n$[XYZ]$ denote the area of triangle $XYZ$. Then $[ABE] = [AFE]$ since\nthe triangles have the same altitude and base.\nAlso $[ABE] = (BE/BC) [ABC] = 1-r$, and\n$[ECF] = (EC/BC)(CF/CA)[ABC] = r(1-s)$ (e.g., by the law of sines).\nAdding this\nall up yields\n\\begin{align*}\n1 &= [ABE] + [ABF] + [ECF] \\\\\n&= 2(1-r) + r(1-s) = 2-r-rs\n\\end{align*}\nor $r(1+s) = 1$.\nSimilarly $s(1+t) = t(1+r) = 1$.\n\nLet $f: [0, \\infty) \\to [0, \\infty)$ be the function given by\n$f(x) = 1/(1+x)$; then $f(f(f(r))) = r$.\nHowever, $f(x)$ is strictly decreasing in $x$, so $f(f(x))$ is increasing\nand $f(f(f(x)))$ is decreasing. Thus there is at most one $x$ such that\n$f(f(f(x))) = x$;\nin fact, since the equation $f(z) = z$ has a positive root\n$z = (-1 + \\sqrt{5})/2$, we must have $r=s=t=z$.\n\nWe now compute $[ABF] = (AF/AC) [ABC] = z$,\n$[ABR] = (BR/BF) [ABF] = z/2$, analogously $[BCS] = [CAT] = z/2$, and\n$[RST] = |[ABC] - [ABR] - [BCS] - [CAT]| = |1 - 3z/2| = \\frac{7 - 3\n\\sqrt{5}}{4}$.\n\nNote: the key relation $r(1+s) = 1$ can also be derived by computing\nusing homogeneous coordinates or vectors.",
+  "vars": [
+    "r",
+    "s",
+    "t",
+    "x",
+    "z"
+  ],
+  "params": [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "G",
+    "R",
+    "S",
+    "T",
+    "X",
+    "Y",
+    "Z",
+    "f"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "r": "ratioone",
+        "s": "ratiotwo",
+        "t": "ratiothr",
+        "x": "varxvar",
+        "z": "varzvar",
+        "A": "vertexa",
+        "B": "vertexb",
+        "C": "vertexc",
+        "E": "vertexe",
+        "F": "vertexf",
+        "G": "vertexg",
+        "R": "vertexr",
+        "S": "vertexs",
+        "T": "vertext",
+        "X": "vertexx",
+        "Y": "vertexy",
+        "Z": "vertexz",
+        "f": "mapfun"
+      },
+      "question": "Triangle $vertexavertexbvertexc$ has an area 1.  Points $vertexe,vertexf,vertexg$ lie, respectively,\non sides $vertexbvertexc$, $vertexcvertexa$, $vertexavertexb$ such that $vertexavertexe$ bisects $vertexbvertexf$ at point $vertexr$,\n$vertexbvertexf$ bisects $vertexcvertexg$ at point $vertexs$, and $vertexcvertexg$ bisects $vertexavertexe$ at point $vertext$.\nFind the area of the triangle $vertexrvertexsvertext$.",
+      "solution": "Choose $ratioone, ratiotwo, ratiothr$ so that $vertexevertexc = ratioone vertexbvertexc, vertexfvertexa = ratiotwo vertexcvertexa, vertexgvertexb = ratiothr vertexcvertexb$, and let\n$[vertexxvertexyvertexz]$ denote the area of triangle $vertexxvertexyvertexz$. Then $[vertexavertexbvertexe] = [vertexavertexfvertexe]$ since\nthe triangles have the same altitude and base.\nAlso $[vertexavertexbvertexe] = (vertexbvertexe/vertexbvertexc) [vertexavertexbvertexc] = 1 - ratioone$, and\n$[vertexevertexcvertexf] = (vertexevertexc/vertexbvertexc)(vertexcvertexf/vertexcvertexa)[vertexavertexbvertexc] = ratioone(1 - ratiotwo)$ (e.g., by the law of sines).\nAdding this\nall up yields\n\\begin{align*}\n1 &= [vertexavertexbvertexe] + [vertexavertexbvertexf] + [vertexevertexcvertexf] \\\\\n&= 2(1 - ratioone) + ratioone(1 - ratiotwo) = 2 - ratioone - ratioone ratiotwo\n\\end{align*}\nor $ratioone(1 + ratiotwo) = 1$.\nSimilarly $ratiotwo(1 + ratiothr) = ratiothr(1 + ratioone) = 1$.\n\nLet $mapfun: [0, \\infty) \\to [0, \\infty)$ be the function given by\n$mapfun(varxvar) = 1/(1 + varxvar)$; then $mapfun(mapfun(mapfun(ratioone))) = ratioone$.\nHowever, $mapfun(varxvar)$ is strictly decreasing in $varxvar$, so $mapfun(mapfun(varxvar))$ is increasing\nand $mapfun(mapfun(mapfun(varxvar)))$ is decreasing. Thus there is at most one $varxvar$ such that\n$mapfun(mapfun(mapfun(varxvar))) = varxvar$;\nin fact, since the equation $mapfun(varzvar) = varzvar$ has a positive root\n$varzvar = (-1 + \\sqrt{5})/2$, we must have $ratioone = ratiotwo = ratiothr = varzvar$.\n\nWe now compute $[vertexavertexbvertexf] = (vertexfvertexa/vertexavertexc) [vertexavertexbvertexc] = varzvar$,\n$[vertexavertexbvertexr] = (vertexbvertexr/vertexbvertexf) [vertexavertexbvertexf] = varzvar/2$, analogously $[vertexbvertexcvertexs] = [vertexcvertexavertext] = varzvar/2$, and\n$[vertexrvertexsvertext] = |[vertexavertexbvertexc] - [vertexavertexbvertexr] - [vertexbvertexcvertexs] - [vertexcvertexavertext]| = |1 - 3 varzvar/2| = \\frac{7 - 3\n\\sqrt{5}}{4}$.\n\nNote: the key relation $ratioone(1 + ratiotwo) = 1$ can also be derived by computing\nusing homogeneous coordinates or vectors."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "r": "sunflower",
+        "s": "driftwood",
+        "t": "blackbird",
+        "x": "meadowlark",
+        "z": "candlewick",
+        "A": "hummingbird",
+        "B": "copperhead",
+        "C": "windmill",
+        "E": "raincloud",
+        "F": "dragonfly",
+        "G": "parchment",
+        "R": "blueberry",
+        "S": "yellowtail",
+        "T": "peppercorn",
+        "X": "stoneware",
+        "Y": "elderberry",
+        "Z": "starflower",
+        "f": "silverware"
+      },
+      "question": "Triangle $hummingbird copperhead windmill$ has an area 1.  Points $raincloud,dragonfly,parchment$ lie, respectively,\non sides $copperhead windmill$, $windmill hummingbird$, $hummingbird copperhead$ such that $hummingbird raincloud$ bisects $copperhead dragonfly$ at point $blueberry$,\n$copperhead dragonfly$ bisects $windmill parchment$ at point $yellowtail$, and $windmill parchment$ bisects $hummingbird raincloud$ at point $peppercorn$.\nFind the area of the triangle $blueberry yellowtail peppercorn$.",
+      "solution": "Choose $sunflower,driftwood,blackbird$ so that $raincloud windmill = sunflower copperhead windmill$, $dragonfly hummingbird = driftwood windmill hummingbird$, $parchment copperhead = blackbird copperhead windmill$, and let\n$[stoneware elderberry starflower]$ denote the area of triangle $[stoneware elderberry starflower]$. Then $[hummingbird copperhead raincloud] = [hummingbird dragonfly raincloud]$ since\nthe triangles have the same altitude and base.\nAlso $[hummingbird copperhead raincloud] = (copperhead raincloud / copperhead windmill) [hummingbird copperhead windmill] = 1-sunflower$, and\n$[raincloud windmill dragonfly] = (raincloud windmill / copperhead windmill)(windmill dragonfly / windmill hummingbird)[hummingbird copperhead windmill] = sunflower(1-driftwood)$ (e.g., by the law of sines).\nAdding this\nall up yields\n\\\\begin{align*}\n1 &= [hummingbird copperhead raincloud] + [hummingbird copperhead dragonfly] + [raincloud windmill dragonfly] \\\\\n&= 2(1-sunflower) + sunflower(1-driftwood) = 2-sunflower-sunflower driftwood\n\\\\end{align*}\nor $sunflower(1+driftwood) = 1$.\nSimilarly $driftwood(1+blackbird) = blackbird(1+sunflower) = 1$.\n\nLet $silverware: [0, \\\\infty) \\\\to [0, \\\\infty)$ be the function given by\n$silverware(meadowlark) = 1/(1+meadowlark)$; then $silverware(silverware(silverware(sunflower))) = sunflower$.\nHowever, $silverware(meadowlark)$ is strictly decreasing in $meadowlark$, so $silverware(silverware(meadowlark))$ is increasing\nand $silverware(silverware(silverware(meadowlark)))$ is decreasing. Thus there is at most one $meadowlark$ such that\n$silverware(silverware(silverware(meadowlark))) = meadowlark$;\nin fact, since the equation $silverware(candlewick) = candlewick$ has a positive root\n$candlewick = (-1 + \\\\sqrt{5})/2$, we must have $sunflower = driftwood = blackbird = candlewick$.\n\nWe now compute $[hummingbird copperhead dragonfly] = (dragonfly hummingbird / hummingbird windmill) [hummingbird copperhead windmill] = candlewick$,\n$[hummingbird copperhead blueberry] = (blueberry copperhead / copperhead dragonfly) [hummingbird copperhead dragonfly] = candlewick/2$, analogously $[copperhead windmill yellowtail] = [windmill hummingbird peppercorn] = candlewick/2$, and\n$[blueberry yellowtail peppercorn] = |[hummingbird copperhead windmill] - [hummingbird copperhead blueberry] - [copperhead windmill yellowtail] - [windmill hummingbird peppercorn]| = |1 - 3candlewick/2| = \\\\frac{7 - 3\n\\\\sqrt{5}}{4}$.\n\nNote: the key relation $sunflower(1+driftwood) = 1$ can also be derived by computing\nusing homogeneous coordinates or vectors."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "r": "wholevalue",
+        "s": "entiresum",
+        "t": "stillness",
+        "x": "fixedvalue",
+        "z": "nadirpoint",
+        "A": "voidpoint",
+        "B": "gapcorner",
+        "C": "edgehole",
+        "E": "centerless",
+        "F": "areawide",
+        "G": "massivearea",
+        "R": "offcenter",
+        "S": "skewpoint",
+        "T": "disjointed",
+        "X": "unknowable",
+        "Y": "certainty",
+        "Z": "originless",
+        "f": "immutability"
+      },
+      "question": "Triangle $voidpointgapcorneredgehole$ has an area 1.  Points $centerless,areawide,massivearea$ lie, respectively,\non sides $gapcorneredgehole$, $edgeholevoidpoint$, $voidpointgapcorner$ such that $voidpointcenterless$ bisects $gapcornerareawide$ at point $offcenter$,\n$gapcornerareawide$ bisects $edgeholemassivearea$ at point $skewpoint$, and $edgeholemassivearea$ bisects $voidpointcenterless$ at point $disjointed$.\nFind the area of the triangle $offcenterskewpointdisjointed$.",
+      "solution": "Choose $wholevalue,entiresum,stillness$ so that $centerlessedgehole = wholevaluegapcorneredgehole, areawidevoidpoint = entiresumedgeholevoidpoint, massiveareagapcorner = stillnessedgeholegapcorner$, and let\n$[unknowablecertaintyoriginless]$ denote the area of triangle $unknowablecertaintyoriginless$. Then $[voidpointgapcornercenterless] = [areawidevoidpointcenterless]$ since\nthe triangles have the same altitude and base.\nAlso $[voidpointgapcornercenterless] = (gapcornercenterless/gapcorneredgehole) [voidpointgapcorneredgehole] = 1-wholevalue$, and\n$[centerlessedgeholeareawide] = (centerlessedgehole/gapcorneredgehole)(centerlessareawide/edgeholevoidpoint)[voidpointgapcorneredgehole] = wholevalue(1-entiresum)$ (e.g., by the law of sines).\nAdding this\nall up yields\n\\begin{align*}\n1 &= [voidpointgapcornercenterless] + [voidpointgapcornerareawide] + [centerlessedgeholeareawide] \\\\\n&= 2(1-wholevalue) + wholevalue(1-entiresum) = 2-wholevalue-wholevalueentiresum\n\\end{align*}\nor $wholevalue(1+entiresum) = 1$.\nSimilarly $entiresum(1+stillness) = stillness(1+wholevalue) = 1$.\n\nLet $immutability: [0, \\infty) \\to [0, \\infty)$ be the function given by\n$immutability(fixedvalue) = 1/(1+fixedvalue)$; then $immutability(immutability(immutability(wholevalue))) = wholevalue$.\nHowever, $immutability(fixedvalue)$ is strictly decreasing in $fixedvalue$, so $immutability(immutability(fixedvalue))$ is increasing\nand $immutability(immutability(immutability(fixedvalue)))$ is decreasing. Thus there is at most one $fixedvalue$ such that\n$immutability(immutability(immutability(fixedvalue))) = fixedvalue$;\nin fact, since the equation $immutability(nadirpoint) = nadirpoint$ has a positive root\n$nadirpoint = (-1 + \\sqrt{5})/2$, we must have $wholevalue=entiresum=stillness=nadirpoint$.\n\nWe now compute $[voidpointgapcornerareawide] = (areawidevoidpoint/voidpointedgehole) [voidpointgapcorneredgehole] = nadirpoint$,\n$[voidpointgapcorneroffcenter] = (gapcorneroffcenter/gapcornerareawide) [voidpointgapcornerareawide] = nadirpoint/2$, analogously $[gapcorneredgeholeskewpoint] = [edgeholevoidpointdisjointed] = nadirpoint/2$, and\n$[offcenterskewpointdisjointed] = |[voidpointgapcorneredgehole] - [voidpointgapcorneroffcenter] - [gapcorneredgeholeskewpoint] - [edgeholevoidpointdisjointed]| = |1 - 3nadirpoint/2| = \\frac{7 - 3\n\\sqrt{5}}{4}$.\n\nNote: the key relation $wholevalue(1+entiresum) = 1$ can also be derived by computing\nusing homogeneous coordinates or vectors."
+    },
+    "garbled_string": {
+      "map": {
+        "r": "qzxwvtnp",
+        "s": "hjgrksla",
+        "t": "mnfdciou",
+        "x": "plokmijn",
+        "z": "bvcxzasd",
+        "A": "lkjhgfdsa",
+        "B": "poiuytrew",
+        "C": "mnbvcxzlk",
+        "E": "asdfghjkl",
+        "F": "qazwsxedc",
+        "G": "edcrfvtgb",
+        "R": "yhnujmiko",
+        "S": "olpkiujmy",
+        "T": "ujmnhytre",
+        "X": "ikmjnhbgt",
+        "Y": "trewqasdf",
+        "Z": "plkmijnuh",
+        "f": "wsxzaqwer"
+      },
+      "question": "Triangle $lkjhgfdsapoiuytrewmnbvcxzlk$ has an area 1.  Points $asdfghjkl,qazwsxedc,edcrfvtgb$ lie, respectively,\non sides $poiuytrewmnbvcxzlk$, $mnbvcxzlklkjhgfdsa$, $lkjhgfdsapoiuytrew$ such that $lkjhgfdsaasdfghjkl$ bisects $poiuytrewqazwsxedc$ at point $yhnujmiko$,\n$poiuytrewqazwsxedc$ bisects $mnbvcxzlkedcrfvtgb$ at point $olpkiujmy$, and $mnbvcxzlkedcrfvtgb$ bisects $lkjhgfdsaasdfghjkl$ at point $ujmnhytre$.\nFind the area of the triangle $yhnujmikoolpkiujmyujmnhytre$.",
+      "solution": "Choose $qzxwvtnp,hjgrksla,mnfdciou$ so that $asdfghjklmnbvcxzlk=qzxwvtnppoiuytrewmnbvcxzlk$, $qazwsxedclkjhgfdsa=hjgrkslamnbvcxzlklkjhgfdsa$, and $edcrfvtgbpoiuytrew=mnfdcioumnbvcxzlkpoiuytrew$, and let $[ikmjnhbgttrewqasdfplkmijnuh]$ denote the area of triangle $ikmjnhbgttrewqasdfplkmijnuh$. Then $[lkjhgfdsapoiuytrewasdfghjkl]=[lkjhgfdsaqazwsxedcasdfghjkl]$ since the triangles have the same altitude and base.\nAlso $[lkjhgfdsapoiuytrewasdfghjkl]=(poiuytrewasdfghjkl/poiuytrewmnbvcxzlk)[lkjhgfdsapoiuytrewmnbvcxzlk]=1-qzxwvtnp$, and $[asdfghjklmnbvcxzlkqazwsxedc]=(asdfghjklmnbvcxzlk/poiuytrewmnbvcxzlk)(mnbvcxzlkqazwsxedc/mnbvcxzlklkjhgfdsa)[lkjhgfdsapoiuytrewmnbvcxzlk]=qzxwvtnp(1-hjgrksla)$ (e.g., by the law of sines).\nAdding this all up yields\n\\begin{align*}\n1&=[lkjhgfdsapoiuytrewasdfghjkl]+[lkjhgfdsapoiuytrewqazwsxedc]+[asdfghjklmnbvcxzlkqazwsxedc]\\\\\n&=2(1-qzxwvtnp)+qzxwvtnp(1-hjgrksla)=2-qzxwvtnp-qzxwvtnphjgrksla\n\\end{align*}\nor $qzxwvtnp(1+hjgrksla)=1$.  Similarly $hjgrksla(1+mnfdciou)=mnfdciou(1+qzxwvtnp)=1$.\n\nLet $wsxzaqwer:[0,\\infty)\\to[0,\\infty)$ be the function given by $wsxzaqwer(plokmijn)=1/(1+plokmijn)$; then $wsxzaqwer(wsxzaqwer(wsxzaqwer(qzxwvtnp)))=qzxwvtnp$.\nHowever, $wsxzaqwer(plokmijn)$ is strictly decreasing in $plokmijn$, so $wsxzaqwer(wsxzaqwer(plokmijn))$ is increasing and $wsxzaqwer(wsxzaqwer(wsxzaqwer(plokmijn)))$ is decreasing. Thus there is at most one $plokmijn$ such that $wsxzaqwer(wsxzaqwer(wsxzaqwer(plokmijn)))=plokmijn$; in fact, since the equation $wsxzaqwer(bvcxzasd)=bvcxzasd$ has a positive root $bvcxzasd=(-1+\\sqrt{5})/2$, we must have $qzxwvtnp=hjgrksla=mnfdciou=bvcxzasd$.\n\nWe now compute $[lkjhgfd sapoiuytrewqazwsxedc]=(qazwsxedclkjhgfdsa/lkjhgfdsa mnbvcxzlk)[lkjhgfdsapoiuytrewmnbvcxzlk]=bvcxzasd$, $[lkjhgfdsapoiuytrewyhnujmiko]=(yhnujmikopoiuytrew/poiuytrewqazwsxedc)[lkjhgfd sapoiuytrewqazwsxedc]=bvcxzasd/2$, analogously $[poiuytrewmnbvcxzlk olpkiujmy]=[mnbvcxzlklkjhgfdsa ujmnhytre]=bvcxzasd/2$, and $[yhnujmikoolpkiujmyujmnhytre]=|[lkjhgfdsapoiuytrewmnbvcxzlk]-[lkjhgfdsapoiuytrewyhnujmiko]-[poiuytrewmnbvcxzlk olpkiujmy]-[mnbvcxzlklkjhgfdsa ujmnhytre]|=|1-3bvcxzasd/2|=\\frac{7-3\\sqrt{5}}{4}$.\n\nNote: the key relation $qzxwvtnp(1+hjgrksla)=1$ can also be derived by computing using homogeneous coordinates or vectors."
+    },
+    "kernel_variant": {
+      "question": "Triangle \\(PQR\\) has area \\(60\\).  Points \\(U,\\;V,\\;W\\) are chosen on sides \\(QR,\\;RP,\\;PQ\\), respectively.  \nLet  \n\\[\nM=PU\\cap QV,\\qquad   \nN=QV\\cap RW,\\qquad   \nO=RW\\cap PU .\n\\]\n\nThese three intersection points satisfy  \n(1) \\(M\\) divides \\(QV\\) internally in the ratio \\(QM:MV=1:2\\);  \n(2) \\(N\\) divides \\(RW\\) internally in the ratio \\(RN:NW=1:2\\);  \n(3) \\(O\\) divides \\(PU\\) internally in the ratio \\(PO:OU=1:2\\).\n\nDetermine the exact area of triangle \\(MNO\\).\n\n",
+      "solution": "Step 1.  Notation and barycentric coordinates  \nPut triangle \\(PQR\\) in barycentric coordinates relative to itself, so\n\\[\nP=(1,0,0),\\;Q=(0,1,0),\\;R=(0,0,1),\\qquad\n\\text{and }[PQR]=1.\n\\]\n(We will restore the given area \\(60\\) at the very end.)\n\nWrite \n\\[\nU=(0,1-u,u),\\qquad \nV=(v,0,1-v),\\qquad \nW=(1-w,w,0),\\qquad 0<u,v,w<1,\n\\]\nwhere, for example, \\(u=QU/QR\\).\n\nStep 2.  Barycentric coordinates of \\(M\\)  \nBecause \\(M\\in PU\\), it can be written\n\\[\nM=(1-s,\\,s(1-u),\\,su) \\qquad(0<s<1).\n\\]\nBecause \\(M\\in QV\\) and \\(QM:MV=1:2\\), the point divides \\(QV\\) in the\nratio \\(1:2\\), i.e.\\ its parameter on \\(QV\\) is \\(t=\\tfrac13\\):\n\\[\nM=(tv,\\,1-t,\\,t(1-v))\\;=\\;\\Bigl(\\tfrac{v}{3},\\,\\tfrac23,\\,\n\\tfrac{1-v}{3}\\Bigr).\n\\]\n\nEquating the two expressions for \\(M\\) gives\n\\[\n\\begin{cases}\n1-s=\\dfrac{v}{3},\\\\[4pt]\ns(1-u)=\\dfrac23,\\\\[6pt]\nsu=\\dfrac{1-v}{3}.\n\\end{cases}\\tag{1}\n\\]\n\nStep 3.  Solving (1) for \\(v\\) and \\(s\\) in terms of \\(u\\)  \nFrom the second equation \\(s=\\dfrac{2}{3(1-u)}\\).\nPlugging this into the first gives\n\\[\n1-\\frac{2}{3(1-u)}=\\frac{v}{3}\\quad\\Longrightarrow\\quad\nv=3-\\frac{2}{1-u}. \\tag{2}\n\\]\n\nStep 4.  Analogue for \\(N\\)  \nRotating the role of the letters \\(P,Q,R\\) yields, from the\nrequirements for \\(N\\),\n\\[\nw=3-\\frac{2}{1-v}. \\tag{3}\n\\]\n\nStep 5.  Analogue for \\(O\\)  \nRotating once more gives, from the requirements for \\(O\\),\n\\[\nu=3-\\frac{2}{1-w}. \\tag{4}\n\\]\n\nStep 6.  Reducing to one equation  \nEquations (2)-(4) may be read as\n\\[\nv=f(u),\\qquad w=f(v),\\qquad u=f(w),\n\\quad\\text{where }f(x)=3-\\dfrac{2}{1-x}.\n\\]\nHence \\(u\\) satisfies \\(f(f(f(u)))=u\\).\nSince  \n\\(f\\) is strictly decreasing and \\(f\\!\\circ f\\) is strictly increasing,\n\\(f\\!\\circ f\\!\\circ f\\) is strictly decreasing, so the functional\nequation has at most one solution in \\((0,1)\\).  \nBut \\(f(x)=x\\) gives the quadratic\n\\[\nx=3-\\frac{2}{1-x}\\;\\Longrightarrow\\;x^2-4x+1=0\n\\;\\Longrightarrow\\;\nx=2-\\sqrt3\\in(0,1).\n\\]\nHence the only possible consistent choice is\n\\[\nu=v=w=2-\\sqrt3. \\tag{5}\n\\]\n\nStep 7.  Exact barycentric coordinates of the three points  \nFirst compute \\(s\\) from (1) and (5):\n\\[\ns=\\frac{2}{3(1-u)}\n=\\frac{2}{3(\\sqrt3-1)}\n=\\frac{\\sqrt3+1}{3}.\n\\]\nTherefore\n\\[\n\\begin{aligned}\nM&=\\bigl(1-s,\\;s(1-u),\\;su\\bigr)                                   \\\\\n  &=\\Bigl(\\underbrace{\\dfrac{2-\\sqrt3}{3}}_{=:a},\\;\n          \\underbrace{\\dfrac{2}{3}}_{=:b},\\;\n          \\underbrace{\\dfrac{\\sqrt3-1}{3}}_{=:c}\\Bigr).\n\\end{aligned}\n\\]\nBy cyclic symmetry,\n\\[\nN=(c,a,b),\\qquad O=(b,c,a).\n\\]\n\nStep 8.  Area ratio via a determinant  \nFor three points with barycentric coordinates \n\\((\\alpha_i,\\beta_i,\\gamma_i)\\), \\(i=1,2,3\\),\ntheir area equals \\([PQR]\\cdot|\\det(\\alpha_i,\\beta_i,\\gamma_i)|\\).\nHence\n\\[\n\\frac{[MNO]}{[PQR]}\n=\\left|\n\\begin{vmatrix}\na&b&c\\\\\nc&a&b\\\\\nb&c&a\n\\end{vmatrix}\n\\right|.\n\\]\nBecause the matrix is circulant, its determinant equals\n\\[\n(a+b+c)\\bigl(a^2+b^2+c^2-ab-bc-ca\\bigr).\n\\]\nNow \\(a+b+c=1\\), so\n\\[\n\\det= a^2+b^2+c^2-ab-bc-ca.\n\\]\nInsert the exact values\n\\(\na=\\dfrac{2-\\sqrt3}{3},\\;\nb=\\dfrac{2}{3},\\;\nc=\\dfrac{\\sqrt3-1}{3}\n\\)\nto obtain\n\\[\n\\det\n=\\frac{18-9\\sqrt3}{9}=2-\\sqrt3.\n\\]\nHence\n\\[\n[MNO]=(2-\\sqrt3)\\,[PQR].\n\\]\n\nStep 9.  Restoring the given area  \nGiven \\([PQR]=60\\), we finally get\n\\[\n[MNO]=60\\,(2-\\sqrt3)=\\boxed{\\,120-60\\sqrt3\\,}.\n\\]\n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T19:09:31.773148",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original kernel variant (where all relevant points were mid-points, yielding immediate “halving” conditions), the present problem\n\n• replaces the equal–division requirement by unequal ratios \\(1:2\\), destroying the easy symmetry that allows direct mass-point or midpoint arguments;  \n• forces one to set up and solve a functional system\n \\(v=f(u),\\;w=f(v),\\;u=f(w)\\) with \\(f(x)=3-\\dfrac{2}{1-x}\\);  \n• requires recognising that only one solution in \\((0,1)\\) exists, an argument invoking monotonicity of compositions of \\(f\\);  \n• demands explicit barycentric or determinant computations instead of simple subtraction of congruent areas;  \n• culminates in an exact algebraic answer \\(120-60\\sqrt3\\) rather than a rational number.\n\nAltogether, extra variables, asymmetric ratios, a non-trivial functional equation, and determinant-based area calculation make the enhanced variant substantially more technical and conceptually deeper than both the original problem and the existing kernel version."
+      }
+    },
+    "original_kernel_variant": {
+      "question": "Triangle \\(PQR\\) has area \\(60\\).  Points \\(U,\\;V,\\;W\\) are chosen on sides \\(QR,\\;RP,\\;PQ\\), respectively.  \nLet  \n\\[\nM=PU\\cap QV,\\qquad   \nN=QV\\cap RW,\\qquad   \nO=RW\\cap PU .\n\\]\n\nThese three intersection points satisfy  \n(1) \\(M\\) divides \\(QV\\) internally in the ratio \\(QM:MV=1:2\\);  \n(2) \\(N\\) divides \\(RW\\) internally in the ratio \\(RN:NW=1:2\\);  \n(3) \\(O\\) divides \\(PU\\) internally in the ratio \\(PO:OU=1:2\\).\n\nDetermine the exact area of triangle \\(MNO\\).\n\n",
+      "solution": "Step 1.  Notation and barycentric coordinates  \nPut triangle \\(PQR\\) in barycentric coordinates relative to itself, so\n\\[\nP=(1,0,0),\\;Q=(0,1,0),\\;R=(0,0,1),\\qquad\n\\text{and }[PQR]=1.\n\\]\n(We will restore the given area \\(60\\) at the very end.)\n\nWrite \n\\[\nU=(0,1-u,u),\\qquad \nV=(v,0,1-v),\\qquad \nW=(1-w,w,0),\\qquad 0<u,v,w<1,\n\\]\nwhere, for example, \\(u=QU/QR\\).\n\nStep 2.  Barycentric coordinates of \\(M\\)  \nBecause \\(M\\in PU\\), it can be written\n\\[\nM=(1-s,\\,s(1-u),\\,su) \\qquad(0<s<1).\n\\]\nBecause \\(M\\in QV\\) and \\(QM:MV=1:2\\), the point divides \\(QV\\) in the\nratio \\(1:2\\), i.e.\\ its parameter on \\(QV\\) is \\(t=\\tfrac13\\):\n\\[\nM=(tv,\\,1-t,\\,t(1-v))\\;=\\;\\Bigl(\\tfrac{v}{3},\\,\\tfrac23,\\,\n\\tfrac{1-v}{3}\\Bigr).\n\\]\n\nEquating the two expressions for \\(M\\) gives\n\\[\n\\begin{cases}\n1-s=\\dfrac{v}{3},\\\\[4pt]\ns(1-u)=\\dfrac23,\\\\[6pt]\nsu=\\dfrac{1-v}{3}.\n\\end{cases}\\tag{1}\n\\]\n\nStep 3.  Solving (1) for \\(v\\) and \\(s\\) in terms of \\(u\\)  \nFrom the second equation \\(s=\\dfrac{2}{3(1-u)}\\).\nPlugging this into the first gives\n\\[\n1-\\frac{2}{3(1-u)}=\\frac{v}{3}\\quad\\Longrightarrow\\quad\nv=3-\\frac{2}{1-u}. \\tag{2}\n\\]\n\nStep 4.  Analogue for \\(N\\)  \nRotating the role of the letters \\(P,Q,R\\) yields, from the\nrequirements for \\(N\\),\n\\[\nw=3-\\frac{2}{1-v}. \\tag{3}\n\\]\n\nStep 5.  Analogue for \\(O\\)  \nRotating once more gives, from the requirements for \\(O\\),\n\\[\nu=3-\\frac{2}{1-w}. \\tag{4}\n\\]\n\nStep 6.  Reducing to one equation  \nEquations (2)-(4) may be read as\n\\[\nv=f(u),\\qquad w=f(v),\\qquad u=f(w),\n\\quad\\text{where }f(x)=3-\\dfrac{2}{1-x}.\n\\]\nHence \\(u\\) satisfies \\(f(f(f(u)))=u\\).\nSince  \n\\(f\\) is strictly decreasing and \\(f\\!\\circ f\\) is strictly increasing,\n\\(f\\!\\circ f\\!\\circ f\\) is strictly decreasing, so the functional\nequation has at most one solution in \\((0,1)\\).  \nBut \\(f(x)=x\\) gives the quadratic\n\\[\nx=3-\\frac{2}{1-x}\\;\\Longrightarrow\\;x^2-4x+1=0\n\\;\\Longrightarrow\\;\nx=2-\\sqrt3\\in(0,1).\n\\]\nHence the only possible consistent choice is\n\\[\nu=v=w=2-\\sqrt3. \\tag{5}\n\\]\n\nStep 7.  Exact barycentric coordinates of the three points  \nFirst compute \\(s\\) from (1) and (5):\n\\[\ns=\\frac{2}{3(1-u)}\n=\\frac{2}{3(\\sqrt3-1)}\n=\\frac{\\sqrt3+1}{3}.\n\\]\nTherefore\n\\[\n\\begin{aligned}\nM&=\\bigl(1-s,\\;s(1-u),\\;su\\bigr)                                   \\\\\n  &=\\Bigl(\\underbrace{\\dfrac{2-\\sqrt3}{3}}_{=:a},\\;\n          \\underbrace{\\dfrac{2}{3}}_{=:b},\\;\n          \\underbrace{\\dfrac{\\sqrt3-1}{3}}_{=:c}\\Bigr).\n\\end{aligned}\n\\]\nBy cyclic symmetry,\n\\[\nN=(c,a,b),\\qquad O=(b,c,a).\n\\]\n\nStep 8.  Area ratio via a determinant  \nFor three points with barycentric coordinates \n\\((\\alpha_i,\\beta_i,\\gamma_i)\\), \\(i=1,2,3\\),\ntheir area equals \\([PQR]\\cdot|\\det(\\alpha_i,\\beta_i,\\gamma_i)|\\).\nHence\n\\[\n\\frac{[MNO]}{[PQR]}\n=\\left|\n\\begin{vmatrix}\na&b&c\\\\\nc&a&b\\\\\nb&c&a\n\\end{vmatrix}\n\\right|.\n\\]\nBecause the matrix is circulant, its determinant equals\n\\[\n(a+b+c)\\bigl(a^2+b^2+c^2-ab-bc-ca\\bigr).\n\\]\nNow \\(a+b+c=1\\), so\n\\[\n\\det= a^2+b^2+c^2-ab-bc-ca.\n\\]\nInsert the exact values\n\\(\na=\\dfrac{2-\\sqrt3}{3},\\;\nb=\\dfrac{2}{3},\\;\nc=\\dfrac{\\sqrt3-1}{3}\n\\)\nto obtain\n\\[\n\\det\n=\\frac{18-9\\sqrt3}{9}=2-\\sqrt3.\n\\]\nHence\n\\[\n[MNO]=(2-\\sqrt3)\\,[PQR].\n\\]\n\nStep 9.  Restoring the given area  \nGiven \\([PQR]=60\\), we finally get\n\\[\n[MNO]=60\\,(2-\\sqrt3)=\\boxed{\\,120-60\\sqrt3\\,}.\n\\]\n\n",
+      "metadata": {
+        "replaced_from": "harder_variant",
+        "replacement_date": "2025-07-14T01:37:45.592084",
+        "was_fixed": false,
+        "difficulty_analysis": "Compared with the original kernel variant (where all relevant points were mid-points, yielding immediate “halving” conditions), the present problem\n\n• replaces the equal–division requirement by unequal ratios \\(1:2\\), destroying the easy symmetry that allows direct mass-point or midpoint arguments;  \n• forces one to set up and solve a functional system\n \\(v=f(u),\\;w=f(v),\\;u=f(w)\\) with \\(f(x)=3-\\dfrac{2}{1-x}\\);  \n• requires recognising that only one solution in \\((0,1)\\) exists, an argument invoking monotonicity of compositions of \\(f\\);  \n• demands explicit barycentric or determinant computations instead of simple subtraction of congruent areas;  \n• culminates in an exact algebraic answer \\(120-60\\sqrt3\\) rather than a rational number.\n\nAltogether, extra variables, asymmetric ratios, a non-trivial functional equation, and determinant-based area calculation make the enhanced variant substantially more technical and conceptually deeper than both the original problem and the existing kernel version."
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "calculation"
+}

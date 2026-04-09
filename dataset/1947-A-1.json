@@ -1,0 +1,181 @@
+{
+  "index": "1947-A-1",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "1. If \\( \\left\\{a_{n}\\right\\} \\) is a sequence of numbers such that for \\( n \\geq 1 \\)\n\\[\n\\left(2-a_{n}\\right) a_{n+1}=1\n\\]\nprove that \\( \\lim a_{n} \\), as \\( n \\rightarrow \\infty \\), exists and is equal to one.",
+  "solution": "First Solution. We begin by describing a graphical method of great utility in analyzing recursions of the form \\( a_{n+1}=f\\left(a_{n}\\right) \\).\n\nDraw the graph of \\( f \\) and the line \\( y=x \\) on the same axes. (In this case \\( f(x)=1 /(2-x) \\).) Then start from the point \\( \\left\\langle a_{1}, a_{1}\\right\\rangle \\) on the line and move up or down to the point \\( \\left\\langle a_{1}, a_{2}\\right\\rangle \\) on the graph. Then move horizontally to the point \\( \\left\\langle a_{2}, a_{2}\\right\\rangle \\) on the line, then vertically to \\( \\left\\langle a_{2}, a_{3}\\right\\rangle \\), etc. Connect the successive points to form a polygonal line. If the sequence \\( \\left\\{a_{n}\\right\\} \\) is convergent with limit \\( L \\), then the polygonal line must converge to \\( \\langle L, L\\rangle \\), and if \\( L \\) is a point of continuity for \\( f \\), then \\( f(L)=L \\). Often it is possible to see at a glance how the sequence behaves. In this case, for example, it is clear that with any start (as long as we do not encounter the point 2 where \\( f \\) is undefined) the polygon must eventually reach the region below and to the left of \\( \\langle 1,1\\rangle \\), after which it must work its way up toward the point \\( \\langle 1,1\\rangle \\).\n\nTo make this precise, we prove first\n\\[\nx \\leq \\frac{1}{2-x}\n\\]\nfor \\( x<2 \\), which follows immediately from\n\\[\n\\frac{1}{2-x}-x=\\frac{(1-x)^{2}}{2-x}\n\\]\n\nAlso, if \\( x \\leq 1 \\), then \\( 1 /(2-x) \\leq 1 \\).\nSuppose \\( 1<a_{1}<\\frac{3}{2} \\). We claim that for some \\( n, a_{n} \\geq \\frac{3}{2} \\). For if not, then\n\\[\n1 \\leq a_{1} \\leq a_{2} \\leq \\cdots \\leq \\frac{3}{2}\n\\]\nby (1), so \\( \\left\\{a_{n}\\right\\} \\) is convergent, say to \\( L \\); then \\( 1<L \\leq \\frac{3}{2} \\) and \\( f(L)=L \\); but there is no such \\( L \\). If \\( a_{n} \\geq \\frac{3}{2} \\), then \\( a_{n+2} \\leq 1 \\). (Note. We need not worry about the possibility that \\( a_{k}=2 \\) for some \\( k \\) since we are given that the sequence does satisfy the recursion.) So in any event there is an index \\( p \\) such that \\( a_{p} \\leq 1 \\). Then we have\n\\[\na_{p} \\leq a_{p+1} \\leq a_{p+2} \\leq \\cdots \\leq 1\n\\]\n\nHence the sequence converges to a number \\( M \\) and \\( f(M)=M \\). This implies \\( M=1 \\).\n\nSecond Solution. Because of the special nature of \\( f \\) we can find a closed form for \\( a_{n} \\). If \\( a_{n}=1 \\) for one index \\( n \\), then \\( a_{n}=1 \\) for all \\( n \\). Otherwise, let \\( b_{n}=1 /\\left(1-a_{n}\\right) \\). Then\n\\[\n\\begin{aligned}\nb_{n+1} & =\\frac{1}{1-a_{n+1}} \\\\\n& =\\frac{1}{1-\\frac{1}{2-a_{n}}}=\\frac{2-a_{n}}{1-a_{n}}=b_{n}+1 .\n\\end{aligned}\n\\]\n\nHence \\( b_{n}=b_{1}+n-1 \\) and\n\\[\na_{n}=1-\\frac{1}{b_{n}}=\\frac{b_{1}+n-2}{b_{1}+n-1}\n\\]\n\nTherefore\n\\[\n\\lim _{n-\\infty} a_{n}=1,\n\\]\nas required.\nRemark. One might guess at the nature of the closed form for \\( a_{n} \\) after examining a possible sequence like\n\\[\n\\frac{1}{4}, \\frac{4}{7}, \\frac{7}{10}, \\frac{10}{13}, \\ldots\n\\]\nbut there is a simple rationale for the trick we used. The function \\( f \\) is a fractional linear transformation with just one fixed point, at 1 . We change the variable so that this fixed point is transformed to \\( \\infty \\); i.e., we set \\( b=1 /(a-1) \\) so \\( a=1 \\) corresponds to \\( b=\\infty \\). In terms of the new variable, \\( f \\) is a translation; indeed, every fractional linear transformation which leaves \\( \\infty \\) fixed but has no finite fixed point is a translation.",
+  "vars": [
+    "a",
+    "a_1",
+    "a_2",
+    "a_3",
+    "a_k",
+    "a_n",
+    "a_n+1",
+    "a_n+2",
+    "a_p",
+    "a_p+1",
+    "a_p+2",
+    "b",
+    "b_1",
+    "b_n",
+    "b_n+1",
+    "f",
+    "k",
+    "L",
+    "M",
+    "n",
+    "p",
+    "x",
+    "y"
+  ],
+  "params": [],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "sequenceelement",
+        "a_1": "firstterm",
+        "a_2": "secondterm",
+        "a_3": "thirdterm",
+        "a_k": "kthterm",
+        "a_n": "nthterm",
+        "a_n+1": "nplusoneterm",
+        "a_n+2": "nplustwoterm",
+        "a_p": "pindexterm",
+        "a_p+1": "pplusoneterm",
+        "a_p+2": "pplustwoterm",
+        "b": "bseqelem",
+        "b_1": "bfirstterm",
+        "b_n": "bnthterm",
+        "b_n+1": "bnplusoneterm",
+        "f": "recursfunc",
+        "k": "indexk",
+        "L": "limitell",
+        "M": "limitem",
+        "n": "indexn",
+        "p": "indexp",
+        "x": "varxcoord",
+        "y": "varycoord"
+      },
+      "question": "1. If \\( \\left\\{nthterm\\right\\} \\) is a sequence of numbers such that for \\( indexn \\geq 1 \\)\n\\[\n\\left(2-nthterm\\right) nplusoneterm=1\n\\]\nprove that \\( \\lim nthterm \\), as \\( indexn \\rightarrow \\infty \\), exists and is equal to one.",
+      "solution": "First Solution. We begin by describing a graphical method of great utility in analyzing recursions of the form \\( nplusoneterm=recursfunc\\left(nthterm\\right) \\).\n\nDraw the graph of \\( recursfunc \\) and the line \\( varycoord=varxcoord \\) on the same axes. (In this case \\( recursfunc(varxcoord)=1 /(2-varxcoord) \\).) Then start from the point \\( \\left\\langle firstterm, firstterm\\right\\rangle \\) on the line and move up or down to the point \\( \\left\\langle firstterm, secondterm\\right\\rangle \\) on the graph. Then move horizontally to the point \\( \\left\\langle secondterm, secondterm\\right\\rangle \\) on the line, then vertically to \\( \\left\\langle secondterm, thirdterm\\right\\rangle \\), etc. Connect the successive points to form a polygonal line. If the sequence \\( \\left\\{nthterm\\right\\} \\) is convergent with limit \\( limitell \\), then the polygonal line must converge to \\( \\langle limitell, limitell\\rangle \\), and if \\( limitell \\) is a point of continuity for \\( recursfunc \\), then \\( recursfunc(limitell)=limitell \\). Often it is possible to see at a glance how the sequence behaves. In this case, for example, it is clear that with any start (as long as we do not encounter the point 2 where \\( recursfunc \\) is undefined) the polygon must eventually reach the region below and to the left of \\( \\langle 1,1\\rangle \\), after which it must work its way up toward the point \\( \\langle 1,1\\rangle \\).\n\nTo make this precise, we prove first\n\\[\nvarxcoord \\leq \\frac{1}{2-varxcoord}\n\\]\nfor \\( varxcoord<2 \\), which follows immediately from\n\\[\n\\frac{1}{2-varxcoord}-varxcoord=\\frac{(1-varxcoord)^{2}}{2-varxcoord}\n\\]\n\nAlso, if \\( varxcoord \\leq 1 \\), then \\( 1 /(2-varxcoord) \\leq 1 \\).\nSuppose \\( 1<firstterm<\\frac{3}{2} \\). We claim that for some \\( indexn, nthterm \\geq \\frac{3}{2} \\). For if not, then\n\\[\n1 \\leq firstterm \\leq secondterm \\leq \\cdots \\leq \\frac{3}{2}\n\\]\nby (1), so \\( \\left\\{nthterm\\right\\} \\) is convergent, say to \\( limitell \\); then \\( 1<limitell \\leq \\frac{3}{2} \\) and \\( recursfunc(limitell)=limitell \\); but there is no such \\( limitell \\). If \\( nthterm \\geq \\frac{3}{2} \\), then \\( nplustwoterm \\leq 1 \\). (Note. We need not worry about the possibility that \\( kthterm=2 \\) for some \\( indexk \\) since we are given that the sequence does satisfy the recursion.) So in any event there is an index \\( indexp \\) such that \\( pindexterm \\leq 1 \\). Then we have\n\\[\npindexterm \\leq pplusoneterm \\leq pplustwoterm \\leq \\cdots \\leq 1\n\\]\n\nHence the sequence converges to a number \\( limitem \\) and \\( recursfunc(limitem)=limitem \\). This implies \\( limitem=1 \\).\n\nSecond Solution. Because of the special nature of \\( recursfunc \\) we can find a closed form for \\( nthterm \\). If \\( nthterm=1 \\) for one index \\( indexn \\), then \\( nthterm=1 \\) for all \\( indexn \\). Otherwise, let \\( bnthterm = 1 /\\left(1-nthterm\\right) \\). Then\n\\[\n\\begin{aligned}\nbnplusoneterm & =\\frac{1}{1-nplusoneterm} \\\\\n& =\\frac{1}{1-\\frac{1}{2-nthterm}}=\\frac{2-nthterm}{1-nthterm}=bnthterm+1 .\n\\end{aligned}\n\\]\n\nHence \\( bnthterm = bfirstterm + indexn - 1 \\) and\n\\[\nnthterm = 1-\\frac{1}{bnthterm}=\\frac{bfirstterm + indexn - 2}{bfirstterm + indexn - 1}\n\\]\n\nTherefore\n\\[\n\\lim _{indexn\\rightarrow\\infty} nthterm = 1,\n\\]\nas required.\nRemark. One might guess at the nature of the closed form for \\( nthterm \\) after examining a possible sequence like\n\\[\n\\frac{1}{4}, \\frac{4}{7}, \\frac{7}{10}, \\frac{10}{13}, \\ldots\n\\]\nbut there is a simple rationale for the trick we used. The function \\( recursfunc \\) is a fractional linear transformation with just one fixed point, at 1. We change the variable so that this fixed point is transformed to \\( \\infty \\); i.e., we set \\( bseqelem = 1 /(sequenceelement - 1) \\) so \\( sequenceelement = 1 \\) corresponds to \\( bseqelem = \\infty \\). In terms of the new variable, \\( recursfunc \\) is a translation; indeed, every fractional linear transformation which leaves \\( \\infty \\) fixed but has no finite fixed point is a translation."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "pinegrove",
+        "a_1": "marmalade",
+        "a_2": "toothbrush",
+        "a_3": "chandelier",
+        "a_k": "sandcastle",
+        "a_n": "dragonfly",
+        "a_n+1": "racehorse",
+        "a_n+2": "marshland",
+        "a_p": "blueberry",
+        "a_p+1": "hammertoe",
+        "a_p+2": "fairyland",
+        "b": "raincloud",
+        "b_1": "jellyfish",
+        "b_n": "stargazer",
+        "b_n+1": "paintbrush",
+        "f": "quagmire",
+        "k": "crosswind",
+        "L": "goldcrest",
+        "M": "thornbush",
+        "n": "driftwood",
+        "p": "lighthouse",
+        "x": "moonstone",
+        "y": "stingray"
+      },
+      "question": "1. If \\( \\left\\{dragonfly\\right\\} \\) is a sequence of numbers such that for \\( driftwood \\geq 1 \\)\n\\[\n\\left(2-dragonfly\\right) racehorse=1\n\\]\nprove that \\( \\lim dragonfly \\), as \\( driftwood \\rightarrow \\infty \\), exists and is equal to one.",
+      "solution": "First Solution. We begin by describing a graphical method of great utility in analyzing recursions of the form \\( racehorse=quagmire\\left(dragonfly\\right) \\).\n\nDraw the graph of \\( quagmire \\) and the line \\( stingray=moonstone \\) on the same axes. (In this case \\( quagmire(moonstone)=1 /(2-moonstone) \\).) Then start from the point \\( \\left\\langle marmalade, marmalade\\right\\rangle \\) on the line and move up or down to the point \\( \\left\\langle marmalade, toothbrush\\right\\rangle \\) on the graph. Then move horizontally to the point \\( \\left\\langle toothbrush, toothbrush\\right\\rangle \\) on the line, then vertically to \\( \\left\\langle toothbrush, chandelier\\right\\rangle \\), etc. Connect the successive points to form a polygonal line. If the sequence \\( \\left\\{dragonfly\\right\\} \\) is convergent with limit \\( goldcrest \\), then the polygonal line must converge to \\( \\langle goldcrest, goldcrest\\rangle \\), and if \\( goldcrest \\) is a point of continuity for \\( quagmire \\), then \\( quagmire(goldcrest)=goldcrest \\). Often it is possible to see at a glance how the sequence behaves. In this case, for example, it is clear that with any start (as long as we do not encounter the point 2 where \\( quagmire \\) is undefined) the polygon must eventually reach the region below and to the left of \\( \\langle 1,1\\rangle \\), after which it must work its way up toward the point \\( \\langle 1,1\\rangle \\).\n\nTo make this precise, we prove first\n\\[\nmoonstone \\leq \\frac{1}{2-moonstone}\n\\]\nfor \\( moonstone<2 \\), which follows immediately from\n\\[\n\\frac{1}{2-moonstone}-moonstone=\\frac{(1-moonstone)^{2}}{2-moonstone}\n\\]\n\nAlso, if \\( moonstone \\leq 1 \\), then \\( 1 /(2-moonstone) \\leq 1 \\).\nSuppose \\( 1<marmalade<\\frac{3}{2} \\). We claim that for some driftwood, dragonfly \\geq \\frac{3}{2}. For if not, then\n\\[\n1 \\leq marmalade \\leq toothbrush \\leq \\cdots \\leq \\frac{3}{2}\n\\]\nby (1), so \\( \\left\\{dragonfly\\right\\} \\) is convergent, say to \\( goldcrest \\); then \\( 1<goldcrest \\leq \\frac{3}{2} \\) and \\( quagmire(goldcrest)=goldcrest \\); but there is no such \\( goldcrest \\). If \\( dragonfly \\geq \\frac{3}{2} \\), then \\( marshland \\leq 1 \\). (Note. We need not worry about the possibility that \\( sandcastle=2 \\) for some \\( crosswind \\) since we are given that the sequence does satisfy the recursion.) So in any event there is an index \\( lighthouse \\) such that \\( blueberry \\leq 1 \\). Then we have\n\\[\nblueberry \\leq hammertoe \\leq fairyland \\leq \\cdots \\leq 1\n\\]\n\nHence the sequence converges to a number \\( thornbush \\) and \\( quagmire(thornbush)=thornbush \\). This implies \\( thornbush=1 \\).\n\nSecond Solution. Because of the special nature of \\( quagmire \\) we can find a closed form for \\( dragonfly \\). If \\( dragonfly=1 \\) for one index \\( driftwood \\), then \\( dragonfly=1 \\) for all \\( driftwood \\). Otherwise, let \\( stargazer=1 /\\left(1-dragonfly\\right) \\). Then\n\\[\n\\begin{aligned}\npaintbrush & =\\frac{1}{1-racehorse} \\\\\n& =\\frac{1}{1-\\frac{1}{2-dragonfly}}=\\frac{2-dragonfly}{1-dragonfly}=stargazer+1 .\n\\end{aligned}\n\\]\n\nHence \\( stargazer=jellyfish+driftwood-1 \\) and\n\\[\ndragonfly=1-\\frac{1}{stargazer}=\\frac{jellyfish+driftwood-2}{jellyfish+driftwood-1}\n\\]\n\nTherefore\n\\[\n\\lim _{driftwood-\\infty} dragonfly=1,\n\\]\nas required.\nRemark. One might guess at the nature of the closed form for \\( dragonfly \\) after examining a possible sequence like\n\\[\n\\frac{1}{4}, \\frac{4}{7}, \\frac{7}{10}, \\frac{10}{13}, \\ldots\n\\]\nbut there is a simple rationale for the trick we used. The function \\( quagmire \\) is a fractional linear transformation with just one fixed point, at 1. We change the variable so that this fixed point is transformed to \\( \\infty \\); i.e., we set \\( raincloud=1 /(pinegrove-1) \\) so \\( pinegrove=1 \\) corresponds to \\( raincloud=\\infty \\). In terms of the new variable, \\( quagmire \\) is a translation; indeed, every fractional linear transformation which leaves \\( \\infty \\) fixed but has no finite fixed point is a translation."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "fixedvalue",
+        "a_{1}": "fixedvalueone",
+        "a_{2}": "fixedvaluetwo",
+        "a_{3}": "fixedvaluethree",
+        "a_{k}": "fixedvalueindex",
+        "a_{n}": "fixedvalueflow",
+        "a_{n+1}": "fixedvalueflwplusone",
+        "a_{n+2}": "fixedvalueflwplustwo",
+        "a_{p}": "fixedvaluepivot",
+        "a_{p+1}": "fixedvaluepivotnext",
+        "a_{p+2}": "fixedvaluepivotplustwo",
+        "b": "steadystate",
+        "b_{1}": "steadystateone",
+        "b_{n}": "steadystateflow",
+        "b_{n+1}": "steadystateflwplusone",
+        "f": "constantmap",
+        "k": "endpoint",
+        "L": "startpoint",
+        "M": "fluctuation",
+        "n": "finisher",
+        "p": "originator",
+        "x": "verticalaxis",
+        "y": "horizontalaxis"
+      },
+      "question": "1. If \\( \\left\\{fixedvalueflow\\right\\} \\) is a sequence of numbers such that for \\( finisher \\geq 1 \\)\n\\[\n\\left(2-fixedvalueflow\\right) fixedvalueflwplusone=1\n\\]\nprove that \\( \\lim fixedvalueflow \\), as \\( finisher \\rightarrow \\infty \\), exists and is equal to one.",
+      "solution": "First Solution. We begin by describing a graphical method of great utility in analyzing recursions of the form \\( fixedvalueflwplusone=constantmap\\left(fixedvalueflow\\right) \\).\n\nDraw the graph of \\( constantmap \\) and the line \\( horizontalaxis=verticalaxis \\) on the same axes. (In this case \\( constantmap(verticalaxis)=1 /(2-verticalaxis) \\).) Then start from the point \\( \\left\\langle fixedvalueone, fixedvalueone\\right\\rangle \\) on the line and move up or down to the point \\( \\left\\langle fixedvalueone, fixedvaluetwo\\right\\rangle \\) on the graph. Then move horizontally to the point \\( \\left\\langle fixedvaluetwo, fixedvaluetwo\\right\\rangle \\) on the line, then vertically to \\( \\left\\langle fixedvaluetwo, fixedvaluethree\\right\\rangle \\), etc. Connect the successive points to form a polygonal line. If the sequence \\( \\left\\{fixedvalueflow\\right\\} \\) is convergent with limit \\( startpoint \\), then the polygonal line must converge to \\( \\langle startpoint, startpoint\\rangle \\), and if \\( startpoint \\) is a point of continuity for \\( constantmap \\), then \\( constantmap(startpoint)=startpoint \\). Often it is possible to see at a glance how the sequence behaves. In this case, for example, it is clear that with any start (as long as we do not encounter the point 2 where \\( constantmap \\) is undefined) the polygon must eventually reach the region below and to the left of \\( \\langle 1,1\\rangle \\), after which it must work its way up toward the point \\( \\langle 1,1\\rangle \\).\n\nTo make this precise, we prove first\n\\[\nverticalaxis \\leq \\frac{1}{2-verticalaxis}\n\\]\nfor \\( verticalaxis<2 \\), which follows immediately from\n\\[\n\\frac{1}{2-verticalaxis}-verticalaxis=\\frac{(1-verticalaxis)^{2}}{2-verticalaxis}\n\\]\n\nAlso, if \\( verticalaxis \\leq 1 \\), then \\( 1 /(2-verticalaxis) \\leq 1 \\).\nSuppose \\( 1<fixedvalueone<\\frac{3}{2} \\). We claim that for some \\( finisher, fixedvalueflow \\geq \\frac{3}{2} \\). For if not, then\n\\[\n1 \\leq fixedvalueone \\leq fixedvaluetwo \\leq \\cdots \\leq \\frac{3}{2}\n\\]\nby (1), so \\( \\left\\{fixedvalueflow\\right\\} \\) is convergent, say to \\( startpoint \\); then \\( 1<startpoint \\leq \\frac{3}{2} \\) and \\( constantmap(startpoint)=startpoint \\); but there is no such \\( startpoint \\). If \\( fixedvalueflow \\geq \\frac{3}{2} \\), then \\( fixedvalueflwplustwo \\leq 1 \\). (Note. We need not worry about the possibility that \\( fixedvalueindex=2 \\) for some \\( endpoint \\) since we are given that the sequence does satisfy the recursion.) So in any event there is an index \\( originator \\) such that \\( fixedvaluepivot \\leq 1 \\). Then we have\n\\[\nfixedvaluepivot \\leq fixedvaluepivotnext \\leq fixedvaluepivotplustwo \\leq \\cdots \\leq 1\n\\]\n\nHence the sequence converges to a number \\( fluctuation \\) and \\( constantmap(fluctuation)=fluctuation \\). This implies \\( fluctuation=1 \\).\n\nSecond Solution. Because of the special nature of \\( constantmap \\) we can find a closed form for \\( fixedvalueflow \\). If \\( fixedvalueflow=1 \\) for one index \\( finisher \\), then \\( fixedvalueflow=1 \\) for all \\( finisher \\). Otherwise, let \\( steadystateflow=1 /\\left(1-fixedvalueflow\\right) \\). Then\n\\[\n\\begin{aligned}\nsteadystateflwplusone & =\\frac{1}{1-fixedvalueflwplusone} \\\\\n& =\\frac{1}{1-\\frac{1}{2-fixedvalueflow}}=\\frac{2-fixedvalueflow}{1-fixedvalueflow}=steadystateflow+1 .\n\\end{aligned}\n\\]\n\nHence \\( steadystateflow=steadystateone+finisher-1 \\) and\n\\[\nfixedvalueflow=1-\\frac{1}{steadystateflow}=\\frac{steadystateone+finisher-2}{steadystateone+finisher-1}\n\\]\n\nTherefore\n\\[\n\\lim _{finisher-\\infty} fixedvalueflow=1,\n\\]\nas required.\nRemark. One might guess at the nature of the closed form for \\( fixedvalueflow \\) after examining a possible sequence like\n\\[\n\\frac{1}{4}, \\frac{4}{7}, \\frac{7}{10}, \\frac{10}{13}, \\ldots\n\\]\nbut there is a simple rationale for the trick we used. The function \\( constantmap \\) is a fractional linear transformation with just one fixed point, at 1 . We change the variable so that this fixed point is transformed to \\( \\infty \\); i.e., we set \\( steadystate=1 /(fixedvalue-1) \\) so \\( fixedvalue=1 \\) corresponds to \\( steadystate=\\infty \\). In terms of the new variable, \\( constantmap \\) is a translation; indeed, every fractional linear transformation which leaves \\( \\infty \\) fixed but has no finite fixed point is a translation."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "a_1": "hjgrksla",
+        "a_2": "plmnbvfr",
+        "a_3": "sdqwejkl",
+        "a_k": "ghtyuiop",
+        "a_n": "xcvbnmas",
+        "a_n+1": "rtyuiofg",
+        "a_n+2": "vbghjklo",
+        "a_p": "nmerskqp",
+        "a_p+1": "klzmxpoi",
+        "a_p+2": "sdfghjkl",
+        "b": "poiuytre",
+        "b_1": "lkjhgfdz",
+        "b_n": "mnbvcxza",
+        "b_n+1": "qazwsxed",
+        "f": "ioplkmnb",
+        "k": "asdfghjk",
+        "L": "zxcvbnml",
+        "M": "qwertyui",
+        "n": "cvbnmasd",
+        "p": "rewqazxc",
+        "x": "tgbnhyuj",
+        "y": "ujmnhygt"
+      },
+      "question": "1. If \\( \\left\\{xcvbnmas\\right\\} \\) is a sequence of numbers such that for \\( cvbnmasd \\geq 1 \\)\n\\[\n\\left(2-xcvbnmas\\right) rtyuiofg=1\n\\]\nprove that \\( \\lim xcvbnmas \\), as \\( cvbnmasd \\rightarrow \\infty \\), exists and is equal to one.",
+      "solution": "First Solution. We begin by describing a graphical method of great utility in analyzing recursions of the form \\( rtyuiofg=ioplkmnb\\left(xcvbnmas\\right) \\).\n\nDraw the graph of \\( ioplkmnb \\) and the line \\( ujmnhygt=tgbnhyuj \\) on the same axes. (In this case \\( ioplkmnb(tgbnhyuj)=1 /(2-tgbnhyuj) \\).) Then start from the point \\( \\left\\langle hjgrksla, hjgrksla\\right\\rangle \\) on the line and move up or down to the point \\( \\left\\langle hjgrksla, plmnbvfr\\right\\rangle \\) on the graph. Then move horizontally to the point \\( \\left\\langle plmnbvfr, plmnbvfr\\right\\rangle \\) on the line, then vertically to \\( \\left\\langle plmnbvfr, sdqwejkl\\right\\rangle \\), etc. Connect the successive points to form a polygonal line. If the sequence \\( \\left\\{xcvbnmas\\right\\} \\) is convergent with limit \\( zxcvbnml \\), then the polygonal line must converge to \\( \\langle zxcvbnml, zxcvbnml\\rangle \\), and if \\( zxcvbnml \\) is a point of continuity for \\( ioplkmnb \\), then \\( ioplkmnb(zxcvbnml)=zxcvbnml \\). Often it is possible to see at a glance how the sequence behaves. In this case, for example, it is clear that with any start (as long as we do not encounter the point 2 where \\( ioplkmnb \\) is undefined) the polygon must eventually reach the region below and to the left of \\( \\langle 1,1\\rangle \\), after which it must work its way up toward the point \\( \\langle 1,1\\rangle \\).\n\nTo make this precise, we prove first\n\\[\ntgbnhyuj \\leq \\frac{1}{2-tgbnhyuj}\n\\]\nfor \\( tgbnhyuj<2 \\), which follows immediately from\n\\[\n\\frac{1}{2-tgbnhyuj}-tgbnhyuj=\\frac{(1-tgbnhyuj)^{2}}{2-tgbnhyuj}\n\\]\n\nAlso, if \\( tgbnhyuj \\leq 1 \\), then \\( 1 /(2-tgbnhyuj) \\leq 1 \\).\nSuppose \\( 1<hjgrksla<\\frac{3}{2} \\). We claim that for some \\( cvbnmasd, xcvbnmas \\geq \\frac{3}{2} \\). For if not, then\n\\[\n1 \\leq hjgrksla \\leq plmnbvfr \\leq \\cdots \\leq \\frac{3}{2}\n\\]\nby (1), so \\( \\left\\{xcvbnmas\\right\\} \\) is convergent, say to \\( zxcvbnml \\); then \\( 1<zxcvbnml \\leq \\frac{3}{2} \\) and \\( ioplkmnb(zxcvbnml)=zxcvbnml \\); but there is no such \\( zxcvbnml \\). If \\( xcvbnmas \\geq \\frac{3}{2} \\), then \\( vbghjklo \\leq 1 \\). (Note. We need not worry about the possibility that \\( ghtyuiop=2 \\) for some \\( asdfghjk \\) since we are given that the sequence does satisfy the recursion.) So in any event there is an index \\( rewqazxc \\) such that \\( nmerskqp \\leq 1 \\). Then we have\n\\[\nnmerskqp \\leq klzmxpoi \\leq sdfghjkl \\leq \\cdots \\leq 1\n\\]\n\nHence the sequence converges to a number \\( qwertyui \\) and \\( ioplkmnb(qwertyui)=qwertyui \\). This implies \\( qwertyui=1 \\).\n\nSecond Solution. Because of the special nature of \\( ioplkmnb \\) we can find a closed form for \\( xcvbnmas \\). If \\( xcvbnmas=1 \\) for one index \\( cvbnmasd \\), then \\( xcvbnmas=1 \\) for all \\( cvbnmasd \\). Otherwise, let \\( mnbvcxza=1 /\\left(1-xcvbnmas\\right) \\). Then\n\\[\n\\begin{aligned}\nqazwsxed & =\\frac{1}{1-rtyuiofg} \\\\\n& =\\frac{1}{1-\\frac{1}{2-xcvbnmas}}=\\frac{2-xcvbnmas}{1-xcvbnmas}=mnbvcxza+1 .\n\\end{aligned}\n\\]\n\nHence \\( mnbvcxza=lkjhgfdz+cvbnmasd-1 \\) and\n\\[\nxcvbnmas=1-\\frac{1}{mnbvcxza}=\\frac{lkjhgfdz+cvbnmasd-2}{lkjhgfdz+cvbnmasd-1}\n\\]\n\nTherefore\n\\[\n\\lim _{cvbnmasd-\\infty} xcvbnmas=1,\n\\]\nas required.\nRemark. One might guess at the nature of the closed form for \\( xcvbnmas \\) after examining a possible sequence like\n\\[\n\\frac{1}{4}, \\frac{4}{7}, \\frac{7}{10}, \\frac{10}{13}, \\ldots\n\\]\nbut there is a simple rationale for the trick we used. The function \\( ioplkmnb \\) is a fractional linear transformation with just one fixed point, at 1 . We change the variable so that this fixed point is transformed to \\( \\infty \\); i.e., we set \\( poiuytre=1 /(qzxwvtnp-1) \\) so \\( qzxwvtnp=1 \\) corresponds to \\( poiuytre=\\infty \\). In terms of the new variable, \\( ioplkmnb \\) is a translation; indeed, every fractional linear transformation which leaves \\( \\infty \\) fixed but has no finite fixed point is a translation."
+    },
+    "kernel_variant": {
+      "question": "Let \\(\\{a_{n}\\}_{n\\ge 0}\\) be a real sequence that is defined for every non-negative integer and satisfies\n\\[\n(4-a_{n})\\,a_{n+1}=1+2a_{n}\\qquad(n\\ge 0).\n\\]\nAssume that\n\\[\na_{n}\\ne 4\\quad\\text{for all }n\\ge 0\\;(\\text{in particular }a_{0}\\ne 4).\n\\]\nProve that the limit \\(\\displaystyle\\lim_{n\\to\\infty}a_{n}\\) exists and equals \\(1\\).",
+      "solution": "1.  Writing the recurrence as a Mobius transformation.\n   From\n   \\[(4-a_n)a_{n+1}=1+2a_n\\quad(n\\ge 0)\\]\n   we obtain\n   \\[a_{n+1}=f(a_n),\\qquad f(x)=\\frac{1+2x}{4-x}.\\]\n   The fixed points of \\(f\\) are the solutions of\n   \\[x=\\frac{1+2x}{4-x}\\Longleftrightarrow x^2-2x+1=0\\Longleftrightarrow (x-1)^2=0,\\]\n   so the unique fixed point is \\(x=1\\).\n   Because \\(f'(x)=\\dfrac{9}{(4-x)^2}\\), we have \\(f'(1)=1\\); the fixed point is therefore parabolic rather than attracting or repelling.  We eliminate it with a change of variables.\n\n2.  Elimination of the fixed point.\n   Define\n   \\[b_n=\\frac{3}{1-a_n},\\qquad n\\ge 0.\\]\n   If at some index \\(k\\) we had \\(a_k=1\\), then \\(a_{k+1}=f(1)=1\\) and the sequence would stay constantly equal to \\(1\\); its limit would obviously be \\(1\\).  Hence we may and do assume \\(a_n\\ne 1\\) for every \\(n\\), so that the quantities \\(b_n\\) are well defined.\n\n3.  The sequence \\(\\{b_n\\}\\) is an arithmetic progression.\n   Using the definition of \\(b_n\\) and the recursion,\n   \\[\n   \\begin{aligned}\n   b_{n+1}&=\\frac{3}{1-a_{n+1}}=\\frac{3}{1-\\dfrac{1+2a_n}{4-a_n}}\\\\[4pt]\n           &=\\frac{3(4-a_n)}{3(1-a_n)}\\\\[4pt]\n           &=\\frac{4-a_n}{1-a_n}=1+\\frac{3}{1-a_n}=b_n+1.\n   \\end{aligned}\n   \\]\n   Therefore\n   \\[b_{n}=b_{0}+n\\qquad(n\\ge 0).\\]\n\n4.  Returning to \\(a_n\\).\n   Solving \\(b_n=\\dfrac{3}{1-a_n}\\) for \\(a_n\\) gives\n   \\[\n   a_n=1-\\frac{3}{b_n}=1-\\frac{3}{b_0+n}=1-\\frac{3}{\\dfrac{3}{1-a_0}+n}\\qquad(n\\ge 0).\n   \\]\n\n5.  Verifying that the formula is valid for every \\(n\\).\n   The recurrence is undefined at any index where \\(a_n=4\\).  From the explicit expression one sees that \\(a_n=4\\) would be equivalent to \\(b_n=-1\\).  Because \\(b_n=b_0+n\\), the equality \\(b_n=-1\\) can occur only when \\(b_0\\) is a negative integer.  But if such an \\(n\\) existed, we would have \\(a_n=4\\) and the original relation \\((4-a_n)a_{n+1}=1+2a_n\\) would reduce to the impossible statement \\(0=9\\).  Since the hypothesis of the problem says the recurrence holds for every index, no such \\(n\\) can exist, and consequently \\(b_0\\) is not a negative integer.  Hence \\(b_n\\ne-1\\) for all \\(n\\ge 0\\), so the closed formula for \\(a_n\\) is valid for the entire sequence.\n\n6.  Taking the limit.\n   Because \\(b_n=b_0+n\\to\\infty\\) as \\(n\\to\\infty\\), we have\n   \\[\\frac{3}{b_0+n}\\longrightarrow 0,\\]\n   and therefore\n   \\[\\lim_{n\\to\\infty}a_n=1-0=1.\\]\n\nHence the sequence converges, and its limit is \\(1\\), as desired.",
+      "_meta": {
+        "core_steps": [
+          "View the recursion as a Möbius map with the unique finite fixed point 1",
+          "Send that fixed point to ∞ via the change-of-variable b_n = 1/(1−a_n)",
+          "Observe that the new sequence satisfies the linear recursion b_{n+1} = b_n + 1",
+          "Solve b_n explicitly and invert the substitution to get a_n → 1"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Non–zero scaling factor in the substitution (b_n = C/(1−a_n)); it only rescales the arithmetic progression",
+            "original": "C = 1"
+          },
+          "slot2": {
+            "description": "Choice of initial index for the sequence (hence the \"−1\" in b_n = b_1 + n − 1)",
+            "original": "n ≥ 1"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

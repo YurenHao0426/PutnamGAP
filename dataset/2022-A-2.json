@@ -1,0 +1,161 @@
+{
+  "index": "2022-A-2",
+  "type": "ALG",
+  "tag": [
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $n$ be an integer with $n \\geq 2$. Over all real polynomials $p(x)$ of degree $n$, what is the largest possible number of negative coefficients of $p(x)^2$?",
+  "solution": "The answer is $2n-2$. Write $p(x) = a_nx^n+\\cdots+a_1x+a_0$ and $p(x)^2 = b_{2n}x^{2n}+\\cdots+b_1x+b_0$. Note that $b_0 = a_0^2$ and $b_{2n} = a_n^2$. We claim that not all of the remaining $2n-1$ coefficients $b_1,\\ldots,b_{2n-1}$ can be negative, whence the largest possible number of negative coefficients is $\\leq 2n-2$. Indeed, suppose $b_i <0$ for $1\\leq i\\leq 2n-1$. Since $b_1 = 2a_0a_1$, we have $a_0 \\neq 0$. Assume $a_0>0$ (or else replace $p(x)$ by $-p(x)$). We claim by induction on $i$ that $a_i < 0$ for $1\\leq i\\leq n$. For $i=1$, this follows from $2a_0a_1 = b_1<0$. If $a_i<0$ for $1\\leq i\\leq k-1$, then\n\\[\n2a_0a_k = b_k - \\sum_{i=1}^{k-1} a_i a_{k-i} < b_k < 0\n\\]\nand thus $a_k<0$, completing the induction step. But now $b_{2n-1} = 2a_{n-1}a_n > 0$, contradiction.\n\nIt remains to show that there is a polynomial $p(x)$ such that $p(x)^2$ has $2n-2$ negative coefficients. For example, we may take\n\\[\np(x) = n(x^n+1) - 2(x^{n-1} + \\cdots + x),\n\\]\nso that\n\\begin{align*}\np(x)^2 &= n^2(x^{2n} + x^n + 1) - 2n(x^n+1)(x^{n-1}+\\cdots+x)\\\\\n&\\qquad \n+ (x^{n-1} + \\cdots + x)^2.\n\\end{align*}\nFor $i\\in \\{1,\\dots,n-1,n+1,\\dots,n-1\\}$, the coefficient of $x^i$ in $p(x)^2$ is at most $-2n$ (coming from the cross term)\nplus $-2n+2$ (from expanding $(x^{n-1} + \\cdots + x)^2$), and hence negative.",
+  "vars": [
+    "a_0",
+    "a_1",
+    "a_i",
+    "a_k",
+    "a_n",
+    "a_k-i",
+    "a_n-1",
+    "b_0",
+    "b_1",
+    "b_i",
+    "b_k",
+    "b_2n",
+    "b_2n-1",
+    "i",
+    "k",
+    "p",
+    "x"
+  ],
+  "params": [
+    "n"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a_0": "coeffzero",
+        "a_1": "coeffone",
+        "a_i": "coeffi",
+        "a_k": "coeffk",
+        "a_n": "coefftop",
+        "a_k-i": "coeffkminus",
+        "a_n-1": "coefftopminus",
+        "b_0": "squarezero",
+        "b_1": "squareone",
+        "b_i": "squarei",
+        "b_k": "squarek",
+        "b_2n": "squaretop",
+        "b_2n-1": "squaretopminus",
+        "i": "indexi",
+        "k": "indexk",
+        "p": "polyfun",
+        "x": "variable",
+        "n": "degree"
+      },
+      "question": "Let $degree$ be an integer with $degree \\geq 2$. Over all real polynomials $polyfun(variable)$ of degree $degree$, what is the largest possible number of negative coefficients of $polyfun(variable)^2$?",
+      "solution": "The answer is $2degree-2$. Write $polyfun(variable) = coefftop\\,variable^{degree}+\\cdots+coeffone\\,variable+coeffzero$ and $polyfun(variable)^2 = squaretop\\,variable^{2degree}+\\cdots+squareone\\,variable+squarezero$. Note that $squarezero = coeffzero^2$ and $squaretop = coefftop^2$. We claim that not all of the remaining $2degree-1$ coefficients $squareone,\\ldots,squaretopminus$ can be negative, whence the largest possible number of negative coefficients is $\\leq 2degree-2$. Indeed, suppose $squarei < 0$ for $1 \\leq indexi \\leq 2degree-1$. Since $squareone = 2\\,coeffzero\\,coeffone$, we have $coeffzero \\neq 0$. Assume $coeffzero > 0$ (or else replace $polyfun(variable)$ by $-polyfun(variable)$). We claim by induction on $indexi$ that $coeffi < 0$ for $1 \\leq indexi \\leq degree$. For $indexi = 1$, this follows from $2\\,coeffzero\\,coeffone = squareone < 0$. If $coeffi < 0$ for $1 \\leq indexi \\leq indexk-1$, then\n\\[\n2\\,coeffzero\\,coeffk \\,=\\, squarek \\, - \\sum_{indexi=1}^{indexk-1} coeffi\\,coeffkminus \\,<\\, squarek \\,<\\, 0\n\\]\nand thus $coeffk < 0$, completing the induction step. But now $squaretopminus = 2\\,coefftopminus\\,coefftop > 0$, contradiction.\n\nIt remains to show that there is a polynomial $polyfun(variable)$ such that $polyfun(variable)^2$ has $2degree-2$ negative coefficients. For example, we may take\n\\[\npolyfun(variable) = degree\\,(variable^{degree}+1) - 2\\,(variable^{degree-1} + \\cdots + variable),\n\\]\nso that\n\\begin{align*}\npolyfun(variable)^2 &= degree^2\\,(variable^{2degree} + variable^{degree} + 1) - 2degree\\,(variable^{degree}+1)(variable^{degree-1}+\\cdots+variable)\\\\\n&\\qquad + (variable^{degree-1} + \\cdots + variable)^2.\n\\end{align*}\nFor $indexi \\in \\{1,\\dots,degree-1,degree+1,\\dots,degree-1\\}$, the coefficient of $variable^{indexi}$ in $polyfun(variable)^2$ is at most $-2degree$ (coming from the cross term) plus $-2degree+2$ (from expanding $(variable^{degree-1} + \\cdots + variable)^2$), and hence negative."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a_0": "goldenkey",
+        "a_1": "silentwave",
+        "a_i": "crimsonleaf",
+        "a_k": "mistybrook",
+        "a_n": "brightstone",
+        "a_k-i": "silvercloud",
+        "a_n-1": "darkember",
+        "b_0": "hollowseed",
+        "b_1": "paleharbor",
+        "b_i": "quietmeadow",
+        "b_k": "thundertrail",
+        "b_2n": "copperfield",
+        "b_2n-1": "ambercrest",
+        "i": "moonshadow",
+        "k": "frostgarden",
+        "p": "velvetthorn",
+        "x": "linenbranch",
+        "n": "glassdrift"
+      },
+      "question": "Let $glassdrift$ be an integer with $glassdrift \\geq 2$. Over all real polynomials $velvetthorn(linenbranch)$ of degree $glassdrift$, what is the largest possible number of negative coefficients of $velvetthorn(linenbranch)^2$?",
+      "solution": "The answer is $2glassdrift-2$. Write $velvetthorn(linenbranch) = brightstone\\,linenbranch^{glassdrift}+\\cdots+silentwave\\,linenbranch+goldenkey$ and $velvetthorn(linenbranch)^2 = copperfield\\,linenbranch^{2glassdrift}+\\cdots+paleharbor\\,linenbranch+hollowseed$. Note that $hollowseed = goldenkey^2$ and $copperfield = brightstone^2$. We claim that not all of the remaining $2glassdrift-1$ coefficients $paleharbor,\\ldots,ambercrest$ can be negative, whence the largest possible number of negative coefficients is $\\leq 2glassdrift-2$. Indeed, suppose $quietmeadow <0$ for $1\\leq moonshadow\\leq 2glassdrift-1$. Since $paleharbor = 2goldenkey\\,silentwave$, we have $goldenkey \\neq 0$. Assume $goldenkey>0$ (or else replace $velvetthorn(linenbranch)$ by $-\\!velvetthorn(linenbranch)$). We claim by induction on $moonshadow$ that $crimsonleaf < 0$ for $1\\leq moonshadow\\leq glassdrift$. For $moonshadow=1$, this follows from $2goldenkey\\,silentwave = paleharbor<0$. If $crimsonleaf<0$ for $1\\leq moonshadow\\leq frostgarden-1$, then\n\\[\n2goldenkey\\,mistybrook = thundertrail - \\sum_{moonshadow=1}^{frostgarden-1} crimsonleaf\\,silvercloud < thundertrail < 0\n\\]\nand thus $mistybrook<0$, completing the induction step. But now $ambercrest = 2darkember\\,brightstone > 0$, contradiction.\n\nIt remains to show that there is a polynomial $velvetthorn(linenbranch)$ such that $velvetthorn(linenbranch)^2$ has $2glassdrift-2$ negative coefficients. For example, we may take\n\\[\nvelvetthorn(linenbranch) = glassdrift(linenbranch^{glassdrift}+1) - 2(linenbranch^{glassdrift-1} + \\cdots + linenbranch),\n\\]\nso that\n\\begin{align*}\nvelvetthorn(linenbranch)^2 &= glassdrift^2(linenbranch^{2glassdrift} + linenbranch^{glassdrift} + 1) - 2glassdrift(linenbranch^{glassdrift}+1)(linenbranch^{glassdrift-1}+\\cdots+linenbranch)\\\\\n&\\qquad \n+ (linenbranch^{glassdrift-1} + \\cdots + linenbranch)^2.\n\\end{align*}\nFor $moonshadow\\in \\{1,\\dots,glassdrift-1,glassdrift+1,\\dots,glassdrift-1\\}$, the coefficient of $linenbranch^{moonshadow}$ in $velvetthorn(linenbranch)^2$ is at most $-2glassdrift$ (coming from the cross term)\nplus $-2glassdrift+2$ (from expanding $(linenbranch^{glassdrift-1} + \\cdots + linenbranch)^2$), and hence negative."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a_0": "variablezeta",
+        "a_1": "fluctuating",
+        "a_i": "inconstantxi",
+        "a_k": "waveringphi",
+        "a_n": "lowergamma",
+        "a_k-i": "dynamiceta",
+        "a_n-1": "minimalmu",
+        "b_0": "mutablebeta",
+        "b_1": "shiftingchi",
+        "b_i": "alternating",
+        "b_k": "oscillating",
+        "b_2n": "transientnu",
+        "b_2n-1": "ephemeralxi",
+        "i": "totality",
+        "k": "aggregate",
+        "p": "straightline",
+        "x": "constant",
+        "n": "nullities"
+      },
+      "question": "Let $nullities$ be an integer with $nullities \\geq 2$. Over all real polynomials $straightline(constant)$ of degree $nullities$, what is the largest possible number of negative coefficients of $straightline(constant)^2$?",
+      "solution": "The answer is $2nullities-2$. Write $straightline(constant) = lowergammaconstant^{nullities}+\\cdots+fluctuating constant+variablezeta$ and $straightline(constant)^2 = transientnuconstant^{2nullities}+\\cdots+shiftingchiconstant+mutablebeta$. Note that $mutablebeta = variablezeta^2$ and $transientnu = lowergamma^2$. We claim that not all of the remaining $2nullities-1$ coefficients $shiftingchi,\\ldots,ephemeralxi$ can be negative, whence the largest possible number of negative coefficients is $\\leq 2nullities-2$. Indeed, suppose $alternating <0$ for $1\\leq totality\\leq 2nullities-1$. Since $shiftingchi = 2variablezeta fluctuating$, we have $variablezeta \\neq 0$. Assume $variablezeta>0$ (or else replace $straightline(constant)$ by $-straightline(constant)$). We claim by induction on $totality$ that $inconstantxi < 0$ for $1\\leq totality\\leq nullities$. For $totality=1$, this follows from $2variablezeta fluctuating = shiftingchi<0$. If $inconstantxi<0$ for $1\\leq totality\\leq aggregate-1$, then\\[\n2variablezeta waveringphi = oscillating - \\sum_{totality=1}^{aggregate-1} inconstantxi\\, dynamiceta < oscillating < 0\n\\]and thus $waveringphi<0$, completing the induction step. But now $ephemeralxi = 2minimalmu lowergamma > 0$, contradiction.\n\nIt remains to show that there is a polynomial $straightline(constant)$ such that $straightline(constant)^2$ has $2nullities-2$ negative coefficients. For example, we may take\\[\nstraightline(constant) = nullities(constant^{nullities}+1) - 2(constant^{nullities-1} + \\cdots + constant),\n\\]so that\n\\begin{align*}\nstraightline(constant)^2 &= nullities^2(constant^{2nullities} + constant^{nullities} + 1) - 2nullities(constant^{nullities}+1)(constant^{nullities-1}+\\cdots+constant)\\\\\n&\\qquad \n+ (constant^{nullities-1} + \\cdots + constant)^2.\n\\end{align*}\nFor $totality\\in \\{1,\\dots,nullities-1,nullities+1,\\dots,nullities-1\\}$, the coefficient of $constant^{totality}$ in $straightline(constant)^2$ is at most $-2nullities$ (coming from the cross term) plus $-2nullities+2$ (from expanding $(constant^{nullities-1} + \\cdots + constant)^2$), and hence negative."
+    },
+    "garbled_string": {
+      "map": {
+        "a_0": "zgpkmtrc",
+        "a_1": "hvxrclae",
+        "a_i": "kxstuflm",
+        "a_k": "wfjpbziq",
+        "a_n": "uqmorvny",
+        "a_k-i": "dajwoehr",
+        "a_n-1": "bqndyfsa",
+        "b_0": "qziohevc",
+        "b_1": "slmrkbta",
+        "b_i": "nwykdqpj",
+        "b_k": "yhrlxwgm",
+        "b_2n": "vcfjstpo",
+        "b_2n-1": "gprxwlea",
+        "i": "lzneuaxc",
+        "k": "psqibrtm",
+        "p": "xeqrmdst",
+        "x": "oashvczn",
+        "n": "jdfqomli"
+      },
+      "question": "Let $jdfqomli$ be an integer with $jdfqomli \\geq 2$. Over all real polynomials $xeqrmdst(oashvczn)$ of degree $jdfqomli$, what is the largest possible number of negative coefficients of $xeqrmdst(oashvczn)^2$?",
+      "solution": "The answer is $2jdfqomli-2$. Write $xeqrmdst(oashvczn) = uqmorvny oashvczn^{jdfqomli}+\\cdots+hvxrclae oashvczn+zgpkmtrc$ and $xeqrmdst(oashvczn)^2 = vcfjstpo oashvczn^{2jdfqomli}+\\cdots+slmrkbta oashvczn+qziohevc$. Note that $qziohevc = zgpkmtrc^2$ and $vcfjstpo = uqmorvny^2$. We claim that not all of the remaining $2jdfqomli-1$ coefficients $slmrkbta,\\ldots,gprxwlea$ can be negative, whence the largest possible number of negative coefficients is $\\leq 2jdfqomli-2$. Indeed, suppose $nwykdqpj <0$ for $1\\leq lzneuaxc\\leq 2jdfqomli-1$. Since $slmrkbta = 2zgpkmtrc hvxrclae$, we have $zgpkmtrc \\neq 0$. Assume $zgpkmtrc>0$ (or else replace $xeqrmdst(oashvczn)$ by $-xeqrmdst(oashvczn)$). We claim by induction on $lzneuaxc$ that $kxstuflm < 0$ for $1\\leq lzneuaxc\\leq jdfqomli$. For $lzneuaxc=1$, this follows from $2zgpkmtrc hvxrclae = slmrkbta<0$. If $kxstuflm<0$ for $1\\leq lzneuaxc\\leq psqibrtm-1$, then\n\\[\n2zgpkmtrc wfjpbziq = yhrlxwgm - \\sum_{lzneuaxc=1}^{psqibrtm-1} kxstuflm dajwoehr < yhrlxwgm < 0\n\\]\nand thus $wfjpbziq<0$, completing the induction step. But now $gprxwlea = 2bqndyfsa uqmorvny > 0$, contradiction.\n\nIt remains to show that there is a polynomial $xeqrmdst(oashvczn)$ such that $xeqrmdst(oashvczn)^2$ has $2jdfqomli-2$ negative coefficients. For example, we may take\n\\[\nxeqrmdst(oashvczn) = jdfqomli(oashvczn^{jdfqomli}+1) - 2(oashvczn^{jdfqomli-1} + \\cdots + oashvczn),\n\\]\nso that\n\\begin{align*}\nxeqrmdst(oashvczn)^2 &= jdfqomli^2(oashvczn^{2jdfqomli} + oashvczn^{jdfqomli} + 1) - 2jdfqomli(oashvczn^{jdfqomli}+1)(oashvczn^{jdfqomli-1}+\\cdots+oashvczn)\\\\\n&\\qquad \n+ (oashvczn^{jdfqomli-1} + \\cdots + oashvczn)^2.\n\\end{align*}\nFor $lzneuaxc\\in \\{1,\\dots,jdfqomli-1,jdfqomli+1,\\dots,jdfqomli-1\\}$, the coefficient of $oashvczn^{lzneuaxc}$ in $xeqrmdst(oashvczn)^2$ is at most $-2jdfqomli$ (coming from the cross term)\nplus $-2jdfqomli+2$ (from expanding $(oashvczn^{jdfqomli-1} + \\cdots + oashvczn)^2$), and hence negative."
+    },
+    "kernel_variant": {
+      "question": "Let n be an integer with n \\geq  2.  Among all degree-n polynomials\nq(x)=c_nx^{n}+\\dots +c_1x+c_0 having rational coefficients, determine the greatest possible number of negative coefficients that can occur in the expanded polynomial q(x)^2 (written in the standard basis {x^{2n},x^{2n-1},\\dots ,x,1}).",
+      "solution": "Answer.  The largest possible number of negative coefficients of q(x)^2 is 2n-2.\n\nProof.\n\n1.  Notation and a first upper bound.\n   Write\n      q(x)=c_nx^{n}+\\dots +c_1x+c_0  \\quad(c_i\\in\\mathbb Q),\n      q(x)^2=\\sum_{k=0}^{2n} d_kx^k.\n   Because d_0=c_0^2 \\geq  0 and d_{2n}=c_n^2 \\geq  0, any negative coefficient must be one of the 2n-1 ``interior'' coefficients d_1,\\dots ,d_{2n-1}.  Hence at most 2n-1 coefficients can be negative.\n\n2.  One interior coefficient must be non-negative.\n   We show that not all of d_1,\\dots ,d_{2n-1} can be negative, so the true maximum is \\leq  2n-2.\n\n   Suppose, toward a contradiction, that d_k<0 for every k=1,\\dots ,2n-1.\n   Observe first that d_1=2c_0c_1<0, whence c_0\\neq 0.  Replacing q by -q if necessary we may assume c_0>0.\n\n   We claim by induction that c_k<0 for k=1,2,\\dots ,n.\n\n   *  Base k=1:  d_1=2c_0c_1<0 \\Rightarrow  c_1<0.\n\n   *  Induction step.  Assume c_1,\\dots ,c_{k-1}<0 with 2\\leq k\\leq n.  For 1\\leq k\\leq n we have\n        d_k = \\sum_{i+j=k} c_ic_j = 2c_0c_k + \\sum_{i=1}^{k-1} c_ic_{k-i}.\n      The sum in the second term is positive because each factor is negative; hence d_k<0 forces 2c_0c_k<0, i.e. c_k<0.  The induction is complete.\n\n   Taking k=n-1 and k=n we now have c_{n-1}<0 and c_n<0, so\n        d_{2n-1}=2c_{n-1}c_n>0,\n   contradicting the assumption d_{2n-1}<0.  Therefore at least one interior coefficient must be non-negative, and the number of negative coefficients in q(x)^2 is at most 2n-2.\n\n3.  Construction achieving 2n-2 negative coefficients.\n   Define\n        q(x)=n\\bigl(x^{n}+1\\bigr)-2\\bigl(x^{n-1}+x^{n-2}+\\cdots +x\\bigr)\n            = n x^{n} - 2x^{n-1} - 2x^{n-2} - \\cdots - 2x + n.\n   All coefficients are rational, and q has degree n.\n\n   We expand q(x)^2 and determine the coefficients.  Denote S(x)=x^{n-1}+x^{n-2}+\\cdots +x and observe that\n        q(x)=n(x^n+1)-2S(x),\n        q(x)^2 = n^2(x^n+1)^2 - 4n(x^n+1)S(x) + 4S(x)^2.\n\n   *  The extreme coefficients are positive:\n        d_0=n^2>0, d_{2n}=n^2>0.\n\n   *  Coefficient of x^n.  From the three summands we obtain\n        d_n = 2n^2 + 4(n-1) > 0.\n\n   *  Coefficients with 1 \\leq  k \\leq  n-1.\n        The term n^2(x^n+1)^2 contributes 0.  The cross-product -4n(x^n+1)S(x) contributes -4n, and 4S(x)^2 contributes 4(k-1) because the number of pairs (i,j) with 1\\leq i,j\\leq n-1 and i+j=k equals k-1.  Hence\n        d_k = -4n + 4(k-1) = 4(k-1-n) \\leq  -8 < 0.\n\n   *  Coefficients with n+1 \\leq  k \\leq  2n-1.  Write k=n+r (1 \\leq  r \\leq  n-1).  Again the first summand contributes 0, the cross-product contributes -4n, and 4S(x)^2 contributes 4(n-1-r).  Therefore\n        d_{n+r} = -4n + 4(n-1-r) = 4(-r-1) \\leq  -4 < 0.\n\n   Summarizing: among the 2n-1 interior coefficients, exactly d_n is positive while the other 2n-2 are negative.  Hence this polynomial attains the bound 2n-2.\n\n4.  Conclusion.\n   No degree-n polynomial can make more than 2n-2 coefficients of q(x)^2 negative, and the example above shows that 2n-2 is attainable.  Consequently the largest possible number of negative coefficients equals 2n-2 for every integer n \\geq  2.",
+      "_meta": {
+        "core_steps": [
+          "Endpoints non-negative: b_0 = a_0^2 and b_{2n}=a_n^2 ≥ 0, so only the 2n−1 interior coefficients can even hope to be negative.",
+          "Contradict-assume every interior coefficient is negative and fix the sign of a_0 (replace p by −p if necessary).",
+          "Use the identity b_k = 2a_0a_k + Σ_{i=1}^{k-1} a_i a_{k-i} to inductively force a_1,…,a_n to be negative, yielding b_{2n−1}=2a_{n-1}a_n>0—a contradiction.",
+          "Conclude the upper bound 2n−2 for negative coefficients.",
+          "Exhibit one explicit polynomial whose square attains that bound, completing the proof of sharpness."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The stated lower bound on the degree n (currently ‘n ≥ 2’).  Taking n ≥ 1 leaves the argument intact.",
+            "original": "n ≥ 2"
+          },
+          "slot2": {
+            "description": "The coefficient field (presently the real numbers).  Any ordered field (e.g. ℚ) suffices because the proof only uses the ordering and the fact that squares are non-negative.",
+            "original": "ℝ (real coefficients)"
+          },
+          "slot3": {
+            "description": "The particular numerical constants in the constructive polynomial (now n and −2).  Any sufficiently large positive K and sufficiently large negative L with |L| > K make the same sign pattern work.",
+            "original": "p(x)= n(x^n+1) − 2(x^{n−1}+⋯+x)"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

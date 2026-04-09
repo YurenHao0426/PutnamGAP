@@ -1,0 +1,121 @@
+{
+  "index": "1996-A-6",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $c>0$ be a constant. Give a complete description, with proof, of\nthe set of all continuous functions $f: R \\to R$ such that $f(x) =\nf(x^2+c)$ for all $x \\in R$. Note that $R$ denotes the set of real numbers.",
+  "solution": "We first consider the case $c \\leq 1/4$; we shall show in this case\n$f$ must be constant. The relation\n\\[\nf(x) = f(x^2 + c) = f((-x)^2 + c) = f(-x)\n\\]\nproves that $f$ is an even function. Let $r_1 \\leq r_2$ be the roots of\n$x^2 + c - x$, both of which are real. If $x > r_{2}$, define $x_{0} =\nx$ and $x_{n+1} = \\sqrt{x_{n} - c}$ for each positive integer $x$. By\ninduction on $n$, $r_{2} < x_{n+1} < x_{n}$ for all $n$, so the\nsequence $\\{x_{n}\\}$ tends to a limit $L$ which is a root of $x^{2} +\nc = x$ not less than $r_{2}$. Of course this means $L = r_{2}$.\nSince $f(x) = f(x_{n})$ for all $n$ and $x_{n} \\to r_{2}$, we\nconclude $f(x) = f(r_{2})$, so $f$ is constant on $x \\geq r_{2}$.\n\nIf $r_{1} < x < r_{2}$ and $x_{n}$ is defined as before, then by\ninduction, $x_{n} < x_{n+1} < r_{2}$. Note that the\nsequence can be defined because $r_{1} > c$; the latter follows by\nnoting that the polynomial $x^{2} - x + c$ is positive at $x = c$ and\nhas its minimum at $1/2 > c$, so both roots are greater than $c$. In\nany case, we deduce that $f(x)$ is also constant on $r_{1} \\leq x \\leq\nr_{2}$.\n\nFinally, suppose $x < r_{1}$. Now define $x_{0} = x, x_{n+1} =\nx_{n}^{2} + c$. Given that $x_{n} < r_{1}$, we have $x_{n+1} >\nx_{n}$. Thus if we had $x_{n} < r_{1}$ for all $n$, by the same argument as\nin the first case we deduce $x_{n} \\to r_{1}$ and so $f(x) =\nf(r_{1})$. Actually, this doesn't happen; eventually we have $x_{n} >\nr_{1}$, in which case $f(x) = f(x_{n}) = f(r_{1})$ by what we have\nalready shown. We conclude that $f$ is a constant function. (Thanks\nto Marshall Buck for catching an inaccuracy in a previous version of\nthis solution.)\n\nNow suppose $c > 1/4$. Then the sequence $x_n$ defined by $x_0 = 0$\nand $x_{n+1} = x_n^2 + c$ is strictly increasing and has no limit\npoint. Thus if we define $f$ on $[x_0, x_1]$ as any continuous\nfunction with equal values on the endpoints, and extend the definition\nfrom $[x_n, x_{n+1}]$ to $[x_{n+1}, x_{n+2}]$ by the relation $f(x) =\nf(x^2 + c)$, and extend the definition further to $x < 0$ by the\nrelation $f(x) = f(-x)$, the resulting function has the desired\nproperty. Moreover, any function with that property clearly has this form.",
+  "vars": [
+    "f",
+    "x",
+    "n",
+    "x_0",
+    "x_n",
+    "x_n+1",
+    "L"
+  ],
+  "params": [
+    "c",
+    "R",
+    "r_1",
+    "r_2"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "f": "functionf",
+        "x": "variablex",
+        "n": "indexvar",
+        "x_0": "seedpoint",
+        "x_n": "sequenceelem",
+        "x_n+1": "nextseqelem",
+        "L": "limitvalu",
+        "c": "posconstant",
+        "R": "realset",
+        "r_1": "rootone",
+        "r_2": "roottwo"
+      },
+      "question": "Let $posconstant>0$ be a constant. Give a complete description, with proof, of\nthe set of all continuous functions $functionf: realset \\to realset$ such that $functionf(variablex) =\nfunctionf(variablex^2+posconstant)$ for all $variablex \\in realset$. Note that $realset$ denotes the set of real numbers.",
+      "solution": "We first consider the case $posconstant \\leq 1/4$; we shall show in this case\n$functionf$ must be constant. The relation\n\\[\nfunctionf(variablex) = functionf(variablex^2 + posconstant) = functionf((-variablex)^2 + posconstant) = functionf(-variablex)\n\\]\nproves that $functionf$ is an even function. Let $rootone \\leq roottwo$ be the roots of\n$variablex^2 + posconstant - variablex$, both of which are real. If $variablex > roottwo$, define $seedpoint =\nvariablex$ and $nextseqelem = \\sqrt{sequenceelem - posconstant}$ for each positive integer $indexvar$. By\ninduction on $indexvar$, $roottwo < nextseqelem < sequenceelem$ for all $indexvar$, so the\nsequence $\\{sequenceelem\\}$ tends to a limit $limitvalu$ which is a root of $variablex^{2} +\nposconstant = variablex$ not less than $roottwo$. Of course this means $limitvalu = roottwo$.\nSince $functionf(variablex) = functionf(sequenceelem)$ for all $indexvar$ and $sequenceelem \\to roottwo$, we\nconclude $functionf(variablex) = functionf(roottwo)$, so $functionf$ is constant on $variablex \\geq roottwo$.\n\nIf $rootone < variablex < roottwo$ and $sequenceelem$ is defined as before, then by\ninduction, $sequenceelem < nextseqelem < roottwo$. Note that the\nsequence can be defined because $rootone > posconstant$; the latter follows by\nnoting that the polynomial $variablex^{2} - variablex + posconstant$ is positive at $variablex = posconstant$ and\nhas its minimum at $1/2 > posconstant$, so both roots are greater than $posconstant$. In\nany case, we deduce that $functionf(variablex)$ is also constant on $rootone \\leq variablex \\leq\nroottwo$.\n\nFinally, suppose $variablex < rootone$. Now define $seedpoint = variablex, nextseqelem =\nsequenceelem^{2} + posconstant$. Given that $sequenceelem < rootone$, we have $nextseqelem >\nsequenceelem$. Thus if we had $sequenceelem < rootone$ for all $indexvar$, by the same argument as\nin the first case we deduce $sequenceelem \\to rootone$ and so $functionf(variablex) =\nfunctionf(rootone)$. Actually, this doesn\u0019t happen; eventually we have $sequenceelem >\nrootone$, in which case $functionf(variablex) = functionf(sequenceelem) = functionf(rootone)$ by what we have\nalready shown. We conclude that $functionf$ is a constant function. (Thanks\nto Marshall Buck for catching an inaccuracy in a previous version of\nthis solution.)\n\nNow suppose $posconstant > 1/4$. Then the sequence $sequenceelem$ defined by $seedpoint = 0$\nand $nextseqelem = sequenceelem^{2} + posconstant$ is strictly increasing and has no limit\npoint. Thus if we define $functionf$ on $[seedpoint, nextseqelem]$ as any continuous\nfunction with equal values on the endpoints, and extend the definition\nfrom $[sequenceelem, nextseqelem]$ to $[nextseqelem, x_{n+2}]$ by the relation $functionf(variablex) = functionf(variablex^2 + posconstant)$, and extend the definition further to $variablex < 0$ by the\nrelation $functionf(variablex) = functionf(-variablex)$, the resulting function has the desired\nproperty. Moreover, any function with that property clearly has this form."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "f": "wanderer",
+        "x": "marblestep",
+        "n": "lilypatch",
+        "x_0": "rosestone",
+        "x_n": "glenbrook",
+        "x_n+1": "harborbay",
+        "L": "mistletoe",
+        "c": "tumbledew",
+        "R": "rainfield",
+        "r_1": "thistleday",
+        "r_2": "ivorymist"
+      },
+      "question": "Let $tumbledew>0$ be a constant. Give a complete description, with proof, of\nthe set of all continuous functions $wanderer: rainfield \\to rainfield$ such that $wanderer(marblestep) =\nwanderer(marblestep^2+tumbledew)$ for all $marblestep \\in rainfield$. Note that $rainfield$ denotes the set of real numbers.",
+      "solution": "We first consider the case $tumbledew \\leq 1/4$; we shall show in this case\n$wanderer$ must be constant. The relation\n\\[\nwanderer(marblestep) = wanderer(marblestep^2 + tumbledew) = wanderer((-marblestep)^2 + tumbledew) = wanderer(-marblestep)\n\\]\nproves that $wanderer$ is an even function. Let $thistleday \\leq ivorymist$ be the roots of\n$marblestep^2 + tumbledew - marblestep$, both of which are real. If $marblestep > ivorymist$, define $rosestone =\nmarblestep$ and $harborbay = \\sqrt{glenbrook - tumbledew}$ for each positive integer $lilypatch$. By\ninduction on $lilypatch$, $ivorymist < harborbay < glenbrook$ for all $lilypatch$, so the\nsequence $\\{glenbrook\\}$ tends to a limit $mistletoe$ which is a root of $marblestep^{2} +\ntumbledew = marblestep$ not less than $ivorymist$. Of course this means $mistletoe = ivorymist$.\nSince $wanderer(marblestep) = wanderer(glenbrook)$ for all $lilypatch$ and $glenbrook \\to ivorymist$, we\nconclude $wanderer(marblestep) = wanderer(ivorymist)$, so $wanderer$ is constant on $marblestep \\geq ivorymist$.\n\nIf $thistleday < marblestep < ivorymist$ and $glenbrook$ is defined as before, then by\ninduction, $glenbrook < harborbay < ivorymist$. Note that the\nsequence can be defined because $thistleday > tumbledew$; the latter follows by\nnoting that the polynomial $marblestep^{2} - marblestep + tumbledew$ is positive at $marblestep = tumbledew$ and\nhas its minimum at $1/2 > tumbledew$, so both roots are greater than $tumbledew$. In\nany case, we deduce that $wanderer(marblestep)$ is also constant on $thistleday \\leq marblestep \\leq\nivorymist$.\n\nFinally, suppose $marblestep < thistleday$. Now define $rosestone = marblestep, harborbay =\nglenbrook^{2} + tumbledew$. Given that $glenbrook < thistleday$, we have $harborbay >\nglenbrook$. Thus if we had $glenbrook < thistleday$ for all $lilypatch$, by the same argument as\nin the first case we deduce $glenbrook \\to thistleday$ and so $wanderer(marblestep) =\nwanderer(thistleday)$. Actually, this doesn't happen; eventually we have $glenbrook >\nthistleday$, in which case $wanderer(marblestep) = wanderer(glenbrook) = wanderer(thistleday)$ by what we have\nalready shown. We conclude that $wanderer$ is a constant function. (Thanks\nto Marshall Buck for catching an inaccuracy in a previous version of\nthis solution.)\n\nNow suppose $tumbledew > 1/4$. Then the sequence $glenbrook$ defined by $rosestone = 0$\nand $harborbay = glenbrook^2 + tumbledew$ is strictly increasing and has no limit\npoint. Thus if we define $wanderer$ on $[rosestone, glenbrook]$ as any continuous\nfunction with equal values on the endpoints, and extend the definition\nfrom $[glenbrook, harborbay]$ to $[harborbay, x_{n+2}]$ by the relation $wanderer(marblestep) =\nwanderer(marblestep^2 + tumbledew)$, and extend the definition further to $marblestep < 0$ by the\nrelation $wanderer(marblestep) = wanderer(-marblestep)$, the resulting function has the desired\nproperty. Moreover, any function with that property clearly has this form."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "f": "discontinuousmap",
+        "x": "constantvalue",
+        "n": "nonindex",
+        "x_0": "terminalvalue",
+        "x_n": "finalterm",
+        "x_n+1": "previousterm",
+        "L": "divergentval",
+        "c": "variableparam",
+        "R": "imaginaryset",
+        "r_1": "peakfirst",
+        "r_2": "peaksecond"
+      },
+      "question": "Let $\\variableparam>0$ be a constant. Give a complete description, with proof, of\nthe set of all continuous functions $\\discontinuousmap: \\imaginaryset \\to \\imaginaryset$ such that $\\discontinuousmap(\\constantvalue) =\n\\discontinuousmap(\\constantvalue^2+\\variableparam)$ for all $\\constantvalue \\in \\imaginaryset$. Note that $\\imaginaryset$ denotes the set of real numbers.",
+      "solution": "We first consider the case $\\variableparam \\leq 1/4$; we shall show in this case\n$\\discontinuousmap$ must be constant. The relation\n\\[\n\\discontinuousmap(\\constantvalue) = \\discontinuousmap(\\constantvalue^2 + \\variableparam) = \\discontinuousmap((-\\constantvalue)^2 + \\variableparam) = \\discontinuousmap(-\\constantvalue)\n\\]\nproves that $\\discontinuousmap$ is an even function. Let $\\peakfirst \\leq \\peaksecond$ be the roots of\n$\\constantvalue^2 + \\variableparam - \\constantvalue$, both of which are real. If $\\constantvalue > \\peaksecond$, define $\\terminalvalue =\n\\constantvalue$ and $\\previousterm = \\sqrt{\\finalterm - \\variableparam}$ for each positive integer $\\constantvalue$. By\ninduction on $\\nonindex$, $\\peaksecond < \\previousterm < \\finalterm$ for all $\\nonindex$, so the\nsequence $\\{\\finalterm\\}$ tends to a limit $\\divergentval$ which is a root of $\\constantvalue^{2} +\n\\variableparam = \\constantvalue$ not less than $\\peaksecond$. Of course this means $\\divergentval = \\peaksecond$.\nSince $\\discontinuousmap(\\constantvalue) = \\discontinuousmap(\\finalterm)$ for all $\\nonindex$ and $\\finalterm \\to \\peaksecond$, we\nconclude $\\discontinuousmap(\\constantvalue) = \\discontinuousmap(\\peaksecond)$, so $\\discontinuousmap$ is constant on $\\constantvalue \\geq \\peaksecond$.\n\nIf $\\peakfirst < \\constantvalue < \\peaksecond$ and $\\finalterm$ is defined as before, then by\ninduction, $\\finalterm < \\previousterm < \\peaksecond$. Note that the\nsequence can be defined because $\\peakfirst > \\variableparam$; the latter follows by\nnoting that the polynomial $\\constantvalue^{2} - \\constantvalue + \\variableparam$ is positive at $\\constantvalue = \\variableparam$ and\nhas its minimum at $1/2 > \\variableparam$, so both roots are greater than $\\variableparam$. In\nany case, we deduce that $\\discontinuousmap(\\constantvalue)$ is also constant on $\\peakfirst \\leq \\constantvalue \\leq\n\\peaksecond$.\n\nFinally, suppose $\\constantvalue < \\peakfirst$. Now define $\\terminalvalue = \\constantvalue, \\previousterm =\n\\finalterm^{2} + \\variableparam$. Given that $\\finalterm < \\peakfirst$, we have $\\previousterm >\n\\finalterm$. Thus if we had $\\finalterm < \\peakfirst$ for all $\\nonindex$, by the same argument as\nin the first case we deduce $\\finalterm \\to \\peakfirst$ and so $\\discontinuousmap(\\constantvalue) =\n\\discontinuousmap(\\peakfirst)$. Actually, this doesn't happen; eventually we have $\\finalterm >\n\\peakfirst$, in which case $\\discontinuousmap(\\constantvalue) = \\discontinuousmap(\\finalterm) = \\discontinuousmap(\\peakfirst)$ by what we have\nalready shown. We conclude that $\\discontinuousmap$ is a constant function. (Thanks\nto Marshall Buck for catching an inaccuracy in a previous version of\nthis solution.)\n\nNow suppose $\\variableparam > 1/4$. Then the sequence $\\finalterm$ defined by $\\terminalvalue = 0$\nand $\\previousterm = \\finalterm^2 + \\variableparam$ is strictly increasing and has no limit\npoint. Thus if we define $\\discontinuousmap$ on $[\\terminalvalue, \\previousterm]$ as any continuous\nfunction with equal values on the endpoints, and extend the definition\nfrom $[\\finalterm, \\previousterm]$ to $[\\previousterm, \\previousterm]$ by the relation $\\discontinuousmap(\\constantvalue) =\n\\discontinuousmap(\\constantvalue^2 + \\variableparam)$, and extend the definition further to $\\constantvalue < 0$ by the\nrelation $\\discontinuousmap(\\constantvalue) = \\discontinuousmap(-\\constantvalue)$, the resulting function has the desired\nproperty. Moreover, any function with that property clearly has this form."
+    },
+    "garbled_string": {
+      "map": {
+        "f": "qzxwvtnp",
+        "x": "hjgrksla",
+        "n": "vbqrplwt",
+        "x_0": "mndkzqpx",
+        "x_n": "rgfltvza",
+        "x_n+1": "wqpsldkj",
+        "L": "cznvmbqt",
+        "c": "asdlkqwe",
+        "R": "kjtrplmn",
+        "r_1": "plksomnv",
+        "r_2": "vczyopql"
+      },
+      "question": "Let $asdlkqwe>0$ be a constant. Give a complete description, with proof, of\nthe set of all continuous functions $qzxwvtnp: kjtrplmn \\to kjtrplmn$ such that $qzxwvtnp(hjgrksla) =\nqzxwvtnp(hjgrksla^2+asdlkqwe)$ for all $hjgrksla \\in kjtrplmn$. Note that $kjtrplmn$ denotes the set of real numbers.",
+      "solution": "We first consider the case $asdlkqwe \\leq 1/4$; we shall show in this case\n$qzxwvtnp$ must be constant. The relation\n\\[\nqzxwvtnp(hjgrksla) = qzxwvtnp(hjgrksla^{2} + asdlkqwe) = qzxwvtnp((-hjgrksla)^{2} + asdlkqwe) = qzxwvtnp(-hjgrksla)\n\\]\nproves that $qzxwvtnp$ is an even function. Let $plksomnv \\leq vczyopql$ be the roots of\n$hjgrksla^{2} + asdlkqwe - hjgrksla$, both of which are real. If $hjgrksla > vczyopql$, define $mndkzqpx =\nhjgrksla$ and $wqpsldkj = \\sqrt{rgfltvza - asdlkqwe}$ for each positive integer $hjgrksla$. By\ninduction on $vbqrplwt$, $vczyopql < wqpsldkj < rgfltvza$ for all $vbqrplwt$, so the\nsequence $\\{rgfltvza\\}$ tends to a limit $cznvmbqt$ which is a root of $hjgrksla^{2} +\nasdlkqwe = hjgrksla$ not less than $vczyopql$. Of course this means $cznvmbqt = vczyopql$.\nSince $qzxwvtnp(hjgrksla) = qzxwvtnp(rgfltvza)$ for all $vbqrplwt$ and $rgfltvza \\to vczyopql$, we\nconclude $qzxwvtnp(hjgrksla) = qzxwvtnp(vczyopql)$, so $qzxwvtnp$ is constant on $hjgrksla \\geq vczyopql$.\n\nIf $plksomnv < hjgrksla < vczyopql$ and $rgfltvza$ is defined as before, then by\ninduction, $rgfltvza < wqpsldkj < vczyopql$. Note that the\nsequence can be defined because $plksomnv > asdlkqwe$; the latter follows by\nnoting that the polynomial $hjgrksla^{2} - hjgrksla + asdlkqwe$ is positive at $hjgrksla = asdlkqwe$ and\nhas its minimum at $1/2 > asdlkqwe$, so both roots are greater than $asdlkqwe$. In\nany case, we deduce that $qzxwvtnp(hjgrksla)$ is also constant on $plksomnv \\leq hjgrksla \\leq\nvczyopql$.\n\nFinally, suppose $hjgrksla < plksomnv$. Now define $mndkzqpx = hjgrksla, wqpsldkj =\nrgfltvza^{2} + asdlkqwe$. Given that $rgfltvza < plksomnv$, we have $wqpsldkj > rgfltvza$.\nThus if we had $rgfltvza < plksomnv$ for all $vbqrplwt$, by the same argument as\nin the first case we deduce $rgfltvza \\to plksomnv$ and so $qzxwvtnp(hjgrksla) =\nqzxwvtnp(plksomnv)$. Actually, this doesn't happen; eventually we have $rgfltvza >\nplksomnv$, in which case $qzxwvtnp(hjgrksla) = qzxwvtnp(rgfltvza) = qzxwvtnp(plksomnv)$ by what we have\nalready shown. We conclude that $qzxwvtnp$ is a constant function. (Thanks\nto Marshall Buck for catching an inaccuracy in a previous version of\nthis solution.)\n\nNow suppose $asdlkqwe > 1/4$. Then the sequence $rgfltvza$ defined by $mndkzqpx = 0$\nand $wqpsldkj = rgfltvza^{2} + asdlkqwe$ is strictly increasing and has no limit\npoint. Thus if we define $qzxwvtnp$ on $[mndkzqpx, x_1]$ as any continuous\nfunction with equal values on the endpoints, and extend the definition\nfrom $[rgfltvza, wqpsldkj]$ to $[wqpsldkj, x_{n+2}]$ by the relation $qzxwvtnp(hjgrksla) =\nqzxwvtnp(hjgrksla^{2} + asdlkqwe)$, and extend the definition further to $hjgrksla < 0$ by the\nrelation $qzxwvtnp(hjgrksla) = qzxwvtnp(-hjgrksla)$, the resulting function has the desired\nproperty. Moreover, any function with that property clearly has this form."
+    },
+    "kernel_variant": {
+      "question": "Let $k>0$ be fixed.  Describe, with proof, all continuous functions $f:\n\\mathbb R\\to\\mathbb R$ that satisfy\n\\[\n          f(x)=f\\bigl(x^{2}+2k\\bigr)\\qquad\\text{for every }x\\in\\mathbb R.\n\\]",
+      "solution": "We want all continuous f:\\mathbb{R}\\to \\mathbb{R} satisfying\n    f(x)=f(x^2+2k)\nfor fixed k>0.\n\nDefine the map T(x)=x^2+2k.  Then f(x)=f(T(x)), and since T(-x)=T(x) it follows immediately that f is even.  Hence it suffices to describe f on [0,\\infty ).  The key distinction is whether the equation x=T(x) has real roots.\n\n1.  The fixed-point equation x=x^2+2k \\Leftrightarrow  x^2-x+2k=0 has discriminant \\Delta =1-8k.\n   - If k\\leq 1/8 then \\Delta \\geq 0 and there are two real roots\n       r_1=(1-\\sqrt{1-8k})/2  \\leq   r_2=(1+\\sqrt{1-8k})/2.\n   - If k>1/8 then \\Delta <0 and there are no real solutions.\n\nCase I: k\\leq 1/8.  We show f is constant.\n   (a)  For any x_0>r_2 define the backward orbit\n         x_{n+1}=\\sqrt{x_n-2k}.\n       One checks x_n>r_2 for all n and x_n\\searrow r_2.  Since f(x_n)=f(T(x_{n+1}))=f(x_{n+1}), continuity gives f(x_0)=lim f(x_n)=f(r_2).  Hence f is constant on [r_2,\\infty ).\n   (b)  For x\\in (r_1,r_2) the forward iterates x\\mapsto T(x) strictly decrease to r_1, and the same argument shows f(x)=f(r_1).  Continuity at r_2 forces f(r_1)=f(r_2).\n   (c)  For x<r_1 one checks T(x)>x and either eventually T^n(x)\\geq r_1 or else T^n(x)\\nearrow r_1, so f(x)=f(r_1).  Evenness then covers x<0.  Thus f is constant on \\mathbb{R}.\n\nConclusion of Case I: if 0<k\\leq 1/8, the only continuous solutions are constant functions.\n\nCase II: k>1/8.  Then x=T(x) has no real solutions and the forward orbit of every x\\geq 0 tends to +\\infty .  Set x_0=2k, x_{n+1}=x_n^2+2k, so (x_n) is strictly increasing and unbounded.  Write\n      I_n=[x_n,x_{n+1}],   n=0,1,2,\\ldots \nThese intervals cover [2k,\\infty ).  Now:\n   (A)  Arbitrarily choose a continuous g on I_0=[2k,4k^2+2k] with g(x_0)=g(x_1).\n   (B)  For each n\\geq 1 and x\\in I_n, define f(x)=g(T^{-n}(x)), where T^{-n}(x) is the unique backward-iterate obtained by applying the branch x\\mapsto \\sqrt{x-2k} exactly n times so as to land in I_0.  This makes f continuous on I_n and satisfies f(T(x))=f(x).\n   (C)  If 0\\leq x<2k then T(x)=x^2+2k\\in I_0, so set f(x)=f(T(x))=g(T(x)), which is continuous up to x=2k.\n   (D)  Finally extend to x<0 by f(x)=f(-x), preserving evenness and continuity.\n\nOne checks directly that this f is continuous on \\mathbb{R}, is even, and obeys f(x)=f(T(x)) for all x.  Conversely, any continuous solution must be constant along each backward orbit under T, so its restriction to I_0 is an arbitrary continuous g with matching endpoint values.  Thus for k>1/8 exactly the above infinite-dimensional family arises.\n\nFINAL ANSWER:\n* If 0<k\\leq 1/8, the only continuous solutions of f(x)=f(x^2+2k) are the constant functions.\n* If k>1/8, pick any continuous g on [2k,4k^2+2k] satisfying g(2k)=g(4k^2+2k), and extend to x\\geq 0 by the rule f(x)=g(T^{-n}(x)) whenever x lies in [x_n,x_{n+1}], then set f(x)=f(-x) for x<0.  These and only these are the continuous solutions.",
+      "_meta": {
+        "core_steps": [
+          "Evenness: from f(x)=f(x^2+c)=f((-x)^2+c) we get f(x)=f(-x).",
+          "Quadratic split: study roots of x^2+c=x; real roots exist iff c≤1/4, giving two numbers r1≤r2.",
+          "Case c≤1/4: build monotone sequences by the maps x↦√(x−c) (for x>r2) and x↦x^2+c (for x<r1); each sequence converges to a root, so continuity forces f to be constant on successive regions and hence on all ℝ.",
+          "Case c>1/4: iterates of T(x)=x^2+c from a fixed positive seed give a strictly increasing, unbounded sequence; the intervals [x_n,x_{n+1}] partition the non-negative reals, so prescribing f continuously on the first interval (with equal endpoint values) and extending by the functional equation plus evenness yields every solution."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Choice of the initial seed used to generate the increasing sequence in the c>1/4 case; any non-negative value works.",
+            "original": "x_0 = 0"
+          },
+          "slot2": {
+            "description": "Interval on which the arbitrary continuous data are first assigned before being extended by the functional equation.",
+            "original": "[x_0, x_1] = [0, c]"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

@@ -1,0 +1,127 @@
+{
+  "index": "2021-A-3",
+  "type": "GEO",
+  "tag": [
+    "GEO",
+    "NT"
+  ],
+  "difficulty": "",
+  "question": "Determine all positive integers $N$ for which the sphere\n\\[\nx^2 + y^2 + z^2 = N\n\\]\nhas an inscribed regular tetrahedron whose vertices have integer coordinates.",
+  "solution": "The integers $N$ with this property are those of the form $3m^2$ for some positive integer $m$.\n\nIn one direction, for $N = 3m^2$, the points\n\\[\n(m,m,m), (m,-m,-m), (-m,m,-m), (-m,-m,m)\n\\]\nform the vertices of a regular tetrahedron inscribed in the sphere $x^2 + y^2 + z^2 = N$.\n\nConversely, suppose that $P_i = (x_i, y_i, z_i)$ for $i=1,\\dots,4$ are the vertices of an inscribed regular \ntetrahedron. Then the center of this tetrahedron must equal the center of the sphere, namely $(0,0,0)$. Consequently, these four vertices together with $Q_i = (-x_i, -y_i, -z_i)$ for $i=1,\\dots,4$ form the vertices of an inscribed cube in the sphere.\nThe side length of this cube is $(N/3)^{1/2}$, so its volume is $(N/3)^{3/2}$;\non the other hand, this volume also equals the determinant of the matrix\nwith row vectors $Q_2-Q_1, Q_3-Q_1, Q_4-Q_1$, which is an integer. Hence $(N/3)^3$ is a perfect square, as then is $N/3$.",
+  "vars": [
+    "x",
+    "y",
+    "z",
+    "x_i",
+    "y_i",
+    "z_i",
+    "i",
+    "P_i",
+    "Q_i"
+  ],
+  "params": [
+    "N",
+    "m"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "abscissa",
+        "y": "ordinate",
+        "z": "applicate",
+        "x_i": "abscissei",
+        "y_i": "ordinatei",
+        "z_i": "applicatei",
+        "i": "indexvar",
+        "P_i": "vertexpi",
+        "Q_i": "vertexqi",
+        "N": "spherval",
+        "m": "scalefac"
+      },
+      "question": "Determine all positive integers $spherval$ for which the sphere\n\\[\nabscissa^{2}+ordinate^{2}+applicate^{2}=spherval\n\\]\nhas an inscribed regular tetrahedron whose vertices have integer coordinates.",
+      "solution": "The integers $spherval$ with this property are those of the form $3scalefac^{2}$ for some positive integer $scalefac$.\n\nIn one direction, for $spherval = 3scalefac^{2}$, the points\n\\[\n(scalefac,scalefac,scalefac),\\;(scalefac,-scalefac,-scalefac),\\;(-scalefac,scalefac,-scalefac),\\;(-scalefac,-scalefac,scalefac)\n\\]\nform the vertices of a regular tetrahedron inscribed in the sphere $abscissa^{2}+ordinate^{2}+applicate^{2}=spherval$.\n\nConversely, suppose that $vertexpi=(abscissei,ordinatei,applicatei)$ for $indexvar=1,\\dots ,4$ are the vertices of an inscribed regular tetrahedron. Then the center of this tetrahedron must equal the center of the sphere, namely $(0,0,0)$. Consequently, these four vertices together with $vertexqi=(-abscissei,-ordinatei,-applicatei)$ for $indexvar=1,\\dots ,4$ form the vertices of an inscribed cube in the sphere. The side length of this cube is $(spherval/3)^{1/2}$, so its volume is $(spherval/3)^{3/2}$; on the other hand, this volume also equals the determinant of the matrix with row vectors $Q_2-Q_1,\\;Q_3-Q_1,\\;Q_4-Q_1$, which is an integer. Hence $(spherval/3)^{3}$ is a perfect square, as then is $spherval/3$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "pineapple",
+        "y": "suitcase",
+        "z": "lanterns",
+        "x_i": "pineappleindex",
+        "y_i": "suitcaseindex",
+        "z_i": "lanternindex",
+        "i": "garmentbag",
+        "P_i": "biscuitindex",
+        "Q_i": "hammockindex",
+        "N": "chandelier",
+        "m": "snowflake"
+      },
+      "question": "Determine all positive integers $chandelier$ for which the sphere\n\\[\npineapple^2 + suitcase^2 + lanterns^2 = chandelier\n\\]\nhas an inscribed regular tetrahedron whose vertices have integer coordinates.",
+      "solution": "The integers $chandelier$ with this property are those of the form $3 snowflake^2$ for some positive integer $snowflake$.\n\nIn one direction, for $chandelier = 3 snowflake^2$, the points\n\\[\n(snowflake,snowflake,snowflake),\\,(snowflake,-snowflake,-snowflake),\\,(-snowflake,snowflake,-snowflake),\\,(-snowflake,-snowflake,snowflake)\n\\]\nform the vertices of a regular tetrahedron inscribed in the sphere $pineapple^2 + suitcase^2 + lanterns^2 = chandelier$.\n\nConversely, suppose that $biscuitindex = (pineappleindex, suitcaseindex, lanternindex)$ for $garmentbag=1,\\dots,4$ are the vertices of an inscribed regular \ntetrahedron. Then the center of this tetrahedron must equal the center of the sphere, namely $(0,0,0)$. Consequently, these four vertices together with $hammockindex = (-pineappleindex, -suitcaseindex, -lanternindex)$ for $garmentbag=1,\\dots,4$ form the vertices of an inscribed cube in the sphere.\nThe side length of this cube is $(chandelier/3)^{1/2}$, so its volume is $(chandelier/3)^{3/2}$;\non the other hand, this volume also equals the determinant of the matrix\nwith row vectors $hammockindex_2-hammockindex_1$, $hammockindex_3-hammockindex_1$, $hammockindex_4-hammockindex_1$, which is an integer. Hence $(chandelier/3)^3$ is a perfect square, as then is $chandelier/3$. "
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "unlocated",
+        "y": "unchanging",
+        "z": "flattened",
+        "x_i": "unlocatedvec",
+        "y_i": "unchangingvec",
+        "z_i": "flattenedvec",
+        "i": "stationary",
+        "P_i": "edgeblock",
+        "Q_i": "voidpoint",
+        "N": "negligible",
+        "m": "fraction"
+      },
+      "question": "Determine all positive integers $negligible$ for which the sphere\n\\[\nunlocated^2 + unchanging^2 + flattened^2 = negligible\n\\]\nhas an inscribed regular tetrahedron whose vertices have integer coordinates.",
+      "solution": "The integers $negligible$ with this property are those of the form $3fraction^2$ for some positive integer $fraction$.\n\nIn one direction, for $negligible = 3fraction^2$, the points\n\\[\n(fraction,fraction,fraction), (fraction,-fraction,-fraction), (-fraction,fraction,-fraction), (-fraction,-fraction,fraction)\n\\]\nform the vertices of a regular tetrahedron inscribed in the sphere $unlocated^2 + unchanging^2 + flattened^2 = negligible$.\n\nConversely, suppose that $edgeblock = (unlocatedvec, unchangingvec, flattenedvec)$ for $stationary=1,\\dots,4$ are the vertices of an inscribed regular \ntetrahedron. Then the center of this tetrahedron must equal the center of the sphere, namely $(0,0,0)$. Consequently, these four vertices together with $voidpoint = (-unlocatedvec, -unchangingvec, -flattenedvec)$ for $stationary=1,\\dots,4$ form the vertices of an inscribed cube in the sphere.\nThe side length of this cube is $(negligible/3)^{1/2}$, so its volume is $(negligible/3)^{3/2}$;\non the other hand, this volume also equals the determinant of the matrix\nwith row vectors $voidpoint_2-voidpoint_1, voidpoint_3-voidpoint_1, voidpoint_4-voidpoint_1$, which is an integer. Hence $(negligible/3)^3$ is a perfect square, as then is $negligible/3$. "
+    },
+    "garbled_string": {
+      "map": {
+        "x": "jbqtmpzs",
+        "y": "mkdrvqcn",
+        "z": "nadlkpwe",
+        "x_i": "hrcspgqt",
+        "y_i": "fqzbntlx",
+        "z_i": "dpkrsmvh",
+        "i": "vndxqaol",
+        "P_i": "kgwhrbtu",
+        "Q_i": "slyzcpem",
+        "N": "gvhspfen",
+        "m": "ubswqjra"
+      },
+      "question": "Determine all positive integers $gvhspfen$ for which the sphere\n\\[\njbqtmpzs^2 + mkdrvqcn^2 + nadlkpwe^2 = gvhspfen\n\\]\nhas an inscribed regular tetrahedron whose vertices have integer coordinates.",
+      "solution": "The integers $gvhspfen$ with this property are those of the form $3ubswqjra^2$ for some positive integer $ubswqjra$.\n\nIn one direction, for $gvhspfen = 3ubswqjra^2$, the points\n\\[\n(ubswqjra,ubswqjra,ubswqjra), (ubswqjra,-ubswqjra,-ubswqjra), (-ubswqjra,ubswqjra,-ubswqjra), (-ubswqjra,-ubswqjra,ubswqjra)\n\\]\nform the vertices of a regular tetrahedron inscribed in the sphere $jbqtmpzs^2 + mkdrvqcn^2 + nadlkpwe^2 = gvhspfen$.\n\nConversely, suppose that $kgwhrbtu = (hrcspgqt, fqzbntlx, dpkrsmvh)$ for $vndxqaol=1,\\dots,4$ are the vertices of an inscribed regular \ntetrahedron. Then the center of this tetrahedron must equal the center of the sphere, namely $(0,0,0)$. Consequently, these four vertices together with $slyzcpem = (-hrcspgqt, -fqzbntlx, -dpkrsmvh)$ for $vndxqaol=1,\\dots,4$ form the vertices of an inscribed cube in the sphere.\nThe side length of this cube is $(gvhspfen/3)^{1/2}$, so its volume is $(gvhspfen/3)^{3/2}$;\non the other hand, this volume also equals the determinant of the matrix\nwith row vectors $slyzcpem_2-slyzcpem_1, slyzcpem_3-slyzcpem_1, slyzcpem_4-slyzcpem_1$, which is an integer. Hence $(gvhspfen/3)^3$ is a perfect square, as then is $gvhspfen/3$.",
+      "errors": []
+    },
+    "kernel_variant": {
+      "question": "Find all positive integers $N$ for which there exist four lattice points\n\\[P_1,P_2,P_3,P_4\\in\\mathbb Z^3\\]\non the sphere\n\\[x^2+y^2+z^2=N\\]\nthat are the vertices of a regular tetrahedron and such that \nEVERY vertex has an odd number of negative coordinates (that is, either one or three of its coordinates are negative).",
+      "solution": "Answer.  The only positive integers N admitting four lattice-point vertices of a regular tetrahedron on x^2+y^2+z^2=N (with each vertex having an odd number of negative coordinates) are exactly\n\n   N = 3k^2,   k\\in \\mathbb{N}.\n\nProof.\n\n1.  Sufficiency.  For any k\\geq 1 set\n\n   P_1=( k,  k, -k),\n   P_2=( k, -k,  k),\n   P_3=(-k,  k,  k),\n   P_4=(-k, -k, -k).\n\nEach P_i has either one or three negative entries, so an odd number of negatives.  Clearly\n\n   \\parallel P_i\\parallel ^2 = k^2+k^2+k^2 = 3k^2,\n\nso all P_i lie on x^2+y^2+z^2=3k^2.  Moreover for i\\neq j one checks\n\n   \\parallel P_i-P_j\\parallel ^2 = 8k^2,\n\nhence the six edges all have length 2\\sqrt{2}\\cdot k.  Thus P_1,\\ldots ,P_4 form a regular tetrahedron on the sphere of radius \\sqrt{3k^2}.\n\n2.  Necessity.  Suppose P_1,\\ldots ,P_4\\in \\mathbb{Z}^3 lie on x^2+y^2+z^2=N and form a regular tetrahedron.  A regular tetrahedron's circumsphere center is its centroid, so that center must be (0,0,0).  Hence\n\n   P_1+P_2+P_3+P_4 = 0.\n\nWrite R = \\sqrt{N} and set c = P_i\\cdot P_j for any i\\neq j.  Since \\parallel P_i\\parallel ^2=N and \\parallel P_i-P_j\\parallel ^2 is constant we have\n\n   \\parallel P_i-P_j\\parallel ^2 = 2N - 2c  \\Rightarrow   c = N - (\\frac{1}{2})\\parallel P_i-P_j\\parallel ^2.\n\nOn the other hand, dotting P_1+P_2+P_3+P_4=0 with P_1 gives\n\n   P_1\\cdot (P_1+P_2+P_3+P_4) = N + 3c = 0  \\Rightarrow   c = -N/3.\n\nThus each off-diagonal dot-product is -N/3, so\n\n   \\parallel P_i - P_j\\parallel ^2 = 2N - 2(-N/3) = 8N/3,\n\nwhich must be an integer, forcing 3\\mid N.  Write N=3m.  Then\n\n   P_i\\cdot P_j = -m  (i\\neq j),  and  \\parallel P_i\\parallel ^2=3m.\n\nConsider the 3\\times 3 Gram matrix G of the three vectors P_1,P_2,P_3: its diagonal entries are 3m and its off-diagonals are -m.  A standard determinant formula for a matrix with a on the diagonal and b off it gives\n\n   det G = (a-b)^2(a+2b) = (3m + m)^2(3m - 2m) = (4m)^2 \\cdot  m = 16m^3.\n\nBut det G = det[P_1,P_2,P_3]^2 is a perfect square, so 16m^3 must be a square.  Hence m^3 is a square, i.e. m is a perfect square, say m=k^2.  Therefore N=3m=3k^2.\n\n3.  Conclusion.  Combining (1) and (2), the required N are exactly\n\n   N = 3k^2,   k\\in \\mathbb{N},\n\nand for each such N the explicit example of (P_1,P_2,P_3,P_4) above satisfies the ``odd-negatives'' condition.  This completes the proof.",
+      "_meta": {
+        "core_steps": [
+          "Sufficiency: show that points of the form (±m,±m,±m) with one plus sign per vertex give a regular tetrahedron on the sphere when N=3m²",
+          "Centroid argument: any inscribed regular tetrahedron must have its center at the sphere’s center (0,0,0)",
+          "Symmetry trick: adjoining the antipodal points −P_i yields the 8 vertices of a cube inscribed in the same sphere",
+          "Geometry-to-arithmetic link: cube side = √(N/3) ⇒ volume = (N/3)^{3/2}",
+          "Integrality: that volume equals a determinant of integer vectors, so (N/3)^{3/2} is an integer ⇒ N/3 is a perfect square ⇒ N=3m²"
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Label chosen for the positive scaling parameter of the construction",
+            "original": "m"
+          },
+          "slot2": {
+            "description": "Specific sign pattern / order of the four constructed vertices (e.g. (m,m,m), (m,−m,−m), …); any rotation or permutation that still gives a regular tetrahedron would work",
+            "original": "(m,m,m), (m,-m,-m), (-m,m,-m), (-m,-m,m)"
+          },
+          "slot3": {
+            "description": "Choice of the three edge vectors whose determinant computes the cube’s volume; any set forming a basis of the lattice of cube edges suffices",
+            "original": "Q₂−Q₁, Q₃−Q₁, Q₄−Q₁"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

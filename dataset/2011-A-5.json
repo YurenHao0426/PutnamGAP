@@ -1,0 +1,186 @@
+{
+  "index": "2011-A-5",
+  "type": "ANA",
+  "tag": [
+    "ANA",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "continuously differentiable functions with the following properties:\n\\begin{itemize}\n\\item $F(u,u) = 0$ for every $u \\in \\RR$;\n\\item for every $x \\in \\RR$, $g(x) > 0$ and $x^2 g(x) \\leq 1$;\n\\item for every $(u,v) \\in \\RR^2$, the vector $\\nabla F(u,v)$ is either $\\mathbf{0}$ or parallel to the vector $\\langle g(u), -g(v) \\rangle$.\n\\end{itemize}\nProve that there exists a constant $C$ such that for every $n\\geq 2$ and any $x_1,\\dots,x_{n+1} \\in \\RR$, we have\n\\[\n\\min_{i \\neq j} |F(x_i,x_j)| \\leq \\frac{C}{n}.\n\\]",
+  "solution": "g(t)\\,dt$. By assumption, $G$ is a strictly increasing, thrice continuously\ndifferentiable function. It is also bounded: for $x>1$, we have\n\\[\n0 < G(x)-G(1) = \\int_1^x g(t)\\,dt \\leq \\int_1^x dt/t^2 = 1,\n\\]\nand similarly, for $x<-1$, we have $0 > G(x)-G(-1) \\geq -1$.\nIt follows that the image of $G$ is some open interval $(A,B)$\nand that $G^{-1}: (A,B) \\to \\RR$ is also thrice continuously differentiable.\n\nDefine $H: (A,B) \\times (A,B) \\to \\RR$ by $H(x,y) = F(G^{-1}(x), G^{-1}(y))$;\nit is twice continuously differentiable since $F$ and $G^{-1}$ are.\nBy our assumptions about $F$,\n\\begin{multline*}\n\\frac{\\partial H}{\\partial x} + \\frac{\\partial H}{\\partial y} =\n    \\frac{\\partial F}{\\partial x}(G^{-1}(x), G^{-1}(y))\n    \\cdot \\frac{1}{g(G^{-1}(x))}\\\\\n    + \\frac{\\partial F}{\\partial y}(G^{-1}(x), G^{-1}(y))\n    \\cdot \\frac{1}{g(G^{-1}(y))} = 0.\n\\end{multline*}\nTherefore $H$ is constant along any line parallel to the vector $(1,1)$,\nor equivalently, $H(x,y)$ depends only on $x-y$. We may thus write $H(x,y) =\nh(x-y)$ for some function $h$ on $(-(B-A), B-A)$, and we then have $F(x,y)\n= h(G(x) - G(y))$.  Since $F(u,u) = 0$, we have $h(0) = 0$. Also, $h$\nis twice continuously differentiable (since it can be written as $h(x)\n= H((A+B+x)/2,(A+B-x)/2)$), so $|h'|$ is bounded on the closed interval $[-(B-A)/2,\n(B-A)/2]$, say by $M$.\n\nGiven $x_1,\\dots,x_{n+1} \\in \\RR$ for some $n \\geq 2$, the numbers\n$G(x_1),\\dots,G(x_{n+1})$ all belong to $(A,B)$, so we can choose indices\n$i$ and $j$ so that $|G(x_i) - G(x_j)| \\leq (B-A)/n \\leq (B-A)/2$.  By the\nmean value theorem,\n\n\\[\n|F(x_i, x_j)| = |h(G(x_i) - G(x_j))| \\leq M \\frac{B-A}{n},\n\\]\nso the claim holds with $C = M(B-A)$.",
+  "vars": [
+    "u",
+    "v",
+    "x",
+    "y",
+    "t",
+    "n",
+    "i",
+    "j",
+    "x_1",
+    "x_n+1",
+    "x_i",
+    "x_j"
+  ],
+  "params": [
+    "F",
+    "g",
+    "G",
+    "H",
+    "h",
+    "A",
+    "B",
+    "C",
+    "M"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "u": "varfirst",
+        "v": "varsecond",
+        "x": "variablex",
+        "y": "variabley",
+        "t": "vartime",
+        "n": "countnum",
+        "i": "indexone",
+        "j": "indextwo",
+        "x_1": "entryone",
+        "x_n+1": "entrylast",
+        "x_i": "entryindexone",
+        "x_j": "entryindtwo",
+        "F": "funcmain",
+        "g": "funcposi",
+        "G": "funcintg",
+        "H": "funcconv",
+        "h": "funcsole",
+        "A": "leftbound",
+        "B": "rightbound",
+        "C": "constbig",
+        "M": "maxbound"
+      },
+      "question": "continuously differentiable functions with the following properties:\n\\begin{itemize}\n\\item $\\funcmain(\\varfirst,\\varfirst) = 0$ for every $\\varfirst \\in \\RR$;\n\\item for every $\\variablex \\in \\RR$, $\\funcposi(\\variablex) > 0$ and $\\variablex^{2}\\funcposi(\\variablex) \\leq 1$;\n\\item for every $(\\varfirst,\\varsecond) \\in \\RR^{2}$, the vector $\\nabla \\funcmain(\\varfirst,\\varsecond)$ is either $\\mathbf{0}$ or parallel to the vector $\\langle \\funcposi(\\varfirst), -\\funcposi(\\varsecond) \\rangle$.\n\\end{itemize}\nProve that there exists a constant $\\constbig$ such that for every $\\countnum\\geq 2$ and any $\\entryone,\\dots,\\entrylast \\in \\RR$, we have\n\\[\n\\min_{\\indexone \\neq \\indextwo} |\\funcmain(\\entryindexone,\\entryindtwo)| \\leq \\frac{\\constbig}{\\countnum}.\n\\]\n",
+      "solution": "funcposi(vartime)\\,d\\vartime$. By assumption, $\\funcintg$ is a strictly increasing, thrice continuously differentiable function. It is also bounded: for $\\variablex>1$, we have\n\\[\n0 < \\funcintg(\\variablex)-\\funcintg(1) = \\int_1^{\\variablex} \\funcposi(\\vartime)\\,d\\vartime \\leq \\int_1^{\\variablex} d\\vartime/\\vartime^{2} = 1,\n\\]\nand similarly, for $\\variablex<-1$, we have $0 > \\funcintg(\\variablex)-\\funcintg(-1) \\geq -1$.\nIt follows that the image of $\\funcintg$ is some open interval $(leftbound,rightbound)$\nand that $\\funcintg^{-1}: (leftbound,rightbound) \\to \\RR$ is also thrice continuously differentiable.\n\nDefine $\\funcconv: (leftbound,rightbound) \\times (leftbound,rightbound) \\to \\RR$ by $\\funcconv(\\variablex,\\variabley) = \\funcmain(\\funcintg^{-1}(\\variablex), \\funcintg^{-1}(\\variabley))$;\nit is twice continuously differentiable since $\\funcmain$ and $\\funcintg^{-1}$ are.\nBy our assumptions about $\\funcmain$,\n\\begin{multline*}\n\\frac{\\partial \\funcconv}{\\partial \\variablex} + \\frac{\\partial \\funcconv}{\\partial \\variabley} =\n    \\frac{\\partial \\funcmain}{\\partial \\variablex}(\\funcintg^{-1}(\\variablex), \\funcintg^{-1}(\\variabley))\n    \\cdot \\frac{1}{\\funcposi(\\funcintg^{-1}(\\variablex))}\\\\\n    + \\frac{\\partial \\funcmain}{\\partial \\variabley}(\\funcintg^{-1}(\\variablex), \\funcintg^{-1}(\\variabley))\n    \\cdot \\frac{1}{\\funcposi(\\funcintg^{-1}(\\variabley))} = 0.\n\\end{multline*}\nTherefore $\\funcconv$ is constant along any line parallel to the vector $(1,1)$,\nor equivalently, $\\funcconv(\\variablex,\\variabley)$ depends only on $\\variablex-\\variabley$. We may thus write $\\funcconv(\\variablex,\\variabley)=\n\\funcsole(\\variablex-\\variabley)$ for some function $\\funcsole$ on $(-(rightbound-leftbound), rightbound-leftbound)$, and we then have $\\funcmain(\\variablex,\\variabley)\n= \\funcsole(\\funcintg(\\variablex) - \\funcintg(\\variabley))$.  Since $\\funcmain(\\varfirst,\\varfirst) = 0$, we have $\\funcsole(0) = 0$. Also, $\\funcsole$\nis twice continuously differentiable (since it can be written as $\\funcsole(\\variablex)\n= \\funcconv((leftbound+rightbound+\\variablex)/2,(leftbound+rightbound-\\variablex)/2)$), so $|\\funcsole'|$ is bounded on the closed interval $[-(rightbound-leftbound)/2,\n(rightbound-leftbound)/2]$, say by $\\maxbound$.\n\nGiven $\\entryone,\\dots,\\entrylast \\in \\RR$ for some $\\countnum \\geq 2$, the numbers\n$\\funcintg(\\entryone),\\dots,\\funcintg(\\entrylast)$ all belong to $(leftbound,rightbound)$, so we can choose indices\n$\\indexone$ and $\\indextwo$ so that $|\\funcintg(\\entryindexone) - \\funcintg(\\entryindtwo)| \\leq (rightbound-leftbound)/\\countnum \\leq (rightbound-leftbound)/2$.  By the\nmean value theorem,\n\\[\n|\\funcmain(\\entryindexone, \\entryindtwo)| = |\\funcsole(\\funcintg(\\entryindexone) - \\funcintg(\\entryindtwo))| \\leq \\maxbound \\frac{rightbound-leftbound}{\\countnum},\n\\]\nso the claim holds with $\\constbig = \\maxbound(rightbound-leftbound)$.\n"
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "u": "sailboat",
+        "v": "crosswind",
+        "x": "firestone",
+        "y": "lavender",
+        "t": "pinecone",
+        "n": "goldcrest",
+        "i": "farmstead",
+        "j": "driftwood",
+        "x_1": "firestoneone",
+        "x_{n+1}": "firestonelast",
+        "x_i": "granitelimb",
+        "x_j": "marblearch",
+        "F": "moonlight",
+        "g": "buttercup",
+        "G": "riverstone",
+        "H": "sandcastle",
+        "h": "nightshade",
+        "A": "pumpkinseed",
+        "B": "dragonfly",
+        "C": "parchment",
+        "M": "blacksmith"
+      },
+      "question": "continuously differentiable functions with the following properties:\n\\begin{itemize}\n\\item $moonlight(sailboat,sailboat) = 0$ for every $sailboat \\in \\RR$;\n\\item for every $firestone \\in \\RR$, $buttercup(firestone) > 0$ and $firestone^2 buttercup(firestone) \\leq 1$;\n\\item for every $(sailboat,crosswind) \\in \\RR^2$, the vector $\\nabla moonlight(sailboat,crosswind)$ is either $\\mathbf{0}$ or parallel to the vector $\\langle buttercup(sailboat), -buttercup(crosswind) \\rangle$.\n\\end{itemize}\nProve that there exists a constant $parchment$ such that for every $goldcrest\\geq 2$ and any $firestoneone,\\dots,firestonelast \\in \\RR$, we have\n\\[\n\\min_{farmstead \\neq driftwood} |moonlight(granitelimb,marblearch)| \\leq \\frac{parchment}{goldcrest}.\n\\]",
+      "solution": "buttercup(pinecone)\\,dt$. By assumption, $riverstone$ is a strictly increasing, thrice continuously\ndifferentiable function. It is also bounded: for $firestone>1$, we have\n\\[\n0 < riverstone(firestone)-riverstone(1) = \\int_1^{firestone} buttercup(pinecone)\\,dt \\leq \\int_1^{firestone} dt/t^2 = 1,\n\\]\nand similarly, for $firestone<-1$, we have $0 > riverstone(firestone)-riverstone(-1) \\geq -1$.\nIt follows that the image of $riverstone$ is some open interval $(pumpkinseed,dragonfly)$\nand that $riverstone^{-1}: (pumpkinseed,dragonfly) \\to \\RR$ is also thrice continuously differentiable.\n\nDefine $sandcastle: (pumpkinseed,dragonfly) \\times (pumpkinseed,dragonfly) \\to \\RR$ by $sandcastle(firestone,lavender) = moonlight(riverstone^{-1}(firestone), riverstone^{-1}(lavender))$;\nit is twice continuously differentiable since $moonlight$ and $riverstone^{-1}$ are.\nBy our assumptions about $moonlight$,\n\\begin{multline*}\n\\frac{\\partial sandcastle}{\\partial firestone} + \\frac{\\partial sandcastle}{\\partial lavender} =\n    \\frac{\\partial moonlight}{\\partial firestone}(riverstone^{-1}(firestone), riverstone^{-1}(lavender))\n    \\cdot \\frac{1}{buttercup(riverstone^{-1}(firestone))}\\\\\n    + \\frac{\\partial moonlight}{\\partial lavender}(riverstone^{-1}(firestone), riverstone^{-1}(lavender))\n    \\cdot \\frac{1}{buttercup(riverstone^{-1}(lavender))} = 0.\n\\end{multline*}\nTherefore $sandcastle$ is constant along any line parallel to the vector $(1,1)$,\nor equivalently, $sandcastle(firestone,lavender)$ depends only on $firestone-lavender$. We may thus write $sandcastle(firestone,lavender) =\nnightshade(firestone-lavender)$ for some function $nightshade$ on $(-(dragonfly-pumpkinseed), dragonfly-pumpkinseed)$, and we then have $moonlight(firestone,lavender)\n= nightshade(riverstone(firestone) - riverstone(lavender))$.  Since $moonlight(sailboat,sailboat) = 0$, we have $nightshade(0) = 0$. Also, $nightshade$\nis twice continuously differentiable (since it can be written as $nightshade(firestone)\n= sandcastle((pumpkinseed+dragonfly+firestone)/2,(pumpkinseed+dragonfly-firestone)/2)$), so $|nightshade'|$ is bounded on the closed interval $[-(dragonfly-pumpkinseed)/2,\n(dragonfly-pumpkinseed)/2]$, say by $blacksmith$.\n\nGiven $firestoneone,\\dots,firestonelast \\in \\RR$ for some $goldcrest \\geq 2$, the numbers\n$riverstone(firestoneone),\\dots,riverstone(firestonelast)$ all belong to $(pumpkinseed,dragonfly)$, so we can choose indices\n$farmstead$ and $driftwood$ so that $|riverstone(granitelimb) - riverstone(marblearch)| \\leq (dragonfly-pumpkinseed)/goldcrest \\leq (dragonfly-pumpkinseed)/2$.  By the\nmean value theorem,\n\n\\[\n|moonlight(granitelimb, marblearch)| = |nightshade(riverstone(granitelimb) - riverstone(marblearch))| \\leq blacksmith \\frac{dragonfly-pumpkinseed}{goldcrest},\n\\]\nso the claim holds with $parchment = blacksmith(dragonfly-pumpkinseed)$.}   \n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "u": "downgoing",
+        "v": "stillness",
+        "x": "knownvalue",
+        "y": "horizontal",
+        "t": "spacezone",
+        "n": "fractional",
+        "i": "realvalue",
+        "j": "constant",
+        "x_1": "knownone",
+        "x_n+1": "knownnplusone",
+        "x_i": "knownrealvalue",
+        "x_j": "knownconstant",
+        "F": "dysfunction",
+        "g": "impediment",
+        "G": "decreaser",
+        "H": "depressed",
+        "h": "flattening",
+        "A": "overhead",
+        "B": "underfoot",
+        "C": "unbounded",
+        "M": "miniscule"
+      },
+      "question": "continuously differentiable functions with the following properties:\n\\begin{itemize}\n\\item $dysfunction(downgoing,downgoing) = 0$ for every $downgoing \\in \\RR$;\n\\item for every $knownvalue \\in \\RR$, $impediment(knownvalue) > 0$ and $knownvalue^2 impediment(knownvalue) \\leq 1$;\n\\item for every $(downgoing,stillness) \\in \\RR^2$, the vector $\\nabla dysfunction(downgoing,stillness)$ is either $\\mathbf{0}$ or parallel to the vector $\\langle impediment(downgoing), -impediment(stillness) \\rangle$.\n\\end{itemize}\nProve that there exists a constant $unbounded$ such that for every $fractional\\geq 2$ and any $knownone,\\dots,knownnplusone \\in \\RR$, we have\n\\[\n\\min_{realvalue \\neq constant} |dysfunction(knownrealvalue,knownconstant)| \\leq \\frac{unbounded}{fractional}.\n\\]\n",
+      "solution": ""
+    },
+    "garbled_string": {
+      "map": {
+        "u": "fkdjshla",
+        "v": "qplmznor",
+        "x": "zxbvclpa",
+        "y": "mhgtrweq",
+        "t": "skdjfhgp",
+        "n": "vbnmlsac",
+        "i": "rtywueop",
+        "j": "hgfdxsvc",
+        "x_1": "ksjdhfla",
+        "x_n+1": "pqlzmvna",
+        "x_i": "mczxopqu",
+        "x_j": "lkaweiru",
+        "F": "oczxvyre",
+        "g": "mnsdjkan",
+        "G": "rlekzpwd",
+        "H": "nkqwejlr",
+        "h": "dmsorvpf",
+        "A": "woxucvhm",
+        "B": "yalripqn",
+        "C": "hxvbnclo",
+        "M": "qbweirus"
+      },
+      "question": "continuously differentiable functions with the following properties:\n\\begin{itemize}\n\\item $oczxvyre(fkdjshla,fkdjshla) = 0$ for every $fkdjshla \\in \\RR$;\n\\item for every $zxbvclpa \\in \\RR$, $mnsdjkan(zxbvclpa) > 0$ and $zxbvclpa^2 mnsdjkan(zxbvclpa) \\leq 1$;\n\\item for every $(fkdjshla,qplmznor) \\in \\RR^2$, the vector $\\nabla oczxvyre(fkdjshla,qplmznor)$ is either $\\mathbf{0}$ or parallel to the vector $\\langle mnsdjkan(fkdjshla), -mnsdjkan(qplmznor) \\rangle$.\n\\end{itemize}\nProve that there exists a constant $hxvbnclo$ such that for every $vbnmlsac\\geq 2$ and any $ksjdhfla,\\dots,pqlzmvna \\in \\RR$, we have\n\\[\n\\min_{rtywueop \\neq hgfdxsvc} |oczxvyre(mczxopqu,lkaweiru)| \\leq \\frac{hxvbnclo}{vbnmlsac}.\n\\]",
+      "solution": "mnsdjkan(skdjfhgp)\\,dskdjfhgp$. By assumption, $rlekzpwd$ is a strictly increasing, thrice continuously\ndifferentiable function. It is also bounded: for $zxbvclpa>1$, we have\n\\[\n0 < rlekzpwd(zxbvclpa)-rlekzpwd(1) = \\int_1^{zxbvclpa} mnsdjkan(skdjfhgp)\\,dskdjfhgp \\leq \\int_1^{zxbvclpa} dskdjfhgp/skdjfhgp^2 = 1,\n\\]\nand similarly, for $zxbvclpa<-1$, we have $0 > rlekzpwd(zxbvclpa)-rlekzpwd(-1) \\geq -1$.\nIt follows that the image of $rlekzpwd$ is some open interval $(woxucvhm,yalripqn)$\nand that $rlekzpwd^{-1}: (woxucvhm,yalripqn) \\to \\RR$ is also thrice continuously differentiable.\n\nDefine $nkqwejlr: (woxucvhm,yalripqn) \\times (woxucvhm,yalripqn) \\to \\RR$ by $nkqwejlr(zxbvclpa,mhgtrweq) = oczxvyre(rlekzpwd^{-1}(zxbvclpa), rlekzpwd^{-1}(mhgtrweq))$;\nit is twice continuously differentiable since $oczxvyre$ and $rlekzpwd^{-1}$ are.\nBy our assumptions about $oczxvyre$,\n\\begin{multline*}\n\\frac{\\partial nkqwejlr}{\\partial zxbvclpa} + \\frac{\\partial nkqwejlr}{\\partial mhgtrweq} =\n    \\frac{\\partial oczxvyre}{\\partial zxbvclpa}(rlekzpwd^{-1}(zxbvclpa), rlekzpwd^{-1}(mhgtrweq))\n    \\cdot \\frac{1}{mnsdjkan(rlekzpwd^{-1}(zxbvclpa))}\\\\\n    + \\frac{\\partial oczxvyre}{\\partial mhgtrweq}(rlekzpwd^{-1}(zxbvclpa), rlekzpwd^{-1}(mhgtrweq))\n    \\cdot \\frac{1}{mnsdjkan(rlekzpwd^{-1}(mhgtrweq))} = 0.\n\\end{multline*}\nTherefore $nkqwejlr$ is constant along any line parallel to the vector $(1,1)$,\nor equivalently, $nkqwejlr(zxbvclpa,mhgtrweq)$ depends only on $zxbvclpa-mhgtrweq$. We may thus write $nkqwejlr(zxbvclpa,mhgtrweq) =\ndmsorvpf(zxbvclpa-mhgtrweq)$ for some function $dmsorvpf$ on $(-(yalripqn-woxucvhm), yalripqn-woxucvhm)$, and we then have $oczxvyre(zxbvclpa,mhgtrweq)\n= dmsorvpf(rlekzpwd(zxbvclpa) - rlekzpwd(mhgtrweq))$.  Since $oczxvyre(fkdjshla,fkdjshla) = 0$, we have $dmsorvpf(0) = 0$. Also, $dmsorvpf$\nis twice continuously differentiable (since it can be written as $dmsorvpf(zxbvclpa)\n= nkqwejlr((woxucvhm+yalripqn+zxbvclpa)/2,(woxucvhm+yalripqn-zxbvclpa)/2)$), so $|dmsorvpf'|$ is bounded on the closed interval $[-(yalripqn-woxucvhm)/2,\n(yalripqn-woxucvhm)/2]$, say by $qbweirus$.\n\nGiven $ksjdhfla,\\dots,pqlzmvna \\in \\RR$ for some $vbnmlsac \\geq 2$, the numbers\n$rlekzpwd(ksjdhfla),\\dots,rlekzpwd(pqlzmvna)$ all belong to $(woxucvhm,yalripqn)$, so we can choose indices\n$rtywueop$ and $hgfdxsvc$ so that $|rlekzpwd(mczxopqu) - rlekzpwd(lkaweiru)| \\leq (yalripqn-woxucvhm)/vbnmlsac \\leq (yalripqn-woxucvhm)/2$.  By the\nmean value theorem,\n\n\\[\n|oczxvyre(mczxopqu, lkaweiru)| = |dmsorvpf(rlekzpwd(mczxopqu) - rlekzpwd(lkaweiru))| \\leq qbweirus \\frac{yalripqn-woxucvhm}{vbnmlsac},\n\\]\nso the claim holds with $hxvbnclo = qbweirus(yalripqn-woxucvhm)$.}",
+      "confidence": 0.18
+    },
+    "kernel_variant": {
+      "question": "Let \nF: \\mathbb R^{2}\\longrightarrow\\mathbb R \\quad\\text{and}\\quad g: \\mathbb R\\longrightarrow(0,\\infty)\nbe four-times continuously differentiable functions such that\n\na) F(u,u)=0 for every u\\in\\mathbb R;\n\nb) |x|^{3}\\,g(x)\\le 8\\quad\\text{for every }x\\in\\mathbb R;\n\nc) for every (u,v)\\in\\mathbb R^{2} the gradient \\nabla F(u,v) is either the zero-vector or parallel to the vector \\langle g(u),-g(v)\\rangle.\n\nProve that there exists a universal constant C>0 (depending only on F and g, but independent of n and of the points x_{k}) such that for every integer n\\ge 2 and for any real numbers x_{1},\\dots ,x_{n+1} one can find indices i\\ne j with\n\n|F(x_i,x_j)|\\le \\dfrac{C}{n}.",
+      "solution": "Step 0.  A monotone primitive.\n\nBecause g(x)>0 for every x and g\\in C^{4}(\\mathbb R), the function\nG(x):=\\displaystyle\\int_{0}^{x}g(t)\\,dt\\;(x\\in\\mathbb R)\nis a strictly increasing C^{4}-diffeomorphism of \\mathbb R onto an open interval (A,B).  We must show that B-A<\\infty.\n\nStep 1.  Finite length of G(\\mathbb R).\n\nFor |x|\\ge 1 the assumption |x|^{3}g(x)\\le 8 gives g(x)\\le 8/|x|^{3}.  Hence for x\\ge 1\n\n0<G(x)-G(1)=\\int_{1}^{x}g(t)\\,dt\\le\\int_{1}^{x}\\frac{8}{t^{3}}\\,dt=4\\bigl(1-1/x^{2}\\bigr)\\le 4.\n\nLetting x\\to \\infty we obtain G(\\infty):=\\lim_{x\\to\\infty}G(x)\\le G(1)+4.\n\nFor x\\le-1 we similarly estimate\n\n0<G(-1)-G(x)=\\int_{x}^{-1}g(t)\\,dt\\le\\int_{x}^{-1}\\frac{8}{|t|^{3}}\\,dt=4\\bigl(1-1/|x|^{2}\\bigr)\\le 4,\nso G(-\\infty):=\\lim_{x\\to-\\infty}G(x)\\ge G(-1)-4.\n\nWith M_{0}:=\\int_{-1}^{1}g(t)\\,dt we conclude\n\nB-A=G(\\infty)-G(-\\infty)\\le 4+M_{0}+4<\\infty.\n\nStep 2.  Straightening the gradient condition.\n\nDefine\nH(x,y)=F\\bigl(G^{-1}(x),G^{-1}(y)\\bigr),\\qquad(x,y)\\in(A,B)^{2}.\n\nWrite u=G^{-1}(x), v=G^{-1}(y).  Using the chain rule,\n\nH_{x}(x,y)=\\frac{F_{u}(u,v)}{g(u)},\\quad H_{y}(x,y)=\\frac{F_{v}(u,v)}{g(v)}.\n\nProperty (c) says that for each (u,v) there is \\mu(u,v) with\nF_{u}(u,v)=\\mu g(u),\\;F_{v}(u,v)=-\\mu g(v).  Consequently\n\nH_{x}+H_{y}=\\mu-\\mu=0.\n\nThus H is constant on every line parallel to (1,1), so there exists a single-variable function h such that\n\nH(x,y)=h(x-y),\\qquad(x,y)\\in(A,B)^{2}.\n\nUndoing the change of variables we have\n\nF(u,v)=h\\bigl(G(u)-G(v)\\bigr).             (1)\n\nBecause F(u,u)=0 for all u, formula (1) yields h(0)=0.\n\nStep 3.  A Lipschitz bound for h.\n\nThe function h is C^{3} on J:=\\bigl(-(B-A),B-A\\bigr).  On the compact interval\nI:=\\bigl[-(B-A)/2,(B-A)/2\\bigr] its derivative is bounded; put\nM:=\\max_{s\\in I}|h'(s)|<\\infty.  Then for every s\\in I, the mean-value theorem gives\n\n|h(s)|\\le M|s|.                        (2)\n\nStep 4.  Selecting a close pair among G(x_{1}),\\dots ,G(x_{n+1}).\n\nThe n+1 numbers G(x_{k}) all lie in (A,B), an interval of length B-A.  Divide (A,B) into n sub-intervals of equal length (B-A)/n.  By the pigeon-hole principle two of the points, say G(x_{i}) and G(x_{j}) with i\\neq j, fall in the same sub-interval, whence\n\n|G(x_{i})-G(x_{j})|\\le\\frac{B-A}{n}\\le\\frac{B-A}{2}\\quad(n\\ge 2).\n\nTherefore their difference s:=G(x_{i})-G(x_{j}) lies in I.\n\nStep 5.  The desired estimate.\n\nUsing (1), (2) and the preceding inequality we deduce\n\n|F(x_{i},x_{j})|=|h(s)|\\le M|s|\\le M\\frac{B-A}{n}.\n\nSetting C:=M(B-A) (depending only on F and g) we obtain the claimed bound\n\n|F(x_{i},x_{j})|\\le \\dfrac{C}{n}.\n\nSince such i\\neq j exist for every choice of x_{1},\\dots ,x_{n+1} and every n\\ge 2, the proof is complete.",
+      "_meta": {
+        "core_steps": [
+          "Build G(x)=∫ g so that G is a bounded, strictly increasing C¹ bijection ℝ→(A,B).",
+          "Set H(x,y)=F(G⁻¹(x),G⁻¹(y)); the parallel-gradient rule gives ∂H/∂x+∂H/∂y=0, hence H(x,y)=h(x−y) and F(x,y)=h(G(x)−G(y)).",
+          "Use smoothness to bound |h′| by some M on [−(B−A)/2,(B−A)/2].",
+          "By the pigeonhole principle pick i≠j with |G(x_i)−G(x_j)|≤(B−A)/n.",
+          "Apply the mean-value theorem to get |F(x_i,x_j)|≤M(B−A)/n, giving C=M(B−A)."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Numerical constant in the decay condition on g",
+            "original": "1 in x^2 g(x) ≤ 1"
+          },
+          "slot2": {
+            "description": "Decay exponent guaranteeing ∫ g converges",
+            "original": "2 in x^2 g(x) ≤ 1"
+          },
+          "slot3": {
+            "description": "Degree of differentiability demanded (\"thrice\" can be replaced by any order ≥2)",
+            "original": "thrice continuously differentiable"
+          },
+          "slot4": {
+            "description": "Choice of reference points ±1 in bounding G; any fixed ±R with R>0 works",
+            "original": "1 and −1 in the integrals from 1 and −1"
+          },
+          "slot5": {
+            "description": "Lower index in the quantified statement about n",
+            "original": "n ≥ 2"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

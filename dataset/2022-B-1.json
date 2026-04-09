@@ -1,0 +1,178 @@
+{
+  "index": "2022-B-1",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Suppose that $P(x) = a_1 x + a_2 x^2 + \\cdots + a_n x^n$ is a polynomial with integer coefficients, with $a_1$ odd. Suppose that $e^{P(x)} = b_0 + b_1 x + b_2 x^2 + \\cdots$ for all $x$. Prove that $b_k$ is nonzero for all $k \\geq 0$.",
+  "solution": "We prove that $b_k k!$ is an odd integer for all $k \\geq 0$.\n\n\\textbf{First solution.}\nSince $e^{P(x)} = \\sum_{n=0}^\\infty \\frac{(P(x))^n}{n!}$, the number $k!\\,b_k$ is the coefficient of $x^k$ in\n\\[\n(P(x))^k + \\sum_{n=0}^{k-1} \\frac{k!}{n!}(P(x))^n.\n\\]\nIn particular, $b_0=1$ and $b_1=a_1$ are both odd. \n\nNow suppose $k \\geq 2$; we want to show that $b_k$ is odd. The coefficient of $x^k$ in $(P(x))^k$ is $a_1^k$. It suffices to show that the coefficient of $x^k$ in $\\frac{k!}{n!}(P(x))^n$ is an even integer for any $n<k$. For $k$ even or $n \\leq k-2$, this follows immediately from the fact that $\\frac{k!}{n!}$ is an even integer. For $k$ odd and $n=k-1$, we have\n\\begin{align*}\n\\frac{k!}{(k-1)!}(P(x))^{k-1} &= k(a_1x+a_2x^2+\\cdots)^{k-1} \\\\\n&= k(a_1^{k-1}x^{k-1}+(k-1)a_1^{k-2}a_2x^k+\\cdots)\n\\end{align*}\nand the coefficient of $x^k$ is $k(k-1)a_1^{k-2}a_2$, which is again an even integer.\n\n\\noindent\n\\textbf{Second solution.}\nLet $G$ be the set of power series of the form $\\sum_{n=0}^\\infty c_n \\frac{x_n}{n!}$ with $c_0 = 1, c_n \\in \\mathbb{Z}$; then $G$ forms a group under formal series multiplication because\n\\[\n\\left( \\sum_{n=0}^\\infty c_n \\frac{x^n}{n!} \\right)\n\\left( \\sum_{n=0}^\\infty d_n \\frac{x^n}{n!} \\right)\n= \\sum_{n=0}^\\infty e_n \\frac{x^n}{n!} \n\\]\nwith\n\\[\ne_n = \\sum_{m=0}^n \\binom{n}{m} c_m d_{n-m}.\n\\]\nBy the same calculation, the subset $H$ of series with $c_n \\in 2\\mathbb{Z}$ for all $n \\geq 1$ is a subgroup of $G$.\n\nWe have $e^{2x} \\in H$ because $\\frac{2^n}{n!} \\in 2\\mathbb{Z}$ for all $n \\geq 1$: the exponent of 2 in the prime factorization of $n!$ is\n\\[\n\\sum_{i=1}^\\infty \\left\\lfloor \\frac{n}{2^i} \\right\\rfloor\n< \\sum_{i=1}^\\infty \\frac{n}{2^i} = n.\n\\]\nFor any integer $k \\geq 2$, we have $e^{x^k} \\in H$ because $\\frac{(nk)!}{n!} \\in 2\\mathbb{Z}$ for all $n \\geq 1$: this is clear if $k=2,n=1$, and in all other cases the ratio is divisible by $(n+1)(n+2)$. \n\nWe deduce that $e^{P(x)-x} \\in H$.\nBy writing $e^{P(x)}$ as $e^x = \\sum_{n=0}^\\infty \\frac{x^n}{n!}$\ntimes an element of $H$, we deduce that $k! b_k$ is odd for all $k \\geq 0$.\n\n\\noindent\n\\textbf{Third solution.}\n(by David Feldman)\nWe interpret $e^{P(x)}$ using the exponential formula for generating functions.\nFor each $j$, choose a set $S_j$ consisting of $|a_j|$ colors.\nThen $b_k$ is a weighted count over set partitions of $\\{1,\\dots,k\\}$, with each part of size $j$ assigned a color in $S_j$, and the weight being $(-1)^i$ where $i$ is the number of parts of any size $j$ for which $a_j < 0$.\n\nSince we are only looking for the parity of $b_k$, we may dispense with the signs; that is, we may assume $a_j \\geq 0$ for all $j$\nand forget about the weights.\n\nChoose an involution on each $S_j$ with at most one fixed point; this induces an involution on the partitions, so to find the parity of $b_k$ we may instead count fixed points of the involution. That is, we may assume that $a_j \\in \\{0,1\\}$.\n\nLet $T_k$ be the set of set partitions in question with the all-singletons partition removed; it now suffices to exhibit a fixed-point-free involution of $T_k$. To wit, for each partition in $T_k$, there is a smallest index $i \\in \\{1,\\dots,k-1\\}$ for which $i$ and $i+1$ are not both singletons; we define an involution by swapping the positions of $i$ and $i+1$.",
+  "vars": [
+    "x",
+    "k",
+    "n",
+    "i",
+    "m",
+    "j",
+    "P",
+    "G",
+    "H",
+    "S_j",
+    "T_k"
+  ],
+  "params": [
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_j",
+    "b_0",
+    "b_1",
+    "b_2",
+    "b_k",
+    "c_n",
+    "d_n",
+    "e_n"
+  ],
+  "sci_consts": [
+    "e"
+  ],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "x": "indetvar",
+        "k": "indexk",
+        "n": "indexn",
+        "i": "indexi",
+        "m": "indexm",
+        "j": "indexj",
+        "P": "polynomial",
+        "G": "seriesgroup",
+        "H": "subgroup",
+        "S_j": "colorsetj",
+        "T_k": "partitionk",
+        "a_1": "coeffone",
+        "a_2": "coefftwo",
+        "a_n": "coeffgen",
+        "a_j": "coeffj",
+        "b_0": "expcoefzero",
+        "b_1": "expcoefone",
+        "b_2": "expcoeftwo",
+        "b_k": "expcoefk",
+        "c_n": "seriescn",
+        "d_n": "seriesdn",
+        "e_n": "seriesen"
+      },
+      "question": "Suppose that $polynomial(indetvar) = coeffone\\, indetvar + coefftwo\\, indetvar^{2} + \\cdots + coeffgen\\, indetvar^{indexn}$ is a polynomial with integer coefficients, with $coeffone$ odd. Suppose that $e^{polynomial(indetvar)} = expcoefzero + expcoefone\\, indetvar + expcoeftwo\\, indetvar^{2} + \\cdots$ for all $indetvar$. Prove that $expcoefk$ is nonzero for all $indexk \\geq 0$.",
+      "solution": "We prove that $expcoefk\\, indexk!$ is an odd integer for all $indexk \\geq 0$.\n\n\\textbf{First solution.}\nSince $e^{polynomial(indetvar)} = \\sum_{indexn=0}^\\infty \\frac{(polynomial(indetvar))^{indexn}}{indexn!}$, the number $indexk!\\, expcoefk$ is the coefficient of $indetvar^{indexk}$ in\n\\[\n(polynomial(indetvar))^{indexk} + \\sum_{indexn=0}^{indexk-1} \\frac{indexk!}{indexn!}(polynomial(indetvar))^{indexn}.\n\\]\nIn particular, $expcoefzero = 1$ and $expcoefone = coeffone$ are both odd. \n\nNow suppose $indexk \\geq 2$; we want to show that $expcoefk$ is odd. The coefficient of $indetvar^{indexk}$ in $(polynomial(indetvar))^{indexk}$ is $coeffone^{indexk}$. It suffices to show that the coefficient of $indetvar^{indexk}$ in $\\frac{indexk!}{indexn!}(polynomial(indetvar))^{indexn}$ is an even integer for any $indexn<indexk$. For $indexk$ even or $indexn \\leq indexk-2$, this follows immediately from the fact that $\\frac{indexk!}{indexn!}$ is an even integer. For $indexk$ odd and $indexn=indexk-1$, we have\n\\begin{align*}\n\\frac{indexk!}{(indexk-1)!}(polynomial(indetvar))^{indexk-1} &= indexk\\,(coeffone\\, indetvar + coefftwo\\, indetvar^{2}+\\cdots)^{indexk-1} \\\\\n&= indexk\\,(coeffone^{indexk-1}indetvar^{indexk-1}+(indexk-1)coeffone^{indexk-2}coefftwo\\, indetvar^{indexk}+\\cdots)\n\\end{align*}\nand the coefficient of $indetvar^{indexk}$ is $indexk(indexk-1)coeffone^{indexk-2}coefftwo$, which is again an even integer.\n\n\\noindent\n\\textbf{Second solution.}\nLet $seriesgroup$ be the set of power series of the form $\\sum_{indexn=0}^\\infty seriescn \\frac{indetvar_{indexn}}{indexn!}$ with $c_0 = 1,\\, seriescn \\in \\mathbb{Z}$; then $seriesgroup$ forms a group under formal series multiplication because\n\\[\n\\left( \\sum_{indexn=0}^\\infty seriescn \\frac{indetvar^{indexn}}{indexn!} \\right)\n\\left( \\sum_{indexn=0}^\\infty seriesdn \\frac{indetvar^{indexn}}{indexn!} \\right)\n= \\sum_{indexn=0}^\\infty seriesen \\frac{indetvar^{indexn}}{indexn!} \n\\]\nwith\n\\[\nseriesen = \\sum_{indexm=0}^{indexn} \\binom{indexn}{indexm} c_{indexm}\\, d_{indexn-indexm}.\n\\]\nBy the same calculation, the subset $subgroup$ of series with $seriescn \\in 2\\mathbb{Z}$ for all $indexn \\geq 1$ is a subgroup of $seriesgroup$.\n\nWe have $e^{2\\,indetvar} \\in subgroup$ because $\\frac{2^{indexn}}{indexn!} \\in 2\\mathbb{Z}$ for all $indexn \\geq 1$: the exponent of $2$ in the prime factorization of $indexn!$ is\n\\[\n\\sum_{indexi=1}^\\infty \\left\\lfloor \\frac{indexn}{2^{indexi}} \\right\\rfloor\n< \\sum_{indexi=1}^\\infty \\frac{indexn}{2^{indexi}} = indexn.\n\\]\nFor any integer $indexk \\geq 2$, we have $e^{indetvar^{indexk}} \\in subgroup$ because $\\frac{(indexn\\, indexk)!}{indexn!} \\in 2\\mathbb{Z}$ for all $indexn \\geq 1$: this is clear if $indexk=2,\\, indexn=1$, and in all other cases the ratio is divisible by $(indexn+1)(indexn+2)$. \n\nWe deduce that $e^{polynomial(indetvar)-indetvar} \\in subgroup$.\nBy writing $e^{polynomial(indetvar)}$ as $e^{indetvar} = \\sum_{indexn=0}^\\infty \\frac{indetvar^{indexn}}{indexn!}$\ntimes an element of $subgroup$, we deduce that $indexk!\\, expcoefk$ is odd for all $indexk \\geq 0$.\n\n\\noindent\n\\textbf{Third solution.}\n(by David Feldman)  \nWe interpret $e^{polynomial(indetvar)}$ using the exponential formula for generating functions.\nFor each $indexj$, choose a set $colorsetj$ consisting of $|\\!coeffj\\!|$ colors.\nThen $expcoefk$ is a weighted count over set partitions of $\\{1,\\dots,indexk\\}$, with each part of size $indexj$ assigned a color in $colorsetj$, and the weight being $(-1)^{indexi}$ where $indexi$ is the number of parts of any size $indexj$ for which $coeffj < 0$.\n\nSince we are only looking for the parity of $expcoefk$, we may dispense with the signs; that is, we may assume $coeffj \\geq 0$ for all $indexj$\nand forget about the weights.\n\nChoose an involution on each $colorsetj$ with at most one fixed point; this induces an involution on the partitions, so to find the parity of $expcoefk$ we may instead count fixed points of the involution. That is, we may assume that $coeffj \\in \\{0,1\\}$.\n\nLet $partitionk$ be the set of set partitions in question with the all-singletons partition removed; it now suffices to exhibit a fixed-point-free involution of $partitionk$. To wit, for each partition in $partitionk$, there is a smallest index $indexi \\in \\{1,\\dots,indexk-1\\}$ for which $indexi$ and $indexi+1$ are not both singletons; we define an involution by swapping the positions of $indexi$ and $indexi+1$."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "x": "lanternfish",
+        "k": "hucklebee",
+        "n": "tamarillo",
+        "i": "waterlily",
+        "m": "thunderous",
+        "j": "plainsong",
+        "P": "nightshade",
+        "G": "dragonfly",
+        "H": "moonrunner",
+        "S_j": "stargazer",
+        "T_k": "windflame",
+        "a_1": "raincloud",
+        "a_2": "sandalwood",
+        "a_n": "pomegranate",
+        "a_j": "crocodile",
+        "b_0": "sailcloth",
+        "b_1": "quartzite",
+        "b_2": "blueberry",
+        "b_k": "foxgloves",
+        "c_n": "butterscotch",
+        "d_n": "honeycomb",
+        "e_n": "lighthorse"
+      },
+      "question": "Suppose that $nightshade(lanternfish) = raincloud\\, lanternfish + sandalwood\\, lanternfish^2 + \\cdots + pomegranate\\, lanternfish^{tamarillo}$ is a polynomial with integer coefficients, with $raincloud$ odd. Suppose that $e^{nightshade(lanternfish)} = sailcloth + quartzite\\, lanternfish + blueberry\\, lanternfish^2 + \\cdots$ for all $lanternfish$. Prove that $foxgloves$ is nonzero for all $hucklebee \\geq 0$.",
+      "solution": "We prove that $foxgloves\\,hucklebee!$ is an odd integer for all $hucklebee \\geq 0$.\n\n\\textbf{First solution.}\nSince $e^{nightshade(lanternfish)} = \\sum_{tamarillo=0}^\\infty \\frac{(nightshade(lanternfish))^{tamarillo}}{tamarillo!}$, the number $hucklebee!\\,foxgloves$ is the coefficient of $lanternfish^{hucklebee}$ in\n\\[\n(nightshade(lanternfish))^{hucklebee} + \\sum_{tamarillo=0}^{hucklebee-1} \\frac{hucklebee!}{tamarillo!}(nightshade(lanternfish))^{tamarillo}.\n\\]\nIn particular, $sailcloth=1$ and $quartzite=raincloud$ are both odd.\n\nNow suppose $hucklebee \\geq 2$; we want to show that $foxgloves$ is odd. The coefficient of $lanternfish^{hucklebee}$ in $(nightshade(lanternfish))^{hucklebee}$ is $raincloud^{hucklebee}$. It suffices to show that the coefficient of $lanternfish^{hucklebee}$ in $\\frac{hucklebee!}{tamarillo!}(nightshade(lanternfish))^{tamarillo}$ is an even integer for any $tamarillo<hucklebee$. For $hucklebee$ even or $tamarillo \\leq hucklebee-2$, this follows immediately from the fact that $\\frac{hucklebee!}{tamarillo!}$ is an even integer. For $hucklebee$ odd and $tamarillo=hucklebee-1$, we have\n\\begin{align*}\n\\frac{hucklebee!}{(hucklebee-1)!}(nightshade(lanternfish))^{hucklebee-1}\n&= hucklebee\\,(raincloud\\,lanternfish+sandalwood\\,lanternfish^{2}+\\cdots)^{hucklebee-1} \\\\\n&= hucklebee\\bigl(raincloud^{hucklebee-1}lanternfish^{hucklebee-1}+(hucklebee-1)raincloud^{hucklebee-2}sandalwood\\,lanternfish^{hucklebee}+\\cdots\\bigr)\n\\end{align*}\nand the coefficient of $lanternfish^{hucklebee}$ is $hucklebee(hucklebee-1)raincloud^{hucklebee-2}sandalwood$, which is again an even integer.\n\n\\textbf{Second solution.}\nLet $dragonfly$ be the set of power series of the form $\\sum_{tamarillo=0}^{\\infty} butterscotch_{tamarillo}\\,\\frac{lanternfish^{tamarillo}}{tamarillo!}$ with $butterscotch_0=1,\\;butterscotch_{tamarillo}\\in\\mathbb{Z}$; then $dragonfly$ forms a group under formal series multiplication because\n\\[\n\\left(\\sum_{tamarillo=0}^{\\infty} butterscotch_{tamarillo}\\,\\frac{lanternfish^{tamarillo}}{tamarillo!}\\right)\n\\left(\\sum_{tamarillo=0}^{\\infty} honeycomb_{tamarillo}\\,\\frac{lanternfish^{tamarillo}}{tamarillo!}\\right)\n=\\sum_{tamarillo=0}^{\\infty} lighthorse_{tamarillo}\\,\\frac{lanternfish^{tamarillo}}{tamarillo!}\n\\]\nwith\n\\[\nlighthorse_{tamarillo}=\\sum_{thunderous=0}^{tamarillo}\\binom{tamarillo}{thunderous}butterscotch_{thunderous}honeycomb_{tamarillo-thunderous}.\n\\]\nBy the same calculation, the subset $moonrunner$ of series with $butterscotch_{tamarillo}\\in2\\mathbb{Z}$ for all $tamarillo\\ge1$ is a subgroup of $dragonfly$.\n\nWe have $e^{2\\,lanternfish}\\in moonrunner$ because $\\frac{2^{tamarillo}}{tamarillo!}\\in2\\mathbb{Z}$ for all $tamarillo\\ge1$: the exponent of~2 in the prime factorization of $tamarillo!$ is\n\\[\n\\sum_{plainsong=1}^{\\infty}\\Bigl\\lfloor\\frac{tamarillo}{2^{plainsong}}\\Bigr\\rfloor<\\sum_{plainsong=1}^{\\infty}\\frac{tamarillo}{2^{plainsong}}=tamarillo.\n\\]\nFor any integer $hucklebee\\ge2$, we have $e^{lanternfish^{hucklebee}}\\in moonrunner$ because $\\frac{(tamarillo hucklebee)!}{tamarillo!}\\in2\\mathbb{Z}$ for all $tamarillo\\ge1$: this is clear if $hucklebee=2,\\;tamarillo=1$, and in all other cases the ratio is divisible by $(tamarillo+1)(tamarillo+2)$.\n\nHence $e^{nightshade(lanternfish)-lanternfish}\\in moonrunner$. Writing $e^{nightshade(lanternfish)}$ as $e^{lanternfish}=\\sum_{tamarillo=0}^{\\infty}\\frac{lanternfish^{tamarillo}}{tamarillo!}$ times an element of $moonrunner$, we deduce that $hucklebee!\\,foxgloves$ is odd for all $hucklebee\\ge0$.\n\n\\textbf{Third solution.}\\ (David Feldman)\nInterpret $e^{nightshade(lanternfish)}$ via the exponential formula for generating functions. For each $plainsong$, choose a set $stargazer_{plainsong}$ consisting of $|crocodile|$ colors. Then $foxgloves$ is a weighted count over set partitions of $\\{1,\\dots,hucklebee\\}$, with each part of size $plainsong$ assigned a color in $stargazer_{plainsong}$, and the weight being $(-1)^{waterlily}$ where $waterlily$ is the number of parts of any size $plainsong$ for which $crocodile<0$.\n\nFor parity, we may ignore the signs; that is, assume $crocodile\\ge0$ for all $plainsong$ and forget the weights. Choose an involution on each $stargazer_{plainsong}$ with at most one fixed point; this induces an involution on the partitions, so to determine the parity of $foxgloves$ we only need to count the fixed points. Hence we may even assume $crocodile\\in\\{0,1\\}$.\n\nLet $windflame_{hucklebee}$ be the set of such partitions with the all-singletons partition removed; it now suffices to exhibit a fixed-point-free involution of $windflame_{hucklebee}$. For each partition in $windflame_{hucklebee}$ there is a smallest index $waterlily\\in\\{1,\\dots,hucklebee-1\\}$ for which $waterlily$ and $waterlily+1$ are not both singletons; we define an involution by swapping the positions of $waterlily$ and $waterlily+1$.\n\nThis completes the proof."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "x": "fixedscalar",
+        "k": "endlessindex",
+        "n": "minimalcount",
+        "m": "solitarycount",
+        "j": "completeindex",
+        "P": "immutablepoly",
+        "G": "nongroup",
+        "H": "disunityset",
+        "S_j": "colorlessset",
+        "T_k": "nonpartition",
+        "a_1": "eventermone",
+        "a_2": "eventermtwo",
+        "a_n": "eventermlast",
+        "a_j": "eventermindex",
+        "b_0": "zeroelement",
+        "b_1": "zerofirst",
+        "b_2": "zerosecond",
+        "b_k": "zeromultiple",
+        "c_n": "evencoeff",
+        "d_n": "oddcoeff",
+        "e_n": "neutralcoeff"
+      },
+      "question": "Suppose that $immutablepoly(fixedscalar) = eventermone fixedscalar + eventermtwo fixedscalar^2 + \\cdots + eventermlast fixedscalar^{minimalcount}$ is a polynomial with integer coefficients, with $eventermone$ odd. Suppose that $e^{immutablepoly(fixedscalar)} = zeroelement + zerofirst fixedscalar + zerosecond fixedscalar^2 + \\cdots$ for all $fixedscalar$. Prove that $zeromultiple$ is nonzero for all $endlessindex \\geq 0$.",
+      "solution": "We prove that $zeromultiple\\, endlessindex!$ is an odd integer for all $endlessindex \\geq 0$.\n\n\\textbf{First solution.}\nSince $e^{immutablepoly(fixedscalar)} = \\sum_{minimalcount=0}^{\\infty} \\frac{(immutablepoly(fixedscalar))^{minimalcount}}{minimalcount!}$, the number $endlessindex!\\,zeromultiple$ is the coefficient of $fixedscalar^{endlessindex}$ in\n\\[\n(immutablepoly(fixedscalar))^{endlessindex} + \\sum_{minimalcount=0}^{endlessindex-1} \\frac{endlessindex!}{minimalcount!}(immutablepoly(fixedscalar))^{minimalcount}.\n\\]\nIn particular, $zeroelement=1$ and $zerofirst=eventermone$ are both odd. \n\nNow suppose $endlessindex \\geq 2$; we want to show that $zeromultiple$ is odd. The coefficient of $fixedscalar^{endlessindex}$ in $(immutablepoly(fixedscalar))^{endlessindex}$ is $eventermone^{endlessindex}$. It suffices to show that the coefficient of $fixedscalar^{endlessindex}$ in $\\frac{endlessindex!}{minimalcount!}(immutablepoly(fixedscalar))^{minimalcount}$ is an even integer for any $minimalcount<endlessindex$. For $endlessindex$ even or $minimalcount \\leq endlessindex-2$, this follows immediately from the fact that $\\frac{endlessindex!}{minimalcount!}$ is an even integer. For $endlessindex$ odd and $minimalcount=endlessindex-1$, we have\n\\begin{align*}\n\\frac{endlessindex!}{(endlessindex-1)!}(immutablepoly(fixedscalar))^{endlessindex-1} &= endlessindex(eventermone fixedscalar+eventermtwo fixedscalar^2+\\cdots)^{endlessindex-1} \\\\\n&= endlessindex(eventermone^{endlessindex-1}fixedscalar^{endlessindex-1}+(endlessindex-1)eventermone^{endlessindex-2}eventermtwo fixedscalar^{endlessindex}+\\cdots)\n\\end{align*}\nand the coefficient of $fixedscalar^{endlessindex}$ is $endlessindex(endlessindex-1)eventermone^{endlessindex-2}eventermtwo$, which is again an even integer.\n\n\\noindent\n\\textbf{Second solution.}\nLet nongroup be the set of power series of the form $\\sum_{minimalcount=0}^{\\infty} evencoeff \\frac{fixedscalar^{minimalcount}}{minimalcount!}$ with $c_0 = 1, evencoeff \\in \\mathbb{Z}$; then nongroup forms a group under formal series multiplication because\n\\[\n\\left( \\sum_{minimalcount=0}^{\\infty} evencoeff \\frac{fixedscalar^{minimalcount}}{minimalcount!} \\right)\n\\left( \\sum_{minimalcount=0}^{\\infty} oddcoeff \\frac{fixedscalar^{minimalcount}}{minimalcount!} \\right)\n= \\sum_{minimalcount=0}^{\\infty} neutralcoeff \\frac{fixedscalar^{minimalcount}}{minimalcount!} \n\\]\nwith\n\\[\nneutralcoeff = \\sum_{solitarycount=0}^{minimalcount} \\binom{minimalcount}{solitarycount} evencoeff\\, oddcoeff.\n\\]\nBy the same calculation, the subset disunityset of series with $evencoeff \\in 2\\mathbb{Z}$ for all minimalcount \\geq 1 is a subgroup of nongroup.\n\nWe have $e^{2fixedscalar} \\in disunityset$ because $\\frac{2^{minimalcount}}{minimalcount!} \\in 2\\mathbb{Z}$ for all minimalcount \\geq 1: the exponent of 2 in the prime factorization of $minimalcount!$ is\n\\[\n\\sum_{i=1}^{\\infty} \\left\\lfloor \\frac{minimalcount}{2^i} \\right\\rfloor\n< \\sum_{i=1}^{\\infty} \\frac{minimalcount}{2^i} = minimalcount.\n\\]\nFor any integer endlessindex \\geq 2, we have $e^{fixedscalar^{endlessindex}} \\in disunityset$ because $\\frac{(minimalcount endlessindex)!}{minimalcount!} \\in 2\\mathbb{Z}$ for all minimalcount \\geq 1: this is clear if $endlessindex=2,minimalcount=1$, and in all other cases the ratio is divisible by $(minimalcount+1)(minimalcount+2)$. \n\nWe deduce that $e^{immutablepoly(fixedscalar)-fixedscalar} \\in disunityset$.\nBy writing $e^{immutablepoly(fixedscalar)}$ as $e^{fixedscalar} = \\sum_{minimalcount=0}^{\\infty} \\frac{fixedscalar^{minimalcount}}{minimalcount!}$\ntimes an element of disunityset, we deduce that $endlessindex! zeromultiple$ is odd for all $endlessindex \\geq 0$.\n\n\\noindent\n\\textbf{Third solution.}\n(by David Feldman)\nWe interpret $e^{immutablepoly(fixedscalar)}$ using the exponential formula for generating functions.\nFor each completeindex, choose a set colorlessset consisting of $|eventermindex|$ colors.\nThen zeromultiple is a weighted count over set partitions of $\\{1,\\dots,endlessindex\\}$, with each part of size completeindex assigned a color in colorlessset, and the weight being $(-1)^{i}$ where $i$ is the number of parts of any size completeindex for which eventermindex < 0.\n\nSince we are only looking for the parity of zeromultiple, we may dispense with the signs; that is, we may assume eventermindex \\geq 0 for all completeindex\nand forget about the weights.\n\nChoose an involution on each colorlessset with at most one fixed point; this induces an involution on the partitions, so to find the parity of zeromultiple we may instead count fixed points of the involution. That is, we may assume that eventermindex \\in \\{0,1\\}.\n\nLet nonpartition be the set of set partitions in question with the all-singletons partition removed; it now suffices to exhibit a fixed-point-free involution of nonpartition. To wit, for each partition in nonpartition, there is a smallest index $i \\in \\{1,\\dots,endlessindex-1\\}$ for which $i$ and $i+1$ are not both singletons; we define an involution by swapping the positions of $i$ and $i+1$. "
+    },
+    "garbled_string": {
+      "map": {
+        "x": "qzxwvtnp",
+        "k": "hjgrksla",
+        "n": "plmvbncq",
+        "i": "sdfghjkl",
+        "m": "rtyuioop",
+        "j": "xcvbnmas",
+        "P": "qwertyui",
+        "G": "lkjhgfds",
+        "H": "poiuytre",
+        "S_j": "zxcvuiop",
+        "T_k": "asdfhjkl",
+        "a_1": "ghjklasd",
+        "a_2": "bnmqwert",
+        "a_n": "lkjhgfas",
+        "a_j": "poilkjhg",
+        "b_0": "cxzasdfg",
+        "b_1": "mnbvcxzq",
+        "b_2": "ytrewqas",
+        "b_k": "plokmijn",
+        "c_n": "ujmnhygt",
+        "d_n": "rfvcdews",
+        "e_n": "tgbyhnuj"
+      },
+      "question": "Suppose that $qwertyui(qzxwvtnp) = ghjklasd qzxwvtnp + bnmqwert qzxwvtnp^2 + \\cdots + lkjhgfas qzxwvtnp^{plmvbncq}$ is a polynomial with integer coefficients, with $ghjklasd$ odd. Suppose that $e^{qwertyui(qzxwvtnp)} = cxzasdfg + mnbvcxzq qzxwvtnp + ytrewqas qzxwvtnp^2 + \\cdots$ for all $qzxwvtnp$. Prove that plokmijn is nonzero for all hjgrksla $\\geq 0$.",
+      "solution": "We prove that $plokmijn\\, hjgrksla!$ is an odd integer for all $hjgrksla \\geq 0$.\n\n\\textbf{First solution.}\nSince $e^{qwertyui(qzxwvtnp)} = \\sum_{plmvbncq=0}^\\infty \\frac{(qwertyui(qzxwvtnp))^{plmvbncq}}{plmvbncq!}$, the number $hjgrksla!\\,plokmijn$ is the coefficient of $qzxwvtnp^{hjgrksla}$ in\n\\[\n(qwertyui(qzxwvtnp))^{hjgrksla} + \\sum_{plmvbncq=0}^{hjgrksla-1} \\frac{hjgrksla!}{plmvbncq!}(qwertyui(qzxwvtnp))^{plmvbncq}.\n\\]\nIn particular, $cxzasdfg=1$ and $mnbvcxzq=ghjklasd$ are both odd. \n\nNow suppose $hjgrksla \\geq 2$; we want to show that $plokmijn$ is odd. The coefficient of $qzxwvtnp^{hjgrksla}$ in $(qwertyui(qzxwvtnp))^{hjgrksla}$ is $ghjklasd^{hjgrksla}$. It suffices to show that the coefficient of $qzxwvtnp^{hjgrksla}$ in $\\frac{hjgrksla!}{plmvbncq!}(qwertyui(qzxwvtnp))^{plmvbncq}$ is an even integer for any $plmvbncq<hjgrksla$. For $hjgrksla$ even or $plmvbncq \\leq hjgrksla-2$, this follows immediately from the fact that $\\frac{hjgrksla!}{plmvbncq!}$ is an even integer. For $hjgrksla$ odd and $plmvbncq=hjgrksla-1$, we have\n\\begin{align*}\n\\frac{hjgrksla!}{(hjgrksla-1)!}(qwertyui(qzxwvtnp))^{hjgrksla-1} &= hjgrksla(ghjklasd qzxwvtnp+bnmqwert qzxwvtnp^2+\\cdots)^{hjgrksla-1} \\\\\n&= hjgrksla(ghjklasd^{hjgrksla-1}qzxwvtnp^{hjgrksla-1}+(hjgrksla-1)ghjklasd^{hjgrksla-2}bnmqwert qzxwvtnp^{hjgrksla}+\\cdots)\n\\end{align*}\nand the coefficient of $qzxwvtnp^{hjgrksla}$ is $hjgrksla(hjgrksla-1)ghjklasd^{hjgrksla-2}bnmqwert$, which is again an even integer.\n\n\\noindent\n\\textbf{Second solution.}\nLet $lkjhgfds$ be the set of power series of the form $\\sum_{plmvbncq=0}^\\infty ujmnhygt \\frac{qzxwvtnp^{plmvbncq}}{plmvbncq!}$ with $c_0 = 1, ujmnhygt \\in \\mathbb{Z}$; then $lkjhgfds$ forms a group under formal series multiplication because\n\\[\n\\left( \\sum_{plmvbncq=0}^\\infty ujmnhygt \\frac{qzxwvtnp^{plmvbncq}}{plmvbncq!} \\right)\n\\left( \\sum_{plmvbncq=0}^\\infty rfvcdews \\frac{qzxwvtnp^{plmvbncq}}{plmvbncq!} \\right)\n= \\sum_{plmvbncq=0}^\\infty tgbyhnuj \\frac{qzxwvtnp^{plmvbncq}}{plmvbncq!} \n\\]\nwith\n\\[\ntgbyhnuj = \\sum_{rtyuioop=0}^{plmvbncq} \\binom{plmvbncq}{rtyuioop} c_{rtyuioop} d_{plmvbncq-rtyuioop}.\n\\]\nBy the same calculation, the subset $poiuytre$ of series with $ujmnhygt \\in 2\\mathbb{Z}$ for all $plmvbncq \\geq 1$ is a subgroup of $lkjhgfds$.\n\nWe have $e^{2qzxwvtnp} \\in poiuytre$ because $\\frac{2^{plmvbncq}}{plmvbncq!} \\in 2\\mathbb{Z}$ for all $plmvbncq \\geq 1$: the exponent of 2 in the prime factorization of $plmvbncq!$ is\n\\[\n\\sum_{sdfghjkl=1}^\\infty \\left\\lfloor \\frac{plmvbncq}{2^{sdfghjkl}} \\right\\rfloor\n< \\sum_{sdfghjkl=1}^\\infty \\frac{plmvbncq}{2^{sdfghjkl}} = plmvbncq.\n\\]\nFor any integer $hjgrksla \\geq 2$, we have $e^{qzxwvtnp^{hjgrksla}} \\in poiuytre$ because $\\frac{(plmvbncq hjgrksla)!}{plmvbncq!} \\in 2\\mathbb{Z}$ for all $plmvbncq \\geq 1$: this is clear if $hjgrksla=2,plmvbncq=1$, and in all other cases the ratio is divisible by $(plmvbncq+1)(plmvbncq+2)$. \n\nWe deduce that $e^{qwertyui(qzxwvtnp)-qzxwvtnp} \\in poiuytre$.\nBy writing $e^{qwertyui(qzxwvtnp)}$ as $e^{qzxwvtnp} = \\sum_{plmvbncq=0}^\\infty \\frac{qzxwvtnp^{plmvbncq}}{plmvbncq!}$\ntimes an element of $poiuytre$, we deduce that $hjgrksla!\\, plokmijn$ is odd for all $hjgrksla \\geq 0$.\n\n\\noindent\n\\textbf{Third solution.}\n(by David Feldman)\nWe interpret $e^{qwertyui(qzxwvtnp)}$ using the exponential formula for generating functions.\nFor each $xcvbnmas$, choose a set $zxcvuiop$ consisting of $|poilkjhg|$ colors.\nThen $plokmijn$ is a weighted count over set partitions of $\\{1,\\dots,hjgrksla\\}$, with each part of size $xcvbnmas$ assigned a color in $zxcvuiop$, and the weight being $(-1)^{sdfghjkl}$ where $sdfghjkl$ is the number of parts of any size $xcvbnmas$ for which $poilkjhg < 0$.\n\nSince we are only looking for the parity of $plokmijn$, we may dispense with the signs; that is, we may assume $poilkjhg \\geq 0$ for all $xcvbnmas$\nand forget about the weights.\n\nChoose an involution on each $zxcvuiop$ with at most one fixed point; this induces an involution on the partitions, so to find the parity of $plokmijn$ we may instead count fixed points of the involution. That is, we may assume that $poilkjhg \\in \\{0,1\\}$.\n\nLet $asdfhjkl$ be the set of set partitions in question with the all-singletons partition removed; it now suffices to exhibit a fixed-point-free involution of $asdfhjkl$. To wit, for each partition in $asdfhjkl$, there is a smallest index $sdfghjkl \\in \\{1,\\dots,hjgrksla-1\\}$ for which $sdfghjkl$ and $sdfghjkl+1$ are not both singletons; we define an involution by swapping the positions of $sdfghjkl$ and $sdfghjkl+1$. \n"
+    },
+    "kernel_variant": {
+      "question": "Let $M$ be a positive integer and let\\[\nQ(x)=c_{1}x+c_{2}x^{2}+\\dots +c_{M}x^{M}\\qquad(c_{j}\\in\\mathbb Z)\\]\nbe a polynomial whose linear coefficient $c_{1}$ is odd.  Denote the Maclaurin expansion of the exponential of $Q$ by\n\\[\n e^{Q(x)} = d_0+d_1x+d_2x^{2}+\\dots .\n\\]\nProve that $d_k\\neq 0$ for every integer $k\\ge 0$.",
+      "solution": "Write\n\n e^{Q(x)}=\n  \\sum_{m\\ge0}\\frac{Q(x)^m}{m!},\\qquad Q(x)=c_1x+c_2x^2+\\cdots+c_Mx^M.\n\nLet [x^k]F(x) denote the coefficient of x^k in F.  Then\n\n k!\\,d_k=[x^k]\\bigl(k!\\,e^{Q(x)}\\bigr)\n =\\sum_{m=0}^k\\frac{k!}{m!}[x^k]Q(x)^m,\n\nsince for m>k the coefficient [x^k]Q(x)^m vanishes.  We split into the term m=k and the terms m<k.\n\n1.  m=k term.  In Q(x)^k each factor has no constant term, so to get x^k one must pick the linear term c_1x from each of the k factors.  Hence\n\n  [x^k]Q(x)^k=c_1^k,\n\nand so its contribution to k!\\cdot d_k is (k!/k!)c_1^k=c_1^k, which is odd by hypothesis.\n\n2.  m<k terms.  Fix m<k.  We show (k!/m!)\\cdot [x^k]Q(x)^m is even.\n\n  *  If k is even or m\\leq k-2 then k!/m!=k\\cdot (k-1)\\cdot \\ldots \\cdot (m+1) contains an even factor, so k!/m! is even, whence the whole term is even.\n\n  *  The only remaining case is k odd and m=k-1.  Then k!/m!=k (odd), so we must check that [x^k]Q(x)^{k-1} is even.  But Q(x)^{k-1} contributes to x^k only by selecting exactly one quadratic term c_2x^2 and k-2 linear terms c_1x, in one of the k-1 factors.  Thus\n\n     [x^k]Q(x)^{k-1}=(k-1)c_1^{k-2}c_2,\n\n  and multiplying by k gives k(k-1)c_1^{k-2}c_2, which is even since k(k-1) is even.\n\nTherefore all terms with m<k are even, while the m=k term is odd.  Hence\n\n k!\\,d_k\\equiv1\\pmod2\n\nfor every k\\geq 0, so d_k\\neq 0.  In particular d_0=1 and d_1=c_1 are odd, and all higher d_k are likewise nonzero.",
+      "_meta": {
+        "core_steps": [
+          "Expand  e^{P(x)}  as  ∑_{m≥0} (P(x))^m/m!  and note  k!·b_k  is the x^k–coefficient of that sum.",
+          "Observe that the term m = k contributes a_1^k (odd) to that coefficient.",
+          "Show every other term (m < k) contributes an even integer:  k!/m!  is even unless m = k−1 and k is odd, and that exceptional coefficient is still even.",
+          "Hence  k!·b_k  ≡ 1 (mod 2) for all k, so each b_k is non-zero."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "Degree of the polynomial (upper limit of summation). It only needs to be finite.",
+            "original": "n"
+          },
+          "slot2": {
+            "description": "Values of the higher-degree coefficients; only the parity of a₁ matters.",
+            "original": "a₂, a₃, … , a_n"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}

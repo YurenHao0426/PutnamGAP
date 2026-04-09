@@ -1,0 +1,190 @@
+{
+  "index": "1996-A-4",
+  "type": "COMB",
+  "tag": [
+    "COMB",
+    "ALG"
+  ],
+  "difficulty": "",
+  "question": "Let $S$ be the set of ordered triples $(a, b, c)$ of distinct elements\nof a finite set $A$. Suppose that\n\\begin{enumerate}\n\\item $(a,b,c) \\in S$ if and only if $(b,c,a) \\in S$;\n\\item $(a,b,c) \\in S$ if and only if $(c,b,a) \\notin S$;\n\\item $(a,b,c)$ and $(c,d,a)$ are both in $S$ if and only if $(b,c,d)$\nand $(d,a,b)$ are both in $S$.\n\\end{enumerate}\nProve that there exists a one-to-one function $g$ from $A$ to $R$ such\nthat $g(a) < g(b) < g(c)$ implies $(a,b,c) \\in S$. Note: $R$ is the\nset of real numbers.",
+  "solution": "In fact, we will show that such a function $g$ exists with the\nproperty that $(a,b,c) \\in S$ if and only if $g(d) < g(e) < g(f)$ for\nsome cyclic permutation $(d,e,f)$ of $(a,b,c)$. We proceed by\ninduction on the number of elements in $A$. If $A =\n\\{a,b,c\\}$ and $(a,b,c) \\in S$, then choose $g$ with $g(a) < g(b) <\ng(c)$, otherwise choose $g$ with $g(a) > g(b) > g(c)$.\n\nNow let $z$ be an element of $A$ and $B = A - \\{z\\}$.\nLet $a_{1}, \\dots, a_{n}$ be the elements of $B$ labeled such that\n$g(a_{1}) < g(a_{2}) < \\cdots < g(a_{n})$. We claim that there exists\na unique $i \\in \\{1, \\dots, n\\}$ such that $(a_{i}, z, a_{i+1})\n\\in S$, where hereafter $a_{n+k} = a_{k}$.\n\nWe show existence first. Suppose no such $i$ exists; then for all\n$i,k \\in \\{1, \\dots, n\\}$, we have $(a_{i+k}, z, a_{i}) \\notin S$.\nThis holds by property 1 for $k=1$ and by induction on $k$ in\ngeneral, noting that\n\\begin{align*}\n(a_{i+k+1}, z, a_{i+k}), &(a_{i+k}, z, a_{i})  \\in S \\\\\n&\\Rightarrow (a_{i+k}, a_{i+k+1}, z), (z, a_{i}, a_{i+k}) \\in S \\\\\n&\\Rightarrow (a_{i+k+1},z,a_{i}) \\in S.\n\\end{align*}\nApplying this when $k=n$, we get $(a_{i-1}, z, a_{i}) \\in S$,\ncontradicting the fact that $(a_{i}, z, a_{i-1}) \\in S$. Hence\nexistence follows.\n\nNow we show uniqueness. Suppose $(a_{i}, z, a_{i+1}) \\in S$; then for\nany $j \\neq i-1, i, i+1$, we have $(a_{i}, a_{i+1}, a_{j}), (a_{j},\na_{j+1}, a_{i}) \\in S$ by the\nassumption on $G$. Therefore\n\\begin{align*}\n(a_{i}, z, a_{i+1}), (a_{i+1}, a_{j}, a_{i}) \\in S\n&\\Rightarrow (a_{j}, a_{i}, z) \\in S \\\\\n(a_{i}, z, a_{j}), (a_{j}, a_{j+1}, a_{i}) \\in S\n&\\Rightarrow (z, a_{j}, a_{j+1}),\n\\end{align*}\nso $(a_{j}, z, a_{j+1}) \\notin S$. The case $j =i+1$ is ruled out by\n\\[\n(a_{i}, z, a_{i+1}), (a_{i+1}, a_{i+2}, a_{i}) \\in S \\Rightarrow (z,\na_{i+1}, a_{i+2}) \\in S\n\\]\nand the case $j=i-1$ is similar.\n\nFinally, we put $g(z)$ in $(g(a_{n}), + \\infty)$ if $i = n$, and\n$(g(a_{i}), g(a_{i+1}))$ otherwise; an analysis similar to that above\nshows that $g$ has the desired property.",
+  "vars": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "z",
+    "i",
+    "j",
+    "k",
+    "n",
+    "a_1",
+    "a_2",
+    "a_n",
+    "a_i",
+    "a_j"
+  ],
+  "params": [
+    "S",
+    "A",
+    "B",
+    "g",
+    "R",
+    "G"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "a": "elementa",
+        "b": "elementb",
+        "c": "elementc",
+        "d": "elementd",
+        "e": "elemente",
+        "f": "elementf",
+        "z": "elementz",
+        "i": "indexi",
+        "j": "indexj",
+        "k": "indexk",
+        "n": "sizen",
+        "a_1": "elementone",
+        "a_2": "elementtwo",
+        "a_n": "elementn",
+        "a_i": "elementi",
+        "a_j": "elementj",
+        "S": "tripleset",
+        "A": "bigseta",
+        "B": "subsetb",
+        "g": "ordering",
+        "R": "realspace",
+        "G": "assumgraph"
+      },
+      "question": "Let $tripleset$ be the set of ordered triples $(elementa, elementb, elementc)$ of distinct elements of a finite set $bigseta$. Suppose that\n\\begin{enumerate}\n\\item $(elementa,elementb,elementc) \\in tripleset$ if and only if $(elementb,elementc,elementa) \\in tripleset$;\n\\item $(elementa,elementb,elementc) \\in tripleset$ if and only if $(elementc,elementb,elementa) \\notin tripleset$;\n\\item $(elementa,elementb,elementc)$ and $(elementc,elementd,elementa)$ are both in $tripleset$ if and only if $(elementb,elementc,elementd)$ and $(elementd,elementa,elementb)$ are both in $tripleset$.\n\\end{enumerate}\nProve that there exists a one-to-one function $ordering$ from $bigseta$ to $realspace$ such that $ordering(elementa) < ordering(elementb) < ordering(elementc)$ implies $(elementa,elementb,elementc) \\in tripleset$. Note: $realspace$ is the set of real numbers.",
+      "solution": "In fact, we will show that such a function $ordering$ exists with the property that $(elementa,elementb,elementc) \\in tripleset$ if and only if $ordering(elementd) < ordering(elemente) < ordering(elementf)$ for some cyclic permutation $(elementd,elemente,elementf)$ of $(elementa,elementb,elementc)$. We proceed by induction on the number of elements in $bigseta$. If $bigseta = \\{elementa,elementb,elementc\\}$ and $(elementa,elementb,elementc) \\in tripleset$, then choose $ordering$ with $ordering(elementa) < ordering(elementb) < ordering(elementc)$; otherwise choose $ordering$ with $ordering(elementa) > ordering(elementb) > ordering(elementc)$.\n\nNow let $elementz$ be an element of $bigseta$ and set $subsetb = bigseta - \\{elementz\\}$. Let $elementone, \\dots, elementn$ be the elements of $subsetb$ labeled so that\n$ordering(elementone) < ordering(elementtwo) < \\cdots < ordering(elementn)$. We claim that there exists a unique $indexi \\in \\{1, \\dots, sizen\\}$ such that $(elementa_{indexi}, elementz, elementa_{indexi+1}) \\in tripleset$, where hereafter we agree that $elementa_{sizen+indexk} = elementa_{indexk}$.\n\nExistence.  Suppose no such $indexi$ exists; then for all $indexi,indexk \\in \\{1, \\dots, sizen\\}$ we have $(elementa_{indexi+indexk}, elementz, elementa_{indexi}) \\notin tripleset$.  This holds for $indexk=1$ by property~1 and for general $indexk$ by induction, noting that\n\\begin{align*}\n(elementa_{indexi+indexk+1}, elementz, elementa_{indexi+indexk}), &(elementa_{indexi+indexk}, elementz, elementa_{indexi}) \\in tripleset\\\\\n&\\Rightarrow (elementa_{indexi+indexk}, elementa_{indexi+indexk+1}, elementz), (elementz, elementa_{indexi}, elementa_{indexi+indexk}) \\in tripleset\\\\\n&\\Rightarrow (elementa_{indexi+indexk+1}, elementz, elementa_{indexi}) \\in tripleset.\n\\end{align*}\nTaking $indexk = sizen$ yields $(elementa_{indexi-1}, elementz, elementa_{indexi}) \\in tripleset$, contradicting $(elementa_{indexi}, elementz, elementa_{indexi-1}) \\in tripleset$. Hence existence is proved.\n\nUniqueness.  Suppose $(elementa_{indexi}, elementz, elementa_{indexi+1}) \\in tripleset$. For any $indexj \\neq indexi-1, indexi, indexi+1$ we have $(elementa_{indexi}, elementa_{indexi+1}, elementa_{indexj}), (elementa_{indexj}, elementa_{indexj+1}, elementa_{indexi}) \\in tripleset$ by the assumption on $assumgraph$. Therefore\n\\begin{align*}\n(elementa_{indexi}, elementz, elementa_{indexi+1}), (elementa_{indexi+1}, elementa_{indexj}, elementa_{indexi}) &\\in tripleset \\;\\Rightarrow\\; (elementa_{indexj}, elementa_{indexi}, elementz) \\in tripleset,\\\\\n(elementa_{indexi}, elementz, elementa_{indexj}), (elementa_{indexj}, elementa_{indexj+1}, elementa_{indexi}) &\\in tripleset \\;\\Rightarrow\\; (elementz, elementa_{indexj}, elementa_{indexj+1}) \\in tripleset,\n\\end{align*}\nso $(elementa_{indexj}, elementz, elementa_{indexj+1}) \\notin tripleset$.  The case $indexj = indexi+1$ is ruled out by\n\\[\n(elementa_{indexi}, elementz, elementa_{indexi+1}), (elementa_{indexi+1}, elementa_{indexi+2}, elementa_{indexi}) \\in tripleset \\Rightarrow (elementz, elementa_{indexi+1}, elementa_{indexi+2}) \\in tripleset,\n\\]\nand the case $indexj = indexi-1$ is analogous. Hence the required $indexi$ is unique.\n\nFinally, set $ordering(elementz)$ in $(ordering(elementn), +\\infty)$ if $indexi = sizen$, and in $(ordering(elementa_{indexi}),\\, ordering(elementa_{indexi+1}))$ otherwise.  An argument parallel to the one above shows that the resulting $ordering$ has the desired property."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "a": "whaleroad",
+        "b": "sunlitpath",
+        "c": "moondapple",
+        "d": "breezehill",
+        "e": "stoneglade",
+        "f": "riverbloom",
+        "z": "embercloak",
+        "i": "foxglovep",
+        "j": "crimsonark",
+        "k": "velvetdawn",
+        "n": "dovetailr",
+        "a_1": "azurefinch",
+        "a_2": "amberlynx",
+        "a_n": "obsidianr",
+        "a_i": "marigolds",
+        "a_j": "silverfern",
+        "S": "lanternset",
+        "A": "willowbank",
+        "B": "cedargrove",
+        "g": "lanternmap",
+        "R": "pebblestream",
+        "G": "frosthaven"
+      },
+      "question": "Let $lanternset$ be the set of ordered triples $(whaleroad, sunlitpath, moondapple)$ of distinct elements\nof a finite set $willowbank$. Suppose that\n\\begin{enumerate}\n\\item $(whaleroad,sunlitpath,moondapple) \\in lanternset$ if and only if $(sunlitpath,moondapple,whaleroad) \\in lanternset$;\n\\item $(whaleroad,sunlitpath,moondapple) \\in lanternset$ if and only if $(moondapple,sunlitpath,whaleroad) \\notin lanternset$;\n\\item $(whaleroad,sunlitpath,moondapple)$ and $(moondapple,breezehill,whaleroad)$ are both in $lanternset$ if and only if $(sunlitpath,moondapple,breezehill)$\nand $(breezehill,whaleroad,sunlitpath)$ are both in $lanternset$.\n\\end{enumerate}\nProve that there exists a one-to-one function $lanternmap$ from $willowbank$ to $pebblestream$ such\nthat $lanternmap(whaleroad) < lanternmap(sunlitpath) < lanternmap(moondapple)$ implies $(whaleroad,sunlitpath,moondapple) \\in lanternset$. Note: $pebblestream$ is the\nset of real numbers.",
+      "solution": "In fact, we will show that such a function $lanternmap$ exists with the\nproperty that $(whaleroad,sunlitpath,moondapple) \\in lanternset$ if and only if $lanternmap(breezehill) < lanternmap(stoneglade) < lanternmap(riverbloom)$ for\nsome cyclic permutation $(breezehill,stoneglade,riverbloom)$ of $(whaleroad,sunlitpath,moondapple)$. We proceed by\ninduction on the number of elements in $willowbank$. If $willowbank =\n\\{whaleroad,sunlitpath,moondapple\\}$ and $(whaleroad,sunlitpath,moondapple) \\in lanternset$, then choose $lanternmap$ with $lanternmap(whaleroad) < lanternmap(sunlitpath) <\nlanternmap(moondapple)$, otherwise choose $lanternmap$ with $lanternmap(whaleroad) > lanternmap(sunlitpath) > lanternmap(moondapple)$.\n\nNow let $embercloak$ be an element of $willowbank$ and $cedargrove = willowbank - \\{embercloak\\}$.\nLet $whaleroad_{1}, \\dots, whaleroad_{dovetailr}$ be the elements of $cedargrove$ labeled such that\n$lanternmap(whaleroad_{1}) < lanternmap(whaleroad_{2}) < \\cdots < lanternmap(whaleroad_{dovetailr})$. We claim that there exists\na unique $foxglovep \\in \\{1, \\dots, dovetailr\\}$ such that $(whaleroad_{foxglovep}, embercloak, whaleroad_{foxglovep+1})\n\\in lanternset$, where hereafter $whaleroad_{dovetailr+velvetdawn} = whaleroad_{velvetdawn}$.\n\nWe show existence first. Suppose no such $foxglovep$ exists; then for all\n$foxglovep,velvetdawn \\in \\{1, \\dots, dovetailr\\}$, we have $(whaleroad_{foxglovep+velvetdawn}, embercloak, whaleroad_{foxglovep}) \\notin lanternset$.\nThis holds by property 1 for $velvetdawn=1$ and by induction on $velvetdawn$ in\ngeneral, noting that\n\\begin{align*}\n(whaleroad_{foxglovep+velvetdawn+1}, embercloak, whaleroad_{foxglovep+velvetdawn}), &(whaleroad_{foxglovep+velvetdawn}, embercloak, whaleroad_{foxglovep})  \\in lanternset \\\\\n&\\Rightarrow (whaleroad_{foxglovep+velvetdawn}, whaleroad_{foxglovep+velvetdawn+1}, embercloak), (embercloak, whaleroad_{foxglovep}, whaleroad_{foxglovep+velvetdawn}) \\in lanternset \\\\\n&\\Rightarrow (whaleroad_{foxglovep+velvetdawn+1},embercloak,whaleroad_{foxglovep}) \\in lanternset.\n\\end{align*}\nApplying this when $velvetdawn=dovetailr$, we get $(whaleroad_{foxglovep-1}, embercloak, whaleroad_{foxglovep}) \\in lanternset$,\ncontradicting the fact that $(whaleroad_{foxglovep}, embercloak, whaleroad_{foxglovep-1}) \\in lanternset$. Hence\nexistence follows.\n\nNow we show uniqueness. Suppose $(whaleroad_{foxglovep}, embercloak, whaleroad_{foxglovep+1}) \\in lanternset$; then for\nany $crimsonark \\neq foxglovep-1, foxglovep, foxglovep+1$, we have $(whaleroad_{foxglovep}, whaleroad_{foxglovep+1}, whaleroad_{crimsonark}), (whaleroad_{crimsonark},\nwhaleroad_{crimsonark+1}, whaleroad_{foxglovep}) \\in lanternset$ by the\nassumption on $frosthaven$. Therefore\n\\begin{align*}\n(whaleroad_{foxglovep}, embercloak, whaleroad_{foxglovep+1}), (whaleroad_{foxglovep+1}, whaleroad_{crimsonark}, whaleroad_{foxglovep}) \\in lanternset\n&\\Rightarrow (whaleroad_{crimsonark}, whaleroad_{foxglovep}, embercloak) \\in lanternset \\\\\n(whaleroad_{foxglovep}, embercloak, whaleroad_{crimsonark}), (whaleroad_{crimsonark}, whaleroad_{crimsonark+1}, whaleroad_{foxglovep}) \\in lanternset\n&\\Rightarrow (embercloak, whaleroad_{crimsonark}, whaleroad_{crimsonark+1}),\n\\end{align*}\nso $(whaleroad_{crimsonark}, embercloak, whaleroad_{crimsonark+1}) \\notin lanternset$. The case $crimsonark =foxglovep+1$ is ruled out by\n\\[\n(whaleroad_{foxglovep}, embercloak, whaleroad_{foxglovep+1}), (whaleroad_{foxglovep+1}, whaleroad_{foxglovep+2}, whaleroad_{foxglovep}) \\in lanternset \\Rightarrow (embercloak,\nwhaleroad_{foxglovep+1}, whaleroad_{foxglovep+2}) \\in lanternset\n\\]\nand the case $crimsonark=foxglovep-1$ is similar.\n\nFinally, we put $lanternmap(embercloak)$ in $(lanternmap(whaleroad_{dovetailr}), + \\infty)$ if $foxglovep = dovetailr$, and\n$(lanternmap(whaleroad_{foxglovep}), lanternmap(whaleroad_{foxglovep+1}))$ otherwise; an analysis similar to that above\nshows that $lanternmap$ has the desired property."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "a": "omegaelem",
+        "b": "alphachar",
+        "c": "xenovalue",
+        "d": "terminalid",
+        "e": "westfield",
+        "f": "nullvalue",
+        "z": "firstentry",
+        "i": "outsider",
+        "j": "insidera",
+        "k": "centered",
+        "n": "zerobase",
+        "a_1": "lastfirst",
+        "a_2": "lastsecond",
+        "a_n": "lastzero",
+        "a_i": "lastindex",
+        "a_j": "lastinside",
+        "S": "emptysup",
+        "A": "infinitepool",
+        "B": "wholesetb",
+        "g": "disorderfn",
+        "R": "imaginaryset",
+        "G": "phantomset"
+      },
+      "question": "Let $emptysup$ be the set of ordered triples $(omegaelem, alphachar, xenovalue)$ of distinct elements\nof a finite set $infinitepool$. Suppose that\n\\begin{enumerate}\n\\item $(omegaelem,alphachar,xenovalue) \\in emptysup$ if and only if $(alphachar,xenovalue,omegaelem) \\in emptysup$;\n\\item $(omegaelem,alphachar,xenovalue) \\in emptysup$ if and only if $(xenovalue,alphachar,omegaelem) \\notin emptysup$;\n\\item $(omegaelem,alphachar,xenovalue)$ and $(xenovalue,terminalid,omegaelem)$ are both in $emptysup$ if and only if $(alphachar,xenovalue,terminalid)$\nand $(terminalid,omegaelem,alphachar)$ are both in $emptysup$.\n\\end{enumerate}\nProve that there exists a one-to-one function $disorderfn$ from $infinitepool$ to $imaginaryset$ such\nthat $disorderfn(omegaelem) < disorderfn(alphachar) < disorderfn(xenovalue)$ implies $(omegaelem,alphachar,xenovalue) \\in emptysup$. Note: $imaginaryset$ is the\nset of real numbers.",
+      "solution": "In fact, we will show that such a function $disorderfn$ exists with the\nproperty that $(omegaelem,alphachar,xenovalue) \\in emptysup$ if and only if $disorderfn(terminalid) < disorderfn(westfield) < disorderfn(nullvalue)$ for\nsome cyclic permutation $(terminalid,westfield,nullvalue)$ of $(omegaelem,alphachar,xenovalue)$. We proceed by\ninduction on the number of elements in $infinitepool$. If $infinitepool =\n\\{omegaelem,alphachar,xenovalue\\}$ and $(omegaelem,alphachar,xenovalue) \\in emptysup$, then choose $disorderfn$ with $disorderfn(omegaelem) < disorderfn(alphachar) <\ndisorderfn(xenovalue)$, otherwise choose $disorderfn$ with $disorderfn(omegaelem) > disorderfn(alphachar) > disorderfn(xenovalue)$.\n\nNow let $firstentry$ be an element of $infinitepool$ and $wholesetb = infinitepool - \\{firstentry\\}$.\nLet $omegaelem_{1}, \\dots, omegaelem_{zerobase}$ be the elements of $wholesetb$ labeled such that\n$disorderfn(omegaelem_{1}) < disorderfn(omegaelem_{2}) < \\cdots < disorderfn(omegaelem_{zerobase})$. We claim that there exists\na unique $outsider \\in \\{1, \\dots, zerobase\\}$ such that $(omegaelem_{outsider}, firstentry, omegaelem_{outsider+1})\n\\in emptysup$, where hereafter $omegaelem_{zerobase+centered} = omegaelem_{centered}$.\n\nWe show existence first. Suppose no such $outsider$ exists; then for all\n$outsider,centered \\in \\{1, \\dots, zerobase\\}$, we have $(omegaelem_{outsider+centered}, firstentry, omegaelem_{outsider}) \\notin emptysup$.\nThis holds by property 1 for $centered=1$ and by induction on $centered$ in\ngeneral, noting that\n\\begin{align*}\n(omegaelem_{outsider+centered+1}, firstentry, omegaelem_{outsider+centered}), &(omegaelem_{outsider+centered}, firstentry, omegaelem_{outsider})  \\in emptysup \\\\\n&\\Rightarrow (omegaelem_{outsider+centered}, omegaelem_{outsider+centered+1}, firstentry), (firstentry, omegaelem_{outsider}, omegaelem_{outsider+centered}) \\in emptysup \\\\\n&\\Rightarrow (omegaelem_{outsider+centered+1},firstentry,omegaelem_{outsider}) \\in emptysup.\n\\end{align*}\nApplying this when $centered=zerobase$, we get $(omegaelem_{outsider-1}, firstentry, omegaelem_{outsider}) \\in emptysup$,\ncontradicting the fact that $(omegaelem_{outsider}, firstentry, omegaelem_{outsider-1}) \\in emptysup$. Hence\nexistence follows.\n\nNow we show uniqueness. Suppose $(omegaelem_{outsider}, firstentry, omegaelem_{outsider+1}) \\in emptysup$; then for\nany $insidera \\neq outsider-1, outsider, outsider+1$, we have $(omegaelem_{outsider}, omegaelem_{outsider+1}, omegaelem_{insidera}), (omegaelem_{insidera},\nomegaelem_{insidera+1}, omegaelem_{outsider}) \\in emptysup$ by the\nassumption on $phantomset$. Therefore\n\\begin{align*}\n(omegaelem_{outsider}, firstentry, omegaelem_{outsider+1}), (omegaelem_{outsider+1}, omegaelem_{insidera}, omegaelem_{outsider}) \\in emptysup\n&\\Rightarrow (omegaelem_{insidera}, omegaelem_{outsider}, firstentry) \\in emptysup \\\\\n(omegaelem_{outsider}, firstentry, omegaelem_{insidera}), (omegaelem_{insidera}, omegaelem_{insidera+1}, omegaelem_{outsider}) \\in emptysup\n&\\Rightarrow (firstentry, omegaelem_{insidera}, omegaelem_{insidera+1}),\n\\end{align*}\nso $(omegaelem_{insidera}, firstentry, omegaelem_{insidera+1}) \\notin emptysup$. The case $insidera =outsider+1$ is ruled out by\n\\[\n(omegaelem_{outsider}, firstentry, omegaelem_{outsider+1}), (omegaelem_{outsider+1}, omegaelem_{outsider+2}, omegaelem_{outsider}) \\in emptysup \\Rightarrow (firstentry,\nomegaelem_{outsider+1}, omegaelem_{outsider+2}) \\in emptysup\n\\]\nand the case $insidera=outsider-1$ is similar.\n\nFinally, we put $disorderfn(firstentry)$ in $(disorderfn(omegaelem_{zerobase}), + \\infty)$ if $outsider = zerobase$, and\n$(disorderfn(omegaelem_{outsider}), disorderfn(omegaelem_{outsider+1}))$ otherwise; an analysis similar to that above\nshows that $disorderfn$ has the desired property."
+    },
+    "garbled_string": {
+      "map": {
+        "a": "qzxwvtnp",
+        "b": "hjgrksla",
+        "c": "ptvfqion",
+        "d": "lmsrkdbe",
+        "e": "vfwyrzna",
+        "f": "kgzlqmtp",
+        "z": "tnjgwepo",
+        "i": "mczvkdrl",
+        "j": "nubksyaf",
+        "k": "fhzqvemi",
+        "n": "drxqplou",
+        "a_1": "xkdjshla",
+        "a_2": "sbvcltno",
+        "a_n": "wqtmpdse",
+        "a_i": "plnxryud",
+        "a_j": "gdjqvrka",
+        "S": "lqmgidest",
+        "A": "qfztmxsa",
+        "B": "rnszvpqa",
+        "g": "xmtrawob",
+        "R": "szpyghum",
+        "G": "bwcrlnaq"
+      },
+      "question": "Let $lqmgidest$ be the set of ordered triples $(qzxwvtnp, hjgrksla, ptvfqion)$ of distinct elements\nof a finite set $qfztmxsa$. Suppose that\n\\begin{enumerate}\n\\item $(qzxwvtnp,hjgrksla,ptvfqion) \\in lqmgidest$ if and only if $(hjgrksla,ptvfqion,qzxwvtnp) \\in lqmgidest$;\n\\item $(qzxwvtnp,hjgrksla,ptvfqion) \\in lqmgidest$ if and only if $(ptvfqion,hjgrksla,qzxwvtnp) \\notin lqmgidest$;\n\\item $(qzxwvtnp,hjgrksla,ptvfqion)$ and $(ptvfqion,lmsrkdbe,qzxwvtnp)$ are both in $lqmgidest$ if and only if $(hjgrksla,ptvfqion,lmsrkdbe)$\nand $(lmsrkdbe,qzxwvtnp,hjgrksla)$ are both in $lqmgidest$.\n\\end{enumerate}\nProve that there exists a one-to-one function $xmtrawob$ from $qfztmxsa$ to $szpyghum$ such\nthat $xmtrawob(qzxwvtnp) < xmtrawob(hjgrksla) < xmtrawob(ptvfqion)$ implies $(qzxwvtnp,hjgrksla,ptvfqion) \\in lqmgidest$. Note: $szpyghum$ is the\nset of real numbers.",
+      "solution": "In fact, we will show that such a function $xmtrawob$ exists with the property that $(qzxwvtnp,hjgrksla,ptvfqion) \\in lqmgidest$ if and only if $xmtrawob(lmsrkdbe) < xmtrawob(vfwyrzna) < xmtrawob(kgzlqmtp)$ for some cyclic permutation $(lmsrkdbe,vfwyrzna,kgzlqmtp)$ of $(qzxwvtnp,hjgrksla,ptvfqion)$. We proceed by induction on the number of elements in $qfztmxsa$. If $qfztmxsa = \\{qzxwvtnp,hjgrksla,ptvfqion\\}$ and $(qzxwvtnp,hjgrksla,ptvfqion) \\in lqmgidest$, then choose $xmtrawob$ with $xmtrawob(qzxwvtnp) < xmtrawob(hjgrksla) < xmtrawob(ptvfqion)$, otherwise choose $xmtrawob$ with $xmtrawob(qzxwvtnp) > xmtrawob(hjgrksla) > xmtrawob(ptvfqion)$.\n\nNow let $tnjgwepo$ be an element of $qfztmxsa$ and $rnszvpqa = qfztmxsa - \\{tnjgwepo\\}$.\nLet $xkdjshla, \\dots, wqtmpdse$ be the elements of $rnszvpqa$ labeled such that\n$xmtrawob(xkdjshla) < xmtrawob(sbvcltno) < \\cdots < xmtrawob(wqtmpdse)$. We claim that there exists\na unique $mczvkdrl \\in \\{1, \\dots, drxqplou\\}$ such that $(plnxryud, tnjgwepo, qzxwvtnp_{mczvkdrl+1})\n\\in lqmgidest$, where hereafter $qzxwvtnp_{drxqplou+fhzqvemi} = qzxwvtnp_{fhzqvemi}$.\n\nWe show existence first. Suppose no such $mczvkdrl$ exists; then for all\n$mczvkdrl,fhzqvemi \\in \\{1, \\dots, drxqplou\\}$, we have $(qzxwvtnp_{mczvkdrl+fhzqvemi}, tnjgwepo, plnxryud) \\notin lqmgidest$.\nThis holds by property 1 for $fhzqvemi=1$ and by induction on $fhzqvemi$ in\ngeneral, noting that\n\\begin{align*}\n(qzxwvtnp_{mczvkdrl+fhzqvemi+1}, tnjgwepo, qzxwvtnp_{mczvkdrl+fhzqvemi}), &(qzxwvtnp_{mczvkdrl+fhzqvemi}, tnjgwepo, plnxryud)  \\in lqmgidest \\\\\n&\\Rightarrow (qzxwvtnp_{mczvkdrl+fhzqvemi}, qzxwvtnp_{mczvkdrl+fhzqvemi+1}, tnjgwepo), (tnjgwepo, plnxryud, qzxwvtnp_{mczvkdrl+fhzqvemi}) \\in lqmgidest \\\\\n&\\Rightarrow (qzxwvtnp_{mczvkdrl+fhzqvemi+1},tnjgwepo,plnxryud) \\in lqmgidest.\n\\end{align*}\nApplying this when $fhzqvemi=drxqplou$, we get $(qzxwvtnp_{mczvkdrl-1}, tnjgwepo, plnxryud) \\in lqmgidest$,\ncontradicting the fact that $(plnxryud, tnjgwepo, qzxwvtnp_{mczvkdrl-1}) \\in lqmgidest$. Hence\nexistence follows.\n\nNow we show uniqueness. Suppose $(plnxryud, tnjgwepo, qzxwvtnp_{mczvkdrl+1}) \\in lqmgidest$; then for\nany $nubksyaf \\neq mczvkdrl-1, mczvkdrl, mczvkdrl+1$, we have $(plnxryud, qzxwvtnp_{mczvkdrl+1}, qzxwvtnp_{nubksyaf}), (qzxwvtnp_{nubksyaf},\nqzxwvtnp_{nubksyaf+1}, plnxryud) \\in lqmgidest$ by the\nassumption on $bwcrlnaq$. Therefore\n\\begin{align*}\n(plnxryud, tnjgwepo, qzxwvtnp_{mczvkdrl+1}), (qzxwvtnp_{mczvkdrl+1}, qzxwvtnp_{nubksyaf}, plnxryud) \\in lqmgidest\n&\\Rightarrow (qzxwvtnp_{nubksyaf}, plnxryud, tnjgwepo) \\in lqmgidest \\\\\n(plnxryud, tnjgwepo, qzxwvtnp_{nubksyaf}), (qzxwvtnp_{nubksyaf}, qzxwvtnp_{nubksyaf+1}, plnxryud) \\in lqmgidest\n&\\Rightarrow (tnjgwepo, qzxwvtnp_{nubksyaf}, qzxwvtnp_{nubksyaf+1}),\n\\end{align*}\nso $(qzxwvtnp_{nubksyaf}, tnjgwepo, qzxwvtnp_{nubksyaf+1}) \\notin lqmgidest$. The case $nubksyaf = mczvkdrl+1$ is ruled out by\n\\[\n(plnxryud, tnjgwepo, qzxwvtnp_{mczvkdrl+1}), (qzxwvtnp_{mczvkdrl+1}, qzxwvtnp_{mczvkdrl+2}, plnxryud) \\in lqmgidest \\Rightarrow (tnjgwepo,\nqzxwvtnp_{mczvkdrl+1}, qzxwvtnp_{mczvkdrl+2}) \\in lqmgidest\n\\]\nand the case $nubksyaf=mczvkdrl-1$ is similar.\n\nFinally, we put $xmtrawob(tnjgwepo)$ in $(xmtrawob(wqtmpdse), + \\infty)$ if $mczvkdrl = drxqplou$, and\n$(xmtrawob(plnxryud), xmtrawob(qzxwvtnp_{mczvkdrl+1}))$ otherwise; an analysis similar to that above\nshows that $xmtrawob$ has the desired property."
+    },
+    "kernel_variant": {
+      "question": "Let A be a finite set with |A| \\ge 3 and let S be a collection of ordered triples (a,b,c) of pairwise distinct elements of A such that\n\n1. (cyclic invariance) (a,b,c) \\in S \\;\\Longleftrightarrow\\; (b,c,a) \\in S;\n2. (reversal / asymmetry) (a,b,c) \\in S \\;\\Longrightarrow\\; (c,b,a) \\notin S;\n3. (four-term exchange) for every four distinct a,b,c,d \\in A\n   (a,b,c),(c,d,a) \\in S \\;\\Longleftrightarrow\\; (b,c,d),(d,a,b) \\in S;\n4. (totality) for every three distinct a,b,c \\in A exactly one of the two triples (a,b,c) and (c,b,a) belongs to S.\n\nProve that there exists an injective map g:A \\to \\mathbb R such that for all distinct a,b,c \\in A\n\ng(a)<g(b)<g(c)\\qquad\\Longrightarrow\\qquad(a,b,c)\\in S.\n(The converse implication is not required.)",
+      "solution": "Throughout write n:=|A| \\ge 3.\n\n\n1.  The axioms make S a (complete) cyclic order\n\n\nA ternary relation T on a set X is called a cyclic order if it fulfils\n(C1)  (a,b,c)\\in T \\Longrightarrow (b,c,a)\\in T;\n(C2)  (a,b,c)\\in T \\Longrightarrow (c,b,a)\\notin T; and\n(C3)  whenever (a,b,c),(a,c,d)\\in T with a,b,c,d pairwise distinct, then (a,b,d)\\in T.\n\nIt is classical (and easy to check) that condition (C3) is equivalent to the\nfour-term exchange used in the statement.  Items 1-3 therefore already yield\n(C1)-(C3).  Item 4 additionally guarantees that for every distinct a,b,c\nexactly one of the two possible orientations occurs, i.e. the cyclic order is\ntotal (sometimes called **complete**).  From now on we treat S as a fixed\ncomplete cyclic order on A and freely use the standard facts about cyclic\norders.\n\n\n2.  Deleting one point produces a linear order\n\n\nFix an element z\\in A and put B:=A\\setminus\\{z\\} (so |B|=n-1).  Define a\nbinary relation\n\n    x <_{z} y \\;\\Longleftrightarrow\\; (z,x,y) \\in S\\qquad(x,y\\in B).   (2.1)\n\nLemma 2.1  The relation <_{z} is a strict linear (total) order on B.\n\nProof.\nAnti-symmetry and transitivity follow exactly as in the original write-up; we\nonly repeat the argument for totality because this is where the new condition\n(4) is used.\n\n* (totality)  Let x\\ne y in B.  Applying (4) to the three distinct elements\n  z,x,y we know that precisely one of (z,x,y) and (z,y,x) is in S.  Hence\n  exactly one of x<_{z}y or y<_{z}x holds.\n\\blacksquare \n\nBecause <_{z} is strict and total we may list the elements of B as\n\n    b_{1} <_{z} b_{2} <_{z} \\dots <_{z} b_{m}\\qquad(m:=n-1).   (2.2)\n\n\n3.  Chains in the linear order are compatible with S\n\n\nLemma 3.1  If x<_{z}y<_{z}w in B, then (x,y,w)\\in S.\n\nProof.\nExactly as before: (z,x,y),(z,y,w)\\in S yields (y,w,z)\\in S by cyclicity, and\nthe four-term rule for z,x,y,w gives (x,y,w)\\in S. \\blacksquare \n\nCorollary 3.2  For any indices 1\\le i<j<k\\le m we have (b_{i},b_{j},b_{k})\\in S.\n(The corollary follows by repeatedly applying Lemma 3.1.)\n\n\n4.  A convenient linear embedding of A into \\mathbb R\n\n\nDefine g:A\\to\\mathbb R by\n\n    g(b_{i}) := i \\quad(1\\le i\\le m), \\qquad g(z):=m+1.   (4.1)\n\nThe map g is clearly injective.  We verify that it has the required property.\n\nLet a,b,c\\in A be distinct with g(a)<g(b)<g(c).  Three situations can occur.\n\nCase 1.  None of a,b,c equals z.  Then a=b_{i}, b=b_{j}, c=b_{k} with i<j<k,\nand Corollary 3.2 gives (a,b,c)\\in S.\n\nCase 2.  c=z.  Then a,b\\in B and g(a)<g(b) implies a<_{z}b, i.e. (z,a,b)\\in S\nby (2.1); cyclicity yields (a,b,z)=(a,b,c)\\in S.\n\nCase 3.  The element z would have to be the smallest or middle value, but\nby construction g(z)=m+1 is the largest value among all g-images, so this case\ncannot occur.\n\nHence in every possible configuration\n\ng(a)<g(b)<g(c)\\;\\Rightarrow\\;(a,b,c)\\in S.\n\nThis finishes the proof. \\blacksquare ",
+      "_meta": {
+        "core_steps": [
+          "Regard properties (1) & (2) as defining a cyclic orientation on every triple.",
+          "Do induction on n = |A| (base n = 3 handled by choosing either increasing or decreasing order).",
+          "Inductive lemma: for the new element z there is a UNIQUE adjacent pair (a_i , a_{i+1}) in the current linear order with (a_i , z , a_{i+1}) ∈ S (proved by contradiction using the three axioms).",
+          "Insert z by picking g(z) strictly between g(a_i) and g(a_{i+1}) (or to the right of all of them when i = n).",
+          "Check that this extended g keeps ↔ between ‘cyclicly increasing’ and membership in S; induction completes."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The target set only needs to be a totally ordered set large enough to host |A| distinct values; any such set works.",
+            "original": "R (the real numbers)"
+          },
+          "slot2": {
+            "description": "The direction of the inequality criterion can be reversed (use g' = −g, or decree that decreasing triples lie in S).",
+            "original": "g(a) < g(b) < g(c) ⇒ (a,b,c) ∈ S"
+          },
+          "slot3": {
+            "description": "The specific choice in the 3-element base case (increasing vs. decreasing assignment) is arbitrary; either orientation starts the induction.",
+            "original": "For |A| = 3 pick g(a)<g(b)<g(c) when (a,b,c)∈S, otherwise g(a)>g(b)>g(c)"
+          },
+          "slot4": {
+            "description": "Any consistent labelling/ordering of B = A\\{z} (not necessarily a_1,…,a_n) suffices; only the relative order matters.",
+            "original": "a_1,…,a_n with g(a_1)<⋯<g(a_n)"
+          },
+          "slot5": {
+            "description": "The modular indexing convention (a_{n+k}=a_k) is inessential; one could work with indices mod n in any equivalent notation.",
+            "original": "a_{n+k} = a_k"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof",
+  "iteratively_fixed": true
+}

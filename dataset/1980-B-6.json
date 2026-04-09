@@ -1,0 +1,113 @@
+{
+  "index": "1980-B-6",
+  "type": "NT",
+  "tag": [
+    "NT",
+    "ALG",
+    "COMB"
+  ],
+  "difficulty": "",
+  "question": "Problem B-6\nAn infinite array of rational numbers \\( G(d, n) \\) is defined for integers \\( d \\) and \\( n \\) with \\( 1 \\leqslant d \\leqslant n \\) as follows:\n\\[\nG(1, n)=\\frac{1}{n}, \\quad G(d, n)=\\frac{d}{n} \\sum_{i=d}^{n} G(d-1, i-1) \\quad \\text { for } \\quad d>1 .\n\\]\n\nFor \\( 1<d \\leqslant p \\) and \\( p \\) prime, prove that \\( G(d, p) \\) is expressible as a quotient \\( s / t \\) of integers \\( s \\) and \\( t \\) with \\( t \\) not an integral multiple of \\( p \\).\n(For example, \\( G(3,5)=7 / 4 \\) with the denominator 4 not a multiple of 5 .)",
+  "solution": "B-6.\nLet \\( F_{d}(x)=\\sum_{n=d}^{\\infty} G(d, n) x^{n} \\). Then \\( F_{1}(x)=\\sum_{n=1}^{\\infty} x^{n} / n \\) and \\( F_{1}^{\\prime}(x)=\\sum_{n=0}^{\\infty} x^{n} \\). One sees that \\( F_{d}^{\\prime}(x)=d F_{d-1}(x) F_{1}^{\\prime}(x) \\) by finding the coefficients of \\( x^{n-1} \\) on both sides and using \\( n G(d, n)= \\) \\( d \\Sigma_{i=d}^{n} G(d-1, i-1) \\). Then an induction gives us \\( F_{d}(x)=\\left[F_{1}(x)\\right]^{d} \\). Now, for \\( 1<d \\leqslant p \\), the coefficient \\( G(d, p) \\) of \\( x^{p} \\) in \\( F_{d}(x) \\) is the coefficient of \\( x^{p} \\) in \\( \\left[\\sum_{n=1}^{p-d+1} x^{n} / n\\right]^{d} \\), and hence \\( G(d, p)=s / t \\) with \\( s \\) and \\( t \\) integers and \\( t \\) a product of primes less than \\( p \\).",
+  "vars": [
+    "d",
+    "n",
+    "s",
+    "t",
+    "i",
+    "x",
+    "F_d",
+    "G"
+  ],
+  "params": [
+    "p"
+  ],
+  "sci_consts": [],
+  "variants": {
+    "descriptive_long": {
+      "map": {
+        "d": "depthvar",
+        "n": "uppervar",
+        "s": "numeratr",
+        "t": "denominr",
+        "i": "inneridx",
+        "x": "varxval",
+        "F_d": "genfun",
+        "G": "arrayval",
+        "p": "primevar"
+      },
+      "question": "Problem B-6\nAn infinite array of rational numbers \\( arrayval(depthvar, uppervar) \\) is defined for integers \\( depthvar \\) and \\( uppervar \\) with \\( 1 \\leqslant depthvar \\leqslant uppervar \\) as follows:\n\\[\narrayval(1, uppervar)=\\frac{1}{uppervar}, \\quad arrayval(depthvar, uppervar)=\\frac{depthvar}{uppervar} \\sum_{inneridx=depthvar}^{uppervar} arrayval(depthvar-1, inneridx-1) \\quad \\text { for } \\quad depthvar>1 .\n\\]\n\nFor \\( 1<depthvar \\leqslant primevar \\) and \\( primevar \\) prime, prove that \\( arrayval(depthvar, primevar) \\) is expressible as a quotient \\( numeratr / denominr \\) of integers \\( numeratr \\) and \\( denominr \\) with \\( denominr \\) not an integral multiple of \\( primevar \\).\n(For example, \\( arrayval(3,5)=7 / 4 \\) with the denominator 4 not a multiple of 5 .)",
+      "solution": "B-6.\nLet \\( genfun_{depthvar}(varxval)=\\sum_{uppervar=depthvar}^{\\infty} arrayval(depthvar, uppervar) varxval^{uppervar} \\). Then \\( genfun_{1}(varxval)=\\sum_{uppervar=1}^{\\infty} varxval^{uppervar} / uppervar \\) and \\( genfun_{1}^{\\prime}(varxval)=\\sum_{uppervar=0}^{\\infty} varxval^{uppervar} \\). One sees that \\( genfun_{depthvar}^{\\prime}(varxval)=depthvar genfun_{depthvar-1}(varxval) genfun_{1}^{\\prime}(varxval) \\) by finding the coefficients of \\( varxval^{uppervar-1} \\) on both sides and using \\( uppervar arrayval(depthvar, uppervar)= depthvar \\Sigma_{inneridx=depthvar}^{uppervar} arrayval(depthvar-1, inneridx-1) \\). Then an induction gives us \\( genfun_{depthvar}(varxval)=\\left[genfun_{1}(varxval)\\right]^{depthvar} \\). Now, for \\( 1<depthvar \\leqslant primevar \\), the coefficient \\( arrayval(depthvar, primevar) \\) of \\( varxval^{primevar} \\) in \\( genfun_{depthvar}(varxval) \\) is the coefficient of \\( varxval^{primevar} \\) in \\( \\left[\\sum_{uppervar=1}^{primevar-depthvar+1} varxval^{uppervar} / uppervar\\right]^{depthvar} \\), and hence \\( arrayval(depthvar, primevar)=numeratr / denominr \\) with \\( numeratr \\) and \\( denominr \\) integers and \\( denominr \\) a product of primes less than \\( primevar \\)."
+    },
+    "descriptive_long_confusing": {
+      "map": {
+        "d": "sailboat",
+        "n": "direction",
+        "s": "pineapple",
+        "t": "chocolate",
+        "i": "waterfall",
+        "x": "limestone",
+        "F_d": "longitude",
+        "G": "sunflower",
+        "p": "hemisphere"
+      },
+      "question": "Problem B-6\nAn infinite array of rational numbers \\( sunflower(sailboat, direction) \\) is defined for integers \\( sailboat \\) and \\( direction \\) with \\( 1 \\leqslant sailboat \\leqslant direction \\) as follows:\n\\[\nsunflower(1, direction)=\\frac{1}{direction}, \\quad sunflower(sailboat, direction)=\\frac{sailboat}{direction} \\sum_{waterfall=sailboat}^{direction} sunflower(sailboat-1, waterfall-1) \\quad \\text { for } \\quad sailboat>1 .\n\\]\n\nFor \\( 1<sailboat \\leqslant hemisphere \\) and \\( hemisphere \\) prime, prove that \\( sunflower(sailboat, hemisphere) \\) is expressible as a quotient \\( pineapple / chocolate \\) of integers \\( pineapple \\) and \\( chocolate \\) with \\( chocolate \\) not an integral multiple of \\( hemisphere \\).\n(For example, \\( sunflower(3,5)=7 / 4 \\) with the denominator 4 not a multiple of 5 .)",
+      "solution": "B-6.\nLet \\( longitude(limestone)=\\sum_{direction=sailboat}^{\\infty} sunflower(sailboat, direction) limestone^{direction} \\). Then \\( F_{1}(limestone)=\\sum_{direction=1}^{\\infty} limestone^{direction} / direction \\) and \\( F_{1}^{\\prime}(limestone)=\\sum_{direction=0}^{\\infty} limestone^{direction} \\). One sees that \\( longitude^{\\prime}(limestone)=sailboat F_{sailboat-1}(limestone) F_{1}^{\\prime}(limestone) \\) by finding the coefficients of \\( limestone^{direction-1} \\) on both sides and using \\( direction sunflower(sailboat, direction)= sailboat \\Sigma_{waterfall=sailboat}^{direction} sunflower(sailboat-1, waterfall-1) \\). Then an induction gives us \\( longitude(limestone)=\\left[F_{1}(limestone)\\right]^{sailboat} \\). Now, for \\( 1<sailboat \\leqslant hemisphere \\), the coefficient \\( sunflower(sailboat, hemisphere) \\) of \\( limestone^{hemisphere} \\) in \\( longitude(limestone) \\) is the coefficient of \\( limestone^{hemisphere} \\) in \\( \\left[\\sum_{direction=1}^{hemisphere-sailboat+1} limestone^{direction} / direction\\right]^{sailboat} \\), and hence \\( sunflower(sailboat, hemisphere)=pineapple / chocolate \\) with \\( pineapple \\) and \\( chocolate \\) integers and \\( chocolate \\) a product of primes less than \\( hemisphere \\)."
+    },
+    "descriptive_long_misleading": {
+      "map": {
+        "d": "numerator",
+        "n": "denominator",
+        "s": "multiplier",
+        "t": "quotient",
+        "i": "totality",
+        "x": "permanent",
+        "F_d": "constant",
+        "G": "shrinkage",
+        "p": "composite"
+      },
+      "question": "Problem B-6\nAn infinite array of rational numbers \\( shrinkage(numerator, denominator) \\) is defined for integers \\( numerator \\) and \\( denominator \\) with \\( 1 \\leqslant numerator \\leqslant denominator \\) as follows:\n\\[\nshrinkage(1, denominator)=\\frac{1}{denominator}, \\quad shrinkage(numerator, denominator)=\\frac{numerator}{denominator} \\sum_{totality=numerator}^{denominator} shrinkage(numerator-1, totality-1) \\quad \\text { for } \\quad numerator>1 .\n\\]\n\nFor \\( 1<numerator \\leqslant composite \\) and \\( composite \\) prime, prove that \\( shrinkage(numerator, composite) \\) is expressible as a quotient \\( multiplier / quotient \\) of integers \\( multiplier \\) and \\( quotient \\) with \\( quotient \\) not an integral multiple of \\( composite \\).\n(For example, \\( shrinkage(3,5)=7 / 4 \\) with the denominator 4 not a multiple of 5 .)",
+      "solution": "B-6.\nLet \\( constant_{numerator}(permanent)=\\sum_{denominator=numerator}^{\\infty} shrinkage(numerator, denominator) permanent^{denominator} \\). Then \\( constant_{1}(permanent)=\\sum_{denominator=1}^{\\infty} permanent^{denominator} / denominator \\) and \\( constant_{1}^{\\prime}(permanent)=\\sum_{denominator=0}^{\\infty} permanent^{denominator} \\). One sees that \\( constant_{numerator}^{\\prime}(permanent)=numerator \\, constant_{numerator-1}(permanent) \\, constant_{1}^{\\prime}(permanent) \\) by finding the coefficients of \\( permanent^{denominator-1} \\) on both sides and using \\( denominator \\, shrinkage(numerator, denominator)= numerator \\, \\Sigma_{totality=numerator}^{denominator} shrinkage(numerator-1, totality-1) \\). Then an induction gives us \\( constant_{numerator}(permanent)=\\left[constant_{1}(permanent)\\right]^{numerator} \\). Now, for \\( 1<numerator \\leqslant composite \\), the coefficient \\( shrinkage(numerator, composite) \\) of \\( permanent^{composite} \\) in \\( constant_{numerator}(permanent) \\) is the coefficient of \\( permanent^{composite} \\) in \\( \\left[\\sum_{denominator=1}^{composite-numerator+1} permanent^{denominator} / denominator\\right]^{numerator} \\), and hence \\( shrinkage(numerator, composite)=multiplier / quotient \\) with \\( multiplier \\) and \\( quotient \\) integers and \\( quotient \\) a product of primes less than \\( composite \\)."
+    },
+    "garbled_string": {
+      "map": {
+        "d": "kcxzoyvm",
+        "n": "qjgprsle",
+        "s": "ufxtnbqw",
+        "t": "zycwmrva",
+        "i": "pjxlautk",
+        "x": "mghvcerd",
+        "F_d": "qzxwvtnp",
+        "G": "hjgrksla",
+        "p": "bvduqkcz"
+      },
+      "question": "Problem B-6\nAn infinite array of rational numbers \\( hjgrksla(kcxzoyvm, qjgprsle) \\) is defined for integers \\( kcxzoyvm \\) and \\( qjgprsle \\) with \\( 1 \\leqslant kcxzoyvm \\leqslant qjgprsle \\) as follows:\n\\[\nhjgrksla(1, qjgprsle)=\\frac{1}{qjgprsle}, \\quad hjgrksla(kcxzoyvm, qjgprsle)=\\frac{kcxzoyvm}{qjgprsle} \\sum_{pjxlautk=kcxzoyvm}^{qjgprsle} hjgrksla(kcxzoyvm-1, pjxlautk-1) \\quad \\text { for } \\quad kcxzoyvm>1 .\n\\]\n\nFor \\( 1<kcxzoyvm \\leqslant bvduqkcz \\) and \\( bvduqkcz \\) prime, prove that \\( hjgrksla(kcxzoyvm, bvduqkcz) \\) is expressible as a quotient \\( ufxtnbqw / zycwmrva \\) of integers \\( ufxtnbqw \\) and \\( zycwmrva \\) with \\( zycwmrva \\) not an integral multiple of \\( bvduqkcz \\).\n(For example, \\( hjgrksla(3,5)=7 / 4 \\) with the denominator 4 not a multiple of 5 .)",
+      "solution": "B-6.\nLet \\( qzxwvtnp_{kcxzoyvm}(mghvcerd)=\\sum_{qjgprsle=kcxzoyvm}^{\\infty} hjgrksla(kcxzoyvm, qjgprsle) mghvcerd^{qjgprsle} \\). Then \\( qzxwvtnp_{1}(mghvcerd)=\\sum_{qjgprsle=1}^{\\infty} mghvcerd^{qjgprsle} / qjgprsle \\) and \\( qzxwvtnp_{1}^{\\prime}(mghvcerd)=\\sum_{qjgprsle=0}^{\\infty} mghvcerd^{qjgprsle} \\). One sees that \\( qzxwvtnp_{kcxzoyvm}^{\\prime}(mghvcerd)=kcxzoyvm qzxwvtnp_{kcxzoyvm-1}(mghvcerd) qzxwvtnp_{1}^{\\prime}(mghvcerd) \\) by finding the coefficients of \\( mghvcerd^{qjgprsle-1} \\) on both sides and using \\( qjgprsle hjgrksla(kcxzoyvm, qjgprsle)= kcxzoyvm \\Sigma_{pjxlautk=kcxzoyvm}^{qjgprsle} hjgrksla(kcxzoyvm-1, pjxlautk-1) \\). Then an induction gives us \\( qzxwvtnp_{kcxzoyvm}(mghvcerd)=\\left[qzxwvtnp_{1}(mghvcerd)\\right]^{kcxzoyvm} \\). Now, for \\( 1<kcxzoyvm \\leqslant bvduqkcz \\), the coefficient \\( hjgrksla(kcxzoyvm, bvduqkcz) \\) of \\( mghvcerd^{bvduqkcz} \\) in \\( qzxwvtnp_{kcxzoyvm}(mghvcerd) \\) is the coefficient of \\( mghvcerd^{bvduqkcz} \\) in \\( \\left[\\sum_{qjgprsle=1}^{bvduqkcz-kcxzoyvm+1} mghvcerd^{qjgprsle} / qjgprsle\\right]^{kcxzoyvm} \\), and hence \\( hjgrksla(kcxzoyvm, bvduqkcz)=ufxtnbqw / zycwmrva \\) with \\( ufxtnbqw \\) and \\( zycwmrva \\) integers and \\( zycwmrva \\) a product of primes less than \\( bvduqkcz \\)."
+    },
+    "kernel_variant": {
+      "question": "Let an infinite array of rational numbers\\[\\,H(d,n)\\,\\]be defined for integers\\;d,n\\;with\\;1\\le d\\le n\\;by\\n\\[\\displaystyle H(1,n)=\\frac1n,\\qquad H(d,n)=\\frac dn\\sum_{k=d}^{n}H(d-1,k-1)\\quad(d>1).\\]\\nLet\\;q\\;be a prime. Prove that for every integer\\;d\\;satisfying\\;1<d\\le q\\;the entry\\;H(d,q)\\;can be written as a reduced fraction\\;a/b\\;whose denominator\\;b\\;is **not** divisible by\\;q.\\n(For example, \\(H(4,7)=\\tfrac72\\), whose denominator 2 is not a multiple of the prime 7.)",
+      "solution": "Define the generating series\nF_d(x)=\\sum _{n\\geq d}H(d,n)x^n     (d\\geq 1).\n\nStep 1.  The first row is\nF_1(x)=\\sum _{n\\geq 1}x^n/n,\nF_1'(x)=\\sum _{m\\geq 0}x^m=1/(1-x).\n\nStep 2.  From the recurrence for d>1,\nn H(d,n)=d\\sum _{k=d}^nH(d-1,k-1).\nTaking coefficients of x^{n-1} in F_d'(x) and in d F_{d-1}(x) F_1'(x) shows\nF_d'(x)=d F_{d-1}(x) F_1'(x).\n\nStep 3.  Integrating and using F_d(0)=0 gives by induction\nF_d(x)=[F_1(x)]^d.   \n\nStep 4.  Fix a prime q and 1<d\\leq q.  The coefficient of x^q in F_d(x) is H(d,q).  Since any term in (\\sum _{n\\geq 1}x^n/n)^d with an exponent-n_j>q-d+1 would force total exponent>q, only n\\leq q-d+1 contribute:\nH(d,q)=[x^q](\\sum _{n=1}^{q-d+1}x^n/n)^d.\n\nStep 5.  Expanding the dth power, each contributing monomial is x^{n_1+\\cdots +n_d}/(n_1\\cdots n_d) with 1\\leq n_j\\leq q-d+1<q.  Hence each denominator factor n_j is not divisible by the prime q, so their product is not divisible by q.  Summing shows\nH(d,q)=a/t\nwith integers a,t and q\\nmid t.  Thus the denominator of H(d,q) is free of q.",
+      "_meta": {
+        "core_steps": [
+          "Introduce generating functions F_d(x)=∑_{n≥d} G(d,n) x^n.",
+          "Translate the recursion to derivatives: F_d'(x)=d·F_{d-1}(x)·F_1'(x).",
+          "Inductively integrate to get the closed form F_d(x)=[F_1(x)]^d.",
+          "Take the x^p–coefficient: G(d,p) is the coefficient of x^p in [∑_{n=1}^{p-d+1} x^n/n]^d.",
+          "Since every denominator n in that product is <p, the resulting denominator t has no factor p."
+        ],
+        "mutable_slots": {
+          "slot1": {
+            "description": "The particular prime label and value used for the top index.",
+            "original": "p (any prime ≥ d)"
+          },
+          "slot2": {
+            "description": "Illustrative numerical example supplied in the statement.",
+            "original": "G(3,5)=7/4"
+          }
+        }
+      }
+    }
+  },
+  "checked": true,
+  "problem_type": "proof"
+}
