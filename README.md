@@ -57,21 +57,38 @@ The cleaning, audit, brace-balance, and spot-check scripts (`unicode_clean.py`, 
 
 ## Loading
 
+The repository contains the same data in two parallel formats:
+
+1. **`dataset.parquet`** — a flat parquet table with 35 columns. This is what the HF dataset viewer renders and what `datasets.load_dataset(...)` returns by default. To keep the schema stable across rows, the four `dict[str, str]`-with-arbitrary-keys fields (`vars`, `params`, `sci_consts`, and per-variant `map` / `metadata`) are stored as JSON-encoded strings whose names end in `_json`. Use `json.loads(...)` to recover the original dict structure.
+
+2. **`dataset/*.json`** — 1,051 individual JSON files with the original nested structure (variants as nested dicts, rename maps as native dicts). Use this layout when running the GAP framework code directly, since the pipeline scripts expect dict access.
+
+### Loading the parquet (default)
+
 ```python
 from datasets import load_dataset
+import json
 
 ds = load_dataset("blackhao0426/PutnamGAP", split="test")
 print(ds[0]["index"], ds[0]["type"])
-print("Variants:", list(ds[0]["variants"].keys()))
+# JSON-stringified fields
+print("vars:", json.loads(ds[0]["vars_json"]))
+print("DL rename map:", json.loads(ds[0]["variant_descriptive_long_map_json"]))
+print("KV question:", ds[0]["variant_kernel_variant_question"][:120])
 ```
 
-Or load directly from the JSON files:
+### Loading the JSON files (preserves nested dicts)
 
 ```python
 import json
+from huggingface_hub import snapshot_download
 from pathlib import Path
-problems = [json.load(open(p)) for p in Path("dataset").glob("*.json")]
-print(f"{len(problems)} problems loaded")
+
+local = snapshot_download("blackhao0426/PutnamGAP", repo_type="dataset",
+                          allow_patterns="dataset/*.json")
+problems = [json.load(open(p)) for p in sorted(Path(local, "dataset").glob("*.json"))]
+print(f"{len(problems)} problems loaded; e.g. {problems[0]['index']}")
+print("DL map:", problems[0]["variants"]["descriptive_long"]["map"])
 ```
 
 
